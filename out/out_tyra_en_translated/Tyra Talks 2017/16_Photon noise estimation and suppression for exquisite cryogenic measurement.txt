@@ -1,0 +1,1872 @@
+Okay, let's welcome everyone to participate in today's TARA speech.
+Today's speaker is Mr. Zhang Yanyong.
+He is now a Ph.D. student in astronomy and physics at Caltech.
+Before coming to Caltech, he studied at NTU Physics and NTU Mechanics.
+During his time at NTU, he specialized in accelerometers,
+half astronomy and half accelerometers, high-performance physics experiments.
+Now he is at Caltech, he specializes in dark matter experiments,
+which are more astronomical.
+So today's speech is mainly about...
+My understanding, correct me if I'm wrong, Mr. Zhang Yanyong.
+It's mainly about how they detect their detectors in design experiments.
+I want to share it with you.
+Some of it has nothing to do with today's speech,
+but it has a lot to do with the speaker.
+Zhang Yanyong is a disciplined, self-trained athlete.
+He is a good trainer.
+If you are interested in running, cycling, or surfing,
+he has a lot of experience.
+He also likes to discuss these things with you.
+Lastly, as you have heard,
+today is Zhang Yanyong's birthday.
+Actually, it's not yesterday, it's today.
+I don't know why Zhang Yanyong...
+Did Zhang Yanyong say that he was drunk yesterday because it was his birthday?
+It's not easy to forget your birthday.
+So I decided to sing a happy birthday song for Zhang Yanyong.
+Happy birthday to you, happy birthday to you.
+You can open the microphone and sing together.
+Happy birthday to you, happy birthday to you.
+Let's welcome Zhang Yanyong to share his research with us.
+I'll turn off the microphone.
+Can you hear me?
+Because I found that the new version of BlueJeans
+can't use a lot of screens on Linux.
+So the topic I'm going to talk about is
+Photon Noise Estimation and Suppression for Explicit Cryogenic Measurement.
+Why did I choose this topic?
+The reason is...
+Of course, this is very specific.
+It's an example of what we're doing right now.
+But we all know that
+any experiment needs to pursue a higher sensitivity.
+The current trend in the world is that we're going to do it at a lower temperature.
+Because basic statistical physics tells us that
+no matter what system it is,
+its noise is basically related to temperature.
+So the lower the temperature, the lower the noise.
+So today I want to talk about something more general.
+For most people, whether they're listening now
+or watching on the Internet,
+those who are doing experiments
+and want to take it,
+whether you want to put your experiment device into a liquid nitrogen
+or a liquid nitrogen solution,
+or like we use cryogenic dilution fridge,
+are all useful technologies.
+In order to further promote its sensitivity in our experiments,
+we developed an application of this technology.
+Next slide.
+I'm going to spend a lot of time talking about
+what our traditional concept of noise is.
+Why these concepts are very meaningful
+if you think through the details.
+But it's not something we can apply directly to our experiments.
+First of all, what you're seeing now is called
+thermal noise,
+which we think is traditionally classical noise.
+Of course, we have to say it's Johnson-Nyquist noise
+because Johnson-Nyquist is the person who invented it.
+Its feature is that it's very wide,
+that is, it's maybe 10 hertz.
+What you see on the screen
+may be from 10 hertz to tens of millions of hertz.
+It's the whole range
+that you can see this kind of noise signal.
+And it's flat, so it's called white noise.
+It's like white light.
+We know that Johnson found that
+this noise only has to do with the temperature
+of the instrument that produces this noise,
+or the equivalent temperature.
+It doesn't have to do with anything else.
+For example, I have a resistor today,
+and it keeps producing noise.
+This resistor, whether it's made of cement,
+wire, metal, or air,
+it doesn't matter.
+As long as the temperature of this thing is like that,
+its noise is like that.
+This is a very special thing.
+So at the beginning of the 20th century,
+it was a very special physics.
+That is, you would have expected
+that this thing would keep producing that noisy signal.
+Should it be related to its material?
+The answer is no.
+But later on, the development of quantum mechanics
+immediately made people think,
+isn't this the same as black radiation?
+What is black radiation?
+Black radiation is its light or energy.
+Its energy is kT,
+and it only has to do with temperature.
+Because no matter what material it is,
+they exchange energy with light.
+I've already said that.
+So here's a question.
+What is it that makes this classical system
+reach thermal equilibrium?
+The answer is light.
+No matter what material it is, it's all light.
+Okay.
+So this light becomes...
+Later on, Planck found that
+as long as light reaches thermal equilibrium,
+this thing will emit light.
+It has nothing to do with material.
+It has nothing to do with temperature.
+Then it's called black radiation.
+But we also know that black radiation
+is the most important thing in human history.
+It is the first direct evidence,
+and it has been explained,
+and it has started the so-called quantum era.
+Without quantum mechanics,
+without the phenomenon of quantum being brought into physics,
+there is no way to explain black radiation.
+So here's a very strange thing.
+We say this is a classical system.
+Classical thermal equilibrium has this phenomenon.
+But without quantum mechanics,
+there is no way to explain it.
+So why does this happen?
+If you put any material in a temperature,
+put it in a temperature environment,
+which is more scientific,
+which is called photon bath.
+Then through these quantum particles,
+which is what we call photons,
+exchange energy to reach thermal equilibrium,
+there will be this classical effect.
+Why is this thing?
+Because in fact...
+Okay.
+Why is the classical description
+applicable to the quantum phenomenon?
+It has a very important reason.
+This reason will also tell me today
+why it is very relevant to future experiments.
+Because in past experiments,
+we usually think that
+I operate in classical regime,
+I think classical,
+that is, T equals 4KT.
+If I operate in quantum regime,
+I think quantum.
+But why is this important?
+Because I have already said that
+in this classical noise,
+it actually comes from quantum effect.
+But why can we use
+classical treatment to think about this thing?
+Because if you look at the textbook
+or you look at the wiki,
+roughly, usually at a normal temperature,
+I write Montaigne here.
+In fact, I just want to imply that
+in fact, we are not doing
+the experiment we are doing now in the future.
+At a normal size,
+for example, as big as your palm,
+a normal temperature,
+for example, a thing of room temperature,
+it emits a ray of black radiation.
+That ray of light
+is every second,
+every square meter,
+it will emit 10 to 20 times of radiation.
+So much that it's like
+when you go to drink water,
+you won't feel a drop of water
+hitting your tongue.
+It's like a continuous state.
+So a classical description can be used.
+So it can be calculated as 4KT.
+But we can't forget that
+if you look at its spectrum,
+it can't be explained by classical physics.
+It must be quantized.
+That's why we started the quantum era.
+So I can ask a question.
+If your tongue is really sensitive,
+when you drink water,
+can you feel a drop of water?
+Think about this question.
+I will continue to talk later.
+Then everyone will know
+why I'm asking this question.
+This question is actually quite interesting.
+Next time you drink water,
+you can think about
+if I can feel a drop of water
+on my tongue.
+This is the first type.
+Now let's look at the second type.
+The second type is called shock noise
+or Poisson noise.
+Of course, Poisson comes from
+Poisson distribution.
+I think most people who study quantum mechanics
+have studied it.
+This is a mathematical description.
+When you have a fixed probability,
+you can calculate
+the probability of something happening
+in the fixed probability.
+But sometimes I see it,
+and the last chance I see it
+is the biggest.
+The last chance I see it is the smallest.
+If you look at the picture on the right,
+for example, let's look at the blue and purple.
+On average,
+there is a certain probability
+that you will see something
+four times.
+For example, you see it four times
+in one minute.
+If you see it five times
+in one minute,
+it will be smaller.
+If you see it six times,
+it will be smaller.
+But you actually have a chance
+to see it 50 or 20 times
+in one minute.
+But the chance is very small.
+You see it is very small here.
+And zero times is also very small.
+This thing is called Poisson distribution.
+It is a system
+that requires quantization
+to be resolvable.
+For example,
+if the leaves fall down for a minute,
+how many pieces can you see?
+You can see this quantization.
+Why?
+What we are implying here is that
+as a detector,
+the resolution of your timing
+is much higher than
+the frequency at which the leaves fall down,
+rather than the
+frequency at which the leaves fall down.
+So you can see this quantization.
+So it becomes shot noise.
+But you will suddenly find that
+shot noise is a peak.
+It's bulging here,
+on the right side of the picture.
+It's not like the picture above.
+It's a whole screen.
+But in theory,
+they are just different.
+Do you have that kind of resolution
+that can see
+the leaves fall down
+or the frequency
+of the water molecules hitting the tongue?
+But its nature
+is very different.
+You see this shot noise.
+It's a very narrow band.
+It's a peak here.
+And it's due to quantization.
+It's due to the quantum nature
+of carrier or event.
+The example I just gave
+is the leaves falling down.
+But I can give another example.
+For example,
+if there is a導線 today,
+you charge it.
+The resistance of the導線 is very small.
+So through the current,
+the particles of the electron
+are very, very, very many.
+So it feels like
+the thermal noise
+I just mentioned.
+That's also very typical.
+That's how people measure
+thermal noise.
+But it's exactly the same thing.
+If I put a導線 today
+and use the pressure to do it,
+is the resistance super, super big?
+It's so big
+that you can't measure it.
+Uh,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+uh,
+a visionure
+dozen thousand.
+So how was
+that pressure-cousine
+and小光
+
+showed
+a video
+but if you give it
+a very,
+very,
+very large voltage
+it can destroy
+that
+then let it pull
+out a
+pull out a
+good
+like this
+is shot
+noise
+but shot noise
+in the
+inside
+is usually
+happening
+in you
+have to
+apply
+a very,
+very large
+energy
+to stimulate
+this thing
+may happen
+in a small
+opportunity
+that
+you can see
+but see the
+number is very
+few,
+so once,
+twice,
+three times
+you can see
+quantization
+but we
+want to do
+experiments
+in the future
+good
+I'm
+I'm
+good
+so
+in principle
+any
+signal
+can be
+uh
+poisson
+if we
+have infinite
+timing
+resolution
+you will
+feel
+and then
+return to
+the original
+state to
+feel the
+next
+molecule
+in fact,
+you can
+feel the
+shot noise
+when you
+drink
+water
+is that
+you are
+hit by the
+tongue
+is not a
+fixed
+water
+pressure
+ok
+good
+that
+we
+why
+we
+actually
+like a
+can feel
+when drinking
+water molecules
+hit us
+one by one
+we want to
+resolve
+there is no
+such a
+resolution
+experiment
+for example
+we generally
+expect in
+the simulation
+ah
+every five years
+or ten years
+of operation
+why
+five years
+or ten
+years
+because
+this is the
+DOE
+theory
+we can see
+usually expect
+for example,
+five or ten
+events will
+happen
+and then
+ah
+for example,
+like the
+dark matter
+or like
+ah
+no
+DOE
+beta
+beta
+change
+or
+DOE
+hit the
+atomic box
+and then
+the original
+DOE
+and then
+bounce out
+this rare
+and then
+of course
+we can not
+take them
+that we observe
+several times
+to
+ah
+to translate into
+there is no
+new physics
+to make these
+things happen
+is very
+important
+so we are
+basically doing
+this
+good
+but I just
+said ah
+you see oh
+every five years
+can see a few
+events
+means that
+you can see
+a year
+probably
+ah
+normal
+energy
+excitation
+for example,
+the magnetic field of the earth
+for example,
+you give it a voltage
+because you want to
+charge
+this thing
+to reach a
+physical
+stable
+time
+it
+every second
+per square meter
+area
+to release
+ten
+twenty-one
+square
+light
+has been crazy
+to hit
+your
+detector
+what
+every year
+you can see
+ten twenty-five
+square
+ah
+light
+and then
+this middle
+may be involved
+a
+ok
+one of
+this you want to
+see the
+event
+so basically
+you can not
+tell
+you can not
+tell
+that
+ah
+this
+this
+in my
+detector
+inside
+trigger
+up
+this
+event
+this
+first
+second
+is basically
+you only have
+ten twenty-five
+square
+one-third
+of the
+opportunity
+to store
+data
+the rest
+is the
+trash
+that
+this
+basically
+is
+that
+you can not
+have a good
+data
+is
+data
+acquisition
+system
+and
+electronics
+to store
+it
+and
+all the
+trash
+so we have to
+find a way to
+deal with
+this thing
+that is
+the simplest
+and most
+intuitive
+and basically
+all have
+to do
+high sensitivity
+experiment
+no matter
+what
+I know
+now the
+grassland
+there are people
+doing
+them to put
+the sensor
+because if
+you go to
+look at the
+black radiation
+of the
+black radiation
+of the
+light
+of the
+flux
+that
+is what
+the flow
+is proportional
+to the
+temperature of
+three times
+so for
+example,
+300k is
+probably
+room temperature
+and then
+30
+is now
+common
+we know
+that
+it can
+but it
+only has one
+super small
+point that
+is not
+because that
+it is basically
+studying the
+temperature of the
+change itself
+it can not
+contain a
+experiment
+in a container
+we know
+now can
+be stable
+and long
+time
+operation
+is about
+230
+minikelvin
+we say
+if you put
+a room temperature
+of the
+device
+temperature
+is 423
+12 times
+that above
+the above
+I just said
+every second
+every square
+meter
+there will be 21
+so you
+do this
+you do this
+to reduce it
+to every second
+square meter
+there will be
+9 times
+of light
+value
+that if you
+want to
+operate
+for example,
+how many years
+you now
+may have
+10
+12 times
+12
+13 times
+montre
+and so on
+but you have
+one year
+so we
+now have
+12 to
+12 to
+13 times
+12 to
+13 times
+to reduce
+how can we do it?
+we can do another thing
+is that we can find
+some things
+he absorbed
+infrared light
+is very strong
+ok
+I give an example
+for example
+for example
+there are some
+plastic materials
+your eyes
+see it is transparent
+such as
+the acrylic
+box
+but in fact
+he is
+infrared
+is not completely
+transparent
+infrared hit him
+will be completely
+absorbed
+OK
+then I thought
+that good
+that's great
+that I put
+my experiment
+all wrapped in
+this kind of
+acrylic inside
+that would not
+get it
+the answer is not
+because
+why
+an external
+environment
+will put out
+infrared
+because it is
+a black body
+that he put out
+infrared purpose
+or its function
+is what
+the temperature
+is lower than
+his thing
+or will absorb
+his infrared
+things
+to heat balance
+OK
+so you
+you can say
+good
+I put a
+box on my
+experiment
+equipment
+at first
+you will find
+infrared
+noise
+is to hit
+your detector
+infrared
+noise
+suddenly
+down
+but slowly
+slowly
+slowly
+slowly
+super
+this box
+will also become
+that source
+temperature
+and then he became
+source temperature
+and then
+no matter what material
+it is a black body
+it is a black body
+he put out
+the photon
+just related to
+its temperature
+so basically
+you cover
+a photon
+a black body
+and that you do
+not want
+the temperature
+next to your
+detector
+so we
+searched
+a lot of
+material
+if we
+exchange
+privately
+but usually
+can not be used to
+say that we have a
+lot of material
+is a material
+library
+for this thing
+to compile
+a super
+material library
+and then we found
+one thing
+is that we
+picked a few
+of its absorption
+very strong
+material
+and its
+material
+its own
+thermal conductivity
+is very good
+so you just
+put this
+material
+on another
+temperature
+it can
+continue to
+take this
+300k light
+up and
+pass it
+away
+it can continue
+to maintain
+the 50k
+it touched
+that thing
+so it
+is equal to
+you put a
+300k
+noise
+photon
+source
+into a
+50k
+photon
+source
+but
+see the picture
+on the right
+this is just
+I want to say
+that if you
+but this thing
+took us a lot of
+time
+that we also
+hope that
+all kinds of
+applications
+can be
+exchanged
+and then we
+can have
+collaborators
+need this
+thing we
+are all
+welcome
+so good
+and then
+next
+I take a look
+I did
+this wrong
+but
+next
+is that
+we want to
+say
+traditionally
+if you
+look at
+how much light
+hit
+us in
+this
+particle physics
+inside
+we usually
+know that
+we are in the
+accelerator
+inside
+the collision
+particle
+particle
+energy
+are very,
+very high
+high to
+its wavelength
+I do not know
+you know
+the wavelength
+is probably
+the energy
+of the
+wavelength
+is usually
+very,
+very,
+very high
+zlich
+is small
+is using
+because
+now
+on the
+keyboard
+keyboard
+from which
+the radius
+radius
+right
+how big
+is probably
+a little
+less than
+1.22
+Ok
+if
+you see
+now
+that
+you think
+it is a dense
+that I can tell you
+that is probably
+0.0
+0.1
+to 0.1
+mm
+is about 100
+microns
+OK
+good
+that if there is a
+particle
+it in
+that
+strong
+magnet
+magnet
+is made
+out of
+its energy
+is 14
+so its
+length
+is smaller
+than
+nanometer
+so
+this
+is a
+space
+right
+it can pass
+directly
+it will not
+touch anything
+so
+on the
+traditional
+particle
+simulation
+all of
+these
+tool
+kits
+assume
+that
+these
+particles
+are a
+point
+without
+size
+and
+when it
+travels
+it
+will
+travel
+in
+a
+straight
+line
+so
+this is
+what you
+see
+these
+lines
+are
+particles
+in
+simulation
+it
+travels
+in
+a straight
+line
+so
+we
+put
+the
+material
+on
+the
+surface
+and
+we
+can
+simulate
+but
+we have
+to draw
+a line
+and
+get an
+event
+so
+we
+just
+said
+every
+second
+every
+year
+we
+have to
+simulate
+10
+25
+times
+so
+if
+you
+want
+to
+simulate
+10
+27
+times
+an event
+you
+have to
+simulate
+10
+27
+times
+an event
+so
+you
+can
+simulate
+it
+so
+that
+it
+is
+useful
+otherwise
+it
+will be
+ignored
+so
+it
+is
+useless
+so
+you
+can
+simulate
+it
+so
+that
+it
+is
+useful
+otherwise
+it
+is
+useless
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+you
+can
+simulate
+it
+so
+that
+AI
+can
+simulate
+10
+times
+an
+event
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+10
+times
+an
+event
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+can
+simulate
+it
+so
+that
+you
+
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that you
+simulate
+it
+so
+that
+you
+simulate
+it
+so
+that you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate
+it
+so that
+you
+simulate

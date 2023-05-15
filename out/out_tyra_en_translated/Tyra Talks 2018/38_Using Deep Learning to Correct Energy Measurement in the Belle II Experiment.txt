@@ -1,0 +1,1508 @@
+Welcome everyone to today's TARA speech. First of all, welcome everyone to listen to Huang Kun-hsieh to tell us about Python to play with particles physics experiment.
+TARA is an online platform. Our goal is to use a free and cross-border way to connect young people all over the world who are engaged in research.
+We can quickly share each other's results and ideas. We have a website and a fan group. The name of our fan group is Project TARA.
+You can find us on Facebook.
+Let me introduce today's speaker. Today's speaker is Huang Kun-hsieh.
+It's quite interesting. When I was preparing to introduce the speaker, I did a little calculation. I think we have known each other for 10 years.
+Huang Kun-hsieh studied at the University of Taiwan Physics Department and the University of Taiwan Physics Institute.
+When he was in the doctor's class, he went to the University of Kyoto. During this period, he was engaged in the study of micro-needle telescope.
+Later, he did T2K at the University of Kyoto. So Huang Kun-hsieh can be said to be a micro-needle expert.
+After Huang Kun-hsieh got his doctorate, he went to Bell Institute to do hardware development. He is now a post-doctorate researcher.
+The topic he will talk to us today is to use Python to play the particle physics experiment.
+An example of using a convolutional neural network to correct gamma-ray energy measurement.
+Without further ado, let's give a round of applause to welcome Huang Kun-hsieh.
+Sorry, I forgot to say one thing. Please mute your microphone if you don't want to speak in the speech.
+But when you want to applaud, you have to turn on the microphone so that our speaker can feel your enthusiasm.
+Let's welcome Huang Kun-hsieh.
+Thank you for the introduction. I have been a speech therapist for a long time.
+I am very happy that you gave me the opportunity to speak here today.
+Actually, my speech was shot in Taiwan.
+So I'm sorry. If you have been to Taiwan, you may have heard the same thing over and over again.
+My name is Huang Kun-hsieh. I am a post-doctorate student at Taiwan University.
+I am currently working on a project called Bell 2.
+I am currently doing a particle physics experiment.
+I am studying the field of particle physics.
+In the particle physics experiment, you may take a lot of data.
+If you take data, you may need to do data analysis.
+If you do data analysis, it is a very good language.
+If you want to download it, you can download it here.
+This is my own photo.
+I am currently doing post-doctoral research at Taiwan University.
+I am currently doing research in the field of particle physics.
+I also like to use my voice.
+What is my research?
+The screen you are sharing is your PowerPoint.
+It's not the part you play. You may have to re-share it.
+Then choose that.
+Oh, okay. Let's do it again.
+Is there such a thing?
+Choose the screen.
+Yes.
+Yes?
+Okay.
+What I'm doing now is in a Japanese studio.
+There is an organization called KK.
+If you want to listen to Japanese, it's Koe-nen-ruki-kasoku-ken-kyu-kiko.
+It's simply called KK.
+There is such a big research device called Bell 2.
+It's a detector.
+Mainly, we use Python to simulate and analyze.
+There is also some data storage.
+And even push the data to the whole world.
+Because we have Google Earth that pushes the data to the whole world.
+They will provide their computing resources.
+Then I will talk about how to push the data to the whole world.
+The first thing to talk about is particle physics.
+I'm sorry.
+Because the data I prepared is scientific.
+Some people may not know what particle physics is.
+So let's talk about what particle physics is.
+At the beginning, for example, water molecules.
+You must have heard of water molecules.
+High school physics should have heard of water molecules.
+There will be atoms in it.
+Atoms will have electrons and the nucleus inside.
+Electrons are the so-called basic particles.
+In addition, you will find neutrons and neutrons in the nucleus.
+Neutrons and neutrons are composed of quarks.
+In fact, the most basic discovery is that there are electrons and quarks.
+To form the universe we see in our daily lives.
+Particle physics is to study the interaction between these basic particles and their group.
+And how to form the law of the universe.
+How do we study particle physics?
+We usually do one thing.
+We will use the accelerator to accelerate the particles to a very fast speed.
+For example, like this animation.
+Let the particles and the antiparticles accelerate to a very fast speed.
+Then there will be a collision in the middle.
+After we let it collide, it will produce a new one.
+We rarely see this example in the current universe.
+It's a more unfamiliar example.
+In our daily lives.
+It's not like that kind of thing.
+We rarely see this kind of thing in the current universe.
+So we study these new examples.
+And see what their interaction is like.
+Neutrons are one of them.
+In fact, we have a lot of large-scale particle physics experiments.
+There are many large-scale physics experiments in the world.
+The first is the collision experiment.
+For example, if you have heard of similar LHC.
+What kind of experiments are there under LHC?
+The biggest three experiments are actually four.
+The biggest four experiments are CNS, ATLAS.
+The other experiment is not included.
+CNS, ATLAS, and LHC-B.
+In addition, our protagonist today is BELL-2.
+It is also a collision experiment.
+It's about electrons.
+It's about electrons and positive electrons.
+That is, positive electrons.
+Electrons are negative electrons.
+Positive electrons are negative electrons.
+It's a collision experiment.
+There are also other kinds of experiments.
+For example, T2K, which I used to participate in.
+And then the pressure back in China.
+Or SNOPLUS in Canada.
+There are other examples.
+For example, alpha in LHC.
+Alpha in SNOPLUS.
+And the Koto experiment in Japan.
+I am very happy.
+When we received the number on April 26th.
+BELL-2 is the first operation.
+This is a report at the time.
+This is the release press.
+And the first collision event.
+That's why we're doing BELL-2 experiments.
+Please give me three minutes.
+At the beginning, the BELL-2 detector.
+Actually, it's a detection of B particles.
+B particles are rare in the universe.
+We will learn about CP-Violation.
+That is, the universe is not uniform.
+With other new physics.
+What is the universe not uniform?
+If the universe is not uniform.
+It will be with us.
+That's why we only have materials now.
+Related to our universe.
+I have a YouTube video.
+Please take a look.
+I don't know if YouTube is okay.
+Wait a minute, I'll play it again.
+This is the theory of the Big Bang.
+The universe after the Big Bang.
+At the time of the Big Bang.
+Matter and antimatter.
+It should be the same level.
+Now there's only matter in the universe.
+Other antimatter has disappeared.
+Matter and antimatter.
+There should be a difference.
+So they say.
+In addition to the difference between the electron box and the symmetry.
+There should be other differences.
+Other differences are called CP-Violation.
+Now known as the Kobayashi-Masukawa Theory.
+It was a revolutionary theory.
+Which introduced a model that contained six quarks.
+Even though only three quarks were known at the time.
+In 2001.
+The Bell experiment successfully measured CP-Violation.
+In B meson decays.
+As predicted by the Kobayashi-Masukawa Theory.
+There are six quarks.
+Three or four quarks.
+Three or four quarks decays.
+They should have.
+Matter and antimatter.
+An asymmetry.
+Later in the Bell experiment.
+It was confirmed.
+Now it's more accurate.
+In 2008.
+30 years after their theory paper was published.
+Professor Kobayashi.
+And Professor Masukawa.
+Won the Nobel Prize in Physics.
+Experimental confirmation of the Kobayashi-Masukawa Theory.
+By the Bell and Babar experiments.
+Greatly contributed to their Nobel Prize.
+It's easy to get the Nobel Prize.
+Electrons and neutrons.
+Accelerate to the light.
+Let them collide.
+Then they will.
+If the antimatter is converted to the electron.
+They will produce.
+Other kinds.
+Heavier particles.
+This annihilation.
+Transforms the electron and positron.
+Into a pair of B mesons.
+Which consists of bottom quarks.
+Two B mesons.
+B mesons.
+These two B mesons.
+Will decay.
+Because they have a lot of life.
+They will decay.
+Into other kinds.
+Other kinds of particles.
+Usually negative.
+In your detector.
+Measure their decay.
+After the example.
+Then calculate.
+It should be B mesons.
+Particles then pass through.
+The central drift chamber.
+Here they ionize the gas.
+Which fills the detector.
+In this way.
+A particle's trajectory and momentum.
+Is obtained.
+Next comes the top counter.
+And the aerogel rich counter.
+A charged particle.
+Emits Cherenkov radiation.
+When it enters these detectors.
+The timing and pattern information.
+Of the detected Cherenkov radiation.
+Tells us what kind of particle it is.
+Then there is an electromagnetic calorimeter.
+This detector precisely measures.
+The energy of photons.
+Electrons.
+The outermost detector.
+Is the long living neutral.
+And muon detector.
+It detects muons.
+Which penetrate most of the detector.
+And neutral chaos.
+Which cannot be measured.
+With the inner detectors.
+It does not have an electrolyte.
+Because the light does not have an electrolyte.
+So it is in the middle.
+Before it touches the ECL.
+From the point of collision.
+Before it touches the ECL.
+It will not be detected.
+Why is the ECL detected?
+Because it is denser.
+So it is easier for light.
+It is easier to produce a reaction.
+It will be here.
+After the reaction.
+It will be broken down into many kinds.
+These electrons.
+In the crystal.
+It will glow in the crystal.
+This crystal.
+Will add a light sensor.
+Photosensor.
+You can look at the photosensor.
+Its energy size.
+The light on both sides.
+The intensity of the light.
+The intensity of the gamma radiation.
+All the detectors.
+This is the most important thing today.
+If you want to go in.
+I have a link here.
+You can go back and see for yourself.
+This is the history of the universe.
+At the beginning of the big explosion.
+The universe is very hot.
+The universe is very cold.
+Relatively cold.
+In the primordial universe.
+We have a lot.
+There will be a lot in the universe.
+In real life.
+In the cold universe.
+There are many strange examples.
+In the universe.
+Our accelerator.
+Super KKB.
+He knows.
+What we are not familiar with now.
+Strange examples.
+It often appeared in the universe.
+These examples.
+We can understand.
+From the past to the present.
+What happened.
+There may be some.
+Strange behavior.
+The universe.
+Only matter.
+Still very mysterious.
+OK.
+CP violation.
+Not familiar with the universe.
+In 1960.
+These two people.
+Not discovered.
+In the K-on ring.
+Found in the K-on ring.
+Found in the K-on ring.
+Xiaoling and Yichuan in 1973.
+They.
+Established.
+Three quarks era.
+Six quarks.
+In the standard model.
+Six quarks.
+But.
+We will.
+B quark decay.
+There will be a CP violation.
+In 1980.
+These two people.
+There will be a CP violation.
+In the K-on ring.
+OK.
+You may not know.
+Simply put.
+Quarks and.
+Quarks.
+In fact, most of the quarks are the same.
+In addition to.
+They are not the same.
+They are not the same.
+Correct.
+These two.
+Charge and parity.
+Quarks and quarks.
+Different.
+Quarks and quarks.
+There is another.
+In addition to these two properties.
+Other different properties.
+Will be called by us.
+CP violation.
+For example, like life.
+Or like.
+Decay branching ratio.
+Only here.
+B quark situation.
+Of course there are other CP violations.
+That kind.
+Only here.
+Life or decay ratio.
+What is B quark?
+What is B quark?
+This is from the website.
+Take it over.
+B quark.
+It is actually a B and a D.
+To constitute.
+It has B 0 and B 0 bar.
+It has B plus and B minus.
+Now the universe is.
+The left side is more material.
+The right side is less anti-material.
+Of course now.
+B quark is very rare.
+Then.
+How do we measure.
+CP violation in B quark.
+For example, life.
+After the confrontation.
+They will fly in the same direction.
+B quark and B quark.
+Will fly in the same direction.
+The longer the life, the longer the flight.
+The shorter the life, the shorter the flight.
+That is.
+Use this to measure B quark or B quark.
+Life difference.
+Of course there are some decay modes.
+B is more.
+But this.
+At the same time to verify.
+They should be.
+It's different in life.
+OK.
+It has a lot of new physics.
+For example, like.
+Some of you may have heard of.
+Maybe it's too difficult.
+There will be some.
+Intermediate particles.
+It may not be.
+The example we know.
+So it will be different.
+And the other one is.
+Of course it's not just.
+This is.
+Yan Yong is also.
+Researched.
+His research is.
+Direct detection.
+The method.
+B quark.
+It's also direct detection.
+OK.
+Physics is over.
+You should be blind.
+Then.
+It's more interesting to talk about this.
+Because I am.
+Most of them are.
+People who do software.
+So the next thing.
+Should be more.
+Talk about software.
+And some examples.
+For example, like.
+You know this is.
+Our Bell 2 detector.
+It's actually.
+Its channel number is very amazing.
+There may be one.
+One million pixels.
+That.
+You have a million pixels.
+Then every time the collision occurs.
+Then there will be a lot of B.
+The event is to remember.
+Of course, in addition to B.
+There are a lot of background events.
+So add up.
+Very, very much.
+Then our data size.
+Then of course this is.
+You are in the inside of the FPGA.
+Then put this one million.
+After throwing away the things you don't want.
+Then the data size.
+The size is probably one megabyte.
+Then the trigger rate is your event rate.
+If the accelerator is running.
+Probably.
+Maximum is 30.
+30 kilohertz.
+Like this.
+This is the maximum.
+Of course, it's not that high now.
+The maximum is like this.
+So the maximum data rate is probably.
+34 gigabytes per second.
+Of course, there are only two or three gigabytes now.
+When running now.
+Because we are not so high now.
+That is to run.
+The accelerator is not fully operational yet.
+It's not fully operational yet.
+So it's not as much as 30 gigabytes.
+Then there are probably only two or three gigabytes.
+A lot.
+That.
+But in fact, two or three gigabytes.
+Then add some of your simulation.
+The data produced is actually a lot.
+Then this page here.
+It's like this.
+How much data does it have?
+That's it.
+The data is about 30 times a year.
+Petabyte.
+Up to 50 petabytes.
+That's the data.
+If you don't change the simulation.
+It's probably 50 petabytes.
+That's the experiment.
+If you add the simulation.
+It's about 200.
+You can see that Google is about 98.
+Then Google's search is 98.
+Then Facebook Upload is 180.
+Then Google's Internet Archive is 11.
+11 bytes.
+Petabyte.
+It should be petabyte.
+I forgot how to read it.
+Then you can know that Bell can actually be with.
+Google, Facebook.
+Their data can be compared.
+It means it's really big.
+Of course, it's bigger.
+We're really doing big data.
+Then the following words are talking about.
+It's more in-depth.
+Because we're big data.
+We need a set of processes.
+To analyze our data.
+This is how we do it.
+Analyze the structure of our data.
+Where do we put it?
+Then we save it.
+The data format is called MDST.
+It's called Mini Data Summary Table.
+We want to start with this MDST.
+There are a lot of unorganized files in MDST.
+For example, we just saw that.
+There's no track in detail.
+There's something else.
+There's this one in ECL.
+That's it.
+We haven't sorted it out yet.
+Particle or something.
+Actually turn it into a particle.
+Or something.
+We haven't sorted it out yet.
+We've introduced a module chain.
+There's a data store.
+These are a few things.
+We're basically.
+We're input data.
+Put it in the data store.
+Then put it in the data store.
+We'll use the module.
+Then use a path first.
+Then put in what you need.
+Put it in.
+It's called a module.
+It has different functions.
+It's actually written in C14.
+It's written in C14.
+It's what you just did.
+What's the track?
+Then make it an example.
+The example we see.
+Then this path.
+How to put this module in.
+We use Python to do it.
+There's something else.
+After we're done.
+We output data.
+We have a root.
+Our own format.
+We'll develop a root format.
+We can also use Python.
+Analyze this root file.
+An example like this.
+For example.
+We're done with the experiment.
+We're going to put the NDST.
+For example, module 1 is low.
+NDST.
+And then the particle list.
+Take it out.
+There's a track in there.
+We'll put it in.
+Turn it into a proton.
+Or turn it into an electron.
+Then there's a particle list.
+And then put that.
+Some particles.
+For example, I'm going to make it a bmeson.
+bmeson will change.
+Many kinds.
+It's his daughter's particle.
+Then put these daughter's particles together.
+Then combine it into bmeson.
+Then there will be a new bmeson.
+That's right.
+Then we'll make some more choices.
+It's bmeson.
+The bmeson he made.
+The quality is with us.
+The bmeson we know is too far away.
+So we don't want this bmeson.
+Just make some choices.
+And then write it out at the end.
+It becomes a root file.
+The function of Python is.
+The first aspect is.
+Build this path.
+Build this module chain.
+And then the other one is.
+You're in the back of the root file.
+You can use PyRooter to analyze.
+Or use other packages.
+Python packages for free.
+What packages can be used?
+I'll talk about it later.
+Two more pages.
+Let's start with what Rooter is.
+If you're interested in what Rooter is.
+Rooter is.
+It's a way to do data storage.
+Data analysis.
+In Hynology Physicist.
+Hynology Physicist.
+You can go to his website.
+I'll write some.
+Installation instructions here.
+The most important thing is.
+Although it is written in C++.
+You can also use C++ to do it.
+But you can integrate with the other languages.
+Such as Python and R.
+Python is much more resourceful than R.
+So it's better to use Python.
+If you don't want to use C++.
+There's a choice here.
+You want to use.
+You want to use Rooter.
+Then Rooter is in C++.
+You still use Python Rooter.
+It's Python by default Rooter.
+Then there's another option.
+For example.
+Rooter on NuPy.
+Interface between Rooter.
+Numerical Python.
+Then there's another one.
+Rooter Pandas.
+You can put Rooter's file format.
+Write it into Pandas DataFrame.
+The easier one is.
+Rooter Pandas.
+Rooter NumPy.
+You know it doesn't have.
+It can also be used.
+But I'm more used to Rooter Pandas.
+With Rooter.
+I like Rooter.
+I use Rooter most often.
+Then we build.
+In fact, many people started to use Rooter Pandas.
+There are some here.
+It's the same installation instructions.
+If you are interested.
+You can install Rooter Pandas.
+The installation method I wrote.
+I've tried it myself.
+Of course, there are other suggestions.
+For example, PIP.
+I've tried PIP.
+I can't install it.
+I think I can install it.
+For example.
+Then.
+Like LHC.
+Those experiments.
+The four experiments.
+We actually started.
+Use Jupyter Notebook to start training.
+It's our new energy.
+To write analysis programs.
+We call it StarKit.
+It's usually three days.
+There will be three days in about four months.
+We'll have a meeting in four months.
+The meeting is held once.
+Then everyone gathers to have a meeting.
+For new energy.
+In the first three days of the collaboration meeting.
+Then there will be a training.
+Called StarKit Workshop.
+Then there will be a meeting for three days.
+In fact, everyone sits down.
+Then teach the new energy.
+How to do our direct analysis.
+Data processing.
+Then we use Jupyter Notebook.
+To do this thing.
+You can see Jupyter Notebook.
+Its characteristics are unmistakable.
+You can see it directly.
+For example.
+If you use Lulupandas.
+You can make it into a table.
+Then count, min, etc.
+If you draw a picture.
+You can keep it on top.
+Then it's easier for people to see.
+Of course, this is actually production.
+You may not need to use Jupyter Notebook.
+The big advantage of Jupyter Notebook.
+If you are.
+Teaching.
+Or some.
+After the root analysis.
+After.
+If you want to call the picture again.
+It will be better.
+There are some.
+This picture is.
+How to do software training in high-performance.
+Basic C++.
+Basic Data Science.
+Programming.
+For example, RootData.
+Python, Git.
+Then there are some training.
+For example, Advanced Root.
+Then there are others.
+Then even someone.
+I want to write NVIDIA.
+OpenCL.
+CUDA or OpenCL.
+There are some.
+The right side is the training course.
+For example, like Bell 2 training course.
+With Atlas CNX HCB.
+Then there are some advanced training courses.
+For example, I went to INFN last year.
+SDC School.
+That is.
+After you finish learning.
+But.
+Everything is a little bit like this.
+Then.
+There is.
+Here is also possible.
+Software people may be more interested.
+Maybe it has nothing to do with physics.
+I am also participating in this area.
+In the Bell era.
+Is.
+K1K.
+About ten years ago.
+We are using Cluster.
+Central Cluster.
+Provide everyone Central Cluster.
+Then everyone comes in.
+Calculate.
+But Bell 2.
+It is obvious.
+Its accelerator.
+Already 50 times.
+So it will.
+It will be more even rate.
+Backlight rate will be more.
+Even rate.
+Will be more.
+So of course.
+There is a lot of backlight.
+Then we need more.
+CPU and memory.
+If it is only K1K.
+Maybe you only give him money.
+Then ask him to pay for it.
+Maybe not.
+But we have 25 countries.
+Then 100 institutes.
+100 institutions participate in this experiment.
+Then each institution.
+A little machine to do it.
+But each institution.
+It may have different Cluster.
+Then it may have different grades.
+Even some institutions.
+It may be from Amazon.
+Or Google.
+Then buy their Cloud Service.
+That's all right.
+Then we are very welcome.
+They do this thing.
+Then we need to say.
+There are two important things.
+So we have to find a way.
+For example, everyone.
+Still want to log in.
+K1K Cluster.
+Then we can put the job.
+Is what we need to calculate.
+We spread all over the world.
+Is within these 100 institutions.
+What they provide.
+What each institution provides.
+Calculation resources.
+Then of course they are.
+Their resources are different.
+For example, some Cluster.
+Then of course.
+Our information will also spread all over the world.
+Then here.
+Then we say.
+How do we do it?
+There is a software.
+Then from LCCB.
+This experiment.
+LCCB developed this experiment.
+Our opponent developed it.
+Then called Dirac.
+Called Distribute Infrastructure.
+With Remote Agent Control.
+When he developed it.
+He also considered.
+Everyone will use different things.
+It's very simple.
+User Interface.
+Then you are below.
+All kinds of Cloud Cluster.
+If you are interested.
+GitHub is here.
+If you look at it yourself.
+GitHub is here.
+Then everyone will notice.
+It's all written in Python.
+In GitHub.
+100% is Python.
+I plug my mouth.
+Kun Xian's speech.
+The link of the video.
+I put it on the side.
+The place to chat.
+There is a link.
+If you want to see those webpages.
+Go back and look at the webpages.
+I just didn't copy it.
+You can go and see.
+Build Dirac.
+Build is.
+Bring LCCB Dirac.
+Then put your database in.
+This way.
+The picture on the left.
+Data transmission.
+Data transmission.
+Green is successful.
+Red is a failure.
+You can see the Japanese team.
+To the United States has been a failure.
+I don't know what happened.
+Have been a failure.
+Other places are successful.
+More.
+The prototype is a success.
+The ratio of failure.
+Basically we are.
+We did the experiment.
+After.
+Because we are at the end.
+Will save a copy.
+Then we will.
+Push to the United States.
+BNL.
+Blue Heaven.
+In New York.
+There is a copy.
+Experimental data.
+There are some others.
+Do you have 100 institutes?
+100 institutes.
+Every institute.
+There are a few more.
+A few more.
+There will be a total of three.
+After we do the experiment.
+We will put two copies of data.
+Push out to BNL.
+With other sites.
+So every site will have.
+Their own.
+Data copy.
+Of course.
+This is actually the data of the experiment.
+For example, the simulation.
+Put it on BNL.
+Or put it on KK.
+Put it on other sites.
+For example, Taiwan also has.
+In the computer.
+We also provide resources to them.
+There is also a storage unit.
+It will be stored there.
+Then.
+For example, I submitted a job.
+I may need a certain file.
+He will go to the database.
+I submitted a job.
+This job.
+For example, Italy.
+This is a job in Italy.
+For example.
+In Bologna.
+In Bologna.
+He will look for nearby.
+For example, I want a file.
+Where is the file in the database?
+Where is it?
+He will look for nearby.
+Nearby storage unit.
+See if he has it.
+This is pretty much the case.
+This time frame.
+Time relationship.
+I do not speak in great detail.
+It is probably such a frame.
+To do the analysis.
+OK, then the last thing is.
+To support.
+The spirit of implementation.
+So I say.
+A case of NNW.
+In fact, in the high-end.
+We also started to try.
+Now we continue to learn to do it.
+This is the first thing.
+Then it is just mentioned.
+EHOMEDIC CHROMETER.
+This.
+You can see that it is in.
+It shines here.
+Then it is the same.
+After the gamma ray hits in.
+It will be decomposed.
+This is a CSI crystallization.
+CSI crystallization.
+Then the decomposition will shine.
+Of course.
+It is impossible that only one will shine.
+This is BELL VR.
+Everyone is interested.
+You can download it.
+The download is here.
+VR.
+It has VR.
+For example.
+A gamma ray runs in.
+Then it will.
+It will decompose a lot of things.
+Run out.
+Of course it decomposes a lot of things.
+It can not only be in one ECL.
+It is distributed in several ECLs.
+This VR is really interesting.
+That.
+Yes.
+You can download it.
+Then.
+For example.
+A gamma ray runs in.
+It will decompose.
+Then decompose into other things.
+Then.
+This is CSI.
+It is our luminous body.
+Then it will be divided.
+Then here.
+Because.
+This luminous body will shine.
+It actually supports the structure.
+For example, like steel.
+Aluminum plate.
+Then it will not shine.
+So you can't measure it here.
+Because it may be outside.
+Lack of energy.
+It is anyway.
+Electrolytes in matter.
+Loss of energy.
+This is called CSI leakage.
+Then it may leak to the back.
+In fact, there will be a leak.
+What is it actually?
+For example, like this.
+The simulation is actually like this.
+A gamma ray comes in from the right.
+Then there will be a lot at the back.
+Leakage.
+Leakage out.
+The structure will also have some.
+Leakage.
+What will this cause?
+For example, there is a mode.
+It is called B plus to low plus.
+I do not know.
+Anyway, the back will become.
+A lot of gamma rays.
+Then there is a pi plus.
+Anyway, I remember a lot of gamma rays.
+Then we are from this.
+A lot of gamma rays and pi plus.
+Then we combine it into B plus.
+Of course, our B plus.
+The energy of its low mass.
+Is from this pi plus.
+Combined with a lot of gamma rays.
+Then we.
+If there is a leakage.
+You will find that OK.
+B plus energy.
+It will not be a good one.
+That is.
+For example, like the standard.
+Standard distribution is not.
+It will be like this.
+This curve is like this.
+It will have a tail here.
+It has a lot of low energy places.
+Event here.
+Because it is inaccurate.
+It will have leakage there.
+That.
+This problem appears.
+Let's take a look.
+What is ECL?
+ECL is like this.
+Eight thousand.
+Arranged mess.
+I think it's hard to do.
+So let's do something simple at the beginning.
+Do something simple at the beginning.
+30x30.
+Crystal array.
+30x30.
+Because this is my special.
+It is done by PyCon.
+Then this simulation.
+If you are interested, you can take a look.
+Here.
+For everyone.
+If we measure the energy.
+In fact, it is the energy of each individual crystal.
+Then put it together.
+Just add it up like this.
+Is that OK?
+This is the traditional way we measure energy.
+OK.
+After the gamma ray hits.
+It has energy for each crystal.
+Measure the energy.
+Then we measure the energy of each crystal.
+All add up.
+This is the way we measure energy.
+Like this.
+But it will leak.
+For example, like this.
+The gamma ray hits in.
+Hit here.
+Some leaked.
+It will become OK.
+Energy is gone.
+For example, we hit.
+Gamma ray energy.
+Is 200mEV.
+Then we hit 10,000 times.
+Then we measure the energy.
+How is the energy of the gamma ray?
+Its distribution will be like this.
+Yes.
+Of course, there are also 200.
+Most of the words.
+Will not reach 200.
+Even some words.
+150, 125.
+It will not be able to measure all.
+Measure the energy.
+Is not accurate.
+Measure the energy is not accurate.
+How to do it?
+Just add it up.
+Not good enough.
+Then we.
+This question.
+Is a return question.
+Your true energy is 200.
+Then your prediction.
+Is.
+Your prediction.
+You want to measure now.
+How much is the energy?
+Is a return question.
+Yes.
+But now you have total.
+Other crystal patterns.
+In fact, I thought later.
+A method is.
+For example, you go to see alone.
+The energy distribution of the crystal.
+Then this is.
+Gamma ray energy.
+Is a crystal.
+Slightly to the right.
+Its energy distribution.
+It's a little different.
+Then we suspect.
+Is not hit in the middle.
+The energy distribution.
+Will be different from the middle.
+Then he measured.
+The degree of leakage.
+Should be different.
+This is.
+Our energy distribution.
+Pattern.
+Is a picture.
+The picture inside.
+The picture inside is different.
+For example, people are different.
+Animals are different.
+If the distribution is different.
+That means.
+Energy will be different.
+That's simple.
+That's OK.
+Then we.
+There should be.
+There should be a way to do this.
+Then we think of.
+CNN.
+If you have time.
+You can go to see.
+Course.
+CNN.
+I think.
+The most detailed should be him.
+CNN.
+Different patterns on the map.
+Find some characteristics.
+Then use the machine learning method.
+Find the characteristics of the machine.
+Then do it.
+This is the actual simulation.
+Result.
+Hit the energy here.
+There is a pattern here.
+If you have learned.
+Machine learning.
+Our target is.
+Y2.
+Usually use this.
+Y2.
+What we want to do.
+We want to predict.
+How much is the real energy?
+We use.
+This energy.
+Put it at the bottom.
+Total energy.
+We just.
+Put it on top of the energy.
+Y2 is like this.
+The advantage of doing this is.
+If you look at the front.
+Because it is less than 200.
+Between 0 and 1.
+Between 0 and 1.
+Our prediction.
+Prediction is the result of our CNN.
+Then we put the prediction.
+Divided by our Dtotal.
+You can get our.
+The energy predicted by CNN.
+The loss function.
+Prediction minus Y2.
+If you know.
+What is CNN?
+If you want to know what CNN is.
+You can also ask me in person.
+Our neural network.
+The structure is like this.
+I'm sorry.
+Because I put it directly.
+Production neural network.
+Put it in the simulation.
+It's a bit too complicated.
+After the image.
+We use.
+I want to.
+My idea is to use that.
+Google has one.
+There is a competition called Imagine.
+There is a.
+The method of Inception.
+He used.
+He used parallel.
+Then use three different sizes.
+3x3, 5x5, 7x7.
+Then start to layer by layer.
+I only use one layer.
+Inception, I only use one layer.
+Use this method.
+Find characteristics.
+Is different.
+Size of things.
+Why do I.
+This 30x30 also uses this method.
+Because this method is actually.
+Use real ECL method.
+I'm sorry.
+Use it directly.
+Then at the end.
+Then pull it.
+Then convolution.
+Below.
+Then pull it flat.
+Then get it at the end.
+Use Sigma function.
+My target function.
+My target is limited to 0 to 1.
+Then do it at the end.
+If you go.
+I'm going to hit 4000.
+I'm going to hit 10,000.
+10,000.
+4G EV.
+4000 EV Gamma Ray.
+I originally got.
+The energy distribution should be like this.
+Red like this.
+Very ugly with a big tail.
+Now it's green.
+I feel.
+You see the middle is back to 4000.
+It seems a little bigger.
+Although the tail is still there.
+But there are tails on both sides.
+Not so long.
+Then the last result here.
+Although a little bad.
+Because I didn't go all the way.
+OK.
+This is.
+The picture on the left is.
+How much is the real energy?
+From 500 to 5000.
+Then.
+The axis is your real.
+Total energy minus your true energy.
+Then divided by your true energy.
+The more absolute value.
+It means that you make more mistakes.
+Absolute value means that you make more mistakes.
+Then we are in high energy.
+Not bad.
+You can see.
+Up to 2000.
+It's almost the same as the original method.
+Low energy is a little worse.
+Sorry.
+I didn't finish persuading.
+Really want to persuade.
+More than a week.
+Then you can persuade it.
+I didn't optimize it.
+I didn't optimize it.
+I didn't optimize it.
+Low energy is not very good.
+Then on the right.
+If you look at it.
+It will have that.
+This peak will have an rns.
+Mean square root.
+nse or nse.
+Sorry, rns.
+Assuming you are normal distribution.
+Then look at it.
+Uh.
+Sigma is its rns.
+Then look at rns.
+Then look at rns.
+Red is the original method.
+Green is my method.
+Green is OK.
+High energy is better than them.
+Low energy is not very good.
+This is my temporary persuasion.
+Sorry.
+Simple CNN is still not good enough.
+So.
+We are.
+I did a lot of modifications in private.
+For example, the target function has been modified.
+When there are some patterns.
+We split it into several.
+Neural network to train separately.
+Then put it together at the end.
+This is another way.
+We hope to use this method.
+To solve the real.
+Fail2 problem.
+Of course, there are other problems.
+For example, every csi crystal.
+Assuming.
+This simulation is the same.
+But in fact.
+Fail's csi crystal.
+There are more than 100.
+Although 8000.
+There are more than 100.
+There are more than 100.
+Then there is.
+The shape is not like 2D.
+Weird distribution.
+It is 3D.
+It is also 2D.
+It is also 2D.
+But it is a cylinder distribution.
+Then there are some.
+There are some.
+For example.
+Or.
+There are some.
+Weird gamma rays.
+That thing.
+Need to overcome.
+So we have a long way to go.
+Thank you for your participation today.
+If you use neural network.
+If you use neural network.
+Google DeepGin.
+Can put the wolf.
+Can put the wolf.
+Or put the little flower.
+There are some references today.
+There are some references today.
+You can take a look.
+If it's just Bell.
+Bell 2's predecessor.
+It also has open data.
+You can play if you are interested.
+Bell 2 is also planning.
+Open data.
+It's a pity.
+There is not so much open data.
+That's it.
+Thank you Kun Xian.
+Thank you Kun Xian.
+Thank you Kun Xian.
+Does anyone have any questions?
+Does anyone have any questions?
+What is that?
+More than 100 kinds of CSI.
+More than 100 kinds of CSI.
+Is it different in ratio.
+And there are impurities and so on.
+Is it different in ratio.
+Is it different in ratio.
+Is it different in ratio.
+It's a little different.
+So what is it with him.
+The ratio of CSMI is different.
+The ratio of CSMI is different.
+It's all the same.
+It's all the same.
+But it's a little different.
+But it's a little different.
+But it's a little different.
+But it's a little different.
+Hello.
+Hello.
+I want to ask a question.
+I just saw you write.
+When you are in TransCNN.
+Your loss function is used.
+That is.
+That is the ratio.
+MSE.
+Is there any special reason?
+Is there any special reason?
+Because intuitively.
+I think you want energy.
+I think you want energy.
+Not the ratio.
+Not the ratio.
+Not the ratio.
+It's a good idea.
+It's a good idea.
+It's a good idea.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Thank you.
+Uh
+Uh
+Uh
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Your question.
+Recognition, recognition.
+Recognition, clear information already working.
+Recognition, clear information already working.
+Know trigger
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Trigger.
+Sorry. Are there are other?
+I heard that you will have the
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo.
+Ooooo..
+Like the middle finger and keon.
+Like the middle finger and keon.
+Like the middle finger and keon.
+No, no. They are similar.
+Middle finger and electron.
+They are obviously different in pose shapes.
+Or gamma ray.
+Middle finger and gamma ray have different pose shapes.
+They can be divided by pose shapes.
+Because one is fully battery.
+Because one is fully battery.
+And the other is
+Hedronic shower.
+I'm sorry for those who
+don't have time to make examples.
+One is Hedronic shower and the other is Hedronic shower.
+I've heard of it.
+So that's how they can be divided.
+So that's how they can be divided.
+If both are gamma ray
+and you say this is backlight gamma ray
+and this is signal gamma ray.
+Of course, if it's Hedronic shower,
+it can be divided.
+Just look at it and you'll know.
+Just look at it and you'll know.
+Just look at it and you'll know.
+Anyone else have questions?
+Anyone else have questions?
+Let me talk about it again.
+We'll post this video
+We'll post this video
+on our website.
+You can find the link
+on our fan page.
+You can find the link
+on our fan page.
+If you want to review
+or want to see the links
+or information in Kun's video,
+that's what we'll post.
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A
+Q&A

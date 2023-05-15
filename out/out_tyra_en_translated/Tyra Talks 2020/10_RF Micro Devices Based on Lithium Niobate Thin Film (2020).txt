@@ -1,0 +1,2466 @@
+Recording has started.
+All right.
+In 2011 and 2015, he received his master's and Ph.D. degrees from the Narrow Engineering and Microsystems Institute of Tsinghua University.
+He also served as a postdoc researcher at the University of Illinois's Urban Champion.
+He is currently working as an assistant professor in the Department of Power and Mechanical Engineering at Tsinghua University.
+Today, Prof. Ming-Huang will be giving a presentation on RF Microdevices Based on the ThinFILM Lithium NeoBit.
+Prof. Ming-Huang, please give us a warm welcome and applause.
+Thank you for your introduction. I am Prof. Ming-Huang Li.
+I am currently working as an assistant professor in the Department of Power and Mechanical Engineering at Tsinghua University.
+My background is the same as what I just introduced.
+I received my master's degree in mechanical engineering from Tsinghua University.
+After that, I completed my Ph.D. degree from Tsinghua University.
+After completing my Ph.D. degree, I briefly served as a postdoc for a year in Taiwan.
+I then looked for opportunities to work as a postdoc in the United States.
+Later, I was able to successfully work as a postdoc in the ECE Department of UIUC.
+My main research topics are divided into two directions.
+The first one is a funding project for me.
+It is a DAPA Amoeba project.
+The goal is to develop a low-frequency mechanical rectifier that can be used in the military.
+At the same time, we have another project under execution.
+This is the topic I am going to talk about.
+This is the topic I am going to talk about.
+This is the topic I am going to talk about.
+My research interests are these.
+Whether it is a static power supply or a power supply,
+As long as it is a microcomputing component or a supercomputer component,
+They are all in my area of interest.
+If you have any questions, please feel free to interrupt.
+Thank you.
+This is my outline today.
+First, I will start with our motivation.
+The motivation is divided into two parts.
+The first part is why we want to apply the sound wave component to the RF system.
+It has a very long history.
+But maybe everyone doesn't know why.
+So I will start from this point.
+Next, I will explain why lithium niobate is now considered to have a chance to become a star of the day.
+I will introduce a few classic components in the current field.
+Then I will explain their characteristics one by one.
+Finally, there are two simple case studies.
+The latter two parts are what I am doing.
+The first one is about the adjustment of the temperature coefficient.
+And its theoretical calculation and simulation.
+The second part is what I started to do after I returned to Taiwan.
+Due to these small components,
+Usually, you have to make it with a seamless device.
+If the device is not so useful,
+In fact, the performance of the components will not be so ideal.
+So after returning to Taiwan, we hope to reduce the loading in the process as much as possible.
+So we developed all the thin-shaped lithium niobate components.
+After returning to Taiwan, we hope to use the same concept.
+We use surface-to-surface components to make.
+We have also achieved some results recently.
+The first part is my motivation.
+Just like all human life requirements,
+We hope to obtain information quickly and conveniently.
+This is why the communication system has been improving.
+From 2G and 3G decades ago to 4G and 5G in recent years,
+We all hope that the communication system can meet all our needs.
+It also includes high-speed transmission, low latency, and high reliability.
+Based on this requirement, 5G communication is divided into three categories.
+The first is high-speed, the so-called ENBB part.
+It mainly uses high frequency bandwidth.
+Because when the center frequency is higher,
+The same ratio of bandwidth allows you to accommodate more communication channels.
+This can improve the transmission speed of your data.
+On the other hand, we also hope to have a low latency network.
+Low latency network is used for safety or special applications.
+For example, the network of a self-driving car.
+If the network is interrupted in the process of self-driving,
+It may not be able to receive important information.
+This will create some doubts about the safety of passengers.
+Therefore, this low latency and uninterrupted network is also an important part of 5G.
+In addition, in smart homes or smart cities,
+In the future, we will hope to build an Internet of Things system.
+Therefore, we also hope to have some low-power transmission
+To meet the applications of these sensor nodes.
+Since 5G divides our needs into three categories,
+It is impossible for them to operate on the same frequency band.
+Because the frequency band is limited,
+The number of channels or users that can be accommodated within the frequency band is also limited.
+So it is obvious that if we want to meet these three needs at the same time,
+It must be distributed in different frequencies on the distribution of frequency bands.
+So we can see at the bottom of this picture,
+In fact, 5G is divided into three parts.
+Low-band is less than 1GHz,
+Mid-band is between 1GHz and 6GHz,
+High-band is between 6GHz and 100GHz.
+Generally, Low-band and Mid-band are divided into FR1,
+And MW is divided into FR2.
+Is there any difference between 5G frequency band, 4G and 3G?
+In fact, there is a big difference.
+The main difference is that 5G hopes to
+Use the limited frequency left by the communication system.
+And hope to give them a new mission.
+So in addition to the existing 3G and 4G infrastructure in the 5G communication system,
+It also needs to insert these new frequencies in addition.
+The biggest challenge of these new frequencies is that
+It is very different from the traditional 4G network or 3G communication.
+The frequency range of some bands is very large.
+For example, we have the so-called band N77 and band N79.
+These two frequencies may account for more than 10% of the frequency range.
+In terms of N77, it accounts for 24%.
+For higher frequency bands, such as band 258,
+Its frequency range is about 10%.
+The size of the frequency range has a great impact on hardware design.
+Because at present, most of the radio waves used in the current communication system,
+Especially in mobile phones, are radio waves.
+The frequency range of these radio waves is limited.
+The frequency range of these radio waves is usually controlled by the characteristics of its voltage material.
+So for the current frequency range of 10% to 20%,
+It is very difficult to achieve with the current technology.
+So this is a new challenge from the system to the hardware design.
+We also believe that we can get some new opportunities in this new challenge.
+This graph shows the communication system architecture used by 3G, 4G, EET, and 5G carriers.
+Compared with the traditional 3G and 4G,
+It is obvious that 5G wants to have more applications,
+So it has more usable frequency bands.
+In order to properly process these signals, we need more filters.
+The filter is used to process a specific frequency band signal.
+For example, if the center frequency band of my filter is 1GHz,
+And the frequency band is 400MHz,
+So I will probably go from 980MHz to 1020MHz.
+The frequency in the middle is allowed to pass.
+I will try to suppress the signal beyond this frequency band.
+So I can use these filters alone to select the communication frequency band I want,
+And erase other signals.
+In this way, it will be more convenient for me to process the following signals,
+And the error rate will be lower.
+Since the frequency band keeps increasing,
+As we described earlier,
+When the frequency band increases, we need more filters.
+These filters also hope to have large frequency bands.
+Therefore, the characteristics of the filter and its size need to be precisely controlled.
+Especially if we want the phone to be able to use 5G communication properly,
+So many filters have to be stuffed into the phone.
+Therefore, the size of the filter is very strict.
+This brings us to the first topic today.
+Why do we want to apply the frequency band software to 5G communication?
+Especially 5G communication with strict size restrictions.
+The reason is that the frequency band is lower than the battery band.
+Therefore, the size of the frequency band will be smaller than the battery band.
+In the above picture,
+We can compare the EM duplexer in the form of a battery band,
+And the duplexer produced by the frequency band software.
+The size of the duplexer is 10 times smaller than the battery band.
+Therefore, we can expect a frequency band to be 100 times smaller than the EM duplexer.
+In the same space, we can put more frequency band filters to meet our communication needs.
+The frequency band is a mechanical resonance component.
+In general, the quality of mechanical resonance will be higher than that of the EM duplexer.
+Therefore, it usually has the characteristics of low insertion loss.
+The most important thing is that the EM duplexer still needs to go through the steps required by the general semiconductor manufacturing process.
+For example, exposure, salinity, time, etc.
+These technologies are very mature in the industrial world.
+Therefore, the EM duplexer can also be mass-produced and maintain a very stable salinity.
+Sorry, I have a question.
+Please go ahead.
+It's a bit of an outlandish question.
+Because what I'm doing is resonator, but what I'm doing is superconductor.
+So, I don't understand.
+What is the reason for the fundamental physics?
+The quality factor of the resonator will be higher and the loss factor will be lower.
+Because it feels like it uses a lot of energy to vibrate something.
+It has the effect of EM in a space.
+I can't understand intuitively why its quality is better.
+In my opinion, this wave can be limited to a certain range.
+Because mechanical vibration can be understood as
+For example, I take a beam and let it vibrate.
+Its boundary is very clear.
+Because my beam is a beam with a fixed length and height.
+So when it vibrates, it's like it's in this object.
+It produces a beam.
+But if it's EM, I'm not sure if it has such a good boundary to limit its EM.
+It's the distribution of electromagnetic waves in space that produces a beam.
+But I do know that there are some high-quality EM resonators.
+It's like some dielectric resonators.
+It should be a transmission line mode.
+Its Q can reach several hundred.
+But in terms of deep wave components,
+At present, commercial components,
+We call it an amplifier component of a deep wave filter.
+Its Q can reach about 4000 to 5000.
+So I think it still has a difference of one or two quantities.
+Oh, I see. Okay, thank you.
+Okay, I'll go on.
+At present, 4G LTE has a lot of communication frequency.
+Usually, there are about 3 to 4 wireless modules in a mobile phone.
+To meet the needs of different frequencies.
+For example, Wi-Fi has 2.4G and 5G.
+These two may be a module.
+The traditional GSM communication and CDMA communication may be another module.
+In such a module, it will contain a lot of active and passive components.
+For example, in terms of this package,
+It contains 4 PA, which is the so-called power amplifier.
+To generate enough energy for long-distance transmission.
+It has 18 filters and 5 switch modules.
+There is also a collective circuit for communication.
+There is also a chip for impedance matching.
+So in such a module, it actually contains 18 filters.
+So we can imagine that if there are three such modules in our mobile phone.
+It has more than 50 filters.
+In the future, we hope that 5G can accommodate more bands.
+So we can expect that the number of filters will continue to increase.
+At the same size, we hope that these filters can be small and high-performance.
+So this is also the main challenge of the current filter design.
+The second part is to explain why we think that Li-Lian NIOBE is a material with a good prospect.
+Before the introduction of this LN, we can briefly review the three common transmitters.
+The first one on the left is the traditional transceiver.
+Its material is usually Li-Lian NIOBE or Li-Lian TENTALATE.
+These two materials are all man-made crystals.
+So they generally do not appear in the normal environment.
+Because they are man-made crystals.
+Because the traditional transceiver uses a thicker base.
+So when we use a very small indexing electrode to stimulate the sound wave on the surface.
+It usually forms a surface wave.
+There are many forms of surface waves.
+But the most common ones are usually Rayleigh waves or Leaky waves.
+The Leaky wave has the opportunity to get a relatively large magnetic resonance.
+But its loss will also be relatively large.
+In terms of Rayleigh waves, its typical magnetic resonance factor is about 7%.
+In our field, we are used to using KT² or KEffective² symbols to represent magnetic resonance.
+Its Q is about 1000.
+The second one is also the most popular model of transceiver at present.
+We call it FBAR.
+It is a transceiver with a film buck acoustic wave resonator.
+After a long search and research,
+we finally determined that aluminum nitride is the most suitable commercial application for FBAR.
+Because other materials have more or less other problems.
+Its general magnetic resonance factor can give you about 6.5%.
+Its Q is about 3000 in 2GHz.
+But there are already some companies, such as Brokon, which is the predecessor of Avago.
+In terms of Brokon, their Q should be able to do more than 45,000.
+In order to strengthen its magnetic resonance feature,
+some researches will use KONG element to dope it into aluminum nitride.
+Generally, it is used to improve the transceiver.
+When aluminum nitride is sputtered, KONG element is used to dope it into aluminum nitride.
+The higher the content of KONG element, the higher its magnetic resonance factor will be.
+However, due to the increase in the defect of KONG element,
+KONG element's magnetic resonance factor will decrease as time goes by.
+The third type is the so-called LAMP wave.
+It is usually made from aluminum nitride.
+It is a fairly good material now.
+Its coupling is about 6.5%.
+Because its thickness becomes very thin,
+it is usually less than one wavelength.
+You can see that its electrode configuration is very similar to that of SOHL.
+However, what it triggers is not a surface wave, but a body wave.
+The body wave will be described by another set of equations.
+So it will have completely different characteristics from SOHL.
+Since the coupling of aluminum nitride itself is not particularly strong,
+and its coupling will change according to the direction of the electrode and the form of the wave,
+its coupling will generally be between 1% and 4.5%.
+The Q value is about 2000.
+By combining the above three different components,
+we can see that we are very concerned about its two characteristics.
+The first is its magnetic resonance.
+The second is the quality factor.
+The definition of magnetic resonance is probably the ratio of mechanical energy to total energy.
+Because we want to know how much energy is transferred from electricity to the mechanical field
+when we give some energy to the electrode on the surface.
+So we generally use KT square as a very important indicator.
+The second indicator is the so-called quality factor.
+Q has a lot of definitions,
+but the most widely known one is the ratio of the energy stored in our system
+and the energy lost by each cycle of movement.
+So the higher the Q, the lower the energy loss.
+When the energy loss is lower, I have a chance to make a green wave that has a lower energy loss.
+Because KT square and Q are very important,
+we will define our performance indicator,
+which is to multiply Q by KT square.
+So we can use F bar as an example.
+Its performance indicator is probably between 100 and 200.
+This graph shows...
+Sorry, I have a question.
+Can I go back to the last page?
+You said that your excitation is at 2 GHz,
+but my question is that,
+for example, the受 is the surface wave,
+or the lamp wave on the right is the body wave.
+Is the excitation mode 2 GHz or not?
+My question is, what is its phonon frequency?
+It's 2 GHz.
+Oh, so that's only a few million EVs.
+Let me check the Planck constant.
+It should be.
+Okay, I see. Thank you.
+In fact, according to the characteristics of IDT,
+it has a periodicity.
+So its complete cycle will be a wavelength.
+So we will also use the size of these wavelengths
+and the relationship of IDT cycle to design a mode that suits them.
+That's how it works in practice.
+Okay, so I just checked.
+Okay, so I just checked.
+I'm more used to the unit of energy.
+Anyway, it's multiplied by h.
+So what I mean is,
+I'm curious about one thing,
+that is, if 2 GHz is multiplied by Planck constant,
+it's less than 10 mEV.
+That is to say,
+if I give this device at least 10 mEV,
+it will have a signal.
+It will trigger a quantum, right?
+A quantum.
+I'm not so sure about the definition of physics.
+Oh, okay.
+But basically, its mode is 2 GHz mode.
+That's for sure.
+Okay, I see. Okay, thank you.
+This graph shows
+the motion of these three different components.
+Generally speaking,
+the Resonator of the Soul
+is made on the surface of the crystal,
+so there is no boundary around it.
+So we will artificially add
+the so-called Acoustic Reflector.
+It is made in the form of the so-called Block Reflector.
+That is, my grating,
+its cycle,
+is about a quarter of the wavelength.
+This method of stacking
+to enhance its ripple on the boundary reflection.
+On the right,
+you can see the motion of its surface wavelength.
+Its motion mode
+has a ripple on the surface.
+Then in the depth of the crystal,
+about a few lambda below,
+it is a non-moving state.
+So its ripple exists on the surface of the system.
+What is different from the surface wavelength
+is that the two graphs below,
+which are FFAR and LandWave,
+they are vibrating the whole structure.
+FFAR is a longitudinal mode
+in the center of the crystal.
+So its upper and lower surfaces
+will move in different directions.
+Then the center of this material
+is the node of the movement,
+so its stress will be the greatest.
+On the right,
+it is the so-called LandWave motion mode.
+Although LandWave
+also uses the IDT electrode as the trigger,
+its upper and lower surfaces are free surfaces,
+so it generally has two different motion modes.
+The first is the so-called symmetrical motion,
+that is, the upper and lower surfaces
+move in different directions.
+So its center plane
+is a mirror mode.
+The second is the so-called asymmetric motion,
+that is, the upper and lower surfaces
+move in the same direction.
+So it is more like a high-speed fractal mode.
+After understanding the basic components
+and their motion and some of its characteristics,
+we can talk about
+how to make a deep wave filter.
+In fact, when we generally analyze,
+we will only look at its physical behavior
+at the level of a device,
+that is, at the level of a single rectifier.
+But when it comes to designing a filter,
+we generally use
+the so-called ladder filter circuit.
+With such a circuit,
+we can treat each rectifier
+as an independent component,
+so we use a simplified model to describe it.
+In terms of a rectifier system,
+it can be seen as a combination of
+quality, resistance, and strength.
+On the circuit,
+we can find that
+it has the same motion
+as the connected
+resistor, capacitor, and inductor.
+It has the same mathematical form.
+So we also tend to use
+such a set of equivalent circuits
+to describe it.
+Because of this,
+we can directly use
+the circuit design tools
+to design and simulate.
+It will be more convenient.
+With such a set of equivalent circuits,
+it also has a C0
+parallel to the main
+motional branch.
+The meaning of this C0
+is that it is a static capacitor
+produced between the
+rectifier capacitor
+or the electrode
+.
+Such a model
+is usually called
+Modified Butterworth-Van Dyck model
+or MVVD model.
+Such a set of models
+can be seen on the circuit
+as a
+rectifier and
+a anti-rectifier model.
+Its rectifier frequency
+is mainly connected
+by the connected
+RLC.
+The parallel rectification
+is determined by the
+ratio of Cm and C0.
+After obtaining
+a single rectifier
+motion form,
+we can start
+designing the filter.
+In the case of
+Ladder Filter,
+it has a series resonator
+and a parallel resonator.
+In general,
+the wavelength of the parallel resonator
+is slightly different from
+that of the series resonator.
+We want to
+match the
+anti-rectifier frequency
+of the parallel resonator
+with the series resonator.
+Through such a circuit,
+we can use
+two parallel resonators
+with different frequencies
+to form the
+passband of the filter.
+The passband can be controlled.
+As long as
+we carefully select
+the separation
+of the resonator,
+the parallel resonator
+and the anti-rectifier,
+we can achieve the effect of
+controlling the wavelength.
+In theory,
+there seems to be a way to
+make it.
+However,
+by observing such a circuit,
+we can find that
+the K effective square
+is limited by a factor.
+After some
+deductions,
+we can find that
+the K effective square
+is related to
+Fp and Fs.
+Another potential factor
+is that it is related to
+the opamp factor.
+On the other hand,
+the opamp factor
+determines the size of
+the K effective square
+and affects the separation
+between Fp and Fs.
+In order to meet the requirements
+of 5G communication,
+such as 10% and 20%
+frequency,
+we must find
+the K effective square
+as the basis of
+the design of the resonator.
+Therefore,
+let's look at
+the material
+lithium niobate.
+It is a material
+with a long history.
+It was probably
+synthesized
+30 or 40 years ago,
+and it has a very
+unique feature of
+a three-dimensional
+crystal structure.
+Therefore,
+it has different
+opamp characteristics
+in different wave directions.
+It has also been widely used
+in the design of
+this kind of
+surface wave components.
+For general
+surface wave components,
+its pixel speed is
+about 4000mps.
+Its effective coupling
+is about 17%,
+and its Q is about 1000.
+However,
+we have always thought
+that we did not fully
+apply the characteristics of
+this material,
+because its K effective square
+is actually much lower
+than the theoretical prediction value
+of this material.
+Therefore,
+about 20 years ago,
+there was a famous paper
+that mainly analyzed
+the coupling of
+lithium niobate crystal
+in three different directions.
+Since lithium niobate
+is a three-dimensional crystal,
+it has different characteristics
+for its X-cut,
+Y-cut and Z-cut.
+The so-called X-cut
+refers to
+the X-axis of the material
+as the Y-axis of the crystal,
+and the wave transmission
+will be on the YZ plane.
+Similarly,
+the Y-cut and Z-cut
+respectively represent
+the wave transmission
+on the ZX and XY planes.
+This article
+mainly discusses
+the thickness
+of the three different
+cuts and
+the thickness of the different
+waves.
+It can be seen that
+whether it is X-cut or
+Y-cut,
+in terms of these three cuts,
+we target
+two modes respectively.
+The first is the so-called SH0,
+which is the level-cut mode.
+It can be seen that
+there is almost no up-and-down movement
+on the surface,
+and its movement occurs
+in the shear inside the plane.
+The second mode
+is the so-called S0 mode,
+which is similar to SH0.
+There is no up-and-down movement
+on the surface,
+but its wave transmission
+is in the shear inside the plane.
+Based on the analysis
+of these two modes,
+it can be found that
+when you select the thickness
+of the film properly,
+the K-square,
+that is,
+the thickness of the film,
+has a chance to reach 30%
+or more than 40%.
+From this theory,
+it can be found that
+when we
+thin the film
+from the thick wafer
+to a very thin film,
+it actually has a chance
+to get a very large
+film thickness,
+which can meet
+our demand for
+high-frequency green wafers.
+As for this technology,
+why did it start to develop
+around 2010,
+mainly because
+lithium nitrate
+itself is a material
+that is not easy to process,
+and it has a very good
+resistance to
+all kinds of acids and alkynes.
+This threshold
+was broken about 10 years ago,
+which is mainly the progress
+of smart card technology,
+which allows us
+to do research
+at a relatively
+cheap price
+to obtain such a crystal.
+The method of smart card
+is like this.
+We mainly prepare two wafers.
+One is the pressure crystal
+we need,
+and the other is the
+board we carry
+the pressure film.
+So at the beginning,
+we put a very thin layer
+of electrolyte
+on the pressure crystal,
+and then,
+in addition to being used
+for bonding,
+it can also be used
+to resist
+the depth of lithium nitrate
+and can be used
+for bonding.
+So when we do smart card,
+we use the
+lithium nitrate arrangement method
+to inject a thin layer of
+lithium nitrate
+into a certain depth
+on the surface of the crystal,
+and then,
+after a simple surface
+cleaning and bonding,
+use a heat treatment method
+to produce a stronger
+heat resistance
+and then crack
+on that layer,
+separating the two layers of crystal.
+So finally,
+after the bonded crystal
+is exposed to the surface,
+the surface is very smooth
+and the pressure material
+is very thin.
+This material is very suitable
+for some subsequent processing
+to get the lithium nitrate
+we need.
+Okay,
+do you have any questions?
+If not,
+I will continue to the next part.
+Before we
+design the components,
+we will briefly
+discuss these
+thin boards
+and their transmission behavior.
+Generally speaking,
+there are two main modes
+for thin boards.
+The first mode
+is called Rayleigh-Lamb Wave.
+The second mode
+is called Shear Horizontal Wave.
+These two modes
+are completely different.
+However,
+both Rayleigh-Lamb
+and Shear Horizontal Wave
+have the same feature
+that they
+have the so-called
+Shear Horizontal Wave.
+The Shear Horizontal Wave
+can be simply understood as
+the wavelength of the wave
+for a certain mode.
+Its wavelength
+will actually
+depend on
+the thickness of the thin board.
+For this S0-Lamb Wave,
+when my board
+is very, very thin,
+its wavelength
+may be close to 10,000 ms.
+However,
+when I slowly
+thicken my thin board,
+it will actually
+transform from Rayleigh-Lamb Wave
+to Rayleigh-Wave.
+Therefore,
+their final frequency
+will be close to the thin frequency.
+Therefore,
+it can be clearly seen that
+in these different waves,
+in addition to
+the different waves,
+the frequency will also
+be affected by the thickness.
+Therefore, their frequency
+is very important.
+Since the frequency
+has frequency,
+other features
+and features
+will also have frequency.
+For example,
+the Shear Horizontal Wave
+is also a parameter
+with frequency.
+Next,
+we will use
+the so-called
+30° Rotated Y-Cut
+Lithium Niobate
+as an example.
+This is a simulated
+result.
+Let's assume
+that the surface of
+the Y-X Lithium Niobate
+is coated with
+periodic IDT electrodes.
+Through these electrodes,
+we can trigger
+a frequency
+called
+a0s0
+and a1s1.
+In addition to
+LandWave,
+there are other
+so-called
+Shear Horizontal Wave,
+Shear Horizontal Wave,
+Shear Horizontal Wave,
+Shear Horizontal Wave,
+Shear Horizontal Wave,
+Shear Horizontal Wave.
+When the thickness of the electrode
+is increased to a wavelength,
+almost all the
+frequencies of the wave
+will decrease.
+Except for a special wave
+called
+a0s0 Shear Horizontal Wave,
+which is almost a parameter,
+other frequencies
+will be significantly affected.
+In addition to the frequency,
+the periodic IDT
+is also a parameter
+that is very sensitive.
+So we can see that
+these different modes
+have a very big difference
+in the thickness
+of the electrodes
+under different thicknesses.
+In this picture,
+with such a special section
+and a specific
+wave direction,
+we can find that
+it actually has a lot of potential
+because its periodic IDT
+can be greater than 40%.
+Therefore,
+such a material
+with such a
+Shear Horizontal Wave
+will obviously be
+quite suitable for
+wide-frequency wave design.
+I have a question.
+This picture
+is normalized by lambda,
+but if it is actually
+a few gigahertz,
+is it one centimeter?
+Is it millimeter scale?
+It should be
+in micrometer scale.
+Micrometer scale?
+Yes.
+Because it is related to
+the frequency,
+the frequency of each mode
+is actually quite different.
+So for SH,
+it is about
+4,000 to 5,000 meters per second.
+So if it is operated
+at 1 gigahertz,
+its thickness should be
+less than 1 micron,
+in order to achieve
+such a high coupling.
+I see.
+Thank you.
+I have a question here.
+Sorry.
+Does KT
+square
+equal 100%
+have any special meaning?
+Does it mean that their energy can be exchanged?
+So far,
+I have not seen 100%.
+But I think
+in theory,
+in terms of definition,
+it is true.
+100% means that
+if you add
+1 mW RF,
+it will produce
+1 mW phonon.
+I don't know
+if it can be directly
+seen as phonon.
+We generally
+see it as
+an energy coin.
+Because
+its
+K effective square
+is equal to
+Cm divided by C0.
+Cm represents
+motional capacitance.
+It is actually related to
+my mechanical strength.
+C0 is my
+capacitance,
+and Cm is my
+actual capacitance.
+There are two kinds of energy.
+The first one is
+1 mole
+divided by
+CmV square.
+It is a
+mechanical domain energy.
+The second one is
+1 mole divided by
+C0V square.
+It is an
+electrical domain energy.
+It is 1 mole
+divided by
+CmV square.
+It is a
+mechanical domain energy.
+If we imagine it as
+a wave source,
+we can also use
+the MCK system
+to represent
+the energy produced
+by its spring energy
+and my
+actual transducer capacitance.
+Can I use
+your explanation?
+Yes.
+According to
+their high coupling
+characteristics,
+these articles
+were published
+in 2015.
+They are new
+results.
+According to
+their materials,
+they started
+to look for
+new components.
+The first article
+is a
+level-cut module.
+It
+uses
+two
+pairs of capacitors.
+It is similar to
+the form of a fingerprint capacitor,
+but it has only one pair.
+It is a
+level-cut module.
+It uses
+two pairs of
+capacitors
+to generate
+SH0
+by
+coupling
+the
+current
+and the
+wave direction.
+According to
+their
+research,
+SH0
+generates
+SH0
+by coupling
+the current
+and the wave direction.
+SH0
+generates
+SH0
+by coupling
+the current
+and the wave direction.
+We can also see that
+when we set the frequency
+to a relatively low range,
+because some special applications
+do not require such a high frequency,
+for example, 50 MHz is enough,
+its Q can reach 5000,
+and
+the coupling is also about 30%.
+The overall
+performance indicator,
+which is KT square times Q,
+is about 1500.
+At present,
+the highest
+coupling we have
+is about this level.
+Of course,
+we also find that
+the Q value of the material
+is quite related
+to the thickness of
+the thin film of
+LN.
+Because the
+high-performance,
+high-Q, high-coupling,
+and low-frequency capacitors
+have a thickness of
+about 2 microns,
+but the example on the right
+is a study of
+EPFL.
+What they use is very thin,
+only 400 nm
+of LN.
+So,
+it can be seen that
+even if it can reach a very high frequency,
+its Q
+will drop from 5000
+to 700.
+It can also reach
+a very similar
+electro-mechanical coupling
+under the same
+H over LN,
+that is,
+under the thickness of
+normalization,
+which is about 30%.
+The third case is...
+Sorry,
+I have a little problem
+with the previous statement.
+My intuition is that
+the effect of
+LN is very large.
+Is this right?
+Or is there another reason?
+This is our current guess.
+Because we actually
+used some AFN methods
+to measure
+some extremely thin
+LN thin films.
+The roughness of those surfaces
+is less than 1 nm.
+So we are not sure
+why the Q
+or other performance
+will go up
+as long as the film
+is thin.
+And when it is thin,
+the result will be worse.
+Is there any reason
+not to make it very thick?
+Is it going to take a long time?
+Is it expensive?
+Mainly based on
+the previous picture.
+If my thickness is too thick,
+I can't enjoy
+Oh, I got it.
+Thank you.
+The third example
+is the so-called
+A1 mode resonator.
+This A1 mode
+is a high-level LN wave.
+It looks like
+it connects
+many thickness-shear
+waves together.
+So we can see
+its movement
+is horizontal
+instead of vertical.
+The advantage of
+such a resonator
+is that
+its feature size
+is mainly controlled by
+its thickness.
+Because its thickness
+direction becomes
+its real 1 in 2 wavelength.
+So a very thin resonator
+can achieve
+a very high frequency
+of coupling.
+So in this design,
+its Q is about
+300-400.
+And its
+operating frequency
+is about 3.2 GHz.
+The coupling is about 40%.
+So by combining
+the above demonstrations,
+we can get
+that S0, SH0
+and A1 modes
+are very potent
+and can be applied
+in high-level and high-coupling situations.
+However,
+there are
+some relative
+shortcomings.
+For example,
+due to the thinner membrane structure,
+it becomes unusually fragile.
+There may be
+some problems
+with the coupling.
+Secondly,
+lithium niobate
+is a material
+with a very low thermal conduction rate.
+Its thermal conduction rate
+is only twice that of silicon oxide,
+which is about 1% or 2% of
+metal.
+So it does not conduct heat very well.
+So when communicating
+at high power,
+it can easily
+have some negative effects.
+Thirdly,
+its temperature factor
+is quite high.
+So when the temperature
+changes in the environment,
+when using mobile phones
+in the suburbs
+and in the northern and southern regions,
+the frequency will change
+with the temperature.
+In this case,
+it is difficult to convince everyone
+that it can do a good
+and stable communication.
+So this is mainly
+a few problems with this material.
+However,
+although it has some problems,
+some companies
+and some research institutions
+have also tried to use
+such components to make
+some durable and high-frequency
+lithium niobate.
+The N79 filter above
+satisfies the N79 band
+mentioned earlier.
+The frequency is about 10% of the strict conditions.
+The center frequency is about 5GHz.
+It uses
+the so-called A1 mode
+rectifier.
+Below is what I did
+with my colleagues at UIUC.
+It uses a higher mode
+to make
+a 10GHz filter.
+Of course, it is a demo,
+so you can see that
+its passband is not as beautiful
+as the company's design.
+Next,
+I will quickly talk about
+two case studies.
+The first one
+is our goal
+to reduce
+the dependence of
+this rectifier
+on temperature.
+Due to this temperature factor,
+it is mainly related to
+the material.
+In terms of Ln,
+its temperature
+factor is
+about 70 to 90 ppm
+per degree C.
+According to different
+cutting surfaces,
+in order to
+improve this performance
+to be enough
+for the filter
+or rectifier to be used,
+we would like to
+reduce its TCF
+from 60 to 70 ppm
+to 20 ppm or less.
+In order to convince
+others that
+it is a candidate
+for the future
+wireless communication hardware.
+Therefore,
+we do a simplified analysis
+of its TCF source.
+TCF actually
+refers to
+the frequency,
+the normalized frequency
+of temperature.
+Therefore,
+in terms of mathematical form,
+it is partial f, partial t
+divided by its TCF frequency.
+After calculation,
+we can divide it into
+three elements.
+Since the frequency
+is related to
+the frequency of my wave
+and the wave
+is related to the
+speed of my material
+and its density,
+the first element is
+the frequency of my wave
+with the change of temperature.
+The second element is
+the frequency of my material
+with the change of temperature.
+The third element is
+the frequency of my material
+with the change of temperature.
+In addition to these three elements,
+there is another element
+that is related to
+the characteristics of
+the pressure current.
+Therefore,
+we need to understand
+the characteristics of
+its material first.
+Traditionally,
+the method of temperature compensation
+has been
+in modern technology
+for a long time.
+There is no better way
+than this,
+which is to select
+a material with
+a perfect ratio.
+For example,
+the temperature factor of lithium niobate
+is about negative 70 ppm per kelvin.
+However, silicon oxide,
+a very common material,
+has a positive temperature factor
+of about 90 ppm per kelvin.
+Therefore,
+if we can
+perfectly
+mix these two materials
+with a perfect ratio,
+for example,
+silicon oxide,
+we can theoretically
+reduce Tcf to zero.
+However,
+in the process of
+such a production,
+we will find
+that if we ignore
+the wave
+and its electric field
+distribution
+and its
+motion distribution,
+it is actually
+unpredictable.
+Secondly,
+when the film becomes very thin,
+the metal electrode
+on the top
+will also have a certain degree of impact.
+In particular,
+the Tcf of the metal electrode
+is generally quite large.
+Therefore,
+when we want to
+target some thin components
+with high electromagnetic cohesiveness,
+we must not ignore
+the Tcf of the metal electrode.
+As early as 1985,
+Professor Kenya Hashimoto
+discussed
+some deep-wave
+temperature coefficients of delay
+on different surfaces.
+For example,
+a special op-amp material
+has a free surface
+with a metal electrode on the surface,
+but there is no power.
+It is an open-strip.
+The metal electrode on the surface
+is short-circuited
+and becomes short-strip,
+or the whole surface is covered
+with metal and grounded.
+Every situation
+will show that
+their Tcf is different.
+In particular,
+in the two cases,
+open-strip and short-strip,
+the mechanical structure
+of these two cases
+has not changed.
+The difference is
+whether the Tcf of the metal electrode
+is grounded or not.
+It will also have a great impact
+on the Tcf of the metal electrode.
+In conclusion,
+when we deal with
+a material with
+high Tcf,
+we cannot ignore
+the Tcf of the metal electrode.
+To solve this problem,
+we use
+the so-called
+multi-section model.
+Since
+our goal is
+relatively simple,
+it is a deep wave
+that only circulates in one dimensional space.
+Therefore,
+we do not need to develop
+too complicated 3D analysis.
+We hope to
+transform
+such a complex structure
+with Tcf and metal
+into a
+multi-section model
+with Tcf
+and Tcf
+in different areas
+with different Tcf
+and Tcf
+in different areas
+with different Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+and Tcf
+We also found that
+in the case of
+하대기
+different areas
+require different models.
+For example,
+we divide the graph into three zones.
+The first zone
+is the free surface
+and the surface is open circuit.
+That is, the surface has no electric field.
+The second zone
+is the metal electrode
+on the surface
+and it gives a fixed voltage.
+It may be
+a small signal
+that is dc ground.
+Its condition will become
+a metallized surface
+and a short circuit
+boundary condition.
+The third zone is more complicated
+because it is between two electrodes
+and it will
+have a horizontal electric field
+between the two electrodes.
+So we guess
+when the metallization ratio
+is very high,
+we should think
+that the surface
+has no electric field
+and it is a free surface
+with a short circuit boundary.
+When the metal
+is very small
+and the two electrodes are
+very far away,
+maybe we should use
+the open circuit boundary
+to describe it.
+Based on this idea,
+we also use
+the method of
+finite element
+to simulate
+a thin film of
+lithium niobate
+to observe the temperature change
+and we can see
+that its result
+is quite similar
+to what we just guessed.
+When the wavelength
+is very long,
+it should be said
+that it will
+use the gap
+as a boundary
+of 2λ.
+When the wavelength
+is less than 2λ,
+we generally
+regard it as a short circuit
+and if it is larger,
+we regard it as
+an open circuit boundary.
+Based on this hypothesis,
+we can simulate
+the temperature coefficient
+under three different cases
+and then
+combine it
+with the mathematical formula
+we just introduced.
+Theoretically,
+we can predict
+the temperature coefficient
+of the uniformly distributed
+resistors.
+In order to
+do the experimental verification,
+we made
+two different resistors.
+The first one
+has a mechanical electrode
+and a capacitor.
+It can stimulate
+the magnetic field of the resistors.
+The second one
+has a capacitor and a capacitor
+to stimulate the magnetic field
+of the capacitors.
+I have an idea.
+Sorry.
+Will it be published?
+Well,
+you give it
+a DC bias,
+VIN,
+and GND.
+Then you use the
+SIO2 to
+hold the material
+you want.
+If you give it
+a DC current,
+it will push
+each other away.
+If you give it
+a DC current,
+it will push
+each other away.
+If you give it
+a DC current,
+it will push
+each other away.
+Then you can use
+the electrodes to
+hold the substrate.
+You can use
+the DC current
+to resist
+the temperature coefficient.
+Is it feasible?
+Let me think about it.
+The DC current
+is from the VIN, right?
+Yes.
+I didn't say that.
+I made a mistake.
+The two pictures
+are the experimental
+components.
+The picture on the left
+has three electrodes.
+Because it has
+a capacitive electrode,
+it is suitable to
+stimulate the osmosis.
+The picture on the right
+has two electrodes,
+but it is arranged
+as an array.
+The array
+doesn't affect
+the temperature coefficient.
+We use the array
+to connect
+all the electrodes
+to enhance the output signal
+for easy observation.
+Then we can
+process the components.
+First of all,
+we take a lithium-niobate wafer
+and
+use a low-temperature
+layer of
+oxidized gas
+on the surface.
+We use the exposure
+to define the
+assembly shape of the components.
+Then we use
+a dry-etching method
+to remove
+lithium-niobate and
+silicon oxide at the same time.
+The dry-etching
+mainly uses
+some gas from the filter,
+which has a stronger
+activity relationship
+to successfully remove
+these two materials.
+After the assembly
+of the components is completed,
+another exposure
+is used
+to apply
+the metal electrode
+using the lift-off method.
+Finally, we use the
+XF2 gas
+to remove
+the silicon oxide
+at the bottom
+to make the components.
+As you can see,
+there are two cuts
+around the components.
+These two lines
+not only define
+the area around the components
+with darker brown color,
+but also the area
+where the silicon oxide
+is removed.
+In the experiment,
+we measured
+two different
+electrode components.
+First of all,
+two electrode devices
+will trigger
+1,3,5,7,9 and so on.
+Due to the high-strength
+silicon oxide,
+it also produces
+a lot of free smoke,
+so we don't
+specifically discuss
+those electrodes.
+We only discuss
+the first three
+electrodes of each design.
+For this device,
+its Q is 450,
+KT2 is 5.5
+for free smoke,
+and TCF can also
+be used.
+Its displacement
+and shear stress
+are different,
+but its electrode
+won't change with the mode.
+So,
+these different modes
+also have different
+temperature factors.
+We can also observe
+similar phenomena
+from these three electrode devices.
+We trigger the so-called
+Q, which is around
+1,000 or 3,000,
+KT2 is around 12%
+for free smoke,
+and its three
+temperature factors are also different.
+According to the previous theory,
+we can calculate
+its
+theoretical temperature factor
+and compare it with the experiment.
+What we can see
+is that
+the simulation of model
+and finite element are quite similar.
+Their error is less than 1%,
+but compared with the measurement,
+the error is around
+3%.
+Although
+the expected result
+is slightly worse than
+the expected result,
+I think
+its accuracy
+can be used
+to design more detailed components.
+Or,
+we don't need to rely on
+finite element before
+actually making the components.
+We can directly calculate
+the value of our temperature factor
+to assist designers
+in the design of
+compressors and filters.
+This is the conclusion.
+We use some methods
+to calculate its temperature factor,
+and
+its error is quite small
+compared with the previous theory.
+The second case is
+the research I did
+after I came back to Taiwan.
+The main reason is that
+we encountered
+a big problem
+in the production of components.
+It was found in the
+Lillian Nile Basin Fin Action.
+The RF power required
+for this action
+is quite large,
+about 800-900W.
+Generally speaking,
+there is not much RF power
+in the Lillian Nile Basin Fin Action,
+because the RF power
+is quite old.
+So,
+before we start
+the research on
+RF components,
+we need to
+pull back our research
+to see the effect.
+At the same time,
+we hope to solve
+the problem of
+thermal conductivity.
+The thermal conductivity problem
+of LN-SINFIN device
+mainly comes from two reasons.
+The first one is
+the high temperature factor,
+and the second one is
+the poor thermal conductivity.
+So, when you drive
+with high power,
+you will find that
+the frequency starts to decrease
+near the rectifier.
+So, when the temperature
+changes,
+the frequency starts to change.
+Therefore,
+if there is no good thermal conductivity,
+the frequency will
+decrease
+as you drive
+with higher power.
+So, there will be
+a non-thermal phenomenon.
+If there is a non-thermal phenomenon
+in the rectifier,
+it means that
+there will be a non-thermal phenomenon
+in the rectifier itself,
+which may cause
+a distortion
+when the signal is transmitted,
+or even increase
+the error rate
+of the code, etc.
+So, in order to
+solve this problem,
+there is a group of
+ideas that
+we can come back
+and use the concept of SOHL
+to bind the LN synth
+to a substrate
+with a block reflector.
+We can use
+these reflectors
+to virtually
+create a floating resonator
+that can
+reproduce the
+sound wave reflection
+characteristics.
+In fact, it is directly
+bound to the board.
+If it is directly
+bound to the board,
+it can actually
+enhance the efficiency of
+heat transfer,
+so that it can theoretically
+solve the problem of
+temperature non-thermal.
+In fact, this idea
+already had a series of
+patents in 2004 and 2009,
+but it has not been
+developed well.
+Mainly because
+there was not enough technology
+to produce LN synths.
+However, it has become possible
+in recent years,
+so this also forms
+a new research direction.
+In particular,
+there are two professors
+from the University of
+Tokyo, Japan,
+Michio Katota and
+Shuji Tanaka.
+They use
+the structure of
+LN synths.
+They successfully demonstrated
+that even if it is a
+SO type resonator,
+my coupling can also be
+greater than 40% and
+operate at high frequency.
+It is like the
+newly introduced
+release synth
+resonator.
+I don't release it,
+but I bound it to
+the sound wave reflection layer
+with a very strong boundary.
+It can be seen as a
+release component.
+The same design concept
+was also adopted by the company.
+Murata called it
+IHP-SOL,
+Incredible High Performance-SOL.
+Through some
+designs,
+its coupling
+can be maintained at
+about 9%.
+Mainly, the company uses
+a relatively low coupling,
+but its Q can be greater than 3000.
+Murata's idea is
+that they don't want to
+use so many layers of reflectors.
+For example, it needs
+two materials,
+silicon oxide and
+aluminum nitrate,
+to stack five or six layers
+to make this reflector.
+From the perspective of the company,
+this design method is not economical,
+so they hope to use
+a single silicon oxide layer
+as the simplest
+reflector.
+In fact,
+they have observed
+a pretty good effect,
+because it raises the Q
+to more than 3000.
+Based on this idea,
+at least
+at this stage
+of my investment,
+no one has discussed
+Synthene Lithium Niobate
+on silicon oxide
+on silicon.
+So,
+we raise the Q
+to this level.
+The wafers we use
+are silicon
+500μm,
+silicon oxide 2μm,
+and the transfer Ln
+is 0.7μm.
+We hope
+to use the so-called
+shear horizontal sole.
+Its wave motion
+is like the picture on the right.
+It is a cut wave on the surface,
+so its motion
+will decrease rapidly
+in the substrate.
+So, we think it has a chance
+to become a high-Q,
+high-coupling model.
+By inserting a layer of
+oxide between
+Synthene Ln and silicon substrate,
+it should be able to effectively
+reduce the leakage
+to the substrate.
+For this structure,
+we study
+its propagation direction.
+We use the Final Element
+to simulate
+its wave distribution
+at different thickness
+of lithium niobate
+when it is
+propagated on the
+two-dimensional plane.
+By
+setting the surface
+of the crystal
+as open
+or short-circuit condition,
+based on the
+so-called
+outerless approach,
+we can calculate
+the size of
+its base
+lithium niobate.
+So,
+we can see that
+the SH sole
+has a very large
+difference in coupling.
+In order to get the highest coupling,
+the propagation direction
+will be selected
+at the angle of
+10 degrees
+backward on the y-axis.
+By combining
+the simulation results
+at different thicknesses
+of lithium niobate,
+we can also find that
+its lithium niobate
+is also a
+design parameter that
+we can control.
+After understanding the
+propagation direction,
+we start to study
+its dispersion behavior.
+It can be seen that
+when there is no electric shock
+on the surface,
+such as the previous situation,
+when the thickness of lithium niobate
+is greater than 0.15,
+the coupling will
+decrease.
+This situation is
+quite similar to
+the plate wave of SH0.
+That is to say,
+the dotted line above
+and the purple dotted line
+below
+have a similar
+coupling reduction mode.
+However,
+we also find that
+when we apply some electric shock
+on the surface,
+especially the heavier metal,
+the higher the rate of increase.
+Similarly,
+through simulation observations,
+we find that
+when the metal on the surface
+is heavier,
+it can actually help
+the horizontal wave
+to concentrate
+the strain energy
+on the surface.
+Since most of the strain energy
+is concentrated in the opaque layer,
+it has a chance
+to get a higher coupling.
+That is to say,
+when the thickness
+of the metal electrode
+is limited,
+we should use
+the heavier metal
+to design
+to get a higher coupling.
+For example,
+this is a comparison
+between gold and aluminum.
+It can be seen that
+when the thickness of gold
+is 0.025 lambda,
+it can actually
+increase the coupling to 40%.
+However,
+aluminum, which is a lighter material,
+needs a thicker electrode
+to achieve a similar effect.
+The last part
+is to discuss
+the impact of different modes.
+Since
+we want to use SH
+as a target,
+we compare SH
+and Longitudinal Leaky Soul
+to see
+what is the difference
+between the two modes.
+Through analysis,
+it can be found that
+SH Soul is more likely
+to be affected
+by the two-layer structure
+of lithium niobate and silicon arsenide.
+However, Leaky Soul
+has a larger position
+than SH Soul,
+which means that
+its wave is more likely
+to be lost by substrate transmission.
+Therefore,
+it can be seen that
+the impedance ratio
+of Leaky Soul
+is about 20-30 dB higher
+than that of SH Soul.
+Therefore,
+it is not a good choice.
+Finally,
+in order to verify
+the effect of SH Soul,
+we use the
+OnePort single-layer
+SH Soul resonator
+with traditional IDT electrode
+and grating reflector.
+However,
+unlike the traditional one,
+we use a
+Synthene-Lithium Niobate
+on silicon arsenide
+on silicon
+as a reference point.
+This is the
+one-port single-layer
+SH Soul resonator.
+In addition,
+SH Soul has a
+smaller position
+than SH Soul,
+which means
+that
+its wave
+leakage is
+relatively small.
+Therefore,
+its wave
+leakage is
+relatively small.
+The picture in the lower right corner
+is the actual
+picture of the component.
+In this picture,
+its wave length is 8 microns.
+Finally,
+this is the result of the experiment.
+We selected
+3 different components,
+Lambda,
+8, 6, and 4 microns
+to compare.
+It can be seen that
+the difference in Q
+is relatively large.
+Here we use
+the definition of body Q,
+which is to use its group delay
+and its S11
+to calculate its Q value.
+Its definition of Q is
+similar to the traditional one,
+but through a new formula,
+which is the formula of body Q,
+it can equalize
+every Q value
+on this resonance scale,
+and it can be seen that
+the highest Q value
+of the resonator
+we designed
+is about 960,
+and the carbon
+is about 25.5%.
+Therefore,
+FOM is about 245.
+Compared with the traditional
+F-bar resonator,
+its performance indicator
+is between 100 and 200.
+Therefore,
+more than 200
+indicates that
+the component we designed
+has a certain performance.
+At least,
+it may outperform
+some low-performance
+F-bar components.
+We also
+measured
+the power handling
+of this resonator.
+It can be seen
+that
+compared with
+the previously released
+SYNFIN
+lithium-ion battery components,
+this SO-TYPE
+resonator
+does not have
+any significant
+fluctuation
+after 10 dBm RF power.
+Therefore,
+it can be further verified
+that when I use
+SO-TYPE components,
+it can dissipate heat
+through the base plate,
+which can greatly improve
+the power handling problem.
+At the same time,
+we also used the combination
+of different thicknesses
+of L-N and C-NR
+to get a higher
+capacitance coefficient
+of more than 36%,
+but its Q is reduced
+to about 250.
+This is a prediction
+from the metal we used.
+Due to the
+absorption of
+the acoustic of the metal,
+it is actually much
+stronger than aluminum.
+In other words,
+the loss of the metal
+is much greater than that
+of aluminum,
+which is about 4-5 times higher.
+Therefore, we estimate
+that the Q of the components
+is the effect of the metal electrode.
+However, this still needs further verification.
+Through such a high-coupling
+resonator,
+its coupling is about 38%-35%,
+we can use
+such a resonator
+to synthesize the filter.
+We used five
+resonators to synthesize
+the filter,
+and in the software,
+we made it
+sound
+and input
+and output matching.
+We can find that
+we can potentially
+increase the frequency to 29%,
+and the insertion loss is less than
+the standard 3dB.
+This also verifies that
+the higher the coupling of
+my resonator,
+we will have the opportunity to
+make a wider filter to meet
+the growing needs of
+5G communication.
+So this is my
+second part of the conclusion.
+We used
+Synthene Lithium Niobate
+on Substrate to
+make the SOHL components.
+We can increase the coupling
+to more than 20% or 30%,
+and the Q can be nearly 1000.
+And we also
+verified that
+using these high-coupling devices,
+we have the opportunity to get
+a very large filter
+and the insertion loss
+can also meet the needs of
+communication.
+The loss will be less than 3dB.
+In the future,
+we hope to
+improve our
+manufacturing capacity
+and make the frequency
+higher.
+In addition to
+our manufacturing capacity,
+we will also need
+to find
+more interesting models
+to support our research.
+Finally,
+of course,
+there is a projection.
+Lithium Niobate
+is a very strong
+supply material.
+It also has a very interesting
+optical feature,
+but I don't understand this part.
+Now there are also several more
+well-known groups
+to invest and research
+acoustic optical devices.
+For example, Stanford
+and Harvard have
+some teams
+to discuss this.
+Finally, I would like to
+thank my founding
+research, my students,
+and my ex-bosses.
+My report ends here.
+Thank you.
+OK, thank you Ming-Huang for
+bringing us such a wonderful speech.
+Let me see
+if anyone has any questions.
+If you do,
+please turn on your microphone
+or leave your question
+in the chat dialog.
+I can help you ask Ming-Huang.
+I want to ask
+a question.
+Can you hear me?
+Yes.
+Hello, my name is Shreff.
+I am a PhD student
+at Taitung University.
+I have read
+several of your papers.
+Previously,
+Rob Candler
+from UCLA
+came to visit.
+I worked with him
+at that time.
+However,
+I was doing
+fieldwork.
+The papers you wrote
+were about piezoelectric radiation.
+Now,
+I am also working on this.
+I am glad
+to hear
+your speech today.
+It is rare
+to find such advanced research in China.
+For example,
+there should be
+no manufacturers
+in Taiwan.
+Yes.
+I don't know
+if there are any
+in Taiwan,
+but there should be none.
+I have read
+your papers.
+For example,
+piezoelectric radiation
+is done by UCLA
+and Northeastern.
+Piezoelectric radiation
+is done by piezoelectric
+and magnetic materials.
+It is a big topic.
+I want to know
+the difference between
+piezoelectric radiation
+and magnetic materials.
+I think
+there are many
+deep
+physical phenomena
+to discuss.
+When we were
+implementing the AMIBA project,
+our main competition
+was a Stanford group.
+Their papers were published
+earlier than ours
+in Nature Communication.
+You can read it.
+They used a stick-shaped lithium-ion battery.
+It should be
+8 or 10 cm long.
+It was a
+metal stick.
+They used
+some suspension
+to float it in the air
+and make it vibrate
+to radiate electromagnetic waves.
+There were
+several difficulties
+that they didn't overcome.
+First,
+the surface of the battery
+was exposed
+to electromagnetic radiation
+near the electrode.
+It means
+the battery
+lost a lot of energy.
+Second,
+its Q was too high.
+I think it was
+between 100,000 and 1 million.
+It ran down very slowly.
+It seemed
+that such a system
+was not suitable
+for communication.
+It took a long time
+to go from 1 to 0.
+So they could only
+use frequency modulation.
+Frequency modulation
+may also be affected
+by its high Q.
+If you are interested,
+I think you can read
+their papers.
+We decided to use
+PZT later.
+We found a PZT manufacturer
+that could provide
+high-quality buck PZT.
+Its Q was over 1,000.
+It was very rare.
+We used PZT.
+But PZT had its own problem.
+Its dielectric constant was too high.
+So it
+had almost no so-called
+field-to-field effect.
+It went from the moment
+it left Resonator
+to its original state.
+But I think
+PZT was not suitable
+for communication.
+Especially for measuring.
+We measured it for a month or two.
+But we found
+that it was wrong.
+Actually,
+I used
+Urban Nitride.
+But I asked
+UCL to make it.
+They measured
+the resistance
+of the resistor.
+So we couldn't measure anything.
+PZT is made of
+resin material.
+So it's not that easy.
+Yes.
+I saw
+they made
+some other
+alloy materials.
+Not PZT.
+Yes.
+In this field,
+you know
+they made
+PZT.
+They have a
+very strong
+material team in
+Northeast University.
+Otherwise,
+they are not
+specialized in materials.
+So I think
+it's not that easy.
+Another question
+about architecture.
+I don't have the answer yet.
+For example,
+they call it
+mechanical antenna.
+Mechanical antenna.
+You can find
+some articles
+about it.
+For example,
+about radiation efficiency
+and size,
+we talked about
+due limit.
+I read some articles
+that say
+mechanical antenna
+but I
+don't understand it.
+I don't understand it.
+Yes.
+When I was in the US,
+our boss
+told us about it.
+He thought it could
+go beyond the limit.
+He wanted us to write
+a theoretical paper.
+But later,
+he wanted to meet
+DAPA's schedule.
+So we just ignored it.
+It doesn't seem
+to have any new results.
+Yes.
+I'm not sure
+whether it can
+go beyond the limit.
+But I think
+we can calculate it
+from a theoretical point of view.
+It might be a great
+theoretical paper.
+But we thought
+we couldn't handle it.
+The last question
+is a small one.
+I'm curious.
+For example,
+when you simulate
+the design of
+multi-modem
+or two-sided,
+if it's complicated,
+how do you
+analyze it?
+Because you can't
+just recognize it.
+From simulation?
+I'll start from
+a so-called
+periodic session.
+I'll go back to the beginning.
+For example,
+with this IDT-type
+resonator,
+we mainly
+trigger some modes
+with a horizontal capacitor.
+These modes are
+non-linear.
+So we usually
+start with a
+periodic structure.
+The advantage of a periodic structure
+is that it won't be affected
+by the boundary.
+Its modes are beautiful.
+For example,
+with this A1 resonator,
+the upper part
+contains an electrode
+and its boundary simulation.
+The lower part
+contains an electrode.
+So I don't have a boundary.
+You can clearly recognize
+that this is A1 mode.
+With this simulation,
+you can roughly
+grasp the position of
+resonance frequency
+and the shape of
+its mode.
+Then you can do a complete simulation.
+Then you can probably
+find out from the comparison
+of frequency.
+Basically, they are the same.
+Then you can easily
+find the corresponding mode.
+This is my own approach.
+If you do a complete
+device simulation,
+you may not
+think that
+this is the mode you want to design.
+When I was doing
+research,
+I would simulate
+a Bach resonator.
+Sometimes its mode
+is quite complicated.
+If I do a very simple simulation,
+it will be difficult to identify
+whether it is the mode I want to design.
+If you use eigenfrequency,
+it will be more complicated.
+Because eigenfrequency lists
+all possible mechanical modes.
+So I would suggest that
+when you confirm your electrode configuration,
+you can do frequency sweeping.
+This is the so-called frequency
+response simulation.
+Although many mechanical modes
+exist,
+they can't be triggered by your electrode.
+They can't be received by your electrode.
+So many modes will disappear.
+Only a few
+are enough
+to be received
+by these electrodes.
+In this way,
+you can reduce a large part of
+the work.
+Thank you for your answer.
+I am also working on
+this field now.
+It is a difficult topic.
+I hope to have more opportunities
+to communicate in the future.
+If there is a chance,
+you can
+write an email to me
+or make an appointment
+to discuss.
+Thank you.
+Due to time constraints,
+today's speech ends here.
+You can turn on your microphone.
+Let's applaud
+Professor Ming-Huang's
+wonderful speech.
+Professor Ming-Huang's background
+is well known.
+If you want to get his email,
+you can easily
+search on the Internet.
+If you have any other questions,
+you can write to
+Professor Ming-Huang and ask him.
+Let's applaud
+Professor Ming-Huang's speech.
+Thank you.

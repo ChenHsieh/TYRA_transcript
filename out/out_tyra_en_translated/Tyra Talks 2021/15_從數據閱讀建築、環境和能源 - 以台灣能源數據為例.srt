@@ -1,0 +1,6964 @@
+1
+00:00:00,000 --> 00:00:11,000
+Hello, everyone. Thank you for coming to Project Terra. I'm your host, Su-Yi-An.
+
+2
+00:00:11,000 --> 00:00:13,000
+I'm your host, Hu-Jun-Wei.
+
+3
+00:00:13,000 --> 00:00:21,000
+I'm delighted to be joined by Fu-Chun to give us a presentation.
+
+4
+00:00:21,000 --> 00:00:28,000
+The topic is Data, Reading, Architecture, Environment and Energy, using Taiwan's energy data as an example.
+
+5
+00:00:28,000 --> 00:00:33,000
+Later on, I'll talk about today's process.
+
+6
+00:00:33,000 --> 00:00:38,000
+Later on, I'll talk about today's process.
+
+7
+00:00:38,000 --> 00:00:43,000
+Today's presentation is hosted by Project Terra.
+
+8
+00:00:43,000 --> 00:00:46,000
+Later on, we'll record the entire presentation.
+
+9
+00:00:46,000 --> 00:00:52,000
+In other words, after the presentation, if you want to listen to it again or share it with your friends,
+
+10
+00:00:52,000 --> 00:00:57,000
+you can go to Project Terra's website to view today's recording.
+
+11
+00:00:57,000 --> 00:01:03,000
+During the presentation, if you have any questions,
+
+12
+00:01:03,000 --> 00:01:12,000
+you're welcome to raise your hand or ask your question in the chat.
+
+13
+00:01:12,000 --> 00:01:18,000
+The hosts will monitor your questions and talk to the speakers.
+
+14
+00:01:18,000 --> 00:01:23,000
+If you have a bigger or more complicated question,
+
+15
+00:01:23,000 --> 00:01:27,000
+we'll have an open Q&A session at the end of the presentation.
+
+16
+00:01:27,000 --> 00:01:31,000
+Please feel free to ask your questions.
+
+17
+00:01:31,000 --> 00:01:35,000
+That's about it for today's presentation.
+
+18
+00:01:35,000 --> 00:01:40,000
+Now, let's have another host, Hu-Jun-Wei, to introduce today's speaker, Fu-Chun.
+
+19
+00:01:41,000 --> 00:01:42,000
+Hello, everyone.
+
+20
+00:01:42,000 --> 00:01:50,000
+Fu-Chun is a Ph.D. student at the University of Singapore, NUS.
+
+21
+00:01:50,000 --> 00:01:58,000
+He is currently studying architecture and urban data science in the University of Singapore.
+
+22
+00:01:58,000 --> 00:02:03,000
+His research focuses on the application of large data related to architecture,
+
+23
+00:02:03,000 --> 00:02:09,000
+including architectural energy, indoor environment comfort, and architectural IoT data, etc.
+
+24
+00:02:09,000 --> 00:02:13,000
+At the same time, he is also doing some community activities in the lab.
+
+25
+00:02:13,000 --> 00:02:20,000
+For example, he held an energy prediction competition at the well-known data platform Kaggle the year before last,
+
+26
+00:02:20,000 --> 00:02:26,000
+and provided data science courses to the public in an open platform course, EDS.
+
+27
+00:02:27,000 --> 00:02:30,000
+Interestingly, before Fu-Chun was a Ph.D. student,
+
+28
+00:02:30,000 --> 00:02:37,000
+he worked as a three-year data scientist at a Taiwanese innovation company,
+
+29
+00:02:37,000 --> 00:02:39,000
+Knowledge Analysis Based Exploration,
+
+30
+00:02:39,000 --> 00:02:43,000
+and was committed to the development of large data related to architecture,
+
+31
+00:02:43,000 --> 00:02:49,000
+including the detection of labor abnormalities, energy prediction, and data visualization, etc.
+
+32
+00:02:49,000 --> 00:02:54,000
+In addition, he is also involved in the development of artificial intelligence services
+
+33
+00:02:54,000 --> 00:02:57,000
+and energy data analysis of the Taipei City Government.
+
+34
+00:02:57,000 --> 00:03:05,000
+Today, Fu-Chun will focus more on issues related to food in the industry.
+
+35
+00:03:05,000 --> 00:03:10,000
+In today's speech, he will talk about the academic development of energy prediction,
+
+36
+00:03:10,000 --> 00:03:15,000
+and finally share how to work with open data to do energy prediction.
+
+37
+00:03:15,000 --> 00:03:17,000
+Let's welcome Fu-Chun.
+
+38
+00:03:20,000 --> 00:03:22,000
+Can you hear me?
+
+39
+00:03:22,000 --> 00:03:24,000
+Yes, we can.
+
+40
+00:03:24,000 --> 00:03:25,000
+Great.
+
+41
+00:03:25,000 --> 00:03:31,000
+Next, let me play my video.
+
+42
+00:03:33,000 --> 00:03:39,000
+Today's topic is data reading, architecture, environment, and energy,
+
+43
+00:03:39,000 --> 00:03:41,000
+based on Taiwan energy data.
+
+44
+00:03:41,000 --> 00:03:46,000
+This speech is mainly about architecture data prediction models,
+
+45
+00:03:46,000 --> 00:03:49,000
+as well as the introduction of related open data.
+
+46
+00:03:49,000 --> 00:03:51,000
+At the end of the speech,
+
+47
+00:03:51,000 --> 00:03:54,000
+I will use the open data provided by Taipei Electric Power Corporation,
+
+48
+00:03:54,000 --> 00:03:56,000
+and the weather forecast provided by the Meteorological Bureau,
+
+49
+00:03:56,000 --> 00:03:58,000
+to cooperate with the model of machine learning,
+
+50
+00:03:58,000 --> 00:04:01,000
+to make an energy prediction service that can predict the future.
+
+51
+00:04:01,000 --> 00:04:04,000
+I hope the difficulty of today's speech is not too high.
+
+52
+00:04:04,000 --> 00:04:05,000
+The main thing is to let everyone know
+
+53
+00:04:05,000 --> 00:04:09,000
+how to apply data science in human resources or architecture.
+
+54
+00:04:09,000 --> 00:04:14,000
+I hope everyone can get to know more about open data
+
+55
+00:04:14,000 --> 00:04:16,000
+and how to do these things.
+
+56
+00:04:18,000 --> 00:04:19,000
+OK.
+
+57
+00:04:23,000 --> 00:04:25,000
+This is my basic self-introduction.
+
+58
+00:04:25,000 --> 00:04:27,000
+I am a Ph.D. student at INU-S.
+
+59
+00:04:27,000 --> 00:04:30,000
+I graduated from Shenzhen University of Technology,
+
+60
+00:04:30,000 --> 00:04:35,000
+and I had three years of experience as a data scientist before I got my Ph.D.
+
+61
+00:04:35,000 --> 00:04:39,000
+This also allows me to focus on the problems in the industry
+
+62
+00:04:39,000 --> 00:04:42,000
+during my Ph.D. career.
+
+63
+00:04:43,000 --> 00:04:45,000
+This is what I just said.
+
+64
+00:04:45,000 --> 00:04:49,000
+We have been doing some community-related things.
+
+65
+00:04:49,000 --> 00:04:51,000
+For example, in the Cargo Competition,
+
+66
+00:04:51,000 --> 00:04:54,000
+if you are playing this kind of data science competition,
+
+67
+00:04:54,000 --> 00:04:56,000
+this is the most famous competition at present.
+
+68
+00:04:56,000 --> 00:04:59,000
+We have held an energy prediction competition on it.
+
+69
+00:04:59,000 --> 00:05:01,000
+In addition, we also have some open data.
+
+70
+00:05:01,000 --> 00:05:03,000
+I put it in Cargo.
+
+71
+00:05:03,000 --> 00:05:05,000
+Cargo not only holds competitions,
+
+72
+00:05:05,000 --> 00:05:07,000
+but also provides an open data platform
+
+73
+00:05:07,000 --> 00:05:10,000
+for everyone to upload data and play together.
+
+74
+00:05:10,000 --> 00:05:14,000
+In addition, we also have OpenCourse on EDX.
+
+75
+00:05:14,000 --> 00:05:18,000
+It is mainly about construction, architecture, and engineering.
+
+76
+00:05:18,000 --> 00:05:20,000
+It is about building data,
+
+77
+00:05:20,000 --> 00:05:24,000
+including indoor humidity, CO2, and energy.
+
+78
+00:05:24,000 --> 00:05:28,000
+How to use some Python programs
+
+79
+00:05:28,000 --> 00:05:30,000
+to process these data,
+
+80
+00:05:30,000 --> 00:05:33,000
+and how to build a simple machine learning model.
+
+81
+00:05:33,000 --> 00:05:35,000
+Its difficulty is very simple.
+
+82
+00:05:35,000 --> 00:05:37,000
+Even people who don't have much programming experience
+
+83
+00:05:37,000 --> 00:05:39,000
+can take this course.
+
+84
+00:05:39,000 --> 00:05:42,000
+You don't need to have professional knowledge in architecture.
+
+85
+00:05:42,000 --> 00:05:44,000
+As long as you want to learn
+
+86
+00:05:44,000 --> 00:05:48,000
+how to use Python in the scientific field
+
+87
+00:05:48,000 --> 00:05:50,000
+or in some simple data processing,
+
+88
+00:05:50,000 --> 00:05:53,000
+I think this course is quite suitable.
+
+89
+00:05:53,000 --> 00:05:55,000
+This is today's agenda.
+
+90
+00:05:55,000 --> 00:05:59,000
+Because today's topic is mainly energy prediction,
+
+91
+00:05:59,000 --> 00:06:02,000
+we will spend some time reviewing
+
+92
+00:06:02,000 --> 00:06:04,000
+past energy prediction models and methods.
+
+93
+00:06:04,000 --> 00:06:07,000
+Next, we will use Cargo Competition
+
+94
+00:06:07,000 --> 00:06:09,000
+energy prediction competition as an example.
+
+95
+00:06:09,000 --> 00:06:13,000
+How do people predict energy?
+
+96
+00:06:13,000 --> 00:06:16,000
+What strategy do data scientists use
+
+97
+00:06:16,000 --> 00:06:19,000
+to accurately predict energy?
+
+98
+00:06:19,000 --> 00:06:22,000
+Next is Project Study.
+
+99
+00:06:22,000 --> 00:06:25,000
+We will use Taiwan's open energy data
+
+100
+00:06:25,000 --> 00:06:27,000
+to do a simple experiment
+
+101
+00:06:27,000 --> 00:06:29,000
+to see how it works.
+
+102
+00:06:29,000 --> 00:06:32,000
+Finally, we will introduce some interesting open data sets.
+
+103
+00:06:32,000 --> 00:06:35,000
+It is mainly about Taiwan's weather,
+
+104
+00:06:35,000 --> 00:06:38,000
+or open data sets related to holidays.
+
+105
+00:06:40,000 --> 00:06:41,000
+First of all,
+
+106
+00:06:41,000 --> 00:06:43,000
+I would like to let you feel
+
+107
+00:06:43,000 --> 00:06:47,000
+what the energy trend looks like.
+
+108
+00:06:47,000 --> 00:06:48,000
+This is a year,
+
+109
+00:06:48,000 --> 00:06:52,000
+from January 2017 to the end of the year.
+
+110
+00:06:52,000 --> 00:06:54,000
+This is an actual electricity meter
+
+111
+00:06:54,000 --> 00:06:56,000
+obtained from a campus in Taiwan.
+
+112
+00:06:56,000 --> 00:06:58,000
+First, I would like to let you observe
+
+113
+00:06:58,000 --> 00:07:01,000
+what is special about this electricity meter.
+
+114
+00:07:02,000 --> 00:07:07,000
+First, we can zoom in here.
+
+115
+00:07:07,000 --> 00:07:10,000
+You can see that after zooming in,
+
+116
+00:07:10,000 --> 00:07:12,000
+you can see some trends.
+
+117
+00:07:12,000 --> 00:07:14,000
+Because it collects data every hour,
+
+118
+00:07:14,000 --> 00:07:15,000
+so you can see that
+
+119
+00:07:15,000 --> 00:07:19,000
+a day is actually a profile like this.
+
+120
+00:07:19,000 --> 00:07:20,000
+It will have a peak,
+
+121
+00:07:20,000 --> 00:07:21,000
+which is around noon.
+
+122
+00:07:21,000 --> 00:07:24,000
+So you can see that the first pattern
+
+123
+00:07:24,000 --> 00:07:26,000
+is actually a weekly pattern.
+
+124
+00:07:26,000 --> 00:07:28,000
+It is weekly.
+
+125
+00:07:29,000 --> 00:07:33,000
+1 to 5 is actually a fixed working pattern.
+
+126
+00:07:33,000 --> 00:07:35,000
+It is high at noon and low at night.
+
+127
+00:07:35,000 --> 00:07:36,000
+But there is no one on the 6th,
+
+128
+00:07:36,000 --> 00:07:39,000
+so the peak is a little lower.
+
+129
+00:07:52,000 --> 00:07:54,000
+The next pattern is vocation.
+
+130
+00:07:55,000 --> 00:07:58,000
+1 to 5 is very low.
+
+131
+00:07:58,000 --> 00:08:00,000
+That's because it's the Chinese New Year.
+
+132
+00:08:00,000 --> 00:08:02,000
+It's the time of the lunar new year,
+
+133
+00:08:02,000 --> 00:08:04,000
+so the energy is relatively low.
+
+134
+00:08:04,000 --> 00:08:06,000
+In addition, there is a seasonal trend.
+
+135
+00:08:06,000 --> 00:08:09,000
+In the summer or hot weather,
+
+136
+00:08:09,000 --> 00:08:10,000
+the energy is relatively high.
+
+137
+00:08:10,000 --> 00:08:12,000
+In the winter or cold weather,
+
+138
+00:08:12,000 --> 00:08:13,000
+the energy is relatively low.
+
+139
+00:08:13,000 --> 00:08:14,000
+This is normal
+
+140
+00:08:14,000 --> 00:08:15,000
+because Taiwan is a country
+
+141
+00:08:15,000 --> 00:08:16,000
+that focuses on heat.
+
+142
+00:08:16,000 --> 00:08:18,000
+Most of us don't have heaters,
+
+143
+00:08:18,000 --> 00:08:19,000
+so in winter,
+
+144
+00:08:19,000 --> 00:08:21,000
+the energy is relatively low.
+
+145
+00:08:22,000 --> 00:08:25,000
+So this is our first and simplest model.
+
+146
+00:08:25,000 --> 00:08:27,000
+It is also a more classic model.
+
+147
+00:08:27,000 --> 00:08:30,000
+It is a TOWT model
+
+148
+00:08:30,000 --> 00:08:32,000
+proposed by Lawrence Berkeley National Lab.
+
+149
+00:08:32,000 --> 00:08:35,000
+TOW stands for Time of Week.
+
+150
+00:08:35,000 --> 00:08:36,000
+That is to say,
+
+151
+00:08:36,000 --> 00:08:39,000
+if we take the number of hours of a week
+
+152
+00:08:39,000 --> 00:08:41,000
+as X-axis and draw it out,
+
+153
+00:08:41,000 --> 00:08:43,000
+the energy is actually 365 days.
+
+154
+00:08:43,000 --> 00:08:45,000
+If you put it on this graph,
+
+155
+00:08:45,000 --> 00:08:46,000
+you can see that 1 to 5
+
+156
+00:08:46,000 --> 00:08:48,000
+is actually very regular,
+
+157
+00:08:48,000 --> 00:08:50,000
+which is higher during the day.
+
+158
+00:08:50,000 --> 00:08:53,000
+It is relatively low at night.
+
+159
+00:08:53,000 --> 00:08:54,000
+So we have several variables.
+
+160
+00:08:54,000 --> 00:08:56,000
+The first one is the time of week.
+
+161
+00:08:56,000 --> 00:08:57,000
+The second variable is what I just said.
+
+162
+00:08:57,000 --> 00:08:59,000
+It actually has something to do
+
+163
+00:08:59,000 --> 00:09:00,000
+with the temperature of the outside air.
+
+164
+00:09:00,000 --> 00:09:02,000
+So what we draw here
+
+165
+00:09:02,000 --> 00:09:03,000
+is the relationship
+
+166
+00:09:03,000 --> 00:09:06,000
+between temperature and energy.
+
+167
+00:09:06,000 --> 00:09:09,000
+But we also distinguish
+
+168
+00:09:09,000 --> 00:09:11,000
+whether it is occupied or unoccupied.
+
+169
+00:09:11,000 --> 00:09:12,000
+That is to say,
+
+170
+00:09:12,000 --> 00:09:13,000
+is there anyone or no one here?
+
+171
+00:09:13,000 --> 00:09:15,000
+But we can see that at night,
+
+172
+00:09:15,000 --> 00:09:17,000
+we will define it as the so-called no one.
+
+173
+00:09:17,000 --> 00:09:18,000
+During the day,
+
+174
+00:09:18,000 --> 00:09:20,000
+we will define it as the so-called someone.
+
+175
+00:09:20,000 --> 00:09:22,000
+So this division is actually very rough.
+
+176
+00:09:22,000 --> 00:09:24,000
+It may be according to what time to go to work,
+
+177
+00:09:24,000 --> 00:09:25,000
+what time to get off work,
+
+178
+00:09:25,000 --> 00:09:26,000
+and then cut it like this.
+
+179
+00:09:26,000 --> 00:09:27,000
+But when you cut it out,
+
+180
+00:09:27,000 --> 00:09:28,000
+you can see that
+
+181
+00:09:28,000 --> 00:09:29,000
+when it is occupied,
+
+182
+00:09:29,000 --> 00:09:31,000
+its trend is very obvious.
+
+183
+00:09:31,000 --> 00:09:32,000
+This is a
+
+184
+00:09:34,000 --> 00:09:35,000
+low-temperature
+
+185
+00:09:36,000 --> 00:09:37,000
+and high-temperature
+
+186
+00:09:38,000 --> 00:09:39,000
+transition.
+
+187
+00:09:39,000 --> 00:09:40,000
+Occupied is that it is
+
+188
+00:09:42,000 --> 00:09:43,000
+with regression.
+
+189
+00:09:43,000 --> 00:09:45,000
+It is actually a linear model.
+
+190
+00:09:45,000 --> 00:09:46,000
+That's it.
+
+191
+00:09:46,000 --> 00:09:48,000
+Basically, it is with
+
+192
+00:09:48,000 --> 00:09:49,000
+a linear model.
+
+193
+00:09:49,000 --> 00:09:50,000
+There will be a linear model.
+
+194
+00:09:50,000 --> 00:09:52,000
+Then it is related to temperature.
+
+195
+00:09:52,000 --> 00:09:54,000
+The return line of temperature here
+
+196
+00:09:54,000 --> 00:09:55,000
+is a
+
+197
+00:09:56,000 --> 00:09:58,000
+division to return.
+
+198
+00:09:58,000 --> 00:09:59,000
+Because in fact,
+
+199
+00:10:00,000 --> 00:10:03,000
+it is related to temperature.
+
+200
+00:10:03,000 --> 00:10:05,000
+If you call it out,
+
+201
+00:10:05,000 --> 00:10:06,000
+you will find that
+
+202
+00:10:06,000 --> 00:10:08,000
+cooling is actually related.
+
+203
+00:10:08,000 --> 00:10:10,000
+If in some Korean countries,
+
+204
+00:10:10,000 --> 00:10:12,000
+when your temperature is getting lower,
+
+205
+00:10:12,000 --> 00:10:13,000
+its energy will rise.
+
+206
+00:10:13,000 --> 00:10:15,000
+That's mainly because of heating.
+
+207
+00:10:16,000 --> 00:10:18,000
+It's a simple linear return.
+
+208
+00:10:18,000 --> 00:10:20,000
+So often you can
+
+209
+00:10:20,000 --> 00:10:22,000
+Of course, you can use a polynomial,
+
+210
+00:10:22,000 --> 00:10:24,000
+maybe two-dimensional or three-dimensional to beat.
+
+211
+00:10:24,000 --> 00:10:26,000
+Of course, you can also use a division.
+
+212
+00:10:26,000 --> 00:10:27,000
+Then again, if it is occupied,
+
+213
+00:10:27,000 --> 00:10:29,000
+there is no one.
+
+214
+00:10:29,000 --> 00:10:31,000
+Then it will be more like
+
+215
+00:10:31,000 --> 00:10:32,000
+using temperature to return.
+
+216
+00:10:32,000 --> 00:10:33,000
+It is a
+
+217
+00:10:33,000 --> 00:10:34,000
+single
+
+218
+00:10:34,000 --> 00:10:36,000
+one-dimensional
+
+219
+00:10:36,000 --> 00:10:37,000
+linear return.
+
+220
+00:10:37,000 --> 00:10:38,000
+Because at night,
+
+221
+00:10:38,000 --> 00:10:40,000
+it is usually simpler.
+
+222
+00:10:42,000 --> 00:10:44,000
+This is the result of the return.
+
+223
+00:10:44,000 --> 00:10:46,000
+In fact,
+
+224
+00:10:46,000 --> 00:10:48,000
+it can catch the profile.
+
+225
+00:10:48,000 --> 00:10:50,000
+It's just that sometimes the effect
+
+226
+00:10:50,000 --> 00:10:52,000
+is not so good in some details.
+
+227
+00:10:52,000 --> 00:10:53,000
+You can see some details
+
+228
+00:10:53,000 --> 00:10:54,000
+There will be a shock.
+
+229
+00:10:54,000 --> 00:10:56,000
+So its R-squared is about
+
+230
+00:10:56,000 --> 00:10:58,000
+less than 0.6.
+
+231
+00:10:58,000 --> 00:11:00,000
+The next one is a more traditional
+
+232
+00:11:00,000 --> 00:11:02,000
+physical model, thermal network.
+
+233
+00:11:02,000 --> 00:11:04,000
+It is basically the structure of the building.
+
+234
+00:11:04,000 --> 00:11:06,000
+There is heat melt, heat bamboo.
+
+235
+00:11:06,000 --> 00:11:07,000
+That is to say,
+
+236
+00:11:07,000 --> 00:11:09,000
+the temperature of the outside world
+
+237
+00:11:09,000 --> 00:11:11,000
+and the temperature inside
+
+238
+00:11:11,000 --> 00:11:12,000
+its temperature difference
+
+239
+00:11:12,000 --> 00:11:13,000
+will cause
+
+240
+00:11:13,000 --> 00:11:15,000
+its heat to be stored
+
+241
+00:11:15,000 --> 00:11:17,000
+in the wall.
+
+242
+00:11:17,000 --> 00:11:19,000
+Or it is said that it is
+
+243
+00:11:19,000 --> 00:11:21,000
+looking at the thickness of the wall
+
+244
+00:11:21,000 --> 00:11:23,000
+or its material.
+
+245
+00:11:23,000 --> 00:11:25,000
+Then decide how fast
+
+246
+00:11:25,000 --> 00:11:27,000
+it goes into the room.
+
+247
+00:11:27,000 --> 00:11:29,000
+So usually outside
+
+248
+00:11:29,000 --> 00:11:31,000
+For example, the surface temperature of the wall
+
+249
+00:11:31,000 --> 00:11:33,000
+and the surface temperature of the wall
+
+250
+00:11:33,000 --> 00:11:35,000
+in the room will have a
+
+251
+00:11:35,000 --> 00:11:36,000
+type.
+
+252
+00:11:36,000 --> 00:11:38,000
+In addition, the temperature difference
+
+253
+00:11:38,000 --> 00:11:40,000
+in the room will be relatively
+
+254
+00:11:40,000 --> 00:11:41,000
+slower.
+
+255
+00:11:41,000 --> 00:11:43,000
+So under this condition,
+
+256
+00:11:43,000 --> 00:11:45,000
+we will actually
+
+257
+00:11:45,000 --> 00:11:47,000
+make a building
+
+258
+00:11:47,000 --> 00:11:49,000
+all made up of heat melt and heat bamboo.
+
+259
+00:11:49,000 --> 00:11:51,000
+For example,
+
+260
+00:11:51,000 --> 00:11:53,000
+we may have
+
+261
+00:11:53,000 --> 00:11:55,000
+three heat bamboo
+
+262
+00:11:55,000 --> 00:11:57,000
+and two heat melt.
+
+263
+00:11:57,000 --> 00:11:59,000
+The outer wall or
+
+264
+00:11:59,000 --> 00:12:01,000
+internal mass
+
+265
+00:12:01,000 --> 00:12:03,000
+is a bit like an indoor furniture or an indoor wall.
+
+266
+00:12:03,000 --> 00:12:05,000
+The whole building can be done
+
+267
+00:12:05,000 --> 00:12:07,000
+in this way.
+
+268
+00:12:07,000 --> 00:12:09,000
+Its advantage is that it is very precise.
+
+269
+00:12:09,000 --> 00:12:11,000
+Its disadvantage is that you have to
+
+270
+00:12:11,000 --> 00:12:13,000
+decide how many heat melt and heat bamboo it has.
+
+271
+00:12:13,000 --> 00:12:15,000
+To be honest, this thing is not very simple.
+
+272
+00:12:15,000 --> 00:12:17,000
+The next one
+
+273
+00:12:17,000 --> 00:12:19,000
+is the machine learning
+
+274
+00:12:19,000 --> 00:12:21,000
+that we are more popular with now.
+
+275
+00:12:21,000 --> 00:12:23,000
+Here is an example of
+
+276
+00:12:23,000 --> 00:12:25,000
+LightGBM model.
+
+277
+00:12:25,000 --> 00:12:27,000
+Let's use this model to
+
+278
+00:12:27,000 --> 00:12:29,000
+make it.
+
+279
+00:12:29,000 --> 00:12:31,000
+The main advantage of this model is that
+
+280
+00:12:31,000 --> 00:12:33,000
+its computing speed is very fast and
+
+281
+00:12:33,000 --> 00:12:35,000
+its tuning is relatively simple.
+
+282
+00:12:35,000 --> 00:12:37,000
+So we usually use
+
+283
+00:12:37,000 --> 00:12:39,000
+this model
+
+284
+00:12:39,000 --> 00:12:41,000
+to do some competitions or some early tests
+
+285
+00:12:41,000 --> 00:12:43,000
+and so on.
+
+286
+00:12:43,000 --> 00:12:45,000
+Most of the participants
+
+287
+00:12:45,000 --> 00:12:47,000
+use this model
+
+288
+00:12:47,000 --> 00:12:49,000
+to do the cargo competition later.
+
+289
+00:12:49,000 --> 00:12:51,000
+The model here is actually
+
+290
+00:12:51,000 --> 00:12:53,000
+the time we just said.
+
+291
+00:12:53,000 --> 00:12:55,000
+It may be the number of hours in a day.
+
+292
+00:12:55,000 --> 00:12:57,000
+It is also a Sunday.
+
+293
+00:12:57,000 --> 00:12:59,000
+In addition, there is outdoor air temperature.
+
+294
+00:12:59,000 --> 00:13:01,000
+There are other IOTs
+
+295
+00:13:01,000 --> 00:13:03,000
+or META
+
+296
+00:13:03,000 --> 00:13:05,000
+or Lag Feature.
+
+297
+00:13:05,000 --> 00:13:07,000
+It can eat more parameters
+
+298
+00:13:07,000 --> 00:13:09,000
+than the linear model just now
+
+299
+00:13:09,000 --> 00:13:11,000
+to capture some more
+
+300
+00:13:11,000 --> 00:13:13,000
+detailed information.
+
+301
+00:13:17,000 --> 00:13:19,000
+In addition,
+
+302
+00:13:19,000 --> 00:13:21,000
+there are so many variables
+
+303
+00:13:21,000 --> 00:13:23,000
+we just mentioned.
+
+304
+00:13:23,000 --> 00:13:25,000
+For example, CO2 or
+
+305
+00:13:25,000 --> 00:13:27,000
+temperature
+
+306
+00:13:27,000 --> 00:13:29,000
+or weekday
+
+307
+00:13:29,000 --> 00:13:31,000
+or seasonal hours.
+
+308
+00:13:31,000 --> 00:13:33,000
+Which of these variables
+
+309
+00:13:33,000 --> 00:13:35,000
+is the most important?
+
+310
+00:13:35,000 --> 00:13:37,000
+The model of LightGBM can also tell us
+
+311
+00:13:37,000 --> 00:13:39,000
+that in the process of modeling,
+
+312
+00:13:39,000 --> 00:13:41,000
+we found that
+
+313
+00:13:41,000 --> 00:13:43,000
+the energy 24 hours ago
+
+314
+00:13:43,000 --> 00:13:45,000
+is the most important.
+
+315
+00:13:45,000 --> 00:13:47,000
+Then there is the outdoor temperature, etc.
+
+316
+00:13:47,000 --> 00:13:49,000
+It can tell you the importance of these parameters.
+
+317
+00:13:49,000 --> 00:13:51,000
+The importance is relatively low.
+
+318
+00:13:51,000 --> 00:13:53,000
+Maybe you can
+
+319
+00:13:53,000 --> 00:13:55,000
+get rid of it.
+
+320
+00:13:55,000 --> 00:13:57,000
+Of course,
+
+321
+00:13:57,000 --> 00:13:59,000
+some people will think that
+
+322
+00:13:59,000 --> 00:14:01,000
+the result of LightGBM
+
+323
+00:14:01,000 --> 00:14:03,000
+will be better than
+
+324
+00:14:03,000 --> 00:14:05,000
+the linear model just now.
+
+325
+00:14:05,000 --> 00:14:07,000
+It is less
+
+326
+00:14:07,000 --> 00:14:09,000
+detailed.
+
+327
+00:14:09,000 --> 00:14:11,000
+The score is 0.6.
+
+328
+00:14:11,000 --> 00:14:13,000
+Some people will think
+
+329
+00:14:13,000 --> 00:14:15,000
+that Neural Network
+
+330
+00:14:15,000 --> 00:14:17,000
+is another
+
+331
+00:14:17,000 --> 00:14:19,000
+popular method.
+
+332
+00:14:19,000 --> 00:14:21,000
+We often need to learn more about this method.
+
+333
+00:14:21,000 --> 00:14:23,000
+Indeed, this method
+
+334
+00:14:23,000 --> 00:14:25,000
+is often used in energy prediction.
+
+335
+00:14:25,000 --> 00:14:27,000
+Such as LSTM or RNN.
+
+336
+00:14:27,000 --> 00:14:29,000
+However,
+
+337
+00:14:29,000 --> 00:14:31,000
+unlike Tree-based models,
+
+338
+00:14:31,000 --> 00:14:33,000
+such as LightGBM,
+
+339
+00:14:33,000 --> 00:14:35,000
+XGBoost,
+
+340
+00:14:35,000 --> 00:14:37,000
+or Random Forest,
+
+341
+00:14:37,000 --> 00:14:39,000
+RNN
+
+342
+00:14:39,000 --> 00:14:41,000
+usually requires
+
+343
+00:14:41,000 --> 00:14:43,000
+more training time.
+
+344
+00:14:43,000 --> 00:14:45,000
+When you tune this model,
+
+345
+00:14:45,000 --> 00:14:47,000
+you will spend a lot of time and energy.
+
+346
+00:14:47,000 --> 00:14:49,000
+So in a short-term
+
+347
+00:14:49,000 --> 00:14:51,000
+competition or a mid-term project,
+
+348
+00:14:51,000 --> 00:14:53,000
+we still use
+
+349
+00:14:53,000 --> 00:14:55,000
+Tree-based models like LightGBM.
+
+350
+00:14:55,000 --> 00:14:57,000
+It is relatively fast
+
+351
+00:14:57,000 --> 00:14:59,000
+and efficient.
+
+352
+00:15:01,000 --> 00:15:03,000
+Let's jump to
+
+353
+00:15:03,000 --> 00:15:05,000
+the Kaggle competition.
+
+354
+00:15:05,000 --> 00:15:07,000
+Let's see how
+
+355
+00:15:07,000 --> 00:15:09,000
+professional data scientists
+
+356
+00:15:09,000 --> 00:15:11,000
+predict
+
+357
+00:15:11,000 --> 00:15:13,000
+the building's
+
+358
+00:15:13,000 --> 00:15:15,000
+population.
+
+359
+00:15:15,000 --> 00:15:17,000
+First, let me briefly introduce Kaggle.
+
+360
+00:15:17,000 --> 00:15:19,000
+Some people may not be familiar with it.
+
+361
+00:15:19,000 --> 00:15:21,000
+Kaggle is a subsidiary
+
+362
+00:15:21,000 --> 00:15:23,000
+of Google.
+
+363
+00:15:23,000 --> 00:15:25,000
+It is an online community
+
+364
+00:15:25,000 --> 00:15:27,000
+where data scientists,
+
+365
+00:15:27,000 --> 00:15:29,000
+students,
+
+366
+00:15:29,000 --> 00:15:31,000
+or social people
+
+367
+00:15:31,000 --> 00:15:33,000
+can share their ideas,
+
+368
+00:15:33,000 --> 00:15:35,000
+share data,
+
+369
+00:15:35,000 --> 00:15:37,000
+and participate in the competition.
+
+370
+00:15:37,000 --> 00:15:39,000
+There are three parts
+
+371
+00:15:39,000 --> 00:15:41,000
+of Kaggle platform.
+
+372
+00:15:41,000 --> 00:15:43,000
+The first part is competition.
+
+373
+00:15:43,000 --> 00:15:45,000
+There will be some sponsors.
+
+374
+00:15:45,000 --> 00:15:47,000
+It could be a company
+
+375
+00:15:47,000 --> 00:15:49,000
+or a school.
+
+376
+00:15:49,000 --> 00:15:51,000
+They will give prizes.
+
+377
+00:15:51,000 --> 00:15:53,000
+Kaggle will help them hold the competition.
+
+378
+00:15:53,000 --> 00:15:55,000
+There are some interesting competitions.
+
+379
+00:15:55,000 --> 00:15:57,000
+For example, Jamstree,
+
+380
+00:15:57,000 --> 00:15:59,000
+where you can use Wi-Fi
+
+381
+00:15:59,000 --> 00:16:01,000
+to predict where people are.
+
+382
+00:16:03,000 --> 00:16:05,000
+Next is dataset.
+
+383
+00:16:05,000 --> 00:16:07,000
+People can freely
+
+384
+00:16:07,000 --> 00:16:09,000
+upload their dataset.
+
+385
+00:16:09,000 --> 00:16:11,000
+For example,
+
+386
+00:16:11,000 --> 00:16:13,000
+COVID-19 vaccine development,
+
+387
+00:16:13,000 --> 00:16:15,000
+or Netflix,
+
+388
+00:16:15,000 --> 00:16:17,000
+or Trump's Twitter.
+
+389
+00:16:17,000 --> 00:16:19,000
+This is also an interesting topic.
+
+390
+00:16:19,000 --> 00:16:21,000
+Datasets include
+
+391
+00:16:21,000 --> 00:16:23,000
+professional or non-professional
+
+392
+00:16:23,000 --> 00:16:25,000
+data.
+
+393
+00:16:25,000 --> 00:16:27,000
+It is an interesting platform.
+
+394
+00:16:27,000 --> 00:16:29,000
+The last part is
+
+395
+00:16:29,000 --> 00:16:31,000
+notebook.
+
+396
+00:16:31,000 --> 00:16:33,000
+It is a code.
+
+397
+00:16:33,000 --> 00:16:35,000
+People will put their code on it.
+
+398
+00:16:35,000 --> 00:16:37,000
+It includes
+
+399
+00:16:37,000 --> 00:16:39,000
+how to visualize
+
+400
+00:16:39,000 --> 00:16:41,000
+or model.
+
+401
+00:16:41,000 --> 00:16:43,000
+Basically,
+
+402
+00:16:43,000 --> 00:16:45,000
+you can copy the notebook
+
+403
+00:16:45,000 --> 00:16:47,000
+and do the same thing.
+
+404
+00:16:47,000 --> 00:16:49,000
+This notebook can
+
+405
+00:16:49,000 --> 00:16:51,000
+connect to the competition
+
+406
+00:16:51,000 --> 00:16:53,000
+and dataset.
+
+407
+00:16:53,000 --> 00:16:55,000
+Basically, you can use
+
+408
+00:16:55,000 --> 00:16:57,000
+the cloud resources,
+
+409
+00:16:57,000 --> 00:16:59,000
+CPU and GPU,
+
+410
+00:16:59,000 --> 00:17:01,000
+to run the dataset
+
+411
+00:17:01,000 --> 00:17:03,000
+on the platform.
+
+412
+00:17:03,000 --> 00:17:05,000
+You can even use the resources
+
+413
+00:17:05,000 --> 00:17:07,000
+to participate in the competition.
+
+414
+00:17:07,000 --> 00:17:09,000
+You don't even need to use
+
+415
+00:17:09,000 --> 00:17:11,000
+your local notebook to run the model.
+
+416
+00:17:11,000 --> 00:17:13,000
+You can use the cloud resources
+
+417
+00:17:13,000 --> 00:17:15,000
+to upload and compute the data.
+
+418
+00:17:15,000 --> 00:17:17,000
+Let me introduce
+
+419
+00:17:17,000 --> 00:17:19,000
+what the competition is.
+
+420
+00:17:19,000 --> 00:17:21,000
+There are
+
+421
+00:17:21,000 --> 00:17:23,000
+more than 2,000
+
+422
+00:17:23,000 --> 00:17:25,000
+data sets.
+
+423
+00:17:25,000 --> 00:17:27,000
+They are from more than 1,000
+
+424
+00:17:27,000 --> 00:17:29,000
+countries around the world.
+
+425
+00:17:29,000 --> 00:17:31,000
+We want to find a good algorithm
+
+426
+00:17:31,000 --> 00:17:33,000
+to accurately predict
+
+427
+00:17:33,000 --> 00:17:35,000
+the resources of most of the buildings.
+
+428
+00:17:35,000 --> 00:17:37,000
+In the past,
+
+429
+00:17:37,000 --> 00:17:39,000
+most researchers
+
+430
+00:17:39,000 --> 00:17:41,000
+said that
+
+431
+00:17:41,000 --> 00:17:43,000
+some buildings are very fast,
+
+432
+00:17:43,000 --> 00:17:45,000
+some buildings are very accurate,
+
+433
+00:17:45,000 --> 00:17:47,000
+some buildings are very easy to run,
+
+434
+00:17:47,000 --> 00:17:49,000
+and so on.
+
+435
+00:17:49,000 --> 00:17:51,000
+But if we have so many buildings
+
+436
+00:17:51,000 --> 00:17:53,000
+across different countries,
+
+437
+00:17:53,000 --> 00:17:55,000
+it will be a more general way.
+
+438
+00:17:55,000 --> 00:17:57,000
+It's not just a case of
+
+439
+00:17:57,000 --> 00:17:59,000
+a single building or a single country.
+
+440
+00:17:59,000 --> 00:18:01,000
+This is the purpose
+
+441
+00:18:01,000 --> 00:18:03,000
+of the energy competition.
+
+442
+00:18:03,000 --> 00:18:05,000
+To find the most general
+
+443
+00:18:05,000 --> 00:18:07,000
+and accurate way.
+
+444
+00:18:09,000 --> 00:18:11,000
+This dataset
+
+445
+00:18:11,000 --> 00:18:13,000
+contains some data,
+
+446
+00:18:13,000 --> 00:18:15,000
+such as the most basic
+
+447
+00:18:15,000 --> 00:18:17,000
+meter reading.
+
+448
+00:18:17,000 --> 00:18:19,000
+This is mainly
+
+449
+00:18:19,000 --> 00:18:21,000
+the data of the meter.
+
+450
+00:18:21,000 --> 00:18:23,000
+It may be 24 hours,
+
+451
+00:18:23,000 --> 00:18:25,000
+single year data,
+
+452
+00:18:25,000 --> 00:18:27,000
+and its height.
+
+453
+00:18:27,000 --> 00:18:29,000
+In addition, there is building meta,
+
+454
+00:18:29,000 --> 00:18:31,000
+what kind of site it is,
+
+455
+00:18:31,000 --> 00:18:33,000
+and what kind of
+
+456
+00:18:33,000 --> 00:18:35,000
+purpose it is.
+
+457
+00:18:35,000 --> 00:18:37,000
+It may be office buildings, it may be school buildings,
+
+458
+00:18:37,000 --> 00:18:39,000
+square feet, floor area, etc.
+
+459
+00:18:39,000 --> 00:18:41,000
+It also provides
+
+460
+00:18:41,000 --> 00:18:43,000
+temperature, humidity,
+
+461
+00:18:43,000 --> 00:18:45,000
+cloud load, etc.
+
+462
+00:18:47,000 --> 00:18:49,000
+In this competition, it will provide
+
+463
+00:18:49,000 --> 00:18:51,000
+training data for 2016
+
+464
+00:18:51,000 --> 00:18:53,000
+to train your model.
+
+465
+00:18:53,000 --> 00:18:55,000
+You have to predict the energy data
+
+466
+00:18:55,000 --> 00:18:57,000
+for 2017 and 2018.
+
+467
+00:18:59,000 --> 00:19:01,000
+In this competition,
+
+468
+00:19:01,000 --> 00:19:03,000
+the method of the competition is
+
+469
+00:19:03,000 --> 00:19:05,000
+that you will first download your dataset,
+
+470
+00:19:05,000 --> 00:19:07,000
+which is your training data.
+
+471
+00:19:07,000 --> 00:19:09,000
+It includes the electric meter data
+
+472
+00:19:09,000 --> 00:19:11,000
+and weather data.
+
+473
+00:19:11,000 --> 00:19:13,000
+After training your model,
+
+474
+00:19:13,000 --> 00:19:15,000
+you can
+
+475
+00:19:15,000 --> 00:19:17,000
+upload your answer.
+
+476
+00:19:17,000 --> 00:19:19,000
+After uploading,
+
+477
+00:19:19,000 --> 00:19:21,000
+it will calculate a score.
+
+478
+00:19:21,000 --> 00:19:23,000
+You can see the score
+
+479
+00:19:23,000 --> 00:19:25,000
+on the leaderboard.
+
+480
+00:19:27,000 --> 00:19:29,000
+Now let's take a look at
+
+481
+00:19:29,000 --> 00:19:31,000
+the result of this competition.
+
+482
+00:19:31,000 --> 00:19:33,000
+First of all, it is very interesting that
+
+483
+00:19:33,000 --> 00:19:35,000
+most of the applications are Python.
+
+484
+00:19:35,000 --> 00:19:37,000
+Python is the most popular application now.
+
+485
+00:19:37,000 --> 00:19:39,000
+There is a little bit, but not the most.
+
+486
+00:19:41,000 --> 00:19:43,000
+What kind of machine learning models
+
+487
+00:19:43,000 --> 00:19:45,000
+do you use?
+
+488
+00:19:45,000 --> 00:19:47,000
+In this competition, it is usually
+
+489
+00:19:47,000 --> 00:19:49,000
+gradient boosting.
+
+490
+00:19:49,000 --> 00:19:51,000
+Because this data belongs to
+
+491
+00:19:51,000 --> 00:19:53,000
+tabular data,
+
+492
+00:19:53,000 --> 00:19:55,000
+it is structured,
+
+493
+00:19:55,000 --> 00:19:57,000
+like Excel table data.
+
+494
+00:19:57,000 --> 00:19:59,000
+In TreeBase model,
+
+495
+00:19:59,000 --> 00:20:01,000
+they are best at solving this problem.
+
+496
+00:20:01,000 --> 00:20:03,000
+In NN,
+
+497
+00:20:03,000 --> 00:20:05,000
+it is not impossible to deal with this problem.
+
+498
+00:20:05,000 --> 00:20:07,000
+Because the training time is too long,
+
+499
+00:20:07,000 --> 00:20:09,000
+and you need to tune the parameters
+
+500
+00:20:09,000 --> 00:20:11,000
+for a long time.
+
+501
+00:20:11,000 --> 00:20:13,000
+Then there are some tags.
+
+502
+00:20:13,000 --> 00:20:15,000
+You can find that
+
+503
+00:20:15,000 --> 00:20:17,000
+most of the notebooks
+
+504
+00:20:17,000 --> 00:20:19,000
+are provided by EDA or Beginner,
+
+505
+00:20:19,000 --> 00:20:21,000
+which are more visualized.
+
+506
+00:20:23,000 --> 00:20:25,000
+Data is its exploration,
+
+507
+00:20:25,000 --> 00:20:27,000
+which parameters it has,
+
+508
+00:20:27,000 --> 00:20:29,000
+its distribution,
+
+509
+00:20:29,000 --> 00:20:31,000
+and its time series.
+
+510
+00:20:35,000 --> 00:20:37,000
+Let's take a look at
+
+511
+00:20:37,000 --> 00:20:39,000
+most of the solutions.
+
+512
+00:20:39,000 --> 00:20:41,000
+You can see that
+
+513
+00:20:41,000 --> 00:20:43,000
+the rank is from
+
+514
+00:20:43,000 --> 00:20:45,000
+high to low,
+
+515
+00:20:45,000 --> 00:20:47,000
+from 9th to over 2000.
+
+516
+00:20:47,000 --> 00:20:49,000
+You can see that the score
+
+517
+00:20:49,000 --> 00:20:51,000
+can be from low to high.
+
+518
+00:20:51,000 --> 00:20:53,000
+Low means that this side is better.
+
+519
+00:20:53,000 --> 00:20:55,000
+Because the score here is actually
+
+520
+00:20:55,000 --> 00:20:57,000
+error, the lower the better.
+
+521
+00:20:57,000 --> 00:20:59,000
+You can see that
+
+522
+00:20:59,000 --> 00:21:01,000
+most people use
+
+523
+00:21:01,000 --> 00:21:03,000
+removeAllLiers
+
+524
+00:21:03,000 --> 00:21:05,000
+to remove data,
+
+525
+00:21:05,000 --> 00:21:07,000
+and imputation
+
+526
+00:21:07,000 --> 00:21:09,000
+is to make some
+
+527
+00:21:09,000 --> 00:21:11,000
+data maintenance.
+
+528
+00:21:11,000 --> 00:21:13,000
+Not everyone does this.
+
+529
+00:21:13,000 --> 00:21:15,000
+In Feature Strategy,
+
+530
+00:21:15,000 --> 00:21:17,000
+in Holiday Feature,
+
+531
+00:21:17,000 --> 00:21:19,000
+and Categorical Statistical Feature,
+
+532
+00:21:19,000 --> 00:21:21,000
+it depends on each person.
+
+533
+00:21:21,000 --> 00:21:23,000
+It doesn't seem to be consistent.
+
+534
+00:21:23,000 --> 00:21:25,000
+The number of Feature that everyone uses
+
+535
+00:21:25,000 --> 00:21:27,000
+is either a lot or a little.
+
+536
+00:21:27,000 --> 00:21:29,000
+Some people just didn't publish it.
+
+537
+00:21:29,000 --> 00:21:31,000
+I think the most interesting thing is
+
+538
+00:21:31,000 --> 00:21:33,000
+in Feature Strategy,
+
+539
+00:21:33,000 --> 00:21:35,000
+you can see that the numbers here
+
+540
+00:21:35,000 --> 00:21:37,000
+represent the number of models.
+
+541
+00:21:37,000 --> 00:21:39,000
+The higher the score,
+
+542
+00:21:39,000 --> 00:21:41,000
+the more models they prefer to use.
+
+543
+00:21:41,000 --> 00:21:43,000
+Why is that?
+
+544
+00:21:43,000 --> 00:21:45,000
+In this kind of data competition,
+
+545
+00:21:45,000 --> 00:21:47,000
+if you use a single model,
+
+546
+00:21:47,000 --> 00:21:49,000
+its performance is usually limited.
+
+547
+00:21:49,000 --> 00:21:51,000
+But if you use different models today,
+
+548
+00:21:51,000 --> 00:21:53,000
+for example, you use NN,
+
+549
+00:21:53,000 --> 00:21:55,000
+you use lightGBN,
+
+550
+00:21:55,000 --> 00:21:57,000
+or you use different modeling methods,
+
+551
+00:21:57,000 --> 00:21:59,000
+you put all the results of these modeling
+
+552
+00:21:59,000 --> 00:22:01,000
+If you use a simple average,
+
+553
+00:22:01,000 --> 00:22:03,000
+sometimes you can get very good results.
+
+554
+00:22:03,000 --> 00:22:05,000
+Maybe 0.5 times the first model,
+
+555
+00:22:05,000 --> 00:22:07,000
+0.5 times the second model,
+
+556
+00:22:07,000 --> 00:22:09,000
+and then add it up,
+
+557
+00:22:09,000 --> 00:22:11,000
+its performance may be better than individual models.
+
+558
+00:22:11,000 --> 00:22:13,000
+So that's why they use so many
+
+559
+00:22:13,000 --> 00:22:15,000
+models to do the average.
+
+560
+00:22:15,000 --> 00:22:17,000
+Because it can
+
+561
+00:22:17,000 --> 00:22:19,000
+effectively improve the performance of the model.
+
+562
+00:22:23,000 --> 00:22:25,000
+Let's take out the top five
+
+563
+00:22:25,000 --> 00:22:27,000
+and take a look at its content.
+
+564
+00:22:27,000 --> 00:22:29,000
+The most important thing is that
+
+565
+00:22:29,000 --> 00:22:31,000
+in preprocessing,
+
+566
+00:22:31,000 --> 00:22:33,000
+it is very important to remove anomalies
+
+567
+00:22:33,000 --> 00:22:35,000
+or outliers.
+
+568
+00:22:35,000 --> 00:22:37,000
+Because in this competition,
+
+569
+00:22:37,000 --> 00:22:39,000
+there are a lot of data missing and outliers.
+
+570
+00:22:39,000 --> 00:22:41,000
+In fact, this is not only found in this competition.
+
+571
+00:22:41,000 --> 00:22:43,000
+In fact, most of the real world data
+
+572
+00:22:43,000 --> 00:22:45,000
+is like this,
+
+573
+00:22:45,000 --> 00:22:47,000
+a lot of data missing, a lot of outliers.
+
+574
+00:22:47,000 --> 00:22:49,000
+If you don't do this,
+
+575
+00:22:49,000 --> 00:22:51,000
+it may cause your model to learn
+
+576
+00:22:51,000 --> 00:22:53,000
+some strange patterns or phenomena.
+
+577
+00:22:53,000 --> 00:22:55,000
+Next is features.
+
+578
+00:22:55,000 --> 00:22:57,000
+This is not necessarily the case.
+
+579
+00:22:57,000 --> 00:22:59,000
+Some people use 10, some use 28.
+
+580
+00:22:59,000 --> 00:23:01,000
+Some have outliers, some don't.
+
+581
+00:23:01,000 --> 00:23:03,000
+It depends on how you choose.
+
+582
+00:23:03,000 --> 00:23:05,000
+In modeling,
+
+583
+00:23:05,000 --> 00:23:07,000
+you can see that most of them use
+
+584
+00:23:07,000 --> 00:23:09,000
+LinearGBN, XGBoost,
+
+585
+00:23:09,000 --> 00:23:11,000
+which are tree-based models.
+
+586
+00:23:11,000 --> 00:23:13,000
+There are relatively few NNN models.
+
+587
+00:23:13,000 --> 00:23:15,000
+Post-processing,
+
+588
+00:23:15,000 --> 00:23:17,000
+as I just said, is a model
+
+589
+00:23:17,000 --> 00:23:19,000
+to do the average.
+
+590
+00:23:19,000 --> 00:23:21,000
+It's actually ensembling.
+
+591
+00:23:21,000 --> 00:23:23,000
+I made a lot of models today and
+
+592
+00:23:24,000 --> 00:23:26,000
+this is a simple
+
+593
+00:23:26,000 --> 00:23:28,000
+flowchart they provide.
+
+594
+00:23:28,000 --> 00:23:30,000
+This is the first flowchart they provide.
+
+595
+00:23:30,000 --> 00:23:32,000
+You can see the pre-processing in front of it.
+
+596
+00:23:32,000 --> 00:23:34,000
+This is what I just said.
+
+597
+00:23:34,000 --> 00:23:36,000
+Feature engineering.
+
+598
+00:23:36,000 --> 00:23:38,000
+Then there are a lot of models.
+
+599
+00:23:38,000 --> 00:23:40,000
+Finally, do the ensembling prediction.
+
+600
+00:23:40,000 --> 00:23:42,000
+These predicted results
+
+601
+00:23:42,000 --> 00:23:44,000
+are averaged.
+
+602
+00:23:44,000 --> 00:23:46,000
+In fact,
+
+603
+00:23:46,000 --> 00:23:48,000
+every
+
+604
+00:23:48,000 --> 00:23:50,000
+flowchart in the competition is a bit like this.
+
+605
+00:23:50,000 --> 00:23:52,000
+They do some pre-processing.
+
+606
+00:23:52,000 --> 00:23:54,000
+Then there are a lot of models.
+
+607
+00:23:54,000 --> 00:23:56,000
+Then do the ensembling.
+
+608
+00:23:56,000 --> 00:23:58,000
+This is also a classic
+
+609
+00:23:58,000 --> 00:24:00,000
+machine learning pipeline.
+
+610
+00:24:00,000 --> 00:24:02,000
+Pre-processing, modeling,
+
+611
+00:24:02,000 --> 00:24:04,000
+and then
+
+612
+00:24:04,000 --> 00:24:06,000
+if it's ensembling,
+
+613
+00:24:06,000 --> 00:24:08,000
+it's more of a special use than set.
+
+614
+00:24:08,000 --> 00:24:10,000
+It's a method
+
+615
+00:24:10,000 --> 00:24:12,000
+that will be used to get high scores.
+
+616
+00:24:14,000 --> 00:24:16,000
+The third is a similar method.
+
+617
+00:24:16,000 --> 00:24:18,000
+This competition,
+
+618
+00:24:18,000 --> 00:24:20,000
+to be honest,
+
+619
+00:24:20,000 --> 00:24:22,000
+is more data science.
+
+620
+00:24:22,000 --> 00:24:24,000
+If the audience
+
+621
+00:24:24,000 --> 00:24:26,000
+is more interested
+
+622
+00:24:26,000 --> 00:24:28,000
+in this place,
+
+623
+00:24:28,000 --> 00:24:30,000
+you can check the details
+
+624
+00:24:30,000 --> 00:24:32,000
+in our publication.
+
+625
+00:24:32,000 --> 00:24:34,000
+We have a review paper
+
+626
+00:24:34,000 --> 00:24:36,000
+for this competition.
+
+627
+00:24:36,000 --> 00:24:38,000
+You can go up and see the details of this competition.
+
+628
+00:24:38,000 --> 00:24:40,000
+If you want to know the program,
+
+629
+00:24:40,000 --> 00:24:42,000
+you can go to Github
+
+630
+00:24:42,000 --> 00:24:44,000
+to find some models
+
+631
+00:24:44,000 --> 00:24:46,000
+or some details.
+
+632
+00:24:46,000 --> 00:24:48,000
+In addition,
+
+633
+00:24:48,000 --> 00:24:50,000
+we even have their interview videos.
+
+634
+00:24:50,000 --> 00:24:52,000
+You can also find these YouTube videos
+
+635
+00:24:52,000 --> 00:24:54,000
+from Github
+
+636
+00:24:54,000 --> 00:24:56,000
+to see how they introduce their models
+
+637
+00:24:56,000 --> 00:24:58,000
+and how they do things.
+
+638
+00:24:58,000 --> 00:25:00,000
+The main purpose of talking about Kaggle today
+
+639
+00:25:00,000 --> 00:25:02,000
+is to give some
+
+640
+00:25:02,000 --> 00:25:04,000
+slightly interested in
+
+641
+00:25:04,000 --> 00:25:06,000
+energy prediction, but not
+
+642
+00:25:06,000 --> 00:25:08,000
+too familiar with these machine learning models.
+
+643
+00:25:08,000 --> 00:25:10,000
+It's a simple overview.
+
+644
+00:25:10,000 --> 00:25:12,000
+How does this competition work?
+
+645
+00:25:12,000 --> 00:25:14,000
+What kind of model is it?
+
+646
+00:25:16,000 --> 00:25:18,000
+Next, we will talk about
+
+647
+00:25:18,000 --> 00:25:20,000
+our project study today.
+
+648
+00:25:20,000 --> 00:25:22,000
+We want to do low prediction
+
+649
+00:25:22,000 --> 00:25:24,000
+using data from Taiwan.
+
+650
+00:25:24,000 --> 00:25:26,000
+We want to ask
+
+651
+00:25:26,000 --> 00:25:28,000
+if we can really do
+
+652
+00:25:28,000 --> 00:25:30,000
+an energy prediction service.
+
+653
+00:25:32,000 --> 00:25:34,000
+Let me put this PowerPoint
+
+654
+00:25:34,000 --> 00:25:36,000
+aside first.
+
+655
+00:25:36,000 --> 00:25:38,000
+This is the Kaggle
+
+656
+00:25:38,000 --> 00:25:40,000
+platform I just mentioned.
+
+657
+00:25:40,000 --> 00:25:42,000
+If you go to
+
+658
+00:25:42,000 --> 00:25:44,000
+kaggle.com,
+
+659
+00:25:44,000 --> 00:25:46,000
+you can come in here.
+
+660
+00:25:46,000 --> 00:25:48,000
+There will be a bunch of competitions,
+
+661
+00:25:48,000 --> 00:25:50,000
+some data, and notebooks.
+
+662
+00:25:50,000 --> 00:25:52,000
+Here,
+
+663
+00:25:52,000 --> 00:25:54,000
+Project Tyra has created
+
+664
+00:25:54,000 --> 00:25:56,000
+four notebooks.
+
+665
+00:25:56,000 --> 00:25:58,000
+You can see that
+
+666
+00:25:58,000 --> 00:26:00,000
+there are a lot of Python programs in this notebook.
+
+667
+00:26:00,000 --> 00:26:02,000
+You can just copy
+
+668
+00:26:02,000 --> 00:26:04,000
+and run it.
+
+669
+00:26:04,000 --> 00:26:06,000
+Here,
+
+670
+00:26:06,000 --> 00:26:08,000
+I want to copy
+
+671
+00:26:08,000 --> 00:26:10,000
+this notebook I have already built.
+
+672
+00:26:10,000 --> 00:26:12,000
+If you want to copy
+
+673
+00:26:12,000 --> 00:26:14,000
+and you want to use my notebook,
+
+674
+00:26:14,000 --> 00:26:16,000
+you can use the Copy & Edit Notebook here.
+
+675
+00:26:16,000 --> 00:26:18,000
+Click on it.
+
+676
+00:26:18,000 --> 00:26:20,000
+It will create a new copy here.
+
+677
+00:26:24,000 --> 00:26:26,000
+You can see that
+
+678
+00:26:26,000 --> 00:26:28,000
+it will use
+
+679
+00:26:28,000 --> 00:26:30,000
+cloud resources in this notebook.
+
+680
+00:26:30,000 --> 00:26:32,000
+But it's on the narrow path now.
+
+681
+00:26:32,000 --> 00:26:34,000
+There are some datasets here.
+
+682
+00:26:36,000 --> 00:26:38,000
+The dataset here is
+
+683
+00:26:38,000 --> 00:26:40,000
+from the Kaggle dataset.
+
+684
+00:26:40,000 --> 00:26:42,000
+You can read it directly
+
+685
+00:26:42,000 --> 00:26:44,000
+into this notebook.
+
+686
+00:26:44,000 --> 00:26:46,000
+You can see some CPU and RAM here.
+
+687
+00:26:46,000 --> 00:26:48,000
+You can even run GPU
+
+688
+00:26:48,000 --> 00:26:50,000
+and use its cloud resources
+
+689
+00:26:50,000 --> 00:26:52,000
+to do some operations.
+
+690
+00:26:52,000 --> 00:26:54,000
+In this notebook,
+
+691
+00:26:54,000 --> 00:26:56,000
+the first thing we need to do
+
+692
+00:26:56,000 --> 00:26:58,000
+is to download data.
+
+693
+00:26:58,000 --> 00:27:00,000
+We want to download weather data
+
+694
+00:27:00,000 --> 00:27:02,000
+and energy data.
+
+695
+00:27:02,000 --> 00:27:04,000
+Let's run this thing
+
+696
+00:27:04,000 --> 00:27:06,000
+on the scene.
+
+697
+00:27:06,000 --> 00:27:08,000
+Run all.
+
+698
+00:27:08,000 --> 00:27:10,000
+At the same time,
+
+699
+00:27:10,000 --> 00:27:12,000
+let's introduce
+
+700
+00:27:12,000 --> 00:27:14,000
+today's dataset.
+
+701
+00:27:14,000 --> 00:27:16,000
+The first is energy data.
+
+702
+00:27:16,000 --> 00:27:18,000
+It's data from Taiwan Electricity.
+
+703
+00:27:18,000 --> 00:27:20,000
+It contains
+
+704
+00:27:20,000 --> 00:27:22,000
+some peak
+
+705
+00:27:22,000 --> 00:27:24,000
+power consumption
+
+706
+00:27:24,000 --> 00:27:26,000
+per day.
+
+707
+00:27:26,000 --> 00:27:28,000
+The peak power consumption
+
+708
+00:27:28,000 --> 00:27:30,000
+of Taiwan Electricity
+
+709
+00:27:30,000 --> 00:27:32,000
+per day.
+
+710
+00:27:32,000 --> 00:27:34,000
+In addition,
+
+711
+00:27:34,000 --> 00:27:36,000
+there are energy categories
+
+712
+00:27:36,000 --> 00:27:38,000
+of Taiwan Electricity.
+
+713
+00:27:38,000 --> 00:27:40,000
+There are a lot of energy categories in Taiwan.
+
+714
+00:27:40,000 --> 00:27:42,000
+There are traditional
+
+715
+00:27:42,000 --> 00:27:44,000
+blue gas,
+
+716
+00:27:44,000 --> 00:27:46,000
+blue coal, nuclear energy,
+
+717
+00:27:46,000 --> 00:27:48,000
+and wind and solar energy.
+
+718
+00:27:48,000 --> 00:27:50,000
+These data
+
+719
+00:27:50,000 --> 00:27:52,000
+are also released by Taiwan Electricity.
+
+720
+00:27:54,000 --> 00:27:56,000
+In addition,
+
+721
+00:27:56,000 --> 00:27:58,000
+I know some listeners
+
+722
+00:27:58,000 --> 00:28:00,000
+are more interested in
+
+723
+00:28:00,000 --> 00:28:02,000
+local energy.
+
+724
+00:28:02,000 --> 00:28:04,000
+For example,
+
+725
+00:28:04,000 --> 00:28:06,000
+how much electricity they use
+
+726
+00:28:06,000 --> 00:28:08,000
+in a village or a city.
+
+727
+00:28:08,000 --> 00:28:10,000
+Taiwan Electricity does have some data
+
+728
+00:28:10,000 --> 00:28:12,000
+in this part,
+
+729
+00:28:12,000 --> 00:28:14,000
+but it's not covered
+
+730
+00:28:14,000 --> 00:28:16,000
+in today's speech.
+
+731
+00:28:16,000 --> 00:28:18,000
+In addition, there are some village metadata,
+
+732
+00:28:18,000 --> 00:28:20,000
+such as its precision,
+
+733
+00:28:20,000 --> 00:28:22,000
+population,
+
+734
+00:28:22,000 --> 00:28:24,000
+and area.
+
+735
+00:28:24,000 --> 00:28:26,000
+For example, the open data provided by this website.
+
+736
+00:28:26,000 --> 00:28:28,000
+If you want to know
+
+737
+00:28:28,000 --> 00:28:30,000
+its outline, you can also find
+
+738
+00:28:30,000 --> 00:28:32,000
+the open data provided by Hulu.
+
+739
+00:28:32,000 --> 00:28:34,000
+The picture on the left
+
+740
+00:28:34,000 --> 00:28:36,000
+is a good data visualization.
+
+741
+00:28:36,000 --> 00:28:38,000
+It's a picture provided
+
+742
+00:28:38,000 --> 00:28:40,000
+by Prof. Chen
+
+743
+00:28:40,000 --> 00:28:42,000
+from FB.
+
+744
+00:28:42,000 --> 00:28:44,000
+As you can see,
+
+745
+00:28:44,000 --> 00:28:46,000
+the village area
+
+746
+00:28:46,000 --> 00:28:48,000
+and energy are mapped
+
+747
+00:28:48,000 --> 00:28:50,000
+together to see
+
+748
+00:28:50,000 --> 00:28:52,000
+the density of energy.
+
+749
+00:28:54,000 --> 00:28:56,000
+Let's take a look
+
+750
+00:28:56,000 --> 00:28:58,000
+at the data
+
+751
+00:28:58,000 --> 00:29:00,000
+provided by Hulu.
+
+752
+00:29:00,000 --> 00:29:02,000
+First,
+
+753
+00:29:02,000 --> 00:29:04,000
+we have the weather data.
+
+754
+00:29:04,000 --> 00:29:06,000
+We got the weather data
+
+755
+00:29:06,000 --> 00:29:08,000
+from the weather data.
+
+756
+00:29:08,000 --> 00:29:10,000
+We got data for 2 years.
+
+757
+00:29:10,000 --> 00:29:12,000
+The first year,
+
+758
+00:29:12,000 --> 00:29:14,000
+the winter temperature was lower than the summer one,
+
+759
+00:29:14,000 --> 00:29:16,000
+and the second year,
+
+760
+00:29:16,000 --> 00:29:18,000
+the temperature was higher than
+
+761
+00:29:18,000 --> 00:29:20,000
+the summer one.
+
+762
+00:29:20,000 --> 00:29:22,000
+The third year,
+
+763
+00:29:22,000 --> 00:29:24,000
+we took the average of the three points
+
+764
+00:29:24,000 --> 00:29:26,000
+and used them as feature
+
+765
+00:29:26,000 --> 00:29:28,000
+to predict the power consumption.
+
+766
+00:29:28,000 --> 00:29:30,000
+The next one is the energy data
+
+767
+00:29:30,000 --> 00:29:32,000
+from Taiwan.
+
+768
+00:29:32,000 --> 00:29:34,000
+There are a lot of data in it.
+
+769
+00:29:34,000 --> 00:29:36,000
+In addition to the
+
+770
+00:29:36,000 --> 00:29:38,000
+monitoring load,
+
+771
+00:29:38,000 --> 00:29:40,000
+there are also data from various
+
+772
+00:29:40,000 --> 00:29:42,000
+power generation sources.
+
+773
+00:29:42,000 --> 00:29:44,000
+We can take a look at
+
+774
+00:29:44,000 --> 00:29:46,000
+the industrial power consumption
+
+775
+00:29:46,000 --> 00:29:48,000
+and the electricity consumption.
+
+776
+00:29:48,000 --> 00:29:50,000
+For industrial power consumption,
+
+777
+00:29:50,000 --> 00:29:52,000
+we can see that
+
+778
+00:29:52,000 --> 00:29:54,000
+the annual power consumption
+
+779
+00:29:54,000 --> 00:29:56,000
+is relatively low.
+
+780
+00:29:56,000 --> 00:29:58,000
+The annual power consumption
+
+781
+00:29:58,000 --> 00:30:00,000
+is relatively low.
+
+782
+00:30:00,000 --> 00:30:02,000
+On weekends,
+
+783
+00:30:02,000 --> 00:30:04,000
+there is a fixed pattern.
+
+784
+00:30:04,000 --> 00:30:06,000
+There is a fixed pattern.
+
+785
+00:30:06,000 --> 00:30:08,000
+This is the so-called
+
+786
+00:30:08,000 --> 00:30:10,000
+near-peak power supply.
+
+787
+00:30:10,000 --> 00:30:12,000
+This is the so-called
+
+788
+00:30:12,000 --> 00:30:14,000
+near-peak power supply.
+
+789
+00:30:14,000 --> 00:30:16,000
+The power station must decide
+
+790
+00:30:16,000 --> 00:30:18,000
+how much electricity
+
+791
+00:30:18,000 --> 00:30:20,000
+to deal with the maximum
+
+792
+00:30:20,000 --> 00:30:22,000
+load on that day.
+
+793
+00:30:22,000 --> 00:30:24,000
+We can't let the maximum load
+
+794
+00:30:24,000 --> 00:30:26,000
+exceed the power supply,
+
+795
+00:30:26,000 --> 00:30:28,000
+or there will be power outages.
+
+796
+00:30:28,000 --> 00:30:30,000
+Next, there are wind power
+
+797
+00:30:30,000 --> 00:30:32,000
+and solar power.
+
+798
+00:30:32,000 --> 00:30:34,000
+Solar power is
+
+799
+00:30:34,000 --> 00:30:36,000
+relatively general.
+
+800
+00:30:36,000 --> 00:30:38,000
+It depends on how much radiation
+
+801
+00:30:38,000 --> 00:30:40,000
+you have that day.
+
+802
+00:30:40,000 --> 00:30:42,000
+In summer, it's more.
+
+803
+00:30:42,000 --> 00:30:44,000
+In winter, it's less.
+
+804
+00:30:44,000 --> 00:30:46,000
+Let's go back
+
+805
+00:30:46,000 --> 00:30:48,000
+to the data set.
+
+806
+00:30:48,000 --> 00:30:50,000
+As you can see,
+
+807
+00:30:50,000 --> 00:30:52,000
+weather data is what I just said.
+
+808
+00:30:52,000 --> 00:30:54,000
+You can use this to observe
+
+809
+00:30:54,000 --> 00:30:56,000
+the historical weather data.
+
+810
+00:30:56,000 --> 00:30:58,000
+the historical weather data.
+
+811
+00:30:58,000 --> 00:31:00,000
+This is the platform
+
+812
+00:31:00,000 --> 00:31:02,000
+that Cargo just grabbed.
+
+813
+00:31:02,000 --> 00:31:04,000
+This is the platform that Cargo just grabbed.
+
+814
+00:31:04,000 --> 00:31:06,000
+There is also a local weather forecast.
+
+815
+00:31:06,000 --> 00:31:08,000
+You can use the forecast API
+
+816
+00:31:08,000 --> 00:31:10,000
+provided by the Meteorological Bureau
+
+817
+00:31:10,000 --> 00:31:12,000
+to catch the forecast for the next week
+
+818
+00:31:12,000 --> 00:31:14,000
+and the weather forecast every three hours.
+
+819
+00:31:14,000 --> 00:31:16,000
+Google Trend
+
+820
+00:31:16,000 --> 00:31:18,000
+is more interesting.
+
+821
+00:31:18,000 --> 00:31:20,000
+You can search
+
+822
+00:31:20,000 --> 00:31:22,000
+the search volume
+
+823
+00:31:22,000 --> 00:31:24,000
+of a keyword on Google.
+
+824
+00:31:24,000 --> 00:31:26,000
+For example, you can search
+
+825
+00:31:26,000 --> 00:31:28,000
+the search volume
+
+826
+00:31:28,000 --> 00:31:30,000
+of a keyword on Google.
+
+827
+00:31:30,000 --> 00:31:32,000
+You can see a pattern.
+
+828
+00:31:32,000 --> 00:31:34,000
+One, two, three, four.
+
+829
+00:31:34,000 --> 00:31:36,000
+Sorry, I typed it wrong.
+
+830
+00:31:36,000 --> 00:31:38,000
+It's actually two, three, four, five.
+
+831
+00:31:38,000 --> 00:31:40,000
+It's Saturday and Sunday.
+
+832
+00:31:40,000 --> 00:31:42,000
+You can also say
+
+833
+00:31:42,000 --> 00:31:44,000
+that if I use
+
+834
+00:31:44,000 --> 00:31:46,000
+the date as a unit,
+
+835
+00:31:46,000 --> 00:31:48,000
+you can see that
+
+836
+00:31:48,000 --> 00:31:50,000
+one, two, three, four, five is higher,
+
+837
+00:31:50,000 --> 00:31:52,000
+and six is lower.
+
+838
+00:31:52,000 --> 00:31:54,000
+If you look at one and two,
+
+839
+00:31:54,000 --> 00:31:56,000
+you can see that
+
+840
+00:31:56,000 --> 00:31:58,000
+this is in the United States,
+
+841
+00:31:58,000 --> 00:32:00,000
+so it's actually lower
+
+842
+00:32:00,000 --> 00:32:02,000
+in the New Year
+
+843
+00:32:02,000 --> 00:32:04,000
+or in the National Day.
+
+844
+00:32:04,000 --> 00:32:06,000
+You can also see
+
+845
+00:32:06,000 --> 00:32:08,000
+that if I use
+
+846
+00:32:08,000 --> 00:32:10,000
+Taiwan's data as an example,
+
+847
+00:32:10,000 --> 00:32:12,000
+the search volume
+
+848
+00:32:12,000 --> 00:32:14,000
+mentioned in the first video
+
+849
+00:32:14,000 --> 00:32:16,000
+is the search volume
+
+850
+00:32:16,000 --> 00:32:18,000
+in Taiwan Campus.
+
+851
+00:32:18,000 --> 00:32:20,000
+If you compare the search volume
+
+852
+00:32:20,000 --> 00:32:22,000
+of Microsoft Excel,
+
+853
+00:32:22,000 --> 00:32:24,000
+you can see that
+
+854
+00:32:24,000 --> 00:32:26,000
+it can correspond to
+
+855
+00:32:26,000 --> 00:32:28,000
+some holidays,
+
+856
+00:32:28,000 --> 00:32:30,000
+such as the New Year,
+
+857
+00:32:30,000 --> 00:32:32,000
+and the search volume of
+
+858
+00:32:32,000 --> 00:32:34,000
+Excel becomes lower.
+
+859
+00:32:34,000 --> 00:32:36,000
+For example,
+
+860
+00:32:36,000 --> 00:32:38,000
+the search volume of
+
+861
+00:32:38,000 --> 00:32:40,000
+Microsoft Excel,
+
+862
+00:32:40,000 --> 00:32:42,000
+whether it's tourism
+
+863
+00:32:42,000 --> 00:32:44,000
+or your sales volume,
+
+864
+00:32:44,000 --> 00:32:46,000
+is a very useful keyword
+
+865
+00:32:46,000 --> 00:32:48,000
+to compare.
+
+866
+00:32:48,000 --> 00:32:50,000
+This is also mentioned that
+
+867
+00:32:50,000 --> 00:32:52,000
+if our Power Meter
+
+868
+00:32:52,000 --> 00:32:54,000
+is classified,
+
+869
+00:32:54,000 --> 00:32:56,000
+you can find that
+
+870
+00:32:56,000 --> 00:32:58,000
+some buildings are
+
+871
+00:32:58,000 --> 00:33:00,000
+related to education,
+
+872
+00:33:00,000 --> 00:33:02,000
+and some buildings
+
+873
+00:33:02,000 --> 00:33:04,000
+may be related to
+
+874
+00:33:04,000 --> 00:33:06,000
+the office,
+
+875
+00:33:06,000 --> 00:33:08,000
+which is also a very interesting
+
+876
+00:33:08,000 --> 00:33:10,000
+open data set.
+
+877
+00:33:10,000 --> 00:33:12,000
+Here I have provided
+
+878
+00:33:12,000 --> 00:33:14,000
+how to grab data
+
+879
+00:33:14,000 --> 00:33:16,000
+in Google Trend.
+
+880
+00:33:16,000 --> 00:33:18,000
+You can see that
+
+881
+00:33:18,000 --> 00:33:20,000
+it's lower in the New Year
+
+882
+00:33:20,000 --> 00:33:22,000
+and lower in the National Day.
+
+883
+00:33:22,000 --> 00:33:24,000
+For example,
+
+884
+00:33:24,000 --> 00:33:26,000
+October 10th.
+
+885
+00:33:26,000 --> 00:33:28,000
+October 10th, 11th, 12th, and 13th
+
+886
+00:33:28,000 --> 00:33:30,000
+are National Day holidays,
+
+887
+00:33:30,000 --> 00:33:32,000
+so these days are also lower.
+
+888
+00:33:32,000 --> 00:33:34,000
+Holiday data
+
+889
+00:33:34,000 --> 00:33:36,000
+is actually
+
+890
+00:33:36,000 --> 00:33:38,000
+from a website
+
+891
+00:33:38,000 --> 00:33:40,000
+called TimeDate.
+
+892
+00:33:40,000 --> 00:33:42,000
+You can find
+
+893
+00:33:42,000 --> 00:33:44,000
+the holiday of
+
+894
+00:33:44,000 --> 00:33:46,000
+each country on it.
+
+895
+00:33:46,000 --> 00:33:48,000
+You just need to enter
+
+896
+00:33:48,000 --> 00:33:50,000
+your country's name on the website
+
+897
+00:33:50,000 --> 00:33:52,000
+and its year.
+
+898
+00:33:52,000 --> 00:33:54,000
+Then you can find the national holiday
+
+899
+00:33:54,000 --> 00:33:56,000
+that corresponds to that country.
+
+900
+00:33:56,000 --> 00:33:58,000
+This is also a very useful website,
+
+901
+00:33:58,000 --> 00:34:00,000
+so I also grabbed
+
+902
+00:34:00,000 --> 00:34:02,000
+some data.
+
+903
+00:34:02,000 --> 00:34:04,000
+In this notebook,
+
+904
+00:34:04,000 --> 00:34:06,000
+the main thing we do is
+
+905
+00:34:06,000 --> 00:34:08,000
+to grab data.
+
+906
+00:34:08,000 --> 00:34:10,000
+In the end,
+
+907
+00:34:10,000 --> 00:34:12,000
+what we can
+
+908
+00:34:12,000 --> 00:34:14,000
+generate is like this.
+
+909
+00:34:14,000 --> 00:34:16,000
+In this notebook,
+
+910
+00:34:16,000 --> 00:34:18,000
+there is
+
+911
+00:34:18,000 --> 00:34:20,000
+an output.
+
+912
+00:34:20,000 --> 00:34:22,000
+We can output
+
+913
+00:34:22,000 --> 00:34:24,000
+Google Trend CSV, Demand CSV, Holiday.
+
+914
+00:34:24,000 --> 00:34:26,000
+You can even download
+
+915
+00:34:26,000 --> 00:34:28,000
+the data directly from here.
+
+916
+00:34:28,000 --> 00:34:30,000
+It's quite convenient to
+
+917
+00:34:30,000 --> 00:34:32,000
+store data
+
+918
+00:34:32,000 --> 00:34:34,000
+and build a notebook.
+
+919
+00:34:36,000 --> 00:34:38,000
+Next,
+
+920
+00:34:38,000 --> 00:34:40,000
+if we want to
+
+921
+00:34:40,000 --> 00:34:42,000
+predict Taiwan's
+
+922
+00:34:42,000 --> 00:34:44,000
+energy,
+
+923
+00:34:44,000 --> 00:34:46,000
+we need to build a model.
+
+924
+00:34:46,000 --> 00:34:48,000
+Here,
+
+925
+00:34:50,000 --> 00:34:52,000
+our goal is to
+
+926
+00:34:52,000 --> 00:34:54,000
+meet the deadline on time.
+
+927
+00:34:54,000 --> 00:34:56,000
+Of course, there are other things
+
+928
+00:34:56,000 --> 00:34:58,000
+that we don't need to cover.
+
+929
+00:34:58,000 --> 00:35:00,000
+Let's use a simple
+
+930
+00:35:00,000 --> 00:35:02,000
+time-to-time load to predict.
+
+931
+00:35:02,000 --> 00:35:04,000
+This is one data per day,
+
+932
+00:35:04,000 --> 00:35:06,000
+which is the highest energy load
+
+933
+00:35:06,000 --> 00:35:08,000
+in a day.
+
+934
+00:35:08,000 --> 00:35:10,000
+If we only use the simplest
+
+935
+00:35:10,000 --> 00:35:12,000
+weekday to predict,
+
+936
+00:35:12,000 --> 00:35:14,000
+that is,
+
+937
+00:35:14,000 --> 00:35:16,000
+let's say it's Monday or Tuesday,
+
+938
+00:35:16,000 --> 00:35:18,000
+or it's Saturday or Sunday.
+
+939
+00:35:18,000 --> 00:35:20,000
+First of all,
+
+940
+00:35:20,000 --> 00:35:22,000
+we can look at its trend.
+
+941
+00:35:22,000 --> 00:35:24,000
+0 to 4 is Monday to Friday,
+
+942
+00:35:24,000 --> 00:35:26,000
+and 5 to 6 is Saturday.
+
+943
+00:35:26,000 --> 00:35:28,000
+1 to 5 is higher,
+
+944
+00:35:28,000 --> 00:35:30,000
+and Saturday is lower.
+
+945
+00:35:30,000 --> 00:35:32,000
+It's normal.
+
+946
+00:35:32,000 --> 00:35:34,000
+If we build a model like this,
+
+947
+00:35:34,000 --> 00:35:36,000
+it will look like
+
+948
+00:35:36,000 --> 00:35:38,000
+a weekly forecast.
+
+949
+00:35:38,000 --> 00:35:40,000
+It's like a blue line.
+
+950
+00:35:40,000 --> 00:35:42,000
+This is the so-called prediction.
+
+951
+00:35:42,000 --> 00:35:44,000
+It's very inaccurate,
+
+952
+00:35:44,000 --> 00:35:46,000
+because it only has
+
+953
+00:35:46,000 --> 00:35:48,000
+the feature of Monday.
+
+954
+00:35:48,000 --> 00:35:50,000
+Its Oscar O is only 0.1.
+
+955
+00:35:50,000 --> 00:35:52,000
+It's terrible.
+
+956
+00:35:52,000 --> 00:35:54,000
+For the second model,
+
+957
+00:35:54,000 --> 00:35:56,000
+if we want to be more seasonal,
+
+958
+00:35:56,000 --> 00:35:58,000
+we can add weather conditions.
+
+959
+00:35:58,000 --> 00:36:00,000
+We only add temperature today.
+
+960
+00:36:00,000 --> 00:36:02,000
+The temperature here
+
+961
+00:36:02,000 --> 00:36:04,000
+is the overall energy
+
+962
+00:36:04,000 --> 00:36:06,000
+forecast in Taiwan.
+
+963
+00:36:06,000 --> 00:36:08,000
+So we simply sample
+
+964
+00:36:08,000 --> 00:36:10,000
+the temperature of three regions,
+
+965
+00:36:10,000 --> 00:36:12,000
+Taipei, Tainan, and Taichung.
+
+966
+00:36:12,000 --> 00:36:14,000
+You can see that
+
+967
+00:36:14,000 --> 00:36:16,000
+if we
+
+968
+00:36:16,000 --> 00:36:18,000
+use temperature
+
+969
+00:36:18,000 --> 00:36:20,000
+and energy
+
+970
+00:36:20,000 --> 00:36:22,000
+to get a plot,
+
+971
+00:36:22,000 --> 00:36:24,000
+you can see that
+
+972
+00:36:24,000 --> 00:36:26,000
+there is a very obvious curve on weekday,
+
+973
+00:36:26,000 --> 00:36:28,000
+and there is a very obvious curve on weekend.
+
+974
+00:36:28,000 --> 00:36:30,000
+We use a two-dimensional curve
+
+975
+00:36:30,000 --> 00:36:32,000
+to draw it.
+
+976
+00:36:32,000 --> 00:36:34,000
+You can see that there is a very obvious relationship here.
+
+977
+00:36:34,000 --> 00:36:36,000
+So
+
+978
+00:36:36,000 --> 00:36:38,000
+after we add it here,
+
+979
+00:36:38,000 --> 00:36:40,000
+you can see that this prediction
+
+980
+00:36:40,000 --> 00:36:42,000
+is actually a lot more accurate.
+
+981
+00:36:42,000 --> 00:36:44,000
+It can roughly draw this seasonal line,
+
+982
+00:36:44,000 --> 00:36:46,000
+and its Oscar can reach 0.81.
+
+983
+00:36:46,000 --> 00:36:48,000
+Sorry, I forgot to mention that
+
+984
+00:36:48,000 --> 00:36:50,000
+the training data is used to train
+
+985
+00:36:50,000 --> 00:36:52,000
+the whole year of 2019,
+
+986
+00:36:52,000 --> 00:36:54,000
+and then use 2020
+
+987
+00:36:54,000 --> 00:36:56,000
+as our test data to see its accuracy.
+
+988
+00:36:56,000 --> 00:36:58,000
+So you can see
+
+989
+00:36:58,000 --> 00:37:00,000
+that even if we only have
+
+990
+00:37:00,000 --> 00:37:02,000
+weekly weather conditions,
+
+991
+00:37:02,000 --> 00:37:04,000
+the prediction of the next year
+
+992
+00:37:04,000 --> 00:37:06,000
+is actually quite accurate.
+
+993
+00:37:06,000 --> 00:37:08,000
+The third model
+
+994
+00:37:08,000 --> 00:37:10,000
+is to say that
+
+995
+00:37:10,000 --> 00:37:12,000
+in addition to the weather conditions here,
+
+996
+00:37:12,000 --> 00:37:14,000
+we can see some
+
+997
+00:37:14,000 --> 00:37:16,000
+of the predictions here,
+
+998
+00:37:16,000 --> 00:37:18,000
+but it's not very accurate.
+
+999
+00:37:18,000 --> 00:37:20,000
+The main reason is that the model can't know
+
+1000
+00:37:20,000 --> 00:37:22,000
+which day is the holiday,
+
+1001
+00:37:22,000 --> 00:37:24,000
+so you have to tell it this feature.
+
+1002
+00:37:24,000 --> 00:37:26,000
+The third model is called Holiday,
+
+1003
+00:37:26,000 --> 00:37:28,000
+which is the holiday data
+
+1004
+00:37:28,000 --> 00:37:30,000
+we just got from IronDate.
+
+1005
+00:37:32,000 --> 00:37:34,000
+How many types
+
+1006
+00:37:34,000 --> 00:37:36,000
+of holiday types are there here?
+
+1007
+00:37:36,000 --> 00:37:38,000
+0 is the most common,
+
+1008
+00:37:38,000 --> 00:37:40,000
+1 is the most
+
+1009
+00:37:40,000 --> 00:37:42,000
+common ordinary day,
+
+1010
+00:37:42,000 --> 00:37:44,000
+that is, it doesn't have a holiday,
+
+1011
+00:37:44,000 --> 00:37:46,000
+and 2 is the weekend.
+
+1012
+00:37:46,000 --> 00:37:48,000
+You can see that their grouping methods
+
+1013
+00:37:48,000 --> 00:37:50,000
+are not the same.
+
+1014
+00:37:50,000 --> 00:37:52,000
+After adding this,
+
+1015
+00:37:52,000 --> 00:37:54,000
+you can see that the prediction
+
+1016
+00:37:54,000 --> 00:37:56,000
+here in the new year seems to be a little lower.
+
+1017
+00:37:56,000 --> 00:37:58,000
+For example, around October 10,
+
+1018
+00:37:58,000 --> 00:38:00,000
+it will also be here
+
+1019
+00:38:00,000 --> 00:38:02,000
+in these three days,
+
+1020
+00:38:02,000 --> 00:38:04,000
+its prediction value will also be lower.
+
+1021
+00:38:04,000 --> 00:38:06,000
+That's because there's a feature
+
+1022
+00:38:06,000 --> 00:38:08,000
+added to it,
+
+1023
+00:38:08,000 --> 00:38:10,000
+so it's improved from 0.81 to
+
+1024
+00:38:10,000 --> 00:38:12,000
+almost 0.9.
+
+1025
+00:38:12,000 --> 00:38:14,000
+The most important thing is that
+
+1026
+00:38:14,000 --> 00:38:16,000
+our scope can actually predict
+
+1027
+00:38:16,000 --> 00:38:18,000
+the energy for the next week,
+
+1028
+00:38:18,000 --> 00:38:20,000
+so it actually includes the previous day,
+
+1029
+00:38:20,000 --> 00:38:22,000
+including the previous seven days
+
+1030
+00:38:22,000 --> 00:38:24,000
+and so on, these past energy data
+
+1031
+00:38:24,000 --> 00:38:26,000
+can actually be our feature.
+
+1032
+00:38:26,000 --> 00:38:28,000
+For example, I'm going to predict tomorrow's energy,
+
+1033
+00:38:28,000 --> 00:38:30,000
+but if I can know
+
+1034
+00:38:30,000 --> 00:38:32,000
+what the trend
+
+1035
+00:38:32,000 --> 00:38:34,000
+of today's energy looks like,
+
+1036
+00:38:34,000 --> 00:38:36,000
+then we can use today's trend
+
+1037
+00:38:36,000 --> 00:38:38,000
+and maybe add a little bit more.
+
+1038
+00:38:38,000 --> 00:38:40,000
+If the temperature is high, we can add a little bit.
+
+1039
+00:38:40,000 --> 00:38:42,000
+Then predict tomorrow's energy.
+
+1040
+00:38:42,000 --> 00:38:44,000
+So the energy data
+
+1041
+00:38:44,000 --> 00:38:46,000
+from the previous day or the previous seven days
+
+1042
+00:38:46,000 --> 00:38:48,000
+is also a pretty useful feature.
+
+1043
+00:38:48,000 --> 00:38:50,000
+I'm here in Australia.
+
+1044
+00:38:50,000 --> 00:38:52,000
+If we add
+
+1045
+00:38:52,000 --> 00:38:54,000
+the energy data
+
+1046
+00:38:54,000 --> 00:38:56,000
+from the previous day
+
+1047
+00:38:56,000 --> 00:38:58,000
+and the previous seven days
+
+1048
+00:38:58,000 --> 00:39:00,000
+and two weeks ago,
+
+1049
+00:39:00,000 --> 00:39:02,000
+you can see that
+
+1050
+00:39:02,000 --> 00:39:04,000
+in fact,
+
+1051
+00:39:04,000 --> 00:39:06,000
+they are highly related,
+
+1052
+00:39:06,000 --> 00:39:08,000
+that is, the previous day
+
+1053
+00:39:08,000 --> 00:39:10,000
+our current energy
+
+1054
+00:39:10,000 --> 00:39:12,000
+their relationship
+
+1055
+00:39:12,000 --> 00:39:14,000
+is very close.
+
+1056
+00:39:14,000 --> 00:39:16,000
+The previous seven days or the previous 14 days
+
+1057
+00:39:16,000 --> 00:39:18,000
+are also very close,
+
+1058
+00:39:18,000 --> 00:39:20,000
+which is also reasonable.
+
+1059
+00:39:20,000 --> 00:39:22,000
+It's like 9 o'clock in the morning
+
+1060
+00:39:22,000 --> 00:39:24,000
+and 9 o'clock in the morning yesterday.
+
+1061
+00:39:24,000 --> 00:39:26,000
+It's like 9 o'clock now and 9 o'clock
+
+1062
+00:39:26,000 --> 00:39:28,000
+a week ago, and it's like
+
+1063
+00:39:28,000 --> 00:39:30,000
+9 o'clock two weeks ago.
+
+1064
+00:39:30,000 --> 00:39:32,000
+So after adding this feature,
+
+1065
+00:39:32,000 --> 00:39:34,000
+our Oscar can directly
+
+1066
+00:39:34,000 --> 00:39:36,000
+increase to 0.94.
+
+1067
+00:39:36,000 --> 00:39:38,000
+This thing is of course based on
+
+1068
+00:39:38,000 --> 00:39:40,000
+my short-term prediction today.
+
+1069
+00:39:40,000 --> 00:39:42,000
+If you predict tomorrow or the next week's energy,
+
+1070
+00:39:42,000 --> 00:39:44,000
+then I can use this
+
+1071
+00:39:44,000 --> 00:39:46,000
+energy from the previous few days as my feature.
+
+1072
+00:39:48,000 --> 00:39:50,000
+OK, so here,
+
+1073
+00:39:50,000 --> 00:39:52,000
+this notebook is mainly to do this model training,
+
+1074
+00:39:52,000 --> 00:39:54,000
+which is to establish this model.
+
+1075
+00:39:54,000 --> 00:39:56,000
+At the end of this model,
+
+1076
+00:39:56,000 --> 00:39:58,000
+when it is to be output,
+
+1077
+00:39:58,000 --> 00:40:00,000
+we will actually use two years of data to do training.
+
+1078
+00:40:00,000 --> 00:40:02,000
+Just to do some validation,
+
+1079
+00:40:02,000 --> 00:40:04,000
+we might have to come out a year ago
+
+1080
+00:40:04,000 --> 00:40:06,000
+to see how it works.
+
+1081
+00:40:06,000 --> 00:40:08,000
+If the parameters of this model are fine
+
+1082
+00:40:08,000 --> 00:40:10,000
+and the effect is very good,
+
+1083
+00:40:10,000 --> 00:40:12,000
+then we can use two years of data
+
+1084
+00:40:12,000 --> 00:40:14,000
+to do training.
+
+1085
+00:40:14,000 --> 00:40:16,000
+So the output here is
+
+1086
+00:40:16,000 --> 00:40:18,000
+actually a light GBM model.
+
+1087
+00:40:20,000 --> 00:40:22,000
+The last notebook here
+
+1088
+00:40:22,000 --> 00:40:24,000
+is actually a real-time prediction.
+
+1089
+00:40:24,000 --> 00:40:26,000
+Then we use the light GBM model
+
+1090
+00:40:26,000 --> 00:40:28,000
+we built just now
+
+1091
+00:40:28,000 --> 00:40:30,000
+to import it in.
+
+1092
+00:40:30,000 --> 00:40:32,000
+Then we can use this model to predict.
+
+1093
+00:40:32,000 --> 00:40:34,000
+Just before doing the prediction,
+
+1094
+00:40:34,000 --> 00:40:36,000
+we still have to grab some data.
+
+1095
+00:40:36,000 --> 00:40:38,000
+Because what we just grabbed is historical data.
+
+1096
+00:40:38,000 --> 00:40:40,000
+If we want to predict the energy
+
+1097
+00:40:40,000 --> 00:40:42,000
+for the next seven days,
+
+1098
+00:40:42,000 --> 00:40:44,000
+then we have to catch the future weather forecast.
+
+1099
+00:40:44,000 --> 00:40:46,000
+Then we have to catch
+
+1100
+00:40:46,000 --> 00:40:48,000
+the holiday data.
+
+1101
+00:40:48,000 --> 00:40:50,000
+Then we also have to catch
+
+1102
+00:40:50,000 --> 00:40:52,000
+the energy data from the previous few days
+
+1103
+00:40:52,000 --> 00:40:54,000
+as our feature.
+
+1104
+00:40:54,000 --> 00:40:56,000
+So the first thing here
+
+1105
+00:40:56,000 --> 00:40:58,000
+is to spread some
+
+1106
+00:40:58,000 --> 00:41:00,000
+energy data.
+
+1107
+00:41:00,000 --> 00:41:02,000
+Here we can see
+
+1108
+00:41:02,000 --> 00:41:04,000
+that we will catch
+
+1109
+00:41:04,000 --> 00:41:06,000
+all the energy data this year.
+
+1110
+00:41:06,000 --> 00:41:08,000
+Then you can see that
+
+1111
+00:41:08,000 --> 00:41:10,000
+here is
+
+1112
+00:41:12,000 --> 00:41:14,000
+the energy data
+
+1113
+00:41:14,000 --> 00:41:16,000
+a month ago.
+
+1114
+00:41:16,000 --> 00:41:18,000
+You can see that it is December,
+
+1115
+00:41:18,000 --> 00:41:20,000
+January, and then the data by the end of January.
+
+1116
+00:41:20,000 --> 00:41:22,000
+Here is also
+
+1117
+00:41:22,000 --> 00:41:24,000
+the estimated data
+
+1118
+00:41:24,000 --> 00:41:26,000
+provided by Taiden.
+
+1119
+00:41:26,000 --> 00:41:28,000
+Their predicted data
+
+1120
+00:41:28,000 --> 00:41:30,000
+to predict what it looks like
+
+1121
+00:41:30,000 --> 00:41:32,000
+at the bottom of the peak.
+
+1122
+00:41:32,000 --> 00:41:34,000
+Then we will
+
+1123
+00:41:34,000 --> 00:41:36,000
+catch the weather forecast
+
+1124
+00:41:36,000 --> 00:41:38,000
+from the Central Meteorological Bureau.
+
+1125
+00:41:38,000 --> 00:41:40,000
+Then we can predict
+
+1126
+00:41:40,000 --> 00:41:42,000
+the energy for the next seven days.
+
+1127
+00:41:42,000 --> 00:41:44,000
+Basically, we use the model
+
+1128
+00:41:44,000 --> 00:41:46,000
+of LightGBM.
+
+1129
+00:41:46,000 --> 00:41:48,000
+Here we can catch the weather forecast
+
+1130
+00:41:48,000 --> 00:41:50,000
+for Taipei, Taichung, and Tainan.
+
+1131
+00:41:50,000 --> 00:41:52,000
+Because this is a notebook I made
+
+1132
+00:41:52,000 --> 00:41:54,000
+a week ago.
+
+1133
+00:41:54,000 --> 00:41:56,000
+January 28th to February 3rd
+
+1134
+00:41:56,000 --> 00:41:58,000
+is the estimated date.
+
+1135
+00:41:58,000 --> 00:42:00,000
+So this is Taipei, Taichung, and Tainan.
+
+1136
+00:42:00,000 --> 00:42:02,000
+Here is the temperature provided by the weather forecast.
+
+1137
+00:42:02,000 --> 00:42:04,000
+Then
+
+1138
+00:42:04,000 --> 00:42:06,000
+the following
+
+1139
+00:42:06,000 --> 00:42:08,000
+are some features,
+
+1140
+00:42:08,000 --> 00:42:10,000
+such as the week,
+
+1141
+00:42:10,000 --> 00:42:12,000
+one day ago, seven days ago,
+
+1142
+00:42:12,000 --> 00:42:14,000
+and 14 days ago.
+
+1143
+00:42:14,000 --> 00:42:16,000
+Because only the first day
+
+1144
+00:42:16,000 --> 00:42:18,000
+has the energy of the day before,
+
+1145
+00:42:18,000 --> 00:42:20,000
+so there will be data here.
+
+1146
+00:42:20,000 --> 00:42:22,000
+From the second day,
+
+1147
+00:42:22,000 --> 00:42:24,000
+there will be no data on the first day.
+
+1148
+00:42:24,000 --> 00:42:26,000
+Because our prediction will actually start
+
+1149
+00:42:26,000 --> 00:42:28,000
+from the first day,
+
+1150
+00:42:28,000 --> 00:42:30,000
+and then predict the second day, the third day.
+
+1151
+00:42:30,000 --> 00:42:32,000
+Then the data of the day before,
+
+1152
+00:42:32,000 --> 00:42:34,000
+we will use the prediction value of the day before to put it in.
+
+1153
+00:42:34,000 --> 00:42:36,000
+So we can look at
+
+1154
+00:42:36,000 --> 00:42:38,000
+the prediction result.
+
+1155
+00:42:38,000 --> 00:42:40,000
+The prediction result can actually be seen here.
+
+1156
+00:42:40,000 --> 00:42:42,000
+That is to say,
+
+1157
+00:42:44,000 --> 00:42:46,000
+here is the data.
+
+1158
+00:42:46,000 --> 00:42:48,000
+The limit is what happened in the past.
+
+1159
+00:42:48,000 --> 00:42:50,000
+The blue line and the green line are
+
+1160
+00:42:50,000 --> 00:42:52,000
+the LGBM model we predicted.
+
+1161
+00:42:52,000 --> 00:42:54,000
+The green line is the LGBM prediction.
+
+1162
+00:42:54,000 --> 00:42:56,000
+You can see that our prediction seems to be low.
+
+1163
+00:42:56,000 --> 00:42:58,000
+So we can
+
+1164
+00:42:58,000 --> 00:43:00,000
+predict it.
+
+1165
+00:43:00,000 --> 00:43:02,000
+We can evaluate it later.
+
+1166
+00:43:02,000 --> 00:43:04,000
+What is the difference between the two
+
+1167
+00:43:04,000 --> 00:43:06,000
+we predicted with LGBM?
+
+1168
+00:43:06,000 --> 00:43:08,000
+Who is more accurate?
+
+1169
+00:43:08,000 --> 00:43:10,000
+Or what is the difference between the two features?
+
+1170
+00:43:10,000 --> 00:43:12,000
+Because this is
+
+1171
+00:43:12,000 --> 00:43:14,000
+the prediction 11 days ago.
+
+1172
+00:43:14,000 --> 00:43:16,000
+So I didn't make any changes to it.
+
+1173
+00:43:16,000 --> 00:43:18,000
+We can now
+
+1174
+00:43:18,000 --> 00:43:20,000
+take a look at the prediction result.
+
+1175
+00:43:22,000 --> 00:43:24,000
+Ok.
+
+1176
+00:43:26,000 --> 00:43:28,000
+This is the prediction result.
+
+1177
+00:43:28,000 --> 00:43:30,000
+You can see that the orange line
+
+1178
+00:43:30,000 --> 00:43:32,000
+is the
+
+1179
+00:43:32,000 --> 00:43:34,000
+LGBM prediction.
+
+1180
+00:43:34,000 --> 00:43:36,000
+The blue line is the LGBM prediction.
+
+1181
+00:43:36,000 --> 00:43:38,000
+You can see that
+
+1182
+00:43:38,000 --> 00:43:40,000
+at the beginning,
+
+1183
+00:43:40,000 --> 00:43:42,000
+the error was very high.
+
+1184
+00:43:42,000 --> 00:43:44,000
+The blue bar is the error.
+
+1185
+00:43:44,000 --> 00:43:46,000
+We almost accurately predicted
+
+1186
+00:43:46,000 --> 00:43:48,000
+what the energy would be like three days ago.
+
+1187
+00:43:48,000 --> 00:43:50,000
+But as time goes by,
+
+1188
+00:43:50,000 --> 00:43:52,000
+the accuracy is getting worse and worse.
+
+1189
+00:43:52,000 --> 00:43:54,000
+It's mainly because of the weather forecast.
+
+1190
+00:43:54,000 --> 00:43:56,000
+It's very likely that
+
+1191
+00:43:56,000 --> 00:43:58,000
+the accuracy of the weather forecast
+
+1192
+00:43:58,000 --> 00:44:00,000
+is getting worse and worse
+
+1193
+00:44:00,000 --> 00:44:02,000
+from the first day to the second day.
+
+1194
+00:44:02,000 --> 00:44:04,000
+Or the temperature I brought in
+
+1195
+00:44:04,000 --> 00:44:06,000
+is not enough.
+
+1196
+00:44:06,000 --> 00:44:08,000
+So the prediction is not very accurate.
+
+1197
+00:44:08,000 --> 00:44:10,000
+LGBM's prediction
+
+1198
+00:44:10,000 --> 00:44:12,000
+is relatively stable.
+
+1199
+00:44:12,000 --> 00:44:14,000
+It can maintain
+
+1200
+00:44:14,000 --> 00:44:16,000
+a certain error every day.
+
+1201
+00:44:16,000 --> 00:44:18,000
+I don't know how to do it.
+
+1202
+00:44:18,000 --> 00:44:20,000
+The error of the prediction
+
+1203
+00:44:20,000 --> 00:44:22,000
+is mostly positive.
+
+1204
+00:44:22,000 --> 00:44:24,000
+But this is just a seven-day data.
+
+1205
+00:44:24,000 --> 00:44:26,000
+So it can't be
+
+1206
+00:44:26,000 --> 00:44:28,000
+simply solved like this.
+
+1207
+00:44:28,000 --> 00:44:30,000
+You can find this phenomenon
+
+1208
+00:44:30,000 --> 00:44:32,000
+from these seven days.
+
+1209
+00:44:32,000 --> 00:44:34,000
+The accuracy of the prediction
+
+1210
+00:44:34,000 --> 00:44:36,000
+is not very different.
+
+1211
+00:44:36,000 --> 00:44:38,000
+Ok.
+
+1212
+00:44:38,000 --> 00:44:40,000
+I also put the link of the notebook here.
+
+1213
+00:44:40,000 --> 00:44:42,000
+If you are interested, you can go to Kaggle.
+
+1214
+00:44:42,000 --> 00:44:44,000
+Or you can search for the keyword
+
+1215
+00:44:44,000 --> 00:44:46,000
+pocket tyrant.
+
+1216
+00:44:46,000 --> 00:44:48,000
+Notebook.
+
+1217
+00:44:50,000 --> 00:44:52,000
+I didn't miss anything in the beginning.
+
+1218
+00:44:52,000 --> 00:44:54,000
+The first part is
+
+1219
+00:44:54,000 --> 00:44:56,000
+the introduction of OpenDataSet.
+
+1220
+00:44:56,000 --> 00:44:58,000
+A brief summary of today's summary.
+
+1221
+00:44:58,000 --> 00:45:00,000
+In the field of architecture,
+
+1222
+00:45:00,000 --> 00:45:02,000
+in the part of energy prediction,
+
+1223
+00:45:02,000 --> 00:45:04,000
+in addition to being affected
+
+1224
+00:45:04,000 --> 00:45:06,000
+by external conditions
+
+1225
+00:45:06,000 --> 00:45:08,000
+and the variables of these environments,
+
+1226
+00:45:08,000 --> 00:45:10,000
+behavior is also very important.
+
+1227
+00:45:10,000 --> 00:45:12,000
+When do people go to work?
+
+1228
+00:45:12,000 --> 00:45:14,000
+What time does he go to work?
+
+1229
+00:45:14,000 --> 00:45:16,000
+Is it holiday or non-holiday that day?
+
+1230
+00:45:16,000 --> 00:45:18,000
+Or is it weekend?
+
+1231
+00:45:18,000 --> 00:45:20,000
+In fact, it has a great impact.
+
+1232
+00:45:20,000 --> 00:45:22,000
+The second point is that we actually
+
+1233
+00:45:22,000 --> 00:45:24,000
+learned from Kaggle Competition,
+
+1234
+00:45:24,000 --> 00:45:26,000
+which is what we learned in the energy prediction competition.
+
+1235
+00:45:26,000 --> 00:45:28,000
+First of all, the tree-based model
+
+1236
+00:45:28,000 --> 00:45:30,000
+is actually
+
+1237
+00:45:30,000 --> 00:45:32,000
+most of the solutions
+
+1238
+00:45:32,000 --> 00:45:34,000
+that Wiener will use.
+
+1239
+00:45:34,000 --> 00:45:36,000
+Mainly because of its performance
+
+1240
+00:45:36,000 --> 00:45:38,000
+and its training time
+
+1241
+00:45:38,000 --> 00:45:40,000
+and tuning parameter time
+
+1242
+00:45:40,000 --> 00:45:42,000
+can achieve a balance.
+
+1243
+00:45:42,000 --> 00:45:44,000
+Then you can achieve good performance.
+
+1244
+00:45:44,000 --> 00:45:46,000
+So everyone will use this method.
+
+1245
+00:45:46,000 --> 00:45:48,000
+The other thing is that
+
+1246
+00:45:48,000 --> 00:45:50,000
+the data scientists in it
+
+1247
+00:45:50,000 --> 00:45:52,000
+mainly focus on this.
+
+1248
+00:45:52,000 --> 00:45:54,000
+What I mean is that these data scientists
+
+1249
+00:45:54,000 --> 00:45:56,000
+don't have any personnel or
+
+1250
+00:45:56,000 --> 00:45:58,000
+building-related background.
+
+1251
+00:45:58,000 --> 00:46:00,000
+But based on their data skills,
+
+1252
+00:46:00,000 --> 00:46:02,000
+it is the sharing of the community above.
+
+1253
+00:46:02,000 --> 00:46:04,000
+Everyone shares with each other
+
+1254
+00:46:04,000 --> 00:46:06,000
+what they found in these data.
+
+1255
+00:46:06,000 --> 00:46:08,000
+What are the characteristics?
+
+1256
+00:46:08,000 --> 00:46:10,000
+Then everyone can use these knowledge
+
+1257
+00:46:10,000 --> 00:46:12,000
+to make the most accurate predictions
+
+1258
+00:46:12,000 --> 00:46:14,000
+based on their model experience
+
+1259
+00:46:14,000 --> 00:46:16,000
+and their know-how.
+
+1260
+00:46:16,000 --> 00:46:18,000
+So the winners in the front
+
+1261
+00:46:18,000 --> 00:46:20,000
+don't have any professional
+
+1262
+00:46:20,000 --> 00:46:22,000
+building-related background.
+
+1263
+00:46:22,000 --> 00:46:24,000
+Then there is the actual
+
+1264
+00:46:24,000 --> 00:46:26,000
+demand forecasting model.
+
+1265
+00:46:26,000 --> 00:46:28,000
+Then use Taiwan energy
+
+1266
+00:46:28,000 --> 00:46:30,000
+to do the actual part.
+
+1267
+00:46:30,000 --> 00:46:32,000
+In fact, Taiwan Open Data is very
+
+1268
+00:46:32,000 --> 00:46:34,000
+enough to do such a model.
+
+1269
+00:46:34,000 --> 00:46:36,000
+It takes about two years.
+
+1270
+00:46:36,000 --> 00:46:38,000
+But in my opinion,
+
+1271
+00:46:38,000 --> 00:46:40,000
+Taiwan Open Data is already enough
+
+1272
+00:46:40,000 --> 00:46:42,000
+to build a model with good accuracy.
+
+1273
+00:46:42,000 --> 00:46:44,000
+In the field of architecture.
+
+1274
+00:46:44,000 --> 00:46:46,000
+Then there is
+
+1275
+00:46:46,000 --> 00:46:48,000
+its performance.
+
+1276
+00:46:48,000 --> 00:46:50,000
+It's pretty good.
+
+1277
+00:46:50,000 --> 00:46:52,000
+Everyone can do more than 0.9.
+
+1278
+00:46:52,000 --> 00:46:54,000
+And it's also very simple.
+
+1279
+00:46:54,000 --> 00:46:56,000
+You can support it for free
+
+1280
+00:46:56,000 --> 00:46:58,000
+in the Kaggle platform.
+
+1281
+00:46:58,000 --> 00:47:00,000
+Finally, it is Open Dataset.
+
+1282
+00:47:00,000 --> 00:47:02,000
+In fact, Taiwan has a very rich
+
+1283
+00:47:02,000 --> 00:47:04,000
+and very diversified dataset.
+
+1284
+00:47:04,000 --> 00:47:06,000
+Compared to other Open Datasets
+
+1285
+00:47:06,000 --> 00:47:08,000
+Open Datasets are very limited.
+
+1286
+00:47:08,000 --> 00:47:10,000
+Taiwan has a lot.
+
+1287
+00:47:10,000 --> 00:47:12,000
+Of course, there are a lot of messy
+
+1288
+00:47:12,000 --> 00:47:14,000
+and I don't know how to use the dataset.
+
+1289
+00:47:14,000 --> 00:47:16,000
+But in fact, there are some very useful
+
+1290
+00:47:16,000 --> 00:47:18,000
+and very interesting datasets that
+
+1291
+00:47:18,000 --> 00:47:20,000
+everyone can play.
+
+1292
+00:47:20,000 --> 00:47:22,000
+In addition, these datasets can help
+
+1293
+00:47:22,000 --> 00:47:24,000
+researchers like us
+
+1294
+00:47:24,000 --> 00:47:26,000
+to find some interesting patterns.
+
+1295
+00:47:26,000 --> 00:47:28,000
+For example, Google Search
+
+1296
+00:47:28,000 --> 00:47:30,000
+can also help you
+
+1297
+00:47:30,000 --> 00:47:32,000
+to find some details
+
+1298
+00:47:32,000 --> 00:47:34,000
+in Building Energy.
+
+1299
+00:47:34,000 --> 00:47:36,000
+Next, we will have 10 minutes
+
+1300
+00:47:36,000 --> 00:47:38,000
+for Q&A.
+
+1301
+00:47:40,000 --> 00:47:42,000
+Thank you for the wonderful
+
+1302
+00:47:42,000 --> 00:47:44,000
+presentation today.
+
+1303
+00:47:44,000 --> 00:47:46,000
+You made a very good
+
+1304
+00:47:46,000 --> 00:47:48,000
+summary.
+
+1305
+00:47:48,000 --> 00:47:50,000
+About the competition
+
+1306
+00:47:50,000 --> 00:47:52,000
+of Azure,
+
+1307
+00:47:52,000 --> 00:47:54,000
+the competition on the Kaggle platform,
+
+1308
+00:47:54,000 --> 00:47:56,000
+and some model introduction,
+
+1309
+00:47:56,000 --> 00:47:58,000
+LGBM,
+
+1310
+00:47:58,000 --> 00:48:00,000
+XGBoost,
+
+1311
+00:48:00,000 --> 00:48:02,000
+or Neural Network,
+
+1312
+00:48:02,000 --> 00:48:04,000
+as well as the overall introduction
+
+1313
+00:48:04,000 --> 00:48:06,000
+of architecture prediction
+
+1314
+00:48:06,000 --> 00:48:08,000
+and Open Data Science.
+
+1315
+00:48:08,000 --> 00:48:10,000
+It's very exciting.
+
+1316
+00:48:10,000 --> 00:48:12,000
+Now we see that
+
+1317
+00:48:12,000 --> 00:48:14,000
+in the chat box,
+
+1318
+00:48:14,000 --> 00:48:16,000
+a friend asked
+
+1319
+00:48:16,000 --> 00:48:18,000
+that he wanted to ask
+
+1320
+00:48:18,000 --> 00:48:20,000
+that there may be no accurate
+
+1321
+00:48:20,000 --> 00:48:22,000
+temperature prediction in the future
+
+1322
+00:48:22,000 --> 00:48:24,000
+when actually using it.
+
+1323
+00:48:24,000 --> 00:48:26,000
+Will the performance of the model
+
+1324
+00:48:26,000 --> 00:48:28,000
+be affected at this time?
+
+1325
+00:48:28,000 --> 00:48:30,000
+In fact, it will.
+
+1326
+00:48:30,000 --> 00:48:32,000
+It should be said that
+
+1327
+00:48:32,000 --> 00:48:34,000
+the difference in temperature
+
+1328
+00:48:34,000 --> 00:48:36,000
+may be that
+
+1329
+00:48:36,000 --> 00:48:38,000
+according to our observation,
+
+1330
+00:48:38,000 --> 00:48:40,000
+the temperature difference in weather forecast
+
+1331
+00:48:40,000 --> 00:48:42,000
+is very full.
+
+1332
+00:48:42,000 --> 00:48:44,000
+But the temperature
+
+1333
+00:48:44,000 --> 00:48:46,000
+prediction error
+
+1334
+00:48:46,000 --> 00:48:48,000
+is about 1-2 degrees.
+
+1335
+00:48:48,000 --> 00:48:50,000
+Most weather forecasts
+
+1336
+00:48:50,000 --> 00:48:52,000
+can accurately predict
+
+1337
+00:48:52,000 --> 00:48:54,000
+the temperature profile.
+
+1338
+00:48:54,000 --> 00:48:56,000
+For example, 18-29 degrees
+
+1339
+00:48:56,000 --> 00:48:58,000
+is actually quite accurate.
+
+1340
+00:48:58,000 --> 00:49:00,000
+Next is the architecture energy.
+
+1341
+00:49:00,000 --> 00:49:02,000
+It's actually a pretty stable
+
+1342
+00:49:02,000 --> 00:49:04,000
+profile.
+
+1343
+00:49:04,000 --> 00:49:06,000
+It's not because the temperature suddenly rises
+
+1344
+00:49:06,000 --> 00:49:08,000
+or falls.
+
+1345
+00:49:08,000 --> 00:49:10,000
+So in this regard,
+
+1346
+00:49:10,000 --> 00:49:12,000
+although the weather forecast
+
+1347
+00:49:12,000 --> 00:49:14,000
+is not completely accurate,
+
+1348
+00:49:14,000 --> 00:49:16,000
+it does not affect
+
+1349
+00:49:16,000 --> 00:49:18,000
+the accuracy of the prediction.
+
+1350
+00:49:18,000 --> 00:49:20,000
+Of course, if you want to predict
+
+1351
+00:49:20,000 --> 00:49:22,000
+the next month or next week,
+
+1352
+00:49:22,000 --> 00:49:24,000
+the prediction error may be slightly higher.
+
+1353
+00:49:24,000 --> 00:49:26,000
+But if you predict
+
+1354
+00:49:26,000 --> 00:49:28,000
+one day tomorrow or three days later,
+
+1355
+00:49:28,000 --> 00:49:30,000
+I don't think the accuracy of the energy
+
+1356
+00:49:30,000 --> 00:49:32,000
+will be much higher.
+
+1357
+00:49:36,000 --> 00:49:38,000
+Thank you for your answer.
+
+1358
+00:49:38,000 --> 00:49:40,000
+Do you have any questions
+
+1359
+00:49:40,000 --> 00:49:42,000
+for the audience here?
+
+1360
+00:49:42,000 --> 00:49:44,000
+You can mute your questions
+
+1361
+00:49:44,000 --> 00:49:46,000
+or type them in the chat.
+
+1362
+00:49:54,000 --> 00:49:56,000
+Hello, I'm Louis.
+
+1363
+00:49:56,000 --> 00:49:58,000
+I have one last question.
+
+1364
+00:49:58,000 --> 00:50:00,000
+It's a very good question.
+
+1365
+00:50:00,000 --> 00:50:02,000
+It's a time series question.
+
+1366
+00:50:02,000 --> 00:50:04,000
+How do you do validation?
+
+1367
+00:50:04,000 --> 00:50:06,000
+You mentioned that you use
+
+1368
+00:50:06,000 --> 00:50:08,000
+2019's trend on 2019
+
+1369
+00:50:08,000 --> 00:50:10,000
+and then 2020's
+
+1370
+00:50:10,000 --> 00:50:12,000
+to predict.
+
+1371
+00:50:12,000 --> 00:50:14,000
+Is there a more complete
+
+1372
+00:50:14,000 --> 00:50:16,000
+way to do validation?
+
+1373
+00:50:18,000 --> 00:50:20,000
+Sorry to interrupt,
+
+1374
+00:50:20,000 --> 00:50:22,000
+but before you answer,
+
+1375
+00:50:22,000 --> 00:50:24,000
+I'd like to ask the audience
+
+1376
+00:50:24,000 --> 00:50:26,000
+to introduce their backgrounds.
+
+1377
+00:50:26,000 --> 00:50:28,000
+So that we can
+
+1378
+00:50:28,000 --> 00:50:30,000
+get to know each other better.
+
+1379
+00:50:30,000 --> 00:50:32,000
+Thank you.
+
+1380
+00:50:34,000 --> 00:50:36,000
+I'm in the US.
+
+1381
+00:50:36,000 --> 00:50:38,000
+I'm a data scientist.
+
+1382
+00:50:38,000 --> 00:50:40,000
+I haven't done much
+
+1383
+00:50:40,000 --> 00:50:42,000
+on the time series,
+
+1384
+00:50:42,000 --> 00:50:44,000
+but I think it's pretty interesting.
+
+1385
+00:50:44,000 --> 00:50:46,000
+I'd like to learn more.
+
+1386
+00:50:46,000 --> 00:50:48,000
+No problem. Thank you for your question.
+
+1387
+00:50:48,000 --> 00:50:50,000
+For the time series,
+
+1388
+00:50:50,000 --> 00:50:52,000
+I'm not sure
+
+1389
+00:50:52,000 --> 00:50:54,000
+what you mean by validation.
+
+1390
+00:50:54,000 --> 00:50:56,000
+But if you mean
+
+1391
+00:50:56,000 --> 00:50:58,000
+how to cut the fold,
+
+1392
+00:50:58,000 --> 00:51:00,000
+how to cut the data
+
+1393
+00:51:00,000 --> 00:51:02,000
+to do cross-validation.
+
+1394
+00:51:02,000 --> 00:51:04,000
+For example, we cut four or five
+
+1395
+00:51:04,000 --> 00:51:06,000
+common cuts.
+
+1396
+00:51:06,000 --> 00:51:08,000
+We don't do shuffle.
+
+1397
+00:51:08,000 --> 00:51:10,000
+We don't do random
+
+1398
+00:51:10,000 --> 00:51:12,000
+cut.
+
+1399
+00:51:12,000 --> 00:51:14,000
+We don't do random
+
+1400
+00:51:14,000 --> 00:51:16,000
+cut.
+
+1401
+00:51:16,000 --> 00:51:18,000
+We don't do random cross-validation.
+
+1402
+00:51:18,000 --> 00:51:20,000
+For example,
+
+1403
+00:51:20,000 --> 00:51:22,000
+we do training
+
+1404
+00:51:22,000 --> 00:51:24,000
+for the first four years,
+
+1405
+00:51:24,000 --> 00:51:26,000
+and then validation for the last year.
+
+1406
+00:51:26,000 --> 00:51:28,000
+Or we do training for the next four years,
+
+1407
+00:51:28,000 --> 00:51:30,000
+and then validation for the first year.
+
+1408
+00:51:30,000 --> 00:51:32,000
+We want to
+
+1409
+00:51:32,000 --> 00:51:34,000
+cut the time series
+
+1410
+00:51:34,000 --> 00:51:36,000
+to do cross-validation,
+
+1411
+00:51:36,000 --> 00:51:38,000
+not to do random
+
+1412
+00:51:38,000 --> 00:51:40,000
+cut.
+
+1413
+00:51:40,000 --> 00:51:42,000
+We don't do random
+
+1414
+00:51:42,000 --> 00:51:44,000
+cut.
+
+1415
+00:51:44,000 --> 00:51:46,000
+Because time series
+
+1416
+00:51:46,000 --> 00:51:48,000
+is related to
+
+1417
+00:51:48,000 --> 00:51:50,000
+time before and after.
+
+1418
+00:51:50,000 --> 00:51:52,000
+So you can't
+
+1419
+00:51:52,000 --> 00:51:54,000
+randomly do validation.
+
+1420
+00:51:54,000 --> 00:51:56,000
+Does this answer your question?
+
+1421
+00:51:56,000 --> 00:51:58,000
+Yes.
+
+1422
+00:51:58,000 --> 00:52:00,000
+Thank you.
+
+1423
+00:52:00,000 --> 00:52:02,000
+Okay.
+
+1424
+00:52:04,000 --> 00:52:06,000
+What a wonderful discussion.
+
+1425
+00:52:06,000 --> 00:52:08,000
+Does anyone
+
+1426
+00:52:08,000 --> 00:52:10,000
+have any questions
+
+1427
+00:52:10,000 --> 00:52:12,000
+to ask?
+
+1428
+00:52:12,000 --> 00:52:14,000
+Hi, I'm
+
+1429
+00:52:14,000 --> 00:52:16,000
+Xie Cheng.
+
+1430
+00:52:16,000 --> 00:52:18,000
+Can you hear me?
+
+1431
+00:52:18,000 --> 00:52:20,000
+Okay.
+
+1432
+00:52:20,000 --> 00:52:22,000
+Hi.
+
+1433
+00:52:22,000 --> 00:52:24,000
+I used to study in Taiwan University.
+
+1434
+00:52:24,000 --> 00:52:26,000
+Now I'm studying in the US.
+
+1435
+00:52:26,000 --> 00:52:28,000
+My question is
+
+1436
+00:52:28,000 --> 00:52:30,000
+if
+
+1437
+00:52:30,000 --> 00:52:32,000
+your model needs to be
+
+1438
+00:52:32,000 --> 00:52:34,000
+used in the future,
+
+1439
+00:52:34,000 --> 00:52:36,000
+will there be any security concerns?
+
+1440
+00:52:36,000 --> 00:52:38,000
+For example,
+
+1441
+00:52:38,000 --> 00:52:40,000
+maybe not too serious security.
+
+1442
+00:52:40,000 --> 00:52:42,000
+Maybe there is a sudden event.
+
+1443
+00:52:42,000 --> 00:52:44,000
+For example,
+
+1444
+00:52:44,000 --> 00:52:46,000
+there is a joke about Excel
+
+1445
+00:52:46,000 --> 00:52:48,000
+that occurs on holidays,
+
+1446
+00:52:48,000 --> 00:52:50,000
+resulting in a large increase
+
+1447
+00:52:50,000 --> 00:52:52,000
+in the search volume of Excel
+
+1448
+00:52:52,000 --> 00:52:54,000
+on holidays,
+
+1449
+00:52:54,000 --> 00:52:56,000
+or something like that.
+
+1450
+00:52:56,000 --> 00:52:58,000
+How to avoid
+
+1451
+00:52:58,000 --> 00:53:00,000
+this kind of
+
+1452
+00:53:00,000 --> 00:53:02,000
+negative situation?
+
+1453
+00:53:02,000 --> 00:53:04,000
+Yes, there is such a situation.
+
+1454
+00:53:04,000 --> 00:53:06,000
+If you apply it to the industry,
+
+1455
+00:53:06,000 --> 00:53:08,000
+you still have to set a threshold.
+
+1456
+00:53:08,000 --> 00:53:10,000
+If the temperature
+
+1457
+00:53:10,000 --> 00:53:12,000
+is normal in Taiwan,
+
+1458
+00:53:12,000 --> 00:53:14,000
+it may be 0 to
+
+1459
+00:53:14,000 --> 00:53:16,000
+40 degrees or so.
+
+1460
+00:53:16,000 --> 00:53:18,000
+You may say
+
+1461
+00:53:18,000 --> 00:53:20,000
+there is a mistake here,
+
+1462
+00:53:20,000 --> 00:53:22,000
+I may stop my service.
+
+1463
+00:53:22,000 --> 00:53:24,000
+You may tell users
+
+1464
+00:53:24,000 --> 00:53:26,000
+why the service has stopped.
+
+1465
+00:53:26,000 --> 00:53:28,000
+For example,
+
+1466
+00:53:28,000 --> 00:53:30,000
+you can't use automatic
+
+1467
+00:53:30,000 --> 00:53:32,000
+or something like that.
+
+1468
+00:53:32,000 --> 00:53:34,000
+This is really necessary to add
+
+1469
+00:53:34,000 --> 00:53:36,000
+additional rules to avoid such a situation.
+
+1470
+00:53:36,000 --> 00:53:38,000
+Because in the industry,
+
+1471
+00:53:38,000 --> 00:53:40,000
+if you use this kind of low prediction
+
+1472
+00:53:40,000 --> 00:53:42,000
+to do automatic control,
+
+1473
+00:53:42,000 --> 00:53:44,000
+there will be such a risk.
+
+1474
+00:53:44,000 --> 00:53:46,000
+Cool.
+
+1475
+00:53:46,000 --> 00:53:48,000
+I want to ask another question
+
+1476
+00:53:48,000 --> 00:53:50,000
+related to Cargo.
+
+1477
+00:53:50,000 --> 00:53:52,000
+I have been studying for a while.
+
+1478
+00:53:52,000 --> 00:53:54,000
+I saw that last year,
+
+1479
+00:53:54,000 --> 00:53:56,000
+I don't know what to say now.
+
+1480
+00:53:56,000 --> 00:53:58,000
+Anyway, I saw two competitions last year.
+
+1481
+00:53:58,000 --> 00:54:00,000
+One is the target of wheat,
+
+1482
+00:54:00,000 --> 00:54:02,000
+and the other is
+
+1483
+00:54:02,000 --> 00:54:04,000
+the image detection of
+
+1484
+00:54:04,000 --> 00:54:06,000
+a special type.
+
+1485
+00:54:06,000 --> 00:54:08,000
+In fact, I also know some traditional
+
+1486
+00:54:08,000 --> 00:54:10,000
+breeders who have collected a lot of
+
+1487
+00:54:10,000 --> 00:54:12,000
+this kind of image data.
+
+1488
+00:54:12,000 --> 00:54:14,000
+Their quality may not be
+
+1489
+00:54:14,000 --> 00:54:16,000
+so uniform,
+
+1490
+00:54:16,000 --> 00:54:18,000
+but they may have to give up.
+
+1491
+00:54:18,000 --> 00:54:20,000
+But if you put it on Cargo now,
+
+1492
+00:54:20,000 --> 00:54:22,000
+let this kind of
+
+1493
+00:54:22,000 --> 00:54:24,000
+data scientist community
+
+1494
+00:54:24,000 --> 00:54:26,000
+have a good result.
+
+1495
+00:54:26,000 --> 00:54:28,000
+I'm curious about this kind of academic unit
+
+1496
+00:54:28,000 --> 00:54:30,000
+to put the data on it,
+
+1497
+00:54:30,000 --> 00:54:32,000
+and then let everyone
+
+1498
+00:54:32,000 --> 00:54:34,000
+come together
+
+1499
+00:54:34,000 --> 00:54:36,000
+to find a solution
+
+1500
+00:54:36,000 --> 00:54:38,000
+and then publish it.
+
+1501
+00:54:38,000 --> 00:54:40,000
+Is there anything to pay attention to
+
+1502
+00:54:40,000 --> 00:54:42,000
+in this process?
+
+1503
+00:54:42,000 --> 00:54:44,000
+How is it usually achieved?
+
+1504
+00:54:44,000 --> 00:54:46,000
+This Cargo competition,
+
+1505
+00:54:46,000 --> 00:54:48,000
+because I was
+
+1506
+00:54:48,000 --> 00:54:50,000
+preparing for this competition
+
+1507
+00:54:50,000 --> 00:54:52,000
+at the end of the previous year.
+
+1508
+00:54:52,000 --> 00:54:54,000
+At that time, I had not yet
+
+1509
+00:54:54,000 --> 00:54:56,000
+entered the lab,
+
+1510
+00:54:56,000 --> 00:54:58,000
+so I did not participate in this part.
+
+1511
+00:54:58,000 --> 00:55:00,000
+But as far as I know,
+
+1512
+00:55:00,000 --> 00:55:02,000
+they will actually do some cleaning first.
+
+1513
+00:55:02,000 --> 00:55:04,000
+I mean, this is our lab,
+
+1514
+00:55:04,000 --> 00:55:06,000
+because we are the organizer.
+
+1515
+00:55:06,000 --> 00:55:08,000
+We will process these data first
+
+1516
+00:55:08,000 --> 00:55:10,000
+and then confirm that
+
+1517
+00:55:10,000 --> 00:55:12,000
+the quality of these data is probably no problem.
+
+1518
+00:55:12,000 --> 00:55:14,000
+Then it will be sent to Cargo
+
+1519
+00:55:14,000 --> 00:55:16,000
+and their team to explain the data.
+
+1520
+00:55:16,000 --> 00:55:18,000
+Cargo also has a group of
+
+1521
+00:55:18,000 --> 00:55:20,000
+very professional data scientists
+
+1522
+00:55:20,000 --> 00:55:22,000
+to check the quality of the data,
+
+1523
+00:55:22,000 --> 00:55:24,000
+which is probably OK,
+
+1524
+00:55:24,000 --> 00:55:26,000
+and they won't clear the data for you,
+
+1525
+00:55:26,000 --> 00:55:28,000
+because data missing and outliers
+
+1526
+00:55:28,000 --> 00:55:30,000
+are things to deal with in the competition.
+
+1527
+00:55:30,000 --> 00:55:32,000
+Then they will go and see
+
+1528
+00:55:32,000 --> 00:55:34,000
+if the data is OK,
+
+1529
+00:55:34,000 --> 00:55:36,000
+and then they will
+
+1530
+00:55:36,000 --> 00:55:38,000
+test it internally
+
+1531
+00:55:38,000 --> 00:55:40,000
+and confirm that
+
+1532
+00:55:40,000 --> 00:55:42,000
+if the data is used for the competition,
+
+1533
+00:55:42,000 --> 00:55:44,000
+how much training data and validation data
+
+1534
+00:55:44,000 --> 00:55:46,000
+do I have?
+
+1535
+00:55:46,000 --> 00:55:48,000
+Although when we give him the data,
+
+1536
+00:55:48,000 --> 00:55:50,000
+we give him two years of training and one year of validation.
+
+1537
+00:55:50,000 --> 00:55:52,000
+But they strongly recommend
+
+1538
+00:55:52,000 --> 00:55:54,000
+one year of training and two years of prediction.
+
+1539
+00:55:54,000 --> 00:55:56,000
+They have their
+
+1540
+00:55:56,000 --> 00:55:58,000
+basis,
+
+1541
+00:55:58,000 --> 00:56:00,000
+which is what they think,
+
+1542
+00:56:00,000 --> 00:56:02,000
+and we respect it.
+
+1543
+00:56:02,000 --> 00:56:04,000
+They have a lot of know-how
+
+1544
+00:56:04,000 --> 00:56:06,000
+to organize this competition.
+
+1545
+00:56:06,000 --> 00:56:08,000
+Most of the Cargo competitions so far
+
+1546
+00:56:08,000 --> 00:56:10,000
+are not very controversial,
+
+1547
+00:56:10,000 --> 00:56:12,000
+so I think Cargo and their internal team
+
+1548
+00:56:12,000 --> 00:56:14,000
+are still very strong.
+
+1549
+00:56:14,000 --> 00:56:16,000
+If it's more local,
+
+1550
+00:56:16,000 --> 00:56:18,000
+their data platform,
+
+1551
+00:56:18,000 --> 00:56:20,000
+competition platform,
+
+1552
+00:56:20,000 --> 00:56:22,000
+sometimes they have a lot of controversy,
+
+1553
+00:56:22,000 --> 00:56:24,000
+and sometimes the quality of the competition
+
+1554
+00:56:24,000 --> 00:56:26,000
+is poor,
+
+1555
+00:56:26,000 --> 00:56:28,000
+but I can't say that the competition platform is wrong.
+
+1556
+00:56:28,000 --> 00:56:30,000
+That is, their internal professionals
+
+1557
+00:56:30,000 --> 00:56:32,000
+don't have much resources,
+
+1558
+00:56:32,000 --> 00:56:34,000
+so they can't hire such a large team
+
+1559
+00:56:34,000 --> 00:56:36,000
+to check the details of these competitions.
+
+1560
+00:56:36,000 --> 00:56:38,000
+In addition, the domestic platform
+
+1561
+00:56:38,000 --> 00:56:40,000
+doesn't charge
+
+1562
+00:56:40,000 --> 00:56:42,000
+the organizer.
+
+1563
+00:56:42,000 --> 00:56:44,000
+If it's in Cargo,
+
+1564
+00:56:44,000 --> 00:56:46,000
+the organizer will use their team
+
+1565
+00:56:46,000 --> 00:56:48,000
+to check the data and collect the fees.
+
+1566
+00:56:48,000 --> 00:56:50,000
+So the prize is not only
+
+1567
+00:56:50,000 --> 00:56:52,000
+the organizer
+
+1568
+00:56:52,000 --> 00:56:54,000
+who provides the prize,
+
+1569
+00:56:54,000 --> 00:56:56,000
+but also the host of the competition
+
+1570
+00:56:56,000 --> 00:56:58,000
+who needs to pay
+
+1571
+00:56:58,000 --> 00:57:00,000
+an extra fee to Cargo.
+
+1572
+00:57:00,000 --> 00:57:02,000
+Yes,
+
+1573
+00:57:02,000 --> 00:57:04,000
+to ensure that this competition
+
+1574
+00:57:04,000 --> 00:57:06,000
+is of good quality.
+
+1575
+00:57:06,000 --> 00:57:08,000
+Thank you. Nice talk.
+
+1576
+00:57:08,000 --> 00:57:10,000
+Thank you for your question.
+
+1577
+00:57:10,000 --> 00:57:12,000
+I don't rule out
+
+1578
+00:57:12,000 --> 00:57:14,000
+any discussion
+
+1579
+00:57:14,000 --> 00:57:16,000
+about Open Data Say
+
+1580
+00:57:16,000 --> 00:57:18,000
+in Cargo competitions.
+
+1581
+00:57:18,000 --> 00:57:20,000
+You can ask any questions.
+
+1582
+00:57:20,000 --> 00:57:22,000
+It's fun.
+
+1583
+00:57:22,000 --> 00:57:24,000
+Due to time constraints,
+
+1584
+00:57:24,000 --> 00:57:26,000
+we will open the last question.
+
+1585
+00:57:26,000 --> 00:57:28,000
+Let's see
+
+1586
+00:57:28,000 --> 00:57:30,000
+if there are any questions from the audience.
+
+1587
+00:57:38,000 --> 00:57:40,000
+If not,
+
+1588
+00:57:40,000 --> 00:57:42,000
+we will open the last question
+
+1589
+00:57:42,000 --> 00:57:44,000
+for our host.
+
+1590
+00:57:44,000 --> 00:57:46,000
+It's the same.
+
+1591
+00:57:46,000 --> 00:57:48,000
+Please introduce yourself.
+
+1592
+00:57:48,000 --> 00:57:50,000
+Hello,
+
+1593
+00:57:50,000 --> 00:57:52,000
+host and audience.
+
+1594
+00:57:52,000 --> 00:57:54,000
+I am
+
+1595
+00:57:54,000 --> 00:57:56,000
+the host,
+
+1596
+00:57:56,000 --> 00:57:58,000
+Hu Junwei.
+
+1597
+00:57:58,000 --> 00:58:00,000
+My father
+
+1598
+00:58:00,000 --> 00:58:02,000
+used to be a student of
+
+1599
+00:58:02,000 --> 00:58:04,000
+NTUC,
+
+1600
+00:58:04,000 --> 00:58:06,000
+and I studied
+
+1601
+00:58:06,000 --> 00:58:08,000
+renewable energy systems
+
+1602
+00:58:08,000 --> 00:58:10,000
+at NTUC.
+
+1603
+00:58:10,000 --> 00:58:12,000
+I am very interested in
+
+1604
+00:58:12,000 --> 00:58:14,000
+today's topic.
+
+1605
+00:58:14,000 --> 00:58:16,000
+I have a question.
+
+1606
+00:58:16,000 --> 00:58:18,000
+This model
+
+1607
+00:58:18,000 --> 00:58:20,000
+can be used
+
+1608
+00:58:20,000 --> 00:58:22,000
+to assess
+
+1609
+00:58:22,000 --> 00:58:24,000
+events in energy
+
+1610
+00:58:24,000 --> 00:58:26,000
+or social development
+
+1611
+00:58:26,000 --> 00:58:28,000
+such as dynamic events.
+
+1612
+00:58:28,000 --> 00:58:30,000
+For example,
+
+1613
+00:58:30,000 --> 00:58:32,000
+in 2016 and 2017,
+
+1614
+00:58:32,000 --> 00:58:34,000
+there was a power outage
+
+1615
+00:58:34,000 --> 00:58:36,000
+in Taipei.
+
+1616
+00:58:36,000 --> 00:58:38,000
+Is there a way
+
+1617
+00:58:38,000 --> 00:58:40,000
+to predict
+
+1618
+00:58:40,000 --> 00:58:42,000
+when there will be
+
+1619
+00:58:42,000 --> 00:58:44,000
+a power outage
+
+1620
+00:58:44,000 --> 00:58:46,000
+in the next few days?
+
+1621
+00:58:46,000 --> 00:58:48,000
+Or
+
+1622
+00:58:48,000 --> 00:58:50,000
+in the case of
+
+1623
+00:58:50,000 --> 00:58:52,000
+COVID-19,
+
+1624
+00:58:52,000 --> 00:58:54,000
+many countries
+
+1625
+00:58:54,000 --> 00:58:56,000
+are working
+
+1626
+00:58:56,000 --> 00:58:58,000
+from home,
+
+1627
+00:58:58,000 --> 00:59:00,000
+so the energy use
+
+1628
+00:59:00,000 --> 00:59:02,000
+will be very different.
+
+1629
+00:59:02,000 --> 00:59:04,000
+Is there a way
+
+1630
+00:59:04,000 --> 00:59:06,000
+to do dynamic analysis
+
+1631
+00:59:06,000 --> 00:59:08,000
+for specific events?
+
+1632
+00:59:08,000 --> 00:59:10,000
+I would like to hear
+
+1633
+00:59:10,000 --> 00:59:12,000
+your opinion.
+
+1634
+00:59:12,000 --> 00:59:14,000
+I think it's pretty cool.
+
+1635
+00:59:14,000 --> 00:59:16,000
+First of all,
+
+1636
+00:59:16,000 --> 00:59:18,000
+if it is a power outage
+
+1637
+00:59:18,000 --> 00:59:20,000
+or a power outage,
+
+1638
+00:59:20,000 --> 00:59:22,000
+I think it is relatively difficult.
+
+1639
+00:59:22,000 --> 00:59:24,000
+The first is that it is a rare event,
+
+1640
+00:59:24,000 --> 00:59:26,000
+so the rare event
+
+1641
+00:59:26,000 --> 00:59:28,000
+may only happen
+
+1642
+00:59:28,000 --> 00:59:30,000
+ten times in the past.
+
+1643
+00:59:30,000 --> 00:59:32,000
+It's hard to predict
+
+1644
+00:59:32,000 --> 00:59:34,000
+because there is not enough data
+
+1645
+00:59:34,000 --> 00:59:36,000
+for training.
+
+1646
+00:59:36,000 --> 00:59:38,000
+Even if there are
+
+1647
+00:59:38,000 --> 00:59:40,000
+a lot of events,
+
+1648
+00:59:40,000 --> 00:59:42,000
+you need enough features
+
+1649
+00:59:42,000 --> 00:59:44,000
+to describe them.
+
+1650
+00:59:44,000 --> 00:59:46,000
+For example,
+
+1651
+00:59:46,000 --> 00:59:48,000
+you need to detect
+
+1652
+00:59:48,000 --> 00:59:50,000
+voltage, current,
+
+1653
+00:59:50,000 --> 00:59:52,000
+frequency,
+
+1654
+00:59:52,000 --> 00:59:54,000
+etc.
+
+1655
+00:59:54,000 --> 00:59:56,000
+I don't know
+
+1656
+00:59:56,000 --> 00:59:58,000
+if there is such open data,
+
+1657
+00:59:58,000 --> 01:00:00,000
+but I know Kaggle
+
+1658
+01:00:00,000 --> 01:00:02,000
+can also find open data like this.
+
+1659
+01:00:02,000 --> 01:00:04,000
+Next,
+
+1660
+01:00:04,000 --> 01:00:06,000
+let me think of
+
+1661
+01:00:06,000 --> 01:00:08,000
+a recent competition
+
+1662
+01:00:08,000 --> 01:00:10,000
+in IEEE.
+
+1663
+01:00:10,000 --> 01:00:12,000
+They are specifically predicting
+
+1664
+01:00:12,000 --> 01:00:14,000
+what the energy forecast
+
+1665
+01:00:14,000 --> 01:00:16,000
+will look like after COVID-19.
+
+1666
+01:00:16,000 --> 01:00:18,000
+They are heading
+
+1667
+01:00:18,000 --> 01:00:20,000
+electricity demand forecasting post-COVID.
+
+1668
+01:00:20,000 --> 01:00:22,000
+They want to know
+
+1669
+01:00:22,000 --> 01:00:24,000
+what changes will happen
+
+1670
+01:00:24,000 --> 01:00:26,000
+to most energy
+
+1671
+01:00:26,000 --> 01:00:28,000
+after COVID-19.
+
+1672
+01:00:28,000 --> 01:00:30,000
+Most of them should be
+
+1673
+01:00:30,000 --> 01:00:32,000
+related to
+
+1674
+01:00:32,000 --> 01:00:34,000
+human behavior.
+
+1675
+01:00:34,000 --> 01:00:36,000
+I have done
+
+1676
+01:00:36,000 --> 01:00:38,000
+one thing before.
+
+1677
+01:00:38,000 --> 01:00:40,000
+If you use Google Keywords,
+
+1678
+01:00:40,000 --> 01:00:42,000
+I can show you
+
+1679
+01:00:42,000 --> 01:00:44,000
+quickly today.
+
+1680
+01:00:44,000 --> 01:00:46,000
+If you use Google Trends,
+
+1681
+01:00:46,000 --> 01:00:48,000
+this is what I found recently.
+
+1682
+01:00:48,000 --> 01:00:50,000
+It is quite related to
+
+1683
+01:00:50,000 --> 01:00:52,000
+travel keywords.
+
+1684
+01:00:52,000 --> 01:00:54,000
+For example,
+
+1685
+01:00:54,000 --> 01:00:56,000
+I went to
+
+1686
+01:00:56,000 --> 01:00:58,000
+travel.
+
+1687
+01:01:04,000 --> 01:01:06,000
+You can see that
+
+1688
+01:01:06,000 --> 01:01:08,000
+it suddenly dropped
+
+1689
+01:01:08,000 --> 01:01:10,000
+on March 1st.
+
+1690
+01:01:10,000 --> 01:01:12,000
+It was quite stable
+
+1691
+01:01:12,000 --> 01:01:14,000
+in the first four years.
+
+1692
+01:01:14,000 --> 01:01:16,000
+It dropped in the summer,
+
+1693
+01:01:16,000 --> 01:01:18,000
+but it suddenly dropped
+
+1694
+01:01:18,000 --> 01:01:20,000
+in March this year.
+
+1695
+01:01:20,000 --> 01:01:22,000
+Of course,
+
+1696
+01:01:22,000 --> 01:01:24,000
+this is just a correlation.
+
+1697
+01:01:24,000 --> 01:01:26,000
+Whether this is a causal relationship
+
+1698
+01:01:26,000 --> 01:01:28,000
+may be confirmed in more detail.
+
+1699
+01:01:28,000 --> 01:01:30,000
+This is just an example.
+
+1700
+01:01:30,000 --> 01:01:32,000
+You can find out from some data
+
+1701
+01:01:32,000 --> 01:01:34,000
+if you can predict
+
+1702
+01:01:34,000 --> 01:01:36,000
+what will happen
+
+1703
+01:01:36,000 --> 01:01:38,000
+to the energy
+
+1704
+01:01:38,000 --> 01:01:40,000
+after COVID-19.
+
+1705
+01:01:40,000 --> 01:01:42,000
+This is also what everyone is concerned about.
+
+1706
+01:01:42,000 --> 01:01:44,000
+I am not sure
+
+1707
+01:01:44,000 --> 01:01:46,000
+if this can be done.
+
+1708
+01:01:46,000 --> 01:01:48,000
+You can find out
+
+1709
+01:01:48,000 --> 01:01:50,000
+whether to describe
+
+1710
+01:01:50,000 --> 01:01:52,000
+this feature.
+
+1711
+01:01:52,000 --> 01:01:54,000
+This is a very cool question.
+
+1712
+01:01:54,000 --> 01:01:56,000
+Thank you.
+
+1713
+01:01:58,000 --> 01:02:00,000
+Thank you for the wonderful explanation.
+
+1714
+01:02:02,000 --> 01:02:04,000
+Due to time constraints,
+
+1715
+01:02:04,000 --> 01:02:06,000
+I know that
+
+1716
+01:02:06,000 --> 01:02:08,000
+everyone here may have
+
+1717
+01:02:08,000 --> 01:02:10,000
+some potential questions.
+
+1718
+01:02:10,000 --> 01:02:12,000
+However,
+
+1719
+01:02:12,000 --> 01:02:14,000
+this is the end of
+
+1720
+01:02:14,000 --> 01:02:16,000
+today's presentation.
+
+1721
+01:02:16,000 --> 01:02:18,000
+Thank you again,
+
+1722
+01:02:18,000 --> 01:02:20,000
+Fuxun.
+
+1723
+01:02:20,000 --> 01:02:22,000
+If you are interested
+
+1724
+01:02:22,000 --> 01:02:24,000
+in this topic
+
+1725
+01:02:24,000 --> 01:02:26,000
+or the speaker,
+
+1726
+01:02:26,000 --> 01:02:28,000
+you can contact her
+
+1727
+01:02:28,000 --> 01:02:30,000
+through e-mail
+
+1728
+01:02:30,000 --> 01:02:32,000
+or social media
+
+1729
+01:02:32,000 --> 01:02:34,000
+related to Fuxun.
+
+1730
+01:02:34,000 --> 01:02:36,000
+If you are interested
+
+1731
+01:02:36,000 --> 01:02:38,000
+in different fields
+
+1732
+01:02:38,000 --> 01:02:40,000
+and different topics
+
+1733
+01:02:40,000 --> 01:02:42,000
+of different speakers,
+
+1734
+01:02:42,000 --> 01:02:44,000
+you are welcome to
+
+1735
+01:02:44,000 --> 01:02:46,000
+continue to participate
+
+1736
+01:02:46,000 --> 01:02:48,000
+in Project Tara's activities
+
+1737
+01:02:48,000 --> 01:02:50,000
+as a speaker.
+
+1738
+01:02:50,000 --> 01:02:52,000
+Thank you for your participation today.
+
+1739
+01:02:52,000 --> 01:02:54,000
+I wish you a pleasant day
+
+1740
+01:02:54,000 --> 01:02:56,000
+or evening.
+
+1741
+01:02:56,000 --> 01:02:58,000
+Thank you.
+

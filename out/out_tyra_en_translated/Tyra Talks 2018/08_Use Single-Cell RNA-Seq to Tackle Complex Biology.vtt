@@ -1,0 +1,2396 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Hello, everyone.
+
+00:09.000 --> 00:15.000
+I am honored to be able to introduce Dr. Sun today.
+
+00:15.000 --> 00:23.000
+Dr. Sun completed her bachelor's degree from 1999 to 2013
+
+00:23.000 --> 00:28.000
+in Plant Pathology and Microbiology at Taiwan University.
+
+00:28.000 --> 00:35.000
+After completing her bachelor's degree from 2003 to 2005,
+
+00:35.000 --> 00:43.000
+she completed her master's degree in Plant Pathology and Microbiology at the same university in Taiwan.
+
+00:43.000 --> 00:51.000
+She then completed her Ph.D. degree from 2005 to 2010 at Purdue University.
+
+00:51.000 --> 00:54.000
+Her major is Chemical Biology.
+
+00:54.000 --> 00:58.000
+After completing her Ph.D. degree, she went to MIT to do her postdoc.
+
+00:58.000 --> 01:08.000
+After four years, she went to UCSF to do her second postdoc and assistant researcher.
+
+01:08.000 --> 01:15.000
+This year, she started her new job as a Senior Scientific Researcher at Genentech.
+
+01:16.000 --> 01:20.000
+Today, Dr. Sun is going to talk about
+
+01:20.000 --> 01:25.000
+Use Single-Cell RNA-Seq to Tackle Complex Biology.
+
+01:25.000 --> 01:29.000
+Now, let's welcome Dr. Sun to give her presentation.
+
+01:34.000 --> 01:37.000
+Hello, everyone. I am Dr. Sun.
+
+01:37.000 --> 01:44.000
+Sorry, my voice is a bit hoarse due to my cold.
+
+01:44.000 --> 01:51.000
+Today, I am going to talk in a simple and easy-to-understand way.
+
+01:51.000 --> 01:55.000
+Just in case, some of you may not have a background in biology.
+
+01:55.000 --> 02:01.000
+I hope you can at least learn about Single-Cell RNA-Seq.
+
+02:02.000 --> 02:08.000
+Here is my personal email and LinkedIn account.
+
+02:08.000 --> 02:12.000
+Although my LinkedIn account is not up to date,
+
+02:12.000 --> 02:15.000
+please feel free to connect with me.
+
+02:18.000 --> 02:23.000
+I will be speaking in Chinese today,
+
+02:23.000 --> 02:28.000
+but I am not sure what the term is in Chinese.
+
+02:29.000 --> 02:37.000
+If you have any questions, please feel free to contact me.
+
+02:39.000 --> 02:45.000
+I don't want to make it too complicated.
+
+02:45.000 --> 02:48.000
+I will be focusing on technology.
+
+02:48.000 --> 02:51.000
+I am currently working at a company,
+
+02:51.000 --> 02:56.000
+so I can't really talk about research projects here.
+
+02:56.000 --> 03:02.000
+I will try my best to talk about the applications of this technology,
+
+03:02.000 --> 03:04.000
+and the principles behind it.
+
+03:04.000 --> 03:09.000
+I hope this will be helpful to those who are interested.
+
+03:10.000 --> 03:13.000
+Before we get into the technology,
+
+03:13.000 --> 03:17.000
+I will briefly review the biology of NTU.
+
+03:19.000 --> 03:23.000
+As you may already know, our body is made up of cells.
+
+03:24.000 --> 03:27.000
+Many cells form organs,
+
+03:27.000 --> 03:31.000
+and eventually form organs in our body,
+
+03:31.000 --> 03:34.000
+becoming a functional human body.
+
+03:34.000 --> 03:44.000
+An interesting fact is that our body is composed of over 20 different types of cells.
+
+03:44.000 --> 03:49.000
+You can see that their forms and functions are very different.
+
+03:50.000 --> 03:55.000
+For example, there are nerve cells, blood cells, muscle cells,
+
+03:55.000 --> 04:01.000
+and even different types of cells in different organs.
+
+04:01.000 --> 04:06.000
+Their functions and forms are very different.
+
+04:08.000 --> 04:11.000
+Let's take a deeper look.
+
+04:11.000 --> 04:15.000
+As you can see, our body is made up of cells.
+
+04:15.000 --> 04:19.000
+Each cell has a nucleus,
+
+04:19.000 --> 04:21.000
+which is a red dot.
+
+04:21.000 --> 04:23.000
+In English, it's called a nucleus.
+
+04:23.000 --> 04:25.000
+In Chinese, it's called a cell nucleus.
+
+04:25.000 --> 04:29.000
+In this cell nucleus, there is a chromosome.
+
+04:29.000 --> 04:34.000
+This chromosome is made up of our genes.
+
+04:34.000 --> 04:38.000
+I think everyone has a concept of genes.
+
+04:38.000 --> 04:41.000
+Genes are our genetic material.
+
+04:41.000 --> 04:44.000
+Genes are our genetic material.
+
+04:44.000 --> 04:47.000
+They are our genetic material.
+
+04:47.000 --> 04:50.000
+Genes are our genetic material.
+
+04:50.000 --> 04:53.000
+Genes are our genetic material.
+
+04:53.000 --> 04:59.000
+In this definition, genes are a DNA segment.
+
+04:59.000 --> 05:04.000
+They can be converted into a useful molecule.
+
+05:04.000 --> 05:09.000
+They can perform the functions and functions that they need.
+
+05:09.000 --> 05:22.000
+The reason for the general description of gene code is that DNA is a so-called ATCG.
+
+05:22.000 --> 05:27.000
+DNA is a so-called ATCG.
+
+05:27.000 --> 05:30.000
+So, if we talk about genes,
+
+05:30.000 --> 05:38.000
+the sequence obtained may be composed of these four ATCGs.
+
+05:38.000 --> 05:42.000
+This is our so-called gene code.
+
+05:42.000 --> 05:51.000
+In molecular biology, there is a so-called central dogma.
+
+05:51.000 --> 05:57.000
+The principle is that we have this genetic material.
+
+05:57.000 --> 05:59.000
+Its main structure is DNA.
+
+05:59.000 --> 06:03.000
+It will be transcribed into RNA.
+
+06:03.000 --> 06:07.000
+RNA will be further transcribed into protein.
+
+06:07.000 --> 06:13.000
+This protein can perform various biological functions.
+
+06:13.000 --> 06:22.000
+As time goes by, the central dogma is gradually extended to more different forms.
+
+06:22.000 --> 06:32.000
+We can even find more different directions from the virus or other systems.
+
+06:32.000 --> 06:37.000
+Today's technology involves a discovery.
+
+06:37.000 --> 06:42.000
+In the past, we thought that DNA was transcribed into RNA.
+
+06:42.000 --> 06:51.000
+But later, scientists found another enzyme that can reverse transcribe RNA back to DNA.
+
+06:52.000 --> 07:03.000
+With the help of this enzyme, many related extension technologies can be built on this basis.
+
+07:03.000 --> 07:09.000
+Today, we will mainly talk about RNA-seq.
+
+07:09.000 --> 07:19.000
+Another way to talk about it is transcriptional analysis or gene expression profiling.
+
+07:19.000 --> 07:26.000
+Basically, we can use gene expression to understand human physiology.
+
+07:26.000 --> 07:37.000
+This picture shows a major timeline and milestone in molecular biology and sequencing technology.
+
+07:37.000 --> 07:43.000
+As many of you know, the first discovery was in 1953.
+
+07:43.000 --> 07:49.000
+In 1977, Sanger's DNA sequencing was developed.
+
+07:49.000 --> 07:53.000
+Later, PCR technology was also developed.
+
+07:53.000 --> 08:00.000
+PCR technology allows us to rapidly increase our DNA in the laboratory.
+
+08:00.000 --> 08:08.000
+Many related technologies can be built on this basis.
+
+08:08.000 --> 08:12.000
+In 1990, the Human Genome Project was launched.
+
+08:12.000 --> 08:17.000
+After 13 years, the Human Genome Project was established.
+
+08:17.000 --> 08:25.000
+At this stage, sequencing costs are still very high.
+
+08:25.000 --> 08:33.000
+It is difficult to operate a sequencing project in a lab.
+
+08:33.000 --> 08:49.000
+In 2005, the next-generation sequencing technology was introduced.
+
+08:49.000 --> 08:55.000
+This technology has greatly reduced the cost of sequencing.
+
+08:55.000 --> 09:07.000
+The next-generation sequencing technology is still widely used.
+
+09:07.000 --> 09:16.000
+In recent years, the third-generation sequencing technology was introduced.
+
+09:16.000 --> 09:22.000
+When was single-cell RNA-seq developed?
+
+09:22.000 --> 09:30.000
+The first report on single-cell RNA-seq was made in 2009.
+
+09:30.000 --> 09:35.000
+Because of the gradual maturation of the technology,
+
+09:35.000 --> 09:39.000
+especially the rapid reduction of sequencing costs,
+
+09:39.000 --> 09:43.000
+single-cell RNA-seq can be operated more widely.
+
+09:43.000 --> 09:52.000
+Now, many extended protocols, technologies, and companies continue to develop rapidly in this field.
+
+09:52.000 --> 10:00.000
+Why do we need to do single-cell RNA-seq?
+
+10:00.000 --> 10:08.000
+Before single-cell RNA-seq, we can look at gene profiling.
+
+10:09.000 --> 10:21.000
+For example, what is the difference between a cancer cell and a normal cell?
+
+10:21.000 --> 10:29.000
+For example, we have a healthy sample and a diseased sample.
+
+10:29.000 --> 10:45.000
+After sequencing, we can compare the gene profiling of these two cells.
+
+10:45.000 --> 10:48.000
+Then we can find out the disease gene.
+
+10:48.000 --> 10:57.000
+Or we can find out which signaling pathway is further activated or inhibited.
+
+10:58.000 --> 11:02.000
+But there is a problem.
+
+11:02.000 --> 11:10.000
+For example, a tumor may contain a variety of different cells.
+
+11:10.000 --> 11:16.000
+There may be immune cells, tumor cells, fibroblasts, and so on.
+
+11:17.000 --> 11:23.000
+If the tumor is broken down and the RNA-seq is obtained,
+
+11:23.000 --> 11:28.000
+the result is a variety of different cells.
+
+11:28.000 --> 11:31.000
+From this heat map,
+
+11:31.000 --> 11:41.000
+we can still see that some genes are inhibited or activated in the diseased sample.
+
+11:41.000 --> 11:56.000
+It is difficult to determine if the disease is caused by immune cells, fibroblasts, or unknown gene cells.
+
+11:56.000 --> 12:05.000
+At this time, if we can do transcriptome profiling at single-cell resolution,
+
+12:05.000 --> 12:17.000
+we can have a deeper understanding of each cell in a tumor tissue.
+
+12:18.000 --> 12:24.000
+Here are some interesting graphs that I saw on the Internet.
+
+12:24.000 --> 12:32.000
+It can give you an idea of why the so-called Bok analysis may cause some misjudgment.
+
+12:32.000 --> 12:35.000
+For example, in this graph,
+
+12:35.000 --> 12:40.000
+each point here has the so-called x-value and y-value.
+
+12:40.000 --> 12:42.000
+Then you can do various calculations.
+
+12:42.000 --> 12:45.000
+For example, the x-value is like this,
+
+12:45.000 --> 12:47.000
+the y-value is like this,
+
+12:47.000 --> 12:49.000
+the x-deviation is like this,
+
+12:49.000 --> 12:51.000
+and the y-deviation is like this.
+
+12:51.000 --> 12:54.000
+But even if you calculate all these values,
+
+12:54.000 --> 12:56.000
+what about the relationship between x and y?
+
+12:56.000 --> 12:59.000
+So if you just do a Bok analysis,
+
+12:59.000 --> 13:06.000
+you may not be able to express the so-called structure behind it.
+
+13:07.000 --> 13:10.000
+Another interesting graph is that
+
+13:10.000 --> 13:13.000
+sometimes if you do a Bok analysis,
+
+13:13.000 --> 13:18.000
+you may get a conclusion that leads you to a wrong direction.
+
+13:18.000 --> 13:21.000
+For example, suppose this is your sample.
+
+13:21.000 --> 13:25.000
+So your sample contains a lot of different animals.
+
+13:25.000 --> 13:29.000
+Then you do a Bok analysis to see what this creature might look like.
+
+13:29.000 --> 13:34.000
+Then you may come to a conclusion that this is what this creature should look like.
+
+13:34.000 --> 13:39.000
+Then you will find that it is very different from the so-called real state.
+
+13:39.000 --> 13:43.000
+The so-called single-celled analysis basically has different methods.
+
+13:43.000 --> 13:46.000
+That is to say, under this technology,
+
+13:46.000 --> 13:50.000
+you can analyze each animal separately
+
+13:50.000 --> 13:53.000
+and find a lot of different features.
+
+13:53.000 --> 13:56.000
+Then based on the features you find,
+
+13:56.000 --> 13:59.000
+you start to do the so-called clustering.
+
+13:59.000 --> 14:01.000
+For example, this graph shows that
+
+14:01.000 --> 14:03.000
+you have already found two features.
+
+14:03.000 --> 14:05.000
+One is Firm and the other is Venom.
+
+14:05.000 --> 14:08.000
+Then even if you just add two features like this,
+
+14:08.000 --> 14:14.000
+you can already cluster a lot of animals into at least two subsets.
+
+14:14.000 --> 14:18.000
+One big subset will be the snakes,
+
+14:18.000 --> 14:21.000
+which has the Venom but doesn't have Firm.
+
+14:21.000 --> 14:25.000
+Then the other big subset may be the so-called
+
+14:25.000 --> 14:28.000
+it doesn't have Venom, but it has Firm.
+
+14:28.000 --> 14:31.000
+When you can add more and more features,
+
+14:31.000 --> 14:34.000
+hopefully, finally, you will be able to
+
+14:34.000 --> 14:38.000
+one individual item will be clustered into one group.
+
+14:38.000 --> 14:44.000
+So this is the whole idea about why you need to do profiling at a single-cell level.
+
+14:46.000 --> 14:49.000
+Then generally in this single-cell field,
+
+14:49.000 --> 14:52.000
+one of their favorite metaphors is
+
+14:52.000 --> 14:57.000
+the so-called fruit smoothie and the so-called fruit salad.
+
+14:57.000 --> 15:00.000
+When you make a Borg RNC asset,
+
+15:00.000 --> 15:04.000
+it's very similar to the so-called fruit smoothie.
+
+15:04.000 --> 15:08.000
+Basically, you put all kinds of fruit and vegetables together.
+
+15:08.000 --> 15:10.000
+The taste you drink is basically
+
+15:10.000 --> 15:14.000
+an average taste of all ingredients.
+
+15:14.000 --> 15:18.000
+So you may not be able to know
+
+15:18.000 --> 15:21.000
+what ingredients are in this.
+
+15:21.000 --> 15:24.000
+Then maybe the ingredients you taste
+
+15:24.000 --> 15:27.000
+are some special strong ingredients.
+
+15:27.000 --> 15:30.000
+Maybe it's an apple, maybe it's a strawberry.
+
+15:30.000 --> 15:32.000
+But you can't know that
+
+15:32.000 --> 15:36.000
+maybe there's some cabbage in it or something else.
+
+15:36.000 --> 15:42.000
+Single-cell is like you're eating a fruit salad.
+
+15:42.000 --> 15:50.000
+Basically, you can taste each individual piece of the fruit.
+
+15:50.000 --> 15:52.000
+So somehow you'll know
+
+15:52.000 --> 15:56.000
+what kind of composition the fruit should be made of.
+
+15:57.000 --> 16:03.000
+So this so-called fruit smoothie to the fruit salad,
+
+16:03.000 --> 16:09.000
+basically what single-cell RNC wants to achieve
+
+16:09.000 --> 16:13.000
+is that you can show the individual cell type
+
+16:13.000 --> 16:16.000
+that causes the biological response or disease.
+
+16:17.000 --> 16:24.000
+Then this summary is a more scientific statement.
+
+16:24.000 --> 16:27.000
+So basically, the so-called Borg RNC
+
+16:27.000 --> 16:31.000
+measures the so-called average expression level
+
+16:31.000 --> 16:34.000
+for each cell across a population of cells.
+
+16:34.000 --> 16:36.000
+Basically, like I just said,
+
+16:36.000 --> 16:38.000
+if you're doing a cancer study,
+
+16:38.000 --> 16:40.000
+you have two samples.
+
+16:40.000 --> 16:42.000
+One is from healthy tissue,
+
+16:42.000 --> 16:44.000
+the other is from diseased tissue.
+
+16:44.000 --> 16:48.000
+Then you grind it up and compare the two samples.
+
+16:48.000 --> 16:51.000
+Its limitation is basically that
+
+16:51.000 --> 16:57.000
+if you want to study a more complex system today,
+
+16:57.000 --> 17:00.000
+for example, you want to study people's brains
+
+17:00.000 --> 17:03.000
+or some more complex organs,
+
+17:03.000 --> 17:05.000
+then this technology
+
+17:05.000 --> 17:08.000
+I'm afraid I can't give you a very clear result.
+
+17:09.000 --> 17:11.000
+Basically, what single-cell does,
+
+17:11.000 --> 17:14.000
+it measures the distribution of expression level
+
+17:14.000 --> 17:18.000
+for each gene across a population of the cells.
+
+17:18.000 --> 17:20.000
+So using this technology,
+
+17:20.000 --> 17:23.000
+every cell has a specific change
+
+17:23.000 --> 17:27.000
+that can be shown.
+
+17:28.000 --> 17:32.000
+Basically, now there are already a lot of
+
+17:32.000 --> 17:37.000
+so-called commercially available single-cell platforms on the market.
+
+17:37.000 --> 17:40.000
+Of course, they all have their own advantages and disadvantages.
+
+17:40.000 --> 17:43.000
+From my personal experience,
+
+17:43.000 --> 17:45.000
+I have two platforms of experience.
+
+17:45.000 --> 17:47.000
+One is the so-called Fluidigm C1.
+
+17:47.000 --> 17:52.000
+The other is called 10x Genomics.
+
+17:54.000 --> 17:58.000
+Now I'm going to quickly introduce
+
+17:58.000 --> 18:03.000
+the two single-cell platforms I've used before.
+
+18:04.000 --> 18:06.000
+Basically, in general,
+
+18:06.000 --> 18:08.000
+the so-called workflow of the single cell,
+
+18:08.000 --> 18:10.000
+its concept is basically the same.
+
+18:10.000 --> 18:14.000
+First of all, you have the so-called tissue of interest,
+
+18:14.000 --> 18:17.000
+either patient tissue or cells,
+
+18:17.000 --> 18:20.000
+which are some of the cells that you are interested in.
+
+18:20.000 --> 18:25.000
+Then, before doing single-cell RIC,
+
+18:25.000 --> 18:28.000
+the most important step is that you have to
+
+18:28.000 --> 18:30.000
+prepare in your own way
+
+18:30.000 --> 18:34.000
+the so-called single-cell suspension.
+
+18:35.000 --> 18:38.000
+Each person may have different approaches.
+
+18:38.000 --> 18:40.000
+For example,
+
+18:40.000 --> 18:43.000
+the so-called FACS to do the single-cell selection,
+
+18:43.000 --> 18:48.000
+or to do some so-called micro-dissection,
+
+18:48.000 --> 18:53.000
+to sort out the cells one by one.
+
+18:53.000 --> 18:57.000
+Then, when you can successfully complete
+
+18:57.000 --> 18:59.000
+your single-cell suspension,
+
+18:59.000 --> 19:01.000
+you basically inject it
+
+19:01.000 --> 19:04.000
+into either single-cell platform.
+
+19:04.000 --> 19:06.000
+Then, in the single-cell platform,
+
+19:06.000 --> 19:08.000
+what it does is basically
+
+19:08.000 --> 19:10.000
+to lyse the cell
+
+19:10.000 --> 19:12.000
+and extract the RNA in it.
+
+19:12.000 --> 19:14.000
+Then, this RNA is
+
+19:14.000 --> 19:16.000
+reverse transcribed
+
+19:16.000 --> 19:20.000
+into the cDNA.
+
+19:20.000 --> 19:23.000
+Then, this cDNA can be amplified
+
+19:23.000 --> 19:25.000
+through PCR.
+
+19:25.000 --> 19:27.000
+After the amplification,
+
+19:28.000 --> 19:31.000
+we build a library.
+
+19:31.000 --> 19:34.000
+Then, these libraries can be sent for sequencing.
+
+19:34.000 --> 19:36.000
+Like I said,
+
+19:36.000 --> 19:39.000
+this is the so-called sequencing result.
+
+19:39.000 --> 19:43.000
+You get the so-called sequence.
+
+19:43.000 --> 19:45.000
+This sequence is basically
+
+19:45.000 --> 19:47.000
+the sequence of A, T, C, and G.
+
+19:47.000 --> 19:49.000
+Then, you may be mapping.
+
+19:49.000 --> 19:53.000
+Because now many genes have been decoded,
+
+19:53.000 --> 19:55.000
+including human, mouse,
+
+19:55.000 --> 19:57.000
+and some species.
+
+19:57.000 --> 20:01.000
+So, according to the source of your sample,
+
+20:01.000 --> 20:04.000
+you can map it to the reference genome.
+
+20:04.000 --> 20:07.000
+Then, you can know
+
+20:07.000 --> 20:12.000
+what the expression of each gene is.
+
+20:12.000 --> 20:14.000
+Then, the last step is
+
+20:14.000 --> 20:17.000
+the so-called computational analysis.
+
+20:17.000 --> 20:19.000
+Because this single-cell RNAC technology
+
+20:19.000 --> 20:21.000
+is relatively new,
+
+20:21.000 --> 20:24.000
+the computational analysis
+
+20:24.000 --> 20:28.000
+is still under development.
+
+20:28.000 --> 20:32.000
+This is basically the same concept.
+
+20:32.000 --> 20:35.000
+You have a tissue that you are interested in.
+
+20:35.000 --> 20:37.000
+First, you have to be able to
+
+20:37.000 --> 20:40.000
+dissociate it into the so-called single-cell suspend.
+
+20:40.000 --> 20:44.000
+Then, there are all kinds of different systems
+
+20:44.000 --> 20:47.000
+that can make the single-cell suspension
+
+20:47.000 --> 20:49.000
+that you need.
+
+20:49.000 --> 20:51.000
+Then, you can further
+
+20:51.000 --> 20:55.000
+dissociate it into the single-cell platform.
+
+20:55.000 --> 21:02.000
+This picture is from a recent review paper.
+
+21:02.000 --> 21:05.000
+So, what you can see here is that
+
+21:05.000 --> 21:07.000
+the single-cell RNAC technology
+
+21:07.000 --> 21:10.000
+has developed very rapidly in recent years.
+
+21:10.000 --> 21:13.000
+It started with the first single-cell paper
+
+21:13.000 --> 21:15.000
+around 2009.
+
+21:15.000 --> 21:17.000
+At that time, the single-cell technology
+
+21:17.000 --> 21:19.000
+was still a very difficult technology.
+
+21:19.000 --> 21:21.000
+It was not possible to operate smoothly
+
+21:21.000 --> 21:23.000
+at every level.
+
+21:23.000 --> 21:27.000
+Then, the number of times you do it
+
+21:27.000 --> 21:33.000
+may be accumulated from dozens of times.
+
+21:33.000 --> 21:35.000
+However, as time goes by,
+
+21:35.000 --> 21:37.000
+there are more and more different types of
+
+21:37.000 --> 21:39.000
+different technologies,
+
+21:39.000 --> 21:43.000
+including the droplet method.
+
+21:43.000 --> 21:45.000
+There are also some
+
+21:45.000 --> 21:48.000
+random capture technologies,
+
+21:48.000 --> 21:51.000
+such as in-tube barcoding,
+
+21:51.000 --> 21:55.000
+and so on.
+
+21:55.000 --> 21:58.000
+Now, you can see that
+
+21:58.000 --> 22:00.000
+basically,
+
+22:00.000 --> 22:03.000
+the single-cell technology
+
+22:03.000 --> 22:07.000
+can already get a lot of cells
+
+22:07.000 --> 22:11.000
+in one experiment.
+
+22:11.000 --> 22:15.000
+Of course, there are many technologies
+
+22:16.000 --> 22:19.000
+that continue to develop
+
+22:19.000 --> 22:25.000
+to get more and more cells.
+
+22:25.000 --> 22:29.000
+Now, I would like to introduce
+
+22:29.000 --> 22:31.000
+two single-cell platforms
+
+22:31.000 --> 22:34.000
+that I have had hands-on experience with.
+
+22:34.000 --> 22:36.000
+The first one is FluDyn.
+
+22:36.000 --> 22:40.000
+FluDyn is probably the first single-cell
+
+22:40.000 --> 22:46.000
+RNA-seq technology in the market.
+
+22:46.000 --> 22:50.000
+Its basic process is very similar to what I just said.
+
+22:50.000 --> 22:53.000
+First, you need to be able to successfully
+
+22:53.000 --> 22:55.000
+dissociate your tissue.
+
+22:55.000 --> 22:58.000
+Basically, this technology
+
+22:58.000 --> 23:01.000
+captures cells to 96 well plate.
+
+23:01.000 --> 23:07.000
+Basically, all the so-called cell lysing,
+
+23:07.000 --> 23:10.000
+RT, and cDNA amplification
+
+23:10.000 --> 23:13.000
+happen in this machine.
+
+23:13.000 --> 23:16.000
+Its output is basically
+
+23:16.000 --> 23:21.000
+the cDNA after the amplification.
+
+23:21.000 --> 23:27.000
+Then you can make a barcode library
+
+23:27.000 --> 23:30.000
+and send for sequencing.
+
+23:31.000 --> 23:39.000
+This is the real situation of the C1 chip.
+
+23:39.000 --> 23:43.000
+This is an image under the microscope.
+
+23:43.000 --> 23:45.000
+You can see that
+
+23:45.000 --> 23:48.000
+this cell basically has a fluorescent label.
+
+23:48.000 --> 23:51.000
+So you can see that
+
+23:51.000 --> 23:54.000
+after running this chip,
+
+23:54.000 --> 24:00.000
+this cell is basically captured in this chip.
+
+24:00.000 --> 24:03.000
+Then all the reactions
+
+24:03.000 --> 24:08.000
+will happen in this reaction.
+
+24:08.000 --> 24:12.000
+Finally, when this reaction is completed,
+
+24:12.000 --> 24:16.000
+you get the cDNA after the amplification.
+
+24:16.000 --> 24:19.000
+Then you can further build your library
+
+24:19.000 --> 24:20.000
+and send for sequencing.
+
+24:20.000 --> 24:23.000
+Then you will get your data.
+
+24:23.000 --> 24:26.000
+According to my personal experience,
+
+24:26.000 --> 24:29.000
+the C1 chip has some advantages
+
+24:29.000 --> 24:31.000
+but also some disadvantages.
+
+24:31.000 --> 24:35.000
+Its advantages are...
+
+24:35.000 --> 24:38.000
+Oh, I may have made a mistake here.
+
+24:38.000 --> 24:41.000
+The first one is relatively long prep time.
+
+24:41.000 --> 24:42.000
+This should be its disadvantage.
+
+24:42.000 --> 24:45.000
+Its prep time is actually very long.
+
+24:45.000 --> 24:49.000
+Of course, if you let your sample
+
+24:49.000 --> 24:52.000
+sit on the ice all the time,
+
+24:52.000 --> 24:54.000
+you may worry that
+
+24:54.000 --> 24:56.000
+its gene expression profile
+
+24:56.000 --> 24:58.000
+may change during that time.
+
+24:58.000 --> 25:01.000
+So basically, we hope that
+
+25:01.000 --> 25:05.000
+before we get the so-called
+
+25:05.000 --> 25:07.000
+light cell,
+
+25:07.000 --> 25:13.000
+the prep time can be as short as possible.
+
+25:13.000 --> 25:15.000
+But this C1 chip
+
+25:15.000 --> 25:17.000
+still has some very good advantages.
+
+25:17.000 --> 25:20.000
+For example, this set of technologies
+
+25:20.000 --> 25:24.000
+allows you to capture single cells
+
+25:24.000 --> 25:27.000
+under the microscope
+
+25:27.000 --> 25:29.000
+one by one.
+
+25:29.000 --> 25:31.000
+For example, this picture shows
+
+25:31.000 --> 25:33.000
+a very beautiful single cell.
+
+25:33.000 --> 25:36.000
+Some wells may not have single cells at all.
+
+25:36.000 --> 25:40.000
+Some wells may have multiple samples.
+
+25:40.000 --> 25:41.000
+Maybe later on,
+
+25:41.000 --> 25:43.000
+when you are building your library,
+
+25:43.000 --> 25:46.000
+you may ignore such samples.
+
+25:46.000 --> 25:48.000
+Because in the subsequent data analysis,
+
+25:48.000 --> 25:52.000
+you may not be able to judge
+
+25:52.000 --> 25:54.000
+whether the data you get is from one cell
+
+25:54.000 --> 25:56.000
+or multiple cells.
+
+25:56.000 --> 26:00.000
+Basically, its biggest disadvantage
+
+26:00.000 --> 26:04.000
+is the so-called throughput.
+
+26:04.000 --> 26:05.000
+Because basically,
+
+26:05.000 --> 26:06.000
+in the most primitive C1 chip,
+
+26:06.000 --> 26:09.000
+it can only capture 96 cells at a time.
+
+26:09.000 --> 26:11.000
+In the later version,
+
+26:11.000 --> 26:13.000
+it may be able to capture 800 at a time.
+
+26:13.000 --> 26:16.000
+But in fact, in reality,
+
+26:16.000 --> 26:18.000
+its efficiency is very poor.
+
+26:18.000 --> 26:22.000
+Maybe only 60% to 70% of the wells
+
+26:22.000 --> 26:24.000
+can capture single cells.
+
+26:24.000 --> 26:25.000
+So in fact,
+
+26:25.000 --> 26:28.000
+the number of cells you can get every time is extremely small.
+
+26:28.000 --> 26:31.000
+So this is the biggest problem with C1.
+
+26:31.000 --> 26:32.000
+And later on,
+
+26:32.000 --> 26:34.000
+a lot of research found that
+
+26:34.000 --> 26:37.000
+even some data that had already been published,
+
+26:37.000 --> 26:39.000
+they found that
+
+26:39.000 --> 26:41.000
+some of the results they got
+
+26:41.000 --> 26:45.000
+were quite related to batch.
+
+26:45.000 --> 26:47.000
+So this technology basically,
+
+26:47.000 --> 26:49.000
+in the current single cell field,
+
+26:49.000 --> 26:53.000
+a lot of people have turned to other better
+
+26:53.000 --> 26:57.000
+better technology choices.
+
+26:57.000 --> 26:58.000
+At present,
+
+26:58.000 --> 27:01.000
+the vast majority of single cell RNA-seq platforms,
+
+27:01.000 --> 27:03.000
+you will probably see,
+
+27:03.000 --> 27:05.000
+is from this company.
+
+27:05.000 --> 27:07.000
+This company is called 10X Genomics.
+
+27:07.000 --> 27:10.000
+Its core technology
+
+27:10.000 --> 27:13.000
+is basically called Gems.
+
+27:13.000 --> 27:16.000
+Gen Bits in Emulsion.
+
+27:16.000 --> 27:18.000
+So its idea is basically
+
+27:18.000 --> 27:20.000
+that it has a lot of these bits.
+
+27:20.000 --> 27:23.000
+And then these bits are basically
+
+27:23.000 --> 27:26.000
+I'm thinking the simplest way to do this is
+
+27:26.000 --> 27:31.000
+I'm going to show you a YouTube video.
+
+27:31.000 --> 27:34.000
+You should be able to quickly understand
+
+27:34.000 --> 27:37.000
+how this technology works.
+
+27:43.000 --> 27:47.000
+Okay.
+
+28:09.000 --> 28:10.000
+Oh, Dr. Sun,
+
+28:10.000 --> 28:12.000
+I'd like to ask if there's any sound in this video?
+
+28:12.000 --> 28:14.000
+Eh...
+
+28:14.000 --> 28:17.000
+It's music, so you can't hear the sound, right?
+
+28:17.000 --> 28:18.000
+Okay.
+
+28:18.000 --> 28:19.000
+But it's okay.
+
+28:19.000 --> 28:21.000
+It's not talking.
+
+28:21.000 --> 28:22.000
+It's not talking.
+
+28:22.000 --> 28:23.000
+Okay.
+
+28:23.000 --> 28:24.000
+Yeah, so...
+
+28:24.000 --> 28:26.000
+It's just background music.
+
+28:42.000 --> 29:03.000
+It's just background music.
+
+29:03.000 --> 29:31.000
+It's just background music.
+
+29:31.000 --> 30:00.000
+It's just background music.
+
+30:00.000 --> 30:08.000
+I think it's easier to use the video.
+
+30:08.000 --> 30:10.000
+Wait a minute.
+
+30:10.000 --> 30:16.000
+Sorry, I'll turn this off.
+
+30:16.000 --> 30:22.000
+So basically, you can see that this is the set of techniques.
+
+30:22.000 --> 30:25.000
+It's probably like this.
+
+30:26.000 --> 30:30.000
+If you compare these two sets of techniques,
+
+30:30.000 --> 30:37.000
+Of course, the biggest advantage of 10X Genomics is that its throughput is very high.
+
+30:37.000 --> 30:43.000
+We can capture more than 10,000 cells in each round.
+
+30:43.000 --> 30:51.000
+If you compare it to 96 or 800 cells, 10X is much better than C1.
+
+30:51.000 --> 31:06.000
+In addition, the advantage of the UMI set of techniques is that it involves some PCR processes.
+
+31:06.000 --> 31:10.000
+This process may also cause some experimental biases.
+
+31:10.000 --> 31:18.000
+The UMI set of techniques can basically help correct these biases.
+
+31:19.000 --> 31:25.000
+In addition, the process of generating Gems is extremely fast.
+
+31:25.000 --> 31:29.000
+It only takes 7 minutes to generate all the Gems.
+
+31:29.000 --> 31:37.000
+So basically, you can make sure that your cells are in a relatively intact state.
+
+31:37.000 --> 31:40.000
+Of course, there are some disadvantages.
+
+31:40.000 --> 31:49.000
+For example, 10X Genomics does not sequence all the transcripts.
+
+31:49.000 --> 32:01.000
+It only does a small part of 3'N.
+
+32:01.000 --> 32:07.000
+So if your research is looking at variants of Gems,
+
+32:07.000 --> 32:11.000
+You basically can't use 10X Genomics.
+
+32:11.000 --> 32:21.000
+On the other hand, many data analysis tools are designed for 10X Genomics.
+
+32:21.000 --> 32:25.000
+So if you use this set of systems,
+
+32:25.000 --> 32:31.000
+You may get more help in subsequent analysis.
+
+32:32.000 --> 32:44.000
+Next, let's talk about some real-world operations.
+
+32:44.000 --> 32:48.000
+In the real world,
+
+32:48.000 --> 32:54.000
+Before injecting into the 10X system,
+
+32:54.000 --> 32:57.000
+We have our tissue of interest.
+
+32:57.000 --> 33:01.000
+Then we may have different sample prep strategies.
+
+33:01.000 --> 33:05.000
+To control our single-cell suspension.
+
+33:05.000 --> 33:10.000
+Before injecting into the 10X chip,
+
+33:10.000 --> 33:13.000
+We basically need to do a cell quality control.
+
+33:13.000 --> 33:19.000
+We need to look at several parameters.
+
+33:19.000 --> 33:23.000
+For example, its viability.
+
+33:23.000 --> 33:27.000
+And basically, this cell looks like a single cell.
+
+33:27.000 --> 33:31.000
+And then there's the cell size.
+
+33:31.000 --> 33:38.000
+Let you know that your protocol is basically able to target the cells you're interested in.
+
+33:38.000 --> 33:41.000
+So the take-home message here will be that
+
+33:41.000 --> 33:46.000
+The sample prep protocol optimization is very important.
+
+33:46.000 --> 33:50.000
+For you to get high-quality single-cell data in the future.
+
+33:50.000 --> 33:54.000
+In the first step, it basically determines most of it.
+
+33:54.000 --> 33:59.000
+After your cell QC pass,
+
+33:59.000 --> 34:03.000
+You make sure that your single-cell suspension is a very good prep.
+
+34:03.000 --> 34:07.000
+Then you can basically inject into the 10X system.
+
+34:07.000 --> 34:13.000
+Then all these steps are basically like a kit.
+
+34:13.000 --> 34:17.000
+And then you can just run it through.
+
+34:17.000 --> 34:23.000
+And now Genome has developed its own computational tool.
+
+34:23.000 --> 34:27.000
+I can do the initial data processing.
+
+34:27.000 --> 34:31.000
+And then you get a so-called gene barcode matrix.
+
+34:31.000 --> 34:36.000
+And then you can use this matrix to do the follow-up analysis.
+
+34:37.000 --> 34:43.000
+For the whole workflow of single-cell data analysis,
+
+34:43.000 --> 34:47.000
+It's basically divided into two stages.
+
+34:47.000 --> 34:53.000
+The first stage, the yellow one, is basically the so-called sequencing QC.
+
+34:53.000 --> 34:58.000
+That is to say, you have to see if your sequencing data is good or bad.
+
+34:58.000 --> 35:02.000
+In this part, it's basically quite mature.
+
+35:02.000 --> 35:08.000
+Because I mentioned before that this technique has been used for many years.
+
+35:08.000 --> 35:12.000
+That set of techniques is basically the so-called sequencing QC.
+
+35:12.000 --> 35:16.000
+It can almost move the whole set to the single-cell RNAC part.
+
+35:16.000 --> 35:19.000
+So at this stage of sequencing QC,
+
+35:19.000 --> 35:24.000
+It's basically looking at the so-called read QC, alignment QC, and mapping QC.
+
+35:24.000 --> 35:31.000
+And now Genome has a set of its own software that can help you finish this thing.
+
+35:31.000 --> 35:34.000
+Finally, you can get a gene barcode matrix.
+
+35:34.000 --> 35:37.000
+And then when you get the gene barcode matrix,
+
+35:37.000 --> 35:43.000
+The red part here is basically the so-called further data processing.
+
+35:43.000 --> 35:48.000
+I'm going to take a little bit of time to talk about it.
+
+35:48.000 --> 35:51.000
+The so-called further data processing here.
+
+35:51.000 --> 35:55.000
+In the first step, I call it matrix LQC.
+
+35:55.000 --> 35:59.000
+What it means is that basically the most important point of this step is to say
+
+35:59.000 --> 36:04.000
+You have to get rid of some of the so-called low-quality cells first.
+
+36:04.000 --> 36:08.000
+Because if you keep these low-quality cells in your dataset,
+
+36:08.000 --> 36:11.000
+A big problem, it might cause a lot of noise.
+
+36:11.000 --> 36:16.000
+And then it might make your subsequent data analysis very difficult.
+
+36:16.000 --> 36:21.000
+So basically, after you remove some of the bad cells,
+
+36:21.000 --> 36:24.000
+You can take your data to further normalization.
+
+36:25.000 --> 36:32.000
+After normalization, you may need to face another problem.
+
+36:32.000 --> 36:39.000
+After all, single cell technology is based on single cell.
+
+36:39.000 --> 36:46.000
+So it will have a lot of unwanted variation.
+
+36:46.000 --> 36:48.000
+For example, it may be a batch effect.
+
+36:48.000 --> 36:51.000
+Then all the cells may be in different cell cycle status.
+
+36:52.000 --> 36:56.000
+These may be information that you are not interested in.
+
+36:56.000 --> 37:01.000
+Then you may need to use some computational methods to either regress it out.
+
+37:01.000 --> 37:04.000
+Or maybe give it a score.
+
+37:04.000 --> 37:07.000
+This may be a more detailed data analysis.
+
+37:07.000 --> 37:12.000
+Then, in short, when you clean up these data through this step,
+
+37:12.000 --> 37:17.000
+Then your dataset can do a lot of downstream data analysis.
+
+37:18.000 --> 37:24.000
+It includes clustering, cell type identification,
+
+37:24.000 --> 37:28.000
+And then you can do the so-called differential gene expression analysis.
+
+37:28.000 --> 37:35.000
+That is to say, you can compare the gene profiling between cell type A and cell type B.
+
+37:35.000 --> 37:39.000
+Which one is the same? Which one is different?
+
+37:39.000 --> 37:42.000
+Or maybe you have a very interested cell population.
+
+37:42.000 --> 37:46.000
+Then you can see what are the cell service markers.
+
+37:46.000 --> 37:49.000
+Or you can compare two situations.
+
+37:49.000 --> 37:53.000
+Then see which single-only pathway is being activated or inhibited.
+
+37:53.000 --> 38:00.000
+These things are very useful information for both basic biology and disease research.
+
+38:00.000 --> 38:03.000
+Then you can also do some network analysis.
+
+38:03.000 --> 38:08.000
+Then some people will even take this single cell to do some so-called pseudo-time analysis.
+
+38:09.000 --> 38:12.000
+The so-called pseudo-time is that we
+
+38:12.000 --> 38:16.000
+Because in a lot of research, such as developmental biology,
+
+38:16.000 --> 38:20.000
+It may look at a bit like a time course.
+
+38:20.000 --> 38:27.000
+That is, how does this cell change from one state to another state with the eyes of time?
+
+38:27.000 --> 38:31.000
+In the past, you may have to take samples at different times.
+
+38:31.000 --> 38:33.000
+Then do the analysis.
+
+38:33.000 --> 38:38.000
+The concept of single cell may be that you may not need to take so many time points.
+
+38:38.000 --> 38:43.000
+You may take one or two time points.
+
+38:43.000 --> 38:47.000
+Because every cell will give you some information.
+
+38:47.000 --> 38:51.000
+Not all cells are in the same state at the same time.
+
+38:51.000 --> 38:54.000
+So you can basically go through every cell.
+
+38:54.000 --> 38:59.000
+It may be at a certain stage in the process of transformation.
+
+39:00.000 --> 39:03.000
+Then it may be in this set of data.
+
+39:03.000 --> 39:06.000
+It will give you a so-called pseudo-time.
+
+39:06.000 --> 39:09.000
+Such information.
+
+39:09.000 --> 39:17.000
+So this is also a very powerful place for single cell.
+
+39:17.000 --> 39:22.000
+Let's talk about the so-called metric cell quality control.
+
+39:22.000 --> 39:28.000
+What is it like in a real state?
+
+39:28.000 --> 39:34.000
+How do you filter out the so-called unhealthy cells or cells you don't want?
+
+39:34.000 --> 39:37.000
+Of course, everyone may have their own criteria.
+
+39:37.000 --> 39:40.000
+Here are some of the most general ways.
+
+39:40.000 --> 39:45.000
+This set of data sets is basically published.
+
+39:45.000 --> 39:52.000
+It uses the so-called human blood cells to make a demo data.
+
+39:52.000 --> 40:02.000
+This scatter plot is the percentage of the mitochondrion versus the UMI number.
+
+40:02.000 --> 40:08.000
+This UMI number can be regarded as how many molecules have been detected.
+
+40:08.000 --> 40:11.000
+So-called how many transcripts have been detected.
+
+40:11.000 --> 40:15.000
+Then every point here basically represents a cell.
+
+40:16.000 --> 40:22.000
+You can see that the majority of the cells are in this position.
+
+40:22.000 --> 40:29.000
+In terms of biology, you will know that the vast majority of the cells are in this position.
+
+40:29.000 --> 40:35.000
+So these cells have a very high UMI number.
+
+40:35.000 --> 40:38.000
+It means that there are a lot of transcripts being detected.
+
+40:38.000 --> 40:43.000
+So it is possible that these signals are not coming from one single cell.
+
+40:43.000 --> 40:47.000
+These may be cell aggregation or multiplex.
+
+40:47.000 --> 40:50.000
+These may be the cells you want to get rid of.
+
+40:50.000 --> 40:54.000
+Because basically this signal is not coming from one single cell.
+
+40:54.000 --> 40:59.000
+Then some other cells you may want to get rid of are the so-called cells.
+
+40:59.000 --> 41:04.000
+So you can see that there are very few UMI that can be detected.
+
+41:04.000 --> 41:09.000
+But it has a very high percentage of mitochondrion.
+
+41:10.000 --> 41:16.000
+Usually when a cell is in an extremely unhealthy state, its mitochondrion will be very high.
+
+41:16.000 --> 41:28.000
+So this is also a general criterion that many people will set to filter out some cells that they think are not worth doing downstream analysis.
+
+41:28.000 --> 41:35.000
+The last cell that may be used for downstream analysis is this one.
+
+41:36.000 --> 41:41.000
+So what does this analysis look like?
+
+41:41.000 --> 41:47.000
+This is basically a result of unbiased clustering.
+
+41:47.000 --> 41:54.000
+So you can see that the sample here is from a human pbmc cell.
+
+41:54.000 --> 41:59.000
+Here, each point represents a cell.
+
+41:59.000 --> 42:02.000
+This type of clustering is called t-SNE clustering.
+
+42:02.000 --> 42:05.000
+Basically, it is a clustering algorithm.
+
+42:05.000 --> 42:17.000
+Basically, what you can understand is that the closer the cells are, the more similar their properties are.
+
+42:18.000 --> 42:29.000
+Basically, they look at, for example, which genes are expressed in this clustering cell, and which genes are expressed in this clustering cell.
+
+42:29.000 --> 42:35.000
+Then they can identify what kind of cells these may be.
+
+42:35.000 --> 42:47.000
+So in a single-cell RNAC experiment, you can quickly identify all kinds of different immune cells.
+
+42:47.000 --> 42:51.000
+For example, this clustering is basically a B-cell.
+
+42:51.000 --> 43:01.000
+The gene expression plotting here further confirms that when you see here, it becomes more purplish, which means that this particular gene is expressed in large quantities.
+
+43:01.000 --> 43:04.000
+This gene is basically a B-cell mutagen.
+
+43:04.000 --> 43:09.000
+So it further confirms that these cells do have B-cell properties.
+
+43:09.000 --> 43:13.000
+For example, this CD3E is basically a T-cell marker.
+
+43:13.000 --> 43:17.000
+It is also expressed in large quantities in this T-cell population.
+
+43:18.000 --> 43:38.000
+Once you get a result like this, you can further study and compare which cells are the same and which cells are different.
+
+43:38.000 --> 43:45.000
+Or you can compare two B-cells in a different sample.
+
+43:45.000 --> 43:49.000
+Then you can compare the gene profiling of the two B-cells to see what is different.
+
+43:49.000 --> 44:00.000
+In this way, the result you get will be a signal that only B-cells give you, rather than a result where all cells are averaged.
+
+44:00.000 --> 44:03.000
+This is roughly the concept of a single-cell.
+
+44:04.000 --> 44:08.000
+Due to time constraints, I will skip the last part.
+
+44:08.000 --> 44:17.000
+This is just an example of what a single-cell can do.
+
+44:17.000 --> 44:25.000
+To summarize, there are some things you may need to consider before conducting a single-cell experiment.
+
+44:26.000 --> 44:37.000
+In my current job, I have to support many single-cell projects on campus.
+
+44:37.000 --> 44:51.000
+Based on my experience with many different projects, I can see that data analysis is still the biggest bottleneck in this technology.
+
+44:51.000 --> 44:56.000
+In terms of generating the data, it is not that difficult.
+
+44:56.000 --> 45:05.000
+However, every time you generate a library of data, it may be over 1,000 cells.
+
+45:05.000 --> 45:11.000
+To be honest, it is not that easy to analyze the data.
+
+45:11.000 --> 45:28.000
+Even though we have a single-cell working group in our company, we still have to figure out what is the best normalization method and what is the best batch correction method.
+
+45:28.000 --> 45:40.000
+In terms of differential gene expression analysis, which method is the best for single-cell analysis?
+
+45:41.000 --> 46:01.000
+Basically, if you know exactly what you want to ask, your single-cell data will be more meaningful.
+
+46:01.000 --> 46:21.000
+However, if you are not sure what you want to see, your data will be lost.
+
+46:21.000 --> 46:40.000
+In my experience, it is very important to optimize the sample prep protocol before going into the single-cell platform.
+
+46:40.000 --> 46:52.000
+If you don't optimize your sample prep properly, you may not get the cells you need.
+
+46:52.000 --> 47:02.000
+Finally, I want to touch on the single-cell genomics.
+
+47:02.000 --> 47:07.000
+The single-cell genomics development is very fast.
+
+47:07.000 --> 47:12.000
+There are many new technologies for different biological problems.
+
+47:13.000 --> 47:23.000
+For example, the single-cell RAC we just talked about is a single-cell suspension.
+
+47:24.000 --> 47:32.000
+However, in some research, you may not be able to get the so-called living tissue.
+
+47:32.000 --> 47:42.000
+For example, if you want to study the brain, you may only get the tissue after a person's death.
+
+47:42.000 --> 47:46.000
+Or you may only get the frozen tissue.
+
+47:46.000 --> 47:51.000
+Basically, you can't get the tissue from a living cell.
+
+47:51.000 --> 47:54.000
+Therefore, there is a so-called single-cell RAC.
+
+47:54.000 --> 48:10.000
+The single-cell RAC takes the tissue from a dead cell and extracts the RNA from it.
+
+48:10.000 --> 48:13.000
+There are also other versions.
+
+48:13.000 --> 48:25.000
+For example, if you are interested in the recombination of T-cells and B-cells, there is also a single-cell RAC like this.
+
+48:25.000 --> 48:36.000
+If you are studying cancer T-cell therapy, it will be very useful.
+
+48:37.000 --> 48:51.000
+If you are studying the chromatin regulation, there is also a single-cell attack C protocol.
+
+48:51.000 --> 49:00.000
+You can see which part of the chromatin is open and which part is closed.
+
+49:00.000 --> 49:04.000
+There is also a new technology called CyC.
+
+49:04.000 --> 49:11.000
+CyC adds a DNA barcoding to the antibody.
+
+49:11.000 --> 49:17.000
+CyC turns it into another RNA molecule.
+
+49:17.000 --> 49:20.000
+CyC turns it into a pseudogene.
+
+49:20.000 --> 49:29.000
+When you run the single-cell platform, CyC becomes an additional signal.
+
+49:29.000 --> 49:44.000
+In addition to obtaining the RNA expression profile, you can also detect the cell service protein signal.
+
+49:44.000 --> 49:52.000
+This technology can also help you with cell type identification.
+
+49:53.000 --> 50:07.000
+Overall, CyC is still developing rapidly in the field of sample processing and data analysis.
+
+50:08.000 --> 50:14.000
+This is a brief introduction to CyC.
+
+50:14.000 --> 50:24.000
+If you are interested in CyC, you can learn more about it.
+
+50:24.000 --> 50:39.000
+Thank you Dr. Sun for giving us a presentation today.
+
+50:39.000 --> 50:47.000
+We will now open the Q&A section.
+
+50:47.000 --> 50:55.000
+I hope everyone can actively discuss or ask questions about what Dr. Sun just said.
+
+50:55.000 --> 50:56.000
+Thank you.
+
+50:56.000 --> 51:03.000
+I just saw a person in the chat asking,
+
+51:03.000 --> 51:09.000
+Do you mind sharing your presentation slides?
+
+51:33.000 --> 51:41.000
+Let's see if Dr. Sun can send the slides to you.
+
+51:41.000 --> 51:43.000
+Okay.
+
+51:44.000 --> 51:48.000
+Another person asked,
+
+51:48.000 --> 51:56.000
+Hi Dr. Sun, for in vivo study, would you suggest to do the qPCR on intracellular organ first,
+
+51:56.000 --> 52:02.000
+then based on the qPCR result to design the experimental for RNA-Seq?
+
+52:03.000 --> 52:17.000
+Do you have any suggestions for the qPCR and RNA-Seq?
+
+52:17.000 --> 52:25.000
+For qPCR,
+
+52:25.000 --> 52:30.000
+if there is a new project coming in,
+
+52:30.000 --> 52:36.000
+we will not go for single cell RNA-Seq.
+
+52:37.000 --> 52:46.000
+We will first look at the existing technology,
+
+52:46.000 --> 52:51.000
+such as qPCR or Bulk RNA-Seq.
+
+52:51.000 --> 52:56.000
+If you want to compare healthy and diseased,
+
+52:56.000 --> 53:01.000
+or knockout or wild-type mice,
+
+53:01.000 --> 53:11.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+53:11.000 --> 53:16.000
+If your qPCR can already answer your question,
+
+53:16.000 --> 53:24.000
+we usually prefer to ask them to use a relatively cheap and simple technology to confirm.
+
+53:24.000 --> 53:29.000
+If you want to compare healthy and diseased,
+
+53:29.000 --> 53:37.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+53:37.000 --> 53:42.000
+If you want to compare healthy and diseased,
+
+53:42.000 --> 53:49.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+53:49.000 --> 53:54.000
+If you want to compare healthy and diseased,
+
+53:54.000 --> 54:02.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+54:02.000 --> 54:07.000
+If you want to compare healthy and diseased,
+
+54:07.000 --> 54:14.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+54:14.000 --> 54:19.000
+If you want to compare healthy and diseased,
+
+54:19.000 --> 54:27.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+54:27.000 --> 54:32.000
+If you want to compare healthy and diseased,
+
+54:32.000 --> 54:39.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+54:39.000 --> 54:44.000
+If you want to compare healthy and diseased,
+
+54:44.000 --> 54:51.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+54:51.000 --> 54:56.000
+If you want to compare healthy and diseased,
+
+54:56.000 --> 55:04.000
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+
+55:05.000 --> 55:11.000
+What software do you use to do batch correction for single-cell RNA-Seq?
+
+55:11.000 --> 55:17.000
+Are you asking about rPackage?
+
+55:17.000 --> 55:22.000
+Hello?
+
+55:22.000 --> 55:26.000
+Oh, rPackage.
+
+55:26.000 --> 55:31.000
+I can answer that.
+
+55:31.000 --> 55:36.000
+Are you doing single-cell RNA-Seq analysis?
+
+55:36.000 --> 55:41.000
+Yes.
+
+55:41.000 --> 55:46.000
+I believe Serat is doing single-cell RNA-Seq analysis.
+
+55:46.000 --> 55:51.000
+Have you heard of Serat?
+
+55:52.000 --> 55:57.000
+If you are interested,
+
+55:57.000 --> 56:03.000
+this is one of the most popular software out there
+
+56:03.000 --> 56:08.000
+and it is being developed for single-cell RNA-Seq.
+
+56:08.000 --> 56:13.000
+It is being developed for single-cell RNA-Seq.
+
+56:13.000 --> 56:18.000
+It is being developed for single-cell RNA-Seq.
+
+56:48.000 --> 56:53.000
+In terms of the CCA,
+
+56:53.000 --> 56:58.000
+it assumes that your dataset is co-variant.
+
+56:58.000 --> 57:03.000
+In terms of the CCA,
+
+57:03.000 --> 57:08.000
+it assumes that your dataset is co-variant.
+
+57:08.000 --> 57:13.000
+In terms of the CCA,
+
+57:13.000 --> 57:18.000
+it assumes that your dataset is co-variant.
+
+57:18.000 --> 57:23.000
+In terms of the CCA,
+
+57:23.000 --> 57:28.000
+it assumes that your dataset is co-variant.
+
+57:28.000 --> 57:33.000
+In terms of the CCA,
+
+57:33.000 --> 57:38.000
+it assumes that your dataset is co-variant.
+
+57:38.000 --> 57:43.000
+My personal favorite batch collection algorithm is MNN.
+
+57:43.000 --> 57:48.000
+My personal favorite batch collection algorithm is MNN.
+
+57:48.000 --> 57:53.000
+It is another package called SCRAN.
+
+57:53.000 --> 57:58.000
+It is another package called SCRAN.
+
+57:58.000 --> 58:03.000
+It is another package called SCRAN.
+
+58:03.000 --> 58:08.000
+It is another patch called SCRAN.
+
+58:08.000 --> 58:13.000
+It is another patch called SCRAN.
+
+58:13.000 --> 58:18.000
+It is another patch called SCRAN.
+
+58:18.000 --> 58:23.000
+It is another patch called SCRAN.
+
+59:23.000 --> 59:28.000
+It is another patch called SCRAN.
+
+59:28.000 --> 59:33.000
+It is another patch called SCRAN.
+
+59:33.000 --> 59:38.000
+It is another patch called SCRAN.
+
+59:38.000 --> 59:43.000
+It is another patch called SCRAN.
+
+59:43.000 --> 59:48.000
+It is another patch called SCRAN.
+
+59:48.000 --> 59:53.000
+it is another patch called SCRAN.
+
+59:53.000 --> 59:58.000
+it is another path called SCRAN.
+
+59:58.000 --> 01:00:03.000
+it is another patch called SCRAN.
+
+01:00:03.000 --> 01:00:08.000
+it is another patch called SCRAN.
+
+01:00:08.000 --> 01:00:13.000
+it is another patch called SCRAN.
+
+01:00:13.300 --> 01:00:18.000
+what is the method of using this feature?
+
+01:00:18.000 --> 01:00:23.000
+the SOLIDWORKS?
+
+01:00:23.000 --> 01:00:28.000
+can save months, few years, or million years.
+
+01:00:28.000 --> 01:00:33.000
+can save months, few years, or million years.
+
+01:00:33.000 --> 01:00:38.000
+can save months, few years, or million years.
+
+01:00:38.000 --> 01:00:45.000
+the EP-1 like Dropsy or CluedTie Audio see-ent performing
+
+01:00:45.000 --> 01:00:51.000
+the EP-1 like Dropsy or CluedTie Audio see-entering
+
+01:00:51.000 --> 01:00:59.000
+Jason can hardly get any good result
+
+01:00:59.000 --> 01:01:04.000
+because of the technical issue
+
+01:01:04.000 --> 01:01:10.000
+The EP-1 like Dropsy or CluedTie Audio see-entering
+
+01:01:10.000 --> 01:01:16.000
+Jason can hardly get any good result
+
+01:01:16.000 --> 01:01:22.000
+because of the technical issue
+
+01:01:22.000 --> 01:01:29.000
+Jason can hardly get any good result
+
+01:01:29.000 --> 01:01:34.000
+The EP-1 like Dropsy or CluedTie Audio see-entering
+
+01:01:34.000 --> 01:01:39.000
+Jason can hardly get any good result
+
+01:01:39.000 --> 01:01:44.000
+because of the technical issue
+
+01:01:44.000 --> 01:01:49.000
+Jason can hardly get any good result
+
+01:01:49.000 --> 01:01:54.000
+Jason can hardly get any good result
+
+01:01:54.000 --> 01:01:59.000
+The EP-1 like Dropsy or CluedTie Audio see-entering
+
+01:01:59.000 --> 01:02:04.000
+Jason can hardly get any good result
+
+01:02:04.000 --> 01:02:09.000
+Jason can hardly get any good result
+
+01:02:09.000 --> 01:02:14.000
+Jason can hardly get any good result
+
+01:02:14.000 --> 01:02:19.000
+Jason can hardly get any good result
+
+01:02:19.000 --> 01:02:24.000
+The EP-1 like Dropsy or CluedTie Audio see-entering
+
+01:02:24.000 --> 01:02:29.000
+Jason can hardly get any good result
+
+01:02:29.000 --> 01:02:34.000
+Jason can hardly get any good result
+
+01:02:34.000 --> 01:02:39.000
+Jason can hardly get any good result
+
+01:02:39.000 --> 01:02:44.000
+Jason can hardly get any good result
+
+01:02:44.000 --> 01:02:49.000
+Jason can hardly get any good result
+
+01:02:49.000 --> 01:02:54.000
+Jason can hardly get any good result
+
+01:02:54.000 --> 01:03:04.000
+Jason can hardly get any good result
+
+01:03:04.000 --> 01:03:09.000
+Jason can hardly get any good result
+
+01:03:09.000 --> 01:03:19.000
+Jason can hardly get any good result
+
+01:03:19.000 --> 01:03:29.000
+Jason can hardly get any good result
+
+01:03:29.000 --> 01:03:39.000
+Jason can hardly get any good result
+
+01:03:39.000 --> 01:03:49.000
+Jason can hardly get any good result
+
+01:03:49.000 --> 01:04:04.000
+Jason can hardly get any good result
+
+01:04:04.000 --> 01:04:14.000
+Jason can hardly get any good result
+
+01:04:14.000 --> 01:04:24.000
+Jason can hardly get any good result
+
+01:04:24.000 --> 01:04:34.000
+Jason can hardly get any good result
+
+01:04:34.000 --> 01:04:44.000
+Jason can hardly get any good result
+
+01:04:44.000 --> 01:04:54.000
+Jason can hardly get any good result
+
+01:04:54.000 --> 01:05:04.000
+Jason can hardly get any good result
+
+01:05:04.000 --> 01:05:14.000
+Jason can hardly get any good result
+
+01:05:14.000 --> 01:05:24.000
+Jason can hardly get any good result
+
+01:05:24.000 --> 01:05:34.000
+Jason can hardly get any good result
+
+01:05:34.000 --> 01:05:44.000
+Jason can hardly get any good result
+
+01:05:44.000 --> 01:05:54.000
+Jason can hardly get any good result
+
+01:05:54.000 --> 01:06:04.000
+Jason can hardly get any good result
+
+01:06:04.000 --> 01:06:14.000
+Jason can hardly get any good result
+
+01:06:14.000 --> 01:06:24.000
+Jason can hardly get any good result
+
+01:06:24.000 --> 01:06:34.000
+Jason can hardly get any good result
+
+01:06:34.000 --> 01:06:44.000
+Jason can hardly get any good result
+
+01:06:44.000 --> 01:06:54.000
+Jason can hardly get any good result
+
+01:06:54.000 --> 01:07:04.000
+Jason can hardly get any good result
+
+01:07:04.000 --> 01:07:14.000
+Jason can hardly get any good result
+
+01:07:14.000 --> 01:07:24.000
+Jason can hardly get any good result
+
+01:07:24.000 --> 01:07:34.000
+Jason can hardly get any good result
+
+01:07:34.000 --> 01:07:44.000
+Jason can hardly get any good result
+
+01:07:44.000 --> 01:07:54.000
+Jason can hardly get any good result
+
+01:07:54.000 --> 01:08:04.000
+Jason can hardly get any good result
+
+01:08:04.000 --> 01:08:14.000
+Jason can hardly get any good result
+
+01:08:14.000 --> 01:08:24.000
+Jason can hardly get any good result
+
+01:08:24.000 --> 01:08:34.000
+Jason can hardly get any good result
+
+01:08:34.000 --> 01:08:44.000
+Jason can hardly get any good result
+
+01:08:44.000 --> 01:08:54.000
+Jason can hardly get any good result
+
+01:08:54.000 --> 01:09:04.000
+Jason can hardly get any good result
+
+01:09:04.000 --> 01:09:14.000
+Jason can hardly get any good result
+
+01:09:14.000 --> 01:09:24.000
+Jason can hardly get any good result
+
+01:09:24.000 --> 01:09:34.000
+Jason can hardly get any good result
+
+01:09:34.000 --> 01:09:44.000
+Jason can hardly get any good result
+
+01:09:44.000 --> 01:09:54.000
+Jason can hardly get any good result
+
+01:09:54.000 --> 01:10:04.000
+Jason can hardly get any good result
+
+01:10:04.000 --> 01:10:14.000
+Jason can hardly get any good result
+
+01:10:14.000 --> 01:10:24.000
+Jason can hardly get any good result
+
+01:10:24.000 --> 01:10:34.000
+Jason can hardly get any good result
+
+01:10:34.000 --> 01:10:44.000
+Jason can hardly get any good result
+
+01:10:44.000 --> 01:10:54.000
+Jason can hardly get any good result
+
+01:10:54.000 --> 01:11:04.000
+Jason can hardly get any good result
+
+01:11:04.000 --> 01:11:14.000
+Jason can hardly get any good result
+
+01:11:14.000 --> 01:11:24.000
+Jason can hardly get any good result
+
+01:11:24.000 --> 01:11:34.000
+Jason can hardly get any good result
+
+01:11:34.000 --> 01:11:44.000
+Jason can hardly get any good result
+
+01:11:44.000 --> 01:11:54.000
+Jason can hardly get any good result
+
+01:11:54.000 --> 01:12:04.000
+Jason can hardly get any good result
+
+01:12:04.000 --> 01:12:14.000
+Jason can hardly get any good result
+
+01:12:14.000 --> 01:12:24.000
+Jason can hardly get any good result
+
+01:12:24.000 --> 01:12:34.000
+Jason can hardly get any good result
+
+01:12:34.000 --> 01:12:44.000
+Jason can hardly get any good result
+
+01:12:44.000 --> 01:12:54.000
+Jason can hardly get any good result
+
+01:12:54.000 --> 01:13:04.000
+Jason can hardly get any good result
+
+01:13:04.000 --> 01:13:14.000
+Jason can hardly get any good result
+
+01:13:14.000 --> 01:13:24.000
+Jason can hardly get any good result
+
+01:13:24.000 --> 01:13:34.000
+Jason can hardly get any good result
+
+01:13:34.000 --> 01:13:44.000
+Jason can hardly get any good result
+
+01:13:44.000 --> 01:13:54.000
+Jason can hardly get any good result
+
+01:13:54.000 --> 01:14:04.000
+Jason can hardly get any good result
+
+01:14:04.000 --> 01:14:14.000
+Jason can hardly get any good result
+
+01:14:14.000 --> 01:14:24.000
+Jason can hardly get any good result
+
+01:14:24.000 --> 01:14:34.000
+Jason can hardly get any good result
+
+01:14:34.000 --> 01:14:44.000
+Jason can hardly get any good result
+
+01:14:44.000 --> 01:14:54.000
+Jason can hardly get any good result
+
+01:14:54.000 --> 01:15:02.000
+Jason can hardly get any good result
+

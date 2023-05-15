@@ -1,0 +1,1829 @@
+start	end	text
+0	8000	Hi, I'm Yen-Yung Chang, the host of Tera.
+8000	12000	We are going to have the second lecture of Tera this year.
+12000	16000	Today's speaker is...
+16000	20000	Wait a minute, I have to scroll up first.
+20000	24000	Today's speaker is Bi-Yao Zhuang.
+24000	28000	She is from DC's George Washington University.
+28000	32000	She is a fourth-year doctor of mechanical engineering.
+32000	40000	She specializes in fluid dynamics and numerical simulation.
+40000	44000	She is going to talk about...
+44000	50000	Flux Reconstruction Correlation Procedure via Reconstruction in Computational Fluid Dynamics.
+50000	54000	Let's welcome her.
+54000	60000	Hi, I'm Bi-Yao Zhuang.
+60000	64000	I'm a fourth-year doctor of George Washington University.
+64000	70000	I specialize in fluid dynamics and numerical simulation.
+70000	74000	I specialize in fluid dynamics and numerical simulation.
+74000	78000	I specialize in fluid dynamics and numerical simulation.
+78000	84000	I recently learned about a new numerical method called Flux Reconstruction.
+84000	86000	Oops, I accidentally typed the wrong title.
+86000	88000	Never mind.
+88000	90000	It's called...
+90000	92000	It doesn't have a Chinese name.
+92000	96000	It was first proposed in 2007.
+96000	100000	The second paper was published in 2009.
+100000	104000	Other groups joined the field in 2012 and 2013.
+104000	110000	So, it doesn't have a Chinese name.
+110000	112000	It's called Flux Reconstruction.
+112000	116000	As you can see, there is a typo in the title.
+116000	118000	It's a reconstruction.
+118000	122000	Some groups thought the name was bad.
+122000	128000	So, they renamed it to Correction Procedure via Reconstruction.
+128000	132000	It's basically the same.
+132000	136000	There are two groups in the UK.
+136000	138000	There are three groups.
+138000	140000	One group is in NASA.
+140000	142000	One group is in Stanford.
+142000	144000	One group is in the UK.
+144000	148000	In the UK and Stanford, they are called FR, Flux Reconstruction.
+148000	156000	In NASA, they are called CPR, Correction Procedure via Reconstruction.
+156000	158000	I recently learned about this.
+158000	160000	I think it can be used for my doctoral research.
+160000	162000	It just started in computational physics.
+162000	164000	There is still a lot of room for development.
+164000	168000	I just finished learning this.
+168000	170000	I read a lot of papers and learned a lot.
+170000	172000	So, I have some insights.
+172000	174000	I'm here to make a progress report.
+174000	178000	I'm here to share with you what this numerical method is doing.
+180000	182000	What I'm going to talk about today is...
+182000	184000	First, let me introduce some basic concepts of numerical methods.
+184000	190000	I'm not sure what your background is.
+190000	192000	So, there will be some basic introduction of numerical methods.
+192000	196000	To avoid some people who are not doing numerical simulation and don't understand.
+196000	202000	Next, I will introduce how to introduce Flux Reconstruction.
+202000	206000	Basically, the first part is like a math class.
+206000	208000	It's a mathematical introduction.
+208000	214000	The last part is how I want to apply it to incompressible flow.
+214000	218000	Because my main research is to do incompressible flow.
+218000	222000	The group that proposed Flux Reconstruction, like Stanford or the UK.
+222000	226000	They are all doing compressible flow.
+226000	230000	So, at least so far, if you look for Literature Review.
+230000	234000	I haven't seen any group using this method in incompressible flow.
+234000	238000	So, I plan to do my research in this direction.
+238000	242000	So, I will briefly talk about my future plan.
+246000	250000	First, I want to introduce a very important concept in numerical methods.
+250000	252000	It's called the Full-Weight Fragmentation Method.
+252000	256000	It can infer all kinds of different numerical methods.
+256000	258000	It's the foundation of the foundation.
+258000	260000	So, I'm going to introduce it.
+260000	264000	Today, there is a Full-Weight Fragmentation Method.
+264000	270000	At present, many phenomena in the natural world are unified by the Full-Weight Fragmentation Method.
+270000	272000	We call it the unified method.
+272000	278000	I use a symbol like L to represent the operator of the Full-Weight Fragmentation.
+278000	280000	It's the Full-Weight Fragmentation symbol.
+280000	286000	An example of L is the so-called heat expansion method.
+286000	290000	This is the operator of the Full-Weight Fragmentation.
+290000	296000	U is an unknown function that we want to solve.
+296000	300000	In the Full-Weight Fragmentation, it may be a temperature field.
+300000	304000	The temperature field changes with time and space.
+304000	306000	In the fluid, U may be a velocity field.
+306000	312000	F is an unknown function on the right side of the equation.
+312000	314000	It may be related to your physical phenomenon.
+314000	318000	For example, in fluid mechanics, F may be a gravity field.
+318000	322000	In the Full-Weight Fragmentation, F may be a heat source.
+322000	326000	It is a thing that generates heat without realizing it.
+326000	330000	If today's Full-Weight Fragmentation is the exact solution,
+330000	334000	The real solution of the real world is called U-exact.
+334000	338000	Although we want to know what U-exact is,
+338000	340000	Because it is the real solution.
+340000	344000	In fact, in real life, we can't get it at all.
+344000	346000	Because in the Full-Weight Fragmentation, I'm not sure what it is.
+346000	352000	But in theory, it should not be guaranteed that there is a real solution.
+352000	354000	So we can't get the real solution today.
+354000	356000	Then we think of another way.
+356000	358000	Let's assume a solution.
+358000	362000	For example, if today's U represents temperature,
+362000	368000	Let's assume that the temperature in this space may look like what it looks like.
+368000	370000	After we assume what it looks like,
+370000	372000	There will be some unknowns in it.
+372000	374000	Let's solve it again.
+374000	382000	For example, today we assume that the temperature field will be a function series.
+382000	386000	Like Fourier series or Laplace series.
+386000	392000	Then you can write it as a sigma c i phi i.
+392000	394000	c i is an unknown constant.
+394000	398000	Then phi i is what we assume it looks like.
+398000	402000	For example, I have a very simple example here.
+402000	404000	If phi i is defined as x i,
+404000	406000	If phi 0 is a constant,
+406000	412000	Then phi 1 is x, phi 2 is x², phi 3 is x³.
+412000	422000	Let's assume that the temperature field today is C0 plus C1 times x, plus C2 times x², plus C3 times x³.
+422000	426000	Today we have assumed that the temperature field looks like this.
+426000	432000	The rest we need to decide is how much C0, C1, and C2 are.
+432000	436000	So the whole numerical method, numerical simulation, numerical partial differential,
+436000	440000	All these things are actually discussing two questions.
+440000	444000	What is it? What should we assume this U looks like?
+444000	446000	What is this phi i?
+446000	448000	It can be sine or cosine.
+448000	452000	It can also be like the example I just mentioned, x, x², x³.
+452000	454000	So what kind of assumption is the best?
+454000	456000	This is a question.
+456000	462000	The second question is, how do we find out how much C0, C1, and C2 are?
+462000	466000	So the whole numerical method, numerical analysis,
+466000	468000	In fact, when you take these classes,
+468000	474000	It's all about these two questions.
+474000	484000	When we talk about how to determine C, C0, C1, and C2,
+484000	494000	We're going to talk about how to determine C.
+494000	500000	We hope that we can find a set of C0, C1, and C2.
+500000	510000	We hope that we can find a set of C0, C1, and C2.
+510000	516000	The definition of C0, C1, and C2 is that
+516000	520000	When you take the assumption back to PDE,
+520000	524000	It's a perfect zero error.
+524000	528000	No matter where you are,
+528000	530000	Assume that the function is always perfect.
+530000	532000	There will be no imperfection in it.
+532000	534000	But the problem is, it's impossible.
+534000	538000	Because if you bring in the assumption function today,
+538000	540000	It's a perfect zero error.
+540000	542000	It's like you're guessing the function today.
+542000	546000	It's just the exact solution.
+546000	548000	Then it's not called the assumption function.
+548000	550000	We don't need to guess.
+550000	552000	So it's almost impossible.
+552000	554000	Only some toy problems in textbooks.
+554000	558000	You're just guessing a function.
+558000	560000	Guess it's C0 plus C1x.
+560000	562000	It's just the exact solution.
+562000	564000	But in real life, it's unrealistic.
+564000	566000	So we, for example,
+566000	568000	And then the second question is,
+568000	570000	If you use this method today to find C1, C2,
+570000	572000	How many of these are there?
+572000	574000	You'll find that you have several unknowns,
+574000	576000	But you only have one square.
+576000	578000	For example, if I guess today,
+578000	584000	This function is C0 plus C1x plus C2x squared plus C3x squared.
+584000	588000	And then I'm going to solve a Poisson equation today.
+588000	590000	Then you put this assumption function
+590000	592000	After bringing in the original Poisson equation,
+592000	594000	It's a two-step equation.
+594000	600000	The remaining two-step equation of U is 2C2 plus 6C3x.
+600000	602000	And then you bring it in.
+602000	604000	Your product will look like this.
+604000	608000	What you see on the screen is 2C2 plus 6C3x minus 3pi x.
+608000	610000	You only have one square.
+610000	614000	But you have four unknowns from C0 to C3 today.
+614000	616000	You can't solve it.
+616000	618000	So these questions mean that
+618000	622000	We can't use this method to find the unknown.
+622000	626000	So today we're going to use the numerical method to
+626000	630000	To broaden our understanding of the function.
+630000	632000	So today we're going to use the numerical method to
+632000	634000	To broaden our understanding of the function.
+634000	636000	We don't want it to be perfect today.
+636000	638000	We want it to have some flaws.
+638000	640000	But as long as some conditions are met, it's good.
+640000	642000	This is called the weight multiplication.
+642000	646000	You see the first point on this list.
+646000	648000	This point means that
+648000	652000	R is still the same as the multiplication of any point in space.
+652000	654000	But today I'm going to multiply it by a weight.
+654000	656000	This weight means that
+656000	658000	This weight means that
+658000	660000	In space, the value of some places is more important.
+660000	662000	The value of some places is more important.
+662000	664000	For example, x is equal to 2.
+664000	666000	This place is very important.
+666000	668000	I want its value to be multiplied by 10.
+668000	670000	Then in x is equal to 3,
+670000	672000	I don't care so much about its value.
+672000	676000	I don't care if my assumption is correct.
+676000	678000	So its weight may only be 0.1.
+678000	682000	Then the requirement that I broadened today is that
+682000	686000	Multiplying by the weight of the entire space will be zero.
+686000	688000	multiply by the weight of the entire space will be zero.
+688000	692000	This is good.
+694000	698000	I no longer require that there are all points have negative parts.
+698000	700000	So this is a broadened condition.
+700000	702000	So this is a broadened condition.
+702000	704000	Then we're looking at this weight...
+704000	706000	Hey
+706000	708000	This is a little problem.
+708000	710000	Your weight is
+710000	712000	a function of x.
+712000	714000	Then in your entire
+714000	716000	range of interest in x
+716000	718000	Is this w going to be positive?
+718000	720000	Because negative will have
+720000	722000	a strange meaning.
+722000	724000	No, it's negative.
+724000	726000	Negative can also
+726000	728000	Even later
+728000	730000	may be mentioned a little bit.
+730000	732000	Even it will have infinite
+732000	734000	Like the delta function at a certain point
+734000	736000	It will have an infinite weight.
+736000	738000	Then all the other places are zero.
+738000	740000	Ok
+740000	742000	Then you need to put this whole
+742000	744000	You are now the first
+744000	746000	The points above the points
+746000	748000	Remove
+748000	750000	w itself
+750000	752000	dx and then the entire range of points
+752000	754000	It's a bit like renormalize.
+754000	756000	Is it total probability?
+756000	758000	Is it total weight?
+758000	760000	Or do you not need it?
+760000	762000	You said
+762000	764000	You are now the point
+764000	766000	This equation
+766000	768000	Its denominator
+768000	770000	Is the same equation
+770000	772000	But there is no r.
+772000	774000	w itself dx
+774000	776000	No need
+776000	778000	We didn't do this.
+778000	780000	Because theoretically
+780000	782000	It is
+782000	784000	Theoretically it is zero.
+784000	786000	In fact, if you subtract something else
+786000	788000	If your method
+788000	790000	If it's perfect, you subtract something else
+790000	792000	It's still zero.
+792000	794000	We just divide it directly.
+794000	796000	Ok, I understand.
+796000	798000	Then we today
+798000	800000	Then we continue to talk about this weight.
+800000	802000	You see I have a j here.
+802000	804000	In fact, it means that I am not only a set of weight today.
+804000	806000	I just gave an example
+806000	808000	For example, x1, the weight of this place is 10.
+808000	810000	x3, the weight of the place is negative 0.1.
+810000	812000	0.1
+812000	814000	This is a set of weight.
+814000	816000	But when I design the method today
+816000	818000	I will not only design a set of weight.
+818000	820000	I usually design
+820000	822000	Enough weight to let me
+822000	824000	Solve my unknown number
+824000	826000	For example, the example I just gave
+826000	828000	There are four unknowns from c0 to c3.
+828000	830000	Then I have to design four groups of different weight today.
+830000	832000	Then I will have four groups.
+832000	834000	That linear equation
+834000	836000	I will get that linear equation.
+836000	838000	So I can solve four
+838000	840000	That c0 to c3
+840000	842000	These four unknowns
+842000	844000	That constant
+844000	846000	So we are equal to simplify
+846000	848000	I just said that the numerical method is around two problems.
+848000	850000	One is how we should assume
+850000	852000	What does it look like?
+852000	854000	The second is how to calculate
+854000	856000	The constant c0 to c
+856000	858000	The second question is how to calculate c
+858000	860000	This constant
+860000	862000	We can change it
+862000	864000	In other words, it becomes another question.
+864000	866000	How do we define our weight?
+870000	872000	Then
+872000	874000	This is our question now.
+874000	876000	The question we just asked
+876000	878000	We will remember to go back to this question later.
+878000	880000	Then we just talked about it before.
+880000	882000	Is the standard that has been relaxed
+882000	884000	As long as the weight of the weight
+884000	886000	After the weight is multiplied by the weight
+886000	888000	The residual value of the weight is zero.
+888000	890000	Then in the numerical method
+890000	892000	We will be further relaxed
+892000	894000	Is that we often hear
+894000	896000	You may hear some elements
+896000	898000	Then grid
+898000	900000	Or some more
+900000	902000	May be more formal
+902000	904000	Will be called piecewise solution
+904000	906000	That is to say
+906000	908000	Today this space is interesting
+908000	910000	I wrote it in the first video called space
+910000	912000	I cut it into a smaller area in space.
+912000	914000	For example
+914000	916000	Subdomain 1, Subdomain 2
+916000	918000	This kind of subdomain is called element.
+918000	920000	Is what you often hear
+920000	922000	The so-called element in the finite element
+922000	924000	Or you hear that grid
+924000	926000	A grid inside
+926000	928000	Then I use a 1 today.
+928000	930000	To represent this kind of subdomain
+930000	932000	Then k under the label means different
+932000	934000	Subdomain
+934000	936000	Then let it go today.
+936000	938000	I
+938000	940000	Inside each element
+940000	942000	Have their own guesses
+942000	944000	For example, U0 means the 0th subdomain.
+944000	946000	It has its own assumption function
+946000	948000	That U1 inside
+948000	950000	Is the 1st element
+950000	952000	It also has its own guess function
+952000	954000	Then
+954000	956000	So the whole global
+956000	958000	The guess function is actually a lot of different
+958000	960000	Small elements are combined
+960000	962000	If X is in the 0th element today
+962000	964000	Then we use the 0th guess function
+964000	966000	If X is in the 1st element today
+966000	968000	We use the 1st guess function
+968000	970000	Why do you say
+970000	972000	This is a kind of relaxation
+972000	974000	Why is it a kind of relaxation
+974000	976000	Because it means
+976000	978000	Today if the real world
+978000	980000	Exact solution
+980000	982000	Is a very high-level function
+982000	984000	For example, a high-level polynomial
+984000	986000	Or a sine, sine wave or cosine wave
+986000	988000	Its fluctuation is very large
+988000	990000	You see, like this example
+990000	992000	The black line in this example is the exact solution
+992000	994000	It has three fluctuations
+994000	996000	It is equal to at least three or more
+996000	998000	Its solution is three or more polynomials
+998000	1000000	Even sine or cosine
+1000000	1002000	But if I take the whole domain today
+1002000	1004000	Divided into many small elements
+1004000	1006000	Like this example, I split it into six small elements
+1006000	1008000	I mean I have each element
+1008000	1010000	Just use a straight line
+1010000	1012000	Then add six elements
+1012000	1014000	I can see my real world
+1014000	1016000	So this is a kind of relaxation
+1016000	1018000	It means I'm guessing
+1018000	1020000	What does this function look like
+1020000	1022000	I use the simplest straight line
+1022000	1024000	I can be my assumption
+1024000	1026000	You can guess what this function looks like
+1026000	1028000	So we will say this
+1028000	1030000	Divide it into subdomain
+1030000	1032000	Elements or cells
+1032000	1034000	Is a kind of relaxation
+1034000	1036000	A more relaxed condition
+1036000	1038000	That's what this video is about
+1038000	1040000	This kind of relaxation
+1040000	1042000	As I just said, its advantage is
+1042000	1044000	Even if your real function
+1044000	1046000	Is a very high-level function
+1046000	1048000	Or a very vibrant, very fluctuating
+1048000	1050000	If it's a big thing
+1050000	1052000	I can also use a very low-level guess
+1052000	1054000	To look at this exact solution
+1054000	1056000	This is its advantage
+1056000	1058000	The disadvantage is
+1058000	1060000	We split this domain today
+1060000	1062000	Into many small subdomains
+1062000	1064000	What is the relationship between the subdomain and the subdomain
+1064000	1066000	What is the relationship between the subdomain and the subdomain
+1066000	1068000	This is a new problem
+1068000	1070000	A new problem
+1070000	1072000	For example, what is the relationship between element 1 and element 0
+1072000	1074000	For example, what is the relationship between element 1 and element 0
+1074000	1076000	It's impossible to have nothing to do with it
+1076000	1078000	Because they are all describing
+1078000	1080000	Different sections of the same real node
+1080000	1082000	So they still have a relationship
+1082000	1084000	So you have to make some assumptions
+1084000	1086000	What we use the most in our numerical method today
+1086000	1088000	What we use the most in our numerical method today
+1088000	1090000	The so-called continuous function we call C0
+1090000	1092000	That is to say
+1092000	1094000	Today, if there are two elements connected together
+1094000	1096000	Today, if there are two elements connected together
+1096000	1098000	Like on the picture, if you see this blue element
+1098000	1100000	And yellow element
+1100000	1102000	C0 is that they just have to
+1102000	1104000	The point where the interface is connected
+1104000	1106000	The point where the interface is connected
+1106000	1108000	It's just continuous
+1108000	1110000	That's the easiest
+1110000	1112000	So today you can see this blue line
+1112000	1114000	And the orange line are connected
+1114000	1116000	And the orange line and the orange line are connected
+1116000	1118000	As for the number of points, is it connected
+1118000	1120000	In this C0 condition
+1120000	1122000	We don't care
+1122000	1124000	We don't care
+1124000	1126000	So if we talk again
+1126000	1128000	So if we talk again
+1128000	1130000	To refresh
+1130000	1132000	Today's modern numerical method
+1132000	1134000	Today's modern numerical method
+1134000	1136000	We just talked about the surrounding two issues
+1136000	1138000	We just talked about the surrounding two issues
+1138000	1140000	So now you can add one more question
+1140000	1142000	So now you can add one more question
+1142000	1144000	Is to first
+1144000	1146000	So first
+1146000	1148000	is the assumption function
+1148000	1150000	What does it look like
+1150000	1152000	Then the second is what this whole function should look like
+1152000	1154000	Then the third is when we split the domain into many small elements
+1154000	1156000	When we split the domain into many small elements
+1156000	1158000	What are the relationships between elements and elements
+1158000	1160000	The combination of different answers to these three questions
+1160000	1162000	Will give you different
+1162000	1164000	The so-called numerical method
+1164000	1166000	The so-called numerical method
+1166000	1168000	I have a question
+1168000	1170000	I have a question
+1170000	1172000	My question may be very basic
+1172000	1174000	People who understand
+1174000	1176000	My question is like this
+1176000	1178000	For example, the thing you just described
+1178000	1180000	For example, the thing you just described
+1180000	1182000	Is a coordinate field
+1182000	1184000	But if you care about the nature
+1184000	1186000	But if you care about the nature
+1186000	1188000	If it's speed or acceleration
+1188000	1190000	But if it's speed or acceleration
+1190000	1192000	Are you
+1192000	1194000	Are you
+1194000	1196000	Right
+1196000	1198000	Right
+1198000	1200000	Right
+1200000	1202000	So you will know
+1202000	1204000	So you will know
+1204000	1206000	Because if your conditions today are very simple
+1206000	1208000	Because if your conditions today are very simple
+1208000	1210000	But if you are
+1210000	1212000	But if you are
+1212000	1214000	But if you are
+1214000	1216000	You can find a number on the right
+1216000	1218000	And limit them to be equal
+1218000	1220000	You are equal to saying that the conditions
+1220000	1222000	It will be tougher and harder to meet
+1222000	1224000	But this is every
+1224000	1226000	How strong is the boundary condition of the small element
+1226000	1228000	How strong is the boundary condition of the small element
+1228000	1230000	So the actual operation will be with
+1230000	1232000	What kind of problem do you want to solve?
+1232000	1234000	It's about your actual problem
+1234000	1236000	It's about your actual problem
+1236000	1238000	I see
+1238000	1240000	This is why different areas
+1240000	1242000	Will use different numerical methods
+1242000	1244000	So maybe the most common thing we hear is
+1244000	1246000	Limit difference, limit element, limit volume
+1246000	1248000	These are the three most common
+1248000	1250000	Then you will find out why
+1250000	1252000	People who calculate mechanics use limited elements
+1252000	1254000	Then why
+1254000	1256000	Fluid mechanics uses limited volume
+1256000	1258000	Then other people use limited difference
+1258000	1260000	It's because they are likely to be
+1260000	1262000	C0 or C1
+1262000	1264000	This kind of requirement is different
+1264000	1266000	Then
+1266000	1268000	So back to the three questions here
+1268000	1270000	Then there are some examples here
+1270000	1272000	Different answers to these three questions
+1272000	1274000	What kind of different
+1274000	1276000	Numerical methods
+1276000	1278000	The first
+1278000	1280000	Its formal name is pseudospectral
+1280000	1282000	Or that positive
+1282000	1284000	I don't know the Chinese name
+1284000	1286000	Orthogonal collocation
+1286000	1288000	Then why mention this
+1288000	1290000	Because we hear the most
+1290000	1292000	Limited difference, finite difference
+1292000	1294000	Is a special case
+1294000	1296000	Then this numerical method
+1296000	1298000	That is to say, its weight is a delta function
+1298000	1300000	That's what I just said
+1300000	1302000	It will be infinite at this point
+1302000	1304000	That
+1304000	1306000	Delta function
+1306000	1308000	This thing is very interesting
+1308000	1310000	It will become
+1310000	1312000	I don't know
+1312000	1314000	After it is accumulated
+1314000	1316000	I should be able to go back to that video
+1316000	1318000	Delta function
+1318000	1320000	After the accumulation becomes
+1320000	1322000	Only this point has value
+1322000	1324000	A little slow
+1324000	1326000	It's like this
+1326000	1328000	Like this point
+1328000	1330000	If wj is a delta function
+1330000	1332000	That delta function
+1332000	1334000	If the point is in xj
+1334000	1336000	Then this point will become
+1336000	1338000	The right-hand side is equal to
+1338000	1340000	R of xj
+1340000	1342000	That's it
+1342000	1344000	So this is why you are in a finite difference
+1344000	1346000	I can't see any weight at all
+1346000	1348000	I can't see it
+1348000	1350000	It is
+1350000	1352000	The finite difference is defined at the point
+1352000	1354000	If you are
+1354000	1356000	Then
+1356000	1358000	The finite difference is this
+1358000	1360000	So-called pseudo-spectral
+1360000	1362000	A special case
+1362000	1364000	Except that the weight is a delta function
+1364000	1366000	Its
+1366000	1368000	The diameter is also very low
+1368000	1370000	It is a straight line
+1370000	1372000	Its so-called phi is a straight line
+1372000	1374000	Just guess
+1374000	1376000	You can see
+1376000	1378000	The solution of the assumption
+1378000	1380000	It only has phi0 and phi1
+1380000	1382000	Two things
+1382000	1384000	So today you are doing
+1384000	1386000	When there is a finite difference
+1386000	1388000	In fact, you are solving
+1388000	1390000	It's just C0 and C1
+1390000	1392000	Then the finite difference
+1392000	1394000	The continuous condition of C0
+1394000	1396000	The finite volume
+1396000	1398000	It's like fluid mechanics
+1398000	1400000	Its weight is
+1400000	1402000	As long as it is
+1402000	1404000	This one
+1404000	1406000	I define it in ej today
+1406000	1408000	Inside this element
+1408000	1410000	Its weight is all 1
+1410000	1412000	Outside this element
+1412000	1414000	Its weight is all 0
+1414000	1416000	This is the definition of its weight
+1416000	1418000	Then
+1418000	1420000	The solution of the assumption
+1420000	1422000	This is what we guess
+1422000	1424000	It's simpler than the finite difference
+1424000	1426000	It's just a parameter
+1426000	1428000	Today in an element
+1428000	1430000	In a subdomain
+1430000	1432000	For example, the temperature field
+1432000	1434000	The temperature field in this subdomain
+1434000	1436000	It's just a parameter
+1436000	1438000	It won't change anything
+1438000	1440000	It will be very complicated
+1440000	1442000	It will use the so-called
+1442000	1444000	Riemann jump condition
+1444000	1446000	It's complicated
+1446000	1448000	I just want to say
+1448000	1450000	It's not a C0 condition
+1450000	1452000	What is it
+1452000	1454000	It's beyond today's scope
+1454000	1456000	So I didn't say
+1456000	1458000	It's just an example
+1458000	1460000	How do we answer those three questions
+1460000	1462000	Will define a different value
+1462000	1464000	The third is
+1464000	1466000	The so-called continuous Galerkin method
+1466000	1468000	We often hear that finite elements
+1468000	1470000	This is a special case
+1470000	1472000	In this case
+1472000	1474000	Its weight
+1474000	1476000	Will be equal to
+1476000	1478000	The function we guess
+1478000	1480000	Is phi j
+1480000	1482000	Phi j is what we just guessed
+1482000	1484000	Assuming that function
+1484000	1486000	Its weight is this
+1486000	1488000	As long as you use this weight
+1488000	1490000	It's all called Galerkin method
+1490000	1492000	The finite element
+1492000	1494000	It's more advanced
+1494000	1496000	It also uses C0
+1496000	1498000	Continuous condition
+1498000	1500000	But as for this phi i
+1500000	1502000	What is it
+1502000	1504000	Is it sine, cosine, polynomial
+1504000	1506000	Or exponential
+1506000	1508000	In fact, in the traditional Galerkin method
+1508000	1510000	It didn't say
+1510000	1512000	It's just in the finite element
+1512000	1514000	The traditional phi i
+1514000	1516000	Use a straight line to define
+1516000	1518000	It's a straight line polynomial
+1518000	1520000	This video
+1520000	1522000	Just to introduce to you
+1522000	1524000	Our numerical method
+1524000	1526000	What is it all about
+1526000	1528000	That's the three questions
+1528000	1530000	I'm going to introduce this today
+1530000	1532000	The weighting method
+1532000	1534000	Because the flux reconstruction
+1534000	1536000	Will use the weighting method to push down
+1540000	1542000	I didn't mention it in the video
+1542000	1544000	The so-called low-order method
+1544000	1546000	Or high-order numerical method
+1546000	1548000	So I want to be here today
+1548000	1550000	Also want to introduce
+1550000	1552000	Not everyone has a numerical method
+1552000	1554000	Background
+1554000	1556000	So I want to introduce this order first
+1556000	1558000	What is it
+1558000	1560000	We just had a projection
+1560000	1562000	There is an example
+1562000	1564000	If there is one today
+1564000	1566000	The physical field of the real world
+1566000	1568000	For example, this black line is its real field
+1568000	1570000	We don't know
+1570000	1572000	The field we can't guess
+1572000	1574000	Then we use six elements to define it
+1574000	1576000	Then in each element
+1576000	1578000	We guess it's a straight line distribution
+1578000	1580000	That's what it looks like
+1582000	1584000	If we want today
+1584000	1586000	You can clearly see that
+1586000	1588000	Although at some points
+1588000	1590000	The function we guess is very
+1590000	1592000	Basically close to the physical field of the real world
+1592000	1594000	But other parts
+1594000	1596000	You see, like this blue straight line
+1596000	1598000	With that black curve
+1598000	1600000	There is a big, obvious error in the middle
+1600000	1602000	So if we want to improve this error today
+1602000	1604000	What can we do
+1604000	1606000	The first thing we can do
+1606000	1608000	Is to use more elements
+1608000	1610000	Just make it finer
+1610000	1612000	So in each element
+1612000	1614000	Still use a straight line
+1614000	1616000	But the straight line may be because it is smaller
+1616000	1618000	It will be closer to the black line
+1618000	1620000	Is the real physical field
+1620000	1622000	The next projection
+1622000	1624000	The next projection is an example
+1624000	1626000	Like this projection
+1626000	1628000	I added six elements today
+1628000	1630000	Let the total number of elements become 12
+1630000	1632000	But in each element
+1632000	1634000	Still use a straight line
+1634000	1636000	That guess
+1636000	1638000	Then we will find that I just added six elements
+1638000	1640000	Now the whole guess
+1640000	1642000	The solution will become very close to the real solution
+1642000	1644000	This method
+1644000	1646000	This is a kind of increase
+1646000	1648000	Reduce error
+1648000	1650000	Then increase the accuracy
+1650000	1652000	A way
+1652000	1654000	Why did you mention this?
+1654000	1656000	Because when we define the so-called order
+1656000	1658000	It's related to this
+1658000	1660000	Order means when I add today
+1660000	1662000	When the number of my elements
+1662000	1664000	How to reduce
+1664000	1666000	When we define the speed
+1666000	1668000	Is defined by the index
+1668000	1670000	For example, I
+1670000	1672000	The number of my elements has increased by m times
+1672000	1674000	Then my error
+1674000	1676000	The speed of the decree
+1676000	1678000	Is the square of m
+1678000	1680000	That square is the so-called order
+1680000	1682000	Is when we define the numerical method
+1682000	1684000	A definition of order
+1684000	1686000	Then this order
+1686000	1688000	Or this so-called rate
+1688000	1690000	It is also called the convergence rate
+1690000	1692000	Is the speed of convergence
+1692000	1694000	Then like some examples
+1694000	1696000	For example, today if my
+1696000	1698000	The number of elements from n1
+1698000	1700000	Changes to twice n1
+1700000	1702000	Then my error from epsilon
+1702000	1704000	Reduce to one-second epsilon
+1704000	1706000	Then this method is called first order method
+1706000	1708000	Because
+1708000	1710000	I mentioned this m today
+1710000	1712000	Is 2
+1712000	1714000	Then my error today becomes one-second
+1714000	1716000	Then it is the square of 2
+1716000	1718000	So it is the first order method
+1718000	1720000	Then my error from n1
+1720000	1722000	Increases to twice n1
+1722000	1724000	But my error from the original epsilon
+1724000	1726000	Reduce to one-eighth epsilon
+1726000	1728000	Then this is the third order method
+1728000	1730000	Because 8 is the square of 2
+1730000	1732000	3 times
+1732000	1734000	Then this is our so-called order
+1734000	1736000	So the so-called low order
+1736000	1738000	We are talking about low order method
+1738000	1740000	Usually refers to first order or second order method
+1740000	1742000	In other words, you double your number of elements
+1742000	1744000	As a result, your error value
+1744000	1746000	Only reduced by half
+1746000	1748000	Error value becomes one-fourth
+1748000	1750000	Then high order is usually three steps
+1750000	1752000	We usually call high order
+1754000	1756000	Then here is a
+1756000	1758000	Is
+1758000	1760000	High degree expansion
+1760000	1762000	Is to be distinguished from high order
+1762000	1764000	We just assumed
+1764000	1766000	The function is the u, there is a hat above
+1766000	1768000	We use a sigma
+1768000	1770000	Then ci times phi i
+1770000	1772000	The more i i use today
+1772000	1774000	For example, I use from c0 to c10
+1774000	1776000	The more we use
+1776000	1778000	We will say this is a higher degree
+1778000	1780000	Expansion
+1780000	1782000	For example, c0
+1782000	1784000	If your guess today is c0 plus c1 phi 1
+1784000	1786000	That's it
+1786000	1788000	Maybe you can say it is degree of two
+1788000	1790000	Degree of one
+1790000	1792000	Then if you use c0 today
+1792000	1794000	c1 c2 c3
+1794000	1796000	Then it is degree of three
+1796000	1798000	What a coincidence today
+1798000	1800000	If I am building my assumption
+1800000	1802000	When that function
+1802000	1804000	Is also high degree expansion
+1804000	1806000	Is my
+1806000	1808000	There are more in the series
+1808000	1810000	If there are more phi
+1810000	1812000	It will usually be a high order method
+1812000	1814000	That is to say, the speed of error collection
+1814000	1816000	Will be faster
+1816000	1818000	For example, if you use
+1818000	1820000	There are a total of ten phi
+1820000	1822000	You may only multiply the number of elements by two
+1822000	1824000	Its error may be
+1824000	1826000	Collection is
+1826000	1828000	It's just one percent
+1828000	1830000	The speed of error reduction is very fast
+1830000	1832000	At the same time
+1832000	1834000	In addition to the speed of error collection
+1834000	1836000	The so-called high degree expansion
+1836000	1838000	It can usually give us a more accurate solution
+1838000	1840000	Like the following picture
+1840000	1842000	Is an example
+1842000	1844000	I still use six elements
+1844000	1846000	But in each element today
+1846000	1848000	I no longer assume it is just a straight line
+1848000	1850000	I assume it is a quadratic equation
+1850000	1852000	I just added one more
+1852000	1854000	x square
+1854000	1856000	I still use six elements
+1856000	1858000	But you can clearly see
+1858000	1860000	It's very, very close to the real world
+1860000	1862000	I just made such an assumption
+1862000	1864000	So you can see
+1864000	1866000	If you are in the element today
+1866000	1868000	The higher the degree
+1868000	1870000	The accuracy it gives you
+1870000	1872000	Will be better
+1872000	1874000	This is actually
+1874000	1876000	I want to emphasize a little
+1876000	1878000	Can't mess up
+1878000	1880000	The so-called convergence rate
+1880000	1882000	Is the so-called order
+1882000	1884000	Can't mix it up with accuracy
+1884000	1886000	Because order is just a definition
+1886000	1888000	It's just how fast it gets smaller
+1888000	1890000	But it doesn't mean that the error it gives you is very small
+1892000	1894000	Accuracy is
+1894000	1896000	The error I gave you today is very, very small
+1896000	1898000	But it doesn't mean that after I double the number of elements
+1898000	1900000	Its error
+1900000	1902000	It really gets smaller
+1902000	1904000	Even if you have ten elements
+1904000	1906000	Give you such an error
+1906000	1908000	After you double it into twenty elements
+1908000	1910000	Your error makes it bigger
+1910000	1912000	So accuracy and the so-called order
+1912000	1914000	Can't mix
+1914000	1916000	I have a question
+1916000	1918000	My question is
+1918000	1920000	I'm not sure
+1920000	1922000	But I assume your black line
+1922000	1924000	When you were writing code
+1924000	1926000	You are using a
+1926000	1928000	Three-time polynomial
+1928000	1930000	Just c0 plus c1x plus c2
+1930000	1932000	Plus c3x three times
+1932000	1934000	If you want to use
+1934000	1936000	This uj
+1936000	1938000	You also get its degree
+1938000	1940000	Is up to 3
+1940000	1942000	In fact, you use
+1942000	1944000	3, 4, 5, 6, 7, 8, 9
+1944000	1946000	There will be no more
+1946000	1948000	Improvement because of its critical
+1948000	1950000	It has perfectly described
+1950000	1952000	Is this a problem?
+1952000	1954000	Because all the coefficients after you
+1954000	1956000	Will be zero
+1956000	1958000	But isn't this the case?
+1958000	1960000	Isn't it just case by case?
+1960000	1962000	Yes so
+1964000	1966000	It's not wrong to say that
+1966000	1968000	But
+1968000	1970000	We can't know the truth
+1970000	1972000	Because
+1972000	1974000	Because
+1974000	1976000	This is an example
+1976000	1978000	So I use a three-time polynomial
+1978000	1980000	To draw it
+1980000	1982000	But in the real world, you don't know
+1982000	1984000	It's a three-time polynomial
+1984000	1986000	So you can only use
+1986000	1988000	More and more order
+1988000	1990000	To see what it looks like
+1990000	1992000	You mean
+1992000	1994000	The real signal in the natural world
+1994000	1996000	Maybe you get five squares
+1996000	1998000	Can describe some
+1998000	2000000	Then maybe you get
+2000000	2002000	After ten squares, it can start to describe
+2002000	2004000	For example, another kind of perturbation
+2004000	2006000	Then fifteen squares can describe
+2006000	2008000	Some kind of noise
+2008000	2010000	It will keep describing
+2010000	2012000	Smaller signal
+2012000	2014000	Not what I'm talking about
+2014000	2016000	What I want to say is
+2016000	2018000	I'm building this uj today
+2018000	2020000	What should it be used for
+2020000	2022000	When
+2022000	2024000	It is indeed case by case because
+2024000	2026000	I don't know the real solution
+2026000	2028000	What does it look like
+2028000	2030000	So I can't tell
+2030000	2032000	What should I use
+2034000	2036000	What I can do is
+2036000	2038000	For example, the same six elements I just did
+2038000	2040000	I assume it is c0 plus c1x
+2040000	2042000	It's just like this
+2042000	2044000	Then see how much it is
+2044000	2046000	When I do the second calculation today
+2046000	2048000	I add one more
+2048000	2050000	Plus c2x square
+2050000	2052000	Then see how much it is
+2052000	2054000	Then see if it is
+2054000	2056000	Is the difference getting smaller and smaller
+2056000	2058000	For example, if I use three elements today
+2058000	2060000	Like now
+2060000	2062000	If there are three elements in my projection
+2062000	2064000	If the error is 10 times 10
+2064000	2066000	1 times 10 times 10
+2066000	2068000	Then today if I add another
+2068000	2070000	c3x3 square and calculate it again
+2070000	2072000	The result is c3x
+2072000	2074000	The assumption of four elements and three assumptions
+2074000	2076000	The error is only
+2076000	2078000	For example, only 1 times 12
+2078000	2080000	That is to say that you are adding another
+2080000	2082000	When c3x
+2082000	2084000	It doesn't help
+2086000	2088000	So that is to say
+2088000	2090000	That is to say
+2090000	2092000	In fact, we don't know what to do
+2092000	2094000	We can only use this method to guess
+2096000	2098000	A bit confusing
+2098000	2100000	A bit difficult to describe
+2100000	2102000	I can understand what you want to say
+2102000	2104000	But what you are talking about now is basically
+2104000	2106000	Assuming a perfect
+2106000	2108000	Mathematical discussion
+2108000	2110000	But in fact, when you are writing code
+2110000	2112000	If you keep increasing your degree
+2112000	2114000	You may keep reducing
+2114000	2116000	Your
+2116000	2118000	Uncertainty or inaccuracy
+2118000	2120000	But to a certain extent
+2120000	2122000	You no longer have so many advantages
+2122000	2124000	To reduce the difference between the model and the actual
+2124000	2126000	But you start to magnify
+2126000	2128000	Your own computation
+2128000	2130000	Will it?
+2130000	2132000	Will
+2132000	2134000	So that's probably what you don't want to do
+2134000	2136000	More
+2136000	2138000	At that time
+2138000	2140000	You may not need to
+2140000	2142000	Put more
+2142000	2144000	Elements into your uj
+2144000	2146000	I see
+2146000	2148000	Thank you
+2150000	2152000	Then
+2152000	2154000	The next page
+2154000	2156000	So like I just said
+2156000	2158000	The previous video
+2158000	2160000	In addition to using more
+2160000	2162000	Elements in your
+2162000	2164000	Assuming function
+2164000	2166000	In addition to giving you
+2166000	2168000	A very precise answer
+2168000	2170000	At the same time
+2170000	2172000	Its convergence rate is also very high
+2172000	2174000	So it is equivalent to the speed of its chain
+2174000	2176000	Its error reduction speed is also fast
+2176000	2178000	At the same time, the error it gives you is also very small
+2178000	2180000	Then it is a very
+2180000	2182000	It's a very attractive way
+2182000	2184000	In fact
+2184000	2186000	Starting with a computer
+2186000	2188000	Starting with a numerical method
+2188000	2190000	The so-called high degree
+2190000	2192000	Everyone wants to use
+2192000	2194000	But why is everyone still using
+2194000	2196000	Limit element and limit volume
+2196000	2198000	The bottom line is that it has a lot of
+2198000	2200000	The disadvantage is that if I
+2200000	2202000	Today's physical field is a
+2202000	2204000	Time dependent
+2204000	2206000	Unsteady problem
+2206000	2208000	There is a countdown for time in the unified square
+2208000	2210000	That usually
+2210000	2212000	This kind of thing is very unstable
+2212000	2214000	Because there will be errors in the computer
+2214000	2216000	The computer can't use it
+2216000	2218000	To show all the numbers
+2218000	2220000	So it has some numbers
+2220000	2222000	Can't express
+2222000	2224000	Errors in the calculation process
+2224000	2226000	If today
+2226000	2228000	T is equal to 0
+2228000	2230000	0.1 seconds
+2230000	2232000	A very small error
+2232000	2234000	The so-called unstable is that it is very possible
+2234000	2236000	At 0.2 seconds
+2236000	2238000	The error in the first second
+2238000	2240000	In this second
+2240000	2242000	Let your calculation explode
+2242000	2244000	For example, it becomes infinitely large
+2244000	2246000	Or infinitely small
+2246000	2248000	This will happen
+2248000	2250000	This situation is called unstable
+2250000	2252000	That high degree element
+2252000	2254000	It is particularly easy to be unstable
+2254000	2256000	The reason is obvious
+2256000	2258000	Like you just saw
+2258000	2260000	If we use 10 today
+2260000	2262000	There is a c10x10 square
+2262000	2264000	If I have a small error today
+2264000	2266000	There is a small error in this step
+2266000	2268000	Is 1
+2268000	2270000	1 square
+2270000	2272000	1 square
+2272000	2274000	You bring this error to x10
+2274000	2276000	The whole error becomes
+2276000	2278000	1 square
+2278000	2280000	This will make your computer
+2280000	2282000	Let your calculation explode
+2282000	2284000	So this kind of thing
+2284000	2286000	It becomes so-called very unstable
+2286000	2288000	The second is that it is more involved
+2288000	2290000	The concept of linear代数
+2290000	2292000	It is Eocondition
+2292000	2294000	If I am today
+2294000	2296000	We just said that we must have a linear equation
+2296000	2298000	To solve those c, those functions
+2298000	2300000	For example, four
+2300000	2302000	Four linear equations to solve
+2302000	2304000	The so-called condition number
+2304000	2306000	There is a thing called condition number
+2306000	2308000	The higher the condition number
+2308000	2310000	It means that this linear equation is more difficult to solve
+2310000	2312000	The lower the condition number
+2312000	2314000	It means that this linear equation is easier to solve
+2314000	2316000	Usually you use the higher
+2316000	2318000	The assumption function
+2318000	2320000	For example, when using x4 to 8, x5 to 8, x6 to 8
+2320000	2322000	We will
+2322000	2324000	It will become the so-called Eocondition
+2324000	2326000	It's a sick
+2326000	2328000	Its linear equation will be very difficult to solve
+2328000	2330000	You may need
+2330000	2332000	Very, very long time
+2332000	2334000	Those c0, c1, c2, c3
+2334000	2336000	That is
+2336000	2338000	The so-called high degree and high order method
+2338000	2340000	The second
+2340000	2342000	Then the third
+2342000	2344000	The more you use it, the more complicated it is
+2344000	2346000	When you write a computer program
+2346000	2348000	The more difficult it is
+2348000	2350000	Even if it's not easy to write
+2350000	2352000	There may be more bugs in it
+2352000	2354000	It will be more difficult to debug
+2354000	2356000	Then the fourth is like now
+2356000	2358000	Everyone's program is parallel
+2358000	2360000	Run on multiple boxes
+2360000	2362000	Even our computers are at least four cores
+2362000	2364000	Then when this high-level method
+2364000	2366000	You want to design it
+2366000	2368000	Can be at the same time on eight cores
+2368000	2370000	When you go to solve together
+2370000	2372000	It will also become very difficult
+2372000	2374000	So this is the most obvious high-level method
+2374000	2376000	Four disadvantages
+2376000	2378000	That's why
+2378000	2380000	So far everyone is familiar with the numerical method
+2380000	2382000	It's still the kind of first order
+2382000	2384000	Or second order
+2384000	2386000	Limit difference or limit element
+2388000	2390000	But everyone is still working hard
+2390000	2392000	Is the so-called high-level method
+2392000	2394000	Because he is very appealing
+2394000	2396000	He just gives you a very small error
+2396000	2398000	Then his error is very slow
+2398000	2400000	So everyone is still studying
+2400000	2402000	So everyone will find a way to say
+2402000	2404000	From the three questions we just said
+2404000	2406000	The three questions around the numerical method
+2406000	2408000	If we can find a combination
+2408000	2410000	A combination of three answers
+2410000	2412000	Can give us a better high-level method
+2414000	2416000	Everyone has been trying in this area
+2416000	2418000	That is indeed possible
+2418000	2420000	Maybe everyone has heard of
+2420000	2422000	The so-called discontinuous Galerkin
+2422000	2424000	Is a continuous Galerkin method
+2424000	2426000	He is probably
+2426000	2428000	A major breakthrough after 2000
+2428000	2430000	Then he can be very high-level
+2430000	2432000	Then his
+2432000	2434000	Also relatively stable
+2434000	2436000	Then his conditions are relatively low
+2436000	2438000	So after 2000
+2438000	2440000	You will hear very often
+2440000	2442000	The so-called discontinuous Galerkin
+2442000	2444000	Because it becomes very popular
+2444000	2446000	Then I
+2446000	2448000	Here is an example
+2448000	2450000	I just said
+2450000	2452000	Different answers can give you
+2452000	2454000	Maybe the same high-level
+2454000	2456000	But relatively stable
+2456000	2458000	Or conditions are relatively low
+2458000	2460000	The numerical method
+2460000	2462000	Like the three lines above me
+2462000	2464000	Represents three different
+2464000	2466000	Phi i assumptions
+2466000	2468000	The steepest straight line
+2468000	2470000	Is the so-called
+2470000	2472000	He should be the moment expansion
+2472000	2474000	Is the example I just used
+2474000	2476000	Is c0 plus c1x
+2476000	2478000	Plus c2x2 plus c3x3
+2478000	2480000	That is to say
+2480000	2482000	Phi i is equal to x i
+2482000	2484000	This is very obvious
+2484000	2486000	You can see how many x axes
+2486000	2488000	I used
+2488000	2490000	Phi i
+2490000	2492000	Then y axis is the condition
+2492000	2494000	You can see him
+2494000	2496000	The more you use, the more conditions
+2496000	2498000	Increasing faster
+2498000	2500000	So it means that you use too much today
+2500000	2502000	If you use too much
+2502000	2504000	It will be very difficult to solve
+2504000	2506000	Then the second
+2506000	2508000	This is the connection between the two
+2508000	2510000	He uses the so-called
+2510000	2512000	The so-called
+2512000	2514000	The so-called
+2514000	2516000	The so-called
+2516000	2518000	The so-called
+2518000	2520000	The so-called
+2520000	2522000	The so-called
+2522000	2524000	The so-called
+2524000	2526000	The so-called
+2526000	2528000	The so-called
+2528000	2530000	The so-called
+2530000	2532000	The so-called
+2536000	2538000	And even the third triangle
+2538000	2540000	This line is a popular one these years
+2540000	2542000	Which is
+2542000	2544000	The so-called
+2544000	2546000	The so-called
+2546000	2548000	The so-called
+2550000	2552000	Phi 0 is a
+2552000	2554000	Phi 1 is
+2554000	2556000	Phi 1 is
+2556000	2558000	Let's use this method to
+2558000	2560000	Assume a function
+2562000	2564000	You will find that the more you use phi
+2564000	2566000	Its conditional value does not change
+2566000	2568000	That is to say
+2568000	2570000	The more phi you use today
+2570000	2572000	The so-called EO condition
+2572000	2574000	It can be counted as eliminated
+2576000	2578000	It doesn't exist anymore
+2578000	2580000	Now show this diagram
+2580000	2582000	For everyone to see
+2582000	2584000	Why different answers
+2584000	2586000	Can possibly solve
+2586000	2588000	Those drawbacks of high-level methods
+2590000	2592000	I have a small question
+2592000	2594000	So
+2594000	2596000	In fact
+2596000	2598000	Usually condition number
+2598000	2600000	Is it about equal to
+2600000	2602000	Calculation time
+2604000	2606000	Because you just count a condition number
+2606000	2608000	Is it a linear equation?
+2608000	2610000	Yes, but I don't really know
+2610000	2612000	I haven't thought about this question
+2612000	2614000	It's hard to say
+2614000	2616000	Because you have to see
+2616000	2618000	What is the method to solve the equation
+2618000	2620000	For example, you can use
+2620000	2622000	You solve a linear equation
+2622000	2624000	You can use
+2624000	2626000	Is the most basic Gauss elimination
+2626000	2628000	Then you can also use some
+2628000	2630000	Is more
+2630000	2632000	Faster method
+2632000	2634000	Is like
+2634000	2636000	Or like you can use some
+2636000	2638000	More fancy method
+2638000	2640000	Is to first solve its eigenvalue
+2640000	2642000	Then use the eigenvalue
+2642000	2644000	To find its characteristic equation
+2644000	2646000	Then use the characteristic equation to combine
+2646000	2648000	Its linear equation
+2648000	2650000	So
+2650000	2652000	I don't think
+2652000	2654000	Different ways to solve
+2654000	2656000	The same linear equation
+2656000	2658000	Condition number
+2658000	2660000	Is equal to calculation time
+2662000	2664000	And it may not be equal
+2664000	2666000	Because you basically have to put all conditions
+2666000	2668000	All together
+2668000	2670000	To solve the eigenvalue
+2670000	2672000	Oh, I see
+2672000	2674000	But I'm sure
+2674000	2676000	The more conditions, the worse
+2676000	2678000	The more it solves, the slower
+2678000	2680000	As for the slow ratio
+2680000	2682000	Is it linear or what?
+2682000	2684000	I haven't studied this
+2684000	2686000	So I'm not sure
+2690000	2692000	So now
+2692000	2694000	Enter the main topic
+2694000	2696000	Weighted residual method
+2696000	2698000	Is used later
+2698000	2700000	Flux reconstruction method
+2700000	2702000	Then just explained
+2702000	2704000	That order is just
+2704000	2706000	Give you a concept
+2706000	2708000	What is low order, what is high order
+2708000	2710000	Why do we use high order
+2710000	2712000	What is good to study
+2714000	2716000	Here is a hint for everyone
+2716000	2718000	Just give you a concept
+2718000	2720000	We just mentioned that there are three ways
+2720000	2722000	The answer to three questions
+2722000	2724000	Can define a new
+2724000	2726000	That's why I'm talking now
+2726000	2728000	Give you a hint
+2728000	2730000	Flux reconstruction
+2730000	2732000	What is the answer to these three questions
+2732000	2734000	For the FR method
+2734000	2736000	Its assumed function
+2736000	2738000	This phi i is used
+2738000	2740000	You can say it is
+2740000	2742000	Lagrangian function
+2742000	2744000	But you can also say it is Lagrangian
+2744000	2746000	That polynomial is
+2746000	2748000	Lagrangian
+2748000	2750000	Interval function
+2750000	2752000	That's just this interval function
+2752000	2754000	Interval function needs
+2754000	2756000	You need some points
+2756000	2758000	To define the interval function
+2758000	2760000	In the FR
+2760000	2762000	The interval function of phi
+2762000	2764000	Is defined in
+2764000	2766000	The so-called quadrature point
+2766000	2768000	Everyone knows
+2768000	2770000	It is a special point
+2770000	2772000	It is not randomly distributed
+2772000	2774000	It is not evenly distributed
+2774000	2776000	The distribution of points must meet certain rules
+2776000	2778000	This rule is Lagrangian polynomial
+2778000	2780000	It must meet the Lagrangian rule
+2782000	2784000	This is its expansion
+2784000	2786000	Its expansion is phi i
+2786000	2788000	What is it?
+2788000	2790000	What is its weight?
+2790000	2792000	Its weight is Galerkin method
+2792000	2794000	So its weight is used
+2794000	2796000	It's the same as phi i
+2796000	2798000	wj is equal to phi j
+2798000	2800000	That's the same as Galerkin method
+2800000	2802000	But we'll show you later
+2802000	2804000	Where is it different from Galerkin method
+2804000	2806000	It still has some different places
+2806000	2808000	Then the third question is
+2808000	2810000	What is the relationship between different elements
+2810000	2812000	What is the relationship between different elements
+2812000	2814000	What I wrote here today is
+2814000	2816000	Orthogonal polynomial based blocks reconstruction
+2816000	2818000	Orthogonal polynomial based blocks reconstruction
+2820000	2822000	In fact, it is the same as
+2822000	2824000	The same as the finite element
+2824000	2826000	The same as the finite volume
+2826000	2828000	The so-called Riemann
+2828000	2830000	Riemann jump blocks
+2830000	2832000	If you have
+2832000	2834000	If you have learned
+2834000	2836000	The finite volume, you will probably have an impression
+2836000	2838000	It doesn't matter
+2838000	2840000	I will still talk about this
+2840000	2842000	What is this
+2842000	2844000	What is this
+2844000	2846000	This is just a heads up
+2846000	2848000	This is just a heads up
+2848000	2850000	Now let's start the formal introduction
+2850000	2852000	Now let's start the formal introduction
+2852000	2854000	Now let's start the formal introduction
+2854000	2856000	When this method was proposed in 2007
+2856000	2858000	When this method was proposed in 2007
+2858000	2860000	It is mainly to solve the so-called
+2860000	2862000	Hyperbolic conservation law
+2862000	2864000	This kind of PDE will look like this
+2864000	2866000	This kind of PDE will look like this
+2866000	2868000	When there are three or five corners
+2868000	2870000	There will be an end mark for y and z
+2872000	2874000	Today we assume
+2874000	2876000	The effective range
+2876000	2878000	From xA to xB
+2878000	2880000	If we cut it into
+2880000	2882000	N1 elements
+2882000	2884000	And then we use 1
+2884000	2886000	To represent each element
+2886000	2888000	And then each element
+2888000	2890000	Your own effective range
+2890000	2892000	Let's write it as xk to xk plus 1
+2892000	2894000	Let's write it as xk to xk plus 1
+2894000	2896000	Todaywe have two guessed functions
+2896000	2898000	The first is the guessing function on u
+2898000	2900000	The guessing constructions inside dkget
+2900000	2902000	And then we write
+2902000	2904000	It like this
+2904000	2906000	Sigma u,k,i,psique
+2906000	2908000	u,k,i
+2908000	2922000	U,k,i means the value of dk
+2922000	2928000	In fact, only u,k,i is unknown
+2928000	2930000	Because f,k,i is defined from u,k,i
+2930000	2936000	f,k,i means you bring u,k,i to the f function in your original pd
+2936000	2938000	You can get u,k,i
+2938000	2940000	So although we have two guessed functions
+2940000	2944000	But only u,k,i is unknown and needs to be solved
+2944000	2952000	Then we go back to the weighting function
+2952000	2956000	The weighting function is applied to dk element
+2956000	2958000	Only in dk element, we don't care about other elements
+2958000	2962000	So its base range is xk to xk plus 1
+2962000	2964000	Then weight wj
+2964000	2966000	Then the right side is our original pd value
+2966000	2968000	That is r
+2968000	2972000	Then the second line below, I just split it into two
+2976000	2978000	Then we are now for the second item
+2978000	2980000	The second item is weight wj
+2980000	2984000	F is the derivative of this function to x
+2984000	2986000	Then we use the distribution points today
+2986000	2988000	Distribution points in the distribution points
+2988000	2990000	We can get the equation on the right
+2990000	2992000	This is the value
+2992000	2996000	It will become xk plus 1 value
+2996000	3000000	Then subtract another base function
+3000000	3004000	This function is the so-called weak form
+3004000	3006000	Weak form of dsk
+3006000	3008000	I only mention it here
+3008000	3010000	Because we don't want to do dsk
+3010000	3016000	Then if you want to do dsk today
+3016000	3018000	After you get this value
+3018000	3020000	Your next step will jump directly to
+3020000	3024000	How do I define f at xk plus 1
+3024000	3028000	Or how to define f at xk
+3028000	3030000	Then we are not going to do this today
+3030000	3032000	So skip this step first
+3032000	3034000	Let's move on to the next step
+3036000	3038000	The next step is the one I just
+3038000	3040000	Wait for the point on the right
+3040000	3042000	I will go one step further and do it again
+3042000	3044000	Distribution points
+3044000	3046000	After I do the distribution points again
+3046000	3048000	I will get the original point function again
+3048000	3050000	Is the derivative of weight wj
+3050000	3052000	But on my left
+3052000	3054000	I will have two more
+3054000	3058000	I will have one more fk at xk plus 1 value
+3058000	3060000	This is what I just said to f
+3060000	3062000	Assuming that the function
+3062000	3064000	The derivative function at xk plus 1 value
+3064000	3066000	Then this fk
+3066000	3068000	Then xk is the value
+3068000	3072000	It means that f is the assumption function
+3072000	3076000	The derivative value at xk
+3076000	3080000	So the third line is just a reorganization
+3080000	3084000	You will get an original distribution function
+3084000	3086000	Then subtract the following two
+3086000	3090000	Weight wj
+3090000	3092000	What does wj mean?
+3092000	3094000	It means
+3094000	3096000	A jump
+3096000	3098000	I hope xk this place
+3098000	3100000	The first f
+3100000	3102000	If you can see my mouse
+3102000	3104000	The first f means
+3104000	3106000	I hope xk this place
+3106000	3108000	What is its value
+3108000	3110000	Then the second f
+3110000	3114000	Is the f obtained by the inner product function
+3114000	3116000	It means that I actually calculate the inner product function today
+3116000	3118000	At this point
+3118000	3120000	How much is this point at xk?
+3120000	3122000	So it's called jump
+3122000	3124000	Is the value I hope
+3124000	3126000	The difference between the actual inner product value
+3126000	3128000	This is called jump
+3128000	3130000	This kind of thing is in that document
+3130000	3132000	They will be called strong form of discontinuous skeleton
+3132000	3134000	That's just
+3134000	3136000	No one is trying to solve this equation
+3136000	3138000	Then
+3138000	3140000	The last point is to remind everyone
+3140000	3142000	Pay attention to the definition of two different f
+3142000	3144000	One is how much I hope it is
+3144000	3146000	Then one is the inner product function
+3146000	3148000	The actual value of the inner product
+3154000	3156000	Then the next page
+3156000	3158000	A little slow
+3160000	3162000	Then I am today
+3162000	3164000	This page is just about
+3164000	3166000	The so-called strong form
+3166000	3168000	Of discontinuous skeleton
+3168000	3170000	Back to the original
+3170000	3172000	The points of the entire product function
+3172000	3174000	Then it will look like this
+3174000	3176000	You will find that the first one is still the original
+3176000	3178000	The points of the entire product function
+3178000	3180000	Then there are two more things related to jump
+3188000	3190000	Then today
+3190000	3192000	In Flux Reconstruction
+3192000	3194000	The so-called strong form
+3194000	3196000	Of discontinuous skeleton is different
+3196000	3198000	He used a trick at this time
+3198000	3200000	He assumed
+3200000	3202000	I have a place in front
+3202000	3204000	There is xwjxk
+3204000	3206000	This one
+3206000	3208000	If I can write it in the same way
+3208000	3210000	A formula
+3210000	3212000	Then find a so-called gl function
+3212000	3214000	Let him say wj
+3214000	3216000	The value of the entire product function at xk
+3216000	3218000	Will be equal to
+3218000	3220000	This point
+3220000	3222000	Then wj at xk
+3222000	3224000	The value of this point
+3224000	3226000	Will be equal to the point defined by gr
+3226000	3228000	Then I put these two definitions
+3228000	3230000	Take it back to the original
+3230000	3232000	The points of the entire product function
+3232000	3234000	I can write it as a whole
+3234000	3236000	Everything
+3236000	3238000	Stuffed into my points
+3238000	3240000	It will be like this
+3240000	3242000	Everything will become a point
+3242000	3244000	Then the entire weight multiplied by everything else
+3244000	3246000	Why do this
+3246000	3248000	Because if you do this, you can put
+3248000	3250000	If you delete the whole weight, you can delete the points
+3250000	3252000	Becomes a pure polynomial
+3256000	3258000	So this is
+3258000	3260000	Flux Reconstruction
+3260000	3262000	Is me
+3262000	3264000	Assuming that wj can become a point
+3264000	3266000	Then take it back
+3266000	3268000	I can delete the points and the weight
+3268000	3270000	Back to restore
+3270000	3272000	A primitive polynomial
+3272000	3274000	This page is just
+3274000	3276000	Just rewrite it
+3278000	3280000	I have a small question
+3280000	3282000	So you
+3282000	3284000	You this method
+3284000	3286000	Basically rely on
+3286000	3288000	Is grgl
+3288000	3290000	Exist
+3290000	3292000	That's right
+3292000	3294000	Will this be a problem
+3294000	3296000	It is the focus
+3296000	3298000	It is a focus of fr
+3298000	3300000	Is
+3300000	3302000	Its focus is
+3302000	3304000	What is grl and gr
+3304000	3306000	Because we assumed first
+3306000	3308000	The same grl and gr
+3308000	3310000	But we didn't mention
+3310000	3312000	Did you really find it
+3312000	3314000	So wait
+3314000	3316000	I may not talk about that today
+3316000	3318000	Because that will become more
+3318000	3320000	But I will directly
+3320000	3322000	One or two
+3322000	3324000	Already found function
+3324000	3326000	Then
+3326000	3328000	This page is rewritten
+3328000	3330000	Flux Reconstruction
+3330000	3332000	Is what we are looking for
+3332000	3334000	This method is looking for
+3334000	3336000	So you can see
+3336000	3338000	The biggest difference between fr and grl
+3338000	3340000	Is
+3340000	3342000	Its weight
+3342000	3344000	wj this function will disappear in the end
+3344000	3346000	But
+3346000	3348000	What to pay attention to is that it is not
+3348000	3350000	No weight, it's just weight
+3350000	3352000	Will disappear
+3354000	3356000	Then
+3356000	3358000	Then
+3358000	3360000	In the end
+3360000	3362000	How to use that primitive polynomial
+3362000	3364000	To find the real u
+3364000	3366000	Then we have to go back
+3366000	3368000	Involve in the so-called
+3368000	3370000	Time point
+3370000	3372000	Time point is the simplest
+3372000	3374000	Euler
+3374000	3376000	Is a finite polynomial
+3376000	3378000	Euler's temporal time margin
+3378000	3380000	Is
+3380000	3382000	Is the simplest point
+3382000	3384000	Is equal to
+3384000	3386000	t plus delta t
+3386000	3388000	minus t
+3388000	3390000	The value of this time point
+3390000	3392000	Is your delta t
+3392000	3394000	We put it as partial u partial t
+3394000	3396000	Is an Euler method
+3398000	3400000	Then we put it
+3400000	3402000	Just that
+3402000	3404000	The primitive polynomial of fr
+3404000	3406000	Bring back
+3406000	3408000	We can get this
+3408000	3410000	A finite polynomial
+3410000	3412000	Then
+3412000	3414000	We use t plus delta t
+3414000	3416000	And t to represent
+3416000	3418000	The solution of different time points
+3420000	3422000	Is
+3422000	3424000	Is
+3424000	3426000	Is it missing a page or two?
+3426000	3428000	Let me see what the next page is
+3430000	3432000	it is good
+3438000	3440000	Then
+3440000	3442000	In this function
+3442000	3444000	We have seen a lot now
+3444000	3446000	That variable u
+3446000	3448000	Then t plus delta t
+3448000	3450000	Then we have to know
+3450000	3452000	Which is unknown
+3452000	3454000	To know how to solve
+3454000	3456000	So we have to review
+3456000	3458000	Is that we just didn't
+3458000	3460000	Although I didn't mention how to calculate
+3460000	3462000	I want to be in xk
+3462000	3464000	How much is xk plus 1
+3464000	3466000	But we are here first
+3466000	3468000	Assuming we already have a way to
+3468000	3470000	Calculate how much we want
+3470000	3472000	Then the second is that we also assume
+3472000	3474000	We have found the right
+3474000	3476000	gl and gr
+3476000	3478000	That
+3478000	3480000	And what we use is
+3480000	3482000	Our phi is the so-called Lagrange
+3482000	3484000	Input function
+3484000	3486000	If my uki is defined in xk
+3486000	3488000	Then my uk this
+3488000	3490000	Assuming the function
+3490000	3492000	When I put xk in
+3492000	3494000	I can get uki again
+3494000	3496000	Then the second point is the so-called
+3496000	3498000	F to f this assumption function
+3498000	3500000	It's actually still a
+3500000	3502000	That one
+3502000	3504000	Polynomial series
+3504000	3506000	It's just that
+3506000	3508000	Its division will be transferred to
+3508000	3510000	The division of phi
+3510000	3512000	Because fki is a constant
+3512000	3514000	So you can't divide it
+3514000	3516000	So this is f
+3516000	3518000	Then fki will remind you again
+3518000	3520000	It's just f this function
+3520000	3522000	Then bring uki in
+3522000	3524000	So it's not an independent variable
+3524000	3526000	Then phi
+3526000	3528000	Or how much gr
+3528000	3530000	These are actually you can assume
+3530000	3532000	It is unknown because these are
+3532000	3534000	Polynomials defined by yourself
+3534000	3536000	So of course you define it yourself
+3536000	3538000	Of course you can get its derivative
+3538000	3540000	So back to this
+3540000	3542000	Square
+3542000	3544000	We put it all in
+3544000	3546000	You will find that everything is unknown
+3546000	3548000	You are at t this time
+3548000	3550000	U and then f
+3550000	3552000	And then phi
+3552000	3554000	These are all unknown
+3554000	3556000	The only unknown thing is t plus delta t
+3556000	3558000	So today in this method
+3558000	3560000	It's actually like this
+3560000	3562000	You use this method to calculate
+3562000	3564000	How much is t plus delta t
+3564000	3566000	So today you divide the square
+3566000	3568000	There will be a initial value
+3568000	3570000	It's the value of t equals 0
+3570000	3572000	That means you have the value of t equals 0 today
+3572000	3574000	Then your uki is 0
+3574000	3576000	So f at 0
+3576000	3578000	t equals 0
+3578000	3580000	Then you can use this formula to calculate
+3580000	3582000	How much is 0 plus delta t
+3582000	3584000	Then you have you know
+3584000	3586000	How much is 0 plus delta t
+3586000	3588000	Then you bring 0 plus delta t to the right
+3588000	3590000	Then you can get
+3590000	3592000	How much is 2 delta t
+3592000	3594000	Then you step by step like this
+3594000	3596000	In the end you can get
+3596000	3598000	This u function
+3598000	3600000	What is the change in time
+3604000	3606000	That's a simple summary
+3606000	3608000	t equals 0 we have
+3608000	3610000	So we know uki 0 and f 0
+3610000	3612000	How much
+3612000	3614000	Then we use that method
+3614000	3616000	Use some of the methods we haven't mentioned
+3616000	3618000	Calculate f at
+3618000	3620000	The interface of each element is xk
+3620000	3622000	How much is it
+3622000	3624000	Then the third step is
+3624000	3626000	You can use the formula from the last page
+3626000	3628000	Calculate the value of u at t plus delta t
+3630000	3632000	So you can go back
+3632000	3634000	Step 1 and Step 2
+3634000	3636000	Then keep repeating
+3636000	3638000	This is what I just mentioned
+3638000	3640000	The algorithm
+3640000	3642000	It's very simple
+3642000	3644000	So now it's time to say
+3644000	3646000	We just kept saying
+3646000	3648000	We assume that we already have a way
+3648000	3650000	To calculate
+3650000	3652000	We want f at xk
+3652000	3654000	How much
+3654000	3656000	That's why I mentioned
+3656000	3658000	What the hell is this thing
+3658000	3660000	That's what we want
+3660000	3662000	We call it numerical flux
+3662000	3664000	Then we just follow
+3664000	3666000	This kind of thing is in the limited
+3666000	3668000	The limited volume and the Galerkin method
+3668000	3670000	Is a very common concept
+3670000	3672000	Calculate fluid mechanics
+3672000	3674000	The most simple way we use
+3674000	3676000	Calculate numerical flux
+3676000	3678000	Is the so-called rose flux
+3678000	3680000	ROE rose flux
+3680000	3682000	It involves a lot of
+3682000	3684000	It's just some physics
+3684000	3686000	Physics of flow
+3686000	3688000	It's going to get complicated
+3688000	3690000	So I just gave it a formula
+3690000	3692000	Prove that we really have a way
+3692000	3694000	How much is this f
+3694000	3696000	If you are interested in this
+3696000	3698000	You can actually go back and look at some
+3698000	3700000	Some volume has been developed for 30 or 40 years
+3700000	3702000	So how to calculate this
+3702000	3704000	Numerical flux will become
+3704000	3706000	It's actually very, very easy to find
+3708000	3710000	Then we solve f
+3710000	3712000	Then there is f
+3712000	3714000	The most important thing in the method is
+3714000	3716000	How to find gl and gr
+3716000	3718000	Then we mentioned that gl and gr
+3718000	3720000	These two functions must match
+3720000	3722000	These two points
+3722000	3724000	Then the second one is
+3724000	3726000	In fact, gl and gr
+3726000	3728000	Its meaning is
+3728000	3730000	Point to the boundary
+3730000	3732000	We just said that there is a boundary in the formula
+3732000	3734000	Jump
+3734000	3736000	It's equal to
+3736000	3738000	The value we want on the boundary
+3738000	3740000	The difference in value
+3740000	3742000	So this function is theoretically
+3742000	3744000	Only for the boundary
+3744000	3746000	Then it's inside the element
+3746000	3748000	It must be almost non-correct
+3748000	3750000	So we hope this function
+3750000	3752000	It's on the boundary
+3752000	3754000	For example, glx
+3754000	3756000	Its value will be very large
+3756000	3758000	For example, 1
+3758000	3760000	Inside the element
+3762000	3764000	Then
+3764000	3766000	It must be higher than
+3766000	3768000	Its degree must be higher than
+3768000	3770000	The function we assume
+3770000	3772000	Because after you do this
+3772000	3774000	Its degree will be the same
+3774000	3776000	So the first thing I found today
+3776000	3778000	Is the so-called rado polynomial
+3778000	3780000	It looks like this
+3780000	3782000	You put it into this formula
+3782000	3784000	This is the most primitive
+3784000	3786000	gl and gr
+3786000	3788000	There are a lot of gl and gr
+3788000	3790000	You can find it in paper
+3790000	3792000	But I didn't mention it
+3792000	3794000	Because it becomes very mathematical
+3794000	3796000	I just want to tell you
+3796000	3798000	I really found this gl and gr
+3800000	3802000	This is an example
+3802000	3804000	When using different gl and gr
+3804000	3806000	You can see it
+3806000	3808000	The change of the numerical method
+3808000	3810000	Like I said just now
+3810000	3812000	Same
+3812000	3814000	The same linear equation
+3814000	3816000	You use different gl and gr
+3816000	3818000	Will get a completely different accuracy
+3820000	3822000	If you are interested, you can go to paper
+3822000	3824000	Just play
+3824000	3826000	Because this is very mathematical
+3826000	3828000	Just show it to everyone
+3828000	3830000	Let everyone know that this thing exists
+3832000	3834000	I just talked about
+3834000	3836000	There is only one dimension in space
+3836000	3838000	If there are two dimensions in space
+3838000	3840000	If you want to use fr
+3840000	3842000	The current method can only
+3842000	3844000	Divide the two dimensions into two dimensions
+3844000	3846000	The function
+3846000	3848000	Then apply fr
+3848000	3850000	Like I said just now
+3850000	3852000	But this thing is still under study
+3852000	3854000	So you probably only have one or two papers
+3854000	3856000	Have seen
+3856000	3858000	Let me mention it to everyone
+3860000	3862000	This is a difference
+3862000	3864000	Maybe the time is a bit limited
+3864000	3866000	I have talked about it before
+3866000	3868000	The difference is that it is one
+3868000	3870000	One is the default form
+3870000	3872000	One is the strong form
+3872000	3874000	One is the weak form
+3874000	3876000	The time is limited
+3876000	3878000	So let's skip it first
+3882000	3884000	Now let's talk about how to use it
+3884000	3886000	In computational fluid mechanics
+3886000	3888000	If I do it today
+3888000	3890000	If it is compressible flow
+3890000	3892000	In fact, the same method of compressible flow
+3892000	3894000	It is a conservation law
+3894000	3896000	If you apply fr today
+3896000	3898000	There is no problem at all
+3898000	3900000	There will be no contradiction
+3900000	3902000	But if I am incompressible today
+3902000	3904000	Incompressible flow
+3904000	3906000	You will find that the same equation is inside
+3906000	3908000	One of the equations
+3908000	3910000	It lacks the division of time
+3910000	3912000	So it is no longer a conservation law
+3912000	3914000	If you want to use fr today
+3914000	3916000	It will be very difficult
+3916000	3918000	You don't know how to apply
+3918000	3920000	The fr method we just mentioned
+3920000	3922000	Then
+3922000	3924000	Of course, some people today
+3924000	3926000	There will be a way to use
+3926000	3928000	Assuming this incompressible flow
+3928000	3930000	There is a false compressibility
+3930000	3932000	Then we assume that there is a false compressibility
+3932000	3934000	We can use it as a compressible flow
+3934000	3936000	But the question is
+3936000	3938000	What is this false compressibility
+3938000	3940000	It's hard to define
+3940000	3942000	It's very unreasonable
+3942000	3944000	So I don't want to use this method
+3944000	3946000	And
+3946000	3948000	And
+3948000	3950000	Now the mainstream incompressible flow
+3950000	3952000	All use the so-called
+3952000	3954000	ProjectionStype method
+3954000	3956000	Use this very complicated
+3956000	3958000	To solve
+3958000	3960000	So how should I do today
+3960000	3962000	Bring fr to this
+3962000	3964000	The most popular projectionStype
+3964000	3966000	To solve
+3966000	3968000	It will become a very challenging problem
+3968000	3970000	That's why
+3970000	3972000	I want to do
+3972000	3974000	Is to do
+3974000	3976000	Because
+3976000	3978000	There is no one doing this
+3978000	3980000	Then I want to use fr today
+3980000	3982000	In incompressible flow
+3982000	3984000	The two basic elements I need
+3984000	3986000	I have to solve this
+3986000	3988000	Poisson equation
+3988000	3990000	So it becomes
+3990000	3992000	You have to use implicit method
+3992000	3994000	You have to solve a very big equation
+3994000	3996000	You can't be like just now
+3996000	3998000	t plus delta t
+3998000	4000000	Then step by step
+4000000	4002000	You can't
+4002000	4004000	You can only solve it once
+4004000	4006000	And now a lot of people
+4006000	4008000	They will assume the same
+4008000	4010000	This thing is a state
+4010000	4012000	This Poisson equation is a state
+4012000	4014000	Then step by step
+4014000	4016000	After the value of t goes to infinity
+4016000	4018000	Assume it as
+4018000	4020000	Stable solution
+4020000	4022000	This thing is very inefficient
+4022000	4024000	Because you have a stable solution
+4024000	4026000	You have to go from t equals 0 to t equals infinity
+4026000	4028000	I want you to know that it is very inefficient
+4028000	4030000	So my
+4030000	4032000	For my own plan
+4032000	4034000	I hope I can find a way
+4034000	4036000	To be able to solve
+4036000	4038000	Poisson equation without time
+4038000	4040000	This thing is very simple
+4040000	4042000	You just have to do it
+4042000	4044000	But the problem is
+4044000	4046000	Different gl and different gr
+4046000	4048000	There will be different values
+4048000	4050000	No one studies
+4050000	4052000	How should I choose gl and gr
+4052000	4054000	If you want to solve today
+4054000	4056000	Poisson equation without time
+4056000	4058000	Then there is the second
+4058000	4060000	I hope to be able to
+4060000	4062000	Develop a projection style
+4062000	4064000	That can't be compressed
+4064000	4066000	Solver
+4066000	4068000	The third is that I hope
+4068000	4070000	I can put the solver with
+4070000	4072000	The so-called Immersed Boundary Method
+4072000	4074000	Coupled together
+4074000	4076000	This is my current plan
+4076000	4078000	My research goal
+4078000	4080000	Talk a little bit
+4080000	4082000	Just time
+4082000	4084000	Thank you all
+4084000	4086000	Good
+4088000	4090000	I think it's very good
+4090000	4092000	At least for me
+4092000	4094000	It's a field
+4094000	4096000	I think it's very clear
+4096000	4098000	I think it's too much
+4098000	4100000	And I think the time is very good
+4100000	4102000	It's 17 minutes now
+4102000	4104000	Then
+4106000	4108000	So the other one is your friend
+4108000	4110000	Right
+4110000	4112000	So we're the only ones here
+4112000	4114000	Then I just asked a lot of questions
+4114000	4116000	So
+4116000	4118000	That's it for today's speech
+4118000	4120000	If you have any questions
+4120000	4122000	You can find it on our website
+4122000	4124000	Announcement of today's speech
+4124000	4126000	Then we will be late
+4126000	4128000	Upload the recording of today's speech
+4128000	4130000	If you have any questions
+4130000	4132000	Just click on the speaker's name
+4132000	4134000	Will connect to his
+4134000	4136000	Self-introduction page on our website
+4136000	4138000	Then there will be his contact information
+4138000	4140000	Email or I don't know what you left
+4140000	4142000	Then you can discuss it directly with the speaker
+4142000	4144000	Then we will thank our speaker again
+4146000	4148000	Thank you all
+4148000	4150000	If you have a look on the Internet
+4150000	4152000	That's it for today
+4152000	4154000	I'm going to stop recording

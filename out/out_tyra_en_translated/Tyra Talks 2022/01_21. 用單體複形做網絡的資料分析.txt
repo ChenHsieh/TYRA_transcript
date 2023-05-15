@@ -1,0 +1,2106 @@
+Hello everyone, welcome to today's Taira Talk on July 23, 2022.
+Today's speech is given by Yan Ziqi.
+The title of his speech is
+Analyzing Data from the Internet with a Single-Page Algebra
+Ziqi is a doctoral candidate from the Department of Computer Science at Colorado University.
+He is interested in complex systems and the relationship between data, models, and algorithms.
+He gave a speech at Taira two years ago.
+Please welcome Yan Ziqi.
+Hello everyone.
+Thank you Jason for the introduction and thank you Taira for designing this platform for us to share our research.
+I'll share my screen now.
+I'll start.
+My topic is Analyzing Data from the Internet with a Single-Page Algebra.
+This network is not the Internet. It's a network with many nodes.
+There is an interaction between the nodes.
+It's called a network in English.
+The main content comes from a paper I wrote last year.
+I spent a lot of time listing all the references in this slide.
+Can you see my mouse?
+Yes.
+You can download my slides here.
+If you see this speech on YouTube, please go to my personal website.
+This link will not exist in the future.
+There are some things I need to update.
+But all the references in this slide have a button.
+You can click to see which paper I refer to.
+So what is data analysis on the Internet?
+This field often asks questions from data.
+Data in a complex system.
+Data can be, for example, brain science data.
+For example, we do brain imaging.
+There may be some brain areas in the brain.
+We treat the brain area as a node.
+There may be some nodes.
+Different brain areas will light up at the same time.
+It works at the same time.
+We can connect it.
+This is a network.
+We can ask some questions above.
+For example, the structure of the brain area under different nodes.
+What is the difference in the structure of the brain area?
+For example, the ecological system.
+We can imagine that if we put each creature.
+Between creatures, who eats who?
+Then there is a food chain.
+This is also a network.
+The chain is a tree.
+But if it's a network, it's a food network.
+Other types, like what we usually see on the Internet.
+There is a network between different web pages.
+Then we travel, we go to different places.
+It also forms a network.
+Or a network between people.
+This article is an explanation.
+How to choose the right model when describing these complex systems.
+Because some functions.
+Some functions may be between two.
+Like a graph in math.
+Like this.
+Between one point and another point, there are two functions.
+But sometimes, for example, we just said that the example of the brain area.
+We have a stimulus.
+There may be three different areas of the brain area that light up at the same time.
+At this time, we have three points that work for each other.
+These things may be more suitable.
+Described by the so-called Higher-Order Network Analysis.
+So, uh, this article talks about some, uh, different, uh, data.
+How could there be some higher-order things in it?
+And then, uh, uh, what model to choose, and so on.
+So, uh, my report today will focus on, uh, this single-body review.
+It's called Symbiotic Complex.
+Right, and if there's any questions, you can interrupt me.
+Okay, and I don't know what you think of when you hear Network Science.
+And then, um, this is a recently published book.
+And then, uh, the last chapter talks about, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um.
+Talk about, uh, how to look forward in network science, and so on.
+And then he sorted out some different areas of the last 20 years.
+Um, this is the field of paper, and then the number of them.
+And then we can see, for example, uh, about infectious diseases.
+Infectious diseases are, of course, a thing that has to do with the Internet.
+There's a lot of that in the last year or two.
+So, um, um, what I'm going to talk about today is more on this high-level Internet.
+It's Hypergraph or, uh, Symbiotic Complex.
+Um, there's been a lot of that recently, but not as much as, uh, uh, Epidemic.
+So, um, there's a lot of the same kind of numbers.
+So, um, if you're interested, you can look it up.
+And then, uh, I'm with, uh, uh, Li Zhengde from the University of Chenggong.
+The teacher also translated a small book.
+And then this is also a link that you can click on.
+You can, uh, it's Chinese, and then there's a lot of examples.
+You can click on it.
+So, um, before I start this talk, I want to thank my instructors.
+I have two instructors, Josh and Dan.
+And then they, um, I'm from Computer Science.
+And then, but they, uh, they have a strategy in math and biology.
+So, um, I'd like to thank the authors of this paper.
+Especially, uh, Ronga and Aleche.
+Because, uh, I was communicating with the two of them.
+And then I found out that, uh, they did this article.
+There's a, there's an open problem.
+And then, um, um, so I started doing this open problem.
+Okay.
+So, um, now we're going to talk about what I just said.
+There are some, uh, uh, ways to describe a complex system.
+And then I try to list, I try to divide it into three types.
+Uh, graph, or this.
+Hypergraph, or this.
+That's it.
+Um, these three things are actually a, uh, a model choice.
+That is, what data do you see?
+You can choose which model you want to use.
+And then you use that model.
+Maybe you get the benefits of using that model.
+But maybe you lose some of the other properties.
+So, uh, uh, uh, this is a very good paper.
+Uh, it should be used.
+Uh, what kind of data should be used at what time?
+So, uh, let's say, uh, I see a data today.
+Um, it's the data from the author and their paper.
+So that's actually what it is.
+Which papers were issued by which authors?
+Well, what about this data?
+Um, his, uh, input is, is determined.
+That is, um, um, I know which authors I have in my data.
+But, uh, because I want to ask different questions.
+I can have different, uh, data, uh, data representation.
+For example, I can ask, uh, these two authors.
+Have you ever written a paper together?
+So this is you choose two people.
+And then they have written a paper.
+Then you put it together.
+At that time, you will get this data.
+You can see if 1 and 2 have written a paper.
+And then there's writing on it.
+2 and 4 have written a paper.
+And then there's a lot here.
+For example, 1 and 2, 2 and 3, and 1 and 3 also have.
+1 and 2, 2 and 3, 1 and 3, and then 3 and 4.
+That's it.
+That kind of data is a, uh, a graph.
+This is a graph.
+Then, um, you can ask a little more detail.
+For example, you say, do these people have, um, is to write a paper.
+So, at this time, there's something called HyperEdge.
+The extension of Edge is called HyperEdge.
+Because in Edge, you have to choose two points.
+But in HyperEdge, you can choose n points.
+At this time, you choose.
+In fact, it is four pieces of paper.
+You choose four.
+1, 2, 2, 4, and then 1, 2, 3.
+Because now it's, uh, HyperGraph.
+So you can choose to come in.
+That's it.
+Then there's a HyperGraph at this time.
+Then, um, you can also use Simplicial Complex to describe.
+Um, this Simplicial Complex to describe.
+He's asking, uh, um.
+It's a little, a little rough.
+So, um, uh, these people have written a piece of paper.
+So, at this time, he's actually like HyperGraph.
+He just chose n people up.
+And then it's called a Simplex.
+But this Simplicial Complex has a definition in math.
+It's defined as, um, you.
+After choosing a Simplex.
+You're going to put all the smaller, um, all the smaller Simplexes.
+All the Simplexes are included in this, this Simplicial Complex.
+For example, an example is if I choose 1, 2, 3.
+For example, 1, 2, 3, this, this, um.
+Everyone writes paper.
+This thing is a, uh, a Simplex.
+That's in this data.
+I have to include 1, 2, 2, 3, 1, 3, and then 1, 2, 3.
+Mathematically, it's like this.
+So, uh, if we have this data.
+In fact, it's in this Simplicial Complex.
+It's going to be so many, so many.
+All the possible things are in it.
+2, 4, 1, 2, 3, 3, 4, 2, 4, 1, 1, 3, and then 1, 2, 1, 2, 1, 3, 2, 3.
+It looks like a very, very.
+It's a big construct.
+And then, uh, it's because of his definition.
+That is, all the smaller subsets must be included in it.
+That, uh, that's because of that.
+We can use the biggest Simplex.
+And then we call it Facets.
+To represent a Simplicial Complex.
+What does that mean?
+For example, we see this now.
+It looks like a lot of this data.
+Then we can choose 1, 2, 3.
+Because 1, 2, 3 looks big.
+After you choose 1, 2, 3.
+It automatically includes 1, 2, 1, 3, 2, 3.
+So, in fact, there are some people who can.
+Uh, don't, don't choose it.
+Then 2, 4 will be less than 10 and 30.
+So, in fact, if, uh, this data.
+If you want to use Simplicial Complex to express it.
+You just need to say these three.
+Uh, these three Facets are fine.
+That, uh, so this time I'll get one like this.
+One, one expression like this.
+That's what I'm talking about today.
+This work is more related.
+There are some other, uh.
+The term is called, uh.
+Degree Sequence.
+Or the degree distribution.
+Then, or, Size Sequence.
+Uh, Size Distribution.
+I don't know what to do.
+I think I'll use Side Sequence.
+Um, what does that mean?
+Um, Degree Sequence is, uh.
+If we look at the example of the picture,
+Degree Sequence is, uh.
+How many neighbors does each point connect to?
+For example, this point is connected to 2.
+And then this point is connected to three neighbors.
+So this 3, 2.
+3, 2.
+These four numbers make up.
+The Degree Sequence of this picture.
+Um, this sequence is not important.
+Because it's a distribution.
+That, but, uh.
+This thing, if it's in this.
+In the world of Simplicial Complex.
+I'm going to be 1, 2, 2, 2.
+The reason is because, uh.
+This A1, this author.
+He's only connected to one side.
+It's 1, 2, 3, this side.
+So, uh, he's 1.
+It's like a hand sticking out.
+And then, like, this A2, this author.
+He's connected to this.
+This 1, 2, 3, this.
+Simplex.
+With 2, 4, this Simplex.
+So his Degree Sequence is.
+Uh, his Degree is 2.
+The above is the definition.
+It's about this.
+Um, how to say it on a Simplicial Complex.
+His Degree.
+What is the sequence definition?
+That, uh, related.
+There is also a word called Side Sequence.
+Um, that is to say.
+Every side of it.
+That is, every interaction of it.
+What is its size?
+Uh, actually, I should list it here.
+Um, because this is a picture.
+This picture, every picture is.
+Uh, his Interaction.
+It's made up of two.
+So this picture is a few sides.
+There are a few 2s.
+For example, 2, 2, 2, 2, 2 is 5.
+5 2s make up this Side Sequence.
+That's it.
+If it's Hypergraph, it's 3.
+Because there's a 1, 2, 3.
+Interaction.
+3, 2, 2, 2.
+Uh, Simplicial Complex.
+Because I have three now.
+So it's 3, 2, 2.
+Okay, um.
+Is there a problem with the current definition?
+Okay, um.
+I.
+I.
+The job I'm going to talk about today.
+Although I will go through a lot of other related information.
+Uh, it's actually like this.
+Um, I'm going to.
+My job is.
+Suppose I was given.
+Two groups of Sequence.
+One group is.
+2, 2, 2, 1.
+And then the other group is.
+3, 2, 2.
+Can I use these two groups?
+The sequence of integers.
+To find a Simplicial Complex.
+Make it.
+The degree and.
+This.
+The order of size is just the two I just gave.
+Sequence.
+That.
+Um.
+Not all.
+You can.
+Find a structure like this.
+Can correspond to each other.
+Then I'll say I can't find it.
+Then if I can find it.
+That's good.
+I'll say why it's good.
+Okay.
+That, um.
+So we.
+Yes, I'm going to enter the next video.
+So now we see this.
+This Simplicial Complex.
+Because it.
+All the little subsets have to be included.
+It looks like a very complicated thing.
+But it actually has some benefits.
+This is my first.
+Uh, the first interlude is.
+Um, insert.
+Let everyone take a break.
+The second benefit.
+Because.
+There is a field called Topological Data Analysis.
+It can.
+Use.
+I include these.
+Smaller subsets.
+Then to calculate.
+Some of the structures of this data.
+For example, it has.
+A few holes.
+Like I'll give you an example in a minute.
+This.
+This.
+The cup actually has a hole.
+Here.
+I put a hole in this place.
+How to get the data.
+How to define it.
+How to define.
+Find a way to describe it.
+And then describe it.
+You have to find out how many holes it has.
+So that we can distinguish these data.
+What's the difference?
+For example, like.
+Um, for example, I know.
+Um.
+Um, this is a.
+This is a paper, and then he is.
+Um, when the U.S. presidential election.
+Um, in.
+Some small bacteria in each state.
+And then they might.
+Different bacteria, he might vote red.
+Or blue.
+Can I use it?
+Topology.
+Find out.
+Is there any.
+Special structure is, for example, a blue sea.
+In fact, there may be some red bacteria.
+Um, especially like.
+Vote for the Republican Party.
+Then, or just analyze this.
+Um.
+All the papers that make up this data.
+What shape is there?
+Um, yes.
+Um.
+If you are interested in this TDA.
+You can go to this website.
+He has a lot of.
+The.
+Talk is the same as Tyra.
+Um, invite people to share.
+After sharing, put it on YouTube.
+Then you can see all kinds of.
+Using TDA to study.
+Some strange data examples.
+The example I'm talking about here.
+You can find it in this paper.
+Reference.
+Um, other than this.
+Topology is related to.
+Um, put.
+The kind of picture I just said.
+The phenomenon that happened above.
+Because of the picture.
+Um, it's a pairwise.
+Then extend to.
+Um.
+Not just pairwise, but three or four or more.
+That.
+Um, he will have some examples.
+I can't.
+In a very short time.
+Finished.
+That is to say, what interesting examples do they have?
+But most of the time.
+Um.
+In the past, in the world of graph.
+He will have some dynamical models.
+For example.
+For example, there are two agents.
+When they are together.
+What kind of interaction?
+For example.
+For example, I want to buy a watch.
+Then, but I'm not sure what brand I want to buy.
+Then every time I look at my friends.
+What brand of watch do they wear?
+Then decide.
+It's a majority vote.
+To decide what brand I should buy.
+This.
+This is a model.
+The main.
+The main component is.
+Uh, you have to look at your friends.
+That's the effect between the two.
+There are a lot of these two.
+The model of the effect between the two.
+Extended to.
+Uh.
+More than two.
+The effect.
+Then there will be some interesting phenomena.
+So, um, this is.
+Um, there are some related papers.
+It's all about this data.
+Okay.
+Back to my original topic.
+I just introduced.
+I just introduced the degree and size.
+Sequence.
+Um, these two things are used to.
+Describe a.
+Symbiotic complex structure.
+So why do we.
+I'm interested in them.
+Uh, because these things are.
+It's all very local.
+That is.
+For example, I want to go back.
+Can I come back here?
+It's all a local structure.
+That is.
+I don't have to know all of me.
+What does all the data look like?
+I just need to know.
+This person has several.
+Several changes.
+Or say.
+A group of three people.
+This is a local structure.
+Then, um.
+We're interested in them.
+It's because of these local structures.
+Maybe with them.
+To do one thing together.
+There's a relationship.
+So we want to put them together.
+Establish a link.
+That, um.
+What about this thing?
+Because I often want to compare.
+I'm in the world of Symbiotic Complex.
+Then in the world of graph.
+Uh, everyone is like this.
+Asking questions.
+Um, in the world of graph.
+There's a model called Configuration Model.
+What does that mean?
+Um, I gave you a graph today.
+Then I know this graph.
+Inside the degree sequence.
+It's just telling me.
+Every point he has a few.
+A few neighbors.
+This degree sequence.
+It's a very local one.
+That's it.
+Sometimes, this network, he might have some.
+He might have some properties.
+Yes, I'm not sure how special he is.
+Or is it that he's with this?
+The local degree has a lot to do with it.
+So, I can use.
+Configuration Model.
+This network.
+Randomization is randomizing a lot.
+A lot of different networks.
+But, uh, I ask for these different networks.
+Their degree sequence is all with me.
+The one I observed was the same.
+Then I'll ask again.
+Uh, in all the different networks.
+The nature I care about.
+The distribution of the data I'm actually observing.
+Uh, actually observing the data.
+Is there any difference in this value?
+What if there's a difference?
+I think so.
+Um, this one.
+The network I observed may be in this degree.
+Um, there may be some special places.
+Beyond the degree sequence.
+Special places.
+Um, need to be explained.
+This is an example.
+It's like this.
+It is.
+Um, this is a barn spiral.
+A bird.
+And then, um, everyone thinks.
+The color of it.
+With it.
+The ratio of the mating.
+There is a relationship, but everyone is not sure.
+What is the relationship?
+Um, they do experiments.
+Put this bird on top of the sensor.
+Then look at the bird in a space.
+Then fly.
+If they are close, he will connect a side.
+Then form a network like this.
+Well, in this network.
+They went to say.
+Because he knows the color of each bird.
+Then he also knows the different colors.
+Is there any interaction between them?
+So they just made this network.
+They will count them.
+The one between them.
+Correlation related to color.
+Then I got this.
+This virtual line, this part.
+At the same time.
+Um.
+This piece of paper also took this data.
+Um, they observed this network.
+Random.
+Then every random component.
+Calculated this once.
+Pearson Correlation.
+Then get a distribution.
+Then so, um.
+So this one comes from this data.
+Observed.
+Then this one comes from this distribution.
+Um, you are random.
+Then you will feel.
+Ah, they actually.
+Ah, there is no difference.
+Ah, you won't feel.
+So it seems to be here.
+You won't feel that you are.
+Color Color Correlation.
+What's special about it?
+It's more than the degree.
+Degrees can explain.
+Corresponding.
+If I observe another data.
+He may.
+Um, his Correlation is very low.
+For example, if I don't know.
+Um, if there is another data.
+Then you observe his color.
+Then you will ask.
+Ah, you will feel.
+Ah, why do I observe the data now?
+With this one.
+After this data.
+His Correlation is particularly low.
+Then because of this randomization.
+Is related to the degree.
+You will know.
+At this time, there should be some.
+Is beyond the degree.
+Things beyond the degree.
+Plays in this.
+Then we.
+Um.
+Is there a problem so far?
+Let me ask.
+I want to understand this example.
+Um.
+The picture in the middle.
+The number on it is.
+How many lines did he connect?
+Or what?
+The number on it should be his.
+The number of the bird.
+Oh, the number of the bird.
+Then.
+There should be a few times of interaction.
+OK.
+Then.
+The meaning of gray and white.
+Is their color.
+Um.
+OK.
+Then the picture on the right is.
+How did it come out?
+I don't understand. Can you say it again?
+After we observe this map.
+Uh.
+After we observe this map.
+We also have his color.
+So we can actually count his.
+Color color correlation.
+Then we calculate a number.
+But I don't know if this number is.
+Is it special?
+So.
+Um.
+They said.
+Let me see if I can put this network.
+I found a lot.
+Ah.
+With him.
+The structure is different.
+But the degree sequence is the same as other networks.
+And then on top of it.
+Calculate his.
+Correlation.
+And then we got a distribution.
+And then we can ask.
+In the end, I observed this data.
+Correlation.
+Is it special?
+OK.
+Um.
+Then is this more special?
+Is.
+Ah.
+It's with me.
+How do I put this network?
+It's about randomization.
+At this time, he fixed his.
+His degree.
+Is.
+Fixed him every.
+Every bird.
+In the end, with a few other birds.
+And then there are a lot of other different structures.
+And then ask.
+I observed this.
+Is it special?
+So.
+The middle of this example.
+Anyway.
+Doing this thing.
+But.
+Your.
+It means.
+You have to find.
+The same degree sequence.
+This thing.
+The thing that needs to be studied.
+Is this the conclusion?
+Correct.
+Ah.
+This paper is.
+Proposed a configuration model.
+You can randomize a network.
+And then he gave an example.
+Ah.
+After you can randomize it.
+Ah.
+This ensemble can be used to do.
+Some statistical tests.
+OK.
+So, uh.
+So if you only look at this piece of paper.
+You might only get a Pearson correlation.
+And then, but you don't really know.
+What's so special about him?
+So, in order to know his special place.
+I want to put the original data.
+Ah.
+Fixed a few parameters.
+And then make an ensemble.
+And then let's take a look at this ensemble.
+All of the.
+Inside the Pearson correlation.
+Is not.
+Ah.
+In fact, it depends on.
+I.
+I suspect he's with.
+What kind of parameters do I suspect he's related to?
+For example, now I suspect.
+This Pearson correlation may be related to.
+The degree distribution.
+It may be related to the degree distribution.
+So I deliberately fixed it.
+Let's take a look at this distribution.
+And then see if he's in there or out there.
+Any other questions?
+Ah.
+Then I.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Ah.
+Well, that's the example of the bird just now.
+How many other birds do the birds have?
+Interaction.
+The Global Gravity of Opportunity.
+That's a paper by The Biological Science.
+Its reproduction is likely to be related to the color.
+This is one.
+A global.
+It may be related to a local.
+An example in a certain data.
+That ah.
+Another related question.
+If I.
+Only after getting.
+After the degree sequence.
+Can I get from it.
+Generate a network.
+If I can.
+In fact, it can also be used to answer a lot of interesting questions.
+They are on the structure.
+And in.
+In.
+Is dynamic.
+For example.
+Ah.
+Ah.
+I think this is more.
+Domain specific.
+I'm going to click on it again.
+This.
+This link.
+But here.
+What I want to say is.
+Well.
+Ah.
+Everyone will doubt that a.
+Everyone will doubt that.
+Can I.
+From a local information.
+And this structure.
+Is there anything special about it?
+If you can't generate it.
+If I get a degree sequence.
+I don't know how to generate a network.
+Then you can't talk about it at all.
+On this network.
+What kind of structure is special.
+So being able to build this link is an important thing.
+Then this is the structure.
+Then the second dynamic.
+What does it mean?
+Ah.
+Take that.
+I'm not an infectious disease expert.
+But in terms of infectious disease cases.
+Ah.
+Because we know that infectious diseases sometimes spread very quickly.
+It's because some people may.
+Ah.
+There is a chance in everyday life.
+Hundreds of people.
+But this is not our normal life.
+But in the data of this human network.
+There are specific people.
+His degree is very large.
+That.
+That.
+In such a data.
+In such a structure.
+We have to be able to generate this structure.
+To answer this question.
+So we.
+There will be a model.
+Say it.
+If I want to generate a network.
+Then this network.
+The distribution of the degree is very heavy.
+That is.
+You look at his.
+You draw a distribution.
+Ah.
+There are only a few friends in life.
+Then there are a few people with two friends.
+There are thousands of friends in life.
+This is a degree distribution.
+That.
+You have to generate a structure from this distribution.
+Then you can be on top of that structure.
+Run the model of infectious diseases on that structure.
+That's why.
+Be able to have a way.
+From local information to generate a structure.
+It is also important because.
+Ah.
+In this way, you can do some experiments.
+Ah.
+So this is what I provide.
+About what I'm going to do.
+That.
+Ah.
+Go deeper into the topic.
+Ah.
+Ah, we just talked about this.
+The local thing is the degree.
+Then we have.
+Observe some data.
+Usually, after you observe the data.
+Ah, you have to get the degree.
+It's very simple.
+For example, you know you.
+You have a class.
+Then you go to ask everyone he has.
+You think in this class.
+What kind of people are his friends?
+Then you will get one.
+The network of friends in this class.
+Then you have to go from this network of friends to get it.
+His degree is actually very simple.
+Just take everyone.
+And then see how many friends he has around him.
+That's it.
+This direction is usually simpler.
+That.
+But it's more difficult.
+How do you.
+Every friend, for example, this class has 30 people.
+Then you give me one.
+Ah, you give me 30 numbers greater than 0.
+Then you can not create a network.
+This is more difficult to ask.
+That.
+Correspondence is.
+If you want to get this network.
+You have to randomize it.
+Find an ensemble.
+So that every network in this ensemble.
+He has the same.
+Degree sequence.
+This thing is also a difficult thing.
+That.
+What I listed is everyone's work.
+Then you can click to see.
+That's a little closer.
+That is.
+You get a simple complex.
+How to randomize it.
+So that every one in this randomization.
+Ah, every one.
+Simple complex.
+They all have the same.
+Degree and size sequence.
+That this.
+Ypvp17.
+Ah, just now.
+Ah, the one that inspired me.
+That.
+Why is this a problem?
+Ah, the same thing is in the hypergraph.
+That's how it appears.
+Why?
+Why would I do this job?
+The reason is because.
+They are in this paper.
+They proposed a.
+Randomize a structure.
+Then they go.
+Explain that they are like this.
+Can.
+Can.
+Explore.
+All possible space.
+He has some mathematical arguments in it.
+But.
+What about this method? He has to have one.
+A data is there.
+Then you can put that data.
+That's it.
+But he can't answer.
+Some questions like today.
+I want to have one.
+Theoretical.
+Ah.
+Degree and size sequence.
+Ah, I want to know.
+For example, my degree and size sequence.
+They are all the ones I just said.
+That kind of structure.
+Can I use it?
+To generate a.
+A data.
+And then randomize it.
+If there is no.
+It's not easy for me to do it.
+They can only go.
+Ah.
+This.
+To find a data.
+And then randomize it.
+So, my job is a.
+A work.
+I want to ask a question.
+I still don't quite understand.
+Ah.
+Randomization and this one.
+Find one.
+One.
+But the first question is.
+You have a.
+A degree sequence.
+Then can you find a picture.
+Ah.
+This degree sequence.
+Is this the place where you draw the green line?
+Is it?
+If it's just a picture, it should be this place.
+Oh, sorry.
+Find a.
+Complex data.
+If it's a complex data.
+That's where I'm green.
+You just need to find one?
+Or you just.
+You just need to find one.
+The reason is that after I found this.
+I can use the method here to randomize it.
+It's useful in statistics.
+OK.
+But what's the difference between randomization and this thing?
+My understanding is.
+Randomization, you don't have to.
+From.
+You give a.
+Then you already know the degree.
+Degree sequence.
+You are from degree sequence to.
+Randomization.
+You have to find.
+You have to find a lot of pictures.
+Is that what it means?
+Ah.
+If it's.
+These random algorithms.
+If it can be used, it must have a structure.
+If you only give me.
+Two integer series.
+I can't go.
+For example, to swap his.
+His side.
+Then to change his structure.
+So this randomization process is.
+You have to give a structure first.
+Then he might do some swap.
+What is it?
+Turn it into.
+The same degree picture.
+The so-called structure is.
+Like.
+Like this kind of thing.
+I have to give me a structure first.
+Then I can use.
+Random algorithm.
+Usually related to.
+Swap side.
+For example, swap two sides.
+Swap at the same time.
+Keep their degree unchanged.
+But if you don't.
+If you don't have such a structure.
+You can't do it.
+These things here.
+So the green line is equal to.
+I'm going to find the first one.
+Then we can start randomization.
+OK.
+Thank you.
+That's great.
+I don't think I have enough time.
+I'm going to talk faster.
+But I might skip some slides.
+I still hope I can.
+I'll be done in about an hour.
+To do this thing.
+In fact, I didn't.
+Solve all the problems.
+The reason is because.
+What about this question?
+He was proven to be a.
+NP complete question.
+And then if you're doing research.
+I usually tell you.
+You can't actually find one.
+The algorithm is.
+It can be completely.
+Effective and useful.
+That's a shame.
+But at that time.
+I thought it was interesting.
+Oh, by the way.
+That's the thing.
+Test two integer series.
+Can you find one?
+This thing should be.
+A difficult problem.
+I think the interesting thing is.
+I was really going to draw a picture.
+It's like doing that reading.
+That's it.
+In the end, I used Excel to do research.
+That's it.
+This is the problem.
+For example, I give two integer series.
+One is 43321.
+This is his.
+The series of degrees is here.
+And then I give another integer series.
+It's called his size series.
+It's called 33333.
+Well, my goal is.
+In this array.
+Fill in 0 or 1.
+So that his.
+Every column is just right.
+It's 4.
+This is just 3.
+Every row is just right.
+It's 3.
+In addition to this, there is another one.
+Make this a problem.
+One of the difficult conditions.
+It's a difficult limitation.
+It's two.
+They can't.
+Can't.
+One of them is another.
+This thing.
+This is from what I just said.
+Simple complex definition.
+I hope I'm here.
+These structures that show up here.
+It's already the biggest.
+Simple complex is those facets.
+That's it.
+So if I put 111 here.
+But here, I still want to fill in 111.
+If you fill in 111.
+This 111 is with the following 111.
+Is each other.
+Uh.
+One of them is another subset.
+Or vice versa.
+I can't fill in 111 here.
+So this time I can only fill in 111.
+Then jump one to become one.
+So these two won't be each other.
+Subset.
+Suppose.
+In this line, I only need to fill in two 1s.
+I can't fill in, for example, 111.
+Because this 111.
+It's going to be wrapped up in this 111.
+So at that time, I tried a lot of this.
+Fill in 1.
+Fill in 1 and 0.
+And then add it up and see if you can add it.
+Uh, they gave this number.
+That's what I just said.
+The limitation is to make this problem difficult.
+But I found some examples.
+It's actually very simple.
+For example, uh, if I'm here.
+All of this.
+If the input degree is all 1.
+Then there are here.
+Uh, 15.
+So I'm going to have 15 1s here.
+Then I can do this.
+111.
+Then jump one to become 111.
+Then jump another 111.
+Then I can easily create one.
+A structure is in line with what I just said.
+That one.
+Degree size sequence.
+So, uh.
+My.
+What about this job?
+I thought of one.
+The algorithm is a heuristic.
+Uh, in computer science.
+The meaning of the heuristic is that you have one.
+You have a rule.
+Uh, every step of your algorithm.
+You have to go.
+The rules are very local.
+But.
+Uh.
+It's very surprising that you can use this rule.
+This is a heuristic.
+There is no way to guarantee that it is the best.
+But it can also be used.
+Then we found that.
+Um, most of the.
+Input sequence.
+I can use the algorithm that I will talk about later.
+To find an instance.
+Yes, that's what I just said.
+Add a key.
+Um.
+This thing on both sides of the input.
+Good.
+After I finish this algorithm.
+I will skip some slides.
+Then talk about mine.
+I think it's an interesting interlude.
+Then I will wrap up at the end.
+This is my algorithm.
+Of course I won't talk about this algorithm.
+But, uh, his.
+The idea is probably like this.
+Uh, I want to try all the possible 0s and 1s.
+But when I try it.
+I don't want to try it randomly.
+I hope that when I first started.
+My input.
+I arranged it from large to small.
+4333321
+Then this other size input.
+I also arranged it in large and small.
+After arranging it.
+I started from the top down.
+Fill in 1 or 0.
+But when I fill it in.
+I want to say.
+This degree is big.
+Hurry up and get together.
+It becomes a simplex.
+So I'm going to start from the left.
+Slowly fill in the lower right corner.
+So every time I fill it in.
+I have a rule.
+I want to.
+Get together first.
+That, uh.
+When arranging.
+I can also be sure.
+Oh, by the way, this is a.
+Um, this is a recursive algorithm.
+I see a wild here.
+Then, uh, I have some conditions.
+In it.
+Every time I fill in this 0 and 1.
+Sometimes I can figure it out.
+Sometimes I can know.
+Is it wrong for me to fill in 0 and 1 like this?
+For example.
+For example, let's say I'm here.
+I'm done here.
+And then there's a 1 here.
+And then, uh, here, uh.
+Fill in another 1.
+Then there's no way to fill in 1 here.
+Because I already have four 1s here.
+Then add it up and it's 4.
+So if I fill in 1 here.
+I'll be over 4.
+Then I don't have to try this.
+This is the condition of 1.
+If it's in this line.
+So, in fact, every line is filled in.
+Uh, don't go any further.
+Some of the conditions I can know.
+And then I can delete this option.
+And then, so he's actually a little bit.
+Stupid way.
+I really want to put all the possibilities.
+All found.
+It's just that when I'm looking for this possibility.
+I have a specific sequence.
+And then, uh.
+The interesting thing about this study is that this specific sequence.
+It's.
+It's useful.
+That.
+We also have some in there.
+Uh, for example, I.
+I fill in one and then I.
+Finally, I found that this road is different.
+I will, uh, record that.
+Ah, this road is different. I have a rejection.
+Then if there are too many rejections, then I will give up.
+Because I know this question is very difficult.
+And then I don't want to.
+Find all the possibilities.
+That, uh.
+Then I.
+Uh, I'm going to do this part.
+This part is what I'm going to do.
+To do the test is what I hope.
+I can find.
+All add up to 13.
+This whole series of all kinds.
+So this is actually 101.
+Add up to 101.
+Add up to 13.
+The whole series.
+And then I'm 101 times 101.
+All the possibilities.
+And then I want to run.
+Uh, the algorithm I just mentioned.
+Will he get it?
+A simple show is to get a simplex.
+As his output.
+Or did I finally give up?
+That, uh.
+What about here?
+What I want to say is.
+In fact, most of the.
+Because, uh, here's a set.
+I'm calculating how much time I spend.
+And then my definition of time is how many times I have.
+It's backwards.
+Uh, I was.
+Uh, uh, uh, uh, uh, uh, uh, uh, uh.
+And then sometimes I might be in a certain meat.
+I found no way.
+I'm going to backtrack again.
+Backtrack number.
+Uh, the number I was rejected.
+I was rejected.
+Some very simple rules.
+And then I found this road is different.
+Most of them are white.
+Or this gray.
+So in fact, most of the.
+Most of the input is simple.
+So here I'm going to say.
+In fact, most of the input is simple.
+Ah, this one, I'm going to.
+Jump over a little faster.
+But this one is mainly about.
+Well, this thing.
+Uh, you can scale up.
+To, uh.
+Add up to 1,000.
+This kind of, uh.
+Simple complex.
+It was just added to 13.
+Now add up to 1,000.
+Um, I can still.
+Find it very quickly.
+Some of the inside that.
+Is it simple?
+Uh.
+With the time I spent doing this.
+So.
+And then I found that most of the.
+The time it takes.
+It's pretty rare.
+It's within the time of the polynomial.
+That's why I'm here.
+The next conclusion is.
+Hey, this method is a useful method.
+I can, uh, take it.
+Uh, random input.
+I can use it to find a structure.
+I might need to give up some.
+Because I can't make sure.
+What did I miss?
+Because the problem itself is difficult.
+But, uh, if I have a large number.
+I can still use it to do something.
+Useful statistical things.
+Okay, and then, um.
+With just.
+So, um.
+The progress of this paper is to say.
+Uh, because I just said.
+Uh, I'm looking for this.
+When it comes to structure, I hope.
+Uh, those big friends.
+You have to get together first.
+So, uh, is there anything special about this?
+Some structures were found by me.
+So, uh, I'm going to calculate.
+Um, this.
+There are a few holes in the structure.
+So, this is a.
+In that topological data analysis.
+One of the standard methods.
+If I have a complex.
+I can ask him how many holes he has.
+So.
+That's a hole like this.
+In the middle.
+So, um.
+If this hole is the number of this hole.
+It's a kind of thing.
+It's called Betty Numbers.
+And then he'll have all kinds of different.
+Dimensional holes, for example.
+Um.
+Betty Zero is.
+He has a few.
+There are two.
+He only has one.
+But he happens to have a hole.
+So his Betty One is one.
+And then Betty Zero is one.
+H2 is a higher-level hole.
+And so on.
+it is good.
+Start with love.
+This is the second one.
+Because this is just to say.
+What I just said.
+Um, that kind of heuristic.
+There are really some special structures.
+Is.
+Created by me.
+There is nothing.
+It's not very scientific.
+But he is.
+One of the features of this algorithm.
+This feature will help us find it.
+Um, very scattered.
+With very few holes.
+This kind of structure.
+That, um.
+What about the focus?
+It's not what this structure looks like.
+But I can.
+To build a bridge is from.
+Input.
+Find a structure.
+And then I want to use someone else.
+Randomize the method to find an ensemble.
+And then answer some questions.
+So this is just doing some.
+Capitalization is about me.
+Some features of the algorithm.
+Okay, and then.
+This is not an interlude.
+That is to say, why do you have to count?
+Because, uh, sometimes.
+In fact, it is important to know how many holes there are in this data.
+Take the one I just said.
+Uh, in terms of the example of the brain area.
+Uh, you can actually know that.
+Uh, normal people's brains.
+In some specific structure.
+The number of holes.
+With.
+Uh, there are.
+Um, external dropout.
+A kind of neurological disease.
+The structure of the brain.
+These two.
+The number of holes will be different.
+This is a.
+Uh, there are a few holes.
+Um, it might be useful.
+Um, the other place that might be useful.
+Um, uh, it is.
+Uh, uh, it is.
+Um, signal processing.
+Signal processing.
+Um.
+This thing is.
+To say, let's say a.
+Data, this data.
+I observed these.
+On a network.
+This is all this gray.
+It's all a network, and then.
+All this is colored is the data I observed.
+Then, in this data.
+Because I am very clear now.
+I see all the data.
+I know there are two holes in this data.
+Then, um, these two holes.
+In the structure is very special.
+But I observed this.
+This one with color, this arrow.
+I don't know what it is.
+Uh, what does it have to do with this hole?
+That, uh, there is a way.
+That is, I can put.
+These observed arrows.
+Projected to.
+Two holes above.
+This is a bit like that.
+The PCA that everyone learns statistics.
+Because PCA will have two.
+I can put it.
+Projected up, and then look at it.
+These two different directions.
+Um, the information is not.
+The biggest explanation.
+Uh, the data I observed.
+Then, if you put this data projected up.
+You will find that, uh, these three have color lines.
+Be grouped together.
+Then the other three groups together.
+Then the other three groups together.
+Why are they grouped together?
+Because of any.
+In a group of lines, he has no way.
+Don't skip this hole.
+Deform to the side.
+For example, I fix these two ends.
+Then I want to pull this rope.
+I can't get around this hole.
+I can only be in this place.
+Just squeeze together.
+Yeah, so, um, this is one.
+Can be from, uh.
+You can get some from your data.
+Some of the things that are related to the collection.
+How to do things like this.
+Then, um, this is.
+A.
+A small field called.
+Signal processing.
+Then I list some articles.
+You can find some interesting examples in it.
+That, um.
+Finally, this video.
+I'm going to skip it all.
+What about this video?
+It's about, um.
+We if we.
+If we limit our world.
+It's a network.
+If we can only see the network, then we.
+We care about some of this network.
+Um.
+It's the number of holes.
+So.
+Uh, we.
+And then we have some options.
+For example, if this network is getting more and more dense.
+In fact, we will feel that this hole will be more and more.
+Because it's a network that's getting denser and denser.
+So his circle.
+His hole is getting more and more.
+Um, but this intuition can't be.
+Completely carried out.
+Uh, in the complex, because.
+Uh, because of the one I just said.
+The limit of the complex.
+So, um.
+His.
+His.
+The description I just said just came back.
+If it's a denser and denser complex.
+His hole is actually getting less and less.
+There are some of this.
+Uh, some interesting things about the structure.
+Interesting things.
+Okay, so this is my final slide.
+Um.
+I think the most important piece of information is that we are now.
+Uh, with this.
+I developed this method.
+It can be used.
+For arbitrary degree size sequence.
+I can use it to find a structure.
+Then I can use it at this time.
+Uh, someone else's.
+Uh, random method, random network.
+Then you can ask some statistical questions.
+What about the second interesting thing?
+Um, what I just said.
+Uh, this computer science question.
+He has a feature called.
+This means.
+Uh, if you go to Google.
+MPCompany will be on his.
+Wikipedia to find this picture.
+In fact, the world in here.
+It's still very rich.
+Maybe it's simple and difficult.
+So he is.
+Uh.
+Uh, I have.
+That algorithm is written as a.
+Python package.
+Just open a terminal.
+You can use this algorithm directly.
+What about the last one?
+I think this job has.
+Uh.
+There are some problems.
+That's what I just said.
+In fact, it should be.
+In general, it's a difficult question.
+Why is there a.
+Simple algorithm can.
+Count to the inside.
+Most of them can be solved.
+So why is he so successful?
+Um.
+I haven't been able to.
+Uh, answer this question.
+What about the rest of the statistics?
+Yes, I can ask.
+Um, if I.
+See a data, I can think about it.
+Um, this data is related to it.
+After a few fixed parameters.
+Randomized data.
+Uh, what's the difference? Why is my data.
+May be with.
+Uh, I think it should be.
+Uh.
+It should be some.
+Um, parameters.
+I'm sorry.
+Um, I'm in this data.
+I have observed some.
+I think it's interesting.
+Uh, I hope to know.
+Um.
+Is it really interesting?
+So in order to know this.
+I need to randomize some parts.
+That's a statistic.
+Uh.
+It's a long question.
+Well, uh, a little bit more.
+Because, uh.
+This is a complex system.
+A related one.
+A question.
+In the complex system, we usually have some components.
+That's his agent.
+Uh, the local structure I just said.
+For example, I choose what kind of friends I want to make.
+This is a choice I made.
+But I'm the last.
+Uh, the human society is a global thing.
+That's it.
+Is there any data?
+Uh, we can ask.
+Uh, the link between local and global.
+Okay.
+Um.
+This is my list.
+Uh, I think it's useful.
+And then, because today's topic is.
+Uh.
+Related to the higher order network.
+So these articles are all with, uh.
+It's just some technical survey.
+And then, uh.
+I just talked about some data.
+How to calculate the structure of this data.
+Uh, there are three useful.
+Uh, link for reference.
+That, uh.
+Uh, I think this area is.
+Network science field.
+And then, um, he has some communities.
+For example, this net size is every year.
+A meeting will be held.
+That, uh.
+I'm in this.
+Um.
+Since.
+In this organization.
+And then, um, they're every year.
+Uh, we'll be here every year.
+Some activities.
+That, uh, we have a slack.
+If you're interested in joining, you can.
+Write an email to me.
+It's useful.
+The other thing is, um.
+There is a seminar.
+That, um.
+Like Tara.
+There will be some.
+With network science.
+Talk.
+That corresponds to this diversified.
+Net size symposium.
+Okay.
+I'm done.
+Thank you.
+Thank you.
+Then we can turn on the microphone.
+Applause.
+Ok.
+That.
+Uh, is there a problem with the audience here?
+Uh.
+Uh, I have a question here.
+I don't know if I can ask.
+Um, please ask.
+Let me turn on the microphone.
+Uh, the organizer.
+Then, how are you? I am.
+Li Xuanwei from the Chinese Academy of Social Sciences.
+I heard the speech last time.
+It was two years ago.
+Then it's still exciting.
+Thank you for sharing.
+Because we have a topic.
+There are also related research.
+So I heard this.
+I feel very excited to see if I can use it.
+Our own research.
+Then, uh, there are a few questions.
+I want to ask Zixi.
+There are about three.
+The first one is.
+Uh, we.
+On the actual data.
+Uh, there are a lot of different.
+Uh.
+Different types, like your node.
+There are different types of nodes.
+Like gender, male, female, race.
+Black, white, Asian.
+Like this is a note type.
+That edge is also edge.
+Then you can add different weight.
+You can be 01.
+You can also be a variety of numbers.
+Or.
+Uh, a few kinds of 0.51.
+0123.
+Or you can be a sign.
+Different edge.
+Then your edge can also be directional.
+You can point to different places.
+That's what you're using now.
+This algorithm.
+Have you ever thought that you can promote it in the future?
+Different nodes or edge types.
+I don't know if this is in the complex.
+Will it be an extension?
+An important extension.
+This is the first question.
+The second question is, um.
+I'm curious.
+This algorithm.
+It's you give a sequence.
+With, uh.
+Uh, another one.
+I forgot the name, but you give two sequences.
+You can push it all.
+Uh, a possible picture.
+Even the future method can be calculated.
+That if I give you today.
+Is a part of the information.
+Assuming I take my class.
+I'm going to do a comparison of the data.
+I have a class.
+30 students.
+Suppose only 10 students fill this information.
+Then we assume that the information he filled is complete.
+That I can use your method.
+Calculate these 10 people.
+Among the data given.
+This may be behind you.
+Maybe you didn't handle this article.
+But a question behind it.
+Your opinion is.
+Take the data of these 10 people to restore the whole 30 people.
+The ensemble on the board.
+Then the credibility of this.
+Is it worth doing this?
+I don't really know.
+This is the second one.
+If you only get part of the observation information.
+Can you guess the whole group?
+Interaction.
+What is the interaction of various high-level low-level?
+The last question is.
+You finally mentioned that.
+Like persistent homology.
+Indeed, in this field.
+Development is very fast.
+When we do social studies.
+There will also be different holes.
+You just said those holes.
+We want to say that it is a high-level interaction.
+In social studies, there is a hole called structural hole.
+Structural hole is to say.
+Between two groups.
+It may not be so close.
+There will be some key loopholes.
+The two are more.
+How to have a connected group.
+Connected together.
+I don't know if it's your observation.
+Or your feeling.
+These two holes.
+One is from homology.
+The hole of homology.
+With social science.
+On the graph.
+Called structural hole.
+Is it possible to have something to do with it?
+Because you just said.
+The conclusion is not necessarily the conclusion of homology.
+The denser the picture, the less.
+I always want to say these two.
+I actually didn't think it through.
+This is a very wonderful speech.
+Thank you.
+That was my three-year question.
+Thank you.
+First of all.
+I want to say.
+I think now.
+Because these studies.
+Are all based on data.
+I want to have a data.
+Then come and ask me.
+The data is quite small.
+Then.
+There are more pictures.
+So, in fact, there are some.
+The study is how.
+From one.
+Observe the data in the picture.
+Go.
+Do statistics.
+In fact.
+For example, three people.
+They are all connected to each other.
+In fact, we express it as.
+Three sides.
+Three sides.
+No than.
+They are expressed as one.
+A hyper edge.
+It's still coming.
+It's effective in statistics.
+So there's a lot of this.
+How from one.
+Infer high order structure.
+The question.
+That.
+So you just said.
+You just said the question.
+I want to refresh.
+The second one is.
+It's related to.
+That is.
+Can extend.
+I just said this.
+Configuration model work.
+And then today.
+If I have a data.
+He.
+There may be nodes.
+For example, human network data nodes may have.
+Racial and income and so on.
+And then I'm going to fix it.
+And then to generate an ensemble.
+I do not know.
+But I will.
+All these questions I will go back.
+Look at the graph.
+I have no impression of the graph.
+But I think.
+It seems to be a very good starting point.
+Because he.
+Because he.
+It can help us answer.
+Other statistical issues.
+We can.
+That offline.
+You can talk about this.
+That.
+Then the second question is.
+With.
+In fact, the first two questions.
+I do not know.
+The second question is today.
+Say I have one.
+I have a class of 50 people.
+Then, of course, from.
+I'm talking about this algorithm.
+I can put it.
+Randomization.
+Randomization.
+Every one.
+You can take it as a statistical value.
+To get a distribution.
+But if I can only observe.
+Part of the people in these 50.
+How do I get from.
+This part of the inside.
+Get the most information.
+In fact, I should have this distribution.
+Get the most information.
+I also think it is a very good research question.
+I do not know.
+And I think the two questions I just said.
+In.
+On the graph.
+I do not seem to have seen such a job.
+Just on the graph.
+That.
+That.
+The third question.
+It may be easier to answer.
+Is.
+So.
+Uh, I sound like that.
+It's more like a set.
+A defined definition, right?
+Uh, if that's the case.
+Uh, because in.
+Topology inside.
+Topology.
+This thing.
+Um, he is.
+There is a clear.
+One of the.
+Um.
+It's technical.
+I'm going to take this data.
+Divided into different dimensions.
+And then this dimension forms a circle complex.
+And then the circle complex inside.
+Different dimensions.
+The so-called.
+Boundary map link.
+And then the boundary map is going to form some properties.
+For example.
+It must be zero.
+That's it.
+Because of a mathematical property like this.
+Uh, I can do it inside.
+To calculate the hole.
+So, um.
+So if it's a.
+If it's a social network.
+And then I'm going to ask.
+The hole on it.
+Um.
+What's the connection?
+I, I, I think.
+Um.
+I don't think it's possible to answer this question just by looking at the structure.
+Because of your structure.
+The definition of the hole is already.
+Contains some.
+Tributes related to nodes.
+For example, who is.
+The most influential of the two groups.
+But if it's.
+Uh, topology.
+It's all about math.
+You tell me.
+What's the structure like?
+Triangles filled with triangles.
+There are a few filled with two sides.
+So, and then calculate.
+So.
+The topology.
+The hole in the topology.
+It's all about the structure.
+And then it might be with.
+Um.
+Related to sociology.
+Structural hole is related.
+It may not be related.
+Thank you.
+I hope I answered.
+Yeah, I might be offline.
+Ask something that we are interested in.
+Show you again.
+Thank you.
+Do you have any questions?
+Can I ask a question myself?
+Just.
+You just proposed a heuristic.
+The algorithm.
+Then.
+In my opinion.
+Because I'm not.
+I'm not familiar with this at all.
+In my opinion.
+Your algorithm looks like.
+If there is a solution.
+If this algorithm finds a solution.
+Then you are successful.
+But in the picture you just showed.
+It has those.
+How did you do that?
+Just.
+My.
+It looks like your algorithm.
+I haven't finished all the calculations.
+How do you know there is no solution?
+Um.
+This is a good question.
+I skipped it because I was in a hurry.
+Uh, because I know I can't.
+I can't.
+Explore all possibilities.
+So I have set a cutoff.
+Then.
+If the number of failures is greater than the cutoff.
+I said there was no solution.
+But maybe I'll be more serious.
+There will be a solution.
+If I wait long enough, there will be a solution.
+Yes, but on your picture.
+The part that is not solved.
+Isn't it white?
+Isn't the white part?
+Oh.
+The reason is because that picture.
+Is a very small example.
+So in that example.
+Basically I have all.
+All explored.
+All explored.
+But my question is.
+Your claim is.
+More than 80% of the.
+The problem will be solved.
+But.
+But in my opinion.
+It seems that the white part is more than the other parts.
+Isn't that just the case?
+My claim.
+My claim is.
+In this larger network.
+Is 80%.
+OK.
+But the example you just showed.
+The network is too small.
+Then the example I just showed.
+In fact, it may also be 80%.
+But it's just looking up here.
+Then.
+If there is a solution, it must be.
+If there is a solution, it must be.
+Oh.
+Um.
+This is the part I didn't talk about.
+Um.
+Because I.
+If this is too large.
+I will have a lot of possibilities.
+I need to find.
+So in this.
+I chose a number.
+Then I randomly.
+In all possibilities.
+After choosing this number.
+Then this.
+I figured out the number.
+The ratio.
+Then just.
+The one I just said.
+The example that adds up to 13.
+It's probably from here.
+So in other words.
+You would expect to say.
+Um.
+You would expect to say probably.
+Is less than.
+0.01.
+After you choose a size.
+Then you will feel all the possibilities.
+That's the one.
+Add up to that size.
+In those possibilities.
+It's probably 0.01.
+Find a simplicial.
+OK.
+Then we.
+We say he is.
+The method.
+There are two.
+One is that he has some obvious reasons.
+I was rejected.
+I think he won't have a simplicial possibility.
+For example.
+For example.
+My.
+For example.
+It's all 3 here.
+Add up to 15.
+But I only have 15 here.
+Or for example.
+Add up to 15.
+For example, here is 7.
+Then here is 8.
+Here is 8.
+Then here is 7.
+But this is 8.
+Then I was rejected.
+Is non-simplicial.
+There are many parts.
+It's a very simple reason.
+Then.
+There are quite a lot of parts.
+I set the cutoff.
+I gave up over time.
+Another question is.
+My other question is.
+You later.
+Said your.
+Turistic algorithm.
+He.
+Usually find less holes.
+Structure.
+Will this cause.
+After that.
+Randomize.
+Are you biased towards a certain structure?
+You may not be completely.
+Randomize your picture.
+I think this is also a very good question.
+Then.
+They.
+They did.
+This randomization.
+When this work.
+It's already in his paper.
+Explain that he thinks.
+They do this.
+Randomization.
+Explore this space.
+It's all connected.
+So you can find it all.
+That.
+So this should not be a problem.
+Then I do it myself.
+The test did not feel.
+I think.
+I can't find a data.
+Then from different starting points.
+Then see if he is.
+Different space.
+It feels like it's all converged.
+So this is a reasonable question.
+Then we.
+I have no evidence to say.
+It will be different.
+So I think.
+It's good to find one.
+The meaning of the so-called ergotic.
+Say.
+All possible.
+All possible.
+Those structures.
+In.
+After some kind of transformation.
+It will become another.
+The same thing.
+Then.
+But it can make a whole circle.
+All possible structures.
+Are interconnected.
+The way to connect is in that kind of swap.
+This thing.
+Will not let all possible.
+This instance.
+Split in half.
+OK.
+So use his method.
+All.
+All possible structures will be connected.
+So you run slowly.
+You will run across the entire network.
+Correct.
+But there are many problems here.
+That is.
+It may take a long time to run slowly.
+Correct.
+Just like the ergotic of physics.
+But.
+This job is to provide a starting point.
+Let people start from there.
+Thank you.
+Are there any questions here?
+OK.
+If not.
+Thank you.
+The recording is turned off.
+OK.

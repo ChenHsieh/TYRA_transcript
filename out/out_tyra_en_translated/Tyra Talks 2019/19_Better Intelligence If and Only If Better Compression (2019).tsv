@@ -1,0 +1,1656 @@
+start	end	text
+0	10000	The most direct benefit of this design is that,
+10000	18000	on average, each symbol's value,
+18000	25000	its frequency, and the frequency we represent.
+25000	29000	With this design, we can immediately see that
+29000	37000	by doing this, we can compress the data to theoretically the lowest length,
+37000	39000	which is Shannon Entropy.
+39000	42000	This is a pretty classic result.
+42000	44000	I guess a lot of people already know about it.
+44000	49000	But the discussion here is more like
+49000	54000	assuming that we already know the probability of X and Y.
+54000	57000	But in actual application,
+57000	60000	we usually don't know about it.
+60000	62000	We have to learn about it.
+62000	69000	Next, we will mainly discuss how to learn PX and PY.
+69000	76000	Next, we will relax the assumption a bit.
+76000	80000	Let's assume that we don't know PX and PY anymore.
+80000	85000	But we know that this input, 0001, 001,
+85000	89000	represents a person's routine.
+89000	92000	This person's routine is basically only
+92000	96000	sleeping, eating, and running.
+96000	100000	Let's assume that we know this,
+100000	104000	and we know that 00 means sleeping,
+104000	106000	and 01 means running.
+107000	112000	It's easy to predict what the next one will be.
+112000	116000	Because we know that this person is sleeping.
+116000	120000	The next thing he will do is probably running.
+120000	125000	So the next two symbols will probably be 01.
+125000	129000	Let's assume that we know
+130000	137000	that the source of this signal is a Markov chain.
+137000	140000	Then we can use the method of counting to know
+140000	143000	what the next step will be.
+143000	146000	For example, if we count to 10 times,
+146000	148000	6 times is running,
+148000	150000	2 times is eating,
+150000	156000	then we know that PY is probably equal to 0.6.
+156000	162000	But this is still not the same as what we actually encounter.
+162000	166000	Because we don't actually know if this 001, 001, 001
+166000	169000	represents a person's routine,
+169000	173000	or DNA, or a picture.
+173000	176000	So what do we do at this point?
+176000	182000	Later on, Leopold Zip came up with the idea that
+182000	188000	we assume that it is a Markov chain.
+188000	193000	We keep cutting the inputs.
+193000	199000	If we encounter a new chunk that we have never seen before,
+199000	202000	we treat it as a new chunk.
+202000	208000	For example, if the original data is A, B, R, A, C, A, D, A, B, R, A,
+208000	211000	Leopold Zip said, OK, we see A,
+211000	215000	so A is a chunk that we have never seen before.
+215000	218000	B is also a chunk that we have never seen before.
+218000	220000	R is also a chunk that we have never seen before.
+220000	224000	When it comes to A, we find that A has actually been seen before.
+224000	228000	So we can add E to A,
+228000	230000	the frequency of its appearance.
+230000	234000	So after R, the frequency of A's appearance is E.
+234000	237000	Next, we look at A, C.
+237000	240000	A, C is a chunk that we have never seen before,
+240000	243000	so it is a unit of its own.
+243000	246000	A has also been seen before, but A, D has not.
+246000	248000	And so on.
+248000	250000	After we chunk it up,
+250000	256000	we can treat it as a separate unit,
+256000	260000	and then count the frequency of A after B,
+260000	263000	and the frequency of R after A, C.
+263000	265000	In this way,
+265000	267000	we will be able to know
+267000	271000	the probability of each symbol.
+273000	278000	This is basically what we do on the computer.
+278000	281000	For those of you who are writing programs,
+281000	285000	we might use GZip or WinZip
+285000	288000	to compress these programs.
+288000	292000	When these WinZip and GZip programs are compressed,
+292000	295000	they are actually doing this thing
+295000	301000	to predict the probability of the next byte.
+301000	306000	And then do the arithmetic coding based on that.
+306000	310000	But there are a few drawbacks to doing this.
+310000	313000	There are two main drawbacks.
+313000	317000	The first drawback is
+317000	320000	that it does not use all the information
+320000	324000	in this whole string of words, A, B, R, A, C, A.
+324000	327000	For example, if we want to answer this question,
+327000	333000	what is the probability of seeing A after B, R?
+333000	337000	At this point, we haven't chunked B, R,
+337000	341000	so it might just use the number of times A appears.
+341000	346000	But we see that at least in this segment,
+346000	349000	after B, R appears, A always appears.
+349000	352000	So we know that the probability of A is very high.
+352000	355000	But if we use Lampell's Zip to chunk,
+355000	359000	we don't actually get this information.
+359000	361000	This is the first question.
+361000	364000	The second question is,
+364000	367000	let's say we want to know
+367000	372000	what B is after R, A, A.
+373000	379000	Because R, A, A is not in our chunk,
+379000	383000	so we just take the number of times B appears.
+383000	388000	But here, we already have
+388000	392000	the number of times A appears after B.
+392000	395000	We already have this information.
+395000	400000	Or if we have a lot of different prefixes
+400000	402000	that we can use,
+402000	405000	Lampell's Zip will only use one logic.
+405000	410000	If we have A, C,
+410000	413000	it will choose one randomly.
+413000	419000	At this point, it might not choose the right one.
+419000	424000	These are the two main shortcomings of Lampell's Zip.
+424000	432000	So how do we solve the shortcomings of Lampell's Zip?
+432000	436000	These shortcomings will be solved
+436000	441000	in the context-free weighting algorithm.
+441000	445000	The first shortcoming of Lampell's Zip is
+445000	448000	that some prefixes,
+448000	450000	although it sees them,
+450000	452000	it doesn't parse them.
+452000	454000	To solve this problem,
+454000	456000	it's very simple.
+456000	460000	We don't skip the symbol.
+460000	463000	Every time, we use one symbol
+463000	467000	to see how many prefixes are in front of it.
+467000	471000	This way, we can get all the prefixes.
+471000	473000	For example,
+473000	479000	let's say our data is 0100110.
+479000	483000	Let's record what happens
+483000	487000	after each prefix.
+487000	491000	We can see that after 110,
+491000	493000	there's a 0.
+493000	495000	So we can see that
+495000	497000	after 110,
+497000	499000	we can see that
+499000	501000	after 011,
+501000	503000	there's a 0.
+503000	505000	So we can record that
+505000	507000	after 011,
+507000	509000	there's a 0.
+509000	511000	And after 001,
+511000	513000	there's a 1.
+513000	515000	So after 001,
+515000	517000	there's a 1.
+517000	519000	If we do this slowly,
+519000	521000	we'll get a more comprehensive
+521000	523000	summary than Lampell's Zip.
+523000	525000	So this solves
+525000	527000	its first problem.
+527000	529000	Lampell's Zip has a second problem.
+529000	531000	Let's say
+531000	533000	a lot of prefixes
+533000	535000	don't satisfy
+535000	537000	the query we want.
+537000	539000	Which one should we choose?
+539000	541000	Specifically,
+541000	543000	let's say
+543000	545000	we already know
+545000	547000	the data is like this,
+547000	549000	and we want to know
+549000	551000	the probability of the 8th symbol
+551000	553000	being 0.
+553000	555000	We can frame this problem
+555000	557000	into
+557000	559000	the probability of 0
+559000	561000	after we see 0.
+561000	563000	At this point,
+563000	565000	let's say
+565000	567000	the first symbol is 0,
+567000	569000	and the second symbol
+569000	571000	is a 1.
+571000	573000	So the first symbol is 0,
+573000	575000	and the second symbol is 0.
+575000	577000	So the first symbol is 0,
+577000	579000	and the second symbol is 0.
+579000	581000	So the first symbol is 0,
+581000	583000	and the second symbol is 1.
+583000	585000	We'll have the same result.
+585000	587000	The probability of 0
+587000	589000	after 0 is 0.5.
+589000	591000	But we can also answer
+591000	593000	the 8th question
+593000	595000	from the perspective
+595000	597000	that the first symbol is 0, 1.
+597000	599000	If we look at it
+599000	601000	from this perspective,
+601000	603000	we'll find that
+603000	605000	if the first symbol is 0, 1,
+605000	607000	there will be a 0 after that.
+607000	609000	If the first symbol is 0, 1,
+609000	611000	there will be a 0 after that.
+611000	613000	So if we see 0, 1,
+613000	615000	the probability of 0
+615000	617000	is 100%.
+617000	619000	So we should
+619000	621000	choose
+621000	623000	which pattern
+623000	625000	to represent
+625000	627000	our probability.
+627000	629000	To solve this problem,
+629000	631000	we can
+631000	633000	use
+633000	635000	some
+635000	637000	principles
+637000	639000	of natural
+639000	641000	philosophy.
+641000	643000	One of the principles
+643000	645000	is that
+645000	647000	this is a philosophy,
+647000	649000	but we'll see
+649000	651000	how to define
+651000	653000	this philosophy
+653000	655000	to define it.
+655000	657000	In this philosophy,
+657000	659000	if there are many different
+659000	661000	theories that can
+661000	663000	explain a phenomenon,
+663000	665000	we have no choice
+665000	667000	but to keep all the theories.
+667000	669000	We can't say
+669000	671000	which theory is better.
+671000	673000	As long as the evidence
+673000	675000	is consistent,
+675000	677000	we'll see
+677000	679000	how to
+679000	681000	define it.
+681000	683000	Here,
+683000	685000	we can
+685000	687000	think of the problem
+687000	689000	as
+689000	691000	we already have the data.
+691000	693000	Which model
+693000	695000	should we use
+695000	697000	to explain the data?
+697000	699000	There are many different models.
+699000	701000	The first model is
+701000	703000	that we don't care about
+703000	705000	the probability of
+705000	707000	the next 0 or 1.
+707000	709000	This model
+709000	711000	is more
+711000	713000	complicated.
+713000	715000	It may use some
+715000	717000	prefixes.
+717000	719000	This model is more complicated.
+719000	721000	Which model
+721000	723000	should we use?
+727000	729000	If we accept
+729000	731000	this principle,
+731000	733000	it means
+733000	735000	we have to give
+735000	737000	each model
+737000	739000	a weight.
+739000	741000	How do we give
+741000	743000	each model a weight?
+743000	745000	This is what we
+745000	747000	are going to discuss.
+747000	749000	Here,
+749000	751000	we mainly want to
+751000	753000	use this model
+753000	755000	to
+755000	757000	visualize
+757000	759000	the weight.
+759000	761000	If we want to
+761000	763000	see the next 0 or 1,
+763000	765000	we can
+765000	767000	think of it as
+767000	769000	the weight of this model
+769000	771000	and this model.
+771000	773000	For this model,
+773000	775000	it is the weight of
+775000	777000	this model and this model.
+777000	779000	For this model,
+779000	781000	it is the weight of
+781000	783000	these five models.
+783000	785000	From the image,
+785000	787000	we can see
+787000	789000	two small models.
+789000	791000	Is there a way
+791000	793000	to know
+793000	795000	the weight of
+795000	797000	this large model?
+797000	799000	Let's assume we know
+799000	801000	the weight of the small model.
+801000	803000	Here, we have
+803000	805000	five parameters,
+805000	807000	w1', w2', w3'.
+807000	809000	In the
+809000	811000	wide field,
+811000	813000	this number
+813000	815000	may have
+815000	817000	an exponential value
+817000	819000	of 2.
+819000	821000	We need to
+821000	823000	calculate this number.
+823000	825000	Can we not
+825000	827000	calculate
+827000	829000	such a large number
+829000	831000	of numbers?
+831000	833000	Can we not
+833000	835000	use such a small number
+835000	837000	to calculate the weight?
+837000	839000	This is a problem
+839000	841000	we encounter in practice.
+841000	843000	To put it
+843000	845000	simply,
+845000	847000	the main
+847000	849000	insight here
+849000	851000	is that
+851000	853000	we can
+853000	855000	use the concept of
+855000	857000	multiplication
+857000	859000	to do
+859000	861000	recursive
+861000	863000	calculation.
+863000	865000	The main concept is that
+865000	867000	if
+867000	869000	p is equal to
+869000	871000	this,
+871000	873000	these two
+873000	875000	equations
+875000	877000	are like
+877000	879000	a cross-product
+879000	881000	of these four
+881000	883000	models.
+883000	885000	These four equations
+885000	887000	seem to
+887000	889000	describe
+889000	891000	these four equations.
+891000	893000	In the wide field,
+893000	895000	let's say
+895000	897000	we define
+897000	899000	a larger
+899000	901000	model.
+901000	903000	If we simply look at
+903000	905000	0, 1, 0, 1,
+905000	907000	and then add
+907000	909000	the numbers below
+909000	911000	to make
+911000	913000	a cross-product,
+913000	915000	we will get
+915000	917000	an N-square.
+917000	919000	If we define
+919000	921000	this weight,
+921000	923000	this seems to be
+923000	925000	an intuitive approach.
+925000	927000	In fact,
+927000	929000	this approach is correct.
+929000	931000	There are a few reasons
+931000	933000	why it is correct.
+933000	935000	One of the reasons
+935000	937000	is that
+937000	939000	when we define
+939000	941000	these weights,
+941000	943000	w1', w2', w3', w4',
+943000	945000	and we use
+945000	947000	recursive
+947000	949000	to define them,
+949000	951000	we will find that
+951000	953000	these w1', w2', w3', w4',
+953000	955000	and w5'
+955000	957000	are intuitive.
+957000	959000	For example,
+959000	961000	if we know that
+961000	963000	the number below is equal to 1,
+963000	965000	then the number above
+965000	967000	must be equal to 1.
+967000	969000	This is the first good quality.
+969000	971000	OK.
+971000	973000	There is
+973000	975000	a second
+975000	977000	intuitive
+977000	979000	recursive
+979000	981000	model
+981000	983000	to prove
+983000	985000	that it is a good model.
+985000	987000	The second
+987000	989000	good intuitive
+989000	991000	argument is that
+991000	993000	if we do this,
+993000	995000	we actually
+995000	997000	multiply
+997000	999000	the tree
+999000	1001000	of the
+1001000	1003000	two-dimensional
+1003000	1005000	number
+1005000	1007000	by its weight,
+1007000	1009000	which becomes
+1009000	1011000	the sum of
+1011000	1013000	the two dimensions.
+1013000	1015000	For example,
+1015000	1017000	there are many trees here.
+1017000	1019000	How much weight
+1019000	1021000	should we give to this tree?
+1021000	1023000	Basically,
+1023000	1025000	1 minus the position
+1025000	1027000	here,
+1027000	1029000	multiplied by 1 minus the position here,
+1029000	1031000	multiplied by the position here,
+1031000	1033000	multiplied by the position here.
+1033000	1035000	If it is not lift,
+1035000	1037000	it is 1 minus w.
+1037000	1039000	If it is lift,
+1039000	1041000	it is 1 minus w.
+1041000	1043000	So basically,
+1043000	1045000	what we are doing is
+1045000	1047000	giving these trees
+1047000	1049000	a weight,
+1049000	1051000	which is the sum of
+1051000	1053000	the two dimensions.
+1053000	1055000	Let's say
+1055000	1057000	there are
+1057000	1059000	some practical examples.
+1059000	1061000	Let's say
+1061000	1063000	there are
+1063000	1065000	these trees
+1065000	1067000	of the
+1067000	1069000	two dimensions.
+1069000	1071000	We will find that
+1071000	1073000	these w
+1073000	1075000	meet this formula.
+1075000	1077000	For example,
+1077000	1079000	if the top is 1,
+1079000	1081000	the next
+1081000	1083000	is 5.
+1083000	1085000	If this side is 1,
+1085000	1087000	the top is 5.
+1087000	1089000	If we do this,
+1089000	1091000	we will find that
+1091000	1093000	if we want to
+1093000	1095000	specify a tree,
+1095000	1097000	we need so many information,
+1097000	1099000	so many bits.
+1099000	1101000	Because we have
+1101000	1103000	different things
+1103000	1105000	to describe the
+1105000	1107000	two-dimensional
+1107000	1109000	tree,
+1109000	1111000	so we need
+1111000	1113000	two-dimensional bits
+1113000	1115000	to describe it.
+1115000	1117000	This is a big tree.
+1117000	1119000	Can we choose
+1119000	1121000	these w
+1121000	1123000	roots,
+1123000	1125000	so that
+1125000	1127000	we can use
+1127000	1129000	a shorter
+1129000	1131000	symbol to
+1131000	1133000	describe it?
+1133000	1135000	In fact,
+1135000	1137000	there is.
+1137000	1139000	This way is to
+1139000	1141000	turn these w into
+1141000	1143000	one-half.
+1143000	1145000	When we describe
+1145000	1147000	a tree,
+1147000	1149000	we use
+1149000	1151000	its
+1151000	1153000	prefix code
+1153000	1155000	to describe it.
+1155000	1157000	For example,
+1157000	1159000	this shape
+1159000	1161000	is 11000.
+1161000	1163000	Its length
+1163000	1165000	is 5.
+1165000	1167000	We don't need
+1167000	1169000	so many
+1169000	1171000	bits
+1171000	1173000	to describe it.
+1173000	1175000	So,
+1175000	1177000	when we put these things
+1177000	1179000	together,
+1179000	1181000	pw
+1181000	1183000	is about
+1183000	1185000	this formula.
+1185000	1187000	This formula can
+1187000	1189000	describe so many
+1189000	1191000	trees in a classic way
+1191000	1193000	to give it a reasonable weight.
+1193000	1195000	If we look at
+1195000	1197000	this formula again,
+1197000	1199000	we will find that
+1199000	1201000	after we do this,
+1201000	1203000	the weight of
+1203000	1205000	these different models
+1205000	1207000	is actually
+1207000	1209000	the same.
+1209000	1211000	For example,
+1211000	1213000	the bigger the tree,
+1213000	1215000	the smaller the weight.
+1215000	1217000	In short,
+1217000	1219000	we are using
+1219000	1221000	a common
+1221000	1223000	physical or
+1223000	1225000	scientific principle,
+1225000	1227000	Occam's razor.
+1227000	1229000	The simpler the
+1229000	1231000	explanation,
+1231000	1233000	the more likely
+1233000	1235000	it is.
+1235000	1237000	After doing this,
+1237000	1239000	we put
+1239000	1241000	all the things together
+1241000	1243000	to do a
+1243000	1245000	theoretical discussion
+1245000	1247000	to summarize
+1247000	1249000	pwz
+1249000	1251000	is a good
+1251000	1253000	compression.
+1253000	1255000	If n is large,
+1255000	1257000	it basically means
+1257000	1259000	that we already know
+1259000	1261000	whether it is a
+1261000	1263000	human shape,
+1263000	1265000	walking,
+1265000	1267000	or eating.
+1267000	1269000	For example,
+1269000	1271000	if n is large enough,
+1271000	1273000	we can always
+1273000	1275000	chunk it to the
+1275000	1277000	original chunk.
+1277000	1279000	There is a detail
+1279000	1281000	here.
+1281000	1283000	Many textbooks
+1283000	1285000	say that
+1285000	1287000	pwz
+1287000	1289000	is an optimal
+1289000	1291000	compression.
+1291000	1293000	The compression length
+1293000	1295000	minus the length
+1295000	1297000	divided by n
+1297000	1299000	is equal to
+1299000	1301000	1 divided by log n.
+1301000	1303000	They say
+1303000	1305000	every symbol
+1305000	1307000	has an error of 0.
+1307000	1309000	However,
+1309000	1311000	pwz is not optimal.
+1311000	1313000	Strictly speaking,
+1313000	1315000	it is not optimal
+1315000	1317000	because the error
+1317000	1319000	is not the fastest.
+1319000	1321000	pwz
+1321000	1323000	jumps over
+1323000	1325000	a lot of things.
+1325000	1327000	For example,
+1327000	1329000	when there are many explanations,
+1329000	1331000	pwz only jumps over
+1331000	1333000	an explanation
+1333000	1335000	that is not
+1335000	1337000	easy to understand.
+1337000	1339000	However,
+1339000	1341000	if we do this,
+1341000	1343000	we will find that
+1343000	1345000	pwz has an error of
+1345000	1347000	log n divided by n.
+1347000	1349000	However,
+1349000	1351000	pwz is faster
+1351000	1353000	than pwz.
+1353000	1355000	Here is
+1355000	1357000	an example of
+1357000	1359000	what the original
+1359000	1361000	source tree is.
+1361000	1363000	pwz
+1363000	1365000	is optimal,
+1365000	1367000	but strictly speaking,
+1367000	1369000	it is not optimal
+1369000	1371000	because the speed of
+1371000	1373000	pwz is not fast enough.
+1373000	1375000	In conclusion,
+1375000	1377000	we can discuss
+1377000	1379000	from a theoretical perspective
+1379000	1381000	that the speed of
+1381000	1383000	pwz has
+1383000	1385000	a limit.
+1385000	1387000	This limit is given
+1387000	1389000	by Riesenbaum.
+1389000	1391000	Riesenbaum said
+1391000	1393000	the compressed length
+1393000	1395000	minus the real length
+1395000	1397000	is always greater than
+1397000	1399000	k log n.
+1399000	1401000	So,
+1401000	1403000	let's go back
+1403000	1405000	to the
+1405000	1407000	asymptotic rate of
+1407000	1409000	ctw.
+1409000	1411000	In fact, ctw is
+1411000	1413000	the fastest speed in
+1413000	1415000	theory,
+1415000	1417000	which is log n divided by
+1417000	1419000	n.
+1419000	1421000	Suppose
+1421000	1423000	k is
+1423000	1425000	the freedom
+1425000	1427000	of the original
+1427000	1429000	signal source.
+1429000	1431000	The more complex
+1431000	1433000	the model is,
+1433000	1435000	the greater the error
+1435000	1437000	will be.
+1437000	1439000	Even if we use
+1439000	1441000	the strongest learning algorithm,
+1441000	1443000	the more complex
+1443000	1445000	the model is,
+1445000	1447000	the greater the error
+1447000	1449000	will be.
+1449000	1451000	So,
+1451000	1453000	in general,
+1453000	1455000	how to compress
+1455000	1457000	from better
+1457000	1459000	intelligence to better?
+1459000	1461000	This is the complexity itself.
+1461000	1463000	We know that
+1463000	1465000	traditionally,
+1465000	1467000	it is solved by
+1467000	1469000	arithmetic coding.
+1469000	1471000	In fact,
+1471000	1473000	there is a bigger problem.
+1473000	1475000	This is
+1475000	1477000	the price of learning.
+1477000	1479000	This is
+1479000	1481000	actually the biggest problem
+1481000	1483000	in practice.
+1483000	1485000	Because this problem is
+1485000	1487000	proportional to the length of the data.
+1487000	1489000	We can only compress it to the length of log n.
+1489000	1491000	And it is not only
+1491000	1493000	proportional to log n,
+1493000	1495000	but also directly
+1495000	1497000	proportional to the
+1497000	1499000	freedom of the problem itself.
+1499000	1501000	The more complex the problem is,
+1501000	1503000	the higher the price
+1503000	1505000	of learning the problem.
+1505000	1507000	The rest is
+1507000	1509000	what our
+1509000	1511000	researchers
+1511000	1513000	want to reduce to zero.
+1513000	1515000	We want to come up with
+1515000	1517000	a good algorithm
+1517000	1519000	to use
+1519000	1521000	a bad
+1521000	1523000	estimator.
+1523000	1525000	For example,
+1525000	1527000	we use a bad estimator
+1527000	1529000	to compare with
+1529000	1531000	the most efficient estimator.
+1531000	1533000	We should
+1533000	1535000	find a way to use this to zero.
+1535000	1537000	In summary,
+1537000	1539000	compressing is
+1539000	1541000	about three-thirds.
+1541000	1543000	We want to turn the last part
+1543000	1545000	to zero.
+1545000	1547000	We can see from the above
+1547000	1549000	that CT context tree weighting
+1549000	1551000	is close to
+1551000	1553000	the fastest speed
+1553000	1555000	in theory.
+1555000	1557000	It is a very efficient
+1557000	1559000	estimator.
+1559000	1561000	This is
+1561000	1563000	the part of the theory.
+1563000	1565000	The theory sounds
+1565000	1567000	perfect and amazing.
+1567000	1569000	Does this theory work?
+1569000	1571000	Here is
+1571000	1573000	an example.
+1573000	1575000	We want to compress
+1575000	1577000	this article.
+1577000	1579000	This article is
+1579000	1581000	Lincoln's
+1581000	1583000	Gettysburg Address,
+1583000	1585000	in English,
+1585000	1587000	7 years ago.
+1587000	1589000	This article
+1589000	1591000	has a capacity
+1591000	1593000	of about 1K.
+1593000	1595000	If we compress it
+1595000	1597000	with common
+1597000	1599000	compression methods,
+1599000	1601000	it can be compressed
+1601000	1603000	to this size.
+1603000	1605000	However, if we use CTW,
+1605000	1607000	it is more efficient in theory.
+1607000	1609000	If we use a better
+1609000	1611000	learning algorithm,
+1611000	1613000	we will find that
+1613000	1615000	it compresses less.
+1615000	1617000	This means that
+1617000	1619000	the better our
+1619000	1621000	prediction ability is,
+1621000	1623000	the less we can compress
+1623000	1625000	in total.
+1625000	1627000	This theory
+1627000	1629000	is correct.
+1629000	1631000	We have
+1631000	1633000	proved that
+1633000	1635000	we can get better
+1635000	1637000	compression from
+1637000	1639000	a better learning algorithm.
+1639000	1641000	What is more
+1641000	1643000	interesting
+1643000	1645000	is how to
+1645000	1647000	get better
+1647000	1649000	compression.
+1649000	1651000	Let's say
+1651000	1653000	every computer has
+1653000	1655000	WinZip.
+1655000	1657000	We can use WinZip.exe
+1657000	1659000	to do machine learning.
+1659000	1661000	Or we have a better
+1661000	1663000	compression method,
+1663000	1665000	TZ.
+1665000	1667000	We can use TZ
+1667000	1669000	to do better machine learning.
+1669000	1671000	I want to prove
+1671000	1673000	this thing
+1673000	1675000	from the point of view
+1675000	1677000	that
+1677000	1679000	we just said
+1679000	1681000	that wisdom is unpredictable.
+1681000	1683000	If we change the definition of
+1683000	1685000	wisdom to
+1685000	1687000	pattern,
+1687000	1689000	or to be more specific,
+1689000	1691000	if we treat wisdom
+1691000	1693000	as a non-supervised
+1693000	1695000	learning,
+1695000	1697000	unsupervised learning,
+1697000	1699000	can we prove
+1699000	1701000	that a better compression
+1701000	1703000	can do better
+1703000	1705000	unsupervised learning?
+1705000	1707000	I guess
+1707000	1709000	if we can do
+1709000	1711000	unsupervised learning,
+1711000	1713000	we can do a lot of
+1713000	1715000	smart things,
+1715000	1717000	like condensed
+1717000	1719000	method research,
+1719000	1721000	astronomy research,
+1721000	1723000	or more.
+1723000	1725000	To be more specific,
+1725000	1727000	when we do unsupervised learning,
+1727000	1729000	we want to answer
+1729000	1731000	if there are
+1731000	1733000	A, B, C,
+1733000	1735000	is A closer to B?
+1735000	1737000	Or is A closer to C?
+1737000	1739000	Or is B closer to C?
+1739000	1741000	So,
+1741000	1743000	unsupervised learning
+1743000	1745000	is about
+1745000	1747000	measuring
+1747000	1749000	how close
+1749000	1751000	or how different
+1751000	1753000	two things are.
+1753000	1755000	This is a
+1755000	1757000	simple
+1757000	1759000	structure to
+1759000	1761000	calculate
+1761000	1763000	the distance
+1763000	1765000	of two random things
+1765000	1767000	using
+1767000	1769000	this
+1769000	1771000	unsupervised learning
+1771000	1773000	algorithm.
+1773000	1775000	Let's say
+1775000	1777000	anything can
+1777000	1779000	become 010101.
+1779000	1781000	Let's say
+1781000	1783000	x is a
+1783000	1785000	0101 string,
+1785000	1787000	and kx is
+1787000	1789000	the length
+1789000	1791000	after the compression.
+1791000	1793000	Let's say
+1793000	1795000	we put x and y
+1795000	1797000	together
+1797000	1799000	to get this length.
+1799000	1801000	We know that
+1801000	1803000	when the compression
+1803000	1805000	is good,
+1805000	1807000	kxy is
+1807000	1809000	roughly equal to kyx.
+1809000	1811000	This is
+1811000	1813000	the notation
+1813000	1815000	for conditional probability.
+1815000	1817000	Let's say we have
+1817000	1819000	given x,
+1819000	1821000	how much
+1821000	1823000	extra length
+1823000	1825000	do we need to
+1825000	1827000	reconstruct y?
+1827000	1829000	The definition
+1829000	1831000	is kxy-kx.
+1831000	1833000	In other words,
+1833000	1835000	ky given x
+1835000	1837000	is the
+1837000	1839000	information
+1839000	1841000	in y but not in x.
+1841000	1843000	With this
+1843000	1845000	conditional definition,
+1845000	1847000	we know that
+1847000	1849000	for a good
+1849000	1851000	compression,
+1851000	1853000	we only need
+1853000	1855000	0 length to
+1855000	1857000	compress x.
+1857000	1859000	This
+1859000	1861000	ky given x
+1861000	1863000	is the total length.
+1863000	1865000	If we want to ask
+1865000	1867000	per unit symbol
+1867000	1869000	or per bit
+1869000	1871000	information in y
+1871000	1873000	but not in x,
+1873000	1875000	we can just
+1875000	1877000	multiply ky given x
+1877000	1879000	by y.
+1879000	1881000	This is
+1881000	1883000	like
+1883000	1885000	using a smart
+1885000	1887000	program to
+1887000	1889000	measure
+1889000	1891000	the information in y
+1891000	1893000	but not in x.
+1893000	1895000	The information
+1895000	1897000	in x
+1897000	1899000	can be calculated
+1899000	1901000	as how different
+1901000	1903000	the distance between
+1903000	1905000	y and x is.
+1905000	1907000	This is like
+1907000	1909000	the general purpose
+1909000	1911000	of unsupervised learning.
+1911000	1913000	Or the distance
+1913000	1915000	between two things.
+1915000	1917000	But this
+1917000	1919000	has reached
+1919000	1921000	our intuition.
+1921000	1923000	But there are some drawbacks.
+1923000	1925000	It's not symmetric.
+1925000	1927000	If we
+1927000	1929000	make some
+1929000	1931000	changes
+1931000	1933000	to max and max,
+1933000	1935000	we'll find that
+1935000	1937000	it's symmetric.
+1937000	1939000	And when
+1939000	1941000	y is greater than x,
+1941000	1943000	it will come here.
+1943000	1945000	Or if x is greater than y,
+1945000	1947000	it will come here.
+1947000	1949000	So if we define
+1949000	1951000	this as
+1951000	1953000	the distance between
+1953000	1955000	two things,
+1955000	1957000	it's symmetric.
+1957000	1959000	If we define it like this,
+1959000	1961000	we'll find that
+1961000	1963000	the length is too
+1963000	1965000	short.
+1965000	1967000	So this is like
+1967000	1969000	giving a compressed
+1969000	1971000	program, winzip.inxe,
+1971000	1973000	to calculate the distance
+1973000	1975000	between two things.
+1975000	1977000	So after we
+1977000	1979000	push it like this,
+1979000	1981000	we'll find that
+1981000	1983000	this method can give us
+1983000	1985000	a compressed program.
+1985000	1987000	We don't know what it does.
+1987000	1989000	But if it's good enough,
+1989000	1991000	it can help us
+1991000	1993000	figure out the distance
+1993000	1995000	between two things.
+1995000	1997000	So this idea
+1997000	1999000	is good in theory,
+1999000	2001000	but in practice,
+2001000	2003000	is it useful?
+2003000	2005000	Today, I'll give you
+2005000	2007000	two examples
+2007000	2009000	to show that
+2009000	2011000	it can be useful.
+2011000	2013000	In the first example,
+2013000	2015000	we want to solve
+2015000	2017000	biological problems.
+2017000	2019000	To be precise,
+2019000	2021000	we want to solve
+2021000	2023000	a problem
+2023000	2025000	among mammals.
+2025000	2027000	It's a problem
+2027000	2029000	they care about.
+2029000	2031000	This debate
+2031000	2033000	is a common
+2033000	2035000	debate in
+2035000	2037000	biology
+2037000	2039000	in the early 2000s.
+2039000	2041000	They debate
+2041000	2043000	whether humans
+2043000	2045000	are closer to pigs
+2045000	2047000	or mice.
+2047000	2049000	Some people
+2049000	2051000	say that
+2051000	2053000	humans are
+2053000	2055000	closer to
+2055000	2057000	pigs or mice.
+2057000	2059000	But if we
+2059000	2061000	look at other data,
+2061000	2063000	we'll find that
+2063000	2065000	humans are closer
+2065000	2067000	to mice.
+2067000	2069000	Can we use
+2069000	2071000	a compressed program to
+2071000	2073000	answer this question?
+2073000	2075000	To put it simply,
+2075000	2077000	if a monkey
+2077000	2079000	has this DNA,
+2079000	2081000	GTTAT,
+2081000	2083000	and a pig
+2083000	2085000	has this DNA,
+2085000	2087000	and we run
+2087000	2089000	a compressed program
+2089000	2091000	to calculate
+2091000	2093000	the information
+2093000	2095000	between these two
+2095000	2097000	DNAs,
+2097000	2099000	can we answer
+2099000	2101000	this question?
+2101000	2103000	We do this
+2103000	2105000	because it's
+2105000	2107000	quite different from
+2107000	2109000	traditional biology.
+2109000	2111000	Traditional biology
+2111000	2113000	uses a lot of
+2113000	2115000	biological information.
+2115000	2117000	For example,
+2117000	2119000	traditionally,
+2119000	2121000	we would
+2121000	2123000	do an alignment
+2123000	2125000	to these primitive data.
+2125000	2127000	This part
+2127000	2129000	should be compared
+2129000	2131000	with GTTAT.
+2131000	2133000	For example,
+2133000	2135000	three RNAs
+2135000	2137000	can form
+2137000	2139000	a condom.
+2139000	2141000	The third one
+2141000	2143000	in the condom
+2143000	2145000	is more likely to
+2145000	2147000	mutate,
+2147000	2149000	so we ignore it.
+2149000	2151000	It's like doing
+2151000	2153000	what we call
+2153000	2155000	feature engineering
+2155000	2157000	to get a result.
+2157000	2159000	Can we
+2159000	2161000	do feature engineering
+2161000	2163000	to compress
+2163000	2165000	raw data
+2165000	2167000	and get
+2167000	2169000	a pretty
+2169000	2171000	correct result?
+2171000	2173000	It looks like
+2173000	2175000	we can.
+2175000	2177000	The picture on the left
+2177000	2179000	is a winzip
+2179000	2181000	or gzip program.
+2181000	2183000	We get
+2183000	2185000	the classification of
+2185000	2187000	animal blood
+2187000	2189000	and DNA.
+2189000	2191000	We can see
+2191000	2193000	that it's
+2193000	2195000	pretty good.
+2195000	2197000	Horses and donkeys
+2197000	2199000	are pretty similar.
+2199000	2201000	Mice are the same.
+2201000	2203000	Humans and stars are the same.
+2203000	2205000	But it still has
+2205000	2207000	some problems.
+2207000	2209000	For example,
+2209000	2211000	this flying monkey is
+2211000	2213000	a monkey,
+2213000	2215000	so the monkey should be here.
+2215000	2217000	It also says
+2217000	2219000	that humans
+2219000	2221000	are closer to
+2221000	2223000	pigs and
+2223000	2225000	mice.
+2225000	2227000	This is gzip.
+2227000	2229000	We know
+2229000	2231000	that gzip is
+2231000	2233000	doing Lampel's Zip.
+2233000	2235000	When it predicts
+2235000	2237000	the next bit,
+2237000	2239000	the accuracy is not as high as
+2239000	2241000	CTW.
+2241000	2243000	If we use a better
+2243000	2245000	prediction of the future,
+2245000	2247000	we will find
+2247000	2249000	that the results
+2249000	2251000	are better.
+2251000	2253000	It has
+2253000	2255000	categorized the animals
+2255000	2257000	and said that humans are
+2257000	2259000	closer to pigs.
+2259000	2261000	This result
+2261000	2263000	matches
+2263000	2265000	traditional biology.
+2265000	2267000	The results are
+2267000	2269000	pretty consistent.
+2269000	2271000	This is
+2271000	2273000	the first example.
+2273000	2275000	We can use
+2275000	2277000	simple compression
+2277000	2279000	to get results
+2279000	2281000	that are more
+2281000	2283000	like traditional biology.
+2283000	2285000	It makes sense.
+2285000	2287000	We can also
+2287000	2289000	do
+2289000	2291000	different types of classification.
+2291000	2293000	We can also
+2293000	2295000	do some research
+2295000	2297000	on SARS
+2297000	2299000	virus DNA.
+2299000	2301000	Many people
+2301000	2303000	know that
+2303000	2305000	SARS virus
+2305000	2307000	was a big disease
+2307000	2309000	10 years ago.
+2309000	2311000	The mortality rate
+2311000	2313000	is very high.
+2313000	2315000	We still
+2315000	2317000	don't have a vaccine
+2317000	2319000	in 2019.
+2319000	2321000	Why do we
+2321000	2323000	have such a high mortality rate
+2323000	2325000	and no vaccine?
+2325000	2327000	Can we try to
+2327000	2329000	answer this question?
+2329000	2331000	We use
+2331000	2333000	compression to answer this question.
+2333000	2335000	The main concept is
+2335000	2337000	to compare it with
+2337000	2339000	other
+2339000	2341000	family viruses
+2341000	2343000	and do a classification study.
+2343000	2345000	We use it
+2345000	2347000	to do a study
+2347000	2349000	on the virus of
+2349000	2351000	colds, pigs, and mice.
+2351000	2353000	Our study
+2353000	2355000	has no
+2355000	2357000	feature engineering
+2357000	2359000	or
+2359000	2361000	heuristic.
+2361000	2363000	We use
+2363000	2365000	compression.
+2365000	2367000	Traditionally,
+2367000	2369000	biologists do
+2369000	2371000	a lot of
+2371000	2373000	heuristics.
+2373000	2375000	For example,
+2375000	2377000	biologists
+2377000	2379000	do DNA research.
+2379000	2381000	They use a database
+2381000	2383000	to calculate
+2383000	2385000	the probability of
+2385000	2387000	A mutating to D amino acid.
+2387000	2389000	They use
+2389000	2391000	a table
+2391000	2393000	to find
+2393000	2395000	the probability
+2395000	2397000	of A mutating to D amino acid.
+2397000	2399000	They use
+2399000	2401000	the probability of
+2401000	2403000	A mutating to D amino acid.
+2403000	2405000	If we
+2405000	2407000	use
+2407000	2409000	the compression
+2409000	2411000	and do the
+2411000	2413000	heuristic,
+2413000	2415000	we can see
+2415000	2417000	that
+2417000	2419000	phylogeny
+2419000	2421000	looks like this.
+2421000	2423000	We can see that
+2423000	2425000	SARS is
+2425000	2427000	very different
+2427000	2429000	from other
+2429000	2431000	known coronaviruses.
+2431000	2433000	It is a family.
+2433000	2435000	Moreover,
+2435000	2437000	coronaviruses
+2437000	2439000	have a family
+2439000	2441000	of mice and cows.
+2441000	2443000	Group 2 is
+2443000	2445000	a family of mice and cows.
+2445000	2447000	Cats and dogs
+2447000	2449000	are in the same family.
+2449000	2451000	This is the result
+2451000	2453000	we get
+2453000	2455000	from a wide
+2455000	2457000	compression.
+2457000	2459000	This result
+2459000	2461000	matches
+2461000	2463000	the science
+2463000	2465000	in this paper.
+2465000	2467000	The research
+2467000	2469000	shows that
+2469000	2471000	coronaviruses
+2471000	2473000	are divided into
+2473000	2475000	these groups.
+2475000	2477000	SARS is
+2477000	2479000	very unique.
+2479000	2481000	This explains
+2481000	2483000	why SARS has
+2483000	2485000	such a high mortality rate
+2485000	2487000	and has no vaccine.
+2487000	2489000	It is very different
+2489000	2491000	from other viruses.
+2491000	2493000	To sum up,
+2493000	2495000	we have
+2495000	2497000	not only
+2497000	2499000	compression,
+2499000	2501000	but also better compression
+2501000	2503000	to get better intelligence.
+2503000	2505000	Many people
+2505000	2507000	have
+2507000	2509000	applied
+2509000	2511000	compression
+2511000	2513000	to
+2513000	2515000	measure IQ
+2515000	2517000	and intelligence.
+2517000	2519000	We can use
+2519000	2521000	compression to measure IQ.
+2521000	2523000	If IQ is better,
+2523000	2525000	intelligence will be better.
+2525000	2527000	This is like
+2527000	2529000	a more scientific way
+2529000	2531000	to measure intelligence
+2531000	2533000	than the traditional
+2533000	2535000	IQ test.
+2535000	2537000	To be more specific,
+2537000	2539000	we know that
+2539000	2541000	human brain
+2541000	2543000	compresses English
+2543000	2545000	one bit per character.
+2545000	2547000	This is like
+2547000	2549000	the goal of artificial intelligence.
+2549000	2551000	Next,
+2551000	2553000	the second important message
+2553000	2555000	is that
+2555000	2557000	the most basic principle
+2557000	2559000	in science
+2559000	2561000	is
+2561000	2563000	the simpler the explanation,
+2563000	2565000	the more we should pay attention to it.
+2565000	2567000	This is a very
+2567000	2569000	correct philosophy.
+2569000	2571000	It can be transformed
+2571000	2573000	into a very quantitative way
+2573000	2575000	to measure
+2575000	2577000	these different assumptions.
+2577000	2579000	It is not only
+2579000	2581000	helpful to
+2581000	2583000	natural scientists,
+2583000	2585000	but also very useful
+2585000	2587000	in artificial intelligence.
+2587000	2589000	This is
+2589000	2591000	the end of
+2591000	2593000	today's lecture.
+2593000	2595000	In the end,
+2595000	2597000	I think
+2597000	2599000	lecture
+2599000	2601000	or class
+2601000	2603000	should be interactive.
+2603000	2605000	This is a
+2605000	2607000	very simple quiz.
+2607000	2609000	For example,
+2609000	2611000	if we look at
+2611000	2613000	this compressed format,
+2613000	2615000	the developer
+2615000	2617000	is not a
+2617000	2619000	random person.
+2619000	2621000	He is a serious person.
+2621000	2623000	This compressed format
+2623000	2625000	eventually
+2625000	2627000	compresses
+2627000	2629000	the information
+2629000	2631000	to zero.
+2631000	2633000	Is this right?
+2633000	2635000	Is this possible?
+2635000	2637000	This is a small quiz.
+2637000	2639000	If you are interested, you can go back and think about it.
+2639000	2641000	That's it.
+2641000	2643000	Thank you.
+2657000	2659000	Thank you,
+2659000	2661000	Fu Ming.
+2661000	2663000	Do the
+2663000	2665000	audience
+2665000	2667000	have any questions?
+2669000	2671000	Hello.
+2671000	2673000	Hello.
+2673000	2675000	I have two
+2675000	2677000	questions.
+2677000	2679000	The first one is
+2679000	2681000	about
+2681000	2683000	the experiment
+2683000	2685000	on supervised
+2685000	2687000	learning.
+2687000	2689000	Do you have
+2689000	2691000	other
+2691000	2693000	research on
+2693000	2695000	computational
+2695000	2697000	biology?
+2697000	2699000	I'm not familiar
+2699000	2701000	with computational biology,
+2701000	2703000	so I'm curious.
+2703000	2705000	The second question
+2705000	2707000	is
+2707000	2709000	about
+2709000	2711000	unsupervised learning.
+2711000	2713000	Are there
+2713000	2715000	other
+2715000	2717000	applications
+2717000	2719000	like
+2719000	2721000	this?
+2721000	2723000	It's similar to
+2723000	2725000	the classification of DNA.
+2725000	2727000	In the past,
+2727000	2729000	people collected
+2729000	2731000	a lot of documents
+2731000	2733000	to do unsupervised learning.
+2733000	2735000	For example,
+2735000	2737000	all novels
+2737000	2739000	written in English
+2739000	2741000	can be collected
+2741000	2743000	to do unsupervised learning.
+2743000	2745000	But
+2745000	2747000	when doing
+2747000	2749000	literature learning,
+2749000	2751000	the authors
+2751000	2753000	usually have
+2753000	2755000	a literature background.
+2755000	2757000	So, to achieve
+2757000	2759000	a certain goal,
+2759000	2761000	they need to
+2761000	2763000	process the documents
+2763000	2765000	like biologists.
+2765000	2767000	For example,
+2767000	2769000	if I want to classify
+2769000	2771000	a group of
+2771000	2773000	literary works
+2773000	2775000	to do unsupervised learning,
+2775000	2777000	I may not get
+2777000	2779000	a good result
+2779000	2781000	with raw data.
+2781000	2783000	Because each author
+2783000	2785000	has his own habits,
+2785000	2787000	and each author
+2787000	2789000	will become a group.
+2789000	2791000	So, they need
+2791000	2793000	some methods
+2793000	2795000	to do unsupervised learning.
+2795000	2797000	For example,
+2797000	2799000	cutting out outliers
+2799000	2801000	with high or low frequency.
+2801000	2803000	I heard
+2803000	2805000	that there is no research on this.
+2805000	2807000	I'm curious
+2807000	2809000	about the result
+2809000	2811000	of compressive approach.
+2811000	2813000	This is my second question.
+2815000	2817000	Yes,
+2817000	2819000	this is a very good question.
+2819000	2821000	Sorry,
+2821000	2823000	I talked too fast
+2823000	2825000	about the details of the experiment.
+2825000	2827000	We compare
+2827000	2829000	traditional literature
+2829000	2831000	with
+2831000	2833000	classical literature.
+2833000	2835000	In traditional literature,
+2835000	2837000	there is a way to measure
+2837000	2839000	which method is better.
+2839000	2841000	The main problem is
+2841000	2843000	that we can't
+2843000	2845000	calculate
+2845000	2847000	the distance
+2847000	2849000	between two things
+2849000	2851000	in the same way
+2851000	2853000	as in classical literature.
+2853000	2855000	So,
+2855000	2857000	the main way
+2857000	2859000	to measure
+2859000	2861000	the distance
+2861000	2863000	between two things
+2863000	2865000	is to use
+2865000	2867000	phylogeny
+2867000	2869000	to compare
+2869000	2871000	the distance
+2871000	2873000	between two things.
+2873000	2875000	To be more specific,
+2875000	2877000	when we
+2877000	2879000	study
+2879000	2881000	the evolution of
+2881000	2883000	proteins,
+2883000	2885000	we use
+2885000	2887000	mitochondrial genes.
+2887000	2889000	For example,
+2889000	2891000	in your second question,
+2891000	2893000	there are many different methods.
+2893000	2895000	In addition to
+2895000	2897000	mitochondrial genes,
+2897000	2899000	we use them
+2899000	2901000	because
+2901000	2903000	they were
+2903000	2905000	completely decoded
+2905000	2907000	earlier.
+2907000	2909000	Therefore,
+2909000	2911000	there are more documents.
+2911000	2913000	Later,
+2913000	2915000	when people's technology
+2915000	2917000	develops,
+2917000	2919000	they will use
+2919000	2921000	different kinds of genes
+2921000	2923000	or a series of
+2923000	2925000	transmitted amino acids
+2925000	2927000	to classify.
+2927000	2929000	Here,
+2929000	2931000	we mainly use
+2931000	2933000	the most traditional
+2933000	2935000	mitochondrial genes
+2935000	2937000	to classify
+2937000	2939000	and compare
+2939000	2941000	with the research
+2941000	2943000	on literature.
+2943000	2945000	For example,
+2945000	2947000	in the study
+2947000	2949000	on mammals,
+2949000	2951000	the later research
+2951000	2953000	may be different
+2953000	2955000	from the earlier research.
+2955000	2957000	However,
+2957000	2959000	here,
+2959000	2961000	we use
+2961000	2963000	mitochondrial DNA
+2963000	2965000	to classify
+2965000	2967000	and the results are
+2967000	2969000	quite similar.
+2969000	2971000	In fact,
+2971000	2973000	SARS-CoV-2
+2973000	2975000	has several stages.
+2975000	2977000	Here,
+2977000	2979000	we mainly use
+2979000	2981000	the S-protein stage
+2981000	2983000	to compare.
+2983000	2985000	S-protein is
+2985000	2987000	the shell of SARS or
+2987000	2989000	coronavirus.
+2989000	2991000	We know that
+2991000	2993000	the virus shell
+2993000	2995000	contains a lot of
+2995000	2997000	kind of needle signals.
+2997000	2999000	So,
+2999000	3001000	SARS-CoV-2
+3001000	3003000	will mutate
+3003000	3005000	its shell
+3005000	3007000	to pass through
+3007000	3009000	the membrane of
+3009000	3011000	another cell.
+3011000	3013000	The reason why
+3013000	3015000	we choose S-virus
+3015000	3017000	is because
+3017000	3019000	we can use
+3019000	3021000	the same data
+3021000	3023000	to compare
+3023000	3025000	with the
+3025000	3027000	literature on SARS.
+3027000	3029000	In fact,
+3029000	3031000	the S-protein
+3031000	3033000	is not the only
+3033000	3035000	variant of SARS.
+3035000	3037000	There are many
+3037000	3039000	other variants of SARS.
+3039000	3041000	I guess
+3041000	3043000	we can also use
+3043000	3045000	the S-protein.
+3045000	3047000	So,
+3047000	3049000	the first question
+3049000	3051000	is how to compare
+3051000	3053000	SARS-CoV-2
+3053000	3055000	with SARS-CoV-2.
+3055000	3057000	The second question is
+3057000	3059000	what is the difference
+3059000	3061000	between SARS-CoV-2
+3061000	3063000	and SARS-CoV-2
+3063000	3065000	in other fields?
+3065000	3067000	I know that
+3067000	3069000	there are many
+3069000	3071000	applications of
+3071000	3073000	SARS-CoV-2
+3073000	3075000	in other fields.
+3075000	3077000	For example,
+3077000	3079000	I know that
+3079000	3081000	some people
+3081000	3083000	apply the SARS-CoV-2
+3083000	3085000	and
+3085000	3087000	some people
+3087000	3089000	apply the SARS-CoV-2.
+3089000	3091000	Can we
+3091000	3093000	describe
+3093000	3095000	the similarities
+3095000	3097000	in the literature
+3097000	3099000	by saying
+3099000	3101000	this group is
+3101000	3103000	SARS-CoV-2
+3103000	3105000	and this group is
+3105000	3107000	SARS-CoV-2?
+3107000	3109000	I know that
+3109000	3111000	we can use
+3111000	3113000	punctuation
+3113000	3115000	to unify them.
+3115000	3117000	Or we can
+3117000	3119000	remove the blanks.
+3119000	3121000	When we don't do these things at all,
+3121000	3123000	we can classify the literature
+3123000	3125000	in a good way.
+3125000	3127000	In addition to the literature,
+3127000	3129000	I guess
+3129000	3131000	anything can be
+3131000	3133000	generalized.
+3133000	3135000	As long as it becomes 0101,
+3135000	3137000	it can be compressed.
+3137000	3139000	For example,
+3139000	3141000	we have these
+3141000	3143000	MIDI files.
+3143000	3145000	When we classify them,
+3145000	3147000	we will find that
+3147000	3149000	this group of MIDI files
+3149000	3151000	seems to be in the style of Bach.
+3151000	3153000	This group of MIDI files
+3153000	3155000	is in the style of Beethoven.
+3155000	3157000	We can classify them.
+3157000	3159000	I know that
+3159000	3161000	in science,
+3161000	3163000	for example,
+3163000	3165000	in astronomy,
+3165000	3167000	we classify
+3167000	3169000	this group of light
+3169000	3171000	with the change of time.
+3171000	3173000	It probably has this change.
+3173000	3175000	It probably has this change.
+3175000	3177000	It may be a cycle
+3177000	3179000	or it is a change
+3179000	3181000	that goes up slowly.
+3181000	3183000	And this group of astronomical objects
+3183000	3185000	may be this picture.
+3185000	3187000	Its light curve looks like this.
+3187000	3189000	When we classify these series,
+3189000	3191000	we will find that
+3191000	3193000	this group of astronomical objects
+3193000	3195000	are all supernovae.
+3195000	3197000	They probably look like this.
+3197000	3199000	This group of objects
+3199000	3201000	is a supernova.
+3201000	3203000	So I know that
+3203000	3205000	it can be applied
+3205000	3207000	in other fields.
+3207000	3209000	Yes.
+3209000	3211000	Thank you.
+3211000	3213000	Thank you.
+3223000	3225000	Are there any questions
+3225000	3227000	from the audience?
+3231000	3233000	I have a question.
+3233000	3235000	Yes.
+3235000	3237000	I want to ask
+3237000	3239000	about the CTW
+3239000	3241000	compression method.
+3241000	3243000	It is successful in many areas.
+3243000	3245000	Is there any situation
+3245000	3247000	where it doesn't perform so well?
+3247000	3249000	Do you know why?
+3251000	3253000	Yes.
+3253000	3255000	CTW
+3255000	3257000	has a problem.
+3259000	3261000	The algorithm
+3261000	3263000	must know in advance
+3263000	3265000	how long
+3265000	3267000	the tree is.
+3267000	3269000	For example,
+3269000	3271000	our example is 3.
+3271000	3273000	Theoretically,
+3273000	3275000	if we
+3275000	3277000	only count
+3277000	3279000	the prefix to 3,
+3279000	3281000	the pattern
+3281000	3283000	of this data
+3283000	3285000	must be
+3285000	3287000	4
+3287000	3289000	or 5 symbols
+3289000	3291000	before.
+3291000	3293000	If we only limit it to 3,
+3293000	3295000	logically,
+3295000	3297000	the algorithm will learn
+3297000	3299000	the pattern.
+3299000	3301000	This problem
+3301000	3303000	has a specific
+3303000	3305000	representation
+3305000	3307000	in the data of the image.
+3307000	3309000	We know that
+3309000	3311000	the pixels on my left
+3311000	3313000	should be
+3313000	3315000	the same color.
+3315000	3317000	Not only on my left,
+3317000	3319000	but also on my top and bottom
+3319000	3321000	should be the same color.
+3321000	3323000	But if we change
+3323000	3325000	the pattern
+3325000	3327000	row by row,
+3327000	3329000	we will find that
+3329000	3331000	the upper and lower pixels
+3331000	3333000	should be the same color.
+3333000	3335000	The pattern
+3335000	3337000	depends on
+3337000	3339000	the width,
+3339000	3341000	for example,
+3341000	3343000	600x400.
+3343000	3345000	It depends on 400 pixels
+3345000	3347000	and 400 symbols
+3347000	3349000	to learn the pattern.
+3349000	3351000	I guess
+3351000	3353000	this is the main reason.
+3353000	3355000	The reason
+3355000	3357000	we can't
+3357000	3359000	extend
+3359000	3361000	the depth of the tree
+3361000	3363000	is because
+3363000	3365000	to build a tree,
+3365000	3367000	the memory
+3367000	3369000	needs
+3369000	3371000	the growth of the
+3371000	3373000	pixel type.
+3373000	3375000	The growth of the pixel type
+3375000	3377000	is hard to
+3377000	3379000	calculate
+3379000	3381000	because the
+3381000	3383000	number of pixels
+3383000	3385000	is small.
+3385000	3387000	I guess this is
+3387000	3389000	the biggest problem.
+3389000	3391000	I see.
+3391000	3393000	Hello,
+3393000	3395000	Fumi.
+3395000	3397000	Hello,
+3397000	3399000	A-Pad.
+3399000	3401000	I want to ask
+3401000	3403000	a question
+3403000	3405000	that is not
+3405000	3407000	related to
+3407000	3409000	randomness.
+3409000	3411000	For example,
+3411000	3413000	if we put a
+3413000	3415000	bunch of data
+3415000	3417000	into the tree,
+3417000	3419000	will it
+3419000	3421000	get any result?
+3421000	3423000	For randomness,
+3423000	3425000	we will find
+3425000	3427000	that
+3427000	3429000	if we
+3429000	3431000	follow
+3431000	3433000	the formula,
+3433000	3435000	we will find
+3435000	3437000	that the kx
+3437000	3439000	is equal to
+3439000	3441000	itself.
+3441000	3443000	We are trying to
+3443000	3445000	find the probability.
+3445000	3447000	If we
+3447000	3449000	follow the formula,
+3449000	3451000	it will be equal to itself.
+3451000	3453000	The data
+3453000	3455000	is the only
+3455000	3457000	data in the world.
+3457000	3459000	I guess
+3459000	3461000	the result is
+3461000	3463000	something special.
+3465000	3467000	I see.
+3467000	3469000	Yes, intuitively.
+3479000	3481000	Does anyone
+3481000	3483000	have other questions?
+3483000	3485000	Can I ask
+3485000	3487000	one more question?
+3487000	3489000	Sure.
+3489000	3491000	You mentioned
+3491000	3493000	that CTW cannot
+3493000	3495000	be compressed.
+3495000	3497000	In fact,
+3497000	3499000	there are a lot of
+3499000	3501000	compressed files.
+3501000	3503000	Compressed files
+3503000	3505000	are designed to
+3505000	3507000	look up and down.
+3511000	3513000	Can CTW
+3513000	3515000	be designed to
+3515000	3517000	look up and left?
+3517000	3519000	Something like that.
+3519000	3521000	And then build the tree.
+3521000	3523000	That's it.
+3525000	3527000	I guess
+3527000	3529000	it is possible.
+3529000	3531000	For example,
+3531000	3533000	if the tree
+3533000	3535000	has only two branches,
+3535000	3537000	I guess
+3537000	3539000	the tree can have
+3539000	3541000	more branches.
+3551000	3553000	I know
+3553000	3555000	a lot of papers
+3555000	3557000	are working on
+3557000	3559000	this kind of improvement.
+3559000	3561000	I guess
+3561000	3563000	some people's improvement is
+3563000	3565000	that CTW
+3565000	3567000	is designed to
+3567000	3569000	look up and down.
+3569000	3571000	Some papers
+3571000	3573000	are
+3573000	3575000	designed to
+3575000	3577000	skip some syntax.
+3577000	3580000	Skip some syntax.
+3607000	3609000	Hello?
+3629000	3631000	Hello?
+3631000	3633000	Hello?
+3633000	3635000	Hello?
+3635000	3637000	I wasn't talking just now.
+3637000	3639000	I'm afraid my internet is broken.
+3639000	3641000	Okay.
+3641000	3643000	I'd like to ask
+3643000	3645000	if there are any other questions.
+3649000	3651000	Okay.
+3651000	3653000	If you haven't joined
+3653000	3655000	TaiwaR,
+3655000	3657000	please use the link in the chat.
+3657000	3659000	Thank you again for
+3659000	3661000	the wonderful speech.
+3661000	3663000	Thank you.
+3665000	3667000	If you have any questions,
+3667000	3669000	you can discuss in private.
+3669000	3671000	You can also
+3671000	3673000	use the link in the chat.
+3673000	3675000	Thank you.
+3675000	3677000	See you next time.
+3677000	3679000	Bye.

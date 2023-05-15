@@ -1,0 +1,4286 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+Hello, everyone. I'm very happy to be here for the fifth session of the Project TARA summer series.
+
+00:10.000 --> 00:16.000
+Today's event is a scientific drawing sharing by Professor Liu Junlin.
+
+00:16.000 --> 00:20.000
+I'll quickly introduce Professor Liu's background.
+
+00:20.000 --> 00:29.000
+Professor Liu is currently studying electrical engineering at National Taiwan University.
+
+00:29.000 --> 00:34.000
+He is currently working as an assistant professor.
+
+00:34.000 --> 00:42.000
+In 2010, he obtained a master's degree in electrical engineering at National Taiwan University.
+
+00:42.000 --> 00:46.000
+Later, he obtained a master's degree in telecommunications.
+
+00:46.000 --> 00:51.000
+In 2018, he obtained a doctorate in Caltech.
+
+00:51.000 --> 01:00.000
+His research interests include Sparse Error Signal Processing and Statistical Signal Processing.
+
+01:00.000 --> 01:06.000
+Today, Professor Liu will share with us his experience in latex.
+
+01:06.000 --> 01:10.000
+On behalf of the audience, I welcome Professor Liu's speech.
+
+01:10.000 --> 01:13.000
+Now, I'll give Professor Liu the floor. Thank you.
+
+01:15.000 --> 01:19.000
+Thank you very much for the introduction.
+
+01:19.000 --> 01:21.000
+Did you hear my voice?
+
+01:26.000 --> 01:28.000
+Okay, thank you.
+
+01:28.000 --> 01:32.000
+Thank you for the invitation to Project TARA.
+
+01:32.000 --> 01:42.000
+It's an honor for me to share my experience in latex.
+
+01:43.000 --> 01:59.000
+In my presentation, I will introduce my experience in latex and some basic ideas.
+
+01:59.000 --> 02:09.000
+If you have any questions or ideas during the presentation, please feel free to ask.
+
+02:10.000 --> 02:16.000
+Now, let's move on to today's presentation.
+
+02:16.000 --> 02:21.000
+Today is the fifth session of our summer special event.
+
+02:21.000 --> 02:23.000
+We will talk about scientific drawing.
+
+02:23.000 --> 02:26.000
+We will mainly use the latex tool.
+
+02:26.000 --> 02:30.000
+Before we start, I would like to ask the audience,
+
+02:31.000 --> 02:36.000
+Have you ever heard of the term latex?
+
+02:36.000 --> 02:39.000
+Can you raise your hand or make a sound?
+
+02:44.000 --> 02:50.000
+I see some of the audience in the chat have heard of it.
+
+02:50.000 --> 02:59.000
+For those who have heard of it, they may think that latex is a tool for writing papers.
+
+02:59.000 --> 03:03.000
+Why put it under the theme of scientific drawing?
+
+03:03.000 --> 03:08.000
+This is what I want to share with you today.
+
+03:08.000 --> 03:13.000
+Latex actually has some relative tools that can be used for scientific drawing.
+
+03:13.000 --> 03:17.000
+I also have some relative experience.
+
+03:17.000 --> 03:20.000
+Let's continue our presentation.
+
+03:20.000 --> 03:26.000
+First of all, I will do a simple introduction.
+
+03:26.000 --> 03:29.000
+Then I will take some time to introduce latex.
+
+03:29.000 --> 03:36.000
+If some of the audience has not heard of it or is not familiar with some of the details,
+
+03:36.000 --> 03:41.000
+I will take some time to introduce what latex is to the audience.
+
+03:41.000 --> 03:50.000
+The third part is that I will specifically mention a term called PGFTIKZ.
+
+03:50.000 --> 03:53.000
+It can be a good combination with latex.
+
+03:53.000 --> 03:56.000
+I will also mention some related examples.
+
+03:56.000 --> 04:02.000
+Finally, I will explain some related resources to you.
+
+04:02.000 --> 04:07.000
+If you are interested, you can use it as a reference.
+
+04:07.000 --> 04:10.000
+Today's topic is scientific drawing.
+
+04:10.000 --> 04:16.000
+I believe that most of the audience is academic background.
+
+04:16.000 --> 04:19.000
+So in the academic background,
+
+04:19.000 --> 04:23.000
+you often need to do an academic expression.
+
+04:23.000 --> 04:25.000
+What is academic expression?
+
+04:25.000 --> 04:28.000
+You may need to write a paper.
+
+04:28.000 --> 04:31.000
+Or you need to write a verbal report.
+
+04:31.000 --> 04:34.000
+Today's occasion is more like a verbal report.
+
+04:34.000 --> 04:39.000
+In some occasions, you will need to make a poster report.
+
+04:39.000 --> 04:46.000
+These are some media that are academic in expressing some concepts or more complex ideas.
+
+04:46.000 --> 04:52.000
+It may be in the form of an article, a video, or a poster.
+
+04:52.000 --> 04:54.000
+In these forms,
+
+04:54.000 --> 05:00.000
+this chart is actually a very efficient way of communication.
+
+05:00.000 --> 05:01.000
+You can imagine that
+
+05:01.000 --> 05:06.000
+when you have a more complex concept that needs to be explained,
+
+05:06.000 --> 05:09.000
+if you use a lot of very long sentences to explain
+
+05:09.000 --> 05:12.000
+and draw a simple chart,
+
+05:12.000 --> 05:15.000
+everyone can see it clearly.
+
+05:15.000 --> 05:20.000
+Usually, most readers prefer to use charts
+
+05:20.000 --> 05:24.000
+to make a conceptual expression.
+
+05:24.000 --> 05:30.000
+So if you want to add some charts to your post,
+
+05:30.000 --> 05:33.000
+the next question is
+
+05:33.000 --> 05:37.000
+which interface to use to generate this chart?
+
+05:37.000 --> 05:40.000
+I believe I mentioned two weeks ago that
+
+05:40.000 --> 05:45.000
+you can use Illustrator to draw some pretty charts.
+
+05:45.000 --> 05:47.000
+The theme of this week is
+
+05:47.000 --> 05:52.000
+I want to use the Latex language interface.
+
+05:52.000 --> 05:56.000
+It actually has some corresponding kits and tools
+
+05:56.000 --> 06:00.000
+to create some nice charts.
+
+06:01.000 --> 06:06.000
+Let me quickly use a sentence to explain what Latex is.
+
+06:06.000 --> 06:09.000
+It's actually a layout system.
+
+06:09.000 --> 06:12.000
+What this layout system does is
+
+06:12.000 --> 06:17.000
+a lot of text files
+
+06:17.000 --> 06:19.000
+after a series of compilation processes
+
+06:19.000 --> 06:24.000
+are laid out into the file files you see.
+
+06:24.000 --> 06:26.000
+So in fact, like the video I reported today,
+
+06:26.000 --> 06:28.000
+I also did it with Latex.
+
+06:28.000 --> 06:30.000
+In fact, there are a lot of
+
+06:30.000 --> 06:33.000
+text compilations behind it.
+
+06:33.000 --> 06:36.000
+These text compilations will tell us
+
+06:36.000 --> 06:38.000
+what words are in this page,
+
+06:38.000 --> 06:40.000
+what color are these words,
+
+06:40.000 --> 06:44.000
+what are the order of these items,
+
+06:44.000 --> 06:45.000
+and so on.
+
+06:45.000 --> 06:48.000
+It will compile such a file.
+
+06:48.000 --> 06:50.000
+Latex is a layout software.
+
+06:50.000 --> 06:54.000
+It can compile a file based on such compilations
+
+06:54.000 --> 06:59.000
+to look like the one you see in the video.
+
+06:59.000 --> 07:03.000
+Let's quickly talk about PGF and TIKZ.
+
+07:03.000 --> 07:05.000
+PGF is actually called
+
+07:05.000 --> 07:08.000
+Portable Graphics Format.
+
+07:08.000 --> 07:10.000
+In fact, what everyone is familiar with
+
+07:10.000 --> 07:13.000
+is the language of TIKZ.
+
+07:13.000 --> 07:16.000
+It's actually a Latex kit.
+
+07:16.000 --> 07:22.000
+This kit is for drawing some charts,
+
+07:22.000 --> 07:24.000
+especially when you use a compilation method
+
+07:24.000 --> 07:25.000
+to describe a chart.
+
+07:25.000 --> 07:29.000
+There are some particularly useful methods.
+
+07:29.000 --> 07:30.000
+In the remaining time,
+
+07:30.000 --> 07:32.000
+I will also mention one called PGF Plots.
+
+07:32.000 --> 07:35.000
+It is also a Latex kit.
+
+07:35.000 --> 07:40.000
+It can draw some common charts.
+
+07:40.000 --> 07:42.000
+After using it myself,
+
+07:42.000 --> 07:46.000
+I feel like I want to share it with you.
+
+07:46.000 --> 07:49.000
+So today I will focus on
+
+07:49.000 --> 07:52.000
+introducing these tools
+
+07:52.000 --> 07:57.000
+and some of my personal experience.
+
+07:57.000 --> 07:59.000
+This is a general idea
+
+07:59.000 --> 08:03.000
+that we will go through today.
+
+08:03.000 --> 08:06.000
+Next, I will show you a chart.
+
+08:06.000 --> 08:08.000
+Let me tell you about this chart first.
+
+08:08.000 --> 08:11.000
+This chart is a chart I took
+
+08:11.000 --> 08:14.000
+from my class video.
+
+08:14.000 --> 08:20.000
+I want to use this chart to give you an example.
+
+08:20.000 --> 08:27.000
+First of all, when you look at this chart,
+
+08:27.000 --> 08:30.000
+you see a lot of words,
+
+08:30.000 --> 08:34.000
+a lot of shapes, a lot of colors.
+
+08:34.000 --> 08:36.000
+Here is an example of this chart.
+
+08:36.000 --> 08:39.000
+In fact, to describe this chart,
+
+08:39.000 --> 08:43.000
+it can be divided into several steps.
+
+08:43.000 --> 08:49.000
+One step is the words marked above.
+
+08:49.000 --> 08:52.000
+For example, you see a lot of words up here.
+
+08:52.000 --> 08:55.000
+Then there are some relative numerals.
+
+08:55.000 --> 08:58.000
+There are also some relative words and numerals below.
+
+08:58.000 --> 09:03.000
+So if you want to express a concept clearly,
+
+09:03.000 --> 09:07.000
+there may be some relative numbers of words above.
+
+09:07.000 --> 09:09.000
+In this chart,
+
+09:09.000 --> 09:12.000
+you can also see some relative shapes.
+
+09:15.000 --> 09:20.000
+For example, you can see a lot of squares here.
+
+09:20.000 --> 09:24.000
+Then there are a lot of regular squares lined up.
+
+09:24.000 --> 09:28.000
+Of course, the focus of today's speech
+
+09:28.000 --> 09:30.000
+is not to introduce these details.
+
+09:30.000 --> 09:34.000
+I mainly use this chart to give you an example.
+
+09:34.000 --> 09:36.000
+To produce this chart,
+
+09:36.000 --> 09:41.000
+you need to have some descriptions of the shapes.
+
+09:41.000 --> 09:44.000
+Then you may need to do something like
+
+09:44.000 --> 09:49.000
+drawing a line to produce this chart.
+
+09:49.000 --> 09:52.000
+So you can see that there are
+
+09:52.000 --> 09:54.000
+all kinds of lines between different squares.
+
+09:54.000 --> 09:57.000
+There are green lines, there are orange lines,
+
+09:57.000 --> 10:02.000
+and there may be some relatively small words marked above.
+
+10:03.000 --> 10:05.000
+So usually on this kind of expression,
+
+10:05.000 --> 10:08.000
+there may be some colors
+
+10:08.000 --> 10:15.000
+or some relative text styles.
+
+10:15.000 --> 10:19.000
+These may be some points that you can focus on
+
+10:19.000 --> 10:23.000
+when designing the chart.
+
+10:23.000 --> 10:27.000
+You may see this chart and think
+
+10:27.000 --> 10:31.000
+that it seems to contain a lot of details.
+
+10:31.000 --> 10:32.000
+Let me explain to you first.
+
+10:32.000 --> 10:36.000
+This is actually one of the pages of the last video.
+
+10:36.000 --> 10:40.000
+The complete version actually has a relative animation.
+
+10:40.000 --> 10:42.000
+That is to say, different colors,
+
+10:42.000 --> 10:46.000
+different labels will gradually appear.
+
+10:46.000 --> 10:53.000
+But here is just to give you a demonstration and reference.
+
+10:53.000 --> 10:58.000
+If you have any questions during the listening process,
+
+10:58.000 --> 11:01.000
+you are very welcome to make a question.
+
+11:01.000 --> 11:05.000
+Then we can have a discussion at the moment.
+
+11:05.000 --> 11:07.000
+If you don't have any questions,
+
+11:07.000 --> 11:09.000
+let me introduce the tools now.
+
+11:09.000 --> 11:12.000
+My takeaway today is that
+
+11:12.000 --> 11:15.000
+I hope you will have some ideas
+
+11:15.000 --> 11:17.000
+about how to produce this kind of chart
+
+11:17.000 --> 11:19.000
+after listening to it.
+
+11:19.000 --> 11:21.000
+Of course, how to produce it in detail
+
+11:21.000 --> 11:24.000
+will be related to the instructions for this chart.
+
+11:24.000 --> 11:28.000
+But I hope to inspire you to say
+
+11:28.000 --> 11:31.000
+that if you want to produce this kind of chart,
+
+11:31.000 --> 11:34.000
+how to do it with Latex?
+
+11:34.000 --> 11:38.000
+First, let me introduce this Latex.
+
+11:38.000 --> 11:41.000
+Latex, as I just mentioned,
+
+11:41.000 --> 11:43.000
+is a layout software.
+
+11:43.000 --> 11:48.000
+In fact, it is not a single software.
+
+11:48.000 --> 11:53.000
+It has a relatively advanced layout system.
+
+11:53.000 --> 11:56.000
+I listed a few here.
+
+11:56.000 --> 11:59.000
+For example, if you have more research
+
+11:59.000 --> 12:02.000
+on the details of this kind of Latex,
+
+12:02.000 --> 12:05.000
+it is actually divided into a Plantex.
+
+12:05.000 --> 12:08.000
+It is the most primitive version.
+
+12:08.000 --> 12:12.000
+Later, someone based on this Plantex
+
+12:12.000 --> 12:14.000
+to make some improvements,
+
+12:14.000 --> 12:19.000
+such as improving Latex or PDF Latex
+
+12:19.000 --> 12:22.000
+or some extension versions
+
+12:22.000 --> 12:25.000
+that can be compiled into Chinese.
+
+12:25.000 --> 12:28.000
+But these are all relative technical details.
+
+12:28.000 --> 12:32.000
+It actually has a relative development history.
+
+12:32.000 --> 12:36.000
+I think today's topic is more scientific.
+
+12:36.000 --> 12:38.000
+So I probably won't do
+
+12:38.000 --> 12:41.000
+a detailed analysis of these items.
+
+12:41.000 --> 12:44.000
+What you hear is to get a concept first.
+
+12:44.000 --> 12:46.000
+It's basically a...
+
+12:46.000 --> 12:49.000
+If you have some writing experience,
+
+12:49.000 --> 12:51.000
+you can think of it as
+
+12:51.000 --> 12:53.000
+something like a compiler.
+
+12:53.000 --> 12:57.000
+It stores some text information
+
+12:57.000 --> 13:00.000
+and then does some interpretation and analysis
+
+13:00.000 --> 13:02.000
+according to these text contents,
+
+13:02.000 --> 13:05.000
+and then produces a relative file.
+
+13:05.000 --> 13:07.000
+When you look at the paper,
+
+13:07.000 --> 13:09.000
+in fact, a more common file format
+
+13:09.000 --> 13:12.000
+should be a PDF format.
+
+13:12.000 --> 13:16.000
+So this Latex,
+
+13:16.000 --> 13:21.000
+it's a relatively common design,
+
+13:21.000 --> 13:25.000
+that is, the step of producing a file is
+
+13:25.000 --> 13:28.000
+that the user actually compiles a text file.
+
+13:28.000 --> 13:32.000
+The alias of this text file is .tex.
+
+13:32.000 --> 13:36.000
+And then after some proper compilation,
+
+13:36.000 --> 13:38.000
+it can produce a PDF file.
+
+13:38.000 --> 13:41.000
+This PDF is a bit like the PDF files
+
+13:41.000 --> 13:44.000
+you see when you read the paper.
+
+13:44.000 --> 13:49.000
+So this is a basic process of Latex.
+
+13:49.000 --> 13:53.000
+In fact, if you are not familiar with
+
+13:53.000 --> 13:57.000
+this process,
+
+13:57.000 --> 14:02.000
+if you have used Word
+
+14:02.000 --> 14:07.000
+to write documents,
+
+14:07.000 --> 14:10.000
+this Word file basically means
+
+14:10.000 --> 14:12.000
+that you have a full window screen.
+
+14:12.000 --> 14:14.000
+In this window screen,
+
+14:14.000 --> 14:17.000
+suppose you have a full window screen,
+
+14:17.000 --> 14:19.000
+you can do something under this screen,
+
+14:19.000 --> 14:21.000
+such as inputting text and inserting a picture,
+
+14:21.000 --> 14:24.000
+or doing some editing.
+
+14:24.000 --> 14:26.000
+This kind of compiler is more like
+
+14:26.000 --> 14:31.000
+you can see the file at the moment of editing.
+
+14:31.000 --> 14:34.000
+What does it look like?
+
+14:34.000 --> 14:37.000
+This Latex is another kind.
+
+14:37.000 --> 14:39.000
+It's a little bit more indirect.
+
+14:39.000 --> 14:41.000
+When you are operating,
+
+14:41.000 --> 14:44.000
+it's actually editing a text file.
+
+14:44.000 --> 14:47.000
+The text file is just describing
+
+14:47.000 --> 14:51.000
+what the final document should look like
+
+14:51.000 --> 14:54.000
+in a narrative language.
+
+14:54.000 --> 14:56.000
+So when you are editing a text file,
+
+14:56.000 --> 14:58.000
+you have to use a little bit of your imagination,
+
+14:58.000 --> 15:00.000
+that is, you give this command,
+
+15:00.000 --> 15:02.000
+and then it might look like
+
+15:03.000 --> 15:07.000
+This PDF is the last file you see.
+
+15:07.000 --> 15:09.000
+So this editing aspect
+
+15:09.000 --> 15:11.000
+may not be the same as
+
+15:11.000 --> 15:14.000
+the Word you often use.
+
+15:14.000 --> 15:16.000
+Let's continue.
+
+15:16.000 --> 15:19.000
+Next, I'm going to make an example.
+
+15:19.000 --> 15:24.000
+If you haven't touched Latex,
+
+15:24.000 --> 15:26.000
+I'll give you a simple example.
+
+15:26.000 --> 15:30.000
+Is this word too small?
+
+15:30.000 --> 15:36.000
+The left side is TEX file.
+
+15:36.000 --> 15:38.000
+After proper compilation,
+
+15:38.000 --> 15:42.000
+a PDF file will be created.
+
+15:42.000 --> 15:44.000
+If you think the picture is too small,
+
+15:44.000 --> 15:45.000
+you can tell me,
+
+15:45.000 --> 15:49.000
+and I can make some adjustments here.
+
+15:49.000 --> 15:52.000
+Basically, a common TEX file
+
+15:52.000 --> 15:56.000
+has a standard way to do it.
+
+15:56.000 --> 15:58.000
+This standard way is like this.
+
+15:58.000 --> 16:03.000
+That is, when you are narrating this file,
+
+16:03.000 --> 16:05.000
+you have to explain
+
+16:05.000 --> 16:08.000
+what kind of thing you produce.
+
+16:08.000 --> 16:10.000
+Is it an article?
+
+16:10.000 --> 16:13.000
+Or, for example,
+
+16:13.000 --> 16:15.000
+there are some commands that can be generated,
+
+16:15.000 --> 16:17.000
+such as a video.
+
+16:17.000 --> 16:19.000
+It will need to define
+
+16:19.000 --> 16:22.000
+what kind of thing I produce.
+
+16:22.000 --> 16:24.000
+It has a command here called
+
+16:24.000 --> 16:26.000
+draw a diagonal line, then document class,
+
+16:26.000 --> 16:31.000
+followed by the type of file you want to produce.
+
+16:31.000 --> 16:33.000
+It's very similar to writing,
+
+16:33.000 --> 16:34.000
+that is,
+
+16:34.000 --> 16:35.000
+in the process of editing,
+
+16:35.000 --> 16:39.000
+you need to insert some packages appropriately.
+
+16:39.000 --> 16:41.000
+These packages can tell you
+
+16:41.000 --> 16:43.000
+what commands you can use next.
+
+16:43.000 --> 16:48.000
+What commands are defined next?
+
+16:48.000 --> 16:49.000
+Let me mention this a little bit.
+
+16:49.000 --> 16:52.000
+The first package is a generation.
+
+16:52.000 --> 16:55.000
+It will be used in the 16th line.
+
+16:55.000 --> 17:00.000
+It is a command to generate a test text.
+
+17:00.000 --> 17:02.000
+The command in the 5th line
+
+17:02.000 --> 17:04.000
+is a relatively
+
+17:04.000 --> 17:07.000
+if you want to input some mathematical equations,
+
+17:07.000 --> 17:08.000
+some commands will be defined
+
+17:08.000 --> 17:11.000
+in this AMS Math environment.
+
+17:11.000 --> 17:14.000
+So, after the 18th line,
+
+17:14.000 --> 17:17.000
+there are some mathematical equations.
+
+17:17.000 --> 17:19.000
+So, in order to use these commands,
+
+17:19.000 --> 17:23.000
+we need to introduce some relative packages.
+
+17:23.000 --> 17:26.000
+Another one is that there is some information,
+
+17:26.000 --> 17:28.000
+like this one.
+
+17:28.000 --> 17:31.000
+I just mentioned that it is an article.
+
+17:31.000 --> 17:33.000
+So, typical articles may need
+
+17:33.000 --> 17:35.000
+a title information,
+
+17:35.000 --> 17:36.000
+then the author's information,
+
+17:36.000 --> 17:39.000
+and the date and time information.
+
+17:39.000 --> 17:42.000
+It may need to be explained
+
+17:42.000 --> 17:44.000
+with some relevant commands.
+
+17:44.000 --> 17:48.000
+After setting up these environments,
+
+17:48.000 --> 17:50.000
+the 10th line below
+
+17:50.000 --> 17:55.000
+describes the content of your file.
+
+17:55.000 --> 17:57.000
+So, like the 13th line,
+
+17:57.000 --> 18:01.000
+it is a title of a file.
+
+18:01.000 --> 18:02.000
+So, after entering this command,
+
+18:02.000 --> 18:07.000
+the three parts on the right PDF will be generated,
+
+18:07.000 --> 18:13.000
+that is, the title, the author's name and time.
+
+18:13.000 --> 18:14.000
+The part of the 16th line
+
+18:14.000 --> 18:16.000
+will generate some test text.
+
+18:16.000 --> 18:19.000
+So, this is the part of the 16th line test text
+
+18:19.000 --> 18:22.000
+in this place.
+
+18:22.000 --> 18:24.000
+After the 19th line,
+
+18:24.000 --> 18:26.000
+some mathematical formulas are generated.
+
+18:26.000 --> 18:28.000
+These mathematical formulas are
+
+18:28.000 --> 18:31.000
+under this text.
+
+18:31.000 --> 18:34.000
+So, in practice,
+
+18:34.000 --> 18:36.000
+the advantage is that
+
+18:36.000 --> 18:37.000
+you can focus on
+
+18:37.000 --> 18:40.000
+what you want to write.
+
+18:40.000 --> 18:41.000
+For example, you focus on
+
+18:41.000 --> 18:44.000
+the content you want to write,
+
+18:44.000 --> 18:46.000
+and then the relative arrangement,
+
+18:46.000 --> 18:47.000
+or the font,
+
+18:47.000 --> 18:49.000
+or these words,
+
+18:49.000 --> 18:50.000
+the mathematical formula,
+
+18:50.000 --> 18:52.000
+the relative position.
+
+18:52.000 --> 18:53.000
+This arrangement system
+
+18:53.000 --> 18:55.000
+has a set of methods
+
+18:55.000 --> 18:58.000
+to arrange these relative positions.
+
+18:58.000 --> 19:00.000
+So, when you write this text,
+
+19:00.000 --> 19:01.000
+you just need to focus on
+
+19:01.000 --> 19:05.000
+the content of the text.
+
+19:05.000 --> 19:09.000
+So, this is an example
+
+19:09.000 --> 19:14.000
+to show you this LaTeX.
+
+19:14.000 --> 19:15.000
+Let me explain to you
+
+19:15.000 --> 19:19.000
+some of the corresponding tools of LaTeX.
+
+19:19.000 --> 19:20.000
+I believe that
+
+19:20.000 --> 19:23.000
+LaTeX has a lot of choices.
+
+19:23.000 --> 19:25.000
+I mainly divide it into three categories.
+
+19:25.000 --> 19:28.000
+One is called the editor.
+
+19:28.000 --> 19:36.000
+It is mainly used to edit this text file.
+
+19:36.000 --> 19:39.000
+The other is the layout system.
+
+19:39.000 --> 19:41.000
+Then, the PDF file you produce
+
+19:41.000 --> 19:44.000
+will also need some software
+
+19:44.000 --> 19:47.000
+to look at the content of this PDF file.
+
+19:47.000 --> 19:49.000
+So, if you want to set up
+
+19:49.000 --> 19:51.000
+these environments on your computer,
+
+19:51.000 --> 19:53.000
+you may need some relative...
+
+19:53.000 --> 19:55.000
+For example, set up an editor,
+
+19:55.000 --> 19:56.000
+a layout system,
+
+19:56.000 --> 20:00.000
+and then choose a PDF viewer.
+
+20:00.000 --> 20:03.000
+There are actually quite a few editors on the market.
+
+20:03.000 --> 20:04.000
+There are some editors
+
+20:04.000 --> 20:06.000
+specifically designed for LaTeX,
+
+20:06.000 --> 20:08.000
+such as these below,
+
+20:08.000 --> 20:10.000
+or some more common editors
+
+20:10.000 --> 20:13.000
+that can only edit pure text,
+
+20:13.000 --> 20:16.000
+such as these.
+
+20:16.000 --> 20:17.000
+Because of time constraints,
+
+20:17.000 --> 20:20.000
+I won't mention all of them.
+
+20:20.000 --> 20:23.000
+After you have edited these text files,
+
+20:23.000 --> 20:24.000
+I just mentioned that
+
+20:24.000 --> 20:28.000
+you still need some editing systems.
+
+20:28.000 --> 20:31.000
+These three are more common on the market.
+
+20:31.000 --> 20:34.000
+These three can actually be downloaded for free
+
+20:34.000 --> 20:36.000
+and installed on your computer.
+
+20:36.000 --> 20:38.000
+They have some relative
+
+20:38.000 --> 20:42.000
+system environment settings.
+
+20:42.000 --> 20:43.000
+Because of time constraints,
+
+20:43.000 --> 20:46.000
+I won't mention these environment settings.
+
+20:46.000 --> 20:48.000
+After you have successfully edited,
+
+20:48.000 --> 20:50.000
+there will be some relative
+
+20:50.000 --> 20:54.000
+PDF file viewers.
+
+20:54.000 --> 21:00.000
+Let me show you an example.
+
+21:01.000 --> 21:04.000
+If I choose from here,
+
+21:04.000 --> 21:09.000
+let's say I choose Visual Studio Code.
+
+21:09.000 --> 21:11.000
+If you are writing code,
+
+21:11.000 --> 21:14.000
+you may have heard of this editor.
+
+21:14.000 --> 21:16.000
+Then use TextLive.
+
+21:16.000 --> 21:20.000
+This computer has already installed TextLive.
+
+21:20.000 --> 21:24.000
+Then there may be a PDF viewer at the end.
+
+21:24.000 --> 21:27.000
+So I'll open a demo here.
+
+21:27.000 --> 21:28.000
+Just this file.
+
+21:28.000 --> 21:33.000
+This file is the same.
+
+21:33.000 --> 21:34.000
+This is actually the same as a writer.
+
+21:34.000 --> 21:38.000
+There will be some relative editing functions behind it.
+
+21:38.000 --> 21:39.000
+Then this one just happens to be able to
+
+21:39.000 --> 21:44.000
+go straight to this relative PDF function.
+
+21:44.000 --> 21:45.000
+So if you want to edit,
+
+21:45.000 --> 21:49.000
+let's say you want to add more things here.
+
+21:49.000 --> 21:52.000
+Just add it directly.
+
+21:52.000 --> 21:53.000
+If you edit,
+
+21:53.000 --> 21:54.000
+it will be right here.
+
+21:54.000 --> 21:55.000
+After editing,
+
+21:55.000 --> 21:58.000
+the PDF file will be updated.
+
+21:58.000 --> 22:01.000
+If you haven't used LaTeX,
+
+22:01.000 --> 22:03.000
+it's actually a...
+
+22:03.000 --> 22:08.000
+I feel like it's pretty close to writing.
+
+22:08.000 --> 22:13.000
+It's just that the final result is a PDF file.
+
+22:13.000 --> 22:17.000
+The above is mainly a basic introduction to LaTeX.
+
+22:17.000 --> 22:19.000
+You may be curious.
+
+22:19.000 --> 22:22.000
+So there are so many file editing tools.
+
+22:22.000 --> 22:24.000
+So why do we have to use LaTeX?
+
+22:24.000 --> 22:27.000
+Then I'm here to quickly mention
+
+22:27.000 --> 22:32.000
+some of the features or advantages of LaTeX.
+
+22:32.000 --> 22:33.000
+One of the features is that
+
+22:33.000 --> 22:37.000
+it deals with this kind of mathematical problem.
+
+22:37.000 --> 22:40.000
+Assuming that your report or paper
+
+22:40.000 --> 22:43.000
+requires a lot of mathematical problems.
+
+22:43.000 --> 22:50.000
+In fact, it has some advantages in using LaTeX.
+
+22:50.000 --> 22:51.000
+For example,
+
+22:51.000 --> 22:55.000
+like you want to enter the lower right corner of this
+
+22:55.000 --> 22:58.000
+these mathematical formulas.
+
+22:58.000 --> 22:59.000
+What about these mathematical formulas?
+
+22:59.000 --> 23:01.000
+You can see that it's actually...
+
+23:01.000 --> 23:02.000
+I'll give you an example here.
+
+23:02.000 --> 23:07.000
+It may be related to some symbols of some triangular functions.
+
+23:07.000 --> 23:11.000
+If you want to enter this content,
+
+23:11.000 --> 23:12.000
+under LaTeX,
+
+23:12.000 --> 23:16.000
+it actually opens a relative mathematical environment.
+
+23:16.000 --> 23:18.000
+Then like these functions,
+
+23:18.000 --> 23:21.000
+these sine, zeta,
+
+23:21.000 --> 23:24.000
+or something like the denominator.
+
+23:24.000 --> 23:28.000
+It will have some corresponding mathematical symbols.
+
+23:28.000 --> 23:31.000
+For example, there are some sine, zeta,
+
+23:31.000 --> 23:34.000
+or if you want to enter the denominator.
+
+23:34.000 --> 23:38.000
+The denominator has some relative environments that can be entered.
+
+23:38.000 --> 23:41.000
+Here's a strange symbol.
+
+23:41.000 --> 23:44.000
+It actually has some relative symbols
+
+23:44.000 --> 23:46.000
+that can be entered.
+
+23:47.000 --> 23:52.000
+If your file has a lot of mathematical problems,
+
+23:52.000 --> 23:55.000
+for example, there are very long mathematical inferences,
+
+23:55.000 --> 23:57.000
+formula proofs, and so on.
+
+23:57.000 --> 23:59.000
+Editing in text format
+
+23:59.000 --> 24:01.000
+is actually easier to maintain.
+
+24:01.000 --> 24:03.000
+Because when you look at the text,
+
+24:03.000 --> 24:05.000
+you can just look at this symbol
+
+24:05.000 --> 24:08.000
+and know what this symbol is.
+
+24:08.000 --> 24:11.000
+And save these symbols
+
+24:11.000 --> 24:16.000
+and translate them into our beautiful mathematical form.
+
+24:16.000 --> 24:20.000
+Another thing I would like to mention by the way is
+
+24:20.000 --> 24:22.000
+that LaTeX also has a feature
+
+24:22.000 --> 24:24.000
+that is when you have a lot of things
+
+24:24.000 --> 24:27.000
+that need to be interacted with and used.
+
+24:27.000 --> 24:28.000
+For example,
+
+24:28.000 --> 24:34.000
+in some related papers that may need a lot of mathematical terms,
+
+24:34.000 --> 24:38.000
+sometimes it may use numbers to represent some equations.
+
+24:38.000 --> 24:41.000
+Put it in the order of 1, 2, 3, 4.
+
+24:41.000 --> 24:43.000
+Under the progress of the article,
+
+24:43.000 --> 24:45.000
+we may need to say
+
+24:45.000 --> 24:49.000
+which mathematical formula we use to push something.
+
+24:49.000 --> 24:51.000
+So in the article,
+
+24:51.000 --> 24:57.000
+we need to repeatedly mention some mathematical numbers.
+
+24:57.000 --> 25:00.000
+LaTeX actually has some pretty good features.
+
+25:00.000 --> 25:06.000
+You can use the interaction query command.
+
+25:07.000 --> 25:11.000
+You can set up a label.
+
+25:11.000 --> 25:12.000
+In the article,
+
+25:12.000 --> 25:14.000
+when you want to quote this label,
+
+25:14.000 --> 25:18.000
+you can use it as a variable.
+
+25:18.000 --> 25:20.000
+Okay, let me tell you quickly
+
+25:20.000 --> 25:23.000
+that this is a feature of LaTeX.
+
+25:23.000 --> 25:25.000
+It has a very powerful function
+
+25:25.000 --> 25:28.000
+in dealing with mathematical numbers.
+
+25:28.000 --> 25:32.000
+Okay, another one is my personal experience.
+
+25:32.000 --> 25:36.000
+It is a feature of LaTeX.
+
+25:36.000 --> 25:38.000
+Its feature is that
+
+25:38.000 --> 25:41.000
+when you are dealing with a very long file,
+
+25:41.000 --> 25:44.000
+it has a special advantage.
+
+25:44.000 --> 25:46.000
+What is a very long file?
+
+25:46.000 --> 25:47.000
+For example,
+
+25:47.000 --> 25:52.000
+if you want to write a master's thesis or a doctor's thesis,
+
+25:52.000 --> 25:53.000
+at this time,
+
+25:53.000 --> 25:56.000
+the number of pages may reach a lot of pages.
+
+25:56.000 --> 25:58.000
+Or for example,
+
+25:58.000 --> 26:00.000
+if you want to...
+
+26:00.000 --> 26:02.000
+For example,
+
+26:02.000 --> 26:04.000
+some textbooks you see on the market.
+
+26:04.000 --> 26:07.000
+Textbooks may have hundreds or thousands of pages.
+
+26:07.000 --> 26:09.000
+At this time,
+
+26:09.000 --> 26:11.000
+you can try to think about
+
+26:11.000 --> 26:15.000
+how to maintain these hundreds or thousands of pages.
+
+26:15.000 --> 26:19.000
+In fact, LaTeX has a feature that I personally quite like.
+
+26:19.000 --> 26:20.000
+That is,
+
+26:20.000 --> 26:22.000
+it can split the content of the file
+
+26:22.000 --> 26:25.000
+into different files to write.
+
+26:25.000 --> 26:27.000
+So here's an example.
+
+26:27.000 --> 26:32.000
+Suppose you have a file named man.tex now.
+
+26:32.000 --> 26:36.000
+This can be seen as a main file.
+
+26:36.000 --> 26:39.000
+This main file will describe that
+
+26:39.000 --> 26:43.000
+there are two parts in this article.
+
+26:43.000 --> 26:45.000
+One is introduction,
+
+26:45.000 --> 26:47.000
+and the other is results.
+
+26:47.000 --> 26:51.000
+That's the end of the description.
+
+26:51.000 --> 26:52.000
+By the way,
+
+26:52.000 --> 26:54.000
+this input file is...
+
+26:54.000 --> 26:57.000
+The input command can be seen as
+
+26:57.000 --> 27:00.000
+the content of this file is arranged.
+
+27:00.000 --> 27:04.000
+You can do an understanding like this first.
+
+27:04.000 --> 27:06.000
+So when LaTeX meets here,
+
+27:06.000 --> 27:09.000
+it will grab the corresponding file.
+
+27:09.000 --> 27:10.000
+So at this time,
+
+27:10.000 --> 27:13.000
+when you write the introduction,
+
+27:13.000 --> 27:18.000
+you just have to focus on the narrative of the introduction.
+
+27:18.000 --> 27:19.000
+So this file is
+
+27:19.000 --> 27:21.000
+specifically talking about the content of the introduction.
+
+27:21.000 --> 27:26.000
+You can see that it has some test text.
+
+27:26.000 --> 27:31.000
+Then there is a line of test text here.
+
+27:31.000 --> 27:33.000
+This introduction,
+
+27:33.000 --> 27:35.000
+I actually have a command here,
+
+27:35.000 --> 27:37.000
+which is section.
+
+27:37.000 --> 27:40.000
+It is actually one of the sections of this article.
+
+27:40.000 --> 27:45.000
+Then the section is followed by the title of this section.
+
+27:45.000 --> 27:48.000
+So if you want to focus on writing the introduction,
+
+27:48.000 --> 27:50.000
+just open this file and focus on writing it.
+
+27:50.000 --> 27:52.000
+If you want to write another section,
+
+27:52.000 --> 27:53.000
+such as results,
+
+27:53.000 --> 27:55.000
+just focus on opening this file
+
+27:55.000 --> 27:59.000
+and focus on editing here.
+
+27:59.000 --> 28:01.000
+So writing these files separately
+
+28:01.000 --> 28:07.000
+is actually easier for you to maintain longer files.
+
+28:07.000 --> 28:10.000
+There is another one that I personally think
+
+28:10.000 --> 28:17.000
+LaTeX is a powerful function.
+
+28:17.000 --> 28:21.000
+That is, if you are good at using the input command,
+
+28:21.000 --> 28:22.000
+you can think of it as
+
+28:22.000 --> 28:24.000
+the input is to grab a file from the outside
+
+28:24.000 --> 28:26.000
+and paste it over.
+
+28:26.000 --> 28:29.000
+So in fact, if you have some experimental data,
+
+28:29.000 --> 28:33.000
+let's assume that these data are stored in text.
+
+28:33.000 --> 28:37.000
+Suppose you use the program to calculate a number.
+
+28:37.000 --> 28:39.000
+Suppose the number is 1, 2, 3.
+
+28:39.000 --> 28:43.000
+Then you can store this number in a text file.
+
+28:43.000 --> 28:45.000
+When you are editing the file,
+
+28:45.000 --> 28:47.000
+you can insert the number content of this text file
+
+28:47.000 --> 28:51.000
+in the right place.
+
+28:51.000 --> 28:52.000
+You may ask,
+
+28:52.000 --> 28:57.000
+why don't I just type 1, 2, 3 here?
+
+28:57.000 --> 29:00.000
+The resulting file result is the same.
+
+29:00.000 --> 29:04.000
+But from the perspective of maintenance,
+
+29:04.000 --> 29:08.000
+I personally prefer to separate the file content
+
+29:08.000 --> 29:10.000
+from the experimental data
+
+29:10.000 --> 29:13.000
+to make a separate file.
+
+29:13.000 --> 29:16.000
+Suppose you run different experiments later
+
+29:16.000 --> 29:18.000
+and the data needs to be updated.
+
+29:18.000 --> 29:21.000
+You just need to update this file.
+
+29:21.000 --> 29:24.000
+You don't need to jump back to the result section
+
+29:24.000 --> 29:26.000
+to change this number.
+
+29:26.000 --> 29:29.000
+Especially if this number is used a lot.
+
+29:29.000 --> 29:32.000
+This has appeared in many articles.
+
+29:32.000 --> 29:34.000
+If you change one of the two,
+
+29:34.000 --> 29:35.000
+and you forget to change one,
+
+29:35.000 --> 29:38.000
+you may be challenged by the reviewer at this time.
+
+29:38.000 --> 29:41.000
+So what do you show?
+
+29:42.000 --> 29:44.000
+If you want to maintain a larger file
+
+29:44.000 --> 29:48.000
+from a longer perspective,
+
+29:48.000 --> 29:56.000
+these files may need to be changed and updated.
+
+29:56.000 --> 30:00.000
+I personally think this kind of separate file is quite recommended.
+
+30:00.000 --> 30:04.000
+I mentioned two features of LaTeX here.
+
+30:04.000 --> 30:06.000
+Then I will talk about a Graphics
+
+30:06.000 --> 30:08.000
+which is included in today's topic.
+
+30:08.000 --> 30:13.000
+Use LaTeX to add some elements of scientific drawing.
+
+30:13.000 --> 30:19.000
+If you search for LaTeX on the Internet,
+
+30:19.000 --> 30:22.000
+most of the files will tell you
+
+30:22.000 --> 30:26.000
+that there is an instruction called Include Graphics.
+
+30:26.000 --> 30:29.000
+This instruction tells us that
+
+30:29.000 --> 30:33.000
+this instruction needs a package called GraphicsX
+
+30:33.000 --> 30:36.000
+to be used.
+
+30:36.000 --> 30:38.000
+Simply put,
+
+30:38.000 --> 30:41.000
+it will extract the file from your computer.
+
+30:41.000 --> 30:44.000
+For example, there is a JPEG file at this time.
+
+30:44.000 --> 30:47.000
+This JPEG file will be extracted
+
+30:47.000 --> 30:54.000
+and placed in the proper place in your PDF file.
+
+30:54.000 --> 30:56.000
+So I have an example here.
+
+30:56.000 --> 30:58.000
+So he grabbed two pictures.
+
+30:58.000 --> 31:03.000
+One is JPEG and the other is PNG.
+
+31:03.000 --> 31:07.000
+He grabbed these two pictures to make a layout.
+
+31:07.000 --> 31:11.000
+In fact, the left one is JPEG,
+
+31:11.000 --> 31:16.000
+and the right one is PNG.
+
+31:16.000 --> 31:23.000
+So now you have two pictures.
+
+31:23.000 --> 31:24.000
+Because of time constraints,
+
+31:24.000 --> 31:27.000
+I may not be able to explain each instruction.
+
+31:27.000 --> 31:30.000
+If you have any questions later,
+
+31:30.000 --> 31:34.000
+you are welcome to ask.
+
+31:34.000 --> 31:36.000
+So this is basically an instruction
+
+31:36.000 --> 31:40.000
+to insert two pictures.
+
+31:40.000 --> 31:42.000
+When you draw a picture,
+
+31:42.000 --> 31:44.000
+you need to pay attention to
+
+31:44.000 --> 31:49.000
+that the picture is divided into Raster Scan.
+
+31:49.000 --> 31:51.000
+You take a picture.
+
+31:51.000 --> 31:54.000
+Suppose you have a picture on your hand.
+
+31:54.000 --> 31:56.000
+Raster Graphics is a bit like
+
+31:56.000 --> 32:00.000
+it takes a lot of different pixels in this picture
+
+32:00.000 --> 32:06.000
+and records the color of each pixel.
+
+32:06.000 --> 32:08.000
+So, for example, JPEG or PNG,
+
+32:08.000 --> 32:11.000
+it basically stores the data behind
+
+32:11.000 --> 32:15.000
+what the information of each pixel is.
+
+32:15.000 --> 32:17.000
+Of course, it does some image processing
+
+32:17.000 --> 32:19.000
+and some other processing.
+
+32:19.000 --> 32:21.000
+But its basic spirit is
+
+32:21.000 --> 32:27.000
+to store the contents of different colors.
+
+32:27.000 --> 32:29.000
+But this kind of storage method
+
+32:29.000 --> 32:31.000
+will have a disadvantage.
+
+32:31.000 --> 32:32.000
+That is,
+
+32:32.000 --> 32:39.000
+suppose you put this picture very large.
+
+32:39.000 --> 32:42.000
+I may not be able to see it clearly here.
+
+32:42.000 --> 32:46.000
+If you have JPEG or PNG on your hand,
+
+32:46.000 --> 32:49.000
+you can try to put these pictures.
+
+32:49.000 --> 32:50.000
+If you can't,
+
+32:50.000 --> 32:51.000
+you can, for example,
+
+32:51.000 --> 32:53.000
+zoom in on a place.
+
+32:53.000 --> 32:55.000
+Keep zooming in, zooming in, zooming in.
+
+32:55.000 --> 32:56.000
+At the end of the zoom,
+
+32:56.000 --> 33:00.000
+you will see some blurry images on the edge.
+
+33:00.000 --> 33:03.000
+The text may also become more blurry
+
+33:03.000 --> 33:05.000
+and may not be able to be read.
+
+33:05.000 --> 33:09.000
+In terms of academic documents,
+
+33:09.000 --> 33:11.000
+this is actually a bad thing.
+
+33:11.000 --> 33:12.000
+Because it may affect
+
+33:12.000 --> 33:14.000
+our understanding of a concept
+
+33:14.000 --> 33:17.000
+or judgment.
+
+33:17.000 --> 33:19.000
+In fact, in academic documents,
+
+33:19.000 --> 33:20.000
+it is more preferable to use
+
+33:20.000 --> 33:22.000
+so-called vector graphics.
+
+33:22.000 --> 33:24.000
+That is, when you are storing a picture,
+
+33:24.000 --> 33:27.000
+you should actually use the so-called pixel picture.
+
+33:27.000 --> 33:32.000
+When you describe these documents,
+
+33:32.000 --> 33:33.000
+you should use,
+
+33:33.000 --> 33:36.000
+now there is a picture.
+
+33:36.000 --> 33:39.000
+What is its length and width?
+
+33:39.000 --> 33:42.000
+Where is its location?
+
+33:42.000 --> 33:47.000
+The coordinates of these points in it.
+
+33:47.000 --> 33:48.000
+Or these lines,
+
+33:48.000 --> 33:52.000
+are they round, square,
+
+33:52.000 --> 33:55.000
+straight, or triangle?
+
+33:55.000 --> 33:58.000
+Use these methods to describe a picture.
+
+33:58.000 --> 34:00.000
+Academic documents are actually
+
+34:00.000 --> 34:02.000
+more preferable to do this.
+
+34:02.000 --> 34:03.000
+The commonly used vector graphics
+
+34:03.000 --> 34:05.000
+is actually called an EPS file.
+
+34:05.000 --> 34:07.000
+It is a commonly used vector graphics
+
+34:07.000 --> 34:11.000
+file format.
+
+34:11.000 --> 34:14.000
+So here you might think,
+
+34:14.000 --> 34:16.000
+so if I use LaTeX,
+
+34:16.000 --> 34:17.000
+I will just,
+
+34:17.000 --> 34:19.000
+like the files generated by your program,
+
+34:19.000 --> 34:22.000
+I will just save it as an EPS file
+
+34:22.000 --> 34:25.000
+and insert it into it.
+
+34:25.000 --> 34:28.000
+Theoretically, you can do this.
+
+34:28.000 --> 34:32.000
+But have you ever thought about
+
+34:32.000 --> 34:35.000
+some situations?
+
+34:35.000 --> 34:37.000
+I will give you an example here.
+
+34:37.000 --> 34:38.000
+These situations are actually
+
+34:38.000 --> 34:41.000
+encountered in writing paper.
+
+34:41.000 --> 34:43.000
+Suppose there are two pictures now,
+
+34:43.000 --> 34:49.000
+the picture on the left and the picture on the right.
+
+34:49.000 --> 34:51.000
+I will give you an example.
+
+34:51.000 --> 34:53.000
+Suppose you want to present
+
+34:53.000 --> 34:55.000
+a picture like this.
+
+34:55.000 --> 34:56.000
+Then there may be a curve here,
+
+34:56.000 --> 34:59.000
+and another curve here.
+
+34:59.000 --> 35:01.000
+Then there may be some
+
+35:01.000 --> 35:03.000
+corresponding legend,
+
+35:03.000 --> 35:05.000
+that is,
+
+35:06.000 --> 35:10.000
+what is number one and what is number two?
+
+35:10.000 --> 35:12.000
+Number one may be one of the lines,
+
+35:12.000 --> 35:15.000
+and number two may be one of the lines.
+
+35:15.000 --> 35:17.000
+Have you ever encountered a situation
+
+35:17.000 --> 35:21.000
+that when you print these pictures,
+
+35:21.000 --> 35:24.000
+some parts of the picture,
+
+35:24.000 --> 35:27.000
+such as some corresponding labels here,
+
+35:27.000 --> 35:29.000
+it happens to be related to
+
+35:29.000 --> 35:32.000
+some square numbers in your paper.
+
+35:32.000 --> 35:35.000
+Suppose one of the curves
+
+35:35.000 --> 35:38.000
+is generated by your source code number 1,
+
+35:38.000 --> 35:40.000
+and the other one may be generated
+
+35:40.000 --> 35:42.000
+by the source code number 3.
+
+35:42.000 --> 35:44.000
+Suppose you need to encounter
+
+35:44.000 --> 35:45.000
+a picture like this.
+
+35:45.000 --> 35:47.000
+What about a picture like this?
+
+35:47.000 --> 35:49.000
+If you first save it
+
+35:49.000 --> 35:52.000
+to the EPS file in the city,
+
+35:52.000 --> 35:54.000
+this number 1 and number 3
+
+35:54.000 --> 35:58.000
+are actually already written in this file.
+
+35:58.000 --> 36:00.000
+At that time, if you are editing the paper,
+
+36:00.000 --> 36:03.000
+when this number 1 and number 3 change,
+
+36:03.000 --> 36:06.000
+your picture will not do the corresponding update.
+
+36:06.000 --> 36:08.000
+So this is actually a situation
+
+36:08.000 --> 36:11.000
+that I had encountered when I was writing paper.
+
+36:11.000 --> 36:15.000
+Then I tried to figure out
+
+36:15.000 --> 36:17.000
+if there was a more systematic way
+
+36:17.000 --> 36:19.000
+to deal with this problem.
+
+36:19.000 --> 36:21.000
+This is what I'm going to talk about later,
+
+36:21.000 --> 36:25.000
+a method of pgftikz.
+
+36:25.000 --> 36:29.000
+It's my personal experience.
+
+36:29.000 --> 36:33.000
+Do you have any questions here?
+
+36:33.000 --> 36:35.000
+If you have any questions,
+
+36:35.000 --> 36:44.000
+you can ask me by voice.
+
+36:44.000 --> 36:45.000
+If not,
+
+36:45.000 --> 36:49.000
+let me talk about the tool pgftikz.
+
+36:49.000 --> 36:51.000
+First of all, when we talk about this tool,
+
+36:51.000 --> 36:57.000
+let's go back to the picture thing.
+
+36:57.000 --> 36:59.000
+In the field that is more related to me,
+
+36:59.000 --> 37:01.000
+the pictures that are usually involved
+
+37:01.000 --> 37:04.000
+are probably these two types.
+
+37:04.000 --> 37:06.000
+One is called a system architecture picture.
+
+37:06.000 --> 37:08.000
+It will describe
+
+37:08.000 --> 37:11.000
+how your information is processed.
+
+37:11.000 --> 37:13.000
+For example, you have done some add-ons,
+
+37:13.000 --> 37:15.000
+do some processing of different systems,
+
+37:15.000 --> 37:17.000
+and then put some relative information
+
+37:17.000 --> 37:21.000
+to make some different connections.
+
+37:21.000 --> 37:24.000
+The following picture is in my field of research,
+
+37:24.000 --> 37:29.000
+which is a relatively common picture.
+
+37:29.000 --> 37:33.000
+This is called a system architecture picture.
+
+37:33.000 --> 37:35.000
+When you look at this picture,
+
+37:35.000 --> 37:39.000
+it's actually quite simple.
+
+37:39.000 --> 37:42.000
+It is mainly composed of several elements,
+
+37:42.000 --> 37:47.000
+which are text, some lines,
+
+37:47.000 --> 37:51.000
+and some different squares,
+
+37:51.000 --> 37:54.000
+such as a rectangle or a circle.
+
+37:54.000 --> 37:57.000
+It's probably just these elements.
+
+37:57.000 --> 38:00.000
+It's not very complicated to describe.
+
+38:00.000 --> 38:05.000
+So how to effectively produce this kind of relative picture
+
+38:05.000 --> 38:08.000
+is actually a very interesting topic.
+
+38:08.000 --> 38:11.000
+This is a system diagram.
+
+38:11.000 --> 38:13.000
+The other one is the one I just mentioned,
+
+38:13.000 --> 38:14.000
+which is a diagram.
+
+38:14.000 --> 38:17.000
+For example, the one on my right is also a diagram.
+
+38:17.000 --> 38:19.000
+Let's say it has two curves.
+
+38:19.000 --> 38:21.000
+These two curves may have their own
+
+38:21.000 --> 38:23.000
+horizontal and vertical axes,
+
+38:23.000 --> 38:25.000
+and then there will be relative information points.
+
+38:25.000 --> 38:27.000
+I'm just drawing a diagram here.
+
+38:27.000 --> 38:29.000
+These information points may be represented
+
+38:29.000 --> 38:35.000
+by a circle and a rectangle.
+
+38:35.000 --> 38:37.000
+These two pictures
+
+38:37.000 --> 38:40.000
+can actually be used with Lattice,
+
+38:40.000 --> 38:45.000
+which is Lattice coupled with TIKZ or PGF plots,
+
+38:45.000 --> 38:47.000
+which is a relative command,
+
+38:47.000 --> 38:52.000
+to produce two such pictures directly in Lattice.
+
+38:52.000 --> 38:54.000
+So next I'm going to explain to you
+
+38:54.000 --> 38:56.000
+that if you want to produce these pictures,
+
+38:56.000 --> 39:01.000
+you may need some relevant content.
+
+39:01.000 --> 39:05.000
+Okay, let me show you the program.
+
+39:05.000 --> 39:07.000
+TIKZ is mainly like this.
+
+39:07.000 --> 39:10.000
+You can imagine it as a language
+
+39:10.000 --> 39:13.000
+that describes the shape of the picture.
+
+39:13.000 --> 39:16.000
+This language, as I just mentioned,
+
+39:16.000 --> 39:20.000
+is a picture of a quantity.
+
+39:20.000 --> 39:22.000
+So if you recall some of the concepts
+
+39:22.000 --> 39:25.000
+of quantity that you may have learned before,
+
+39:25.000 --> 39:26.000
+to describe a quantity,
+
+39:26.000 --> 39:29.000
+it may be to describe its starting point and ending point,
+
+39:29.000 --> 39:31.000
+and then connect them together.
+
+39:31.000 --> 39:34.000
+Then I know how to describe different shapes.
+
+39:34.000 --> 39:36.000
+This is to describe this triangle,
+
+39:36.000 --> 39:39.000
+which is to mark the end point.
+
+39:39.000 --> 39:41.000
+Or if it's a circle,
+
+39:41.000 --> 39:44.000
+it may be to describe its circumference and radius.
+
+39:44.000 --> 39:48.000
+So it's actually a combination of
+
+39:48.000 --> 39:52.000
+describing the shape you produce.
+
+39:52.000 --> 39:54.000
+So here's an example.
+
+39:54.000 --> 39:58.000
+For example, if you want to draw a line,
+
+39:58.000 --> 40:01.000
+its relative command is actually quite direct.
+
+40:01.000 --> 40:08.000
+You just need to determine the relative coordinates.
+
+40:09.000 --> 40:12.000
+The relative command is that you draw a straight line
+
+40:12.000 --> 40:15.000
+and then draw it from the coordinate point 00
+
+40:15.000 --> 40:18.000
+to the coordinate point 10.
+
+40:18.000 --> 40:21.000
+So when you run the fourth line,
+
+40:21.000 --> 40:26.000
+it will produce this line.
+
+40:26.000 --> 40:28.000
+From 00 to 10,
+
+40:28.000 --> 40:31.000
+it draws this line.
+
+40:31.000 --> 40:33.000
+There are also some commands that say
+
+40:33.000 --> 40:36.000
+you can decorate this line.
+
+40:36.000 --> 40:39.000
+For example, you can draw a arrow.
+
+40:39.000 --> 40:41.000
+Its relative command is that
+
+40:41.000 --> 40:43.000
+you draw a shape like an arrow.
+
+40:43.000 --> 40:46.000
+Draw a line and then a triangle.
+
+40:46.000 --> 40:50.000
+The shape of this arrow starts from 00.
+
+40:50.000 --> 40:52.000
+You can think of it as drawing an arrow
+
+40:52.000 --> 40:55.000
+from 00 to 01.
+
+40:55.000 --> 40:58.000
+So it's the arrow above.
+
+40:58.000 --> 41:04.000
+So it's actually a pretty intuitive description language
+
+41:04.000 --> 41:07.000
+to describe some geometric shapes.
+
+41:07.000 --> 41:10.000
+For example, if you want to draw a triangle,
+
+41:10.000 --> 41:15.000
+it's actually the relative coordinate point.
+
+41:15.000 --> 41:17.000
+It's actually this point.
+
+41:17.000 --> 41:20.000
+This point is our 11 coordinate point.
+
+41:20.000 --> 41:23.000
+Then this point is 22.
+
+41:23.000 --> 41:28.000
+Then this is 2.
+
+41:28.000 --> 41:31.000
+So you draw these lines
+
+41:31.000 --> 41:33.000
+and connect them.
+
+41:33.000 --> 41:35.000
+There are some additional commands.
+
+41:35.000 --> 41:38.000
+For example, you can adjust the thickness of the line,
+
+41:38.000 --> 41:40.000
+adjust the format of the line,
+
+41:40.000 --> 41:42.000
+or adjust the color of the line.
+
+41:42.000 --> 41:45.000
+This is a demo for you.
+
+41:45.000 --> 41:50.000
+Of course, it can draw something like a circle.
+
+41:50.000 --> 41:54.000
+This means that the center of the circle is 1-1.
+
+41:54.000 --> 41:56.000
+The center of the circle is 1-1,
+
+41:56.000 --> 41:59.000
+and the radius is 0.5.
+
+41:59.000 --> 42:01.000
+So it draws this.
+
+42:01.000 --> 42:03.000
+You can also draw something relative.
+
+42:03.000 --> 42:06.000
+For example, it draws a rectangle.
+
+42:06.000 --> 42:08.000
+This rectangle,
+
+42:08.000 --> 42:10.000
+its command is
+
+42:10.000 --> 42:15.000
+to draw from one corner of this rectangle
+
+42:15.000 --> 42:18.000
+to another corner.
+
+42:18.000 --> 42:23.000
+So the upper left corner is 3-1,
+
+42:23.000 --> 42:27.000
+and the lower right corner is 4-2.
+
+42:27.000 --> 42:29.000
+So it's actually
+
+42:29.000 --> 42:31.000
+as long as you determine the coordinate system,
+
+42:31.000 --> 42:33.000
+and then determine some coordinate numbers,
+
+42:33.000 --> 42:37.000
+it actually has some pretty intuitive language
+
+42:37.000 --> 42:40.000
+to draw these pictures.
+
+42:40.000 --> 42:44.000
+So this is basically the function of TIKZ drawing.
+
+42:44.000 --> 42:46.000
+You can actually go back to
+
+42:46.000 --> 42:49.000
+suppose you need to draw a picture.
+
+42:49.000 --> 42:51.000
+If it's something like
+
+42:51.000 --> 42:54.000
+some of the architecture pictures mentioned earlier,
+
+42:54.000 --> 42:58.000
+it's actually nothing more than some lines, shapes,
+
+42:58.000 --> 43:02.000
+and some combinations of text blocks.
+
+43:02.000 --> 43:06.000
+So if you want to draw a text block,
+
+43:06.000 --> 43:10.000
+it can use a command called node.
+
+43:10.000 --> 43:12.000
+This node command,
+
+43:12.000 --> 43:14.000
+you can think of it as
+
+43:14.000 --> 43:16.000
+insert a text block,
+
+43:16.000 --> 43:19.000
+and then insert it in which position.
+
+43:19.000 --> 43:22.000
+For example, the command 22 is
+
+43:22.000 --> 43:24.000
+inserted in 00.
+
+43:24.000 --> 43:27.000
+Insert a text block in 00.
+
+43:27.000 --> 43:33.000
+Then its text content is 00.
+
+43:33.000 --> 43:35.000
+One thing that's special is that
+
+43:35.000 --> 43:36.000
+in this place,
+
+43:36.000 --> 43:39.000
+it's actually
+
+43:39.000 --> 43:41.000
+the place where I marked in green,
+
+43:41.000 --> 43:45.000
+it's actually in harmony with the lattice.
+
+43:45.000 --> 43:47.000
+Simply put,
+
+43:47.000 --> 43:51.000
+the grammar you can use in the lattice,
+
+43:51.000 --> 43:53.000
+including the mathematical formula you use,
+
+43:53.000 --> 43:56.000
+or the formula you want to quote,
+
+43:56.000 --> 43:58.000
+or the reference number you want to quote,
+
+43:58.000 --> 44:00.000
+can all be written directly here.
+
+44:00.000 --> 44:02.000
+Then when the lattice is compiled,
+
+44:02.000 --> 44:07.000
+it will automatically update this part.
+
+44:07.000 --> 44:08.000
+Because of the time factor,
+
+44:08.000 --> 44:10.000
+I may not go into detail about these commands.
+
+44:10.000 --> 44:15.000
+Basically, you can create some text blocks.
+
+44:15.000 --> 44:19.000
+Then I will tell you another concept.
+
+44:19.000 --> 44:23.000
+What I personally like about TIK is that
+
+44:23.000 --> 44:30.000
+it can make a very precise description of your chart.
+
+44:30.000 --> 44:31.000
+What's the reason?
+
+44:31.000 --> 44:33.000
+The reason is that it uses some
+
+44:33.000 --> 44:35.000
+coordinate numbers behind it
+
+44:35.000 --> 44:39.000
+to describe the shape of the chart.
+
+44:39.000 --> 44:40.000
+So for example,
+
+44:40.000 --> 44:43.000
+let's say I draw this picture on the right.
+
+44:43.000 --> 44:45.000
+This picture on the right,
+
+44:45.000 --> 44:49.000
+I have listed the corresponding commands.
+
+44:49.000 --> 44:53.000
+Basically, it is inserted into a text block.
+
+44:53.000 --> 44:55.000
+What I want to do is to insert a text block.
+
+44:55.000 --> 44:58.000
+Then its content is this text box.
+
+44:58.000 --> 45:02.000
+Then some corresponding styles.
+
+45:02.000 --> 45:06.000
+Then its location is 0, 0 in the coordinate system.
+
+45:06.000 --> 45:08.000
+Then a more special thing is that
+
+45:08.000 --> 45:11.000
+you can take a name for this text block.
+
+45:11.000 --> 45:15.000
+Take a name like this with a small quotation mark.
+
+45:15.000 --> 45:17.000
+Then when you draw something else,
+
+45:17.000 --> 45:20.000
+you can compare this name,
+
+45:20.000 --> 45:22.000
+the name of the text box,
+
+45:22.000 --> 45:27.000
+to describe its different locations.
+
+45:27.000 --> 45:31.000
+For example, it's like 6 to 8 here.
+
+45:31.000 --> 45:35.000
+It can target the north-west of the text box,
+
+45:35.000 --> 45:37.000
+this top left point.
+
+45:37.000 --> 45:43.000
+Draw a circle at this point on the left of the text box.
+
+45:43.000 --> 45:47.000
+Then the radius of this circle is 0.05.
+
+45:47.000 --> 45:49.000
+So you get this circle.
+
+45:49.000 --> 45:53.000
+It is very accurately pasted on the top left corner of this text box.
+
+45:53.000 --> 45:56.000
+You can draw it like the north side
+
+45:56.000 --> 45:59.000
+or other places like this.
+
+45:59.000 --> 46:02.000
+So you can draw these corresponding locations.
+
+46:02.000 --> 46:05.000
+These locations can also be called anchor points.
+
+46:05.000 --> 46:09.000
+That is, when you connect the lines,
+
+46:09.000 --> 46:13.000
+you can directly force the specified line to connect to this point,
+
+46:13.000 --> 46:16.000
+or this point, this point.
+
+46:16.000 --> 46:20.000
+So this is the one for TIKZ.
+
+46:20.000 --> 46:24.000
+Then I will explain a little bit about
+
+46:24.000 --> 46:26.000
+some of my personal experience
+
+46:26.000 --> 46:30.000
+and some of the experience of drawing this system architecture.
+
+46:30.000 --> 46:32.000
+One of my personal favorites is that
+
+46:32.000 --> 46:37.000
+it is actually quite compatible with Lattice.
+
+46:37.000 --> 46:41.000
+For example, you are in this place of this text,
+
+46:41.000 --> 46:44.000
+it is actually the direct input of the corresponding Lattice command.
+
+46:44.000 --> 46:46.000
+So when you have a square number,
+
+46:46.000 --> 46:48.000
+or some numbers,
+
+46:48.000 --> 46:52.000
+or some special mathematical characters,
+
+46:52.000 --> 46:54.000
+for example,
+
+46:54.000 --> 46:57.000
+like you need a special character in this picture,
+
+46:57.000 --> 47:00.000
+it can be presented perfectly.
+
+47:00.000 --> 47:03.000
+Another one is the relative size.
+
+47:03.000 --> 47:07.000
+These sizes are actually all described in numbers,
+
+47:07.000 --> 47:11.000
+so it can describe the relative position very accurately.
+
+47:11.000 --> 47:16.000
+So these two text boxes are actually the same size.
+
+47:16.000 --> 47:21.000
+That is, the size of this square and this square is the same.
+
+47:21.000 --> 47:25.000
+And they are actually completely aligned.
+
+47:25.000 --> 47:28.000
+If you put the picture carefully,
+
+47:28.000 --> 47:31.000
+you can see that the left half and the right half are curved,
+
+47:31.000 --> 47:34.000
+and they are precisely aligned.
+
+47:34.000 --> 47:36.000
+Why is that?
+
+47:36.000 --> 47:38.000
+In fact, when you are writing,
+
+47:38.000 --> 47:41.000
+you have already described this thing accurately.
+
+47:41.000 --> 47:43.000
+So the picture he made
+
+47:43.000 --> 47:48.000
+can be very precise in size and position.
+
+47:48.000 --> 47:49.000
+Another one is that
+
+47:49.000 --> 47:53.000
+I think this kind of picture is easier to maintain.
+
+47:53.000 --> 47:54.000
+Simply put,
+
+47:54.000 --> 47:56.000
+because there are these text boxes behind it,
+
+47:56.000 --> 47:58.000
+so if you want to maintain it,
+
+47:58.000 --> 48:04.000
+if you want to make all the circles bigger in this text box,
+
+48:04.000 --> 48:06.000
+I don't want to use 0.05,
+
+48:06.000 --> 48:09.000
+I want to make all these circles bigger.
+
+48:09.000 --> 48:12.000
+In fact, it is to make some search replacements in the text box,
+
+48:12.000 --> 48:15.000
+and replace all these 0.05.
+
+48:15.000 --> 48:19.000
+Another one is my personal opinion.
+
+48:19.000 --> 48:21.000
+Because it is a text box,
+
+48:21.000 --> 48:23.000
+so if you have some software
+
+48:23.000 --> 48:25.000
+that allows you to control the interface,
+
+48:25.000 --> 48:27.000
+and if you have experience in using it,
+
+48:27.000 --> 48:29.000
+it can be used in a way like git
+
+48:29.000 --> 48:32.000
+to maintain your file or image,
+
+48:32.000 --> 48:35.000
+how to make changes.
+
+48:35.000 --> 48:41.000
+So this is what I think about drawing some pictures with TIKZ.
+
+48:41.000 --> 48:44.000
+Next, let's talk about some plots.
+
+48:44.000 --> 48:45.000
+This plot,
+
+48:45.000 --> 48:47.000
+you can look at it as
+
+48:47.000 --> 48:52.000
+some of the pictures we just drew in some experiments.
+
+48:52.000 --> 48:53.000
+Some of the pictures presented in some experiments,
+
+48:53.000 --> 49:01.000
+and then there may be some horizontal and vertical descriptions.
+
+49:01.000 --> 49:02.000
+To produce this picture,
+
+49:02.000 --> 49:04.000
+you can think about
+
+49:04.000 --> 49:06.000
+what you actually did
+
+49:06.000 --> 49:08.000
+when you produced this picture.
+
+49:08.000 --> 49:09.000
+In fact, it doesn't matter,
+
+49:09.000 --> 49:13.000
+you probably did three things.
+
+49:13.000 --> 49:14.000
+The first thing is that
+
+49:14.000 --> 49:16.000
+you worked very hard to do some experiments,
+
+49:16.000 --> 49:18.000
+write some cities,
+
+49:18.000 --> 49:20.000
+produce some experimental data,
+
+49:20.000 --> 49:22.000
+or collect some experimental data.
+
+49:22.000 --> 49:25.000
+So this should be a stage for you to do research,
+
+49:25.000 --> 49:29.000
+which is to produce some experimental data.
+
+49:29.000 --> 49:31.000
+The other stage is that
+
+49:31.000 --> 49:33.000
+according to your experimental data,
+
+49:33.000 --> 49:36.000
+you want to produce some more beautiful pictures,
+
+49:36.000 --> 49:37.000
+and then maybe clearer,
+
+49:37.000 --> 49:40.000
+some pictures that are more visible,
+
+49:40.000 --> 49:43.000
+so this may be the second stage.
+
+49:43.000 --> 49:45.000
+The third stage is that
+
+49:45.000 --> 49:47.000
+when you produce the picture,
+
+49:47.000 --> 49:49.000
+you need to present it in,
+
+49:49.000 --> 49:50.000
+for example, your paper,
+
+49:50.000 --> 49:52.000
+or your video,
+
+49:52.000 --> 49:54.000
+or on your poster.
+
+49:54.000 --> 49:57.000
+So there may be these three stages.
+
+49:57.000 --> 49:59.000
+The stage that people use more often
+
+49:59.000 --> 50:01.000
+may be that
+
+50:01.000 --> 50:04.000
+they tend to use the same software
+
+50:04.000 --> 50:07.000
+for stage 1 and stage 2.
+
+50:07.000 --> 50:08.000
+For example,
+
+50:08.000 --> 50:11.000
+what I use more often is MATLAB.
+
+50:11.000 --> 50:13.000
+You can do some calculations in MATLAB,
+
+50:13.000 --> 50:17.000
+and then it has some functions that can produce pictures.
+
+50:17.000 --> 50:20.000
+After the picture, you can save it like this,
+
+50:20.000 --> 50:22.000
+and then save it,
+
+50:22.000 --> 50:24.000
+and then paste it on,
+
+50:24.000 --> 50:26.000
+for example, your paper or slides.
+
+50:26.000 --> 50:28.000
+This is a method.
+
+50:28.000 --> 50:30.000
+If you have some other languages,
+
+50:30.000 --> 50:32.000
+such as Python or R,
+
+50:32.000 --> 50:34.000
+or GNU Plot,
+
+50:34.000 --> 50:38.000
+it actually has a lot of different choices.
+
+50:38.000 --> 50:42.000
+This is a method.
+
+50:42.000 --> 50:45.000
+It's a more common method.
+
+50:45.000 --> 50:49.000
+Here, I'd like to ask you a few situations.
+
+50:49.000 --> 50:51.000
+These situations are actually
+
+50:51.000 --> 50:54.000
+what you encounter when you do research.
+
+50:54.000 --> 50:59.000
+If you encounter the following three situations,
+
+50:59.000 --> 51:03.000
+the above methods may become a little bit
+
+51:03.000 --> 51:05.000
+more cumbersome.
+
+51:05.000 --> 51:07.000
+The first situation is that
+
+51:07.000 --> 51:12.000
+if you have produced your picture,
+
+51:12.000 --> 51:14.000
+and you have shown it to other people,
+
+51:14.000 --> 51:17.000
+to your partner or advisor,
+
+51:17.000 --> 51:19.000
+he thinks this picture
+
+51:19.000 --> 51:22.000
+may need to add one more curve,
+
+51:22.000 --> 51:24.000
+or compare it in one more way,
+
+51:24.000 --> 51:26.000
+or add some more data points.
+
+51:26.000 --> 51:29.000
+If you use a method like MATLAB,
+
+51:29.000 --> 51:31.000
+you may have to go back to the original city,
+
+51:31.000 --> 51:33.000
+and run the city again.
+
+51:33.000 --> 51:35.000
+But think about it,
+
+51:35.000 --> 51:37.000
+this seems to be a little bit,
+
+51:37.000 --> 51:39.000
+some places are repeated.
+
+51:39.000 --> 51:42.000
+In fact, in this picture,
+
+51:42.000 --> 51:44.000
+there are some curves and some data
+
+51:44.000 --> 51:46.000
+that you have dealt with before.
+
+51:46.000 --> 51:51.000
+So you don't need to deal with it again.
+
+51:51.000 --> 51:53.000
+What you need to do
+
+51:53.000 --> 51:55.000
+is to deal with
+
+51:55.000 --> 51:57.000
+what you haven't done yet.
+
+51:57.000 --> 52:00.000
+So, is there anything
+
+52:00.000 --> 52:03.000
+that can separate this thing?
+
+52:03.000 --> 52:06.000
+It's like the first thing,
+
+52:06.000 --> 52:08.000
+produce data and draw a picture.
+
+52:08.000 --> 52:11.000
+Can these two things be handled separately?
+
+52:11.000 --> 52:13.000
+When you have a new experiment,
+
+52:13.000 --> 52:15.000
+you should focus on
+
+52:15.000 --> 52:17.000
+producing new data.
+
+52:17.000 --> 52:19.000
+Drawing a picture,
+
+52:19.000 --> 52:21.000
+you should have a common interface
+
+52:21.000 --> 52:25.000
+to update the picture.
+
+52:25.000 --> 52:27.000
+Another situation is that
+
+52:27.000 --> 52:29.000
+maybe when you are writing a paper,
+
+52:29.000 --> 52:32.000
+suppose you change the mathematical symbol.
+
+52:32.000 --> 52:34.000
+In the process of changing the paper,
+
+52:34.000 --> 52:36.000
+maybe there are some mathematical symbols
+
+52:37.000 --> 52:39.000
+Then you may change it to B.
+
+52:39.000 --> 52:41.000
+It becomes that in this article,
+
+52:41.000 --> 52:43.000
+everything with the symbol A
+
+52:43.000 --> 52:45.000
+has to be changed to the symbol B.
+
+52:45.000 --> 52:47.000
+If unfortunately,
+
+52:47.000 --> 52:49.000
+this symbol B appears in one of the small places
+
+52:49.000 --> 52:51.000
+in your picture,
+
+52:51.000 --> 52:54.000
+then you have to go back and open the method
+
+52:54.000 --> 52:58.000
+and manually change the place of A to B.
+
+52:58.000 --> 52:59.000
+When there are a lot of things,
+
+52:59.000 --> 53:02.000
+this thing is actually a little bit,
+
+53:02.000 --> 53:05.000
+it's a little bit cumbersome.
+
+53:05.000 --> 53:06.000
+Then there is another one,
+
+53:06.000 --> 53:09.000
+which is the relative mathematical symbol.
+
+53:09.000 --> 53:11.000
+If you have some drawing experience,
+
+53:11.000 --> 53:13.000
+the picture produced by MATLAB,
+
+53:13.000 --> 53:17.000
+the text below it is actually a certain symbol.
+
+53:17.000 --> 53:20.000
+But if you use LaTeX to write a paper,
+
+53:20.000 --> 53:22.000
+the shape of the symbol required by the paper
+
+53:22.000 --> 53:25.000
+is actually sometimes another one.
+
+53:25.000 --> 53:28.000
+It may not be the same as the MATLAB symbol.
+
+53:28.000 --> 53:29.000
+So is there a way to say
+
+53:29.000 --> 53:32.000
+that all the symbols are unified?
+
+53:32.000 --> 53:33.000
+In addition,
+
+53:33.000 --> 53:36.000
+if there is a mathematical shape here,
+
+53:36.000 --> 53:39.000
+suppose some more special mathematical symbols,
+
+53:39.000 --> 53:42.000
+can they appear in this picture
+
+53:42.000 --> 53:45.000
+with the same shape?
+
+53:45.000 --> 53:48.000
+In fact, I encountered some relative situations
+
+53:48.000 --> 53:52.000
+in the drawing before.
+
+53:52.000 --> 53:54.000
+After a little research,
+
+53:54.000 --> 53:58.000
+I think I personally
+
+53:58.000 --> 54:01.000
+use this method of PGF plot.
+
+54:01.000 --> 54:04.000
+It is actually a drawing tool,
+
+54:04.000 --> 54:07.000
+and it is based on TIKZ as a drawing function.
+
+54:07.000 --> 54:11.000
+It is compatible with LaTeX.
+
+54:11.000 --> 54:13.000
+It is a new drawing tool,
+
+54:13.000 --> 54:15.000
+but its spirit of drawing
+
+54:15.000 --> 54:21.000
+is actually similar to most drawing software.
+
+54:21.000 --> 54:24.000
+You will need to produce relative labels,
+
+54:24.000 --> 54:28.000
+legend, or some different line format.
+
+54:28.000 --> 54:32.000
+This part of the spirit is close.
+
+54:32.000 --> 54:33.000
+Because of time constraints,
+
+54:33.000 --> 54:35.000
+I may quickly mention that
+
+54:35.000 --> 54:36.000
+although this is a new tool,
+
+54:36.000 --> 54:40.000
+but there are some ready-made conversion tools.
+
+54:40.000 --> 54:42.000
+Suppose the picture produced by MATLAB
+
+54:42.000 --> 54:44.000
+can have some converters
+
+54:44.000 --> 54:47.000
+that can be converted to TIKZ language.
+
+54:47.000 --> 54:50.000
+This is what I found when I was making the video,
+
+54:50.000 --> 54:54.000
+that is, some pictures produced by Python
+
+54:54.000 --> 54:56.000
+also have some related packages
+
+54:56.000 --> 55:01.000
+that can be converted to the language of TIKZ.
+
+55:01.000 --> 55:04.000
+Another experience I would like to mention is
+
+55:04.000 --> 55:09.000
+that suppose you need to update your data.
+
+55:09.000 --> 55:10.000
+As mentioned earlier,
+
+55:10.000 --> 55:12.000
+suppose you have three experimental pictures,
+
+55:12.000 --> 55:16.000
+and you may be asked to add another curve.
+
+55:16.000 --> 55:19.000
+At this time,
+
+55:19.000 --> 55:22.000
+you don't need to create a new picture.
+
+55:22.000 --> 55:24.000
+My own approach is
+
+55:24.000 --> 55:27.000
+that you should maintain a text file.
+
+55:27.000 --> 55:30.000
+This text file describes the data
+
+55:30.000 --> 55:34.000
+of the relative data points in the green one.
+
+55:34.000 --> 55:37.000
+There may be a blue text file
+
+55:37.000 --> 55:40.000
+that describes the numbers on the blue lines,
+
+55:40.000 --> 55:43.000
+the numbers on these pictures.
+
+55:43.000 --> 55:45.000
+At that time,
+
+55:45.000 --> 55:48.000
+the pgfplot can directly use the input file method
+
+55:48.000 --> 55:51.000
+to update these pictures at the same time.
+
+55:51.000 --> 55:53.000
+I want to use the time later
+
+55:53.000 --> 55:56.000
+to quickly tell you what its philosophy is.
+
+55:56.000 --> 55:58.000
+If you are interested in these instructions,
+
+55:58.000 --> 56:00.000
+we can discuss it later.
+
+56:00.000 --> 56:04.000
+This is a pgfplot spirit.
+
+56:04.000 --> 56:06.000
+You can notice that it is actually
+
+56:06.000 --> 56:09.000
+compatible with the latest.
+
+56:09.000 --> 56:14.000
+It is actually wrapped in the environment of TIKZ.
+
+56:14.000 --> 56:16.000
+What it does is
+
+56:16.000 --> 56:21.000
+there is an environment called begin and end access.
+
+56:21.000 --> 56:22.000
+In this environment,
+
+56:22.000 --> 56:25.000
+you will need to have a range to explain
+
+56:25.000 --> 56:27.000
+some of the coordinates,
+
+56:27.000 --> 56:31.000
+such as its width, its x-level,
+
+56:31.000 --> 56:34.000
+what is the value, and then what is the y-level value.
+
+56:34.000 --> 56:36.000
+Notice that this place
+
+56:36.000 --> 56:38.000
+you can put the latest definition.
+
+56:38.000 --> 56:42.000
+So you can make sure that its font is the same.
+
+56:42.000 --> 56:45.000
+So if you look closely at this picture,
+
+56:45.000 --> 56:47.000
+the font of this place
+
+56:47.000 --> 56:50.000
+is the same as the font of my first video.
+
+56:51.000 --> 56:53.000
+So if you update it like this,
+
+56:53.000 --> 56:55.000
+it will automatically process these two
+
+56:55.000 --> 56:57.000
+with the same font.
+
+56:57.000 --> 57:00.000
+The addplot is a bit like
+
+57:00.000 --> 57:03.000
+you have a curve, so it will produce
+
+57:03.000 --> 57:05.000
+a curve of data1 here
+
+57:05.000 --> 57:07.000
+and a curve of data2.
+
+57:07.000 --> 57:09.000
+Here it is another
+
+57:09.000 --> 57:11.000
+from an external text file.
+
+57:11.000 --> 57:13.000
+This is an external text file.
+
+57:13.000 --> 57:15.000
+It will define all the numbers
+
+57:15.000 --> 57:17.000
+of these data points.
+
+57:18.000 --> 57:20.000
+Grab these data
+
+57:20.000 --> 57:24.000
+and paste it into this picture.
+
+57:24.000 --> 57:27.000
+I want to tell you quickly.
+
+57:27.000 --> 57:29.000
+Finally, let me tell you
+
+57:29.000 --> 57:32.000
+what I think of Latex.
+
+57:32.000 --> 57:35.000
+If you are new to Latex,
+
+57:35.000 --> 57:38.000
+DIKZ, PJ Plot,
+
+57:38.000 --> 57:40.000
+maybe you have never touched it
+
+57:40.000 --> 57:43.000
+or maybe you don't have much experience,
+
+57:43.000 --> 57:46.000
+I personally recommend Overleaf.
+
+57:46.000 --> 57:48.000
+Overleaf is a platform
+
+57:48.000 --> 57:51.000
+where you can write Latex online.
+
+57:51.000 --> 57:54.000
+Basically,
+
+57:54.000 --> 57:58.000
+some of the layout settings
+
+57:58.000 --> 58:00.000
+have been set for you.
+
+58:00.000 --> 58:05.000
+So it will be easier to write.
+
+58:05.000 --> 58:07.000
+I will list some
+
+58:07.000 --> 58:09.000
+relative reference resources later.
+
+58:09.000 --> 58:10.000
+If you use Overleaf,
+
+58:10.000 --> 58:12.000
+it actually has some
+
+58:12.000 --> 58:14.000
+related instructions
+
+58:14.000 --> 58:16.000
+and some documents
+
+58:16.000 --> 58:18.000
+that you can learn Latex
+
+58:18.000 --> 58:20.000
+in 30 minutes.
+
+58:20.000 --> 58:22.000
+I also found some
+
+58:22.000 --> 58:24.000
+if you want to do
+
+58:24.000 --> 58:25.000
+a more detailed reference,
+
+58:25.000 --> 58:27.000
+there are some like Wikibook
+
+58:27.000 --> 58:29.000
+for reference.
+
+58:29.000 --> 58:31.000
+If you are interested
+
+58:31.000 --> 58:32.000
+in this kind of drawing,
+
+58:32.000 --> 58:34.000
+there is a PGF manual.
+
+58:34.000 --> 58:36.000
+You can click on it.
+
+58:36.000 --> 58:39.000
+It has a pretty detailed
+
+58:39.000 --> 58:42.000
+document
+
+58:42.000 --> 58:43.000
+like this.
+
+58:43.000 --> 58:46.000
+Let me show you.
+
+58:46.000 --> 58:48.000
+It has a document
+
+58:48.000 --> 58:51.000
+for DIKZ, PJ Plot
+
+58:51.000 --> 58:54.000
+with more than 1,000 pages.
+
+58:54.000 --> 58:55.000
+In fact, many of my instructions
+
+58:55.000 --> 58:56.000
+are found from it.
+
+58:56.000 --> 58:58.000
+The concept is also
+
+58:58.000 --> 59:01.000
+taken from it.
+
+59:01.000 --> 59:02.000
+Some websites,
+
+59:02.000 --> 59:04.000
+like this website,
+
+59:04.000 --> 59:06.000
+I think it's pretty good.
+
+59:06.000 --> 59:08.000
+It has some examples of
+
+59:08.000 --> 59:09.000
+drawing with PJ Plot.
+
+59:09.000 --> 59:11.000
+So if you go in and have a look,
+
+59:11.000 --> 59:13.000
+there are some pretty
+
+59:13.000 --> 59:14.000
+maps.
+
+59:14.000 --> 59:16.000
+It also lists the relevant instructions.
+
+59:16.000 --> 59:18.000
+You can have a look.
+
+59:18.000 --> 59:20.000
+Another one is that
+
+59:20.000 --> 59:23.000
+there are also some online discussions on the Internet.
+
+59:23.000 --> 59:25.000
+If you have any questions about this kind of text,
+
+59:25.000 --> 59:27.000
+you can post it on it.
+
+59:27.000 --> 59:28.000
+What's next?
+
+59:28.000 --> 59:29.000
+I mainly list some
+
+59:29.000 --> 59:32.000
+editors I mentioned earlier.
+
+59:32.000 --> 59:34.000
+There are some relative websites
+
+59:34.000 --> 59:36.000
+with relative editors.
+
+59:36.000 --> 59:38.000
+Basically,
+
+59:38.000 --> 59:39.000
+these editors should all be
+
+59:39.000 --> 59:41.000
+downloaded from the website
+
+59:41.000 --> 59:43.000
+and installed.
+
+59:43.000 --> 59:44.000
+It's also like
+
+59:44.000 --> 59:45.000
+if you want to set up
+
+59:45.000 --> 59:47.000
+this editor environment
+
+59:47.000 --> 59:49.000
+on your own computer,
+
+59:49.000 --> 59:51.000
+there are actually several more common ones.
+
+59:51.000 --> 59:55.000
+I also list the relevant information.
+
+59:55.000 --> 59:57.000
+If you are interested in
+
+59:57.000 --> 59:58.000
+this kind of map conversion, DIKZ,
+
+59:58.000 --> 01:00:00.000
+I also list the relevant
+
+01:00:00.000 --> 01:00:02.000
+websites here.
+
+01:00:02.000 --> 01:00:04.000
+You can use it as a reference.
+
+01:00:04.000 --> 01:00:06.000
+Okay, I think it's about time.
+
+01:00:07.000 --> 01:00:09.000
+Finally, thank you for listening.
+
+01:00:09.000 --> 01:00:11.000
+I hope you can
+
+01:00:11.000 --> 01:00:13.000
+use LaTeX
+
+01:00:13.000 --> 01:00:15.000
+in your research
+
+01:00:15.000 --> 01:00:17.000
+and successfully express
+
+01:00:17.000 --> 01:00:20.000
+the results you want to express.
+
+01:00:20.000 --> 01:00:22.000
+Okay, I think
+
+01:00:22.000 --> 01:00:24.000
+we'll stop here.
+
+01:00:28.000 --> 01:00:30.000
+Thank you, Mr. Liu, for your wonderful sharing.
+
+01:00:30.000 --> 01:00:32.000
+I just saw
+
+01:00:32.000 --> 01:00:34.000
+in the chat
+
+01:00:34.000 --> 01:00:36.000
+a few questions.
+
+01:00:36.000 --> 01:00:38.000
+If you have any questions,
+
+01:00:38.000 --> 01:00:40.000
+you're welcome to
+
+01:00:40.000 --> 01:00:42.000
+open the microphone
+
+01:00:42.000 --> 01:00:44.000
+and ask your question.
+
+01:00:52.000 --> 01:00:54.000
+Or if your microphone is not convenient,
+
+01:00:54.000 --> 01:00:56.000
+I can quickly go through
+
+01:00:56.000 --> 01:00:58.000
+the comments.
+
+01:00:58.000 --> 01:01:00.000
+There are a few comments
+
+01:01:00.000 --> 01:01:02.000
+I saw,
+
+01:01:02.000 --> 01:01:04.000
+for example, Yan
+
+01:01:04.000 --> 01:01:06.000
+wants to know
+
+01:01:06.000 --> 01:01:08.000
+how similar
+
+01:01:08.000 --> 01:01:10.000
+LaTeX and HTML are.
+
+01:01:10.000 --> 01:01:12.000
+Do you recommend using
+
+01:01:12.000 --> 01:01:14.000
+text editor software?
+
+01:01:20.000 --> 01:01:22.000
+Okay, thank you very much
+
+01:01:22.000 --> 01:01:24.000
+for Yan's question.
+
+01:01:24.000 --> 01:01:26.000
+I'll start with
+
+01:01:26.000 --> 01:01:28.000
+the degree of similarity between
+
+01:01:28.000 --> 01:01:30.000
+the two languages.
+
+01:01:30.000 --> 01:01:32.000
+Here is a
+
+01:01:32.000 --> 01:01:34.000
+user interface
+
+01:01:34.000 --> 01:01:36.000
+for your reference.
+
+01:01:36.000 --> 01:01:38.000
+In fact, if you
+
+01:01:38.000 --> 01:01:40.000
+have a little research
+
+01:01:40.000 --> 01:01:42.000
+on HTML,
+
+01:01:42.000 --> 01:01:44.000
+HTML seems to
+
+01:01:44.000 --> 01:01:46.000
+have something
+
+01:01:46.000 --> 01:01:48.000
+at the beginning of a label
+
+01:01:48.000 --> 01:01:50.000
+and something
+
+01:01:50.000 --> 01:01:52.000
+at the end.
+
+01:01:52.000 --> 01:01:54.000
+In LaTeX,
+
+01:01:54.000 --> 01:01:56.000
+it's more like
+
+01:01:56.000 --> 01:01:58.000
+using a line
+
+01:01:58.000 --> 01:02:00.000
+and then a command,
+
+01:02:00.000 --> 01:02:02.000
+and then put this thing
+
+01:02:02.000 --> 01:02:04.000
+inside with this big quotation mark.
+
+01:02:04.000 --> 01:02:06.000
+I feel
+
+01:02:06.000 --> 01:02:08.000
+that its spirit is close.
+
+01:02:08.000 --> 01:02:10.000
+For example,
+
+01:02:10.000 --> 01:02:12.000
+if the thing you put in the back
+
+01:02:12.000 --> 01:02:14.000
+is more complicated,
+
+01:02:14.000 --> 01:02:16.000
+it will use some
+
+01:02:16.000 --> 01:02:18.000
+begin-end environment
+
+01:02:18.000 --> 01:02:20.000
+to wrap
+
+01:02:20.000 --> 01:02:22.000
+the things here.
+
+01:02:22.000 --> 01:02:24.000
+So
+
+01:02:24.000 --> 01:02:26.000
+I think the spirit is
+
+01:02:26.000 --> 01:02:28.000
+quite similar to
+
+01:02:28.000 --> 01:02:30.000
+HTML.
+
+01:02:30.000 --> 01:02:32.000
+It's
+
+01:02:32.000 --> 01:02:34.000
+also close to what I mentioned earlier.
+
+01:02:34.000 --> 01:02:36.000
+Its spirit is a bit like
+
+01:02:36.000 --> 01:02:38.000
+writing
+
+01:02:38.000 --> 01:02:40.000
+mathematics
+
+01:02:40.000 --> 01:02:42.000
+or
+
+01:02:42.000 --> 01:02:44.000
+a layout for
+
+01:02:44.000 --> 01:02:46.000
+academic articles.
+
+01:02:46.000 --> 01:02:48.000
+It may have more functions.
+
+01:02:50.000 --> 01:02:52.000
+Let's see
+
+01:02:56.000 --> 01:02:58.000
+the next one.
+
+01:02:58.000 --> 01:03:00.000
+LaTeX.
+
+01:03:00.000 --> 01:03:02.000
+Use
+
+01:03:02.000 --> 01:03:04.000
+the source code
+
+01:03:04.000 --> 01:03:06.000
+control software
+
+01:03:06.000 --> 01:03:08.000
+to pursue
+
+01:03:08.000 --> 01:03:10.000
+the editing problem.
+
+01:03:10.000 --> 01:03:12.000
+Thank you.
+
+01:03:12.000 --> 01:03:14.000
+I seem to have forgotten to answer a question.
+
+01:03:14.000 --> 01:03:16.000
+Do you recommend using
+
+01:03:16.000 --> 01:03:18.000
+text editor software
+
+01:03:18.000 --> 01:03:20.000
+to understand text grammar?
+
+01:03:20.000 --> 01:03:22.000
+I didn't seem to answer this one.
+
+01:03:22.000 --> 01:03:24.000
+I can go back to
+
+01:03:24.000 --> 01:03:26.000
+the previous one.
+
+01:03:30.000 --> 01:03:32.000
+In my opinion,
+
+01:03:32.000 --> 01:03:34.000
+as long as it's easy to use.
+
+01:03:36.000 --> 01:03:38.000
+In fact,
+
+01:03:38.000 --> 01:03:40.000
+these can be recognized.
+
+01:03:44.000 --> 01:03:46.000
+The red ones
+
+01:03:46.000 --> 01:03:48.000
+should be able to recognize text grammar.
+
+01:03:48.000 --> 01:03:50.000
+Then
+
+01:03:50.000 --> 01:03:52.000
+the right ones
+
+01:03:52.000 --> 01:03:54.000
+may need to install some special
+
+01:03:54.000 --> 01:03:56.000
+kits.
+
+01:03:56.000 --> 01:03:58.000
+The last one is a
+
+01:03:58.000 --> 01:04:00.000
+notebook in Windows.
+
+01:04:00.000 --> 01:04:02.000
+So it may
+
+01:04:02.000 --> 01:04:04.000
+not be able to have other kits.
+
+01:04:04.000 --> 01:04:06.000
+The first few editors
+
+01:04:06.000 --> 01:04:08.000
+actually have corresponding kits.
+
+01:04:08.000 --> 01:04:10.000
+I can
+
+01:04:10.000 --> 01:04:12.000
+demo it for you.
+
+01:04:12.000 --> 01:04:14.000
+I use Visual Studio Code here.
+
+01:04:14.000 --> 01:04:16.000
+Then it has a
+
+01:04:16.000 --> 01:04:18.000
+package called
+
+01:04:18.000 --> 01:04:20.000
+LaTeX Workshop.
+
+01:04:22.000 --> 01:04:24.000
+It actually
+
+01:04:24.000 --> 01:04:26.000
+writes a little bit like
+
+01:04:26.000 --> 01:04:28.000
+what you see here with
+
+01:04:28.000 --> 01:04:40.000
+relative
+
+01:04:40.000 --> 01:04:42.000
+conforming
+
+01:04:42.000 --> 01:04:44.000
+instructions.
+
+01:04:46.000 --> 01:04:48.000
+Good.
+
+01:04:48.000 --> 01:04:50.000
+I don't know if I can turn on the setting.
+
+01:04:50.000 --> 01:04:52.000
+Well,
+
+01:04:52.000 --> 01:04:54.000
+I usually
+
+01:04:54.000 --> 01:04:56.000
+change it directly.
+
+01:04:56.000 --> 01:04:58.000
+Well,
+
+01:04:58.000 --> 01:05:00.000
+if you are interested,
+
+01:05:00.000 --> 01:05:02.000
+you can actually study it a little bit,
+
+01:05:02.000 --> 01:05:04.000
+that is,
+
+01:05:04.000 --> 01:05:06.000
+I usually
+
+01:05:06.000 --> 01:05:08.000
+change it directly.
+
+01:05:08.000 --> 01:05:10.000
+Well,
+
+01:05:10.000 --> 01:05:12.000
+if you are interested,
+
+01:05:12.000 --> 01:05:14.000
+you can actually study it a little bit,
+
+01:05:14.000 --> 01:05:16.000
+that is,
+
+01:05:16.000 --> 01:05:18.000
+you can actually study it a little bit,
+
+01:05:18.000 --> 01:05:20.000
+that is,
+
+01:05:20.000 --> 01:05:22.000
+Visual Studio Code with
+
+01:05:22.000 --> 01:05:24.000
+Latest Workshop.
+
+01:05:24.000 --> 01:05:26.000
+In fact,
+
+01:05:26.000 --> 01:05:28.000
+this kit will help you
+
+01:05:28.000 --> 01:05:30.000
+set things up.
+
+01:05:30.000 --> 01:05:32.000
+So when you type directly,
+
+01:05:32.000 --> 01:05:34.000
+you can begin,
+
+01:05:34.000 --> 01:05:36.000
+and then it will be generated directly.
+
+01:05:38.000 --> 01:05:40.000
+So,
+
+01:05:40.000 --> 01:05:42.000
+although it is a text editor,
+
+01:05:42.000 --> 01:05:44.000
+it is suitable for
+
+01:05:44.000 --> 01:05:46.000
+when you want to use it,
+
+01:05:46.000 --> 01:05:48.000
+sometimes
+
+01:05:48.000 --> 01:05:50.000
+it seems that
+
+01:05:50.000 --> 01:05:52.000
+some environments can be selected.
+
+01:05:54.000 --> 01:05:56.000
+Well,
+
+01:05:56.000 --> 01:05:58.000
+I believe that
+
+01:05:58.000 --> 01:06:00.000
+these I marked can actually
+
+01:06:00.000 --> 01:06:02.000
+do similar functions.
+
+01:06:02.000 --> 01:06:04.000
+If it is on the left,
+
+01:06:04.000 --> 01:06:06.000
+it should be preset,
+
+01:06:06.000 --> 01:06:08.000
+and there are some relatively
+
+01:06:08.000 --> 01:06:10.000
+grammatical instructions.
+
+01:06:10.000 --> 01:06:12.000
+Then I go back to
+
+01:06:12.000 --> 01:06:14.000
+the third question.
+
+01:06:16.000 --> 01:06:18.000
+Well,
+
+01:06:18.000 --> 01:06:20.000
+if you need more people to edit a document,
+
+01:06:20.000 --> 01:06:22.000
+that is,
+
+01:06:22.000 --> 01:06:24.000
+directly using the source code control software to track
+
+01:06:24.000 --> 01:06:26.000
+or there is a test dedicated maintenance platform.
+
+01:06:26.000 --> 01:06:28.000
+Well,
+
+01:06:28.000 --> 01:06:30.000
+if you want to be
+
+01:06:30.000 --> 01:06:32.000
+simple and easy to use,
+
+01:06:32.000 --> 01:06:34.000
+that is, you don't need to do any settings,
+
+01:06:34.000 --> 01:06:36.000
+I personally recommend Overleaf.
+
+01:06:36.000 --> 01:06:38.000
+It is that you
+
+01:06:38.000 --> 01:06:40.000
+open an account in Overleaf,
+
+01:06:40.000 --> 01:06:42.000
+you can open a project
+
+01:06:42.000 --> 01:06:44.000
+under this account,
+
+01:06:44.000 --> 01:06:46.000
+and then you can share it with others.
+
+01:06:46.000 --> 01:06:48.000
+If other people are editing,
+
+01:06:48.000 --> 01:06:50.000
+in fact,
+
+01:06:50.000 --> 01:06:52.000
+I remember that there are some on the right,
+
+01:06:52.000 --> 01:06:54.000
+you can do some discussions,
+
+01:06:54.000 --> 01:06:56.000
+you can do some comments.
+
+01:06:56.000 --> 01:06:58.000
+So personally, I think Overleaf
+
+01:06:58.000 --> 01:07:00.000
+is actually a relatively
+
+01:07:00.000 --> 01:07:02.000
+friendly interface
+
+01:07:02.000 --> 01:07:04.000
+for beginners.
+
+01:07:04.000 --> 01:07:06.000
+Well,
+
+01:07:06.000 --> 01:07:08.000
+if you use the source code control software
+
+01:07:08.000 --> 01:07:10.000
+to edit documents,
+
+01:07:10.000 --> 01:07:12.000
+that's fine.
+
+01:07:12.000 --> 01:07:14.000
+If you have,
+
+01:07:14.000 --> 01:07:16.000
+I just mentioned Git,
+
+01:07:16.000 --> 01:07:18.000
+it should be mentioned in Overleaf.
+
+01:07:26.000 --> 01:07:28.000
+Here I mentioned Git,
+
+01:07:28.000 --> 01:07:30.000
+that is, it is actually a version control software.
+
+01:07:30.000 --> 01:07:32.000
+You can imagine it
+
+01:07:32.000 --> 01:07:34.000
+as controlling
+
+01:07:34.000 --> 01:07:36.000
+a group of text files,
+
+01:07:36.000 --> 01:07:38.000
+which changes it made.
+
+01:07:38.000 --> 01:07:40.000
+If you do
+
+01:07:40.000 --> 01:07:42.000
+the right maintenance,
+
+01:07:42.000 --> 01:07:44.000
+these changes can be
+
+01:07:44.000 --> 01:07:46.000
+shared between multiple users.
+
+01:07:50.000 --> 01:07:52.000
+I am using
+
+01:07:52.000 --> 01:07:54.000
+Git,
+
+01:07:54.000 --> 01:07:56.000
+but after I write a paragraph,
+
+01:07:56.000 --> 01:07:58.000
+I will commit it to
+
+01:07:58.000 --> 01:08:00.000
+Git,
+
+01:08:00.000 --> 01:08:02.000
+that is, I am now drawing to this extent,
+
+01:08:02.000 --> 01:08:04.000
+and then save it first.
+
+01:08:04.000 --> 01:08:06.000
+If there are more users,
+
+01:08:06.000 --> 01:08:08.000
+I believe that Git
+
+01:08:08.000 --> 01:08:10.000
+can also do it.
+
+01:08:14.000 --> 01:08:16.000
+The dedicated maintenance platform
+
+01:08:16.000 --> 01:08:18.000
+may be Overleaf.
+
+01:08:18.000 --> 01:08:20.000
+So it is more like
+
+01:08:20.000 --> 01:08:22.000
+it depends on
+
+01:08:22.000 --> 01:08:24.000
+which interface
+
+01:08:24.000 --> 01:08:26.000
+users like to use.
+
+01:08:28.000 --> 01:08:30.000
+I don't know if I have answered
+
+01:08:30.000 --> 01:08:32.000
+Ian's question.
+
+01:08:32.000 --> 01:08:34.000
+At this stage,
+
+01:08:34.000 --> 01:08:36.000
+I would like to
+
+01:08:36.000 --> 01:08:38.000
+stop the recording.
+
+01:08:38.000 --> 01:08:40.000
+If you still have time
+
+01:08:40.000 --> 01:08:42.000
+and have questions,
+
+01:08:42.000 --> 01:08:44.000
+you are welcome to
+
+01:08:44.000 --> 01:08:46.000
+discuss freely.
+
+01:08:46.000 --> 01:08:48.000
+Thank you for your sharing.
+

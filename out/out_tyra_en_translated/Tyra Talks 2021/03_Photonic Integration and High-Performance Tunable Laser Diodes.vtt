@@ -1,0 +1,3641 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+Hello, everyone. Welcome to the Taira Talk on March 20th.
+
+00:10.000 --> 00:20.000
+Today's speaker is Dr. Su Guanlin.
+
+00:20.000 --> 00:30.000
+He was a doctorate student at UIUC, and then a post-doctoral researcher at UC Berkeley.
+
+00:30.000 --> 00:40.000
+Today, he is going to talk about the direction of his research, which is collective light path, continuous light study, integrated process, and wavelength-adjustable semiconductor laser.
+
+00:40.000 --> 00:50.000
+The topic he is going to talk about today is his work at UC Berkeley.
+
+00:50.000 --> 01:00.000
+I think it has a lot to do with semiconductor laser and its integration.
+
+01:00.000 --> 01:10.000
+Let's give him a round of applause.
+
+01:10.000 --> 01:16.000
+Let's start with Dr. Guanlin.
+
+01:16.000 --> 01:20.000
+Thank you, Jason. Thank you, everyone, for coming to my talk.
+
+01:20.000 --> 01:26.000
+I want to thank Taira for providing this platform so that we can talk about this topic today.
+
+01:26.000 --> 01:33.000
+My topic today is high-performance and high-performance wavelength-adjustable semiconductor laser.
+
+01:33.000 --> 01:39.000
+As Jason just mentioned, this is something I studied at UC Berkeley as a post-doctoral researcher.
+
+01:39.000 --> 01:45.000
+The unit I am currently affiliated with is Intel Labs Research Scientist.
+
+01:45.000 --> 01:50.000
+Why do I want to mention this field in particular?
+
+01:50.000 --> 01:53.000
+In fact, you may not be familiar with this picture.
+
+01:53.000 --> 01:57.000
+This is a Wi-Fi input test web page.
+
+01:57.000 --> 02:04.000
+The Wi-Fi on the screen that I will connect to you today is actually built up by light integration technology.
+
+02:04.000 --> 02:07.000
+This is called optical transceiver.
+
+02:07.000 --> 02:12.000
+This green row is all optical transceiver.
+
+02:12.000 --> 02:16.000
+It's all equipped with light integration technology components.
+
+02:17.000 --> 02:23.000
+This is also the most competitive field in light integration technology.
+
+02:23.000 --> 02:27.000
+Even though it's very competitive, it's just the beginning.
+
+02:27.000 --> 02:32.000
+Light integration technology has actually developed a lot of opportunities.
+
+02:32.000 --> 02:41.000
+I personally think this technology is a very balanced combination of laser physics, light, and semiconductor manufacturing.
+
+02:42.000 --> 02:46.000
+I think it's quite aesthetic.
+
+02:46.000 --> 02:49.000
+So I hope to invest a lot.
+
+02:49.000 --> 02:56.000
+As Jason just said, if we can make good use of Terra Journal Club,
+
+02:56.000 --> 03:03.000
+I believe we can find a lot of people in this field who have the same morality and then further promote it.
+
+03:07.000 --> 03:10.000
+My talk today is mainly divided into three parts.
+
+03:10.000 --> 03:12.000
+The first part is the introduction.
+
+03:12.000 --> 03:16.000
+I will introduce to you what is light integration technology.
+
+03:16.000 --> 03:20.000
+And some of its basics.
+
+03:20.000 --> 03:22.000
+Then there are two examples.
+
+03:22.000 --> 03:24.000
+I have done two examples in Berkeley.
+
+03:24.000 --> 03:27.000
+It's probably a very wide, widely tunable.
+
+03:27.000 --> 03:31.000
+It can be tuned to a few nanometers.
+
+03:31.000 --> 03:35.000
+And the second one is a system-level work.
+
+03:35.000 --> 03:37.000
+It's a laser power guiding system.
+
+03:37.000 --> 03:41.000
+It's kind of like we want to demo a data center.
+
+03:41.000 --> 03:46.000
+A very energy-saving network resource distribution system.
+
+03:46.000 --> 03:48.000
+This is also done by using light integration.
+
+03:48.000 --> 03:50.000
+The rest is my summary.
+
+03:50.000 --> 03:55.000
+I'm sorry to give you a disclaimer.
+
+03:55.000 --> 03:59.000
+Because I am now working on light integration technology.
+
+03:59.000 --> 04:02.000
+One of the benefits is Intel.
+
+04:02.000 --> 04:08.000
+My opinion today, my discovery, and my summary.
+
+04:08.000 --> 04:11.000
+In fact, it does not represent the company's position.
+
+04:11.000 --> 04:15.000
+You can think of me as a postdoc.
+
+04:18.000 --> 04:20.000
+What is light integration technology?
+
+04:20.000 --> 04:24.000
+In fact, we all know that there is nothing too fresh under the sun.
+
+04:24.000 --> 04:29.000
+Light integration technology allows light resources to go back to the microwave resources.
+
+04:29.000 --> 04:33.000
+We are going to go from the table to the source.
+
+04:33.000 --> 04:35.000
+We are going to go from the table to the source today.
+
+04:35.000 --> 04:38.000
+This is what light integration technology represents.
+
+04:38.000 --> 04:42.000
+The essence of technology is like this.
+
+04:42.000 --> 04:50.000
+This technology was proposed by Stuart Miller in 1969.
+
+04:50.000 --> 04:54.000
+This article was a very important article.
+
+04:54.000 --> 04:56.000
+He mentioned three very important points.
+
+04:56.000 --> 05:01.000
+The first is how we get the light from the optical table to the chip.
+
+05:01.000 --> 05:06.000
+We have to create a certain optical distortion rate on this chip.
+
+05:06.000 --> 05:11.000
+It can also form a web-guided structure.
+
+05:11.000 --> 05:15.000
+After this thing is realized, he said.
+
+05:15.000 --> 05:19.000
+After this thing is realized, we can improve the stability of the whole system.
+
+05:19.000 --> 05:21.000
+Its reliability will increase.
+
+05:21.000 --> 05:24.000
+Unlike doing free space, we often need to adjust some components.
+
+05:25.000 --> 05:29.000
+When everything is on the same chip, this thing can be omitted.
+
+05:29.000 --> 05:31.000
+You can ignore this step.
+
+05:31.000 --> 05:35.000
+After this step is completed, he made the boldest prediction.
+
+05:35.000 --> 05:38.000
+He thinks this thing will have a certain market scale.
+
+05:38.000 --> 05:47.000
+Today, 50 years later, we can see that the light receiver is a very novel market.
+
+05:47.000 --> 05:50.000
+This is basically in line with his prediction.
+
+05:50.000 --> 05:58.000
+What he didn't predict is that humans have broken through the synthesis process of a single chip.
+
+05:58.000 --> 06:01.000
+We can now synthesize more materials on a single chip.
+
+06:01.000 --> 06:04.000
+Or we can synthesize two chips of different materials together.
+
+06:04.000 --> 06:08.000
+It can break the physical limit set by a single material.
+
+06:08.000 --> 06:11.000
+This is our hybridization material.
+
+06:11.000 --> 06:15.000
+At the same time, if you combine a lot of materials of different optical properties,
+
+06:15.000 --> 06:19.000
+you can break the physical limit set by a single material.
+
+06:19.000 --> 06:26.000
+This thing is also a powerful force that promotes the advancement of the industrial world and the academic world.
+
+06:26.000 --> 06:32.000
+This is basically the most intense field at present.
+
+06:32.000 --> 06:38.000
+The left side is the traditional light communication, sensing, and network systems.
+
+06:38.000 --> 06:42.000
+For example, last year, two terabits per second were demonstrated.
+
+06:42.000 --> 06:51.000
+It's not just a light receiver, it's also a PGA.
+
+06:51.000 --> 06:54.000
+This is a very, very new result.
+
+06:54.000 --> 06:57.000
+This was in March of last year.
+
+06:57.000 --> 07:00.000
+Then, about ten years ago,
+
+07:00.000 --> 07:04.000
+Onchip, which was made on a single-chip,
+
+07:04.000 --> 07:07.000
+is the optical prime of a chip.
+
+07:07.000 --> 07:09.000
+It has a bandwidth of 300 MHz.
+
+07:09.000 --> 07:14.000
+This is the last year's 30 parallel channels light radar.
+
+07:14.000 --> 07:22.000
+This is the most studied technology in LiDAR.
+
+07:22.000 --> 07:26.000
+It's a 30-channel light radar.
+
+07:26.000 --> 07:29.000
+This is a very large amount of transmission.
+
+07:29.000 --> 07:36.000
+In Japan, AIST also showed 800 Gbps data transmission.
+
+07:36.000 --> 07:38.000
+And it's a light-operated data transmission.
+
+07:38.000 --> 07:40.000
+And it's Lossless.
+
+07:40.000 --> 07:44.000
+Basically, it doesn't matter how much power goes in, how much power comes out.
+
+07:44.000 --> 07:46.000
+No loss.
+
+07:46.000 --> 07:48.000
+In the more cutting-edge field,
+
+07:48.000 --> 07:53.000
+For example, machine learning, quantum, and NIST,
+
+07:53.000 --> 07:55.000
+The American Academy of Science and Technology,
+
+07:55.000 --> 08:00.000
+In 2018, they demonstrated a optical frequency transmitter.
+
+08:00.000 --> 08:06.000
+Directly in C-band, the so-called 1550nm,
+
+08:06.000 --> 08:09.000
+1.93kHz,
+
+08:09.000 --> 08:12.000
+It directly generates an optical frequency.
+
+08:12.000 --> 08:14.000
+And its frequency can be up to 1Hz.
+
+08:14.000 --> 08:19.000
+That is to say, its error is only 10-14 to 10-15.
+
+08:19.000 --> 08:23.000
+This is a very fine frequency generator.
+
+08:23.000 --> 08:28.000
+A Spanish group also made an optical FPGA last year.
+
+08:29.000 --> 08:33.000
+It is composed of multiple unit cells.
+
+08:33.000 --> 08:35.000
+It can do all kinds of transfer functions.
+
+08:35.000 --> 08:40.000
+If you want to program it, you can program it.
+
+08:40.000 --> 08:42.000
+A few years ago, it also came out.
+
+08:42.000 --> 08:46.000
+Use optical circuits to make convolutional neural networks.
+
+08:46.000 --> 08:48.000
+It can do image vision.
+
+08:48.000 --> 08:50.000
+Connecting these two most extreme fields,
+
+08:50.000 --> 08:55.000
+In fact, what can't be separated from the industrial and academic fields is our so-called high-performance light source.
+
+08:55.000 --> 08:57.000
+Based on optical integration technology,
+
+08:57.000 --> 09:03.000
+The bandwidth of our current bioluminescence laser has been compressed to about 3Hz.
+
+09:03.000 --> 09:06.000
+Turnability has also exceeded 100nm.
+
+09:06.000 --> 09:08.000
+This is C-band, so it is about 1550nm.
+
+09:08.000 --> 09:12.000
+So it can be adjusted from 14 to 1600nm.
+
+09:12.000 --> 09:15.000
+And our optical amplifiers on the chip
+
+09:15.000 --> 09:19.000
+It has now exceeded 27dB, which is 500 times the optical amplification.
+
+09:19.000 --> 09:21.000
+It can bear 500 times the loss on the chip.
+
+09:21.000 --> 09:24.000
+It can continue to recover your signal.
+
+09:24.000 --> 09:26.000
+Then there is a frequency cone.
+
+09:26.000 --> 09:29.000
+It can produce direct 4-cell.
+
+09:29.000 --> 09:34.000
+So this is a very groundbreaking work.
+
+09:34.000 --> 09:38.000
+In fact, these more amazing studies,
+
+09:38.000 --> 09:44.000
+In fact, the following things are very basic, very fundamental things.
+
+09:44.000 --> 09:45.000
+It's our so-called waveguiding.
+
+09:45.000 --> 09:47.000
+What Miller mentioned just now,
+
+09:47.000 --> 09:50.000
+What is the difference in the loss rate caused by a single chip?
+
+09:50.000 --> 09:53.000
+The one on the left is a SEM, a optical chip.
+
+09:53.000 --> 09:55.000
+The SEM of the light path inside
+
+09:55.000 --> 10:00.000
+The light is transmitted in these so-called light path lines.
+
+10:00.000 --> 10:05.000
+When we cut this straight waveguide,
+
+10:05.000 --> 10:07.000
+In the cross-sectional area,
+
+10:07.000 --> 10:09.000
+We see such a material distribution.
+
+10:09.000 --> 10:11.000
+For example, in this paper,
+
+10:11.000 --> 10:14.000
+The material of the light path is a single-chip.
+
+10:15.000 --> 10:18.000
+Below it is a low-resolution,
+
+10:18.000 --> 10:21.000
+That is, the two-chip is the material below it.
+
+10:21.000 --> 10:23.000
+It's all air.
+
+10:23.000 --> 10:25.000
+So if you cut a chip,
+
+10:25.000 --> 10:26.000
+You can see its index.
+
+10:26.000 --> 10:29.000
+Its resolution distribution is actually a step thing.
+
+10:29.000 --> 10:32.000
+Under these boundary conditions,
+
+10:32.000 --> 10:36.000
+Our Maxwell's equation will actually degenerate into an eigenvalue problem.
+
+10:36.000 --> 10:38.000
+Its solution is Lissan.
+
+10:38.000 --> 10:40.000
+Then this solution is our so-called waveguiding mode.
+
+10:40.000 --> 10:42.000
+Its solution basically looks like this.
+
+10:42.000 --> 10:45.000
+That's different from the plane wave.
+
+10:45.000 --> 10:46.000
+Waveguiding mode,
+
+10:46.000 --> 10:50.000
+It is defined by an equivalent resolution.
+
+10:50.000 --> 10:55.000
+Its equivalent resolution is somewhere between the low-resolution and the high-resolution.
+
+10:55.000 --> 10:59.000
+Then its field shape is basically a certain rule.
+
+10:59.000 --> 11:02.000
+Its peak value is a semi-wavelength.
+
+11:02.000 --> 11:04.000
+Can fit in this index.
+
+11:04.000 --> 11:07.000
+Then its peak value is probably in the middle.
+
+11:07.000 --> 11:11.000
+Then we can change this light path.
+
+11:11.000 --> 11:12.000
+Our so-called waveguiding.
+
+11:12.000 --> 11:14.000
+Its light path, its interface,
+
+11:14.000 --> 11:16.000
+We can engineer its mode.
+
+11:16.000 --> 11:18.000
+For example, we can have this.
+
+11:18.000 --> 11:19.000
+A little wider,
+
+11:19.000 --> 11:21.000
+We can now fit in three modes.
+
+11:21.000 --> 11:24.000
+For example, there are several more than just now.
+
+11:24.000 --> 11:27.000
+So we just need to be able to master this light path.
+
+11:27.000 --> 11:29.000
+Its basic design,
+
+11:29.000 --> 11:30.000
+For example, its material,
+
+11:30.000 --> 11:32.000
+Its index gap,
+
+11:32.000 --> 11:33.000
+The gap between light and snow,
+
+11:33.000 --> 11:34.000
+The gap between light and snow,
+
+11:34.000 --> 11:35.000
+And its size.
+
+11:35.000 --> 11:38.000
+We can design different photonic devices,
+
+11:38.000 --> 11:40.000
+Photonic components.
+
+11:40.000 --> 11:42.000
+In this talk,
+
+11:42.000 --> 11:45.000
+I want to introduce a few photonic components.
+
+11:45.000 --> 11:47.000
+First of all, this is what I just said.
+
+11:47.000 --> 11:49.000
+If we use a single mode,
+
+11:49.000 --> 11:53.000
+A single light path that can only support one mode.
+
+11:53.000 --> 11:56.000
+We trigger a light path that can support multiple modes.
+
+11:56.000 --> 11:58.000
+This light path is relatively fat.
+
+11:58.000 --> 12:02.000
+Then I can trigger many waveguiding modes at the same time.
+
+12:02.000 --> 12:04.000
+Then they will interfere.
+
+12:04.000 --> 12:08.000
+This interference pattern can be accurately predicted.
+
+12:08.000 --> 12:12.000
+For example, this is a very standard light path.
+
+12:12.000 --> 12:17.000
+If we cut off this relatively thick wave at the right length,
+
+12:17.000 --> 12:19.000
+We can make a light path.
+
+12:19.000 --> 12:21.000
+This is a light path.
+
+12:21.000 --> 12:23.000
+This is a light path.
+
+12:23.000 --> 12:25.000
+This is a light path.
+
+12:25.000 --> 12:26.000
+Then,
+
+12:26.000 --> 12:28.000
+Then,
+
+12:28.000 --> 12:30.000
+This is a light path.
+
+12:30.000 --> 12:31.000
+This is a light path.
+
+12:31.000 --> 12:33.000
+Then we are a 1x3 light path.
+
+12:33.000 --> 12:35.000
+Then we have a single mode,
+
+12:35.000 --> 12:37.000
+We set up two mirrors.
+
+12:37.000 --> 12:39.000
+Partially mirrored, or 100%.
+
+12:39.000 --> 12:41.000
+It can form a cavity.
+
+12:41.000 --> 12:43.000
+This is a cavity.
+
+12:43.000 --> 12:46.000
+If we add some photonic components to this cavity,
+
+12:46.000 --> 12:48.000
+That is to say, it provides gain.
+
+12:48.000 --> 12:52.000
+Then you can compensate for the loss of the entire cavity.
+
+12:52.000 --> 12:53.000
+Under the right conditions,
+
+12:53.000 --> 12:55.000
+It will form our so-called photoreceptor.
+
+12:55.000 --> 12:57.000
+This is our laser.
+
+12:57.000 --> 12:59.000
+What about this curve?
+
+12:59.000 --> 13:00.000
+One by one,
+
+13:00.000 --> 13:02.000
+It actually reflects that
+
+13:02.000 --> 13:04.000
+All that can be seen in this photoreceptor
+
+13:04.000 --> 13:07.000
+It forms a whole number of waves.
+
+13:07.000 --> 13:08.000
+The wave field.
+
+13:08.000 --> 13:10.000
+This is our so-called magnet.
+
+13:10.000 --> 13:11.000
+Longitudinal mode.
+
+13:11.000 --> 13:12.000
+This is the magnet.
+
+13:12.000 --> 13:13.000
+It mainly emits light.
+
+13:13.000 --> 13:15.000
+These wave fields.
+
+13:15.000 --> 13:17.000
+Of course, we can also put a single-core
+
+13:17.000 --> 13:19.000
+Single-core single-mode waveguide.
+
+13:19.000 --> 13:23.000
+We use a more complicated loop to make it into a filter.
+
+13:23.000 --> 13:27.000
+The first filter is our so-called Mach-Zehnder interferometer.
+
+13:27.000 --> 13:28.000
+In addition,
+
+13:28.000 --> 13:30.000
+You can also make it into a circular photoreceptor.
+
+13:30.000 --> 13:31.000
+That is to say, the light hit in here.
+
+13:31.000 --> 13:34.000
+The light coming out of here can also have a filter effect.
+
+13:34.000 --> 13:36.000
+Mach-Zehnder interferometer.
+
+13:36.000 --> 13:39.000
+Its transfer function is a very classic sine wave.
+
+13:39.000 --> 13:40.000
+It is a sine wave.
+
+13:40.000 --> 13:41.000
+From 0% to 8%.
+
+13:41.000 --> 13:43.000
+That environment.
+
+13:43.000 --> 13:46.000
+Its transfer function is a sharp thing.
+
+13:46.000 --> 13:48.000
+Because it needs to achieve a resonance in the middle.
+
+13:48.000 --> 13:52.000
+So its frequency selection is very large.
+
+13:52.000 --> 13:53.000
+It is very fine.
+
+13:53.000 --> 13:56.000
+But at the same time, it is also difficult to reach 100%.
+
+13:57.000 --> 14:03.000
+In these devices that are used to form resonance in the future.
+
+14:03.000 --> 14:05.000
+Whether it's a cavity or a filter.
+
+14:05.000 --> 14:09.000
+The distance between our resonance points.
+
+14:09.000 --> 14:13.000
+Basically, it depends on the size of our feature layer.
+
+14:13.000 --> 14:15.000
+For example, in this cavity.
+
+14:15.000 --> 14:16.000
+Laser cavity.
+
+14:16.000 --> 14:17.000
+The distance between these grids.
+
+14:17.000 --> 14:20.000
+It's actually very different from the resonance field.
+
+14:20.000 --> 14:23.000
+And in Mach-Zehnder's interferometer.
+
+14:23.000 --> 14:24.000
+In the middle of these resonance points.
+
+14:24.000 --> 14:26.000
+It's the length that comes out of this.
+
+14:26.000 --> 14:27.000
+It's also inverted.
+
+14:27.000 --> 14:28.000
+In the same way.
+
+14:28.000 --> 14:30.000
+The distance between these two resonance points.
+
+14:30.000 --> 14:33.000
+And the radius of this transverse resonator.
+
+14:33.000 --> 14:35.000
+That is to say, its wavelength is inverted.
+
+14:35.000 --> 14:38.000
+These devices with resonance features.
+
+14:38.000 --> 14:39.000
+Of course, after we do it.
+
+14:39.000 --> 14:40.000
+After we realize it.
+
+14:40.000 --> 14:43.000
+It must be different from what we expected at the time.
+
+14:43.000 --> 14:45.000
+Because there will be various errors in the process.
+
+14:45.000 --> 14:47.000
+So we may have to add some.
+
+14:47.000 --> 14:50.000
+Our so-called phase tuner.
+
+14:50.000 --> 14:51.000
+We can use.
+
+14:51.000 --> 14:53.000
+Substantially change this.
+
+14:53.000 --> 14:56.000
+The detection coefficient on a certain waveguide.
+
+14:56.000 --> 14:57.000
+For example, heating.
+
+14:57.000 --> 14:58.000
+Substantial heating.
+
+14:58.000 --> 14:59.000
+Or adding a power plant.
+
+14:59.000 --> 15:00.000
+Or adding current.
+
+15:00.000 --> 15:01.000
+Turn off the current.
+
+15:01.000 --> 15:04.000
+To stimulate these electron hole pairs.
+
+15:04.000 --> 15:06.000
+We can change its optical detection rate.
+
+15:06.000 --> 15:07.000
+And then we can.
+
+15:07.000 --> 15:08.000
+Put these.
+
+15:08.000 --> 15:10.000
+We used to miss the resonance points.
+
+15:10.000 --> 15:13.000
+Move it to where we want it to be.
+
+15:13.000 --> 15:14.000
+So basically.
+
+15:14.000 --> 15:16.000
+As long as you are familiar with these components.
+
+15:16.000 --> 15:18.000
+You can build a more complex system.
+
+15:18.000 --> 15:19.000
+If you have any ideas.
+
+15:19.000 --> 15:22.000
+You can use some well-known components to build it.
+
+15:22.000 --> 15:25.000
+I'm going to talk about it now.
+
+15:25.000 --> 15:27.000
+The first example I want to introduce to you.
+
+15:27.000 --> 15:28.000
+Is this.
+
+15:28.000 --> 15:30.000
+Ah.
+
+15:30.000 --> 15:33.000
+We are on the single-conductive material.
+
+15:33.000 --> 15:35.000
+There is also a single-conductive.
+
+15:35.000 --> 15:36.000
+Integrated platform.
+
+15:36.000 --> 15:37.000
+They made it.
+
+15:37.000 --> 15:38.000
+The platform.
+
+15:38.000 --> 15:40.000
+I will do a demonstration with him later.
+
+15:40.000 --> 15:44.000
+That.
+
+15:44.000 --> 15:50.000
+Ah.
+
+15:50.000 --> 15:55.000
+Is.
+
+15:55.000 --> 16:01.000
+In fact.
+
+16:01.000 --> 16:02.000
+It's a single-conductive material.
+
+16:02.000 --> 16:05.000
+It's not a multi-conductive material.
+
+16:05.000 --> 16:15.000
+This one.
+
+16:15.000 --> 16:17.000
+You decide.
+
+16:17.000 --> 16:21.000
+The idea is that the two juices are theoretically exactly the same.
+
+16:21.000 --> 16:25.000
+And when they launch, they will have a very uniform shape.
+
+16:25.000 --> 16:26.000
+It's just optical.
+
+16:26.000 --> 16:31.000
+It's just the shape of the frequency of this optical controversy.
+
+16:31.000 --> 16:32.000
+Ah.
+
+16:32.000 --> 16:33.000
+So you see every line.
+
+16:33.000 --> 16:37.000
+They actually don't have a lot of energy.
+
+16:37.000 --> 16:40.000
+But if we listen to the laser, we are in this.
+
+16:40.000 --> 16:41.000
+This one.
+
+16:41.000 --> 16:44.000
+Every product is inserted into a optical filter.
+
+16:44.000 --> 16:45.000
+Ah.
+
+16:45.000 --> 16:48.000
+This optical filter can be controlled by external signals.
+
+16:48.000 --> 16:49.000
+For example.
+
+16:49.000 --> 16:50.000
+Ah.
+
+16:50.000 --> 16:51.000
+This is our so-called light barrier.
+
+16:51.000 --> 16:53.000
+Then he can.
+
+16:53.000 --> 16:56.000
+He can only choose one laser model.
+
+16:56.000 --> 16:58.000
+He suppresses other laser models.
+
+16:58.000 --> 17:03.000
+So when he has a shock radiation, he is a single-mole laser.
+
+17:03.000 --> 17:05.000
+And he has a very strong one.
+
+17:05.000 --> 17:06.000
+Ah.
+
+17:06.000 --> 17:07.000
+This is a well-defined mode.
+
+17:07.000 --> 17:10.000
+Only his power is obviously a lot bigger than that.
+
+17:10.000 --> 17:13.000
+So what kind of applications does he have?
+
+17:13.000 --> 17:14.000
+He's the first one.
+
+17:14.000 --> 17:15.000
+It can be used in gas.
+
+17:15.000 --> 17:16.000
+Ah.
+
+17:16.000 --> 17:17.000
+Ah.
+
+17:17.000 --> 17:18.000
+My class.
+
+17:18.000 --> 17:19.000
+It's optical.
+
+17:19.000 --> 17:20.000
+Optical.
+
+17:20.000 --> 17:21.000
+It can be used to track a certain party.
+
+17:21.000 --> 17:22.000
+Or in the sound optical field.
+
+17:22.000 --> 17:23.000
+He can do it.
+
+17:23.000 --> 17:24.000
+The part of the body.
+
+17:24.000 --> 17:27.000
+Then his light transmission is also a more traditional application.
+
+17:27.000 --> 17:28.000
+Ah.
+
+17:28.000 --> 17:29.000
+For example.
+
+17:29.000 --> 17:30.000
+Hong Kong communication.
+
+17:30.000 --> 17:31.000
+Or the same tone communication.
+
+17:31.000 --> 17:32.000
+It's all a main force.
+
+17:32.000 --> 17:33.000
+That's a new one.
+
+17:33.000 --> 17:34.000
+Hong Kong is introducing to you.
+
+17:34.000 --> 17:36.000
+The frequency-continuous wave light radar.
+
+17:36.000 --> 17:37.000
+This.
+
+17:37.000 --> 17:38.000
+He still has.
+
+17:38.000 --> 17:39.000
+The main force is.
+
+17:39.000 --> 17:40.000
+He is.
+
+17:40.000 --> 17:41.000
+The main light source of the frequency-continuous wave.
+
+17:41.000 --> 17:42.000
+That.
+
+17:42.000 --> 17:43.000
+And.
+
+17:43.000 --> 17:44.000
+Color.
+
+17:44.000 --> 17:45.000
+Military Wave.
+
+17:45.000 --> 17:46.000
+The frequency generation.
+
+17:46.000 --> 17:49.000
+It's also called Tunable Laser.
+
+17:49.000 --> 17:50.000
+That.
+
+17:50.000 --> 17:51.000
+Tunable Laser.
+
+17:51.000 --> 17:52.000
+What is his main metric?
+
+17:52.000 --> 17:54.000
+What are his main parameters?
+
+17:54.000 --> 17:55.000
+For example.
+
+17:55.000 --> 17:56.000
+The most classic one.
+
+17:56.000 --> 17:57.000
+I just introduced to you.
+
+17:57.000 --> 17:58.000
+It's a.
+
+17:58.000 --> 17:59.000
+Ah.
+
+17:59.000 --> 18:00.000
+One.
+
+18:00.000 --> 18:03.000
+The back side is replaced by a light bomb.
+
+18:03.000 --> 18:04.000
+That light bomb.
+
+18:04.000 --> 18:05.000
+After you put the current in it.
+
+18:05.000 --> 18:07.000
+His index will change.
+
+18:07.000 --> 18:08.000
+That is, the light bomb.
+
+18:08.000 --> 18:09.000
+His.
+
+18:09.000 --> 18:10.000
+His.
+
+18:10.000 --> 18:11.000
+The black weapon in the middle.
+
+18:11.000 --> 18:12.000
+His.
+
+18:12.000 --> 18:13.000
+His maximum reflectivity.
+
+18:13.000 --> 18:14.000
+The wave field can be.
+
+18:14.000 --> 18:15.000
+Because.
+
+18:15.000 --> 18:16.000
+Add current.
+
+18:16.000 --> 18:17.000
+And then control.
+
+18:17.000 --> 18:18.000
+That he.
+
+18:18.000 --> 18:19.000
+That laser.
+
+18:19.000 --> 18:20.000
+After the shock radiation.
+
+18:20.000 --> 18:21.000
+His laser spectrum.
+
+18:21.000 --> 18:23.000
+It basically looks like this.
+
+18:23.000 --> 18:24.000
+Ah.
+
+18:24.000 --> 18:25.000
+Until that one.
+
+18:25.000 --> 18:26.000
+He's a single mass.
+
+18:26.000 --> 18:27.000
+My.
+
+18:27.000 --> 18:28.000
+His laser.
+
+18:28.000 --> 18:29.000
+Why doesn't look like this?
+
+18:29.000 --> 18:32.000
+Top wind with this second wind.
+
+18:32.000 --> 18:33.000
+Power in the middle.
+
+18:33.000 --> 18:38.020
+The difference is a 40 bibi, which is our so-called Punk wants.
+
+18:38.020 --> 18:39.000
+He's al.
+
+18:39.000 --> 18:40.000
+The mainstream wind and the wind.
+
+18:40.000 --> 18:42.000
+The igen they stand between each other.
+
+18:42.000 --> 18:43.000
+10 to 10.
+
+18:43.000 --> 18:46.000
+It's in the BB.
+
+18:46.000 --> 18:47.000
+For the second.
+
+18:47.000 --> 18:48.000
+The second.
+
+18:48.000 --> 18:49.000
+Who the hell is the parameter?
+
+18:49.000 --> 18:50.000
+What is the original parameter?
+
+18:50.000 --> 18:51.000
+I'm going to say.
+
+18:51.000 --> 18:52.000
+So much.
+
+18:52.000 --> 18:53.000
+When he continues.
+
+18:53.000 --> 18:55.000
+In the case of continuous power supply.
+
+18:55.000 --> 18:56.000
+He can.
+
+18:56.000 --> 18:57.000
+He can.
+
+18:57.000 --> 18:59.000
+He has a total of his weapons that can be adjusted.
+
+18:59.000 --> 19:01.000
+How much?
+
+19:01.000 --> 19:04.000
+Of course, his output power is also a main measurement goal.
+
+19:04.000 --> 19:07.000
+Milliwatt or dbm to show.
+
+19:07.000 --> 19:08.000
+And his efficiency.
+
+19:08.000 --> 19:09.000
+For example, his.
+
+19:09.000 --> 19:11.000
+How much power do you put in?
+
+19:11.000 --> 19:14.000
+How much power does it give you?
+
+19:14.000 --> 19:15.000
+Such a conversion efficiency.
+
+19:15.000 --> 19:16.000
+It's a line with.
+
+19:16.000 --> 19:18.000
+This is our frequency.
+
+19:18.000 --> 19:19.000
+Accuracy.
+
+19:19.000 --> 19:21.000
+Then it's because of the client.
+
+19:21.000 --> 19:22.000
+A little better.
+
+19:22.000 --> 19:28.000
+If it's a little worse, it's basically this number.
+
+19:28.000 --> 19:30.000
+What if it's like this example?
+
+19:30.000 --> 19:31.000
+This traditional dbm laser.
+
+19:31.000 --> 19:33.000
+He only has one.
+
+19:33.000 --> 19:34.000
+Ah.
+
+19:34.000 --> 19:36.000
+In the case of a filter.
+
+19:36.000 --> 19:38.000
+The most we do is adjust 5 to 6 nanometers.
+
+19:38.000 --> 19:41.000
+This is a material limit.
+
+19:41.000 --> 19:43.000
+So how do we get tens of nanometers?
+
+19:43.000 --> 19:45.000
+Or like the example I just did.
+
+19:45.000 --> 19:47.000
+More than 100 nanometers of tuning.
+
+19:47.000 --> 19:49.000
+We mainly have two means.
+
+19:49.000 --> 19:51.000
+This can be achieved.
+
+19:51.000 --> 19:53.000
+This is the so-called white ability.
+
+19:53.000 --> 19:55.000
+The first one is to use.
+
+19:55.000 --> 19:57.000
+Ah, but it's a pair.
+
+19:57.000 --> 19:59.000
+That is to say, we are using a pair.
+
+19:59.000 --> 20:00.000
+This is the structure.
+
+20:00.000 --> 20:03.000
+For example, the circular oscillator or the light.
+
+20:03.000 --> 20:04.000
+Ah, light.
+
+20:04.000 --> 20:05.000
+This kind of explosion.
+
+20:05.000 --> 20:07.000
+As long as you are a pair, you can do this.
+
+20:07.000 --> 20:08.000
+What does that mean?
+
+20:08.000 --> 20:11.000
+This example is that we have two circular oscillators.
+
+20:11.000 --> 20:12.000
+His.
+
+20:12.000 --> 20:13.000
+The environment is different.
+
+20:13.000 --> 20:14.000
+What about when the environment is different?
+
+20:14.000 --> 20:15.000
+He's this.
+
+20:15.000 --> 20:16.000
+Between the two points of resonance.
+
+20:16.000 --> 20:18.000
+We have the so-called Fritz.
+
+20:18.000 --> 20:19.000
+Fsr.
+
+20:19.000 --> 20:20.000
+It's different.
+
+20:20.000 --> 20:21.000
+For example, the green ring.
+
+20:21.000 --> 20:22.000
+He.
+
+20:22.000 --> 20:24.000
+We can see the green ring and the orange ring.
+
+20:24.000 --> 20:25.000
+It's a little different.
+
+20:25.000 --> 20:27.000
+So it leads to the two of them.
+
+20:27.000 --> 20:28.000
+When they are together.
+
+20:28.000 --> 20:29.000
+Only in their ally.
+
+20:29.000 --> 20:30.000
+This place.
+
+20:30.000 --> 20:31.000
+130 nanometers.
+
+20:31.000 --> 20:33.000
+His transmission is the highest.
+
+20:33.000 --> 20:35.000
+Then when you.
+
+20:35.000 --> 20:36.000
+Ah.
+
+20:36.000 --> 20:37.000
+In the middle of this green ring.
+
+20:37.000 --> 20:38.000
+Add an object.
+
+20:38.000 --> 20:39.000
+After a three-dimensional movement.
+
+20:39.000 --> 20:42.000
+He can move a little bit.
+
+20:42.000 --> 20:43.000
+Just move a little bit.
+
+20:43.000 --> 20:44.000
+But their.
+
+20:44.000 --> 20:48.000
+The second overlapping place is directly from 130 to 1290 nanometers.
+
+20:48.000 --> 20:49.000
+So he's just.
+
+20:49.000 --> 20:51.000
+You just have to move about 1 to 2 nanometers.
+
+20:51.000 --> 20:53.000
+The wind.
+
+20:53.000 --> 20:54.000
+What about your overall score?
+
+20:54.000 --> 20:56.000
+You can jump ten times.
+
+20:56.000 --> 20:58.000
+This is what we call the so-called oil marker effect.
+
+20:58.000 --> 21:00.000
+I've used oil markers.
+
+21:00.000 --> 21:01.000
+They all know that there are two degrees above.
+
+21:01.000 --> 21:03.000
+They are a little bit away.
+
+21:03.000 --> 21:04.000
+This is what they are.
+
+21:04.000 --> 21:05.000
+You move one of them a little bit.
+
+21:05.000 --> 21:07.000
+The next time they come.
+
+21:07.000 --> 21:09.000
+It's very far away.
+
+21:09.000 --> 21:10.000
+Then this.
+
+21:10.000 --> 21:11.000
+His.
+
+21:11.000 --> 21:12.000
+Ah.
+
+21:12.000 --> 21:13.000
+His second feature.
+
+21:13.000 --> 21:14.000
+It's just that he's got a very small.
+
+21:14.000 --> 21:15.000
+This.
+
+21:15.000 --> 21:16.000
+This.
+
+21:16.000 --> 21:17.000
+Ah.
+
+21:17.000 --> 21:18.000
+He can make a big one for you.
+
+21:18.000 --> 21:20.000
+Frequency jump.
+
+21:20.000 --> 21:22.000
+Another feature.
+
+21:22.000 --> 21:25.000
+It's usually this kind of parallel structure.
+
+21:25.000 --> 21:27.000
+His role is relatively sharp.
+
+21:27.000 --> 21:29.000
+In other words, his filter works very well.
+
+21:29.000 --> 21:31.000
+But he's another semi-permanent.
+
+21:31.000 --> 21:34.000
+One of the more significant shortcomings is that he's more.
+
+21:34.000 --> 21:35.000
+Because.
+
+21:35.000 --> 21:36.000
+He is a result.
+
+21:36.000 --> 21:37.000
+So he.
+
+21:37.000 --> 21:39.000
+Two small things into one.
+
+21:39.000 --> 21:40.000
+He's getting smaller and smaller.
+
+21:40.000 --> 21:41.000
+When you connect more and more.
+
+21:41.000 --> 21:42.000
+He's getting bigger and bigger.
+
+21:42.000 --> 21:44.000
+For example, you can see him.
+
+21:44.000 --> 21:49.000
+From 80% to 64%.
+
+21:49.000 --> 21:50.000
+That's another way.
+
+21:50.000 --> 21:51.000
+Just use light interference.
+
+21:51.000 --> 21:53.000
+That's what we just said.
+
+21:53.000 --> 21:55.000
+A single color.
+
+21:55.000 --> 21:56.000
+That's under this architecture.
+
+21:56.000 --> 21:58.000
+We're just going to cut the structure in half.
+
+21:58.000 --> 22:00.000
+And then add the mirror directly.
+
+22:00.000 --> 22:01.000
+We all know this.
+
+22:01.000 --> 22:02.000
+This mirror image.
+
+22:02.000 --> 22:06.000
+It can be used as a single color.
+
+22:06.000 --> 22:07.000
+His.
+
+22:07.000 --> 22:08.000
+His transfer function.
+
+22:08.000 --> 22:10.000
+That's the classic.
+
+22:11.000 --> 22:14.000
+Then as long as one of the.
+
+22:18.000 --> 22:20.000
+100% reflection.
+
+22:20.000 --> 22:21.000
+That.
+
+22:25.000 --> 22:27.000
+He's a continuous tuning.
+
+22:27.000 --> 22:28.000
+That's what he.
+
+22:28.000 --> 22:30.000
+It's the type of thing that jumps.
+
+22:30.000 --> 22:31.000
+He is.
+
+22:31.000 --> 22:32.000
+He's moving as much as you add.
+
+22:32.000 --> 22:33.000
+How much.
+
+22:34.000 --> 22:35.000
+But it should.
+
+22:38.000 --> 22:39.000
+He's not like this.
+
+22:39.000 --> 22:40.000
+He's not like this.
+
+22:40.000 --> 22:42.000
+The more you wear, the more he loses.
+
+22:42.000 --> 22:44.000
+Uh, but his shortcomings.
+
+22:44.000 --> 22:47.000
+It's also obvious that his role is slower.
+
+22:47.000 --> 22:49.000
+It's just that he's particularly close to this.
+
+22:49.000 --> 22:50.000
+The top of the three-way.
+
+22:50.000 --> 22:51.000
+So his.
+
+22:51.000 --> 22:52.000
+Uh.
+
+22:52.000 --> 22:53.000
+Frequency selection.
+
+22:53.000 --> 22:56.000
+It's not as good as this one.
+
+22:56.000 --> 22:57.000
+I don't know if it's so good.
+
+22:57.000 --> 22:58.000
+Whether it's an effect.
+
+22:59.000 --> 23:01.000
+That's the kind of resonance.
+
+23:01.000 --> 23:03.000
+Whether it's a resonance or this interference.
+
+23:03.000 --> 23:04.000
+This kind of component.
+
+23:04.000 --> 23:05.000
+He.
+
+23:05.000 --> 23:06.000
+We've seen it.
+
+23:06.000 --> 23:08.000
+He can be used.
+
+23:08.000 --> 23:09.000
+Uh.
+
+23:09.000 --> 23:10.000
+It can be adjusted.
+
+23:10.000 --> 23:11.000
+It's a price.
+
+23:11.000 --> 23:12.000
+For example.
+
+23:12.000 --> 23:13.000
+On the single-fingered.
+
+23:13.000 --> 23:14.000
+He is.
+
+23:14.000 --> 23:16.000
+It's already reached a commodity level.
+
+23:16.000 --> 23:17.000
+A parameter.
+
+23:17.000 --> 23:18.000
+It can be adjusted.
+
+23:18.000 --> 23:19.000
+For example.
+
+23:19.000 --> 23:20.000
+There's a front light.
+
+23:20.000 --> 23:21.000
+Backlight.
+
+23:21.000 --> 23:22.000
+There's a layer of light in the middle.
+
+23:22.000 --> 23:24.000
+There's an external magnifier on the outside.
+
+23:24.000 --> 23:25.000
+At the same time.
+
+23:25.000 --> 23:26.000
+To magnify.
+
+23:26.000 --> 23:27.000
+Uh.
+
+23:27.000 --> 23:28.000
+It's used to magnify light.
+
+23:28.000 --> 23:29.000
+His.
+
+23:29.000 --> 23:30.000
+Range.
+
+23:30.000 --> 23:31.000
+It can be adjusted.
+
+23:31.000 --> 23:32.000
+About 40 nanometers.
+
+23:32.000 --> 23:33.000
+His.
+
+23:33.000 --> 23:34.000
+It's the wind.
+
+23:34.000 --> 23:35.000
+If you press the wind.
+
+23:35.000 --> 23:36.000
+About 50 db.
+
+23:36.000 --> 23:38.000
+It's 100,000 times the pressure.
+
+23:38.000 --> 23:39.000
+Uh.
+
+23:39.000 --> 23:40.000
+It's already at 100.
+
+23:40.000 --> 23:42.000
+But in the case of an external magnifier.
+
+23:42.000 --> 23:44.000
+It can be up to 40.
+
+23:44.000 --> 23:45.000
+Uh.
+
+23:45.000 --> 23:46.000
+Uh.
+
+23:46.000 --> 23:47.000
+This is a commodity scale.
+
+23:47.000 --> 23:48.000
+A parameter.
+
+23:48.000 --> 23:49.000
+That.
+
+23:49.000 --> 23:50.000
+Next is.
+
+23:50.000 --> 23:51.000
+On the second.
+
+23:51.000 --> 23:53.000
+The platform will be introduced to you later.
+
+23:53.000 --> 23:54.000
+On the silicon.
+
+23:54.000 --> 23:55.000
+We.
+
+23:55.000 --> 23:56.000
+Already.
+
+23:56.000 --> 23:58.000
+Humans have made countless nanometers.
+
+23:58.000 --> 23:59.000
+More than 50.
+
+23:59.000 --> 24:00.000
+Uh.
+
+24:00.000 --> 24:01.000
+db.
+
+24:01.000 --> 24:02.000
+SMSR.
+
+24:02.000 --> 24:03.000
+And then.
+
+24:03.000 --> 24:04.000
+It's less than 100.
+
+24:04.000 --> 24:05.000
+Because he doesn't have an external magnifier.
+
+24:05.000 --> 24:06.000
+In fact, he.
+
+24:06.000 --> 24:07.000
+Uh.
+
+24:07.000 --> 24:08.000
+Nine.
+
+24:08.000 --> 24:09.000
+It's still relative.
+
+24:09.000 --> 24:10.000
+A more.
+
+24:10.000 --> 24:11.000
+Uh.
+
+24:11.000 --> 24:12.000
+A power level.
+
+24:12.000 --> 24:13.000
+That.
+
+24:13.000 --> 24:14.000
+In this.
+
+24:14.000 --> 24:15.000
+Light.
+
+24:15.000 --> 24:16.000
+Light interference.
+
+24:16.000 --> 24:17.000
+The method.
+
+24:17.000 --> 24:18.000
+In.
+
+24:18.000 --> 24:19.000
+Most of the time.
+
+24:19.000 --> 24:20.000
+It's in the single-finger.
+
+24:20.000 --> 24:21.000
+They make monolithic.
+
+24:21.000 --> 24:22.000
+A little.
+
+24:22.000 --> 24:23.000
+That's it.
+
+24:23.000 --> 24:24.000
+It's three.
+
+24:24.000 --> 24:25.000
+Really.
+
+24:25.000 --> 24:26.000
+Stuck together.
+
+24:26.000 --> 24:27.000
+That.
+
+24:27.000 --> 24:28.000
+It can be up to 74 nanometers.
+
+24:28.000 --> 24:29.000
+You.
+
+24:29.000 --> 24:30.000
+Uh.
+
+24:30.000 --> 24:31.000
+At the same time.
+
+24:31.000 --> 24:32.000
+About 40 db.
+
+24:32.000 --> 24:33.000
+Or more.
+
+24:33.000 --> 24:34.000
+A little bit.
+
+24:34.000 --> 24:35.000
+Uh.
+
+24:35.000 --> 24:36.000
+Power is relatively low.
+
+24:36.000 --> 24:37.000
+He only has one.
+
+24:37.000 --> 24:38.000
+That's it.
+
+24:38.000 --> 24:39.000
+This example.
+
+24:39.000 --> 24:40.000
+He's this year.
+
+24:40.000 --> 24:41.000
+He just came out last year.
+
+24:41.000 --> 24:42.000
+He's eight.
+
+24:42.000 --> 24:43.000
+Uh.
+
+24:43.000 --> 24:44.000
+More.
+
+24:44.000 --> 24:45.000
+More extreme.
+
+24:45.000 --> 24:46.000
+A means.
+
+24:46.000 --> 24:47.000
+He has eight.
+
+24:47.000 --> 24:48.000
+Mzi.
+
+24:48.000 --> 24:49.000
+8.
+
+24:49.000 --> 24:50.000
+The interference.
+
+24:50.000 --> 24:51.000
+He's a total of 45 nanometers.
+
+24:51.000 --> 24:52.000
+Uh.
+
+24:52.000 --> 24:53.000
+50 db.
+
+24:53.000 --> 24:54.000
+SMSR.
+
+24:54.000 --> 24:55.000
+His language.
+
+24:55.000 --> 24:56.000
+It's also down to 160.
+
+24:56.000 --> 24:57.000
+Uh.
+
+24:57.000 --> 24:58.000
+Power is also better than the previous one.
+
+24:58.000 --> 24:59.000
+50.
+
+24:59.000 --> 25:00.000
+Uh.
+
+25:00.000 --> 25:01.000
+About five.
+
+25:01.000 --> 25:02.000
+But.
+
+25:02.000 --> 25:03.000
+You can see that they are involved.
+
+25:03.000 --> 25:05.000
+They use a lot of filters.
+
+25:05.000 --> 25:06.000
+Compared to this.
+
+25:06.000 --> 25:07.000
+This kind of use.
+
+25:07.000 --> 25:08.000
+Uh.
+
+25:08.000 --> 25:10.000
+They need more filters.
+
+25:10.000 --> 25:12.000
+To reach this level.
+
+25:12.000 --> 25:14.000
+40 or 50 db.
+
+25:14.000 --> 25:17.000
+So we can see it very intuitively.
+
+25:17.000 --> 25:19.000
+His control is how you want to go.
+
+25:19.000 --> 25:22.000
+It's actually quite a challenge.
+
+25:22.000 --> 25:24.000
+What about this filter design?
+
+25:24.000 --> 25:27.000
+In this example, you can see this.
+
+25:27.000 --> 25:28.000
+Light filter.
+
+25:28.000 --> 25:29.000
+His design.
+
+25:29.000 --> 25:31.000
+It directly affects your laser performance.
+
+25:31.000 --> 25:33.000
+This is very obvious.
+
+25:33.000 --> 25:35.000
+Then in 2011.
+
+25:35.000 --> 25:36.000
+Ah.
+
+25:36.000 --> 25:37.000
+Please say.
+
+25:37.000 --> 25:38.000
+Oh.
+
+25:38.000 --> 25:39.000
+This is the language here.
+
+25:39.000 --> 25:42.000
+What is the laser language?
+
+25:42.000 --> 25:44.000
+Uh.
+
+25:44.000 --> 25:45.000
+What do you mean?
+
+25:45.000 --> 25:46.000
+Uh.
+
+25:46.000 --> 25:47.000
+That is.
+
+25:47.000 --> 25:48.000
+That is.
+
+25:48.000 --> 25:50.000
+These languages are.
+
+25:50.000 --> 25:51.000
+Uh.
+
+25:51.000 --> 25:52.000
+He is.
+
+25:52.000 --> 25:53.000
+Oh.
+
+25:53.000 --> 25:55.000
+Intrinsic language.
+
+25:55.000 --> 25:57.000
+Is it related to his laser.
+
+25:57.000 --> 25:58.000
+Is it related to the gun?
+
+25:58.000 --> 25:59.000
+Or with.
+
+25:59.000 --> 26:00.000
+Oh.
+
+26:00.000 --> 26:01.000
+Right.
+
+26:01.000 --> 26:02.000
+He is.
+
+26:02.000 --> 26:03.000
+He is.
+
+26:03.000 --> 26:04.000
+Intrinsic.
+
+26:04.000 --> 26:05.000
+That's right.
+
+26:05.000 --> 26:06.000
+You remember very well.
+
+26:06.000 --> 26:07.000
+He is.
+
+26:07.000 --> 26:08.000
+It's related to the gun.
+
+26:08.000 --> 26:09.000
+Uh.
+
+26:09.000 --> 26:10.000
+If.
+
+26:10.000 --> 26:11.000
+For.
+
+26:11.000 --> 26:12.000
+Uh.
+
+26:12.000 --> 26:13.000
+Laser.
+
+26:13.000 --> 26:14.000
+He is more.
+
+26:14.000 --> 26:15.000
+Just.
+
+26:15.000 --> 26:16.000
+I have prepared a more.
+
+26:16.000 --> 26:17.000
+Uh.
+
+26:17.000 --> 26:18.000
+A more graphic slide.
+
+26:18.000 --> 26:19.000
+What is his language?
+
+26:19.000 --> 26:20.000
+He's actually laser.
+
+26:20.000 --> 26:21.000
+His.
+
+26:21.000 --> 26:22.000
+He's tired to death.
+
+26:22.000 --> 26:23.000
+When he turned his body around.
+
+26:23.000 --> 26:24.000
+He's actually.
+
+26:24.000 --> 26:25.000
+Especially the semiconductor laser.
+
+26:25.000 --> 26:26.000
+He's in his background.
+
+26:26.000 --> 26:28.000
+In fact, there is a very weak.
+
+26:28.000 --> 26:29.000
+It's his.
+
+26:29.000 --> 26:30.000
+Uh.
+
+26:30.000 --> 26:31.000
+Self-radiation.
+
+26:31.000 --> 26:33.000
+It's just that he hasn't reached the water.
+
+26:33.000 --> 26:34.000
+The thing that happened before.
+
+26:34.000 --> 26:35.000
+It's the LED thing.
+
+26:35.000 --> 26:36.000
+Uh.
+
+26:36.000 --> 26:37.000
+When it reaches the water.
+
+26:37.000 --> 26:39.000
+He's going to have a very clear one.
+
+26:39.000 --> 26:40.000
+Uh.
+
+26:40.000 --> 26:42.000
+The mechanism of radio radiation.
+
+26:42.000 --> 26:43.000
+But.
+
+26:43.000 --> 26:45.000
+And then this is my.
+
+26:45.000 --> 26:46.000
+Put this.
+
+26:46.000 --> 26:47.000
+The expression of that.
+
+26:47.000 --> 26:48.000
+It's his.
+
+26:48.000 --> 26:49.000
+Instantaneous.
+
+26:49.000 --> 26:50.000
+The electric field inside the laser.
+
+26:50.000 --> 26:51.000
+His face.
+
+26:51.000 --> 26:53.000
+When the radiation occurs.
+
+26:53.000 --> 26:55.000
+There will be a very large amount.
+
+26:55.000 --> 26:57.000
+To show that he was the radiation field.
+
+26:57.000 --> 26:59.000
+But on top of this.
+
+26:59.000 --> 27:01.000
+It's because he's got a lot of background.
+
+27:01.000 --> 27:02.000
+Uh.
+
+27:02.000 --> 27:03.000
+Self-radiation.
+
+27:03.000 --> 27:04.000
+So he's got this.
+
+27:04.000 --> 27:05.000
+He has a very weak one.
+
+27:05.000 --> 27:06.000
+A very small amount.
+
+27:06.000 --> 27:07.000
+He has.
+
+27:07.000 --> 27:08.000
+He.
+
+27:08.000 --> 27:09.000
+It's riding on this.
+
+27:09.000 --> 27:10.000
+This.
+
+27:10.000 --> 27:11.000
+On top of the mobile radiation.
+
+27:11.000 --> 27:13.000
+His lungs are random.
+
+27:13.000 --> 27:14.000
+It should be said that he is.
+
+27:14.000 --> 27:16.000
+So you can imagine.
+
+27:16.000 --> 27:17.000
+He's a very big amount.
+
+27:17.000 --> 27:19.000
+He's actually got a very small thing on top of it.
+
+27:19.000 --> 27:22.000
+So he's actually shaking.
+
+27:22.000 --> 27:23.000
+He's not.
+
+27:23.000 --> 27:25.000
+It's not a very clear one.
+
+27:25.000 --> 27:27.000
+He's got a distribution.
+
+27:27.000 --> 27:28.000
+He's got a distribution.
+
+27:28.000 --> 27:30.000
+That's what we call the face.
+
+27:30.000 --> 27:31.000
+The face is not accurate.
+
+27:31.000 --> 27:33.000
+In fact, it is this.
+
+27:33.000 --> 27:34.000
+His.
+
+27:34.000 --> 27:35.000
+His.
+
+27:35.000 --> 27:36.000
+His performance.
+
+27:36.000 --> 27:38.000
+They're only missing a factor in the middle.
+
+27:38.000 --> 27:39.000
+That's right.
+
+27:39.000 --> 27:40.000
+This.
+
+27:40.000 --> 27:41.000
+Live with him.
+
+27:41.000 --> 27:42.000
+The main thing is your gun.
+
+27:42.000 --> 27:44.000
+The longer the laser is, the longer the gun is.
+
+27:44.000 --> 27:46.000
+Your language can be lower.
+
+27:46.000 --> 27:47.000
+But the longer the gun is.
+
+27:47.000 --> 27:48.000
+It's also.
+
+27:48.000 --> 27:50.000
+It's also equivalent to your laser.
+
+27:50.000 --> 27:51.000
+Between the captain mode.
+
+27:51.000 --> 27:52.000
+It's getting narrower.
+
+27:52.000 --> 27:53.000
+If it's getting narrower.
+
+27:53.000 --> 27:55.000
+If it's getting narrower, it's testing the design of your filter.
+
+27:55.000 --> 27:57.000
+How to make this laser.
+
+27:57.000 --> 27:58.000
+In.
+
+27:58.000 --> 28:00.000
+Maintaining a single film.
+
+28:00.000 --> 28:02.000
+Uh, it's harder to launch.
+
+28:02.000 --> 28:05.000
+So, in order to normalize the gun, it's still.
+
+28:05.000 --> 28:09.000
+This is a blow.
+
+28:09.000 --> 28:10.000
+I understand.
+
+28:10.000 --> 28:11.000
+Thank you.
+
+28:11.000 --> 28:14.000
+Right.
+
+28:14.000 --> 28:17.000
+That.
+
+28:17.000 --> 28:18.000
+So we're in.
+
+28:18.000 --> 28:19.000
+Uh, so.
+
+28:19.000 --> 28:20.000
+We're in 2017.
+
+28:20.000 --> 28:24.000
+When I was in the post office, we proposed a new architecture.
+
+28:24.000 --> 28:26.000
+We call it the three X.
+
+28:26.000 --> 28:29.000
+It's actually also part of this kind of light.
+
+28:29.000 --> 28:30.000
+Light sensor system.
+
+28:30.000 --> 28:31.000
+A filter effect.
+
+28:31.000 --> 28:34.000
+So, he actually, we're talking about Bell Labs.
+
+28:34.000 --> 28:37.000
+In 1990, he did the Y-Laser.
+
+28:37.000 --> 28:39.000
+At the time, they had two branches.
+
+28:39.000 --> 28:41.000
+That's the only one.
+
+28:41.000 --> 28:43.000
+That's what we call the.
+
+28:43.000 --> 28:45.000
+Uh, the sensor.
+
+28:45.000 --> 28:47.000
+So his.
+
+28:47.000 --> 28:49.000
+The SMSR is relatively low.
+
+28:49.000 --> 28:51.000
+The top of his side wave is very smooth.
+
+28:51.000 --> 28:54.000
+He only has 100 times the 20 dB.
+
+28:54.000 --> 28:56.000
+Uh, his tuning range is also relatively small.
+
+28:56.000 --> 28:58.000
+Only 8 nanometers.
+
+28:58.000 --> 28:59.000
+But we.
+
+28:59.000 --> 29:03.000
+Uh, based on theoretical calculations, we found that as long as you add the third R.
+
+29:03.000 --> 29:05.000
+The third branch.
+
+29:05.000 --> 29:07.000
+That's equivalent to the two of us.
+
+29:07.000 --> 29:09.000
+It's equivalent to the shortest one.
+
+29:09.000 --> 29:10.000
+This one.
+
+29:10.000 --> 29:12.000
+We have two.
+
+29:13.000 --> 29:17.000
+They each represent a very wide FSR and a very narrow FSR.
+
+29:17.000 --> 29:20.000
+Uh, through this, uh, mechanism, we can introduce two.
+
+29:20.000 --> 29:22.000
+The interference pattern of the front wave.
+
+29:22.000 --> 29:23.000
+We can.
+
+29:23.000 --> 29:26.000
+Max, we can design this tuning range separately.
+
+29:26.000 --> 29:27.000
+With him.
+
+29:27.000 --> 29:29.000
+Improve his SMSR.
+
+29:29.000 --> 29:31.000
+To achieve a, uh.
+
+29:31.000 --> 29:33.000
+Basically, it can decouple these two parameters.
+
+29:33.000 --> 29:35.000
+I want to be on the Y-Laser.
+
+29:35.000 --> 29:36.000
+These two parameters are always.
+
+29:36.000 --> 29:37.000
+Uh, hand in hand.
+
+29:37.000 --> 29:39.000
+You want SMSR high.
+
+29:39.000 --> 29:40.000
+This is.
+
+29:40.000 --> 29:41.000
+Intrinsic.
+
+29:41.000 --> 29:43.000
+Mathematically, it's such a.
+
+29:43.000 --> 29:44.000
+Uh, a reality.
+
+29:44.000 --> 29:47.000
+What kind of structure does that 3X laser have?
+
+29:47.000 --> 29:49.000
+This is a good explanation for everyone.
+
+29:49.000 --> 29:50.000
+This is.
+
+29:50.000 --> 29:52.000
+Uh, their transfer function.
+
+29:52.000 --> 29:54.000
+If this is the Y-Laser.
+
+29:54.000 --> 29:56.000
+It's the front wave we just saw.
+
+29:56.000 --> 29:59.000
+But if there's a 3X, we add the second front wave.
+
+29:59.000 --> 30:01.000
+We're naturally on the outside.
+
+30:01.000 --> 30:03.000
+We're still the same as the Y-Laser.
+
+30:03.000 --> 30:04.000
+But in essence.
+
+30:04.000 --> 30:05.000
+In this.
+
+30:05.000 --> 30:06.000
+We have the second.
+
+30:06.000 --> 30:07.000
+Interference.
+
+30:07.000 --> 30:08.000
+That is, we can.
+
+30:08.000 --> 30:09.000
+We can.
+
+30:09.000 --> 30:10.000
+We can take this.
+
+30:10.000 --> 30:11.000
+It used to be very smooth.
+
+30:11.000 --> 30:13.000
+The front wave has become very sharp.
+
+30:13.000 --> 30:14.000
+Uh, further filter.
+
+30:14.000 --> 30:15.000
+I don't want to.
+
+30:15.000 --> 30:16.000
+I don't want to filter.
+
+30:16.000 --> 30:17.000
+I don't want to.
+
+30:17.000 --> 30:19.000
+If we're going to calculate it.
+
+30:19.000 --> 30:21.000
+If you don't, you'll find this Y-Laser.
+
+30:21.000 --> 30:23.000
+It's actually very dense at the top.
+
+30:23.000 --> 30:24.000
+That is to say.
+
+30:24.000 --> 30:25.000
+These modes.
+
+30:25.000 --> 30:27.000
+It's actually with the main model.
+
+30:27.000 --> 30:28.000
+That's what we want.
+
+30:28.000 --> 30:29.000
+150 nanometers.
+
+30:29.000 --> 30:30.000
+They're very close.
+
+30:30.000 --> 30:31.000
+They're very close.
+
+30:31.000 --> 30:32.000
+So, uh.
+
+30:32.000 --> 30:33.000
+But if you add.
+
+30:33.000 --> 30:35.000
+Like, if we add the third branch.
+
+30:35.000 --> 30:37.000
+We can filter out a lot.
+
+30:37.000 --> 30:38.000
+I don't want to.
+
+30:38.000 --> 30:40.000
+You see, we only have about four or five left.
+
+30:40.000 --> 30:42.000
+And they're with the main model.
+
+30:42.000 --> 30:44.000
+There's a certain gap between their hands.
+
+30:44.000 --> 30:45.000
+So we can.
+
+30:45.000 --> 30:46.000
+So, uh.
+
+30:46.000 --> 30:47.000
+Uh.
+
+30:47.000 --> 30:48.000
+Uh.
+
+30:48.000 --> 30:49.000
+Uh.
+
+30:49.000 --> 30:50.000
+Uh.
+
+30:50.000 --> 30:51.000
+Uh.
+
+30:51.000 --> 30:52.000
+Uh.
+
+30:52.000 --> 30:53.000
+Uh.
+
+30:53.000 --> 30:54.000
+Uh.
+
+30:54.000 --> 30:55.000
+Uh.
+
+30:55.000 --> 30:56.000
+Uh.
+
+30:56.000 --> 30:57.000
+Uh.
+
+30:57.000 --> 30:58.000
+Uh.
+
+30:58.000 --> 30:59.000
+Uh.
+
+30:59.000 --> 31:00.000
+Uh.
+
+31:00.000 --> 31:01.000
+Uh.
+
+31:02.000 --> 31:03.000
+Uh.
+
+31:03.000 --> 31:04.000
+Uh.
+
+31:04.000 --> 31:05.000
+Uh.
+
+31:05.000 --> 31:06.000
+Uh.
+
+31:06.000 --> 31:07.000
+Uh.
+
+31:07.000 --> 31:08.000
+Uh.
+
+31:08.000 --> 31:09.000
+Uh.
+
+31:09.000 --> 31:10.000
+Uh.
+
+31:10.000 --> 31:11.000
+Uh.
+
+31:11.000 --> 31:12.000
+Uh.
+
+31:12.000 --> 31:13.000
+Uh.
+
+31:13.000 --> 31:14.000
+Uh.
+
+31:14.000 --> 31:15.000
+Uh.
+
+31:15.000 --> 31:16.000
+Uh.
+
+31:16.000 --> 31:17.000
+Uh.
+
+31:17.000 --> 31:18.000
+Uh.
+
+31:18.000 --> 31:19.000
+Uh.
+
+31:19.000 --> 31:20.000
+Uh.
+
+31:20.000 --> 31:21.000
+Uh.
+
+31:21.000 --> 31:22.000
+Okay.
+
+31:22.000 --> 31:23.000
+I'll tried.
+
+31:23.000 --> 31:24.000
+One.
+
+31:24.000 --> 31:25.000
+I back.
+
+31:25.000 --> 31:26.000
+And I kicked.
+
+31:26.000 --> 31:28.000
+My body.
+
+31:28.000 --> 31:29.000
+Just.
+
+31:29.000 --> 31:30.000
+Uh.
+
+31:30.000 --> 31:31.000
+Uh.
+
+31:31.000 --> 31:32.000
+Uh.
+
+31:32.000 --> 31:33.000
+Uh.
+
+31:33.000 --> 31:34.000
+Uh.
+
+31:34.000 --> 31:37.000
+Uh.
+
+31:37.000 --> 31:42.000
+Uh.
+
+31:42.000 --> 31:43.000
+Uh.
+
+31:43.000 --> 31:44.000
+Uh.
+
+31:44.000 --> 31:45.000
+Uh.
+
+31:45.000 --> 31:46.000
+Uh.
+
+31:46.000 --> 31:47.000
+Uh.
+
+31:47.000 --> 31:47.000
+
+
+31:47.000 --> 31:48.000
+Uh.
+
+31:48.000 --> 32:11.000
+Uh.
+
+32:11.000 --> 32:12.000
+Uh.
+
+32:12.000 --> 32:13.000
+Uh.
+
+32:13.000 --> 32:14.000
+Uh.
+
+32:14.000 --> 32:15.000
+Uh.
+
+32:15.000 --> 32:16.000
+Uh.
+
+32:16.000 --> 32:17.000
+Uh.
+
+32:17.000 --> 32:18.000
+Uh.
+
+32:18.000 --> 32:19.000
+Uh.
+
+32:19.000 --> 32:20.000
+Uh.
+
+32:20.000 --> 32:25.000
+Uh.
+
+32:25.000 --> 32:35.000
+Uh.
+
+32:35.000 --> 32:43.000
+Uh.
+
+32:43.000 --> 33:11.000
+Uh.
+
+33:11.000 --> 33:15.000
+Uh.
+
+33:15.000 --> 33:29.000
+Uh.
+
+33:29.000 --> 33:49.000
+Uh.
+
+33:49.000 --> 34:03.000
+Uh.
+
+34:03.000 --> 34:25.000
+Uh.
+
+34:25.000 --> 34:35.000
+Uh.
+
+34:35.000 --> 34:47.000
+Uh.
+
+34:47.000 --> 35:02.000
+Uh.
+
+35:02.000 --> 35:12.000
+Uh.
+
+35:12.000 --> 35:32.000
+Uh.
+
+35:32.000 --> 35:42.000
+Uh.
+
+35:42.000 --> 35:52.000
+Uh.
+
+35:52.000 --> 36:02.000
+Uh.
+
+36:02.000 --> 36:12.000
+Uh.
+
+36:12.000 --> 36:30.000
+Uh.
+
+36:30.000 --> 36:40.000
+Uh.
+
+36:40.000 --> 37:00.000
+Uh.
+
+37:00.000 --> 37:10.000
+Uh.
+
+37:10.000 --> 37:20.000
+Uh.
+
+37:20.000 --> 37:42.000
+Uh.
+
+37:42.000 --> 37:52.000
+Uh.
+
+37:52.000 --> 38:02.000
+Uh.
+
+38:02.000 --> 38:24.000
+Uh.
+
+38:24.000 --> 38:34.000
+Uh.
+
+38:34.000 --> 38:44.000
+Uh.
+
+38:44.000 --> 39:04.000
+Uh.
+
+39:04.000 --> 39:14.000
+Uh.
+
+39:14.000 --> 39:24.000
+Uh.
+
+39:24.000 --> 39:34.000
+Uh.
+
+39:34.000 --> 39:44.000
+Uh.
+
+39:44.000 --> 40:04.000
+Uh.
+
+40:04.000 --> 40:26.000
+Uh.
+
+40:26.000 --> 40:36.000
+Uh.
+
+40:36.000 --> 40:46.000
+Uh.
+
+40:46.000 --> 41:08.000
+Uh.
+
+41:08.000 --> 41:18.000
+Uh.
+
+41:18.000 --> 41:28.000
+Uh.
+
+41:28.000 --> 41:38.000
+Uh.
+
+41:38.000 --> 41:58.000
+Uh.
+
+41:58.000 --> 42:08.000
+Uh.
+
+42:08.000 --> 42:30.000
+Uh.
+
+42:30.000 --> 42:40.000
+Uh.
+
+42:40.000 --> 42:50.000
+Uh.
+
+42:50.000 --> 43:00.000
+Uh.
+
+43:00.000 --> 43:10.000
+Uh.
+
+43:10.000 --> 43:32.000
+Uh.
+
+43:32.000 --> 43:42.000
+Uh.
+
+43:42.000 --> 43:52.000
+Uh.
+
+43:52.000 --> 44:12.000
+Uh.
+
+44:12.000 --> 44:22.000
+Uh.
+
+44:22.000 --> 44:32.000
+Uh.
+
+44:32.000 --> 44:42.000
+Uh.
+
+44:42.000 --> 44:52.000
+Uh.
+
+44:52.000 --> 45:02.000
+Uh.
+
+45:02.000 --> 45:12.000
+Uh.
+
+45:12.000 --> 45:32.000
+Uh.
+
+45:32.000 --> 45:42.000
+Uh.
+
+45:42.000 --> 45:52.000
+Uh.
+
+45:52.000 --> 46:02.000
+Uh.
+
+46:02.000 --> 46:12.000
+Uh.
+
+46:12.000 --> 46:32.000
+Uh.
+
+46:32.000 --> 46:52.000
+Uh.
+
+46:52.000 --> 47:02.000
+Uh.
+
+47:02.000 --> 47:12.000
+Uh.
+
+47:12.000 --> 47:32.000
+Uh.
+
+47:32.000 --> 47:42.000
+Uh.
+
+47:42.000 --> 47:52.000
+Uh.
+
+47:52.000 --> 48:02.000
+Uh.
+
+48:02.000 --> 48:12.000
+Uh.
+
+48:12.000 --> 48:22.000
+Uh.
+
+48:22.000 --> 48:32.000
+Uh.
+
+48:32.000 --> 48:42.000
+Uh.
+
+48:42.000 --> 48:52.000
+Uh.
+
+48:52.000 --> 49:02.000
+Uh.
+
+49:02.000 --> 49:12.000
+Uh.
+
+49:12.000 --> 49:22.000
+Uh.
+
+49:22.000 --> 49:32.000
+Uh.
+
+49:32.000 --> 49:42.000
+Uh.
+
+49:42.000 --> 49:52.000
+Uh.
+
+49:52.000 --> 50:02.000
+Uh.
+
+50:02.000 --> 50:12.000
+Uh.
+
+50:12.000 --> 50:32.000
+Uh.
+
+50:32.000 --> 50:42.000
+Uh.
+
+50:42.000 --> 50:52.000
+Uh.
+
+50:52.000 --> 51:12.000
+Uh.
+
+51:12.000 --> 51:32.000
+Uh.
+
+51:32.000 --> 51:42.000
+Uh.
+
+51:42.000 --> 51:52.000
+Uh.
+
+51:52.000 --> 52:12.000
+Uh.
+
+52:12.000 --> 52:22.000
+Uh.
+
+52:22.000 --> 52:32.000
+Uh.
+
+52:32.000 --> 52:42.000
+Uh.
+
+52:42.000 --> 52:52.000
+Uh.
+
+52:52.000 --> 53:02.000
+Uh.
+
+53:02.000 --> 53:12.000
+Uh.
+
+53:12.000 --> 53:32.000
+Uh.
+
+53:32.000 --> 53:42.000
+Uh.
+
+53:42.000 --> 53:52.000
+Uh.
+
+53:52.000 --> 54:02.000
+Uh.
+
+54:02.000 --> 54:12.000
+Uh.
+
+54:12.000 --> 54:22.000
+Uh.
+
+54:22.000 --> 54:32.000
+Uh.
+
+54:32.000 --> 54:42.000
+Uh.
+
+54:42.000 --> 54:52.000
+Uh.
+
+54:52.000 --> 55:12.000
+Uh.
+
+55:12.000 --> 55:32.000
+Uh.
+
+55:32.000 --> 55:52.000
+Uh.
+
+55:52.000 --> 56:02.000
+Uh.
+
+56:02.000 --> 56:12.000
+Uh.
+
+56:12.000 --> 56:32.000
+Uh.
+
+56:32.000 --> 56:42.000
+Uh.
+
+56:42.000 --> 56:52.000
+Uh.
+
+56:52.000 --> 57:12.000
+Uh.
+
+57:12.000 --> 57:32.000
+Uh.
+
+57:32.000 --> 57:52.000
+Uh.
+
+57:52.000 --> 58:12.000
+Uh.
+
+58:12.000 --> 58:32.000
+Uh.
+
+58:32.000 --> 58:52.000
+Uh.
+
+58:52.000 --> 59:12.000
+Uh.
+
+59:12.000 --> 59:32.000
+Uh.
+
+59:32.000 --> 59:42.000
+Uh.
+
+59:42.000 --> 59:52.000
+Uh.
+
+59:52.000 --> 01:00:12.000
+Uh.
+
+01:00:12.000 --> 01:00:32.000
+Uh.
+
+01:00:32.000 --> 01:00:42.000
+Uh.
+
+01:00:42.000 --> 01:00:52.000
+Uh.
+
+01:00:52.000 --> 01:01:02.000
+Uh.
+
+01:01:02.000 --> 01:01:22.000
+Uh.
+
+01:01:22.000 --> 01:01:32.000
+Uh.
+
+01:01:32.000 --> 01:01:42.000
+Uh.
+
+01:01:42.000 --> 01:01:52.000
+Uh.
+
+01:01:52.000 --> 01:02:02.000
+Uh.
+
+01:02:02.000 --> 01:02:12.000
+Uh.
+
+01:02:12.000 --> 01:02:22.000
+Uh.
+
+01:02:22.000 --> 01:02:32.000
+Uh.
+
+01:02:32.000 --> 01:02:42.000
+Uh.
+
+01:02:42.000 --> 01:03:00.000
+Uh.
+
+01:03:00.000 --> 01:03:24.000
+Uh.
+
+01:03:24.000 --> 01:03:34.000
+Uh.
+
+01:03:34.000 --> 01:03:44.000
+Uh.
+
+01:03:44.000 --> 01:04:04.000
+Uh.
+
+01:04:04.000 --> 01:04:24.000
+Uh.
+
+01:04:24.000 --> 01:04:34.000
+Uh.
+
+01:04:34.000 --> 01:04:39.000
+Okay, okay, thank you.
+
+01:04:40.000 --> 01:04:42.000
+Uh.
+
+01:04:42.000 --> 01:04:52.000
+Uh.
+
+01:04:52.000 --> 01:05:02.000
+Uh.
+
+01:05:02.000 --> 01:05:12.000
+Uh.
+
+01:05:12.000 --> 01:05:22.000
+Uh.
+
+01:05:22.000 --> 01:05:32.000
+Uh.
+
+01:05:32.000 --> 01:05:42.000
+Uh.
+
+01:05:42.000 --> 01:06:04.000
+Uh.
+
+01:06:04.000 --> 01:06:14.000
+Uh.
+
+01:06:15.000 --> 01:06:17.000
+Oh, thank you.
+
+01:06:17.000 --> 01:06:31.000
+Um.
+
+01:06:31.000 --> 01:06:33.000
+Uh, I, I have a question here.
+
+01:06:34.000 --> 01:06:36.000
+Uh.
+
+01:06:36.000 --> 01:06:56.000
+Uh.
+
+01:06:56.000 --> 01:07:25.000
+Uh.
+
+01:07:25.000 --> 01:07:27.000
+So this is what we call a jump.
+
+01:07:27.000 --> 01:07:29.000
+Uh, jump filter mode.
+
+01:07:29.000 --> 01:07:31.000
+What I just said is a jump.
+
+01:07:31.000 --> 01:07:33.000
+Uh.
+
+01:07:33.000 --> 01:07:35.000
+Uh.
+
+01:07:35.000 --> 01:07:37.000
+Of course, he's testing.
+
+01:07:37.000 --> 01:07:39.000
+It's very obvious that you can see it when you're testing.
+
+01:07:39.000 --> 01:07:43.000
+For example, we can see that he has a middle jump here.
+
+01:07:43.000 --> 01:07:44.000
+He jumped again.
+
+01:07:44.000 --> 01:07:45.000
+Jumped again.
+
+01:07:45.000 --> 01:07:47.000
+This is basically a jump.
+
+01:07:47.000 --> 01:07:48.000
+Jump.
+
+01:07:48.000 --> 01:07:49.000
+Uh, that's it.
+
+01:07:49.000 --> 01:07:50.000
+You can also see this.
+
+01:07:50.000 --> 01:07:51.000
+Every step.
+
+01:07:52.000 --> 01:07:54.000
+That if it is.
+
+01:07:54.000 --> 01:07:57.000
+If it's a laser, he'll jump this.
+
+01:07:57.000 --> 01:07:58.000
+Uh, filter mode.
+
+01:07:58.000 --> 01:08:00.000
+Yeah, that's it.
+
+01:08:00.000 --> 01:08:02.000
+Is there any application of this?
+
+01:08:02.000 --> 01:08:03.000
+At present.
+
+01:08:03.000 --> 01:08:05.000
+Uh, I haven't used it yet.
+
+01:08:05.000 --> 01:08:06.000
+And.
+
+01:08:06.000 --> 01:08:08.000
+In fact, people hate this thing.
+
+01:08:08.000 --> 01:08:10.000
+It's because of the time.
+
+01:08:10.000 --> 01:08:12.000
+That represents him.
+
+01:08:12.000 --> 01:08:14.000
+Physically, he represents two.
+
+01:08:14.000 --> 01:08:15.000
+He competes with the carrier.
+
+01:08:15.000 --> 01:08:18.000
+When it's the most intense, it's the same input current.
+
+01:08:18.000 --> 01:08:19.000
+There are these two.
+
+01:08:19.000 --> 01:08:21.000
+He's giving you at the same time.
+
+01:08:21.000 --> 01:08:22.000
+Grab this resource.
+
+01:08:22.000 --> 01:08:24.000
+That is, he was at that time.
+
+01:08:24.000 --> 01:08:28.000
+Uh, noise is the biggest.
+
+01:08:28.000 --> 01:08:31.000
+So everyone hates this thing happening.
+
+01:08:31.000 --> 01:08:32.000
+Well, there's no way.
+
+01:08:32.000 --> 01:08:33.000
+This is physics.
+
+01:08:33.000 --> 01:08:35.000
+There's no way.
+
+01:08:35.000 --> 01:08:36.000
+Uh huh.
+
+01:08:36.000 --> 01:08:38.000
+But all of them.
+
+01:08:38.000 --> 01:08:40.000
+With that kind of micro ring.
+
+01:08:40.000 --> 01:08:41.000
+Will there be this problem?
+
+01:08:41.000 --> 01:08:43.000
+Yes, all of them.
+
+01:08:43.000 --> 01:08:44.000
+As long as there is a filter.
+
+01:08:44.000 --> 01:08:45.000
+He will have this problem.
+
+01:08:45.000 --> 01:08:47.000
+Uh, the most frequent.
+
+01:08:47.000 --> 01:08:49.000
+Uh, if the L I is.
+
+01:08:49.000 --> 01:08:52.000
+Uh, there is no filter.
+
+01:08:52.000 --> 01:08:54.000
+As long as there is a filter, he will be like this.
+
+01:08:54.000 --> 01:08:56.000
+Of course, he can play very high power.
+
+01:08:56.000 --> 01:08:58.000
+But he is always multi mode.
+
+01:08:58.000 --> 01:08:59.000
+There is no way.
+
+01:08:59.000 --> 01:09:00.000
+Yes.
+
+01:09:00.000 --> 01:09:01.000
+Don't worry.
+
+01:09:01.000 --> 01:09:02.000
+Um.
+
+01:09:06.000 --> 01:09:07.000
+Or use DFV.
+
+01:09:07.000 --> 01:09:09.000
+DFV is a single product.
+
+01:09:09.000 --> 01:09:10.000
+Then he.
+
+01:09:10.000 --> 01:09:11.000
+Uh, there won't be.
+
+01:09:11.000 --> 01:09:13.000
+This problem of motor.
+
+01:09:13.000 --> 01:09:14.000
+Uh huh.
+
+01:09:18.000 --> 01:09:19.000
+Hey, ask him.
+
+01:09:19.000 --> 01:09:20.000
+His mother.
+
+01:09:20.000 --> 01:09:21.000
+His.
+
+01:09:21.000 --> 01:09:24.000
+Hey, can you give me some numbers?
+
+01:09:24.000 --> 01:09:25.000
+I can't see it here.
+
+01:09:25.000 --> 01:09:26.000
+He's probably.
+
+01:09:26.000 --> 01:09:28.000
+How much frequency is this?
+
+01:09:28.000 --> 01:09:29.000
+Uh, I think.
+
+01:09:29.000 --> 01:09:31.000
+OK.
+
+01:09:31.000 --> 01:09:32.000
+Oh, it's okay.
+
+01:09:32.000 --> 01:09:35.000
+Hey, I want to ask another question.
+
+01:09:35.000 --> 01:09:37.000
+Hey, a little bit.
+
+01:09:37.000 --> 01:09:38.000
+His.
+
+01:09:38.000 --> 01:09:40.000
+You have a character.
+
+01:09:40.000 --> 01:09:41.000
+What is his?
+
+01:09:41.000 --> 01:09:43.000
+Uh, relaxation.
+
+01:09:43.000 --> 01:09:44.000
+Is the frequency of the selection?
+
+01:09:45.000 --> 01:09:47.000
+Oh, we don't have it.
+
+01:09:47.000 --> 01:09:49.000
+Because of this platform.
+
+01:09:49.000 --> 01:09:50.000
+We are.
+
+01:09:50.000 --> 01:09:52.000
+Uh, more.
+
+01:09:52.000 --> 01:09:53.000
+We are a foreign package.
+
+01:09:53.000 --> 01:09:55.000
+This is the Netherlands.
+
+01:09:55.000 --> 01:09:56.000
+Uh.
+
+01:09:56.000 --> 01:09:58.000
+But you can guess very well.
+
+01:09:58.000 --> 01:10:00.000
+He is in the middle of 1 gigahertz to 3 gigahertz.
+
+01:10:00.000 --> 01:10:02.000
+He is not.
+
+01:10:02.000 --> 01:10:04.000
+He is not.
+
+01:10:04.000 --> 01:10:06.000
+So, of course, this level.
+
+01:10:09.000 --> 01:10:10.000
+OK.
+
+01:10:10.000 --> 01:10:11.000
+Thank you.
+
+01:10:11.000 --> 01:10:12.000
+Correct.
+
+01:10:13.000 --> 01:10:15.000
+But he has something to do with his resonance gun length.
+
+01:10:15.000 --> 01:10:17.000
+The longer your resonance gun is, the slower it is.
+
+01:10:17.000 --> 01:10:18.000
+Correct.
+
+01:10:25.000 --> 01:10:26.000
+OK.
+
+01:10:26.000 --> 01:10:27.000
+Well, if not.
+
+01:10:27.000 --> 01:10:31.000
+Then I will end this recording here first.
+
+01:10:31.000 --> 01:10:32.000
+Thank you all.
+
+01:10:32.000 --> 01:10:33.000
+Thank you.
+
+01:10:33.000 --> 01:10:34.000
+Thank you.
+

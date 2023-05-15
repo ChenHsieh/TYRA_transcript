@@ -1,0 +1,2210 @@
+start	end	text
+0	6000	Hello, everyone. Welcome to today's Tera Talk.
+6000	9000	We're honored to have Lin Weikai with us today.
+9000	12000	Lin Weikai has been a good friend of mine for many years.
+12000	17000	Lin Weikai is now a third-year PhD student at Cornell,
+17000	19000	majoring in Computer Science.
+19000	22000	Lin's research focuses on cryptography.
+22000	26000	His main focus is on Oblivious algorithm.
+26000	33000	This allows the algorithm to store data without revealing the content.
+33000	38000	He majored in Chemistry when he was a college student.
+38000	43000	He majored in Computer Science when he was a master's student.
+43000	49000	He majored in Computer Science when he was a master's student.
+49000	53000	Before his PhD,
+53000	57000	he worked as a software engineer at Chengxin.
+57000	60000	He also worked as a research assistant at the Central Academy of Sciences.
+60000	66000	What Lin is going to talk about today is the concept of Oblivious algorithm.
+66000	70000	But today, he's going to talk about a new definition of
+70000	75000	the fairness of multiparty coin tossing.
+75000	77000	Let's give him a round of applause.
+77000	80000	By the way, remember to turn on the microphone when you clap.
+80000	83000	Let's give him a round of applause.
+88000	92000	Thank you for such a wonderful introduction.
+92000	96000	The title is complicated,
+96000	102000	but I assume most of you have heard of the theorem of the game.
+102000	106000	Today's topic is
+106000	112000	the concept of coin toss.
+112000	117000	I'm going to talk about the relationship between coin toss and the theorem of the game.
+117000	122000	This work was done by Zhong Kaimin at the Central Academy of Sciences.
+122000	127000	Guo Yue, Rafael, and I are both at Cornell.
+127000	134000	Cornell Tech is a campus at NYC.
+135000	141000	Cornell has a new campus at NYC.
+141000	147000	Let's talk about the topic of coin toss today.
+147000	155000	The motivation of this research is very realistic.
+155000	159000	Although I usually do theoretical research,
+159000	162000	our motivation is very realistic.
+162000	164000	What is the motivation?
+164000	169000	Trump and Xi want to hold a summit.
+169000	172000	Where will it be held?
+172000	174000	Trump wants to hold it in DC.
+174000	176000	Xi wants to hold it in Beijing.
+176000	181000	If these two people can't get along,
+181000	182000	what should they do?
+182000	185000	The easiest way is to make a decision by tossing a coin.
+185000	188000	If these two people can't get along,
+188000	190000	how can they toss a coin?
+190000	194000	This is a tricky question we are going to discuss today.
+194000	197000	If these two people can't get along, how can they toss a coin?
+197000	201000	Let's not talk about whether the coin toss will be fair or not.
+201000	203000	If they can't get along,
+203000	206000	if Trump tosses a coin here,
+206000	208000	Xi won't believe it even if he doesn't see it.
+208000	211000	So what should they do?
+212000	215000	If I have a way to toss a coin,
+215000	217000	a way to toss a coin remotely,
+217000	219000	if the coin tosses out,
+219000	220000	Xi is in DC,
+220000	221000	Xi is in Beijing.
+221000	224000	If the coin tosses out remotely is fair,
+224000	226000	everyone will be happy.
+226000	228000	Half and half chance.
+228000	229000	In the game,
+229000	232000	someone will tell you that there is a payoff.
+232000	234000	What is the coin toss?
+234000	240000	Which side has how many payoffs or utilities?
+240000	243000	But let's not talk about this.
+243000	247000	In history,
+247000	251000	there is a hotline between the United States and the Soviet Union.
+251000	253000	Maybe there is also a hotline between Trump and Xi.
+253000	256000	If they don't meet, they can talk on the phone.
+256000	259000	If there is a question in the middle,
+259000	261000	you can interrupt me at any time.
+261000	266000	I hope everyone can understand what I am talking about today.
+266000	268000	If you don't understand,
+268000	270000	don't be afraid.
+270000	272000	Try to ask.
+272000	276000	The purpose of the hotline is that
+276000	278000	you say one sentence, I say one sentence,
+278000	281000	and the other party can hear what I say.
+281000	283000	Then there is nothing else.
+283000	286000	So the hotline can't help you directly
+286000	288000	toss a coin.
+288000	290000	It's not such a good thing.
+290000	292000	But what can the hotline do?
+292000	296000	The hotline can communicate on both sides.
+296000	298000	After the communication,
+298000	302000	the hotline may have an output.
+302000	304000	B is equal to 0 or B is equal to 1.
+304000	306000	It's the same side.
+306000	308000	The hotline can do this.
+308000	311000	It can help you create a random variable.
+311000	313000	Its value is 0 or 1.
+313000	315000	The probability is 0.5 or 0.5.
+315000	319000	What I want is to get a random variable.
+319000	323000	It's a random variable defined by math.
+324000	330000	If you are familiar with the random variables defined by math,
+330000	334000	or you've heard of it in class,
+334000	339000	I have a way to get the two sides to toss a coin.
+339000	341000	How do you do it?
+341000	343000	Trump throws a coin first.
+343000	345000	The coin is 1.
+345000	349000	Then Trump says to Xi on the phone,
+349000	351000	my coin is 1.
+351000	353000	Then Xi says,
+353000	355000	I got it.
+355000	357000	Your coin is 1.
+357000	360000	Then both sides agree that the coin is 1.
+360000	367000	If Trump throws a fair coin,
+367000	370000	this method may work.
+370000	373000	But Xi is obviously not happy.
+373000	375000	If Trump is a bad guy,
+375000	377000	and he didn't throw the coin at all,
+378000	383000	it's not a good thing for Xi.
+383000	386000	He won't agree with the result of the coin toss.
+386000	393000	Don't say that Trump made a mistake at the beginning,
+393000	395000	and made it unfair.
+395000	399000	Even if he made a very complicated LeTouJi,
+399000	401000	and recorded it,
+401000	403000	and sent it to Xi through a hotline,
+403000	408000	Xi won't believe it.
+408000	414000	If Trump didn't cheat,
+414000	416000	it may work.
+416000	418000	But neither side believes each other.
+418000	420000	This is a common problem in cryptography.
+420000	422000	If neither side doesn't believe each other,
+422000	424000	what should we do?
+425000	428000	A long time ago,
+428000	434000	there was a technology called commit.
+434000	440000	Trump first calculated a number X
+440000	445000	using SHA.
+445000	447000	Then he told Xi.
+447000	449000	This thing is called commit.
+449000	451000	Xi said,
+451000	453000	you calculated X, I calculated Y,
+453000	455000	and then E.
+455000	457000	Then Trump said,
+457000	459000	my X is below E,
+459000	461000	and then he made a mess.
+461000	465000	In order to hide the E at the beginning.
+465000	467000	Then these two sides,
+467000	469000	X and Y, XOR,
+469000	473000	is the result of the coin toss.
+473000	475000	In cryptography,
+475000	477000	these two things are simplified
+477000	479000	into commit and open.
+479000	481000	That is,
+481000	483000	he wrote an X,
+483000	487000	and then sealed it in the envelope to Xi.
+487000	489000	After Xi received it,
+489000	491000	he opened the envelope.
+491000	493000	The purpose of the envelope
+493000	495000	is to prevent the person
+495000	499000	who wrote the envelope from changing.
+500000	503000	The person who received the envelope
+503000	505000	can't see it for the time being.
+505000	507000	This is called commit and open.
+507000	509000	In the past...
+509000	511000	I have a question.
+511000	513000	Does this hotline
+513000	515000	have a rule
+515000	517000	that you have to do it one by one?
+517000	519000	Can't you say it at the same time?
+519000	521000	If you say it at the same time,
+521000	523000	everyone says 1, 2, 3,
+523000	525000	and I say 1 or 0,
+525000	527000	and everyone says XOR.
+527000	529000	This is a very good question.
+529000	531000	But because everyone doesn't believe it,
+531000	533000	they might say it slowly.
+533000	535000	So...
+535000	537000	This hotline
+537000	539000	has a rule
+539000	541000	that you have to do it one by one.
+541000	543000	You can't say it at the same time.
+543000	545000	You can't say it at the same time.
+545000	547000	I should say that
+547000	549000	I didn't assume
+549000	551000	that this hotline
+551000	553000	had to do it one by one.
+553000	555000	But Trump and Xi agreed
+555000	557000	and...
+557000	559000	If someone says it slowly,
+559000	561000	what should you do?
+561000	563000	Do it again?
+563000	565000	Yes, yes.
+565000	567000	Then it will be endless.
+567000	569000	Okay, good.
+569000	571000	Also,
+571000	573000	when we imagine a hotline,
+573000	575000	we can't judge
+575000	577000	who says it slowly.
+577000	579000	Because of the message delay,
+579000	581000	we can't be sure
+581000	583000	who says it slowly.
+583000	585000	If we do it one by one,
+585000	587000	we can be sure of the order.
+587000	589000	Okay, got it.
+589000	591000	So,
+591000	593000	at the same time,
+593000	595000	on the internet,
+595000	597000	it's hard to judge.
+599000	601000	This is a good question.
+601000	603000	Let's say
+603000	605000	all the protocols
+605000	607000	are one by one.
+607000	609000	And the order is...
+609000	611000	Okay,
+611000	613000	then,
+613000	615000	this thing,
+615000	617000	this commit and open,
+617000	619000	if you have a good commit,
+619000	621000	when you commit,
+621000	623000	the other side can't be opened.
+623000	625000	And the other side of the bus
+625000	627000	can't be tampered with.
+627000	629000	Then this thing,
+629000	631000	this coin toss thing,
+631000	633000	can be done fairly.
+633000	635000	Because when it commits to x in advance,
+635000	637000	it doesn't know what will happen to y.
+637000	639000	And when it commits to y,
+639000	641000	it doesn't know what x is.
+641000	643000	So,
+643000	645000	the result will be
+645000	647000	fair.
+647000	649000	And
+649000	651000	we can be sure
+651000	653000	the other side can't tamper with the result.
+657000	659000	Then,
+659000	661000	this thing,
+661000	663000	we've been talking about fairness.
+663000	665000	What kind of fairness
+665000	667000	do we want?
+667000	669000	The formal definition of
+669000	671000	mathematics is
+671000	673000	the expected value is 0.5.
+673000	675000	The result of the commit is only 0 and 1.
+675000	677000	And the probability is 0.5.
+677000	679000	So the expected value is
+679000	681000	0.5 times 0 plus 0.5 times 1
+681000	683000	equals 0.5.
+683000	685000	I want the expected value
+685000	687000	to be exactly 0.5.
+687000	689000	Then,
+689000	691000	if you look at this thing carefully,
+691000	693000	it's not exactly 0.5.
+693000	695000	I'll talk about this later.
+695000	697000	So it usually adds
+697000	699000	a very small fraction,
+699000	701000	negligible.
+701000	703000	But let's leave it alone.
+703000	705000	I just want 0.5.
+705000	707000	Then,
+707000	709000	this thing,
+709000	711000	unfortunately,
+711000	713000	in the
+713000	715000	previous result,
+715000	717000	a long time ago,
+717000	719000	about 30 years ago,
+719000	721000	what can't we do?
+723000	725000	This
+725000	727000	adversary,
+727000	729000	like Trump or Xi,
+729000	731000	can end
+731000	733000	earlier.
+733000	735000	This protocol is not finished yet.
+735000	737000	He said I'm not going to play like this.
+737000	739000	And
+739000	741000	this adversary
+741000	743000	is
+743000	745000	only when there is a limited
+745000	747000	computing power,
+747000	749000	this
+749000	751000	protocol,
+751000	753000	this is easier for the protocol
+753000	755000	to do.
+755000	757000	Let's assume that Trump and Xi
+757000	759000	have limited
+759000	761000	computing power.
+761000	763000	It's all polynomial time
+763000	765000	algorithm.
+765000	767000	This polynomial time,
+767000	769000	you may not be familiar with it,
+769000	771000	but
+773000	775000	you can make a decision
+775000	777000	within a few seconds.
+779000	781000	Then
+781000	783000	any
+785000	787000	protocol like this,
+787000	789000	in the result of this cliff,
+789000	791000	it can design
+791000	793000	an attacker to crack
+793000	795000	any protocol.
+795000	797000	So
+797000	799000	to achieve the expected value
+799000	801000	is exactly 0.5,
+801000	803000	no protocol can do it.
+803000	805000	The result is
+805000	807000	such a strong impossibility.
+807000	809000	That is to say,
+809000	811000	no protocol can do this.
+811000	813000	In this way,
+813000	815000	let's take a look at this example.
+815000	817000	Just
+817000	819000	commit and open this example.
+819000	821000	Here,
+821000	823000	we are using the
+823000	825000	new hash function.
+825000	827000	It's not new, it's about
+827000	829000	more than ten years.
+829000	831000	So far, everyone still believes that SHA-256
+831000	833000	is difficult to crack.
+833000	835000	For example,
+835000	837000	Bitcoin is still in use.
+837000	839000	How to
+839000	841000	crack it?
+841000	843000	If
+843000	845000	Xi's
+845000	847000	computing power is
+847000	849000	infinite,
+849000	851000	he can easily
+851000	853000	decrypt SHA-256x
+853000	855000	which is equal to a certain number.
+855000	857000	As long as he violently
+857000	859000	tries all the x,
+859000	861000	he can decrypt the x.
+861000	863000	After Xi knows
+863000	865000	the value of x,
+865000	867000	he can choose a relative y
+867000	869000	so that the result is what he likes.
+869000	871000	For example, he likes 0.
+871000	873000	0 represents Beijing.
+873000	875000	So when he sees that the value of x is 1,
+875000	877000	he chooses a y
+877000	879000	so that the result is Beijing.
+879000	881000	Trump doesn't know
+881000	883000	that he was fooled.
+883000	885000	He can only delete 1.
+885000	887000	The result is what Xi wants.
+887000	889000	This is
+889000	891000	if
+891000	893000	one of them
+893000	895000	has
+895000	897000	infinite computing power,
+897000	899000	something may happen.
+903000	905000	But
+905000	907000	what I said last time
+907000	909000	is even stronger.
+909000	911000	Even if Xi only has
+911000	913000	limited computing power,
+913000	915000	he can still attack.
+915000	917000	How effective
+917000	919000	this attack method
+919000	921000	can be?
+921000	923000	It can make the expectation value
+923000	925000	deviate
+925000	927000	to any
+927000	929000	deviation
+929000	931000	to any
+931000	933000	deviation
+933000	935000	to any
+935000	937000	deviation
+937000	939000	to any
+939000	941000	1 in three rounds.
+941000	943000	So
+943000	945000	1 in three rounds.
+945000	947000	The number of attacks
+947000	949000	is about 1 in three rounds.
+949000	951000	This is a very powerful attack.
+951000	953000	For example,
+953000	955000	For example,
+955000	957000	For example,
+957000	959000	the attacker
+959000	961000	has infinite computing power.
+961000	963000	He can make
+963000	965000	his expectation value
+965000	967000	deviate to 0.5.
+967000	969000	He can choose
+969000	971000	what he wants.
+971000	973000	But if he only has
+973000	975000	limited computing power,
+975000	977000	he can't
+977000	979000	make the expectation value
+979000	981000	deviate so much, but he can
+981000	983000	deviate to a certain number,
+983000	985000	which is 1 in three rounds.
+985000	987000	I just gave a random number,
+987000	989000	but according to this protocol,
+989000	991000	it is about 1 in three rounds.
+991000	993000	The expectation value is 1 in three rounds.
+993000	995000	From 0.5 to 0.5 plus 1 in three rounds
+995000	997000	is 0.8.
+997000	999000	So
+999000	1001000	the result of
+1001000	1003000	cleave is very strong.
+1003000	1005000	You can't make a fair copy.
+1005000	1007000	Because no matter what protocol,
+1007000	1009000	it can create an attacker.
+1009000	1011000	Then
+1011000	1013000	make an effective attack in a limited time.
+1013000	1015000	Then
+1015000	1017000	here
+1017000	1019000	There is another thing
+1019000	1021000	to talk about this attack.
+1021000	1023000	This
+1023000	1025000	What kind of
+1025000	1027000	impact will it have at the beginning and end?
+1027000	1029000	For example,
+1029000	1031000	at the beginning, I talked about the simplest
+1031000	1033000	protocol.
+1033000	1035000	Trump threw a copper plate,
+1035000	1037000	and Xi Jinping received it and
+1037000	1039000	admitted that it was a copper plate.
+1039000	1041000	He admitted the result of the copper plate.
+1041000	1043000	This thing
+1045000	1047000	has a fail-stop.
+1047000	1049000	If one of them
+1049000	1051000	can end early
+1051000	1053000	and not late,
+1053000	1055000	it is difficult to achieve
+1055000	1057000	a fair result.
+1057000	1059000	For example, Trump threw a copper plate,
+1059000	1061000	and he saw this copper plate
+1061000	1063000	was not what he liked.
+1063000	1065000	He said, then I won't play.
+1065000	1067000	Then
+1067000	1069000	this
+1069000	1071000	If you don't play, Xi Jinping
+1071000	1073000	So far
+1073000	1075000	we still assume that he is
+1075000	1077000	honest
+1077000	1079000	to follow the game rules at the beginning.
+1079000	1081000	He received
+1081000	1083000	a copper plate message
+1083000	1085000	and then he
+1085000	1087000	admitted that the message of the copper plate
+1087000	1089000	was their consensus.
+1089000	1091000	But
+1091000	1093000	one of them is not late,
+1093000	1095000	what is the other party's consensus?
+1095000	1097000	This is
+1097000	1099000	difficult to say.
+1101000	1103000	In order to have a consensus,
+1103000	1105000	we usually have to define
+1105000	1107000	one of them
+1107000	1109000	is not honest and not late.
+1109000	1111000	What should the other party say?
+1111000	1113000	Xi Jinping
+1113000	1115000	threw a copper plate
+1115000	1117000	and it was 0.5.
+1117000	1119000	Or he has to
+1119000	1121000	fix the output
+1121000	1123000	0 or 1
+1123000	1125000	It's hard to say.
+1125000	1127000	Trump
+1127000	1129000	can see what he is doing
+1129000	1131000	honestly
+1131000	1133000	and decide
+1133000	1135000	when to end
+1135000	1137000	and when not to end.
+1137000	1139000	The entire output
+1139000	1141000	is completely controlled
+1141000	1143000	by the dishonest
+1143000	1145000	party.
+1145000	1147000	Then
+1147000	1149000	there is no fairness
+1149000	1151000	or
+1151000	1153000	security.
+1153000	1155000	The result of this copper plate
+1155000	1157000	output
+1157000	1159000	its fairness is the security
+1159000	1161000	I want.
+1161000	1163000	So
+1163000	1165000	the focus here is
+1165000	1167000	this
+1167000	1169000	computationally bounded
+1169000	1171000	the attacker's
+1171000	1173000	computing power is limited
+1173000	1175000	and it can end early
+1175000	1177000	these two things.
+1177000	1179000	If one of them is missing
+1179000	1181000	we all know
+1181000	1183000	we all know
+1183000	1185000	it can be done
+1185000	1187000	If I assume
+1187000	1189000	the attacker will never
+1189000	1191000	end early
+1191000	1193000	then this copper plate
+1193000	1195000	can be played
+1195000	1197000	up to 0.5
+1197000	1199000	but these two conditions
+1199000	1201000	these two computationally bounded
+1201000	1203000	and failstop
+1203000	1205000	when these two conditions exist at the same time
+1205000	1207000	we can't do it.
+1207000	1209000	And the proof that we can't do it
+1209000	1211000	is to really build a
+1211000	1213000	attacker
+1213000	1215000	and then target
+1215000	1217000	any protocol
+1217000	1219000	to attack.
+1219000	1221000	So
+1221000	1223000	but
+1223000	1225000	but
+1225000	1227000	when you look at the first page
+1227000	1229000	you may find it
+1229000	1231000	strange
+1231000	1233000	if Trump can't end early
+1233000	1235000	then Xi Jinping can
+1235000	1237000	say I like to be in Beijing
+1237000	1239000	then I will be in Beijing.
+1239000	1241000	This is
+1241000	1243000	another definition
+1243000	1245000	of
+1245000	1247000	the focus
+1247000	1249000	Hello
+1261000	1263000	Hello
+1265000	1267000	Is my connection broken?
+1269000	1271000	I can't hear you.
+1271000	1273000	Ok
+1273000	1275000	So
+1275000	1277000	Can you hear me?
+1277000	1279000	I can't hear you.
+1279000	1281000	I can hear you.
+1281000	1283000	But
+1283000	1285000	I can't hear the speaker.
+1285000	1287000	Ok
+1287000	1289000	Ok
+1295000	1297000	So the connection is broken.
+1299000	1301000	Let me contact him.
+1305000	1307000	Hello
+1307000	1309000	Can you hear me?
+1309000	1311000	I can hear you.
+1311000	1313000	I can hear you.
+1313000	1315000	I can hear you.
+1315000	1317000	How are you?
+1317000	1319000	I can't hear you.
+1319000	1321000	I am scared.
+1321000	1323000	I can't hear you.
+1323000	1325000	I can't hear you.
+1327000	1329020	So
+1329020	1331020	I call you
+1331020	1333020	because
+1333020	1335020	I can't hear you.
+1335020	1337020	I can't hear you.
+1337020	1339020	I can't hear you.
+1339020	1341020	I can't hear you.
+1341020	1343020	Can you hear me?
+1347020	1349020	I can hear you.
+1349020	1351020	I can hear you.
+1351020	1353020	I think my internet is down.
+1353020	1355020	I don't know where I am.
+1355020	1357020	I just
+1357020	1359020	talk about
+1359020	1361020	the commit and open
+1361020	1363020	protocol can
+1363020	1365020	protect
+1365020	1367020	good people.
+1367020	1369020	And
+1369020	1371020	why this protocol
+1371020	1373020	can protect good people?
+1373020	1375020	If
+1375020	1377020	one side
+1377020	1379020	can't finish early,
+1379020	1381020	the other side
+1381020	1383020	will be happy to say
+1383020	1385020	the other side is bad
+1385020	1387020	so I can
+1387020	1389020	protect my own interests
+1389020	1391020	to protect the interests of good people.
+1391020	1393020	So I will
+1393020	1395020	produce the result
+1395020	1397020	that good people like.
+1397020	1399020	Because
+1399020	1401020	the other side can't finish early.
+1401020	1403020	And
+1403020	1405020	this
+1405020	1407020	is just
+1407020	1409020	one example.
+1409020	1411020	Of course, you can also
+1411020	1413020	let the other side finish early
+1413020	1415020	and Trump
+1415020	1417020	will choose the result he likes.
+1417020	1419020	This is another case.
+1419020	1421020	In short,
+1421020	1423020	the commit and open
+1423020	1425020	protocol
+1425020	1427020	can
+1427020	1429020	guarantee
+1429020	1431020	the
+1431020	1433020	previous definition.
+1435020	1437020	Even if
+1437020	1439020	one side is attacking
+1439020	1441020	and the other side's expectation
+1441020	1443020	is still over 0.5,
+1443020	1445020	the payoff is still over 0.5.
+1445020	1447020	Because
+1447020	1449020	the basic idea
+1449020	1451020	is simple.
+1451020	1453020	If one side can't finish early,
+1453020	1455020	the other side will be happy
+1455020	1457020	to choose the result he likes.
+1457020	1459020	He can choose.
+1459020	1461020	So
+1461020	1463020	if one side can't finish early,
+1463020	1465020	the other side is
+1465020	1467020	a good person.
+1467020	1469020	If a good person chooses the result he likes,
+1469020	1471020	his expectation value will not be
+1471020	1473020	reduced by bad people.
+1475020	1477020	Is it okay
+1477020	1479020	to go this far?
+1479020	1481020	If it's okay,
+1481020	1483020	it will be a little more complicated later.
+1483020	1485020	But
+1485020	1487020	the most important thing to define here
+1487020	1489020	is to protect the expectation value of good people.
+1489020	1491020	And the payoff
+1491020	1493020	is the most important point.
+1493020	1495020	First,
+1495020	1497020	we need to define
+1497020	1499020	what a good person is.
+1499020	1501020	Second,
+1501020	1503020	what a payoff is.
+1503020	1505020	The payoff is
+1505020	1507020	the protocol.
+1507020	1509020	After running the result,
+1509020	1511020	I look at the result and decide
+1511020	1513020	how much benefit this result will bring me.
+1513020	1515020	Then
+1515020	1517020	I define
+1517020	1519020	that I want to protect the interests of good people.
+1519020	1521020	The expectation value is greater than a certain number.
+1521020	1523020	Of course,
+1523020	1525020	if I say a little more here,
+1525020	1527020	the payoff
+1527020	1529020	is completely
+1529020	1531020	restricted to
+1531020	1533020	the payoff function
+1533020	1535020	defined by this example.
+1537020	1539020	The payoff function itself is very simple.
+1539020	1541020	But
+1541020	1543020	in Game Theory,
+1543020	1545020	there are many strange payoffs
+1545020	1547020	that will make
+1547020	1549020	these results strange.
+1549020	1551020	But we won't discuss those today.
+1551020	1553020	Even in my paper,
+1553020	1555020	there is no way to discuss so much
+1555020	1557020	because there are too many strange payoffs.
+1557020	1559020	But the simplest
+1559020	1561020	payoff function
+1561020	1563020	is the focus
+1563020	1565020	of this paper.
+1567020	1569020	Okay,
+1569020	1571020	next,
+1571020	1573020	next,
+1573020	1575020	well,
+1575020	1577020	well,
+1577020	1579020	well,
+1579020	1581020	what you see here
+1581020	1583020	is that there are only two players
+1583020	1585020	and two parties
+1585020	1587020	playing.
+1587020	1589020	The two parties
+1589020	1591020	can achieve
+1591020	1593020	the fairness
+1593020	1595020	in this
+1595020	1597020	fairness in interest.
+1597020	1599020	The result
+1599020	1601020	may not be fair,
+1601020	1603020	but the interest is fair.
+1603020	1605020	Then we start.
+1605020	1607020	But a very natural question is
+1607020	1609020	when
+1609020	1611020	you add one more person,
+1611020	1613020	is there any way
+1613020	1615020	to achieve
+1615020	1617020	the fairness?
+1617020	1619020	So we just
+1619020	1621020	add one more person.
+1621020	1623020	Then
+1623020	1625020	I don't know if the third person
+1625020	1627020	is Jin Xiaopang or
+1627020	1629020	Putin.
+1629020	1631020	Anyway, it's A, B, C.
+1631020	1633020	Then
+1633020	1635020	we assume the simplest
+1635020	1637020	is
+1637020	1639020	what kind of output
+1639020	1641020	do these three people like
+1641020	1643020	is public.
+1643020	1645020	It's also public
+1645020	1647020	who aborts early and
+1647020	1649020	doesn't play early.
+1649020	1651020	So if C aborts early
+1651020	1653020	and doesn't play,
+1653020	1655020	A and B will not play
+1655020	1657020	sooner or later.
+1657020	1659020	So let's assume
+1659020	1661020	all the messages are public.
+1661020	1663020	Maybe you can imagine
+1663020	1665020	three hotlines or something.
+1665020	1667020	Or
+1667020	1669020	now this very popular
+1669020	1671020	blockchain
+1671020	1673020	messages are all public.
+1673020	1675020	So if one of them doesn't play
+1675020	1677020	or if one of them sends
+1677020	1679020	a message, the other two can
+1679020	1681020	know at the same time.
+1681020	1683020	One of the possible applications
+1683020	1685020	may be
+1685020	1687020	eating dumplings and tigers
+1687020	1689020	on the blockchain.
+1689020	1691020	But how do these three people define
+1691020	1693020	eating dumplings and tigers?
+1693020	1695020	You can also say
+1695020	1697020	the result of
+1697020	1699020	eating dumplings and tigers
+1699020	1701020	is 1.
+1701020	1703020	If the person who chose 1
+1703020	1705020	is 1,
+1705020	1707020	then he won.
+1707020	1709020	If the person who chose 0 is 0,
+1709020	1711020	he also won.
+1711020	1713020	Of course, this payoff is not
+1713020	1715020	0.3. So in some cases,
+1717020	1719020	the seller of
+1719020	1721020	eating dumplings and tigers may lose money.
+1721020	1723020	And the loser is not ABC.
+1723020	1725020	It's the one who
+1725020	1727020	opened the casino.
+1727020	1729020	This is just
+1729020	1731020	one example.
+1731020	1733020	But
+1735020	1737020	in terms of game theory,
+1737020	1739020	there are many
+1739020	1741020	forms of this game.
+1741020	1743020	But for now,
+1743020	1745020	let's focus
+1745020	1747020	on this
+1747020	1749020	simplest example.
+1749020	1751020	I just want to
+1751020	1753020	ask
+1753020	1755020	to protect the
+1755020	1757020	real
+1757020	1759020	interest.
+1759020	1761020	Can we do this?
+1761020	1763020	Then
+1763020	1765020	this definition
+1765020	1767020	we call it Maximin.
+1767020	1769020	Maximin is also
+1769020	1771020	a terminology borrowed
+1771020	1773020	from game theory.
+1773020	1775020	In the game,
+1775020	1777020	Maximin means
+1781020	1783020	everyone
+1783020	1785020	maximizes
+1785020	1787020	their own
+1787020	1789020	interest.
+1789020	1791020	I want to
+1791020	1793020	minimize
+1793020	1795020	my own interest.
+1795020	1797020	Basically,
+1797020	1799020	it means
+1799020	1801020	when others maximize
+1801020	1803020	their interest,
+1803020	1805020	I want to maximize
+1805020	1807020	my own interest.
+1807020	1809020	Why is it called Maximin?
+1809020	1811020	Because if one side is maximized
+1811020	1813020	and the other side is minimized.
+1813020	1815020	Anyway,
+1815020	1817020	intuition
+1817020	1819020	means
+1819020	1821020	I want to protect good people.
+1821020	1823020	Good people
+1823020	1825020	are people who play according to the rules of the game.
+1825020	1827020	The interest of good people
+1827020	1829020	should be greater than or equal to 0.5.
+1829020	1831020	This is the expectation value.
+1831020	1833020	After this thing is defined,
+1833020	1835020	the first question we ask is
+1835020	1837020	whether it can be done.
+1837020	1839020	Of course, there are other definitions
+1839020	1841020	of Maximin.
+1841020	1843020	Some are very natural.
+1843020	1845020	Some may seem
+1845020	1847020	unnatural in some scenarios.
+1847020	1849020	But we'll talk about it
+1849020	1851020	later.
+1851020	1853020	For now,
+1853020	1855020	let's focus on
+1855020	1857020	the definition of
+1857020	1859020	protecting good people's interests.
+1861020	1863020	Let's pause here.
+1863020	1865020	Is this definition clear?
+1865020	1867020	My definition is
+1867020	1869020	that my protocol
+1869020	1871020	should protect good people's interests.
+1871020	1873020	This is my definition.
+1873020	1875020	Then I ask
+1875020	1877020	whether this protocol
+1877020	1879020	can be constructed
+1879020	1881020	to protect good people's interests.
+1881020	1883020	I have a question.
+1883020	1885020	You said
+1885020	1887020	we should protect
+1887020	1889020	according to the rules of the game.
+1889020	1891020	This is a starting point
+1891020	1893020	of your research.
+1893020	1895020	I can understand this.
+1895020	1897020	The concept of
+1897020	1899020	protecting good people's interests
+1899020	1901020	is translated to
+1901020	1903020	greater than or equal to 0.5
+1903020	1905020	for the expected payoff
+1905020	1907020	of honesty.
+1907020	1909020	You said your game
+1909020	1911020	is not zero-sum.
+1911020	1913020	Is greater than or equal to 0.5
+1913020	1915020	greater than or equal to 0.5?
+1915020	1917020	You asked
+1917020	1919020	a good question.
+1919020	1921020	I don't write
+1921020	1923020	a quantifier here.
+1923020	1925020	For example,
+1925020	1927020	A, B, C are all honest.
+1927020	1929020	They all follow the rules of the game.
+1929020	1931020	Then
+1931020	1933020	everyone's
+1933020	1935020	expected value is 0.5.
+1935020	1937020	So you will ask
+1937020	1939020	the total expected value is 0.5.
+1939020	1941020	So I
+1941020	1943020	don't have a quantifier here.
+1943020	1945020	It's just that
+1945020	1947020	every honest is greater than 0.5.
+1949020	1951020	Oh, I see.
+1951020	1953020	I define
+1953020	1955020	it as
+1955020	1957020	A, B, C
+1957020	1959020	all follow the rules of the game.
+1959020	1961020	But they
+1961020	1963020	may not
+1963020	1965020	care about each other.
+1965020	1967020	They may not like each other.
+1967020	1969020	But they all follow the rules of the game.
+1969020	1971020	They are all good people.
+1971020	1973020	So the better way
+1973020	1975020	is that
+1975020	1977020	if I follow the rules of the game,
+1977020	1979020	it's my best choice
+1979020	1981020	among the players.
+1985020	1987020	This question
+1987020	1989020	will become another definition.
+1989020	1991020	What you just said will become another definition.
+1993020	1995020	So we'll
+1995020	1997020	discuss it later.
+1997020	1999020	OK, thank you.
+1999020	2001020	OK, so
+2001020	2003020	if
+2003020	2005020	this definition
+2005020	2007020	is not a problem,
+2007020	2009020	then we can
+2009020	2011020	discuss
+2011020	2013020	a simple example.
+2013020	2015020	When everyone
+2015020	2017020	wants the result to be
+2017020	2019020	1, or everyone
+2019020	2021020	wants the result to be 0,
+2021020	2023020	then
+2023020	2025020	this thing
+2025020	2027020	is extremely simple.
+2027020	2029020	This thing
+2029020	2031020	is extremely simple.
+2031020	2033020	As long as
+2033020	2035020	everyone sees
+2035020	2037020	the same side number,
+2037020	2039020	then everyone outputs
+2039020	2041020	the same side number.
+2041020	2043020	As long as everyone sees
+2043020	2045020	the same side number,
+2045020	2047020	then everyone outputs 1.
+2047020	2049020	Then everyone is happy.
+2049020	2051020	For example,
+2051020	2053020	if everyone wants the result
+2053020	2055020	to be 1,
+2055020	2057020	then everyone outputs 1.
+2057020	2059020	The dealer
+2059020	2061020	in the casino is not happy,
+2061020	2063020	but the rules of the game
+2063020	2065020	are set.
+2065020	2067020	The players are happy
+2067020	2069020	because everyone can win.
+2069020	2071020	But this example is not very interesting.
+2071020	2073020	Because
+2073020	2075020	if
+2075020	2077020	Trump, Xi and Putin
+2077020	2079020	all want to go to DC,
+2079020	2081020	then
+2081020	2083020	they don't need to discuss this thing.
+2083020	2085020	They are happy to go to DC.
+2085020	2087020	So
+2087020	2089020	this case is not interesting.
+2089020	2091020	Let's change to
+2091020	2093020	a more complicated one.
+2093020	2095020	If one of the players
+2095020	2097020	has a different side number,
+2097020	2099020	he is a minority.
+2099020	2101020	But
+2101020	2103020	I assume
+2103020	2105020	the bad guy who doesn't follow the rules of the game
+2105020	2107020	can only do one thing,
+2107020	2109020	which is
+2109020	2111020	he can't play earlier.
+2111020	2113020	I also have
+2113020	2115020	a slightly more complicated
+2115020	2117020	rule of the game
+2117020	2119020	that can protect
+2119020	2121020	the interests of good people.
+2121020	2123020	How to do this rule of the game?
+2123020	2125020	It's very simple.
+2125020	2127020	Let the minority throw the coin.
+2127020	2129020	After throwing the coin,
+2129020	2131020	he tells the result of the coin
+2131020	2133020	to the other two players.
+2133020	2135020	Then the other two players
+2135020	2137020	are very happy to receive the coin.
+2137020	2139020	Then the game is over.
+2139020	2141020	Why
+2141020	2143020	can this rule of the game
+2143020	2145020	protect the interests of good people?
+2145020	2147020	Because
+2147020	2149020	this game only forces
+2149020	2151020	one person to speak from the beginning to the end,
+2151020	2153020	which is the minority.
+2153020	2155020	If the minority
+2155020	2157020	speaks,
+2157020	2159020	he follows the rules of the game.
+2159020	2161020	If he wants to speak,
+2161020	2163020	he must follow the rules of the game.
+2163020	2165020	Otherwise, he will shut up.
+2165020	2167020	If he speaks,
+2167020	2169020	it means he follows the rules of the game.
+2169020	2171020	This coin is also
+2171020	2173020	fair.
+2173020	2175020	After the other two players
+2175020	2177020	receive the coin,
+2177020	2179020	they follow the rules of the game.
+2179020	2181020	Because
+2181020	2183020	everything is fair
+2183020	2185020	according to the rules of the game.
+2185020	2187020	If the only person
+2187020	2189020	who speaks
+2189020	2191020	does not follow the rules of the game,
+2191020	2193020	how can he not follow the rules of the game?
+2193020	2195020	He can only
+2195020	2197020	shut up.
+2197020	2199020	He does not say what he should say.
+2199020	2201020	This is his only way
+2201020	2203020	not to follow the rules of the game.
+2203020	2205020	When A and C see B
+2205020	2207020	do not follow the rules of the game,
+2207020	2209020	they are happy to decide that B is a bad person.
+2209020	2211020	A and C can be happy to say
+2211020	2213020	that we do not care
+2213020	2215020	about the loss of the bad person.
+2215020	2217020	We just follow our happiness.
+2217020	2219020	So
+2219020	2221020	what I just
+2221020	2223020	talked about
+2223020	2225020	is to prove
+2225020	2227020	that the rules of the game
+2227020	2229020	can easily protect
+2229020	2231020	the interests of good people.
+2231020	2233020	So
+2233020	2235020	if the only thing
+2235020	2237020	bad people can do
+2237020	2239020	is not to play,
+2239020	2241020	this thing is also easy to do.
+2241020	2243020	Just
+2243020	2245020	as I just said,
+2245020	2247020	throw a coin, send a message,
+2247020	2249020	and it's over.
+2249020	2251020	But
+2251020	2253020	these examples
+2253020	2255020	of Trump and Xi
+2255020	2257020	or Putin
+2257020	2259020	are not like this.
+2259020	2261020	They may
+2261020	2263020	not follow the rules of the game,
+2263020	2265020	not throw a coin,
+2265020	2267020	so
+2267020	2269020	the previous one, B
+2269020	2271020	threw a coin and sent a message,
+2271020	2273020	this thing is
+2273020	2275020	that the bad guy
+2275020	2277020	may not follow this rule at all.
+2277020	2279020	And
+2279020	2281020	if he doesn't follow this rule,
+2281020	2283020	then
+2283020	2285020	he can't protect
+2285020	2287020	the interests of good people.
+2287020	2289020	This is what we call
+2289020	2291020	random
+2291020	2293020	input.
+2293020	2295020	This is what we call
+2295020	2297020	random input.
+2297020	2299020	This is what we call
+2299020	2301020	random input.
+2301020	2303020	Everything is not fair
+2303020	2305020	when it is tampered with.
+2305020	2307020	And
+2307020	2309020	And
+2309020	2311020	And
+2311020	2313020	the main difficulty
+2313020	2315020	of this project is
+2315020	2317020	to discuss
+2317020	2319020	whether this case
+2319020	2321020	is fair
+2321020	2323020	to Maximin.
+2323020	2325020	And
+2325020	2327020	And
+2327020	2329020	We
+2329020	2331020	We
+2331020	2333020	spent a lot of time
+2333020	2335020	We spent a lot of time
+2335020	2337020	discussing whether he can do it or not.
+2337020	2339020	We can't think of a way
+2339020	2341020	to really do this thing
+2341020	2343020	to protect
+2343020	2345020	honest players.
+2345020	2347020	But we can't prove
+2347020	2349020	that he can't do it.
+2349020	2351020	So we can't do this thing.
+2351020	2353020	At the beginning,
+2353020	2355020	we thought he could do it.
+2355020	2357020	The reason is
+2357020	2359020	The reason is
+2359020	2361020	The reason is
+2361020	2363020	When bad guys
+2363020	2365020	When bad guys
+2365020	2367020	are restricted,
+2367020	2369020	there is a solution.
+2369020	2371020	There are
+2371020	2373020	many technologies
+2373020	2375020	on traditional documents
+2375020	2377020	that allow
+2377020	2379020	that allow
+2379020	2381020	a simple example
+2381020	2383020	that allows a simple example
+2383020	2385020	to resist
+2385020	2387020	the restricted bad guys.
+2387020	2389020	And then,
+2389020	2391020	we get a
+2391020	2393020	cryptographic operation
+2393020	2395020	and get a
+2395020	2397020	protocol that
+2397020	2399020	the bad guys are not restricted
+2399020	2401020	but still safe.
+2401020	2403020	This is called the game rule.
+2403020	2405020	Because
+2405020	2407020	there are a lot of experiences in our documents,
+2407020	2409020	we can upgrade
+2409020	2411020	this security
+2411020	2413020	in different situations.
+2413020	2415020	So when we first
+2415020	2417020	saw this problem,
+2417020	2419020	we can upgrade
+2419020	2421020	the security
+2421020	2423020	with what we already know
+2423020	2425020	or what we already know
+2425020	2427020	in the documents.
+2427020	2429020	But
+2429020	2431020	later on,
+2431020	2433020	we moved more documents
+2433020	2435020	and finally proved that
+2435020	2437020	it can't be done.
+2437020	2439020	And
+2439020	2441020	especially
+2441020	2443020	the bad guys
+2443020	2445020	can't be done
+2445020	2447020	like
+2447020	2449020	what I said earlier
+2449020	2451020	about the result of cleave.
+2451020	2453020	We really built
+2453020	2455020	a
+2455020	2457020	limited time attacker
+2457020	2459020	a polynomial time attacker
+2459020	2461020	to attack
+2461020	2463020	any
+2463020	2465020	protocol like this.
+2465020	2467020	And
+2467020	2469020	the middle proof is more complicated.
+2469020	2471020	I won't talk about it.
+2471020	2473020	But
+2473020	2475020	the point is
+2475020	2477020	these protocols
+2477020	2479020	can't be done
+2479020	2481020	in a lot of situations.
+2481020	2483020	And the proof
+2483020	2485020	is
+2485020	2487020	the proof
+2487020	2489020	taught in high school or
+2489020	2491020	university math class.
+2491020	2493020	The technical details
+2493020	2495020	in the middle
+2495020	2497020	are skipped.
+2497020	2499020	But I think
+2499020	2501020	this
+2501020	2503020	thing
+2503020	2505020	should be
+2505020	2507020	conveyed.
+2507020	2509020	I defined
+2509020	2511020	a
+2511020	2513020	so-called
+2513020	2515020	fair board
+2515020	2517020	for a
+2517020	2519020	specific payoff function.
+2519020	2521020	This is very specific.
+2521020	2523020	I have countless payoff functions.
+2523020	2525020	Only this
+2525020	2527020	payoff function
+2527020	2529020	can't be
+2529020	2531020	fair.
+2531020	2533020	Maybe other payoff functions can.
+2533020	2535020	Because
+2535020	2537020	some payoff functions
+2537020	2539020	are easy to do.
+2539020	2541020	For example, if everyone's payoff looks the same,
+2541020	2543020	it may
+2543020	2545020	degenerate to a
+2545020	2547020	case I just discussed.
+2547020	2549020	And
+2549020	2551020	the so-called
+2551020	2553020	profit of the city
+2553020	2555020	is defined
+2555020	2557020	in this way.
+2557020	2559020	So there must be
+2559020	2561020	some way to define
+2561020	2563020	the profit.
+2563020	2565020	But even in such a simple way
+2565020	2567020	to define
+2567020	2569020	the profit,
+2569020	2571020	there is still
+2571020	2573020	no way to
+2573020	2575020	protect the profit.
+2575020	2577020	This is the message
+2577020	2579020	I want to convey.
+2579020	2581020	And
+2581020	2583020	one more thing.
+2583020	2585020	Even if
+2585020	2587020	the attacker has limited computing power,
+2587020	2589020	it still can't be protected.
+2589020	2591020	If your attacker
+2591020	2593020	has very limited
+2593020	2595020	computing power,
+2595020	2597020	you still can't
+2597020	2599020	protect the city's
+2599020	2601020	profit.
+2601020	2603020	So
+2603020	2605020	what I just said
+2605020	2607020	is back to the first example.
+2607020	2609020	Where should
+2609020	2611020	Trump and Xi meet?
+2611020	2613020	They can decide.
+2613020	2615020	But
+2615020	2617020	when one person becomes the third person,
+2617020	2619020	and Putin is added,
+2619020	2621020	there is no way to
+2621020	2623020	protect the city's profit.
+2623020	2625020	This is the
+2625020	2627020	biggest message
+2627020	2629020	I want to convey.
+2629020	2631020	There must be
+2631020	2633020	one or two people
+2633020	2635020	whose profits will be damaged.
+2635020	2637020	And
+2637020	2639020	the witness here
+2639020	2641020	is very complicated.
+2641020	2643020	But
+2643020	2645020	it's just a simple
+2645020	2647020	expected value calculation.
+2647020	2649020	But there are a few more turns.
+2649020	2651020	But
+2651020	2653020	I won't
+2653020	2655020	talk about
+2655020	2657020	the details.
+2661020	2663020	So
+2663020	2665020	to sum up,
+2665020	2667020	more than three people
+2667020	2669020	can be grouped
+2669020	2671020	into
+2671020	2673020	a larger
+2673020	2675020	organization.
+2675020	2677020	For example,
+2677020	2679020	if I have
+2679020	2681020	ten people,
+2681020	2683020	I can group
+2683020	2685020	them into
+2685020	2687020	three large groups.
+2687020	2689020	If
+2689020	2691020	the three large groups
+2691020	2693020	correspond to
+2693020	2695020	what I just said,
+2695020	2697020	they still can't
+2697020	2699020	do it.
+2699020	2701020	Or if I can
+2701020	2703020	correspond to two people,
+2703020	2705020	I can tell you
+2705020	2707020	the result of
+2707020	2709020	Cliff earlier.
+2709020	2711020	So
+2711020	2713020	this...
+2713020	2715020	Actually I was going to ask
+2715020	2717020	if you keep saying
+2717020	2719020	you have three parties
+2719020	2721020	and you want to generalize
+2721020	2723020	what N-Party will do.
+2723020	2725020	Intuitively,
+2725020	2727020	it makes sense.
+2727020	2729020	If you can group them
+2729020	2731020	into three parties,
+2731020	2733020	you can reduce the problem.
+2733020	2735020	But if you say
+2735020	2737020	the bad guys
+2737020	2739020	can be grouped
+2739020	2741020	into a group of bad guys,
+2741020	2743020	you still have to assume
+2743020	2745020	the bad guys
+2745020	2747020	are good to each other.
+2747020	2749020	They are honest.
+2749020	2751020	So the shared information
+2751020	2753020	is what they are doing.
+2753020	2755020	They know
+2755020	2757020	each other is breaking the rule.
+2757020	2759020	Yes.
+2763020	2765020	Your question is very good.
+2765020	2767020	So I will
+2767020	2769020	jump a little bit
+2769020	2771020	to talk about
+2771020	2773020	high-level.
+2773020	2775020	I assume
+2775020	2777020	the bad guys
+2777020	2779020	I mentioned
+2779020	2781020	are
+2781020	2783020	good guys
+2783020	2785020	and bad guys.
+2785020	2787020	The bad guys
+2787020	2789020	have
+2789020	2791020	a common...
+2791020	2793020	What is it called?
+2793020	2795020	For example,
+2795020	2797020	they have
+2797020	2799020	a bad guy
+2799020	2801020	controlling them.
+2801020	2803020	So your question is
+2803020	2805020	maybe
+2805020	2807020	the bad guys A
+2807020	2809020	and bad guys B
+2809020	2811020	have different interests.
+2811020	2813020	So they
+2813020	2815020	control each other.
+2815020	2817020	So far,
+2817020	2819020	I assume
+2819020	2821020	the bad guys A
+2821020	2823020	and bad guys B
+2823020	2825020	have a bad guy leader.
+2825020	2827020	Maybe he is not
+2827020	2829020	in the game.
+2829020	2831020	But he is the leader of the bad guys.
+2831020	2833020	He controls all the bad guys.
+2833020	2835020	All the bad guys
+2835020	2837020	cooperate with each other.
+2839020	2841020	So
+2841020	2843020	for the
+2843020	2845020	bad guys
+2845020	2847020	or good guys
+2847020	2849020	two or three
+2849020	2851020	should be
+2851020	2853020	easy to explain.
+2853020	2855020	Did I answer your question?
+2855020	2857020	Yes.
+2857020	2859020	It's the same as I thought.
+2859020	2861020	OK. Thank you.
+2861020	2863020	I will talk about
+2863020	2865020	the bad guys A
+2865020	2867020	and bad guys B.
+2867020	2869020	Sometimes,
+2869020	2871020	the bad guys A and bad guys B
+2871020	2873020	don't always
+2873020	2875020	have the same leader.
+2875020	2877020	But
+2877020	2879020	to sum up,
+2879020	2881020	most examples
+2881020	2883020	can't be used
+2883020	2885020	to protect
+2885020	2887020	the good guys.
+2887020	2889020	Unless
+2889020	2891020	the problem is simple.
+2891020	2893020	Only one
+2893020	2895020	person has different preferences.
+2895020	2897020	And the bad guy is very limited.
+2897020	2899020	He can only
+2899020	2901020	play. He can't do anything else.
+2901020	2903020	Only a small piece
+2903020	2905020	can be
+2905020	2907020	justified.
+2907020	2909020	The justification defined
+2909020	2911020	under Maximine
+2911020	2913020	can only be justified
+2913020	2915020	by a small piece.
+2915020	2917020	The rest can't be justified.
+2917020	2919020	It's quite sad.
+2919020	2921020	Just now,
+2921020	2923020	the host
+2923020	2925020	asked
+2925020	2927020	some good questions.
+2927020	2929020	For example,
+2929020	2931020	I defined
+2931020	2933020	that the good guys' interests can't be damaged.
+2933020	2935020	My starting point is to protect the good guys' interests.
+2935020	2937020	The other starting point
+2937020	2939020	is more like
+2939020	2941020	game theory's
+2941020	2943020	Nash Equilibrium.
+2943020	2945020	The so-called bad guys
+2945020	2947020	or corrupt parties
+2947020	2949020	must have
+2949020	2951020	a certain economic motivation
+2951020	2953020	to do bad things
+2953020	2955020	to break the rules.
+2955020	2957020	This is
+2957020	2959020	another
+2959020	2961020	definition.
+2961020	2963020	This definition is very natural.
+2963020	2965020	For example,
+2965020	2967020	I defined a set of game rules
+2967020	2969020	in a certain game.
+2969020	2971020	Even if
+2971020	2973020	there is a
+2973020	2975020	bad guy controlling
+2975020	2977020	certain people,
+2977020	2979020	he becomes a bad guy.
+2979020	2981020	But the bad guys
+2981020	2983020	controlled by the boss
+2983020	2985020	don't have to
+2985020	2987020	listen to the boss.
+2987020	2989020	They have to
+2989020	2991020	listen to
+2991020	2993020	the boss
+2993020	2995020	to increase
+2995020	2997020	their own interests.
+2997020	2999020	Then,
+2999020	3001020	Nash Equilibrium
+3001020	3003020	requires
+3003020	3005020	the boss
+3005020	3007020	to increase
+3007020	3009020	the interests of the bad guys.
+3009020	3011020	This is
+3011020	3013020	very difficult
+3013020	3015020	for the boss.
+3015020	3017020	Especially,
+3017020	3019020	for example,
+3019020	3021020	what I said
+3021020	3023020	from the beginning is that
+3023020	3025020	the output is only 0 or 1.
+3025020	3027020	Your preference
+3027020	3029020	is only 0 or 1.
+3029020	3031020	If the boss
+3031020	3033020	controls both
+3033020	3035020	0 and 1,
+3035020	3037020	the boss
+3037020	3039020	can't
+3039020	3041020	satisfy
+3041020	3043020	both sides.
+3043020	3045020	Because
+3045020	3047020	one side's interest increases,
+3047020	3049020	and the other side's interest decreases.
+3051020	3053020	So,
+3053020	3055020	this definition is
+3055020	3057020	called Strong Nash.
+3057020	3059020	Strong Nash is borrowed
+3059020	3061020	from Nash Equilibrium.
+3061020	3063020	But in fact,
+3063020	3065020	this definition is easier
+3065020	3067020	to achieve than Maximine.
+3067020	3069020	Because the boss
+3069020	3071020	can do less
+3071020	3073020	and receive more restrictions.
+3079020	3081020	So,
+3081020	3083020	it's very easy
+3083020	3085020	to be fair
+3085020	3087020	under this definition.
+3087020	3089020	I don't know
+3089020	3091020	if the boss is a bad guy,
+3091020	3093020	or a good guy.
+3093020	3095020	As long as the two sides
+3095020	3097020	have different preferences,
+3097020	3099020	let them play
+3099020	3101020	what I said at the beginning.
+3101020	3103020	One side commits
+3103020	3105020	X,
+3105020	3107020	the other side
+3107020	3109020	decides a random Y,
+3109020	3111020	and the other side
+3111020	3113020	commits at the beginning,
+3113020	3115020	opens the envelope
+3115020	3117020	and decides what X1 and X2 are.
+3117020	3119020	Everyone
+3119020	3121020	listens to them.
+3121020	3123020	No matter how many people are there,
+3123020	3125020	10, 100, 1000,
+3125020	3127020	as long as two people
+3127020	3129020	are working.
+3129020	3131020	This thing
+3131020	3133020	is easy to prove.
+3133020	3135020	Just list all the conditions
+3135020	3137020	and it can be proved that
+3137020	3139020	this game rule
+3139020	3141020	can achieve
+3141020	3143020	Strong Nash.
+3143020	3145020	The boss can't
+3145020	3147020	increase
+3147020	3149020	the benefits of the boss.
+3157020	3159020	Let's go back to the first page.
+3161020	3163020	If you think about it,
+3163020	3165020	you will find
+3165020	3167020	these two definitions
+3167020	3169020	are exactly the same
+3169020	3171020	in 2Party.
+3171020	3173020	Because in 2Party,
+3173020	3175020	there are only two people.
+3175020	3177020	In 2Party,
+3177020	3179020	under this payoff,
+3179020	3181020	it is a completely zero-sum game.
+3181020	3183020	The situation of the two people
+3183020	3185020	is symmetrical.
+3185020	3187020	So the payoff of the bad guy
+3187020	3189020	is equal to
+3189020	3191020	the payoff of the good guy.
+3191020	3193020	This was established
+3193020	3195020	in Zero-sum.
+3195020	3197020	In the case of two people,
+3197020	3199020	there is only one bad guy
+3199020	3201020	and one good guy.
+3201020	3203020	So these two definitions are exactly the same.
+3203020	3205020	But in 3 or 4 people,
+3205020	3207020	or more people,
+3207020	3209020	these two definitions are completely different.
+3209020	3211020	One is
+3211020	3213020	almost impossible.
+3213020	3215020	The other is
+3215020	3217020	almost possible.
+3217020	3219020	This is a big difference.
+3223020	3225020	In addition to these two definitions,
+3225020	3227020	in my paper,
+3227020	3229020	I will consider
+3229020	3231020	other definitions.
+3231020	3233020	Maybe more natural, maybe more complicated,
+3233020	3235020	I don't know.
+3235020	3237020	The first one is
+3237020	3239020	the benefits of good people alone.
+3239020	3241020	In the case of Group,
+3241020	3243020	I don't consider the benefits alone.
+3243020	3245020	I consider the benefits of all good people
+3245020	3247020	to be added.
+3247020	3249020	The benefits of good people
+3249020	3251020	to be reduced
+3251020	3253020	or the benefits of bad people
+3253020	3255020	to be added.
+3255020	3257020	There may be different
+3257020	3259020	situations.
+3259020	3261020	For example,
+3261020	3263020	when the boss controls
+3263020	3265020	a group of bad guys,
+3265020	3267020	he may add all the benefits of the bad guys
+3267020	3269020	and divide them.
+3269020	3271020	This may be
+3271020	3273020	a suitable
+3273020	3275020	model for discussion.
+3275020	3277020	For example,
+3277020	3279020	the feasibility of these two
+3279020	3281020	is between Maximin
+3281020	3283020	and StrongNash.
+3283020	3285020	These four definitions
+3285020	3287020	are a bit complicated,
+3287020	3289020	so I won't talk about them all.
+3291020	3293020	Anyway,
+3293020	3295020	in the case of
+3295020	3297020	only two people,
+3297020	3299020	these definitions are equivalent.
+3299020	3301020	In the case of two people,
+3301020	3303020	the total is equal to the individual.
+3303020	3305020	In the case of zero-sum,
+3305020	3307020	the increase of bad people
+3307020	3309020	is equal to the decrease of good people.
+3309020	3311020	So these four definitions
+3311020	3313020	are the same
+3313020	3315020	in the case of two people.
+3315020	3317020	However,
+3317020	3319020	they are completely different
+3319020	3321020	in the case of more than three people.
+3323020	3325020	If you have learned
+3325020	3327020	or seen
+3327020	3329020	some game theory,
+3329020	3331020	you will
+3331020	3333020	immediately think of
+3333020	3335020	the question just asked by the host.
+3335020	3337020	There are
+3337020	3339020	various settings in game theory,
+3339020	3341020	such as the payoff function.
+3341020	3343020	Maybe the payoff function
+3343020	3345020	I just gave is not the most natural.
+3345020	3347020	In some cases,
+3347020	3349020	the payoff of zero-sum is more natural.
+3351020	3353020	Or in some cases,
+3353020	3355020	what kind of outcome
+3355020	3357020	does everyone like?
+3359020	3361020	What kind of outcome
+3361020	3363020	does everyone like?
+3363020	3365020	Where does Trump like to meet?
+3365020	3367020	Where does Xi like to meet?
+3367020	3369020	Maybe
+3369020	3371020	the payoff function
+3371020	3373020	is not the most natural.
+3373020	3375020	Maybe it's private.
+3375020	3377020	Everyone doesn't know.
+3377020	3379020	This is a more natural setting.
+3379020	3381020	In some cases,
+3381020	3383020	it may be like this.
+3383020	3385020	Of course,
+3385020	3387020	from the beginning to the end,
+3387020	3389020	I only talked about
+3389020	3391020	throwing a coin.
+3391020	3393020	Then this coin has only two sides,
+3393020	3395020	0 or 1.
+3395020	3397020	Then the coin becomes a dice.
+3397020	3399020	0, 1, 2, 3, 4, 5.
+3399020	3401020	Or I want to do something more complicated.
+3401020	3403020	For example,
+3403020	3405020	Trump and Xi want to
+3405020	3407020	add their salaries together.
+3407020	3409020	Something like this.
+3411020	3413020	These are all questions
+3413020	3415020	that can be discussed in depth.
+3417020	3419020	But there are a lot of questions
+3419020	3421020	that can be studied.
+3421020	3423020	This paper
+3423020	3425020	only discussed a small part of
+3425020	3427020	the blue ones.
+3427020	3429020	So this is
+3429020	3431020	the coin toss I talked about today.
+3431020	3433020	Thank you everyone
+3433020	3435020	for taking the time to listen to me.
+3435020	3437020	Thank you.
+3439020	3441020	Please turn on the microphone.
+3441020	3443020	Let's give a round of applause
+3443020	3445020	to our speaker today.
+3449020	3451020	Do you have any questions?
+3453020	3455020	No.
+3459020	3461020	Let me ask you a question.
+3461020	3463020	This question is not
+3463020	3465020	related to the content of the lecture.
+3465020	3467020	Did you publish this paper?
+3467020	3469020	Or did you throw it away?
+3469020	3471020	Do you want to
+3471020	3473020	write down the title of the paper
+3473020	3475020	and some other information
+3475020	3477020	that we can find,
+3477020	3479020	such as the date of the paper
+3479020	3481020	and so on.
+3481020	3483020	Then it will be recorded.
+3483020	3485020	If you are interested,
+3485020	3487020	you can look for it.
+3487020	3489020	How can I write it?
+3489020	3491020	I don't know.
+3491020	3493020	You can jump back to your PowerPoint.
+3493020	3495020	Okay.
+3495020	3497020	Just type it here.
+3497020	3499020	We can see it now.
+3499020	3501020	Wait for me.
+3501020	3503020	Text box.
+3503020	3505020	Okay.
+3505020	3507020	Now we are typing the text.
+3507020	3509020	Do you have any questions?
+3509020	3511020	Do you have any comments?
+3515020	3517020	You can ask some basic questions.
+3517020	3519020	For example,
+3519020	3521020	what do you study
+3521020	3523020	and so on.
+3525020	3527020	I have an interesting question.
+3527020	3529020	Of course,
+3529020	3531020	this is the most fundamental
+3531020	3533020	scenario.
+3533020	3535020	Then we can
+3535020	3537020	think about
+3537020	3539020	a special example.
+3539020	3541020	But now you...
+3541020	3543020	Let me think.
+3543020	3545020	So what you just said
+3545020	3547020	is basically
+3547020	3549020	your maximum
+3549020	3551020	and the two parties below
+3551020	3553020	are two extremes.
+3553020	3555020	They can be discussed.
+3555020	3557020	But those in the middle
+3557020	3559020	are in, for example,
+3559020	3561020	how many parties do bad people have?
+3561020	3563020	Are the interests of bad people
+3563020	3565020	completely the same?
+3565020	3567020	In these cases,
+3567020	3569020	your conclusion
+3569020	3571020	is related to
+3571020	3573020	N,
+3573020	3575020	how many good people and bad people
+3575020	3577020	are assigned to each other.
+3577020	3579020	What is the relationship between them?
+3579020	3581020	Will it affect your conclusion?
+3581020	3583020	Yes.
+3583020	3585020	I...
+3585020	3587020	I just posted
+3587020	3589020	the conference here.
+3589020	3591020	I will jump back to my PowerPoint.
+3591020	3593020	It is...
+3597020	3599020	In...
+3599020	3601020	In Max and Min,
+3601020	3603020	the simple case
+3603020	3605020	is that
+3605020	3607020	when greater than or equal to 3,
+3607020	3609020	it is impossible.
+3609020	3611020	In the middle,
+3611020	3613020	the group Max and Min
+3613020	3615020	is the same as Max and Min,
+3615020	3617020	greater than or equal to 3,
+3617020	3619020	it is impossible.
+3619020	3621020	It is related to N.
+3621020	3623020	Three people can't do it,
+3623020	3625020	or four people can't do it.
+3625020	3627020	In the middle,
+3627020	3629020	no matter how many people can do it,
+3629020	3631020	it is related to N.
+3633020	3635020	Does this answer the question?
+3635020	3637020	Yes.
+3637020	3639020	Actually, this is just the beginning of my question.
+3639020	3641020	I should say that
+3641020	3643020	I also expect that
+3643020	3645020	this thing is related to N,
+3645020	3647020	and N will affect your conclusion.
+3647020	3649020	If this is the case,
+3649020	3651020	it is closer to
+3651020	3653020	the realistic situation.
+3653020	3655020	For example,
+3655020	3657020	how do you study in computer science?
+3657020	3659020	Do you calculate one by one?
+3659020	3661020	Or do you use
+3661020	3663020	Monte Carlo
+3663020	3665020	to use empirical methods
+3665020	3667020	to conclude
+3667020	3669020	some relationships,
+3669020	3671020	such as the relationship with N,
+3671020	3673020	or what is the solution
+3673020	3675020	under some threshold,
+3675020	3677020	what do you usually do?
+3677020	3679020	So,
+3679020	3681020	the question asked by the host
+3681020	3683020	is more like
+3683020	3685020	I have
+3685020	3687020	a set of definitions
+3687020	3689020	on the left,
+3689020	3691020	a set of
+3691020	3693020	maybe it is the sky,
+3693020	3695020	maybe it is
+3695020	3697020	some
+3697020	3699020	realistic
+3699020	3701020	problem motivator
+3701020	3703020	definition,
+3703020	3705020	a set of
+3705020	3707020	motivator definitions,
+3707020	3709020	how do I discuss
+3709020	3711020	or
+3711020	3713020	how do I discuss
+3713020	3715020	the definition on the left
+3715020	3717020	whether it can be done
+3717020	3719020	or not,
+3719020	3721020	especially
+3721020	3723020	in this
+3723020	3725020	current
+3725020	3727020	talk discussion
+3727020	3729020	it is
+3729020	3731020	related to N,
+3731020	3733020	and how
+3733020	3735020	to say
+3735020	3737020	how much can be done
+3737020	3739020	and how much can't be done.
+3739020	3741020	In this
+3741020	3743020	work,
+3743020	3745020	there is
+3745020	3747020	no good way.
+3747020	3749020	In the middle,
+3749020	3751020	every case
+3751020	3753020	where N is greater than
+3753020	3755020	how much can't be done,
+3755020	3757020	is used
+3757020	3759020	to
+3759020	3761020	transform
+3761020	3763020	to make another statement
+3763020	3765020	N is greater than how much can't be done.
+3765020	3767020	For example,
+3767020	3769020	at the beginning,
+3769020	3771020	N is greater than 2,
+3771020	3773020	the first result is
+3773020	3775020	the lower bound of cleave.
+3775020	3777020	The following
+3777020	3779020	is to
+3779020	3781020	extend
+3781020	3783020	the first
+3783020	3785020	cleave's
+3785020	3787020	impossibility
+3787020	3789020	to 3 and 4.
+3795020	3797020	In this example,
+3797020	3799020	there is no good way.
+3799020	3801020	There may be
+3801020	3803020	other examples,
+3803020	3805020	but
+3805020	3807020	these definitions
+3807020	3809020	are
+3809020	3811020	the definitions of
+3811020	3813020	cleave.
+3813020	3815020	We
+3815020	3817020	don't have
+3817020	3819020	these continuous
+3819020	3821020	or
+3821020	3823020	continuous
+3823020	3825020	or functional
+3825020	3827020	mathematical tools
+3827020	3829020	to use.
+3829020	3831020	For example,
+3831020	3833020	I asked
+3833020	3835020	if there is
+3835020	3837020	Monte Carlo
+3837020	3839020	or experiments
+3839020	3841020	to prove
+3841020	3843020	those
+3845020	3847020	experimental
+3847020	3849020	methods,
+3849020	3851020	we usually
+3851020	3853020	avoid them.
+3853020	3855020	Because
+3855020	3857020	experimental methods
+3857020	3859020	are difficult to prove.
+3859020	3861020	Even if there are
+3861020	3863020	only 3 or 4 small numbers,
+3863020	3865020	it is not possible
+3865020	3867020	to prove.
+3867020	3869020	So,
+3869020	3871020	we
+3871020	3873020	rarely use them.
+3873020	3875020	Maybe
+3875020	3877020	we don't know
+3877020	3879020	how to use them
+3879020	3881020	to prove them.
+3881020	3883020	Our
+3883020	3885020	proof
+3885020	3887020	is here.
+3887020	3889020	It is more
+3889020	3891020	comprehensive.
+3891020	3893020	We calculate the probability.
+3893020	3895020	After that,
+3895020	3897020	we use...
+3897020	3899020	For example,
+3899020	3901020	here,
+3901020	3903020	we calculate the expectation
+3903020	3905020	and the probability.
+3905020	3907020	Then, we use the average
+3907020	3909020	to conclude
+3909020	3911020	whether it is possible or not.
+3917020	3919020	I see.
+3919020	3921020	Thank you.
+3921020	3923020	Do you have any questions?
+3923020	3925020	Hello.
+3925020	3927020	I have a question.
+3927020	3929020	Please go ahead.
+3929020	3931020	I still don't understand.
+3933020	3935020	Can you
+3935020	3937020	explain
+3937020	3939020	how to
+3939020	3941020	reduce
+3941020	3943020	3 to 3?
+3943020	3945020	How to reduce
+3945020	3947020	almost
+3947020	3949020	and malicious
+3949020	3951020	to 3?
+3951020	3953020	This
+3953020	3955020	is a good question.
+3957020	3959020	It is very simple.
+3959020	3961020	Let's assume
+3961020	3963020	n is equal to 4.
+3963020	3965020	If n is equal to 4,
+3965020	3967020	in this line,
+3967020	3969020	unanimous
+3969020	3971020	is the same.
+3971020	3973020	Almost is one less.
+3973020	3975020	Only one less.
+3975020	3977020	If n is equal to 4,
+3977020	3979020	it is...
+3979020	3981020	I just type it.
+3981020	3983020	It is 0, 1,
+3983020	3985020	1, 1.
+3985020	3987020	It is 0, 1, 1.
+3987020	3989020	Of course,
+3989020	3991020	it is symmetric.
+3991020	3993020	0 may be in one person.
+3993020	3995020	We don't know.
+3995020	3997020	We don't care.
+3997020	3999020	It is 0, 1, 1.
+3999020	4001020	Then,
+4001020	4003020	you have to ask
+4003020	4005020	whether
+4005020	4007020	there is a rule
+4007020	4009020	that allows 4 people
+4009020	4011020	to protect
+4011020	4013020	the interests of honest people.
+4013020	4015020	Let's assume
+4015020	4017020	there is a rule
+4017020	4019020	that allows
+4019020	4021020	4 people
+4021020	4023020	to protect
+4023020	4025020	the interests of honest people.
+4025020	4027020	What do we do?
+4027020	4029020	We do
+4029020	4031020	that
+4031020	4033020	I don't care
+4033020	4035020	whether 1, 1, 1, 1 is a good person or a bad person.
+4035020	4037020	I tie
+4037020	4039020	the two people
+4039020	4041020	who like 1 together.
+4041020	4043020	It is
+4043020	4045020	a person.
+4045020	4047020	It is
+4047020	4049020	a fatter person.
+4049020	4051020	They all like 1.
+4051020	4053020	The fatter person
+4053020	4055020	likes 1.
+4055020	4057020	If
+4057020	4059020	there is a rule that allows
+4059020	4061020	4 people to protect
+4061020	4063020	the interests of honest people,
+4063020	4065020	I tie
+4065020	4067020	the two people who like 1 together.
+4067020	4069020	Then,
+4069020	4071020	they
+4071020	4073020	play according to the rules of 4 people.
+4073020	4075020	I don't care
+4075020	4077020	whether it is a good person or a bad person.
+4077020	4079020	After
+4079020	4081020	I tie
+4081020	4083020	the two people together,
+4083020	4085020	there are only 3 people left.
+4085020	4087020	Their preferences
+4087020	4089020	are 0, 1, 1.
+4089020	4091020	Their preferences are 1.
+4091020	4093020	So, I tie
+4093020	4095020	their preferences to 1.
+4097020	4099020	If
+4099020	4101020	there is a rule that allows
+4101020	4103020	4 people to protect the interests of honest people,
+4103020	4105020	it is a rule
+4105020	4107020	that allows 3 people
+4107020	4109020	to protect the interests of honest people.
+4109020	4111020	Okay.
+4111020	4113020	Okay.
+4113020	4115020	It feels like a math problem.
+4115020	4117020	Yes.
+4117020	4119020	It's what we often do.
+4119020	4121020	We don't have a good tool.
+4121020	4123020	Is it the same
+4123020	4125020	for other preferences?
+4125020	4127020	Do you tie all 0s
+4127020	4129020	and 1s together?
+4129020	4131020	This question
+4131020	4133020	is a good question.
+4133020	4135020	We tie
+4135020	4137020	0s and 1s together.
+4137020	4139020	Then, we tie
+4139020	4141020	other 0s and 1s together.
+4141020	4143020	Why do we tie like this?
+4143020	4145020	It's because
+4145020	4147020	Cliff's result said
+4147020	4149020	that
+4149020	4151020	when you play
+4151020	4153020	with two parties,
+4153020	4155020	you must have a way
+4155020	4157020	to make them leave
+4157020	4159020	0.5.
+4159020	4161020	I don't know
+4161020	4163020	if it's from 0.5 to 1
+4163020	4165020	or from 0.5 to 0.
+4165020	4167020	But there must be one side.
+4167020	4169020	I don't know which side it is.
+4169020	4171020	He didn't tell you.
+4171020	4173020	But after
+4173020	4175020	tying 0s and 1s together,
+4175020	4177020	if it's one side,
+4177020	4179020	in my definition of
+4179020	4181020	maximum,
+4181020	4183020	it will definitely hurt
+4183020	4185020	one of the 0s and 1s.
+4185020	4187020	Because 0s and 1s are tied together.
+4187020	4189020	Okay.
+4189020	4191020	It doesn't matter which side it is.
+4191020	4193020	So,
+4193020	4195020	I can get
+4195020	4197020	a contradiction like this.
+4197020	4199020	Okay.
+4199020	4201020	It's amazing.
+4201020	4203020	The thing is that
+4203020	4205020	you can go down
+4205020	4207020	a few pages.
+4207020	4209020	I don't remember.
+4209020	4211020	Go down again.
+4211020	4213020	This is also right.
+4213020	4215020	The method of
+4215020	4217020	strong Nash equilibrium
+4217020	4219020	is that you call a 0 and
+4219020	4221020	a 1 out.
+4221020	4223020	Then they are tied together.
+4223020	4225020	The reason why this method
+4225020	4227020	can't be used in Max and Min
+4227020	4229020	is that you may choose
+4229020	4231020	0 and 1.
+4231020	4233020	One of them is a bad guy.
+4235020	4237020	I'll cut it here.
+4241020	4243020	I sent two representatives
+4243020	4245020	to point at the board.
+4247020	4249020	Why this thing
+4249020	4251020	doesn't work
+4251020	4253020	in Max and Min?
+4253020	4255020	The question is like this.
+4255020	4257020	The definition of Max and Min
+4257020	4259020	is that
+4259020	4261020	the benefits of good people
+4261020	4263020	can't be harmed.
+4263020	4265020	So,
+4265020	4267020	in the definition of Max and Min,
+4269020	4271020	the bad guy doesn't care
+4271020	4273020	about his own benefits.
+4273020	4275020	The bad guy
+4275020	4277020	can lose money.
+4277020	4279020	But the good guy
+4279020	4281020	just wants to harm the good guy maliciously.
+4281020	4283020	For example,
+4283020	4285020	the red one is the bad guy
+4285020	4287020	and the green one is the good guy.
+4287020	4289020	Can you tell the difference?
+4289020	4291020	The red one is the bad guy
+4291020	4293020	and the green one is the good guy.
+4293020	4295020	I can tell at the beginning.
+4299020	4301020	Sometimes the color is not enough.
+4301020	4303020	Because some people
+4303020	4305020	have color blindness.
+4307020	4309020	There are three bad guys
+4309020	4311020	and two good guys.
+4311020	4313020	If the bad guy just wants to harm
+4313020	4315020	the good guy maliciously,
+4315020	4317020	he can point to the bad guy
+4317020	4319020	and the good guy will like him.
+4319020	4321020	Then he will be harmed.
+4321020	4323020	He doesn't care.
+4323020	4325020	The good guy is happy.
+4325020	4327020	But as long as the good guy is not happy,
+4327020	4329020	Max and Min won't work.
+4331020	4333020	So, this thing
+4333020	4335020	doesn't work in Max and Min.
+4335020	4337020	Does it have anything to do with
+4337020	4339020	the question
+4339020	4341020	the host asked at the beginning?
+4341020	4343020	Do I consider
+4343020	4345020	all the benefits of the good guy
+4345020	4347020	or the benefits of the good guy
+4347020	4349020	individually?
+4349020	4351020	My strictest condition
+4351020	4353020	is that I can't harm
+4353020	4355020	every benefit of the good guy.
+4355020	4357020	So, Max and Min
+4357020	4359020	can't harm every good guy.
+4359020	4361020	Yes.
+4365020	4367020	This is a difficult question.
+4367020	4369020	The definition
+4369020	4371020	is tricky.
+4371020	4373020	There will be a lot of groups
+4373020	4375020	after the number of people.
+4377020	4379020	I have a question
+4379020	4381020	that is unrelated.
+4381020	4383020	If
+4383020	4385020	there is
+4385020	4387020	something
+4387020	4389020	that is completely random
+4389020	4391020	and everyone agrees that it is random.
+4391020	4393020	For example,
+4393020	4395020	there is a quantum stack.
+4395020	4397020	For example, the radiation of the sun.
+4397020	4399020	This is also possible.
+4399020	4401020	But you have to observe
+4401020	4403020	the same thing in two places.
+4403020	4405020	Yes.
+4405020	4407020	There is
+4407020	4409020	something called quantum entanglement.
+4411020	4413020	Do you know this?
+4413020	4415020	I know.
+4415020	4417020	There are two examples.
+4417020	4419020	For example,
+4419020	4421020	they have to spin up together
+4421020	4423020	and spin down together.
+4423020	4425020	I assign these two
+4425020	4427020	to two people
+4427020	4429020	who are far away.
+4429020	4431020	They observe this example.
+4431020	4433020	Spin up
+4433020	4435020	means one place.
+4435020	4437020	Spin down means another place.
+4437020	4439020	In this way,
+4439020	4441020	can we solve this problem?
+4441020	4443020	We don't need these protocols.
+4443020	4445020	There will be
+4445020	4447020	some ways
+4447020	4449020	that you can operate.
+4449020	4451020	Actually,
+4451020	4453020	I know entanglement,
+4453020	4455020	but I'm not familiar
+4455020	4457020	with how to do it.
+4457020	4459020	For example,
+4459020	4461020	you mentioned that
+4461020	4463020	you have to create two examples
+4463020	4465020	that have entanglement.
+4465020	4467020	I'm not
+4467020	4469020	familiar with it.
+4469020	4471020	Can we
+4471020	4473020	do this entanglement
+4473020	4475020	in advance
+4475020	4477020	and
+4477020	4479020	bias to
+4479020	4481020	one side?
+4481020	4483020	I'm not sure.
+4483020	4485020	Maybe.
+4485020	4487020	It seems that
+4487020	4489020	we need some proof
+4489020	4491020	to prove that
+4491020	4493020	the entanglement
+4493020	4495020	we created at the beginning
+4495020	4497020	is fair.
+4497020	4499020	I really don't know.
+4499020	4501020	I just heard it.
+4501020	4503020	After creating the entanglement,
+4503020	4505020	you have to give
+4505020	4507020	these two entanglement to two people.
+4509020	4511020	In this
+4511020	4513020	long-distance definition,
+4513020	4515020	it may not be
+4515020	4517020	very suitable.
+4517020	4519020	I don't know if there is a better explanation
+4519020	4521020	that it can't be done.
+4521020	4523020	But you have to
+4523020	4525020	give two bits
+4525020	4527020	to two people,
+4527020	4529020	or give two examples to two people.
+4529020	4531020	Actually,
+4531020	4533020	it doesn't
+4533020	4535020	go well with this
+4535020	4537020	definition.
+4537020	4539020	Why don't I
+4539020	4541020	create an entanglement
+4541020	4543020	and give the result to two people?
+4543020	4545020	OK.
+4545020	4547020	It makes sense.
+4547020	4549020	It doesn't seem that
+4549020	4551020	it can be solved.
+4551020	4553020	But I think
+4553020	4555020	there is room for discussion.
+4555020	4557020	Because some
+4557020	4559020	can prove
+4559020	4561020	that the entanglement
+4561020	4563020	is fair.
+4563020	4565020	Another thing
+4565020	4567020	I want to ask is
+4567020	4569020	at the beginning,
+4569020	4571020	what I said
+4571020	4573020	is that
+4573020	4575020	1, 2, 3,
+4575020	4577020	everyone says a number at the same time,
+4577020	4579020	and then X, O, 2.
+4579020	4581020	Why can't
+4581020	4583020	everyone
+4583020	4585020	say X, O, 2
+4585020	4587020	at the same time
+4587020	4589020	and then
+4589020	4591020	say the number?
+4591020	4593020	If it's
+4593020	4595020	more than 12 o'clock,
+4595020	4597020	you lose.
+4597020	4599020	It's the same with fail-stop.
+4599020	4601020	Fail-stop means
+4601020	4603020	if you are slow,
+4603020	4605020	you lose.
+4605020	4607020	Yes, but
+4607020	4609020	I think
+4609020	4611020	at the same time,
+4611020	4613020	it's difficult in practice.
+4613020	4615020	One is in China,
+4615020	4617020	the other is in the U.S.
+4617020	4619020	The distance is
+4619020	4621020	quite far.
+4621020	4623020	The transmission message
+4623020	4625020	may also have a delay
+4625020	4627020	of 0.0 seconds.
+4627020	4629020	0.0 seconds
+4629020	4631020	plus
+4631020	4633020	on the food,
+4633020	4635020	if the light
+4635020	4637020	is directly
+4637020	4639020	connected,
+4639020	4641020	it may be OK.
+4641020	4643020	But the network on the food
+4643020	4645020	has passed many host
+4645020	4647020	and the delay
+4647020	4649020	may be almost 1 second.
+4649020	4651020	You can't be sure
+4651020	4653020	how much time is there.
+4653020	4655020	59 minutes and 59 seconds.
+4655020	4657020	Is 1 second enough?
+4657020	4659020	Or
+4659020	4661020	too much
+4661020	4663020	will be a bit slow.
+4663020	4665020	It's hard to decide.
+4665020	4667020	At the same time,
+4667020	4669020	this is mainly
+4669020	4671020	difficult to do on the food.
+4671020	4673020	So people think
+4673020	4675020	if you can't do it
+4675020	4677020	or you can't prove it,
+4677020	4679020	you give up.
+4683020	4685020	Failstuff
+4685020	4687020	also requires a time.
+4687020	4689020	Yes, failstuff
+4689020	4691020	is...
+4691020	4693020	Yes, failstuff is...
+4693020	4695020	Let me put it this way.
+4695020	4697020	At the same time,
+4697020	4699020	the rules are tight.
+4699020	4701020	At the same time,
+4701020	4703020	after my message
+4703020	4705020	is sent out,
+4705020	4707020	it takes at least
+4707020	4709020	1 second to send it.
+4709020	4711020	It may not work if I arrive early.
+4711020	4713020	Because if I arrive early,
+4713020	4715020	there will be a relatively slow output.
+4717020	4719020	It won't work if I arrive late.
+4719020	4721020	Is it slow output
+4721020	4723020	or is it
+4723020	4725020	slow? I don't know.
+4725020	4727020	But failstuff
+4727020	4729020	has a relatively large
+4729020	4731020	range.
+4731020	4733020	I can
+4733020	4735020	arrive in 0 seconds
+4735020	4737020	or 10 minutes.
+4739020	4741020	So the range is relatively large.
+4741020	4743020	If I can't wait for you for 10 minutes
+4743020	4745020	and you haven't sent it out,
+4745020	4747020	it's just
+4747020	4749020	1 second
+4749020	4751020	or 1 minute
+4751020	4753020	to send it out.
+4753020	4755020	So the
+4755020	4757020	condition is
+4757020	4759020	strictly
+4759020	4761020	weak.
+4765020	4767020	Very interesting talk. Thank you.
+4767020	4769020	Thank you.
+4769020	4771020	Actually,
+4771020	4773020	it's been more than 10 minutes.
+4773020	4775020	Please turn on
+4775020	4777020	the microphone again.
+4777020	4779020	Thank you to our speaker, Weikai.
+4779020	4781020	Thank you, everyone.
+4781020	4783020	If you have any questions,
+4783020	4785020	you can
+4785020	4787020	go to our website and find
+4787020	4789020	Weikai's page.
+4789020	4791020	It's on the right side of our website.
+4791020	4793020	You can click and see his contact information.
+4793020	4795020	Or you can also search
+4795020	4797020	Weikai or Weikai's paper.
+4797020	4799020	You can also see this information.
+4799020	4801020	If you are interested in his paper,
+4801020	4803020	he just wrote
+4803020	4805020	on our
+4805020	4807020	screen.
+4807020	4809020	You can also see
+4809020	4811020	Weikai's speech
+4811020	4813020	in a few days.
+4813020	4815020	You can also
+4815020	4817020	contact Weikai
+4817020	4819020	and discuss more.
+4819020	4821020	Thank you again.
+4821020	4823020	Thank you for attending today's Terra Talk.
+4823020	4825020	That's all for today.
+4825020	4827020	Thank you, everyone. Bye.

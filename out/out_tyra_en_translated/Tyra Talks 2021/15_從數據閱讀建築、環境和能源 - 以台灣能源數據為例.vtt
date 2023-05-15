@@ -1,0 +1,5225 @@
+WEBVTT
+
+00:00.000 --> 00:11.000
+Hello, everyone. Thank you for coming to Project Terra. I'm your host, Su-Yi-An.
+
+00:11.000 --> 00:13.000
+I'm your host, Hu-Jun-Wei.
+
+00:13.000 --> 00:21.000
+I'm delighted to be joined by Fu-Chun to give us a presentation.
+
+00:21.000 --> 00:28.000
+The topic is Data, Reading, Architecture, Environment and Energy, using Taiwan's energy data as an example.
+
+00:28.000 --> 00:33.000
+Later on, I'll talk about today's process.
+
+00:33.000 --> 00:38.000
+Later on, I'll talk about today's process.
+
+00:38.000 --> 00:43.000
+Today's presentation is hosted by Project Terra.
+
+00:43.000 --> 00:46.000
+Later on, we'll record the entire presentation.
+
+00:46.000 --> 00:52.000
+In other words, after the presentation, if you want to listen to it again or share it with your friends,
+
+00:52.000 --> 00:57.000
+you can go to Project Terra's website to view today's recording.
+
+00:57.000 --> 01:03.000
+During the presentation, if you have any questions,
+
+01:03.000 --> 01:12.000
+you're welcome to raise your hand or ask your question in the chat.
+
+01:12.000 --> 01:18.000
+The hosts will monitor your questions and talk to the speakers.
+
+01:18.000 --> 01:23.000
+If you have a bigger or more complicated question,
+
+01:23.000 --> 01:27.000
+we'll have an open Q&A session at the end of the presentation.
+
+01:27.000 --> 01:31.000
+Please feel free to ask your questions.
+
+01:31.000 --> 01:35.000
+That's about it for today's presentation.
+
+01:35.000 --> 01:40.000
+Now, let's have another host, Hu-Jun-Wei, to introduce today's speaker, Fu-Chun.
+
+01:41.000 --> 01:42.000
+Hello, everyone.
+
+01:42.000 --> 01:50.000
+Fu-Chun is a Ph.D. student at the University of Singapore, NUS.
+
+01:50.000 --> 01:58.000
+He is currently studying architecture and urban data science in the University of Singapore.
+
+01:58.000 --> 02:03.000
+His research focuses on the application of large data related to architecture,
+
+02:03.000 --> 02:09.000
+including architectural energy, indoor environment comfort, and architectural IoT data, etc.
+
+02:09.000 --> 02:13.000
+At the same time, he is also doing some community activities in the lab.
+
+02:13.000 --> 02:20.000
+For example, he held an energy prediction competition at the well-known data platform Kaggle the year before last,
+
+02:20.000 --> 02:26.000
+and provided data science courses to the public in an open platform course, EDS.
+
+02:27.000 --> 02:30.000
+Interestingly, before Fu-Chun was a Ph.D. student,
+
+02:30.000 --> 02:37.000
+he worked as a three-year data scientist at a Taiwanese innovation company,
+
+02:37.000 --> 02:39.000
+Knowledge Analysis Based Exploration,
+
+02:39.000 --> 02:43.000
+and was committed to the development of large data related to architecture,
+
+02:43.000 --> 02:49.000
+including the detection of labor abnormalities, energy prediction, and data visualization, etc.
+
+02:49.000 --> 02:54.000
+In addition, he is also involved in the development of artificial intelligence services
+
+02:54.000 --> 02:57.000
+and energy data analysis of the Taipei City Government.
+
+02:57.000 --> 03:05.000
+Today, Fu-Chun will focus more on issues related to food in the industry.
+
+03:05.000 --> 03:10.000
+In today's speech, he will talk about the academic development of energy prediction,
+
+03:10.000 --> 03:15.000
+and finally share how to work with open data to do energy prediction.
+
+03:15.000 --> 03:17.000
+Let's welcome Fu-Chun.
+
+03:20.000 --> 03:22.000
+Can you hear me?
+
+03:22.000 --> 03:24.000
+Yes, we can.
+
+03:24.000 --> 03:25.000
+Great.
+
+03:25.000 --> 03:31.000
+Next, let me play my video.
+
+03:33.000 --> 03:39.000
+Today's topic is data reading, architecture, environment, and energy,
+
+03:39.000 --> 03:41.000
+based on Taiwan energy data.
+
+03:41.000 --> 03:46.000
+This speech is mainly about architecture data prediction models,
+
+03:46.000 --> 03:49.000
+as well as the introduction of related open data.
+
+03:49.000 --> 03:51.000
+At the end of the speech,
+
+03:51.000 --> 03:54.000
+I will use the open data provided by Taipei Electric Power Corporation,
+
+03:54.000 --> 03:56.000
+and the weather forecast provided by the Meteorological Bureau,
+
+03:56.000 --> 03:58.000
+to cooperate with the model of machine learning,
+
+03:58.000 --> 04:01.000
+to make an energy prediction service that can predict the future.
+
+04:01.000 --> 04:04.000
+I hope the difficulty of today's speech is not too high.
+
+04:04.000 --> 04:05.000
+The main thing is to let everyone know
+
+04:05.000 --> 04:09.000
+how to apply data science in human resources or architecture.
+
+04:09.000 --> 04:14.000
+I hope everyone can get to know more about open data
+
+04:14.000 --> 04:16.000
+and how to do these things.
+
+04:18.000 --> 04:19.000
+OK.
+
+04:23.000 --> 04:25.000
+This is my basic self-introduction.
+
+04:25.000 --> 04:27.000
+I am a Ph.D. student at INU-S.
+
+04:27.000 --> 04:30.000
+I graduated from Shenzhen University of Technology,
+
+04:30.000 --> 04:35.000
+and I had three years of experience as a data scientist before I got my Ph.D.
+
+04:35.000 --> 04:39.000
+This also allows me to focus on the problems in the industry
+
+04:39.000 --> 04:42.000
+during my Ph.D. career.
+
+04:43.000 --> 04:45.000
+This is what I just said.
+
+04:45.000 --> 04:49.000
+We have been doing some community-related things.
+
+04:49.000 --> 04:51.000
+For example, in the Cargo Competition,
+
+04:51.000 --> 04:54.000
+if you are playing this kind of data science competition,
+
+04:54.000 --> 04:56.000
+this is the most famous competition at present.
+
+04:56.000 --> 04:59.000
+We have held an energy prediction competition on it.
+
+04:59.000 --> 05:01.000
+In addition, we also have some open data.
+
+05:01.000 --> 05:03.000
+I put it in Cargo.
+
+05:03.000 --> 05:05.000
+Cargo not only holds competitions,
+
+05:05.000 --> 05:07.000
+but also provides an open data platform
+
+05:07.000 --> 05:10.000
+for everyone to upload data and play together.
+
+05:10.000 --> 05:14.000
+In addition, we also have OpenCourse on EDX.
+
+05:14.000 --> 05:18.000
+It is mainly about construction, architecture, and engineering.
+
+05:18.000 --> 05:20.000
+It is about building data,
+
+05:20.000 --> 05:24.000
+including indoor humidity, CO2, and energy.
+
+05:24.000 --> 05:28.000
+How to use some Python programs
+
+05:28.000 --> 05:30.000
+to process these data,
+
+05:30.000 --> 05:33.000
+and how to build a simple machine learning model.
+
+05:33.000 --> 05:35.000
+Its difficulty is very simple.
+
+05:35.000 --> 05:37.000
+Even people who don't have much programming experience
+
+05:37.000 --> 05:39.000
+can take this course.
+
+05:39.000 --> 05:42.000
+You don't need to have professional knowledge in architecture.
+
+05:42.000 --> 05:44.000
+As long as you want to learn
+
+05:44.000 --> 05:48.000
+how to use Python in the scientific field
+
+05:48.000 --> 05:50.000
+or in some simple data processing,
+
+05:50.000 --> 05:53.000
+I think this course is quite suitable.
+
+05:53.000 --> 05:55.000
+This is today's agenda.
+
+05:55.000 --> 05:59.000
+Because today's topic is mainly energy prediction,
+
+05:59.000 --> 06:02.000
+we will spend some time reviewing
+
+06:02.000 --> 06:04.000
+past energy prediction models and methods.
+
+06:04.000 --> 06:07.000
+Next, we will use Cargo Competition
+
+06:07.000 --> 06:09.000
+energy prediction competition as an example.
+
+06:09.000 --> 06:13.000
+How do people predict energy?
+
+06:13.000 --> 06:16.000
+What strategy do data scientists use
+
+06:16.000 --> 06:19.000
+to accurately predict energy?
+
+06:19.000 --> 06:22.000
+Next is Project Study.
+
+06:22.000 --> 06:25.000
+We will use Taiwan's open energy data
+
+06:25.000 --> 06:27.000
+to do a simple experiment
+
+06:27.000 --> 06:29.000
+to see how it works.
+
+06:29.000 --> 06:32.000
+Finally, we will introduce some interesting open data sets.
+
+06:32.000 --> 06:35.000
+It is mainly about Taiwan's weather,
+
+06:35.000 --> 06:38.000
+or open data sets related to holidays.
+
+06:40.000 --> 06:41.000
+First of all,
+
+06:41.000 --> 06:43.000
+I would like to let you feel
+
+06:43.000 --> 06:47.000
+what the energy trend looks like.
+
+06:47.000 --> 06:48.000
+This is a year,
+
+06:48.000 --> 06:52.000
+from January 2017 to the end of the year.
+
+06:52.000 --> 06:54.000
+This is an actual electricity meter
+
+06:54.000 --> 06:56.000
+obtained from a campus in Taiwan.
+
+06:56.000 --> 06:58.000
+First, I would like to let you observe
+
+06:58.000 --> 07:01.000
+what is special about this electricity meter.
+
+07:02.000 --> 07:07.000
+First, we can zoom in here.
+
+07:07.000 --> 07:10.000
+You can see that after zooming in,
+
+07:10.000 --> 07:12.000
+you can see some trends.
+
+07:12.000 --> 07:14.000
+Because it collects data every hour,
+
+07:14.000 --> 07:15.000
+so you can see that
+
+07:15.000 --> 07:19.000
+a day is actually a profile like this.
+
+07:19.000 --> 07:20.000
+It will have a peak,
+
+07:20.000 --> 07:21.000
+which is around noon.
+
+07:21.000 --> 07:24.000
+So you can see that the first pattern
+
+07:24.000 --> 07:26.000
+is actually a weekly pattern.
+
+07:26.000 --> 07:28.000
+It is weekly.
+
+07:29.000 --> 07:33.000
+1 to 5 is actually a fixed working pattern.
+
+07:33.000 --> 07:35.000
+It is high at noon and low at night.
+
+07:35.000 --> 07:36.000
+But there is no one on the 6th,
+
+07:36.000 --> 07:39.000
+so the peak is a little lower.
+
+07:52.000 --> 07:54.000
+The next pattern is vocation.
+
+07:55.000 --> 07:58.000
+1 to 5 is very low.
+
+07:58.000 --> 08:00.000
+That's because it's the Chinese New Year.
+
+08:00.000 --> 08:02.000
+It's the time of the lunar new year,
+
+08:02.000 --> 08:04.000
+so the energy is relatively low.
+
+08:04.000 --> 08:06.000
+In addition, there is a seasonal trend.
+
+08:06.000 --> 08:09.000
+In the summer or hot weather,
+
+08:09.000 --> 08:10.000
+the energy is relatively high.
+
+08:10.000 --> 08:12.000
+In the winter or cold weather,
+
+08:12.000 --> 08:13.000
+the energy is relatively low.
+
+08:13.000 --> 08:14.000
+This is normal
+
+08:14.000 --> 08:15.000
+because Taiwan is a country
+
+08:15.000 --> 08:16.000
+that focuses on heat.
+
+08:16.000 --> 08:18.000
+Most of us don't have heaters,
+
+08:18.000 --> 08:19.000
+so in winter,
+
+08:19.000 --> 08:21.000
+the energy is relatively low.
+
+08:22.000 --> 08:25.000
+So this is our first and simplest model.
+
+08:25.000 --> 08:27.000
+It is also a more classic model.
+
+08:27.000 --> 08:30.000
+It is a TOWT model
+
+08:30.000 --> 08:32.000
+proposed by Lawrence Berkeley National Lab.
+
+08:32.000 --> 08:35.000
+TOW stands for Time of Week.
+
+08:35.000 --> 08:36.000
+That is to say,
+
+08:36.000 --> 08:39.000
+if we take the number of hours of a week
+
+08:39.000 --> 08:41.000
+as X-axis and draw it out,
+
+08:41.000 --> 08:43.000
+the energy is actually 365 days.
+
+08:43.000 --> 08:45.000
+If you put it on this graph,
+
+08:45.000 --> 08:46.000
+you can see that 1 to 5
+
+08:46.000 --> 08:48.000
+is actually very regular,
+
+08:48.000 --> 08:50.000
+which is higher during the day.
+
+08:50.000 --> 08:53.000
+It is relatively low at night.
+
+08:53.000 --> 08:54.000
+So we have several variables.
+
+08:54.000 --> 08:56.000
+The first one is the time of week.
+
+08:56.000 --> 08:57.000
+The second variable is what I just said.
+
+08:57.000 --> 08:59.000
+It actually has something to do
+
+08:59.000 --> 09:00.000
+with the temperature of the outside air.
+
+09:00.000 --> 09:02.000
+So what we draw here
+
+09:02.000 --> 09:03.000
+is the relationship
+
+09:03.000 --> 09:06.000
+between temperature and energy.
+
+09:06.000 --> 09:09.000
+But we also distinguish
+
+09:09.000 --> 09:11.000
+whether it is occupied or unoccupied.
+
+09:11.000 --> 09:12.000
+That is to say,
+
+09:12.000 --> 09:13.000
+is there anyone or no one here?
+
+09:13.000 --> 09:15.000
+But we can see that at night,
+
+09:15.000 --> 09:17.000
+we will define it as the so-called no one.
+
+09:17.000 --> 09:18.000
+During the day,
+
+09:18.000 --> 09:20.000
+we will define it as the so-called someone.
+
+09:20.000 --> 09:22.000
+So this division is actually very rough.
+
+09:22.000 --> 09:24.000
+It may be according to what time to go to work,
+
+09:24.000 --> 09:25.000
+what time to get off work,
+
+09:25.000 --> 09:26.000
+and then cut it like this.
+
+09:26.000 --> 09:27.000
+But when you cut it out,
+
+09:27.000 --> 09:28.000
+you can see that
+
+09:28.000 --> 09:29.000
+when it is occupied,
+
+09:29.000 --> 09:31.000
+its trend is very obvious.
+
+09:31.000 --> 09:32.000
+This is a
+
+09:34.000 --> 09:35.000
+low-temperature
+
+09:36.000 --> 09:37.000
+and high-temperature
+
+09:38.000 --> 09:39.000
+transition.
+
+09:39.000 --> 09:40.000
+Occupied is that it is
+
+09:42.000 --> 09:43.000
+with regression.
+
+09:43.000 --> 09:45.000
+It is actually a linear model.
+
+09:45.000 --> 09:46.000
+That's it.
+
+09:46.000 --> 09:48.000
+Basically, it is with
+
+09:48.000 --> 09:49.000
+a linear model.
+
+09:49.000 --> 09:50.000
+There will be a linear model.
+
+09:50.000 --> 09:52.000
+Then it is related to temperature.
+
+09:52.000 --> 09:54.000
+The return line of temperature here
+
+09:54.000 --> 09:55.000
+is a
+
+09:56.000 --> 09:58.000
+division to return.
+
+09:58.000 --> 09:59.000
+Because in fact,
+
+10:00.000 --> 10:03.000
+it is related to temperature.
+
+10:03.000 --> 10:05.000
+If you call it out,
+
+10:05.000 --> 10:06.000
+you will find that
+
+10:06.000 --> 10:08.000
+cooling is actually related.
+
+10:08.000 --> 10:10.000
+If in some Korean countries,
+
+10:10.000 --> 10:12.000
+when your temperature is getting lower,
+
+10:12.000 --> 10:13.000
+its energy will rise.
+
+10:13.000 --> 10:15.000
+That's mainly because of heating.
+
+10:16.000 --> 10:18.000
+It's a simple linear return.
+
+10:18.000 --> 10:20.000
+So often you can
+
+10:20.000 --> 10:22.000
+Of course, you can use a polynomial,
+
+10:22.000 --> 10:24.000
+maybe two-dimensional or three-dimensional to beat.
+
+10:24.000 --> 10:26.000
+Of course, you can also use a division.
+
+10:26.000 --> 10:27.000
+Then again, if it is occupied,
+
+10:27.000 --> 10:29.000
+there is no one.
+
+10:29.000 --> 10:31.000
+Then it will be more like
+
+10:31.000 --> 10:32.000
+using temperature to return.
+
+10:32.000 --> 10:33.000
+It is a
+
+10:33.000 --> 10:34.000
+single
+
+10:34.000 --> 10:36.000
+one-dimensional
+
+10:36.000 --> 10:37.000
+linear return.
+
+10:37.000 --> 10:38.000
+Because at night,
+
+10:38.000 --> 10:40.000
+it is usually simpler.
+
+10:42.000 --> 10:44.000
+This is the result of the return.
+
+10:44.000 --> 10:46.000
+In fact,
+
+10:46.000 --> 10:48.000
+it can catch the profile.
+
+10:48.000 --> 10:50.000
+It's just that sometimes the effect
+
+10:50.000 --> 10:52.000
+is not so good in some details.
+
+10:52.000 --> 10:53.000
+You can see some details
+
+10:53.000 --> 10:54.000
+There will be a shock.
+
+10:54.000 --> 10:56.000
+So its R-squared is about
+
+10:56.000 --> 10:58.000
+less than 0.6.
+
+10:58.000 --> 11:00.000
+The next one is a more traditional
+
+11:00.000 --> 11:02.000
+physical model, thermal network.
+
+11:02.000 --> 11:04.000
+It is basically the structure of the building.
+
+11:04.000 --> 11:06.000
+There is heat melt, heat bamboo.
+
+11:06.000 --> 11:07.000
+That is to say,
+
+11:07.000 --> 11:09.000
+the temperature of the outside world
+
+11:09.000 --> 11:11.000
+and the temperature inside
+
+11:11.000 --> 11:12.000
+its temperature difference
+
+11:12.000 --> 11:13.000
+will cause
+
+11:13.000 --> 11:15.000
+its heat to be stored
+
+11:15.000 --> 11:17.000
+in the wall.
+
+11:17.000 --> 11:19.000
+Or it is said that it is
+
+11:19.000 --> 11:21.000
+looking at the thickness of the wall
+
+11:21.000 --> 11:23.000
+or its material.
+
+11:23.000 --> 11:25.000
+Then decide how fast
+
+11:25.000 --> 11:27.000
+it goes into the room.
+
+11:27.000 --> 11:29.000
+So usually outside
+
+11:29.000 --> 11:31.000
+For example, the surface temperature of the wall
+
+11:31.000 --> 11:33.000
+and the surface temperature of the wall
+
+11:33.000 --> 11:35.000
+in the room will have a
+
+11:35.000 --> 11:36.000
+type.
+
+11:36.000 --> 11:38.000
+In addition, the temperature difference
+
+11:38.000 --> 11:40.000
+in the room will be relatively
+
+11:40.000 --> 11:41.000
+slower.
+
+11:41.000 --> 11:43.000
+So under this condition,
+
+11:43.000 --> 11:45.000
+we will actually
+
+11:45.000 --> 11:47.000
+make a building
+
+11:47.000 --> 11:49.000
+all made up of heat melt and heat bamboo.
+
+11:49.000 --> 11:51.000
+For example,
+
+11:51.000 --> 11:53.000
+we may have
+
+11:53.000 --> 11:55.000
+three heat bamboo
+
+11:55.000 --> 11:57.000
+and two heat melt.
+
+11:57.000 --> 11:59.000
+The outer wall or
+
+11:59.000 --> 12:01.000
+internal mass
+
+12:01.000 --> 12:03.000
+is a bit like an indoor furniture or an indoor wall.
+
+12:03.000 --> 12:05.000
+The whole building can be done
+
+12:05.000 --> 12:07.000
+in this way.
+
+12:07.000 --> 12:09.000
+Its advantage is that it is very precise.
+
+12:09.000 --> 12:11.000
+Its disadvantage is that you have to
+
+12:11.000 --> 12:13.000
+decide how many heat melt and heat bamboo it has.
+
+12:13.000 --> 12:15.000
+To be honest, this thing is not very simple.
+
+12:15.000 --> 12:17.000
+The next one
+
+12:17.000 --> 12:19.000
+is the machine learning
+
+12:19.000 --> 12:21.000
+that we are more popular with now.
+
+12:21.000 --> 12:23.000
+Here is an example of
+
+12:23.000 --> 12:25.000
+LightGBM model.
+
+12:25.000 --> 12:27.000
+Let's use this model to
+
+12:27.000 --> 12:29.000
+make it.
+
+12:29.000 --> 12:31.000
+The main advantage of this model is that
+
+12:31.000 --> 12:33.000
+its computing speed is very fast and
+
+12:33.000 --> 12:35.000
+its tuning is relatively simple.
+
+12:35.000 --> 12:37.000
+So we usually use
+
+12:37.000 --> 12:39.000
+this model
+
+12:39.000 --> 12:41.000
+to do some competitions or some early tests
+
+12:41.000 --> 12:43.000
+and so on.
+
+12:43.000 --> 12:45.000
+Most of the participants
+
+12:45.000 --> 12:47.000
+use this model
+
+12:47.000 --> 12:49.000
+to do the cargo competition later.
+
+12:49.000 --> 12:51.000
+The model here is actually
+
+12:51.000 --> 12:53.000
+the time we just said.
+
+12:53.000 --> 12:55.000
+It may be the number of hours in a day.
+
+12:55.000 --> 12:57.000
+It is also a Sunday.
+
+12:57.000 --> 12:59.000
+In addition, there is outdoor air temperature.
+
+12:59.000 --> 13:01.000
+There are other IOTs
+
+13:01.000 --> 13:03.000
+or META
+
+13:03.000 --> 13:05.000
+or Lag Feature.
+
+13:05.000 --> 13:07.000
+It can eat more parameters
+
+13:07.000 --> 13:09.000
+than the linear model just now
+
+13:09.000 --> 13:11.000
+to capture some more
+
+13:11.000 --> 13:13.000
+detailed information.
+
+13:17.000 --> 13:19.000
+In addition,
+
+13:19.000 --> 13:21.000
+there are so many variables
+
+13:21.000 --> 13:23.000
+we just mentioned.
+
+13:23.000 --> 13:25.000
+For example, CO2 or
+
+13:25.000 --> 13:27.000
+temperature
+
+13:27.000 --> 13:29.000
+or weekday
+
+13:29.000 --> 13:31.000
+or seasonal hours.
+
+13:31.000 --> 13:33.000
+Which of these variables
+
+13:33.000 --> 13:35.000
+is the most important?
+
+13:35.000 --> 13:37.000
+The model of LightGBM can also tell us
+
+13:37.000 --> 13:39.000
+that in the process of modeling,
+
+13:39.000 --> 13:41.000
+we found that
+
+13:41.000 --> 13:43.000
+the energy 24 hours ago
+
+13:43.000 --> 13:45.000
+is the most important.
+
+13:45.000 --> 13:47.000
+Then there is the outdoor temperature, etc.
+
+13:47.000 --> 13:49.000
+It can tell you the importance of these parameters.
+
+13:49.000 --> 13:51.000
+The importance is relatively low.
+
+13:51.000 --> 13:53.000
+Maybe you can
+
+13:53.000 --> 13:55.000
+get rid of it.
+
+13:55.000 --> 13:57.000
+Of course,
+
+13:57.000 --> 13:59.000
+some people will think that
+
+13:59.000 --> 14:01.000
+the result of LightGBM
+
+14:01.000 --> 14:03.000
+will be better than
+
+14:03.000 --> 14:05.000
+the linear model just now.
+
+14:05.000 --> 14:07.000
+It is less
+
+14:07.000 --> 14:09.000
+detailed.
+
+14:09.000 --> 14:11.000
+The score is 0.6.
+
+14:11.000 --> 14:13.000
+Some people will think
+
+14:13.000 --> 14:15.000
+that Neural Network
+
+14:15.000 --> 14:17.000
+is another
+
+14:17.000 --> 14:19.000
+popular method.
+
+14:19.000 --> 14:21.000
+We often need to learn more about this method.
+
+14:21.000 --> 14:23.000
+Indeed, this method
+
+14:23.000 --> 14:25.000
+is often used in energy prediction.
+
+14:25.000 --> 14:27.000
+Such as LSTM or RNN.
+
+14:27.000 --> 14:29.000
+However,
+
+14:29.000 --> 14:31.000
+unlike Tree-based models,
+
+14:31.000 --> 14:33.000
+such as LightGBM,
+
+14:33.000 --> 14:35.000
+XGBoost,
+
+14:35.000 --> 14:37.000
+or Random Forest,
+
+14:37.000 --> 14:39.000
+RNN
+
+14:39.000 --> 14:41.000
+usually requires
+
+14:41.000 --> 14:43.000
+more training time.
+
+14:43.000 --> 14:45.000
+When you tune this model,
+
+14:45.000 --> 14:47.000
+you will spend a lot of time and energy.
+
+14:47.000 --> 14:49.000
+So in a short-term
+
+14:49.000 --> 14:51.000
+competition or a mid-term project,
+
+14:51.000 --> 14:53.000
+we still use
+
+14:53.000 --> 14:55.000
+Tree-based models like LightGBM.
+
+14:55.000 --> 14:57.000
+It is relatively fast
+
+14:57.000 --> 14:59.000
+and efficient.
+
+15:01.000 --> 15:03.000
+Let's jump to
+
+15:03.000 --> 15:05.000
+the Kaggle competition.
+
+15:05.000 --> 15:07.000
+Let's see how
+
+15:07.000 --> 15:09.000
+professional data scientists
+
+15:09.000 --> 15:11.000
+predict
+
+15:11.000 --> 15:13.000
+the building's
+
+15:13.000 --> 15:15.000
+population.
+
+15:15.000 --> 15:17.000
+First, let me briefly introduce Kaggle.
+
+15:17.000 --> 15:19.000
+Some people may not be familiar with it.
+
+15:19.000 --> 15:21.000
+Kaggle is a subsidiary
+
+15:21.000 --> 15:23.000
+of Google.
+
+15:23.000 --> 15:25.000
+It is an online community
+
+15:25.000 --> 15:27.000
+where data scientists,
+
+15:27.000 --> 15:29.000
+students,
+
+15:29.000 --> 15:31.000
+or social people
+
+15:31.000 --> 15:33.000
+can share their ideas,
+
+15:33.000 --> 15:35.000
+share data,
+
+15:35.000 --> 15:37.000
+and participate in the competition.
+
+15:37.000 --> 15:39.000
+There are three parts
+
+15:39.000 --> 15:41.000
+of Kaggle platform.
+
+15:41.000 --> 15:43.000
+The first part is competition.
+
+15:43.000 --> 15:45.000
+There will be some sponsors.
+
+15:45.000 --> 15:47.000
+It could be a company
+
+15:47.000 --> 15:49.000
+or a school.
+
+15:49.000 --> 15:51.000
+They will give prizes.
+
+15:51.000 --> 15:53.000
+Kaggle will help them hold the competition.
+
+15:53.000 --> 15:55.000
+There are some interesting competitions.
+
+15:55.000 --> 15:57.000
+For example, Jamstree,
+
+15:57.000 --> 15:59.000
+where you can use Wi-Fi
+
+15:59.000 --> 16:01.000
+to predict where people are.
+
+16:03.000 --> 16:05.000
+Next is dataset.
+
+16:05.000 --> 16:07.000
+People can freely
+
+16:07.000 --> 16:09.000
+upload their dataset.
+
+16:09.000 --> 16:11.000
+For example,
+
+16:11.000 --> 16:13.000
+COVID-19 vaccine development,
+
+16:13.000 --> 16:15.000
+or Netflix,
+
+16:15.000 --> 16:17.000
+or Trump's Twitter.
+
+16:17.000 --> 16:19.000
+This is also an interesting topic.
+
+16:19.000 --> 16:21.000
+Datasets include
+
+16:21.000 --> 16:23.000
+professional or non-professional
+
+16:23.000 --> 16:25.000
+data.
+
+16:25.000 --> 16:27.000
+It is an interesting platform.
+
+16:27.000 --> 16:29.000
+The last part is
+
+16:29.000 --> 16:31.000
+notebook.
+
+16:31.000 --> 16:33.000
+It is a code.
+
+16:33.000 --> 16:35.000
+People will put their code on it.
+
+16:35.000 --> 16:37.000
+It includes
+
+16:37.000 --> 16:39.000
+how to visualize
+
+16:39.000 --> 16:41.000
+or model.
+
+16:41.000 --> 16:43.000
+Basically,
+
+16:43.000 --> 16:45.000
+you can copy the notebook
+
+16:45.000 --> 16:47.000
+and do the same thing.
+
+16:47.000 --> 16:49.000
+This notebook can
+
+16:49.000 --> 16:51.000
+connect to the competition
+
+16:51.000 --> 16:53.000
+and dataset.
+
+16:53.000 --> 16:55.000
+Basically, you can use
+
+16:55.000 --> 16:57.000
+the cloud resources,
+
+16:57.000 --> 16:59.000
+CPU and GPU,
+
+16:59.000 --> 17:01.000
+to run the dataset
+
+17:01.000 --> 17:03.000
+on the platform.
+
+17:03.000 --> 17:05.000
+You can even use the resources
+
+17:05.000 --> 17:07.000
+to participate in the competition.
+
+17:07.000 --> 17:09.000
+You don't even need to use
+
+17:09.000 --> 17:11.000
+your local notebook to run the model.
+
+17:11.000 --> 17:13.000
+You can use the cloud resources
+
+17:13.000 --> 17:15.000
+to upload and compute the data.
+
+17:15.000 --> 17:17.000
+Let me introduce
+
+17:17.000 --> 17:19.000
+what the competition is.
+
+17:19.000 --> 17:21.000
+There are
+
+17:21.000 --> 17:23.000
+more than 2,000
+
+17:23.000 --> 17:25.000
+data sets.
+
+17:25.000 --> 17:27.000
+They are from more than 1,000
+
+17:27.000 --> 17:29.000
+countries around the world.
+
+17:29.000 --> 17:31.000
+We want to find a good algorithm
+
+17:31.000 --> 17:33.000
+to accurately predict
+
+17:33.000 --> 17:35.000
+the resources of most of the buildings.
+
+17:35.000 --> 17:37.000
+In the past,
+
+17:37.000 --> 17:39.000
+most researchers
+
+17:39.000 --> 17:41.000
+said that
+
+17:41.000 --> 17:43.000
+some buildings are very fast,
+
+17:43.000 --> 17:45.000
+some buildings are very accurate,
+
+17:45.000 --> 17:47.000
+some buildings are very easy to run,
+
+17:47.000 --> 17:49.000
+and so on.
+
+17:49.000 --> 17:51.000
+But if we have so many buildings
+
+17:51.000 --> 17:53.000
+across different countries,
+
+17:53.000 --> 17:55.000
+it will be a more general way.
+
+17:55.000 --> 17:57.000
+It's not just a case of
+
+17:57.000 --> 17:59.000
+a single building or a single country.
+
+17:59.000 --> 18:01.000
+This is the purpose
+
+18:01.000 --> 18:03.000
+of the energy competition.
+
+18:03.000 --> 18:05.000
+To find the most general
+
+18:05.000 --> 18:07.000
+and accurate way.
+
+18:09.000 --> 18:11.000
+This dataset
+
+18:11.000 --> 18:13.000
+contains some data,
+
+18:13.000 --> 18:15.000
+such as the most basic
+
+18:15.000 --> 18:17.000
+meter reading.
+
+18:17.000 --> 18:19.000
+This is mainly
+
+18:19.000 --> 18:21.000
+the data of the meter.
+
+18:21.000 --> 18:23.000
+It may be 24 hours,
+
+18:23.000 --> 18:25.000
+single year data,
+
+18:25.000 --> 18:27.000
+and its height.
+
+18:27.000 --> 18:29.000
+In addition, there is building meta,
+
+18:29.000 --> 18:31.000
+what kind of site it is,
+
+18:31.000 --> 18:33.000
+and what kind of
+
+18:33.000 --> 18:35.000
+purpose it is.
+
+18:35.000 --> 18:37.000
+It may be office buildings, it may be school buildings,
+
+18:37.000 --> 18:39.000
+square feet, floor area, etc.
+
+18:39.000 --> 18:41.000
+It also provides
+
+18:41.000 --> 18:43.000
+temperature, humidity,
+
+18:43.000 --> 18:45.000
+cloud load, etc.
+
+18:47.000 --> 18:49.000
+In this competition, it will provide
+
+18:49.000 --> 18:51.000
+training data for 2016
+
+18:51.000 --> 18:53.000
+to train your model.
+
+18:53.000 --> 18:55.000
+You have to predict the energy data
+
+18:55.000 --> 18:57.000
+for 2017 and 2018.
+
+18:59.000 --> 19:01.000
+In this competition,
+
+19:01.000 --> 19:03.000
+the method of the competition is
+
+19:03.000 --> 19:05.000
+that you will first download your dataset,
+
+19:05.000 --> 19:07.000
+which is your training data.
+
+19:07.000 --> 19:09.000
+It includes the electric meter data
+
+19:09.000 --> 19:11.000
+and weather data.
+
+19:11.000 --> 19:13.000
+After training your model,
+
+19:13.000 --> 19:15.000
+you can
+
+19:15.000 --> 19:17.000
+upload your answer.
+
+19:17.000 --> 19:19.000
+After uploading,
+
+19:19.000 --> 19:21.000
+it will calculate a score.
+
+19:21.000 --> 19:23.000
+You can see the score
+
+19:23.000 --> 19:25.000
+on the leaderboard.
+
+19:27.000 --> 19:29.000
+Now let's take a look at
+
+19:29.000 --> 19:31.000
+the result of this competition.
+
+19:31.000 --> 19:33.000
+First of all, it is very interesting that
+
+19:33.000 --> 19:35.000
+most of the applications are Python.
+
+19:35.000 --> 19:37.000
+Python is the most popular application now.
+
+19:37.000 --> 19:39.000
+There is a little bit, but not the most.
+
+19:41.000 --> 19:43.000
+What kind of machine learning models
+
+19:43.000 --> 19:45.000
+do you use?
+
+19:45.000 --> 19:47.000
+In this competition, it is usually
+
+19:47.000 --> 19:49.000
+gradient boosting.
+
+19:49.000 --> 19:51.000
+Because this data belongs to
+
+19:51.000 --> 19:53.000
+tabular data,
+
+19:53.000 --> 19:55.000
+it is structured,
+
+19:55.000 --> 19:57.000
+like Excel table data.
+
+19:57.000 --> 19:59.000
+In TreeBase model,
+
+19:59.000 --> 20:01.000
+they are best at solving this problem.
+
+20:01.000 --> 20:03.000
+In NN,
+
+20:03.000 --> 20:05.000
+it is not impossible to deal with this problem.
+
+20:05.000 --> 20:07.000
+Because the training time is too long,
+
+20:07.000 --> 20:09.000
+and you need to tune the parameters
+
+20:09.000 --> 20:11.000
+for a long time.
+
+20:11.000 --> 20:13.000
+Then there are some tags.
+
+20:13.000 --> 20:15.000
+You can find that
+
+20:15.000 --> 20:17.000
+most of the notebooks
+
+20:17.000 --> 20:19.000
+are provided by EDA or Beginner,
+
+20:19.000 --> 20:21.000
+which are more visualized.
+
+20:23.000 --> 20:25.000
+Data is its exploration,
+
+20:25.000 --> 20:27.000
+which parameters it has,
+
+20:27.000 --> 20:29.000
+its distribution,
+
+20:29.000 --> 20:31.000
+and its time series.
+
+20:35.000 --> 20:37.000
+Let's take a look at
+
+20:37.000 --> 20:39.000
+most of the solutions.
+
+20:39.000 --> 20:41.000
+You can see that
+
+20:41.000 --> 20:43.000
+the rank is from
+
+20:43.000 --> 20:45.000
+high to low,
+
+20:45.000 --> 20:47.000
+from 9th to over 2000.
+
+20:47.000 --> 20:49.000
+You can see that the score
+
+20:49.000 --> 20:51.000
+can be from low to high.
+
+20:51.000 --> 20:53.000
+Low means that this side is better.
+
+20:53.000 --> 20:55.000
+Because the score here is actually
+
+20:55.000 --> 20:57.000
+error, the lower the better.
+
+20:57.000 --> 20:59.000
+You can see that
+
+20:59.000 --> 21:01.000
+most people use
+
+21:01.000 --> 21:03.000
+removeAllLiers
+
+21:03.000 --> 21:05.000
+to remove data,
+
+21:05.000 --> 21:07.000
+and imputation
+
+21:07.000 --> 21:09.000
+is to make some
+
+21:09.000 --> 21:11.000
+data maintenance.
+
+21:11.000 --> 21:13.000
+Not everyone does this.
+
+21:13.000 --> 21:15.000
+In Feature Strategy,
+
+21:15.000 --> 21:17.000
+in Holiday Feature,
+
+21:17.000 --> 21:19.000
+and Categorical Statistical Feature,
+
+21:19.000 --> 21:21.000
+it depends on each person.
+
+21:21.000 --> 21:23.000
+It doesn't seem to be consistent.
+
+21:23.000 --> 21:25.000
+The number of Feature that everyone uses
+
+21:25.000 --> 21:27.000
+is either a lot or a little.
+
+21:27.000 --> 21:29.000
+Some people just didn't publish it.
+
+21:29.000 --> 21:31.000
+I think the most interesting thing is
+
+21:31.000 --> 21:33.000
+in Feature Strategy,
+
+21:33.000 --> 21:35.000
+you can see that the numbers here
+
+21:35.000 --> 21:37.000
+represent the number of models.
+
+21:37.000 --> 21:39.000
+The higher the score,
+
+21:39.000 --> 21:41.000
+the more models they prefer to use.
+
+21:41.000 --> 21:43.000
+Why is that?
+
+21:43.000 --> 21:45.000
+In this kind of data competition,
+
+21:45.000 --> 21:47.000
+if you use a single model,
+
+21:47.000 --> 21:49.000
+its performance is usually limited.
+
+21:49.000 --> 21:51.000
+But if you use different models today,
+
+21:51.000 --> 21:53.000
+for example, you use NN,
+
+21:53.000 --> 21:55.000
+you use lightGBN,
+
+21:55.000 --> 21:57.000
+or you use different modeling methods,
+
+21:57.000 --> 21:59.000
+you put all the results of these modeling
+
+21:59.000 --> 22:01.000
+If you use a simple average,
+
+22:01.000 --> 22:03.000
+sometimes you can get very good results.
+
+22:03.000 --> 22:05.000
+Maybe 0.5 times the first model,
+
+22:05.000 --> 22:07.000
+0.5 times the second model,
+
+22:07.000 --> 22:09.000
+and then add it up,
+
+22:09.000 --> 22:11.000
+its performance may be better than individual models.
+
+22:11.000 --> 22:13.000
+So that's why they use so many
+
+22:13.000 --> 22:15.000
+models to do the average.
+
+22:15.000 --> 22:17.000
+Because it can
+
+22:17.000 --> 22:19.000
+effectively improve the performance of the model.
+
+22:23.000 --> 22:25.000
+Let's take out the top five
+
+22:25.000 --> 22:27.000
+and take a look at its content.
+
+22:27.000 --> 22:29.000
+The most important thing is that
+
+22:29.000 --> 22:31.000
+in preprocessing,
+
+22:31.000 --> 22:33.000
+it is very important to remove anomalies
+
+22:33.000 --> 22:35.000
+or outliers.
+
+22:35.000 --> 22:37.000
+Because in this competition,
+
+22:37.000 --> 22:39.000
+there are a lot of data missing and outliers.
+
+22:39.000 --> 22:41.000
+In fact, this is not only found in this competition.
+
+22:41.000 --> 22:43.000
+In fact, most of the real world data
+
+22:43.000 --> 22:45.000
+is like this,
+
+22:45.000 --> 22:47.000
+a lot of data missing, a lot of outliers.
+
+22:47.000 --> 22:49.000
+If you don't do this,
+
+22:49.000 --> 22:51.000
+it may cause your model to learn
+
+22:51.000 --> 22:53.000
+some strange patterns or phenomena.
+
+22:53.000 --> 22:55.000
+Next is features.
+
+22:55.000 --> 22:57.000
+This is not necessarily the case.
+
+22:57.000 --> 22:59.000
+Some people use 10, some use 28.
+
+22:59.000 --> 23:01.000
+Some have outliers, some don't.
+
+23:01.000 --> 23:03.000
+It depends on how you choose.
+
+23:03.000 --> 23:05.000
+In modeling,
+
+23:05.000 --> 23:07.000
+you can see that most of them use
+
+23:07.000 --> 23:09.000
+LinearGBN, XGBoost,
+
+23:09.000 --> 23:11.000
+which are tree-based models.
+
+23:11.000 --> 23:13.000
+There are relatively few NNN models.
+
+23:13.000 --> 23:15.000
+Post-processing,
+
+23:15.000 --> 23:17.000
+as I just said, is a model
+
+23:17.000 --> 23:19.000
+to do the average.
+
+23:19.000 --> 23:21.000
+It's actually ensembling.
+
+23:21.000 --> 23:23.000
+I made a lot of models today and
+
+23:24.000 --> 23:26.000
+this is a simple
+
+23:26.000 --> 23:28.000
+flowchart they provide.
+
+23:28.000 --> 23:30.000
+This is the first flowchart they provide.
+
+23:30.000 --> 23:32.000
+You can see the pre-processing in front of it.
+
+23:32.000 --> 23:34.000
+This is what I just said.
+
+23:34.000 --> 23:36.000
+Feature engineering.
+
+23:36.000 --> 23:38.000
+Then there are a lot of models.
+
+23:38.000 --> 23:40.000
+Finally, do the ensembling prediction.
+
+23:40.000 --> 23:42.000
+These predicted results
+
+23:42.000 --> 23:44.000
+are averaged.
+
+23:44.000 --> 23:46.000
+In fact,
+
+23:46.000 --> 23:48.000
+every
+
+23:48.000 --> 23:50.000
+flowchart in the competition is a bit like this.
+
+23:50.000 --> 23:52.000
+They do some pre-processing.
+
+23:52.000 --> 23:54.000
+Then there are a lot of models.
+
+23:54.000 --> 23:56.000
+Then do the ensembling.
+
+23:56.000 --> 23:58.000
+This is also a classic
+
+23:58.000 --> 24:00.000
+machine learning pipeline.
+
+24:00.000 --> 24:02.000
+Pre-processing, modeling,
+
+24:02.000 --> 24:04.000
+and then
+
+24:04.000 --> 24:06.000
+if it's ensembling,
+
+24:06.000 --> 24:08.000
+it's more of a special use than set.
+
+24:08.000 --> 24:10.000
+It's a method
+
+24:10.000 --> 24:12.000
+that will be used to get high scores.
+
+24:14.000 --> 24:16.000
+The third is a similar method.
+
+24:16.000 --> 24:18.000
+This competition,
+
+24:18.000 --> 24:20.000
+to be honest,
+
+24:20.000 --> 24:22.000
+is more data science.
+
+24:22.000 --> 24:24.000
+If the audience
+
+24:24.000 --> 24:26.000
+is more interested
+
+24:26.000 --> 24:28.000
+in this place,
+
+24:28.000 --> 24:30.000
+you can check the details
+
+24:30.000 --> 24:32.000
+in our publication.
+
+24:32.000 --> 24:34.000
+We have a review paper
+
+24:34.000 --> 24:36.000
+for this competition.
+
+24:36.000 --> 24:38.000
+You can go up and see the details of this competition.
+
+24:38.000 --> 24:40.000
+If you want to know the program,
+
+24:40.000 --> 24:42.000
+you can go to Github
+
+24:42.000 --> 24:44.000
+to find some models
+
+24:44.000 --> 24:46.000
+or some details.
+
+24:46.000 --> 24:48.000
+In addition,
+
+24:48.000 --> 24:50.000
+we even have their interview videos.
+
+24:50.000 --> 24:52.000
+You can also find these YouTube videos
+
+24:52.000 --> 24:54.000
+from Github
+
+24:54.000 --> 24:56.000
+to see how they introduce their models
+
+24:56.000 --> 24:58.000
+and how they do things.
+
+24:58.000 --> 25:00.000
+The main purpose of talking about Kaggle today
+
+25:00.000 --> 25:02.000
+is to give some
+
+25:02.000 --> 25:04.000
+slightly interested in
+
+25:04.000 --> 25:06.000
+energy prediction, but not
+
+25:06.000 --> 25:08.000
+too familiar with these machine learning models.
+
+25:08.000 --> 25:10.000
+It's a simple overview.
+
+25:10.000 --> 25:12.000
+How does this competition work?
+
+25:12.000 --> 25:14.000
+What kind of model is it?
+
+25:16.000 --> 25:18.000
+Next, we will talk about
+
+25:18.000 --> 25:20.000
+our project study today.
+
+25:20.000 --> 25:22.000
+We want to do low prediction
+
+25:22.000 --> 25:24.000
+using data from Taiwan.
+
+25:24.000 --> 25:26.000
+We want to ask
+
+25:26.000 --> 25:28.000
+if we can really do
+
+25:28.000 --> 25:30.000
+an energy prediction service.
+
+25:32.000 --> 25:34.000
+Let me put this PowerPoint
+
+25:34.000 --> 25:36.000
+aside first.
+
+25:36.000 --> 25:38.000
+This is the Kaggle
+
+25:38.000 --> 25:40.000
+platform I just mentioned.
+
+25:40.000 --> 25:42.000
+If you go to
+
+25:42.000 --> 25:44.000
+kaggle.com,
+
+25:44.000 --> 25:46.000
+you can come in here.
+
+25:46.000 --> 25:48.000
+There will be a bunch of competitions,
+
+25:48.000 --> 25:50.000
+some data, and notebooks.
+
+25:50.000 --> 25:52.000
+Here,
+
+25:52.000 --> 25:54.000
+Project Tyra has created
+
+25:54.000 --> 25:56.000
+four notebooks.
+
+25:56.000 --> 25:58.000
+You can see that
+
+25:58.000 --> 26:00.000
+there are a lot of Python programs in this notebook.
+
+26:00.000 --> 26:02.000
+You can just copy
+
+26:02.000 --> 26:04.000
+and run it.
+
+26:04.000 --> 26:06.000
+Here,
+
+26:06.000 --> 26:08.000
+I want to copy
+
+26:08.000 --> 26:10.000
+this notebook I have already built.
+
+26:10.000 --> 26:12.000
+If you want to copy
+
+26:12.000 --> 26:14.000
+and you want to use my notebook,
+
+26:14.000 --> 26:16.000
+you can use the Copy & Edit Notebook here.
+
+26:16.000 --> 26:18.000
+Click on it.
+
+26:18.000 --> 26:20.000
+It will create a new copy here.
+
+26:24.000 --> 26:26.000
+You can see that
+
+26:26.000 --> 26:28.000
+it will use
+
+26:28.000 --> 26:30.000
+cloud resources in this notebook.
+
+26:30.000 --> 26:32.000
+But it's on the narrow path now.
+
+26:32.000 --> 26:34.000
+There are some datasets here.
+
+26:36.000 --> 26:38.000
+The dataset here is
+
+26:38.000 --> 26:40.000
+from the Kaggle dataset.
+
+26:40.000 --> 26:42.000
+You can read it directly
+
+26:42.000 --> 26:44.000
+into this notebook.
+
+26:44.000 --> 26:46.000
+You can see some CPU and RAM here.
+
+26:46.000 --> 26:48.000
+You can even run GPU
+
+26:48.000 --> 26:50.000
+and use its cloud resources
+
+26:50.000 --> 26:52.000
+to do some operations.
+
+26:52.000 --> 26:54.000
+In this notebook,
+
+26:54.000 --> 26:56.000
+the first thing we need to do
+
+26:56.000 --> 26:58.000
+is to download data.
+
+26:58.000 --> 27:00.000
+We want to download weather data
+
+27:00.000 --> 27:02.000
+and energy data.
+
+27:02.000 --> 27:04.000
+Let's run this thing
+
+27:04.000 --> 27:06.000
+on the scene.
+
+27:06.000 --> 27:08.000
+Run all.
+
+27:08.000 --> 27:10.000
+At the same time,
+
+27:10.000 --> 27:12.000
+let's introduce
+
+27:12.000 --> 27:14.000
+today's dataset.
+
+27:14.000 --> 27:16.000
+The first is energy data.
+
+27:16.000 --> 27:18.000
+It's data from Taiwan Electricity.
+
+27:18.000 --> 27:20.000
+It contains
+
+27:20.000 --> 27:22.000
+some peak
+
+27:22.000 --> 27:24.000
+power consumption
+
+27:24.000 --> 27:26.000
+per day.
+
+27:26.000 --> 27:28.000
+The peak power consumption
+
+27:28.000 --> 27:30.000
+of Taiwan Electricity
+
+27:30.000 --> 27:32.000
+per day.
+
+27:32.000 --> 27:34.000
+In addition,
+
+27:34.000 --> 27:36.000
+there are energy categories
+
+27:36.000 --> 27:38.000
+of Taiwan Electricity.
+
+27:38.000 --> 27:40.000
+There are a lot of energy categories in Taiwan.
+
+27:40.000 --> 27:42.000
+There are traditional
+
+27:42.000 --> 27:44.000
+blue gas,
+
+27:44.000 --> 27:46.000
+blue coal, nuclear energy,
+
+27:46.000 --> 27:48.000
+and wind and solar energy.
+
+27:48.000 --> 27:50.000
+These data
+
+27:50.000 --> 27:52.000
+are also released by Taiwan Electricity.
+
+27:54.000 --> 27:56.000
+In addition,
+
+27:56.000 --> 27:58.000
+I know some listeners
+
+27:58.000 --> 28:00.000
+are more interested in
+
+28:00.000 --> 28:02.000
+local energy.
+
+28:02.000 --> 28:04.000
+For example,
+
+28:04.000 --> 28:06.000
+how much electricity they use
+
+28:06.000 --> 28:08.000
+in a village or a city.
+
+28:08.000 --> 28:10.000
+Taiwan Electricity does have some data
+
+28:10.000 --> 28:12.000
+in this part,
+
+28:12.000 --> 28:14.000
+but it's not covered
+
+28:14.000 --> 28:16.000
+in today's speech.
+
+28:16.000 --> 28:18.000
+In addition, there are some village metadata,
+
+28:18.000 --> 28:20.000
+such as its precision,
+
+28:20.000 --> 28:22.000
+population,
+
+28:22.000 --> 28:24.000
+and area.
+
+28:24.000 --> 28:26.000
+For example, the open data provided by this website.
+
+28:26.000 --> 28:28.000
+If you want to know
+
+28:28.000 --> 28:30.000
+its outline, you can also find
+
+28:30.000 --> 28:32.000
+the open data provided by Hulu.
+
+28:32.000 --> 28:34.000
+The picture on the left
+
+28:34.000 --> 28:36.000
+is a good data visualization.
+
+28:36.000 --> 28:38.000
+It's a picture provided
+
+28:38.000 --> 28:40.000
+by Prof. Chen
+
+28:40.000 --> 28:42.000
+from FB.
+
+28:42.000 --> 28:44.000
+As you can see,
+
+28:44.000 --> 28:46.000
+the village area
+
+28:46.000 --> 28:48.000
+and energy are mapped
+
+28:48.000 --> 28:50.000
+together to see
+
+28:50.000 --> 28:52.000
+the density of energy.
+
+28:54.000 --> 28:56.000
+Let's take a look
+
+28:56.000 --> 28:58.000
+at the data
+
+28:58.000 --> 29:00.000
+provided by Hulu.
+
+29:00.000 --> 29:02.000
+First,
+
+29:02.000 --> 29:04.000
+we have the weather data.
+
+29:04.000 --> 29:06.000
+We got the weather data
+
+29:06.000 --> 29:08.000
+from the weather data.
+
+29:08.000 --> 29:10.000
+We got data for 2 years.
+
+29:10.000 --> 29:12.000
+The first year,
+
+29:12.000 --> 29:14.000
+the winter temperature was lower than the summer one,
+
+29:14.000 --> 29:16.000
+and the second year,
+
+29:16.000 --> 29:18.000
+the temperature was higher than
+
+29:18.000 --> 29:20.000
+the summer one.
+
+29:20.000 --> 29:22.000
+The third year,
+
+29:22.000 --> 29:24.000
+we took the average of the three points
+
+29:24.000 --> 29:26.000
+and used them as feature
+
+29:26.000 --> 29:28.000
+to predict the power consumption.
+
+29:28.000 --> 29:30.000
+The next one is the energy data
+
+29:30.000 --> 29:32.000
+from Taiwan.
+
+29:32.000 --> 29:34.000
+There are a lot of data in it.
+
+29:34.000 --> 29:36.000
+In addition to the
+
+29:36.000 --> 29:38.000
+monitoring load,
+
+29:38.000 --> 29:40.000
+there are also data from various
+
+29:40.000 --> 29:42.000
+power generation sources.
+
+29:42.000 --> 29:44.000
+We can take a look at
+
+29:44.000 --> 29:46.000
+the industrial power consumption
+
+29:46.000 --> 29:48.000
+and the electricity consumption.
+
+29:48.000 --> 29:50.000
+For industrial power consumption,
+
+29:50.000 --> 29:52.000
+we can see that
+
+29:52.000 --> 29:54.000
+the annual power consumption
+
+29:54.000 --> 29:56.000
+is relatively low.
+
+29:56.000 --> 29:58.000
+The annual power consumption
+
+29:58.000 --> 30:00.000
+is relatively low.
+
+30:00.000 --> 30:02.000
+On weekends,
+
+30:02.000 --> 30:04.000
+there is a fixed pattern.
+
+30:04.000 --> 30:06.000
+There is a fixed pattern.
+
+30:06.000 --> 30:08.000
+This is the so-called
+
+30:08.000 --> 30:10.000
+near-peak power supply.
+
+30:10.000 --> 30:12.000
+This is the so-called
+
+30:12.000 --> 30:14.000
+near-peak power supply.
+
+30:14.000 --> 30:16.000
+The power station must decide
+
+30:16.000 --> 30:18.000
+how much electricity
+
+30:18.000 --> 30:20.000
+to deal with the maximum
+
+30:20.000 --> 30:22.000
+load on that day.
+
+30:22.000 --> 30:24.000
+We can't let the maximum load
+
+30:24.000 --> 30:26.000
+exceed the power supply,
+
+30:26.000 --> 30:28.000
+or there will be power outages.
+
+30:28.000 --> 30:30.000
+Next, there are wind power
+
+30:30.000 --> 30:32.000
+and solar power.
+
+30:32.000 --> 30:34.000
+Solar power is
+
+30:34.000 --> 30:36.000
+relatively general.
+
+30:36.000 --> 30:38.000
+It depends on how much radiation
+
+30:38.000 --> 30:40.000
+you have that day.
+
+30:40.000 --> 30:42.000
+In summer, it's more.
+
+30:42.000 --> 30:44.000
+In winter, it's less.
+
+30:44.000 --> 30:46.000
+Let's go back
+
+30:46.000 --> 30:48.000
+to the data set.
+
+30:48.000 --> 30:50.000
+As you can see,
+
+30:50.000 --> 30:52.000
+weather data is what I just said.
+
+30:52.000 --> 30:54.000
+You can use this to observe
+
+30:54.000 --> 30:56.000
+the historical weather data.
+
+30:56.000 --> 30:58.000
+the historical weather data.
+
+30:58.000 --> 31:00.000
+This is the platform
+
+31:00.000 --> 31:02.000
+that Cargo just grabbed.
+
+31:02.000 --> 31:04.000
+This is the platform that Cargo just grabbed.
+
+31:04.000 --> 31:06.000
+There is also a local weather forecast.
+
+31:06.000 --> 31:08.000
+You can use the forecast API
+
+31:08.000 --> 31:10.000
+provided by the Meteorological Bureau
+
+31:10.000 --> 31:12.000
+to catch the forecast for the next week
+
+31:12.000 --> 31:14.000
+and the weather forecast every three hours.
+
+31:14.000 --> 31:16.000
+Google Trend
+
+31:16.000 --> 31:18.000
+is more interesting.
+
+31:18.000 --> 31:20.000
+You can search
+
+31:20.000 --> 31:22.000
+the search volume
+
+31:22.000 --> 31:24.000
+of a keyword on Google.
+
+31:24.000 --> 31:26.000
+For example, you can search
+
+31:26.000 --> 31:28.000
+the search volume
+
+31:28.000 --> 31:30.000
+of a keyword on Google.
+
+31:30.000 --> 31:32.000
+You can see a pattern.
+
+31:32.000 --> 31:34.000
+One, two, three, four.
+
+31:34.000 --> 31:36.000
+Sorry, I typed it wrong.
+
+31:36.000 --> 31:38.000
+It's actually two, three, four, five.
+
+31:38.000 --> 31:40.000
+It's Saturday and Sunday.
+
+31:40.000 --> 31:42.000
+You can also say
+
+31:42.000 --> 31:44.000
+that if I use
+
+31:44.000 --> 31:46.000
+the date as a unit,
+
+31:46.000 --> 31:48.000
+you can see that
+
+31:48.000 --> 31:50.000
+one, two, three, four, five is higher,
+
+31:50.000 --> 31:52.000
+and six is lower.
+
+31:52.000 --> 31:54.000
+If you look at one and two,
+
+31:54.000 --> 31:56.000
+you can see that
+
+31:56.000 --> 31:58.000
+this is in the United States,
+
+31:58.000 --> 32:00.000
+so it's actually lower
+
+32:00.000 --> 32:02.000
+in the New Year
+
+32:02.000 --> 32:04.000
+or in the National Day.
+
+32:04.000 --> 32:06.000
+You can also see
+
+32:06.000 --> 32:08.000
+that if I use
+
+32:08.000 --> 32:10.000
+Taiwan's data as an example,
+
+32:10.000 --> 32:12.000
+the search volume
+
+32:12.000 --> 32:14.000
+mentioned in the first video
+
+32:14.000 --> 32:16.000
+is the search volume
+
+32:16.000 --> 32:18.000
+in Taiwan Campus.
+
+32:18.000 --> 32:20.000
+If you compare the search volume
+
+32:20.000 --> 32:22.000
+of Microsoft Excel,
+
+32:22.000 --> 32:24.000
+you can see that
+
+32:24.000 --> 32:26.000
+it can correspond to
+
+32:26.000 --> 32:28.000
+some holidays,
+
+32:28.000 --> 32:30.000
+such as the New Year,
+
+32:30.000 --> 32:32.000
+and the search volume of
+
+32:32.000 --> 32:34.000
+Excel becomes lower.
+
+32:34.000 --> 32:36.000
+For example,
+
+32:36.000 --> 32:38.000
+the search volume of
+
+32:38.000 --> 32:40.000
+Microsoft Excel,
+
+32:40.000 --> 32:42.000
+whether it's tourism
+
+32:42.000 --> 32:44.000
+or your sales volume,
+
+32:44.000 --> 32:46.000
+is a very useful keyword
+
+32:46.000 --> 32:48.000
+to compare.
+
+32:48.000 --> 32:50.000
+This is also mentioned that
+
+32:50.000 --> 32:52.000
+if our Power Meter
+
+32:52.000 --> 32:54.000
+is classified,
+
+32:54.000 --> 32:56.000
+you can find that
+
+32:56.000 --> 32:58.000
+some buildings are
+
+32:58.000 --> 33:00.000
+related to education,
+
+33:00.000 --> 33:02.000
+and some buildings
+
+33:02.000 --> 33:04.000
+may be related to
+
+33:04.000 --> 33:06.000
+the office,
+
+33:06.000 --> 33:08.000
+which is also a very interesting
+
+33:08.000 --> 33:10.000
+open data set.
+
+33:10.000 --> 33:12.000
+Here I have provided
+
+33:12.000 --> 33:14.000
+how to grab data
+
+33:14.000 --> 33:16.000
+in Google Trend.
+
+33:16.000 --> 33:18.000
+You can see that
+
+33:18.000 --> 33:20.000
+it's lower in the New Year
+
+33:20.000 --> 33:22.000
+and lower in the National Day.
+
+33:22.000 --> 33:24.000
+For example,
+
+33:24.000 --> 33:26.000
+October 10th.
+
+33:26.000 --> 33:28.000
+October 10th, 11th, 12th, and 13th
+
+33:28.000 --> 33:30.000
+are National Day holidays,
+
+33:30.000 --> 33:32.000
+so these days are also lower.
+
+33:32.000 --> 33:34.000
+Holiday data
+
+33:34.000 --> 33:36.000
+is actually
+
+33:36.000 --> 33:38.000
+from a website
+
+33:38.000 --> 33:40.000
+called TimeDate.
+
+33:40.000 --> 33:42.000
+You can find
+
+33:42.000 --> 33:44.000
+the holiday of
+
+33:44.000 --> 33:46.000
+each country on it.
+
+33:46.000 --> 33:48.000
+You just need to enter
+
+33:48.000 --> 33:50.000
+your country's name on the website
+
+33:50.000 --> 33:52.000
+and its year.
+
+33:52.000 --> 33:54.000
+Then you can find the national holiday
+
+33:54.000 --> 33:56.000
+that corresponds to that country.
+
+33:56.000 --> 33:58.000
+This is also a very useful website,
+
+33:58.000 --> 34:00.000
+so I also grabbed
+
+34:00.000 --> 34:02.000
+some data.
+
+34:02.000 --> 34:04.000
+In this notebook,
+
+34:04.000 --> 34:06.000
+the main thing we do is
+
+34:06.000 --> 34:08.000
+to grab data.
+
+34:08.000 --> 34:10.000
+In the end,
+
+34:10.000 --> 34:12.000
+what we can
+
+34:12.000 --> 34:14.000
+generate is like this.
+
+34:14.000 --> 34:16.000
+In this notebook,
+
+34:16.000 --> 34:18.000
+there is
+
+34:18.000 --> 34:20.000
+an output.
+
+34:20.000 --> 34:22.000
+We can output
+
+34:22.000 --> 34:24.000
+Google Trend CSV, Demand CSV, Holiday.
+
+34:24.000 --> 34:26.000
+You can even download
+
+34:26.000 --> 34:28.000
+the data directly from here.
+
+34:28.000 --> 34:30.000
+It's quite convenient to
+
+34:30.000 --> 34:32.000
+store data
+
+34:32.000 --> 34:34.000
+and build a notebook.
+
+34:36.000 --> 34:38.000
+Next,
+
+34:38.000 --> 34:40.000
+if we want to
+
+34:40.000 --> 34:42.000
+predict Taiwan's
+
+34:42.000 --> 34:44.000
+energy,
+
+34:44.000 --> 34:46.000
+we need to build a model.
+
+34:46.000 --> 34:48.000
+Here,
+
+34:50.000 --> 34:52.000
+our goal is to
+
+34:52.000 --> 34:54.000
+meet the deadline on time.
+
+34:54.000 --> 34:56.000
+Of course, there are other things
+
+34:56.000 --> 34:58.000
+that we don't need to cover.
+
+34:58.000 --> 35:00.000
+Let's use a simple
+
+35:00.000 --> 35:02.000
+time-to-time load to predict.
+
+35:02.000 --> 35:04.000
+This is one data per day,
+
+35:04.000 --> 35:06.000
+which is the highest energy load
+
+35:06.000 --> 35:08.000
+in a day.
+
+35:08.000 --> 35:10.000
+If we only use the simplest
+
+35:10.000 --> 35:12.000
+weekday to predict,
+
+35:12.000 --> 35:14.000
+that is,
+
+35:14.000 --> 35:16.000
+let's say it's Monday or Tuesday,
+
+35:16.000 --> 35:18.000
+or it's Saturday or Sunday.
+
+35:18.000 --> 35:20.000
+First of all,
+
+35:20.000 --> 35:22.000
+we can look at its trend.
+
+35:22.000 --> 35:24.000
+0 to 4 is Monday to Friday,
+
+35:24.000 --> 35:26.000
+and 5 to 6 is Saturday.
+
+35:26.000 --> 35:28.000
+1 to 5 is higher,
+
+35:28.000 --> 35:30.000
+and Saturday is lower.
+
+35:30.000 --> 35:32.000
+It's normal.
+
+35:32.000 --> 35:34.000
+If we build a model like this,
+
+35:34.000 --> 35:36.000
+it will look like
+
+35:36.000 --> 35:38.000
+a weekly forecast.
+
+35:38.000 --> 35:40.000
+It's like a blue line.
+
+35:40.000 --> 35:42.000
+This is the so-called prediction.
+
+35:42.000 --> 35:44.000
+It's very inaccurate,
+
+35:44.000 --> 35:46.000
+because it only has
+
+35:46.000 --> 35:48.000
+the feature of Monday.
+
+35:48.000 --> 35:50.000
+Its Oscar O is only 0.1.
+
+35:50.000 --> 35:52.000
+It's terrible.
+
+35:52.000 --> 35:54.000
+For the second model,
+
+35:54.000 --> 35:56.000
+if we want to be more seasonal,
+
+35:56.000 --> 35:58.000
+we can add weather conditions.
+
+35:58.000 --> 36:00.000
+We only add temperature today.
+
+36:00.000 --> 36:02.000
+The temperature here
+
+36:02.000 --> 36:04.000
+is the overall energy
+
+36:04.000 --> 36:06.000
+forecast in Taiwan.
+
+36:06.000 --> 36:08.000
+So we simply sample
+
+36:08.000 --> 36:10.000
+the temperature of three regions,
+
+36:10.000 --> 36:12.000
+Taipei, Tainan, and Taichung.
+
+36:12.000 --> 36:14.000
+You can see that
+
+36:14.000 --> 36:16.000
+if we
+
+36:16.000 --> 36:18.000
+use temperature
+
+36:18.000 --> 36:20.000
+and energy
+
+36:20.000 --> 36:22.000
+to get a plot,
+
+36:22.000 --> 36:24.000
+you can see that
+
+36:24.000 --> 36:26.000
+there is a very obvious curve on weekday,
+
+36:26.000 --> 36:28.000
+and there is a very obvious curve on weekend.
+
+36:28.000 --> 36:30.000
+We use a two-dimensional curve
+
+36:30.000 --> 36:32.000
+to draw it.
+
+36:32.000 --> 36:34.000
+You can see that there is a very obvious relationship here.
+
+36:34.000 --> 36:36.000
+So
+
+36:36.000 --> 36:38.000
+after we add it here,
+
+36:38.000 --> 36:40.000
+you can see that this prediction
+
+36:40.000 --> 36:42.000
+is actually a lot more accurate.
+
+36:42.000 --> 36:44.000
+It can roughly draw this seasonal line,
+
+36:44.000 --> 36:46.000
+and its Oscar can reach 0.81.
+
+36:46.000 --> 36:48.000
+Sorry, I forgot to mention that
+
+36:48.000 --> 36:50.000
+the training data is used to train
+
+36:50.000 --> 36:52.000
+the whole year of 2019,
+
+36:52.000 --> 36:54.000
+and then use 2020
+
+36:54.000 --> 36:56.000
+as our test data to see its accuracy.
+
+36:56.000 --> 36:58.000
+So you can see
+
+36:58.000 --> 37:00.000
+that even if we only have
+
+37:00.000 --> 37:02.000
+weekly weather conditions,
+
+37:02.000 --> 37:04.000
+the prediction of the next year
+
+37:04.000 --> 37:06.000
+is actually quite accurate.
+
+37:06.000 --> 37:08.000
+The third model
+
+37:08.000 --> 37:10.000
+is to say that
+
+37:10.000 --> 37:12.000
+in addition to the weather conditions here,
+
+37:12.000 --> 37:14.000
+we can see some
+
+37:14.000 --> 37:16.000
+of the predictions here,
+
+37:16.000 --> 37:18.000
+but it's not very accurate.
+
+37:18.000 --> 37:20.000
+The main reason is that the model can't know
+
+37:20.000 --> 37:22.000
+which day is the holiday,
+
+37:22.000 --> 37:24.000
+so you have to tell it this feature.
+
+37:24.000 --> 37:26.000
+The third model is called Holiday,
+
+37:26.000 --> 37:28.000
+which is the holiday data
+
+37:28.000 --> 37:30.000
+we just got from IronDate.
+
+37:32.000 --> 37:34.000
+How many types
+
+37:34.000 --> 37:36.000
+of holiday types are there here?
+
+37:36.000 --> 37:38.000
+0 is the most common,
+
+37:38.000 --> 37:40.000
+1 is the most
+
+37:40.000 --> 37:42.000
+common ordinary day,
+
+37:42.000 --> 37:44.000
+that is, it doesn't have a holiday,
+
+37:44.000 --> 37:46.000
+and 2 is the weekend.
+
+37:46.000 --> 37:48.000
+You can see that their grouping methods
+
+37:48.000 --> 37:50.000
+are not the same.
+
+37:50.000 --> 37:52.000
+After adding this,
+
+37:52.000 --> 37:54.000
+you can see that the prediction
+
+37:54.000 --> 37:56.000
+here in the new year seems to be a little lower.
+
+37:56.000 --> 37:58.000
+For example, around October 10,
+
+37:58.000 --> 38:00.000
+it will also be here
+
+38:00.000 --> 38:02.000
+in these three days,
+
+38:02.000 --> 38:04.000
+its prediction value will also be lower.
+
+38:04.000 --> 38:06.000
+That's because there's a feature
+
+38:06.000 --> 38:08.000
+added to it,
+
+38:08.000 --> 38:10.000
+so it's improved from 0.81 to
+
+38:10.000 --> 38:12.000
+almost 0.9.
+
+38:12.000 --> 38:14.000
+The most important thing is that
+
+38:14.000 --> 38:16.000
+our scope can actually predict
+
+38:16.000 --> 38:18.000
+the energy for the next week,
+
+38:18.000 --> 38:20.000
+so it actually includes the previous day,
+
+38:20.000 --> 38:22.000
+including the previous seven days
+
+38:22.000 --> 38:24.000
+and so on, these past energy data
+
+38:24.000 --> 38:26.000
+can actually be our feature.
+
+38:26.000 --> 38:28.000
+For example, I'm going to predict tomorrow's energy,
+
+38:28.000 --> 38:30.000
+but if I can know
+
+38:30.000 --> 38:32.000
+what the trend
+
+38:32.000 --> 38:34.000
+of today's energy looks like,
+
+38:34.000 --> 38:36.000
+then we can use today's trend
+
+38:36.000 --> 38:38.000
+and maybe add a little bit more.
+
+38:38.000 --> 38:40.000
+If the temperature is high, we can add a little bit.
+
+38:40.000 --> 38:42.000
+Then predict tomorrow's energy.
+
+38:42.000 --> 38:44.000
+So the energy data
+
+38:44.000 --> 38:46.000
+from the previous day or the previous seven days
+
+38:46.000 --> 38:48.000
+is also a pretty useful feature.
+
+38:48.000 --> 38:50.000
+I'm here in Australia.
+
+38:50.000 --> 38:52.000
+If we add
+
+38:52.000 --> 38:54.000
+the energy data
+
+38:54.000 --> 38:56.000
+from the previous day
+
+38:56.000 --> 38:58.000
+and the previous seven days
+
+38:58.000 --> 39:00.000
+and two weeks ago,
+
+39:00.000 --> 39:02.000
+you can see that
+
+39:02.000 --> 39:04.000
+in fact,
+
+39:04.000 --> 39:06.000
+they are highly related,
+
+39:06.000 --> 39:08.000
+that is, the previous day
+
+39:08.000 --> 39:10.000
+our current energy
+
+39:10.000 --> 39:12.000
+their relationship
+
+39:12.000 --> 39:14.000
+is very close.
+
+39:14.000 --> 39:16.000
+The previous seven days or the previous 14 days
+
+39:16.000 --> 39:18.000
+are also very close,
+
+39:18.000 --> 39:20.000
+which is also reasonable.
+
+39:20.000 --> 39:22.000
+It's like 9 o'clock in the morning
+
+39:22.000 --> 39:24.000
+and 9 o'clock in the morning yesterday.
+
+39:24.000 --> 39:26.000
+It's like 9 o'clock now and 9 o'clock
+
+39:26.000 --> 39:28.000
+a week ago, and it's like
+
+39:28.000 --> 39:30.000
+9 o'clock two weeks ago.
+
+39:30.000 --> 39:32.000
+So after adding this feature,
+
+39:32.000 --> 39:34.000
+our Oscar can directly
+
+39:34.000 --> 39:36.000
+increase to 0.94.
+
+39:36.000 --> 39:38.000
+This thing is of course based on
+
+39:38.000 --> 39:40.000
+my short-term prediction today.
+
+39:40.000 --> 39:42.000
+If you predict tomorrow or the next week's energy,
+
+39:42.000 --> 39:44.000
+then I can use this
+
+39:44.000 --> 39:46.000
+energy from the previous few days as my feature.
+
+39:48.000 --> 39:50.000
+OK, so here,
+
+39:50.000 --> 39:52.000
+this notebook is mainly to do this model training,
+
+39:52.000 --> 39:54.000
+which is to establish this model.
+
+39:54.000 --> 39:56.000
+At the end of this model,
+
+39:56.000 --> 39:58.000
+when it is to be output,
+
+39:58.000 --> 40:00.000
+we will actually use two years of data to do training.
+
+40:00.000 --> 40:02.000
+Just to do some validation,
+
+40:02.000 --> 40:04.000
+we might have to come out a year ago
+
+40:04.000 --> 40:06.000
+to see how it works.
+
+40:06.000 --> 40:08.000
+If the parameters of this model are fine
+
+40:08.000 --> 40:10.000
+and the effect is very good,
+
+40:10.000 --> 40:12.000
+then we can use two years of data
+
+40:12.000 --> 40:14.000
+to do training.
+
+40:14.000 --> 40:16.000
+So the output here is
+
+40:16.000 --> 40:18.000
+actually a light GBM model.
+
+40:20.000 --> 40:22.000
+The last notebook here
+
+40:22.000 --> 40:24.000
+is actually a real-time prediction.
+
+40:24.000 --> 40:26.000
+Then we use the light GBM model
+
+40:26.000 --> 40:28.000
+we built just now
+
+40:28.000 --> 40:30.000
+to import it in.
+
+40:30.000 --> 40:32.000
+Then we can use this model to predict.
+
+40:32.000 --> 40:34.000
+Just before doing the prediction,
+
+40:34.000 --> 40:36.000
+we still have to grab some data.
+
+40:36.000 --> 40:38.000
+Because what we just grabbed is historical data.
+
+40:38.000 --> 40:40.000
+If we want to predict the energy
+
+40:40.000 --> 40:42.000
+for the next seven days,
+
+40:42.000 --> 40:44.000
+then we have to catch the future weather forecast.
+
+40:44.000 --> 40:46.000
+Then we have to catch
+
+40:46.000 --> 40:48.000
+the holiday data.
+
+40:48.000 --> 40:50.000
+Then we also have to catch
+
+40:50.000 --> 40:52.000
+the energy data from the previous few days
+
+40:52.000 --> 40:54.000
+as our feature.
+
+40:54.000 --> 40:56.000
+So the first thing here
+
+40:56.000 --> 40:58.000
+is to spread some
+
+40:58.000 --> 41:00.000
+energy data.
+
+41:00.000 --> 41:02.000
+Here we can see
+
+41:02.000 --> 41:04.000
+that we will catch
+
+41:04.000 --> 41:06.000
+all the energy data this year.
+
+41:06.000 --> 41:08.000
+Then you can see that
+
+41:08.000 --> 41:10.000
+here is
+
+41:12.000 --> 41:14.000
+the energy data
+
+41:14.000 --> 41:16.000
+a month ago.
+
+41:16.000 --> 41:18.000
+You can see that it is December,
+
+41:18.000 --> 41:20.000
+January, and then the data by the end of January.
+
+41:20.000 --> 41:22.000
+Here is also
+
+41:22.000 --> 41:24.000
+the estimated data
+
+41:24.000 --> 41:26.000
+provided by Taiden.
+
+41:26.000 --> 41:28.000
+Their predicted data
+
+41:28.000 --> 41:30.000
+to predict what it looks like
+
+41:30.000 --> 41:32.000
+at the bottom of the peak.
+
+41:32.000 --> 41:34.000
+Then we will
+
+41:34.000 --> 41:36.000
+catch the weather forecast
+
+41:36.000 --> 41:38.000
+from the Central Meteorological Bureau.
+
+41:38.000 --> 41:40.000
+Then we can predict
+
+41:40.000 --> 41:42.000
+the energy for the next seven days.
+
+41:42.000 --> 41:44.000
+Basically, we use the model
+
+41:44.000 --> 41:46.000
+of LightGBM.
+
+41:46.000 --> 41:48.000
+Here we can catch the weather forecast
+
+41:48.000 --> 41:50.000
+for Taipei, Taichung, and Tainan.
+
+41:50.000 --> 41:52.000
+Because this is a notebook I made
+
+41:52.000 --> 41:54.000
+a week ago.
+
+41:54.000 --> 41:56.000
+January 28th to February 3rd
+
+41:56.000 --> 41:58.000
+is the estimated date.
+
+41:58.000 --> 42:00.000
+So this is Taipei, Taichung, and Tainan.
+
+42:00.000 --> 42:02.000
+Here is the temperature provided by the weather forecast.
+
+42:02.000 --> 42:04.000
+Then
+
+42:04.000 --> 42:06.000
+the following
+
+42:06.000 --> 42:08.000
+are some features,
+
+42:08.000 --> 42:10.000
+such as the week,
+
+42:10.000 --> 42:12.000
+one day ago, seven days ago,
+
+42:12.000 --> 42:14.000
+and 14 days ago.
+
+42:14.000 --> 42:16.000
+Because only the first day
+
+42:16.000 --> 42:18.000
+has the energy of the day before,
+
+42:18.000 --> 42:20.000
+so there will be data here.
+
+42:20.000 --> 42:22.000
+From the second day,
+
+42:22.000 --> 42:24.000
+there will be no data on the first day.
+
+42:24.000 --> 42:26.000
+Because our prediction will actually start
+
+42:26.000 --> 42:28.000
+from the first day,
+
+42:28.000 --> 42:30.000
+and then predict the second day, the third day.
+
+42:30.000 --> 42:32.000
+Then the data of the day before,
+
+42:32.000 --> 42:34.000
+we will use the prediction value of the day before to put it in.
+
+42:34.000 --> 42:36.000
+So we can look at
+
+42:36.000 --> 42:38.000
+the prediction result.
+
+42:38.000 --> 42:40.000
+The prediction result can actually be seen here.
+
+42:40.000 --> 42:42.000
+That is to say,
+
+42:44.000 --> 42:46.000
+here is the data.
+
+42:46.000 --> 42:48.000
+The limit is what happened in the past.
+
+42:48.000 --> 42:50.000
+The blue line and the green line are
+
+42:50.000 --> 42:52.000
+the LGBM model we predicted.
+
+42:52.000 --> 42:54.000
+The green line is the LGBM prediction.
+
+42:54.000 --> 42:56.000
+You can see that our prediction seems to be low.
+
+42:56.000 --> 42:58.000
+So we can
+
+42:58.000 --> 43:00.000
+predict it.
+
+43:00.000 --> 43:02.000
+We can evaluate it later.
+
+43:02.000 --> 43:04.000
+What is the difference between the two
+
+43:04.000 --> 43:06.000
+we predicted with LGBM?
+
+43:06.000 --> 43:08.000
+Who is more accurate?
+
+43:08.000 --> 43:10.000
+Or what is the difference between the two features?
+
+43:10.000 --> 43:12.000
+Because this is
+
+43:12.000 --> 43:14.000
+the prediction 11 days ago.
+
+43:14.000 --> 43:16.000
+So I didn't make any changes to it.
+
+43:16.000 --> 43:18.000
+We can now
+
+43:18.000 --> 43:20.000
+take a look at the prediction result.
+
+43:22.000 --> 43:24.000
+Ok.
+
+43:26.000 --> 43:28.000
+This is the prediction result.
+
+43:28.000 --> 43:30.000
+You can see that the orange line
+
+43:30.000 --> 43:32.000
+is the
+
+43:32.000 --> 43:34.000
+LGBM prediction.
+
+43:34.000 --> 43:36.000
+The blue line is the LGBM prediction.
+
+43:36.000 --> 43:38.000
+You can see that
+
+43:38.000 --> 43:40.000
+at the beginning,
+
+43:40.000 --> 43:42.000
+the error was very high.
+
+43:42.000 --> 43:44.000
+The blue bar is the error.
+
+43:44.000 --> 43:46.000
+We almost accurately predicted
+
+43:46.000 --> 43:48.000
+what the energy would be like three days ago.
+
+43:48.000 --> 43:50.000
+But as time goes by,
+
+43:50.000 --> 43:52.000
+the accuracy is getting worse and worse.
+
+43:52.000 --> 43:54.000
+It's mainly because of the weather forecast.
+
+43:54.000 --> 43:56.000
+It's very likely that
+
+43:56.000 --> 43:58.000
+the accuracy of the weather forecast
+
+43:58.000 --> 44:00.000
+is getting worse and worse
+
+44:00.000 --> 44:02.000
+from the first day to the second day.
+
+44:02.000 --> 44:04.000
+Or the temperature I brought in
+
+44:04.000 --> 44:06.000
+is not enough.
+
+44:06.000 --> 44:08.000
+So the prediction is not very accurate.
+
+44:08.000 --> 44:10.000
+LGBM's prediction
+
+44:10.000 --> 44:12.000
+is relatively stable.
+
+44:12.000 --> 44:14.000
+It can maintain
+
+44:14.000 --> 44:16.000
+a certain error every day.
+
+44:16.000 --> 44:18.000
+I don't know how to do it.
+
+44:18.000 --> 44:20.000
+The error of the prediction
+
+44:20.000 --> 44:22.000
+is mostly positive.
+
+44:22.000 --> 44:24.000
+But this is just a seven-day data.
+
+44:24.000 --> 44:26.000
+So it can't be
+
+44:26.000 --> 44:28.000
+simply solved like this.
+
+44:28.000 --> 44:30.000
+You can find this phenomenon
+
+44:30.000 --> 44:32.000
+from these seven days.
+
+44:32.000 --> 44:34.000
+The accuracy of the prediction
+
+44:34.000 --> 44:36.000
+is not very different.
+
+44:36.000 --> 44:38.000
+Ok.
+
+44:38.000 --> 44:40.000
+I also put the link of the notebook here.
+
+44:40.000 --> 44:42.000
+If you are interested, you can go to Kaggle.
+
+44:42.000 --> 44:44.000
+Or you can search for the keyword
+
+44:44.000 --> 44:46.000
+pocket tyrant.
+
+44:46.000 --> 44:48.000
+Notebook.
+
+44:50.000 --> 44:52.000
+I didn't miss anything in the beginning.
+
+44:52.000 --> 44:54.000
+The first part is
+
+44:54.000 --> 44:56.000
+the introduction of OpenDataSet.
+
+44:56.000 --> 44:58.000
+A brief summary of today's summary.
+
+44:58.000 --> 45:00.000
+In the field of architecture,
+
+45:00.000 --> 45:02.000
+in the part of energy prediction,
+
+45:02.000 --> 45:04.000
+in addition to being affected
+
+45:04.000 --> 45:06.000
+by external conditions
+
+45:06.000 --> 45:08.000
+and the variables of these environments,
+
+45:08.000 --> 45:10.000
+behavior is also very important.
+
+45:10.000 --> 45:12.000
+When do people go to work?
+
+45:12.000 --> 45:14.000
+What time does he go to work?
+
+45:14.000 --> 45:16.000
+Is it holiday or non-holiday that day?
+
+45:16.000 --> 45:18.000
+Or is it weekend?
+
+45:18.000 --> 45:20.000
+In fact, it has a great impact.
+
+45:20.000 --> 45:22.000
+The second point is that we actually
+
+45:22.000 --> 45:24.000
+learned from Kaggle Competition,
+
+45:24.000 --> 45:26.000
+which is what we learned in the energy prediction competition.
+
+45:26.000 --> 45:28.000
+First of all, the tree-based model
+
+45:28.000 --> 45:30.000
+is actually
+
+45:30.000 --> 45:32.000
+most of the solutions
+
+45:32.000 --> 45:34.000
+that Wiener will use.
+
+45:34.000 --> 45:36.000
+Mainly because of its performance
+
+45:36.000 --> 45:38.000
+and its training time
+
+45:38.000 --> 45:40.000
+and tuning parameter time
+
+45:40.000 --> 45:42.000
+can achieve a balance.
+
+45:42.000 --> 45:44.000
+Then you can achieve good performance.
+
+45:44.000 --> 45:46.000
+So everyone will use this method.
+
+45:46.000 --> 45:48.000
+The other thing is that
+
+45:48.000 --> 45:50.000
+the data scientists in it
+
+45:50.000 --> 45:52.000
+mainly focus on this.
+
+45:52.000 --> 45:54.000
+What I mean is that these data scientists
+
+45:54.000 --> 45:56.000
+don't have any personnel or
+
+45:56.000 --> 45:58.000
+building-related background.
+
+45:58.000 --> 46:00.000
+But based on their data skills,
+
+46:00.000 --> 46:02.000
+it is the sharing of the community above.
+
+46:02.000 --> 46:04.000
+Everyone shares with each other
+
+46:04.000 --> 46:06.000
+what they found in these data.
+
+46:06.000 --> 46:08.000
+What are the characteristics?
+
+46:08.000 --> 46:10.000
+Then everyone can use these knowledge
+
+46:10.000 --> 46:12.000
+to make the most accurate predictions
+
+46:12.000 --> 46:14.000
+based on their model experience
+
+46:14.000 --> 46:16.000
+and their know-how.
+
+46:16.000 --> 46:18.000
+So the winners in the front
+
+46:18.000 --> 46:20.000
+don't have any professional
+
+46:20.000 --> 46:22.000
+building-related background.
+
+46:22.000 --> 46:24.000
+Then there is the actual
+
+46:24.000 --> 46:26.000
+demand forecasting model.
+
+46:26.000 --> 46:28.000
+Then use Taiwan energy
+
+46:28.000 --> 46:30.000
+to do the actual part.
+
+46:30.000 --> 46:32.000
+In fact, Taiwan Open Data is very
+
+46:32.000 --> 46:34.000
+enough to do such a model.
+
+46:34.000 --> 46:36.000
+It takes about two years.
+
+46:36.000 --> 46:38.000
+But in my opinion,
+
+46:38.000 --> 46:40.000
+Taiwan Open Data is already enough
+
+46:40.000 --> 46:42.000
+to build a model with good accuracy.
+
+46:42.000 --> 46:44.000
+In the field of architecture.
+
+46:44.000 --> 46:46.000
+Then there is
+
+46:46.000 --> 46:48.000
+its performance.
+
+46:48.000 --> 46:50.000
+It's pretty good.
+
+46:50.000 --> 46:52.000
+Everyone can do more than 0.9.
+
+46:52.000 --> 46:54.000
+And it's also very simple.
+
+46:54.000 --> 46:56.000
+You can support it for free
+
+46:56.000 --> 46:58.000
+in the Kaggle platform.
+
+46:58.000 --> 47:00.000
+Finally, it is Open Dataset.
+
+47:00.000 --> 47:02.000
+In fact, Taiwan has a very rich
+
+47:02.000 --> 47:04.000
+and very diversified dataset.
+
+47:04.000 --> 47:06.000
+Compared to other Open Datasets
+
+47:06.000 --> 47:08.000
+Open Datasets are very limited.
+
+47:08.000 --> 47:10.000
+Taiwan has a lot.
+
+47:10.000 --> 47:12.000
+Of course, there are a lot of messy
+
+47:12.000 --> 47:14.000
+and I don't know how to use the dataset.
+
+47:14.000 --> 47:16.000
+But in fact, there are some very useful
+
+47:16.000 --> 47:18.000
+and very interesting datasets that
+
+47:18.000 --> 47:20.000
+everyone can play.
+
+47:20.000 --> 47:22.000
+In addition, these datasets can help
+
+47:22.000 --> 47:24.000
+researchers like us
+
+47:24.000 --> 47:26.000
+to find some interesting patterns.
+
+47:26.000 --> 47:28.000
+For example, Google Search
+
+47:28.000 --> 47:30.000
+can also help you
+
+47:30.000 --> 47:32.000
+to find some details
+
+47:32.000 --> 47:34.000
+in Building Energy.
+
+47:34.000 --> 47:36.000
+Next, we will have 10 minutes
+
+47:36.000 --> 47:38.000
+for Q&A.
+
+47:40.000 --> 47:42.000
+Thank you for the wonderful
+
+47:42.000 --> 47:44.000
+presentation today.
+
+47:44.000 --> 47:46.000
+You made a very good
+
+47:46.000 --> 47:48.000
+summary.
+
+47:48.000 --> 47:50.000
+About the competition
+
+47:50.000 --> 47:52.000
+of Azure,
+
+47:52.000 --> 47:54.000
+the competition on the Kaggle platform,
+
+47:54.000 --> 47:56.000
+and some model introduction,
+
+47:56.000 --> 47:58.000
+LGBM,
+
+47:58.000 --> 48:00.000
+XGBoost,
+
+48:00.000 --> 48:02.000
+or Neural Network,
+
+48:02.000 --> 48:04.000
+as well as the overall introduction
+
+48:04.000 --> 48:06.000
+of architecture prediction
+
+48:06.000 --> 48:08.000
+and Open Data Science.
+
+48:08.000 --> 48:10.000
+It's very exciting.
+
+48:10.000 --> 48:12.000
+Now we see that
+
+48:12.000 --> 48:14.000
+in the chat box,
+
+48:14.000 --> 48:16.000
+a friend asked
+
+48:16.000 --> 48:18.000
+that he wanted to ask
+
+48:18.000 --> 48:20.000
+that there may be no accurate
+
+48:20.000 --> 48:22.000
+temperature prediction in the future
+
+48:22.000 --> 48:24.000
+when actually using it.
+
+48:24.000 --> 48:26.000
+Will the performance of the model
+
+48:26.000 --> 48:28.000
+be affected at this time?
+
+48:28.000 --> 48:30.000
+In fact, it will.
+
+48:30.000 --> 48:32.000
+It should be said that
+
+48:32.000 --> 48:34.000
+the difference in temperature
+
+48:34.000 --> 48:36.000
+may be that
+
+48:36.000 --> 48:38.000
+according to our observation,
+
+48:38.000 --> 48:40.000
+the temperature difference in weather forecast
+
+48:40.000 --> 48:42.000
+is very full.
+
+48:42.000 --> 48:44.000
+But the temperature
+
+48:44.000 --> 48:46.000
+prediction error
+
+48:46.000 --> 48:48.000
+is about 1-2 degrees.
+
+48:48.000 --> 48:50.000
+Most weather forecasts
+
+48:50.000 --> 48:52.000
+can accurately predict
+
+48:52.000 --> 48:54.000
+the temperature profile.
+
+48:54.000 --> 48:56.000
+For example, 18-29 degrees
+
+48:56.000 --> 48:58.000
+is actually quite accurate.
+
+48:58.000 --> 49:00.000
+Next is the architecture energy.
+
+49:00.000 --> 49:02.000
+It's actually a pretty stable
+
+49:02.000 --> 49:04.000
+profile.
+
+49:04.000 --> 49:06.000
+It's not because the temperature suddenly rises
+
+49:06.000 --> 49:08.000
+or falls.
+
+49:08.000 --> 49:10.000
+So in this regard,
+
+49:10.000 --> 49:12.000
+although the weather forecast
+
+49:12.000 --> 49:14.000
+is not completely accurate,
+
+49:14.000 --> 49:16.000
+it does not affect
+
+49:16.000 --> 49:18.000
+the accuracy of the prediction.
+
+49:18.000 --> 49:20.000
+Of course, if you want to predict
+
+49:20.000 --> 49:22.000
+the next month or next week,
+
+49:22.000 --> 49:24.000
+the prediction error may be slightly higher.
+
+49:24.000 --> 49:26.000
+But if you predict
+
+49:26.000 --> 49:28.000
+one day tomorrow or three days later,
+
+49:28.000 --> 49:30.000
+I don't think the accuracy of the energy
+
+49:30.000 --> 49:32.000
+will be much higher.
+
+49:36.000 --> 49:38.000
+Thank you for your answer.
+
+49:38.000 --> 49:40.000
+Do you have any questions
+
+49:40.000 --> 49:42.000
+for the audience here?
+
+49:42.000 --> 49:44.000
+You can mute your questions
+
+49:44.000 --> 49:46.000
+or type them in the chat.
+
+49:54.000 --> 49:56.000
+Hello, I'm Louis.
+
+49:56.000 --> 49:58.000
+I have one last question.
+
+49:58.000 --> 50:00.000
+It's a very good question.
+
+50:00.000 --> 50:02.000
+It's a time series question.
+
+50:02.000 --> 50:04.000
+How do you do validation?
+
+50:04.000 --> 50:06.000
+You mentioned that you use
+
+50:06.000 --> 50:08.000
+2019's trend on 2019
+
+50:08.000 --> 50:10.000
+and then 2020's
+
+50:10.000 --> 50:12.000
+to predict.
+
+50:12.000 --> 50:14.000
+Is there a more complete
+
+50:14.000 --> 50:16.000
+way to do validation?
+
+50:18.000 --> 50:20.000
+Sorry to interrupt,
+
+50:20.000 --> 50:22.000
+but before you answer,
+
+50:22.000 --> 50:24.000
+I'd like to ask the audience
+
+50:24.000 --> 50:26.000
+to introduce their backgrounds.
+
+50:26.000 --> 50:28.000
+So that we can
+
+50:28.000 --> 50:30.000
+get to know each other better.
+
+50:30.000 --> 50:32.000
+Thank you.
+
+50:34.000 --> 50:36.000
+I'm in the US.
+
+50:36.000 --> 50:38.000
+I'm a data scientist.
+
+50:38.000 --> 50:40.000
+I haven't done much
+
+50:40.000 --> 50:42.000
+on the time series,
+
+50:42.000 --> 50:44.000
+but I think it's pretty interesting.
+
+50:44.000 --> 50:46.000
+I'd like to learn more.
+
+50:46.000 --> 50:48.000
+No problem. Thank you for your question.
+
+50:48.000 --> 50:50.000
+For the time series,
+
+50:50.000 --> 50:52.000
+I'm not sure
+
+50:52.000 --> 50:54.000
+what you mean by validation.
+
+50:54.000 --> 50:56.000
+But if you mean
+
+50:56.000 --> 50:58.000
+how to cut the fold,
+
+50:58.000 --> 51:00.000
+how to cut the data
+
+51:00.000 --> 51:02.000
+to do cross-validation.
+
+51:02.000 --> 51:04.000
+For example, we cut four or five
+
+51:04.000 --> 51:06.000
+common cuts.
+
+51:06.000 --> 51:08.000
+We don't do shuffle.
+
+51:08.000 --> 51:10.000
+We don't do random
+
+51:10.000 --> 51:12.000
+cut.
+
+51:12.000 --> 51:14.000
+We don't do random
+
+51:14.000 --> 51:16.000
+cut.
+
+51:16.000 --> 51:18.000
+We don't do random cross-validation.
+
+51:18.000 --> 51:20.000
+For example,
+
+51:20.000 --> 51:22.000
+we do training
+
+51:22.000 --> 51:24.000
+for the first four years,
+
+51:24.000 --> 51:26.000
+and then validation for the last year.
+
+51:26.000 --> 51:28.000
+Or we do training for the next four years,
+
+51:28.000 --> 51:30.000
+and then validation for the first year.
+
+51:30.000 --> 51:32.000
+We want to
+
+51:32.000 --> 51:34.000
+cut the time series
+
+51:34.000 --> 51:36.000
+to do cross-validation,
+
+51:36.000 --> 51:38.000
+not to do random
+
+51:38.000 --> 51:40.000
+cut.
+
+51:40.000 --> 51:42.000
+We don't do random
+
+51:42.000 --> 51:44.000
+cut.
+
+51:44.000 --> 51:46.000
+Because time series
+
+51:46.000 --> 51:48.000
+is related to
+
+51:48.000 --> 51:50.000
+time before and after.
+
+51:50.000 --> 51:52.000
+So you can't
+
+51:52.000 --> 51:54.000
+randomly do validation.
+
+51:54.000 --> 51:56.000
+Does this answer your question?
+
+51:56.000 --> 51:58.000
+Yes.
+
+51:58.000 --> 52:00.000
+Thank you.
+
+52:00.000 --> 52:02.000
+Okay.
+
+52:04.000 --> 52:06.000
+What a wonderful discussion.
+
+52:06.000 --> 52:08.000
+Does anyone
+
+52:08.000 --> 52:10.000
+have any questions
+
+52:10.000 --> 52:12.000
+to ask?
+
+52:12.000 --> 52:14.000
+Hi, I'm
+
+52:14.000 --> 52:16.000
+Xie Cheng.
+
+52:16.000 --> 52:18.000
+Can you hear me?
+
+52:18.000 --> 52:20.000
+Okay.
+
+52:20.000 --> 52:22.000
+Hi.
+
+52:22.000 --> 52:24.000
+I used to study in Taiwan University.
+
+52:24.000 --> 52:26.000
+Now I'm studying in the US.
+
+52:26.000 --> 52:28.000
+My question is
+
+52:28.000 --> 52:30.000
+if
+
+52:30.000 --> 52:32.000
+your model needs to be
+
+52:32.000 --> 52:34.000
+used in the future,
+
+52:34.000 --> 52:36.000
+will there be any security concerns?
+
+52:36.000 --> 52:38.000
+For example,
+
+52:38.000 --> 52:40.000
+maybe not too serious security.
+
+52:40.000 --> 52:42.000
+Maybe there is a sudden event.
+
+52:42.000 --> 52:44.000
+For example,
+
+52:44.000 --> 52:46.000
+there is a joke about Excel
+
+52:46.000 --> 52:48.000
+that occurs on holidays,
+
+52:48.000 --> 52:50.000
+resulting in a large increase
+
+52:50.000 --> 52:52.000
+in the search volume of Excel
+
+52:52.000 --> 52:54.000
+on holidays,
+
+52:54.000 --> 52:56.000
+or something like that.
+
+52:56.000 --> 52:58.000
+How to avoid
+
+52:58.000 --> 53:00.000
+this kind of
+
+53:00.000 --> 53:02.000
+negative situation?
+
+53:02.000 --> 53:04.000
+Yes, there is such a situation.
+
+53:04.000 --> 53:06.000
+If you apply it to the industry,
+
+53:06.000 --> 53:08.000
+you still have to set a threshold.
+
+53:08.000 --> 53:10.000
+If the temperature
+
+53:10.000 --> 53:12.000
+is normal in Taiwan,
+
+53:12.000 --> 53:14.000
+it may be 0 to
+
+53:14.000 --> 53:16.000
+40 degrees or so.
+
+53:16.000 --> 53:18.000
+You may say
+
+53:18.000 --> 53:20.000
+there is a mistake here,
+
+53:20.000 --> 53:22.000
+I may stop my service.
+
+53:22.000 --> 53:24.000
+You may tell users
+
+53:24.000 --> 53:26.000
+why the service has stopped.
+
+53:26.000 --> 53:28.000
+For example,
+
+53:28.000 --> 53:30.000
+you can't use automatic
+
+53:30.000 --> 53:32.000
+or something like that.
+
+53:32.000 --> 53:34.000
+This is really necessary to add
+
+53:34.000 --> 53:36.000
+additional rules to avoid such a situation.
+
+53:36.000 --> 53:38.000
+Because in the industry,
+
+53:38.000 --> 53:40.000
+if you use this kind of low prediction
+
+53:40.000 --> 53:42.000
+to do automatic control,
+
+53:42.000 --> 53:44.000
+there will be such a risk.
+
+53:44.000 --> 53:46.000
+Cool.
+
+53:46.000 --> 53:48.000
+I want to ask another question
+
+53:48.000 --> 53:50.000
+related to Cargo.
+
+53:50.000 --> 53:52.000
+I have been studying for a while.
+
+53:52.000 --> 53:54.000
+I saw that last year,
+
+53:54.000 --> 53:56.000
+I don't know what to say now.
+
+53:56.000 --> 53:58.000
+Anyway, I saw two competitions last year.
+
+53:58.000 --> 54:00.000
+One is the target of wheat,
+
+54:00.000 --> 54:02.000
+and the other is
+
+54:02.000 --> 54:04.000
+the image detection of
+
+54:04.000 --> 54:06.000
+a special type.
+
+54:06.000 --> 54:08.000
+In fact, I also know some traditional
+
+54:08.000 --> 54:10.000
+breeders who have collected a lot of
+
+54:10.000 --> 54:12.000
+this kind of image data.
+
+54:12.000 --> 54:14.000
+Their quality may not be
+
+54:14.000 --> 54:16.000
+so uniform,
+
+54:16.000 --> 54:18.000
+but they may have to give up.
+
+54:18.000 --> 54:20.000
+But if you put it on Cargo now,
+
+54:20.000 --> 54:22.000
+let this kind of
+
+54:22.000 --> 54:24.000
+data scientist community
+
+54:24.000 --> 54:26.000
+have a good result.
+
+54:26.000 --> 54:28.000
+I'm curious about this kind of academic unit
+
+54:28.000 --> 54:30.000
+to put the data on it,
+
+54:30.000 --> 54:32.000
+and then let everyone
+
+54:32.000 --> 54:34.000
+come together
+
+54:34.000 --> 54:36.000
+to find a solution
+
+54:36.000 --> 54:38.000
+and then publish it.
+
+54:38.000 --> 54:40.000
+Is there anything to pay attention to
+
+54:40.000 --> 54:42.000
+in this process?
+
+54:42.000 --> 54:44.000
+How is it usually achieved?
+
+54:44.000 --> 54:46.000
+This Cargo competition,
+
+54:46.000 --> 54:48.000
+because I was
+
+54:48.000 --> 54:50.000
+preparing for this competition
+
+54:50.000 --> 54:52.000
+at the end of the previous year.
+
+54:52.000 --> 54:54.000
+At that time, I had not yet
+
+54:54.000 --> 54:56.000
+entered the lab,
+
+54:56.000 --> 54:58.000
+so I did not participate in this part.
+
+54:58.000 --> 55:00.000
+But as far as I know,
+
+55:00.000 --> 55:02.000
+they will actually do some cleaning first.
+
+55:02.000 --> 55:04.000
+I mean, this is our lab,
+
+55:04.000 --> 55:06.000
+because we are the organizer.
+
+55:06.000 --> 55:08.000
+We will process these data first
+
+55:08.000 --> 55:10.000
+and then confirm that
+
+55:10.000 --> 55:12.000
+the quality of these data is probably no problem.
+
+55:12.000 --> 55:14.000
+Then it will be sent to Cargo
+
+55:14.000 --> 55:16.000
+and their team to explain the data.
+
+55:16.000 --> 55:18.000
+Cargo also has a group of
+
+55:18.000 --> 55:20.000
+very professional data scientists
+
+55:20.000 --> 55:22.000
+to check the quality of the data,
+
+55:22.000 --> 55:24.000
+which is probably OK,
+
+55:24.000 --> 55:26.000
+and they won't clear the data for you,
+
+55:26.000 --> 55:28.000
+because data missing and outliers
+
+55:28.000 --> 55:30.000
+are things to deal with in the competition.
+
+55:30.000 --> 55:32.000
+Then they will go and see
+
+55:32.000 --> 55:34.000
+if the data is OK,
+
+55:34.000 --> 55:36.000
+and then they will
+
+55:36.000 --> 55:38.000
+test it internally
+
+55:38.000 --> 55:40.000
+and confirm that
+
+55:40.000 --> 55:42.000
+if the data is used for the competition,
+
+55:42.000 --> 55:44.000
+how much training data and validation data
+
+55:44.000 --> 55:46.000
+do I have?
+
+55:46.000 --> 55:48.000
+Although when we give him the data,
+
+55:48.000 --> 55:50.000
+we give him two years of training and one year of validation.
+
+55:50.000 --> 55:52.000
+But they strongly recommend
+
+55:52.000 --> 55:54.000
+one year of training and two years of prediction.
+
+55:54.000 --> 55:56.000
+They have their
+
+55:56.000 --> 55:58.000
+basis,
+
+55:58.000 --> 56:00.000
+which is what they think,
+
+56:00.000 --> 56:02.000
+and we respect it.
+
+56:02.000 --> 56:04.000
+They have a lot of know-how
+
+56:04.000 --> 56:06.000
+to organize this competition.
+
+56:06.000 --> 56:08.000
+Most of the Cargo competitions so far
+
+56:08.000 --> 56:10.000
+are not very controversial,
+
+56:10.000 --> 56:12.000
+so I think Cargo and their internal team
+
+56:12.000 --> 56:14.000
+are still very strong.
+
+56:14.000 --> 56:16.000
+If it's more local,
+
+56:16.000 --> 56:18.000
+their data platform,
+
+56:18.000 --> 56:20.000
+competition platform,
+
+56:20.000 --> 56:22.000
+sometimes they have a lot of controversy,
+
+56:22.000 --> 56:24.000
+and sometimes the quality of the competition
+
+56:24.000 --> 56:26.000
+is poor,
+
+56:26.000 --> 56:28.000
+but I can't say that the competition platform is wrong.
+
+56:28.000 --> 56:30.000
+That is, their internal professionals
+
+56:30.000 --> 56:32.000
+don't have much resources,
+
+56:32.000 --> 56:34.000
+so they can't hire such a large team
+
+56:34.000 --> 56:36.000
+to check the details of these competitions.
+
+56:36.000 --> 56:38.000
+In addition, the domestic platform
+
+56:38.000 --> 56:40.000
+doesn't charge
+
+56:40.000 --> 56:42.000
+the organizer.
+
+56:42.000 --> 56:44.000
+If it's in Cargo,
+
+56:44.000 --> 56:46.000
+the organizer will use their team
+
+56:46.000 --> 56:48.000
+to check the data and collect the fees.
+
+56:48.000 --> 56:50.000
+So the prize is not only
+
+56:50.000 --> 56:52.000
+the organizer
+
+56:52.000 --> 56:54.000
+who provides the prize,
+
+56:54.000 --> 56:56.000
+but also the host of the competition
+
+56:56.000 --> 56:58.000
+who needs to pay
+
+56:58.000 --> 57:00.000
+an extra fee to Cargo.
+
+57:00.000 --> 57:02.000
+Yes,
+
+57:02.000 --> 57:04.000
+to ensure that this competition
+
+57:04.000 --> 57:06.000
+is of good quality.
+
+57:06.000 --> 57:08.000
+Thank you. Nice talk.
+
+57:08.000 --> 57:10.000
+Thank you for your question.
+
+57:10.000 --> 57:12.000
+I don't rule out
+
+57:12.000 --> 57:14.000
+any discussion
+
+57:14.000 --> 57:16.000
+about Open Data Say
+
+57:16.000 --> 57:18.000
+in Cargo competitions.
+
+57:18.000 --> 57:20.000
+You can ask any questions.
+
+57:20.000 --> 57:22.000
+It's fun.
+
+57:22.000 --> 57:24.000
+Due to time constraints,
+
+57:24.000 --> 57:26.000
+we will open the last question.
+
+57:26.000 --> 57:28.000
+Let's see
+
+57:28.000 --> 57:30.000
+if there are any questions from the audience.
+
+57:38.000 --> 57:40.000
+If not,
+
+57:40.000 --> 57:42.000
+we will open the last question
+
+57:42.000 --> 57:44.000
+for our host.
+
+57:44.000 --> 57:46.000
+It's the same.
+
+57:46.000 --> 57:48.000
+Please introduce yourself.
+
+57:48.000 --> 57:50.000
+Hello,
+
+57:50.000 --> 57:52.000
+host and audience.
+
+57:52.000 --> 57:54.000
+I am
+
+57:54.000 --> 57:56.000
+the host,
+
+57:56.000 --> 57:58.000
+Hu Junwei.
+
+57:58.000 --> 58:00.000
+My father
+
+58:00.000 --> 58:02.000
+used to be a student of
+
+58:02.000 --> 58:04.000
+NTUC,
+
+58:04.000 --> 58:06.000
+and I studied
+
+58:06.000 --> 58:08.000
+renewable energy systems
+
+58:08.000 --> 58:10.000
+at NTUC.
+
+58:10.000 --> 58:12.000
+I am very interested in
+
+58:12.000 --> 58:14.000
+today's topic.
+
+58:14.000 --> 58:16.000
+I have a question.
+
+58:16.000 --> 58:18.000
+This model
+
+58:18.000 --> 58:20.000
+can be used
+
+58:20.000 --> 58:22.000
+to assess
+
+58:22.000 --> 58:24.000
+events in energy
+
+58:24.000 --> 58:26.000
+or social development
+
+58:26.000 --> 58:28.000
+such as dynamic events.
+
+58:28.000 --> 58:30.000
+For example,
+
+58:30.000 --> 58:32.000
+in 2016 and 2017,
+
+58:32.000 --> 58:34.000
+there was a power outage
+
+58:34.000 --> 58:36.000
+in Taipei.
+
+58:36.000 --> 58:38.000
+Is there a way
+
+58:38.000 --> 58:40.000
+to predict
+
+58:40.000 --> 58:42.000
+when there will be
+
+58:42.000 --> 58:44.000
+a power outage
+
+58:44.000 --> 58:46.000
+in the next few days?
+
+58:46.000 --> 58:48.000
+Or
+
+58:48.000 --> 58:50.000
+in the case of
+
+58:50.000 --> 58:52.000
+COVID-19,
+
+58:52.000 --> 58:54.000
+many countries
+
+58:54.000 --> 58:56.000
+are working
+
+58:56.000 --> 58:58.000
+from home,
+
+58:58.000 --> 59:00.000
+so the energy use
+
+59:00.000 --> 59:02.000
+will be very different.
+
+59:02.000 --> 59:04.000
+Is there a way
+
+59:04.000 --> 59:06.000
+to do dynamic analysis
+
+59:06.000 --> 59:08.000
+for specific events?
+
+59:08.000 --> 59:10.000
+I would like to hear
+
+59:10.000 --> 59:12.000
+your opinion.
+
+59:12.000 --> 59:14.000
+I think it's pretty cool.
+
+59:14.000 --> 59:16.000
+First of all,
+
+59:16.000 --> 59:18.000
+if it is a power outage
+
+59:18.000 --> 59:20.000
+or a power outage,
+
+59:20.000 --> 59:22.000
+I think it is relatively difficult.
+
+59:22.000 --> 59:24.000
+The first is that it is a rare event,
+
+59:24.000 --> 59:26.000
+so the rare event
+
+59:26.000 --> 59:28.000
+may only happen
+
+59:28.000 --> 59:30.000
+ten times in the past.
+
+59:30.000 --> 59:32.000
+It's hard to predict
+
+59:32.000 --> 59:34.000
+because there is not enough data
+
+59:34.000 --> 59:36.000
+for training.
+
+59:36.000 --> 59:38.000
+Even if there are
+
+59:38.000 --> 59:40.000
+a lot of events,
+
+59:40.000 --> 59:42.000
+you need enough features
+
+59:42.000 --> 59:44.000
+to describe them.
+
+59:44.000 --> 59:46.000
+For example,
+
+59:46.000 --> 59:48.000
+you need to detect
+
+59:48.000 --> 59:50.000
+voltage, current,
+
+59:50.000 --> 59:52.000
+frequency,
+
+59:52.000 --> 59:54.000
+etc.
+
+59:54.000 --> 59:56.000
+I don't know
+
+59:56.000 --> 59:58.000
+if there is such open data,
+
+59:58.000 --> 01:00:00.000
+but I know Kaggle
+
+01:00:00.000 --> 01:00:02.000
+can also find open data like this.
+
+01:00:02.000 --> 01:00:04.000
+Next,
+
+01:00:04.000 --> 01:00:06.000
+let me think of
+
+01:00:06.000 --> 01:00:08.000
+a recent competition
+
+01:00:08.000 --> 01:00:10.000
+in IEEE.
+
+01:00:10.000 --> 01:00:12.000
+They are specifically predicting
+
+01:00:12.000 --> 01:00:14.000
+what the energy forecast
+
+01:00:14.000 --> 01:00:16.000
+will look like after COVID-19.
+
+01:00:16.000 --> 01:00:18.000
+They are heading
+
+01:00:18.000 --> 01:00:20.000
+electricity demand forecasting post-COVID.
+
+01:00:20.000 --> 01:00:22.000
+They want to know
+
+01:00:22.000 --> 01:00:24.000
+what changes will happen
+
+01:00:24.000 --> 01:00:26.000
+to most energy
+
+01:00:26.000 --> 01:00:28.000
+after COVID-19.
+
+01:00:28.000 --> 01:00:30.000
+Most of them should be
+
+01:00:30.000 --> 01:00:32.000
+related to
+
+01:00:32.000 --> 01:00:34.000
+human behavior.
+
+01:00:34.000 --> 01:00:36.000
+I have done
+
+01:00:36.000 --> 01:00:38.000
+one thing before.
+
+01:00:38.000 --> 01:00:40.000
+If you use Google Keywords,
+
+01:00:40.000 --> 01:00:42.000
+I can show you
+
+01:00:42.000 --> 01:00:44.000
+quickly today.
+
+01:00:44.000 --> 01:00:46.000
+If you use Google Trends,
+
+01:00:46.000 --> 01:00:48.000
+this is what I found recently.
+
+01:00:48.000 --> 01:00:50.000
+It is quite related to
+
+01:00:50.000 --> 01:00:52.000
+travel keywords.
+
+01:00:52.000 --> 01:00:54.000
+For example,
+
+01:00:54.000 --> 01:00:56.000
+I went to
+
+01:00:56.000 --> 01:00:58.000
+travel.
+
+01:01:04.000 --> 01:01:06.000
+You can see that
+
+01:01:06.000 --> 01:01:08.000
+it suddenly dropped
+
+01:01:08.000 --> 01:01:10.000
+on March 1st.
+
+01:01:10.000 --> 01:01:12.000
+It was quite stable
+
+01:01:12.000 --> 01:01:14.000
+in the first four years.
+
+01:01:14.000 --> 01:01:16.000
+It dropped in the summer,
+
+01:01:16.000 --> 01:01:18.000
+but it suddenly dropped
+
+01:01:18.000 --> 01:01:20.000
+in March this year.
+
+01:01:20.000 --> 01:01:22.000
+Of course,
+
+01:01:22.000 --> 01:01:24.000
+this is just a correlation.
+
+01:01:24.000 --> 01:01:26.000
+Whether this is a causal relationship
+
+01:01:26.000 --> 01:01:28.000
+may be confirmed in more detail.
+
+01:01:28.000 --> 01:01:30.000
+This is just an example.
+
+01:01:30.000 --> 01:01:32.000
+You can find out from some data
+
+01:01:32.000 --> 01:01:34.000
+if you can predict
+
+01:01:34.000 --> 01:01:36.000
+what will happen
+
+01:01:36.000 --> 01:01:38.000
+to the energy
+
+01:01:38.000 --> 01:01:40.000
+after COVID-19.
+
+01:01:40.000 --> 01:01:42.000
+This is also what everyone is concerned about.
+
+01:01:42.000 --> 01:01:44.000
+I am not sure
+
+01:01:44.000 --> 01:01:46.000
+if this can be done.
+
+01:01:46.000 --> 01:01:48.000
+You can find out
+
+01:01:48.000 --> 01:01:50.000
+whether to describe
+
+01:01:50.000 --> 01:01:52.000
+this feature.
+
+01:01:52.000 --> 01:01:54.000
+This is a very cool question.
+
+01:01:54.000 --> 01:01:56.000
+Thank you.
+
+01:01:58.000 --> 01:02:00.000
+Thank you for the wonderful explanation.
+
+01:02:02.000 --> 01:02:04.000
+Due to time constraints,
+
+01:02:04.000 --> 01:02:06.000
+I know that
+
+01:02:06.000 --> 01:02:08.000
+everyone here may have
+
+01:02:08.000 --> 01:02:10.000
+some potential questions.
+
+01:02:10.000 --> 01:02:12.000
+However,
+
+01:02:12.000 --> 01:02:14.000
+this is the end of
+
+01:02:14.000 --> 01:02:16.000
+today's presentation.
+
+01:02:16.000 --> 01:02:18.000
+Thank you again,
+
+01:02:18.000 --> 01:02:20.000
+Fuxun.
+
+01:02:20.000 --> 01:02:22.000
+If you are interested
+
+01:02:22.000 --> 01:02:24.000
+in this topic
+
+01:02:24.000 --> 01:02:26.000
+or the speaker,
+
+01:02:26.000 --> 01:02:28.000
+you can contact her
+
+01:02:28.000 --> 01:02:30.000
+through e-mail
+
+01:02:30.000 --> 01:02:32.000
+or social media
+
+01:02:32.000 --> 01:02:34.000
+related to Fuxun.
+
+01:02:34.000 --> 01:02:36.000
+If you are interested
+
+01:02:36.000 --> 01:02:38.000
+in different fields
+
+01:02:38.000 --> 01:02:40.000
+and different topics
+
+01:02:40.000 --> 01:02:42.000
+of different speakers,
+
+01:02:42.000 --> 01:02:44.000
+you are welcome to
+
+01:02:44.000 --> 01:02:46.000
+continue to participate
+
+01:02:46.000 --> 01:02:48.000
+in Project Tara's activities
+
+01:02:48.000 --> 01:02:50.000
+as a speaker.
+
+01:02:50.000 --> 01:02:52.000
+Thank you for your participation today.
+
+01:02:52.000 --> 01:02:54.000
+I wish you a pleasant day
+
+01:02:54.000 --> 01:02:56.000
+or evening.
+
+01:02:56.000 --> 01:02:58.000
+Thank you.
+

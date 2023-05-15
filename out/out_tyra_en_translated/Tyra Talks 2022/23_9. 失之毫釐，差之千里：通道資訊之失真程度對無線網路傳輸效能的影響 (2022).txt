@@ -1,0 +1,3570 @@
+Hello everyone, I am Jason, and I am the host of Taira Talk. Welcome everyone to Taira Talk on April 19th.
+The speaker we invited today is Dr. Zhan Yaojia.
+He is currently a PhD candidate at UC Irvine.
+His main work is in telecommunications and network information information theory.
+He used to study and work at NTU Electronics and Telecommunications.
+He is now a PhD student at UC Irvine, and will study abroad under the auspices of the Ministry of Education.
+The topic of his talk today is
+The impact of information technology on wireless network transmission.
+Let's give the speaker a round of applause.
+Let's give the floor to Yaojia.
+Can you hear me?
+Yes.
+Okay, let's get started.
+In fact, this is channel information.
+Channel information refers to wireless transmission.
+If I know in advance that the transmission is good or bad,
+or if I can even quantify it,
+I can make some configurations in advance in the transmission section.
+This will further improve the efficiency of my transmission.
+But if today's information is not so accurate,
+what impact will it have on my transmission efficiency?
+I hope I can get to this point.
+I know some people today,
+and they may all have a background in telecommunications.
+But most of them are not our peers,
+so I'll see how much I can say.
+Okay, good.
+Today I will mainly talk about these three parts.
+The first part is that I will first review
+how we do information transmission
+when we are in the so-called traffic jam.
+Of course, we have some basic restrictions.
+For example, I hope that the higher the efficiency of my transmission,
+the faster the speed,
+but at the same time I can't let the transmission go wrong.
+So what should I do?
+In fact, in 1948,
+Claude Shannon had already answered this question.
+He had some good results,
+which we will introduce.
+The second part is that I will briefly introduce
+some simple networks,
+such as broadcast networks,
+such as interference networks,
+and interference channels.
+They have some current solutions
+for this kind of transmission problem,
+and some problems have been solved,
+and some problems have not been solved.
+Then, in the absence of a solution,
+how do I deal with it?
+How do I get around with it?
+The last part is actually more like my research.
+If today I don't know
+how these channels and links in the middle
+are,
+the detailed information
+will not have any fundamental impact on my transmission.
+That's the first part.
+In fact, basically,
+when we communicate,
+the channels are always noisy,
+they are always affected or interfered with by the transmission.
+It's the same with wired communication,
+and it's the same with wireless communication,
+and the environment of wireless communication is more complicated.
+Because of the so-called multipath effect,
+the signal is distorted.
+In addition to noise,
+there is also distortion,
+which means that at certain moments,
+at certain times,
+the intensity of my signal is actually very low.
+Let's not discuss this complicated situation today.
+Let's continue to discuss the above situation.
+That is, in wired communication,
+the signal is affected by noise.
+When I receive this information,
+it is inevitable that there will be errors,
+and the information will be wrongly decrypted.
+Common models,
+common models for analysis,
+include...
+Wait a minute.
+Common models for analysis,
+there are the following two.
+The first one is AWGN channel,
+Additive Wide Gaussian Noise channel.
+Basically, what it says is that
+I input x1, x2 to xn.
+The output I receive is y1, y2 to yn.
+The output is what I send,
+plus a random variable with a common distribution.
+This random variable is a mutation.
+But in fact, this problem is still very complicated.
+We have made the problem so simple.
+In fact, it is still very complicated.
+So we will further consider
+a simpler binary symmetric channel.
+It only says that
+the input today is x1 to xn.
+At the receiving end,
+we receive y1 to yn.
+Then we limit x1.
+Every x, every y,
+is only 0 or 1.
+What about the middle channel?
+How does the middle channel
+change these x and x?
+For example, after sending in x1,
+suppose it is 0,
+then it has a certain probability
+that p is converted to 1.
+If it is converted to 1 today,
+then this y1 is 1.
+If it has not changed today,
+then it is still 0.
+Now the question is,
+now the question is,
+if I really use this,
+suppose our channel is simplified like this,
+only 0 or 1 can be fed in.
+But there is a certain probability
+that some input will be flipped,
+will be changed.
+How do I do the transmission?
+How do I do the message transmission?
+One way is
+to send 0 or 1 directly.
+Then I don't do any coding at all.
+In this case,
+the error rate is p.
+Because it has given another x1,
+its probability of being flipped is p.
+So the error rate is p.
+Is there a better way?
+Of course there is.
+We do some basic protection devices,
+protection architecture.
+For example, when I want to send 0,
+I send it three times.
+When I want to send 1,
+I send it three times.
+When I receive it,
+we use the so-called multi-digit method.
+The basic high-speed data can be calculated,
+the error rate will be relatively low.
+It probably looks like this.
+But at the same time,
+in order to send a bit,
+I used three channels.
+So my data rate,
+that is, the speed of my data transmission
+will be reduced.
+Of course,
+if I increase my repeated times,
+it will definitely reduce my error rate.
+But what is the price?
+The price is that my data rate will be reduced.
+And when my channel frequency increases,
+its data rate will drop to 0.
+In fact, this is not the result I want.
+Because in order to protect it,
+I send it so many times.
+As a result, my data rate became low.
+Then my question is,
+is it possible to maintain the data rate at the same time?
+For example, the data rate is not 0.
+Reduce the error rate?
+Then, this is a disaster question.
+This is a problem that everyone can immediately think of.
+But the first contribution is that
+I will further analyze this problem.
+The first one is
+to further disassemble the question itself.
+In the first part,
+we add some conditions.
+The first part is that we do not limit
+coding or decoding.
+For x,
+I did not do any calculations for x.
+For y,
+I did not do any calculations for y.
+There is no problem with computing complexity.
+No matter if it is NP-complete.
+If I have a super-powerful computer,
+it can be instantly calculated.
+Then, we do not limit the usage of channels.
+Then,
+further think about data.
+These data bits can actually be borrowed from a table.
+This table is on the right.
+It sends these bits,
+sends these data.
+In fact, what did I send?
+Which message did I send?
+From 1 to M.
+So,
+the nature of this problem is to say,
+for example,
+I want to send the 10th message.
+How do I design
+this method of transmission
+so that it can be correctly resolved
+at the receiving end?
+Then,
+next is the rate.
+The definition of rate,
+as I just said,
+is that
+in the case of so many channels,
+the usage of n channels,
+how many bits did you send?
+OK, there are M bits here.
+So, in fact,
+you can use log12 as your M to represent it.
+So, there are a total of log12 bits.
+So, you can get a basic,
+this is the basic,
+this is the level that high-level math can get.
+That is, M can actually be written as 2nR square.
+n is the usage of the channel.
+Then,
+R is the transmission speed.
+Okay,
+so, in fact, we will get used to it in the future.
+We are used to using this 2nR square
+to represent the number of messages.
+Then,
+it also tells you that
+I want to make the error rate as small as possible.
+It can only be said that
+at the receiving end,
+I sent a message
+at the transmission end.
+At the receiving end,
+I will design a decoder.
+The fan of the decoder is to guess.
+So,
+guess which message was sent.
+I want to,
+so this error means
+this is my message.
+For example, if I send the 10th message,
+you may guess the 10,000th message.
+That is, an error has occurred.
+Then, we want to make the probability of this event
+as small as possible.
+But,
+I must be,
+for example,
+the event is set,
+for example,
+10 to the 10th square,
+10 to the 100th square,
+and so on,
+this kind of probability.
+Okay,
+so,
+now,
+these restrictions
+are converted
+into a transmission structure like this.
+So,
+there is a message in the lower left corner.
+So many.
+Then,
+I can,
+for example,
+I want to send so many bits.
+In fact,
+I am sending a certain message.
+Then,
+it actually says,
+OK,
+I should pass this message
+through a certain method.
+For example,
+check the table.
+We build a
+code book,
+code book.
+Each message corresponds
+to a set of code words.
+Then,
+I use the way of checking the table
+to make the message
+into a code word.
+Then,
+send it to this channel.
+Some bits are crooked.
+Then,
+received crooked.
+Some of the crooked bits
+may be flipped.
+Then,
+we use the decoder.
+When the decoder is set,
+I know,
+everyone knows what the code book looks like.
+Then,
+we can decode
+the message
+we really want.
+OK,
+so,
+now the question becomes,
+can we design
+such a coding scheme?
+What is the coding scheme?
+It is the code mode.
+Code structure.
+What is the code structure?
+It includes
+the code book.
+The encoder is the same as the book.
+It is just a table.
+And,
+my decoder,
+my decoder,
+my code book requires
+whether it can
+be its
+code rate,
+its transmission speed,
+whether it is
+not zero,
+or not a very small value.
+And,
+my decoding error,
+it can be controlled
+at a very small value.
+OK,
+so,
+this is,
+so,
+now,
+we have formulated
+the problem structure
+like this.
+We have
+the encoder,
+the decoder.
+Then,
+our goal is to
+pass this message
+to the other end.
+Then,
+here,
+I want this mhat,
+that is,
+that is,
+the received end
+guess the m,
+guess the message,
+the less chance of error,
+the better.
+Or,
+it is in a certain,
+the chance of error
+is in a certain value
+below,
+OK.
+Then,
+this answer,
+I can,
+so,
+I just,
+I have already exploded,
+that is,
+that is,
+this is actually possible,
+can be done.
+Otherwise,
+I can't go on,
+right?
+I can't go on.
+Then,
+it is,
+then,
+it is with,
+then,
+this is Shannon's
+contribution
+in 1948,
+which is
+one of his most
+famous contributions.
+Then,
+then,
+he,
+he,
+he made
+a set of
+coding schemes
+including what codebook
+plus the
+processor.
+And then,
+but this m maybe
+big
+let my error rate,
+that is my
+effect,
+that is,
+the error can be
+pulled to what I want
+that,
+that is,
+the level of
+minus 100
+quadrature.
+But,
+if you are
+uh,
+if you shoot
+too quickly
+that legendary speed
+today,
+too fast,
+too high,
+that
+problem came.
+If you
+today,
+then
+uh,
+the problem
+on the project
+came,
+because
+there may
+be
+you for all
+N,
+for all
+uh,
+no matter
+you look for
+all possible
+ways,
+you can't
+let my
+error rate
+be able to
+drop to
+the level
+you want
+.
+For example,
+if you
+start to
+drop to
+10-100
+quadrature,
+10-6
+quadrature,
+10-7
+quadrature,
+you will find
+that
+you can't
+find it,
+no matter
+how much
+you use,
+you can't
+find this
+coding
+method.
+OK,
+so this is
+that,
+this is called
+Noisy Channel
+Coding Theorem,
+and then
+we put this
+in our
+code,
+and then
+there are
+any questions
+you can
+ask,
+because
+in fact,
+I should be,
+yes,
+it should be
+like the
+host said,
+it's really
+quite mathematical
+here,
+and then
+uh,
+I used to
+do is
+more engineering
+problems,
+and then
+turn to
+more theoretical
+problems,
+in fact,
+it was a
+long time
+ago,
+so it's
+completely different,
+it takes some
+time to
+switch,
+OK,
+so here
+is a magical
+number,
+which is
+called
+Channel Capacity,
+and then
+it is
+like this,
+this thing,
+what is
+this thing?
+This thing
+actually,
+uh,
+there is also
+a mathematical
+definition,
+it is,
+uh,
+seems to be
+very complicated,
+which is
+the so-called
+Entropy,
+if you are
+reading physics,
+you will know
+what is called
+Entropy,
+if you are reading
+chemistry,
+you know
+what is
+Entropy,
+it basically
+measures
+how messy
+a system
+is,
+but the
+Entropy here
+is not the
+same as
+that side,
+the Entropy
+definition here
+is that
+oh,
+if today,
+in fact,
+the probability
+is so much,
+p of x,
+uh,
+px of e,
+then multiply by log,
+there is also
+uh,
+p of x,
+uh,
+p of x,
+1,
+1,
+so much,
+and then
+zero,
+zero in,
+the calculated value
+is the Entropy
+of x,
+the Entropy
+of random variables
+of x.
+Okay,
+so what it means
+is actually
+the uncertainty
+of x,
+and then
+the uncertainty
+of random variables
+of x.
+Before you do the experiment,
+you don't know
+how much it is,
+but after you do the experiment,
+OK,
+how many bits
+do you need
+to represent
+the result of the experiment?
+OK,
+that is to say,
+uh,
+how many,
+it means that
+you have,
+uh,
+you have,
+uh,
+yeah,
+that's about it,
+and then
+it's actually
+listed on the
+internet,
+it's
+19 equations
+for
+the
+Entropy
+of information.
+OK,
+so we have this thing,
+we have this,
+after its interpretation,
+the Entropy
+is,
+uh,
+the uncertainty
+of x,
+in terms of bits,
+or we need to know
+the number of x,
+we need to know
+the number of bits.
+So,
+let's see
+what this thing is,
+I of x,
+divided by y,
+it,
+uh,
+its name is
+Mutual Information.
+It,
+from the second
+interpretation,
+we can see that
+it's actually
+the uncertainty of x
+divided by,
+after giving y,
+how much uncertainty
+does x have left?
+OK,
+so what does it mean?
+It's actually,
+if you know,
+uh,
+in the case of y,
+uh,
+you know in the case of y,
+how many bits
+do you actually have,
+uh,
+you,
+you can know
+how many bits x is.
+So,
+to a certain extent,
+this is actually
+what we want,
+in terms of intuitive meaning,
+it's actually,
+uh,
+how many bits x is.
+So,
+what Mutual Information
+actually gives me is,
+uh,
+x is,
+uh,
+in the case of giving y,
+I know
+how many things x has.
+I know x's,
+what x's value is,
+in terms of bits,
+like this.
+OK,
+so,
+uh,
+so intuitively speaking,
+this seems to be
+what we want,
+but
+in fact,
+this proof is
+very,
+very difficult.
+And then,
+because of this proof,
+there's a new field called
+telecommunications,
+telecommunications engineering,
+there's a new field called
+news theory.
+So,
+so this proof,
+in fact,
+in our field,
+the proof is divided into two parts.
+The first part is the so-called
+converse part.
+It proves that,
+OK,
+my code,
+my transmission speed is greater than c,
+it's impossible.
+The second part is the
+achievability part,
+which is
+achievability is
+achievable,
+achievable,
+that kind of part.
+So,
+it only says,
+uh,
+I,
+I actually have to find a
+way to make
+this code
+pass,
+pass with such a high speed,
+pass with such a high speed,
+pass with such a high speed,
+pass with such a high speed,
+OK.
+pass with such a high speed,
+pass with such a high speed,
+OK.
+OK.
+Of course,
+in the process of passing,
+we have to,
+uh,
+we,
+but we have to specify my
+error rate first,
+for example,
+10 to the minus 100 times,
+and then,
+we have to find
+such a coding scheme,
+and then,
+and then,
+of course,
+nk is any nk,
+it may take
+a while,
+OK.
+OK,
+then,
+sorry,
+can I ask a question?
+Yes, please.
+This is,
+uh,
+because I don't understand
+it at all,
+so,
+uh,
+this is,
+I want,
+can you give an example?
+For example,
+suppose I know,
+suppose I have a
+method of passing,
+then,
+I,
+I,
+after I get y,
+I'm totally sure
+how much x is,
+then,
+what would i be?
+Would i be 0?
+OK,
+if you know,
+for example,
+like this,
+uh,
+uh,
+if you say you know,
+after you get x,
+you totally know
+how much x is,
+right?
+So,
+my question is,
+you have an ideal channel,
+yes,
+no noise at all,
+yes,
+then,
+after you get y,
+you totally know
+how much x is,
+yes,
+yes,
+then,
+in the following,
+probability should be 0,
+right?
+No,
+no,
+so,
+the x itself,
+the x itself,
+it's,
+OK,
+it means,
+if you use this way,
+I can,
+I can answer you like this,
+like,
+if you know y,
+then,
+you know x,
+then,
+suppose it's a channel
+with no noise,
+x is actually,
+you know y,
+you know x,
+so,
+you know the uncertainty of x,
+after you know y,
+the uncertainty of x is 0,
+so,
+this one is 0,
+so,
+this mutual information,
+mutual information
+is equal to
+x's,
+like,
+you can think about
+how many bits x has,
+for example,
+if you use this formula
+to measure,
+for example,
+the way you code is
+using,
+for example,
+50% chance is 1,
+50% chance is 0,
+then,
+in this way,
+if you can,
+you put this,
+this,
+for example,
+you take this data
+to calculate
+h of x,
+the answer will be 1,
+OK,
+what does it mean?
+What does it mean?
+So,
+p is 1 in 2,
+right?
+p is 1,
+right?
+OK,
+2 is 1,
+then,
+log is 1 in 2,
+1 in 1 in 2 is 1,
+this value is 1,
+so,
+there are two 1 in 2,
+right?
+OK,
+so,
+adding up is 1,
+OK,
+so,
+this value,
+i,
+this mutual information,
+mutual information is 1,
+what does it mean?
+It means that
+my transmission speed
+can be 1,
+1 bit per channel use,
+OK,
+so,
+channel capacity will be 1,
+right,
+OK,
+right,
+and you can easily
+prove this thing,
+why?
+Because the channel is noise,
+so,
+no matter what you send,
+it will receive,
+it should be said that
+what I received
+is exactly the same as what I send,
+right?
+Then it means that
+there is no channel,
+I will directly go to
+take my,
+I know this,
+OK,
+this base case,
+I understand now,
+OK,
+right,
+OK,
+then,
+I should give a,
+I actually wrote an example
+in my lecture,
+but I forgot to say,
+I want to clarify,
+that is,
+that is,
+the example just now
+is not to say,
+how to say,
+in the case of noiseless,
+mutual information
+is always 1,
+the example just now
+is 1,
+OK,
+this is related to
+your encoding method,
+right?
+Right,
+OK,
+OK,
+so,
+in my X,
+for example,
+if today
+my X
+is 10%,
+for example,
+like,
+another example,
+suppose my X,
+encoding method
+100% is 1,
+0% is
+0,
+that means
+everything I send
+is all 1,
+right?
+Right,
+right,
+that's right,
+right,
+this is another extreme example,
+then,
+in this case,
+you can figure out that
+entropy is actually 0,
+right,
+because 1 times
+so you didn't
+send any information
+out,
+right,
+that's right,
+then this
+is 0,
+so,
+so that means,
+OK,
+you want to
+say,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+OK,
+so,
+the next thing
+we have to ask is,
+how do I
+get to this thing?
+Because I'm
+always at this thing,
+actually,
+because,
+how do I get to this thing?
+He said,
+I can use
+such a fast speed
+to code,
+to pass information.
+So,
+how do I actually do this thing?
+So,
+I'm trying to use
+some examples
+to talk about this.
+Because his,
+let's see,
+let's see if
+I can finish
+in a short time,
+to make it clear,
+like this.
+OK,
+so,
+what is the current goal?
+I'm going to find a codebook.
+And then,
+his,
+his,
+his,
+the speed of coding
+is,
+or his speed of transmission
+is very close to
+his dc.
+And then,
+there is a decoder.
+He is a decoder.
+OK,
+so he's looking for these two things.
+Let's assume
+my input is,
+this is 0,
+input,
+x,
+x1 is
+0.5 when it is equal to 1,
+0.5 when it is equal to 0.
+And then,
+the channel,
+this channel,
+the probability of flipping is 0.1.
+That is,
+if I enter 0 here,
+10% of the probability
+will be turned into 1,
+90% of the probability,
+90% of the probability
+will still remain the same,
+like this.
+OK,
+OK,
+OK,
+so,
+in fact,
+how do they think about this problem?
+He actually wants to say,
+OK,
+then I just randomly generate
+that,
+I have a random number generator,
+I just randomly generate
+0 and 1,
+a total of n.
+Then,
+I use this,
+these points mean that
+there is a set of results.
+Then,
+I use this big circle
+to represent
+all possible situations.
+So,
+these points
+are actually
+just a few,
+just a few examples.
+OK,
+according to the rule of large numbers,
+I use
+the probability
+XR,
+its probability of
+1 is 0.5,
+the probability of 0
+is also 0.5.
+So,
+what does it mean?
+I can find some,
+OK,
+I can find some,
+for example,
+this red dot,
+I can find some codes,
+it is about 50%
+of the composition,
+about half is 1,
+half is,
+the other half is 0,
+like the red code
+is like this.
+The green code is also like this,
+that is,
+the front half is 1,
+the back half is 0,
+like this green one
+is the same,
+the front half is 0,
+the back half is 1,
+OK,
+the rule of large numbers
+tells us that
+I randomly generate
+a set of code words,
+it will fall into
+this blue set,
+we call this
+typical set,
+it will fall into this set,
+the probability of it is 1.
+Why?
+For example,
+like this,
+for example,
+like this,
+all of them are
+1.
+OK,
+if today,
+although,
+all of them are 1.
+OK,
+then,
+this situation
+is very unlikely to happen,
+right?
+Right?
+According to the rule of large numbers,
+it,
+you have to generate all of it,
+you have to throw the copper plate,
+throw it 10,000 times in a row,
+it's all positive,
+basically 0.
+If all of them
+are all 0,
+there is a chance of the opposite,
+it's all close to 0.
+So,
+only in,
+so,
+this thing
+will not fall into
+this blue area,
+this blue area
+is the collection of all
+that,
+54% is 1,
+54% is 0,
+all the sequences,
+all of that,
+the code word,
+like this.
+OK,
+if I choose a red code word today,
+and then take it,
+let it pass,
+what will happen to me?
+What is this channel
+actually doing?
+Is to take these
+101010,
+and then,
+I go,
+when passing through the channel,
+these 10 will be
+the most random flip,
+some may not change,
+some may flip.
+That,
+there is about 10%,
+about 10% of the,
+10% of the bit
+may be flipped,
+90% of the chance will not,
+90% of the bit
+will not be flipped,
+because this is
+a channel feature.
+OK,
+what does it mean
+in math?
+In fact,
+I am the original thing,
+plus a sequence,
+that is,
+I just add
+component y,
+and then,
+what is this zn?
+This zn is actually
+10% is 1,
+90% is 0.
+OK,
+and then,
+that,
+that is also very likely,
+that is also,
+according to the rule of thumb,
+this is also very likely,
+this is very likely
+to happen,
+and the probability of happening
+is very close to 1.
+OK,
+what will happen?
+What will happen?
+It will be found that
+my red,
+after going through
+my own disturbance,
+it may be
+this red,
+in the small circle,
+any of the red points.
+OK,
+then we put
+this kind of thing,
+every point is actually
+a sequence,
+n,
+the length is n sequence,
+0, 1 sequence.
+That,
+specifically,
+which,
+which is flipped,
+in fact,
+we do not know,
+we put it all
+in here.
+That,
+I pass
+101010
+the situation,
+I received the y,
+uh,
+what is it,
+like this,
+and then,
+what is it,
+it is 101010
+plus that,
+all possible,
+all,
+uh,
+the probability of occurrence is very high,
+the result of the disturbance,
+for example,
+there are
+the first 10% is 1,
+the rest is 0,
+then we put it
+in this,
+this collection.
+Then,
+this,
+then,
+this red dot is,
+for example,
+101010
+plus,
+the first 10% is 1,
+the rest is 0,
+the result,
+like this.
+OK,
+the same,
+the same thing,
+that,
+these things are all very likely to happen,
+because according to the law of magnitude,
+that,
+the same truth,
+we can,
+what,
+we can,
+uh,
+we can see that,
+OK,
+in fact,
+uh,
+you just said that the small circle,
+in fact,
+in the red circle,
+the red circle,
+it itself also has that,
+that,
+it itself is channel output,
+that is,
+its so-called typical set.
+We can figure out that,
+OK,
+Y actually has 51%,
+50% is 0,
+then we collect those,
+half is 1,
+half is 0,
+those sequences,
+we collect them in here.
+Then,
+we put these green dots,
+this green dot,
+this green dot,
+this green dot,
+this green dot,
+these four green dots,
+through this way of passing,
+we can receive these,
+uh,
+for example,
+the green dot on the far left,
+what it receives is,
+it may be,
+this green small circle inside,
+the top one,
+what it receives is this,
+the right one,
+the bottom one,
+is the one at the bottom.
+OK.
+Good.
+Then,
+I'm going to design this decoder.
+Of course,
+you can observe that,
+if the dots I choose today,
+are very few,
+for example,
+I only choose these five dots,
+then in fact,
+after it is printed,
+I see on the Y,
+I see on the Y,
+that they may not
+overlap,
+that they may not overlap,
+they are all independent,
+they are all disjoint.
+they are all independent,
+they are all disjoint.
+So,
+what does it mean?
+As long as its red dot
+appears in the red area,
+appears in the red area,
+we can see that
+Ah,
+it wears this.
+The green on the left,
+if it's sent here,
+the green on the left,
+We tell directly that
+it wears this?
+OK.
+Therefore,
+we can design the decoder.
+Then,
+I am going to see
+I am going to design the decoder.
+Then,
+I'm going to see
+this Y,
+or the Sequence
+that is received by me
+or security
+or security
+into this compound.
+If it's in this set,
+if it's in this set,
+I will decode the Y
+into the corresponding X.
+into the corresponding X.
+For example,
+if Y is in red,
+I will decode it into red.
+If Y is in the upper left corner,
+I will decode it into the upper left corner.
+I will decode it into the upper left corner.
+OK.
+OK.
+This is the most mathematical part.
+This is the most mathematical part
+of the whole decoding.
+We can calculate
+how many
+how many
+how many
+OK.
+I should say like this.
+OK.
+This is the design of the decoder.
+I just said that
+if they don't overlap
+these small groups
+or circles,
+then
+I can successfully decode
+and there is no error, right?
+Or the error rate
+I can say that
+I have no error.
+But if today
+there is a little
+allow a little overlap,
+then we can
+let the error rate
+let the error rate
+control the threshold
+control the threshold
+that we want
+10 to the negative 6th square
+10 to the negative 100th square.
+OK.
+Today
+Now the problem is that
+OK.
+We can't choose too many
+OK.
+We can't choose too many
+these points.
+For example, we just chose 5 points.
+It has made this
+red inside
+so many crowded
+small circles.
+If we choose
+a few more,
+then these small circles
+will actually overlap.
+As long as there is a large
+large-scale overlap
+large-scale overlap
+large-scale overlap
+large-scale overlap
+the error rate
+and the error rate
+is still very high.
+OK.
+We try to avoid
+this situation.
+So how do we see it?
+Let's see
+OK.
+Let's see
+in this blue circle
+how many
+how many
+how many
+how many
+code words are in it.
+Then we put this
+blue circle
+called TX
+like this.
+OK.
+TX
+Then we use a bar
+to represent its
+absolute value
+to represent its number.
+Then you can calculate
+its number
+is actually about
+X
+is the entropy of X.
+Then its detailed introduction
+is
+is actually very simple.
+You just think about
+how do I
+if I randomly generate code words
+how do I get
+the red one?
+Then the probability of it being calculated
+is about this much.
+This is high school math
+can be calculated.
+Then
+through the conversion of high school math
+put this
+TX
+on the square
+you can calculate
+OK.
+It actually draws
+a red circle
+the probability of a red circle
+is 2 to the negative n
+X
+negative
+negative
+negative
+OK.
+But
+the probability of a blue circle
+is 1.
+So
+if you collect
+all these points
+the probability of it being added
+will be 1.
+So
+roughly
+in this circle
+there are so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+so many
+red circles
+OK.
+So
+now
+my goal is
+to not to
+let these
+rising circles overlap
+so
+that
+I can
+can
+can
+can
+can
+let these two
+come in
+which is
+h of
+entropy of y
+minus entropy of y given x
+so
+by definition
+this thing
+my R
+is
+less than
+or equal to
+the mutual information
+of x and y
+like this
+OK.
+Of course we can
+improve
+but it's just
+a loose statement
+we can
+improve
+to prove
+that
+this
+this
+way of
+decoding
+can be
+as small as
+we want
+OK.
+OK.
+So
+OK.
+So
+is this
+the most mathematical part
+of the whole talk
+and
+then
+then
+I don't know
+if there is any
+question
+here
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+OK.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+。
+.
+OK
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.

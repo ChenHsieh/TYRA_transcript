@@ -1,0 +1,4082 @@
+WEBVTT
+
+00:00.000 --> 00:11.000
+Good morning, good evening, and thank you for joining me today to share my screen.
+
+00:11.000 --> 00:27.000
+We don't have a lot of people today, so feel free to interrupt me at any time if you have any questions, or just turn on the microphone.
+
+00:27.000 --> 00:35.000
+The topic I'm going to talk about today is called Invisible Risk Data Sharing Activities of Data Brokers.
+
+00:35.000 --> 00:41.000
+My co-authors are Aaron, who just got his PhD from Rutgers.
+
+00:41.000 --> 00:44.000
+His PhD peers are also here.
+
+00:44.000 --> 00:48.000
+He's going to go to California State University, Fullerton.
+
+00:48.000 --> 00:51.000
+The other teacher is a Rutgers teacher.
+
+00:52.000 --> 00:54.000
+Let me introduce myself.
+
+00:54.000 --> 00:56.000
+My background is actually accounting.
+
+00:56.000 --> 00:59.000
+I'm a CPA, and I'm a Certified Internal Auditor.
+
+00:59.000 --> 01:03.000
+But my PhD is Management Information Systems.
+
+01:03.000 --> 01:09.000
+I usually teach data analytics and data mining related courses.
+
+01:09.000 --> 01:11.000
+Because of my background.
+
+01:11.000 --> 01:15.000
+I'm currently on the list of Fulbright specialists.
+
+01:15.000 --> 01:18.000
+I specialize in curriculum development.
+
+01:18.000 --> 01:22.000
+I've worked with Computer Science before.
+
+01:22.000 --> 01:26.000
+They have a task force on how to design cybersecurity curriculum.
+
+01:26.000 --> 01:28.000
+So I'm in that program.
+
+01:28.000 --> 01:32.000
+My research is mainly IT management and security management.
+
+01:32.000 --> 01:34.000
+Almost all of them are in this area.
+
+01:34.000 --> 01:45.000
+I often give lectures outside, maybe at universities, conferences, or some professional organizations.
+
+01:45.000 --> 01:50.000
+I used to be a panelist at the Federal Reserve Bank.
+
+01:50.000 --> 01:53.000
+About three or four weeks ago,
+
+01:53.000 --> 01:57.000
+I helped them do analytics training at McDonald's.
+
+01:57.000 --> 02:00.000
+I also did some training for the California Department of Justice.
+
+02:00.000 --> 02:04.000
+I also gave a lecture at the Taiwan Monetary Authority.
+
+02:04.000 --> 02:10.000
+In 2018, I was at KPMG, a large audit consulting firm.
+
+02:10.000 --> 02:12.000
+I was a professor-in-residence there.
+
+02:12.000 --> 02:16.000
+So I worked with them in New York for 10 weeks.
+
+02:16.000 --> 02:18.000
+I also do projects with them.
+
+02:18.000 --> 02:21.000
+I've done more than 15 projects so far.
+
+02:21.000 --> 02:27.000
+I'm the incoming president of Accounting Information Systems.
+
+02:27.000 --> 02:28.000
+This is my LinkedIn.
+
+02:28.000 --> 02:30.000
+If you're interested.
+
+02:30.000 --> 02:32.000
+About this paper.
+
+02:32.000 --> 02:36.000
+Data Broker has been around for a long time.
+
+02:36.000 --> 02:40.000
+It's just that it's been noticed for the past 10 years.
+
+02:40.000 --> 02:44.000
+As you can see, a lot of news is about Data Brokers.
+
+02:44.000 --> 02:48.000
+The earliest one I have here is from 2013.
+
+02:48.000 --> 02:52.000
+I've been seeing it since this year.
+
+02:52.000 --> 02:57.000
+Especially after the Facebook Cambridge Analytica scandal.
+
+02:57.000 --> 02:59.000
+More news.
+
+02:59.000 --> 03:01.000
+Who is a Data Broker?
+
+03:01.000 --> 03:08.000
+A Data Broker is not the organization we usually come into contact with.
+
+03:08.000 --> 03:12.000
+For example, if we go to a website.
+
+03:12.000 --> 03:15.000
+We all know that it collects a lot of our information.
+
+03:15.000 --> 03:19.000
+We also know that some websites will sell or share our information.
+
+03:19.000 --> 03:23.000
+But the Data Broker is actually hiding behind these websites.
+
+03:23.000 --> 03:26.000
+So when it's collecting data, we probably don't know.
+
+03:26.000 --> 03:29.000
+For example, we have a free app on our phone.
+
+03:29.000 --> 03:32.000
+Then we log in.
+
+03:32.000 --> 03:33.000
+In fact, this app is free.
+
+03:33.000 --> 03:34.000
+It's not free.
+
+03:34.000 --> 03:38.000
+It's actually because there's an additional information sharing action behind it.
+
+03:38.000 --> 03:39.000
+So it's free.
+
+03:39.000 --> 03:42.000
+Or, for example, we go to the supermarket to buy something.
+
+03:42.000 --> 03:45.000
+All of our purchase records and so on.
+
+03:45.000 --> 03:47.000
+In fact, it's all shared behind it.
+
+03:47.000 --> 03:51.000
+Or it can go to, for example, Facebook.
+
+03:51.000 --> 03:55.000
+All of our public information on Instagram.
+
+03:55.000 --> 03:57.000
+So the photos we posted.
+
+03:57.000 --> 03:59.000
+What we wrote.
+
+03:59.000 --> 04:00.000
+How to write.
+
+04:00.000 --> 04:02.000
+Is it a relationship?
+
+04:02.000 --> 04:04.000
+It knows all of these things.
+
+04:04.000 --> 04:07.000
+There are also some public sources that it can find.
+
+04:07.000 --> 04:10.000
+For example, in Illinois.
+
+04:10.000 --> 04:14.000
+For example, who paid for which house's property tax.
+
+04:14.000 --> 04:16.000
+That's all you can see.
+
+04:16.000 --> 04:19.000
+So there's actually public registration information.
+
+04:19.000 --> 04:23.000
+And then these companies will collect all of your data.
+
+04:23.000 --> 04:27.000
+And if it's not enough, it will go to other Data Brokers.
+
+04:27.000 --> 04:29.000
+Share it together or buy it from them.
+
+04:29.000 --> 04:31.000
+And after you've bought it, you've sorted it out.
+
+04:31.000 --> 04:34.000
+In fact, each of us will have a tag.
+
+04:34.000 --> 04:36.000
+It can have some influence.
+
+04:36.000 --> 04:40.000
+For example, this person is their family.
+
+04:40.000 --> 04:43.000
+There will be a baby recently.
+
+04:43.000 --> 04:47.000
+Or this person will have access to a golf club.
+
+04:47.000 --> 04:52.000
+Or this person is Facebook's social media influencer.
+
+04:52.000 --> 04:55.000
+It can all know that you have some preferences.
+
+04:55.000 --> 04:57.000
+Or you have some characteristics.
+
+04:57.000 --> 04:59.000
+It knows it all.
+
+04:59.000 --> 05:02.000
+And this is the most common thing.
+
+05:02.000 --> 05:06.000
+These marketing or advertising Data Brokers.
+
+05:06.000 --> 05:09.000
+They can actually do it very accurately.
+
+05:09.000 --> 05:12.000
+For example, when I was in another school.
+
+05:12.000 --> 05:15.000
+My colleague, every time he received an advertisement letter, he asked him.
+
+05:15.000 --> 05:16.000
+Do you want to buy a house?
+
+05:16.000 --> 05:18.000
+Do you want to buy a new car?
+
+05:18.000 --> 05:20.000
+Do you want to buy a new boat?
+
+05:20.000 --> 05:22.000
+And then he got this.
+
+05:22.000 --> 05:23.000
+I got it all.
+
+05:23.000 --> 05:24.000
+Do you want to borrow Personal Loan?
+
+05:24.000 --> 05:25.000
+Do you want to borrow Mortgage?
+
+05:25.000 --> 05:27.000
+How much money do you still have to pay for Mortgage?
+
+05:27.000 --> 05:29.000
+So you can see that he can know.
+
+05:29.000 --> 05:31.000
+What is your current financial situation?
+
+05:31.000 --> 05:34.000
+The advertisement he gave you.
+
+05:34.000 --> 05:35.000
+It's all different.
+
+05:35.000 --> 05:38.000
+There are also two more common ones.
+
+05:38.000 --> 05:40.000
+Fraud Detection and Risk Mitigation.
+
+05:40.000 --> 05:43.000
+For example, when you go to the bank to borrow money.
+
+05:43.000 --> 05:47.000
+He needs to make sure that the information you give is correct.
+
+05:47.000 --> 05:49.000
+It is also through Data Brokers.
+
+05:49.000 --> 05:51.000
+This part is very important.
+
+05:52.000 --> 05:57.000
+There are also some websites that actually allow you to find other people's websites.
+
+05:57.000 --> 06:01.000
+He also collects the information of these people through Data Brokers.
+
+06:01.000 --> 06:05.000
+So you can judge if that person is the one you want to see.
+
+06:05.000 --> 06:07.000
+So why is this information useful?
+
+06:07.000 --> 06:11.000
+That's actually because if he can get a lot of customer data.
+
+06:11.000 --> 06:13.000
+Collect it all.
+
+06:13.000 --> 06:17.000
+And then whether it's online or offline.
+
+06:17.000 --> 06:19.000
+What happens after he finds it all?
+
+06:19.000 --> 06:22.000
+Then he has a way to reconfirm these data.
+
+06:22.000 --> 06:24.000
+For example, the same thing.
+
+06:24.000 --> 06:26.000
+I went to find it from a lot of sources.
+
+06:26.000 --> 06:29.000
+I can tell which one is right.
+
+06:29.000 --> 06:32.000
+Then you can put that data quality will be much better.
+
+06:32.000 --> 06:35.000
+So he has a way to use it to make some predictions.
+
+06:35.000 --> 06:39.000
+Then he doesn't care what happens to each of us.
+
+06:39.000 --> 06:42.000
+What he wants is this large amount of aggregated data.
+
+06:42.000 --> 06:44.000
+Then he can make predictions for him.
+
+06:44.000 --> 06:46.000
+After this prediction, it's actually very useful.
+
+06:46.000 --> 06:48.000
+It's because he can sell it.
+
+06:48.000 --> 06:50.000
+For example, this person may have to change cars next year.
+
+06:50.000 --> 06:52.000
+He has a way to tell these people.
+
+06:52.000 --> 06:55.000
+You can send a marketing material.
+
+06:55.000 --> 07:00.000
+Or he can buy more useful information from other Data Brokers.
+
+07:00.000 --> 07:03.000
+To make his data richer.
+
+07:03.000 --> 07:07.000
+So you will see all kinds of Data Brokers.
+
+07:07.000 --> 07:09.000
+These four are relatively large.
+
+07:09.000 --> 07:12.000
+For example, Axiom is actually very large.
+
+07:12.000 --> 07:17.000
+They are all doing marketing campaigns and fraud detection.
+
+07:17.000 --> 07:22.000
+Then the three people in the back are for business or government.
+
+07:22.000 --> 07:26.000
+For example, tell you what the financial information of these people is.
+
+07:26.000 --> 07:29.000
+Or someone told you that his customer transaction.
+
+07:29.000 --> 07:31.000
+What does it look like?
+
+07:31.000 --> 07:35.000
+Or he can tell you that I have collected this information.
+
+07:35.000 --> 07:37.000
+Not just for marketing.
+
+07:37.000 --> 07:40.000
+Financial service products can be given.
+
+07:40.000 --> 07:43.000
+In fact, this is when you understand all the profiles of a person.
+
+07:43.000 --> 07:46.000
+In fact, all the information is very useful.
+
+07:46.000 --> 07:49.000
+So what kind of information did they collect?
+
+07:49.000 --> 07:51.000
+Uh, this is a bit vague.
+
+07:51.000 --> 07:53.000
+Because this is a screenshot.
+
+07:53.000 --> 07:56.000
+But if you can see, he actually tells you here.
+
+07:56.000 --> 07:58.000
+Axiom is a big Data Broker.
+
+07:58.000 --> 08:01.000
+He is a Public Traded Company.
+
+08:01.000 --> 08:09.000
+He has 45 years of historical data on name changes and residential history.
+
+08:09.000 --> 08:12.000
+He has all the data from the past 45 years.
+
+08:12.000 --> 08:13.000
+Who are you here?
+
+08:13.000 --> 08:14.000
+How did you change your name?
+
+08:14.000 --> 08:15.000
+He has it all.
+
+08:15.000 --> 08:19.000
+That gender, age, education level.
+
+08:19.000 --> 08:21.000
+This is very simple for them.
+
+08:21.000 --> 08:22.000
+He also knows you.
+
+08:22.000 --> 08:26.000
+For example, what income level do you currently have?
+
+08:26.000 --> 08:28.000
+What is the car?
+
+08:28.000 --> 08:32.000
+Then when there is this information, he can do prediction.
+
+08:32.000 --> 08:35.000
+For example, is there anyone in your household?
+
+08:35.000 --> 08:37.000
+Recently planning to have a baby.
+
+08:37.000 --> 08:40.000
+Or is it planning to adopt a child?
+
+08:40.000 --> 08:42.000
+Or are you in the United States every year?
+
+08:42.000 --> 08:44.000
+Are you paying taxes every April?
+
+08:44.000 --> 08:46.000
+Or are you a heavy Facebook user?
+
+08:46.000 --> 08:49.000
+Or are you easily influenced by social media?
+
+08:49.000 --> 08:51.000
+He has a way to know.
+
+08:51.000 --> 08:54.000
+Do you have major medical insurance?
+
+08:54.000 --> 08:56.000
+All of these are known.
+
+08:56.000 --> 09:03.000
+Then, surprisingly, they have more than 3000 different attributes.
+
+09:03.000 --> 09:12.000
+So in the United States, everyone, if he has collected your information, he has 3000 different attributes to describe the various characteristics of this person.
+
+09:12.000 --> 09:18.000
+So he actually knows very well what happened to each of us.
+
+09:18.000 --> 09:21.000
+Sometimes we don't even know our own preference.
+
+09:21.000 --> 09:23.000
+But these data brokers will know.
+
+09:23.000 --> 09:27.000
+Then you will find that this is actually quite scary.
+
+09:27.000 --> 09:32.000
+The reason is because he is not the organization we will directly contact.
+
+09:32.000 --> 09:33.000
+For example, we go to Amazon.
+
+09:33.000 --> 09:34.000
+We know Amazon.
+
+09:34.000 --> 09:35.000
+We go to Facebook.
+
+09:35.000 --> 09:36.000
+We know it's him.
+
+09:36.000 --> 09:40.000
+But he's actually doing these things behind the scenes.
+
+09:40.000 --> 09:49.000
+So in 2014, 2013, the Federal Trade Commission in the United States, they actually have two articles.
+
+09:49.000 --> 09:51.000
+They're all talking about this.
+
+09:52.000 --> 09:58.000
+What they're talking about in these two articles is actually that they're talking about data brokers.
+
+09:58.000 --> 10:04.000
+Their biggest problem is that we don't know what he's doing.
+
+10:04.000 --> 10:07.000
+We don't know what information he's collecting.
+
+10:07.000 --> 10:11.000
+We don't know what he's doing with our information.
+
+10:11.000 --> 10:13.000
+How to share it, how to sell it, who to sell it to.
+
+10:13.000 --> 10:18.000
+In fact, we all don't know that his whole practice is actually a black box.
+
+10:18.000 --> 10:21.000
+So we don't know what they're doing at all.
+
+10:21.000 --> 10:32.000
+So this Federal Trade Commission in 2013 and 2014, we hope that everyone can have some action to limit that.
+
+10:32.000 --> 10:37.000
+At least let us know more about what these data brokers are doing.
+
+10:37.000 --> 10:40.000
+So this is the main content of these two articles.
+
+10:41.000 --> 10:45.000
+So what they're talking about is a very interesting thing, which is data brokers.
+
+10:45.000 --> 10:52.000
+They're actually competing with each other to see who they can sell their data to.
+
+10:52.000 --> 10:54.000
+So there's no problem.
+
+10:54.000 --> 10:56.000
+But they're not actually competing with each other.
+
+10:56.000 --> 10:58.000
+They're actually cooperating with each other.
+
+10:58.000 --> 11:01.000
+For example, they asked nine data brokers.
+
+11:01.000 --> 11:06.000
+And then they'll know where each data broker comes from.
+
+11:06.000 --> 11:10.000
+For example, you're collecting public data from government agencies.
+
+11:10.000 --> 11:15.000
+Or it could be any other publicly available source.
+
+11:15.000 --> 11:17.000
+But it could be commercial sources.
+
+11:17.000 --> 11:20.000
+Or it could be collected from another company and given to you.
+
+11:20.000 --> 11:25.000
+You'll see that these nine data brokers actually have very different ways of collecting data.
+
+11:25.000 --> 11:28.000
+Some people only use commercial sources.
+
+11:28.000 --> 11:30.000
+Some people use everything.
+
+11:31.000 --> 11:35.000
+And the most special thing is that although they're usually competing for clients,
+
+11:35.000 --> 11:37.000
+that is, who can buy their data,
+
+11:37.000 --> 11:41.000
+but you can see that their data is actually shared with each other.
+
+11:41.000 --> 11:43.000
+Or you can say, ah, I've collected this data today.
+
+11:43.000 --> 11:45.000
+And then if you need it, I'll sell it to you.
+
+11:45.000 --> 11:49.000
+So you can see that they're a very complex network.
+
+11:49.000 --> 11:52.000
+And in these nine, there are actually only seven,
+
+11:52.000 --> 11:54.000
+which is the one on the bottom left.
+
+11:54.000 --> 11:57.000
+The seventh is that it has nothing to do with other data brokers.
+
+11:57.000 --> 12:00.000
+There are no data sharing activities.
+
+12:00.000 --> 12:04.000
+Everyone else will buy or sell to a certain extent.
+
+12:04.000 --> 12:06.000
+Or where do you share it from?
+
+12:06.000 --> 12:08.000
+They all have it.
+
+12:08.000 --> 12:11.000
+This thing is very interesting to us.
+
+12:11.000 --> 12:15.000
+The reason is because if they don't just collect it themselves,
+
+12:15.000 --> 12:18.000
+they'll take other people's stuff and use it together.
+
+12:18.000 --> 12:25.000
+If today the hacker can attack a certain data broker,
+
+12:25.000 --> 12:27.000
+it's actually like a grand prize.
+
+12:27.000 --> 12:30.000
+The reason is because the data you get is not just his.
+
+12:30.000 --> 12:33.000
+All the information you get and all the other people,
+
+12:33.000 --> 12:36.000
+all the information they share with each other.
+
+12:36.000 --> 12:38.000
+That's actually our hypothesis.
+
+12:38.000 --> 12:42.000
+It's just that we later found out that there really was this thing.
+
+12:42.000 --> 12:47.000
+For example, many years ago, in 2018,
+
+12:47.000 --> 12:49.000
+Equifax had a big breach.
+
+12:49.000 --> 12:55.000
+They forgot to update their software inside,
+
+12:55.000 --> 12:57.000
+so they had a big breach.
+
+12:57.000 --> 13:02.000
+Their breach is actually not just Equifax's data being leaked.
+
+13:02.000 --> 13:04.000
+In addition to Equifax,
+
+13:04.000 --> 13:06.000
+the other two big credit bureaus,
+
+13:06.000 --> 13:08.000
+which is Experian and TransUnion,
+
+13:08.000 --> 13:10.000
+are actually all leaked.
+
+13:10.000 --> 13:14.000
+In fact, our data collection is from Dark Web.
+
+13:14.000 --> 13:16.000
+So we actually found that
+
+13:16.000 --> 13:19.000
+if you go and find Equifax's data breach,
+
+13:19.000 --> 13:21.000
+you can actually see the data of the other two.
+
+13:21.000 --> 13:24.000
+It's actually all mixed up.
+
+13:24.000 --> 13:28.000
+There's also some anecdotal evidence.
+
+13:28.000 --> 13:30.000
+When Equifax had a breach,
+
+13:30.000 --> 13:34.000
+the other two reported the credit fraud data.
+
+13:34.000 --> 13:38.000
+So all the data is actually leaked.
+
+13:38.000 --> 13:40.000
+If we go to, for example, Google Trend,
+
+13:40.000 --> 13:43.000
+and look at their fraud report trend,
+
+13:43.000 --> 13:47.000
+you'll find that these three are actually almost the same trend.
+
+13:47.000 --> 13:48.000
+One company has a problem,
+
+13:48.000 --> 13:50.000
+and the other two have a problem.
+
+13:50.000 --> 13:54.000
+We think that this is definitely because
+
+13:54.000 --> 13:59.000
+of the influence of the exchange of information between them.
+
+13:59.000 --> 14:01.000
+So as long as one person has a problem,
+
+14:01.000 --> 14:03.000
+everything will happen.
+
+14:03.000 --> 14:04.000
+That's a lot of trouble.
+
+14:04.000 --> 14:06.000
+So you'll see that in fact,
+
+14:06.000 --> 14:11.000
+there are a lot of regulations in the United States.
+
+14:11.000 --> 14:13.000
+They've been around since 2013.
+
+14:13.000 --> 14:17.000
+The early focus was actually that
+
+14:17.000 --> 14:21.000
+these data brokers should let those consumers know
+
+14:21.000 --> 14:25.000
+what kind of data they've collected.
+
+14:25.000 --> 14:27.000
+So in 2013 and 2014,
+
+14:27.000 --> 14:30.000
+Axiom would actually let every user,
+
+14:30.000 --> 14:31.000
+no matter who you are,
+
+14:31.000 --> 14:32.000
+you go and log into your data,
+
+14:32.000 --> 14:34.000
+and then you can see what information you have.
+
+14:34.000 --> 14:36.000
+You can see it all.
+
+14:36.000 --> 14:38.000
+There are also some other points that
+
+14:38.000 --> 14:41.000
+they feel are not transparent at all.
+
+14:41.000 --> 14:42.000
+What is your practice?
+
+14:42.000 --> 14:43.000
+What did you collect?
+
+14:43.000 --> 14:44.000
+Who did you sell it to?
+
+14:44.000 --> 14:47.000
+So far, it's all black box.
+
+14:47.000 --> 14:49.000
+This is early 2013 and 2014.
+
+14:49.000 --> 14:51.000
+And then in 2018 and 2019,
+
+14:51.000 --> 14:53.000
+there were two new things.
+
+14:53.000 --> 14:55.000
+In Vermont,
+
+14:55.000 --> 14:57.000
+there's a data broker law.
+
+14:57.000 --> 14:58.000
+It says,
+
+14:58.000 --> 15:00.000
+if you're a data broker,
+
+15:00.000 --> 15:02.000
+we'll talk about its definition later.
+
+15:02.000 --> 15:04.000
+If you're a data broker,
+
+15:04.000 --> 15:09.000
+you should register with its Secretary of State.
+
+15:09.000 --> 15:10.000
+To register,
+
+15:10.000 --> 15:11.000
+simply put,
+
+15:11.000 --> 15:12.000
+before the end of January every year,
+
+15:12.000 --> 15:13.000
+you have to go to its website
+
+15:13.000 --> 15:16.000
+and provide all your data to it.
+
+15:16.000 --> 15:18.000
+The provided data actually looks like this.
+
+15:18.000 --> 15:20.000
+Which company are you from?
+
+15:20.000 --> 15:21.000
+What is your website?
+
+15:21.000 --> 15:25.000
+And then if the user doesn't want you to collect information,
+
+15:25.000 --> 15:26.000
+can you opt out?
+
+15:26.000 --> 15:28.000
+I don't want you to collect.
+
+15:28.000 --> 15:30.000
+So how do you do it?
+
+15:30.000 --> 15:33.000
+It actually has all the details of the disclosure.
+
+15:33.000 --> 15:34.000
+Or it says,
+
+15:34.000 --> 15:37.000
+do you have any
+
+15:37.000 --> 15:39.000
+statement about opt-out
+
+15:39.000 --> 15:41.000
+or data collection?
+
+15:41.000 --> 15:43.000
+You can actually write it up.
+
+15:43.000 --> 15:46.000
+This example is written a lot.
+
+15:46.000 --> 15:47.000
+Some companies,
+
+15:47.000 --> 15:48.000
+although it says it's registered,
+
+15:48.000 --> 15:49.000
+but in fact,
+
+15:49.000 --> 15:51.000
+you'll see that there's no information at all.
+
+15:51.000 --> 15:53.000
+A lot of them just say,
+
+15:53.000 --> 15:54.000
+please see our website.
+
+15:54.000 --> 15:55.000
+If you click on it,
+
+15:55.000 --> 15:57.000
+there's nothing there.
+
+15:57.000 --> 15:58.000
+You can hardly see it.
+
+15:58.000 --> 15:59.000
+This is one.
+
+15:59.000 --> 16:02.000
+The second question is actually
+
+16:02.000 --> 16:03.000
+data broker,
+
+16:03.000 --> 16:08.000
+even if it meets the definition of regulation,
+
+16:08.000 --> 16:10.000
+it's a data broker.
+
+16:10.000 --> 16:12.000
+If it doesn't register,
+
+16:12.000 --> 16:15.000
+the penalty is actually very low.
+
+16:15.000 --> 16:17.000
+I forgot if it's Vermont or California State.
+
+16:17.000 --> 16:19.000
+If you don't register,
+
+16:19.000 --> 16:21.000
+you'll only be fined $100 a day.
+
+16:21.000 --> 16:23.000
+And it's online.
+
+16:23.000 --> 16:24.000
+I've been fined,
+
+16:24.000 --> 16:25.000
+for example,
+
+16:25.000 --> 16:27.000
+$10,000,
+
+16:27.000 --> 16:28.000
+and I can't pay anymore.
+
+16:28.000 --> 16:29.000
+For data brokers,
+
+16:29.000 --> 16:31.000
+this is almost nothing.
+
+16:31.000 --> 16:33.000
+They might make more than $10,000 a day.
+
+16:33.000 --> 16:34.000
+So,
+
+16:34.000 --> 16:35.000
+uh,
+
+16:35.000 --> 16:37.000
+the penalty is actually not that big.
+
+16:37.000 --> 16:39.000
+It's not like GDPR,
+
+16:39.000 --> 16:43.000
+which has such a big impact on European privacy regulation.
+
+16:43.000 --> 16:44.000
+If you have a violation,
+
+16:44.000 --> 16:48.000
+it's just a few percent annual sales revenue.
+
+16:48.000 --> 16:49.000
+So,
+
+16:49.000 --> 16:51.000
+the effect of this thing is not that good.
+
+16:51.000 --> 16:52.000
+So,
+
+16:52.000 --> 16:54.000
+it's actually very simple to define.
+
+16:54.000 --> 16:56.000
+Simply put,
+
+16:56.000 --> 16:58.000
+when a company,
+
+16:58.000 --> 17:00.000
+you know you're collecting data,
+
+17:00.000 --> 17:02.000
+or you know you're selling it,
+
+17:02.000 --> 17:04.000
+you take the data you've collected and sell it.
+
+17:04.000 --> 17:06.000
+And then it's actually a data broker.
+
+17:06.000 --> 17:08.000
+As long as you collect the data and sell the data,
+
+17:08.000 --> 17:10.000
+you're not directly facing those customers,
+
+17:10.000 --> 17:12.000
+it's actually a data broker.
+
+17:12.000 --> 17:13.000
+So,
+
+17:13.000 --> 17:14.000
+uh,
+
+17:14.000 --> 17:15.000
+it's actually a pretty big definition.
+
+17:15.000 --> 17:16.000
+But actually,
+
+17:16.000 --> 17:17.000
+you have to think about this definition.
+
+17:17.000 --> 17:18.000
+It's very simple.
+
+17:18.000 --> 17:19.000
+For example,
+
+17:19.000 --> 17:21.000
+if you only collect data,
+
+17:21.000 --> 17:23.000
+buy the data and use it yourself,
+
+17:23.000 --> 17:25.000
+you're not a data broker.
+
+17:25.000 --> 17:26.000
+Or,
+
+17:26.000 --> 17:27.000
+say,
+
+17:27.000 --> 17:29.000
+the data you collect is actually your customer's data.
+
+17:29.000 --> 17:30.000
+For example,
+
+17:30.000 --> 17:31.000
+Amazon,
+
+17:31.000 --> 17:33.000
+what I collect is actually the data of these people who buy things from me.
+
+17:33.000 --> 17:35.000
+And then I take these things and sell them.
+
+17:35.000 --> 17:36.000
+Actually,
+
+17:36.000 --> 17:37.000
+I'm not a data broker.
+
+17:37.000 --> 17:38.000
+So,
+
+17:38.000 --> 17:39.000
+there's actually a loophole.
+
+17:39.000 --> 17:40.000
+So,
+
+17:40.000 --> 17:41.000
+that's going to cause some problems.
+
+17:41.000 --> 17:43.000
+A lot of companies are actually data brokers,
+
+17:43.000 --> 17:45.000
+because they're actually doing business.
+
+17:45.000 --> 17:46.000
+But,
+
+17:46.000 --> 17:47.000
+uh,
+
+17:47.000 --> 17:48.000
+according to this law,
+
+17:48.000 --> 17:50.000
+you can't actually see it.
+
+17:50.000 --> 17:52.000
+The California State is the same.
+
+17:52.000 --> 17:53.000
+Uh,
+
+17:53.000 --> 17:54.000
+that is,
+
+17:54.000 --> 17:56.000
+if you go to his Attorney General's office,
+
+17:56.000 --> 17:58.000
+you can also see this big,
+
+17:58.000 --> 17:59.000
+uh,
+
+17:59.000 --> 18:01.000
+almost all the requests are exactly the same.
+
+18:01.000 --> 18:03.000
+It's just that it started working a year later.
+
+18:03.000 --> 18:05.000
+It started working in January 2020.
+
+18:05.000 --> 18:07.000
+All the definitions are the same.
+
+18:07.000 --> 18:08.000
+Almost everything is the same.
+
+18:08.000 --> 18:09.000
+Although,
+
+18:09.000 --> 18:10.000
+uh,
+
+18:10.000 --> 18:13.000
+California's privacy regulation is actually more strict.
+
+18:13.000 --> 18:15.000
+But it's actually the same in this regard.
+
+18:15.000 --> 18:16.000
+So,
+
+18:16.000 --> 18:19.000
+the information he's going to reveal is actually almost the same.
+
+18:19.000 --> 18:20.000
+So,
+
+18:20.000 --> 18:21.000
+uh,
+
+18:21.000 --> 18:23.000
+if you don't have a chance to go to their website,
+
+18:23.000 --> 18:25.000
+you can see something like that.
+
+18:25.000 --> 18:26.000
+So,
+
+18:26.000 --> 18:27.000
+uh,
+
+18:27.000 --> 18:29.000
+let's talk about it very quickly.
+
+18:29.000 --> 18:30.000
+Uh,
+
+18:30.000 --> 18:31.000
+we think,
+
+18:31.000 --> 18:35.000
+why do they compete with each other and cooperate with each other?
+
+18:35.000 --> 18:38.000
+Why do you think this is going to happen to them in the future?
+
+18:38.000 --> 18:40.000
+Security breach or,
+
+18:40.000 --> 18:41.000
+or,
+
+18:41.000 --> 18:42.000
+or information will,
+
+18:42.000 --> 18:43.000
+will,
+
+18:43.000 --> 18:44.000
+will be stolen by someone.
+
+18:44.000 --> 18:46.000
+This state is actually related to the reason.
+
+18:46.000 --> 18:49.000
+The first big point is actually not in this.
+
+18:49.000 --> 18:51.000
+Competition or data sharing.
+
+18:51.000 --> 18:55.000
+It's actually because it's actually an unregulated industry.
+
+18:55.000 --> 18:56.000
+He said,
+
+18:56.000 --> 18:57.000
+he said,
+
+18:57.000 --> 18:59.000
+everything is actually self-regulated.
+
+18:59.000 --> 19:01.000
+They have their own privacy standards.
+
+19:01.000 --> 19:03.000
+They have their own norms.
+
+19:03.000 --> 19:04.000
+But,
+
+19:04.000 --> 19:05.000
+uh,
+
+19:05.000 --> 19:06.000
+for us,
+
+19:06.000 --> 19:07.000
+in fact,
+
+19:07.000 --> 19:08.000
+they are unregulated.
+
+19:08.000 --> 19:09.000
+That is.
+
+19:09.000 --> 19:11.000
+You take your information and share it.
+
+19:11.000 --> 19:12.000
+Uh,
+
+19:12.000 --> 19:13.000
+what is your penalty?
+
+19:13.000 --> 19:14.000
+Or,
+
+19:14.000 --> 19:15.000
+what can be shared?
+
+19:15.000 --> 19:17.000
+What can't be shared?
+
+19:17.000 --> 19:18.000
+In fact,
+
+19:18.000 --> 19:20.000
+there are no restrictions at all.
+
+19:20.000 --> 19:21.000
+Simply put.
+
+19:21.000 --> 19:22.000
+So,
+
+19:22.000 --> 19:24.000
+if there is a hacker.
+
+19:24.000 --> 19:26.000
+If you can find a data broker,
+
+19:26.000 --> 19:28.000
+if you can take all his information,
+
+19:28.000 --> 19:29.000
+the impact will be great.
+
+19:29.000 --> 19:30.000
+So,
+
+19:30.000 --> 19:31.000
+this is why,
+
+19:31.000 --> 19:32.000
+like Equifax,
+
+19:32.000 --> 19:33.000
+the main one.
+
+19:33.000 --> 19:34.000
+In fact,
+
+19:34.000 --> 19:36.000
+the main one is a data broker.
+
+19:36.000 --> 19:38.000
+If there is a breach,
+
+19:38.000 --> 19:40.000
+it will have a great impact.
+
+19:40.000 --> 19:42.000
+These information can actually be sold.
+
+19:42.000 --> 19:43.000
+So,
+
+19:43.000 --> 19:44.000
+that will have a greater impact.
+
+19:44.000 --> 19:45.000
+So,
+
+19:45.000 --> 19:46.000
+there are more benefits.
+
+19:46.000 --> 19:47.000
+So,
+
+19:47.000 --> 19:49.000
+people are more likely to want to go,
+
+19:49.000 --> 19:50.000
+uh,
+
+19:50.000 --> 19:51.000
+get your information and sell it.
+
+19:51.000 --> 19:52.000
+So,
+
+19:52.000 --> 19:54.000
+this paper is still in a very rough stage.
+
+19:54.000 --> 19:55.000
+But I think,
+
+19:55.000 --> 19:56.000
+uh,
+
+19:56.000 --> 19:57.000
+we still hope to be able to present.
+
+19:57.000 --> 19:59.000
+And then I hope to give you some awareness.
+
+19:59.000 --> 20:00.000
+Or,
+
+20:00.000 --> 20:01.000
+uh,
+
+20:01.000 --> 20:02.000
+some extra ideas.
+
+20:02.000 --> 20:03.000
+Especially in,
+
+20:03.000 --> 20:04.000
+uh,
+
+20:04.000 --> 20:06.000
+how to protect privacy protection.
+
+20:06.000 --> 20:07.000
+Or,
+
+20:07.000 --> 20:08.000
+how to be more,
+
+20:08.000 --> 20:10.000
+more effective to understand what they are doing.
+
+20:10.000 --> 20:11.000
+So,
+
+20:11.000 --> 20:12.000
+uh,
+
+20:12.000 --> 20:13.000
+you will see that in fact,
+
+20:13.000 --> 20:14.000
+our hypothesis,
+
+20:14.000 --> 20:15.000
+in fact,
+
+20:15.000 --> 20:16.000
+everything is still in a very rough stage.
+
+20:16.000 --> 20:17.000
+So,
+
+20:17.000 --> 20:19.000
+but we still hope to be able to share more.
+
+20:19.000 --> 20:20.000
+So,
+
+20:20.000 --> 20:21.000
+the other one is,
+
+20:21.000 --> 20:22.000
+uh,
+
+20:22.000 --> 20:24.000
+we want to know if this registration has any impact.
+
+20:24.000 --> 20:25.000
+Uh,
+
+20:25.000 --> 20:26.000
+we,
+
+20:26.000 --> 20:27.000
+of course,
+
+20:27.000 --> 20:28.000
+we let these broad data brokers,
+
+20:28.000 --> 20:29.000
+they are all transparent.
+
+20:29.000 --> 20:30.000
+Or,
+
+20:30.000 --> 20:31.000
+everyone knows who they are.
+
+20:31.000 --> 20:32.000
+Will they say,
+
+20:32.000 --> 20:33.000
+their practice is better?
+
+20:33.000 --> 20:34.000
+They are more transparent.
+
+20:34.000 --> 20:35.000
+Or,
+
+20:35.000 --> 20:36.000
+they have some pressure to say,
+
+20:36.000 --> 20:37.000
+they can't be so easy.
+
+20:37.000 --> 20:38.000
+There will be a security breach.
+
+20:38.000 --> 20:39.000
+But the problem is actually in,
+
+20:39.000 --> 20:40.000
+not this regulation.
+
+20:40.000 --> 20:41.000
+In fact,
+
+20:41.000 --> 20:42.000
+because even if you don't register,
+
+20:42.000 --> 20:43.000
+it doesn't actually work.
+
+20:43.000 --> 20:44.000
+So,
+
+20:44.000 --> 20:45.000
+uh,
+
+20:45.000 --> 20:46.000
+I think,
+
+20:46.000 --> 20:47.000
+uh,
+
+20:47.000 --> 20:48.000
+I think,
+
+20:48.000 --> 20:49.000
+uh,
+
+20:49.000 --> 20:50.000
+I think,
+
+20:50.000 --> 20:51.000
+uh,
+
+20:51.000 --> 20:52.000
+uh.
+
+20:52.000 --> 20:53.000
+So,
+
+20:53.000 --> 20:54.000
+uh,
+
+20:54.000 --> 20:55.000
+so.
+
+20:55.000 --> 20:56.000
+Uh,
+
+20:56.000 --> 20:57.000
+so,
+
+20:57.000 --> 20:58.000
+uh,
+
+20:58.000 --> 20:59.000
+uh,
+
+20:59.000 --> 21:00.000
+so.
+
+21:00.000 --> 21:01.000
+Uh,
+
+21:01.000 --> 21:02.000
+so.
+
+21:02.000 --> 21:03.000
+Uh,
+
+21:03.000 --> 21:04.000
+uh,
+
+21:04.000 --> 21:05.000
+so.
+
+21:05.000 --> 21:06.000
+uh,
+
+21:06.000 --> 21:07.000
+so,
+
+21:07.000 --> 21:08.000
+uh,
+
+21:08.000 --> 21:09.000
+uh.
+
+21:09.000 --> 21:10.000
+Uh,
+
+21:10.000 --> 21:11.000
+uh.
+
+21:11.000 --> 21:12.000
+Uh,
+
+21:12.000 --> 21:13.000
+uh.
+
+21:13.000 --> 21:14.000
+Uh,
+
+21:14.000 --> 21:15.000
+uh,
+
+21:15.000 --> 21:16.000
+uh,
+
+21:16.000 --> 21:17.000
+uh,
+
+21:17.000 --> 21:18.000
+uh,
+
+21:18.680 --> 21:19.680
+so.
+
+21:19.680 --> 21:20.680
+Uh,
+
+21:20.680 --> 21:21.680
+uh.
+
+21:21.680 --> 21:22.680
+So,
+
+21:22.680 --> 21:23.680
+uh.
+
+21:23.680 --> 21:24.680
+So,
+
+21:24.680 --> 21:25.680
+uh.
+
+21:25.680 --> 21:26.680
+So.
+
+21:26.680 --> 21:27.680
+Uh,
+
+21:27.680 --> 21:28.680
+uh.
+
+21:28.680 --> 21:29.680
+Uh,
+
+21:29.680 --> 21:30.680
+so.
+
+21:30.680 --> 21:31.680
+Uh,
+
+21:31.680 --> 21:32.880
+so.
+
+21:32.880 --> 21:33.880
+Uh,
+
+21:33.880 --> 21:34.880
+so.
+
+21:34.880 --> 21:35.880
+Uh,
+
+21:35.880 --> 21:36.880
+so.
+
+21:36.880 --> 21:37.880
+Uh,
+
+21:37.880 --> 21:38.880
+so.
+
+21:38.880 --> 21:39.880
+Yeah.
+
+21:39.880 --> 21:40.880
+So,
+
+21:40.880 --> 21:41.880
+so.
+
+21:41.880 --> 21:42.880
+So,
+
+21:42.880 --> 21:43.880
+uh,
+
+21:43.880 --> 21:44.880
+so,
+
+21:44.880 --> 21:45.880
+uh,
+
+21:45.880 --> 21:46.880
+so.
+
+21:46.880 --> 21:47.880
+Um,
+
+21:47.880 --> 21:48.880
+So,
+
+21:48.880 --> 21:49.880
+um,
+
+21:49.880 --> 21:50.880
+so.
+
+21:50.880 --> 21:51.880
+Um,
+
+21:51.880 --> 21:52.880
+so.
+
+21:52.880 --> 21:53.880
+Um,
+
+21:53.880 --> 21:54.880
+so.
+
+21:54.880 --> 21:55.880
+Um,
+
+21:55.880 --> 21:56.880
+so.
+
+21:56.880 --> 21:57.880
+Uh,
+
+21:57.880 --> 21:58.880
+so.
+
+21:58.880 --> 21:59.880
+So,
+
+21:59.880 --> 22:00.880
+so.
+
+22:00.880 --> 22:01.880
+Uh,
+
+22:01.880 --> 22:02.880
+so.
+
+22:02.880 --> 22:03.880
+Um,
+
+22:03.880 --> 22:04.880
+so.
+
+22:04.880 --> 22:05.880
+Um,
+
+22:05.880 --> 22:06.880
+so.
+
+22:06.880 --> 22:07.880
+Uh,
+
+22:07.880 --> 22:08.880
+so.
+
+22:08.880 --> 22:09.880
+Um,
+
+22:09.880 --> 22:10.880
+so.
+
+22:10.880 --> 22:11.880
+So,
+
+22:11.880 --> 22:12.880
+so.
+
+22:12.880 --> 22:13.880
+Um,
+
+22:13.880 --> 22:14.880
+so.
+
+22:14.880 --> 22:15.880
+Um.
+
+22:15.880 --> 22:16.880
+So.
+
+22:16.960 --> 22:17.960
+So.
+
+22:17.960 --> 22:18.960
+Um,
+
+22:18.960 --> 22:19.960
+so.
+
+22:19.960 --> 22:20.960
+Um.
+
+22:20.960 --> 22:21.960
+So.
+
+22:21.960 --> 22:22.960
+So.
+
+22:22.960 --> 22:23.960
+So.
+
+22:23.960 --> 22:24.960
+So.
+
+22:24.960 --> 22:25.960
+So.
+
+22:25.960 --> 22:26.960
+So.
+
+22:26.960 --> 22:27.960
+So.
+
+22:27.960 --> 22:28.960
+So.
+
+22:28.960 --> 22:29.960
+Um.
+
+22:29.960 --> 22:30.960
+So.
+
+22:30.960 --> 22:31.960
+So.
+
+22:31.960 --> 22:32.960
+So.
+
+22:32.960 --> 22:33.960
+Um.
+
+22:33.960 --> 22:34.960
+So.
+
+22:34.960 --> 22:35.960
+Um.
+
+22:35.960 --> 22:36.960
+So.
+
+22:36.960 --> 22:37.960
+Um.
+
+22:37.960 --> 22:38.960
+So.
+
+22:38.960 --> 22:39.960
+So.
+
+22:39.960 --> 22:40.960
+Um.
+
+22:40.960 --> 22:41.960
+Um.
+
+22:41.960 --> 22:42.960
+So.
+
+22:42.960 --> 22:43.960
+So.
+
+22:43.960 --> 22:44.960
+So.
+
+22:44.960 --> 22:45.960
+So.
+
+22:45.960 --> 22:46.960
+Uh.
+
+22:46.960 --> 22:47.960
+So.
+
+22:47.960 --> 22:48.960
+So'.
+
+22:48.960 --> 22:49.960
+So.
+
+22:49.960 --> 22:50.960
+So.
+
+22:50.960 --> 22:51.960
+So.
+
+22:51.960 --> 22:52.960
+So.
+
+22:52.960 --> 22:53.960
+So.
+
+22:53.960 --> 22:54.960
+So.
+
+22:54.960 --> 22:55.960
+So.
+
+22:55.960 --> 22:56.960
+So.
+
+22:56.960 --> 22:57.960
+So.
+
+22:57.960 --> 22:58.960
+Um.
+
+22:58.960 --> 22:59.960
+So.
+
+22:59.960 --> 23:00.960
+Um.
+
+23:00.960 --> 23:01.960
+So.
+
+23:01.960 --> 23:02.960
+Um.
+
+23:02.960 --> 23:03.960
+So.
+
+23:03.960 --> 23:04.960
+So.
+
+23:04.960 --> 23:05.960
+So.
+
+23:05.960 --> 23:06.960
+So.
+
+23:06.960 --> 23:07.960
+So.
+
+23:07.960 --> 23:08.960
+So.
+
+23:08.960 --> 23:09.960
+So.
+
+23:09.960 --> 23:10.960
+So.
+
+23:10.960 --> 23:11.960
+So.
+
+23:11.960 --> 23:12.960
+So.
+
+23:12.960 --> 23:13.960
+So.
+
+23:13.960 --> 23:14.960
+So.
+
+23:15.960 --> 23:16.960
+So.
+
+23:16.960 --> 23:17.960
+So.
+
+23:17.960 --> 23:18.960
+So.
+
+23:18.960 --> 23:19.960
+So.
+
+23:20.880 --> 23:21.880
+So.
+
+23:21.880 --> 23:22.880
+So.
+
+23:22.880 --> 23:23.880
+So.
+
+23:23.880 --> 23:24.880
+So.
+
+23:24.880 --> 23:25.880
+So.
+
+23:25.880 --> 23:26.880
+So.
+
+23:26.880 --> 23:29.880
+So.
+
+23:29.880 --> 23:30.880
+So.
+
+23:30.980 --> 23:31.980
+So.
+
+23:31.980 --> 23:32.980
+So.
+
+23:37.980 --> 23:38.980
+So,
+
+23:38.980 --> 23:44.980
+So.
+
+23:45.980 --> 23:46.980
+So.
+
+23:47.980 --> 23:50.000
+So.
+
+23:50.000 --> 23:53.000
+So.
+
+23:53.000 --> 23:54.000
+So.
+
+23:54.000 --> 23:55.000
+So.
+
+23:55.000 --> 23:56.000
+So.
+
+23:56.000 --> 23:57.000
+So.
+
+23:57.000 --> 23:58.000
+So.
+
+23:58.000 --> 23:59.000
+So.
+
+24:01.000 --> 24:02.000
+So.
+
+24:02.000 --> 24:03.000
+So.
+
+24:03.000 --> 24:04.000
+So.
+
+24:04.000 --> 24:05.000
+So.
+
+24:05.000 --> 24:06.000
+So.
+
+24:06.000 --> 24:07.000
+So.
+
+24:07.000 --> 24:08.000
+So.
+
+24:08.000 --> 24:09.000
+So.
+
+24:09.000 --> 24:10.000
+So.
+
+24:10.000 --> 24:11.000
+So.
+
+24:11.000 --> 24:12.000
+So.
+
+24:12.000 --> 24:13.000
+So.
+
+24:13.000 --> 24:14.000
+So.
+
+24:14.000 --> 24:15.000
+So.
+
+24:15.000 --> 24:16.000
+So.
+
+24:46.020 --> 24:48.020
+So.
+
+24:48.020 --> 24:49.020
+So.
+
+24:49.020 --> 24:51.020
+So.
+
+24:51.020 --> 24:52.020
+So.
+
+24:52.020 --> 24:53.020
+So.
+
+24:53.020 --> 24:54.020
+So.
+
+24:54.020 --> 24:55.020
+So.
+
+24:55.020 --> 24:56.020
+So.
+
+24:56.020 --> 24:57.020
+So.
+
+24:57.020 --> 24:58.020
+So.
+
+24:58.020 --> 24:59.020
+So.
+
+24:59.020 --> 25:00.020
+So.
+
+25:00.020 --> 25:01.020
+So.
+
+25:01.020 --> 25:02.020
+So.
+
+25:02.020 --> 25:03.020
+So.
+
+25:03.020 --> 25:04.020
+So.
+
+25:04.020 --> 25:05.020
+So.
+
+25:05.020 --> 25:06.020
+So.
+
+25:06.020 --> 25:07.020
+So.
+
+25:07.020 --> 25:08.020
+So.
+
+25:08.020 --> 25:10.020
+So.
+
+25:10.020 --> 25:11.020
+So.
+
+25:11.020 --> 25:13.020
+So.
+
+25:13.020 --> 25:15.020
+So.
+
+25:15.020 --> 25:16.020
+So.
+
+25:16.020 --> 25:17.020
+So.
+
+25:17.020 --> 25:18.020
+So.
+
+25:18.020 --> 25:19.020
+So.
+
+25:19.020 --> 25:20.020
+So.
+
+25:20.020 --> 25:21.020
+So.
+
+25:21.020 --> 25:22.020
+So.
+
+25:22.020 --> 25:23.020
+So.
+
+25:23.020 --> 25:24.020
+So.
+
+25:24.020 --> 25:25.020
+So.
+
+25:25.020 --> 25:26.020
+So.
+
+25:26.020 --> 25:27.020
+So.
+
+25:28.020 --> 25:29.020
+So.
+
+25:29.020 --> 25:30.020
+So.
+
+25:30.020 --> 25:31.020
+So.
+
+25:31.020 --> 25:32.020
+So.
+
+25:32.020 --> 25:33.020
+So.
+
+25:33.020 --> 25:34.020
+So.
+
+25:34.020 --> 25:35.020
+So.
+
+25:35.020 --> 25:36.020
+So.
+
+25:36.020 --> 25:37.020
+So.
+
+25:37.020 --> 25:38.020
+So.
+
+25:38.020 --> 25:39.020
+So.
+
+25:39.020 --> 25:40.020
+So.
+
+25:40.020 --> 25:41.020
+So.
+
+25:43.020 --> 25:44.020
+So.
+
+25:50.020 --> 25:51.020
+So.
+
+25:55.020 --> 25:56.020
+So.
+
+25:56.020 --> 25:57.020
+So.
+
+26:00.020 --> 26:01.020
+So.
+
+26:01.020 --> 26:04.020
+So.
+
+26:04.020 --> 26:05.020
+So.
+
+26:05.020 --> 26:06.020
+So.
+
+26:07.020 --> 26:08.020
+So.
+
+26:16.020 --> 26:17.020
+So.
+
+26:18.020 --> 26:19.020
+So.
+
+26:19.020 --> 26:20.020
+So.
+
+26:22.020 --> 26:23.020
+So.
+
+26:23.020 --> 26:26.020
+So.
+
+26:26.020 --> 26:27.020
+So.
+
+26:28.020 --> 26:29.020
+So.
+
+26:33.020 --> 26:34.020
+So.
+
+26:34.020 --> 26:35.020
+So.
+
+26:35.020 --> 26:36.020
+So.
+
+26:42.020 --> 26:43.020
+So.
+
+26:44.020 --> 26:45.020
+So.
+
+26:45.020 --> 26:46.020
+So.
+
+26:49.020 --> 26:50.020
+So.
+
+26:56.020 --> 26:57.020
+So Self Disclosed Information.
+
+26:58.020 --> 26:59.020
+So.
+
+27:08.020 --> 27:09.020
+So.
+
+27:09.020 --> 27:10.020
+So.
+
+27:11.020 --> 27:12.020
+So.
+
+27:18.020 --> 27:19.020
+So.
+
+27:21.020 --> 27:22.020
+So.
+
+27:25.020 --> 27:26.020
+So.
+
+27:29.020 --> 27:30.020
+So.
+
+27:32.020 --> 27:33.020
+So.
+
+27:37.020 --> 27:38.020
+So.
+
+27:40.020 --> 27:43.020
+Security bridge.
+
+27:46.020 --> 27:47.020
+Dark web.
+
+27:52.020 --> 27:53.020
+Roberts University.
+
+27:55.020 --> 27:56.020
+Dark out.
+
+28:02.020 --> 28:03.020
+FBI Department of Justice.
+
+28:06.020 --> 28:07.020
+Dark web.
+
+28:11.020 --> 28:12.020
+Surface web.
+
+28:16.020 --> 28:17.020
+Iceberg.
+
+28:25.020 --> 28:26.020
+Deep web.
+
+28:33.020 --> 28:34.020
+Authentication.
+
+28:35.020 --> 28:36.020
+Intranet.
+
+28:48.020 --> 28:49.020
+Login.
+
+28:51.020 --> 28:52.020
+Online banking.
+
+28:57.020 --> 28:58.020
+Medical information.
+
+29:05.020 --> 29:06.020
+Hidden place.
+
+29:14.020 --> 29:15.020
+Deep web.
+
+29:27.020 --> 29:28.020
+Tor.
+
+29:29.020 --> 29:30.020
+Configuration.
+
+29:35.020 --> 29:36.020
+Control.
+
+29:50.020 --> 29:51.020
+Censorship.
+
+30:00.020 --> 30:01.020
+Drug dealer.
+
+30:05.020 --> 30:06.020
+Hacker.
+
+30:10.020 --> 30:11.020
+Hacked out information.
+
+30:16.020 --> 30:17.020
+Illegal activity.
+
+30:21.020 --> 30:22.020
+Dark web.
+
+30:23.020 --> 30:24.020
+All.
+
+30:39.020 --> 30:40.020
+Equifax bridge.
+
+30:48.020 --> 30:49.020
+Equifax data bridge.
+
+30:52.020 --> 30:53.020
+Equifax data bridge.
+
+31:07.020 --> 31:08.020
+Equifax information leak.
+
+31:17.020 --> 31:18.020
+Equifax.
+
+31:22.020 --> 31:23.020
+Equifax.
+
+31:23.020 --> 31:24.020
+Experian TransUnion.
+
+31:28.020 --> 31:29.020
+Co-leakage.
+
+31:41.020 --> 31:42.020
+Data broker.
+
+31:47.020 --> 31:48.020
+Data bridge.
+
+31:52.020 --> 31:53.020
+Analysis.
+
+31:56.020 --> 31:57.020
+Private.
+
+32:06.020 --> 32:07.020
+Characteristics.
+
+32:14.020 --> 32:15.020
+Competitor.
+
+32:23.020 --> 32:24.020
+Dark web.
+
+32:34.020 --> 32:35.020
+Information leakage.
+
+32:42.020 --> 32:43.020
+No.
+
+32:53.020 --> 32:54.020
+Self-selection.
+
+32:58.020 --> 32:59.020
+Security measure.
+
+33:01.020 --> 33:02.020
+Transparent.
+
+33:10.020 --> 33:11.020
+Shared.
+
+33:22.020 --> 33:23.020
+Disclosure.
+
+33:24.020 --> 33:25.020
+Privacy statement.
+
+33:32.020 --> 33:33.020
+Data broker.
+
+33:36.020 --> 33:37.020
+Data broker A.
+
+33:38.020 --> 33:39.020
+80%.
+
+33:44.020 --> 33:45.020
+Information leak.
+
+33:52.020 --> 33:53.020
+Dark web.
+
+34:03.020 --> 34:04.020
+Leakage.
+
+34:08.020 --> 34:09.020
+Unique data set.
+
+34:11.020 --> 34:12.020
+Information leakage.
+
+34:20.020 --> 34:21.020
+Security bridge.
+
+34:27.020 --> 34:28.020
+Data uniqueness.
+
+34:31.020 --> 34:32.020
+Unique.
+
+34:38.020 --> 34:39.020
+Unique data set.
+
+34:50.020 --> 34:51.020
+Profile.
+
+34:53.020 --> 34:54.020
+Unique.
+
+35:05.020 --> 35:06.020
+Conclusion.
+
+35:08.020 --> 35:10.020
+This research is actually very rough.
+
+35:10.020 --> 35:12.020
+That's actually an ongoing project.
+
+35:12.020 --> 35:14.020
+Actually, we've always wanted to keep going.
+
+35:14.020 --> 35:18.020
+The focus of our presentation today is actually that we want to
+
+35:18.020 --> 35:21.020
+improve everyone's awareness of data brokers.
+
+35:21.020 --> 35:24.020
+Or I hope to encourage everyone to say that if you are interested,
+
+35:24.020 --> 35:26.020
+you can join this project.
+
+35:26.020 --> 35:30.020
+So we can think about how we can do it.
+
+35:30.020 --> 35:34.020
+Uh, more accurately or more effectively.
+
+35:35.020 --> 35:36.020
+Data collection.
+
+35:37.020 --> 35:38.020
+Sharing the practices.
+
+35:43.020 --> 35:44.020
+Privacy protection.
+
+35:51.020 --> 35:52.020
+Privacy regulation.
+
+35:57.020 --> 35:58.020
+Law-related.
+
+35:58.020 --> 35:59.020
+Regulation-related.
+
+36:05.020 --> 36:06.020
+Transparency.
+
+36:12.020 --> 36:13.020
+Transparency.
+
+36:18.020 --> 36:19.020
+Talk.
+
+36:24.020 --> 36:25.020
+Stop sharing.
+
+36:35.020 --> 36:36.020
+No problem.
+
+36:37.020 --> 36:38.020
+Very clear.
+
+36:48.020 --> 36:51.020
+I just want to think about it.
+
+36:51.020 --> 36:56.020
+I don't know much about this, but I think it's a very important issue.
+
+36:56.020 --> 36:59.020
+I want to share with you.
+
+37:00.020 --> 37:03.020
+How do you protect your own data?
+
+37:03.020 --> 37:06.020
+For example, because every website you use now has cookies.
+
+37:06.020 --> 37:08.020
+Then you have to accept or reject.
+
+37:08.020 --> 37:11.020
+Then there's something we can do to protect it.
+
+37:11.020 --> 37:13.020
+Or it's already too late.
+
+37:13.020 --> 37:16.020
+Our profile is already known to everyone.
+
+37:16.020 --> 37:19.020
+We found that most of the data is already out there.
+
+37:19.020 --> 37:21.020
+So we have to protect it.
+
+37:21.020 --> 37:23.020
+We have to protect it.
+
+37:23.020 --> 37:25.020
+We have to protect it.
+
+37:25.020 --> 37:27.020
+We have to protect it.
+
+37:27.020 --> 37:29.020
+So most of the data is already out there.
+
+37:29.020 --> 37:32.020
+And then I'm trying something now.
+
+37:32.020 --> 37:34.020
+It's a cookie on the website.
+
+37:34.020 --> 37:37.020
+For example, I'm connected to Wall Street Journal today.
+
+37:37.020 --> 37:38.020
+I'm connected to Amazon today.
+
+37:38.020 --> 37:39.020
+What's behind it?
+
+37:39.020 --> 37:42.020
+Collecting our data or activity.
+
+37:42.020 --> 37:45.020
+Uh, we found that actually.
+
+37:45.020 --> 37:48.020
+I can't control it in the middle of an upper bound and lower bound.
+
+37:48.020 --> 37:50.020
+Upper bound is to say.
+
+37:50.020 --> 37:52.020
+Uh, I'm Google today.
+
+37:52.020 --> 37:54.020
+In the situation of signing in.
+
+37:54.020 --> 37:56.020
+So Chrome knows who I am.
+
+37:56.020 --> 37:58.020
+In that case,
+
+37:58.020 --> 38:00.020
+In fact, they collect a lot of data.
+
+38:00.020 --> 38:02.020
+It's pretty amazing.
+
+38:02.020 --> 38:05.020
+But if I'm not logged in at all.
+
+38:05.020 --> 38:08.020
+My browser is open again in private mode.
+
+38:08.020 --> 38:10.020
+That can be limited to the amount.
+
+38:10.020 --> 38:12.020
+It's a lot worse.
+
+38:12.020 --> 38:13.020
+So that's another way.
+
+38:13.020 --> 38:15.020
+Just try to close it.
+
+38:15.020 --> 38:16.020
+No way.
+
+38:16.020 --> 38:19.020
+There are some cookies that are actually more troublesome.
+
+38:19.020 --> 38:21.020
+Uh.
+
+38:21.020 --> 38:22.020
+Although he told you,
+
+38:22.020 --> 38:23.020
+Do you want to accept it?
+
+38:23.020 --> 38:25.020
+But in fact, whether you accept it or not.
+
+38:25.020 --> 38:26.020
+That's the way it is.
+
+38:26.020 --> 38:28.020
+You can't see any effect.
+
+38:28.020 --> 38:31.020
+There are some websites that can make you willing to let you choose.
+
+38:31.020 --> 38:33.020
+Uh, different cookies.
+
+38:33.020 --> 38:34.020
+At that time, there was.
+
+38:34.020 --> 38:35.020
+But some of them can't be turned off.
+
+38:35.020 --> 38:37.020
+Because he has to know who you are.
+
+38:37.020 --> 38:39.020
+Otherwise, you can't browse the website.
+
+38:39.020 --> 38:41.020
+Yeah, so, uh.
+
+38:41.020 --> 38:42.020
+There are still some restrictions.
+
+38:42.020 --> 38:44.020
+Yeah, but, uh.
+
+38:44.020 --> 38:46.020
+You'll know that they've actually collected a lot of data.
+
+38:46.020 --> 38:48.020
+In fact, you probably know who we are.
+
+38:48.020 --> 38:50.020
+What are we doing?
+
+38:50.020 --> 38:52.020
+Um.
+
+38:52.020 --> 38:54.020
+Yeah, that's terrible.
+
+38:54.020 --> 38:56.020
+Yeah, well, uh.
+
+38:56.020 --> 38:58.020
+I have another one with a computer science.
+
+38:58.020 --> 38:59.020
+Before doing it.
+
+38:59.020 --> 39:02.020
+We can actually use it.
+
+39:02.020 --> 39:05.020
+Posts on social media.
+
+39:05.020 --> 39:07.020
+We have a way to predict, uh.
+
+39:07.020 --> 39:10.020
+Buying clothes or buying accessories.
+
+39:10.020 --> 39:11.020
+Preference.
+
+39:11.020 --> 39:13.020
+And then there's that.
+
+39:13.020 --> 39:14.020
+We can know that.
+
+39:14.020 --> 39:16.020
+What kind of clothes do you like to wear next season?
+
+39:16.020 --> 39:17.020
+Color, brand.
+
+39:17.020 --> 39:21.020
+And that prediction accuracy rate is probably over 90%.
+
+39:21.020 --> 39:24.020
+That, uh, that's a lot of trouble.
+
+39:24.020 --> 39:25.020
+It's just that we do it ourselves.
+
+39:25.020 --> 39:26.020
+It's just that we collect it ourselves.
+
+39:26.020 --> 39:27.020
+We have a very small part of the data.
+
+39:27.020 --> 39:29.020
+We can do it so well.
+
+39:29.020 --> 39:30.020
+You can tell that they're going to do it.
+
+39:30.020 --> 39:33.020
+It's actually easier.
+
+39:33.020 --> 39:35.020
+Then you would think.
+
+39:35.020 --> 39:38.020
+Try not to post your own.
+
+39:38.020 --> 39:40.020
+Too many personal things.
+
+39:40.020 --> 39:42.020
+Or preferences or something.
+
+39:42.020 --> 39:43.020
+But I think.
+
+39:43.020 --> 39:45.020
+We still have a question.
+
+39:45.020 --> 39:46.020
+I think so.
+
+39:46.020 --> 39:48.020
+This is a preference.
+
+39:48.020 --> 39:49.020
+Uh.
+
+39:49.020 --> 39:51.020
+Uh, if we don't share this information.
+
+39:51.020 --> 39:55.020
+We can't have those customized services.
+
+39:55.020 --> 39:57.020
+Our search will be very bad.
+
+39:57.020 --> 39:59.020
+Uh, it's almost not what you want.
+
+39:59.020 --> 40:01.020
+Yeah, so if we want.
+
+40:01.020 --> 40:03.020
+You can't do anything about the specific service.
+
+40:03.020 --> 40:04.020
+You have to write, right?
+
+40:04.020 --> 40:06.020
+But this is actually a preference.
+
+40:06.020 --> 40:08.020
+So I'm talking about what they said to Google before.
+
+40:08.020 --> 40:10.020
+That's more accurate.
+
+40:10.020 --> 40:12.020
+What is your privacy?
+
+40:12.020 --> 40:14.020
+It's your own decision.
+
+40:14.020 --> 40:15.020
+It's actually from 0 to 100.
+
+40:15.020 --> 40:17.020
+How much do I want to share?
+
+40:17.020 --> 40:19.020
+It depends on what you like.
+
+40:19.020 --> 40:21.020
+It's not necessarily a bad thing.
+
+40:21.020 --> 40:23.020
+Then we have a question.
+
+40:23.020 --> 40:25.020
+Uh.
+
+40:25.020 --> 40:27.020
+You are me.
+
+40:27.020 --> 40:29.020
+My name is Chen Peiying.
+
+40:29.020 --> 40:31.020
+I am now at Indiana University.
+
+40:31.020 --> 40:33.020
+Read information science.
+
+40:33.020 --> 40:35.020
+Although I don't do data privacy related issues.
+
+40:35.020 --> 40:37.020
+But because this is very popular now.
+
+40:37.020 --> 40:39.020
+So I just wanted to say.
+
+40:39.020 --> 40:40.020
+Let's listen to the speech.
+
+40:40.020 --> 40:42.020
+I think there are a lot of gains.
+
+40:42.020 --> 40:44.020
+Especially this kind of data broker role.
+
+40:44.020 --> 40:46.020
+At least in our field.
+
+40:46.020 --> 40:48.020
+This kind of investment information related area.
+
+40:48.020 --> 40:50.020
+In fact, it is less mentioned.
+
+40:50.020 --> 40:52.020
+Everyone is basically targeting a single website.
+
+40:52.020 --> 40:54.020
+This kind of.
+
+40:54.020 --> 40:56.020
+Uh.
+
+40:56.020 --> 40:58.020
+Data privacy is being discussed.
+
+40:58.020 --> 41:00.020
+So my question is, since this is a data broker.
+
+41:00.020 --> 41:02.020
+Um.
+
+41:02.020 --> 41:04.020
+How do you say they are very critical?
+
+41:04.020 --> 41:06.020
+They have so much data on their hands.
+
+41:06.020 --> 41:08.020
+Why would they let their own data so easily?
+
+41:08.020 --> 41:10.020
+Give it out.
+
+41:10.020 --> 41:12.020
+Just their own privacy.
+
+41:12.020 --> 41:14.020
+Their own privacy.
+
+41:14.020 --> 41:16.020
+Their data security.
+
+41:16.020 --> 41:18.020
+And because once they are leaked.
+
+41:18.020 --> 41:20.020
+Just assume that I am a.
+
+41:20.020 --> 41:22.020
+I have that data set.
+
+41:22.020 --> 41:24.020
+But I was harmed.
+
+41:24.020 --> 41:26.020
+This information is somehow.
+
+41:26.020 --> 41:28.020
+It is available on the website.
+
+41:28.020 --> 41:30.020
+Yeah.
+
+41:30.020 --> 41:32.020
+Isn't he supposed to prevent this from happening?
+
+41:32.020 --> 41:34.020
+Yeah.
+
+41:34.020 --> 41:36.020
+So we think it's very.
+
+41:36.020 --> 41:38.020
+This is the weirdest thing we think.
+
+41:38.020 --> 41:40.020
+And you see there are so many competitors.
+
+41:40.020 --> 41:42.020
+To say that this is actually a very.
+
+41:42.020 --> 41:44.020
+Profitable business.
+
+41:44.020 --> 41:46.020
+So there will be thousands of companies.
+
+41:46.020 --> 41:48.020
+In fact, doing this kind of thing.
+
+41:48.020 --> 41:50.020
+But their information is.
+
+41:50.020 --> 41:52.020
+Everyone has it.
+
+41:52.020 --> 41:54.020
+But he can still continue to sell.
+
+41:54.020 --> 41:56.020
+So why do we want to know more?
+
+41:56.020 --> 41:58.020
+What are they doing?
+
+41:58.020 --> 42:00.020
+And what happened?
+
+42:00.020 --> 42:02.020
+But the problem is that they are actually hidden players.
+
+42:02.020 --> 42:04.020
+That is.
+
+42:04.020 --> 42:06.020
+They don't even know who they are.
+
+42:06.020 --> 42:08.020
+Or the company name.
+
+42:08.020 --> 42:10.020
+It doesn't make sense.
+
+42:10.020 --> 42:12.020
+It's like a mess.
+
+42:12.020 --> 42:14.020
+It's like we're talking about it in class.
+
+42:14.020 --> 42:16.020
+So I can't find them at all.
+
+42:16.020 --> 42:18.020
+So if there are more people.
+
+42:18.020 --> 42:20.020
+You can jump in and find a way to know.
+
+42:20.020 --> 42:22.020
+Who are they?
+
+42:22.020 --> 42:24.020
+What are they doing?
+
+42:24.020 --> 42:26.020
+That would be very helpful.
+
+42:26.020 --> 42:28.020
+We would love to know.
+
+42:28.020 --> 42:30.020
+Because.
+
+42:30.020 --> 42:32.020
+That will have a lot of impact.
+
+42:32.020 --> 42:34.020
+Because, for example, Amazon or Google.
+
+42:34.020 --> 42:36.020
+They are actually sitting on a mountain of data.
+
+42:36.020 --> 42:38.020
+So if we can find their security.
+
+42:38.020 --> 42:40.020
+It would be very useful.
+
+42:40.020 --> 42:42.020
+Like Amazon, he actually.
+
+42:42.020 --> 42:44.020
+He put his report.
+
+42:44.020 --> 42:46.020
+It's their information system.
+
+42:46.020 --> 42:48.020
+The audit report of security control.
+
+42:48.020 --> 42:50.020
+It's all shared on the website.
+
+42:50.020 --> 42:52.020
+They are very confident that we are very good.
+
+42:52.020 --> 42:54.020
+But these people are actually.
+
+42:54.020 --> 42:56.020
+It's completely blank.
+
+42:58.020 --> 43:00.020
+For example, since they have registered.
+
+43:00.020 --> 43:02.020
+And then, although there is no URL.
+
+43:02.020 --> 43:04.020
+Will they at least provide one?
+
+43:04.020 --> 43:06.020
+Like a physical address.
+
+43:06.020 --> 43:08.020
+That is to say, my company is definitely open.
+
+43:08.020 --> 43:10.020
+In a place like this.
+
+43:10.020 --> 43:12.020
+They have a physical address.
+
+43:12.020 --> 43:14.020
+Like a registered address and a phone number.
+
+43:14.020 --> 43:16.020
+Is there any more.
+
+43:16.020 --> 43:18.020
+Is there a clear geographical distribution?
+
+43:18.020 --> 43:20.020
+Or is it actually.
+
+43:20.020 --> 43:22.020
+I don't think so.
+
+43:22.020 --> 43:24.020
+We can't see any.
+
+43:24.020 --> 43:26.020
+Specific phenomenon.
+
+43:26.020 --> 43:28.020
+Because they collect data.
+
+43:28.020 --> 43:30.020
+In fact, there is no limit to a specific.
+
+43:30.020 --> 43:32.020
+State or something.
+
+43:32.020 --> 43:34.020
+Because for example.
+
+43:34.020 --> 43:36.020
+Because after all, you can pass it on.
+
+43:36.020 --> 43:38.020
+To another server.
+
+43:38.020 --> 43:40.020
+Because I know they will have some distribution.
+
+43:40.020 --> 43:42.020
+For example, I need this.
+
+43:42.020 --> 43:44.020
+I remember it seems to be Google and Amazon.
+
+43:44.020 --> 43:46.020
+They have to find that kind of resource.
+
+43:46.020 --> 43:48.020
+All kinds of natural resources.
+
+43:48.020 --> 43:50.020
+Very rich place.
+
+43:50.020 --> 43:52.020
+I want to have enough electricity and water.
+
+43:52.020 --> 43:54.020
+I want to make sure he has a power outage.
+
+43:54.020 --> 43:56.020
+Very warm.
+
+43:56.020 --> 43:58.020
+But these things are actually.
+
+43:58.020 --> 44:00.020
+It's not a company.
+
+44:00.020 --> 44:02.020
+It's not their physical address.
+
+44:02.020 --> 44:04.020
+Must be.
+
+44:04.020 --> 44:06.020
+Not necessarily related.
+
+44:06.020 --> 44:08.020
+Their company may be very small.
+
+44:08.020 --> 44:10.020
+Because they are actually not sitting in the office at all.
+
+44:10.020 --> 44:12.020
+Those people.
+
+44:12.020 --> 44:14.020
+That's right.
+
+44:14.020 --> 44:16.020
+I was talking about this before.
+
+44:16.020 --> 44:18.020
+Someone said that we have no way to know.
+
+44:18.020 --> 44:20.020
+Who is the European data broker?
+
+44:20.020 --> 44:22.020
+Because of the GDPR.
+
+44:22.020 --> 44:24.020
+The privacy law.
+
+44:24.020 --> 44:26.020
+His control should be stricter.
+
+44:26.020 --> 44:28.020
+So if we can find them.
+
+44:28.020 --> 44:30.020
+Maybe they have more information.
+
+44:30.020 --> 44:32.020
+It's easier to know what they're doing.
+
+44:32.020 --> 44:34.020
+But I still don't know.
+
+44:34.020 --> 44:36.020
+That's our data source.
+
+44:36.020 --> 44:38.020
+Where to find it.
+
+44:38.020 --> 44:40.020
+In fact, we don't know yet.
+
+44:40.020 --> 44:42.020
+So this is interesting.
+
+44:42.020 --> 44:44.020
+We think this is really like research.
+
+44:44.020 --> 44:46.020
+I don't know what I'm doing.
+
+44:48.020 --> 44:50.020
+I think it's a very interesting relationship.
+
+44:50.020 --> 44:52.020
+Because like you said.
+
+44:52.020 --> 44:54.020
+It's a school hire.
+
+44:54.020 --> 44:56.020
+He's still looking for these companies.
+
+44:56.020 --> 44:58.020
+He's using your background.
+
+44:58.020 --> 45:00.020
+To make a background check.
+
+45:00.020 --> 45:02.020
+So I think there's some information hidden in it.
+
+45:02.020 --> 45:04.020
+It's not right.
+
+45:04.020 --> 45:06.020
+You said the school information office.
+
+45:06.020 --> 45:08.020
+Why don't you find someone to find it directly?
+
+45:08.020 --> 45:10.020
+Maybe you can find it.
+
+45:10.020 --> 45:12.020
+But it may be based on various cost considerations.
+
+45:12.020 --> 45:14.020
+We just have to sell your information to these companies.
+
+45:14.020 --> 45:16.020
+So there is a.
+
+45:16.020 --> 45:18.020
+There is no mutual benefit.
+
+45:18.020 --> 45:20.020
+But I think there is a relationship between the two.
+
+45:20.020 --> 45:22.020
+Why are these people.
+
+45:22.020 --> 45:24.020
+Although we think they are doing something.
+
+45:24.020 --> 45:26.020
+But in fact.
+
+45:26.020 --> 45:28.020
+You probably.
+
+45:28.020 --> 45:30.020
+Because it's a school.
+
+45:30.020 --> 45:32.020
+He still relies on.
+
+45:32.020 --> 45:34.020
+Relying on these brokers.
+
+45:34.020 --> 45:36.020
+To provide some information.
+
+45:36.020 --> 45:38.020
+That's like a financial institution.
+
+45:38.020 --> 45:40.020
+We go to apply.
+
+45:40.020 --> 45:42.020
+For example, mortgages.
+
+45:42.020 --> 45:44.020
+He is also exchanging information with these people.
+
+45:44.020 --> 45:46.020
+To confirm our.
+
+45:46.020 --> 45:48.020
+Are we giving the right thing?
+
+45:48.020 --> 45:50.020
+It's just that this side is more compliant.
+
+45:50.020 --> 45:52.020
+This side is more highly regulated.
+
+45:52.020 --> 45:54.020
+For example, there is something called.
+
+45:54.020 --> 45:56.020
+Fair Credit Act.
+
+45:56.020 --> 45:58.020
+Something like this.
+
+45:58.020 --> 46:00.020
+We can review our credit score.
+
+46:00.020 --> 46:02.020
+In case something is wrong, we can ask him to change it.
+
+46:02.020 --> 46:04.020
+There is.
+
+46:04.020 --> 46:06.020
+But like other data brokers.
+
+46:06.020 --> 46:08.020
+If his information is wrong.
+
+46:08.020 --> 46:10.020
+In fact, we don't know where his information is wrong.
+
+46:10.020 --> 46:12.020
+Or where is it wrong?
+
+46:12.020 --> 46:14.020
+If people use this to verify.
+
+46:14.020 --> 46:16.020
+Who are we?
+
+46:16.020 --> 46:18.020
+In case it's all different.
+
+46:18.020 --> 46:20.020
+Then the problem is big.
+
+46:20.020 --> 46:22.020
+Another question is.
+
+46:22.020 --> 46:24.020
+There are so many competitors.
+
+46:24.020 --> 46:26.020
+Their niche.
+
+46:26.020 --> 46:28.020
+What is their selling point?
+
+46:28.020 --> 46:30.020
+I can only think of it now.
+
+46:30.020 --> 46:32.020
+It's just that you use some wrong information.
+
+46:32.020 --> 46:34.020
+To earn that kind of benefit.
+
+46:34.020 --> 46:36.020
+Because if I know there is a company.
+
+46:36.020 --> 46:38.020
+Can provide more.
+
+46:38.020 --> 46:40.020
+What is the so-called more accurate?
+
+46:40.020 --> 46:42.020
+How to define it?
+
+46:42.020 --> 46:44.020
+Right.
+
+46:44.020 --> 46:46.020
+Or whose model is better?
+
+46:46.020 --> 46:48.020
+Or who has it?
+
+46:48.020 --> 46:50.020
+But there should be some data brokers.
+
+46:50.020 --> 46:52.020
+There is really some very special information.
+
+46:52.020 --> 46:54.020
+No one else.
+
+46:54.020 --> 46:56.020
+They never sell it.
+
+46:56.020 --> 46:58.020
+Because I think that's the competitive advantage.
+
+46:58.020 --> 47:00.020
+Some of you really don't have it.
+
+47:00.020 --> 47:02.020
+So they are not selling real data.
+
+47:02.020 --> 47:04.020
+They are not saying that I will provide you.
+
+47:04.020 --> 47:06.020
+All the scores of this person.
+
+47:06.020 --> 47:08.020
+I sell it to you based on our model.
+
+47:08.020 --> 47:10.020
+The preferences of these customers.
+
+47:10.020 --> 47:12.020
+Both have.
+
+47:12.020 --> 47:14.020
+Like if it's that kind.
+
+47:14.020 --> 47:16.020
+Fraud detection.
+
+47:16.020 --> 47:18.020
+That is.
+
+47:18.020 --> 47:20.020
+I sell data to you.
+
+47:20.020 --> 47:22.020
+For example, how much is the annual income of this person?
+
+47:22.020 --> 47:24.020
+Where does he live?
+
+47:24.020 --> 47:26.020
+That kind is sold one by one.
+
+47:26.020 --> 47:28.020
+If it's marketing.
+
+47:28.020 --> 47:30.020
+I just sell the model.
+
+47:30.020 --> 47:32.020
+Ok.
+
+47:32.020 --> 47:34.020
+Maybe I can only be sure.
+
+47:34.020 --> 47:36.020
+These people.
+
+47:36.020 --> 47:38.020
+That is.
+
+47:38.020 --> 47:40.020
+Their employees may be quite smart.
+
+47:42.020 --> 47:44.020
+It may all be automated.
+
+47:44.020 --> 47:46.020
+YouTube is the same.
+
+47:46.020 --> 47:48.020
+In fact, all processes are automatic.
+
+47:48.020 --> 47:50.020
+But it's still the same.
+
+47:50.020 --> 47:52.020
+Just like FTC said.
+
+47:52.020 --> 47:54.020
+What are they doing?
+
+47:54.020 --> 47:56.020
+In fact, no one still knows.
+
+47:56.020 --> 47:58.020
+Even though everyone keeps talking about it.
+
+47:58.020 --> 48:00.020
+But there is no information.
+
+48:00.020 --> 48:02.020
+Too mysterious.
+
+48:02.020 --> 48:04.020
+I hope there is a legal expert.
+
+48:04.020 --> 48:06.020
+Can answer.
+
+48:06.020 --> 48:08.020
+They are on the law.
+
+48:08.020 --> 48:10.020
+Is there no regulation?
+
+48:10.020 --> 48:12.020
+I have a student.
+
+48:12.020 --> 48:14.020
+I told him.
+
+48:14.020 --> 48:16.020
+Hey, you next.
+
+48:16.020 --> 48:18.020
+When the next assembly.
+
+48:18.020 --> 48:20.020
+You mention this regulation.
+
+48:20.020 --> 48:22.020
+Control the data broker.
+
+48:22.020 --> 48:24.020
+Then he said yes.
+
+48:24.020 --> 48:26.020
+He thought about how to do it.
+
+48:26.020 --> 48:28.020
+Because before I told him.
+
+48:28.020 --> 48:30.020
+You know Illinois has a.
+
+48:30.020 --> 48:32.020
+AI interview act.
+
+48:32.020 --> 48:34.020
+That is, if you are using a machine to read.
+
+48:34.020 --> 48:36.020
+Job applicants interview video.
+
+48:36.020 --> 48:38.020
+You have to disclose.
+
+48:38.020 --> 48:40.020
+This thing is all from.
+
+48:40.020 --> 48:42.020
+We talked about it in class.
+
+48:42.020 --> 48:44.020
+Because he was in my class.
+
+48:44.020 --> 48:46.020
+Then I told him, he went to mention it.
+
+48:46.020 --> 48:48.020
+Then it happened.
+
+48:48.020 --> 48:50.020
+So he often asked me.
+
+48:50.020 --> 48:52.020
+Is there any interesting topic?
+
+48:52.020 --> 48:54.020
+I think they should pay attention.
+
+48:54.020 --> 48:56.020
+I told them about the data broker.
+
+48:56.020 --> 48:58.020
+That depends on.
+
+48:58.020 --> 49:00.020
+How to deal with it.
+
+49:00.020 --> 49:02.020
+Because it's all bad.
+
+49:02.020 --> 49:04.020
+There are some controversial issues.
+
+49:06.020 --> 49:08.020
+Thank you so much.
+
+49:08.020 --> 49:10.020
+Thank you.
+
+49:10.020 --> 49:12.020
+Thank you.
+
+49:16.020 --> 49:18.020
+Any other questions?
+
+49:30.020 --> 49:32.020
+I just want to.
+
+49:32.020 --> 49:34.020
+You just mentioned.
+
+49:34.020 --> 49:36.020
+I just want to share it quickly.
+
+49:36.020 --> 49:38.020
+Information error problem.
+
+49:38.020 --> 49:40.020
+Because I applied for a loan.
+
+49:40.020 --> 49:42.020
+Then the information is actually.
+
+49:42.020 --> 49:44.020
+Some information is wrong.
+
+49:44.020 --> 49:46.020
+It's already.
+
+49:46.020 --> 49:48.020
+It's not right to meet different people.
+
+49:48.020 --> 49:50.020
+Then your credit score is lower.
+
+49:50.020 --> 49:52.020
+Then you can't apply for a loan.
+
+49:52.020 --> 49:54.020
+So your problem is.
+
+49:54.020 --> 49:56.020
+That's a big problem.
+
+49:58.020 --> 50:00.020
+But you can't.
+
+50:00.020 --> 50:02.020
+Don't tell anyone.
+
+50:02.020 --> 50:04.020
+In the United States.
+
+50:04.020 --> 50:06.020
+If it's below the credit score.
+
+50:06.020 --> 50:08.020
+You can see those public.
+
+50:08.020 --> 50:10.020
+The information they grabbed.
+
+50:10.020 --> 50:12.020
+If there is a mistake, you can tell them to correct it.
+
+50:12.020 --> 50:14.020
+But.
+
+50:14.020 --> 50:16.020
+Then you have to see that there is a mistake.
+
+50:16.020 --> 50:18.020
+Otherwise, it's still very difficult.
+
+50:18.020 --> 50:20.020
+Then if they find the data broker.
+
+50:20.020 --> 50:22.020
+You don't know.
+
+50:22.020 --> 50:24.020
+What did he see?
+
+50:24.020 --> 50:26.020
+Maybe the only way to know.
+
+50:26.020 --> 50:28.020
+How does the data broker work?
+
+50:28.020 --> 50:30.020
+Become a data broker yourself.
+
+50:30.020 --> 50:32.020
+Do I still have time to ask a question?
+
+50:32.020 --> 50:34.020
+Can.
+
+50:34.020 --> 50:36.020
+I want to ask.
+
+50:36.020 --> 50:38.020
+The question of the background check.
+
+50:38.020 --> 50:40.020
+In the United States, you have to find a lot of work.
+
+50:40.020 --> 50:42.020
+In fact, they will go through a background check.
+
+50:42.020 --> 50:44.020
+I'm just curious.
+
+50:44.020 --> 50:46.020
+What kind of information did they get?
+
+50:46.020 --> 50:48.020
+That.
+
+50:48.020 --> 50:50.020
+Like.
+
+50:50.020 --> 50:52.020
+I came here to find a job.
+
+50:52.020 --> 50:54.020
+I found that I couldn't find it.
+
+50:54.020 --> 50:56.020
+Because he lived in Taiwan for too long.
+
+50:56.020 --> 50:58.020
+But how could it be possible?
+
+50:58.020 --> 51:00.020
+I can't get the information.
+
+51:00.020 --> 51:02.020
+If this kind of thing has always existed.
+
+51:02.020 --> 51:04.020
+How could it be possible to receive the information?
+
+51:04.020 --> 51:06.020
+I'm just curious.
+
+51:06.020 --> 51:08.020
+I just moved in.
+
+51:08.020 --> 51:10.020
+It's blank here.
+
+51:10.020 --> 51:12.020
+You can't receive it.
+
+51:12.020 --> 51:14.020
+Because he should not be across the country.
+
+51:14.020 --> 51:16.020
+But he is an American citizen.
+
+51:16.020 --> 51:18.020
+He is an American citizen, but he is blank.
+
+51:18.020 --> 51:20.020
+Yes, so we are very curious.
+
+51:20.020 --> 51:22.020
+How did this happen?
+
+51:22.020 --> 51:24.020
+He said he couldn't find the background check.
+
+51:24.020 --> 51:26.020
+Can't find any information.
+
+51:26.020 --> 51:28.020
+This is too strange.
+
+51:28.020 --> 51:30.020
+What our school does most often is.
+
+51:30.020 --> 51:32.020
+What is that?
+
+51:32.020 --> 51:34.020
+Criminal record.
+
+51:34.020 --> 51:36.020
+No matter how light or heavy.
+
+51:36.020 --> 51:38.020
+All have to check.
+
+51:38.020 --> 51:40.020
+Many schools are like this.
+
+51:40.020 --> 51:42.020
+He will have a connected identification.
+
+51:42.020 --> 51:44.020
+I said that kind of data broker.
+
+51:44.020 --> 51:46.020
+How many years will they say?
+
+51:46.020 --> 51:48.020
+Will you delete all the previous information?
+
+51:48.020 --> 51:50.020
+Will there be such a situation?
+
+51:50.020 --> 51:52.020
+It's a good question.
+
+51:52.020 --> 51:54.020
+How do they deal with this?
+
+51:54.020 --> 51:56.020
+All the name changes in the past 25 years.
+
+51:56.020 --> 51:58.020
+Residential information.
+
+51:58.020 --> 52:00.020
+Will there be in the future?
+
+52:00.020 --> 52:02.020
+I don't know.
+
+52:02.020 --> 52:04.020
+How long do they have to save?
+
+52:04.020 --> 52:06.020
+How long will they save these data?
+
+52:06.020 --> 52:08.020
+I'm curious.
+
+52:08.020 --> 52:10.020
+The longer it takes for me, the more useful it is.
+
+52:10.020 --> 52:12.020
+Because after about 50 years.
+
+52:12.020 --> 52:14.020
+You may be the only one.
+
+52:14.020 --> 52:16.020
+You are the only one.
+
+52:16.020 --> 52:18.020
+People with this information.
+
+52:20.020 --> 52:22.020
+That means that company.
+
+52:22.020 --> 52:24.020
+Maybe the company's data is not good enough.
+
+52:24.020 --> 52:26.020
+Is that possible?
+
+52:26.020 --> 52:28.020
+It's possible.
+
+52:28.020 --> 52:30.020
+Because like.
+
+52:30.020 --> 52:32.020
+According to their FTC data.
+
+52:32.020 --> 52:34.020
+They said that the data broker should have.
+
+52:34.020 --> 52:36.020
+Almost all the data of all Americans.
+
+52:40.020 --> 52:42.020
+Thank you.
+
+52:42.020 --> 52:44.020
+This is another issue.
+
+52:44.020 --> 52:46.020
+Who has it?
+
+52:46.020 --> 52:48.020
+Why is there no one?
+
+52:52.020 --> 52:54.020
+Any other questions?
+
+52:54.020 --> 52:56.020
+Otherwise.
+
+52:56.020 --> 52:58.020
+Today's speech.
+
+52:58.020 --> 53:00.020
+Ends here.
+
+53:00.020 --> 53:02.020
+Thank you.
+
+53:02.020 --> 53:04.020
+David.
+
+53:04.020 --> 53:06.020
+For giving us such a wonderful speech.
+
+53:06.020 --> 53:08.020
+I think everyone has learned a lot.
+
+53:08.020 --> 53:10.020
+And more awareness.
+
+53:10.020 --> 53:12.020
+Then.
+
+53:12.020 --> 53:14.020
+I hope.
+
+53:14.020 --> 53:16.020
+You can come again next time.
+
+53:16.020 --> 53:18.020
+Tell us.
+
+53:18.020 --> 53:20.020
+How is the future development of this project?
+
+53:20.020 --> 53:22.020
+Let's see.
+
+53:22.020 --> 53:24.020
+Thank you.
+
+53:24.020 --> 53:26.020
+Thank you.
+
+53:26.020 --> 53:28.020
+If you haven't become a member.
+
+53:28.020 --> 53:30.020
+I want to post a link.
+
+53:30.020 --> 53:32.020
+You can join.
+
+53:32.020 --> 53:34.020
+It's free.
+
+53:34.020 --> 53:36.020
+It's a free.
+
+53:36.020 --> 53:38.020
+Membership.
+
+53:38.020 --> 53:40.020
+You can continue to receive.
+
+53:40.020 --> 53:42.020
+Every week.
+
+53:42.020 --> 53:44.020
+There will be a speech.
+
+53:44.020 --> 53:46.020
+On different topics.
+
+53:46.020 --> 53:48.020
+Thank you.
+
+53:48.020 --> 53:50.020
+Thank you.
+
+53:50.020 --> 53:52.020
+Thank you.
+
+53:52.020 --> 53:54.020
+Thank you.
+
+53:54.020 --> 53:56.020
+Thank you.
+
+53:56.020 --> 53:58.020
+Bye.
+

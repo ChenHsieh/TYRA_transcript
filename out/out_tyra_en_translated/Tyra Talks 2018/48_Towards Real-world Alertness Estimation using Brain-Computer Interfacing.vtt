@@ -1,0 +1,10193 @@
+WEBVTT
+
+00:00.000 --> 00:14.000
+I am today's host, I am Hong Shaoming, I am now working in California as a postdoctoral researcher.
+
+00:14.000 --> 00:18.000
+Without further ado, let's introduce today's speaker, Dr. Wei Qunshu.
+
+00:18.000 --> 00:24.000
+Dr. Qunshu graduated from the College of Electrical Engineering, and stayed in California to study electrical engineering.
+
+00:24.000 --> 00:31.000
+After graduating, he went to UCSD to study biotechnology, and his professor is Professor Zong Ziping.
+
+00:31.000 --> 00:40.000
+He is mainly interested in using the perspective of engineering to use brain-to-brain meetings to study human behavior.
+
+00:40.000 --> 00:53.000
+Over the past few years, he has published nearly 10 conference papers and two journal papers.
+
+00:53.000 --> 00:56.000
+Without further ado, let's listen to his presentation.
+
+00:56.000 --> 01:02.000
+The title is Towards Real-World Awareness Estimation Using Brain-Computer Interface.
+
+01:02.000 --> 01:05.000
+Let's welcome him.
+
+01:05.000 --> 01:09.000
+Thank you Shaoming for the introduction.
+
+01:09.000 --> 01:25.000
+Today, I will introduce how we measure brain activity and monitor our alertness using a brain-computer interface.
+
+01:26.000 --> 01:31.000
+If you have any questions during the presentation, please feel free to interrupt.
+
+01:31.000 --> 01:37.000
+We can easily have a discussion.
+
+01:37.000 --> 01:42.000
+First, I will briefly introduce the brain.
+
+01:42.000 --> 01:49.000
+Our brain is a tube of about 3 pounds, about 1,000 grams.
+
+01:49.000 --> 01:58.000
+The outermost part of the brain has many folds.
+
+01:58.000 --> 02:05.000
+These folds are composed of many neurons in the brain.
+
+02:05.000 --> 02:10.000
+There are about 8.6 billion neurons.
+
+02:11.000 --> 02:18.000
+We know that the brain has very strong computing power.
+
+02:18.000 --> 02:24.000
+However, compared to our most powerful computers, its performance is very good.
+
+02:24.000 --> 02:37.000
+In terms of energy consumption, it is 100,000 times more efficient than a normal CPU.
+
+02:37.000 --> 02:43.000
+Therefore, the brain can only operate at 12 to 25 watts.
+
+02:43.000 --> 02:48.000
+This wattage is equivalent to the wattage of a light bulb.
+
+02:48.000 --> 02:58.000
+So you can imagine that in some comics, when the character thinks of a point, he will draw a light bulb.
+
+02:58.000 --> 03:01.000
+It's actually pretty close.
+
+03:01.000 --> 03:06.000
+Because the brain's power consumption is the power of a light bulb.
+
+03:06.000 --> 03:14.000
+The structure of the neural network is composed of cells.
+
+03:14.000 --> 03:16.000
+There are many vectors.
+
+03:16.000 --> 03:22.000
+The vector part collects information from other neural networks around it.
+
+03:22.000 --> 03:27.000
+After the information is compiled into the neural network, it will decide whether to power up.
+
+03:27.000 --> 03:30.000
+If you want to power up, you can use the axis.
+
+03:30.000 --> 03:34.000
+Then you can power up to other neural networks.
+
+03:34.000 --> 03:41.000
+In this way, complex networks can be used to control the whole person.
+
+03:41.000 --> 03:45.000
+Here is a brain signal that I use more often.
+
+03:45.000 --> 03:47.000
+It's called a brain wave.
+
+03:47.000 --> 03:49.000
+It's EEG.
+
+03:49.000 --> 03:53.000
+Many people have been exposed to EEG.
+
+03:53.000 --> 04:03.000
+Especially when a newborn is born, we often do a brain test to see if his vision or hearing is normal.
+
+04:03.000 --> 04:05.000
+How does EEG occur?
+
+04:05.000 --> 04:11.000
+There are many neural networks in our brain.
+
+04:11.000 --> 04:13.000
+Especially the skin.
+
+04:13.000 --> 04:16.000
+Many neural networks are arranged.
+
+04:16.000 --> 04:18.000
+There are some rules in the structure.
+
+04:19.000 --> 04:28.000
+The arrangement of the rules allows the neural network to have an additional effect when it is powering up.
+
+04:28.000 --> 04:39.000
+The change in the electrical field can be so great that you can feel the change in the electrical field outside the scalp.
+
+04:39.000 --> 04:45.000
+The change in the electrical field becomes our brain wave signal after some processing.
+
+04:46.000 --> 04:49.000
+If you have any questions, please feel free to interrupt me.
+
+04:51.000 --> 04:55.000
+Our brain wave signal is...
+
+04:55.000 --> 04:57.000
+I have a question.
+
+04:57.000 --> 04:59.000
+There is a line below.
+
+04:59.000 --> 05:02.000
+BlueJeans meeting is sharing your screen with bluejeans.com.
+
+05:02.000 --> 05:05.000
+You have to press the hide button.
+
+05:05.000 --> 05:06.000
+Oh, okay.
+
+05:06.000 --> 05:07.000
+Or you can block it a little bit.
+
+05:07.000 --> 05:08.000
+I'm sorry.
+
+05:08.000 --> 05:09.000
+You can continue.
+
+05:09.000 --> 05:11.000
+Thank you.
+
+05:12.000 --> 05:13.000
+Okay.
+
+05:13.000 --> 05:15.000
+Let's continue.
+
+05:15.000 --> 05:20.000
+This is the brain wave signal.
+
+05:20.000 --> 05:25.000
+It is a real-time signal.
+
+05:25.000 --> 05:29.000
+You can see that it is like a time series.
+
+05:29.000 --> 05:31.000
+It is a time series.
+
+05:31.000 --> 05:41.000
+In order to measure the whole brain, we will try to arrange electrical fields outside the scalp.
+
+05:41.000 --> 05:47.000
+So we will have a lot of brain waves on both sides at the same time.
+
+05:47.000 --> 05:56.000
+We will analyze the energy of brain waves in terms of frequency.
+
+05:56.000 --> 06:04.000
+The frequency depends on whether the signal is fast or slow.
+
+06:04.000 --> 06:08.000
+The high frequency is the fast part.
+
+06:08.000 --> 06:10.000
+The low frequency is the slow part.
+
+06:10.000 --> 06:14.000
+So we will divide delta.
+
+06:14.000 --> 06:18.000
+It is a low frequency activity of less than 3.5 Hz.
+
+06:18.000 --> 06:22.000
+It is a very slow vibration.
+
+06:22.000 --> 06:30.000
+If you go higher, it will be divided into theta wave, alpha wave, or beta wave.
+
+06:30.000 --> 06:34.000
+The higher the frequency, the faster the vibration.
+
+06:34.000 --> 06:38.000
+Our brain can be divided into different bands.
+
+06:38.000 --> 06:44.000
+By observing the energy of the band, we can get a lot of information.
+
+06:45.000 --> 06:51.000
+Let me introduce the location of the channel of the brain.
+
+06:51.000 --> 06:55.000
+It has a standard way of dividing.
+
+06:55.000 --> 07:04.000
+The name of the channel is divided into points.
+
+07:04.000 --> 07:08.000
+Frontal is the channel at the beginning of F.
+
+07:08.000 --> 07:12.000
+Central is the channel at the beginning of C.
+
+07:12.000 --> 07:16.000
+Central parietal is the channel at the beginning of O.
+
+07:16.000 --> 07:22.000
+Occipital is the channel at the beginning of O.
+
+07:22.000 --> 07:28.000
+We can do this frequency analysis for each channel.
+
+07:28.000 --> 07:34.000
+We can combine the change of time with the change of frequency.
+
+07:34.000 --> 07:40.000
+We can see the energy of different bands over time.
+
+07:40.000 --> 07:47.000
+This can tell us a lot of information about the state of this person.
+
+07:47.000 --> 07:53.000
+We can design experiments to see if the brain changes.
+
+07:53.000 --> 07:59.000
+We can find some characteristics in different states.
+
+07:59.000 --> 08:03.000
+Reflect the brain in different states.
+
+08:04.000 --> 08:12.000
+The brain interface is where we read the signals of the brain.
+
+08:12.000 --> 08:18.000
+Then we go through some signal processing, including frequency analysis.
+
+08:18.000 --> 08:25.000
+Or you can use a lot of other different signal processing methods to get different characteristics.
+
+08:26.000 --> 08:35.000
+Then we use the processed signals to make it recognizable.
+
+08:35.000 --> 08:38.000
+Then we can convert it into some commands to control.
+
+08:38.000 --> 08:44.000
+For example, a mechanical arm or a wheel or a mouse cursor.
+
+08:44.000 --> 08:48.000
+Or to input text or some messages.
+
+08:49.000 --> 08:53.000
+We call this the brain computer interface.
+
+08:53.000 --> 08:55.000
+In short, it's BCI.
+
+08:57.000 --> 08:59.000
+What can BCI do?
+
+08:59.000 --> 09:01.000
+As I just said, it can convert into commands.
+
+09:01.000 --> 09:08.000
+So when we play video games, we can use it to control the movement of your character.
+
+09:08.000 --> 09:12.000
+Of course, including the wheel and the mechanical arm.
+
+09:12.000 --> 09:17.000
+Of course, it can also be used to monitor a person's cognitive state.
+
+09:17.000 --> 09:19.000
+Including whether you want to sleep.
+
+09:19.000 --> 09:24.000
+This extends to my main area of expertise.
+
+09:24.000 --> 09:27.000
+Monitoring the level of awareness.
+
+09:31.000 --> 09:37.000
+The level of awareness is related to drowsy driving.
+
+09:37.000 --> 09:41.000
+A lot of people fall asleep while driving.
+
+09:41.000 --> 09:51.000
+This news happened on July 18th.
+
+09:51.000 --> 09:55.000
+It was recently that a drowsy driving incident happened.
+
+10:42.000 --> 10:44.000
+It was recently that a drowsy driving incident happened.
+
+10:54.000 --> 10:56.000
+Did you turn on the sound in the group chat?
+
+10:56.000 --> 10:58.000
+Or we don't need to hear the sound?
+
+10:58.000 --> 11:00.000
+Yes, so we can't hear the sound?
+
+11:01.000 --> 11:02.000
+I didn't hear it.
+
+11:06.000 --> 11:07.000
+Let's see what to do.
+
+11:07.000 --> 11:08.000
+What to do?
+
+11:09.000 --> 11:10.000
+I can't do it.
+
+11:10.000 --> 11:12.000
+Can you play it on your computer?
+
+11:13.000 --> 11:14.000
+Okay.
+
+11:16.000 --> 11:18.000
+Can you hear me?
+
+11:18.000 --> 11:19.000
+Yes.
+
+11:20.000 --> 11:21.000
+Can you hear me?
+
+11:21.000 --> 11:22.000
+Yes.
+
+11:26.000 --> 11:27.000
+Can you hear me?
+
+11:32.000 --> 11:33.000
+Yes.
+
+11:33.000 --> 11:34.000
+I can hear you.
+
+11:34.000 --> 11:35.000
+I can hear you.
+
+11:36.000 --> 11:37.000
+Can you hear me now?
+
+11:37.000 --> 11:38.000
+Yes.
+
+12:05.000 --> 12:06.000
+Max.
+
+12:06.000 --> 12:11.000
+And then after 11 hours a day, we have to shut down and have 10 hours of sleep.
+
+12:21.000 --> 12:25.000
+We now have to carry electronic recording devices on our vehicles.
+
+12:25.000 --> 12:29.000
+Rio says his students learn to make driving plans to avoid getting fatigued,
+
+12:29.000 --> 12:33.000
+and they're encouraged to stop to power nap or just stretch their legs.
+
+12:33.000 --> 12:35.000
+It does give you more stamina.
+
+12:35.000 --> 12:36.000
+You're more alert.
+
+12:36.000 --> 12:39.000
+Because when you're not alert, you know, you can't make good decisions.
+
+12:39.000 --> 12:42.000
+And that's what truckers like Rudy live by.
+
+12:42.000 --> 12:44.000
+I start closing, you got to pull over and take a nap.
+
+12:45.000 --> 12:47.000
+GoMana, 8 News Now.
+
+12:48.000 --> 12:51.000
+The National Highway Traffic Safety Administration says drowsy driving
+
+12:51.000 --> 12:55.000
+causes up to 1.2 million crashes every year in this country,
+
+12:55.000 --> 12:58.000
+and it kills between 5,000 and 8,000 people.
+
+12:58.000 --> 13:01.000
+That's nearly twice as many as distracted driving.
+
+13:22.000 --> 13:25.000
+And that's two deaths and three injuries.
+
+13:25.000 --> 13:31.000
+And drowsy driving can cause up to 1.2 million crashes every year,
+
+13:31.000 --> 13:35.000
+and it kills between 5,000 and 8,000 people.
+
+13:35.000 --> 13:39.000
+So if we can avoid drowsy driving,
+
+13:39.000 --> 13:42.000
+if we can effectively monitor drowsy driving,
+
+13:42.000 --> 13:44.000
+and then manage it,
+
+13:44.000 --> 13:50.000
+maybe we can avoid some of the deaths and injuries caused by this.
+
+13:53.000 --> 13:56.000
+And then there was a comment in the news
+
+13:56.000 --> 13:59.000
+that if you find that your eyes are closing,
+
+13:59.000 --> 14:01.000
+then you should stop driving.
+
+14:01.000 --> 14:03.000
+But with drowsy driving,
+
+14:03.000 --> 14:06.000
+I discussed with Shaoming last time
+
+14:06.000 --> 14:11.000
+if you can monitor drowsy driving
+
+14:11.000 --> 14:15.000
+with your eyes or blinkers.
+
+14:15.000 --> 14:17.000
+But there's a problem.
+
+14:17.000 --> 14:23.000
+Is there a way to catch it before it closes its eyes
+
+14:23.000 --> 14:29.000
+that it's actually unable to pay attention to driving?
+
+14:29.000 --> 14:34.000
+This part may want to use brainwaves to break through this problem.
+
+14:38.000 --> 14:43.000
+If we use the brain-machine interface to do this alertness monitoring,
+
+14:43.000 --> 14:46.000
+we will first, of course,
+
+14:46.000 --> 14:50.000
+measure its brainwaves from the driver.
+
+14:50.000 --> 14:52.000
+After we get this EEG signal,
+
+14:52.000 --> 14:54.000
+after some processing,
+
+14:54.000 --> 14:57.000
+we use machine learning to build a model
+
+14:57.000 --> 15:02.000
+that can convert EEG data into alertness.
+
+15:02.000 --> 15:05.000
+After we know its alertness,
+
+15:05.000 --> 15:08.000
+we can try to give it some feedback.
+
+15:08.000 --> 15:10.000
+For example, we can wake it up,
+
+15:10.000 --> 15:17.000
+or we can make the car stop driving,
+
+15:17.000 --> 15:19.000
+stop on the side of the road,
+
+15:19.000 --> 15:21.000
+or force it to rest.
+
+15:21.000 --> 15:23.000
+There are some ways to intervene.
+
+15:27.000 --> 15:37.000
+My research is mainly about how we deal with this signal,
+
+15:37.000 --> 15:40.000
+how we build a machine learning model
+
+15:40.000 --> 15:43.000
+that can monitor alertness very well.
+
+15:43.000 --> 15:47.000
+We can accurately determine whether to make some interventions.
+
+15:47.000 --> 15:52.000
+I have a question.
+
+15:52.000 --> 15:55.000
+I want to clarify a little bit.
+
+15:55.000 --> 15:58.000
+Are you saying that your research is about
+
+15:58.000 --> 16:01.000
+the state of mental relaxation,
+
+16:01.000 --> 16:04.000
+or the state of actually falling asleep?
+
+16:04.000 --> 16:10.000
+It's the state of waking up to almost falling asleep.
+
+16:10.000 --> 16:13.000
+It's not really asleep yet.
+
+16:13.000 --> 16:19.000
+I haven't studied the state of the brain after falling asleep.
+
+16:19.000 --> 16:24.000
+I want to capture the state of the brain before falling asleep.
+
+16:24.000 --> 16:31.000
+I have experience in driving,
+
+16:31.000 --> 16:33.000
+and I know that my eyes were open at that time,
+
+16:33.000 --> 16:40.000
+but the image was blurred and black,
+
+16:40.000 --> 16:43.000
+and I wasn't looking at the road anymore.
+
+16:43.000 --> 16:45.000
+I was a little out of my mind,
+
+16:45.000 --> 16:47.000
+and then I suddenly woke up,
+
+16:47.000 --> 16:49.000
+and I felt a little shaky.
+
+16:49.000 --> 16:51.000
+I started to shake a little.
+
+16:51.000 --> 16:57.000
+So it's about getting into the time point.
+
+16:57.000 --> 17:01.000
+It depends on when you can't support the alertness,
+
+17:01.000 --> 17:03.000
+and then you fall asleep.
+
+17:03.000 --> 17:05.000
+I have another question.
+
+17:05.000 --> 17:09.000
+You want to identify a signal,
+
+17:09.000 --> 17:11.000
+and then you think you want to identify this signal
+
+17:11.000 --> 17:13.000
+is the state you're talking about now.
+
+17:13.000 --> 17:14.000
+Yes.
+
+17:14.000 --> 17:16.000
+Do you have a contrast group?
+
+17:16.000 --> 17:18.000
+For example, you track his eyes,
+
+17:18.000 --> 17:19.000
+and then you say,
+
+17:19.000 --> 17:21.000
+I define that the behavior of the eyes
+
+17:21.000 --> 17:24.000
+is the state of mind to fall asleep.
+
+17:24.000 --> 17:27.000
+Then I look for the corresponding brain wave.
+
+17:27.000 --> 17:30.000
+Or I tell the victim to write,
+
+17:30.000 --> 17:32.000
+yes, I feel like I'm going to fall asleep now.
+
+17:32.000 --> 17:34.000
+What is your calibration?
+
+17:34.000 --> 17:36.000
+This question is very good.
+
+17:36.000 --> 17:39.000
+How do we define our so-called alertness?
+
+17:39.000 --> 17:42.000
+I'm going to talk about it next.
+
+17:42.000 --> 17:46.000
+Because we think alertness is related to your reaction time.
+
+17:46.000 --> 17:49.000
+So we use reaction time
+
+17:49.000 --> 17:53.000
+to give us an objective way of measuring.
+
+17:53.000 --> 17:54.000
+Just like you said,
+
+17:54.000 --> 18:00.000
+using the eyes or the way of subject return.
+
+18:00.000 --> 18:02.000
+The part of the eyes is that
+
+18:02.000 --> 18:05.000
+the movement of the eyes is also a physiological signal.
+
+18:05.000 --> 18:09.000
+So whether he can react directly to this behavior
+
+18:09.000 --> 18:11.000
+is another experiment.
+
+18:11.000 --> 18:16.000
+His role is the same as the brain wave.
+
+18:16.000 --> 18:18.000
+It just depends on which physiological signal
+
+18:18.000 --> 18:22.000
+can make it easier for us to be more accurate
+
+18:22.000 --> 18:28.000
+to determine whether it is alert or not.
+
+18:28.000 --> 18:33.000
+Subject report is a subjective assessment.
+
+18:33.000 --> 18:39.000
+Subjective assessment will have some deviations.
+
+18:39.000 --> 18:43.000
+That is to say, the word that the subject reported
+
+18:43.000 --> 18:46.000
+is not very objective
+
+18:46.000 --> 18:49.000
+to express the state he just experienced.
+
+18:49.000 --> 18:53.000
+Many researchers think
+
+18:53.000 --> 18:55.000
+a more objective way of judging
+
+18:55.000 --> 18:58.000
+is to look at his reaction time.
+
+18:58.000 --> 19:01.000
+Next, I will talk about
+
+19:01.000 --> 19:03.000
+how we measure brain waves
+
+19:03.000 --> 19:05.000
+and at the same time measure his reaction time.
+
+19:05.000 --> 19:06.000
+And how to define it.
+
+19:06.000 --> 19:08.000
+Finally, I will talk about
+
+19:08.000 --> 19:11.000
+how to define alertness.
+
+19:14.000 --> 19:16.000
+Does this answer your question?
+
+19:18.000 --> 19:20.000
+Yes, thank you.
+
+19:20.000 --> 19:22.000
+Thank you.
+
+19:22.000 --> 19:25.000
+I will talk about our experiment
+
+19:25.000 --> 19:28.000
+and how to get the data we want.
+
+19:28.000 --> 19:33.000
+We put the subject in a simulated driving car.
+
+19:33.000 --> 19:39.000
+The car has a 360-degree projection screen.
+
+19:39.000 --> 19:43.000
+The car is on a dynamic platform.
+
+19:43.000 --> 19:45.000
+We drive inside
+
+19:45.000 --> 19:49.000
+to simulate the real driving situation.
+
+19:49.000 --> 19:52.000
+This is a device in the brain center
+
+19:52.000 --> 19:54.000
+of the University of Transportation,
+
+19:54.000 --> 19:57.000
+the brain science center.
+
+19:57.000 --> 20:02.000
+In this experiment,
+
+20:02.000 --> 20:10.000
+we do a task to maintain the lane.
+
+20:10.000 --> 20:11.000
+To maintain the lane,
+
+20:11.000 --> 20:14.000
+the subject must maintain the car
+
+20:14.000 --> 20:16.000
+on the lane.
+
+20:16.000 --> 20:21.000
+The car will automatically make him turn left.
+
+20:21.000 --> 20:24.000
+We force the subject to adjust
+
+20:24.000 --> 20:28.000
+the direction of the car on a regular basis.
+
+20:28.000 --> 20:35.000
+The scene is on a straight highway.
+
+20:35.000 --> 20:37.000
+But the car will turn to the left
+
+20:37.000 --> 20:39.000
+or to the right.
+
+20:39.000 --> 20:40.000
+Not necessarily.
+
+20:40.000 --> 20:42.000
+It will turn once every 6 to 10 seconds.
+
+20:42.000 --> 20:45.000
+We see that the subject
+
+20:45.000 --> 20:48.000
+feels that the car is turning to the left.
+
+20:48.000 --> 20:50.000
+He moves the steering wheel
+
+20:50.000 --> 20:53.000
+to guide the car.
+
+20:53.000 --> 20:56.000
+We see when the subject
+
+20:56.000 --> 20:59.000
+moves the steering wheel.
+
+20:59.000 --> 21:01.000
+This is the reaction time.
+
+21:01.000 --> 21:03.000
+Every 6 to 10 seconds,
+
+21:03.000 --> 21:06.000
+we can measure the reaction time.
+
+21:06.000 --> 21:08.000
+We hope that
+
+21:08.000 --> 21:11.000
+from the brain wave before the lane,
+
+21:11.000 --> 21:14.000
+we can predict
+
+21:14.000 --> 21:17.000
+the reaction time.
+
+21:18.000 --> 21:24.000
+This is the role of prediction.
+
+21:24.000 --> 21:26.000
+Next, I will talk about
+
+21:26.000 --> 21:29.000
+how to deal with the reaction time
+
+21:29.000 --> 21:30.000
+and how to get
+
+21:30.000 --> 21:35.000
+the alertness estimate.
+
+21:35.000 --> 21:36.000
+As mentioned,
+
+21:36.000 --> 21:37.000
+every 6 to 10 seconds,
+
+21:37.000 --> 21:42.000
+we will have a response time sample.
+
+21:42.000 --> 21:47.000
+On the y-axis,
+
+21:47.000 --> 21:50.000
+I draw the response time.
+
+21:50.000 --> 21:52.000
+I choose log.
+
+21:52.000 --> 21:53.000
+On the horizontal axis,
+
+21:53.000 --> 21:56.000
+I draw the time.
+
+21:56.000 --> 21:57.000
+The unit is divided.
+
+21:57.000 --> 22:03.000
+This is the length of the whole experiment.
+
+22:03.000 --> 22:05.000
+The length of the experiment is not certain.
+
+22:05.000 --> 22:06.000
+This is shorter.
+
+22:06.000 --> 22:07.000
+It is only 45 minutes.
+
+22:07.000 --> 22:10.000
+Most of the experiments
+
+22:10.000 --> 22:14.000
+took more than an hour.
+
+22:14.000 --> 22:16.000
+About an hour and a half.
+
+22:16.000 --> 22:21.000
+We sometimes ask the same subject
+
+22:21.000 --> 22:24.000
+to come back and do it.
+
+22:24.000 --> 22:26.000
+We finally collected
+
+22:26.000 --> 22:28.000
+Let me see.
+
+22:28.000 --> 22:29.000
+There is nothing here.
+
+22:29.000 --> 22:30.000
+We finally collected
+
+22:30.000 --> 22:32.000
+more than 30 subjects.
+
+22:32.000 --> 22:41.000
+There are 50 to 60 car experiments.
+
+22:41.000 --> 22:43.000
+Let's talk about
+
+22:43.000 --> 22:44.000
+every point here.
+
+22:44.000 --> 22:47.000
+These are the RTs we just measured.
+
+22:47.000 --> 22:49.000
+10 to the power of 0 is about 1 second.
+
+22:49.000 --> 22:51.000
+When it wakes up,
+
+22:51.000 --> 22:53.000
+in less than 1 second,
+
+22:53.000 --> 22:55.000
+we can get the car back.
+
+22:55.000 --> 22:58.000
+After a while,
+
+22:58.000 --> 23:00.000
+the car is not in a good condition.
+
+23:00.000 --> 23:02.000
+After the alertness starts to decline,
+
+23:02.000 --> 23:03.000
+we will see some
+
+23:03.000 --> 23:05.000
+longer reaction times.
+
+23:05.000 --> 23:06.000
+In fact, the reaction is that
+
+23:06.000 --> 23:10.000
+its alertness becomes worse.
+
+23:10.000 --> 23:13.000
+We need to process this RT data.
+
+23:13.000 --> 23:19.000
+Because RT is not a range.
+
+23:19.000 --> 23:21.000
+Only one side has a range.
+
+23:21.000 --> 23:22.000
+The other side has no range.
+
+23:22.000 --> 23:25.000
+Let's make a regularization of it first.
+
+23:25.000 --> 23:27.000
+Turn it into a value of 0 to 1.
+
+23:27.000 --> 23:28.000
+The way to regularize it
+
+23:28.000 --> 23:33.000
+is to use its cumulative distribution function.
+
+23:33.000 --> 23:38.000
+Then map it to a value with a range.
+
+23:38.000 --> 23:44.000
+Let's do a smoothing here.
+
+23:44.000 --> 23:45.000
+For smoothing,
+
+23:45.000 --> 23:47.000
+I use a 90-second moving window
+
+23:47.000 --> 23:49.000
+to turn this
+
+23:49.000 --> 23:53.000
+jumpy value
+
+23:53.000 --> 23:56.000
+into a smoother value.
+
+23:56.000 --> 23:57.000
+This is because
+
+23:57.000 --> 24:01.000
+we only sample RT once every 6 to 10 seconds.
+
+24:01.000 --> 24:05.000
+If you look at this data
+
+24:05.000 --> 24:07.000
+with too high frequency,
+
+24:07.000 --> 24:09.000
+it is more meaningless.
+
+24:09.000 --> 24:10.000
+If we use a smoothing,
+
+24:10.000 --> 24:12.000
+we can get rid of
+
+24:12.000 --> 24:18.000
+some misanalysis of this data.
+
+24:18.000 --> 24:20.000
+So we use this
+
+24:20.000 --> 24:23.000
+alertness deficit index
+
+24:23.000 --> 24:28.000
+as a ground truth
+
+24:28.000 --> 24:33.000
+in our behavior.
+
+24:33.000 --> 24:37.000
+Does anyone have any questions?
+
+24:37.000 --> 24:39.000
+Let's assume that
+
+24:39.000 --> 24:41.000
+RT directly reflects
+
+24:41.000 --> 24:44.000
+the level of alertness of this person.
+
+24:44.000 --> 24:47.000
+If RT is longer,
+
+24:47.000 --> 24:50.000
+alertness should be one of the factors.
+
+24:51.000 --> 24:52.000
+Yes.
+
+24:52.000 --> 24:55.000
+So it depends on the design of the experiment.
+
+24:55.000 --> 24:57.000
+Let's also assume that
+
+24:57.000 --> 24:59.000
+the experiment design
+
+24:59.000 --> 25:03.000
+only affects RT.
+
+25:03.000 --> 25:07.000
+We try to eliminate
+
+25:07.000 --> 25:11.000
+other factors that may affect RT.
+
+25:11.000 --> 25:15.000
+Because similar experiments
+
+25:15.000 --> 25:18.000
+will also be used
+
+25:18.000 --> 25:20.000
+to study
+
+25:20.000 --> 25:22.000
+mind-wandering.
+
+25:22.000 --> 25:24.000
+Mind-wandering and alertness
+
+25:24.000 --> 25:25.000
+are related,
+
+25:25.000 --> 25:27.000
+but not exactly the same.
+
+25:27.000 --> 25:28.000
+For example,
+
+25:28.000 --> 25:29.000
+when your subject drives,
+
+25:29.000 --> 25:31.000
+he starts to think about other things.
+
+25:31.000 --> 25:32.000
+His RT becomes longer.
+
+25:32.000 --> 25:35.000
+In your definition,
+
+25:35.000 --> 25:38.000
+this is a lack of alertness.
+
+25:38.000 --> 25:39.000
+Yes.
+
+25:39.000 --> 25:40.000
+But for you,
+
+25:40.000 --> 25:42.000
+it is acceptable.
+
+25:42.000 --> 25:44.000
+So our alertness
+
+25:44.000 --> 25:45.000
+is based on
+
+25:45.000 --> 25:48.000
+the alertness defined by RT.
+
+25:48.000 --> 25:51.000
+If the subject doesn't react,
+
+25:51.000 --> 25:52.000
+like you said,
+
+25:52.000 --> 25:54.000
+he may be thinking about other things.
+
+25:54.000 --> 25:55.000
+Yes.
+
+25:55.000 --> 25:57.000
+Of course,
+
+25:57.000 --> 25:59.000
+the instruction of our experiment
+
+25:59.000 --> 26:02.000
+is to teach them to focus.
+
+26:02.000 --> 26:03.000
+Yes.
+
+26:03.000 --> 26:06.000
+What we can do is only up to here.
+
+26:06.000 --> 26:09.000
+Because I think this may affect
+
+26:09.000 --> 26:12.000
+your EEG data in the future.
+
+26:12.000 --> 26:13.000
+Imagine that
+
+26:13.000 --> 26:15.000
+there are three reasons for his RT to become longer.
+
+26:15.000 --> 26:16.000
+Yes.
+
+26:16.000 --> 26:19.000
+Do you actually catch three patterns?
+
+26:19.000 --> 26:21.000
+The three patterns are different.
+
+26:21.000 --> 26:22.000
+For example,
+
+26:22.000 --> 26:23.000
+when you train your data,
+
+26:23.000 --> 26:24.000
+your accuracy will be lower.
+
+26:24.000 --> 26:26.000
+Because your data
+
+26:26.000 --> 26:28.000
+is not high enough.
+
+26:28.000 --> 26:29.000
+Sometimes it may be because of A,
+
+26:29.000 --> 26:30.000
+sometimes because of B,
+
+26:30.000 --> 26:31.000
+sometimes because of C.
+
+26:31.000 --> 26:32.000
+Yes.
+
+26:32.000 --> 26:35.000
+So it's impossible to be completely accurate.
+
+26:35.000 --> 26:37.000
+And like you just said,
+
+26:37.000 --> 26:39.000
+mind-wandering,
+
+26:39.000 --> 26:41.000
+we can't control it.
+
+26:41.000 --> 26:43.000
+But for us,
+
+26:43.000 --> 26:45.000
+when his RT becomes longer,
+
+26:45.000 --> 26:47.000
+it's actually quite long.
+
+26:47.000 --> 26:49.000
+For example, 5 seconds.
+
+26:49.000 --> 26:52.000
+If he really thinks about other things for 5 seconds
+
+26:52.000 --> 26:56.000
+and doesn't follow our instructions
+
+26:56.000 --> 27:00.000
+to guide him,
+
+27:00.000 --> 27:02.000
+I don't know what to do.
+
+27:02.000 --> 27:03.000
+OK.
+
+27:03.000 --> 27:04.000
+In terms of concept,
+
+27:04.000 --> 27:05.000
+if you have a test...
+
+27:05.000 --> 27:06.000
+But what we see is
+
+27:06.000 --> 27:10.000
+that he really feels like he is dead.
+
+27:10.000 --> 27:11.000
+Yes.
+
+27:11.000 --> 27:13.000
+There may be some trials.
+
+27:13.000 --> 27:14.000
+Like you said,
+
+27:14.000 --> 27:15.000
+there may be other factors.
+
+27:15.000 --> 27:17.000
+And then there are some
+
+27:17.000 --> 27:20.000
+miscommunications on it.
+
+27:20.000 --> 27:23.000
+This part can't be ruled out.
+
+27:23.000 --> 27:24.000
+Yes.
+
+27:24.000 --> 27:25.000
+OK.
+
+27:25.000 --> 27:26.000
+In terms of concept,
+
+27:26.000 --> 27:28.000
+if your test can separate
+
+27:28.000 --> 27:30.000
+things that affect RT
+
+27:30.000 --> 27:31.000
+from each other,
+
+27:31.000 --> 27:34.000
+then you deal with these...
+
+27:34.000 --> 27:35.000
+When you deal with this information,
+
+27:35.000 --> 27:36.000
+you deal with it separately.
+
+27:36.000 --> 27:38.000
+Your model will be cleaner.
+
+27:38.000 --> 27:39.000
+Ideal situation.
+
+27:39.000 --> 27:40.000
+Ideal situation.
+
+27:40.000 --> 27:41.000
+But of course,
+
+27:41.000 --> 27:43.000
+you can't cover so many different factors
+
+27:43.000 --> 27:44.000
+at the same time.
+
+27:44.000 --> 27:45.000
+Yes.
+
+27:45.000 --> 27:46.000
+Yes.
+
+27:46.000 --> 27:49.000
+In terms of brain science,
+
+27:49.000 --> 27:50.000
+we often have this problem.
+
+27:50.000 --> 27:54.000
+You can't control what the subject is thinking.
+
+27:54.000 --> 27:55.000
+That's right.
+
+27:55.000 --> 27:56.000
+Yes.
+
+27:56.000 --> 27:57.000
+OK.
+
+27:57.000 --> 27:58.000
+It's a bit awkward.
+
+27:58.000 --> 28:01.000
+Actually, I have a different idea about this.
+
+28:01.000 --> 28:02.000
+Yes.
+
+28:02.000 --> 28:05.000
+If you want to throw this data
+
+28:05.000 --> 28:07.000
+into machine learning,
+
+28:07.000 --> 28:08.000
+if there are three reasons,
+
+28:08.000 --> 28:10.000
+whether he wants to sleep
+
+28:10.000 --> 28:12.000
+or he's thinking about something crazy,
+
+28:12.000 --> 28:15.000
+the pattern recognition of your algorithm
+
+28:15.000 --> 28:18.000
+may be persuaded to
+
+28:18.000 --> 28:21.000
+identify three different reasons.
+
+28:21.000 --> 28:23.000
+But for whatever reason,
+
+28:23.000 --> 28:26.000
+it will indicate that
+
+28:26.000 --> 28:28.000
+this person is now
+
+28:28.000 --> 28:30.000
+lying and not paying attention.
+
+28:30.000 --> 28:32.000
+Isn't that good?
+
+28:32.000 --> 28:33.000
+That's possible.
+
+28:33.000 --> 28:34.000
+So in the end,
+
+28:34.000 --> 28:35.000
+in the end,
+
+28:35.000 --> 28:37.000
+his algorithm can
+
+28:37.000 --> 28:40.000
+be oriented for whatever reason.
+
+28:40.000 --> 28:43.000
+It can prevent your RT from getting longer.
+
+28:43.000 --> 28:44.000
+No, I think this time
+
+28:44.000 --> 28:46.000
+we have to go back to the original question.
+
+28:46.000 --> 28:49.000
+What do you want to detect?
+
+28:49.000 --> 28:50.000
+Yes.
+
+28:50.000 --> 28:51.000
+For example,
+
+28:51.000 --> 28:53.000
+let's say you want to promote a policy.
+
+28:53.000 --> 28:54.000
+What you want to know is
+
+28:54.000 --> 28:55.000
+that in this case,
+
+28:55.000 --> 28:58.000
+you want to avoid drowsy driving.
+
+28:58.000 --> 28:59.000
+Yes, this whole thing
+
+28:59.000 --> 29:01.000
+is set for drowsy driving.
+
+29:01.000 --> 29:02.000
+But you later found that
+
+29:02.000 --> 29:05.000
+the other important factor
+
+29:05.000 --> 29:07.000
+that affects their driving
+
+29:07.000 --> 29:08.000
+or the traffic situation
+
+29:08.000 --> 29:10.000
+is mind wandering.
+
+29:10.000 --> 29:11.000
+Even if you can
+
+29:11.000 --> 29:13.000
+detect mind wandering at the same time,
+
+29:13.000 --> 29:14.000
+but when you are making a policy,
+
+29:14.000 --> 29:15.000
+these two are completely different things.
+
+29:15.000 --> 29:17.000
+How do you avoid A and avoid B?
+
+29:17.000 --> 29:19.000
+Completely different.
+
+29:19.000 --> 29:20.000
+So in the end,
+
+29:20.000 --> 29:23.000
+if it is from the point of view of brain science,
+
+29:23.000 --> 29:24.000
+what we want to know is
+
+29:24.000 --> 29:25.000
+what happened
+
+29:25.000 --> 29:27.000
+during that period of time.
+
+29:27.000 --> 29:29.000
+The reason I ask this question is like this.
+
+29:29.000 --> 29:30.000
+Yes, but there may be
+
+29:30.000 --> 29:31.000
+I think what you said is possible.
+
+29:31.000 --> 29:32.000
+When machine learning is done,
+
+29:32.000 --> 29:33.000
+it may be able to identify
+
+29:33.000 --> 29:35.000
+all the patterns
+
+29:35.000 --> 29:38.000
+as a lack of awareness.
+
+29:38.000 --> 29:41.000
+This is also possible.
+
+29:41.000 --> 29:42.000
+Yes.
+
+29:42.000 --> 29:43.000
+So,
+
+29:43.000 --> 29:45.000
+like what Yan-Yong mentioned,
+
+29:45.000 --> 29:48.000
+if I use machine learning,
+
+29:48.000 --> 29:49.000
+it will learn
+
+29:49.000 --> 29:52.000
+the relationship between data.
+
+29:52.000 --> 29:54.000
+Then you get
+
+29:55.000 --> 29:58.000
+a whole thing
+
+29:58.000 --> 30:02.000
+that affects RT.
+
+30:02.000 --> 30:03.000
+I don't know what it is.
+
+30:03.000 --> 30:04.000
+Yes.
+
+30:04.000 --> 30:05.000
+Then,
+
+30:05.000 --> 30:06.000
+in addition,
+
+30:06.000 --> 30:07.000
+we have
+
+30:07.000 --> 30:09.000
+just discussed
+
+30:09.000 --> 30:10.000
+assuming that
+
+30:10.000 --> 30:15.000
+some different cognitive phenomena
+
+30:15.000 --> 30:17.000
+can be disassembled.
+
+30:17.000 --> 30:20.000
+It can be seen independently.
+
+30:20.000 --> 30:23.000
+Or there is some interaction between them.
+
+30:24.000 --> 30:27.000
+If we want to
+
+30:28.000 --> 30:29.000
+use our data
+
+30:29.000 --> 30:30.000
+to disassemble
+
+30:30.000 --> 30:32.000
+different cognitive states
+
+30:32.000 --> 30:34.000
+and the impact on RT,
+
+30:34.000 --> 30:35.000
+in fact,
+
+30:35.000 --> 30:37.000
+there is no way to do it
+
+30:37.000 --> 30:38.000
+with just one experiment.
+
+30:38.000 --> 30:39.000
+It may still be necessary
+
+30:39.000 --> 30:40.000
+to do different experiments
+
+30:40.000 --> 30:42.000
+to estimate
+
+30:42.000 --> 30:46.000
+which cognitive state
+
+30:46.000 --> 30:50.000
+will affect RT.
+
+30:50.000 --> 30:51.000
+Here,
+
+30:51.000 --> 30:52.000
+our experiment
+
+30:52.000 --> 30:54.000
+tries to say
+
+30:54.000 --> 30:57.000
+that there is only one effect.
+
+30:57.000 --> 30:58.000
+Try,
+
+30:58.000 --> 30:59.000
+but can't guarantee.
+
+30:59.000 --> 31:00.000
+If we say
+
+31:00.000 --> 31:01.000
+in this trial,
+
+31:01.000 --> 31:02.000
+for example,
+
+31:02.000 --> 31:03.000
+90% of it
+
+31:03.000 --> 31:06.000
+is as we imagined
+
+31:06.000 --> 31:07.000
+because of
+
+31:07.000 --> 31:09.000
+Drowsy.
+
+31:09.000 --> 31:12.000
+Because we let him do it
+
+31:12.000 --> 31:13.000
+after lunch.
+
+31:13.000 --> 31:14.000
+Then we asked him to drive
+
+31:14.000 --> 31:16.000
+that highway
+
+31:16.000 --> 31:18.000
+in a full-time lab.
+
+31:18.000 --> 31:19.000
+So we hope
+
+31:19.000 --> 31:20.000
+to let him
+
+31:20.000 --> 31:22.000
+take a nap in this way.
+
+31:22.000 --> 31:24.000
+So at least
+
+31:24.000 --> 31:27.000
+in this process,
+
+31:27.000 --> 31:28.000
+it may be
+
+31:28.000 --> 31:29.000
+closer to
+
+31:29.000 --> 31:30.000
+what we hope
+
+31:30.000 --> 31:32.000
+to trigger.
+
+31:35.000 --> 31:37.000
+Is that OK?
+
+31:37.000 --> 31:38.000
+OK.
+
+31:38.000 --> 31:42.000
+My question has been answered.
+
+31:42.000 --> 31:43.000
+OK.
+
+31:43.000 --> 31:45.000
+Because this part is
+
+31:45.000 --> 31:46.000
+I will talk about it later.
+
+31:46.000 --> 31:48.000
+In fact, this is very troublesome.
+
+31:48.000 --> 31:51.000
+Because many cognitive states
+
+31:51.000 --> 31:52.000
+do not have
+
+31:52.000 --> 31:54.000
+a good objective definition.
+
+31:54.000 --> 31:55.000
+In the future,
+
+31:55.000 --> 31:56.000
+I think
+
+31:56.000 --> 31:57.000
+there are some
+
+31:57.000 --> 31:58.000
+whether it is
+
+31:58.000 --> 31:59.000
+brain interface
+
+31:59.000 --> 32:00.000
+or cognitive science
+
+32:00.000 --> 32:01.000
+to move forward.
+
+32:01.000 --> 32:04.000
+In fact, this is a big problem.
+
+32:04.000 --> 32:05.000
+OK.
+
+32:05.000 --> 32:09.000
+Then I will continue to talk about my research.
+
+32:09.000 --> 32:10.000
+OK.
+
+32:10.000 --> 32:11.000
+Then,
+
+32:11.000 --> 32:12.000
+just mentioned that
+
+32:12.000 --> 32:13.000
+our brain waves
+
+32:13.000 --> 32:14.000
+can be divided into
+
+32:14.000 --> 32:16.000
+some features of different platforms.
+
+32:16.000 --> 32:18.000
+So here is
+
+32:18.000 --> 32:19.000
+some of my
+
+32:19.000 --> 32:20.000
+processing
+
+32:20.000 --> 32:21.000
+process
+
+32:21.000 --> 32:22.000
+list it out.
+
+32:22.000 --> 32:23.000
+Then EEG,
+
+32:23.000 --> 32:25.000
+we will
+
+32:25.000 --> 32:27.000
+do a
+
+32:27.000 --> 32:29.000
+re-referencing
+
+32:29.000 --> 32:30.000
+for different channels.
+
+32:30.000 --> 32:31.000
+That is to say,
+
+32:31.000 --> 32:33.000
+we will
+
+32:33.000 --> 32:34.000
+we are taking
+
+32:34.000 --> 32:35.000
+that
+
+32:35.000 --> 32:36.000
+all channels
+
+32:36.000 --> 32:38.000
+EEG of all channels
+
+32:38.000 --> 32:39.000
+to reduce
+
+32:39.000 --> 32:40.000
+their overall average.
+
+32:40.000 --> 32:41.000
+This part
+
+32:41.000 --> 32:42.000
+can remove
+
+32:42.000 --> 32:43.000
+some impurities.
+
+32:43.000 --> 32:44.000
+Then we do
+
+32:44.000 --> 32:45.000
+bandpass filtering.
+
+32:45.000 --> 32:46.000
+Because the brain wave
+
+32:46.000 --> 32:47.000
+can measure to
+
+32:47.000 --> 32:48.000
+EEG
+
+32:48.000 --> 32:50.000
+is actually limited.
+
+32:50.000 --> 32:51.000
+It is probably
+
+32:51.000 --> 32:53.000
+energy below 50 Hz.
+
+32:53.000 --> 32:55.000
+But there are some
+
+32:55.000 --> 32:57.000
+low frequency fluctuations
+
+32:57.000 --> 32:58.000
+may come from
+
+32:58.000 --> 33:00.000
+some
+
+33:00.000 --> 33:02.000
+moving around
+
+33:02.000 --> 33:03.000
+or
+
+33:03.000 --> 33:04.000
+it
+
+33:04.000 --> 33:05.000
+device itself
+
+33:05.000 --> 33:06.000
+caused noise.
+
+33:06.000 --> 33:07.000
+So we will
+
+33:07.000 --> 33:08.000
+use a
+
+33:08.000 --> 33:10.000
+usually use 1 to 50 Hz
+
+33:10.000 --> 33:11.000
+or almost this band
+
+33:11.000 --> 33:13.000
+to put this
+
+33:13.000 --> 33:15.000
+brain wave filter.
+
+33:15.000 --> 33:16.000
+Then we get
+
+33:16.000 --> 33:17.000
+something that
+
+33:17.000 --> 33:19.000
+really like brain wave.
+
+33:19.000 --> 33:20.000
+But there are still
+
+33:20.000 --> 33:22.000
+a lot of artifacts.
+
+33:22.000 --> 33:23.000
+Then we will
+
+33:23.000 --> 33:24.000
+downsampling
+
+33:24.000 --> 33:25.000
+is to reduce
+
+33:25.000 --> 33:26.000
+our computing time.
+
+33:26.000 --> 33:27.000
+Then we do
+
+33:27.000 --> 33:29.000
+subbandpass filtering.
+
+33:29.000 --> 33:30.000
+That is to say,
+
+33:30.000 --> 33:31.000
+we divide the brain wave
+
+33:31.000 --> 33:32.000
+into
+
+33:32.000 --> 33:33.000
+brain waves of different platforms.
+
+33:33.000 --> 33:34.000
+Just like the one
+
+33:34.000 --> 33:35.000
+in front of you
+
+33:35.000 --> 33:36.000
+is faster
+
+33:36.000 --> 33:37.000
+and slower.
+
+33:37.000 --> 33:38.000
+Then they are
+
+33:38.000 --> 33:39.000
+from delta,
+
+33:39.000 --> 33:40.000
+zeta, alpha
+
+33:40.000 --> 33:41.000
+to beta brain waves.
+
+33:41.000 --> 33:42.000
+Then we go
+
+33:42.000 --> 33:43.000
+to its energy
+
+33:43.000 --> 33:44.000
+and then
+
+33:44.000 --> 33:45.000
+do
+
+33:45.000 --> 33:46.000
+the same as we do
+
+33:46.000 --> 33:47.000
+a smoothing.
+
+33:47.000 --> 33:48.000
+That is,
+
+33:48.000 --> 33:49.000
+corresponding to
+
+33:49.000 --> 33:50.000
+the smoothing we just did,
+
+33:50.000 --> 33:51.000
+we are now using
+
+33:51.000 --> 33:52.000
+90-second
+
+33:52.000 --> 33:53.000
+moving window
+
+33:53.000 --> 33:54.000
+to make a
+
+33:54.000 --> 33:55.000
+brain wave energy
+
+33:55.000 --> 33:56.000
+characteristic
+
+33:56.000 --> 33:57.000
+to do smoothing.
+
+33:57.000 --> 33:58.000
+Then get our
+
+33:58.000 --> 33:59.000
+data.
+
+34:02.000 --> 34:03.000
+So we have
+
+34:03.000 --> 34:04.000
+brain wave energy now.
+
+34:04.000 --> 34:05.000
+Then we just
+
+34:05.000 --> 34:06.000
+have an
+
+34:06.000 --> 34:07.000
+alertness index.
+
+34:07.000 --> 34:08.000
+So we
+
+34:08.000 --> 34:09.000
+now take
+
+34:09.000 --> 34:10.000
+these two things
+
+34:10.000 --> 34:11.000
+to make a comparison.
+
+34:11.000 --> 34:12.000
+Then this
+
+34:12.000 --> 34:13.000
+every small picture
+
+34:13.000 --> 34:14.000
+its Y
+
+34:14.000 --> 34:15.000
+means
+
+34:15.000 --> 34:16.000
+the energy of
+
+34:16.000 --> 34:17.000
+EEG.
+
+34:17.000 --> 34:18.000
+Then X
+
+34:18.000 --> 34:19.000
+means
+
+34:19.000 --> 34:20.000
+the alertness
+
+34:20.000 --> 34:21.000
+index
+
+34:21.000 --> 34:22.000
+just now.
+
+34:22.000 --> 34:23.000
+So
+
+34:23.000 --> 34:24.000
+X
+
+34:24.000 --> 34:25.000
+to the right
+
+34:25.000 --> 34:26.000
+is that
+
+34:26.000 --> 34:27.000
+it
+
+34:27.000 --> 34:28.000
+reacts slower and slower.
+
+34:28.000 --> 34:29.000
+Then
+
+34:29.000 --> 34:30.000
+Y
+
+34:30.000 --> 34:31.000
+up
+
+34:31.000 --> 34:32.000
+is that
+
+34:32.000 --> 34:33.000
+EEG
+
+34:33.000 --> 34:34.000
+the energy of that platform
+
+34:34.000 --> 34:35.000
+is getting stronger and stronger.
+
+34:35.000 --> 34:36.000
+So here are
+
+34:36.000 --> 34:37.000
+delta, zeta, alpha, beta
+
+34:37.000 --> 34:38.000
+different platforms.
+
+34:38.000 --> 34:39.000
+Then we
+
+34:39.000 --> 34:40.000
+then I put
+
+34:40.000 --> 34:41.000
+a few channels
+
+34:41.000 --> 34:42.000
+out.
+
+34:42.000 --> 34:43.000
+There is a frontal
+
+34:43.000 --> 34:44.000
+front
+
+34:44.000 --> 34:45.000
+and then central.
+
+34:45.000 --> 34:46.000
+Then
+
+34:46.000 --> 34:47.000
+Z is the
+
+34:47.000 --> 34:48.000
+midline part
+
+34:48.000 --> 34:49.000
+is the middle
+
+34:49.000 --> 34:50.000
+is the middle of the front
+
+34:50.000 --> 34:51.000
+and then the middle of the
+
+34:51.000 --> 34:52.000
+middle
+
+34:52.000 --> 34:53.000
+parietal
+
+34:53.000 --> 34:54.000
+middle
+
+34:54.000 --> 34:55.000
+and then
+
+34:55.000 --> 34:56.000
+the
+
+34:56.000 --> 34:57.000
+back
+
+34:57.000 --> 34:58.000
+the back
+
+34:58.000 --> 34:59.000
+middle.
+
+34:59.000 --> 35:00.000
+Then in
+
+35:00.000 --> 35:01.000
+its own position
+
+35:01.000 --> 35:02.000
+it
+
+35:02.000 --> 35:03.000
+different platforms
+
+35:03.000 --> 35:04.000
+and then
+
+35:04.000 --> 35:05.000
+its
+
+35:05.000 --> 35:06.000
+EEG energy
+
+35:06.000 --> 35:07.000
+changes
+
+35:07.000 --> 35:08.000
+with
+
+35:08.000 --> 35:09.000
+some
+
+35:09.000 --> 35:10.000
+relationships.
+
+35:10.000 --> 35:11.000
+Like the delta part
+
+35:11.000 --> 35:12.000
+it is a positive
+
+35:12.000 --> 35:13.000
+like this 0.77
+
+35:13.000 --> 35:14.000
+is a
+
+35:14.000 --> 35:15.000
+related factor.
+
+35:15.000 --> 35:16.000
+Yes,
+
+35:16.000 --> 35:17.000
+like alpha
+
+35:17.000 --> 35:18.000
+here we can see
+
+35:18.000 --> 35:19.000
+it is a
+
+35:19.000 --> 35:20.000
+negative
+
+35:20.000 --> 35:21.000
+it is
+
+35:21.000 --> 35:22.000
+negative
+
+35:22.000 --> 35:23.000
+0.28
+
+35:23.000 --> 35:24.000
+that is
+
+35:24.000 --> 35:25.000
+become
+
+35:25.000 --> 35:26.000
+when you
+
+35:26.000 --> 35:27.000
+alertness
+
+35:27.000 --> 35:28.000
+down
+
+35:28.000 --> 35:29.000
+after
+
+35:29.000 --> 35:30.000
+the
+
+35:30.000 --> 35:31.000
+alpha
+
+35:31.000 --> 35:32.000
+platform
+
+35:32.000 --> 35:33.000
+will
+
+35:33.000 --> 35:34.000
+decrease
+
+35:34.000 --> 35:35.000
+and then
+
+35:35.000 --> 35:36.000
+this part
+
+35:36.000 --> 35:37.000
+first
+
+35:37.000 --> 35:38.000
+the
+
+35:38.000 --> 35:39.000
+situation
+
+35:39.000 --> 35:40.000
+will be
+
+35:40.000 --> 35:41.000
+different.
+
+35:41.000 --> 35:42.000
+So we
+
+35:42.000 --> 35:43.000
+here I
+
+35:43.000 --> 35:44.000
+use a
+
+35:44.000 --> 35:45.000
+related factor
+
+35:45.000 --> 35:46.000
+a
+
+35:46.000 --> 35:47.000
+distribution
+
+35:47.000 --> 35:48.000
+map
+
+35:48.000 --> 35:49.000
+to see
+
+35:49.000 --> 35:50.000
+that
+
+35:50.000 --> 35:51.000
+a certain
+
+35:51.000 --> 35:52.000
+experiment
+
+35:52.000 --> 35:53.000
+brain wave
+
+35:53.000 --> 35:54.000
+with
+
+35:54.000 --> 35:55.000
+the
+
+35:55.000 --> 35:56.000
+relationship
+
+35:56.000 --> 35:57.000
+of
+
+35:57.000 --> 35:58.000
+alertness.
+
+35:58.000 --> 35:59.000
+Here is
+
+35:59.000 --> 36:00.000
+to show
+
+36:00.000 --> 36:01.000
+its
+
+36:01.000 --> 36:02.000
+related factors
+
+36:02.000 --> 36:03.000
+with
+
+36:03.000 --> 36:04.000
+color.
+
+36:04.000 --> 36:05.000
+Red is
+
+36:05.000 --> 36:06.000
+positive
+
+36:06.000 --> 36:07.000
+and
+
+36:07.000 --> 36:08.000
+green is
+
+36:08.000 --> 36:09.000
+negative.
+
+36:09.000 --> 36:10.000
+So this
+
+36:10.000 --> 36:11.000
+picture
+
+36:11.000 --> 36:12.000
+shows
+
+36:12.000 --> 36:13.000
+this experiment
+
+36:13.000 --> 36:14.000
+we got
+
+36:14.000 --> 36:15.000
+the result of
+
+36:15.000 --> 36:16.000
+brain wave
+
+36:16.000 --> 36:17.000
+and alertness.
+
+36:17.000 --> 36:18.000
+This
+
+36:18.000 --> 36:19.000
+picture
+
+36:19.000 --> 36:20.000
+will
+
+36:20.000 --> 36:21.000
+change
+
+36:21.000 --> 36:22.000
+with
+
+36:22.000 --> 36:23.000
+time
+
+36:23.000 --> 36:24.000
+and
+
+36:24.000 --> 36:25.000
+with
+
+36:25.000 --> 36:26.000
+different
+
+36:26.000 --> 36:27.000
+people.
+
+36:27.000 --> 36:28.000
+Here
+
+36:28.000 --> 36:29.000
+I
+
+36:29.000 --> 36:30.000
+will
+
+36:30.000 --> 36:31.000
+talk
+
+36:31.000 --> 36:32.000
+first.
+
+36:32.000 --> 36:33.000
+The
+
+36:33.000 --> 36:34.000
+next
+
+36:34.000 --> 36:35.000
+question
+
+36:35.000 --> 36:36.000
+is
+
+36:36.000 --> 36:37.000
+the
+
+36:37.000 --> 36:38.000
+frequency
+
+36:38.000 --> 36:39.000
+of
+
+36:39.000 --> 36:40.000
+alpha,
+
+36:40.000 --> 36:41.000
+beta,
+
+36:41.000 --> 36:42.000
+theta,
+
+36:42.000 --> 36:43.000
+delta?
+
+36:43.000 --> 36:44.000
+Or
+
+36:44.000 --> 36:45.000
+is it
+
+36:45.000 --> 36:46.000
+a smooth
+
+36:46.000 --> 36:47.000
+continuous
+
+36:47.000 --> 36:48.000
+frequency?
+
+36:48.000 --> 36:49.000
+It is
+
+36:49.000 --> 36:50.000
+a
+
+36:50.000 --> 36:51.000
+frequency
+
+36:51.000 --> 36:52.000
+with
+
+36:52.000 --> 36:53.000
+1
+
+36:53.000 --> 36:54.000
+over
+
+36:54.000 --> 36:55.000
+f
+
+36:55.000 --> 36:56.000
+distribution.
+
+36:56.000 --> 36:57.000
+1
+
+36:57.000 --> 36:58.000
+over
+
+36:58.000 --> 36:59.000
+f
+
+36:59.000 --> 37:00.000
+distribution
+
+37:00.000 --> 37:01.000
+looks like
+
+37:01.000 --> 37:02.000
+a
+
+37:02.000 --> 37:03.000
+decrease
+
+37:03.000 --> 37:04.000
+curve.
+
+37:04.000 --> 37:05.000
+The
+
+37:05.000 --> 37:06.000
+frequency
+
+37:06.000 --> 37:07.000
+of
+
+37:07.000 --> 37:08.000
+alpha,
+
+37:08.000 --> 37:09.000
+beta,
+
+37:09.000 --> 37:10.000
+theta,
+
+37:10.000 --> 37:11.000
+delta
+
+37:11.000 --> 37:12.000
+is
+
+37:12.000 --> 37:13.000
+1
+
+37:13.000 --> 37:14.000
+over
+
+37:14.000 --> 37:15.000
+f
+
+37:15.000 --> 37:16.000
+with
+
+37:16.000 --> 37:17.000
+1
+
+37:17.000 --> 37:18.000
+over
+
+37:18.000 --> 37:19.000
+f
+
+37:19.000 --> 37:20.000
+distribution.
+
+37:20.000 --> 37:21.000
+The
+
+37:21.000 --> 37:22.000
+frequency
+
+37:22.000 --> 37:23.000
+of
+
+37:23.000 --> 37:24.000
+alpha,
+
+37:24.000 --> 37:25.000
+beta,
+
+37:25.000 --> 37:26.000
+theta,
+
+37:26.000 --> 37:27.000
+delta
+
+37:27.000 --> 37:28.000
+is
+
+37:28.000 --> 37:29.000
+1
+
+37:29.000 --> 37:30.000
+over
+
+37:30.000 --> 37:31.000
+f
+
+37:31.000 --> 37:32.000
+with
+
+37:32.000 --> 37:33.000
+1
+
+37:33.000 --> 37:34.000
+over
+
+37:34.000 --> 37:35.000
+f
+
+37:35.000 --> 37:36.000
+distribution.
+
+37:36.000 --> 37:37.000
+The
+
+37:37.000 --> 37:38.000
+frequency
+
+37:38.000 --> 37:39.000
+of
+
+37:39.000 --> 37:40.000
+alpha,
+
+37:40.000 --> 37:41.000
+beta,
+
+37:41.000 --> 37:42.000
+delta
+
+37:42.000 --> 37:43.000
+is
+
+37:43.000 --> 37:44.000
+1
+
+37:44.000 --> 37:45.000
+over
+
+37:45.000 --> 37:46.000
+f
+
+37:46.000 --> 37:47.000
+with
+
+37:47.000 --> 37:48.000
+1
+
+37:48.000 --> 37:49.000
+over
+
+37:49.000 --> 37:50.000
+f
+
+37:50.000 --> 37:51.000
+distribution.
+
+37:51.000 --> 37:52.000
+The
+
+37:52.000 --> 37:53.000
+frequency
+
+37:53.000 --> 37:54.000
+of
+
+37:54.000 --> 37:55.000
+alpha,
+
+37:55.000 --> 37:56.000
+beta,
+
+37:56.000 --> 37:57.000
+delta
+
+37:57.000 --> 37:58.000
+is
+
+37:58.000 --> 37:59.000
+1
+
+37:59.000 --> 38:00.000
+over
+
+38:00.000 --> 38:01.000
+f
+
+38:01.000 --> 38:02.000
+with
+
+38:02.000 --> 38:03.000
+1
+
+38:03.000 --> 38:04.000
+over
+
+38:04.000 --> 38:05.000
+f
+
+38:05.000 --> 38:06.000
+distribution.
+
+38:06.000 --> 38:07.000
+The
+
+38:07.000 --> 38:08.000
+frequency
+
+38:08.000 --> 38:09.000
+of
+
+38:09.000 --> 38:10.000
+alpha,
+
+38:10.000 --> 38:11.000
+beta,
+
+38:11.000 --> 38:12.000
+delta
+
+38:12.000 --> 38:13.000
+is
+
+38:13.000 --> 38:14.000
+1
+
+38:14.000 --> 38:15.000
+over
+
+38:15.000 --> 38:16.000
+f
+
+38:16.000 --> 38:17.000
+with
+
+38:17.000 --> 38:18.000
+1
+
+38:18.000 --> 38:19.000
+over
+
+38:19.000 --> 38:20.000
+f
+
+38:20.000 --> 38:21.000
+distribution.
+
+38:21.000 --> 38:22.000
+The
+
+38:22.000 --> 38:23.000
+frequency
+
+38:23.000 --> 38:24.000
+of
+
+38:24.000 --> 38:25.000
+alpha,
+
+38:25.000 --> 38:26.000
+beta,
+
+38:26.000 --> 38:27.000
+delta
+
+38:27.000 --> 38:28.000
+is
+
+38:28.000 --> 38:29.000
+1
+
+38:29.000 --> 38:30.000
+over
+
+38:30.000 --> 38:31.000
+f
+
+38:31.000 --> 38:32.000
+with
+
+38:32.000 --> 38:33.000
+1
+
+38:33.000 --> 38:34.000
+over
+
+38:34.000 --> 38:35.000
+f
+
+38:35.000 --> 38:36.000
+distribution.
+
+38:36.000 --> 38:37.000
+The
+
+38:37.000 --> 38:38.000
+frequency
+
+38:38.000 --> 38:39.000
+of
+
+38:39.000 --> 38:40.000
+alpha,
+
+38:40.000 --> 38:41.000
+beta,
+
+38:41.000 --> 38:42.000
+delta
+
+38:42.000 --> 38:43.000
+is
+
+38:43.000 --> 38:44.000
+1
+
+38:44.000 --> 38:45.000
+over
+
+38:45.000 --> 38:46.000
+f
+
+38:46.000 --> 38:47.000
+with
+
+38:47.000 --> 38:48.000
+1
+
+38:48.000 --> 38:49.000
+over
+
+38:49.000 --> 38:50.000
+f
+
+38:50.000 --> 38:51.000
+distribution.
+
+38:51.000 --> 38:52.000
+The
+
+38:52.000 --> 38:53.000
+frequency
+
+38:53.000 --> 38:54.000
+of
+
+38:54.000 --> 38:55.000
+alpha,
+
+38:55.000 --> 38:56.000
+beta,
+
+38:56.000 --> 38:57.000
+delta
+
+38:57.000 --> 38:58.000
+is
+
+38:58.000 --> 38:59.000
+1
+
+38:59.000 --> 39:00.000
+over
+
+39:00.000 --> 39:01.000
+f
+
+39:01.000 --> 39:02.000
+with
+
+39:02.000 --> 39:03.000
+1
+
+39:03.000 --> 39:04.000
+over
+
+39:04.000 --> 39:05.000
+f
+
+39:05.000 --> 39:06.000
+distribution.
+
+39:06.000 --> 39:07.000
+The
+
+39:07.000 --> 39:08.000
+frequency
+
+39:08.000 --> 39:09.000
+of
+
+39:09.000 --> 39:10.000
+alpha,
+
+39:10.000 --> 39:11.000
+beta,
+
+39:11.000 --> 39:12.000
+delta
+
+39:12.000 --> 39:13.000
+is
+
+39:13.000 --> 39:14.000
+1
+
+39:14.000 --> 39:15.000
+over
+
+39:15.000 --> 39:16.000
+f
+
+39:16.000 --> 39:17.000
+with
+
+39:17.000 --> 39:18.000
+1
+
+39:18.000 --> 39:19.000
+over
+
+39:19.000 --> 39:20.000
+f
+
+39:20.000 --> 39:21.000
+distribution.
+
+39:21.000 --> 39:22.000
+The
+
+39:22.000 --> 39:23.000
+frequency
+
+39:23.000 --> 39:24.000
+of
+
+39:24.000 --> 39:25.000
+alpha,
+
+39:25.000 --> 39:26.000
+beta,
+
+39:26.000 --> 39:27.000
+delta
+
+39:27.000 --> 39:28.000
+is
+
+39:28.000 --> 39:29.000
+1
+
+39:29.000 --> 39:30.000
+over
+
+39:30.000 --> 39:31.000
+f
+
+39:31.000 --> 39:32.000
+with
+
+39:32.000 --> 39:33.000
+1
+
+39:33.000 --> 39:34.000
+over
+
+39:34.000 --> 39:35.000
+f
+
+39:35.000 --> 39:36.000
+distribution.
+
+39:36.000 --> 39:37.000
+The
+
+39:37.000 --> 39:38.000
+frequency
+
+39:38.000 --> 39:39.000
+of
+
+39:39.000 --> 39:40.000
+alpha,
+
+39:40.000 --> 39:41.000
+beta,
+
+39:41.000 --> 39:42.000
+delta
+
+39:42.000 --> 39:43.000
+is
+
+39:43.000 --> 39:44.000
+1
+
+39:44.000 --> 39:45.000
+over
+
+39:45.000 --> 39:46.000
+f
+
+39:46.000 --> 39:47.000
+with
+
+39:47.000 --> 39:48.000
+1
+
+39:48.000 --> 39:49.000
+over
+
+39:49.000 --> 39:50.000
+f
+
+39:50.000 --> 39:51.000
+distribution.
+
+39:51.000 --> 39:52.000
+The
+
+39:52.000 --> 39:53.000
+frequency
+
+39:53.000 --> 39:54.000
+of
+
+39:54.000 --> 39:55.000
+alpha,
+
+39:55.000 --> 39:56.000
+beta,
+
+39:56.000 --> 39:57.000
+delta
+
+39:57.000 --> 39:58.000
+is
+
+39:58.000 --> 39:59.000
+1
+
+39:59.000 --> 40:00.000
+over
+
+40:00.000 --> 40:01.000
+f
+
+40:01.000 --> 40:02.000
+with
+
+40:02.000 --> 40:03.000
+1
+
+40:03.000 --> 40:04.000
+over
+
+40:04.000 --> 40:05.000
+f
+
+40:05.000 --> 40:06.000
+distribution.
+
+40:06.000 --> 40:07.000
+The
+
+40:07.000 --> 40:08.000
+frequency
+
+40:08.000 --> 40:09.000
+of
+
+40:09.000 --> 40:10.000
+alpha,
+
+40:10.000 --> 40:11.000
+beta,
+
+40:11.000 --> 40:12.000
+delta
+
+40:12.000 --> 40:13.000
+is
+
+40:13.000 --> 40:14.000
+1
+
+40:14.000 --> 40:15.000
+over
+
+40:15.000 --> 40:16.000
+f
+
+40:16.000 --> 40:17.000
+with
+
+40:17.000 --> 40:18.000
+1
+
+40:18.000 --> 40:19.000
+over
+
+40:19.000 --> 40:20.000
+f
+
+40:20.000 --> 40:21.000
+distribution.
+
+40:21.000 --> 40:22.000
+The
+
+40:22.000 --> 40:23.000
+frequency
+
+40:23.000 --> 40:24.000
+of
+
+40:24.000 --> 40:25.000
+alpha,
+
+40:25.000 --> 40:26.000
+beta,
+
+40:26.000 --> 40:27.000
+delta
+
+40:27.000 --> 40:28.000
+is
+
+40:28.000 --> 40:29.000
+1
+
+40:29.000 --> 40:30.000
+over
+
+40:30.000 --> 40:31.000
+f
+
+40:31.000 --> 40:32.000
+distribution.
+
+40:32.000 --> 40:33.000
+The
+
+40:33.000 --> 40:34.000
+frequency
+
+40:34.000 --> 40:35.000
+of
+
+40:35.000 --> 40:36.000
+alpha,
+
+40:36.000 --> 40:37.000
+beta,
+
+40:37.000 --> 40:38.000
+delta
+
+40:38.000 --> 40:39.000
+is
+
+40:39.000 --> 40:40.000
+1
+
+40:40.000 --> 40:41.000
+over
+
+40:41.000 --> 40:42.000
+f
+
+40:42.000 --> 40:43.000
+distribution.
+
+40:43.000 --> 40:44.000
+The
+
+40:44.000 --> 40:45.000
+frequency
+
+40:45.000 --> 40:46.000
+of
+
+40:46.000 --> 40:47.000
+alpha,
+
+40:47.000 --> 40:48.000
+beta,
+
+40:48.000 --> 40:49.000
+delta
+
+40:49.000 --> 40:50.000
+is
+
+40:50.000 --> 40:51.000
+1
+
+40:51.000 --> 40:52.000
+over
+
+40:52.000 --> 40:53.000
+f
+
+40:53.000 --> 40:54.000
+distribution.
+
+40:54.000 --> 40:55.000
+The
+
+40:55.000 --> 40:56.000
+frequency
+
+40:56.000 --> 40:57.000
+of
+
+40:57.000 --> 40:58.000
+alpha,
+
+40:58.000 --> 40:59.000
+beta,
+
+40:59.000 --> 41:00.000
+delta
+
+41:00.000 --> 41:01.000
+is
+
+41:01.000 --> 41:02.000
+1
+
+41:02.000 --> 41:03.000
+over
+
+41:03.000 --> 41:04.000
+f
+
+41:04.000 --> 41:05.000
+distribution.
+
+41:05.000 --> 41:06.000
+The
+
+41:06.000 --> 41:07.000
+frequency
+
+41:07.000 --> 41:08.000
+of
+
+41:08.000 --> 41:09.000
+alpha,
+
+41:09.000 --> 41:10.000
+beta,
+
+41:10.000 --> 41:11.000
+delta
+
+41:11.000 --> 41:12.000
+is
+
+41:12.000 --> 41:13.000
+1
+
+41:13.000 --> 41:14.000
+over
+
+41:14.000 --> 41:15.000
+f
+
+41:15.000 --> 41:16.000
+distribution.
+
+41:16.000 --> 41:17.000
+The
+
+41:17.000 --> 41:18.000
+frequency
+
+41:18.000 --> 41:19.000
+of
+
+41:19.000 --> 41:20.000
+alpha,
+
+41:20.000 --> 41:21.000
+beta,
+
+41:21.000 --> 41:22.000
+delta
+
+41:22.000 --> 41:23.000
+is
+
+41:23.000 --> 41:24.000
+1
+
+41:24.000 --> 41:25.000
+over
+
+41:25.000 --> 41:26.000
+f
+
+41:26.000 --> 41:27.000
+distribution.
+
+41:27.000 --> 41:28.000
+The
+
+41:28.000 --> 41:29.000
+frequency
+
+41:29.000 --> 41:30.000
+of
+
+41:30.000 --> 41:31.000
+alpha,
+
+41:31.000 --> 41:32.000
+beta,
+
+41:32.000 --> 41:33.000
+delta
+
+41:33.000 --> 41:34.000
+is
+
+41:34.000 --> 41:35.000
+1
+
+41:35.000 --> 41:36.000
+over
+
+41:36.000 --> 41:37.000
+f
+
+41:37.000 --> 41:38.000
+distribution.
+
+41:38.000 --> 41:39.000
+The
+
+41:39.000 --> 41:40.000
+frequency
+
+41:40.000 --> 41:41.000
+of
+
+41:41.000 --> 41:42.000
+alpha,
+
+41:42.000 --> 41:43.000
+beta,
+
+41:43.000 --> 41:44.000
+delta
+
+41:44.000 --> 41:45.000
+is
+
+41:45.000 --> 41:46.000
+1
+
+41:46.000 --> 41:47.000
+over
+
+41:47.000 --> 41:48.000
+f
+
+41:48.000 --> 41:49.000
+distribution.
+
+41:49.000 --> 41:50.000
+The
+
+41:50.000 --> 41:51.000
+frequency
+
+41:51.000 --> 41:52.000
+of
+
+41:52.000 --> 41:53.000
+alpha,
+
+41:53.000 --> 41:54.000
+beta,
+
+41:54.000 --> 41:55.000
+is
+
+41:55.000 --> 41:56.000
+1
+
+41:56.000 --> 41:57.000
+over
+
+41:57.000 --> 41:58.000
+f
+
+41:58.000 --> 41:59.000
+distribution.
+
+41:59.000 --> 42:00.000
+The
+
+42:00.000 --> 42:01.000
+frequency
+
+42:01.000 --> 42:02.000
+of
+
+42:02.000 --> 42:03.000
+alpha,
+
+42:03.000 --> 42:04.000
+beta,
+
+42:04.000 --> 42:05.000
+delta
+
+42:05.000 --> 42:06.000
+is
+
+42:06.000 --> 42:07.000
+1
+
+42:07.000 --> 42:08.000
+over
+
+42:08.000 --> 42:09.000
+f
+
+42:09.000 --> 42:10.000
+distribution.
+
+42:10.000 --> 42:11.000
+The
+
+42:11.000 --> 42:12.000
+frequency
+
+42:12.000 --> 42:13.000
+of
+
+42:13.000 --> 42:14.000
+alpha,
+
+42:14.000 --> 42:15.000
+beta,
+
+42:15.000 --> 42:16.000
+delta
+
+42:16.000 --> 42:17.000
+is
+
+42:17.000 --> 42:18.000
+1
+
+42:18.000 --> 42:19.000
+over
+
+42:19.000 --> 42:20.000
+f
+
+42:20.000 --> 42:21.000
+distribution.
+
+42:21.000 --> 42:22.000
+The
+
+42:22.000 --> 42:23.000
+frequency
+
+42:23.000 --> 42:24.000
+of
+
+42:24.000 --> 42:25.000
+alpha,
+
+42:25.000 --> 42:26.000
+beta,
+
+42:26.000 --> 42:27.000
+delta
+
+42:27.000 --> 42:28.000
+is
+
+42:28.000 --> 42:29.000
+1
+
+42:29.000 --> 42:30.000
+over
+
+42:30.000 --> 42:31.000
+f
+
+42:31.000 --> 42:32.000
+distribution.
+
+42:32.000 --> 42:33.000
+The
+
+42:33.000 --> 42:34.000
+frequency
+
+42:34.000 --> 42:35.000
+of
+
+42:35.000 --> 42:36.000
+alpha,
+
+42:36.000 --> 42:37.000
+beta,
+
+42:37.000 --> 42:38.000
+delta
+
+42:38.000 --> 42:39.000
+is
+
+42:39.000 --> 42:40.000
+1
+
+42:40.000 --> 42:41.000
+over
+
+42:41.000 --> 42:42.000
+f
+
+42:42.000 --> 42:43.000
+distribution.
+
+42:43.000 --> 42:44.000
+The
+
+42:44.000 --> 42:45.000
+frequency
+
+42:45.000 --> 42:46.000
+of
+
+42:46.000 --> 42:47.000
+alpha,
+
+42:47.000 --> 42:48.000
+beta,
+
+42:48.000 --> 42:49.000
+delta
+
+42:49.000 --> 42:50.000
+is
+
+42:50.000 --> 42:51.000
+1
+
+42:51.000 --> 42:52.000
+over
+
+42:52.000 --> 42:53.000
+f
+
+42:53.000 --> 42:54.000
+distribution.
+
+42:54.000 --> 42:55.000
+The
+
+42:55.000 --> 42:56.000
+frequency
+
+42:56.000 --> 42:57.000
+of
+
+42:57.000 --> 42:58.000
+alpha,
+
+42:58.000 --> 42:59.000
+beta,
+
+42:59.000 --> 43:00.000
+delta
+
+43:00.000 --> 43:01.000
+is
+
+43:01.000 --> 43:02.000
+1
+
+43:02.000 --> 43:03.000
+over
+
+43:03.000 --> 43:04.000
+f
+
+43:04.000 --> 43:05.000
+distribution.
+
+43:05.000 --> 43:06.000
+The
+
+43:06.000 --> 43:07.000
+frequency
+
+43:07.000 --> 43:08.000
+of
+
+43:08.000 --> 43:09.000
+alpha,
+
+43:09.000 --> 43:10.000
+beta,
+
+43:10.000 --> 43:11.000
+delta
+
+43:11.000 --> 43:12.000
+is
+
+43:12.000 --> 43:13.000
+1
+
+43:13.000 --> 43:14.000
+over
+
+43:14.000 --> 43:15.000
+f
+
+43:15.000 --> 43:16.000
+distribution.
+
+43:16.000 --> 43:17.000
+The
+
+43:17.000 --> 43:18.000
+frequency
+
+43:18.000 --> 43:19.000
+of
+
+43:19.000 --> 43:20.000
+alpha,
+
+43:20.000 --> 43:21.000
+beta,
+
+43:21.000 --> 43:22.000
+is
+
+43:22.000 --> 43:23.000
+1
+
+43:23.000 --> 43:24.000
+over
+
+43:24.000 --> 43:25.000
+f
+
+43:25.000 --> 43:26.000
+distribution.
+
+43:26.000 --> 43:27.000
+The
+
+43:27.000 --> 43:28.000
+frequency
+
+43:28.000 --> 43:29.000
+of
+
+43:29.000 --> 43:30.000
+alpha,
+
+43:30.000 --> 43:31.000
+beta,
+
+43:31.000 --> 43:32.000
+delta
+
+43:32.000 --> 43:33.000
+is
+
+43:33.000 --> 43:34.000
+1
+
+43:34.000 --> 43:35.000
+over
+
+43:35.000 --> 43:36.000
+f
+
+43:36.000 --> 43:37.000
+distribution.
+
+43:37.000 --> 43:38.000
+The
+
+43:38.000 --> 43:39.000
+frequency
+
+43:39.000 --> 43:40.000
+of
+
+43:40.000 --> 43:41.000
+alpha,
+
+43:41.000 --> 43:42.000
+beta,
+
+43:42.000 --> 43:43.000
+delta
+
+43:43.000 --> 43:44.000
+is
+
+43:44.000 --> 43:45.000
+1
+
+43:45.000 --> 43:46.000
+over
+
+43:46.000 --> 43:47.000
+f
+
+43:47.000 --> 43:48.000
+distribution.
+
+43:48.000 --> 43:49.000
+The
+
+43:49.000 --> 43:50.000
+frequency
+
+43:50.000 --> 43:51.000
+of
+
+43:51.000 --> 43:52.000
+alpha,
+
+43:52.000 --> 43:53.000
+beta,
+
+43:53.000 --> 43:54.000
+delta
+
+43:54.000 --> 43:55.000
+is
+
+43:55.000 --> 43:56.000
+1
+
+43:56.000 --> 43:57.000
+over
+
+43:57.000 --> 43:58.000
+f
+
+43:58.000 --> 43:59.000
+distribution.
+
+43:59.000 --> 44:00.000
+The
+
+44:00.000 --> 44:01.000
+frequency
+
+44:01.000 --> 44:02.000
+of
+
+44:02.000 --> 44:03.000
+alpha,
+
+44:03.000 --> 44:04.000
+beta,
+
+44:04.000 --> 44:05.000
+delta
+
+44:05.000 --> 44:06.000
+is
+
+44:06.000 --> 44:07.000
+1
+
+44:07.000 --> 44:08.000
+over
+
+44:08.000 --> 44:09.000
+f
+
+44:09.000 --> 44:10.000
+distribution.
+
+44:10.000 --> 44:11.000
+The
+
+44:11.000 --> 44:12.000
+frequency
+
+44:12.000 --> 44:13.000
+of
+
+44:13.000 --> 44:14.000
+alpha,
+
+44:14.000 --> 44:15.000
+beta,
+
+44:15.000 --> 44:16.000
+delta
+
+44:16.000 --> 44:17.000
+is
+
+44:17.000 --> 44:18.000
+1
+
+44:18.000 --> 44:19.000
+over
+
+44:19.000 --> 44:20.000
+f
+
+44:20.000 --> 44:21.000
+distribution.
+
+44:21.000 --> 44:22.000
+The
+
+44:22.000 --> 44:23.000
+frequency
+
+44:23.000 --> 44:24.000
+of
+
+44:24.000 --> 44:25.000
+alpha,
+
+44:25.000 --> 44:26.000
+beta,
+
+44:26.000 --> 44:27.000
+delta
+
+44:27.000 --> 44:28.000
+is
+
+44:28.000 --> 44:29.000
+1
+
+44:29.000 --> 44:30.000
+over
+
+44:30.000 --> 44:31.000
+f
+
+44:31.000 --> 44:32.000
+distribution.
+
+44:32.000 --> 44:33.000
+The
+
+44:33.000 --> 44:34.000
+frequency
+
+44:34.000 --> 44:35.000
+of
+
+44:35.000 --> 44:36.000
+alpha,
+
+44:36.000 --> 44:37.000
+beta,
+
+44:37.000 --> 44:38.000
+delta
+
+44:38.000 --> 44:39.000
+is
+
+44:39.000 --> 44:40.000
+1
+
+44:40.000 --> 44:41.000
+over
+
+44:41.000 --> 44:42.000
+f
+
+44:42.000 --> 44:43.000
+distribution.
+
+44:43.000 --> 44:44.000
+The
+
+44:44.000 --> 44:45.000
+frequency
+
+44:45.000 --> 44:46.000
+of
+
+44:46.000 --> 44:47.000
+alpha,
+
+44:47.000 --> 44:48.000
+beta,
+
+44:48.000 --> 44:49.000
+delta
+
+44:49.000 --> 44:50.000
+is
+
+44:50.000 --> 44:51.000
+1
+
+44:51.000 --> 44:52.000
+over
+
+44:52.000 --> 44:53.000
+f
+
+44:53.000 --> 44:54.000
+distribution.
+
+44:54.000 --> 44:55.000
+The
+
+44:55.000 --> 44:56.000
+frequency
+
+44:56.000 --> 44:57.000
+of
+
+44:57.000 --> 44:58.000
+alpha,
+
+44:58.000 --> 44:59.000
+beta,
+
+44:59.000 --> 45:00.000
+delta
+
+45:00.000 --> 45:01.000
+is
+
+45:01.000 --> 45:02.000
+1
+
+45:02.000 --> 45:03.000
+over
+
+45:03.000 --> 45:04.000
+f
+
+45:04.000 --> 45:05.000
+distribution.
+
+45:05.000 --> 45:06.000
+The
+
+45:06.000 --> 45:07.000
+frequency
+
+45:07.000 --> 45:08.000
+of
+
+45:08.000 --> 45:09.000
+alpha,
+
+45:09.000 --> 45:10.000
+beta,
+
+45:10.000 --> 45:11.000
+delta
+
+45:11.000 --> 45:12.000
+is
+
+45:12.000 --> 45:13.000
+1
+
+45:13.000 --> 45:14.000
+over
+
+45:14.000 --> 45:15.000
+f
+
+45:15.000 --> 45:16.000
+distribution.
+
+45:16.000 --> 45:17.000
+The
+
+45:17.000 --> 45:18.000
+frequency
+
+45:18.000 --> 45:19.000
+of
+
+45:19.000 --> 45:20.000
+alpha,
+
+45:20.000 --> 45:21.000
+beta,
+
+45:21.000 --> 45:22.000
+delta
+
+45:22.000 --> 45:23.000
+is
+
+45:23.000 --> 45:24.000
+1
+
+45:24.000 --> 45:25.000
+over
+
+45:25.000 --> 45:26.000
+f
+
+45:26.000 --> 45:27.000
+distribution.
+
+45:27.000 --> 45:28.000
+The
+
+45:28.000 --> 45:29.000
+frequency
+
+45:29.000 --> 45:30.000
+of
+
+45:30.000 --> 45:31.000
+alpha,
+
+45:31.000 --> 45:32.000
+beta,
+
+45:32.000 --> 45:33.000
+delta
+
+45:33.000 --> 45:34.000
+is
+
+45:34.000 --> 45:35.000
+1
+
+45:35.000 --> 45:36.000
+over
+
+45:36.000 --> 45:37.000
+f
+
+45:37.000 --> 45:38.000
+distribution.
+
+45:38.000 --> 45:39.000
+The
+
+45:39.000 --> 45:40.000
+frequency
+
+45:40.000 --> 45:41.000
+of
+
+45:41.000 --> 45:42.000
+alpha,
+
+45:42.000 --> 45:43.000
+beta,
+
+45:43.000 --> 45:44.000
+delta
+
+45:44.000 --> 45:45.000
+is
+
+45:45.000 --> 45:46.000
+1
+
+45:46.000 --> 45:47.000
+over
+
+45:47.000 --> 45:48.000
+f
+
+45:48.000 --> 45:49.000
+distribution.
+
+45:49.000 --> 45:50.000
+The
+
+45:50.000 --> 45:51.000
+frequency
+
+45:51.000 --> 45:52.000
+of
+
+45:52.000 --> 45:53.000
+alpha,
+
+45:53.000 --> 45:54.000
+beta,
+
+45:54.000 --> 45:55.000
+delta
+
+45:55.000 --> 45:56.000
+is
+
+45:56.000 --> 45:57.000
+1
+
+45:57.000 --> 45:58.000
+over
+
+45:58.000 --> 45:59.000
+f
+
+45:59.000 --> 46:00.000
+distribution.
+
+46:00.000 --> 46:01.000
+The
+
+46:01.000 --> 46:02.000
+frequency
+
+46:02.000 --> 46:03.000
+of
+
+46:03.000 --> 46:04.000
+alpha,
+
+46:04.000 --> 46:05.000
+beta,
+
+46:05.000 --> 46:06.000
+delta
+
+46:06.000 --> 46:07.000
+is
+
+46:07.000 --> 46:08.000
+1
+
+46:08.000 --> 46:09.000
+over
+
+46:09.000 --> 46:10.000
+f
+
+46:10.000 --> 46:11.000
+distribution.
+
+46:11.000 --> 46:12.000
+The
+
+46:12.000 --> 46:13.000
+frequency
+
+46:13.000 --> 46:14.000
+of
+
+46:14.000 --> 46:15.000
+alpha,
+
+46:15.000 --> 46:16.000
+beta,
+
+46:16.000 --> 46:17.000
+delta
+
+46:17.000 --> 46:18.000
+is
+
+46:18.000 --> 46:19.000
+1
+
+46:19.000 --> 46:20.000
+over
+
+46:20.000 --> 46:21.000
+f
+
+46:21.000 --> 46:22.000
+distribution.
+
+46:22.000 --> 46:23.000
+The
+
+46:23.000 --> 46:24.000
+frequency
+
+46:24.000 --> 46:25.000
+of
+
+46:25.000 --> 46:26.000
+alpha,
+
+46:26.000 --> 46:27.000
+beta,
+
+46:27.000 --> 46:28.000
+delta
+
+46:28.000 --> 46:29.000
+is
+
+46:29.000 --> 46:30.000
+1
+
+46:30.000 --> 46:31.000
+over
+
+46:31.000 --> 46:32.000
+f
+
+46:32.000 --> 46:33.000
+distribution.
+
+46:33.000 --> 46:34.000
+The
+
+46:34.000 --> 46:35.000
+frequency
+
+46:35.000 --> 46:36.000
+of
+
+46:36.000 --> 46:37.000
+alpha,
+
+46:37.000 --> 46:38.000
+beta,
+
+46:38.000 --> 46:39.000
+delta
+
+46:39.000 --> 46:40.000
+is
+
+46:40.000 --> 46:41.000
+1
+
+46:41.000 --> 46:42.000
+over
+
+46:42.000 --> 46:43.000
+f
+
+46:43.000 --> 46:44.000
+distribution.
+
+46:44.000 --> 46:45.000
+The
+
+46:45.000 --> 46:46.000
+frequency
+
+46:46.000 --> 46:47.000
+of
+
+46:47.000 --> 46:48.000
+alpha,
+
+46:48.000 --> 46:49.000
+beta,
+
+46:49.000 --> 46:50.000
+delta
+
+46:50.000 --> 46:51.000
+is
+
+46:51.000 --> 46:52.000
+1
+
+46:52.000 --> 46:53.000
+over
+
+46:53.000 --> 46:54.000
+f
+
+46:54.000 --> 46:55.000
+distribution.
+
+46:55.000 --> 46:56.000
+The
+
+46:56.000 --> 46:57.000
+frequency
+
+46:57.000 --> 46:58.000
+of
+
+46:58.000 --> 46:59.000
+alpha,
+
+46:59.000 --> 47:00.000
+beta,
+
+47:00.000 --> 47:01.000
+delta
+
+47:01.000 --> 47:02.000
+is
+
+47:02.000 --> 47:03.000
+1
+
+47:03.000 --> 47:04.000
+over
+
+47:04.000 --> 47:05.000
+f
+
+47:05.000 --> 47:06.000
+distribution.
+
+47:06.000 --> 47:07.000
+The
+
+47:07.000 --> 47:08.000
+frequency
+
+47:08.000 --> 47:09.000
+of
+
+47:09.000 --> 47:10.000
+alpha,
+
+47:10.000 --> 47:11.000
+beta,
+
+47:11.000 --> 47:12.000
+delta
+
+47:12.000 --> 47:13.000
+is
+
+47:13.000 --> 47:14.000
+1
+
+47:14.000 --> 47:15.000
+over
+
+47:15.000 --> 47:16.000
+f
+
+47:16.000 --> 47:17.000
+distribution.
+
+47:17.000 --> 47:18.000
+The
+
+47:18.000 --> 47:19.000
+frequency
+
+47:19.000 --> 47:20.000
+of
+
+47:20.000 --> 47:21.000
+alpha,
+
+47:21.000 --> 47:22.000
+beta,
+
+47:22.000 --> 47:23.000
+delta
+
+47:23.000 --> 47:24.000
+is
+
+47:24.000 --> 47:25.000
+1
+
+47:25.000 --> 47:26.000
+over
+
+47:26.000 --> 47:27.000
+f
+
+47:27.000 --> 47:28.000
+distribution.
+
+47:28.000 --> 47:29.000
+The
+
+47:29.000 --> 47:30.000
+frequency
+
+47:30.000 --> 47:31.000
+of
+
+47:31.000 --> 47:32.000
+alpha,
+
+47:32.000 --> 47:33.000
+beta,
+
+47:33.000 --> 47:34.000
+delta
+
+47:34.000 --> 47:35.000
+is
+
+47:35.000 --> 47:36.000
+1
+
+47:36.000 --> 47:37.000
+over
+
+47:37.000 --> 47:38.000
+f
+
+47:38.000 --> 47:39.000
+distribution.
+
+47:39.000 --> 47:40.000
+The
+
+47:40.000 --> 47:41.000
+frequency
+
+47:41.000 --> 47:42.000
+of
+
+47:42.000 --> 47:43.000
+alpha,
+
+47:43.000 --> 47:44.000
+beta,
+
+47:44.000 --> 47:45.000
+delta
+
+47:45.000 --> 47:46.000
+is
+
+47:46.000 --> 47:47.000
+1
+
+47:47.000 --> 47:48.000
+over
+
+47:48.000 --> 47:49.000
+f
+
+47:49.000 --> 47:50.000
+distribution.
+
+47:50.000 --> 47:51.000
+The
+
+47:51.000 --> 47:52.000
+frequency
+
+47:52.000 --> 47:53.000
+of
+
+47:53.000 --> 47:54.000
+alpha,
+
+47:54.000 --> 47:55.000
+beta,
+
+47:55.000 --> 47:56.000
+delta
+
+47:56.000 --> 47:57.000
+is
+
+47:57.000 --> 47:58.000
+1
+
+47:58.000 --> 47:59.000
+over
+
+47:59.000 --> 48:00.000
+f
+
+48:00.000 --> 48:01.000
+distribution.
+
+48:01.000 --> 48:02.000
+The
+
+48:02.000 --> 48:03.000
+frequency
+
+48:03.000 --> 48:04.000
+of
+
+48:04.000 --> 48:05.000
+alpha,
+
+48:05.000 --> 48:06.000
+beta,
+
+48:06.000 --> 48:07.000
+delta
+
+48:07.000 --> 48:08.000
+is
+
+48:08.000 --> 48:09.000
+1
+
+48:09.000 --> 48:10.000
+over
+
+48:10.000 --> 48:11.000
+f
+
+48:12.000 --> 48:13.000
+distribution.
+
+48:13.000 --> 48:14.000
+The
+
+48:14.000 --> 48:15.000
+frequency
+
+48:15.000 --> 48:15.000
+
+
+48:15.000 --> 48:16.000
+alpha,
+
+48:16.000 --> 48:17.000
+beta,
+
+48:17.000 --> 48:18.000
+is
+
+48:18.000 --> 48:19.000
+1
+
+48:19.000 --> 48:20.000
+over
+
+48:20.000 --> 48:21.000
+f
+
+48:21.000 --> 48:22.000
+distribution.
+
+48:22.000 --> 48:23.000
+The
+
+48:23.000 --> 48:24.000
+frequency
+
+48:24.000 --> 48:25.000
+of
+
+48:25.000 --> 48:26.000
+alpha,
+
+48:26.000 --> 48:27.000
+beta,
+
+48:27.000 --> 48:27.980
+delta
+
+48:27.980 --> 48:28.000
+is
+
+48:28.000 --> 48:29.000
+1
+
+48:29.000 --> 48:30.000
+over
+
+48:30.000 --> 48:31.000
+f
+
+48:31.000 --> 48:32.000
+distribution.
+
+48:32.000 --> 48:33.000
+The
+
+48:33.000 --> 48:34.000
+frequency
+
+48:34.000 --> 48:35.000
+of
+
+48:35.000 --> 48:36.000
+alpha,
+
+48:36.000 --> 48:37.000
+beta,
+
+48:37.000 --> 48:38.000
+delta
+
+48:38.000 --> 48:39.000
+is
+
+48:39.000 --> 48:40.000
+1
+
+48:40.000 --> 48:41.000
+over
+
+48:41.000 --> 48:42.000
+f
+
+48:42.000 --> 48:43.000
+distribution.
+
+48:43.000 --> 48:44.000
+The
+
+48:44.000 --> 48:45.000
+frequency
+
+48:45.000 --> 48:46.000
+of
+
+48:46.000 --> 48:47.000
+alpha,
+
+48:47.000 --> 48:48.000
+beta,
+
+48:48.000 --> 48:49.000
+is
+
+48:49.000 --> 48:50.000
+1
+
+48:50.000 --> 48:51.000
+over
+
+48:51.000 --> 48:52.000
+f
+
+48:52.000 --> 48:53.000
+distribution.
+
+48:53.000 --> 48:54.000
+The
+
+48:54.000 --> 48:55.000
+frequency
+
+48:55.000 --> 48:56.000
+of
+
+48:56.000 --> 48:57.000
+beta,
+
+48:57.000 --> 48:58.000
+is
+
+48:58.000 --> 48:59.000
+1
+
+48:59.000 --> 49:00.000
+over
+
+49:00.000 --> 49:01.000
+f
+
+49:01.000 --> 49:02.000
+distribution.
+
+49:02.000 --> 49:03.000
+The
+
+49:03.000 --> 49:04.000
+frequency
+
+49:04.000 --> 49:05.000
+of
+
+49:05.000 --> 49:06.000
+beta,
+
+49:06.000 --> 49:07.000
+is
+
+49:07.000 --> 49:08.000
+1
+
+49:08.000 --> 49:09.000
+over
+
+49:09.000 --> 49:10.000
+f
+
+49:10.000 --> 49:11.000
+distribution.
+
+49:11.000 --> 49:12.000
+The
+
+49:12.000 --> 49:13.000
+frequency
+
+49:13.000 --> 49:14.000
+of
+
+49:14.000 --> 49:15.000
+beta,
+
+49:15.000 --> 49:16.000
+is
+
+49:16.000 --> 49:17.000
+1
+
+49:17.000 --> 49:18.000
+over
+
+49:18.000 --> 49:19.000
+f
+
+49:19.000 --> 49:20.000
+distribution.
+
+49:20.000 --> 49:21.000
+The
+
+49:21.000 --> 49:22.000
+frequency
+
+49:22.000 --> 49:23.000
+of
+
+49:23.000 --> 49:24.000
+beta,
+
+49:24.000 --> 49:25.000
+is
+
+49:25.000 --> 49:26.000
+1
+
+49:26.000 --> 49:27.000
+over
+
+49:27.000 --> 49:28.000
+f
+
+49:28.000 --> 49:29.000
+distribution.
+
+49:29.000 --> 49:30.000
+The
+
+49:30.000 --> 49:31.000
+frequency
+
+49:31.000 --> 49:32.000
+of
+
+49:32.000 --> 49:33.000
+beta,
+
+49:33.000 --> 49:34.000
+is
+
+49:34.000 --> 49:35.000
+1
+
+49:35.000 --> 49:36.000
+over
+
+49:36.000 --> 49:37.000
+f
+
+49:37.000 --> 49:38.000
+distribution.
+
+49:38.000 --> 49:39.000
+The
+
+49:39.000 --> 49:40.000
+frequency
+
+49:40.000 --> 49:41.000
+of
+
+49:59.000 --> 50:00.000
+beta,
+
+50:00.000 --> 50:01.000
+is
+
+50:01.000 --> 50:03.000
+1
+
+50:03.000 --> 50:04.000
+over
+
+50:04.000 --> 50:05.000
+f
+
+50:05.000 --> 50:06.000
+time.
+
+50:06.000 --> 50:07.000
+In
+
+50:07.000 --> 50:08.000
+other
+
+50:08.000 --> 50:09.000
+words,
+
+50:09.000 --> 50:10.000
+the
+
+50:10.000 --> 50:13.000
+frequency
+
+50:13.000 --> 50:14.000
+of
+
+50:14.000 --> 50:15.000
+beta
+
+50:15.000 --> 50:16.000
+is
+
+50:16.000 --> 50:17.000
+1
+
+50:17.000 --> 50:18.000
+over
+
+50:18.000 --> 50:18.000
+
+
+50:18.000 --> 50:19.000
+time.
+
+50:19.000 --> 50:20.000
+The
+
+50:20.000 --> 50:21.000
+frequency
+
+50:21.000 --> 50:22.000
+of
+
+50:22.000 --> 50:23.000
+beta
+
+50:23.000 --> 50:24.000
+is
+
+50:24.000 --> 50:25.000
+1
+
+50:25.000 --> 50:26.000
+over
+
+50:26.000 --> 50:27.000
+f
+
+50:27.000 --> 50:28.000
+time.
+
+50:28.000 --> 50:29.000
+The
+
+50:29.000 --> 50:30.000
+frequency
+
+50:30.000 --> 50:31.000
+of
+
+50:31.000 --> 50:32.000
+beta
+
+50:32.000 --> 50:33.000
+is
+
+50:33.000 --> 50:34.000
+1
+
+50:34.000 --> 50:35.000
+over
+
+50:35.000 --> 50:36.000
+time.
+
+50:36.000 --> 50:37.000
+The
+
+50:37.000 --> 50:38.000
+frequency
+
+50:38.000 --> 50:39.000
+of
+
+50:39.000 --> 50:40.000
+beta
+
+50:40.000 --> 50:41.000
+is
+
+50:41.000 --> 50:42.000
+1
+
+50:42.000 --> 50:43.000
+over
+
+50:43.000 --> 50:44.000
+time.
+
+50:44.000 --> 50:45.000
+The
+
+50:45.000 --> 50:46.000
+frequency
+
+50:46.000 --> 50:47.000
+of
+
+50:47.000 --> 50:48.000
+beta
+
+50:48.000 --> 50:49.000
+is
+
+50:49.000 --> 50:50.000
+1
+
+50:50.000 --> 50:51.000
+over
+
+50:51.000 --> 50:52.000
+time.
+
+50:52.000 --> 50:53.000
+In
+
+50:53.000 --> 50:54.000
+other
+
+50:54.000 --> 50:55.000
+words,
+
+50:55.000 --> 50:56.000
+the
+
+50:56.000 --> 50:57.000
+frequency
+
+50:57.000 --> 50:58.000
+of
+
+50:58.000 --> 50:59.000
+beta
+
+50:59.000 --> 51:00.000
+is
+
+51:00.000 --> 51:01.000
+1
+
+51:01.000 --> 51:02.000
+over
+
+51:02.000 --> 51:03.000
+time.
+
+51:03.000 --> 51:04.000
+So
+
+51:04.000 --> 51:05.000
+the
+
+51:05.000 --> 51:06.000
+frequency
+
+51:06.000 --> 51:07.000
+of
+
+51:07.000 --> 51:08.000
+beta
+
+51:08.000 --> 51:09.000
+is
+
+51:09.000 --> 51:10.000
+1
+
+51:10.000 --> 51:11.000
+over
+
+51:11.000 --> 51:12.000
+time.
+
+51:12.000 --> 51:13.000
+In
+
+51:13.000 --> 51:14.000
+other
+
+51:14.000 --> 51:15.000
+words,
+
+51:15.000 --> 51:16.000
+the
+
+51:16.000 --> 51:17.000
+frequency
+
+51:17.000 --> 51:18.000
+of
+
+51:18.000 --> 51:19.000
+beta
+
+51:19.000 --> 51:20.000
+is
+
+51:20.000 --> 51:21.000
+1
+
+51:21.000 --> 51:22.000
+over
+
+51:22.000 --> 51:23.000
+time.
+
+51:23.000 --> 51:24.000
+In
+
+51:24.000 --> 51:25.000
+other
+
+51:25.000 --> 51:26.000
+words,
+
+51:26.000 --> 51:27.000
+the
+
+51:27.000 --> 51:28.000
+frequency
+
+51:28.000 --> 51:29.000
+of
+
+51:29.000 --> 51:30.000
+beta
+
+51:30.000 --> 51:31.000
+is
+
+51:31.000 --> 51:32.000
+1
+
+51:32.000 --> 51:33.000
+over
+
+51:33.000 --> 51:34.000
+time.
+
+51:34.000 --> 51:35.000
+In
+
+51:35.000 --> 51:36.000
+other
+
+51:36.000 --> 51:37.000
+words,
+
+51:37.000 --> 51:38.000
+the
+
+51:38.000 --> 51:39.000
+frequency
+
+51:39.000 --> 51:40.000
+of
+
+51:40.000 --> 51:41.000
+beta
+
+51:41.000 --> 51:42.000
+is
+
+51:42.000 --> 51:43.000
+1
+
+51:43.000 --> 51:44.000
+over
+
+51:44.000 --> 51:45.000
+time.
+
+51:45.000 --> 51:46.000
+In
+
+51:46.000 --> 51:47.000
+other
+
+51:47.000 --> 51:48.000
+words,
+
+51:48.000 --> 51:49.000
+the
+
+51:49.000 --> 51:50.000
+frequency
+
+51:50.000 --> 51:51.000
+of
+
+51:51.000 --> 51:52.000
+beta
+
+51:52.000 --> 51:53.000
+is
+
+51:53.000 --> 51:54.000
+1
+
+51:54.000 --> 51:55.000
+over
+
+51:55.000 --> 51:56.000
+time.
+
+51:56.000 --> 51:57.000
+In
+
+51:57.000 --> 51:58.000
+other
+
+51:58.000 --> 51:59.000
+words,
+
+51:59.000 --> 52:00.000
+the
+
+52:00.000 --> 52:01.000
+frequency
+
+52:01.000 --> 52:02.000
+of
+
+52:02.000 --> 52:03.000
+beta
+
+52:03.000 --> 52:04.000
+is
+
+52:04.000 --> 52:05.000
+1
+
+52:05.000 --> 52:06.000
+over
+
+52:06.000 --> 52:07.000
+time.
+
+52:07.000 --> 52:08.000
+In
+
+52:08.000 --> 52:09.000
+other
+
+52:09.000 --> 52:10.000
+words,
+
+52:10.000 --> 52:11.000
+the
+
+52:11.000 --> 52:12.000
+frequency
+
+52:12.000 --> 52:13.000
+of
+
+52:13.000 --> 52:14.000
+beta
+
+52:14.000 --> 52:15.000
+is
+
+52:15.000 --> 52:16.000
+1
+
+52:16.000 --> 52:17.000
+over
+
+52:17.000 --> 52:18.000
+time.
+
+52:18.000 --> 52:19.000
+In
+
+52:19.000 --> 52:20.000
+other
+
+52:20.000 --> 52:21.000
+words,
+
+52:21.000 --> 52:22.000
+the
+
+52:22.000 --> 52:23.000
+frequency
+
+52:23.000 --> 52:24.000
+of
+
+52:24.000 --> 52:25.000
+beta
+
+52:25.000 --> 52:26.000
+is
+
+52:26.000 --> 52:27.000
+1
+
+52:27.000 --> 52:28.000
+over
+
+52:28.000 --> 52:29.000
+time.
+
+52:29.000 --> 52:30.000
+In
+
+52:30.000 --> 52:31.000
+other
+
+52:31.000 --> 52:32.000
+words,
+
+52:32.000 --> 52:33.000
+the
+
+52:33.000 --> 52:34.000
+frequency
+
+52:34.000 --> 52:35.000
+of
+
+52:35.000 --> 52:36.000
+beta
+
+52:36.000 --> 52:37.000
+is
+
+52:37.000 --> 52:38.000
+1
+
+52:38.000 --> 52:39.000
+over
+
+52:39.000 --> 52:40.000
+time.
+
+52:40.000 --> 52:41.000
+In
+
+52:41.000 --> 52:42.000
+other
+
+52:42.000 --> 52:43.000
+words,
+
+52:43.000 --> 52:44.000
+the
+
+52:44.000 --> 52:45.000
+frequency
+
+52:45.000 --> 52:46.000
+of
+
+52:46.000 --> 52:47.000
+beta
+
+52:47.000 --> 52:48.000
+is
+
+52:48.000 --> 52:49.000
+1
+
+52:49.000 --> 52:50.000
+over
+
+52:50.000 --> 52:51.000
+time.
+
+52:51.000 --> 52:52.000
+In
+
+52:52.000 --> 52:53.000
+other
+
+52:53.000 --> 52:54.000
+words,
+
+52:54.000 --> 52:55.000
+the
+
+52:55.000 --> 52:56.000
+frequency
+
+52:56.000 --> 52:57.000
+of
+
+52:57.000 --> 52:58.000
+beta
+
+52:58.000 --> 52:59.000
+is
+
+52:59.000 --> 53:00.000
+1
+
+53:00.000 --> 53:01.000
+over
+
+53:01.000 --> 53:02.000
+time.
+
+53:02.000 --> 53:03.000
+In
+
+53:03.000 --> 53:04.000
+other
+
+53:04.000 --> 53:05.000
+words,
+
+53:05.000 --> 53:06.000
+the
+
+53:06.000 --> 53:07.000
+frequency
+
+53:07.000 --> 53:08.000
+of
+
+53:08.000 --> 53:09.000
+beta
+
+53:09.000 --> 53:10.000
+is
+
+53:10.000 --> 53:11.000
+1
+
+53:11.000 --> 53:12.000
+over
+
+53:12.000 --> 53:13.000
+time.
+
+53:13.000 --> 53:14.000
+In
+
+53:14.000 --> 53:15.000
+other
+
+53:15.000 --> 53:16.000
+words,
+
+53:16.000 --> 53:17.000
+the
+
+53:17.000 --> 53:18.000
+frequency
+
+53:18.000 --> 53:19.000
+of
+
+53:19.000 --> 53:20.000
+beta
+
+53:20.000 --> 53:21.000
+is
+
+53:21.000 --> 53:22.000
+1
+
+53:22.000 --> 53:23.000
+over
+
+53:23.000 --> 53:24.000
+time.
+
+53:24.000 --> 53:25.000
+In
+
+53:25.000 --> 53:26.000
+other
+
+53:26.000 --> 53:27.000
+words,
+
+53:27.000 --> 53:28.000
+the
+
+53:28.000 --> 53:29.000
+frequency
+
+53:29.000 --> 53:30.000
+of
+
+53:30.000 --> 53:31.000
+beta
+
+53:31.000 --> 53:32.000
+is
+
+53:32.000 --> 53:33.000
+1
+
+53:33.000 --> 53:34.000
+over
+
+53:34.000 --> 53:35.000
+time.
+
+53:35.000 --> 53:36.000
+In
+
+53:36.000 --> 53:37.000
+other
+
+53:37.000 --> 53:38.000
+words,
+
+53:38.000 --> 53:39.000
+the
+
+53:39.000 --> 53:40.000
+frequency
+
+53:40.000 --> 53:41.000
+of
+
+53:41.000 --> 53:42.000
+beta
+
+53:42.000 --> 53:43.000
+is
+
+53:43.000 --> 53:44.000
+1
+
+53:44.000 --> 53:45.000
+over
+
+53:45.000 --> 53:46.000
+time.
+
+53:46.000 --> 53:47.000
+In
+
+53:47.000 --> 53:48.000
+other
+
+53:48.000 --> 53:49.000
+words,
+
+53:49.000 --> 53:50.000
+the
+
+53:50.000 --> 53:51.000
+frequency
+
+53:51.000 --> 53:52.000
+of
+
+53:52.000 --> 53:53.000
+beta
+
+53:53.000 --> 53:54.000
+is
+
+53:54.000 --> 53:55.000
+1
+
+53:55.000 --> 53:56.000
+over
+
+53:56.000 --> 53:57.000
+time.
+
+53:57.000 --> 53:58.000
+In
+
+53:58.000 --> 53:59.000
+other
+
+53:59.000 --> 54:00.000
+words,
+
+54:00.000 --> 54:01.000
+the
+
+54:01.000 --> 54:02.000
+frequency
+
+54:02.000 --> 54:03.000
+of
+
+54:03.000 --> 54:04.000
+beta
+
+54:04.000 --> 54:05.000
+is
+
+54:05.000 --> 54:06.000
+1
+
+54:06.000 --> 54:07.000
+over
+
+54:07.000 --> 54:08.000
+time.
+
+54:08.000 --> 54:09.000
+In
+
+54:09.000 --> 54:10.000
+other
+
+54:10.000 --> 54:11.000
+words,
+
+54:11.000 --> 54:12.000
+the
+
+54:12.000 --> 54:13.000
+frequency
+
+54:13.000 --> 54:14.000
+of
+
+54:14.000 --> 54:15.000
+beta
+
+54:15.000 --> 54:16.000
+is
+
+54:16.000 --> 54:17.000
+1
+
+54:17.000 --> 54:18.000
+over
+
+54:18.000 --> 54:19.000
+time.
+
+54:19.000 --> 54:20.000
+In
+
+54:20.000 --> 54:21.000
+other
+
+54:21.000 --> 54:22.000
+words,
+
+54:22.000 --> 54:23.000
+the
+
+54:23.000 --> 54:24.000
+frequency
+
+54:24.000 --> 54:25.000
+of
+
+54:25.000 --> 54:26.000
+beta
+
+54:26.000 --> 54:27.000
+is
+
+54:27.000 --> 54:28.000
+1
+
+54:28.000 --> 54:29.000
+over
+
+54:29.000 --> 54:30.000
+time.
+
+54:30.000 --> 54:31.000
+In
+
+54:31.000 --> 54:32.000
+other
+
+54:32.000 --> 54:33.000
+words,
+
+54:33.000 --> 54:34.000
+the
+
+54:34.000 --> 54:35.000
+frequency
+
+54:35.000 --> 54:36.000
+of
+
+54:36.000 --> 54:37.000
+beta
+
+54:37.000 --> 54:38.000
+is
+
+54:38.000 --> 54:39.000
+1
+
+54:39.000 --> 54:40.000
+over
+
+54:40.000 --> 54:41.000
+time.
+
+54:41.000 --> 54:42.000
+In
+
+54:42.000 --> 54:43.000
+other
+
+54:43.000 --> 54:44.000
+words,
+
+54:44.000 --> 54:45.000
+the
+
+54:45.000 --> 54:46.000
+frequency
+
+54:46.000 --> 54:47.000
+of
+
+54:47.000 --> 54:48.000
+beta
+
+54:48.000 --> 54:49.000
+is
+
+54:49.000 --> 54:50.000
+1
+
+54:50.000 --> 54:51.000
+over
+
+54:51.000 --> 54:52.000
+time.
+
+54:52.000 --> 54:53.000
+In
+
+54:53.000 --> 54:54.000
+other
+
+54:54.000 --> 54:55.000
+words,
+
+54:55.000 --> 54:56.000
+the
+
+54:56.000 --> 54:57.000
+frequency
+
+54:57.000 --> 54:58.000
+of
+
+54:58.000 --> 54:59.000
+beta
+
+54:59.000 --> 55:00.000
+is
+
+55:00.000 --> 55:01.000
+1
+
+55:01.000 --> 55:02.000
+over
+
+55:02.000 --> 55:03.000
+time.
+
+55:03.000 --> 55:04.000
+In
+
+55:04.000 --> 55:05.000
+other
+
+55:05.000 --> 55:06.000
+words,
+
+55:06.000 --> 55:07.000
+the
+
+55:07.000 --> 55:08.000
+frequency
+
+55:08.000 --> 55:09.000
+of
+
+55:09.000 --> 55:10.000
+beta
+
+55:10.000 --> 55:11.000
+is
+
+55:11.000 --> 55:12.000
+1
+
+55:12.000 --> 55:13.000
+over
+
+55:13.000 --> 55:14.000
+time.
+
+55:14.000 --> 55:15.000
+In
+
+55:15.000 --> 55:16.000
+other
+
+55:16.000 --> 55:17.000
+words,
+
+55:17.000 --> 55:18.000
+the
+
+55:18.000 --> 55:19.000
+frequency
+
+55:19.000 --> 55:20.000
+of
+
+55:20.000 --> 55:21.000
+beta
+
+55:21.000 --> 55:22.000
+is
+
+55:22.000 --> 55:23.000
+1
+
+55:23.000 --> 55:24.000
+over
+
+55:24.000 --> 55:25.000
+time.
+
+55:25.000 --> 55:26.000
+In
+
+55:26.000 --> 55:27.000
+other
+
+55:27.000 --> 55:28.000
+words,
+
+55:28.000 --> 55:29.000
+the
+
+55:29.000 --> 55:30.000
+frequency
+
+55:30.000 --> 55:31.000
+of
+
+55:31.000 --> 55:32.000
+beta
+
+55:32.000 --> 55:33.000
+is
+
+55:33.000 --> 55:34.000
+1
+
+55:34.000 --> 55:35.000
+over
+
+55:35.000 --> 55:36.000
+time.
+
+55:36.000 --> 55:37.000
+In
+
+55:37.000 --> 55:38.000
+other
+
+55:38.000 --> 55:39.000
+words,
+
+55:39.000 --> 55:40.000
+the
+
+55:40.000 --> 55:41.000
+frequency
+
+55:41.000 --> 55:42.000
+of
+
+55:42.000 --> 55:43.000
+beta
+
+55:43.000 --> 55:44.000
+is
+
+55:44.000 --> 55:45.000
+1
+
+55:45.000 --> 55:46.000
+over
+
+55:46.000 --> 55:47.000
+time.
+
+55:47.000 --> 55:48.000
+In
+
+55:48.000 --> 55:49.000
+other
+
+55:49.000 --> 55:50.000
+words,
+
+55:50.000 --> 55:51.000
+the
+
+55:51.000 --> 55:52.000
+frequency
+
+55:52.000 --> 55:53.000
+of
+
+55:53.000 --> 55:54.000
+beta
+
+55:54.000 --> 55:55.000
+is
+
+55:55.000 --> 55:56.000
+1
+
+55:56.000 --> 55:57.000
+over
+
+55:57.000 --> 55:58.000
+time.
+
+55:58.000 --> 55:59.000
+In
+
+55:59.000 --> 56:00.000
+other
+
+56:00.000 --> 56:01.000
+words,
+
+56:01.000 --> 56:02.000
+the
+
+56:02.000 --> 56:03.000
+frequency
+
+56:03.000 --> 56:04.000
+of
+
+56:04.000 --> 56:05.000
+beta
+
+56:05.000 --> 56:06.000
+is
+
+56:06.000 --> 56:07.000
+1
+
+56:07.000 --> 56:08.000
+over
+
+56:08.000 --> 56:09.000
+time.
+
+56:09.000 --> 56:10.000
+In
+
+56:10.000 --> 56:11.000
+other
+
+56:11.000 --> 56:12.000
+words,
+
+56:12.000 --> 56:13.000
+the
+
+56:13.000 --> 56:14.000
+frequency
+
+56:14.000 --> 56:15.000
+of
+
+56:15.000 --> 56:16.000
+beta
+
+56:16.000 --> 56:17.000
+is
+
+56:17.000 --> 56:18.000
+1
+
+56:18.000 --> 56:19.000
+over
+
+56:19.000 --> 56:20.000
+time.
+
+56:20.000 --> 56:21.000
+In
+
+56:21.000 --> 56:22.000
+other
+
+56:23.000 --> 56:24.000
+words,
+
+56:24.000 --> 56:25.000
+the
+
+56:25.000 --> 56:26.000
+frequency
+
+56:26.000 --> 56:27.000
+of
+
+56:27.000 --> 56:28.000
+beta
+
+56:28.000 --> 56:29.000
+is
+
+56:29.000 --> 56:30.000
+1
+
+56:30.000 --> 56:31.000
+over
+
+56:31.000 --> 56:32.000
+time.
+
+56:32.000 --> 56:33.000
+In
+
+56:33.000 --> 56:34.000
+other
+
+56:34.000 --> 56:35.000
+words,
+
+56:35.000 --> 56:36.000
+the
+
+56:36.000 --> 56:37.000
+frequency
+
+56:37.000 --> 56:38.000
+of
+
+56:38.000 --> 56:39.000
+beta
+
+56:39.000 --> 56:40.000
+is
+
+56:40.000 --> 56:41.000
+1
+
+56:41.000 --> 56:42.000
+over
+
+56:42.000 --> 56:43.000
+time.
+
+56:43.000 --> 56:44.000
+In
+
+56:44.000 --> 56:45.000
+other
+
+56:45.000 --> 56:46.000
+words,
+
+56:46.000 --> 56:47.000
+the
+
+56:47.000 --> 56:48.000
+frequency
+
+56:48.000 --> 56:49.000
+of
+
+56:49.000 --> 56:50.000
+beta
+
+56:50.000 --> 56:51.000
+is
+
+56:51.000 --> 56:52.000
+1
+
+56:52.000 --> 56:53.000
+over
+
+56:53.000 --> 56:54.000
+time.
+
+56:54.000 --> 56:55.000
+In
+
+56:55.000 --> 56:56.000
+other
+
+56:56.000 --> 56:57.000
+words,
+
+56:57.000 --> 56:58.000
+the
+
+56:58.000 --> 56:59.000
+frequency
+
+56:59.000 --> 57:00.000
+of
+
+57:00.000 --> 57:01.000
+beta
+
+57:01.000 --> 57:02.000
+is
+
+57:02.000 --> 57:03.000
+1
+
+57:03.000 --> 57:04.000
+over
+
+57:04.000 --> 57:05.000
+time.
+
+57:05.000 --> 57:06.000
+In
+
+57:06.000 --> 57:07.000
+other
+
+57:07.000 --> 57:08.000
+words,
+
+57:08.000 --> 57:09.000
+the
+
+57:09.000 --> 57:10.000
+frequency
+
+57:10.000 --> 57:11.000
+of
+
+57:11.000 --> 57:12.000
+beta
+
+57:12.000 --> 57:13.000
+is
+
+57:13.000 --> 57:14.000
+1
+
+57:14.000 --> 57:15.000
+over
+
+57:15.000 --> 57:16.000
+time.
+
+57:16.000 --> 57:17.000
+In
+
+57:17.000 --> 57:18.000
+other
+
+57:18.000 --> 57:19.000
+words,
+
+57:19.000 --> 57:20.000
+the
+
+57:20.000 --> 57:21.000
+frequency
+
+57:21.000 --> 57:22.000
+of
+
+57:22.000 --> 57:23.000
+beta
+
+57:23.000 --> 57:24.000
+is
+
+57:24.000 --> 57:25.000
+1
+
+57:25.000 --> 57:26.000
+over
+
+57:26.000 --> 57:27.000
+time.
+
+57:27.000 --> 57:28.000
+In
+
+57:28.000 --> 57:29.000
+other
+
+57:29.000 --> 57:30.000
+words,
+
+57:30.000 --> 57:31.000
+the
+
+57:31.000 --> 57:32.000
+frequency
+
+57:32.000 --> 57:33.000
+of
+
+57:33.000 --> 57:34.000
+beta
+
+57:34.000 --> 57:35.000
+is
+
+57:35.000 --> 57:36.000
+1
+
+57:36.000 --> 57:37.000
+over
+
+57:37.000 --> 57:38.000
+time.
+
+57:38.000 --> 57:39.000
+In
+
+57:39.000 --> 57:40.000
+other
+
+57:40.000 --> 57:41.000
+words,
+
+57:41.000 --> 57:42.000
+the
+
+57:42.000 --> 57:43.000
+frequency
+
+57:43.000 --> 57:44.000
+of
+
+57:44.000 --> 57:45.000
+beta
+
+57:45.000 --> 57:46.000
+is
+
+57:46.000 --> 57:47.000
+1
+
+57:47.000 --> 57:48.000
+over
+
+57:48.000 --> 57:49.000
+time.
+
+57:49.000 --> 57:50.000
+In
+
+57:50.000 --> 57:51.000
+other
+
+57:51.000 --> 57:52.000
+words,
+
+57:52.000 --> 57:53.000
+the
+
+57:53.000 --> 57:54.000
+frequency
+
+57:54.000 --> 57:55.000
+of
+
+57:55.000 --> 57:56.000
+beta
+
+57:56.000 --> 57:57.000
+is
+
+57:57.000 --> 57:58.000
+1
+
+57:58.000 --> 57:59.000
+over
+
+57:59.000 --> 58:00.000
+time.
+
+58:00.000 --> 58:01.000
+In
+
+58:01.000 --> 58:02.000
+other
+
+58:02.000 --> 58:03.000
+words,
+
+58:03.000 --> 58:04.000
+the
+
+58:04.000 --> 58:05.000
+frequency
+
+58:05.000 --> 58:06.000
+of
+
+58:06.000 --> 58:07.000
+beta
+
+58:07.000 --> 58:08.000
+is
+
+58:08.000 --> 58:09.000
+1
+
+58:09.000 --> 58:10.000
+over
+
+58:10.000 --> 58:11.000
+time.
+
+58:11.000 --> 58:12.000
+In
+
+58:12.000 --> 58:13.000
+other
+
+58:13.000 --> 58:14.000
+words,
+
+58:14.000 --> 58:15.000
+the
+
+58:15.000 --> 58:16.000
+frequency
+
+58:16.000 --> 58:17.000
+of
+
+58:17.000 --> 58:18.000
+beta
+
+58:18.000 --> 58:19.000
+is
+
+58:19.000 --> 58:20.000
+1
+
+58:20.000 --> 58:21.000
+over
+
+58:21.000 --> 58:22.000
+time.
+
+58:22.000 --> 58:23.000
+In
+
+58:23.000 --> 58:24.000
+other
+
+58:24.000 --> 58:25.000
+words,
+
+58:25.000 --> 58:26.000
+the
+
+58:26.000 --> 58:27.000
+frequency
+
+58:27.000 --> 58:28.000
+of
+
+58:28.000 --> 58:29.000
+beta
+
+58:29.000 --> 58:30.000
+is
+
+58:30.000 --> 58:31.000
+1
+
+58:31.000 --> 58:32.000
+over
+
+58:32.000 --> 58:33.000
+time.
+
+58:33.000 --> 58:34.000
+In
+
+58:34.000 --> 58:35.000
+other
+
+58:35.000 --> 58:36.000
+words,
+
+58:36.000 --> 58:37.000
+the
+
+58:37.000 --> 58:38.000
+frequency
+
+58:38.000 --> 58:39.000
+of
+
+58:39.000 --> 58:40.000
+beta
+
+58:40.000 --> 58:41.000
+is
+
+58:41.000 --> 58:42.000
+1
+
+58:42.000 --> 58:43.000
+over
+
+58:43.000 --> 58:44.000
+time.
+
+58:44.000 --> 58:45.000
+In
+
+58:45.000 --> 58:46.000
+other
+
+58:46.000 --> 58:47.000
+words,
+
+58:47.000 --> 58:48.000
+the
+
+58:48.000 --> 58:49.000
+frequency
+
+58:49.000 --> 58:50.000
+of
+
+58:50.000 --> 58:51.000
+beta
+
+58:51.000 --> 58:52.000
+is
+
+58:52.000 --> 58:53.000
+1
+
+58:53.000 --> 58:54.000
+over
+
+58:54.000 --> 58:55.000
+time.
+
+58:55.000 --> 58:56.000
+In
+
+58:56.000 --> 58:57.000
+other
+
+58:57.000 --> 58:58.000
+words,
+
+58:58.000 --> 58:59.000
+the
+
+58:59.000 --> 59:00.000
+frequency
+
+59:00.000 --> 59:01.000
+of
+
+59:01.000 --> 59:02.000
+beta
+
+59:02.000 --> 59:03.000
+is
+
+59:03.000 --> 59:04.000
+1
+
+59:04.000 --> 59:05.000
+over
+
+59:05.000 --> 59:06.000
+time.
+
+59:06.000 --> 59:07.000
+In
+
+59:07.000 --> 59:08.000
+other
+
+59:08.000 --> 59:09.000
+words,
+
+59:09.000 --> 59:10.000
+the
+
+59:10.000 --> 59:11.000
+frequency
+
+59:11.000 --> 59:12.000
+of
+
+59:12.000 --> 59:13.000
+beta
+
+59:13.000 --> 59:14.000
+is
+
+59:14.000 --> 59:15.000
+1
+
+59:15.000 --> 59:16.000
+over
+
+59:16.000 --> 59:17.000
+time.
+
+59:17.000 --> 59:18.000
+In
+
+59:18.000 --> 59:19.000
+other
+
+59:19.000 --> 59:20.000
+words,
+
+59:20.000 --> 59:21.000
+the
+
+59:21.000 --> 59:22.000
+frequency
+
+59:22.000 --> 59:23.000
+of
+
+59:23.000 --> 59:24.000
+beta
+
+59:24.000 --> 59:25.000
+is
+
+59:25.000 --> 59:26.000
+1
+
+59:26.000 --> 59:27.000
+over
+
+59:27.000 --> 59:28.000
+time.
+
+59:28.000 --> 59:29.000
+In
+
+59:29.000 --> 59:30.000
+other
+
+59:30.000 --> 59:31.000
+words,
+
+59:31.000 --> 59:32.000
+the
+
+59:32.000 --> 59:33.000
+frequency
+
+59:33.000 --> 59:34.000
+of
+
+59:34.000 --> 59:35.000
+beta
+
+59:35.000 --> 59:36.000
+is
+
+59:36.000 --> 59:37.000
+1
+
+59:37.000 --> 59:38.000
+over
+
+59:38.000 --> 59:39.000
+time.
+
+59:39.000 --> 59:40.000
+In
+
+59:40.000 --> 59:41.000
+other
+
+59:41.000 --> 59:42.000
+words,
+
+59:42.000 --> 59:43.000
+the
+
+59:43.000 --> 59:44.000
+frequency
+
+59:44.000 --> 59:45.000
+of
+
+59:45.000 --> 59:46.000
+beta
+
+59:46.000 --> 59:47.000
+is
+
+59:47.000 --> 59:48.000
+1
+
+59:48.000 --> 59:49.000
+over
+
+59:49.000 --> 59:50.000
+time.
+
+59:50.000 --> 59:51.000
+In
+
+59:51.000 --> 59:52.000
+other
+
+59:52.000 --> 59:53.000
+words,
+
+59:53.000 --> 59:54.000
+the
+
+59:54.000 --> 59:55.000
+frequency
+
+59:55.000 --> 59:56.000
+of
+
+59:56.000 --> 59:57.000
+beta
+
+59:57.000 --> 59:58.000
+is
+
+59:58.000 --> 59:59.000
+1
+
+59:59.000 --> 01:00:00.000
+over
+
+01:00:00.000 --> 01:00:01.000
+time.
+
+01:00:01.000 --> 01:00:02.000
+In
+
+01:00:02.000 --> 01:00:03.000
+other
+
+01:00:03.000 --> 01:00:04.000
+words,
+
+01:00:04.000 --> 01:00:05.000
+the
+
+01:00:05.000 --> 01:00:06.000
+frequency
+
+01:00:06.000 --> 01:00:07.000
+of
+
+01:00:07.000 --> 01:00:08.000
+beta
+
+01:00:08.000 --> 01:00:09.000
+is
+
+01:00:09.000 --> 01:00:10.000
+1
+
+01:00:10.000 --> 01:00:11.000
+over
+
+01:00:11.000 --> 01:00:12.000
+time.
+
+01:00:12.000 --> 01:00:13.000
+In
+
+01:00:13.000 --> 01:00:14.000
+other
+
+01:00:14.000 --> 01:00:15.000
+words,
+
+01:00:15.000 --> 01:00:16.000
+the
+
+01:00:16.000 --> 01:00:17.000
+frequency
+
+01:00:17.000 --> 01:00:18.000
+of
+
+01:00:18.000 --> 01:00:19.000
+beta
+
+01:00:19.000 --> 01:00:20.000
+is
+
+01:00:20.000 --> 01:00:21.000
+1
+
+01:00:21.000 --> 01:00:22.000
+over
+
+01:00:22.000 --> 01:00:23.000
+time.
+
+01:00:23.000 --> 01:00:24.000
+In
+
+01:00:24.000 --> 01:00:25.000
+other
+
+01:00:25.000 --> 01:00:26.000
+words,
+
+01:00:26.000 --> 01:00:27.000
+the
+
+01:00:27.000 --> 01:00:28.000
+frequency
+
+01:00:28.000 --> 01:00:29.000
+of
+
+01:00:29.000 --> 01:00:30.000
+beta
+
+01:00:30.000 --> 01:00:31.000
+is
+
+01:00:31.000 --> 01:00:32.000
+1
+
+01:00:32.000 --> 01:00:33.000
+over
+
+01:00:33.000 --> 01:00:34.000
+time.
+
+01:00:34.000 --> 01:00:35.000
+In
+
+01:00:35.000 --> 01:00:36.000
+other
+
+01:00:36.000 --> 01:00:37.000
+words,
+
+01:00:37.000 --> 01:00:38.000
+the
+
+01:00:38.000 --> 01:00:39.000
+frequency
+
+01:00:39.000 --> 01:00:40.000
+of
+
+01:00:40.000 --> 01:00:41.000
+beta
+
+01:00:41.000 --> 01:00:42.000
+is
+
+01:00:42.000 --> 01:00:43.000
+1
+
+01:00:43.000 --> 01:00:44.000
+over
+
+01:00:44.000 --> 01:00:45.000
+time.
+
+01:00:45.000 --> 01:00:46.000
+In
+
+01:00:46.000 --> 01:00:47.000
+other
+
+01:00:47.000 --> 01:00:48.000
+words,
+
+01:00:48.000 --> 01:00:49.000
+the
+
+01:00:49.000 --> 01:00:50.000
+frequency
+
+01:00:50.000 --> 01:00:51.000
+of
+
+01:00:51.000 --> 01:00:52.000
+beta
+
+01:00:52.000 --> 01:00:53.000
+is
+
+01:00:53.000 --> 01:00:54.000
+1
+
+01:00:54.000 --> 01:00:55.000
+over
+
+01:00:55.000 --> 01:00:56.000
+time.
+
+01:00:56.000 --> 01:00:57.000
+In
+
+01:00:57.000 --> 01:00:58.000
+other
+
+01:00:58.000 --> 01:00:59.000
+words,
+
+01:00:59.000 --> 01:01:00.000
+the
+
+01:01:00.000 --> 01:01:01.000
+frequency
+
+01:01:01.000 --> 01:01:02.000
+of
+
+01:01:02.000 --> 01:01:03.000
+beta
+
+01:01:03.000 --> 01:01:04.000
+is
+
+01:01:04.000 --> 01:01:05.000
+1
+
+01:01:05.000 --> 01:01:06.000
+over
+
+01:01:06.000 --> 01:01:07.000
+time.
+
+01:01:07.000 --> 01:01:08.000
+In
+
+01:01:08.000 --> 01:01:09.000
+other
+
+01:01:09.000 --> 01:01:10.000
+words,
+
+01:01:10.000 --> 01:01:11.000
+the
+
+01:01:11.000 --> 01:01:12.000
+frequency
+
+01:01:12.000 --> 01:01:13.000
+of
+
+01:01:13.000 --> 01:01:14.000
+beta
+
+01:01:14.000 --> 01:01:15.000
+is
+
+01:01:15.000 --> 01:01:16.000
+1
+
+01:01:16.000 --> 01:01:17.000
+over
+
+01:01:17.000 --> 01:01:18.000
+time.
+
+01:01:18.000 --> 01:01:19.000
+In
+
+01:01:19.000 --> 01:01:20.000
+other
+
+01:01:20.000 --> 01:01:21.000
+words,
+
+01:01:21.000 --> 01:01:22.000
+the
+
+01:01:22.000 --> 01:01:23.000
+frequency
+
+01:01:23.000 --> 01:01:24.000
+of
+
+01:01:24.000 --> 01:01:25.000
+beta
+
+01:01:25.000 --> 01:01:26.000
+is
+
+01:01:26.000 --> 01:01:27.000
+1
+
+01:01:27.000 --> 01:01:28.000
+over
+
+01:01:28.000 --> 01:01:29.000
+time.
+
+01:01:29.000 --> 01:01:30.000
+In
+
+01:01:30.000 --> 01:01:31.000
+other
+
+01:01:31.000 --> 01:01:32.000
+words,
+
+01:01:32.000 --> 01:01:33.000
+the
+
+01:01:33.000 --> 01:01:34.000
+frequency
+
+01:01:34.000 --> 01:01:35.000
+of
+
+01:01:35.000 --> 01:01:36.000
+beta
+
+01:01:36.000 --> 01:01:37.000
+is
+
+01:01:37.000 --> 01:01:38.000
+1
+
+01:01:38.000 --> 01:01:39.000
+over
+
+01:01:39.000 --> 01:01:40.000
+time.
+
+01:01:40.000 --> 01:01:41.000
+In
+
+01:01:41.000 --> 01:01:42.000
+other
+
+01:01:42.000 --> 01:01:43.000
+words,
+
+01:01:43.000 --> 01:01:44.000
+the
+
+01:01:44.000 --> 01:01:45.000
+frequency
+
+01:01:45.000 --> 01:01:46.000
+of
+
+01:01:46.000 --> 01:01:47.000
+beta
+
+01:01:47.000 --> 01:01:48.000
+is
+
+01:01:48.000 --> 01:01:49.000
+1
+
+01:01:49.000 --> 01:01:50.000
+over
+
+01:01:50.000 --> 01:01:51.000
+time.
+
+01:01:51.000 --> 01:01:52.000
+In
+
+01:01:52.000 --> 01:01:53.000
+other
+
+01:01:53.000 --> 01:01:54.000
+words,
+
+01:01:54.000 --> 01:01:55.000
+the
+
+01:01:55.000 --> 01:01:56.000
+frequency
+
+01:01:56.000 --> 01:01:57.000
+of
+
+01:01:57.000 --> 01:01:58.000
+beta
+
+01:01:58.000 --> 01:01:59.000
+is
+
+01:01:59.000 --> 01:02:00.000
+1
+
+01:02:00.000 --> 01:02:01.000
+over
+
+01:02:01.000 --> 01:02:02.000
+time.
+
+01:02:02.000 --> 01:02:03.000
+In
+
+01:02:03.000 --> 01:02:04.000
+other
+
+01:02:04.000 --> 01:02:05.000
+words,
+
+01:02:05.000 --> 01:02:06.000
+the
+
+01:02:06.000 --> 01:02:07.000
+frequency
+
+01:02:07.000 --> 01:02:08.000
+of
+
+01:02:08.000 --> 01:02:09.000
+beta
+
+01:02:09.000 --> 01:02:10.000
+is
+
+01:02:10.000 --> 01:02:11.000
+1
+
+01:02:11.000 --> 01:02:12.000
+over
+
+01:02:12.000 --> 01:02:13.000
+time.
+
+01:02:13.000 --> 01:02:14.000
+In
+
+01:02:14.000 --> 01:02:15.000
+other
+
+01:02:15.000 --> 01:02:16.000
+words,
+
+01:02:16.000 --> 01:02:17.000
+the
+
+01:02:17.000 --> 01:02:18.000
+frequency
+
+01:02:18.000 --> 01:02:19.000
+of
+
+01:02:19.000 --> 01:02:20.000
+beta
+
+01:02:20.000 --> 01:02:21.000
+is
+
+01:02:21.000 --> 01:02:22.000
+1
+
+01:02:22.000 --> 01:02:23.000
+over
+
+01:02:23.000 --> 01:02:24.000
+time.
+
+01:02:24.000 --> 01:02:25.000
+In
+
+01:02:25.000 --> 01:02:26.000
+other
+
+01:02:26.000 --> 01:02:27.000
+words,
+
+01:02:27.000 --> 01:02:28.000
+the
+
+01:02:28.000 --> 01:02:29.000
+frequency
+
+01:02:29.000 --> 01:02:30.000
+of
+
+01:02:30.000 --> 01:02:31.000
+beta
+
+01:02:31.000 --> 01:02:32.000
+is
+
+01:02:32.000 --> 01:02:33.000
+1
+
+01:02:33.000 --> 01:02:34.000
+over
+
+01:02:34.000 --> 01:02:35.000
+time.
+
+01:02:35.000 --> 01:02:36.000
+In
+
+01:02:36.000 --> 01:02:37.000
+other
+
+01:02:37.000 --> 01:02:38.000
+words,
+
+01:02:38.000 --> 01:02:39.000
+the
+
+01:02:39.000 --> 01:02:40.000
+frequency
+
+01:02:40.000 --> 01:02:41.000
+of
+
+01:02:41.000 --> 01:02:42.000
+beta
+
+01:02:42.000 --> 01:02:43.000
+is
+
+01:02:43.000 --> 01:02:44.000
+1
+
+01:02:44.000 --> 01:02:45.000
+over
+
+01:02:45.000 --> 01:02:46.000
+time.
+
+01:02:46.000 --> 01:02:47.000
+In
+
+01:02:47.000 --> 01:02:48.000
+other
+
+01:02:48.000 --> 01:02:49.000
+words,
+
+01:02:49.000 --> 01:02:50.000
+the
+
+01:02:50.000 --> 01:02:51.000
+frequency
+
+01:02:51.000 --> 01:02:52.000
+of
+
+01:02:52.000 --> 01:02:53.000
+beta
+
+01:02:53.000 --> 01:02:54.000
+is
+
+01:02:54.000 --> 01:02:55.000
+1
+
+01:02:55.000 --> 01:02:56.000
+over
+
+01:02:56.000 --> 01:02:57.000
+time.
+
+01:02:57.000 --> 01:02:58.000
+In
+
+01:02:58.000 --> 01:02:59.000
+other
+
+01:02:59.000 --> 01:03:00.000
+words,
+
+01:03:00.000 --> 01:03:01.000
+the
+
+01:03:01.000 --> 01:03:02.000
+frequency
+
+01:03:02.000 --> 01:03:03.000
+of
+
+01:03:03.000 --> 01:03:04.000
+beta
+
+01:03:04.000 --> 01:03:05.000
+is
+
+01:03:05.000 --> 01:03:06.000
+1
+
+01:03:06.000 --> 01:03:07.000
+over
+
+01:03:07.000 --> 01:03:08.000
+time.
+
+01:03:08.000 --> 01:03:09.000
+In
+
+01:03:09.000 --> 01:03:10.000
+other
+
+01:03:10.000 --> 01:03:11.000
+words,
+
+01:03:11.000 --> 01:03:12.000
+the
+
+01:03:12.000 --> 01:03:13.000
+frequency
+
+01:03:13.000 --> 01:03:14.000
+of
+
+01:03:14.000 --> 01:03:15.000
+beta
+
+01:03:15.000 --> 01:03:16.000
+is
+
+01:03:16.000 --> 01:03:17.000
+1
+
+01:03:17.000 --> 01:03:18.000
+over
+
+01:03:18.000 --> 01:03:19.000
+time.
+
+01:03:19.000 --> 01:03:20.000
+In
+
+01:03:20.000 --> 01:03:21.000
+other
+
+01:03:21.000 --> 01:03:22.000
+words,
+
+01:03:22.000 --> 01:03:23.000
+the
+
+01:03:23.000 --> 01:03:24.000
+frequency
+
+01:03:24.000 --> 01:03:25.000
+of
+
+01:03:25.000 --> 01:03:26.000
+beta
+
+01:03:26.000 --> 01:03:27.000
+is
+
+01:03:27.000 --> 01:03:28.000
+1
+
+01:03:28.000 --> 01:03:29.000
+over
+
+01:03:29.000 --> 01:03:30.000
+time.
+
+01:03:30.000 --> 01:03:31.000
+In
+
+01:03:31.000 --> 01:03:32.000
+other
+
+01:03:32.000 --> 01:03:33.000
+words,
+
+01:03:33.000 --> 01:03:34.000
+the
+
+01:03:34.000 --> 01:03:35.000
+frequency
+
+01:03:35.000 --> 01:03:36.000
+of
+
+01:03:36.000 --> 01:03:37.000
+beta
+
+01:03:37.000 --> 01:03:38.000
+is
+
+01:03:38.000 --> 01:03:39.000
+1
+
+01:03:39.000 --> 01:03:40.000
+over
+
+01:03:40.000 --> 01:03:41.000
+time.
+
+01:03:41.000 --> 01:03:42.000
+In
+
+01:03:42.000 --> 01:03:43.000
+other
+
+01:03:43.000 --> 01:03:44.000
+words,
+
+01:03:44.000 --> 01:03:45.000
+the
+
+01:03:45.000 --> 01:03:46.000
+frequency
+
+01:03:46.000 --> 01:03:47.000
+of
+
+01:03:47.000 --> 01:03:48.000
+beta
+
+01:03:48.000 --> 01:03:49.000
+is
+
+01:03:49.000 --> 01:03:50.000
+1
+
+01:03:50.000 --> 01:03:51.000
+over
+
+01:03:51.000 --> 01:03:52.000
+time.
+
+01:03:52.000 --> 01:03:53.000
+In
+
+01:03:53.000 --> 01:03:54.000
+other
+
+01:03:54.000 --> 01:03:55.000
+words,
+
+01:03:55.000 --> 01:03:56.000
+the
+
+01:03:56.000 --> 01:03:57.000
+frequency
+
+01:03:57.000 --> 01:03:58.000
+of
+
+01:03:58.000 --> 01:03:59.000
+beta
+
+01:03:59.000 --> 01:04:00.000
+is
+
+01:04:00.000 --> 01:04:01.000
+1
+
+01:04:01.000 --> 01:04:02.000
+over
+
+01:04:02.000 --> 01:04:03.000
+time.
+
+01:04:03.000 --> 01:04:04.000
+In
+
+01:04:04.000 --> 01:04:05.000
+other
+
+01:04:05.000 --> 01:04:06.000
+words,
+
+01:04:06.000 --> 01:04:07.000
+the
+
+01:04:07.000 --> 01:04:08.000
+frequency
+
+01:04:08.000 --> 01:04:09.000
+of
+
+01:04:09.000 --> 01:04:10.000
+beta
+
+01:04:10.000 --> 01:04:11.000
+is
+
+01:04:11.000 --> 01:04:12.000
+1
+
+01:04:12.000 --> 01:04:13.000
+over
+
+01:04:13.000 --> 01:04:14.000
+time.
+
+01:04:14.000 --> 01:04:15.000
+In
+
+01:04:15.000 --> 01:04:16.000
+other
+
+01:04:16.000 --> 01:04:17.000
+words,
+
+01:04:17.000 --> 01:04:18.000
+the
+
+01:04:18.000 --> 01:04:19.000
+frequency
+
+01:04:19.000 --> 01:04:20.000
+of
+
+01:04:20.000 --> 01:04:21.000
+beta
+
+01:04:21.000 --> 01:04:22.000
+is
+
+01:04:22.000 --> 01:04:23.000
+1
+
+01:04:23.000 --> 01:04:24.000
+over
+
+01:04:24.000 --> 01:04:25.000
+time.
+
+01:04:25.000 --> 01:04:26.000
+In
+
+01:04:26.000 --> 01:04:27.000
+other
+
+01:04:27.000 --> 01:04:28.000
+words,
+
+01:04:28.000 --> 01:04:29.000
+the
+
+01:04:29.000 --> 01:04:30.000
+frequency
+
+01:04:30.000 --> 01:04:31.000
+of
+
+01:04:31.000 --> 01:04:32.000
+beta
+
+01:04:32.000 --> 01:04:33.000
+is
+
+01:04:33.000 --> 01:04:34.000
+1
+
+01:04:34.000 --> 01:04:35.000
+over
+
+01:04:35.000 --> 01:04:36.000
+time.
+
+01:04:36.000 --> 01:04:37.000
+In
+
+01:04:37.000 --> 01:04:38.000
+other
+
+01:04:38.000 --> 01:04:39.000
+words,
+
+01:04:39.000 --> 01:04:40.000
+the
+
+01:04:40.000 --> 01:04:41.000
+frequency
+
+01:04:41.000 --> 01:04:42.000
+of
+
+01:04:42.000 --> 01:04:43.000
+beta
+
+01:04:43.000 --> 01:04:44.000
+is
+
+01:04:44.000 --> 01:04:45.000
+1
+
+01:04:45.000 --> 01:04:46.000
+over
+
+01:04:46.000 --> 01:04:47.000
+time.
+
+01:04:47.000 --> 01:04:48.000
+In
+
+01:04:48.000 --> 01:04:49.000
+other
+
+01:04:49.000 --> 01:04:50.000
+words,
+
+01:04:50.000 --> 01:04:51.000
+the
+
+01:04:51.000 --> 01:04:52.000
+frequency
+
+01:04:52.000 --> 01:04:53.000
+of
+
+01:04:53.000 --> 01:04:54.000
+beta
+
+01:04:54.000 --> 01:04:55.000
+is
+
+01:04:55.000 --> 01:04:56.000
+1
+
+01:04:56.000 --> 01:04:57.000
+over
+
+01:04:57.000 --> 01:04:58.000
+time.
+
+01:04:58.000 --> 01:04:59.000
+In
+
+01:04:59.000 --> 01:05:00.000
+other
+
+01:05:00.000 --> 01:05:01.000
+words,
+
+01:05:01.000 --> 01:05:02.000
+the
+
+01:05:02.000 --> 01:05:03.000
+frequency
+
+01:05:03.000 --> 01:05:04.000
+of
+
+01:05:04.000 --> 01:05:05.000
+beta
+
+01:05:05.000 --> 01:05:06.000
+is
+
+01:05:06.000 --> 01:05:07.000
+1
+
+01:05:07.000 --> 01:05:08.000
+over
+
+01:05:08.000 --> 01:05:09.000
+time.
+
+01:05:09.000 --> 01:05:10.000
+In
+
+01:05:10.000 --> 01:05:11.000
+other
+
+01:05:11.000 --> 01:05:12.000
+words,
+
+01:05:12.000 --> 01:05:13.000
+the
+
+01:05:13.000 --> 01:05:14.000
+frequency
+
+01:05:14.000 --> 01:05:15.000
+of
+
+01:05:15.000 --> 01:05:16.000
+beta
+
+01:05:16.000 --> 01:05:17.000
+is
+
+01:05:17.000 --> 01:05:18.000
+1
+
+01:05:18.000 --> 01:05:19.000
+over
+
+01:05:19.000 --> 01:05:20.000
+time.
+
+01:05:20.000 --> 01:05:21.000
+In
+
+01:05:21.000 --> 01:05:22.000
+other
+
+01:05:22.000 --> 01:05:23.000
+words,
+
+01:05:23.000 --> 01:05:24.000
+the
+
+01:05:24.000 --> 01:05:25.000
+frequency
+
+01:05:25.000 --> 01:05:26.000
+of
+
+01:05:26.000 --> 01:05:27.000
+beta
+
+01:05:27.000 --> 01:05:28.000
+is
+
+01:05:28.000 --> 01:05:29.000
+1
+
+01:05:29.000 --> 01:05:30.000
+over
+
+01:05:30.000 --> 01:05:31.000
+time.
+
+01:05:31.000 --> 01:05:32.000
+In
+
+01:05:32.000 --> 01:05:33.000
+other
+
+01:05:33.000 --> 01:05:34.000
+words,
+
+01:05:34.000 --> 01:05:35.000
+the
+
+01:05:35.000 --> 01:05:36.000
+frequency
+
+01:05:36.000 --> 01:05:37.000
+of
+
+01:05:37.000 --> 01:05:38.000
+beta
+
+01:05:38.000 --> 01:05:39.000
+is
+
+01:05:39.000 --> 01:05:40.000
+1
+
+01:05:40.000 --> 01:05:41.000
+over
+
+01:05:41.000 --> 01:05:42.000
+time.
+
+01:05:42.000 --> 01:05:43.000
+In
+
+01:05:43.000 --> 01:05:44.000
+other
+
+01:05:44.000 --> 01:05:45.000
+words,
+
+01:05:45.000 --> 01:05:46.000
+the
+
+01:05:46.000 --> 01:05:47.000
+frequency
+
+01:05:47.000 --> 01:05:48.000
+of
+
+01:05:48.000 --> 01:05:49.000
+beta
+
+01:05:49.000 --> 01:05:50.000
+is
+
+01:05:50.000 --> 01:05:51.000
+1
+
+01:05:51.000 --> 01:05:52.000
+over
+
+01:05:52.000 --> 01:05:53.000
+time.
+
+01:05:53.000 --> 01:05:54.000
+In
+
+01:05:54.000 --> 01:05:55.000
+other
+
+01:05:55.000 --> 01:05:56.000
+words,
+
+01:05:56.000 --> 01:05:57.000
+the
+
+01:05:57.000 --> 01:05:58.000
+frequency
+
+01:05:58.000 --> 01:05:59.000
+of
+
+01:05:59.000 --> 01:06:00.000
+beta
+
+01:06:00.000 --> 01:06:01.000
+is
+
+01:06:01.000 --> 01:06:02.000
+1
+
+01:06:02.000 --> 01:06:03.000
+over
+
+01:06:03.000 --> 01:06:04.000
+time.
+
+01:06:04.000 --> 01:06:05.000
+In
+
+01:06:05.000 --> 01:06:06.000
+other
+
+01:06:06.000 --> 01:06:07.000
+words,
+
+01:06:07.000 --> 01:06:08.000
+the
+
+01:06:08.000 --> 01:06:09.000
+frequency
+
+01:06:09.000 --> 01:06:10.000
+of
+
+01:06:10.000 --> 01:06:11.000
+beta
+
+01:06:11.000 --> 01:06:12.000
+is
+
+01:06:12.000 --> 01:06:13.000
+1
+
+01:06:13.000 --> 01:06:14.000
+over
+
+01:06:14.000 --> 01:06:15.000
+time.
+
+01:06:15.000 --> 01:06:16.000
+In
+
+01:06:16.000 --> 01:06:17.000
+other
+
+01:06:17.000 --> 01:06:18.000
+words,
+
+01:06:18.000 --> 01:06:19.000
+the
+
+01:06:19.000 --> 01:06:20.000
+frequency
+
+01:06:20.000 --> 01:06:21.000
+of
+
+01:06:21.000 --> 01:06:22.000
+beta
+
+01:06:22.000 --> 01:06:23.000
+is
+
+01:06:23.000 --> 01:06:24.000
+1
+
+01:06:24.000 --> 01:06:25.000
+over
+
+01:06:25.000 --> 01:06:26.000
+time.
+
+01:06:26.000 --> 01:06:27.000
+In
+
+01:06:27.000 --> 01:06:28.000
+other
+
+01:06:28.000 --> 01:06:29.000
+words,
+
+01:06:29.000 --> 01:06:30.000
+the
+
+01:06:30.000 --> 01:06:31.000
+frequency
+
+01:06:31.000 --> 01:06:32.000
+of
+
+01:06:32.000 --> 01:06:33.000
+beta
+
+01:06:33.000 --> 01:06:34.000
+is
+
+01:06:34.000 --> 01:06:35.000
+1
+
+01:06:35.000 --> 01:06:36.000
+over
+
+01:06:36.000 --> 01:06:37.000
+time.
+
+01:06:37.000 --> 01:06:38.000
+In
+
+01:06:38.000 --> 01:06:39.000
+other
+
+01:06:39.000 --> 01:06:40.000
+words,
+
+01:06:40.000 --> 01:06:41.000
+the
+
+01:06:41.000 --> 01:06:42.000
+frequency
+
+01:06:42.000 --> 01:06:43.000
+of
+
+01:06:43.000 --> 01:06:44.000
+beta
+
+01:06:44.000 --> 01:06:45.000
+is
+
+01:06:45.000 --> 01:06:46.000
+1
+
+01:06:46.000 --> 01:06:47.000
+over
+
+01:06:47.000 --> 01:06:48.000
+time.
+
+01:06:48.000 --> 01:06:49.000
+In
+
+01:06:49.000 --> 01:06:50.000
+other
+
+01:06:50.000 --> 01:06:51.000
+words,
+
+01:06:51.000 --> 01:06:52.000
+the
+
+01:06:52.000 --> 01:06:53.000
+frequency
+
+01:06:53.000 --> 01:06:54.000
+of
+
+01:06:54.000 --> 01:06:55.000
+beta
+
+01:06:55.000 --> 01:06:56.000
+is
+
+01:06:56.000 --> 01:06:57.000
+1
+
+01:06:57.000 --> 01:06:58.000
+over
+
+01:06:58.000 --> 01:06:59.000
+time.
+
+01:06:59.000 --> 01:07:00.000
+In
+
+01:07:00.000 --> 01:07:01.000
+other
+
+01:07:01.000 --> 01:07:02.000
+words,
+
+01:07:02.000 --> 01:07:03.000
+the
+
+01:07:03.000 --> 01:07:04.000
+frequency
+
+01:07:04.000 --> 01:07:05.000
+of
+
+01:07:05.000 --> 01:07:06.000
+beta
+
+01:07:06.000 --> 01:07:07.000
+is
+
+01:07:07.000 --> 01:07:08.000
+1
+
+01:07:08.000 --> 01:07:09.000
+over
+
+01:07:09.000 --> 01:07:10.000
+time.
+
+01:07:10.000 --> 01:07:11.000
+In
+
+01:07:11.000 --> 01:07:12.000
+other
+
+01:07:12.000 --> 01:07:13.000
+words,
+
+01:07:13.000 --> 01:07:14.000
+the
+
+01:07:14.000 --> 01:07:15.000
+frequency
+
+01:07:15.000 --> 01:07:16.000
+of
+
+01:07:16.000 --> 01:07:17.000
+beta
+
+01:07:17.000 --> 01:07:18.000
+is
+
+01:07:18.000 --> 01:07:19.000
+1
+
+01:07:19.000 --> 01:07:20.000
+over
+
+01:07:20.000 --> 01:07:21.000
+time.
+
+01:07:21.000 --> 01:07:22.000
+In
+
+01:07:22.000 --> 01:07:23.000
+other
+
+01:07:23.000 --> 01:07:24.000
+words,
+
+01:07:24.000 --> 01:07:25.000
+the
+
+01:07:25.000 --> 01:07:26.000
+frequency
+
+01:07:26.000 --> 01:07:27.000
+of
+
+01:07:27.000 --> 01:07:28.000
+beta
+
+01:07:28.000 --> 01:07:29.000
+is
+
+01:07:29.000 --> 01:07:30.000
+1
+
+01:07:30.000 --> 01:07:31.000
+over
+
+01:07:31.000 --> 01:07:32.000
+time.
+
+01:07:32.000 --> 01:07:33.000
+In
+
+01:07:33.000 --> 01:07:34.000
+other
+
+01:07:34.000 --> 01:07:35.000
+words,
+
+01:07:35.000 --> 01:07:36.000
+the
+
+01:07:36.000 --> 01:07:37.000
+frequency
+
+01:07:37.000 --> 01:07:38.000
+of
+
+01:07:38.000 --> 01:07:39.000
+beta
+
+01:07:39.000 --> 01:07:40.000
+is
+
+01:07:40.000 --> 01:07:41.000
+1
+
+01:07:41.000 --> 01:07:42.000
+over
+
+01:07:42.000 --> 01:07:43.000
+time.
+
+01:07:43.000 --> 01:07:44.000
+In
+
+01:07:44.000 --> 01:07:45.000
+other
+
+01:07:45.000 --> 01:07:46.000
+words,
+
+01:07:46.000 --> 01:07:47.000
+the
+
+01:07:47.000 --> 01:07:48.000
+frequency
+
+01:07:48.000 --> 01:07:49.000
+of
+
+01:07:49.000 --> 01:07:50.000
+beta
+
+01:07:50.000 --> 01:07:51.000
+is
+
+01:07:51.000 --> 01:07:52.000
+1
+
+01:07:52.000 --> 01:07:53.000
+over
+
+01:07:53.000 --> 01:07:54.000
+time.
+
+01:07:54.000 --> 01:07:55.000
+In
+
+01:07:55.000 --> 01:07:56.000
+other
+
+01:07:56.000 --> 01:07:57.000
+words,
+
+01:07:57.000 --> 01:07:58.000
+the
+
+01:07:58.000 --> 01:07:59.000
+frequency
+
+01:07:59.000 --> 01:08:00.000
+of
+
+01:08:00.000 --> 01:08:01.000
+beta
+
+01:08:01.000 --> 01:08:02.000
+is
+
+01:08:02.000 --> 01:08:03.000
+1
+
+01:08:03.000 --> 01:08:04.000
+over
+
+01:08:04.000 --> 01:08:05.000
+time.
+
+01:08:05.000 --> 01:08:06.000
+In
+
+01:08:06.000 --> 01:08:07.000
+other
+
+01:08:07.000 --> 01:08:08.000
+words,
+
+01:08:08.000 --> 01:08:09.000
+the
+
+01:08:09.000 --> 01:08:10.000
+frequency
+
+01:08:10.000 --> 01:08:11.000
+of
+
+01:08:11.000 --> 01:08:12.000
+beta
+
+01:08:12.000 --> 01:08:13.000
+is
+
+01:08:13.000 --> 01:08:14.000
+1
+
+01:08:14.000 --> 01:08:15.000
+over
+
+01:08:15.000 --> 01:08:16.000
+time.
+
+01:08:16.000 --> 01:08:17.000
+In
+
+01:08:17.000 --> 01:08:18.000
+other
+
+01:08:18.000 --> 01:08:19.000
+words,
+
+01:08:19.000 --> 01:08:20.000
+the
+
+01:08:20.000 --> 01:08:21.000
+frequency
+
+01:08:21.000 --> 01:08:22.000
+of
+
+01:08:22.000 --> 01:08:23.000
+beta
+
+01:08:23.000 --> 01:08:24.000
+is
+
+01:08:24.000 --> 01:08:25.000
+1
+
+01:08:25.000 --> 01:08:26.000
+over
+
+01:08:26.000 --> 01:08:27.000
+time.
+
+01:08:27.000 --> 01:08:28.000
+In
+
+01:08:28.000 --> 01:08:29.000
+other
+
+01:08:29.000 --> 01:08:30.000
+words,
+
+01:08:30.000 --> 01:08:31.000
+the
+
+01:08:31.000 --> 01:08:32.000
+frequency
+
+01:08:32.000 --> 01:08:33.000
+of
+
+01:08:33.000 --> 01:08:34.000
+beta
+
+01:08:34.000 --> 01:08:35.000
+is
+
+01:08:35.000 --> 01:08:36.000
+1
+
+01:08:36.000 --> 01:08:37.000
+over
+
+01:08:37.000 --> 01:08:38.000
+time.
+
+01:08:38.000 --> 01:08:39.000
+In
+
+01:08:39.000 --> 01:08:40.000
+other
+
+01:08:40.000 --> 01:08:41.000
+words,
+
+01:08:41.000 --> 01:08:42.000
+the
+
+01:08:42.000 --> 01:08:43.000
+frequency
+
+01:08:43.000 --> 01:08:44.000
+of
+
+01:08:44.000 --> 01:08:45.000
+beta
+
+01:08:45.000 --> 01:08:46.000
+is
+
+01:08:46.000 --> 01:08:47.000
+1
+
+01:08:47.000 --> 01:08:48.000
+over
+
+01:08:48.000 --> 01:08:49.000
+time.
+
+01:08:49.000 --> 01:08:50.000
+In
+
+01:08:50.000 --> 01:08:51.000
+other
+
+01:08:51.000 --> 01:08:52.000
+words,
+
+01:08:52.000 --> 01:08:53.000
+the
+
+01:08:53.000 --> 01:08:54.000
+frequency
+
+01:08:54.000 --> 01:08:55.000
+of
+
+01:08:55.000 --> 01:08:56.000
+beta
+
+01:08:56.000 --> 01:08:57.000
+is
+
+01:08:57.000 --> 01:08:58.000
+1
+
+01:08:58.000 --> 01:08:59.000
+over
+
+01:08:59.000 --> 01:09:00.000
+time.
+
+01:09:00.000 --> 01:09:01.000
+In
+
+01:09:01.000 --> 01:09:02.000
+other
+
+01:09:02.000 --> 01:09:03.000
+words,
+
+01:09:03.000 --> 01:09:04.000
+the
+
+01:09:04.000 --> 01:09:05.000
+frequency
+
+01:09:05.000 --> 01:09:06.000
+of
+
+01:09:06.000 --> 01:09:07.000
+beta
+
+01:09:07.000 --> 01:09:08.000
+is
+
+01:09:08.000 --> 01:09:09.000
+1
+
+01:09:09.000 --> 01:09:10.000
+over
+
+01:09:10.000 --> 01:09:11.000
+time.
+
+01:09:11.000 --> 01:09:12.000
+In
+
+01:09:12.000 --> 01:09:13.000
+other
+
+01:09:13.000 --> 01:09:14.000
+words,
+
+01:09:14.000 --> 01:09:15.000
+the
+
+01:09:15.000 --> 01:09:16.000
+frequency
+
+01:09:16.000 --> 01:09:17.000
+of
+
+01:09:17.000 --> 01:09:18.000
+beta
+
+01:09:18.000 --> 01:09:19.000
+is
+
+01:09:19.000 --> 01:09:20.000
+1
+
+01:09:20.000 --> 01:09:21.000
+over
+
+01:09:21.000 --> 01:09:22.000
+time.
+
+01:09:22.000 --> 01:09:23.000
+In
+
+01:09:23.000 --> 01:09:24.000
+other
+
+01:09:24.000 --> 01:09:25.000
+words,
+
+01:09:25.000 --> 01:09:26.000
+the
+
+01:09:26.000 --> 01:09:27.000
+frequency
+
+01:09:27.000 --> 01:09:28.000
+of
+
+01:09:28.000 --> 01:09:29.000
+beta
+
+01:09:29.000 --> 01:09:30.000
+is
+
+01:09:30.000 --> 01:09:31.000
+1
+
+01:09:31.000 --> 01:09:32.000
+over
+
+01:09:32.000 --> 01:09:33.000
+time.
+
+01:09:33.000 --> 01:09:34.000
+In
+
+01:09:34.000 --> 01:09:35.000
+other
+
+01:09:35.000 --> 01:09:36.000
+words,
+
+01:09:36.000 --> 01:09:37.000
+the
+
+01:09:37.000 --> 01:09:38.000
+frequency
+
+01:09:38.000 --> 01:09:39.000
+of
+
+01:09:39.000 --> 01:09:40.000
+beta
+
+01:09:40.000 --> 01:09:41.000
+is
+
+01:09:41.000 --> 01:09:42.000
+1
+
+01:09:42.000 --> 01:09:43.000
+over
+
+01:09:43.000 --> 01:09:44.000
+time.
+
+01:09:44.000 --> 01:09:45.000
+In
+
+01:09:45.000 --> 01:09:46.000
+other
+
+01:09:46.000 --> 01:09:47.000
+words,
+
+01:09:47.000 --> 01:09:48.000
+the
+
+01:09:48.000 --> 01:09:49.000
+frequency
+
+01:09:49.000 --> 01:09:50.000
+of
+
+01:09:50.000 --> 01:09:51.000
+beta
+
+01:09:51.000 --> 01:09:52.000
+is
+
+01:09:52.000 --> 01:09:53.000
+1
+
+01:09:53.000 --> 01:09:54.000
+over
+
+01:09:54.000 --> 01:09:55.000
+time.
+
+01:09:55.000 --> 01:09:56.000
+In
+
+01:09:56.000 --> 01:09:57.000
+other
+
+01:09:57.000 --> 01:09:58.000
+words,
+
+01:09:58.000 --> 01:09:59.000
+the
+
+01:09:59.000 --> 01:10:00.000
+frequency
+
+01:10:00.000 --> 01:10:01.000
+of
+
+01:10:01.000 --> 01:10:02.000
+beta
+
+01:10:02.000 --> 01:10:03.000
+is
+
+01:10:03.000 --> 01:10:04.000
+1
+
+01:10:04.000 --> 01:10:05.000
+over
+
+01:10:05.000 --> 01:10:06.000
+time.
+
+01:10:06.000 --> 01:10:07.000
+In
+
+01:10:07.000 --> 01:10:08.000
+other
+
+01:10:08.000 --> 01:10:09.000
+words,
+
+01:10:09.000 --> 01:10:10.000
+the
+
+01:10:10.000 --> 01:10:11.000
+frequency
+
+01:10:11.000 --> 01:10:12.000
+of
+
+01:10:12.000 --> 01:10:13.000
+beta
+
+01:10:13.000 --> 01:10:14.000
+is
+
+01:10:14.000 --> 01:10:15.000
+1
+
+01:10:15.000 --> 01:10:16.000
+over
+
+01:10:16.000 --> 01:10:17.000
+time.
+
+01:10:17.000 --> 01:10:18.000
+In
+
+01:10:18.000 --> 01:10:19.000
+other
+
+01:10:19.000 --> 01:10:20.000
+words,
+
+01:10:20.000 --> 01:10:21.000
+the
+
+01:10:21.000 --> 01:10:22.000
+frequency
+
+01:10:22.000 --> 01:10:23.000
+of
+
+01:10:23.000 --> 01:10:24.000
+beta
+
+01:10:24.000 --> 01:10:25.000
+is
+
+01:10:25.000 --> 01:10:26.000
+1
+
+01:10:26.000 --> 01:10:27.000
+over
+
+01:10:27.000 --> 01:10:28.000
+time.
+
+01:10:28.000 --> 01:10:29.000
+In
+
+01:10:29.000 --> 01:10:30.000
+other
+
+01:10:30.000 --> 01:10:31.000
+words,
+
+01:10:31.000 --> 01:10:32.000
+the
+
+01:10:32.000 --> 01:10:33.000
+frequency
+
+01:10:33.000 --> 01:10:34.000
+of
+
+01:10:34.000 --> 01:10:35.000
+beta
+
+01:10:35.000 --> 01:10:36.000
+is
+
+01:10:36.000 --> 01:10:37.000
+1
+
+01:10:37.000 --> 01:10:38.000
+over
+
+01:10:38.000 --> 01:10:39.000
+time.
+
+01:10:39.000 --> 01:10:40.000
+In
+
+01:10:40.000 --> 01:10:41.000
+other
+
+01:10:41.000 --> 01:10:42.000
+words,
+
+01:10:42.000 --> 01:10:43.000
+the
+
+01:10:43.000 --> 01:10:44.000
+frequency
+
+01:10:44.000 --> 01:10:45.000
+of
+
+01:10:45.000 --> 01:10:46.000
+beta
+
+01:10:46.000 --> 01:10:47.000
+is
+
+01:10:47.000 --> 01:10:48.000
+1
+
+01:10:48.000 --> 01:10:49.000
+over
+
+01:10:49.000 --> 01:10:50.000
+time.
+
+01:10:50.000 --> 01:10:51.000
+In
+
+01:10:51.000 --> 01:10:52.000
+other
+
+01:10:53.000 --> 01:10:54.000
+words,
+
+01:10:54.000 --> 01:10:55.000
+the
+
+01:10:55.000 --> 01:10:56.000
+frequency
+
+01:10:56.000 --> 01:10:57.000
+of
+
+01:10:57.000 --> 01:10:58.000
+beta
+
+01:10:58.000 --> 01:10:59.000
+is
+
+01:10:59.000 --> 01:11:00.000
+1
+
+01:11:00.000 --> 01:11:01.000
+over
+
+01:11:01.000 --> 01:11:02.000
+time.
+
+01:11:02.000 --> 01:11:03.000
+In
+
+01:11:03.000 --> 01:11:04.000
+other
+
+01:11:04.000 --> 01:11:05.000
+words,
+
+01:11:05.000 --> 01:11:06.000
+the
+
+01:11:06.000 --> 01:11:07.000
+frequency
+
+01:11:07.000 --> 01:11:08.000
+of
+
+01:11:08.000 --> 01:11:09.000
+beta
+
+01:11:09.000 --> 01:11:10.000
+is
+
+01:11:10.000 --> 01:11:11.000
+1
+
+01:11:11.000 --> 01:11:12.000
+over
+
+01:11:12.000 --> 01:11:13.000
+time.
+
+01:11:13.000 --> 01:11:14.000
+In
+
+01:11:14.000 --> 01:11:15.000
+other
+
+01:11:15.000 --> 01:11:16.000
+words,
+
+01:11:16.000 --> 01:11:17.000
+the
+
+01:11:17.000 --> 01:11:18.000
+frequency
+
+01:11:18.000 --> 01:11:19.000
+of
+
+01:11:19.000 --> 01:11:20.000
+beta
+
+01:11:20.000 --> 01:11:21.000
+is
+
+01:11:21.000 --> 01:11:22.000
+1
+
+01:11:22.000 --> 01:11:23.000
+over
+
+01:11:23.000 --> 01:11:24.000
+time.
+
+01:11:24.000 --> 01:11:25.000
+In
+
+01:11:25.000 --> 01:11:26.000
+other
+
+01:11:26.000 --> 01:11:27.000
+words,
+
+01:11:27.000 --> 01:11:28.000
+the
+
+01:11:28.000 --> 01:11:29.000
+frequency
+
+01:11:29.000 --> 01:11:30.000
+of
+
+01:11:30.000 --> 01:11:31.000
+beta
+
+01:11:31.000 --> 01:11:32.000
+is
+
+01:11:32.000 --> 01:11:33.000
+1
+
+01:11:33.000 --> 01:11:34.000
+over
+
+01:11:34.000 --> 01:11:35.000
+time.
+
+01:11:35.000 --> 01:11:36.000
+In
+
+01:11:36.000 --> 01:11:37.000
+other
+
+01:11:37.000 --> 01:11:38.000
+words,
+
+01:11:38.000 --> 01:11:39.000
+the
+
+01:11:39.000 --> 01:11:40.000
+frequency
+
+01:11:40.000 --> 01:11:41.000
+of
+
+01:11:41.000 --> 01:11:42.000
+beta
+
+01:11:42.000 --> 01:11:43.000
+is
+
+01:11:43.000 --> 01:11:44.000
+1
+
+01:11:44.000 --> 01:11:45.000
+over
+
+01:11:45.000 --> 01:11:46.000
+time.
+
+01:11:46.000 --> 01:11:47.000
+In
+
+01:11:47.000 --> 01:11:48.000
+other
+
+01:11:48.000 --> 01:11:49.000
+words,
+
+01:11:49.000 --> 01:11:50.000
+the
+
+01:11:50.000 --> 01:11:51.000
+frequency
+
+01:11:51.000 --> 01:11:52.000
+of
+
+01:11:52.000 --> 01:11:53.000
+beta
+
+01:11:53.000 --> 01:11:54.000
+is
+
+01:11:54.000 --> 01:11:55.000
+1
+
+01:11:55.000 --> 01:11:56.000
+over
+
+01:11:56.000 --> 01:11:57.000
+time.
+
+01:11:57.000 --> 01:11:58.000
+In
+
+01:11:58.000 --> 01:11:59.000
+other
+
+01:11:59.000 --> 01:12:00.000
+words,
+
+01:12:00.000 --> 01:12:01.000
+the
+
+01:12:01.000 --> 01:12:02.000
+frequency
+
+01:12:02.000 --> 01:12:03.000
+of
+
+01:12:03.000 --> 01:12:04.000
+beta
+
+01:12:04.000 --> 01:12:05.000
+is
+
+01:12:05.000 --> 01:12:06.000
+1
+
+01:12:06.000 --> 01:12:07.000
+over
+
+01:12:07.000 --> 01:12:08.000
+time.
+
+01:12:08.000 --> 01:12:09.000
+In
+
+01:12:09.000 --> 01:12:10.000
+other
+
+01:12:10.000 --> 01:12:11.000
+words,
+
+01:12:11.000 --> 01:12:12.000
+the
+
+01:12:12.000 --> 01:12:13.000
+frequency
+
+01:12:13.000 --> 01:12:14.000
+of
+
+01:12:14.000 --> 01:12:15.000
+beta
+
+01:12:15.000 --> 01:12:16.000
+is
+
+01:12:16.000 --> 01:12:17.000
+1
+
+01:12:17.000 --> 01:12:18.000
+over
+
+01:12:18.000 --> 01:12:19.000
+time.
+
+01:12:19.000 --> 01:12:20.000
+In
+
+01:12:20.000 --> 01:12:21.000
+other
+
+01:12:21.000 --> 01:12:22.000
+words,
+
+01:12:22.000 --> 01:12:23.000
+the
+
+01:12:23.000 --> 01:12:24.000
+frequency
+
+01:12:24.000 --> 01:12:25.000
+of
+
+01:12:25.000 --> 01:12:26.000
+beta
+
+01:12:26.000 --> 01:12:27.000
+is
+
+01:12:27.000 --> 01:12:28.000
+1
+
+01:12:28.000 --> 01:12:29.000
+over
+
+01:12:29.000 --> 01:12:30.000
+time.
+
+01:12:30.000 --> 01:12:31.000
+In
+
+01:12:31.000 --> 01:12:32.000
+other
+
+01:12:32.000 --> 01:12:33.000
+words,
+
+01:12:33.000 --> 01:12:34.000
+the
+
+01:12:34.000 --> 01:12:35.000
+frequency
+
+01:12:35.000 --> 01:12:36.000
+of
+
+01:12:36.000 --> 01:12:37.000
+beta
+
+01:12:37.000 --> 01:12:38.000
+is
+
+01:12:38.000 --> 01:12:39.000
+1
+
+01:12:39.000 --> 01:12:40.000
+over
+
+01:12:40.000 --> 01:12:41.000
+time.
+
+01:12:41.000 --> 01:12:42.000
+In
+
+01:12:42.000 --> 01:12:43.000
+other
+
+01:12:43.000 --> 01:12:44.000
+words,
+
+01:12:44.000 --> 01:12:45.000
+the
+
+01:12:45.000 --> 01:12:46.000
+frequency
+
+01:12:46.000 --> 01:12:47.000
+of
+
+01:12:47.000 --> 01:12:48.000
+beta
+
+01:12:48.000 --> 01:12:49.000
+is
+
+01:12:49.000 --> 01:12:50.000
+1
+
+01:12:50.000 --> 01:12:51.000
+over
+
+01:12:51.000 --> 01:12:52.000
+time.
+
+01:12:52.000 --> 01:12:53.000
+In
+
+01:12:53.000 --> 01:12:54.000
+other
+
+01:12:54.000 --> 01:12:55.000
+words,
+
+01:12:55.000 --> 01:12:56.000
+the
+
+01:12:56.000 --> 01:12:57.000
+frequency
+
+01:12:57.000 --> 01:12:58.000
+of
+
+01:12:58.000 --> 01:12:59.000
+beta
+
+01:12:59.000 --> 01:13:00.000
+is
+
+01:13:00.000 --> 01:13:01.000
+1
+
+01:13:01.000 --> 01:13:02.000
+over
+
+01:13:02.000 --> 01:13:03.000
+time.
+
+01:13:03.000 --> 01:13:04.000
+In
+
+01:13:04.000 --> 01:13:05.000
+other
+
+01:13:05.000 --> 01:13:06.000
+words,
+
+01:13:06.000 --> 01:13:07.000
+the
+
+01:13:07.000 --> 01:13:08.000
+frequency
+
+01:13:08.000 --> 01:13:09.000
+of
+
+01:13:09.000 --> 01:13:10.000
+beta
+
+01:13:10.000 --> 01:13:11.000
+is
+
+01:13:11.000 --> 01:13:12.000
+1
+
+01:13:12.000 --> 01:13:13.000
+over
+
+01:13:13.000 --> 01:13:14.000
+time.
+
+01:13:14.000 --> 01:13:15.000
+In
+
+01:13:15.000 --> 01:13:16.000
+other
+
+01:13:16.000 --> 01:13:17.000
+words,
+
+01:13:17.000 --> 01:13:18.000
+the
+
+01:13:18.000 --> 01:13:19.000
+frequency
+
+01:13:19.000 --> 01:13:20.000
+of
+
+01:13:20.000 --> 01:13:21.000
+beta
+
+01:13:21.000 --> 01:13:22.000
+is
+
+01:13:22.000 --> 01:13:23.000
+1
+
+01:13:23.000 --> 01:13:24.000
+over
+
+01:13:24.000 --> 01:13:25.000
+time.
+
+01:13:25.000 --> 01:13:26.000
+In
+
+01:13:26.000 --> 01:13:27.000
+other
+
+01:13:27.000 --> 01:13:28.000
+words,
+
+01:13:28.000 --> 01:13:29.000
+the
+
+01:13:29.000 --> 01:13:30.000
+frequency
+
+01:13:30.000 --> 01:13:31.000
+of
+
+01:13:31.000 --> 01:13:32.000
+beta
+
+01:13:32.000 --> 01:13:33.000
+is
+
+01:13:33.000 --> 01:13:34.000
+1
+
+01:13:34.000 --> 01:13:35.000
+over
+
+01:13:35.000 --> 01:13:36.000
+time.
+
+01:13:36.000 --> 01:13:37.000
+In
+
+01:13:37.000 --> 01:13:38.000
+other
+
+01:13:38.000 --> 01:13:39.000
+words,
+
+01:13:39.000 --> 01:13:40.000
+the
+
+01:13:40.000 --> 01:13:41.000
+frequency
+
+01:13:41.000 --> 01:13:42.000
+of
+
+01:13:42.000 --> 01:13:43.000
+beta
+
+01:13:43.000 --> 01:13:44.000
+is
+
+01:13:44.000 --> 01:13:45.000
+1
+
+01:13:45.000 --> 01:13:46.000
+over
+
+01:13:46.000 --> 01:13:47.000
+time.
+
+01:13:47.000 --> 01:13:48.000
+In
+
+01:13:48.000 --> 01:13:49.000
+other
+
+01:13:49.000 --> 01:13:50.000
+words,
+
+01:13:50.000 --> 01:13:51.000
+the
+
+01:13:51.000 --> 01:13:52.000
+frequency
+
+01:13:52.000 --> 01:13:53.000
+of
+
+01:13:53.000 --> 01:13:54.000
+beta
+
+01:13:54.000 --> 01:13:55.000
+is
+
+01:13:55.000 --> 01:13:56.000
+1
+
+01:13:56.000 --> 01:13:57.000
+over
+
+01:13:57.000 --> 01:13:58.000
+time.
+
+01:13:58.000 --> 01:13:59.000
+In
+
+01:13:59.000 --> 01:14:00.000
+other
+
+01:14:00.000 --> 01:14:01.000
+words,
+
+01:14:01.000 --> 01:14:02.000
+the
+
+01:14:02.000 --> 01:14:03.000
+frequency
+
+01:14:03.000 --> 01:14:04.000
+of
+
+01:14:04.000 --> 01:14:05.000
+beta
+
+01:14:05.000 --> 01:14:06.000
+is
+
+01:14:06.000 --> 01:14:07.000
+1
+
+01:14:07.000 --> 01:14:08.000
+over
+
+01:14:08.000 --> 01:14:09.000
+time.
+
+01:14:09.000 --> 01:14:10.000
+In
+
+01:14:10.000 --> 01:14:11.000
+other
+
+01:14:11.000 --> 01:14:12.000
+words,
+
+01:14:12.000 --> 01:14:13.000
+the
+
+01:14:13.000 --> 01:14:14.000
+frequency
+
+01:14:14.000 --> 01:14:15.000
+of
+
+01:14:15.000 --> 01:14:16.000
+beta
+
+01:14:16.000 --> 01:14:17.000
+is
+
+01:14:17.000 --> 01:14:18.000
+1
+
+01:14:18.000 --> 01:14:19.000
+over
+
+01:14:19.000 --> 01:14:20.000
+time.
+
+01:14:20.000 --> 01:14:21.000
+In
+
+01:14:21.000 --> 01:14:22.000
+other
+
+01:14:22.000 --> 01:14:23.000
+words,
+
+01:14:23.000 --> 01:14:24.000
+the
+
+01:14:24.000 --> 01:14:25.000
+frequency
+
+01:14:25.000 --> 01:14:26.000
+of
+
+01:14:26.000 --> 01:14:27.000
+beta
+
+01:14:27.000 --> 01:14:28.000
+is
+
+01:14:28.000 --> 01:14:29.000
+1
+
+01:14:29.000 --> 01:14:30.000
+over
+
+01:14:30.000 --> 01:14:31.000
+time.
+
+01:14:31.000 --> 01:14:32.000
+In
+
+01:14:32.000 --> 01:14:33.000
+other
+
+01:14:33.000 --> 01:14:34.000
+words,
+
+01:14:34.000 --> 01:14:35.000
+the
+
+01:14:35.000 --> 01:14:36.000
+frequency
+
+01:14:36.000 --> 01:14:37.000
+of
+
+01:14:37.000 --> 01:14:38.000
+beta
+
+01:14:38.000 --> 01:14:39.000
+is
+
+01:14:39.000 --> 01:14:40.000
+1
+
+01:14:40.000 --> 01:14:41.000
+over
+
+01:14:41.000 --> 01:14:42.000
+time.
+
+01:14:42.000 --> 01:14:43.000
+In
+
+01:14:43.000 --> 01:14:44.000
+other
+
+01:14:45.000 --> 01:14:46.000
+words,
+
+01:14:46.000 --> 01:14:47.000
+the
+
+01:14:47.000 --> 01:14:48.000
+frequency
+
+01:14:48.000 --> 01:14:49.000
+of
+
+01:14:49.000 --> 01:14:50.000
+beta
+
+01:14:50.000 --> 01:14:51.000
+is
+
+01:14:51.000 --> 01:14:52.000
+1
+
+01:14:52.000 --> 01:14:53.000
+over
+
+01:14:53.000 --> 01:14:54.000
+time.
+
+01:14:54.000 --> 01:14:55.000
+In
+
+01:14:55.000 --> 01:14:56.000
+other
+
+01:14:56.000 --> 01:14:57.000
+words,
+
+01:14:57.000 --> 01:14:58.000
+the
+
+01:14:58.000 --> 01:14:59.000
+frequency
+
+01:14:59.000 --> 01:15:00.000
+of
+
+01:15:00.000 --> 01:15:01.000
+beta
+
+01:15:01.000 --> 01:15:02.000
+is
+
+01:15:02.000 --> 01:15:03.000
+1
+
+01:15:03.000 --> 01:15:04.000
+over
+
+01:15:04.000 --> 01:15:05.000
+time.
+
+01:15:05.000 --> 01:15:06.000
+In
+
+01:15:06.000 --> 01:15:07.000
+other
+
+01:15:07.000 --> 01:15:08.000
+words,
+
+01:15:08.000 --> 01:15:09.000
+the
+
+01:15:09.000 --> 01:15:10.000
+frequency
+
+01:15:10.000 --> 01:15:11.000
+of
+
+01:15:11.000 --> 01:15:12.000
+beta
+
+01:15:12.000 --> 01:15:13.000
+is
+
+01:15:13.000 --> 01:15:14.000
+1
+
+01:15:14.000 --> 01:15:15.000
+over
+
+01:15:15.000 --> 01:15:16.000
+time.
+
+01:15:16.000 --> 01:15:17.000
+In
+
+01:15:17.000 --> 01:15:18.000
+other
+
+01:15:18.000 --> 01:15:19.000
+words,
+
+01:15:19.000 --> 01:15:20.000
+the
+
+01:15:20.000 --> 01:15:21.000
+frequency
+
+01:15:21.000 --> 01:15:22.000
+of
+
+01:15:22.000 --> 01:15:23.000
+beta
+
+01:15:23.000 --> 01:15:24.000
+is
+
+01:15:24.000 --> 01:15:25.000
+1
+
+01:15:25.000 --> 01:15:26.000
+over
+
+01:15:26.000 --> 01:15:27.000
+time.
+
+01:15:27.000 --> 01:15:28.000
+In
+
+01:15:28.000 --> 01:15:29.000
+other
+
+01:15:29.000 --> 01:15:30.000
+words,
+
+01:15:30.000 --> 01:15:31.000
+the
+
+01:15:31.000 --> 01:15:32.000
+frequency
+
+01:15:32.000 --> 01:15:33.000
+of
+
+01:15:33.000 --> 01:15:34.000
+beta
+
+01:15:34.000 --> 01:15:35.000
+is
+
+01:15:35.000 --> 01:15:36.000
+1
+
+01:15:36.000 --> 01:15:37.000
+over
+
+01:15:37.000 --> 01:15:38.000
+time.
+
+01:15:38.000 --> 01:15:39.000
+In
+
+01:15:39.000 --> 01:15:40.000
+other
+
+01:15:40.000 --> 01:15:41.000
+words,
+
+01:15:41.000 --> 01:15:42.000
+the
+
+01:15:42.000 --> 01:15:43.000
+frequency
+
+01:15:43.000 --> 01:15:44.000
+of
+
+01:15:44.000 --> 01:15:45.000
+beta
+
+01:15:45.000 --> 01:15:46.000
+is
+
+01:15:46.000 --> 01:15:47.000
+1
+
+01:15:47.000 --> 01:15:48.000
+over
+
+01:15:48.000 --> 01:15:49.000
+time.
+
+01:15:49.000 --> 01:15:50.000
+In
+
+01:15:50.000 --> 01:15:51.000
+other
+
+01:15:51.000 --> 01:15:52.000
+words,
+
+01:15:52.000 --> 01:15:53.000
+the
+
+01:15:53.000 --> 01:15:54.000
+frequency
+
+01:15:54.000 --> 01:15:55.000
+of
+
+01:15:55.000 --> 01:15:56.000
+beta
+
+01:15:56.000 --> 01:15:57.000
+is
+
+01:15:57.000 --> 01:15:58.000
+1
+
+01:15:58.000 --> 01:15:59.000
+over
+
+01:15:59.000 --> 01:16:00.000
+time.
+
+01:16:00.000 --> 01:16:01.000
+In
+
+01:16:01.000 --> 01:16:02.000
+other
+
+01:16:02.000 --> 01:16:03.000
+words,
+
+01:16:03.000 --> 01:16:04.000
+the
+
+01:16:04.000 --> 01:16:05.000
+frequency
+
+01:16:05.000 --> 01:16:06.000
+of
+
+01:16:06.000 --> 01:16:07.000
+beta
+
+01:16:07.000 --> 01:16:08.000
+is
+
+01:16:08.000 --> 01:16:09.000
+1
+
+01:16:09.000 --> 01:16:10.000
+over
+
+01:16:10.000 --> 01:16:11.000
+time.
+
+01:16:11.000 --> 01:16:12.000
+In
+
+01:16:12.000 --> 01:16:13.000
+other
+
+01:16:13.000 --> 01:16:14.000
+words,
+
+01:16:14.000 --> 01:16:15.000
+the
+
+01:16:15.000 --> 01:16:16.000
+frequency
+
+01:16:16.000 --> 01:16:17.000
+of
+
+01:16:17.000 --> 01:16:18.000
+beta
+
+01:16:18.000 --> 01:16:19.000
+is
+
+01:16:19.000 --> 01:16:20.000
+1
+
+01:16:20.000 --> 01:16:21.000
+over
+
+01:16:21.000 --> 01:16:22.000
+time.
+
+01:16:22.000 --> 01:16:23.000
+In
+
+01:16:23.000 --> 01:16:24.000
+other
+
+01:16:24.000 --> 01:16:25.000
+words,
+
+01:16:25.000 --> 01:16:26.000
+the
+
+01:16:26.000 --> 01:16:27.000
+frequency
+
+01:16:27.000 --> 01:16:28.000
+of
+
+01:16:28.000 --> 01:16:29.000
+beta
+
+01:16:29.000 --> 01:16:30.000
+is
+
+01:16:30.000 --> 01:16:31.000
+1
+
+01:16:31.000 --> 01:16:32.000
+over
+
+01:16:32.000 --> 01:16:33.000
+time.
+
+01:16:33.000 --> 01:16:34.000
+In
+
+01:16:34.000 --> 01:16:35.000
+other
+
+01:16:35.000 --> 01:16:36.000
+words,
+
+01:16:36.000 --> 01:16:37.000
+the
+
+01:16:37.000 --> 01:16:38.000
+frequency
+
+01:16:38.000 --> 01:16:39.000
+of
+
+01:16:39.000 --> 01:16:40.000
+beta
+
+01:16:40.000 --> 01:16:41.000
+is
+
+01:16:41.000 --> 01:16:42.000
+1
+
+01:16:42.000 --> 01:16:43.000
+over
+
+01:16:43.000 --> 01:16:44.000
+time.
+
+01:16:44.000 --> 01:16:45.000
+In
+
+01:16:45.000 --> 01:16:46.000
+other
+
+01:16:46.000 --> 01:16:47.000
+words,
+
+01:16:47.000 --> 01:16:48.000
+the
+
+01:16:48.000 --> 01:16:49.000
+frequency
+
+01:16:49.000 --> 01:16:50.000
+of
+
+01:16:50.000 --> 01:16:51.000
+beta
+
+01:16:51.000 --> 01:16:52.000
+is
+
+01:16:52.000 --> 01:16:53.000
+1
+
+01:16:53.000 --> 01:16:54.000
+over
+
+01:16:54.000 --> 01:16:55.000
+time.
+
+01:16:55.000 --> 01:16:56.000
+In
+
+01:16:56.000 --> 01:16:57.000
+other
+
+01:16:57.000 --> 01:16:58.000
+words,
+
+01:16:58.000 --> 01:16:59.000
+the
+
+01:16:59.000 --> 01:17:00.000
+frequency
+
+01:17:00.000 --> 01:17:01.000
+of
+
+01:17:01.000 --> 01:17:02.000
+beta
+
+01:17:02.000 --> 01:17:03.000
+is
+
+01:17:03.000 --> 01:17:04.000
+1
+
+01:17:04.000 --> 01:17:05.000
+over
+
+01:17:05.000 --> 01:17:06.000
+time.
+
+01:17:06.000 --> 01:17:07.000
+In
+
+01:17:07.000 --> 01:17:08.000
+other
+
+01:17:08.000 --> 01:17:09.000
+words,
+
+01:17:09.000 --> 01:17:10.000
+the
+
+01:17:10.000 --> 01:17:11.000
+frequency
+
+01:17:11.000 --> 01:17:12.000
+of
+
+01:17:12.000 --> 01:17:13.000
+beta
+
+01:17:13.000 --> 01:17:14.000
+is
+
+01:17:14.000 --> 01:17:15.000
+1
+
+01:17:15.000 --> 01:17:16.000
+over
+
+01:17:16.000 --> 01:17:17.000
+time.
+
+01:17:17.000 --> 01:17:18.000
+In
+
+01:17:18.000 --> 01:17:19.000
+other
+
+01:17:19.000 --> 01:17:20.000
+words,
+
+01:17:20.000 --> 01:17:21.000
+the
+
+01:17:21.000 --> 01:17:22.000
+frequency
+
+01:17:22.000 --> 01:17:23.000
+of
+
+01:17:23.000 --> 01:17:24.000
+beta
+
+01:17:24.000 --> 01:17:25.000
+is
+
+01:17:25.000 --> 01:17:26.000
+1
+
+01:17:26.000 --> 01:17:27.000
+over
+
+01:17:27.000 --> 01:17:28.000
+time.
+
+01:17:28.000 --> 01:17:29.000
+In
+
+01:17:29.000 --> 01:17:30.000
+other
+
+01:17:30.000 --> 01:17:31.000
+words,
+
+01:17:31.000 --> 01:17:32.000
+the
+
+01:17:32.000 --> 01:17:33.000
+frequency
+
+01:17:33.000 --> 01:17:34.000
+of
+
+01:17:34.000 --> 01:17:35.000
+beta
+
+01:17:35.000 --> 01:17:36.000
+is
+
+01:17:36.000 --> 01:17:37.000
+1
+
+01:17:37.000 --> 01:17:38.000
+over
+
+01:17:38.000 --> 01:17:39.000
+time.
+
+01:17:39.000 --> 01:17:40.000
+In
+
+01:17:40.000 --> 01:17:41.000
+other
+
+01:17:41.000 --> 01:17:42.000
+words,
+
+01:17:42.000 --> 01:17:43.000
+the
+
+01:17:43.000 --> 01:17:44.000
+frequency
+
+01:17:44.000 --> 01:17:45.000
+of
+
+01:17:45.000 --> 01:17:46.000
+beta
+
+01:17:46.000 --> 01:17:47.000
+is
+
+01:17:47.000 --> 01:17:48.000
+1
+
+01:17:48.000 --> 01:17:49.000
+over
+
+01:17:49.000 --> 01:17:50.000
+time.
+
+01:17:50.000 --> 01:17:51.000
+In
+
+01:17:51.000 --> 01:17:52.000
+other
+
+01:17:52.000 --> 01:17:53.000
+words,
+
+01:17:53.000 --> 01:17:54.000
+the
+
+01:17:54.000 --> 01:17:55.000
+frequency
+
+01:17:55.000 --> 01:17:56.000
+of
+
+01:17:56.000 --> 01:17:57.000
+beta
+
+01:17:57.000 --> 01:17:58.000
+is
+
+01:17:58.000 --> 01:17:59.000
+1
+
+01:17:59.000 --> 01:18:00.000
+over
+
+01:18:00.000 --> 01:18:01.000
+time.
+
+01:18:01.000 --> 01:18:02.000
+In
+
+01:18:02.000 --> 01:18:03.000
+other
+
+01:18:03.000 --> 01:18:04.000
+words,
+
+01:18:04.000 --> 01:18:05.000
+the
+
+01:18:05.000 --> 01:18:06.000
+frequency
+
+01:18:06.000 --> 01:18:07.000
+of
+
+01:18:07.000 --> 01:18:08.000
+beta
+
+01:18:08.000 --> 01:18:09.000
+is
+
+01:18:09.000 --> 01:18:10.000
+1
+
+01:18:10.000 --> 01:18:11.000
+over
+
+01:18:11.000 --> 01:18:12.000
+time.
+
+01:18:12.000 --> 01:18:13.000
+In
+
+01:18:13.000 --> 01:18:14.000
+other
+
+01:18:14.000 --> 01:18:15.000
+words,
+
+01:18:15.000 --> 01:18:16.000
+the
+
+01:18:16.000 --> 01:18:17.000
+frequency
+
+01:18:17.000 --> 01:18:18.000
+of
+
+01:18:18.000 --> 01:18:19.000
+beta
+
+01:18:19.000 --> 01:18:20.000
+is
+
+01:18:20.000 --> 01:18:21.000
+1
+
+01:18:21.000 --> 01:18:22.000
+over
+
+01:18:22.000 --> 01:18:23.000
+time.
+
+01:18:23.000 --> 01:18:24.000
+In
+
+01:18:24.000 --> 01:18:25.000
+other
+
+01:18:25.000 --> 01:18:26.000
+words,
+
+01:18:26.000 --> 01:18:27.000
+the
+
+01:18:27.000 --> 01:18:28.000
+frequency
+
+01:18:28.000 --> 01:18:29.000
+of
+
+01:18:29.000 --> 01:18:30.000
+beta
+
+01:18:30.000 --> 01:18:31.000
+is
+
+01:18:31.000 --> 01:18:32.000
+1
+
+01:18:32.000 --> 01:18:33.000
+over
+
+01:18:33.000 --> 01:18:34.000
+time.
+
+01:18:34.000 --> 01:18:35.000
+In
+
+01:18:35.000 --> 01:18:36.000
+other
+
+01:18:36.000 --> 01:18:37.000
+words,
+
+01:18:37.000 --> 01:18:38.000
+the
+
+01:18:38.000 --> 01:18:39.000
+frequency
+
+01:18:39.000 --> 01:18:40.000
+of
+
+01:18:40.000 --> 01:18:41.000
+beta
+
+01:18:41.000 --> 01:18:42.000
+is
+
+01:18:42.000 --> 01:18:43.000
+1
+
+01:18:43.000 --> 01:18:44.000
+over
+
+01:18:44.000 --> 01:18:45.000
+time.
+
+01:18:45.000 --> 01:18:46.000
+In
+
+01:18:46.000 --> 01:18:47.000
+other
+
+01:18:47.000 --> 01:18:48.000
+words,
+
+01:18:48.000 --> 01:18:49.000
+the
+
+01:18:49.000 --> 01:18:50.000
+frequency
+
+01:18:50.000 --> 01:18:51.000
+of
+
+01:18:51.000 --> 01:18:52.000
+beta
+
+01:18:52.000 --> 01:18:53.000
+is
+
+01:18:53.000 --> 01:18:54.000
+1
+
+01:18:54.000 --> 01:18:55.000
+over
+
+01:18:55.000 --> 01:18:56.000
+time.
+
+01:18:56.000 --> 01:18:57.000
+In
+
+01:18:57.000 --> 01:18:58.000
+other
+
+01:18:58.000 --> 01:18:59.000
+words,
+
+01:18:59.000 --> 01:19:00.000
+the
+
+01:19:00.000 --> 01:19:01.000
+frequency
+
+01:19:01.000 --> 01:19:02.000
+of
+
+01:19:02.000 --> 01:19:03.000
+beta
+
+01:19:03.000 --> 01:19:04.000
+is
+
+01:19:04.000 --> 01:19:05.000
+1
+
+01:19:05.000 --> 01:19:06.000
+over
+
+01:19:06.000 --> 01:19:07.000
+time.
+
+01:19:07.000 --> 01:19:08.000
+In
+
+01:19:08.000 --> 01:19:09.000
+other
+
+01:19:09.000 --> 01:19:10.000
+words,
+
+01:19:10.000 --> 01:19:11.000
+the
+
+01:19:11.000 --> 01:19:12.000
+frequency
+
+01:19:12.000 --> 01:19:13.000
+of
+
+01:19:13.000 --> 01:19:14.000
+beta
+
+01:19:14.000 --> 01:19:15.000
+is
+
+01:19:15.000 --> 01:19:16.000
+1
+
+01:19:16.000 --> 01:19:17.000
+over
+
+01:19:17.000 --> 01:19:18.000
+time.
+
+01:19:18.000 --> 01:19:19.000
+In
+
+01:19:19.000 --> 01:19:20.000
+other
+
+01:19:20.000 --> 01:19:21.000
+words,
+
+01:19:21.000 --> 01:19:22.000
+the
+
+01:19:22.000 --> 01:19:23.000
+frequency
+
+01:19:23.000 --> 01:19:24.000
+of
+
+01:19:24.000 --> 01:19:25.000
+beta
+
+01:19:25.000 --> 01:19:26.000
+is
+
+01:19:26.000 --> 01:19:27.000
+1
+
+01:19:27.000 --> 01:19:28.000
+over
+
+01:19:28.000 --> 01:19:29.000
+time.
+
+01:19:29.000 --> 01:19:30.000
+In
+
+01:19:30.000 --> 01:19:31.000
+other
+
+01:19:31.000 --> 01:19:32.000
+words,
+
+01:19:32.000 --> 01:19:33.000
+the
+
+01:19:33.000 --> 01:19:34.000
+frequency
+

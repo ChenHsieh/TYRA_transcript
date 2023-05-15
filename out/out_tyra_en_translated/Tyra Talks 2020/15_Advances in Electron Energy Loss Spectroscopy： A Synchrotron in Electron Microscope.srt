@@ -1,0 +1,12848 @@
+1
+00:00:00,000 --> 00:00:14,000
+Hello everyone, welcome to today's 9.19 Taira Talk. I am the host today, Hong Shi-an.
+
+2
+00:00:14,000 --> 00:00:19,000
+We are very honored to invite Liao Kun-yan to speak for us today.
+
+3
+00:00:19,000 --> 00:00:26,000
+Liao Kun-yan is currently a Ph.D. student in the Materials Engineering Department at Tokyo University.
+
+4
+00:00:26,000 --> 00:00:32,000
+Previously, he obtained a master's and master's degree from the German University of Munich.
+
+5
+00:00:32,000 --> 00:00:38,000
+He is mainly interested in electronic microscope and neutron scattering material analysis technology.
+
+6
+00:00:38,000 --> 00:00:53,000
+He is mainly interested in the structure of inorganic glass, the high-angle crystal, and the origin-density spectrum.
+
+7
+00:00:53,000 --> 00:01:01,000
+Today, he is going to talk about EELS, Electron Energy Low Spectroscopy.
+
+8
+00:01:01,000 --> 00:01:06,000
+Let's give him a round of applause to welcome him to give us today's talk.
+
+9
+00:01:06,000 --> 00:01:12,000
+Everyone, please turn on your microphones.
+
+10
+00:01:12,000 --> 00:01:16,000
+We'll leave the time to you.
+
+11
+00:01:16,000 --> 00:01:18,000
+Okay.
+
+12
+00:01:18,000 --> 00:01:21,000
+I'll start now.
+
+13
+00:01:21,000 --> 00:01:24,000
+The topic of my talk today is EELS.
+
+14
+00:01:24,000 --> 00:01:30,000
+I want to talk about why it is thought to be a synchrotron in electronic microscopes.
+
+15
+00:01:30,000 --> 00:01:36,000
+In addition to the introduction just now, let me introduce the department I am in now.
+
+16
+00:01:36,000 --> 00:01:41,000
+Our department is a department that attaches great importance to electronic microscopes.
+
+17
+00:01:41,000 --> 00:01:45,000
+We have about 20 electronic microscopes in our department.
+
+18
+00:01:45,000 --> 00:01:51,000
+We have about four or more electronic microscopes.
+
+19
+00:01:51,000 --> 00:02:02,000
+Our field includes instrument development, ceramic interface, crystal defects, and quasicrystal crystal.
+
+20
+00:02:02,000 --> 00:02:08,000
+Our department specializes in EELS and DFT calculation.
+
+21
+00:02:08,000 --> 00:02:17,000
+In order not to be the same as them, we specialize in non-static, liquid, and gas.
+
+22
+00:02:17,000 --> 00:02:24,000
+In the past, we have done a lot of liquid and gas EELS.
+
+23
+00:02:24,000 --> 00:02:30,000
+But this is a special instrument, so I won't talk about it in this talk.
+
+24
+00:02:30,000 --> 00:02:38,000
+My own research is that I am very interested in glass.
+
+25
+00:02:39,000 --> 00:02:48,000
+In addition to the fact that most of the glass you see on this screen is transparent and well-balanced material,
+
+26
+00:02:48,000 --> 00:02:54,000
+if you look at the inside of the glass from a nanometer perspective,
+
+27
+00:02:54,000 --> 00:02:57,000
+it may have a very small domain.
+
+28
+00:02:57,000 --> 00:03:01,000
+This is because of the domain caused by its phase separation.
+
+29
+00:03:01,000 --> 00:03:06,000
+It will also cause it to have different shapes and colors.
+
+30
+00:03:06,000 --> 00:03:09,000
+It will have different structures and textures.
+
+31
+00:03:09,000 --> 00:03:12,000
+My first year is mainly to study this.
+
+32
+00:03:12,000 --> 00:03:15,000
+Today's talk will also talk about some.
+
+33
+00:03:15,000 --> 00:03:22,000
+This year, my own theme is to adjust to the dopan in the glass.
+
+34
+00:03:23,000 --> 00:03:28,000
+Is the dopan in the glass a cluster or a particle?
+
+35
+00:03:28,000 --> 00:03:32,000
+Or is it a dopan that is separated from one atom by one atom?
+
+36
+00:03:32,000 --> 00:03:35,000
+What impact does it have on the quality of the glass?
+
+37
+00:03:35,000 --> 00:03:37,000
+This is my own theme.
+
+38
+00:03:37,000 --> 00:03:39,000
+I won't talk about this today.
+
+39
+00:03:39,000 --> 00:03:49,000
+Another thing I will mention is that I have measured the thermal expansion coefficient of some crystal surfaces.
+
+40
+00:03:49,000 --> 00:03:52,000
+I may have a chance to mention it today.
+
+41
+00:03:52,000 --> 00:03:57,000
+This is related to optical characteristics and PLASMO.
+
+42
+00:03:57,000 --> 00:03:59,000
+I will mention it later.
+
+43
+00:03:59,000 --> 00:04:07,000
+Basically, this is the outline of today's speech.
+
+44
+00:04:07,000 --> 00:04:13,000
+I will first tell you why we want to make electronic microscope.
+
+45
+00:04:13,000 --> 00:04:15,000
+How do we see the origin?
+
+46
+00:04:15,000 --> 00:04:18,000
+Finally, I will talk about EOS.
+
+47
+00:04:18,000 --> 00:04:22,000
+It may take a lot of time in the first half.
+
+48
+00:04:22,000 --> 00:04:27,000
+After all, I'm not sure what the audience's background is.
+
+49
+00:04:27,000 --> 00:04:31,000
+So I will talk about what the electronic microscope is doing.
+
+50
+00:04:31,000 --> 00:04:40,000
+Basically, all microscopes, no matter what particle you use,
+
+51
+00:04:40,000 --> 00:04:49,000
+The earliest microscope should be the optical microscope invented by Hucke in 1665.
+
+52
+00:04:49,000 --> 00:04:54,000
+Hucke is the most familiar with its spring, Huckelo.
+
+53
+00:04:54,000 --> 00:04:57,000
+But in fact, he also did a lot of things.
+
+54
+00:04:57,000 --> 00:05:00,000
+One of them is the optical microscope.
+
+55
+00:05:00,000 --> 00:05:08,000
+Then he went through a very simple observation of what the cells and insects look like.
+
+56
+00:05:08,000 --> 00:05:14,000
+Then he drew it down and got some new knowledge from it.
+
+57
+00:05:14,000 --> 00:05:17,000
+But this is in 1665.
+
+58
+00:05:17,000 --> 00:05:22,000
+Of course, for the people at the time, this may be a very incredible research.
+
+59
+00:05:22,000 --> 00:05:25,000
+Then he really told us a lot of things.
+
+60
+00:05:25,000 --> 00:05:28,000
+But if you only have optical microscopes,
+
+61
+00:05:28,000 --> 00:05:31,000
+In fact, it is not enough today.
+
+62
+00:05:31,000 --> 00:05:35,000
+The reason is that if you only have optical microscopes,
+
+63
+00:05:35,000 --> 00:05:39,000
+You won't know what happened to us this year.
+
+64
+00:05:39,000 --> 00:05:42,000
+That is, if you don't have an electronic microscope,
+
+65
+00:05:42,000 --> 00:05:45,000
+In fact, you can't see the virus.
+
+66
+00:05:45,000 --> 00:05:47,000
+Then you can't see the coronavirus.
+
+67
+00:05:47,000 --> 00:05:50,000
+You won't know what happened this year.
+
+68
+00:05:50,000 --> 00:05:55,000
+This photo is from the Institute of Health in the United States.
+
+69
+00:05:55,000 --> 00:06:00,000
+Photos of the coronavirus, electronic microscope photos.
+
+70
+00:06:00,000 --> 00:06:03,000
+Then the one on the right is the structure of the virus.
+
+71
+00:06:03,000 --> 00:06:05,000
+Photos of the electronic microscope.
+
+72
+00:06:05,000 --> 00:06:07,000
+It was also published this year.
+
+73
+00:06:07,000 --> 00:06:14,000
+The electronic microscope seems to have won the Nobel Prize in Chemistry in 2011.
+
+74
+00:06:14,000 --> 00:06:16,000
+It is also a very popular field.
+
+75
+00:06:16,000 --> 00:06:20,000
+But I won't mention it because I'm doing it completely.
+
+76
+00:06:20,000 --> 00:06:24,000
+So we won't discuss the electronic microscope today.
+
+77
+00:06:24,000 --> 00:06:26,000
+But it is also a powerful tool.
+
+78
+00:06:27,000 --> 00:06:32,000
+So seeing this kind of small-scale thing,
+
+79
+00:06:32,000 --> 00:06:39,000
+It is an advantage that makes electronic microscopes unique.
+
+80
+00:06:39,000 --> 00:06:45,000
+So if you look at it from the perspective of a microscope,
+
+81
+00:06:45,000 --> 00:06:49,000
+Because what I learned myself is material science.
+
+82
+00:06:49,000 --> 00:06:56,000
+Material science is a very complicated subject.
+
+83
+00:06:56,000 --> 00:07:00,000
+The reason is that it is a cross-level problem.
+
+84
+00:07:00,000 --> 00:07:06,000
+For example, I used to do metal materials.
+
+85
+00:07:06,000 --> 00:07:09,000
+Suppose you want to design a metal material.
+
+86
+00:07:09,000 --> 00:07:11,000
+You have to consider a lot of things.
+
+87
+00:07:11,000 --> 00:07:15,000
+You have to consider what happens to its surface at the level of a microscope.
+
+88
+00:07:15,000 --> 00:07:17,000
+Is there a crack?
+
+89
+00:07:17,000 --> 00:07:22,000
+You have to find out how many phases are there in the material.
+
+90
+00:07:22,000 --> 00:07:25,000
+What is its texture?
+
+91
+00:07:25,000 --> 00:07:27,000
+Is there any adsorption?
+
+92
+00:07:27,000 --> 00:07:32,000
+Finally, return to the characteristics of the metal material.
+
+93
+00:07:32,000 --> 00:07:34,000
+To deal with such a problem,
+
+94
+00:07:34,000 --> 00:07:40,000
+In fact, we need a lot of different tools in different systems.
+
+95
+00:07:40,000 --> 00:07:46,000
+For example, if we need EBSD for the level of a microscope,
+
+96
+00:07:46,000 --> 00:07:49,000
+We need some mechanical tools to measure.
+
+97
+00:07:49,000 --> 00:07:53,000
+At the level of a microscope, we need high-resolution TEM.
+
+98
+00:07:53,000 --> 00:07:58,000
+Even if you need a very high-resolution spectrum like AtomPROP
+
+99
+00:07:58,000 --> 00:08:01,000
+To confirm your chemical composition.
+
+100
+00:08:01,000 --> 00:08:05,000
+On the other hand, if you are doing simulation,
+
+101
+00:08:05,000 --> 00:08:07,000
+You will find that the people of mechanics
+
+102
+00:08:07,000 --> 00:08:11,000
+The most important simulation they do is called Finite Element Method.
+
+103
+00:08:11,000 --> 00:08:16,000
+Finite Element Method simulates some of the characteristics of mechanics.
+
+104
+00:08:16,000 --> 00:08:19,000
+But in the Finite Element Method,
+
+105
+00:08:19,000 --> 00:08:21,000
+You still have to have physical properties.
+
+106
+00:08:21,000 --> 00:08:25,000
+So you have to do some molecular mechanics,
+
+107
+00:08:25,000 --> 00:08:29,000
+Modicaro, and even DFT, Programme Mechanics.
+
+108
+00:08:29,000 --> 00:08:31,000
+So simply put,
+
+109
+00:08:31,000 --> 00:08:35,000
+If you really want to fully understand material science,
+
+110
+00:08:35,000 --> 00:08:38,000
+You have to have all of these things.
+
+111
+00:08:38,000 --> 00:08:42,000
+In comparison, the level of a microscope
+
+112
+00:08:42,000 --> 00:08:47,000
+In fact, the knowledge we currently have in technology
+
+113
+00:08:47,000 --> 00:08:50,000
+In fact, it is already very sufficient.
+
+114
+00:08:50,000 --> 00:08:53,000
+Basically, there is nothing you don't know.
+
+115
+00:08:53,000 --> 00:08:56,000
+Most of the problems on the level of a microscope can be solved.
+
+116
+00:08:56,000 --> 00:08:58,000
+But at the level of a microscope,
+
+117
+00:08:58,000 --> 00:09:02,000
+We will have a lot of difficulties just measuring.
+
+118
+00:09:02,000 --> 00:09:05,000
+That's why I want to talk about this today.
+
+119
+00:09:06,000 --> 00:09:10,000
+In particular,
+
+120
+00:09:10,000 --> 00:09:13,000
+If you look at it from a physical point of view,
+
+121
+00:09:13,000 --> 00:09:16,000
+In fact, we deal with these problems.
+
+122
+00:09:16,000 --> 00:09:20,000
+There is a tool called Large-Scale Facility.
+
+123
+00:09:20,000 --> 00:09:25,000
+That just happens to be STEM, Singleton Radiation, and Neutron Source.
+
+124
+00:09:25,000 --> 00:09:27,000
+I have done these three experiments.
+
+125
+00:09:27,000 --> 00:09:31,000
+I also want to briefly talk about their differences.
+
+126
+00:09:31,000 --> 00:09:37,000
+In general, Taiwan currently has the middle one and the left one.
+
+127
+00:09:37,000 --> 00:09:39,000
+Some universities in Taiwan have the left one.
+
+128
+00:09:39,000 --> 00:09:42,000
+The middle one is Neutron Radiation.
+
+129
+00:09:42,000 --> 00:09:44,000
+Taiwan's Neutron Source.
+
+130
+00:09:44,000 --> 00:09:47,000
+It is the third generation of Neutron Radiation.
+
+131
+00:09:47,000 --> 00:09:50,000
+It is also a very powerful method.
+
+132
+00:09:50,000 --> 00:09:53,000
+There is a big difference between them.
+
+133
+00:09:53,000 --> 00:09:57,000
+In addition to the type of radiation you use,
+
+134
+00:09:57,000 --> 00:10:01,000
+This one uses electrons, this one uses light, and this one uses neutrons.
+
+135
+00:10:01,000 --> 00:10:04,000
+Their sample duration is actually very different.
+
+136
+00:10:04,000 --> 00:10:08,000
+For example, if you look at a microscope,
+
+137
+00:10:08,000 --> 00:10:12,000
+The property you get, the amount you get,
+
+138
+00:10:12,000 --> 00:10:15,000
+Or the area you observe,
+
+139
+00:10:15,000 --> 00:10:17,000
+It's actually a very small range.
+
+140
+00:10:17,000 --> 00:10:20,000
+Simply put, there is a saying,
+
+141
+00:10:20,000 --> 00:10:22,000
+See the tree but not the forest.
+
+142
+00:10:22,000 --> 00:10:26,000
+You can only see the tree, but you ignore the forest.
+
+143
+00:10:26,000 --> 00:10:29,000
+A microscope is a bit like looking at a tree.
+
+144
+00:10:29,000 --> 00:10:34,000
+So your resolution is around nanometers.
+
+145
+00:10:34,000 --> 00:10:36,000
+It's great.
+
+146
+00:10:36,000 --> 00:10:40,000
+But if you want to go to a higher resolution,
+
+147
+00:10:40,000 --> 00:10:46,000
+In fact, Neutron Radiation is a more suitable tool.
+
+148
+00:10:46,000 --> 00:10:50,000
+Because what you see in your Neutron,
+
+149
+00:10:50,000 --> 00:10:54,000
+The size of your crystal sample is about micrometers.
+
+150
+00:10:54,000 --> 00:10:58,000
+If you want to study more industrial problems,
+
+151
+00:10:58,000 --> 00:11:02,000
+To the size of millimeters, centimeters, or even meters,
+
+152
+00:11:02,000 --> 00:11:06,000
+Neutron Radiation is a very good choice.
+
+153
+00:11:06,000 --> 00:11:10,000
+Because you can put a centimeter sample in.
+
+154
+00:11:10,000 --> 00:11:12,000
+When I was at Muniher,
+
+155
+00:11:12,000 --> 00:11:15,000
+At that time, there were some BinLine.
+
+156
+00:11:15,000 --> 00:11:17,000
+Muniher is the headquarters of BMW.
+
+157
+00:11:18,000 --> 00:11:22,000
+They can put a whole car engine
+
+158
+00:11:22,000 --> 00:11:25,000
+Put it in the BinLine of Neutron Radiation.
+
+159
+00:11:25,000 --> 00:11:29,000
+To see some images of its engine.
+
+160
+00:11:29,000 --> 00:11:34,000
+In addition to the sample size,
+
+161
+00:11:34,000 --> 00:11:38,000
+Its interaction with matter is also very different.
+
+162
+00:11:38,000 --> 00:11:43,000
+Neutron, whether you are magnetic radiation or nuclear scattering,
+
+163
+00:11:43,000 --> 00:11:45,000
+It's all very weak.
+
+164
+00:11:45,000 --> 00:11:47,000
+It doesn't destroy your sample.
+
+165
+00:11:47,000 --> 00:11:50,000
+But electrons are easy to destroy.
+
+166
+00:11:50,000 --> 00:11:53,000
+Or change your sample.
+
+167
+00:11:53,000 --> 00:11:56,000
+This is also something we need to pay attention to.
+
+168
+00:11:56,000 --> 00:11:59,000
+If you say so,
+
+169
+00:11:59,000 --> 00:12:01,000
+There is a big difference.
+
+170
+00:12:01,000 --> 00:12:04,000
+The middle and the far right,
+
+171
+00:12:04,000 --> 00:12:06,000
+They are all user facilities.
+
+172
+00:12:06,000 --> 00:12:09,000
+That is, you don't need to know anyone in there.
+
+173
+00:12:09,000 --> 00:12:13,000
+You just need to apply for your project.
+
+174
+00:12:13,000 --> 00:12:16,000
+If your project passes, you can do the experiment.
+
+175
+00:12:16,000 --> 00:12:18,000
+Even if you have nothing to do with it.
+
+176
+00:12:18,000 --> 00:12:21,000
+But it's a pity that in the electronic microscope,
+
+177
+00:12:21,000 --> 00:12:24,000
+In fact, there are not so many user facilities.
+
+178
+00:12:24,000 --> 00:12:28,000
+So most electronic microscopes are still owned by a small number of people.
+
+179
+00:12:28,000 --> 00:12:30,000
+If you want to do a similar experiment,
+
+180
+00:12:30,000 --> 00:12:33,000
+You have to know someone.
+
+181
+00:12:33,000 --> 00:12:36,000
+There are some user facilities.
+
+182
+00:12:36,000 --> 00:12:40,000
+At the end of the speech, we will tell everyone.
+
+183
+00:12:40,000 --> 00:12:42,000
+If you want to do it, you don't know anyone.
+
+184
+00:12:42,000 --> 00:12:44,000
+You can go there and do it.
+
+185
+00:12:44,000 --> 00:12:46,000
+It will be put at the end of the speech.
+
+186
+00:12:46,000 --> 00:12:50,000
+What kind of user facilities can be used?
+
+187
+00:12:50,000 --> 00:12:56,000
+In fact, people in the past have never thought about
+
+188
+00:12:56,000 --> 00:12:59,000
+To turn electronic microscopes into
+
+189
+00:12:59,000 --> 00:13:05,000
+Such a public instrument such as neodymium magnets or copper radiation.
+
+190
+00:13:05,000 --> 00:13:07,000
+One of the reasons is because
+
+191
+00:13:07,000 --> 00:13:11,000
+Electronic microscopes were not so powerful at the time.
+
+192
+00:13:11,000 --> 00:13:13,000
+It can't do so many things.
+
+193
+00:13:13,000 --> 00:13:18,000
+But recently, it can really do a lot of things.
+
+194
+00:13:18,000 --> 00:13:21,000
+If you are interested, you can look at this paper.
+
+195
+00:13:21,000 --> 00:13:27,000
+Why neodymium magnets in electronic microscopes
+
+196
+00:13:27,000 --> 00:13:33,000
+It really causes electronic microscopes to become a single-chrome radiation.
+
+197
+00:13:33,000 --> 00:13:35,000
+If you are interested, you can refer to it.
+
+198
+00:13:36,000 --> 00:13:43,000
+The biggest problem I want to talk about today is
+
+199
+00:13:43,000 --> 00:13:46,000
+Between me and the audience
+
+200
+00:13:46,000 --> 00:13:50,000
+Maybe a lot of people have different views on electronic microscopes.
+
+201
+00:13:50,000 --> 00:13:54,000
+Of course, some people have similar views.
+
+202
+00:13:54,000 --> 00:13:58,000
+If you are from the Microscopic Society, you may have a closer view.
+
+203
+00:13:58,000 --> 00:14:00,000
+The first thing I want to talk about is
+
+204
+00:14:00,000 --> 00:14:03,000
+How do we see atoms?
+
+205
+00:14:03,000 --> 00:14:10,000
+In fact, this topic has won awards in 2011 and 2020.
+
+206
+00:14:10,000 --> 00:14:14,000
+Wolf Prize, Cavalier Prize, and Nano Prize
+
+207
+00:14:14,000 --> 00:14:17,000
+I showed a picture here.
+
+208
+00:14:17,000 --> 00:14:23,000
+It is a high-resolution TEM image.
+
+209
+00:14:23,000 --> 00:14:27,000
+Its material is iron.
+
+210
+00:14:27,000 --> 00:14:34,000
+Iron is a popular topic.
+
+211
+00:14:34,000 --> 00:14:40,000
+If you don't know much about electronic microscopes,
+
+212
+00:14:40,000 --> 00:14:42,000
+I think you can ask three questions.
+
+213
+00:14:42,000 --> 00:14:47,000
+I want to answer these three questions in the next section.
+
+214
+00:14:47,000 --> 00:14:52,000
+The first thing is how to see such an image.
+
+215
+00:14:52,000 --> 00:14:58,000
+If you have the opportunity to use an electronic microscope,
+
+216
+00:14:58,000 --> 00:15:03,000
+Is it easy or difficult to see such an image?
+
+217
+00:15:03,000 --> 00:15:05,000
+This is the first question.
+
+218
+00:15:05,000 --> 00:15:09,000
+The second question is if you observe this image
+
+219
+00:15:09,000 --> 00:15:16,000
+If you look at its atoms, it will have yellow, orange, and blue atoms.
+
+220
+00:15:16,000 --> 00:15:22,000
+If you look at the left and right, you will find that the orange atom is at the top of the blue atom.
+
+221
+00:15:22,000 --> 00:15:27,000
+The orange atom is at the bottom of the blue atom on the right.
+
+222
+00:15:27,000 --> 00:15:34,000
+You will find that we can observe the deviation of several atoms.
+
+223
+00:15:34,000 --> 00:15:39,000
+The second question is how do I know which atom represents which element?
+
+224
+00:15:39,000 --> 00:15:43,000
+What kind of atom is the image it sees?
+
+225
+00:15:43,000 --> 00:15:45,000
+How do we distinguish the atoms?
+
+226
+00:15:45,000 --> 00:15:47,000
+This is the second question.
+
+227
+00:15:47,000 --> 00:15:51,000
+The third question is what is not in such an image.
+
+228
+00:15:51,000 --> 00:15:57,000
+The information in such an image is the electrical field and magnetic field.
+
+229
+00:15:57,000 --> 00:15:59,000
+If there is an electronic microscope,
+
+230
+00:15:59,000 --> 00:16:05,000
+I can't see the electrical field and magnetic field with the latest electronic microscope.
+
+231
+00:16:05,000 --> 00:16:07,000
+This is the third question I want to answer.
+
+232
+00:16:08,000 --> 00:16:11,000
+Let me give you a brief introduction.
+
+233
+00:16:11,000 --> 00:16:15,000
+Electronic microscopes are very different from optical microscopes.
+
+234
+00:16:15,000 --> 00:16:21,000
+But the structure is basically the same.
+
+235
+00:16:21,000 --> 00:16:23,000
+You have a light source.
+
+236
+00:16:23,000 --> 00:16:25,000
+This is an electron.
+
+237
+00:16:25,000 --> 00:16:30,000
+You have a condenser lens.
+
+238
+00:16:30,000 --> 00:16:35,000
+The only difference is that the optical microscope on the left is a glass lens.
+
+239
+00:16:35,000 --> 00:16:38,000
+The electron on the right is a conductive electron.
+
+240
+00:16:38,000 --> 00:16:41,000
+So you use a magnetic lens to focus on the electron.
+
+241
+00:16:41,000 --> 00:16:43,000
+There is also a sample.
+
+242
+00:16:43,000 --> 00:16:44,000
+There is also a fog lens.
+
+243
+00:16:44,000 --> 00:16:46,000
+There is also a projection lens.
+
+244
+00:16:46,000 --> 00:16:52,000
+So the simplest way to understand is that the electronic microscope is an optical microscope.
+
+245
+00:16:52,000 --> 00:16:55,000
+Just use the electron as a light source.
+
+246
+00:16:55,000 --> 00:16:57,000
+If you understand this way,
+
+247
+00:16:57,000 --> 00:16:59,000
+In fact, most things can be solved.
+
+248
+00:16:59,000 --> 00:17:02,000
+Because most people should have encountered optical microscopes.
+
+249
+00:17:02,000 --> 00:17:06,000
+The only difference is that you need a large electronic microscope.
+
+250
+00:17:06,000 --> 00:17:08,000
+It needs high vacuum.
+
+251
+00:17:08,000 --> 00:17:12,000
+But in addition, you can really use it as an optical microscope.
+
+252
+00:17:12,000 --> 00:17:19,000
+Of course, electrons and substances have different effects.
+
+253
+00:17:19,000 --> 00:17:25,000
+The biggest reason why I use electronic microscopes is
+
+254
+00:17:25,000 --> 00:17:32,000
+In fact, the wavelength of electrons is much smaller than that of normal visible light.
+
+255
+00:17:32,000 --> 00:17:41,000
+If you have studied physics and are familiar with light, you may know that there is a formula called Abbey Diffraction Limit.
+
+256
+00:17:42,000 --> 00:18:00,000
+Basically, what he is talking about is that no matter how small the light is, the resolution will still be limited to the wavelength.
+
+257
+00:18:00,000 --> 00:18:04,000
+This is a physical limit.
+
+258
+00:18:04,000 --> 00:18:09,000
+The maximum resolution is your wavelength divided by 2.
+
+259
+00:18:09,000 --> 00:18:18,000
+Of course, this limit was broken in 2011 by the Super Resolution Optical Microscope.
+
+260
+00:18:18,000 --> 00:18:22,000
+But in general, this is the limit of optical microscopes.
+
+261
+00:18:22,000 --> 00:18:31,000
+If you look at this formula, you can intuitively see that if you want to improve your Abbey Diffraction Limit,
+
+262
+00:18:31,000 --> 00:18:36,000
+You have to find a way to make your wavelength smaller.
+
+263
+00:18:36,000 --> 00:18:42,000
+The reason why I use electrons is actually because of the resources.
+
+264
+00:18:42,000 --> 00:18:50,000
+Because when you apply a very strong electric field, the wavelength of electrons can be very small.
+
+265
+00:18:50,000 --> 00:18:58,000
+For example, if you apply 300 kV, your electronic wavelength can be up to 1 picometer.
+
+266
+00:18:58,000 --> 00:19:05,000
+In principle, you should be able to see the resolution of 1 picometer.
+
+267
+00:19:05,000 --> 00:19:08,000
+But this is actually wrong.
+
+268
+00:19:08,000 --> 00:19:10,000
+Then I will explain why this is wrong.
+
+269
+00:19:10,000 --> 00:19:16,000
+But the basic concept is that the reason you use electrons is because the electromagnetic wavelength is very short.
+
+270
+00:19:16,000 --> 00:19:19,000
+Then it can help you see things more clearly.
+
+271
+00:19:19,000 --> 00:19:21,000
+Why is it wrong?
+
+272
+00:19:21,000 --> 00:19:26,000
+It's because our lens is actually not perfect.
+
+273
+00:19:26,000 --> 00:19:33,000
+There is something called Spherical Aberration Curve.
+
+274
+00:19:33,000 --> 00:19:41,000
+To put it simply, you start from the same point from different angles.
+
+275
+00:19:41,000 --> 00:19:49,000
+You can't actually focus on the same point through different angles.
+
+276
+00:19:49,000 --> 00:19:57,000
+Of course, if you read a high school textbook, it will tell you that no matter which angle you start from, it will focus on a focus point.
+
+277
+00:19:57,000 --> 00:20:00,000
+But in fact, you can't actually focus on a point.
+
+278
+00:20:00,000 --> 00:20:06,000
+To be more specific, what is Spherical Aberration Curve in real life?
+
+279
+00:20:06,000 --> 00:20:14,000
+It's a bit like you take a glass cup and put it on a floor with patterns or sandpaper.
+
+280
+00:20:14,000 --> 00:20:19,000
+You will find that the part you see clearly is only a small area in the middle.
+
+281
+00:20:19,000 --> 00:20:21,000
+But the sides are all curved.
+
+282
+00:20:21,000 --> 00:20:25,000
+This is the reason for Spherical Aberration Curve.
+
+283
+00:20:25,000 --> 00:20:32,000
+The more you move away from the center of the light, the more you can't actually focus on the same point.
+
+284
+00:20:32,000 --> 00:20:35,000
+So what you see is curved.
+
+285
+00:20:36,000 --> 00:20:40,000
+In fact, in the electronic microscope...
+
+286
+00:20:58,000 --> 00:21:00,000
+Can you hear me?
+
+287
+00:21:00,000 --> 00:21:04,000
+Sorry, I'm not sure what happened just now.
+
+288
+00:21:04,000 --> 00:21:08,000
+But there is also this problem in the electronic microscope.
+
+289
+00:21:08,000 --> 00:21:15,000
+So the first thing you see is how to fix this problem.
+
+290
+00:21:15,000 --> 00:21:19,000
+In fact, this story can be recited for a very long time.
+
+291
+00:21:19,000 --> 00:21:25,000
+But simply put, there are four people who contribute in this field respectively.
+
+292
+00:21:25,000 --> 00:21:30,000
+The story began in the early 1940s.
+
+293
+00:21:30,000 --> 00:21:35,000
+After 40 or 50 years of hard work,
+
+294
+00:21:35,000 --> 00:21:44,000
+people found this problem and solved it.
+
+295
+00:21:44,000 --> 00:21:52,000
+The method they used was to use a lot of electronic probes to try to correct this difference.
+
+296
+00:21:52,000 --> 00:21:55,000
+Of course, this electronic probe is a very complicated result.
+
+297
+00:21:55,000 --> 00:21:59,000
+According to my research, in the latest electronic microscope,
+
+298
+00:21:59,000 --> 00:22:11,000
+you need to have 20 layers of this kind of electronic probe to achieve a good resolution.
+
+299
+00:22:11,000 --> 00:22:14,000
+But in short, this is a success.
+
+300
+00:22:14,000 --> 00:22:21,000
+So now we can see the origin through this Spherical Aberration Curve.
+
+301
+00:22:21,000 --> 00:22:29,000
+Most users don't really need to know how to control it.
+
+302
+00:22:29,000 --> 00:22:34,000
+Basically, the maintenance staff will help you adjust it.
+
+303
+00:22:34,000 --> 00:22:39,000
+So if you use an electronic microscope now,
+
+304
+00:22:39,000 --> 00:22:42,000
+how much resolution can you get?
+
+305
+00:22:42,000 --> 00:22:43,000
+I have a picture here.
+
+306
+00:22:43,000 --> 00:22:47,000
+On one side is TEM, and on the other is STEM.
+
+307
+00:22:47,000 --> 00:22:51,000
+The one in the middle is the resolution before correction,
+
+308
+00:22:51,000 --> 00:22:55,000
+and the one in the back is the resolution after correction.
+
+309
+00:22:55,000 --> 00:22:58,000
+Of course, you can't see how well it has changed in this picture.
+
+310
+00:22:58,000 --> 00:23:01,000
+But it's obvious that it's clear.
+
+311
+00:23:01,000 --> 00:23:04,000
+For most people, this is enough.
+
+312
+00:23:04,000 --> 00:23:09,000
+If you look at the picture on the right,
+
+313
+00:23:09,000 --> 00:23:13,000
+it's actually a silicon.
+
+314
+00:23:13,000 --> 00:23:18,000
+There's a certain angle in the middle.
+
+315
+00:23:18,000 --> 00:23:22,000
+If you do a Fourier Transform,
+
+316
+00:23:22,000 --> 00:23:26,000
+you'll see this kind of Diffraction Pattern.
+
+317
+00:23:26,000 --> 00:23:29,000
+It's obvious that if you don't have a corrected picture,
+
+318
+00:23:29,000 --> 00:23:35,000
+the Diffraction Pattern limit you see is about 1.92 Angstrom.
+
+319
+00:23:35,000 --> 00:23:37,000
+If you go through the correction,
+
+320
+00:23:37,000 --> 00:23:41,000
+you can see that the limit is about 0.76 Angstrom.
+
+321
+00:23:41,000 --> 00:23:43,000
+That's 76 picometers.
+
+322
+00:23:43,000 --> 00:23:46,000
+This resolution is probably in 2002.
+
+323
+00:23:46,000 --> 00:23:48,000
+The data I found,
+
+324
+00:23:48,000 --> 00:23:50,000
+if you are a modern electronic microscope,
+
+325
+00:23:50,000 --> 00:23:53,000
+it should be able to reach more than 50 picometers.
+
+326
+00:23:53,000 --> 00:23:56,000
+As mentioned earlier,
+
+327
+00:23:56,000 --> 00:23:58,000
+the Cornell DMV group,
+
+328
+00:23:58,000 --> 00:24:00,000
+if they do Tycography,
+
+329
+00:24:00,000 --> 00:24:02,000
+it can reach 40 picometers.
+
+330
+00:24:02,000 --> 00:24:04,000
+That's the current record.
+
+331
+00:24:04,000 --> 00:24:09,000
+Your resolution is higher than 40 picometers.
+
+332
+00:24:09,000 --> 00:24:13,000
+If you hear this,
+
+333
+00:24:13,000 --> 00:24:15,000
+I think some people may have a question.
+
+334
+00:24:15,000 --> 00:24:18,000
+Why do I need such a high resolution?
+
+335
+00:24:18,000 --> 00:24:21,000
+I'll give you two examples.
+
+336
+00:24:21,000 --> 00:24:24,000
+Why do we need this resolution?
+
+337
+00:24:24,000 --> 00:24:27,000
+The first example is a carbon nanotube.
+
+338
+00:24:27,000 --> 00:24:29,000
+If you look at this picture,
+
+339
+00:24:29,000 --> 00:24:30,000
+the picture on the left,
+
+340
+00:24:30,000 --> 00:24:32,000
+if you don't do analysis,
+
+341
+00:24:32,000 --> 00:24:33,000
+you can't see any difference.
+
+342
+00:24:33,000 --> 00:24:35,000
+This is a very beautiful
+
+343
+00:24:35,000 --> 00:24:37,000
+atomic resolution carbon nanotube.
+
+344
+00:24:37,000 --> 00:24:39,000
+But if you do analysis,
+
+345
+00:24:39,000 --> 00:24:41,000
+every point,
+
+346
+00:24:41,000 --> 00:24:42,000
+intensity,
+
+347
+00:24:42,000 --> 00:24:44,000
+if you do Gaussian fitting,
+
+348
+00:24:44,000 --> 00:24:46,000
+you will find that you can analyze
+
+349
+00:24:46,000 --> 00:24:48,000
+one atom, one atom,
+
+350
+00:24:48,000 --> 00:24:50,000
+how many positions it deviates.
+
+351
+00:24:50,000 --> 00:24:53,000
+You can see this value.
+
+352
+00:24:53,000 --> 00:24:57,000
+This color represents the distance it deviates.
+
+353
+00:24:57,000 --> 00:24:59,000
+All units are picometers.
+
+354
+00:24:59,000 --> 00:25:02,000
+That is, through modern electronic microscope,
+
+355
+00:25:02,000 --> 00:25:04,000
+you can see from the position of the atom,
+
+356
+00:25:04,000 --> 00:25:06,000
+you can know its
+
+357
+00:25:06,000 --> 00:25:08,000
+carbon nanotube
+
+358
+00:25:08,000 --> 00:25:10,000
+the distribution of gravity.
+
+359
+00:25:10,000 --> 00:25:12,000
+Then you can know which atom is deviating.
+
+360
+00:25:12,000 --> 00:25:14,000
+Do this kind of very
+
+361
+00:25:14,000 --> 00:25:17,000
+high-precision measurement.
+
+362
+00:25:17,000 --> 00:25:20,000
+This is very important for imaging.
+
+363
+00:25:20,000 --> 00:25:22,000
+It is also important for EOS,
+
+364
+00:25:22,000 --> 00:25:24,000
+for light sampling.
+
+365
+00:25:24,000 --> 00:25:25,000
+The reason is because
+
+366
+00:25:25,000 --> 00:25:27,000
+if you want to see
+
+367
+00:25:27,000 --> 00:25:30,000
+the light sample of a single atom,
+
+368
+00:25:30,000 --> 00:25:32,000
+you must look at it very clearly
+
+369
+00:25:32,000 --> 00:25:35,000
+to understand which atom is what.
+
+370
+00:25:35,000 --> 00:25:37,000
+This work is
+
+371
+00:25:37,000 --> 00:25:39,000
+Suenaga,
+
+372
+00:25:39,000 --> 00:25:41,000
+he is Japanese,
+
+373
+00:25:41,000 --> 00:25:43,000
+a Japanese broadcaster.
+
+374
+00:25:43,000 --> 00:25:46,000
+The main idea of this work is
+
+375
+00:25:46,000 --> 00:25:47,000
+he wants to look at
+
+376
+00:25:47,000 --> 00:25:48,000
+the green one,
+
+377
+00:25:48,000 --> 00:25:51,000
+the common graphene carbon,
+
+378
+00:25:51,000 --> 00:25:53,000
+and the two-handed carbon
+
+379
+00:25:53,000 --> 00:25:54,000
+on the edge of the graphene,
+
+380
+00:25:54,000 --> 00:25:56,000
+to this one-handed carbon.
+
+381
+00:25:56,000 --> 00:25:58,000
+What is the difference in its light sample?
+
+382
+00:25:58,000 --> 00:26:01,000
+What is its impact on the quality of graphene?
+
+383
+00:26:01,000 --> 00:26:03,000
+He really went to do it.
+
+384
+00:26:03,000 --> 00:26:05,000
+I have a question.
+
+385
+00:26:05,000 --> 00:26:07,000
+Sorry,
+
+386
+00:26:07,000 --> 00:26:09,000
+I'm not an electronic microscope,
+
+387
+00:26:09,000 --> 00:26:11,000
+so I might ask a very out-of-the-way question.
+
+388
+00:26:11,000 --> 00:26:13,000
+You said that your displacement
+
+389
+00:26:13,000 --> 00:26:15,000
+is probably at
+
+390
+00:26:15,000 --> 00:26:17,000
+dozens of picometers,
+
+391
+00:26:17,000 --> 00:26:20,000
+this level.
+
+392
+00:26:20,000 --> 00:26:22,000
+You can probably say
+
+393
+00:26:22,000 --> 00:26:24,000
+how much of this displacement
+
+394
+00:26:24,000 --> 00:26:26,000
+comes from the incident particle,
+
+395
+00:26:26,000 --> 00:26:27,000
+which is your electron,
+
+396
+00:26:27,000 --> 00:26:29,000
+plus the displacement.
+
+397
+00:26:29,000 --> 00:26:30,000
+What is the percentage,
+
+398
+00:26:30,000 --> 00:26:32,000
+or what is the percentage?
+
+399
+00:26:32,000 --> 00:26:33,000
+I don't know.
+
+400
+00:26:33,000 --> 00:26:35,000
+The first thing I want to say is
+
+401
+00:26:35,000 --> 00:26:37,000
+this is
+
+402
+00:26:37,000 --> 00:26:38,000
+how to say it,
+
+403
+00:26:38,000 --> 00:26:39,000
+that is,
+
+404
+00:26:39,000 --> 00:26:40,000
+modern,
+
+405
+00:26:40,000 --> 00:26:41,000
+you can,
+
+406
+00:26:41,000 --> 00:26:42,000
+because electronic microscopes
+
+407
+00:26:42,000 --> 00:26:44,000
+are actually quite long-standing
+
+408
+00:26:44,000 --> 00:26:45,000
+studies,
+
+409
+00:26:45,000 --> 00:26:47,000
+so a lot of information,
+
+410
+00:26:47,000 --> 00:26:49,000
+like how much energy
+
+411
+00:26:49,000 --> 00:26:51,000
+your electron emits
+
+412
+00:26:51,000 --> 00:26:53,000
+to a single atom,
+
+413
+00:26:53,000 --> 00:26:54,000
+you can use calculations,
+
+414
+00:26:54,000 --> 00:26:56,000
+and you can also calculate
+
+415
+00:26:56,000 --> 00:26:58,000
+how much it heats up
+
+416
+00:26:58,000 --> 00:27:00,000
+to a single atom.
+
+417
+00:27:00,000 --> 00:27:01,000
+But what you said,
+
+418
+00:27:01,000 --> 00:27:02,000
+that is,
+
+419
+00:27:02,000 --> 00:27:03,000
+in the end,
+
+420
+00:27:03,000 --> 00:27:04,000
+for example,
+
+421
+00:27:04,000 --> 00:27:05,000
+how much impact
+
+422
+00:27:05,000 --> 00:27:07,000
+it has on carbon nanotubes,
+
+423
+00:27:07,000 --> 00:27:10,000
+this is a very good question.
+
+424
+00:27:10,000 --> 00:27:12,000
+You have to,
+
+425
+00:27:12,000 --> 00:27:13,000
+for each different material,
+
+426
+00:27:13,000 --> 00:27:16,000
+you have to discuss this matter.
+
+427
+00:27:16,000 --> 00:27:17,000
+I can't tell you directly
+
+428
+00:27:17,000 --> 00:27:19,000
+that it probably stands to reason,
+
+429
+00:27:19,000 --> 00:27:21,000
+but I can tell you very clearly
+
+430
+00:27:21,000 --> 00:27:22,000
+that you do today,
+
+431
+00:27:22,000 --> 00:27:24,000
+like this carbon nanotube,
+
+432
+00:27:24,000 --> 00:27:27,000
+the impact of electrons on a single atom
+
+433
+00:27:27,000 --> 00:27:28,000
+is definitely higher than
+
+434
+00:27:28,000 --> 00:27:30,000
+you take it to look at
+
+435
+00:27:30,000 --> 00:27:31,000
+metal or ceramics.
+
+436
+00:27:31,000 --> 00:27:32,000
+Maybe ceramics,
+
+437
+00:27:32,000 --> 00:27:33,000
+you don't even,
+
+438
+00:27:33,000 --> 00:27:34,000
+electrons,
+
+439
+00:27:34,000 --> 00:27:35,000
+that is,
+
+440
+00:27:35,000 --> 00:27:36,000
+your atoms
+
+441
+00:27:36,000 --> 00:27:37,000
+don't cause any change at all.
+
+442
+00:27:37,000 --> 00:27:39,000
+But in this kind of carbon nanotube,
+
+443
+00:27:39,000 --> 00:27:40,000
+indeed,
+
+444
+00:27:40,000 --> 00:27:42,000
+electrons may
+
+445
+00:27:42,000 --> 00:27:44,000
+have an impact on the position of the atom.
+
+446
+00:27:44,000 --> 00:27:46,000
+But I can't tell you
+
+447
+00:27:46,000 --> 00:27:47,000
+exactly how much
+
+448
+00:27:47,000 --> 00:27:48,000
+it accounts for.
+
+449
+00:27:48,000 --> 00:27:50,000
+Sorry.
+
+450
+00:27:50,000 --> 00:27:51,000
+Yes, I understand.
+
+451
+00:27:51,000 --> 00:27:52,000
+Thank you.
+
+452
+00:27:52,000 --> 00:27:53,000
+Yes,
+
+453
+00:27:53,000 --> 00:27:55,000
+simply put,
+
+454
+00:27:55,000 --> 00:27:56,000
+of course,
+
+455
+00:27:56,000 --> 00:27:57,000
+the question you just asked
+
+456
+00:27:57,000 --> 00:28:00,000
+is also a very practical question.
+
+457
+00:28:00,000 --> 00:28:02,000
+You have to
+
+458
+00:28:02,000 --> 00:28:04,000
+study this matter.
+
+459
+00:28:04,000 --> 00:28:07,000
+But simply put,
+
+460
+00:28:07,000 --> 00:28:09,000
+because there is a spherical refractor,
+
+461
+00:28:09,000 --> 00:28:12,000
+we can see the atom very accurately.
+
+462
+00:28:12,000 --> 00:28:13,000
+That is,
+
+463
+00:28:13,000 --> 00:28:15,000
+people who do EOS
+
+464
+00:28:15,000 --> 00:28:16,000
+can go to
+
+465
+00:28:16,000 --> 00:28:18,000
+each atom,
+
+466
+00:28:18,000 --> 00:28:19,000
+each single atom,
+
+467
+00:28:19,000 --> 00:28:20,000
+to see what is the difference
+
+468
+00:28:20,000 --> 00:28:21,000
+between its light waves,
+
+469
+00:28:21,000 --> 00:28:22,000
+such as green,
+
+470
+00:28:22,000 --> 00:28:23,000
+blue,
+
+471
+00:28:23,000 --> 00:28:24,000
+and red.
+
+472
+00:28:24,000 --> 00:28:26,000
+There are some differences.
+
+473
+00:28:26,000 --> 00:28:27,000
+Of course,
+
+474
+00:28:27,000 --> 00:28:29,000
+green and blue
+
+475
+00:28:29,000 --> 00:28:30,000
+may be very different,
+
+476
+00:28:30,000 --> 00:28:31,000
+and blue and red
+
+477
+00:28:31,000 --> 00:28:32,000
+may not be so different.
+
+478
+00:28:32,000 --> 00:28:34,000
+But if you do the calculation,
+
+479
+00:28:34,000 --> 00:28:35,000
+you can know
+
+480
+00:28:35,000 --> 00:28:36,000
+why they are different,
+
+481
+00:28:36,000 --> 00:28:38,000
+and what the difference
+
+482
+00:28:38,000 --> 00:28:39,000
+means.
+
+483
+00:28:39,000 --> 00:28:41,000
+This can be interpreted.
+
+484
+00:28:41,000 --> 00:28:42,000
+Sorry,
+
+485
+00:28:42,000 --> 00:28:44,000
+I have a question.
+
+486
+00:28:44,000 --> 00:28:45,000
+OK.
+
+487
+00:28:45,000 --> 00:28:46,000
+Yes,
+
+488
+00:28:46,000 --> 00:28:47,000
+can you hear me?
+
+489
+00:28:47,000 --> 00:28:48,000
+Yes,
+
+490
+00:28:48,000 --> 00:28:49,000
+I can hear you.
+
+491
+00:28:49,000 --> 00:28:50,000
+You can hear me.
+
+492
+00:28:50,000 --> 00:28:51,000
+How do you look at
+
+493
+00:28:51,000 --> 00:28:52,000
+the energy loss
+
+494
+00:28:52,000 --> 00:28:53,000
+in the 2D
+
+495
+00:28:53,000 --> 00:28:54,000
+part?
+
+496
+00:28:54,000 --> 00:28:55,000
+In theory
+
+497
+00:28:55,000 --> 00:28:56,000
+or in practice,
+
+498
+00:28:56,000 --> 00:28:57,000
+how do you look at
+
+499
+00:28:57,000 --> 00:28:58,000
+this thing?
+
+500
+00:28:58,000 --> 00:28:59,000
+What kind of energy loss
+
+501
+00:28:59,000 --> 00:29:00,000
+does it have?
+
+502
+00:29:00,000 --> 00:29:01,000
+I will put it
+
+503
+00:29:01,000 --> 00:29:02,000
+in the second session.
+
+504
+00:29:02,000 --> 00:29:03,000
+I will put EOS's structure 2.
+
+505
+00:29:03,000 --> 00:29:04,000
+But simply put,
+
+506
+00:29:04,000 --> 00:29:05,000
+you see this image.
+
+507
+00:29:05,000 --> 00:29:06,000
+In fact,
+
+508
+00:29:06,000 --> 00:29:07,000
+it is
+
+509
+00:29:07,000 --> 00:29:08,000
+EOS's structure 2.
+
+510
+00:29:08,000 --> 00:29:09,000
+It is
+
+511
+00:29:09,000 --> 00:29:10,000
+EOS's structure 2.
+
+512
+00:29:10,000 --> 00:29:11,000
+It is
+
+513
+00:29:11,000 --> 00:29:12,000
+EOS's structure 2.
+
+514
+00:29:12,000 --> 00:29:13,000
+It is
+
+515
+00:29:13,000 --> 00:29:14,000
+EOS's structure 2.
+
+516
+00:29:14,000 --> 00:29:15,000
+It is
+
+517
+00:29:15,000 --> 00:29:16,000
+EOS's structure 2.
+
+518
+00:29:16,000 --> 00:29:17,000
+In fact,
+
+519
+00:29:17,000 --> 00:29:18,000
+because you
+
+520
+00:29:18,000 --> 00:29:19,000
+have a
+
+521
+00:29:19,000 --> 00:29:20,000
+regressed electron,
+
+522
+00:29:20,000 --> 00:29:21,000
+you
+
+523
+00:29:21,000 --> 00:29:22,000
+are
+
+524
+00:29:22,000 --> 00:29:23,000
+detecting
+
+525
+00:29:23,000 --> 00:29:24,000
+the energy
+
+526
+00:29:24,000 --> 00:29:25,000
+loss
+
+527
+00:29:25,000 --> 00:29:26,000
+of the
+
+528
+00:29:26,000 --> 00:29:27,000
+regressed electron.
+
+529
+00:29:27,000 --> 00:29:28,000
+So EOS
+
+530
+00:29:28,000 --> 00:29:29,000
+is usually
+
+531
+00:29:29,000 --> 00:29:30,000
+placed at the
+
+532
+00:29:30,000 --> 00:29:31,000
+bottom of
+
+533
+00:29:31,000 --> 00:29:32,000
+the electron microscope
+
+534
+00:29:32,000 --> 00:29:33,000
+.
+
+535
+00:29:33,000 --> 00:29:34,000
+A
+
+536
+00:29:34,000 --> 00:29:35,000
+general
+
+537
+00:29:35,000 --> 00:29:36,000
+instrument
+
+538
+00:29:36,000 --> 00:29:37,000
+is placed
+
+539
+00:29:37,000 --> 00:29:38,000
+at the
+
+540
+00:29:38,000 --> 00:29:39,000
+bottom.
+
+541
+00:29:39,000 --> 00:29:40,000
+You
+
+542
+00:29:40,000 --> 00:29:41,000
+put the
+
+543
+00:29:41,000 --> 00:29:42,000
+light
+
+544
+00:29:42,000 --> 00:29:43,000
+spectrum
+
+545
+00:29:43,000 --> 00:29:44,000
+like this
+
+546
+00:29:44,000 --> 00:29:45,000
+and
+
+547
+00:29:45,000 --> 00:29:46,000
+analyze the
+
+548
+00:29:46,000 --> 00:29:47,000
+energy loss
+
+549
+00:29:47,000 --> 00:29:48,000
+of the
+
+550
+00:29:48,000 --> 00:29:49,000
+same electron.
+
+551
+00:29:49,000 --> 00:29:50,000
+Then you can
+
+552
+00:29:50,000 --> 00:29:51,000
+see the
+
+553
+00:29:51,000 --> 00:29:52,000
+light spectrum
+
+554
+00:29:52,000 --> 00:29:53,000
+like this.
+
+555
+00:29:53,000 --> 00:29:54,000
+I will
+
+556
+00:29:54,000 --> 00:29:55,000
+talk about
+
+557
+00:29:55,000 --> 00:29:56,000
+the specific
+
+558
+00:29:56,000 --> 00:29:57,000
+structure
+
+559
+00:29:57,000 --> 00:29:58,000
+in the
+
+560
+00:29:58,000 --> 00:29:59,000
+next
+
+561
+00:29:59,000 --> 00:30:00,000
+section.
+
+562
+00:30:00,000 --> 00:30:01,000
+Okay,
+
+563
+00:30:01,000 --> 00:30:02,000
+the part
+
+564
+00:30:02,000 --> 00:30:03,000
+I just
+
+565
+00:30:03,000 --> 00:30:04,000
+talked about
+
+566
+00:30:04,000 --> 00:30:05,000
+is about
+
+567
+00:30:05,000 --> 00:30:06,000
+how we
+
+568
+00:30:06,000 --> 00:30:07,000
+can see
+
+569
+00:30:07,000 --> 00:30:08,000
+an electron
+
+570
+00:30:08,000 --> 00:30:09,000
+very precisely
+
+571
+00:30:09,000 --> 00:30:10,000
+.
+
+572
+00:30:10,000 --> 00:30:11,000
+This matter
+
+573
+00:30:11,000 --> 00:30:12,000
+is very
+
+574
+00:30:12,000 --> 00:30:13,000
+important.
+
+575
+00:30:13,000 --> 00:30:14,000
+Because
+
+576
+00:30:14,000 --> 00:30:15,000
+if you can't see
+
+577
+00:30:15,000 --> 00:30:16,000
+the electron,
+
+578
+00:30:16,000 --> 00:30:17,000
+you can't
+
+579
+00:30:17,000 --> 00:30:18,000
+study the
+
+580
+00:30:18,000 --> 00:30:19,000
+light spectrum
+
+581
+00:30:19,000 --> 00:30:20,000
+of the
+
+582
+00:30:20,000 --> 00:30:21,000
+electron.
+
+583
+00:30:21,000 --> 00:30:22,000
+The
+
+584
+00:30:22,000 --> 00:30:23,000
+red frame
+
+585
+00:30:23,000 --> 00:30:24,000
+here
+
+586
+00:30:24,000 --> 00:30:25,000
+is the
+
+587
+00:30:25,000 --> 00:30:26,000
+element
+
+588
+00:30:26,000 --> 00:30:27,000
+that
+
+589
+00:30:27,000 --> 00:30:28,000
+ordinary
+
+590
+00:30:28,000 --> 00:30:29,000
+people
+
+591
+00:30:29,000 --> 00:30:30,000
+will
+
+592
+00:30:30,000 --> 00:30:31,000
+encounter.
+
+593
+00:30:31,000 --> 00:30:32,000
+The
+
+594
+00:30:32,000 --> 00:30:33,000
+element that
+
+595
+00:30:33,000 --> 00:30:34,000
+is not listed
+
+596
+00:30:34,000 --> 00:30:35,000
+below
+
+597
+00:30:35,000 --> 00:30:36,000
+may not
+
+598
+00:30:36,000 --> 00:30:37,000
+be an
+
+599
+00:30:37,000 --> 00:30:38,000
+element
+
+600
+00:30:38,000 --> 00:30:39,000
+that
+
+601
+00:30:39,000 --> 00:30:40,000
+ordinary
+
+602
+00:30:40,000 --> 00:30:41,000
+people
+
+603
+00:30:41,000 --> 00:30:42,000
+will
+
+604
+00:30:42,000 --> 00:30:43,000
+encounter.
+
+605
+00:30:43,000 --> 00:30:44,000
+Let me
+
+606
+00:30:44,000 --> 00:30:45,000
+give you an
+
+607
+00:30:45,000 --> 00:30:46,000
+example.
+
+608
+00:30:46,000 --> 00:30:47,000
+You can
+
+609
+00:30:47,000 --> 00:30:48,000
+think about
+
+610
+00:30:48,000 --> 00:30:49,000
+what you
+
+611
+00:30:49,000 --> 00:30:50,000
+expect to
+
+612
+00:30:50,000 --> 00:30:51,000
+see in
+
+613
+00:30:51,000 --> 00:30:52,000
+the electron
+
+614
+00:30:52,000 --> 00:30:53,000
+.
+
+615
+00:30:53,000 --> 00:30:54,000
+The
+
+616
+00:30:54,000 --> 00:30:55,000
+answer is
+
+617
+00:30:55,000 --> 00:30:56,000
+that all
+
+618
+00:30:56,000 --> 00:30:57,000
+the elements
+
+619
+00:30:57,000 --> 00:30:58,000
+in this
+
+620
+00:30:58,000 --> 00:30:59,000
+frame can
+
+621
+00:30:59,000 --> 00:31:00,000
+be seen,
+
+622
+00:31:00,000 --> 00:31:01,000
+including
+
+623
+00:31:01,000 --> 00:31:02,000
+light and
+
+624
+00:31:02,000 --> 00:31:03,000
+light.
+
+625
+00:31:03,000 --> 00:31:04,000
+I have
+
+626
+00:31:04,000 --> 00:31:05,000
+a picture
+
+627
+00:31:05,000 --> 00:31:06,000
+here.
+
+628
+00:31:06,000 --> 00:31:07,000
+The
+
+629
+00:31:07,000 --> 00:31:08,000
+most important
+
+630
+00:31:08,000 --> 00:31:09,000
+element
+
+631
+00:31:09,000 --> 00:31:10,000
+I just
+
+632
+00:31:10,000 --> 00:31:11,000
+talked about
+
+633
+00:31:11,000 --> 00:31:12,000
+is the
+
+634
+00:31:12,000 --> 00:31:13,000
+light
+
+635
+00:31:13,000 --> 00:31:14,000
+element.
+
+636
+00:31:14,000 --> 00:31:15,000
+This is
+
+637
+00:31:15,000 --> 00:31:16,000
+my
+
+638
+00:31:16,000 --> 00:31:17,000
+recent experiment.
+
+639
+00:31:17,000 --> 00:31:18,000
+You can
+
+640
+00:31:18,000 --> 00:31:19,000
+see the
+
+641
+00:31:19,000 --> 00:31:20,000
+white
+
+642
+00:31:20,000 --> 00:31:21,000
+bismuth
+
+643
+00:31:21,000 --> 00:31:22,000
+forming
+
+644
+00:31:22,000 --> 00:31:23,000
+particles
+
+645
+00:31:23,000 --> 00:31:24,000
+or
+
+646
+00:31:24,000 --> 00:31:25,000
+single
+
+647
+00:31:25,000 --> 00:31:26,000
+atoms.
+
+648
+00:31:26,000 --> 00:31:27,000
+In the
+
+649
+00:31:27,000 --> 00:31:28,000
+glass,
+
+650
+00:31:28,000 --> 00:31:29,000
+bismuth
+
+651
+00:31:29,000 --> 00:31:30,000
+is definitely
+
+652
+00:31:30,000 --> 00:31:31,000
+something
+
+653
+00:31:31,000 --> 00:31:32,000
+that
+
+654
+00:31:32,000 --> 00:31:33,000
+is easy
+
+655
+00:31:33,000 --> 00:31:34,000
+to see.
+
+656
+00:31:34,000 --> 00:31:35,000
+The
+
+657
+00:31:35,000 --> 00:31:36,000
+light element
+
+658
+00:31:36,000 --> 00:31:37,000
+is special
+
+659
+00:31:37,000 --> 00:31:38,000
+because it
+
+660
+00:31:38,000 --> 00:31:39,000
+has only
+
+661
+00:31:39,000 --> 00:31:40,000
+one
+
+662
+00:31:40,000 --> 00:31:41,000
+light
+
+663
+00:31:41,000 --> 00:31:42,000
+element.
+
+664
+00:31:42,000 --> 00:31:43,000
+The
+
+665
+00:31:43,000 --> 00:31:44,000
+first time
+
+666
+00:31:44,000 --> 00:31:45,000
+it was
+
+667
+00:31:45,000 --> 00:31:46,000
+seen was
+
+668
+00:31:46,000 --> 00:31:47,000
+in 2011
+
+669
+00:31:47,000 --> 00:31:48,000
+in the
+
+670
+00:31:48,000 --> 00:31:49,000
+YH
+
+671
+00:31:49,000 --> 00:31:50,000
+crystal.
+
+672
+00:31:50,000 --> 00:31:51,000
+You
+
+673
+00:31:51,000 --> 00:31:52,000
+can see
+
+674
+00:31:52,000 --> 00:31:53,000
+the
+
+675
+00:31:53,000 --> 00:31:54,000
+faint
+
+676
+00:31:54,000 --> 00:31:55,000
+intensity,
+
+677
+00:31:55,000 --> 00:31:56,000
+but
+
+678
+00:31:56,000 --> 00:31:57,000
+basically
+
+679
+00:31:57,000 --> 00:31:58,000
+you can
+
+680
+00:31:58,000 --> 00:31:59,000
+see the
+
+681
+00:31:59,000 --> 00:32:00,000
+light
+
+682
+00:32:00,000 --> 00:32:01,000
+element.
+
+683
+00:32:01,000 --> 00:32:02,000
+This
+
+684
+00:32:02,000 --> 00:32:03,000
+method,
+
+685
+00:32:03,000 --> 00:32:04,000
+in fact,
+
+686
+00:32:04,000 --> 00:32:05,000
+the first
+
+687
+00:32:05,000 --> 00:32:06,000
+method to
+
+688
+00:32:06,000 --> 00:32:07,000
+do this
+
+689
+00:32:07,000 --> 00:32:08,000
+is the
+
+690
+00:32:08,000 --> 00:32:09,000
+method
+
+691
+00:32:09,000 --> 00:32:10,000
+that
+
+692
+00:32:10,000 --> 00:32:11,000
+you can
+
+693
+00:32:11,000 --> 00:32:12,000
+see the
+
+694
+00:32:12,000 --> 00:32:13,000
+light
+
+695
+00:32:13,000 --> 00:32:14,000
+element.
+
+696
+00:32:14,000 --> 00:32:15,000
+Of
+
+697
+00:32:15,000 --> 00:32:16,000
+course,
+
+698
+00:32:16,000 --> 00:32:17,000
+it's not
+
+699
+00:32:17,000 --> 00:32:18,000
+that simple,
+
+700
+00:32:18,000 --> 00:32:19,000
+but
+
+701
+00:32:19,000 --> 00:32:20,000
+theoretically
+
+702
+00:32:20,000 --> 00:32:21,000
+you can
+
+703
+00:32:21,000 --> 00:32:22,000
+see the
+
+704
+00:32:22,000 --> 00:32:23,000
+light
+
+705
+00:32:23,000 --> 00:32:24,000
+element.
+
+706
+00:32:24,000 --> 00:32:25,000
+The
+
+707
+00:32:25,000 --> 00:32:26,000
+first
+
+708
+00:32:26,000 --> 00:32:27,000
+question
+
+709
+00:32:27,000 --> 00:32:28,000
+I'm
+
+710
+00:32:28,000 --> 00:32:29,000
+going to
+
+711
+00:32:29,000 --> 00:32:30,000
+talk about
+
+712
+00:32:30,000 --> 00:32:31,000
+today is
+
+713
+00:32:31,000 --> 00:32:32,000
+that
+
+714
+00:32:32,000 --> 00:32:33,000
+many people
+
+715
+00:32:33,000 --> 00:32:34,000
+seem to
+
+716
+00:32:34,000 --> 00:32:35,000
+be doing
+
+717
+00:32:35,000 --> 00:32:36,000
+STEM,
+
+718
+00:32:36,000 --> 00:32:37,000
+but
+
+719
+00:32:37,000 --> 00:32:38,000
+no one
+
+720
+00:32:38,000 --> 00:32:39,000
+knows
+
+721
+00:32:39,000 --> 00:32:40,000
+why.
+
+722
+00:32:40,000 --> 00:32:41,000
+This is
+
+723
+00:32:41,000 --> 00:32:42,000
+not a
+
+724
+00:32:42,000 --> 00:32:43,000
+traditional
+
+725
+00:32:43,000 --> 00:32:44,000
+electron microscope.
+
+726
+00:32:44,000 --> 00:32:45,000
+It's a
+
+727
+00:32:45,000 --> 00:32:46,000
+technology
+
+728
+00:32:46,000 --> 00:32:47,000
+called
+
+729
+00:32:47,000 --> 00:32:48,000
+STEM.
+
+730
+00:32:48,000 --> 00:32:49,000
+It's
+
+731
+00:32:49,000 --> 00:32:50,000
+very different
+
+732
+00:32:50,000 --> 00:32:51,000
+from a
+
+733
+00:32:51,000 --> 00:32:52,000
+optical
+
+734
+00:32:52,000 --> 00:32:53,000
+microscope.
+
+735
+00:32:53,000 --> 00:32:54,000
+STEM
+
+736
+00:32:54,000 --> 00:32:55,000
+actually
+
+737
+00:32:55,000 --> 00:32:56,000
+focuses
+
+738
+00:32:56,000 --> 00:32:57,000
+the
+
+739
+00:32:57,000 --> 00:32:58,000
+electron
+
+740
+00:32:58,000 --> 00:32:59,000
+into a
+
+741
+00:32:59,000 --> 00:33:00,000
+very small
+
+742
+00:33:00,000 --> 00:33:01,000
+probe
+
+743
+00:33:01,000 --> 00:33:02,000
+and then
+
+744
+00:33:02,000 --> 00:33:03,000
+does
+
+745
+00:33:03,000 --> 00:33:04,000
+scanning.
+
+746
+00:33:04,000 --> 00:33:05,000
+The
+
+747
+00:33:05,000 --> 00:33:06,000
+traditional
+
+748
+00:33:06,000 --> 00:33:07,000
+optical
+
+749
+00:33:07,000 --> 00:33:08,000
+microscope
+
+750
+00:33:08,000 --> 00:33:09,000
+will
+
+751
+00:33:09,000 --> 00:33:10,000
+look
+
+752
+00:33:10,000 --> 00:33:11,000
+very
+
+753
+00:33:11,000 --> 00:33:12,000
+different.
+
+754
+00:33:12,000 --> 00:33:13,000
+To
+
+755
+00:33:13,000 --> 00:33:14,000
+put it
+
+756
+00:33:14,000 --> 00:33:15,000
+simply,
+
+757
+00:33:15,000 --> 00:33:16,000
+because
+
+758
+00:33:16,000 --> 00:33:17,000
+it does
+
+759
+00:33:17,000 --> 00:33:18,000
+this
+
+760
+00:33:18,000 --> 00:33:19,000
+scanning,
+
+761
+00:33:19,000 --> 00:33:20,000
+it can
+
+762
+00:33:20,000 --> 00:33:21,000
+put
+
+763
+00:33:21,000 --> 00:33:22,000
+detectors
+
+764
+00:33:22,000 --> 00:33:23,000
+at different
+
+765
+00:33:23,000 --> 00:33:24,000
+angles
+
+766
+00:33:24,000 --> 00:33:25,000
+in different
+
+767
+00:33:25,000 --> 00:33:26,000
+places.
+
+768
+00:33:26,000 --> 00:33:27,000
+These
+
+769
+00:33:27,000 --> 00:33:28,000
+detectors
+
+770
+00:33:28,000 --> 00:33:29,000
+can
+
+771
+00:33:29,000 --> 00:33:30,000
+tell you
+
+772
+00:33:30,000 --> 00:33:31,000
+different
+
+773
+00:33:31,000 --> 00:33:32,000
+information
+
+774
+00:33:32,000 --> 00:33:33,000
+in
+
+775
+00:33:33,000 --> 00:33:34,000
+different
+
+776
+00:33:34,000 --> 00:33:35,000
+places.
+
+777
+00:33:35,000 --> 00:33:36,000
+The
+
+778
+00:33:36,000 --> 00:33:37,000
+electron
+
+779
+00:33:37,000 --> 00:33:38,000
+microscope
+
+780
+00:33:38,000 --> 00:33:39,000
+is
+
+781
+00:33:39,000 --> 00:33:40,000
+very
+
+782
+00:33:40,000 --> 00:33:41,000
+sensitive
+
+783
+00:33:41,000 --> 00:33:42,000
+to
+
+784
+00:33:42,000 --> 00:33:43,000
+the
+
+785
+00:33:43,000 --> 00:33:44,000
+intensity
+
+786
+00:33:44,000 --> 00:33:45,000
+of the
+
+787
+00:33:45,000 --> 00:33:46,000
+electron.
+
+788
+00:33:46,000 --> 00:33:47,000
+You
+
+789
+00:33:47,000 --> 00:33:48,000
+can
+
+790
+00:33:48,000 --> 00:33:49,000
+tell
+
+791
+00:33:49,000 --> 00:33:50,000
+the
+
+792
+00:33:50,000 --> 00:33:51,000
+intensity
+
+793
+00:33:51,000 --> 00:33:52,000
+of the
+
+794
+00:33:52,000 --> 00:33:53,000
+electron
+
+795
+00:33:53,000 --> 00:33:54,000
+by
+
+796
+00:33:54,000 --> 00:33:55,000
+looking at
+
+797
+00:33:55,000 --> 00:33:56,000
+the
+
+798
+00:33:56,000 --> 00:33:57,000
+intensity
+
+799
+00:33:57,000 --> 00:33:58,000
+of the
+
+800
+00:33:58,000 --> 00:33:59,000
+electron.
+
+801
+00:33:59,000 --> 00:34:00,000
+The
+
+802
+00:34:00,000 --> 00:34:01,000
+other
+
+803
+00:34:01,000 --> 00:34:02,000
+technology
+
+804
+00:34:02,000 --> 00:34:03,000
+is
+
+805
+00:34:03,000 --> 00:34:04,000
+the
+
+806
+00:34:04,000 --> 00:34:05,000
+brightfield
+
+807
+00:34:05,000 --> 00:34:06,000
+microscope.
+
+808
+00:34:06,000 --> 00:34:07,000
+It
+
+809
+00:34:07,000 --> 00:34:08,000
+is
+
+810
+00:34:08,000 --> 00:34:09,000
+similar to
+
+811
+00:34:09,000 --> 00:34:10,000
+the
+
+812
+00:34:10,000 --> 00:34:11,000
+TEM
+
+813
+00:34:11,000 --> 00:34:12,000
+microscope.
+
+814
+00:34:12,000 --> 00:34:13,000
+The
+
+815
+00:34:13,000 --> 00:34:14,000
+last
+
+816
+00:34:14,000 --> 00:34:15,000
+technology is
+
+817
+00:34:15,000 --> 00:34:16,000
+the
+
+818
+00:34:16,000 --> 00:34:17,000
+detector.
+
+819
+00:34:17,000 --> 00:34:18,000
+It
+
+820
+00:34:18,000 --> 00:34:19,000
+is
+
+821
+00:34:19,000 --> 00:34:20,000
+very
+
+822
+00:34:20,000 --> 00:34:21,000
+sensitive
+
+823
+00:34:21,000 --> 00:34:22,000
+to
+
+824
+00:34:22,000 --> 00:34:23,000
+light
+
+825
+00:34:23,000 --> 00:34:24,000
+particles.
+
+826
+00:34:24,000 --> 00:34:25,000
+In
+
+827
+00:34:25,000 --> 00:34:26,000
+other
+
+828
+00:34:26,000 --> 00:34:27,000
+words,
+
+829
+00:34:27,000 --> 00:34:28,000
+if
+
+830
+00:34:28,000 --> 00:34:29,000
+you
+
+831
+00:34:29,000 --> 00:34:30,000
+have
+
+832
+00:34:30,000 --> 00:34:31,000
+a
+
+833
+00:34:31,000 --> 00:34:32,000
+small
+
+834
+00:34:32,000 --> 00:34:33,000
+electron
+
+835
+00:34:33,000 --> 00:34:34,000
+in
+
+836
+00:34:34,000 --> 00:34:35,000
+the
+
+837
+00:34:35,000 --> 00:34:36,000
+microscope,
+
+838
+00:34:36,000 --> 00:34:37,000
+you
+
+839
+00:34:37,000 --> 00:34:38,000
+can
+
+840
+00:34:38,000 --> 00:34:39,000
+detect
+
+841
+00:34:39,000 --> 00:34:40,000
+light
+
+842
+00:34:40,000 --> 00:34:41,000
+particles
+
+843
+00:34:41,000 --> 00:34:42,000
+in
+
+844
+00:34:42,000 --> 00:34:43,000
+a
+
+845
+00:34:43,000 --> 00:34:44,000
+small
+
+846
+00:34:44,000 --> 00:34:45,000
+electron.
+
+847
+00:34:45,000 --> 00:34:46,000
+You
+
+848
+00:34:46,000 --> 00:34:47,000
+can
+
+849
+00:34:47,000 --> 00:34:48,000
+detect
+
+850
+00:34:48,000 --> 00:34:49,000
+light
+
+851
+00:34:49,000 --> 00:34:50,000
+particles
+
+852
+00:34:50,000 --> 00:34:51,000
+in
+
+853
+00:34:51,000 --> 00:34:52,000
+a
+
+854
+00:34:52,000 --> 00:34:53,000
+small
+
+855
+00:34:53,000 --> 00:34:54,000
+electron.
+
+856
+00:34:54,000 --> 00:34:55,000
+You
+
+857
+00:34:55,000 --> 00:34:56,000
+can
+
+858
+00:34:56,000 --> 00:34:57,000
+detect
+
+859
+00:34:57,000 --> 00:34:58,000
+light
+
+860
+00:34:58,000 --> 00:34:59,000
+particles
+
+861
+00:34:59,000 --> 00:35:00,000
+in
+
+862
+00:35:00,000 --> 00:35:01,000
+a
+
+863
+00:35:01,000 --> 00:35:02,000
+small
+
+864
+00:35:02,000 --> 00:35:03,000
+electron.
+
+865
+00:35:03,000 --> 00:35:04,000
+You
+
+866
+00:35:04,000 --> 00:35:05,000
+can
+
+867
+00:35:05,000 --> 00:35:06,000
+detect
+
+868
+00:35:06,000 --> 00:35:07,000
+light
+
+869
+00:35:07,000 --> 00:35:08,000
+particles
+
+870
+00:35:08,000 --> 00:35:09,000
+in
+
+871
+00:35:09,000 --> 00:35:10,000
+a
+
+872
+00:35:10,000 --> 00:35:11,000
+small
+
+873
+00:35:11,000 --> 00:35:12,000
+electron.
+
+874
+00:35:12,000 --> 00:35:13,000
+It
+
+875
+00:35:13,000 --> 00:35:16,000
+is
+
+876
+00:35:16,000 --> 00:35:17,000
+a
+
+877
+00:35:17,000 --> 00:35:18,000
+very
+
+878
+00:35:18,000 --> 00:35:19,000
+sensitive
+
+879
+00:35:19,000 --> 00:35:20,000
+technology.
+
+880
+00:35:20,000 --> 00:35:21,000
+It
+
+881
+00:35:21,000 --> 00:35:22,000
+is
+
+882
+00:35:22,000 --> 00:35:23,000
+a
+
+883
+00:35:23,000 --> 00:35:24,000
+very
+
+884
+00:35:24,000 --> 00:35:25,000
+sensitive
+
+885
+00:35:25,000 --> 00:35:26,000
+technology.
+
+886
+00:35:26,000 --> 00:35:27,000
+It
+
+887
+00:35:27,000 --> 00:35:28,000
+is
+
+888
+00:35:28,000 --> 00:35:29,000
+a
+
+889
+00:35:29,000 --> 00:35:30,000
+very
+
+890
+00:35:30,000 --> 00:35:31,000
+sensitive
+
+891
+00:35:31,000 --> 00:35:32,000
+technology.
+
+892
+00:35:32,000 --> 00:35:33,140
+For
+
+893
+00:35:33,140 --> 00:35:34,020
+this
+
+894
+00:35:34,020 --> 00:35:35,140
+case,
+
+895
+00:35:35,140 --> 00:35:36,140
+let me
+
+896
+00:35:36,140 --> 00:35:37,140
+show
+
+897
+00:35:37,140 --> 00:35:38,140
+you
+
+898
+00:35:38,140 --> 00:35:39,140
+how
+
+899
+00:35:39,140 --> 00:35:40,140
+important
+
+900
+00:35:40,140 --> 00:35:41,140
+this
+
+901
+00:35:41,140 --> 00:35:42,140
+thing in
+
+902
+00:35:42,140 --> 00:35:43,140
+science
+
+903
+00:35:43,140 --> 00:35:44,140
+is.
+
+904
+00:35:44,140 --> 00:35:44,940
+This
+
+905
+00:35:44,940 --> 00:35:46,180
+is an
+
+906
+00:35:46,180 --> 00:35:47,140
+experiment
+
+907
+00:35:47,140 --> 00:35:48,140
+tailor-made
+
+908
+00:35:48,140 --> 00:35:49,140
+project
+
+909
+00:35:49,140 --> 00:35:50,140
+that
+
+910
+00:35:50,140 --> 00:35:51,140
+studies
+
+911
+00:35:51,140 --> 00:35:52,140
+Gold
+
+912
+00:35:52,140 --> 00:35:55,640
+in
+
+913
+00:35:55,640 --> 00:35:56,500
+liquid
+
+914
+00:35:56,500 --> 00:35:58,500
+ions.
+
+915
+00:35:58,500 --> 00:35:59,500
+This
+
+916
+00:35:59,500 --> 00:36:00,400
+is their
+
+917
+00:36:00,400 --> 00:36:01,400
+an original
+
+918
+00:36:01,400 --> 00:36:02,400
+image,
+
+919
+00:36:02,400 --> 00:36:03,400
+but
+
+920
+00:36:03,400 --> 00:36:04,400
+I don't know
+
+921
+00:36:04,400 --> 00:36:05,400
+if there is
+
+922
+00:36:05,400 --> 00:36:06,400
+any contrast
+
+923
+00:36:06,400 --> 00:36:07,400
+in this
+
+924
+00:36:07,400 --> 00:36:08,400
+picture,
+
+925
+00:36:08,400 --> 00:36:09,400
+that is,
+
+926
+00:36:09,400 --> 00:36:10,400
+there are some
+
+927
+00:36:10,400 --> 00:36:11,400
+lines,
+
+928
+00:36:11,400 --> 00:36:12,400
+but
+
+929
+00:36:12,400 --> 00:36:13,400
+you can't
+
+930
+00:36:13,400 --> 00:36:14,400
+see anything.
+
+931
+00:36:14,400 --> 00:36:15,400
+But
+
+932
+00:36:15,400 --> 00:36:16,400
+if you go
+
+933
+00:36:16,400 --> 00:36:17,400
+to the
+
+934
+00:36:17,400 --> 00:36:18,400
+hard
+
+935
+00:36:18,400 --> 00:36:19,400
+depth
+
+936
+00:36:19,400 --> 00:36:20,400
+image,
+
+937
+00:36:20,400 --> 00:36:21,400
+you will
+
+938
+00:36:21,400 --> 00:36:22,400
+find that
+
+939
+00:36:22,400 --> 00:36:23,400
+there are
+
+940
+00:36:23,400 --> 00:36:24,400
+actually
+
+941
+00:36:24,400 --> 00:36:25,400
+a lot of
+
+942
+00:36:25,400 --> 00:36:26,400
+gold ions
+
+943
+00:36:26,400 --> 00:36:27,400
+in
+
+944
+00:36:27,400 --> 00:36:28,400
+this
+
+945
+00:36:28,400 --> 00:36:29,400
+picture.
+
+946
+00:36:29,400 --> 00:36:30,400
+It
+
+947
+00:36:30,400 --> 00:36:31,400
+turns out
+
+948
+00:36:31,400 --> 00:36:32,400
+that
+
+949
+00:36:32,400 --> 00:36:33,400
+if you
+
+950
+00:36:33,400 --> 00:36:34,400
+do
+
+951
+00:36:34,400 --> 00:36:35,400
+such
+
+952
+00:36:35,400 --> 00:36:36,400
+research,
+
+953
+00:36:36,400 --> 00:36:37,400
+gold ions
+
+954
+00:36:37,400 --> 00:36:38,400
+can be
+
+955
+00:36:38,400 --> 00:36:39,400
+distinguished from
+
+956
+00:36:39,400 --> 00:36:40,400
+gold ions
+
+957
+00:36:40,400 --> 00:36:41,400
+and
+
+958
+00:36:41,400 --> 00:36:42,400
+it
+
+959
+00:36:42,400 --> 00:36:43,400
+becomes
+
+960
+00:36:43,400 --> 00:36:44,400
+a very
+
+961
+00:36:44,400 --> 00:36:45,400
+important
+
+962
+00:36:45,400 --> 00:36:46,400
+thing.
+
+963
+00:36:46,400 --> 00:36:47,400
+From
+
+964
+00:36:47,400 --> 00:36:48,400
+this
+
+965
+00:36:48,400 --> 00:36:49,400
+point of
+
+966
+00:36:49,400 --> 00:36:50,400
+view,
+
+967
+00:36:50,400 --> 00:36:51,400
+you
+
+968
+00:36:51,400 --> 00:36:52,400
+can't
+
+969
+00:36:52,400 --> 00:36:53,400
+see
+
+970
+00:36:53,400 --> 00:36:54,400
+anything
+
+971
+00:36:54,400 --> 00:36:55,400
+at
+
+972
+00:36:55,400 --> 00:36:56,400
+all.
+
+973
+00:36:56,400 --> 00:36:57,400
+On
+
+974
+00:36:57,400 --> 00:36:58,400
+the other
+
+975
+00:36:58,400 --> 00:36:59,400
+hand,
+
+976
+00:36:59,400 --> 00:37:00,400
+there
+
+977
+00:37:00,400 --> 00:37:01,400
+are several
+
+978
+00:37:01,400 --> 00:37:02,400
+ways.
+
+979
+00:37:02,400 --> 00:37:03,400
+The first
+
+980
+00:37:03,400 --> 00:37:04,400
+thing is that
+
+981
+00:37:04,400 --> 00:37:05,400
+this picture
+
+982
+00:37:05,400 --> 00:37:06,400
+is actually a
+
+983
+00:37:06,400 --> 00:37:07,400
+lithium-ion
+
+984
+00:37:07,400 --> 00:37:08,400
+liquid.
+
+985
+00:37:08,400 --> 00:37:09,400
+I forgot
+
+986
+00:37:09,400 --> 00:37:10,400
+whether it
+
+987
+00:37:10,400 --> 00:37:11,400
+was steam
+
+988
+00:37:11,400 --> 00:37:12,400
+or something,
+
+989
+00:37:12,400 --> 00:37:13,400
+but there is
+
+990
+00:37:13,400 --> 00:37:14,400
+a low
+
+991
+00:37:14,400 --> 00:37:15,400
+physical
+
+992
+00:37:15,400 --> 00:37:16,400
+mass,
+
+993
+00:37:16,400 --> 00:37:17,400
+so it
+
+994
+00:37:17,400 --> 00:37:18,400
+will not
+
+995
+00:37:18,400 --> 00:37:19,400
+become
+
+996
+00:37:19,400 --> 00:37:20,400
+gas in
+
+997
+00:37:20,400 --> 00:37:21,400
+vacuum.
+
+998
+00:37:21,400 --> 00:37:22,400
+You can
+
+999
+00:37:22,400 --> 00:37:23,400
+put it
+
+1000
+00:37:23,400 --> 00:37:24,400
+in.
+
+1001
+00:37:24,400 --> 00:37:25,400
+This is
+
+1002
+00:37:25,400 --> 00:37:26,400
+a general
+
+1003
+00:37:26,400 --> 00:37:27,400
+electronic
+
+1004
+00:37:27,400 --> 00:37:28,400
+microscope.
+
+1005
+00:37:28,400 --> 00:37:29,400
+If you
+
+1006
+00:37:29,400 --> 00:37:30,400
+allow it,
+
+1007
+00:37:30,400 --> 00:37:31,400
+you can put it
+
+1008
+00:37:31,400 --> 00:37:32,400
+in.
+
+1009
+00:37:32,400 --> 00:37:33,400
+In fact,
+
+1010
+00:37:33,400 --> 00:37:34,400
+many people
+
+1011
+00:37:34,400 --> 00:37:35,400
+don't like
+
+1012
+00:37:35,400 --> 00:37:36,400
+doing this,
+
+1013
+00:37:36,400 --> 00:37:37,400
+but in
+
+1014
+00:37:37,400 --> 00:37:38,400
+principle,
+
+1015
+00:37:38,400 --> 00:37:39,400
+it is physically
+
+1016
+00:37:39,400 --> 00:37:40,400
+safe.
+
+1017
+00:37:40,400 --> 00:37:41,400
+Another
+
+1018
+00:37:41,400 --> 00:37:42,400
+method
+
+1019
+00:37:42,400 --> 00:37:43,400
+is
+
+1020
+00:37:43,400 --> 00:37:44,400
+called
+
+1021
+00:37:44,400 --> 00:37:45,400
+a
+
+1022
+00:37:45,400 --> 00:37:46,400
+liquid
+
+1023
+00:37:46,400 --> 00:37:47,400
+holder.
+
+1024
+00:37:47,400 --> 00:37:48,400
+It
+
+1025
+00:37:48,400 --> 00:37:49,400
+has a
+
+1026
+00:37:49,400 --> 00:37:50,400
+special
+
+1027
+00:37:50,400 --> 00:37:51,400
+holder
+
+1028
+00:37:51,400 --> 00:37:52,400
+that you
+
+1029
+00:37:52,400 --> 00:37:53,400
+can put
+
+1030
+00:37:53,400 --> 00:37:54,400
+liquid
+
+1031
+00:37:54,400 --> 00:37:55,400
+in.
+
+1032
+00:37:55,400 --> 00:37:56,400
+These
+
+1033
+00:37:56,400 --> 00:37:57,400
+things
+
+1034
+00:37:57,400 --> 00:37:58,400
+are
+
+1035
+00:37:58,400 --> 00:37:59,400
+very thin.
+
+1036
+00:37:59,400 --> 00:38:00,400
+My
+
+1037
+00:38:00,400 --> 00:38:01,400
+understanding
+
+1038
+00:38:01,400 --> 00:38:02,400
+is that
+
+1039
+00:38:02,400 --> 00:38:03,400
+EM
+
+1040
+00:38:03,400 --> 00:38:04,400
+has to be
+
+1041
+00:38:04,400 --> 00:38:05,400
+cut very
+
+1042
+00:38:05,400 --> 00:38:06,400
+thin.
+
+1043
+00:38:06,400 --> 00:38:07,400
+Yes,
+
+1044
+00:38:07,400 --> 00:38:08,400
+this
+
+1045
+00:38:08,400 --> 00:38:09,400
+situation is
+
+1046
+00:38:09,400 --> 00:38:10,400
+a bit like
+
+1047
+00:38:10,400 --> 00:38:11,400
+a
+
+1048
+00:38:11,400 --> 00:38:12,400
+lithium-ion
+
+1049
+00:38:12,400 --> 00:38:13,400
+liquid.
+
+1050
+00:38:13,400 --> 00:38:14,400
+There
+
+1051
+00:38:14,400 --> 00:38:15,400
+should be
+
+1052
+00:38:15,400 --> 00:38:16,400
+a
+
+1053
+00:38:16,400 --> 00:38:17,400
+molybdenum
+
+1054
+00:38:17,400 --> 00:38:18,400
+or copper
+
+1055
+00:38:18,400 --> 00:38:19,400
+grid
+
+1056
+00:38:19,400 --> 00:38:20,400
+on the
+
+1057
+00:38:20,400 --> 00:38:21,400
+outside
+
+1058
+00:38:21,400 --> 00:38:22,400
+.
+
+1059
+00:38:22,400 --> 00:38:23,400
+At
+
+1060
+00:38:23,400 --> 00:38:24,400
+the
+
+1061
+00:38:24,400 --> 00:38:25,400
+beginning,
+
+1062
+00:38:25,400 --> 00:38:26,400
+it
+
+1063
+00:38:26,400 --> 00:38:27,400
+is
+
+1064
+00:38:27,400 --> 00:38:28,400
+very
+
+1065
+00:38:28,400 --> 00:38:29,400
+thin,
+
+1066
+00:38:29,400 --> 00:38:30,400
+but
+
+1067
+00:38:30,400 --> 00:38:31,400
+if you
+
+1068
+00:38:31,400 --> 00:38:32,400
+heat it
+
+1069
+00:38:32,400 --> 00:38:33,400
+a little
+
+1070
+00:38:33,400 --> 00:38:34,400
+in the
+
+1071
+00:38:34,400 --> 00:38:35,400
+vacuum
+
+1072
+00:38:35,400 --> 00:38:36,400
+furnace,
+
+1073
+00:38:36,400 --> 00:38:37,400
+it
+
+1074
+00:38:37,400 --> 00:38:38,400
+will
+
+1075
+00:38:38,400 --> 00:38:39,400
+actually
+
+1076
+00:38:39,400 --> 00:38:40,400
+become
+
+1077
+00:38:40,400 --> 00:38:41,400
+a film
+
+1078
+00:38:41,400 --> 00:38:42,400
+like this
+
+1079
+00:38:42,400 --> 00:38:43,400
+and
+
+1080
+00:38:43,400 --> 00:38:44,400
+its
+
+1081
+00:38:44,400 --> 00:38:45,400
+thickness
+
+1082
+00:38:45,400 --> 00:38:46,400
+is
+
+1083
+00:38:46,400 --> 00:38:47,400
+about
+
+1084
+00:38:47,400 --> 00:38:48,400
+10 nanometers
+
+1085
+00:38:48,400 --> 00:38:49,400
+.
+
+1086
+00:38:49,400 --> 00:38:50,400
+This
+
+1087
+00:38:50,400 --> 00:38:51,400
+material
+
+1088
+00:38:51,400 --> 00:38:52,400
+can do
+
+1089
+00:38:52,400 --> 00:38:53,400
+this.
+
+1090
+00:38:53,400 --> 00:38:54,400
+This
+
+1091
+00:38:54,400 --> 00:38:55,400
+material
+
+1092
+00:38:55,400 --> 00:38:56,400
+is
+
+1093
+00:38:56,400 --> 00:38:57,400
+very
+
+1094
+00:38:57,400 --> 00:38:58,400
+thin
+
+1095
+00:38:58,400 --> 00:38:59,400
+and
+
+1096
+00:38:59,400 --> 00:39:00,400
+quite
+
+1097
+00:39:00,400 --> 00:39:01,400
+mature.
+
+1098
+00:39:01,400 --> 00:39:02,400
+The
+
+1099
+00:39:02,400 --> 00:39:03,400
+most famous
+
+1100
+00:39:03,400 --> 00:39:04,400
+is
+
+1101
+00:39:04,400 --> 00:39:05,400
+Berkeley
+
+1102
+00:39:05,400 --> 00:39:06,400
+Lawrence
+
+1103
+00:39:06,400 --> 00:39:07,400
+Lab.
+
+1104
+00:39:07,400 --> 00:39:08,400
+He
+
+1105
+00:39:08,400 --> 00:39:09,400
+has done
+
+1106
+00:39:09,400 --> 00:39:10,400
+a lot of
+
+1107
+00:39:10,400 --> 00:39:11,400
+liquid experiments.
+
+1108
+00:39:11,400 --> 00:39:12,400
+Didn't
+
+1109
+00:39:12,400 --> 00:39:13,400
+they say
+
+1110
+00:39:13,400 --> 00:39:14,400
+to wrap
+
+1111
+00:39:14,400 --> 00:39:15,400
+things up
+
+1112
+00:39:15,400 --> 00:39:16,400
+with
+
+1113
+00:39:16,400 --> 00:39:17,400
+graphene?
+
+1114
+00:39:17,400 --> 00:39:18,400
+That's
+
+1115
+00:39:18,400 --> 00:39:19,400
+also a
+
+1116
+00:39:19,400 --> 00:39:20,400
+method,
+
+1117
+00:39:20,400 --> 00:39:21,400
+but
+
+1118
+00:39:21,400 --> 00:39:22,400
+you
+
+1119
+00:39:22,400 --> 00:39:23,400
+think about it
+
+1120
+00:39:23,400 --> 00:39:24,400
+yourself,
+
+1121
+00:39:24,400 --> 00:39:25,400
+it's
+
+1122
+00:39:25,400 --> 00:39:26,400
+really in the
+
+1123
+00:39:26,400 --> 00:39:27,400
+liquid environment.
+
+1124
+00:39:27,400 --> 00:39:28,400
+The graphene
+
+1125
+00:39:28,400 --> 00:39:29,400
+you just
+
+1126
+00:39:29,400 --> 00:39:30,400
+talked about is
+
+1127
+00:39:30,400 --> 00:39:31,400
+also a method,
+
+1128
+00:39:31,400 --> 00:39:32,400
+but the
+
+1129
+00:39:32,400 --> 00:39:33,400
+current mainstream
+
+1130
+00:39:33,400 --> 00:39:34,400
+is to
+
+1131
+00:39:34,400 --> 00:39:35,400
+use a
+
+1132
+00:39:35,400 --> 00:39:36,400
+special
+
+1133
+00:39:36,400 --> 00:39:37,400
+microwave holder
+
+1134
+00:39:37,400 --> 00:39:38,400
+.
+
+1135
+00:39:38,400 --> 00:39:39,400
+You can
+
+1136
+00:39:39,400 --> 00:39:40,400
+really put
+
+1137
+00:39:40,400 --> 00:39:41,400
+liquid in
+
+1138
+00:39:41,400 --> 00:39:42,400
+.
+
+1139
+00:39:42,400 --> 00:39:43,400
+Generally
+
+1140
+00:39:43,400 --> 00:39:44,400
+it is
+
+1141
+00:39:44,400 --> 00:39:45,400
+silicon nitride.
+
+1142
+00:39:45,400 --> 00:39:46,400
+OK,
+
+1143
+00:39:46,400 --> 00:39:47,400
+so it
+
+1144
+00:39:47,400 --> 00:39:48,400
+is also
+
+1145
+00:39:48,400 --> 00:39:49,400
+silicon nitride.
+
+1146
+00:39:49,400 --> 00:39:50,400
+Thank
+
+1147
+00:39:50,400 --> 00:39:51,400
+you.
+
+1148
+00:39:51,400 --> 00:39:52,400
+The
+
+1149
+00:39:52,400 --> 00:39:53,400
+other one
+
+1150
+00:39:53,400 --> 00:39:54,400
+is
+
+1151
+00:39:54,400 --> 00:39:55,400
+lithium
+
+1152
+00:39:55,400 --> 00:39:56,400
+atom.
+
+1153
+00:39:56,400 --> 00:39:57,400
+Everyone
+
+1154
+00:39:57,400 --> 00:39:58,400
+is studying
+
+1155
+00:39:58,400 --> 00:39:59,400
+lithium
+
+1156
+00:39:59,400 --> 00:40:00,400
+atoms.
+
+1157
+00:40:00,400 --> 00:40:01,400
+Our
+
+1158
+00:40:01,400 --> 00:40:02,400
+department
+
+1159
+00:40:02,400 --> 00:40:03,400
+originally
+
+1160
+00:40:03,400 --> 00:40:04,400
+studied
+
+1161
+00:40:04,400 --> 00:40:05,400
+ceramics.
+
+1162
+00:40:05,400 --> 00:40:06,400
+He just
+
+1163
+00:40:06,400 --> 00:40:07,400
+thought
+
+1164
+00:40:07,400 --> 00:40:08,400
+lithium
+
+1165
+00:40:08,400 --> 00:40:09,400
+atoms were
+
+1166
+00:40:09,400 --> 00:40:10,400
+quite
+
+1167
+00:40:10,400 --> 00:40:11,400
+interesting,
+
+1168
+00:40:11,400 --> 00:40:12,400
+so he
+
+1169
+00:40:12,400 --> 00:40:13,400
+used
+
+1170
+00:40:13,400 --> 00:40:14,400
+ABF
+
+1171
+00:40:14,400 --> 00:40:15,400
+as I
+
+1172
+00:40:15,400 --> 00:40:16,400
+just
+
+1173
+00:40:16,400 --> 00:40:17,400
+said.
+
+1174
+00:40:17,400 --> 00:40:18,400
+We
+
+1175
+00:40:18,400 --> 00:40:19,400
+developed a
+
+1176
+00:40:19,400 --> 00:40:20,400
+method
+
+1177
+00:40:20,400 --> 00:40:21,400
+to look at
+
+1178
+00:40:21,400 --> 00:40:22,400
+lithium
+
+1179
+00:40:22,400 --> 00:40:23,400
+atoms.
+
+1180
+00:40:23,400 --> 00:40:24,400
+But
+
+1181
+00:40:24,400 --> 00:40:25,400
+if you
+
+1182
+00:40:25,400 --> 00:40:26,400
+charge it,
+
+1183
+00:40:26,400 --> 00:40:27,400
+it will
+
+1184
+00:40:27,400 --> 00:40:28,400
+run out
+
+1185
+00:40:28,400 --> 00:40:29,400
+if you
+
+1186
+00:40:29,400 --> 00:40:30,400
+don't
+
+1187
+00:40:30,400 --> 00:40:31,400
+see it.
+
+1188
+00:40:31,400 --> 00:40:32,400
+Then
+
+1189
+00:40:32,400 --> 00:40:33,400
+you can
+
+1190
+00:40:33,400 --> 00:40:34,400
+come in
+
+1191
+00:40:34,400 --> 00:40:35,400
+by
+
+1192
+00:40:35,400 --> 00:40:36,400
+health
+
+1193
+00:40:36,400 --> 00:40:37,400
+charging.
+
+1194
+00:40:37,400 --> 00:40:38,400
+Then
+
+1195
+00:40:38,400 --> 00:40:39,400
+you can
+
+1196
+00:40:39,400 --> 00:40:40,400
+judge
+
+1197
+00:40:40,400 --> 00:40:41,400
+it by
+
+1198
+00:40:41,400 --> 00:40:42,400
+intensity
+
+1199
+00:40:42,400 --> 00:40:43,400
+.
+
+1200
+00:40:43,400 --> 00:40:44,400
+If
+
+1201
+00:40:44,400 --> 00:40:45,400
+you are
+
+1202
+00:40:45,400 --> 00:40:46,400
+studying
+
+1203
+00:40:46,400 --> 00:40:47,400
+lithium
+
+1204
+00:40:47,400 --> 00:40:48,400
+atoms,
+
+1205
+00:40:48,400 --> 00:40:49,400
+the
+
+1206
+00:40:49,400 --> 00:40:50,400
+current
+
+1207
+00:40:50,400 --> 00:40:51,400
+microwave
+
+1208
+00:40:51,400 --> 00:40:52,400
+will
+
+1209
+00:40:52,400 --> 00:40:53,400
+run out
+
+1210
+00:40:53,400 --> 00:40:54,400
+if you
+
+1211
+00:40:54,400 --> 00:40:55,400
+don't
+
+1212
+00:40:55,400 --> 00:40:56,400
+charge
+
+1213
+00:40:56,400 --> 00:40:57,400
+it.
+
+1214
+00:40:57,400 --> 00:40:58,400
+So
+
+1215
+00:40:58,400 --> 00:40:59,400
+that's
+
+1216
+00:40:59,400 --> 00:41:00,400
+why we
+
+1217
+00:41:00,400 --> 00:41:01,400
+don't
+
+1218
+00:41:01,400 --> 00:41:02,400
+need
+
+1219
+00:41:02,400 --> 00:41:03,400
+lithium
+
+1220
+00:41:03,400 --> 00:41:04,400
+atom
+
+1221
+00:41:04,400 --> 00:41:05,400
+technology.
+
+1222
+00:41:05,400 --> 00:41:06,400
+Yes.
+
+1223
+00:41:06,400 --> 00:41:07,400
+Finally,
+
+1224
+00:41:07,400 --> 00:41:08,400
+I'm not
+
+1225
+00:41:08,400 --> 00:41:09,400
+sure how
+
+1226
+00:41:09,400 --> 00:41:10,400
+many people
+
+1227
+00:41:10,400 --> 00:41:11,400
+are
+
+1228
+00:41:11,400 --> 00:41:12,400
+interested
+
+1229
+00:41:12,400 --> 00:41:13,400
+in
+
+1230
+00:41:13,400 --> 00:41:14,400
+magnetic
+
+1231
+00:41:14,400 --> 00:41:15,400
+and
+
+1232
+00:41:15,400 --> 00:41:16,400
+electrical
+
+1233
+00:41:16,400 --> 00:41:17,400
+fields.
+
+1234
+00:41:17,400 --> 00:41:18,400
+This
+
+1235
+00:41:18,400 --> 00:41:19,400
+has nothing
+
+1236
+00:41:19,400 --> 00:41:20,400
+to do
+
+1237
+00:41:20,400 --> 00:41:21,400
+with
+
+1238
+00:41:21,400 --> 00:41:22,400
+electrical
+
+1239
+00:41:22,400 --> 00:41:23,400
+or magnetic
+
+1240
+00:41:23,400 --> 00:41:24,400
+fields.
+
+1241
+00:41:24,400 --> 00:41:25,400
+Electrical
+
+1242
+00:41:25,400 --> 00:41:26,400
+fields will
+
+1243
+00:41:26,400 --> 00:41:27,400
+tell you
+
+1244
+00:41:27,400 --> 00:41:28,400
+the direction
+
+1245
+00:41:28,400 --> 00:41:29,400
+of the magnetic
+
+1246
+00:41:29,400 --> 00:41:30,400
+field.
+
+1247
+00:41:30,400 --> 00:41:31,400
+In the
+
+1248
+00:41:31,400 --> 00:41:32,400
+past,
+
+1249
+00:41:32,400 --> 00:41:33,400
+if you
+
+1250
+00:41:33,400 --> 00:41:34,400
+only had
+
+1251
+00:41:34,400 --> 00:41:35,400
+one detector
+
+1252
+00:41:35,400 --> 00:41:36,400
+and
+
+1253
+00:41:36,400 --> 00:41:37,400
+didn't
+
+1254
+00:41:37,400 --> 00:41:38,400
+have a
+
+1255
+00:41:38,400 --> 00:41:39,400
+block,
+
+1256
+00:41:39,400 --> 00:41:40,400
+you
+
+1257
+00:41:40,400 --> 00:41:41,400
+couldn't
+
+1258
+00:41:41,400 --> 00:41:42,400
+tell
+
+1259
+00:41:42,400 --> 00:41:43,400
+the
+
+1260
+00:41:43,400 --> 00:41:44,400
+magnetic
+
+1261
+00:41:44,400 --> 00:41:45,400
+field
+
+1262
+00:41:45,400 --> 00:41:46,400
+or
+
+1263
+00:41:46,400 --> 00:41:47,400
+magnetic
+
+1264
+00:41:47,400 --> 00:41:48,400
+field
+
+1265
+00:41:48,400 --> 00:41:49,400
+from
+
+1266
+00:41:49,400 --> 00:41:50,400
+the
+
+1267
+00:41:50,400 --> 00:41:51,400
+other
+
+1268
+00:41:51,400 --> 00:41:52,400
+detectors.
+
+1269
+00:41:52,400 --> 00:41:53,400
+So
+
+1270
+00:41:53,400 --> 00:41:54,400
+if you
+
+1271
+00:41:54,400 --> 00:41:55,400
+only had
+
+1272
+00:41:55,400 --> 00:41:56,400
+one
+
+1273
+00:41:56,400 --> 00:41:57,400
+detector and
+
+1274
+00:41:57,400 --> 00:41:58,400
+didn't
+
+1275
+00:41:58,400 --> 00:41:59,400
+have a
+
+1276
+00:41:59,400 --> 00:42:00,400
+block,
+
+1277
+00:42:00,400 --> 00:42:01,400
+you
+
+1278
+00:42:01,400 --> 00:42:02,400
+couldn't
+
+1279
+00:42:02,400 --> 00:42:03,400
+tell
+
+1280
+00:42:03,400 --> 00:42:04,400
+the
+
+1281
+00:42:04,400 --> 00:42:05,400
+magnetic
+
+1282
+00:42:05,400 --> 00:42:06,400
+field
+
+1283
+00:42:06,400 --> 00:42:07,400
+or
+
+1284
+00:42:07,400 --> 00:42:08,400
+magnetic
+
+1285
+00:42:08,400 --> 00:42:09,400
+field
+
+1286
+00:42:09,400 --> 00:42:10,400
+from
+
+1287
+00:42:10,400 --> 00:42:11,400
+the
+
+1288
+00:42:11,400 --> 00:42:12,400
+other
+
+1289
+00:42:12,400 --> 00:42:13,400
+detectors.
+
+1290
+00:42:13,400 --> 00:42:14,400
+So
+
+1291
+00:42:14,400 --> 00:42:15,400
+if you
+
+1292
+00:42:15,400 --> 00:42:16,400
+only had
+
+1293
+00:42:16,400 --> 00:42:17,400
+one
+
+1294
+00:42:17,400 --> 00:42:18,400
+detector
+
+1295
+00:42:18,400 --> 00:42:19,400
+and
+
+1296
+00:42:19,400 --> 00:42:20,400
+didn't
+
+1297
+00:42:20,400 --> 00:42:21,400
+have a
+
+1298
+00:42:21,400 --> 00:42:22,400
+block,
+
+1299
+00:42:22,400 --> 00:42:23,400
+you
+
+1300
+00:42:23,400 --> 00:42:24,400
+couldn't
+
+1301
+00:42:24,400 --> 00:42:25,400
+tell
+
+1302
+00:42:25,400 --> 00:42:26,400
+the
+
+1303
+00:42:26,400 --> 00:42:27,400
+magnetic
+
+1304
+00:42:27,400 --> 00:42:28,400
+field
+
+1305
+00:42:28,400 --> 00:42:29,400
+or
+
+1306
+00:42:29,400 --> 00:42:30,400
+magnetic
+
+1307
+00:42:30,400 --> 00:42:31,400
+field
+
+1308
+00:42:31,400 --> 00:42:32,400
+from
+
+1309
+00:42:32,400 --> 00:42:33,400
+the
+
+1310
+00:42:33,400 --> 00:42:34,400
+other
+
+1311
+00:42:34,400 --> 00:42:35,400
+detectors.
+
+1312
+00:42:35,400 --> 00:42:36,400
+So
+
+1313
+00:42:36,400 --> 00:42:37,400
+if you
+
+1314
+00:42:37,400 --> 00:42:38,400
+only had
+
+1315
+00:42:38,400 --> 00:42:39,400
+one
+
+1316
+00:42:39,400 --> 00:42:40,400
+detector
+
+1317
+00:42:40,400 --> 00:42:41,400
+and
+
+1318
+00:42:41,400 --> 00:42:42,400
+didn't
+
+1319
+00:42:42,400 --> 00:42:43,400
+have a
+
+1320
+00:42:43,400 --> 00:42:44,400
+block,
+
+1321
+00:42:44,400 --> 00:42:45,400
+you
+
+1322
+00:42:45,400 --> 00:42:46,400
+couldn't
+
+1323
+00:42:46,400 --> 00:42:47,400
+tell
+
+1324
+00:42:47,400 --> 00:42:48,400
+the
+
+1325
+00:42:48,400 --> 00:42:49,400
+magnetic
+
+1326
+00:42:49,400 --> 00:42:50,400
+field
+
+1327
+00:42:50,400 --> 00:42:51,400
+from
+
+1328
+00:42:51,400 --> 00:42:52,400
+the
+
+1329
+00:42:52,400 --> 00:42:53,400
+other
+
+1330
+00:42:53,400 --> 00:42:54,400
+detectors.
+
+1331
+00:42:54,400 --> 00:42:55,400
+So
+
+1332
+00:42:55,400 --> 00:42:56,400
+if you
+
+1333
+00:42:56,400 --> 00:42:57,400
+only had
+
+1334
+00:42:57,400 --> 00:42:58,400
+one
+
+1335
+00:42:58,400 --> 00:42:59,400
+detector and
+
+1336
+00:42:59,400 --> 00:43:00,400
+didn't
+
+1337
+00:43:00,400 --> 00:43:01,400
+have a
+
+1338
+00:43:01,400 --> 00:43:02,400
+block,
+
+1339
+00:43:02,400 --> 00:43:03,400
+you
+
+1340
+00:43:03,400 --> 00:43:04,400
+couldn't
+
+1341
+00:43:04,400 --> 00:43:05,400
+tell
+
+1342
+00:43:05,400 --> 00:43:06,400
+the
+
+1343
+00:43:06,400 --> 00:43:07,400
+magnetic
+
+1344
+00:43:07,400 --> 00:43:08,400
+field
+
+1345
+00:43:08,400 --> 00:43:09,400
+from
+
+1346
+00:43:09,400 --> 00:43:10,400
+the
+
+1347
+00:43:10,400 --> 00:43:11,400
+other
+
+1348
+00:43:11,400 --> 00:43:12,400
+detectors.
+
+1349
+00:43:12,400 --> 00:43:13,400
+So
+
+1350
+00:43:13,400 --> 00:43:14,400
+if you
+
+1351
+00:43:14,400 --> 00:43:15,400
+only had
+
+1352
+00:43:15,400 --> 00:43:16,400
+one
+
+1353
+00:43:16,400 --> 00:43:17,400
+detector
+
+1354
+00:43:17,400 --> 00:43:18,400
+and
+
+1355
+00:43:18,400 --> 00:43:19,400
+didn't
+
+1356
+00:43:19,400 --> 00:43:20,400
+have a
+
+1357
+00:43:20,400 --> 00:43:21,400
+block,
+
+1358
+00:43:21,400 --> 00:43:22,400
+you
+
+1359
+00:43:22,400 --> 00:43:23,400
+couldn't
+
+1360
+00:43:23,400 --> 00:43:24,400
+tell the
+
+1361
+00:43:24,400 --> 00:43:25,400
+magnetic
+
+1362
+00:43:25,400 --> 00:43:26,400
+field
+
+1363
+00:43:26,400 --> 00:43:27,400
+from
+
+1364
+00:43:27,400 --> 00:43:28,400
+the
+
+1365
+00:43:28,400 --> 00:43:29,400
+other
+
+1366
+00:43:29,400 --> 00:43:30,400
+detectors.
+
+1367
+00:43:30,400 --> 00:43:31,400
+So
+
+1368
+00:43:31,400 --> 00:43:32,400
+if you
+
+1369
+00:43:32,400 --> 00:43:33,400
+only had
+
+1370
+00:43:33,400 --> 00:43:34,400
+one
+
+1371
+00:43:34,400 --> 00:43:35,400
+detector and
+
+1372
+00:43:35,400 --> 00:43:36,400
+didn't
+
+1373
+00:43:36,400 --> 00:43:37,400
+have a
+
+1374
+00:43:37,400 --> 00:43:38,400
+block,
+
+1375
+00:43:38,400 --> 00:43:39,400
+you
+
+1376
+00:43:39,400 --> 00:43:40,400
+couldn't
+
+1377
+00:43:40,400 --> 00:43:41,400
+tell the
+
+1378
+00:43:41,400 --> 00:43:42,400
+magnetic
+
+1379
+00:43:42,400 --> 00:43:43,400
+field
+
+1380
+00:43:43,400 --> 00:43:44,400
+from
+
+1381
+00:43:44,400 --> 00:43:45,400
+the
+
+1382
+00:43:45,400 --> 00:43:46,400
+other
+
+1383
+00:43:46,400 --> 00:43:47,400
+detectors.
+
+1384
+00:43:47,400 --> 00:43:48,400
+So
+
+1385
+00:43:48,400 --> 00:43:49,400
+if you
+
+1386
+00:43:49,400 --> 00:43:50,400
+only had
+
+1387
+00:43:50,400 --> 00:43:51,400
+one
+
+1388
+00:43:51,400 --> 00:43:52,400
+detector and
+
+1389
+00:43:52,400 --> 00:43:53,400
+didn't
+
+1390
+00:43:53,400 --> 00:43:54,400
+have a
+
+1391
+00:43:54,400 --> 00:43:55,400
+block,
+
+1392
+00:43:55,400 --> 00:43:56,400
+you
+
+1393
+00:43:56,400 --> 00:43:57,400
+couldn't
+
+1394
+00:43:57,400 --> 00:43:58,400
+tell the
+
+1395
+00:43:58,400 --> 00:43:59,400
+magnetic
+
+1396
+00:43:59,400 --> 00:44:00,400
+field
+
+1397
+00:44:00,400 --> 00:44:01,400
+from
+
+1398
+00:44:01,400 --> 00:44:02,400
+the other
+
+1399
+00:44:02,400 --> 00:44:03,400
+detectors.
+
+1400
+00:44:03,400 --> 00:44:04,400
+So
+
+1401
+00:44:04,400 --> 00:44:05,400
+if you
+
+1402
+00:44:05,400 --> 00:44:06,400
+only had
+
+1403
+00:44:06,400 --> 00:44:07,400
+one
+
+1404
+00:44:07,400 --> 00:44:08,400
+detector and
+
+1405
+00:44:08,400 --> 00:44:09,400
+didn't
+
+1406
+00:44:09,400 --> 00:44:10,400
+have a
+
+1407
+00:44:10,400 --> 00:44:11,400
+block,
+
+1408
+00:44:11,400 --> 00:44:12,400
+you
+
+1409
+00:44:12,400 --> 00:44:13,400
+couldn't
+
+1410
+00:44:13,400 --> 00:44:14,400
+tell the
+
+1411
+00:44:14,400 --> 00:44:15,400
+magnetic
+
+1412
+00:44:15,400 --> 00:44:16,400
+field
+
+1413
+00:44:16,400 --> 00:44:17,400
+from
+
+1414
+00:44:17,400 --> 00:44:18,400
+the other
+
+1415
+00:44:18,400 --> 00:44:19,400
+detectors.
+
+1416
+00:44:19,400 --> 00:44:20,400
+So
+
+1417
+00:44:20,400 --> 00:44:21,400
+if you
+
+1418
+00:44:21,400 --> 00:44:22,400
+only had
+
+1419
+00:44:22,400 --> 00:44:23,400
+one
+
+1420
+00:44:23,400 --> 00:44:24,400
+detector and
+
+1421
+00:44:24,400 --> 00:44:25,400
+didn't
+
+1422
+00:44:25,400 --> 00:44:26,400
+have a
+
+1423
+00:44:26,400 --> 00:44:27,400
+block,
+
+1424
+00:44:27,400 --> 00:44:28,400
+you
+
+1425
+00:44:28,400 --> 00:44:29,400
+couldn't
+
+1426
+00:44:29,400 --> 00:44:30,400
+tell the
+
+1427
+00:44:30,400 --> 00:44:31,400
+magnetic
+
+1428
+00:44:31,400 --> 00:44:32,400
+field
+
+1429
+00:44:32,400 --> 00:44:33,400
+from
+
+1430
+00:44:33,400 --> 00:44:34,400
+the other
+
+1431
+00:44:34,400 --> 00:44:35,400
+detectors.
+
+1432
+00:44:35,400 --> 00:44:36,400
+So
+
+1433
+00:44:36,400 --> 00:44:37,400
+if you
+
+1434
+00:44:37,400 --> 00:44:38,400
+only had
+
+1435
+00:44:38,400 --> 00:44:39,400
+one
+
+1436
+00:44:39,400 --> 00:44:40,400
+detector and
+
+1437
+00:44:40,400 --> 00:44:41,400
+didn't
+
+1438
+00:44:41,400 --> 00:44:42,400
+have a
+
+1439
+00:44:42,400 --> 00:44:43,400
+block,
+
+1440
+00:44:43,400 --> 00:44:44,400
+you
+
+1441
+00:44:44,400 --> 00:44:45,400
+couldn't
+
+1442
+00:44:45,400 --> 00:44:46,400
+tell the
+
+1443
+00:44:46,400 --> 00:44:47,400
+magnetic
+
+1444
+00:44:47,400 --> 00:44:48,400
+field
+
+1445
+00:44:48,400 --> 00:44:49,400
+from
+
+1446
+00:44:49,400 --> 00:44:50,400
+the other
+
+1447
+00:44:50,400 --> 00:44:51,400
+detectors.
+
+1448
+00:44:51,400 --> 00:44:52,400
+So
+
+1449
+00:44:52,400 --> 00:44:53,400
+if you
+
+1450
+00:44:53,400 --> 00:44:54,400
+only had
+
+1451
+00:44:54,400 --> 00:44:55,400
+one
+
+1452
+00:44:55,400 --> 00:44:56,400
+detector and
+
+1453
+00:44:56,400 --> 00:44:57,400
+didn't
+
+1454
+00:44:57,400 --> 00:44:58,400
+have a
+
+1455
+00:44:58,400 --> 00:44:59,400
+block,
+
+1456
+00:44:59,400 --> 00:45:00,400
+you
+
+1457
+00:45:00,400 --> 00:45:01,400
+couldn't
+
+1458
+00:45:01,400 --> 00:45:02,400
+tell the
+
+1459
+00:45:02,400 --> 00:45:03,400
+magnetic
+
+1460
+00:45:03,400 --> 00:45:04,400
+field
+
+1461
+00:45:04,400 --> 00:45:05,400
+from
+
+1462
+00:45:05,400 --> 00:45:06,400
+the other
+
+1463
+00:45:06,400 --> 00:45:07,400
+detectors.
+
+1464
+00:45:07,400 --> 00:45:08,400
+So
+
+1465
+00:45:08,400 --> 00:45:09,400
+if you
+
+1466
+00:45:09,400 --> 00:45:10,400
+only had
+
+1467
+00:45:10,400 --> 00:45:11,400
+one
+
+1468
+00:45:11,400 --> 00:45:12,400
+detector and
+
+1469
+00:45:12,400 --> 00:45:13,400
+didn't
+
+1470
+00:45:13,400 --> 00:45:14,400
+have a
+
+1471
+00:45:14,400 --> 00:45:15,400
+block,
+
+1472
+00:45:15,400 --> 00:45:16,400
+you
+
+1473
+00:45:16,400 --> 00:45:17,400
+couldn't
+
+1474
+00:45:17,400 --> 00:45:18,400
+tell the
+
+1475
+00:45:18,400 --> 00:45:19,400
+magnetic
+
+1476
+00:45:19,400 --> 00:45:20,400
+field
+
+1477
+00:45:20,400 --> 00:45:21,400
+from
+
+1478
+00:45:21,400 --> 00:45:22,400
+the other
+
+1479
+00:45:22,400 --> 00:45:23,400
+detectors.
+
+1480
+00:45:23,400 --> 00:45:24,400
+So
+
+1481
+00:45:24,400 --> 00:45:25,400
+if you
+
+1482
+00:45:25,400 --> 00:45:26,400
+only had
+
+1483
+00:45:26,400 --> 00:45:27,400
+one
+
+1484
+00:45:27,400 --> 00:45:28,400
+detector and
+
+1485
+00:45:28,400 --> 00:45:29,400
+didn't
+
+1486
+00:45:29,400 --> 00:45:30,400
+have a
+
+1487
+00:45:30,400 --> 00:45:31,400
+block,
+
+1488
+00:45:31,400 --> 00:45:32,400
+you
+
+1489
+00:45:32,400 --> 00:45:33,400
+couldn't
+
+1490
+00:45:33,400 --> 00:45:34,400
+tell the
+
+1491
+00:45:34,400 --> 00:45:35,400
+magnetic
+
+1492
+00:45:35,400 --> 00:45:36,400
+field
+
+1493
+00:45:36,400 --> 00:45:37,400
+from
+
+1494
+00:45:37,400 --> 00:45:38,400
+the other
+
+1495
+00:45:38,400 --> 00:45:39,400
+detectors.
+
+1496
+00:45:39,400 --> 00:45:40,400
+So
+
+1497
+00:45:40,400 --> 00:45:41,400
+if you
+
+1498
+00:45:41,400 --> 00:45:42,400
+only had
+
+1499
+00:45:42,400 --> 00:45:43,400
+one
+
+1500
+00:45:43,400 --> 00:45:44,400
+detector and
+
+1501
+00:45:44,400 --> 00:45:45,400
+didn't
+
+1502
+00:45:45,400 --> 00:45:46,400
+have a
+
+1503
+00:45:46,400 --> 00:45:47,400
+block,
+
+1504
+00:45:47,400 --> 00:45:48,400
+you
+
+1505
+00:45:48,400 --> 00:45:49,400
+couldn't
+
+1506
+00:45:49,400 --> 00:45:50,400
+tell the
+
+1507
+00:45:50,400 --> 00:45:51,400
+magnetic
+
+1508
+00:45:51,400 --> 00:45:52,400
+field
+
+1509
+00:45:52,400 --> 00:45:53,400
+from
+
+1510
+00:45:53,400 --> 00:45:54,400
+the other
+
+1511
+00:45:54,400 --> 00:45:55,400
+detectors.
+
+1512
+00:45:55,400 --> 00:45:56,400
+So
+
+1513
+00:45:56,400 --> 00:45:57,400
+if you
+
+1514
+00:45:57,400 --> 00:45:58,400
+only had
+
+1515
+00:45:58,400 --> 00:45:59,400
+one
+
+1516
+00:45:59,400 --> 00:46:00,400
+detector and
+
+1517
+00:46:00,400 --> 00:46:01,400
+didn't
+
+1518
+00:46:01,400 --> 00:46:02,400
+have a
+
+1519
+00:46:02,400 --> 00:46:03,400
+block,
+
+1520
+00:46:03,400 --> 00:46:04,400
+you
+
+1521
+00:46:04,400 --> 00:46:05,400
+couldn't
+
+1522
+00:46:05,400 --> 00:46:06,400
+tell the
+
+1523
+00:46:06,400 --> 00:46:07,400
+magnetic
+
+1524
+00:46:07,400 --> 00:46:08,400
+field
+
+1525
+00:46:08,400 --> 00:46:09,400
+from
+
+1526
+00:46:09,400 --> 00:46:10,400
+the other
+
+1527
+00:46:10,400 --> 00:46:11,400
+detectors.
+
+1528
+00:46:11,400 --> 00:46:12,400
+So
+
+1529
+00:46:12,400 --> 00:46:13,400
+if you
+
+1530
+00:46:13,400 --> 00:46:14,400
+only had
+
+1531
+00:46:14,400 --> 00:46:15,400
+one
+
+1532
+00:46:15,400 --> 00:46:16,400
+detector and
+
+1533
+00:46:16,400 --> 00:46:17,400
+didn't
+
+1534
+00:46:17,400 --> 00:46:18,400
+have a
+
+1535
+00:46:18,400 --> 00:46:19,400
+block,
+
+1536
+00:46:19,400 --> 00:46:20,400
+you
+
+1537
+00:46:20,400 --> 00:46:21,400
+couldn't
+
+1538
+00:46:21,400 --> 00:46:22,400
+tell the
+
+1539
+00:46:22,400 --> 00:46:23,400
+magnetic
+
+1540
+00:46:23,400 --> 00:46:24,400
+field
+
+1541
+00:46:24,400 --> 00:46:25,400
+from
+
+1542
+00:46:25,400 --> 00:46:26,400
+the other
+
+1543
+00:46:26,400 --> 00:46:27,400
+detectors.
+
+1544
+00:46:27,400 --> 00:46:28,400
+So
+
+1545
+00:46:28,400 --> 00:46:29,400
+if you
+
+1546
+00:46:29,400 --> 00:46:30,400
+only had
+
+1547
+00:46:30,400 --> 00:46:31,400
+one
+
+1548
+00:46:31,400 --> 00:46:32,400
+detector and
+
+1549
+00:46:32,400 --> 00:46:33,400
+didn't
+
+1550
+00:46:33,400 --> 00:46:34,400
+have a
+
+1551
+00:46:34,400 --> 00:46:35,400
+block,
+
+1552
+00:46:35,400 --> 00:46:36,400
+you
+
+1553
+00:46:36,400 --> 00:46:37,400
+couldn't
+
+1554
+00:46:37,400 --> 00:46:38,400
+tell the
+
+1555
+00:46:38,400 --> 00:46:39,400
+magnetic
+
+1556
+00:46:39,400 --> 00:46:40,400
+field
+
+1557
+00:46:40,400 --> 00:46:41,400
+from
+
+1558
+00:46:41,400 --> 00:46:42,400
+the other
+
+1559
+00:46:42,400 --> 00:46:43,400
+detectors.
+
+1560
+00:46:43,400 --> 00:46:44,400
+So
+
+1561
+00:46:44,400 --> 00:46:45,400
+if you
+
+1562
+00:46:45,400 --> 00:46:46,400
+only had
+
+1563
+00:46:46,400 --> 00:46:47,400
+one
+
+1564
+00:46:47,400 --> 00:46:48,400
+detector and
+
+1565
+00:46:48,400 --> 00:46:49,400
+didn't
+
+1566
+00:46:49,400 --> 00:46:50,400
+have a
+
+1567
+00:46:50,400 --> 00:46:51,400
+block,
+
+1568
+00:46:51,400 --> 00:46:52,400
+you
+
+1569
+00:46:52,400 --> 00:46:53,400
+couldn't
+
+1570
+00:46:53,400 --> 00:46:54,400
+tell the
+
+1571
+00:46:54,400 --> 00:46:55,400
+magnetic
+
+1572
+00:46:55,400 --> 00:46:56,400
+field
+
+1573
+00:46:56,400 --> 00:46:57,400
+from
+
+1574
+00:46:57,400 --> 00:46:58,400
+the other
+
+1575
+00:46:58,400 --> 00:46:59,400
+detectors.
+
+1576
+00:46:59,400 --> 00:47:00,400
+So
+
+1577
+00:47:00,400 --> 00:47:01,400
+if you
+
+1578
+00:47:01,400 --> 00:47:02,400
+only had
+
+1579
+00:47:02,400 --> 00:47:03,400
+one
+
+1580
+00:47:03,400 --> 00:47:04,400
+detector and
+
+1581
+00:47:04,400 --> 00:47:05,400
+didn't
+
+1582
+00:47:05,400 --> 00:47:06,400
+have a
+
+1583
+00:47:06,400 --> 00:47:07,400
+block,
+
+1584
+00:47:07,400 --> 00:47:08,400
+you
+
+1585
+00:47:08,400 --> 00:47:09,400
+couldn't
+
+1586
+00:47:09,400 --> 00:47:10,400
+tell the
+
+1587
+00:47:10,400 --> 00:47:11,400
+magnetic
+
+1588
+00:47:11,400 --> 00:47:12,400
+field
+
+1589
+00:47:12,400 --> 00:47:13,400
+from
+
+1590
+00:47:13,400 --> 00:47:14,400
+the other
+
+1591
+00:47:14,400 --> 00:47:15,400
+detectors.
+
+1592
+00:47:15,400 --> 00:47:16,400
+So
+
+1593
+00:47:16,400 --> 00:47:17,400
+if you
+
+1594
+00:47:17,400 --> 00:47:18,400
+only had
+
+1595
+00:47:18,400 --> 00:47:19,400
+one
+
+1596
+00:47:19,400 --> 00:47:20,400
+detector and
+
+1597
+00:47:20,400 --> 00:47:21,400
+didn't
+
+1598
+00:47:21,400 --> 00:47:22,400
+have a
+
+1599
+00:47:22,400 --> 00:47:23,400
+block,
+
+1600
+00:47:23,400 --> 00:47:24,400
+you
+
+1601
+00:47:24,400 --> 00:47:25,400
+couldn't
+
+1602
+00:47:25,400 --> 00:47:26,400
+tell the
+
+1603
+00:47:26,400 --> 00:47:27,400
+magnetic
+
+1604
+00:47:27,400 --> 00:47:28,400
+field
+
+1605
+00:47:28,400 --> 00:47:29,400
+from
+
+1606
+00:47:29,400 --> 00:47:30,400
+the other
+
+1607
+00:47:30,400 --> 00:47:31,400
+detectors.
+
+1608
+00:47:31,400 --> 00:47:32,400
+So
+
+1609
+00:47:32,400 --> 00:47:33,400
+if you
+
+1610
+00:47:33,400 --> 00:47:34,400
+only had
+
+1611
+00:47:34,400 --> 00:47:35,400
+one
+
+1612
+00:47:35,400 --> 00:47:36,400
+detector and
+
+1613
+00:47:36,400 --> 00:47:37,400
+didn't
+
+1614
+00:47:37,400 --> 00:47:38,400
+have a
+
+1615
+00:47:38,400 --> 00:47:39,400
+block,
+
+1616
+00:47:39,400 --> 00:47:40,400
+you
+
+1617
+00:47:40,400 --> 00:47:41,400
+couldn't
+
+1618
+00:47:41,400 --> 00:47:42,400
+tell the
+
+1619
+00:47:42,400 --> 00:47:43,400
+magnetic
+
+1620
+00:47:43,400 --> 00:47:44,400
+field
+
+1621
+00:47:44,400 --> 00:47:45,400
+from
+
+1622
+00:47:45,400 --> 00:47:46,400
+the other
+
+1623
+00:47:46,400 --> 00:47:47,400
+detectors.
+
+1624
+00:47:47,400 --> 00:47:48,400
+So
+
+1625
+00:47:48,400 --> 00:47:49,400
+if you
+
+1626
+00:47:49,400 --> 00:47:50,400
+only had
+
+1627
+00:47:50,400 --> 00:47:51,400
+one
+
+1628
+00:47:51,400 --> 00:47:52,400
+detector and
+
+1629
+00:47:52,400 --> 00:47:53,400
+didn't
+
+1630
+00:47:53,400 --> 00:47:54,400
+have a
+
+1631
+00:47:54,400 --> 00:47:55,400
+block,
+
+1632
+00:47:55,400 --> 00:47:56,400
+you
+
+1633
+00:47:56,400 --> 00:47:57,400
+couldn't
+
+1634
+00:47:57,400 --> 00:47:58,400
+tell the
+
+1635
+00:47:58,400 --> 00:47:59,400
+magnetic
+
+1636
+00:47:59,400 --> 00:48:00,400
+field
+
+1637
+00:48:00,400 --> 00:48:01,400
+from
+
+1638
+00:48:01,400 --> 00:48:02,400
+the other
+
+1639
+00:48:02,400 --> 00:48:03,400
+detectors.
+
+1640
+00:48:03,400 --> 00:48:04,400
+So
+
+1641
+00:48:04,400 --> 00:48:05,400
+if you
+
+1642
+00:48:05,400 --> 00:48:06,400
+only had
+
+1643
+00:48:06,400 --> 00:48:07,400
+one
+
+1644
+00:48:07,400 --> 00:48:08,400
+detector and
+
+1645
+00:48:08,400 --> 00:48:09,400
+didn't
+
+1646
+00:48:09,400 --> 00:48:10,400
+have a
+
+1647
+00:48:10,400 --> 00:48:11,400
+block,
+
+1648
+00:48:11,400 --> 00:48:12,400
+you
+
+1649
+00:48:12,400 --> 00:48:13,400
+couldn't
+
+1650
+00:48:13,400 --> 00:48:14,400
+tell the
+
+1651
+00:48:14,400 --> 00:48:15,400
+magnetic
+
+1652
+00:48:15,400 --> 00:48:16,400
+field
+
+1653
+00:48:16,400 --> 00:48:17,400
+from
+
+1654
+00:48:17,400 --> 00:48:18,400
+the other
+
+1655
+00:48:18,400 --> 00:48:19,400
+detectors.
+
+1656
+00:48:19,400 --> 00:48:20,400
+So
+
+1657
+00:48:20,400 --> 00:48:21,400
+spectroscopy
+
+1658
+00:48:21,400 --> 00:48:22,400
+is very
+
+1659
+00:48:22,400 --> 00:48:23,400
+important.
+
+1660
+00:48:23,400 --> 00:48:24,400
+Of course
+
+1661
+00:48:24,400 --> 00:48:25,400
+my time
+
+1662
+00:48:25,400 --> 00:48:26,400
+is very
+
+1663
+00:48:26,400 --> 00:48:27,400
+limited,
+
+1664
+00:48:27,400 --> 00:48:28,400
+but
+
+1665
+00:48:28,400 --> 00:48:29,400
+I can
+
+1666
+00:48:29,400 --> 00:48:30,400
+simply
+
+1667
+00:48:30,400 --> 00:48:31,400
+say that
+
+1668
+00:48:31,400 --> 00:48:32,400
+EOS
+
+1669
+00:48:32,400 --> 00:48:33,400
+is usually
+
+1670
+00:48:33,400 --> 00:48:34,400
+at the
+
+1671
+00:48:34,400 --> 00:48:35,400
+bottom
+
+1672
+00:48:35,400 --> 00:48:36,400
+of
+
+1673
+00:48:36,400 --> 00:48:37,400
+the
+
+1674
+00:48:37,400 --> 00:48:38,400
+sample.
+
+1675
+00:48:38,400 --> 00:48:39,400
+So
+
+1676
+00:48:39,400 --> 00:48:40,400
+EOS
+
+1677
+00:48:40,400 --> 00:48:41,400
+is
+
+1678
+00:48:41,400 --> 00:48:42,400
+basically
+
+1679
+00:48:42,400 --> 00:48:43,400
+IR
+
+1680
+00:48:43,400 --> 00:48:44,400
+plus
+
+1681
+00:48:44,400 --> 00:48:45,400
+Raman
+
+1682
+00:48:45,400 --> 00:48:46,400
+plus
+
+1683
+00:48:46,400 --> 00:48:47,400
+UPS
+
+1684
+00:48:47,400 --> 00:48:48,400
+plus
+
+1685
+00:48:48,400 --> 00:48:49,400
+angle
+
+1686
+00:48:49,400 --> 00:48:50,400
+reserve
+
+1687
+00:48:50,400 --> 00:48:51,400
+plus
+
+1688
+00:48:51,400 --> 00:48:52,400
+apex
+
+1689
+00:48:52,400 --> 00:48:53,400
+plus
+
+1690
+00:48:53,400 --> 00:48:54,400
+XAS
+
+1691
+00:48:54,400 --> 00:48:55,400
+XAS
+
+1692
+00:48:55,400 --> 00:48:56,400
+XAS
+
+1693
+00:48:56,400 --> 00:48:57,400
+XAS
+
+1694
+00:48:57,400 --> 00:48:58,400
+XAS
+
+1695
+00:48:58,400 --> 00:48:59,400
+XAS
+
+1696
+00:48:59,400 --> 00:49:00,400
+XAS
+
+1697
+00:49:00,400 --> 00:49:01,400
+XAS
+
+1698
+00:49:01,400 --> 00:49:02,400
+XAS
+
+1699
+00:49:02,400 --> 00:49:03,400
+XAS
+
+1700
+00:49:03,400 --> 00:49:04,400
+XAS
+
+1701
+00:49:04,400 --> 00:49:05,400
+XAS
+
+1702
+00:49:05,400 --> 00:49:06,400
+XAS
+
+1703
+00:49:06,400 --> 00:49:07,400
+XAS
+
+1704
+00:49:07,400 --> 00:49:08,400
+XAS
+
+1705
+00:49:08,400 --> 00:49:09,400
+XAS
+
+1706
+00:49:09,400 --> 00:49:10,400
+XAS
+
+1707
+00:49:10,400 --> 00:49:11,400
+XAS
+
+1708
+00:49:11,400 --> 00:49:12,400
+XAS
+
+1709
+00:49:12,400 --> 00:49:13,400
+XAS
+
+1710
+00:49:13,400 --> 00:49:14,400
+XAS
+
+1711
+00:49:14,400 --> 00:49:15,400
+XAS
+
+1712
+00:49:15,400 --> 00:49:16,400
+XAS
+
+1713
+00:49:16,400 --> 00:49:17,400
+XAS
+
+1714
+00:49:17,400 --> 00:49:18,400
+XAS
+
+1715
+00:49:18,400 --> 00:49:19,400
+XAS
+
+1716
+00:49:19,400 --> 00:49:20,400
+XAS
+
+1717
+00:49:20,400 --> 00:49:21,400
+XAS
+
+1718
+00:49:21,400 --> 00:49:22,400
+XAS
+
+1719
+00:49:22,400 --> 00:49:23,400
+XAS
+
+1720
+00:49:23,400 --> 00:49:24,400
+XAS
+
+1721
+00:49:24,400 --> 00:49:25,400
+XAS
+
+1722
+00:49:25,400 --> 00:49:26,400
+XAS
+
+1723
+00:49:26,400 --> 00:49:27,400
+XAS
+
+1724
+00:49:27,400 --> 00:49:28,400
+XAS
+
+1725
+00:49:28,400 --> 00:49:29,400
+XAS
+
+1726
+00:49:29,400 --> 00:49:30,400
+XAS
+
+1727
+00:49:30,400 --> 00:49:31,400
+XAS
+
+1728
+00:49:31,400 --> 00:49:32,400
+XAS
+
+1729
+00:49:32,400 --> 00:49:33,400
+XAS
+
+1730
+00:49:33,400 --> 00:49:36,400
+XAS
+
+1731
+00:49:36,400 --> 00:49:37,400
+XAS
+
+1732
+00:49:37,400 --> 00:49:38,400
+XAS
+
+1733
+00:49:38,400 --> 00:49:39,400
+XAS
+
+1734
+00:49:39,400 --> 00:49:40,400
+XAS
+
+1735
+00:49:40,400 --> 00:49:41,400
+XAS
+
+1736
+00:49:41,400 --> 00:49:42,400
+XAS
+
+1737
+00:49:42,400 --> 00:49:43,400
+XAS
+
+1738
+00:49:43,400 --> 00:49:44,400
+XAS
+
+1739
+00:49:44,400 --> 00:49:45,400
+XAS
+
+1740
+00:49:45,400 --> 00:49:46,400
+XAS
+
+1741
+00:49:46,400 --> 00:49:47,400
+XAS
+
+1742
+00:49:47,400 --> 00:49:48,400
+XAS
+
+1743
+00:49:48,400 --> 00:49:49,400
+XAS
+
+1744
+00:49:49,400 --> 00:49:50,400
+XAS
+
+1745
+00:49:50,400 --> 00:49:51,400
+XAS
+
+1746
+00:49:51,400 --> 00:49:52,400
+XAS
+
+1747
+00:49:52,400 --> 00:49:53,400
+XAS
+
+1748
+00:49:53,400 --> 00:49:54,400
+XAS
+
+1749
+00:49:54,400 --> 00:49:55,400
+XAS
+
+1750
+00:49:55,400 --> 00:49:56,400
+XAS
+
+1751
+00:49:56,400 --> 00:49:57,400
+XAS
+
+1752
+00:49:57,400 --> 00:49:58,400
+XAS
+
+1753
+00:49:58,400 --> 00:49:59,400
+XAS
+
+1754
+00:49:59,400 --> 00:50:00,400
+XAS
+
+1755
+00:50:00,400 --> 00:50:01,400
+XAS
+
+1756
+00:50:01,400 --> 00:50:02,400
+XAS
+
+1757
+00:50:03,400 --> 00:50:05,400
+XAS
+
+1758
+00:50:05,400 --> 00:50:06,400
+XAS
+
+1759
+00:50:06,400 --> 00:50:07,400
+XAS
+
+1760
+00:50:07,400 --> 00:50:08,400
+XAS
+
+1761
+00:50:08,400 --> 00:50:09,400
+XAS
+
+1762
+00:50:09,400 --> 00:50:10,400
+XAS
+
+1763
+00:50:10,400 --> 00:50:11,400
+XAS
+
+1764
+00:50:11,400 --> 00:50:12,400
+XAS
+
+1765
+00:50:12,400 --> 00:50:13,400
+XAS
+
+1766
+00:50:13,400 --> 00:50:14,400
+XAS
+
+1767
+00:50:14,400 --> 00:50:15,400
+XAS
+
+1768
+00:50:15,400 --> 00:50:16,400
+XAS
+
+1769
+00:50:16,400 --> 00:50:17,400
+XAS
+
+1770
+00:50:17,400 --> 00:50:18,400
+XAS
+
+1771
+00:50:18,400 --> 00:50:19,400
+XAS
+
+1772
+00:50:19,400 --> 00:50:20,400
+XAS
+
+1773
+00:50:20,400 --> 00:50:21,400
+XAS
+
+1774
+00:50:21,400 --> 00:50:22,400
+XAS
+
+1775
+00:50:22,400 --> 00:50:23,400
+XAS
+
+1776
+00:50:23,400 --> 00:50:24,400
+XAS
+
+1777
+00:50:24,400 --> 00:50:25,400
+XAS
+
+1778
+00:50:25,400 --> 00:50:26,400
+XAS
+
+1779
+00:50:26,400 --> 00:50:27,400
+XAS
+
+1780
+00:50:27,400 --> 00:50:28,400
+XAS
+
+1781
+00:50:28,400 --> 00:50:29,400
+XAS
+
+1782
+00:50:29,400 --> 00:50:30,400
+XAS
+
+1783
+00:50:30,400 --> 00:50:31,400
+XAS
+
+1784
+00:50:31,400 --> 00:50:32,400
+XAS
+
+1785
+00:50:32,400 --> 00:50:33,400
+XAS
+
+1786
+00:50:33,400 --> 00:50:34,400
+XAS
+
+1787
+00:50:34,400 --> 00:50:35,400
+XAS
+
+1788
+00:50:35,400 --> 00:50:36,400
+XAS
+
+1789
+00:50:36,400 --> 00:50:37,400
+XAS
+
+1790
+00:50:37,400 --> 00:50:38,400
+XAS
+
+1791
+00:50:38,400 --> 00:50:39,400
+XAS
+
+1792
+00:50:39,400 --> 00:50:40,400
+XAS
+
+1793
+00:50:40,400 --> 00:50:41,400
+XAS
+
+1794
+00:50:41,400 --> 00:50:42,400
+XAS
+
+1795
+00:50:42,400 --> 00:50:43,400
+XAS
+
+1796
+00:50:43,400 --> 00:50:44,400
+XAS
+
+1797
+00:50:44,400 --> 00:50:45,400
+XAS
+
+1798
+00:50:45,400 --> 00:50:46,400
+XAS
+
+1799
+00:50:46,400 --> 00:50:47,400
+XAS
+
+1800
+00:50:47,400 --> 00:50:48,400
+XAS
+
+1801
+00:50:48,400 --> 00:50:49,400
+XAS
+
+1802
+00:50:49,400 --> 00:50:50,400
+XAS
+
+1803
+00:50:50,400 --> 00:50:51,400
+XAS
+
+1804
+00:50:51,400 --> 00:50:52,400
+XAS
+
+1805
+00:50:52,400 --> 00:50:53,400
+XAS
+
+1806
+00:50:53,400 --> 00:50:54,400
+XAS
+
+1807
+00:50:54,400 --> 00:50:55,400
+XAS
+
+1808
+00:50:55,400 --> 00:50:56,400
+XAS
+
+1809
+00:50:56,400 --> 00:50:57,400
+XAS
+
+1810
+00:50:57,400 --> 00:50:58,400
+XAS
+
+1811
+00:50:58,400 --> 00:50:59,400
+XAS
+
+1812
+00:50:59,400 --> 00:51:00,400
+XAS
+
+1813
+00:51:00,400 --> 00:51:02,400
+XAS
+
+1814
+00:51:02,400 --> 00:51:03,400
+XAS
+
+1815
+00:51:03,400 --> 00:51:04,400
+XAS
+
+1816
+00:51:04,400 --> 00:51:05,400
+XAS
+
+1817
+00:51:05,400 --> 00:51:06,400
+XAS
+
+1818
+00:51:06,400 --> 00:51:07,400
+XAS
+
+1819
+00:51:07,400 --> 00:51:08,400
+XAS
+
+1820
+00:51:08,400 --> 00:51:09,400
+XAS
+
+1821
+00:51:09,400 --> 00:51:10,400
+XAS
+
+1822
+00:51:10,400 --> 00:51:11,400
+XAS
+
+1823
+00:51:11,400 --> 00:51:12,400
+XAS
+
+1824
+00:51:12,400 --> 00:51:13,400
+XAS
+
+1825
+00:51:13,400 --> 00:51:14,400
+XAS
+
+1826
+00:51:14,400 --> 00:51:15,400
+XAS
+
+1827
+00:51:15,400 --> 00:51:16,400
+XAS
+
+1828
+00:51:16,400 --> 00:51:17,400
+XAS
+
+1829
+00:51:17,400 --> 00:51:18,400
+XAS
+
+1830
+00:51:18,400 --> 00:51:19,400
+XAS
+
+1831
+00:51:19,400 --> 00:51:20,400
+XAS
+
+1832
+00:51:20,400 --> 00:51:21,400
+XAS
+
+1833
+00:51:21,400 --> 00:51:22,400
+XAS
+
+1834
+00:51:22,400 --> 00:51:23,400
+XAS
+
+1835
+00:51:23,400 --> 00:51:24,400
+XAS
+
+1836
+00:51:24,400 --> 00:51:25,400
+XAS
+
+1837
+00:51:25,400 --> 00:51:26,400
+XAS
+
+1838
+00:51:26,400 --> 00:51:27,400
+XAS
+
+1839
+00:51:27,400 --> 00:51:28,400
+XAS
+
+1840
+00:51:28,400 --> 00:51:29,400
+XAS
+
+1841
+00:51:29,400 --> 00:51:30,400
+XAS
+
+1842
+00:51:30,400 --> 00:51:31,400
+XAS
+
+1843
+00:51:31,400 --> 00:51:32,400
+XAS
+
+1844
+00:51:32,400 --> 00:51:33,400
+XAS
+
+1845
+00:51:33,400 --> 00:51:34,400
+XAS
+
+1846
+00:51:34,400 --> 00:51:35,400
+XAS
+
+1847
+00:51:35,400 --> 00:51:36,400
+XAS
+
+1848
+00:51:36,400 --> 00:51:37,400
+XAS
+
+1849
+00:51:37,400 --> 00:51:38,400
+XAS
+
+1850
+00:51:38,400 --> 00:51:39,400
+XAS
+
+1851
+00:51:39,400 --> 00:51:40,400
+XAS
+
+1852
+00:51:40,400 --> 00:51:41,400
+XAS
+
+1853
+00:51:41,400 --> 00:51:42,400
+XAS
+
+1854
+00:51:42,400 --> 00:52:08,400
+XAS
+
+1855
+00:52:08,400 --> 00:52:32,400
+XAS
+
+1856
+00:52:32,400 --> 00:52:33,400
+XAS
+
+1857
+00:52:33,400 --> 00:53:02,400
+XAS
+
+1858
+00:53:02,400 --> 00:53:10,400
+In many of the blue squares, I have 5 to 6 hands.
+
+1859
+00:53:10,400 --> 00:53:15,400
+This can tell you a lot about the nature of glass.
+
+1860
+00:53:15,400 --> 00:53:23,400
+It can also tell you, for example, how many 5 or 6 hands you have on a point.
+
+1861
+00:53:23,400 --> 00:53:28,400
+It will affect the nature of glass.
+
+1862
+00:53:28,400 --> 00:53:35,400
+This is basically the information you can get from the structure map.
+
+1863
+00:53:35,400 --> 00:53:43,400
+Other than that, I don't know, maybe a lot of people are interested in Transition Metal.
+
+1864
+00:53:43,400 --> 00:53:48,400
+For example, you can have a 2-frame mesh and a 3-frame mesh.
+
+1865
+00:53:48,400 --> 00:53:54,400
+If you just look at the image or the deflection, you can't tell.
+
+1866
+00:53:54,400 --> 00:54:00,400
+But if you use EOS, you will find that the light source is in a different position.
+
+1867
+00:54:00,400 --> 00:54:05,400
+If we don't mention the calculation, this is what it looks like in practice.
+
+1868
+00:54:05,400 --> 00:54:08,400
+You have two atoms here, one is A and the other is B.
+
+1869
+00:54:08,400 --> 00:54:12,400
+Then you also look at MnL2Cag.
+
+1870
+00:54:12,400 --> 00:54:19,400
+You will find that the light source of EOS will change slightly between different atoms.
+
+1871
+00:54:19,400 --> 00:54:33,400
+If you use EOS to calculate, you will find that the light source of 2Cag is in the middle, and the light source of 3Cag is outside.
+
+1872
+00:54:33,400 --> 00:54:37,400
+This can tell you a lot of information.
+
+1873
+00:54:37,400 --> 00:54:44,400
+In addition to knowing the location of the light source, you can also know the oxidation state of the light source.
+
+1874
+00:54:45,400 --> 00:54:50,400
+Some EOS can even tell you if there is a transfer of electrons.
+
+1875
+00:54:50,400 --> 00:54:57,400
+So far, this is basically what everyone is doing.
+
+1876
+00:54:57,400 --> 00:55:02,400
+Doing this in practice is actually quite simple.
+
+1877
+00:55:02,400 --> 00:55:05,400
+If you are interested, you can try it yourself.
+
+1878
+00:55:05,400 --> 00:55:07,400
+In fact, this is not that difficult.
+
+1879
+00:55:08,400 --> 00:55:13,400
+This is basically the most common application of Coros.
+
+1880
+00:55:13,400 --> 00:55:18,400
+It's like this, 2Cag, 3Cag, 4Cag, this kind of balance state mapping.
+
+1881
+00:55:20,400 --> 00:55:23,400
+Let me make a simple comparison here.
+
+1882
+00:55:23,400 --> 00:55:29,400
+The EOS I just talked about is actually XAS, X-ray absorption spectroscopy.
+
+1883
+00:55:29,400 --> 00:55:31,400
+In fact, it is very similar to the EOS function.
+
+1884
+00:55:31,400 --> 00:55:34,400
+But their energy boundaries are not quite the same.
+
+1885
+00:55:34,400 --> 00:55:39,400
+X-ray absorption is basically greater than the energy of 2KeV.
+
+1886
+00:55:39,400 --> 00:55:43,400
+EOS is basically 1mEV to 10KeV.
+
+1887
+00:55:43,400 --> 00:55:47,400
+The energy resolution is not much different now.
+
+1888
+00:55:47,400 --> 00:55:53,400
+But if you add the non-committer, the latest EOS record can be up to 3mEV.
+
+1889
+00:55:53,400 --> 00:55:57,400
+You can use it to study the body.
+
+1890
+00:55:57,400 --> 00:56:00,400
+But the spatial resolution is very different.
+
+1891
+00:56:00,400 --> 00:56:06,400
+The spatial resolution of XAS is about 50nm to micrometer.
+
+1892
+00:56:06,400 --> 00:56:10,400
+In the case of EOS, you can go to angstrom to nanometer.
+
+1893
+00:56:12,400 --> 00:56:17,400
+So if you are more interested in some nanometers,
+
+1894
+00:56:17,400 --> 00:56:21,400
+you can consider doing an EOS experiment.
+
+1895
+00:56:21,400 --> 00:56:24,400
+Then you can compare it with Bokeh.
+
+1896
+00:56:25,400 --> 00:56:31,400
+The second section I want to talk about is the VALENCE section.
+
+1897
+00:56:31,400 --> 00:56:34,400
+It is more about the transfer of light and snow.
+
+1898
+00:56:34,400 --> 00:56:38,400
+You can think of it as the energy obtained in this section.
+
+1899
+00:56:38,400 --> 00:56:43,400
+In fact, it has something to do with your relay parameters.
+
+1900
+00:56:43,400 --> 00:56:45,400
+This is a raw data.
+
+1901
+00:56:45,400 --> 00:56:50,400
+If you do fitting, you will find that there are different peaks in this fitting.
+
+1902
+00:56:51,400 --> 00:56:58,400
+Some of them come from PLASMO, some of them come from the interband transition.
+
+1903
+00:56:58,400 --> 00:57:05,400
+You may know that the VALENCE band is usually at the top and the CONDUCTION band is at the bottom.
+
+1904
+00:57:05,400 --> 00:57:12,400
+This is the definition of the band gap between LUMO and LUMO.
+
+1905
+00:57:12,400 --> 00:57:16,400
+If you use EOS, you can do the same thing.
+
+1906
+00:57:17,400 --> 00:57:21,400
+We don't have time to go through the SURFACE PLASMO.
+
+1907
+00:57:21,400 --> 00:57:33,400
+What I think is more interesting is that we can measure the band gap of some interfaces in some very special materials.
+
+1908
+00:57:33,400 --> 00:57:37,400
+For example, the material here is actually oxidized aluminum.
+
+1909
+00:57:37,400 --> 00:57:42,400
+Oxidized aluminum has different angles in the oxidized aluminum of polyethylene.
+
+1910
+00:57:42,400 --> 00:57:44,400
+This is a metal defect.
+
+1911
+00:57:44,400 --> 00:57:51,400
+If you measure its EOS, you will find that the black one is Bokeh.
+
+1912
+00:57:51,400 --> 00:57:53,400
+Bokeh is basically the same.
+
+1913
+00:57:53,400 --> 00:57:59,400
+But you will find that the red one has two band gaps in this interface.
+
+1914
+00:57:59,400 --> 00:58:02,400
+In fact, each one is different.
+
+1915
+00:58:02,400 --> 00:58:04,400
+You can analyze it.
+
+1916
+00:58:04,400 --> 00:58:08,400
+For example, in the interface, your band gap becomes 6.7.
+
+1917
+00:58:08,400 --> 00:58:09,400
+Originally it was 8.8.
+
+1918
+00:58:09,400 --> 00:58:13,400
+What impact will this matter to your material quality?
+
+1919
+00:58:13,400 --> 00:58:18,400
+You can also analyze how the interface will have a lower band gap.
+
+1920
+00:58:18,400 --> 00:58:21,400
+How do you control this?
+
+1921
+00:58:21,400 --> 00:58:26,400
+If you are a semiconductor person, this is very interesting.
+
+1922
+00:58:26,400 --> 00:58:30,400
+Because you can measure a lot of interfaces in your software.
+
+1923
+00:58:30,400 --> 00:58:33,400
+Is it good or bad for you?
+
+1924
+00:58:34,400 --> 00:58:38,400
+I also think that the band gap measurement is not that simple.
+
+1925
+00:58:38,400 --> 00:58:43,400
+But basically, EOS instruments can do this.
+
+1926
+00:58:43,400 --> 00:58:47,400
+You can try it.
+
+1927
+00:58:47,400 --> 00:58:53,400
+The last section is Valence EOS.
+
+1928
+00:58:53,400 --> 00:58:55,400
+This section is a special one.
+
+1929
+00:58:55,400 --> 00:58:59,400
+It is interesting that it can measure temperature.
+
+1930
+00:58:59,400 --> 00:59:09,400
+The principle is to use Profile Fitting to feed PLASMON's energy.
+
+1931
+00:59:09,400 --> 00:59:12,400
+Because its energy is related to the density of the electrode.
+
+1932
+00:59:12,400 --> 00:59:15,400
+So if you change the temperature, the density of the electrode will change.
+
+1933
+00:59:15,400 --> 00:59:18,400
+You can measure the temperature.
+
+1934
+00:59:18,400 --> 00:59:27,400
+This diagram is a very simple temperature mapping.
+
+1935
+00:59:27,400 --> 00:59:30,400
+This material is aluminum.
+
+1936
+00:59:30,400 --> 00:59:35,400
+I'm not sure if it's a wet electrode or a wet electrode.
+
+1937
+00:59:35,400 --> 00:59:37,400
+It should be a wet electrode.
+
+1938
+00:59:37,400 --> 00:59:42,400
+You can see the temperature change in the aluminum.
+
+1939
+00:59:42,400 --> 00:59:45,400
+Of course, it's not that simple.
+
+1940
+00:59:45,400 --> 00:59:48,400
+But it can still be done.
+
+1941
+00:59:48,400 --> 00:59:51,400
+This is the part of measuring temperature.
+
+1942
+00:59:52,400 --> 00:59:54,400
+I've been doing it recently.
+
+1943
+00:59:54,400 --> 00:59:56,400
+It's a bit like what I just said.
+
+1944
+00:59:56,400 --> 01:00:02,400
+I'm going to measure the EOS changes in the interface.
+
+1945
+01:00:02,400 --> 01:00:04,400
+It's not the same as the above.
+
+1946
+01:00:04,400 --> 01:00:06,400
+I'm going to measure thermal expansion.
+
+1947
+01:00:06,400 --> 01:00:09,400
+If you're interested, we can discuss it next.
+
+1948
+01:00:12,400 --> 01:00:14,400
+Can I ask a question?
+
+1949
+01:00:14,400 --> 01:00:15,400
+Yes.
+
+1950
+01:00:16,400 --> 01:00:22,400
+Can you go back to the aluminum diagram?
+
+1951
+01:00:22,400 --> 01:00:24,400
+The temperature next to you is almost normal.
+
+1952
+01:00:24,400 --> 01:00:26,400
+Can you make it a little warmer?
+
+1953
+01:00:26,400 --> 01:00:28,400
+Can you make it very low?
+
+1954
+01:00:28,400 --> 01:00:30,400
+You mean low temperature?
+
+1955
+01:00:30,400 --> 01:00:32,400
+Low enough that it doesn't overheat.
+
+1956
+01:00:32,400 --> 01:00:34,400
+It's less than 1K.
+
+1957
+01:00:34,400 --> 01:00:39,400
+I think it should be physically possible.
+
+1958
+01:00:39,400 --> 01:00:41,400
+Because the way it gets the temperature is
+
+1959
+01:00:41,400 --> 01:00:47,400
+Simply put, if you look at the peak shift of Plasmon Peak,
+
+1960
+01:00:47,400 --> 01:00:52,400
+You can see how much the electronic density has changed.
+
+1961
+01:00:52,400 --> 01:00:55,400
+If you get low temperature,
+
+1962
+01:00:55,400 --> 01:00:59,400
+You may also know how low it is.
+
+1963
+01:00:59,400 --> 01:01:01,400
+But in the electronic microscope,
+
+1964
+01:01:01,400 --> 01:01:05,400
+It's easier to heat than to get low temperature.
+
+1965
+01:01:05,400 --> 01:01:07,400
+So most people do thermal experiments.
+
+1966
+01:01:07,400 --> 01:01:10,400
+Very few people do low temperature experiments.
+
+1967
+01:01:11,400 --> 01:01:13,400
+Can I say something?
+
+1968
+01:01:13,400 --> 01:01:14,400
+Yes.
+
+1969
+01:01:14,400 --> 01:01:18,400
+Basically, I don't think you should say this in this picture.
+
+1970
+01:01:18,400 --> 01:01:21,400
+Because I've talked to the author about this.
+
+1971
+01:01:21,400 --> 01:01:28,400
+This sample itself is a silicon nitride membrane.
+
+1972
+01:01:28,400 --> 01:01:30,400
+To carve out these patterns.
+
+1973
+01:01:30,400 --> 01:01:33,400
+So when you're doing this experiment,
+
+1974
+01:01:33,400 --> 01:01:35,400
+There's a big problem.
+
+1975
+01:01:35,400 --> 01:01:37,400
+You're heating it up at the same time.
+
+1976
+01:01:37,400 --> 01:01:39,400
+What you're looking at now is the shift of EOS.
+
+1977
+01:01:39,400 --> 01:01:43,400
+It's actually bound to your silicon nitride substrate.
+
+1978
+01:01:43,400 --> 01:01:47,400
+That is, you're not a freestanding aluminum wire.
+
+1979
+01:01:47,400 --> 01:01:52,400
+So it's hard to say how big it is.
+
+1980
+01:01:52,400 --> 01:01:55,400
+Back to the question just now.
+
+1981
+01:01:55,400 --> 01:01:59,400
+If you put this sample in a liquid nitrogen holder,
+
+1982
+01:01:59,400 --> 01:02:02,400
+You can look at it after it's cooled down.
+
+1983
+01:02:02,400 --> 01:02:04,400
+So you can also put it in a heating holder.
+
+1984
+01:02:04,400 --> 01:02:05,400
+You can also heat it up.
+
+1985
+01:02:05,400 --> 01:02:08,400
+So if you want to know the temperature range,
+
+1986
+01:02:08,400 --> 01:02:10,400
+It's possible.
+
+1987
+01:02:10,400 --> 01:02:11,400
+Yes.
+
+1988
+01:02:11,400 --> 01:02:13,400
+Thank you.
+
+1989
+01:02:13,400 --> 01:02:16,400
+I don't know much about this sample.
+
+1990
+01:02:16,400 --> 01:02:18,400
+Because he's been here before.
+
+1991
+01:02:18,400 --> 01:02:21,400
+So he was very polite.
+
+1992
+01:02:21,400 --> 01:02:23,400
+That's what his structure is like.
+
+1993
+01:02:23,400 --> 01:02:26,400
+Because all of our papers.
+
+1994
+01:02:26,400 --> 01:02:27,400
+Science papers here.
+
+1995
+01:02:27,400 --> 01:02:31,400
+We all thought he was a freestanding aluminum wire.
+
+1996
+01:02:31,400 --> 01:02:34,400
+But what he said was that there was supporting underneath.
+
+1997
+01:02:34,400 --> 01:02:40,400
+So you go and look at the slice in front of you.
+
+1998
+01:02:40,400 --> 01:02:43,400
+The slice in front of you.
+
+1999
+01:02:43,400 --> 01:02:45,400
+Why is the temperature change so big?
+
+2000
+01:02:45,400 --> 01:02:47,400
+That's why it shifts so little.
+
+2001
+01:02:47,400 --> 01:02:51,400
+You're not a freestanding sample.
+
+2002
+01:02:51,400 --> 01:02:55,400
+You don't know how reliable this knife is.
+
+2003
+01:02:55,400 --> 01:02:59,400
+And your error is 0.06 electron volt.
+
+2004
+01:02:59,400 --> 01:03:02,400
+Your resolution is only 0.03.
+
+2005
+01:03:02,400 --> 01:03:03,400
+Then you have two pixels.
+
+2006
+01:03:03,400 --> 01:03:09,400
+I think this experiment is actually quite risky.
+
+2007
+01:03:09,400 --> 01:03:13,400
+Because you don't know where the error comes from.
+
+2008
+01:03:13,400 --> 01:03:17,400
+So basically, we think it's more reliable than three pixels.
+
+2009
+01:03:17,400 --> 01:03:18,400
+I see.
+
+2010
+01:03:18,400 --> 01:03:26,400
+Because this paper actually has a lot of citations.
+
+2011
+01:03:26,400 --> 01:03:30,400
+There are a lot of people who do something later.
+
+2012
+01:03:30,400 --> 01:03:33,400
+Or look at some things.
+
+2013
+01:03:33,400 --> 01:03:36,400
+Because if you're a freestanding sample.
+
+2014
+01:03:36,400 --> 01:03:38,400
+It makes a lot of sense if you measure it.
+
+2015
+01:03:38,400 --> 01:03:40,400
+But you're supporting.
+
+2016
+01:03:40,400 --> 01:03:41,400
+Like a sandwich.
+
+2017
+01:03:41,400 --> 01:03:45,400
+If the heat expansion coefficient below is very poor.
+
+2018
+01:03:45,400 --> 01:03:48,400
+It's very different from the temperature above.
+
+2019
+01:03:48,400 --> 01:03:51,400
+Then you might have a similar effect.
+
+2020
+01:03:51,400 --> 01:03:54,400
+Then you can't measure what the real thing should be like.
+
+2021
+01:03:54,400 --> 01:03:55,400
+I see.
+
+2022
+01:03:55,400 --> 01:03:56,400
+After we heard the speech that day.
+
+2023
+01:03:56,400 --> 01:04:01,400
+Why do you have to wrap that layer underneath?
+
+2024
+01:04:01,400 --> 01:04:05,400
+But I didn't really measure the temperature myself.
+
+2025
+01:04:05,400 --> 01:04:10,400
+In my case, I always let the temperature be very warm.
+
+2026
+01:04:10,400 --> 01:04:12,400
+If it's in this situation.
+
+2027
+01:04:12,400 --> 01:04:14,400
+Then what I measured is.
+
+2028
+01:04:14,400 --> 01:04:20,400
+The change in electron density comes from heat expansion.
+
+2029
+01:04:20,400 --> 01:04:23,400
+Of course, this is also a new paper recently.
+
+2030
+01:04:23,400 --> 01:04:26,400
+Then I'm also trying to see if I can.
+
+2031
+01:04:26,400 --> 01:04:29,400
+I'm actually not very clear right now.
+
+2032
+01:04:29,400 --> 01:04:32,400
+You are now.
+
+2033
+01:04:32,400 --> 01:04:34,400
+You slice like this.
+
+2034
+01:04:34,400 --> 01:04:36,400
+Sorry, until the next experiment.
+
+2035
+01:04:36,400 --> 01:04:39,400
+You slice this.
+
+2036
+01:04:39,400 --> 01:04:42,400
+Because of your.
+
+2037
+01:04:42,400 --> 01:04:44,400
+You are because the temperature is different.
+
+2038
+01:04:44,400 --> 01:04:46,400
+Then look at the energy of PLASMA is different.
+
+2039
+01:04:46,400 --> 01:04:47,400
+You are now.
+
+2040
+01:04:47,400 --> 01:04:49,400
+I let everything be PLASMA.
+
+2041
+01:04:49,400 --> 01:04:51,400
+Everything.
+
+2042
+01:04:51,400 --> 01:04:52,400
+This sample itself.
+
+2043
+01:04:52,400 --> 01:04:54,400
+The temperature has become the same.
+
+2044
+01:04:54,400 --> 01:04:56,400
+I went to see the interface.
+
+2045
+01:04:56,400 --> 01:04:57,400
+With Bulk.
+
+2046
+01:04:57,400 --> 01:04:59,400
+His.
+
+2047
+01:04:59,400 --> 01:05:00,400
+The change in heat expansion.
+
+2048
+01:05:00,400 --> 01:05:02,400
+But the two pictures below you.
+
+2049
+01:05:02,400 --> 01:05:05,400
+Is there a temperature change?
+
+2050
+01:05:05,400 --> 01:05:07,400
+This is the temperature here.
+
+2051
+01:05:07,400 --> 01:05:09,400
+This is after you fix a temperature.
+
+2052
+01:05:09,400 --> 01:05:11,400
+After reading it, change it to the next temperature.
+
+2053
+01:05:11,400 --> 01:05:13,400
+Yes, this is a very tiring experiment.
+
+2054
+01:05:13,400 --> 01:05:15,400
+But we've been trying it lately.
+
+2055
+01:05:15,400 --> 01:05:17,400
+Because the first paper to do heat expansion.
+
+2056
+01:05:17,400 --> 01:05:19,400
+Is in the secondary material.
+
+2057
+01:05:19,400 --> 01:05:21,400
+Then we did it ourselves.
+
+2058
+01:05:21,400 --> 01:05:23,400
+A ceramic traditional material.
+
+2059
+01:05:23,400 --> 01:05:25,400
+Try it out.
+
+2060
+01:05:25,400 --> 01:05:27,400
+Can they be used in traditional materials?
+
+2061
+01:05:27,400 --> 01:05:29,400
+Above.
+
+2062
+01:05:29,400 --> 01:05:31,400
+I can't tell you now.
+
+2063
+01:05:31,400 --> 01:05:33,400
+Is it good or bad?
+
+2064
+01:05:33,400 --> 01:05:35,400
+But I can tell you.
+
+2065
+01:05:35,400 --> 01:05:37,400
+I really have two.
+
+2066
+01:05:37,400 --> 01:05:39,400
+I understand.
+
+2067
+01:05:39,400 --> 01:05:41,400
+I just said you were processing this data.
+
+2068
+01:05:41,400 --> 01:05:43,400
+Have you ever done the so-called.
+
+2069
+01:05:43,400 --> 01:05:45,400
+How to say.
+
+2070
+01:05:45,400 --> 01:05:47,400
+Uh.
+
+2071
+01:05:47,400 --> 01:05:49,400
+Consider your thickness.
+
+2072
+01:05:49,400 --> 01:05:51,400
+Because thickness.
+
+2073
+01:05:51,400 --> 01:05:53,400
+You speak very well.
+
+2074
+01:05:53,400 --> 01:05:55,400
+Because.
+
+2075
+01:05:55,400 --> 01:05:57,400
+Because in fact.
+
+2076
+01:05:57,400 --> 01:05:59,400
+When you do this.
+
+2077
+01:05:59,400 --> 01:06:01,400
+You can go to one by the way.
+
+2078
+01:06:01,400 --> 01:06:03,400
+Anyway, the area you are in now.
+
+2079
+01:06:03,400 --> 01:06:05,400
+You can do the thickness.
+
+2080
+01:06:05,400 --> 01:06:07,400
+Maybe you are now.
+
+2081
+01:06:07,400 --> 01:06:09,400
+After fitting.
+
+2082
+01:06:09,400 --> 01:06:11,400
+After decoupling.
+
+2083
+01:06:11,400 --> 01:06:13,400
+You can do the analysis later.
+
+2084
+01:06:13,400 --> 01:06:15,400
+Then a point is.
+
+2085
+01:06:15,400 --> 01:06:17,400
+I am in the thick area.
+
+2086
+01:06:17,400 --> 01:06:19,400
+The heat expansion of the two areas is different.
+
+2087
+01:06:19,400 --> 01:06:21,400
+I mean.
+
+2088
+01:06:21,400 --> 01:06:23,400
+It doesn't matter if you are thick.
+
+2089
+01:06:23,400 --> 01:06:25,400
+Because as long as you take a full score.
+
+2090
+01:06:25,400 --> 01:06:27,400
+You can do decoupling.
+
+2091
+01:06:27,400 --> 01:06:29,400
+After decoupling.
+
+2092
+01:06:29,400 --> 01:06:31,400
+In fact, you are using decoupling data.
+
+2093
+01:06:31,400 --> 01:06:33,400
+To do these.
+
+2094
+01:06:33,400 --> 01:06:35,400
+Plasma energy fitting.
+
+2095
+01:06:35,400 --> 01:06:37,400
+Maybe what you see.
+
+2096
+01:06:37,400 --> 01:06:39,400
+It may be the same as now.
+
+2097
+01:06:39,400 --> 01:06:41,400
+It should be said that all the data.
+
+2098
+01:06:41,400 --> 01:06:43,400
+I have done it.
+
+2099
+01:06:43,400 --> 01:06:45,400
+It's the backlight.
+
+2100
+01:06:47,400 --> 01:06:49,400
+But my own data.
+
+2101
+01:06:49,400 --> 01:06:51,400
+In the thick area and the thin area.
+
+2102
+01:06:51,400 --> 01:06:53,400
+This.
+
+2103
+01:06:53,400 --> 01:06:55,400
+The change in the heat expansion factor.
+
+2104
+01:06:55,400 --> 01:06:57,400
+In fact, more should be related to quantum.
+
+2105
+01:06:57,400 --> 01:06:59,400
+It's the same in the past.
+
+2106
+01:06:59,400 --> 01:07:01,400
+Not necessarily.
+
+2107
+01:07:01,400 --> 01:07:03,400
+If you are thin today.
+
+2108
+01:07:03,400 --> 01:07:05,400
+The area is less than 40 nanometers.
+
+2109
+01:07:05,400 --> 01:07:07,400
+The data you make now.
+
+2110
+01:07:07,400 --> 01:07:09,400
+I don't know how thick it is.
+
+2111
+01:07:09,400 --> 01:07:11,400
+But.
+
+2112
+01:07:11,400 --> 01:07:13,400
+For you to do this experiment.
+
+2113
+01:07:13,400 --> 01:07:15,400
+I would prefer to say.
+
+2114
+01:07:15,400 --> 01:07:17,400
+You are probably 40 to 80 nanometers.
+
+2115
+01:07:17,400 --> 01:07:19,400
+The thickness is the most perfect.
+
+2116
+01:07:19,400 --> 01:07:21,400
+Because below 40 nanometers.
+
+2117
+01:07:21,400 --> 01:07:23,400
+You will be more serious.
+
+2118
+01:07:23,400 --> 01:07:25,400
+So all of you.
+
+2119
+01:07:25,400 --> 01:07:27,400
+You think the peak of Bulk Plasma.
+
+2120
+01:07:27,400 --> 01:07:29,400
+Will shift to low energy.
+
+2121
+01:07:29,400 --> 01:07:31,400
+When you have high energy.
+
+2122
+01:07:31,400 --> 01:07:33,400
+You are after multiple scattering.
+
+2123
+01:07:33,400 --> 01:07:35,400
+You may.
+
+2124
+01:07:35,400 --> 01:07:37,400
+You may have to do a lot of processing.
+
+2125
+01:07:37,400 --> 01:07:39,400
+With your average thickness.
+
+2126
+01:07:39,400 --> 01:07:41,400
+For example, 40 to 80 nanometers.
+
+2127
+01:07:41,400 --> 01:07:43,400
+Maybe a little worse.
+
+2128
+01:07:43,400 --> 01:07:45,400
+But not so much worse.
+
+2129
+01:07:45,400 --> 01:07:47,400
+So I think you can consider.
+
+2130
+01:07:47,400 --> 01:07:49,400
+You are now in these two areas.
+
+2131
+01:07:49,400 --> 01:07:51,400
+What you marked.
+
+2132
+01:07:51,400 --> 01:07:53,400
+Is the thickness.
+
+2133
+01:07:53,400 --> 01:07:55,400
+In fact, you can calculate.
+
+2134
+01:07:55,400 --> 01:07:57,400
+What is the thickness?
+
+2135
+01:07:57,400 --> 01:07:59,400
+How many lambda?
+
+2136
+01:07:59,400 --> 01:08:01,400
+I can tell you.
+
+2137
+01:08:01,400 --> 01:08:03,400
+This is about 80 nanometers.
+
+2138
+01:08:03,400 --> 01:08:05,400
+This is about 20 nanometers.
+
+2139
+01:08:05,400 --> 01:08:07,400
+Because you have too many surface effects.
+
+2140
+01:08:07,400 --> 01:08:09,400
+So the energy you are doing now.
+
+2141
+01:08:09,400 --> 01:08:11,400
+You have to consider the surface plasma.
+
+2142
+01:08:11,400 --> 01:08:13,400
+Not your own Bulk.
+
+2143
+01:08:13,400 --> 01:08:15,400
+If you have a vacuum area.
+
+2144
+01:08:15,400 --> 01:08:17,400
+If you have a vacuum area.
+
+2145
+01:08:17,400 --> 01:08:19,400
+You just sweep past like this.
+
+2146
+01:08:19,400 --> 01:08:21,400
+You can know your whole.
+
+2147
+01:08:21,400 --> 01:08:23,400
+You want to identify.
+
+2148
+01:08:23,400 --> 01:08:25,400
+Is the location of the Bulk Plasma shifted?
+
+2149
+01:08:25,400 --> 01:08:27,400
+Then you know.
+
+2150
+01:08:27,400 --> 01:08:29,400
+Your thinnest place.
+
+2151
+01:08:29,400 --> 01:08:31,400
+The location of the energy you originally expected.
+
+2152
+01:08:31,400 --> 01:08:33,400
+There is a deviation.
+
+2153
+01:08:33,400 --> 01:08:35,400
+We can discuss this later.
+
+2154
+01:08:37,400 --> 01:08:39,400
+Thank you very much for your comment.
+
+2155
+01:08:39,400 --> 01:08:41,400
+I really don't know.
+
+2156
+01:08:41,400 --> 01:08:43,400
+What you said above.
+
+2157
+01:08:43,400 --> 01:08:45,400
+I don't really know.
+
+2158
+01:08:45,400 --> 01:08:47,400
+What you just said.
+
+2159
+01:08:49,400 --> 01:08:51,400
+Basically,
+
+2160
+01:08:51,400 --> 01:08:53,400
+Valence.
+
+2161
+01:08:55,400 --> 01:08:57,400
+I want to talk about this.
+
+2162
+01:08:57,400 --> 01:08:59,400
+Finally, I want to add.
+
+2163
+01:08:59,400 --> 01:09:01,400
+There is a new technology called Vibrational Yields.
+
+2164
+01:09:01,400 --> 01:09:03,400
+That is also.
+
+2165
+01:09:03,400 --> 01:09:05,400
+It was probably released in 2014.
+
+2166
+01:09:05,400 --> 01:09:07,400
+It is a piece.
+
+2167
+01:09:07,400 --> 01:09:09,400
+Its paper is.
+
+2168
+01:09:09,400 --> 01:09:11,400
+Look at the optical phonon of boron nitride.
+
+2169
+01:09:11,400 --> 01:09:13,400
+We ourselves.
+
+2170
+01:09:13,400 --> 01:09:15,400
+In 2014.
+
+2171
+01:09:15,400 --> 01:09:17,400
+Most of the time.
+
+2172
+01:09:17,400 --> 01:09:19,400
+Look at the CH vibration of ionic liquid.
+
+2173
+01:09:19,400 --> 01:09:21,400
+At that time, many people felt.
+
+2174
+01:09:21,400 --> 01:09:23,400
+This is a mess.
+
+2175
+01:09:23,400 --> 01:09:25,400
+But so.
+
+2176
+01:09:25,400 --> 01:09:27,400
+We basically published it at the same time.
+
+2177
+01:09:27,400 --> 01:09:29,400
+Then you can be sure.
+
+2178
+01:09:29,400 --> 01:09:31,400
+The optical phonon of boron nitride.
+
+2179
+01:09:31,400 --> 01:09:33,400
+You can see the phonon and the vibration.
+
+2180
+01:09:35,400 --> 01:09:37,400
+A more popular method now.
+
+2181
+01:09:37,400 --> 01:09:39,400
+It actually uses a model called.
+
+2182
+01:09:39,400 --> 01:09:41,400
+You don't put the disease.
+
+2183
+01:09:41,400 --> 01:09:43,400
+On top of your sample.
+
+2184
+01:09:43,400 --> 01:09:45,400
+But outside the sample.
+
+2185
+01:09:45,400 --> 01:09:47,400
+This mechanism.
+
+2186
+01:09:47,400 --> 01:09:49,400
+It interprets.
+
+2187
+01:09:49,400 --> 01:09:51,400
+It's all double scattering.
+
+2188
+01:09:51,400 --> 01:09:53,400
+But they mean.
+
+2189
+01:09:53,400 --> 01:09:55,400
+Your double scattering.
+
+2190
+01:09:55,400 --> 01:09:57,400
+It's a signal.
+
+2191
+01:09:57,400 --> 01:09:59,400
+The middle one.
+
+2192
+01:09:59,400 --> 01:10:01,400
+It's more detailed.
+
+2193
+01:10:01,400 --> 01:10:03,400
+Some people say it's virtual photon.
+
+2194
+01:10:03,400 --> 01:10:05,400
+But this part.
+
+2195
+01:10:05,400 --> 01:10:07,400
+I really don't understand.
+
+2196
+01:10:07,400 --> 01:10:09,400
+What are they talking about?
+
+2197
+01:10:09,400 --> 01:10:11,400
+But simply put.
+
+2198
+01:10:11,400 --> 01:10:13,400
+You put the electron outside the sample.
+
+2199
+01:10:13,400 --> 01:10:15,400
+In a specific position.
+
+2200
+01:10:15,400 --> 01:10:17,400
+You can actually detect.
+
+2201
+01:10:17,400 --> 01:10:19,400
+Your vibrational signal.
+
+2202
+01:10:19,400 --> 01:10:21,400
+Through this matter.
+
+2203
+01:10:21,400 --> 01:10:23,400
+In fact, since 2015.
+
+2204
+01:10:23,400 --> 01:10:25,400
+Many people have been using this method.
+
+2205
+01:10:25,400 --> 01:10:27,400
+To study some.
+
+2206
+01:10:27,400 --> 01:10:29,400
+This should be biological.
+
+2207
+01:10:29,400 --> 01:10:31,400
+Materials.
+
+2208
+01:10:31,400 --> 01:10:33,400
+It can be.
+
+2209
+01:10:33,400 --> 01:10:35,400
+Don't destroy your sample.
+
+2210
+01:10:35,400 --> 01:10:37,400
+Detect outside.
+
+2211
+01:10:37,400 --> 01:10:39,400
+Some of your material.
+
+2212
+01:10:39,400 --> 01:10:41,400
+Vibrational mode.
+
+2213
+01:10:41,400 --> 01:10:43,400
+If you are interested.
+
+2214
+01:10:43,400 --> 01:10:45,400
+You can also look at some papers.
+
+2215
+01:10:45,400 --> 01:10:47,400
+Or do this experiment.
+
+2216
+01:10:47,400 --> 01:10:49,400
+In 2019.
+
+2217
+01:10:49,400 --> 01:10:51,400
+I think it's more.
+
+2218
+01:10:51,400 --> 01:10:53,400
+It may be a bit controversial.
+
+2219
+01:10:53,400 --> 01:10:55,400
+Quite.
+
+2220
+01:10:55,400 --> 01:10:57,400
+What people know is.
+
+2221
+01:10:57,400 --> 01:10:59,400
+Carbon-12 and carbon-13.
+
+2222
+01:10:59,400 --> 01:11:01,400
+That is, through EOS.
+
+2223
+01:11:01,400 --> 01:11:03,400
+What I just said.
+
+2224
+01:11:03,400 --> 01:11:05,400
+Since you can see.
+
+2225
+01:11:05,400 --> 01:11:07,400
+If the molecules vibrate.
+
+2226
+01:11:07,400 --> 01:11:09,400
+I believe.
+
+2227
+01:11:09,400 --> 01:11:11,400
+Carbon-12 and oxygen bound.
+
+2228
+01:11:11,400 --> 01:11:13,400
+Carbon-13 and oxygen bound.
+
+2229
+01:11:13,400 --> 01:11:15,400
+Their vibrational mode.
+
+2230
+01:11:15,400 --> 01:11:17,400
+In fact, it should be a bit different.
+
+2231
+01:11:17,400 --> 01:11:19,400
+That's what Oak Ridge does.
+
+2232
+01:11:19,400 --> 01:11:21,400
+You have carbon-12 particles.
+
+2233
+01:11:21,400 --> 01:11:23,400
+To do EOS.
+
+2234
+01:11:23,400 --> 01:11:25,400
+To distinguish these two.
+
+2235
+01:11:25,400 --> 01:11:27,400
+Basically, they are using profile fitting.
+
+2236
+01:11:27,400 --> 01:11:29,400
+To distinguish these two.
+
+2237
+01:11:29,400 --> 01:11:31,400
+Because now.
+
+2238
+01:11:31,400 --> 01:11:33,400
+The resolution at this time in 2019.
+
+2239
+01:11:33,400 --> 01:11:35,400
+Neon's system is about.
+
+2240
+01:11:35,400 --> 01:11:37,400
+5 mV.
+
+2241
+01:11:37,400 --> 01:11:39,400
+So they can distinguish.
+
+2242
+01:11:39,400 --> 01:11:41,400
+Carbon-13 and carbon-12.
+
+2243
+01:11:41,400 --> 01:11:43,400
+If you are interested.
+
+2244
+01:11:43,400 --> 01:11:45,400
+Oak Ridge has been doing this experiment.
+
+2245
+01:11:47,400 --> 01:11:49,400
+I am.
+
+2246
+01:11:49,400 --> 01:11:51,400
+I am actually.
+
+2247
+01:11:51,400 --> 01:11:53,400
+Take it to study my glass.
+
+2248
+01:11:53,400 --> 01:11:55,400
+Because in my glass.
+
+2249
+01:11:55,400 --> 01:11:57,400
+There are two-handed oxygen and three-handed oxygen.
+
+2250
+01:11:57,400 --> 01:11:59,400
+Two-handed oxygen and three-handed oxygen.
+
+2251
+01:11:59,400 --> 01:12:01,400
+General XAS.
+
+2252
+01:12:01,400 --> 01:12:03,400
+Or other.
+
+2253
+01:12:03,400 --> 01:12:05,400
+In fact, it is difficult to see the difference.
+
+2254
+01:12:05,400 --> 01:12:07,400
+My glass also has.
+
+2255
+01:12:07,400 --> 01:12:09,400
+Silicon Ridge and Aluminum Ridge.
+
+2256
+01:12:09,400 --> 01:12:11,400
+I can clearly know.
+
+2257
+01:12:11,400 --> 01:12:13,400
+What kind of structure I see.
+
+2258
+01:12:13,400 --> 01:12:15,400
+So I really go to study.
+
+2259
+01:12:15,400 --> 01:12:17,400
+What is the difference.
+
+2260
+01:12:17,400 --> 01:12:19,400
+What is the difference.
+
+2261
+01:12:19,400 --> 01:12:21,400
+If you do profile fitting.
+
+2262
+01:12:21,400 --> 01:12:23,400
+You will probably find it.
+
+2263
+01:12:23,400 --> 01:12:25,400
+About 10 mV.
+
+2264
+01:12:25,400 --> 01:12:27,400
+Then you can do some more analysis.
+
+2265
+01:12:27,400 --> 01:12:29,400
+Tell you.
+
+2266
+01:12:29,400 --> 01:12:31,400
+In the end, what you see.
+
+2267
+01:12:31,400 --> 01:12:33,400
+Is it really from this oxygen coordination?
+
+2268
+01:12:33,400 --> 01:12:35,400
+Change.
+
+2269
+01:12:35,400 --> 01:12:37,400
+Or something from the hardware.
+
+2270
+01:12:37,400 --> 01:12:39,400
+This is my own recent.
+
+2271
+01:12:39,400 --> 01:12:41,400
+On Vibrational EOS.
+
+2272
+01:12:41,400 --> 01:12:43,400
+Some research results.
+
+2273
+01:12:43,400 --> 01:12:45,400
+If it is possible.
+
+2274
+01:12:45,400 --> 01:12:47,400
+More people will be interested.
+
+2275
+01:12:47,400 --> 01:12:49,400
+In fact.
+
+2276
+01:12:49,400 --> 01:12:51,400
+Is this kind of Momentum Resolve.
+
+2277
+01:12:51,400 --> 01:12:53,400
+Vibrational EOS.
+
+2278
+01:12:53,400 --> 01:12:55,400
+In 2019.
+
+2279
+01:12:55,400 --> 01:12:57,400
+Basically, some people started to study.
+
+2280
+01:12:57,400 --> 01:12:59,400
+Since I can see the rope.
+
+2281
+01:12:59,400 --> 01:13:01,400
+Then I also want to study.
+
+2282
+01:13:01,400 --> 01:13:03,400
+This kind of phonon dispersion.
+
+2283
+01:13:03,400 --> 01:13:05,400
+Is that you change the Q-vector.
+
+2284
+01:13:05,400 --> 01:13:07,400
+You put your beam.
+
+2285
+01:13:07,400 --> 01:13:09,400
+Like other.
+
+2286
+01:13:09,400 --> 01:13:11,400
+Not directly on your.
+
+2287
+01:13:11,400 --> 01:13:13,400
+Spectrometer.
+
+2288
+01:13:13,400 --> 01:13:15,400
+If you give it a Q-vector.
+
+2289
+01:13:15,400 --> 01:13:17,400
+Momentum transfer.
+
+2290
+01:13:17,400 --> 01:13:19,400
+You can see.
+
+2291
+01:13:19,400 --> 01:13:21,400
+This kind of phonon dispersion.
+
+2292
+01:13:21,400 --> 01:13:23,400
+This picture is made in Japan.
+
+2293
+01:13:23,400 --> 01:13:25,400
+To get this kind of experiment.
+
+2294
+01:13:25,400 --> 01:13:27,400
+Suenaga.
+
+2295
+01:13:27,400 --> 01:13:29,400
+They said they did it.
+
+2296
+01:13:29,400 --> 01:13:31,400
+More than 60 hours.
+
+2297
+01:13:31,400 --> 01:13:33,400
+But this year.
+
+2298
+01:13:33,400 --> 01:13:35,400
+In 2020.
+
+2299
+01:13:35,400 --> 01:13:37,400
+Two months ago.
+
+2300
+01:13:37,400 --> 01:13:39,400
+Microsociety.
+
+2301
+01:13:39,400 --> 01:13:41,400
+He studied.
+
+2302
+01:13:41,400 --> 01:13:43,400
+Is that you are.
+
+2303
+01:13:43,400 --> 01:13:45,400
+On the original spectrometer.
+
+2304
+01:13:45,400 --> 01:13:47,400
+Add a layer.
+
+2305
+01:13:47,400 --> 01:13:49,400
+You will get a lot at the same time.
+
+2306
+01:13:49,400 --> 01:13:51,400
+Different Q-point.
+
+2307
+01:13:51,400 --> 01:13:53,400
+EOS.
+
+2308
+01:13:53,400 --> 01:13:55,400
+In 2019.
+
+2309
+01:13:55,400 --> 01:13:57,400
+You have to do.
+
+2310
+01:13:57,400 --> 01:13:59,400
+60 hours of such an experiment.
+
+2311
+01:13:59,400 --> 01:14:01,400
+You use Neon's instrument.
+
+2312
+01:14:01,400 --> 01:14:03,400
+With the latest method.
+
+2313
+01:14:03,400 --> 01:14:05,400
+Can be done in 10 minutes.
+
+2314
+01:14:05,400 --> 01:14:07,400
+If you are.
+
+2315
+01:14:07,400 --> 01:14:09,400
+This kind of nanometer.
+
+2316
+01:14:09,400 --> 01:14:11,400
+If you are interested.
+
+2317
+01:14:11,400 --> 01:14:13,400
+You can check it out.
+
+2318
+01:14:13,400 --> 01:14:15,400
+In the end.
+
+2319
+01:14:15,400 --> 01:14:17,400
+It will become.
+
+2320
+01:14:17,400 --> 01:14:19,400
+Electromagnetists.
+
+2321
+01:14:19,400 --> 01:14:21,400
+Want to do atomic wave solution.
+
+2322
+01:14:21,400 --> 01:14:23,400
+In 2020.
+
+2323
+01:14:23,400 --> 01:14:25,400
+Recently.
+
+2324
+01:14:25,400 --> 01:14:27,400
+He also did something like this.
+
+2325
+01:14:27,400 --> 01:14:29,400
+Silicon on graphene.
+
+2326
+01:14:29,400 --> 01:14:31,400
+He went to see.
+
+2327
+01:14:31,400 --> 01:14:33,400
+His surrounding atoms.
+
+2328
+01:14:33,400 --> 01:14:35,400
+Spectra of each atom.
+
+2329
+01:14:35,400 --> 01:14:37,400
+Every one.
+
+2330
+01:14:37,400 --> 01:14:39,400
+Of course it is a very difficult experiment.
+
+2331
+01:14:39,400 --> 01:14:41,400
+But they are also using.
+
+2332
+01:14:41,400 --> 01:14:43,400
+Very high Q-vector.
+
+2333
+01:14:43,400 --> 01:14:45,400
+To see this kind of spectra.
+
+2334
+01:14:45,400 --> 01:14:47,400
+So you can make sure.
+
+2335
+01:14:47,400 --> 01:14:49,400
+Detected signals.
+
+2336
+01:14:49,400 --> 01:14:51,400
+All come from a single atom.
+
+2337
+01:14:51,400 --> 01:14:53,400
+I'm not sure.
+
+2338
+01:14:53,400 --> 01:14:55,400
+How simple is this experiment.
+
+2339
+01:14:55,400 --> 01:14:57,400
+How complicated.
+
+2340
+01:14:57,400 --> 01:14:59,400
+Or where is its accuracy.
+
+2341
+01:14:59,400 --> 01:15:01,400
+But this is the current field.
+
+2342
+01:15:01,400 --> 01:15:03,400
+The latest research results.
+
+2343
+01:15:03,400 --> 01:15:05,400
+If you are interested.
+
+2344
+01:15:05,400 --> 01:15:07,400
+In the end.
+
+2345
+01:15:07,400 --> 01:15:09,400
+The information you really want to bring home.
+
+2346
+01:15:09,400 --> 01:15:11,400
+In fact.
+
+2347
+01:15:11,400 --> 01:15:13,400
+Electromagnetism is not just a magnifying glass.
+
+2348
+01:15:13,400 --> 01:15:15,400
+Although many people think so.
+
+2349
+01:15:15,400 --> 01:15:17,400
+Modern STEM fields.
+
+2350
+01:15:17,400 --> 01:15:19,400
+Is a very powerful tool.
+
+2351
+01:15:19,400 --> 01:15:21,400
+If you want to do.
+
+2352
+01:15:21,400 --> 01:15:23,400
+The experiments I just mentioned.
+
+2353
+01:15:23,400 --> 01:15:25,400
+You can choose some open facilities.
+
+2354
+01:15:25,400 --> 01:15:27,400
+Like Oak Ridge.
+
+2355
+01:15:27,400 --> 01:15:29,400
+Molecular foundry.
+
+2356
+01:15:29,400 --> 01:15:31,400
+Berkeley.
+
+2357
+01:15:31,400 --> 01:15:33,400
+ERC in Germany.
+
+2358
+01:15:33,400 --> 01:15:35,400
+STEM in the UK.
+
+2359
+01:15:35,400 --> 01:15:37,400
+Nanotechnology platform in Japan.
+
+2360
+01:15:37,400 --> 01:15:39,400
+You can apply for some.
+
+2361
+01:15:39,400 --> 01:15:41,400
+You can write your proposal.
+
+2362
+01:15:41,400 --> 01:15:43,400
+To apply for time.
+
+2363
+01:15:43,400 --> 01:15:45,400
+Then do such an experiment.
+
+2364
+01:15:45,400 --> 01:15:47,400
+The above is probably.
+
+2365
+01:15:47,400 --> 01:15:49,400
+Today's content.
+
+2366
+01:15:49,400 --> 01:15:51,400
+If I am also in.
+
+2367
+01:15:51,400 --> 01:15:53,400
+I want to do more glass recently.
+
+2368
+01:15:53,400 --> 01:15:55,400
+Then there are some.
+
+2369
+01:15:55,400 --> 01:15:57,400
+Is the MOF glass.
+
+2370
+01:15:57,400 --> 01:15:59,400
+Or the glass on the secondary material.
+
+2371
+01:15:59,400 --> 01:16:01,400
+If there is such a similar sample.
+
+2372
+01:16:01,400 --> 01:16:03,400
+Thank you.
+
+2373
+01:16:03,400 --> 01:16:05,400
+Thank you for the speech.
+
+2374
+01:16:05,400 --> 01:16:07,400
+Very complete.
+
+2375
+01:16:07,400 --> 01:16:09,400
+Let's applaud first.
+
+2376
+01:16:09,400 --> 01:16:11,400
+Thank you for his speech.
+
+2377
+01:16:15,400 --> 01:16:17,400
+Then.
+
+2378
+01:16:17,400 --> 01:16:19,400
+Let's go straight to the question.
+
+2379
+01:16:19,400 --> 01:16:21,400
+Because the time seems to have passed.
+
+2380
+01:16:21,400 --> 01:16:23,400
+Sorry.
+
+2381
+01:16:23,400 --> 01:16:25,400
+It doesn't matter.
+
+2382
+01:16:27,400 --> 01:16:29,400
+To add.
+
+2383
+01:16:29,400 --> 01:16:31,400
+This is a thing called paradigm.
+
+2384
+01:16:31,400 --> 01:16:33,400
+Also throw proposal.
+
+2385
+01:16:33,400 --> 01:16:35,400
+Then we can do the experiment for you.
+
+2386
+01:16:35,400 --> 01:16:37,400
+Cornell.
+
+2387
+01:16:37,400 --> 01:16:39,400
+You mean.
+
+2388
+01:16:39,400 --> 01:16:41,400
+You can also do this.
+
+2389
+01:16:41,400 --> 01:16:43,400
+Yes.
+
+2390
+01:16:43,400 --> 01:16:45,400
+Thank you.
+
+2391
+01:16:45,400 --> 01:16:47,400
+Yes.
+
+2392
+01:16:47,400 --> 01:16:49,400
+If.
+
+2393
+01:16:49,400 --> 01:16:51,400
+Finally, to add.
+
+2394
+01:16:51,400 --> 01:16:53,400
+If you are very interested in 4D STEM.
+
+2395
+01:16:53,400 --> 01:16:55,400
+Like I just said.
+
+2396
+01:16:55,400 --> 01:16:57,400
+Or Berkeley.
+
+2397
+01:16:57,400 --> 01:16:59,400
+Then if you are.
+
+2398
+01:16:59,400 --> 01:17:01,400
+EOS.
+
+2399
+01:17:01,400 --> 01:17:03,400
+If you are very interested.
+
+2400
+01:17:03,400 --> 01:17:05,400
+Ocarina and Super STEM.
+
+2401
+01:17:05,400 --> 01:17:07,400
+At present.
+
+2402
+01:17:07,400 --> 01:17:09,400
+Basically the best in the world.
+
+2403
+01:17:09,400 --> 01:17:11,400
+Everyone can.
+
+2404
+01:17:11,400 --> 01:17:13,400
+Take it as a priority.
+
+2405
+01:17:23,400 --> 01:17:25,400
+If everyone has no questions.
+
+2406
+01:17:25,400 --> 01:17:27,400
+I actually have a question.
+
+2407
+01:17:27,400 --> 01:17:29,400
+Sorry, you ask first.
+
+2408
+01:17:29,400 --> 01:17:31,400
+OK.
+
+2409
+01:17:31,400 --> 01:17:33,400
+This EOS.
+
+2410
+01:17:33,400 --> 01:17:35,400
+Can you measure acetone?
+
+2411
+01:17:35,400 --> 01:17:37,400
+Because the general RPEC.
+
+2412
+01:17:37,400 --> 01:17:39,400
+The reason is because it can only measure single particles.
+
+2413
+01:17:39,400 --> 01:17:41,400
+But EOS looks like.
+
+2414
+01:17:41,400 --> 01:17:43,400
+Should be able to measure.
+
+2415
+01:17:43,400 --> 01:17:45,400
+Because it looks like.
+
+2416
+01:17:45,400 --> 01:17:47,400
+And it should be.
+
+2417
+01:17:47,400 --> 01:17:49,400
+Can also measure.
+
+2418
+01:17:49,400 --> 01:17:51,400
+Then.
+
+2419
+01:17:51,400 --> 01:17:53,400
+I have seen someone.
+
+2420
+01:17:53,400 --> 01:17:55,400
+Measure.
+
+2421
+01:17:55,400 --> 01:17:57,400
+If it is vibrational.
+
+2422
+01:17:57,400 --> 01:17:59,400
+Someone is measuring.
+
+2423
+01:17:59,400 --> 01:18:01,400
+Then.
+
+2424
+01:18:01,400 --> 01:18:03,400
+This paper.
+
+2425
+01:18:03,400 --> 01:18:05,400
+It actually mentions a little.
+
+2426
+01:18:05,400 --> 01:18:07,400
+Acetone effect.
+
+2427
+01:18:07,400 --> 01:18:09,400
+But I'm not sure.
+
+2428
+01:18:09,400 --> 01:18:11,400
+Does it have anything to do with what you said?
+
+2429
+01:18:11,400 --> 01:18:13,400
+Because I am in this field.
+
+2430
+01:18:13,400 --> 01:18:15,400
+I know nothing about acetone.
+
+2431
+01:18:15,400 --> 01:18:17,400
+But there is also a strange question here.
+
+2432
+01:18:17,400 --> 01:18:19,400
+Why does it have a selection rule?
+
+2433
+01:18:19,400 --> 01:18:21,400
+I just can't figure it out.
+
+2434
+01:18:21,400 --> 01:18:23,400
+Electron loss.
+
+2435
+01:18:23,400 --> 01:18:25,400
+Is there any special selection rule?
+
+2436
+01:18:25,400 --> 01:18:27,400
+You can think of it as.
+
+2437
+01:18:27,400 --> 01:18:29,400
+Its mechanism.
+
+2438
+01:18:29,400 --> 01:18:31,400
+General EOS.
+
+2439
+01:18:31,400 --> 01:18:33,400
+It is still dipole scattering.
+
+2440
+01:18:33,400 --> 01:18:35,400
+It is basically.
+
+2441
+01:18:35,400 --> 01:18:37,400
+There is no resonant.
+
+2442
+01:18:37,400 --> 01:18:39,400
+So it follows the selection rule.
+
+2443
+01:18:39,400 --> 01:18:41,400
+That is Fermi golden rule.
+
+2444
+01:18:43,400 --> 01:18:45,400
+If it is Fermi.
+
+2445
+01:18:45,400 --> 01:18:47,400
+If it is simply Fermi golden rule.
+
+2446
+01:18:47,400 --> 01:18:49,400
+You mean.
+
+2447
+01:18:49,400 --> 01:18:51,400
+Is it like the Fermi golden rule of light and snow?
+
+2448
+01:18:51,400 --> 01:18:53,400
+Yes.
+
+2449
+01:18:53,400 --> 01:18:55,400
+It is.
+
+2450
+01:18:55,400 --> 01:18:57,400
+Fermi golden rule of light and snow.
+
+2451
+01:18:57,400 --> 01:18:59,400
+Then.
+
+2452
+01:18:59,400 --> 01:19:01,400
+That is.
+
+2453
+01:19:01,400 --> 01:19:03,400
+According to your.
+
+2454
+01:19:03,400 --> 01:19:05,400
+Angle.
+
+2455
+01:19:05,400 --> 01:19:07,400
+It is the focus angle.
+
+2456
+01:19:07,400 --> 01:19:09,400
+And the absorption angle is different.
+
+2457
+01:19:09,400 --> 01:19:11,400
+You will see your.
+
+2458
+01:19:11,400 --> 01:19:13,400
+EOS signal will be different.
+
+2459
+01:19:13,400 --> 01:19:15,400
+But.
+
+2460
+01:19:15,400 --> 01:19:17,400
+If it is light and snow.
+
+2461
+01:19:17,400 --> 01:19:19,400
+It should be optical phonon.
+
+2462
+01:19:19,400 --> 01:19:21,400
+It can be absorbed.
+
+2463
+01:19:21,400 --> 01:19:23,400
+Wait a minute.
+
+2464
+01:19:23,400 --> 01:19:25,400
+I confirm.
+
+2465
+01:19:25,400 --> 01:19:27,400
+Optical phonon is possible.
+
+2466
+01:19:27,400 --> 01:19:29,400
+It is IR active.
+
+2467
+01:19:29,400 --> 01:19:31,400
+Yes.
+
+2468
+01:19:31,400 --> 01:19:33,400
+But.
+
+2469
+01:19:33,400 --> 01:19:35,400
+I am looking at the paper.
+
+2470
+01:19:35,400 --> 01:19:37,400
+What I see now.
+
+2471
+01:19:37,400 --> 01:19:39,400
+The situation is.
+
+2472
+01:19:39,400 --> 01:19:41,400
+The first.
+
+2473
+01:19:41,400 --> 01:19:43,400
+You.
+
+2474
+01:19:43,400 --> 01:19:45,400
+That is.
+
+2475
+01:19:45,400 --> 01:19:47,400
+Its selection rule.
+
+2476
+01:19:47,400 --> 01:19:49,400
+It is still more like IR.
+
+2477
+01:19:49,400 --> 01:19:51,400
+We all say it is.
+
+2478
+01:19:51,400 --> 01:19:53,400
+IR optical phonon under the magnitude of nanometer.
+
+2479
+01:19:53,400 --> 01:19:55,400
+But if you put your Q vector.
+
+2480
+01:19:55,400 --> 01:19:57,400
+Move to a very high Q.
+
+2481
+01:19:57,400 --> 01:19:59,400
+Then greater than your.
+
+2482
+01:19:59,400 --> 01:20:01,400
+The first non-dimensional area.
+
+2483
+01:20:01,400 --> 01:20:03,400
+At present.
+
+2484
+01:20:03,400 --> 01:20:05,400
+Everyone's statement is that you are like this.
+
+2485
+01:20:05,400 --> 01:20:07,400
+You can see some.
+
+2486
+01:20:07,400 --> 01:20:09,400
+The selection rule that you could not see.
+
+2487
+01:20:09,400 --> 01:20:11,400
+Yes.
+
+2488
+01:20:11,400 --> 01:20:13,400
+But.
+
+2489
+01:20:13,400 --> 01:20:15,400
+The physical content should be.
+
+2490
+01:20:15,400 --> 01:20:17,400
+The current formula is already there.
+
+2491
+01:20:17,400 --> 01:20:19,400
+But I have to go.
+
+2492
+01:20:19,400 --> 01:20:21,400
+Try to understand the formula.
+
+2493
+01:20:21,400 --> 01:20:23,400
+Yes.
+
+2494
+01:20:23,400 --> 01:20:25,400
+Can I interrupt?
+
+2495
+01:20:25,400 --> 01:20:27,400
+Yes.
+
+2496
+01:20:27,400 --> 01:20:29,400
+You see this picture.
+
+2497
+01:20:29,400 --> 01:20:31,400
+You think of it as the simplest.
+
+2498
+01:20:31,400 --> 01:20:33,400
+If you put that to L.
+
+2499
+01:20:33,400 --> 01:20:35,400
+It is called Gamma as a starting point.
+
+2500
+01:20:35,400 --> 01:20:37,400
+Gamma to N.
+
+2501
+01:20:37,400 --> 01:20:39,400
+In the crystal structure.
+
+2502
+01:20:39,400 --> 01:20:41,400
+Facing the machine.
+
+2503
+01:20:41,400 --> 01:20:43,400
+You have a different one.
+
+2504
+01:20:43,400 --> 01:20:45,400
+Can run out.
+
+2505
+01:20:45,400 --> 01:20:47,400
+This will form you.
+
+2506
+01:20:47,400 --> 01:20:49,400
+Your so-called selection rule.
+
+2507
+01:20:49,400 --> 01:20:51,400
+Come out.
+
+2508
+01:20:53,400 --> 01:20:55,400
+Do you understand what I mean?
+
+2509
+01:20:55,400 --> 01:20:57,400
+So this picture.
+
+2510
+01:20:57,400 --> 01:20:59,400
+I saw this picture.
+
+2511
+01:20:59,400 --> 01:21:01,400
+The first impression is that it is very strange.
+
+2512
+01:21:01,400 --> 01:21:03,400
+All gray lines are theoretical calculations.
+
+2513
+01:21:03,400 --> 01:21:05,400
+All red lines are experimental data.
+
+2514
+01:21:05,400 --> 01:21:07,400
+Theoretical calculation.
+
+2515
+01:21:07,400 --> 01:21:09,400
+Gamma to N.
+
+2516
+01:21:09,400 --> 01:21:11,400
+Gamma to N.
+
+2517
+01:21:11,400 --> 01:21:13,400
+Is symmetrical.
+
+2518
+01:21:13,400 --> 01:21:15,400
+But it is not symmetrical in practice.
+
+2519
+01:21:15,400 --> 01:21:17,400
+Oh, OK.
+
+2520
+01:21:17,400 --> 01:21:19,400
+So this is when I saw this picture.
+
+2521
+01:21:19,400 --> 01:21:21,400
+The first thing I feel is.
+
+2522
+01:21:21,400 --> 01:21:23,400
+The area of ​​Plasma.
+
+2523
+01:21:23,400 --> 01:21:25,400
+Is symmetrical.
+
+2524
+01:21:25,400 --> 01:21:27,400
+But this one.
+
+2525
+01:21:27,400 --> 01:21:29,400
+Is not symmetrical.
+
+2526
+01:21:29,400 --> 01:21:31,400
+I do not know at the moment.
+
+2527
+01:21:31,400 --> 01:21:33,400
+What special things happen.
+
+2528
+01:21:33,400 --> 01:21:35,400
+The first one.
+
+2529
+01:21:35,400 --> 01:21:37,400
+This picture.
+
+2530
+01:21:37,400 --> 01:21:39,400
+As far as I know.
+
+2531
+01:21:39,400 --> 01:21:41,400
+Is done for more than 60 hours.
+
+2532
+01:21:41,400 --> 01:21:43,400
+Experimental error.
+
+2533
+01:21:43,400 --> 01:21:45,400
+Must be considered.
+
+2534
+01:21:45,400 --> 01:21:47,400
+I mean.
+
+2535
+01:21:47,400 --> 01:21:49,400
+In fact, we are doing.
+
+2536
+01:21:49,400 --> 01:21:51,400
+Momentum Resolution.
+
+2537
+01:21:51,400 --> 01:21:53,400
+Gamma to N.
+
+2538
+01:21:53,400 --> 01:21:55,400
+Gamma to N.
+
+2539
+01:21:55,400 --> 01:21:57,400
+Gamma to N.
+
+2540
+01:21:57,400 --> 01:21:59,400
+This picture is very simple.
+
+2541
+01:21:59,400 --> 01:22:01,400
+It should be symmetrical.
+
+2542
+01:22:01,400 --> 01:22:03,400
+Phonon is difficult to do.
+
+2543
+01:22:03,400 --> 01:22:05,400
+This energy is very low.
+
+2544
+01:22:05,400 --> 01:22:07,400
+So it takes a long time to collect.
+
+2545
+01:22:07,400 --> 01:22:09,400
+But.
+
+2546
+01:22:09,400 --> 01:22:11,400
+I think no matter how long you are.
+
+2547
+01:22:11,400 --> 01:22:13,400
+You will calculate.
+
+2548
+01:22:13,400 --> 01:22:15,400
+The position of the real loss peak.
+
+2549
+01:22:15,400 --> 01:22:17,400
+It must be.
+
+2550
+01:22:17,400 --> 01:22:19,400
+From one point to another.
+
+2551
+01:22:19,400 --> 01:22:21,400
+Slowly collect the data.
+
+2552
+01:22:21,400 --> 01:22:23,400
+Piled up.
+
+2553
+01:22:23,400 --> 01:22:25,400
+This is what I feel.
+
+2554
+01:22:25,400 --> 01:22:27,400
+I can not understand from the beginning.
+
+2555
+01:22:27,400 --> 01:22:29,400
+This picture is supposed to be.
+
+2556
+01:22:29,400 --> 01:22:31,400
+textbook.
+
+2557
+01:22:31,400 --> 01:22:33,400
+Or something else.
+
+2558
+01:22:33,400 --> 01:22:35,400
+This energy should be symmetrical.
+
+2559
+01:22:35,400 --> 01:22:37,400
+But your experiment is not symmetrical.
+
+2560
+01:22:37,400 --> 01:22:39,400
+That's what I do not understand.
+
+2561
+01:22:43,400 --> 01:22:45,400
+I can ask.
+
+2562
+01:22:45,400 --> 01:22:47,400
+Goodman is.
+
+2563
+01:22:47,400 --> 01:22:49,400
+Please say.
+
+2564
+01:22:49,400 --> 01:22:51,400
+Your name and organization.
+
+2565
+01:22:51,400 --> 01:22:53,400
+Which one is it?
+
+2566
+01:22:53,400 --> 01:22:55,400
+My last name is Liu.
+
+2567
+01:22:55,400 --> 01:22:57,400
+Liu Bei Liu.
+
+2568
+01:22:57,400 --> 01:22:59,400
+Thought is humble.
+
+2569
+01:22:59,400 --> 01:23:01,400
+Where are you now?
+
+2570
+01:23:01,400 --> 01:23:03,400
+I am in the United States.
+
+2571
+01:23:03,400 --> 01:23:05,400
+Maryland University.
+
+2572
+01:23:07,400 --> 01:23:09,400
+Also specializing in EOS.
+
+2573
+01:23:09,400 --> 01:23:11,400
+I am in Taiwan.
+
+2574
+01:23:11,400 --> 01:23:13,400
+EOS.
+
+2575
+01:23:13,400 --> 01:23:15,400
+I'm just a service here.
+
+2576
+01:23:15,400 --> 01:23:17,400
+Taiwan is EOS.
+
+2577
+01:23:17,400 --> 01:23:19,400
+Is a famous teacher.
+
+2578
+01:23:19,400 --> 01:23:21,400
+I used to be in that group.
+
+2579
+01:23:21,400 --> 01:23:23,400
+I understand.
+
+2580
+01:23:23,400 --> 01:23:25,400
+What you just said.
+
+2581
+01:23:25,400 --> 01:23:27,400
+In 1970.
+
+2582
+01:23:27,400 --> 01:23:29,400
+You just mentioned.
+
+2583
+01:23:29,400 --> 01:23:31,400
+David Muller.
+
+2584
+01:23:31,400 --> 01:23:33,400
+David Muller is my teacher.
+
+2585
+01:23:35,400 --> 01:23:37,400
+John Sircus.
+
+2586
+01:23:39,400 --> 01:23:41,400
+I know.
+
+2587
+01:23:41,400 --> 01:23:43,400
+The first.
+
+2588
+01:23:43,400 --> 01:23:45,400
+I was in Taiwan University.
+
+2589
+01:23:45,400 --> 01:23:47,400
+Postal boss.
+
+2590
+01:23:47,400 --> 01:23:49,400
+He is the first doctor.
+
+2591
+01:23:49,400 --> 01:23:51,400
+So you hear now.
+
+2592
+01:23:51,400 --> 01:23:53,400
+The most famous should be David Muller.
+
+2593
+01:23:53,400 --> 01:23:55,400
+David Muller is a countdown.
+
+2594
+01:23:55,400 --> 01:23:57,400
+Before the lab shut down.
+
+2595
+01:23:57,400 --> 01:23:59,400
+Doctor.
+
+2596
+01:23:59,400 --> 01:24:01,400
+But David Muller.
+
+2597
+01:24:01,400 --> 01:24:03,400
+He did not do EOS recently.
+
+2598
+01:24:03,400 --> 01:24:05,400
+You have one in front.
+
+2599
+01:24:05,400 --> 01:24:07,400
+Silicone dumbbell.
+
+2600
+01:24:07,400 --> 01:24:09,400
+That's called Fee Bateson.
+
+2601
+01:24:09,400 --> 01:24:11,400
+I know.
+
+2602
+01:24:11,400 --> 01:24:13,400
+The second doctor.
+
+2603
+01:24:13,400 --> 01:24:15,400
+That's it.
+
+2604
+01:24:15,400 --> 01:24:17,400
+You are familiar with Fee Bateson.
+
+2605
+01:24:17,400 --> 01:24:19,400
+Because Fee Bateson used to do.
+
+2606
+01:24:19,400 --> 01:24:21,400
+Q-dependent EOS.
+
+2607
+01:24:21,400 --> 01:24:23,400
+But not vibration.
+
+2608
+01:24:23,400 --> 01:24:25,400
+Yes.
+
+2609
+01:24:25,400 --> 01:24:27,400
+I am.
+
+2610
+01:24:27,400 --> 01:24:29,400
+Because our group does not have a device.
+
+2611
+01:24:29,400 --> 01:24:31,400
+I can only use.
+
+2612
+01:24:31,400 --> 01:24:33,400
+I can't.
+
+2613
+01:24:33,400 --> 01:24:35,400
+Do such a thing.
+
+2614
+01:24:35,400 --> 01:24:37,400
+This is actually.
+
+2615
+01:24:37,400 --> 01:24:39,400
+Because Fonon has been doing it for a long time.
+
+2616
+01:24:39,400 --> 01:24:41,400
+So this is not expected.
+
+2617
+01:24:41,400 --> 01:24:43,400
+Because if you say Plasma.
+
+2618
+01:24:43,400 --> 01:24:45,400
+About five seconds to solve.
+
+2619
+01:24:45,400 --> 01:24:47,400
+You mean like.
+
+2620
+01:24:47,400 --> 01:24:49,400
+You just this picture.
+
+2621
+01:24:49,400 --> 01:24:51,400
+Your last picture.
+
+2622
+01:24:51,400 --> 01:24:53,400
+This is not.
+
+2623
+01:24:53,400 --> 01:24:55,400
+It is scanned with Scanning TM.
+
+2624
+01:24:55,400 --> 01:24:57,400
+So.
+
+2625
+01:24:57,400 --> 01:24:59,400
+Your whole spectrum.
+
+2626
+01:24:59,400 --> 01:25:01,400
+What are you talking about?
+
+2627
+01:25:01,400 --> 01:25:03,400
+How long do you scan the spectrum image?
+
+2628
+01:25:03,400 --> 01:25:05,400
+How long will it end?
+
+2629
+01:25:05,400 --> 01:25:07,400
+It just needs to do some.
+
+2630
+01:25:07,400 --> 01:25:09,400
+This.
+
+2631
+01:25:09,400 --> 01:25:11,400
+Processing.
+
+2632
+01:25:11,400 --> 01:25:13,400
+But before.
+
+2633
+01:25:13,400 --> 01:25:15,400
+In the John Sialkas group.
+
+2634
+01:25:15,400 --> 01:25:17,400
+What they do is Q-dependent EOS.
+
+2635
+01:25:17,400 --> 01:25:19,400
+This one came out.
+
+2636
+01:25:19,400 --> 01:25:21,400
+No need to do.
+
+2637
+01:25:21,400 --> 01:25:23,400
+At most because it used to be a photo.
+
+2638
+01:25:23,400 --> 01:25:25,400
+So at most just do.
+
+2639
+01:25:25,400 --> 01:25:27,400
+Data to identify.
+
+2640
+01:25:27,400 --> 01:25:29,400
+But it's just a picture.
+
+2641
+01:25:29,400 --> 01:25:31,400
+It's the picture you see now.
+
+2642
+01:25:31,400 --> 01:25:33,400
+It is a.
+
+2643
+01:25:33,400 --> 01:25:35,400
+It used to be a photo.
+
+2644
+01:25:35,400 --> 01:25:37,400
+But because there is no.
+
+2645
+01:25:37,400 --> 01:25:39,400
+How to say.
+
+2646
+01:25:39,400 --> 01:25:41,400
+After you take a picture.
+
+2647
+01:25:41,400 --> 01:25:43,400
+You have to put the skill bar on it.
+
+2648
+01:25:43,400 --> 01:25:45,400
+Calculate energy.
+
+2649
+01:25:45,400 --> 01:25:47,400
+So the role of Fee Patterson is.
+
+2650
+01:25:47,400 --> 01:25:49,400
+The digital computer.
+
+2651
+01:25:49,400 --> 01:25:51,400
+To put the coordinates.
+
+2652
+01:25:51,400 --> 01:25:53,400
+The number of coordinates.
+
+2653
+01:25:53,400 --> 01:25:55,400
+Then my teacher is.
+
+2654
+01:25:55,400 --> 01:25:57,400
+My teacher is a watch.
+
+2655
+01:25:57,400 --> 01:25:59,400
+He is a computer watch.
+
+2656
+01:25:59,400 --> 01:26:01,400
+So it is.
+
+2657
+01:26:05,400 --> 01:26:07,400
+But I think the future.
+
+2658
+01:26:07,400 --> 01:26:09,400
+Momentum Resolve.
+
+2659
+01:26:09,400 --> 01:26:11,400
+This year.
+
+2660
+01:26:11,400 --> 01:26:13,400
+After he used a slide.
+
+2661
+01:26:13,400 --> 01:26:15,400
+I think that way.
+
+2662
+01:26:15,400 --> 01:26:17,400
+Copy the most primitive way.
+
+2663
+01:26:17,400 --> 01:26:19,400
+He put a slide on it.
+
+2664
+01:26:19,400 --> 01:26:21,400
+You can do it.
+
+2665
+01:26:21,400 --> 01:26:23,400
+You can get it in 10 minutes.
+
+2666
+01:26:23,400 --> 01:26:25,400
+You can get it in a minute.
+
+2667
+01:26:25,400 --> 01:26:27,400
+His slide is.
+
+2668
+01:26:27,400 --> 01:26:29,400
+The earliest David Muller.
+
+2669
+01:26:29,400 --> 01:26:31,400
+The device they use.
+
+2670
+01:26:33,400 --> 01:26:35,400
+That's right.
+
+2671
+01:26:35,400 --> 01:26:37,400
+You just change your EOS.
+
+2672
+01:26:37,400 --> 01:26:39,400
+Yes.
+
+2673
+01:26:39,400 --> 01:26:41,400
+But this is.
+
+2674
+01:26:41,400 --> 01:26:43,400
+You can do it on EOS.
+
+2675
+01:26:43,400 --> 01:26:45,400
+You can do it on EOS.
+
+2676
+01:26:45,400 --> 01:26:47,400
+But we can't do it ourselves.
+
+2677
+01:26:47,400 --> 01:26:49,400
+You can change it on EOS.
+
+2678
+01:26:49,400 --> 01:26:51,400
+Or you.
+
+2679
+01:26:51,400 --> 01:26:53,400
+In your.
+
+2680
+01:26:53,400 --> 01:26:55,400
+You usually have a screen now.
+
+2681
+01:26:55,400 --> 01:26:57,400
+You can change it on your screen.
+
+2682
+01:26:57,400 --> 01:26:59,400
+You can change it on your screen.
+
+2683
+01:26:59,400 --> 01:27:01,400
+Anyway, you just use a slide.
+
+2684
+01:27:01,400 --> 01:27:03,400
+That's it.
+
+2685
+01:27:03,400 --> 01:27:05,400
+That's it.
+
+2686
+01:27:05,400 --> 01:27:07,400
+It's not hard.
+
+2687
+01:27:07,400 --> 01:27:09,400
+It's not hard.
+
+2688
+01:27:09,400 --> 01:27:11,400
+We used to change it.
+
+2689
+01:27:11,400 --> 01:27:13,400
+If you want to cooperate.
+
+2690
+01:27:13,400 --> 01:27:15,400
+If you want to cooperate.
+
+2691
+01:27:15,400 --> 01:27:17,400
+I think it's not difficult in Asia.
+
+2692
+01:27:17,400 --> 01:27:19,400
+I think it's not difficult in Asia.
+
+2693
+01:27:19,400 --> 01:27:21,400
+It's harder in America.
+
+2694
+01:27:21,400 --> 01:27:23,400
+Because you have to call the manufacturers.
+
+2695
+01:27:23,400 --> 01:27:25,400
+Because you have to call the manufacturers.
+
+2696
+01:27:25,400 --> 01:27:27,400
+That's right.
+
+2697
+01:27:27,400 --> 01:27:29,400
+It's hard for us.
+
+2698
+01:27:29,400 --> 01:27:31,400
+It's hard for us.
+
+2699
+01:27:31,400 --> 01:27:33,400
+So you guys.
+
+2700
+01:27:33,400 --> 01:27:35,400
+The whole experience of the University of Tokyo.
+
+2701
+01:27:35,400 --> 01:27:37,400
+The whole experience of the University of Tokyo.
+
+2702
+01:27:37,400 --> 01:27:39,400
+A lot of.
+
+2703
+01:27:39,400 --> 01:27:41,400
+That's what the lab does.
+
+2704
+01:27:41,400 --> 01:27:43,400
+Is that what it means?
+
+2705
+01:27:43,400 --> 01:27:45,400
+About a dozen, at the moment.
+
+2706
+01:27:45,400 --> 01:27:47,400
+About a dozen, at the moment.
+
+2707
+01:27:47,400 --> 01:27:49,400
+More than 10 is open to the public.
+
+2708
+01:27:49,400 --> 01:27:51,400
+That is the nanotechnology platform I mentioned at the end.
+
+2709
+01:27:51,400 --> 01:27:53,400
+The nanotechnology platform I mentioned at the end.
+
+2710
+01:27:53,400 --> 01:27:55,400
+But there's a part of the teahouse.
+
+2711
+01:27:55,400 --> 01:27:57,400
+I just said a lot.
+
+2712
+01:27:57,400 --> 01:27:59,400
+a lot of developers.
+
+2713
+01:27:59,400 --> 01:28:01,400
+A lot of developers.
+
+2714
+01:28:01,400 --> 01:28:03,400
+It's their lab.
+
+2715
+01:28:03,400 --> 01:28:05,400
+It's their lab.
+
+2716
+01:28:05,400 --> 01:28:07,400
+So I want to ask you.
+
+2717
+01:28:07,400 --> 01:28:09,400
+So I want to ask you.
+
+2718
+01:28:09,400 --> 01:28:11,400
+You just mentioned 4D.
+
+2719
+01:28:11,400 --> 01:28:13,400
+Especially the part of the power plant.
+
+2720
+01:28:13,400 --> 01:28:15,400
+You still have to use it now.
+
+2721
+01:28:15,400 --> 01:28:17,400
+What I know is.
+
+2722
+01:28:17,400 --> 01:28:19,400
+There is no commercial software.
+
+2723
+01:28:19,400 --> 01:28:21,400
+Let's just do it.
+
+2724
+01:28:21,400 --> 01:28:23,400
+You still have to have some of your own.
+
+2725
+01:28:23,400 --> 01:28:25,400
+Now.
+
+2726
+01:28:25,400 --> 01:28:27,400
+This kind of DPC.
+
+2727
+01:28:27,400 --> 01:28:29,400
+No, no, no.
+
+2728
+01:28:29,400 --> 01:28:31,400
+You're the one on the right.
+
+2729
+01:28:31,400 --> 01:28:33,400
+You're the one on the left.
+
+2730
+01:28:33,400 --> 01:28:35,400
+I'm on the right.
+
+2731
+01:28:35,400 --> 01:28:37,400
+You're on the right.
+
+2732
+01:28:37,400 --> 01:28:39,400
+This is what we do.
+
+2733
+01:28:39,400 --> 01:28:41,400
+This is what we do.
+
+2734
+01:28:41,400 --> 01:28:43,400
+They're doing this.
+
+2735
+01:28:43,400 --> 01:28:45,400
+So they write the code themselves.
+
+2736
+01:28:45,400 --> 01:28:47,400
+But now.
+
+2737
+01:28:47,400 --> 01:28:49,400
+I'm going to this year.
+
+2738
+01:28:49,400 --> 01:28:51,400
+If you go to SEMO Fisher Japan in July.
+
+2739
+01:28:51,400 --> 01:28:53,400
+If you go to SEMO Fisher Japan in July.
+
+2740
+01:28:53,400 --> 01:28:55,400
+If you go to SEMO Fisher Japan in July.
+
+2741
+01:28:55,400 --> 01:28:57,400
+The latest SEMO Fisher.
+
+2742
+01:28:57,400 --> 01:28:59,400
+The latest SEMO Fisher.
+
+2743
+01:28:59,400 --> 01:29:01,400
+You can do DPC.
+
+2744
+01:29:01,400 --> 01:29:03,400
+Because I thought.
+
+2745
+01:29:03,400 --> 01:29:05,400
+We still have to use Python.
+
+2746
+01:29:05,400 --> 01:29:07,400
+We still have to use Python.
+
+2747
+01:29:07,400 --> 01:29:09,400
+If you look at it now.
+
+2748
+01:29:09,400 --> 01:29:11,400
+You can think of it.
+
+2749
+01:29:11,400 --> 01:29:13,400
+The one I went to see with the teacher.
+
+2750
+01:29:13,400 --> 01:29:15,400
+It's not even Titan's DPC.
+
+2751
+01:29:15,400 --> 01:29:17,400
+It's not even Titan's DPC.
+
+2752
+01:29:17,400 --> 01:29:19,400
+Python code.
+
+2753
+01:29:19,400 --> 01:29:21,400
+Python code.
+
+2754
+01:29:21,400 --> 01:29:23,400
+There are a lot of commercial software.
+
+2755
+01:29:23,400 --> 01:29:25,400
+There are a lot of commercial software.
+
+2756
+01:29:25,400 --> 01:29:27,400
+Because of our biggest gold.
+
+2757
+01:29:27,400 --> 01:29:29,400
+Because of our biggest gold.
+
+2758
+01:29:29,400 --> 01:29:31,400
+And there's a bear.
+
+2759
+01:29:31,400 --> 01:29:33,400
+And there's a bear.
+
+2760
+01:29:33,400 --> 01:29:35,400
+He has been addicted recently.
+
+2761
+01:29:35,400 --> 01:29:37,400
+He has been addicted recently.
+
+2762
+01:29:37,400 --> 01:29:39,400
+Because it's the first time he developed it.
+
+2763
+01:29:39,400 --> 01:29:41,400
+Because it's the first time he developed it.
+
+2764
+01:29:41,400 --> 01:29:43,400
+But I.
+
+2765
+01:29:43,400 --> 01:29:45,400
+But I.
+
+2766
+01:29:45,400 --> 01:29:47,400
+The thing that's below you.
+
+2767
+01:29:47,400 --> 01:29:49,400
+The thing that's below you.
+
+2768
+01:29:49,400 --> 01:29:51,400
+The next one I remember one day.
+
+2769
+01:29:51,400 --> 01:29:53,400
+Just this one.
+
+2770
+01:29:53,400 --> 01:29:55,400
+The first page.
+
+2771
+01:29:55,400 --> 01:29:57,400
+The first page.
+
+2772
+01:29:57,400 --> 01:29:59,400
+This thing.
+
+2773
+01:29:59,400 --> 01:30:01,400
+No, it's on the next page.
+
+2774
+01:30:01,400 --> 01:30:03,400
+Sorry.
+
+2775
+01:30:03,400 --> 01:30:05,400
+So that's it.
+
+2776
+01:30:05,400 --> 01:30:07,400
+Right.
+
+2777
+01:30:07,400 --> 01:30:09,400
+This thing was first
+
+2778
+01:30:09,400 --> 01:30:11,400
+made by a Japanese
+
+2779
+01:30:11,400 --> 01:30:13,400
+named Nims.
+
+2780
+01:30:13,400 --> 01:30:15,400
+A Japanese named Nims made it.
+
+2781
+01:30:15,400 --> 01:30:17,400
+Ah, Nims.
+
+2782
+01:30:17,400 --> 01:30:19,400
+I go there often.
+
+2783
+01:30:19,400 --> 01:30:21,400
+What's it called? Kimoto.
+
+2784
+01:30:21,400 --> 01:30:23,400
+Koji Kimoto.
+
+2785
+01:30:23,400 --> 01:30:25,400
+And.
+
+2786
+01:30:25,400 --> 01:30:27,400
+I thought it was commercialized.
+
+2787
+01:30:27,400 --> 01:30:29,400
+But in fact, they said they didn't.
+
+2788
+01:30:29,400 --> 01:30:31,400
+They only
+
+2789
+01:30:31,400 --> 01:30:33,400
+finished the 4D
+
+2790
+01:30:33,400 --> 01:30:35,400
+process.
+
+2791
+01:30:35,400 --> 01:30:37,400
+But later,
+
+2792
+01:30:37,400 --> 01:30:39,400
+at that time,
+
+2793
+01:30:39,400 --> 01:30:41,400
+in 2011,
+
+2794
+01:30:41,400 --> 01:30:43,400
+they did it manually.
+
+2795
+01:30:43,400 --> 01:30:45,400
+But now
+
+2796
+01:30:45,400 --> 01:30:47,400
+you don't see such a good result.
+
+2797
+01:30:47,400 --> 01:30:49,400
+Yes.
+
+2798
+01:30:49,400 --> 01:30:51,400
+Most of the 4D
+
+2799
+01:30:51,400 --> 01:30:53,400
+that are made now are made in Europe and America.
+
+2800
+01:30:53,400 --> 01:30:55,400
+I can assure you that
+
+2801
+01:30:55,400 --> 01:30:57,400
+there are very few people
+
+2802
+01:30:57,400 --> 01:30:59,400
+who do this in Japan at this stage.
+
+2803
+01:30:59,400 --> 01:31:01,400
+Very few.
+
+2804
+01:31:01,400 --> 01:31:03,400
+But I know Kimoto was the first one to do it.
+
+2805
+01:31:03,400 --> 01:31:05,400
+I know Kimoto was the first one to do it.
+
+2806
+01:31:05,400 --> 01:31:07,400
+I know Kimoto was the first one to do it.
+
+2807
+01:31:07,400 --> 01:31:09,400
+I know Kimoto was the first one to do it.
+
+2808
+01:31:09,400 --> 01:31:11,400
+I know Kimoto was the first one to do it.
+
+2809
+01:31:11,400 --> 01:31:13,400
+I will go to Kimoto's factory
+
+2810
+01:31:13,400 --> 01:31:15,400
+to do the experiment next week.
+
+2811
+01:31:15,400 --> 01:31:17,400
+Because this thing.
+
+2812
+01:31:17,400 --> 01:31:19,400
+Sorry.
+
+2813
+01:31:19,400 --> 01:31:21,400
+We are talking too professionally.
+
+2814
+01:31:21,400 --> 01:31:23,400
+To put it simply,
+
+2815
+01:31:23,400 --> 01:31:25,400
+when every muscle
+
+2816
+01:31:25,400 --> 01:31:27,400
+has an order
+
+2817
+01:31:27,400 --> 01:31:29,400
+and a specific direction,
+
+2818
+01:31:29,400 --> 01:31:31,400
+in Kimoto's theory,
+
+2819
+01:31:31,400 --> 01:31:33,400
+I know this muscle,
+
+2820
+01:31:33,400 --> 01:31:35,400
+I know its muscle structure.
+
+2821
+01:31:35,400 --> 01:31:37,400
+In terms of muscle structure,
+
+2822
+01:31:37,400 --> 01:31:39,400
+you have the so-called symmetry.
+
+2823
+01:31:39,400 --> 01:31:41,400
+The most important thing about Kimoto
+
+2824
+01:31:41,400 --> 01:31:43,400
+is that he talked about
+
+2825
+01:31:43,400 --> 01:31:45,400
+the symmetry of the Atomic Scale,
+
+2826
+01:31:45,400 --> 01:31:47,400
+not the
+
+2827
+01:31:47,400 --> 01:31:49,400
+symmetry of a large muscle.
+
+2828
+01:31:49,400 --> 01:31:51,400
+He used the
+
+2829
+01:31:51,400 --> 01:31:53,400
+rightmost picture
+
+2830
+01:31:53,400 --> 01:31:55,400
+called the most typical
+
+2831
+01:31:55,400 --> 01:31:57,400
+Pythagorean Theorem.
+
+2832
+01:31:57,400 --> 01:31:59,400
+He can make
+
+2833
+01:31:59,400 --> 01:32:01,400
+the so-called
+
+2834
+01:32:01,400 --> 01:32:03,400
+4D
+
+2835
+01:32:03,400 --> 01:32:05,400
+figure of the
+
+2836
+01:32:05,400 --> 01:32:07,400
+Pythagorean Theorem.
+
+2837
+01:32:07,400 --> 01:32:09,400
+After the 4D figure
+
+2838
+01:32:09,400 --> 01:32:11,400
+comes out,
+
+2839
+01:32:11,400 --> 01:32:13,400
+based on the
+
+2840
+01:32:13,400 --> 01:32:15,400
+inner ring and outer ring,
+
+2841
+01:32:15,400 --> 01:32:17,400
+you can know the symmetry
+
+2842
+01:32:17,400 --> 01:32:19,400
+of the muscle structure.
+
+2843
+01:32:19,400 --> 01:32:21,400
+More importantly,
+
+2844
+01:32:21,400 --> 01:32:23,400
+in addition to proving this,
+
+2845
+01:32:23,400 --> 01:32:25,400
+Kimoto also talked about
+
+2846
+01:32:25,400 --> 01:32:27,400
+why in electromagnetic microscope,
+
+2847
+01:32:27,400 --> 01:32:29,400
+especially in scanning TM,
+
+2848
+01:32:29,400 --> 01:32:31,400
+the loss of the atomic scale is larger,
+
+2849
+01:32:31,400 --> 01:32:33,400
+the loss of the atomic state is second,
+
+2850
+01:32:33,400 --> 01:32:35,400
+and the loss of the oxygen is the last.
+
+2851
+01:32:35,400 --> 01:32:37,400
+In his diffraction pattern,
+
+2852
+01:32:37,400 --> 01:32:39,400
+he told you
+
+2853
+01:32:39,400 --> 01:32:41,400
+why the image I see now
+
+2854
+01:32:41,400 --> 01:32:43,400
+has such a big intensity change
+
+2855
+01:32:43,400 --> 01:32:45,400
+when I circle
+
+2856
+01:32:45,400 --> 01:32:47,400
+it.
+
+2857
+01:32:47,400 --> 01:32:49,400
+So in fact,
+
+2858
+01:32:49,400 --> 01:32:51,400
+I read that paper for a long time,
+
+2859
+01:32:51,400 --> 01:32:53,400
+and I found that
+
+2860
+01:32:53,400 --> 01:32:55,400
+I thought there was a commercial software
+
+2861
+01:32:55,400 --> 01:32:57,400
+that could do the
+
+2862
+01:32:57,400 --> 01:32:59,400
+post-processing,
+
+2863
+01:32:59,400 --> 01:33:01,400
+but there was no
+
+2864
+01:33:01,400 --> 01:33:03,400
+post-processing after
+
+2865
+01:33:03,400 --> 01:33:05,400
+the commercial software
+
+2866
+01:33:05,400 --> 01:33:07,400
+did the 4D.
+
+2867
+01:33:07,400 --> 01:33:09,400
+I think the biggest problem
+
+2868
+01:33:09,400 --> 01:33:11,400
+now is that,
+
+2869
+01:33:11,400 --> 01:33:13,400
+as you just said,
+
+2870
+01:33:13,400 --> 01:33:15,400
+Kimoto himself wrote.
+
+2871
+01:33:15,400 --> 01:33:17,400
+Yes, because the first time I heard this
+
+2872
+01:33:17,400 --> 01:33:19,400
+was also in UC Irvine.
+
+2873
+01:33:19,400 --> 01:33:21,400
+They have a group
+
+2874
+01:33:21,400 --> 01:33:23,400
+doing this.
+
+2875
+01:33:23,400 --> 01:33:25,400
+Then when they talked about it,
+
+2876
+01:33:25,400 --> 01:33:27,400
+I realized that
+
+2877
+01:33:27,400 --> 01:33:29,400
+in the past,
+
+2878
+01:33:29,400 --> 01:33:31,400
+they might have
+
+2879
+01:33:31,400 --> 01:33:33,400
+read Kimoto's paper
+
+2880
+01:33:33,400 --> 01:33:35,400
+as reading,
+
+2881
+01:33:35,400 --> 01:33:37,400
+but they didn't mention it,
+
+2882
+01:33:37,400 --> 01:33:39,400
+because the concept was the same.
+
+2883
+01:33:39,400 --> 01:33:41,400
+It used to be called Scanning CBET.
+
+2884
+01:33:41,400 --> 01:33:43,400
+No, the word Kimoto used
+
+2885
+01:33:43,400 --> 01:33:45,400
+was more fancy,
+
+2886
+01:33:45,400 --> 01:33:47,400
+called Atomic Scale Symmetry.
+
+2887
+01:33:51,400 --> 01:33:53,400
+Oh, I see.
+
+2888
+01:33:53,400 --> 01:33:55,400
+Yes, it's Atomic Scale Symmetry.
+
+2889
+01:33:55,400 --> 01:33:57,400
+Because if you really do
+
+2890
+01:33:57,400 --> 01:33:59,400
+the calculation of CBET,
+
+2891
+01:33:59,400 --> 01:34:01,400
+the CBET pattern
+
+2892
+01:34:01,400 --> 01:34:03,400
+made by these three elements
+
+2893
+01:34:03,400 --> 01:34:05,400
+is really different.
+
+2894
+01:34:05,400 --> 01:34:07,400
+We seem to be talking too professionally.
+
+2895
+01:34:07,400 --> 01:34:09,400
+Can I ask you a question?
+
+2896
+01:34:09,400 --> 01:34:11,400
+Sure.
+
+2897
+01:34:11,400 --> 01:34:13,400
+Sorry.
+
+2898
+01:34:13,400 --> 01:34:15,400
+Do you have any questions?
+
+2899
+01:34:15,400 --> 01:34:17,400
+If you have any questions
+
+2900
+01:34:17,400 --> 01:34:19,400
+about CBET,
+
+2901
+01:34:19,400 --> 01:34:21,400
+you can ask.
+
+2902
+01:34:23,400 --> 01:34:25,400
+Hello.
+
+2903
+01:34:25,400 --> 01:34:27,400
+Can you hear me?
+
+2904
+01:34:27,400 --> 01:34:29,400
+Yes, I can.
+
+2905
+01:34:29,400 --> 01:34:31,400
+I want to add
+
+2906
+01:34:31,400 --> 01:34:33,400
+that UC Irvine
+
+2907
+01:34:33,400 --> 01:34:35,400
+also has
+
+2908
+01:34:35,400 --> 01:34:37,400
+user facilities
+
+2909
+01:34:37,400 --> 01:34:39,400
+for training
+
+2910
+01:34:39,400 --> 01:34:41,400
+and samples.
+
+2911
+01:34:41,400 --> 01:34:43,400
+They also have staff
+
+2912
+01:34:43,400 --> 01:34:45,400
+to do experiments.
+
+2913
+01:34:45,400 --> 01:34:47,400
+Our group often
+
+2914
+01:34:47,400 --> 01:34:49,400
+goes to UC Irvine to do TEM.
+
+2915
+01:34:49,400 --> 01:34:51,400
+I have a question about
+
+2916
+01:34:51,400 --> 01:34:53,400
+when we were doing
+
+2917
+01:34:53,400 --> 01:34:55,400
+some low-melt point
+
+2918
+01:34:55,400 --> 01:34:57,400
+metal TEM,
+
+2919
+01:34:57,400 --> 01:34:59,400
+we were doing
+
+2920
+01:34:59,400 --> 01:35:01,400
+cryo TEM,
+
+2921
+01:35:01,400 --> 01:35:03,400
+but when we were
+
+2922
+01:35:03,400 --> 01:35:05,400
+using cryo holder,
+
+2923
+01:35:05,400 --> 01:35:07,400
+we couldn't get
+
+2924
+01:35:07,400 --> 01:35:09,400
+a very good resolution
+
+2925
+01:35:09,400 --> 01:35:11,400
+when we were doing
+
+2926
+01:35:11,400 --> 01:35:13,400
+stem HEDF
+
+2927
+01:35:13,400 --> 01:35:15,400
+mapping.
+
+2928
+01:35:15,400 --> 01:35:17,400
+I want to know
+
+2929
+01:35:17,400 --> 01:35:19,400
+if there are
+
+2930
+01:35:19,400 --> 01:35:21,400
+other ways
+
+2931
+01:35:21,400 --> 01:35:23,400
+to do
+
+2932
+01:35:23,400 --> 01:35:25,400
+low-melting materials
+
+2933
+01:35:25,400 --> 01:35:27,400
+to get
+
+2934
+01:35:27,400 --> 01:35:29,400
+a better
+
+2935
+01:35:29,400 --> 01:35:31,400
+Z-contrast
+
+2936
+01:35:31,400 --> 01:35:33,400
+or other
+
+2937
+01:35:33,400 --> 01:35:35,400
+resolutions.
+
+2938
+01:35:35,400 --> 01:35:37,400
+Thank you for your question.
+
+2939
+01:35:37,400 --> 01:35:39,400
+My understanding is
+
+2940
+01:35:39,400 --> 01:35:41,400
+that you can't get
+
+2941
+01:35:41,400 --> 01:35:43,400
+a very good resolution
+
+2942
+01:35:43,400 --> 01:35:45,400
+when you are doing cryo
+
+2943
+01:35:45,400 --> 01:35:47,400
+because your liquid nitrogen
+
+2944
+01:35:47,400 --> 01:35:49,400
+actually flows.
+
+2945
+01:35:49,400 --> 01:35:51,400
+You have
+
+2946
+01:35:51,400 --> 01:35:53,400
+touched liquid nitrogen
+
+2947
+01:35:53,400 --> 01:35:55,400
+or liquid nitrogen gas,
+
+2948
+01:35:55,400 --> 01:35:57,400
+and you know
+
+2949
+01:35:57,400 --> 01:35:59,400
+that it actually flows.
+
+2950
+01:35:59,400 --> 01:36:01,400
+I think this is
+
+2951
+01:36:01,400 --> 01:36:03,400
+a big reason
+
+2952
+01:36:03,400 --> 01:36:05,400
+why you can't get
+
+2953
+01:36:05,400 --> 01:36:07,400
+a stable Z-contrast.
+
+2954
+01:36:07,400 --> 01:36:09,400
+You just mentioned
+
+2955
+01:36:09,400 --> 01:36:11,400
+if there are
+
+2956
+01:36:11,400 --> 01:36:13,400
+other ways to
+
+2957
+01:36:13,400 --> 01:36:15,400
+change this or get
+
+2958
+01:36:15,400 --> 01:36:17,400
+a better resolution.
+
+2959
+01:36:17,400 --> 01:36:19,400
+I haven't done
+
+2960
+01:36:19,400 --> 01:36:21,400
+anything like this,
+
+2961
+01:36:21,400 --> 01:36:23,400
+but what I want to mention
+
+2962
+01:36:23,400 --> 01:36:25,400
+is that
+
+2963
+01:36:25,400 --> 01:36:27,400
+for example,
+
+2964
+01:36:27,400 --> 01:36:29,400
+when you look at
+
+2965
+01:36:29,400 --> 01:36:31,400
+high-resolution images,
+
+2966
+01:36:31,400 --> 01:36:33,400
+you can't get
+
+2967
+01:36:33,400 --> 01:36:35,400
+a very good image
+
+2968
+01:36:35,400 --> 01:36:37,400
+because your strength
+
+2969
+01:36:37,400 --> 01:36:39,400
+is too weak.
+
+2970
+01:36:39,400 --> 01:36:41,400
+David Miller Group
+
+2971
+01:36:41,400 --> 01:36:43,400
+used a method
+
+2972
+01:36:43,400 --> 01:36:45,400
+called TychoGraphy
+
+2973
+01:36:45,400 --> 01:36:47,400
+in 2018,
+
+2974
+01:36:47,400 --> 01:36:49,400
+which is 4D stem.
+
+2975
+01:36:49,400 --> 01:36:51,400
+They used this method
+
+2976
+01:36:51,400 --> 01:36:53,400
+to get a more blurry
+
+2977
+01:36:53,400 --> 01:36:55,400
+graphic image
+
+2978
+01:36:55,400 --> 01:36:57,400
+with higher resolution
+
+2979
+01:36:57,400 --> 01:36:59,400
+and higher resolution.
+
+2980
+01:36:59,400 --> 01:37:01,400
+That paper is also
+
+2981
+01:37:01,400 --> 01:37:03,400
+a very famous paper
+
+2982
+01:37:03,400 --> 01:37:05,400
+by Nature.
+
+2983
+01:37:05,400 --> 01:37:07,400
+If you have any
+
+2984
+01:37:07,400 --> 01:37:09,400
+information about
+
+2985
+01:37:09,400 --> 01:37:11,400
+David Miller Group,
+
+2986
+01:37:11,400 --> 01:37:13,400
+you can add it.
+
+2987
+01:37:13,400 --> 01:37:15,400
+But as far as I know,
+
+2988
+01:37:15,400 --> 01:37:17,400
+it is very suitable for
+
+2989
+01:37:17,400 --> 01:37:19,400
+people who can't get
+
+2990
+01:37:19,400 --> 01:37:21,400
+a high resolution image.
+
+2991
+01:37:21,400 --> 01:37:23,400
+This 4D stem can help you.
+
+2992
+01:37:23,400 --> 01:37:25,400
+I think that's it.
+
+2993
+01:37:25,400 --> 01:37:27,400
+I guess
+
+2994
+01:37:27,400 --> 01:37:29,400
+Cryo's problem is that
+
+2995
+01:37:29,400 --> 01:37:31,400
+your sample stage
+
+2996
+01:37:31,400 --> 01:37:33,400
+moves too fast,
+
+2997
+01:37:33,400 --> 01:37:35,400
+so you can't get a good image.
+
+2998
+01:37:35,400 --> 01:37:37,400
+There are several ways
+
+2999
+01:37:37,400 --> 01:37:39,400
+about this.
+
+3000
+01:37:39,400 --> 01:37:41,400
+One way is to scan very fast
+
+3001
+01:37:41,400 --> 01:37:43,400
+and scan a lot of pages.
+
+3002
+01:37:43,400 --> 01:37:45,400
+Then you fold it up
+
+3003
+01:37:45,400 --> 01:37:47,400
+in a post-processing way
+
+3004
+01:37:47,400 --> 01:37:49,400
+to get a good image.
+
+3005
+01:37:49,400 --> 01:37:51,400
+This method was developed
+
+3006
+01:37:51,400 --> 01:37:53,400
+by Lena Kakoudis
+
+3007
+01:37:53,400 --> 01:37:55,400
+Cryo Stem.
+
+3008
+01:37:59,400 --> 01:38:01,400
+We can try it.
+
+3009
+01:38:01,400 --> 01:38:03,400
+Thank you.
+
+3010
+01:38:05,400 --> 01:38:07,400
+I have a question.
+
+3011
+01:38:09,400 --> 01:38:11,400
+Before I talk about this question,
+
+3012
+01:38:11,400 --> 01:38:13,400
+I have a small comment.
+
+3013
+01:38:13,400 --> 01:38:15,400
+Because I am
+
+3014
+01:38:15,400 --> 01:38:17,400
+the speaker today,
+
+3015
+01:38:17,400 --> 01:38:19,400
+Project Hera.
+
+3016
+01:38:19,400 --> 01:38:21,400
+We are staff.
+
+3017
+01:38:21,400 --> 01:38:23,400
+I strongly recommend
+
+3018
+01:38:23,400 --> 01:38:25,400
+you to keep in touch.
+
+3019
+01:38:25,400 --> 01:38:27,400
+If you can keep in touch
+
+3020
+01:38:27,400 --> 01:38:29,400
+and help each other,
+
+3021
+01:38:29,400 --> 01:38:31,400
+it is the biggest reward for us.
+
+3022
+01:38:31,400 --> 01:38:33,400
+You feel the same, right?
+
+3023
+01:38:33,400 --> 01:38:35,400
+Yes.
+
+3024
+01:38:35,400 --> 01:38:37,400
+This is a small comment.
+
+3025
+01:38:37,400 --> 01:38:39,400
+I suggest you
+
+3026
+01:38:39,400 --> 01:38:41,400
+to keep in touch.
+
+3027
+01:38:41,400 --> 01:38:43,400
+If you think Project Hera
+
+3028
+01:38:43,400 --> 01:38:45,400
+is helpful to you,
+
+3029
+01:38:45,400 --> 01:38:47,400
+you can recommend it to others.
+
+3030
+01:38:47,400 --> 01:38:49,400
+My question is this.
+
+3031
+01:38:49,400 --> 01:38:51,400
+This is a crazy idea.
+
+3032
+01:38:51,400 --> 01:38:53,400
+If I have a sample today,
+
+3033
+01:38:53,400 --> 01:38:55,400
+what if I put it down
+
+3034
+01:38:55,400 --> 01:38:57,400
+for five years?
+
+3035
+01:38:57,400 --> 01:38:59,400
+Keep taking pictures.
+
+3036
+01:38:59,400 --> 01:39:01,400
+What is the resolution
+
+3037
+01:39:01,400 --> 01:39:03,400
+you want to achieve?
+
+3038
+01:39:03,400 --> 01:39:05,400
+A sample
+
+3039
+01:39:05,400 --> 01:39:07,400
+can be placed
+
+3040
+01:39:07,400 --> 01:39:09,400
+in the middle of your screen.
+
+3041
+01:39:09,400 --> 01:39:11,400
+Actually,
+
+3042
+01:39:11,400 --> 01:39:13,400
+I want to measure
+
+3043
+01:39:13,400 --> 01:39:15,400
+the distance between
+
+3044
+01:39:15,400 --> 01:39:17,400
+all the atoms.
+
+3045
+01:39:17,400 --> 01:39:19,400
+But I am waiting
+
+3046
+01:39:19,400 --> 01:39:21,400
+for something to happen.
+
+3047
+01:39:21,400 --> 01:39:23,400
+Why do I want to monitor?
+
+3048
+01:39:23,400 --> 01:39:25,400
+Because what I expect
+
+3049
+01:39:25,400 --> 01:39:27,400
+is not static.
+
+3050
+01:39:27,400 --> 01:39:29,400
+The distribution of the atom
+
+3051
+01:39:29,400 --> 01:39:31,400
+is like this,
+
+3052
+01:39:31,400 --> 01:39:33,400
+but suddenly it moves.
+
+3053
+01:39:33,400 --> 01:39:35,400
+Why did I
+
+3054
+01:39:35,400 --> 01:39:37,400
+take a picture of you
+
+3055
+01:39:37,400 --> 01:39:39,400
+for a long time?
+
+3056
+01:39:39,400 --> 01:39:41,400
+Because I think
+
+3057
+01:39:41,400 --> 01:39:43,400
+what I expect
+
+3058
+01:39:43,400 --> 01:39:45,400
+is the time scale
+
+3059
+01:39:45,400 --> 01:39:47,400
+from 10s to 100s microseconds.
+
+3060
+01:39:47,400 --> 01:39:49,400
+So if you take a picture
+
+3061
+01:39:49,400 --> 01:39:51,400
+for two seconds,
+
+3062
+01:39:51,400 --> 01:39:53,400
+you will miss it easily.
+
+3063
+01:39:53,400 --> 01:39:55,400
+I just said
+
+3064
+01:39:55,400 --> 01:39:57,400
+taking a picture for two seconds
+
+3065
+01:39:57,400 --> 01:39:59,400
+means a lot of pixels.
+
+3066
+01:39:59,400 --> 01:40:01,400
+One pixel is
+
+3067
+01:40:01,400 --> 01:40:03,400
+about 20 microseconds,
+
+3068
+01:40:03,400 --> 01:40:05,400
+which I often use.
+
+3069
+01:40:05,400 --> 01:40:07,400
+But maybe
+
+3070
+01:40:07,400 --> 01:40:09,400
+I still can't catch
+
+3071
+01:40:09,400 --> 01:40:11,400
+what you want.
+
+3072
+01:40:11,400 --> 01:40:13,400
+Another big problem
+
+3073
+01:40:13,400 --> 01:40:15,400
+is that I'm not sure
+
+3074
+01:40:15,400 --> 01:40:17,400
+how much electron radiation
+
+3075
+01:40:17,400 --> 01:40:19,400
+your sample can withstand.
+
+3076
+01:40:19,400 --> 01:40:21,400
+Because this is
+
+3077
+01:40:21,400 --> 01:40:23,400
+a key problem
+
+3078
+01:40:23,400 --> 01:40:25,400
+for TEM.
+
+3079
+01:40:25,400 --> 01:40:27,400
+If your sample can withstand
+
+3080
+01:40:27,400 --> 01:40:29,400
+infinite electron radiation,
+
+3081
+01:40:29,400 --> 01:40:31,400
+of course you can do
+
+3082
+01:40:31,400 --> 01:40:33,400
+similar experiments.
+
+3083
+01:40:33,400 --> 01:40:35,400
+But if your sample can only withstand
+
+3084
+01:40:35,400 --> 01:40:37,400
+one minute,
+
+3085
+01:40:37,400 --> 01:40:39,400
+you will have damage,
+
+3086
+01:40:39,400 --> 01:40:41,400
+or you have some carbon damage,
+
+3087
+01:40:41,400 --> 01:40:43,400
+or you can even
+
+3088
+01:40:43,400 --> 01:40:45,400
+pierce your sample.
+
+3089
+01:40:45,400 --> 01:40:47,400
+Then you won't be able to do such experiments.
+
+3090
+01:40:49,400 --> 01:40:51,400
+I think
+
+3091
+01:40:51,400 --> 01:40:53,400
+I will think
+
+3092
+01:40:53,400 --> 01:40:55,400
+from this perspective.
+
+3093
+01:40:55,400 --> 01:40:57,400
+Actually,
+
+3094
+01:40:57,400 --> 01:40:59,400
+this is what I think.
+
+3095
+01:40:59,400 --> 01:41:01,400
+Radiation damage.
+
+3096
+01:41:01,400 --> 01:41:03,400
+We are used to discussing
+
+3097
+01:41:03,400 --> 01:41:05,400
+what is an electron,
+
+3098
+01:41:05,400 --> 01:41:07,400
+one, two, three.
+
+3099
+01:41:07,400 --> 01:41:09,400
+We rarely discuss
+
+3100
+01:41:09,400 --> 01:41:11,400
+what is an electron.
+
+3101
+01:41:11,400 --> 01:41:13,400
+But basically,
+
+3102
+01:41:13,400 --> 01:41:15,400
+this is what happens in electrons.
+
+3103
+01:41:15,400 --> 01:41:17,400
+Yes.
+
+3104
+01:41:17,400 --> 01:41:19,400
+Actually, there is such a lab.
+
+3105
+01:41:19,400 --> 01:41:21,400
+In Sandia National Lab,
+
+3106
+01:41:21,400 --> 01:41:23,400
+they have connected
+
+3107
+01:41:23,400 --> 01:41:25,400
+a particle beam
+
+3108
+01:41:25,400 --> 01:41:27,400
+to hit your sample,
+
+3109
+01:41:27,400 --> 01:41:29,400
+to look at your
+
+3110
+01:41:29,400 --> 01:41:31,400
+radiation damage.
+
+3111
+01:41:33,400 --> 01:41:35,400
+There is such a thing.
+
+3112
+01:41:35,400 --> 01:41:37,400
+Time resolution can barely reach millisecond.
+
+3113
+01:41:37,400 --> 01:41:39,400
+There are
+
+3114
+01:41:39,400 --> 01:41:41,400
+faster detectors,
+
+3115
+01:41:41,400 --> 01:41:43,400
+about 400 frames per second,
+
+3116
+01:41:43,400 --> 01:41:45,400
+or 2000 frames per second.
+
+3117
+01:41:45,400 --> 01:41:47,400
+It can barely reach
+
+3118
+01:41:47,400 --> 01:41:49,400
+millisecond.
+
+3119
+01:41:51,400 --> 01:41:53,400
+Okay, let me ask.
+
+3120
+01:41:53,400 --> 01:41:55,400
+We are actually doing
+
+3121
+01:41:55,400 --> 01:41:57,400
+carbon-based
+
+3122
+01:41:57,400 --> 01:41:59,400
+spectroscopy detector
+
+3123
+01:41:59,400 --> 01:42:01,400
+in Sandia.
+
+3124
+01:42:01,400 --> 01:42:03,400
+Okay, thank you.
+
+3125
+01:42:03,400 --> 01:42:05,400
+They mainly look at
+
+3126
+01:42:05,400 --> 01:42:07,400
+radiation.
+
+3127
+01:42:07,400 --> 01:42:09,400
+I can comment on
+
+3128
+01:42:09,400 --> 01:42:11,400
+the microscope in Sandia.
+
+3129
+01:42:11,400 --> 01:42:13,400
+If they use
+
+3130
+01:42:13,400 --> 01:42:15,400
+photoelectron,
+
+3131
+01:42:15,400 --> 01:42:17,400
+they can make the electron pulse to nanosecond.
+
+3132
+01:42:17,400 --> 01:42:19,400
+So if your sample
+
+3133
+01:42:19,400 --> 01:42:21,400
+is beautiful enough,
+
+3134
+01:42:21,400 --> 01:42:23,400
+although it does not show
+
+3135
+01:42:23,400 --> 01:42:25,400
+a sample like a sample,
+
+3136
+01:42:25,400 --> 01:42:27,400
+but if it sounds
+
+3137
+01:42:27,400 --> 01:42:29,400
+like a millisecond,
+
+3138
+01:42:29,400 --> 01:42:31,400
+for example,
+
+3139
+01:42:31,400 --> 01:42:33,400
+if you want to do it in a shorter time,
+
+3140
+01:42:33,400 --> 01:42:35,400
+you can do it.
+
+3141
+01:42:41,400 --> 01:42:43,400
+I want to ask a question.
+
+3142
+01:42:43,400 --> 01:42:45,400
+You just mentioned
+
+3143
+01:42:45,400 --> 01:42:47,400
+that it can measure electric field
+
+3144
+01:42:47,400 --> 01:42:49,400
+and magnetic field.
+
+3145
+01:42:49,400 --> 01:42:51,400
+How good is the sensitivity?
+
+3146
+01:42:53,400 --> 01:42:55,400
+I can tell you that
+
+3147
+01:42:55,400 --> 01:42:57,400
+they all say
+
+3148
+01:42:57,400 --> 01:42:59,400
+atomic resolution,
+
+3149
+01:42:59,400 --> 01:43:01,400
+but I'm not sure
+
+3150
+01:43:01,400 --> 01:43:03,400
+how good it is.
+
+3151
+01:43:07,400 --> 01:43:09,400
+I don't know if you've heard of
+
+3152
+01:43:09,400 --> 01:43:11,400
+something called
+
+3153
+01:43:11,400 --> 01:43:13,400
+SCAMEL.
+
+3154
+01:43:15,400 --> 01:43:17,400
+Some people use
+
+3155
+01:43:17,400 --> 01:43:19,400
+such a device to measure
+
+3156
+01:43:19,400 --> 01:43:21,400
+SCAMEL.
+
+3157
+01:43:21,400 --> 01:43:23,400
+If you want to go to
+
+3158
+01:43:23,400 --> 01:43:25,400
+atomic resolution,
+
+3159
+01:43:25,400 --> 01:43:27,400
+that is,
+
+3160
+01:43:27,400 --> 01:43:29,400
+for example,
+
+3161
+01:43:29,400 --> 01:43:31,400
+I think
+
+3162
+01:43:31,400 --> 01:43:33,400
+this TEM
+
+3163
+01:43:33,400 --> 01:43:35,400
+considers
+
+3164
+01:43:35,400 --> 01:43:37,400
+whether the magnetic field
+
+3165
+01:43:37,400 --> 01:43:39,400
+penetrates your sample.
+
+3166
+01:43:39,400 --> 01:43:41,400
+This is a key question.
+
+3167
+01:43:41,400 --> 01:43:43,400
+If you use
+
+3168
+01:43:43,400 --> 01:43:45,400
+something without any magnetic field penetration,
+
+3169
+01:43:45,400 --> 01:43:47,400
+you can really determine
+
+3170
+01:43:47,400 --> 01:43:49,400
+if your magnetic field
+
+3171
+01:43:49,400 --> 01:43:51,400
+really comes from a very local area.
+
+3172
+01:43:51,400 --> 01:43:53,400
+But if you always have
+
+3173
+01:43:53,400 --> 01:43:55,400
+a general TEM,
+
+3174
+01:43:55,400 --> 01:43:57,400
+that is, there is a magnetic field
+
+3175
+01:43:57,400 --> 01:43:59,400
+that penetrates your sample,
+
+3176
+01:43:59,400 --> 01:44:01,400
+I'm not sure
+
+3177
+01:44:01,400 --> 01:44:03,400
+how good your resolution is.
+
+3178
+01:44:03,400 --> 01:44:05,400
+Sorry, my question is
+
+3179
+01:44:05,400 --> 01:44:07,400
+that you may have misunderstood my question.
+
+3180
+01:44:07,400 --> 01:44:09,400
+My question is not about
+
+3181
+01:44:09,400 --> 01:44:11,400
+how good the spatial resolution is.
+
+3182
+01:44:11,400 --> 01:44:13,400
+My question is,
+
+3183
+01:44:13,400 --> 01:44:15,400
+for example,
+
+3184
+01:44:15,400 --> 01:44:17,400
+what is the magnetic field
+
+3185
+01:44:17,400 --> 01:44:19,400
+or magnetic field
+
+3186
+01:44:19,400 --> 01:44:21,400
+that can be measured
+
+3187
+01:44:21,400 --> 01:44:23,400
+at a micrometer level?
+
+3188
+01:44:23,400 --> 01:44:25,400
+I'm sorry,
+
+3189
+01:44:25,400 --> 01:44:27,400
+I don't know how much this number is.
+
+3190
+01:44:27,400 --> 01:44:29,400
+Because what we currently see
+
+3191
+01:44:29,400 --> 01:44:31,400
+is that its principle
+
+3192
+01:44:31,400 --> 01:44:33,400
+is to look at your electron,
+
+3193
+01:44:33,400 --> 01:44:35,400
+at least the principle of DPC
+
+3194
+01:44:35,400 --> 01:44:37,400
+is to see how much your electron beam
+
+3195
+01:44:37,400 --> 01:44:39,400
+deviates.
+
+3196
+01:44:39,400 --> 01:44:41,400
+You can know its direction
+
+3197
+01:44:41,400 --> 01:44:43,400
+and its strength
+
+3198
+01:44:43,400 --> 01:44:45,400
+by doing this.
+
+3199
+01:44:45,400 --> 01:44:47,400
+You get something like this,
+
+3200
+01:44:47,400 --> 01:44:49,400
+for example,
+
+3201
+01:44:49,400 --> 01:44:51,400
+a map of the direction
+
+3202
+01:44:51,400 --> 01:44:53,400
+from the center.
+
+3203
+01:44:53,400 --> 01:44:55,400
+To be honest,
+
+3204
+01:44:55,400 --> 01:44:57,400
+I'm not sure
+
+3205
+01:44:57,400 --> 01:44:59,400
+how strong it is.
+
+3206
+01:44:59,400 --> 01:45:01,400
+OK, I can go back and look at these questions.
+
+3207
+01:45:01,400 --> 01:45:03,400
+Thank you.
+
+3208
+01:45:03,400 --> 01:45:05,400
+Thank you.
+
+3209
+01:45:07,400 --> 01:45:09,400
+OK,
+
+3210
+01:45:09,400 --> 01:45:11,400
+if there are no other questions,
+
+3211
+01:45:11,400 --> 01:45:13,400
+I will end the recording
+
+3212
+01:45:13,400 --> 01:45:15,400
+here.
+

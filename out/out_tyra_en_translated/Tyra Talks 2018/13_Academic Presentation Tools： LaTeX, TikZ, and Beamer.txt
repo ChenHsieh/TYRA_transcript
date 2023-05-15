@@ -1,0 +1,2883 @@
+Q&A SESSION
+Hello everyone, welcome to today's TAIRA speech.
+Today's speech topic is very special and I like it very much.
+The speaker is Liu Junlin.
+He is going to talk about LATEX and DINNER today.
+I will briefly introduce the speaker today.
+The speaker got a doctorate in electrical engineering from Caltech this year.
+His main field of research is digital signal processing and statistical signal processing.
+This is a brief introduction of the speaker.
+Without further ado, let's welcome the speaker to talk about today's speech tool.
+Please turn on the microphone and let's clap together.
+Let's start the speech.
+We'll leave the time to Junlin.
+Thank you.
+I need to turn on the microphone.
+You can turn it on, I'll turn it off.
+Then I'll turn it on here.
+Okay, thank you.
+Thank you for the invitation from TAIRA.
+I am honored to give a special academic speech today.
+Today's speech topic is mainly about LATEX.
+Another tool called TIKZ and DINNER.
+How to use these three tools in academic reports.
+Before talking about this topic, I want to mention why I want to talk about this topic.
+First of all, when I received the invitation, I also thought about whether to talk about my special research topic.
+Thinking about it later, I think it's too professional.
+It may not be useful to everyone.
+Then I turned to talk about some tools in the academic world that I have a little experience with.
+These three tools.
+By the way, let me share my experience with these tools.
+Next is my speaker.
+The speaker will first do a brief introduction.
+Then I will focus on these three tools.
+Then show some of the presentations I made.
+Presentations made with these three tools.
+Finally, a little summary.
+Before starting the whole talk, I want to show you a picture.
+I believe everyone should have at least a little experience in academic research.
+In fact, academic research can be divided into several stages.
+Suppose you want to do academic research.
+First of all, you need to have the most primitive research idea.
+According to this idea, you have to make a corresponding plan.
+For example, how much funding to apply for, how many students to receive, and how large your lab needs.
+After these things, you are responsible for managing people or managing the progress of the plan.
+After having people or progress, you may need to design experiments and collect data.
+Then make a corresponding conclusion based on your data.
+The last step, I personally think it is a very important step.
+When you have the results of your research,
+You may have to publish it to the appropriate conference and magazine.
+Make the right oral report and promote your results to let others know.
+I believe that many research topics are related to this research cycle.
+The topic of my report today is related to this research cycle.
+But I'm not going to share with you how to find new research topics.
+I'm not going to teach you how to do research.
+Of course, it has nothing to do with the following topics.
+Of course, it has nothing to do with my research topics.
+The topic of my report today is related to the sixth topic,
+Publication and Presentation.
+It has a little bit to do with these two topics.
+But I'm not going to teach you how to write a paper or how to do oral expression.
+This is another topic.
+My main focus today is to show you a picture.
+This picture...
+Because of copyright issues, I didn't put the original picture on the screen.
+I'll just put a copy and I'll show it to you.
+After I click on it, I have to change to share, right?
+This one.
+I don't know if you can see this picture.
+If you know Ph.D. Comics, it's actually a...
+When you read the textbook, you can draw a picture like this.
+I'll show you.
+This is a pretty close ecology in the academic world.
+When you finish writing the paper, you show it to the boss.
+The boss will change it for you for the first, second, and sixth time.
+Or later...
+According to what he wrote, I don't know how many times.
+49 times, right?
+Okay.
+This is actually something that happens quite often in the academic world.
+Because everyone wants to adjust the quality of the paper to be very perfect.
+After it's very perfect, it will be sent to the magazine
+or find a way to try to publish it.
+In this case, you can see that this student is in great pain.
+The reason for the pain is actually...
+There are several reasons.
+The first one is that he changed it back and forth many times.
+You can see that the file name is different every time.
+Suppose you look at this Revision 8, Common File.
+Do you know what the boss changed?
+You probably can't tell.
+You don't know what the boss did just by looking at the file name.
+There's another one. You can look at the photo.
+He also wrote a track change.
+After you open the file, he might say,
+Oh, what did he change in this file?
+But if I want to compare this Revision 18 with Revision 2,
+it should be quite difficult in this situation.
+I'm actually using this comic as a motivation today.
+We can use LaTeX to deal with this situation more effectively.
+It won't be so painful to change the paper.
+I'm going back to the original...
+This is my story.
+My report today is mainly focused on LaTeX.
+I believe that everyone has a little background on LaTeX.
+Someone calls it LaTeX.
+I personally like to call it LaTeX.
+Because the word LaTeX has another meaning.
+It's actually a text layout system.
+I will introduce a tool called TIKZ later.
+It's actually a interface that can display images in LaTeX.
+Finally, I mentioned what Beamer is.
+It's mainly used to make videos.
+Okay, then...
+Okay, then I won't talk too much nonsense.
+I'll just go straight into what LaTeX is.
+LaTeX is actually the most primitive version.
+It's called TeX.
+It was actually designed and published by Professor Donald Knuth.
+It's a layout system.
+The so-called layout system means that
+it designs the text you want to type
+with a text file.
+Then, through the layout system,
+it can design the font size and distance of the text
+and then prepare it into a final version of the file.
+This is the so-called layout system.
+The version of TeX is very interesting.
+You can see it's a strange number.
+There's actually a story behind it.
+Professor Knuth was quite confident in the text he wrote.
+So he felt that the text he wrote had very few bugs.
+So if someone found a bug,
+he would give a corresponding check as a reward.
+Then when TeX was revised,
+the number would be added,
+but the way it was added was not the usual software,
+which is to add 1 and add 2.
+It's the number of decimal places after pi.
+This is the current version.
+The little story is that
+if Knuth can't maintain it in the future,
+the final version will be changed to pi.
+So it's still a prime number.
+Then it might become pi at some point.
+This is the TeX system.
+What we often use in LaTeX
+is to add some additional instructions to TeX.
+These instructions allow us to
+efficiently arrange a file.
+For example, in a academic document,
+it usually has a title and author.
+Then you may want to control the size of the page.
+You have to add a password.
+LaTeX will wrap these functions
+into some very simple applications,
+so you don't have to worry about
+what the format of the title, author, and password is.
+You just need to focus on what your content is.
+If you have any questions,
+please feel free to interrupt me at any time.
+Let me ask you here.
+You turned on your microphone,
+that is, your speaker.
+So if everyone is talking, you can hear it.
+I'm not sure if you turned it on or not.
+Oh, right.
+Okay, that should be fine.
+Oh, yes, I just muted it.
+Okay, I'll move on to the next page.
+I'm sure you all have experience with LaTeX.
+I'll just quickly talk about it here.
+LaTeX mainly inputs a text file
+and then goes through some layout systems.
+After going through the layout system,
+you can output the final file.
+Usually, the text file name is .tex.
+After going through the layout system,
+there are a lot of different options here.
+I just mentioned .tex and LaTeX.
+There are other different ones later.
+They are used for different layout situations.
+The final result of the layout
+may be this kind of different file names.
+The most common is to arrange the file into a PDF file.
+This is the LaTeX system,
+which is the most basic concept.
+Okay, in the next page,
+I'll briefly introduce
+the basic structure of a LaTeX file.
+I'd like to ask
+if you think this is too simple.
+You may think it's too simple.
+If you all have experience.
+No, no.
+No?
+So do I need to explain a little more?
+Yes.
+Okay.
+I said no, no.
+Does that mean you need to skip it?
+I think it's just right.
+That's it.
+Let's talk about it quickly.
+Okay, let's talk about it quickly.
+A standard LaTeX file is probably...
+First, it will have a command
+called document class start.
+Then the GuaHu part will specify
+whether I want this file to be an article,
+a report, or a book.
+It will first define
+the approximate size of this file.
+Then usually after this document class,
+there will be a part of the area
+called use package.
+That is to say, this file,
+some of the commands it will need,
+for example, more complicated math,
+or some special font,
+or some other functions,
+such as if there is a hyperlink,
+or some special color,
+or drawing.
+These enhanced functions
+are usually introduced with this use package.
+This is the second part of this file.
+The next part is that
+these commands will specify
+what the title of this file is,
+and then its author,
+the author's name at the back,
+and then the date of this file.
+It's very simple to use.
+You just type in this command
+and change this part to say
+what the title is,
+what the author's name is,
+and what the date is.
+This part is usually called preamble.
+The real file starts
+with the beginning document,
+the end document.
+The latex command is
+that most of the commands
+are processed by the beginning and end.
+The beginning means
+that I am now at the beginning of a certain environment,
+and the end is the end of this environment.
+So from the 10th and 15th lines,
+this means that
+between the 10th and 15th lines,
+I will describe the content of this file.
+After defining the file,
+we can see that the 11th line
+is a command called makeTitle.
+This command means that
+based on the title author date I specified earlier,
+I will make a corresponding
+title shape.
+The important part of this part is that
+when you do this,
+you don't have to worry at all
+about how big the title font is,
+how big the author font is,
+or how much the date font should be.
+This part of the latex
+will help you
+to arrange it according to the specified command.
+So all you have to do is
+focus on your content.
+For the 12th to 14th lines,
+I will simply show an example.
+It can arrange some mathematical parameters.
+Here I use a command called
+beginAlign and endAlign
+to insert a mathematical value
+with a whole width.
+This command will also add a
+function number behind the function.
+This is a very simple one.
+Of course, there are a lot of commands behind it.
+I don't want to mention so many time factors.
+This is a standard example.
+Next, I will show you that
+if you are really interested in
+making real latex files,
+there are some that I have used,
+and there are some editors
+or some interfaces that I recommend.
+There are usually two types of editors.
+There is a type of editor
+that I call Latex Specific.
+This type of editor
+will automatically
+compile the compiled file
+and sometimes compile the PDF
+to the same interface.
+So you can
+click some quick buttons at the same time
+and you can quickly see
+the contents of the compiled file.
+Then there are often used
+text maker, text studio, textworks, etc.
+I just had a discussion with the host
+that there are some web page interfaces
+such as Overleaf or ShareLatex.
+These interfaces mean that
+you don't need to install anything at all.
+Your stuff is stored in the remote server.
+As long as you open the web page, you can edit it.
+You don't have to worry about
+which editor to use to edit it.
+It has done a good job of compatibility.
+As long as you focus on the content of the file,
+the format of the file
+will automatically arrange it for you.
+This is one type.
+I call it Latex Specific.
+There is another type.
+I call it General.
+Basically, as long as you can open the text file,
+you can do this.
+I often use things like
+Vim, Emacs, etc.
+I personally like to use Sublime Text.
+You can also use Windows Notebook.
+It depends on your preference.
+As long as you can open the text file,
+you can edit and save it.
+As for the layout system,
+if you use a single board Latex,
+you need to install a larger system.
+This system includes
+the editing interface I mentioned earlier.
+I often use things like
+TechLive, MiKTX, or MacTek.
+These are used separately.
+TechLive can be used for Windows or Linux.
+MiKTX is mainly used for Windows.
+This is mainly used for Mac.
+After editing,
+you can choose
+which PDF monitor you want.
+There are many different choices.
+This is mainly to give you an overview.
+What are the most basic Latex tools?
+How do we make a simple text file?
+What is the content?
+The first is the background.
+Next, I will introduce the main focus of this talk.
+I think everyone will be more interested in this.
+But if you come to listen,
+you should already have a good understanding of Latex.
+So for this picture,
+you might think it's acceptable.
+The meaning of this picture is
+Latex vs Word.
+Horizontal represents the complexity of processing files.
+Y-axis represents the time you need.
+The meaning of this picture is
+when your file is very small,
+maybe only one page,
+or one or two pages,
+not much content,
+maybe only text,
+when it's simpler,
+in this case, you can use Word
+to make this file in a very short time.
+But when your file is very large,
+for example, you want to write a journal paper,
+you want to write a book,
+some problems will arise.
+At present, I still don't know
+how to use Microsoft Word
+to effectively solve these problems.
+But Latex has a corresponding method.
+Here, I would like to say
+that I will compare Word and Latex.
+I personally use Latex more often,
+so I might be a little biased.
+I might think Latex is better.
+The same function,
+Word may also be able to achieve.
+If you want to discuss with me,
+please feel free to interrupt me.
+The first point I want to discuss
+is the difficulty of mathematical editing.
+If you use Microsoft Word,
+the tool you often use
+may be called a square editor.
+Some people may think that
+the square editor is too ugly.
+They will use tools like MathType.
+These tools are mainly
+used to edit the square editor with a mouse.
+So you need to use a mouse
+to click here and there
+to select some up and down icons,
+to select some root numbers,
+some special mathematical symbols.
+I don't say this is not good.
+This is an input method.
+But if you use Latex,
+suppose you want to input the following symbol,
+you can use Word at all.
+You don't have to leave the keyboard.
+Just input these symbols with the keyboard
+and you can output the following mathematical equation.
+You may think
+how to convert this equation
+to these strange symbols.
+This actually depends on
+your familiarity with Latex.
+For example,
+Begin and Align
+means that I inserted a row of wide mathematical equations.
+The input method
+is actually quite similar to the way we read.
+It's the same from left to right.
+If I need a square,
+I will enter a square.
+If I need the initial a,
+I will enter an a.
+This command means
+I want the initial a in mathematics.
+It's very similar to the way
+to input words in mathematics.
+I need an initial u, initial c, initial v,
+and then a right square.
+This symbol means up and down,
+and then up and down plus 1.
+So this command
+is not the final result,
+but in terms of reading,
+it's actually quite in line with people's reading habits.
+It's the same from left to right.
+Another advantage I use is
+when Latex is in the array,
+you can add blanks and arrays at will.
+So you can put a very complex mathematical equation
+with very effective arrays.
+You can insert an array or a blank
+to make it easier to read.
+So like me,
+this equation represents this part.
+Then according to the following
+different structures of this mathematical equation
+to make a relative array.
+So when you want to change the mathematical equation,
+you can also easily go back
+to the relative Latex part
+to change its original code.
+This is my personal experience.
+The first advantage is that
+the mathematical equation is very easy to input.
+Let's pause for a moment.
+Do you have any questions?
+I want to...
+I guess I should turn this on.
+Then you can turn it on.
+It's okay.
+Then I'll just use your side to talk.
+It's okay.
+I want to share something with you.
+It's a powerpoint plug-in.
+It's called Iguana Text.
+I'll post it in the chat room for everyone to see.
+It's actually...
+Because you mentioned that
+the Microsoft equation is an editor.
+It's actually very ugly.
+So someone developed a powerpoint plug-in.
+In fact, all the mathematical equations
+are still using Latex code.
+Basically, it's also
+what the author shared on the screen.
+It just happens to be a plug-in
+that can be placed directly in your powerpoint.
+So it's beautiful.
+This Iguana Text
+is a very, very advanced
+Microsoft equation editor.
+So I'll post it in the chat room
+and share it with you.
+Thank you for sharing.
+Because I...
+My computer is actually Linux.
+So it's...
+Iguana Text can't be installed at all.
+It can be installed, but...
+It's very painful.
+It's very painful.
+So I'm just...
+I'm not familiar with this aspect of the plug-in.
+Okay, so this is...
+I personally think the first advantage is
+to edit in a mathematical way.
+Okay, what about the second part?
+This is a personal experience
+of sharing.
+That is to say,
+when you need to deal with
+a very large file,
+suppose you want to write a doctor's thesis,
+and then suppose your research results
+are very rich,
+you write up to 500 pages.
+Yes, write a 500-page doctor's thesis.
+If you have Word experience,
+that is, you open a 500-page Word file,
+what will happen?
+I haven't really opened it myself,
+but I've heard people share their experience
+that usually this situation is...
+First of all, when you open the file,
+it will be very, very slow
+because it needs to scan all 500 pages.
+Then next,
+if you have some text blocks in the middle,
+some blocks you pulled yourself,
+it will be slower
+because it needs to load these blocks.
+Okay, but for our purpose,
+these steps are not necessary.
+We just need to change
+a paragraph in our text.
+So the focus of our focus
+should be to pick this paragraph
+and then modify it.
+After that,
+that is, to do this,
+it should not need to be loaded
+into other blocks.
+If it's Word,
+I don't know yet
+how to avoid this problem.
+Suppose you have a 500-page thesis.
+If it's LaTeX,
+it can use a...
+It's a bit like writing a word.
+Suppose you write a thesis,
+you can use a file called
+Thesis.txt for your thesis.
+Under this file,
+you separate the different content.
+You may need to separate a file,
+Introduction a file,
+Topic 1 separate a file.
+Under Topic 1,
+you can have your own Introduction,
+your own introduction,
+your own translation.
+That is to say,
+you make your file
+a system plan.
+Distribute different content
+into different files.
+The advantage of this is that
+if I want to change
+Example 1 of Topic 1,
+I just need to open this file
+and make a relative modification.
+I don't need to
+load all the files.
+This is the first advantage.
+The second advantage is
+if I want to see
+the result of this part of the translation,
+I can translate this
+Thesis.txt file,
+but I can put
+these unnecessary ones,
+such as
+Example 1,
+Introduction,
+Topic 2,
+Topic 3,
+Conclusion,
+I can just block it.
+I have a simple version.
+Thesis.txt only has
+Example 1 in Topic 1.
+I only do translation
+for this file.
+So I can see right away that
+I changed this thing,
+and it will look like this
+in the real file.
+So this can reach
+a very large file,
+we make it a system partition,
+then we can edit
+a small file,
+and we can see
+the result of the editing very quickly.
+This is my personal opinion
+the second advantage of LaTeX.
+Next is
+to continue to the next one.
+The third advantage
+is the compatibility problem.
+If you often use
+Microsoft Word,
+you may still remember
+about ten years ago
+there was a
+Dock version
+to DockX version
+a pain period.
+Dock version is mainly
+I think DockX version
+is Office 2007
+Word 2007 plus
+about ten years ago.
+Anyway,
+there is this pain period.
+Before that,
+it was all DOC version.
+Like this file format change
+there will be some
+some trouble.
+Suppose you wrote a paper
+twenty years ago,
+you may now
+the format will run out.
+This thing,
+especially in the academic world
+it should not be allowed.
+Suppose you have a picture
+you run out
+then your data will run out.
+So it's very troublesome
+to maintain anything.
+Microsoft has such
+DOC to DOCX
+history.
+So it's hard to guarantee
+DOCX may be changed
+to other formats.
+It's hard to say.
+So this is a
+history of Word.
+Another one is
+even if you use the same file
+you use DOCX.
+If you use different versions of Word
+it may run out a bit.
+Maybe its line
+or font will be a bit
+not the same as your original edit.
+Suppose some people don't have Word
+they use Pages or LibreOffice
+it may be different.
+This is the same
+in academic papers
+a very disadvantageous phenomenon.
+Another one is
+you may use different computers
+different operating systems
+Windows, Mac.
+This file
+may not be able to run
+in other operating systems.
+If you use LaTeX
+its editable file
+is actually Word.
+So Word
+you can run a lot of things.
+You can run a notebook
+and Mac, Linux
+all can be run.
+The final file is PDF
+almost every platform can support PDF.
+There are a lot of software
+you can use.
+This is my
+third advantage
+from my experience.
+The file format is Word
+and there is no DOC, DOCX
+or other problems.
+Next I will
+Is there any questions?
+All right.
+Next I will look at
+one of my personal experiences.
+Look at the picture on the left.
+I will draw it roughly.
+Suppose you have a paper
+you are writing a journal paper.
+This box represents
+one of your pictures
+it is Figure 1.
+Then you are in the text
+in the paragraph
+you need to mention Figure 1.
+Then in a certain place
+you need to mention 20%
+this number.
+Then in another place
+you need to mention
+X equals 10
+this message.
+Then this 20%
+and X equals 10
+it may actually be
+one of the Figure 1
+some data points
+the conclusion.
+I use red here
+means
+red means
+my experiment data.
+The file is here
+there is no problem
+Word or LaTeX
+can reach this function.
+Now suppose there is a situation
+suppose your boss is not satisfied with Figure 1
+he is not satisfied with the parameters
+he thinks you change the parameters
+to see if these numbers
+become more effective.
+So in some cases
+you may need
+after you finish writing the paper
+you need to update your data.
+Maybe you need to run again
+run to a new set of data.
+In terms of updating
+in concept
+the red part
+needs to be updated together.
+Because you run a new result
+your Figure content changes.
+So this Figure 1
+it
+you may also
+in the process of text editing
+this Figure 1 becomes Figure 2.
+So this
+this
+this
+Figure 1 also needs to be relatively modified.
+This number
+needs to be modified
+according to your experiment data.
+If you use Word
+you can think about
+if you use Word
+how to achieve this?
+Maybe you just
+run MATLAB again
+generate another picture
+and then
+after the picture is generated
+you put the picture back
+back to Figure 1
+put the picture back
+then you have to remember
+you need to change 20%
+you may now become 15%
+and now X may not be 12
+X may become 12
+So
+a job
+you need to change Figure 1
+at the same time you have to pay attention
+you have to change 20%
+with X
+all these things need to be changed.
+When your file is complicated
+this thing will appear
+more times.
+So if it appears
+100 times
+then you change 95
+you have 5 forgotten to change.
+Then your data is wrong.
+Okay, then LaTeX has a solution
+that is
+first you can use
+Label and Reference
+to update
+your Figure numbers.
+If you use LaTeX
+to write paper
+this value should be used often.
+This is my own
+experience
+that is
+20% and X is 10
+These two data points
+are actually related to Figure 1.
+So before you use LaTeX
+you can
+when you write MATLAB
+you generate two text files at the same time
+output 20% and X is 10
+that is, the city directly input these two numbers
+it is for two different files
+when you write paper
+you directly include these two files
+right
+so you
+when you write a file
+you have to pay attention
+that is
+what value
+is related to what
+then put all these things
+together
+then it is convenient to update
+this is one of my
+experience
+because
+I also studied for a while
+then I found out that
+LaTeX has this
+quite convenient function
+that
+the last one I
+this picture I
+showed you before
+that is
+final.doc
+that is
+if you use Word
+you will keep changing
+and then
+change the name
+then you may track
+do not know how
+this can track
+but it may be
+very difficult to say
+the difference is very far
+version to track
+that if LaTeX, then
+first I have to state that
+LaTeX itself
+it does not provide
+that is the file tracking function
+it needs to add some other
+software
+then
+I often use my own
+software called GIT
+that if you have written
+that is
+a relatively large software
+project
+project
+GIT is actually a management
+that is
+a program code
+version control system
+it can control
+that is to say
+this program code
+at what time
+by which
+program designer changed
+what part of who changed
+then
+these changes
+it will have a relative record
+then
+between different users
+to do
+these changes
+record
+it integrated
+in the same project
+so
+this
+GIT is actually
+a pretty
+I personally think
+pretty great invention
+because it can
+like that
+software engineering
+some super big project
+it can use
+a lot of people together
+that is
+a lot of engineers
+to do the same software
+then it can ensure that
+different engineers
+will not change
+other engineers
+the result
+so
+that
+this function
+it actually
+needs to use
+LaTeX file
+plus GIT
+to achieve
+that
+I only simply list
+a few keywords
+if you use
+GIT
+this software
+to monitor
+that is
+LaTeX file
+file
+change
+text
+you wait
+to come up
+and say
+you can control
+that is
+your file
+at what time
+to change
+what place
+you
+usually
+commonly modified
+that is
+you add text
+or delete text
+then
+right
+then GIT
+has a feature
+that is
+every time you modify
+you can do
+something like
+change block
+it can
+send a simple report
+that
+in this version
+which file was changed
+then
+you can do
+very detailed
+so
+that
+with this feature
+you do not have to
+that
+change content
+it forced
+because
+this is not easy
+to read
+that
+use GIT
+can also be
+very easy to
+reply to the changes
+before
+then
+you can do
+a lot of people
+in this
+cooperation
+that
+this is
+my personal experience
+that
+finally show you
+that
+I mentioned
+the first five
+advantages
+that
+probably
+the second
+with
+this
+with this
+second
+and the fourth
+is my personal experience
+that
+good
+later if
+we use more advanced
+there are some other
+features
+like
+we can
+write a paper
+in
+is to use
+reference
+when
+it can
+automatically
+help you
+form a format
+automatically
+help you
+arrange
+that
+you write
+paper
+you want to
+change
+that
+good
+that
+this is mainly
+that I
+currently
+include the
+part of
+that
+you have any
+questions
+or want to
+discuss
+it
+is very
+welcome
+that
+I will
+continue
+good
+that
+next
+I want to
+discuss
+a called
+TIKZ
+I'm sorry
+I have a
+small problem
+that
+you said
+you can
+output
+a certain
+or a certain
+number
+when
+that
+side I do not
+understand
+you say
+I can
+picture
+picture, then
+I can
+understand
+that I
+output a
+picture
+and then
+I just
+reference
+to that
+picture
+and then
+feature
+will not
+change
+but you
+is to produce
+a picture
+you are using
+tools like
+MATLAB
+or something like
+that
+you are using
+RR
+RR
+good
+that should
+also be
+the same
+meaning
+good
+I mean
+that
+because
+this is just
+a reference
+picture
+if my
+feature 1
+is a
+long
+picture
+I did not
+draw
+then this
+20%
+represents
+that
+the second
+data point
+is the first
+data point
+of 20%
+it represents
+this
+question
+and then
+in the file
+I
+especially
+use
+a number
+20%
+to
+represent
+is
+particularly
+emphasize
+this picture
+of a
+feature
+like this
+here
+integrated
+that is to say
+when you output
+this picture
+this picture
+has included
+20%
+of this information
+in the
+inside
+Oh
+right
+that
+good
+so now if you want
+to update data
+you run
+the experiment
+20%
+becomes 15%
+in this picture
+looks like
+15%
+but you
+you become
+you have to go back
+to your paper
+part of
+the 20%
+manually changed
+to 15%
+so
+your
+figure
+is not a
+that it actually
+contains another
+thing I do not know
+what this
+is called
+because this
+I have not used
+but your
+figure is not a
+example of a
+.eps
+such a file
+I
+look at
+my back
+there is no
+case
+Oh
+I
+that
+but I can
+that I
+take as an example
+suppose
+now this is
+what I want
+to be
+good
+then
+he
+he is
+this strange
+picture
+and then
+suppose
+I wrote
+later
+when I
+specifically
+mentioned
+that
+this function
+is the lowest
+point
+is the lowest
+point
+0.2
+I
+that
+now
+suppose you
+teach
+you to run
+another picture
+this function
+of the picture
+that you become
+you later
+in that
+article
+when you
+do not
+0.2
+this place
+you have to
+follow your
+picture
+to do
+relative
+modification
+that
+OK
+?
+I guess
+I guess
+his question
+should be
+that
+I will mention
+the next section
+I personally
+prefer to
+use
+latex
+to
+draw
+that
+of course
+I know a lot of users
+will save
+EPS
+right
+that I just
+mentioned the
+problem is
+that he
+is with you
+picture
+is not
+directly
+related
+so
+should be
+said
+if you are
+in the
+picture
+this
+can achieve
+this thing
+but I
+want to mention
+that
+latex
+can also
+do
+control
+these
+things
+that
+I
+want to
+say
+this page
+is that
+you
+file
+some
+part of
+the data
+with
+some other
+other
+other
+part of
+the data
+they are
+related to each other
+that if
+you
+are writing
+files after
+you did not
+put this thing
+into consideration
+that you have to
+manually update
+figure 1
+manually update
+this 20%
+and manually
+update this
+three parts
+because you
+write files
+when you did not
+pay attention
+to you
+is to write
+separately
+when you
+update
+you become
+because you
+know that the
+red part
+is actually
+these data
+points these
+values are
+related to each
+other
+so if you
+have this
+concept, then
+you can
+put
+figure 1
+these
+or these
+values
+are output
+into three
+different files
+figure 1
+maybe you
+figure 1.
+EPS
+is a file
+and then this
+20%
+you may
+output
+a data
+1.
+TXT
+and then
+this place
+you may output
+a data
+2.
+TXT
+and then this
+data 1 and
+data 2
+you have to
+use your
+MATLAB
+or R to
+generate
+when you
+are drawing
+a good calculation
+at the same time
+you put
+20%
+and 10%
+it out
+output
+into two
+TXT
+EPS
+and then you
+input data
+1.
+TXT
+and data
+2.
+TXT
+so
+this is
+ok
+I know
+this is
+a personal
+use
+I think this
+is very practical
+and if you
+want to change
+a lot of things
+at once
+you have to
+remember this
+thing
+I
+wrap up
+a little bit
+now this
+20%
+but
+when I do
+figure 1
+I do
+another thing
+called
+data 1
+equals
+20
+measure
+right
+thank you
+ok
+this is mainly
+practical
+and
+this
+doesn't seem
+to have a book
+talking about
+this
+this is
+more of a
+writing habit
+here
+to remind
+the distance
+is
+time
+I
+will
+talk about
+TIKZ
+and
+Beamer
+TIKZ
+is a
+language
+that can
+draw a
+picture
+and
+it can
+directly
+do the
+drawing
+in
+Lighttime
+and
+I
+personally
+like it
+because
+this is a
+basic introduction
+so I
+jump to
+some basic
+things
+that
+I
+just
+mentioned
+is the
+EPS file
+so I
+think you
+have some
+basic
+knowledge
+of the
+file
+basically
+a
+file
+can be
+classified
+as a
+quantity
+file
+or
+a
+dot
+file
+a
+quantity
+file
+different
+lines
+different shapes
+different words
+and their
+color they
+are stored
+information
+so when you
+enlarge the
+picture
+when it
+can be
+based on
+these
+shapes
+colors
+to do
+the same
+proportion
+so you
+will not see
+these
+sentence
+phenomenon
+that
+dot
+picture
+means that
+that
+special
+academic report
+academic research
+it
+actually
+quantity picture
+is a better
+choice
+because
+back to the
+beginning
+is that you
+have to do
+academic report
+you have to
+say that
+the precise
+and concise
+is that
+you describe
+things to be
+precise
+like this
+is not
+acceptable
+like this
+is not
+acceptable
+these
+pictures
+is
+TIKZ
+What this
+suite
+you might
+be more
+probably
+standard
+because
+the
+good
+caution
+TIKZ
+is
+a
+process
+called
+TIKZ
+picture
+and
+TIKZ
+picture
+to
+describe
+his
+description
+is
+a
+point
+he
+designated
+coordinates
+like this
+is the
+seventh line of
+this
+point
+represents
+the
+beginning of the
+point
+has been drawn
+to 0.50
+so I
+meant to draw
+this line
+and this
+bar arrow
+represents
+I want to draw
+a line
+and the arrow is
+close to the
+second
+point on the
+right
+this
+reference
+means that
+I'm
+at 1.50
+this
+coordinate
+I want to
+put a node
+and the
+node content
+is x
+on the right
+so it is
+this
+node is
+put a
+text command
+and then
+the back
+Chinese number
+can specify that
+I put the text
+after it has some
+relative position
+or color
+can be
+a lot of details
+can adjust
+your arrow
+that symbol is
+which line
+is the first line
+of the Chinese number
+is
+right
+so your arrow
+is this
+is drawn
+is
+a
+the
+seventh line
+is only
+drawn arrow
+that
+the eighth line
+is
+only draw
+x
+that
+nine and
+ten lines
+is that
+it can combine
+the command
+I can draw
+arrow
+while drawing
+text
+command
+can be connected
+so it
+means that
+from 0.5
+draw to
+1.0
+draw a
+arrow
+after
+I want to draw
+a y
+so
+I can draw
+x-axis and y-axis
+and then
+some other
+example
+I can draw a
+rectangle
+rectangle
+is that
+I specify
+four
+four points
+one of the
+points
+I
+minus 1
+minus 1
+this point
+draw to
+1.1
+1.1
+this is
+two relative
+points
+and then
+I want to draw
+this 0.0
+is the origin
+and then
+the radius is 1
+Green
+means that
+I want to draw it
+in green
+that
+14-16
+means that
+I want to draw
+draw a line
+and then
+the format of this line
+it is to
+draw a line
+and then
+it is this
+curve
+thick and
+dash
+it means
+the curve
+and then
+these things
+mean that
+the turning point
+so I
+draw a line
+and then
+this turning point
+here I use
+a cartoon
+cartoon
+means that
+the front
+is the
+coordinate
+0.0
+is the
+coordinate
+its grammar
+is the
+first value
+is the
+angle
+with
+degree
+and then
+the second value
+is the radius
+so I
+equal to
+90
+equal to this
+point
+start
+and then draw
+the angle
+is 330
+and then this
+cycle is to say
+back to the original
+point means
+that I have specified
+these turning points
+I can draw this
+triangle
+that
+this simple
+that
+some instructions
+to introduce
+good
+that I
+here mainly to mention
+is that
+you use this set of
+tools
+you can be very
+accurate to draw
+the picture you want
+because of
+these numbers
+you can see
+that
+this circle
+it with this
+rectangle
+is cut
+you can imagine
+if you use
+PowerPoint to draw
+this picture
+you can draw
+that rectangle
+and circle
+cut
+may be
+you need to adjust
+quite a long
+should be able to draw
+but to adjust
+quite a long
+and then because you specify
+this set of tools
+you can
+very
+can ensure that
+this
+triangle
+is the
+inner circle
+and you can
+be sure that
+this point
+on the circle
+simply put
+I want to say
+that you use
+TIKZ
+this set
+is very accurate
+you can draw
+the picture
+very accurate
+that
+this comparison
+I skip
+good
+because of
+time
+next
+I will introduce
+a
+called
+PGF
+PLUS
+that
+it is actually
+based on
+TIKZ
+a set
+of
+pictures
+that
+it is mainly
+it can draw
+such a picture
+and then it
+has a very good compatibility
+with
+LaTeX
+and then
+it
+is also I thought
+it
+because it is
+text
+so you can
+use
+GIT
+to do
+that version
+control
+so
+simply put
+you draw
+a picture
+you can
+ensure that
+my picture
+changed
+because
+if you
+adjust the position
+you adjust
+a pixel
+you may be in
+Word
+is more difficult to see
+the change
+but if you use
+text
+you use
+TIKZ
+to track
+the word
+you can see
+the change
+in the number
+that
+this
+because of
+time
+so I
+give you a
+simple
+example
+is good
+this is also
+my
+picture
+and then
+stick to the
+paper
+inside
+the usual
+workflow is
+I use
+MATLAB or
+Python
+or
+suppose
+to use
+R
+write a
+script
+after writing
+it
+out of
+the corresponding
+picture
+and then
+save as a
+picture
+file
+to see
+you want to
+save
+PNG
+to see
+the
+first problem
+is that
+these words
+are too small
+but the
+size of the
+word is actually
+depending on
+the ratio of
+your picture
+if you put
+the picture
+in some
+words
+in
+some words
+in some
+words
+actually look
+like it is
+okay
+but when you
+put it
+big
+words
+look
+very
+small
+because
+the
+size of the
+word is actually
+related to the
+file
+so
+control the
+size of the
+word
+this thing
+should be
+in the
+LaTeX
+to deal with
+it
+and not
+directly
+save as
+EPS
+because you
+save as
+EPS
+after
+the
+size of
+your word
+is
+too
+small
+you
+should
+put
+the
+picture
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+in
+some
+words
+but
+in
+the
+code
+can
+submit
+a document
+may be
+a different document
+is said
+some
+words
+exercises
+to say
+length
+is how much
+08 with
+the
+appearance
+of what
+should be
+saved
+when we have
+another file
+have these two
+files separate
+whether it
+is divided
+directly from
+habit
+S�ut
+corresponds to
+the TIKZ
+relationship
+with this
+right
+and then
+use these codes
+when you add
+directly to your
+LaTeX file
+inside
+you have to use
+you have to
+file 1, file 2
+have to add
+that
+after doing this
+you have to
+slightly adjust the
+size of the
+image
+these of course
+is to adjust
+the appearance of
+this line
+this is
+you have to do
+relative adjustments
+according to
+your file
+this
+I personally recommend
+this workflow
+is because when you want to run
+another picture
+you just change
+the raw data
+you can
+run again
+you do not change the
+picture you just change
+the raw data
+so you
+this data will
+be equal to
+running another picture
+that you do not have to worry
+about the size of this
+word
+Equation20
+or other
+places
+this is my
+recommended workflow
+so I
+personally
+use
+the
+right
+I
+10 minutes
+OK
+I
+do not have much
+left
+if
+Bimmer
+it
+is good
+I finally mentioned
+Bimmer
+Bimmer
+is actually
+based on
+LaTeX
+it is
+a set of
+video
+system
+like
+my video
+is made
+with
+Bimmer
+that
+Bimmer
+I personally
+think the
+first
+time I
+use
+Bimmer
+is
+after
+the
+first
+time I
+use
+Bimmer
+it
+is
+actually
+the
+first time
+I
+use
+Bimmer
+but
+the
+second
+time
+I
+used
+TiX
+to
+do
+this
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.

@@ -1,0 +1,954 @@
+整理&字幕:"大家好,歡迎來到今天5月9號的Tira Talk。我是今天的主持人,洪世安。我們今天很榮幸邀請到許瑞福同學來為我們演講。
+他現在是在中研院做research assistant,在9月的時候即將會進入台大電機的PhD program,他主要的研究是在做天線微小化和一些材料的研究。
+他今天要講的主題是The Ultimate Challenge of Antenna Miniaturization。
+我們在演講前先給講者一個鼓勵,我們等一下來鼓掌。大家記得在鼓掌之前要先把麥克風打開來哦。
+好,我們就把時間交給瑞福了。
+我碩班念比較久,多了一年,是電信所畢業。有時候我在中研院做研究助理,原本是計畫要去UCLA,不過後來決定留在台灣。
+有一部分的原因是因為我現在也是在組織一些人在討論台灣的博士政策的問題。
+去年的時候我有選台大研協會長,在更之前也有在行政院當諮詢委員。
+所以我現在就一直比較關心,剛好最近有一個趨勢就是在這十年間,台灣的科技類博士生從大概兩萬多人降到一萬五千多人,少了三成。
+所以在這個時間點大家就會在思考說,可能這個少子化的浪潮下,到底我們培育博士的現在有沒有什麼問題,有沒有什麼需要調整。
+有沒有可能就是應該要爭取更多的資源,來好好的養我們青年的研究人力。
+所以我除了做學術研究之外,也有在關心這部分的公共政策。
+我今天前面會花比較多的時間介紹天線的一些基本知識,還有為什麼要研究這個題目。
+那後面的話會再講我之前有的一些研究的成果。
+那可能大部分的人對於天線最早認識跟印象,就是電磁學課本,然後有一個加速度的電子,那它就會產生電磁波的輻射。
+那那個是比較物理上的基本的定義,那如果是在實際上天線作為一個元件的話,電路的元件,我們通常會這樣講。
+就是它比較像是一個transition device,那是在什麼的transition?
+就是在guided wave跟free space wave。
+那guided wave的話就是在transmission line裡面傳播的導波,然後到真空中或者是空氣中的傳播中間有一個device,然後可以轉化這樣的電磁波的一個裝置。
+所以我們在這個transition region,我們可能透過設計結構或者是不同的材料,然後來達到我們想要的效果。
+所以如果用比較電路的方式來看這件事情的話,就是比如說像這張圖,我們有一個voltage source,然後它有它自己的generator的resistance。
+那就是透過transmission line的傳播,它是一個助波的形式,然後再到天線端。
+那這個RL代表的是loss,就是它可能是各種來源的loss,比如說conductor loss。
+那這個R呢就是實際上會輻射出去的地方。
+那因為對於整個系統而言,不管你是變成熱的loss還是輻射出去,都是某種這個電路的能源的消散,能量的消散,所以可以用這個電阻來表示。
+那它也會有一些電容性或電感性的東西,如果以電路來表達一個天線的話是這樣子。
+那在我們印象當中呢,其實生活當中有各式各樣很多元的天線,比如說這是我們最常想到的,叫偶極的天線,會在我們Wi-Fi AP看到。
+那像我們在那個可能哆啦A夢的漫畫或我們的屋頂已經很少了,但是有時候還會看到這種天線,叫八角天線。
+然後還有這種是叫helical antenna,那它特點就是它的集中度很高,然後是原機化的。
+那也有像這種home antenna,或者是我們最簡單現在最常見的叫patch antenna,就是它有一個ground跟一個金屬片。
+那可能很多人呢對於天線的印象除了這個之外,就是很久以前的手機,它就是大家可以看到它接的是一個很簡單的偶極的天線。
+那很多人也會好奇說,那我們現在的手機為什麼好像都沒有這個東西了?
+其實我們現在的手機,它的天線呢通常都是整合到它的晶片跟它的外型上,比如說已經有一段時間了,之前有一個很有名的故事就是iPhone4的天線門事件。
+就是當用戶握到這個地方的時候叫死亡之握,你只要握下去之後你就會斷訊了。
+那這個很有名的事件呢就是因為它把它的金屬外框跟它接收到的頻段整合在一起,那很不巧的它當初設計的時候沒有考慮到用戶的手會導致它這個接收的地方短路。
+所以其實天線的設計的話,它可以從很古老的一個物理的問題一直延伸到我們現在的可能使用者的體驗、美學跟整個系統的效能都會有所影響。
+那接下來我會說幾個天線最常見的參考的設計的參數。
+第一個叫Radiation Pattern,那Radiation Pattern它是用圖像化的方式去表達它的數學的表示式,通常就是用來表示它的一些輻射的特性。
+比如說可能它的功率的強度,它的電磁場的強度,或者是它的相位或各式各樣的特性。
+那通常我們都會把這樣的Radiation Pattern在看它的整個輻射的特性的時候是在叫Far Field Region。
+那會在Far Field Region主要有兩個原因,一個是因為此時就是它的輻射的Pattern是跟它的距離已經不會有相關了,它就可以比較獨立的一個參考參數。
+另外一個就是它會變成平面波的形式。
+所以像這些輻射的特性有很多,不管是你的Power Flux,或是你的Field Strength,都會用這樣的方式來描述。
+所以比如說像這張圖是用球坐標的方式來看天線的輻射特性,那我們就可以表示它可能是它的功率,或者是這邊寫的是它的Field Strength,就是電場或磁場。
+那就可以看這個叫Major Lobe,就是它的場牆比較強的地方。
+那我們其中一個天線設計很重要的參數就是如何將它的輻射特性設計成你想要的形狀跟樣子。
+那第二個重要的參數叫Directivity跟Gain。
+那Directivity就是這個天線它的輻射的強度在特定的方向上,跟整個天線在所有方向上的平均值的比值。
+所以它就可以用來呈現那個地方它的強度的集中度如何。
+那Gain跟Directivity不一樣的地方就是它看的是天線如何有效的將它接收到的輻射變成另外一個地方實際上接收到的天線可以接收到的強度。
+所以它們兩個之間的關係就是有一個輻射效率的差異。
+那輻射效率通常就是把天線的結構所接收到的功率跟它實際上輻射出去的功率的一個比率,就是介在0跟1之間。
+那這個輻射效率就會是我們很關心的事情。
+因為比如說在手機的設計裡面,你的輻射效率就會直接影響到你的電池的效能。
+那或者是一些更重要的應用就會影響到你的整個耗電量。
+那還有另外一個參數又是更實際的叫Realized Gain。
+它就是包含剛剛我們如果看到這張電路圖。
+當這個transmission然後要到天線端,它就會有阻抗匹配的問題。
+也就是說如果它的阻抗沒有辦法匹配的話,它就會有部分的波能量是反射回去的。
+這樣的話就是使用起來會比較沒有效率。
+所以Realized Gain的話就是連天線要接收到多少功率的這個反射係數跟剛剛的Gain,就是這個Gamma是反射的係數也一起考慮進去。
+那這個通常就是最實際我們會看到天線的一個performance的地方。
+我可以問一個很基本的問題,因為我真的對這個不太了解。
+對現在天線來說,因為我們知道它通常會有像Ampitude Modulation跟Phase Modulation。
+那現在你們設計的,或者你現在講的這些參數,在Ampitude跟Phase的上面是有什麼差異嗎?
+還是基本上你就只需要得到最大的信號就好了?
+如果是以天線的硬體端的話,我們確實主要的考量都是如何得到最大的信號。
+那後端就是可能透過電路的設計,或者是一些數學的理論來做一些調變。
+其實信號的強度,在我後面也會講到,就是信號的強度背後最終要達成的一個目的都是要怎麼樣讓你的通訊的系統的資料傳輸速率會越高越好。
+那資料傳輸速率要越高越好,其實它會有很多的面向。
+信號強度是一個,但是比方說剛剛講的AMFM,它其實是不同的調變方式,也會影響到它的傳輸的速率。
+那有很多不同的地方會影響到傳輸的速率,但是我們最終的目標都是希望可以提升整個通訊系統的傳輸的速率。
+那天線的設計這一端可能最主要考量的就是在信號強度。
+好,了解,謝謝,謝謝。
+那bandwidth頻寬,它也是一個重要的指標。
+因為,等等後面會講到,就是有一個很有名的通訊的基本的公司叫Channel Capacity,就是有一個有名的資訊的理論家叫Shannon。
+然後在裡面就是除了信號強度之外,另外一個會影響到傳輸速率快還是慢的就是頻寬。
+但是頻寬的話,它其實是更廣義的一個東西。
+就是我們頻寬只是指我們天線的那個特性,在特定的頻率範圍內可以維持我們想要的那個特性。
+所以它可以指涉很多的物理變數,比如說輸入阻抗,比如說它的,剛剛講的它的叫radiation pattern的bandwidth,或者是你要的激化。
+它本身的物理變數是可以有很多個的。
+但我們最常看的呢,叫做阻抗的頻寬。
+那天線呢,之所以會產生輻射是因為它是在特定的頻率之下會產生結構的共振。
+那在共振的時候呢,它的,它的電阻跟它的reactance就會產生劇烈的變化。
+那只要這時候你可以做到,就是match,你的impedance可以match的話,那你的能量才能夠打進去。
+那所以如果我們要做到頻寬很寬的話,在impedance bandwidth的地方,我們常常看的一個參數就是剛剛前面有提到的反射係數。
+那要怎麼樣盡量讓這個頻寬更寬一點,就會影響到整個系統的傳輸的速率。
+那講完天線的一些基本特性之後,我會慢慢帶入就是關於天線微小化的部分。
+那天線微小化呢,其實是一個很古老的題材。
+它早在二戰的時候,大家就開始討論這件事情。
+那最早的話,其實是一個跟我們也是算蠻有關係的一個人,他是一個MIT的教授叫朱蘭成。
+他其實早年就是台灣的交大副校,他也幫了很多忙,他是MIT教書。
+那他在1948年的時候,第一次提出這個概念,是什麼呢?
+就是之前的人設計天線有點像盲人模像,就覺得說好像某種設計可以達成一個指標。
+比如說我想要有怎樣的輻射效率,我想要怎樣的Gain,想要怎樣的頻寬。
+但是呢,我們常常就是會東修改西修改,這邊也改一點那邊也改一點,那看怎樣可以湊出最佳的,我們想要達到的那個設計的指標。
+但他們之間好像會有某種關聯性,你好像不可能同時什麼東西都變好,總會有某種Tradeoff。
+那朱蘭成教授呢,就是在1948年第一次提出他們之間的關係性是怎樣描述的這樣的概念。
+那他的想法呢,其實並沒有很複雜,他是用一個圓球,把一個Whatever的天線Structure包起來,以能夠Enclose整個天線Structure的圓球。
+那他去計算這個,他假設圓球內都是理想的特性,比如說他在裡面沒有Loss啊,然後沒有儲存能量啊,然後假設在裡面有一個震盪的魔態。
+可能是最簡單的魔態,但他展開的是通用的表達式,然後假設了這個魔態之後,然後再去算他的球面波的展開式。
+那第二步呢,他就是把這個球面波的展開式轉化成一個等效電路,每一個Z都是代表了跟裡面的一個魔態是有關的。
+然後他通過這個等效電路的計算,可以計算出到底這樣的一個任意假設的魔態的天線,它輻射出去的電磁波有多少能量是儲存的,然後多少能量是真的輻射出去消散的,在這個等效電路的計算裡面。
+所以這個是Quality Factor,那Quality Factor這邊我也可以就是稍微講一下,像我們以前最早接觸到Quality Factor的概念可能是在彈簧力學震盪的系統那邊。
+那時候我們所追求的是Loss越小越好,然後Q值越高越好,代表他能量沒有被浪費,然後他是一個高效率的震盪。
+但在天線其實是相反,我們追求的不是Q值越大越好,因為對於這個電路系統而言,這個Q同時也代表了他損失的能量跟輻射出去的能量。
+對電路系統而言,他電路內損失的能量跟輻射出去的能量都是一種耗損。所以反而如果你要有更寬的頻寬的話,你的Q值是越小越好。
+但是這又牽涉到另外一個問題是,到底你的Q值越小越好,是你的能量都用在電路的耗損呢?還是輻射呢?這就是另外一個問題。
+所以有可能你的Q值越小越好。
+如果今天做的都是commercial的電路做通訊的話,你不是可以選一個narrowband的,就是transmission的band,然後你只要弄一個Q非常非常大,然後可是瞄準那個frequency,你的noise bandwidth就很小,所以你receiver的部分還是可以用Q很大的antenna。
+你講的沒有錯,但是通常我們還是會期待頻寬會越寬越好,但是這樣的話就是變成說要看你的設計情境之下的需求是什麼,然後你要怎麼解決這個問題。
+但是如果我們單以評估天線的效能本身的話,就是不管是gain或是bandwidth,或者是輻射效率,我們都是會期待它是越大越好。
+但實務上如果你真的沒有辦法達到那樣的bandwidth,也會有一些其他的技術會想辦法去克服,比方說你有沒有可能讓它的共振的頻段是可以切換之類的,然後你就可以節省一些設計的空間,如果是真的很窄頻的話。
+所以剛剛講Q值雖然越低越好,但牽涉到另外一個問題是到底你的Q值低,是能量都用在電路耗損還是輻射,如果都用在電路耗損的話,那就代表它的輻射效率是非常非常低的。
+那通過這樣的計算呢,得出一個大略的表達式,那這個表達式它並不是一開始就長這樣,但是後面的人就是有不斷的去精進跟修改,這個大致上是目前天線設計領域大家都接受的一個極限。
+那從這個關係式可以看到,K是wave number,那它是2pi over lambda,所以我們這裡A是這個enclosing sphere,所以它等於就是一個A跟lambda的比值。
+那所以如果你天線越來越小的時候,比如說遠比波長還要小的時候,其實是這個三次方向會dominate,然後它就會變得很快的變得很大,所以導致你這個Q是lower bound,它Q算是lower bound,所以你的lower bound會一直變高,也就是說你的系統的頻寬是一定會downgrade。
+那這篇它在1948年最早開始探討這個議題,就是不管你再怎麼樣東改西改,其實你天線的效能一定會有一個理論的極限,那這個問題就變成是一個有點像天線設計領域的holy grail,就是大家都一直想要去探討跟追逐的議題。
+那剛剛提到的那個公式,也是1948年Claude Shannon提的channel capacity,它就是說我們通訊可以傳輸的資料的容量跟速率會跟我們的頻寬還有signal to noise ratio是有關的。
+那也就是說,如果我們想要改善我們的資料傳輸速率,either是我們的頻寬可以提升,或者是我們的信號跟對噪音的比可以提升。
+那有一篇算是很有趣的一個實驗,因為理論上這種極限是沒有辦法被證明,如果你真的要證明的話,你只能證悟,就是說好我提出一個設計,我break你的boundary了,所以你理論有問題。
+所以2012年的時候就集結了這些人的力量,他們搜了IEEE APS七八百篇的文章裡面挑出一百多篇,去分析他的performance,看是不是有在這個theoretical bound裡面。
+那這邊是他的一些計算,所以他就得到了我放在演講投影片的那張圖,就是虛線跟實線只是他使用的mod的差別而已。
+那在這張圖橫軸就是Ka,就是剛剛的物理尺寸相對波長的比例。
+所以從這張圖就是,他有解釋說這個freedman為什麼會超過,就是其實他是沒有超過的,他是跟他的impedance matching有關,就是他的impedance matching有做了一些修改。
+如果把impedance matching也考慮進去的話,他是沒有超過那個理論的極限。
+所以就他的這個論文的研究來看的話,這個理論極限似乎是對的,那這是一件事情。
+然後另外一件事情呢,是他這邊Ka是到0.1而已,也就是說比方說如果我們是天線是在3GHz共振好了,那3GHz的話就是大概10公分。
+對,10公分。
+那這樣的話0.1就大概1公分吧,所以就是這種感覺,就0.1的波長。
+那另外一件事情呢,就是當Ka非常非常小的時候,在很多的研究裡面都指出其實現有的所有的歷史上的設計都會well below這個theoretical bound。
+就是even這個理論的極限告訴我們他天線的效能一定會變差,但是我們反而設計還會well below這個理論的極限。
+那這個理論的極限是什麼呢?Blong,Blong就是B是bandwidth,long就是天線的輻射效率。
+那所以輻射效率就會直接影響到我們的signal to noise ratio,所以就是直接影響到我們的傳輸速率。
+那這兩個東西必須要一起考慮,因為在之前的joule limit他就有單獨考慮quality factor,他是跟bandwidth有關。
+但是常常relation efficiency跟bandwidth之間是會有一個tradeoff的。
+那後續呢也一直有新的理論探討,比方說2017年的這一篇,他就在探討說,那其實呢這個公式來看的話,
+當signal to noise ratio遠小於1的時候他是會近似成這個公式,那這時候呢他主要dominant他的channel capacity就是他的信號的強度。
+那信號的強度就會直接跟他的輻射效率有關,所以他就不是用ka對quality factor的結構關係去推導,而是直接跟輻射效率去推導。
+那也推導出一個theoretical bound,是2017年的時候這個理論也還在renew,去refine。
+那所以我們知道這樣的一個極限跟背景的時候,我們就會思考,那到底我們有什麼地方有這個應用的需求。
+那這個圖呢就是說,這是一個半島,在我沒有去過,我只是網路上搜下來的。
+他是美國海軍的一個VLF的antenna,那這個半島呢多大?
+at kilometer square,算起來大概是100個足球場,然後他的energy consumption是8MW,大概就是一個hydropower dam。
+那他每一根天線呢都是300公尺,大概是埃菲爾鐵塔。
+哇,這個一整個島的天線是在幹嘛?他是在做就是跟submarine communication有關的,就是做潛艇通訊。
+那為什麼會這麼大又這麼耗能呢?就是因為這個波長的關係,他是3到30kHz的頻段,他才能做水下跟地底通訊。
+因為在這個頻段他比較能夠penetrate水或者是soil,然後也可以在電底層反射。
+但這個頻段呢,他的波長intrinsic就非常的長,10公里到100公里。
+所以如果你要有效率的操作在一個波長或半個波長,不可避免的都是一個巨大的怪物,所以你的cost就會很高。
+那另外一個呢,就是如果你想要更有實用價值,變成portable的device,比如說你在潛水的時候也想要通訊,比如說你在洞穴的時候你也想要通訊。
+那不可避免你要帶在身上的話,就會有battery life跟physical size的問題。
+這時候你的天線,傳統的架構,efficiency就會變得非常非常差,而無法使用。
+因為對於這個波長的大小來說,我們的這個地方就是electrically small,就是在這邊,大部分的設計還是well below theoretical bound。
+那除了這個低頻的應用之外呢,我們也在期待說他會有一些比較高的頻段的應用。
+比方說我們的apple watch穿戴式裝置,他雖然不會那麼巨大,但是如果我們一旦要把天線塞到很小的地方的時候,他也會是electrically small。
+又或者是我們可能想要設計一些可以做醫學造影的藥物,那他到人體之後不只是electrically small,他的信號還會非常非常的弱。
+那另外呢,也有人在思考說一些wearable device,比如說一些衣服或contact lens。
+那這些呢,也都是頻段可能比較高,但也要求是electrically small的情景。
+那這件事要怎麼解決呢?其實我們以前,人類已經有用過類似的概念,只是不是發生在天線,他發生在其他地方。
+就是如果看到右邊這張圖呢,這個是我們很古老神獸時代的電路板,上面還有這種電桿、電容。
+那這個晶片呢,是很早期的,他叫做表面聲波濾波器。
+所以後來呢,我們電路可以做得很小,不再用這些,呃,這些,那個叫做,有一個詞,什麼,distributed還是什麼。
+就是這種特性的電桿跟電容,然後能夠整合到晶片上變得更小,是因為這個表面聲波濾波器。
+那他的基本概念是什麼呢?就是我們國中學到的公式,就是波速等於頻率乘以波長。
+那我們的acoustic wave大概就是一千到一萬個meter per second這個order。
+但我們的speed of light是三乘於四的八次方meter per second。
+所以假設我們要在同樣的operating frequency的話,那他的wave speed會跟他的wave length乘正比。
+所以intrinsically如果你用的是mechanical wave做resonance的話,他的physical size大概就會少了十的五次方個order。
+那在聲波濾波器跟更之後,其實我們手機現在都已經在使用了。
+叫做duplexer、diplexer或者是filter,都是用來做頻率操控的元件,或oscillator。
+這些東西其實早就已經都在使用這些力學的聲波元件。
+就是表面聲波濾波器,還有現在更新的技術,叫做體聲波的濾波器,fog acoustic wave。
+那所以這件事情有沒有可能在天線實現呢?
+大家就在想,有沒有可能應用類似的概念來做到雖然變小,
+可以把它真的縮小,或者是雖然變小,但是他的performance is acceptable。
+所以大家大概這一兩年,大家開始討論一個新的概念。
+其實不行了,但是重新開始思考這件事,提出一個term,叫做mechanical antenna。
+他是相對於electrical,叫mechanical。
+那在2019年的這篇文章呢,他們應該也是DARPA團隊的人。
+然後他們就在討論說這樣的現在有哪些研究,那跟傳統的天線有什麼差異。
+那他是這樣描述的,他說mechanical。
+我clarify一件事情,就是因為那個州,還是州theory,基本上它是一個電路。
+可是其實你可以把電路上所有的元件,全部都換成等效的機械的元件。
+所以理論上那個equation還是沒錯的嘛。
+只是現在你是直接把lambda換得很小,所以k變得很大。
+Sorry,lambda換得很大,所以k變得很小。
+但是那個就是一次方加上三次方,那個relation應該是還是holds,對不對。
+理論上是這樣,但是還沒有很嚴謹的完整的論述。
+就是我們會這樣覺得啦。
+那這個後面會再討論到。
+然後這個mechanical antenna,他是這樣描述的。
+他說,比方說你拿一個,如果我們來思考電磁波的來源的話。
+它可以是一個moving electron,就變成current。
+那那個moving有沒有變成可能是physical motion,而不是current。
+所以他說你可以take a desystatic field source,like a magnet or charge distribution,
+then mechanically move it to modulate its external field。
+所以對於一個觀測者而言,他接收到電磁波的,
+對於他們來講,他跟equivalent的electrical induced dipole是沒有什麼區別的。
+就是他是可以做這件事情的。
+那他在裡面就討論了一些不同的設計。
+比如說左邊這個就是在一些ferroelectric或ferromagnetic material,
+裡面會有很多的dipole moment。
+那你做,你給他施加一些stress,alternating stress,
+他可能dipole moment就會改變方向,然後會產生電磁波。
+或者是更暴力一點,你直接把整個電磁鐵做spinning,產生電磁波的輻射。
+那我這篇論文大家有興趣可以來查,
+但是我覺得他裡面很多討論都還很primitive,其實我不是完全都相信。
+然後他就summarize現在有的mechanical antenna,
+然後跟他們的operating band,跟一些reference。
+那我現在focus就是在這個地方,在very high frequency到ultra high frequency。
+然後用這些ferroelectric material作為radiation source。
+那目前比較focus在這邊是因為這個頻段的data rate比較高,
+比較有可能有commercial application。
+但其實如果是低頻的話就是military application。
+但是目前還沒有找到合作對象,可能會有興趣開發。
+我知道美國他們已經在做了。
+那另外一篇也是今年剛刊登的文章,不是我的。
+他也是在討論這個不同的新的mechanical antenna的架構。
+比方說有general antenna的model,
+那electrically small的時候你為了要做到match,
+所以他就會變得很lossy,有他的問題。
+然後你radiation efficiency就變得很差,也很難match。
+那這個mechanical antenna他也可以畫一些等效電路,
+然後去計算他的輻射。
+那他這一篇其實最主要比較的,比較是electrolyte,
+就是比較是用electric charge,
+或者是pieloelectric material去計算。
+那他最後是claim說,
+在這個pieloelectric alternating dipole這個架構,
+我們可以期待說他比傳統的dipole的天線,
+做得很小的時候可以,
+這個efficiency,相對的efficiency可以大到10的6次方倍。
+那這是已經發表在applied physics的文章。
+就是如果是用這個壓電的特性的話,
+他的輻射效率可以到10的6次方倍。
+但是10的6次方倍也不要覺得很厲害,
+因為可能只是一個完全不可用的東西到稍微可用而已,
+因為有那個theoretical bound。
+但是呢以上的。
+就是一個小問題,就是你這個surface acoustic wave,
+或是mechanical wave in general,
+他的lossness跟temperature有關係嗎?
+跟他那個材料的temperature有關係嗎?
+會。
+所以理論上,我的想像是越低溫,
+應該他的Q會越大吧?
+對,就是他的那個共振的特性,
+一定會受到溫度的影響,
+只是他的sensitivity怎麼樣,
+那你Q會downgrade的情形怎麼樣。
+那所以我讀這些文章的時候,
+就很自然就會想到幾個問題。
+第一個就是,那剛剛我們那張bandwidth efficiency product,
+這張theoretical bound,
+這mechanical antenna能不能做出類似的prediction?
+那他的definition是怎樣?
+這是第一個問題。
+那第二個問題是,mechanical antenna是below還是beyond Q limit?
+那如果是below Q limit的話,
+那how close他可以approach the theoretical bound?
+他有沒有實際的應用價值?
+這些都是還沒有人去寫出來的議題。
+我順便問幾個問題,
+因為我就比較好奇。
+所以一般你說目前用的材料大概是哪一些材料?
+那第二個,我對於mechanical wave,
+我覺得他Q可以很高,
+但是是不是他是沒辦法做出一個amplifier的元件?
+這個東西是有沒有人做出來過?
+如果mechanical,amplifier mechanical這個東西是做得到的嗎?
+第一個問題,你剛剛說什麼?
+有點忘了,抱歉。
+通常這些是材料。
+材料,像這個的話叫electric,
+就是他就是能夠hold charge,
+然後把charge做一些mechanical motion。
+那像這個的話就是magnet,
+但是你也可以應用材料內的dipole moment,
+所以比方說就是有一些piezoelectric material,壓電材料,
+或者是一些ferromagnetic material,
+那你可以讓他裡面的dipole moment產生等效的電流或者是磁流,
+來產生電磁輻射。
+所以主要應用的材料就是壓電材料,
+或者是這個ferromagnetic material,
+或者是純粹就是直接有charge跟magnet的東西。
+那第二個問題,你可以說為什麼會講到這個mechanical amplifier嗎?
+是說就是就算有這個東西,
+我想電磁裡面就是要做amplifier很容易吧,我的感覺。
+但是如果你接收到一個mechanical wave的話,
+他是不是要先把他就第一個接受,
+就你可能發一個mechanical wave不難,
+但是你接受他,
+那然後你要怎麼把他放大這方面是不是一個比較現實上的問題,
+還是你要把他轉成電磁的訊號再放大。
+我想這是如果我是一個有在想考慮要做這個東西應用化的話,
+我會想說在接受端上他是不是遇到哪一些困難需要解決。
+不過這個好像就有點可能太廣了,
+所以我也不知道就是你們像你剛剛說的可能這也是沒有到研究很深的。
+比方說像我知道piezoelectric material,
+因為他們之前已經有很多commercial application,
+就是像剛剛的說surface acoustic wave,
+或者是bar acoustic wave,
+像這些的話他們是有一些電路的等效模型,
+然後可以比方說接收的話就是從電磁波轉成mechanical wave,
+然後mechanical wave就是他可以等效成電路,
+再跟電路那邊做一些計算跟matching。
+但我現在遇到的困難其實我接下來會再講,
+就是也是其他的困難,
+像piezoelectric的話他的property是比較well known的。
+那這個叫multifluoride material,
+就是我一開始看到也覺得這到底是什麼字,
+就是我們如果用這個圖來看的話就是,
+Electrically polarizable,
+或Magnetic polarizable,
+那他們之間就會有交集,
+那有ferroelectric,
+ferroelectric,ferromagnetic,
+那同時是ferroelectric又有ferromagnetic,
+就叫multifluoride,
+那他如果是之間物理量的特性的話就是,
+比如說electrical會有electrical polarization,
+那applied magnetic field會有magnetization,
+那之間就會有他對應的這個叫piezoelectricity,
+就是比方說你從stress變成electrical field,
+變stress,
+那這個叫magnetoelectricity,
+magnetoelectricity就是你給他一個stress,
+那他可以變成一個磁場的改變之間的關係,
+都有一些材料,
+但是他們之間的研究的就是進展都不太一樣,
+那在2015年的時候就是UCLA的那個group,
+我們跟他們的group有合作,
+他們提出了這個架構,
+就是說用MANS的製程,
+然後基本上他就是剛剛的那個far-acoustic resonator,
+只是他讓這個stress,
+這個force去drive另外一個ferromagnetic material,
+然後他會讓他的magnetic dipole moment,
+產生等效的磁流,產生電磁輻射,
+那為什麼他要開發這樣的元件呢,
+除了一個是剛剛講的,
+他可能相對比較有high frequency application,
+另外一個是他比較能夠跟一些material的製程整合,
+但是呢,所以我的研究就是based on這個research,
+再去做一些extension,
+但我也希望在台灣現在既然決定留下來念,
+也能夠去把這個製程能夠開發出來,
+那他背後的這個governing equation呢,
+基本上就是除了Maxwell equation,
+Newton law之外,
+還有一個就是去描述他這個magnetization的behavior,
+叫Landau-Lipschitz-Gilbert equation,
+那這equation呢,基本上他就是在描述說,
+你的electron如果有一個external applied magnetic field,
+他會有一個precession的情形,
+然後也會有一些loss,
+然後就去描述dynamically,
+你的magnetization跟你的applied magnetic field之間的關係,
+那他們就用這樣的模型做FDTD的數值模擬計算,
+然後就去計算了一些他的理論的performance跟上限,
+在2015年的時候有發表,
+那在2017年的時候呢,
+這個structure呢,上了Nature,
+他說他在實驗上有真的量到這個訊號,
+就是大家如果看這張圖,
+他是用home antenna來突破5GHz的時候,
+類似的結構啦,
+就是ammonitride就是piethoelectric material,
+然後這個鐵則鵬就是,
+也是另外一種magnetostrictive material,
+那ferromagnetic material,
+那這兩張圖的對比呢,
+就是說這個訊號的強度在這個他們operating band,
+很明顯就是這個是反射係數,
+他是有能量打進去的,
+但是他的對照組是不會有能量輻射的,
+他有一個大概20dB older的接收到的訊號,
+那他去說,
+Clan說他的這個device是experimentally是成功的,
+但是呢我是有一點疑問,
+一個是我們UCLA合作的那個group,
+他是好像是northeastern,
+然後UCLA那個group他們就是從頭到尾都,
+到現在都還做不出來,
+然後另外一個呢就是,
+他論文裡面有Clan說,
+他不需要biased magnetic field,
+也可以有這個很強的coupling,
+那這跟就是剛剛,
+我們通常會思考這個材料的一些,
+輻射的一些理論是有點出入的,
+因為我們通常是,
+之前跟UCLA他們group都是,
+用ferromagnetic resonance,
+就是FMR的一些理論去描述他的輻射的現象,
+那如果你要再,
+你要產生FMR的話,
+你是一定要有一個biased magnetic field,
+所以這一點他有解釋說是什麼,
+Edge Current Wall,
+但是我是不太確定是不是真的,
+但是他們已經發了Nature,
+那接下來是我的研究的部分,
+所以就是based on這個structure呢,
+我就做了一些extension work,
+然後就是從模擬到實際的實驗,
+那我一開始的出發點就是extension,
+就是我們時間已經快要到11點了,
+所以你可能要就是,
+就是盡快把它講完喔,
+好好好,那後面都是一些結果而已,
+我會盡量趕快go through,
+那所以在他們這樣的設計架構之下,
+我就想說那有沒有可能比方說,
+去探討他的一些極化的特性,
+那所以我就參考了一些resonator的設計,
+那要做這件事情有一部分的原因是因為,
+他們的之前的operating direction都是在longitudinal,
+那如果你這樣有一些金屬的東西的話,
+其實你的radiation efficiency會被downgrade,
+就是一些image current的property,
+那所以我就想想看,
+那有沒有可能他是不是longitudinal,
+他是lateral,就是implanted resonance,
+那這個implanted resonance,
+可能也可以做一些極化的調控,
+那後來這篇文章是在前年的時候有發表,
+在conference因為還沒做出來,
+所以我就設計了這樣的結構,
+然後是先用console模擬,
+然後再用很理想很簡單的假設,
+去計算他的輻射的情形,
+然後,
+所以我要設計這個結構就是,
+一個就是他,
+如果要產生原極化的話就是,
+他必須要有兩個orthogonal的resonant pair,
+而且還要有90度的相位差,
+那在這樣的情形下呢,
+他就可以產生原極化的魔態,
+那我去計算他,
+extract他裡面的一些magnitude,
+然後用一些,
+從magnitude然後做一些,
+很原始的初步的假設,
+他的stress field跟他的magnetic current,
+就是乘正比的,
+然後會再計算他的原廠的輻射,電磁輻射,
+然後從原廠的電磁輻射去計算他的,
+原極化的performance,
+那就會計算出這張非常初步的圖,
+就是直接會跟他的魔態是相關的,
+還有他的radiation pattern,
+就是一個circular polarized dipole,
+那會有這張圖呢,就是會觀察到幾個,
+就是在very low frequency,
+不是他的resonant band的時候,
+他是magnitude會很小,
+但是他大部分還是circular的motion,
+那在你design的operating band,
+他的magnitude就會大很多,
+然後也是真的circular motion,
+那在其他的band就會有一些unwanted mode,
+他就是幾乎不會有circular motion,
+對,大致是這樣子豐富的東西。
+所以,
+就是你秀出來他的實際上的數字,
+你的單位是micron,然後都是10的負6負7這樣,
+所以就是你實際上看到的displacement,
+是nanometer或是subnanometer,
+實際上是這樣嗎?
+對,模擬出來的結果。
+所以你這是simulation,可是如果at the end of the day,
+你要做device的話,
+你的環境可能是有點像是要上光學桌之類的,
+要不然你的vibration,
+對,
+我後面會放我的實驗結果,
+就是Garbage。
+不過那叫做驗證你的理論計算,沒有問題。
+應該也要降溫吧,我不知道。
+我也覺得。
+這是我後面會再講。
+那其實這個尺寸是很idealized的尺寸,
+實際上我們的fabrication process,
+因為這個剛剛好像有show diameter,
+大概是多少?
+就是這個地方模擬的case是idealized case,
+因為它會如果circular motion的話,
+其實就是代表它的這個半徑跟它的高度是比較接近的,
+它比較會有circular的mode。
+但是實際上材料沒有辦法做到這麼小又這麼厚,
+所以
+就會變得很像disc,
+然後我用disc去模擬的話,
+它的mesh就會變得很複雜,
+因為它的寬跟它的厚度是有點差別的,
+就是你這邊可能會mesh得很細,
+然後你的mesh element就會變得很多,
+然後計算就會很久又不太準,
+所以就會看到一些奇怪的結果。
+這個我還沒modify,
+就我覺得我modify了一些問題。
+那不管了,就去做了。
+所以我就
+第一個就是請
+一開始第一個版本就是請usr那邊做了這個chip,
+然後這個chip就是前面的那個ball antenna,
+然後呢我為了要feed
+90度的相位差,我就做了一個coupler,
+然後會feed90度的相位差,
+然後這是比例圖,
+然後我做了一個對照組,
+一個是由Nikko,
+他們比較早期都是用Nikko,
+但其實Nikko不能用在high frequency application,
+就是材料也是一個大問題。
+然後就不同的radius的size,
+然後我用一個home antenna在far field region接收,
+那下面這個就是
+home field,DC的。
+然後我就用patch antenna去對照,
+這個patch antenna就是fabricated出來,
+它的接收的那個場牆跟
+它的noise大概是差了20幾個dB吧,
+在它的reflection coefficient有的地方。
+然後我想要去就是比較一下
+它跟environment noise應該是有差別的。
+但是
+anyway就是我design的那個band,
+理論上這個東西是要看到的是
+這個
+這張圖是
+S21就是
+這個是patch的,就是剛剛的
+patch的copo跟crosspo,就是patch
+這是它的background noise,紅色的,
+然後這是它有信號強度的地方。
+看它能不能comparable,
+跟noise有沒有comparable,
+但是很明顯的,
+剛剛S21這個是patch的copo跟crosspo,
+那fopo跟low的就是
+我也做了另外一個校準,
+就是我solder,
+我就焊了那個很小的一個50歐姆的
+電阻,然後去看
+電阻抗是怎麼樣,就跟它比較,
+這是打棒線,所以我是跟兩個東西比較,
+一個是跟patch比較,
+另外一個是跟terminal的resistor比較。
+那
+fopo就是我實際的結果,黑色的。
+然後
+這張圖應該是有一點
+錯就是
+有一個虛線,它沒有修正過來。
+然後
+藍色,那
+總之就是我第一次的量測,大概兩年前,
+就是是不太成功的,
+就是
+原有的天線的輻射,
+它的copo跟crosspo並沒有很明顯的看到,
+類似在特定的頻段。
+這個是我是有對照它的reflection coefficient,
+就是S11去看,
+但是它並沒有很明顯的,它有接收到power的地方,
+有特別強的輻射,是沒有一個correlation。
+理論上我應該是看到是比方說,
+這個地方power有打進去,所以它輻射就很強。
+但我是沒有看到這個現象。
+然後
+那另外一個它的reference,
+其實也應該要出現很大的差別的是
+它的磁,
+就是那個magnetic material,一個是會輻射的,
+然後另外一個換成不會輻射的,
+所以兩個reference應該要有很大的差別,
+就是nickel跟鎳鐵的合金。
+但是也沒有看到很大的差別。
+對
+所以
+最後的結論的話就是說
+第一個是我的那個coupler本身就有radiation,
+所以要怎麼樣
+eliminate coupler radiation,
+所以第一步我想的就是
+那可能我就是先不要做原際化,
+我就是先看它的一個魔態就好了。
+那一個魔態的話就只要加電極就好,
+不用那麼大的coupler去fit。
+那第二個呢是
+就算我要看radiation我也要先確定
+它的這個壓電材料真的有circular mode,
+所以我現在正在做的就是
+要先去看這個壓電材料
+是不是真的有這個circular mode,
+那這可以用一些力學的方法去看它的振動的魔態。
+然後等到這兩件事都確定之後才會
+看combine在一起會不會有原際化的魔態存在。
+那在力學來講的話他們是
+沒有人探討過就是原際化的魔態,
+那原際化這件事情的話
+如果是對於就是信號品質很差的系統而言的話
+是很重要的,
+因為使用原際化的話會改善
+很多他們的資料的傳輸的表現。
+但是其實最終這是一個更大的問題,
+就是
+除了剛剛中間就有提到的一些理論的問題
+還有這個架構
+在哪一個應用真的可以實際上做出來
+能夠達成這個表現的。
+目前我是先在這個work上再做一些extension,
+但是其實這個東西就是一個
+蠻新的題目,
+還有很多東西可以去挖掘。
+以上就是我的演講。
+那大家有沒有什麼問題呢?
+那如果沒有的話我先問個問題好了。
+就是我對那個
+你這個系統的
+就是它的working mechanism有點問題,
+就是你可以回到之前那一張你的結構圖嗎?
+就是有一個Piezoelectric,然後上面有一個
+可能是Ferroelectric嗎?
+那就是你可以稍微解釋一下
+就是這個東西是
+它是怎麼樣發射訊號還有接收訊號的嗎?
+就是
+從這個圖來看好了。
+如果從右邊這張圖
+來看的話
+第一個是Piezoelectric material做的事情
+就是你兩邊有電極
+然後你有電位差會產生一個電場
+然後這個電場呢
+alternating的電場呢
+會在這個壓電材料呢產生
+deformation
+那這個deformation呢就會產生一個共振
+然後所以這是electrical field
+通過Piezoelectric tricity變成resonance
+那這個結構的共振呢
+會有這個stress的變化
+那在這個
+Magnetostrictive material呢
+它如果有一個applied stress field
+它裡面的magnetization
+或magnetic dipole moment
+或它的internal的magnetic field
+就會產生
+就是會跟你applied stress
+是有相關性
+所以它的magnetization就會產生變化
+那但是呢
+目前的一個問題跟挑戰所在
+就是Piezoelectricity呢因為它有commercial application
+所以它的behavior是well known
+但是在這個Magnetostrictive material呢
+它的理論其實還沒有那麼完整
+那我們
+最早應該是也是跟巨乙夫人有關
+他們發現這個現象的時候
+然後是比較primitive
+就是你有applied stress
+然後它就會產生deformation
+然後它的兩道磁場就會產生改變
+那所以呢
+這個東西呢就是
+他們希望這樣的設計呢是用來
+在這個resonance產生
+dynamic的magnetization
+然後理論上的dynamic的magnetization
+就是equivalent magnetic current
+就跟你有AC的電流一樣
+你有AC的磁流的話也會產生電磁輻射
+大致上是這樣
+但現在的問題是在這一層的材料
+其實還有很多的討論
+就是比方說它到底它的功率吸收的效益怎麼樣
+然後它的coupling的efficiency怎麼樣
+等等的
+那這個acoustic buffer是什麼
+這個東西呢
+就是他們呢希望
+這個fundamental mode的standing wave
+這個是跟他們的這個
+theoretical的prediction是有關的
+就是你在resonance的時候
+你一定是比方說2分之λ
+2分之3λ
+就是那個
+stress wave的λ嗎
+就是mechanical的stress resonant wave的λ
+所以那個東西是為了要湊成一個cavity
+對就是
+它就是要讓那個standing wave的stress field
+最強的地方要作用在
+magnetic material上面
+那理論上我們apply最強的stress field
+magnetic field的改變
+所以他們才會多了這個叫acoustic buffer
+ok
+哦 磁極的
+磁極的輻射是可以跟電極的輻射
+就是一樣強的嗎
+就好像很少聽過有人
+就是通常都是一個
+electric dipole在作用
+然後有就是真正的magnetic dipole在
+散發出去
+就是有一種類型的antenna
+叫做loop antenna
+那它就是像是一個甜甜圈一樣
+那loop antenna它就是環形的電流
+那我們知道就是根據那個
+哪一個電力我忘了
+反正就是環形的電流其實就是
+其實也會有人用叫loop antenna這樣的設計
+那我們計算的時候有時候也會直接
+用這個等效理論用magnetic dipole去算它的輻射
+那它特性確實會比較不一樣
+比方說它可能就是比較inductive
+一些特性是比較不一樣
+但是確實也還是有這種叫loop antenna在使用
+ok 那我另外一個
+我比較有興趣的問題是
+圓偏振的signal
+它會照你的傳輸比較好
+應該是說signal to noise比較好嗎
+對對對 那這個是為什麼
+那一個的話是說
+在這個架構底下
+因為它是longitudinal的magnetic current
+那就是根據image theory
+如果它在一個就是
+無限大的金屬平面上的話
+其實它的radiation是會cancel
+它們原先設計應該是沒有考慮這個問題
+當然如果你不需要放在任何metal plane
+是不會有這個問題
+但是你總是有可能你的天線還是放在某個metal上面
+那所以你longitudinal就會有這個問題
+那這是天線設計本身
+那這邊我投影片沒有放
+就是圓極化呢
+在衛星通訊通常會使用
+為什麼呢 因為就是衛星通訊
+對於sensitivity的要求特別高
+那其實呢 一般的天線
+如果不是使用圓極化
+而是隨便的極化或線性極化
+它在傳播的時候會有一些問題
+比方說第一個是你要接收的話
+那你天線就要align
+那就是很麻煩 那圓極化不會有這個問題
+那第二個呢 是它在就是比方說在很多建築物
+反射跟傳播的時候
+它的圓極化的那個loss
+會小很多
+就是線偏振的話可能會有S和P的差別
+是不是
+S和P是 還有booster angle之類的
+的反射率不同啊 或者是
+這個其實我沒有
+仔細去了解 但是
+他們會講到一個東西叫什麼faraday effect
+然後還有什麼就是multipass loss
+但是就是如果你對系統要求特別高的話
+通常會希望用的是圓極化
+只是因為我們手機跟那些Wi-Fi
+也沒有什麼叫系統要求 就隨便
+到衛星或軍事 sensitivity要求很高的話
+就會比較希望用圓極化 它還有就是
+線性極化就是一個方向的modulation
+那圓極化就可以double它的capacity
+就是一個有點像
+更好的選擇 但是通常比較難implement
+OK 了解 謝謝
+那還有沒有什麼問題呢
+請問一下那個
+電極 電極的厚度有多少
+between那個pixelelectric
+跟magnetostrict layer
+它是什麼材料
+我這邊的電極的
+厚度
+大概是
+應該是0.1micrometer
+就是很薄很薄
+然後我的材料
+是according to他們
+就是製程
+他們應該是用
+用P
+他們一開始的製程是用PT
+但是最後fabricate出來的東西
+就是這個就是
+它connect到上面的電極
+我記得他們是用PTR
+是用薄
+然後電極的話會對它的resonance
+會有一些mod
+resonance mod的影響
+然後也會有一些loss的影響
+但相對來說沒有那麼嚴重
+所以這個因素也會需要考量
+因為它可能就像一個buffer
+所以你那個stress不一定會
+會影響到那個magnetostrict material吧
+我懂你的意思
+因為如果
+你要有resonance的stress field的話
+它是要有一個air cavity的設計
+就是
+那個的話就是
+在far-acoustic wave resonator
+它會有不同的設計
+你才會減少
+就是有一種是
+就是你要盡量keep
+它的energy在這個structure裡面去共振
+因為
+因為
+因為你的理論是
+希望你那個strain
+可以造成像magnetic field的變化
+但是我現在說你那個buffer layer
+因為你的政府一定很小
+因為是pyridoic material
+可能都不到一個nanometer
+然後你上面又一層那麼厚的metal
+我不知道
+magnetostricted會有多少
+magnetic change
+它使用的電極
+就是
+它實際上fabricated的那個電極
+沒有示意圖畫的這麼厚
+不過確實實際上有多少的magnetization change
+也是還在study
+就是說
+either你是去看它的power absorption
+或者是看它
+你至少要先確定它有power absorption才能看它的radiation
+那就是
+現在是比方說就是這個
+magnetostricted power absorption的一些特性
+大家也還在研究
+我只是很好奇
+像你這個結構
+你怎麼去design你這個工作的頻率
+基本上就只是靠
+magnetostricted material的厚度嗎
+不是 是total的厚度
+大致上來說是這樣沒有錯
+但是我是先用cumsole
+就是理論上
+它的這個每個模態應該都是要能夠算得出
+它的geometric的一些關係對它resonance的影響
+但是大致上是厚度主要決定
+它的共振頻率沒有錯
+你希望它是工作在第幾個模態
+就是fundamental mode
+就是2分之lambda
+ok 謝謝
+然後一開始就是會
+會先用cumsole就是去模擬看它
+可能的這個你想要的mode
+它的characteristic mode是在
+什麼頻率
+那個我有問題
+就是你
+你這個debug是在哪裡fab
+教育是LA做的
+我是跟
+就是他們是一個center叫
+California nano system
+然後它裡面其實有人負責theoretical
+有人負責fabrication
+有人負責material development
+那我是跟他們fabrication的那個group合作
+所以我就把我的design畫成layout給他
+但是我現在是希望直接可以在台灣
+來develop這些material
+你把我要問的問題回答完了
+就是我想問台灣這個能不能台灣做
+因為其實像台大應力所
+他們可能之前有人在研究
+surface acoustic wave filter
+或者是一些東西
+但是就我所知全台灣現在是沒有人在研究
+commercial應用的bowl filter
+但其實bowl filter這個東西已經被
+他們都已經是commercial用在手機壟斷的東西
+但是台灣現在是沒有這個技術
+就是bowl filter的話其實是對於
+跟soul filter比起來它的高頻的
+performance是好很多
+就是可以到6GHz吧
+都還可以是不錯的filter
+然後很小大概就1mm
+或更小
+1mm square
+接下來我有一個算是我的小
+算建議吧
+也不算是問題吧
+就是我猜Ted應該跟我的想法一樣
+就是我們可能都有點職業病就有點bias
+我覺得這個你第一次要量出這個東西
+或是要否證那個northeastern的性質
+我覺得這個可能就是你要不只要上光學桌
+你還要低溫你可能還要給他蓋一個那個
+把那個地球磁場遮掉
+應該是你真的要可以control你的
+你的那個feel到
+要到很低才可能看得到
+嗯沒錯
+我覺得也要真空
+不然你要把空氣變成冰塊放裡面嗎
+對啊應該是啦應該是我也覺得
+所以Ted你也覺得嗎你也覺得要這樣子嗎
+對啊就是因為有風能的東西
+就是我覺得就是需要
+多少4K至少吧
+我覺得我的看法是這樣
+就是我現在這樣講說
+你要control你的environment才能做這個measurement
+就好像就不是說commercializable
+或者是比較practical的technology
+但是我覺得這是第一步
+所以我不會覺得他未來不可能往上拉
+但是我自己現在看來你現在要做第一個measurement
+可能不是你的device不好
+或者是你的simulation做不對
+我覺得可能measurement不好做
+但是應該是有機會
+他們兩個那個東西
+自從2017年發Nature之後就再也沒有repeated walk
+因為知道怎麼做研究生畢業了
+哈哈哈哈
+就是他們就轉去做low frequency的應用
+然後對
+所以
+I don't know反正我就是
+繼續往下做
+ok
+那還有沒有其他的問題呢
+如果沒有的話
+那我就先把那個錄影
+關掉囉

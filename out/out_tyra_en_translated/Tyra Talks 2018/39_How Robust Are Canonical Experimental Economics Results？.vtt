@@ -1,0 +1,5948 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+I'm very happy to have you all here today for Lin Bo-xuan's talk.
+
+00:10.000 --> 00:14.000
+Let me first introduce our speaker, Lin Bo-xuan.
+
+00:14.000 --> 00:20.000
+She studied economics at NTU, and is now a sophomore at NTU Economics.
+
+00:20.000 --> 00:29.000
+Currently, she is an intern at a startup company called ModLab in Pasadena, California.
+
+00:29.000 --> 00:35.000
+Her main topic is game-related data analysis.
+
+00:35.000 --> 00:39.000
+Today, we are very happy to invite Lin Bo-xuan to give a talk
+
+00:39.000 --> 00:43.000
+about how to use class experiment data to test the stability of the final window match
+
+00:43.000 --> 00:46.000
+and the results of the double-sided auction experiment.
+
+00:46.000 --> 00:50.000
+Let's welcome Lin Bo-xuan to start her talk.
+
+00:50.000 --> 00:52.000
+Thank you, Director Lin.
+
+00:52.000 --> 00:55.000
+Without further ado, I'll get started.
+
+00:55.000 --> 00:57.000
+Today's topic is very simple.
+
+00:57.000 --> 00:59.000
+I'll just ask one question.
+
+00:59.000 --> 01:05.000
+Are the results of the economic experiment we see on paper stable?
+
+01:05.000 --> 01:08.000
+To be honest, in the field of economic experiments,
+
+01:08.000 --> 01:10.000
+people are the ones doing the research.
+
+01:10.000 --> 01:13.000
+So, if you want to say that a result is stable,
+
+01:13.000 --> 01:15.000
+you can't just say,
+
+01:15.000 --> 01:18.000
+if I were in Taiwan, I'd do this result.
+
+01:18.000 --> 01:20.000
+Or, if I were in a victim group, I'd do that.
+
+01:20.000 --> 01:24.000
+Often, we need to do a lot of different victim groups.
+
+01:24.000 --> 01:27.000
+If we were to say that this result is right for all humans,
+
+01:27.000 --> 01:30.000
+then it should be right to take the same result
+
+01:30.000 --> 01:33.000
+and do the same experiment in every place.
+
+01:33.000 --> 01:36.000
+But in fact, we often know that
+
+01:36.000 --> 01:38.000
+this situation is often not necessarily right.
+
+01:38.000 --> 01:42.000
+For example, let's say we measure the risk.
+
+01:42.000 --> 01:44.000
+In Taiwan alone,
+
+01:44.000 --> 01:46.000
+if you only measure the risk for men or women,
+
+01:46.000 --> 01:48.000
+the set of risks may be different.
+
+01:48.000 --> 01:51.000
+So, in fact, if we want to measure stability,
+
+01:51.000 --> 01:53.000
+that is, if we want to do the same experiment
+
+01:53.000 --> 01:56.000
+in many places, the result is wrong.
+
+01:56.000 --> 01:58.000
+But often,
+
+01:58.000 --> 02:00.000
+what we want to do
+
+02:00.000 --> 02:03.000
+is actually very difficult in the experiment.
+
+02:03.000 --> 02:05.000
+First, because economists know
+
+02:05.000 --> 02:07.000
+that our research funds are limited.
+
+02:07.000 --> 02:09.000
+Second, our time is limited.
+
+02:09.000 --> 02:11.000
+So, often, it's hard for us to think about
+
+02:11.000 --> 02:13.000
+whether we can do the same experiment
+
+02:13.000 --> 02:14.000
+in every corner of the world.
+
+02:14.000 --> 02:16.000
+So, this is a very difficult thing.
+
+02:16.000 --> 02:18.000
+Because, mainly, there is a big limitation in economic experiments.
+
+02:18.000 --> 02:21.000
+In fact, we hope to provide real benefits to consumers.
+
+02:21.000 --> 02:23.000
+Because of this,
+
+02:23.000 --> 02:26.000
+we need a lot of money and a lot of time.
+
+02:26.000 --> 02:28.000
+We need to have a good enough time design.
+
+02:28.000 --> 02:31.000
+Basically, it will be impossible to measure in every place in the world.
+
+02:31.000 --> 02:33.000
+So, because of this,
+
+02:33.000 --> 02:35.000
+we did not give up
+
+02:35.000 --> 02:37.000
+to test whether our experiment results are stable or not.
+
+02:37.000 --> 02:39.000
+So, there are two main ways
+
+02:39.000 --> 02:41.000
+to do this on our website.
+
+02:41.000 --> 02:43.000
+First,
+
+02:43.000 --> 02:45.000
+for example,
+
+02:45.000 --> 02:47.000
+in the case of Ultraman Game,
+
+02:47.000 --> 02:49.000
+in fact, in the past 50 years,
+
+02:49.000 --> 02:51.000
+there have been a lot of studies on the series of Ultraman Game.
+
+02:51.000 --> 02:53.000
+So, basically,
+
+02:53.000 --> 02:55.000
+there is a method
+
+02:55.000 --> 02:57.000
+that we take the previous experimental data
+
+02:57.000 --> 02:59.000
+and break it into a very large database
+
+02:59.000 --> 03:01.000
+to do some meta-analysis here.
+
+03:01.000 --> 03:03.000
+Just like what Usterbeck did in 2004.
+
+03:03.000 --> 03:05.000
+But, like this,
+
+03:05.000 --> 03:07.000
+there is a problem.
+
+03:07.000 --> 03:09.000
+In fact, many times,
+
+03:09.000 --> 03:11.000
+all the previous studies of Ultraman Game
+
+03:11.000 --> 03:13.000
+are the same game,
+
+03:13.000 --> 03:15.000
+but their context is a bit different.
+
+03:15.000 --> 03:17.000
+So, in practice,
+
+03:17.000 --> 03:19.000
+many times, your usage is different,
+
+03:19.000 --> 03:21.000
+or your context is different,
+
+03:21.000 --> 03:23.000
+which may affect the result of the experiment.
+
+03:23.000 --> 03:25.000
+So, when we use this method,
+
+03:25.000 --> 03:27.000
+we have already lost the control
+
+03:27.000 --> 03:29.000
+of our experimental design.
+
+03:29.000 --> 03:31.000
+Although this method
+
+03:31.000 --> 03:33.000
+can make our database very rich.
+
+03:33.000 --> 03:35.000
+The other way is that
+
+03:35.000 --> 03:37.000
+we control the same experimental design,
+
+03:37.000 --> 03:39.000
+but go to other places
+
+03:39.000 --> 03:41.000
+to do the same experiment.
+
+03:41.000 --> 03:43.000
+Just like Roth,
+
+03:43.000 --> 03:45.000
+he has been to four countries in the world.
+
+03:45.000 --> 03:47.000
+One is the United States,
+
+03:47.000 --> 03:49.000
+one is Slovenia,
+
+03:49.000 --> 03:51.000
+one is Israel,
+
+03:51.000 --> 03:53.000
+and the other is Japan.
+
+03:53.000 --> 03:55.000
+He went to these four countries
+
+03:55.000 --> 03:57.000
+to do the same final analysis
+
+03:57.000 --> 03:59.000
+and market game
+
+03:59.000 --> 04:01.000
+to see if the results of these four countries
+
+04:01.000 --> 04:03.000
+were stable or not.
+
+04:03.000 --> 04:05.000
+This is the largest experiment
+
+04:05.000 --> 04:07.000
+so far.
+
+04:07.000 --> 04:09.000
+But, from this point of view,
+
+04:09.000 --> 04:11.000
+even so,
+
+04:11.000 --> 04:13.000
+we can only do it in a small number of places.
+
+04:13.000 --> 04:15.000
+So, in this way,
+
+04:15.000 --> 04:17.000
+although you can
+
+04:17.000 --> 04:19.000
+control your experimental design,
+
+04:19.000 --> 04:21.000
+but you can't make
+
+04:21.000 --> 04:23.000
+your database very large.
+
+04:23.000 --> 04:25.000
+So, today,
+
+04:25.000 --> 04:27.000
+what we are doing is
+
+04:27.000 --> 04:29.000
+using the third method.
+
+04:29.000 --> 04:31.000
+It's like
+
+04:31.000 --> 04:33.000
+you want to test the stability
+
+04:33.000 --> 04:35.000
+of a result of an experiment.
+
+04:35.000 --> 04:37.000
+There are three things to do.
+
+04:37.000 --> 04:39.000
+One is the real sound,
+
+04:39.000 --> 04:41.000
+and the third is to have a large enough sample.
+
+04:41.000 --> 04:43.000
+The first two methods
+
+04:43.000 --> 04:45.000
+are to give up
+
+04:45.000 --> 04:47.000
+and control the experimental design.
+
+04:47.000 --> 04:49.000
+The other is to give up a large enough database.
+
+04:49.000 --> 04:51.000
+But what we are going to do today
+
+04:51.000 --> 04:53.000
+is to have a large enough database,
+
+04:53.000 --> 04:55.000
+and the design
+
+04:55.000 --> 04:57.000
+is exactly the same.
+
+04:57.000 --> 04:59.000
+But what we give up today is to give up
+
+04:59.000 --> 05:01.000
+and control the sound.
+
+05:01.000 --> 05:03.000
+In this case,
+
+05:03.000 --> 05:05.000
+I can only say that we are the first article
+
+05:05.000 --> 05:07.000
+to do this.
+
+05:07.000 --> 05:09.000
+We have a lot of data.
+
+05:09.000 --> 05:11.000
+But when we give up
+
+05:11.000 --> 05:13.000
+and control the sound,
+
+05:13.000 --> 05:15.000
+our experiment
+
+05:15.000 --> 05:17.000
+will be done in a very
+
+05:17.000 --> 05:19.000
+no-easy situation.
+
+05:19.000 --> 05:21.000
+So, if we can
+
+05:21.000 --> 05:23.000
+reproduce
+
+05:23.000 --> 05:25.000
+all the experimental results
+
+05:25.000 --> 05:27.000
+in the lab,
+
+05:27.000 --> 05:29.000
+it means that the experimental results
+
+05:29.000 --> 05:31.000
+are very stable.
+
+05:31.000 --> 05:33.000
+As I said,
+
+05:33.000 --> 05:35.000
+what we are going to use today
+
+05:35.000 --> 05:37.000
+is MobLab.
+
+05:37.000 --> 05:39.000
+MobLab is an experimental platform
+
+05:39.000 --> 05:41.000
+for all class economics experiments.
+
+05:41.000 --> 05:43.000
+If we take all the data from the class,
+
+05:43.000 --> 05:45.000
+it is actually good and bad.
+
+05:45.000 --> 05:47.000
+Of course, the two biggest concerns are
+
+05:47.000 --> 05:49.000
+that all the students in the class
+
+05:49.000 --> 05:51.000
+do not use money
+
+05:51.000 --> 05:53.000
+to provide their sound.
+
+05:53.000 --> 05:55.000
+Most of the time, they just use
+
+05:55.000 --> 05:57.000
+the grade of the course
+
+05:57.000 --> 05:59.000
+or other random numbers
+
+05:59.000 --> 06:01.000
+to provide their sound.
+
+06:01.000 --> 06:03.000
+This is what we have lost control of.
+
+06:03.000 --> 06:05.000
+The two biggest concerns are
+
+06:05.000 --> 06:07.000
+that many students in class
+
+06:07.000 --> 06:09.000
+may not necessarily be
+
+06:09.000 --> 06:11.000
+the representative sample
+
+06:11.000 --> 06:13.000
+of the culture.
+
+06:13.000 --> 06:15.000
+However, there are still
+
+06:15.000 --> 06:17.000
+a lot of benefits
+
+06:17.000 --> 06:19.000
+for us to try this method.
+
+06:19.000 --> 06:21.000
+First of all,
+
+06:21.000 --> 06:23.000
+there is no publication bias
+
+06:23.000 --> 06:25.000
+in our database.
+
+06:25.000 --> 06:27.000
+For example,
+
+06:27.000 --> 06:29.000
+if you take the results
+
+06:29.000 --> 06:31.000
+of the previous article
+
+06:31.000 --> 06:33.000
+as a meta-analysis,
+
+06:33.000 --> 06:35.000
+you may get too good results.
+
+06:35.000 --> 06:37.000
+This is called publication bias.
+
+06:37.000 --> 06:39.000
+However,
+
+06:39.000 --> 06:41.000
+all the results, good or bad,
+
+06:41.000 --> 06:43.000
+are recorded in our database.
+
+06:43.000 --> 06:45.000
+Another thing is that
+
+06:45.000 --> 06:47.000
+our company is
+
+06:47.000 --> 06:49.000
+at least in the class of
+
+06:49.000 --> 06:51.000
+experimental economics.
+
+06:51.000 --> 06:53.000
+If you want to do a class experiment
+
+06:53.000 --> 06:55.000
+in the world,
+
+06:55.000 --> 06:57.000
+you basically use our company.
+
+06:57.000 --> 06:59.000
+In fact, our sample is very diverse.
+
+06:59.000 --> 07:01.000
+There are many different areas.
+
+07:01.000 --> 07:03.000
+This gives us a lot of
+
+07:03.000 --> 07:05.000
+variation to test.
+
+07:05.000 --> 07:07.000
+Thirdly,
+
+07:07.000 --> 07:09.000
+the environment in which our data is generated
+
+07:09.000 --> 07:11.000
+is exactly the same.
+
+07:11.000 --> 07:13.000
+The interface, language,
+
+07:13.000 --> 07:15.000
+and the entire experiment process
+
+07:15.000 --> 07:17.000
+are exactly the same.
+
+07:17.000 --> 07:19.000
+This means that we have
+
+07:19.000 --> 07:21.000
+completely controlled
+
+07:21.000 --> 07:23.000
+the process of their game.
+
+07:23.000 --> 07:25.000
+These are the three advantages
+
+07:25.000 --> 07:27.000
+that we think
+
+07:27.000 --> 07:29.000
+are very important.
+
+07:29.000 --> 07:31.000
+Before talking about these two areas,
+
+07:31.000 --> 07:33.000
+I would like to talk about
+
+07:33.000 --> 07:35.000
+how big our dataset is.
+
+07:35.000 --> 07:37.000
+First of all,
+
+07:37.000 --> 07:39.000
+we can see that
+
+07:39.000 --> 07:41.000
+this table is a total of
+
+07:41.000 --> 07:43.000
+10 areas in our dataset.
+
+07:43.000 --> 07:45.000
+You can see that
+
+07:45.000 --> 07:47.000
+this data is across North America,
+
+07:47.000 --> 07:49.000
+Europe, and Asia.
+
+07:49.000 --> 07:51.000
+In Ultraman Game,
+
+07:51.000 --> 07:53.000
+we have more than
+
+07:53.000 --> 07:55.000
+15,000 sample points.
+
+07:55.000 --> 07:57.000
+For those of you who do not know
+
+07:57.000 --> 07:59.000
+the economics of time,
+
+07:59.000 --> 08:01.000
+the data in Ultraman Game
+
+08:01.000 --> 08:03.000
+is about 10 times more than
+
+08:03.000 --> 08:05.000
+a normal article,
+
+08:05.000 --> 08:07.000
+or 0 to 2.0.
+
+08:07.000 --> 08:09.000
+In DoubleAction,
+
+08:09.000 --> 08:11.000
+there are basically 2.0 more.
+
+08:11.000 --> 08:13.000
+This is a very large sample
+
+08:13.000 --> 08:15.000
+that we can test.
+
+08:15.000 --> 08:17.000
+Next,
+
+08:17.000 --> 08:19.000
+I will talk about these two areas.
+
+08:19.000 --> 08:21.000
+These two areas are actually very simple.
+
+08:21.000 --> 08:23.000
+The first is Ultraman Game.
+
+08:23.000 --> 08:25.000
+In addition,
+
+08:25.000 --> 08:27.000
+why do we choose these two areas?
+
+08:27.000 --> 08:29.000
+The first is because these two areas
+
+08:29.000 --> 08:31.000
+are the most abundant in our database.
+
+08:31.000 --> 08:33.000
+The second is that these two areas
+
+08:33.000 --> 08:35.000
+are basically the origin of
+
+08:35.000 --> 08:37.000
+the economics of time.
+
+08:37.000 --> 08:39.000
+In Ultraman Game,
+
+08:39.000 --> 08:41.000
+there are two people in this game.
+
+08:41.000 --> 08:43.000
+One is Proposer,
+
+08:43.000 --> 08:45.000
+the other is Responder.
+
+08:45.000 --> 08:47.000
+Proposer can decide
+
+08:47.000 --> 08:49.000
+how much to give to the other party.
+
+08:49.000 --> 08:51.000
+This game is very simple.
+
+08:51.000 --> 08:53.000
+There is a ball in the middle.
+
+08:53.000 --> 08:55.000
+You can decide how much to give to the other party.
+
+08:55.000 --> 08:57.000
+You can pull the ball
+
+08:57.000 --> 08:59.000
+and decide how much to give to the other party.
+
+08:59.000 --> 09:01.000
+If you decide,
+
+09:01.000 --> 09:03.000
+you can press Submit.
+
+09:03.000 --> 09:05.000
+In this way, the other party can see
+
+09:05.000 --> 09:07.000
+how much you gave to the other party.
+
+09:07.000 --> 09:09.000
+Next,
+
+09:09.000 --> 09:11.000
+suppose I decide to give the other party $45.
+
+09:11.000 --> 09:13.000
+In this way,
+
+09:13.000 --> 09:15.000
+the other party can see
+
+09:15.000 --> 09:17.000
+that this is
+
+09:17.000 --> 09:19.000
+a Proposer you have provided.
+
+09:19.000 --> 09:21.000
+Proposer can decide
+
+09:21.000 --> 09:23.000
+how much to give to the other party.
+
+09:23.000 --> 09:25.000
+If you decide to give $45,
+
+09:25.000 --> 09:27.000
+the other party can see
+
+09:27.000 --> 09:29.000
+how much to give to the other party.
+
+09:29.000 --> 09:31.000
+If you decide to give $45,
+
+09:31.000 --> 09:33.000
+the other party can see
+
+09:33.000 --> 09:35.000
+how much to give to the other party.
+
+09:35.000 --> 09:37.000
+This is a very simple game.
+
+09:37.000 --> 09:39.000
+It is like a simple negotiation
+
+09:39.000 --> 09:41.000
+in a simulation game.
+
+09:41.000 --> 09:43.000
+For example,
+
+09:43.000 --> 09:45.000
+when you go to a night market
+
+09:45.000 --> 09:47.000
+to buy vegetables,
+
+09:47.000 --> 09:49.000
+don't pull the ball.
+
+09:49.000 --> 09:51.000
+It is like a simulation game.
+
+09:53.000 --> 09:55.000
+This is the game interface
+
+09:55.000 --> 09:57.000
+of the Ultraman Game.
+
+09:57.000 --> 09:59.000
+Next, I will talk about
+
+09:59.000 --> 10:01.000
+double-sided auction.
+
+10:01.000 --> 10:03.000
+The most classic example
+
+10:03.000 --> 10:05.000
+of a double-sided auction
+
+10:05.000 --> 10:07.000
+is like Wall Street.
+
+10:07.000 --> 10:09.000
+They are selling stocks.
+
+10:09.000 --> 10:11.000
+You may often see some pictures
+
+10:11.000 --> 10:13.000
+or news photos
+
+10:13.000 --> 10:15.000
+that there are many machines
+
+10:15.000 --> 10:17.000
+and many traders
+
+10:17.000 --> 10:19.000
+raising their hands and shouting.
+
+10:19.000 --> 10:21.000
+This means that
+
+10:21.000 --> 10:23.000
+everyone is shouting
+
+10:23.000 --> 10:25.000
+how much to give to this person
+
+10:25.000 --> 10:27.000
+and how much to give to that person.
+
+10:27.000 --> 10:29.000
+Double-sided auction is like
+
+10:29.000 --> 10:31.000
+Ultraman Game.
+
+10:31.000 --> 10:33.000
+Ultraman Game has only one side
+
+10:33.000 --> 10:35.000
+and you are given a Proposer.
+
+10:35.000 --> 10:37.000
+In Double-sided auction,
+
+10:37.000 --> 10:39.000
+no matter which side,
+
+10:39.000 --> 10:41.000
+the buyer or seller
+
+10:41.000 --> 10:43.000
+can shout at the same time.
+
+10:43.000 --> 10:45.000
+One is the buyer, the other is the seller.
+
+10:45.000 --> 10:47.000
+If you are the buyer,
+
+10:47.000 --> 10:49.000
+you want to buy something.
+
+10:49.000 --> 10:51.000
+We are buying oranges.
+
+10:51.000 --> 10:53.000
+In this game interface,
+
+10:53.000 --> 10:55.000
+the first thing you can see is
+
+10:55.000 --> 10:57.000
+how much satisfaction you will get
+
+10:57.000 --> 10:59.000
+when you buy an orange.
+
+10:59.000 --> 11:01.000
+Next, you want to bid.
+
+11:01.000 --> 11:03.000
+You can pull a slider bar.
+
+11:03.000 --> 11:05.000
+You can move left and right
+
+11:05.000 --> 11:07.000
+to decide how much you want to bid
+
+11:07.000 --> 11:09.000
+to bid for this orange.
+
+11:09.000 --> 11:11.000
+If you buy an orange,
+
+11:11.000 --> 11:13.000
+the benefit is
+
+11:13.000 --> 11:15.000
+the value deducted
+
+11:15.000 --> 11:17.000
+and how much you spent to buy it.
+
+11:17.000 --> 11:19.000
+If you are buying,
+
+11:19.000 --> 11:21.000
+there are two ways to buy.
+
+11:21.000 --> 11:23.000
+One is to bid here.
+
+11:23.000 --> 11:25.000
+The other is
+
+11:25.000 --> 11:27.000
+if there are many buyers
+
+11:27.000 --> 11:29.000
+and they are already bidding
+
+11:29.000 --> 11:31.000
+so you can also buy
+
+11:31.000 --> 11:33.000
+at the lowest price.
+
+11:33.000 --> 11:35.000
+The next one is
+
+11:35.000 --> 11:37.000
+the seller.
+
+11:37.000 --> 11:39.000
+The seller actually has the same
+
+11:39.000 --> 11:41.000
+interface as the buyer.
+
+11:41.000 --> 11:43.000
+If you sell an orange,
+
+11:43.000 --> 11:45.000
+you have the cost
+
+11:45.000 --> 11:47.000
+so you can see the cost here.
+
+11:49.000 --> 11:51.000
+Next,
+
+11:51.000 --> 11:53.000
+you can pull a slider bar
+
+11:53.000 --> 11:55.000
+to decide how much you want to bid.
+
+11:55.000 --> 11:57.000
+You can ask the price here.
+
+11:57.000 --> 11:59.000
+Or you can decide
+
+11:59.000 --> 12:01.000
+to sell the highest price here.
+
+12:01.000 --> 12:03.000
+So I can sell it here.
+
+12:03.000 --> 12:05.000
+Please note that
+
+12:05.000 --> 12:07.000
+there is a special design
+
+12:07.000 --> 12:09.000
+here.
+
+12:09.000 --> 12:11.000
+When you decide to
+
+12:11.000 --> 12:13.000
+ask the price here,
+
+12:13.000 --> 12:15.000
+if the price is
+
+12:15.000 --> 12:17.000
+negative,
+
+12:17.000 --> 12:19.000
+I will change it to red
+
+12:19.000 --> 12:21.000
+to warn you
+
+12:21.000 --> 12:23.000
+that
+
+12:23.000 --> 12:25.000
+this transaction
+
+12:25.000 --> 12:27.000
+may result in a negative price.
+
+12:27.000 --> 12:29.000
+So this is the double option
+
+12:29.000 --> 12:31.000
+game interface.
+
+12:31.000 --> 12:33.000
+Let me introduce
+
+12:33.000 --> 12:35.000
+the game settings here.
+
+12:35.000 --> 12:37.000
+This is because
+
+12:37.000 --> 12:39.000
+in such a simple game interface,
+
+12:39.000 --> 12:41.000
+many teachers
+
+12:41.000 --> 12:43.000
+can adjust the game parameters
+
+12:43.000 --> 12:45.000
+by themselves.
+
+12:45.000 --> 12:47.000
+But in most cases,
+
+12:47.000 --> 12:49.000
+many teachers use the pre-set options.
+
+12:49.000 --> 12:51.000
+In Ultimatum Game,
+
+12:51.000 --> 12:53.000
+the pre-set price is $100.
+
+12:53.000 --> 12:55.000
+In the case of double option,
+
+12:55.000 --> 12:57.000
+the pre-set market is
+
+12:57.000 --> 12:59.000
+5 buyers
+
+12:59.000 --> 13:01.000
+and each buyer
+
+13:01.000 --> 13:03.000
+can buy 3 items.
+
+13:03.000 --> 13:05.000
+In other words,
+
+13:05.000 --> 13:07.000
+there are a total of 15 items in the market.
+
+13:07.000 --> 13:09.000
+If we draw the value here,
+
+13:09.000 --> 13:11.000
+the black line
+
+13:11.000 --> 13:13.000
+is the demand curve.
+
+13:13.000 --> 13:15.000
+The gray line
+
+13:15.000 --> 13:17.000
+is the supply curve.
+
+13:17.000 --> 13:19.000
+Before I start,
+
+13:19.000 --> 13:21.000
+I want to talk about
+
+13:21.000 --> 13:23.000
+the theoretical prediction
+
+13:23.000 --> 13:25.000
+of these two games.
+
+13:25.000 --> 13:27.000
+In Ultimatum Game,
+
+13:27.000 --> 13:29.000
+the theoretical prediction is very simple.
+
+13:29.000 --> 13:31.000
+If we look at it
+
+13:31.000 --> 13:33.000
+from the perspective of the respondent,
+
+13:33.000 --> 13:35.000
+the balance of a game
+
+13:35.000 --> 13:37.000
+is basically
+
+13:37.000 --> 13:39.000
+that if I do this option,
+
+13:39.000 --> 13:41.000
+the reward is higher than the other option,
+
+13:41.000 --> 13:43.000
+I should do this.
+
+13:43.000 --> 13:45.000
+So if you look at the responder,
+
+13:45.000 --> 13:47.000
+no matter what positive reward he sees,
+
+13:47.000 --> 13:49.000
+I should accept it.
+
+13:49.000 --> 13:51.000
+If I take $1, it's better than $0.
+
+13:51.000 --> 13:53.000
+If I take $2, it's better than $0.
+
+13:53.000 --> 13:55.000
+So in this case,
+
+13:55.000 --> 13:57.000
+if I get a positive reward,
+
+13:57.000 --> 13:59.000
+I should accept it.
+
+13:59.000 --> 14:01.000
+If I get a negative reward,
+
+14:01.000 --> 14:03.000
+I should accept it.
+
+14:03.000 --> 14:05.000
+If I get a positive reward,
+
+14:05.000 --> 14:07.000
+I should accept it.
+
+14:07.000 --> 14:09.000
+This is the theoretical prediction of Ultimatum Game.
+
+14:09.000 --> 14:11.000
+However, in the past 50 years of research,
+
+14:11.000 --> 14:13.000
+we all know that
+
+14:13.000 --> 14:15.000
+this theory is basically written to be overturned.
+
+14:15.000 --> 14:17.000
+Because a lot of times
+
+14:17.000 --> 14:19.000
+when we do research,
+
+14:19.000 --> 14:21.000
+we will find that
+
+14:21.000 --> 14:23.000
+basically all the recipients
+
+14:23.000 --> 14:25.000
+will not only give the other party $1,
+
+14:25.000 --> 14:27.000
+because a lot of times you will be very unhappy.
+
+14:27.000 --> 14:29.000
+This is Ultimatum Game.
+
+14:29.000 --> 14:31.000
+In Double Option,
+
+14:31.000 --> 14:33.000
+this is like the high school science textbook,
+
+14:33.000 --> 14:35.000
+you will see Supply and Demand Curve.
+
+14:35.000 --> 14:37.000
+If you want to solve this game, it's actually very simple.
+
+14:37.000 --> 14:39.000
+You have to find a price
+
+14:39.000 --> 14:41.000
+to clear all the markets.
+
+14:41.000 --> 14:43.000
+So if you are here,
+
+14:43.000 --> 14:45.000
+this gray curve is our
+
+14:45.000 --> 14:47.000
+theoretical prediction price,
+
+14:47.000 --> 14:49.000
+which is just the intersection of Supply and Demand Curve.
+
+14:49.000 --> 14:51.000
+If this price
+
+14:51.000 --> 14:53.000
+is higher,
+
+14:53.000 --> 14:55.000
+if it is higher than the balance price,
+
+14:55.000 --> 14:57.000
+it means that
+
+14:57.000 --> 14:59.000
+there are more sellers who want to sell things at this time,
+
+14:59.000 --> 15:01.000
+and fewer sellers want to sell.
+
+15:01.000 --> 15:03.000
+So if the supply and demand are uneven at this time,
+
+15:03.000 --> 15:05.000
+this force will force the price down.
+
+15:05.000 --> 15:07.000
+But if the price is lower,
+
+15:07.000 --> 15:09.000
+then there are more people who want to sell,
+
+15:09.000 --> 15:11.000
+and fewer people want to sell.
+
+15:11.000 --> 15:13.000
+So this force will push the price back.
+
+15:13.000 --> 15:15.000
+This is also the intersection of Supply and Demand Curve.
+
+15:15.000 --> 15:17.000
+This is our balance price.
+
+15:17.000 --> 15:19.000
+Then in our predicted market,
+
+15:19.000 --> 15:21.000
+the number of balances is 13,
+
+15:21.000 --> 15:23.000
+and the price of the balance is $112.
+
+15:23.000 --> 15:25.000
+So this is our game setting.
+
+15:27.000 --> 15:29.000
+I want to stop here for a while.
+
+15:29.000 --> 15:31.000
+Is everyone OK?
+
+15:31.000 --> 15:33.000
+If there is no problem,
+
+15:33.000 --> 15:35.000
+I will continue to talk about the results.
+
+15:37.000 --> 15:39.000
+Wait a minute,
+
+15:39.000 --> 15:41.000
+let me confirm first.
+
+15:41.000 --> 15:43.000
+So here
+
+15:43.000 --> 15:45.000
+the buyer's demand price
+
+15:45.000 --> 15:47.000
+is $150.
+
+15:47.000 --> 15:49.000
+The forecast is $150, $145,
+
+15:49.000 --> 15:51.000
+$140, and so on.
+
+15:51.000 --> 15:53.000
+Then it is reduced to $130.
+
+15:55.000 --> 15:57.000
+So $150
+
+15:57.000 --> 15:59.000
+and then $130.
+
+15:59.000 --> 16:01.000
+What is the last one?
+
+16:01.000 --> 16:03.000
+The last one is
+
+16:03.000 --> 16:05.000
+$120 and $117.
+
+16:07.000 --> 16:09.000
+Then the other side is from $50
+
+16:09.000 --> 16:11.000
+and then continue to add $50.
+
+16:15.000 --> 16:17.000
+Then I will continue.
+
+16:17.000 --> 16:19.000
+First of all,
+
+16:19.000 --> 16:21.000
+let's talk about
+
+16:21.000 --> 16:23.000
+the overall result.
+
+16:23.000 --> 16:25.000
+First of all, I want to show you
+
+16:25.000 --> 16:27.000
+this table.
+
+16:27.000 --> 16:29.000
+To summarize,
+
+16:29.000 --> 16:31.000
+we mainly looked at the five outcome variables.
+
+16:31.000 --> 16:33.000
+What are their numerical statistics?
+
+16:33.000 --> 16:35.000
+First of all, in the Ultimation Game,
+
+16:35.000 --> 16:37.000
+we mainly looked at two outcome variables.
+
+16:37.000 --> 16:39.000
+One is how many proposals you give to the other party.
+
+16:39.000 --> 16:41.000
+The other is how much your acceptance rate is.
+
+16:41.000 --> 16:43.000
+First of all, we see the first one.
+
+16:43.000 --> 16:45.000
+In the case of $100,
+
+16:45.000 --> 16:47.000
+on average,
+
+16:47.000 --> 16:49.000
+you will give the other party about $36.
+
+16:49.000 --> 16:51.000
+This number is actually
+
+16:51.000 --> 16:53.000
+very close to the result of our experiment.
+
+16:53.000 --> 16:55.000
+For example, if we take
+
+16:55.000 --> 16:57.000
+Rock's article in 1991 as a benchmark,
+
+16:57.000 --> 16:59.000
+the average of the article
+
+16:59.000 --> 17:01.000
+is 40.
+
+17:01.000 --> 17:03.000
+So our difference is only 4%.
+
+17:03.000 --> 17:05.000
+So I think it's a very close result.
+
+17:05.000 --> 17:07.000
+Then the second one we looked at
+
+17:07.000 --> 17:09.000
+is the acceptance rate.
+
+17:09.000 --> 17:11.000
+What we are looking at now is unconditional.
+
+17:11.000 --> 17:13.000
+If we look at
+
+17:13.000 --> 17:15.000
+the unconditional acceptance rate,
+
+17:15.000 --> 17:17.000
+the acceptance rate is 66%.
+
+17:17.000 --> 17:19.000
+Rock's result is about 73%.
+
+17:19.000 --> 17:21.000
+So the difference is only 6% or 7%.
+
+17:21.000 --> 17:23.000
+But because our offer
+
+17:23.000 --> 17:25.000
+is relatively low,
+
+17:25.000 --> 17:27.000
+I think our result
+
+17:27.000 --> 17:29.000
+is able to reproduce
+
+17:29.000 --> 17:31.000
+Rock's result on the aggregate level.
+
+17:31.000 --> 17:33.000
+Hello, I have a question.
+
+17:33.000 --> 17:35.000
+You just said
+
+17:35.000 --> 17:37.000
+he made 40 and then 36.
+
+17:37.000 --> 17:39.000
+Or let's just say
+
+17:39.000 --> 17:41.000
+how much is the experimental
+
+17:41.000 --> 17:43.000
+and how much is the theoretical expectation.
+
+17:43.000 --> 17:45.000
+I think it's very close.
+
+17:45.000 --> 17:47.000
+I want to ask
+
+17:47.000 --> 17:49.000
+what do you think?
+
+17:49.000 --> 17:51.000
+Because you didn't show
+
+17:51.000 --> 17:53.000
+your uncertainty range.
+
+17:53.000 --> 17:55.000
+Maybe it's actually a very stable difference,
+
+17:55.000 --> 17:57.000
+so it's not very close.
+
+17:57.000 --> 17:59.000
+This is
+
+17:59.000 --> 18:01.000
+what I will continue to talk about later.
+
+18:01.000 --> 18:03.000
+Because I'm going to show you a statistic now.
+
+18:03.000 --> 18:05.000
+I'll show you an approximate
+
+18:05.000 --> 18:07.000
+numerical statistic.
+
+18:07.000 --> 18:09.000
+But actually you're right.
+
+18:09.000 --> 18:11.000
+If I have to do it,
+
+18:11.000 --> 18:13.000
+I have to look at whether there is a significant difference.
+
+18:13.000 --> 18:15.000
+But actually
+
+18:15.000 --> 18:17.000
+the first one is
+
+18:17.000 --> 18:19.000
+this is one point.
+
+18:19.000 --> 18:21.000
+If I want to do an assessment,
+
+18:21.000 --> 18:23.000
+there is another problem.
+
+18:23.000 --> 18:25.000
+Our sample number is very unbalanced.
+
+18:25.000 --> 18:27.000
+Very unbalanced.
+
+18:27.000 --> 18:29.000
+So it means that our sample number
+
+18:29.000 --> 18:31.000
+is about more than 10,000 points,
+
+18:31.000 --> 18:33.000
+and their sample number is only more than 1,000 points.
+
+18:33.000 --> 18:35.000
+So in fact, when you do an assessment,
+
+18:35.000 --> 18:37.000
+sometimes there are some
+
+18:37.000 --> 18:39.000
+bad points.
+
+18:39.000 --> 18:41.000
+You need to pay attention.
+
+18:41.000 --> 18:43.000
+But in fact,
+
+18:43.000 --> 18:45.000
+at least in the case of showing data now,
+
+18:45.000 --> 18:47.000
+I can only say it out loud.
+
+18:47.000 --> 18:49.000
+I can only say it out loud now.
+
+18:49.000 --> 18:51.000
+It depends on whether it's close or not.
+
+18:51.000 --> 18:53.000
+Next,
+
+18:53.000 --> 18:55.000
+the other three are
+
+18:55.000 --> 18:57.000
+the results of the double option.
+
+18:57.000 --> 18:59.000
+For the double option, I'm going to use three indexes
+
+18:59.000 --> 19:01.000
+to talk about whether this market
+
+19:01.000 --> 19:03.000
+has been able to
+
+19:03.000 --> 19:05.000
+refine
+
+19:05.000 --> 19:07.000
+the prediction of the theory.
+
+19:07.000 --> 19:09.000
+The first three indexes we look at
+
+19:09.000 --> 19:11.000
+are the average error.
+
+19:11.000 --> 19:13.000
+The definition of the average error is actually below.
+
+19:13.000 --> 19:15.000
+DQ is the price of
+
+19:15.000 --> 19:17.000
+each unit
+
+19:17.000 --> 19:19.000
+of each contract.
+
+19:19.000 --> 19:21.000
+Subtract it.
+
+19:21.000 --> 19:23.000
+This means
+
+19:23.000 --> 19:25.000
+how much is the difference
+
+19:25.000 --> 19:27.000
+from our theoretical prediction.
+
+19:27.000 --> 19:29.000
+Next, I look at the average.
+
+19:29.000 --> 19:31.000
+Because we often have
+
+19:31.000 --> 19:33.000
+about 800 different market configurations.
+
+19:33.000 --> 19:35.000
+So in order to make everyone
+
+19:35.000 --> 19:37.000
+comparable, I use
+
+19:37.000 --> 19:39.000
+the average price to standardize it.
+
+19:39.000 --> 19:41.000
+So we can actually use this index
+
+19:41.000 --> 19:43.000
+to see how much is our accuracy.
+
+19:43.000 --> 19:45.000
+The next one is
+
+19:45.000 --> 19:47.000
+our
+
+19:47.000 --> 19:49.000
+Smith Alpha.
+
+19:49.000 --> 19:51.000
+Smith is to commemorate
+
+19:51.000 --> 19:53.000
+Brown-Smith, so that's why it's called this name.
+
+19:53.000 --> 19:55.000
+Next, this index
+
+19:55.000 --> 19:57.000
+is actually very simple.
+
+19:57.000 --> 19:59.000
+It's the distance between
+
+19:59.000 --> 20:01.000
+my price and
+
+20:01.000 --> 20:03.000
+my theoretical prediction price.
+
+20:03.000 --> 20:05.000
+So I take the square here.
+
+20:05.000 --> 20:07.000
+Then I take another one.
+
+20:07.000 --> 20:09.000
+Next, I look at the average distance.
+
+20:09.000 --> 20:11.000
+Then I open a number.
+
+20:11.000 --> 20:13.000
+So it's actually very similar to
+
+20:13.000 --> 20:15.000
+my standard error.
+
+20:15.000 --> 20:17.000
+But what I'm doing today is not average.
+
+20:17.000 --> 20:19.000
+What I'm doing today is
+
+20:19.000 --> 20:21.000
+theoretical prediction.
+
+20:21.000 --> 20:23.000
+Next, I still use
+
+20:23.000 --> 20:25.000
+my average price to standardize it.
+
+20:25.000 --> 20:27.000
+So I can use this index
+
+20:27.000 --> 20:29.000
+to measure the fluctuation of price.
+
+20:29.000 --> 20:31.000
+The next
+
+20:31.000 --> 20:33.000
+and the third index is Efficiency.
+
+20:33.000 --> 20:35.000
+For Efficiency, I want to use
+
+20:35.000 --> 20:37.000
+the above graph to explain.
+
+20:37.000 --> 20:39.000
+So in this
+
+20:39.000 --> 20:41.000
+market balance,
+
+20:41.000 --> 20:43.000
+if this seller
+
+20:43.000 --> 20:45.000
+makes a deal with this buyer,
+
+20:45.000 --> 20:47.000
+then in the middle,
+
+20:47.000 --> 20:49.000
+the upper part
+
+20:49.000 --> 20:51.000
+is the
+
+20:51.000 --> 20:53.000
+profit I make.
+
+20:53.000 --> 20:55.000
+It's the buyer's profit.
+
+20:55.000 --> 20:57.000
+The lower part is the seller's profit.
+
+20:57.000 --> 20:59.000
+So that means
+
+20:59.000 --> 21:01.000
+the total length of this segment
+
+21:01.000 --> 21:03.000
+is the
+
+21:03.000 --> 21:05.000
+profit I can make
+
+21:05.000 --> 21:07.000
+from this deal.
+
+21:07.000 --> 21:09.000
+So I take the
+
+21:09.000 --> 21:11.000
+supply curve and demand curve
+
+21:11.000 --> 21:13.000
+and divide it by the area.
+
+21:13.000 --> 21:15.000
+So in theory,
+
+21:15.000 --> 21:17.000
+how much surplus
+
+21:17.000 --> 21:19.000
+can I get?
+
+21:19.000 --> 21:21.000
+So the efficiency
+
+21:21.000 --> 21:23.000
+definition is
+
+21:23.000 --> 21:25.000
+the efficiency I achieve
+
+21:25.000 --> 21:27.000
+in this market
+
+21:27.000 --> 21:29.000
+and the efficiency
+
+21:29.000 --> 21:31.000
+I expect in theory.
+
+21:31.000 --> 21:33.000
+How much can I get?
+
+21:33.000 --> 21:35.000
+So what I can see here is
+
+21:35.000 --> 21:37.000
+first,
+
+21:37.000 --> 21:39.000
+my average error is about 6%.
+
+21:39.000 --> 21:41.000
+That means my average price
+
+21:41.000 --> 21:43.000
+is about 6% higher than the theory.
+
+21:43.000 --> 21:45.000
+Next,
+
+21:45.000 --> 21:47.000
+my Smith Alpha,
+
+21:47.000 --> 21:49.000
+my price fluctuation
+
+21:49.000 --> 21:51.000
+is about 30%.
+
+21:51.000 --> 21:53.000
+Next, my efficiency
+
+21:53.000 --> 21:55.000
+is about 84%.
+
+21:55.000 --> 21:57.000
+So in theory,
+
+21:57.000 --> 21:59.000
+these numbers
+
+21:59.000 --> 22:01.000
+are significantly different.
+
+22:01.000 --> 22:03.000
+However,
+
+22:03.000 --> 22:05.000
+this is related to another problem.
+
+22:05.000 --> 22:07.000
+In our lab,
+
+22:07.000 --> 22:09.000
+we usually let our customers
+
+22:09.000 --> 22:11.000
+play the same game for 10 or 20 rounds.
+
+22:11.000 --> 22:13.000
+At this time,
+
+22:13.000 --> 22:15.000
+after more than 10 rounds,
+
+22:15.000 --> 22:17.000
+the price will become very stable.
+
+22:17.000 --> 22:19.000
+But here,
+
+22:19.000 --> 22:21.000
+if we play 10 rounds,
+
+22:21.000 --> 22:23.000
+the customer might have already
+
+22:23.000 --> 22:25.000
+played 2 or 3 rounds.
+
+22:25.000 --> 22:27.000
+This is why the price here is unstable.
+
+22:27.000 --> 22:29.000
+But later on,
+
+22:29.000 --> 22:31.000
+I will try to show
+
+22:31.000 --> 22:33.000
+if
+
+22:33.000 --> 22:35.000
+our students can play
+
+22:35.000 --> 22:37.000
+enough rounds,
+
+22:37.000 --> 22:39.000
+where will they end up?
+
+22:39.000 --> 22:41.000
+This is the result of the double option.
+
+22:41.000 --> 22:43.000
+I will show it.
+
+22:43.000 --> 22:45.000
+Let's continue to look at
+
+22:45.000 --> 22:47.000
+the whole distribution.
+
+22:47.000 --> 22:49.000
+Sorry to interrupt you.
+
+22:49.000 --> 22:51.000
+This has nothing to do with your speech.
+
+22:51.000 --> 22:53.000
+I don't know if you have noticed
+
+22:53.000 --> 22:55.000
+the Chrome dialogue next to you.
+
+22:55.000 --> 22:57.000
+I don't know which computer
+
+22:57.000 --> 22:59.000
+you are using.
+
+23:01.000 --> 23:03.000
+I don't know what to do.
+
+23:05.000 --> 23:07.000
+Thank you for reminding me.
+
+23:07.000 --> 23:09.000
+I hope you don't interrupt me.
+
+23:09.000 --> 23:11.000
+I don't want to leave the group.
+
+23:11.000 --> 23:13.000
+Thank you.
+
+23:13.000 --> 23:15.000
+Let's continue.
+
+23:15.000 --> 23:17.000
+First, let's look at
+
+23:17.000 --> 23:19.000
+the whole distribution of Proposal Offer.
+
+23:19.000 --> 23:21.000
+Because
+
+23:21.000 --> 23:23.000
+in our game design,
+
+23:23.000 --> 23:25.000
+the teacher can decide
+
+23:25.000 --> 23:27.000
+whether to play 1 round, 2 rounds,
+
+23:27.000 --> 23:29.000
+or how many rounds.
+
+23:29.000 --> 23:31.000
+If you play more than 2 rounds,
+
+23:31.000 --> 23:33.000
+it will become a repeated game.
+
+23:33.000 --> 23:35.000
+If we divide the data
+
+23:35.000 --> 23:37.000
+into repeated and repeated games,
+
+23:37.000 --> 23:39.000
+we can see
+
+23:39.000 --> 23:41.000
+that
+
+23:41.000 --> 23:43.000
+the first point
+
+23:43.000 --> 23:45.000
+is
+
+23:45.000 --> 23:47.000
+the theoretical expectation.
+
+23:47.000 --> 23:49.000
+This is the theoretical expectation.
+
+23:49.000 --> 23:51.000
+This is the theoretical prediction.
+
+23:51.000 --> 23:53.000
+So here,
+
+23:53.000 --> 23:55.000
+whether it's 1 shot game or repeated game,
+
+23:55.000 --> 23:57.000
+only about 10% of the audience
+
+23:57.000 --> 23:59.000
+play on the theoretical prediction.
+
+23:59.000 --> 24:01.000
+Then we have 50%
+
+24:01.000 --> 24:03.000
+of the audience
+
+24:03.000 --> 24:05.000
+play on the theoretical prediction.
+
+24:05.000 --> 24:07.000
+Next,
+
+24:07.000 --> 24:09.000
+let's look at
+
+24:09.000 --> 24:11.000
+the distribution.
+
+24:11.000 --> 24:13.000
+The first observation is
+
+24:13.000 --> 24:15.000
+that we have a lot of proposal offers
+
+24:15.000 --> 24:17.000
+which means
+
+24:17.000 --> 24:19.000
+I play on the whole number.
+
+24:19.000 --> 24:21.000
+I play on 0, 10, 20, 30.
+
+24:21.000 --> 24:23.000
+This is the first observation.
+
+24:23.000 --> 24:25.000
+The second observation is
+
+24:25.000 --> 24:27.000
+that only about 6% of the audience
+
+24:27.000 --> 24:29.000
+play on the theoretical prediction.
+
+24:29.000 --> 24:31.000
+I give myself less
+
+24:31.000 --> 24:33.000
+and I give myself more.
+
+24:33.000 --> 24:35.000
+In this game,
+
+24:35.000 --> 24:37.000
+there should be a first-mover advantage.
+
+24:37.000 --> 24:39.000
+I should give you 50%
+
+24:39.000 --> 24:41.000
+if I'm great.
+
+24:41.000 --> 24:43.000
+I shouldn't lose to you.
+
+24:43.000 --> 24:45.000
+I should give you more.
+
+24:45.000 --> 24:47.000
+This is the first observation.
+
+24:47.000 --> 24:49.000
+Next, let's compare
+
+24:49.000 --> 24:51.000
+the distribution with ROC.
+
+24:51.000 --> 24:53.000
+This is ROC's distribution
+
+24:53.000 --> 24:55.000
+in 1990.
+
+24:55.000 --> 24:57.000
+As Zhang said,
+
+24:57.000 --> 24:59.000
+we didn't do a statistical assessment.
+
+24:59.000 --> 25:01.000
+So we can only see
+
+25:01.000 --> 25:03.000
+whether we can catch the distribution.
+
+25:03.000 --> 25:05.000
+The first observation is
+
+25:05.000 --> 25:07.000
+that the density
+
+25:07.000 --> 25:09.000
+is about 50 to 40.
+
+25:09.000 --> 25:11.000
+is about 50 to 40.
+
+25:11.000 --> 25:13.000
+We can capture this.
+
+25:13.000 --> 25:15.000
+We can capture this.
+
+25:15.000 --> 25:17.000
+At this level,
+
+25:17.000 --> 25:19.000
+we can replicate their results.
+
+25:19.000 --> 25:21.000
+At this level, we can replicate their results.
+
+25:21.000 --> 25:23.000
+In fact, the biggest difference
+
+25:23.000 --> 25:25.000
+between our distribution and their distribution is
+
+25:25.000 --> 25:27.000
+that almost no one here plays on
+
+25:27.000 --> 25:29.000
+the theoretical prediction.
+
+25:29.000 --> 25:31.000
+But about 10% of people
+
+25:31.000 --> 25:33.000
+play on the theoretical prediction.
+
+25:33.000 --> 25:35.000
+In fact,
+
+25:35.000 --> 25:37.000
+at least me and Colin
+
+25:37.000 --> 25:39.000
+are not sure.
+
+25:39.000 --> 25:41.000
+Maybe this is the prediction option.
+
+25:41.000 --> 25:43.000
+In the beginning of a game,
+
+25:43.000 --> 25:45.000
+the prediction ball
+
+25:45.000 --> 25:47.000
+is placed on the theoretical prediction.
+
+25:47.000 --> 25:49.000
+is placed on the theoretical prediction.
+
+25:49.000 --> 25:51.000
+If the student
+
+25:51.000 --> 25:53.000
+doesn't think about it,
+
+25:53.000 --> 25:55.000
+I will throw it away
+
+25:55.000 --> 25:57.000
+without any strategy.
+
+25:57.000 --> 25:59.000
+So 10% of people
+
+25:59.000 --> 26:01.000
+may play on the theoretical prediction
+
+26:01.000 --> 26:03.000
+and may be affected by the prediction option.
+
+26:03.000 --> 26:05.000
+But this is...
+
+26:05.000 --> 26:07.000
+Do you have response time here?
+
+26:07.000 --> 26:09.000
+I will show it later.
+
+26:09.000 --> 26:11.000
+According to your hypothesis,
+
+26:11.000 --> 26:13.000
+the response time should be the lowest.
+
+26:13.000 --> 26:15.000
+But the response time is very high.
+
+26:15.000 --> 26:17.000
+But I will show the result later.
+
+26:17.000 --> 26:19.000
+So it's not necessarily the predicted result.
+
+26:19.000 --> 26:21.000
+So it's not necessarily the predicted result.
+
+26:21.000 --> 26:23.000
+But...
+
+26:23.000 --> 26:25.000
+Sorry, can you show the previous video?
+
+26:25.000 --> 26:27.000
+Sorry, can you show the previous video?
+
+26:27.000 --> 26:29.000
+OK.
+
+26:29.000 --> 26:31.000
+Because I was thinking
+
+26:31.000 --> 26:33.000
+if you said it's because of the default option,
+
+26:33.000 --> 26:35.000
+if you said it's because of the default option,
+
+26:35.000 --> 26:37.000
+I can see...
+
+26:37.000 --> 26:39.000
+Because there are very few people
+
+26:39.000 --> 26:41.000
+who mentioned 1 in Rose's data.
+
+26:41.000 --> 26:43.000
+But the people who mentioned 1 here
+
+26:43.000 --> 26:45.000
+seem to be
+
+26:45.000 --> 26:47.000
+significantly higher than 0.
+
+26:47.000 --> 26:49.000
+But the people who mentioned 1 here
+
+26:49.000 --> 26:51.000
+seem to be
+
+26:51.000 --> 26:53.000
+significantly higher than 0.
+
+26:53.000 --> 26:55.000
+So although 0 is so high,
+
+26:55.000 --> 26:57.000
+it may be the effect of the default option.
+
+26:57.000 --> 26:59.000
+But it seems that there are more people
+
+26:59.000 --> 27:01.000
+who seem to be significant.
+
+27:01.000 --> 27:03.000
+If you look at the balance behavior as 0 or 1,
+
+27:03.000 --> 27:05.000
+there are more people who seem to be significant.
+
+27:05.000 --> 27:07.000
+There are more people who seem to be significant.
+
+27:07.000 --> 27:09.000
+That's what I think.
+
+27:09.000 --> 27:11.000
+Thank you for this comment.
+
+27:11.000 --> 27:13.000
+It should be said that
+
+27:13.000 --> 27:15.000
+it should be said that
+
+27:15.000 --> 27:17.000
+it should be said that
+
+27:17.000 --> 27:19.000
+there should be quite a lot of people
+
+27:19.000 --> 27:21.000
+playing with the theory.
+
+27:21.000 --> 27:23.000
+But it is true that the effect of the default option is a confirmation.
+
+27:23.000 --> 27:25.000
+But I will continue to talk about it.
+
+27:25.000 --> 27:27.000
+Next, this is our acceptance rate.
+
+27:27.000 --> 27:29.000
+Next, this is our acceptance rate.
+
+27:29.000 --> 27:31.000
+Because I think this result is very cool.
+
+27:31.000 --> 27:33.000
+It doesn't matter if I talk about it later.
+
+27:33.000 --> 27:35.000
+I must make this result clear.
+
+27:35.000 --> 27:37.000
+First of all, because what we talked about earlier
+
+27:37.000 --> 27:39.000
+is the unconditional acceptance rate.
+
+27:39.000 --> 27:41.000
+What is more interesting now
+
+27:41.000 --> 27:43.000
+is to measure the conditional acceptance rate.
+
+27:43.000 --> 27:45.000
+Unconditional
+
+27:45.000 --> 27:47.000
+is the number of offers I see.
+
+27:47.000 --> 27:49.000
+That is to say, because we measure
+
+27:49.000 --> 27:51.000
+the expected value of the conditions.
+
+27:51.000 --> 27:53.000
+This is actually a function of an offer.
+
+27:53.000 --> 27:55.000
+This is actually a function of an offer.
+
+27:55.000 --> 27:57.000
+So on this graph, my X axis
+
+27:57.000 --> 27:59.000
+shows how many proposal offers I see.
+
+27:59.000 --> 28:01.000
+Then my Y axis shows
+
+28:01.000 --> 28:03.000
+what is my average acceptance rate.
+
+28:03.000 --> 28:05.000
+In this graph,
+
+28:05.000 --> 28:07.000
+the black dot represents the information of one-shot game.
+
+28:07.000 --> 28:09.000
+The orange dot represents the information of a repeat game.
+
+28:09.000 --> 28:11.000
+Next, the size of each point
+
+28:11.000 --> 28:13.000
+represents
+
+28:13.000 --> 28:15.000
+the density of the
+
+28:15.000 --> 28:17.000
+histogram we saw earlier.
+
+28:17.000 --> 28:19.000
+So if you put
+
+28:19.000 --> 28:21.000
+the size of the size of the ball on the X axis,
+
+28:21.000 --> 28:23.000
+it becomes the full
+
+28:23.000 --> 28:25.000
+histogram.
+
+28:25.000 --> 28:27.000
+Next, because
+
+28:27.000 --> 28:29.000
+when I was checking the data,
+
+28:29.000 --> 28:31.000
+I found that between 49 and 50,
+
+28:31.000 --> 28:33.000
+there is actually a
+
+28:33.000 --> 28:35.000
+20% jump.
+
+28:35.000 --> 28:37.000
+So I think it's weird.
+
+28:37.000 --> 28:39.000
+So I used a specification
+
+28:39.000 --> 28:41.000
+to measure
+
+28:41.000 --> 28:43.000
+the P-splice linear
+
+28:43.000 --> 28:45.000
+specification.
+
+28:45.000 --> 28:47.000
+So what you can see is
+
+28:47.000 --> 28:49.000
+that if you are
+
+28:49.000 --> 28:51.000
+less than 50,
+
+28:51.000 --> 28:53.000
+you see that your acceptance rate is this curve.
+
+28:53.000 --> 28:55.000
+When it is greater than 50,
+
+28:55.000 --> 28:57.000
+there will be a big break point here.
+
+28:57.000 --> 28:59.000
+This is completely obvious.
+
+28:59.000 --> 29:01.000
+It is very obvious.
+
+29:01.000 --> 29:03.000
+When we measure the standard error,
+
+29:03.000 --> 29:05.000
+we also use
+
+29:05.000 --> 29:07.000
+cluster. Then we have a cluster
+
+29:07.000 --> 29:09.000
+at the session level.
+
+29:09.000 --> 29:11.000
+We use the most conservative calculation
+
+29:11.000 --> 29:13.000
+to estimate our variability.
+
+29:13.000 --> 29:15.000
+So in this case, it is also very obvious.
+
+29:15.000 --> 29:17.000
+If we put all the data
+
+29:17.000 --> 29:19.000
+together, there is about
+
+29:19.000 --> 29:21.000
+20% to 21% jump.
+
+29:21.000 --> 29:23.000
+If we divide it into one-shot game and
+
+29:23.000 --> 29:25.000
+repeated game,
+
+29:25.000 --> 29:27.000
+one-shot game is about 16%.
+
+29:27.000 --> 29:29.000
+Then again, in repeated game,
+
+29:29.000 --> 29:31.000
+this jump becomes 26%.
+
+29:31.000 --> 29:33.000
+First of all,
+
+29:33.000 --> 29:35.000
+this phenomenon has not been seen in the first 50 years.
+
+29:35.000 --> 29:37.000
+So I think it's a very
+
+29:37.000 --> 29:39.000
+cool discovery.
+
+29:39.000 --> 29:41.000
+Next, let's talk about 1.
+
+29:41.000 --> 29:43.000
+First of all,
+
+29:43.000 --> 29:45.000
+this interpretation is actually very complicated.
+
+29:45.000 --> 29:47.000
+Because we have a lot of confounds here,
+
+29:47.000 --> 29:49.000
+which our database can't detect.
+
+29:49.000 --> 29:51.000
+But what we can be sure of is that
+
+29:51.000 --> 29:53.000
+the source of this point is not
+
+29:53.000 --> 29:55.000
+the difference in your payoff.
+
+29:55.000 --> 29:57.000
+Because you can see that when we come from the left
+
+29:57.000 --> 29:59.000
+B, you can come from 49.99999.
+
+29:59.000 --> 30:01.000
+Then the next step is to come from the right B,
+
+30:01.000 --> 30:03.000
+which is about 50.0000001.
+
+30:03.000 --> 30:05.000
+In fact, this gap is less than
+
+30:05.000 --> 30:07.000
+how small your Epsilon should be.
+
+30:07.000 --> 30:09.000
+So the effect of this is definitely not
+
+30:09.000 --> 30:11.000
+from monetary payoff.
+
+30:11.000 --> 30:13.000
+Or even if you are in a hypothetical state,
+
+30:13.000 --> 30:15.000
+it is basically not from
+
+30:15.000 --> 30:17.000
+how much your payoff is.
+
+30:17.000 --> 30:19.000
+So it is very possible that this point is
+
+30:19.000 --> 30:21.000
+your other regarding preference.
+
+30:21.000 --> 30:23.000
+That is to say, at this time, you must
+
+30:23.000 --> 30:25.000
+consider what other people
+
+30:25.000 --> 30:27.000
+in this proposal offer.
+
+30:27.000 --> 30:29.000
+What does it look like?
+
+30:29.000 --> 30:31.000
+Next, there are many ways to say
+
+30:31.000 --> 30:33.000
+that we can't uniquely pin down.
+
+30:33.000 --> 30:35.000
+It may be like
+
+30:35.000 --> 30:37.000
+because you are from 49.999 to 50.
+
+30:37.000 --> 30:39.000
+You have a big gap here,
+
+30:39.000 --> 30:41.000
+which is equality.
+
+30:41.000 --> 30:43.000
+Because this paragraph can also mean
+
+30:43.000 --> 30:45.000
+that I may be very, very care.
+
+30:45.000 --> 30:47.000
+Am I equal to you?
+
+30:47.000 --> 30:49.000
+Or this is the first one.
+
+30:49.000 --> 30:51.000
+Or the other is to say that
+
+30:51.000 --> 30:53.000
+if you don't give me 50,
+
+30:53.000 --> 30:55.000
+I may have to punish you.
+
+30:55.000 --> 30:57.000
+So this is why this paragraph may be
+
+30:57.000 --> 30:59.000
+10% more in the repeated game.
+
+30:59.000 --> 31:01.000
+It may be that this 10% is more
+
+31:01.000 --> 31:03.000
+and I have to punish you.
+
+31:03.000 --> 31:05.000
+Or I may care about my fairness.
+
+31:05.000 --> 31:07.000
+Or I just say that since
+
+31:07.000 --> 31:09.000
+we are not playing real money,
+
+31:09.000 --> 31:11.000
+I just don't want to lose you.
+
+31:11.000 --> 31:13.000
+So it means that if I am below,
+
+31:13.000 --> 31:15.000
+my acceptance rate is relatively low.
+
+31:15.000 --> 31:17.000
+So basically it's the same as
+
+31:17.000 --> 31:19.000
+you and Yuqi.
+
+31:19.000 --> 31:21.000
+This is what we see in the data.
+
+31:21.000 --> 31:23.000
+I would like to ask
+
+31:23.000 --> 31:25.000
+what your thoughts are.
+
+31:31.000 --> 31:33.000
+Actually, I don't know.
+
+31:35.000 --> 31:37.000
+Before you do this,
+
+31:37.000 --> 31:39.000
+there is a question.
+
+31:39.000 --> 31:41.000
+Although you know a lot,
+
+31:41.000 --> 31:43.000
+but in fact,
+
+31:43.000 --> 31:45.000
+even if you just showed us,
+
+31:45.000 --> 31:47.000
+there are very few offers
+
+31:47.000 --> 31:49.000
+that exceed 50.
+
+31:49.000 --> 31:51.000
+There are about 600.
+
+31:51.000 --> 31:53.000
+If you look at the group,
+
+31:53.000 --> 31:55.000
+there are 600.
+
+31:55.000 --> 31:57.000
+For example,
+
+31:57.000 --> 31:59.000
+your estimate of acceptance rate
+
+31:59.000 --> 32:01.000
+because you are not using strategy method,
+
+32:01.000 --> 32:03.000
+you are showing offer.
+
+32:03.000 --> 32:05.000
+So it means that
+
+32:05.000 --> 32:07.000
+you are now running this break point return.
+
+32:07.000 --> 32:09.000
+I think that
+
+32:09.000 --> 32:11.000
+when it is below 50,
+
+32:11.000 --> 32:13.000
+the variation is actually better.
+
+32:17.000 --> 32:19.000
+But the part above 50
+
+32:19.000 --> 32:21.000
+is probably more unstable.
+
+32:23.000 --> 32:25.000
+But it looks like
+
+32:25.000 --> 32:27.000
+this break point is really interesting.
+
+32:27.000 --> 32:29.000
+Because
+
+32:29.000 --> 32:31.000
+I think about it.
+
+32:31.000 --> 32:33.000
+Because
+
+32:35.000 --> 32:37.000
+Have you ever tried
+
+32:37.000 --> 32:39.000
+you don't use
+
+32:39.000 --> 32:41.000
+in the part below 50,
+
+32:41.000 --> 32:43.000
+you don't use linear return to run.
+
+32:43.000 --> 32:45.000
+I haven't tried it yet,
+
+32:45.000 --> 32:47.000
+but I want to try quadratic.
+
+32:47.000 --> 32:49.000
+Because there is another possibility
+
+32:49.000 --> 32:51.000
+that it is actually not
+
+32:51.000 --> 32:53.000
+presented as a break point,
+
+32:53.000 --> 32:55.000
+but a more complex
+
+32:55.000 --> 32:57.000
+non-linear.
+
+32:57.000 --> 32:59.000
+Just because you fit linear,
+
+32:59.000 --> 33:01.000
+it doesn't look like a break point.
+
+33:01.000 --> 33:03.000
+Because if you look at the data directly,
+
+33:03.000 --> 33:05.000
+it looks at least
+
+33:05.000 --> 33:07.000
+I think it's quite linear.
+
+33:09.000 --> 33:11.000
+If you look at the part of the orange repeat game,
+
+33:11.000 --> 33:13.000
+it looks like
+
+33:13.000 --> 33:15.000
+it's actually
+
+33:15.000 --> 33:17.000
+a strange fall first,
+
+33:17.000 --> 33:19.000
+but it's more stable
+
+33:19.000 --> 33:21.000
+when it reaches 40.
+
+33:21.000 --> 33:23.000
+This may be more like quadratic.
+
+33:23.000 --> 33:25.000
+If you only look at black,
+
+33:25.000 --> 33:27.000
+it looks like
+
+33:27.000 --> 33:29.000
+it's a
+
+33:29.000 --> 33:31.000
+it's a
+
+33:31.000 --> 33:33.000
+between 20 and above
+
+33:33.000 --> 33:35.000
+50 is a shakier
+
+33:35.000 --> 33:37.000
+drop, but
+
+33:37.000 --> 33:39.000
+below 20
+
+33:39.000 --> 33:41.000
+it's more stable.
+
+33:41.000 --> 33:43.000
+So
+
+33:43.000 --> 33:45.000
+it's possible here,
+
+33:45.000 --> 33:47.000
+just because
+
+33:47.000 --> 33:49.000
+you fit a one-point
+
+33:49.000 --> 33:51.000
+linear relationship.
+
+33:51.000 --> 33:53.000
+Anyway, I will try quadratic.
+
+33:53.000 --> 33:55.000
+But this is
+
+33:55.000 --> 33:57.000
+what I estimated.
+
+33:57.000 --> 33:59.000
+I think it's quite interesting.
+
+33:59.000 --> 34:01.000
+If this is true,
+
+34:01.000 --> 34:03.000
+how do we
+
+34:03.000 --> 34:05.000
+at least I think
+
+34:05.000 --> 34:07.000
+how to reproduce this break point in the lab
+
+34:07.000 --> 34:09.000
+I think it's quite interesting.
+
+34:09.000 --> 34:11.000
+Let's look at the results of ROS.
+
+34:11.000 --> 34:13.000
+If we look at the data of ROS,
+
+34:13.000 --> 34:15.000
+this break point is completely invisible.
+
+34:15.000 --> 34:17.000
+So
+
+34:17.000 --> 34:19.000
+this result
+
+34:19.000 --> 34:21.000
+I think it's quite special.
+
+34:21.000 --> 34:23.000
+This means that we have a lot of work hypothesis
+
+34:23.000 --> 34:25.000
+running here at the same time.
+
+34:25.000 --> 34:27.000
+However, we have tried
+
+34:27.000 --> 34:29.000
+a power test.
+
+34:29.000 --> 34:31.000
+This means that if we only draw 10%
+
+34:31.000 --> 34:33.000
+because our sample number is about 0.
+
+34:33.000 --> 34:35.000
+So if we only draw 10%
+
+34:35.000 --> 34:37.000
+can we estimate this break point?
+
+34:37.000 --> 34:39.000
+This means that we still have a way to estimate this break point.
+
+34:39.000 --> 34:41.000
+So it may not be because
+
+34:41.000 --> 34:43.000
+the problem of power in statistics.
+
+34:43.000 --> 34:45.000
+Then another
+
+34:45.000 --> 34:47.000
+our work hypothesis may be because of
+
+34:47.000 --> 34:49.000
+hypothetical stake.
+
+34:49.000 --> 34:51.000
+Is it because it's all
+
+34:51.000 --> 34:53.000
+invisible?
+
+34:53.000 --> 34:55.000
+So I care more about the ranking between you and me.
+
+34:55.000 --> 34:57.000
+At least I don't want to lose to you.
+
+34:57.000 --> 34:59.000
+So
+
+34:59.000 --> 35:01.000
+this is my current work hypothesis.
+
+35:01.000 --> 35:03.000
+This may be
+
+35:03.000 --> 35:05.000
+the next article that can be done
+
+35:05.000 --> 35:07.000
+is how to reproduce this break point in the lab.
+
+35:07.000 --> 35:09.000
+I think it's quite interesting.
+
+35:09.000 --> 35:11.000
+Can you remind us again
+
+35:11.000 --> 35:13.000
+about the population composition
+
+35:13.000 --> 35:15.000
+of your data?
+
+35:15.000 --> 35:17.000
+For example,
+
+35:17.000 --> 35:19.000
+the proportion of each state or
+
+35:19.000 --> 35:21.000
+province?
+
+35:21.000 --> 35:23.000
+We have seen that
+
+35:23.000 --> 35:25.000
+in the United States, there are western states,
+
+35:25.000 --> 35:27.000
+central and western states.
+
+35:27.000 --> 35:29.000
+Then there are northeastern states.
+
+35:29.000 --> 35:31.000
+Then there are southern states.
+
+35:31.000 --> 35:33.000
+Then there is Canada.
+
+35:33.000 --> 35:35.000
+Then in Europe, there are
+
+35:35.000 --> 35:37.000
+the United Kingdom and Spain.
+
+35:37.000 --> 35:39.000
+Then in Asia,
+
+35:39.000 --> 35:41.000
+there are China, Japan and Singapore.
+
+35:41.000 --> 35:43.000
+What about the proportion?
+
+35:43.000 --> 35:45.000
+About 80% of the data is in the north.
+
+35:45.000 --> 35:47.000
+Then about 10% in Europe
+
+35:47.000 --> 35:49.000
+and about 10% in Asia.
+
+35:49.000 --> 35:51.000
+OK.
+
+35:51.000 --> 35:53.000
+So overall,
+
+35:53.000 --> 35:55.000
+this result
+
+35:55.000 --> 35:57.000
+is more conservative.
+
+35:57.000 --> 35:59.000
+It is the result of the main cultural circle
+
+35:59.000 --> 36:01.000
+in North America, right?
+
+36:01.000 --> 36:03.000
+Yes.
+
+36:03.000 --> 36:05.000
+OK. I just want to ask.
+
+36:05.000 --> 36:07.000
+But I want to add
+
+36:07.000 --> 36:09.000
+that the problem is
+
+36:09.000 --> 36:11.000
+that all the results of the lab
+
+36:11.000 --> 36:13.000
+are not in North America.
+
+36:13.000 --> 36:15.000
+Yes.
+
+36:15.000 --> 36:17.000
+This is true.
+
+36:17.000 --> 36:19.000
+OK.
+
+36:19.000 --> 36:21.000
+Then I will...
+
+36:21.000 --> 36:23.000
+Bo-xuan,
+
+36:23.000 --> 36:25.000
+if you want to compare with
+
+36:25.000 --> 36:27.000
+Ross's work,
+
+36:27.000 --> 36:29.000
+Ross's work is mainly not in North America.
+
+36:29.000 --> 36:31.000
+Then the data of
+
+36:31.000 --> 36:33.000
+the other works,
+
+36:33.000 --> 36:35.000
+such as Madden Game,
+
+36:35.000 --> 36:37.000
+can you observe?
+
+36:37.000 --> 36:39.000
+I have almost never seen any points.
+
+36:39.000 --> 36:41.000
+Yes. OK.
+
+36:41.000 --> 36:43.000
+OK.
+
+36:43.000 --> 36:45.000
+Because of the time...
+
+36:45.000 --> 36:47.000
+OK.
+
+36:47.000 --> 36:49.000
+Let me continue.
+
+36:49.000 --> 36:51.000
+I have a question.
+
+36:51.000 --> 36:53.000
+This article was made
+
+36:53.000 --> 36:55.000
+about 20 years ago,
+
+36:55.000 --> 36:57.000
+right?
+
+36:57.000 --> 36:59.000
+Yes.
+
+36:59.000 --> 37:01.000
+Do you think that the evolution of time
+
+37:01.000 --> 37:03.000
+has a big impact on the data?
+
+37:03.000 --> 37:05.000
+Of course it is possible.
+
+37:05.000 --> 37:07.000
+Because a lot of social preferences
+
+37:07.000 --> 37:09.000
+may follow the evolution of time.
+
+37:09.000 --> 37:11.000
+For example, the value of Taiwanese
+
+37:11.000 --> 37:13.000
+has changed over the past few years.
+
+37:13.000 --> 37:15.000
+So it is true that this may be
+
+37:15.000 --> 37:17.000
+different.
+
+37:17.000 --> 37:19.000
+But we can see that
+
+37:19.000 --> 37:21.000
+the social preferences
+
+37:21.000 --> 37:23.000
+have a big impact on the game.
+
+37:23.000 --> 37:25.000
+If this has any impact on the data,
+
+37:25.000 --> 37:27.000
+it may be OK.
+
+37:27.000 --> 37:29.000
+Because the data may be a mirror effect.
+
+37:29.000 --> 37:31.000
+But this is a big problem.
+
+37:31.000 --> 37:33.000
+We can talk about it later.
+
+37:33.000 --> 37:35.000
+Then I will continue.
+
+37:35.000 --> 37:37.000
+Finally, the teacher just said
+
+37:37.000 --> 37:39.000
+that we need to show the reaction time.
+
+37:39.000 --> 37:41.000
+Our server does record the reaction time.
+
+37:41.000 --> 37:43.000
+Then...
+
+37:43.000 --> 37:45.000
+Because
+
+37:45.000 --> 37:47.000
+OneShotGame and RePDGame
+
+37:47.000 --> 37:49.000
+have similar patterns.
+
+37:49.000 --> 37:51.000
+So I only use OneShotGame
+
+37:51.000 --> 37:53.000
+to show the result.
+
+37:53.000 --> 37:55.000
+First of all, the black line
+
+37:55.000 --> 37:57.000
+represents the reaction time.
+
+37:57.000 --> 37:59.000
+The black line represents the reaction time.
+
+37:59.000 --> 38:01.000
+The black line represents
+
+38:01.000 --> 38:03.000
+the lowest estimation.
+
+38:03.000 --> 38:05.000
+The orange line
+
+38:05.000 --> 38:07.000
+represents the acceptance rate.
+
+38:07.000 --> 38:09.000
+Then...
+
+38:09.000 --> 38:11.000
+This is also my lowest estimation.
+
+38:11.000 --> 38:13.000
+Then...
+
+38:13.000 --> 38:15.000
+The X-axis represents
+
+38:15.000 --> 38:17.000
+my offer.
+
+38:17.000 --> 38:19.000
+If you don't have any concept,
+
+38:19.000 --> 38:21.000
+the lowest estimation is
+
+38:21.000 --> 38:23.000
+the return time
+
+38:23.000 --> 38:25.000
+in each section.
+
+38:25.000 --> 38:27.000
+This means that
+
+38:27.000 --> 38:29.000
+I am fitting the data
+
+38:29.000 --> 38:31.000
+when I am close to 0.
+
+38:31.000 --> 38:33.000
+It is close.
+
+38:33.000 --> 38:35.000
+So what the teacher saw at the beginning
+
+38:35.000 --> 38:37.000
+is that
+
+38:37.000 --> 38:39.000
+he spent a lot of time
+
+38:39.000 --> 38:41.000
+to make the decision.
+
+38:41.000 --> 38:43.000
+He spent almost 20 seconds to make the decision.
+
+38:43.000 --> 38:45.000
+But you can see
+
+38:45.000 --> 38:47.000
+that 50 is very short.
+
+38:47.000 --> 38:49.000
+There is a drop.
+
+38:49.000 --> 38:51.000
+It only takes about 8 seconds to make the decision.
+
+38:51.000 --> 38:53.000
+This means that
+
+38:53.000 --> 38:55.000
+50 is a very special allocation
+
+38:55.000 --> 38:57.000
+for the number.
+
+38:57.000 --> 38:59.000
+At least for them,
+
+38:59.000 --> 39:01.000
+if I see 50,
+
+39:01.000 --> 39:03.000
+I don't need to think too much
+
+39:03.000 --> 39:05.000
+to make the decision.
+
+39:05.000 --> 39:07.000
+Another thing is that
+
+39:07.000 --> 39:09.000
+we see a sharp kink
+
+39:09.000 --> 39:11.000
+in the acceptance rate.
+
+39:11.000 --> 39:13.000
+This means that
+
+39:13.000 --> 39:15.000
+it is possible that
+
+39:15.000 --> 39:17.000
+no matter what the
+
+39:17.000 --> 39:19.000
+probability is,
+
+39:19.000 --> 39:21.000
+at least we can still see something.
+
+39:21.000 --> 39:23.000
+This is the data
+
+39:23.000 --> 39:25.000
+on the reaction time.
+
+39:25.000 --> 39:27.000
+However, the interpretation is
+
+39:27.000 --> 39:29.000
+quite special.
+
+39:29.000 --> 39:31.000
+At least for the show data,
+
+39:31.000 --> 39:33.000
+we can spend very little time
+
+39:33.000 --> 39:35.000
+to make the decision.
+
+39:35.000 --> 39:37.000
+Bo-xuan,
+
+39:37.000 --> 39:39.000
+is there no way to record
+
+39:39.000 --> 39:41.000
+the time for the proposer to enter the game
+
+39:41.000 --> 39:43.000
+and his proposal?
+
+39:43.000 --> 39:45.000
+Because if you want to see if it is D4...
+
+39:45.000 --> 39:47.000
+Let me think about it.
+
+39:47.000 --> 39:49.000
+What we can see is that
+
+39:49.000 --> 39:51.000
+we only start to calculate the time
+
+39:51.000 --> 39:53.000
+when we enter the game.
+
+39:53.000 --> 39:55.000
+Because it depends on whether
+
+39:55.000 --> 39:57.000
+the effect caused by the default option
+
+39:57.000 --> 39:59.000
+causes many people to raise 0.
+
+39:59.000 --> 40:01.000
+Right.
+
+40:01.000 --> 40:03.000
+You are right.
+
+40:05.000 --> 40:07.000
+We do see the time for the proposer.
+
+40:07.000 --> 40:09.000
+However, I remember that
+
+40:09.000 --> 40:11.000
+it took a lot of time.
+
+40:11.000 --> 40:13.000
+OK.
+
+40:13.000 --> 40:15.000
+This is...
+
+40:15.000 --> 40:17.000
+Hello?
+
+40:17.000 --> 40:19.000
+Let me answer.
+
+40:19.000 --> 40:21.000
+At the time close to 0,
+
+40:21.000 --> 40:23.000
+you said that
+
+40:23.000 --> 40:25.000
+it took a lot of time.
+
+40:25.000 --> 40:27.000
+You mentioned that
+
+40:27.000 --> 40:29.000
+you were thinking...
+
+40:29.000 --> 40:31.000
+At the beginning,
+
+40:31.000 --> 40:33.000
+you said that
+
+40:33.000 --> 40:35.000
+there were many results at 0, right?
+
+40:35.000 --> 40:37.000
+Yes.
+
+40:37.000 --> 40:39.000
+At that time,
+
+40:39.000 --> 40:41.000
+you thought that
+
+40:41.000 --> 40:43.000
+the starting point of SliderBar was 0, right?
+
+40:43.000 --> 40:45.000
+Yes.
+
+40:45.000 --> 40:47.000
+In fact,
+
+40:47.000 --> 40:49.000
+they spent a lot of time thinking about it.
+
+40:49.000 --> 40:51.000
+It seems that
+
+40:51.000 --> 40:53.000
+it is not because...
+
+40:53.000 --> 40:55.000
+I think it is like
+
+40:55.000 --> 40:57.000
+canceling the explanation
+
+40:57.000 --> 40:59.000
+you mentioned at the beginning.
+
+40:59.000 --> 41:01.000
+Is it because
+
+41:01.000 --> 41:03.000
+they just accepted it?
+
+41:03.000 --> 41:05.000
+That's right.
+
+41:05.000 --> 41:07.000
+However,
+
+41:07.000 --> 41:09.000
+it took a lot of time.
+
+41:09.000 --> 41:11.000
+It took a lot of time.
+
+41:11.000 --> 41:13.000
+It took a lot of time.
+
+41:13.000 --> 41:15.000
+I should show you the time for the proposer.
+
+41:15.000 --> 41:17.000
+The time for the proposer.
+
+41:17.000 --> 41:19.000
+However,
+
+41:19.000 --> 41:21.000
+the explanation of calling is quite interesting.
+
+41:21.000 --> 41:23.000
+Why did it take a lot of time
+
+41:23.000 --> 41:25.000
+to think about it?
+
+41:25.000 --> 41:27.000
+Many people were reluctant to accept it.
+
+41:27.000 --> 41:29.000
+It took a lot of time
+
+41:29.000 --> 41:31.000
+to accept it.
+
+41:31.000 --> 41:33.000
+That's right.
+
+41:33.000 --> 41:35.000
+Bo-xuan,
+
+41:35.000 --> 41:37.000
+you can split the responder
+
+41:37.000 --> 41:39.000
+into accepted and unaccepted.
+
+41:39.000 --> 41:41.000
+OK.
+
+41:41.000 --> 41:43.000
+This is a special point.
+
+41:43.000 --> 41:45.000
+I will split it.
+
+41:45.000 --> 41:47.000
+I will write it down.
+
+41:49.000 --> 41:51.000
+Next,
+
+41:51.000 --> 41:53.000
+I still have some time.
+
+41:53.000 --> 41:55.000
+I want to talk about the result of double option.
+
+41:55.000 --> 41:57.000
+Double option is...
+
+41:57.000 --> 41:59.000
+Sorry, Bo-xuan.
+
+41:59.000 --> 42:01.000
+Before you talk about double option,
+
+42:01.000 --> 42:03.000
+can I talk about the point of
+
+42:03.000 --> 42:05.000
+Automaton Game?
+
+42:05.000 --> 42:07.000
+I was just thinking that
+
+42:07.000 --> 42:09.000
+you just said that
+
+42:09.000 --> 42:11.000
+one possibility is that
+
+42:11.000 --> 42:13.000
+everyone cares about fairness.
+
+42:13.000 --> 42:15.000
+The other possibility is that
+
+42:15.000 --> 42:17.000
+everyone cares about
+
+42:17.000 --> 42:19.000
+not losing.
+
+42:19.000 --> 42:21.000
+Is the acceptance rate
+
+42:21.000 --> 42:23.000
+particularly high?
+
+42:23.000 --> 42:25.000
+Yes.
+
+42:25.000 --> 42:27.000
+Or is it a whole point?
+
+42:27.000 --> 42:29.000
+There is a point that goes up
+
+42:29.000 --> 42:31.000
+and then forms a square curve.
+
+42:31.000 --> 42:33.000
+If you care about fairness,
+
+42:33.000 --> 42:35.000
+maybe 50 is particularly high,
+
+42:35.000 --> 42:37.000
+and then 51, 52,
+
+42:37.000 --> 42:39.000
+there will be another point.
+
+42:39.000 --> 42:41.000
+One-shot game is like this.
+
+42:41.000 --> 42:43.000
+There is no repeated game.
+
+42:43.000 --> 42:45.000
+OK.
+
+42:45.000 --> 42:47.000
+I will continue to talk about it.
+
+42:47.000 --> 42:49.000
+OK.
+
+42:49.000 --> 42:51.000
+I'm afraid I don't have enough time.
+
+42:51.000 --> 42:53.000
+Next, double option is...
+
+42:53.000 --> 42:55.000
+First, I want to show you
+
+42:55.000 --> 42:57.000
+what the data looks like.
+
+42:57.000 --> 42:59.000
+This is our predicted market.
+
+42:59.000 --> 43:01.000
+Next, the whole price changes.
+
+43:01.000 --> 43:03.000
+This is just an example.
+
+43:03.000 --> 43:05.000
+I have 10 regions here.
+
+43:05.000 --> 43:07.000
+I choose a market for each region.
+
+43:07.000 --> 43:09.000
+I draw it out
+
+43:09.000 --> 43:11.000
+to show you what it looks like.
+
+43:11.000 --> 43:13.000
+You can see that I only draw four levels.
+
+43:13.000 --> 43:15.000
+Because the length is about four levels.
+
+43:15.000 --> 43:17.000
+If you look at the first level,
+
+43:17.000 --> 43:19.000
+everyone may be very noisy.
+
+43:19.000 --> 43:21.000
+Next, look at the second level
+
+43:21.000 --> 43:23.000
+and the third level,
+
+43:23.000 --> 43:25.000
+the price changes less.
+
+43:25.000 --> 43:27.000
+In the fourth level,
+
+43:27.000 --> 43:29.000
+the more you play, the more stable it becomes.
+
+43:29.000 --> 43:31.000
+What we want to see here is
+
+43:31.000 --> 43:33.000
+that under the market mechanism of double option,
+
+43:33.000 --> 43:35.000
+as long as you play about three or four times,
+
+43:35.000 --> 43:37.000
+consumers can find
+
+43:37.000 --> 43:39.000
+a balanced price, even if I don't tell them anything.
+
+43:39.000 --> 43:41.000
+Next, another thing,
+
+43:41.000 --> 43:43.000
+as I said before,
+
+43:43.000 --> 43:45.000
+the market is very short.
+
+43:45.000 --> 43:47.000
+So we want to estimate
+
+43:47.000 --> 43:49.000
+what it is like.
+
+43:49.000 --> 43:51.000
+If it can play a lot of games,
+
+43:51.000 --> 43:53.000
+where will it end up?
+
+43:53.000 --> 43:55.000
+We spent
+
+43:55.000 --> 43:57.000
+about a month
+
+43:57.000 --> 43:59.000
+to come up with this.
+
+43:59.000 --> 44:01.000
+First of all,
+
+44:01.000 --> 44:03.000
+let's talk about intuition.
+
+44:03.000 --> 44:05.000
+Let's talk about an example.
+
+44:05.000 --> 44:07.000
+Let's say
+
+44:07.000 --> 44:09.000
+a lot of people here have the same experience.
+
+44:09.000 --> 44:11.000
+When you apply for a PhD,
+
+44:11.000 --> 44:13.000
+I want to know
+
+44:13.000 --> 44:15.000
+what this student will do
+
+44:15.000 --> 44:17.000
+in the rest of his career.
+
+44:17.000 --> 44:19.000
+But the only thing I can know
+
+44:19.000 --> 44:21.000
+is what his GPA
+
+44:21.000 --> 44:23.000
+will look like in the next four years.
+
+44:23.000 --> 44:25.000
+So at this time,
+
+44:25.000 --> 44:27.000
+for a school,
+
+44:27.000 --> 44:29.000
+if it wants to estimate
+
+44:29.000 --> 44:31.000
+what will happen next,
+
+44:31.000 --> 44:33.000
+the only thing it can do is
+
+44:33.000 --> 44:35.000
+to increase his GPA in different periods.
+
+44:35.000 --> 44:37.000
+So it's possible that
+
+44:37.000 --> 44:39.000
+I put more weight on the GPA at the end
+
+44:39.000 --> 44:41.000
+You can look at two parts.
+
+44:41.000 --> 44:43.000
+The first one is
+
+44:43.000 --> 44:45.000
+the Dependent Variable on the left.
+
+44:45.000 --> 44:47.000
+On the right,
+
+44:47.000 --> 44:49.000
+if we look at T as 1,
+
+44:49.000 --> 44:51.000
+this means that I am in the first period.
+
+44:51.000 --> 44:53.000
+In this case,
+
+44:53.000 --> 44:55.000
+this is back to the simplest return.
+
+44:55.000 --> 44:57.000
+This is very common.
+
+44:57.000 --> 44:59.000
+In the first period,
+
+44:59.000 --> 45:01.000
+if you use the example of GPA,
+
+45:01.000 --> 45:03.000
+your first semester
+
+45:03.000 --> 45:05.000
+is likely to have a lot of variables.
+
+45:05.000 --> 45:07.000
+Maybe it's because you're a middle school student
+
+45:07.000 --> 45:09.000
+and you don't know what's wrong with your GPA in the first semester.
+
+45:09.000 --> 45:11.000
+However,
+
+45:11.000 --> 45:13.000
+in the second period,
+
+45:13.000 --> 45:15.000
+I only give you one-second weight
+
+45:15.000 --> 45:17.000
+to explain your starting point,
+
+45:17.000 --> 45:19.000
+such as building a house or something like that.
+
+45:19.000 --> 45:21.000
+I only give you one-second weight.
+
+45:21.000 --> 45:23.000
+I also give you one-second weight
+
+45:23.000 --> 45:25.000
+for your GPA at that time.
+
+45:25.000 --> 45:27.000
+This means that your GPA at this time
+
+45:27.000 --> 45:29.000
+may be only half of the population
+
+45:29.000 --> 45:31.000
+in front of you.
+
+45:31.000 --> 45:33.000
+In the third period,
+
+45:33.000 --> 45:35.000
+I put two-thirds weight on your GPA.
+
+45:35.000 --> 45:37.000
+In this case,
+
+45:37.000 --> 45:39.000
+I only give you one-third weight
+
+45:39.000 --> 45:41.000
+for your starting point.
+
+45:41.000 --> 45:43.000
+So you can see that
+
+45:43.000 --> 45:45.000
+if I can make T
+
+45:45.000 --> 45:47.000
+as large as infinite,
+
+45:47.000 --> 45:49.000
+then my beta2
+
+45:49.000 --> 45:51.000
+is actually
+
+45:51.000 --> 45:53.000
+the progressive estimate of
+
+45:53.000 --> 45:55.000
+our dependent variable.
+
+45:55.000 --> 45:57.000
+In other words,
+
+45:57.000 --> 45:59.000
+if we put this Y
+
+45:59.000 --> 46:01.000
+on all the indicators of the first three markets,
+
+46:01.000 --> 46:03.000
+then where will this market end up?
+
+46:03.000 --> 46:05.000
+If consumers can play enough,
+
+46:05.000 --> 46:07.000
+then we put this Y
+
+46:07.000 --> 46:09.000
+on all the indicators of the first three markets,
+
+46:09.000 --> 46:11.000
+then we can see that
+
+46:11.000 --> 46:13.000
+the first one is mean error deviation.
+
+46:13.000 --> 46:15.000
+Its final price is only
+
+46:15.000 --> 46:17.000
+1% higher than the average price.
+
+46:17.000 --> 46:19.000
+It is not significantly different
+
+46:19.000 --> 46:21.000
+from the theoretical estimate.
+
+46:21.000 --> 46:23.000
+Then the final price change
+
+46:23.000 --> 46:25.000
+is reduced to 11%.
+
+46:25.000 --> 46:27.000
+Although the estimate is a bit big,
+
+46:27.000 --> 46:29.000
+it is also not significantly different
+
+46:29.000 --> 46:31.000
+from the theoretical estimate.
+
+46:31.000 --> 46:33.000
+The final price change is reduced to 97%.
+
+46:33.000 --> 46:35.000
+It is also not significantly different from the first one.
+
+46:35.000 --> 46:37.000
+So these results are basically
+
+46:37.000 --> 46:39.000
+completely the same as the results of the lab.
+
+46:39.000 --> 46:41.000
+So at least
+
+46:41.000 --> 46:43.000
+we can prove that
+
+46:43.000 --> 46:45.000
+double auction is a very stable
+
+46:45.000 --> 46:47.000
+price mechanism
+
+46:47.000 --> 46:49.000
+to reach 100% efficiency.
+
+46:49.000 --> 46:51.000
+So we can see that
+
+46:51.000 --> 46:53.000
+our data also shows the same thing.
+
+46:53.000 --> 46:55.000
+When our students can play enough,
+
+46:55.000 --> 46:57.000
+all of our welfare
+
+46:57.000 --> 46:59.000
+should be exhausted.
+
+46:59.000 --> 47:01.000
+Can I go back to the last page?
+
+47:01.000 --> 47:03.000
+Yes, you can.
+
+47:03.000 --> 47:05.000
+I want to confirm
+
+47:05.000 --> 47:07.000
+the quantitative model.
+
+47:07.000 --> 47:09.000
+Why is there no variable
+
+47:09.000 --> 47:11.000
+next to Beta 2?
+
+47:11.000 --> 47:13.000
+Because this means
+
+47:13.000 --> 47:15.000
+what I want to see is
+
+47:15.000 --> 47:17.000
+where your final GPA is.
+
+47:17.000 --> 47:19.000
+What I bring here is a constant.
+
+47:19.000 --> 47:21.000
+What I multiply here
+
+47:21.000 --> 47:23.000
+is a constant.
+
+47:25.000 --> 47:27.000
+The point is that I am
+
+47:27.000 --> 47:29.000
+multiplying your
+
+47:29.000 --> 47:31.000
+current GPA
+
+47:31.000 --> 47:33.000
+with your original demographic
+
+47:33.000 --> 47:35.000
+variation.
+
+47:37.000 --> 47:39.000
+Is it OK?
+
+47:39.000 --> 47:41.000
+It doesn't matter.
+
+47:41.000 --> 47:43.000
+If you don't understand,
+
+47:43.000 --> 47:45.000
+I will discuss with you later.
+
+47:45.000 --> 47:47.000
+I will continue.
+
+47:47.000 --> 47:49.000
+What we see in the end is that
+
+47:49.000 --> 47:51.000
+although we can basically
+
+47:51.000 --> 47:53.000
+get the theoretical estimate,
+
+47:53.000 --> 47:55.000
+what we want to see is that
+
+47:55.000 --> 47:57.000
+where your final GPA is.
+
+47:57.000 --> 47:59.000
+What we see in the end is the amount of transactions.
+
+47:59.000 --> 48:01.000
+The horizontal axis
+
+48:01.000 --> 48:03.000
+is the theoretical estimate amount.
+
+48:03.000 --> 48:05.000
+The vertical axis is the amount of transactions.
+
+48:05.000 --> 48:07.000
+The horizontal axis is the amount of transactions.
+
+48:07.000 --> 48:09.000
+The horizontal axis is the amount of transactions.
+
+48:09.000 --> 48:11.000
+The horizontal axis is the amount of transactions.
+
+48:11.000 --> 48:13.000
+The point is that
+
+48:13.000 --> 48:15.000
+if the market is not balanced,
+
+48:15.000 --> 48:17.000
+we are often under-traded.
+
+48:17.000 --> 48:19.000
+It is possible that
+
+48:19.000 --> 48:21.000
+the last one or two transactions
+
+48:21.000 --> 48:23.000
+may bring us only 1% or 2% of efficiency.
+
+48:23.000 --> 48:25.000
+In this case,
+
+48:25.000 --> 48:27.000
+it is possible that
+
+48:27.000 --> 48:29.000
+I am too lazy to make the last 1 or 2 cents.
+
+48:29.000 --> 48:31.000
+This is the main result of
+
+48:31.000 --> 48:33.000
+the double option.
+
+48:33.000 --> 48:35.000
+I have about 10 minutes left.
+
+48:35.000 --> 48:37.000
+I want to talk about
+
+48:37.000 --> 48:39.000
+what I said earlier.
+
+48:39.000 --> 48:41.000
+We have a lot of
+
+48:41.000 --> 48:43.000
+variations in different countries.
+
+48:43.000 --> 48:45.000
+I want to use some
+
+48:45.000 --> 48:47.000
+meta-analysis tools
+
+48:47.000 --> 48:49.000
+to analyze
+
+48:49.000 --> 48:51.000
+the composition of these variations.
+
+48:51.000 --> 48:53.000
+First,
+
+48:53.000 --> 48:55.000
+we look at
+
+48:55.000 --> 48:57.000
+the variations between countries.
+
+48:57.000 --> 48:59.000
+Basically,
+
+48:59.000 --> 49:01.000
+we need to use
+
+49:01.000 --> 49:03.000
+a
+
+49:03.000 --> 49:05.000
+meta-analysis
+
+49:05.000 --> 49:07.000
+to calculate
+
+49:07.000 --> 49:09.000
+I squared.
+
+49:09.000 --> 49:11.000
+If you look at
+
+49:11.000 --> 49:13.000
+this graph,
+
+49:13.000 --> 49:15.000
+you can see that
+
+49:15.000 --> 49:17.000
+these are
+
+49:17.000 --> 49:19.000
+the average variations of the proposal offer.
+
+49:19.000 --> 49:21.000
+Next,
+
+49:21.000 --> 49:23.000
+we have all the variations,
+
+49:23.000 --> 49:25.000
+the variations between countries,
+
+49:25.000 --> 49:27.000
+and the variations within countries.
+
+49:27.000 --> 49:29.000
+What we want to know is
+
+49:29.000 --> 49:31.000
+what is the proportion of
+
+49:31.000 --> 49:33.000
+the variations between countries.
+
+49:33.000 --> 49:35.000
+We calculate I squared.
+
+49:35.000 --> 49:37.000
+Since we don't have much time,
+
+49:37.000 --> 49:39.000
+I won't talk about
+
+49:39.000 --> 49:41.000
+how to calculate I squared.
+
+49:41.000 --> 49:43.000
+What we can figure out is
+
+49:43.000 --> 49:45.000
+the proportion of
+
+49:45.000 --> 49:47.000
+the variations
+
+49:47.000 --> 49:49.000
+within countries.
+
+49:49.000 --> 49:51.000
+We can see that
+
+49:51.000 --> 49:53.000
+86.6% of the variations
+
+49:53.000 --> 49:55.000
+in the proposal offer
+
+49:55.000 --> 49:57.000
+are significant.
+
+49:57.000 --> 49:59.000
+Although we can't say
+
+49:59.000 --> 50:01.000
+that this is a cultural difference,
+
+50:01.000 --> 50:03.000
+we can say that
+
+50:03.000 --> 50:05.000
+the variations within countries
+
+50:05.000 --> 50:07.000
+are significant.
+
+50:07.000 --> 50:09.000
+From the same perspective,
+
+50:09.000 --> 50:11.000
+we look at the acceptance rate.
+
+50:11.000 --> 50:13.000
+The acceptance rate is special
+
+50:13.000 --> 50:15.000
+because we look at
+
+50:15.000 --> 50:17.000
+the shape of the probability function.
+
+50:17.000 --> 50:19.000
+In order to make it comparable,
+
+50:19.000 --> 50:21.000
+what we can do is
+
+50:21.000 --> 50:23.000
+we look at
+
+50:23.000 --> 50:25.000
+a logic regression.
+
+50:25.000 --> 50:27.000
+On the left, we put 0 and 1 variables,
+
+50:27.000 --> 50:29.000
+which is whether you accept or reject.
+
+50:29.000 --> 50:31.000
+On the right, we put
+
+50:31.000 --> 50:33.000
+10 dummy variables
+
+50:33.000 --> 50:35.000
+in addition to the offer.
+
+50:35.000 --> 50:37.000
+The result is that
+
+50:37.000 --> 50:39.000
+the dummy variable
+
+50:39.000 --> 50:41.000
+is the shape of the probability function.
+
+50:41.000 --> 50:43.000
+We take the coefficient
+
+50:43.000 --> 50:45.000
+to measure the variations.
+
+50:45.000 --> 50:47.000
+We can see that
+
+50:47.000 --> 50:49.000
+only 30% of the variations
+
+50:49.000 --> 50:51.000
+come from countries.
+
+50:51.000 --> 50:53.000
+This is not significant.
+
+50:53.000 --> 50:55.000
+We can see that
+
+50:55.000 --> 50:57.000
+in the Ultimatum Game,
+
+50:57.000 --> 50:59.000
+the proposal offer has a significant
+
+50:59.000 --> 51:01.000
+variation between countries,
+
+51:01.000 --> 51:03.000
+but the acceptance rate is not significant.
+
+51:03.000 --> 51:05.000
+This also responds to
+
+51:05.000 --> 51:07.000
+Roth's conjecture in 1991.
+
+51:07.000 --> 51:09.000
+Roth proposed a hypothesis
+
+51:09.000 --> 51:11.000
+in 1991.
+
+51:11.000 --> 51:13.000
+In the Ultimatum Game,
+
+51:13.000 --> 51:15.000
+the cultural difference between
+
+51:15.000 --> 51:17.000
+countries should be
+
+51:17.000 --> 51:19.000
+reflected by
+
+51:19.000 --> 51:21.000
+the proposal offer,
+
+51:21.000 --> 51:23.000
+but it does not affect
+
+51:23.000 --> 51:25.000
+the acceptance rate.
+
+51:25.000 --> 51:27.000
+This is a very good
+
+51:27.000 --> 51:29.000
+evidence
+
+51:29.000 --> 51:31.000
+to respond to
+
+51:31.000 --> 51:33.000
+Roth's initial hypothesis.
+
+51:33.000 --> 51:35.000
+Next, we look at
+
+51:35.000 --> 51:37.000
+the variation between double options.
+
+51:37.000 --> 51:39.000
+We take two things,
+
+51:39.000 --> 51:41.000
+the first one is the price.
+
+51:41.000 --> 51:43.000
+We look at the first round
+
+51:43.000 --> 51:45.000
+of each market.
+
+51:45.000 --> 51:47.000
+Then we look at
+
+51:47.000 --> 51:49.000
+the first and last price
+
+51:49.000 --> 51:51.000
+in the predicted market.
+
+51:51.000 --> 51:53.000
+We want to know
+
+51:53.000 --> 51:55.000
+how the market price
+
+51:55.000 --> 51:57.000
+is balanced.
+
+51:57.000 --> 51:59.000
+First, we look at
+
+51:59.000 --> 52:01.000
+the first price of each market.
+
+52:01.000 --> 52:03.000
+We can see that
+
+52:03.000 --> 52:05.000
+the first one is
+
+52:05.000 --> 52:07.000
+only 27.3% of the variations
+
+52:07.000 --> 52:09.000
+are not written.
+
+52:09.000 --> 52:11.000
+The second one,
+
+52:11.000 --> 52:13.000
+we can see that
+
+52:13.000 --> 52:15.000
+the first price
+
+52:15.000 --> 52:17.000
+is very noisy
+
+52:17.000 --> 52:19.000
+in some places
+
+52:19.000 --> 52:21.000
+like Spain or Singapore.
+
+52:21.000 --> 52:23.000
+Although the number of variations
+
+52:23.000 --> 52:25.000
+is small,
+
+52:25.000 --> 52:27.000
+it causes the standard error
+
+52:27.000 --> 52:29.000
+to be large.
+
+52:29.000 --> 52:31.000
+However,
+
+52:31.000 --> 52:33.000
+in other countries,
+
+52:33.000 --> 52:35.000
+the standard error bar
+
+52:35.000 --> 52:37.000
+is very small.
+
+52:37.000 --> 52:39.000
+Moreover,
+
+52:39.000 --> 52:41.000
+every country can
+
+52:41.000 --> 52:43.000
+predict the market price.
+
+52:43.000 --> 52:45.000
+Next,
+
+52:45.000 --> 52:47.000
+if we look at
+
+52:47.000 --> 52:49.000
+the overall price distribution,
+
+52:49.000 --> 52:51.000
+the first price
+
+52:51.000 --> 52:53.000
+is about 0.33%.
+
+52:53.000 --> 52:55.000
+The second one is
+
+52:55.000 --> 52:57.000
+only 14% of the overall price,
+
+52:57.000 --> 52:59.000
+so it is almost 60%.
+
+52:59.000 --> 53:01.000
+This tells us that
+
+53:01.000 --> 53:03.000
+you may not know
+
+53:03.000 --> 53:05.000
+the market price,
+
+53:05.000 --> 53:07.000
+but you can
+
+53:07.000 --> 53:09.000
+stabilize the balance.
+
+53:09.000 --> 53:11.000
+This is the reason
+
+53:11.000 --> 53:13.000
+why many economists
+
+53:13.000 --> 53:15.000
+like the market.
+
+53:15.000 --> 53:17.000
+Even if you don't know anything,
+
+53:17.000 --> 53:19.000
+the market will tell you
+
+53:19.000 --> 53:21.000
+what the balance looks like.
+
+53:21.000 --> 53:23.000
+Finally,
+
+53:23.000 --> 53:25.000
+I want to summarize
+
+53:25.000 --> 53:27.000
+with this video.
+
+53:27.000 --> 53:29.000
+In this project,
+
+53:29.000 --> 53:31.000
+we use the lab data
+
+53:31.000 --> 53:33.000
+to predict the market price.
+
+53:33.000 --> 53:35.000
+In Ultimate Game,
+
+53:35.000 --> 53:37.000
+we can see that
+
+53:37.000 --> 53:39.000
+more than 94% of the proposals
+
+53:39.000 --> 53:41.000
+are below 50%.
+
+53:41.000 --> 53:43.000
+Many proposals
+
+53:43.000 --> 53:45.000
+are above the natural
+
+53:45.000 --> 53:47.000
+poker point.
+
+53:47.000 --> 53:49.000
+In terms of acceptance rate,
+
+53:49.000 --> 53:51.000
+we see a 20% breakpoint.
+
+53:51.000 --> 53:53.000
+In the reaction,
+
+53:53.000 --> 53:55.000
+we see 10% more breakpoints.
+
+53:55.000 --> 53:57.000
+In response time,
+
+53:57.000 --> 53:59.000
+it is the lowest
+
+53:59.000 --> 54:01.000
+of the three.
+
+54:01.000 --> 54:03.000
+Finally,
+
+54:03.000 --> 54:05.000
+no matter which of the three
+
+54:05.000 --> 54:07.000
+we use,
+
+54:07.000 --> 54:09.000
+accuracy,
+
+54:09.000 --> 54:11.000
+fluctuation,
+
+54:11.000 --> 54:13.000
+or efficiency
+
+54:13.000 --> 54:15.000
+will all be calculated.
+
+54:15.000 --> 54:17.000
+Finally,
+
+54:17.000 --> 54:19.000
+we can see that
+
+54:19.000 --> 54:21.000
+in Ultimate Game,
+
+54:21.000 --> 54:23.000
+the proposal offer
+
+54:23.000 --> 54:25.000
+has more breakpoints
+
+54:25.000 --> 54:27.000
+than acceptance rate.
+
+54:27.000 --> 54:29.000
+This is in response to
+
+54:29.000 --> 54:31.000
+Roth's 1990 contracture.
+
+54:31.000 --> 54:33.000
+Finally,
+
+54:33.000 --> 54:35.000
+if we compare Ultimate Game
+
+54:35.000 --> 54:37.000
+with Double Option,
+
+54:37.000 --> 54:39.000
+we can see a big difference
+
+54:39.000 --> 54:41.000
+between the two countries.
+
+54:41.000 --> 54:43.000
+This is in response to
+
+54:43.000 --> 54:45.000
+Double Option is a very stable mechanism
+
+54:45.000 --> 54:47.000
+in all countries.
+
+54:47.000 --> 54:49.000
+I think this is all
+
+54:49.000 --> 54:51.000
+I want to say.
+
+54:51.000 --> 54:53.000
+I will show my email.
+
+54:53.000 --> 54:55.000
+If you have any questions,
+
+54:55.000 --> 54:57.000
+we have about 5 minutes left.
+
+54:57.000 --> 54:59.000
+Let's see what questions you want to ask.
+
+54:59.000 --> 55:01.000
+Mr. He,
+
+55:01.000 --> 55:03.000
+do you want to comment?
+
+55:11.000 --> 55:13.000
+Mr. He, please comment.
+
+55:17.000 --> 55:19.000
+I want to ask
+
+55:19.000 --> 55:21.000
+if you have any questions.
+
+55:21.000 --> 55:23.000
+I will ask first.
+
+55:23.000 --> 55:25.000
+Wait a minute.
+
+55:25.000 --> 55:27.000
+The first question is for Mr. He.
+
+55:31.000 --> 55:33.000
+Do you want to estimate
+
+55:33.000 --> 55:35.000
+the result of long-term training?
+
+55:35.000 --> 55:37.000
+There is a way.
+
+55:37.000 --> 55:39.000
+You can show us
+
+55:39.000 --> 55:41.000
+the data
+
+55:41.000 --> 55:43.000
+in the lab.
+
+55:43.000 --> 55:45.000
+If you only use the previous few rounds,
+
+55:45.000 --> 55:47.000
+then you can estimate
+
+55:47.000 --> 55:49.000
+the result of long-term training.
+
+55:49.000 --> 55:51.000
+This way,
+
+55:51.000 --> 55:53.000
+you can estimate the result of long-term training.
+
+55:53.000 --> 55:55.000
+I'm not sure
+
+55:55.000 --> 55:57.000
+how you estimate the result
+
+55:57.000 --> 55:59.000
+of long-term training
+
+55:59.000 --> 56:01.000
+in the country.
+
+56:01.000 --> 56:03.000
+I'm not sure
+
+56:03.000 --> 56:05.000
+how you estimate the result of long-term training.
+
+56:05.000 --> 56:07.000
+I will talk about it first.
+
+56:07.000 --> 56:09.000
+No, no.
+
+56:09.000 --> 56:11.000
+What I mean is
+
+56:11.000 --> 56:13.000
+what is the hypothesis
+
+56:13.000 --> 56:15.000
+you want to verify.
+
+56:15.000 --> 56:17.000
+If it is a double auction,
+
+56:17.000 --> 56:19.000
+why do you
+
+56:19.000 --> 56:21.000
+say that
+
+56:21.000 --> 56:23.000
+Asians are more polite?
+
+56:23.000 --> 56:25.000
+No, what I want to say is
+
+56:25.000 --> 56:27.000
+double auctions
+
+56:27.000 --> 56:29.000
+in different places around the world
+
+56:29.000 --> 56:31.000
+have similar results.
+
+56:31.000 --> 56:33.000
+However,
+
+56:33.000 --> 56:35.000
+there is a big difference
+
+56:35.000 --> 56:37.000
+between each country.
+
+56:39.000 --> 56:41.000
+That's what I want to say.
+
+56:49.000 --> 56:51.000
+Let me think about it.
+
+56:51.000 --> 56:53.000
+Let me think about it.
+
+56:57.000 --> 56:59.000
+There is a problem here.
+
+56:59.000 --> 57:01.000
+You think the market
+
+57:01.000 --> 57:03.000
+is universal.
+
+57:03.000 --> 57:05.000
+You think the market
+
+57:05.000 --> 57:07.000
+is universal.
+
+57:07.000 --> 57:09.000
+You think the market
+
+57:09.000 --> 57:11.000
+is universal.
+
+57:11.000 --> 57:13.000
+However,
+
+57:13.000 --> 57:15.000
+there is a problem here.
+
+57:15.000 --> 57:17.000
+There is a problem here.
+
+57:17.000 --> 57:19.000
+If you don't use the strategy method,
+
+57:19.000 --> 57:21.000
+you can't see
+
+57:21.000 --> 57:23.000
+the complete strategy
+
+57:23.000 --> 57:25.000
+of the respondent.
+
+57:29.000 --> 57:31.000
+You think
+
+57:31.000 --> 57:33.000
+what you see is
+
+57:33.000 --> 57:35.000
+what you see is
+
+57:35.000 --> 57:37.000
+acceptable or not,
+
+57:37.000 --> 57:39.000
+you can only explain
+
+57:39.000 --> 57:41.000
+30% of the variation.
+
+57:41.000 --> 57:43.000
+However,
+
+57:43.000 --> 57:45.000
+what is the actual strategy?
+
+57:45.000 --> 57:47.000
+I'm not sure
+
+57:47.000 --> 57:49.000
+I'm not sure
+
+57:49.000 --> 57:51.000
+where you can check.
+
+57:51.000 --> 57:53.000
+It is possible
+
+57:53.000 --> 57:55.000
+that because
+
+57:55.000 --> 57:57.000
+different countries
+
+57:57.000 --> 57:59.000
+have already explained
+
+57:59.000 --> 58:01.000
+most of the proposal
+
+58:01.000 --> 58:03.000
+that is,
+
+58:03.000 --> 58:05.000
+everyone
+
+58:05.000 --> 58:07.000
+has proposed
+
+58:07.000 --> 58:09.000
+a social standard
+
+58:09.000 --> 58:11.000
+that meets
+
+58:11.000 --> 58:13.000
+the social standard
+
+58:13.000 --> 58:15.000
+of the proposal.
+
+58:15.000 --> 58:17.000
+But that part
+
+58:17.000 --> 58:19.000
+may be because it is all
+
+58:19.000 --> 58:21.000
+hidden in the
+
+58:21.000 --> 58:23.000
+proposal.
+
+58:23.000 --> 58:25.000
+This is also the point I want to talk about.
+
+58:25.000 --> 58:27.000
+This is also the point I want to talk about.
+
+58:27.000 --> 58:29.000
+OK.
+
+58:29.000 --> 58:31.000
+Can I ask a question?
+
+58:31.000 --> 58:33.000
+Can I ask a question?
+
+58:33.000 --> 58:35.000
+Hi.
+
+58:35.000 --> 58:37.000
+0 and 100
+
+58:37.000 --> 58:39.000
+0 and 100
+
+58:39.000 --> 58:41.000
+0 and 100
+
+58:41.000 --> 58:43.000
+I agree with what Meng just said.
+
+58:43.000 --> 58:45.000
+I agree with what Meng just said.
+
+58:45.000 --> 58:47.000
+The default reaction time
+
+58:47.000 --> 58:49.000
+The default reaction time
+
+58:49.000 --> 58:51.000
+is a test
+
+58:51.000 --> 58:53.000
+to see if it is a default effect.
+
+58:53.000 --> 58:55.000
+You said you have
+
+58:55.000 --> 58:57.000
+experimental instructions.
+
+58:57.000 --> 58:59.000
+You said you have
+
+58:59.000 --> 59:01.000
+experimental instructions.
+
+59:01.000 --> 59:03.000
+Can you tell
+
+59:03.000 --> 59:05.000
+which ones are
+
+59:05.000 --> 59:07.000
+really incentivized?
+
+59:07.000 --> 59:09.000
+Can you tell which ones are really incentivized?
+
+59:09.000 --> 59:11.000
+Can you tell which ones are really incentivized?
+
+59:11.000 --> 59:13.000
+Can you tell which ones are really incentivized?
+
+59:13.000 --> 59:15.000
+Usually, the incentive for
+
+59:15.000 --> 59:17.000
+an experiment is
+
+59:17.000 --> 59:19.000
+how many points I give you
+
+59:19.000 --> 59:21.000
+if you take part in the experiment.
+
+59:21.000 --> 59:23.000
+But I don't know what their design is like.
+
+59:23.000 --> 59:25.000
+But I don't know what their design is like.
+
+59:25.000 --> 59:27.000
+Some may be related to
+
+59:27.000 --> 59:29.000
+your test result.
+
+59:29.000 --> 59:31.000
+Some may be related to
+
+59:31.000 --> 59:33.000
+your test result.
+
+59:33.000 --> 59:35.000
+Some may be related to
+
+59:35.000 --> 59:37.000
+a participation experiment.
+
+59:37.000 --> 59:39.000
+But the result is not affected by it.
+
+59:39.000 --> 59:41.000
+But the result is not affected by it.
+
+59:41.000 --> 59:43.000
+You will see more than 100 points.
+
+59:43.000 --> 59:45.000
+You will see more than 100 points.
+
+59:45.000 --> 59:47.000
+You will see more than 100 points.
+
+59:47.000 --> 59:49.000
+It may be normal.
+
+59:49.000 --> 59:51.000
+Because the result may be
+
+59:51.000 --> 59:53.000
+a naive or unexpected behavior.
+
+59:53.000 --> 59:55.000
+a naive or unexpected behavior.
+
+59:55.000 --> 59:57.000
+About the more than 0 points,
+
+59:57.000 --> 59:59.000
+I think
+
+59:59.000 --> 01:00:01.000
+it is a
+
+01:00:01.000 --> 01:00:03.000
+inherent problem.
+
+01:00:03.000 --> 01:00:05.000
+In general, those who do experiments with
+
+01:00:05.000 --> 01:00:07.000
+telecom all use
+
+01:00:07.000 --> 01:00:09.000
+Marbled.
+
+01:00:09.000 --> 01:00:11.000
+Marbled.
+
+01:00:11.000 --> 01:00:13.000
+I don't know whether it is right.
+
+01:00:13.000 --> 01:00:15.000
+But, I think it is.
+
+01:00:15.000 --> 01:00:17.000
+What about after-graduate students?
+
+01:00:17.000 --> 01:00:19.000
+What about after- graduate students?
+
+01:00:19.000 --> 01:00:21.000
+What about after- graduate students?
+
+01:00:21.000 --> 01:00:23.000
+The third option is
+
+01:00:23.000 --> 01:00:25.000
+the course of
+
+01:00:25.000 --> 01:00:27.000
+Ultimatum Gate.
+
+01:00:27.000 --> 01:00:29.000
+The third option is
+
+01:00:29.000 --> 01:00:31.000
+the course of Ultimatum Gate.
+
+01:00:31.000 --> 01:00:33.000
+The 3rd option is
+
+01:00:33.000 --> 01:00:35.000
+for example,
+
+01:00:35.000 --> 01:00:37.000
+after-graduate students finish the course,
+
+01:00:37.000 --> 01:00:39.000
+the theoretical prediction of Ultimatum Gate is 0.
+
+01:00:39.000 --> 01:00:41.000
+Then, they do the experiment.
+
+01:00:41.000 --> 01:00:43.000
+Or, they do the experiment before the theoretical prediction.
+
+01:00:43.000 --> 01:00:45.000
+There is a difference.
+
+01:00:45.000 --> 01:00:47.000
+There is a difference.
+
+01:00:47.000 --> 01:00:49.000
+Because, after-graduate students do the experiment,
+
+01:00:49.000 --> 01:00:51.000
+the 3rd option
+
+01:00:51.000 --> 01:00:53.000
+is the default of many people.
+
+01:00:53.000 --> 01:00:55.000
+I know.
+
+01:00:55.000 --> 01:00:57.000
+We have seen
+
+01:00:57.000 --> 01:00:59.000
+different courses.
+
+01:00:59.000 --> 01:01:01.000
+The smallest course is the course of Game Theory.
+
+01:01:01.000 --> 01:01:03.000
+OK.
+
+01:01:03.000 --> 01:01:05.000
+This is a sample.
+
+01:01:05.000 --> 01:01:07.000
+OK.
+
+01:01:07.000 --> 01:01:09.000
+You can imagine
+
+01:01:09.000 --> 01:01:11.000
+the degree of
+
+01:01:11.000 --> 01:01:13.000
+interaction between
+
+01:01:13.000 --> 01:01:15.000
+the scope of each course,
+
+01:01:15.000 --> 01:01:17.000
+this is Ludger' class.
+
+01:01:19.000 --> 01:01:21.000
+Because we have a class name,
+
+01:01:21.000 --> 01:01:23.000
+So, we may roughly know the degree of interaction.
+
+01:01:23.000 --> 01:01:25.000
+The only difference is
+
+01:01:25.000 --> 01:01:27.000
+after-shared theory prediction
+
+01:01:27.000 --> 01:01:29.000
+of Ultimatum Gate is 0,
+
+01:01:29.000 --> 01:01:31.000
+I can't see it.
+
+01:01:31.000 --> 01:01:33.000
+For 0 and 100,
+
+01:01:33.000 --> 01:01:35.000
+in the data of Google Earth,
+
+01:01:35.000 --> 01:01:37.000
+the two peaks
+
+01:01:37.000 --> 01:01:39.000
+are very different.
+
+01:01:39.000 --> 01:01:41.000
+So, I think
+
+01:01:41.000 --> 01:01:43.000
+if you can
+
+01:01:43.000 --> 01:01:45.000
+clear those data,
+
+01:01:45.000 --> 01:01:47.000
+or find the way
+
+01:01:47.000 --> 01:01:49.000
+like just now,
+
+01:01:49.000 --> 01:01:51.000
+and then compare with the kink,
+
+01:01:51.000 --> 01:01:53.000
+OK.
+
+01:01:53.000 --> 01:01:55.000
+Maybe it will be closer.
+
+01:01:55.000 --> 01:01:57.000
+I don't know if it will affect.
+
+01:01:57.000 --> 01:01:59.000
+OK.
+
+01:01:59.000 --> 01:02:01.000
+I have a notebook.
+
+01:02:05.000 --> 01:02:07.000
+OK.
+
+01:02:07.000 --> 01:02:09.000
+You ask first.
+
+01:02:09.000 --> 01:02:11.000
+OK. Thank you.
+
+01:02:11.000 --> 01:02:13.000
+This is not a question.
+
+01:02:13.000 --> 01:02:15.000
+It's more like a comment.
+
+01:02:15.000 --> 01:02:17.000
+Since
+
+01:02:17.000 --> 01:02:19.000
+you have the default option
+
+01:02:19.000 --> 01:02:21.000
+bias,
+
+01:02:21.000 --> 01:02:23.000
+it seems to be a very serious thing.
+
+01:02:23.000 --> 01:02:25.000
+It will make your two curves
+
+01:02:25.000 --> 01:02:27.000
+and theory different.
+
+01:02:27.000 --> 01:02:29.000
+My idea is
+
+01:02:29.000 --> 01:02:31.000
+whether you can...
+
+01:02:31.000 --> 01:02:33.000
+I don't know if it will be too difficult.
+
+01:02:33.000 --> 01:02:35.000
+When you change your program,
+
+01:02:35.000 --> 01:02:37.000
+when you change your game,
+
+01:02:37.000 --> 01:02:39.000
+you make every starting point different.
+
+01:02:39.000 --> 01:02:41.000
+You can choose a starting point
+
+01:02:41.000 --> 01:02:43.000
+to solve your next problem.
+
+01:02:43.000 --> 01:02:45.000
+Let me respond.
+
+01:02:45.000 --> 01:02:47.000
+This is technically
+
+01:02:47.000 --> 01:02:49.000
+very simple.
+
+01:02:49.000 --> 01:02:51.000
+But there is another problem
+
+01:02:51.000 --> 01:02:53.000
+in economics.
+
+01:02:53.000 --> 01:02:55.000
+There is a friction effect.
+
+01:02:55.000 --> 01:02:57.000
+I'm afraid there will be an anchoring result.
+
+01:02:57.000 --> 01:02:59.000
+So...
+
+01:02:59.000 --> 01:03:01.000
+Oh.
+
+01:03:01.000 --> 01:03:03.000
+If
+
+01:03:03.000 --> 01:03:05.000
+your starting point is a very high offer,
+
+01:03:05.000 --> 01:03:07.000
+it is very likely that people will be affected
+
+01:03:07.000 --> 01:03:09.000
+by that point.
+
+01:03:09.000 --> 01:03:11.000
+OK. My offer is higher.
+
+01:03:11.000 --> 01:03:13.000
+If my starting point is lower,
+
+01:03:13.000 --> 01:03:15.000
+I may be affected by this point.
+
+01:03:15.000 --> 01:03:17.000
+So we are...
+
+01:03:17.000 --> 01:03:19.000
+About this,
+
+01:03:19.000 --> 01:03:21.000
+we can't control
+
+01:03:21.000 --> 01:03:23.000
+the standard time.
+
+01:03:23.000 --> 01:03:25.000
+Usually,
+
+01:03:25.000 --> 01:03:27.000
+the way to control the prediction effect
+
+01:03:27.000 --> 01:03:29.000
+is to put $100
+
+01:03:29.000 --> 01:03:31.000
+directly on the table.
+
+01:03:31.000 --> 01:03:33.000
+Don't put it on both sides.
+
+01:03:33.000 --> 01:03:35.000
+Put it one by one.
+
+01:03:35.000 --> 01:03:37.000
+OK.
+
+01:03:37.000 --> 01:03:39.000
+But
+
+01:03:39.000 --> 01:03:41.000
+in their operation,
+
+01:03:41.000 --> 01:03:43.000
+they choose
+
+01:03:43.000 --> 01:03:45.000
+to put it directly at the beginning.
+
+01:03:45.000 --> 01:03:47.000
+So there will be a prediction effect.
+
+01:03:47.000 --> 01:03:49.000
+But in terms of reaction time,
+
+01:03:49.000 --> 01:03:51.000
+the effect should be very small.
+
+01:03:51.000 --> 01:03:53.000
+I have a response.
+
+01:03:53.000 --> 01:03:55.000
+Or just change the interface
+
+01:03:55.000 --> 01:03:57.000
+to fill in the numbers directly.
+
+01:03:57.000 --> 01:03:59.000
+Don't use the LaBar method.
+
+01:03:59.000 --> 01:04:01.000
+Of course,
+
+01:04:01.000 --> 01:04:03.000
+this is also possible.
+
+01:04:03.000 --> 01:04:05.000
+But this may have to talk
+
+01:04:05.000 --> 01:04:07.000
+to the engineer.
+
+01:04:07.000 --> 01:04:09.000
+But this is also possible.
+
+01:04:09.000 --> 01:04:11.000
+But we want to change it.
+
+01:04:11.000 --> 01:04:13.000
+We want to use LaBar mainly to
+
+01:04:13.000 --> 01:04:15.000
+make the picture interesting
+
+01:04:15.000 --> 01:04:17.000
+and make consumers want to buy it.
+
+01:04:17.000 --> 01:04:19.000
+I don't know why.
+
+01:04:19.000 --> 01:04:21.000
+Everyone thinks LaBar is fun.
+
+01:04:21.000 --> 01:04:23.000
+I don't know why.
+
+01:04:23.000 --> 01:04:25.000
+Everyone likes LaBar.
+
+01:04:25.000 --> 01:04:27.000
+But there will be a lot of problems.
+
+01:04:27.000 --> 01:04:29.000
+Of course.
+
+01:04:29.000 --> 01:04:31.000
+LaBar is because
+
+01:04:31.000 --> 01:04:33.000
+a lot of people are operating
+
+01:04:33.000 --> 01:04:35.000
+with a tablet.
+
+01:04:35.000 --> 01:04:37.000
+This is also...
+
+01:04:37.000 --> 01:04:39.000
+I have a question.
+
+01:04:39.000 --> 01:04:41.000
+You say.
+
+01:04:41.000 --> 01:04:43.000
+Hello.
+
+01:04:43.000 --> 01:04:45.000
+You say.
+
+01:04:45.000 --> 01:04:47.000
+This question is like this.
+
+01:04:47.000 --> 01:04:49.000
+You know that Zhang Anping
+
+01:04:49.000 --> 01:04:51.000
+is studying social psychology.
+
+01:04:51.000 --> 01:04:53.000
+They often play this kind of
+
+01:04:53.000 --> 01:04:55.000
+game.
+
+01:04:55.000 --> 01:04:57.000
+But they like to do one thing,
+
+01:04:57.000 --> 01:04:59.000
+which is to manipulate the victim.
+
+01:04:59.000 --> 01:05:01.000
+For example, let you play the game first,
+
+01:05:01.000 --> 01:05:03.000
+then teach you game theory,
+
+01:05:03.000 --> 01:05:05.000
+then let you play the game,
+
+01:05:05.000 --> 01:05:07.000
+then look at the difference.
+
+01:05:07.000 --> 01:05:09.000
+But what they do more often is
+
+01:05:09.000 --> 01:05:11.000
+to let you play the game first,
+
+01:05:11.000 --> 01:05:13.000
+then let you watch Hitler's documentary,
+
+01:05:13.000 --> 01:05:15.000
+do you try to manipulate the victim?
+
+01:05:15.000 --> 01:05:17.000
+This is what we can't do.
+
+01:05:17.000 --> 01:05:19.000
+Because we...
+
+01:05:19.000 --> 01:05:21.000
+Because it means
+
+01:05:21.000 --> 01:05:23.000
+different treatments for the victim.
+
+01:05:23.000 --> 01:05:25.000
+We can compare the experimental group and the control group.
+
+01:05:25.000 --> 01:05:27.000
+But we are basically because
+
+01:05:27.000 --> 01:05:29.000
+we don't have an experimental group and a control group.
+
+01:05:29.000 --> 01:05:31.000
+So this is what we can't do.
+
+01:05:31.000 --> 01:05:33.000
+There is no way to look at this information.
+
+01:05:33.000 --> 01:05:35.000
+But of course, if we are in the lab,
+
+01:05:35.000 --> 01:05:37.000
+it can be done completely.
+
+01:05:37.000 --> 01:05:39.000
+But you can sell the product to the psychology department.
+
+01:05:39.000 --> 01:05:41.000
+This is what I am sure of.
+
+01:05:41.000 --> 01:05:43.000
+This is what I am sure of.
+
+01:05:43.000 --> 01:05:45.000
+So now we are going to hire a psychologist.
+
+01:05:45.000 --> 01:05:47.000
+I think this will be a pretty interesting tour.
+
+01:05:47.000 --> 01:05:49.000
+Because they are indeed writing.
+
+01:05:49.000 --> 01:05:51.000
+And they are going to write the first book
+
+01:05:51.000 --> 01:05:53.000
+by themselves in MATLAB.
+
+01:05:53.000 --> 01:05:55.000
+In fact, I think the meeting is ugly.
+
+01:05:55.000 --> 01:05:57.000
+That's what you're doing.
+
+01:05:57.000 --> 01:05:59.000
+So I think there is
+
+01:05:59.000 --> 01:06:01.000
+marketing potential.
+
+01:06:01.000 --> 01:06:03.000
+I should tell the boss about this.
+
+01:06:03.000 --> 01:06:05.000
+And science, in terms of science,
+
+01:06:05.000 --> 01:06:07.000
+is actually interesting, I think.
+
+01:06:07.000 --> 01:06:09.000
+I want to tell the boss about this.
+
+01:06:09.000 --> 01:06:11.000
+I want to tell the boss about this.
+
+01:06:11.000 --> 01:06:13.000
+And Bozun,
+
+01:06:13.000 --> 01:06:15.000
+let me ask you again.
+
+01:06:15.000 --> 01:06:17.000
+As long as you can see
+
+01:06:17.000 --> 01:06:19.000
+all the regions,
+
+01:06:19.000 --> 01:06:21.000
+you should be able to see which schools
+
+01:06:21.000 --> 01:06:23.000
+use MATLAB, right?
+
+01:06:23.000 --> 01:06:25.000
+Yes.
+
+01:06:25.000 --> 01:06:27.000
+Do you have a proposal for
+
+01:06:27.000 --> 01:06:29.000
+the education level or the income level?
+
+01:06:29.000 --> 01:06:31.000
+No income.
+
+01:06:31.000 --> 01:06:33.000
+But we have a division
+
+01:06:33.000 --> 01:06:35.000
+for each school.
+
+01:06:35.000 --> 01:06:37.000
+I want to say that the school itself is an income proxy.
+
+01:06:37.000 --> 01:06:39.000
+It must be some library.
+
+01:06:39.000 --> 01:06:41.000
+Yes.
+
+01:06:41.000 --> 01:06:43.000
+But I haven't connected yet.
+
+01:06:43.000 --> 01:06:45.000
+I haven't connected with the income in that area.
+
+01:06:45.000 --> 01:06:47.000
+I propose that you can
+
+01:06:47.000 --> 01:06:49.000
+take a look.
+
+01:06:49.000 --> 01:06:51.000
+Because you have income data now.
+
+01:06:51.000 --> 01:06:53.000
+You have similar income or education
+
+01:06:53.000 --> 01:06:55.000
+level data.
+
+01:06:55.000 --> 01:06:57.000
+You should be able to find it up there.
+
+01:06:57.000 --> 01:06:59.000
+But don't give me homework, please.
+
+01:06:59.000 --> 01:07:01.000
+OK.
+
+01:07:01.000 --> 01:07:03.000
+In fact, if you have any
+
+01:07:03.000 --> 01:07:05.000
+questions, I can't think of it now.
+
+01:07:05.000 --> 01:07:07.000
+You can e-mail me.
+
+01:07:07.000 --> 01:07:09.000
+Or you can find me on Facebook.
+
+01:07:09.000 --> 01:07:11.000
+Then...
+
+01:07:11.000 --> 01:07:13.000
+The small question I just wanted to ask is
+
+01:07:13.000 --> 01:07:15.000
+that you said that
+
+01:07:15.000 --> 01:07:17.000
+ROTH is between
+
+01:07:17.000 --> 01:07:19.000
+the proposer and the responder.
+
+01:07:19.000 --> 01:07:21.000
+You said that the variation comes from the
+
+01:07:21.000 --> 01:07:23.000
+proposer, which is the ROTH hypothesis.
+
+01:07:23.000 --> 01:07:25.000
+Does this hypothesis come from
+
+01:07:25.000 --> 01:07:27.000
+the observation of its data or from
+
+01:07:27.000 --> 01:07:29.000
+some theory?
+
+01:07:29.000 --> 01:07:31.000
+It comes from the observation of its data.
+
+01:07:31.000 --> 01:07:33.000
+Because there are only four
+
+01:07:33.000 --> 01:07:35.000
+countries, and each country basically
+
+01:07:35.000 --> 01:07:37.000
+compares the last round of data.
+
+01:07:37.000 --> 01:07:39.000
+So you're talking about
+
+01:07:39.000 --> 01:07:41.000
+comparing 100 data points.
+
+01:07:41.000 --> 01:07:43.000
+So
+
+01:07:43.000 --> 01:07:45.000
+for ROTH, it can't do
+
+01:07:45.000 --> 01:07:47.000
+statistical analysis. It can only say
+
+01:07:47.000 --> 01:07:49.000
+what the four distributions look like.
+
+01:07:49.000 --> 01:07:51.000
+And what my observation looks like.
+
+01:07:51.000 --> 01:07:53.000
+OK.
+
+01:07:57.000 --> 01:07:59.000
+OK.
+
+01:07:59.000 --> 01:08:01.000
+So are there any questions
+
+01:08:01.000 --> 01:08:03.000
+from the audience?
+
+01:08:03.000 --> 01:08:05.000
+Our speech time is
+
+01:08:05.000 --> 01:08:07.000
+almost over.
+
+01:08:07.000 --> 01:08:09.000
+Can you stay for a while?
+
+01:08:09.000 --> 01:08:11.000
+I want to talk to you.
+
+01:08:11.000 --> 01:08:13.000
+Sure.
+
+01:08:13.000 --> 01:08:15.000
+OK.
+
+01:08:15.000 --> 01:08:17.000
+That's all for today's speech.
+
+01:08:17.000 --> 01:08:19.000
+Thank you, everyone.
+
+01:08:21.000 --> 01:08:23.000
+Thank you.
+
+01:08:23.000 --> 01:08:25.000
+Applause, please.
+
+01:08:25.000 --> 01:08:27.000
+Thank you.
+
+01:08:27.000 --> 01:08:29.000
+I'll pause the recording.
+

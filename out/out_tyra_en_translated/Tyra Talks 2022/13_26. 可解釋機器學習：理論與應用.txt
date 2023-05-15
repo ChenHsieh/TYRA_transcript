@@ -1,0 +1,2170 @@
+Can you see it now?
+Yes.
+OK.
+Hello, everyone.
+I'm John Yu-nan.
+You can call me Alan.
+I'm a Ph.D. student at Rice University.
+I'm studying computer science.
+I'm in my second year.
+I'm doing research on
+interpretable machinery
+or explainable artificial intelligence.
+My goal is to explain
+why this machine learning model
+can make such predictions.
+I want to explain
+and convince people
+that this prediction result
+is not random.
+OK.
+Let me introduce myself.
+I used to study in Taiwan.
+I'm a master's student.
+I used to work in
+a recommendation system.
+If you have questions
+about the recommendation system,
+you can ask me.
+I'll try to answer them.
+OK.
+I studied math in college.
+Before I graduated from
+my senior year,
+I didn't know how to code.
+I didn't even understand
+a line of code.
+I want to encourage
+those who still want to code
+not to give up.
+Everyone has a chance.
+Keep working hard.
+Everyone has a chance
+to do this.
+OK.
+Today,
+OK.
+I'm going to talk about
+I just want to say
+it's too inspirational at the beginning.
+Anyway,
+I'm not a master today.
+I'm just an ordinary
+sophomore PhD student.
+If you want to interrupt me,
+just turn on your microphone
+and interrupt me.
+OK.
+Let's get started.
+OK.
+Today's outline
+focuses on four points.
+First,
+explainable artificial intelligence.
+Next,
+explainable machine learning.
+Next,
+explainable machine learning.
+There are two types of machine learning.
+First,
+explainable machine learning.
+For example,
+you may have heard of
+decision tree.
+In decision tree,
+we can see
+the model itself
+is explainable.
+is explainable.
+The other type is
+neural network.
+The other type is
+deep neural network.
+It's fully connected.
+It's fully connected.
+It's a black box model.
+It's not explainable.
+You don't know
+the learning weight.
+You don't know the learning weight.
+You don't know the learning weight.
+You don't know the learning weight.
+So,
+we need an explanation
+after learning the model.
+After learning the model,
+we need to learn
+an explanation model
+to explain the model.
+This type of learning method
+is called post hoc.
+post hoc is after prediction process.
+OK.
+After this,
+I'm going to talk about
+the application of XAI.
+If you are not a computer science
+background,
+you may wonder
+what's the use of XAI.
+I'm going to talk about
+the open source package
+to make an explainable model.
+to make an explainable model.
+Now, everyone uses Python.
+I'm going to talk about
+two open source packages.
+I'm going to tell you
+what is XAI.
+XAI is not an unimaginable thing.
+If you have a prediction model,
+and you want to make it explainable,
+everyone has a chance
+to step into this field.
+OK.
+Now,
+I'm going to talk about
+what is XAI.
+Artificial intelligence
+has many applications
+in our daily life.
+For example,
+deep mind
+has created AlphaGo
+to play Go.
+It can scare
+human experts.
+Yes.
+A while ago,
+deep mind gave
+AlphaTensor and
+AlphaProtein.
+In fact,
+they are for reinforcement learning.
+They are for
+reinforcement learning.
+They can be applied
+in daily life.
+For example,
+medical diagnosis.
+For example,
+I give you an X-ray,
+and you hope the machine learning model
+can tell if you have a brain tumor.
+Then it will tell you
+if you have a brain tumor.
+Or you can tell
+the machine learning model
+if you have a cough
+or symptoms.
+Tesla Autopilot
+is an
+autonomous vehicle.
+It will not detect
+any object.
+It will give you the best way
+to drive the car.
+Next is voice recognition.
+For example, Alexa.
+I don't know if you have used
+a smart speaker.
+When you speak to the speaker,
+it will detect your voice
+and convert it
+to English.
+Then it will
+request the service
+from the online server.
+Recently,
+there is a popular
+speech-to-speech
+in Meta.
+This kind of
+AI application
+is becoming more and more common.
+It is hard for us
+to know why
+these models make these judgments.
+For example,
+if you go to a doctor
+and he presented a
+medical diagnosis model.
+You input all your symptoms
+into this model.
+He will say,
+you just have a cold today.
+Why do you make this judgment?
+Or if Tesla gives you
+the best
+autonomous driving
+route plan,
+do you really think
+he won't be in trouble?
+In this decision-making process,
+if you can provide
+what features
+this model learned today,
+or if it senses
+a pedestrian passing by
+and stops,
+or if it detects a green light
+in front of it.
+If this kind of
+why process is provided to users,
+it can actually
+increase people's
+credibility in
+machine learning models.
+So,
+the whole XAI
+is actually doing one thing.
+It wants to provide
+a reasonable reason to users.
+For example,
+what features did this model learn?
+Or what did this model see?
+Or did this model learn
+two or three features
+that led me to make
+this prediction result?
+XAI is improving
+this process.
+For example,
+this autopilot on the left.
+What does XAI want to do?
+We actually want to provide
+why this autopilot
+will give you
+a safe route plan.
+So, you have to tell users
+that because my model
+detects people,
+my model detects
+no cars within 50 meters.
+For example,
+the medical diagnosis
+on the right.
+The medical diagnosis
+is like
+persuading a doctor
+or a patient
+that because I
+see a tumor
+in the X-ray of your brain,
+I frame it,
+so I judge your brain tumor.
+This action
+doesn't seem
+so necessary
+in the whole
+prediction process.
+But if you provide
+this step to users,
+why this step,
+users will feel
+very confident
+about your decision
+model.
+Of course, there are many applications
+that I haven't mentioned,
+such as stock market trading.
+For example, if you buy
+a stock,
+the price of the stock
+has already fallen
+to the point of fracture.
+If you sell the stock,
+the price will not
+fall below $100.
+If the model is wrong,
+it will ask you to sell it
+because the price of the stock
+may fall below $100.
+You have to convince
+the trader
+that because I see
+a tumor
+in the X-ray of your brain,
+your prediction model
+is credible.
+There are several points
+related to this.
+First, you have to convince users.
+Second, you have to provide security.
+Another important thing
+is some legal things,
+such as GDPR.
+A while ago,
+Facebook was called
+to the European Parliament
+or Google CEO
+was called to the U.S.
+House of Representatives
+was called to scold.
+In fact,
+these privacy data
+or personal data
+are not provided
+to users
+in a reasonable
+or safe way.
+You can't use these features
+unconditionally
+as a basis
+for training models.
+If you can provide these methods
+to users through XAI
+and say
+I use these features
+today
+and provide you
+some personal
+recommendations or predictions.
+In fact, users
+will be more at ease
+that you have used these things.
+Even if it is privacy data,
+it is better than
+using XAI.
+This is the reason
+why XAI has attracted
+more and more people
+in the past 1 or 2 years
+or 3 or 4 years.
+OK.
+Next,
+those are
+some high-level
+things.
+Let's talk about
+some
+more
+scientific things.
+If we are doing
+image classification,
+we are judging
+the model
+whether it is good or not.
+We are training
+a model of image classification.
+We can't say
+this model
+is good or not.
+Of course, we can say
+it is a prediction.
+For example,
+we can predict
+the label of this image.
+However,
+we can say
+this image is a frog.
+Does this model
+really learn the characteristics of a frog?
+In other words,
+does it really learn
+the head of a frog?
+Does it really learn
+the head of a frog?
+No one knows.
+It may learn
+that most of the frog images
+are because the frog
+stands on the pond and the lotus.
+So it catches the characteristics
+of the pond and the lotus.
+We don't know this.
+Why?
+When a model like this
+learns the model of
+pond and frog,
+will it predict the wrong?
+We don't know this.
+Through this AI,
+we can see
+which part is important.
+In the end,
+if we get the final explanation
+that the reason
+the model is a frog
+is because it has
+a very representative head,
+then we know
+this model is actually learning
+the right direction,
+instead of catching some
+background loopholes
+or shortcuts
+to improve
+the AI.
+For example,
+let's say
+there is a test
+to see if you are
+a COVID classifier.
+As we all know,
+there is a high probability
+that you have a fever or a sore throat.
+Let's say you only have a cold.
+If you only have a fever
+or a sore throat,
+the test says you are a COVID classifier.
+Then you are panicking.
+If we want to
+judge whether
+the machine learning model
+really learns
+the features we want,
+for example,
+we provide some X-ray photos.
+It will say that
+the COVID diagnosis
+is not only based on
+the two features,
+sore throat and fever.
+If we
+provide
+this prediction result
+to the user,
+we can detect
+the features
+and the user
+will be happier.
+Okay.
+Let's drink some water.
+To sum up,
+AI and XAI
+are actually
+a cycle
+of prediction.
+If we don't have
+AI prediction,
+we don't need to
+detect the features.
+XAI will not appear.
+XAI is
+mainly
+trained by
+a model.
+The prediction model
+has the ability to detect
+the features.
+You can see
+a dog here.
+There is a prediction model here.
+It detects that it is a dog.
+Why?
+Maybe the dog is lying on the ground.
+Most dogs are lying on the ground.
+I learned the features
+on the side.
+It detects that it is a dog.
+Or maybe
+it is orange.
+It detects that it is a dog.
+We don't know.
+It is a black box model.
+We need another
+XAI model
+to open the black box.
+We need another XAI model
+to open the black box.
+Then we can see
+why the picture is a dog.
+Because the dog has thin eyes
+and special ears.
+Because of the learning
+of this feature,
+the picture is
+judged to be a dog.
+At this time,
+XAI model is very credible.
+Because we know
+it learns in the right direction.
+Instead of
+learning other features
+to create the prediction result.
+This model,
+prediction model,
+is more credible.
+OK.
+That was
+an explanation of
+a big concept of XAI.
+Let's go deeper.
+I am not sure
+if you are all
+CS background students,
+professors,
+or PhD students.
+Today,
+I am going to give a high-level
+talk.
+We are going to
+learn more about
+the current
+XAI
+SOTA techniques
+to execute
+the explanation.
+OK.
+Before that,
+let's take a look
+at the different scopes.
+There are global and local.
+I am going to talk about
+the global.
+We are looking at the model.
+For example,
+the image classifier
+in total
+cares about the features.
+For example,
+let's train
+a model
+for dog
+classifier.
+We want to know
+what this model cares about.
+For example,
+dogs have different ears.
+So, ears are the features
+this model cares about.
+This is the global scope.
+What is local?
+Local is to explain
+what each image cares about.
+For example,
+if we want to
+do the global,
+we have to look at the classifier
+in all dogs.
+What features does it care about?
+But in the local scope,
+we have to look at
+each image.
+This image cares about
+the dog's face.
+This image cares about
+the dog's tail or ears.
+In the local scope,
+each image cares about
+each image.
+Each has its own advantages.
+If we want to look at
+whether this model is credible,
+we can use global.
+For example,
+in total,
+the autopilot model
+detects
+traffic lights,
+pedestrians,
+or obstacles
+on the road.
+In total,
+we use global.
+In the local scope,
+in this scene,
+in this second,
+the sensor detects
+this street scene.
+Because it has something,
+it can provide something in the next second.
+When we analyze
+the street scene
+every second,
+we have to use the local model.
+The local model
+provides a more
+restrictive
+explanation to the user.
+This is global and local.
+Next, there are two
+different manners.
+One is intrinsic and the other is post-hoc.
+Intrinsic means
+the model itself has something to explain.
+What is something to explain?
+For example,
+decision tree.
+At the end,
+the model predicts the result is C.
+We can start from C
+and go back to C.
+For example,
+when the model makes a decision,
+what are the conditions
+to reach the
+final prediction result?
+The model itself
+has something to explain.
+We can know
+from the model's decision
+what features it has
+or what condition it has.
+This is the intrinsic model.
+On the right,
+if you have heard
+some Machine Learning lectures
+or courses,
+you should know about BERT.
+In BERT,
+there is a
+tension score
+for each word
+in the model.
+For example,
+I put a sentence
+in the BERT model.
+For each word,
+there is a positive or negative sentiment.
+Each word
+has an added value
+in terms of
+positive or negative sentiment.
+For example,
+love is positive.
+Love is a positive
+tense.
+This
+high-level
+contribution
+is the tension weight
+in the model.
+So we can use
+the importance of words
+in terms of
+model prediction
+to determine
+why this sentence
+is a
+positive
+prediction result.
+We can use
+the importance score
+to make the prediction result.
+The two models
+I just talked about
+are Intrinsic
+and Prediction.
+Next is
+Post-Hoc.
+I will talk about
+why I focus on
+Post-Hoc.
+Most
+machine learning models
+use black box models.
+For example,
+I build a deep learning network
+and stack some blocks
+and
+connect them to
+a convolution.
+These prediction models
+have good results,
+but I don't know
+what they do inside.
+For example, I don't know
+what features they learn.
+This black box learning
+requires
+Post-Hoc.
+After the model training,
+I need to provide an
+explanation
+for the prediction model.
+This model
+is common
+in daily life.
+For example,
+let's build a
+recommendation system.
+We use
+neural network
+to train the model.
+At this time,
+the recommendation system
+is not explainable.
+So we need a
+explainable model
+to explain the model.
+The Post-Hoc model
+has two scopes.
+One is global,
+the other is local.
+For the global model,
+I need to see
+what features
+the neural network
+focuses on.
+For the local model,
+the neural network
+focuses on
+18 years old,
+male,
+Asian,
+Chinese,
+and Taiwanese.
+So I need
+a high level
+model.
+Each model
+has different features.
+I need to provide
+different models
+for each model.
+In conclusion,
+these two models
+are the mainstream.
+Intrinsic and Post-Hoc.
+Today,
+I will focus on
+the Post-Hoc explanation.
+Later on,
+I will focus on
+the local model.
+Local model is
+common in daily life.
+For example,
+the recommendation system.
+OK.
+Now,
+let's talk about
+Intrinsic and Local.
+Here is a picture.
+This is an article.
+For example,
+I say this article
+is important.
+Why?
+Because it detects
+ENT23 or
+natural tenacity.
+So,
+through this,
+I can tell
+which word is important.
+I can tell
+users
+why I use this article
+to make a prediction.
+It's because
+my model detects
+ENT23
+or natural tenacity.
+This way,
+users can be convinced
+that their prediction
+is correct.
+OK.
+This is
+what Intrinsic
+provides.
+OK.
+What is Intrinsic Global?
+As I said,
+Global focuses on
+the model.
+For example,
+we design a CNN model
+which is
+a representation
+of image classification.
+OK.
+Why does CNN
+successfully detect
+the image of a cat?
+It's because
+it detects the cat's head.
+If we extract
+a layer
+of model weight
+from CNN,
+we can see
+that this model
+does a convolution
+to some features
+resulting in
+a model prediction.
+OK.
+If we extract
+this feature map
+from the model,
+users can see
+that
+their prediction
+is correct.
+This is
+the process
+of Intrinsic.
+Intrinsic is
+a model
+which has
+a function
+to make a prediction.
+Or a model
+can extract
+a component
+to make a prediction.
+This is
+the process of Intrinsic.
+OK.
+The other thing
+we focus on
+is PostHoc Explanation.
+PostHoc Explanation
+is divided into two steps.
+The first step is
+the black box model,
+which is our prediction model.
+We have data and model
+to train.
+The next step is
+the explainer,
+which is our machine learning
+model to explain
+the prediction model.
+OK.
+Then we need
+to know
+whether the explainer
+is correct or not.
+We don't need to
+trust the explainer.
+We can use
+many different metrics
+to determine
+whether the explainer
+is correct or not.
+The most famous metric
+is the sharp E-value.
+If you have
+a background in economics
+you need to calculate
+the contribution of each feature
+to the prediction model.
+We use
+the sharp E-value
+in Game Theory
+to create
+the correct answer
+and do the evaluation.
+OK.
+The explainer has many
+methods, such as SHARP
+and LIME.
+These methods
+have one
+big drawback.
+If we want to do
+the local explanation,
+we need to provide
+an explanation for each picture.
+The most common
+method
+is to
+provide
+an explanation
+for each picture.
+We need to have
+100,000 pictures
+to provide
+an explanation for each picture.
+We need to provide
+an explanation for each picture.
+This process
+is very slow.
+These methods
+have some drawbacks.
+Of course,
+some people say
+we have a good
+SHARP
+and Game Theory
+I will explain
+why we can't
+use SHARP
+to provide an explanation.
+OK.
+What is SHARP E-Value?
+SHARP E-Value
+is a tool
+to provide
+an explanation
+for model prediction.
+To create SHARP E-Value,
+we need to know
+the important score
+of each feature.
+We need to know
+the important score
+of each feature.
+What do we need to do
+to know the important score
+of each feature?
+It's simple.
+Let's say
+we have 4 features.
+5. 1, 2, 3, 4, 5.
+We need to know
+the important score
+of each feature.
+We need to know
+the important score
+of each feature.
+For example,
+we need to know
+the important score
+of Job and
+Marital Status.
+We need to know
+the important score
+of each feature.
+We need to use
+the only combination
+of all features.
+We need to use
+the only combination
+of all features.
+For example,
+we need to use
+the only combination
+of Job and Marital Status.
+We need to know
+the important score
+of each feature
+in the Sharp Eval.
+What will happen?
+If there are only
+5 features,
+all combinations
+will be 2 to the power of 5.
+So, it's 2 to the power of 5.
+If I have
+2,000 features
+in the recommendation system
+in a big company,
+it will be 2 to the power of 2,000.
+A user needs
+2 to the power of 2,000.
+I have 1 billion users
+today.
+The calculation process
+is endless.
+So,
+why can't we use the Sharp Eval?
+It's an NP-hard problem.
+Its complexity
+is too high.
+We can't use
+a low-complexity method
+to verify
+our calculations.
+So,
+we use the word
+Sharp Eval
+to explain
+the important score.
+It's possible, but not realistic.
+Why?
+It takes too much time
+and complexity
+to calculate.
+So,
+we can't use it.
+Oh, I forgot to mention
+the following.
+For example,
+I only care about Job and Marito.
+If I remove the other three,
+what will happen
+to my model prediction?
+What will happen
+to my model prediction?
+If I remove
+Balance, Job,
+and Marito,
+and only consider Age and Education
+in my prediction model,
+the prediction result
+can't be returned,
+but it can be returned.
+What does it mean?
+These three features are important.
+So,
+we can use
+this iterative process
+to find
+the important score
+for each feature.
+This is Sharp Eval.
+If you know economics,
+you will feel
+this is quite
+intimate.
+OK.
+If we can't use
+Sharp Eval,
+what can we do?
+This is my research.
+I want to
+speed up
+the process of
+explanation.
+Because
+when we do
+local explanation,
+each user must
+provide a customized
+explanation result.
+As I mentioned,
+each customized explanation
+is a model
+to explain the prediction model.
+This process
+takes a lot of time.
+For example,
+if you give a recommended result
+and ask the user to wait
+10 seconds,
+the user can't
+accept it.
+If you ask the user to wait
+10 seconds,
+the user will click
+the upper left corner.
+This is the work
+I did last year.
+This work
+aims to
+speed up
+the operation of
+Sharp Eval
+and provide the
+user with an
+explanation result.
+As I mentioned,
+I want to
+go through all the combinations
+of the feature set.
+For example,
+each feature set
+is important to the model,
+isn't it?
+Some features
+are not important
+to the model.
+Can we get this information
+after training the model?
+Yes, we can.
+We can take out
+the weight of the model
+and see that
+feature 1 and feature 2
+are not important.
+Feature 1 and feature 3
+are not important.
+Feature 1 and feature 5
+are not important at all.
+We can take out
+feature 1 and feature 5
+from the combination
+of Sharp Eval.
+For example,
+we want to have
+2 squares,
+so we need 32 squares.
+We can take out
+the number of times
+that we need to calculate.
+It may be 2, 2, 4, 6, 8,
+4, 5, 4, 2... 14 times.
+It's actually half the process.
+This process can
+speed up the calculation
+of Sharp Eval
+and turn this into
+a user's acceptable
+waiting time.
+Finally, provide the user
+with a faster
+explanation result.
+This mathematician
+is actually expressing that
+in Sharp Eval,
+we need to go through
+all the features.
+We turn it into
+the importance of
+the interaction between
+feature and feature
+through the weight of the model.
+We take out the unimportant
+and calculate the approximate
+Sharp Eval.
+We take this Sharp Eval
+and provide the important score
+of the explanation to the user.
+This is the spirit
+of this work.
+As you can see,
+this work
+has an application scenario.
+Today, we trained
+a prediction model
+to predict
+whether the income
+is high or low.
+We can use our model
+to explain the trained
+prediction model
+and then provide
+the reason.
+For example,
+if you are a part-time worker,
+you will be judged
+as a high-paying worker.
+This model
+can be used
+in a faster way
+to provide
+an explanation
+to the user.
+You can see
+the blue bar on the left
+is the
+ground truth
+Sharp Eval.
+We use the method of
+economics and theory
+to calculate the
+Sharp Eval value
+for this feature.
+As you can see,
+even if we take out
+the unimportant feature
+and interaction,
+the Sharp Eval
+score
+is very close to
+the Sharp Eval.
+We can't say it's exactly the same
+because we took out
+some combinations.
+It's faster,
+but we don't lose
+the Sharp Eval accuracy.
+When we provide
+the importance of each feature
+to the user,
+we can say that
+for our model,
+whether it's high-paying
+or low-paying,
+we can provide
+the score
+or the important
+ranking result
+to the user
+as a reference
+for whether
+they want to believe
+the prediction model.
+The next step
+is to
+speed up
+the calculation
+of the Sharp Eval.
+Instead of
+speeding up the process,
+we can train
+a model to learn
+the distribution
+of the Sharp Eval.
+This can
+provide
+a faster
+prediction result.
+Why?
+For a traditional
+DNN model,
+each user
+needs a
+customized result,
+so we need
+an explanation model.
+To predict 100,000 users,
+we need 100,000 models.
+Here, we only need
+one model
+to predict all users'
+explanation results.
+This process
+is what we call
+an explanation process.
+Why?
+For a deep learning
+network,
+we can send 100,000 users
+as data
+to the network
+and the network
+will produce 100,000 different results.
+We don't
+need
+an independent
+explainer
+to
+respond to all users.
+This training
+process is another
+part of my work.
+It is about
+whether we can
+learn from
+positive and negative
+samples.
+For example,
+if we
+cover up
+an important feature
+such as
+a dog's eye,
+the model will
+still make the same
+prediction
+when it
+detects
+a dog.
+This can
+help us
+explain.
+For example,
+we want a model
+to detect a dog.
+We can give
+an explanation
+that the dog
+cares about
+these features,
+so the model will
+make the same prediction.
+We can also give
+a negative example.
+For example,
+the model will
+know that
+the dog's
+negative sample
+is a dog.
+When the model
+detects positive
+and negative samples,
+we can learn from
+the model.
+We want the model
+to get closer to
+the positive sample
+and further away from
+the negative sample.
+This process
+is called
+contrastive learning.
+We want to know
+what is right
+and what is wrong.
+We want to
+have a better
+distance between
+right and wrong.
+Why is there
+a fine-tuning process?
+It is because
+the shoppy value
+has a strong
+support of
+economic theory,
+so
+if we can
+create
+important scores
+that have
+shoppy value,
+we can
+provide
+at least
+to
+machine learning engineers
+or higher-ups
+to evaluate
+whether the
+explanation is
+believable.
+First, we can make
+people happier.
+Second, we
+want to keep
+shoppy value
+away from
+fine-tuning.
+We don't
+use any
+shoppy value
+as a label.
+We can use
+shoppy value
+as a label
+to keep
+shoppy value
+away from
+explanation.
+We can use
+the result
+to make people
+believe that
+we are not
+creating
+important scores
+randomly,
+so
+we can
+make people
+happy.
+Third, we
+want to
+keep shoppy value
+away from
+fine-tuning.
+We don't
+use any
+shoppy value
+as a label.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+shoppy value
+away from
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+We can
+keep
+fine-tuning.
+Finally,
+I saw
+a meeting
+No.
+Our study is
+based on
+this individual feature.
+Thank you.
+Thank you, Alan.
+Someone at the group
+asked about
+mask size.
+Mask size?
+You mean
+the size of the mask?
+Yes.
+For example,
+a dog's eyes.
+If
+your mask
+is
+smaller than the eyes,
+this mask is valid.
+OK.
+When we do this,
+we can't
+make it smaller than the nose.
+For example,
+if you ask
+the size of the mask,
+we don't
+restrict
+the mask size.
+But I know
+someone restricts
+the mask size.
+Why?
+If the mask size is too large,
+it will cause
+a negative effect.
+Or
+it has different
+purposes.
+Or
+it only selects
+a few important features.
+If the mask size is
+too small,
+it will cause
+a negative effect.
+But if the mask size
+is the same as
+the original image,
+it will cause a negative effect.
+OK.
+Do you have any questions?
+OK. Thank you.
+I think it depends on the person.
+For example,
+if the mask size
+is
+the smallest
+feature
+of the eye,
+it will exceed
+a pixel.
+I don't know.
+I don't know how to answer this question.
+Or
+sometimes I feel
+the size choice
+is subjective.
+This choice
+is made by someone.
+Someone
+knows
+the components
+are large.
+For example, the eyes are large.
+For example, the mask
+is not random for every pixel.
+It is random for every 4x4 pixel.
+Random for every 6x6 pixel.
+Someone
+does it this way.
+But I think
+we don't know
+the pixel model cares about.
+It may be the upper right and lower left
+or the upper left and lower right.
+Something like this.
+If we give such a strong assumption,
+I think model training
+will be difficult.
+This explanation model
+will be difficult.
+Of course, what you said
+is exactly right.
+It is really like this.
+In fact, someone criticized
+this kind of explanation.
+It is about
+covering
+the eyes.
+In fact, it is possible that
+this kind of mask was not done well
+at the beginning,
+so the final result
+is not so comprehensive.
+Yes.
+This is possible.
+I think this question is super good.
+OK.
+It feels like
+there are no new questions
+in the chat room.
+Then
+let's thank
+YuNan again
+for his speech today.
+Thank you, everyone.
+How do I stop?
+Let me clap my hands.
+Thank you.
+Thank you for your support.
+How many people are there today?
+I can't count.
+Today, I see
+the highest number of people
+is 32.
+That's a lot.
+I found a lot of people.
+Is it related to the field?
+But no one helped me
+to post on Facebook.
+I'm kidding.
+For example,
+I have given a speech before.
+I am a physics major.
+There are five people in total.
+Maybe
+everyone is curious about this.
+I don't know how to start.
+I don't know either.
+But I'm glad to have this opportunity
+to share my knowledge.
+Otherwise, I have to contribute
+to the social resources.
+Social resources.
+Are you Gao Hong-An?
+No, I'm not.
+I'm not from Taiwan.
+It's okay.
+Okay.
+Thank you.
+I have a question.
+I suddenly want to ask you a question.
+For example,
+in your first video,
+This one?
+Yes, that one.
+The one about the matrix.
+This one?
+Yes, this one.
+Do you automatically ignore
+all the x1, x1, x2, x2
+in the matrix?
+We don't discuss
+our relationship with ourselves.
+We don't discuss our relationship with ourselves.
+We don't discuss our relationship with ourselves.
+There is no meaning
+in the definition of this question.
+Yes, because ShopEvalue
+is still ourselves.
+Yes.
+Our group is still ourselves.
+So we don't discuss it.
+Of course, our relationship with ourselves
+is highly related.
+Yes.
+Actually, I don't know
+how to share it.
+Okay.
+Let me think about it.
+I might stop recording now.
+Okay.

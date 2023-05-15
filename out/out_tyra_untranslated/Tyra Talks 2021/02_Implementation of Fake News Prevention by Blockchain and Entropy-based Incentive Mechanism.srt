@@ -1,0 +1,5308 @@
+1
+00:00:00,000 --> 00:00:15,000
+我們今天非常非常榮幸呢能請到建智來跟我們談談就是他在blockchain相關的研究
+
+2
+00:00:15,000 --> 00:00:21,000
+那在讓建智開始這個他的演講之前呢先讓我介紹一下建智
+
+3
+00:00:21,000 --> 00:00:28,000
+建智或是大家可以叫他Joseph是這個University of Waterloo的PhD student
+
+4
+00:00:28,000 --> 00:00:34,000
+他現在在的系所呢是Electrical and Computer Engineering Faculty of Engineering
+
+5
+00:00:34,000 --> 00:00:39,000
+然後呢在他來到這個University of Waterloo之前呢
+
+6
+00:00:39,000 --> 00:00:44,000
+他曾經在台灣就是帶領銀行的新創銀行團隊呢
+
+7
+00:00:44,000 --> 00:00:51,000
+這個做這個Banking System的這個程式設計
+
+8
+00:00:51,000 --> 00:00:58,000
+然後呢他同時有Collaborate跟Microsoft Taiwan Collaborate就是相關就是Medical System的研究
+
+9
+00:00:58,000 --> 00:01:03,000
+那他的這個Doctoral Research主要是就是今天的主題Blockchain
+
+10
+00:01:03,000 --> 00:01:11,000
+然後呢他除此之外他也對比如說IoT Edge Computing Security還有AI都有涉獵而且是非常有興趣
+
+11
+00:01:11,000 --> 00:01:15,000
+那除此之外在這個主要研究之外呢
+
+12
+00:01:15,000 --> 00:01:22,000
+他同時也有Volunteer在Mentor台灣的學生參加就是
+
+13
+00:01:22,000 --> 00:01:26,000
+Sorry申請這個全世界的這個PhD Program
+
+14
+00:01:26,000 --> 00:01:29,000
+然後他也同時也有
+
+15
+00:01:29,000 --> 00:01:32,000
+Sorry我看一下喔
+
+16
+00:01:32,000 --> 00:01:35,000
+Sorry我中文英文翻譯有點問題
+
+17
+00:01:35,000 --> 00:01:37,000
+我只用英文唸好了
+
+18
+00:01:37,000 --> 00:01:47,000
+Volunteer to mentor new graduate student in his department and the Taiwan Global Ambassador of UW's Office of Advancement
+
+19
+00:01:47,000 --> 00:01:55,000
+然後呢他非常鼓勵台灣的學生可以跳出舒適圈追尋他們的夢想
+
+20
+00:01:55,000 --> 00:02:00,000
+好那我這邊先關掉
+
+21
+00:02:01,000 --> 00:02:05,000
+今天劍之要給我們帶來的演講題目是
+
+22
+00:02:05,000 --> 00:02:11,000
+An Implementation of Fake News Prevention by Blockchain and Entropy-Based Incentive Mechanism
+
+23
+00:02:11,000 --> 00:02:14,000
+那麻煩大家現在把麥克風打開
+
+24
+00:02:14,000 --> 00:02:17,000
+因為我們的麥克風現在預設是關掉的
+
+25
+00:02:17,000 --> 00:02:19,000
+先把麥克風全部打開
+
+26
+00:02:19,000 --> 00:02:23,000
+然後我們用熱烈的掌聲來歡迎我們今天的講者為我們帶來精彩的演講
+
+27
+00:02:24,000 --> 00:02:30,000
+好那交給你了
+
+28
+00:02:30,000 --> 00:02:32,000
+Thank you everyone
+
+29
+00:02:32,000 --> 00:02:34,000
+And thanks 劍勇
+
+30
+00:02:34,000 --> 00:02:38,000
+I originally thought I use the Chinese to give a speech
+
+31
+00:02:38,000 --> 00:02:42,000
+But I promised my English workshop to give an English presentation
+
+32
+00:02:42,000 --> 00:02:46,000
+So I still use English to give my presentation
+
+33
+00:02:46,000 --> 00:02:48,000
+But if you have any question
+
+34
+00:02:48,000 --> 00:02:51,000
+Feel free to ask in Chinese or English
+
+35
+00:02:51,000 --> 00:02:53,000
+Both are fine
+
+36
+00:02:53,000 --> 00:02:59,000
+So I'm so glad to give you this presentation
+
+37
+00:02:59,000 --> 00:03:05,000
+It's about we use blockchain technique to come back with the fake news
+
+38
+00:03:05,000 --> 00:03:07,000
+But before into the research
+
+39
+00:03:07,000 --> 00:03:13,000
+I would like to introduce my background and to let you understand me more
+
+40
+00:03:13,000 --> 00:03:22,000
+So this is my background
+
+41
+00:03:22,000 --> 00:03:24,000
+Actually I'm born in Taiwan
+
+42
+00:03:24,000 --> 00:03:28,000
+And when I graduated, I worked in Taiwan for several years
+
+43
+00:03:28,000 --> 00:03:34,000
+And as you can see, I originally in Hsinchu
+
+44
+00:03:34,000 --> 00:03:39,000
+And then I go back to Taipei and do some software development
+
+45
+00:03:39,000 --> 00:03:42,000
+And then I go to the banks
+
+46
+00:03:42,000 --> 00:03:44,000
+Issan Bank and China Trust
+
+47
+00:03:44,000 --> 00:03:46,000
+And then before I joined UW
+
+48
+00:03:46,000 --> 00:03:53,000
+I collaborated with Microsoft Taiwan as a technical consultant
+
+49
+00:03:53,000 --> 00:03:56,000
+And my educational background is that
+
+50
+00:03:56,000 --> 00:04:03,000
+I'm a computer science master degree in National Taiwan Ocean University
+
+51
+00:04:04,000 --> 00:04:11,000
+And for this part is that I introduced that in my master thesis
+
+52
+00:04:11,000 --> 00:04:15,000
+We developed some facial recognition system
+
+53
+00:04:15,000 --> 00:04:19,000
+That you could input the sentences and your image
+
+54
+00:04:19,000 --> 00:04:25,000
+And then our system could to generate animation like you
+
+55
+00:04:25,000 --> 00:04:29,000
+And this animation can say some sentences
+
+56
+00:04:29,000 --> 00:04:32,000
+So it's pretty interesting
+
+57
+00:04:32,000 --> 00:04:37,000
+And as you can see right now
+
+58
+00:04:37,000 --> 00:04:41,000
+A lot of application like this published very famous
+
+59
+00:04:41,000 --> 00:04:44,000
+So yeah, it's a life is a joke
+
+60
+00:04:44,000 --> 00:04:47,000
+If we put this product on the market
+
+61
+00:04:47,000 --> 00:04:50,000
+Maybe I'm a millionaire now, right?
+
+62
+00:04:50,000 --> 00:04:55,000
+And if I graduated and, you know, for engineering students
+
+63
+00:04:55,000 --> 00:05:01,000
+Seniors told you, you could go to the Hsinchu to get a job
+
+64
+00:05:01,000 --> 00:05:03,000
+And then you can get a lot of stocks
+
+65
+00:05:03,000 --> 00:05:05,000
+Then you can retire very soon
+
+66
+00:05:05,000 --> 00:05:07,000
+So it was my dream
+
+67
+00:05:07,000 --> 00:05:11,000
+So when I graduated, I went to Hsinchu
+
+68
+00:05:11,000 --> 00:05:17,000
+But, you know, in that year, we met some financial crisis
+
+69
+00:05:17,000 --> 00:05:27,000
+So I came back to Taipei to do software development
+
+70
+00:05:28,000 --> 00:05:34,000
+And at that time, I was very interested in mobile development
+
+71
+00:05:34,000 --> 00:05:37,000
+And in that generation, in that year
+
+72
+00:05:37,000 --> 00:05:43,000
+The Microsoft collaborated with the Nokia to deliver the new devices
+
+73
+00:05:43,000 --> 00:05:47,000
+That's the Nokia and the Windows phone on the market
+
+74
+00:05:47,000 --> 00:05:50,000
+So I joined one company
+
+75
+00:05:50,000 --> 00:05:55,000
+We as a manager and a team to develop some mobile apps
+
+76
+00:05:55,000 --> 00:05:59,000
+As you can see, yeah, the interesting one is the repost
+
+77
+00:05:59,000 --> 00:06:06,000
+We transfer the Nokia's games
+
+78
+00:06:06,000 --> 00:06:08,000
+It's a Barbie game, right?
+
+79
+00:06:08,000 --> 00:06:10,000
+If you're a child, you use this app
+
+80
+00:06:10,000 --> 00:06:15,000
+You can change the process of the app to us in this games
+
+81
+00:06:15,000 --> 00:06:21,000
+We transfer it from the iPhone and Android system to Windows phone
+
+82
+00:06:21,000 --> 00:06:24,000
+And then we do some application
+
+83
+00:06:24,000 --> 00:06:28,000
+We do some applications for, you know, the care, right?
+
+84
+00:06:28,000 --> 00:06:33,000
+And tool for the Taiwan taxi and also for the easy taxi
+
+85
+00:06:33,000 --> 00:06:38,000
+All these applications, I was so excited that I did this application
+
+86
+00:06:38,000 --> 00:06:43,000
+Because, you know, in apps, if you are a programmer
+
+87
+00:06:43,000 --> 00:06:48,000
+The apps could give you a very straightforward feedback from customers
+
+88
+00:06:48,000 --> 00:06:50,000
+So it's very interesting
+
+89
+00:06:51,000 --> 00:06:57,000
+However, the life gave me another joke
+
+90
+00:06:57,000 --> 00:07:04,000
+Is that the Windows phone did not succeed at that time
+
+91
+00:07:04,000 --> 00:07:09,000
+So, yeah, after I did this job for more than one year
+
+92
+00:07:09,000 --> 00:07:13,000
+I found that, yeah, no, this job cannot help me to
+
+93
+00:07:13,000 --> 00:07:17,000
+Enough money for me to buy, yeah
+
+94
+00:07:17,000 --> 00:07:23,000
+So I joined to banks and to run the directives
+
+95
+00:07:23,000 --> 00:07:26,000
+Some financial products and we built a system
+
+96
+00:07:26,000 --> 00:07:28,000
+It's called the Muiris
+
+97
+00:07:28,000 --> 00:07:31,000
+And this Muiris is a very powerful system
+
+98
+00:07:31,000 --> 00:07:33,000
+At the banking operations
+
+99
+00:07:33,000 --> 00:07:35,000
+If you are a trader, you could use this system
+
+100
+00:07:35,000 --> 00:07:40,000
+To record any financial products in this system
+
+101
+00:07:40,000 --> 00:07:46,000
+And all the Taiwan, the first tier, the banks use this system
+
+102
+00:07:46,000 --> 00:07:48,000
+So I went to China Trust
+
+103
+00:07:48,000 --> 00:07:52,000
+And then I went to Hunter
+
+104
+00:07:52,000 --> 00:07:56,000
+Invite me to join Yishan Bank to introduce Muiris to their banks
+
+105
+00:07:56,000 --> 00:07:59,000
+And then when I finished this Muiris project
+
+106
+00:07:59,000 --> 00:08:03,000
+Yeah, we made a big project in Taiwan
+
+107
+00:08:03,000 --> 00:08:08,000
+Is that the Asian Pacific Organization came to Taiwan
+
+108
+00:08:08,000 --> 00:08:13,000
+They do some resource to how does Taiwan do
+
+109
+00:08:14,000 --> 00:08:18,000
+In the anti-money laundry, which is a fine system
+
+110
+00:08:18,000 --> 00:08:22,000
+And so when I, I was kidding that
+
+111
+00:08:22,000 --> 00:08:26,000
+So, yeah, I'm one of the Taiwan representative
+
+112
+00:08:26,000 --> 00:08:28,000
+The national teams in Taiwan is very honored for us
+
+113
+00:08:28,000 --> 00:08:31,000
+But it's really tough to do that
+
+114
+00:08:31,000 --> 00:08:34,000
+We need to finish it out of the requirements in a very short time
+
+115
+00:08:34,000 --> 00:08:37,000
+But, yeah, the final result is very good
+
+116
+00:08:37,000 --> 00:08:42,000
+And I also got a promotion in Yishan Bank
+
+117
+00:08:42,000 --> 00:08:45,000
+So far, it looks so good
+
+118
+00:08:45,000 --> 00:08:50,000
+So why I want to go study abroad
+
+119
+00:08:50,000 --> 00:08:53,000
+That's because that I was thinking about that
+
+120
+00:08:53,000 --> 00:08:57,000
+If I still stay in Taiwan, right
+
+121
+00:08:57,000 --> 00:09:02,000
+Maybe I could gather good jobs and to be promoted
+
+122
+00:09:02,000 --> 00:09:04,000
+Continue to be promoted
+
+123
+00:09:04,000 --> 00:09:08,000
+But, yeah, I was very
+
+124
+00:09:08,000 --> 00:09:14,000
+I heard about some great new technology skills
+
+125
+00:09:14,000 --> 00:09:17,000
+Or some new products from Silicon Valley
+
+126
+00:09:17,000 --> 00:09:19,000
+Or from North America
+
+127
+00:09:19,000 --> 00:09:24,000
+So it was always be my dream to study abroad
+
+128
+00:09:24,000 --> 00:09:27,000
+So I was so hesitate
+
+129
+00:09:27,000 --> 00:09:34,000
+But, yeah, I just to give myself a chance to do this
+
+130
+00:09:34,000 --> 00:09:39,000
+And so right now I was thinking about that
+
+131
+00:09:39,000 --> 00:09:42,000
+The thing is that if you have a dream
+
+132
+00:09:42,000 --> 00:09:45,000
+It only could stop you, it's just yourself
+
+133
+00:09:45,000 --> 00:09:50,000
+So I just want to encourage all of my friends
+
+134
+00:09:50,000 --> 00:09:56,000
+Or the participants or some young students in this meeting
+
+135
+00:09:56,000 --> 00:09:59,000
+You could to just to check your dreams
+
+136
+00:09:59,000 --> 00:10:03,000
+Or not to limit yourself
+
+137
+00:10:04,000 --> 00:10:07,000
+And so right now I'm here in Canada
+
+138
+00:10:07,000 --> 00:10:12,000
+So I saw a lot of beautiful things
+
+139
+00:10:12,000 --> 00:10:16,000
+But, yeah, the period is also
+
+140
+00:10:16,000 --> 00:10:19,000
+When I prepare for this study process
+
+141
+00:10:19,000 --> 00:10:21,000
+I met a lot of difficulties
+
+142
+00:10:21,000 --> 00:10:26,000
+But, yeah, it's worth it, I think
+
+143
+00:10:26,000 --> 00:10:29,000
+And, yeah, this is my
+
+144
+00:10:29,000 --> 00:10:30,000
+A lot of my motto is that
+
+145
+00:10:31,000 --> 00:10:33,000
+Actually adventure may hurt you
+
+146
+00:10:33,000 --> 00:10:38,000
+But monotony, which means that you always do the same things
+
+147
+00:10:38,000 --> 00:10:42,000
+It will kill you, kill you creative or other things
+
+148
+00:10:42,000 --> 00:10:45,000
+So, yeah, that's all my background introduction
+
+149
+00:10:45,000 --> 00:10:49,000
+So I will stop here for a while
+
+150
+00:10:49,000 --> 00:10:52,000
+If you have any question, you could ask me right now
+
+151
+00:11:00,000 --> 00:11:11,000
+OK, I think you have any question
+
+152
+00:11:11,000 --> 00:11:16,000
+Feel free to ask me and we can discuss more
+
+153
+00:11:16,000 --> 00:11:21,000
+And so I wrote some of my experiences in my blog
+
+154
+00:11:21,000 --> 00:11:23,000
+And some medium if you have
+
+155
+00:11:23,000 --> 00:11:26,000
+You could check it and to get more detail
+
+156
+00:11:26,000 --> 00:11:29,000
+If you also want to trust your dreams
+
+157
+00:11:29,000 --> 00:11:31,000
+Or you have some dream career
+
+158
+00:11:31,000 --> 00:11:36,000
+Or you could also find me on those pages
+
+159
+00:11:36,000 --> 00:11:41,000
+And, yeah, we could discuss more about your passion
+
+160
+00:11:41,000 --> 00:11:47,000
+And, OK, so let's get to our main research topic today
+
+161
+00:11:47,000 --> 00:11:50,000
+Today we're going to talk about
+
+162
+00:11:50,000 --> 00:11:56,000
+How to use the blockchain to prevent the fake news
+
+163
+00:11:56,000 --> 00:11:58,000
+Yeah, actually what is the fake news
+
+164
+00:11:58,000 --> 00:12:03,000
+It is a complete fabrication
+
+165
+00:12:03,000 --> 00:12:07,000
+Which means people to forge something
+
+166
+00:12:07,000 --> 00:12:09,000
+Or to mimic something
+
+167
+00:12:09,000 --> 00:12:11,000
+And they're very similar to the real
+
+168
+00:12:11,000 --> 00:12:15,000
+You are not able to confirm what the fact is
+
+169
+00:12:15,000 --> 00:12:19,000
+What is the real, what is the fact
+
+170
+00:12:19,000 --> 00:12:21,000
+And so what is the
+
+171
+00:12:21,000 --> 00:12:25,000
+Actually the spread of fake news
+
+172
+00:12:25,000 --> 00:12:28,000
+Is not in the long future
+
+173
+00:12:28,000 --> 00:12:29,000
+It happens right now
+
+174
+00:12:29,000 --> 00:12:31,000
+You could see this slide
+
+175
+00:12:31,000 --> 00:12:34,000
+In the left-hand upside
+
+176
+00:12:34,000 --> 00:12:36,000
+Is the U.S. stock market
+
+177
+00:12:36,000 --> 00:12:38,000
+In one day you could see the picture
+
+178
+00:12:38,000 --> 00:12:40,000
+It drops sharply
+
+179
+00:12:40,000 --> 00:12:41,000
+But why
+
+180
+00:12:41,000 --> 00:12:43,000
+Because at that day
+
+181
+00:12:43,000 --> 00:12:47,000
+The news says that the Trumps
+
+182
+00:12:47,000 --> 00:12:50,000
+The Obama was dead
+
+183
+00:12:50,000 --> 00:12:52,000
+But it's a rumor, right
+
+184
+00:12:52,000 --> 00:12:57,000
+But however the stock market to drop very sharply
+
+185
+00:12:57,000 --> 00:12:59,000
+By this fake news
+
+186
+00:12:59,000 --> 00:13:01,000
+And other examples in this slide
+
+187
+00:13:01,000 --> 00:13:04,000
+We all know that the Cambridge Analytic
+
+188
+00:13:04,000 --> 00:13:07,000
+They collect the users' preferences
+
+189
+00:13:07,000 --> 00:13:11,000
+And to make some news or articles
+
+190
+00:13:11,000 --> 00:13:13,000
+That you are interested in
+
+191
+00:13:13,000 --> 00:13:18,000
+And to affect your opinion in some specific issues
+
+192
+00:13:18,000 --> 00:13:20,000
+And also the Russian
+
+193
+00:13:20,000 --> 00:13:24,000
+They use some propagandas to affect the basis
+
+194
+00:13:24,000 --> 00:13:26,000
+The resource of basis
+
+195
+00:13:26,000 --> 00:13:30,000
+So all these are the current threat
+
+196
+00:13:30,000 --> 00:13:36,000
+To our society and democracy and the economy
+
+197
+00:13:36,000 --> 00:13:38,000
+Also in Taiwan
+
+198
+00:13:38,000 --> 00:13:39,000
+Taiwan is the same
+
+199
+00:13:39,000 --> 00:13:41,000
+Actually in the research
+
+200
+00:13:41,000 --> 00:13:44,000
+Taiwan is the most
+
+201
+00:13:44,000 --> 00:13:48,000
+We got the most threat from the whole world
+
+202
+00:13:48,000 --> 00:13:49,000
+We are number one
+
+203
+00:13:49,000 --> 00:13:50,000
+So it's very
+
+204
+00:13:50,000 --> 00:13:51,000
+Like I said
+
+205
+00:13:51,000 --> 00:13:52,000
+It's not a long
+
+206
+00:13:52,000 --> 00:13:54,000
+Not a threat in a long distance
+
+207
+00:13:54,000 --> 00:13:56,000
+It's the current
+
+208
+00:13:56,000 --> 00:14:01,000
+It happened currently right now
+
+209
+00:14:01,000 --> 00:14:06,000
+So why people invest in fake news
+
+210
+00:14:06,000 --> 00:14:10,000
+That is because they can get a lot of revenues
+
+211
+00:14:10,000 --> 00:14:13,000
+Based on the lower cost
+
+212
+00:14:13,000 --> 00:14:18,000
+Right now the cost of producing the fake news
+
+213
+00:14:18,000 --> 00:14:19,000
+It's very cheap
+
+214
+00:14:19,000 --> 00:14:22,000
+But if you can affect a big topic
+
+215
+00:14:22,000 --> 00:14:26,000
+Like the U.S. president election
+
+216
+00:14:26,000 --> 00:14:29,000
+Or some very huge topic
+
+217
+00:14:29,000 --> 00:14:32,000
+You could get a huge, huge revenues
+
+218
+00:14:32,000 --> 00:14:34,000
+So why not
+
+219
+00:14:34,000 --> 00:14:35,000
+Why don't we do that
+
+220
+00:14:35,000 --> 00:14:41,000
+If I can impact a lot of people
+
+221
+00:14:41,000 --> 00:14:44,000
+By very low cost
+
+222
+00:14:44,000 --> 00:14:48,000
+Actually the malicious people
+
+223
+00:14:48,000 --> 00:14:53,000
+Of course they will do that
+
+224
+00:14:53,000 --> 00:14:58,000
+And also the AI technology makes things worse
+
+225
+00:14:58,000 --> 00:15:02,000
+Because in my this slide
+
+226
+00:15:02,000 --> 00:15:05,000
+This is Jordan Peele
+
+227
+00:15:05,000 --> 00:15:08,000
+He is a U.S. actor
+
+228
+00:15:08,000 --> 00:15:13,000
+He collaborated with technology companies
+
+229
+00:15:13,000 --> 00:15:17,000
+They use the AI technique to
+
+230
+00:15:17,000 --> 00:15:21,000
+The deep fake technique to produce the video
+
+231
+00:15:21,000 --> 00:15:24,000
+And to let Obama to say some words
+
+232
+00:15:24,000 --> 00:15:26,000
+They want him to say
+
+233
+00:15:26,000 --> 00:15:28,000
+So AI make the fake news
+
+234
+00:15:28,000 --> 00:15:32,000
+To be produced more easier
+
+235
+00:15:32,000 --> 00:15:34,000
+And so
+
+236
+00:15:34,000 --> 00:15:37,000
+But in a traditional ways
+
+237
+00:15:37,000 --> 00:15:40,000
+Our research mainly focus on
+
+238
+00:15:41,000 --> 00:15:45,000
+To detect the fake news automatically
+
+239
+00:15:45,000 --> 00:15:47,000
+How we do that
+
+240
+00:15:47,000 --> 00:15:49,000
+You see this picture that
+
+241
+00:15:49,000 --> 00:15:51,000
+We have different algorithms
+
+242
+00:15:51,000 --> 00:15:54,000
+But mainly we use some machine learning algorithms
+
+243
+00:15:54,000 --> 00:15:57,000
+We find some clues
+
+244
+00:15:57,000 --> 00:16:01,000
+For example if you are the fake news comes in
+
+245
+00:16:01,000 --> 00:16:06,000
+And we find whether the IP address is correct or not
+
+246
+00:16:06,000 --> 00:16:09,000
+And its content has some
+
+247
+00:16:09,000 --> 00:16:11,000
+We use this or not
+
+248
+00:16:11,000 --> 00:16:14,000
+So we use some patterns to detect
+
+249
+00:16:14,000 --> 00:16:17,000
+And to decide whether this fake news is
+
+250
+00:16:17,000 --> 00:16:20,000
+Whether this news is correct or not
+
+251
+00:16:20,000 --> 00:16:21,000
+But like I said
+
+252
+00:16:21,000 --> 00:16:25,000
+AI makes things very similar to real
+
+253
+00:16:25,000 --> 00:16:29,000
+The algorithms does not have
+
+254
+00:16:29,000 --> 00:16:34,000
+Have the great performance right now
+
+255
+00:16:34,000 --> 00:16:38,000
+So some big companies like Google
+
+256
+00:16:38,000 --> 00:16:40,000
+Or Facebook
+
+257
+00:16:40,000 --> 00:16:43,000
+They begin to use some
+
+258
+00:16:43,000 --> 00:16:46,000
+Human beings power capabilities to
+
+259
+00:16:46,000 --> 00:16:49,000
+Help AI to check the contents
+
+260
+00:16:49,000 --> 00:16:51,000
+Authenticity
+
+261
+00:16:51,000 --> 00:16:52,000
+How they do that
+
+262
+00:16:52,000 --> 00:16:54,000
+They build some teams
+
+263
+00:16:54,000 --> 00:16:57,000
+They collaborate with the local professions
+
+264
+00:16:57,000 --> 00:17:00,000
+They have the ability to check the content
+
+265
+00:17:00,000 --> 00:17:04,000
+Is correct or not
+
+266
+00:17:04,000 --> 00:17:06,000
+And Facebook also did the same things
+
+267
+00:17:06,000 --> 00:17:10,000
+They built a team internal
+
+268
+00:17:10,000 --> 00:17:13,000
+And those teams will check some news
+
+269
+00:17:13,000 --> 00:17:15,000
+The authenticity
+
+270
+00:17:15,000 --> 00:17:18,000
+And to make your
+
+271
+00:17:18,000 --> 00:17:20,000
+Some news
+
+272
+00:17:20,000 --> 00:17:23,000
+When news push to your device
+
+273
+00:17:23,000 --> 00:17:24,000
+They will be real
+
+274
+00:17:24,000 --> 00:17:31,000
+And they will build some fake news
+
+275
+00:17:31,000 --> 00:17:32,000
+And in Taiwan
+
+276
+00:17:32,000 --> 00:17:35,000
+We also have one organization
+
+277
+00:17:35,000 --> 00:17:37,000
+And you could see that
+
+278
+00:17:37,000 --> 00:17:41,000
+It's the Taiwan Fact Check Center
+
+279
+00:17:41,000 --> 00:17:44,000
+And you could go on their website
+
+280
+00:17:44,000 --> 00:17:45,000
+And to see
+
+281
+00:17:45,000 --> 00:17:46,000
+They could check
+
+282
+00:17:46,000 --> 00:17:48,000
+They will check some news
+
+283
+00:17:48,000 --> 00:17:55,000
+And tell you this is correct or incorrect
+
+284
+00:17:55,000 --> 00:17:56,000
+OK
+
+285
+00:17:56,000 --> 00:18:00,000
+So I stop here
+
+286
+00:18:00,000 --> 00:18:03,000
+And for these solutions
+
+287
+00:18:03,000 --> 00:18:06,000
+Like Google or Facebook
+
+288
+00:18:06,000 --> 00:18:09,000
+Or the Taiwan Fact Check Center
+
+289
+00:18:09,000 --> 00:18:10,000
+Those are good solutions
+
+290
+00:18:10,000 --> 00:18:17,000
+But these solutions are
+
+291
+00:18:17,000 --> 00:18:20,000
+Are managed by a central organization
+
+292
+00:18:20,000 --> 00:18:23,000
+We don't know how they work
+
+293
+00:18:23,000 --> 00:18:26,000
+It's like a black box
+
+294
+00:18:26,000 --> 00:18:30,000
+If they did not do this job well
+
+295
+00:18:30,000 --> 00:18:32,000
+You did not know right
+
+296
+00:18:32,000 --> 00:18:36,000
+You just can trust them
+
+297
+00:18:36,000 --> 00:18:38,000
+So in our solution
+
+298
+00:18:38,000 --> 00:18:43,000
+We used decentralized solutions
+
+299
+00:18:43,000 --> 00:18:48,000
+Which means that we will form a team
+
+300
+00:18:48,000 --> 00:18:49,000
+Form a call
+
+301
+00:18:49,000 --> 00:18:51,000
+A lot of people
+
+302
+00:18:51,000 --> 00:18:53,000
+They are advisors
+
+303
+00:18:53,000 --> 00:18:55,000
+They will verify some contents
+
+304
+00:18:55,000 --> 00:18:59,000
+But this solution does not manage
+
+305
+00:18:59,000 --> 00:19:01,000
+By only one company
+
+306
+00:19:01,000 --> 00:19:04,000
+It's managed by everyone
+
+307
+00:19:04,000 --> 00:19:06,000
+Who joined this system
+
+308
+00:19:06,000 --> 00:19:08,000
+So this is our paper
+
+309
+00:19:08,000 --> 00:19:12,000
+And just accepted by DTN
+
+310
+00:19:12,000 --> 00:19:14,000
+2021 in November
+
+311
+00:19:14,000 --> 00:19:17,000
+So after the meeting
+
+312
+00:19:17,000 --> 00:19:19,000
+If you have more interesting details
+
+313
+00:19:19,000 --> 00:19:20,000
+You could
+
+314
+00:19:20,000 --> 00:19:21,000
+But it's not published yet
+
+315
+00:19:21,000 --> 00:19:23,000
+Maybe in December
+
+316
+00:19:23,000 --> 00:19:24,000
+So in December
+
+317
+00:19:24,000 --> 00:19:26,000
+You could check this content
+
+318
+00:19:26,000 --> 00:19:27,000
+In more detail
+
+319
+00:19:31,000 --> 00:19:32,000
+Ok so
+
+320
+00:19:32,000 --> 00:19:35,000
+I think we can get into the detail
+
+321
+00:19:35,000 --> 00:19:37,000
+So for
+
+322
+00:19:37,000 --> 00:19:41,000
+This work is from another paper
+
+323
+00:19:41,000 --> 00:19:46,000
+That invented by some researchers
+
+324
+00:19:46,000 --> 00:19:48,000
+In the UK
+
+325
+00:19:48,000 --> 00:19:49,000
+As you can see
+
+326
+00:19:49,000 --> 00:19:54,000
+In the middle of this architecture
+
+327
+00:19:54,000 --> 00:19:56,000
+There is a group
+
+328
+00:19:56,000 --> 00:19:58,000
+That we call the uprising actors
+
+329
+00:19:58,000 --> 00:20:00,000
+These are some professions
+
+330
+00:20:00,000 --> 00:20:02,000
+They have ability to check
+
+331
+00:20:02,000 --> 00:20:04,000
+The content is correct or not
+
+332
+00:20:04,000 --> 00:20:05,000
+And in that side
+
+333
+00:20:05,000 --> 00:20:08,000
+When the content creator
+
+334
+00:20:08,000 --> 00:20:10,000
+Is the content creators
+
+335
+00:20:10,000 --> 00:20:12,000
+Are people who create
+
+336
+00:20:12,000 --> 00:20:15,000
+The digital content
+
+337
+00:20:15,000 --> 00:20:16,000
+Maybe you are a writer
+
+338
+00:20:16,000 --> 00:20:18,000
+Or you are a photographer
+
+339
+00:20:18,000 --> 00:20:20,000
+And you make some content
+
+340
+00:20:20,000 --> 00:20:22,000
+And you could send your content
+
+341
+00:20:22,000 --> 00:20:24,000
+Into our system
+
+342
+00:20:24,000 --> 00:20:27,000
+And then those uprising actors
+
+343
+00:20:27,000 --> 00:20:30,000
+Will verify your content to check
+
+344
+00:20:30,000 --> 00:20:34,000
+Or your content is real or fake
+
+345
+00:20:34,000 --> 00:20:37,000
+And then they will send back to you
+
+346
+00:20:37,000 --> 00:20:38,000
+The uprising result
+
+347
+00:20:38,000 --> 00:20:40,000
+Then those uprising result
+
+348
+00:20:40,000 --> 00:20:42,000
+Will be saved in the
+
+349
+00:20:42,000 --> 00:20:44,000
+Blockchain network
+
+350
+00:20:44,000 --> 00:20:45,000
+After that
+
+351
+00:20:45,000 --> 00:20:47,000
+The right-hand side users
+
+352
+00:20:47,000 --> 00:20:49,000
+When it comes into our system
+
+353
+00:20:49,000 --> 00:20:51,000
+They could check the
+
+354
+00:20:51,000 --> 00:20:53,000
+Authenticity of the contents
+
+355
+00:20:53,000 --> 00:20:56,000
+From our blockchain network
+
+356
+00:20:57,000 --> 00:21:00,000
+So that's an overview
+
+357
+00:21:00,000 --> 00:21:03,000
+Architecture of the system
+
+358
+00:21:03,000 --> 00:21:04,000
+Our system's architecture
+
+359
+00:21:04,000 --> 00:21:07,000
+Is similar to this architecture
+
+360
+00:21:07,000 --> 00:21:10,000
+But in the following slide
+
+361
+00:21:10,000 --> 00:21:11,000
+I will introduce the differences
+
+362
+00:21:11,000 --> 00:21:15,000
+Between architecture and this
+
+363
+00:21:17,000 --> 00:21:20,000
+And this is interesting
+
+364
+00:21:20,000 --> 00:21:23,000
+Like I said
+
+365
+00:21:24,000 --> 00:21:26,000
+If we all rely on
+
+366
+00:21:26,000 --> 00:21:27,000
+Facebook or Google
+
+367
+00:21:27,000 --> 00:21:30,000
+To help us to check the content
+
+368
+00:21:30,000 --> 00:21:31,000
+How do I know
+
+369
+00:21:31,000 --> 00:21:35,000
+They do their job very well
+
+370
+00:21:35,000 --> 00:21:37,000
+Maybe they just have to
+
+371
+00:21:37,000 --> 00:21:39,000
+They did not do very seriously
+
+372
+00:21:39,000 --> 00:21:44,000
+So I still could still see some fake news
+
+373
+00:21:44,000 --> 00:21:46,000
+But in this system
+
+374
+00:21:46,000 --> 00:21:49,000
+You could to select the people
+
+375
+00:21:49,000 --> 00:21:52,000
+Or some authorities media
+
+376
+00:21:52,000 --> 00:21:54,000
+You trust
+
+377
+00:21:54,000 --> 00:21:55,000
+And then to get them
+
+378
+00:21:55,000 --> 00:21:58,000
+To be your oppressing actors
+
+379
+00:21:58,000 --> 00:22:00,000
+So for example
+
+380
+00:22:00,000 --> 00:22:02,000
+If in this case
+
+381
+00:22:02,000 --> 00:22:04,000
+I selected
+
+382
+00:22:04,000 --> 00:22:06,000
+One is the BBC
+
+383
+00:22:06,000 --> 00:22:09,000
+It's a media
+
+384
+00:22:09,000 --> 00:22:12,000
+And I also selected some people
+
+385
+00:22:12,000 --> 00:22:14,000
+Professor Smith or Mr. John
+
+386
+00:22:14,000 --> 00:22:18,000
+Maybe some celebrities you trust
+
+387
+00:22:18,000 --> 00:22:21,000
+If they say this news is real
+
+388
+00:22:21,000 --> 00:22:23,000
+You will trust that
+
+389
+00:22:23,000 --> 00:22:25,000
+So maybe for example in Taiwan
+
+390
+00:22:25,000 --> 00:22:27,000
+Maybe you are very
+
+391
+00:22:27,000 --> 00:22:29,000
+Trustful
+
+392
+00:22:29,000 --> 00:22:32,000
+If he say this news is real
+
+393
+00:22:32,000 --> 00:22:34,000
+Okay, I will trust him
+
+394
+00:22:34,000 --> 00:22:36,000
+So you could select these people
+
+395
+00:22:36,000 --> 00:22:39,000
+To be your trusted parties
+
+396
+00:22:39,000 --> 00:22:42,000
+And when the news comes in
+
+397
+00:22:42,000 --> 00:22:46,000
+We will call your call
+
+398
+00:22:46,000 --> 00:22:49,000
+A group of oppressing actors
+
+399
+00:22:49,000 --> 00:22:51,000
+They will give you the opinion
+
+400
+00:22:51,000 --> 00:22:59,000
+But is this news is correct or not
+
+401
+00:22:59,000 --> 00:23:00,000
+And so but
+
+402
+00:23:00,000 --> 00:23:03,000
+Why we need to use the blockchain
+
+403
+00:23:03,000 --> 00:23:05,000
+In the system
+
+404
+00:23:05,000 --> 00:23:06,000
+Why don't we just use
+
+405
+00:23:06,000 --> 00:23:08,000
+The traditional databases
+
+406
+00:23:08,000 --> 00:23:11,000
+We just accept the oppressing results
+
+407
+00:23:11,000 --> 00:23:14,000
+We don't need to use the blockchain, right
+
+408
+00:23:14,000 --> 00:23:15,000
+But actually blockchain
+
+409
+00:23:15,000 --> 00:23:18,000
+Has some characteristic
+
+410
+00:23:18,000 --> 00:23:20,000
+That if once your data
+
+411
+00:23:20,000 --> 00:23:22,000
+Is accepted in blockchain
+
+412
+00:23:22,000 --> 00:23:23,000
+You cannot modify that
+
+413
+00:23:23,000 --> 00:23:26,000
+Because everyone has one ledger
+
+414
+00:23:26,000 --> 00:23:27,000
+In their node
+
+415
+00:23:27,000 --> 00:23:30,000
+Is this not possible
+
+416
+00:23:30,000 --> 00:23:33,000
+To modify all the ledgers, right
+
+417
+00:23:33,000 --> 00:23:35,000
+And another case is that
+
+418
+00:23:35,000 --> 00:23:39,000
+If you modify the ledger
+
+419
+00:23:39,000 --> 00:23:40,000
+In only one node
+
+420
+00:23:40,000 --> 00:23:42,000
+It will be easier to be fine
+
+421
+00:23:42,000 --> 00:23:45,000
+Because we have some
+
+422
+00:23:45,000 --> 00:23:47,000
+Hashtag
+
+423
+00:23:47,000 --> 00:23:48,000
+In computer science
+
+424
+00:23:48,000 --> 00:23:50,000
+The hashpoint is that
+
+425
+00:23:50,000 --> 00:23:52,000
+For example, in my node
+
+426
+00:23:52,000 --> 00:23:55,000
+I have a hashpoint to point to your node
+
+427
+00:23:55,000 --> 00:23:57,000
+But if you modify
+
+428
+00:23:57,000 --> 00:24:00,000
+The hashpoint is based on your content
+
+429
+00:24:00,000 --> 00:24:01,000
+If you modify the content
+
+430
+00:24:01,000 --> 00:24:03,000
+The hashpoint will be modified
+
+431
+00:24:03,000 --> 00:24:06,000
+So it will be easier to be found that
+
+432
+00:24:06,000 --> 00:24:09,000
+Somebody modified the data
+
+433
+00:24:09,000 --> 00:24:13,000
+So blockchain will be a great solution
+
+434
+00:24:13,000 --> 00:24:16,000
+To maintain the correctness of the data
+
+435
+00:24:17,000 --> 00:24:21,000
+And we go back to give you some knowledge
+
+436
+00:24:21,000 --> 00:24:23,000
+How does the blockchain work
+
+437
+00:24:23,000 --> 00:24:25,000
+Actually you can see this picture
+
+438
+00:24:25,000 --> 00:24:28,000
+And if you have a transaction
+
+439
+00:24:28,000 --> 00:24:30,000
+In this system
+
+440
+00:24:30,000 --> 00:24:34,000
+And the nodes will compete
+
+441
+00:24:34,000 --> 00:24:37,000
+To try to verify it
+
+442
+00:24:37,000 --> 00:24:40,000
+And once this data verified
+
+443
+00:24:40,000 --> 00:24:43,000
+You will be set to the blockchain
+
+444
+00:24:43,000 --> 00:24:45,000
+That is in a button
+
+445
+00:24:45,000 --> 00:24:47,000
+We have some red blocks
+
+446
+00:24:47,000 --> 00:24:52,000
+And they are picked by the hashpoint
+
+447
+00:24:52,000 --> 00:24:53,000
+Right
+
+448
+00:24:53,000 --> 00:24:58,000
+So this is how the blockchain works
+
+449
+00:24:58,000 --> 00:25:00,000
+And then it's just
+
+450
+00:25:00,000 --> 00:25:03,000
+There are many, many blockchains right now
+
+451
+00:25:03,000 --> 00:25:07,000
+So it's a very simple classification
+
+452
+00:25:07,000 --> 00:25:09,000
+One is the public
+
+453
+00:25:09,000 --> 00:25:11,000
+And another is the private
+
+454
+00:25:11,000 --> 00:25:13,000
+Public means that everyone
+
+455
+00:25:13,000 --> 00:25:16,000
+And could to send a transaction
+
+456
+00:25:16,000 --> 00:25:19,000
+In this blockchain network
+
+457
+00:25:19,000 --> 00:25:21,000
+Like bitcoin
+
+458
+00:25:21,000 --> 00:25:23,000
+People know about bitcoin and all
+
+459
+00:25:23,000 --> 00:25:26,000
+But in private blockchain
+
+460
+00:25:26,000 --> 00:25:28,000
+Only people approved
+
+461
+00:25:28,000 --> 00:25:30,000
+Will be can send the transaction
+
+462
+00:25:30,000 --> 00:25:32,000
+Into the system
+
+463
+00:25:32,000 --> 00:25:36,000
+And so this private blockchain
+
+464
+00:25:36,000 --> 00:25:38,000
+Often be used in the corporations
+
+465
+00:25:38,000 --> 00:25:41,000
+Not for the public
+
+466
+00:25:41,000 --> 00:25:44,000
+And yeah so
+
+467
+00:25:44,000 --> 00:25:45,000
+And another
+
+468
+00:25:45,000 --> 00:25:47,000
+Since you need to know in blockchain
+
+469
+00:25:47,000 --> 00:25:49,000
+Is the proof of work
+
+470
+00:25:49,000 --> 00:25:52,000
+And proof of stake
+
+471
+00:25:52,000 --> 00:25:53,000
+What is proof of work
+
+472
+00:25:53,000 --> 00:25:56,000
+It means that
+
+473
+00:25:56,000 --> 00:25:57,000
+If we have a transaction
+
+474
+00:25:57,000 --> 00:25:59,000
+And we have a lot of nodes
+
+475
+00:25:59,000 --> 00:26:01,000
+Which node can record
+
+476
+00:26:01,000 --> 00:26:04,000
+This data into blockchain
+
+477
+00:26:04,000 --> 00:26:08,000
+And if you are proof of work mechanism
+
+478
+00:26:08,000 --> 00:26:09,000
+The nodes will compete
+
+479
+00:26:09,000 --> 00:26:12,000
+To solve a complicated math problem
+
+480
+00:26:12,000 --> 00:26:13,000
+And this process
+
+481
+00:26:13,000 --> 00:26:15,000
+We call it the mining
+
+482
+00:26:15,000 --> 00:26:17,000
+Right so it's a famous word
+
+483
+00:26:17,000 --> 00:26:19,000
+Or it's very popular to be heard
+
+484
+00:26:19,000 --> 00:26:21,000
+If you solve this problem
+
+485
+00:26:21,000 --> 00:26:23,000
+Then you get the right
+
+486
+00:26:23,000 --> 00:26:26,000
+To set data into blockchain
+
+487
+00:26:26,000 --> 00:26:28,000
+But yeah and the proof of work
+
+488
+00:26:28,000 --> 00:26:30,000
+Is right now the blockchain
+
+489
+00:26:30,000 --> 00:26:33,000
+And the ethereum used
+
+490
+00:26:33,000 --> 00:26:35,000
+And the proof of stake is that
+
+491
+00:26:35,000 --> 00:26:37,000
+Oh no we don't
+
+492
+00:26:37,000 --> 00:26:38,000
+To solve the math problem
+
+493
+00:26:38,000 --> 00:26:40,000
+We just use some stake
+
+494
+00:26:40,000 --> 00:26:41,000
+What does that mean
+
+495
+00:26:41,000 --> 00:26:42,000
+Is that if you want to
+
+496
+00:26:42,000 --> 00:26:44,000
+Record data into blockchain
+
+497
+00:26:44,000 --> 00:26:47,000
+You need to pay some fees
+
+498
+00:26:47,000 --> 00:26:49,000
+And if you pay higher
+
+499
+00:26:49,000 --> 00:26:51,000
+You will be get higher chance
+
+500
+00:26:51,000 --> 00:26:53,000
+To get the right
+
+501
+00:26:53,000 --> 00:26:54,000
+To be selected to get the right
+
+502
+00:26:54,000 --> 00:26:57,000
+To set data into blockchain
+
+503
+00:26:57,000 --> 00:26:59,000
+So these two solutions
+
+504
+00:26:59,000 --> 00:27:05,000
+Are called resist the hackers
+
+505
+00:27:05,000 --> 00:27:07,000
+Because in the proof of work
+
+506
+00:27:07,000 --> 00:27:09,000
+We want to control
+
+507
+00:27:09,000 --> 00:27:11,000
+Our right to record data
+
+508
+00:27:11,000 --> 00:27:12,000
+In blockchain
+
+509
+00:27:12,000 --> 00:27:14,000
+You need to control
+
+510
+00:27:14,000 --> 00:27:19,000
+More than 51% computers in the world
+
+511
+00:27:19,000 --> 00:27:22,000
+And in proof of stake
+
+512
+00:27:22,000 --> 00:27:26,000
+You need to pay more than 51% stakes
+
+513
+00:27:26,000 --> 00:27:27,000
+Then you will get the right
+
+514
+00:27:27,000 --> 00:27:32,000
+To record data
+
+515
+00:27:32,000 --> 00:27:34,000
+And then so you can see that
+
+516
+00:27:35,000 --> 00:27:38,000
+In blockchain actually
+
+517
+00:27:38,000 --> 00:27:40,000
+I think people heard about
+
+518
+00:27:40,000 --> 00:27:41,000
+One news is in Taiwan
+
+519
+00:27:41,000 --> 00:27:43,000
+That one day some people
+
+520
+00:27:43,000 --> 00:27:46,000
+Buy a lottery right
+
+521
+00:27:46,000 --> 00:27:50,000
+Then they collect a lot of people
+
+522
+00:27:50,000 --> 00:27:53,000
+People to buy the lottery together
+
+523
+00:27:53,000 --> 00:27:56,000
+But one man denied
+
+524
+00:27:56,000 --> 00:27:57,000
+He denied that
+
+525
+00:27:57,000 --> 00:28:00,000
+Said oh no this lottery
+
+526
+00:28:00,000 --> 00:28:02,000
+Only belongs to me
+
+527
+00:28:02,000 --> 00:28:03,000
+But if you use blockchain
+
+528
+00:28:03,000 --> 00:28:05,000
+The solution the problem
+
+529
+00:28:05,000 --> 00:28:07,000
+Will not exist
+
+530
+00:28:07,000 --> 00:28:09,000
+Because in blockchain
+
+531
+00:28:09,000 --> 00:28:10,000
+Everything will
+
+532
+00:28:10,000 --> 00:28:12,000
+Very transparency
+
+533
+00:28:12,000 --> 00:28:13,000
+And we could trust
+
+534
+00:28:13,000 --> 00:28:15,000
+Who did the transaction
+
+535
+00:28:15,000 --> 00:28:18,000
+So that's the one
+
+536
+00:28:18,000 --> 00:28:19,000
+The blockchain could support
+
+537
+00:28:19,000 --> 00:28:20,000
+Our daily life
+
+538
+00:28:20,000 --> 00:28:22,000
+Actually they can solve
+
+539
+00:28:22,000 --> 00:28:23,000
+A lot of things
+
+540
+00:28:23,000 --> 00:28:24,000
+Like if you're trying to vote in
+
+541
+00:28:24,000 --> 00:28:27,000
+Or to test some
+
+542
+00:28:27,000 --> 00:28:31,000
+The fishery or some products
+
+543
+00:28:31,000 --> 00:28:33,000
+The original prices of the product
+
+544
+00:28:33,000 --> 00:28:37,000
+By using a blockchain
+
+545
+00:28:37,000 --> 00:28:39,000
+And then in this system
+
+546
+00:28:39,000 --> 00:28:42,000
+You could
+
+547
+00:28:42,000 --> 00:28:43,000
+I would like to introduce
+
+548
+00:28:43,000 --> 00:28:44,000
+The hyperledger fabric
+
+549
+00:28:44,000 --> 00:28:46,000
+It's the blockchain that
+
+550
+00:28:46,000 --> 00:28:48,000
+Proposed by IBM
+
+551
+00:28:48,000 --> 00:28:51,000
+And this is the permission
+
+552
+00:28:51,000 --> 00:28:53,000
+Private blockchain that I said
+
+553
+00:28:53,000 --> 00:28:55,000
+It's for the companies
+
+554
+00:28:55,000 --> 00:28:58,000
+Not for the public
+
+555
+00:28:58,000 --> 00:29:02,000
+And how they work
+
+556
+00:29:02,000 --> 00:29:03,000
+You could see this flow
+
+557
+00:29:03,000 --> 00:29:05,000
+If you have a transaction
+
+558
+00:29:05,000 --> 00:29:06,000
+You could propose to
+
+559
+00:29:06,000 --> 00:29:08,000
+The execution chain code
+
+560
+00:29:08,000 --> 00:29:11,000
+The chain code is the smart contract
+
+561
+00:29:11,000 --> 00:29:13,000
+In the blockchain network
+
+562
+00:29:13,000 --> 00:29:14,000
+I think people will
+
+563
+00:29:14,000 --> 00:29:16,000
+Heard about smart contract
+
+564
+00:29:16,000 --> 00:29:18,000
+Often very often
+
+565
+00:29:18,000 --> 00:29:20,000
+And then the smart contract
+
+566
+00:29:20,000 --> 00:29:22,000
+Will check your content
+
+567
+00:29:22,000 --> 00:29:25,000
+To check is there any mistake
+
+568
+00:29:25,000 --> 00:29:26,000
+In your content
+
+569
+00:29:26,000 --> 00:29:28,000
+And then send back to you
+
+570
+00:29:28,000 --> 00:29:30,000
+And when you get a permission
+
+571
+00:29:30,000 --> 00:29:31,000
+You can send your
+
+572
+00:29:31,000 --> 00:29:32,000
+Submit your transaction
+
+573
+00:29:32,000 --> 00:29:34,000
+To the ordering services
+
+574
+00:29:34,000 --> 00:29:35,000
+And then the ordering services
+
+575
+00:29:35,000 --> 00:29:37,000
+Will to decide
+
+576
+00:29:37,000 --> 00:29:39,000
+How to record your data
+
+577
+00:29:39,000 --> 00:29:41,000
+Into the blockchain
+
+578
+00:29:41,000 --> 00:29:45,000
+And it's different to the bitcoin
+
+579
+00:29:45,000 --> 00:29:46,000
+The hyperledger fabric
+
+580
+00:29:46,000 --> 00:29:47,000
+Does not use the
+
+581
+00:29:47,000 --> 00:29:52,000
+Proof of work mechanism
+
+582
+00:29:52,000 --> 00:29:53,000
+Which means that
+
+583
+00:29:53,000 --> 00:29:55,000
+Then we don't need to spend
+
+584
+00:29:55,000 --> 00:29:58,000
+A lot of energy or money
+
+585
+00:29:58,000 --> 00:30:01,000
+To do the mining process
+
+586
+00:30:01,000 --> 00:30:02,000
+So it will be faster
+
+587
+00:30:02,000 --> 00:30:05,000
+And save energy
+
+588
+00:30:05,000 --> 00:30:07,000
+Than the blockchain
+
+589
+00:30:07,000 --> 00:30:11,000
+Than the bitcoin
+
+590
+00:30:11,000 --> 00:30:13,000
+So for this
+
+591
+00:30:13,000 --> 00:30:15,000
+In our paper
+
+592
+00:30:15,000 --> 00:30:17,000
+This is our main architecture
+
+593
+00:30:17,000 --> 00:30:19,000
+The main difference is that
+
+594
+00:30:19,000 --> 00:30:20,000
+You could see that
+
+595
+00:30:20,000 --> 00:30:23,000
+In the data persistent layer
+
+596
+00:30:23,000 --> 00:30:24,000
+Our blockchain
+
+597
+00:30:24,000 --> 00:30:26,000
+We use the hyperledger fabric
+
+598
+00:30:26,000 --> 00:30:28,000
+But in a previous work
+
+599
+00:30:28,000 --> 00:30:30,000
+That did not mention that
+
+600
+00:30:30,000 --> 00:30:32,000
+Which blockchain they used
+
+601
+00:30:32,000 --> 00:30:34,000
+Also we
+
+602
+00:30:34,000 --> 00:30:37,000
+How do you incentive
+
+603
+00:30:37,000 --> 00:30:41,000
+To let the oppressing actors
+
+604
+00:30:41,000 --> 00:30:42,000
+To do things well
+
+605
+00:30:42,000 --> 00:30:45,000
+We invented incentive mechanisms
+
+606
+00:30:45,000 --> 00:30:47,000
+To that people
+
+607
+00:30:47,000 --> 00:30:49,000
+Willing to do things very well
+
+608
+00:30:49,000 --> 00:30:53,000
+Not to produce some dishonest
+
+609
+00:30:53,000 --> 00:30:57,000
+Behaviors
+
+610
+00:30:57,000 --> 00:31:00,000
+And then our system will
+
+611
+00:31:00,000 --> 00:31:01,000
+Tell you that
+
+612
+00:31:01,000 --> 00:31:02,000
+If you send
+
+613
+00:31:02,000 --> 00:31:03,000
+The content creator
+
+614
+00:31:03,000 --> 00:31:05,000
+Send one content into our system
+
+615
+00:31:05,000 --> 00:31:07,000
+Our system will tell you
+
+616
+00:31:07,000 --> 00:31:10,000
+How much percent
+
+617
+00:31:10,000 --> 00:31:13,000
+This content is real or fake
+
+618
+00:31:13,000 --> 00:31:15,000
+Like this slide shows
+
+619
+00:31:15,000 --> 00:31:16,000
+The content is the
+
+620
+00:31:16,000 --> 00:31:18,000
+66% is real
+
+621
+00:31:18,000 --> 00:31:20,000
+And 80% is fake
+
+622
+00:31:20,000 --> 00:31:22,000
+And this opinion is from
+
+623
+00:31:22,000 --> 00:31:24,000
+The people you trust
+
+624
+00:31:24,000 --> 00:31:25,000
+In your trust list
+
+625
+00:31:25,000 --> 00:31:28,000
+So you could use this
+
+626
+00:31:28,000 --> 00:31:30,000
+Oppressing result to judge
+
+627
+00:31:30,000 --> 00:31:36,000
+This news is fake or not
+
+628
+00:31:36,000 --> 00:31:38,000
+And so this is our main floor
+
+629
+00:31:38,000 --> 00:31:41,000
+And we
+
+630
+00:31:41,000 --> 00:31:43,000
+We was
+
+631
+00:31:43,000 --> 00:31:45,000
+We refer to the history and that
+
+632
+00:31:45,000 --> 00:31:46,000
+In the beginning
+
+633
+00:31:46,000 --> 00:31:48,000
+Our system will accept
+
+634
+00:31:48,000 --> 00:31:51,000
+The participant to add some
+
+635
+00:31:51,000 --> 00:31:53,000
+So they will get
+
+636
+00:31:53,000 --> 00:31:54,000
+Some credit point
+
+637
+00:31:54,000 --> 00:31:55,000
+And then they can use the
+
+638
+00:31:55,000 --> 00:31:57,000
+Credit point to
+
+639
+00:31:57,000 --> 00:31:59,000
+Do some oppressing
+
+640
+00:31:59,000 --> 00:32:02,000
+And then we can get a trust score
+
+641
+00:32:02,000 --> 00:32:04,000
+And then
+
+642
+00:32:04,000 --> 00:32:05,000
+When we get a trust score
+
+643
+00:32:05,000 --> 00:32:06,000
+So we could
+
+644
+00:32:06,000 --> 00:32:07,000
+For example
+
+645
+00:32:07,000 --> 00:32:09,000
+In the previous
+
+646
+00:32:09,000 --> 00:32:11,000
+This example
+
+647
+00:32:11,000 --> 00:32:13,000
+Most of the majority thinks that
+
+648
+00:32:13,000 --> 00:32:15,000
+This content is real
+
+649
+00:32:15,000 --> 00:32:18,000
+So the minority
+
+650
+00:32:18,000 --> 00:32:19,000
+Why this minority
+
+651
+00:32:19,000 --> 00:32:20,000
+Think this content
+
+652
+00:32:20,000 --> 00:32:21,000
+Is fake
+
+653
+00:32:21,000 --> 00:32:24,000
+So our system will give reward
+
+654
+00:32:24,000 --> 00:32:26,000
+To those people
+
+655
+00:32:26,000 --> 00:32:28,000
+That are
+
+656
+00:32:28,000 --> 00:32:30,000
+Belongs to the majority
+
+657
+00:32:30,000 --> 00:32:32,000
+And to get the punishment
+
+658
+00:32:32,000 --> 00:32:34,000
+To people who are in the minority
+
+659
+00:32:34,000 --> 00:32:35,000
+Right
+
+660
+00:32:35,000 --> 00:32:37,000
+Because
+
+661
+00:32:37,000 --> 00:32:38,000
+All people are professions
+
+662
+00:32:38,000 --> 00:32:41,000
+Why you think this
+
+663
+00:32:41,000 --> 00:32:44,000
+Content is fake
+
+664
+00:32:44,000 --> 00:32:45,000
+Not correct
+
+665
+00:32:45,000 --> 00:32:49,000
+Not similar to the majority's opinion
+
+666
+00:32:50,000 --> 00:32:52,000
+And then before I get into
+
+667
+00:32:52,000 --> 00:32:54,000
+How to calculate the trust score
+
+668
+00:32:54,000 --> 00:32:57,000
+I want to introduce one concept
+
+669
+00:32:57,000 --> 00:32:58,000
+Is that
+
+670
+00:32:58,000 --> 00:33:00,000
+We call it entropy
+
+671
+00:33:00,000 --> 00:33:02,000
+And
+
+672
+00:33:02,000 --> 00:33:03,000
+Yeah, don't
+
+673
+00:33:03,000 --> 00:33:05,000
+Don't think it too complicated
+
+674
+00:33:05,000 --> 00:33:07,000
+I don't want to
+
+675
+00:33:07,000 --> 00:33:09,000
+Introduce some to
+
+676
+00:33:09,000 --> 00:33:11,000
+Academia or some to top
+
+677
+00:33:11,000 --> 00:33:12,000
+Concept
+
+678
+00:33:12,000 --> 00:33:14,000
+You can only see that
+
+679
+00:33:14,000 --> 00:33:16,000
+This concept is from the
+
+680
+00:33:16,000 --> 00:33:17,000
+Chemistry
+
+681
+00:33:17,000 --> 00:33:18,000
+And from
+
+682
+00:33:18,000 --> 00:33:19,000
+Yeah
+
+683
+00:33:19,000 --> 00:33:20,000
+Example is that
+
+684
+00:33:20,000 --> 00:33:23,000
+If you have a glass of water
+
+685
+00:33:23,000 --> 00:33:25,000
+And you put ink into water
+
+686
+00:33:25,000 --> 00:33:26,000
+The water will
+
+687
+00:33:26,000 --> 00:33:28,000
+The ink will
+
+688
+00:33:28,000 --> 00:33:29,000
+From one point
+
+689
+00:33:29,000 --> 00:33:31,000
+And will spread to everywhere
+
+690
+00:33:31,000 --> 00:33:32,000
+Right
+
+691
+00:33:32,000 --> 00:33:35,000
+So entropy is to
+
+692
+00:33:35,000 --> 00:33:37,000
+Measure this phenomena
+
+693
+00:33:37,000 --> 00:33:39,000
+All the things
+
+694
+00:33:39,000 --> 00:33:43,000
+Is it a disorder or not
+
+695
+00:33:43,000 --> 00:33:45,000
+If the entropy is high
+
+696
+00:33:45,000 --> 00:33:46,000
+Because
+
+697
+00:33:46,000 --> 00:33:47,000
+It means that
+
+698
+00:33:47,000 --> 00:33:52,000
+The things is more disorder
+
+699
+00:33:52,000 --> 00:33:54,000
+I could put here
+
+700
+00:33:54,000 --> 00:33:56,000
+And so
+
+701
+00:33:56,000 --> 00:33:57,000
+In this slide
+
+702
+00:33:57,000 --> 00:33:58,000
+You could see that
+
+703
+00:33:58,000 --> 00:33:59,000
+The red point
+
+704
+00:33:59,000 --> 00:34:02,000
+Is really, really similar to
+
+705
+00:34:02,000 --> 00:34:03,000
+You could imagine that
+
+706
+00:34:03,000 --> 00:34:05,000
+The one red point is one people
+
+707
+00:34:05,000 --> 00:34:08,000
+If their opinion are the same
+
+708
+00:34:08,000 --> 00:34:10,000
+It's just like the low entropy, right
+
+709
+00:34:10,000 --> 00:34:11,000
+They will
+
+710
+00:34:11,000 --> 00:34:13,000
+Stay together very closely
+
+711
+00:34:13,000 --> 00:34:16,000
+But if their opinion divergent
+
+712
+00:34:16,000 --> 00:34:18,000
+They will have high entropy, right
+
+713
+00:34:18,000 --> 00:34:23,000
+So their opinion will not the same
+
+714
+00:34:23,000 --> 00:34:24,000
+So
+
+715
+00:34:24,000 --> 00:34:25,000
+I will continue
+
+716
+00:34:25,000 --> 00:34:27,000
+Begin to tell you
+
+717
+00:34:27,000 --> 00:34:30,000
+How we calculate the trust score
+
+718
+00:34:30,000 --> 00:34:32,000
+And I will put some equations there
+
+719
+00:34:32,000 --> 00:34:34,000
+But you don't need to
+
+720
+00:34:34,000 --> 00:34:36,000
+To look very detail into equations
+
+721
+00:34:36,000 --> 00:34:39,000
+You just need to look at the numbers
+
+722
+00:34:39,000 --> 00:34:40,000
+Okay
+
+723
+00:34:40,000 --> 00:34:42,000
+But for this example
+
+724
+00:34:42,000 --> 00:34:44,000
+If we have five prices
+
+725
+00:34:44,000 --> 00:34:46,000
+And three of them agree
+
+726
+00:34:46,000 --> 00:34:48,000
+And two of them reject
+
+727
+00:34:48,000 --> 00:34:50,000
+So we could get that
+
+728
+00:34:50,000 --> 00:34:54,000
+The possibility of real
+
+729
+00:34:54,000 --> 00:34:56,000
+Is three divided by
+
+730
+00:34:56,000 --> 00:34:58,000
+Based on
+
+731
+00:34:58,000 --> 00:35:01,000
+This is the possibility
+
+732
+00:35:01,000 --> 00:35:03,000
+And this is three
+
+733
+00:35:03,000 --> 00:35:05,000
+Divide five, so it's 0.5
+
+734
+00:35:05,000 --> 00:35:08,000
+And p fact will be two
+
+735
+00:35:08,000 --> 00:35:11,000
+Divided five will be 0.4
+
+736
+00:35:11,000 --> 00:35:12,000
+And then we put this
+
+737
+00:35:12,000 --> 00:35:15,000
+The p real and p fact into this equation
+
+738
+00:35:15,000 --> 00:35:18,000
+Then we can get the entropy for this case
+
+739
+00:35:18,000 --> 00:35:21,000
+Will be 0.70
+
+740
+00:35:21,000 --> 00:35:22,000
+Okay
+
+741
+00:35:22,000 --> 00:35:24,000
+Just remember the number
+
+742
+00:35:24,000 --> 00:35:26,000
+And
+
+743
+00:35:26,000 --> 00:35:28,000
+Another case is that if we have
+
+744
+00:35:28,000 --> 00:35:30,000
+The four prices agree
+
+745
+00:35:30,000 --> 00:35:32,000
+Only one
+
+746
+00:35:32,000 --> 00:35:34,000
+Reject
+
+747
+00:35:34,000 --> 00:35:36,000
+You could get that
+
+748
+00:35:36,000 --> 00:35:39,000
+In this case, the people have the
+
+749
+00:35:39,000 --> 00:35:41,000
+More consistent opinion, right
+
+750
+00:35:41,000 --> 00:35:43,000
+So the entropy will lower
+
+751
+00:35:43,000 --> 00:35:46,000
+And in the example one
+
+752
+00:35:46,000 --> 00:35:47,000
+The entropy is higher
+
+753
+00:35:47,000 --> 00:35:50,000
+So our system encourage people to
+
+754
+00:35:50,000 --> 00:35:53,000
+Let their opinion consistent
+
+755
+00:35:53,000 --> 00:35:57,000
+So when the high
+
+756
+00:35:57,000 --> 00:36:01,000
+High entropy, our reward or
+
+757
+00:36:01,000 --> 00:36:03,000
+Punishment
+
+758
+00:36:03,000 --> 00:36:05,000
+Will lower
+
+759
+00:36:05,000 --> 00:36:07,000
+But in the
+
+760
+00:36:07,000 --> 00:36:09,000
+In the example two
+
+761
+00:36:09,000 --> 00:36:11,000
+Our reward and the punishment
+
+762
+00:36:11,000 --> 00:36:16,000
+Will be higher
+
+763
+00:36:16,000 --> 00:36:19,000
+So I will give you a table
+
+764
+00:36:19,000 --> 00:36:21,000
+And to show you how we calculate
+
+765
+00:36:21,000 --> 00:36:22,000
+The trust score
+
+766
+00:36:22,000 --> 00:36:24,000
+And so
+
+767
+00:36:24,000 --> 00:36:26,000
+If you remember the metaphor
+
+768
+00:36:26,000 --> 00:36:28,000
+I said before
+
+769
+00:36:28,000 --> 00:36:29,000
+In the beginning
+
+770
+00:36:29,000 --> 00:36:32,000
+This is of five people
+
+771
+00:36:32,000 --> 00:36:33,000
+And
+
+772
+00:36:33,000 --> 00:36:35,000
+Yeah, they have some opinions
+
+773
+00:36:35,000 --> 00:36:38,000
+In the specific news
+
+774
+00:36:38,000 --> 00:36:41,000
+And their initial stakes is that
+
+775
+00:36:41,000 --> 00:36:43,000
+A1 put 5000
+
+776
+00:36:43,000 --> 00:36:45,000
+Into the system
+
+777
+00:36:45,000 --> 00:36:47,000
+A2 put 1000
+
+778
+00:36:47,000 --> 00:36:50,000
+And then the total stakes is the 21000
+
+779
+00:36:50,000 --> 00:36:53,000
+And you could get the
+
+780
+00:36:53,000 --> 00:36:55,000
+The credit point or appraiser
+
+781
+00:36:55,000 --> 00:36:58,000
+And there is the 5000
+
+782
+00:36:58,000 --> 00:37:00,000
+To divide the 21000
+
+783
+00:37:00,000 --> 00:37:02,000
+So we could get the
+
+784
+00:37:02,000 --> 00:37:05,000
+Each appraiser's credit point
+
+785
+00:37:05,000 --> 00:37:06,000
+Of
+
+786
+00:37:06,000 --> 00:37:08,000
+Credit point of appraiser
+
+787
+00:37:08,000 --> 00:37:09,000
+Right
+
+788
+00:37:09,000 --> 00:37:12,000
+So it's just a simple
+
+789
+00:37:12,000 --> 00:37:16,000
+Simple math
+
+790
+00:37:16,000 --> 00:37:17,000
+Okay, so
+
+791
+00:37:17,000 --> 00:37:19,000
+We right now we have
+
+792
+00:37:19,000 --> 00:37:20,000
+Know how the
+
+793
+00:37:20,000 --> 00:37:22,000
+Credit point
+
+794
+00:37:22,000 --> 00:37:23,000
+Of the appraiser
+
+795
+00:37:23,000 --> 00:37:25,000
+And then
+
+796
+00:37:25,000 --> 00:37:26,000
+When they get
+
+797
+00:37:26,000 --> 00:37:28,000
+When the appraiser get opinion to the content
+
+798
+00:37:28,000 --> 00:37:29,000
+They could say that
+
+799
+00:37:29,000 --> 00:37:32,000
+Oh, I'm 100%
+
+800
+00:37:32,000 --> 00:37:35,000
+Sure that this news is fake
+
+801
+00:37:36,000 --> 00:37:38,000
+Or real or fake
+
+802
+00:37:38,000 --> 00:37:41,000
+But like A2
+
+803
+00:37:41,000 --> 00:37:43,000
+He could also say that
+
+804
+00:37:43,000 --> 00:37:48,000
+Oh, this content is a little bit tough for me to judge
+
+805
+00:37:48,000 --> 00:37:53,000
+So I just have the 70% confidence
+
+806
+00:37:53,000 --> 00:37:55,000
+That it is true
+
+807
+00:37:55,000 --> 00:37:57,000
+So our trust score
+
+808
+00:37:57,000 --> 00:38:00,000
+Will be the CPOA
+
+809
+00:38:00,000 --> 00:38:02,000
+To multiply the confidence
+
+810
+00:38:02,000 --> 00:38:04,000
+So you could see that
+
+811
+00:38:04,000 --> 00:38:08,000
+This SOA is the score of authentic
+
+812
+00:38:08,000 --> 00:38:10,000
+Is the all people agrees
+
+813
+00:38:10,000 --> 00:38:12,000
+And their SOA
+
+814
+00:38:12,000 --> 00:38:16,000
+The summation of the all the SOA
+
+815
+00:38:16,000 --> 00:38:19,000
+And here is the sum score of fake
+
+816
+00:38:19,000 --> 00:38:25,000
+Is the same as the score of authentic
+
+817
+00:38:25,000 --> 00:38:27,000
+And we also summation
+
+818
+00:38:27,000 --> 00:38:29,000
+All the people disagree
+
+819
+00:38:29,000 --> 00:38:31,000
+And the summation their SOA
+
+820
+00:38:31,000 --> 00:38:33,000
+To get the final result
+
+821
+00:38:34,000 --> 00:38:36,000
+So that's the trust
+
+822
+00:38:36,000 --> 00:38:38,000
+How we calculate the trust score
+
+823
+00:38:41,000 --> 00:38:43,000
+And then when we know the trust score
+
+824
+00:38:43,000 --> 00:38:46,000
+Like I said, our system will decide
+
+825
+00:38:47,000 --> 00:38:53,000
+Will reflect the reward or punishment to each appraisers
+
+826
+00:38:53,000 --> 00:38:56,000
+And we define that our basic reward
+
+827
+00:38:56,000 --> 00:39:00,000
+Is the total stake to modify the 0.1%
+
+828
+00:39:00,000 --> 00:39:02,000
+So in this case
+
+829
+00:39:02,000 --> 00:39:03,000
+Will be 21
+
+830
+00:39:03,000 --> 00:39:06,000
+And the basic punishment will be higher
+
+831
+00:39:06,000 --> 00:39:07,000
+More higher than the reward
+
+832
+00:39:07,000 --> 00:39:12,000
+Because we want to stop the malicious nodes
+
+833
+00:39:12,000 --> 00:39:15,000
+So the basic punishment will be total stake
+
+834
+00:39:15,000 --> 00:39:17,000
+Multiply the 10%
+
+835
+00:39:17,000 --> 00:39:21,000
+So it will be the 2100
+
+836
+00:39:21,000 --> 00:39:24,000
+And then the reward of the content
+
+837
+00:39:24,000 --> 00:39:28,000
+Which means that when once content comes in
+
+838
+00:39:29,000 --> 00:39:31,000
+And how many reward
+
+839
+00:39:31,000 --> 00:39:34,000
+We will reflect to all the appraisers
+
+840
+00:39:34,000 --> 00:39:36,000
+Who did their jobs
+
+841
+00:39:36,000 --> 00:39:39,000
+So our equation will be
+
+842
+00:39:40,000 --> 00:39:43,000
+We use the basic reward to modify
+
+843
+00:39:43,000 --> 00:39:48,000
+The value of the 1 to minus the entropy S
+
+844
+00:39:48,000 --> 00:39:51,000
+So you could see that in this case
+
+845
+00:39:51,000 --> 00:39:57,000
+We know that in our example 1
+
+846
+00:39:57,000 --> 00:40:01,000
+Our entropy is 0.97
+
+847
+00:40:01,000 --> 00:40:08,000
+So the ROC or POC will be 6.3 and 6.3 respectively
+
+848
+00:40:12,000 --> 00:40:13,000
+Okay
+
+849
+00:40:14,000 --> 00:40:18,000
+So then we know that the basic reward
+
+850
+00:40:18,000 --> 00:40:22,000
+And we know the reward of content
+
+851
+00:40:22,000 --> 00:40:24,000
+And the punishment of content
+
+852
+00:40:24,000 --> 00:40:27,000
+And how we reflect to each appraiser
+
+853
+00:40:27,000 --> 00:40:32,000
+And we will calculate the ratio of SOA
+
+854
+00:40:32,000 --> 00:40:33,000
+Which means that
+
+855
+00:40:35,000 --> 00:40:39,000
+For example, in SOA, we have the 0.66
+
+856
+00:40:39,000 --> 00:40:42,000
+And for A1, we will know that
+
+857
+00:40:42,000 --> 00:40:48,000
+There are 36% of the trust score
+
+858
+00:40:49,000 --> 00:40:52,000
+The score of authentic is come from
+
+859
+00:40:52,000 --> 00:40:55,000
+Is come from the appraiser 1
+
+860
+00:40:55,000 --> 00:40:58,000
+So we will use this ratio to reflect
+
+861
+00:40:58,000 --> 00:41:02,000
+The reward to each appraiser
+
+862
+00:41:02,000 --> 00:41:05,000
+And for the punishment is the same
+
+863
+00:41:05,000 --> 00:41:07,000
+We will know that
+
+864
+00:41:07,000 --> 00:41:12,000
+How you contribute to the trust of the fake
+
+865
+00:41:12,000 --> 00:41:15,000
+And then if you contribute
+
+866
+00:41:15,000 --> 00:41:18,000
+Or you occupy more percentage
+
+867
+00:41:18,000 --> 00:41:21,000
+You will get more reward or more punishment
+
+868
+00:41:21,000 --> 00:41:26,000
+Okay
+
+869
+00:41:26,000 --> 00:41:29,000
+So in here, you can see
+
+870
+00:41:29,000 --> 00:41:32,000
+We calculate the ratio of ROC and the ratio of POC
+
+871
+00:41:32,000 --> 00:41:36,000
+Which each appraiser need to be reflected
+
+872
+00:41:36,000 --> 00:41:39,000
+It will be added or be reduced
+
+873
+00:41:39,000 --> 00:41:43,000
+And then when we reflect it
+
+874
+00:41:43,000 --> 00:41:46,000
+You can see that for, for example, in for A1
+
+875
+00:41:46,000 --> 00:41:50,000
+The initial, its initial state is 5,000
+
+876
+00:41:50,000 --> 00:41:55,000
+And after state is the 5,000 point 23
+
+877
+00:41:55,000 --> 00:41:58,000
+So we could get all the after states
+
+878
+00:41:58,000 --> 00:42:01,000
+And then we can calculate the after credit point
+
+879
+00:42:01,000 --> 00:42:03,000
+So this is a cycle
+
+880
+00:42:03,000 --> 00:42:07,000
+When every content, when we finish the appraising process
+
+881
+00:42:07,000 --> 00:42:12,000
+We will have the new states and the new credit point
+
+882
+00:42:12,000 --> 00:42:16,000
+And then they will get ready to accept another content
+
+883
+00:42:17,000 --> 00:42:20,000
+And if any appraiser
+
+884
+00:42:20,000 --> 00:42:23,000
+Their credit point is close to zero
+
+885
+00:42:23,000 --> 00:42:25,000
+Which means that their stakes are heavy
+
+886
+00:42:25,000 --> 00:42:29,000
+They got a lot of the punishment
+
+887
+00:42:29,000 --> 00:42:30,000
+And their credit point
+
+888
+00:42:30,000 --> 00:42:32,000
+Their stakes is equal to zero
+
+889
+00:42:32,000 --> 00:42:35,000
+And we will go back to our main flow
+
+890
+00:42:35,000 --> 00:42:38,000
+The initial process that to accept
+
+891
+00:42:38,000 --> 00:42:42,000
+To ask this appraiser
+
+892
+00:42:43,000 --> 00:42:45,000
+Do you need to add more stakes
+
+893
+00:42:45,000 --> 00:42:51,000
+To continue to be the appraiser
+
+894
+00:42:51,000 --> 00:42:53,000
+So that's how
+
+895
+00:42:53,000 --> 00:42:56,000
+So we only finish the
+
+896
+00:42:56,000 --> 00:43:01,000
+I think that the most difficult part in our presentation
+
+897
+00:43:01,000 --> 00:43:03,000
+Is to calculate the trust score
+
+898
+00:43:03,000 --> 00:43:08,000
+And in this slide that we do some experiments
+
+899
+00:43:08,000 --> 00:43:10,000
+That to improve
+
+900
+00:43:10,000 --> 00:43:13,000
+To prove that our system could be a scale
+
+901
+00:43:13,000 --> 00:43:16,000
+On a lot of the users
+
+902
+00:43:16,000 --> 00:43:17,000
+You could see that
+
+903
+00:43:17,000 --> 00:43:18,000
+And in the left side
+
+904
+00:43:18,000 --> 00:43:21,000
+The picture shows that our system could
+
+905
+00:43:21,000 --> 00:43:23,000
+In our testing environment
+
+906
+00:43:23,000 --> 00:43:26,000
+We use the four servers
+
+907
+00:43:26,000 --> 00:43:31,000
+And the throughput is still goes well
+
+908
+00:43:31,000 --> 00:43:33,000
+But in our system
+
+909
+00:43:33,000 --> 00:43:34,000
+We set the contents
+
+910
+00:43:34,000 --> 00:43:39,000
+The maxima of the content is the eight megabytes
+
+911
+00:43:39,000 --> 00:43:40,000
+Because you could imagine
+
+912
+00:43:40,000 --> 00:43:44,000
+If we compress the content
+
+913
+00:43:44,000 --> 00:43:46,000
+For videos or some
+
+914
+00:43:46,000 --> 00:43:48,000
+We use the in-camera size
+
+915
+00:43:48,000 --> 00:43:50,000
+There is the technique
+
+916
+00:43:50,000 --> 00:43:52,000
+You could use the content to
+
+917
+00:43:52,000 --> 00:43:53,000
+As the input
+
+918
+00:43:53,000 --> 00:43:54,000
+And we have the output
+
+919
+00:43:54,000 --> 00:43:57,000
+It's a very short
+
+920
+00:43:57,000 --> 00:44:00,000
+Screen or some contents
+
+921
+00:44:00,000 --> 00:44:04,000
+And it will not to occupy a lot of size
+
+922
+00:44:04,000 --> 00:44:07,000
+So our limitation of the content
+
+923
+00:44:07,000 --> 00:44:09,000
+Would be the eight megabytes
+
+924
+00:44:09,000 --> 00:44:11,000
+And the right-hand side
+
+925
+00:44:11,000 --> 00:44:13,000
+The picture shows that
+
+926
+00:44:13,000 --> 00:44:17,000
+We all know that the computer system
+
+927
+00:44:17,000 --> 00:44:19,000
+Is rely on the fault tolerance
+
+928
+00:44:19,000 --> 00:44:20,000
+Which means that
+
+929
+00:44:20,000 --> 00:44:23,000
+If the main server fails
+
+930
+00:44:23,000 --> 00:44:26,000
+Our systems should still work well
+
+931
+00:44:26,000 --> 00:44:28,000
+You could see that
+
+932
+00:44:28,000 --> 00:44:30,000
+For example, you put a Facebook
+
+933
+00:44:30,000 --> 00:44:32,000
+One server crashed down
+
+934
+00:44:32,000 --> 00:44:34,000
+And you cannot use the Facebook
+
+935
+00:44:34,000 --> 00:44:35,000
+It's not good
+
+936
+00:44:35,000 --> 00:44:37,000
+So this is the right-hand side
+
+937
+00:44:37,000 --> 00:44:39,000
+The picture shows that
+
+938
+00:44:39,000 --> 00:44:43,000
+If we make some server failure
+
+939
+00:44:43,000 --> 00:44:46,000
+Our system still could work well
+
+940
+00:44:46,000 --> 00:44:54,000
+And the latency will not to increase very much
+
+941
+00:44:54,000 --> 00:44:59,000
+Okay, so I think we can get into conclusion
+
+942
+00:44:59,000 --> 00:45:01,000
+So yeah, so our system
+
+943
+00:45:01,000 --> 00:45:04,000
+I asked to summarize some take-home points
+
+944
+00:45:04,000 --> 00:45:06,000
+For all of you
+
+945
+00:45:06,000 --> 00:45:09,000
+Yeah, as you remember that
+
+946
+00:45:09,000 --> 00:45:12,000
+I've said that the AI technique
+
+947
+00:45:12,000 --> 00:45:14,000
+Is getting better and better
+
+948
+00:45:14,000 --> 00:45:17,000
+So the traditional algorithms
+
+949
+00:45:17,000 --> 00:45:20,000
+Does not get the great performance
+
+950
+00:45:20,000 --> 00:45:23,000
+To detect the fake news automatic
+
+951
+00:45:23,000 --> 00:45:26,000
+So if we use the human's capabilities
+
+952
+00:45:26,000 --> 00:45:28,000
+We will have a better solution
+
+953
+00:45:28,000 --> 00:45:33,000
+Than the traditional AI algorithms
+
+954
+00:45:33,000 --> 00:45:35,000
+But of course we could combine
+
+955
+00:45:35,000 --> 00:45:38,000
+The advantage for the AI algorithms
+
+956
+00:45:38,000 --> 00:45:40,000
+And the human-based capability
+
+957
+00:45:40,000 --> 00:45:43,000
+For example, we can use AI technique
+
+958
+00:45:43,000 --> 00:45:47,000
+To build the first layer of filters
+
+959
+00:45:47,000 --> 00:45:49,000
+And people can get into
+
+960
+00:45:49,000 --> 00:45:51,000
+To check the results, right
+
+961
+00:45:51,000 --> 00:45:52,000
+But the most important part
+
+962
+00:45:52,000 --> 00:45:55,000
+Is the blockchain network
+
+963
+00:45:55,000 --> 00:45:56,000
+Because it's decentralized
+
+964
+00:45:56,000 --> 00:46:00,000
+Not to manage it by only one companies
+
+965
+00:46:00,000 --> 00:46:02,000
+It's transparency
+
+966
+00:46:02,000 --> 00:46:05,000
+And very easier to find some data
+
+967
+00:46:05,000 --> 00:46:07,000
+It's being modified
+
+968
+00:46:07,000 --> 00:46:09,000
+And so in this experience
+
+969
+00:46:09,000 --> 00:46:12,000
+We know that our system
+
+970
+00:46:12,000 --> 00:46:14,000
+Is the architecture is peaceful
+
+971
+00:46:14,000 --> 00:46:16,000
+And we could
+
+972
+00:46:16,000 --> 00:46:19,000
+It has potential to be deployed
+
+973
+00:46:19,000 --> 00:46:21,000
+In thousands of machines
+
+974
+00:46:21,000 --> 00:46:24,000
+And the most important part
+
+975
+00:46:24,000 --> 00:46:27,000
+Is that our incentive mechanism
+
+976
+00:46:27,000 --> 00:46:29,000
+Offers this architecture
+
+977
+00:46:29,000 --> 00:46:31,000
+Commercial potential
+
+978
+00:46:31,000 --> 00:46:33,000
+You could imagine that to
+
+979
+00:46:33,000 --> 00:46:34,000
+If you are a writer
+
+980
+00:46:34,000 --> 00:46:36,000
+Or you are a photographer
+
+981
+00:46:36,000 --> 00:46:38,000
+You could use our system
+
+982
+00:46:38,000 --> 00:46:41,000
+To get some proof
+
+983
+00:46:41,000 --> 00:46:43,000
+That your content is real
+
+984
+00:46:43,000 --> 00:46:45,000
+And your reputation
+
+985
+00:46:45,000 --> 00:46:47,000
+Will getting better, right
+
+986
+00:46:47,000 --> 00:46:49,000
+And you are a journalist
+
+987
+00:46:49,000 --> 00:46:51,000
+Or you are some
+
+988
+00:46:51,000 --> 00:46:55,000
+If people doing a fact checking
+
+989
+00:46:55,000 --> 00:46:58,000
+And you can get reward from our system
+
+990
+00:46:58,000 --> 00:47:00,000
+So there is also
+
+991
+00:47:00,000 --> 00:47:02,000
+Then this will have
+
+992
+00:47:02,000 --> 00:47:04,000
+Get some commercial proof
+
+993
+00:47:04,000 --> 00:47:06,000
+And for building
+
+994
+00:47:06,000 --> 00:47:07,000
+This is the
+
+995
+00:47:07,000 --> 00:47:09,000
+Fact News Precision Systems
+
+996
+00:47:12,000 --> 00:47:13,000
+Okay
+
+997
+00:47:13,000 --> 00:47:15,000
+So that's for
+
+998
+00:47:15,000 --> 00:47:17,000
+It's a long presentation
+
+999
+00:47:17,000 --> 00:47:18,000
+So I'll stop here
+
+1000
+00:47:18,000 --> 00:47:20,000
+And I'll tell you here
+
+1001
+00:47:20,000 --> 00:47:23,000
+Is that this research is
+
+1002
+00:47:23,000 --> 00:47:25,000
+Supported by Ripple
+
+1003
+00:47:25,000 --> 00:47:27,000
+Is the World Wide
+
+1004
+00:47:27,000 --> 00:47:29,000
+Payment Protocol
+
+1005
+00:47:29,000 --> 00:47:32,000
+And also by
+
+1006
+00:47:32,000 --> 00:47:34,000
+National Science and Engineering
+
+1007
+00:47:34,000 --> 00:47:36,000
+Research Council of Canada
+
+1008
+00:47:36,000 --> 00:47:37,000
+Okay
+
+1009
+00:47:37,000 --> 00:47:38,000
+And also thanks my mentor
+
+1010
+00:47:38,000 --> 00:47:40,000
+To give me
+
+1011
+00:47:40,000 --> 00:47:42,000
+A lot of suggestions
+
+1012
+00:47:42,000 --> 00:47:44,000
+And help when I
+
+1013
+00:47:44,000 --> 00:47:46,000
+Study for and to
+
+1014
+00:47:46,000 --> 00:47:49,000
+Find some research ideas
+
+1015
+00:47:49,000 --> 00:47:51,000
+Or some
+
+1016
+00:47:51,000 --> 00:47:54,000
+Know more people how to do well
+
+1017
+00:47:54,000 --> 00:47:56,000
+In a PhD program
+
+1018
+00:47:56,000 --> 00:47:59,000
+So I will introduce
+
+1019
+00:47:59,000 --> 00:48:00,000
+Her Facebook
+
+1020
+00:48:00,000 --> 00:48:02,000
+And
+
+1021
+00:48:02,000 --> 00:48:04,000
+She wrote a lot of great things
+
+1022
+00:48:04,000 --> 00:48:06,000
+For all of you who wants to
+
+1023
+00:48:06,000 --> 00:48:09,000
+Study for or you have some
+
+1024
+00:48:09,000 --> 00:48:11,000
+If you are women
+
+1025
+00:48:11,000 --> 00:48:13,000
+That is the best
+
+1026
+00:48:13,000 --> 00:48:15,000
+Facebook for you to check
+
+1027
+00:48:15,000 --> 00:48:16,000
+So I put it here
+
+1028
+00:48:16,000 --> 00:48:17,000
+And I want to thank
+
+1029
+00:48:17,000 --> 00:48:19,000
+Catherine to be my mentor
+
+1030
+00:48:19,000 --> 00:48:21,000
+And give me more
+
+1031
+00:48:21,000 --> 00:48:23,000
+Help
+
+1032
+00:48:24,000 --> 00:48:26,000
+Okay, so
+
+1033
+00:48:26,000 --> 00:48:28,000
+That's all the presentation
+
+1034
+00:48:28,000 --> 00:48:30,000
+And if you have a question
+
+1035
+00:48:30,000 --> 00:48:32,000
+You could ask me right now
+
+1036
+00:48:32,000 --> 00:48:35,000
+Or after the presentation
+
+1037
+00:48:35,000 --> 00:48:37,000
+You could also drop me a mail
+
+1038
+00:48:37,000 --> 00:48:39,000
+Or find me on
+
+1039
+00:48:39,000 --> 00:48:41,000
+Or also
+
+1040
+00:48:41,000 --> 00:48:43,000
+We will discuss with you
+
+1041
+00:48:43,000 --> 00:48:45,000
+More detail or any questions you have
+
+1042
+00:48:45,000 --> 00:48:48,000
+Yeah, thank you so much
+
+1043
+00:48:48,000 --> 00:48:49,000
+So yeah, actually
+
+1044
+00:48:49,000 --> 00:48:52,000
+So before we start our Q&A session
+
+1045
+00:48:52,000 --> 00:48:55,000
+Please turn on your microphones again
+
+1046
+00:48:55,000 --> 00:48:57,000
+So let's thank
+
+1047
+00:48:57,000 --> 00:49:01,000
+Jianzhi for the very interesting talk
+
+1048
+00:49:01,000 --> 00:49:03,000
+Thank you, thank you
+
+1049
+00:49:03,000 --> 00:49:06,000
+Okay, so
+
+1050
+00:49:06,000 --> 00:49:08,000
+I'm not sure, but I'm guessing that
+
+1051
+00:49:08,000 --> 00:49:10,000
+Some of our attendees
+
+1052
+00:49:10,000 --> 00:49:12,000
+Would like to ask in Mandarin Chinese
+
+1053
+00:49:12,000 --> 00:49:14,000
+Probably, I guess
+
+1054
+00:49:14,000 --> 00:49:16,000
+But, I mean, any kind of language
+
+1055
+00:49:16,000 --> 00:49:17,000
+As long as you can communicate
+
+1056
+00:49:17,000 --> 00:49:18,000
+That will all be fine
+
+1057
+00:49:18,000 --> 00:49:20,000
+So, yeah
+
+1058
+00:49:20,000 --> 00:49:22,000
+I'm happy to ask questions
+
+1059
+00:49:22,000 --> 00:49:25,000
+Anyone?
+
+1060
+00:49:25,000 --> 00:49:27,000
+Hello, hi
+
+1061
+00:49:27,000 --> 00:49:29,000
+I'm Shanna
+
+1062
+00:49:29,000 --> 00:49:30,000
+And I would like to know
+
+1063
+00:49:30,000 --> 00:49:31,000
+Because I noticed that
+
+1064
+00:49:31,000 --> 00:49:33,000
+Actually you have no experience
+
+1065
+00:49:33,000 --> 00:49:34,000
+Studying abroad, right?
+
+1066
+00:49:34,000 --> 00:49:36,000
+This is your first time
+
+1067
+00:49:36,000 --> 00:49:37,000
+Yeah
+
+1068
+00:49:37,000 --> 00:49:39,000
+How do you practice English?
+
+1069
+00:49:39,000 --> 00:49:41,000
+Sorry, it's not related to your content
+
+1070
+00:49:41,000 --> 00:49:43,000
+But I'm just curious
+
+1071
+00:49:43,000 --> 00:49:44,000
+Yeah
+
+1072
+00:49:44,000 --> 00:49:46,000
+Oh, yeah, it's an interesting question
+
+1073
+00:49:46,000 --> 00:49:49,000
+Is that I think
+
+1074
+00:49:49,000 --> 00:49:51,000
+I learned some English
+
+1075
+00:49:51,000 --> 00:49:54,000
+Speaking practicing courses in UW
+
+1076
+00:49:54,000 --> 00:49:57,000
+So, yeah, they gave me a lot of practice
+
+1077
+00:49:57,000 --> 00:50:04,000
+To
+
+1078
+00:50:04,000 --> 00:50:06,000
+Try to join
+
+1079
+00:50:06,000 --> 00:50:08,000
+Reach some
+
+1080
+00:50:08,000 --> 00:50:09,000
+Course master
+
+1081
+00:50:09,000 --> 00:50:12,000
+The class near UW
+
+1082
+00:50:12,000 --> 00:50:14,000
+So there's a lot of chance for me
+
+1083
+00:50:14,000 --> 00:50:16,000
+Practicing English, yeah
+
+1084
+00:50:17,000 --> 00:50:20,000
+Is that answer your question?
+
+1085
+00:50:20,000 --> 00:50:22,000
+Oh, yes
+
+1086
+00:50:22,000 --> 00:50:24,000
+And I heard some people said
+
+1087
+00:50:24,000 --> 00:50:26,000
+That we should prepare
+
+1088
+00:50:26,000 --> 00:50:28,000
+Maybe we should join the like
+
+1089
+00:50:28,000 --> 00:50:30,000
+UHSL
+
+1090
+00:50:30,000 --> 00:50:32,000
+It's faster than we prepare English fast
+
+1091
+00:50:32,000 --> 00:50:33,000
+How do you think about that?
+
+1092
+00:50:33,000 --> 00:50:35,000
+If I cannot reach the score
+
+1093
+00:50:35,000 --> 00:50:37,000
+That my school wants
+
+1094
+00:50:37,000 --> 00:50:39,000
+And did I need to apply for the language
+
+1095
+00:50:39,000 --> 00:50:42,000
+UHSL first or
+
+1096
+00:50:42,000 --> 00:50:43,000
+I just prepare English
+
+1097
+00:50:43,000 --> 00:50:45,000
+And until I get a score
+
+1098
+00:50:45,000 --> 00:50:46,000
+Get a TOEFL, pass the TOEFL
+
+1099
+00:50:46,000 --> 00:50:50,000
+And then apply for the language school
+
+1100
+00:50:50,000 --> 00:50:53,000
+Right
+
+1101
+00:50:53,000 --> 00:50:55,000
+I think this is
+
+1102
+00:50:55,000 --> 00:50:57,000
+Another interesting question
+
+1103
+00:50:57,000 --> 00:51:00,000
+Actually, I will suggest that
+
+1104
+00:51:00,000 --> 00:51:03,000
+It depends if you
+
+1105
+00:51:03,000 --> 00:51:06,000
+I will suggest to prepare English
+
+1106
+00:51:06,000 --> 00:51:09,000
+And try your best to pass the TOEFL
+
+1107
+00:51:09,000 --> 00:51:12,000
+Or IELTS in Taiwan
+
+1108
+00:51:12,000 --> 00:51:15,000
+Because if you
+
+1109
+00:51:15,000 --> 00:51:16,000
+Go study abroad
+
+1110
+00:51:16,000 --> 00:51:18,000
+And you go to some language schools
+
+1111
+00:51:18,000 --> 00:51:20,000
+The cost is really
+
+1112
+00:51:20,000 --> 00:51:21,000
+It's very high
+
+1113
+00:51:21,000 --> 00:51:24,000
+And then it will spend a lot of money
+
+1114
+00:51:24,000 --> 00:51:27,000
+But the most important thing
+
+1115
+00:51:27,000 --> 00:51:29,000
+Is the but
+
+1116
+00:51:29,000 --> 00:51:31,000
+If you
+
+1117
+00:51:31,000 --> 00:51:33,000
+Sometimes
+
+1118
+00:51:33,000 --> 00:51:35,000
+Some people are struggling
+
+1119
+00:51:35,000 --> 00:51:39,000
+To pass the exams
+
+1120
+00:51:39,000 --> 00:51:41,000
+So if you found that
+
+1121
+00:51:41,000 --> 00:51:43,000
+You cannot concentrate to
+
+1122
+00:51:43,000 --> 00:51:45,000
+Prepare for the exam
+
+1123
+00:51:45,000 --> 00:51:50,000
+And you stuck on the TOEFL exam
+
+1124
+00:51:50,000 --> 00:51:52,000
+And also the schools offer
+
+1125
+00:51:52,000 --> 00:51:54,000
+Some opportunities that
+
+1126
+00:51:54,000 --> 00:51:56,000
+They say you could go to the university
+
+1127
+00:51:56,000 --> 00:51:58,000
+To take the language courses
+
+1128
+00:51:58,000 --> 00:52:00,000
+And then you can get over
+
+1129
+00:52:00,000 --> 00:52:02,000
+I would say you just go
+
+1130
+00:52:02,000 --> 00:52:07,000
+Because the time is important
+
+1131
+00:52:07,000 --> 00:52:10,000
+Do not to stuck one
+
+1132
+00:52:10,000 --> 00:52:13,000
+One stage for a long time
+
+1133
+00:52:13,000 --> 00:52:19,000
+I think that would be my answer
+
+1134
+00:52:19,000 --> 00:52:21,000
+Thank you, Tom
+
+1135
+00:52:21,000 --> 00:52:24,000
+Yeah, so I have a question
+
+1136
+00:52:24,000 --> 00:52:28,000
+So if we go back to your title
+
+1137
+00:52:28,000 --> 00:52:30,000
+I think you're saying that
+
+1138
+00:52:30,000 --> 00:52:34,000
+This technique is mainly for
+
+1139
+00:52:34,000 --> 00:52:36,000
+How do I say this
+
+1140
+00:52:36,000 --> 00:52:39,000
+For deploying against fake news
+
+1141
+00:52:40,000 --> 00:52:43,000
+But if you let the people decide
+
+1142
+00:52:43,000 --> 00:52:46,000
+What will be the thing that they recognize
+
+1143
+00:52:46,000 --> 00:52:48,000
+They basically just vote
+
+1144
+00:52:48,000 --> 00:52:52,000
+Let's say Barack Obama just died
+
+1145
+00:52:52,000 --> 00:52:55,000
+And if you let the internet vote
+
+1146
+00:52:55,000 --> 00:52:57,000
+Probably 99% of the people will say
+
+1147
+00:52:57,000 --> 00:52:59,000
+That's a fake news
+
+1148
+00:52:59,000 --> 00:53:01,000
+But let's say objectively true thing
+
+1149
+00:53:01,000 --> 00:53:04,000
+That cannot be voted to become a truth
+
+1150
+00:53:04,000 --> 00:53:05,000
+In your system
+
+1151
+00:53:05,000 --> 00:53:07,000
+How do you comment about that
+
+1152
+00:53:07,000 --> 00:53:09,000
+Yeah, like I said
+
+1153
+00:53:09,000 --> 00:53:12,000
+We trust the majority opinion
+
+1154
+00:53:12,000 --> 00:53:14,000
+In our system
+
+1155
+00:53:14,000 --> 00:53:18,000
+We have the reward and punishment mechanism
+
+1156
+00:53:18,000 --> 00:53:22,000
+To make you to do the correct
+
+1157
+00:53:22,000 --> 00:53:24,000
+And the honest things
+
+1158
+00:53:24,000 --> 00:53:28,000
+Actually in all of the blockchain network
+
+1159
+00:53:28,000 --> 00:53:31,000
+They have the specific incentive mechanism
+
+1160
+00:53:31,000 --> 00:53:34,000
+To prevent from some malicious notes
+
+1161
+00:53:35,000 --> 00:53:37,000
+So if you join our
+
+1162
+00:53:37,000 --> 00:53:41,000
+We have two mechanism to prevent
+
+1163
+00:53:41,000 --> 00:53:45,000
+This the notes to adjust to vote
+
+1164
+00:53:45,000 --> 00:53:48,000
+Actually they will do their best
+
+1165
+00:53:48,000 --> 00:53:51,000
+Because the first if they join our system
+
+1166
+00:53:51,000 --> 00:53:54,000
+They need to pay for pay fees for
+
+1167
+00:53:54,000 --> 00:53:55,000
+Like I said the stakes
+
+1168
+00:53:55,000 --> 00:53:57,000
+So it's a cost
+
+1169
+00:53:57,000 --> 00:53:58,000
+And then if we join system
+
+1170
+00:53:58,000 --> 00:54:02,000
+And you did not do your job very well
+
+1171
+00:54:02,000 --> 00:54:05,000
+You will get the punishment
+
+1172
+00:54:05,000 --> 00:54:07,000
+And then eventually
+
+1173
+00:54:07,000 --> 00:54:09,000
+You will be prohibited
+
+1174
+00:54:09,000 --> 00:54:12,000
+To be the oppressors in our system
+
+1175
+00:54:12,000 --> 00:54:15,000
+So our mechanism of incentive
+
+1176
+00:54:15,000 --> 00:54:20,000
+Is core concept to incentive people
+
+1177
+00:54:20,000 --> 00:54:22,000
+To check the content seriously
+
+1178
+00:54:22,000 --> 00:54:28,000
+And to vote correctly
+
+1179
+00:54:28,000 --> 00:54:31,000
+So if I understand correctly
+
+1180
+00:54:31,000 --> 00:54:32,000
+Basically the assumption
+
+1181
+00:54:32,000 --> 00:54:34,000
+That you are going with
+
+1182
+00:54:34,000 --> 00:54:38,000
+Is that people generally have good intention
+
+1183
+00:54:38,000 --> 00:54:39,000
+And they are answering
+
+1184
+00:54:39,000 --> 00:54:41,000
+Based on their good intention
+
+1185
+00:54:41,000 --> 00:54:43,000
+Regardless of the truth
+
+1186
+00:54:43,000 --> 00:54:46,000
+So say Obama just died
+
+1187
+00:54:46,000 --> 00:54:47,000
+Nobody knows
+
+1188
+00:54:47,000 --> 00:54:51,000
+And they basically just like saying
+
+1189
+00:54:51,000 --> 00:54:53,000
+It's not a good news
+
+1190
+00:54:53,000 --> 00:54:55,000
+Because it's just not the thing
+
+1191
+00:54:55,000 --> 00:54:58,000
+That is well established that I know
+
+1192
+00:54:58,000 --> 00:55:00,000
+But it's true
+
+1193
+00:55:00,000 --> 00:55:01,000
+So in your system
+
+1194
+00:55:01,000 --> 00:55:04,000
+It's basically working against
+
+1195
+00:55:04,000 --> 00:55:06,000
+Malicious information
+
+1196
+00:55:06,000 --> 00:55:09,000
+But not exactly news
+
+1197
+00:55:09,000 --> 00:55:12,000
+Can I say that
+
+1198
+00:55:12,000 --> 00:55:16,000
+I could say how to define the bad news
+
+1199
+00:55:16,000 --> 00:55:22,000
+Is that the content should be correct
+
+1200
+00:55:22,000 --> 00:55:28,000
+So when you say Obama is dead
+
+1201
+00:55:28,000 --> 00:55:30,000
+If it's not a truth
+
+1202
+00:55:30,000 --> 00:55:34,000
+Our system will consider it is a bad news
+
+1203
+00:55:34,000 --> 00:55:37,000
+But in my scenario
+
+1204
+00:55:37,000 --> 00:55:42,000
+I'm saying what if he really just died
+
+1205
+00:55:42,000 --> 00:55:45,000
+But nobody knows like 10 minutes ago
+
+1206
+00:55:45,000 --> 00:55:48,000
+And I go out and say
+
+1207
+00:55:48,000 --> 00:55:50,000
+Hey guys, he just died
+
+1208
+00:55:50,000 --> 00:55:53,000
+That will be a fake news in your system
+
+1209
+00:55:53,000 --> 00:55:54,000
+Because nobody knows
+
+1210
+00:55:54,000 --> 00:55:56,000
+That's true
+
+1211
+00:55:57,000 --> 00:55:58,000
+Yeah, you're right
+
+1212
+00:55:58,000 --> 00:56:02,000
+But if you say Obama is dead
+
+1213
+00:56:02,000 --> 00:56:04,000
+But nobody knows
+
+1214
+00:56:04,000 --> 00:56:08,000
+I would say that
+
+1215
+00:56:08,000 --> 00:56:12,000
+This situation is really
+
+1216
+00:56:12,000 --> 00:56:14,000
+It's extremely
+
+1217
+00:56:14,000 --> 00:56:17,000
+That's quite a situation news
+
+1218
+00:56:17,000 --> 00:56:19,000
+Yeah, so I think
+
+1219
+00:56:19,000 --> 00:56:22,000
+Because those oppressing actors
+
+1220
+00:56:22,000 --> 00:56:25,000
+Are very capable to check the contents
+
+1221
+00:56:25,000 --> 00:56:32,000
+So if they hesitate to give some opinions
+
+1222
+00:56:32,000 --> 00:56:34,000
+Their confidence will lower
+
+1223
+00:56:34,000 --> 00:56:39,000
+So the trust score of the agree
+
+1224
+00:56:39,000 --> 00:56:41,000
+Authentic and the fact
+
+1225
+00:56:41,000 --> 00:56:43,000
+They will be very similar
+
+1226
+00:56:43,000 --> 00:56:46,000
+So our system will not treat it
+
+1227
+00:56:46,000 --> 00:56:51,000
+In your case as a very tend to be real
+
+1228
+00:56:51,000 --> 00:56:53,000
+Or fake, it will be a bad news
+
+1229
+00:56:54,000 --> 00:57:00,000
+But we could give you an objective opinion
+
+1230
+00:57:00,000 --> 00:57:02,000
+To check this content
+
+1231
+00:57:04,000 --> 00:57:06,000
+I see
+
+1232
+00:57:06,000 --> 00:57:08,000
+Okay
+
+1233
+00:57:08,000 --> 00:57:11,000
+I do have some comment about the previous question
+
+1234
+00:57:11,000 --> 00:57:13,000
+Just like
+
+1235
+00:57:13,000 --> 00:57:14,000
+Okay
+
+1236
+00:57:14,000 --> 00:57:16,000
+Okay, first, thank you for a nice talk
+
+1237
+00:57:16,000 --> 00:57:18,000
+And for the tokenomics design
+
+1238
+00:57:18,000 --> 00:57:21,000
+I think that's about how you make a dispute system
+
+1239
+00:57:21,000 --> 00:57:23,000
+Because for now it's like a one-time votes
+
+1240
+00:57:23,000 --> 00:57:25,000
+And you just get the result done
+
+1241
+00:57:25,000 --> 00:57:27,000
+But if you see like
+
+1242
+00:57:27,000 --> 00:57:30,000
+In order for the prediction market
+
+1243
+00:57:30,000 --> 00:57:31,000
+Just like if you predict
+
+1244
+00:57:31,000 --> 00:57:35,000
+And like whether Obama will die between like 2021
+
+1245
+00:57:35,000 --> 00:57:38,000
+And people at 2021 votes
+
+1246
+00:57:38,000 --> 00:57:42,000
+Maybe 3% of the voters enough to get yes or no
+
+1247
+00:57:42,000 --> 00:57:45,000
+But if you don't trust the result
+
+1248
+00:57:45,000 --> 00:57:49,000
+You can put your stake against that voting result
+
+1249
+00:57:49,000 --> 00:57:51,000
+And then more people need to vote
+
+1250
+00:57:51,000 --> 00:57:56,000
+If you stake like maybe 1% of the total token
+
+1251
+00:57:56,000 --> 00:57:59,000
+Then all of the people need to vote
+
+1252
+00:57:59,000 --> 00:58:03,000
+So I guess you need to kind of like refine
+
+1253
+00:58:03,000 --> 00:58:06,000
+The appeal system or the tokenomics
+
+1254
+00:58:06,000 --> 00:58:12,000
+Because I think the previous question is quite valid
+
+1255
+00:58:12,000 --> 00:58:17,000
+Because you assume that like the majority vote
+
+1256
+00:58:17,000 --> 00:58:18,000
+Will know the truth
+
+1257
+00:58:18,000 --> 00:58:20,000
+But maybe it takes some time right
+
+1258
+00:58:20,000 --> 00:58:24,000
+So but if you like you want to label the news in 10 minutes
+
+1259
+00:58:24,000 --> 00:58:29,000
+And definitely well it's hard to get information
+
+1260
+00:58:29,000 --> 00:58:33,000
+To propagate to like the society or the civilization
+
+1261
+00:58:33,000 --> 00:58:35,000
+To get people votes and get the correct result
+
+1262
+00:58:35,000 --> 00:58:40,000
+So I guess you just need to have a dispute system
+
+1263
+00:58:40,000 --> 00:58:41,000
+I guess
+
+1264
+00:58:41,000 --> 00:58:42,000
+Yeah, sure
+
+1265
+00:58:42,000 --> 00:58:44,000
+But like you said
+
+1266
+00:58:44,000 --> 00:58:45,000
+Yeah
+
+1267
+00:58:46,000 --> 00:58:51,000
+If you want to get news in just 10 minutes
+
+1268
+00:58:51,000 --> 00:58:54,000
+To see if it's correct or not
+
+1269
+00:58:54,000 --> 00:58:57,000
+It will be difficult to achieve that
+
+1270
+00:58:57,000 --> 00:58:59,000
+Because maybe like Elon said
+
+1271
+00:58:59,000 --> 00:59:03,000
+The news is not just known by minority people
+
+1272
+00:59:03,000 --> 00:59:08,000
+But yeah, for this case
+
+1273
+00:59:08,000 --> 00:59:12,000
+I think for previous the current solutions
+
+1274
+00:59:12,000 --> 00:59:16,000
+I think people will have
+
+1275
+00:59:16,000 --> 00:59:18,000
+Like we have put more stakes
+
+1276
+00:59:18,000 --> 00:59:23,000
+Or we can to introduce more
+
+1277
+00:59:23,000 --> 00:59:25,000
+The sub-parties, the libraries
+
+1278
+00:59:25,000 --> 00:59:27,000
+And we can ask their opinions
+
+1279
+00:59:27,000 --> 00:59:31,000
+So our speed will get in faster
+
+1280
+00:59:34,000 --> 00:59:39,000
+Yeah, well I do think this is a very interesting
+
+1281
+00:59:39,000 --> 00:59:41,000
+Actually very valuable research
+
+1282
+00:59:41,000 --> 00:59:43,000
+I'm just being curious
+
+1283
+00:59:43,000 --> 00:59:48,000
+Yeah, so anyone has other questions
+
+1284
+00:59:51,000 --> 00:59:52,000
+I have some questions
+
+1285
+00:59:52,000 --> 00:59:59,000
+Do you really plan to launch this thing in a public chain
+
+1286
+00:59:59,000 --> 01:00:02,000
+Because I was saying the past like two years
+
+1287
+01:00:02,000 --> 01:00:05,000
+Hyperledger is not like really striving
+
+1288
+01:00:05,000 --> 01:00:08,000
+And even though like the gas fee
+
+1289
+01:00:08,000 --> 01:00:10,000
+And the transaction fee is an issue
+
+1290
+01:00:10,000 --> 01:00:12,000
+For like Bitcoin in Syria
+
+1291
+01:00:12,000 --> 01:00:14,000
+But for the new generation
+
+1292
+01:00:14,000 --> 01:00:15,000
+Like high throughput blockchain
+
+1293
+01:00:15,000 --> 01:00:17,000
+Also support smart contract
+
+1294
+01:00:17,000 --> 01:00:20,000
+Then it will be a much better platform
+
+1295
+01:00:20,000 --> 01:00:21,000
+I would say
+
+1296
+01:00:21,000 --> 01:00:24,000
+Because well Hyperledger is definitely more
+
+1297
+01:00:24,000 --> 01:00:26,000
+Like clean and more permission
+
+1298
+01:00:26,000 --> 01:00:31,000
+But how to really scale the platform
+
+1299
+01:00:31,000 --> 01:00:34,000
+I would say like public chain is still better
+
+1300
+01:00:34,000 --> 01:00:36,000
+Than the permission chain
+
+1301
+01:00:37,000 --> 01:00:40,000
+Yeah, actually you are right
+
+1302
+01:00:40,000 --> 01:00:44,000
+We plan to introduce some
+
+1303
+01:00:44,000 --> 01:00:46,000
+Digital tokens in our system
+
+1304
+01:00:46,000 --> 01:00:49,000
+Because we need to get the reward or punishment
+
+1305
+01:00:49,000 --> 01:00:53,000
+So Ethereum will be the one choice
+
+1306
+01:00:53,000 --> 01:00:56,000
+That we consider to transfer
+
+1307
+01:00:56,000 --> 01:00:58,000
+The Hyperledger to the Ethereum
+
+1308
+01:00:58,000 --> 01:01:02,000
+And also there are other tokens
+
+1309
+01:01:02,000 --> 01:01:03,000
+That invented right now
+
+1310
+01:01:03,000 --> 01:01:05,000
+They have a great
+
+1311
+01:01:05,000 --> 01:01:07,000
+Because the Ethereum and Bitcoin
+
+1312
+01:01:07,000 --> 01:01:10,000
+Their speed is too slow
+
+1313
+01:01:10,000 --> 01:01:15,000
+But there are lots of faster blockchain network
+
+1314
+01:01:15,000 --> 01:01:17,000
+So we consider to
+
+1315
+01:01:17,000 --> 01:01:20,000
+Yeah, like you said to transfer
+
+1316
+01:01:20,000 --> 01:01:27,000
+From the private blockchain to the public
+
+1317
+01:01:27,000 --> 01:01:30,000
+Okay, thank you for applying
+
+1318
+01:01:30,000 --> 01:01:31,000
+Yeah, thank you
+
+1319
+01:01:32,000 --> 01:01:37,000
+Okay, so one last time
+
+1320
+01:01:37,000 --> 01:01:39,000
+Anybody has question
+
+1321
+01:01:39,000 --> 01:01:42,000
+Okay, if not, please again
+
+1322
+01:01:42,000 --> 01:01:44,000
+Really turn on your microphone
+
+1323
+01:01:44,000 --> 01:01:47,000
+So let's thank our speaker again
+
+1324
+01:01:47,000 --> 01:01:49,000
+That's a very interesting talk
+
+1325
+01:01:49,000 --> 01:01:51,000
+Thank you, thank you everyone
+
+1326
+01:01:51,000 --> 01:01:52,000
+If you have any question
+
+1327
+01:01:52,000 --> 01:01:55,000
+If you also have any question, please
+

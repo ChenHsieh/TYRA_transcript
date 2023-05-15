@@ -1,0 +1,8424 @@
+1
+00:00:00,000 --> 00:00:10,000
+Hello everyone, welcome to today's Taira Talk on July 23, 2022.
+
+2
+00:00:10,000 --> 00:00:18,000
+Today's speech is given by Yan Ziqi.
+
+3
+00:00:18,000 --> 00:00:26,000
+The title of his speech is
+
+4
+00:00:26,000 --> 00:00:33,000
+Analyzing Data from the Internet with a Single-Page Algebra
+
+5
+00:00:33,000 --> 00:00:43,000
+Ziqi is a doctoral candidate from the Department of Computer Science at Colorado University.
+
+6
+00:00:43,000 --> 00:00:58,000
+He is interested in complex systems and the relationship between data, models, and algorithms.
+
+7
+00:00:58,000 --> 00:01:08,000
+He gave a speech at Taira two years ago.
+
+8
+00:01:08,000 --> 00:01:14,000
+Please welcome Yan Ziqi.
+
+9
+00:01:14,000 --> 00:01:17,000
+Hello everyone.
+
+10
+00:01:17,000 --> 00:01:27,000
+Thank you Jason for the introduction and thank you Taira for designing this platform for us to share our research.
+
+11
+00:01:27,000 --> 00:01:37,000
+I'll share my screen now.
+
+12
+00:01:37,000 --> 00:01:41,000
+I'll start.
+
+13
+00:01:41,000 --> 00:01:46,000
+My topic is Analyzing Data from the Internet with a Single-Page Algebra.
+
+14
+00:01:46,000 --> 00:01:55,000
+This network is not the Internet. It's a network with many nodes.
+
+15
+00:01:55,000 --> 00:02:02,000
+There is an interaction between the nodes.
+
+16
+00:02:02,000 --> 00:02:07,000
+It's called a network in English.
+
+17
+00:02:07,000 --> 00:02:15,000
+The main content comes from a paper I wrote last year.
+
+18
+00:02:15,000 --> 00:02:22,000
+I spent a lot of time listing all the references in this slide.
+
+19
+00:02:22,000 --> 00:02:31,000
+Can you see my mouse?
+
+20
+00:02:31,000 --> 00:02:32,000
+Yes.
+
+21
+00:02:32,000 --> 00:02:36,000
+You can download my slides here.
+
+22
+00:02:36,000 --> 00:02:41,000
+If you see this speech on YouTube, please go to my personal website.
+
+23
+00:02:41,000 --> 00:02:45,000
+This link will not exist in the future.
+
+24
+00:02:45,000 --> 00:02:47,000
+There are some things I need to update.
+
+25
+00:02:47,000 --> 00:02:53,000
+But all the references in this slide have a button.
+
+26
+00:02:53,000 --> 00:03:01,000
+You can click to see which paper I refer to.
+
+27
+00:03:01,000 --> 00:03:06,000
+So what is data analysis on the Internet?
+
+28
+00:03:06,000 --> 00:03:11,000
+This field often asks questions from data.
+
+29
+00:03:11,000 --> 00:03:14,000
+Data in a complex system.
+
+30
+00:03:14,000 --> 00:03:17,000
+Data can be, for example, brain science data.
+
+31
+00:03:17,000 --> 00:03:20,000
+For example, we do brain imaging.
+
+32
+00:03:20,000 --> 00:03:22,000
+There may be some brain areas in the brain.
+
+33
+00:03:22,000 --> 00:03:26,000
+We treat the brain area as a node.
+
+34
+00:03:26,000 --> 00:03:29,000
+There may be some nodes.
+
+35
+00:03:29,000 --> 00:03:32,000
+Different brain areas will light up at the same time.
+
+36
+00:03:32,000 --> 00:03:34,000
+It works at the same time.
+
+37
+00:03:34,000 --> 00:03:35,000
+We can connect it.
+
+38
+00:03:35,000 --> 00:03:38,000
+This is a network.
+
+39
+00:03:38,000 --> 00:03:42,000
+We can ask some questions above.
+
+40
+00:03:42,000 --> 00:03:49,000
+For example, the structure of the brain area under different nodes.
+
+41
+00:03:49,000 --> 00:03:54,000
+What is the difference in the structure of the brain area?
+
+42
+00:03:55,000 --> 00:03:59,000
+For example, the ecological system.
+
+43
+00:03:59,000 --> 00:04:02,000
+We can imagine that if we put each creature.
+
+44
+00:04:02,000 --> 00:04:05,000
+Between creatures, who eats who?
+
+45
+00:04:05,000 --> 00:04:06,000
+Then there is a food chain.
+
+46
+00:04:06,000 --> 00:04:08,000
+This is also a network.
+
+47
+00:04:08,000 --> 00:04:10,000
+The chain is a tree.
+
+48
+00:04:10,000 --> 00:04:13,000
+But if it's a network, it's a food network.
+
+49
+00:04:13,000 --> 00:04:20,000
+Other types, like what we usually see on the Internet.
+
+50
+00:04:20,000 --> 00:04:23,000
+There is a network between different web pages.
+
+51
+00:04:23,000 --> 00:04:27,000
+Then we travel, we go to different places.
+
+52
+00:04:27,000 --> 00:04:28,000
+It also forms a network.
+
+53
+00:04:28,000 --> 00:04:31,000
+Or a network between people.
+
+54
+00:04:31,000 --> 00:04:39,000
+This article is an explanation.
+
+55
+00:04:39,000 --> 00:04:46,000
+How to choose the right model when describing these complex systems.
+
+56
+00:04:46,000 --> 00:04:48,000
+Because some functions.
+
+57
+00:04:48,000 --> 00:04:51,000
+Some functions may be between two.
+
+58
+00:04:52,000 --> 00:04:54,000
+Like a graph in math.
+
+59
+00:04:54,000 --> 00:04:55,000
+Like this.
+
+60
+00:04:55,000 --> 00:04:58,000
+Between one point and another point, there are two functions.
+
+61
+00:04:58,000 --> 00:05:02,000
+But sometimes, for example, we just said that the example of the brain area.
+
+62
+00:05:02,000 --> 00:05:03,000
+We have a stimulus.
+
+63
+00:05:03,000 --> 00:05:07,000
+There may be three different areas of the brain area that light up at the same time.
+
+64
+00:05:07,000 --> 00:05:10,000
+At this time, we have three points that work for each other.
+
+65
+00:05:10,000 --> 00:05:13,000
+These things may be more suitable.
+
+66
+00:05:13,000 --> 00:05:18,000
+Described by the so-called Higher-Order Network Analysis.
+
+67
+00:05:19,000 --> 00:05:23,000
+So, uh, this article talks about some, uh, different, uh, data.
+
+68
+00:05:23,000 --> 00:05:27,000
+How could there be some higher-order things in it?
+
+69
+00:05:27,000 --> 00:05:31,000
+And then, uh, uh, what model to choose, and so on.
+
+70
+00:05:31,000 --> 00:05:40,000
+So, uh, my report today will focus on, uh, this single-body review.
+
+71
+00:05:40,000 --> 00:05:44,000
+It's called Symbiotic Complex.
+
+72
+00:05:45,000 --> 00:05:49,000
+Right, and if there's any questions, you can interrupt me.
+
+73
+00:05:49,000 --> 00:05:55,000
+Okay, and I don't know what you think of when you hear Network Science.
+
+74
+00:05:55,000 --> 00:05:58,000
+And then, um, this is a recently published book.
+
+75
+00:05:58,000 --> 00:06:02,000
+And then, uh, the last chapter talks about, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um, um.
+
+76
+00:06:02,000 --> 00:06:06,000
+Talk about, uh, how to look forward in network science, and so on.
+
+77
+00:06:06,000 --> 00:06:10,000
+And then he sorted out some different areas of the last 20 years.
+
+78
+00:06:10,000 --> 00:06:14,000
+Um, this is the field of paper, and then the number of them.
+
+79
+00:06:14,000 --> 00:06:18,000
+And then we can see, for example, uh, about infectious diseases.
+
+80
+00:06:18,000 --> 00:06:21,000
+Infectious diseases are, of course, a thing that has to do with the Internet.
+
+81
+00:06:21,000 --> 00:06:25,000
+There's a lot of that in the last year or two.
+
+82
+00:06:25,000 --> 00:06:30,000
+So, um, um, what I'm going to talk about today is more on this high-level Internet.
+
+83
+00:06:30,000 --> 00:06:35,000
+It's Hypergraph or, uh, Symbiotic Complex.
+
+84
+00:06:35,000 --> 00:06:41,000
+Um, there's been a lot of that recently, but not as much as, uh, uh, Epidemic.
+
+85
+00:06:41,000 --> 00:06:44,000
+So, um, there's a lot of the same kind of numbers.
+
+86
+00:06:44,000 --> 00:06:47,000
+So, um, if you're interested, you can look it up.
+
+87
+00:06:47,000 --> 00:06:51,000
+And then, uh, I'm with, uh, uh, Li Zhengde from the University of Chenggong.
+
+88
+00:06:51,000 --> 00:06:53,000
+The teacher also translated a small book.
+
+89
+00:06:53,000 --> 00:06:55,000
+And then this is also a link that you can click on.
+
+90
+00:06:55,000 --> 00:06:58,000
+You can, uh, it's Chinese, and then there's a lot of examples.
+
+91
+00:06:58,000 --> 00:07:01,000
+You can click on it.
+
+92
+00:07:01,000 --> 00:07:06,000
+So, um, before I start this talk, I want to thank my instructors.
+
+93
+00:07:06,000 --> 00:07:09,000
+I have two instructors, Josh and Dan.
+
+94
+00:07:09,000 --> 00:07:12,000
+And then they, um, I'm from Computer Science.
+
+95
+00:07:12,000 --> 00:07:18,000
+And then, but they, uh, they have a strategy in math and biology.
+
+96
+00:07:18,000 --> 00:07:25,000
+So, um, I'd like to thank the authors of this paper.
+
+97
+00:07:25,000 --> 00:07:28,000
+Especially, uh, Ronga and Aleche.
+
+98
+00:07:28,000 --> 00:07:31,000
+Because, uh, I was communicating with the two of them.
+
+99
+00:07:31,000 --> 00:07:34,000
+And then I found out that, uh, they did this article.
+
+100
+00:07:34,000 --> 00:07:36,000
+There's a, there's an open problem.
+
+101
+00:07:36,000 --> 00:07:41,000
+And then, um, um, so I started doing this open problem.
+
+102
+00:07:41,000 --> 00:07:44,000
+Okay.
+
+103
+00:07:44,000 --> 00:07:49,000
+So, um, now we're going to talk about what I just said.
+
+104
+00:07:49,000 --> 00:07:54,000
+There are some, uh, uh, ways to describe a complex system.
+
+105
+00:07:55,000 --> 00:07:59,000
+And then I try to list, I try to divide it into three types.
+
+106
+00:07:59,000 --> 00:08:02,000
+Uh, graph, or this.
+
+107
+00:08:02,000 --> 00:08:05,000
+Hypergraph, or this.
+
+108
+00:08:05,000 --> 00:08:08,000
+That's it.
+
+109
+00:08:08,000 --> 00:08:12,000
+Um, these three things are actually a, uh, a model choice.
+
+110
+00:08:12,000 --> 00:08:14,000
+That is, what data do you see?
+
+111
+00:08:14,000 --> 00:08:17,000
+You can choose which model you want to use.
+
+112
+00:08:17,000 --> 00:08:18,000
+And then you use that model.
+
+113
+00:08:18,000 --> 00:08:21,000
+Maybe you get the benefits of using that model.
+
+114
+00:08:21,000 --> 00:08:24,000
+But maybe you lose some of the other properties.
+
+115
+00:08:24,000 --> 00:08:28,000
+So, uh, uh, uh, this is a very good paper.
+
+116
+00:08:28,000 --> 00:08:31,000
+Uh, it should be used.
+
+117
+00:08:31,000 --> 00:08:34,000
+Uh, what kind of data should be used at what time?
+
+118
+00:08:34,000 --> 00:08:38,000
+So, uh, let's say, uh, I see a data today.
+
+119
+00:08:38,000 --> 00:08:43,000
+Um, it's the data from the author and their paper.
+
+120
+00:08:43,000 --> 00:08:44,000
+So that's actually what it is.
+
+121
+00:08:44,000 --> 00:08:47,000
+Which papers were issued by which authors?
+
+122
+00:08:47,000 --> 00:08:49,000
+Well, what about this data?
+
+123
+00:08:49,000 --> 00:08:52,000
+Um, his, uh, input is, is determined.
+
+124
+00:08:52,000 --> 00:08:59,000
+That is, um, um, I know which authors I have in my data.
+
+125
+00:08:59,000 --> 00:09:03,000
+But, uh, because I want to ask different questions.
+
+126
+00:09:03,000 --> 00:09:08,000
+I can have different, uh, data, uh, data representation.
+
+127
+00:09:08,000 --> 00:09:11,000
+For example, I can ask, uh, these two authors.
+
+128
+00:09:11,000 --> 00:09:14,000
+Have you ever written a paper together?
+
+129
+00:09:14,000 --> 00:09:16,000
+So this is you choose two people.
+
+130
+00:09:16,000 --> 00:09:17,000
+And then they have written a paper.
+
+131
+00:09:17,000 --> 00:09:19,000
+Then you put it together.
+
+132
+00:09:19,000 --> 00:09:21,000
+At that time, you will get this data.
+
+133
+00:09:21,000 --> 00:09:24,000
+You can see if 1 and 2 have written a paper.
+
+134
+00:09:24,000 --> 00:09:25,000
+And then there's writing on it.
+
+135
+00:09:25,000 --> 00:09:27,000
+2 and 4 have written a paper.
+
+136
+00:09:27,000 --> 00:09:28,000
+And then there's a lot here.
+
+137
+00:09:28,000 --> 00:09:31,000
+For example, 1 and 2, 2 and 3, and 1 and 3 also have.
+
+138
+00:09:31,000 --> 00:09:34,000
+1 and 2, 2 and 3, 1 and 3, and then 3 and 4.
+
+139
+00:09:34,000 --> 00:09:35,000
+That's it.
+
+140
+00:09:35,000 --> 00:09:39,000
+That kind of data is a, uh, a graph.
+
+141
+00:09:39,000 --> 00:09:41,000
+This is a graph.
+
+142
+00:09:41,000 --> 00:09:44,000
+Then, um, you can ask a little more detail.
+
+143
+00:09:44,000 --> 00:09:50,000
+For example, you say, do these people have, um, is to write a paper.
+
+144
+00:09:50,000 --> 00:09:55,000
+So, at this time, there's something called HyperEdge.
+
+145
+00:09:55,000 --> 00:09:57,000
+The extension of Edge is called HyperEdge.
+
+146
+00:09:57,000 --> 00:10:00,000
+Because in Edge, you have to choose two points.
+
+147
+00:10:00,000 --> 00:10:03,000
+But in HyperEdge, you can choose n points.
+
+148
+00:10:03,000 --> 00:10:05,000
+At this time, you choose.
+
+149
+00:10:05,000 --> 00:10:06,000
+In fact, it is four pieces of paper.
+
+150
+00:10:06,000 --> 00:10:07,000
+You choose four.
+
+151
+00:10:08,000 --> 00:10:10,000
+1, 2, 2, 4, and then 1, 2, 3.
+
+152
+00:10:10,000 --> 00:10:13,000
+Because now it's, uh, HyperGraph.
+
+153
+00:10:13,000 --> 00:10:15,000
+So you can choose to come in.
+
+154
+00:10:15,000 --> 00:10:16,000
+That's it.
+
+155
+00:10:16,000 --> 00:10:19,000
+Then there's a HyperGraph at this time.
+
+156
+00:10:19,000 --> 00:10:26,000
+Then, um, you can also use Simplicial Complex to describe.
+
+157
+00:10:26,000 --> 00:10:28,000
+Um, this Simplicial Complex to describe.
+
+158
+00:10:28,000 --> 00:10:31,000
+He's asking, uh, um.
+
+159
+00:10:31,000 --> 00:10:33,000
+It's a little, a little rough.
+
+160
+00:10:33,000 --> 00:10:37,000
+So, um, uh, these people have written a piece of paper.
+
+161
+00:10:37,000 --> 00:10:39,000
+So, at this time, he's actually like HyperGraph.
+
+162
+00:10:39,000 --> 00:10:41,000
+He just chose n people up.
+
+163
+00:10:41,000 --> 00:10:44,000
+And then it's called a Simplex.
+
+164
+00:10:44,000 --> 00:10:48,000
+But this Simplicial Complex has a definition in math.
+
+165
+00:10:48,000 --> 00:10:51,000
+It's defined as, um, you.
+
+166
+00:10:51,000 --> 00:10:54,000
+After choosing a Simplex.
+
+167
+00:10:54,000 --> 00:11:00,000
+You're going to put all the smaller, um, all the smaller Simplexes.
+
+168
+00:11:00,000 --> 00:11:04,000
+All the Simplexes are included in this, this Simplicial Complex.
+
+169
+00:11:04,000 --> 00:11:08,000
+For example, an example is if I choose 1, 2, 3.
+
+170
+00:11:08,000 --> 00:11:13,000
+For example, 1, 2, 3, this, this, um.
+
+171
+00:11:13,000 --> 00:11:14,000
+Everyone writes paper.
+
+172
+00:11:14,000 --> 00:11:17,000
+This thing is a, uh, a Simplex.
+
+173
+00:11:17,000 --> 00:11:19,000
+That's in this data.
+
+174
+00:11:19,000 --> 00:11:23,000
+I have to include 1, 2, 2, 3, 1, 3, and then 1, 2, 3.
+
+175
+00:11:23,000 --> 00:11:25,000
+Mathematically, it's like this.
+
+176
+00:11:25,000 --> 00:11:28,000
+So, uh, if we have this data.
+
+177
+00:11:28,000 --> 00:11:32,000
+In fact, it's in this Simplicial Complex.
+
+178
+00:11:32,000 --> 00:11:35,000
+It's going to be so many, so many.
+
+179
+00:11:35,000 --> 00:11:38,000
+All the possible things are in it.
+
+180
+00:11:38,000 --> 00:11:45,000
+2, 4, 1, 2, 3, 3, 4, 2, 4, 1, 1, 3, and then 1, 2, 1, 2, 1, 3, 2, 3.
+
+181
+00:11:45,000 --> 00:11:49,000
+It looks like a very, very.
+
+182
+00:11:49,000 --> 00:11:52,000
+It's a big construct.
+
+183
+00:11:52,000 --> 00:11:55,000
+And then, uh, it's because of his definition.
+
+184
+00:11:55,000 --> 00:11:59,000
+That is, all the smaller subsets must be included in it.
+
+185
+00:11:59,000 --> 00:12:02,000
+That, uh, that's because of that.
+
+186
+00:12:02,000 --> 00:12:05,000
+We can use the biggest Simplex.
+
+187
+00:12:05,000 --> 00:12:08,000
+And then we call it Facets.
+
+188
+00:12:08,000 --> 00:12:12,000
+To represent a Simplicial Complex.
+
+189
+00:12:12,000 --> 00:12:13,000
+What does that mean?
+
+190
+00:12:13,000 --> 00:12:14,000
+For example, we see this now.
+
+191
+00:12:14,000 --> 00:12:17,000
+It looks like a lot of this data.
+
+192
+00:12:17,000 --> 00:12:19,000
+Then we can choose 1, 2, 3.
+
+193
+00:12:19,000 --> 00:12:21,000
+Because 1, 2, 3 looks big.
+
+194
+00:12:21,000 --> 00:12:23,000
+After you choose 1, 2, 3.
+
+195
+00:12:23,000 --> 00:12:26,000
+It automatically includes 1, 2, 1, 3, 2, 3.
+
+196
+00:12:26,000 --> 00:12:28,000
+So, in fact, there are some people who can.
+
+197
+00:12:28,000 --> 00:12:31,000
+Uh, don't, don't choose it.
+
+198
+00:12:31,000 --> 00:12:34,000
+Then 2, 4 will be less than 10 and 30.
+
+199
+00:12:34,000 --> 00:12:37,000
+So, in fact, if, uh, this data.
+
+200
+00:12:37,000 --> 00:12:40,000
+If you want to use Simplicial Complex to express it.
+
+201
+00:12:40,000 --> 00:12:43,000
+You just need to say these three.
+
+202
+00:12:43,000 --> 00:12:46,000
+Uh, these three Facets are fine.
+
+203
+00:12:46,000 --> 00:12:50,000
+That, uh, so this time I'll get one like this.
+
+204
+00:12:50,000 --> 00:12:53,000
+One, one expression like this.
+
+205
+00:12:53,000 --> 00:12:56,000
+That's what I'm talking about today.
+
+206
+00:12:56,000 --> 00:12:58,000
+This work is more related.
+
+207
+00:12:58,000 --> 00:13:00,000
+There are some other, uh.
+
+208
+00:13:00,000 --> 00:13:03,000
+The term is called, uh.
+
+209
+00:13:03,000 --> 00:13:04,000
+Degree Sequence.
+
+210
+00:13:04,000 --> 00:13:06,000
+Or the degree distribution.
+
+211
+00:13:06,000 --> 00:13:08,000
+Then, or, Size Sequence.
+
+212
+00:13:08,000 --> 00:13:10,000
+Uh, Size Distribution.
+
+213
+00:13:10,000 --> 00:13:12,000
+I don't know what to do.
+
+214
+00:13:12,000 --> 00:13:14,000
+I think I'll use Side Sequence.
+
+215
+00:13:14,000 --> 00:13:16,000
+Um, what does that mean?
+
+216
+00:13:16,000 --> 00:13:18,000
+Um, Degree Sequence is, uh.
+
+217
+00:13:18,000 --> 00:13:20,000
+If we look at the example of the picture,
+
+218
+00:13:20,000 --> 00:13:22,000
+Degree Sequence is, uh.
+
+219
+00:13:22,000 --> 00:13:24,000
+How many neighbors does each point connect to?
+
+220
+00:13:24,000 --> 00:13:26,000
+For example, this point is connected to 2.
+
+221
+00:13:26,000 --> 00:13:28,000
+And then this point is connected to three neighbors.
+
+222
+00:13:28,000 --> 00:13:30,000
+So this 3, 2.
+
+223
+00:13:30,000 --> 00:13:31,000
+3, 2.
+
+224
+00:13:31,000 --> 00:13:33,000
+These four numbers make up.
+
+225
+00:13:33,000 --> 00:13:36,000
+The Degree Sequence of this picture.
+
+226
+00:13:36,000 --> 00:13:38,000
+Um, this sequence is not important.
+
+227
+00:13:38,000 --> 00:13:40,000
+Because it's a distribution.
+
+228
+00:13:40,000 --> 00:13:42,000
+That, but, uh.
+
+229
+00:13:42,000 --> 00:13:44,000
+This thing, if it's in this.
+
+230
+00:13:44,000 --> 00:13:46,000
+In the world of Simplicial Complex.
+
+231
+00:13:46,000 --> 00:13:48,000
+I'm going to be 1, 2, 2, 2.
+
+232
+00:13:48,000 --> 00:13:50,000
+The reason is because, uh.
+
+233
+00:13:50,000 --> 00:13:52,000
+This A1, this author.
+
+234
+00:13:52,000 --> 00:13:54,000
+He's only connected to one side.
+
+235
+00:13:54,000 --> 00:13:56,000
+It's 1, 2, 3, this side.
+
+236
+00:13:56,000 --> 00:13:58,000
+So, uh, he's 1.
+
+237
+00:13:58,000 --> 00:14:00,000
+It's like a hand sticking out.
+
+238
+00:14:00,000 --> 00:14:02,000
+And then, like, this A2, this author.
+
+239
+00:14:02,000 --> 00:14:04,000
+He's connected to this.
+
+240
+00:14:04,000 --> 00:14:06,000
+This 1, 2, 3, this.
+
+241
+00:14:06,000 --> 00:14:08,000
+Simplex.
+
+242
+00:14:08,000 --> 00:14:10,000
+With 2, 4, this Simplex.
+
+243
+00:14:10,000 --> 00:14:12,000
+So his Degree Sequence is.
+
+244
+00:14:12,000 --> 00:14:14,000
+Uh, his Degree is 2.
+
+245
+00:14:14,000 --> 00:14:16,000
+The above is the definition.
+
+246
+00:14:16,000 --> 00:14:18,000
+It's about this.
+
+247
+00:14:18,000 --> 00:14:20,000
+Um, how to say it on a Simplicial Complex.
+
+248
+00:14:20,000 --> 00:14:22,000
+His Degree.
+
+249
+00:14:22,000 --> 00:14:24,000
+What is the sequence definition?
+
+250
+00:14:24,000 --> 00:14:26,000
+That, uh, related.
+
+251
+00:14:26,000 --> 00:14:28,000
+There is also a word called Side Sequence.
+
+252
+00:14:30,000 --> 00:14:32,000
+Um, that is to say.
+
+253
+00:14:32,000 --> 00:14:34,000
+Every side of it.
+
+254
+00:14:34,000 --> 00:14:36,000
+That is, every interaction of it.
+
+255
+00:14:36,000 --> 00:14:38,000
+What is its size?
+
+256
+00:14:38,000 --> 00:14:40,000
+Uh, actually, I should list it here.
+
+257
+00:14:40,000 --> 00:14:42,000
+Um, because this is a picture.
+
+258
+00:14:42,000 --> 00:14:44,000
+This picture, every picture is.
+
+259
+00:14:44,000 --> 00:14:46,000
+Uh, his Interaction.
+
+260
+00:14:46,000 --> 00:14:48,000
+It's made up of two.
+
+261
+00:14:48,000 --> 00:14:50,000
+So this picture is a few sides.
+
+262
+00:14:50,000 --> 00:14:52,000
+There are a few 2s.
+
+263
+00:14:52,000 --> 00:14:54,000
+For example, 2, 2, 2, 2, 2 is 5.
+
+264
+00:14:54,000 --> 00:14:56,000
+5 2s make up this Side Sequence.
+
+265
+00:14:56,000 --> 00:14:58,000
+That's it.
+
+266
+00:14:58,000 --> 00:15:00,000
+If it's Hypergraph, it's 3.
+
+267
+00:15:00,000 --> 00:15:02,000
+Because there's a 1, 2, 3.
+
+268
+00:15:02,000 --> 00:15:04,000
+Interaction.
+
+269
+00:15:04,000 --> 00:15:06,000
+3, 2, 2, 2.
+
+270
+00:15:06,000 --> 00:15:08,000
+Uh, Simplicial Complex.
+
+271
+00:15:08,000 --> 00:15:10,000
+Because I have three now.
+
+272
+00:15:10,000 --> 00:15:12,000
+So it's 3, 2, 2.
+
+273
+00:15:14,000 --> 00:15:16,000
+Okay, um.
+
+274
+00:15:16,000 --> 00:15:18,000
+Is there a problem with the current definition?
+
+275
+00:15:24,000 --> 00:15:26,000
+Okay, um.
+
+276
+00:15:26,000 --> 00:15:28,000
+I.
+
+277
+00:15:28,000 --> 00:15:30,000
+I.
+
+278
+00:15:30,000 --> 00:15:32,000
+The job I'm going to talk about today.
+
+279
+00:15:32,000 --> 00:15:34,000
+Although I will go through a lot of other related information.
+
+280
+00:15:34,000 --> 00:15:36,000
+Uh, it's actually like this.
+
+281
+00:15:36,000 --> 00:15:38,000
+Um, I'm going to.
+
+282
+00:15:38,000 --> 00:15:40,000
+My job is.
+
+283
+00:15:40,000 --> 00:15:42,000
+Suppose I was given.
+
+284
+00:15:42,000 --> 00:15:44,000
+Two groups of Sequence.
+
+285
+00:15:44,000 --> 00:15:46,000
+One group is.
+
+286
+00:15:46,000 --> 00:15:48,000
+2, 2, 2, 1.
+
+287
+00:15:48,000 --> 00:15:50,000
+And then the other group is.
+
+288
+00:15:50,000 --> 00:15:52,000
+3, 2, 2.
+
+289
+00:15:52,000 --> 00:15:54,000
+Can I use these two groups?
+
+290
+00:15:54,000 --> 00:15:56,000
+The sequence of integers.
+
+291
+00:15:56,000 --> 00:15:58,000
+To find a Simplicial Complex.
+
+292
+00:15:58,000 --> 00:16:00,000
+Make it.
+
+293
+00:16:00,000 --> 00:16:02,000
+The degree and.
+
+294
+00:16:02,000 --> 00:16:04,000
+This.
+
+295
+00:16:04,000 --> 00:16:06,000
+The order of size is just the two I just gave.
+
+296
+00:16:06,000 --> 00:16:08,000
+Sequence.
+
+297
+00:16:08,000 --> 00:16:10,000
+That.
+
+298
+00:16:10,000 --> 00:16:12,000
+Um.
+
+299
+00:16:12,000 --> 00:16:14,000
+Not all.
+
+300
+00:16:14,000 --> 00:16:16,000
+You can.
+
+301
+00:16:16,000 --> 00:16:18,000
+Find a structure like this.
+
+302
+00:16:18,000 --> 00:16:20,000
+Can correspond to each other.
+
+303
+00:16:20,000 --> 00:16:22,000
+Then I'll say I can't find it.
+
+304
+00:16:22,000 --> 00:16:24,000
+Then if I can find it.
+
+305
+00:16:24,000 --> 00:16:26,000
+That's good.
+
+306
+00:16:26,000 --> 00:16:28,000
+I'll say why it's good.
+
+307
+00:16:28,000 --> 00:16:30,000
+Okay.
+
+308
+00:16:30,000 --> 00:16:32,000
+That, um.
+
+309
+00:16:34,000 --> 00:16:36,000
+So we.
+
+310
+00:16:36,000 --> 00:16:38,000
+Yes, I'm going to enter the next video.
+
+311
+00:16:38,000 --> 00:16:40,000
+So now we see this.
+
+312
+00:16:40,000 --> 00:16:42,000
+This Simplicial Complex.
+
+313
+00:16:42,000 --> 00:16:44,000
+Because it.
+
+314
+00:16:44,000 --> 00:16:46,000
+All the little subsets have to be included.
+
+315
+00:16:46,000 --> 00:16:48,000
+It looks like a very complicated thing.
+
+316
+00:16:48,000 --> 00:16:50,000
+But it actually has some benefits.
+
+317
+00:16:50,000 --> 00:16:52,000
+This is my first.
+
+318
+00:16:52,000 --> 00:16:54,000
+Uh, the first interlude is.
+
+319
+00:16:54,000 --> 00:16:56,000
+Um, insert.
+
+320
+00:16:56,000 --> 00:16:58,000
+Let everyone take a break.
+
+321
+00:16:58,000 --> 00:17:00,000
+The second benefit.
+
+322
+00:17:00,000 --> 00:17:02,000
+Because.
+
+323
+00:17:02,000 --> 00:17:04,000
+There is a field called Topological Data Analysis.
+
+324
+00:17:04,000 --> 00:17:06,000
+It can.
+
+325
+00:17:06,000 --> 00:17:08,000
+Use.
+
+326
+00:17:08,000 --> 00:17:10,000
+I include these.
+
+327
+00:17:10,000 --> 00:17:12,000
+Smaller subsets.
+
+328
+00:17:12,000 --> 00:17:14,000
+Then to calculate.
+
+329
+00:17:14,000 --> 00:17:16,000
+Some of the structures of this data.
+
+330
+00:17:16,000 --> 00:17:18,000
+For example, it has.
+
+331
+00:17:18,000 --> 00:17:20,000
+A few holes.
+
+332
+00:17:20,000 --> 00:17:22,000
+Like I'll give you an example in a minute.
+
+333
+00:17:22,000 --> 00:17:24,000
+This.
+
+334
+00:17:24,000 --> 00:17:26,000
+This.
+
+335
+00:17:26,000 --> 00:17:28,000
+The cup actually has a hole.
+
+336
+00:17:28,000 --> 00:17:30,000
+Here.
+
+337
+00:17:30,000 --> 00:17:32,000
+I put a hole in this place.
+
+338
+00:17:32,000 --> 00:17:34,000
+How to get the data.
+
+339
+00:17:34,000 --> 00:17:36,000
+How to define it.
+
+340
+00:17:36,000 --> 00:17:38,000
+How to define.
+
+341
+00:17:38,000 --> 00:17:40,000
+Find a way to describe it.
+
+342
+00:17:40,000 --> 00:17:42,000
+And then describe it.
+
+343
+00:17:42,000 --> 00:17:44,000
+You have to find out how many holes it has.
+
+344
+00:17:44,000 --> 00:17:46,000
+So that we can distinguish these data.
+
+345
+00:17:46,000 --> 00:17:48,000
+What's the difference?
+
+346
+00:17:48,000 --> 00:17:50,000
+For example, like.
+
+347
+00:17:50,000 --> 00:17:52,000
+Um, for example, I know.
+
+348
+00:17:52,000 --> 00:17:54,000
+Um.
+
+349
+00:17:54,000 --> 00:17:56,000
+Um, this is a.
+
+350
+00:17:56,000 --> 00:17:58,000
+This is a paper, and then he is.
+
+351
+00:17:58,000 --> 00:18:00,000
+Um, when the U.S. presidential election.
+
+352
+00:18:00,000 --> 00:18:02,000
+Um, in.
+
+353
+00:18:02,000 --> 00:18:04,000
+Some small bacteria in each state.
+
+354
+00:18:04,000 --> 00:18:06,000
+And then they might.
+
+355
+00:18:06,000 --> 00:18:08,000
+Different bacteria, he might vote red.
+
+356
+00:18:08,000 --> 00:18:10,000
+Or blue.
+
+357
+00:18:10,000 --> 00:18:12,000
+Can I use it?
+
+358
+00:18:12,000 --> 00:18:14,000
+Topology.
+
+359
+00:18:14,000 --> 00:18:16,000
+Find out.
+
+360
+00:18:16,000 --> 00:18:18,000
+Is there any.
+
+361
+00:18:18,000 --> 00:18:20,000
+Special structure is, for example, a blue sea.
+
+362
+00:18:20,000 --> 00:18:22,000
+In fact, there may be some red bacteria.
+
+363
+00:18:22,000 --> 00:18:24,000
+Um, especially like.
+
+364
+00:18:24,000 --> 00:18:26,000
+Vote for the Republican Party.
+
+365
+00:18:26,000 --> 00:18:28,000
+Then, or just analyze this.
+
+366
+00:18:28,000 --> 00:18:30,000
+Um.
+
+367
+00:18:30,000 --> 00:18:32,000
+All the papers that make up this data.
+
+368
+00:18:32,000 --> 00:18:34,000
+What shape is there?
+
+369
+00:18:36,000 --> 00:18:38,000
+Um, yes.
+
+370
+00:18:38,000 --> 00:18:40,000
+Um.
+
+371
+00:18:40,000 --> 00:18:42,000
+If you are interested in this TDA.
+
+372
+00:18:42,000 --> 00:18:44,000
+You can go to this website.
+
+373
+00:18:44,000 --> 00:18:46,000
+He has a lot of.
+
+374
+00:18:46,000 --> 00:18:48,000
+The.
+
+375
+00:18:48,000 --> 00:18:50,000
+Talk is the same as Tyra.
+
+376
+00:18:50,000 --> 00:18:52,000
+Um, invite people to share.
+
+377
+00:18:52,000 --> 00:18:54,000
+After sharing, put it on YouTube.
+
+378
+00:18:54,000 --> 00:18:56,000
+Then you can see all kinds of.
+
+379
+00:18:56,000 --> 00:18:58,000
+Using TDA to study.
+
+380
+00:18:58,000 --> 00:19:00,000
+Some strange data examples.
+
+381
+00:19:00,000 --> 00:19:02,000
+The example I'm talking about here.
+
+382
+00:19:02,000 --> 00:19:04,000
+You can find it in this paper.
+
+383
+00:19:04,000 --> 00:19:06,000
+Reference.
+
+384
+00:19:06,000 --> 00:19:08,000
+Um, other than this.
+
+385
+00:19:08,000 --> 00:19:10,000
+Topology is related to.
+
+386
+00:19:10,000 --> 00:19:12,000
+Um, put.
+
+387
+00:19:12,000 --> 00:19:14,000
+The kind of picture I just said.
+
+388
+00:19:14,000 --> 00:19:16,000
+The phenomenon that happened above.
+
+389
+00:19:16,000 --> 00:19:18,000
+Because of the picture.
+
+390
+00:19:18,000 --> 00:19:20,000
+Um, it's a pairwise.
+
+391
+00:19:20,000 --> 00:19:22,000
+Then extend to.
+
+392
+00:19:22,000 --> 00:19:24,000
+Um.
+
+393
+00:19:24,000 --> 00:19:26,000
+Not just pairwise, but three or four or more.
+
+394
+00:19:26,000 --> 00:19:28,000
+That.
+
+395
+00:19:28,000 --> 00:19:30,000
+Um, he will have some examples.
+
+396
+00:19:30,000 --> 00:19:32,000
+I can't.
+
+397
+00:19:32,000 --> 00:19:34,000
+In a very short time.
+
+398
+00:19:34,000 --> 00:19:36,000
+Finished.
+
+399
+00:19:36,000 --> 00:19:38,000
+That is to say, what interesting examples do they have?
+
+400
+00:19:38,000 --> 00:19:40,000
+But most of the time.
+
+401
+00:19:40,000 --> 00:19:42,000
+Um.
+
+402
+00:19:42,000 --> 00:19:44,000
+In the past, in the world of graph.
+
+403
+00:19:44,000 --> 00:19:46,000
+He will have some dynamical models.
+
+404
+00:19:46,000 --> 00:19:48,000
+For example.
+
+405
+00:19:48,000 --> 00:19:50,000
+For example, there are two agents.
+
+406
+00:19:50,000 --> 00:19:52,000
+When they are together.
+
+407
+00:19:52,000 --> 00:19:54,000
+What kind of interaction?
+
+408
+00:19:54,000 --> 00:19:56,000
+For example.
+
+409
+00:19:56,000 --> 00:19:58,000
+For example, I want to buy a watch.
+
+410
+00:19:58,000 --> 00:20:00,000
+Then, but I'm not sure what brand I want to buy.
+
+411
+00:20:00,000 --> 00:20:02,000
+Then every time I look at my friends.
+
+412
+00:20:02,000 --> 00:20:04,000
+What brand of watch do they wear?
+
+413
+00:20:04,000 --> 00:20:06,000
+Then decide.
+
+414
+00:20:06,000 --> 00:20:08,000
+It's a majority vote.
+
+415
+00:20:08,000 --> 00:20:10,000
+To decide what brand I should buy.
+
+416
+00:20:10,000 --> 00:20:12,000
+This.
+
+417
+00:20:12,000 --> 00:20:14,000
+This is a model.
+
+418
+00:20:14,000 --> 00:20:16,000
+The main.
+
+419
+00:20:16,000 --> 00:20:18,000
+The main component is.
+
+420
+00:20:18,000 --> 00:20:20,000
+Uh, you have to look at your friends.
+
+421
+00:20:20,000 --> 00:20:22,000
+That's the effect between the two.
+
+422
+00:20:22,000 --> 00:20:24,000
+There are a lot of these two.
+
+423
+00:20:24,000 --> 00:20:26,000
+The model of the effect between the two.
+
+424
+00:20:26,000 --> 00:20:28,000
+Extended to.
+
+425
+00:20:28,000 --> 00:20:30,000
+Uh.
+
+426
+00:20:30,000 --> 00:20:32,000
+More than two.
+
+427
+00:20:32,000 --> 00:20:34,000
+The effect.
+
+428
+00:20:34,000 --> 00:20:36,000
+Then there will be some interesting phenomena.
+
+429
+00:20:36,000 --> 00:20:38,000
+So, um, this is.
+
+430
+00:20:38,000 --> 00:20:40,000
+Um, there are some related papers.
+
+431
+00:20:40,000 --> 00:20:42,000
+It's all about this data.
+
+432
+00:20:42,000 --> 00:20:44,000
+Okay.
+
+433
+00:20:44,000 --> 00:20:46,000
+Back to my original topic.
+
+434
+00:20:46,000 --> 00:20:48,000
+I just introduced.
+
+435
+00:20:48,000 --> 00:20:50,000
+I just introduced the degree and size.
+
+436
+00:20:50,000 --> 00:20:52,000
+Sequence.
+
+437
+00:20:52,000 --> 00:20:54,000
+Um, these two things are used to.
+
+438
+00:20:54,000 --> 00:20:56,000
+Describe a.
+
+439
+00:20:56,000 --> 00:20:58,000
+Symbiotic complex structure.
+
+440
+00:20:58,000 --> 00:21:00,000
+So why do we.
+
+441
+00:21:00,000 --> 00:21:02,000
+I'm interested in them.
+
+442
+00:21:02,000 --> 00:21:04,000
+Uh, because these things are.
+
+443
+00:21:04,000 --> 00:21:06,000
+It's all very local.
+
+444
+00:21:06,000 --> 00:21:08,000
+That is.
+
+445
+00:21:08,000 --> 00:21:10,000
+For example, I want to go back.
+
+446
+00:21:10,000 --> 00:21:12,000
+Can I come back here?
+
+447
+00:21:12,000 --> 00:21:14,000
+It's all a local structure.
+
+448
+00:21:18,000 --> 00:21:20,000
+That is.
+
+449
+00:21:20,000 --> 00:21:22,000
+I don't have to know all of me.
+
+450
+00:21:22,000 --> 00:21:24,000
+What does all the data look like?
+
+451
+00:21:24,000 --> 00:21:26,000
+I just need to know.
+
+452
+00:21:26,000 --> 00:21:28,000
+This person has several.
+
+453
+00:21:28,000 --> 00:21:30,000
+Several changes.
+
+454
+00:21:30,000 --> 00:21:32,000
+Or say.
+
+455
+00:21:32,000 --> 00:21:34,000
+A group of three people.
+
+456
+00:21:34,000 --> 00:21:36,000
+This is a local structure.
+
+457
+00:21:36,000 --> 00:21:38,000
+Then, um.
+
+458
+00:21:38,000 --> 00:21:40,000
+We're interested in them.
+
+459
+00:21:40,000 --> 00:21:42,000
+It's because of these local structures.
+
+460
+00:21:42,000 --> 00:21:44,000
+Maybe with them.
+
+461
+00:21:44,000 --> 00:21:46,000
+To do one thing together.
+
+462
+00:21:46,000 --> 00:21:48,000
+There's a relationship.
+
+463
+00:21:48,000 --> 00:21:50,000
+So we want to put them together.
+
+464
+00:21:50,000 --> 00:21:52,000
+Establish a link.
+
+465
+00:21:52,000 --> 00:21:54,000
+That, um.
+
+466
+00:21:54,000 --> 00:21:56,000
+What about this thing?
+
+467
+00:21:56,000 --> 00:21:58,000
+Because I often want to compare.
+
+468
+00:21:58,000 --> 00:22:00,000
+I'm in the world of Symbiotic Complex.
+
+469
+00:22:00,000 --> 00:22:02,000
+Then in the world of graph.
+
+470
+00:22:02,000 --> 00:22:04,000
+Uh, everyone is like this.
+
+471
+00:22:04,000 --> 00:22:06,000
+Asking questions.
+
+472
+00:22:06,000 --> 00:22:08,000
+Um, in the world of graph.
+
+473
+00:22:08,000 --> 00:22:10,000
+There's a model called Configuration Model.
+
+474
+00:22:10,000 --> 00:22:12,000
+What does that mean?
+
+475
+00:22:12,000 --> 00:22:14,000
+Um, I gave you a graph today.
+
+476
+00:22:14,000 --> 00:22:16,000
+Then I know this graph.
+
+477
+00:22:16,000 --> 00:22:18,000
+Inside the degree sequence.
+
+478
+00:22:18,000 --> 00:22:20,000
+It's just telling me.
+
+479
+00:22:20,000 --> 00:22:22,000
+Every point he has a few.
+
+480
+00:22:22,000 --> 00:22:24,000
+A few neighbors.
+
+481
+00:22:24,000 --> 00:22:26,000
+This degree sequence.
+
+482
+00:22:26,000 --> 00:22:28,000
+It's a very local one.
+
+483
+00:22:28,000 --> 00:22:30,000
+That's it.
+
+484
+00:22:30,000 --> 00:22:32,000
+Sometimes, this network, he might have some.
+
+485
+00:22:32,000 --> 00:22:34,000
+He might have some properties.
+
+486
+00:22:34,000 --> 00:22:36,000
+Yes, I'm not sure how special he is.
+
+487
+00:22:36,000 --> 00:22:38,000
+Or is it that he's with this?
+
+488
+00:22:38,000 --> 00:22:40,000
+The local degree has a lot to do with it.
+
+489
+00:22:40,000 --> 00:22:42,000
+So, I can use.
+
+490
+00:22:42,000 --> 00:22:44,000
+Configuration Model.
+
+491
+00:22:44,000 --> 00:22:46,000
+This network.
+
+492
+00:22:46,000 --> 00:22:48,000
+Randomization is randomizing a lot.
+
+493
+00:22:48,000 --> 00:22:50,000
+A lot of different networks.
+
+494
+00:22:50,000 --> 00:22:52,000
+But, uh, I ask for these different networks.
+
+495
+00:22:52,000 --> 00:22:54,000
+Their degree sequence is all with me.
+
+496
+00:22:54,000 --> 00:22:56,000
+The one I observed was the same.
+
+497
+00:22:56,000 --> 00:22:58,000
+Then I'll ask again.
+
+498
+00:22:58,000 --> 00:23:00,000
+Uh, in all the different networks.
+
+499
+00:23:00,000 --> 00:23:02,000
+The nature I care about.
+
+500
+00:23:02,000 --> 00:23:04,000
+The distribution of the data I'm actually observing.
+
+501
+00:23:04,000 --> 00:23:06,000
+Uh, actually observing the data.
+
+502
+00:23:06,000 --> 00:23:08,000
+Is there any difference in this value?
+
+503
+00:23:08,000 --> 00:23:10,000
+What if there's a difference?
+
+504
+00:23:10,000 --> 00:23:12,000
+I think so.
+
+505
+00:23:12,000 --> 00:23:14,000
+Um, this one.
+
+506
+00:23:14,000 --> 00:23:16,000
+The network I observed may be in this degree.
+
+507
+00:23:16,000 --> 00:23:18,000
+Um, there may be some special places.
+
+508
+00:23:18,000 --> 00:23:20,000
+Beyond the degree sequence.
+
+509
+00:23:20,000 --> 00:23:22,000
+Special places.
+
+510
+00:23:22,000 --> 00:23:24,000
+Um, need to be explained.
+
+511
+00:23:24,000 --> 00:23:26,000
+This is an example.
+
+512
+00:23:26,000 --> 00:23:28,000
+It's like this.
+
+513
+00:23:28,000 --> 00:23:30,000
+It is.
+
+514
+00:23:30,000 --> 00:23:32,000
+Um, this is a barn spiral.
+
+515
+00:23:32,000 --> 00:23:34,000
+A bird.
+
+516
+00:23:34,000 --> 00:23:36,000
+And then, um, everyone thinks.
+
+517
+00:23:36,000 --> 00:23:38,000
+The color of it.
+
+518
+00:23:38,000 --> 00:23:40,000
+With it.
+
+519
+00:23:40,000 --> 00:23:42,000
+The ratio of the mating.
+
+520
+00:23:42,000 --> 00:23:44,000
+There is a relationship, but everyone is not sure.
+
+521
+00:23:44,000 --> 00:23:46,000
+What is the relationship?
+
+522
+00:23:46,000 --> 00:23:48,000
+Um, they do experiments.
+
+523
+00:23:48,000 --> 00:23:50,000
+Put this bird on top of the sensor.
+
+524
+00:23:50,000 --> 00:23:52,000
+Then look at the bird in a space.
+
+525
+00:23:52,000 --> 00:23:54,000
+Then fly.
+
+526
+00:23:54,000 --> 00:23:56,000
+If they are close, he will connect a side.
+
+527
+00:23:56,000 --> 00:23:58,000
+Then form a network like this.
+
+528
+00:23:58,000 --> 00:24:00,000
+Well, in this network.
+
+529
+00:24:00,000 --> 00:24:02,000
+They went to say.
+
+530
+00:24:02,000 --> 00:24:04,000
+Because he knows the color of each bird.
+
+531
+00:24:04,000 --> 00:24:06,000
+Then he also knows the different colors.
+
+532
+00:24:06,000 --> 00:24:08,000
+Is there any interaction between them?
+
+533
+00:24:08,000 --> 00:24:10,000
+So they just made this network.
+
+534
+00:24:10,000 --> 00:24:12,000
+They will count them.
+
+535
+00:24:12,000 --> 00:24:14,000
+The one between them.
+
+536
+00:24:14,000 --> 00:24:16,000
+Correlation related to color.
+
+537
+00:24:16,000 --> 00:24:18,000
+Then I got this.
+
+538
+00:24:18,000 --> 00:24:20,000
+This virtual line, this part.
+
+539
+00:24:20,000 --> 00:24:22,000
+At the same time.
+
+540
+00:24:22,000 --> 00:24:24,000
+Um.
+
+541
+00:24:24,000 --> 00:24:26,000
+This piece of paper also took this data.
+
+542
+00:24:26,000 --> 00:24:28,000
+Um, they observed this network.
+
+543
+00:24:28,000 --> 00:24:30,000
+Random.
+
+544
+00:24:30,000 --> 00:24:32,000
+Then every random component.
+
+545
+00:24:32,000 --> 00:24:34,000
+Calculated this once.
+
+546
+00:24:34,000 --> 00:24:36,000
+Pearson Correlation.
+
+547
+00:24:36,000 --> 00:24:38,000
+Then get a distribution.
+
+548
+00:24:38,000 --> 00:24:40,000
+Then so, um.
+
+549
+00:24:40,000 --> 00:24:42,000
+So this one comes from this data.
+
+550
+00:24:42,000 --> 00:24:44,000
+Observed.
+
+551
+00:24:44,000 --> 00:24:46,000
+Then this one comes from this distribution.
+
+552
+00:24:46,000 --> 00:24:48,000
+Um, you are random.
+
+553
+00:24:48,000 --> 00:24:50,000
+Then you will feel.
+
+554
+00:24:50,000 --> 00:24:52,000
+Ah, they actually.
+
+555
+00:24:52,000 --> 00:24:54,000
+Ah, there is no difference.
+
+556
+00:24:54,000 --> 00:24:56,000
+Ah, you won't feel.
+
+557
+00:24:56,000 --> 00:24:58,000
+So it seems to be here.
+
+558
+00:24:58,000 --> 00:25:00,000
+You won't feel that you are.
+
+559
+00:25:00,000 --> 00:25:02,000
+Color Color Correlation.
+
+560
+00:25:02,000 --> 00:25:04,000
+What's special about it?
+
+561
+00:25:04,000 --> 00:25:06,000
+It's more than the degree.
+
+562
+00:25:06,000 --> 00:25:08,000
+Degrees can explain.
+
+563
+00:25:08,000 --> 00:25:10,000
+Corresponding.
+
+564
+00:25:10,000 --> 00:25:12,000
+If I observe another data.
+
+565
+00:25:12,000 --> 00:25:14,000
+He may.
+
+566
+00:25:14,000 --> 00:25:16,000
+Um, his Correlation is very low.
+
+567
+00:25:16,000 --> 00:25:18,000
+For example, if I don't know.
+
+568
+00:25:18,000 --> 00:25:20,000
+Um, if there is another data.
+
+569
+00:25:20,000 --> 00:25:22,000
+Then you observe his color.
+
+570
+00:25:22,000 --> 00:25:24,000
+Then you will ask.
+
+571
+00:25:24,000 --> 00:25:26,000
+Ah, you will feel.
+
+572
+00:25:26,000 --> 00:25:28,000
+Ah, why do I observe the data now?
+
+573
+00:25:28,000 --> 00:25:30,000
+With this one.
+
+574
+00:25:30,000 --> 00:25:32,000
+After this data.
+
+575
+00:25:32,000 --> 00:25:34,000
+His Correlation is particularly low.
+
+576
+00:25:34,000 --> 00:25:36,000
+Then because of this randomization.
+
+577
+00:25:36,000 --> 00:25:38,000
+Is related to the degree.
+
+578
+00:25:38,000 --> 00:25:40,000
+You will know.
+
+579
+00:25:40,000 --> 00:25:42,000
+At this time, there should be some.
+
+580
+00:25:42,000 --> 00:25:44,000
+Is beyond the degree.
+
+581
+00:25:44,000 --> 00:25:46,000
+Things beyond the degree.
+
+582
+00:25:46,000 --> 00:25:48,000
+Plays in this.
+
+583
+00:25:48,000 --> 00:25:50,000
+Then we.
+
+584
+00:25:50,000 --> 00:25:52,000
+Um.
+
+585
+00:25:54,000 --> 00:25:56,000
+Is there a problem so far?
+
+586
+00:26:02,000 --> 00:26:04,000
+Let me ask.
+
+587
+00:26:04,000 --> 00:26:06,000
+I want to understand this example.
+
+588
+00:26:06,000 --> 00:26:08,000
+Um.
+
+589
+00:26:08,000 --> 00:26:10,000
+The picture in the middle.
+
+590
+00:26:10,000 --> 00:26:12,000
+The number on it is.
+
+591
+00:26:14,000 --> 00:26:16,000
+How many lines did he connect?
+
+592
+00:26:16,000 --> 00:26:18,000
+Or what?
+
+593
+00:26:18,000 --> 00:26:20,000
+The number on it should be his.
+
+594
+00:26:20,000 --> 00:26:22,000
+The number of the bird.
+
+595
+00:26:22,000 --> 00:26:24,000
+Oh, the number of the bird.
+
+596
+00:26:24,000 --> 00:26:26,000
+Then.
+
+597
+00:26:26,000 --> 00:26:28,000
+There should be a few times of interaction.
+
+598
+00:26:28,000 --> 00:26:30,000
+OK.
+
+599
+00:26:30,000 --> 00:26:32,000
+Then.
+
+600
+00:26:32,000 --> 00:26:34,000
+The meaning of gray and white.
+
+601
+00:26:34,000 --> 00:26:36,000
+Is their color.
+
+602
+00:26:36,000 --> 00:26:38,000
+Um.
+
+603
+00:26:38,000 --> 00:26:40,000
+OK.
+
+604
+00:26:40,000 --> 00:26:42,000
+Then the picture on the right is.
+
+605
+00:26:44,000 --> 00:26:46,000
+How did it come out?
+
+606
+00:26:46,000 --> 00:26:48,000
+I don't understand. Can you say it again?
+
+607
+00:26:48,000 --> 00:26:50,000
+After we observe this map.
+
+608
+00:26:50,000 --> 00:26:52,000
+Uh.
+
+609
+00:26:52,000 --> 00:26:54,000
+After we observe this map.
+
+610
+00:26:54,000 --> 00:26:56,000
+We also have his color.
+
+611
+00:26:56,000 --> 00:26:58,000
+So we can actually count his.
+
+612
+00:26:58,000 --> 00:27:00,000
+Color color correlation.
+
+613
+00:27:00,000 --> 00:27:02,000
+Then we calculate a number.
+
+614
+00:27:02,000 --> 00:27:04,000
+But I don't know if this number is.
+
+615
+00:27:04,000 --> 00:27:06,000
+Is it special?
+
+616
+00:27:06,000 --> 00:27:08,000
+So.
+
+617
+00:27:08,000 --> 00:27:10,000
+Um.
+
+618
+00:27:10,000 --> 00:27:12,000
+They said.
+
+619
+00:27:12,000 --> 00:27:14,000
+Let me see if I can put this network.
+
+620
+00:27:14,000 --> 00:27:16,000
+I found a lot.
+
+621
+00:27:16,000 --> 00:27:18,000
+Ah.
+
+622
+00:27:18,000 --> 00:27:20,000
+With him.
+
+623
+00:27:20,000 --> 00:27:22,000
+The structure is different.
+
+624
+00:27:22,000 --> 00:27:24,000
+But the degree sequence is the same as other networks.
+
+625
+00:27:24,000 --> 00:27:26,000
+And then on top of it.
+
+626
+00:27:26,000 --> 00:27:28,000
+Calculate his.
+
+627
+00:27:28,000 --> 00:27:30,000
+Correlation.
+
+628
+00:27:30,000 --> 00:27:32,000
+And then we got a distribution.
+
+629
+00:27:32,000 --> 00:27:34,000
+And then we can ask.
+
+630
+00:27:34,000 --> 00:27:36,000
+In the end, I observed this data.
+
+631
+00:27:36,000 --> 00:27:38,000
+Correlation.
+
+632
+00:27:38,000 --> 00:27:40,000
+Is it special?
+
+633
+00:27:40,000 --> 00:27:42,000
+OK.
+
+634
+00:27:42,000 --> 00:27:44,000
+Um.
+
+635
+00:27:44,000 --> 00:27:46,000
+Then is this more special?
+
+636
+00:27:46,000 --> 00:27:48,000
+Is.
+
+637
+00:27:48,000 --> 00:27:50,000
+Ah.
+
+638
+00:27:50,000 --> 00:27:52,000
+It's with me.
+
+639
+00:27:52,000 --> 00:27:54,000
+How do I put this network?
+
+640
+00:27:54,000 --> 00:27:56,000
+It's about randomization.
+
+641
+00:27:56,000 --> 00:27:58,000
+At this time, he fixed his.
+
+642
+00:27:58,000 --> 00:28:00,000
+His degree.
+
+643
+00:28:00,000 --> 00:28:02,000
+Is.
+
+644
+00:28:02,000 --> 00:28:04,000
+Fixed him every.
+
+645
+00:28:04,000 --> 00:28:06,000
+Every bird.
+
+646
+00:28:06,000 --> 00:28:08,000
+In the end, with a few other birds.
+
+647
+00:28:08,000 --> 00:28:10,000
+And then there are a lot of other different structures.
+
+648
+00:28:10,000 --> 00:28:12,000
+And then ask.
+
+649
+00:28:12,000 --> 00:28:14,000
+I observed this.
+
+650
+00:28:14,000 --> 00:28:16,000
+Is it special?
+
+651
+00:28:16,000 --> 00:28:18,000
+So.
+
+652
+00:28:18,000 --> 00:28:20,000
+The middle of this example.
+
+653
+00:28:20,000 --> 00:28:22,000
+Anyway.
+
+654
+00:28:22,000 --> 00:28:24,000
+Doing this thing.
+
+655
+00:28:24,000 --> 00:28:26,000
+But.
+
+656
+00:28:26,000 --> 00:28:28,000
+Your.
+
+657
+00:28:28,000 --> 00:28:30,000
+It means.
+
+658
+00:28:30,000 --> 00:28:32,000
+You have to find.
+
+659
+00:28:32,000 --> 00:28:34,000
+The same degree sequence.
+
+660
+00:28:34,000 --> 00:28:36,000
+This thing.
+
+661
+00:28:36,000 --> 00:28:38,000
+The thing that needs to be studied.
+
+662
+00:28:38,000 --> 00:28:40,000
+Is this the conclusion?
+
+663
+00:28:40,000 --> 00:28:42,000
+Correct.
+
+664
+00:28:42,000 --> 00:28:44,000
+Ah.
+
+665
+00:28:44,000 --> 00:28:46,000
+This paper is.
+
+666
+00:28:46,000 --> 00:28:48,000
+Proposed a configuration model.
+
+667
+00:28:48,000 --> 00:28:50,000
+You can randomize a network.
+
+668
+00:28:50,000 --> 00:28:52,000
+And then he gave an example.
+
+669
+00:28:52,000 --> 00:28:54,000
+Ah.
+
+670
+00:28:54,000 --> 00:28:56,000
+After you can randomize it.
+
+671
+00:28:56,000 --> 00:28:58,000
+Ah.
+
+672
+00:28:58,000 --> 00:29:00,000
+This ensemble can be used to do.
+
+673
+00:29:00,000 --> 00:29:02,000
+Some statistical tests.
+
+674
+00:29:02,000 --> 00:29:04,000
+OK.
+
+675
+00:29:04,000 --> 00:29:06,000
+So, uh.
+
+676
+00:29:06,000 --> 00:29:08,000
+So if you only look at this piece of paper.
+
+677
+00:29:08,000 --> 00:29:10,000
+You might only get a Pearson correlation.
+
+678
+00:29:10,000 --> 00:29:12,000
+And then, but you don't really know.
+
+679
+00:29:12,000 --> 00:29:14,000
+What's so special about him?
+
+680
+00:29:14,000 --> 00:29:16,000
+So, in order to know his special place.
+
+681
+00:29:16,000 --> 00:29:18,000
+I want to put the original data.
+
+682
+00:29:18,000 --> 00:29:20,000
+Ah.
+
+683
+00:29:20,000 --> 00:29:22,000
+Fixed a few parameters.
+
+684
+00:29:22,000 --> 00:29:24,000
+And then make an ensemble.
+
+685
+00:29:24,000 --> 00:29:26,000
+And then let's take a look at this ensemble.
+
+686
+00:29:26,000 --> 00:29:28,000
+All of the.
+
+687
+00:29:28,000 --> 00:29:30,000
+Inside the Pearson correlation.
+
+688
+00:29:30,000 --> 00:29:32,000
+Is not.
+
+689
+00:29:32,000 --> 00:29:34,000
+Ah.
+
+690
+00:29:34,000 --> 00:29:36,000
+In fact, it depends on.
+
+691
+00:29:36,000 --> 00:29:38,000
+I.
+
+692
+00:29:38,000 --> 00:29:40,000
+I suspect he's with.
+
+693
+00:29:40,000 --> 00:29:42,000
+What kind of parameters do I suspect he's related to?
+
+694
+00:29:42,000 --> 00:29:44,000
+For example, now I suspect.
+
+695
+00:29:44,000 --> 00:29:46,000
+This Pearson correlation may be related to.
+
+696
+00:29:46,000 --> 00:29:48,000
+The degree distribution.
+
+697
+00:29:48,000 --> 00:29:50,000
+It may be related to the degree distribution.
+
+698
+00:29:50,000 --> 00:29:52,000
+So I deliberately fixed it.
+
+699
+00:29:52,000 --> 00:29:54,000
+Let's take a look at this distribution.
+
+700
+00:29:54,000 --> 00:29:56,000
+And then see if he's in there or out there.
+
+701
+00:29:56,000 --> 00:29:58,000
+Any other questions?
+
+702
+00:29:58,000 --> 00:30:00,000
+Ah.
+
+703
+00:30:00,000 --> 00:30:02,000
+Then I.
+
+704
+00:30:02,000 --> 00:30:04,000
+Ah.
+
+705
+00:30:04,000 --> 00:30:06,000
+Ah.
+
+706
+00:30:06,000 --> 00:30:08,000
+Ah.
+
+707
+00:30:08,000 --> 00:30:10,000
+Ah.
+
+708
+00:30:10,000 --> 00:30:12,000
+Ah.
+
+709
+00:30:12,000 --> 00:30:14,000
+Ah.
+
+710
+00:30:14,000 --> 00:30:16,000
+Ah.
+
+711
+00:30:16,000 --> 00:30:18,000
+Ah.
+
+712
+00:30:18,000 --> 00:30:20,000
+Ah.
+
+713
+00:30:20,000 --> 00:30:22,000
+Ah.
+
+714
+00:30:22,000 --> 00:30:24,000
+Ah.
+
+715
+00:30:24,000 --> 00:30:26,000
+Well, that's the example of the bird just now.
+
+716
+00:30:26,000 --> 00:30:28,000
+How many other birds do the birds have?
+
+717
+00:30:28,000 --> 00:30:30,000
+Interaction.
+
+718
+00:30:30,000 --> 00:30:32,000
+The Global Gravity of Opportunity.
+
+719
+00:30:32,000 --> 00:30:34,000
+That's a paper by The Biological Science.
+
+720
+00:30:34,000 --> 00:30:36,000
+Its reproduction is likely to be related to the color.
+
+721
+00:30:36,000 --> 00:30:38,000
+This is one.
+
+722
+00:30:38,000 --> 00:30:40,000
+A global.
+
+723
+00:30:40,000 --> 00:30:42,000
+It may be related to a local.
+
+724
+00:30:42,000 --> 00:30:44,000
+An example in a certain data.
+
+725
+00:30:44,000 --> 00:30:46,000
+That ah.
+
+726
+00:30:46,000 --> 00:30:48,000
+Another related question.
+
+727
+00:30:48,000 --> 00:30:50,000
+If I.
+
+728
+00:30:50,000 --> 00:30:52,000
+Only after getting.
+
+729
+00:30:52,000 --> 00:30:54,000
+After the degree sequence.
+
+730
+00:30:54,000 --> 00:30:56,000
+Can I get from it.
+
+731
+00:30:56,000 --> 00:30:58,000
+Generate a network.
+
+732
+00:30:58,000 --> 00:31:00,000
+If I can.
+
+733
+00:31:00,000 --> 00:31:02,000
+In fact, it can also be used to answer a lot of interesting questions.
+
+734
+00:31:02,000 --> 00:31:04,000
+They are on the structure.
+
+735
+00:31:04,000 --> 00:31:06,000
+And in.
+
+736
+00:31:06,000 --> 00:31:08,000
+In.
+
+737
+00:31:08,000 --> 00:31:10,000
+Is dynamic.
+
+738
+00:31:10,000 --> 00:31:12,000
+For example.
+
+739
+00:31:12,000 --> 00:31:14,000
+Ah.
+
+740
+00:31:14,000 --> 00:31:16,000
+Ah.
+
+741
+00:31:16,000 --> 00:31:18,000
+I think this is more.
+
+742
+00:31:18,000 --> 00:31:20,000
+Domain specific.
+
+743
+00:31:20,000 --> 00:31:22,000
+I'm going to click on it again.
+
+744
+00:31:22,000 --> 00:31:24,000
+This.
+
+745
+00:31:24,000 --> 00:31:26,000
+This link.
+
+746
+00:31:26,000 --> 00:31:28,000
+But here.
+
+747
+00:31:28,000 --> 00:31:30,000
+What I want to say is.
+
+748
+00:31:30,000 --> 00:31:32,000
+Well.
+
+749
+00:31:32,000 --> 00:31:34,000
+Ah.
+
+750
+00:31:34,000 --> 00:31:36,000
+Everyone will doubt that a.
+
+751
+00:31:36,000 --> 00:31:38,000
+Everyone will doubt that.
+
+752
+00:31:38,000 --> 00:31:40,000
+Can I.
+
+753
+00:31:40,000 --> 00:31:42,000
+From a local information.
+
+754
+00:31:42,000 --> 00:31:44,000
+And this structure.
+
+755
+00:31:44,000 --> 00:31:46,000
+Is there anything special about it?
+
+756
+00:31:46,000 --> 00:31:48,000
+If you can't generate it.
+
+757
+00:31:48,000 --> 00:31:50,000
+If I get a degree sequence.
+
+758
+00:31:50,000 --> 00:31:52,000
+I don't know how to generate a network.
+
+759
+00:31:52,000 --> 00:31:54,000
+Then you can't talk about it at all.
+
+760
+00:31:54,000 --> 00:31:56,000
+On this network.
+
+761
+00:31:56,000 --> 00:31:58,000
+What kind of structure is special.
+
+762
+00:31:58,000 --> 00:32:00,000
+So being able to build this link is an important thing.
+
+763
+00:32:00,000 --> 00:32:02,000
+Then this is the structure.
+
+764
+00:32:02,000 --> 00:32:04,000
+Then the second dynamic.
+
+765
+00:32:04,000 --> 00:32:06,000
+What does it mean?
+
+766
+00:32:06,000 --> 00:32:08,000
+Ah.
+
+767
+00:32:08,000 --> 00:32:10,000
+Take that.
+
+768
+00:32:10,000 --> 00:32:12,000
+I'm not an infectious disease expert.
+
+769
+00:32:12,000 --> 00:32:14,000
+But in terms of infectious disease cases.
+
+770
+00:32:14,000 --> 00:32:16,000
+Ah.
+
+771
+00:32:16,000 --> 00:32:18,000
+Because we know that infectious diseases sometimes spread very quickly.
+
+772
+00:32:18,000 --> 00:32:20,000
+It's because some people may.
+
+773
+00:32:20,000 --> 00:32:22,000
+Ah.
+
+774
+00:32:22,000 --> 00:32:24,000
+There is a chance in everyday life.
+
+775
+00:32:24,000 --> 00:32:26,000
+Hundreds of people.
+
+776
+00:32:26,000 --> 00:32:28,000
+But this is not our normal life.
+
+777
+00:32:28,000 --> 00:32:30,000
+But in the data of this human network.
+
+778
+00:32:30,000 --> 00:32:32,000
+There are specific people.
+
+779
+00:32:32,000 --> 00:32:34,000
+His degree is very large.
+
+780
+00:32:34,000 --> 00:32:36,000
+That.
+
+781
+00:32:36,000 --> 00:32:38,000
+That.
+
+782
+00:32:40,000 --> 00:32:42,000
+In such a data.
+
+783
+00:32:42,000 --> 00:32:44,000
+In such a structure.
+
+784
+00:32:44,000 --> 00:32:46,000
+We have to be able to generate this structure.
+
+785
+00:32:46,000 --> 00:32:48,000
+To answer this question.
+
+786
+00:32:48,000 --> 00:32:50,000
+So we.
+
+787
+00:32:50,000 --> 00:32:52,000
+There will be a model.
+
+788
+00:32:52,000 --> 00:32:54,000
+Say it.
+
+789
+00:32:54,000 --> 00:32:56,000
+If I want to generate a network.
+
+790
+00:32:56,000 --> 00:32:58,000
+Then this network.
+
+791
+00:32:58,000 --> 00:33:00,000
+The distribution of the degree is very heavy.
+
+792
+00:33:00,000 --> 00:33:02,000
+That is.
+
+793
+00:33:02,000 --> 00:33:04,000
+You look at his.
+
+794
+00:33:04,000 --> 00:33:06,000
+You draw a distribution.
+
+795
+00:33:06,000 --> 00:33:08,000
+Ah.
+
+796
+00:33:08,000 --> 00:33:10,000
+There are only a few friends in life.
+
+797
+00:33:10,000 --> 00:33:12,000
+Then there are a few people with two friends.
+
+798
+00:33:12,000 --> 00:33:14,000
+There are thousands of friends in life.
+
+799
+00:33:14,000 --> 00:33:16,000
+This is a degree distribution.
+
+800
+00:33:16,000 --> 00:33:18,000
+That.
+
+801
+00:33:18,000 --> 00:33:20,000
+You have to generate a structure from this distribution.
+
+802
+00:33:20,000 --> 00:33:22,000
+Then you can be on top of that structure.
+
+803
+00:33:22,000 --> 00:33:24,000
+Run the model of infectious diseases on that structure.
+
+804
+00:33:24,000 --> 00:33:26,000
+That's why.
+
+805
+00:33:26,000 --> 00:33:28,000
+Be able to have a way.
+
+806
+00:33:28,000 --> 00:33:30,000
+From local information to generate a structure.
+
+807
+00:33:30,000 --> 00:33:32,000
+It is also important because.
+
+808
+00:33:32,000 --> 00:33:34,000
+Ah.
+
+809
+00:33:34,000 --> 00:33:36,000
+In this way, you can do some experiments.
+
+810
+00:33:36,000 --> 00:33:38,000
+Ah.
+
+811
+00:33:38,000 --> 00:33:40,000
+So this is what I provide.
+
+812
+00:33:40,000 --> 00:33:42,000
+About what I'm going to do.
+
+813
+00:33:42,000 --> 00:33:44,000
+That.
+
+814
+00:33:44,000 --> 00:33:46,000
+Ah.
+
+815
+00:33:46,000 --> 00:33:48,000
+Go deeper into the topic.
+
+816
+00:33:48,000 --> 00:33:50,000
+Ah.
+
+817
+00:33:50,000 --> 00:33:52,000
+Ah, we just talked about this.
+
+818
+00:33:52,000 --> 00:33:54,000
+The local thing is the degree.
+
+819
+00:33:54,000 --> 00:33:56,000
+Then we have.
+
+820
+00:33:56,000 --> 00:33:58,000
+Observe some data.
+
+821
+00:33:58,000 --> 00:34:00,000
+Usually, after you observe the data.
+
+822
+00:34:00,000 --> 00:34:02,000
+Ah, you have to get the degree.
+
+823
+00:34:02,000 --> 00:34:04,000
+It's very simple.
+
+824
+00:34:04,000 --> 00:34:06,000
+For example, you know you.
+
+825
+00:34:06,000 --> 00:34:08,000
+You have a class.
+
+826
+00:34:08,000 --> 00:34:10,000
+Then you go to ask everyone he has.
+
+827
+00:34:10,000 --> 00:34:12,000
+You think in this class.
+
+828
+00:34:12,000 --> 00:34:14,000
+What kind of people are his friends?
+
+829
+00:34:14,000 --> 00:34:16,000
+Then you will get one.
+
+830
+00:34:16,000 --> 00:34:18,000
+The network of friends in this class.
+
+831
+00:34:18,000 --> 00:34:20,000
+Then you have to go from this network of friends to get it.
+
+832
+00:34:20,000 --> 00:34:22,000
+His degree is actually very simple.
+
+833
+00:34:22,000 --> 00:34:24,000
+Just take everyone.
+
+834
+00:34:24,000 --> 00:34:26,000
+And then see how many friends he has around him.
+
+835
+00:34:26,000 --> 00:34:28,000
+That's it.
+
+836
+00:34:28,000 --> 00:34:30,000
+This direction is usually simpler.
+
+837
+00:34:30,000 --> 00:34:32,000
+That.
+
+838
+00:34:32,000 --> 00:34:34,000
+But it's more difficult.
+
+839
+00:34:34,000 --> 00:34:36,000
+How do you.
+
+840
+00:34:36,000 --> 00:34:38,000
+Every friend, for example, this class has 30 people.
+
+841
+00:34:38,000 --> 00:34:40,000
+Then you give me one.
+
+842
+00:34:40,000 --> 00:34:42,000
+Ah, you give me 30 numbers greater than 0.
+
+843
+00:34:42,000 --> 00:34:44,000
+Then you can not create a network.
+
+844
+00:34:44,000 --> 00:34:46,000
+This is more difficult to ask.
+
+845
+00:34:46,000 --> 00:34:48,000
+That.
+
+846
+00:34:48,000 --> 00:34:50,000
+Correspondence is.
+
+847
+00:34:50,000 --> 00:34:52,000
+If you want to get this network.
+
+848
+00:34:52,000 --> 00:34:54,000
+You have to randomize it.
+
+849
+00:34:54,000 --> 00:34:56,000
+Find an ensemble.
+
+850
+00:34:56,000 --> 00:34:58,000
+So that every network in this ensemble.
+
+851
+00:34:58,000 --> 00:35:00,000
+He has the same.
+
+852
+00:35:00,000 --> 00:35:02,000
+Degree sequence.
+
+853
+00:35:02,000 --> 00:35:04,000
+This thing is also a difficult thing.
+
+854
+00:35:04,000 --> 00:35:06,000
+That.
+
+855
+00:35:06,000 --> 00:35:08,000
+What I listed is everyone's work.
+
+856
+00:35:08,000 --> 00:35:10,000
+Then you can click to see.
+
+857
+00:35:10,000 --> 00:35:12,000
+That's a little closer.
+
+858
+00:35:12,000 --> 00:35:14,000
+That is.
+
+859
+00:35:14,000 --> 00:35:16,000
+You get a simple complex.
+
+860
+00:35:16,000 --> 00:35:18,000
+How to randomize it.
+
+861
+00:35:18,000 --> 00:35:20,000
+So that every one in this randomization.
+
+862
+00:35:20,000 --> 00:35:22,000
+Ah, every one.
+
+863
+00:35:22,000 --> 00:35:24,000
+Simple complex.
+
+864
+00:35:24,000 --> 00:35:26,000
+They all have the same.
+
+865
+00:35:26,000 --> 00:35:28,000
+Degree and size sequence.
+
+866
+00:35:28,000 --> 00:35:30,000
+That this.
+
+867
+00:35:30,000 --> 00:35:32,000
+Ypvp17.
+
+868
+00:35:32,000 --> 00:35:34,000
+Ah, just now.
+
+869
+00:35:34,000 --> 00:35:36,000
+Ah, the one that inspired me.
+
+870
+00:35:36,000 --> 00:35:38,000
+That.
+
+871
+00:35:38,000 --> 00:35:40,000
+Why is this a problem?
+
+872
+00:35:40,000 --> 00:35:42,000
+Ah, the same thing is in the hypergraph.
+
+873
+00:35:42,000 --> 00:35:44,000
+That's how it appears.
+
+874
+00:35:44,000 --> 00:35:46,000
+Why?
+
+875
+00:35:46,000 --> 00:35:48,000
+Why would I do this job?
+
+876
+00:35:48,000 --> 00:35:50,000
+The reason is because.
+
+877
+00:35:50,000 --> 00:35:52,000
+They are in this paper.
+
+878
+00:35:52,000 --> 00:35:54,000
+They proposed a.
+
+879
+00:35:54,000 --> 00:35:56,000
+Randomize a structure.
+
+880
+00:35:56,000 --> 00:35:58,000
+Then they go.
+
+881
+00:35:58,000 --> 00:36:00,000
+Explain that they are like this.
+
+882
+00:36:00,000 --> 00:36:02,000
+Can.
+
+883
+00:36:02,000 --> 00:36:04,000
+Can.
+
+884
+00:36:04,000 --> 00:36:06,000
+Explore.
+
+885
+00:36:06,000 --> 00:36:08,000
+All possible space.
+
+886
+00:36:08,000 --> 00:36:10,000
+He has some mathematical arguments in it.
+
+887
+00:36:10,000 --> 00:36:12,000
+But.
+
+888
+00:36:12,000 --> 00:36:14,000
+What about this method? He has to have one.
+
+889
+00:36:14,000 --> 00:36:16,000
+A data is there.
+
+890
+00:36:16,000 --> 00:36:18,000
+Then you can put that data.
+
+891
+00:36:18,000 --> 00:36:20,000
+That's it.
+
+892
+00:36:20,000 --> 00:36:22,000
+But he can't answer.
+
+893
+00:36:22,000 --> 00:36:24,000
+Some questions like today.
+
+894
+00:36:24,000 --> 00:36:26,000
+I want to have one.
+
+895
+00:36:26,000 --> 00:36:28,000
+Theoretical.
+
+896
+00:36:28,000 --> 00:36:30,000
+Ah.
+
+897
+00:36:30,000 --> 00:36:32,000
+Degree and size sequence.
+
+898
+00:36:32,000 --> 00:36:34,000
+Ah, I want to know.
+
+899
+00:36:34,000 --> 00:36:36,000
+For example, my degree and size sequence.
+
+900
+00:36:36,000 --> 00:36:38,000
+They are all the ones I just said.
+
+901
+00:36:38,000 --> 00:36:40,000
+That kind of structure.
+
+902
+00:36:40,000 --> 00:36:42,000
+Can I use it?
+
+903
+00:36:42,000 --> 00:36:44,000
+To generate a.
+
+904
+00:36:44,000 --> 00:36:46,000
+A data.
+
+905
+00:36:46,000 --> 00:36:48,000
+And then randomize it.
+
+906
+00:36:48,000 --> 00:36:50,000
+If there is no.
+
+907
+00:36:50,000 --> 00:36:52,000
+It's not easy for me to do it.
+
+908
+00:36:52,000 --> 00:36:54,000
+They can only go.
+
+909
+00:36:54,000 --> 00:36:56,000
+Ah.
+
+910
+00:36:56,000 --> 00:36:58,000
+This.
+
+911
+00:36:58,000 --> 00:37:00,000
+To find a data.
+
+912
+00:37:00,000 --> 00:37:02,000
+And then randomize it.
+
+913
+00:37:02,000 --> 00:37:04,000
+So, my job is a.
+
+914
+00:37:04,000 --> 00:37:06,000
+A work.
+
+915
+00:37:08,000 --> 00:37:10,000
+I want to ask a question.
+
+916
+00:37:12,000 --> 00:37:14,000
+I still don't quite understand.
+
+917
+00:37:14,000 --> 00:37:16,000
+Ah.
+
+918
+00:37:18,000 --> 00:37:20,000
+Randomization and this one.
+
+919
+00:37:20,000 --> 00:37:22,000
+Find one.
+
+920
+00:37:22,000 --> 00:37:24,000
+One.
+
+921
+00:37:24,000 --> 00:37:26,000
+But the first question is.
+
+922
+00:37:26,000 --> 00:37:28,000
+You have a.
+
+923
+00:37:28,000 --> 00:37:30,000
+A degree sequence.
+
+924
+00:37:30,000 --> 00:37:32,000
+Then can you find a picture.
+
+925
+00:37:32,000 --> 00:37:34,000
+Ah.
+
+926
+00:37:34,000 --> 00:37:36,000
+This degree sequence.
+
+927
+00:37:36,000 --> 00:37:38,000
+Is this the place where you draw the green line?
+
+928
+00:37:38,000 --> 00:37:40,000
+Is it?
+
+929
+00:37:40,000 --> 00:37:42,000
+If it's just a picture, it should be this place.
+
+930
+00:37:42,000 --> 00:37:44,000
+Oh, sorry.
+
+931
+00:37:44,000 --> 00:37:46,000
+Find a.
+
+932
+00:37:46,000 --> 00:37:48,000
+Complex data.
+
+933
+00:37:48,000 --> 00:37:50,000
+If it's a complex data.
+
+934
+00:37:50,000 --> 00:37:52,000
+That's where I'm green.
+
+935
+00:37:52,000 --> 00:37:54,000
+You just need to find one?
+
+936
+00:37:54,000 --> 00:37:56,000
+Or you just.
+
+937
+00:37:56,000 --> 00:37:58,000
+You just need to find one.
+
+938
+00:37:58,000 --> 00:38:00,000
+The reason is that after I found this.
+
+939
+00:38:00,000 --> 00:38:02,000
+I can use the method here to randomize it.
+
+940
+00:38:02,000 --> 00:38:04,000
+It's useful in statistics.
+
+941
+00:38:04,000 --> 00:38:06,000
+OK.
+
+942
+00:38:06,000 --> 00:38:08,000
+But what's the difference between randomization and this thing?
+
+943
+00:38:08,000 --> 00:38:10,000
+My understanding is.
+
+944
+00:38:10,000 --> 00:38:12,000
+Randomization, you don't have to.
+
+945
+00:38:12,000 --> 00:38:14,000
+From.
+
+946
+00:38:14,000 --> 00:38:16,000
+You give a.
+
+947
+00:38:16,000 --> 00:38:18,000
+Then you already know the degree.
+
+948
+00:38:18,000 --> 00:38:20,000
+Degree sequence.
+
+949
+00:38:20,000 --> 00:38:22,000
+You are from degree sequence to.
+
+950
+00:38:22,000 --> 00:38:24,000
+Randomization.
+
+951
+00:38:24,000 --> 00:38:26,000
+You have to find.
+
+952
+00:38:26,000 --> 00:38:28,000
+You have to find a lot of pictures.
+
+953
+00:38:30,000 --> 00:38:32,000
+Is that what it means?
+
+954
+00:38:32,000 --> 00:38:34,000
+Ah.
+
+955
+00:38:34,000 --> 00:38:36,000
+If it's.
+
+956
+00:38:36,000 --> 00:38:38,000
+These random algorithms.
+
+957
+00:38:38,000 --> 00:38:40,000
+If it can be used, it must have a structure.
+
+958
+00:38:40,000 --> 00:38:42,000
+If you only give me.
+
+959
+00:38:42,000 --> 00:38:44,000
+Two integer series.
+
+960
+00:38:44,000 --> 00:38:46,000
+I can't go.
+
+961
+00:38:46,000 --> 00:38:48,000
+For example, to swap his.
+
+962
+00:38:48,000 --> 00:38:50,000
+His side.
+
+963
+00:38:50,000 --> 00:38:52,000
+Then to change his structure.
+
+964
+00:38:52,000 --> 00:38:54,000
+So this randomization process is.
+
+965
+00:38:54,000 --> 00:38:56,000
+You have to give a structure first.
+
+966
+00:38:56,000 --> 00:38:58,000
+Then he might do some swap.
+
+967
+00:38:58,000 --> 00:39:00,000
+What is it?
+
+968
+00:39:00,000 --> 00:39:02,000
+Turn it into.
+
+969
+00:39:02,000 --> 00:39:04,000
+The same degree picture.
+
+970
+00:39:04,000 --> 00:39:06,000
+The so-called structure is.
+
+971
+00:39:06,000 --> 00:39:08,000
+Like.
+
+972
+00:39:08,000 --> 00:39:10,000
+Like this kind of thing.
+
+973
+00:39:10,000 --> 00:39:12,000
+I have to give me a structure first.
+
+974
+00:39:12,000 --> 00:39:14,000
+Then I can use.
+
+975
+00:39:14,000 --> 00:39:16,000
+Random algorithm.
+
+976
+00:39:16,000 --> 00:39:18,000
+Usually related to.
+
+977
+00:39:18,000 --> 00:39:20,000
+Swap side.
+
+978
+00:39:20,000 --> 00:39:22,000
+For example, swap two sides.
+
+979
+00:39:22,000 --> 00:39:24,000
+Swap at the same time.
+
+980
+00:39:24,000 --> 00:39:26,000
+Keep their degree unchanged.
+
+981
+00:39:26,000 --> 00:39:28,000
+But if you don't.
+
+982
+00:39:28,000 --> 00:39:30,000
+If you don't have such a structure.
+
+983
+00:39:30,000 --> 00:39:32,000
+You can't do it.
+
+984
+00:39:32,000 --> 00:39:34,000
+These things here.
+
+985
+00:39:34,000 --> 00:39:36,000
+So the green line is equal to.
+
+986
+00:39:36,000 --> 00:39:38,000
+I'm going to find the first one.
+
+987
+00:39:38,000 --> 00:39:40,000
+Then we can start randomization.
+
+988
+00:39:40,000 --> 00:39:42,000
+OK.
+
+989
+00:39:42,000 --> 00:39:44,000
+Thank you.
+
+990
+00:39:44,000 --> 00:39:46,000
+That's great.
+
+991
+00:39:46,000 --> 00:39:48,000
+I don't think I have enough time.
+
+992
+00:39:48,000 --> 00:39:50,000
+I'm going to talk faster.
+
+993
+00:39:50,000 --> 00:39:52,000
+But I might skip some slides.
+
+994
+00:39:52,000 --> 00:39:54,000
+I still hope I can.
+
+995
+00:39:54,000 --> 00:39:56,000
+I'll be done in about an hour.
+
+996
+00:39:56,000 --> 00:39:58,000
+To do this thing.
+
+997
+00:39:58,000 --> 00:40:00,000
+In fact, I didn't.
+
+998
+00:40:00,000 --> 00:40:02,000
+Solve all the problems.
+
+999
+00:40:02,000 --> 00:40:04,000
+The reason is because.
+
+1000
+00:40:04,000 --> 00:40:06,000
+What about this question?
+
+1001
+00:40:06,000 --> 00:40:08,000
+He was proven to be a.
+
+1002
+00:40:08,000 --> 00:40:10,000
+NP complete question.
+
+1003
+00:40:10,000 --> 00:40:12,000
+And then if you're doing research.
+
+1004
+00:40:12,000 --> 00:40:14,000
+I usually tell you.
+
+1005
+00:40:14,000 --> 00:40:16,000
+You can't actually find one.
+
+1006
+00:40:16,000 --> 00:40:18,000
+The algorithm is.
+
+1007
+00:40:18,000 --> 00:40:20,000
+It can be completely.
+
+1008
+00:40:20,000 --> 00:40:22,000
+Effective and useful.
+
+1009
+00:40:22,000 --> 00:40:24,000
+That's a shame.
+
+1010
+00:40:24,000 --> 00:40:26,000
+But at that time.
+
+1011
+00:40:26,000 --> 00:40:28,000
+I thought it was interesting.
+
+1012
+00:40:28,000 --> 00:40:30,000
+Oh, by the way.
+
+1013
+00:40:30,000 --> 00:40:32,000
+That's the thing.
+
+1014
+00:40:32,000 --> 00:40:34,000
+Test two integer series.
+
+1015
+00:40:34,000 --> 00:40:36,000
+Can you find one?
+
+1016
+00:40:36,000 --> 00:40:38,000
+This thing should be.
+
+1017
+00:40:38,000 --> 00:40:40,000
+A difficult problem.
+
+1018
+00:40:40,000 --> 00:40:42,000
+I think the interesting thing is.
+
+1019
+00:40:42,000 --> 00:40:44,000
+I was really going to draw a picture.
+
+1020
+00:40:44,000 --> 00:40:46,000
+It's like doing that reading.
+
+1021
+00:40:46,000 --> 00:40:48,000
+That's it.
+
+1022
+00:40:48,000 --> 00:40:50,000
+In the end, I used Excel to do research.
+
+1023
+00:40:50,000 --> 00:40:52,000
+That's it.
+
+1024
+00:40:52,000 --> 00:40:54,000
+This is the problem.
+
+1025
+00:40:54,000 --> 00:40:56,000
+For example, I give two integer series.
+
+1026
+00:40:56,000 --> 00:40:58,000
+One is 43321.
+
+1027
+00:40:58,000 --> 00:41:00,000
+This is his.
+
+1028
+00:41:00,000 --> 00:41:02,000
+The series of degrees is here.
+
+1029
+00:41:02,000 --> 00:41:04,000
+And then I give another integer series.
+
+1030
+00:41:04,000 --> 00:41:06,000
+It's called his size series.
+
+1031
+00:41:06,000 --> 00:41:08,000
+It's called 33333.
+
+1032
+00:41:08,000 --> 00:41:10,000
+Well, my goal is.
+
+1033
+00:41:10,000 --> 00:41:12,000
+In this array.
+
+1034
+00:41:12,000 --> 00:41:14,000
+Fill in 0 or 1.
+
+1035
+00:41:14,000 --> 00:41:16,000
+So that his.
+
+1036
+00:41:16,000 --> 00:41:18,000
+Every column is just right.
+
+1037
+00:41:18,000 --> 00:41:20,000
+It's 4.
+
+1038
+00:41:20,000 --> 00:41:22,000
+This is just 3.
+
+1039
+00:41:22,000 --> 00:41:24,000
+Every row is just right.
+
+1040
+00:41:24,000 --> 00:41:26,000
+It's 3.
+
+1041
+00:41:28,000 --> 00:41:30,000
+In addition to this, there is another one.
+
+1042
+00:41:30,000 --> 00:41:32,000
+Make this a problem.
+
+1043
+00:41:32,000 --> 00:41:34,000
+One of the difficult conditions.
+
+1044
+00:41:34,000 --> 00:41:36,000
+It's a difficult limitation.
+
+1045
+00:41:36,000 --> 00:41:38,000
+It's two.
+
+1046
+00:41:38,000 --> 00:41:40,000
+They can't.
+
+1047
+00:41:40,000 --> 00:41:42,000
+Can't.
+
+1048
+00:41:42,000 --> 00:41:44,000
+One of them is another.
+
+1049
+00:41:44,000 --> 00:41:46,000
+This thing.
+
+1050
+00:41:46,000 --> 00:41:48,000
+This is from what I just said.
+
+1051
+00:41:48,000 --> 00:41:50,000
+Simple complex definition.
+
+1052
+00:41:50,000 --> 00:41:52,000
+I hope I'm here.
+
+1053
+00:41:52,000 --> 00:41:54,000
+These structures that show up here.
+
+1054
+00:41:54,000 --> 00:41:56,000
+It's already the biggest.
+
+1055
+00:41:56,000 --> 00:41:58,000
+Simple complex is those facets.
+
+1056
+00:41:58,000 --> 00:42:00,000
+That's it.
+
+1057
+00:42:00,000 --> 00:42:02,000
+So if I put 111 here.
+
+1058
+00:42:02,000 --> 00:42:04,000
+But here, I still want to fill in 111.
+
+1059
+00:42:04,000 --> 00:42:06,000
+If you fill in 111.
+
+1060
+00:42:06,000 --> 00:42:08,000
+This 111 is with the following 111.
+
+1061
+00:42:08,000 --> 00:42:10,000
+Is each other.
+
+1062
+00:42:10,000 --> 00:42:12,000
+Uh.
+
+1063
+00:42:12,000 --> 00:42:14,000
+One of them is another subset.
+
+1064
+00:42:14,000 --> 00:42:16,000
+Or vice versa.
+
+1065
+00:42:16,000 --> 00:42:18,000
+I can't fill in 111 here.
+
+1066
+00:42:18,000 --> 00:42:20,000
+So this time I can only fill in 111.
+
+1067
+00:42:20,000 --> 00:42:22,000
+Then jump one to become one.
+
+1068
+00:42:22,000 --> 00:42:24,000
+So these two won't be each other.
+
+1069
+00:42:24,000 --> 00:42:26,000
+Subset.
+
+1070
+00:42:26,000 --> 00:42:28,000
+Suppose.
+
+1071
+00:42:28,000 --> 00:42:30,000
+In this line, I only need to fill in two 1s.
+
+1072
+00:42:30,000 --> 00:42:32,000
+I can't fill in, for example, 111.
+
+1073
+00:42:32,000 --> 00:42:34,000
+Because this 111.
+
+1074
+00:42:34,000 --> 00:42:36,000
+It's going to be wrapped up in this 111.
+
+1075
+00:42:38,000 --> 00:42:40,000
+So at that time, I tried a lot of this.
+
+1076
+00:42:40,000 --> 00:42:42,000
+Fill in 1.
+
+1077
+00:42:42,000 --> 00:42:44,000
+Fill in 1 and 0.
+
+1078
+00:42:44,000 --> 00:42:46,000
+And then add it up and see if you can add it.
+
+1079
+00:42:46,000 --> 00:42:48,000
+Uh, they gave this number.
+
+1080
+00:42:48,000 --> 00:42:50,000
+That's what I just said.
+
+1081
+00:42:50,000 --> 00:42:52,000
+The limitation is to make this problem difficult.
+
+1082
+00:42:52,000 --> 00:42:54,000
+But I found some examples.
+
+1083
+00:42:54,000 --> 00:42:56,000
+It's actually very simple.
+
+1084
+00:42:56,000 --> 00:42:58,000
+For example, uh, if I'm here.
+
+1085
+00:42:58,000 --> 00:43:00,000
+All of this.
+
+1086
+00:43:00,000 --> 00:43:02,000
+If the input degree is all 1.
+
+1087
+00:43:02,000 --> 00:43:04,000
+Then there are here.
+
+1088
+00:43:04,000 --> 00:43:06,000
+Uh, 15.
+
+1089
+00:43:06,000 --> 00:43:08,000
+So I'm going to have 15 1s here.
+
+1090
+00:43:08,000 --> 00:43:10,000
+Then I can do this.
+
+1091
+00:43:10,000 --> 00:43:12,000
+111.
+
+1092
+00:43:12,000 --> 00:43:14,000
+Then jump one to become 111.
+
+1093
+00:43:14,000 --> 00:43:16,000
+Then jump another 111.
+
+1094
+00:43:16,000 --> 00:43:18,000
+Then I can easily create one.
+
+1095
+00:43:18,000 --> 00:43:20,000
+A structure is in line with what I just said.
+
+1096
+00:43:20,000 --> 00:43:22,000
+That one.
+
+1097
+00:43:22,000 --> 00:43:24,000
+Degree size sequence.
+
+1098
+00:43:24,000 --> 00:43:26,000
+So, uh.
+
+1099
+00:43:26,000 --> 00:43:28,000
+My.
+
+1100
+00:43:28,000 --> 00:43:30,000
+What about this job?
+
+1101
+00:43:30,000 --> 00:43:32,000
+I thought of one.
+
+1102
+00:43:32,000 --> 00:43:34,000
+The algorithm is a heuristic.
+
+1103
+00:43:34,000 --> 00:43:36,000
+Uh, in computer science.
+
+1104
+00:43:36,000 --> 00:43:38,000
+The meaning of the heuristic is that you have one.
+
+1105
+00:43:38,000 --> 00:43:40,000
+You have a rule.
+
+1106
+00:43:40,000 --> 00:43:42,000
+Uh, every step of your algorithm.
+
+1107
+00:43:42,000 --> 00:43:44,000
+You have to go.
+
+1108
+00:43:44,000 --> 00:43:46,000
+The rules are very local.
+
+1109
+00:43:46,000 --> 00:43:48,000
+But.
+
+1110
+00:43:48,000 --> 00:43:50,000
+Uh.
+
+1111
+00:43:50,000 --> 00:43:52,000
+It's very surprising that you can use this rule.
+
+1112
+00:43:52,000 --> 00:43:54,000
+This is a heuristic.
+
+1113
+00:43:54,000 --> 00:43:56,000
+There is no way to guarantee that it is the best.
+
+1114
+00:43:56,000 --> 00:43:58,000
+But it can also be used.
+
+1115
+00:43:58,000 --> 00:44:00,000
+Then we found that.
+
+1116
+00:44:00,000 --> 00:44:02,000
+Um, most of the.
+
+1117
+00:44:02,000 --> 00:44:04,000
+Input sequence.
+
+1118
+00:44:04,000 --> 00:44:06,000
+I can use the algorithm that I will talk about later.
+
+1119
+00:44:06,000 --> 00:44:08,000
+To find an instance.
+
+1120
+00:44:08,000 --> 00:44:10,000
+Yes, that's what I just said.
+
+1121
+00:44:10,000 --> 00:44:12,000
+Add a key.
+
+1122
+00:44:12,000 --> 00:44:14,000
+Um.
+
+1123
+00:44:14,000 --> 00:44:16,000
+This thing on both sides of the input.
+
+1124
+00:44:16,000 --> 00:44:18,000
+Good.
+
+1125
+00:44:18,000 --> 00:44:20,000
+After I finish this algorithm.
+
+1126
+00:44:20,000 --> 00:44:22,000
+I will skip some slides.
+
+1127
+00:44:22,000 --> 00:44:24,000
+Then talk about mine.
+
+1128
+00:44:24,000 --> 00:44:26,000
+I think it's an interesting interlude.
+
+1129
+00:44:26,000 --> 00:44:28,000
+Then I will wrap up at the end.
+
+1130
+00:44:28,000 --> 00:44:30,000
+This is my algorithm.
+
+1131
+00:44:30,000 --> 00:44:32,000
+Of course I won't talk about this algorithm.
+
+1132
+00:44:32,000 --> 00:44:34,000
+But, uh, his.
+
+1133
+00:44:34,000 --> 00:44:36,000
+The idea is probably like this.
+
+1134
+00:44:36,000 --> 00:44:38,000
+Uh, I want to try all the possible 0s and 1s.
+
+1135
+00:44:38,000 --> 00:44:40,000
+But when I try it.
+
+1136
+00:44:40,000 --> 00:44:42,000
+I don't want to try it randomly.
+
+1137
+00:44:42,000 --> 00:44:44,000
+I hope that when I first started.
+
+1138
+00:44:44,000 --> 00:44:46,000
+My input.
+
+1139
+00:44:46,000 --> 00:44:48,000
+I arranged it from large to small.
+
+1140
+00:44:48,000 --> 00:44:50,000
+4333321
+
+1141
+00:44:50,000 --> 00:44:52,000
+Then this other size input.
+
+1142
+00:44:52,000 --> 00:44:54,000
+I also arranged it in large and small.
+
+1143
+00:44:54,000 --> 00:44:56,000
+After arranging it.
+
+1144
+00:44:56,000 --> 00:44:58,000
+I started from the top down.
+
+1145
+00:44:58,000 --> 00:45:00,000
+Fill in 1 or 0.
+
+1146
+00:45:00,000 --> 00:45:02,000
+But when I fill it in.
+
+1147
+00:45:02,000 --> 00:45:04,000
+I want to say.
+
+1148
+00:45:04,000 --> 00:45:06,000
+This degree is big.
+
+1149
+00:45:06,000 --> 00:45:08,000
+Hurry up and get together.
+
+1150
+00:45:08,000 --> 00:45:10,000
+It becomes a simplex.
+
+1151
+00:45:10,000 --> 00:45:12,000
+So I'm going to start from the left.
+
+1152
+00:45:12,000 --> 00:45:14,000
+Slowly fill in the lower right corner.
+
+1153
+00:45:14,000 --> 00:45:16,000
+So every time I fill it in.
+
+1154
+00:45:16,000 --> 00:45:18,000
+I have a rule.
+
+1155
+00:45:18,000 --> 00:45:20,000
+I want to.
+
+1156
+00:45:20,000 --> 00:45:22,000
+Get together first.
+
+1157
+00:45:22,000 --> 00:45:24,000
+That, uh.
+
+1158
+00:45:24,000 --> 00:45:26,000
+When arranging.
+
+1159
+00:45:26,000 --> 00:45:28,000
+I can also be sure.
+
+1160
+00:45:28,000 --> 00:45:30,000
+Oh, by the way, this is a.
+
+1161
+00:45:30,000 --> 00:45:32,000
+Um, this is a recursive algorithm.
+
+1162
+00:45:32,000 --> 00:45:34,000
+I see a wild here.
+
+1163
+00:45:34,000 --> 00:45:36,000
+Then, uh, I have some conditions.
+
+1164
+00:45:36,000 --> 00:45:38,000
+In it.
+
+1165
+00:45:38,000 --> 00:45:40,000
+Every time I fill in this 0 and 1.
+
+1166
+00:45:40,000 --> 00:45:42,000
+Sometimes I can figure it out.
+
+1167
+00:45:42,000 --> 00:45:44,000
+Sometimes I can know.
+
+1168
+00:45:44,000 --> 00:45:46,000
+Is it wrong for me to fill in 0 and 1 like this?
+
+1169
+00:45:46,000 --> 00:45:48,000
+For example.
+
+1170
+00:45:48,000 --> 00:45:50,000
+For example, let's say I'm here.
+
+1171
+00:45:50,000 --> 00:45:52,000
+I'm done here.
+
+1172
+00:45:52,000 --> 00:45:54,000
+And then there's a 1 here.
+
+1173
+00:45:54,000 --> 00:45:56,000
+And then, uh, here, uh.
+
+1174
+00:45:56,000 --> 00:45:58,000
+Fill in another 1.
+
+1175
+00:45:58,000 --> 00:46:00,000
+Then there's no way to fill in 1 here.
+
+1176
+00:46:00,000 --> 00:46:02,000
+Because I already have four 1s here.
+
+1177
+00:46:02,000 --> 00:46:04,000
+Then add it up and it's 4.
+
+1178
+00:46:04,000 --> 00:46:06,000
+So if I fill in 1 here.
+
+1179
+00:46:06,000 --> 00:46:08,000
+I'll be over 4.
+
+1180
+00:46:08,000 --> 00:46:10,000
+Then I don't have to try this.
+
+1181
+00:46:10,000 --> 00:46:12,000
+This is the condition of 1.
+
+1182
+00:46:12,000 --> 00:46:14,000
+If it's in this line.
+
+1183
+00:46:14,000 --> 00:46:16,000
+So, in fact, every line is filled in.
+
+1184
+00:46:16,000 --> 00:46:18,000
+Uh, don't go any further.
+
+1185
+00:46:18,000 --> 00:46:20,000
+Some of the conditions I can know.
+
+1186
+00:46:20,000 --> 00:46:22,000
+And then I can delete this option.
+
+1187
+00:46:22,000 --> 00:46:24,000
+And then, so he's actually a little bit.
+
+1188
+00:46:24,000 --> 00:46:26,000
+Stupid way.
+
+1189
+00:46:26,000 --> 00:46:28,000
+I really want to put all the possibilities.
+
+1190
+00:46:28,000 --> 00:46:30,000
+All found.
+
+1191
+00:46:30,000 --> 00:46:32,000
+It's just that when I'm looking for this possibility.
+
+1192
+00:46:32,000 --> 00:46:34,000
+I have a specific sequence.
+
+1193
+00:46:34,000 --> 00:46:36,000
+And then, uh.
+
+1194
+00:46:36,000 --> 00:46:38,000
+The interesting thing about this study is that this specific sequence.
+
+1195
+00:46:38,000 --> 00:46:40,000
+It's.
+
+1196
+00:46:40,000 --> 00:46:42,000
+It's useful.
+
+1197
+00:46:42,000 --> 00:46:44,000
+That.
+
+1198
+00:46:44,000 --> 00:46:46,000
+We also have some in there.
+
+1199
+00:46:46,000 --> 00:46:48,000
+Uh, for example, I.
+
+1200
+00:46:48,000 --> 00:46:50,000
+I fill in one and then I.
+
+1201
+00:46:50,000 --> 00:46:52,000
+Finally, I found that this road is different.
+
+1202
+00:46:52,000 --> 00:46:54,000
+I will, uh, record that.
+
+1203
+00:46:54,000 --> 00:46:56,000
+Ah, this road is different. I have a rejection.
+
+1204
+00:46:56,000 --> 00:46:58,000
+Then if there are too many rejections, then I will give up.
+
+1205
+00:46:58,000 --> 00:47:00,000
+Because I know this question is very difficult.
+
+1206
+00:47:00,000 --> 00:47:02,000
+And then I don't want to.
+
+1207
+00:47:02,000 --> 00:47:04,000
+Find all the possibilities.
+
+1208
+00:47:06,000 --> 00:47:08,000
+That, uh.
+
+1209
+00:47:10,000 --> 00:47:12,000
+Then I.
+
+1210
+00:47:12,000 --> 00:47:14,000
+Uh, I'm going to do this part.
+
+1211
+00:47:14,000 --> 00:47:16,000
+This part is what I'm going to do.
+
+1212
+00:47:16,000 --> 00:47:18,000
+To do the test is what I hope.
+
+1213
+00:47:18,000 --> 00:47:20,000
+I can find.
+
+1214
+00:47:20,000 --> 00:47:22,000
+All add up to 13.
+
+1215
+00:47:22,000 --> 00:47:24,000
+This whole series of all kinds.
+
+1216
+00:47:24,000 --> 00:47:26,000
+So this is actually 101.
+
+1217
+00:47:26,000 --> 00:47:28,000
+Add up to 101.
+
+1218
+00:47:28,000 --> 00:47:30,000
+Add up to 13.
+
+1219
+00:47:30,000 --> 00:47:32,000
+The whole series.
+
+1220
+00:47:32,000 --> 00:47:34,000
+And then I'm 101 times 101.
+
+1221
+00:47:34,000 --> 00:47:36,000
+All the possibilities.
+
+1222
+00:47:36,000 --> 00:47:38,000
+And then I want to run.
+
+1223
+00:47:38,000 --> 00:47:40,000
+Uh, the algorithm I just mentioned.
+
+1224
+00:47:40,000 --> 00:47:42,000
+Will he get it?
+
+1225
+00:47:42,000 --> 00:47:44,000
+A simple show is to get a simplex.
+
+1226
+00:47:44,000 --> 00:47:46,000
+As his output.
+
+1227
+00:47:46,000 --> 00:47:48,000
+Or did I finally give up?
+
+1228
+00:47:48,000 --> 00:47:50,000
+That, uh.
+
+1229
+00:47:50,000 --> 00:47:52,000
+What about here?
+
+1230
+00:47:52,000 --> 00:47:54,000
+What I want to say is.
+
+1231
+00:47:54,000 --> 00:47:56,000
+In fact, most of the.
+
+1232
+00:47:56,000 --> 00:47:58,000
+Because, uh, here's a set.
+
+1233
+00:47:58,000 --> 00:48:00,000
+I'm calculating how much time I spend.
+
+1234
+00:48:00,000 --> 00:48:02,000
+And then my definition of time is how many times I have.
+
+1235
+00:48:02,000 --> 00:48:04,000
+It's backwards.
+
+1236
+00:48:04,000 --> 00:48:06,000
+Uh, I was.
+
+1237
+00:48:06,000 --> 00:48:08,000
+Uh, uh, uh, uh, uh, uh, uh, uh, uh.
+
+1238
+00:48:08,000 --> 00:48:10,000
+And then sometimes I might be in a certain meat.
+
+1239
+00:48:10,000 --> 00:48:12,000
+I found no way.
+
+1240
+00:48:12,000 --> 00:48:14,000
+I'm going to backtrack again.
+
+1241
+00:48:14,000 --> 00:48:16,000
+Backtrack number.
+
+1242
+00:48:16,000 --> 00:48:18,000
+Uh, the number I was rejected.
+
+1243
+00:48:18,000 --> 00:48:20,000
+I was rejected.
+
+1244
+00:48:20,000 --> 00:48:22,000
+Some very simple rules.
+
+1245
+00:48:22,000 --> 00:48:24,000
+And then I found this road is different.
+
+1246
+00:48:24,000 --> 00:48:26,000
+Most of them are white.
+
+1247
+00:48:26,000 --> 00:48:28,000
+Or this gray.
+
+1248
+00:48:28,000 --> 00:48:30,000
+So in fact, most of the.
+
+1249
+00:48:30,000 --> 00:48:32,000
+Most of the input is simple.
+
+1250
+00:48:32,000 --> 00:48:34,000
+So here I'm going to say.
+
+1251
+00:48:34,000 --> 00:48:36,000
+In fact, most of the input is simple.
+
+1252
+00:48:36,000 --> 00:48:38,000
+Ah, this one, I'm going to.
+
+1253
+00:48:38,000 --> 00:48:40,000
+Jump over a little faster.
+
+1254
+00:48:40,000 --> 00:48:42,000
+But this one is mainly about.
+
+1255
+00:48:42,000 --> 00:48:44,000
+Well, this thing.
+
+1256
+00:48:44,000 --> 00:48:46,000
+Uh, you can scale up.
+
+1257
+00:48:46,000 --> 00:48:48,000
+To, uh.
+
+1258
+00:48:48,000 --> 00:48:50,000
+Add up to 1,000.
+
+1259
+00:48:50,000 --> 00:48:52,000
+This kind of, uh.
+
+1260
+00:48:52,000 --> 00:48:54,000
+Simple complex.
+
+1261
+00:48:54,000 --> 00:48:56,000
+It was just added to 13.
+
+1262
+00:48:56,000 --> 00:48:58,000
+Now add up to 1,000.
+
+1263
+00:48:58,000 --> 00:49:00,000
+Um, I can still.
+
+1264
+00:49:00,000 --> 00:49:02,000
+Find it very quickly.
+
+1265
+00:49:02,000 --> 00:49:04,000
+Some of the inside that.
+
+1266
+00:49:04,000 --> 00:49:06,000
+Is it simple?
+
+1267
+00:49:06,000 --> 00:49:08,000
+Uh.
+
+1268
+00:49:08,000 --> 00:49:10,000
+With the time I spent doing this.
+
+1269
+00:49:10,000 --> 00:49:12,000
+So.
+
+1270
+00:49:12,000 --> 00:49:14,000
+And then I found that most of the.
+
+1271
+00:49:14,000 --> 00:49:16,000
+The time it takes.
+
+1272
+00:49:16,000 --> 00:49:18,000
+It's pretty rare.
+
+1273
+00:49:18,000 --> 00:49:20,000
+It's within the time of the polynomial.
+
+1274
+00:49:20,000 --> 00:49:22,000
+That's why I'm here.
+
+1275
+00:49:22,000 --> 00:49:24,000
+The next conclusion is.
+
+1276
+00:49:24,000 --> 00:49:26,000
+Hey, this method is a useful method.
+
+1277
+00:49:26,000 --> 00:49:28,000
+I can, uh, take it.
+
+1278
+00:49:28,000 --> 00:49:30,000
+Uh, random input.
+
+1279
+00:49:30,000 --> 00:49:32,000
+I can use it to find a structure.
+
+1280
+00:49:32,000 --> 00:49:34,000
+I might need to give up some.
+
+1281
+00:49:34,000 --> 00:49:36,000
+Because I can't make sure.
+
+1282
+00:49:36,000 --> 00:49:38,000
+What did I miss?
+
+1283
+00:49:38,000 --> 00:49:40,000
+Because the problem itself is difficult.
+
+1284
+00:49:40,000 --> 00:49:42,000
+But, uh, if I have a large number.
+
+1285
+00:49:42,000 --> 00:49:44,000
+I can still use it to do something.
+
+1286
+00:49:44,000 --> 00:49:46,000
+Useful statistical things.
+
+1287
+00:49:48,000 --> 00:49:50,000
+Okay, and then, um.
+
+1288
+00:49:50,000 --> 00:49:52,000
+With just.
+
+1289
+00:49:52,000 --> 00:49:54,000
+So, um.
+
+1290
+00:49:54,000 --> 00:49:56,000
+The progress of this paper is to say.
+
+1291
+00:49:56,000 --> 00:49:58,000
+Uh, because I just said.
+
+1292
+00:49:58,000 --> 00:50:00,000
+Uh, I'm looking for this.
+
+1293
+00:50:00,000 --> 00:50:02,000
+When it comes to structure, I hope.
+
+1294
+00:50:02,000 --> 00:50:04,000
+Uh, those big friends.
+
+1295
+00:50:04,000 --> 00:50:06,000
+You have to get together first.
+
+1296
+00:50:06,000 --> 00:50:08,000
+So, uh, is there anything special about this?
+
+1297
+00:50:08,000 --> 00:50:10,000
+Some structures were found by me.
+
+1298
+00:50:10,000 --> 00:50:12,000
+So, uh, I'm going to calculate.
+
+1299
+00:50:12,000 --> 00:50:14,000
+Um, this.
+
+1300
+00:50:14,000 --> 00:50:16,000
+There are a few holes in the structure.
+
+1301
+00:50:16,000 --> 00:50:18,000
+So, this is a.
+
+1302
+00:50:18,000 --> 00:50:20,000
+In that topological data analysis.
+
+1303
+00:50:20,000 --> 00:50:22,000
+One of the standard methods.
+
+1304
+00:50:22,000 --> 00:50:24,000
+If I have a complex.
+
+1305
+00:50:24,000 --> 00:50:26,000
+I can ask him how many holes he has.
+
+1306
+00:50:26,000 --> 00:50:28,000
+So.
+
+1307
+00:50:28,000 --> 00:50:30,000
+That's a hole like this.
+
+1308
+00:50:30,000 --> 00:50:32,000
+In the middle.
+
+1309
+00:50:32,000 --> 00:50:34,000
+So, um.
+
+1310
+00:50:34,000 --> 00:50:36,000
+If this hole is the number of this hole.
+
+1311
+00:50:36,000 --> 00:50:38,000
+It's a kind of thing.
+
+1312
+00:50:38,000 --> 00:50:40,000
+It's called Betty Numbers.
+
+1313
+00:50:40,000 --> 00:50:42,000
+And then he'll have all kinds of different.
+
+1314
+00:50:42,000 --> 00:50:44,000
+Dimensional holes, for example.
+
+1315
+00:50:44,000 --> 00:50:46,000
+Um.
+
+1316
+00:50:46,000 --> 00:50:48,000
+Betty Zero is.
+
+1317
+00:50:48,000 --> 00:50:50,000
+He has a few.
+
+1318
+00:50:50,000 --> 00:50:52,000
+There are two.
+
+1319
+00:50:52,000 --> 00:50:54,000
+He only has one.
+
+1320
+00:50:54,000 --> 00:50:56,000
+But he happens to have a hole.
+
+1321
+00:50:56,000 --> 00:50:58,000
+So his Betty One is one.
+
+1322
+00:50:58,000 --> 00:51:00,000
+And then Betty Zero is one.
+
+1323
+00:51:00,000 --> 00:51:02,000
+H2 is a higher-level hole.
+
+1324
+00:51:02,000 --> 00:51:04,000
+And so on.
+
+1325
+00:51:04,000 --> 00:51:06,000
+it is good.
+
+1326
+00:51:06,000 --> 00:51:08,000
+Start with love.
+
+1327
+00:51:08,000 --> 00:51:10,000
+This is the second one.
+
+1328
+00:51:10,000 --> 00:51:12,000
+Because this is just to say.
+
+1329
+00:51:12,000 --> 00:51:14,000
+What I just said.
+
+1330
+00:51:14,000 --> 00:51:16,000
+Um, that kind of heuristic.
+
+1331
+00:51:16,000 --> 00:51:18,000
+There are really some special structures.
+
+1332
+00:51:18,000 --> 00:51:20,000
+Is.
+
+1333
+00:51:20,000 --> 00:51:22,000
+Created by me.
+
+1334
+00:51:22,000 --> 00:51:24,000
+There is nothing.
+
+1335
+00:51:24,000 --> 00:51:26,000
+It's not very scientific.
+
+1336
+00:51:26,000 --> 00:51:28,000
+But he is.
+
+1337
+00:51:28,000 --> 00:51:30,000
+One of the features of this algorithm.
+
+1338
+00:51:30,000 --> 00:51:32,000
+This feature will help us find it.
+
+1339
+00:51:32,000 --> 00:51:34,000
+Um, very scattered.
+
+1340
+00:51:34,000 --> 00:51:36,000
+With very few holes.
+
+1341
+00:51:36,000 --> 00:51:38,000
+This kind of structure.
+
+1342
+00:51:38,000 --> 00:51:40,000
+That, um.
+
+1343
+00:51:42,000 --> 00:51:44,000
+What about the focus?
+
+1344
+00:51:44,000 --> 00:51:46,000
+It's not what this structure looks like.
+
+1345
+00:51:46,000 --> 00:51:48,000
+But I can.
+
+1346
+00:51:48,000 --> 00:51:50,000
+To build a bridge is from.
+
+1347
+00:51:50,000 --> 00:51:52,000
+Input.
+
+1348
+00:51:52,000 --> 00:51:54,000
+Find a structure.
+
+1349
+00:51:54,000 --> 00:51:56,000
+And then I want to use someone else.
+
+1350
+00:51:56,000 --> 00:51:58,000
+Randomize the method to find an ensemble.
+
+1351
+00:51:58,000 --> 00:52:00,000
+And then answer some questions.
+
+1352
+00:52:00,000 --> 00:52:02,000
+So this is just doing some.
+
+1353
+00:52:02,000 --> 00:52:04,000
+Capitalization is about me.
+
+1354
+00:52:04,000 --> 00:52:06,000
+Some features of the algorithm.
+
+1355
+00:52:06,000 --> 00:52:08,000
+Okay, and then.
+
+1356
+00:52:08,000 --> 00:52:10,000
+This is not an interlude.
+
+1357
+00:52:10,000 --> 00:52:12,000
+That is to say, why do you have to count?
+
+1358
+00:52:12,000 --> 00:52:14,000
+Because, uh, sometimes.
+
+1359
+00:52:14,000 --> 00:52:16,000
+In fact, it is important to know how many holes there are in this data.
+
+1360
+00:52:16,000 --> 00:52:18,000
+Take the one I just said.
+
+1361
+00:52:18,000 --> 00:52:20,000
+Uh, in terms of the example of the brain area.
+
+1362
+00:52:20,000 --> 00:52:22,000
+Uh, you can actually know that.
+
+1363
+00:52:22,000 --> 00:52:24,000
+Uh, normal people's brains.
+
+1364
+00:52:24,000 --> 00:52:26,000
+In some specific structure.
+
+1365
+00:52:26,000 --> 00:52:28,000
+The number of holes.
+
+1366
+00:52:28,000 --> 00:52:30,000
+With.
+
+1367
+00:52:30,000 --> 00:52:32,000
+Uh, there are.
+
+1368
+00:52:32,000 --> 00:52:34,000
+Um, external dropout.
+
+1369
+00:52:34,000 --> 00:52:36,000
+A kind of neurological disease.
+
+1370
+00:52:36,000 --> 00:52:38,000
+The structure of the brain.
+
+1371
+00:52:38,000 --> 00:52:40,000
+These two.
+
+1372
+00:52:40,000 --> 00:52:42,000
+The number of holes will be different.
+
+1373
+00:52:42,000 --> 00:52:44,000
+This is a.
+
+1374
+00:52:44,000 --> 00:52:46,000
+Uh, there are a few holes.
+
+1375
+00:52:46,000 --> 00:52:48,000
+Um, it might be useful.
+
+1376
+00:52:48,000 --> 00:52:50,000
+Um, the other place that might be useful.
+
+1377
+00:52:50,000 --> 00:52:52,000
+Um, uh, it is.
+
+1378
+00:52:52,000 --> 00:52:54,000
+Uh, uh, it is.
+
+1379
+00:52:54,000 --> 00:52:56,000
+Um, signal processing.
+
+1380
+00:52:56,000 --> 00:52:58,000
+Signal processing.
+
+1381
+00:52:58,000 --> 00:53:00,000
+Um.
+
+1382
+00:53:00,000 --> 00:53:02,000
+This thing is.
+
+1383
+00:53:02,000 --> 00:53:04,000
+To say, let's say a.
+
+1384
+00:53:04,000 --> 00:53:06,000
+Data, this data.
+
+1385
+00:53:06,000 --> 00:53:08,000
+I observed these.
+
+1386
+00:53:08,000 --> 00:53:10,000
+On a network.
+
+1387
+00:53:10,000 --> 00:53:12,000
+This is all this gray.
+
+1388
+00:53:12,000 --> 00:53:14,000
+It's all a network, and then.
+
+1389
+00:53:14,000 --> 00:53:16,000
+All this is colored is the data I observed.
+
+1390
+00:53:16,000 --> 00:53:18,000
+Then, in this data.
+
+1391
+00:53:18,000 --> 00:53:20,000
+Because I am very clear now.
+
+1392
+00:53:20,000 --> 00:53:22,000
+I see all the data.
+
+1393
+00:53:22,000 --> 00:53:24,000
+I know there are two holes in this data.
+
+1394
+00:53:24,000 --> 00:53:26,000
+Then, um, these two holes.
+
+1395
+00:53:26,000 --> 00:53:28,000
+In the structure is very special.
+
+1396
+00:53:28,000 --> 00:53:30,000
+But I observed this.
+
+1397
+00:53:30,000 --> 00:53:32,000
+This one with color, this arrow.
+
+1398
+00:53:32,000 --> 00:53:34,000
+I don't know what it is.
+
+1399
+00:53:34,000 --> 00:53:36,000
+Uh, what does it have to do with this hole?
+
+1400
+00:53:36,000 --> 00:53:38,000
+That, uh, there is a way.
+
+1401
+00:53:38,000 --> 00:53:40,000
+That is, I can put.
+
+1402
+00:53:40,000 --> 00:53:42,000
+These observed arrows.
+
+1403
+00:53:42,000 --> 00:53:44,000
+Projected to.
+
+1404
+00:53:44,000 --> 00:53:46,000
+Two holes above.
+
+1405
+00:53:46,000 --> 00:53:48,000
+This is a bit like that.
+
+1406
+00:53:48,000 --> 00:53:50,000
+The PCA that everyone learns statistics.
+
+1407
+00:53:50,000 --> 00:53:52,000
+Because PCA will have two.
+
+1408
+00:53:52,000 --> 00:53:54,000
+I can put it.
+
+1409
+00:53:54,000 --> 00:53:56,000
+Projected up, and then look at it.
+
+1410
+00:53:56,000 --> 00:53:58,000
+These two different directions.
+
+1411
+00:53:58,000 --> 00:54:00,000
+Um, the information is not.
+
+1412
+00:54:00,000 --> 00:54:02,000
+The biggest explanation.
+
+1413
+00:54:02,000 --> 00:54:04,000
+Uh, the data I observed.
+
+1414
+00:54:04,000 --> 00:54:06,000
+Then, if you put this data projected up.
+
+1415
+00:54:06,000 --> 00:54:08,000
+You will find that, uh, these three have color lines.
+
+1416
+00:54:08,000 --> 00:54:10,000
+Be grouped together.
+
+1417
+00:54:10,000 --> 00:54:12,000
+Then the other three groups together.
+
+1418
+00:54:12,000 --> 00:54:14,000
+Then the other three groups together.
+
+1419
+00:54:14,000 --> 00:54:16,000
+Why are they grouped together?
+
+1420
+00:54:16,000 --> 00:54:18,000
+Because of any.
+
+1421
+00:54:18,000 --> 00:54:20,000
+In a group of lines, he has no way.
+
+1422
+00:54:20,000 --> 00:54:22,000
+Don't skip this hole.
+
+1423
+00:54:22,000 --> 00:54:24,000
+Deform to the side.
+
+1424
+00:54:24,000 --> 00:54:26,000
+For example, I fix these two ends.
+
+1425
+00:54:26,000 --> 00:54:28,000
+Then I want to pull this rope.
+
+1426
+00:54:28,000 --> 00:54:30,000
+I can't get around this hole.
+
+1427
+00:54:30,000 --> 00:54:32,000
+I can only be in this place.
+
+1428
+00:54:32,000 --> 00:54:34,000
+Just squeeze together.
+
+1429
+00:54:34,000 --> 00:54:36,000
+Yeah, so, um, this is one.
+
+1430
+00:54:36,000 --> 00:54:38,000
+Can be from, uh.
+
+1431
+00:54:38,000 --> 00:54:40,000
+You can get some from your data.
+
+1432
+00:54:40,000 --> 00:54:42,000
+Some of the things that are related to the collection.
+
+1433
+00:54:42,000 --> 00:54:44,000
+How to do things like this.
+
+1434
+00:54:44,000 --> 00:54:46,000
+Then, um, this is.
+
+1435
+00:54:46,000 --> 00:54:48,000
+A.
+
+1436
+00:54:48,000 --> 00:54:50,000
+A small field called.
+
+1437
+00:54:50,000 --> 00:54:52,000
+Signal processing.
+
+1438
+00:54:52,000 --> 00:54:54,000
+Then I list some articles.
+
+1439
+00:54:54,000 --> 00:54:56,000
+You can find some interesting examples in it.
+
+1440
+00:54:56,000 --> 00:54:58,000
+That, um.
+
+1441
+00:54:58,000 --> 00:55:00,000
+Finally, this video.
+
+1442
+00:55:00,000 --> 00:55:02,000
+I'm going to skip it all.
+
+1443
+00:55:02,000 --> 00:55:04,000
+What about this video?
+
+1444
+00:55:04,000 --> 00:55:06,000
+It's about, um.
+
+1445
+00:55:06,000 --> 00:55:08,000
+We if we.
+
+1446
+00:55:08,000 --> 00:55:10,000
+If we limit our world.
+
+1447
+00:55:10,000 --> 00:55:12,000
+It's a network.
+
+1448
+00:55:12,000 --> 00:55:14,000
+If we can only see the network, then we.
+
+1449
+00:55:14,000 --> 00:55:16,000
+We care about some of this network.
+
+1450
+00:55:16,000 --> 00:55:18,000
+Um.
+
+1451
+00:55:18,000 --> 00:55:20,000
+It's the number of holes.
+
+1452
+00:55:20,000 --> 00:55:22,000
+So.
+
+1453
+00:55:22,000 --> 00:55:24,000
+Uh, we.
+
+1454
+00:55:24,000 --> 00:55:26,000
+And then we have some options.
+
+1455
+00:55:26,000 --> 00:55:28,000
+For example, if this network is getting more and more dense.
+
+1456
+00:55:28,000 --> 00:55:30,000
+In fact, we will feel that this hole will be more and more.
+
+1457
+00:55:30,000 --> 00:55:32,000
+Because it's a network that's getting denser and denser.
+
+1458
+00:55:32,000 --> 00:55:34,000
+So his circle.
+
+1459
+00:55:34,000 --> 00:55:36,000
+His hole is getting more and more.
+
+1460
+00:55:36,000 --> 00:55:38,000
+Um, but this intuition can't be.
+
+1461
+00:55:38,000 --> 00:55:40,000
+Completely carried out.
+
+1462
+00:55:40,000 --> 00:55:42,000
+Uh, in the complex, because.
+
+1463
+00:55:42,000 --> 00:55:44,000
+Uh, because of the one I just said.
+
+1464
+00:55:44,000 --> 00:55:46,000
+The limit of the complex.
+
+1465
+00:55:46,000 --> 00:55:48,000
+So, um.
+
+1466
+00:55:48,000 --> 00:55:50,000
+His.
+
+1467
+00:55:50,000 --> 00:55:52,000
+His.
+
+1468
+00:55:52,000 --> 00:55:54,000
+The description I just said just came back.
+
+1469
+00:55:54,000 --> 00:55:56,000
+If it's a denser and denser complex.
+
+1470
+00:55:56,000 --> 00:55:58,000
+His hole is actually getting less and less.
+
+1471
+00:55:58,000 --> 00:56:00,000
+There are some of this.
+
+1472
+00:56:00,000 --> 00:56:02,000
+Uh, some interesting things about the structure.
+
+1473
+00:56:02,000 --> 00:56:04,000
+Interesting things.
+
+1474
+00:56:04,000 --> 00:56:06,000
+Okay, so this is my final slide.
+
+1475
+00:56:06,000 --> 00:56:08,000
+Um.
+
+1476
+00:56:08,000 --> 00:56:10,000
+I think the most important piece of information is that we are now.
+
+1477
+00:56:10,000 --> 00:56:12,000
+Uh, with this.
+
+1478
+00:56:12,000 --> 00:56:14,000
+I developed this method.
+
+1479
+00:56:14,000 --> 00:56:16,000
+It can be used.
+
+1480
+00:56:16,000 --> 00:56:18,000
+For arbitrary degree size sequence.
+
+1481
+00:56:18,000 --> 00:56:20,000
+I can use it to find a structure.
+
+1482
+00:56:20,000 --> 00:56:22,000
+Then I can use it at this time.
+
+1483
+00:56:22,000 --> 00:56:24,000
+Uh, someone else's.
+
+1484
+00:56:24,000 --> 00:56:26,000
+Uh, random method, random network.
+
+1485
+00:56:26,000 --> 00:56:28,000
+Then you can ask some statistical questions.
+
+1486
+00:56:28,000 --> 00:56:30,000
+What about the second interesting thing?
+
+1487
+00:56:30,000 --> 00:56:32,000
+Um, what I just said.
+
+1488
+00:56:32,000 --> 00:56:34,000
+Uh, this computer science question.
+
+1489
+00:56:34,000 --> 00:56:36,000
+He has a feature called.
+
+1490
+00:56:36,000 --> 00:56:38,000
+This means.
+
+1491
+00:56:38,000 --> 00:56:40,000
+Uh, if you go to Google.
+
+1492
+00:56:40,000 --> 00:56:42,000
+MPCompany will be on his.
+
+1493
+00:56:42,000 --> 00:56:44,000
+Wikipedia to find this picture.
+
+1494
+00:56:44,000 --> 00:56:46,000
+In fact, the world in here.
+
+1495
+00:56:46,000 --> 00:56:48,000
+It's still very rich.
+
+1496
+00:56:48,000 --> 00:56:50,000
+Maybe it's simple and difficult.
+
+1497
+00:56:50,000 --> 00:56:52,000
+So he is.
+
+1498
+00:56:52,000 --> 00:56:54,000
+Uh.
+
+1499
+00:56:54,000 --> 00:56:56,000
+Uh, I have.
+
+1500
+00:56:56,000 --> 00:56:58,000
+That algorithm is written as a.
+
+1501
+00:56:58,000 --> 00:57:00,000
+Python package.
+
+1502
+00:57:00,000 --> 00:57:02,000
+Just open a terminal.
+
+1503
+00:57:02,000 --> 00:57:04,000
+You can use this algorithm directly.
+
+1504
+00:57:04,000 --> 00:57:06,000
+What about the last one?
+
+1505
+00:57:06,000 --> 00:57:08,000
+I think this job has.
+
+1506
+00:57:08,000 --> 00:57:10,000
+Uh.
+
+1507
+00:57:10,000 --> 00:57:12,000
+There are some problems.
+
+1508
+00:57:12,000 --> 00:57:14,000
+That's what I just said.
+
+1509
+00:57:14,000 --> 00:57:16,000
+In fact, it should be.
+
+1510
+00:57:16,000 --> 00:57:18,000
+In general, it's a difficult question.
+
+1511
+00:57:18,000 --> 00:57:20,000
+Why is there a.
+
+1512
+00:57:20,000 --> 00:57:22,000
+Simple algorithm can.
+
+1513
+00:57:22,000 --> 00:57:24,000
+Count to the inside.
+
+1514
+00:57:24,000 --> 00:57:26,000
+Most of them can be solved.
+
+1515
+00:57:26,000 --> 00:57:28,000
+So why is he so successful?
+
+1516
+00:57:28,000 --> 00:57:30,000
+Um.
+
+1517
+00:57:30,000 --> 00:57:32,000
+I haven't been able to.
+
+1518
+00:57:32,000 --> 00:57:34,000
+Uh, answer this question.
+
+1519
+00:57:34,000 --> 00:57:36,000
+What about the rest of the statistics?
+
+1520
+00:57:36,000 --> 00:57:38,000
+Yes, I can ask.
+
+1521
+00:57:38,000 --> 00:57:40,000
+Um, if I.
+
+1522
+00:57:40,000 --> 00:57:42,000
+See a data, I can think about it.
+
+1523
+00:57:42,000 --> 00:57:44,000
+Um, this data is related to it.
+
+1524
+00:57:44,000 --> 00:57:46,000
+After a few fixed parameters.
+
+1525
+00:57:46,000 --> 00:57:48,000
+Randomized data.
+
+1526
+00:57:48,000 --> 00:57:50,000
+Uh, what's the difference? Why is my data.
+
+1527
+00:57:50,000 --> 00:57:52,000
+May be with.
+
+1528
+00:57:52,000 --> 00:57:54,000
+Uh, I think it should be.
+
+1529
+00:57:54,000 --> 00:57:56,000
+Uh.
+
+1530
+00:57:56,000 --> 00:57:58,000
+It should be some.
+
+1531
+00:57:58,000 --> 00:58:00,000
+Um, parameters.
+
+1532
+00:58:02,000 --> 00:58:04,000
+I'm sorry.
+
+1533
+00:58:04,000 --> 00:58:06,000
+Um, I'm in this data.
+
+1534
+00:58:06,000 --> 00:58:08,000
+I have observed some.
+
+1535
+00:58:08,000 --> 00:58:10,000
+I think it's interesting.
+
+1536
+00:58:10,000 --> 00:58:12,000
+Uh, I hope to know.
+
+1537
+00:58:12,000 --> 00:58:14,000
+Um.
+
+1538
+00:58:14,000 --> 00:58:16,000
+Is it really interesting?
+
+1539
+00:58:16,000 --> 00:58:18,000
+So in order to know this.
+
+1540
+00:58:18,000 --> 00:58:20,000
+I need to randomize some parts.
+
+1541
+00:58:20,000 --> 00:58:22,000
+That's a statistic.
+
+1542
+00:58:22,000 --> 00:58:24,000
+Uh.
+
+1543
+00:58:24,000 --> 00:58:26,000
+It's a long question.
+
+1544
+00:58:26,000 --> 00:58:28,000
+Well, uh, a little bit more.
+
+1545
+00:58:28,000 --> 00:58:30,000
+Because, uh.
+
+1546
+00:58:30,000 --> 00:58:32,000
+This is a complex system.
+
+1547
+00:58:32,000 --> 00:58:34,000
+A related one.
+
+1548
+00:58:34,000 --> 00:58:36,000
+A question.
+
+1549
+00:58:36,000 --> 00:58:38,000
+In the complex system, we usually have some components.
+
+1550
+00:58:38,000 --> 00:58:40,000
+That's his agent.
+
+1551
+00:58:40,000 --> 00:58:42,000
+Uh, the local structure I just said.
+
+1552
+00:58:42,000 --> 00:58:44,000
+For example, I choose what kind of friends I want to make.
+
+1553
+00:58:44,000 --> 00:58:46,000
+This is a choice I made.
+
+1554
+00:58:46,000 --> 00:58:48,000
+But I'm the last.
+
+1555
+00:58:48,000 --> 00:58:50,000
+Uh, the human society is a global thing.
+
+1556
+00:58:50,000 --> 00:58:52,000
+That's it.
+
+1557
+00:58:52,000 --> 00:58:54,000
+Is there any data?
+
+1558
+00:58:54,000 --> 00:58:56,000
+Uh, we can ask.
+
+1559
+00:58:56,000 --> 00:58:58,000
+Uh, the link between local and global.
+
+1560
+00:58:58,000 --> 00:59:00,000
+Okay.
+
+1561
+00:59:00,000 --> 00:59:02,000
+Um.
+
+1562
+00:59:02,000 --> 00:59:04,000
+This is my list.
+
+1563
+00:59:04,000 --> 00:59:06,000
+Uh, I think it's useful.
+
+1564
+00:59:06,000 --> 00:59:08,000
+And then, because today's topic is.
+
+1565
+00:59:08,000 --> 00:59:10,000
+Uh.
+
+1566
+00:59:10,000 --> 00:59:12,000
+Related to the higher order network.
+
+1567
+00:59:12,000 --> 00:59:14,000
+So these articles are all with, uh.
+
+1568
+00:59:14,000 --> 00:59:16,000
+It's just some technical survey.
+
+1569
+00:59:16,000 --> 00:59:18,000
+And then, uh.
+
+1570
+00:59:18,000 --> 00:59:20,000
+I just talked about some data.
+
+1571
+00:59:20,000 --> 00:59:22,000
+How to calculate the structure of this data.
+
+1572
+00:59:22,000 --> 00:59:24,000
+Uh, there are three useful.
+
+1573
+00:59:24,000 --> 00:59:26,000
+Uh, link for reference.
+
+1574
+00:59:26,000 --> 00:59:28,000
+That, uh.
+
+1575
+00:59:28,000 --> 00:59:30,000
+Uh, I think this area is.
+
+1576
+00:59:30,000 --> 00:59:32,000
+Network science field.
+
+1577
+00:59:32,000 --> 00:59:34,000
+And then, um, he has some communities.
+
+1578
+00:59:34,000 --> 00:59:36,000
+For example, this net size is every year.
+
+1579
+00:59:36,000 --> 00:59:38,000
+A meeting will be held.
+
+1580
+00:59:38,000 --> 00:59:40,000
+That, uh.
+
+1581
+00:59:40,000 --> 00:59:42,000
+I'm in this.
+
+1582
+00:59:42,000 --> 00:59:44,000
+Um.
+
+1583
+00:59:44,000 --> 00:59:46,000
+Since.
+
+1584
+00:59:46,000 --> 00:59:48,000
+In this organization.
+
+1585
+00:59:48,000 --> 00:59:50,000
+And then, um, they're every year.
+
+1586
+00:59:50,000 --> 00:59:52,000
+Uh, we'll be here every year.
+
+1587
+00:59:52,000 --> 00:59:54,000
+Some activities.
+
+1588
+00:59:54,000 --> 00:59:56,000
+That, uh, we have a slack.
+
+1589
+00:59:56,000 --> 00:59:58,000
+If you're interested in joining, you can.
+
+1590
+00:59:58,000 --> 01:00:00,000
+Write an email to me.
+
+1591
+01:00:00,000 --> 01:00:02,000
+It's useful.
+
+1592
+01:00:02,000 --> 01:00:04,000
+The other thing is, um.
+
+1593
+01:00:04,000 --> 01:00:06,000
+There is a seminar.
+
+1594
+01:00:06,000 --> 01:00:08,000
+That, um.
+
+1595
+01:00:08,000 --> 01:00:10,000
+Like Tara.
+
+1596
+01:00:10,000 --> 01:00:12,000
+There will be some.
+
+1597
+01:00:12,000 --> 01:00:14,000
+With network science.
+
+1598
+01:00:14,000 --> 01:00:16,000
+Talk.
+
+1599
+01:00:16,000 --> 01:00:18,000
+That corresponds to this diversified.
+
+1600
+01:00:18,000 --> 01:00:20,000
+Net size symposium.
+
+1601
+01:00:20,000 --> 01:00:22,000
+Okay.
+
+1602
+01:00:22,000 --> 01:00:24,000
+I'm done.
+
+1603
+01:00:24,000 --> 01:00:26,000
+Thank you.
+
+1604
+01:00:26,000 --> 01:00:28,000
+Thank you.
+
+1605
+01:00:28,000 --> 01:00:30,000
+Then we can turn on the microphone.
+
+1606
+01:00:30,000 --> 01:00:32,000
+Applause.
+
+1607
+01:00:32,000 --> 01:00:34,000
+Ok.
+
+1608
+01:00:34,000 --> 01:00:36,000
+That.
+
+1609
+01:00:36,000 --> 01:00:38,000
+Uh, is there a problem with the audience here?
+
+1610
+01:00:38,000 --> 01:00:40,000
+Uh.
+
+1611
+01:00:40,000 --> 01:00:42,000
+Uh, I have a question here.
+
+1612
+01:00:42,000 --> 01:00:44,000
+I don't know if I can ask.
+
+1613
+01:00:44,000 --> 01:00:46,000
+Um, please ask.
+
+1614
+01:00:46,000 --> 01:00:48,000
+Let me turn on the microphone.
+
+1615
+01:00:48,000 --> 01:00:50,000
+Uh, the organizer.
+
+1616
+01:00:50,000 --> 01:00:52,000
+Then, how are you? I am.
+
+1617
+01:00:52,000 --> 01:00:54,000
+Li Xuanwei from the Chinese Academy of Social Sciences.
+
+1618
+01:00:54,000 --> 01:00:56,000
+I heard the speech last time.
+
+1619
+01:00:56,000 --> 01:00:58,000
+It was two years ago.
+
+1620
+01:00:58,000 --> 01:01:00,000
+Then it's still exciting.
+
+1621
+01:01:00,000 --> 01:01:02,000
+Thank you for sharing.
+
+1622
+01:01:02,000 --> 01:01:04,000
+Because we have a topic.
+
+1623
+01:01:04,000 --> 01:01:06,000
+There are also related research.
+
+1624
+01:01:06,000 --> 01:01:08,000
+So I heard this.
+
+1625
+01:01:08,000 --> 01:01:10,000
+I feel very excited to see if I can use it.
+
+1626
+01:01:10,000 --> 01:01:12,000
+Our own research.
+
+1627
+01:01:12,000 --> 01:01:14,000
+Then, uh, there are a few questions.
+
+1628
+01:01:14,000 --> 01:01:16,000
+I want to ask Zixi.
+
+1629
+01:01:16,000 --> 01:01:18,000
+There are about three.
+
+1630
+01:01:18,000 --> 01:01:20,000
+The first one is.
+
+1631
+01:01:20,000 --> 01:01:22,000
+Uh, we.
+
+1632
+01:01:22,000 --> 01:01:24,000
+On the actual data.
+
+1633
+01:01:24,000 --> 01:01:26,000
+Uh, there are a lot of different.
+
+1634
+01:01:26,000 --> 01:01:28,000
+Uh.
+
+1635
+01:01:28,000 --> 01:01:30,000
+Different types, like your node.
+
+1636
+01:01:30,000 --> 01:01:32,000
+There are different types of nodes.
+
+1637
+01:01:32,000 --> 01:01:34,000
+Like gender, male, female, race.
+
+1638
+01:01:34,000 --> 01:01:36,000
+Black, white, Asian.
+
+1639
+01:01:36,000 --> 01:01:38,000
+Like this is a note type.
+
+1640
+01:01:38,000 --> 01:01:40,000
+That edge is also edge.
+
+1641
+01:01:40,000 --> 01:01:42,000
+Then you can add different weight.
+
+1642
+01:01:42,000 --> 01:01:44,000
+You can be 01.
+
+1643
+01:01:44,000 --> 01:01:46,000
+You can also be a variety of numbers.
+
+1644
+01:01:46,000 --> 01:01:48,000
+Or.
+
+1645
+01:01:48,000 --> 01:01:50,000
+Uh, a few kinds of 0.51.
+
+1646
+01:01:50,000 --> 01:01:52,000
+0123.
+
+1647
+01:01:52,000 --> 01:01:54,000
+Or you can be a sign.
+
+1648
+01:01:54,000 --> 01:01:56,000
+Different edge.
+
+1649
+01:01:56,000 --> 01:01:58,000
+Then your edge can also be directional.
+
+1650
+01:01:58,000 --> 01:02:00,000
+You can point to different places.
+
+1651
+01:02:00,000 --> 01:02:02,000
+That's what you're using now.
+
+1652
+01:02:02,000 --> 01:02:04,000
+This algorithm.
+
+1653
+01:02:04,000 --> 01:02:06,000
+Have you ever thought that you can promote it in the future?
+
+1654
+01:02:06,000 --> 01:02:08,000
+Different nodes or edge types.
+
+1655
+01:02:08,000 --> 01:02:10,000
+I don't know if this is in the complex.
+
+1656
+01:02:10,000 --> 01:02:12,000
+Will it be an extension?
+
+1657
+01:02:12,000 --> 01:02:14,000
+An important extension.
+
+1658
+01:02:14,000 --> 01:02:16,000
+This is the first question.
+
+1659
+01:02:16,000 --> 01:02:18,000
+The second question is, um.
+
+1660
+01:02:18,000 --> 01:02:20,000
+I'm curious.
+
+1661
+01:02:20,000 --> 01:02:22,000
+This algorithm.
+
+1662
+01:02:22,000 --> 01:02:24,000
+It's you give a sequence.
+
+1663
+01:02:24,000 --> 01:02:26,000
+With, uh.
+
+1664
+01:02:26,000 --> 01:02:28,000
+Uh, another one.
+
+1665
+01:02:28,000 --> 01:02:30,000
+I forgot the name, but you give two sequences.
+
+1666
+01:02:30,000 --> 01:02:32,000
+You can push it all.
+
+1667
+01:02:32,000 --> 01:02:34,000
+Uh, a possible picture.
+
+1668
+01:02:34,000 --> 01:02:36,000
+Even the future method can be calculated.
+
+1669
+01:02:36,000 --> 01:02:38,000
+That if I give you today.
+
+1670
+01:02:38,000 --> 01:02:40,000
+Is a part of the information.
+
+1671
+01:02:40,000 --> 01:02:42,000
+Assuming I take my class.
+
+1672
+01:02:42,000 --> 01:02:44,000
+I'm going to do a comparison of the data.
+
+1673
+01:02:44,000 --> 01:02:46,000
+I have a class.
+
+1674
+01:02:46,000 --> 01:02:48,000
+30 students.
+
+1675
+01:02:48,000 --> 01:02:50,000
+Suppose only 10 students fill this information.
+
+1676
+01:02:50,000 --> 01:02:52,000
+Then we assume that the information he filled is complete.
+
+1677
+01:02:52,000 --> 01:02:54,000
+That I can use your method.
+
+1678
+01:02:54,000 --> 01:02:56,000
+Calculate these 10 people.
+
+1679
+01:02:56,000 --> 01:02:58,000
+Among the data given.
+
+1680
+01:02:58,000 --> 01:03:00,000
+This may be behind you.
+
+1681
+01:03:00,000 --> 01:03:02,000
+Maybe you didn't handle this article.
+
+1682
+01:03:02,000 --> 01:03:04,000
+But a question behind it.
+
+1683
+01:03:04,000 --> 01:03:06,000
+Your opinion is.
+
+1684
+01:03:06,000 --> 01:03:08,000
+Take the data of these 10 people to restore the whole 30 people.
+
+1685
+01:03:08,000 --> 01:03:10,000
+The ensemble on the board.
+
+1686
+01:03:10,000 --> 01:03:12,000
+Then the credibility of this.
+
+1687
+01:03:12,000 --> 01:03:14,000
+Is it worth doing this?
+
+1688
+01:03:14,000 --> 01:03:16,000
+I don't really know.
+
+1689
+01:03:16,000 --> 01:03:18,000
+This is the second one.
+
+1690
+01:03:18,000 --> 01:03:20,000
+If you only get part of the observation information.
+
+1691
+01:03:20,000 --> 01:03:22,000
+Can you guess the whole group?
+
+1692
+01:03:22,000 --> 01:03:24,000
+Interaction.
+
+1693
+01:03:24,000 --> 01:03:26,000
+What is the interaction of various high-level low-level?
+
+1694
+01:03:26,000 --> 01:03:28,000
+The last question is.
+
+1695
+01:03:28,000 --> 01:03:30,000
+You finally mentioned that.
+
+1696
+01:03:30,000 --> 01:03:32,000
+Like persistent homology.
+
+1697
+01:03:32,000 --> 01:03:34,000
+Indeed, in this field.
+
+1698
+01:03:34,000 --> 01:03:36,000
+Development is very fast.
+
+1699
+01:03:36,000 --> 01:03:38,000
+When we do social studies.
+
+1700
+01:03:38,000 --> 01:03:40,000
+There will also be different holes.
+
+1701
+01:03:40,000 --> 01:03:42,000
+You just said those holes.
+
+1702
+01:03:42,000 --> 01:03:44,000
+We want to say that it is a high-level interaction.
+
+1703
+01:03:44,000 --> 01:03:46,000
+In social studies, there is a hole called structural hole.
+
+1704
+01:03:46,000 --> 01:03:48,000
+Structural hole is to say.
+
+1705
+01:03:48,000 --> 01:03:50,000
+Between two groups.
+
+1706
+01:03:50,000 --> 01:03:52,000
+It may not be so close.
+
+1707
+01:03:52,000 --> 01:03:54,000
+There will be some key loopholes.
+
+1708
+01:03:54,000 --> 01:03:56,000
+The two are more.
+
+1709
+01:03:56,000 --> 01:03:58,000
+How to have a connected group.
+
+1710
+01:03:58,000 --> 01:04:00,000
+Connected together.
+
+1711
+01:04:00,000 --> 01:04:02,000
+I don't know if it's your observation.
+
+1712
+01:04:02,000 --> 01:04:04,000
+Or your feeling.
+
+1713
+01:04:04,000 --> 01:04:06,000
+These two holes.
+
+1714
+01:04:06,000 --> 01:04:08,000
+One is from homology.
+
+1715
+01:04:08,000 --> 01:04:10,000
+The hole of homology.
+
+1716
+01:04:10,000 --> 01:04:12,000
+With social science.
+
+1717
+01:04:12,000 --> 01:04:14,000
+On the graph.
+
+1718
+01:04:14,000 --> 01:04:16,000
+Called structural hole.
+
+1719
+01:04:16,000 --> 01:04:18,000
+Is it possible to have something to do with it?
+
+1720
+01:04:18,000 --> 01:04:20,000
+Because you just said.
+
+1721
+01:04:20,000 --> 01:04:22,000
+The conclusion is not necessarily the conclusion of homology.
+
+1722
+01:04:22,000 --> 01:04:24,000
+The denser the picture, the less.
+
+1723
+01:04:24,000 --> 01:04:26,000
+I always want to say these two.
+
+1724
+01:04:26,000 --> 01:04:28,000
+I actually didn't think it through.
+
+1725
+01:04:28,000 --> 01:04:30,000
+This is a very wonderful speech.
+
+1726
+01:04:30,000 --> 01:04:32,000
+Thank you.
+
+1727
+01:04:32,000 --> 01:04:34,000
+That was my three-year question.
+
+1728
+01:04:34,000 --> 01:04:36,000
+Thank you.
+
+1729
+01:04:42,000 --> 01:04:44,000
+First of all.
+
+1730
+01:04:44,000 --> 01:04:46,000
+I want to say.
+
+1731
+01:04:46,000 --> 01:04:48,000
+I think now.
+
+1732
+01:04:48,000 --> 01:04:50,000
+Because these studies.
+
+1733
+01:04:50,000 --> 01:04:52,000
+Are all based on data.
+
+1734
+01:04:52,000 --> 01:04:54,000
+I want to have a data.
+
+1735
+01:04:54,000 --> 01:04:56,000
+Then come and ask me.
+
+1736
+01:04:56,000 --> 01:04:58,000
+The data is quite small.
+
+1737
+01:04:58,000 --> 01:05:00,000
+Then.
+
+1738
+01:05:00,000 --> 01:05:02,000
+There are more pictures.
+
+1739
+01:05:02,000 --> 01:05:04,000
+So, in fact, there are some.
+
+1740
+01:05:04,000 --> 01:05:06,000
+The study is how.
+
+1741
+01:05:06,000 --> 01:05:08,000
+From one.
+
+1742
+01:05:08,000 --> 01:05:10,000
+Observe the data in the picture.
+
+1743
+01:05:10,000 --> 01:05:12,000
+Go.
+
+1744
+01:05:12,000 --> 01:05:14,000
+Do statistics.
+
+1745
+01:05:14,000 --> 01:05:16,000
+In fact.
+
+1746
+01:05:16,000 --> 01:05:18,000
+For example, three people.
+
+1747
+01:05:18,000 --> 01:05:20,000
+They are all connected to each other.
+
+1748
+01:05:20,000 --> 01:05:22,000
+In fact, we express it as.
+
+1749
+01:05:22,000 --> 01:05:24,000
+Three sides.
+
+1750
+01:05:24,000 --> 01:05:26,000
+Three sides.
+
+1751
+01:05:26,000 --> 01:05:28,000
+No than.
+
+1752
+01:05:28,000 --> 01:05:30,000
+They are expressed as one.
+
+1753
+01:05:30,000 --> 01:05:32,000
+A hyper edge.
+
+1754
+01:05:32,000 --> 01:05:34,000
+It's still coming.
+
+1755
+01:05:34,000 --> 01:05:36,000
+It's effective in statistics.
+
+1756
+01:05:36,000 --> 01:05:38,000
+So there's a lot of this.
+
+1757
+01:05:38,000 --> 01:05:40,000
+How from one.
+
+1758
+01:05:40,000 --> 01:05:42,000
+Infer high order structure.
+
+1759
+01:05:42,000 --> 01:05:44,000
+The question.
+
+1760
+01:05:44,000 --> 01:05:46,000
+That.
+
+1761
+01:05:46,000 --> 01:05:48,000
+So you just said.
+
+1762
+01:05:48,000 --> 01:05:50,000
+You just said the question.
+
+1763
+01:05:50,000 --> 01:05:52,000
+I want to refresh.
+
+1764
+01:05:52,000 --> 01:05:54,000
+The second one is.
+
+1765
+01:05:54,000 --> 01:05:56,000
+It's related to.
+
+1766
+01:05:56,000 --> 01:05:58,000
+That is.
+
+1767
+01:05:58,000 --> 01:06:00,000
+Can extend.
+
+1768
+01:06:00,000 --> 01:06:02,000
+I just said this.
+
+1769
+01:06:02,000 --> 01:06:04,000
+Configuration model work.
+
+1770
+01:06:04,000 --> 01:06:06,000
+And then today.
+
+1771
+01:06:06,000 --> 01:06:08,000
+If I have a data.
+
+1772
+01:06:08,000 --> 01:06:10,000
+He.
+
+1773
+01:06:10,000 --> 01:06:12,000
+There may be nodes.
+
+1774
+01:06:12,000 --> 01:06:14,000
+For example, human network data nodes may have.
+
+1775
+01:06:14,000 --> 01:06:16,000
+Racial and income and so on.
+
+1776
+01:06:16,000 --> 01:06:18,000
+And then I'm going to fix it.
+
+1777
+01:06:18,000 --> 01:06:20,000
+And then to generate an ensemble.
+
+1778
+01:06:20,000 --> 01:06:22,000
+I do not know.
+
+1779
+01:06:22,000 --> 01:06:24,000
+But I will.
+
+1780
+01:06:24,000 --> 01:06:26,000
+All these questions I will go back.
+
+1781
+01:06:26,000 --> 01:06:28,000
+Look at the graph.
+
+1782
+01:06:28,000 --> 01:06:30,000
+I have no impression of the graph.
+
+1783
+01:06:30,000 --> 01:06:32,000
+But I think.
+
+1784
+01:06:32,000 --> 01:06:34,000
+It seems to be a very good starting point.
+
+1785
+01:06:34,000 --> 01:06:36,000
+Because he.
+
+1786
+01:06:36,000 --> 01:06:38,000
+Because he.
+
+1787
+01:06:38,000 --> 01:06:40,000
+It can help us answer.
+
+1788
+01:06:40,000 --> 01:06:42,000
+Other statistical issues.
+
+1789
+01:06:42,000 --> 01:06:44,000
+We can.
+
+1790
+01:06:44,000 --> 01:06:46,000
+That offline.
+
+1791
+01:06:46,000 --> 01:06:48,000
+You can talk about this.
+
+1792
+01:06:48,000 --> 01:06:50,000
+That.
+
+1793
+01:06:50,000 --> 01:06:52,000
+Then the second question is.
+
+1794
+01:06:52,000 --> 01:06:54,000
+With.
+
+1795
+01:06:54,000 --> 01:06:56,000
+In fact, the first two questions.
+
+1796
+01:06:56,000 --> 01:06:58,000
+I do not know.
+
+1797
+01:06:58,000 --> 01:07:00,000
+The second question is today.
+
+1798
+01:07:00,000 --> 01:07:02,000
+Say I have one.
+
+1799
+01:07:02,000 --> 01:07:04,000
+I have a class of 50 people.
+
+1800
+01:07:04,000 --> 01:07:06,000
+Then, of course, from.
+
+1801
+01:07:06,000 --> 01:07:08,000
+I'm talking about this algorithm.
+
+1802
+01:07:08,000 --> 01:07:10,000
+I can put it.
+
+1803
+01:07:10,000 --> 01:07:12,000
+Randomization.
+
+1804
+01:07:12,000 --> 01:07:14,000
+Randomization.
+
+1805
+01:07:14,000 --> 01:07:16,000
+Every one.
+
+1806
+01:07:16,000 --> 01:07:18,000
+You can take it as a statistical value.
+
+1807
+01:07:18,000 --> 01:07:20,000
+To get a distribution.
+
+1808
+01:07:20,000 --> 01:07:22,000
+But if I can only observe.
+
+1809
+01:07:22,000 --> 01:07:24,000
+Part of the people in these 50.
+
+1810
+01:07:24,000 --> 01:07:26,000
+How do I get from.
+
+1811
+01:07:26,000 --> 01:07:28,000
+This part of the inside.
+
+1812
+01:07:28,000 --> 01:07:30,000
+Get the most information.
+
+1813
+01:07:30,000 --> 01:07:32,000
+In fact, I should have this distribution.
+
+1814
+01:07:32,000 --> 01:07:34,000
+Get the most information.
+
+1815
+01:07:36,000 --> 01:07:38,000
+I also think it is a very good research question.
+
+1816
+01:07:38,000 --> 01:07:40,000
+I do not know.
+
+1817
+01:07:40,000 --> 01:07:42,000
+And I think the two questions I just said.
+
+1818
+01:07:42,000 --> 01:07:44,000
+In.
+
+1819
+01:07:44,000 --> 01:07:46,000
+On the graph.
+
+1820
+01:07:46,000 --> 01:07:48,000
+I do not seem to have seen such a job.
+
+1821
+01:07:48,000 --> 01:07:50,000
+Just on the graph.
+
+1822
+01:07:50,000 --> 01:07:52,000
+That.
+
+1823
+01:07:52,000 --> 01:07:54,000
+That.
+
+1824
+01:07:54,000 --> 01:07:56,000
+The third question.
+
+1825
+01:07:56,000 --> 01:07:58,000
+It may be easier to answer.
+
+1826
+01:07:58,000 --> 01:08:00,000
+Is.
+
+1827
+01:08:00,000 --> 01:08:02,000
+So.
+
+1828
+01:08:02,000 --> 01:08:04,000
+Uh, I sound like that.
+
+1829
+01:08:04,000 --> 01:08:06,000
+It's more like a set.
+
+1830
+01:08:06,000 --> 01:08:08,000
+A defined definition, right?
+
+1831
+01:08:10,000 --> 01:08:12,000
+Uh, if that's the case.
+
+1832
+01:08:12,000 --> 01:08:14,000
+Uh, because in.
+
+1833
+01:08:14,000 --> 01:08:16,000
+Topology inside.
+
+1834
+01:08:16,000 --> 01:08:18,000
+Topology.
+
+1835
+01:08:18,000 --> 01:08:20,000
+This thing.
+
+1836
+01:08:20,000 --> 01:08:22,000
+Um, he is.
+
+1837
+01:08:22,000 --> 01:08:24,000
+There is a clear.
+
+1838
+01:08:24,000 --> 01:08:26,000
+One of the.
+
+1839
+01:08:26,000 --> 01:08:28,000
+Um.
+
+1840
+01:08:28,000 --> 01:08:30,000
+It's technical.
+
+1841
+01:08:30,000 --> 01:08:32,000
+I'm going to take this data.
+
+1842
+01:08:32,000 --> 01:08:34,000
+Divided into different dimensions.
+
+1843
+01:08:34,000 --> 01:08:36,000
+And then this dimension forms a circle complex.
+
+1844
+01:08:36,000 --> 01:08:38,000
+And then the circle complex inside.
+
+1845
+01:08:38,000 --> 01:08:40,000
+Different dimensions.
+
+1846
+01:08:40,000 --> 01:08:42,000
+The so-called.
+
+1847
+01:08:42,000 --> 01:08:44,000
+Boundary map link.
+
+1848
+01:08:44,000 --> 01:08:46,000
+And then the boundary map is going to form some properties.
+
+1849
+01:08:46,000 --> 01:08:48,000
+For example.
+
+1850
+01:08:48,000 --> 01:08:50,000
+It must be zero.
+
+1851
+01:08:50,000 --> 01:08:52,000
+That's it.
+
+1852
+01:08:52,000 --> 01:08:54,000
+Because of a mathematical property like this.
+
+1853
+01:08:54,000 --> 01:08:56,000
+Uh, I can do it inside.
+
+1854
+01:08:56,000 --> 01:08:58,000
+To calculate the hole.
+
+1855
+01:08:58,000 --> 01:09:00,000
+So, um.
+
+1856
+01:09:00,000 --> 01:09:02,000
+So if it's a.
+
+1857
+01:09:02,000 --> 01:09:04,000
+If it's a social network.
+
+1858
+01:09:04,000 --> 01:09:06,000
+And then I'm going to ask.
+
+1859
+01:09:06,000 --> 01:09:08,000
+The hole on it.
+
+1860
+01:09:08,000 --> 01:09:10,000
+Um.
+
+1861
+01:09:10,000 --> 01:09:12,000
+What's the connection?
+
+1862
+01:09:12,000 --> 01:09:14,000
+I, I, I think.
+
+1863
+01:09:14,000 --> 01:09:16,000
+Um.
+
+1864
+01:09:16,000 --> 01:09:18,000
+I don't think it's possible to answer this question just by looking at the structure.
+
+1865
+01:09:18,000 --> 01:09:20,000
+Because of your structure.
+
+1866
+01:09:20,000 --> 01:09:22,000
+The definition of the hole is already.
+
+1867
+01:09:22,000 --> 01:09:24,000
+Contains some.
+
+1868
+01:09:24,000 --> 01:09:26,000
+Tributes related to nodes.
+
+1869
+01:09:26,000 --> 01:09:28,000
+For example, who is.
+
+1870
+01:09:28,000 --> 01:09:30,000
+The most influential of the two groups.
+
+1871
+01:09:30,000 --> 01:09:32,000
+But if it's.
+
+1872
+01:09:32,000 --> 01:09:34,000
+Uh, topology.
+
+1873
+01:09:34,000 --> 01:09:36,000
+It's all about math.
+
+1874
+01:09:36,000 --> 01:09:38,000
+You tell me.
+
+1875
+01:09:38,000 --> 01:09:40,000
+What's the structure like?
+
+1876
+01:09:40,000 --> 01:09:42,000
+Triangles filled with triangles.
+
+1877
+01:09:42,000 --> 01:09:44,000
+There are a few filled with two sides.
+
+1878
+01:09:44,000 --> 01:09:46,000
+So, and then calculate.
+
+1879
+01:09:46,000 --> 01:09:48,000
+So.
+
+1880
+01:09:48,000 --> 01:09:50,000
+The topology.
+
+1881
+01:09:50,000 --> 01:09:52,000
+The hole in the topology.
+
+1882
+01:09:52,000 --> 01:09:54,000
+It's all about the structure.
+
+1883
+01:09:54,000 --> 01:09:56,000
+And then it might be with.
+
+1884
+01:09:56,000 --> 01:09:58,000
+Um.
+
+1885
+01:09:58,000 --> 01:10:00,000
+Related to sociology.
+
+1886
+01:10:00,000 --> 01:10:02,000
+Structural hole is related.
+
+1887
+01:10:02,000 --> 01:10:04,000
+It may not be related.
+
+1888
+01:10:04,000 --> 01:10:06,000
+Thank you.
+
+1889
+01:10:06,000 --> 01:10:08,000
+I hope I answered.
+
+1890
+01:10:08,000 --> 01:10:10,000
+Yeah, I might be offline.
+
+1891
+01:10:10,000 --> 01:10:12,000
+Ask something that we are interested in.
+
+1892
+01:10:12,000 --> 01:10:14,000
+Show you again.
+
+1893
+01:10:14,000 --> 01:10:16,000
+Thank you.
+
+1894
+01:10:22,000 --> 01:10:24,000
+Do you have any questions?
+
+1895
+01:10:30,000 --> 01:10:32,000
+Can I ask a question myself?
+
+1896
+01:10:32,000 --> 01:10:34,000
+Just.
+
+1897
+01:10:34,000 --> 01:10:36,000
+You just proposed a heuristic.
+
+1898
+01:10:36,000 --> 01:10:38,000
+The algorithm.
+
+1899
+01:10:38,000 --> 01:10:40,000
+Then.
+
+1900
+01:10:40,000 --> 01:10:42,000
+In my opinion.
+
+1901
+01:10:42,000 --> 01:10:44,000
+Because I'm not.
+
+1902
+01:10:44,000 --> 01:10:46,000
+I'm not familiar with this at all.
+
+1903
+01:10:46,000 --> 01:10:48,000
+In my opinion.
+
+1904
+01:10:48,000 --> 01:10:50,000
+Your algorithm looks like.
+
+1905
+01:10:50,000 --> 01:10:52,000
+If there is a solution.
+
+1906
+01:10:52,000 --> 01:10:54,000
+If this algorithm finds a solution.
+
+1907
+01:10:54,000 --> 01:10:56,000
+Then you are successful.
+
+1908
+01:10:56,000 --> 01:10:58,000
+But in the picture you just showed.
+
+1909
+01:10:58,000 --> 01:11:00,000
+It has those.
+
+1910
+01:11:00,000 --> 01:11:02,000
+How did you do that?
+
+1911
+01:11:02,000 --> 01:11:04,000
+Just.
+
+1912
+01:11:04,000 --> 01:11:06,000
+My.
+
+1913
+01:11:06,000 --> 01:11:08,000
+It looks like your algorithm.
+
+1914
+01:11:08,000 --> 01:11:10,000
+I haven't finished all the calculations.
+
+1915
+01:11:10,000 --> 01:11:12,000
+How do you know there is no solution?
+
+1916
+01:11:12,000 --> 01:11:14,000
+Um.
+
+1917
+01:11:14,000 --> 01:11:16,000
+This is a good question.
+
+1918
+01:11:16,000 --> 01:11:18,000
+I skipped it because I was in a hurry.
+
+1919
+01:11:18,000 --> 01:11:20,000
+Uh, because I know I can't.
+
+1920
+01:11:20,000 --> 01:11:22,000
+I can't.
+
+1921
+01:11:22,000 --> 01:11:24,000
+Explore all possibilities.
+
+1922
+01:11:24,000 --> 01:11:26,000
+So I have set a cutoff.
+
+1923
+01:11:26,000 --> 01:11:28,000
+Then.
+
+1924
+01:11:28,000 --> 01:11:30,000
+If the number of failures is greater than the cutoff.
+
+1925
+01:11:30,000 --> 01:11:32,000
+I said there was no solution.
+
+1926
+01:11:34,000 --> 01:11:36,000
+But maybe I'll be more serious.
+
+1927
+01:11:36,000 --> 01:11:38,000
+There will be a solution.
+
+1928
+01:11:38,000 --> 01:11:40,000
+If I wait long enough, there will be a solution.
+
+1929
+01:11:40,000 --> 01:11:42,000
+Yes, but on your picture.
+
+1930
+01:11:42,000 --> 01:11:44,000
+The part that is not solved.
+
+1931
+01:11:44,000 --> 01:11:46,000
+Isn't it white?
+
+1932
+01:11:48,000 --> 01:11:50,000
+Isn't the white part?
+
+1933
+01:11:50,000 --> 01:11:52,000
+Oh.
+
+1934
+01:11:52,000 --> 01:11:54,000
+The reason is because that picture.
+
+1935
+01:11:54,000 --> 01:11:56,000
+Is a very small example.
+
+1936
+01:11:56,000 --> 01:11:58,000
+So in that example.
+
+1937
+01:11:58,000 --> 01:12:00,000
+Basically I have all.
+
+1938
+01:12:00,000 --> 01:12:02,000
+All explored.
+
+1939
+01:12:04,000 --> 01:12:06,000
+All explored.
+
+1940
+01:12:06,000 --> 01:12:08,000
+But my question is.
+
+1941
+01:12:08,000 --> 01:12:10,000
+Your claim is.
+
+1942
+01:12:10,000 --> 01:12:12,000
+More than 80% of the.
+
+1943
+01:12:12,000 --> 01:12:14,000
+The problem will be solved.
+
+1944
+01:12:14,000 --> 01:12:16,000
+But.
+
+1945
+01:12:16,000 --> 01:12:18,000
+But in my opinion.
+
+1946
+01:12:18,000 --> 01:12:20,000
+It seems that the white part is more than the other parts.
+
+1947
+01:12:20,000 --> 01:12:22,000
+Isn't that just the case?
+
+1948
+01:12:26,000 --> 01:12:28,000
+My claim.
+
+1949
+01:12:32,000 --> 01:12:34,000
+My claim is.
+
+1950
+01:12:34,000 --> 01:12:36,000
+In this larger network.
+
+1951
+01:12:36,000 --> 01:12:38,000
+Is 80%.
+
+1952
+01:12:38,000 --> 01:12:40,000
+OK.
+
+1953
+01:12:40,000 --> 01:12:42,000
+But the example you just showed.
+
+1954
+01:12:42,000 --> 01:12:44,000
+The network is too small.
+
+1955
+01:12:44,000 --> 01:12:46,000
+Then the example I just showed.
+
+1956
+01:12:46,000 --> 01:12:48,000
+In fact, it may also be 80%.
+
+1957
+01:12:48,000 --> 01:12:50,000
+But it's just looking up here.
+
+1958
+01:12:50,000 --> 01:12:52,000
+Then.
+
+1959
+01:12:52,000 --> 01:12:54,000
+If there is a solution, it must be.
+
+1960
+01:12:54,000 --> 01:12:56,000
+If there is a solution, it must be.
+
+1961
+01:12:56,000 --> 01:12:58,000
+Oh.
+
+1962
+01:12:58,000 --> 01:13:00,000
+Um.
+
+1963
+01:13:00,000 --> 01:13:02,000
+This is the part I didn't talk about.
+
+1964
+01:13:02,000 --> 01:13:04,000
+Um.
+
+1965
+01:13:04,000 --> 01:13:06,000
+Because I.
+
+1966
+01:13:06,000 --> 01:13:08,000
+If this is too large.
+
+1967
+01:13:08,000 --> 01:13:10,000
+I will have a lot of possibilities.
+
+1968
+01:13:10,000 --> 01:13:12,000
+I need to find.
+
+1969
+01:13:12,000 --> 01:13:14,000
+So in this.
+
+1970
+01:13:14,000 --> 01:13:16,000
+I chose a number.
+
+1971
+01:13:16,000 --> 01:13:18,000
+Then I randomly.
+
+1972
+01:13:18,000 --> 01:13:20,000
+In all possibilities.
+
+1973
+01:13:20,000 --> 01:13:22,000
+After choosing this number.
+
+1974
+01:13:22,000 --> 01:13:24,000
+Then this.
+
+1975
+01:13:24,000 --> 01:13:26,000
+I figured out the number.
+
+1976
+01:13:26,000 --> 01:13:28,000
+The ratio.
+
+1977
+01:13:28,000 --> 01:13:30,000
+Then just.
+
+1978
+01:13:30,000 --> 01:13:32,000
+The one I just said.
+
+1979
+01:13:32,000 --> 01:13:34,000
+The example that adds up to 13.
+
+1980
+01:13:34,000 --> 01:13:36,000
+It's probably from here.
+
+1981
+01:13:36,000 --> 01:13:38,000
+So in other words.
+
+1982
+01:13:38,000 --> 01:13:40,000
+You would expect to say.
+
+1983
+01:13:40,000 --> 01:13:42,000
+Um.
+
+1984
+01:13:42,000 --> 01:13:44,000
+You would expect to say probably.
+
+1985
+01:13:44,000 --> 01:13:46,000
+Is less than.
+
+1986
+01:13:46,000 --> 01:13:48,000
+0.01.
+
+1987
+01:13:48,000 --> 01:13:50,000
+After you choose a size.
+
+1988
+01:13:50,000 --> 01:13:52,000
+Then you will feel all the possibilities.
+
+1989
+01:13:52,000 --> 01:13:54,000
+That's the one.
+
+1990
+01:13:54,000 --> 01:13:56,000
+Add up to that size.
+
+1991
+01:13:56,000 --> 01:13:58,000
+In those possibilities.
+
+1992
+01:13:58,000 --> 01:14:00,000
+It's probably 0.01.
+
+1993
+01:14:00,000 --> 01:14:02,000
+Find a simplicial.
+
+1994
+01:14:02,000 --> 01:14:04,000
+OK.
+
+1995
+01:14:04,000 --> 01:14:06,000
+Then we.
+
+1996
+01:14:06,000 --> 01:14:08,000
+We say he is.
+
+1997
+01:14:08,000 --> 01:14:10,000
+The method.
+
+1998
+01:14:10,000 --> 01:14:12,000
+There are two.
+
+1999
+01:14:12,000 --> 01:14:14,000
+One is that he has some obvious reasons.
+
+2000
+01:14:14,000 --> 01:14:16,000
+I was rejected.
+
+2001
+01:14:16,000 --> 01:14:18,000
+I think he won't have a simplicial possibility.
+
+2002
+01:14:18,000 --> 01:14:20,000
+For example.
+
+2003
+01:14:20,000 --> 01:14:22,000
+For example.
+
+2004
+01:14:22,000 --> 01:14:24,000
+My.
+
+2005
+01:14:24,000 --> 01:14:26,000
+For example.
+
+2006
+01:14:26,000 --> 01:14:28,000
+It's all 3 here.
+
+2007
+01:14:28,000 --> 01:14:30,000
+Add up to 15.
+
+2008
+01:14:30,000 --> 01:14:32,000
+But I only have 15 here.
+
+2009
+01:14:32,000 --> 01:14:34,000
+Or for example.
+
+2010
+01:14:34,000 --> 01:14:36,000
+Add up to 15.
+
+2011
+01:14:36,000 --> 01:14:38,000
+For example, here is 7.
+
+2012
+01:14:38,000 --> 01:14:40,000
+Then here is 8.
+
+2013
+01:14:40,000 --> 01:14:42,000
+Here is 8.
+
+2014
+01:14:42,000 --> 01:14:44,000
+Then here is 7.
+
+2015
+01:14:44,000 --> 01:14:46,000
+But this is 8.
+
+2016
+01:14:46,000 --> 01:14:48,000
+Then I was rejected.
+
+2017
+01:14:48,000 --> 01:14:50,000
+Is non-simplicial.
+
+2018
+01:14:50,000 --> 01:14:52,000
+There are many parts.
+
+2019
+01:14:52,000 --> 01:14:54,000
+It's a very simple reason.
+
+2020
+01:14:54,000 --> 01:14:56,000
+Then.
+
+2021
+01:14:56,000 --> 01:14:58,000
+There are quite a lot of parts.
+
+2022
+01:14:58,000 --> 01:15:00,000
+I set the cutoff.
+
+2023
+01:15:00,000 --> 01:15:02,000
+I gave up over time.
+
+2024
+01:15:06,000 --> 01:15:08,000
+Another question is.
+
+2025
+01:15:08,000 --> 01:15:10,000
+My other question is.
+
+2026
+01:15:10,000 --> 01:15:12,000
+You later.
+
+2027
+01:15:12,000 --> 01:15:14,000
+Said your.
+
+2028
+01:15:14,000 --> 01:15:16,000
+Turistic algorithm.
+
+2029
+01:15:16,000 --> 01:15:18,000
+He.
+
+2030
+01:15:18,000 --> 01:15:20,000
+Usually find less holes.
+
+2031
+01:15:20,000 --> 01:15:22,000
+Structure.
+
+2032
+01:15:22,000 --> 01:15:24,000
+Will this cause.
+
+2033
+01:15:24,000 --> 01:15:26,000
+After that.
+
+2034
+01:15:26,000 --> 01:15:28,000
+Randomize.
+
+2035
+01:15:28,000 --> 01:15:30,000
+Are you biased towards a certain structure?
+
+2036
+01:15:30,000 --> 01:15:32,000
+You may not be completely.
+
+2037
+01:15:32,000 --> 01:15:34,000
+Randomize your picture.
+
+2038
+01:15:36,000 --> 01:15:38,000
+I think this is also a very good question.
+
+2039
+01:15:38,000 --> 01:15:40,000
+Then.
+
+2040
+01:15:40,000 --> 01:15:42,000
+They.
+
+2041
+01:15:44,000 --> 01:15:46,000
+They did.
+
+2042
+01:15:46,000 --> 01:15:48,000
+This randomization.
+
+2043
+01:15:48,000 --> 01:15:50,000
+When this work.
+
+2044
+01:15:50,000 --> 01:15:52,000
+It's already in his paper.
+
+2045
+01:15:52,000 --> 01:15:54,000
+Explain that he thinks.
+
+2046
+01:15:54,000 --> 01:15:56,000
+They do this.
+
+2047
+01:15:56,000 --> 01:15:58,000
+Randomization.
+
+2048
+01:15:58,000 --> 01:16:00,000
+Explore this space.
+
+2049
+01:16:00,000 --> 01:16:02,000
+It's all connected.
+
+2050
+01:16:02,000 --> 01:16:04,000
+So you can find it all.
+
+2051
+01:16:04,000 --> 01:16:06,000
+That.
+
+2052
+01:16:06,000 --> 01:16:08,000
+So this should not be a problem.
+
+2053
+01:16:08,000 --> 01:16:10,000
+Then I do it myself.
+
+2054
+01:16:10,000 --> 01:16:12,000
+The test did not feel.
+
+2055
+01:16:12,000 --> 01:16:14,000
+I think.
+
+2056
+01:16:14,000 --> 01:16:16,000
+I can't find a data.
+
+2057
+01:16:16,000 --> 01:16:18,000
+Then from different starting points.
+
+2058
+01:16:18,000 --> 01:16:20,000
+Then see if he is.
+
+2059
+01:16:20,000 --> 01:16:22,000
+Different space.
+
+2060
+01:16:22,000 --> 01:16:24,000
+It feels like it's all converged.
+
+2061
+01:16:26,000 --> 01:16:28,000
+So this is a reasonable question.
+
+2062
+01:16:28,000 --> 01:16:30,000
+Then we.
+
+2063
+01:16:30,000 --> 01:16:32,000
+I have no evidence to say.
+
+2064
+01:16:32,000 --> 01:16:34,000
+It will be different.
+
+2065
+01:16:34,000 --> 01:16:36,000
+So I think.
+
+2066
+01:16:36,000 --> 01:16:38,000
+It's good to find one.
+
+2067
+01:16:38,000 --> 01:16:40,000
+The meaning of the so-called ergotic.
+
+2068
+01:16:40,000 --> 01:16:42,000
+Say.
+
+2069
+01:16:42,000 --> 01:16:44,000
+All possible.
+
+2070
+01:16:44,000 --> 01:16:46,000
+All possible.
+
+2071
+01:16:46,000 --> 01:16:48,000
+Those structures.
+
+2072
+01:16:48,000 --> 01:16:50,000
+In.
+
+2073
+01:16:50,000 --> 01:16:52,000
+After some kind of transformation.
+
+2074
+01:16:52,000 --> 01:16:54,000
+It will become another.
+
+2075
+01:16:54,000 --> 01:16:56,000
+The same thing.
+
+2076
+01:16:56,000 --> 01:16:58,000
+Then.
+
+2077
+01:16:58,000 --> 01:17:00,000
+But it can make a whole circle.
+
+2078
+01:17:00,000 --> 01:17:02,000
+All possible structures.
+
+2079
+01:17:02,000 --> 01:17:04,000
+Are interconnected.
+
+2080
+01:17:04,000 --> 01:17:06,000
+The way to connect is in that kind of swap.
+
+2081
+01:17:06,000 --> 01:17:08,000
+This thing.
+
+2082
+01:17:08,000 --> 01:17:10,000
+Will not let all possible.
+
+2083
+01:17:10,000 --> 01:17:12,000
+This instance.
+
+2084
+01:17:12,000 --> 01:17:14,000
+Split in half.
+
+2085
+01:17:14,000 --> 01:17:16,000
+OK.
+
+2086
+01:17:16,000 --> 01:17:18,000
+So use his method.
+
+2087
+01:17:18,000 --> 01:17:20,000
+All.
+
+2088
+01:17:20,000 --> 01:17:22,000
+All possible structures will be connected.
+
+2089
+01:17:22,000 --> 01:17:24,000
+So you run slowly.
+
+2090
+01:17:24,000 --> 01:17:26,000
+You will run across the entire network.
+
+2091
+01:17:26,000 --> 01:17:28,000
+Correct.
+
+2092
+01:17:28,000 --> 01:17:30,000
+But there are many problems here.
+
+2093
+01:17:30,000 --> 01:17:32,000
+That is.
+
+2094
+01:17:32,000 --> 01:17:34,000
+It may take a long time to run slowly.
+
+2095
+01:17:34,000 --> 01:17:36,000
+Correct.
+
+2096
+01:17:36,000 --> 01:17:38,000
+Just like the ergotic of physics.
+
+2097
+01:17:42,000 --> 01:17:44,000
+But.
+
+2098
+01:17:44,000 --> 01:17:46,000
+This job is to provide a starting point.
+
+2099
+01:17:46,000 --> 01:17:48,000
+Let people start from there.
+
+2100
+01:17:50,000 --> 01:17:52,000
+Thank you.
+
+2101
+01:17:52,000 --> 01:17:54,000
+Are there any questions here?
+
+2102
+01:17:56,000 --> 01:17:58,000
+OK.
+
+2103
+01:17:58,000 --> 01:18:00,000
+If not.
+
+2104
+01:18:00,000 --> 01:18:02,000
+Thank you.
+
+2105
+01:18:02,000 --> 01:18:04,000
+The recording is turned off.
+
+2106
+01:18:04,000 --> 01:18:06,000
+OK.
+

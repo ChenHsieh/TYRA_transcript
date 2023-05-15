@@ -1,0 +1,4967 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+The most direct benefit of this design is that,
+
+00:10.000 --> 00:18.000
+on average, each symbol's value,
+
+00:18.000 --> 00:25.000
+its frequency, and the frequency we represent.
+
+00:25.000 --> 00:29.000
+With this design, we can immediately see that
+
+00:29.000 --> 00:37.000
+by doing this, we can compress the data to theoretically the lowest length,
+
+00:37.000 --> 00:39.000
+which is Shannon Entropy.
+
+00:39.000 --> 00:42.000
+This is a pretty classic result.
+
+00:42.000 --> 00:44.000
+I guess a lot of people already know about it.
+
+00:44.000 --> 00:49.000
+But the discussion here is more like
+
+00:49.000 --> 00:54.000
+assuming that we already know the probability of X and Y.
+
+00:54.000 --> 00:57.000
+But in actual application,
+
+00:57.000 --> 01:00.000
+we usually don't know about it.
+
+01:00.000 --> 01:02.000
+We have to learn about it.
+
+01:02.000 --> 01:09.000
+Next, we will mainly discuss how to learn PX and PY.
+
+01:09.000 --> 01:16.000
+Next, we will relax the assumption a bit.
+
+01:16.000 --> 01:20.000
+Let's assume that we don't know PX and PY anymore.
+
+01:20.000 --> 01:25.000
+But we know that this input, 0001, 001,
+
+01:25.000 --> 01:29.000
+represents a person's routine.
+
+01:29.000 --> 01:32.000
+This person's routine is basically only
+
+01:32.000 --> 01:36.000
+sleeping, eating, and running.
+
+01:36.000 --> 01:40.000
+Let's assume that we know this,
+
+01:40.000 --> 01:44.000
+and we know that 00 means sleeping,
+
+01:44.000 --> 01:46.000
+and 01 means running.
+
+01:47.000 --> 01:52.000
+It's easy to predict what the next one will be.
+
+01:52.000 --> 01:56.000
+Because we know that this person is sleeping.
+
+01:56.000 --> 02:00.000
+The next thing he will do is probably running.
+
+02:00.000 --> 02:05.000
+So the next two symbols will probably be 01.
+
+02:05.000 --> 02:09.000
+Let's assume that we know
+
+02:10.000 --> 02:17.000
+that the source of this signal is a Markov chain.
+
+02:17.000 --> 02:20.000
+Then we can use the method of counting to know
+
+02:20.000 --> 02:23.000
+what the next step will be.
+
+02:23.000 --> 02:26.000
+For example, if we count to 10 times,
+
+02:26.000 --> 02:28.000
+6 times is running,
+
+02:28.000 --> 02:30.000
+2 times is eating,
+
+02:30.000 --> 02:36.000
+then we know that PY is probably equal to 0.6.
+
+02:36.000 --> 02:42.000
+But this is still not the same as what we actually encounter.
+
+02:42.000 --> 02:46.000
+Because we don't actually know if this 001, 001, 001
+
+02:46.000 --> 02:49.000
+represents a person's routine,
+
+02:49.000 --> 02:53.000
+or DNA, or a picture.
+
+02:53.000 --> 02:56.000
+So what do we do at this point?
+
+02:56.000 --> 03:02.000
+Later on, Leopold Zip came up with the idea that
+
+03:02.000 --> 03:08.000
+we assume that it is a Markov chain.
+
+03:08.000 --> 03:13.000
+We keep cutting the inputs.
+
+03:13.000 --> 03:19.000
+If we encounter a new chunk that we have never seen before,
+
+03:19.000 --> 03:22.000
+we treat it as a new chunk.
+
+03:22.000 --> 03:28.000
+For example, if the original data is A, B, R, A, C, A, D, A, B, R, A,
+
+03:28.000 --> 03:31.000
+Leopold Zip said, OK, we see A,
+
+03:31.000 --> 03:35.000
+so A is a chunk that we have never seen before.
+
+03:35.000 --> 03:38.000
+B is also a chunk that we have never seen before.
+
+03:38.000 --> 03:40.000
+R is also a chunk that we have never seen before.
+
+03:40.000 --> 03:44.000
+When it comes to A, we find that A has actually been seen before.
+
+03:44.000 --> 03:48.000
+So we can add E to A,
+
+03:48.000 --> 03:50.000
+the frequency of its appearance.
+
+03:50.000 --> 03:54.000
+So after R, the frequency of A's appearance is E.
+
+03:54.000 --> 03:57.000
+Next, we look at A, C.
+
+03:57.000 --> 04:00.000
+A, C is a chunk that we have never seen before,
+
+04:00.000 --> 04:03.000
+so it is a unit of its own.
+
+04:03.000 --> 04:06.000
+A has also been seen before, but A, D has not.
+
+04:06.000 --> 04:08.000
+And so on.
+
+04:08.000 --> 04:10.000
+After we chunk it up,
+
+04:10.000 --> 04:16.000
+we can treat it as a separate unit,
+
+04:16.000 --> 04:20.000
+and then count the frequency of A after B,
+
+04:20.000 --> 04:23.000
+and the frequency of R after A, C.
+
+04:23.000 --> 04:25.000
+In this way,
+
+04:25.000 --> 04:27.000
+we will be able to know
+
+04:27.000 --> 04:31.000
+the probability of each symbol.
+
+04:33.000 --> 04:38.000
+This is basically what we do on the computer.
+
+04:38.000 --> 04:41.000
+For those of you who are writing programs,
+
+04:41.000 --> 04:45.000
+we might use GZip or WinZip
+
+04:45.000 --> 04:48.000
+to compress these programs.
+
+04:48.000 --> 04:52.000
+When these WinZip and GZip programs are compressed,
+
+04:52.000 --> 04:55.000
+they are actually doing this thing
+
+04:55.000 --> 05:01.000
+to predict the probability of the next byte.
+
+05:01.000 --> 05:06.000
+And then do the arithmetic coding based on that.
+
+05:06.000 --> 05:10.000
+But there are a few drawbacks to doing this.
+
+05:10.000 --> 05:13.000
+There are two main drawbacks.
+
+05:13.000 --> 05:17.000
+The first drawback is
+
+05:17.000 --> 05:20.000
+that it does not use all the information
+
+05:20.000 --> 05:24.000
+in this whole string of words, A, B, R, A, C, A.
+
+05:24.000 --> 05:27.000
+For example, if we want to answer this question,
+
+05:27.000 --> 05:33.000
+what is the probability of seeing A after B, R?
+
+05:33.000 --> 05:37.000
+At this point, we haven't chunked B, R,
+
+05:37.000 --> 05:41.000
+so it might just use the number of times A appears.
+
+05:41.000 --> 05:46.000
+But we see that at least in this segment,
+
+05:46.000 --> 05:49.000
+after B, R appears, A always appears.
+
+05:49.000 --> 05:52.000
+So we know that the probability of A is very high.
+
+05:52.000 --> 05:55.000
+But if we use Lampell's Zip to chunk,
+
+05:55.000 --> 05:59.000
+we don't actually get this information.
+
+05:59.000 --> 06:01.000
+This is the first question.
+
+06:01.000 --> 06:04.000
+The second question is,
+
+06:04.000 --> 06:07.000
+let's say we want to know
+
+06:07.000 --> 06:12.000
+what B is after R, A, A.
+
+06:13.000 --> 06:19.000
+Because R, A, A is not in our chunk,
+
+06:19.000 --> 06:23.000
+so we just take the number of times B appears.
+
+06:23.000 --> 06:28.000
+But here, we already have
+
+06:28.000 --> 06:32.000
+the number of times A appears after B.
+
+06:32.000 --> 06:35.000
+We already have this information.
+
+06:35.000 --> 06:40.000
+Or if we have a lot of different prefixes
+
+06:40.000 --> 06:42.000
+that we can use,
+
+06:42.000 --> 06:45.000
+Lampell's Zip will only use one logic.
+
+06:45.000 --> 06:50.000
+If we have A, C,
+
+06:50.000 --> 06:53.000
+it will choose one randomly.
+
+06:53.000 --> 06:59.000
+At this point, it might not choose the right one.
+
+06:59.000 --> 07:04.000
+These are the two main shortcomings of Lampell's Zip.
+
+07:04.000 --> 07:12.000
+So how do we solve the shortcomings of Lampell's Zip?
+
+07:12.000 --> 07:16.000
+These shortcomings will be solved
+
+07:16.000 --> 07:21.000
+in the context-free weighting algorithm.
+
+07:21.000 --> 07:25.000
+The first shortcoming of Lampell's Zip is
+
+07:25.000 --> 07:28.000
+that some prefixes,
+
+07:28.000 --> 07:30.000
+although it sees them,
+
+07:30.000 --> 07:32.000
+it doesn't parse them.
+
+07:32.000 --> 07:34.000
+To solve this problem,
+
+07:34.000 --> 07:36.000
+it's very simple.
+
+07:36.000 --> 07:40.000
+We don't skip the symbol.
+
+07:40.000 --> 07:43.000
+Every time, we use one symbol
+
+07:43.000 --> 07:47.000
+to see how many prefixes are in front of it.
+
+07:47.000 --> 07:51.000
+This way, we can get all the prefixes.
+
+07:51.000 --> 07:53.000
+For example,
+
+07:53.000 --> 07:59.000
+let's say our data is 0100110.
+
+07:59.000 --> 08:03.000
+Let's record what happens
+
+08:03.000 --> 08:07.000
+after each prefix.
+
+08:07.000 --> 08:11.000
+We can see that after 110,
+
+08:11.000 --> 08:13.000
+there's a 0.
+
+08:13.000 --> 08:15.000
+So we can see that
+
+08:15.000 --> 08:17.000
+after 110,
+
+08:17.000 --> 08:19.000
+we can see that
+
+08:19.000 --> 08:21.000
+after 011,
+
+08:21.000 --> 08:23.000
+there's a 0.
+
+08:23.000 --> 08:25.000
+So we can record that
+
+08:25.000 --> 08:27.000
+after 011,
+
+08:27.000 --> 08:29.000
+there's a 0.
+
+08:29.000 --> 08:31.000
+And after 001,
+
+08:31.000 --> 08:33.000
+there's a 1.
+
+08:33.000 --> 08:35.000
+So after 001,
+
+08:35.000 --> 08:37.000
+there's a 1.
+
+08:37.000 --> 08:39.000
+If we do this slowly,
+
+08:39.000 --> 08:41.000
+we'll get a more comprehensive
+
+08:41.000 --> 08:43.000
+summary than Lampell's Zip.
+
+08:43.000 --> 08:45.000
+So this solves
+
+08:45.000 --> 08:47.000
+its first problem.
+
+08:47.000 --> 08:49.000
+Lampell's Zip has a second problem.
+
+08:49.000 --> 08:51.000
+Let's say
+
+08:51.000 --> 08:53.000
+a lot of prefixes
+
+08:53.000 --> 08:55.000
+don't satisfy
+
+08:55.000 --> 08:57.000
+the query we want.
+
+08:57.000 --> 08:59.000
+Which one should we choose?
+
+08:59.000 --> 09:01.000
+Specifically,
+
+09:01.000 --> 09:03.000
+let's say
+
+09:03.000 --> 09:05.000
+we already know
+
+09:05.000 --> 09:07.000
+the data is like this,
+
+09:07.000 --> 09:09.000
+and we want to know
+
+09:09.000 --> 09:11.000
+the probability of the 8th symbol
+
+09:11.000 --> 09:13.000
+being 0.
+
+09:13.000 --> 09:15.000
+We can frame this problem
+
+09:15.000 --> 09:17.000
+into
+
+09:17.000 --> 09:19.000
+the probability of 0
+
+09:19.000 --> 09:21.000
+after we see 0.
+
+09:21.000 --> 09:23.000
+At this point,
+
+09:23.000 --> 09:25.000
+let's say
+
+09:25.000 --> 09:27.000
+the first symbol is 0,
+
+09:27.000 --> 09:29.000
+and the second symbol
+
+09:29.000 --> 09:31.000
+is a 1.
+
+09:31.000 --> 09:33.000
+So the first symbol is 0,
+
+09:33.000 --> 09:35.000
+and the second symbol is 0.
+
+09:35.000 --> 09:37.000
+So the first symbol is 0,
+
+09:37.000 --> 09:39.000
+and the second symbol is 0.
+
+09:39.000 --> 09:41.000
+So the first symbol is 0,
+
+09:41.000 --> 09:43.000
+and the second symbol is 1.
+
+09:43.000 --> 09:45.000
+We'll have the same result.
+
+09:45.000 --> 09:47.000
+The probability of 0
+
+09:47.000 --> 09:49.000
+after 0 is 0.5.
+
+09:49.000 --> 09:51.000
+But we can also answer
+
+09:51.000 --> 09:53.000
+the 8th question
+
+09:53.000 --> 09:55.000
+from the perspective
+
+09:55.000 --> 09:57.000
+that the first symbol is 0, 1.
+
+09:57.000 --> 09:59.000
+If we look at it
+
+09:59.000 --> 10:01.000
+from this perspective,
+
+10:01.000 --> 10:03.000
+we'll find that
+
+10:03.000 --> 10:05.000
+if the first symbol is 0, 1,
+
+10:05.000 --> 10:07.000
+there will be a 0 after that.
+
+10:07.000 --> 10:09.000
+If the first symbol is 0, 1,
+
+10:09.000 --> 10:11.000
+there will be a 0 after that.
+
+10:11.000 --> 10:13.000
+So if we see 0, 1,
+
+10:13.000 --> 10:15.000
+the probability of 0
+
+10:15.000 --> 10:17.000
+is 100%.
+
+10:17.000 --> 10:19.000
+So we should
+
+10:19.000 --> 10:21.000
+choose
+
+10:21.000 --> 10:23.000
+which pattern
+
+10:23.000 --> 10:25.000
+to represent
+
+10:25.000 --> 10:27.000
+our probability.
+
+10:27.000 --> 10:29.000
+To solve this problem,
+
+10:29.000 --> 10:31.000
+we can
+
+10:31.000 --> 10:33.000
+use
+
+10:33.000 --> 10:35.000
+some
+
+10:35.000 --> 10:37.000
+principles
+
+10:37.000 --> 10:39.000
+of natural
+
+10:39.000 --> 10:41.000
+philosophy.
+
+10:41.000 --> 10:43.000
+One of the principles
+
+10:43.000 --> 10:45.000
+is that
+
+10:45.000 --> 10:47.000
+this is a philosophy,
+
+10:47.000 --> 10:49.000
+but we'll see
+
+10:49.000 --> 10:51.000
+how to define
+
+10:51.000 --> 10:53.000
+this philosophy
+
+10:53.000 --> 10:55.000
+to define it.
+
+10:55.000 --> 10:57.000
+In this philosophy,
+
+10:57.000 --> 10:59.000
+if there are many different
+
+10:59.000 --> 11:01.000
+theories that can
+
+11:01.000 --> 11:03.000
+explain a phenomenon,
+
+11:03.000 --> 11:05.000
+we have no choice
+
+11:05.000 --> 11:07.000
+but to keep all the theories.
+
+11:07.000 --> 11:09.000
+We can't say
+
+11:09.000 --> 11:11.000
+which theory is better.
+
+11:11.000 --> 11:13.000
+As long as the evidence
+
+11:13.000 --> 11:15.000
+is consistent,
+
+11:15.000 --> 11:17.000
+we'll see
+
+11:17.000 --> 11:19.000
+how to
+
+11:19.000 --> 11:21.000
+define it.
+
+11:21.000 --> 11:23.000
+Here,
+
+11:23.000 --> 11:25.000
+we can
+
+11:25.000 --> 11:27.000
+think of the problem
+
+11:27.000 --> 11:29.000
+as
+
+11:29.000 --> 11:31.000
+we already have the data.
+
+11:31.000 --> 11:33.000
+Which model
+
+11:33.000 --> 11:35.000
+should we use
+
+11:35.000 --> 11:37.000
+to explain the data?
+
+11:37.000 --> 11:39.000
+There are many different models.
+
+11:39.000 --> 11:41.000
+The first model is
+
+11:41.000 --> 11:43.000
+that we don't care about
+
+11:43.000 --> 11:45.000
+the probability of
+
+11:45.000 --> 11:47.000
+the next 0 or 1.
+
+11:47.000 --> 11:49.000
+This model
+
+11:49.000 --> 11:51.000
+is more
+
+11:51.000 --> 11:53.000
+complicated.
+
+11:53.000 --> 11:55.000
+It may use some
+
+11:55.000 --> 11:57.000
+prefixes.
+
+11:57.000 --> 11:59.000
+This model is more complicated.
+
+11:59.000 --> 12:01.000
+Which model
+
+12:01.000 --> 12:03.000
+should we use?
+
+12:07.000 --> 12:09.000
+If we accept
+
+12:09.000 --> 12:11.000
+this principle,
+
+12:11.000 --> 12:13.000
+it means
+
+12:13.000 --> 12:15.000
+we have to give
+
+12:15.000 --> 12:17.000
+each model
+
+12:17.000 --> 12:19.000
+a weight.
+
+12:19.000 --> 12:21.000
+How do we give
+
+12:21.000 --> 12:23.000
+each model a weight?
+
+12:23.000 --> 12:25.000
+This is what we
+
+12:25.000 --> 12:27.000
+are going to discuss.
+
+12:27.000 --> 12:29.000
+Here,
+
+12:29.000 --> 12:31.000
+we mainly want to
+
+12:31.000 --> 12:33.000
+use this model
+
+12:33.000 --> 12:35.000
+to
+
+12:35.000 --> 12:37.000
+visualize
+
+12:37.000 --> 12:39.000
+the weight.
+
+12:39.000 --> 12:41.000
+If we want to
+
+12:41.000 --> 12:43.000
+see the next 0 or 1,
+
+12:43.000 --> 12:45.000
+we can
+
+12:45.000 --> 12:47.000
+think of it as
+
+12:47.000 --> 12:49.000
+the weight of this model
+
+12:49.000 --> 12:51.000
+and this model.
+
+12:51.000 --> 12:53.000
+For this model,
+
+12:53.000 --> 12:55.000
+it is the weight of
+
+12:55.000 --> 12:57.000
+this model and this model.
+
+12:57.000 --> 12:59.000
+For this model,
+
+12:59.000 --> 13:01.000
+it is the weight of
+
+13:01.000 --> 13:03.000
+these five models.
+
+13:03.000 --> 13:05.000
+From the image,
+
+13:05.000 --> 13:07.000
+we can see
+
+13:07.000 --> 13:09.000
+two small models.
+
+13:09.000 --> 13:11.000
+Is there a way
+
+13:11.000 --> 13:13.000
+to know
+
+13:13.000 --> 13:15.000
+the weight of
+
+13:15.000 --> 13:17.000
+this large model?
+
+13:17.000 --> 13:19.000
+Let's assume we know
+
+13:19.000 --> 13:21.000
+the weight of the small model.
+
+13:21.000 --> 13:23.000
+Here, we have
+
+13:23.000 --> 13:25.000
+five parameters,
+
+13:25.000 --> 13:27.000
+w1', w2', w3'.
+
+13:27.000 --> 13:29.000
+In the
+
+13:29.000 --> 13:31.000
+wide field,
+
+13:31.000 --> 13:33.000
+this number
+
+13:33.000 --> 13:35.000
+may have
+
+13:35.000 --> 13:37.000
+an exponential value
+
+13:37.000 --> 13:39.000
+of 2.
+
+13:39.000 --> 13:41.000
+We need to
+
+13:41.000 --> 13:43.000
+calculate this number.
+
+13:43.000 --> 13:45.000
+Can we not
+
+13:45.000 --> 13:47.000
+calculate
+
+13:47.000 --> 13:49.000
+such a large number
+
+13:49.000 --> 13:51.000
+of numbers?
+
+13:51.000 --> 13:53.000
+Can we not
+
+13:53.000 --> 13:55.000
+use such a small number
+
+13:55.000 --> 13:57.000
+to calculate the weight?
+
+13:57.000 --> 13:59.000
+This is a problem
+
+13:59.000 --> 14:01.000
+we encounter in practice.
+
+14:01.000 --> 14:03.000
+To put it
+
+14:03.000 --> 14:05.000
+simply,
+
+14:05.000 --> 14:07.000
+the main
+
+14:07.000 --> 14:09.000
+insight here
+
+14:09.000 --> 14:11.000
+is that
+
+14:11.000 --> 14:13.000
+we can
+
+14:13.000 --> 14:15.000
+use the concept of
+
+14:15.000 --> 14:17.000
+multiplication
+
+14:17.000 --> 14:19.000
+to do
+
+14:19.000 --> 14:21.000
+recursive
+
+14:21.000 --> 14:23.000
+calculation.
+
+14:23.000 --> 14:25.000
+The main concept is that
+
+14:25.000 --> 14:27.000
+if
+
+14:27.000 --> 14:29.000
+p is equal to
+
+14:29.000 --> 14:31.000
+this,
+
+14:31.000 --> 14:33.000
+these two
+
+14:33.000 --> 14:35.000
+equations
+
+14:35.000 --> 14:37.000
+are like
+
+14:37.000 --> 14:39.000
+a cross-product
+
+14:39.000 --> 14:41.000
+of these four
+
+14:41.000 --> 14:43.000
+models.
+
+14:43.000 --> 14:45.000
+These four equations
+
+14:45.000 --> 14:47.000
+seem to
+
+14:47.000 --> 14:49.000
+describe
+
+14:49.000 --> 14:51.000
+these four equations.
+
+14:51.000 --> 14:53.000
+In the wide field,
+
+14:53.000 --> 14:55.000
+let's say
+
+14:55.000 --> 14:57.000
+we define
+
+14:57.000 --> 14:59.000
+a larger
+
+14:59.000 --> 15:01.000
+model.
+
+15:01.000 --> 15:03.000
+If we simply look at
+
+15:03.000 --> 15:05.000
+0, 1, 0, 1,
+
+15:05.000 --> 15:07.000
+and then add
+
+15:07.000 --> 15:09.000
+the numbers below
+
+15:09.000 --> 15:11.000
+to make
+
+15:11.000 --> 15:13.000
+a cross-product,
+
+15:13.000 --> 15:15.000
+we will get
+
+15:15.000 --> 15:17.000
+an N-square.
+
+15:17.000 --> 15:19.000
+If we define
+
+15:19.000 --> 15:21.000
+this weight,
+
+15:21.000 --> 15:23.000
+this seems to be
+
+15:23.000 --> 15:25.000
+an intuitive approach.
+
+15:25.000 --> 15:27.000
+In fact,
+
+15:27.000 --> 15:29.000
+this approach is correct.
+
+15:29.000 --> 15:31.000
+There are a few reasons
+
+15:31.000 --> 15:33.000
+why it is correct.
+
+15:33.000 --> 15:35.000
+One of the reasons
+
+15:35.000 --> 15:37.000
+is that
+
+15:37.000 --> 15:39.000
+when we define
+
+15:39.000 --> 15:41.000
+these weights,
+
+15:41.000 --> 15:43.000
+w1', w2', w3', w4',
+
+15:43.000 --> 15:45.000
+and we use
+
+15:45.000 --> 15:47.000
+recursive
+
+15:47.000 --> 15:49.000
+to define them,
+
+15:49.000 --> 15:51.000
+we will find that
+
+15:51.000 --> 15:53.000
+these w1', w2', w3', w4',
+
+15:53.000 --> 15:55.000
+and w5'
+
+15:55.000 --> 15:57.000
+are intuitive.
+
+15:57.000 --> 15:59.000
+For example,
+
+15:59.000 --> 16:01.000
+if we know that
+
+16:01.000 --> 16:03.000
+the number below is equal to 1,
+
+16:03.000 --> 16:05.000
+then the number above
+
+16:05.000 --> 16:07.000
+must be equal to 1.
+
+16:07.000 --> 16:09.000
+This is the first good quality.
+
+16:09.000 --> 16:11.000
+OK.
+
+16:11.000 --> 16:13.000
+There is
+
+16:13.000 --> 16:15.000
+a second
+
+16:15.000 --> 16:17.000
+intuitive
+
+16:17.000 --> 16:19.000
+recursive
+
+16:19.000 --> 16:21.000
+model
+
+16:21.000 --> 16:23.000
+to prove
+
+16:23.000 --> 16:25.000
+that it is a good model.
+
+16:25.000 --> 16:27.000
+The second
+
+16:27.000 --> 16:29.000
+good intuitive
+
+16:29.000 --> 16:31.000
+argument is that
+
+16:31.000 --> 16:33.000
+if we do this,
+
+16:33.000 --> 16:35.000
+we actually
+
+16:35.000 --> 16:37.000
+multiply
+
+16:37.000 --> 16:39.000
+the tree
+
+16:39.000 --> 16:41.000
+of the
+
+16:41.000 --> 16:43.000
+two-dimensional
+
+16:43.000 --> 16:45.000
+number
+
+16:45.000 --> 16:47.000
+by its weight,
+
+16:47.000 --> 16:49.000
+which becomes
+
+16:49.000 --> 16:51.000
+the sum of
+
+16:51.000 --> 16:53.000
+the two dimensions.
+
+16:53.000 --> 16:55.000
+For example,
+
+16:55.000 --> 16:57.000
+there are many trees here.
+
+16:57.000 --> 16:59.000
+How much weight
+
+16:59.000 --> 17:01.000
+should we give to this tree?
+
+17:01.000 --> 17:03.000
+Basically,
+
+17:03.000 --> 17:05.000
+1 minus the position
+
+17:05.000 --> 17:07.000
+here,
+
+17:07.000 --> 17:09.000
+multiplied by 1 minus the position here,
+
+17:09.000 --> 17:11.000
+multiplied by the position here,
+
+17:11.000 --> 17:13.000
+multiplied by the position here.
+
+17:13.000 --> 17:15.000
+If it is not lift,
+
+17:15.000 --> 17:17.000
+it is 1 minus w.
+
+17:17.000 --> 17:19.000
+If it is lift,
+
+17:19.000 --> 17:21.000
+it is 1 minus w.
+
+17:21.000 --> 17:23.000
+So basically,
+
+17:23.000 --> 17:25.000
+what we are doing is
+
+17:25.000 --> 17:27.000
+giving these trees
+
+17:27.000 --> 17:29.000
+a weight,
+
+17:29.000 --> 17:31.000
+which is the sum of
+
+17:31.000 --> 17:33.000
+the two dimensions.
+
+17:33.000 --> 17:35.000
+Let's say
+
+17:35.000 --> 17:37.000
+there are
+
+17:37.000 --> 17:39.000
+some practical examples.
+
+17:39.000 --> 17:41.000
+Let's say
+
+17:41.000 --> 17:43.000
+there are
+
+17:43.000 --> 17:45.000
+these trees
+
+17:45.000 --> 17:47.000
+of the
+
+17:47.000 --> 17:49.000
+two dimensions.
+
+17:49.000 --> 17:51.000
+We will find that
+
+17:51.000 --> 17:53.000
+these w
+
+17:53.000 --> 17:55.000
+meet this formula.
+
+17:55.000 --> 17:57.000
+For example,
+
+17:57.000 --> 17:59.000
+if the top is 1,
+
+17:59.000 --> 18:01.000
+the next
+
+18:01.000 --> 18:03.000
+is 5.
+
+18:03.000 --> 18:05.000
+If this side is 1,
+
+18:05.000 --> 18:07.000
+the top is 5.
+
+18:07.000 --> 18:09.000
+If we do this,
+
+18:09.000 --> 18:11.000
+we will find that
+
+18:11.000 --> 18:13.000
+if we want to
+
+18:13.000 --> 18:15.000
+specify a tree,
+
+18:15.000 --> 18:17.000
+we need so many information,
+
+18:17.000 --> 18:19.000
+so many bits.
+
+18:19.000 --> 18:21.000
+Because we have
+
+18:21.000 --> 18:23.000
+different things
+
+18:23.000 --> 18:25.000
+to describe the
+
+18:25.000 --> 18:27.000
+two-dimensional
+
+18:27.000 --> 18:29.000
+tree,
+
+18:29.000 --> 18:31.000
+so we need
+
+18:31.000 --> 18:33.000
+two-dimensional bits
+
+18:33.000 --> 18:35.000
+to describe it.
+
+18:35.000 --> 18:37.000
+This is a big tree.
+
+18:37.000 --> 18:39.000
+Can we choose
+
+18:39.000 --> 18:41.000
+these w
+
+18:41.000 --> 18:43.000
+roots,
+
+18:43.000 --> 18:45.000
+so that
+
+18:45.000 --> 18:47.000
+we can use
+
+18:47.000 --> 18:49.000
+a shorter
+
+18:49.000 --> 18:51.000
+symbol to
+
+18:51.000 --> 18:53.000
+describe it?
+
+18:53.000 --> 18:55.000
+In fact,
+
+18:55.000 --> 18:57.000
+there is.
+
+18:57.000 --> 18:59.000
+This way is to
+
+18:59.000 --> 19:01.000
+turn these w into
+
+19:01.000 --> 19:03.000
+one-half.
+
+19:03.000 --> 19:05.000
+When we describe
+
+19:05.000 --> 19:07.000
+a tree,
+
+19:07.000 --> 19:09.000
+we use
+
+19:09.000 --> 19:11.000
+its
+
+19:11.000 --> 19:13.000
+prefix code
+
+19:13.000 --> 19:15.000
+to describe it.
+
+19:15.000 --> 19:17.000
+For example,
+
+19:17.000 --> 19:19.000
+this shape
+
+19:19.000 --> 19:21.000
+is 11000.
+
+19:21.000 --> 19:23.000
+Its length
+
+19:23.000 --> 19:25.000
+is 5.
+
+19:25.000 --> 19:27.000
+We don't need
+
+19:27.000 --> 19:29.000
+so many
+
+19:29.000 --> 19:31.000
+bits
+
+19:31.000 --> 19:33.000
+to describe it.
+
+19:33.000 --> 19:35.000
+So,
+
+19:35.000 --> 19:37.000
+when we put these things
+
+19:37.000 --> 19:39.000
+together,
+
+19:39.000 --> 19:41.000
+pw
+
+19:41.000 --> 19:43.000
+is about
+
+19:43.000 --> 19:45.000
+this formula.
+
+19:45.000 --> 19:47.000
+This formula can
+
+19:47.000 --> 19:49.000
+describe so many
+
+19:49.000 --> 19:51.000
+trees in a classic way
+
+19:51.000 --> 19:53.000
+to give it a reasonable weight.
+
+19:53.000 --> 19:55.000
+If we look at
+
+19:55.000 --> 19:57.000
+this formula again,
+
+19:57.000 --> 19:59.000
+we will find that
+
+19:59.000 --> 20:01.000
+after we do this,
+
+20:01.000 --> 20:03.000
+the weight of
+
+20:03.000 --> 20:05.000
+these different models
+
+20:05.000 --> 20:07.000
+is actually
+
+20:07.000 --> 20:09.000
+the same.
+
+20:09.000 --> 20:11.000
+For example,
+
+20:11.000 --> 20:13.000
+the bigger the tree,
+
+20:13.000 --> 20:15.000
+the smaller the weight.
+
+20:15.000 --> 20:17.000
+In short,
+
+20:17.000 --> 20:19.000
+we are using
+
+20:19.000 --> 20:21.000
+a common
+
+20:21.000 --> 20:23.000
+physical or
+
+20:23.000 --> 20:25.000
+scientific principle,
+
+20:25.000 --> 20:27.000
+Occam's razor.
+
+20:27.000 --> 20:29.000
+The simpler the
+
+20:29.000 --> 20:31.000
+explanation,
+
+20:31.000 --> 20:33.000
+the more likely
+
+20:33.000 --> 20:35.000
+it is.
+
+20:35.000 --> 20:37.000
+After doing this,
+
+20:37.000 --> 20:39.000
+we put
+
+20:39.000 --> 20:41.000
+all the things together
+
+20:41.000 --> 20:43.000
+to do a
+
+20:43.000 --> 20:45.000
+theoretical discussion
+
+20:45.000 --> 20:47.000
+to summarize
+
+20:47.000 --> 20:49.000
+pwz
+
+20:49.000 --> 20:51.000
+is a good
+
+20:51.000 --> 20:53.000
+compression.
+
+20:53.000 --> 20:55.000
+If n is large,
+
+20:55.000 --> 20:57.000
+it basically means
+
+20:57.000 --> 20:59.000
+that we already know
+
+20:59.000 --> 21:01.000
+whether it is a
+
+21:01.000 --> 21:03.000
+human shape,
+
+21:03.000 --> 21:05.000
+walking,
+
+21:05.000 --> 21:07.000
+or eating.
+
+21:07.000 --> 21:09.000
+For example,
+
+21:09.000 --> 21:11.000
+if n is large enough,
+
+21:11.000 --> 21:13.000
+we can always
+
+21:13.000 --> 21:15.000
+chunk it to the
+
+21:15.000 --> 21:17.000
+original chunk.
+
+21:17.000 --> 21:19.000
+There is a detail
+
+21:19.000 --> 21:21.000
+here.
+
+21:21.000 --> 21:23.000
+Many textbooks
+
+21:23.000 --> 21:25.000
+say that
+
+21:25.000 --> 21:27.000
+pwz
+
+21:27.000 --> 21:29.000
+is an optimal
+
+21:29.000 --> 21:31.000
+compression.
+
+21:31.000 --> 21:33.000
+The compression length
+
+21:33.000 --> 21:35.000
+minus the length
+
+21:35.000 --> 21:37.000
+divided by n
+
+21:37.000 --> 21:39.000
+is equal to
+
+21:39.000 --> 21:41.000
+1 divided by log n.
+
+21:41.000 --> 21:43.000
+They say
+
+21:43.000 --> 21:45.000
+every symbol
+
+21:45.000 --> 21:47.000
+has an error of 0.
+
+21:47.000 --> 21:49.000
+However,
+
+21:49.000 --> 21:51.000
+pwz is not optimal.
+
+21:51.000 --> 21:53.000
+Strictly speaking,
+
+21:53.000 --> 21:55.000
+it is not optimal
+
+21:55.000 --> 21:57.000
+because the error
+
+21:57.000 --> 21:59.000
+is not the fastest.
+
+21:59.000 --> 22:01.000
+pwz
+
+22:01.000 --> 22:03.000
+jumps over
+
+22:03.000 --> 22:05.000
+a lot of things.
+
+22:05.000 --> 22:07.000
+For example,
+
+22:07.000 --> 22:09.000
+when there are many explanations,
+
+22:09.000 --> 22:11.000
+pwz only jumps over
+
+22:11.000 --> 22:13.000
+an explanation
+
+22:13.000 --> 22:15.000
+that is not
+
+22:15.000 --> 22:17.000
+easy to understand.
+
+22:17.000 --> 22:19.000
+However,
+
+22:19.000 --> 22:21.000
+if we do this,
+
+22:21.000 --> 22:23.000
+we will find that
+
+22:23.000 --> 22:25.000
+pwz has an error of
+
+22:25.000 --> 22:27.000
+log n divided by n.
+
+22:27.000 --> 22:29.000
+However,
+
+22:29.000 --> 22:31.000
+pwz is faster
+
+22:31.000 --> 22:33.000
+than pwz.
+
+22:33.000 --> 22:35.000
+Here is
+
+22:35.000 --> 22:37.000
+an example of
+
+22:37.000 --> 22:39.000
+what the original
+
+22:39.000 --> 22:41.000
+source tree is.
+
+22:41.000 --> 22:43.000
+pwz
+
+22:43.000 --> 22:45.000
+is optimal,
+
+22:45.000 --> 22:47.000
+but strictly speaking,
+
+22:47.000 --> 22:49.000
+it is not optimal
+
+22:49.000 --> 22:51.000
+because the speed of
+
+22:51.000 --> 22:53.000
+pwz is not fast enough.
+
+22:53.000 --> 22:55.000
+In conclusion,
+
+22:55.000 --> 22:57.000
+we can discuss
+
+22:57.000 --> 22:59.000
+from a theoretical perspective
+
+22:59.000 --> 23:01.000
+that the speed of
+
+23:01.000 --> 23:03.000
+pwz has
+
+23:03.000 --> 23:05.000
+a limit.
+
+23:05.000 --> 23:07.000
+This limit is given
+
+23:07.000 --> 23:09.000
+by Riesenbaum.
+
+23:09.000 --> 23:11.000
+Riesenbaum said
+
+23:11.000 --> 23:13.000
+the compressed length
+
+23:13.000 --> 23:15.000
+minus the real length
+
+23:15.000 --> 23:17.000
+is always greater than
+
+23:17.000 --> 23:19.000
+k log n.
+
+23:19.000 --> 23:21.000
+So,
+
+23:21.000 --> 23:23.000
+let's go back
+
+23:23.000 --> 23:25.000
+to the
+
+23:25.000 --> 23:27.000
+asymptotic rate of
+
+23:27.000 --> 23:29.000
+ctw.
+
+23:29.000 --> 23:31.000
+In fact, ctw is
+
+23:31.000 --> 23:33.000
+the fastest speed in
+
+23:33.000 --> 23:35.000
+theory,
+
+23:35.000 --> 23:37.000
+which is log n divided by
+
+23:37.000 --> 23:39.000
+n.
+
+23:39.000 --> 23:41.000
+Suppose
+
+23:41.000 --> 23:43.000
+k is
+
+23:43.000 --> 23:45.000
+the freedom
+
+23:45.000 --> 23:47.000
+of the original
+
+23:47.000 --> 23:49.000
+signal source.
+
+23:49.000 --> 23:51.000
+The more complex
+
+23:51.000 --> 23:53.000
+the model is,
+
+23:53.000 --> 23:55.000
+the greater the error
+
+23:55.000 --> 23:57.000
+will be.
+
+23:57.000 --> 23:59.000
+Even if we use
+
+23:59.000 --> 24:01.000
+the strongest learning algorithm,
+
+24:01.000 --> 24:03.000
+the more complex
+
+24:03.000 --> 24:05.000
+the model is,
+
+24:05.000 --> 24:07.000
+the greater the error
+
+24:07.000 --> 24:09.000
+will be.
+
+24:09.000 --> 24:11.000
+So,
+
+24:11.000 --> 24:13.000
+in general,
+
+24:13.000 --> 24:15.000
+how to compress
+
+24:15.000 --> 24:17.000
+from better
+
+24:17.000 --> 24:19.000
+intelligence to better?
+
+24:19.000 --> 24:21.000
+This is the complexity itself.
+
+24:21.000 --> 24:23.000
+We know that
+
+24:23.000 --> 24:25.000
+traditionally,
+
+24:25.000 --> 24:27.000
+it is solved by
+
+24:27.000 --> 24:29.000
+arithmetic coding.
+
+24:29.000 --> 24:31.000
+In fact,
+
+24:31.000 --> 24:33.000
+there is a bigger problem.
+
+24:33.000 --> 24:35.000
+This is
+
+24:35.000 --> 24:37.000
+the price of learning.
+
+24:37.000 --> 24:39.000
+This is
+
+24:39.000 --> 24:41.000
+actually the biggest problem
+
+24:41.000 --> 24:43.000
+in practice.
+
+24:43.000 --> 24:45.000
+Because this problem is
+
+24:45.000 --> 24:47.000
+proportional to the length of the data.
+
+24:47.000 --> 24:49.000
+We can only compress it to the length of log n.
+
+24:49.000 --> 24:51.000
+And it is not only
+
+24:51.000 --> 24:53.000
+proportional to log n,
+
+24:53.000 --> 24:55.000
+but also directly
+
+24:55.000 --> 24:57.000
+proportional to the
+
+24:57.000 --> 24:59.000
+freedom of the problem itself.
+
+24:59.000 --> 25:01.000
+The more complex the problem is,
+
+25:01.000 --> 25:03.000
+the higher the price
+
+25:03.000 --> 25:05.000
+of learning the problem.
+
+25:05.000 --> 25:07.000
+The rest is
+
+25:07.000 --> 25:09.000
+what our
+
+25:09.000 --> 25:11.000
+researchers
+
+25:11.000 --> 25:13.000
+want to reduce to zero.
+
+25:13.000 --> 25:15.000
+We want to come up with
+
+25:15.000 --> 25:17.000
+a good algorithm
+
+25:17.000 --> 25:19.000
+to use
+
+25:19.000 --> 25:21.000
+a bad
+
+25:21.000 --> 25:23.000
+estimator.
+
+25:23.000 --> 25:25.000
+For example,
+
+25:25.000 --> 25:27.000
+we use a bad estimator
+
+25:27.000 --> 25:29.000
+to compare with
+
+25:29.000 --> 25:31.000
+the most efficient estimator.
+
+25:31.000 --> 25:33.000
+We should
+
+25:33.000 --> 25:35.000
+find a way to use this to zero.
+
+25:35.000 --> 25:37.000
+In summary,
+
+25:37.000 --> 25:39.000
+compressing is
+
+25:39.000 --> 25:41.000
+about three-thirds.
+
+25:41.000 --> 25:43.000
+We want to turn the last part
+
+25:43.000 --> 25:45.000
+to zero.
+
+25:45.000 --> 25:47.000
+We can see from the above
+
+25:47.000 --> 25:49.000
+that CT context tree weighting
+
+25:49.000 --> 25:51.000
+is close to
+
+25:51.000 --> 25:53.000
+the fastest speed
+
+25:53.000 --> 25:55.000
+in theory.
+
+25:55.000 --> 25:57.000
+It is a very efficient
+
+25:57.000 --> 25:59.000
+estimator.
+
+25:59.000 --> 26:01.000
+This is
+
+26:01.000 --> 26:03.000
+the part of the theory.
+
+26:03.000 --> 26:05.000
+The theory sounds
+
+26:05.000 --> 26:07.000
+perfect and amazing.
+
+26:07.000 --> 26:09.000
+Does this theory work?
+
+26:09.000 --> 26:11.000
+Here is
+
+26:11.000 --> 26:13.000
+an example.
+
+26:13.000 --> 26:15.000
+We want to compress
+
+26:15.000 --> 26:17.000
+this article.
+
+26:17.000 --> 26:19.000
+This article is
+
+26:19.000 --> 26:21.000
+Lincoln's
+
+26:21.000 --> 26:23.000
+Gettysburg Address,
+
+26:23.000 --> 26:25.000
+in English,
+
+26:25.000 --> 26:27.000
+7 years ago.
+
+26:27.000 --> 26:29.000
+This article
+
+26:29.000 --> 26:31.000
+has a capacity
+
+26:31.000 --> 26:33.000
+of about 1K.
+
+26:33.000 --> 26:35.000
+If we compress it
+
+26:35.000 --> 26:37.000
+with common
+
+26:37.000 --> 26:39.000
+compression methods,
+
+26:39.000 --> 26:41.000
+it can be compressed
+
+26:41.000 --> 26:43.000
+to this size.
+
+26:43.000 --> 26:45.000
+However, if we use CTW,
+
+26:45.000 --> 26:47.000
+it is more efficient in theory.
+
+26:47.000 --> 26:49.000
+If we use a better
+
+26:49.000 --> 26:51.000
+learning algorithm,
+
+26:51.000 --> 26:53.000
+we will find that
+
+26:53.000 --> 26:55.000
+it compresses less.
+
+26:55.000 --> 26:57.000
+This means that
+
+26:57.000 --> 26:59.000
+the better our
+
+26:59.000 --> 27:01.000
+prediction ability is,
+
+27:01.000 --> 27:03.000
+the less we can compress
+
+27:03.000 --> 27:05.000
+in total.
+
+27:05.000 --> 27:07.000
+This theory
+
+27:07.000 --> 27:09.000
+is correct.
+
+27:09.000 --> 27:11.000
+We have
+
+27:11.000 --> 27:13.000
+proved that
+
+27:13.000 --> 27:15.000
+we can get better
+
+27:15.000 --> 27:17.000
+compression from
+
+27:17.000 --> 27:19.000
+a better learning algorithm.
+
+27:19.000 --> 27:21.000
+What is more
+
+27:21.000 --> 27:23.000
+interesting
+
+27:23.000 --> 27:25.000
+is how to
+
+27:25.000 --> 27:27.000
+get better
+
+27:27.000 --> 27:29.000
+compression.
+
+27:29.000 --> 27:31.000
+Let's say
+
+27:31.000 --> 27:33.000
+every computer has
+
+27:33.000 --> 27:35.000
+WinZip.
+
+27:35.000 --> 27:37.000
+We can use WinZip.exe
+
+27:37.000 --> 27:39.000
+to do machine learning.
+
+27:39.000 --> 27:41.000
+Or we have a better
+
+27:41.000 --> 27:43.000
+compression method,
+
+27:43.000 --> 27:45.000
+TZ.
+
+27:45.000 --> 27:47.000
+We can use TZ
+
+27:47.000 --> 27:49.000
+to do better machine learning.
+
+27:49.000 --> 27:51.000
+I want to prove
+
+27:51.000 --> 27:53.000
+this thing
+
+27:53.000 --> 27:55.000
+from the point of view
+
+27:55.000 --> 27:57.000
+that
+
+27:57.000 --> 27:59.000
+we just said
+
+27:59.000 --> 28:01.000
+that wisdom is unpredictable.
+
+28:01.000 --> 28:03.000
+If we change the definition of
+
+28:03.000 --> 28:05.000
+wisdom to
+
+28:05.000 --> 28:07.000
+pattern,
+
+28:07.000 --> 28:09.000
+or to be more specific,
+
+28:09.000 --> 28:11.000
+if we treat wisdom
+
+28:11.000 --> 28:13.000
+as a non-supervised
+
+28:13.000 --> 28:15.000
+learning,
+
+28:15.000 --> 28:17.000
+unsupervised learning,
+
+28:17.000 --> 28:19.000
+can we prove
+
+28:19.000 --> 28:21.000
+that a better compression
+
+28:21.000 --> 28:23.000
+can do better
+
+28:23.000 --> 28:25.000
+unsupervised learning?
+
+28:25.000 --> 28:27.000
+I guess
+
+28:27.000 --> 28:29.000
+if we can do
+
+28:29.000 --> 28:31.000
+unsupervised learning,
+
+28:31.000 --> 28:33.000
+we can do a lot of
+
+28:33.000 --> 28:35.000
+smart things,
+
+28:35.000 --> 28:37.000
+like condensed
+
+28:37.000 --> 28:39.000
+method research,
+
+28:39.000 --> 28:41.000
+astronomy research,
+
+28:41.000 --> 28:43.000
+or more.
+
+28:43.000 --> 28:45.000
+To be more specific,
+
+28:45.000 --> 28:47.000
+when we do unsupervised learning,
+
+28:47.000 --> 28:49.000
+we want to answer
+
+28:49.000 --> 28:51.000
+if there are
+
+28:51.000 --> 28:53.000
+A, B, C,
+
+28:53.000 --> 28:55.000
+is A closer to B?
+
+28:55.000 --> 28:57.000
+Or is A closer to C?
+
+28:57.000 --> 28:59.000
+Or is B closer to C?
+
+28:59.000 --> 29:01.000
+So,
+
+29:01.000 --> 29:03.000
+unsupervised learning
+
+29:03.000 --> 29:05.000
+is about
+
+29:05.000 --> 29:07.000
+measuring
+
+29:07.000 --> 29:09.000
+how close
+
+29:09.000 --> 29:11.000
+or how different
+
+29:11.000 --> 29:13.000
+two things are.
+
+29:13.000 --> 29:15.000
+This is a
+
+29:15.000 --> 29:17.000
+simple
+
+29:17.000 --> 29:19.000
+structure to
+
+29:19.000 --> 29:21.000
+calculate
+
+29:21.000 --> 29:23.000
+the distance
+
+29:23.000 --> 29:25.000
+of two random things
+
+29:25.000 --> 29:27.000
+using
+
+29:27.000 --> 29:29.000
+this
+
+29:29.000 --> 29:31.000
+unsupervised learning
+
+29:31.000 --> 29:33.000
+algorithm.
+
+29:33.000 --> 29:35.000
+Let's say
+
+29:35.000 --> 29:37.000
+anything can
+
+29:37.000 --> 29:39.000
+become 010101.
+
+29:39.000 --> 29:41.000
+Let's say
+
+29:41.000 --> 29:43.000
+x is a
+
+29:43.000 --> 29:45.000
+0101 string,
+
+29:45.000 --> 29:47.000
+and kx is
+
+29:47.000 --> 29:49.000
+the length
+
+29:49.000 --> 29:51.000
+after the compression.
+
+29:51.000 --> 29:53.000
+Let's say
+
+29:53.000 --> 29:55.000
+we put x and y
+
+29:55.000 --> 29:57.000
+together
+
+29:57.000 --> 29:59.000
+to get this length.
+
+29:59.000 --> 30:01.000
+We know that
+
+30:01.000 --> 30:03.000
+when the compression
+
+30:03.000 --> 30:05.000
+is good,
+
+30:05.000 --> 30:07.000
+kxy is
+
+30:07.000 --> 30:09.000
+roughly equal to kyx.
+
+30:09.000 --> 30:11.000
+This is
+
+30:11.000 --> 30:13.000
+the notation
+
+30:13.000 --> 30:15.000
+for conditional probability.
+
+30:15.000 --> 30:17.000
+Let's say we have
+
+30:17.000 --> 30:19.000
+given x,
+
+30:19.000 --> 30:21.000
+how much
+
+30:21.000 --> 30:23.000
+extra length
+
+30:23.000 --> 30:25.000
+do we need to
+
+30:25.000 --> 30:27.000
+reconstruct y?
+
+30:27.000 --> 30:29.000
+The definition
+
+30:29.000 --> 30:31.000
+is kxy-kx.
+
+30:31.000 --> 30:33.000
+In other words,
+
+30:33.000 --> 30:35.000
+ky given x
+
+30:35.000 --> 30:37.000
+is the
+
+30:37.000 --> 30:39.000
+information
+
+30:39.000 --> 30:41.000
+in y but not in x.
+
+30:41.000 --> 30:43.000
+With this
+
+30:43.000 --> 30:45.000
+conditional definition,
+
+30:45.000 --> 30:47.000
+we know that
+
+30:47.000 --> 30:49.000
+for a good
+
+30:49.000 --> 30:51.000
+compression,
+
+30:51.000 --> 30:53.000
+we only need
+
+30:53.000 --> 30:55.000
+0 length to
+
+30:55.000 --> 30:57.000
+compress x.
+
+30:57.000 --> 30:59.000
+This
+
+30:59.000 --> 31:01.000
+ky given x
+
+31:01.000 --> 31:03.000
+is the total length.
+
+31:03.000 --> 31:05.000
+If we want to ask
+
+31:05.000 --> 31:07.000
+per unit symbol
+
+31:07.000 --> 31:09.000
+or per bit
+
+31:09.000 --> 31:11.000
+information in y
+
+31:11.000 --> 31:13.000
+but not in x,
+
+31:13.000 --> 31:15.000
+we can just
+
+31:15.000 --> 31:17.000
+multiply ky given x
+
+31:17.000 --> 31:19.000
+by y.
+
+31:19.000 --> 31:21.000
+This is
+
+31:21.000 --> 31:23.000
+like
+
+31:23.000 --> 31:25.000
+using a smart
+
+31:25.000 --> 31:27.000
+program to
+
+31:27.000 --> 31:29.000
+measure
+
+31:29.000 --> 31:31.000
+the information in y
+
+31:31.000 --> 31:33.000
+but not in x.
+
+31:33.000 --> 31:35.000
+The information
+
+31:35.000 --> 31:37.000
+in x
+
+31:37.000 --> 31:39.000
+can be calculated
+
+31:39.000 --> 31:41.000
+as how different
+
+31:41.000 --> 31:43.000
+the distance between
+
+31:43.000 --> 31:45.000
+y and x is.
+
+31:45.000 --> 31:47.000
+This is like
+
+31:47.000 --> 31:49.000
+the general purpose
+
+31:49.000 --> 31:51.000
+of unsupervised learning.
+
+31:51.000 --> 31:53.000
+Or the distance
+
+31:53.000 --> 31:55.000
+between two things.
+
+31:55.000 --> 31:57.000
+But this
+
+31:57.000 --> 31:59.000
+has reached
+
+31:59.000 --> 32:01.000
+our intuition.
+
+32:01.000 --> 32:03.000
+But there are some drawbacks.
+
+32:03.000 --> 32:05.000
+It's not symmetric.
+
+32:05.000 --> 32:07.000
+If we
+
+32:07.000 --> 32:09.000
+make some
+
+32:09.000 --> 32:11.000
+changes
+
+32:11.000 --> 32:13.000
+to max and max,
+
+32:13.000 --> 32:15.000
+we'll find that
+
+32:15.000 --> 32:17.000
+it's symmetric.
+
+32:17.000 --> 32:19.000
+And when
+
+32:19.000 --> 32:21.000
+y is greater than x,
+
+32:21.000 --> 32:23.000
+it will come here.
+
+32:23.000 --> 32:25.000
+Or if x is greater than y,
+
+32:25.000 --> 32:27.000
+it will come here.
+
+32:27.000 --> 32:29.000
+So if we define
+
+32:29.000 --> 32:31.000
+this as
+
+32:31.000 --> 32:33.000
+the distance between
+
+32:33.000 --> 32:35.000
+two things,
+
+32:35.000 --> 32:37.000
+it's symmetric.
+
+32:37.000 --> 32:39.000
+If we define it like this,
+
+32:39.000 --> 32:41.000
+we'll find that
+
+32:41.000 --> 32:43.000
+the length is too
+
+32:43.000 --> 32:45.000
+short.
+
+32:45.000 --> 32:47.000
+So this is like
+
+32:47.000 --> 32:49.000
+giving a compressed
+
+32:49.000 --> 32:51.000
+program, winzip.inxe,
+
+32:51.000 --> 32:53.000
+to calculate the distance
+
+32:53.000 --> 32:55.000
+between two things.
+
+32:55.000 --> 32:57.000
+So after we
+
+32:57.000 --> 32:59.000
+push it like this,
+
+32:59.000 --> 33:01.000
+we'll find that
+
+33:01.000 --> 33:03.000
+this method can give us
+
+33:03.000 --> 33:05.000
+a compressed program.
+
+33:05.000 --> 33:07.000
+We don't know what it does.
+
+33:07.000 --> 33:09.000
+But if it's good enough,
+
+33:09.000 --> 33:11.000
+it can help us
+
+33:11.000 --> 33:13.000
+figure out the distance
+
+33:13.000 --> 33:15.000
+between two things.
+
+33:15.000 --> 33:17.000
+So this idea
+
+33:17.000 --> 33:19.000
+is good in theory,
+
+33:19.000 --> 33:21.000
+but in practice,
+
+33:21.000 --> 33:23.000
+is it useful?
+
+33:23.000 --> 33:25.000
+Today, I'll give you
+
+33:25.000 --> 33:27.000
+two examples
+
+33:27.000 --> 33:29.000
+to show that
+
+33:29.000 --> 33:31.000
+it can be useful.
+
+33:31.000 --> 33:33.000
+In the first example,
+
+33:33.000 --> 33:35.000
+we want to solve
+
+33:35.000 --> 33:37.000
+biological problems.
+
+33:37.000 --> 33:39.000
+To be precise,
+
+33:39.000 --> 33:41.000
+we want to solve
+
+33:41.000 --> 33:43.000
+a problem
+
+33:43.000 --> 33:45.000
+among mammals.
+
+33:45.000 --> 33:47.000
+It's a problem
+
+33:47.000 --> 33:49.000
+they care about.
+
+33:49.000 --> 33:51.000
+This debate
+
+33:51.000 --> 33:53.000
+is a common
+
+33:53.000 --> 33:55.000
+debate in
+
+33:55.000 --> 33:57.000
+biology
+
+33:57.000 --> 33:59.000
+in the early 2000s.
+
+33:59.000 --> 34:01.000
+They debate
+
+34:01.000 --> 34:03.000
+whether humans
+
+34:03.000 --> 34:05.000
+are closer to pigs
+
+34:05.000 --> 34:07.000
+or mice.
+
+34:07.000 --> 34:09.000
+Some people
+
+34:09.000 --> 34:11.000
+say that
+
+34:11.000 --> 34:13.000
+humans are
+
+34:13.000 --> 34:15.000
+closer to
+
+34:15.000 --> 34:17.000
+pigs or mice.
+
+34:17.000 --> 34:19.000
+But if we
+
+34:19.000 --> 34:21.000
+look at other data,
+
+34:21.000 --> 34:23.000
+we'll find that
+
+34:23.000 --> 34:25.000
+humans are closer
+
+34:25.000 --> 34:27.000
+to mice.
+
+34:27.000 --> 34:29.000
+Can we use
+
+34:29.000 --> 34:31.000
+a compressed program to
+
+34:31.000 --> 34:33.000
+answer this question?
+
+34:33.000 --> 34:35.000
+To put it simply,
+
+34:35.000 --> 34:37.000
+if a monkey
+
+34:37.000 --> 34:39.000
+has this DNA,
+
+34:39.000 --> 34:41.000
+GTTAT,
+
+34:41.000 --> 34:43.000
+and a pig
+
+34:43.000 --> 34:45.000
+has this DNA,
+
+34:45.000 --> 34:47.000
+and we run
+
+34:47.000 --> 34:49.000
+a compressed program
+
+34:49.000 --> 34:51.000
+to calculate
+
+34:51.000 --> 34:53.000
+the information
+
+34:53.000 --> 34:55.000
+between these two
+
+34:55.000 --> 34:57.000
+DNAs,
+
+34:57.000 --> 34:59.000
+can we answer
+
+34:59.000 --> 35:01.000
+this question?
+
+35:01.000 --> 35:03.000
+We do this
+
+35:03.000 --> 35:05.000
+because it's
+
+35:05.000 --> 35:07.000
+quite different from
+
+35:07.000 --> 35:09.000
+traditional biology.
+
+35:09.000 --> 35:11.000
+Traditional biology
+
+35:11.000 --> 35:13.000
+uses a lot of
+
+35:13.000 --> 35:15.000
+biological information.
+
+35:15.000 --> 35:17.000
+For example,
+
+35:17.000 --> 35:19.000
+traditionally,
+
+35:19.000 --> 35:21.000
+we would
+
+35:21.000 --> 35:23.000
+do an alignment
+
+35:23.000 --> 35:25.000
+to these primitive data.
+
+35:25.000 --> 35:27.000
+This part
+
+35:27.000 --> 35:29.000
+should be compared
+
+35:29.000 --> 35:31.000
+with GTTAT.
+
+35:31.000 --> 35:33.000
+For example,
+
+35:33.000 --> 35:35.000
+three RNAs
+
+35:35.000 --> 35:37.000
+can form
+
+35:37.000 --> 35:39.000
+a condom.
+
+35:39.000 --> 35:41.000
+The third one
+
+35:41.000 --> 35:43.000
+in the condom
+
+35:43.000 --> 35:45.000
+is more likely to
+
+35:45.000 --> 35:47.000
+mutate,
+
+35:47.000 --> 35:49.000
+so we ignore it.
+
+35:49.000 --> 35:51.000
+It's like doing
+
+35:51.000 --> 35:53.000
+what we call
+
+35:53.000 --> 35:55.000
+feature engineering
+
+35:55.000 --> 35:57.000
+to get a result.
+
+35:57.000 --> 35:59.000
+Can we
+
+35:59.000 --> 36:01.000
+do feature engineering
+
+36:01.000 --> 36:03.000
+to compress
+
+36:03.000 --> 36:05.000
+raw data
+
+36:05.000 --> 36:07.000
+and get
+
+36:07.000 --> 36:09.000
+a pretty
+
+36:09.000 --> 36:11.000
+correct result?
+
+36:11.000 --> 36:13.000
+It looks like
+
+36:13.000 --> 36:15.000
+we can.
+
+36:15.000 --> 36:17.000
+The picture on the left
+
+36:17.000 --> 36:19.000
+is a winzip
+
+36:19.000 --> 36:21.000
+or gzip program.
+
+36:21.000 --> 36:23.000
+We get
+
+36:23.000 --> 36:25.000
+the classification of
+
+36:25.000 --> 36:27.000
+animal blood
+
+36:27.000 --> 36:29.000
+and DNA.
+
+36:29.000 --> 36:31.000
+We can see
+
+36:31.000 --> 36:33.000
+that it's
+
+36:33.000 --> 36:35.000
+pretty good.
+
+36:35.000 --> 36:37.000
+Horses and donkeys
+
+36:37.000 --> 36:39.000
+are pretty similar.
+
+36:39.000 --> 36:41.000
+Mice are the same.
+
+36:41.000 --> 36:43.000
+Humans and stars are the same.
+
+36:43.000 --> 36:45.000
+But it still has
+
+36:45.000 --> 36:47.000
+some problems.
+
+36:47.000 --> 36:49.000
+For example,
+
+36:49.000 --> 36:51.000
+this flying monkey is
+
+36:51.000 --> 36:53.000
+a monkey,
+
+36:53.000 --> 36:55.000
+so the monkey should be here.
+
+36:55.000 --> 36:57.000
+It also says
+
+36:57.000 --> 36:59.000
+that humans
+
+36:59.000 --> 37:01.000
+are closer to
+
+37:01.000 --> 37:03.000
+pigs and
+
+37:03.000 --> 37:05.000
+mice.
+
+37:05.000 --> 37:07.000
+This is gzip.
+
+37:07.000 --> 37:09.000
+We know
+
+37:09.000 --> 37:11.000
+that gzip is
+
+37:11.000 --> 37:13.000
+doing Lampel's Zip.
+
+37:13.000 --> 37:15.000
+When it predicts
+
+37:15.000 --> 37:17.000
+the next bit,
+
+37:17.000 --> 37:19.000
+the accuracy is not as high as
+
+37:19.000 --> 37:21.000
+CTW.
+
+37:21.000 --> 37:23.000
+If we use a better
+
+37:23.000 --> 37:25.000
+prediction of the future,
+
+37:25.000 --> 37:27.000
+we will find
+
+37:27.000 --> 37:29.000
+that the results
+
+37:29.000 --> 37:31.000
+are better.
+
+37:31.000 --> 37:33.000
+It has
+
+37:33.000 --> 37:35.000
+categorized the animals
+
+37:35.000 --> 37:37.000
+and said that humans are
+
+37:37.000 --> 37:39.000
+closer to pigs.
+
+37:39.000 --> 37:41.000
+This result
+
+37:41.000 --> 37:43.000
+matches
+
+37:43.000 --> 37:45.000
+traditional biology.
+
+37:45.000 --> 37:47.000
+The results are
+
+37:47.000 --> 37:49.000
+pretty consistent.
+
+37:49.000 --> 37:51.000
+This is
+
+37:51.000 --> 37:53.000
+the first example.
+
+37:53.000 --> 37:55.000
+We can use
+
+37:55.000 --> 37:57.000
+simple compression
+
+37:57.000 --> 37:59.000
+to get results
+
+37:59.000 --> 38:01.000
+that are more
+
+38:01.000 --> 38:03.000
+like traditional biology.
+
+38:03.000 --> 38:05.000
+It makes sense.
+
+38:05.000 --> 38:07.000
+We can also
+
+38:07.000 --> 38:09.000
+do
+
+38:09.000 --> 38:11.000
+different types of classification.
+
+38:11.000 --> 38:13.000
+We can also
+
+38:13.000 --> 38:15.000
+do some research
+
+38:15.000 --> 38:17.000
+on SARS
+
+38:17.000 --> 38:19.000
+virus DNA.
+
+38:19.000 --> 38:21.000
+Many people
+
+38:21.000 --> 38:23.000
+know that
+
+38:23.000 --> 38:25.000
+SARS virus
+
+38:25.000 --> 38:27.000
+was a big disease
+
+38:27.000 --> 38:29.000
+10 years ago.
+
+38:29.000 --> 38:31.000
+The mortality rate
+
+38:31.000 --> 38:33.000
+is very high.
+
+38:33.000 --> 38:35.000
+We still
+
+38:35.000 --> 38:37.000
+don't have a vaccine
+
+38:37.000 --> 38:39.000
+in 2019.
+
+38:39.000 --> 38:41.000
+Why do we
+
+38:41.000 --> 38:43.000
+have such a high mortality rate
+
+38:43.000 --> 38:45.000
+and no vaccine?
+
+38:45.000 --> 38:47.000
+Can we try to
+
+38:47.000 --> 38:49.000
+answer this question?
+
+38:49.000 --> 38:51.000
+We use
+
+38:51.000 --> 38:53.000
+compression to answer this question.
+
+38:53.000 --> 38:55.000
+The main concept is
+
+38:55.000 --> 38:57.000
+to compare it with
+
+38:57.000 --> 38:59.000
+other
+
+38:59.000 --> 39:01.000
+family viruses
+
+39:01.000 --> 39:03.000
+and do a classification study.
+
+39:03.000 --> 39:05.000
+We use it
+
+39:05.000 --> 39:07.000
+to do a study
+
+39:07.000 --> 39:09.000
+on the virus of
+
+39:09.000 --> 39:11.000
+colds, pigs, and mice.
+
+39:11.000 --> 39:13.000
+Our study
+
+39:13.000 --> 39:15.000
+has no
+
+39:15.000 --> 39:17.000
+feature engineering
+
+39:17.000 --> 39:19.000
+or
+
+39:19.000 --> 39:21.000
+heuristic.
+
+39:21.000 --> 39:23.000
+We use
+
+39:23.000 --> 39:25.000
+compression.
+
+39:25.000 --> 39:27.000
+Traditionally,
+
+39:27.000 --> 39:29.000
+biologists do
+
+39:29.000 --> 39:31.000
+a lot of
+
+39:31.000 --> 39:33.000
+heuristics.
+
+39:33.000 --> 39:35.000
+For example,
+
+39:35.000 --> 39:37.000
+biologists
+
+39:37.000 --> 39:39.000
+do DNA research.
+
+39:39.000 --> 39:41.000
+They use a database
+
+39:41.000 --> 39:43.000
+to calculate
+
+39:43.000 --> 39:45.000
+the probability of
+
+39:45.000 --> 39:47.000
+A mutating to D amino acid.
+
+39:47.000 --> 39:49.000
+They use
+
+39:49.000 --> 39:51.000
+a table
+
+39:51.000 --> 39:53.000
+to find
+
+39:53.000 --> 39:55.000
+the probability
+
+39:55.000 --> 39:57.000
+of A mutating to D amino acid.
+
+39:57.000 --> 39:59.000
+They use
+
+39:59.000 --> 40:01.000
+the probability of
+
+40:01.000 --> 40:03.000
+A mutating to D amino acid.
+
+40:03.000 --> 40:05.000
+If we
+
+40:05.000 --> 40:07.000
+use
+
+40:07.000 --> 40:09.000
+the compression
+
+40:09.000 --> 40:11.000
+and do the
+
+40:11.000 --> 40:13.000
+heuristic,
+
+40:13.000 --> 40:15.000
+we can see
+
+40:15.000 --> 40:17.000
+that
+
+40:17.000 --> 40:19.000
+phylogeny
+
+40:19.000 --> 40:21.000
+looks like this.
+
+40:21.000 --> 40:23.000
+We can see that
+
+40:23.000 --> 40:25.000
+SARS is
+
+40:25.000 --> 40:27.000
+very different
+
+40:27.000 --> 40:29.000
+from other
+
+40:29.000 --> 40:31.000
+known coronaviruses.
+
+40:31.000 --> 40:33.000
+It is a family.
+
+40:33.000 --> 40:35.000
+Moreover,
+
+40:35.000 --> 40:37.000
+coronaviruses
+
+40:37.000 --> 40:39.000
+have a family
+
+40:39.000 --> 40:41.000
+of mice and cows.
+
+40:41.000 --> 40:43.000
+Group 2 is
+
+40:43.000 --> 40:45.000
+a family of mice and cows.
+
+40:45.000 --> 40:47.000
+Cats and dogs
+
+40:47.000 --> 40:49.000
+are in the same family.
+
+40:49.000 --> 40:51.000
+This is the result
+
+40:51.000 --> 40:53.000
+we get
+
+40:53.000 --> 40:55.000
+from a wide
+
+40:55.000 --> 40:57.000
+compression.
+
+40:57.000 --> 40:59.000
+This result
+
+40:59.000 --> 41:01.000
+matches
+
+41:01.000 --> 41:03.000
+the science
+
+41:03.000 --> 41:05.000
+in this paper.
+
+41:05.000 --> 41:07.000
+The research
+
+41:07.000 --> 41:09.000
+shows that
+
+41:09.000 --> 41:11.000
+coronaviruses
+
+41:11.000 --> 41:13.000
+are divided into
+
+41:13.000 --> 41:15.000
+these groups.
+
+41:15.000 --> 41:17.000
+SARS is
+
+41:17.000 --> 41:19.000
+very unique.
+
+41:19.000 --> 41:21.000
+This explains
+
+41:21.000 --> 41:23.000
+why SARS has
+
+41:23.000 --> 41:25.000
+such a high mortality rate
+
+41:25.000 --> 41:27.000
+and has no vaccine.
+
+41:27.000 --> 41:29.000
+It is very different
+
+41:29.000 --> 41:31.000
+from other viruses.
+
+41:31.000 --> 41:33.000
+To sum up,
+
+41:33.000 --> 41:35.000
+we have
+
+41:35.000 --> 41:37.000
+not only
+
+41:37.000 --> 41:39.000
+compression,
+
+41:39.000 --> 41:41.000
+but also better compression
+
+41:41.000 --> 41:43.000
+to get better intelligence.
+
+41:43.000 --> 41:45.000
+Many people
+
+41:45.000 --> 41:47.000
+have
+
+41:47.000 --> 41:49.000
+applied
+
+41:49.000 --> 41:51.000
+compression
+
+41:51.000 --> 41:53.000
+to
+
+41:53.000 --> 41:55.000
+measure IQ
+
+41:55.000 --> 41:57.000
+and intelligence.
+
+41:57.000 --> 41:59.000
+We can use
+
+41:59.000 --> 42:01.000
+compression to measure IQ.
+
+42:01.000 --> 42:03.000
+If IQ is better,
+
+42:03.000 --> 42:05.000
+intelligence will be better.
+
+42:05.000 --> 42:07.000
+This is like
+
+42:07.000 --> 42:09.000
+a more scientific way
+
+42:09.000 --> 42:11.000
+to measure intelligence
+
+42:11.000 --> 42:13.000
+than the traditional
+
+42:13.000 --> 42:15.000
+IQ test.
+
+42:15.000 --> 42:17.000
+To be more specific,
+
+42:17.000 --> 42:19.000
+we know that
+
+42:19.000 --> 42:21.000
+human brain
+
+42:21.000 --> 42:23.000
+compresses English
+
+42:23.000 --> 42:25.000
+one bit per character.
+
+42:25.000 --> 42:27.000
+This is like
+
+42:27.000 --> 42:29.000
+the goal of artificial intelligence.
+
+42:29.000 --> 42:31.000
+Next,
+
+42:31.000 --> 42:33.000
+the second important message
+
+42:33.000 --> 42:35.000
+is that
+
+42:35.000 --> 42:37.000
+the most basic principle
+
+42:37.000 --> 42:39.000
+in science
+
+42:39.000 --> 42:41.000
+is
+
+42:41.000 --> 42:43.000
+the simpler the explanation,
+
+42:43.000 --> 42:45.000
+the more we should pay attention to it.
+
+42:45.000 --> 42:47.000
+This is a very
+
+42:47.000 --> 42:49.000
+correct philosophy.
+
+42:49.000 --> 42:51.000
+It can be transformed
+
+42:51.000 --> 42:53.000
+into a very quantitative way
+
+42:53.000 --> 42:55.000
+to measure
+
+42:55.000 --> 42:57.000
+these different assumptions.
+
+42:57.000 --> 42:59.000
+It is not only
+
+42:59.000 --> 43:01.000
+helpful to
+
+43:01.000 --> 43:03.000
+natural scientists,
+
+43:03.000 --> 43:05.000
+but also very useful
+
+43:05.000 --> 43:07.000
+in artificial intelligence.
+
+43:07.000 --> 43:09.000
+This is
+
+43:09.000 --> 43:11.000
+the end of
+
+43:11.000 --> 43:13.000
+today's lecture.
+
+43:13.000 --> 43:15.000
+In the end,
+
+43:15.000 --> 43:17.000
+I think
+
+43:17.000 --> 43:19.000
+lecture
+
+43:19.000 --> 43:21.000
+or class
+
+43:21.000 --> 43:23.000
+should be interactive.
+
+43:23.000 --> 43:25.000
+This is a
+
+43:25.000 --> 43:27.000
+very simple quiz.
+
+43:27.000 --> 43:29.000
+For example,
+
+43:29.000 --> 43:31.000
+if we look at
+
+43:31.000 --> 43:33.000
+this compressed format,
+
+43:33.000 --> 43:35.000
+the developer
+
+43:35.000 --> 43:37.000
+is not a
+
+43:37.000 --> 43:39.000
+random person.
+
+43:39.000 --> 43:41.000
+He is a serious person.
+
+43:41.000 --> 43:43.000
+This compressed format
+
+43:43.000 --> 43:45.000
+eventually
+
+43:45.000 --> 43:47.000
+compresses
+
+43:47.000 --> 43:49.000
+the information
+
+43:49.000 --> 43:51.000
+to zero.
+
+43:51.000 --> 43:53.000
+Is this right?
+
+43:53.000 --> 43:55.000
+Is this possible?
+
+43:55.000 --> 43:57.000
+This is a small quiz.
+
+43:57.000 --> 43:59.000
+If you are interested, you can go back and think about it.
+
+43:59.000 --> 44:01.000
+That's it.
+
+44:01.000 --> 44:03.000
+Thank you.
+
+44:17.000 --> 44:19.000
+Thank you,
+
+44:19.000 --> 44:21.000
+Fu Ming.
+
+44:21.000 --> 44:23.000
+Do the
+
+44:23.000 --> 44:25.000
+audience
+
+44:25.000 --> 44:27.000
+have any questions?
+
+44:29.000 --> 44:31.000
+Hello.
+
+44:31.000 --> 44:33.000
+Hello.
+
+44:33.000 --> 44:35.000
+I have two
+
+44:35.000 --> 44:37.000
+questions.
+
+44:37.000 --> 44:39.000
+The first one is
+
+44:39.000 --> 44:41.000
+about
+
+44:41.000 --> 44:43.000
+the experiment
+
+44:43.000 --> 44:45.000
+on supervised
+
+44:45.000 --> 44:47.000
+learning.
+
+44:47.000 --> 44:49.000
+Do you have
+
+44:49.000 --> 44:51.000
+other
+
+44:51.000 --> 44:53.000
+research on
+
+44:53.000 --> 44:55.000
+computational
+
+44:55.000 --> 44:57.000
+biology?
+
+44:57.000 --> 44:59.000
+I'm not familiar
+
+44:59.000 --> 45:01.000
+with computational biology,
+
+45:01.000 --> 45:03.000
+so I'm curious.
+
+45:03.000 --> 45:05.000
+The second question
+
+45:05.000 --> 45:07.000
+is
+
+45:07.000 --> 45:09.000
+about
+
+45:09.000 --> 45:11.000
+unsupervised learning.
+
+45:11.000 --> 45:13.000
+Are there
+
+45:13.000 --> 45:15.000
+other
+
+45:15.000 --> 45:17.000
+applications
+
+45:17.000 --> 45:19.000
+like
+
+45:19.000 --> 45:21.000
+this?
+
+45:21.000 --> 45:23.000
+It's similar to
+
+45:23.000 --> 45:25.000
+the classification of DNA.
+
+45:25.000 --> 45:27.000
+In the past,
+
+45:27.000 --> 45:29.000
+people collected
+
+45:29.000 --> 45:31.000
+a lot of documents
+
+45:31.000 --> 45:33.000
+to do unsupervised learning.
+
+45:33.000 --> 45:35.000
+For example,
+
+45:35.000 --> 45:37.000
+all novels
+
+45:37.000 --> 45:39.000
+written in English
+
+45:39.000 --> 45:41.000
+can be collected
+
+45:41.000 --> 45:43.000
+to do unsupervised learning.
+
+45:43.000 --> 45:45.000
+But
+
+45:45.000 --> 45:47.000
+when doing
+
+45:47.000 --> 45:49.000
+literature learning,
+
+45:49.000 --> 45:51.000
+the authors
+
+45:51.000 --> 45:53.000
+usually have
+
+45:53.000 --> 45:55.000
+a literature background.
+
+45:55.000 --> 45:57.000
+So, to achieve
+
+45:57.000 --> 45:59.000
+a certain goal,
+
+45:59.000 --> 46:01.000
+they need to
+
+46:01.000 --> 46:03.000
+process the documents
+
+46:03.000 --> 46:05.000
+like biologists.
+
+46:05.000 --> 46:07.000
+For example,
+
+46:07.000 --> 46:09.000
+if I want to classify
+
+46:09.000 --> 46:11.000
+a group of
+
+46:11.000 --> 46:13.000
+literary works
+
+46:13.000 --> 46:15.000
+to do unsupervised learning,
+
+46:15.000 --> 46:17.000
+I may not get
+
+46:17.000 --> 46:19.000
+a good result
+
+46:19.000 --> 46:21.000
+with raw data.
+
+46:21.000 --> 46:23.000
+Because each author
+
+46:23.000 --> 46:25.000
+has his own habits,
+
+46:25.000 --> 46:27.000
+and each author
+
+46:27.000 --> 46:29.000
+will become a group.
+
+46:29.000 --> 46:31.000
+So, they need
+
+46:31.000 --> 46:33.000
+some methods
+
+46:33.000 --> 46:35.000
+to do unsupervised learning.
+
+46:35.000 --> 46:37.000
+For example,
+
+46:37.000 --> 46:39.000
+cutting out outliers
+
+46:39.000 --> 46:41.000
+with high or low frequency.
+
+46:41.000 --> 46:43.000
+I heard
+
+46:43.000 --> 46:45.000
+that there is no research on this.
+
+46:45.000 --> 46:47.000
+I'm curious
+
+46:47.000 --> 46:49.000
+about the result
+
+46:49.000 --> 46:51.000
+of compressive approach.
+
+46:51.000 --> 46:53.000
+This is my second question.
+
+46:55.000 --> 46:57.000
+Yes,
+
+46:57.000 --> 46:59.000
+this is a very good question.
+
+46:59.000 --> 47:01.000
+Sorry,
+
+47:01.000 --> 47:03.000
+I talked too fast
+
+47:03.000 --> 47:05.000
+about the details of the experiment.
+
+47:05.000 --> 47:07.000
+We compare
+
+47:07.000 --> 47:09.000
+traditional literature
+
+47:09.000 --> 47:11.000
+with
+
+47:11.000 --> 47:13.000
+classical literature.
+
+47:13.000 --> 47:15.000
+In traditional literature,
+
+47:15.000 --> 47:17.000
+there is a way to measure
+
+47:17.000 --> 47:19.000
+which method is better.
+
+47:19.000 --> 47:21.000
+The main problem is
+
+47:21.000 --> 47:23.000
+that we can't
+
+47:23.000 --> 47:25.000
+calculate
+
+47:25.000 --> 47:27.000
+the distance
+
+47:27.000 --> 47:29.000
+between two things
+
+47:29.000 --> 47:31.000
+in the same way
+
+47:31.000 --> 47:33.000
+as in classical literature.
+
+47:33.000 --> 47:35.000
+So,
+
+47:35.000 --> 47:37.000
+the main way
+
+47:37.000 --> 47:39.000
+to measure
+
+47:39.000 --> 47:41.000
+the distance
+
+47:41.000 --> 47:43.000
+between two things
+
+47:43.000 --> 47:45.000
+is to use
+
+47:45.000 --> 47:47.000
+phylogeny
+
+47:47.000 --> 47:49.000
+to compare
+
+47:49.000 --> 47:51.000
+the distance
+
+47:51.000 --> 47:53.000
+between two things.
+
+47:53.000 --> 47:55.000
+To be more specific,
+
+47:55.000 --> 47:57.000
+when we
+
+47:57.000 --> 47:59.000
+study
+
+47:59.000 --> 48:01.000
+the evolution of
+
+48:01.000 --> 48:03.000
+proteins,
+
+48:03.000 --> 48:05.000
+we use
+
+48:05.000 --> 48:07.000
+mitochondrial genes.
+
+48:07.000 --> 48:09.000
+For example,
+
+48:09.000 --> 48:11.000
+in your second question,
+
+48:11.000 --> 48:13.000
+there are many different methods.
+
+48:13.000 --> 48:15.000
+In addition to
+
+48:15.000 --> 48:17.000
+mitochondrial genes,
+
+48:17.000 --> 48:19.000
+we use them
+
+48:19.000 --> 48:21.000
+because
+
+48:21.000 --> 48:23.000
+they were
+
+48:23.000 --> 48:25.000
+completely decoded
+
+48:25.000 --> 48:27.000
+earlier.
+
+48:27.000 --> 48:29.000
+Therefore,
+
+48:29.000 --> 48:31.000
+there are more documents.
+
+48:31.000 --> 48:33.000
+Later,
+
+48:33.000 --> 48:35.000
+when people's technology
+
+48:35.000 --> 48:37.000
+develops,
+
+48:37.000 --> 48:39.000
+they will use
+
+48:39.000 --> 48:41.000
+different kinds of genes
+
+48:41.000 --> 48:43.000
+or a series of
+
+48:43.000 --> 48:45.000
+transmitted amino acids
+
+48:45.000 --> 48:47.000
+to classify.
+
+48:47.000 --> 48:49.000
+Here,
+
+48:49.000 --> 48:51.000
+we mainly use
+
+48:51.000 --> 48:53.000
+the most traditional
+
+48:53.000 --> 48:55.000
+mitochondrial genes
+
+48:55.000 --> 48:57.000
+to classify
+
+48:57.000 --> 48:59.000
+and compare
+
+48:59.000 --> 49:01.000
+with the research
+
+49:01.000 --> 49:03.000
+on literature.
+
+49:03.000 --> 49:05.000
+For example,
+
+49:05.000 --> 49:07.000
+in the study
+
+49:07.000 --> 49:09.000
+on mammals,
+
+49:09.000 --> 49:11.000
+the later research
+
+49:11.000 --> 49:13.000
+may be different
+
+49:13.000 --> 49:15.000
+from the earlier research.
+
+49:15.000 --> 49:17.000
+However,
+
+49:17.000 --> 49:19.000
+here,
+
+49:19.000 --> 49:21.000
+we use
+
+49:21.000 --> 49:23.000
+mitochondrial DNA
+
+49:23.000 --> 49:25.000
+to classify
+
+49:25.000 --> 49:27.000
+and the results are
+
+49:27.000 --> 49:29.000
+quite similar.
+
+49:29.000 --> 49:31.000
+In fact,
+
+49:31.000 --> 49:33.000
+SARS-CoV-2
+
+49:33.000 --> 49:35.000
+has several stages.
+
+49:35.000 --> 49:37.000
+Here,
+
+49:37.000 --> 49:39.000
+we mainly use
+
+49:39.000 --> 49:41.000
+the S-protein stage
+
+49:41.000 --> 49:43.000
+to compare.
+
+49:43.000 --> 49:45.000
+S-protein is
+
+49:45.000 --> 49:47.000
+the shell of SARS or
+
+49:47.000 --> 49:49.000
+coronavirus.
+
+49:49.000 --> 49:51.000
+We know that
+
+49:51.000 --> 49:53.000
+the virus shell
+
+49:53.000 --> 49:55.000
+contains a lot of
+
+49:55.000 --> 49:57.000
+kind of needle signals.
+
+49:57.000 --> 49:59.000
+So,
+
+49:59.000 --> 50:01.000
+SARS-CoV-2
+
+50:01.000 --> 50:03.000
+will mutate
+
+50:03.000 --> 50:05.000
+its shell
+
+50:05.000 --> 50:07.000
+to pass through
+
+50:07.000 --> 50:09.000
+the membrane of
+
+50:09.000 --> 50:11.000
+another cell.
+
+50:11.000 --> 50:13.000
+The reason why
+
+50:13.000 --> 50:15.000
+we choose S-virus
+
+50:15.000 --> 50:17.000
+is because
+
+50:17.000 --> 50:19.000
+we can use
+
+50:19.000 --> 50:21.000
+the same data
+
+50:21.000 --> 50:23.000
+to compare
+
+50:23.000 --> 50:25.000
+with the
+
+50:25.000 --> 50:27.000
+literature on SARS.
+
+50:27.000 --> 50:29.000
+In fact,
+
+50:29.000 --> 50:31.000
+the S-protein
+
+50:31.000 --> 50:33.000
+is not the only
+
+50:33.000 --> 50:35.000
+variant of SARS.
+
+50:35.000 --> 50:37.000
+There are many
+
+50:37.000 --> 50:39.000
+other variants of SARS.
+
+50:39.000 --> 50:41.000
+I guess
+
+50:41.000 --> 50:43.000
+we can also use
+
+50:43.000 --> 50:45.000
+the S-protein.
+
+50:45.000 --> 50:47.000
+So,
+
+50:47.000 --> 50:49.000
+the first question
+
+50:49.000 --> 50:51.000
+is how to compare
+
+50:51.000 --> 50:53.000
+SARS-CoV-2
+
+50:53.000 --> 50:55.000
+with SARS-CoV-2.
+
+50:55.000 --> 50:57.000
+The second question is
+
+50:57.000 --> 50:59.000
+what is the difference
+
+50:59.000 --> 51:01.000
+between SARS-CoV-2
+
+51:01.000 --> 51:03.000
+and SARS-CoV-2
+
+51:03.000 --> 51:05.000
+in other fields?
+
+51:05.000 --> 51:07.000
+I know that
+
+51:07.000 --> 51:09.000
+there are many
+
+51:09.000 --> 51:11.000
+applications of
+
+51:11.000 --> 51:13.000
+SARS-CoV-2
+
+51:13.000 --> 51:15.000
+in other fields.
+
+51:15.000 --> 51:17.000
+For example,
+
+51:17.000 --> 51:19.000
+I know that
+
+51:19.000 --> 51:21.000
+some people
+
+51:21.000 --> 51:23.000
+apply the SARS-CoV-2
+
+51:23.000 --> 51:25.000
+and
+
+51:25.000 --> 51:27.000
+some people
+
+51:27.000 --> 51:29.000
+apply the SARS-CoV-2.
+
+51:29.000 --> 51:31.000
+Can we
+
+51:31.000 --> 51:33.000
+describe
+
+51:33.000 --> 51:35.000
+the similarities
+
+51:35.000 --> 51:37.000
+in the literature
+
+51:37.000 --> 51:39.000
+by saying
+
+51:39.000 --> 51:41.000
+this group is
+
+51:41.000 --> 51:43.000
+SARS-CoV-2
+
+51:43.000 --> 51:45.000
+and this group is
+
+51:45.000 --> 51:47.000
+SARS-CoV-2?
+
+51:47.000 --> 51:49.000
+I know that
+
+51:49.000 --> 51:51.000
+we can use
+
+51:51.000 --> 51:53.000
+punctuation
+
+51:53.000 --> 51:55.000
+to unify them.
+
+51:55.000 --> 51:57.000
+Or we can
+
+51:57.000 --> 51:59.000
+remove the blanks.
+
+51:59.000 --> 52:01.000
+When we don't do these things at all,
+
+52:01.000 --> 52:03.000
+we can classify the literature
+
+52:03.000 --> 52:05.000
+in a good way.
+
+52:05.000 --> 52:07.000
+In addition to the literature,
+
+52:07.000 --> 52:09.000
+I guess
+
+52:09.000 --> 52:11.000
+anything can be
+
+52:11.000 --> 52:13.000
+generalized.
+
+52:13.000 --> 52:15.000
+As long as it becomes 0101,
+
+52:15.000 --> 52:17.000
+it can be compressed.
+
+52:17.000 --> 52:19.000
+For example,
+
+52:19.000 --> 52:21.000
+we have these
+
+52:21.000 --> 52:23.000
+MIDI files.
+
+52:23.000 --> 52:25.000
+When we classify them,
+
+52:25.000 --> 52:27.000
+we will find that
+
+52:27.000 --> 52:29.000
+this group of MIDI files
+
+52:29.000 --> 52:31.000
+seems to be in the style of Bach.
+
+52:31.000 --> 52:33.000
+This group of MIDI files
+
+52:33.000 --> 52:35.000
+is in the style of Beethoven.
+
+52:35.000 --> 52:37.000
+We can classify them.
+
+52:37.000 --> 52:39.000
+I know that
+
+52:39.000 --> 52:41.000
+in science,
+
+52:41.000 --> 52:43.000
+for example,
+
+52:43.000 --> 52:45.000
+in astronomy,
+
+52:45.000 --> 52:47.000
+we classify
+
+52:47.000 --> 52:49.000
+this group of light
+
+52:49.000 --> 52:51.000
+with the change of time.
+
+52:51.000 --> 52:53.000
+It probably has this change.
+
+52:53.000 --> 52:55.000
+It probably has this change.
+
+52:55.000 --> 52:57.000
+It may be a cycle
+
+52:57.000 --> 52:59.000
+or it is a change
+
+52:59.000 --> 53:01.000
+that goes up slowly.
+
+53:01.000 --> 53:03.000
+And this group of astronomical objects
+
+53:03.000 --> 53:05.000
+may be this picture.
+
+53:05.000 --> 53:07.000
+Its light curve looks like this.
+
+53:07.000 --> 53:09.000
+When we classify these series,
+
+53:09.000 --> 53:11.000
+we will find that
+
+53:11.000 --> 53:13.000
+this group of astronomical objects
+
+53:13.000 --> 53:15.000
+are all supernovae.
+
+53:15.000 --> 53:17.000
+They probably look like this.
+
+53:17.000 --> 53:19.000
+This group of objects
+
+53:19.000 --> 53:21.000
+is a supernova.
+
+53:21.000 --> 53:23.000
+So I know that
+
+53:23.000 --> 53:25.000
+it can be applied
+
+53:25.000 --> 53:27.000
+in other fields.
+
+53:27.000 --> 53:29.000
+Yes.
+
+53:29.000 --> 53:31.000
+Thank you.
+
+53:31.000 --> 53:33.000
+Thank you.
+
+53:43.000 --> 53:45.000
+Are there any questions
+
+53:45.000 --> 53:47.000
+from the audience?
+
+53:51.000 --> 53:53.000
+I have a question.
+
+53:53.000 --> 53:55.000
+Yes.
+
+53:55.000 --> 53:57.000
+I want to ask
+
+53:57.000 --> 53:59.000
+about the CTW
+
+53:59.000 --> 54:01.000
+compression method.
+
+54:01.000 --> 54:03.000
+It is successful in many areas.
+
+54:03.000 --> 54:05.000
+Is there any situation
+
+54:05.000 --> 54:07.000
+where it doesn't perform so well?
+
+54:07.000 --> 54:09.000
+Do you know why?
+
+54:11.000 --> 54:13.000
+Yes.
+
+54:13.000 --> 54:15.000
+CTW
+
+54:15.000 --> 54:17.000
+has a problem.
+
+54:19.000 --> 54:21.000
+The algorithm
+
+54:21.000 --> 54:23.000
+must know in advance
+
+54:23.000 --> 54:25.000
+how long
+
+54:25.000 --> 54:27.000
+the tree is.
+
+54:27.000 --> 54:29.000
+For example,
+
+54:29.000 --> 54:31.000
+our example is 3.
+
+54:31.000 --> 54:33.000
+Theoretically,
+
+54:33.000 --> 54:35.000
+if we
+
+54:35.000 --> 54:37.000
+only count
+
+54:37.000 --> 54:39.000
+the prefix to 3,
+
+54:39.000 --> 54:41.000
+the pattern
+
+54:41.000 --> 54:43.000
+of this data
+
+54:43.000 --> 54:45.000
+must be
+
+54:45.000 --> 54:47.000
+4
+
+54:47.000 --> 54:49.000
+or 5 symbols
+
+54:49.000 --> 54:51.000
+before.
+
+54:51.000 --> 54:53.000
+If we only limit it to 3,
+
+54:53.000 --> 54:55.000
+logically,
+
+54:55.000 --> 54:57.000
+the algorithm will learn
+
+54:57.000 --> 54:59.000
+the pattern.
+
+54:59.000 --> 55:01.000
+This problem
+
+55:01.000 --> 55:03.000
+has a specific
+
+55:03.000 --> 55:05.000
+representation
+
+55:05.000 --> 55:07.000
+in the data of the image.
+
+55:07.000 --> 55:09.000
+We know that
+
+55:09.000 --> 55:11.000
+the pixels on my left
+
+55:11.000 --> 55:13.000
+should be
+
+55:13.000 --> 55:15.000
+the same color.
+
+55:15.000 --> 55:17.000
+Not only on my left,
+
+55:17.000 --> 55:19.000
+but also on my top and bottom
+
+55:19.000 --> 55:21.000
+should be the same color.
+
+55:21.000 --> 55:23.000
+But if we change
+
+55:23.000 --> 55:25.000
+the pattern
+
+55:25.000 --> 55:27.000
+row by row,
+
+55:27.000 --> 55:29.000
+we will find that
+
+55:29.000 --> 55:31.000
+the upper and lower pixels
+
+55:31.000 --> 55:33.000
+should be the same color.
+
+55:33.000 --> 55:35.000
+The pattern
+
+55:35.000 --> 55:37.000
+depends on
+
+55:37.000 --> 55:39.000
+the width,
+
+55:39.000 --> 55:41.000
+for example,
+
+55:41.000 --> 55:43.000
+600x400.
+
+55:43.000 --> 55:45.000
+It depends on 400 pixels
+
+55:45.000 --> 55:47.000
+and 400 symbols
+
+55:47.000 --> 55:49.000
+to learn the pattern.
+
+55:49.000 --> 55:51.000
+I guess
+
+55:51.000 --> 55:53.000
+this is the main reason.
+
+55:53.000 --> 55:55.000
+The reason
+
+55:55.000 --> 55:57.000
+we can't
+
+55:57.000 --> 55:59.000
+extend
+
+55:59.000 --> 56:01.000
+the depth of the tree
+
+56:01.000 --> 56:03.000
+is because
+
+56:03.000 --> 56:05.000
+to build a tree,
+
+56:05.000 --> 56:07.000
+the memory
+
+56:07.000 --> 56:09.000
+needs
+
+56:09.000 --> 56:11.000
+the growth of the
+
+56:11.000 --> 56:13.000
+pixel type.
+
+56:13.000 --> 56:15.000
+The growth of the pixel type
+
+56:15.000 --> 56:17.000
+is hard to
+
+56:17.000 --> 56:19.000
+calculate
+
+56:19.000 --> 56:21.000
+because the
+
+56:21.000 --> 56:23.000
+number of pixels
+
+56:23.000 --> 56:25.000
+is small.
+
+56:25.000 --> 56:27.000
+I guess this is
+
+56:27.000 --> 56:29.000
+the biggest problem.
+
+56:29.000 --> 56:31.000
+I see.
+
+56:31.000 --> 56:33.000
+Hello,
+
+56:33.000 --> 56:35.000
+Fumi.
+
+56:35.000 --> 56:37.000
+Hello,
+
+56:37.000 --> 56:39.000
+A-Pad.
+
+56:39.000 --> 56:41.000
+I want to ask
+
+56:41.000 --> 56:43.000
+a question
+
+56:43.000 --> 56:45.000
+that is not
+
+56:45.000 --> 56:47.000
+related to
+
+56:47.000 --> 56:49.000
+randomness.
+
+56:49.000 --> 56:51.000
+For example,
+
+56:51.000 --> 56:53.000
+if we put a
+
+56:53.000 --> 56:55.000
+bunch of data
+
+56:55.000 --> 56:57.000
+into the tree,
+
+56:57.000 --> 56:59.000
+will it
+
+56:59.000 --> 57:01.000
+get any result?
+
+57:01.000 --> 57:03.000
+For randomness,
+
+57:03.000 --> 57:05.000
+we will find
+
+57:05.000 --> 57:07.000
+that
+
+57:07.000 --> 57:09.000
+if we
+
+57:09.000 --> 57:11.000
+follow
+
+57:11.000 --> 57:13.000
+the formula,
+
+57:13.000 --> 57:15.000
+we will find
+
+57:15.000 --> 57:17.000
+that the kx
+
+57:17.000 --> 57:19.000
+is equal to
+
+57:19.000 --> 57:21.000
+itself.
+
+57:21.000 --> 57:23.000
+We are trying to
+
+57:23.000 --> 57:25.000
+find the probability.
+
+57:25.000 --> 57:27.000
+If we
+
+57:27.000 --> 57:29.000
+follow the formula,
+
+57:29.000 --> 57:31.000
+it will be equal to itself.
+
+57:31.000 --> 57:33.000
+The data
+
+57:33.000 --> 57:35.000
+is the only
+
+57:35.000 --> 57:37.000
+data in the world.
+
+57:37.000 --> 57:39.000
+I guess
+
+57:39.000 --> 57:41.000
+the result is
+
+57:41.000 --> 57:43.000
+something special.
+
+57:45.000 --> 57:47.000
+I see.
+
+57:47.000 --> 57:49.000
+Yes, intuitively.
+
+57:59.000 --> 58:01.000
+Does anyone
+
+58:01.000 --> 58:03.000
+have other questions?
+
+58:03.000 --> 58:05.000
+Can I ask
+
+58:05.000 --> 58:07.000
+one more question?
+
+58:07.000 --> 58:09.000
+Sure.
+
+58:09.000 --> 58:11.000
+You mentioned
+
+58:11.000 --> 58:13.000
+that CTW cannot
+
+58:13.000 --> 58:15.000
+be compressed.
+
+58:15.000 --> 58:17.000
+In fact,
+
+58:17.000 --> 58:19.000
+there are a lot of
+
+58:19.000 --> 58:21.000
+compressed files.
+
+58:21.000 --> 58:23.000
+Compressed files
+
+58:23.000 --> 58:25.000
+are designed to
+
+58:25.000 --> 58:27.000
+look up and down.
+
+58:31.000 --> 58:33.000
+Can CTW
+
+58:33.000 --> 58:35.000
+be designed to
+
+58:35.000 --> 58:37.000
+look up and left?
+
+58:37.000 --> 58:39.000
+Something like that.
+
+58:39.000 --> 58:41.000
+And then build the tree.
+
+58:41.000 --> 58:43.000
+That's it.
+
+58:45.000 --> 58:47.000
+I guess
+
+58:47.000 --> 58:49.000
+it is possible.
+
+58:49.000 --> 58:51.000
+For example,
+
+58:51.000 --> 58:53.000
+if the tree
+
+58:53.000 --> 58:55.000
+has only two branches,
+
+58:55.000 --> 58:57.000
+I guess
+
+58:57.000 --> 58:59.000
+the tree can have
+
+58:59.000 --> 59:01.000
+more branches.
+
+59:11.000 --> 59:13.000
+I know
+
+59:13.000 --> 59:15.000
+a lot of papers
+
+59:15.000 --> 59:17.000
+are working on
+
+59:17.000 --> 59:19.000
+this kind of improvement.
+
+59:19.000 --> 59:21.000
+I guess
+
+59:21.000 --> 59:23.000
+some people's improvement is
+
+59:23.000 --> 59:25.000
+that CTW
+
+59:25.000 --> 59:27.000
+is designed to
+
+59:27.000 --> 59:29.000
+look up and down.
+
+59:29.000 --> 59:31.000
+Some papers
+
+59:31.000 --> 59:33.000
+are
+
+59:33.000 --> 59:35.000
+designed to
+
+59:35.000 --> 59:37.000
+skip some syntax.
+
+59:37.000 --> 59:40.000
+Skip some syntax.
+
+01:00:07.000 --> 01:00:09.000
+Hello?
+
+01:00:29.000 --> 01:00:31.000
+Hello?
+
+01:00:31.000 --> 01:00:33.000
+Hello?
+
+01:00:33.000 --> 01:00:35.000
+Hello?
+
+01:00:35.000 --> 01:00:37.000
+I wasn't talking just now.
+
+01:00:37.000 --> 01:00:39.000
+I'm afraid my internet is broken.
+
+01:00:39.000 --> 01:00:41.000
+Okay.
+
+01:00:41.000 --> 01:00:43.000
+I'd like to ask
+
+01:00:43.000 --> 01:00:45.000
+if there are any other questions.
+
+01:00:49.000 --> 01:00:51.000
+Okay.
+
+01:00:51.000 --> 01:00:53.000
+If you haven't joined
+
+01:00:53.000 --> 01:00:55.000
+TaiwaR,
+
+01:00:55.000 --> 01:00:57.000
+please use the link in the chat.
+
+01:00:57.000 --> 01:00:59.000
+Thank you again for
+
+01:00:59.000 --> 01:01:01.000
+the wonderful speech.
+
+01:01:01.000 --> 01:01:03.000
+Thank you.
+
+01:01:05.000 --> 01:01:07.000
+If you have any questions,
+
+01:01:07.000 --> 01:01:09.000
+you can discuss in private.
+
+01:01:09.000 --> 01:01:11.000
+You can also
+
+01:01:11.000 --> 01:01:13.000
+use the link in the chat.
+
+01:01:13.000 --> 01:01:15.000
+Thank you.
+
+01:01:15.000 --> 01:01:17.000
+See you next time.
+
+01:01:17.000 --> 01:01:19.000
+Bye.
+

@@ -1,0 +1,1236 @@
+來到今天的Chart Talk,那我們今天非常榮幸請到這個琴科博士,魯文森博士來跟我們講他今天關於,他在博士班期間的這個關於Qubit,sorry我應該講說是Quantum Bit或是量子位元的研究,那在我們開始之前呢,先讓我來介紹一下我們今天的講者。
+文森今年剛從美東的Rutgers University畢業,他在博班的工作主要是利用超導的人造原子來實現保護性的超導Qubit。
+在博士班前,他在台積電的3D IC部門做了兩年半,做製程整合3D的IC封裝。
+他剛完成他的博士班,拿到學位,他接下來就會移動到IBM Research,擔任Research Scientist,繼續進行他最專長的超導量子晶片的開發整合。
+同時他也是IBMQ推廣計畫的Qiskit的Advocate的其中一員,在他的主要的Superconducting Qubit研究之餘,他也非常致力於用Qiskit開發量子教育還有遊戲。
+請大家把麥克風打開,讓我們的講者聽到我們的掌聲。我們就以熱烈的掌聲,歡迎文森來給我們帶來今天的演講。
+麥克風打開,讓我們的講者聽到我們的掌聲。我們就以熱烈的掌聲,歡迎文森來給我們帶來今天的演講。我們就以熱烈的掌聲,歡迎文森來給我們帶來今天的演講。
+三個部分,一個是Low-EJ的Joseph Johnson和Superconductor,第三個部分是Prototype,一個電路的雛形,一個圓形,我們叫Bifluxon Qubit。
+因為Johnson比較無聊一點,而且時間上有些限制,所以我就不會特別提Johnson,主要是focus在這個Bifluxon circuit跟他裡面比較重要的一個元件,Superconductor。
+我看到今天林燕祥老師又來,這個電路其實很像Fluxonium,只是把Black Sheep Johnson改成一個Couper-Pair Box,然後用Gate去連。
+因為我是做Fab跟不是做Design的,所以電路上的話我會盡量解釋,但是可能在理論背後,比較背後一些Hamiltonian的部分可能還是會,可能因為時間關係也不會提太多。
+因為我也不是專門做那個,但是隨時有問題都可以討論。
+然後因為在場的可能不是所有人都是做Qubit,所以我簡單提一下,在Superconductor,就是在Quantum Computation的Technology裡面,尤其是Qubit Hardware裡面,
+主要是有五個criteria,那其中,這是DiVincenzo他在2000年提出來的,做Qubit的五個criteria。
+那其中兩個比較重要的是,第一個是Circuit Depth,就是一個電路你可以跑多久,訊號才會消失,所以你可以放幾個Gate之後訊號才會消失。
+那另外一個criteria當然就是Qubit的數量,所以我這邊的工作比較像是在Extend Superconductor Qubit,它的Circuit Depth,就是說盡量的去提升我們的Either Coherent Time或者是Defacing Time。
+然後這邊有一個算是最近出來的一個妹妹,就是網路梗圖,就是Summarize Superconductor Qubit的Paper,現在主要看到的Paper總共大概就是這12種。
+然後我的博士後來的工作呢,就是基本上落在這三篇Paper的位置,就是他寫說Judson & Johnson can do so many things,這是我第一個工作。
+然後第二個就是Realize Superconductor,Impossible Inductors,然後第三個就是我們等一下會看到的我們的Prototype,We made a new Qubit and it is awful。
+不過開玩笑歸開玩笑,就是這個確實是我在博士班,這個確實是cover我在博士班的工作。
+所以我們今天會看到的就是,第一個是Superconductor,我們試著用Granular Aluminum去實現High Kinetic Inductance的Superconductor。
+然後第二個是用Johnson-based Superconductor to realize Bifurcation Qubit。
+然後用Granular Aluminum做Superconductor來Realize Bifurcation Qubit是一個ongoing的Project。
+或也許有時間我們可以稍微提一下。
+不過今天主要重點就是這兩個。
+然後基本上這一頁是很快帶一下Judson & Johnson是什麼樣的東西。
+Judson & Johnson基本上就是一個Capacitor,只是它的兩邊是Superconductor,然後中間有一個很薄的Aluminum的Oxide Layer。
+然後在我們的Device裡面呢,我們用的是Aluminum-based的。
+所以就是在一個方向上用Shadow Mask,在一個方向上長一層Aluminum,然後在真空腔裡面introduce一些Oxygen,然後在另外一個方向上再鍍另外一層Aluminum。
+就是這樣可以做成一個Judson & Johnson。
+那Judson & Johnson基本上可以用三個Element來表示,在Model上面。
+其中一個是會影響整個Circuit Damping的Resistance,然後還有Capacitance,跟一個Nonlinear的Inductor。
+然後其中Capacitor跟Inductor它的Characteristic Energy就是用Charging Energy,Q² over 2C,還有Joules Per Minute Energy。
+這是因為Joules Per Minute Effect產生的Joules Per Minute Energy。
+那Joules Per Minute Effect基本上是它的,基本上就是用,它在描述的就是,你可以用Junction兩邊的Supercurrent的Phase Difference,
+作為Parameter,去Parameterize這個Circuit Element的IV Characteristics,
+就是它的電流跟電壓可以用Phase去做,去Parameterize。
+然後進一步你可以得到它的Characteristic Energy大概長這樣子。
+那其中它的實驗上來說,我們今天就是我做了什麼Junction,再試問兩個電阻大概是多少,
+那它就是Inverse Proportional to EJ。
+然後這個EJ跟EC呢,基本上可以用古典物理裡面的,
+就是可以把它想像成古典物理裡面的那個,就是Kinetic Energy跟Potential Energy。
+EJ比較像是Potential Energy,在Phase Representation底下呢,EJ就像是一個Potential Energy,
+然後EC就像是Kinetic Energy。
+然後在有,在EJ跟EC的數量擠在一個正確的位置上的時候,
+也就是說EJ跟EC是Comparable的時候,因為Confinement Effect,
+就是Quantum Confinement Effect,我們可以觀察到有Energy Level的產生。
+那這是在Quantum Computation裡面,我們取第0個跟第1個能階去做Operation。
+也就是說,假設今天Energy Level是non-equally spaced的時候,
+你就可以去用Microwave去比較準確的去Address Ground State跟First Excited State。
+然後這是基本上用Superconducting Artificial Atom來做Quantum Computation的基本的概念。
+然後,剛剛有提到說,就是EJ本身是兩個,
+就是可以把它類比成動能跟位能。
+然後在古典物理裡面,我們知道動能和位能,
+就是因為動能和位能他們的就是數學結構的關係,
+我們可以預期他們的Represent,就是他們代表各自的Basis。
+比方說,動能的Basis是位置,位能的Basis,sorry,動能的Basis是動量,位置的Basis是位置。
+所以P跟X,Delta P跟Delta X會Follow,就是Computation Relation,
+然後你會預期到他們會有Certain Principle。
+那在Junction,在Circuit,Superconducting Circuit裡面,也有類似的現象。
+只是說我們的,變成我們是用Charging Energy的Basis,就是Number of Cooper Pairs,
+跟Josephine Energy的Basis,也就是剛剛parameterized的Supercurrent Phase。
+這兩個Operator,他們也會Follow,就是他的一個最低的一個,
+也會有所謂的Accelerating Principle。
+然後在一般的,在我們的,我們關心的超導電路裡面,
+他的,就是一般來說我們比較擔心的是Charging Energy。
+那如果今天想要,我們今天想要讓Charge Noise Minimize的時候,
+我們會預期我們需要去Maximize我們的那個,就是Phase Fluctuation。
+那Phase Fluctuation,在,去Maximize Phase Fluctuation,
+代表的意思就是我們需要把這個Energy Spectrum,
+他的那個,就是,因為這個是一個,就是靜止成一個Parabola,
+然後所以我們需要一個很大的Inductance,去把這個Parabola壓平。
+對,就是可以得到他比較低的Charge的Sensitivity。
+那這件事情,就會,就是,這是我們為什麼要去製作Superinductor的一個東西。
+那傳統上來說,應該說不傳統上,就是說,在,就是一般的像,
+比方說在Semiconductor方式裡面,做Inductor的方式就是繞線,
+就是繞越細越長的線,你就可以得到越大的Inductance。
+那在,在2000,就是去年有一篇Paper呢,其實有去Demonstrate說,
+你可以做到多大的Inductance。
+就是在,在一般的,你Fab能夠做的極限的,的,的做法裡面。
+那這個Paper他們Realize是大概一個Microhenry跟30個Kiloohm。
+然後Kiloohm他之所以,就是說,Impedance之所以是一個重要的參數的原因是因為,
+基本上我們都會把某個元件,我們製作出來的某個元件,
+然後我們希望他是可以在某個頻率下工作。
+那今天在這個頻率下工作的時候,我們希望他維持Inductive的Response。
+也就是說,你操作的Frequency基本上高於某個範圍,高於某個Frequency的時候,
+這個Frequency必須要,應該說是,就是你每一個Device做出來,
+他都有他的Resonance Frequency。
+這個Frequency必須高於你的Operation,你在Operation的時候的Frequency。
+然後那個Frequency,然後這個Resonance Frequency基本上可以用根號,
+1 over square of LC。
+也就是說,如果你今天一個很大的L,然後你對應到的F要是固定的話,
+你的C要是,你的Specific Compression要夠小。
+那最後對應到的就是,你的Impedance要夠高。
+所以Impedance之所以是一個重要的參數,是因為這樣一個原因。
+然後,這篇Paper基本上就Demonstrate這個,
+他算是一個,已經是一個極限了,因為他的Device,
+你看黑色的這個底下是挖空的。
+那但是,這個,做這件事情其實是相當困難的。
+就是說,要去實行做這個Device,這幾百個Micron的Size,
+然後要把Subtree挖空,只留下很薄的Dielectric,
+就是Very Challenging。
+所以一般來說,我們都是用所謂的Superinductance,
+就是說,Sorry,用超導體的Kinetic Inductance來做這件事情。
+一個例子是我們實驗室在做的,用Granular Aluminum這個材料,
+待會我們會看到它的一個簡單的結構。
+這個材料它會,就是,它是藉由Couper Pair,
+它的Kinetic Inductance去提供,Sorry, Kinetic Energy,
+Couper Pair Kinetic Energy,去提供Kinetic Inductance。
+那另外一方面呢,是用Joseph Johnson,
+那這個就是,那個,我一直忘記,Vlad,Sorry,
+我一直忘記那個老師的名字,
+但是這是李延翔老師之前待的實驗室。
+Marou Cheren,Sorry,這是Marou Cheren他們Group做的,
+就是目前是維持的世界紀錄,
+就是最大的Inductance,
+就是它是2.5個mH,然後impedance到200kΩ。
+它做的方法是,他們把這個,就是Joseph Johnson整個,
+把它的Subtrate底下吃掉,
+有點類似這樣做Suspended Graphene那種概念,
+你把底下的Oxide吃掉之後,Over-etching之後,
+它的那個,就是Metal我自己會因為硬力的關係會翹起來,
+然後藉由這樣子去Remove你的Subtrate,
+然後得到很高的impedance。
+那這個是用Joseph Johnson去提供你的,我們的那個Superinductor。
+OK,所以基本上這是一個簡單的一個,
+就是描述為什麼我們要做Superinductor。
+然後,這一頁基本上就是講一下說,
+我們目前遇到的一些,就是Superconductivity裡面遇到的Challenge,
+就是剛剛提到的,
+所以這個t應該是,就是whichever is smaller,
+either t1 or t2,就是你的decoherence,
+哪一個就是最短的decoherence,
+不異於你的tg,就是你每一個Gate操作的時間,
+這個次數,就是你一個Circuit可以操作的次數,
+就是我們所謂的Circuit Depth,
+然後我們要做的事情就是盡力延長這個Circuit Depth。
+那接下來講的就是我示範的主要工作,
+就是在怎麼樣去realize,
+theoretically上他們怎麼樣去講,
+我們要去怎麼樣延長這個Circuit Depth。
+那一個方法呢,是藉由所謂的Parity Protection。
+Parity Protection的概念就是,
+sorry,我先提一下什麼是t1跟t2,
+然後以及我們現在這個talk裡面focus的是什麼東西。
+t1跟t2是,就是算NMR系統裡面的一個術語,
+t1指的是說,你今天把一個qubit或一個electron,
+excited到first excited state之後,
+它花了多少時間在relax回來。
+所以對應到說,如果這是一個block sphere,
+qubit裡面的block sphere的時候,
+它對應到的那個physical picture是,
+你excited到t1,從0excited到1的時候,
+過了多少時間,這個球慢慢地縮小跑回0。
+那Defacing比較像是,在這個XY平面上的face,
+怎麼樣地去,就是指引你的information,
+怎麼樣地在face的degree上,degree of freedom上面,
+去decohere掉,就是說deface掉。
+然後我們這邊,主要討論的都是t1的relaxation,
+也就是說,領到彼生月前,
+去怎麼樣去suppress這個從1跳回來,
+跳回0的這個月前。
+然後,這邊的話,就是我簡單做了一些影片,
+就是很快地解釋一下,
+就是superconducting qubit裡面,
+怎麼樣去realize 0 and 1。
+那這是一個charge qubit的一個device,
+然後它的representation,
+它是很容易可以寫成4的ec乘以number of cooper pairs,
+就是island上面的cooper pairs。
+然後,那在這個結構裡面的話,
+我們可以看到是,當n等於0,
+n等於0代表說,在island上面有0個charge,
+n等於1代表是,在island上面有1個charge,
+然後對應到會有各自的parabola,
+就是說,假設你今天是0的時候,
+你的energy應該就長這樣,
+然後你上面有1個charge的時候,你就長這樣。
+然後你實際上的energy是,
+你跟你加了多少bias再上去,
+然後你這個charge,
+就是整個charge的,就是你的charge energy。
+然後,如果今天有一個,
+假設你有一個charge跑上去這個island,
+那基本上,我們預期到的就是說,
+你的energy就從這裡跳到這裡來。
+就是你的,比方說你有一些positive particle的tunneling,
+那另外一方面呢,你也會有一些local的charge noise,
+假設你今天locally,你有一些noise在影響的話,
+你的訊號就會,就是你的energy就會再次上來這樣飄。
+那這時候,如果我今天把energy打開,
+就是johnson junction tunneling的這個effect把它打開的話,
+其實剛剛看到的純粹就是不考慮johnson junction,
+它就是一個capacitor,
+那我們看到,我們預期的energy diagram就長這樣。
+那如果今天把johnson effect把它打開的話,
+我們看到的事情就是,
+我們會有所謂的,就是,
+in antilevel crossing,
+然後你就會有zero state跟one state。
+那在這個情況下,就是說,
+在我們的系統裡面也是一個類似的一個狀況,
+但是只是說我們的basis用的是flux的basis,
+然後我們的,我們實際在觀察的是所謂的flux zone。
+flux zone的概念就是,
+你今天就是在電路裡面,
+你的那個circulation,
+就是你的supercurrent的,
+因為像supercurrent的那個,
+就是有幾個,就是你的supercurrent phase的winding,
+假設你今天是有一個flux zone tunnel進來,
+你就會,你的supercurrent就多一個圖牌,
+你的相位就多一個圖牌的一個wrapping。
+然後我們的byflux zone呢,
+基本上它的概念是用到就是,
+因為剛剛有提到說,
+就是,假設我們今天protection的概念就是,
+假設我們今天有一個系統,
+它是0跟1之間是完全看不到對方的,
+也就是說,我今天有一個,
+這樣說好了,
+其實基本上我們今天,
+就是今天如果,
+我們打,因為這個,
+這個,這一項,
+就是transfer tunneling,
+它會發生的事情是,
+它可以從,允許你從0跳到1,
+但是你也可以從,
+也會因為跟外界的coupling,
+會從1再跳回0。
+但是如果今天我們有一個開關,
+可以把系統,
+就是可以把系統從0跟1之間,
+就是說,因為在這個情況下,
+它沒有,
+就是假設這樣的系統,
+假設是有,
+假設我們今天是有一個degeneracy,
+那基本上我今天打開0跟1的時候,
+就是打開,
+就是切換系統在不同的情況的時候,
+我是可以做到說,
+我今天要讀寫的時候,
+我今天要去write system的時候,
+在做0跟1的writing,
+然後我今天要read的時候,
+我可以先讓系統進到所謂的protection state,
+protective state,
+然後這時候呢,
+就是signal就會preserve,
+就是可以preserve比較好,
+可以保存的比較好。
+我覺得我可能沒有講得很好,
+有試著想要用,
+比較像是用degeneracy的概念去解釋,
+但是效果可能不是很好。
+但是基本上我們其實就是如果是把,
+把它寫下來的時候。
+Vincent,Vincent,sorry。
+Vincent,不好意思,
+我可以問問題嗎?
+Hello,可以回到上一頁嗎?
+我想要問你就是,
+這好像非常基本,
+非常非常基本的東西。
+所以在你做那個rotational,
+因為你下面的ej,
+2分之1ej的這邊,
+部分是你的transition嘛,
+對不對?
+那你上面基本上就是,
+你的charge的這些,
+在你的island上面的量。
+那如果就是我們,
+我們上次討論到,
+就是我們,
+你們在做的時候,
+應該也是會看到一些charge drop,
+應該就在上面這一塊,
+就是在影響ng的這邊。
+對,那你們在做rotational wave approximation的時候,
+就是應該就是會把上面這一項消掉,
+但是如果在charge drop的時候,
+它影響到的frequency,
+大概會影響到在多少的order這樣子,
+order of magnitude這樣子。
+我的理解是,
+我不是做charge qubit,
+我的理解是,
+它是effective the same,
+它不會有影響。
+為什麼?
+所以你上面這個4ecn-ng²,
+這個基本上把它變成frequency,
+就是你們要做rotational wave approximation的地方嘛。
+對。
+OK,OK。
+但是,OK。
+它有一個shift,
+就是effective它的picture,
+我覺得可能是有calibrate掉。
+OK,所以假設你們平常這邊的n是放了1000個電子好了,
+那你jump一個電子,
+你的frequency jump也是大概是jump千分之一,
+這樣子算多少,千分之二這樣子嗎?
+因為是n²。
+所以我不太知道,
+應該說,
+我覺得我應該說我不知道,
+它在rotational wave approximation底下,
+到底確實來說是怎麼樣,
+就是怎麼樣去做calibration,
+所以我可能沒辦法comment。
+Sorry。
+對,但是我的理解是,
+這是它的。
+就是charge jump這種情況,
+它發生的時間都是比較,
+時間上來說都是比較長的,
+所以我們實際在量測的時候,
+並沒有真的會,
+就是說你如果真的遇到,
+運氣不是很好,
+可是通常會把它當成主要calibrate,
+就是我們不會去擔心這個東西,
+只是說時間上你久了,
+十個mini second就有看到一次,
+十個mini second看到一次,
+可是看到了就,
+因為我們基本上都是single shot,
+所以比較少會去擔心這個東西,
+所以我不是很服輸。
+了解。
+好,沒關係,那繼續繼續,謝謝。
+OK,sorry。
+那我就,
+我就上上禮拜講得比較順,
+因為這禮拜,
+我們,
+我們基本上的概念就是,
+我們在flux on parity這個地方,
+就是我要在我的circuit裡面,
+建立一個機制,
+去可以turn on,
+turn off我的protection,
+假設我今天,
+然後這個on跟off protection的概念,
+就是來自於剛剛說的,
+假設它是一個degeneracy lifting,
+就是說,假設我系統有degeneracy,
+然後我somehow可以prevent,
+我這兩個系,
+degenerated ground state,
+它們兩個之間,
+可以做communication,
+假設我這個功能,
+假設我這個能力,
+那我就可以做到一件事情,
+就是我可以在protected state的時候,
+去preserve data,
+然後我在unprotected state,
+就是我可以disable這個protection,
+然後讓它有degeneracy lifting,
+然後我們就可以去
+做0跟1的讀寫。
+然後,
+這個是一個,
+就是一個概念,
+然後我們這次的工作就是一個proof of concept,
+然後我們實際上用的,
+剛剛說的這個機制,
+就是所謂的Arana-Kescher effect,
+Arana-Kescher effect,
+基本上它就是Arana-Bohm effect,
+dual version,
+一個dual的版本,
+想像就是,
+Arana-Bohm就是說,
+假設裡面有個電子,
+然後這裡面就有一些non-zero vector potential,
+那今天這個電子在propagate的時候,
+就會因為這個vector potential的關係,
+你會有destructive或者是constructive interference,
+你會有destructive或者是constructive interference,
+你會有destructive或者是constructive interference,
+然後Arana-Kescher effect指的是一個flux zone,
+然後Arana-Kescher effect指的是一個flux zone,
+在tunnel的時候它也可以選擇
+左邊或右邊的junction做tunneling,
+在tunnel的過程中,
+會因為這個island上面
+有一個,
+是存在多少的charge,
+它會有一些影響,
+那麼在1e的時候,
+在single electron的時候呢,
+這個tunneling就會有destructive interference,
+從而suppress
+這個single flux zone的tunneling,
+那這件事情在Hamiltonian裡面的表現,
+這具體的表現就是,
+在這個circuit,
+particularly這個circuit,
+Hamiltonian它的表現,
+就是會出現所謂的,
+會可以去
+發生我剛剛講的那個,
+去產生我剛剛講的這件事情,
+就是你可以有兩個,
+在optimized point的時候,
+你可以有degenerate ground state,
+但是這兩個state看不到對方,
+那這也是我們,
+這是為什麼我們叫parity protection
+的來源的原因。
+然後所以,
+到這邊的話,
+大家有什麼,
+就是有什麼疑問,
+或者是需要解釋的更清楚了嗎?
+如果沒有的話,
+我們就進到第一個部分的工作,
+就是superinductor,
+quantum algorithm的superinductor。
+OK,
+好,那我就先繼續解釋下去。
+那,
+剛剛有提到說,
+我們怎麼樣去,
+剛剛有提到說,
+要實現這個整個circuit,
+一個很重要的因素,
+一個很重要的一個元件,
+就是要去製作所謂的superinductor,
+那這superinductor,
+它基本上我們在我們實驗裡面,
+我們用的是guanine aluminum這個材料來做,
+那guanine aluminum呢,
+它的microscopic structure
+可以大概想像成這樣,
+就是一堆的,紅色的是aluminum,
+然後綠色的是aluminum oxide,
+然後它的成,
+我們漲的方式呢,
+是用spotter,
+在spotter的過程中,
+在spotter純鋁的過程中,
+在我們的argon plasma裡面加一點oxygen,
+然後大概千分之,
+就是pressurized,
+大概是百分之一,
+就是1%到千分之一左右的一個濃度,
+然後,
+我們可以得到一個這樣的結構,
+通常這個grain size,
+大概是3到4個奈米,
+然後這張圖呢,
+是我們的實驗的data,
+跟literature,
+在literature上面extracted的data,
+然後這張圖代表是,
+這張圖做的是TC跟resistivity,
+然後我們可以看到說,
+隨著resistivity增加,
+我們TC一開始會有說,
+一般來說,
+然後purealuminum大概是1.3K左右,
+然後你會到可能2K,
+然後在不同的結構,
+不同的度的方式,
+不同的話可以得到不同的film,
+它的grain size會不太一樣,
+然後最大可以,
+TC可以到3K,
+當然繼續在push,
+往上push的時候,
+它並不會跟著變大,
+因為我們所謂的
+disorder induced的那個
+XI transition,
+那為什麼我們要
+push這resistivity呢,
+原因是因為kinetic inductance,
+它在就是說,
+去提升這個room temperature resistivity,
+是可以提升它的kinetic inductance,
+然後這個是我們
+實驗室的一個
+demo出來的一個
+sub-inductor,
+這個resonator的結構,
+然後去看它的
+resonance frequency,
+然後就可以得到它的inductance,
+然後我們得到的是
+大概30kΩ的impedance,
+然後跟1.3mH的inductor,
+然後這是實驗上的
+fabrication上面一些
+細節,
+這是剛剛說的
+resistivity as a function of oxygen flow,
+但是oxygen flow呢,
+我們後來發現比較準確的
+做法是用flow meter,
+而不是用oxygen pressure,
+然後
+這細節的話,如果大家有興趣,
+我們之後可以再聊得更仔細一點,
+我們實驗室做出來的
+resistivity可以控制在
+10到8000個μΩcm,
+所以這部分的話,
+我們剛剛提到說,我們就是把它做成
+resonator的結構,
+然後我們這邊用的是
+黑色看到的是我們的
+granular aluminum,
+然後白色的是純綠,
+然後我們就是把它做成
+off-wavelength resonator,
+called planar waveguide
+的geometry,然後去丟到
+fridge裡面,去量測它的
+resonance frequency,
+然後這個東西呢,
+我們可以extract出quality factor,
+這個quality factor,我們去
+進一步去characterize它
+as a function of temperature,
+我們可以得到
+quality factor有一個,
+它的feature呢,基本上就是在
+在250K
+底下的時候,它是一條
+不隨溫度變化的一條曲線,
+那隨著
+溫度大於250K呢,
+我們可以得到一條斜直線,
+就是我觀察到的斜直線,
+就是一個
+exponentially decayed
+的quality factor,
+那這個是
+這個現象跟
+很多disorder的
+superconductor在低溫的表現
+都是類似的,也就是在低溫的時候
+我們觀察到一個
+two-level system的一個behavior,
+在高溫的時候呢,我們觀察到
+的是some more excited
+quasiparticle,
+some more degenerated quasiparticle,
+然後這兩個東西代表的個別是什麼呢?
+就是在
+剛剛所說,在低溫的時候
+就是two-level system,
+two-level system它是一些
+通常是有一些在
+dielectric裡面,一些
+比方說電光棒
+在長一些film的時候
+有一些額外的,沒有saturated掉的
+沒有產生化學反應
+掉的一些
+這些oxide或dielectric
+它的local
+這些電光棒
+會產生一些local的一些
+electrical dipole,
+在電路裡面,尤其像我們的
+resonator
+它裡面的electron field
+會有一些oxidation,
+然後就會產生額外的
+loss,
+那這個loss本身跟
+溫度是沒有關係的,所以
+它是limited我們的
+quality factor,但是它水的溫度
+它不會隨著溫度有變化,
+那在比較高的
+溫度的時候呢,會產生
+所謂的quasiparticle,
+有點像是在你越接近Tc
+的時候,你的couple pair
+會因為溫度的關係
+會開始break,然後會有
+所謂的too fluid model,
+然後這些normal electron就會
+降低你的quality factor,
+然後這些normal electron的產生跟
+temperature是直接,它就是一個
+somewhat excited part, somewhat excitation,
+然後就是從exponential
+exponential
+exponential 1 over kT
+去fit出一個model,
+然後這是所謂的Martin-Spartin
+的theory,
+那所以基本上我們這邊的工作
+就是verify
+就是
+你有拿exactly
+就是一模一樣的geometry跟
+普通的aluminum
+比嗎?就是
+我蠻好奇你的TLS的差異,
+你懂我意思嗎?就是
+用granular aluminum
+還有普通aluminum
+沒有去真的校正到
+它的total system,
+因為granular aluminum它的
+pure aluminum它的那個
+就是它的kinetic
+ductance非常的
+就是不是很impressive,
+所以我們並沒有真的去
+很認真地去calibrate
+它的total system
+ok,我了解
+你擔心
+我覺得那不然另外一個
+更比較 crude的
+假設你做一模一樣的feature,
+可是你是做普通的aluminum
+你的QI大概會差多少?
+這你知道嗎?
+假設你QI就是
+在low temperature,就是TLS lost
+這樣大概可以比嗎?
+我覺得
+要怎樣說,
+我剛剛說的那些total system
+它其實是跟你的製程是
+高度相關的,也就是說像
+甚至我們是做granular aluminum
+我也會懷疑我們的aluminum在
+因為granular aluminum裡面是
+它自己是內建有oxide的
+所以它的材料本身
+會不會有一些total system lost
+是從它的材料本身的結構
+來的,這也是有可能的
+對,我其實也是
+就是在擔心
+這個,因為,對,ok,ok
+了解
+ok,所以
+這個細節其實要
+就是要比較仔細的
+確實是需要比較仔細的一些
+在製程上的一些分析
+因為total system確實是我們
+就是
+10F的這個NOMIS的來源
+然後所以
+是需要花一點時間去做
+比方說你surface clean
+就是一步一步都要比較仔細的去
+製程上比較仔細的去
+比較計較的去做
+ok,好,謝謝
+謝謝
+然後
+right
+所以這邊基本上這一頁講的就是
+我們在
+去fit兩個parameter,就是說實驗上的參數
+實驗上得到的結果
+就是我的frequency shift跟我的quality factor
+然後可以得到
+很好的吻合
+就是說我的loss的
+contribution,基本上就是
+temperature independent
+在低溫的時候呢
+是temperature independent
+的total system lost
+去dominate
+在高溫區大於250
+個mini kelvin左右就會看到
+Marx-Partin的那個
+summary generated quasi-particle
+dominate
+這是一個簡單的summary
+ok
+然後接下來是我們的
+Bifluxon qubit
+那在Bifluxon qubit裡面的話
+我們這次用的是
+super inductor
+就是用Junction去做super inductor
+就是跟Monroe Turing他們組
+的設計是比較接近的
+然後
+如果我們剛才提到的
+用歸零而入來做super inductor
+然後去build這個structure
+還是一個ongoing process
+在這電路裡面呢
+這個電路可以
+怎麼去map到這個地方
+就基本上你把這個轉90度
+然後這兩個Junction
+就是這兩個紅色的十字
+然後呢這個super inductor
+一半在這裡,另外一半在這裡
+然後最後面這兩邊去接上
+接到這個
+所以這個東西整個
+逆時針轉90度
+然後就會map到這張圖
+然後再接到一個radial resonator
+這個radial resonator
+coupled to microwave line
+然後這是strip line的結構
+不是coplanar waveguide
+所以這是基本上我們怎麼樣去
+做這個device
+然後device參數的話
+我們在結構上
+基本上我們做的事情
+就是我們
+用我們super inductor
+並沒有辦法做到很大
+在這個device裡面沒有做到很大
+那基本上就是
+我記得這個device
+是不到一個
+micro henry
+的device
+這個device是不到一個micro henry的device
+然後它不是一個很ideal的device
+當我們今天
+super inductor提供的inductor
+不夠大的時候
+我們還是會有T1的protection
+可是我們defacient的protection就不會太大
+基本上我們這個
+我們後來量出來
+我們T2的那個
+data大概是一個microsecond左右
+那T1的話可以到
+10到100個microsecond
+然後因為我們的device本身是一個
+就是
+它基本上因為有couper pair island
+所以它是一個charge sensitive
+的device
+然後在這個
+在這個device裡面
+我們特別做所謂的
+就是quasiparticle trap
+它的概念基本上就是用
+因為我剛好是有一個island的結構
+所以我們有
+等於說我們有三個不同的film
+三層不是
+三層aluminum
+但是它是在不同的製程
+去製作的
+然後這三層我們可以特別
+sorry 這兩個是同一層
+然後這個是另外一層
+然後我們可以去調控厚度
+讓中間這塊這個island的
+aluminum比較薄
+那比較薄的aluminum呢
+它會比較大的tc
+會比較大的bandgap
+然後這樣一個結構
+做出來這樣一個結構
+就可以讓中間的這個
+這個island它的bandgap比較大
+所以你的quasiparticle
+就不容易越線上來
+從而去suppress
+所謂的quasiparticle的poisoning
+就是單純的
+用film的厚度去控制
+然後
+我們觀察到
+基本上就是在八個小時的時間內
+我們只看到了幾次的
+的
+quasiparticle jump
+因為它次數比較少
+所以大概就是很快就結束了
+所以尤其是
+如果是做time domain的話
+其實很快就結束了
+所以我們比較少會遇到
+就是說真的遇到
+基本上就把那個data丟掉
+再重新量過就是了
+然後
+這算是比較impressive的地方
+因為一般的touch sensitive device
+如果沒有做quasiparticle trap的話
+它的那個
+這個萬一jump發生的頻率大概是
+10個minisecond
+那在我們系統裡面
+最短的也是
+10分鐘左右才看到一次
+好,然後這一頁就是我們的
+frequency domain的
+spectroscopy
+然後
+這一頁show的呢
+是X01的transition
+基本上就是這個qubit的spectrum
+然後
+在藍色的data是
+我們叫做unprotected state
+也就是剛剛看到的有所謂的
+就是anti-level crossing的部分
+然後
+橘色的呢,則是我們把
+我們的island bias 1e
+也就是NG等於0.5
+的時候我們會看到
+就是degeneracy
+也就是我剛剛提到的
+Arana-Casual effect,就是我們enable
+系統處在protected state的時候
+我們看到的是
+degenerated ground state
+然後
+在
+01的時候
+是進到所謂的
+unprotected state,然後你就可以去做讀寫
+然後
+另外一方面的話,這個linear feed
+基本上
+就是我的superinductor
+可以得到
+我的superinductor
+那個inductance
+然後,sorry
+這個inductance是0.1
+不是一個mH,我記錯了
+然後另外一方面的話
+它的那個
+我們有觀察到
+就是
+self-resonance的那個frequency
+大概是4GHz
+然後從這個frequency我們可以得到
+這個junction-based superinductor
+它的impedance
+大概是4kΩ
+然後這些show的主要就是
+剛剛說的proof of concept
+就是怎麼樣去
+enable
+就是那個protected state
+然後從這個protected
+就是怎麼樣去比較
+protected and unprotected state
+然後這底下是microwave protocol
+就是我們這邊做的圖
+這個外軸是
+就是charge
+就是我今天turn on
+就是我今天turn on
+我的protection
+在add上面by 1e
+然後turn off protection
+就是在add把那個gate拿掉
+然後
+我們做的事情呢
+就是我先打一個
+先讓系統處在unprotected state
+然後打一個pause進來
+去把系統寫入1
+然後接下來turn on protection
+這個時間大概30ms
+的一個pause
+去turn on protection
+然後duration
+duration是Δt
+然後過了這個Δt之後
+我把這個pause關掉
+然後再去做讀取
+看這個系統處在0還是1
+系統的relaxation
+然後duration就做讀在這裡
+如果沒有施加任何
+就是算一個組
+沒有施加任何gate的情況下
+我們的T1 feed出來大概12ms
+然後當我今天turn on
+這個protection的時候
+我們可以到
+T1可以到100ms
+所以有10倍的
+improvement
+不過這個device本身
+它的T1還是蠻差的
+只是10ms而已
+只是我們可以用這個
+我們是專門做一個
+去demonstrate
+是可以幫助我們做到
+protected effect
+那這件事情呢
+在不同的
+這張圖就是說verify一下
+在不同的flux biasing point
+我們都可以看到
+大概有10倍的
+improvement
+那這個0.3的地方發生的位置是
+phi external等於
+0.6個π
+這個發生的事情就是
+因為它剛好match到那個resonator
+所以有percell decay
+所以基本上就是0.3
+就是遇到6個GHz
+然後這6個GHz
+就是剛剛說的前面
+就是readout resonator
+那個frequency
+就是percell
+so
+這個是
+所以這是大概的
+一個conclusion
+基本上我們realize
+一個prototype的circuit
+然後這circuit
+就是可以有10倍的
+可以有一個protective的
+mechanism
+那我們可以
+我們可以在享有
+很短的gay time的
+時間的同時
+我們也可以享有比較高的
+T1的improvement
+所以這是我的
+主要今天主要講的內容
+然後謝謝我的所有collaborator
+然後也謝謝
+今天大家參與
+I'm ready to take questions
+那好在
+Q&A之前就
+再請大家來鼓掌感謝文森
+給我們帶來精彩的演講
+好那當然
+大家有沒有任何問題呢
+可以就打開麥克風自由發問
+有沒有任何問題呢
+其實我有問題啦不然我先問一個問題
+就是
+不好意思
+ok 你先
+我可以問你嗎
+不好意思
+那個
+就是ok very nice talk
+那也蠻就是
+result非常exciting
+但我想問一下就是說在已經
+就是在你那個
+後面的那個
+的工作當中
+你的那個T1是
+102個microsecond
+在protective的state底下嗎
+那我想問一下是
+你們有去study是什麼
+是什麼limiting factor
+它變成現在是
+就是102個microsecond
+有就是基本上
+它是
+但這要進到還沒有頭年去解釋
+它是那個junction symmetry
+簡單來說是junction的symmetry
+就是兩個junction之間
+如果它不symmetric的時候
+會對那個T1
+其實會對原來的T1
+even unprotected state的T1
+就會有影響
+就是
+我這邊應該沒有
+沒有放
+但那個是跟
+基本上就這兩個junction
+做起來如果它有一點
+either oxidation或是size的
+asymmetry的話
+就是會有就是會對T1
+有些limitation
+所以它跟
+那個dielectric
+loss的limitation
+不太一樣是這樣嗎
+它不是因為
+two-level system造成的
+它是因為
+至少說我們在modeling
+因為這是其實
+做modeling他們比較清楚
+根據他們的feedback是說
+你在modeling的時候
+asymmetry會有大的影響
+asymmetry可以從我們在
+我們的那個
+我們可以用squid去看
+我們有做squid的structure
+然後可以從那個
+就是隨any field
+那個最低點去看那個asymmetry
+然後我們從那個地方
+得到的asymmetry
+我們的EP比較爛吧
+就是我們製程上面
+做出來的asymmetry
+然後回放進去modeling
+推出來
+它就告訴我們應該就這麼差
+或者說
+也許
+這個device的junction symmetry
+比較講究
+因為我們一定要用到兩個junction
+然後這兩個junction的symmetry
+多symmetry是蠻critical
+我可以問一下
+你們的asymmetry大概是多少
+因為比如說以squid來講的話
+你的asymmetry可以有一個
+parameter
+大概parameterize一下
+所以它大概
+比如說squid裡面有一個好像
+defect之類的
+你們大概會差多少
+這兩個junction
+的ej大概
+ideally大概差多少
+因為我們
+參數用的是GHz
+就是這個數字
+6GHz
+所以你的那個
+delta
+4GHz
+I see
+也沒有比較差
+因為本來
+做junction就asymmetry
+這是一定會有的事情
+I see
+其實我們的情況就是
+就像squid說
+應該是我們這個device
+這兩個junction都必須要存在
+它不是說你只做一個就可以
+還是兩個都要有
+做出來就會有這樣的問題
+就會比較
+device對delta
+ej比較講究
+要花一點時間去tune
+然後如果不介意的話我再問第二個問題
+就是為什麼你們的
+這一個
+你們的superinductor
+這個junction的部分
+你們用的是
+等於是
+看起來是用
+rotating angle的fab
+而不是用tholen bridge
+的fab
+不像我們以前在Maryland
+老闆不喜歡
+就只有我們老闆不喜歡
+做tholen bridge
+他覺得我們在吹的時候
+你們在吹的時候
+不會吹壞嗎
+老闆說你測速太慢了
+你們那個
+ok
+什麼東西
+你們在blow dry的時候
+有沒有特別去
+因為我記得那個如果要做tholen bridge
+那個是suspend起來的
+沒有錯
+對
+在吹的時候
+然後
+我示範連做不完
+老闆就說不要再做了
+沒有
+ok
+照
+正常的fab
+來講應該不太
+就是我們之後
+做出來yield還蠻高的
+應該是你只要
+bake的ok
+然後後面的步驟ok
+通常
+不是那麼那麼的有問題
+通常不是那麼的有問題
+對
+沒有我們就是做不出來
+老闆說這個
+原來又沒
+原來又沒什麼特別要改
+然後就
+沒有什麼特別
+ok
+了解了解
+ok
+那我讓其他人再問問題
+謝謝你回答
+我有一個問題
+我的問題是這樣
+你可以回到那個TC那一頁嗎
+TC然後還有你的那個
+就你一開始講那個
+granularize的那一頁
+對
+我的問題是
+對於這些不同的sample
+你有量TC那你知道
+對應的這些sample
+它的那個delta
+那個parent breaking band gap
+有幾乎是正比的關係嗎
+還是不相關還是怎麼樣
+沒有
+去測這個
+可是你不是
+你Feed你那個Matisse-Bardini
+應該就會有那個數字
+oh no sorry
+這個TC是完全獨立的
+就是我們沒有
+我這個device就是拿來測TC而已
+我沒有再去做
+oh i see i see
+每個delta都是用TC的transport
+然後沒有用microwave
+因為Matisse-Bardini是用microwave
+去做的嘛
+對
+我們沒有
+suppose是應該要有
+就是說你每一塊有resonator chip
+上面應該
+suppose如果它是100%
+Matisse-Bardini的話它應該要是
+完全正比的變化
+可是我們現在擔心的就是
+不知道有多少比例它
+不是Matisse-Bardini
+對我蠻好奇的
+that's a very good point
+但是那種情況基本上
+就是應該說
+你如果是你的
+你想要做的事情應該是反而是
+你不希望它是Matisse-Bardini
+你希望它那個alpha factor要很大
+就是它
+deviate from Matisse-Bardini
+不一定
+我們希望它alpha要很大
+但是我希望它要是真的來自於
+就是你能量
+deposit進去它還是可以
+打破如何pair
+這樣我才有辦法測documentor
+不然它自己在那邊反應很大
+interactive也沒用
+至少第一部分alpha很大
+就是說這個部分
+我們都demonstrate出來
+這個是因為我們
+都想要試
+可是我們現在的worry就是說
+ok但是somehow它就是不跟
+physical的particle
+會有正常的response的話
+那它就變成是一個
+自己在那邊很厲害
+但是它只跟RF會有反應
+那我也沒用
+你知道我意思嗎
+ok
+因為我之前做的
+就是說
+HKID
+我倒是沒有想過它的
+ok
+就像上次說
+在low resistivity的時候
+通常它是
+它是蠻
+strictly follow
+能push到比較
+接近800
+甚至1000個microhenry
+per square
+microohmcm的時候
+就是比較nonlinear的
+現象
+符合那個預期
+就是說它開始變成
+不是Martin
+對對對
+ok
+這就是我的問題
+大家還有其他問題嗎
+沒有問題的話
+那就麻煩大家把麥克風打開
+給文森醫生
+那我現在

@@ -1,0 +1,2268 @@
+大家好,歡迎來參加今天的Project Terra的講座。
+我是今天的主持人,叫我Ted就好了。
+今天我們請來的講者是在Caltech的當彥勇,他在Caltech的NASA JPL工作。
+那他今天的題目是Connected Inductance Detector for Next Generation Dark Matter Search。
+好,所以彥勇,交給你了。
+嗨,大家好。
+因為今天的演講比較像是update最近的狀況。
+因為其實我之前做的東西,我之前好像一年前什麼都講過吧。
+因為其實做的內容是差不多,只是有新的進度。
+所以有些地方可能會講得比較快,然後有些地方可能不會講得很清楚之類的。
+那大家如果有問題就盡量問。
+因為老實說,我最近非常忙,所以我投影片今天早上才開始做。
+所以如果大家不問問題,非常快就會結束了。
+那今天的題目是Connected…
+我補充一下,就是大家進來預設的時候是沒有開麥克風的。
+所以如果要問問題,你要點一下麥克風,讓他unmute。
+所以你才可以問問題,講起來聽得到。
+那同時你也可以在旁邊的chat,提出你想要問的問題也都可以的。
+好,不好意思,彥勇開始吧。
+好,然後我還有另外一個問題,就是大家看得到我的那個滑鼠嗎?
+看得到嗎?看得到吼。
+好,因為我可能會很常講這個這個之類的,所以要滑鼠。
+好,那OK,所以我今天的題目是Connected Inductance Detector for Next Generation Dark Matter Search。
+所以大家可以看得出來題目就是兩個部分。
+一個部分就是說,我們現在在想啊,在搜尋Dark Matter,暗物質這個東西。
+在現階段,然後從我們現階段去看未來的發展。
+然後呢,另外一部分主要的部分,這個talk另外一個部分主要就是講,
+我們認為我們可以apply這個,我們叫KIT,K-I-D,Connected Inductance Detector,
+作為下一個主要的,我們認為會非常有競爭力的這個technology來做這件事。
+好,然後這個work主要是來自於就是我在地方Caltech,還有NASA JPL,
+就是噴射推進實驗室。
+那當然這整個work其實是based on更大的project叫Super CDMS,那待會我也會講。
+但是我要強調一下,KIT這個東西現在還不是CDMS project,
+所以它比較像是我們自己的R&D,但是我們是在一個大的collaboration裡面做的。
+好,那現在大家看到這第一頁,這第一頁就是我們現在的prototype。
+那給大家一個sense就是說,這個大小啊,這個圓形是3吋,它的直徑是3吋,
+就大概跟一個手掌一樣大。
+所以現在看到這一個小小的長方形啊,這大概是一個1mm的大小,
+然後這上面有80個小小的這個island,待會我會解釋它到底是什麼東西。
+好,然後這個盒子呢,它基本上是掛在一個西式製冷機上面,
+所以它可以被降到mini Kelvin level的溫度,
+所以我待會會解釋為什麼我們要這麼做。
+好,首先今天的outline就是,因為我們今天不是有particle physics背景的人,
+所以我今天還是會稍微解釋一下就是說,為什麼我們認為有dark matter,
+那dark matter到底是什麼東西。
+那我這邊用一個協體,就是更重要的是,這是我們的focus,
+為什麼我們現在覺得這個低質量,low mass dark matter是重要的一個課題,
+那我們想要做這個東西。
+然後再來呢,我會講就是super CDMS的這個detector叫HVE,
+HVE就是high voltage,EV就是electron volt,
+它其實就是要講說,我們在一個叫做high voltage mode的狀況底下呢,
+這個operation底下,我們可以有EV resolution。
+好,那我會先講說這個在CDMS的project,我們從這裡面學到了什麼,
+那我們得到了什麼,那我們的sensitivity到哪裡。
+那從這邊呢,我會就是去motivate說,所以為什麼第三部分,
+kinetic inductance detector kit這個東西啊,會是我們認為一個非常有潛力的東西。
+那現在CDMS的proposal是寫到2025,
+所以我們其實這個東西就是講說,dark matter search beyond 2025,
+就是我們有什麼樣的outlook,我們有什麼樣的看法。
+那就開始,那我歡迎大家隨時打電話問問題,不然這talk真的會蠻快的,
+而且我講話其實也是很快。
+好,第一部分,low mass dark matter。
+好,首先,就是我記得兩三個禮拜前吧,
+我有一個很好的朋友何書宇,他講了一個talk,
+就是他其實做理論,dark matter的理論,
+那就是為什麼有dark matter,dark matter到底是什麼東西呢?
+我今天就是只有這一頁而已,那如果大家就是有興趣,
+想要知道更多的細節,可以去看他的talk,
+他是一個非常會講的人,他教得非常好。
+那我就在這邊summarize,
+這是一些我們認為有dark matter的證據,
+首先呢,就大家看到這個左上角這個圖,
+這個圖的這個Y軸是星球在銀河系裡面旋轉的速度,
+那這個橫軸呢,就是這些星球與這個銀河系中心的距離,OK?
+所以你現在看到這邊有幾十條線,二十幾條吧,如果沒記錯的話。
+這些線呢,每一條線都是一個銀河系,
+那你就可以去看這銀河系裡面很多很多的星球,
+對中心旋轉的速度,然後對這個中心的距離作圖,
+就看到這樣一條線,就是一個銀河系,一個銀河系,一個銀河系。
+那根據我們高中都學過的這個牛頓力學,
+如果今天我們假設牛頓力學是對的,或是相對論是對的,
+那我們認為他是對的吧,OK?
+那這個線呢,其實他應該要長個什麼樣子呢?
+他應該要長個這樣子,就是從上面,越靠近中心旋轉很快,
+然後就這樣子凹下去,然後越接近外面他旋轉越慢,OK?
+但事實上我們看到的不是這樣,我們事實上看到的是,
+這些星球旋轉的速度很快地從中心就拉起來,
+那這中心當然是很靠近中間我們是不了解,
+因為這中間是有很多星球對撞啊,很多電漿活動啊等等。
+那我們把這最中間除掉,他看到的幾乎是平的,OK?
+幾乎是平的。
+那這個就代表說,當然我們可以說,
+那這個可能就是指涉了這個重力的理論是不對的,這有可能。
+但是重力已經被非常非常多的實驗,
+從古典的重力到狹義相位論、廣義相位論,
+都被驗證得非常非常精確了,
+所以那我們就可以另外去想說,那是不是我們有質量,
+是存在在那個範圍裡面,可是我們沒有看到?
+那這些質量我們看不到,所以我們漏算了,
+但是如果加上這些質量,我們就可以recover這樣子,
+對中心距離的這個旋轉速度的這個curves。
+那OK,那這就是一個那個hint,
+就是說那邊可能有一些matter我們看不到,
+我們就給他取名叫dark matter,
+但是OK,所以你可以想像這個dark matter
+在這種picture底下,像是一個流體或是一個氣體,
+他是一個連續的,然後這樣子smooth的分佈在那個空間,
+那個整個galaxy中間這樣子。
+但是我們不知道他的particle性質,
+也就是說我們可以了解,比如說氣流或是水流,
+可是我們找不到那個molecule,那個H2O這樣子。
+好,那現在在這個右上角,
+大家看到的是一個更大尺度的這個simulation,
+你在這個simulation裡面看到的每一個小光點啊,
+他都是一大坨的銀河系,不再是一個一個看喔,
+是一大坨一大坨的銀河系。
+OK,然後這個圖其實底色是套白色的,
+所以他的黑色的部分你才看得到,
+那這個黑色的部分呢,
+就是我們如果假設這個宇宙中有一種氣體,
+他是完全不會跟別的這些氣體這樣對撞,
+產生交互作用,但是他有重量,
+所以他會朝有比較濃密的地方凝聚過去,
+因為重力吸引,然後凝聚過去之後就形成像這樣子
+蜘蛛網狀的這個結構,然後呢,
+這些蜘蛛網狀的結構比較密嘛,重力比較重,
+他就會吸引這些我們看得到的這些正常的物質,
+凝聚過去,然後形成銀河系,然後形成球。
+那我們發現呢,我們一定要在我們的電腦裡面,
+這個Simulation裡面,加上這樣子的一個Content,
+我們才有辦法Simulate這個宇宙的這個演化,
+然後產生我們想要的這個濃密度的這個銀河系。
+所以我們認為這也是一個證據就是說,
+要有一種不會Interact的Matter,就是Dark Matter。
+那這個是Bullet Cluster,
+這個我不會講,這個大家可以去Google,
+這個有點複雜,但基本上他就是講說,
+如果今天有兩個銀河系對撞,
+我們可以看裡面的質量,
+會撞到和不會穿過去的那個質量的差別,
+那我們發現他要有一部分,
+不會碰到就是穿過去。
+OK,那最後呢,這個是一個非常非常Accurate的證據,
+這個是我們看整個天空裡面的溫度的變化,
+整個天空裡面溫度的變化,
+然後他變化的這個Fluctuation,
+然後我們發現呢,
+如果我們假設這個變化是來自於,
+宇宙在很早很早期的時候,
+這些物質凝聚在一起的這個過程,
+產生這個溫度的那個瞬間,
+那這些凝聚的物質,
+他必須要有一定比例的智慧交互作用,
+一定比例的是不會互相對撞,
+那這個比例可以被非常非常Accurate的Fix,
+就是這個curve這樣子。
+OK,那我們從這邊就知道說,
+那我們可以非常Accurate的算出,
+這個宇宙中要有2、30%不會交互作用的這個物質,
+然後大概有5%是會交互作用,
+那剩下的呢,
+就是另外一個Energy Content叫Dark Energy,
+但我們今天不會講,
+所以這些都是Dark Matter的證據,
+那這算是一個比較像是科普開場白,
+大家有問題嗎?
+如果大家對任何這層中一個講有興趣,
+我可以稍微講,
+不然我們就過囉。
+Angle Scale是什麼意思啊?
+為什麼是Angle Scale?
+OK,所以這個圖是這樣,
+就是你當然可以,
+就是這個東西,
+就是這個旁邊這個彩色的,
+就是你對整個天球,
+直接把你量到的溫度點上去嘛,
+就是不同溫度就不同顏色嘛,
+可是你今天可以對這個做一個Map,
+就一個2D Map的Fourier Transform,
+可是它是一個天球,
+所以它的那個Fourier Mode,
+就它的那個,
+有點像是你在做Frequency Spectrum,
+可是它的那個Frequency的那個Dimension是角度。
+OK,可以了嗎?可以嗎?
+它是做Fourier Transform之後才會長這樣。
+OK,好。
+好,但是那個,
+因為我自己是做Particle Physics,
+所以我們更在乎的其實是這件事情,
+就是我剛剛講了,
+這宇宙中有一團氣體,
+它完全不會交互作用,
+那如果我們把它Breakdown到,
+它最小的這個組成的這個Constituent,
+那它到底是什麼樣的Elementary Particle呢?
+它可以是一顆一顆非常非常的重,
+但是它的顆數非常的少,
+或者是它可以一顆一顆非常的輕,
+但它非常非常多顆,
+可以Turn out在同樣的體積裡面,
+它產生在那個Cube裡面的質量是一樣的,
+然後符合我們剛剛從這些Dark的氣體的觀測,
+得到的這個質量密度。
+好,但是它在Particle Nature上就會非常的不一樣。
+那現在大家這邊看到的,
+OK,這就是質量單位,
+那如果大家是這個背景,
+那就不用我解釋EV是什麼。
+那如果大家不知道這個EV是什麼單位呢?
+那大概給大家一個Sense,
+從這個K到M這個附近,
+就是大家平常去照的X光,
+那如果在這個剛好是Unit,EV這個範圍,
+就是可見光,能量跟質量是可以交換的,
+所以這個能量強度大概這就是可見光,
+這就是Xray,然後這就是很強大這樣子。
+然後這個在這邊就是非常非常的輕,
+像是到這邊來就可能是平常大家打手機的Radio Wave,
+然後再更過去就是非常非常輕,
+輕到那個Particle的物質波的長度,
+可以長到就是這種Astronomical Scale。
+好,那這是這個Math,
+OK,這個Dark Matter Candidate的Math,
+然後下面畫的是各種我們現在假想出來的理論,
+然後大家可以看到這個幾乎是可以天馬行空隨便亂說,
+就是最重可以重到,這個是太陽質量做單位,
+它已經沒有辦法用這個EV了,
+可是我們把這邊切開補看的話,
+從這邊到另外一端是幾十個Order of Magnitude,
+OK,我們完全不知道這個東西,
+基本上我們完全不知道這個東西,
+它Single Particle到底是什麼,OK,好。
+所以這邊畫了非常非常多的這個Model,
+那現在我畫出來一個這個橘色的框框,
+這個框框呢,可以說是過去三四十年,
+所有所有想要了解Particle Dark Matter的實驗,
+Focus都在這個框框裡面,
+那這個框框裡面是有理由的,
+這個框框的上限,有一個理論上限叫Unitarity Bond,
+如果這個Single Particle的這個Dark Matter,
+比這個上面這邊還更重的話,
+它會有這個數學理論上的問題,
+就是說它會超過Unitarity,
+那我不解釋為什麼,
+所以理論上我們可以說它不會超過這邊,
+除非它長得真的非常奇怪,
+比如說它是Black Hole之類的,
+那這個東西就要做天文觀測了,
+那在Single Particle上我們不去討論這個以上,
+OK,那以下呢,
+大家可以看到就是這邊畫一個很明確,
+就是點到這個WIMP,
+Weakly Interacting Massive Particle,
+什麼意思呢?
+就是它的這個Interaction,
+或者是它本身的質量,
+或是它可以Carry的能量,
+大概是在這個弱作用的,
+這個交互作用的這個能量Scale上,
+那它是有一個很強的理由,
+那待會我會講,
+好,但是大家可以看到更重要的是,
+所以所有的實驗的Design,
+包括在對撞機,
+不管是日本的對撞機,
+歐洲的對撞機,
+中國未來可能會蓋對撞機,
+大家基本上都是瞄準,
+在這個橘色框框裡面去尋找Dark Matter,
+那所有不是做這個Collider的這個實驗呢,
+基本上現在Major的大實驗,
+也都是在這個框框裡面,
+OK,可是大家可以立刻看到,
+這邊有30個Order of Magnitude,
+這邊只佔了,
+不到三分,
+不到大概是十分之一嘛,
+好,那在講為什麼他們會,
+瞄準這個框框之前呢,
+先講一下,
+到底是什麼樣的Technology的這個Limit,
+或是他們是Based on什麼樣的Technology,
+他們會Focus在這樣的框框裡面,
+好,其實測量Dark Matter的概念是非常簡單,
+就像是打撞球一樣,
+OK,這是地球,
+然後這是我們,
+那我們拿了一些人可以操控的材料,
+來做任何我們的實驗的器材嘛,
+那這些器材,
+不外乎就是一堆的這個中子和子子,
+都起來,
+這邊是一顆子子或是中子,
+那地球在太陽系裡面,
+太陽系在銀河系裡面,
+然後銀河系充滿著,
+我剛剛說的那個Dark Matter的氣體,
+飄散在這個整個銀河系裡面,
+所以當我們的太陽系,
+繞著這個銀河系的中心旋轉的時候,
+我們就不斷的像是被Dark Matter的風一直吹過,
+OK,
+所以這個時候,
+如果我們拿這個子子和中子,
+在地球上蓋一個實驗,
+Dark Matter就會一直穿過,
+一直穿過,
+一直穿過,
+那我們認為呢,
+在非常非常小,
+小到我們目前當然是沒有測到,
+但是它是有可能會存在的機率裡面,
+它不會直直穿過,
+它會撞上我們的實驗,
+然後彈走,
+那這個時候呢,
+就會有一些這個動能被pick up起來,
+在這個子子或中子上,
+那我們就去測量這個子子或中子,
+我們就可以知道,
+它到底是多重的東西呢,
+撞下去,
+才會pick up這樣子大的能量,
+我們叫做recoil energy,
+OK,
+好,
+那大家把這個數字全部帶進去,
+就是我們大概知道說,
+Dark Matter要在這個,
+我們吹的這個Dark Matter風大概多快,
+OK,
+那我們知道子子或中子多重,
+那我們可以對各種不同的,
+這種hypothetical的這個Dark Matter mass,
+去算說,
+所以我們可以pick up多少能量,
+那我們pick up這個對撞能量,
+最efficient的情境,
+就是exactly跟打撞球一樣,
+如果今天有一個很重的東西,
+撞上一個很輕的東西,
+或是一個很輕的東西,
+撞上一個很重的東西,
+兩個人的速度幾乎都不太會變,
+所以這就不會pick up能量,
+但最efficient的時候呢,
+就是撞過來的東西,
+跟被撞的東西,
+他們兩個幾乎是剛剛好重的,
+所以我們就來估計說,
+OK,
+如果我們現在假設,
+撞上來的Dark Matter,
+這個particle的質量,
+exactly,
+就是跟我們拿來做這個子子,
+這個實驗的子子和中子,
+剛剛好一樣重,
+那它transfer過去的能量呢,
+大概就是一個X光的能量,
+所以如果我們今天可以蓋一個實驗,
+我們可以測X光,
+這個能量,
+我們大概就可以測這一種Dark Matter,
+到這邊大家有什麼問題嗎?
+這是高中物理,
+好,沒有問題,
+我繼續喔,
+好,
+那你就假設暗物質的重量,
+因為你的detector全部都極致嘛,
+就類似的,
+那這樣不是點擊說,
+你有預設暗物質,
+就是大概跟子子差不多重嗎?
+好,
+這是一個非常好的問題,
+待會我會講,
+你可以想像說,
+所以如果今天Dark Matter,
+是超級無敵重的東西,
+或是超級無敵輕的東西,
+我說relatively,
+compared to,
+比如說proton,
+OK,
+它是超級重或超級輕的東西,
+它撞下來,
+你的實驗其實不會pick up任何能量,
+對吧?
+對啊,
+或超級輕完全就,
+對啊,
+它就彈走了嘛,
+對,
+沒錯,
+那的確就是這樣,
+所以你可以就是說,
+用一個order of magnitude estimate,
+就是說OK,
+所以你用這樣的target particle,
+基本上,
+你就先預設自己,
+大概是在這個order of magnitude裡面,
+去測量類似重量的,
+的這個particle,
+如果很重或很輕,
+你就不太好測,
+因為你的energy transfer,
+會變得很小,
+對啊,
+對嘛,
+沒錯,
+OK,
+對,
+好,
+那我們再回到剛剛那邊,
+那一般來說,
+如果你去一個dark matter的這個,
+開一個會啊,
+通常大家看的就是這個圖,
+這個圖是什麼呢?
+這個圖就是,
+這邊是橫軸是,
+假想的dark matter mass,
+從這邊是10的負次方GV,
+到10的三次方GV的體域啊,
+OK,
+好,
+那看到這些實現呢,
+就是已經完成的實現,
+完成的實驗,
+sorry,
+那這些長虛線呢,
+就是即將會公佈,
+大概在幾年之內,
+就會公佈的實驗結果,
+OK,
+那那些點點線呢,
+就是一些比較像是,
+conceptual design,
+或是一些比較像是,
+計算出來說,
+我project,
+如果我有完成這樣的concept,
+大概可以到哪裡,
+就比較不那麼realistic,
+好,
+那我這邊畫一條實現,
+表示我這個實驗做完了,
+把上面全部打灰,
+OK,
+意思是什麼呢,
+意思是,
+我把我的實驗打開,
+然後一直等,
+一直等,
+一直等,
+我知道我等了多久,
+我知道我的實驗有多重,
+therefore,
+我知道我有多少的proton或neutron,
+在那邊等,
+等老半天,
+我沒有等到任何東西,
+所以我就可以說,
+根據我的實驗有多大,
+我等了多久,
+然後我又沒有看到東西,
+我可以在一個,
+足夠的信心水準之下說,
+dark matter穿過我,
+被擋下來的機率,
+一定不會超過,
+一個數值,
+不然我應該要看到東西,
+這句話有點長,
+大家能理解嗎,
+OK,
+所以based on,
+我沒有看到任何的,
+實驗結果,
+但是我又非常明確的知道,
+我等了多久,
+我用了多少東西去擋,
+擋不到,
+所以我就可以,
+constraint說,
+dark matter和proton neutron,
+交互作用的機率,
+不會超過一個數值,
+那我可以,
+對每一個不同假設的,
+dark matter的質量,
+去算一個數值,
+所以最後就連成一條線,
+那我就把這邊打空,
+把它畫黑,
+就是說,
+OK,
+dark matter的interaction,
+如果今天是,
+ETEV的話,
+絕對不會,
+誰,
+交互作用是,
+10的-40,
+一定要更小,
+如果更大的話,
+我應該要看到了,
+OK,
+所以這些線,
+就是都是這個意思,
+所以大家可以看到,
+現在的limit是,
+設到這邊,
+也就是說,
+我們要繼續往下這樣,
+一直往下挖,
+直到有一天,
+我們看到,
+dark matter真的,
+一直出現在detector裡面,
+好,
+那就回到,
+剛剛Ted問的問題,
+現在這邊,
+所有的實驗,
+全部都,
+有sensitivity,
+可以測,
+可以設limit,
+constraint這樣子,
+可是大概到了,
+這附近這邊,
+就,
+全部跑上去了,
+然後這邊,
+幾乎都沒有辦法,
+再測更低,
+為什麼,
+因為這些實驗,
+全部都是用,
+直子和中子,
+來擋dark matter,
+所以,
+對於這些,
+更輕的,
+可能的dark matter,
+它撞到的時候,
+它留下來的能量,
+就是非常小,
+在這些實驗裡面,
+是測不到的,
+ok,
+測不到,
+那我就沒有辦法說,
+這邊到底應該怎麼樣,
+所以,
+有一個threshold在這邊,
+再更往下,
+我們沒有辦法,
+去測量dark matter,
+這是第一點,
+第二點呢,
+是這邊底下,
+有一個黃色,
+非常大塊的東西,
+這個是什麼,
+這個是,
+一直不斷的,
+射穿地球的,
+微中子,
+那,
+現在所有的,
+實驗設計,
+基本上,
+還沒有一個很明確的,
+方法是說,
+我可以很有效率的,
+分辨dark matter,
+和微中子,
+留下來的,
+這個,
+signal的差別,
+所以,
+如果我今天一直挖,
+我一直往下這樣,
+一直劃掉,
+劃掉,
+這下大概這麼長的距離,
+在這邊,
+如果我一直劃到這邊,
+把它挖掉,
+都還是沒有看到dark matter的話,
+接下來,
+我會瘋狂的看到,
+一直有signal,
+可是我,
+大概會,
+我們都會覺得說,
+那應該是太陽發射出來的,
+或是地殼的radioactivity,
+出來的微中子,
+我們就再也沒有辦法,
+繼續測量這個部分,
+至少在,
+任何可見的未來,
+沒有technology,
+可以做到這件事情,
+ok,
+好,
+那為什麼他們,
+為什麼這些實驗,
+還是這麼focus,
+在挖這個部分呢,
+比如說,
+從10GeV,
+到50GeV,
+好,
+他的理由是這樣,
+現在我把這些model,
+劃上去,
+大家可以看到呢,
+這邊,
+滿滿的都是model,
+就是我剛剛講的,
+他其實甚至可以extend到,
+值得付30嘛,
+沒有問題,
+但是,
+這邊所有的,
+這邊可以挖的,
+這邊都是寫,
+MSSM,
+這個叫做,
+超對稱理論,
+就是在1980年代,
+到2000年之間,
+大家對超對稱理論呢,
+是非常有信心,
+非常覺得他可能是,
+會,
+統合,
+強力,
+弱力,
+電磁力,
+一個非常重要的理論,
+那他同時也provide了,
+就是各種不同variation,
+看你是什麼樣的,
+超對稱理論,
+的dark matter的candidate,
+所以大家很有信心,
+可是一直挖一直挖,
+可是事實上,
+最早的版本的超對稱理論,
+其實他的prediction,
+應該是在值得付30吧,
+在這邊,
+早就已經被挖掉,
+而且被rule out by,
+more than 10 orders of magnitude,
+這麼多,
+ok,
+所以現在看到的這個P,
+或是C,
+或是N,
+的這個超對稱理論呢,
+都是很fine tuned的結果,
+ok,
+所以現在我們普遍認為說,
+ok,
+在5年到10年之內,
+這些實驗就會完成,
+他們畫出來的這個點點線,
+除非我們要嘛,
+就是在這個範圍裡面,
+我們找到的dark matter,
+要不然這些實驗,
+based on the technology,
+大概會有很大很大的困難,
+再往下extend,
+因為他會碰到neutrino,
+這是第一點,
+第二點是,
+事實上,
+如果你是堅信就是,
+一個理論需要很自然,
+而不是很人為的,
+去尋找到一個很難產生的,
+parameter的組合的話,
+事實上那些自然的,
+比較自然的那些,
+theoretical prediction,
+早就已經被擼包在上面,
+ok,
+但是再回到這一點,
+事實上,
+這邊還有非常非常多的model,
+再往下,
+ok,
+所以我們是想要做,
+呃,
+我們想要尋找更好的technology,
+除了把這邊挖完之外呢,
+我們要能cover,
+剩下的幾十個,
+呃,
+這個order of magnitude,
+就是完全沒有測過,
+或是很難測的,
+ok,
+所以我們要怎麼做呢,
+我剛剛講了,
+我們要擋下很輕的particle,
+我們不能用很重的子子或中子去擋,
+因為這樣留下來的,
+這個能量會很少,
+所以,
+那另外一個人類可以control的東西,
+子子中子之外,
+就是電子囉,
+其實也沒有太多別的東西啦,
+ok,
+那我現在把它換成電子,
+ok,
+那我把數字帶進去,
+電子瞬間就比子子中子輕了100倍嘛,
+sorry,
+1000倍,
+2000倍啦,
+差不多2000倍,
+所以我其實就可以瞬間extend,
+到非常非常輕的質量,
+所以我現在,
+可以擋下來,
+吃下來的能量,
+大概是我可以sensitive to,
+到100eV,
+那就是幾十eV啦,
+我們這樣講,
+幾十eV好了,
+可是,
+本來如果用子子的話,
+就是好幾百eV才可以測得到,
+也就是說,
+如果我想要吃下更efficient的,
+吃下這個很輕的particle,
+給我的能量,
+我必須要用很輕的東西去擋,
+所以我們現在的想法是,
+我們要用electron,
+來作為被打中的這個target,
+ok,
+好,
+那因為它是electron,
+所以它其實還會有另外一個interaction,
+就是它會直接把光子,
+光電,
+就是電磁波,
+整個吸收下來,
+所以如果今天有model,
+是會convert成光子,
+或是光的話,
+它會把它整個吸收下來,
+那這個時候就不是對撞,
+然後吃下一部分的能量,
+而是我們會把這個所有的能量,
+就像它的質量這麼重的能量,
+因為它的質量會變成它的能量,
+整個吃下來,
+那我們也可以測到這個,
+如果用電子的話,
+ok,
+所以我們現在呢,
+就是認為我們應該要用電子,
+來代替質子和中子,
+來產生對於更輕的particle,
+的這個sensitivity,
+那我們就,
+算是一個這個talk的定義啦,
+就是說,
+我們現在之後講low mass,
+low mass,
+大概就是GEV,
+或是更輕的particle,
+那再強調一次,
+這邊有非常非常多,
+unexplored phenomenology,
+比如說dark sector,
+這個asymmetric DM,
+freezing,
+或是simp,
+等等,
+ok,
+那當然還有,
+呃,
+我們現在的實驗,
+還是以這個對撞,
+我剛才講這個,
+這個打撞球對撞的這個機制為主,
+但是事實上,
+在比如說像弦論,
+呃,
+它有預測說,
+會有非常naturally的,
+可以產生這種,
+它根本就不是一個particle,
+它比較像是一大堆的wave,
+全部疊在一起的這個形式,
+那像這種ultralight dark matter,
+我們其實也是可以測的,
+但是當然我們就要假設說,
+假設它會形這種,
+換成光子的這種行為,
+那我們就可以用這個方式去測,
+所以我們換句話說,
+我們是可以constraint,
+如果會產生這種行為的話,
+它的機率會是多大?
+那對於我,
+呃,
+像我們做實驗,
+更重要的觀點是,
+我們要怎麼樣真的,
+在realistically去做一個這樣的實驗呢?
+就像我剛剛說的,
+我們要maximize,
+這個momentum energy的transfer,
+所以我們要很輕的,
+這個target,
+the particle,
+那當然我們要很小很小的noise,
+ok,
+因為這樣子,
+我們才可以看到很小的signal,
+所以才會有夠大的signal to noise ratio,
+ok,
+那,
+回到剛剛,
+我們要sub-KEV的sensitivity,
+ok,
+就是要幾十EV,
+大概是以下,
+那在做這樣子,
+GEV或是lighter particle,
+才會看到東西,
+ok,
+那當然還有很重要的就是,
+我們必須要能很明確的知道,
+我現在看到的signal,
+是來自dark matter撞到我,
+而不是,
+莫名其妙的,
+環境中的東西,
+打到我的detector,
+可是,
+如果今天能量很高的話,
+這事情是相對容易的,
+因為環境中這種能量很高的,
+這種radioactivity,
+其實是相對少的,
+不然其實人就死了,
+ok,
+但是如果你把能量降到很低,
+事實上,
+你在旁邊打手機,
+手機的signal,
+看起來也是那個能量,
+如果你把它放在一個,
+實驗環境中,
+實驗環境的溫度,
+產生了黑體輻射,
+那個光子也是這個能量,
+所以就開始變成非常非常多,
+低能的particle,
+一直不斷的打到detector,
+我們要能分辨,
+那這樣子才有辦法做這種low mass,
+所以其實事實上,
+它technologically,
+就是相對的比較challenge,
+好,
+這個圖我不講,
+這個圖其實就是summarize這個東西,
+好,
+那我講完了第一部分,
+就是我們的motivation,
+那大家有問題嗎?
+Hello,
+有聽見嗎?
+有有有,
+那我想要,
+我是那個做Neoscience,
+所以我比較沒有background,
+但是我想要問一下就是,
+那大家是怎麼rule out,
+是不是那個neutrino的,
+好,
+大家是怎麼rule out,
+就是dark matter,
+是不是neutrino的這個問題,
+dark matter是不是,
+ok,你說,
+假設它是neutrino的話怎麼辦,
+因為太陽會發射很多,
+對,
+好,
+我這個問題其實可以分兩個,
+第一個是,
+我不是很確定,
+你要問的是,
+我們怎麼知道,
+neutrino不能作為dark matter candidate,
+還是我們的detector,
+看到的signal不是neutrino,
+應該說就是,
+太陽會發射很多neutrino嘛,
+那假設,
+應該說就是說,
+你要先排除,
+是不是有理論說,
+neutrino很可能不是,
+然後在地球附近做這個實驗才可行,
+因為太陽,
+如果是的話,
+那太陽不是一個很強的干擾源,
+這樣子,
+沒錯,
+沒錯,
+好,
+第一點,
+我們可以用把整個宇宙當成一個,
+homogeneous的collective的一個,
+就是一個很均勻的存在,
+那我們可以問一個問題,
+就是,
+難道neutrino這個東西,
+不能足夠用來解釋,
+我們看到的這個dark matter halo,
+這個structural formation嗎?
+答案是不行的,
+因為neutrino,
+我們已知的neutrino太輕了,
+因為它太輕了,
+所以它會飛很快,
+那它如果飛很快的話,
+它就很難凝集下來,
+它很難凝集下來,
+它要花很長很長的時間,
+才會慢慢慢慢的聚集成,
+我們現在要的這個,
+剛剛我秀那個蜘蛛網圖的那個密度,
+然後再吸引其他的粒子進來,
+那這個時間是遠超過我們已知的宇宙,
+到目前為止的年齡,
+然後產生的星球的量,
+所以我們知道像這麼輕的particle,
+然後它的interaction是像neutrino那樣,
+因為我們其實對neutrino算是蠻了解的,
+to some extent,
+但是它是一個很好的feel,
+但是就是說,
+我們對它interaction的那個強度是了解的,
+所以我們知道,
+它沒有辦法做為我們想要的dark matter candidate,
+ok,除非有另外一個版本的neutrino,
+那就不是,那也是new physics,
+所以我們已知的neutrino,
+第一是不能做dark matter candidate,
+第二是如果今天,
+ok,那太陽還是會發射我們已知的那種neutrino,
+那我們怎麼知道我們detector看到的signal,
+不是neutrino呢?
+答案是我們不知道,
+但是我們知道一件事情,
+我們知道太陽多熱,
+我們知道它發出多少光,
+我們也幾乎知道,
+發出這個光的原理是哪幾個,
+和融合反應的那個chain,
+所以我們知道,
+based on它的亮度,
+它的熱度,
+和這些和融合反應,
+它發出的neutrino的那個flux,
+那個流量應該是多大,
+那再加上我們知道,
+這種neutrino穿過我們的detector,
+會被擋下來的機率是多少,
+ok,所以我們知道,
+現在的detector看到的,
+不會是neutrino,
+因為理論上在整個實驗的duration,
+會擋下來的可能就是零點零幾顆,
+也就是in other words,
+就是不會擋下來,
+所以我們知道沒有問題,
+但是based on我剛剛講的那些,
+我知道太陽多熱,
+所以有多少neutrino現在一直穿過地球,
+穿過我們的實驗,
+當我們的實驗越來越sensitive,
+可以sensitive到,
+值得負47、48的時候,
+比如說這邊,
+48、49的時候,
+這個時候我們就會非常sensitive到,
+可以看到那種neutrino,
+這個時候我們看到的任何signal,
+我們都不能說,
+它是dark matter還是neutrino,
+所以這邊挖到這個黃線,
+這就是這個我說的這個,
+到這邊實驗就會停了,
+因為我們基本上現在沒有reliable technology,
+可以分得出來,
+到底是neutrino還是dark matter,
+可以嗎?
+但是其實有一個potentially的方法,
+就是如果我可以分辨它的方向,
+都來自太陽,
+那我就說都來自太陽的人,
+是neutrino的機率很高,
+我不看那邊,
+但是我現在講的就是,
+這個particle撞到的時候,
+它留下來的能量,
+我們只量能量嘛,
+我們也沒量這個進來的particle的方向,
+所以其實除非我可以辨認這件事情,
+不然我是沒有辦法分辨neutrino,
+就是答案就是不行。
+OK,
+不好意思,
+可以再問一個問題嗎?
+請說。
+就是因為我這完全不懂,
+那就是粒子加速器可以,
+可以想辦法找這些重粒子質量,
+重質量的粒子,
+那但是譬如說很輕很輕的粒子的話,
+是不是沒有辦法用加速器找,
+所以說你在找dark matter,
+假設這個有一個很輕的粒子,
+然後它也可能是dark matter的話,
+你在找dark matter的同時,
+可能也是解決,
+譬如說找到一個特別輕的粒子,
+然後可能理論沒辦法預測,
+或是某些理論有預測這樣,
+但是還不知道這樣。
+對,
+所以其實加速器是可以找dark matter,
+而且很多人在加速器裡面找dark matter,
+但是在加速器裡面找dark matter,
+就像你說的,
+基本上它的那個concept是完全不一樣,
+它是你用你已知的粒子,
+想辦法create dark matter,
+但是它有一個非常非常practical的理由,
+在加速器裡面做非常困難,
+就是你拿兩個你已經知道的粒子,
+把它塞到一起去炸開,
+它除了產生一個dark matter之外,
+它會產生一大堆其他的粒子,
+換句話說,
+你的旁邊這些在測量這些炸開之後的產物的這些detector,
+像是constantly被手電筒一直照著一樣,
+那它有一定的亮度,
+只要你對撞,
+它就會產生一大堆這種像showering的這種背景,
+那你基本上就沒有辦法看到,
+如果你要看的東西是比這個showering的背景更小的,
+因為你看到的就是很亮,
+所以因為對撞的這個mechanism,
+他們的這個lower threshold大概是好幾百GeV,
+大概在這邊,
+所以大概是加速器最厲害的,
+加速器跟實驗的analysis做的最好的,
+就是從這邊以上,
+他們可以很有信心的說,
+如果我有看到的東西,
+它是dark matter,
+但是他們也沒看到,
+所以他們也是劃線,
+但是再往下這邊,
+他們就沒有辦法有那個confidence,
+說我有沒有看到,
+因為他們的環境太亮,
+noise太大,
+但是沒錯,
+在加速器裡面也可以找到dark matter。
+還有問題嗎?
+所以我的問題是說,
+意思是說標準模型,
+假設真的有更輕的粒子的話,
+那不僅在加速器沒辦法看到,
+那標準模型也沒有預測到,
+但是實際上又有,
+很有可能有dark matter的存在,
+那所以說你在找dark matter,
+那如果你有找到一個更輕的模型,
+標準模型沒辦法預測到,
+那相當於是一個新的物理這樣,
+是嗎?
+對,只要我們看到dark matter,
+它一定是新物理,
+因為dark matter本身,
+就是完全不在standard model裡面。
+OK,好。
+喂?
+Ean好像有問題。
+因為我現在的投影我看不到,
+所以你要幫我念給我聽。
+Ean,你要把麥克風打開才問得到。
+看不到,看不到,要講嗎?
+OK,他說就是,
+假設,
+假設現在暗物質跟質子的重量差不多,
+那要怎麼講?
+OK,直接講英文。
+Oh,不會啊。
+這個東西是這樣喔,
+就是你拿很重的東西去撞很輕的東西,
+結果會是什麼?
+你拿很重的東西撞很輕的東西,
+我們可以想像拿一台卡車衝撞一隻蒼蠅。
+其實就是被撞很遠。
+事實上,你第一你看到的signal,
+就會完全就是nothing,
+會超級大,然後就沒了。
+事實上它就穿過去了,
+它不會把能量留下來。
+Sorry,對不起,我剛剛講錯了。
+因為它會直接穿過去,它不會把能量留下來。
+所以它transfer過去的能量還是會很小。
+我這邊有equation。
+OK,這個是那個equation。
+就是說,如果你去算說,
+對撞,因為其實對撞是這兩個人的共同的反應。
+他不管是誰撞誰,
+因為其實你在他的執行,
+你是看不出來誰撞誰。
+最有效的把能量傳給另外一個人的是大m等於小m。
+可是不管是大m遠大於小m,
+或是小m遠大於大m,
+這個數字都會接近零,也就是說你不會留下能量。
+所以這個問題比較像是說,
+如果今天dark matter真的跟proton一樣重,
+那我們用electron是不是一個好的candidate?
+答案是不是,因為我們會留下非常非常小的能量,
+我們還是測不到。
+但是這個事情effectively,
+就是所有這些實驗在做的事情,
+但他們都沒有看到東西。
+我要試一下,有一個問題是我想要問,
+你剛剛說我們可以控制的,
+當然一開始說用質子是比較多人用的方法,
+那接下來因為找不到,所以用電子。
+那所以你剛剛說我們可以控制的就是質子跟電子,
+你所謂的控制是什麼意思?
+我說的控制其實就是你花錢可以很容易買到的材料。
+待會我會講一些比較exotic。
+如果電子再找不到的話,
+有可能用電動嗎?
+電子跟電動其實effectiveness是差不多。
+沒有吧?
+那對我來說是差不多。
+我們現在講的是,如果你可以找到更小的東西,
+比如說那種叫什麼,
+就是他那個bandgap超級無敵小。
+所以effectiveness你可以excite一個quanta,
+就是那麼小。
+或者是你可以破壞一個比如說quasiparticle,
+一個couple pair之類的。
+那個都是有可能,但是非常昂貴。
+那我先講一下,
+就是super-CDMA HPEV detector這個東西,
+到底是做什麼?
+現在這邊大家看到一個圖,
+這個圖是試著要描繪這個germanium或是silicon的晶體。
+它是一個晶格,黑色是silicon。
+那dark matter是這個白色的線,
+東撞到它,然後彈走。
+那它就留下了一些能量,
+這個能量會散出來,
+這個散出來會搖動這個crystal lattice,
+所以它會在那邊搖晃,會震動。
+那震動的這個東西其實就是一個signal,
+它叫做phona。
+然後同時它也會打出這個電子電動隊,
+因為它有足夠的能量,
+它可以ionize它旁邊的電子電動隊。
+所以我們就有兩種signal可以測,
+一種就是這個lattice vibration,叫做phona,
+生子。
+另外一個就是這個電子電動隊。
+那現在currently CDMA怎麼做呢?
+就是我們放一大塊crystal,
+這個是10公分,
+OK,這個是10公分,
+它的厚度是4.5公分,
+所以一塊超大塊,
+不像是任何台積電會用的那種厚度的silicon,
+就是一個超大一大塊。
+然後呢,我們拿這個東西來擋下dark matter,
+那當被dark matter打到的時候呢,
+這些phona會飄到它的,
+會散佈到這個crystal的表面,
+那這個electron hole pair呢,
+也會被我們用一個電場拉到表面。
+然後這個時候呢,
+我們用這個電場拉到表面呢,
+做這個microfabrication,
+我們做超導的circuit,
+那我們就用這個超導的circuit,
+被這兩種signal干擾,
+真的變化,來測量這個phona和ionization。
+OK,這是這個概念。
+好,那我們CDMA有很多種不同的operation mode,
+但是我現在要講的是這個high voltage mode,
+那其他我就不講了。
+high voltage mode怎麼做呢?
+sorry,
+high voltage mode就是,
+這是側面圖啊,
+它會進來敲到,
+產生了這邊一個E,
+這邊一個H,就是電子電動嘛。
+好,然後我在這邊,
+橫著給它加一個超級大的這個電場,
+電位差,
+那它就會拉著這個電子和電動,
+很快速地往這邊衝上去,
+往這邊衝下來。
+OK,那在這過程中呢,
+因為這個電子電動會遠超過,
+它在這個lattice裡面可以travel的,
+最高的terminal velocity。
+所以它會產生的就是,
+它會開始generate,
+它會失去,
+或是它會generate更多的能量,
+到這個crystal裡面,
+去balance它的速度,
+它才會stay at terminal velocity。
+所以會產生很多這個綠色的箭頭,
+這是secondary產生的phonon。
+OK,所以說,
+你可以想像啊,
+如果我們給它加一個超級大的這個bias voltage,
+它就會產生超多的phonon。
+所以我們基本上呢,
+我們把這個電子電動隊的這個signal,
+把它變成加很大的電場,
+讓它變成超大的這個phonon signal,
+然後我們用測phonon的這個方式,
+來recover說,
+哦,所以我們前面看,
+創造出了幾個電子電動隊。
+OK,那就藉由這個方式啊,
+我們只要給它加個,
+幾十到一兩百伏的這個電位差,
+那它就可以產生,
+就是好,
+就幾十倍到一兩百倍的這個,
+signal to noise ratio,
+的這個enhancement。
+這是我們的做法。
+那我們測,基本上就是這個紫色的這一片,
+就是測phonon的這個sensor。
+OK,好,
+這個是我們去年發的一篇paper。
+我們做了一個R&D device,
+這個device呢,
+這個兩公分,
+這個邊邊是兩公分,
+這是一個silicon crystal,
+它的厚度呢,是四公里,
+所以就零點四公分了。
+然後我們給它加,
+我們給它加了
+一百五十伏的這個bias voltage。
+OK,
+那我們就用這個high voltage的方式,
+產生很多secondary的這個phonon,
+然後我們用這個,
+一塊一塊銀色小小的,
+去測這個phonon。
+那我們可以用這樣的方式,
+我們達到的這個
+signal to noise ratio呢,
+是零點,就是百分之七的
+electron hole pair的
+這個signal。
+這個橫軸是能量,
+然後縱軸是
+就是histogram,
+就沒有什麼counting。
+這是single electron hole pair,
+是兩個,三個,四個
+electron hole pair的signal。
+然後它的寬度呢,
+大概是百分之七,意思大概就是這樣。
+所以我們有resolution
+去看到counting
+這個single single single
+electron hole pair的產生。
+那我們發現呢,
+如果我們肆無忌憚的
+一直把這個bias voltage加到超大,
+我們不就可以看到超超超大的
+這個signal to noise ratio嗎?
+答案是不行。
+因為當我們加超過一個
+breakdown voltage的時候,
+這個整個crystal會變成像是半導體,
+就變成像個導體一樣,
+就一直瘋狂有這個current
+一直傳過去,
+會smear掉我們可以counting
+這個dark matter signal的能力。
+所以我們就說,
+我們在breakdown voltage下面一點點
+來operate,我們看到呢,
+它會一直有
+在兩三hz這樣子,
+每一秒就兩三個兩三個signal,
+然後一直出來一直出來,
+那出來的這個部分
+是這個粉紅色的部分,
+它完全跟我們expect
+dark matter可以產生的signal是不一樣的。
+所以我們的假設就是說,
+ok,這個有一個background我們不知道為什麼,
+它一直漏電,
+但我們不知道,但是based on這樣的background,
+那這個我們還可以
+就是放出一個什麼,
+我們可以設一個什麼樣的limit,
+是consistent with this background being or not,
+ok,那我就去做這個
+這個計算,那算出來呢,
+是大家現在看到
+右上角這個圖,
+cdms run 1這一塊,
+那我剛剛說,
+傳統的實驗我們都是在10GeV,
+或是更高的
+a few TeV去畫這個limit,
+但是現在,所以我回去一遍,
+我們就把這個detector
+放在我們的冰箱裡面,然後給它run了一天一夜,
+ok,然後
+這個detector也很小,
+這detector就跟一個橡皮擦一樣大,
+ok,我們就立刻設下了一個world leading limit,
+那什麼叫world leading limit,
+world leading limit很簡單,
+就是它也不是什麼非常sensitive到
+非常下面,可以測量非常小的probability,
+它只是因為
+我們可以sensitive到非常小的能量,
+所以我們畫了一個從來沒有人有辦法畫的地方,
+ok,那這個地方可以看到
+這是sub-mEV,
+所以1GeV在這邊,
+10GeV就是我說的wimps search,
+就是從這邊往右,
+所以我們立刻在這邊畫了一大塊,這是去年,
+好,那我們就說,
+那這個只是一個demonstration,
+就是說這個concept
+是非常的efficient,
+然後呢,我們在今年呢,
+就說ok,我們要很正式的
+來把這個東西做一個
+在地表上的測量,
+那我們其實就在
+昨天,我們剛unblind了我們所有的data,
+所以我們應該在一個月之內,
+大家就是Christmas都不用睡覺了,
+然後就我們會把pair
+放在那個archive上,所以一個月之內就會有新的,
+那就stay tuned,
+那我不能講
+數字,但是
+我可以說呢,
+我們redesign了這個
+R&D device,因為我們從這邊
+然後去對照說theoretically
+這個應該是有多少resolution
+的detector,那我們看到
+差別,然後我們去了解它,
+我們redesign,然後呢,
+這個resolution
+就是improved by
+就是significantly,然後呢,
+更重要的是,
+回到剛剛,因為我就說
+它會有兩三hz的漏電,
+那因為我不了解這個漏電,
+所以如果這個有漏電到
+一定的程度,我就說ok,
+比如說這邊切開,以上
+這個good detector,
+以下我就很難說什麼,
+所以最重要,
+最crucial,要設limit,
+其實是要把這個漏電降低,
+那我們其實是achieve leakage current
+reduction goal,所以這是非常重要,
+那有個更有趣的是,
+我們在這一年
+多的時間裡面,其實將近兩年,
+那個我們更了解了
+silicon crystal,
+跟它的環境
+的interaction,所以我們可以
+model,就是這些可以
+產生不是quantized
+signal
+distribution是怎麼樣,那我們可以把它
+model掉,ok,所以
+基本上呢,我可以說我們
+project to set again
+world leading limit, if not discovery,
+so stay tuned,
+這是放生的事情,好,那到這邊
+就是CDMX HPEV,
+有問題嗎?
+這是一個算是concept,因為
+比較像是說,我之後要講technology,
+但如果大家對這部分有問題,
+可以先來問。
+ok,
+那如果大家沒有問題的話,歡迎大家去看一下
+這個1804
+10697,這個
+應該是
+HPEV跟Sensai
+是現在兩個可以設到最低
+就是這個
+Gathering
+Cross-action的實驗
+好,
+那就
+再往下囉,好,
+那剩下的部分我要講的是這個
+KIT,好,那講KIT
+之前呢,我要先講一下
+在我剛剛show的那個detector
+啊,它的那個technology
+是什麼,ok,現在大家看到一個
+一個小小一個小小一個小小一個小小
+它是一塊一塊的金屬,
+那我們把它放在這個dilution fridge
+裡面,它會變超導體,ok,
+那
+如果今天有,這是一個
+粉紅色的部分呢,是剛剛那個很大塊的
+germanium,如果我今天
+產生這個interaction,然後它的
+能量會飄上來,然後穿進去
+到這個銀色的部分,ok,它會
+破壞這個cooper pair,那這個cooper pair
+會一路飄進去,那
+這個cooper pair飄進去之後呢,sorry
+它破壞cooper pair是quasi-particle,叫QP,
+然後飄進去之後會
+改變這個超導體的電阻
+狀態,ok,它就會
+從,呃,本來
+這個,sorry,這個是電阻,
+縱軸是電阻,橫軸是effective
+temperature,那個小小銀色的
+effective temperature,ok,
+它本來是零電阻,會
+很快的transition
+到,呃,有
+電阻,就是正常導體,那我們
+只要把它operate在這個transition
+的這個狀態呢,只要有
+一點點的溫度或是能量的變化
+在這個小小的這個裡面
+我們就可以看到很大的
+signal,我們就用這個方法來測
+瘋狼跑進去這樣子,那
+它有些問題,它的
+問題就是,它就是,這是一個phase
+transition,所以它的這個
+range其實非常小,從一點點
+能量吃到,就是滿了
+就一點點而已,所以
+它的dynamic range
+是非常小,那通常
+就是需要就是
+額外的
+呃,circuit,而且是要
+裝在冰箱裡面的circuit,去
+幫它dissipate能量,或是幫它
+divert那個能量的
+這個feedback,所以我們才
+可以真的穩定的
+operate我們的detector在
+這個transition上,ok
+然後呢,因為它其實是一個film
+它從零電阻變成有電阻
+也是一個超小的電阻
+所以它是一個跟conventional
+的這個electronics
+的impedance是不match
+所以它usually requires
+就是cryo electronics
+去做這個amplification
+的時候呢,是要
+做impedance match,match這個low impedance
+path,所以就是通常是
+circuit,這是很麻煩的東西,ok
+還有最重要的是
+typical可以拿來做這個
+transition edge sensor的這個材料呢
+其實是不適合
+來這個catch phonon
+所以真的要產生一個
+可以catch phonon的TES
+sensor,我們還要先有一個trapper
+把這些phonon trap,讓它會
+往那邊跑,所以有好幾層,然後這個
+microfabrication是很複雜的,ok
+那為什麼我要講剛剛那些呢
+因為那些基本上就是這個kit
+配克服的問題,那我先講一下kit
+到底怎麼這個運作
+好,同樣的今天能量進來,那這個
+圖是最早的paper,它是假想說
+被光子打到,但是
+大家可以想像說whatever energy
+break cooper pair,它break
+cooper pair之後呢
+它對於那個上面的這個金屬
+產生的影響不只是產生
+電阻的變化
+它也會產生
+電感的變化
+那電感的變化跟電阻的變化
+不一樣在超導體
+它的cooper pair一直產生
+它都不會有電阻,直到
+transition,突然很多很多
+電阻變化,然後就saturate到
+正常導體的狀態
+可是如果今天是inductance
+被cooper pair
+打破的變化,其實
+是比較low function
+它可以在更低溫operate
+也就是說我只要有一個
+夠冰的冰箱,冰到比我的
+transition temperature低很多
+我就可以operate,其實我不太需要
+在乎說我是不是有很複雜的
+electronics可以control它在
+transition,這是非常重要
+那今天我講的是
+電感的變化,我們怎麼讓它變成
+一個好的sensor呢
+這是一個variable的電感
+我把它並聯一個電容
+它就變成一個震盪器
+ok,所以
+如果今天這個電感被
+吃到一點能量,有一點變化
+那今天這是frequency space
+ok,所以frequency space
+就是f,就是那個
+s21,如果你做微波的話
+s21是什麼,那有一個resonance
+它就會跑
+而且因為裡面有更多的
+這個thermodynamic
+activity,其實就是quasi-particle recombination
+所以這個resonator
+或是說這個resonator
+這個quality factor會降低
+所以它不只是這個resonance frequency
+會跑,它的胖度
+還會變胖,所以它就會這樣
+從這個黑的跑到點點再跑回來
+那我們就看這個
+我們就會知道說,那這邊吃到signal
+那實際上
+我們怎麼realize這樣的circuit呢
+其實也沒什麼,就把它全部串連在一起
+我們有一大堆
+的這個小的這個
+LCLCLC
+然後全部串連在一起
+然後我就這邊做input,這邊做output
+那我就測它的transmission
+或是s21
+那我只要把這些所有的
+這些resonator的resonance frequency
+都稍微調到不一樣
+那我今天測s21
+就會看到一根一根一根
+一根一根一根的resonance
+ok,那這些resonance
+就會map到,比如說我知道
+by design,這個人
+他應該要resonate at this frequency
+這個人要resonate at this frequency
+所以我只要monitor這一根
+跑,我就知道它被打中
+這一根跑
+我就知道它被打中
+所以
+這就是我們怎麼做pixelization
+這個概念
+那實際上這邊看到這是一個waveguide
+然後這是一個
+電感嘛
+然後這是一個電容嘛
+所以這個waveguide就couple到它
+那實際上
+大家看到就會像這樣
+這邊有一個waveguide
+上上下下
+然後這每一個小island
+都是一個pixel
+可是我們可以回去比較說
+那如果用TES是怎麼樣呢
+因為TES的resistance change
+實在太小
+小到要測到你必須要把很多很多的小island
+全部串聯
+所以事實上這些人
+全部都被串聯在一起做一個sensor
+這些人全部都被串聯在一起做一個sensor
+所以這一個chip
+兩公分乘兩公分
+它只有兩個channel
+鏡頭全部都被夾在一起
+可是這樣子一個3吋的wafer
+它就是80個channel
+那我們現在認為說
+80個channel
+做這個positioning is good enough
+所以我們其實沒有要再push這個detector
+我們可能要把這個detector
+拿來做dynamic search
+但是我們對於這個東西的robustness
+的一些分析在
+我不知道這邊有沒有paper
+這邊有這個paper 如果大家可以去看
+我們認為我們可以放200個channel
+所以基本上呢
+這是未來
+super cdms no lab detector
+很多很多小點可是它們都被串聯在一起
+所以in the end
+這一大塊是一個pixel
+這一大塊是一個pixel
+它大概就長這樣
+那我們這個就是80個
+然後我們可以做到200多個
+但是更重要的是
+我們為什麼propose kit呢
+因為其實
+energy resolution wise
+我們已經測到comparable
+energy resolution 但是更重要的是
+recent results suggest
+我們可以做到
+sub eb resolution
+然後當然在money wise
+它reduce 60%
+fabrication complexity
+因為事實上
+這整塊
+是single layer film
+所以跟這種要
+疊好幾層的比起來
+我們其實就是一個mask
+然後deposit
+然後edge
+然後我們就有一個完整的整個circuit
+所以我們減少60%到70%
+如果我們去算steps的話
+那用的chemical少很多
+所以fabrication yield就高很多
+而且我們很容易
+就可以做到
+百倍的pixelization
+就是multiplexibility
+然後呢
+我們不需要thermoelectric feedback
+我們只需要把它
+減少比tc低很多的溫度
+就可以了
+那我們也不需要squid amplifier
+因為事實上by design
+這個waveguide就是50歐姆
+所以我們只需要50歐姆
+就兩條coax把它接出去就可以了
+所以這是非常simple
+那對CLR是非常重要
+好那這是倒數第二頁了吧
+好那我講一下說
+所以我們expect higher resolution
+可以要多高呢
+因為我們是被low noise amplifier
+所以換句話說
+我只要能lower
+amplifier的noise temperature
+我就可以
+增加我的resolution
+那我們現在用的amplifier
+大概是5k的noise temperature
+那我們的collaborator
+在jpl他做出了一個
+70mK
+low noise amplifier
+所以我直接把這個換成我這個
+這邊就有一個factor
+ok
+然後呢
+我們發現一件事情
+就是我們要做這個match filter
+來filter說到底什麼是noise
+什麼是這個pulse template
+如果我們今天的這個
+這個pulse decay time
+的time constant更長
+我們就可以在這個match filter上
+filter掉更多的這個noise
+的這個spectrum
+所以我們如果可以把
+這個film的characteristic time
+變長的話
+我們就可以增加更好的signal to noise ratio
+那在這篇paper裡面
+demonstrate說他們可以把這個time
+增加到3ms
+那我們現在是100us
+ok那我就把這個factor放進去
+我把這個factor放進去
+ok
+我們不要說3000
+我們說1500us
+好那還有另外一個
+這其實是我老闆的
+另外一個實驗
+他們把
+這個部分呢
+做成to material
+什麼意思就是他把
+這個sensitive的inductor
+用成真的我們可以測量
+sensitive to phonon的材料
+其他部分把它變成另外一種
+couper-peri-breaking
+的那個gap更大
+比phonon energy更大的材料
+所以他們不會把phonon吃掉
+然後不generate signal
+那by this difference
+就是by this geometric ratio
+好那我們也可以做一樣的事情
+那其實就是多一個layer
+也是比那個ts少很多
+那我們就把它加進去
+這個ratio
+然後
+最近
+最近有一個在
+歐洲做那個
+他們也在做這個事情
+他們propose一個很有趣
+因為在這個equation裡面
+我們其實是要算
+我們create多少quasi-particle
+所以如果你今天的這個superconductor
+的那個peri-breaking
+energy很小很小
+phonon energy deposition就可以break
+很多很多couper-peri
+所以他們就去用了這個low gap
+就是那個gap很小的couper-peri
+的這個material
+來代替我們現在用aluminum
+那他們可以用到
+從0.2的這個
+0.2 microeV變成
+sorry 0.2 minieV變成
+0.105 minieV
+所以我們就把所有
+已經被demonstrate可行的方法
+全部帶進去呢
+然後
+把我們現在已有的這個resolution
+帶進去rescale
+那我們得到的結果是36 minieV
+也就是說
+我們現在不再是做
+比如說sintilator或是我們做
+這個
+ionization counting這樣
+我們基本上有36 minieV的resolution
+那我們當然可以把這個東西
+拿去取代TES
+繼續放在silicon substrate上
+測這個
+測這個phonon或是這個ionization
+然後做counting
+那我們可以做另外一件事情
+就是我們放一堆kit在那邊
+直接拿kit來給dark matter打
+那我們就可以count這樣子的quantum
+這是我們的plan
+好
+那summarize一下
+就是我們現在認為呢
+在5年到10年之內
+要嘛就是可以找到WIMP
+要嘛我們就會有一個很長的
+這個no progress
+那所以大家現在是
+很努力的在想呢
+我們可不可以shift到low mass dark matter
+還有很多很多的model
+還沒被測過
+我們需要有
+electron recoil跟nuclear recoil
+兩種同時進行
+因為實際上實務上
+我們除了要electron recoil
+可以測很小的能量之外
+然後分辨到底什麼是good signal
+什麼是background
+那這個是現在開始重要的事情
+那require substantial improvement
+in low-threshold technology
+那這個呢就到了第二部分
+就是說ok CDMX HPEV demonstration
+我們有這個
+electron recoil counting的能力
+那就是我們就給它run一天
+在實驗室地表上run一天
+我們就可以設這個
+很好的limit
+那當然我們的detector現在已經拿到那個
+Minos tunnel裡面去了
+所以下一個run呢
+就會是那個underground run
+ok
+那這種一天在surface的run
+我們就可以constraint到
+0.4 MeV
+這個dark matter mass
+那最重要的是kit這個部分呢
+我們demonstrate competitive energy resolution
+然後最重要的是
+它其實是
+離我們的theoretical prediction
+就是剛剛那equation
+所有design number全部帶進去
+它是蠻吻合的
+那我們就很有信心說ok
+所以我們可以adapt所有別人已經demonstrate
+可以做的事情
+假設我們真的有這麼多的這個
+這個resource去adapt每一個的話
+它的outlook是100倍的
+這個resolution的improvement
+那
+它是flexible
+optimization for
+你要很好的energy resolution
+你就做一個pixel
+你可以做500個pixel
+那你就可以有很好的
+position reconstruction或是tracking
+那換句話說呢
+就可以reject background
+那到時候我們真的要run dark matter device的時候
+這還是會要重新design
+然後呢
+重點是它是非常easy and reliable fabrication
+這對於未來larger scale是非常重要
+因為研究生手抖
+很可能就是device一直做不好
+所以如果好做是蠻重要
+那ok
+因為它是query electronics
+是非常簡單
+它基本上沒有
+就是一個amplifier放進去
+然後就可以run
+ok
+那就到這邊
+謝謝大家
+好
+哈囉
+大家
+各位有人有問題嗎
+好
+我們好不同陣喔
+不好意思
+想要問一下
+就是那
+丁肇中是
+他那個group是在找WIMP嗎
+然後這個
+這個device是不是也要
+就是放到太空去才會
+才測得到
+沒有我們其實在地球上測得到
+那如果我們要改變
+這個實驗的環境
+更好的環境其實不是去太空
+是去地底下
+因為我們其實是直接測dark matter
+我們希望dark matter直接穿過
+一切我們已經知道的
+各種東西
+然後打中我們的detector
+但是我們的環境裡面充滿著宇宙射線
+所以我們其實最好的環境是到地底下
+那地底下可以很自然的
+用地殼幫我們隔絕宇宙射線
+但是based on我們已經知道
+dark matter可以穿過幾乎所有東西
+你走到越地底下
+relatively你秀掉越多的宇宙射線
+但是你留下的那個rate
+就是那個fraction of dark matter會越高
+所以我們這些實驗大部分都是
+eventually都是要去地底下做
+比如說礦脈啊之類的
+但是丁肇中那個實驗
+如果你是在講AMS
+或是AMS現在是02的話呢
+他不是在測dark matter
+他是在測宇宙射線的anomaly
+然後如果這個anomaly
+是很強的anomaly
+他們可以試著去解釋說
+所以有沒有dark matter
+可以
+比如說decay啊
+或者是產生這樣的anomaly
+比如說突然有某一種能量
+在這個宇宙射線的spectrum上
+特別多不連續出一個peak
+那他可能就是dark matter decay產生
+所以他們其實是在測宇宙射線
+所以他們想要去宇宙射線最強的地方
+所以他們想要去大氣層之外
+因為大氣層其實也會擋掉宇宙射線
+所以他們才去太空站
+原理大概是這樣
+對對對
+那呃
+想要再問一個問題可以嗎
+可以啊可以啊
+那個是有點意想天外
+但是呃
+想要問一下有沒有人
+就是你現在是測那些
+phona嘛對不對
+然後把信號放大
+那有沒有人是
+像用那個lego一樣
+就是他測
+比如說你撞到嘛
+然後可能會有一些很小的位移
+有
+我其實
+非常非常喜歡
+這種研究
+你大概可以問一個非常
+legitimate的問題就是說
+事實上我們現在
+所有dark matter會被我們擋下來的interaction
+都是假想的
+因為我們唯一知道dark matter
+真的會interact
+而且已經被觀察到了
+就是through gravity
+那如果我就說我今天要設計一個實驗
+是use gravity as gravity
+去測量dark matter的話
+那我要多sensitive
+或是dark matter要是什麼樣的model我才測得到
+對對對
+答案是呢
+有人在想這件事情
+他不是做不到但是第一
+dark matter要非常非常重
+多重呢就是大概要
+0.0就是百分之一到
+一倍的plank mass
+我不知道你知不知道plank mass
+就是我們認為所有的
+重力的理論都會breakdown的
+物理極限
+就是現在我們在討論
+這些scale的三十倍
+sorry 失了三十次防備
+然後他們在想的
+方法是這樣
+他們可以用雷射
+把一些nano particle
+把他用雷射的光壓
+把nano particlehold住
+然後拿去排排站
+在一個vacuum chamber裡面排排站
+一整排
+那這些nano particle
+小豬豬如果被dark matter打到
+不是被dark matter打到
+他是被dark matter經過
+然後dark matter particle的
+重量會影響這些小豬豬的位置
+然後他們會開始搖
+就像是重力波去搖
+LIGO的鏡子一樣
+他們可以用這樣的方式去測
+但是很困難
+但是我覺得這是一個好的問題
+而且是有人在做R&D
+okok
+這很有趣
+我可以問一下
+就是比較奇怪的細節嗎
+為什麼你們的那個
+Wafer要用這麼厚的Wafer
+然後是整塊都是silicon嗎
+對 整塊都是silicon
+ok 我留在這邊好了
+其實這個厚度就是這麼厚
+然後我可以問一下
+就是
+為什麼你們的那個
+Wafer要用這麼厚的Wafer
+然後是整塊都是silicon嗎
+我留在這邊好了
+其實這個厚度就是這麼厚
+這個是10公分
+你把它想成4吋Wafer
+然後這個厚度是厚到一大塊
+就像是你那個布長出來一大條的silicon
+你不把它切成一片一片
+你就多一節一節的
+這就是我們這個
+根本就不是Wafer的crystal
+為什麼要做這個呢
+因為我們發現一件事情
+就是你當然可以說
+我的厚度是1公釐
+那它的total mass
+或是它給你的
+total number of neutron protons
+是一樣多的
+所以你的實驗sensitivity理論上是一樣的
+但是我們發現一件事情
+就是在整個fabrication的這個過程中
+還有在運送的過程中
+那個宇宙射線一直不斷的打
+我們的這個Wafer
+然後呢
+空氣裡面也很髒
+也一直碰到我們的Wafer
+它會貼到
+不管是黏上
+或是產生
+radioactive的這些element
+所以minimize表面積
+可以minimize
+這整個實驗的total radioactivity
+所以我們希望它一塊很大
+而不是很多塊小小
+這樣make sense嗎
+可是我是說它的厚度
+厚度為什麼要這麼厚
+因為它的厚度很厚
+表示在同樣的質量
+它的表面積很小
+要不然我們同樣的厚度
+同樣的總重量
+我們也可以用石片很薄
+但是它的表面積就會很大
+我可以問個問題嗎
+那個你們detector的
+怎麼做calibration
+我們detector
+這裡有點複雜
+因為我先講這個好了
+就是這個HVEV
+我們其實是拿雷射去打它
+我們就有一個fiber
+就是這邊有雷射
+然後fiber拉進去冰箱裡面
+然後就拿雷射去打它
+因為你就用pulse laser嘛
+所以基本上它產生的electron hole pair
+就是quantize
+所以這邊有個雷射
+然後就黑色這個
+就這樣
+那如果說是
+當然我們還有另外一個
+但是事實上
+我們可以放那個radioactive source
+然後放那種只有a few keV
+的radioactive source
+但是even a few keV
+也是遠遠超過
+這個圖的範圍
+所以變成說我們要看幾條x-ray的line
+然後去說那我可不可以extrapolate
+幾乎到y軸上
+它會有這個圖
+所以它不是很reliable的方法
+所以現在我們主要都是用雷射
+去做這個東西
+所以這裡面有很多細節
+比如說雷射會不會漏光
+雷射除了會打中crystal之外
+它有多少的probability
+會有那種idling photon
+直接打到上面的小island
+那它的deviation是多少
+那基本上我們是用雷射
+那同樣的方法
+當然也可以用在kit這種detector
+我們可以拿雷射去打它
+但是我們其實
+在今年2019年的
+那個LTD
+我們propose了另外一個
+我覺得蠻酷的方法
+因為這每一個小island
+它的resonance frequency
+都是非常uniquely tuned
+所以我們其實可以除了
+我們除了用一個signal
+用一個這種broadband signal
+去測然後做fourier spectrum
+fourier transform
+去看這個S21之外
+我們可以inject一個
+single frequency的超強的pulse
+進去
+所以那個single frequency很強的pulse
+會全部被
+那個frequency的這個island
+整個吃進去
+然後吸收掉
+然後其中一個island就會瞬間變得很燙
+然後還會
+放出photon
+就是說
+我們可以瞄準
+比如說這個人的resonance frequency
+然後把它heat up
+就是瞬間用一個pulse heat up
+它就會變成一個photon source
+就可以用它去calibrate所有其他人
+那同樣的事情
+我也可以瞄準它的frequency
+把它heat up
+然後去calibrate所有其他人
+所以基本上我每一個小island
+都可以做一個photon source
+去calibrate所有其他人
+我還有一個問題就是
+那你有沒有
+因為你想要測試
+electron scattering的signal
+那這個有辦法做calibration
+因為現在比較像是duck photon
+就是
+拆除mimic的duck photon
+duck photon的signal
+像light
+但是如果你是
+Bermionic
+duck meter的話
+你想要做那個electron scattering
+你要
+怎麼去做energy calibration
+好
+答案是非常困難
+這是一個非常好的問題
+我覺得如果你有在做你應該知道吧
+比如說even就是nuclear scattering
+到low energy它就不是0
+所以其實要測就很困難
+然後如果是electron scattering的話
+是更困難
+我現在有一個實驗叫
+impact
+他在那個duck那邊做
+就是他們做了一個事情
+就是他們拿那個
+他們有一個neutron source
+然後他們有個neutron source
+然後去打那個
+打那個detector
+然後他就一直打
+然後旁邊圍的滿滿的都是signal
+所以他可以catch就是說
+scatter之後出來的那個
+neutron
+所以他基本上可以reconstruct說
+如果這是一個elastic scattering
+還是他是一個
+就不是elastic
+所以他可以tag
+elastic scattering的event
+然後他的incoming
+跟outgoing的neutron能量如果很接近的話
+他們可以說
+ok那這個東西可能是electron scattering
+可是那細節其實我也不知道
+但是是有就是neutron beam的實驗
+想要做這個事情
+那老實說我也不知道他們現在的情況是什麼
+不過這是
+nucleus
+recoil嘛對不對
+那如果你是electron recoil
+他們同時可以做electron recoil
+但是我不知道他們有沒有
+真的那樣的resolution去
+就是給一個數字
+但是基本上你可以想像絕大部分的event還是nucleus recoil
+對啊
+所以我就在想能electron recoil
+signal到底要怎麼做
+不知道這其實我也不知道
+就是事實上我覺得還是
+是很困難的事情
+對啊那你
+就是一個simulation
+然後
+假設你那個event可以去
+那個energy response
+就是可以對應到NEV的
+permeable link
+documentor這樣
+對然後這基本上就是
+最大的uncertainty source
+就是有個什麼fano factor
+然後可以差好幾倍這樣
+ok好謝謝
+哈囉還有沒有人有問題
+好那我們現在再
+給那個晏永最後一次掌聲
+整齊的掌聲來一下
+好啦那我
+停止錄影囉

@@ -1,0 +1,2886 @@
+Hello everyone, welcome to today's Tarot Talk. I am the host today, Zhang Yanyong.
+We are very honored to invite Dr. Zeng Sihao, a colleague at my school, to tell us about the topic of his research on the Internet today.
+His research focuses on the parallel and variable traffic engineering of re-adjusting latency.
+Let me introduce Dr. Sihao.
+Dr. Sihao majored in Electrical Engineering at NTU.
+He then went to Cornell to study ECE, Electrical Engineering.
+He then came to Caltech to study Computer and Mathematical Science.
+He then studied Engineering and Applied Science.
+Let's give the floor to Dr. Sihao.
+Thank you, Yanyong, for the introduction.
+This topic is actually a bit long and difficult to understand.
+However, when Yanyong invited me to give a talk, I thought that since it is a talk,
+why not talk about a topic that is actually related to my research?
+So I took the ICMP paper that I submitted last year.
+Today I will try to make it as simple as possible.
+Although this topic looks very difficult, you don't have to worry too much.
+Its English title is Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay.
+So I just translated the English title into Chinese.
+As for what each term means, we will see later.
+If you have any questions in the middle, please feel free to interrupt me at any time and ask me questions.
+In addition, Caltech has a special system called Computing and Mathematical Science.
+This system is actually under Engineering.
+Although C stands for Engineering, the department seems to be under it.
+It seems that the relationship between division and department is not quite the same,
+but it is actually not very important.
+So why do we want to study this topic?
+My research topic is mainly about the Internet.
+What is the Internet? The Internet is actually a bunch of things connected together.
+Why do we want to connect a bunch of things together?
+Basically, we want to communicate with each other.
+We send some things, some information from one end of the Internet,
+and we hope to get this information on the other end.
+Or we want to send some goods, such as a logistics network.
+For example, we want to transport fruits from Chiayi to Taipei.
+This is also a network.
+In fact, most of my research is on the Internet of information,
+that is, the Internet of communication between some electronic products or electronic devices using electronic signals.
+How are these networks usually transmitted?
+That is to say, how is this information transmitted on the Internet?
+Usually, for example, we will have our own personal equipment.
+For example, today's lecture is the same.
+We may use a computer or a tablet or a mobile phone.
+We will connect to the Internet.
+What does it mean to connect to the Internet?
+In fact, we are sending a piece of information to a place called an exchanger, a router.
+Sometimes this router also has a wireless exchanger,
+such as AP, Access Point.
+This is for wireless networks.
+Sometimes you will also use a base station to receive these things.
+After these terminals receive the message,
+they will send it through an exchanger to a space.
+Then we will be on the other side of the space.
+Maybe someone else uses another device to get this information.
+This is basically how the whole network works.
+In this case,
+because we use an exchanger to connect a lot of different devices,
+we may put our information into an exchanger
+and then go to another place to get something else.
+In order to get a specific thing,
+we have to establish a point-to-point connection with it.
+This is actually quite important.
+In the early days, the Internet was a bit like a telephone line.
+At that time, there was a connection god.
+When the two of us wanted to communicate,
+there must be a line in the middle to communicate with us.
+But today, the Internet is not necessary.
+Today, the Internet actually sends a lot of different traffic
+in various ways, using this kind of exchanger,
+one by one to our target destination.
+These terminals can be various things.
+For example, you can be a so-called cloud terminal,
+a server at the far end.
+Or when we play games with others,
+we may have a server.
+We may also receive messages from others.
+For example, the 5G network, which is very popular recently,
+is actually talking about the communication at the wireless terminal.
+Obviously, no matter how we get the information at the far end,
+we have to go through these exchangers in the middle
+or through the network in the middle
+to help us pass the information from one end to the other.
+So even if we have 5G now,
+5G means that
+5G is very fast from our wireless device to our base station.
+But after it gets to the base station,
+no matter what you do,
+you still have to go through the network in the middle to help you.
+So this network is the main focus of my network research.
+This is called the broadband network.
+Broadband network means that
+there is a great distance between the two terminals.
+Relatively speaking, if we are only in a local area,
+this is called LAN,
+which stands for Local Area Network.
+Actually, I don't know how to say it in Chinese,
+but it's a local network.
+So what's the problem with broadband networks?
+Because these broadband networks are connected to very far places,
+we know that
+when we use telecommunications to send things,
+electricity is actually very easy to consume.
+So how do we send them?
+We have to use a very special kind of wire.
+We definitely can't use the kind of wire that we usually use to plug breadboards.
+We must use a very special kind of wire to send.
+So how do we send these things?
+We will send them from one terminal to the other.
+There must be a very special wire in the middle.
+This actually requires cost.
+But this cost is sometimes justifiable.
+It can be accepted.
+If the service I want to provide can make me earn more money,
+then of course I am willing to spend a lot of money
+to build this kind of expensive link.
+You can think of it as these lines in the middle
+to connect to two very far places.
+For example, many big companies do this.
+For example, Microsoft or Google.
+Because they usually provide some cloud services.
+For example, you may sometimes use
+Google Sheets, Google Gmail,
+or Microsoft Hotmail,
+like this kind of thing,
+or all kinds of different services,
+such as YouTube.
+They just store the data all over the world.
+They will let you get the data very quickly.
+For example, they will build their own broadband network.
+What are the benefits of this?
+If you have this broadband network,
+I can effectively adjust
+how I want to use these lines.
+If I can effectively use these lines,
+I have a better chance of reducing my costs
+and making more money.
+Basically like this.
+So now most companies
+are investing a lot in building their own network.
+Instead of purely using some more traditional Internet.
+For example, we may sign a contract with AT&T
+or we sign a contract with Taiwan Cable.
+They actually provide the network,
+but the network is not under the control of these companies.
+Sometimes you can't adjust
+how to use your connection in the middle.
+So these big companies usually
+will build their own network,
+and then they will operate these networks themselves
+to achieve higher performance.
+We just mentioned that
+the network is so far away.
+These lines in the middle are actually quite special.
+What kind of lines are these lines?
+They are not ordinary blue lines.
+Of course there are ordinary blue lines,
+but the amount of blue lines that can be passed is limited.
+And it's more expensive.
+So most of the time we use
+cheaper blue lines with higher economic value.
+This is actually not a blue line.
+This is a blue line that uses optical technology
+to transmit signals through this light wire.
+This light wire is actually cheaper.
+And then there is a lot of information that can be transmitted by the light wire.
+Because you use light.
+Compared to electrical signals,
+you have all kinds of different frequencies.
+It can also be used.
+And the speed of light is also quite fast.
+It doesn't need to use electronic signals
+to receive it first and then transmit it.
+They just enhance the strength of light
+and then continue to transmit.
+So it actually has a lot of benefits.
+That is to say,
+most of these big companies
+will use some light wires
+to transmit signals far away,
+and then turn it into electrical signals
+at the end point.
+Then we communicate with electrical signals.
+These light wires are actually
+better than ordinary blue lines.
+That is to say, it has a higher economic value.
+But how do you say on this broadband network,
+no matter how cheap it is,
+you have to pull a few hundred kilometers,
+it will be expensive right away.
+So no matter,
+and you are in maintenance,
+or in operation,
+it's actually not cheap.
+So these light wires on the broadband network
+are actually a kind of expensive equipment.
+Usually we don't want to say
+that our light wires can't be used.
+What does it mean not to be used?
+That is to say, light wires are actually usable.
+That is to say,
+my signal can go through this light wire.
+That is to say, after I go through this light wire,
+I can get my signal.
+Let's use a simple example here.
+How do we send a signal
+from one end to the other?
+You can imagine that
+we are on both ends of the light wire.
+We can actually send it,
+we can send it at its frequency.
+If we think of a white paper,
+we can draw a dot on the white paper.
+Then we put this paper through the light wire.
+The light wire will pass this paper to the other side.
+Then I look at this paper.
+Ah, what is your signal?
+If the other person can interpret your signal,
+that means your signal has been successfully passed.
+So let's use this simple example to see.
+Suppose I have a big white paper now.
+I can send this white paper to the other side.
+Then I can tell the other person
+a similar code.
+Say, if you see me
+put a dot on the left, it's 0.
+Put a dot on the right, it's 1.
+In this case,
+we can use this code to send information.
+As long as you have 0 and 1,
+you can generate a lot of different information
+in this sequence.
+The problem is,
+this actually sounds pretty good.
+Then we keep sending this.
+For example, my left, right,
+right, left, left, right, right.
+Then we can quickly send out the signal.
+Isn't that great?
+But what is reality?
+Reality is that all signals follow the message.
+That is to say, everyone is sending something.
+In the past, it was not so beautiful
+in the middle of the opposite.
+In the middle, there must be some
+battery signal or light signal interference.
+Let's take a simple example today.
+Suppose we have a message.
+It will draw this thing on the paper.
+For example, I draw this dot.
+Shake it left and right.
+When we get to the other side,
+we look like
+For example, I received a signal of shake.
+For example, like this.
+It's a little bit off.
+But it's still roughly on the left.
+So in the middle of this case,
+we can say that this is still zero.
+I probably know it's zero.
+Anyway, although there is a little bit of noise,
+but it's roughly the signal on the left.
+So I know it's zero from my code.
+Then it is possible that noise
+may also put your signal
+a little bit in a different direction.
+In this case,
+you are probably also quite confident that
+this signal is actually on the left.
+So it's zero.
+But if I give you a signal like this today,
+Is it on the left or on the right?
+It seems to be a little bit on the left
+and a little bit on the right, right?
+So it's not easy to judge.
+If we draw a line,
+that is to say,
+we separate the original left and right
+and draw the line out a little bit.
+It's actually still on the left.
+So I know this signal
+is probably still zero.
+But sometimes it's just not so lucky.
+For example, this noise is actually very big.
+It pushed my signal to the very right.
+How do you know
+it's zero or one at this time?
+Then we might say
+your original signal is one.
+But in fact,
+the original signal I sent was zero.
+So in this situation,
+my signal is actually
+unable to successfully send to the opposite side.
+That is to say,
+in this case,
+if the noise is very big,
+I can't actually successfully
+send the message I want to send
+through the light to the opposite side.
+So in this case,
+we can say that
+this light can't be used.
+Because you can't successfully
+send the signal to the opposite side.
+Let's use an example to see
+if this kind of situation
+is actually very rare,
+then it doesn't matter.
+For example, I might have
+a million times, ten million times,
+a hundred million times,
+I only happen to have
+a very unfortunate
+case of my signal being intercepted.
+Then I just throw it away.
+I might just ask the other side
+to re-send it again or something.
+There's probably no problem.
+If we take these two,
+for example,
+I either send zero
+or send one,
+the signal that is disturbed by the noise
+will be drawn out to take a look.
+For example,
+it might look like this.
+That is to say,
+if I send zero,
+we use red to show
+the situation when I send zero.
+After sending zero,
+it may be disturbed by the noise.
+The signal I see
+at the receiving end
+may look like this,
+scattered everywhere.
+Similarly,
+if I originally send one,
+it is the green signal one
+that I originally sent,
+it may also be disturbed by the noise
+and scatter like this.
+But even in this situation,
+although we can see
+that some signals
+may be misjudged,
+but generally speaking,
+most of the signals
+are still distinguishable.
+In this situation,
+this light wire
+can still be used
+because most of the signals
+are actually fine.
+There is no problem in judgment.
+But if today's situation
+is like this,
+in today's situation,
+the noise
+scatters my signal
+to such an extent
+that most of the red
+and green signals
+are actually mixed together.
+In this case,
+it is easy for me to make a misjudgment.
+Even if I send one at the beginning,
+I may have a big chance
+to be judged as zero.
+Even if I send zero,
+I have a lot of chances
+to be judged as one.
+In this situation,
+it is difficult for you
+to say that
+you can't use this light wire
+because its noise
+is far greater than
+the signal energy of your signal.
+In this situation,
+we have to separate
+these two
+original zeros and ones.
+If we separate them,
+we have a chance
+to be judged as one.
+At that time,
+you will consume
+more energy.
+Or,
+in this situation,
+you may reach
+the level of energy
+your machine can send
+every time
+you lower the width
+of the white paper.
+Then you may say
+that this thing cannot be used.
+So this is the signal
+that will be affected
+by the intensity
+of the noise signal
+to cause
+whether this light wire
+can be used
+or not.
+Of course,
+sometimes it is
+a more unfortunate situation.
+But,
+in fact,
+sometimes we are
+very lucky.
+Because when we
+operate the light wire,
+we usually
+separate these two signals
+very widely.
+This is the so-called
+conservative operation.
+In this situation,
+there are not so many
+noise signals.
+Even if there are noise signals,
+we will see that
+these two groups
+are actually
+quite widely separated.
+That is to say,
+if I give you
+zero at the beginning,
+then I will
+probably
+have no problem
+to easily
+determine that
+this is zero.
+Similarly,
+I can easily
+know that
+the group on the right
+is probably one.
+In this situation,
+in fact,
+we will now say
+that this light wire
+can be used.
+It's really good.
+But in fact,
+at the same time,
+we can find that
+there are still a lot of blanks here.
+In fact,
+we can
+make this white paper
+more efficient.
+What should we do?
+We not only give zero,
+but we can also
+give some other...
+We can also
+subdivide this
+white paper
+into four equal parts.
+Let's say
+if I see
+this dot on the far left,
+then I actually
+want to tell you that it's zero.
+I want to
+say one zero
+on the far right.
+Similarly,
+we can see
+these dots in the middle.
+I just say zero one.
+If this signal
+is actually not
+disturbed by noise,
+then in fact,
+we can still
+successfully
+receive these signals.
+Because
+these signals
+are still
+roughly in
+their original positions.
+Since they are
+roughly in
+their original positions,
+we can still
+easily judge that
+if I see
+a signal here today,
+then I probably know
+that there is no problem.
+Its original signal
+is actually
+zero.
+Its original signal
+is zero.
+Like this.
+So,
+at the same time,
+how many signals
+can we send
+with a piece of white paper?
+It's not just
+related to
+the size of this piece of white paper.
+It's also related
+to the noise
+it receives.
+So this is
+the so-called
+noise ratio,
+SNR.
+So,
+the bigger my piece of white paper is,
+the more
+I can send
+messages.
+At the same time,
+I can not only say
+zero or one,
+I can also say
+zero zero,
+zero one,
+one zero one.
+That means
+the messages I can send
+at the same time
+are more.
+The more,
+that means
+my frequency is higher.
+What about SNR?
+Of course,
+at the same time,
+if you have a lot of noise,
+then you can
+do less things.
+Because although
+your piece of white paper is big,
+at the same time,
+the amount of messages
+you can receive
+is not that much.
+The messages you can successfully
+see on the other side
+are not that much.
+Now,
+if we consider
+the transmission of
+signals,
+it's like this.
+If we want to
+send a signal
+from the left
+to the right
+via a light
+to the right,
+we can think that
+our signal
+is a bit like
+a piece of white paper.
+Then we
+decide
+the code
+between each other.
+For example,
+if I see on the left,
+this is zero zero,
+zero zero,
+zero one,
+one one,
+one one zero,
+like this,
+this is called
+modulation.
+Modulation
+means
+adjusting
+the relationship
+between
+your changes
+and your
+signal.
+What is this
+modulation?
+If the other side
+also knows
+this modulation,
+after you send
+the signal,
+the other side
+can interpret
+your signal.
+It's a bit like
+if I say
+the leftmost point
+is zero zero,
+zero zero,
+like this.
+Then we can
+send the signal
+from one side
+of the light
+to the other side.
+Of course,
+it's not that good.
+If there is no
+modulation interference,
+of course it's good.
+In fact,
+we can
+put a lot of points,
+but because of
+the modulation,
+like the example
+we just saw,
+because of the modulation,
+so we actually
+see the signal
+at the receiving end
+here,
+the signal
+is a bit
+not the original position,
+it may be a little bit
+off,
+but if it's not
+off a lot,
+we can still
+successfully know
+what the original
+signal looks like.
+If you see
+the signal is probably
+in this area,
+then we know
+it was originally
+this point.
+Then we can
+check our meter
+and say
+this is zero zero.
+After this,
+we can actually
+not need
+these colors
+to mark them,
+right?
+That is to say,
+what is my
+modulation?
+How do I
+divide this white paper
+into several
+different areas
+and then I use
+each point
+to represent
+a signal.
+If I say
+there is not
+much noise
+on the other side,
+I can say
+it's probably
+in this area
+and it corresponds
+to this point.
+This point
+represents a signal.
+So this is
+what we
+generally call
+constellation,
+that is,
+if I see
+this point,
+what is
+the signal?
+Usually,
+at the receiving end,
+we will
+make a judgment
+based on
+the message
+to see
+which signal
+is more similar
+to the original one.
+Then we will
+interpret the
+original signal.
+So we can
+also see that
+this noise
+actually
+depends on
+the strength of
+the noise
+is related to
+the frequency of
+our signal.
+Sometimes we
+say
+why we can
+say
+we buy a line today
+and we say
+its frequency is
+10 GB
+or we say
+it is 100 GB.
+In fact,
+the frequency of
+this line
+is related to
+noise.
+The reason is
+because
+we generally
+operate these lines
+in a conservative way.
+For example,
+these lines
+may have
+expected
+noise
+in the natural world
+which is
+something like
+this.
+Then we will
+give a very strong
+signal
+to separate it.
+In this way,
+we can
+ensure that
+we can
+always
+restore
+the
+original
+signal.
+Then we say
+this line
+probably has
+capacity.
+In fact,
+when we actually
+send a signal,
+we are not
+only
+a blank sheet.
+We are not
+only one-dimensional.
+Sometimes we
+use multiple dimensions
+or in this case
+we use two-dimensional
+to show.
+For example,
+I have a
+two-dimensional signal
+and we will
+also be
+disturbed by
+noise.
+These signals
+scatter
+and we
+can see that
+the degree of
+scattering is
+not much.
+So we can
+still clearly
+tell if
+this signal
+is in this area
+and its
+original signal
+is here.
+So it
+can still
+successfully
+pull our
+signal from
+one side
+to the other.
+The advantage of
+two-dimensional,
+three-dimensional
+or multiple dimensions
+is that
+we can
+expand this
+blank sheet
+so we
+can see that
+the width of
+this line
+is actually
+the ratio
+of the signal
+to its
+noise.
+The noise
+ratio
+has a
+very strong
+relationship.
+Generally speaking,
+most of
+the time,
+as we
+just said,
+although
+this line
+is 50
+Gbps,
+which is
+50 x
+10
+9
+square
+bits,
+we can
+still
+clearly
+tell
+if
+this
+noise
+is
+in
+this area
+and
+its
+original
+signal
+is here
+and
+its
+noise
+ratio
+is here.
+So
+this
+noise
+ratio
+is
+about
+this much.
+So
+we can
+clearly
+tell
+if
+this
+noise
+is
+in
+this
+area
+and
+its
+original
+signal
+is here
+and
+its
+original
+noise
+ratio
+is here
+and
+its
+original
+signal
+is here
+and
+its
+original
+signal
+is here.
+So
+I can
+modify
+the
+modulation
+code.
+If I
+modify
+the
+modulation,
+I can
+send more
+messages
+to the
+other side
+at the
+same time.
+So
+this
+effectively
+improves
+my frequency.
+So
+even though
+we still
+receive the
+same
+signal,
+I can
+still
+modify
+the
+modulation
+code.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+I can
+modify
+the
+modulation
+code
+and
+send
+more
+messages
+to the
+other side
+at the
+same
+time.
+So
+if
+we have
+the
+light source
+now,
+we can
+modify
+the
+code
+to
+increase
+the
+frequency.
+But
+the
+signal
+can't
+be
+very
+noisy.
+So
+this is
+the
+architecture
+that
+Microsoft
+has
+proposed.
+Or
+there
+is a
+drawback.
+It's not a
+drawback.
+It's a
+trade-off.
+Yes,
+what we
+just said
+was
+great.
+If
+we
+can
+use
+different
+constellation
+maps
+to
+achieve
+better
+frequency.
+But
+the
+problem is
+that
+you
+need to
+reconfigure
+the
+map
+to
+achieve
+good
+frequency.
+If
+you
+have
+a
+new
+map,
+you
+need to
+reconfigure
+it.
+You
+need to
+reconfigure
+it.
+So
+I
+need to
+reconfigure
+it.
+So
+we
+need to
+reconfigure
+the
+map
+to
+achieve
+good
+frequency.
+So
+I
+need to
+reconfigure
+it.
+So
+I
+need to
+reconfigure
+it.
+So
+I
+need to
+reconfigure
+it.
+So
+I
+need to
+reconfigure
+it.
+So
+I
+need to
+reconfigure
+it.
+So
+if we
+suddenly
+reconfigure
+the
+map,
+the
+map
+will
+suddenly
+break.
+The
+broken
+map
+will
+cause
+the
+traffic
+disturbance
+caused
+by
+the
+network
+sending
+signals to
+the
+network.
+So
+the
+traffic
+will
+be
+disrupted
+or
+thrown away.
+So
+the
+users
+will
+protest.
+For
+example,
+if you
+call
+the
+network
+to
+slow
+down
+or
+break
+the
+network,
+it
+will
+cause
+the
+network
+to
+slow
+down
+or
+break
+the
+network.
+So
+the
+traffic
+will
+be
+disrupted
+or
+thrown away.
+So
+the
+traffic
+will
+be
+disrupted
+or
+broken.
+So
+the
+traffic
+will
+be
+disrupted
+or
+broken.
+So
+the
+network
+will
+be
+disrupted
+or
+broken.
+The
+traffic
+will
+be
+broken or
+broken.
+The
+traffic
+will
+be
+disrupted
+or
+broken.
+So
+the
+traffic
+will
+be
+disrupted
+or
+broken
+or
+damaged
+or
+so.
+So
+the
+traffic
+will
+be
+disrupted
+or
+broken.
+So
+the
+traffic
+will
+be
+disrupted
+or
+damaged
+or
+so.
+So
+the
+network
+will
+be
+disrupted
+or
+broken
+or
+damaged
+or
+damaged
+or
+damaged
+or
+other
+traffic
+will
+be
+disrupted
+or
+broken
+or
+damaged
+or
+damaged
+or
+damaged
+or
+****
+disrupted
+or
+trashed
+or
+controlled
+traffic
+by
+walking
+or
+biking
+or
+traveling
+by
+running
+or
+traveling
+express
+The traffic may be slightly affected by the movement of the network,
+but it is not directly affected by the movement of the network.
+This is similar to
+what the paper said
+in the past.
+If we want to
+change the
+traffic,
+we should change the concept in stages.
+This is the update of the multi-step.
+So,
+we can see the difference.
+If we use the original proposal,
+which is to cut it off directly,
+and then restore it,
+we may cause a huge
+churn.
+But if we have several steps now,
+what should we do?
+What should we do
+in each step?
+This is what we want to do.
+In this paper,
+what kind of update
+do we want to do?
+In fact,
+I try not to interfere with
+so much
+network traffic
+in each step.
+This sounds quite intuitive.
+If I can
+get to my
+final destination today,
+and in each step,
+I will not
+let my
+original network traffic
+be cut off.
+It may only lose a little,
+but not too much.
+For me,
+the less loss,
+the better.
+If the best situation is that
+I do not lose any traffic at all,
+I can get to the end.
+But because you have to adjust,
+you have to
+have some lines that cannot be used.
+So, you will definitely lose a little,
+but you do not lose too much.
+This should be
+a conceptually
+better
+adjustment plan.
+The concept of
+not losing too much
+is called perseverance.
+Perseverance
+is the so-called
+consistency.
+That is,
+this traffic,
+originally,
+for example,
+if it is 1,
+it can be conservative.
+It can not
+lose much.
+Its loss
+may be less than
+how much.
+We call it
+perseverance level.
+Of course,
+we hope that
+this perseverance level
+is
+the higher,
+the better.
+Perseverance
+is originally
+1.
+How much
+do I need
+for the rest?
+For example,
+0.9,
+0.8,
+like this.
+Like this.
+So,
+what is
+our final
+plan?
+Our plan
+becomes that
+we want to
+get to the end
+as soon as possible,
+but we do not want
+to lose too much
+traffic
+in each step
+in the middle.
+It becomes that
+we look for
+the so-called
+perseverance way,
+which is
+to consider
+the consistency of
+traffic engineering.
+The consistency of
+traffic engineering
+means that
+we want to
+get to the end
+as soon as possible,
+but we do not want to
+lose too much
+traffic
+in each step
+in the middle.
+This is
+what we
+proposed
+in the middle
+of this paper.
+We want to
+do this
+new proposal.
+We think
+this is
+actually better
+than the
+original
+churn-based
+proposal.
+Why?
+Because
+in the churn-based
+proposal,
+you cut off
+most of the
+traffic,
+so you will
+get a
+very serious
+network interference.
+This is
+actually the
+so-called
+perseverance level
+zero.
+Between
+the two
+steps,
+what can
+I lose the most?
+I can lose
+all my traffic.
+All traffic
+can be cut off,
+which is
+perseverance level
+zero.
+However,
+if we
+keep a
+higher
+perseverance level,
+for example,
+0.5,
+there are
+two middle
+steps in
+the update
+plan.
+In each
+plan,
+I lose
+at most
+half of the
+traffic.
+For example,
+if my
+traffic was
+from the
+left to the
+right,
+all my
+lines were
+used up.
+In the first
+step,
+I pulled
+the traffic
+from the
+top line
+down
+and cut
+them
+off.
+In this way,
+I keep
+at least
+half of
+my
+traffic.
+In the
+entire
+update process,
+Can you
+go back
+to the
+last page?
+Yes,
+it's in the
+last page.
+It's in the
+last page.
+There are
+several pages
+in the
+last page.
+This one?
+Yes.
+It's a bit
+laggy.
+Yes,
+this page.
+I don't know
+if this is
+practical.
+For example,
+you show
+a step,
+the first
+version,
+and then you
+propose
+unstep.
+The next
+thing I think of
+is why
+don't you
+make it
+infinite?
+This
+line becomes
+a smooth
+function.
+A very
+good question.
+Your
+limitation
+is not
+how big
+a step
+is,
+right?
+But what
+does every step
+mean?
+Every step
+needs at
+least one
+line,
+right?
+But the
+network is
+made up
+of limited
+lines,
+so you
+can't have
+infinite steps
+because you
+need at
+least one
+line every
+time.
+So you
+can only
+have n
+lines,
+so you
+can only
+have
+one
+line every
+time.
+For
+example,
+if I
+want to
+make a
+better
+step,
+but
+it
+gets
+bigger
+in the
+middle,
+I
+don't
+enjoy
+anything.
+I
+lose
+some
+frequency.
+So
+we want
+the process
+to be
+as short
+as
+possible.
+We
+can't do
+that in
+reality.
+The
+second
+thing is
+that even
+if we
+consider
+an infinite
+network,
+we
+don't want
+to do
+that because
+we want
+to get
+to the
+new
+state as
+soon as
+possible
+so that
+we
+can have
+more
+flexibility.
+For
+example,
+we can
+ask a
+few
+questions.
+We
+call this
+a
+re-adaptation
+planning
+problem.
+How
+do I
+adjust
+this
+variable
+network
+plan?
+How
+many
+steps
+do I
+need to
+do?
+The
+first
+question is
+how
+do I
+solve this
+problem?
+Is
+there
+a way
+to
+solve it?
+Unfortunately,
+this is
+a very
+difficult
+problem
+called
+NP-hard.
+This
+is a
+very
+difficult
+problem
+in
+computer
+science.
+It's
+basically
+very difficult
+to
+solve
+this
+problem.
+If
+I
+didn't
+calculate it
+accurately,
+it's
+basically
+the same
+as
+the
+NP-hard
+problem.
+The
+problem
+is
+too
+difficult.
+It's
+not only
+difficult
+to find
+the best
+plan,
+it's
+also
+difficult
+to
+solve
+the
+problem.
+This
+is
+a very
+difficult
+problem.
+It's
+very
+difficult
+to
+solve
+the
+problem.
+The
+problem
+is
+too
+difficult
+to
+solve.
+It's
+very
+difficult
+to
+solve
+the
+problem.
+It's
+a
+very
+difficult
+problem.
+The
+problem
+is
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+pride
+is
+not
+so
+difficult
+that
+it's
+not
+so
+difficult
+that
+it is
+not
+so
+difficult
+that
+pride
+is
+not
+so
+difficult
+that
+it is
+not
+so
+difficult
+that
+pride
+it is
+it
+is
+not
+so
+difficult
+that
+pride
+it is
+so
+difficult
+that
+it is
+so
+difficult
+that
+pride
+is
+not
+so
+difficult
+that
+pride
+is
+not
+so
+difficult
+that
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+王
+So, did our proposal really cut off the traffic?
+Did we really avoid this from happening?
+And then,
+we said that we have heuristics.
+Is this heuristic easy to calculate?
+Or is it actually difficult to calculate?
+If it's also difficult to calculate,
+we didn't mention one thing,
+and then we have to calculate for a long time,
+for example, for ten minutes,
+we can only update our link.
+If we update our link,
+and then the traffic changes,
+then we won't have enough time.
+So, we hope that it can be calculated soon.
+So, we did some experiments.
+We first used
+Microsoft's Microsoft Swan
+and Google's Beeple
+to do the experiment.
+And then our
+Skynet design heuristic,
+we call it ALG.
+And OPT,
+we call it the best solution.
+So, let's answer the first question.
+After we add this
+heuristic condition,
+can we get
+a better rating?
+The conclusion is yes.
+This row equal to one,
+if we call this heuristic
+as 1,
+we can never
+lose any rating.
+That means we basically
+don't update our links.
+We can never
+lose any network traffic.
+The simplest way is
+we don't move,
+and we will never lose any traffic.
+The original overall rating
+is like this,
+the column on the far left.
+The column on the far right
+is the solution
+proposed by Microsoft.
+If we lose in the middle,
+how much can we get in the end?
+We can see that
+even if we add
+this perseverance limitation,
+we still,
+whether it's the best solution
+or our heuristic,
+in the end,
+they can be the same
+as the solution
+proposed by Microsoft.
+Basically the same.
+That is to say,
+although we have perseverance limitation,
+we are more smooth
+than the original proposal
+proposed by Microsoft.
+But we can't get
+the best rating
+because of that.
+In fact,
+we can't get
+the same rating
+as Microsoft.
+So,
+this is the answer
+to the first question.
+The second question is
+what kind of number
+should we set
+as our perseverance level?
+That is,
+what kind of loss
+can we accept?
+We can see
+what the second picture
+is about.
+That is,
+the process of update,
+the process of overall rating increase.
+If we start with
+a 0.5 perseverance,
+0.5 perseverance,
+that is to say,
+I can accept
+that I only have 0.5 left.
+Of course,
+we give the system operator
+a lot of space
+to adjust these lines.
+So we can reach
+our final level very quickly.
+Of course,
+the less loss I am willing to accept,
+that is to say,
+the higher the perseverance limitation I require,
+the less links
+I can update every time.
+Because if I cut off a lot of links,
+I can't ensure
+that the original
+load flow
+can still reach
+the original 0.9 level.
+That is to say,
+it will be slower.
+This requires more steps
+to reach the final level.
+So the higher the perseverance limitation,
+of course,
+the slower you will be.
+Then we will ask,
+if there is a perseverance limitation,
+what is the relationship
+with my
+converge time?
+Of course,
+if you are willing to
+accept more interference,
+that is to say,
+if you are willing to accept more disturbance,
+the faster you will
+get to your final state.
+This is the same as the picture just now.
+This is a more detailed picture.
+That is to say,
+we ran 1000 random cases,
+and we found that
+of course,
+the higher the perseverance level,
+the more time it takes to converge.
+We can find that
+most of the time,
+your perseverance level
+is between 0.5 and 0.7.
+That is to say,
+it will converge pretty fast.
+It will converge pretty fast.
+It won't converge
+when it is set to a very high level.
+So our best choice is this.
+That is to say,
+we can converge
+in 3 to 5 steps.
+At the same time,
+we keep the original
+flow rate between 0.5 and 0.7.
+That's actually not bad.
+At least 7 steps.
+Compared to the original
+that we threw away directly,
+we still have 5 to 7 steps
+to throw away.
+We originally
+argued that
+this perseverance level
+can make the whole process
+smoother.
+That is to say,
+we won't throw away a lot of traffic.
+Is that so?
+Let's take a look at
+the degree of vibration
+in the update process.
+The more vibration,
+the more to the right.
+The less vibration,
+the more to the left.
+Can you see
+that we have introduced
+these two methods
+of perseverance limitation?
+Its vibrations are very few.
+It's not very few.
+Its vibrations are smaller
+than the original
+Microsoft Red1 method.
+That is to say,
+our perseverance limitation
+does help
+the whole update process
+to be smoother.
+The last question
+we want to answer is that
+this is great.
+We are very smooth.
+But how long
+does it take to get it?
+If it takes a long time,
+it will be lost.
+Let's take a look at
+the computation time.
+The computation time
+is how long
+it takes
+to find
+a solution.
+The time on our watch
+is millisecond.
+That is to say,
+millisecond.
+If we want to find the best solution,
+it can't be calculated
+in a very short time.
+But in fact,
+if your network is very small,
+this thing can be solved by force.
+You just force
+to find all the possible solutions.
+In fact,
+it can be calculated quite quickly.
+For example,
+if you want to find the best solution,
+it takes 67 milliseconds.
+If you have a bigger network,
+a bigger network,
+it takes more seconds.
+Until you have this,
+for example,
+this is a Google network.
+Google network,
+you have to spend
+1.2 times 16 times
+milliseconds to find one.
+How much is that?
+This is about
+more than 1,000 seconds
+to calculate
+the process of updating once.
+After you finish the calculation,
+after 1,000 seconds,
+you may have changed the message again.
+Then you just
+wasted your time.
+In contrast,
+our algorithm,
+our heuristic,
+only takes more than 300 milliseconds
+to calculate.
+That is to say,
+in less than a second,
+we can tell the entire network
+how to adjust.
+This efficiency is very high.
+The speed of our calculation
+is very fast.
+And we can also
+let this
+be found in the previous
+few experiments.
+In fact, the algorithm we proposed
+is not much different from the best solution.
+Although we can't prove
+that they are always close to each other,
+because we just said
+that this thing can't be
+done on this mirror.
+But in fact,
+in terms of real things,
+the solution we calculated
+is not much different from the best solution.
+And our algorithm
+is very fast.
+This is the benefit
+of our new solution.
+To sum up,
+what is this paper
+talking about?
+This paper says
+that instead of cutting
+all the lines directly
+and then update them,
+and then we use
+a higher frequency
+to send new traffic,
+we should consider
+consistency.
+That is, we need to make sure
+that the network traffic
+is not lost too much
+in the process of traffic.
+Considering this consistency,
+it won't cause too much burden.
+Because we have
+a very good algorithm.
+It can quickly
+solve this problem.
+It can quickly approach this problem.
+It's not a solution,
+but it can quickly
+find a solution.
+And this solution
+is actually pretty good.
+It's not much different
+from the best solution.
+It's not much different
+from the performance
+of cutting directly.
+But it's very
+smoother than
+cutting directly.
+Of course, we also admit that
+in addition to consistency,
+system operators
+can also consider
+more different aspects.
+For example,
+in the middle of the network,
+in the middle of the update,
+we hope that
+these traffic
+are not lost too much.
+We may also hope that
+they have some other
+characteristics.
+For example,
+each traffic
+cannot be less than
+the absolute traffic.
+For example,
+I must be greater than 10Mbps,
+I must be greater than 20Mbps.
+It may not be a percentage,
+but an absolute traffic.
+We must maintain
+how much traffic.
+Otherwise,
+I won't,
+for example,
+I won't feel a lot of delay
+in the middle of playing video games.
+How much traffic do I need at least?
+For example, like this.
+So this system operator
+can actually adjust
+their requirements
+for the network.
+And then,
+let this network
+operate more effectively,
+more efficiently.
+And they can,
+in the end,
+get a better balance.
+That's all
+for my speech today.
+If you have any questions,
+please feel free to ask.
+Thank you for listening.
+This topic,
+this topic
+is a little bit harder.
+So,
+if you have any questions,
+please feel free to ask.
+Let me welcome,
+let me give a round of applause
+on behalf of everyone.
+Yeah.
+Okay,
+do you have any questions?
+Do you have any questions?
+Let me ask.
+Yes.
+For example,
+if you are now
+changing
+their,
+for example,
+the two ends of the fiber.
+For example,
+the way they receive
+modulation.
+Yes.
+So,
+on the hardware,
+will this thing need to be changed for a long time?
+For example,
+you were,
+for example,
+you said green light, red light, blue light.
+Maybe it was only red and yellow.
+Then you added
+green light into it.
+Yes.
+Will it work
+on the hardware?
+This is a very good question.
+Yes,
+it works.
+Then how long does it take?
+At the time of RedOne,
+in 2018,
+it took
+a few dozen to a few hundred milliseconds.
+Every step,
+a few dozen to a few hundred milliseconds.
+Of course,
+we can consider,
+if you say
+a few dozen to a few hundred milliseconds,
+there is no difference, right?
+But if you consider
+these are broadband networks,
+these broadband networks
+carry a lot of traffic.
+It may have a few terabytes of traffic
+or a few thousand terabytes.
+Multiplied by a few hundred milliseconds,
+that is a very objective
+traffic loss.
+But,
+how did it work before?
+It used to be like
+you said,
+what if you want to add red light,
+add blue light?
+It is to turn off both sides first.
+Because your laser needs to be adjusted again.
+After you adjust the laser again,
+you let it send out the laser again.
+So,
+turning it off and restarting
+is actually very slow.
+Now,
+why does it need a few hundred milliseconds?
+It was mentioned
+in the original RedOne paper.
+They said,
+if we say
+turning it off and restarting
+is a major factor
+in causing this delay,
+we can try not to turn it off and restart.
+If you don't turn it off and restart,
+they can't make it work
+at that time.
+But they estimate that
+if you don't turn it off and restart,
+it may only take
+a microsecond
+to reach
+the goal of re-adjustment.
+If we say
+our future network
+can be seamless,
+that is,
+if I want to re-adjust,
+I can re-adjust immediately.
+Then,
+of course,
+our research
+has nothing
+to do with
+their original research.
+Because we basically
+don't lose anything.
+So,
+I think this question is very important.
+In the end,
+how is it done on hardware?
+Can it be done?
+Yes, it can be done.
+Is there any other
+research requirement on hardware?
+Yes,
+that is,
+how do we adjust
+this modulation
+dynamically?
+In fact,
+there are many ways
+that can be thought of.
+For example,
+we can send the modulation
+in advance,
+right?
+Then I will tell the other person
+when I start
+to use this new modulation.
+In the middle,
+it may need
+some ways
+to let the two sides communicate.
+For example,
+you want to use a clock.
+That is,
+you want to make
+the timing
+good enough.
+For example,
+I will immediately switch
+both sides at 7 o'clock.
+This is actually quite difficult
+because you have to
+synchronize both sides.
+That is to say,
+your time is consistent.
+In fact,
+sometimes it's not that easy.
+Another way is
+you send some
+this packet,
+send some information.
+That is,
+in addition to your
+information,
+send some
+control messages
+to the other side
+and tell him
+I want to start using it.
+Then,
+which packet
+do I start using?
+For example,
+it's a little more complicated.
+Because the current
+system is not designed like this.
+Their original system
+may have imagined
+that once you turn it on,
+what is the modulation?
+Just keep using it.
+So, in the middle,
+there are actually
+a lot of research that can be done.
+Does this answer your question?
+Yes.
+So, you said
+Microsoft
+changed
+the modulation method like this.
+How many times can it be improved?
+Or how many percent?
+How many times can it be improved?
+Its improvement
+is actually pretty good.
+Let me find
+its original paper.
+I don't know if you can see
+the original.
+It's not good for me to show the paper directly.
+But it doesn't matter.
+Let's take a look.
+When you show it,
+before you finish,
+you swipe to its title page
+and show the author.
+The author.
+Do you know why?
+Does it mean you can see the author?
+Yes.
+If you look at its original paper,
+it's actually...
+Let me see.
+It can actually improve
+a lot of traffic.
+Or it can
+avoid traffic drop.
+But because their original
+paper
+talks about
+a pretty simple
+network.
+It only has four points.
+These four points
+are in California.
+So this
+is just a prototype.
+So
+when it's actually used,
+we can only say
+it has a lot of potential.
+But in the end,
+when it's actually used,
+it's not sure
+if it's good or not.
+But this idea
+has a lot of potential.
+This is the paper.
+Whatsoever published this paper.
+Whatsoever published this paper.
+The purpose of this paper
+is to say
+this idea is pretty good.
+But
+our update
+doesn't need to be so crude.
+It can be more detailed.
+This concept.
+Of course, if we have better
+hardware in the future,
+then...
+Go ahead.
+My question is this.
+When you're doing
+your simulation,
+basically,
+you have to have some assumptions
+about disturbance.
+Yes.
+What kind of
+situation are you in
+to compare?
+So your disturbance
+is like,
+Google,
+what do they do?
+Or how do you
+generate
+the disturbance
+in your simulation?
+This is a good question.
+So
+what I actually generate
+is not disturbance.
+What I generate is
+this link
+the current state
+and the next state.
+So I actually
+added a layer
+of assumption.
+That is to say,
+let's assume that
+my current link
+can only send
+50 gigabytes per second.
+50 Gbps.
+And then
+because
+the noise has dropped
+I can send 100 Gbps now.
+How should I update?
+So
+in the middle
+I put the
+relationship between
+noise and signal
+in there.
+In fact,
+in operation,
+of course,
+there are
+other restrictions.
+In fact,
+there is also in the paper.
+But I don't want to
+show this paper again.
+That is to say,
+the adjustment of our screen width
+is actually
+not continuous.
+That is to say,
+the screen width
+we can use
+is not continuous.
+For example,
+25 Mbps,
+50 Mbps,
+100 Mbps,
+150,
+like this.
+So,
+you are actually
+choosing these kinds.
+No matter how much noise you have,
+when it reaches
+a certain point
+you can probably
+adjust it up.
+You can adjust it
+from 100 to 150
+or 150 to 200.
+But in fact,
+why can you adjust
+the principle
+is what I just said
+about the noise.
+So, in fact,
+how is it measured?
+I don't have
+this information.
+I just
+make an assumption
+based on the range
+it can adjust.
+So, my assumption
+is that
+the original link
+may be
+in this
+100 Gbps
+mode.
+Because
+my
+noise
+may be reduced,
+so now
+suddenly this link
+can reach 200 Gbps.
+If it is
+in this situation,
+how do we
+go from 100 to 200 Gbps?
+So, a better way
+is
+you have already
+assumed
+your work goal
+is to adjust like this.
+But you tell it
+how to be smarter.
+Not that
+it's not
+that
+it's not like
+at the analog level
+that
+the noise pattern is like this,
+so we should
+decide
+what state to adjust.
+That is already
+a given
+assumption.
+Yes, a given.
+So, let's say
+my device tells me
+this thing.
+I see.
+My research
+is usually
+at a higher level.
+So, let's say
+the device tells me
+these things,
+how do I plan
+this thing?
+Okay, anyone else
+have any questions?
+Okay, if not,
+let's
+give another round of applause
+to Shihai.
+Thank you, everyone.
+Thank you.
+Okay, that's all
+for today's lecture.
+I'll...

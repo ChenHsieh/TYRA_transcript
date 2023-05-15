@@ -1,0 +1,2209 @@
+Hello, everyone. Welcome to today's Tera Talk.
+We're honored to have Lin Weikai with us today.
+Lin Weikai has been a good friend of mine for many years.
+Lin Weikai is now a third-year PhD student at Cornell,
+majoring in Computer Science.
+Lin's research focuses on cryptography.
+His main focus is on Oblivious algorithm.
+This allows the algorithm to store data without revealing the content.
+He majored in Chemistry when he was a college student.
+He majored in Computer Science when he was a master's student.
+He majored in Computer Science when he was a master's student.
+Before his PhD,
+he worked as a software engineer at Chengxin.
+He also worked as a research assistant at the Central Academy of Sciences.
+What Lin is going to talk about today is the concept of Oblivious algorithm.
+But today, he's going to talk about a new definition of
+the fairness of multiparty coin tossing.
+Let's give him a round of applause.
+By the way, remember to turn on the microphone when you clap.
+Let's give him a round of applause.
+Thank you for such a wonderful introduction.
+The title is complicated,
+but I assume most of you have heard of the theorem of the game.
+Today's topic is
+the concept of coin toss.
+I'm going to talk about the relationship between coin toss and the theorem of the game.
+This work was done by Zhong Kaimin at the Central Academy of Sciences.
+Guo Yue, Rafael, and I are both at Cornell.
+Cornell Tech is a campus at NYC.
+Cornell has a new campus at NYC.
+Let's talk about the topic of coin toss today.
+The motivation of this research is very realistic.
+Although I usually do theoretical research,
+our motivation is very realistic.
+What is the motivation?
+Trump and Xi want to hold a summit.
+Where will it be held?
+Trump wants to hold it in DC.
+Xi wants to hold it in Beijing.
+If these two people can't get along,
+what should they do?
+The easiest way is to make a decision by tossing a coin.
+If these two people can't get along,
+how can they toss a coin?
+This is a tricky question we are going to discuss today.
+If these two people can't get along, how can they toss a coin?
+Let's not talk about whether the coin toss will be fair or not.
+If they can't get along,
+if Trump tosses a coin here,
+Xi won't believe it even if he doesn't see it.
+So what should they do?
+If I have a way to toss a coin,
+a way to toss a coin remotely,
+if the coin tosses out,
+Xi is in DC,
+Xi is in Beijing.
+If the coin tosses out remotely is fair,
+everyone will be happy.
+Half and half chance.
+In the game,
+someone will tell you that there is a payoff.
+What is the coin toss?
+Which side has how many payoffs or utilities?
+But let's not talk about this.
+In history,
+there is a hotline between the United States and the Soviet Union.
+Maybe there is also a hotline between Trump and Xi.
+If they don't meet, they can talk on the phone.
+If there is a question in the middle,
+you can interrupt me at any time.
+I hope everyone can understand what I am talking about today.
+If you don't understand,
+don't be afraid.
+Try to ask.
+The purpose of the hotline is that
+you say one sentence, I say one sentence,
+and the other party can hear what I say.
+Then there is nothing else.
+So the hotline can't help you directly
+toss a coin.
+It's not such a good thing.
+But what can the hotline do?
+The hotline can communicate on both sides.
+After the communication,
+the hotline may have an output.
+B is equal to 0 or B is equal to 1.
+It's the same side.
+The hotline can do this.
+It can help you create a random variable.
+Its value is 0 or 1.
+The probability is 0.5 or 0.5.
+What I want is to get a random variable.
+It's a random variable defined by math.
+If you are familiar with the random variables defined by math,
+or you've heard of it in class,
+I have a way to get the two sides to toss a coin.
+How do you do it?
+Trump throws a coin first.
+The coin is 1.
+Then Trump says to Xi on the phone,
+my coin is 1.
+Then Xi says,
+I got it.
+Your coin is 1.
+Then both sides agree that the coin is 1.
+If Trump throws a fair coin,
+this method may work.
+But Xi is obviously not happy.
+If Trump is a bad guy,
+and he didn't throw the coin at all,
+it's not a good thing for Xi.
+He won't agree with the result of the coin toss.
+Don't say that Trump made a mistake at the beginning,
+and made it unfair.
+Even if he made a very complicated LeTouJi,
+and recorded it,
+and sent it to Xi through a hotline,
+Xi won't believe it.
+If Trump didn't cheat,
+it may work.
+But neither side believes each other.
+This is a common problem in cryptography.
+If neither side doesn't believe each other,
+what should we do?
+A long time ago,
+there was a technology called commit.
+Trump first calculated a number X
+using SHA.
+Then he told Xi.
+This thing is called commit.
+Xi said,
+you calculated X, I calculated Y,
+and then E.
+Then Trump said,
+my X is below E,
+and then he made a mess.
+In order to hide the E at the beginning.
+Then these two sides,
+X and Y, XOR,
+is the result of the coin toss.
+In cryptography,
+these two things are simplified
+into commit and open.
+That is,
+he wrote an X,
+and then sealed it in the envelope to Xi.
+After Xi received it,
+he opened the envelope.
+The purpose of the envelope
+is to prevent the person
+who wrote the envelope from changing.
+The person who received the envelope
+can't see it for the time being.
+This is called commit and open.
+In the past...
+I have a question.
+Does this hotline
+have a rule
+that you have to do it one by one?
+Can't you say it at the same time?
+If you say it at the same time,
+everyone says 1, 2, 3,
+and I say 1 or 0,
+and everyone says XOR.
+This is a very good question.
+But because everyone doesn't believe it,
+they might say it slowly.
+So...
+This hotline
+has a rule
+that you have to do it one by one.
+You can't say it at the same time.
+You can't say it at the same time.
+I should say that
+I didn't assume
+that this hotline
+had to do it one by one.
+But Trump and Xi agreed
+and...
+If someone says it slowly,
+what should you do?
+Do it again?
+Yes, yes.
+Then it will be endless.
+Okay, good.
+Also,
+when we imagine a hotline,
+we can't judge
+who says it slowly.
+Because of the message delay,
+we can't be sure
+who says it slowly.
+If we do it one by one,
+we can be sure of the order.
+Okay, got it.
+So,
+at the same time,
+on the internet,
+it's hard to judge.
+This is a good question.
+Let's say
+all the protocols
+are one by one.
+And the order is...
+Okay,
+then,
+this thing,
+this commit and open,
+if you have a good commit,
+when you commit,
+the other side can't be opened.
+And the other side of the bus
+can't be tampered with.
+Then this thing,
+this coin toss thing,
+can be done fairly.
+Because when it commits to x in advance,
+it doesn't know what will happen to y.
+And when it commits to y,
+it doesn't know what x is.
+So,
+the result will be
+fair.
+And
+we can be sure
+the other side can't tamper with the result.
+Then,
+this thing,
+we've been talking about fairness.
+What kind of fairness
+do we want?
+The formal definition of
+mathematics is
+the expected value is 0.5.
+The result of the commit is only 0 and 1.
+And the probability is 0.5.
+So the expected value is
+0.5 times 0 plus 0.5 times 1
+equals 0.5.
+I want the expected value
+to be exactly 0.5.
+Then,
+if you look at this thing carefully,
+it's not exactly 0.5.
+I'll talk about this later.
+So it usually adds
+a very small fraction,
+negligible.
+But let's leave it alone.
+I just want 0.5.
+Then,
+this thing,
+unfortunately,
+in the
+previous result,
+a long time ago,
+about 30 years ago,
+what can't we do?
+This
+adversary,
+like Trump or Xi,
+can end
+earlier.
+This protocol is not finished yet.
+He said I'm not going to play like this.
+And
+this adversary
+is
+only when there is a limited
+computing power,
+this
+protocol,
+this is easier for the protocol
+to do.
+Let's assume that Trump and Xi
+have limited
+computing power.
+It's all polynomial time
+algorithm.
+This polynomial time,
+you may not be familiar with it,
+but
+you can make a decision
+within a few seconds.
+Then
+any
+protocol like this,
+in the result of this cliff,
+it can design
+an attacker to crack
+any protocol.
+So
+to achieve the expected value
+is exactly 0.5,
+no protocol can do it.
+The result is
+such a strong impossibility.
+That is to say,
+no protocol can do this.
+In this way,
+let's take a look at this example.
+Just
+commit and open this example.
+Here,
+we are using the
+new hash function.
+It's not new, it's about
+more than ten years.
+So far, everyone still believes that SHA-256
+is difficult to crack.
+For example,
+Bitcoin is still in use.
+How to
+crack it?
+If
+Xi's
+computing power is
+infinite,
+he can easily
+decrypt SHA-256x
+which is equal to a certain number.
+As long as he violently
+tries all the x,
+he can decrypt the x.
+After Xi knows
+the value of x,
+he can choose a relative y
+so that the result is what he likes.
+For example, he likes 0.
+0 represents Beijing.
+So when he sees that the value of x is 1,
+he chooses a y
+so that the result is Beijing.
+Trump doesn't know
+that he was fooled.
+He can only delete 1.
+The result is what Xi wants.
+This is
+if
+one of them
+has
+infinite computing power,
+something may happen.
+But
+what I said last time
+is even stronger.
+Even if Xi only has
+limited computing power,
+he can still attack.
+How effective
+this attack method
+can be?
+It can make the expectation value
+deviate
+to any
+deviation
+to any
+deviation
+to any
+deviation
+to any
+1 in three rounds.
+So
+1 in three rounds.
+The number of attacks
+is about 1 in three rounds.
+This is a very powerful attack.
+For example,
+For example,
+For example,
+the attacker
+has infinite computing power.
+He can make
+his expectation value
+deviate to 0.5.
+He can choose
+what he wants.
+But if he only has
+limited computing power,
+he can't
+make the expectation value
+deviate so much, but he can
+deviate to a certain number,
+which is 1 in three rounds.
+I just gave a random number,
+but according to this protocol,
+it is about 1 in three rounds.
+The expectation value is 1 in three rounds.
+From 0.5 to 0.5 plus 1 in three rounds
+is 0.8.
+So
+the result of
+cleave is very strong.
+You can't make a fair copy.
+Because no matter what protocol,
+it can create an attacker.
+Then
+make an effective attack in a limited time.
+Then
+here
+There is another thing
+to talk about this attack.
+This
+What kind of
+impact will it have at the beginning and end?
+For example,
+at the beginning, I talked about the simplest
+protocol.
+Trump threw a copper plate,
+and Xi Jinping received it and
+admitted that it was a copper plate.
+He admitted the result of the copper plate.
+This thing
+has a fail-stop.
+If one of them
+can end early
+and not late,
+it is difficult to achieve
+a fair result.
+For example, Trump threw a copper plate,
+and he saw this copper plate
+was not what he liked.
+He said, then I won't play.
+Then
+this
+If you don't play, Xi Jinping
+So far
+we still assume that he is
+honest
+to follow the game rules at the beginning.
+He received
+a copper plate message
+and then he
+admitted that the message of the copper plate
+was their consensus.
+But
+one of them is not late,
+what is the other party's consensus?
+This is
+difficult to say.
+In order to have a consensus,
+we usually have to define
+one of them
+is not honest and not late.
+What should the other party say?
+Xi Jinping
+threw a copper plate
+and it was 0.5.
+Or he has to
+fix the output
+0 or 1
+It's hard to say.
+Trump
+can see what he is doing
+honestly
+and decide
+when to end
+and when not to end.
+The entire output
+is completely controlled
+by the dishonest
+party.
+Then
+there is no fairness
+or
+security.
+The result of this copper plate
+output
+its fairness is the security
+I want.
+So
+the focus here is
+this
+computationally bounded
+the attacker's
+computing power is limited
+and it can end early
+these two things.
+If one of them is missing
+we all know
+we all know
+it can be done
+If I assume
+the attacker will never
+end early
+then this copper plate
+can be played
+up to 0.5
+but these two conditions
+these two computationally bounded
+and failstop
+when these two conditions exist at the same time
+we can't do it.
+And the proof that we can't do it
+is to really build a
+attacker
+and then target
+any protocol
+to attack.
+So
+but
+but
+when you look at the first page
+you may find it
+strange
+if Trump can't end early
+then Xi Jinping can
+say I like to be in Beijing
+then I will be in Beijing.
+This is
+another definition
+of
+the focus
+Hello
+Hello
+Is my connection broken?
+I can't hear you.
+Ok
+So
+Can you hear me?
+I can't hear you.
+I can hear you.
+But
+I can't hear the speaker.
+Ok
+Ok
+So the connection is broken.
+Let me contact him.
+Hello
+Can you hear me?
+I can hear you.
+I can hear you.
+I can hear you.
+How are you?
+I can't hear you.
+I am scared.
+I can't hear you.
+I can't hear you.
+So
+I call you
+because
+I can't hear you.
+I can't hear you.
+I can't hear you.
+I can't hear you.
+Can you hear me?
+I can hear you.
+I can hear you.
+I think my internet is down.
+I don't know where I am.
+I just
+talk about
+the commit and open
+protocol can
+protect
+good people.
+And
+why this protocol
+can protect good people?
+If
+one side
+can't finish early,
+the other side
+will be happy to say
+the other side is bad
+so I can
+protect my own interests
+to protect the interests of good people.
+So I will
+produce the result
+that good people like.
+Because
+the other side can't finish early.
+And
+this
+is just
+one example.
+Of course, you can also
+let the other side finish early
+and Trump
+will choose the result he likes.
+This is another case.
+In short,
+the commit and open
+protocol
+can
+guarantee
+the
+previous definition.
+Even if
+one side is attacking
+and the other side's expectation
+is still over 0.5,
+the payoff is still over 0.5.
+Because
+the basic idea
+is simple.
+If one side can't finish early,
+the other side will be happy
+to choose the result he likes.
+He can choose.
+So
+if one side can't finish early,
+the other side is
+a good person.
+If a good person chooses the result he likes,
+his expectation value will not be
+reduced by bad people.
+Is it okay
+to go this far?
+If it's okay,
+it will be a little more complicated later.
+But
+the most important thing to define here
+is to protect the expectation value of good people.
+And the payoff
+is the most important point.
+First,
+we need to define
+what a good person is.
+Second,
+what a payoff is.
+The payoff is
+the protocol.
+After running the result,
+I look at the result and decide
+how much benefit this result will bring me.
+Then
+I define
+that I want to protect the interests of good people.
+The expectation value is greater than a certain number.
+Of course,
+if I say a little more here,
+the payoff
+is completely
+restricted to
+the payoff function
+defined by this example.
+The payoff function itself is very simple.
+But
+in Game Theory,
+there are many strange payoffs
+that will make
+these results strange.
+But we won't discuss those today.
+Even in my paper,
+there is no way to discuss so much
+because there are too many strange payoffs.
+But the simplest
+payoff function
+is the focus
+of this paper.
+Okay,
+next,
+next,
+well,
+well,
+well,
+what you see here
+is that there are only two players
+and two parties
+playing.
+The two parties
+can achieve
+the fairness
+in this
+fairness in interest.
+The result
+may not be fair,
+but the interest is fair.
+Then we start.
+But a very natural question is
+when
+you add one more person,
+is there any way
+to achieve
+the fairness?
+So we just
+add one more person.
+Then
+I don't know if the third person
+is Jin Xiaopang or
+Putin.
+Anyway, it's A, B, C.
+Then
+we assume the simplest
+is
+what kind of output
+do these three people like
+is public.
+It's also public
+who aborts early and
+doesn't play early.
+So if C aborts early
+and doesn't play,
+A and B will not play
+sooner or later.
+So let's assume
+all the messages are public.
+Maybe you can imagine
+three hotlines or something.
+Or
+now this very popular
+blockchain
+messages are all public.
+So if one of them doesn't play
+or if one of them sends
+a message, the other two can
+know at the same time.
+One of the possible applications
+may be
+eating dumplings and tigers
+on the blockchain.
+But how do these three people define
+eating dumplings and tigers?
+You can also say
+the result of
+eating dumplings and tigers
+is 1.
+If the person who chose 1
+is 1,
+then he won.
+If the person who chose 0 is 0,
+he also won.
+Of course, this payoff is not
+0.3. So in some cases,
+the seller of
+eating dumplings and tigers may lose money.
+And the loser is not ABC.
+It's the one who
+opened the casino.
+This is just
+one example.
+But
+in terms of game theory,
+there are many
+forms of this game.
+But for now,
+let's focus
+on this
+simplest example.
+I just want to
+ask
+to protect the
+real
+interest.
+Can we do this?
+Then
+this definition
+we call it Maximin.
+Maximin is also
+a terminology borrowed
+from game theory.
+In the game,
+Maximin means
+everyone
+maximizes
+their own
+interest.
+I want to
+minimize
+my own interest.
+Basically,
+it means
+when others maximize
+their interest,
+I want to maximize
+my own interest.
+Why is it called Maximin?
+Because if one side is maximized
+and the other side is minimized.
+Anyway,
+intuition
+means
+I want to protect good people.
+Good people
+are people who play according to the rules of the game.
+The interest of good people
+should be greater than or equal to 0.5.
+This is the expectation value.
+After this thing is defined,
+the first question we ask is
+whether it can be done.
+Of course, there are other definitions
+of Maximin.
+Some are very natural.
+Some may seem
+unnatural in some scenarios.
+But we'll talk about it
+later.
+For now,
+let's focus on
+the definition of
+protecting good people's interests.
+Let's pause here.
+Is this definition clear?
+My definition is
+that my protocol
+should protect good people's interests.
+This is my definition.
+Then I ask
+whether this protocol
+can be constructed
+to protect good people's interests.
+I have a question.
+You said
+we should protect
+according to the rules of the game.
+This is a starting point
+of your research.
+I can understand this.
+The concept of
+protecting good people's interests
+is translated to
+greater than or equal to 0.5
+for the expected payoff
+of honesty.
+You said your game
+is not zero-sum.
+Is greater than or equal to 0.5
+greater than or equal to 0.5?
+You asked
+a good question.
+I don't write
+a quantifier here.
+For example,
+A, B, C are all honest.
+They all follow the rules of the game.
+Then
+everyone's
+expected value is 0.5.
+So you will ask
+the total expected value is 0.5.
+So I
+don't have a quantifier here.
+It's just that
+every honest is greater than 0.5.
+Oh, I see.
+I define
+it as
+A, B, C
+all follow the rules of the game.
+But they
+may not
+care about each other.
+They may not like each other.
+But they all follow the rules of the game.
+They are all good people.
+So the better way
+is that
+if I follow the rules of the game,
+it's my best choice
+among the players.
+This question
+will become another definition.
+What you just said will become another definition.
+So we'll
+discuss it later.
+OK, thank you.
+OK, so
+if
+this definition
+is not a problem,
+then we can
+discuss
+a simple example.
+When everyone
+wants the result to be
+1, or everyone
+wants the result to be 0,
+then
+this thing
+is extremely simple.
+This thing
+is extremely simple.
+As long as
+everyone sees
+the same side number,
+then everyone outputs
+the same side number.
+As long as everyone sees
+the same side number,
+then everyone outputs 1.
+Then everyone is happy.
+For example,
+if everyone wants the result
+to be 1,
+then everyone outputs 1.
+The dealer
+in the casino is not happy,
+but the rules of the game
+are set.
+The players are happy
+because everyone can win.
+But this example is not very interesting.
+Because
+if
+Trump, Xi and Putin
+all want to go to DC,
+then
+they don't need to discuss this thing.
+They are happy to go to DC.
+So
+this case is not interesting.
+Let's change to
+a more complicated one.
+If one of the players
+has a different side number,
+he is a minority.
+But
+I assume
+the bad guy who doesn't follow the rules of the game
+can only do one thing,
+which is
+he can't play earlier.
+I also have
+a slightly more complicated
+rule of the game
+that can protect
+the interests of good people.
+How to do this rule of the game?
+It's very simple.
+Let the minority throw the coin.
+After throwing the coin,
+he tells the result of the coin
+to the other two players.
+Then the other two players
+are very happy to receive the coin.
+Then the game is over.
+Why
+can this rule of the game
+protect the interests of good people?
+Because
+this game only forces
+one person to speak from the beginning to the end,
+which is the minority.
+If the minority
+speaks,
+he follows the rules of the game.
+If he wants to speak,
+he must follow the rules of the game.
+Otherwise, he will shut up.
+If he speaks,
+it means he follows the rules of the game.
+This coin is also
+fair.
+After the other two players
+receive the coin,
+they follow the rules of the game.
+Because
+everything is fair
+according to the rules of the game.
+If the only person
+who speaks
+does not follow the rules of the game,
+how can he not follow the rules of the game?
+He can only
+shut up.
+He does not say what he should say.
+This is his only way
+not to follow the rules of the game.
+When A and C see B
+do not follow the rules of the game,
+they are happy to decide that B is a bad person.
+A and C can be happy to say
+that we do not care
+about the loss of the bad person.
+We just follow our happiness.
+So
+what I just
+talked about
+is to prove
+that the rules of the game
+can easily protect
+the interests of good people.
+So
+if the only thing
+bad people can do
+is not to play,
+this thing is also easy to do.
+Just
+as I just said,
+throw a coin, send a message,
+and it's over.
+But
+these examples
+of Trump and Xi
+or Putin
+are not like this.
+They may
+not follow the rules of the game,
+not throw a coin,
+so
+the previous one, B
+threw a coin and sent a message,
+this thing is
+that the bad guy
+may not follow this rule at all.
+And
+if he doesn't follow this rule,
+then
+he can't protect
+the interests of good people.
+This is what we call
+random
+input.
+This is what we call
+random input.
+This is what we call
+random input.
+Everything is not fair
+when it is tampered with.
+And
+And
+And
+the main difficulty
+of this project is
+to discuss
+whether this case
+is fair
+to Maximin.
+And
+And
+We
+We
+spent a lot of time
+We spent a lot of time
+discussing whether he can do it or not.
+We can't think of a way
+to really do this thing
+to protect
+honest players.
+But we can't prove
+that he can't do it.
+So we can't do this thing.
+At the beginning,
+we thought he could do it.
+The reason is
+The reason is
+The reason is
+When bad guys
+When bad guys
+are restricted,
+there is a solution.
+There are
+many technologies
+on traditional documents
+that allow
+that allow
+a simple example
+that allows a simple example
+to resist
+the restricted bad guys.
+And then,
+we get a
+cryptographic operation
+and get a
+protocol that
+the bad guys are not restricted
+but still safe.
+This is called the game rule.
+Because
+there are a lot of experiences in our documents,
+we can upgrade
+this security
+in different situations.
+So when we first
+saw this problem,
+we can upgrade
+the security
+with what we already know
+or what we already know
+in the documents.
+But
+later on,
+we moved more documents
+and finally proved that
+it can't be done.
+And
+especially
+the bad guys
+can't be done
+like
+what I said earlier
+about the result of cleave.
+We really built
+a
+limited time attacker
+a polynomial time attacker
+to attack
+any
+protocol like this.
+And
+the middle proof is more complicated.
+I won't talk about it.
+But
+the point is
+these protocols
+can't be done
+in a lot of situations.
+And the proof
+is
+the proof
+taught in high school or
+university math class.
+The technical details
+in the middle
+are skipped.
+But I think
+this
+thing
+should be
+conveyed.
+I defined
+a
+so-called
+fair board
+for a
+specific payoff function.
+This is very specific.
+I have countless payoff functions.
+Only this
+payoff function
+can't be
+fair.
+Maybe other payoff functions can.
+Because
+some payoff functions
+are easy to do.
+For example, if everyone's payoff looks the same,
+it may
+degenerate to a
+case I just discussed.
+And
+the so-called
+profit of the city
+is defined
+in this way.
+So there must be
+some way to define
+the profit.
+But even in such a simple way
+to define
+the profit,
+there is still
+no way to
+protect the profit.
+This is the message
+I want to convey.
+And
+one more thing.
+Even if
+the attacker has limited computing power,
+it still can't be protected.
+If your attacker
+has very limited
+computing power,
+you still can't
+protect the city's
+profit.
+So
+what I just said
+is back to the first example.
+Where should
+Trump and Xi meet?
+They can decide.
+But
+when one person becomes the third person,
+and Putin is added,
+there is no way to
+protect the city's profit.
+This is the
+biggest message
+I want to convey.
+There must be
+one or two people
+whose profits will be damaged.
+And
+the witness here
+is very complicated.
+But
+it's just a simple
+expected value calculation.
+But there are a few more turns.
+But
+I won't
+talk about
+the details.
+So
+to sum up,
+more than three people
+can be grouped
+into
+a larger
+organization.
+For example,
+if I have
+ten people,
+I can group
+them into
+three large groups.
+If
+the three large groups
+correspond to
+what I just said,
+they still can't
+do it.
+Or if I can
+correspond to two people,
+I can tell you
+the result of
+Cliff earlier.
+So
+this...
+Actually I was going to ask
+if you keep saying
+you have three parties
+and you want to generalize
+what N-Party will do.
+Intuitively,
+it makes sense.
+If you can group them
+into three parties,
+you can reduce the problem.
+But if you say
+the bad guys
+can be grouped
+into a group of bad guys,
+you still have to assume
+the bad guys
+are good to each other.
+They are honest.
+So the shared information
+is what they are doing.
+They know
+each other is breaking the rule.
+Yes.
+Your question is very good.
+So I will
+jump a little bit
+to talk about
+high-level.
+I assume
+the bad guys
+I mentioned
+are
+good guys
+and bad guys.
+The bad guys
+have
+a common...
+What is it called?
+For example,
+they have
+a bad guy
+controlling them.
+So your question is
+maybe
+the bad guys A
+and bad guys B
+have different interests.
+So they
+control each other.
+So far,
+I assume
+the bad guys A
+and bad guys B
+have a bad guy leader.
+Maybe he is not
+in the game.
+But he is the leader of the bad guys.
+He controls all the bad guys.
+All the bad guys
+cooperate with each other.
+So
+for the
+bad guys
+or good guys
+two or three
+should be
+easy to explain.
+Did I answer your question?
+Yes.
+It's the same as I thought.
+OK. Thank you.
+I will talk about
+the bad guys A
+and bad guys B.
+Sometimes,
+the bad guys A and bad guys B
+don't always
+have the same leader.
+But
+to sum up,
+most examples
+can't be used
+to protect
+the good guys.
+Unless
+the problem is simple.
+Only one
+person has different preferences.
+And the bad guy is very limited.
+He can only
+play. He can't do anything else.
+Only a small piece
+can be
+justified.
+The justification defined
+under Maximine
+can only be justified
+by a small piece.
+The rest can't be justified.
+It's quite sad.
+Just now,
+the host
+asked
+some good questions.
+For example,
+I defined
+that the good guys' interests can't be damaged.
+My starting point is to protect the good guys' interests.
+The other starting point
+is more like
+game theory's
+Nash Equilibrium.
+The so-called bad guys
+or corrupt parties
+must have
+a certain economic motivation
+to do bad things
+to break the rules.
+This is
+another
+definition.
+This definition is very natural.
+For example,
+I defined a set of game rules
+in a certain game.
+Even if
+there is a
+bad guy controlling
+certain people,
+he becomes a bad guy.
+But the bad guys
+controlled by the boss
+don't have to
+listen to the boss.
+They have to
+listen to
+the boss
+to increase
+their own interests.
+Then,
+Nash Equilibrium
+requires
+the boss
+to increase
+the interests of the bad guys.
+This is
+very difficult
+for the boss.
+Especially,
+for example,
+what I said
+from the beginning is that
+the output is only 0 or 1.
+Your preference
+is only 0 or 1.
+If the boss
+controls both
+0 and 1,
+the boss
+can't
+satisfy
+both sides.
+Because
+one side's interest increases,
+and the other side's interest decreases.
+So,
+this definition is
+called Strong Nash.
+Strong Nash is borrowed
+from Nash Equilibrium.
+But in fact,
+this definition is easier
+to achieve than Maximine.
+Because the boss
+can do less
+and receive more restrictions.
+So,
+it's very easy
+to be fair
+under this definition.
+I don't know
+if the boss is a bad guy,
+or a good guy.
+As long as the two sides
+have different preferences,
+let them play
+what I said at the beginning.
+One side commits
+X,
+the other side
+decides a random Y,
+and the other side
+commits at the beginning,
+opens the envelope
+and decides what X1 and X2 are.
+Everyone
+listens to them.
+No matter how many people are there,
+10, 100, 1000,
+as long as two people
+are working.
+This thing
+is easy to prove.
+Just list all the conditions
+and it can be proved that
+this game rule
+can achieve
+Strong Nash.
+The boss can't
+increase
+the benefits of the boss.
+Let's go back to the first page.
+If you think about it,
+you will find
+these two definitions
+are exactly the same
+in 2Party.
+Because in 2Party,
+there are only two people.
+In 2Party,
+under this payoff,
+it is a completely zero-sum game.
+The situation of the two people
+is symmetrical.
+So the payoff of the bad guy
+is equal to
+the payoff of the good guy.
+This was established
+in Zero-sum.
+In the case of two people,
+there is only one bad guy
+and one good guy.
+So these two definitions are exactly the same.
+But in 3 or 4 people,
+or more people,
+these two definitions are completely different.
+One is
+almost impossible.
+The other is
+almost possible.
+This is a big difference.
+In addition to these two definitions,
+in my paper,
+I will consider
+other definitions.
+Maybe more natural, maybe more complicated,
+I don't know.
+The first one is
+the benefits of good people alone.
+In the case of Group,
+I don't consider the benefits alone.
+I consider the benefits of all good people
+to be added.
+The benefits of good people
+to be reduced
+or the benefits of bad people
+to be added.
+There may be different
+situations.
+For example,
+when the boss controls
+a group of bad guys,
+he may add all the benefits of the bad guys
+and divide them.
+This may be
+a suitable
+model for discussion.
+For example,
+the feasibility of these two
+is between Maximin
+and StrongNash.
+These four definitions
+are a bit complicated,
+so I won't talk about them all.
+Anyway,
+in the case of
+only two people,
+these definitions are equivalent.
+In the case of two people,
+the total is equal to the individual.
+In the case of zero-sum,
+the increase of bad people
+is equal to the decrease of good people.
+So these four definitions
+are the same
+in the case of two people.
+However,
+they are completely different
+in the case of more than three people.
+If you have learned
+or seen
+some game theory,
+you will
+immediately think of
+the question just asked by the host.
+There are
+various settings in game theory,
+such as the payoff function.
+Maybe the payoff function
+I just gave is not the most natural.
+In some cases,
+the payoff of zero-sum is more natural.
+Or in some cases,
+what kind of outcome
+does everyone like?
+What kind of outcome
+does everyone like?
+Where does Trump like to meet?
+Where does Xi like to meet?
+Maybe
+the payoff function
+is not the most natural.
+Maybe it's private.
+Everyone doesn't know.
+This is a more natural setting.
+In some cases,
+it may be like this.
+Of course,
+from the beginning to the end,
+I only talked about
+throwing a coin.
+Then this coin has only two sides,
+0 or 1.
+Then the coin becomes a dice.
+0, 1, 2, 3, 4, 5.
+Or I want to do something more complicated.
+For example,
+Trump and Xi want to
+add their salaries together.
+Something like this.
+These are all questions
+that can be discussed in depth.
+But there are a lot of questions
+that can be studied.
+This paper
+only discussed a small part of
+the blue ones.
+So this is
+the coin toss I talked about today.
+Thank you everyone
+for taking the time to listen to me.
+Thank you.
+Please turn on the microphone.
+Let's give a round of applause
+to our speaker today.
+Do you have any questions?
+No.
+Let me ask you a question.
+This question is not
+related to the content of the lecture.
+Did you publish this paper?
+Or did you throw it away?
+Do you want to
+write down the title of the paper
+and some other information
+that we can find,
+such as the date of the paper
+and so on.
+Then it will be recorded.
+If you are interested,
+you can look for it.
+How can I write it?
+I don't know.
+You can jump back to your PowerPoint.
+Okay.
+Just type it here.
+We can see it now.
+Wait for me.
+Text box.
+Okay.
+Now we are typing the text.
+Do you have any questions?
+Do you have any comments?
+You can ask some basic questions.
+For example,
+what do you study
+and so on.
+I have an interesting question.
+Of course,
+this is the most fundamental
+scenario.
+Then we can
+think about
+a special example.
+But now you...
+Let me think.
+So what you just said
+is basically
+your maximum
+and the two parties below
+are two extremes.
+They can be discussed.
+But those in the middle
+are in, for example,
+how many parties do bad people have?
+Are the interests of bad people
+completely the same?
+In these cases,
+your conclusion
+is related to
+N,
+how many good people and bad people
+are assigned to each other.
+What is the relationship between them?
+Will it affect your conclusion?
+Yes.
+I...
+I just posted
+the conference here.
+I will jump back to my PowerPoint.
+It is...
+In...
+In Max and Min,
+the simple case
+is that
+when greater than or equal to 3,
+it is impossible.
+In the middle,
+the group Max and Min
+is the same as Max and Min,
+greater than or equal to 3,
+it is impossible.
+It is related to N.
+Three people can't do it,
+or four people can't do it.
+In the middle,
+no matter how many people can do it,
+it is related to N.
+Does this answer the question?
+Yes.
+Actually, this is just the beginning of my question.
+I should say that
+I also expect that
+this thing is related to N,
+and N will affect your conclusion.
+If this is the case,
+it is closer to
+the realistic situation.
+For example,
+how do you study in computer science?
+Do you calculate one by one?
+Or do you use
+Monte Carlo
+to use empirical methods
+to conclude
+some relationships,
+such as the relationship with N,
+or what is the solution
+under some threshold,
+what do you usually do?
+So,
+the question asked by the host
+is more like
+I have
+a set of definitions
+on the left,
+a set of
+maybe it is the sky,
+maybe it is
+some
+realistic
+problem motivator
+definition,
+a set of
+motivator definitions,
+how do I discuss
+or
+how do I discuss
+the definition on the left
+whether it can be done
+or not,
+especially
+in this
+current
+talk discussion
+it is
+related to N,
+and how
+to say
+how much can be done
+and how much can't be done.
+In this
+work,
+there is
+no good way.
+In the middle,
+every case
+where N is greater than
+how much can't be done,
+is used
+to
+transform
+to make another statement
+N is greater than how much can't be done.
+For example,
+at the beginning,
+N is greater than 2,
+the first result is
+the lower bound of cleave.
+The following
+is to
+extend
+the first
+cleave's
+impossibility
+to 3 and 4.
+In this example,
+there is no good way.
+There may be
+other examples,
+but
+these definitions
+are
+the definitions of
+cleave.
+We
+don't have
+these continuous
+or
+continuous
+or functional
+mathematical tools
+to use.
+For example,
+I asked
+if there is
+Monte Carlo
+or experiments
+to prove
+those
+experimental
+methods,
+we usually
+avoid them.
+Because
+experimental methods
+are difficult to prove.
+Even if there are
+only 3 or 4 small numbers,
+it is not possible
+to prove.
+So,
+we
+rarely use them.
+Maybe
+we don't know
+how to use them
+to prove them.
+Our
+proof
+is here.
+It is more
+comprehensive.
+We calculate the probability.
+After that,
+we use...
+For example,
+here,
+we calculate the expectation
+and the probability.
+Then, we use the average
+to conclude
+whether it is possible or not.
+I see.
+Thank you.
+Do you have any questions?
+Hello.
+I have a question.
+Please go ahead.
+I still don't understand.
+Can you
+explain
+how to
+reduce
+3 to 3?
+How to reduce
+almost
+and malicious
+to 3?
+This
+is a good question.
+It is very simple.
+Let's assume
+n is equal to 4.
+If n is equal to 4,
+in this line,
+unanimous
+is the same.
+Almost is one less.
+Only one less.
+If n is equal to 4,
+it is...
+I just type it.
+It is 0, 1,
+1, 1.
+It is 0, 1, 1.
+Of course,
+it is symmetric.
+0 may be in one person.
+We don't know.
+We don't care.
+It is 0, 1, 1.
+Then,
+you have to ask
+whether
+there is a rule
+that allows 4 people
+to protect
+the interests of honest people.
+Let's assume
+there is a rule
+that allows
+4 people
+to protect
+the interests of honest people.
+What do we do?
+We do
+that
+I don't care
+whether 1, 1, 1, 1 is a good person or a bad person.
+I tie
+the two people
+who like 1 together.
+It is
+a person.
+It is
+a fatter person.
+They all like 1.
+The fatter person
+likes 1.
+If
+there is a rule that allows
+4 people to protect
+the interests of honest people,
+I tie
+the two people who like 1 together.
+Then,
+they
+play according to the rules of 4 people.
+I don't care
+whether it is a good person or a bad person.
+After
+I tie
+the two people together,
+there are only 3 people left.
+Their preferences
+are 0, 1, 1.
+Their preferences are 1.
+So, I tie
+their preferences to 1.
+If
+there is a rule that allows
+4 people to protect the interests of honest people,
+it is a rule
+that allows 3 people
+to protect the interests of honest people.
+Okay.
+Okay.
+It feels like a math problem.
+Yes.
+It's what we often do.
+We don't have a good tool.
+Is it the same
+for other preferences?
+Do you tie all 0s
+and 1s together?
+This question
+is a good question.
+We tie
+0s and 1s together.
+Then, we tie
+other 0s and 1s together.
+Why do we tie like this?
+It's because
+Cliff's result said
+that
+when you play
+with two parties,
+you must have a way
+to make them leave
+0.5.
+I don't know
+if it's from 0.5 to 1
+or from 0.5 to 0.
+But there must be one side.
+I don't know which side it is.
+He didn't tell you.
+But after
+tying 0s and 1s together,
+if it's one side,
+in my definition of
+maximum,
+it will definitely hurt
+one of the 0s and 1s.
+Because 0s and 1s are tied together.
+Okay.
+It doesn't matter which side it is.
+So,
+I can get
+a contradiction like this.
+Okay.
+It's amazing.
+The thing is that
+you can go down
+a few pages.
+I don't remember.
+Go down again.
+This is also right.
+The method of
+strong Nash equilibrium
+is that you call a 0 and
+a 1 out.
+Then they are tied together.
+The reason why this method
+can't be used in Max and Min
+is that you may choose
+0 and 1.
+One of them is a bad guy.
+I'll cut it here.
+I sent two representatives
+to point at the board.
+Why this thing
+doesn't work
+in Max and Min?
+The question is like this.
+The definition of Max and Min
+is that
+the benefits of good people
+can't be harmed.
+So,
+in the definition of Max and Min,
+the bad guy doesn't care
+about his own benefits.
+The bad guy
+can lose money.
+But the good guy
+just wants to harm the good guy maliciously.
+For example,
+the red one is the bad guy
+and the green one is the good guy.
+Can you tell the difference?
+The red one is the bad guy
+and the green one is the good guy.
+I can tell at the beginning.
+Sometimes the color is not enough.
+Because some people
+have color blindness.
+There are three bad guys
+and two good guys.
+If the bad guy just wants to harm
+the good guy maliciously,
+he can point to the bad guy
+and the good guy will like him.
+Then he will be harmed.
+He doesn't care.
+The good guy is happy.
+But as long as the good guy is not happy,
+Max and Min won't work.
+So, this thing
+doesn't work in Max and Min.
+Does it have anything to do with
+the question
+the host asked at the beginning?
+Do I consider
+all the benefits of the good guy
+or the benefits of the good guy
+individually?
+My strictest condition
+is that I can't harm
+every benefit of the good guy.
+So, Max and Min
+can't harm every good guy.
+Yes.
+This is a difficult question.
+The definition
+is tricky.
+There will be a lot of groups
+after the number of people.
+I have a question
+that is unrelated.
+If
+there is
+something
+that is completely random
+and everyone agrees that it is random.
+For example,
+there is a quantum stack.
+For example, the radiation of the sun.
+This is also possible.
+But you have to observe
+the same thing in two places.
+Yes.
+There is
+something called quantum entanglement.
+Do you know this?
+I know.
+There are two examples.
+For example,
+they have to spin up together
+and spin down together.
+I assign these two
+to two people
+who are far away.
+They observe this example.
+Spin up
+means one place.
+Spin down means another place.
+In this way,
+can we solve this problem?
+We don't need these protocols.
+There will be
+some ways
+that you can operate.
+Actually,
+I know entanglement,
+but I'm not familiar
+with how to do it.
+For example,
+you mentioned that
+you have to create two examples
+that have entanglement.
+I'm not
+familiar with it.
+Can we
+do this entanglement
+in advance
+and
+bias to
+one side?
+I'm not sure.
+Maybe.
+It seems that
+we need some proof
+to prove that
+the entanglement
+we created at the beginning
+is fair.
+I really don't know.
+I just heard it.
+After creating the entanglement,
+you have to give
+these two entanglement to two people.
+In this
+long-distance definition,
+it may not be
+very suitable.
+I don't know if there is a better explanation
+that it can't be done.
+But you have to
+give two bits
+to two people,
+or give two examples to two people.
+Actually,
+it doesn't
+go well with this
+definition.
+Why don't I
+create an entanglement
+and give the result to two people?
+OK.
+It makes sense.
+It doesn't seem that
+it can be solved.
+But I think
+there is room for discussion.
+Because some
+can prove
+that the entanglement
+is fair.
+Another thing
+I want to ask is
+at the beginning,
+what I said
+is that
+1, 2, 3,
+everyone says a number at the same time,
+and then X, O, 2.
+Why can't
+everyone
+say X, O, 2
+at the same time
+and then
+say the number?
+If it's
+more than 12 o'clock,
+you lose.
+It's the same with fail-stop.
+Fail-stop means
+if you are slow,
+you lose.
+Yes, but
+I think
+at the same time,
+it's difficult in practice.
+One is in China,
+the other is in the U.S.
+The distance is
+quite far.
+The transmission message
+may also have a delay
+of 0.0 seconds.
+0.0 seconds
+plus
+on the food,
+if the light
+is directly
+connected,
+it may be OK.
+But the network on the food
+has passed many host
+and the delay
+may be almost 1 second.
+You can't be sure
+how much time is there.
+59 minutes and 59 seconds.
+Is 1 second enough?
+Or
+too much
+will be a bit slow.
+It's hard to decide.
+At the same time,
+this is mainly
+difficult to do on the food.
+So people think
+if you can't do it
+or you can't prove it,
+you give up.
+Failstuff
+also requires a time.
+Yes, failstuff
+is...
+Yes, failstuff is...
+Let me put it this way.
+At the same time,
+the rules are tight.
+At the same time,
+after my message
+is sent out,
+it takes at least
+1 second to send it.
+It may not work if I arrive early.
+Because if I arrive early,
+there will be a relatively slow output.
+It won't work if I arrive late.
+Is it slow output
+or is it
+slow? I don't know.
+But failstuff
+has a relatively large
+range.
+I can
+arrive in 0 seconds
+or 10 minutes.
+So the range is relatively large.
+If I can't wait for you for 10 minutes
+and you haven't sent it out,
+it's just
+1 second
+or 1 minute
+to send it out.
+So the
+condition is
+strictly
+weak.
+Very interesting talk. Thank you.
+Thank you.
+Actually,
+it's been more than 10 minutes.
+Please turn on
+the microphone again.
+Thank you to our speaker, Weikai.
+Thank you, everyone.
+If you have any questions,
+you can
+go to our website and find
+Weikai's page.
+It's on the right side of our website.
+You can click and see his contact information.
+Or you can also search
+Weikai or Weikai's paper.
+You can also see this information.
+If you are interested in his paper,
+he just wrote
+on our
+screen.
+You can also see
+Weikai's speech
+in a few days.
+You can also
+contact Weikai
+and discuss more.
+Thank you again.
+Thank you for attending today's Terra Talk.
+That's all for today.
+Thank you, everyone. Bye.

@@ -1,0 +1,6736 @@
+1
+00:00:00,000 --> 00:00:05,000
+Welcome everyone to today's TerraTalk.
+
+2
+00:00:05,000 --> 00:00:10,000
+We are very happy to welcome Dr. Wang Guan Zhong.
+
+3
+00:00:10,000 --> 00:00:16,000
+He graduated from the Department of Electrical Engineering in 2010,
+
+4
+00:00:16,000 --> 00:00:20,000
+and graduated from the Department of Electrical Engineering in 2021,
+
+5
+00:00:20,000 --> 00:00:22,000
+and received his Master's Degree.
+
+6
+00:00:22,000 --> 00:00:24,000
+During his Master's Degree,
+
+7
+00:00:24,000 --> 00:00:27,000
+he worked in coding,
+
+8
+00:00:27,000 --> 00:00:37,000
+and developed the non-equilibrium screen function,
+
+9
+00:00:37,000 --> 00:00:38,000
+which is NEGF.
+
+10
+00:00:38,000 --> 00:00:39,000
+This is also in his title.
+
+11
+00:00:39,000 --> 00:00:43,000
+If you don't know what NEGF is,
+
+12
+00:00:43,000 --> 00:00:45,000
+he will explain it to you later.
+
+13
+00:00:45,000 --> 00:00:48,000
+From 2014 to 2020,
+
+14
+00:00:48,000 --> 00:00:53,000
+he went to Purdue University, Indiana,
+
+15
+00:00:53,000 --> 00:00:56,000
+and received his Master's Degree in Electrical Engineering.
+
+16
+00:00:56,000 --> 00:01:02,000
+His main job there was quantum transport method,
+
+17
+00:01:02,000 --> 00:01:05,000
+which is the method of quantum transmission.
+
+18
+00:01:05,000 --> 00:01:13,000
+His main focus was on nanostructure and quantum transmission.
+
+19
+00:01:14,000 --> 00:01:19,000
+Currently, he works in Intel's TCAP team.
+
+20
+00:01:19,000 --> 00:01:22,000
+Let's welcome Dr. Wang Guan Zhong.
+
+21
+00:01:26,000 --> 00:01:27,000
+You can start sharing.
+
+22
+00:01:27,000 --> 00:01:29,000
+Let me share my screen.
+
+23
+00:01:29,000 --> 00:01:31,000
+Can everyone see my screen?
+
+24
+00:01:35,000 --> 00:01:37,000
+Yes, but you can't see the slides.
+
+25
+00:01:37,000 --> 00:01:38,000
+Okay.
+
+26
+00:01:38,000 --> 00:01:40,000
+Can you see the slides now?
+
+27
+00:01:40,000 --> 00:01:41,000
+Yes.
+
+28
+00:01:41,000 --> 00:01:44,000
+Let's follow the Tyrell tradition.
+
+29
+00:01:44,000 --> 00:01:46,000
+Please turn on your microphones,
+
+30
+00:01:46,000 --> 00:01:50,000
+and let's welcome Dr. Wang Guan Zhong.
+
+31
+00:01:55,000 --> 00:01:56,000
+Hello, everyone.
+
+32
+00:01:56,000 --> 00:02:00,000
+I will be speaking in English for the next few slides,
+
+33
+00:02:00,000 --> 00:02:05,000
+because the technical terms may change.
+
+34
+00:02:05,000 --> 00:02:08,000
+My target audience this time is...
+
+35
+00:02:08,000 --> 00:02:12,000
+If you're interested in this field,
+
+36
+00:02:12,000 --> 00:02:15,000
+whether you want to apply for a Master's Degree,
+
+37
+00:02:15,000 --> 00:02:18,000
+or if you want to know more about this field,
+
+38
+00:02:18,000 --> 00:02:20,000
+or if you want to use this tool,
+
+39
+00:02:20,000 --> 00:02:24,000
+my target audience is like that.
+
+40
+00:02:26,000 --> 00:02:27,000
+If you have any questions,
+
+41
+00:02:27,000 --> 00:02:29,000
+you can send me an email.
+
+42
+00:02:29,000 --> 00:02:33,000
+These works were done when I was studying for a Master's Degree at Purdue.
+
+43
+00:02:33,000 --> 00:02:39,000
+The funding sources were NSF and NCSA.
+
+44
+00:02:39,000 --> 00:02:45,000
+I also received funding from the Department of Education.
+
+45
+00:02:45,000 --> 00:02:47,000
+So I wanted to acknowledge that.
+
+46
+00:02:47,000 --> 00:02:49,000
+I also worked with CELBACO.
+
+47
+00:02:49,000 --> 00:02:55,000
+This work was done by Purdue's supercomputer,
+
+48
+00:02:55,000 --> 00:02:58,000
+which we call RCAC.
+
+49
+00:02:58,000 --> 00:03:02,000
+This is the result of the computation.
+
+50
+00:03:02,000 --> 00:03:05,000
+My topic today is optoelectronic simulation,
+
+51
+00:03:05,000 --> 00:03:08,000
+and I will go over from the semi-classical
+
+52
+00:03:08,000 --> 00:03:10,000
+to quantum transport,
+
+53
+00:03:10,000 --> 00:03:12,000
+my different perspective.
+
+54
+00:03:12,000 --> 00:03:14,000
+Here is my outline,
+
+55
+00:03:14,000 --> 00:03:16,000
+and I will go over the motivation,
+
+56
+00:03:16,000 --> 00:03:18,000
+and what's the method being used here,
+
+57
+00:03:18,000 --> 00:03:21,000
+and I will show some results.
+
+58
+00:03:21,000 --> 00:03:25,000
+In the methods, I will go over the semi-classical.
+
+59
+00:03:25,000 --> 00:03:27,000
+Here's a missing label here,
+
+60
+00:03:27,000 --> 00:03:29,000
+and go over to what's NEGF,
+
+61
+00:03:29,000 --> 00:03:31,000
+and what is a beautiful probe,
+
+62
+00:03:31,000 --> 00:03:34,000
+and the difficulty of including different processes,
+
+63
+00:03:34,000 --> 00:03:37,000
+a recombination and generation process inside the NEGF.
+
+64
+00:03:37,000 --> 00:03:38,000
+How do we do that?
+
+65
+00:03:38,000 --> 00:03:40,000
+I will show some results to show,
+
+66
+00:03:40,000 --> 00:03:44,000
+first, the importance of including these kinds of processes.
+
+67
+00:03:44,000 --> 00:03:47,000
+Also, I will do a comparison.
+
+68
+00:03:47,000 --> 00:03:50,000
+If we use a semi-classical way to do simulation
+
+69
+00:03:50,000 --> 00:03:54,000
+versus using quantum transport way to do it,
+
+70
+00:03:54,000 --> 00:03:56,000
+what's the difference?
+
+71
+00:03:56,000 --> 00:03:58,000
+And do a summary there.
+
+72
+00:03:58,000 --> 00:04:03,000
+So, why are we working on this project?
+
+73
+00:04:03,000 --> 00:04:07,000
+It's because what we have achieved so far as mankind,
+
+74
+00:04:07,000 --> 00:04:09,000
+because we have solar cell,
+
+75
+00:04:09,000 --> 00:04:11,000
+and also to harvest energy from sun,
+
+76
+00:04:11,000 --> 00:04:14,000
+and also we can efficiently emit light
+
+77
+00:04:14,000 --> 00:04:16,000
+through light-emitting diets,
+
+78
+00:04:16,000 --> 00:04:18,000
+which is like a really efficient way
+
+79
+00:04:18,000 --> 00:04:24,000
+to transfer energy from electricity to lighting.
+
+80
+00:04:24,000 --> 00:04:26,000
+And to push the boundary further,
+
+81
+00:04:26,000 --> 00:04:31,000
+we need to look into what other new materials are out there,
+
+82
+00:04:31,000 --> 00:04:35,000
+what different new structures we can optimize
+
+83
+00:04:35,000 --> 00:04:37,000
+like the current efficiency.
+
+84
+00:04:37,000 --> 00:04:41,000
+And so, for example, to improve the efficiency of LED,
+
+85
+00:04:41,000 --> 00:04:44,000
+we have these quantum wells,
+
+86
+00:04:44,000 --> 00:04:47,000
+and then you can see that when we have quantum well,
+
+87
+00:04:47,000 --> 00:04:50,000
+the carrier will like to stay there more,
+
+88
+00:04:50,000 --> 00:04:52,000
+and therefore increase the opportunity
+
+89
+00:04:52,000 --> 00:04:55,000
+to recombine and emit light.
+
+90
+00:04:55,000 --> 00:05:00,000
+And also we are looking to the novel new materials,
+
+91
+00:05:00,000 --> 00:05:04,000
+like, for example, different Indian composition,
+
+92
+00:05:04,000 --> 00:05:06,000
+or maybe some 2D materials,
+
+93
+00:05:06,000 --> 00:05:08,000
+and we're looking into these.
+
+94
+00:05:08,000 --> 00:05:13,000
+So, when we are utilizing all these different new materials,
+
+95
+00:05:13,000 --> 00:05:17,000
+new structures, and there are lots of quantum effects in it.
+
+96
+00:05:17,000 --> 00:05:21,000
+So, therefore, like the current,
+
+97
+00:05:21,000 --> 00:05:24,000
+and we know that the non-equilibrium Green's function,
+
+98
+00:05:24,000 --> 00:05:27,000
+this method, like it's solving Schrodinger equation
+
+99
+00:05:27,000 --> 00:05:29,000
+with using Green's function,
+
+100
+00:05:29,000 --> 00:05:30,000
+it's a well-accepted method.
+
+101
+00:05:30,000 --> 00:05:36,000
+So, I'm going to go over why do we need NEGF to do it.
+
+102
+00:05:36,000 --> 00:05:39,000
+So, what is optoelectronics?
+
+103
+00:05:39,000 --> 00:05:43,000
+And so, I think the best way to understand optoelectronics,
+
+104
+00:05:43,000 --> 00:05:47,000
+like it's just a simple PN diet we study in school, right?
+
+105
+00:05:47,000 --> 00:05:50,000
+So, it's usually a bipolar device,
+
+106
+00:05:50,000 --> 00:05:52,000
+where by bipolar, I mean, like,
+
+107
+00:05:52,000 --> 00:05:54,000
+there's electrons and there's holes.
+
+108
+00:05:54,000 --> 00:05:57,000
+And also there are carriers,
+
+109
+00:05:57,000 --> 00:06:00,000
+like they're in different equilibrium,
+
+110
+00:06:00,000 --> 00:06:01,000
+for example, electron,
+
+111
+00:06:01,000 --> 00:06:04,000
+and they're usually separated by a band gap.
+
+112
+00:06:04,000 --> 00:06:06,000
+That's why we use semiconductors.
+
+113
+00:06:06,000 --> 00:06:07,000
+So, having a band gap,
+
+114
+00:06:07,000 --> 00:06:11,000
+and we kind of segregate the carriers to two kinds,
+
+115
+00:06:11,000 --> 00:06:16,000
+and the electron is injected by the source, one side.
+
+116
+00:06:16,000 --> 00:06:18,000
+One contact, we inject electron here,
+
+117
+00:06:18,000 --> 00:06:20,000
+and the other one is like a hole.
+
+118
+00:06:20,000 --> 00:06:21,000
+And when they see each other,
+
+119
+00:06:21,000 --> 00:06:25,000
+and there's interesting thing can happen, right?
+
+120
+00:06:25,000 --> 00:06:26,000
+There are different processes there.
+
+121
+00:06:26,000 --> 00:06:28,000
+For example, there's like Shockley-Ree hole,
+
+122
+00:06:28,000 --> 00:06:31,000
+where electron and hole, they can recombine.
+
+123
+00:06:31,000 --> 00:06:32,000
+And when they recombine,
+
+124
+00:06:32,000 --> 00:06:35,000
+they can emit phonon, as known as heat, right?
+
+125
+00:06:35,000 --> 00:06:37,000
+So, this is like a wasteful energy.
+
+126
+00:06:37,000 --> 00:06:40,000
+When they recombine through the defects,
+
+127
+00:06:40,000 --> 00:06:44,000
+the heat is generated and nothing gained.
+
+128
+00:06:44,000 --> 00:06:46,000
+Well, the heat is gained, but it's not that great.
+
+129
+00:06:46,000 --> 00:06:49,000
+And there's also radiative recombination,
+
+130
+00:06:49,000 --> 00:06:52,000
+where when the electron and hole, they see each other,
+
+131
+00:06:52,000 --> 00:06:53,000
+and they can recombine,
+
+132
+00:06:53,000 --> 00:06:55,000
+and therefore, they can emit like a photon,
+
+133
+00:06:55,000 --> 00:06:57,000
+or we can see light here.
+
+134
+00:06:57,000 --> 00:07:02,000
+And the rate it happens usually is,
+
+135
+00:07:02,000 --> 00:07:04,000
+and there's like, because like,
+
+136
+00:07:04,000 --> 00:07:05,000
+for example, first one,
+
+137
+00:07:05,000 --> 00:07:08,000
+they need to see through a defect here,
+
+138
+00:07:08,000 --> 00:07:12,000
+and therefore, their proportion is like proportional
+
+139
+00:07:12,000 --> 00:07:14,000
+to the n-type or p-type,
+
+140
+00:07:14,000 --> 00:07:18,000
+because one carrier can come to the defect here,
+
+141
+00:07:18,000 --> 00:07:20,000
+and to wait for the other person to come,
+
+142
+00:07:20,000 --> 00:07:21,000
+and to recombine.
+
+143
+00:07:21,000 --> 00:07:24,000
+So, therefore, their rate is proportional to,
+
+144
+00:07:24,000 --> 00:07:26,000
+you know, either the carrier,
+
+145
+00:07:26,000 --> 00:07:29,000
+either the electrons or the hole concentration here.
+
+146
+00:07:29,000 --> 00:07:31,000
+But radiative recombination,
+
+147
+00:07:31,000 --> 00:07:34,000
+it's, you need,
+
+148
+00:07:34,000 --> 00:07:37,000
+the rate is proportional to the both of them.
+
+149
+00:07:37,000 --> 00:07:41,000
+So, you need to have a high electron here,
+
+150
+00:07:41,000 --> 00:07:43,000
+and high hole concentration here,
+
+151
+00:07:43,000 --> 00:07:45,000
+to make it happen.
+
+152
+00:07:45,000 --> 00:07:47,000
+And there's like also another process,
+
+153
+00:07:47,000 --> 00:07:49,000
+which is OJ recombination.
+
+154
+00:07:49,000 --> 00:07:51,000
+And this is like a three-particle process,
+
+155
+00:07:51,000 --> 00:07:53,000
+where the electron and hole,
+
+156
+00:07:53,000 --> 00:07:54,000
+they can recombine.
+
+157
+00:07:54,000 --> 00:07:58,000
+But instead of like emitting a photon,
+
+158
+00:07:58,000 --> 00:08:00,000
+it will kick an electron to a higher energy,
+
+159
+00:08:00,000 --> 00:08:01,000
+or the opposite.
+
+160
+00:08:01,000 --> 00:08:03,000
+It's either two electron with one hole,
+
+161
+00:08:03,000 --> 00:08:05,000
+or two hole with one electron.
+
+162
+00:08:05,000 --> 00:08:07,000
+But the result is like a waste of energy,
+
+163
+00:08:07,000 --> 00:08:11,000
+and the chance of doing is something like here.
+
+164
+00:08:12,000 --> 00:08:15,000
+And, yes.
+
+165
+00:08:15,000 --> 00:08:16,000
+If you have any questions,
+
+166
+00:08:16,000 --> 00:08:18,000
+you can ask directly,
+
+167
+00:08:18,000 --> 00:08:20,000
+or pause the video.
+
+168
+00:08:20,000 --> 00:08:26,000
+And the other part is a generation process,
+
+169
+00:08:26,000 --> 00:08:30,000
+where the electron hole,
+
+170
+00:08:30,000 --> 00:08:31,000
+at this place,
+
+171
+00:08:31,000 --> 00:08:33,000
+at this depletion region,
+
+172
+00:08:33,000 --> 00:08:35,000
+we can absorb the photon,
+
+173
+00:08:35,000 --> 00:08:37,000
+and like create an electron and hole pair.
+
+174
+00:08:37,000 --> 00:08:39,000
+So, all these processes are needed
+
+175
+00:08:39,000 --> 00:08:42,000
+to simulate an optoelectronic device.
+
+176
+00:08:42,000 --> 00:08:44,000
+So, that's what we need to cover,
+
+177
+00:08:44,000 --> 00:08:47,000
+when we are doing a modeling.
+
+178
+00:08:47,000 --> 00:08:50,000
+So, why do we need quantum model?
+
+179
+00:08:50,000 --> 00:08:52,000
+So, let's take a look at a simulation result.
+
+180
+00:08:52,000 --> 00:08:55,000
+And this is from this paper I'm co-author with.
+
+181
+00:08:55,000 --> 00:09:00,000
+This is like a simulation result
+
+182
+00:09:00,000 --> 00:09:03,000
+from a commercialized 3-5 LED.
+
+183
+00:09:03,000 --> 00:09:05,000
+And as you can see here,
+
+184
+00:09:06,000 --> 00:09:09,000
+this line here means the density of states,
+
+185
+00:09:09,000 --> 00:09:11,000
+and the color here is the electron density.
+
+186
+00:09:11,000 --> 00:09:15,000
+So, the contour line is the density of state, right?
+
+187
+00:09:15,000 --> 00:09:18,000
+And we can see that the electron is coming from the left side,
+
+188
+00:09:18,000 --> 00:09:21,000
+and occupying these states here.
+
+189
+00:09:21,000 --> 00:09:24,000
+And there are holes coming from the other direction.
+
+190
+00:09:24,000 --> 00:09:25,000
+This is injected here.
+
+191
+00:09:25,000 --> 00:09:28,000
+And they are going to be in here,
+
+192
+00:09:28,000 --> 00:09:31,000
+and they will recombine and emit light here.
+
+193
+00:09:31,000 --> 00:09:32,000
+So, we can see that,
+
+194
+00:09:32,000 --> 00:09:35,000
+if we really do a quantum simulation,
+
+195
+00:09:35,000 --> 00:09:38,000
+we can see that there is interference everywhere, right?
+
+196
+00:09:38,000 --> 00:09:41,000
+For example, all these pattern means,
+
+197
+00:09:41,000 --> 00:09:44,000
+if you treat them as particles,
+
+198
+00:09:44,000 --> 00:09:47,000
+it doesn't capture everything, right?
+
+199
+00:09:47,000 --> 00:09:48,000
+So, for example,
+
+200
+00:09:48,000 --> 00:09:50,000
+electron, they can tunnel through this barrier,
+
+201
+00:09:50,000 --> 00:09:53,000
+and through these interference.
+
+202
+00:09:53,000 --> 00:09:58,000
+So, we really need to make use of the quantum transport,
+
+203
+00:09:58,000 --> 00:10:00,000
+instead of the semi-classical way.
+
+204
+00:10:02,000 --> 00:10:06,000
+So, the current state of our tool to do this is to,
+
+205
+00:10:06,000 --> 00:10:07,000
+I mean, the current way,
+
+206
+00:10:07,000 --> 00:10:09,000
+I mean, before I published the paper, right?
+
+207
+00:10:09,000 --> 00:10:14,000
+So, before I was working on this,
+
+208
+00:10:14,000 --> 00:10:16,000
+the best way to deal with this quantumly
+
+209
+00:10:16,000 --> 00:10:18,000
+is also from this paper,
+
+210
+00:10:18,000 --> 00:10:22,000
+where we cut the domain into different pieces,
+
+211
+00:10:22,000 --> 00:10:26,000
+and then we call some of them the red part,
+
+212
+00:10:26,000 --> 00:10:28,000
+and also the green part.
+
+213
+00:10:28,000 --> 00:10:30,000
+So, the green part is like equilibrium.
+
+214
+00:10:30,000 --> 00:10:31,000
+And why are they in equilibrium?
+
+215
+00:10:31,000 --> 00:10:34,000
+Because usually the source is highly doped,
+
+216
+00:10:34,000 --> 00:10:36,000
+and then the drain is also highly doped region.
+
+217
+00:10:36,000 --> 00:10:38,000
+And when you're highly doped,
+
+218
+00:10:38,000 --> 00:10:40,000
+there's lots of carrier there,
+
+219
+00:10:40,000 --> 00:10:42,000
+and they will scatter a lot,
+
+220
+00:10:42,000 --> 00:10:45,000
+and the carrier there will be in equilibrium.
+
+221
+00:10:45,000 --> 00:10:47,000
+So, when you are in equilibrium,
+
+222
+00:10:47,000 --> 00:10:50,000
+we can put a Fermi level here,
+
+223
+00:10:50,000 --> 00:10:53,000
+saying, oh, this is the Fermi energy in this region,
+
+224
+00:10:53,000 --> 00:10:55,000
+and this is the Fermi energy,
+
+225
+00:10:55,000 --> 00:10:57,000
+and there's like Fermi level for electron,
+
+226
+00:10:57,000 --> 00:11:00,000
+Fermi level for holes in this region.
+
+227
+00:11:00,000 --> 00:11:03,000
+And there's also the pink part,
+
+228
+00:11:03,000 --> 00:11:06,000
+where we do, this is non-equilibrium region.
+
+229
+00:11:06,000 --> 00:11:10,000
+So, this is like the previous way of doing it,
+
+230
+00:11:10,000 --> 00:11:13,000
+where we do NEGF inside the pink region,
+
+231
+00:11:13,000 --> 00:11:17,000
+and we just put the Fermi level across here.
+
+232
+00:11:20,000 --> 00:11:23,000
+So, but this method has some defects,
+
+233
+00:11:23,000 --> 00:11:26,000
+where we cannot even calculate a simple p-n diet,
+
+234
+00:11:26,000 --> 00:11:29,000
+because a simple p-n diet,
+
+235
+00:11:29,000 --> 00:11:32,000
+we cannot really tell which region is non-equilibrium,
+
+236
+00:11:32,000 --> 00:11:35,000
+which region is equilibrium.
+
+237
+00:11:35,000 --> 00:11:38,000
+So, it's really hard to do quantum transport
+
+238
+00:11:38,000 --> 00:11:40,000
+in a p-n diet,
+
+239
+00:11:40,000 --> 00:11:43,000
+when we are trying to include
+
+240
+00:11:43,000 --> 00:11:46,000
+all the recombination or generation processes.
+
+241
+00:11:46,000 --> 00:11:51,000
+So, there are different flavor of quantum transport.
+
+242
+00:11:51,000 --> 00:11:53,000
+There's like ballistic NEGF,
+
+243
+00:11:53,000 --> 00:11:55,000
+there's like the one I mentioned,
+
+244
+00:11:55,000 --> 00:11:57,000
+we cut into different domain,
+
+245
+00:11:57,000 --> 00:12:01,000
+when we try to do the transport calculation,
+
+246
+00:12:01,000 --> 00:12:03,000
+and there's like the super expensive SE4,
+
+247
+00:12:03,000 --> 00:12:06,000
+but none of them can have been,
+
+248
+00:12:06,000 --> 00:12:09,000
+are able to deal with the p-n diets,
+
+249
+00:12:09,000 --> 00:12:11,000
+like with the recombination processes.
+
+250
+00:12:11,000 --> 00:12:14,000
+So, therefore, a new model is needed, right?
+
+251
+00:12:14,000 --> 00:12:15,000
+And also we can see that,
+
+252
+00:12:15,000 --> 00:12:17,000
+this is from a super old paper,
+
+253
+00:12:17,000 --> 00:12:19,000
+why the recombination process is important,
+
+254
+00:12:19,000 --> 00:12:21,000
+is because when you measure IV curve,
+
+255
+00:12:21,000 --> 00:12:23,000
+there's like different slope here,
+
+256
+00:12:23,000 --> 00:12:25,000
+and they are in the results
+
+257
+00:12:25,000 --> 00:12:28,000
+of different recombination process here,
+
+258
+00:12:28,000 --> 00:12:32,000
+which later on, I will talk more about that.
+
+259
+00:12:32,000 --> 00:12:36,000
+So, what's the available way to do,
+
+260
+00:12:36,000 --> 00:12:37,000
+to deal with carrier transport?
+
+261
+00:12:37,000 --> 00:12:40,000
+So, here's like a list, a roadmap,
+
+262
+00:12:40,000 --> 00:12:43,000
+like where you can pick and choose,
+
+263
+00:12:43,000 --> 00:12:44,000
+depending on your needs.
+
+264
+00:12:44,000 --> 00:12:45,000
+So, if you are,
+
+265
+00:12:45,000 --> 00:12:47,000
+so here, the axis,
+
+266
+00:12:47,000 --> 00:12:51,000
+y-axis here is the computational intensity.
+
+267
+00:12:51,000 --> 00:12:53,000
+So, I'm going from a super cheap,
+
+268
+00:12:53,000 --> 00:12:55,000
+super fast turnaround time,
+
+269
+00:12:55,000 --> 00:12:56,000
+computational cost,
+
+270
+00:12:56,000 --> 00:12:58,000
+like the semi-classical way,
+
+271
+00:12:58,000 --> 00:13:00,000
+and all the way to go quantum,
+
+272
+00:13:00,000 --> 00:13:02,000
+where we need to solve Schrodinger equation,
+
+273
+00:13:02,000 --> 00:13:05,000
+and using it on any GF methods.
+
+274
+00:13:05,000 --> 00:13:06,000
+So, I will first go over,
+
+275
+00:13:06,000 --> 00:13:09,000
+what's the Boltzmann transport equation?
+
+276
+00:13:09,000 --> 00:13:12,000
+And there are different way to solve it,
+
+277
+00:13:12,000 --> 00:13:15,000
+like the drift diffusion is the most popular way.
+
+278
+00:13:15,000 --> 00:13:17,000
+It's the first order,
+
+279
+00:13:17,000 --> 00:13:19,000
+I think, what is it?
+
+280
+00:13:19,000 --> 00:13:22,000
+The first order approximation,
+
+281
+00:13:22,000 --> 00:13:23,000
+not approximation,
+
+282
+00:13:23,000 --> 00:13:27,000
+but it's a simplification of the BTE,
+
+283
+00:13:27,000 --> 00:13:29,000
+the famous BTE thing,
+
+284
+00:13:29,000 --> 00:13:31,000
+and that's like we solve it drift diffusion,
+
+285
+00:13:31,000 --> 00:13:33,000
+and then we can also use Monte Carlo,
+
+286
+00:13:33,000 --> 00:13:35,000
+like statistically to gather results
+
+287
+00:13:35,000 --> 00:13:38,000
+for the BTE equation.
+
+288
+00:13:38,000 --> 00:13:42,000
+So, what's Boltzmann transport equation?
+
+289
+00:13:42,000 --> 00:13:44,000
+It's by saying that,
+
+290
+00:13:44,000 --> 00:13:47,000
+oh, there is a distribution function.
+
+291
+00:13:47,000 --> 00:13:49,000
+By distribution, we mean,
+
+292
+00:13:49,000 --> 00:13:52,000
+with the occupation of a different state,
+
+293
+00:13:52,000 --> 00:13:54,000
+and what does this mean?
+
+294
+00:13:54,000 --> 00:13:56,000
+Like, we want to ask,
+
+295
+00:13:56,000 --> 00:14:00,000
+what's the possibility of finding a carrier
+
+296
+00:14:00,000 --> 00:14:01,000
+at a particular location,
+
+297
+00:14:01,000 --> 00:14:03,000
+at a particular time,
+
+298
+00:14:03,000 --> 00:14:04,000
+with a particular momentum?
+
+299
+00:14:04,000 --> 00:14:06,000
+So, if we can,
+
+300
+00:14:06,000 --> 00:14:08,000
+for example, inside a device,
+
+301
+00:14:08,000 --> 00:14:10,000
+there's a different location here,
+
+302
+00:14:10,000 --> 00:14:12,000
+and for each location,
+
+303
+00:14:12,000 --> 00:14:13,000
+there is a,
+
+304
+00:14:13,000 --> 00:14:15,000
+I'm trying to draw this like a momentum,
+
+305
+00:14:15,000 --> 00:14:17,000
+so carrier with low momentum is here,
+
+306
+00:14:17,000 --> 00:14:20,000
+and carrier with higher momentum
+
+307
+00:14:20,000 --> 00:14:21,000
+is on the upper here,
+
+308
+00:14:21,000 --> 00:14:22,000
+and we are asking,
+
+309
+00:14:22,000 --> 00:14:23,000
+what's the distribution?
+
+310
+00:14:23,000 --> 00:14:25,000
+How many particles are in those states?
+
+311
+00:14:25,000 --> 00:14:27,000
+So, if we know this information
+
+312
+00:14:27,000 --> 00:14:29,000
+across time, across space,
+
+313
+00:14:29,000 --> 00:14:31,000
+and for different time and space
+
+314
+00:14:31,000 --> 00:14:32,000
+and different momentum,
+
+315
+00:14:32,000 --> 00:14:33,000
+we know this,
+
+316
+00:14:33,000 --> 00:14:35,000
+then the system is solved, right?
+
+317
+00:14:35,000 --> 00:14:38,000
+So, and why is this distribution useful?
+
+318
+00:14:38,000 --> 00:14:41,000
+Because from this distribution function,
+
+319
+00:14:41,000 --> 00:14:44,000
+we can get the carrier density, right?
+
+320
+00:14:44,000 --> 00:14:46,000
+Because if we want to ask,
+
+321
+00:14:46,000 --> 00:14:48,000
+what's the carrier density at this location?
+
+322
+00:14:48,000 --> 00:14:50,000
+Given the F at this location,
+
+323
+00:14:50,000 --> 00:14:52,000
+we can just do a sum
+
+324
+00:14:52,000 --> 00:14:54,000
+and know how much carrier is here.
+
+325
+00:14:54,000 --> 00:14:55,000
+And if you want to know,
+
+326
+00:14:55,000 --> 00:14:57,000
+oh, for your device you're working on,
+
+327
+00:14:57,000 --> 00:14:58,000
+what's the current
+
+328
+00:14:58,000 --> 00:15:00,000
+that you just do,
+
+329
+00:15:00,000 --> 00:15:02,000
+get their group of velocity
+
+330
+00:15:02,000 --> 00:15:03,000
+from the band structure
+
+331
+00:15:03,000 --> 00:15:04,000
+and you do a sum
+
+332
+00:15:04,000 --> 00:15:06,000
+with this distribution,
+
+333
+00:15:06,000 --> 00:15:07,000
+then you can get,
+
+334
+00:15:07,000 --> 00:15:08,000
+oh, how much current you are gaining
+
+335
+00:15:08,000 --> 00:15:10,000
+at this location.
+
+336
+00:15:10,000 --> 00:15:11,000
+So, it's useful
+
+337
+00:15:11,000 --> 00:15:13,000
+because we can get observable
+
+338
+00:15:13,000 --> 00:15:16,000
+from this distribution function.
+
+339
+00:15:16,000 --> 00:15:19,000
+And how do we solve this F?
+
+340
+00:15:19,000 --> 00:15:23,000
+And it's the BTE Boltzmann.
+
+341
+00:15:23,000 --> 00:15:25,000
+Boltzmann came up with this, right?
+
+342
+00:15:25,000 --> 00:15:27,000
+Like the Boltzmann transport equation.
+
+343
+00:15:27,000 --> 00:15:28,000
+It's the governing equation.
+
+344
+00:15:28,000 --> 00:15:30,000
+So, the equation is listed here.
+
+345
+00:15:30,000 --> 00:15:32,000
+And I will just try to show
+
+346
+00:15:32,000 --> 00:15:34,000
+how we understand different terms.
+
+347
+00:15:34,000 --> 00:15:36,000
+For example,
+
+348
+00:15:36,000 --> 00:15:38,000
+the first term means,
+
+349
+00:15:38,000 --> 00:15:40,000
+oh, if you have carrier
+
+350
+00:15:40,000 --> 00:15:43,000
+coming in, coming out,
+
+351
+00:15:43,000 --> 00:15:45,000
+the distribution here
+
+352
+00:15:45,000 --> 00:15:46,000
+will be related to that, right?
+
+353
+00:15:46,000 --> 00:15:48,000
+Because you have carrier
+
+354
+00:15:48,000 --> 00:15:51,000
+flowing into here or flowing out.
+
+355
+00:15:51,000 --> 00:15:53,000
+And the distribution here will be,
+
+356
+00:15:53,000 --> 00:15:55,000
+if you have lots of people coming in
+
+357
+00:15:55,000 --> 00:15:58,000
+and a few going out,
+
+358
+00:15:58,000 --> 00:16:00,000
+then the distribution here will be higher.
+
+359
+00:16:00,000 --> 00:16:02,000
+So, this is what the first term means.
+
+360
+00:16:02,000 --> 00:16:04,000
+And the second term means that
+
+361
+00:16:04,000 --> 00:16:06,000
+the F means the electric field,
+
+362
+00:16:06,000 --> 00:16:09,000
+the carrier experience in the charge.
+
+363
+00:16:09,000 --> 00:16:11,000
+And when you are,
+
+364
+00:16:11,000 --> 00:16:13,000
+when the carrier is experiencing
+
+365
+00:16:13,000 --> 00:16:15,000
+electric field, it will accelerate.
+
+366
+00:16:15,000 --> 00:16:17,000
+And it will change its momentum.
+
+367
+00:16:17,000 --> 00:16:19,000
+So, here we mean like that,
+
+368
+00:16:19,000 --> 00:16:21,000
+okay, given the electric field
+
+369
+00:16:21,000 --> 00:16:23,000
+at this location,
+
+370
+00:16:23,000 --> 00:16:25,000
+the distribution, you know,
+
+371
+00:16:25,000 --> 00:16:27,000
+it's related to
+
+372
+00:16:27,000 --> 00:16:29,000
+the distribution nearby.
+
+373
+00:16:29,000 --> 00:16:31,000
+So, distribution with a lower momentum,
+
+374
+00:16:31,000 --> 00:16:33,000
+with a higher momentum,
+
+375
+00:16:33,000 --> 00:16:35,000
+they can come in and out
+
+376
+00:16:35,000 --> 00:16:37,000
+because of the electric field
+
+377
+00:16:37,000 --> 00:16:39,000
+at this location.
+
+378
+00:16:39,000 --> 00:16:41,000
+And the last one is
+
+379
+00:16:41,000 --> 00:16:43,000
+if you have like, oh,
+
+380
+00:16:43,000 --> 00:16:45,000
+other collision inside a device,
+
+381
+00:16:45,000 --> 00:16:47,000
+for example, a phonon,
+
+382
+00:16:47,000 --> 00:16:49,000
+an electron can absorb a phonon
+
+383
+00:16:49,000 --> 00:16:51,000
+or emit a phonon and come to your
+
+384
+00:16:51,000 --> 00:16:53,000
+this place, if there's a possibility
+
+385
+00:16:53,000 --> 00:16:55,000
+like that, then this term is trying
+
+386
+00:16:55,000 --> 00:16:57,000
+to take that into account.
+
+387
+00:16:57,000 --> 00:16:59,000
+So, we have all this
+
+388
+00:16:59,000 --> 00:17:01,000
+and all combined. And they can be solved
+
+389
+00:17:01,000 --> 00:17:03,000
+really expensively by
+
+390
+00:17:03,000 --> 00:17:05,000
+doing Monte Carlo, by assuming
+
+391
+00:17:05,000 --> 00:17:07,000
+the distribution function and you start to
+
+392
+00:17:07,000 --> 00:17:09,000
+run it, oh, how many carrier coming in,
+
+393
+00:17:09,000 --> 00:17:11,000
+coming out from different momentum space,
+
+394
+00:17:11,000 --> 00:17:13,000
+then it's super expensive to do that
+
+395
+00:17:13,000 --> 00:17:15,000
+Monte Carlo. So, but if it's still
+
+396
+00:17:15,000 --> 00:17:17,000
+too hard, then you can simplify
+
+397
+00:17:17,000 --> 00:17:19,000
+this BT equation
+
+398
+00:17:19,000 --> 00:17:21,000
+to a drift diffusion equation,
+
+399
+00:17:21,000 --> 00:17:23,000
+which is saying that the
+
+400
+00:17:23,000 --> 00:17:25,000
+current at this place is proportional
+
+401
+00:17:25,000 --> 00:17:27,000
+to the carrier with the electric
+
+402
+00:17:27,000 --> 00:17:29,000
+field and the diffusion
+
+403
+00:17:29,000 --> 00:17:31,000
+with the density gradient.
+
+404
+00:17:31,000 --> 00:17:33,000
+So, this is, and the full derivation
+
+405
+00:17:33,000 --> 00:17:35,000
+is in this paper here.
+
+406
+00:17:35,000 --> 00:17:37,000
+People who are interested can go take
+
+407
+00:17:37,000 --> 00:17:39,000
+a look.
+
+408
+00:17:39,000 --> 00:17:41,000
+So, I kind of went over like the
+
+409
+00:17:41,000 --> 00:17:43,000
+semi-classical way where
+
+410
+00:17:43,000 --> 00:17:45,000
+the carrier and the device are
+
+411
+00:17:45,000 --> 00:17:47,000
+like particle-like and then
+
+412
+00:17:47,000 --> 00:17:49,000
+they can recombine
+
+413
+00:17:49,000 --> 00:17:51,000
+by solving
+
+414
+00:17:51,000 --> 00:17:53,000
+the drift diffusion equation and the continuity
+
+415
+00:17:53,000 --> 00:17:55,000
+equation. That's how we
+
+416
+00:17:55,000 --> 00:17:57,000
+deal with the
+
+417
+00:17:57,000 --> 00:17:59,000
+semi-classical way.
+
+418
+00:17:59,000 --> 00:18:01,000
+And now I'm going to step into the
+
+419
+00:18:01,000 --> 00:18:03,000
+Schrodinger equation and our
+
+420
+00:18:03,000 --> 00:18:05,000
+non-equilibrium Green's function.
+
+421
+00:18:05,000 --> 00:18:07,000
+So, we all know about Schrodinger equation.
+
+422
+00:18:07,000 --> 00:18:09,000
+It's like, it's
+
+423
+00:18:09,000 --> 00:18:11,000
+given a Hamiltonian of the system
+
+424
+00:18:11,000 --> 00:18:13,000
+that you can solve it and then to find
+
+425
+00:18:13,000 --> 00:18:15,000
+what's the possible eigenenergies
+
+426
+00:18:15,000 --> 00:18:17,000
+inside the system.
+
+427
+00:18:17,000 --> 00:18:19,000
+And the Green's function,
+
+428
+00:18:19,000 --> 00:18:21,000
+I still won't go into details.
+
+429
+00:18:21,000 --> 00:18:23,000
+I started to disappoint people here.
+
+430
+00:18:23,000 --> 00:18:25,000
+But like, I think
+
+431
+00:18:25,000 --> 00:18:27,000
+there are like really useful
+
+432
+00:18:27,000 --> 00:18:29,000
+material here and like really, I think
+
+433
+00:18:29,000 --> 00:18:31,000
+Professor Datas did a really good job
+
+434
+00:18:31,000 --> 00:18:33,000
+on explaining what
+
+435
+00:18:33,000 --> 00:18:35,000
+an AEGF method is with his
+
+436
+00:18:35,000 --> 00:18:37,000
+introductory material on
+
+437
+00:18:37,000 --> 00:18:39,000
+nanoHUB. So, it's all the information
+
+438
+00:18:39,000 --> 00:18:41,000
+and there's like a
+
+439
+00:18:41,000 --> 00:18:43,000
+famous book. You can reach out to me and I can
+
+440
+00:18:43,000 --> 00:18:45,000
+show you like
+
+441
+00:18:45,000 --> 00:18:47,000
+what's the book you need to read
+
+442
+00:18:47,000 --> 00:18:49,000
+into. But Green's function,
+
+443
+00:18:49,000 --> 00:18:51,000
+from our understanding, Green's function
+
+444
+00:18:51,000 --> 00:18:53,000
+is also
+
+445
+00:18:53,000 --> 00:18:55,000
+in an engineering term, it's like the response
+
+446
+00:18:55,000 --> 00:18:57,000
+to an excitation, right?
+
+447
+00:18:57,000 --> 00:18:59,000
+So usually, oh,
+
+448
+00:18:59,000 --> 00:19:01,000
+Poisson equation, the Green's function,
+
+449
+00:19:01,000 --> 00:19:03,000
+if you know the Green's function for a Poisson equation,
+
+450
+00:19:03,000 --> 00:19:05,000
+then you know, oh,
+
+451
+00:19:05,000 --> 00:19:07,000
+if you put a charge here, what's the
+
+452
+00:19:07,000 --> 00:19:09,000
+resulting potential you can get?
+
+453
+00:19:09,000 --> 00:19:11,000
+So the Schrodinger equation is similar like this.
+
+454
+00:19:11,000 --> 00:19:13,000
+So you put the H psi,
+
+455
+00:19:13,000 --> 00:19:15,000
+E psi all into one side
+
+456
+00:19:15,000 --> 00:19:17,000
+and then you can solve for the Green's function.
+
+457
+00:19:17,000 --> 00:19:19,000
+And the Green's function is that
+
+458
+00:19:19,000 --> 00:19:21,000
+if you multiply this
+
+459
+00:19:21,000 --> 00:19:23,000
+by excitation, then you know what's
+
+460
+00:19:23,000 --> 00:19:25,000
+the response you will get
+
+461
+00:19:25,000 --> 00:19:27,000
+inside this device.
+
+462
+00:19:27,000 --> 00:19:29,000
+So,
+
+463
+00:19:29,000 --> 00:19:31,000
+here, we will
+
+464
+00:19:31,000 --> 00:19:33,000
+first go into the ballistic
+
+465
+00:19:33,000 --> 00:19:35,000
+non-equilibrium Green's function.
+
+466
+00:19:35,000 --> 00:19:37,000
+So once you, so first you have this
+
+467
+00:19:37,000 --> 00:19:39,000
+Hamiltonian, and then you can get the
+
+468
+00:19:39,000 --> 00:19:41,000
+resulting Green's function. And then
+
+469
+00:19:41,000 --> 00:19:43,000
+by, so here
+
+470
+00:19:43,000 --> 00:19:45,000
+it's like the Hamiltonian here, and we can get
+
+471
+00:19:45,000 --> 00:19:47,000
+the Green's function. And using the Green's function,
+
+472
+00:19:47,000 --> 00:19:49,000
+there's like some key terms.
+
+473
+00:19:49,000 --> 00:19:51,000
+There's like the G lesser, which is the
+
+474
+00:19:51,000 --> 00:19:53,000
+the
+
+475
+00:19:53,000 --> 00:19:55,000
+this is proportional to the carrier
+
+476
+00:19:55,000 --> 00:19:57,000
+density. So it's like
+
+477
+00:19:57,000 --> 00:19:59,000
+here's the excitation you have in the system.
+
+478
+00:19:59,000 --> 00:20:01,000
+And you have like, using the Green's
+
+479
+00:20:01,000 --> 00:20:03,000
+function, and there's a Gr
+
+480
+00:20:03,000 --> 00:20:05,000
+and Gr dagger, then you can get the
+
+481
+00:20:05,000 --> 00:20:07,000
+what's the carrier distribution in the device.
+
+482
+00:20:07,000 --> 00:20:09,000
+So,
+
+483
+00:20:09,000 --> 00:20:11,000
+what the
+
+484
+00:20:11,000 --> 00:20:13,000
+NEGF does is that we are interested
+
+485
+00:20:13,000 --> 00:20:15,000
+in a part,
+
+486
+00:20:15,000 --> 00:20:17,000
+only this part of the device. And we are,
+
+487
+00:20:17,000 --> 00:20:19,000
+we want to say, oh,
+
+488
+00:20:19,000 --> 00:20:21,000
+we only want to focus on this small region.
+
+489
+00:20:21,000 --> 00:20:23,000
+And then the left,
+
+490
+00:20:23,000 --> 00:20:25,000
+we call it, that's a
+
+491
+00:20:25,000 --> 00:20:27,000
+contact, that's a lead. And we
+
+492
+00:20:27,000 --> 00:20:29,000
+don't want to care about the information.
+
+493
+00:20:29,000 --> 00:20:31,000
+It's an infinite,
+
+494
+00:20:31,000 --> 00:20:33,000
+going left and right.
+
+495
+00:20:33,000 --> 00:20:35,000
+They are periodically going left
+
+496
+00:20:35,000 --> 00:20:37,000
+and right. But we don't want to simulate
+
+497
+00:20:37,000 --> 00:20:39,000
+the entire universe. We only
+
+498
+00:20:39,000 --> 00:20:41,000
+want to focus on the transistor or the
+
+499
+00:20:41,000 --> 00:20:43,000
+LED we care about.
+
+500
+00:20:43,000 --> 00:20:45,000
+So, given this Green's
+
+501
+00:20:45,000 --> 00:20:47,000
+function, and then we can
+
+502
+00:20:47,000 --> 00:20:49,000
+for different contact,
+
+503
+00:20:49,000 --> 00:20:51,000
+if you are contact to the left, and then there's
+
+504
+00:20:51,000 --> 00:20:53,000
+like a left self-energy
+
+505
+00:20:53,000 --> 00:20:55,000
+and there's like a right side, there's like a
+
+506
+00:20:55,000 --> 00:20:57,000
+self-energy here. And with all this self-energy
+
+507
+00:20:57,000 --> 00:20:59,000
+on the Green's function, you can get what's
+
+508
+00:20:59,000 --> 00:21:01,000
+the carrier distribution in here.
+
+509
+00:21:01,000 --> 00:21:03,000
+And when they are in contact
+
+510
+00:21:03,000 --> 00:21:05,000
+with the reservoir of
+
+511
+00:21:05,000 --> 00:21:07,000
+a different Fermi level here
+
+512
+00:21:07,000 --> 00:21:09,000
+on the left side and right side here.
+
+513
+00:21:11,000 --> 00:21:13,000
+So, but the ballistic
+
+514
+00:21:13,000 --> 00:21:15,000
+and NEGF, there's no scattering.
+
+515
+00:21:15,000 --> 00:21:17,000
+So carrier will not scatter with
+
+516
+00:21:17,000 --> 00:21:19,000
+each other. So how
+
+517
+00:21:19,000 --> 00:21:21,000
+do we do
+
+518
+00:21:21,000 --> 00:21:23,000
+including all these scattering
+
+519
+00:21:23,000 --> 00:21:25,000
+terms in the
+
+520
+00:21:25,000 --> 00:21:27,000
+NEGF is like, there's a
+
+521
+00:21:27,000 --> 00:21:29,000
+popular method
+
+522
+00:21:29,000 --> 00:21:31,000
+that's called Butyprobe method
+
+523
+00:21:31,000 --> 00:21:33,000
+where it's proposed by Marcus
+
+524
+00:21:33,000 --> 00:21:35,000
+Butyprobe back in 1980s.
+
+525
+00:21:35,000 --> 00:21:37,000
+So it's a way to mimic
+
+526
+00:21:37,000 --> 00:21:39,000
+defacing, which means, aka
+
+527
+00:21:39,000 --> 00:21:41,000
+the scattering events.
+
+528
+00:21:41,000 --> 00:21:43,000
+So, we
+
+529
+00:21:43,000 --> 00:21:45,000
+will try, when we're
+
+530
+00:21:45,000 --> 00:21:47,000
+injecting the carrier into
+
+531
+00:21:47,000 --> 00:21:49,000
+the device from the left and right
+
+532
+00:21:49,000 --> 00:21:51,000
+side. So we're adding more
+
+533
+00:21:51,000 --> 00:21:53,000
+more these
+
+534
+00:21:53,000 --> 00:21:55,000
+reservoir inside the device.
+
+535
+00:21:55,000 --> 00:21:57,000
+So we're taking the electron out and
+
+536
+00:21:57,000 --> 00:21:59,000
+put it back in, take it out and put it
+
+537
+00:21:59,000 --> 00:22:01,000
+back in. So in this way, we're
+
+538
+00:22:01,000 --> 00:22:03,000
+mimicking like carrier
+
+539
+00:22:03,000 --> 00:22:05,000
+we can randomize the carrier
+
+540
+00:22:05,000 --> 00:22:07,000
+and the carrier's momentum will go around
+
+541
+00:22:07,000 --> 00:22:09,000
+and like you can see that
+
+542
+00:22:09,000 --> 00:22:11,000
+this is more closer to
+
+543
+00:22:11,000 --> 00:22:13,000
+the real world problem where the
+
+544
+00:22:13,000 --> 00:22:15,000
+device have scattering.
+
+545
+00:22:15,000 --> 00:22:17,000
+But this method
+
+546
+00:22:17,000 --> 00:22:19,000
+was only applicable
+
+547
+00:22:19,000 --> 00:22:21,000
+to unit polar device. For example,
+
+548
+00:22:21,000 --> 00:22:23,000
+if you only have electron here, it can only
+
+549
+00:22:23,000 --> 00:22:25,000
+simulate electrons
+
+550
+00:22:25,000 --> 00:22:27,000
+scattered inside the device.
+
+551
+00:22:27,000 --> 00:22:29,000
+So
+
+552
+00:22:29,000 --> 00:22:31,000
+my work, my PhD
+
+553
+00:22:31,000 --> 00:22:33,000
+was like to ask a question
+
+554
+00:22:33,000 --> 00:22:35,000
+whether we can modify this for
+
+555
+00:22:35,000 --> 00:22:37,000
+bipolar device.
+
+556
+00:22:37,000 --> 00:22:39,000
+Bipolar
+
+557
+00:22:39,000 --> 00:22:41,000
+means
+
+558
+00:22:41,000 --> 00:22:43,000
+when we have, so
+
+559
+00:22:43,000 --> 00:22:45,000
+can we put like two, when we are
+
+560
+00:22:45,000 --> 00:22:47,000
+we simulate electron and hole
+
+561
+00:22:47,000 --> 00:22:49,000
+separately like before, right?
+
+562
+00:22:49,000 --> 00:22:51,000
+We have electron coming in and electron
+
+563
+00:22:51,000 --> 00:22:53,000
+coming out and we also simulate the hole
+
+564
+00:22:53,000 --> 00:22:55,000
+whereas electron coming in, sorry, hole coming
+
+565
+00:22:55,000 --> 00:22:57,000
+in and hole coming out. And we also
+
+566
+00:22:57,000 --> 00:22:59,000
+include this probe here to extract
+
+567
+00:22:59,000 --> 00:23:01,000
+the carrier in, out of
+
+568
+00:23:01,000 --> 00:23:03,000
+the device and put it back in
+
+569
+00:23:03,000 --> 00:23:05,000
+and this
+
+570
+00:23:05,000 --> 00:23:07,000
+way, if we somehow take
+
+571
+00:23:07,000 --> 00:23:09,000
+the carrier out from
+
+572
+00:23:09,000 --> 00:23:11,000
+this electron and hole and that's equivalent
+
+573
+00:23:11,000 --> 00:23:13,000
+to semi-classically
+
+574
+00:23:13,000 --> 00:23:15,000
+how JIP diffusion model
+
+575
+00:23:15,000 --> 00:23:17,000
+the Shockley-Ree hole and different processes.
+
+576
+00:23:17,000 --> 00:23:19,000
+So using this
+
+577
+00:23:19,000 --> 00:23:21,000
+method, we can
+
+578
+00:23:21,000 --> 00:23:23,000
+cover
+
+579
+00:23:23,000 --> 00:23:25,000
+the processes I
+
+580
+00:23:25,000 --> 00:23:27,000
+mentioned in the optoelectronic device. We can
+
+581
+00:23:27,000 --> 00:23:29,000
+model Shockley-Ree hole, we can model
+
+582
+00:23:29,000 --> 00:23:31,000
+radiated, we can model OJ,
+
+583
+00:23:31,000 --> 00:23:33,000
+we can model all these
+
+584
+00:23:33,000 --> 00:23:35,000
+effects inside the
+
+585
+00:23:35,000 --> 00:23:37,000
+enhanced
+
+586
+00:23:37,000 --> 00:23:39,000
+electrical probe method.
+
+587
+00:23:39,000 --> 00:23:41,000
+So here is like all
+
+588
+00:23:41,000 --> 00:23:43,000
+the methodology I've mentioned
+
+589
+00:23:43,000 --> 00:23:45,000
+where from
+
+590
+00:23:45,000 --> 00:23:47,000
+cheap to expensive, we have like
+
+591
+00:23:47,000 --> 00:23:49,000
+JIP diffusion, Monte Carlo's
+
+592
+00:23:49,000 --> 00:23:51,000
+and the NEGF
+
+593
+00:23:51,000 --> 00:23:53,000
+and also
+
+594
+00:23:53,000 --> 00:23:55,000
+in the
+
+595
+00:23:55,000 --> 00:23:57,000
+NEGF we have like the
+
+596
+00:23:57,000 --> 00:23:59,000
+ballistical one and also the
+
+597
+00:23:59,000 --> 00:24:01,000
+what's the time now?
+
+598
+00:24:01,000 --> 00:24:03,000
+Do we still have time?
+
+599
+00:24:04,000 --> 00:24:06,000
+Oops.
+
+600
+00:24:06,000 --> 00:24:08,000
+Oh 540, sorry.
+
+601
+00:24:08,000 --> 00:24:10,000
+Let me put it back on.
+
+602
+00:24:10,000 --> 00:24:12,000
+Yeah, so we have like
+
+603
+00:24:12,000 --> 00:24:14,000
+all the different
+
+604
+00:24:14,000 --> 00:24:16,000
+methodology here and this is the one
+
+605
+00:24:16,000 --> 00:24:18,000
+I was mainly working on.
+
+606
+00:24:18,000 --> 00:24:20,000
+So carriers, they are
+
+607
+00:24:20,000 --> 00:24:22,000
+wave-like.
+
+608
+00:24:22,000 --> 00:24:24,000
+So for example,
+
+609
+00:24:24,000 --> 00:24:26,000
+from before, JIP diffusion and Monte Carlo's
+
+610
+00:24:26,000 --> 00:24:28,000
+each of the carriers, they are particle-like
+
+611
+00:24:28,000 --> 00:24:30,000
+and then we are solving
+
+612
+00:24:30,000 --> 00:24:32,000
+the current continuity equation.
+
+613
+00:24:32,000 --> 00:24:34,000
+For each location, there is like a quasi-Fermi
+
+614
+00:24:34,000 --> 00:24:36,000
+level, which means they follow Fermi
+
+615
+00:24:36,000 --> 00:24:38,000
+direct distribution
+
+616
+00:24:38,000 --> 00:24:40,000
+and
+
+617
+00:24:40,000 --> 00:24:42,000
+quantum correction with
+
+618
+00:24:42,000 --> 00:24:44,000
+artificial.
+
+619
+00:24:44,000 --> 00:24:46,000
+And there are way people
+
+620
+00:24:46,000 --> 00:24:48,000
+when using JIP diffusion, you can
+
+621
+00:24:48,000 --> 00:24:50,000
+couple it with quantum correction like
+
+622
+00:24:50,000 --> 00:24:52,000
+solving Schrodinger equation
+
+623
+00:24:52,000 --> 00:24:54,000
+in a certain region and then couple
+
+624
+00:24:54,000 --> 00:24:56,000
+them with a JIP diffusion and try
+
+625
+00:24:56,000 --> 00:24:58,000
+to mimic it.
+
+626
+00:24:58,000 --> 00:25:00,000
+You will have artificial boundary
+
+627
+00:25:00,000 --> 00:25:02,000
+condition.
+
+628
+00:25:02,000 --> 00:25:04,000
+When do we choose?
+
+629
+00:25:04,000 --> 00:25:06,000
+Which is the part we want to solve at quantum?
+
+630
+00:25:06,000 --> 00:25:08,000
+Where do we solve semi-classically?
+
+631
+00:25:08,000 --> 00:25:10,000
+So there's lots of confusion
+
+632
+00:25:10,000 --> 00:25:12,000
+if you are coupling that.
+
+633
+00:25:12,000 --> 00:25:14,000
+But using NEGF
+
+634
+00:25:14,000 --> 00:25:16,000
+like if it's
+
+635
+00:25:16,000 --> 00:25:18,000
+ballistic, it's not
+
+636
+00:25:18,000 --> 00:25:20,000
+really useful for
+
+637
+00:25:20,000 --> 00:25:22,000
+optoelectronic because there's no
+
+638
+00:25:22,000 --> 00:25:24,000
+recombination scattering processes and
+
+639
+00:25:24,000 --> 00:25:26,000
+there's like the way I mentioned, it's called
+
+640
+00:25:26,000 --> 00:25:28,000
+multi-equilibrium
+
+641
+00:25:28,000 --> 00:25:30,000
+way. So some part of it you
+
+642
+00:25:30,000 --> 00:25:32,000
+simulate, you assume
+
+643
+00:25:32,000 --> 00:25:34,000
+like there's like an equilibrium there.
+
+644
+00:25:34,000 --> 00:25:36,000
+But
+
+645
+00:25:36,000 --> 00:25:38,000
+this method, it requires
+
+646
+00:25:38,000 --> 00:25:40,000
+like
+
+647
+00:25:40,000 --> 00:25:42,000
+really, it only
+
+648
+00:25:42,000 --> 00:25:44,000
+works with, for example, quantum well structure
+
+649
+00:25:44,000 --> 00:25:46,000
+and inside here, we can
+
+650
+00:25:46,000 --> 00:25:48,000
+set it to be equilibrium and somehow to
+
+651
+00:25:48,000 --> 00:25:50,000
+have the carrier recombine.
+
+652
+00:25:50,000 --> 00:25:52,000
+But in this way, the new
+
+653
+00:25:52,000 --> 00:25:54,000
+proposed beautiful probe way
+
+654
+00:25:54,000 --> 00:25:56,000
+where the carriers are always
+
+655
+00:25:56,000 --> 00:25:58,000
+wavelength and we can have
+
+656
+00:25:58,000 --> 00:26:00,000
+recombination generation everywhere in the
+
+657
+00:26:00,000 --> 00:26:02,000
+device and we also can have scattering
+
+658
+00:26:02,000 --> 00:26:04,000
+consider and
+
+659
+00:26:04,000 --> 00:26:06,000
+you don't need to say
+
+660
+00:26:06,000 --> 00:26:08,000
+this part is equilibrium or the other part
+
+661
+00:26:08,000 --> 00:26:10,000
+is non-equilibrium. So you can simulate
+
+662
+00:26:10,000 --> 00:26:12,000
+the entire device without
+
+663
+00:26:12,000 --> 00:26:14,000
+artificial boundary.
+
+664
+00:26:14,000 --> 00:26:16,000
+And of course, there's the SC Born method
+
+665
+00:26:16,000 --> 00:26:18,000
+but that's like super expensive and
+
+666
+00:26:18,000 --> 00:26:20,000
+no one has, I would say
+
+667
+00:26:20,000 --> 00:26:22,000
+like no one has done like
+
+668
+00:26:22,000 --> 00:26:24,000
+a simulation like
+
+669
+00:26:24,000 --> 00:26:26,000
+LED kind of simulation
+
+670
+00:26:26,000 --> 00:26:28,000
+like with it.
+
+671
+00:26:28,000 --> 00:26:30,000
+And so later
+
+672
+00:26:30,000 --> 00:26:32,000
+next one, I will go
+
+673
+00:26:32,000 --> 00:26:34,000
+to talk about the results.
+
+674
+00:26:34,000 --> 00:26:36,000
+So first part, I will show that
+
+675
+00:26:36,000 --> 00:26:38,000
+the importance of recombination.
+
+676
+00:26:38,000 --> 00:26:40,000
+So here is a picture
+
+677
+00:26:40,000 --> 00:26:42,000
+showing, this is a structure
+
+678
+00:26:42,000 --> 00:26:44,000
+where electrons coming
+
+679
+00:26:44,000 --> 00:26:46,000
+again from the left side here and then
+
+680
+00:26:46,000 --> 00:26:48,000
+there's a band structure. There's a
+
+681
+00:26:48,000 --> 00:26:50,000
+band gap in between
+
+682
+00:26:50,000 --> 00:26:52,000
+this and I crop out in between
+
+683
+00:26:52,000 --> 00:26:54,000
+and the hole is coming to here.
+
+684
+00:26:54,000 --> 00:26:56,000
+So
+
+685
+00:26:56,000 --> 00:26:58,000
+there are two paths that electron
+
+686
+00:26:58,000 --> 00:27:00,000
+can, there's
+
+687
+00:27:00,000 --> 00:27:02,000
+a current conducting path, right?
+
+688
+00:27:02,000 --> 00:27:04,000
+So one path is the blue path where
+
+689
+00:27:04,000 --> 00:27:06,000
+electron come here and hole come here
+
+690
+00:27:06,000 --> 00:27:08,000
+and they will recombine and this
+
+691
+00:27:08,000 --> 00:27:10,000
+current, they can form a current path.
+
+692
+00:27:10,000 --> 00:27:12,000
+And the other path is the black line
+
+693
+00:27:12,000 --> 00:27:14,000
+where the carrier come in and can
+
+694
+00:27:14,000 --> 00:27:16,000
+jump over the barrier to the other side.
+
+695
+00:27:16,000 --> 00:27:18,000
+So there are two way that the
+
+696
+00:27:18,000 --> 00:27:20,000
+carrier can
+
+697
+00:27:20,000 --> 00:27:22,000
+that the current can form.
+
+698
+00:27:22,000 --> 00:27:24,000
+So here's a comparison with
+
+699
+00:27:24,000 --> 00:27:26,000
+or without this indium
+
+700
+00:27:26,000 --> 00:27:28,000
+gallium nitride. So when we form
+
+701
+00:27:28,000 --> 00:27:30,000
+the quantum well with a lower
+
+702
+00:27:30,000 --> 00:27:32,000
+band gap material here. So on the two sides
+
+703
+00:27:32,000 --> 00:27:34,000
+gallium nitride with a larger band gap.
+
+704
+00:27:34,000 --> 00:27:36,000
+With indium gallium nitride, you can shrink
+
+705
+00:27:36,000 --> 00:27:38,000
+the band gap and that's why we see this dip
+
+706
+00:27:38,000 --> 00:27:40,000
+here. And with this, you
+
+707
+00:27:40,000 --> 00:27:42,000
+can see that comparing the two
+
+708
+00:27:42,000 --> 00:27:44,000
+the recombination current is
+
+709
+00:27:44,000 --> 00:27:46,000
+much higher with a quantum well
+
+710
+00:27:46,000 --> 00:27:48,000
+because inside a quantum well, there's a
+
+711
+00:27:48,000 --> 00:27:50,000
+higher chance of
+
+712
+00:27:50,000 --> 00:27:52,000
+carrier here and because
+
+713
+00:27:52,000 --> 00:27:54,000
+we also know that
+
+714
+00:27:54,000 --> 00:27:56,000
+the recombination
+
+715
+00:27:56,000 --> 00:27:58,000
+is proportional to the carrier density
+
+716
+00:27:58,000 --> 00:28:00,000
+there, right? They want to see each other
+
+717
+00:28:00,000 --> 00:28:02,000
+they want to recombine. So the more they have
+
+718
+00:28:02,000 --> 00:28:04,000
+at each location, the more
+
+719
+00:28:04,000 --> 00:28:06,000
+they can recombine with each other.
+
+720
+00:28:06,000 --> 00:28:08,000
+So
+
+721
+00:28:10,000 --> 00:28:12,000
+here I'm trying
+
+722
+00:28:12,000 --> 00:28:14,000
+to show that
+
+723
+00:28:14,000 --> 00:28:16,000
+when we do any
+
+724
+00:28:16,000 --> 00:28:18,000
+gift calculation, when we include
+
+725
+00:28:18,000 --> 00:28:20,000
+the recombination here
+
+726
+00:28:20,000 --> 00:28:22,000
+this is a typical
+
+727
+00:28:22,000 --> 00:28:24,000
+IV curve and we can see that
+
+728
+00:28:24,000 --> 00:28:26,000
+this is a log scale
+
+729
+00:28:26,000 --> 00:28:28,000
+current, right? So when we increase
+
+730
+00:28:30,000 --> 00:28:32,000
+when we increase the drain
+
+731
+00:28:32,000 --> 00:28:34,000
+voltage, we are pulling
+
+732
+00:28:34,000 --> 00:28:36,000
+the barrier down
+
+733
+00:28:36,000 --> 00:28:38,000
+so there are more and more current can go
+
+734
+00:28:38,000 --> 00:28:40,000
+through to the other side. So
+
+735
+00:28:40,000 --> 00:28:42,000
+let's focus first on
+
+736
+00:28:42,000 --> 00:28:44,000
+the low Vd
+
+737
+00:28:44,000 --> 00:28:46,000
+side. So on the low Vd side
+
+738
+00:28:46,000 --> 00:28:48,000
+there, you can
+
+739
+00:28:48,000 --> 00:28:50,000
+see that there's still a barrier here. So
+
+740
+00:28:50,000 --> 00:28:52,000
+the black current, so the total
+
+741
+00:28:52,000 --> 00:28:54,000
+current will be, as I said before
+
+742
+00:28:54,000 --> 00:28:56,000
+there's like two parts. There's a recombine
+
+743
+00:28:56,000 --> 00:28:58,000
+the electron hole
+
+744
+00:28:58,000 --> 00:29:00,000
+they can recombine here for a
+
+745
+00:29:00,000 --> 00:29:02,000
+current path. And there's also the
+
+746
+00:29:02,000 --> 00:29:04,000
+thermionic current where the carrier can
+
+747
+00:29:04,000 --> 00:29:06,000
+jump over the barrier to the other side
+
+748
+00:29:06,000 --> 00:29:08,000
+so this is the two part. And when the
+
+749
+00:29:08,000 --> 00:29:10,000
+barrier is still high, we can see that the black line
+
+750
+00:29:10,000 --> 00:29:12,000
+is not in favor because it's hard
+
+751
+00:29:12,000 --> 00:29:14,000
+for the electron to jump out here. There's like
+
+752
+00:29:14,000 --> 00:29:16,000
+few particles here to jump out. So
+
+753
+00:29:16,000 --> 00:29:18,000
+the black part of the current is super
+
+754
+00:29:18,000 --> 00:29:20,000
+small. And
+
+755
+00:29:20,000 --> 00:29:22,000
+at this region
+
+756
+00:29:22,000 --> 00:29:24,000
+the recombination current dominates
+
+757
+00:29:24,000 --> 00:29:26,000
+so we can see that this is
+
+758
+00:29:26,000 --> 00:29:28,000
+the
+
+759
+00:29:28,000 --> 00:29:30,000
+distribution here.
+
+760
+00:29:30,000 --> 00:29:32,000
+And when we increase
+
+761
+00:29:32,000 --> 00:29:34,000
+the bias voltage
+
+762
+00:29:34,000 --> 00:29:36,000
+we're pulling the other side, the barrier down
+
+763
+00:29:36,000 --> 00:29:38,000
+so as you can see here
+
+764
+00:29:38,000 --> 00:29:40,000
+right now the black path is easier
+
+765
+00:29:40,000 --> 00:29:42,000
+the electron can zip through the device
+
+766
+00:29:42,000 --> 00:29:44,000
+and form a current path
+
+767
+00:29:44,000 --> 00:29:46,000
+so right now the blue one is
+
+768
+00:29:46,000 --> 00:29:48,000
+it's still large but
+
+769
+00:29:48,000 --> 00:29:50,000
+compared to the black one it's much smaller
+
+770
+00:29:50,000 --> 00:29:52,000
+so this is on off.
+
+771
+00:29:56,000 --> 00:29:58,000
+So when we include
+
+772
+00:29:58,000 --> 00:30:00,000
+NEGF, when we do
+
+773
+00:30:00,000 --> 00:30:02,000
+non-equilibrium Green's function
+
+774
+00:30:02,000 --> 00:30:04,000
+transport calculation, when we don't
+
+775
+00:30:04,000 --> 00:30:06,000
+have recombination, which current
+
+776
+00:30:06,000 --> 00:30:08,000
+do we get? We get the
+
+777
+00:30:08,000 --> 00:30:10,000
+we don't have
+
+778
+00:30:10,000 --> 00:30:12,000
+the blue line here so we're only getting
+
+779
+00:30:12,000 --> 00:30:14,000
+the black. And if we
+
+780
+00:30:14,000 --> 00:30:16,000
+using this method we're able
+
+781
+00:30:16,000 --> 00:30:18,000
+to include the recombination process
+
+782
+00:30:18,000 --> 00:30:20,000
+which means we get the red line
+
+783
+00:30:20,000 --> 00:30:22,000
+so we're pushing
+
+784
+00:30:22,000 --> 00:30:24,000
+the boundary of NEGF such that
+
+785
+00:30:24,000 --> 00:30:26,000
+we can simulate the device
+
+786
+00:30:26,000 --> 00:30:28,000
+from a black line to a red line
+
+787
+00:30:28,000 --> 00:30:30,000
+which is a really large difference if you look at
+
+788
+00:30:30,000 --> 00:30:32,000
+here and
+
+789
+00:30:32,000 --> 00:30:34,000
+if you look at the
+
+790
+00:30:34,000 --> 00:30:36,000
+before the threshold voltage there's a
+
+791
+00:30:36,000 --> 00:30:38,000
+huge current difference with or without
+
+792
+00:30:38,000 --> 00:30:40,000
+recombination and it
+
+793
+00:30:40,000 --> 00:30:42,000
+also further impact what's the
+
+794
+00:30:42,000 --> 00:30:44,000
+threshold voltage. The threshold voltage means
+
+795
+00:30:44,000 --> 00:30:46,000
+when is your device on
+
+796
+00:30:46,000 --> 00:30:48,000
+or off. So there's a small shift
+
+797
+00:30:48,000 --> 00:30:50,000
+here although on a
+
+798
+00:30:50,000 --> 00:30:52,000
+linear scale but with more recombination
+
+799
+00:30:52,000 --> 00:30:54,000
+the red and
+
+800
+00:30:54,000 --> 00:30:56,000
+also the black line will have a larger
+
+801
+00:30:56,000 --> 00:30:58,000
+shift and therefore a larger impact.
+
+802
+00:30:58,000 --> 00:31:00,000
+So it's really important to
+
+803
+00:31:00,000 --> 00:31:02,000
+include the recombination
+
+804
+00:31:02,000 --> 00:31:04,000
+in your device.
+
+805
+00:31:04,000 --> 00:31:06,000
+Can I ask a question here?
+
+806
+00:31:06,000 --> 00:31:08,000
+Yeah, sure.
+
+807
+00:31:08,000 --> 00:31:10,000
+Can you go back to your previous slide?
+
+808
+00:31:10,000 --> 00:31:12,000
+Yes.
+
+809
+00:31:12,000 --> 00:31:14,000
+Maybe
+
+810
+00:31:14,000 --> 00:31:16,000
+this is a bit stupid but I
+
+811
+00:31:16,000 --> 00:31:18,000
+thought
+
+812
+00:31:18,000 --> 00:31:20,000
+recombination
+
+813
+00:31:20,000 --> 00:31:22,000
+means you have
+
+814
+00:31:22,000 --> 00:31:24,000
+electron hole pair recombine
+
+815
+00:31:24,000 --> 00:31:26,000
+and I thought it will
+
+816
+00:31:26,000 --> 00:31:28,000
+lead to the emission
+
+817
+00:31:28,000 --> 00:31:30,000
+of phonon or emission of photon
+
+818
+00:31:30,000 --> 00:31:32,000
+and usually
+
+819
+00:31:32,000 --> 00:31:34,000
+I would think
+
+820
+00:31:34,000 --> 00:31:36,000
+recombination is bad
+
+821
+00:31:36,000 --> 00:31:38,000
+for the current but here you are saying
+
+822
+00:31:38,000 --> 00:31:40,000
+when you have
+
+823
+00:31:40,000 --> 00:31:42,000
+smaller bias voltage
+
+824
+00:31:42,000 --> 00:31:44,000
+the VT is smaller you
+
+825
+00:31:44,000 --> 00:31:46,000
+actually have higher recombination
+
+826
+00:31:46,000 --> 00:31:48,000
+energy, recombination
+
+827
+00:31:48,000 --> 00:31:50,000
+current. Why does recombination
+
+828
+00:31:50,000 --> 00:31:52,000
+contribute to a current?
+
+829
+00:31:52,000 --> 00:31:54,000
+To a current?
+
+830
+00:31:54,000 --> 00:31:56,000
+Or a current?
+
+831
+00:31:56,000 --> 00:31:58,000
+So there are different
+
+832
+00:31:58,000 --> 00:32:00,000
+recombination process, right? There's like
+
+833
+00:32:00,000 --> 00:32:02,000
+I mentioned like there's a
+
+834
+00:32:02,000 --> 00:32:04,000
+there's radiative recombination
+
+835
+00:32:04,000 --> 00:32:06,000
+and there's OJ recombination.
+
+836
+00:32:06,000 --> 00:32:08,000
+So they are all
+
+837
+00:32:08,000 --> 00:32:10,000
+the consequence of electron hole.
+
+838
+00:32:10,000 --> 00:32:12,000
+I mean OJ
+
+839
+00:32:12,000 --> 00:32:14,000
+is the radiative
+
+840
+00:32:14,000 --> 00:32:16,000
+in the shock wave hole is one electron one hole
+
+841
+00:32:16,000 --> 00:32:18,000
+and they disappear.
+
+842
+00:32:18,000 --> 00:32:20,000
+And the shock wave hole is
+
+843
+00:32:20,000 --> 00:32:22,000
+you emit heat.
+
+844
+00:32:22,000 --> 00:32:24,000
+Yeah, phonons.
+
+845
+00:32:24,000 --> 00:32:26,000
+And the radiative is like you emit
+
+846
+00:32:26,000 --> 00:32:28,000
+photon. And OJ
+
+847
+00:32:28,000 --> 00:32:30,000
+is like you kick another carrier
+
+848
+00:32:30,000 --> 00:32:32,000
+to a higher energy, right? So it's useless
+
+849
+00:32:32,000 --> 00:32:34,000
+too, right? So
+
+850
+00:32:34,000 --> 00:32:36,000
+not all. Okay, so wait, your question
+
+851
+00:32:36,000 --> 00:32:38,000
+is, but here
+
+852
+00:32:38,000 --> 00:32:40,000
+is showing the recombination is
+
+853
+00:32:40,000 --> 00:32:42,000
+the blue line here, right? So when
+
+854
+00:32:42,000 --> 00:32:44,000
+your lower VT is lower, when your
+
+855
+00:32:44,000 --> 00:32:46,000
+higher VT it's
+
+856
+00:32:46,000 --> 00:32:48,000
+higher.
+
+857
+00:32:48,000 --> 00:32:50,000
+But, sorry, what
+
+858
+00:32:50,000 --> 00:32:52,000
+was your question? My question is
+
+859
+00:32:52,000 --> 00:32:54,000
+I, okay, I
+
+860
+00:32:54,000 --> 00:32:56,000
+thought recombination
+
+861
+00:32:56,000 --> 00:32:58,000
+is bad for your, for the current.
+
+862
+00:33:00,000 --> 00:33:02,000
+Why?
+
+863
+00:33:02,000 --> 00:33:04,000
+It's bad because
+
+864
+00:33:04,000 --> 00:33:06,000
+it's
+
+865
+00:33:06,000 --> 00:33:08,000
+I think some, well
+
+866
+00:33:08,000 --> 00:33:10,000
+bad is kind of like a subjective, right?
+
+867
+00:33:10,000 --> 00:33:12,000
+I would call it bad if
+
+868
+00:33:12,000 --> 00:33:14,000
+I would call it
+
+869
+00:33:14,000 --> 00:33:16,000
+this is a bad device if most of your
+
+870
+00:33:16,000 --> 00:33:18,000
+recombination happens for
+
+871
+00:33:18,000 --> 00:33:20,000
+happen in the way, the shock wave hole way
+
+872
+00:33:20,000 --> 00:33:22,000
+or OJ, right? So the black
+
+873
+00:33:22,000 --> 00:33:24,000
+and the red is bad because they don't
+
+874
+00:33:24,000 --> 00:33:26,000
+produce photon, you don't
+
+875
+00:33:26,000 --> 00:33:28,000
+produce light, then why are you
+
+876
+00:33:28,000 --> 00:33:30,000
+recombining? So I think
+
+877
+00:33:30,000 --> 00:33:32,000
+bad is, okay, it depends
+
+878
+00:33:32,000 --> 00:33:34,000
+on which process you are
+
+879
+00:33:34,000 --> 00:33:36,000
+looking at, right? I think
+
+880
+00:33:36,000 --> 00:33:38,000
+the blue one is good because
+
+881
+00:33:38,000 --> 00:33:40,000
+I see, I see, because you want a photon
+
+882
+00:33:40,000 --> 00:33:42,000
+going, I see. Yeah.
+
+883
+00:33:42,000 --> 00:33:44,000
+Okay. Yes, yes.
+
+884
+00:33:44,000 --> 00:33:46,000
+Okay, and the relation between
+
+885
+00:33:46,000 --> 00:33:48,000
+okay, maybe this is
+
+886
+00:33:48,000 --> 00:33:50,000
+a bit specific, like OJ one
+
+887
+00:33:50,000 --> 00:33:52,000
+the radiative one and
+
+888
+00:33:52,000 --> 00:33:54,000
+the phonon one
+
+889
+00:33:54,000 --> 00:33:56,000
+black, blue, and red.
+
+890
+00:33:56,000 --> 00:33:58,000
+Are they always in this order?
+
+891
+00:33:58,000 --> 00:34:00,000
+Won't they cross
+
+892
+00:34:00,000 --> 00:34:02,000
+at some point if you have different lengths
+
+893
+00:34:02,000 --> 00:34:04,000
+of the, I think
+
+894
+00:34:04,000 --> 00:34:06,000
+this X means the size of your
+
+895
+00:34:06,000 --> 00:34:08,000
+Yeah, because it looks like
+
+896
+00:34:08,000 --> 00:34:10,000
+they always have red, blue, and black.
+
+897
+00:34:10,000 --> 00:34:12,000
+Do they ever
+
+898
+00:34:12,000 --> 00:34:14,000
+cross at some point?
+
+899
+00:34:14,000 --> 00:34:16,000
+I think I was showing
+
+900
+00:34:16,000 --> 00:34:18,000
+the interesting
+
+901
+00:34:18,000 --> 00:34:20,000
+question because I was showing
+
+902
+00:34:20,000 --> 00:34:22,000
+previously
+
+903
+00:34:22,000 --> 00:34:24,000
+they have different
+
+904
+00:34:24,000 --> 00:34:26,000
+relationship, right? So
+
+905
+00:34:26,000 --> 00:34:28,000
+this is an ABC model
+
+906
+00:34:28,000 --> 00:34:30,000
+where the
+
+907
+00:34:30,000 --> 00:34:32,000
+shock wave we hold there is proportional to
+
+908
+00:34:32,000 --> 00:34:34,000
+n plus p, and the radiative
+
+909
+00:34:34,000 --> 00:34:36,000
+is n and p, and then
+
+910
+00:34:36,000 --> 00:34:38,000
+the rate is proportional to n
+
+911
+00:34:38,000 --> 00:34:40,000
+squared p. So
+
+912
+00:34:40,000 --> 00:34:42,000
+I think if you engineer it
+
+913
+00:34:42,000 --> 00:34:44,000
+smartly, you can
+
+914
+00:34:44,000 --> 00:34:46,000
+control which one dominates.
+
+915
+00:34:46,000 --> 00:34:48,000
+But somehow in this scenario
+
+916
+00:34:48,000 --> 00:34:50,000
+the red one is always larger
+
+917
+00:34:50,000 --> 00:34:52,000
+but if you look at the equation here
+
+918
+00:34:52,000 --> 00:34:54,000
+it's n squared p
+
+919
+00:34:54,000 --> 00:34:56,000
+so if you make the p much
+
+920
+00:34:56,000 --> 00:34:58,000
+smaller, right now it's equally large
+
+921
+00:34:58,000 --> 00:35:00,000
+n and p are super large both in here
+
+922
+00:35:00,000 --> 00:35:02,000
+but the real device
+
+923
+00:35:02,000 --> 00:35:04,000
+I think is more complicated
+
+924
+00:35:04,000 --> 00:35:06,000
+and maybe in some
+
+925
+00:35:06,000 --> 00:35:08,000
+way, smart way, you can
+
+926
+00:35:08,000 --> 00:35:10,000
+shrink, make the blue
+
+927
+00:35:10,000 --> 00:35:12,000
+dominant and the other two
+
+928
+00:35:12,000 --> 00:35:14,000
+because relatively they are different, right?
+
+929
+00:35:14,000 --> 00:35:16,000
+In this case
+
+930
+00:35:16,000 --> 00:35:18,000
+the red are closer to blue
+
+931
+00:35:18,000 --> 00:35:20,000
+but here you can see that
+
+932
+00:35:20,000 --> 00:35:22,000
+the red and blue is farther away
+
+933
+00:35:22,000 --> 00:35:24,000
+or yeah
+
+934
+00:35:24,000 --> 00:35:26,000
+I think
+
+935
+00:35:26,000 --> 00:35:28,000
+there's some way
+
+936
+00:35:28,000 --> 00:35:30,000
+we can engineer it to make it
+
+937
+00:35:30,000 --> 00:35:32,000
+some area the blue one
+
+938
+00:35:32,000 --> 00:35:34,000
+will dominate, yeah.
+
+939
+00:35:40,000 --> 00:35:42,000
+Is there any other questions?
+
+940
+00:35:42,000 --> 00:35:44,000
+I have a question here.
+
+941
+00:35:46,000 --> 00:35:48,000
+So I guess
+
+942
+00:35:48,000 --> 00:35:50,000
+this case is simple enough
+
+943
+00:35:50,000 --> 00:35:52,000
+I guess this is probably
+
+944
+00:35:52,000 --> 00:35:54,000
+just your test case
+
+945
+00:35:54,000 --> 00:35:56,000
+but this case is simple enough
+
+946
+00:35:56,000 --> 00:35:58,000
+that you can also use semi-classical
+
+947
+00:35:58,000 --> 00:36:00,000
+way to do a simulation
+
+948
+00:36:00,000 --> 00:36:02,000
+so I'm just wondering
+
+949
+00:36:02,000 --> 00:36:04,000
+how do they compare?
+
+950
+00:36:04,000 --> 00:36:06,000
+So that's my next topic
+
+951
+00:36:06,000 --> 00:36:08,000
+it's like comparing on
+
+952
+00:36:08,000 --> 00:36:10,000
+this really small structure and then
+
+953
+00:36:10,000 --> 00:36:12,000
+we are using a semi-classical way and also
+
+954
+00:36:12,000 --> 00:36:14,000
+a quantum way to compute
+
+955
+00:36:14,000 --> 00:36:16,000
+and then I will show some comparison
+
+956
+00:36:16,000 --> 00:36:18,000
+here so I think that's the
+
+957
+00:36:18,000 --> 00:36:20,000
+that will answer your question.
+
+958
+00:36:20,000 --> 00:36:22,000
+Okay, great, yeah.
+
+959
+00:36:22,000 --> 00:36:24,000
+So the next one as the question has
+
+960
+00:36:24,000 --> 00:36:26,000
+elevated us
+
+961
+00:36:26,000 --> 00:36:28,000
+to this point, so I'm going
+
+962
+00:36:28,000 --> 00:36:30,000
+to talk about the comparison between the two, semi-classical
+
+963
+00:36:30,000 --> 00:36:32,000
+and quantum
+
+964
+00:36:32,000 --> 00:36:34,000
+and how do we compare, how do we make a fair comparison
+
+965
+00:36:34,000 --> 00:36:36,000
+yes, that's an important question
+
+966
+00:36:36,000 --> 00:36:38,000
+is that we use the same still
+
+967
+00:36:38,000 --> 00:36:40,000
+the same small, like the structure I was
+
+968
+00:36:40,000 --> 00:36:42,000
+showing here is like 20 nanometer
+
+969
+00:36:42,000 --> 00:36:44,000
+so it's a super tiny structure
+
+970
+00:36:44,000 --> 00:36:46,000
+and then I'm going to apply
+
+971
+00:36:46,000 --> 00:36:48,000
+semi-classical method, a drip
+
+972
+00:36:48,000 --> 00:36:50,000
+diffusion one and also
+
+973
+00:36:52,000 --> 00:36:54,000
+for the quantum way I'm using
+
+974
+00:36:54,000 --> 00:36:56,000
+this new method, the butycoprobe
+
+975
+00:36:56,000 --> 00:36:58,000
+with recombinant generation method
+
+976
+00:36:58,000 --> 00:37:00,000
+which is the tool our lab
+
+977
+00:37:00,000 --> 00:37:02,000
+used to work on in grad school
+
+978
+00:37:02,000 --> 00:37:04,000
+so if you guys are interested in applying for our group
+
+979
+00:37:04,000 --> 00:37:06,000
+email me and I can give
+
+980
+00:37:06,000 --> 00:37:08,000
+you more information
+
+981
+00:37:08,000 --> 00:37:10,000
+so how do we compare this
+
+982
+00:37:10,000 --> 00:37:12,000
+is that in all the transport
+
+983
+00:37:12,000 --> 00:37:14,000
+simulation
+
+984
+00:37:16,000 --> 00:37:18,000
+we're decoupling the transport part
+
+985
+00:37:18,000 --> 00:37:20,000
+with the part, like
+
+986
+00:37:20,000 --> 00:37:22,000
+electrostatic part, so we usually do a
+
+987
+00:37:22,000 --> 00:37:24,000
+self-consistent, we solve for the
+
+988
+00:37:24,000 --> 00:37:26,000
+where's the electron holes and given
+
+989
+00:37:26,000 --> 00:37:28,000
+the electron holes and they have charge
+
+990
+00:37:28,000 --> 00:37:30,000
+and therefore they will form a potential
+
+991
+00:37:30,000 --> 00:37:32,000
+so we will feed back the carrier
+
+992
+00:37:32,000 --> 00:37:34,000
+transport and plug it into Poisson
+
+993
+00:37:34,000 --> 00:37:36,000
+and get a potential and like doing this
+
+994
+00:37:36,000 --> 00:37:38,000
+like a hundred times or whatever
+
+995
+00:37:38,000 --> 00:37:40,000
+it's converging, so it's like self-consistently
+
+996
+00:37:40,000 --> 00:37:42,000
+solving, decouple the two
+
+997
+00:37:42,000 --> 00:37:44,000
+and solve the Poisson
+
+998
+00:37:44,000 --> 00:37:46,000
+and just keep on doing until it doesn't
+
+999
+00:37:46,000 --> 00:37:48,000
+change anymore and then we declare
+
+1000
+00:37:48,000 --> 00:37:50,000
+this simulation is finished
+
+1001
+00:37:50,000 --> 00:37:52,000
+it's converged
+
+1002
+00:37:52,000 --> 00:37:54,000
+so to compare
+
+1003
+00:37:54,000 --> 00:37:56,000
+it's easy because we can
+
+1004
+00:37:56,000 --> 00:37:58,000
+just focus on this part and then for the
+
+1005
+00:37:58,000 --> 00:38:00,000
+carrier we can choose to use
+
+1006
+00:38:00,000 --> 00:38:02,000
+NEGF or we can choose the
+
+1007
+00:38:02,000 --> 00:38:04,000
+semi-classical way of doing it
+
+1008
+00:38:04,000 --> 00:38:06,000
+and when doing the semi-classical way
+
+1009
+00:38:06,000 --> 00:38:08,000
+we also choose to
+
+1010
+00:38:08,000 --> 00:38:10,000
+because Drift Diffusion, to solve these problems
+
+1011
+00:38:10,000 --> 00:38:12,000
+they usually have another quantum correction model
+
+1012
+00:38:12,000 --> 00:38:14,000
+where they are solving just
+
+1013
+00:38:14,000 --> 00:38:16,000
+a confined Schrodinger
+
+1014
+00:38:16,000 --> 00:38:18,000
+but NEGF is more like an open boundary
+
+1015
+00:38:18,000 --> 00:38:20,000
+open boundary Schrodinger
+
+1016
+00:38:20,000 --> 00:38:22,000
+equation, but like
+
+1017
+00:38:22,000 --> 00:38:24,000
+for semi-classical
+
+1018
+00:38:24,000 --> 00:38:26,000
+people, they usually will
+
+1019
+00:38:26,000 --> 00:38:28,000
+couple it with a quantum correction method
+
+1020
+00:38:28,000 --> 00:38:30,000
+which is solving Schrodinger
+
+1021
+00:38:30,000 --> 00:38:32,000
+inside an infinite
+
+1022
+00:38:32,000 --> 00:38:34,000
+quantum
+
+1023
+00:38:34,000 --> 00:38:36,000
+so they will have boundary, but solving Schrodinger
+
+1024
+00:38:36,000 --> 00:38:38,000
+only in that region and try to couple them
+
+1025
+00:38:38,000 --> 00:38:40,000
+together
+
+1026
+00:38:40,000 --> 00:38:42,000
+so the question to answer is
+
+1027
+00:38:42,000 --> 00:38:44,000
+how do we
+
+1028
+00:38:44,000 --> 00:38:46,000
+compare the quantum and semi-classical models
+
+1029
+00:38:48,000 --> 00:38:50,000
+and here is
+
+1030
+00:38:50,000 --> 00:38:52,000
+more of like showing
+
+1031
+00:38:54,000 --> 00:38:56,000
+so the left side is using
+
+1032
+00:38:56,000 --> 00:38:58,000
+the NEGF where
+
+1033
+00:38:58,000 --> 00:39:00,000
+we will have a band structure, right?
+
+1034
+00:39:00,000 --> 00:39:02,000
+we will have the band gap of
+
+1035
+00:39:02,000 --> 00:39:04,000
+I think this is around
+
+1036
+00:39:04,000 --> 00:39:06,000
+0.4 to
+
+1037
+00:39:06,000 --> 00:39:08,000
+so galenitride is like 3.4
+
+1038
+00:39:08,000 --> 00:39:10,000
+electron volts, and inside here
+
+1039
+00:39:10,000 --> 00:39:12,000
+there is like a quantum well
+
+1040
+00:39:12,000 --> 00:39:14,000
+so the actual
+
+1041
+00:39:14,000 --> 00:39:16,000
+will be galenitride
+
+1042
+00:39:16,000 --> 00:39:18,000
+and we assume that it is doped with 1E20
+
+1043
+00:39:18,000 --> 00:39:20,000
+and there is like a region of galenitride
+
+1044
+00:39:20,000 --> 00:39:22,000
+and that will have a smaller band gap
+
+1045
+00:39:22,000 --> 00:39:24,000
+and also the galenitride, and this is like
+
+1046
+00:39:24,000 --> 00:39:26,000
+the structure we are looking into
+
+1047
+00:39:26,000 --> 00:39:28,000
+and in NEGF
+
+1048
+00:39:28,000 --> 00:39:30,000
+we will provide like a
+
+1049
+00:39:30,000 --> 00:39:32,000
+total energy
+
+1050
+00:39:32,000 --> 00:39:34,000
+so the y-axis is the energy range
+
+1051
+00:39:34,000 --> 00:39:36,000
+so you know
+
+1052
+00:39:36,000 --> 00:39:38,000
+here are some states that can be
+
+1053
+00:39:38,000 --> 00:39:40,000
+so here the color means like the density
+
+1054
+00:39:40,000 --> 00:39:42,000
+of states, means like the carrier
+
+1055
+00:39:42,000 --> 00:39:44,000
+can have a possibility to go in
+
+1056
+00:39:44,000 --> 00:39:46,000
+there, but there is some portion of it
+
+1057
+00:39:46,000 --> 00:39:48,000
+like brighter, which means
+
+1058
+00:39:48,000 --> 00:39:50,000
+because of the interference, carrier
+
+1059
+00:39:50,000 --> 00:39:52,000
+doesn't have a
+
+1060
+00:39:52,000 --> 00:39:54,000
+even if you have carrier, it cannot go in
+
+1061
+00:39:54,000 --> 00:39:56,000
+here, so that's what the density of states
+
+1062
+00:39:56,000 --> 00:39:58,000
+means
+
+1063
+00:39:58,000 --> 00:40:00,000
+the NEGF we can provide
+
+1064
+00:40:00,000 --> 00:40:02,000
+is non-equilibrium throughout the entire
+
+1065
+00:40:02,000 --> 00:40:04,000
+device, which means the carrier
+
+1066
+00:40:04,000 --> 00:40:06,000
+doesn't have to follow Fermi-Dirac
+
+1067
+00:40:06,000 --> 00:40:08,000
+distribution everywhere
+
+1068
+00:40:08,000 --> 00:40:10,000
+also we can see that the states
+
+1069
+00:40:10,000 --> 00:40:12,000
+is broadened, so because
+
+1070
+00:40:12,000 --> 00:40:14,000
+you are in contact with the
+
+1071
+00:40:14,000 --> 00:40:16,000
+external source, therefore
+
+1072
+00:40:16,000 --> 00:40:18,000
+the state is broadened
+
+1073
+00:40:18,000 --> 00:40:20,000
+otherwise, if you solve
+
+1074
+00:40:20,000 --> 00:40:22,000
+this in the Schrodinger equation
+
+1075
+00:40:22,000 --> 00:40:24,000
+it's going to be confined
+
+1076
+00:40:24,000 --> 00:40:26,000
+like a
+
+1077
+00:40:26,000 --> 00:40:28,000
+the states is like, you know, it's not
+
+1078
+00:40:28,000 --> 00:40:30,000
+broadened, but here we can see that
+
+1079
+00:40:30,000 --> 00:40:32,000
+for example, quantum well here, it's not a
+
+1080
+00:40:32,000 --> 00:40:34,000
+compared to Schrodinger equation
+
+1081
+00:40:34,000 --> 00:40:36,000
+it's a fixed energy level, because
+
+1082
+00:40:36,000 --> 00:40:38,000
+you are in contact with the surrounding
+
+1083
+00:40:38,000 --> 00:40:40,000
+therefore there is a peak here
+
+1084
+00:40:40,000 --> 00:40:42,000
+and for the drift diffusion
+
+1085
+00:40:42,000 --> 00:40:44,000
+we can see that
+
+1086
+00:40:44,000 --> 00:40:46,000
+here
+
+1087
+00:40:46,000 --> 00:40:48,000
+drift diffusion
+
+1088
+00:40:48,000 --> 00:40:50,000
+equation assume that
+
+1089
+00:40:50,000 --> 00:40:52,000
+in everywhere there is a Fermi
+
+1090
+00:40:52,000 --> 00:40:54,000
+energy, right, and for this Fermi energy
+
+1091
+00:40:54,000 --> 00:40:56,000
+follows the Fermi distribution
+
+1092
+00:40:56,000 --> 00:40:58,000
+which means the carrier will
+
+1093
+00:40:58,000 --> 00:41:00,000
+be Fermi distribution everywhere
+
+1094
+00:41:00,000 --> 00:41:02,000
+with different Fermi energy
+
+1095
+00:41:02,000 --> 00:41:04,000
+and also
+
+1096
+00:41:04,000 --> 00:41:06,000
+we are solving the quantum
+
+1097
+00:41:06,000 --> 00:41:08,000
+using this Q-well method
+
+1098
+00:41:08,000 --> 00:41:10,000
+in ATLAS, which is solving Schrodinger equation
+
+1099
+00:41:10,000 --> 00:41:12,000
+here, so that's why we can have this
+
+1100
+00:41:12,000 --> 00:41:14,000
+red wave function
+
+1101
+00:41:14,000 --> 00:41:16,000
+square here, so that's the wave function
+
+1102
+00:41:16,000 --> 00:41:18,000
+form, and how is it solved? It's by solving
+
+1103
+00:41:18,000 --> 00:41:20,000
+Schrodinger equation only in this
+
+1104
+00:41:20,000 --> 00:41:22,000
+region, so we are defining
+
+1105
+00:41:22,000 --> 00:41:24,000
+a region where we want to solve this
+
+1106
+00:41:24,000 --> 00:41:26,000
+closed boundary Schrodinger
+
+1107
+00:41:26,000 --> 00:41:28,000
+equation, and we are trying to couple this
+
+1108
+00:41:28,000 --> 00:41:30,000
+to the drift diffusion methods
+
+1109
+00:41:30,000 --> 00:41:32,000
+and there is like several parameters
+
+1110
+00:41:32,000 --> 00:41:34,000
+for example, in a drift diffusion
+
+1111
+00:41:34,000 --> 00:41:36,000
+you have ABC
+
+1112
+00:41:36,000 --> 00:41:38,000
+parameters for the recombination
+
+1113
+00:41:38,000 --> 00:41:40,000
+like the circularity hole, the phonon
+
+1114
+00:41:40,000 --> 00:41:42,000
+the photon, and also the
+
+1115
+00:41:42,000 --> 00:41:44,000
+other ones, the OJ, so there is
+
+1116
+00:41:44,000 --> 00:41:46,000
+like the parameters for it, and we are using the same ABC
+
+1117
+00:41:46,000 --> 00:41:48,000
+and
+
+1118
+00:41:48,000 --> 00:41:50,000
+in drift diffusion, there is like a mobility
+
+1119
+00:41:50,000 --> 00:41:52,000
+term, where for
+
+1120
+00:41:52,000 --> 00:41:54,000
+NEGF is called self-energy, which is
+
+1121
+00:41:54,000 --> 00:41:56,000
+the scattering rates
+
+1122
+00:41:56,000 --> 00:41:58,000
+in the device, and that will, in a
+
+1123
+00:41:58,000 --> 00:42:00,000
+semi-classical way, that's called the mobility
+
+1124
+00:42:00,000 --> 00:42:02,000
+so we need to find
+
+1125
+00:42:02,000 --> 00:42:04,000
+a corresponding, oh given this mu
+
+1126
+00:42:04,000 --> 00:42:06,000
+what's the scattering rate in the device
+
+1127
+00:42:06,000 --> 00:42:08,000
+and therefore what's the self-energy we are using
+
+1128
+00:42:08,000 --> 00:42:10,000
+in NEGF, and
+
+1129
+00:42:10,000 --> 00:42:12,000
+for drift diffusion
+
+1130
+00:42:12,000 --> 00:42:14,000
+when you are, there is a density of
+
+1131
+00:42:14,000 --> 00:42:16,000
+states, and you are assuming
+
+1132
+00:42:16,000 --> 00:42:18,000
+you will
+
+1133
+00:42:18,000 --> 00:42:20,000
+get a carrier, so there is
+
+1134
+00:42:20,000 --> 00:42:22,000
+for different M
+
+1135
+00:42:22,000 --> 00:42:24,000
+for different effective mass, you
+
+1136
+00:42:24,000 --> 00:42:26,000
+correspond to different density of states, and therefore
+
+1137
+00:42:26,000 --> 00:42:28,000
+carrier, for
+
+1138
+00:42:28,000 --> 00:42:30,000
+NEGF we are using
+
+1139
+00:42:30,000 --> 00:42:32,000
+we can support tight binding
+
+1140
+00:42:32,000 --> 00:42:34,000
+different way
+
+1141
+00:42:34,000 --> 00:42:36,000
+to describe this EK
+
+1142
+00:42:36,000 --> 00:42:38,000
+relationship, so
+
+1143
+00:42:38,000 --> 00:42:40,000
+that's the corresponding, right
+
+1144
+00:42:40,000 --> 00:42:42,000
+we can also use effective mass, or we can use
+
+1145
+00:42:42,000 --> 00:42:44,000
+tight binding method, or KRP, or
+
+1146
+00:42:44,000 --> 00:42:46,000
+one-year functions
+
+1147
+00:42:46,000 --> 00:42:48,000
+so the basis
+
+1148
+00:42:48,000 --> 00:42:50,000
+there is a little bit different, in drift diffusion we can only support
+
+1149
+00:42:50,000 --> 00:42:52,000
+so this is how we
+
+1150
+00:42:52,000 --> 00:42:54,000
+couple them
+
+1151
+00:42:54,000 --> 00:42:56,000
+so
+
+1152
+00:42:56,000 --> 00:42:58,000
+I'm only going to show that
+
+1153
+00:42:58,000 --> 00:43:00,000
+the direct comparison
+
+1154
+00:43:00,000 --> 00:43:02,000
+from observable we can see
+
+1155
+00:43:02,000 --> 00:43:04,000
+so for example, on the right side
+
+1156
+00:43:04,000 --> 00:43:06,000
+this is showing
+
+1157
+00:43:06,000 --> 00:43:08,000
+the solid line is the drift diffusion
+
+1158
+00:43:08,000 --> 00:43:10,000
+result, and you can see that
+
+1159
+00:43:10,000 --> 00:43:12,000
+this is the carrier density across the device
+
+1160
+00:43:12,000 --> 00:43:14,000
+we have high electron on one side
+
+1161
+00:43:14,000 --> 00:43:16,000
+and we have high hole on the other side
+
+1162
+00:43:16,000 --> 00:43:18,000
+and they are penetrating into each
+
+1163
+00:43:18,000 --> 00:43:20,000
+into the other side
+
+1164
+00:43:20,000 --> 00:43:22,000
+and we can see that the drift diffusion
+
+1165
+00:43:22,000 --> 00:43:24,000
+here is much lower
+
+1166
+00:43:24,000 --> 00:43:26,000
+this is log scale, so it's like
+
+1167
+00:43:26,000 --> 00:43:28,000
+ten to the fifth, the five times
+
+1168
+00:43:28,000 --> 00:43:30,000
+smaller than the
+
+1169
+00:43:30,000 --> 00:43:32,000
+quantum transports method, right
+
+1170
+00:43:32,000 --> 00:43:34,000
+and the reason is
+
+1171
+00:43:34,000 --> 00:43:36,000
+understandable, because
+
+1172
+00:43:36,000 --> 00:43:38,000
+when you look into here
+
+1173
+00:43:38,000 --> 00:43:40,000
+the electron, you know
+
+1174
+00:43:40,000 --> 00:43:42,000
+the NEGF, you can
+
+1175
+00:43:42,000 --> 00:43:44,000
+what is it like, the
+
+1176
+00:43:44,000 --> 00:43:46,000
+when you bounce a ball to the wall, the semi-classical will bounce
+
+1177
+00:43:46,000 --> 00:43:48,000
+back, but quantum
+
+1178
+00:43:48,000 --> 00:43:50,000
+you can penetrate into the wall, right
+
+1179
+00:43:50,000 --> 00:43:52,000
+so you can see that analogy here
+
+1180
+00:43:52,000 --> 00:43:54,000
+where you still have some density
+
+1181
+00:43:54,000 --> 00:43:56,000
+of states inside the barrier
+
+1182
+00:43:56,000 --> 00:43:58,000
+where the semi-classical will just say
+
+1183
+00:43:58,000 --> 00:44:00,000
+there's nothing, you bounce
+
+1184
+00:44:00,000 --> 00:44:02,000
+into this wall and you will go back directly
+
+1185
+00:44:02,000 --> 00:44:04,000
+so this is like the ball analogy
+
+1186
+00:44:04,000 --> 00:44:06,000
+so that's why
+
+1187
+00:44:06,000 --> 00:44:08,000
+when you're doing quantum transport
+
+1188
+00:44:08,000 --> 00:44:10,000
+this carrier inside
+
+1189
+00:44:10,000 --> 00:44:12,000
+here is higher, much higher
+
+1190
+00:44:12,000 --> 00:44:14,000
+ten to the fifth time higher because of the
+
+1191
+00:44:14,000 --> 00:44:16,000
+penetration here
+
+1192
+00:44:16,000 --> 00:44:18,000
+but otherwise
+
+1193
+00:44:18,000 --> 00:44:20,000
+the potential is pretty
+
+1194
+00:44:20,000 --> 00:44:22,000
+matched here, but the carrier
+
+1195
+00:44:22,000 --> 00:44:24,000
+difference here will cause you
+
+1196
+00:44:24,000 --> 00:44:26,000
+to calculate the
+
+1197
+00:44:26,000 --> 00:44:28,000
+recombination rate different, right
+
+1198
+00:44:28,000 --> 00:44:30,000
+because you have higher density, therefore your
+
+1199
+00:44:30,000 --> 00:44:32,000
+recombination rate will be
+
+1200
+00:44:32,000 --> 00:44:34,000
+different, so that's why
+
+1201
+00:44:34,000 --> 00:44:36,000
+the potential looks
+
+1202
+00:44:36,000 --> 00:44:38,000
+the same between quantum way
+
+1203
+00:44:38,000 --> 00:44:40,000
+and semi-classical way, however
+
+1204
+00:44:40,000 --> 00:44:42,000
+the recombination rate calculated from
+
+1205
+00:44:42,000 --> 00:44:44,000
+which is a post-process
+
+1206
+00:44:44,000 --> 00:44:46,000
+using ABC model to predict
+
+1207
+00:44:46,000 --> 00:44:48,000
+oh, what's the OJ
+
+1208
+00:44:48,000 --> 00:44:50,000
+the photon and also the OJ related
+
+1209
+00:44:50,000 --> 00:44:52,000
+process, there's a huge difference
+
+1210
+00:44:52,000 --> 00:44:54,000
+at lower bias, you can see here
+
+1211
+00:44:54,000 --> 00:44:56,000
+the quantum way
+
+1212
+00:44:56,000 --> 00:44:58,000
+because you have more penetrated electrons
+
+1213
+00:44:58,000 --> 00:45:00,000
+for them to recombine
+
+1214
+00:45:00,000 --> 00:45:02,000
+therefore you have a much higher recombination rate
+
+1215
+00:45:02,000 --> 00:45:04,000
+and for higher bias
+
+1216
+00:45:04,000 --> 00:45:06,000
+they're pretty much similar
+
+1217
+00:45:06,000 --> 00:45:08,000
+but small difference here
+
+1218
+00:45:08,000 --> 00:45:10,000
+okay
+
+1219
+00:45:10,000 --> 00:45:12,000
+and this case
+
+1220
+00:45:12,000 --> 00:45:14,000
+before I was talking about a HOMO
+
+1221
+00:45:14,000 --> 00:45:16,000
+junction where we're using
+
+1222
+00:45:16,000 --> 00:45:18,000
+galenitride all across but with
+
+1223
+00:45:18,000 --> 00:45:20,000
+different doping, and here is a heterojunction
+
+1224
+00:45:20,000 --> 00:45:22,000
+where similar things
+
+1225
+00:45:22,000 --> 00:45:24,000
+are done, we're comparing
+
+1226
+00:45:24,000 --> 00:45:26,000
+the carrier
+
+1227
+00:45:26,000 --> 00:45:28,000
+density and we can see that oh, there's
+
+1228
+00:45:28,000 --> 00:45:30,000
+some difference here
+
+1229
+00:45:30,000 --> 00:45:32,000
+right, like the semi-classical
+
+1230
+00:45:32,000 --> 00:45:34,000
+we have a sharp discontinuity
+
+1231
+00:45:34,000 --> 00:45:36,000
+probably because we chose
+
+1232
+00:45:36,000 --> 00:45:38,000
+the boundary different but
+
+1233
+00:45:38,000 --> 00:45:40,000
+which part should we solve Schrodinger
+
+1234
+00:45:40,000 --> 00:45:42,000
+it's pretty subjective
+
+1235
+00:45:42,000 --> 00:45:44,000
+so I'm putting
+
+1236
+00:45:44,000 --> 00:45:46,000
+all the things here and seeing
+
+1237
+00:45:46,000 --> 00:45:48,000
+that there is an impact
+
+1238
+00:45:48,000 --> 00:45:50,000
+like with or without
+
+1239
+00:45:50,000 --> 00:45:52,000
+diffusion like, or any
+
+1240
+00:45:52,000 --> 00:45:54,000
+like what's the impact on carrier density
+
+1241
+00:45:56,000 --> 00:45:58,000
+and here
+
+1242
+00:45:58,000 --> 00:46:00,000
+trying to show the recombination with
+
+1243
+00:46:00,000 --> 00:46:02,000
+in this heterojunction, we can also see that
+
+1244
+00:46:02,000 --> 00:46:04,000
+because
+
+1245
+00:46:04,000 --> 00:46:06,000
+drift diffusion coupled with
+
+1246
+00:46:06,000 --> 00:46:08,000
+Schrodinger equation, therefore
+
+1247
+00:46:08,000 --> 00:46:10,000
+we can see that the recombination rate after
+
+1248
+00:46:10,000 --> 00:46:12,000
+doing this is pretty similar
+
+1249
+00:46:12,000 --> 00:46:14,000
+so
+
+1250
+00:46:14,000 --> 00:46:16,000
+I think this is like a
+
+1251
+00:46:16,000 --> 00:46:18,000
+positive side about drift diffusion, it's pretty fast
+
+1252
+00:46:18,000 --> 00:46:20,000
+and with coupling to like quantum
+
+1253
+00:46:20,000 --> 00:46:22,000
+correction, it's matching
+
+1254
+00:46:22,000 --> 00:46:24,000
+GF pretty well, so it's like
+
+1255
+00:46:24,000 --> 00:46:26,000
+also kind of giving confidence but also giving
+
+1256
+00:46:26,000 --> 00:46:28,000
+saying like oh, drift diffusion is not that bad
+
+1257
+00:46:28,000 --> 00:46:30,000
+like you can still
+
+1258
+00:46:30,000 --> 00:46:32,000
+quantumly correct it
+
+1259
+00:46:32,000 --> 00:46:34,000
+with solving Schrodinger impartial
+
+1260
+00:46:34,000 --> 00:46:36,000
+region
+
+1261
+00:46:36,000 --> 00:46:38,000
+and here I'm trying
+
+1262
+00:46:38,000 --> 00:46:40,000
+to show the I-V difference
+
+1263
+00:46:40,000 --> 00:46:42,000
+for a homojunction device
+
+1264
+00:46:42,000 --> 00:46:44,000
+so in a homojunction device, if you
+
+1265
+00:46:44,000 --> 00:46:46,000
+measure the I-V curve, and here
+
+1266
+00:46:46,000 --> 00:46:48,000
+the solid line is the drift diffusion, and the circle
+
+1267
+00:46:48,000 --> 00:46:50,000
+is the quantum well, and we can see
+
+1268
+00:46:50,000 --> 00:46:52,000
+that
+
+1269
+00:46:52,000 --> 00:46:54,000
+the off current
+
+1270
+00:46:54,000 --> 00:46:56,000
+there's like a larger difference
+
+1271
+00:46:56,000 --> 00:46:58,000
+between them, and if you
+
+1272
+00:46:58,000 --> 00:47:00,000
+have, if you compare the
+
+1273
+00:47:00,000 --> 00:47:02,000
+heterojunction device using the
+
+1274
+00:47:02,000 --> 00:47:04,000
+and there's some difference here
+
+1275
+00:47:04,000 --> 00:47:06,000
+and there, but just like
+
+1276
+00:47:06,000 --> 00:47:08,000
+providing the comparison here
+
+1277
+00:47:08,000 --> 00:47:10,000
+and this
+
+1278
+00:47:10,000 --> 00:47:12,000
+method, we can further
+
+1279
+00:47:12,000 --> 00:47:14,000
+you know, solving, we're
+
+1280
+00:47:14,000 --> 00:47:16,000
+enabling any GF to be able to
+
+1281
+00:47:16,000 --> 00:47:18,000
+solve like
+
+1282
+00:47:18,000 --> 00:47:20,000
+carrier generation, because we are
+
+1283
+00:47:20,000 --> 00:47:22,000
+injecting the, we can
+
+1284
+00:47:22,000 --> 00:47:24,000
+assume the light come in and
+
+1285
+00:47:24,000 --> 00:47:26,000
+producing electron hole and
+
+1286
+00:47:26,000 --> 00:47:28,000
+and give them, separate them
+
+1287
+00:47:28,000 --> 00:47:30,000
+to generate current here, right?
+
+1288
+00:47:30,000 --> 00:47:32,000
+So here's the simulation results like
+
+1289
+00:47:32,000 --> 00:47:34,000
+using any GF, and this is like the
+
+1290
+00:47:34,000 --> 00:47:36,000
+the first
+
+1291
+00:47:36,000 --> 00:47:38,000
+the first tool that we can cover
+
+1292
+00:47:38,000 --> 00:47:40,000
+all processes into, including
+
+1293
+00:47:40,000 --> 00:47:42,000
+generation, and then to enable a device
+
+1294
+00:47:42,000 --> 00:47:44,000
+simulation
+
+1295
+00:47:44,000 --> 00:47:46,000
+So here
+
+1296
+00:47:46,000 --> 00:47:48,000
+the summary, I kind of review
+
+1297
+00:47:48,000 --> 00:47:50,000
+different carrier transport method
+
+1298
+00:47:50,000 --> 00:47:52,000
+from BTE all the way to any
+
+1299
+00:47:52,000 --> 00:47:54,000
+GF, and providing the references there
+
+1300
+00:47:54,000 --> 00:47:56,000
+if you're interested, or can ask, email me
+
+1301
+00:47:56,000 --> 00:47:58,000
+for more information, and this
+
+1302
+00:47:58,000 --> 00:48:00,000
+is like, this work is to propose
+
+1303
+00:48:00,000 --> 00:48:02,000
+a really generic
+
+1304
+00:48:02,000 --> 00:48:04,000
+method for recombination
+
+1305
+00:48:04,000 --> 00:48:06,000
+generation process inside the
+
+1306
+00:48:06,000 --> 00:48:08,000
+any GF framework, so we're enabling
+
+1307
+00:48:08,000 --> 00:48:10,000
+any GF community to
+
+1308
+00:48:10,000 --> 00:48:12,000
+approach problem like recombination
+
+1309
+00:48:12,000 --> 00:48:14,000
+generation, and we
+
+1310
+00:48:14,000 --> 00:48:16,000
+show the importance, oh, for any GF
+
+1311
+00:48:16,000 --> 00:48:18,000
+with or without recombination, what's the
+
+1312
+00:48:18,000 --> 00:48:20,000
+difference, and why do we need it, and we
+
+1313
+00:48:20,000 --> 00:48:22,000
+also benchmark against like GF diffusion
+
+1314
+00:48:22,000 --> 00:48:24,000
+based TCAD tool, and to
+
+1315
+00:48:24,000 --> 00:48:26,000
+see that, we can see that the charge is different
+
+1316
+00:48:26,000 --> 00:48:28,000
+and with or without methods, and
+
+1317
+00:48:28,000 --> 00:48:30,000
+also we can show that there's
+
+1318
+00:48:30,000 --> 00:48:32,000
+tunneling and wave phenomena here
+
+1319
+00:48:32,000 --> 00:48:34,000
+and I know
+
+1320
+00:48:34,000 --> 00:48:36,000
+and lastly, if there's any
+
+1321
+00:48:36,000 --> 00:48:38,000
+study group, or
+
+1322
+00:48:38,000 --> 00:48:40,000
+want to discuss this, I think
+
+1323
+00:48:40,000 --> 00:48:42,000
+it's very helpful to discuss
+
+1324
+00:48:42,000 --> 00:48:44,000
+if you have any questions
+
+1325
+00:48:44,000 --> 00:48:46,000
+or any questions
+
+1326
+00:48:46,000 --> 00:48:48,000
+about this, you can email me
+
+1327
+00:48:48,000 --> 00:48:50,000
+yeah, okay
+
+1328
+00:48:52,000 --> 00:48:54,000
+is everyone still here?
+
+1329
+00:48:54,000 --> 00:48:56,000
+okay, still here, so let's
+
+1330
+00:48:56,000 --> 00:48:58,000
+first,
+
+1331
+00:48:58,000 --> 00:49:00,000
+everyone please turn on the mic
+
+1332
+00:49:00,000 --> 00:49:02,000
+to applaud, and thank the audience
+
+1333
+00:49:06,000 --> 00:49:08,000
+so now,
+
+1334
+00:49:08,000 --> 00:49:10,000
+do we have any questions?
+
+1335
+00:49:10,000 --> 00:49:12,000
+that you want to ask
+
+1336
+00:49:12,000 --> 00:49:14,000
+do we have any questions?
+
+1337
+00:49:16,000 --> 00:49:18,000
+if you have questions,
+
+1338
+00:49:18,000 --> 00:49:20,000
+just turn on the mic
+
+1339
+00:49:20,000 --> 00:49:22,000
+okay
+
+1340
+00:49:22,000 --> 00:49:24,000
+okay, I want to ask
+
+1341
+00:49:24,000 --> 00:49:26,000
+a question that's not
+
+1342
+00:49:26,000 --> 00:49:28,000
+that related
+
+1343
+00:49:28,000 --> 00:49:30,000
+I'm curious
+
+1344
+00:49:30,000 --> 00:49:32,000
+how long have you been at Intel?
+
+1345
+00:49:32,000 --> 00:49:34,000
+about
+
+1346
+00:49:34,000 --> 00:49:36,000
+a year
+
+1347
+00:49:36,000 --> 00:49:38,000
+so
+
+1348
+00:49:38,000 --> 00:49:40,000
+do you need
+
+1349
+00:49:40,000 --> 00:49:42,000
+when you're doing these simulations
+
+1350
+00:49:42,000 --> 00:49:44,000
+do you need to
+
+1351
+00:49:44,000 --> 00:49:46,000
+communicate with the people doing the experiments?
+
+1352
+00:49:46,000 --> 00:49:48,000
+some people
+
+1353
+00:49:48,000 --> 00:49:50,000
+some people
+
+1354
+00:49:50,000 --> 00:49:52,000
+this isn't my Intel work, this is my study group's work
+
+1355
+00:49:52,000 --> 00:49:54,000
+and Intel
+
+1356
+00:49:54,000 --> 00:49:56,000
+yeah, I think
+
+1357
+00:49:56,000 --> 00:49:58,000
+they'll communicate with
+
+1358
+00:49:58,000 --> 00:50:00,000
+the people doing the experiments
+
+1359
+00:50:00,000 --> 00:50:02,000
+for example, they have some data
+
+1360
+00:50:02,000 --> 00:50:04,000
+you take this
+
+1361
+00:50:04,000 --> 00:50:06,000
+simulation
+
+1362
+00:50:06,000 --> 00:50:08,000
+when you're taking these
+
+1363
+00:50:08,000 --> 00:50:10,000
+when you're explaining these simulations
+
+1364
+00:50:10,000 --> 00:50:12,000
+and communicating with the people doing the experiments
+
+1365
+00:50:12,000 --> 00:50:14,000
+do you feel like
+
+1366
+00:50:14,000 --> 00:50:16,000
+there's a gap?
+
+1367
+00:50:16,000 --> 00:50:18,000
+I think there is
+
+1368
+00:50:18,000 --> 00:50:20,000
+but I think they'll
+
+1369
+00:50:20,000 --> 00:50:22,000
+draw the problem to
+
+1370
+00:50:22,000 --> 00:50:24,000
+yeah, it's not
+
+1371
+00:50:24,000 --> 00:50:26,000
+if they're looking for you
+
+1372
+00:50:26,000 --> 00:50:28,000
+they might think
+
+1373
+00:50:28,000 --> 00:50:30,000
+this might be related
+
+1374
+00:50:30,000 --> 00:50:32,000
+so for example
+
+1375
+00:50:32,000 --> 00:50:34,000
+like
+
+1376
+00:50:34,000 --> 00:50:36,000
+when you're doing these simulations
+
+1377
+00:50:36,000 --> 00:50:38,000
+when you're discussing with the people doing the experiments
+
+1378
+00:50:40,000 --> 00:50:42,000
+can you compare with the people doing the experiments?
+
+1379
+00:50:42,000 --> 00:50:44,000
+or are there some
+
+1380
+00:50:44,000 --> 00:50:46,000
+trends
+
+1381
+00:50:46,000 --> 00:50:48,000
+when you're explaining the experiments
+
+1382
+00:50:48,000 --> 00:50:50,000
+how do you
+
+1383
+00:50:50,000 --> 00:50:52,000
+when you're discussing with the people doing the experiments
+
+1384
+00:50:52,000 --> 00:50:54,000
+how do you
+
+1385
+00:50:54,000 --> 00:50:56,000
+how do you
+
+1386
+00:50:56,000 --> 00:50:58,000
+work with the people doing the experiments?
+
+1387
+00:50:58,000 --> 00:51:00,000
+it's a bit abstract, I don't know how to explain it
+
+1388
+00:51:00,000 --> 00:51:02,000
+for example
+
+1389
+00:51:02,000 --> 00:51:04,000
+can you use these tools
+
+1390
+00:51:04,000 --> 00:51:06,000
+to explain their data?
+
+1391
+00:51:06,000 --> 00:51:08,000
+or can you provide
+
+1392
+00:51:08,000 --> 00:51:10,000
+based on this data
+
+1393
+00:51:10,000 --> 00:51:12,000
+maybe an improved direction
+
+1394
+00:51:12,000 --> 00:51:14,000
+is this doable?
+
+1395
+00:51:14,000 --> 00:51:16,000
+that kind of feeling
+
+1396
+00:51:16,000 --> 00:51:18,000
+sorry, it's a bit abstract
+
+1397
+00:51:18,000 --> 00:51:20,000
+I think it is
+
+1398
+00:51:20,000 --> 00:51:22,000
+let me use Boban as an example
+
+1399
+00:51:22,000 --> 00:51:24,000
+Boban's project
+
+1400
+00:51:24,000 --> 00:51:26,000
+people might say
+
+1401
+00:51:26,000 --> 00:51:28,000
+is it because of the recombination
+
+1402
+00:51:28,000 --> 00:51:30,000
+causing the current to get smaller or more
+
+1403
+00:51:30,000 --> 00:51:32,000
+if you make the defects level
+
+1404
+00:51:32,000 --> 00:51:34,000
+bigger or smaller
+
+1405
+00:51:34,000 --> 00:51:36,000
+I think it's more of a trend
+
+1406
+00:51:36,000 --> 00:51:38,000
+if you increase the defects
+
+1407
+00:51:38,000 --> 00:51:40,000
+can you see the curve
+
+1408
+00:51:40,000 --> 00:51:42,000
+100% match the experiment data
+
+1409
+00:51:42,000 --> 00:51:44,000
+but you might say
+
+1410
+00:51:44,000 --> 00:51:46,000
+if this phenomenon
+
+1411
+00:51:46,000 --> 00:51:48,000
+more defects, will my recombination rate get bigger or smaller?
+
+1412
+00:51:48,000 --> 00:51:50,000
+you can experiment
+
+1413
+00:51:50,000 --> 00:51:52,000
+experiment and simulate
+
+1414
+00:51:52,000 --> 00:51:54,000
+I think a lot of problems
+
+1415
+00:51:54,000 --> 00:51:56,000
+are not that
+
+1416
+00:51:56,000 --> 00:51:58,000
+you need to model
+
+1417
+00:51:58,000 --> 00:52:00,000
+to say it's really this phenomenon
+
+1418
+00:52:00,000 --> 00:52:02,000
+you might observe
+
+1419
+00:52:02,000 --> 00:52:04,000
+the current getting bigger
+
+1420
+00:52:04,000 --> 00:52:06,000
+but you don't know why
+
+1421
+00:52:06,000 --> 00:52:08,000
+you might say
+
+1422
+00:52:08,000 --> 00:52:10,000
+you can make this adjustment
+
+1423
+00:52:10,000 --> 00:52:12,000
+or add stress
+
+1424
+00:52:12,000 --> 00:52:14,000
+there are a lot of things you can change
+
+1425
+00:52:14,000 --> 00:52:16,000
+in simulation, there are a lot of parameters you can change
+
+1426
+00:52:16,000 --> 00:52:18,000
+you might adjust the defects level
+
+1427
+00:52:18,000 --> 00:52:20,000
+or adjust
+
+1428
+00:52:20,000 --> 00:52:22,000
+all kinds of parameters
+
+1429
+00:52:22,000 --> 00:52:24,000
+to confirm
+
+1430
+00:52:24,000 --> 00:52:26,000
+I think this feedback
+
+1431
+00:52:26,000 --> 00:52:28,000
+is quite important
+
+1432
+00:52:28,000 --> 00:52:30,000
+to identify
+
+1433
+00:52:30,000 --> 00:52:32,000
+if what you said is right
+
+1434
+00:52:32,000 --> 00:52:34,000
+I think you can verify
+
+1435
+00:52:34,000 --> 00:52:36,000
+if it's correct
+
+1436
+00:52:38,000 --> 00:52:40,000
+another question
+
+1437
+00:52:40,000 --> 00:52:42,000
+I know you are talking about
+
+1438
+00:52:42,000 --> 00:52:44,000
+what Boban did
+
+1439
+00:52:44,000 --> 00:52:46,000
+another question
+
+1440
+00:52:46,000 --> 00:52:48,000
+after you joined Intel
+
+1441
+00:52:48,000 --> 00:52:50,000
+do you think you are much better than Boban?
+
+1442
+00:52:50,000 --> 00:52:52,000
+I think I'm much better
+
+1443
+00:52:52,000 --> 00:52:54,000
+I feel
+
+1444
+00:52:54,000 --> 00:52:56,000
+much better
+
+1445
+00:52:56,000 --> 00:52:58,000
+so actually
+
+1446
+00:52:58,000 --> 00:53:00,000
+I think this thing
+
+1447
+00:53:00,000 --> 00:53:02,000
+is
+
+1448
+00:53:02,000 --> 00:53:04,000
+already
+
+1449
+00:53:04,000 --> 00:53:06,000
+considered
+
+1450
+00:53:06,000 --> 00:53:08,000
+a simple geometry
+
+1451
+00:53:08,000 --> 00:53:10,000
+but it can be
+
+1452
+00:53:10,000 --> 00:53:12,000
+considered as a real device
+
+1453
+00:53:12,000 --> 00:53:14,000
+quantity
+
+1454
+00:53:14,000 --> 00:53:16,000
+after you joined
+
+1455
+00:53:16,000 --> 00:53:18,000
+you will find
+
+1456
+00:53:18,000 --> 00:53:20,000
+there are a lot of differences
+
+1457
+00:53:20,000 --> 00:53:22,000
+it's just
+
+1458
+00:53:22,000 --> 00:53:24,000
+the research field is different
+
+1459
+00:53:24,000 --> 00:53:26,000
+I think the form
+
+1460
+00:53:26,000 --> 00:53:28,000
+is similar
+
+1461
+00:53:28,000 --> 00:53:30,000
+you mostly look at the paper
+
+1462
+00:53:30,000 --> 00:53:32,000
+and see what model you can use
+
+1463
+00:53:32,000 --> 00:53:34,000
+but I feel
+
+1464
+00:53:34,000 --> 00:53:36,000
+in Boban's case
+
+1465
+00:53:36,000 --> 00:53:38,000
+the professor tells you
+
+1466
+00:53:38,000 --> 00:53:40,000
+what to do
+
+1467
+00:53:40,000 --> 00:53:42,000
+it's more specific
+
+1468
+00:53:42,000 --> 00:53:44,000
+but in the company
+
+1469
+00:53:44,000 --> 00:53:46,000
+it's hard to say
+
+1470
+00:53:48,000 --> 00:53:50,000
+I want to say
+
+1471
+00:53:50,000 --> 00:53:52,000
+I'm also in the TK department
+
+1472
+00:53:52,000 --> 00:53:54,000
+I'm working at TSMC
+
+1473
+00:53:58,000 --> 00:54:00,000
+I actually
+
+1474
+00:54:00,000 --> 00:54:02,000
+know a bit about this field
+
+1475
+00:54:02,000 --> 00:54:04,000
+but now
+
+1476
+00:54:04,000 --> 00:54:06,000
+maybe I shouldn't ask
+
+1477
+00:54:06,000 --> 00:54:08,000
+my problem is
+
+1478
+00:54:08,000 --> 00:54:10,000
+when I talk to Boban
+
+1479
+00:54:10,000 --> 00:54:12,000
+he always says
+
+1480
+00:54:12,000 --> 00:54:14,000
+you are right
+
+1481
+00:54:14,000 --> 00:54:16,000
+these things
+
+1482
+00:54:16,000 --> 00:54:18,000
+need to be discussed
+
+1483
+00:54:18,000 --> 00:54:20,000
+I feel
+
+1484
+00:54:20,000 --> 00:54:22,000
+it's hard
+
+1485
+00:54:22,000 --> 00:54:24,000
+I don't know if Intel
+
+1486
+00:54:24,000 --> 00:54:26,000
+feels the same
+
+1487
+00:54:26,000 --> 00:54:28,000
+different companies
+
+1488
+00:54:28,000 --> 00:54:30,000
+might have different
+
+1489
+00:54:30,000 --> 00:54:32,000
+I won't
+
+1490
+00:54:32,000 --> 00:54:34,000
+I won't
+
+1491
+00:54:34,000 --> 00:54:36,000
+talk to an experimenter
+
+1492
+00:54:36,000 --> 00:54:38,000
+I might talk to an intermediary
+
+1493
+00:54:38,000 --> 00:54:40,000
+it's different
+
+1494
+00:54:46,000 --> 00:54:48,000
+any other questions?
+
+1495
+00:54:52,000 --> 00:54:54,000
+I want to ask
+
+1496
+00:54:54,000 --> 00:54:56,000
+the simulation
+
+1497
+00:54:56,000 --> 00:54:58,000
+looks simple
+
+1498
+00:54:58,000 --> 00:55:00,000
+and
+
+1499
+00:55:00,000 --> 00:55:02,000
+it looks like
+
+1500
+00:55:02,000 --> 00:55:04,000
+using Boltzmann's
+
+1501
+00:55:04,000 --> 00:55:06,000
+equation can be done
+
+1502
+00:55:06,000 --> 00:55:08,000
+even though you need
+
+1503
+00:55:08,000 --> 00:55:10,000
+some approximations
+
+1504
+00:55:10,000 --> 00:55:12,000
+but
+
+1505
+00:55:12,000 --> 00:55:14,000
+I'm thinking
+
+1506
+00:55:14,000 --> 00:55:16,000
+the advantage of this
+
+1507
+00:55:16,000 --> 00:55:18,000
+is it's more effective
+
+1508
+00:55:18,000 --> 00:55:20,000
+on more difficult
+
+1509
+00:55:20,000 --> 00:55:22,000
+devices
+
+1510
+00:55:22,000 --> 00:55:24,000
+but I feel
+
+1511
+00:55:24,000 --> 00:55:26,000
+in BTE
+
+1512
+00:55:26,000 --> 00:55:28,000
+let's say it's particles
+
+1513
+00:55:28,000 --> 00:55:30,000
+if it's particles
+
+1514
+00:55:30,000 --> 00:55:32,000
+can you simulate
+
+1515
+00:55:32,000 --> 00:55:34,000
+these details?
+
+1516
+00:55:34,000 --> 00:55:36,000
+you can't
+
+1517
+00:55:36,000 --> 00:55:38,000
+so if it's particles
+
+1518
+00:55:38,000 --> 00:55:40,000
+you're missing a lot of details
+
+1519
+00:55:40,000 --> 00:55:42,000
+but the result I'm showing
+
+1520
+00:55:42,000 --> 00:55:44,000
+is that some drift diffusion
+
+1521
+00:55:44,000 --> 00:55:46,000
+is a lot worse
+
+1522
+00:55:46,000 --> 00:55:48,000
+some are similar
+
+1523
+00:55:48,000 --> 00:55:50,000
+but
+
+1524
+00:55:50,000 --> 00:55:52,000
+I mean
+
+1525
+00:55:52,000 --> 00:55:54,000
+how do you know your future device
+
+1526
+00:55:54,000 --> 00:55:56,000
+when it's particles
+
+1527
+00:55:56,000 --> 00:55:58,000
+will you miss
+
+1528
+00:55:58,000 --> 00:56:00,000
+some important details
+
+1529
+00:56:04,000 --> 00:56:06,000
+I think BTE
+
+1530
+00:56:06,000 --> 00:56:08,000
+can't be replaced
+
+1531
+00:56:08,000 --> 00:56:10,000
+even in this small device
+
+1532
+00:56:10,000 --> 00:56:12,000
+you can't say BTE is correct
+
+1533
+00:56:12,000 --> 00:56:14,000
+did you say BTE or drift diffusion?
+
+1534
+00:56:14,000 --> 00:56:16,000
+drift diffusion
+
+1535
+00:56:16,000 --> 00:56:18,000
+you mean
+
+1536
+00:56:18,000 --> 00:56:20,000
+Monte Carlo solve BTE
+
+1537
+00:56:20,000 --> 00:56:22,000
+but even so
+
+1538
+00:56:22,000 --> 00:56:24,000
+like interference
+
+1539
+00:56:24,000 --> 00:56:26,000
+or tunneling
+
+1540
+00:56:26,000 --> 00:56:28,000
+BTE
+
+1541
+00:56:28,000 --> 00:56:30,000
+you can't figure it out
+
+1542
+00:56:30,000 --> 00:56:32,000
+you need a lot of correction models
+
+1543
+00:56:32,000 --> 00:56:34,000
+BTE is how to scatter particles
+
+1544
+00:56:34,000 --> 00:56:36,000
+you need to calculate
+
+1545
+00:56:36,000 --> 00:56:38,000
+you need to add a lot of calculations
+
+1546
+00:56:38,000 --> 00:56:40,000
+but NEG
+
+1547
+00:56:40,000 --> 00:56:42,000
+you throw the device in
+
+1548
+00:56:42,000 --> 00:56:44,000
+the result is
+
+1549
+00:56:44,000 --> 00:56:46,000
+low density of state
+
+1550
+00:56:46,000 --> 00:56:48,000
+there's a pattern
+
+1551
+00:56:48,000 --> 00:56:50,000
+but BTE can't figure it out
+
+1552
+00:56:52,000 --> 00:56:54,000
+I see
+
+1553
+00:56:54,000 --> 00:56:56,000
+but the pattern you drew
+
+1554
+00:56:56,000 --> 00:56:58,000
+is this equilibrium?
+
+1555
+00:56:58,000 --> 00:57:00,000
+like
+
+1556
+00:57:00,000 --> 00:57:02,000
+this is
+
+1557
+00:57:02,000 --> 00:57:04,000
+density of state
+
+1558
+00:57:06,000 --> 00:57:08,000
+what do you mean?
+
+1559
+00:57:08,000 --> 00:57:10,000
+density of state is
+
+1560
+00:57:10,000 --> 00:57:12,000
+density of state under equilibrium
+
+1561
+00:57:14,000 --> 00:57:16,000
+density of state and
+
+1562
+00:57:16,000 --> 00:57:18,000
+is it equilibrium are separate
+
+1563
+00:57:18,000 --> 00:57:20,000
+because density of state
+
+1564
+00:57:20,000 --> 00:57:22,000
+doesn't have so many states
+
+1565
+00:57:22,000 --> 00:57:24,000
+equilibrium means
+
+1566
+00:57:24,000 --> 00:57:26,000
+you have a distribution function
+
+1567
+00:57:26,000 --> 00:57:28,000
+Fermi-Dirac distribution
+
+1568
+00:57:28,000 --> 00:57:30,000
+the bottom is 1
+
+1569
+00:57:30,000 --> 00:57:32,000
+the top is 0
+
+1570
+00:57:32,000 --> 00:57:34,000
+so given this density of state
+
+1571
+00:57:34,000 --> 00:57:36,000
+you fill the Fermi-Dirac distribution
+
+1572
+00:57:36,000 --> 00:57:38,000
+drift diffusion
+
+1573
+00:57:38,000 --> 00:57:40,000
+means any device
+
+1574
+00:57:40,000 --> 00:57:42,000
+is Fermi-Dirac
+
+1575
+00:57:44,000 --> 00:57:46,000
+let me draw
+
+1576
+00:57:46,000 --> 00:57:48,000
+let me see
+
+1577
+00:57:48,000 --> 00:57:50,000
+which one is better
+
+1578
+00:57:50,000 --> 00:57:52,000
+like this
+
+1579
+00:57:52,000 --> 00:57:54,000
+drift diffusion
+
+1580
+00:57:54,000 --> 00:57:56,000
+you have a Fermi-Level
+
+1581
+00:57:56,000 --> 00:57:58,000
+this is Fermi-Level
+
+1582
+00:57:58,000 --> 00:58:00,000
+your distribution is
+
+1583
+00:58:00,000 --> 00:58:02,000
+this is 1 and this is 0
+
+1584
+00:58:02,000 --> 00:58:04,000
+this is distribution
+
+1585
+00:58:04,000 --> 00:58:06,000
+0 to 1
+
+1586
+00:58:06,000 --> 00:58:08,000
+any position
+
+1587
+00:58:08,000 --> 00:58:10,000
+is bound by Fermi-Level
+
+1588
+00:58:10,000 --> 00:58:12,000
+Fermi-Level is lower here
+
+1589
+00:58:12,000 --> 00:58:14,000
+Fermi-Level is lower here
+
+1590
+00:58:14,000 --> 00:58:16,000
+my distribution is like this
+
+1591
+00:58:16,000 --> 00:58:18,000
+to here
+
+1592
+00:58:18,000 --> 00:58:20,000
+there may be some small changes
+
+1593
+00:58:20,000 --> 00:58:22,000
+NEG means
+
+1594
+00:58:22,000 --> 00:58:24,000
+carrier distribution
+
+1595
+00:58:24,000 --> 00:58:26,000
+any place is not necessarily Fermi-Distribution
+
+1596
+00:58:26,000 --> 00:58:28,000
+you are very free
+
+1597
+00:58:28,000 --> 00:58:30,000
+particle you want to be higher
+
+1598
+00:58:30,000 --> 00:58:32,000
+you want to be lower
+
+1599
+00:58:32,000 --> 00:58:34,000
+your distribution may be like this
+
+1600
+00:58:34,000 --> 00:58:36,000
+not necessarily Fermi-Distribution
+
+1601
+00:58:36,000 --> 00:58:38,000
+but now we are bound by contact
+
+1602
+00:58:38,000 --> 00:58:40,000
+in the middle of the device
+
+1603
+00:58:40,000 --> 00:58:42,000
+is it
+
+1604
+00:58:42,000 --> 00:58:44,000
+how much will the distribution change
+
+1605
+00:58:44,000 --> 00:58:46,000
+your carrier is from the left
+
+1606
+00:58:46,000 --> 00:58:48,000
+your left is Fermi-Distribution
+
+1607
+00:58:48,000 --> 00:58:50,000
+right
+
+1608
+00:58:50,000 --> 00:58:52,000
+this is Fermi-Distribution
+
+1609
+00:58:52,000 --> 00:58:54,000
+but when your carrier
+
+1610
+00:58:54,000 --> 00:58:56,000
+travel to here
+
+1611
+00:58:56,000 --> 00:58:58,000
+will you change
+
+1612
+00:58:58,000 --> 00:59:00,000
+you bounce around
+
+1613
+00:59:00,000 --> 00:59:02,000
+bounce here
+
+1614
+00:59:02,000 --> 00:59:04,000
+you may not be Fermi-Distribution
+
+1615
+00:59:04,000 --> 00:59:06,000
+this is the advantage of NEG
+
+1616
+00:59:06,000 --> 00:59:08,000
+you will not be limited by drift diffusion
+
+1617
+00:59:08,000 --> 00:59:10,000
+you are bound
+
+1618
+00:59:10,000 --> 00:59:12,000
+you have to distribute like this
+
+1619
+00:59:12,000 --> 00:59:14,000
+understand
+
+1620
+00:59:18,000 --> 00:59:20,000
+ok
+
+1621
+00:59:20,000 --> 00:59:22,000
+any more questions
+
+1622
+00:59:24,000 --> 00:59:26,000
+if not
+
+1623
+00:59:26,000 --> 00:59:28,000
+I want to ask the last question
+
+1624
+00:59:28,000 --> 00:59:30,000
+you are
+
+1625
+00:59:30,000 --> 00:59:32,000
+in the second slide
+
+1626
+00:59:32,000 --> 00:59:34,000
+you talked about
+
+1627
+00:59:34,000 --> 00:59:36,000
+photon absorption
+
+1628
+00:59:36,000 --> 00:59:38,000
+your photon absorption
+
+1629
+00:59:38,000 --> 00:59:40,000
+is only in the middle
+
+1630
+00:59:40,000 --> 00:59:42,000
+in the middle
+
+1631
+00:59:42,000 --> 00:59:44,000
+junction
+
+1632
+00:59:44,000 --> 00:59:46,000
+or the whole system
+
+1633
+00:59:46,000 --> 00:59:48,000
+is affected by photon
+
+1634
+00:59:48,000 --> 00:59:50,000
+this is a toy model
+
+1635
+00:59:50,000 --> 00:59:52,000
+so I only hit
+
+1636
+00:59:52,000 --> 00:59:54,000
+the green area
+
+1637
+00:59:54,000 --> 00:59:56,000
+I should be
+
+1638
+00:59:56,000 --> 00:59:58,000
+later I will publish another paper
+
+1639
+00:59:58,000 --> 01:00:00,000
+but
+
+1640
+01:00:00,000 --> 01:00:02,000
+I assume
+
+1641
+01:00:02,000 --> 01:00:04,000
+only hit a certain area
+
+1642
+01:00:04,000 --> 01:00:06,000
+from here to here
+
+1643
+01:00:06,000 --> 01:00:08,000
+plus generation rate
+
+1644
+01:00:08,000 --> 01:00:10,000
+how do you
+
+1645
+01:00:10,000 --> 01:00:12,000
+deal with photon
+
+1646
+01:00:12,000 --> 01:00:14,000
+how do you
+
+1647
+01:00:14,000 --> 01:00:16,000
+deal with photon
+
+1648
+01:00:16,000 --> 01:00:18,000
+I didn't simulate photon
+
+1649
+01:00:18,000 --> 01:00:20,000
+because of photon
+
+1650
+01:00:20,000 --> 01:00:22,000
+the electrons and electrons
+
+1651
+01:00:22,000 --> 01:00:24,000
+will run out every second
+
+1652
+01:00:24,000 --> 01:00:26,000
+so I didn't simulate photon
+
+1653
+01:00:26,000 --> 01:00:28,000
+suppose photon is absorbed
+
+1654
+01:00:28,000 --> 01:00:30,000
+one photon
+
+1655
+01:00:30,000 --> 01:00:32,000
+you just
+
+1656
+01:00:32,000 --> 01:00:34,000
+move it up
+
+1657
+01:00:34,000 --> 01:00:36,000
+one photon
+
+1658
+01:00:36,000 --> 01:00:38,000
+suppose
+
+1659
+01:00:38,000 --> 01:00:40,000
+it moves up
+
+1660
+01:00:40,000 --> 01:00:42,000
+so I assume
+
+1661
+01:00:42,000 --> 01:00:44,000
+this band gap
+
+1662
+01:00:44,000 --> 01:00:46,000
+is 3.2eV
+
+1663
+01:00:46,000 --> 01:00:48,000
+or
+
+1664
+01:00:48,000 --> 01:00:50,000
+I don't know
+
+1665
+01:00:50,000 --> 01:00:52,000
+let's say 3eV
+
+1666
+01:00:52,000 --> 01:00:54,000
+assume
+
+1667
+01:00:54,000 --> 01:00:56,000
+a photon above 3eV
+
+1668
+01:00:56,000 --> 01:00:58,000
+comes in
+
+1669
+01:00:58,000 --> 01:01:00,000
+you can
+
+1670
+01:01:00,000 --> 01:01:02,000
+split carrier hole
+
+1671
+01:01:02,000 --> 01:01:04,000
+electron hole pair
+
+1672
+01:01:04,000 --> 01:01:06,000
+ok
+
+1673
+01:01:06,000 --> 01:01:08,000
+so you assume
+
+1674
+01:01:08,000 --> 01:01:10,000
+electron hole pair is split
+
+1675
+01:01:10,000 --> 01:01:12,000
+and start
+
+1676
+01:01:12,000 --> 01:01:14,000
+simulation
+
+1677
+01:01:14,000 --> 01:01:16,000
+ok, got it
+
+1678
+01:01:20,000 --> 01:01:22,000
+any questions?
+
+1679
+01:01:24,000 --> 01:01:26,000
+if not
+
+1680
+01:01:26,000 --> 01:01:28,000
+let's thank
+
+1681
+01:01:28,000 --> 01:01:30,000
+Guan Zhong
+
+1682
+01:01:30,000 --> 01:01:32,000
+thank you
+
+1683
+01:01:32,000 --> 01:01:34,000
+thank you
+
+1684
+01:01:34,000 --> 01:01:36,000
+I'll turn off the recording
+

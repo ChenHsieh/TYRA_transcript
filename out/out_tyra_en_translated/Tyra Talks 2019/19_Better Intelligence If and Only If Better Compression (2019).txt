@@ -1,0 +1,1655 @@
+The most direct benefit of this design is that,
+on average, each symbol's value,
+its frequency, and the frequency we represent.
+With this design, we can immediately see that
+by doing this, we can compress the data to theoretically the lowest length,
+which is Shannon Entropy.
+This is a pretty classic result.
+I guess a lot of people already know about it.
+But the discussion here is more like
+assuming that we already know the probability of X and Y.
+But in actual application,
+we usually don't know about it.
+We have to learn about it.
+Next, we will mainly discuss how to learn PX and PY.
+Next, we will relax the assumption a bit.
+Let's assume that we don't know PX and PY anymore.
+But we know that this input, 0001, 001,
+represents a person's routine.
+This person's routine is basically only
+sleeping, eating, and running.
+Let's assume that we know this,
+and we know that 00 means sleeping,
+and 01 means running.
+It's easy to predict what the next one will be.
+Because we know that this person is sleeping.
+The next thing he will do is probably running.
+So the next two symbols will probably be 01.
+Let's assume that we know
+that the source of this signal is a Markov chain.
+Then we can use the method of counting to know
+what the next step will be.
+For example, if we count to 10 times,
+6 times is running,
+2 times is eating,
+then we know that PY is probably equal to 0.6.
+But this is still not the same as what we actually encounter.
+Because we don't actually know if this 001, 001, 001
+represents a person's routine,
+or DNA, or a picture.
+So what do we do at this point?
+Later on, Leopold Zip came up with the idea that
+we assume that it is a Markov chain.
+We keep cutting the inputs.
+If we encounter a new chunk that we have never seen before,
+we treat it as a new chunk.
+For example, if the original data is A, B, R, A, C, A, D, A, B, R, A,
+Leopold Zip said, OK, we see A,
+so A is a chunk that we have never seen before.
+B is also a chunk that we have never seen before.
+R is also a chunk that we have never seen before.
+When it comes to A, we find that A has actually been seen before.
+So we can add E to A,
+the frequency of its appearance.
+So after R, the frequency of A's appearance is E.
+Next, we look at A, C.
+A, C is a chunk that we have never seen before,
+so it is a unit of its own.
+A has also been seen before, but A, D has not.
+And so on.
+After we chunk it up,
+we can treat it as a separate unit,
+and then count the frequency of A after B,
+and the frequency of R after A, C.
+In this way,
+we will be able to know
+the probability of each symbol.
+This is basically what we do on the computer.
+For those of you who are writing programs,
+we might use GZip or WinZip
+to compress these programs.
+When these WinZip and GZip programs are compressed,
+they are actually doing this thing
+to predict the probability of the next byte.
+And then do the arithmetic coding based on that.
+But there are a few drawbacks to doing this.
+There are two main drawbacks.
+The first drawback is
+that it does not use all the information
+in this whole string of words, A, B, R, A, C, A.
+For example, if we want to answer this question,
+what is the probability of seeing A after B, R?
+At this point, we haven't chunked B, R,
+so it might just use the number of times A appears.
+But we see that at least in this segment,
+after B, R appears, A always appears.
+So we know that the probability of A is very high.
+But if we use Lampell's Zip to chunk,
+we don't actually get this information.
+This is the first question.
+The second question is,
+let's say we want to know
+what B is after R, A, A.
+Because R, A, A is not in our chunk,
+so we just take the number of times B appears.
+But here, we already have
+the number of times A appears after B.
+We already have this information.
+Or if we have a lot of different prefixes
+that we can use,
+Lampell's Zip will only use one logic.
+If we have A, C,
+it will choose one randomly.
+At this point, it might not choose the right one.
+These are the two main shortcomings of Lampell's Zip.
+So how do we solve the shortcomings of Lampell's Zip?
+These shortcomings will be solved
+in the context-free weighting algorithm.
+The first shortcoming of Lampell's Zip is
+that some prefixes,
+although it sees them,
+it doesn't parse them.
+To solve this problem,
+it's very simple.
+We don't skip the symbol.
+Every time, we use one symbol
+to see how many prefixes are in front of it.
+This way, we can get all the prefixes.
+For example,
+let's say our data is 0100110.
+Let's record what happens
+after each prefix.
+We can see that after 110,
+there's a 0.
+So we can see that
+after 110,
+we can see that
+after 011,
+there's a 0.
+So we can record that
+after 011,
+there's a 0.
+And after 001,
+there's a 1.
+So after 001,
+there's a 1.
+If we do this slowly,
+we'll get a more comprehensive
+summary than Lampell's Zip.
+So this solves
+its first problem.
+Lampell's Zip has a second problem.
+Let's say
+a lot of prefixes
+don't satisfy
+the query we want.
+Which one should we choose?
+Specifically,
+let's say
+we already know
+the data is like this,
+and we want to know
+the probability of the 8th symbol
+being 0.
+We can frame this problem
+into
+the probability of 0
+after we see 0.
+At this point,
+let's say
+the first symbol is 0,
+and the second symbol
+is a 1.
+So the first symbol is 0,
+and the second symbol is 0.
+So the first symbol is 0,
+and the second symbol is 0.
+So the first symbol is 0,
+and the second symbol is 1.
+We'll have the same result.
+The probability of 0
+after 0 is 0.5.
+But we can also answer
+the 8th question
+from the perspective
+that the first symbol is 0, 1.
+If we look at it
+from this perspective,
+we'll find that
+if the first symbol is 0, 1,
+there will be a 0 after that.
+If the first symbol is 0, 1,
+there will be a 0 after that.
+So if we see 0, 1,
+the probability of 0
+is 100%.
+So we should
+choose
+which pattern
+to represent
+our probability.
+To solve this problem,
+we can
+use
+some
+principles
+of natural
+philosophy.
+One of the principles
+is that
+this is a philosophy,
+but we'll see
+how to define
+this philosophy
+to define it.
+In this philosophy,
+if there are many different
+theories that can
+explain a phenomenon,
+we have no choice
+but to keep all the theories.
+We can't say
+which theory is better.
+As long as the evidence
+is consistent,
+we'll see
+how to
+define it.
+Here,
+we can
+think of the problem
+as
+we already have the data.
+Which model
+should we use
+to explain the data?
+There are many different models.
+The first model is
+that we don't care about
+the probability of
+the next 0 or 1.
+This model
+is more
+complicated.
+It may use some
+prefixes.
+This model is more complicated.
+Which model
+should we use?
+If we accept
+this principle,
+it means
+we have to give
+each model
+a weight.
+How do we give
+each model a weight?
+This is what we
+are going to discuss.
+Here,
+we mainly want to
+use this model
+to
+visualize
+the weight.
+If we want to
+see the next 0 or 1,
+we can
+think of it as
+the weight of this model
+and this model.
+For this model,
+it is the weight of
+this model and this model.
+For this model,
+it is the weight of
+these five models.
+From the image,
+we can see
+two small models.
+Is there a way
+to know
+the weight of
+this large model?
+Let's assume we know
+the weight of the small model.
+Here, we have
+five parameters,
+w1', w2', w3'.
+In the
+wide field,
+this number
+may have
+an exponential value
+of 2.
+We need to
+calculate this number.
+Can we not
+calculate
+such a large number
+of numbers?
+Can we not
+use such a small number
+to calculate the weight?
+This is a problem
+we encounter in practice.
+To put it
+simply,
+the main
+insight here
+is that
+we can
+use the concept of
+multiplication
+to do
+recursive
+calculation.
+The main concept is that
+if
+p is equal to
+this,
+these two
+equations
+are like
+a cross-product
+of these four
+models.
+These four equations
+seem to
+describe
+these four equations.
+In the wide field,
+let's say
+we define
+a larger
+model.
+If we simply look at
+0, 1, 0, 1,
+and then add
+the numbers below
+to make
+a cross-product,
+we will get
+an N-square.
+If we define
+this weight,
+this seems to be
+an intuitive approach.
+In fact,
+this approach is correct.
+There are a few reasons
+why it is correct.
+One of the reasons
+is that
+when we define
+these weights,
+w1', w2', w3', w4',
+and we use
+recursive
+to define them,
+we will find that
+these w1', w2', w3', w4',
+and w5'
+are intuitive.
+For example,
+if we know that
+the number below is equal to 1,
+then the number above
+must be equal to 1.
+This is the first good quality.
+OK.
+There is
+a second
+intuitive
+recursive
+model
+to prove
+that it is a good model.
+The second
+good intuitive
+argument is that
+if we do this,
+we actually
+multiply
+the tree
+of the
+two-dimensional
+number
+by its weight,
+which becomes
+the sum of
+the two dimensions.
+For example,
+there are many trees here.
+How much weight
+should we give to this tree?
+Basically,
+1 minus the position
+here,
+multiplied by 1 minus the position here,
+multiplied by the position here,
+multiplied by the position here.
+If it is not lift,
+it is 1 minus w.
+If it is lift,
+it is 1 minus w.
+So basically,
+what we are doing is
+giving these trees
+a weight,
+which is the sum of
+the two dimensions.
+Let's say
+there are
+some practical examples.
+Let's say
+there are
+these trees
+of the
+two dimensions.
+We will find that
+these w
+meet this formula.
+For example,
+if the top is 1,
+the next
+is 5.
+If this side is 1,
+the top is 5.
+If we do this,
+we will find that
+if we want to
+specify a tree,
+we need so many information,
+so many bits.
+Because we have
+different things
+to describe the
+two-dimensional
+tree,
+so we need
+two-dimensional bits
+to describe it.
+This is a big tree.
+Can we choose
+these w
+roots,
+so that
+we can use
+a shorter
+symbol to
+describe it?
+In fact,
+there is.
+This way is to
+turn these w into
+one-half.
+When we describe
+a tree,
+we use
+its
+prefix code
+to describe it.
+For example,
+this shape
+is 11000.
+Its length
+is 5.
+We don't need
+so many
+bits
+to describe it.
+So,
+when we put these things
+together,
+pw
+is about
+this formula.
+This formula can
+describe so many
+trees in a classic way
+to give it a reasonable weight.
+If we look at
+this formula again,
+we will find that
+after we do this,
+the weight of
+these different models
+is actually
+the same.
+For example,
+the bigger the tree,
+the smaller the weight.
+In short,
+we are using
+a common
+physical or
+scientific principle,
+Occam's razor.
+The simpler the
+explanation,
+the more likely
+it is.
+After doing this,
+we put
+all the things together
+to do a
+theoretical discussion
+to summarize
+pwz
+is a good
+compression.
+If n is large,
+it basically means
+that we already know
+whether it is a
+human shape,
+walking,
+or eating.
+For example,
+if n is large enough,
+we can always
+chunk it to the
+original chunk.
+There is a detail
+here.
+Many textbooks
+say that
+pwz
+is an optimal
+compression.
+The compression length
+minus the length
+divided by n
+is equal to
+1 divided by log n.
+They say
+every symbol
+has an error of 0.
+However,
+pwz is not optimal.
+Strictly speaking,
+it is not optimal
+because the error
+is not the fastest.
+pwz
+jumps over
+a lot of things.
+For example,
+when there are many explanations,
+pwz only jumps over
+an explanation
+that is not
+easy to understand.
+However,
+if we do this,
+we will find that
+pwz has an error of
+log n divided by n.
+However,
+pwz is faster
+than pwz.
+Here is
+an example of
+what the original
+source tree is.
+pwz
+is optimal,
+but strictly speaking,
+it is not optimal
+because the speed of
+pwz is not fast enough.
+In conclusion,
+we can discuss
+from a theoretical perspective
+that the speed of
+pwz has
+a limit.
+This limit is given
+by Riesenbaum.
+Riesenbaum said
+the compressed length
+minus the real length
+is always greater than
+k log n.
+So,
+let's go back
+to the
+asymptotic rate of
+ctw.
+In fact, ctw is
+the fastest speed in
+theory,
+which is log n divided by
+n.
+Suppose
+k is
+the freedom
+of the original
+signal source.
+The more complex
+the model is,
+the greater the error
+will be.
+Even if we use
+the strongest learning algorithm,
+the more complex
+the model is,
+the greater the error
+will be.
+So,
+in general,
+how to compress
+from better
+intelligence to better?
+This is the complexity itself.
+We know that
+traditionally,
+it is solved by
+arithmetic coding.
+In fact,
+there is a bigger problem.
+This is
+the price of learning.
+This is
+actually the biggest problem
+in practice.
+Because this problem is
+proportional to the length of the data.
+We can only compress it to the length of log n.
+And it is not only
+proportional to log n,
+but also directly
+proportional to the
+freedom of the problem itself.
+The more complex the problem is,
+the higher the price
+of learning the problem.
+The rest is
+what our
+researchers
+want to reduce to zero.
+We want to come up with
+a good algorithm
+to use
+a bad
+estimator.
+For example,
+we use a bad estimator
+to compare with
+the most efficient estimator.
+We should
+find a way to use this to zero.
+In summary,
+compressing is
+about three-thirds.
+We want to turn the last part
+to zero.
+We can see from the above
+that CT context tree weighting
+is close to
+the fastest speed
+in theory.
+It is a very efficient
+estimator.
+This is
+the part of the theory.
+The theory sounds
+perfect and amazing.
+Does this theory work?
+Here is
+an example.
+We want to compress
+this article.
+This article is
+Lincoln's
+Gettysburg Address,
+in English,
+7 years ago.
+This article
+has a capacity
+of about 1K.
+If we compress it
+with common
+compression methods,
+it can be compressed
+to this size.
+However, if we use CTW,
+it is more efficient in theory.
+If we use a better
+learning algorithm,
+we will find that
+it compresses less.
+This means that
+the better our
+prediction ability is,
+the less we can compress
+in total.
+This theory
+is correct.
+We have
+proved that
+we can get better
+compression from
+a better learning algorithm.
+What is more
+interesting
+is how to
+get better
+compression.
+Let's say
+every computer has
+WinZip.
+We can use WinZip.exe
+to do machine learning.
+Or we have a better
+compression method,
+TZ.
+We can use TZ
+to do better machine learning.
+I want to prove
+this thing
+from the point of view
+that
+we just said
+that wisdom is unpredictable.
+If we change the definition of
+wisdom to
+pattern,
+or to be more specific,
+if we treat wisdom
+as a non-supervised
+learning,
+unsupervised learning,
+can we prove
+that a better compression
+can do better
+unsupervised learning?
+I guess
+if we can do
+unsupervised learning,
+we can do a lot of
+smart things,
+like condensed
+method research,
+astronomy research,
+or more.
+To be more specific,
+when we do unsupervised learning,
+we want to answer
+if there are
+A, B, C,
+is A closer to B?
+Or is A closer to C?
+Or is B closer to C?
+So,
+unsupervised learning
+is about
+measuring
+how close
+or how different
+two things are.
+This is a
+simple
+structure to
+calculate
+the distance
+of two random things
+using
+this
+unsupervised learning
+algorithm.
+Let's say
+anything can
+become 010101.
+Let's say
+x is a
+0101 string,
+and kx is
+the length
+after the compression.
+Let's say
+we put x and y
+together
+to get this length.
+We know that
+when the compression
+is good,
+kxy is
+roughly equal to kyx.
+This is
+the notation
+for conditional probability.
+Let's say we have
+given x,
+how much
+extra length
+do we need to
+reconstruct y?
+The definition
+is kxy-kx.
+In other words,
+ky given x
+is the
+information
+in y but not in x.
+With this
+conditional definition,
+we know that
+for a good
+compression,
+we only need
+0 length to
+compress x.
+This
+ky given x
+is the total length.
+If we want to ask
+per unit symbol
+or per bit
+information in y
+but not in x,
+we can just
+multiply ky given x
+by y.
+This is
+like
+using a smart
+program to
+measure
+the information in y
+but not in x.
+The information
+in x
+can be calculated
+as how different
+the distance between
+y and x is.
+This is like
+the general purpose
+of unsupervised learning.
+Or the distance
+between two things.
+But this
+has reached
+our intuition.
+But there are some drawbacks.
+It's not symmetric.
+If we
+make some
+changes
+to max and max,
+we'll find that
+it's symmetric.
+And when
+y is greater than x,
+it will come here.
+Or if x is greater than y,
+it will come here.
+So if we define
+this as
+the distance between
+two things,
+it's symmetric.
+If we define it like this,
+we'll find that
+the length is too
+short.
+So this is like
+giving a compressed
+program, winzip.inxe,
+to calculate the distance
+between two things.
+So after we
+push it like this,
+we'll find that
+this method can give us
+a compressed program.
+We don't know what it does.
+But if it's good enough,
+it can help us
+figure out the distance
+between two things.
+So this idea
+is good in theory,
+but in practice,
+is it useful?
+Today, I'll give you
+two examples
+to show that
+it can be useful.
+In the first example,
+we want to solve
+biological problems.
+To be precise,
+we want to solve
+a problem
+among mammals.
+It's a problem
+they care about.
+This debate
+is a common
+debate in
+biology
+in the early 2000s.
+They debate
+whether humans
+are closer to pigs
+or mice.
+Some people
+say that
+humans are
+closer to
+pigs or mice.
+But if we
+look at other data,
+we'll find that
+humans are closer
+to mice.
+Can we use
+a compressed program to
+answer this question?
+To put it simply,
+if a monkey
+has this DNA,
+GTTAT,
+and a pig
+has this DNA,
+and we run
+a compressed program
+to calculate
+the information
+between these two
+DNAs,
+can we answer
+this question?
+We do this
+because it's
+quite different from
+traditional biology.
+Traditional biology
+uses a lot of
+biological information.
+For example,
+traditionally,
+we would
+do an alignment
+to these primitive data.
+This part
+should be compared
+with GTTAT.
+For example,
+three RNAs
+can form
+a condom.
+The third one
+in the condom
+is more likely to
+mutate,
+so we ignore it.
+It's like doing
+what we call
+feature engineering
+to get a result.
+Can we
+do feature engineering
+to compress
+raw data
+and get
+a pretty
+correct result?
+It looks like
+we can.
+The picture on the left
+is a winzip
+or gzip program.
+We get
+the classification of
+animal blood
+and DNA.
+We can see
+that it's
+pretty good.
+Horses and donkeys
+are pretty similar.
+Mice are the same.
+Humans and stars are the same.
+But it still has
+some problems.
+For example,
+this flying monkey is
+a monkey,
+so the monkey should be here.
+It also says
+that humans
+are closer to
+pigs and
+mice.
+This is gzip.
+We know
+that gzip is
+doing Lampel's Zip.
+When it predicts
+the next bit,
+the accuracy is not as high as
+CTW.
+If we use a better
+prediction of the future,
+we will find
+that the results
+are better.
+It has
+categorized the animals
+and said that humans are
+closer to pigs.
+This result
+matches
+traditional biology.
+The results are
+pretty consistent.
+This is
+the first example.
+We can use
+simple compression
+to get results
+that are more
+like traditional biology.
+It makes sense.
+We can also
+do
+different types of classification.
+We can also
+do some research
+on SARS
+virus DNA.
+Many people
+know that
+SARS virus
+was a big disease
+10 years ago.
+The mortality rate
+is very high.
+We still
+don't have a vaccine
+in 2019.
+Why do we
+have such a high mortality rate
+and no vaccine?
+Can we try to
+answer this question?
+We use
+compression to answer this question.
+The main concept is
+to compare it with
+other
+family viruses
+and do a classification study.
+We use it
+to do a study
+on the virus of
+colds, pigs, and mice.
+Our study
+has no
+feature engineering
+or
+heuristic.
+We use
+compression.
+Traditionally,
+biologists do
+a lot of
+heuristics.
+For example,
+biologists
+do DNA research.
+They use a database
+to calculate
+the probability of
+A mutating to D amino acid.
+They use
+a table
+to find
+the probability
+of A mutating to D amino acid.
+They use
+the probability of
+A mutating to D amino acid.
+If we
+use
+the compression
+and do the
+heuristic,
+we can see
+that
+phylogeny
+looks like this.
+We can see that
+SARS is
+very different
+from other
+known coronaviruses.
+It is a family.
+Moreover,
+coronaviruses
+have a family
+of mice and cows.
+Group 2 is
+a family of mice and cows.
+Cats and dogs
+are in the same family.
+This is the result
+we get
+from a wide
+compression.
+This result
+matches
+the science
+in this paper.
+The research
+shows that
+coronaviruses
+are divided into
+these groups.
+SARS is
+very unique.
+This explains
+why SARS has
+such a high mortality rate
+and has no vaccine.
+It is very different
+from other viruses.
+To sum up,
+we have
+not only
+compression,
+but also better compression
+to get better intelligence.
+Many people
+have
+applied
+compression
+to
+measure IQ
+and intelligence.
+We can use
+compression to measure IQ.
+If IQ is better,
+intelligence will be better.
+This is like
+a more scientific way
+to measure intelligence
+than the traditional
+IQ test.
+To be more specific,
+we know that
+human brain
+compresses English
+one bit per character.
+This is like
+the goal of artificial intelligence.
+Next,
+the second important message
+is that
+the most basic principle
+in science
+is
+the simpler the explanation,
+the more we should pay attention to it.
+This is a very
+correct philosophy.
+It can be transformed
+into a very quantitative way
+to measure
+these different assumptions.
+It is not only
+helpful to
+natural scientists,
+but also very useful
+in artificial intelligence.
+This is
+the end of
+today's lecture.
+In the end,
+I think
+lecture
+or class
+should be interactive.
+This is a
+very simple quiz.
+For example,
+if we look at
+this compressed format,
+the developer
+is not a
+random person.
+He is a serious person.
+This compressed format
+eventually
+compresses
+the information
+to zero.
+Is this right?
+Is this possible?
+This is a small quiz.
+If you are interested, you can go back and think about it.
+That's it.
+Thank you.
+Thank you,
+Fu Ming.
+Do the
+audience
+have any questions?
+Hello.
+Hello.
+I have two
+questions.
+The first one is
+about
+the experiment
+on supervised
+learning.
+Do you have
+other
+research on
+computational
+biology?
+I'm not familiar
+with computational biology,
+so I'm curious.
+The second question
+is
+about
+unsupervised learning.
+Are there
+other
+applications
+like
+this?
+It's similar to
+the classification of DNA.
+In the past,
+people collected
+a lot of documents
+to do unsupervised learning.
+For example,
+all novels
+written in English
+can be collected
+to do unsupervised learning.
+But
+when doing
+literature learning,
+the authors
+usually have
+a literature background.
+So, to achieve
+a certain goal,
+they need to
+process the documents
+like biologists.
+For example,
+if I want to classify
+a group of
+literary works
+to do unsupervised learning,
+I may not get
+a good result
+with raw data.
+Because each author
+has his own habits,
+and each author
+will become a group.
+So, they need
+some methods
+to do unsupervised learning.
+For example,
+cutting out outliers
+with high or low frequency.
+I heard
+that there is no research on this.
+I'm curious
+about the result
+of compressive approach.
+This is my second question.
+Yes,
+this is a very good question.
+Sorry,
+I talked too fast
+about the details of the experiment.
+We compare
+traditional literature
+with
+classical literature.
+In traditional literature,
+there is a way to measure
+which method is better.
+The main problem is
+that we can't
+calculate
+the distance
+between two things
+in the same way
+as in classical literature.
+So,
+the main way
+to measure
+the distance
+between two things
+is to use
+phylogeny
+to compare
+the distance
+between two things.
+To be more specific,
+when we
+study
+the evolution of
+proteins,
+we use
+mitochondrial genes.
+For example,
+in your second question,
+there are many different methods.
+In addition to
+mitochondrial genes,
+we use them
+because
+they were
+completely decoded
+earlier.
+Therefore,
+there are more documents.
+Later,
+when people's technology
+develops,
+they will use
+different kinds of genes
+or a series of
+transmitted amino acids
+to classify.
+Here,
+we mainly use
+the most traditional
+mitochondrial genes
+to classify
+and compare
+with the research
+on literature.
+For example,
+in the study
+on mammals,
+the later research
+may be different
+from the earlier research.
+However,
+here,
+we use
+mitochondrial DNA
+to classify
+and the results are
+quite similar.
+In fact,
+SARS-CoV-2
+has several stages.
+Here,
+we mainly use
+the S-protein stage
+to compare.
+S-protein is
+the shell of SARS or
+coronavirus.
+We know that
+the virus shell
+contains a lot of
+kind of needle signals.
+So,
+SARS-CoV-2
+will mutate
+its shell
+to pass through
+the membrane of
+another cell.
+The reason why
+we choose S-virus
+is because
+we can use
+the same data
+to compare
+with the
+literature on SARS.
+In fact,
+the S-protein
+is not the only
+variant of SARS.
+There are many
+other variants of SARS.
+I guess
+we can also use
+the S-protein.
+So,
+the first question
+is how to compare
+SARS-CoV-2
+with SARS-CoV-2.
+The second question is
+what is the difference
+between SARS-CoV-2
+and SARS-CoV-2
+in other fields?
+I know that
+there are many
+applications of
+SARS-CoV-2
+in other fields.
+For example,
+I know that
+some people
+apply the SARS-CoV-2
+and
+some people
+apply the SARS-CoV-2.
+Can we
+describe
+the similarities
+in the literature
+by saying
+this group is
+SARS-CoV-2
+and this group is
+SARS-CoV-2?
+I know that
+we can use
+punctuation
+to unify them.
+Or we can
+remove the blanks.
+When we don't do these things at all,
+we can classify the literature
+in a good way.
+In addition to the literature,
+I guess
+anything can be
+generalized.
+As long as it becomes 0101,
+it can be compressed.
+For example,
+we have these
+MIDI files.
+When we classify them,
+we will find that
+this group of MIDI files
+seems to be in the style of Bach.
+This group of MIDI files
+is in the style of Beethoven.
+We can classify them.
+I know that
+in science,
+for example,
+in astronomy,
+we classify
+this group of light
+with the change of time.
+It probably has this change.
+It probably has this change.
+It may be a cycle
+or it is a change
+that goes up slowly.
+And this group of astronomical objects
+may be this picture.
+Its light curve looks like this.
+When we classify these series,
+we will find that
+this group of astronomical objects
+are all supernovae.
+They probably look like this.
+This group of objects
+is a supernova.
+So I know that
+it can be applied
+in other fields.
+Yes.
+Thank you.
+Thank you.
+Are there any questions
+from the audience?
+I have a question.
+Yes.
+I want to ask
+about the CTW
+compression method.
+It is successful in many areas.
+Is there any situation
+where it doesn't perform so well?
+Do you know why?
+Yes.
+CTW
+has a problem.
+The algorithm
+must know in advance
+how long
+the tree is.
+For example,
+our example is 3.
+Theoretically,
+if we
+only count
+the prefix to 3,
+the pattern
+of this data
+must be
+4
+or 5 symbols
+before.
+If we only limit it to 3,
+logically,
+the algorithm will learn
+the pattern.
+This problem
+has a specific
+representation
+in the data of the image.
+We know that
+the pixels on my left
+should be
+the same color.
+Not only on my left,
+but also on my top and bottom
+should be the same color.
+But if we change
+the pattern
+row by row,
+we will find that
+the upper and lower pixels
+should be the same color.
+The pattern
+depends on
+the width,
+for example,
+600x400.
+It depends on 400 pixels
+and 400 symbols
+to learn the pattern.
+I guess
+this is the main reason.
+The reason
+we can't
+extend
+the depth of the tree
+is because
+to build a tree,
+the memory
+needs
+the growth of the
+pixel type.
+The growth of the pixel type
+is hard to
+calculate
+because the
+number of pixels
+is small.
+I guess this is
+the biggest problem.
+I see.
+Hello,
+Fumi.
+Hello,
+A-Pad.
+I want to ask
+a question
+that is not
+related to
+randomness.
+For example,
+if we put a
+bunch of data
+into the tree,
+will it
+get any result?
+For randomness,
+we will find
+that
+if we
+follow
+the formula,
+we will find
+that the kx
+is equal to
+itself.
+We are trying to
+find the probability.
+If we
+follow the formula,
+it will be equal to itself.
+The data
+is the only
+data in the world.
+I guess
+the result is
+something special.
+I see.
+Yes, intuitively.
+Does anyone
+have other questions?
+Can I ask
+one more question?
+Sure.
+You mentioned
+that CTW cannot
+be compressed.
+In fact,
+there are a lot of
+compressed files.
+Compressed files
+are designed to
+look up and down.
+Can CTW
+be designed to
+look up and left?
+Something like that.
+And then build the tree.
+That's it.
+I guess
+it is possible.
+For example,
+if the tree
+has only two branches,
+I guess
+the tree can have
+more branches.
+I know
+a lot of papers
+are working on
+this kind of improvement.
+I guess
+some people's improvement is
+that CTW
+is designed to
+look up and down.
+Some papers
+are
+designed to
+skip some syntax.
+Skip some syntax.
+Hello?
+Hello?
+Hello?
+Hello?
+I wasn't talking just now.
+I'm afraid my internet is broken.
+Okay.
+I'd like to ask
+if there are any other questions.
+Okay.
+If you haven't joined
+TaiwaR,
+please use the link in the chat.
+Thank you again for
+the wonderful speech.
+Thank you.
+If you have any questions,
+you can discuss in private.
+You can also
+use the link in the chat.
+Thank you.
+See you next time.
+Bye.

@@ -1,0 +1,6512 @@
+WEBVTT
+
+00:00.000 --> 00:04.000
+Can you see it now?
+
+00:04.000 --> 00:06.000
+Yes.
+
+00:06.000 --> 00:08.000
+OK.
+
+00:08.000 --> 00:10.000
+Hello, everyone.
+
+00:10.000 --> 00:12.000
+I'm John Yu-nan.
+
+00:12.000 --> 00:14.000
+You can call me Alan.
+
+00:14.000 --> 00:16.000
+I'm a Ph.D. student at Rice University.
+
+00:16.000 --> 00:20.000
+I'm studying computer science.
+
+00:20.000 --> 00:22.000
+I'm in my second year.
+
+00:22.000 --> 00:24.000
+I'm doing research on
+
+00:24.000 --> 00:30.000
+interpretable machinery
+
+00:30.000 --> 00:34.000
+or explainable artificial intelligence.
+
+00:34.000 --> 00:38.000
+My goal is to explain
+
+00:38.000 --> 00:40.000
+why this machine learning model
+
+00:40.000 --> 00:42.000
+can make such predictions.
+
+00:42.000 --> 00:44.000
+I want to explain
+
+00:44.000 --> 00:46.000
+and convince people
+
+00:46.000 --> 00:48.000
+that this prediction result
+
+00:48.000 --> 00:52.000
+is not random.
+
+00:52.000 --> 00:54.000
+OK.
+
+00:54.000 --> 00:56.000
+Let me introduce myself.
+
+00:56.000 --> 00:58.000
+I used to study in Taiwan.
+
+00:58.000 --> 01:00.000
+I'm a master's student.
+
+01:00.000 --> 01:02.000
+I used to work in
+
+01:02.000 --> 01:04.000
+a recommendation system.
+
+01:04.000 --> 01:06.000
+If you have questions
+
+01:06.000 --> 01:08.000
+about the recommendation system,
+
+01:08.000 --> 01:10.000
+you can ask me.
+
+01:10.000 --> 01:12.000
+I'll try to answer them.
+
+01:12.000 --> 01:14.000
+OK.
+
+01:14.000 --> 01:16.000
+I studied math in college.
+
+01:16.000 --> 01:18.000
+Before I graduated from
+
+01:18.000 --> 01:20.000
+my senior year,
+
+01:20.000 --> 01:22.000
+I didn't know how to code.
+
+01:22.000 --> 01:24.000
+I didn't even understand
+
+01:24.000 --> 01:26.000
+a line of code.
+
+01:26.000 --> 01:28.000
+I want to encourage
+
+01:28.000 --> 01:30.000
+those who still want to code
+
+01:30.000 --> 01:32.000
+not to give up.
+
+01:32.000 --> 01:34.000
+Everyone has a chance.
+
+01:34.000 --> 01:36.000
+Keep working hard.
+
+01:36.000 --> 01:38.000
+Everyone has a chance
+
+01:38.000 --> 01:40.000
+to do this.
+
+01:40.000 --> 01:42.000
+OK.
+
+01:42.000 --> 01:44.000
+Today,
+
+01:44.000 --> 01:46.000
+OK.
+
+01:46.000 --> 01:48.000
+I'm going to talk about
+
+01:48.000 --> 01:50.000
+I just want to say
+
+01:50.000 --> 01:52.000
+it's too inspirational at the beginning.
+
+01:52.000 --> 01:54.000
+Anyway,
+
+01:54.000 --> 01:56.000
+I'm not a master today.
+
+01:56.000 --> 01:58.000
+I'm just an ordinary
+
+01:58.000 --> 02:00.000
+sophomore PhD student.
+
+02:00.000 --> 02:02.000
+If you want to interrupt me,
+
+02:02.000 --> 02:04.000
+just turn on your microphone
+
+02:04.000 --> 02:06.000
+and interrupt me.
+
+02:06.000 --> 02:08.000
+OK.
+
+02:08.000 --> 02:10.000
+Let's get started.
+
+02:10.000 --> 02:12.000
+OK.
+
+02:12.000 --> 02:14.000
+Today's outline
+
+02:14.000 --> 02:16.000
+focuses on four points.
+
+02:16.000 --> 02:18.000
+First,
+
+02:18.000 --> 02:20.000
+explainable artificial intelligence.
+
+02:20.000 --> 02:22.000
+Next,
+
+02:22.000 --> 02:24.000
+explainable machine learning.
+
+02:24.000 --> 02:26.000
+Next,
+
+02:26.000 --> 02:28.000
+explainable machine learning.
+
+02:28.000 --> 02:30.000
+There are two types of machine learning.
+
+02:30.000 --> 02:32.000
+First,
+
+02:32.000 --> 02:34.000
+explainable machine learning.
+
+02:34.000 --> 02:36.000
+For example,
+
+02:36.000 --> 02:38.000
+you may have heard of
+
+02:38.000 --> 02:40.000
+decision tree.
+
+02:40.000 --> 02:42.000
+In decision tree,
+
+02:42.000 --> 02:44.000
+we can see
+
+02:44.000 --> 02:46.000
+the model itself
+
+02:46.000 --> 02:48.000
+is explainable.
+
+02:48.000 --> 02:50.000
+is explainable.
+
+02:50.000 --> 02:52.000
+The other type is
+
+02:52.000 --> 02:54.000
+neural network.
+
+02:54.000 --> 02:56.000
+The other type is
+
+02:56.000 --> 02:58.000
+deep neural network.
+
+02:58.000 --> 03:00.000
+It's fully connected.
+
+03:00.000 --> 03:02.000
+It's fully connected.
+
+03:02.000 --> 03:04.000
+It's a black box model.
+
+03:04.000 --> 03:06.000
+It's not explainable.
+
+03:06.000 --> 03:08.000
+You don't know
+
+03:08.000 --> 03:10.000
+the learning weight.
+
+03:10.000 --> 03:12.000
+You don't know the learning weight.
+
+03:12.000 --> 03:14.000
+You don't know the learning weight.
+
+03:14.000 --> 03:16.000
+You don't know the learning weight.
+
+03:16.000 --> 03:18.000
+So,
+
+03:18.000 --> 03:20.000
+we need an explanation
+
+03:20.000 --> 03:22.000
+after learning the model.
+
+03:22.000 --> 03:24.000
+After learning the model,
+
+03:24.000 --> 03:26.000
+we need to learn
+
+03:26.000 --> 03:28.000
+an explanation model
+
+03:28.000 --> 03:30.000
+to explain the model.
+
+03:30.000 --> 03:32.000
+This type of learning method
+
+03:32.000 --> 03:34.000
+is called post hoc.
+
+03:34.000 --> 03:36.000
+post hoc is after prediction process.
+
+03:36.000 --> 03:38.000
+OK.
+
+03:38.000 --> 03:40.000
+After this,
+
+03:40.000 --> 03:42.000
+I'm going to talk about
+
+03:42.000 --> 03:44.000
+the application of XAI.
+
+03:44.000 --> 03:46.000
+If you are not a computer science
+
+03:46.000 --> 03:48.000
+background,
+
+03:48.000 --> 03:50.000
+you may wonder
+
+03:50.000 --> 03:52.000
+what's the use of XAI.
+
+03:52.000 --> 03:54.000
+I'm going to talk about
+
+03:54.000 --> 03:56.000
+the open source package
+
+03:56.000 --> 03:58.000
+to make an explainable model.
+
+03:58.000 --> 04:00.000
+to make an explainable model.
+
+04:00.000 --> 04:02.000
+Now, everyone uses Python.
+
+04:02.000 --> 04:04.000
+I'm going to talk about
+
+04:04.000 --> 04:06.000
+two open source packages.
+
+04:06.000 --> 04:08.000
+I'm going to tell you
+
+04:08.000 --> 04:10.000
+what is XAI.
+
+04:10.000 --> 04:12.000
+XAI is not an unimaginable thing.
+
+04:12.000 --> 04:14.000
+If you have a prediction model,
+
+04:14.000 --> 04:16.000
+and you want to make it explainable,
+
+04:16.000 --> 04:18.000
+everyone has a chance
+
+04:18.000 --> 04:20.000
+to step into this field.
+
+04:20.000 --> 04:22.000
+OK.
+
+04:22.000 --> 04:24.000
+Now,
+
+04:24.000 --> 04:26.000
+I'm going to talk about
+
+04:26.000 --> 04:28.000
+what is XAI.
+
+04:28.000 --> 04:30.000
+Artificial intelligence
+
+04:30.000 --> 04:32.000
+has many applications
+
+04:32.000 --> 04:34.000
+in our daily life.
+
+04:34.000 --> 04:36.000
+For example,
+
+04:36.000 --> 04:38.000
+deep mind
+
+04:38.000 --> 04:40.000
+has created AlphaGo
+
+04:40.000 --> 04:42.000
+to play Go.
+
+04:42.000 --> 04:44.000
+It can scare
+
+04:44.000 --> 04:46.000
+human experts.
+
+04:46.000 --> 04:48.000
+Yes.
+
+04:48.000 --> 04:50.000
+A while ago,
+
+04:50.000 --> 04:52.000
+deep mind gave
+
+04:52.000 --> 04:54.000
+AlphaTensor and
+
+04:54.000 --> 04:56.000
+AlphaProtein.
+
+04:56.000 --> 04:58.000
+In fact,
+
+04:58.000 --> 05:00.000
+they are for reinforcement learning.
+
+05:00.000 --> 05:02.000
+They are for
+
+05:02.000 --> 05:04.000
+reinforcement learning.
+
+05:04.000 --> 05:06.000
+They can be applied
+
+05:06.000 --> 05:08.000
+in daily life.
+
+05:08.000 --> 05:10.000
+For example,
+
+05:10.000 --> 05:12.000
+medical diagnosis.
+
+05:12.000 --> 05:14.000
+For example,
+
+05:14.000 --> 05:16.000
+I give you an X-ray,
+
+05:16.000 --> 05:18.000
+and you hope the machine learning model
+
+05:18.000 --> 05:20.000
+can tell if you have a brain tumor.
+
+05:20.000 --> 05:22.000
+Then it will tell you
+
+05:22.000 --> 05:24.000
+if you have a brain tumor.
+
+05:24.000 --> 05:26.000
+Or you can tell
+
+05:26.000 --> 05:28.000
+the machine learning model
+
+05:28.000 --> 05:30.000
+if you have a cough
+
+05:30.000 --> 05:32.000
+or symptoms.
+
+05:32.000 --> 05:34.000
+Tesla Autopilot
+
+05:34.000 --> 05:36.000
+is an
+
+05:36.000 --> 05:38.000
+autonomous vehicle.
+
+05:38.000 --> 05:40.000
+It will not detect
+
+05:40.000 --> 05:42.000
+any object.
+
+05:42.000 --> 05:44.000
+It will give you the best way
+
+05:44.000 --> 05:46.000
+to drive the car.
+
+05:46.000 --> 05:48.000
+Next is voice recognition.
+
+05:48.000 --> 05:50.000
+For example, Alexa.
+
+05:50.000 --> 05:52.000
+I don't know if you have used
+
+05:52.000 --> 05:54.000
+a smart speaker.
+
+05:54.000 --> 05:56.000
+When you speak to the speaker,
+
+05:56.000 --> 05:58.000
+it will detect your voice
+
+05:58.000 --> 06:00.000
+and convert it
+
+06:00.000 --> 06:02.000
+to English.
+
+06:02.000 --> 06:04.000
+Then it will
+
+06:04.000 --> 06:06.000
+request the service
+
+06:06.000 --> 06:08.000
+from the online server.
+
+06:08.000 --> 06:10.000
+Recently,
+
+06:10.000 --> 06:12.000
+there is a popular
+
+06:12.000 --> 06:14.000
+speech-to-speech
+
+06:14.000 --> 06:16.000
+in Meta.
+
+06:16.000 --> 06:18.000
+This kind of
+
+06:18.000 --> 06:20.000
+AI application
+
+06:20.000 --> 06:22.000
+is becoming more and more common.
+
+06:22.000 --> 06:24.000
+It is hard for us
+
+06:24.000 --> 06:26.000
+to know why
+
+06:26.000 --> 06:28.000
+these models make these judgments.
+
+06:28.000 --> 06:30.000
+For example,
+
+06:30.000 --> 06:32.000
+if you go to a doctor
+
+06:32.000 --> 06:34.000
+and he presented a
+
+06:34.000 --> 06:36.000
+medical diagnosis model.
+
+06:36.000 --> 06:38.000
+You input all your symptoms
+
+06:38.000 --> 06:40.000
+into this model.
+
+06:40.000 --> 06:42.000
+He will say,
+
+06:42.000 --> 06:44.000
+you just have a cold today.
+
+06:44.000 --> 06:46.000
+Why do you make this judgment?
+
+06:46.000 --> 06:48.000
+Or if Tesla gives you
+
+06:48.000 --> 06:50.000
+the best
+
+06:50.000 --> 06:52.000
+autonomous driving
+
+06:52.000 --> 06:54.000
+route plan,
+
+06:54.000 --> 06:56.000
+do you really think
+
+06:56.000 --> 06:58.000
+he won't be in trouble?
+
+06:58.000 --> 07:00.000
+In this decision-making process,
+
+07:00.000 --> 07:02.000
+if you can provide
+
+07:02.000 --> 07:04.000
+what features
+
+07:04.000 --> 07:06.000
+this model learned today,
+
+07:06.000 --> 07:08.000
+or if it senses
+
+07:08.000 --> 07:10.000
+a pedestrian passing by
+
+07:10.000 --> 07:12.000
+and stops,
+
+07:12.000 --> 07:14.000
+or if it detects a green light
+
+07:14.000 --> 07:16.000
+in front of it.
+
+07:16.000 --> 07:18.000
+If this kind of
+
+07:18.000 --> 07:20.000
+why process is provided to users,
+
+07:20.000 --> 07:22.000
+it can actually
+
+07:22.000 --> 07:24.000
+increase people's
+
+07:24.000 --> 07:26.000
+credibility in
+
+07:26.000 --> 07:28.000
+machine learning models.
+
+07:28.000 --> 07:30.000
+So,
+
+07:30.000 --> 07:32.000
+the whole XAI
+
+07:32.000 --> 07:34.000
+is actually doing one thing.
+
+07:34.000 --> 07:36.000
+It wants to provide
+
+07:36.000 --> 07:38.000
+a reasonable reason to users.
+
+07:38.000 --> 07:40.000
+For example,
+
+07:40.000 --> 07:42.000
+what features did this model learn?
+
+07:42.000 --> 07:44.000
+Or what did this model see?
+
+07:44.000 --> 07:46.000
+Or did this model learn
+
+07:46.000 --> 07:48.000
+two or three features
+
+07:48.000 --> 07:50.000
+that led me to make
+
+07:50.000 --> 07:52.000
+this prediction result?
+
+07:52.000 --> 07:54.000
+XAI is improving
+
+07:54.000 --> 07:56.000
+this process.
+
+07:56.000 --> 07:58.000
+For example,
+
+07:58.000 --> 08:00.000
+this autopilot on the left.
+
+08:00.000 --> 08:02.000
+What does XAI want to do?
+
+08:02.000 --> 08:04.000
+We actually want to provide
+
+08:04.000 --> 08:06.000
+why this autopilot
+
+08:06.000 --> 08:08.000
+will give you
+
+08:08.000 --> 08:10.000
+a safe route plan.
+
+08:10.000 --> 08:12.000
+So, you have to tell users
+
+08:12.000 --> 08:14.000
+that because my model
+
+08:14.000 --> 08:16.000
+detects people,
+
+08:16.000 --> 08:18.000
+my model detects
+
+08:18.000 --> 08:20.000
+no cars within 50 meters.
+
+08:20.000 --> 08:22.000
+For example,
+
+08:22.000 --> 08:24.000
+the medical diagnosis
+
+08:24.000 --> 08:26.000
+on the right.
+
+08:26.000 --> 08:28.000
+The medical diagnosis
+
+08:28.000 --> 08:30.000
+is like
+
+08:30.000 --> 08:32.000
+persuading a doctor
+
+08:32.000 --> 08:34.000
+or a patient
+
+08:34.000 --> 08:36.000
+that because I
+
+08:36.000 --> 08:38.000
+see a tumor
+
+08:38.000 --> 08:40.000
+in the X-ray of your brain,
+
+08:40.000 --> 08:42.000
+I frame it,
+
+08:42.000 --> 08:44.000
+so I judge your brain tumor.
+
+08:44.000 --> 08:46.000
+This action
+
+08:46.000 --> 08:48.000
+doesn't seem
+
+08:48.000 --> 08:50.000
+so necessary
+
+08:50.000 --> 08:52.000
+in the whole
+
+08:52.000 --> 08:54.000
+prediction process.
+
+08:54.000 --> 08:56.000
+But if you provide
+
+08:56.000 --> 08:58.000
+this step to users,
+
+08:58.000 --> 09:00.000
+why this step,
+
+09:00.000 --> 09:02.000
+users will feel
+
+09:02.000 --> 09:04.000
+very confident
+
+09:04.000 --> 09:06.000
+about your decision
+
+09:06.000 --> 09:08.000
+model.
+
+09:08.000 --> 09:10.000
+Of course, there are many applications
+
+09:10.000 --> 09:12.000
+that I haven't mentioned,
+
+09:12.000 --> 09:14.000
+such as stock market trading.
+
+09:14.000 --> 09:16.000
+For example, if you buy
+
+09:16.000 --> 09:18.000
+a stock,
+
+09:18.000 --> 09:20.000
+the price of the stock
+
+09:20.000 --> 09:22.000
+has already fallen
+
+09:22.000 --> 09:24.000
+to the point of fracture.
+
+09:24.000 --> 09:26.000
+If you sell the stock,
+
+09:26.000 --> 09:28.000
+the price will not
+
+09:28.000 --> 09:30.000
+fall below $100.
+
+09:30.000 --> 09:32.000
+If the model is wrong,
+
+09:32.000 --> 09:34.000
+it will ask you to sell it
+
+09:34.000 --> 09:36.000
+because the price of the stock
+
+09:36.000 --> 09:38.000
+may fall below $100.
+
+09:38.000 --> 09:40.000
+You have to convince
+
+09:40.000 --> 09:42.000
+the trader
+
+09:42.000 --> 09:44.000
+that because I see
+
+09:44.000 --> 09:46.000
+a tumor
+
+09:46.000 --> 09:48.000
+in the X-ray of your brain,
+
+09:48.000 --> 09:50.000
+your prediction model
+
+09:50.000 --> 09:52.000
+is credible.
+
+09:52.000 --> 09:54.000
+There are several points
+
+09:54.000 --> 09:56.000
+related to this.
+
+09:56.000 --> 09:58.000
+First, you have to convince users.
+
+09:58.000 --> 10:00.000
+Second, you have to provide security.
+
+10:00.000 --> 10:02.000
+Another important thing
+
+10:02.000 --> 10:04.000
+is some legal things,
+
+10:04.000 --> 10:06.000
+such as GDPR.
+
+10:06.000 --> 10:08.000
+A while ago,
+
+10:08.000 --> 10:10.000
+Facebook was called
+
+10:10.000 --> 10:12.000
+to the European Parliament
+
+10:12.000 --> 10:14.000
+or Google CEO
+
+10:14.000 --> 10:16.000
+was called to the U.S.
+
+10:16.000 --> 10:18.000
+House of Representatives
+
+10:18.000 --> 10:20.000
+was called to scold.
+
+10:20.000 --> 10:22.000
+In fact,
+
+10:22.000 --> 10:24.000
+these privacy data
+
+10:24.000 --> 10:26.000
+or personal data
+
+10:26.000 --> 10:28.000
+are not provided
+
+10:28.000 --> 10:30.000
+to users
+
+10:30.000 --> 10:32.000
+in a reasonable
+
+10:32.000 --> 10:34.000
+or safe way.
+
+10:34.000 --> 10:36.000
+You can't use these features
+
+10:36.000 --> 10:38.000
+unconditionally
+
+10:38.000 --> 10:40.000
+as a basis
+
+10:40.000 --> 10:42.000
+for training models.
+
+10:42.000 --> 10:44.000
+If you can provide these methods
+
+10:44.000 --> 10:46.000
+to users through XAI
+
+10:46.000 --> 10:48.000
+and say
+
+10:48.000 --> 10:50.000
+I use these features
+
+10:50.000 --> 10:52.000
+today
+
+10:52.000 --> 10:54.000
+and provide you
+
+10:54.000 --> 10:56.000
+some personal
+
+10:56.000 --> 10:58.000
+recommendations or predictions.
+
+10:58.000 --> 11:00.000
+In fact, users
+
+11:00.000 --> 11:02.000
+will be more at ease
+
+11:02.000 --> 11:04.000
+that you have used these things.
+
+11:04.000 --> 11:06.000
+Even if it is privacy data,
+
+11:06.000 --> 11:08.000
+it is better than
+
+11:08.000 --> 11:10.000
+using XAI.
+
+11:10.000 --> 11:12.000
+This is the reason
+
+11:12.000 --> 11:14.000
+why XAI has attracted
+
+11:14.000 --> 11:16.000
+more and more people
+
+11:16.000 --> 11:18.000
+in the past 1 or 2 years
+
+11:18.000 --> 11:20.000
+or 3 or 4 years.
+
+11:20.000 --> 11:22.000
+OK.
+
+11:22.000 --> 11:24.000
+Next,
+
+11:24.000 --> 11:26.000
+those are
+
+11:26.000 --> 11:28.000
+some high-level
+
+11:28.000 --> 11:30.000
+things.
+
+11:30.000 --> 11:32.000
+Let's talk about
+
+11:32.000 --> 11:34.000
+some
+
+11:34.000 --> 11:36.000
+more
+
+11:36.000 --> 11:38.000
+scientific things.
+
+11:38.000 --> 11:40.000
+If we are doing
+
+11:40.000 --> 11:42.000
+image classification,
+
+11:42.000 --> 11:44.000
+we are judging
+
+11:44.000 --> 11:46.000
+the model
+
+11:46.000 --> 11:48.000
+whether it is good or not.
+
+11:48.000 --> 11:50.000
+We are training
+
+11:50.000 --> 11:52.000
+a model of image classification.
+
+11:52.000 --> 11:54.000
+We can't say
+
+11:54.000 --> 11:56.000
+this model
+
+11:56.000 --> 11:58.000
+is good or not.
+
+11:58.000 --> 12:00.000
+Of course, we can say
+
+12:00.000 --> 12:02.000
+it is a prediction.
+
+12:02.000 --> 12:04.000
+For example,
+
+12:04.000 --> 12:06.000
+we can predict
+
+12:06.000 --> 12:08.000
+the label of this image.
+
+12:08.000 --> 12:10.000
+However,
+
+12:10.000 --> 12:12.000
+we can say
+
+12:12.000 --> 12:14.000
+this image is a frog.
+
+12:14.000 --> 12:16.000
+Does this model
+
+12:16.000 --> 12:18.000
+really learn the characteristics of a frog?
+
+12:18.000 --> 12:20.000
+In other words,
+
+12:20.000 --> 12:22.000
+does it really learn
+
+12:22.000 --> 12:24.000
+the head of a frog?
+
+12:24.000 --> 12:26.000
+Does it really learn
+
+12:26.000 --> 12:28.000
+the head of a frog?
+
+12:28.000 --> 12:30.000
+No one knows.
+
+12:30.000 --> 12:32.000
+It may learn
+
+12:32.000 --> 12:34.000
+that most of the frog images
+
+12:34.000 --> 12:36.000
+are because the frog
+
+12:36.000 --> 12:38.000
+stands on the pond and the lotus.
+
+12:38.000 --> 12:40.000
+So it catches the characteristics
+
+12:40.000 --> 12:42.000
+of the pond and the lotus.
+
+12:42.000 --> 12:44.000
+We don't know this.
+
+12:44.000 --> 12:46.000
+Why?
+
+12:46.000 --> 12:48.000
+When a model like this
+
+12:48.000 --> 12:50.000
+learns the model of
+
+12:50.000 --> 12:52.000
+pond and frog,
+
+12:52.000 --> 12:54.000
+will it predict the wrong?
+
+12:54.000 --> 12:56.000
+We don't know this.
+
+12:56.000 --> 12:58.000
+Through this AI,
+
+12:58.000 --> 13:00.000
+we can see
+
+13:00.000 --> 13:02.000
+which part is important.
+
+13:02.000 --> 13:04.000
+In the end,
+
+13:04.000 --> 13:06.000
+if we get the final explanation
+
+13:06.000 --> 13:08.000
+that the reason
+
+13:08.000 --> 13:10.000
+the model is a frog
+
+13:10.000 --> 13:12.000
+is because it has
+
+13:12.000 --> 13:14.000
+a very representative head,
+
+13:14.000 --> 13:16.000
+then we know
+
+13:16.000 --> 13:18.000
+this model is actually learning
+
+13:18.000 --> 13:20.000
+the right direction,
+
+13:20.000 --> 13:22.000
+instead of catching some
+
+13:22.000 --> 13:24.000
+background loopholes
+
+13:24.000 --> 13:26.000
+or shortcuts
+
+13:26.000 --> 13:28.000
+to improve
+
+13:28.000 --> 13:30.000
+the AI.
+
+13:30.000 --> 13:32.000
+For example,
+
+13:32.000 --> 13:34.000
+let's say
+
+13:34.000 --> 13:36.000
+there is a test
+
+13:36.000 --> 13:38.000
+to see if you are
+
+13:38.000 --> 13:40.000
+a COVID classifier.
+
+13:40.000 --> 13:42.000
+As we all know,
+
+13:42.000 --> 13:44.000
+there is a high probability
+
+13:44.000 --> 13:46.000
+that you have a fever or a sore throat.
+
+13:46.000 --> 13:48.000
+Let's say you only have a cold.
+
+13:48.000 --> 13:50.000
+If you only have a fever
+
+13:50.000 --> 13:52.000
+or a sore throat,
+
+13:52.000 --> 13:54.000
+the test says you are a COVID classifier.
+
+13:54.000 --> 13:56.000
+Then you are panicking.
+
+13:56.000 --> 13:58.000
+If we want to
+
+13:58.000 --> 14:00.000
+judge whether
+
+14:00.000 --> 14:02.000
+the machine learning model
+
+14:02.000 --> 14:04.000
+really learns
+
+14:04.000 --> 14:06.000
+the features we want,
+
+14:06.000 --> 14:08.000
+for example,
+
+14:08.000 --> 14:10.000
+we provide some X-ray photos.
+
+14:10.000 --> 14:12.000
+It will say that
+
+14:12.000 --> 14:14.000
+the COVID diagnosis
+
+14:14.000 --> 14:16.000
+is not only based on
+
+14:16.000 --> 14:18.000
+the two features,
+
+14:18.000 --> 14:20.000
+sore throat and fever.
+
+14:20.000 --> 14:22.000
+If we
+
+14:22.000 --> 14:24.000
+provide
+
+14:24.000 --> 14:26.000
+this prediction result
+
+14:26.000 --> 14:28.000
+to the user,
+
+14:28.000 --> 14:30.000
+we can detect
+
+14:30.000 --> 14:32.000
+the features
+
+14:32.000 --> 14:34.000
+and the user
+
+14:34.000 --> 14:36.000
+will be happier.
+
+14:36.000 --> 14:38.000
+Okay.
+
+14:38.000 --> 14:40.000
+Let's drink some water.
+
+14:44.000 --> 14:46.000
+To sum up,
+
+14:46.000 --> 14:48.000
+AI and XAI
+
+14:48.000 --> 14:50.000
+are actually
+
+14:50.000 --> 14:52.000
+a cycle
+
+14:52.000 --> 14:54.000
+of prediction.
+
+14:54.000 --> 14:56.000
+If we don't have
+
+14:56.000 --> 14:58.000
+AI prediction,
+
+14:58.000 --> 15:00.000
+we don't need to
+
+15:00.000 --> 15:02.000
+detect the features.
+
+15:02.000 --> 15:04.000
+XAI will not appear.
+
+15:04.000 --> 15:06.000
+XAI is
+
+15:06.000 --> 15:08.000
+mainly
+
+15:08.000 --> 15:10.000
+trained by
+
+15:10.000 --> 15:12.000
+a model.
+
+15:12.000 --> 15:14.000
+The prediction model
+
+15:14.000 --> 15:16.000
+has the ability to detect
+
+15:16.000 --> 15:18.000
+the features.
+
+15:18.000 --> 15:20.000
+You can see
+
+15:20.000 --> 15:22.000
+a dog here.
+
+15:22.000 --> 15:24.000
+There is a prediction model here.
+
+15:24.000 --> 15:26.000
+It detects that it is a dog.
+
+15:26.000 --> 15:28.000
+Why?
+
+15:28.000 --> 15:30.000
+Maybe the dog is lying on the ground.
+
+15:30.000 --> 15:32.000
+Most dogs are lying on the ground.
+
+15:32.000 --> 15:34.000
+I learned the features
+
+15:34.000 --> 15:36.000
+on the side.
+
+15:36.000 --> 15:38.000
+It detects that it is a dog.
+
+15:38.000 --> 15:40.000
+Or maybe
+
+15:40.000 --> 15:42.000
+it is orange.
+
+15:42.000 --> 15:44.000
+It detects that it is a dog.
+
+15:44.000 --> 15:46.000
+We don't know.
+
+15:46.000 --> 15:48.000
+It is a black box model.
+
+15:48.000 --> 15:50.000
+We need another
+
+15:50.000 --> 15:52.000
+XAI model
+
+15:52.000 --> 15:54.000
+to open the black box.
+
+15:54.000 --> 15:56.000
+We need another XAI model
+
+15:56.000 --> 15:58.000
+to open the black box.
+
+15:58.000 --> 16:00.000
+Then we can see
+
+16:00.000 --> 16:02.000
+why the picture is a dog.
+
+16:02.000 --> 16:04.000
+Because the dog has thin eyes
+
+16:04.000 --> 16:06.000
+and special ears.
+
+16:06.000 --> 16:08.000
+Because of the learning
+
+16:08.000 --> 16:10.000
+of this feature,
+
+16:10.000 --> 16:12.000
+the picture is
+
+16:12.000 --> 16:14.000
+judged to be a dog.
+
+16:14.000 --> 16:16.000
+At this time,
+
+16:16.000 --> 16:18.000
+XAI model is very credible.
+
+16:18.000 --> 16:20.000
+Because we know
+
+16:20.000 --> 16:22.000
+it learns in the right direction.
+
+16:22.000 --> 16:24.000
+Instead of
+
+16:24.000 --> 16:26.000
+learning other features
+
+16:26.000 --> 16:28.000
+to create the prediction result.
+
+16:28.000 --> 16:30.000
+This model,
+
+16:30.000 --> 16:32.000
+prediction model,
+
+16:32.000 --> 16:34.000
+is more credible.
+
+16:34.000 --> 16:36.000
+OK.
+
+16:36.000 --> 16:38.000
+That was
+
+16:38.000 --> 16:40.000
+an explanation of
+
+16:40.000 --> 16:42.000
+a big concept of XAI.
+
+16:42.000 --> 16:44.000
+Let's go deeper.
+
+16:44.000 --> 16:46.000
+I am not sure
+
+16:46.000 --> 16:48.000
+if you are all
+
+16:48.000 --> 16:50.000
+CS background students,
+
+16:50.000 --> 16:52.000
+professors,
+
+16:52.000 --> 16:54.000
+or PhD students.
+
+16:54.000 --> 16:56.000
+Today,
+
+16:56.000 --> 16:58.000
+I am going to give a high-level
+
+16:58.000 --> 17:00.000
+talk.
+
+17:00.000 --> 17:02.000
+We are going to
+
+17:02.000 --> 17:04.000
+learn more about
+
+17:04.000 --> 17:06.000
+the current
+
+17:06.000 --> 17:08.000
+XAI
+
+17:08.000 --> 17:10.000
+SOTA techniques
+
+17:10.000 --> 17:12.000
+to execute
+
+17:12.000 --> 17:14.000
+the explanation.
+
+17:14.000 --> 17:16.000
+OK.
+
+17:16.000 --> 17:18.000
+Before that,
+
+17:18.000 --> 17:20.000
+let's take a look
+
+17:20.000 --> 17:22.000
+at the different scopes.
+
+17:22.000 --> 17:24.000
+There are global and local.
+
+17:24.000 --> 17:26.000
+I am going to talk about
+
+17:26.000 --> 17:28.000
+the global.
+
+17:28.000 --> 17:30.000
+We are looking at the model.
+
+17:30.000 --> 17:32.000
+For example,
+
+17:32.000 --> 17:34.000
+the image classifier
+
+17:34.000 --> 17:36.000
+in total
+
+17:36.000 --> 17:38.000
+cares about the features.
+
+17:38.000 --> 17:40.000
+For example,
+
+17:40.000 --> 17:42.000
+let's train
+
+17:42.000 --> 17:44.000
+a model
+
+17:44.000 --> 17:46.000
+for dog
+
+17:46.000 --> 17:48.000
+classifier.
+
+17:48.000 --> 17:50.000
+We want to know
+
+17:50.000 --> 17:52.000
+what this model cares about.
+
+17:52.000 --> 17:54.000
+For example,
+
+17:54.000 --> 17:56.000
+dogs have different ears.
+
+17:56.000 --> 17:58.000
+So, ears are the features
+
+17:58.000 --> 18:00.000
+this model cares about.
+
+18:00.000 --> 18:02.000
+This is the global scope.
+
+18:02.000 --> 18:04.000
+What is local?
+
+18:04.000 --> 18:06.000
+Local is to explain
+
+18:06.000 --> 18:08.000
+what each image cares about.
+
+18:08.000 --> 18:10.000
+For example,
+
+18:10.000 --> 18:12.000
+if we want to
+
+18:12.000 --> 18:14.000
+do the global,
+
+18:14.000 --> 18:16.000
+we have to look at the classifier
+
+18:16.000 --> 18:18.000
+in all dogs.
+
+18:18.000 --> 18:20.000
+What features does it care about?
+
+18:20.000 --> 18:22.000
+But in the local scope,
+
+18:22.000 --> 18:24.000
+we have to look at
+
+18:24.000 --> 18:26.000
+each image.
+
+18:26.000 --> 18:28.000
+This image cares about
+
+18:28.000 --> 18:30.000
+the dog's face.
+
+18:30.000 --> 18:32.000
+This image cares about
+
+18:32.000 --> 18:34.000
+the dog's tail or ears.
+
+18:34.000 --> 18:36.000
+In the local scope,
+
+18:36.000 --> 18:38.000
+each image cares about
+
+18:38.000 --> 18:40.000
+each image.
+
+18:40.000 --> 18:42.000
+Each has its own advantages.
+
+18:42.000 --> 18:44.000
+If we want to look at
+
+18:44.000 --> 18:46.000
+whether this model is credible,
+
+18:46.000 --> 18:48.000
+we can use global.
+
+18:48.000 --> 18:50.000
+For example,
+
+18:50.000 --> 18:52.000
+in total,
+
+18:52.000 --> 18:54.000
+the autopilot model
+
+18:54.000 --> 18:56.000
+detects
+
+18:56.000 --> 18:58.000
+traffic lights,
+
+18:58.000 --> 19:00.000
+pedestrians,
+
+19:00.000 --> 19:02.000
+or obstacles
+
+19:02.000 --> 19:04.000
+on the road.
+
+19:04.000 --> 19:06.000
+In total,
+
+19:06.000 --> 19:08.000
+we use global.
+
+19:08.000 --> 19:10.000
+In the local scope,
+
+19:10.000 --> 19:12.000
+in this scene,
+
+19:12.000 --> 19:14.000
+in this second,
+
+19:14.000 --> 19:16.000
+the sensor detects
+
+19:16.000 --> 19:18.000
+this street scene.
+
+19:18.000 --> 19:20.000
+Because it has something,
+
+19:20.000 --> 19:22.000
+it can provide something in the next second.
+
+19:22.000 --> 19:24.000
+When we analyze
+
+19:24.000 --> 19:26.000
+the street scene
+
+19:26.000 --> 19:28.000
+every second,
+
+19:28.000 --> 19:30.000
+we have to use the local model.
+
+19:30.000 --> 19:32.000
+The local model
+
+19:32.000 --> 19:34.000
+provides a more
+
+19:34.000 --> 19:36.000
+restrictive
+
+19:36.000 --> 19:38.000
+explanation to the user.
+
+19:38.000 --> 19:40.000
+This is global and local.
+
+19:40.000 --> 19:42.000
+Next, there are two
+
+19:42.000 --> 19:44.000
+different manners.
+
+19:44.000 --> 19:46.000
+One is intrinsic and the other is post-hoc.
+
+19:46.000 --> 19:48.000
+Intrinsic means
+
+19:48.000 --> 19:50.000
+the model itself has something to explain.
+
+19:50.000 --> 19:52.000
+What is something to explain?
+
+19:52.000 --> 19:54.000
+For example,
+
+19:54.000 --> 19:56.000
+decision tree.
+
+19:56.000 --> 19:58.000
+At the end,
+
+19:58.000 --> 20:00.000
+the model predicts the result is C.
+
+20:00.000 --> 20:02.000
+We can start from C
+
+20:02.000 --> 20:04.000
+and go back to C.
+
+20:04.000 --> 20:06.000
+For example,
+
+20:06.000 --> 20:08.000
+when the model makes a decision,
+
+20:08.000 --> 20:10.000
+what are the conditions
+
+20:10.000 --> 20:12.000
+to reach the
+
+20:12.000 --> 20:14.000
+final prediction result?
+
+20:14.000 --> 20:16.000
+The model itself
+
+20:16.000 --> 20:18.000
+has something to explain.
+
+20:18.000 --> 20:20.000
+We can know
+
+20:20.000 --> 20:22.000
+from the model's decision
+
+20:22.000 --> 20:24.000
+what features it has
+
+20:24.000 --> 20:26.000
+or what condition it has.
+
+20:26.000 --> 20:28.000
+This is the intrinsic model.
+
+20:28.000 --> 20:30.000
+On the right,
+
+20:30.000 --> 20:32.000
+if you have heard
+
+20:32.000 --> 20:34.000
+some Machine Learning lectures
+
+20:34.000 --> 20:36.000
+or courses,
+
+20:36.000 --> 20:38.000
+you should know about BERT.
+
+20:38.000 --> 20:40.000
+In BERT,
+
+20:40.000 --> 20:42.000
+there is a
+
+20:42.000 --> 20:44.000
+tension score
+
+20:44.000 --> 20:46.000
+for each word
+
+20:46.000 --> 20:48.000
+in the model.
+
+20:48.000 --> 20:50.000
+For example,
+
+20:50.000 --> 20:52.000
+I put a sentence
+
+20:52.000 --> 20:54.000
+in the BERT model.
+
+20:54.000 --> 20:56.000
+For each word,
+
+20:56.000 --> 20:58.000
+there is a positive or negative sentiment.
+
+20:58.000 --> 21:00.000
+Each word
+
+21:00.000 --> 21:02.000
+has an added value
+
+21:02.000 --> 21:04.000
+in terms of
+
+21:04.000 --> 21:06.000
+positive or negative sentiment.
+
+21:06.000 --> 21:08.000
+For example,
+
+21:08.000 --> 21:10.000
+love is positive.
+
+21:10.000 --> 21:12.000
+Love is a positive
+
+21:12.000 --> 21:14.000
+tense.
+
+21:14.000 --> 21:17.000
+This
+
+21:17.000 --> 21:19.000
+high-level
+
+21:19.000 --> 21:21.000
+contribution
+
+21:21.000 --> 21:23.000
+is the tension weight
+
+21:23.000 --> 21:25.000
+in the model.
+
+21:25.000 --> 21:27.000
+So we can use
+
+21:27.000 --> 21:29.000
+the importance of words
+
+21:29.000 --> 21:31.000
+in terms of
+
+21:31.000 --> 21:33.000
+model prediction
+
+21:33.000 --> 21:35.000
+to determine
+
+21:35.000 --> 21:37.000
+why this sentence
+
+21:37.000 --> 21:39.000
+is a
+
+21:39.000 --> 21:41.000
+positive
+
+21:41.000 --> 21:43.000
+prediction result.
+
+21:43.000 --> 21:45.000
+We can use
+
+21:45.000 --> 21:47.000
+the importance score
+
+21:47.000 --> 21:49.000
+to make the prediction result.
+
+21:49.000 --> 21:51.000
+The two models
+
+21:51.000 --> 21:53.000
+I just talked about
+
+21:53.000 --> 21:55.000
+are Intrinsic
+
+21:55.000 --> 21:57.000
+and Prediction.
+
+21:57.000 --> 21:59.000
+Next is
+
+21:59.000 --> 22:01.000
+Post-Hoc.
+
+22:01.000 --> 22:03.000
+I will talk about
+
+22:03.000 --> 22:05.000
+why I focus on
+
+22:05.000 --> 22:07.000
+Post-Hoc.
+
+22:07.000 --> 22:09.000
+Most
+
+22:09.000 --> 22:11.000
+machine learning models
+
+22:11.000 --> 22:13.000
+use black box models.
+
+22:13.000 --> 22:15.000
+For example,
+
+22:15.000 --> 22:17.000
+I build a deep learning network
+
+22:17.000 --> 22:19.000
+and stack some blocks
+
+22:19.000 --> 22:21.000
+and
+
+22:21.000 --> 22:23.000
+connect them to
+
+22:23.000 --> 22:25.000
+a convolution.
+
+22:25.000 --> 22:27.000
+These prediction models
+
+22:27.000 --> 22:29.000
+have good results,
+
+22:29.000 --> 22:31.000
+but I don't know
+
+22:31.000 --> 22:33.000
+what they do inside.
+
+22:33.000 --> 22:35.000
+For example, I don't know
+
+22:35.000 --> 22:37.000
+what features they learn.
+
+22:37.000 --> 22:39.000
+This black box learning
+
+22:39.000 --> 22:41.000
+requires
+
+22:41.000 --> 22:43.000
+Post-Hoc.
+
+22:43.000 --> 22:45.000
+After the model training,
+
+22:45.000 --> 22:47.000
+I need to provide an
+
+22:47.000 --> 22:49.000
+explanation
+
+22:49.000 --> 22:51.000
+for the prediction model.
+
+22:51.000 --> 22:53.000
+This model
+
+22:53.000 --> 22:55.000
+is common
+
+22:55.000 --> 22:57.000
+in daily life.
+
+22:57.000 --> 22:59.000
+For example,
+
+22:59.000 --> 23:01.000
+let's build a
+
+23:01.000 --> 23:03.000
+recommendation system.
+
+23:03.000 --> 23:05.000
+We use
+
+23:05.000 --> 23:07.000
+neural network
+
+23:07.000 --> 23:09.000
+to train the model.
+
+23:09.000 --> 23:11.000
+At this time,
+
+23:11.000 --> 23:13.000
+the recommendation system
+
+23:13.000 --> 23:15.000
+is not explainable.
+
+23:15.000 --> 23:17.000
+So we need a
+
+23:17.000 --> 23:19.000
+explainable model
+
+23:19.000 --> 23:21.000
+to explain the model.
+
+23:21.000 --> 23:23.000
+The Post-Hoc model
+
+23:23.000 --> 23:25.000
+has two scopes.
+
+23:25.000 --> 23:27.000
+One is global,
+
+23:27.000 --> 23:29.000
+the other is local.
+
+23:29.000 --> 23:31.000
+For the global model,
+
+23:31.000 --> 23:33.000
+I need to see
+
+23:33.000 --> 23:35.000
+what features
+
+23:35.000 --> 23:37.000
+the neural network
+
+23:37.000 --> 23:39.000
+focuses on.
+
+23:39.000 --> 23:41.000
+For the local model,
+
+23:41.000 --> 23:43.000
+the neural network
+
+23:43.000 --> 23:45.000
+focuses on
+
+23:45.000 --> 23:47.000
+18 years old,
+
+23:47.000 --> 23:49.000
+male,
+
+23:49.000 --> 23:51.000
+Asian,
+
+23:51.000 --> 23:53.000
+Chinese,
+
+23:53.000 --> 23:55.000
+and Taiwanese.
+
+23:55.000 --> 23:57.000
+So I need
+
+23:57.000 --> 23:59.000
+a high level
+
+23:59.000 --> 24:01.000
+model.
+
+24:01.000 --> 24:03.000
+Each model
+
+24:03.000 --> 24:05.000
+has different features.
+
+24:05.000 --> 24:07.000
+I need to provide
+
+24:07.000 --> 24:09.000
+different models
+
+24:09.000 --> 24:11.000
+for each model.
+
+24:11.000 --> 24:13.000
+In conclusion,
+
+24:13.000 --> 24:15.000
+these two models
+
+24:15.000 --> 24:17.000
+are the mainstream.
+
+24:17.000 --> 24:19.000
+Intrinsic and Post-Hoc.
+
+24:19.000 --> 24:21.000
+Today,
+
+24:21.000 --> 24:23.000
+I will focus on
+
+24:23.000 --> 24:25.000
+the Post-Hoc explanation.
+
+24:25.000 --> 24:27.000
+Later on,
+
+24:27.000 --> 24:29.000
+I will focus on
+
+24:29.000 --> 24:31.000
+the local model.
+
+24:31.000 --> 24:33.000
+Local model is
+
+24:33.000 --> 24:35.000
+common in daily life.
+
+24:35.000 --> 24:37.000
+For example,
+
+24:37.000 --> 24:39.000
+the recommendation system.
+
+24:39.000 --> 24:41.000
+OK.
+
+24:41.000 --> 24:43.000
+Now,
+
+24:43.000 --> 24:45.000
+let's talk about
+
+24:45.000 --> 24:47.000
+Intrinsic and Local.
+
+24:47.000 --> 24:49.000
+Here is a picture.
+
+24:49.000 --> 24:51.000
+This is an article.
+
+24:51.000 --> 24:53.000
+For example,
+
+24:53.000 --> 24:55.000
+I say this article
+
+24:55.000 --> 24:57.000
+is important.
+
+24:57.000 --> 24:59.000
+Why?
+
+24:59.000 --> 25:01.000
+Because it detects
+
+25:01.000 --> 25:03.000
+ENT23 or
+
+25:03.000 --> 25:05.000
+natural tenacity.
+
+25:05.000 --> 25:07.000
+So,
+
+25:07.000 --> 25:09.000
+through this,
+
+25:09.000 --> 25:11.000
+I can tell
+
+25:11.000 --> 25:13.000
+which word is important.
+
+25:13.000 --> 25:15.000
+I can tell
+
+25:15.000 --> 25:17.000
+users
+
+25:17.000 --> 25:19.000
+why I use this article
+
+25:19.000 --> 25:21.000
+to make a prediction.
+
+25:21.000 --> 25:23.000
+It's because
+
+25:23.000 --> 25:25.000
+my model detects
+
+25:25.000 --> 25:27.000
+ENT23
+
+25:27.000 --> 25:29.000
+or natural tenacity.
+
+25:29.000 --> 25:31.000
+This way,
+
+25:31.000 --> 25:33.000
+users can be convinced
+
+25:33.000 --> 25:35.000
+that their prediction
+
+25:35.000 --> 25:37.000
+is correct.
+
+25:37.000 --> 25:39.000
+OK.
+
+25:39.000 --> 25:41.000
+This is
+
+25:41.000 --> 25:43.000
+what Intrinsic
+
+25:43.000 --> 25:45.000
+provides.
+
+25:45.000 --> 25:47.000
+OK.
+
+25:47.000 --> 25:49.000
+What is Intrinsic Global?
+
+25:49.000 --> 25:51.000
+As I said,
+
+25:51.000 --> 25:53.000
+Global focuses on
+
+25:53.000 --> 25:55.000
+the model.
+
+25:55.000 --> 25:57.000
+For example,
+
+25:57.000 --> 25:59.000
+we design a CNN model
+
+25:59.000 --> 26:01.000
+which is
+
+26:01.000 --> 26:03.000
+a representation
+
+26:03.000 --> 26:05.000
+of image classification.
+
+26:05.000 --> 26:07.000
+OK.
+
+26:07.000 --> 26:09.000
+Why does CNN
+
+26:09.000 --> 26:11.000
+successfully detect
+
+26:11.000 --> 26:13.000
+the image of a cat?
+
+26:13.000 --> 26:15.000
+It's because
+
+26:15.000 --> 26:17.000
+it detects the cat's head.
+
+26:17.000 --> 26:19.000
+If we extract
+
+26:19.000 --> 26:21.000
+a layer
+
+26:21.000 --> 26:23.000
+of model weight
+
+26:23.000 --> 26:25.000
+from CNN,
+
+26:25.000 --> 26:27.000
+we can see
+
+26:27.000 --> 26:29.000
+that this model
+
+26:29.000 --> 26:31.000
+does a convolution
+
+26:31.000 --> 26:33.000
+to some features
+
+26:33.000 --> 26:35.000
+resulting in
+
+26:35.000 --> 26:37.000
+a model prediction.
+
+26:37.000 --> 26:39.000
+OK.
+
+26:39.000 --> 26:41.000
+If we extract
+
+26:41.000 --> 26:43.000
+this feature map
+
+26:43.000 --> 26:45.000
+from the model,
+
+26:45.000 --> 26:47.000
+users can see
+
+26:47.000 --> 26:49.000
+that
+
+26:49.000 --> 26:51.000
+their prediction
+
+26:51.000 --> 26:53.000
+is correct.
+
+26:53.000 --> 26:55.000
+This is
+
+26:55.000 --> 26:57.000
+the process
+
+26:57.000 --> 26:59.000
+of Intrinsic.
+
+26:59.000 --> 27:01.000
+Intrinsic is
+
+27:01.000 --> 27:03.000
+a model
+
+27:03.000 --> 27:05.000
+which has
+
+27:05.000 --> 27:07.000
+a function
+
+27:07.000 --> 27:09.000
+to make a prediction.
+
+27:09.000 --> 27:11.000
+Or a model
+
+27:11.000 --> 27:13.000
+can extract
+
+27:13.000 --> 27:15.000
+a component
+
+27:15.000 --> 27:17.000
+to make a prediction.
+
+27:17.000 --> 27:19.000
+This is
+
+27:19.000 --> 27:21.000
+the process of Intrinsic.
+
+27:21.000 --> 27:23.000
+OK.
+
+27:23.000 --> 27:25.000
+The other thing
+
+27:25.000 --> 27:27.000
+we focus on
+
+27:27.000 --> 27:29.000
+is PostHoc Explanation.
+
+27:29.000 --> 27:31.000
+PostHoc Explanation
+
+27:31.000 --> 27:33.000
+is divided into two steps.
+
+27:33.000 --> 27:35.000
+The first step is
+
+27:35.000 --> 27:37.000
+the black box model,
+
+27:37.000 --> 27:39.000
+which is our prediction model.
+
+27:39.000 --> 27:41.000
+We have data and model
+
+27:41.000 --> 27:43.000
+to train.
+
+27:43.000 --> 27:45.000
+The next step is
+
+27:45.000 --> 27:47.000
+the explainer,
+
+27:47.000 --> 27:49.000
+which is our machine learning
+
+27:49.000 --> 27:51.000
+model to explain
+
+27:51.000 --> 27:53.000
+the prediction model.
+
+27:53.000 --> 27:55.000
+OK.
+
+27:55.000 --> 27:57.000
+Then we need
+
+27:57.000 --> 27:59.000
+to know
+
+27:59.000 --> 28:01.000
+whether the explainer
+
+28:01.000 --> 28:03.000
+is correct or not.
+
+28:03.000 --> 28:05.000
+We don't need to
+
+28:05.000 --> 28:07.000
+trust the explainer.
+
+28:07.000 --> 28:09.000
+We can use
+
+28:09.000 --> 28:11.000
+many different metrics
+
+28:11.000 --> 28:13.000
+to determine
+
+28:13.000 --> 28:15.000
+whether the explainer
+
+28:15.000 --> 28:17.000
+is correct or not.
+
+28:17.000 --> 28:19.000
+The most famous metric
+
+28:19.000 --> 28:21.000
+is the sharp E-value.
+
+28:21.000 --> 28:23.000
+If you have
+
+28:23.000 --> 28:25.000
+a background in economics
+
+28:25.000 --> 28:27.000
+you need to calculate
+
+28:27.000 --> 28:29.000
+the contribution of each feature
+
+28:29.000 --> 28:31.000
+to the prediction model.
+
+28:31.000 --> 28:33.000
+We use
+
+28:33.000 --> 28:35.000
+the sharp E-value
+
+28:35.000 --> 28:37.000
+in Game Theory
+
+28:37.000 --> 28:39.000
+to create
+
+28:39.000 --> 28:41.000
+the correct answer
+
+28:41.000 --> 28:43.000
+and do the evaluation.
+
+28:43.000 --> 28:45.000
+OK.
+
+28:45.000 --> 28:47.000
+The explainer has many
+
+28:47.000 --> 28:49.000
+methods, such as SHARP
+
+28:49.000 --> 28:51.000
+and LIME.
+
+28:51.000 --> 28:53.000
+These methods
+
+28:53.000 --> 28:55.000
+have one
+
+28:55.000 --> 28:57.000
+big drawback.
+
+28:57.000 --> 28:59.000
+If we want to do
+
+28:59.000 --> 29:01.000
+the local explanation,
+
+29:01.000 --> 29:03.000
+we need to provide
+
+29:03.000 --> 29:05.000
+an explanation for each picture.
+
+29:05.000 --> 29:07.000
+The most common
+
+29:07.000 --> 29:09.000
+method
+
+29:09.000 --> 29:11.000
+is to
+
+29:11.000 --> 29:13.000
+provide
+
+29:13.000 --> 29:15.000
+an explanation
+
+29:15.000 --> 29:17.000
+for each picture.
+
+29:17.000 --> 29:19.000
+We need to have
+
+29:19.000 --> 29:21.000
+100,000 pictures
+
+29:21.000 --> 29:23.000
+to provide
+
+29:23.000 --> 29:25.000
+an explanation for each picture.
+
+29:25.000 --> 29:27.000
+We need to provide
+
+29:27.000 --> 29:29.000
+an explanation for each picture.
+
+29:29.000 --> 29:31.000
+This process
+
+29:31.000 --> 29:33.000
+is very slow.
+
+29:33.000 --> 29:35.000
+These methods
+
+29:35.000 --> 29:37.000
+have some drawbacks.
+
+29:37.000 --> 29:39.000
+Of course,
+
+29:39.000 --> 29:41.000
+some people say
+
+29:41.000 --> 29:43.000
+we have a good
+
+29:43.000 --> 29:45.000
+SHARP
+
+29:45.000 --> 29:47.000
+and Game Theory
+
+29:47.000 --> 29:49.000
+I will explain
+
+29:49.000 --> 29:51.000
+why we can't
+
+29:51.000 --> 29:53.000
+use SHARP
+
+29:53.000 --> 29:55.000
+to provide an explanation.
+
+29:55.000 --> 29:57.000
+OK.
+
+30:01.000 --> 30:03.000
+What is SHARP E-Value?
+
+30:03.000 --> 30:05.000
+SHARP E-Value
+
+30:05.000 --> 30:07.000
+is a tool
+
+30:07.000 --> 30:09.000
+to provide
+
+30:09.000 --> 30:11.000
+an explanation
+
+30:11.000 --> 30:13.000
+for model prediction.
+
+30:13.000 --> 30:15.000
+To create SHARP E-Value,
+
+30:15.000 --> 30:17.000
+we need to know
+
+30:17.000 --> 30:19.000
+the important score
+
+30:19.000 --> 30:21.000
+of each feature.
+
+30:21.000 --> 30:23.000
+We need to know
+
+30:23.000 --> 30:25.000
+the important score
+
+30:25.000 --> 30:27.000
+of each feature.
+
+30:27.000 --> 30:29.000
+What do we need to do
+
+30:29.000 --> 30:31.000
+to know the important score
+
+30:31.000 --> 30:33.000
+of each feature?
+
+30:33.000 --> 30:35.000
+It's simple.
+
+30:35.000 --> 30:37.000
+Let's say
+
+30:37.000 --> 30:39.000
+we have 4 features.
+
+30:39.000 --> 30:41.000
+5. 1, 2, 3, 4, 5.
+
+30:41.000 --> 30:43.000
+We need to know
+
+30:43.000 --> 30:45.000
+the important score
+
+30:45.000 --> 30:47.000
+of each feature.
+
+30:47.000 --> 30:49.000
+We need to know
+
+30:49.000 --> 30:51.000
+the important score
+
+30:51.000 --> 30:53.000
+of each feature.
+
+30:53.000 --> 30:55.000
+For example,
+
+30:55.000 --> 30:57.000
+we need to know
+
+30:57.000 --> 30:59.000
+the important score
+
+30:59.000 --> 31:01.000
+of Job and
+
+31:01.000 --> 31:03.000
+Marital Status.
+
+31:03.000 --> 31:05.000
+We need to know
+
+31:05.000 --> 31:07.000
+the important score
+
+31:07.000 --> 31:09.000
+of each feature.
+
+31:09.000 --> 31:11.000
+We need to use
+
+31:11.000 --> 31:13.000
+the only combination
+
+31:13.000 --> 31:15.000
+of all features.
+
+31:15.000 --> 31:17.000
+We need to use
+
+31:17.000 --> 31:19.000
+the only combination
+
+31:19.000 --> 31:21.000
+of all features.
+
+31:21.000 --> 31:23.000
+For example,
+
+31:23.000 --> 31:25.000
+we need to use
+
+31:25.000 --> 31:27.000
+the only combination
+
+31:27.000 --> 31:29.000
+of Job and Marital Status.
+
+31:29.000 --> 31:31.000
+We need to know
+
+31:31.000 --> 31:33.000
+the important score
+
+31:33.000 --> 31:35.000
+of each feature
+
+31:35.000 --> 31:37.000
+in the Sharp Eval.
+
+31:37.000 --> 31:39.000
+What will happen?
+
+31:39.000 --> 31:41.000
+If there are only
+
+31:41.000 --> 31:43.000
+5 features,
+
+31:43.000 --> 31:45.000
+all combinations
+
+31:45.000 --> 31:47.000
+will be 2 to the power of 5.
+
+31:47.000 --> 31:49.000
+So, it's 2 to the power of 5.
+
+31:49.000 --> 31:51.000
+If I have
+
+31:51.000 --> 31:53.000
+2,000 features
+
+31:53.000 --> 31:55.000
+in the recommendation system
+
+31:55.000 --> 31:57.000
+in a big company,
+
+31:57.000 --> 31:59.000
+it will be 2 to the power of 2,000.
+
+31:59.000 --> 32:01.000
+A user needs
+
+32:01.000 --> 32:03.000
+2 to the power of 2,000.
+
+32:03.000 --> 32:05.000
+I have 1 billion users
+
+32:05.000 --> 32:07.000
+today.
+
+32:07.000 --> 32:09.000
+The calculation process
+
+32:09.000 --> 32:11.000
+is endless.
+
+32:11.000 --> 32:13.000
+So,
+
+32:13.000 --> 32:15.000
+why can't we use the Sharp Eval?
+
+32:15.000 --> 32:17.000
+It's an NP-hard problem.
+
+32:17.000 --> 32:19.000
+Its complexity
+
+32:19.000 --> 32:21.000
+is too high.
+
+32:21.000 --> 32:23.000
+We can't use
+
+32:23.000 --> 32:25.000
+a low-complexity method
+
+32:25.000 --> 32:27.000
+to verify
+
+32:27.000 --> 32:29.000
+our calculations.
+
+32:29.000 --> 32:31.000
+So,
+
+32:31.000 --> 32:33.000
+we use the word
+
+32:33.000 --> 32:35.000
+Sharp Eval
+
+32:35.000 --> 32:37.000
+to explain
+
+32:37.000 --> 32:39.000
+the important score.
+
+32:39.000 --> 32:41.000
+It's possible, but not realistic.
+
+32:41.000 --> 32:43.000
+Why?
+
+32:43.000 --> 32:45.000
+It takes too much time
+
+32:45.000 --> 32:47.000
+and complexity
+
+32:47.000 --> 32:49.000
+to calculate.
+
+32:49.000 --> 32:51.000
+So,
+
+32:51.000 --> 32:53.000
+we can't use it.
+
+32:53.000 --> 32:55.000
+Oh, I forgot to mention
+
+32:55.000 --> 32:57.000
+the following.
+
+32:57.000 --> 32:59.000
+For example,
+
+32:59.000 --> 33:01.000
+I only care about Job and Marito.
+
+33:01.000 --> 33:03.000
+If I remove the other three,
+
+33:03.000 --> 33:05.000
+what will happen
+
+33:05.000 --> 33:07.000
+to my model prediction?
+
+33:07.000 --> 33:09.000
+What will happen
+
+33:09.000 --> 33:11.000
+to my model prediction?
+
+33:11.000 --> 33:13.000
+If I remove
+
+33:13.000 --> 33:15.000
+Balance, Job,
+
+33:15.000 --> 33:17.000
+and Marito,
+
+33:17.000 --> 33:19.000
+and only consider Age and Education
+
+33:19.000 --> 33:21.000
+in my prediction model,
+
+33:21.000 --> 33:23.000
+the prediction result
+
+33:23.000 --> 33:25.000
+can't be returned,
+
+33:25.000 --> 33:27.000
+but it can be returned.
+
+33:27.000 --> 33:29.000
+What does it mean?
+
+33:29.000 --> 33:31.000
+These three features are important.
+
+33:31.000 --> 33:33.000
+So,
+
+33:33.000 --> 33:35.000
+we can use
+
+33:35.000 --> 33:37.000
+this iterative process
+
+33:37.000 --> 33:39.000
+to find
+
+33:39.000 --> 33:41.000
+the important score
+
+33:41.000 --> 33:43.000
+for each feature.
+
+33:43.000 --> 33:45.000
+This is Sharp Eval.
+
+33:45.000 --> 33:47.000
+If you know economics,
+
+33:47.000 --> 33:49.000
+you will feel
+
+33:49.000 --> 33:51.000
+this is quite
+
+33:51.000 --> 33:53.000
+intimate.
+
+33:53.000 --> 33:55.000
+OK.
+
+33:55.000 --> 33:57.000
+If we can't use
+
+33:57.000 --> 33:59.000
+Sharp Eval,
+
+33:59.000 --> 34:01.000
+what can we do?
+
+34:01.000 --> 34:03.000
+This is my research.
+
+34:03.000 --> 34:05.000
+I want to
+
+34:05.000 --> 34:07.000
+speed up
+
+34:07.000 --> 34:09.000
+the process of
+
+34:09.000 --> 34:11.000
+explanation.
+
+34:11.000 --> 34:13.000
+Because
+
+34:13.000 --> 34:15.000
+when we do
+
+34:15.000 --> 34:17.000
+local explanation,
+
+34:17.000 --> 34:19.000
+each user must
+
+34:19.000 --> 34:21.000
+provide a customized
+
+34:21.000 --> 34:23.000
+explanation result.
+
+34:23.000 --> 34:25.000
+As I mentioned,
+
+34:25.000 --> 34:27.000
+each customized explanation
+
+34:27.000 --> 34:29.000
+is a model
+
+34:29.000 --> 34:31.000
+to explain the prediction model.
+
+34:31.000 --> 34:33.000
+This process
+
+34:33.000 --> 34:35.000
+takes a lot of time.
+
+34:35.000 --> 34:37.000
+For example,
+
+34:37.000 --> 34:39.000
+if you give a recommended result
+
+34:39.000 --> 34:41.000
+and ask the user to wait
+
+34:41.000 --> 34:43.000
+10 seconds,
+
+34:43.000 --> 34:45.000
+the user can't
+
+34:45.000 --> 34:47.000
+accept it.
+
+34:47.000 --> 34:49.000
+If you ask the user to wait
+
+34:49.000 --> 34:51.000
+10 seconds,
+
+34:51.000 --> 34:53.000
+the user will click
+
+34:53.000 --> 34:55.000
+the upper left corner.
+
+34:55.000 --> 34:57.000
+This is the work
+
+34:57.000 --> 34:59.000
+I did last year.
+
+34:59.000 --> 35:01.000
+This work
+
+35:01.000 --> 35:03.000
+aims to
+
+35:03.000 --> 35:05.000
+speed up
+
+35:05.000 --> 35:07.000
+the operation of
+
+35:07.000 --> 35:09.000
+Sharp Eval
+
+35:09.000 --> 35:11.000
+and provide the
+
+35:11.000 --> 35:13.000
+user with an
+
+35:13.000 --> 35:15.000
+explanation result.
+
+35:15.000 --> 35:17.000
+As I mentioned,
+
+35:17.000 --> 35:19.000
+I want to
+
+35:19.000 --> 35:21.000
+go through all the combinations
+
+35:21.000 --> 35:23.000
+of the feature set.
+
+35:23.000 --> 35:25.000
+For example,
+
+35:25.000 --> 35:27.000
+each feature set
+
+35:27.000 --> 35:29.000
+is important to the model,
+
+35:29.000 --> 35:31.000
+isn't it?
+
+35:31.000 --> 35:33.000
+Some features
+
+35:33.000 --> 35:35.000
+are not important
+
+35:35.000 --> 35:37.000
+to the model.
+
+35:37.000 --> 35:39.000
+Can we get this information
+
+35:39.000 --> 35:41.000
+after training the model?
+
+35:41.000 --> 35:43.000
+Yes, we can.
+
+35:43.000 --> 35:45.000
+We can take out
+
+35:45.000 --> 35:47.000
+the weight of the model
+
+35:47.000 --> 35:49.000
+and see that
+
+35:49.000 --> 35:51.000
+feature 1 and feature 2
+
+35:51.000 --> 35:53.000
+are not important.
+
+35:53.000 --> 35:55.000
+Feature 1 and feature 3
+
+35:55.000 --> 35:57.000
+are not important.
+
+35:57.000 --> 35:59.000
+Feature 1 and feature 5
+
+35:59.000 --> 36:01.000
+are not important at all.
+
+36:01.000 --> 36:03.000
+We can take out
+
+36:03.000 --> 36:05.000
+feature 1 and feature 5
+
+36:05.000 --> 36:07.000
+from the combination
+
+36:07.000 --> 36:09.000
+of Sharp Eval.
+
+36:09.000 --> 36:11.000
+For example,
+
+36:11.000 --> 36:13.000
+we want to have
+
+36:13.000 --> 36:15.000
+2 squares,
+
+36:15.000 --> 36:17.000
+so we need 32 squares.
+
+36:17.000 --> 36:19.000
+We can take out
+
+36:19.000 --> 36:21.000
+the number of times
+
+36:21.000 --> 36:23.000
+that we need to calculate.
+
+36:23.000 --> 36:25.000
+It may be 2, 2, 4, 6, 8,
+
+36:25.000 --> 36:27.000
+4, 5, 4, 2... 14 times.
+
+36:27.000 --> 36:29.000
+It's actually half the process.
+
+36:29.000 --> 36:31.000
+This process can
+
+36:31.000 --> 36:33.000
+speed up the calculation
+
+36:33.000 --> 36:35.000
+of Sharp Eval
+
+36:35.000 --> 36:37.000
+and turn this into
+
+36:37.000 --> 36:39.000
+a user's acceptable
+
+36:39.000 --> 36:41.000
+waiting time.
+
+36:41.000 --> 36:43.000
+Finally, provide the user
+
+36:43.000 --> 36:45.000
+with a faster
+
+36:45.000 --> 36:47.000
+explanation result.
+
+36:47.000 --> 36:49.000
+This mathematician
+
+36:49.000 --> 36:51.000
+is actually expressing that
+
+36:51.000 --> 36:53.000
+in Sharp Eval,
+
+36:53.000 --> 36:55.000
+we need to go through
+
+36:55.000 --> 36:57.000
+all the features.
+
+36:57.000 --> 36:59.000
+We turn it into
+
+36:59.000 --> 37:01.000
+the importance of
+
+37:01.000 --> 37:03.000
+the interaction between
+
+37:03.000 --> 37:05.000
+feature and feature
+
+37:05.000 --> 37:07.000
+through the weight of the model.
+
+37:07.000 --> 37:09.000
+We take out the unimportant
+
+37:09.000 --> 37:11.000
+and calculate the approximate
+
+37:11.000 --> 37:13.000
+Sharp Eval.
+
+37:13.000 --> 37:15.000
+We take this Sharp Eval
+
+37:15.000 --> 37:17.000
+and provide the important score
+
+37:17.000 --> 37:19.000
+of the explanation to the user.
+
+37:19.000 --> 37:21.000
+This is the spirit
+
+37:21.000 --> 37:23.000
+of this work.
+
+37:23.000 --> 37:25.000
+As you can see,
+
+37:25.000 --> 37:27.000
+this work
+
+37:27.000 --> 37:29.000
+has an application scenario.
+
+37:29.000 --> 37:31.000
+Today, we trained
+
+37:31.000 --> 37:33.000
+a prediction model
+
+37:33.000 --> 37:35.000
+to predict
+
+37:35.000 --> 37:37.000
+whether the income
+
+37:37.000 --> 37:39.000
+is high or low.
+
+37:39.000 --> 37:41.000
+We can use our model
+
+37:41.000 --> 37:43.000
+to explain the trained
+
+37:43.000 --> 37:45.000
+prediction model
+
+37:45.000 --> 37:47.000
+and then provide
+
+37:47.000 --> 37:49.000
+the reason.
+
+37:49.000 --> 37:51.000
+For example,
+
+37:51.000 --> 37:53.000
+if you are a part-time worker,
+
+37:53.000 --> 37:55.000
+you will be judged
+
+37:55.000 --> 37:57.000
+as a high-paying worker.
+
+37:57.000 --> 37:59.000
+This model
+
+37:59.000 --> 38:01.000
+can be used
+
+38:01.000 --> 38:03.000
+in a faster way
+
+38:03.000 --> 38:05.000
+to provide
+
+38:05.000 --> 38:07.000
+an explanation
+
+38:07.000 --> 38:09.000
+to the user.
+
+38:09.000 --> 38:11.000
+You can see
+
+38:11.000 --> 38:13.000
+the blue bar on the left
+
+38:13.000 --> 38:15.000
+is the
+
+38:15.000 --> 38:17.000
+ground truth
+
+38:17.000 --> 38:19.000
+Sharp Eval.
+
+38:19.000 --> 38:21.000
+We use the method of
+
+38:21.000 --> 38:23.000
+economics and theory
+
+38:23.000 --> 38:25.000
+to calculate the
+
+38:25.000 --> 38:27.000
+Sharp Eval value
+
+38:27.000 --> 38:29.000
+for this feature.
+
+38:29.000 --> 38:31.000
+As you can see,
+
+38:31.000 --> 38:33.000
+even if we take out
+
+38:33.000 --> 38:35.000
+the unimportant feature
+
+38:35.000 --> 38:37.000
+and interaction,
+
+38:37.000 --> 38:39.000
+the Sharp Eval
+
+38:39.000 --> 38:41.000
+score
+
+38:41.000 --> 38:43.000
+is very close to
+
+38:43.000 --> 38:45.000
+the Sharp Eval.
+
+38:45.000 --> 38:47.000
+We can't say it's exactly the same
+
+38:47.000 --> 38:49.000
+because we took out
+
+38:49.000 --> 38:51.000
+some combinations.
+
+38:51.000 --> 38:53.000
+It's faster,
+
+38:53.000 --> 38:55.000
+but we don't lose
+
+38:55.000 --> 38:57.000
+the Sharp Eval accuracy.
+
+38:57.000 --> 38:59.000
+When we provide
+
+38:59.000 --> 39:01.000
+the importance of each feature
+
+39:01.000 --> 39:03.000
+to the user,
+
+39:03.000 --> 39:05.000
+we can say that
+
+39:05.000 --> 39:07.000
+for our model,
+
+39:07.000 --> 39:09.000
+whether it's high-paying
+
+39:09.000 --> 39:11.000
+or low-paying,
+
+39:11.000 --> 39:13.000
+we can provide
+
+39:13.000 --> 39:15.000
+the score
+
+39:15.000 --> 39:17.000
+or the important
+
+39:17.000 --> 39:19.000
+ranking result
+
+39:19.000 --> 39:21.000
+to the user
+
+39:21.000 --> 39:23.000
+as a reference
+
+39:23.000 --> 39:25.000
+for whether
+
+39:25.000 --> 39:27.000
+they want to believe
+
+39:27.000 --> 39:29.000
+the prediction model.
+
+39:29.000 --> 39:31.000
+The next step
+
+39:31.000 --> 39:33.000
+is to
+
+39:33.000 --> 39:35.000
+speed up
+
+39:35.000 --> 39:37.000
+the calculation
+
+39:37.000 --> 39:39.000
+of the Sharp Eval.
+
+39:41.000 --> 39:43.000
+Instead of
+
+39:43.000 --> 39:45.000
+speeding up the process,
+
+39:45.000 --> 39:47.000
+we can train
+
+39:47.000 --> 39:49.000
+a model to learn
+
+39:49.000 --> 39:51.000
+the distribution
+
+39:51.000 --> 39:53.000
+of the Sharp Eval.
+
+39:53.000 --> 39:55.000
+This can
+
+39:55.000 --> 39:57.000
+provide
+
+39:57.000 --> 39:59.000
+a faster
+
+39:59.000 --> 40:01.000
+prediction result.
+
+40:01.000 --> 40:03.000
+Why?
+
+40:03.000 --> 40:05.000
+For a traditional
+
+40:05.000 --> 40:07.000
+DNN model,
+
+40:07.000 --> 40:09.000
+each user
+
+40:09.000 --> 40:11.000
+needs a
+
+40:11.000 --> 40:13.000
+customized result,
+
+40:13.000 --> 40:15.000
+so we need
+
+40:15.000 --> 40:17.000
+an explanation model.
+
+40:17.000 --> 40:19.000
+To predict 100,000 users,
+
+40:19.000 --> 40:21.000
+we need 100,000 models.
+
+40:21.000 --> 40:23.000
+Here, we only need
+
+40:23.000 --> 40:25.000
+one model
+
+40:25.000 --> 40:27.000
+to predict all users'
+
+40:27.000 --> 40:29.000
+explanation results.
+
+40:29.000 --> 40:31.000
+This process
+
+40:31.000 --> 40:33.000
+is what we call
+
+40:33.000 --> 40:35.000
+an explanation process.
+
+40:35.000 --> 40:37.000
+Why?
+
+40:37.000 --> 40:39.000
+For a deep learning
+
+40:39.000 --> 40:41.000
+network,
+
+40:41.000 --> 40:43.000
+we can send 100,000 users
+
+40:43.000 --> 40:45.000
+as data
+
+40:45.000 --> 40:47.000
+to the network
+
+40:47.000 --> 40:49.000
+and the network
+
+40:49.000 --> 40:51.000
+will produce 100,000 different results.
+
+40:51.000 --> 40:53.000
+We don't
+
+40:53.000 --> 40:55.000
+need
+
+40:55.000 --> 40:57.000
+an independent
+
+40:57.000 --> 40:59.000
+explainer
+
+40:59.000 --> 41:01.000
+to
+
+41:01.000 --> 41:03.000
+respond to all users.
+
+41:03.000 --> 41:05.000
+This training
+
+41:05.000 --> 41:07.000
+process is another
+
+41:07.000 --> 41:09.000
+part of my work.
+
+41:09.000 --> 41:11.000
+It is about
+
+41:11.000 --> 41:13.000
+whether we can
+
+41:13.000 --> 41:15.000
+learn from
+
+41:15.000 --> 41:17.000
+positive and negative
+
+41:17.000 --> 41:19.000
+samples.
+
+41:19.000 --> 41:21.000
+For example,
+
+41:21.000 --> 41:23.000
+if we
+
+41:23.000 --> 41:25.000
+cover up
+
+41:25.000 --> 41:27.000
+an important feature
+
+41:27.000 --> 41:29.000
+such as
+
+41:29.000 --> 41:31.000
+a dog's eye,
+
+41:31.000 --> 41:33.000
+the model will
+
+41:33.000 --> 41:35.000
+still make the same
+
+41:35.000 --> 41:37.000
+prediction
+
+41:37.000 --> 41:39.000
+when it
+
+41:39.000 --> 41:41.000
+detects
+
+41:41.000 --> 41:43.000
+a dog.
+
+41:43.000 --> 41:45.000
+This can
+
+41:45.000 --> 41:47.000
+help us
+
+41:47.000 --> 41:49.000
+explain.
+
+41:49.000 --> 41:51.000
+For example,
+
+41:51.000 --> 41:53.000
+we want a model
+
+41:53.000 --> 41:55.000
+to detect a dog.
+
+41:55.000 --> 41:57.000
+We can give
+
+41:57.000 --> 41:59.000
+an explanation
+
+41:59.000 --> 42:01.000
+that the dog
+
+42:01.000 --> 42:03.000
+cares about
+
+42:03.000 --> 42:05.000
+these features,
+
+42:05.000 --> 42:07.000
+so the model will
+
+42:07.000 --> 42:09.000
+make the same prediction.
+
+42:09.000 --> 42:11.000
+We can also give
+
+42:11.000 --> 42:13.000
+a negative example.
+
+42:13.000 --> 42:15.000
+For example,
+
+42:15.000 --> 42:17.000
+the model will
+
+42:17.000 --> 42:19.000
+know that
+
+42:19.000 --> 42:21.000
+the dog's
+
+42:21.000 --> 42:23.000
+negative sample
+
+42:23.000 --> 42:25.000
+is a dog.
+
+42:25.000 --> 42:27.000
+When the model
+
+42:27.000 --> 42:29.000
+detects positive
+
+42:29.000 --> 42:31.000
+and negative samples,
+
+42:31.000 --> 42:33.000
+we can learn from
+
+42:33.000 --> 42:35.000
+the model.
+
+42:35.000 --> 42:37.000
+We want the model
+
+42:37.000 --> 42:39.000
+to get closer to
+
+42:39.000 --> 42:41.000
+the positive sample
+
+42:41.000 --> 42:43.000
+and further away from
+
+42:43.000 --> 42:45.000
+the negative sample.
+
+42:45.000 --> 42:47.000
+This process
+
+42:47.000 --> 42:49.000
+is called
+
+42:49.000 --> 42:51.000
+contrastive learning.
+
+42:51.000 --> 42:53.000
+We want to know
+
+42:53.000 --> 42:55.000
+what is right
+
+42:55.000 --> 42:57.000
+and what is wrong.
+
+42:57.000 --> 42:59.000
+We want to
+
+42:59.000 --> 43:01.000
+have a better
+
+43:01.000 --> 43:03.000
+distance between
+
+43:03.000 --> 43:05.000
+right and wrong.
+
+43:05.000 --> 43:07.000
+Why is there
+
+43:07.000 --> 43:09.000
+a fine-tuning process?
+
+43:09.000 --> 43:11.000
+It is because
+
+43:11.000 --> 43:13.000
+the shoppy value
+
+43:13.000 --> 43:15.000
+has a strong
+
+43:15.000 --> 43:17.000
+support of
+
+43:17.000 --> 43:19.000
+economic theory,
+
+43:19.000 --> 43:21.000
+so
+
+43:21.000 --> 43:23.000
+if we can
+
+43:23.000 --> 43:25.000
+create
+
+43:25.000 --> 43:27.000
+important scores
+
+43:27.000 --> 43:29.000
+that have
+
+43:29.000 --> 43:31.000
+shoppy value,
+
+43:31.000 --> 43:33.000
+we can
+
+43:33.000 --> 43:35.000
+provide
+
+43:35.000 --> 43:37.000
+at least
+
+43:37.000 --> 43:39.000
+to
+
+43:39.000 --> 43:41.000
+machine learning engineers
+
+43:41.000 --> 43:43.000
+or higher-ups
+
+43:43.000 --> 43:45.000
+to evaluate
+
+43:45.000 --> 43:47.000
+whether the
+
+43:47.000 --> 43:49.000
+explanation is
+
+43:49.000 --> 43:51.000
+believable.
+
+43:51.000 --> 43:53.000
+First, we can make
+
+43:53.000 --> 43:55.000
+people happier.
+
+43:55.000 --> 43:57.000
+Second, we
+
+43:57.000 --> 43:59.000
+want to keep
+
+43:59.000 --> 44:01.000
+shoppy value
+
+44:01.000 --> 44:03.000
+away from
+
+44:03.000 --> 44:05.000
+fine-tuning.
+
+44:05.000 --> 44:07.000
+We don't
+
+44:07.000 --> 44:09.000
+use any
+
+44:09.000 --> 44:11.000
+shoppy value
+
+44:11.000 --> 44:13.000
+as a label.
+
+44:13.000 --> 44:15.000
+We can use
+
+44:15.000 --> 44:17.000
+shoppy value
+
+44:17.000 --> 44:19.000
+as a label
+
+44:19.000 --> 44:21.000
+to keep
+
+44:21.000 --> 44:23.000
+shoppy value
+
+44:23.000 --> 44:25.000
+away from
+
+44:25.000 --> 44:27.000
+explanation.
+
+44:27.000 --> 44:29.000
+We can use
+
+44:29.000 --> 44:31.000
+the result
+
+44:31.000 --> 44:33.000
+to make people
+
+44:33.000 --> 44:35.000
+believe that
+
+44:35.000 --> 44:37.000
+we are not
+
+44:37.000 --> 44:39.000
+creating
+
+44:39.000 --> 44:41.000
+important scores
+
+44:41.000 --> 44:43.000
+randomly,
+
+44:43.000 --> 44:45.000
+so
+
+44:45.000 --> 44:47.000
+we can
+
+44:47.000 --> 44:49.000
+make people
+
+44:49.000 --> 44:51.000
+happy.
+
+44:51.000 --> 44:53.000
+Third, we
+
+44:53.000 --> 44:55.000
+want to
+
+44:55.000 --> 44:57.000
+keep shoppy value
+
+44:57.000 --> 44:59.000
+away from
+
+44:59.000 --> 45:01.000
+fine-tuning.
+
+45:01.000 --> 45:03.000
+We don't
+
+45:03.000 --> 45:05.000
+use any
+
+45:05.000 --> 45:07.000
+shoppy value
+
+45:07.000 --> 45:09.000
+as a label.
+
+45:09.000 --> 45:11.000
+We can
+
+45:11.000 --> 45:13.000
+keep
+
+45:13.000 --> 45:15.000
+shoppy value
+
+45:15.000 --> 45:17.000
+away from
+
+45:17.000 --> 45:19.000
+fine-tuning.
+
+45:19.000 --> 45:21.000
+We can
+
+45:21.000 --> 45:23.000
+keep
+
+45:23.000 --> 45:25.000
+shoppy value
+
+45:25.000 --> 45:27.000
+away from
+
+45:27.000 --> 45:29.000
+fine-tuning.
+
+45:29.000 --> 45:31.000
+We can
+
+45:31.000 --> 45:33.000
+keep
+
+45:33.000 --> 45:35.000
+shoppy value
+
+45:35.000 --> 45:37.000
+away from
+
+45:37.000 --> 45:39.000
+fine-tuning.
+
+45:39.000 --> 45:41.000
+We can
+
+45:41.000 --> 45:43.000
+keep
+
+45:43.000 --> 45:45.000
+shoppy value
+
+45:45.000 --> 45:47.000
+away from
+
+45:47.000 --> 45:49.000
+fine-tuning.
+
+45:49.000 --> 45:51.000
+We can
+
+45:51.000 --> 45:53.000
+keep
+
+45:53.000 --> 45:55.000
+shoppy value
+
+45:55.000 --> 45:57.000
+away from
+
+45:57.000 --> 45:59.000
+fine-tuning.
+
+45:59.000 --> 46:01.000
+We can
+
+46:01.000 --> 46:03.000
+keep
+
+46:03.000 --> 46:05.000
+shoppy value
+
+46:05.000 --> 46:07.000
+away from
+
+46:07.000 --> 46:09.000
+fine-tuning.
+
+46:09.000 --> 46:11.000
+We can
+
+46:11.000 --> 46:13.000
+keep
+
+46:13.000 --> 46:15.000
+shoppy value
+
+46:15.000 --> 46:17.000
+away from
+
+46:17.000 --> 46:19.000
+fine-tuning.
+
+46:19.000 --> 46:21.000
+We can
+
+46:21.000 --> 46:23.000
+keep
+
+46:23.000 --> 46:25.000
+shoppy value
+
+46:25.000 --> 46:27.000
+away from
+
+46:27.000 --> 46:29.000
+fine-tuning.
+
+46:29.000 --> 46:31.000
+We can
+
+46:31.000 --> 46:33.000
+keep
+
+46:33.000 --> 46:35.000
+shoppy value
+
+46:35.000 --> 46:37.000
+away from
+
+46:37.000 --> 46:39.000
+fine-tuning.
+
+46:39.000 --> 46:41.000
+We can
+
+46:41.000 --> 46:43.000
+keep
+
+46:43.000 --> 46:45.000
+shoppy value
+
+46:45.000 --> 46:47.000
+away from
+
+46:47.000 --> 46:49.000
+fine-tuning.
+
+46:49.000 --> 46:51.000
+We can
+
+46:51.000 --> 46:53.000
+keep
+
+46:53.000 --> 46:55.000
+shoppy value
+
+46:55.000 --> 46:57.000
+away from
+
+46:57.000 --> 46:59.000
+fine-tuning.
+
+46:59.000 --> 47:01.000
+We can
+
+47:01.000 --> 47:03.000
+keep
+
+47:03.000 --> 47:05.000
+shoppy value
+
+47:05.000 --> 47:07.000
+away from
+
+47:07.000 --> 47:09.000
+fine-tuning.
+
+47:09.000 --> 47:11.000
+We can
+
+47:11.000 --> 47:13.000
+keep
+
+47:13.000 --> 47:15.000
+shoppy value
+
+47:15.000 --> 47:17.000
+away from
+
+47:17.000 --> 47:19.000
+fine-tuning.
+
+47:19.000 --> 47:21.000
+We can
+
+47:21.000 --> 47:23.000
+keep
+
+47:23.000 --> 47:25.000
+shoppy value
+
+47:25.000 --> 47:27.000
+away from
+
+47:27.000 --> 47:29.000
+fine-tuning.
+
+47:29.000 --> 47:31.000
+We can
+
+47:31.000 --> 47:33.000
+keep
+
+47:33.000 --> 47:35.000
+shoppy value
+
+47:35.000 --> 47:37.000
+away from
+
+47:37.000 --> 47:39.000
+fine-tuning.
+
+47:39.000 --> 47:41.000
+We can
+
+47:41.000 --> 47:43.000
+keep
+
+47:43.000 --> 47:45.000
+shoppy value
+
+47:45.000 --> 47:47.000
+away from
+
+47:47.000 --> 47:49.000
+fine-tuning.
+
+47:49.000 --> 47:51.000
+We can
+
+47:51.000 --> 47:53.000
+keep
+
+47:53.000 --> 47:55.000
+shoppy value
+
+47:55.000 --> 47:57.000
+away from
+
+47:57.000 --> 47:59.000
+fine-tuning.
+
+47:59.000 --> 48:01.000
+We can
+
+48:01.000 --> 48:03.000
+keep
+
+48:03.000 --> 48:05.000
+shoppy value
+
+48:05.000 --> 48:07.000
+away from
+
+48:07.000 --> 48:09.000
+fine-tuning.
+
+48:09.000 --> 48:11.000
+We can
+
+48:11.000 --> 48:13.000
+keep
+
+48:13.000 --> 48:15.000
+shoppy value
+
+48:15.000 --> 48:17.000
+away from
+
+48:17.000 --> 48:19.000
+fine-tuning.
+
+48:19.000 --> 48:21.000
+We can
+
+48:21.000 --> 48:23.000
+keep
+
+48:23.000 --> 48:25.000
+shoppy value
+
+48:25.000 --> 48:27.000
+away from
+
+48:27.000 --> 48:29.000
+fine-tuning.
+
+48:29.000 --> 48:31.000
+We can
+
+48:31.000 --> 48:33.000
+keep
+
+48:33.000 --> 48:35.000
+shoppy value
+
+48:35.000 --> 48:37.000
+away from
+
+48:37.000 --> 48:39.000
+fine-tuning.
+
+48:39.000 --> 48:41.000
+We can
+
+48:41.000 --> 48:43.000
+keep
+
+48:43.000 --> 48:45.000
+shoppy value
+
+48:45.000 --> 48:47.000
+away from
+
+48:47.000 --> 48:49.000
+fine-tuning.
+
+48:49.000 --> 48:51.000
+We can
+
+48:51.000 --> 48:53.000
+keep
+
+48:53.000 --> 48:55.000
+shoppy value
+
+48:55.000 --> 48:57.000
+away from
+
+48:57.000 --> 48:59.000
+fine-tuning.
+
+48:59.000 --> 49:01.000
+We can
+
+49:01.000 --> 49:03.000
+keep
+
+49:03.000 --> 49:05.000
+shoppy value
+
+49:05.000 --> 49:07.000
+away from
+
+49:07.000 --> 49:09.000
+fine-tuning.
+
+49:09.000 --> 49:11.000
+We can
+
+49:11.000 --> 49:13.000
+keep
+
+49:13.000 --> 49:15.000
+shoppy value
+
+49:15.000 --> 49:17.000
+away from
+
+49:17.000 --> 49:19.000
+fine-tuning.
+
+49:19.000 --> 49:21.000
+We can
+
+49:21.000 --> 49:23.000
+keep
+
+49:23.000 --> 49:25.000
+shoppy value
+
+49:25.000 --> 49:27.000
+away from
+
+49:27.000 --> 49:29.000
+fine-tuning.
+
+49:29.000 --> 49:31.000
+We can
+
+49:31.000 --> 49:33.000
+keep
+
+49:33.000 --> 49:35.000
+shoppy value
+
+49:35.000 --> 49:37.000
+away from
+
+49:37.000 --> 49:39.000
+fine-tuning.
+
+49:39.000 --> 49:41.000
+We can
+
+49:41.000 --> 49:43.000
+keep
+
+49:43.000 --> 49:45.000
+shoppy value
+
+49:45.000 --> 49:47.000
+away from
+
+49:47.000 --> 49:49.000
+fine-tuning.
+
+49:49.000 --> 49:51.000
+We can
+
+49:51.000 --> 49:53.000
+keep
+
+49:53.000 --> 49:55.000
+shoppy value
+
+49:55.000 --> 49:57.000
+away from
+
+49:57.000 --> 49:59.000
+fine-tuning.
+
+49:59.000 --> 50:01.000
+We can
+
+50:01.000 --> 50:03.000
+keep
+
+50:03.000 --> 50:05.000
+shoppy value
+
+50:05.000 --> 50:07.000
+away from
+
+50:07.000 --> 50:09.000
+fine-tuning.
+
+50:09.000 --> 50:11.000
+We can
+
+50:11.000 --> 50:13.000
+keep
+
+50:13.000 --> 50:15.000
+shoppy value
+
+50:15.000 --> 50:17.000
+away from
+
+50:17.000 --> 50:19.000
+fine-tuning.
+
+50:19.000 --> 50:21.000
+We can
+
+50:21.000 --> 50:23.000
+keep
+
+50:23.000 --> 50:25.000
+shoppy value
+
+50:25.000 --> 50:27.000
+away from
+
+50:27.000 --> 50:29.000
+fine-tuning.
+
+50:29.000 --> 50:31.000
+We can
+
+50:31.000 --> 50:33.000
+keep
+
+50:33.000 --> 50:35.000
+shoppy value
+
+50:35.000 --> 50:37.000
+away from
+
+50:37.000 --> 50:39.000
+fine-tuning.
+
+50:39.000 --> 50:41.000
+We can
+
+50:41.000 --> 50:43.000
+keep
+
+50:43.000 --> 50:45.000
+shoppy value
+
+50:45.000 --> 50:47.000
+away from
+
+50:47.000 --> 50:49.000
+fine-tuning.
+
+50:49.000 --> 50:51.000
+We can
+
+50:51.000 --> 50:53.000
+keep
+
+50:53.000 --> 50:55.000
+shoppy value
+
+50:55.000 --> 50:57.000
+away from
+
+50:57.000 --> 50:59.000
+fine-tuning.
+
+50:59.000 --> 51:01.000
+We can
+
+51:01.000 --> 51:03.000
+keep
+
+51:03.000 --> 51:05.000
+shoppy value
+
+51:05.000 --> 51:07.000
+away from
+
+51:07.000 --> 51:09.000
+fine-tuning.
+
+51:09.000 --> 51:11.000
+We can
+
+51:11.000 --> 51:13.000
+keep
+
+51:13.000 --> 51:15.000
+shoppy value
+
+51:15.000 --> 51:17.000
+away from
+
+51:17.000 --> 51:19.000
+fine-tuning.
+
+51:19.000 --> 51:21.000
+We can
+
+51:21.000 --> 51:23.000
+keep
+
+51:23.000 --> 51:25.000
+shoppy value
+
+51:25.000 --> 51:27.000
+away from
+
+51:27.000 --> 51:29.000
+fine-tuning.
+
+51:29.000 --> 51:31.000
+We can
+
+51:31.000 --> 51:33.000
+keep
+
+51:33.000 --> 51:35.000
+shoppy value
+
+51:35.000 --> 51:37.000
+away from
+
+51:37.000 --> 51:39.000
+fine-tuning.
+
+51:39.000 --> 51:41.000
+We can
+
+51:41.000 --> 51:43.000
+keep
+
+51:43.000 --> 51:45.000
+shoppy value
+
+51:45.000 --> 51:47.000
+away from
+
+51:47.000 --> 51:49.000
+fine-tuning.
+
+51:49.000 --> 51:51.000
+We can
+
+51:51.000 --> 51:53.000
+keep
+
+51:53.000 --> 51:55.000
+shoppy value
+
+51:55.000 --> 51:57.000
+away from
+
+51:57.000 --> 51:59.000
+fine-tuning.
+
+51:59.000 --> 52:01.000
+We can
+
+52:01.000 --> 52:03.000
+keep
+
+52:03.000 --> 52:05.000
+shoppy value
+
+52:05.000 --> 52:07.000
+away from
+
+52:07.000 --> 52:09.000
+fine-tuning.
+
+52:09.000 --> 52:11.000
+We can
+
+52:11.000 --> 52:13.000
+keep
+
+52:13.000 --> 52:15.000
+shoppy value
+
+52:15.000 --> 52:17.000
+away from
+
+52:17.000 --> 52:19.000
+fine-tuning.
+
+52:19.000 --> 52:21.000
+We can
+
+52:21.000 --> 52:23.000
+keep
+
+52:23.000 --> 52:25.000
+shoppy value
+
+52:25.000 --> 52:27.000
+away from
+
+52:27.000 --> 52:29.000
+fine-tuning.
+
+52:29.000 --> 52:31.000
+We can
+
+52:31.000 --> 52:33.000
+keep
+
+52:33.000 --> 52:35.000
+shoppy value
+
+52:35.000 --> 52:37.000
+away from
+
+52:37.000 --> 52:39.000
+fine-tuning.
+
+52:39.000 --> 52:41.000
+We can
+
+52:41.000 --> 52:43.000
+keep
+
+52:43.000 --> 52:45.000
+shoppy value
+
+52:45.000 --> 52:47.000
+away from
+
+52:47.000 --> 52:49.000
+fine-tuning.
+
+52:49.000 --> 52:51.000
+We can
+
+52:51.000 --> 52:53.000
+keep
+
+52:53.000 --> 52:55.000
+shoppy value
+
+52:55.000 --> 52:57.000
+away from
+
+52:57.000 --> 52:59.000
+fine-tuning.
+
+52:59.000 --> 53:01.000
+We can
+
+53:01.000 --> 53:03.000
+keep
+
+53:03.000 --> 53:05.000
+shoppy value
+
+53:05.000 --> 53:07.000
+away from
+
+53:07.000 --> 53:09.000
+fine-tuning.
+
+53:09.000 --> 53:11.000
+We can
+
+53:11.000 --> 53:13.000
+keep
+
+53:13.000 --> 53:15.000
+shoppy value
+
+53:15.000 --> 53:17.000
+away from
+
+53:17.000 --> 53:19.000
+fine-tuning.
+
+53:19.000 --> 53:21.000
+We can
+
+53:21.000 --> 53:23.000
+keep
+
+53:23.000 --> 53:25.000
+shoppy value
+
+53:25.000 --> 53:27.000
+away from
+
+53:27.000 --> 53:29.000
+fine-tuning.
+
+53:29.000 --> 53:31.000
+We can
+
+53:31.000 --> 53:33.000
+keep
+
+53:33.000 --> 53:35.000
+shoppy value
+
+53:35.000 --> 53:37.000
+away from
+
+53:37.000 --> 53:39.000
+fine-tuning.
+
+53:39.000 --> 53:41.000
+We can
+
+53:41.000 --> 53:43.000
+keep
+
+53:43.000 --> 53:45.000
+shoppy value
+
+53:45.000 --> 53:47.000
+away from
+
+53:47.000 --> 53:49.000
+fine-tuning.
+
+53:49.000 --> 53:51.000
+We can
+
+53:51.000 --> 53:53.000
+keep
+
+53:53.000 --> 53:55.000
+shoppy value
+
+53:55.000 --> 53:57.000
+away from
+
+53:57.000 --> 53:59.000
+fine-tuning.
+
+53:59.000 --> 54:01.000
+We can
+
+54:01.000 --> 54:03.000
+keep
+
+54:03.000 --> 54:05.000
+shoppy value
+
+54:05.000 --> 54:07.000
+away from
+
+54:07.000 --> 54:09.000
+fine-tuning.
+
+54:09.000 --> 54:11.000
+We can
+
+54:11.000 --> 54:13.000
+keep
+
+54:13.000 --> 54:15.000
+shoppy value
+
+54:15.000 --> 54:17.000
+away from
+
+54:17.000 --> 54:19.000
+fine-tuning.
+
+54:19.000 --> 54:21.000
+We can
+
+54:21.000 --> 54:23.000
+keep
+
+54:23.000 --> 54:25.000
+shoppy value
+
+54:25.000 --> 54:27.000
+away from
+
+54:27.000 --> 54:29.000
+fine-tuning.
+
+54:29.000 --> 54:31.000
+We can
+
+54:31.000 --> 54:33.000
+keep
+
+54:33.000 --> 54:35.000
+shoppy value
+
+54:35.000 --> 54:37.000
+away from
+
+54:37.000 --> 54:39.000
+fine-tuning.
+
+54:39.000 --> 54:41.000
+We can
+
+54:41.000 --> 54:43.000
+keep
+
+54:43.000 --> 54:45.000
+shoppy value
+
+54:45.000 --> 54:47.000
+away from
+
+54:47.000 --> 54:49.000
+fine-tuning.
+
+54:49.000 --> 54:51.000
+We can
+
+54:51.000 --> 54:53.000
+keep
+
+54:53.000 --> 54:55.000
+shoppy value
+
+54:55.000 --> 54:57.000
+away from
+
+54:57.000 --> 54:59.000
+fine-tuning.
+
+54:59.000 --> 55:01.000
+We can
+
+55:01.000 --> 55:03.000
+keep
+
+55:03.000 --> 55:05.000
+shoppy value
+
+55:05.000 --> 55:07.000
+away from
+
+55:07.000 --> 55:09.000
+fine-tuning.
+
+55:09.000 --> 55:11.000
+We can
+
+55:11.000 --> 55:13.000
+keep
+
+55:13.000 --> 55:15.000
+shoppy value
+
+55:15.000 --> 55:17.000
+away from
+
+55:17.000 --> 55:19.000
+fine-tuning.
+
+55:19.000 --> 55:21.000
+We can
+
+55:21.000 --> 55:23.000
+keep
+
+55:23.000 --> 55:25.000
+shoppy value
+
+55:25.000 --> 55:27.000
+away from
+
+55:27.000 --> 55:29.000
+fine-tuning.
+
+55:29.000 --> 55:31.000
+We can
+
+55:31.000 --> 55:33.000
+keep
+
+55:33.000 --> 55:35.000
+shoppy value
+
+55:35.000 --> 55:37.000
+away from
+
+55:37.000 --> 55:39.000
+fine-tuning.
+
+55:39.000 --> 55:41.000
+We can
+
+55:41.000 --> 55:43.000
+keep
+
+55:43.000 --> 55:45.000
+shoppy value
+
+55:45.000 --> 55:47.000
+away from
+
+55:47.000 --> 55:49.000
+fine-tuning.
+
+55:49.000 --> 55:51.000
+We can
+
+55:51.000 --> 55:53.000
+keep
+
+55:53.000 --> 55:55.000
+shoppy value
+
+55:55.000 --> 55:57.000
+away from
+
+55:57.000 --> 55:59.000
+fine-tuning.
+
+55:59.000 --> 56:01.000
+We can
+
+56:01.000 --> 56:03.000
+keep
+
+56:03.000 --> 56:05.000
+shoppy value
+
+56:05.000 --> 56:07.000
+away from
+
+56:07.000 --> 56:09.000
+fine-tuning.
+
+56:09.000 --> 56:11.000
+We can
+
+56:11.000 --> 56:13.000
+keep
+
+56:13.000 --> 56:15.000
+shoppy value
+
+56:15.000 --> 56:17.000
+away from
+
+56:17.000 --> 56:19.000
+fine-tuning.
+
+56:19.000 --> 56:21.000
+We can
+
+56:21.000 --> 56:23.000
+keep
+
+56:23.000 --> 56:25.000
+shoppy value
+
+56:25.000 --> 56:27.000
+away from
+
+56:27.000 --> 56:29.000
+fine-tuning.
+
+56:29.000 --> 56:31.000
+We can
+
+56:31.000 --> 56:33.000
+keep
+
+56:33.000 --> 56:35.000
+shoppy value
+
+56:35.000 --> 56:37.000
+away from
+
+56:37.000 --> 56:39.000
+fine-tuning.
+
+56:39.000 --> 56:41.000
+We can
+
+56:41.000 --> 56:43.000
+keep
+
+56:43.000 --> 56:45.000
+shoppy value
+
+56:45.000 --> 56:47.000
+away from
+
+56:47.000 --> 56:49.000
+fine-tuning.
+
+56:49.000 --> 56:51.000
+We can
+
+56:51.000 --> 56:53.000
+keep
+
+56:53.000 --> 56:55.000
+shoppy value
+
+56:55.000 --> 56:57.000
+away from
+
+56:57.000 --> 56:59.000
+fine-tuning.
+
+56:59.000 --> 57:01.000
+We can
+
+57:01.000 --> 57:03.000
+keep
+
+57:03.000 --> 57:05.000
+shoppy value
+
+57:05.000 --> 57:07.000
+away from
+
+57:07.000 --> 57:09.000
+fine-tuning.
+
+57:09.000 --> 57:11.000
+We can
+
+57:11.000 --> 57:13.000
+keep
+
+57:13.000 --> 57:15.000
+shoppy value
+
+57:15.000 --> 57:17.000
+away from
+
+57:17.000 --> 57:19.000
+fine-tuning.
+
+57:19.000 --> 57:21.000
+We can
+
+57:21.000 --> 57:23.000
+keep
+
+57:23.000 --> 57:25.000
+shoppy value
+
+57:25.000 --> 57:27.000
+away from
+
+57:27.000 --> 57:29.000
+fine-tuning.
+
+57:29.000 --> 57:31.000
+We can
+
+57:31.000 --> 57:33.000
+keep
+
+57:33.000 --> 57:35.000
+shoppy value
+
+57:35.000 --> 57:37.000
+away from
+
+57:37.000 --> 57:39.000
+fine-tuning.
+
+57:39.000 --> 57:41.000
+We can
+
+57:41.000 --> 57:43.000
+keep
+
+57:43.000 --> 57:45.000
+shoppy value
+
+57:45.000 --> 57:47.000
+away from
+
+57:47.000 --> 57:49.000
+fine-tuning.
+
+57:49.000 --> 57:51.000
+We can
+
+57:51.000 --> 57:53.000
+keep
+
+57:53.000 --> 57:55.000
+shoppy value
+
+57:55.000 --> 57:57.000
+away from
+
+57:57.000 --> 57:59.000
+fine-tuning.
+
+57:59.000 --> 58:01.000
+We can
+
+58:01.000 --> 58:03.000
+keep
+
+58:03.000 --> 58:05.000
+shoppy value
+
+58:05.000 --> 58:07.000
+away from
+
+58:07.000 --> 58:09.000
+fine-tuning.
+
+58:09.000 --> 58:11.000
+We can
+
+58:11.000 --> 58:13.000
+keep
+
+58:13.000 --> 58:15.000
+shoppy value
+
+58:15.000 --> 58:17.000
+away from
+
+58:17.000 --> 58:19.000
+fine-tuning.
+
+58:19.000 --> 58:21.000
+We can
+
+58:21.000 --> 58:23.000
+keep
+
+58:23.000 --> 58:25.000
+shoppy value
+
+58:25.000 --> 58:27.000
+away from
+
+58:27.000 --> 58:29.000
+fine-tuning.
+
+58:29.000 --> 58:31.000
+We can
+
+58:31.000 --> 58:33.000
+keep
+
+58:33.000 --> 58:35.000
+shoppy value
+
+58:35.000 --> 58:37.000
+away from
+
+58:37.000 --> 58:39.000
+fine-tuning.
+
+58:39.000 --> 58:41.000
+We can
+
+58:41.000 --> 58:43.000
+keep
+
+58:43.000 --> 58:45.000
+shoppy value
+
+58:45.000 --> 58:47.000
+away from
+
+58:47.000 --> 58:49.000
+fine-tuning.
+
+58:49.000 --> 58:51.000
+We can
+
+58:51.000 --> 58:53.000
+keep
+
+58:53.000 --> 58:55.000
+shoppy value
+
+58:55.000 --> 58:57.000
+away from
+
+58:57.000 --> 58:59.000
+fine-tuning.
+
+58:59.000 --> 59:01.000
+We can
+
+59:01.000 --> 59:03.000
+keep
+
+59:03.000 --> 59:05.000
+shoppy value
+
+59:05.000 --> 59:07.000
+away from
+
+59:07.000 --> 59:09.000
+fine-tuning.
+
+59:09.000 --> 59:11.000
+We can
+
+59:11.000 --> 59:13.000
+keep
+
+59:13.000 --> 59:15.000
+shoppy value
+
+59:15.000 --> 59:17.000
+away from
+
+59:17.000 --> 59:19.000
+fine-tuning.
+
+59:19.000 --> 59:21.000
+We can
+
+59:21.000 --> 59:23.000
+keep
+
+59:23.000 --> 59:25.000
+shoppy value
+
+59:25.000 --> 59:27.000
+away from
+
+59:27.000 --> 59:29.000
+fine-tuning.
+
+59:29.000 --> 59:31.000
+We can
+
+59:31.000 --> 59:33.000
+keep
+
+59:33.000 --> 59:35.000
+shoppy value
+
+59:35.000 --> 59:37.000
+away from
+
+59:37.000 --> 59:39.000
+fine-tuning.
+
+59:39.000 --> 59:41.000
+We can
+
+59:41.000 --> 59:43.000
+keep
+
+59:43.000 --> 59:45.000
+shoppy value
+
+59:45.000 --> 59:47.000
+away from
+
+59:47.000 --> 59:49.000
+fine-tuning.
+
+59:49.000 --> 59:51.000
+We can
+
+59:51.000 --> 59:53.000
+keep
+
+59:53.000 --> 59:55.000
+shoppy value
+
+59:55.000 --> 59:57.000
+away from
+
+59:57.000 --> 59:59.000
+fine-tuning.
+
+59:59.000 --> 01:00:01.000
+We can
+
+01:00:01.000 --> 01:00:03.000
+keep
+
+01:00:03.000 --> 01:00:05.000
+shoppy value
+
+01:00:05.000 --> 01:00:07.000
+away from
+
+01:00:07.000 --> 01:00:09.000
+fine-tuning.
+
+01:00:09.000 --> 01:00:11.000
+We can
+
+01:00:11.000 --> 01:00:13.000
+keep
+
+01:00:13.000 --> 01:00:15.000
+shoppy value
+
+01:00:15.000 --> 01:00:17.000
+away from
+
+01:00:17.000 --> 01:00:19.000
+fine-tuning.
+
+01:00:19.000 --> 01:00:21.000
+We can
+
+01:00:21.000 --> 01:00:23.000
+keep
+
+01:00:23.000 --> 01:00:25.000
+shoppy value
+
+01:00:25.000 --> 01:00:27.000
+away from
+
+01:00:27.000 --> 01:00:29.000
+fine-tuning.
+
+01:00:29.000 --> 01:00:31.000
+We can
+
+01:00:31.000 --> 01:00:33.000
+keep
+
+01:00:33.000 --> 01:00:35.000
+shoppy value
+
+01:00:35.000 --> 01:00:37.000
+away from
+
+01:00:37.000 --> 01:00:39.000
+fine-tuning.
+
+01:00:39.000 --> 01:00:41.000
+We can
+
+01:00:41.000 --> 01:00:43.000
+keep
+
+01:00:43.000 --> 01:00:45.000
+shoppy value
+
+01:00:45.000 --> 01:00:47.000
+away from
+
+01:00:47.000 --> 01:00:49.000
+fine-tuning.
+
+01:00:49.000 --> 01:00:51.000
+We can
+
+01:00:51.000 --> 01:00:53.000
+keep
+
+01:00:53.000 --> 01:00:55.000
+shoppy value
+
+01:00:55.000 --> 01:00:57.000
+away from
+
+01:00:57.000 --> 01:00:59.000
+fine-tuning.
+
+01:00:59.000 --> 01:01:01.000
+We can
+
+01:01:01.000 --> 01:01:03.000
+keep
+
+01:01:03.000 --> 01:01:05.000
+shoppy value
+
+01:01:05.000 --> 01:01:07.000
+away from
+
+01:01:07.000 --> 01:01:09.000
+fine-tuning.
+
+01:01:09.000 --> 01:01:11.000
+We can
+
+01:01:11.000 --> 01:01:13.000
+keep
+
+01:01:13.000 --> 01:01:15.000
+shoppy value
+
+01:01:15.000 --> 01:01:17.000
+away from
+
+01:01:17.000 --> 01:01:19.000
+fine-tuning.
+
+01:01:19.000 --> 01:01:21.000
+We can
+
+01:01:21.000 --> 01:01:23.000
+keep
+
+01:01:23.000 --> 01:01:25.000
+shoppy value
+
+01:01:25.000 --> 01:01:27.000
+away from
+
+01:01:27.000 --> 01:01:29.000
+fine-tuning.
+
+01:01:29.000 --> 01:01:31.000
+We can
+
+01:01:31.000 --> 01:01:33.000
+keep
+
+01:01:33.000 --> 01:01:35.000
+shoppy value
+
+01:01:35.000 --> 01:01:37.000
+away from
+
+01:01:37.000 --> 01:01:39.000
+fine-tuning.
+
+01:01:39.000 --> 01:01:41.000
+We can
+
+01:01:41.000 --> 01:01:43.000
+keep
+
+01:01:43.000 --> 01:01:45.000
+shoppy value
+
+01:01:45.000 --> 01:01:47.000
+away from
+
+01:01:47.000 --> 01:01:49.000
+fine-tuning.
+
+01:01:49.000 --> 01:01:51.000
+We can
+
+01:01:51.000 --> 01:01:53.000
+keep
+
+01:01:53.000 --> 01:01:55.000
+shoppy value
+
+01:01:55.000 --> 01:01:57.000
+away from
+
+01:01:57.000 --> 01:01:59.000
+fine-tuning.
+
+01:01:59.000 --> 01:02:01.000
+We can
+
+01:02:01.000 --> 01:02:03.000
+keep
+
+01:02:03.000 --> 01:02:05.000
+shoppy value
+
+01:02:05.000 --> 01:02:07.000
+away from
+
+01:02:07.000 --> 01:02:09.000
+fine-tuning.
+
+01:02:09.000 --> 01:02:11.000
+We can
+
+01:02:11.000 --> 01:02:13.000
+keep
+
+01:02:13.000 --> 01:02:15.000
+shoppy value
+
+01:02:15.000 --> 01:02:17.000
+away from
+
+01:02:17.000 --> 01:02:19.000
+fine-tuning.
+
+01:02:19.000 --> 01:02:21.000
+We can
+
+01:02:21.000 --> 01:02:23.000
+keep
+
+01:02:23.000 --> 01:02:25.000
+shoppy value
+
+01:02:25.000 --> 01:02:27.000
+away from
+
+01:02:27.000 --> 01:02:29.000
+fine-tuning.
+
+01:02:29.000 --> 01:02:31.000
+We can
+
+01:02:31.000 --> 01:02:33.000
+keep
+
+01:02:33.000 --> 01:02:35.000
+shoppy value
+
+01:02:35.000 --> 01:02:37.000
+away from
+
+01:02:37.000 --> 01:02:39.000
+fine-tuning.
+
+01:02:39.000 --> 01:02:41.000
+We can
+
+01:02:41.000 --> 01:02:43.000
+keep
+
+01:02:43.000 --> 01:02:45.000
+shoppy value
+
+01:02:45.000 --> 01:02:47.000
+away from
+
+01:02:47.000 --> 01:02:49.000
+fine-tuning.
+
+01:02:49.000 --> 01:02:51.000
+We can
+
+01:02:51.000 --> 01:02:53.000
+keep
+
+01:02:53.000 --> 01:02:55.000
+shoppy value
+
+01:02:55.000 --> 01:02:57.000
+away from
+
+01:02:57.000 --> 01:02:59.000
+fine-tuning.
+
+01:02:59.000 --> 01:03:01.000
+We can
+
+01:03:01.000 --> 01:03:03.000
+keep
+
+01:03:03.000 --> 01:03:05.000
+shoppy value
+
+01:03:05.000 --> 01:03:07.000
+away from
+
+01:03:07.000 --> 01:03:09.000
+fine-tuning.
+
+01:03:09.000 --> 01:03:11.000
+We can
+
+01:03:11.000 --> 01:03:13.000
+keep
+
+01:03:13.000 --> 01:03:15.000
+shoppy value
+
+01:03:15.000 --> 01:03:17.000
+away from
+
+01:03:17.000 --> 01:03:19.000
+fine-tuning.
+
+01:03:19.000 --> 01:03:21.000
+We can
+
+01:03:21.000 --> 01:03:23.000
+keep
+
+01:03:23.000 --> 01:03:25.000
+shoppy value
+
+01:03:25.000 --> 01:03:27.000
+away from
+
+01:03:27.000 --> 01:03:29.000
+fine-tuning.
+
+01:03:29.000 --> 01:03:31.000
+We can
+
+01:03:31.000 --> 01:03:33.000
+keep
+
+01:03:33.000 --> 01:03:35.000
+shoppy value
+
+01:03:35.000 --> 01:03:37.000
+away from
+
+01:03:37.000 --> 01:03:39.000
+fine-tuning.
+
+01:03:39.000 --> 01:03:41.000
+We can
+
+01:03:41.000 --> 01:03:43.000
+keep
+
+01:03:43.000 --> 01:03:45.000
+shoppy value
+
+01:03:45.000 --> 01:03:47.000
+away from
+
+01:03:47.000 --> 01:03:49.000
+fine-tuning.
+
+01:03:49.000 --> 01:03:51.000
+We can
+
+01:03:51.000 --> 01:03:53.000
+keep
+
+01:03:53.000 --> 01:03:55.000
+shoppy value
+
+01:03:55.000 --> 01:03:57.000
+away from
+
+01:03:57.000 --> 01:03:59.000
+fine-tuning.
+
+01:03:59.000 --> 01:04:01.000
+We can
+
+01:04:01.000 --> 01:04:03.000
+keep
+
+01:04:03.000 --> 01:04:05.000
+shoppy value
+
+01:04:05.000 --> 01:04:07.000
+away from
+
+01:04:07.000 --> 01:04:09.000
+fine-tuning.
+
+01:04:09.000 --> 01:04:11.000
+We can
+
+01:04:11.000 --> 01:04:13.000
+keep
+
+01:04:13.000 --> 01:04:15.000
+shoppy value
+
+01:04:15.000 --> 01:04:17.000
+away from
+
+01:04:17.000 --> 01:04:19.000
+fine-tuning.
+
+01:04:19.000 --> 01:04:21.000
+We can
+
+01:04:21.000 --> 01:04:23.000
+keep
+
+01:04:23.000 --> 01:04:25.000
+shoppy value
+
+01:04:25.000 --> 01:04:27.000
+away from
+
+01:04:27.000 --> 01:04:29.000
+fine-tuning.
+
+01:04:29.000 --> 01:04:31.000
+We can
+
+01:04:31.000 --> 01:04:33.000
+keep
+
+01:04:33.000 --> 01:04:35.000
+shoppy value
+
+01:04:35.000 --> 01:04:37.000
+away from
+
+01:04:37.000 --> 01:04:39.000
+fine-tuning.
+
+01:04:39.000 --> 01:04:41.000
+We can
+
+01:04:41.000 --> 01:04:43.000
+keep
+
+01:04:43.000 --> 01:04:45.000
+shoppy value
+
+01:04:45.000 --> 01:04:47.000
+away from
+
+01:04:47.000 --> 01:04:49.000
+fine-tuning.
+
+01:04:49.000 --> 01:04:51.000
+We can
+
+01:04:51.000 --> 01:04:53.000
+keep
+
+01:04:53.000 --> 01:04:55.000
+shoppy value
+
+01:04:55.000 --> 01:04:57.000
+away from
+
+01:04:57.000 --> 01:04:59.000
+fine-tuning.
+
+01:04:59.000 --> 01:05:01.000
+We can
+
+01:05:01.000 --> 01:05:03.000
+keep
+
+01:05:03.000 --> 01:05:05.000
+shoppy value
+
+01:05:05.000 --> 01:05:07.000
+away from
+
+01:05:07.000 --> 01:05:09.000
+fine-tuning.
+
+01:05:09.000 --> 01:05:11.000
+We can
+
+01:05:11.000 --> 01:05:13.000
+keep
+
+01:05:13.000 --> 01:05:15.000
+shoppy value
+
+01:05:15.000 --> 01:05:17.000
+away from
+
+01:05:17.000 --> 01:05:19.000
+fine-tuning.
+
+01:05:19.000 --> 01:05:21.000
+We can
+
+01:05:21.000 --> 01:05:23.000
+keep
+
+01:05:23.000 --> 01:05:25.000
+shoppy value
+
+01:05:25.000 --> 01:05:27.000
+away from
+
+01:05:27.000 --> 01:05:29.000
+fine-tuning.
+
+01:05:29.000 --> 01:05:31.000
+We can
+
+01:05:31.000 --> 01:05:33.000
+keep
+
+01:05:33.000 --> 01:05:35.000
+shoppy value
+
+01:05:35.000 --> 01:05:37.000
+away from
+
+01:05:37.000 --> 01:05:39.000
+fine-tuning.
+
+01:05:39.000 --> 01:05:41.000
+We can
+
+01:05:41.000 --> 01:05:43.000
+keep
+
+01:05:43.000 --> 01:05:45.000
+shoppy value
+
+01:05:45.000 --> 01:05:47.000
+away from
+
+01:05:47.000 --> 01:05:49.000
+fine-tuning.
+
+01:05:49.000 --> 01:05:51.000
+We can
+
+01:05:51.000 --> 01:05:53.000
+keep
+
+01:05:53.000 --> 01:05:55.000
+fine-tuning.
+
+01:05:55.000 --> 01:05:57.000
+We can
+
+01:05:57.000 --> 01:05:59.000
+keep
+
+01:05:59.000 --> 01:06:01.000
+fine-tuning.
+
+01:06:01.000 --> 01:06:03.000
+We can
+
+01:06:03.000 --> 01:06:05.000
+keep
+
+01:06:05.000 --> 01:06:07.000
+fine-tuning.
+
+01:06:07.000 --> 01:06:09.000
+We can
+
+01:06:09.000 --> 01:06:11.000
+keep
+
+01:06:11.000 --> 01:06:13.000
+fine-tuning.
+
+01:06:13.000 --> 01:06:15.000
+We can
+
+01:06:15.000 --> 01:06:17.000
+keep
+
+01:06:17.000 --> 01:06:19.000
+fine-tuning.
+
+01:06:19.000 --> 01:06:21.000
+We can
+
+01:06:21.000 --> 01:06:23.000
+keep
+
+01:06:23.000 --> 01:06:25.000
+fine-tuning.
+
+01:06:25.000 --> 01:06:27.000
+We can
+
+01:06:27.000 --> 01:06:29.000
+keep
+
+01:06:29.000 --> 01:06:31.000
+fine-tuning.
+
+01:06:33.000 --> 01:06:35.000
+Finally,
+
+01:06:35.000 --> 01:06:37.000
+I saw
+
+01:06:37.000 --> 01:06:39.000
+a meeting
+
+01:06:39.000 --> 01:06:41.000
+No.
+
+01:06:41.000 --> 01:06:43.000
+Our study is
+
+01:06:43.000 --> 01:06:45.000
+based on
+
+01:06:45.000 --> 01:06:47.000
+this individual feature.
+
+01:06:49.000 --> 01:06:51.000
+Thank you.
+
+01:06:51.000 --> 01:06:53.000
+Thank you, Alan.
+
+01:07:03.000 --> 01:07:05.000
+Someone at the group
+
+01:07:05.000 --> 01:07:07.000
+asked about
+
+01:07:07.000 --> 01:07:09.000
+mask size.
+
+01:07:09.000 --> 01:07:11.000
+Mask size?
+
+01:07:11.000 --> 01:07:13.000
+You mean
+
+01:07:13.000 --> 01:07:15.000
+the size of the mask?
+
+01:07:15.000 --> 01:07:17.000
+Yes.
+
+01:07:17.000 --> 01:07:19.000
+For example,
+
+01:07:19.000 --> 01:07:21.000
+a dog's eyes.
+
+01:07:21.000 --> 01:07:23.000
+If
+
+01:07:23.000 --> 01:07:25.000
+your mask
+
+01:07:25.000 --> 01:07:27.000
+is
+
+01:07:27.000 --> 01:07:29.000
+smaller than the eyes,
+
+01:07:29.000 --> 01:07:31.000
+this mask is valid.
+
+01:07:31.000 --> 01:07:33.000
+OK.
+
+01:07:33.000 --> 01:07:35.000
+When we do this,
+
+01:07:35.000 --> 01:07:37.000
+we can't
+
+01:07:37.000 --> 01:07:39.000
+make it smaller than the nose.
+
+01:07:39.000 --> 01:07:41.000
+For example,
+
+01:07:41.000 --> 01:07:43.000
+if you ask
+
+01:07:43.000 --> 01:07:45.000
+the size of the mask,
+
+01:07:45.000 --> 01:07:47.000
+we don't
+
+01:07:47.000 --> 01:07:49.000
+restrict
+
+01:07:49.000 --> 01:07:51.000
+the mask size.
+
+01:07:51.000 --> 01:07:53.000
+But I know
+
+01:07:53.000 --> 01:07:55.000
+someone restricts
+
+01:07:55.000 --> 01:07:57.000
+the mask size.
+
+01:07:57.000 --> 01:07:59.000
+Why?
+
+01:07:59.000 --> 01:08:01.000
+If the mask size is too large,
+
+01:08:01.000 --> 01:08:03.000
+it will cause
+
+01:08:03.000 --> 01:08:05.000
+a negative effect.
+
+01:08:05.000 --> 01:08:07.000
+Or
+
+01:08:07.000 --> 01:08:09.000
+it has different
+
+01:08:09.000 --> 01:08:11.000
+purposes.
+
+01:08:11.000 --> 01:08:13.000
+Or
+
+01:08:13.000 --> 01:08:15.000
+it only selects
+
+01:08:15.000 --> 01:08:17.000
+a few important features.
+
+01:08:17.000 --> 01:08:19.000
+If the mask size is
+
+01:08:19.000 --> 01:08:21.000
+too small,
+
+01:08:21.000 --> 01:08:23.000
+it will cause
+
+01:08:23.000 --> 01:08:25.000
+a negative effect.
+
+01:08:25.000 --> 01:08:27.000
+But if the mask size
+
+01:08:27.000 --> 01:08:29.000
+is the same as
+
+01:08:29.000 --> 01:08:31.000
+the original image,
+
+01:08:31.000 --> 01:08:33.000
+it will cause a negative effect.
+
+01:08:35.000 --> 01:08:37.000
+OK.
+
+01:08:37.000 --> 01:08:39.000
+Do you have any questions?
+
+01:08:45.000 --> 01:08:47.000
+OK. Thank you.
+
+01:08:47.000 --> 01:08:49.000
+I think it depends on the person.
+
+01:08:49.000 --> 01:08:51.000
+For example,
+
+01:08:51.000 --> 01:08:53.000
+if the mask size
+
+01:08:53.000 --> 01:08:55.000
+is
+
+01:08:55.000 --> 01:08:57.000
+the smallest
+
+01:08:57.000 --> 01:08:59.000
+feature
+
+01:08:59.000 --> 01:09:01.000
+of the eye,
+
+01:09:01.000 --> 01:09:03.000
+it will exceed
+
+01:09:03.000 --> 01:09:05.000
+a pixel.
+
+01:09:09.000 --> 01:09:11.000
+I don't know.
+
+01:09:11.000 --> 01:09:13.000
+I don't know how to answer this question.
+
+01:09:13.000 --> 01:09:15.000
+Or
+
+01:09:15.000 --> 01:09:17.000
+sometimes I feel
+
+01:09:17.000 --> 01:09:19.000
+the size choice
+
+01:09:19.000 --> 01:09:21.000
+is subjective.
+
+01:09:21.000 --> 01:09:23.000
+This choice
+
+01:09:23.000 --> 01:09:25.000
+is made by someone.
+
+01:09:25.000 --> 01:09:27.000
+Someone
+
+01:09:27.000 --> 01:09:29.000
+knows
+
+01:09:29.000 --> 01:09:31.000
+the components
+
+01:09:31.000 --> 01:09:33.000
+are large.
+
+01:09:33.000 --> 01:09:35.000
+For example, the eyes are large.
+
+01:09:35.000 --> 01:09:37.000
+For example, the mask
+
+01:09:37.000 --> 01:09:39.000
+is not random for every pixel.
+
+01:09:39.000 --> 01:09:41.000
+It is random for every 4x4 pixel.
+
+01:09:41.000 --> 01:09:43.000
+Random for every 6x6 pixel.
+
+01:09:43.000 --> 01:09:45.000
+Someone
+
+01:09:45.000 --> 01:09:47.000
+does it this way.
+
+01:09:47.000 --> 01:09:49.000
+But I think
+
+01:09:49.000 --> 01:09:51.000
+we don't know
+
+01:09:51.000 --> 01:09:53.000
+the pixel model cares about.
+
+01:09:53.000 --> 01:09:55.000
+It may be the upper right and lower left
+
+01:09:55.000 --> 01:09:57.000
+or the upper left and lower right.
+
+01:09:57.000 --> 01:09:59.000
+Something like this.
+
+01:09:59.000 --> 01:10:01.000
+If we give such a strong assumption,
+
+01:10:01.000 --> 01:10:03.000
+I think model training
+
+01:10:03.000 --> 01:10:05.000
+will be difficult.
+
+01:10:05.000 --> 01:10:07.000
+This explanation model
+
+01:10:07.000 --> 01:10:09.000
+will be difficult.
+
+01:10:09.000 --> 01:10:11.000
+Of course, what you said
+
+01:10:11.000 --> 01:10:13.000
+is exactly right.
+
+01:10:13.000 --> 01:10:15.000
+It is really like this.
+
+01:10:15.000 --> 01:10:17.000
+In fact, someone criticized
+
+01:10:17.000 --> 01:10:19.000
+this kind of explanation.
+
+01:10:19.000 --> 01:10:21.000
+It is about
+
+01:10:21.000 --> 01:10:23.000
+covering
+
+01:10:23.000 --> 01:10:25.000
+the eyes.
+
+01:10:25.000 --> 01:10:27.000
+In fact, it is possible that
+
+01:10:27.000 --> 01:10:29.000
+this kind of mask was not done well
+
+01:10:29.000 --> 01:10:31.000
+at the beginning,
+
+01:10:31.000 --> 01:10:33.000
+so the final result
+
+01:10:33.000 --> 01:10:35.000
+is not so comprehensive.
+
+01:10:35.000 --> 01:10:37.000
+Yes.
+
+01:10:37.000 --> 01:10:39.000
+This is possible.
+
+01:10:39.000 --> 01:10:41.000
+I think this question is super good.
+
+01:10:47.000 --> 01:10:49.000
+OK.
+
+01:10:49.000 --> 01:10:51.000
+It feels like
+
+01:10:51.000 --> 01:10:53.000
+there are no new questions
+
+01:10:53.000 --> 01:10:55.000
+in the chat room.
+
+01:10:55.000 --> 01:10:57.000
+Then
+
+01:10:57.000 --> 01:10:59.000
+let's thank
+
+01:10:59.000 --> 01:11:01.000
+YuNan again
+
+01:11:01.000 --> 01:11:03.000
+for his speech today.
+
+01:11:03.000 --> 01:11:05.000
+Thank you, everyone.
+
+01:11:05.000 --> 01:11:07.000
+How do I stop?
+
+01:11:09.000 --> 01:11:11.000
+Let me clap my hands.
+
+01:11:11.000 --> 01:11:13.000
+Thank you.
+
+01:11:13.000 --> 01:11:15.000
+Thank you for your support.
+
+01:11:15.000 --> 01:11:17.000
+How many people are there today?
+
+01:11:17.000 --> 01:11:19.000
+I can't count.
+
+01:11:19.000 --> 01:11:21.000
+Today, I see
+
+01:11:21.000 --> 01:11:23.000
+the highest number of people
+
+01:11:23.000 --> 01:11:25.000
+is 32.
+
+01:11:25.000 --> 01:11:27.000
+That's a lot.
+
+01:11:27.000 --> 01:11:29.000
+I found a lot of people.
+
+01:11:29.000 --> 01:11:31.000
+Is it related to the field?
+
+01:11:31.000 --> 01:11:33.000
+But no one helped me
+
+01:11:33.000 --> 01:11:35.000
+to post on Facebook.
+
+01:11:35.000 --> 01:11:37.000
+I'm kidding.
+
+01:11:37.000 --> 01:11:39.000
+For example,
+
+01:11:39.000 --> 01:11:41.000
+I have given a speech before.
+
+01:11:41.000 --> 01:11:43.000
+I am a physics major.
+
+01:11:43.000 --> 01:11:45.000
+There are five people in total.
+
+01:11:45.000 --> 01:11:47.000
+Maybe
+
+01:11:47.000 --> 01:11:49.000
+everyone is curious about this.
+
+01:11:49.000 --> 01:11:51.000
+I don't know how to start.
+
+01:11:51.000 --> 01:11:53.000
+I don't know either.
+
+01:11:53.000 --> 01:11:55.000
+But I'm glad to have this opportunity
+
+01:11:55.000 --> 01:11:57.000
+to share my knowledge.
+
+01:11:57.000 --> 01:11:59.000
+Otherwise, I have to contribute
+
+01:11:59.000 --> 01:12:01.000
+to the social resources.
+
+01:12:01.000 --> 01:12:03.000
+Social resources.
+
+01:12:03.000 --> 01:12:05.000
+Are you Gao Hong-An?
+
+01:12:07.000 --> 01:12:09.000
+No, I'm not.
+
+01:12:09.000 --> 01:12:11.000
+I'm not from Taiwan.
+
+01:12:11.000 --> 01:12:13.000
+It's okay.
+
+01:12:13.000 --> 01:12:15.000
+Okay.
+
+01:12:15.000 --> 01:12:17.000
+Thank you.
+
+01:12:17.000 --> 01:12:19.000
+I have a question.
+
+01:12:19.000 --> 01:12:21.000
+I suddenly want to ask you a question.
+
+01:12:21.000 --> 01:12:23.000
+For example,
+
+01:12:23.000 --> 01:12:25.000
+in your first video,
+
+01:12:25.000 --> 01:12:27.000
+This one?
+
+01:12:27.000 --> 01:12:29.000
+Yes, that one.
+
+01:12:29.000 --> 01:12:31.000
+The one about the matrix.
+
+01:12:31.000 --> 01:12:33.000
+This one?
+
+01:12:33.000 --> 01:12:35.000
+Yes, this one.
+
+01:12:35.000 --> 01:12:37.000
+Do you automatically ignore
+
+01:12:37.000 --> 01:12:39.000
+all the x1, x1, x2, x2
+
+01:12:39.000 --> 01:12:41.000
+in the matrix?
+
+01:12:41.000 --> 01:12:43.000
+We don't discuss
+
+01:12:43.000 --> 01:12:45.000
+our relationship with ourselves.
+
+01:12:45.000 --> 01:12:47.000
+We don't discuss our relationship with ourselves.
+
+01:12:47.000 --> 01:12:49.000
+We don't discuss our relationship with ourselves.
+
+01:12:49.000 --> 01:12:51.000
+There is no meaning
+
+01:12:51.000 --> 01:12:53.000
+in the definition of this question.
+
+01:12:53.000 --> 01:12:55.000
+Yes, because ShopEvalue
+
+01:12:55.000 --> 01:12:57.000
+is still ourselves.
+
+01:12:57.000 --> 01:12:59.000
+Yes.
+
+01:12:59.000 --> 01:13:01.000
+Our group is still ourselves.
+
+01:13:01.000 --> 01:13:03.000
+So we don't discuss it.
+
+01:13:03.000 --> 01:13:05.000
+Of course, our relationship with ourselves
+
+01:13:05.000 --> 01:13:07.000
+is highly related.
+
+01:13:07.000 --> 01:13:09.000
+Yes.
+
+01:13:09.000 --> 01:13:11.000
+Actually, I don't know
+
+01:13:11.000 --> 01:13:13.000
+how to share it.
+
+01:13:15.000 --> 01:13:17.000
+Okay.
+
+01:13:17.000 --> 01:13:19.000
+Let me think about it.
+
+01:13:19.000 --> 01:13:21.000
+I might stop recording now.
+
+01:13:21.000 --> 01:13:23.000
+Okay.
+

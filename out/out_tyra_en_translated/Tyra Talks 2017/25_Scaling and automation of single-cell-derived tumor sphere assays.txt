@@ -1,0 +1,1571 @@
+My PhD research is mainly in microfluidics for single-cell analysis.
+In the content of biology, I mainly focus on cancer research.
+Because we generally believe that in cancer, the heterogeneity between cells is stronger.
+For example, when we treat cancer, there will always be some antibody cells that can be used for therapy.
+So if we can use single-cell analysis to see the different characteristics of each cell,
+and find those antibodies to lock them in for treatment,
+we believe that it can improve the efficacy of the treatment.
+My research is divided into two parts.
+The first part is the phenotypic assay, which I will share with you today.
+The second part is also what I'm doing now.
+Because I haven't published the paper yet, so I haven't put it up here yet.
+But the whole direction is like what Jake just introduced.
+As a sample preparation chip,
+we can extract circulating tumor cells from the patient's blood.
+We get gene expression information from the cancer cells in the blood.
+This gene expression information can let us know
+what kind of drugs we can use to treat these patients to get better results.
+For now, to get this gene expression information,
+we usually use the whole flow of chips.
+In other words, we need to use a knife.
+It's more invasive, and the cost will be higher.
+Today, I will share with you the phenotypic assay.
+In the technology development, I mainly focus on scaling and automation
+in the high-throughput single-cell device sphere assays.
+First, I will tell you why we want to do this tumor sphere assay.
+In fact, the purpose is to study these tumor-initiating cells.
+In this process, I will share with you
+why we need to scale up this assay and automate this assay.
+Next, I will tell you how I enable this thing.
+Then, I will use some experiments to show you the functions of my chip.
+Finally, I will conclude my presentation today.
+OK.
+So, our motivation is to study these so-called cancer stem-like cells.
+Our recent research shows that
+there is a relatively small number of tumor-initiating cells.
+They are called cancer stem cells.
+Some people think the term cancer stem cells is too strong.
+They prefer to call them cancer stem-like cells.
+In fact, it is a biological mutation.
+They are a group of antibodies
+with some stem cell-specific cancer cells.
+This tissue group has some characteristics.
+The first one is that it has a relatively strong chemoresistance.
+It will cause tumor relapse.
+In this picture, you can see that this is a primitive tumor.
+The yellow one is CSC, cancer stem cell.
+The blue ones are normal cancer cells.
+If we use traditional cancer treatment,
+these ordinary cells can be removed.
+So, we can see that the tumor size is reduced in clinical trials.
+But what we can't see is this cancer stem cell.
+It has a way to stay quiescent
+and not be affected by the drug.
+After we stop giving drugs,
+the tumor relapse occurs.
+So, in the research scope of CSC,
+we hope to find cancer stem cell-specific therapy.
+So, I eliminated it for this CSC.
+The rest of these normal CSC,
+sorry, these normal cancer cells,
+they don't have the ability to self-renew.
+So, they proliferate.
+In the end, the tumor relapse occurs.
+So, this is the first reason why we want to study CSC.
+The second reason is that we generally believe that
+CSC has a strong migration ability.
+In other words, it is easier to metastasize to the secondary tumor.
+We know that cancer transfer is the biggest challenge in cancer therapy
+and the biggest cause of death.
+So, if we can study CSC more,
+it will be very helpful in therapy, tracking, and research.
+The most traditional way to study CSC is to use surface membrane protein
+or intracellular enzymatic markers.
+For gene expression or protein expression,
+we use different methods, such as full cytometry,
+to separate these different types of cells.
+Then, we can study these CSC groups.
+But the challenge is that
+many of our new markers have not been discovered.
+So, we hope to use other methods to study these CSC populations.
+As a substitute, cell behavior is a common choice.
+We observe that CSC can survive in a suspension culture environment
+and grow into a single-cell-derived tumor sphere.
+In other words, if it is a normal cancer cell,
+it cannot be adhered to the substrate environment.
+It will produce apoptosis.
+But CSC is different.
+It can not only survive in a suspension environment,
+but also grow into a new tumor sphere.
+So, what is the traditional way to do the sphere assay?
+The method is to buy a whale plate,
+as shown in the picture on the bottom right.
+Then, dilute the whale plate to a certain level of cell concentration.
+The whale plate contains one cell.
+As you can see,
+the low-throughput is a distribution of the probability,
+or more specifically,
+96-whale plate contains 20-30 single-cells.
+It is labor-intensive.
+Someone may ask,
+can I use automatic cell dispensing,
+such as flow cytometry,
+to ensure that I can put a cell into a whale?
+In fact, flow cytometry has a big problem.
+Because it is a flow-sorting process,
+it will produce a lot of shear stress.
+So, what is the impact of cell behavior assay on downstream?
+We need to observe if the cell is dead.
+If the cell is dead,
+it is not caused by the suspension environment.
+It is caused by the flow-sorting process.
+The shear stress is too high,
+and the cell can not bear it.
+So, the cell is dead,
+not because it is not CSC.
+These are the existing technology limitations.
+Why do we think automation is important?
+As we mentioned,
+CSC is a relatively small sub-population.
+In the past,
+only 1-5% of tumor cells have this sphere formation tendency.
+We hope this assay can start with a larger single-cell population.
+At least 1,000 single-cells.
+Then we can have a reliable statistical power
+to make our assay conclusion.
+So, we think
+to achieve this throughput,
+microfluidics is an ideal technology
+to make this assay.
+So, this is our chip schematics.
+We want to develop a chip
+with more than 1,000 single-cells.
+Because we have a very large throughput,
+we also need an automatic image analysis.
+Otherwise, we have to read it manually.
+It is a very difficult process.
+Only in this way,
+can we make the whole experiment
+smoothly improve on hardware and software.
+So, this is our motivation.
+I don't know if there is anything I didn't explain clearly.
+Or you can go on.
+Ok, let's continue.
+I want to ask,
+why CSC can survive in suspension culture environment?
+This is a question.
+Did you hear it?
+Yes.
+The question is,
+why CSC can survive in suspension culture environment?
+This is a very interesting question.
+I will answer it in two ways.
+First,
+the definition of CSC is
+we only inject 10 cells into the mouse.
+Can these 10 cells
+generate a new tumor on the mouse?
+If yes,
+we define it as CSC.
+The predecessors defined CSC in this way.
+Then, they used this traditional conventional assay
+to find out
+the cell population of tumors
+can survive in suspension culture environment.
+This is the first way to find it out.
+Why?
+Our idea is
+CSC can survive in suspension culture environment
+by moving through the local environment
+to the blood vessel.
+The blood vessel is a suspension environment.
+If these cells
+die in the suspension environment,
+they can't move to other places.
+So, we believe
+CSC can survive in the blood vessel
+and grow into a tumor in a new local environment.
+We simulate this in vivo environment.
+This is how we research CSC.
+Firstly,
+CSC was confirmed
+through invisible experiment!
+Why we developed this correlation experiment?
+It mimics the ways
+how the muscle will survive in blood vessel
+and grow into a tumor in the new local environment!
+Does this answer your question?
+I have a related question.
+When CSC is transferred in blood vessel,
+is it in the form of a single cell
+or a sphere?
+This is a very good question.
+Most of the cells
+are transferred in the form of a single cell.
+But in recent years,
+the research of circulating tumor cells
+found that
+the real cause of the transfer
+is the cluster.
+But the cluster is not a single cell
+that grows into a sphere
+and then transferred to other places.
+People usually believe that
+a small number of cells
+fall from the original tumor
+and it can circulate.
+You can imagine that
+in a vast ocean,
+is it a warship
+or an aircraft carrier?
+People think that
+the cluster is like an aircraft carrier.
+It is very powerful
+and has a stronger metastasis ability.
+But people think that
+the cluster fell from the original tumor
+and not a single cell
+that grows into a sphere
+and then transferred.
+Does this answer your question?
+Yes.
+OK.
+Are there any other questions?
+I don't think so.
+You can continue.
+I want to ask a question about operation.
+For example,
+if a worker
+is holding a pipe and dripping,
+can he get a single cell?
+Now,
+what is the practical number?
+For example, 10%? 20%?
+Or how many?
+The best theoretical limit
+is 20% to 30%.
+You can think of it as
+a cell suspension solution.
+Let's say I know
+that there are 10K cells
+in this tube.
+How many of them are there?
+You can calculate
+that there are one cell
+per 100 or 10 microliters.
+Microliters go one by one.
+The theoretical limit
+of this operation model
+is 20% to 30%.
+In fact,
+the control of cell density
+is not so ideal
+when operating.
+So it will be 20% to 30% worse
+than the operating limit.
+It will be worse,
+but it's almost the same, right?
+For example,
+is it 10% or what?
+Or is it less than 5%?
+If you have good skills,
+it can be less than 5%.
+If you don't have good skills,
+it can be 5% or less.
+It's basically difficult to do experiments.
+So it's about 15% or so.
+Yes,
+so everyone usually...
+Yes,
+so you want to see
+if you have 96 well-planned,
+you have Taipei almost 100 times,
+you have 15 cells,
+and you only have 1% to 5% single cell
+that can grow into a sphere.
+That experiment is too difficult to do.
+Yes,
+are there any other questions?
+I don't think so.
+You can continue.
+Okay,
+I will continue to present.
+So the first thing I want to discuss is
+how we achieve single cell capture
+in a high-throughput manner.
+The way we implement
+is by microfluidics.
+The principle is quite simple.
+We capture single cells
+by channel blocking.
+So you can imagine
+this is a
+microfluidics,
+microwell or microchamber.
+This is a capture site.
+The blue part is the channel,
+where the water flows.
+The round part is the flowing cells.
+When the cells come in,
+they block to this place.
+So the flow basically stops.
+The next cell will go to the next place.
+So every well has only one cell.
+If we only have
+10 or 20 chambers,
+a simple design would be fine.
+But in this workbook,
+we have to scale
+up to tens of thousands of chambers.
+At this time,
+this simple duplication
+will cause a big flow imbalance.
+In other words,
+if the whole
+flow cell comes in,
+it will mostly be upstream or downstream.
+The capture rate
+will be very, very low.
+How do I make
+the cell uniformly distributed
+on this
+array?
+The method I use is
+circuit modeling.
+In fact, this whole microfluidics
+is like a full circuit.
+Every channel
+has a flow group.
+This flow group
+is dominated by the capture site.
+This flow group is the largest
+because the size is the smallest.
+The entrance channel
+and the exit channel
+are relatively small,
+but because they are long,
+the build-up resistance is also large.
+The build-up resistance
+from 1 to 200
+accumulates in each channel.
+We just said that
+simple duplication won't work.
+If we want a good distribution,
+every branch
+has the same current.
+We know that
+if the upper part
+is short,
+the resistance here is small,
+the resistance here is also small,
+this thing can happen.
+But if we put 200
+negligible resistance here,
+the performance of the current
+will be much worse
+than what we want.
+How do we
+balance the current?
+Flow resistance is actually
+a function of channel geometry.
+You can see
+circular or rectangular
+are different functions.
+In short, the longer the channel,
+the higher the resistance.
+The wider the width,
+the smaller the resistance.
+So we use
+microfabrication
+to make the
+opening
+10 microns by 10 microns
+in size.
+First,
+this can achieve high flow resistance.
+Second,
+10 by 10 can block
+the cancer cell.
+We believe that
+the size of the cancer cell
+is greater than 10 microns.
+I will explain this later.
+We have overcome
+the microwave flow resistance
+we have defined here.
+What about the entrance channel
+and the NC channel?
+I use
+microfabrication
+to make a geometry
+100 microns wide
+and 100 microns high.
+I can make the entrance channel
+and the NC channel
+smaller than
+the cancer cells.
+In short,
+we use microfabrication
+to control the flow resistance.
+So we have a good
+flow circuit to achieve
+single cell capture.
+This shows
+three different sizes
+of chips
+from 800
+to 12800
+chamber chips.
+The size is shown
+on the slide.
+This is a
+device mirror.
+Each chamber
+can capture a single cell.
+This is a microscope image.
+The cancer cell is labeled
+as green fluorescent dye.
+The array
+has a good single cell capture.
+Now we can
+achieve high-throughput
+single cell capture.
+How do we analyze it?
+This is a comic.
+I have
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a
+a

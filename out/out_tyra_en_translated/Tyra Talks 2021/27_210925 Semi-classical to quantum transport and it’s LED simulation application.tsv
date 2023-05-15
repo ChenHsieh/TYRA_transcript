@@ -1,0 +1,1685 @@
+start	end	text
+0	5000	Welcome everyone to today's TerraTalk.
+5000	10000	We are very happy to welcome Dr. Wang Guan Zhong.
+10000	16000	He graduated from the Department of Electrical Engineering in 2010,
+16000	20000	and graduated from the Department of Electrical Engineering in 2021,
+20000	22000	and received his Master's Degree.
+22000	24000	During his Master's Degree,
+24000	27000	he worked in coding,
+27000	37000	and developed the non-equilibrium screen function,
+37000	38000	which is NEGF.
+38000	39000	This is also in his title.
+39000	43000	If you don't know what NEGF is,
+43000	45000	he will explain it to you later.
+45000	48000	From 2014 to 2020,
+48000	53000	he went to Purdue University, Indiana,
+53000	56000	and received his Master's Degree in Electrical Engineering.
+56000	62000	His main job there was quantum transport method,
+62000	65000	which is the method of quantum transmission.
+65000	73000	His main focus was on nanostructure and quantum transmission.
+74000	79000	Currently, he works in Intel's TCAP team.
+79000	82000	Let's welcome Dr. Wang Guan Zhong.
+86000	87000	You can start sharing.
+87000	89000	Let me share my screen.
+89000	91000	Can everyone see my screen?
+95000	97000	Yes, but you can't see the slides.
+97000	98000	Okay.
+98000	100000	Can you see the slides now?
+100000	101000	Yes.
+101000	104000	Let's follow the Tyrell tradition.
+104000	106000	Please turn on your microphones,
+106000	110000	and let's welcome Dr. Wang Guan Zhong.
+115000	116000	Hello, everyone.
+116000	120000	I will be speaking in English for the next few slides,
+120000	125000	because the technical terms may change.
+125000	128000	My target audience this time is...
+128000	132000	If you're interested in this field,
+132000	135000	whether you want to apply for a Master's Degree,
+135000	138000	or if you want to know more about this field,
+138000	140000	or if you want to use this tool,
+140000	144000	my target audience is like that.
+146000	147000	If you have any questions,
+147000	149000	you can send me an email.
+149000	153000	These works were done when I was studying for a Master's Degree at Purdue.
+153000	159000	The funding sources were NSF and NCSA.
+159000	165000	I also received funding from the Department of Education.
+165000	167000	So I wanted to acknowledge that.
+167000	169000	I also worked with CELBACO.
+169000	175000	This work was done by Purdue's supercomputer,
+175000	178000	which we call RCAC.
+178000	182000	This is the result of the computation.
+182000	185000	My topic today is optoelectronic simulation,
+185000	188000	and I will go over from the semi-classical
+188000	190000	to quantum transport,
+190000	192000	my different perspective.
+192000	194000	Here is my outline,
+194000	196000	and I will go over the motivation,
+196000	198000	and what's the method being used here,
+198000	201000	and I will show some results.
+201000	205000	In the methods, I will go over the semi-classical.
+205000	207000	Here's a missing label here,
+207000	209000	and go over to what's NEGF,
+209000	211000	and what is a beautiful probe,
+211000	214000	and the difficulty of including different processes,
+214000	217000	a recombination and generation process inside the NEGF.
+217000	218000	How do we do that?
+218000	220000	I will show some results to show,
+220000	224000	first, the importance of including these kinds of processes.
+224000	227000	Also, I will do a comparison.
+227000	230000	If we use a semi-classical way to do simulation
+230000	234000	versus using quantum transport way to do it,
+234000	236000	what's the difference?
+236000	238000	And do a summary there.
+238000	243000	So, why are we working on this project?
+243000	247000	It's because what we have achieved so far as mankind,
+247000	249000	because we have solar cell,
+249000	251000	and also to harvest energy from sun,
+251000	254000	and also we can efficiently emit light
+254000	256000	through light-emitting diets,
+256000	258000	which is like a really efficient way
+258000	264000	to transfer energy from electricity to lighting.
+264000	266000	And to push the boundary further,
+266000	271000	we need to look into what other new materials are out there,
+271000	275000	what different new structures we can optimize
+275000	277000	like the current efficiency.
+277000	281000	And so, for example, to improve the efficiency of LED,
+281000	284000	we have these quantum wells,
+284000	287000	and then you can see that when we have quantum well,
+287000	290000	the carrier will like to stay there more,
+290000	292000	and therefore increase the opportunity
+292000	295000	to recombine and emit light.
+295000	300000	And also we are looking to the novel new materials,
+300000	304000	like, for example, different Indian composition,
+304000	306000	or maybe some 2D materials,
+306000	308000	and we're looking into these.
+308000	313000	So, when we are utilizing all these different new materials,
+313000	317000	new structures, and there are lots of quantum effects in it.
+317000	321000	So, therefore, like the current,
+321000	324000	and we know that the non-equilibrium Green's function,
+324000	327000	this method, like it's solving Schrodinger equation
+327000	329000	with using Green's function,
+329000	330000	it's a well-accepted method.
+330000	336000	So, I'm going to go over why do we need NEGF to do it.
+336000	339000	So, what is optoelectronics?
+339000	343000	And so, I think the best way to understand optoelectronics,
+343000	347000	like it's just a simple PN diet we study in school, right?
+347000	350000	So, it's usually a bipolar device,
+350000	352000	where by bipolar, I mean, like,
+352000	354000	there's electrons and there's holes.
+354000	357000	And also there are carriers,
+357000	360000	like they're in different equilibrium,
+360000	361000	for example, electron,
+361000	364000	and they're usually separated by a band gap.
+364000	366000	That's why we use semiconductors.
+366000	367000	So, having a band gap,
+367000	371000	and we kind of segregate the carriers to two kinds,
+371000	376000	and the electron is injected by the source, one side.
+376000	378000	One contact, we inject electron here,
+378000	380000	and the other one is like a hole.
+380000	381000	And when they see each other,
+381000	385000	and there's interesting thing can happen, right?
+385000	386000	There are different processes there.
+386000	388000	For example, there's like Shockley-Ree hole,
+388000	391000	where electron and hole, they can recombine.
+391000	392000	And when they recombine,
+392000	395000	they can emit phonon, as known as heat, right?
+395000	397000	So, this is like a wasteful energy.
+397000	400000	When they recombine through the defects,
+400000	404000	the heat is generated and nothing gained.
+404000	406000	Well, the heat is gained, but it's not that great.
+406000	409000	And there's also radiative recombination,
+409000	412000	where when the electron and hole, they see each other,
+412000	413000	and they can recombine,
+413000	415000	and therefore, they can emit like a photon,
+415000	417000	or we can see light here.
+417000	422000	And the rate it happens usually is,
+422000	424000	and there's like, because like,
+424000	425000	for example, first one,
+425000	428000	they need to see through a defect here,
+428000	432000	and therefore, their proportion is like proportional
+432000	434000	to the n-type or p-type,
+434000	438000	because one carrier can come to the defect here,
+438000	440000	and to wait for the other person to come,
+440000	441000	and to recombine.
+441000	444000	So, therefore, their rate is proportional to,
+444000	446000	you know, either the carrier,
+446000	449000	either the electrons or the hole concentration here.
+449000	451000	But radiative recombination,
+451000	454000	it's, you need,
+454000	457000	the rate is proportional to the both of them.
+457000	461000	So, you need to have a high electron here,
+461000	463000	and high hole concentration here,
+463000	465000	to make it happen.
+465000	467000	And there's like also another process,
+467000	469000	which is OJ recombination.
+469000	471000	And this is like a three-particle process,
+471000	473000	where the electron and hole,
+473000	474000	they can recombine.
+474000	478000	But instead of like emitting a photon,
+478000	480000	it will kick an electron to a higher energy,
+480000	481000	or the opposite.
+481000	483000	It's either two electron with one hole,
+483000	485000	or two hole with one electron.
+485000	487000	But the result is like a waste of energy,
+487000	491000	and the chance of doing is something like here.
+492000	495000	And, yes.
+495000	496000	If you have any questions,
+496000	498000	you can ask directly,
+498000	500000	or pause the video.
+500000	506000	And the other part is a generation process,
+506000	510000	where the electron hole,
+510000	511000	at this place,
+511000	513000	at this depletion region,
+513000	515000	we can absorb the photon,
+515000	517000	and like create an electron and hole pair.
+517000	519000	So, all these processes are needed
+519000	522000	to simulate an optoelectronic device.
+522000	524000	So, that's what we need to cover,
+524000	527000	when we are doing a modeling.
+527000	530000	So, why do we need quantum model?
+530000	532000	So, let's take a look at a simulation result.
+532000	535000	And this is from this paper I'm co-author with.
+535000	540000	This is like a simulation result
+540000	543000	from a commercialized 3-5 LED.
+543000	545000	And as you can see here,
+546000	549000	this line here means the density of states,
+549000	551000	and the color here is the electron density.
+551000	555000	So, the contour line is the density of state, right?
+555000	558000	And we can see that the electron is coming from the left side,
+558000	561000	and occupying these states here.
+561000	564000	And there are holes coming from the other direction.
+564000	565000	This is injected here.
+565000	568000	And they are going to be in here,
+568000	571000	and they will recombine and emit light here.
+571000	572000	So, we can see that,
+572000	575000	if we really do a quantum simulation,
+575000	578000	we can see that there is interference everywhere, right?
+578000	581000	For example, all these pattern means,
+581000	584000	if you treat them as particles,
+584000	587000	it doesn't capture everything, right?
+587000	588000	So, for example,
+588000	590000	electron, they can tunnel through this barrier,
+590000	593000	and through these interference.
+593000	598000	So, we really need to make use of the quantum transport,
+598000	600000	instead of the semi-classical way.
+602000	606000	So, the current state of our tool to do this is to,
+606000	607000	I mean, the current way,
+607000	609000	I mean, before I published the paper, right?
+609000	614000	So, before I was working on this,
+614000	616000	the best way to deal with this quantumly
+616000	618000	is also from this paper,
+618000	622000	where we cut the domain into different pieces,
+622000	626000	and then we call some of them the red part,
+626000	628000	and also the green part.
+628000	630000	So, the green part is like equilibrium.
+630000	631000	And why are they in equilibrium?
+631000	634000	Because usually the source is highly doped,
+634000	636000	and then the drain is also highly doped region.
+636000	638000	And when you're highly doped,
+638000	640000	there's lots of carrier there,
+640000	642000	and they will scatter a lot,
+642000	645000	and the carrier there will be in equilibrium.
+645000	647000	So, when you are in equilibrium,
+647000	650000	we can put a Fermi level here,
+650000	653000	saying, oh, this is the Fermi energy in this region,
+653000	655000	and this is the Fermi energy,
+655000	657000	and there's like Fermi level for electron,
+657000	660000	Fermi level for holes in this region.
+660000	663000	And there's also the pink part,
+663000	666000	where we do, this is non-equilibrium region.
+666000	670000	So, this is like the previous way of doing it,
+670000	673000	where we do NEGF inside the pink region,
+673000	677000	and we just put the Fermi level across here.
+680000	683000	So, but this method has some defects,
+683000	686000	where we cannot even calculate a simple p-n diet,
+686000	689000	because a simple p-n diet,
+689000	692000	we cannot really tell which region is non-equilibrium,
+692000	695000	which region is equilibrium.
+695000	698000	So, it's really hard to do quantum transport
+698000	700000	in a p-n diet,
+700000	703000	when we are trying to include
+703000	706000	all the recombination or generation processes.
+706000	711000	So, there are different flavor of quantum transport.
+711000	713000	There's like ballistic NEGF,
+713000	715000	there's like the one I mentioned,
+715000	717000	we cut into different domain,
+717000	721000	when we try to do the transport calculation,
+721000	723000	and there's like the super expensive SE4,
+723000	726000	but none of them can have been,
+726000	729000	are able to deal with the p-n diets,
+729000	731000	like with the recombination processes.
+731000	734000	So, therefore, a new model is needed, right?
+734000	735000	And also we can see that,
+735000	737000	this is from a super old paper,
+737000	739000	why the recombination process is important,
+739000	741000	is because when you measure IV curve,
+741000	743000	there's like different slope here,
+743000	745000	and they are in the results
+745000	748000	of different recombination process here,
+748000	752000	which later on, I will talk more about that.
+752000	756000	So, what's the available way to do,
+756000	757000	to deal with carrier transport?
+757000	760000	So, here's like a list, a roadmap,
+760000	763000	like where you can pick and choose,
+763000	764000	depending on your needs.
+764000	765000	So, if you are,
+765000	767000	so here, the axis,
+767000	771000	y-axis here is the computational intensity.
+771000	773000	So, I'm going from a super cheap,
+773000	775000	super fast turnaround time,
+775000	776000	computational cost,
+776000	778000	like the semi-classical way,
+778000	780000	and all the way to go quantum,
+780000	782000	where we need to solve Schrodinger equation,
+782000	785000	and using it on any GF methods.
+785000	786000	So, I will first go over,
+786000	789000	what's the Boltzmann transport equation?
+789000	792000	And there are different way to solve it,
+792000	795000	like the drift diffusion is the most popular way.
+795000	797000	It's the first order,
+797000	799000	I think, what is it?
+799000	802000	The first order approximation,
+802000	803000	not approximation,
+803000	807000	but it's a simplification of the BTE,
+807000	809000	the famous BTE thing,
+809000	811000	and that's like we solve it drift diffusion,
+811000	813000	and then we can also use Monte Carlo,
+813000	815000	like statistically to gather results
+815000	818000	for the BTE equation.
+818000	822000	So, what's Boltzmann transport equation?
+822000	824000	It's by saying that,
+824000	827000	oh, there is a distribution function.
+827000	829000	By distribution, we mean,
+829000	832000	with the occupation of a different state,
+832000	834000	and what does this mean?
+834000	836000	Like, we want to ask,
+836000	840000	what's the possibility of finding a carrier
+840000	841000	at a particular location,
+841000	843000	at a particular time,
+843000	844000	with a particular momentum?
+844000	846000	So, if we can,
+846000	848000	for example, inside a device,
+848000	850000	there's a different location here,
+850000	852000	and for each location,
+852000	853000	there is a,
+853000	855000	I'm trying to draw this like a momentum,
+855000	857000	so carrier with low momentum is here,
+857000	860000	and carrier with higher momentum
+860000	861000	is on the upper here,
+861000	862000	and we are asking,
+862000	863000	what's the distribution?
+863000	865000	How many particles are in those states?
+865000	867000	So, if we know this information
+867000	869000	across time, across space,
+869000	871000	and for different time and space
+871000	872000	and different momentum,
+872000	873000	we know this,
+873000	875000	then the system is solved, right?
+875000	878000	So, and why is this distribution useful?
+878000	881000	Because from this distribution function,
+881000	884000	we can get the carrier density, right?
+884000	886000	Because if we want to ask,
+886000	888000	what's the carrier density at this location?
+888000	890000	Given the F at this location,
+890000	892000	we can just do a sum
+892000	894000	and know how much carrier is here.
+894000	895000	And if you want to know,
+895000	897000	oh, for your device you're working on,
+897000	898000	what's the current
+898000	900000	that you just do,
+900000	902000	get their group of velocity
+902000	903000	from the band structure
+903000	904000	and you do a sum
+904000	906000	with this distribution,
+906000	907000	then you can get,
+907000	908000	oh, how much current you are gaining
+908000	910000	at this location.
+910000	911000	So, it's useful
+911000	913000	because we can get observable
+913000	916000	from this distribution function.
+916000	919000	And how do we solve this F?
+919000	923000	And it's the BTE Boltzmann.
+923000	925000	Boltzmann came up with this, right?
+925000	927000	Like the Boltzmann transport equation.
+927000	928000	It's the governing equation.
+928000	930000	So, the equation is listed here.
+930000	932000	And I will just try to show
+932000	934000	how we understand different terms.
+934000	936000	For example,
+936000	938000	the first term means,
+938000	940000	oh, if you have carrier
+940000	943000	coming in, coming out,
+943000	945000	the distribution here
+945000	946000	will be related to that, right?
+946000	948000	Because you have carrier
+948000	951000	flowing into here or flowing out.
+951000	953000	And the distribution here will be,
+953000	955000	if you have lots of people coming in
+955000	958000	and a few going out,
+958000	960000	then the distribution here will be higher.
+960000	962000	So, this is what the first term means.
+962000	964000	And the second term means that
+964000	966000	the F means the electric field,
+966000	969000	the carrier experience in the charge.
+969000	971000	And when you are,
+971000	973000	when the carrier is experiencing
+973000	975000	electric field, it will accelerate.
+975000	977000	And it will change its momentum.
+977000	979000	So, here we mean like that,
+979000	981000	okay, given the electric field
+981000	983000	at this location,
+983000	985000	the distribution, you know,
+985000	987000	it's related to
+987000	989000	the distribution nearby.
+989000	991000	So, distribution with a lower momentum,
+991000	993000	with a higher momentum,
+993000	995000	they can come in and out
+995000	997000	because of the electric field
+997000	999000	at this location.
+999000	1001000	And the last one is
+1001000	1003000	if you have like, oh,
+1003000	1005000	other collision inside a device,
+1005000	1007000	for example, a phonon,
+1007000	1009000	an electron can absorb a phonon
+1009000	1011000	or emit a phonon and come to your
+1011000	1013000	this place, if there's a possibility
+1013000	1015000	like that, then this term is trying
+1015000	1017000	to take that into account.
+1017000	1019000	So, we have all this
+1019000	1021000	and all combined. And they can be solved
+1021000	1023000	really expensively by
+1023000	1025000	doing Monte Carlo, by assuming
+1025000	1027000	the distribution function and you start to
+1027000	1029000	run it, oh, how many carrier coming in,
+1029000	1031000	coming out from different momentum space,
+1031000	1033000	then it's super expensive to do that
+1033000	1035000	Monte Carlo. So, but if it's still
+1035000	1037000	too hard, then you can simplify
+1037000	1039000	this BT equation
+1039000	1041000	to a drift diffusion equation,
+1041000	1043000	which is saying that the
+1043000	1045000	current at this place is proportional
+1045000	1047000	to the carrier with the electric
+1047000	1049000	field and the diffusion
+1049000	1051000	with the density gradient.
+1051000	1053000	So, this is, and the full derivation
+1053000	1055000	is in this paper here.
+1055000	1057000	People who are interested can go take
+1057000	1059000	a look.
+1059000	1061000	So, I kind of went over like the
+1061000	1063000	semi-classical way where
+1063000	1065000	the carrier and the device are
+1065000	1067000	like particle-like and then
+1067000	1069000	they can recombine
+1069000	1071000	by solving
+1071000	1073000	the drift diffusion equation and the continuity
+1073000	1075000	equation. That's how we
+1075000	1077000	deal with the
+1077000	1079000	semi-classical way.
+1079000	1081000	And now I'm going to step into the
+1081000	1083000	Schrodinger equation and our
+1083000	1085000	non-equilibrium Green's function.
+1085000	1087000	So, we all know about Schrodinger equation.
+1087000	1089000	It's like, it's
+1089000	1091000	given a Hamiltonian of the system
+1091000	1093000	that you can solve it and then to find
+1093000	1095000	what's the possible eigenenergies
+1095000	1097000	inside the system.
+1097000	1099000	And the Green's function,
+1099000	1101000	I still won't go into details.
+1101000	1103000	I started to disappoint people here.
+1103000	1105000	But like, I think
+1105000	1107000	there are like really useful
+1107000	1109000	material here and like really, I think
+1109000	1111000	Professor Datas did a really good job
+1111000	1113000	on explaining what
+1113000	1115000	an AEGF method is with his
+1115000	1117000	introductory material on
+1117000	1119000	nanoHUB. So, it's all the information
+1119000	1121000	and there's like a
+1121000	1123000	famous book. You can reach out to me and I can
+1123000	1125000	show you like
+1125000	1127000	what's the book you need to read
+1127000	1129000	into. But Green's function,
+1129000	1131000	from our understanding, Green's function
+1131000	1133000	is also
+1133000	1135000	in an engineering term, it's like the response
+1135000	1137000	to an excitation, right?
+1137000	1139000	So usually, oh,
+1139000	1141000	Poisson equation, the Green's function,
+1141000	1143000	if you know the Green's function for a Poisson equation,
+1143000	1145000	then you know, oh,
+1145000	1147000	if you put a charge here, what's the
+1147000	1149000	resulting potential you can get?
+1149000	1151000	So the Schrodinger equation is similar like this.
+1151000	1153000	So you put the H psi,
+1153000	1155000	E psi all into one side
+1155000	1157000	and then you can solve for the Green's function.
+1157000	1159000	And the Green's function is that
+1159000	1161000	if you multiply this
+1161000	1163000	by excitation, then you know what's
+1163000	1165000	the response you will get
+1165000	1167000	inside this device.
+1167000	1169000	So,
+1169000	1171000	here, we will
+1171000	1173000	first go into the ballistic
+1173000	1175000	non-equilibrium Green's function.
+1175000	1177000	So once you, so first you have this
+1177000	1179000	Hamiltonian, and then you can get the
+1179000	1181000	resulting Green's function. And then
+1181000	1183000	by, so here
+1183000	1185000	it's like the Hamiltonian here, and we can get
+1185000	1187000	the Green's function. And using the Green's function,
+1187000	1189000	there's like some key terms.
+1189000	1191000	There's like the G lesser, which is the
+1191000	1193000	the
+1193000	1195000	this is proportional to the carrier
+1195000	1197000	density. So it's like
+1197000	1199000	here's the excitation you have in the system.
+1199000	1201000	And you have like, using the Green's
+1201000	1203000	function, and there's a Gr
+1203000	1205000	and Gr dagger, then you can get the
+1205000	1207000	what's the carrier distribution in the device.
+1207000	1209000	So,
+1209000	1211000	what the
+1211000	1213000	NEGF does is that we are interested
+1213000	1215000	in a part,
+1215000	1217000	only this part of the device. And we are,
+1217000	1219000	we want to say, oh,
+1219000	1221000	we only want to focus on this small region.
+1221000	1223000	And then the left,
+1223000	1225000	we call it, that's a
+1225000	1227000	contact, that's a lead. And we
+1227000	1229000	don't want to care about the information.
+1229000	1231000	It's an infinite,
+1231000	1233000	going left and right.
+1233000	1235000	They are periodically going left
+1235000	1237000	and right. But we don't want to simulate
+1237000	1239000	the entire universe. We only
+1239000	1241000	want to focus on the transistor or the
+1241000	1243000	LED we care about.
+1243000	1245000	So, given this Green's
+1245000	1247000	function, and then we can
+1247000	1249000	for different contact,
+1249000	1251000	if you are contact to the left, and then there's
+1251000	1253000	like a left self-energy
+1253000	1255000	and there's like a right side, there's like a
+1255000	1257000	self-energy here. And with all this self-energy
+1257000	1259000	on the Green's function, you can get what's
+1259000	1261000	the carrier distribution in here.
+1261000	1263000	And when they are in contact
+1263000	1265000	with the reservoir of
+1265000	1267000	a different Fermi level here
+1267000	1269000	on the left side and right side here.
+1271000	1273000	So, but the ballistic
+1273000	1275000	and NEGF, there's no scattering.
+1275000	1277000	So carrier will not scatter with
+1277000	1279000	each other. So how
+1279000	1281000	do we do
+1281000	1283000	including all these scattering
+1283000	1285000	terms in the
+1285000	1287000	NEGF is like, there's a
+1287000	1289000	popular method
+1289000	1291000	that's called Butyprobe method
+1291000	1293000	where it's proposed by Marcus
+1293000	1295000	Butyprobe back in 1980s.
+1295000	1297000	So it's a way to mimic
+1297000	1299000	defacing, which means, aka
+1299000	1301000	the scattering events.
+1301000	1303000	So, we
+1303000	1305000	will try, when we're
+1305000	1307000	injecting the carrier into
+1307000	1309000	the device from the left and right
+1309000	1311000	side. So we're adding more
+1311000	1313000	more these
+1313000	1315000	reservoir inside the device.
+1315000	1317000	So we're taking the electron out and
+1317000	1319000	put it back in, take it out and put it
+1319000	1321000	back in. So in this way, we're
+1321000	1323000	mimicking like carrier
+1323000	1325000	we can randomize the carrier
+1325000	1327000	and the carrier's momentum will go around
+1327000	1329000	and like you can see that
+1329000	1331000	this is more closer to
+1331000	1333000	the real world problem where the
+1333000	1335000	device have scattering.
+1335000	1337000	But this method
+1337000	1339000	was only applicable
+1339000	1341000	to unit polar device. For example,
+1341000	1343000	if you only have electron here, it can only
+1343000	1345000	simulate electrons
+1345000	1347000	scattered inside the device.
+1347000	1349000	So
+1349000	1351000	my work, my PhD
+1351000	1353000	was like to ask a question
+1353000	1355000	whether we can modify this for
+1355000	1357000	bipolar device.
+1357000	1359000	Bipolar
+1359000	1361000	means
+1361000	1363000	when we have, so
+1363000	1365000	can we put like two, when we are
+1365000	1367000	we simulate electron and hole
+1367000	1369000	separately like before, right?
+1369000	1371000	We have electron coming in and electron
+1371000	1373000	coming out and we also simulate the hole
+1373000	1375000	whereas electron coming in, sorry, hole coming
+1375000	1377000	in and hole coming out. And we also
+1377000	1379000	include this probe here to extract
+1379000	1381000	the carrier in, out of
+1381000	1383000	the device and put it back in
+1383000	1385000	and this
+1385000	1387000	way, if we somehow take
+1387000	1389000	the carrier out from
+1389000	1391000	this electron and hole and that's equivalent
+1391000	1393000	to semi-classically
+1393000	1395000	how JIP diffusion model
+1395000	1397000	the Shockley-Ree hole and different processes.
+1397000	1399000	So using this
+1399000	1401000	method, we can
+1401000	1403000	cover
+1403000	1405000	the processes I
+1405000	1407000	mentioned in the optoelectronic device. We can
+1407000	1409000	model Shockley-Ree hole, we can model
+1409000	1411000	radiated, we can model OJ,
+1411000	1413000	we can model all these
+1413000	1415000	effects inside the
+1415000	1417000	enhanced
+1417000	1419000	electrical probe method.
+1419000	1421000	So here is like all
+1421000	1423000	the methodology I've mentioned
+1423000	1425000	where from
+1425000	1427000	cheap to expensive, we have like
+1427000	1429000	JIP diffusion, Monte Carlo's
+1429000	1431000	and the NEGF
+1431000	1433000	and also
+1433000	1435000	in the
+1435000	1437000	NEGF we have like the
+1437000	1439000	ballistical one and also the
+1439000	1441000	what's the time now?
+1441000	1443000	Do we still have time?
+1444000	1446000	Oops.
+1446000	1448000	Oh 540, sorry.
+1448000	1450000	Let me put it back on.
+1450000	1452000	Yeah, so we have like
+1452000	1454000	all the different
+1454000	1456000	methodology here and this is the one
+1456000	1458000	I was mainly working on.
+1458000	1460000	So carriers, they are
+1460000	1462000	wave-like.
+1462000	1464000	So for example,
+1464000	1466000	from before, JIP diffusion and Monte Carlo's
+1466000	1468000	each of the carriers, they are particle-like
+1468000	1470000	and then we are solving
+1470000	1472000	the current continuity equation.
+1472000	1474000	For each location, there is like a quasi-Fermi
+1474000	1476000	level, which means they follow Fermi
+1476000	1478000	direct distribution
+1478000	1480000	and
+1480000	1482000	quantum correction with
+1482000	1484000	artificial.
+1484000	1486000	And there are way people
+1486000	1488000	when using JIP diffusion, you can
+1488000	1490000	couple it with quantum correction like
+1490000	1492000	solving Schrodinger equation
+1492000	1494000	in a certain region and then couple
+1494000	1496000	them with a JIP diffusion and try
+1496000	1498000	to mimic it.
+1498000	1500000	You will have artificial boundary
+1500000	1502000	condition.
+1502000	1504000	When do we choose?
+1504000	1506000	Which is the part we want to solve at quantum?
+1506000	1508000	Where do we solve semi-classically?
+1508000	1510000	So there's lots of confusion
+1510000	1512000	if you are coupling that.
+1512000	1514000	But using NEGF
+1514000	1516000	like if it's
+1516000	1518000	ballistic, it's not
+1518000	1520000	really useful for
+1520000	1522000	optoelectronic because there's no
+1522000	1524000	recombination scattering processes and
+1524000	1526000	there's like the way I mentioned, it's called
+1526000	1528000	multi-equilibrium
+1528000	1530000	way. So some part of it you
+1530000	1532000	simulate, you assume
+1532000	1534000	like there's like an equilibrium there.
+1534000	1536000	But
+1536000	1538000	this method, it requires
+1538000	1540000	like
+1540000	1542000	really, it only
+1542000	1544000	works with, for example, quantum well structure
+1544000	1546000	and inside here, we can
+1546000	1548000	set it to be equilibrium and somehow to
+1548000	1550000	have the carrier recombine.
+1550000	1552000	But in this way, the new
+1552000	1554000	proposed beautiful probe way
+1554000	1556000	where the carriers are always
+1556000	1558000	wavelength and we can have
+1558000	1560000	recombination generation everywhere in the
+1560000	1562000	device and we also can have scattering
+1562000	1564000	consider and
+1564000	1566000	you don't need to say
+1566000	1568000	this part is equilibrium or the other part
+1568000	1570000	is non-equilibrium. So you can simulate
+1570000	1572000	the entire device without
+1572000	1574000	artificial boundary.
+1574000	1576000	And of course, there's the SC Born method
+1576000	1578000	but that's like super expensive and
+1578000	1580000	no one has, I would say
+1580000	1582000	like no one has done like
+1582000	1584000	a simulation like
+1584000	1586000	LED kind of simulation
+1586000	1588000	like with it.
+1588000	1590000	And so later
+1590000	1592000	next one, I will go
+1592000	1594000	to talk about the results.
+1594000	1596000	So first part, I will show that
+1596000	1598000	the importance of recombination.
+1598000	1600000	So here is a picture
+1600000	1602000	showing, this is a structure
+1602000	1604000	where electrons coming
+1604000	1606000	again from the left side here and then
+1606000	1608000	there's a band structure. There's a
+1608000	1610000	band gap in between
+1610000	1612000	this and I crop out in between
+1612000	1614000	and the hole is coming to here.
+1614000	1616000	So
+1616000	1618000	there are two paths that electron
+1618000	1620000	can, there's
+1620000	1622000	a current conducting path, right?
+1622000	1624000	So one path is the blue path where
+1624000	1626000	electron come here and hole come here
+1626000	1628000	and they will recombine and this
+1628000	1630000	current, they can form a current path.
+1630000	1632000	And the other path is the black line
+1632000	1634000	where the carrier come in and can
+1634000	1636000	jump over the barrier to the other side.
+1636000	1638000	So there are two way that the
+1638000	1640000	carrier can
+1640000	1642000	that the current can form.
+1642000	1644000	So here's a comparison with
+1644000	1646000	or without this indium
+1646000	1648000	gallium nitride. So when we form
+1648000	1650000	the quantum well with a lower
+1650000	1652000	band gap material here. So on the two sides
+1652000	1654000	gallium nitride with a larger band gap.
+1654000	1656000	With indium gallium nitride, you can shrink
+1656000	1658000	the band gap and that's why we see this dip
+1658000	1660000	here. And with this, you
+1660000	1662000	can see that comparing the two
+1662000	1664000	the recombination current is
+1664000	1666000	much higher with a quantum well
+1666000	1668000	because inside a quantum well, there's a
+1668000	1670000	higher chance of
+1670000	1672000	carrier here and because
+1672000	1674000	we also know that
+1674000	1676000	the recombination
+1676000	1678000	is proportional to the carrier density
+1678000	1680000	there, right? They want to see each other
+1680000	1682000	they want to recombine. So the more they have
+1682000	1684000	at each location, the more
+1684000	1686000	they can recombine with each other.
+1686000	1688000	So
+1690000	1692000	here I'm trying
+1692000	1694000	to show that
+1694000	1696000	when we do any
+1696000	1698000	gift calculation, when we include
+1698000	1700000	the recombination here
+1700000	1702000	this is a typical
+1702000	1704000	IV curve and we can see that
+1704000	1706000	this is a log scale
+1706000	1708000	current, right? So when we increase
+1710000	1712000	when we increase the drain
+1712000	1714000	voltage, we are pulling
+1714000	1716000	the barrier down
+1716000	1718000	so there are more and more current can go
+1718000	1720000	through to the other side. So
+1720000	1722000	let's focus first on
+1722000	1724000	the low Vd
+1724000	1726000	side. So on the low Vd side
+1726000	1728000	there, you can
+1728000	1730000	see that there's still a barrier here. So
+1730000	1732000	the black current, so the total
+1732000	1734000	current will be, as I said before
+1734000	1736000	there's like two parts. There's a recombine
+1736000	1738000	the electron hole
+1738000	1740000	they can recombine here for a
+1740000	1742000	current path. And there's also the
+1742000	1744000	thermionic current where the carrier can
+1744000	1746000	jump over the barrier to the other side
+1746000	1748000	so this is the two part. And when the
+1748000	1750000	barrier is still high, we can see that the black line
+1750000	1752000	is not in favor because it's hard
+1752000	1754000	for the electron to jump out here. There's like
+1754000	1756000	few particles here to jump out. So
+1756000	1758000	the black part of the current is super
+1758000	1760000	small. And
+1760000	1762000	at this region
+1762000	1764000	the recombination current dominates
+1764000	1766000	so we can see that this is
+1766000	1768000	the
+1768000	1770000	distribution here.
+1770000	1772000	And when we increase
+1772000	1774000	the bias voltage
+1774000	1776000	we're pulling the other side, the barrier down
+1776000	1778000	so as you can see here
+1778000	1780000	right now the black path is easier
+1780000	1782000	the electron can zip through the device
+1782000	1784000	and form a current path
+1784000	1786000	so right now the blue one is
+1786000	1788000	it's still large but
+1788000	1790000	compared to the black one it's much smaller
+1790000	1792000	so this is on off.
+1796000	1798000	So when we include
+1798000	1800000	NEGF, when we do
+1800000	1802000	non-equilibrium Green's function
+1802000	1804000	transport calculation, when we don't
+1804000	1806000	have recombination, which current
+1806000	1808000	do we get? We get the
+1808000	1810000	we don't have
+1810000	1812000	the blue line here so we're only getting
+1812000	1814000	the black. And if we
+1814000	1816000	using this method we're able
+1816000	1818000	to include the recombination process
+1818000	1820000	which means we get the red line
+1820000	1822000	so we're pushing
+1822000	1824000	the boundary of NEGF such that
+1824000	1826000	we can simulate the device
+1826000	1828000	from a black line to a red line
+1828000	1830000	which is a really large difference if you look at
+1830000	1832000	here and
+1832000	1834000	if you look at the
+1834000	1836000	before the threshold voltage there's a
+1836000	1838000	huge current difference with or without
+1838000	1840000	recombination and it
+1840000	1842000	also further impact what's the
+1842000	1844000	threshold voltage. The threshold voltage means
+1844000	1846000	when is your device on
+1846000	1848000	or off. So there's a small shift
+1848000	1850000	here although on a
+1850000	1852000	linear scale but with more recombination
+1852000	1854000	the red and
+1854000	1856000	also the black line will have a larger
+1856000	1858000	shift and therefore a larger impact.
+1858000	1860000	So it's really important to
+1860000	1862000	include the recombination
+1862000	1864000	in your device.
+1864000	1866000	Can I ask a question here?
+1866000	1868000	Yeah, sure.
+1868000	1870000	Can you go back to your previous slide?
+1870000	1872000	Yes.
+1872000	1874000	Maybe
+1874000	1876000	this is a bit stupid but I
+1876000	1878000	thought
+1878000	1880000	recombination
+1880000	1882000	means you have
+1882000	1884000	electron hole pair recombine
+1884000	1886000	and I thought it will
+1886000	1888000	lead to the emission
+1888000	1890000	of phonon or emission of photon
+1890000	1892000	and usually
+1892000	1894000	I would think
+1894000	1896000	recombination is bad
+1896000	1898000	for the current but here you are saying
+1898000	1900000	when you have
+1900000	1902000	smaller bias voltage
+1902000	1904000	the VT is smaller you
+1904000	1906000	actually have higher recombination
+1906000	1908000	energy, recombination
+1908000	1910000	current. Why does recombination
+1910000	1912000	contribute to a current?
+1912000	1914000	To a current?
+1914000	1916000	Or a current?
+1916000	1918000	So there are different
+1918000	1920000	recombination process, right? There's like
+1920000	1922000	I mentioned like there's a
+1922000	1924000	there's radiative recombination
+1924000	1926000	and there's OJ recombination.
+1926000	1928000	So they are all
+1928000	1930000	the consequence of electron hole.
+1930000	1932000	I mean OJ
+1932000	1934000	is the radiative
+1934000	1936000	in the shock wave hole is one electron one hole
+1936000	1938000	and they disappear.
+1938000	1940000	And the shock wave hole is
+1940000	1942000	you emit heat.
+1942000	1944000	Yeah, phonons.
+1944000	1946000	And the radiative is like you emit
+1946000	1948000	photon. And OJ
+1948000	1950000	is like you kick another carrier
+1950000	1952000	to a higher energy, right? So it's useless
+1952000	1954000	too, right? So
+1954000	1956000	not all. Okay, so wait, your question
+1956000	1958000	is, but here
+1958000	1960000	is showing the recombination is
+1960000	1962000	the blue line here, right? So when
+1962000	1964000	your lower VT is lower, when your
+1964000	1966000	higher VT it's
+1966000	1968000	higher.
+1968000	1970000	But, sorry, what
+1970000	1972000	was your question? My question is
+1972000	1974000	I, okay, I
+1974000	1976000	thought recombination
+1976000	1978000	is bad for your, for the current.
+1980000	1982000	Why?
+1982000	1984000	It's bad because
+1984000	1986000	it's
+1986000	1988000	I think some, well
+1988000	1990000	bad is kind of like a subjective, right?
+1990000	1992000	I would call it bad if
+1992000	1994000	I would call it
+1994000	1996000	this is a bad device if most of your
+1996000	1998000	recombination happens for
+1998000	2000000	happen in the way, the shock wave hole way
+2000000	2002000	or OJ, right? So the black
+2002000	2004000	and the red is bad because they don't
+2004000	2006000	produce photon, you don't
+2006000	2008000	produce light, then why are you
+2008000	2010000	recombining? So I think
+2010000	2012000	bad is, okay, it depends
+2012000	2014000	on which process you are
+2014000	2016000	looking at, right? I think
+2016000	2018000	the blue one is good because
+2018000	2020000	I see, I see, because you want a photon
+2020000	2022000	going, I see. Yeah.
+2022000	2024000	Okay. Yes, yes.
+2024000	2026000	Okay, and the relation between
+2026000	2028000	okay, maybe this is
+2028000	2030000	a bit specific, like OJ one
+2030000	2032000	the radiative one and
+2032000	2034000	the phonon one
+2034000	2036000	black, blue, and red.
+2036000	2038000	Are they always in this order?
+2038000	2040000	Won't they cross
+2040000	2042000	at some point if you have different lengths
+2042000	2044000	of the, I think
+2044000	2046000	this X means the size of your
+2046000	2048000	Yeah, because it looks like
+2048000	2050000	they always have red, blue, and black.
+2050000	2052000	Do they ever
+2052000	2054000	cross at some point?
+2054000	2056000	I think I was showing
+2056000	2058000	the interesting
+2058000	2060000	question because I was showing
+2060000	2062000	previously
+2062000	2064000	they have different
+2064000	2066000	relationship, right? So
+2066000	2068000	this is an ABC model
+2068000	2070000	where the
+2070000	2072000	shock wave we hold there is proportional to
+2072000	2074000	n plus p, and the radiative
+2074000	2076000	is n and p, and then
+2076000	2078000	the rate is proportional to n
+2078000	2080000	squared p. So
+2080000	2082000	I think if you engineer it
+2082000	2084000	smartly, you can
+2084000	2086000	control which one dominates.
+2086000	2088000	But somehow in this scenario
+2088000	2090000	the red one is always larger
+2090000	2092000	but if you look at the equation here
+2092000	2094000	it's n squared p
+2094000	2096000	so if you make the p much
+2096000	2098000	smaller, right now it's equally large
+2098000	2100000	n and p are super large both in here
+2100000	2102000	but the real device
+2102000	2104000	I think is more complicated
+2104000	2106000	and maybe in some
+2106000	2108000	way, smart way, you can
+2108000	2110000	shrink, make the blue
+2110000	2112000	dominant and the other two
+2112000	2114000	because relatively they are different, right?
+2114000	2116000	In this case
+2116000	2118000	the red are closer to blue
+2118000	2120000	but here you can see that
+2120000	2122000	the red and blue is farther away
+2122000	2124000	or yeah
+2124000	2126000	I think
+2126000	2128000	there's some way
+2128000	2130000	we can engineer it to make it
+2130000	2132000	some area the blue one
+2132000	2134000	will dominate, yeah.
+2140000	2142000	Is there any other questions?
+2142000	2144000	I have a question here.
+2146000	2148000	So I guess
+2148000	2150000	this case is simple enough
+2150000	2152000	I guess this is probably
+2152000	2154000	just your test case
+2154000	2156000	but this case is simple enough
+2156000	2158000	that you can also use semi-classical
+2158000	2160000	way to do a simulation
+2160000	2162000	so I'm just wondering
+2162000	2164000	how do they compare?
+2164000	2166000	So that's my next topic
+2166000	2168000	it's like comparing on
+2168000	2170000	this really small structure and then
+2170000	2172000	we are using a semi-classical way and also
+2172000	2174000	a quantum way to compute
+2174000	2176000	and then I will show some comparison
+2176000	2178000	here so I think that's the
+2178000	2180000	that will answer your question.
+2180000	2182000	Okay, great, yeah.
+2182000	2184000	So the next one as the question has
+2184000	2186000	elevated us
+2186000	2188000	to this point, so I'm going
+2188000	2190000	to talk about the comparison between the two, semi-classical
+2190000	2192000	and quantum
+2192000	2194000	and how do we compare, how do we make a fair comparison
+2194000	2196000	yes, that's an important question
+2196000	2198000	is that we use the same still
+2198000	2200000	the same small, like the structure I was
+2200000	2202000	showing here is like 20 nanometer
+2202000	2204000	so it's a super tiny structure
+2204000	2206000	and then I'm going to apply
+2206000	2208000	semi-classical method, a drip
+2208000	2210000	diffusion one and also
+2212000	2214000	for the quantum way I'm using
+2214000	2216000	this new method, the butycoprobe
+2216000	2218000	with recombinant generation method
+2218000	2220000	which is the tool our lab
+2220000	2222000	used to work on in grad school
+2222000	2224000	so if you guys are interested in applying for our group
+2224000	2226000	email me and I can give
+2226000	2228000	you more information
+2228000	2230000	so how do we compare this
+2230000	2232000	is that in all the transport
+2232000	2234000	simulation
+2236000	2238000	we're decoupling the transport part
+2238000	2240000	with the part, like
+2240000	2242000	electrostatic part, so we usually do a
+2242000	2244000	self-consistent, we solve for the
+2244000	2246000	where's the electron holes and given
+2246000	2248000	the electron holes and they have charge
+2248000	2250000	and therefore they will form a potential
+2250000	2252000	so we will feed back the carrier
+2252000	2254000	transport and plug it into Poisson
+2254000	2256000	and get a potential and like doing this
+2256000	2258000	like a hundred times or whatever
+2258000	2260000	it's converging, so it's like self-consistently
+2260000	2262000	solving, decouple the two
+2262000	2264000	and solve the Poisson
+2264000	2266000	and just keep on doing until it doesn't
+2266000	2268000	change anymore and then we declare
+2268000	2270000	this simulation is finished
+2270000	2272000	it's converged
+2272000	2274000	so to compare
+2274000	2276000	it's easy because we can
+2276000	2278000	just focus on this part and then for the
+2278000	2280000	carrier we can choose to use
+2280000	2282000	NEGF or we can choose the
+2282000	2284000	semi-classical way of doing it
+2284000	2286000	and when doing the semi-classical way
+2286000	2288000	we also choose to
+2288000	2290000	because Drift Diffusion, to solve these problems
+2290000	2292000	they usually have another quantum correction model
+2292000	2294000	where they are solving just
+2294000	2296000	a confined Schrodinger
+2296000	2298000	but NEGF is more like an open boundary
+2298000	2300000	open boundary Schrodinger
+2300000	2302000	equation, but like
+2302000	2304000	for semi-classical
+2304000	2306000	people, they usually will
+2306000	2308000	couple it with a quantum correction method
+2308000	2310000	which is solving Schrodinger
+2310000	2312000	inside an infinite
+2312000	2314000	quantum
+2314000	2316000	so they will have boundary, but solving Schrodinger
+2316000	2318000	only in that region and try to couple them
+2318000	2320000	together
+2320000	2322000	so the question to answer is
+2322000	2324000	how do we
+2324000	2326000	compare the quantum and semi-classical models
+2328000	2330000	and here is
+2330000	2332000	more of like showing
+2334000	2336000	so the left side is using
+2336000	2338000	the NEGF where
+2338000	2340000	we will have a band structure, right?
+2340000	2342000	we will have the band gap of
+2342000	2344000	I think this is around
+2344000	2346000	0.4 to
+2346000	2348000	so galenitride is like 3.4
+2348000	2350000	electron volts, and inside here
+2350000	2352000	there is like a quantum well
+2352000	2354000	so the actual
+2354000	2356000	will be galenitride
+2356000	2358000	and we assume that it is doped with 1E20
+2358000	2360000	and there is like a region of galenitride
+2360000	2362000	and that will have a smaller band gap
+2362000	2364000	and also the galenitride, and this is like
+2364000	2366000	the structure we are looking into
+2366000	2368000	and in NEGF
+2368000	2370000	we will provide like a
+2370000	2372000	total energy
+2372000	2374000	so the y-axis is the energy range
+2374000	2376000	so you know
+2376000	2378000	here are some states that can be
+2378000	2380000	so here the color means like the density
+2380000	2382000	of states, means like the carrier
+2382000	2384000	can have a possibility to go in
+2384000	2386000	there, but there is some portion of it
+2386000	2388000	like brighter, which means
+2388000	2390000	because of the interference, carrier
+2390000	2392000	doesn't have a
+2392000	2394000	even if you have carrier, it cannot go in
+2394000	2396000	here, so that's what the density of states
+2396000	2398000	means
+2398000	2400000	the NEGF we can provide
+2400000	2402000	is non-equilibrium throughout the entire
+2402000	2404000	device, which means the carrier
+2404000	2406000	doesn't have to follow Fermi-Dirac
+2406000	2408000	distribution everywhere
+2408000	2410000	also we can see that the states
+2410000	2412000	is broadened, so because
+2412000	2414000	you are in contact with the
+2414000	2416000	external source, therefore
+2416000	2418000	the state is broadened
+2418000	2420000	otherwise, if you solve
+2420000	2422000	this in the Schrodinger equation
+2422000	2424000	it's going to be confined
+2424000	2426000	like a
+2426000	2428000	the states is like, you know, it's not
+2428000	2430000	broadened, but here we can see that
+2430000	2432000	for example, quantum well here, it's not a
+2432000	2434000	compared to Schrodinger equation
+2434000	2436000	it's a fixed energy level, because
+2436000	2438000	you are in contact with the surrounding
+2438000	2440000	therefore there is a peak here
+2440000	2442000	and for the drift diffusion
+2442000	2444000	we can see that
+2444000	2446000	here
+2446000	2448000	drift diffusion
+2448000	2450000	equation assume that
+2450000	2452000	in everywhere there is a Fermi
+2452000	2454000	energy, right, and for this Fermi energy
+2454000	2456000	follows the Fermi distribution
+2456000	2458000	which means the carrier will
+2458000	2460000	be Fermi distribution everywhere
+2460000	2462000	with different Fermi energy
+2462000	2464000	and also
+2464000	2466000	we are solving the quantum
+2466000	2468000	using this Q-well method
+2468000	2470000	in ATLAS, which is solving Schrodinger equation
+2470000	2472000	here, so that's why we can have this
+2472000	2474000	red wave function
+2474000	2476000	square here, so that's the wave function
+2476000	2478000	form, and how is it solved? It's by solving
+2478000	2480000	Schrodinger equation only in this
+2480000	2482000	region, so we are defining
+2482000	2484000	a region where we want to solve this
+2484000	2486000	closed boundary Schrodinger
+2486000	2488000	equation, and we are trying to couple this
+2488000	2490000	to the drift diffusion methods
+2490000	2492000	and there is like several parameters
+2492000	2494000	for example, in a drift diffusion
+2494000	2496000	you have ABC
+2496000	2498000	parameters for the recombination
+2498000	2500000	like the circularity hole, the phonon
+2500000	2502000	the photon, and also the
+2502000	2504000	other ones, the OJ, so there is
+2504000	2506000	like the parameters for it, and we are using the same ABC
+2506000	2508000	and
+2508000	2510000	in drift diffusion, there is like a mobility
+2510000	2512000	term, where for
+2512000	2514000	NEGF is called self-energy, which is
+2514000	2516000	the scattering rates
+2516000	2518000	in the device, and that will, in a
+2518000	2520000	semi-classical way, that's called the mobility
+2520000	2522000	so we need to find
+2522000	2524000	a corresponding, oh given this mu
+2524000	2526000	what's the scattering rate in the device
+2526000	2528000	and therefore what's the self-energy we are using
+2528000	2530000	in NEGF, and
+2530000	2532000	for drift diffusion
+2532000	2534000	when you are, there is a density of
+2534000	2536000	states, and you are assuming
+2536000	2538000	you will
+2538000	2540000	get a carrier, so there is
+2540000	2542000	for different M
+2542000	2544000	for different effective mass, you
+2544000	2546000	correspond to different density of states, and therefore
+2546000	2548000	carrier, for
+2548000	2550000	NEGF we are using
+2550000	2552000	we can support tight binding
+2552000	2554000	different way
+2554000	2556000	to describe this EK
+2556000	2558000	relationship, so
+2558000	2560000	that's the corresponding, right
+2560000	2562000	we can also use effective mass, or we can use
+2562000	2564000	tight binding method, or KRP, or
+2564000	2566000	one-year functions
+2566000	2568000	so the basis
+2568000	2570000	there is a little bit different, in drift diffusion we can only support
+2570000	2572000	so this is how we
+2572000	2574000	couple them
+2574000	2576000	so
+2576000	2578000	I'm only going to show that
+2578000	2580000	the direct comparison
+2580000	2582000	from observable we can see
+2582000	2584000	so for example, on the right side
+2584000	2586000	this is showing
+2586000	2588000	the solid line is the drift diffusion
+2588000	2590000	result, and you can see that
+2590000	2592000	this is the carrier density across the device
+2592000	2594000	we have high electron on one side
+2594000	2596000	and we have high hole on the other side
+2596000	2598000	and they are penetrating into each
+2598000	2600000	into the other side
+2600000	2602000	and we can see that the drift diffusion
+2602000	2604000	here is much lower
+2604000	2606000	this is log scale, so it's like
+2606000	2608000	ten to the fifth, the five times
+2608000	2610000	smaller than the
+2610000	2612000	quantum transports method, right
+2612000	2614000	and the reason is
+2614000	2616000	understandable, because
+2616000	2618000	when you look into here
+2618000	2620000	the electron, you know
+2620000	2622000	the NEGF, you can
+2622000	2624000	what is it like, the
+2624000	2626000	when you bounce a ball to the wall, the semi-classical will bounce
+2626000	2628000	back, but quantum
+2628000	2630000	you can penetrate into the wall, right
+2630000	2632000	so you can see that analogy here
+2632000	2634000	where you still have some density
+2634000	2636000	of states inside the barrier
+2636000	2638000	where the semi-classical will just say
+2638000	2640000	there's nothing, you bounce
+2640000	2642000	into this wall and you will go back directly
+2642000	2644000	so this is like the ball analogy
+2644000	2646000	so that's why
+2646000	2648000	when you're doing quantum transport
+2648000	2650000	this carrier inside
+2650000	2652000	here is higher, much higher
+2652000	2654000	ten to the fifth time higher because of the
+2654000	2656000	penetration here
+2656000	2658000	but otherwise
+2658000	2660000	the potential is pretty
+2660000	2662000	matched here, but the carrier
+2662000	2664000	difference here will cause you
+2664000	2666000	to calculate the
+2666000	2668000	recombination rate different, right
+2668000	2670000	because you have higher density, therefore your
+2670000	2672000	recombination rate will be
+2672000	2674000	different, so that's why
+2674000	2676000	the potential looks
+2676000	2678000	the same between quantum way
+2678000	2680000	and semi-classical way, however
+2680000	2682000	the recombination rate calculated from
+2682000	2684000	which is a post-process
+2684000	2686000	using ABC model to predict
+2686000	2688000	oh, what's the OJ
+2688000	2690000	the photon and also the OJ related
+2690000	2692000	process, there's a huge difference
+2692000	2694000	at lower bias, you can see here
+2694000	2696000	the quantum way
+2696000	2698000	because you have more penetrated electrons
+2698000	2700000	for them to recombine
+2700000	2702000	therefore you have a much higher recombination rate
+2702000	2704000	and for higher bias
+2704000	2706000	they're pretty much similar
+2706000	2708000	but small difference here
+2708000	2710000	okay
+2710000	2712000	and this case
+2712000	2714000	before I was talking about a HOMO
+2714000	2716000	junction where we're using
+2716000	2718000	galenitride all across but with
+2718000	2720000	different doping, and here is a heterojunction
+2720000	2722000	where similar things
+2722000	2724000	are done, we're comparing
+2724000	2726000	the carrier
+2726000	2728000	density and we can see that oh, there's
+2728000	2730000	some difference here
+2730000	2732000	right, like the semi-classical
+2732000	2734000	we have a sharp discontinuity
+2734000	2736000	probably because we chose
+2736000	2738000	the boundary different but
+2738000	2740000	which part should we solve Schrodinger
+2740000	2742000	it's pretty subjective
+2742000	2744000	so I'm putting
+2744000	2746000	all the things here and seeing
+2746000	2748000	that there is an impact
+2748000	2750000	like with or without
+2750000	2752000	diffusion like, or any
+2752000	2754000	like what's the impact on carrier density
+2756000	2758000	and here
+2758000	2760000	trying to show the recombination with
+2760000	2762000	in this heterojunction, we can also see that
+2762000	2764000	because
+2764000	2766000	drift diffusion coupled with
+2766000	2768000	Schrodinger equation, therefore
+2768000	2770000	we can see that the recombination rate after
+2770000	2772000	doing this is pretty similar
+2772000	2774000	so
+2774000	2776000	I think this is like a
+2776000	2778000	positive side about drift diffusion, it's pretty fast
+2778000	2780000	and with coupling to like quantum
+2780000	2782000	correction, it's matching
+2782000	2784000	GF pretty well, so it's like
+2784000	2786000	also kind of giving confidence but also giving
+2786000	2788000	saying like oh, drift diffusion is not that bad
+2788000	2790000	like you can still
+2790000	2792000	quantumly correct it
+2792000	2794000	with solving Schrodinger impartial
+2794000	2796000	region
+2796000	2798000	and here I'm trying
+2798000	2800000	to show the I-V difference
+2800000	2802000	for a homojunction device
+2802000	2804000	so in a homojunction device, if you
+2804000	2806000	measure the I-V curve, and here
+2806000	2808000	the solid line is the drift diffusion, and the circle
+2808000	2810000	is the quantum well, and we can see
+2810000	2812000	that
+2812000	2814000	the off current
+2814000	2816000	there's like a larger difference
+2816000	2818000	between them, and if you
+2818000	2820000	have, if you compare the
+2820000	2822000	heterojunction device using the
+2822000	2824000	and there's some difference here
+2824000	2826000	and there, but just like
+2826000	2828000	providing the comparison here
+2828000	2830000	and this
+2830000	2832000	method, we can further
+2832000	2834000	you know, solving, we're
+2834000	2836000	enabling any GF to be able to
+2836000	2838000	solve like
+2838000	2840000	carrier generation, because we are
+2840000	2842000	injecting the, we can
+2842000	2844000	assume the light come in and
+2844000	2846000	producing electron hole and
+2846000	2848000	and give them, separate them
+2848000	2850000	to generate current here, right?
+2850000	2852000	So here's the simulation results like
+2852000	2854000	using any GF, and this is like the
+2854000	2856000	the first
+2856000	2858000	the first tool that we can cover
+2858000	2860000	all processes into, including
+2860000	2862000	generation, and then to enable a device
+2862000	2864000	simulation
+2864000	2866000	So here
+2866000	2868000	the summary, I kind of review
+2868000	2870000	different carrier transport method
+2870000	2872000	from BTE all the way to any
+2872000	2874000	GF, and providing the references there
+2874000	2876000	if you're interested, or can ask, email me
+2876000	2878000	for more information, and this
+2878000	2880000	is like, this work is to propose
+2880000	2882000	a really generic
+2882000	2884000	method for recombination
+2884000	2886000	generation process inside the
+2886000	2888000	any GF framework, so we're enabling
+2888000	2890000	any GF community to
+2890000	2892000	approach problem like recombination
+2892000	2894000	generation, and we
+2894000	2896000	show the importance, oh, for any GF
+2896000	2898000	with or without recombination, what's the
+2898000	2900000	difference, and why do we need it, and we
+2900000	2902000	also benchmark against like GF diffusion
+2902000	2904000	based TCAD tool, and to
+2904000	2906000	see that, we can see that the charge is different
+2906000	2908000	and with or without methods, and
+2908000	2910000	also we can show that there's
+2910000	2912000	tunneling and wave phenomena here
+2912000	2914000	and I know
+2914000	2916000	and lastly, if there's any
+2916000	2918000	study group, or
+2918000	2920000	want to discuss this, I think
+2920000	2922000	it's very helpful to discuss
+2922000	2924000	if you have any questions
+2924000	2926000	or any questions
+2926000	2928000	about this, you can email me
+2928000	2930000	yeah, okay
+2932000	2934000	is everyone still here?
+2934000	2936000	okay, still here, so let's
+2936000	2938000	first,
+2938000	2940000	everyone please turn on the mic
+2940000	2942000	to applaud, and thank the audience
+2946000	2948000	so now,
+2948000	2950000	do we have any questions?
+2950000	2952000	that you want to ask
+2952000	2954000	do we have any questions?
+2956000	2958000	if you have questions,
+2958000	2960000	just turn on the mic
+2960000	2962000	okay
+2962000	2964000	okay, I want to ask
+2964000	2966000	a question that's not
+2966000	2968000	that related
+2968000	2970000	I'm curious
+2970000	2972000	how long have you been at Intel?
+2972000	2974000	about
+2974000	2976000	a year
+2976000	2978000	so
+2978000	2980000	do you need
+2980000	2982000	when you're doing these simulations
+2982000	2984000	do you need to
+2984000	2986000	communicate with the people doing the experiments?
+2986000	2988000	some people
+2988000	2990000	some people
+2990000	2992000	this isn't my Intel work, this is my study group's work
+2992000	2994000	and Intel
+2994000	2996000	yeah, I think
+2996000	2998000	they'll communicate with
+2998000	3000000	the people doing the experiments
+3000000	3002000	for example, they have some data
+3002000	3004000	you take this
+3004000	3006000	simulation
+3006000	3008000	when you're taking these
+3008000	3010000	when you're explaining these simulations
+3010000	3012000	and communicating with the people doing the experiments
+3012000	3014000	do you feel like
+3014000	3016000	there's a gap?
+3016000	3018000	I think there is
+3018000	3020000	but I think they'll
+3020000	3022000	draw the problem to
+3022000	3024000	yeah, it's not
+3024000	3026000	if they're looking for you
+3026000	3028000	they might think
+3028000	3030000	this might be related
+3030000	3032000	so for example
+3032000	3034000	like
+3034000	3036000	when you're doing these simulations
+3036000	3038000	when you're discussing with the people doing the experiments
+3040000	3042000	can you compare with the people doing the experiments?
+3042000	3044000	or are there some
+3044000	3046000	trends
+3046000	3048000	when you're explaining the experiments
+3048000	3050000	how do you
+3050000	3052000	when you're discussing with the people doing the experiments
+3052000	3054000	how do you
+3054000	3056000	how do you
+3056000	3058000	work with the people doing the experiments?
+3058000	3060000	it's a bit abstract, I don't know how to explain it
+3060000	3062000	for example
+3062000	3064000	can you use these tools
+3064000	3066000	to explain their data?
+3066000	3068000	or can you provide
+3068000	3070000	based on this data
+3070000	3072000	maybe an improved direction
+3072000	3074000	is this doable?
+3074000	3076000	that kind of feeling
+3076000	3078000	sorry, it's a bit abstract
+3078000	3080000	I think it is
+3080000	3082000	let me use Boban as an example
+3082000	3084000	Boban's project
+3084000	3086000	people might say
+3086000	3088000	is it because of the recombination
+3088000	3090000	causing the current to get smaller or more
+3090000	3092000	if you make the defects level
+3092000	3094000	bigger or smaller
+3094000	3096000	I think it's more of a trend
+3096000	3098000	if you increase the defects
+3098000	3100000	can you see the curve
+3100000	3102000	100% match the experiment data
+3102000	3104000	but you might say
+3104000	3106000	if this phenomenon
+3106000	3108000	more defects, will my recombination rate get bigger or smaller?
+3108000	3110000	you can experiment
+3110000	3112000	experiment and simulate
+3112000	3114000	I think a lot of problems
+3114000	3116000	are not that
+3116000	3118000	you need to model
+3118000	3120000	to say it's really this phenomenon
+3120000	3122000	you might observe
+3122000	3124000	the current getting bigger
+3124000	3126000	but you don't know why
+3126000	3128000	you might say
+3128000	3130000	you can make this adjustment
+3130000	3132000	or add stress
+3132000	3134000	there are a lot of things you can change
+3134000	3136000	in simulation, there are a lot of parameters you can change
+3136000	3138000	you might adjust the defects level
+3138000	3140000	or adjust
+3140000	3142000	all kinds of parameters
+3142000	3144000	to confirm
+3144000	3146000	I think this feedback
+3146000	3148000	is quite important
+3148000	3150000	to identify
+3150000	3152000	if what you said is right
+3152000	3154000	I think you can verify
+3154000	3156000	if it's correct
+3158000	3160000	another question
+3160000	3162000	I know you are talking about
+3162000	3164000	what Boban did
+3164000	3166000	another question
+3166000	3168000	after you joined Intel
+3168000	3170000	do you think you are much better than Boban?
+3170000	3172000	I think I'm much better
+3172000	3174000	I feel
+3174000	3176000	much better
+3176000	3178000	so actually
+3178000	3180000	I think this thing
+3180000	3182000	is
+3182000	3184000	already
+3184000	3186000	considered
+3186000	3188000	a simple geometry
+3188000	3190000	but it can be
+3190000	3192000	considered as a real device
+3192000	3194000	quantity
+3194000	3196000	after you joined
+3196000	3198000	you will find
+3198000	3200000	there are a lot of differences
+3200000	3202000	it's just
+3202000	3204000	the research field is different
+3204000	3206000	I think the form
+3206000	3208000	is similar
+3208000	3210000	you mostly look at the paper
+3210000	3212000	and see what model you can use
+3212000	3214000	but I feel
+3214000	3216000	in Boban's case
+3216000	3218000	the professor tells you
+3218000	3220000	what to do
+3220000	3222000	it's more specific
+3222000	3224000	but in the company
+3224000	3226000	it's hard to say
+3228000	3230000	I want to say
+3230000	3232000	I'm also in the TK department
+3232000	3234000	I'm working at TSMC
+3238000	3240000	I actually
+3240000	3242000	know a bit about this field
+3242000	3244000	but now
+3244000	3246000	maybe I shouldn't ask
+3246000	3248000	my problem is
+3248000	3250000	when I talk to Boban
+3250000	3252000	he always says
+3252000	3254000	you are right
+3254000	3256000	these things
+3256000	3258000	need to be discussed
+3258000	3260000	I feel
+3260000	3262000	it's hard
+3262000	3264000	I don't know if Intel
+3264000	3266000	feels the same
+3266000	3268000	different companies
+3268000	3270000	might have different
+3270000	3272000	I won't
+3272000	3274000	I won't
+3274000	3276000	talk to an experimenter
+3276000	3278000	I might talk to an intermediary
+3278000	3280000	it's different
+3286000	3288000	any other questions?
+3292000	3294000	I want to ask
+3294000	3296000	the simulation
+3296000	3298000	looks simple
+3298000	3300000	and
+3300000	3302000	it looks like
+3302000	3304000	using Boltzmann's
+3304000	3306000	equation can be done
+3306000	3308000	even though you need
+3308000	3310000	some approximations
+3310000	3312000	but
+3312000	3314000	I'm thinking
+3314000	3316000	the advantage of this
+3316000	3318000	is it's more effective
+3318000	3320000	on more difficult
+3320000	3322000	devices
+3322000	3324000	but I feel
+3324000	3326000	in BTE
+3326000	3328000	let's say it's particles
+3328000	3330000	if it's particles
+3330000	3332000	can you simulate
+3332000	3334000	these details?
+3334000	3336000	you can't
+3336000	3338000	so if it's particles
+3338000	3340000	you're missing a lot of details
+3340000	3342000	but the result I'm showing
+3342000	3344000	is that some drift diffusion
+3344000	3346000	is a lot worse
+3346000	3348000	some are similar
+3348000	3350000	but
+3350000	3352000	I mean
+3352000	3354000	how do you know your future device
+3354000	3356000	when it's particles
+3356000	3358000	will you miss
+3358000	3360000	some important details
+3364000	3366000	I think BTE
+3366000	3368000	can't be replaced
+3368000	3370000	even in this small device
+3370000	3372000	you can't say BTE is correct
+3372000	3374000	did you say BTE or drift diffusion?
+3374000	3376000	drift diffusion
+3376000	3378000	you mean
+3378000	3380000	Monte Carlo solve BTE
+3380000	3382000	but even so
+3382000	3384000	like interference
+3384000	3386000	or tunneling
+3386000	3388000	BTE
+3388000	3390000	you can't figure it out
+3390000	3392000	you need a lot of correction models
+3392000	3394000	BTE is how to scatter particles
+3394000	3396000	you need to calculate
+3396000	3398000	you need to add a lot of calculations
+3398000	3400000	but NEG
+3400000	3402000	you throw the device in
+3402000	3404000	the result is
+3404000	3406000	low density of state
+3406000	3408000	there's a pattern
+3408000	3410000	but BTE can't figure it out
+3412000	3414000	I see
+3414000	3416000	but the pattern you drew
+3416000	3418000	is this equilibrium?
+3418000	3420000	like
+3420000	3422000	this is
+3422000	3424000	density of state
+3426000	3428000	what do you mean?
+3428000	3430000	density of state is
+3430000	3432000	density of state under equilibrium
+3434000	3436000	density of state and
+3436000	3438000	is it equilibrium are separate
+3438000	3440000	because density of state
+3440000	3442000	doesn't have so many states
+3442000	3444000	equilibrium means
+3444000	3446000	you have a distribution function
+3446000	3448000	Fermi-Dirac distribution
+3448000	3450000	the bottom is 1
+3450000	3452000	the top is 0
+3452000	3454000	so given this density of state
+3454000	3456000	you fill the Fermi-Dirac distribution
+3456000	3458000	drift diffusion
+3458000	3460000	means any device
+3460000	3462000	is Fermi-Dirac
+3464000	3466000	let me draw
+3466000	3468000	let me see
+3468000	3470000	which one is better
+3470000	3472000	like this
+3472000	3474000	drift diffusion
+3474000	3476000	you have a Fermi-Level
+3476000	3478000	this is Fermi-Level
+3478000	3480000	your distribution is
+3480000	3482000	this is 1 and this is 0
+3482000	3484000	this is distribution
+3484000	3486000	0 to 1
+3486000	3488000	any position
+3488000	3490000	is bound by Fermi-Level
+3490000	3492000	Fermi-Level is lower here
+3492000	3494000	Fermi-Level is lower here
+3494000	3496000	my distribution is like this
+3496000	3498000	to here
+3498000	3500000	there may be some small changes
+3500000	3502000	NEG means
+3502000	3504000	carrier distribution
+3504000	3506000	any place is not necessarily Fermi-Distribution
+3506000	3508000	you are very free
+3508000	3510000	particle you want to be higher
+3510000	3512000	you want to be lower
+3512000	3514000	your distribution may be like this
+3514000	3516000	not necessarily Fermi-Distribution
+3516000	3518000	but now we are bound by contact
+3518000	3520000	in the middle of the device
+3520000	3522000	is it
+3522000	3524000	how much will the distribution change
+3524000	3526000	your carrier is from the left
+3526000	3528000	your left is Fermi-Distribution
+3528000	3530000	right
+3530000	3532000	this is Fermi-Distribution
+3532000	3534000	but when your carrier
+3534000	3536000	travel to here
+3536000	3538000	will you change
+3538000	3540000	you bounce around
+3540000	3542000	bounce here
+3542000	3544000	you may not be Fermi-Distribution
+3544000	3546000	this is the advantage of NEG
+3546000	3548000	you will not be limited by drift diffusion
+3548000	3550000	you are bound
+3550000	3552000	you have to distribute like this
+3552000	3554000	understand
+3558000	3560000	ok
+3560000	3562000	any more questions
+3564000	3566000	if not
+3566000	3568000	I want to ask the last question
+3568000	3570000	you are
+3570000	3572000	in the second slide
+3572000	3574000	you talked about
+3574000	3576000	photon absorption
+3576000	3578000	your photon absorption
+3578000	3580000	is only in the middle
+3580000	3582000	in the middle
+3582000	3584000	junction
+3584000	3586000	or the whole system
+3586000	3588000	is affected by photon
+3588000	3590000	this is a toy model
+3590000	3592000	so I only hit
+3592000	3594000	the green area
+3594000	3596000	I should be
+3596000	3598000	later I will publish another paper
+3598000	3600000	but
+3600000	3602000	I assume
+3602000	3604000	only hit a certain area
+3604000	3606000	from here to here
+3606000	3608000	plus generation rate
+3608000	3610000	how do you
+3610000	3612000	deal with photon
+3612000	3614000	how do you
+3614000	3616000	deal with photon
+3616000	3618000	I didn't simulate photon
+3618000	3620000	because of photon
+3620000	3622000	the electrons and electrons
+3622000	3624000	will run out every second
+3624000	3626000	so I didn't simulate photon
+3626000	3628000	suppose photon is absorbed
+3628000	3630000	one photon
+3630000	3632000	you just
+3632000	3634000	move it up
+3634000	3636000	one photon
+3636000	3638000	suppose
+3638000	3640000	it moves up
+3640000	3642000	so I assume
+3642000	3644000	this band gap
+3644000	3646000	is 3.2eV
+3646000	3648000	or
+3648000	3650000	I don't know
+3650000	3652000	let's say 3eV
+3652000	3654000	assume
+3654000	3656000	a photon above 3eV
+3656000	3658000	comes in
+3658000	3660000	you can
+3660000	3662000	split carrier hole
+3662000	3664000	electron hole pair
+3664000	3666000	ok
+3666000	3668000	so you assume
+3668000	3670000	electron hole pair is split
+3670000	3672000	and start
+3672000	3674000	simulation
+3674000	3676000	ok, got it
+3680000	3682000	any questions?
+3684000	3686000	if not
+3686000	3688000	let's thank
+3688000	3690000	Guan Zhong
+3690000	3692000	thank you
+3692000	3694000	thank you
+3694000	3696000	I'll turn off the recording

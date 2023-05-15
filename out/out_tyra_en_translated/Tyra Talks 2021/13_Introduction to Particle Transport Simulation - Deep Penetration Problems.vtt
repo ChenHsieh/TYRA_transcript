@@ -1,0 +1,1793 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+The first TerraTalk in 2021, today is January 9th.
+
+00:10.000 --> 00:17.000
+We are very happy today to invite Dr. Wang Mengren to tell us about his topic today.
+
+00:17.000 --> 00:23.000
+His topic today is Introduction to Particle Transport Simulation Deep Penetration Problems.
+
+00:23.000 --> 00:27.000
+Before we start, let me introduce our speaker today.
+
+00:27.000 --> 00:29.000
+His name is Vince Mengren.
+
+00:29.000 --> 00:39.000
+He is a Research Scientist at the University of Utah.
+
+00:39.000 --> 00:42.000
+Let me introduce his background.
+
+00:42.000 --> 00:49.000
+He is a Research Scientist at the University of Utah.
+
+00:50.000 --> 00:59.000
+Before this, he got his PhD in Nuclear Engineering at Virginia Tech in 2019.
+
+00:59.000 --> 01:05.000
+His main research interest is Particle Transport Simulation.
+
+01:05.000 --> 01:07.000
+This is the topic he will talk about today.
+
+01:07.000 --> 01:11.000
+There is another topic that is not today's topic, but it is very cool.
+
+01:11.000 --> 01:16.000
+It is Robotic Arm Applications in Nuclear Industry.
+
+01:16.000 --> 01:19.000
+Obviously, you can't do anything by yourself.
+
+01:19.000 --> 01:21.000
+This is a very important application.
+
+01:21.000 --> 01:25.000
+There is a very special thing.
+
+01:25.000 --> 01:26.000
+This is our online speech.
+
+01:26.000 --> 01:28.000
+Let's give a round of applause to welcome our speaker.
+
+01:28.000 --> 01:32.000
+Please turn on the microphone so that our speaker can hear our applause.
+
+01:32.000 --> 01:40.000
+Let's give a round of applause to welcome Vince to give us a wonderful speech today.
+
+01:40.000 --> 01:41.000
+I'll leave it to you.
+
+01:41.000 --> 01:43.000
+Thank you, Ian.
+
+01:43.000 --> 01:47.000
+First of all, thank you all for coming to listen to my speech.
+
+01:47.000 --> 01:52.000
+My topic today is Introduction to Particle Transport Simulation.
+
+01:52.000 --> 01:56.000
+Basically, Particle Transport Simulation can be used in many ways.
+
+01:56.000 --> 02:00.000
+My main focus today is Deep Penetration Problem.
+
+02:00.000 --> 02:03.000
+I will introduce what Deep Penetration Problem is later.
+
+02:03.000 --> 02:07.000
+In fact, this chart has already told you some information.
+
+02:07.000 --> 02:12.000
+At first, I will talk about what Particle Transport is.
+
+02:12.000 --> 02:15.000
+Why do we need Particle Transport?
+
+02:15.000 --> 02:20.000
+Second, what are the main applications?
+
+02:20.000 --> 02:23.000
+I just said that Particle Transport has many applications.
+
+02:23.000 --> 02:26.000
+If I have to talk about everything, I won't be able to finish it in an hour.
+
+02:26.000 --> 02:28.000
+So I'm focusing on Deep Penetration Problem today.
+
+02:28.000 --> 02:30.000
+It's actually a shielding problem.
+
+02:30.000 --> 02:35.000
+Basically, you need to have a method to do this simulation.
+
+02:35.000 --> 02:37.000
+There is a Governing Equation behind it.
+
+02:37.000 --> 02:41.000
+Then you have to develop some methods to solve it.
+
+02:41.000 --> 02:44.000
+I will talk about what the mainstream methods are now.
+
+02:44.000 --> 02:46.000
+What are their advantages and disadvantages?
+
+02:46.000 --> 02:48.000
+What are some more advanced methods?
+
+02:48.000 --> 02:51.000
+Basically, I'm talking about Variance Reduction Techniques here.
+
+02:51.000 --> 02:55.000
+Finally, of course, I will give a Demonstration Problem.
+
+02:55.000 --> 02:57.000
+Finally, there is a Summary.
+
+02:57.000 --> 03:03.000
+Before we solve any problem,
+
+03:03.000 --> 03:06.000
+we have to talk about the Governing Equation behind it.
+
+03:06.000 --> 03:12.000
+The Governing Equation behind Particle Transport is the Boltzmann Transport Equation.
+
+03:12.000 --> 03:16.000
+You can see that the above equation looks very complicated.
+
+03:16.000 --> 03:18.000
+This is General Form.
+
+03:18.000 --> 03:20.000
+You have Time Dependent Terms.
+
+03:20.000 --> 03:23.000
+We talk about Particle Streaming.
+
+03:23.000 --> 03:26.000
+Your particle will be in Boundary Loss.
+
+03:26.000 --> 03:28.000
+Then you may have an extra position.
+
+03:28.000 --> 03:32.000
+For example, if you are an electrolyte, you may have magnetic force.
+
+03:33.000 --> 03:36.000
+Gravity is generally not considered.
+
+03:36.000 --> 03:38.000
+Because the particle is very small.
+
+03:38.000 --> 03:40.000
+Then you have Collision.
+
+03:40.000 --> 03:43.000
+The right side is basically Particle Gain.
+
+03:43.000 --> 03:48.000
+When we calculate the Particle Transport,
+
+03:48.000 --> 03:51.000
+We will talk about whether it is Lost or Gain.
+
+03:51.000 --> 03:53.000
+You can see that the left side is basically Lost.
+
+03:53.000 --> 03:54.000
+The right side is Gain.
+
+03:54.000 --> 03:59.000
+I won't focus too much on Mathematics.
+
+03:59.000 --> 04:03.000
+Because if you are not doing this field,
+
+04:03.000 --> 04:06.000
+Mathematics will take a long time to understand.
+
+04:06.000 --> 04:10.000
+The above is General Form.
+
+04:10.000 --> 04:12.000
+The following is basically
+
+04:12.000 --> 04:18.000
+If you need to do radiation transfer calculation.
+
+04:18.000 --> 04:20.000
+Calculate their mass.
+
+04:20.000 --> 04:22.000
+This is the Governing Equation we usually use.
+
+04:22.000 --> 04:24.000
+This is from the above equation.
+
+04:24.000 --> 04:28.000
+We talk about Steady State and Linear Boltzmann Equation.
+
+04:28.000 --> 04:31.000
+You can see that there is a word called Linear here.
+
+04:31.000 --> 04:33.000
+Steady State should not need to explain, everyone knows.
+
+04:33.000 --> 04:36.000
+Basically, what we mean by Linear here is
+
+04:36.000 --> 04:40.000
+For example, if you want to calculate the mass today.
+
+04:40.000 --> 04:43.000
+For example, I am Photon today.
+
+04:43.000 --> 04:45.000
+Photon will cause mass to me.
+
+04:45.000 --> 04:49.000
+Today I assume that there will be no effect between Photon and Photon.
+
+04:49.000 --> 04:51.000
+So this Linear is from here.
+
+04:51.000 --> 04:53.000
+So you can see here
+
+04:53.000 --> 04:55.000
+Basically, it only looks like once.
+
+04:55.000 --> 05:00.000
+This is the function we want to solve.
+
+05:00.000 --> 05:03.000
+We call it Flux.
+
+05:03.000 --> 05:05.000
+Basically, you can see that the above and below
+
+05:05.000 --> 05:08.000
+These two equations actually look a bit like.
+
+05:08.000 --> 05:10.000
+The only difference is that one is General Form.
+
+05:10.000 --> 05:14.000
+The other is Specifically.
+
+05:14.000 --> 05:17.000
+We are not too independent and it is Linear.
+
+05:17.000 --> 05:27.000
+We can explain a little bit about what this equation is doing.
+
+05:27.000 --> 05:29.000
+Just use this example.
+
+05:29.000 --> 05:31.000
+This example is basically if you go to the hospital.
+
+05:31.000 --> 05:34.000
+You often see these X-ray machines.
+
+05:34.000 --> 05:38.000
+This X-ray machine basically has a radiation source inside.
+
+05:38.000 --> 05:40.000
+The middle one is inside.
+
+05:40.000 --> 05:44.000
+Basically, a general X-ray machine is a beam of light.
+
+05:45.000 --> 05:49.000
+Basically, you can circle a boundary.
+
+05:49.000 --> 05:54.000
+If this beam of light runs out of this system.
+
+05:54.000 --> 05:56.000
+I don't think about it.
+
+05:56.000 --> 05:58.000
+Because it basically won't come back.
+
+05:58.000 --> 06:00.000
+Basically, my patient may be here.
+
+06:00.000 --> 06:03.000
+You basically have to estimate the number of patients.
+
+06:03.000 --> 06:06.000
+The beam of light that goes out here.
+
+06:06.000 --> 06:08.000
+I just talked about streaming.
+
+06:08.000 --> 06:11.000
+This beam of light has run out of this boundary.
+
+06:11.000 --> 06:15.000
+Basically, it is unlikely to hit back again.
+
+06:15.000 --> 06:18.000
+On the one hand, the energy you hit is getting lower and lower.
+
+06:18.000 --> 06:21.000
+Its path will be shorter and shorter.
+
+06:21.000 --> 06:24.000
+So this is basically a little bit.
+
+06:24.000 --> 06:26.000
+Just connect this equation.
+
+06:26.000 --> 06:28.000
+What is he talking about?
+
+06:28.000 --> 06:30.000
+Take advantage of this problem.
+
+06:30.000 --> 06:31.000
+OK.
+
+06:31.000 --> 06:34.000
+Speaking of Particle Transport.
+
+06:34.000 --> 06:36.000
+Its application is actually very wide.
+
+06:36.000 --> 06:41.000
+What I just talked about is a medical radiation device.
+
+06:41.000 --> 06:45.000
+Or a physical accelerator that is often used.
+
+06:45.000 --> 06:47.000
+You need to generate high energy particles.
+
+06:47.000 --> 06:50.000
+Basically, you know that when the electric field is turning.
+
+06:50.000 --> 06:52.000
+You will put the light out.
+
+06:52.000 --> 06:57.000
+Basically, you will need to design its radiation barrier.
+
+06:57.000 --> 06:58.000
+How do you design it?
+
+06:58.000 --> 07:01.000
+To make the staff at work.
+
+07:01.000 --> 07:06.000
+Don't let its dosage exceed the specified limit.
+
+07:06.000 --> 07:11.000
+Whether it's nuclear fusion or nuclear separation reaction.
+
+07:11.000 --> 07:13.000
+I basically need it.
+
+07:13.000 --> 07:15.000
+Nuclear fusion reaction, if you need a place.
+
+07:15.000 --> 07:18.000
+Basically, it's the same as I said.
+
+07:18.000 --> 07:20.000
+It's basically a high-energy particle.
+
+07:20.000 --> 07:21.000
+You cut it out again.
+
+07:21.000 --> 07:22.000
+It will emit light.
+
+07:22.000 --> 07:25.000
+Basically, you will have the same radiation barrier.
+
+07:25.000 --> 07:27.000
+The problem needs to be calculated.
+
+07:27.000 --> 07:29.000
+Nuclear separation reaction is no longer necessary.
+
+07:30.000 --> 07:33.000
+From the core to the radiation barrier outside.
+
+07:33.000 --> 07:36.000
+Basically, you need Particle Transport.
+
+07:36.000 --> 07:37.000
+Okay.
+
+07:37.000 --> 07:41.000
+Here is a brief introduction to Deep Penetration Problem.
+
+07:41.000 --> 07:43.000
+Basically, I just talked about Particle Transport.
+
+07:43.000 --> 07:44.000
+There are many applications.
+
+07:44.000 --> 07:48.000
+Basically, Deep Penetration Problem is radiation barrier calculation.
+
+07:48.000 --> 07:52.000
+How much radiation barrier material do you need?
+
+07:52.000 --> 07:54.000
+In front of your staff.
+
+07:54.000 --> 07:58.000
+Let your dosage reach the value you want.
+
+07:58.000 --> 07:59.000
+It's not too high.
+
+07:59.000 --> 08:02.000
+Basically, we talk about Deep Penetration Problem in academia.
+
+08:02.000 --> 08:04.000
+Why do we talk about Deep Penetration Problem?
+
+08:04.000 --> 08:06.000
+Because these particles need to go through.
+
+08:06.000 --> 08:10.000
+If it has to go through such a thick barrier.
+
+08:10.000 --> 08:12.000
+Basically, this calculation is not very easy.
+
+08:12.000 --> 08:15.000
+So basically, we talk about Deep Penetration Problem.
+
+08:15.000 --> 08:17.000
+Generally speaking, if you are talking about radiation barriers.
+
+08:17.000 --> 08:19.000
+We will have an interesting example.
+
+08:19.000 --> 08:21.000
+Basically, there are only three.
+
+08:21.000 --> 08:22.000
+Mainly the first two.
+
+08:22.000 --> 08:23.000
+Medium value and light value.
+
+08:23.000 --> 08:26.000
+Basically, there is time for electrons.
+
+08:26.000 --> 08:28.000
+Basically, when you need electrons.
+
+08:28.000 --> 08:31.000
+Most of them are in medical equipment.
+
+08:31.000 --> 08:34.000
+Medical radiation radiation source equipment.
+
+08:34.000 --> 08:36.000
+In the nuclear industry.
+
+08:36.000 --> 08:38.000
+Basically, we do not consider this.
+
+08:38.000 --> 08:39.000
+Because it is an electrolyte.
+
+08:39.000 --> 08:40.000
+Then it's light.
+
+08:40.000 --> 08:42.000
+It basically can't get out.
+
+08:42.000 --> 08:44.000
+And the nuclear industry is basically.
+
+08:44.000 --> 08:47.000
+The barriers you don't see are basically very thick.
+
+08:47.000 --> 08:48.000
+So these two.
+
+08:48.000 --> 08:49.000
+The first two are basically without electricity.
+
+08:49.000 --> 08:51.000
+So it's easier to get out.
+
+08:51.000 --> 08:54.000
+Basically.
+
+08:54.000 --> 08:55.000
+Basically, every calculation.
+
+08:55.000 --> 08:57.000
+You have to have his goal.
+
+08:57.000 --> 08:59.000
+Basically, we just talked about it.
+
+08:59.000 --> 09:02.000
+You have to protect the staff.
+
+09:02.000 --> 09:03.000
+And you have to calculate.
+
+09:03.000 --> 09:05.000
+Know how much your dosage is.
+
+09:05.000 --> 09:10.000
+Here I listed some of the general.
+
+09:10.000 --> 09:13.000
+The unit we will use for radiation.
+
+09:13.000 --> 09:16.000
+You can take a look.
+
+09:16.000 --> 09:19.000
+This is not directly related to the topic I am talking about today.
+
+09:19.000 --> 09:21.000
+Just mention it a little bit.
+
+09:21.000 --> 09:23.000
+You basically have some units.
+
+09:23.000 --> 09:27.000
+It is considered to be biological.
+
+09:27.000 --> 09:29.000
+Like these are what we usually use.
+
+09:29.000 --> 09:31.000
+Some of them are not.
+
+09:31.000 --> 09:33.000
+Because you have these different particles.
+
+09:33.000 --> 09:36.000
+It may cause damage to our human body.
+
+09:36.000 --> 09:37.000
+Will be different.
+
+09:37.000 --> 09:38.000
+Especially the seed.
+
+09:38.000 --> 09:40.000
+OK.
+
+09:40.000 --> 09:42.000
+Ok, then.
+
+09:42.000 --> 09:45.000
+If we take a system to do.
+
+09:45.000 --> 09:46.000
+Which one is.
+
+09:46.000 --> 09:47.000
+If there is a color system.
+
+09:47.000 --> 09:48.000
+Let's do it.
+
+09:48.000 --> 09:49.000
+For example.
+
+09:49.000 --> 09:51.000
+You can take this.
+
+09:52.000 --> 09:54.000
+This should be very necessary in Taiwan now.
+
+09:54.000 --> 09:55.000
+Because Taiwan is basically.
+
+09:55.000 --> 09:57.000
+Now the nuclear power plant is going to be established.
+
+09:57.000 --> 09:58.000
+You will have these radiation.
+
+09:58.000 --> 10:00.000
+In the process of loading the barrel.
+
+10:00.000 --> 10:01.000
+In the process of shipping.
+
+10:01.000 --> 10:03.000
+You basically have to.
+
+10:03.000 --> 10:06.000
+Calculate how much radiation it will protect.
+
+10:06.000 --> 10:08.000
+Basically, you can see.
+
+10:08.000 --> 10:10.000
+Here is the nuclear fuel inside.
+
+10:10.000 --> 10:12.000
+These nuclear fuels are basically.
+
+10:12.000 --> 10:15.000
+Burned in the reactor.
+
+10:15.000 --> 10:17.000
+I'm talking about burning here.
+
+10:17.000 --> 10:18.000
+Actually, it's not burning.
+
+10:18.000 --> 10:20.000
+It is nuclear transmutation.
+
+10:20.000 --> 10:22.000
+Yes, because basically the nuclear reaction.
+
+10:22.000 --> 10:25.000
+It's not the same as the general chemical reaction.
+
+10:25.000 --> 10:27.000
+Yes, basically you.
+
+10:27.000 --> 10:28.000
+Burned in the reactor.
+
+10:28.000 --> 10:31.000
+It's basically been activated.
+
+10:31.000 --> 10:33.000
+Is being activated.
+
+10:33.000 --> 10:34.000
+Then you basically.
+
+10:34.000 --> 10:36.000
+There may be these.
+
+10:36.000 --> 10:37.000
+These radiation.
+
+10:37.000 --> 10:39.000
+These radiation are basically.
+
+10:39.000 --> 10:40.000
+Spent nuclear.
+
+10:40.000 --> 10:41.000
+Is.
+
+10:41.000 --> 10:42.000
+Used nuclear fuel.
+
+10:42.000 --> 10:44.000
+Basically, it may be released.
+
+10:44.000 --> 10:46.000
+Basically, you can't just.
+
+10:46.000 --> 10:47.000
+Take it out.
+
+10:47.000 --> 10:48.000
+Then.
+
+10:48.000 --> 10:50.000
+Use people to operate.
+
+10:50.000 --> 10:52.000
+So basically it's all mechanical.
+
+10:52.000 --> 10:53.000
+Then put it in these barrels.
+
+10:53.000 --> 10:55.000
+These barrels are basically very thick.
+
+10:55.000 --> 10:57.000
+That light inside.
+
+10:57.000 --> 10:59.000
+Inside is the inner barrel.
+
+10:59.000 --> 11:00.000
+Basically, that steel.
+
+11:00.000 --> 11:02.000
+That stainless steel is basically.
+
+11:02.000 --> 11:04.000
+It's already 25 centimeters thick.
+
+11:04.000 --> 11:06.000
+So basically there is such a thick.
+
+11:06.000 --> 11:07.000
+There is such a thick.
+
+11:07.000 --> 11:08.000
+Radiation barrier.
+
+11:08.000 --> 11:09.000
+You basically have some particles.
+
+11:09.000 --> 11:11.000
+You don't need to think about it at all.
+
+11:11.000 --> 11:12.000
+For example, Alpha Particle.
+
+11:12.000 --> 11:13.000
+Alpha Particle.
+
+11:13.000 --> 11:14.000
+You are basically in the air.
+
+11:14.000 --> 11:16.000
+It's about five centimeters.
+
+11:16.000 --> 11:17.000
+So don't say you have.
+
+11:17.000 --> 11:18.000
+You have a little bit.
+
+11:18.000 --> 11:19.000
+Then Electron doesn't have to say.
+
+11:19.000 --> 11:21.000
+It is very light and has electricity.
+
+11:21.000 --> 11:22.000
+Then Neutrinos basically.
+
+11:22.000 --> 11:23.000
+It doesn't react with matter.
+
+11:23.000 --> 11:25.000
+So we don't consider it.
+
+11:25.000 --> 11:26.000
+So basically.
+
+11:26.000 --> 11:27.000
+Ah.
+
+11:27.000 --> 11:28.000
+We basically.
+
+11:28.000 --> 11:29.000
+You are in the nuclear industry.
+
+11:29.000 --> 11:30.000
+We have to calculate.
+
+11:30.000 --> 11:31.000
+Ah.
+
+11:31.000 --> 11:32.000
+If it's a measure.
+
+11:32.000 --> 11:34.000
+Basically, most of them are these two.
+
+11:34.000 --> 11:36.000
+And it's about 100%.
+
+11:36.000 --> 11:37.000
+The rest is basically.
+
+11:37.000 --> 11:39.000
+You can say it is negligible.
+
+11:39.000 --> 11:41.000
+It depends on the case.
+
+11:41.000 --> 11:42.000
+OK.
+
+11:42.000 --> 11:43.000
+So basically you can see that.
+
+11:43.000 --> 11:45.000
+Because we only.
+
+11:45.000 --> 11:48.000
+Only interested in this non-electric particle.
+
+11:48.000 --> 11:49.000
+So we just use this.
+
+11:49.000 --> 11:50.000
+Steady linear.
+
+11:50.000 --> 11:52.000
+Steady linear Boltzmann equation.
+
+11:52.000 --> 11:53.000
+Basically, you can use it directly.
+
+11:53.000 --> 11:54.000
+Ah.
+
+11:54.000 --> 11:55.000
+To do this calculation.
+
+11:55.000 --> 11:56.000
+OK.
+
+11:56.000 --> 11:57.000
+Ok.
+
+11:57.000 --> 11:58.000
+Then you want to do this calculation.
+
+11:58.000 --> 11:59.000
+The physical model behind you has developed well.
+
+11:59.000 --> 12:00.000
+It is.
+
+12:00.000 --> 12:01.000
+Ah.
+
+12:01.000 --> 12:02.000
+Transport equation.
+
+12:02.000 --> 12:04.000
+Basically, you basically have to.
+
+12:04.000 --> 12:06.000
+To solve this equation.
+
+12:06.000 --> 12:07.000
+Ah.
+
+12:07.000 --> 12:08.000
+But that equation.
+
+12:08.000 --> 12:09.000
+You just saw it.
+
+12:09.000 --> 12:10.000
+Basically, it has.
+
+12:10.000 --> 12:11.000
+Ah.
+
+12:11.000 --> 12:12.000
+If you expand all the variables.
+
+12:12.000 --> 12:13.000
+Include.
+
+12:13.000 --> 12:14.000
+If it includes time.
+
+12:14.000 --> 12:15.000
+It has seven variables.
+
+12:15.000 --> 12:16.000
+Ah.
+
+12:16.000 --> 12:17.000
+XYZ.
+
+12:17.000 --> 12:18.000
+Ah.
+
+12:18.000 --> 12:19.000
+Then the energy.
+
+12:19.000 --> 12:20.000
+Then the angle.
+
+12:20.000 --> 12:21.000
+Is the particle.
+
+12:21.000 --> 12:22.000
+What angle does it shoot?
+
+12:22.000 --> 12:23.000
+Then.
+
+12:23.000 --> 12:24.000
+There are basically two angles.
+
+12:24.000 --> 12:25.000
+It has.
+
+12:25.000 --> 12:26.000
+Ah.
+
+12:26.000 --> 12:27.000
+Z-multiple and polar.
+
+12:27.000 --> 12:28.000
+And then.
+
+12:28.000 --> 12:29.000
+It also has time.
+
+12:29.000 --> 12:30.000
+Basically, there are seven.
+
+12:30.000 --> 12:31.000
+Then it.
+
+12:31.000 --> 12:32.000
+That.
+
+12:32.000 --> 12:33.000
+That.
+
+12:33.000 --> 12:34.000
+That.
+
+12:34.000 --> 12:35.000
+That.
+
+12:35.000 --> 12:36.000
+That.
+
+12:36.000 --> 12:37.000
+That.
+
+12:37.000 --> 12:38.000
+That.
+
+12:38.000 --> 12:39.000
+That.
+
+12:39.000 --> 12:40.000
+That.
+
+12:40.000 --> 12:41.000
+That.
+
+12:41.000 --> 12:42.000
+That.
+
+12:42.000 --> 12:43.000
+That.
+
+12:43.000 --> 12:44.000
+That.
+
+12:44.000 --> 12:45.000
+That.
+
+12:45.000 --> 12:46.000
+That.
+
+12:46.000 --> 12:47.000
+That.
+
+12:47.000 --> 12:48.000
+That.
+
+12:48.000 --> 12:49.000
+That.
+
+12:49.000 --> 12:50.000
+That.
+
+12:50.000 --> 12:51.000
+That.
+
+12:51.000 --> 12:52.000
+Ah.
+
+12:52.000 --> 12:53.000
+Ah.
+
+12:53.000 --> 12:54.000
+Ah.
+
+12:54.000 --> 12:55.000
+Ah, basically, you can only solve the number.
+
+12:55.000 --> 12:56.000
+So, basically, the number is.
+
+12:56.000 --> 12:57.000
+This is the first deterministic model here.
+
+12:57.000 --> 12:58.000
+You really have to go.
+
+12:58.000 --> 12:59.000
+This equation.
+
+12:59.000 --> 13:00.000
+Break it down one piece at a time.
+
+13:00.000 --> 13:01.000
+Then you can see it has a lot of.
+
+13:01.000 --> 13:02.000
+It is a square of space.
+
+13:02.000 --> 13:03.000
+It is XYZ.
+
+13:03.000 --> 13:04.000
+You have to break everything down.
+
+13:04.000 --> 13:05.000
+And then you have to break down the energy.
+
+13:05.000 --> 13:06.000
+And then there are two parts of the angle.
+
+13:06.000 --> 13:07.000
+You have to break down.
+
+13:07.000 --> 13:08.000
+So, this is basically a module.
+
+13:09.000 --> 13:10.000
+It is a very difficult process.
+
+13:10.000 --> 13:11.000
+There is another method.
+
+13:11.000 --> 13:12.000
+It is basically a Monte Carlo method.
+
+13:12.000 --> 13:13.000
+You can put this whole.
+
+13:13.000 --> 13:14.000
+You can use this method.
+
+13:14.000 --> 13:15.000
+Basically, you can.
+
+13:15.000 --> 13:16.000
+You do not have to go directly.
+
+13:16.000 --> 13:17.000
+The one who solved the equation.
+
+13:17.000 --> 13:18.000
+You basically, we are.
+
+13:18.000 --> 13:19.000
+All the physical processes.
+
+13:19.000 --> 13:20.000
+Turn it into a probability function.
+
+13:20.000 --> 13:21.000
+Then go down to do the signal.
+
+13:21.000 --> 13:22.000
+Basically, these two methods.
+
+13:22.000 --> 13:23.000
+It has good and bad.
+
+13:23.000 --> 13:24.000
+So, basically, I am now.
+
+13:24.000 --> 13:25.000
+I will talk about it next.
+
+13:25.000 --> 13:26.000
+Where is it good and bad?
+
+13:26.000 --> 13:27.000
+And why is it bad?
+
+13:27.000 --> 13:28.000
+Because it is a.
+
+13:28.000 --> 13:29.000
+It is a, it is a, it is a, it is a, it is a.
+
+13:29.000 --> 13:30.000
+It is a, it is a, it is a, it is a.
+
+13:30.000 --> 13:38.000
+It is a, it is a, it is a.
+
+13:38.000 --> 13:48.000
+It is a, it is a, it is a.
+
+13:48.000 --> 13:58.000
+It is a, it is a, it is a.
+
+13:58.000 --> 14:08.000
+It is a, it is a, it is a.
+
+14:08.000 --> 14:18.000
+It is a, it is a, it is a.
+
+14:18.000 --> 14:28.000
+It is a, it is a, it is a.
+
+14:28.000 --> 14:38.000
+It is a, it is a, it is a.
+
+14:38.000 --> 14:46.000
+It is a, it is a.
+
+14:46.000 --> 14:56.000
+It is a, it is a.
+
+14:56.000 --> 15:06.000
+It is a, it is a, it is a.
+
+15:06.000 --> 15:16.000
+It is a, it is a.
+
+15:16.000 --> 15:26.000
+It is a, it is a.
+
+15:26.000 --> 15:36.000
+It is a, it is a.
+
+15:36.000 --> 15:46.000
+It is a, it is a.
+
+15:46.000 --> 15:56.000
+It is a, it is a.
+
+15:56.000 --> 16:06.000
+It is a, it is a.
+
+16:06.000 --> 16:16.000
+It is a, it is a.
+
+16:16.000 --> 16:26.000
+It is a, it is a.
+
+16:26.000 --> 16:36.000
+It is a, it is a.
+
+16:36.000 --> 16:46.000
+It is a, it is a.
+
+16:46.000 --> 16:56.000
+It is a, it is a.
+
+16:56.000 --> 17:06.000
+It is a, it is a.
+
+17:06.000 --> 17:16.000
+It is a, it is a.
+
+17:16.000 --> 17:26.000
+It is a, it is a.
+
+17:26.000 --> 17:36.000
+It is a, it is a.
+
+17:36.000 --> 17:46.000
+It is a, it is a.
+
+17:46.000 --> 17:56.000
+It is a, it is a.
+
+17:56.000 --> 18:06.000
+It is a, it is a.
+
+18:06.000 --> 18:16.000
+It is a, it is a.
+
+18:16.000 --> 18:26.000
+It is a, it is a.
+
+18:26.000 --> 18:36.000
+It is a, it is a.
+
+18:36.000 --> 18:46.000
+It is a, it is a.
+
+18:46.000 --> 18:56.000
+It is a, it is a.
+
+18:56.000 --> 19:06.000
+It is a, it is a.
+
+19:06.000 --> 19:16.000
+It is a, it is a.
+
+19:16.000 --> 19:26.000
+It is a, it is a.
+
+19:26.000 --> 19:36.000
+It is a, it is a.
+
+19:36.000 --> 19:46.000
+It is a, it is a.
+
+19:46.000 --> 19:56.000
+It is a, it is a.
+
+19:56.000 --> 20:06.000
+It is a, it is a.
+
+20:06.000 --> 20:16.000
+It is a, it is a.
+
+20:16.000 --> 20:26.000
+It is a, it is a.
+
+20:26.000 --> 20:36.000
+It is a, it is a.
+
+20:36.000 --> 20:46.000
+It is a, it is a.
+
+20:46.000 --> 20:56.000
+It is a, it is a.
+
+20:56.000 --> 21:06.000
+It is a, it is a.
+
+21:06.000 --> 21:16.000
+It is a, it is a.
+
+21:16.000 --> 21:26.000
+It is a, it is a.
+
+21:26.000 --> 21:36.000
+It is a, it is a.
+
+21:36.000 --> 21:46.000
+It is a, it is a.
+
+21:46.000 --> 21:56.000
+It is a, it is a.
+
+21:56.000 --> 22:06.000
+It is a, it is a.
+
+22:06.000 --> 22:16.000
+It is a, it is a.
+
+22:16.000 --> 22:26.000
+It is a, it is a.
+
+22:26.000 --> 22:36.000
+It is a, it is a.
+
+22:36.000 --> 22:46.000
+It is a, it is a.
+
+22:46.000 --> 22:56.000
+It is a, it is a.
+
+22:56.000 --> 23:06.000
+It is a, it is a.
+
+23:06.000 --> 23:16.000
+It is a.
+
+23:16.000 --> 23:26.000
+It is a, it is a.
+
+23:26.000 --> 23:36.000
+It is a, it is a.
+
+23:36.000 --> 23:46.000
+It is a, it is a.
+
+23:46.000 --> 23:56.000
+It is a, it is a.
+
+23:56.000 --> 24:06.000
+It is a, it is a.
+
+24:06.000 --> 24:16.000
+It is a, it is a.
+
+24:16.000 --> 24:26.000
+It is a, it is a.
+
+24:26.000 --> 24:36.000
+It is a, it is a.
+
+24:36.000 --> 24:46.000
+It is a, it is a.
+
+24:46.000 --> 24:56.000
+It is a, it is a.
+
+24:56.000 --> 25:06.000
+It is a, it is a.
+
+25:06.000 --> 25:16.000
+It is a, it is a.
+
+25:16.000 --> 25:26.000
+It is a, it is a.
+
+25:26.000 --> 25:36.000
+It is a, it is a.
+
+25:36.000 --> 25:46.000
+It is a, it is a.
+
+25:46.000 --> 25:56.000
+It is a, it is a.
+
+25:56.000 --> 26:06.000
+It is a, it is a.
+
+26:06.000 --> 26:16.000
+It is a, it is a.
+
+26:16.000 --> 26:26.000
+It is a, it is a.
+
+26:26.000 --> 26:36.000
+It is a, it is a.
+
+26:36.000 --> 26:46.000
+It is a, it is a.
+
+26:46.000 --> 26:56.000
+It is a, it is a.
+
+26:56.000 --> 27:06.000
+It is a, it is a.
+
+27:06.000 --> 27:14.000
+It is a, it is a.
+
+27:14.000 --> 27:22.000
+It is a, it is a.
+
+27:22.000 --> 27:30.000
+It is a, it is a.
+
+27:30.000 --> 27:40.000
+It is a, it is a.
+
+27:40.000 --> 27:50.000
+It is a, it is a.
+
+27:50.000 --> 28:00.000
+It is a, it is a.
+
+28:00.000 --> 28:10.000
+It is a, it is a.
+
+28:10.000 --> 28:20.000
+It is a, it is a.
+
+28:20.000 --> 28:30.000
+It is a, it is a.
+
+28:30.000 --> 28:40.000
+It is a, it is a.
+
+28:40.000 --> 28:50.000
+It is a, it is a.
+
+28:50.000 --> 29:00.000
+It is a, it is a.
+
+29:00.000 --> 29:10.000
+It is a, it is a.
+
+29:10.000 --> 29:18.000
+It is a, it is a.
+
+29:18.000 --> 29:26.000
+It is a, it is a.
+
+29:26.000 --> 29:34.000
+It is a, it is a.
+
+29:34.000 --> 29:44.000
+It is a, it is a.
+
+29:44.000 --> 29:54.000
+It is a, it is a.
+
+29:54.000 --> 30:04.000
+It is a, it is a.
+
+30:04.000 --> 30:14.000
+It is a, it is a.
+
+30:14.000 --> 30:24.000
+It is a, it is a.
+
+30:24.000 --> 30:34.000
+It is a, it is a.
+
+30:34.000 --> 30:44.000
+It is a, it is a.
+
+30:44.000 --> 30:54.000
+It is a, it is a.
+
+30:54.000 --> 31:04.000
+It is a, it is a.
+
+31:04.000 --> 31:14.000
+It is a, it is a.
+
+31:14.000 --> 31:24.000
+It is a, it is a.
+
+31:24.000 --> 31:34.000
+It is a, it is a.
+
+31:34.000 --> 31:44.000
+It is a, it is a.
+
+31:44.000 --> 31:54.000
+It is a, it is a.
+
+31:54.000 --> 32:04.000
+It is a, it is a.
+
+32:04.000 --> 32:14.000
+It is a, it is a.
+
+32:14.000 --> 32:24.000
+It is a, it is a.
+
+32:24.000 --> 32:34.000
+It is a, it is a.
+
+32:34.000 --> 32:44.000
+It is a, it is a.
+
+32:44.000 --> 32:54.000
+It is a, it is a.
+
+32:54.000 --> 33:04.000
+It is a, it is a.
+
+33:04.000 --> 33:14.000
+It is a, it is a.
+
+33:14.000 --> 33:24.000
+It is a, it is a.
+
+33:24.000 --> 33:34.000
+It is a, it is a.
+
+33:34.000 --> 33:44.000
+It is a, it is a.
+
+33:44.000 --> 33:54.000
+It is a, it is a.
+
+33:54.000 --> 34:04.000
+It is a, it is a.
+
+34:04.000 --> 34:14.000
+It is a, it is a.
+
+34:14.000 --> 34:24.000
+It is a, it is a.
+
+34:24.000 --> 34:34.000
+It is a, it is a.
+
+34:34.000 --> 34:44.000
+It is a, it is a.
+
+34:44.000 --> 34:54.000
+It is a, it is a.
+
+34:54.000 --> 35:04.000
+It is a, it is a.
+
+35:04.000 --> 35:14.000
+It is a, it is a.
+
+35:14.000 --> 35:24.000
+It is a, it is a.
+
+35:24.000 --> 35:34.000
+It is a, it is a.
+
+35:34.000 --> 35:44.000
+It is a, it is a.
+
+35:44.000 --> 35:54.000
+It is a, it is a.
+
+35:54.000 --> 36:04.000
+It is a, it is a.
+
+36:04.000 --> 36:14.000
+It is a, it is a.
+
+36:14.000 --> 36:24.000
+It is a, it is a.
+
+36:24.000 --> 36:34.000
+It is a, it is a.
+
+36:34.000 --> 36:44.000
+It is a, it is a.
+
+36:44.000 --> 36:54.000
+It is a, it is a.
+
+36:54.000 --> 37:04.000
+It is a, it is a.
+
+37:04.000 --> 37:14.000
+It is a, it is a.
+
+37:14.000 --> 37:24.000
+It is a, it is a.
+
+37:24.000 --> 37:34.000
+It is a, it is a.
+
+37:34.000 --> 37:44.000
+It is a, it is a.
+
+37:44.000 --> 37:54.000
+It is a, it is a.
+
+37:54.000 --> 38:04.000
+It is a, it is a.
+
+38:04.000 --> 38:14.000
+It is a, it is a.
+
+38:14.000 --> 38:24.000
+It is a, it is a.
+
+38:24.000 --> 38:34.000
+It is a, it is a.
+
+38:34.000 --> 38:44.000
+It is a, it is a.
+
+38:44.000 --> 38:54.000
+It is a, it is a.
+
+38:54.000 --> 39:04.000
+It is a, it is a.
+
+39:04.000 --> 39:14.000
+It is a, it is a.
+
+39:14.000 --> 39:24.000
+It is a, it is a.
+
+39:24.000 --> 39:34.000
+It is a, it is a.
+
+39:34.000 --> 39:44.000
+It is a, it is a.
+
+39:44.000 --> 39:54.000
+It is a, it is a.
+
+39:54.000 --> 40:04.000
+It is a, it is a.
+
+40:04.000 --> 40:14.000
+It is a, it is a.
+
+40:14.000 --> 40:24.000
+It is a, it is a.
+
+40:24.000 --> 40:34.000
+It is a, it is a.
+
+40:34.000 --> 40:44.000
+It is a, it is a.
+
+40:44.000 --> 40:54.000
+It is a, it is a.
+
+40:54.000 --> 41:04.000
+It is a, it is a.
+
+41:04.000 --> 41:14.000
+It is a, it is a.
+
+41:14.000 --> 41:24.000
+It is a, it is a.
+
+41:24.000 --> 41:34.000
+It is a, it is a.
+
+41:34.000 --> 41:44.000
+It is a, it is a.
+
+41:44.000 --> 41:54.000
+It is a, it is a.
+
+41:54.000 --> 42:04.000
+It is a, it is a.
+
+42:04.000 --> 42:14.000
+It is a, it is a.
+
+42:14.000 --> 42:24.000
+It is a, it is a.
+
+42:24.000 --> 42:34.000
+It is a, it is a.
+
+42:34.000 --> 42:44.000
+It is a, it is a.
+
+42:44.000 --> 42:54.000
+It is a, it is a.
+
+42:54.000 --> 43:04.000
+It is a, it is a.
+
+43:04.000 --> 43:14.000
+It is a, it is a.
+
+43:14.000 --> 43:24.000
+It is a, it is a.
+
+43:24.000 --> 43:34.000
+It is a, it is a.
+
+43:34.000 --> 43:44.000
+It is a, it is a.
+
+43:44.000 --> 43:54.000
+It is a, it is a.
+
+43:54.000 --> 44:04.000
+It is a, it is a.
+
+44:04.000 --> 44:14.000
+It is a, it is a.
+
+44:14.000 --> 44:24.000
+It is a, it is a.
+
+44:24.000 --> 44:34.000
+It is a, it is a.
+
+44:34.000 --> 44:44.000
+It is a.
+
+44:44.000 --> 44:54.000
+It is a.
+
+44:54.000 --> 45:04.000
+It is a.
+
+45:04.000 --> 45:14.000
+It is a.
+
+45:14.000 --> 45:24.000
+It is a.
+
+45:24.000 --> 45:34.000
+It is a.
+
+45:34.000 --> 45:44.000
+It is a.
+
+45:44.000 --> 45:54.000
+It is a.
+
+45:54.000 --> 46:04.000
+It is a.
+
+46:04.000 --> 46:14.000
+It is a.
+
+46:14.000 --> 46:24.000
+It is a.
+
+46:24.000 --> 46:34.000
+It is a.
+
+46:34.000 --> 46:44.000
+It is a.
+
+46:44.000 --> 46:54.000
+It is a.
+
+46:54.000 --> 47:04.000
+It is a.
+
+47:04.000 --> 47:14.000
+It is a.
+
+47:14.000 --> 47:24.000
+It is a.
+
+47:24.000 --> 47:34.000
+It is a.
+
+47:34.000 --> 47:44.000
+It is a.
+
+47:44.000 --> 47:54.000
+It is a.
+
+47:54.000 --> 48:04.000
+It is a.
+
+48:04.000 --> 48:14.000
+It is a.
+
+48:14.000 --> 48:24.000
+It is a.
+
+48:24.000 --> 48:34.000
+It is a.
+
+48:34.000 --> 48:44.000
+It is a.
+
+48:44.000 --> 48:54.000
+It is a.
+
+48:54.000 --> 49:04.000
+It is a.
+
+49:04.000 --> 49:14.000
+It is a.
+
+49:14.000 --> 49:24.000
+It is a.
+
+49:24.000 --> 49:34.000
+It is a.
+
+49:34.000 --> 49:44.000
+It is a.
+
+49:44.000 --> 49:54.000
+It is a.
+
+49:54.000 --> 50:04.000
+It is a.
+
+50:04.000 --> 50:14.000
+It is a.
+
+50:14.000 --> 50:24.000
+It is a.
+
+50:24.000 --> 50:34.000
+It is a.
+
+50:34.000 --> 50:44.000
+It is a.
+
+50:44.000 --> 50:54.000
+It is a.
+
+50:54.000 --> 51:04.000
+It is a.
+
+51:04.000 --> 51:04.000
+
+

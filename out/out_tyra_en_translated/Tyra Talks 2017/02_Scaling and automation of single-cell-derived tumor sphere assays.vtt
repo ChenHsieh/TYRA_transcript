@@ -1,0 +1,4511 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+My PhD research is mainly in microfluidics for single-cell analysis.
+
+00:09.000 --> 00:14.000
+In the content of biology, I mainly focus on cancer research.
+
+00:14.000 --> 00:22.000
+Because we generally believe that in cancer, the heterogeneity between cells is stronger.
+
+00:22.000 --> 00:31.000
+For example, when we treat cancer, there will always be some antibody cells that can be used for therapy.
+
+00:31.000 --> 00:37.000
+So if we can use single-cell analysis to see the different characteristics of each cell,
+
+00:37.000 --> 00:42.000
+and find those antibodies to lock them in for treatment,
+
+00:42.000 --> 00:47.000
+we believe that it can improve the efficacy of the treatment.
+
+00:48.000 --> 00:53.000
+My research is divided into two parts.
+
+00:53.000 --> 00:59.000
+The first part is the phenotypic assay, which I will share with you today.
+
+00:59.000 --> 01:02.000
+The second part is also what I'm doing now.
+
+01:02.000 --> 01:07.000
+Because I haven't published the paper yet, so I haven't put it up here yet.
+
+01:07.000 --> 01:11.000
+But the whole direction is like what Jake just introduced.
+
+01:11.000 --> 01:15.000
+As a sample preparation chip,
+
+01:15.000 --> 01:23.000
+we can extract circulating tumor cells from the patient's blood.
+
+01:23.000 --> 01:29.000
+We get gene expression information from the cancer cells in the blood.
+
+01:29.000 --> 01:33.000
+This gene expression information can let us know
+
+01:33.000 --> 01:39.000
+what kind of drugs we can use to treat these patients to get better results.
+
+01:39.000 --> 01:42.000
+For now, to get this gene expression information,
+
+01:42.000 --> 01:47.000
+we usually use the whole flow of chips.
+
+01:47.000 --> 01:51.000
+In other words, we need to use a knife.
+
+01:51.000 --> 01:55.000
+It's more invasive, and the cost will be higher.
+
+01:55.000 --> 02:01.000
+Today, I will share with you the phenotypic assay.
+
+02:01.000 --> 02:06.000
+In the technology development, I mainly focus on scaling and automation
+
+02:06.000 --> 02:10.000
+in the high-throughput single-cell device sphere assays.
+
+02:10.000 --> 02:16.000
+First, I will tell you why we want to do this tumor sphere assay.
+
+02:16.000 --> 02:20.000
+In fact, the purpose is to study these tumor-initiating cells.
+
+02:20.000 --> 02:23.000
+In this process, I will share with you
+
+02:23.000 --> 02:29.000
+why we need to scale up this assay and automate this assay.
+
+02:29.000 --> 02:34.000
+Next, I will tell you how I enable this thing.
+
+02:34.000 --> 02:40.000
+Then, I will use some experiments to show you the functions of my chip.
+
+02:40.000 --> 02:44.000
+Finally, I will conclude my presentation today.
+
+02:45.000 --> 02:46.000
+OK.
+
+02:46.000 --> 02:51.000
+So, our motivation is to study these so-called cancer stem-like cells.
+
+02:51.000 --> 02:54.000
+Our recent research shows that
+
+02:54.000 --> 02:59.000
+there is a relatively small number of tumor-initiating cells.
+
+02:59.000 --> 03:01.000
+They are called cancer stem cells.
+
+03:01.000 --> 03:06.000
+Some people think the term cancer stem cells is too strong.
+
+03:06.000 --> 03:09.000
+They prefer to call them cancer stem-like cells.
+
+03:09.000 --> 03:12.000
+In fact, it is a biological mutation.
+
+03:12.000 --> 03:15.000
+They are a group of antibodies
+
+03:15.000 --> 03:19.000
+with some stem cell-specific cancer cells.
+
+03:19.000 --> 03:22.000
+This tissue group has some characteristics.
+
+03:22.000 --> 03:26.000
+The first one is that it has a relatively strong chemoresistance.
+
+03:26.000 --> 03:28.000
+It will cause tumor relapse.
+
+03:28.000 --> 03:32.000
+In this picture, you can see that this is a primitive tumor.
+
+03:32.000 --> 03:35.000
+The yellow one is CSC, cancer stem cell.
+
+03:35.000 --> 03:38.000
+The blue ones are normal cancer cells.
+
+03:38.000 --> 03:42.000
+If we use traditional cancer treatment,
+
+03:42.000 --> 03:45.000
+these ordinary cells can be removed.
+
+03:45.000 --> 03:51.000
+So, we can see that the tumor size is reduced in clinical trials.
+
+03:51.000 --> 03:54.000
+But what we can't see is this cancer stem cell.
+
+03:54.000 --> 03:57.000
+It has a way to stay quiescent
+
+03:57.000 --> 04:00.000
+and not be affected by the drug.
+
+04:00.000 --> 04:02.000
+After we stop giving drugs,
+
+04:02.000 --> 04:05.000
+the tumor relapse occurs.
+
+04:05.000 --> 04:08.000
+So, in the research scope of CSC,
+
+04:08.000 --> 04:12.000
+we hope to find cancer stem cell-specific therapy.
+
+04:12.000 --> 04:17.000
+So, I eliminated it for this CSC.
+
+04:17.000 --> 04:20.000
+The rest of these normal CSC,
+
+04:20.000 --> 04:23.000
+sorry, these normal cancer cells,
+
+04:23.000 --> 04:26.000
+they don't have the ability to self-renew.
+
+04:26.000 --> 04:28.000
+So, they proliferate.
+
+04:28.000 --> 04:33.000
+In the end, the tumor relapse occurs.
+
+04:33.000 --> 04:36.000
+So, this is the first reason why we want to study CSC.
+
+04:36.000 --> 04:40.000
+The second reason is that we generally believe that
+
+04:40.000 --> 04:42.000
+CSC has a strong migration ability.
+
+04:42.000 --> 04:47.000
+In other words, it is easier to metastasize to the secondary tumor.
+
+04:47.000 --> 04:53.000
+We know that cancer transfer is the biggest challenge in cancer therapy
+
+04:53.000 --> 04:55.000
+and the biggest cause of death.
+
+04:55.000 --> 04:57.000
+So, if we can study CSC more,
+
+04:57.000 --> 05:02.000
+it will be very helpful in therapy, tracking, and research.
+
+05:02.000 --> 05:12.000
+The most traditional way to study CSC is to use surface membrane protein
+
+05:12.000 --> 05:16.000
+or intracellular enzymatic markers.
+
+05:16.000 --> 05:20.000
+For gene expression or protein expression,
+
+05:20.000 --> 05:26.000
+we use different methods, such as full cytometry,
+
+05:26.000 --> 05:29.000
+to separate these different types of cells.
+
+05:29.000 --> 05:32.000
+Then, we can study these CSC groups.
+
+05:32.000 --> 05:35.000
+But the challenge is that
+
+05:35.000 --> 05:38.000
+many of our new markers have not been discovered.
+
+05:38.000 --> 05:44.000
+So, we hope to use other methods to study these CSC populations.
+
+05:44.000 --> 05:52.000
+As a substitute, cell behavior is a common choice.
+
+05:52.000 --> 06:00.000
+We observe that CSC can survive in a suspension culture environment
+
+06:00.000 --> 06:04.000
+and grow into a single-cell-derived tumor sphere.
+
+06:04.000 --> 06:07.000
+In other words, if it is a normal cancer cell,
+
+06:07.000 --> 06:13.000
+it cannot be adhered to the substrate environment.
+
+06:13.000 --> 06:17.000
+It will produce apoptosis.
+
+06:17.000 --> 06:21.000
+But CSC is different.
+
+06:21.000 --> 06:24.000
+It can not only survive in a suspension environment,
+
+06:24.000 --> 06:27.000
+but also grow into a new tumor sphere.
+
+06:27.000 --> 06:32.000
+So, what is the traditional way to do the sphere assay?
+
+06:32.000 --> 06:35.000
+The method is to buy a whale plate,
+
+06:35.000 --> 06:38.000
+as shown in the picture on the bottom right.
+
+06:38.000 --> 06:45.000
+Then, dilute the whale plate to a certain level of cell concentration.
+
+06:45.000 --> 06:48.000
+The whale plate contains one cell.
+
+06:48.000 --> 06:51.000
+As you can see,
+
+06:51.000 --> 06:56.000
+the low-throughput is a distribution of the probability,
+
+06:56.000 --> 06:58.000
+or more specifically,
+
+06:58.000 --> 07:04.000
+96-whale plate contains 20-30 single-cells.
+
+07:05.000 --> 07:08.000
+It is labor-intensive.
+
+07:08.000 --> 07:10.000
+Someone may ask,
+
+07:10.000 --> 07:13.000
+can I use automatic cell dispensing,
+
+07:13.000 --> 07:16.000
+such as flow cytometry,
+
+07:16.000 --> 07:20.000
+to ensure that I can put a cell into a whale?
+
+07:20.000 --> 07:24.000
+In fact, flow cytometry has a big problem.
+
+07:24.000 --> 07:27.000
+Because it is a flow-sorting process,
+
+07:27.000 --> 07:30.000
+it will produce a lot of shear stress.
+
+07:30.000 --> 07:35.000
+So, what is the impact of cell behavior assay on downstream?
+
+07:35.000 --> 07:38.000
+We need to observe if the cell is dead.
+
+07:38.000 --> 07:41.000
+If the cell is dead,
+
+07:41.000 --> 07:44.000
+it is not caused by the suspension environment.
+
+07:44.000 --> 07:47.000
+It is caused by the flow-sorting process.
+
+07:47.000 --> 07:49.000
+The shear stress is too high,
+
+07:49.000 --> 07:51.000
+and the cell can not bear it.
+
+07:51.000 --> 07:53.000
+So, the cell is dead,
+
+07:53.000 --> 07:56.000
+not because it is not CSC.
+
+07:56.000 --> 08:01.000
+These are the existing technology limitations.
+
+08:01.000 --> 08:05.000
+Why do we think automation is important?
+
+08:05.000 --> 08:07.000
+As we mentioned,
+
+08:07.000 --> 08:11.000
+CSC is a relatively small sub-population.
+
+08:11.000 --> 08:13.000
+In the past,
+
+08:13.000 --> 08:19.000
+only 1-5% of tumor cells have this sphere formation tendency.
+
+08:19.000 --> 08:25.000
+We hope this assay can start with a larger single-cell population.
+
+08:25.000 --> 08:27.000
+At least 1,000 single-cells.
+
+08:27.000 --> 08:33.000
+Then we can have a reliable statistical power
+
+08:33.000 --> 08:35.000
+to make our assay conclusion.
+
+08:35.000 --> 08:38.000
+So, we think
+
+08:38.000 --> 08:41.000
+to achieve this throughput,
+
+08:41.000 --> 08:44.000
+microfluidics is an ideal technology
+
+08:44.000 --> 08:47.000
+to make this assay.
+
+08:47.000 --> 08:51.000
+So, this is our chip schematics.
+
+08:51.000 --> 08:53.000
+We want to develop a chip
+
+08:53.000 --> 08:56.000
+with more than 1,000 single-cells.
+
+08:56.000 --> 08:59.000
+Because we have a very large throughput,
+
+08:59.000 --> 09:02.000
+we also need an automatic image analysis.
+
+09:02.000 --> 09:05.000
+Otherwise, we have to read it manually.
+
+09:05.000 --> 09:08.000
+It is a very difficult process.
+
+09:08.000 --> 09:09.000
+Only in this way,
+
+09:09.000 --> 09:12.000
+can we make the whole experiment
+
+09:12.000 --> 09:16.000
+smoothly improve on hardware and software.
+
+09:16.000 --> 09:20.000
+So, this is our motivation.
+
+09:20.000 --> 09:22.000
+I don't know if there is anything I didn't explain clearly.
+
+09:22.000 --> 09:24.000
+Or you can go on.
+
+09:26.000 --> 09:28.000
+Ok, let's continue.
+
+09:31.000 --> 09:32.000
+I want to ask,
+
+09:32.000 --> 09:38.000
+why CSC can survive in suspension culture environment?
+
+09:38.000 --> 09:40.000
+This is a question.
+
+09:40.000 --> 09:41.000
+Did you hear it?
+
+09:41.000 --> 09:42.000
+Yes.
+
+09:42.000 --> 09:44.000
+The question is,
+
+09:44.000 --> 09:48.000
+why CSC can survive in suspension culture environment?
+
+09:48.000 --> 09:50.000
+This is a very interesting question.
+
+09:50.000 --> 09:54.000
+I will answer it in two ways.
+
+09:54.000 --> 09:55.000
+First,
+
+09:55.000 --> 09:58.000
+the definition of CSC is
+
+09:58.000 --> 10:01.000
+we only inject 10 cells into the mouse.
+
+10:05.000 --> 10:07.000
+Can these 10 cells
+
+10:07.000 --> 10:10.000
+generate a new tumor on the mouse?
+
+10:10.000 --> 10:11.000
+If yes,
+
+10:11.000 --> 10:12.000
+we define it as CSC.
+
+10:12.000 --> 10:15.000
+The predecessors defined CSC in this way.
+
+10:15.000 --> 10:18.000
+Then, they used this traditional conventional assay
+
+10:18.000 --> 10:19.000
+to find out
+
+10:19.000 --> 10:24.000
+the cell population of tumors
+
+10:24.000 --> 10:29.000
+can survive in suspension culture environment.
+
+10:29.000 --> 10:32.000
+This is the first way to find it out.
+
+10:32.000 --> 10:33.000
+Why?
+
+10:33.000 --> 10:35.000
+Our idea is
+
+10:35.000 --> 10:39.000
+CSC can survive in suspension culture environment
+
+10:39.000 --> 10:44.000
+by moving through the local environment
+
+10:44.000 --> 10:46.000
+to the blood vessel.
+
+10:46.000 --> 10:49.000
+The blood vessel is a suspension environment.
+
+10:49.000 --> 10:51.000
+If these cells
+
+10:51.000 --> 10:54.000
+die in the suspension environment,
+
+10:54.000 --> 10:57.000
+they can't move to other places.
+
+10:57.000 --> 10:59.000
+So, we believe
+
+10:59.000 --> 11:07.000
+CSC can survive in the blood vessel
+
+11:07.000 --> 11:10.000
+and grow into a tumor in a new local environment.
+
+11:10.000 --> 11:15.000
+We simulate this in vivo environment.
+
+11:16.000 --> 11:18.000
+This is the first way to find out CSC.
+
+11:18.000 --> 11:20.000
+This is the first way to find out CSC.
+
+11:20.000 --> 11:23.000
+The first way is to verify CSC
+
+11:23.000 --> 11:28.000
+and to find out the correlation between CSC and in-vitro experiment.
+
+11:28.000 --> 11:31.000
+The second way is to explain the correlation.
+
+11:31.000 --> 11:34.000
+We think CSC can mimic in-vivo environment
+
+11:34.000 --> 11:36.000
+and survive in suspension culture environment
+
+11:36.000 --> 11:42.000
+and grow into a new tumor sphere.
+
+11:42.000 --> 11:44.000
+Does this answer your question?
+
+11:45.000 --> 11:46.000
+Okay.
+
+11:46.000 --> 11:48.000
+I have a related question.
+
+11:48.000 --> 11:51.000
+When CSC is transferred in the blood vessel,
+
+11:51.000 --> 11:53.000
+is it in the form of a single cell
+
+11:53.000 --> 11:56.000
+or a sphere?
+
+11:56.000 --> 11:59.000
+This is a very good question.
+
+11:59.000 --> 12:03.000
+Most of the cells
+
+12:03.000 --> 12:05.000
+are transferred in the form of a single cell.
+
+12:05.000 --> 12:07.000
+But in recent years,
+
+12:07.000 --> 12:09.000
+the research of circulating tumor cells
+
+12:09.000 --> 12:10.000
+found that
+
+12:10.000 --> 12:13.000
+there are more ways to transfer tumor cells
+
+12:13.000 --> 12:18.000
+in the form of clusters.
+
+12:18.000 --> 12:21.000
+A cluster is not a single cell
+
+12:21.000 --> 12:23.000
+that grows into a sphere
+
+12:23.000 --> 12:25.000
+and is transferred to another place.
+
+12:25.000 --> 12:27.000
+Most people believe that
+
+12:27.000 --> 12:29.000
+a small number of tumor cells
+
+12:29.000 --> 12:32.000
+fall from the original tumor
+
+12:32.000 --> 12:35.000
+and can be circulated.
+
+12:36.000 --> 12:38.000
+You can imagine that
+
+12:38.000 --> 12:40.000
+in a vast ocean,
+
+12:40.000 --> 12:42.000
+is it a warship
+
+12:42.000 --> 12:44.000
+or an aircraft carrier?
+
+12:44.000 --> 12:46.000
+They think that
+
+12:46.000 --> 12:48.000
+a cluster is like an aircraft carrier.
+
+12:48.000 --> 12:50.000
+It is very powerful
+
+12:50.000 --> 12:54.000
+and has a stronger metathesis ability.
+
+12:54.000 --> 12:56.000
+But people think that
+
+12:56.000 --> 12:58.000
+a cluster fell from the original tumor
+
+12:58.000 --> 13:00.000
+and not a single cell
+
+13:00.000 --> 13:02.000
+that grows into a sphere
+
+13:03.000 --> 13:05.000
+and is transferred.
+
+13:05.000 --> 13:07.000
+Do you have an answer?
+
+13:07.000 --> 13:09.000
+Yes.
+
+13:09.000 --> 13:11.000
+OK.
+
+13:11.000 --> 13:15.000
+Are there any other questions?
+
+13:15.000 --> 13:17.000
+I don't think so.
+
+13:17.000 --> 13:19.000
+You can continue.
+
+13:19.000 --> 13:21.000
+I have a question about operation.
+
+13:21.000 --> 13:23.000
+If a worker
+
+13:23.000 --> 13:25.000
+is holding a pipe and dripping,
+
+13:25.000 --> 13:29.000
+can he catch a single cell?
+
+13:29.000 --> 13:31.000
+The best theoretical limit
+
+13:31.000 --> 13:33.000
+is 20-30%.
+
+13:33.000 --> 13:35.000
+You can think of it as
+
+13:35.000 --> 13:37.000
+a cell suspension solution.
+
+13:37.000 --> 13:39.000
+Let's say that
+
+13:39.000 --> 13:41.000
+I know that
+
+13:41.000 --> 13:43.000
+there are 10k cells
+
+13:43.000 --> 13:45.000
+in this tube.
+
+13:45.000 --> 13:47.000
+On average,
+
+13:47.000 --> 13:49.000
+there will be
+
+13:49.000 --> 13:51.000
+a single cell
+
+13:51.000 --> 13:53.000
+in 100mL or 10mL.
+
+13:53.000 --> 13:55.000
+How many cells
+
+13:55.000 --> 13:57.000
+are there?
+
+13:57.000 --> 13:59.000
+There will be a single cell
+
+13:59.000 --> 14:01.000
+in 100mL or 10mL.
+
+14:01.000 --> 14:03.000
+There will be a single cell
+
+14:03.000 --> 14:05.000
+in 100mL or 10mL.
+
+14:05.000 --> 14:07.000
+The best theoretical limit
+
+14:07.000 --> 14:09.000
+is 20-30%.
+
+14:09.000 --> 14:11.000
+In fact,
+
+14:11.000 --> 14:13.000
+the control of cell density
+
+14:13.000 --> 14:15.000
+is not ideal
+
+14:15.000 --> 14:17.000
+when operating.
+
+14:17.000 --> 14:19.000
+So it will be worse than 20-30%.
+
+14:19.000 --> 14:21.000
+It is the operating limit.
+
+14:21.000 --> 14:23.000
+It will be worse.
+
+14:23.000 --> 14:25.000
+But it is almost the same, right?
+
+14:25.000 --> 14:27.000
+For example,
+
+14:27.000 --> 14:29.000
+is it 10% less
+
+14:29.000 --> 14:31.000
+or less than 5%?
+
+14:33.000 --> 14:35.000
+If you have good skills,
+
+14:35.000 --> 14:37.000
+it can be less than 5%.
+
+14:37.000 --> 14:39.000
+If you don't have good skills,
+
+14:39.000 --> 14:41.000
+it can be 5% or less.
+
+14:41.000 --> 14:43.000
+It is difficult to experiment.
+
+14:43.000 --> 14:45.000
+So it's about 15%?
+
+14:45.000 --> 14:47.000
+Yes.
+
+14:49.000 --> 14:51.000
+So if you have
+
+14:51.000 --> 14:53.000
+a 96-well plate,
+
+14:53.000 --> 14:55.000
+if you have a 96-well plate,
+
+14:55.000 --> 14:57.000
+and you have Taipei
+
+14:57.000 --> 14:59.000
+almost 100 times,
+
+14:59.000 --> 15:01.000
+and there are only 15 cells,
+
+15:01.000 --> 15:03.000
+and you only have 1-5% single cell
+
+15:03.000 --> 15:05.000
+that can grow into a sphere,
+
+15:05.000 --> 15:07.000
+it's really hard to do.
+
+15:07.000 --> 15:09.000
+Yes.
+
+15:09.000 --> 15:11.000
+Any other questions?
+
+15:11.000 --> 15:13.000
+No.
+
+15:13.000 --> 15:15.000
+You can continue.
+
+15:15.000 --> 15:17.000
+OK.
+
+15:17.000 --> 15:19.000
+I will continue to present.
+
+15:19.000 --> 15:21.000
+So the first thing I want to discuss
+
+15:21.000 --> 15:23.000
+is how we achieve single cell capture
+
+15:23.000 --> 15:25.000
+in a high-throughput manner.
+
+15:25.000 --> 15:27.000
+The way we implement
+
+15:27.000 --> 15:29.000
+is by microfluidics.
+
+15:29.000 --> 15:31.000
+The principle is quite simple.
+
+15:31.000 --> 15:33.000
+We capture single cells
+
+15:33.000 --> 15:35.000
+by channel blocking.
+
+15:35.000 --> 15:37.000
+So you can imagine
+
+15:37.000 --> 15:39.000
+this is a
+
+15:39.000 --> 15:41.000
+microfluidics microwell
+
+15:41.000 --> 15:43.000
+or microchamber.
+
+15:43.000 --> 15:45.000
+This is a capture site.
+
+15:45.000 --> 15:47.000
+The blue part is the channel.
+
+15:47.000 --> 15:49.000
+This is where the water flows.
+
+15:49.000 --> 15:51.000
+These are the flowing cells.
+
+15:51.000 --> 15:53.000
+When the cells come in,
+
+15:53.000 --> 15:55.000
+they block this place.
+
+15:55.000 --> 15:57.000
+So the flow basically
+
+15:57.000 --> 15:59.000
+stops.
+
+15:59.000 --> 16:01.000
+The next cell will go to the next place.
+
+16:01.000 --> 16:03.000
+So each well has only one cell.
+
+16:07.000 --> 16:09.000
+If we only have
+
+16:09.000 --> 16:11.000
+10-20 chambers,
+
+16:11.000 --> 16:13.000
+a simple design would be fine.
+
+16:13.000 --> 16:15.000
+But in this workbook,
+
+16:15.000 --> 16:17.000
+we have to scale a chip
+
+16:17.000 --> 16:19.000
+up to tens of thousands.
+
+16:19.000 --> 16:21.000
+At this time,
+
+16:21.000 --> 16:23.000
+this simple duplication
+
+16:23.000 --> 16:25.000
+will cause a significant flow imbalance.
+
+16:25.000 --> 16:27.000
+In other words,
+
+16:27.000 --> 16:29.000
+if the entire
+
+16:29.000 --> 16:31.000
+flow cell
+
+16:31.000 --> 16:33.000
+comes in,
+
+16:33.000 --> 16:35.000
+it will mostly be upstream or downstream.
+
+16:35.000 --> 16:37.000
+The capture rate will be very, very low.
+
+16:37.000 --> 16:39.000
+How do I
+
+16:39.000 --> 16:41.000
+make the cell
+
+16:41.000 --> 16:43.000
+uniformly distributed
+
+16:43.000 --> 16:45.000
+on this
+
+16:45.000 --> 16:47.000
+array?
+
+16:47.000 --> 16:49.000
+The method I use is
+
+16:49.000 --> 16:51.000
+circuit modeling.
+
+16:51.000 --> 16:53.000
+In fact,
+
+16:53.000 --> 16:55.000
+microfluidics is like
+
+16:55.000 --> 16:57.000
+a flow circuit.
+
+16:57.000 --> 16:59.000
+Each channel
+
+16:59.000 --> 17:01.000
+has a flow group.
+
+17:01.000 --> 17:03.000
+This flow group is mainly
+
+17:03.000 --> 17:05.000
+dominated by the capture site.
+
+17:05.000 --> 17:07.000
+Because the flow group is the largest,
+
+17:07.000 --> 17:09.000
+and the size is the smallest.
+
+17:09.000 --> 17:11.000
+The entrance channel and the exit channel
+
+17:11.000 --> 17:13.000
+are relatively small.
+
+17:13.000 --> 17:15.000
+But because it is very long,
+
+17:15.000 --> 17:17.000
+the build-up resistance is also very large.
+
+17:17.000 --> 17:19.000
+You can see that the resistance of the entrance channel
+
+17:19.000 --> 17:21.000
+accumulates from 1 to 200.
+
+17:21.000 --> 17:23.000
+This is a circuit like this.
+
+17:23.000 --> 17:25.000
+Why didn't
+
+17:25.000 --> 17:27.000
+the simple duplication work?
+
+17:27.000 --> 17:29.000
+Because if we want
+
+17:29.000 --> 17:31.000
+a good distribution,
+
+17:31.000 --> 17:33.000
+each branch of the
+
+17:33.000 --> 17:35.000
+current is the same.
+
+17:35.000 --> 17:37.000
+We know that
+
+17:37.000 --> 17:39.000
+if the upper short
+
+17:39.000 --> 17:41.000
+here is very small,
+
+17:41.000 --> 17:43.000
+the lower short here is also very small,
+
+17:43.000 --> 17:45.000
+then this thing can happen.
+
+17:45.000 --> 17:47.000
+But today,
+
+17:47.000 --> 17:49.000
+we put 200
+
+17:49.000 --> 17:51.000
+negligible short here.
+
+17:51.000 --> 17:53.000
+At this time,
+
+17:53.000 --> 17:55.000
+the performance of the current
+
+17:55.000 --> 17:57.000
+will be much worse than what we want.
+
+17:57.000 --> 17:59.000
+How do we balance the current?
+
+17:59.000 --> 18:01.000
+Flow resistance
+
+18:01.000 --> 18:03.000
+is actually a function
+
+18:03.000 --> 18:05.000
+of channel geometry.
+
+18:05.000 --> 18:07.000
+You can see that
+
+18:07.000 --> 18:09.000
+circular and rectangular
+
+18:09.000 --> 18:11.000
+have different functions.
+
+18:11.000 --> 18:13.000
+In short, the longer the channel,
+
+18:13.000 --> 18:15.000
+the higher the flow resistance.
+
+18:15.000 --> 18:17.000
+The wider the width,
+
+18:17.000 --> 18:19.000
+the smaller the flow resistance.
+
+18:19.000 --> 18:21.000
+So we use
+
+18:21.000 --> 18:23.000
+microfabrication
+
+18:23.000 --> 18:25.000
+to make
+
+18:25.000 --> 18:27.000
+this very small
+
+18:27.000 --> 18:29.000
+geometry.
+
+18:31.000 --> 18:33.000
+First, this can achieve
+
+18:33.000 --> 18:35.000
+high flow resistance.
+
+18:35.000 --> 18:37.000
+Second, 10x10
+
+18:37.000 --> 18:39.000
+can block our cancer cell.
+
+18:39.000 --> 18:41.000
+Because we generally believe that
+
+18:41.000 --> 18:43.000
+the size of the cancer cell
+
+18:43.000 --> 18:45.000
+is greater than 10 microns.
+
+18:45.000 --> 18:47.000
+I will have related data
+
+18:47.000 --> 18:49.000
+to explain this later.
+
+18:49.000 --> 18:51.000
+We have overcome
+
+18:51.000 --> 18:53.000
+the microwave
+
+18:53.000 --> 18:55.000
+flow resistance
+
+18:55.000 --> 18:57.000
+we have defined here.
+
+18:57.000 --> 18:59.000
+What about the entrance channel and the NC channel?
+
+18:59.000 --> 19:01.000
+I use this
+
+19:01.000 --> 19:03.000
+microfabrication
+
+19:03.000 --> 19:05.000
+to make 100 microns
+
+19:05.000 --> 19:07.000
+wider and 100 microns higher
+
+19:07.000 --> 19:09.000
+geometry.
+
+19:09.000 --> 19:11.000
+So I can make the
+
+19:11.000 --> 19:13.000
+entrance channel and the NC channel
+
+19:13.000 --> 19:15.000
+flow resistance
+
+19:15.000 --> 19:17.000
+smaller than these cancer cells.
+
+19:17.000 --> 19:19.000
+In short,
+
+19:19.000 --> 19:21.000
+we use this microfabrication
+
+19:21.000 --> 19:23.000
+to control our flow resistance.
+
+19:23.000 --> 19:25.000
+So we have a
+
+19:25.000 --> 19:27.000
+very good flow circuit
+
+19:27.000 --> 19:29.000
+to achieve single cell capture.
+
+19:31.000 --> 19:33.000
+This shows that
+
+19:33.000 --> 19:35.000
+we use three
+
+19:35.000 --> 19:37.000
+different sizes of chips
+
+19:37.000 --> 19:39.000
+to scale.
+
+19:39.000 --> 19:41.000
+From 800 to
+
+19:41.000 --> 19:43.000
+12800
+
+19:43.000 --> 19:45.000
+chamber chips.
+
+19:45.000 --> 19:47.000
+The size is probably on a slice.
+
+19:47.000 --> 19:49.000
+You can see
+
+19:49.000 --> 19:51.000
+that this is a device
+
+19:51.000 --> 19:53.000
+and every
+
+19:53.000 --> 19:55.000
+chamber we can capture
+
+19:55.000 --> 19:57.000
+a single cell.
+
+19:57.000 --> 19:59.000
+This is a microscope image.
+
+19:59.000 --> 20:01.000
+Our cancer cell is labeled here
+
+20:01.000 --> 20:03.000
+as a green fluorescent dye.
+
+20:03.000 --> 20:05.000
+You can see that this array
+
+20:05.000 --> 20:07.000
+has a very good single cell capture.
+
+20:09.000 --> 20:11.000
+Now we have
+
+20:11.000 --> 20:13.000
+achieved high-throughput single cell capture.
+
+20:13.000 --> 20:15.000
+How do we
+
+20:15.000 --> 20:17.000
+analyze it?
+
+20:17.000 --> 20:19.000
+This is a comic.
+
+20:23.000 --> 20:25.000
+So
+
+20:25.000 --> 20:27.000
+based on many habits,
+
+20:27.000 --> 20:29.000
+we need to
+
+20:29.000 --> 20:31.000
+automate the readout process.
+
+20:31.000 --> 20:33.000
+So how do we do it?
+
+20:33.000 --> 20:35.000
+Sorry,
+
+20:35.000 --> 20:37.000
+I have a question.
+
+20:39.000 --> 20:41.000
+You can see
+
+20:41.000 --> 20:43.000
+that almost every
+
+20:43.000 --> 20:45.000
+size has a single cell capture.
+
+20:45.000 --> 20:47.000
+But my question is
+
+20:47.000 --> 20:49.000
+if you drop a sample
+
+20:49.000 --> 20:51.000
+from beginning to end,
+
+20:51.000 --> 20:53.000
+does every size
+
+20:53.000 --> 20:55.000
+have a cell?
+
+20:55.000 --> 20:57.000
+Or if you drop a sample,
+
+20:57.000 --> 20:59.000
+does every size have a
+
+20:59.000 --> 21:01.000
+10% size capture?
+
+21:01.000 --> 21:03.000
+And you have to fill it up again and again.
+
+21:03.000 --> 21:05.000
+That's a very good question.
+
+21:05.000 --> 21:07.000
+So the beauty of MicroFluidics
+
+21:07.000 --> 21:09.000
+is that we put
+
+21:09.000 --> 21:11.000
+cell suspension into the sample.
+
+21:11.000 --> 21:13.000
+We don't need any other
+
+21:13.000 --> 21:15.000
+equipment. We use gravity flow.
+
+21:15.000 --> 21:17.000
+The cell solution
+
+21:17.000 --> 21:19.000
+will gradually flow in.
+
+21:19.000 --> 21:21.000
+So the whole operation is done by a single arrangement.
+
+21:21.000 --> 21:23.000
+It's not the first time, the second time, the third time.
+
+21:23.000 --> 21:25.000
+It's done in one go.
+
+21:25.000 --> 21:27.000
+It's like this.
+
+21:27.000 --> 21:29.000
+Tens of thousands of single cell capture.
+
+21:35.000 --> 21:37.000
+Is that reasonable?
+
+21:37.000 --> 21:39.000
+It's reasonable.
+
+21:39.000 --> 21:41.000
+I'm just curious.
+
+21:41.000 --> 21:43.000
+For example,
+
+21:43.000 --> 21:45.000
+how much is the reduction
+
+21:45.000 --> 21:47.000
+of human power?
+
+21:47.000 --> 21:49.000
+I see.
+
+21:49.000 --> 21:51.000
+It becomes only one arrangement.
+
+21:51.000 --> 21:53.000
+It's all captured.
+
+21:53.000 --> 21:55.000
+That's the reduction we achieved.
+
+21:55.000 --> 21:57.000
+So how much is the
+
+21:57.000 --> 21:59.000
+filling ratio of this chip?
+
+21:59.000 --> 22:01.000
+Is it more than 95%?
+
+22:03.000 --> 22:05.000
+Do you mean that several chambers
+
+22:05.000 --> 22:07.000
+can really capture a single cell?
+
+22:07.000 --> 22:09.000
+Is that the question you wanted to ask?
+
+22:09.000 --> 22:11.000
+Because this question
+
+22:11.000 --> 22:13.000
+is related to how much time
+
+22:13.000 --> 22:15.000
+you need to spend.
+
+22:15.000 --> 22:17.000
+So if it's one time,
+
+22:17.000 --> 22:19.000
+you can change it to this.
+
+22:19.000 --> 22:21.000
+For example, you drop it once.
+
+22:21.000 --> 22:23.000
+How much is it?
+
+22:23.000 --> 22:25.000
+It looks like it's 100%.
+
+22:25.000 --> 22:27.000
+At least it's 100% in my eyes.
+
+22:27.000 --> 22:29.000
+This publication is the most beautiful.
+
+22:29.000 --> 22:31.000
+OK, this capture rate
+
+22:31.000 --> 22:33.000
+is 75%
+
+22:33.000 --> 22:35.000
+in our routine.
+
+22:35.000 --> 22:37.000
+It can be optimized online.
+
+22:37.000 --> 22:39.000
+But we consider
+
+22:39.000 --> 22:41.000
+other things.
+
+22:41.000 --> 22:43.000
+So we think 75% is a better number.
+
+22:43.000 --> 22:45.000
+I'll explain it later.
+
+22:45.000 --> 22:47.000
+OK.
+
+22:47.000 --> 22:49.000
+And 12,875.
+
+22:49.000 --> 22:51.000
+That's a lot.
+
+22:51.000 --> 22:53.000
+After a cell
+
+22:53.000 --> 22:55.000
+is captured,
+
+22:57.000 --> 22:59.000
+this chamber will be
+
+22:59.000 --> 23:01.000
+interrupted and nothing will come in.
+
+23:01.000 --> 23:03.000
+That's right.
+
+23:03.000 --> 23:05.000
+It's a very simple principle.
+
+23:07.000 --> 23:09.000
+Do you plan to
+
+23:09.000 --> 23:11.000
+compress it
+
+23:11.000 --> 23:13.000
+directly
+
+23:13.000 --> 23:15.000
+or
+
+23:15.000 --> 23:17.000
+do some pre-processing?
+
+23:17.000 --> 23:19.000
+For example,
+
+23:19.000 --> 23:21.000
+how do you differentiate
+
+23:21.000 --> 23:23.000
+different cells?
+
+23:23.000 --> 23:25.000
+That's a very good question.
+
+23:25.000 --> 23:27.000
+The project we want to commercialize
+
+23:27.000 --> 23:29.000
+is
+
+23:29.000 --> 23:31.000
+molecular analysis
+
+23:31.000 --> 23:33.000
+or phenotypic analysis.
+
+23:33.000 --> 23:35.000
+In my other project,
+
+23:35.000 --> 23:37.000
+we do sample preparation.
+
+23:37.000 --> 23:39.000
+We want to
+
+23:39.000 --> 23:41.000
+extract
+
+23:41.000 --> 23:43.000
+the mRNA transcript
+
+23:43.000 --> 23:45.000
+from single cell
+
+23:45.000 --> 23:47.000
+and barcode it.
+
+23:47.000 --> 23:49.000
+We can use Illumina
+
+23:49.000 --> 23:51.000
+to do whole transcript from sequence.
+
+23:51.000 --> 23:53.000
+We can't do
+
+23:53.000 --> 23:55.000
+sample preparation
+
+23:55.000 --> 23:57.000
+directly from the protocol.
+
+23:57.000 --> 23:59.000
+We need to go through
+
+23:59.000 --> 24:01.000
+upstream cell enrichment.
+
+24:01.000 --> 24:03.000
+This is
+
+24:03.000 --> 24:05.000
+very competitive.
+
+24:07.000 --> 24:09.000
+There are many vendors
+
+24:09.000 --> 24:11.000
+in the commercial space
+
+24:11.000 --> 24:13.000
+like startups.
+
+24:13.000 --> 24:15.000
+They can provide
+
+24:15.000 --> 24:17.000
+downstream information
+
+24:17.000 --> 24:19.000
+enhancement.
+
+24:19.000 --> 24:21.000
+These startups
+
+24:21.000 --> 24:23.000
+can take the blood
+
+24:23.000 --> 24:25.000
+and put it in the instrument.
+
+24:25.000 --> 24:27.000
+The result is
+
+24:27.000 --> 24:29.000
+a tumor sample
+
+24:29.000 --> 24:31.000
+after purification.
+
+24:31.000 --> 24:33.000
+These tumor samples
+
+24:33.000 --> 24:35.000
+have very limited meaning.
+
+24:35.000 --> 24:37.000
+If you want to have clinical meaning,
+
+24:37.000 --> 24:39.000
+you need to know
+
+24:39.000 --> 24:41.000
+the gene expression
+
+24:41.000 --> 24:43.000
+and gene mutation.
+
+24:43.000 --> 24:45.000
+We want to finish the last mile.
+
+24:45.000 --> 24:47.000
+The commercially available
+
+24:47.000 --> 24:49.000
+technology is
+
+24:49.000 --> 24:51.000
+upstream
+
+24:51.000 --> 24:53.000
+GTC purification.
+
+24:53.000 --> 24:55.000
+We can do sample preparation
+
+24:55.000 --> 24:57.000
+after purification
+
+24:57.000 --> 24:59.000
+to the sequencer
+
+24:59.000 --> 25:01.000
+or next generation sequencing.
+
+25:03.000 --> 25:05.000
+Thank you.
+
+25:07.000 --> 25:09.000
+The answer is a bit long.
+
+25:11.000 --> 25:13.000
+Any other questions?
+
+25:15.000 --> 25:17.000
+No, I can continue.
+
+25:17.000 --> 25:19.000
+Okay,
+
+25:19.000 --> 25:21.000
+I will continue.
+
+25:21.000 --> 25:23.000
+I don't want to
+
+25:23.000 --> 25:25.000
+analyze so many chambers.
+
+25:25.000 --> 25:27.000
+I want to automate
+
+25:27.000 --> 25:29.000
+the process.
+
+25:29.000 --> 25:31.000
+I use a biocompatible
+
+25:31.000 --> 25:33.000
+cell
+
+25:33.000 --> 25:35.000
+with green fluorescence.
+
+25:35.000 --> 25:37.000
+We can use
+
+25:37.000 --> 25:39.000
+fluorescence
+
+25:39.000 --> 25:41.000
+to read out the cell.
+
+25:41.000 --> 25:43.000
+We thought it would be easy
+
+25:43.000 --> 25:45.000
+to read out the cell.
+
+25:45.000 --> 25:47.000
+However,
+
+25:47.000 --> 25:49.000
+after scanning the image,
+
+25:49.000 --> 25:51.000
+we found that
+
+25:51.000 --> 25:53.000
+the cell expression is different.
+
+25:53.000 --> 25:55.000
+They take the blood
+
+25:55.000 --> 25:57.000
+with different efficiency.
+
+25:57.000 --> 25:59.000
+You can see the picture
+
+25:59.000 --> 26:01.000
+with 5 cells and 6 cells.
+
+26:01.000 --> 26:03.000
+Some cells are bright and some are dark.
+
+26:03.000 --> 26:05.000
+If we use a simple
+
+26:05.000 --> 26:07.000
+search holding,
+
+26:07.000 --> 26:09.000
+many cells are ignored.
+
+26:09.000 --> 26:11.000
+What should we do?
+
+26:11.000 --> 26:13.000
+We need to
+
+26:13.000 --> 26:15.000
+use algorithms
+
+26:15.000 --> 26:17.000
+to make
+
+26:17.000 --> 26:19.000
+the readout more reliable.
+
+26:19.000 --> 26:21.000
+There are four steps.
+
+26:21.000 --> 26:23.000
+First, we do a contrast
+
+26:23.000 --> 26:25.000
+enhancement.
+
+26:25.000 --> 26:27.000
+We use a
+
+26:27.000 --> 26:29.000
+contrast enhancement
+
+26:29.000 --> 26:31.000
+for this part.
+
+26:31.000 --> 26:33.000
+I will explain why later.
+
+26:33.000 --> 26:35.000
+Next, we use K-means clustering
+
+26:35.000 --> 26:37.000
+to find the peak
+
+26:37.000 --> 26:39.000
+of the intensity.
+
+26:39.000 --> 26:41.000
+Finally,
+
+26:41.000 --> 26:43.000
+we can extract local maxima
+
+26:43.000 --> 26:45.000
+to find the center
+
+26:45.000 --> 26:47.000
+of each cell.
+
+26:47.000 --> 26:49.000
+These three images
+
+26:49.000 --> 26:51.000
+show the readout
+
+26:51.000 --> 26:53.000
+of two or more cells.
+
+26:53.000 --> 26:55.000
+That's it.
+
+26:57.000 --> 26:59.000
+Contrast enhancement
+
+26:59.000 --> 27:01.000
+has a tricky part.
+
+27:01.000 --> 27:03.000
+The contrast enhancement
+
+27:03.000 --> 27:05.000
+is the goal of histogram equalization.
+
+27:05.000 --> 27:07.000
+The sample
+
+27:07.000 --> 27:09.000
+has a dark background.
+
+27:09.000 --> 27:11.000
+After using
+
+27:11.000 --> 27:13.000
+the algorithm,
+
+27:13.000 --> 27:15.000
+the whole circle is bright.
+
+27:15.000 --> 27:17.000
+We can't use it.
+
+27:17.000 --> 27:19.000
+We use contrast-limited
+
+27:19.000 --> 27:21.000
+adapted histogram equalization.
+
+27:21.000 --> 27:23.000
+We can define
+
+27:23.000 --> 27:25.000
+each enhancement panel
+
+27:25.000 --> 27:27.000
+to be
+
+27:27.000 --> 27:29.000
+660 pixels
+
+27:29.000 --> 27:31.000
+or other arbitrary
+
+27:31.000 --> 27:33.000
+number of pixels
+
+27:33.000 --> 27:35.000
+to do the enhancement.
+
+27:35.000 --> 27:37.000
+Under this premise,
+
+27:37.000 --> 27:39.000
+we know
+
+27:39.000 --> 27:41.000
+the size of a single cell
+
+27:41.000 --> 27:43.000
+is several pixels.
+
+27:43.000 --> 27:45.000
+We can use this information
+
+27:45.000 --> 27:47.000
+to locally magnify
+
+27:47.000 --> 27:49.000
+the fluorescent signal
+
+27:49.000 --> 27:51.000
+of the cell.
+
+27:51.000 --> 27:53.000
+Look at the chamber.
+
+27:53.000 --> 27:55.000
+We can effectively
+
+27:55.000 --> 27:57.000
+suppress
+
+27:57.000 --> 27:59.000
+the background noise
+
+27:59.000 --> 28:01.000
+to achieve the image analysis.
+
+28:01.000 --> 28:03.000
+These are
+
+28:03.000 --> 28:05.000
+the results of
+
+28:05.000 --> 28:07.000
+the algorithm.
+
+28:07.000 --> 28:09.000
+You can see the suspension cell.
+
+28:09.000 --> 28:11.000
+We can effectively
+
+28:11.000 --> 28:13.000
+locate
+
+28:13.000 --> 28:15.000
+each cell.
+
+28:15.000 --> 28:17.000
+This is the state of
+
+28:17.000 --> 28:19.000
+adherent culture.
+
+28:19.000 --> 28:21.000
+We can effectively
+
+28:21.000 --> 28:23.000
+identify one cell, two cells
+
+28:23.000 --> 28:25.000
+or many cells
+
+28:25.000 --> 28:27.000
+to fill the chamber.
+
+28:27.000 --> 28:29.000
+Although
+
+28:29.000 --> 28:31.000
+this work is
+
+28:31.000 --> 28:33.000
+focused on
+
+28:33.000 --> 28:35.000
+suspension culture,
+
+28:35.000 --> 28:37.000
+the same capture
+
+28:37.000 --> 28:39.000
+mechanism can be used
+
+28:39.000 --> 28:41.000
+to achieve adherent cell culture.
+
+28:41.000 --> 28:43.000
+This is an example.
+
+28:43.000 --> 28:45.000
+The algorithm
+
+28:45.000 --> 28:47.000
+can also do
+
+28:47.000 --> 28:49.000
+size measurement
+
+28:49.000 --> 28:51.000
+and sphere size measurement
+
+28:51.000 --> 28:53.000
+to determine
+
+28:53.000 --> 28:55.000
+the size of a sphere.
+
+28:55.000 --> 28:57.000
+These functions
+
+28:57.000 --> 28:59.000
+can only be
+
+28:59.000 --> 29:01.000
+implemented
+
+29:01.000 --> 29:03.000
+on our corpus.
+
+29:03.000 --> 29:05.000
+With this technology
+
+29:05.000 --> 29:07.000
+and algorithm,
+
+29:07.000 --> 29:09.000
+we can do
+
+29:09.000 --> 29:11.000
+the device
+
+29:11.000 --> 29:13.000
+test.
+
+29:13.000 --> 29:15.000
+The first test is
+
+29:15.000 --> 29:17.000
+the capture rate
+
+29:17.000 --> 29:19.000
+or capture characterization.
+
+29:19.000 --> 29:21.000
+In our test,
+
+29:21.000 --> 29:23.000
+we optimize
+
+29:23.000 --> 29:25.000
+the capture rate
+
+29:25.000 --> 29:27.000
+to 76.5%.
+
+29:27.000 --> 29:29.000
+First, we limit
+
+29:29.000 --> 29:31.000
+the cell loading time
+
+29:31.000 --> 29:33.000
+to 15 minutes.
+
+29:33.000 --> 29:35.000
+We don't want to
+
+29:35.000 --> 29:37.000
+leave the cell
+
+29:37.000 --> 29:39.000
+for more than 15 minutes.
+
+29:39.000 --> 29:41.000
+If the cell is left for too long,
+
+29:41.000 --> 29:43.000
+it will affect the cell's
+
+29:43.000 --> 29:45.000
+viability or
+
+29:45.000 --> 29:47.000
+the cell's health.
+
+29:47.000 --> 29:49.000
+In this 15-minute loading time,
+
+29:49.000 --> 29:51.000
+we try four different
+
+29:51.000 --> 29:53.000
+results.
+
+29:53.000 --> 29:55.000
+No capture,
+
+29:55.000 --> 29:57.000
+single cell,
+
+29:57.000 --> 29:59.000
+double cell,
+
+29:59.000 --> 30:01.000
+or multiple cell.
+
+30:01.000 --> 30:03.000
+In the different
+
+30:03.000 --> 30:05.000
+cell loading concentration,
+
+30:05.000 --> 30:07.000
+the lower the cell
+
+30:07.000 --> 30:09.000
+concentration,
+
+30:09.000 --> 30:11.000
+the less cells are left.
+
+30:11.000 --> 30:13.000
+If we increase
+
+30:13.000 --> 30:15.000
+the loading concentration,
+
+30:15.000 --> 30:17.000
+the more chambers
+
+30:17.000 --> 30:19.000
+are double cell or multiple cell.
+
+30:19.000 --> 30:21.000
+In the cell concentration
+
+30:21.000 --> 30:23.000
+trade-off,
+
+30:23.000 --> 30:25.000
+50k per mL
+
+30:25.000 --> 30:27.000
+in single cell
+
+30:27.000 --> 30:29.000
+is 76.5%.
+
+30:29.000 --> 30:31.000
+In fact,
+
+30:31.000 --> 30:33.000
+if we want to push
+
+30:33.000 --> 30:35.000
+the capture rate,
+
+30:35.000 --> 30:37.000
+we can use
+
+30:37.000 --> 30:39.000
+a lower cell concentration
+
+30:39.000 --> 30:41.000
+for 30 minutes.
+
+30:41.000 --> 30:43.000
+I think we can push
+
+30:43.000 --> 30:45.000
+the cell capture rate
+
+30:45.000 --> 30:47.000
+to 80 or 90.
+
+30:47.000 --> 30:49.000
+Some friends say
+
+30:49.000 --> 30:51.000
+there are more than 10k chambers
+
+30:51.000 --> 30:53.000
+with 70% of the load.
+
+30:53.000 --> 30:55.000
+This is also good.
+
+30:55.000 --> 30:57.000
+We think so, too.
+
+30:57.000 --> 30:59.000
+So we set the number here.
+
+30:59.000 --> 31:01.000
+Why
+
+31:01.000 --> 31:03.000
+is there a double cell
+
+31:03.000 --> 31:05.000
+or multiple cell
+
+31:05.000 --> 31:07.000
+in higher concentration?
+
+31:07.000 --> 31:09.000
+In the chamber design,
+
+31:09.000 --> 31:11.000
+we must
+
+31:11.000 --> 31:13.000
+let the cell block
+
+31:13.000 --> 31:15.000
+the cell capture site
+
+31:15.000 --> 31:17.000
+so that the cell can't get in.
+
+31:17.000 --> 31:19.000
+If the loading concentration
+
+31:19.000 --> 31:21.000
+is high,
+
+31:21.000 --> 31:23.000
+there is a possibility
+
+31:23.000 --> 31:25.000
+that the first cell
+
+31:25.000 --> 31:27.000
+may get in
+
+31:27.000 --> 31:29.000
+before the first cell
+
+31:29.000 --> 31:31.000
+blocks.
+
+31:31.000 --> 31:33.000
+It's hard to avoid
+
+31:33.000 --> 31:35.000
+two cells
+
+31:35.000 --> 31:37.000
+in the same chamber.
+
+31:37.000 --> 31:39.000
+But it doesn't matter.
+
+31:39.000 --> 31:41.000
+Even if there is a multiple cell
+
+31:41.000 --> 31:43.000
+or double cell,
+
+31:43.000 --> 31:45.000
+all the data
+
+31:45.000 --> 31:47.000
+is extracted
+
+31:47.000 --> 31:49.000
+from single cell.
+
+31:51.000 --> 31:53.000
+As we mentioned,
+
+31:53.000 --> 31:55.000
+the size of the cancer cell
+
+31:55.000 --> 31:57.000
+is very important.
+
+31:57.000 --> 31:59.000
+We don't want
+
+31:59.000 --> 32:01.000
+cells smaller than 10 microns
+
+32:01.000 --> 32:03.000
+or other sizes
+
+32:03.000 --> 32:05.000
+to get in.
+
+32:05.000 --> 32:07.000
+It will skew
+
+32:07.000 --> 32:09.000
+or distort
+
+32:09.000 --> 32:11.000
+the whole experiment.
+
+32:11.000 --> 32:13.000
+As we mentioned,
+
+32:13.000 --> 32:15.000
+the cancer cell
+
+32:15.000 --> 32:17.000
+is very
+
+32:17.000 --> 32:19.000
+strange.
+
+32:19.000 --> 32:21.000
+So we must
+
+32:21.000 --> 32:23.000
+ensure that
+
+32:23.000 --> 32:25.000
+all sizes can be captured.
+
+32:25.000 --> 32:27.000
+So we take
+
+32:27.000 --> 32:29.000
+the cell line
+
+32:29.000 --> 32:31.000
+from the ground
+
+32:31.000 --> 32:33.000
+and make it round
+
+32:33.000 --> 32:35.000
+or sphere-shaped
+
+32:35.000 --> 32:37.000
+to quantify
+
+32:37.000 --> 32:39.000
+its size
+
+32:39.000 --> 32:41.000
+with the
+
+32:41.000 --> 32:43.000
+diameter.
+
+32:43.000 --> 32:45.000
+Then we put the same cell line
+
+32:45.000 --> 32:47.000
+or cell
+
+32:47.000 --> 32:49.000
+in the tube
+
+32:49.000 --> 32:51.000
+to measure its size.
+
+32:51.000 --> 32:53.000
+The distribution
+
+32:53.000 --> 32:55.000
+is next to it.
+
+32:55.000 --> 32:57.000
+As you can see,
+
+32:57.000 --> 32:59.000
+the distribution is very similar.
+
+32:59.000 --> 33:01.000
+Here are four images
+
+33:01.000 --> 33:03.000
+showing relatively small cells
+
+33:03.000 --> 33:05.000
+about 11 or 12 microns
+
+33:05.000 --> 33:07.000
+in diameter.
+
+33:07.000 --> 33:09.000
+This is very rare.
+
+33:09.000 --> 33:11.000
+One-thousandth cell
+
+33:11.000 --> 33:13.000
+has a diameter of 40 microns.
+
+33:13.000 --> 33:15.000
+We can effectively
+
+33:15.000 --> 33:17.000
+preserve the size.
+
+33:19.000 --> 33:21.000
+To sum up,
+
+33:21.000 --> 33:23.000
+there are two challenges
+
+33:23.000 --> 33:25.000
+to overcome.
+
+33:25.000 --> 33:27.000
+The first one is how to
+
+33:27.000 --> 33:29.000
+scale up the throughput.
+
+33:29.000 --> 33:31.000
+The second challenge is
+
+33:31.000 --> 33:33.000
+how to automate
+
+33:33.000 --> 33:35.000
+the readout under
+
+33:35.000 --> 33:37.000
+engineering innovation.
+
+33:37.000 --> 33:39.000
+To scale up
+
+33:39.000 --> 33:41.000
+the throughput
+
+33:41.000 --> 33:43.000
+using a highly parallel
+
+33:43.000 --> 33:45.000
+flow circuit,
+
+33:45.000 --> 33:47.000
+we need
+
+33:47.000 --> 33:49.000
+a compact
+
+33:49.000 --> 33:51.000
+high-density array
+
+33:51.000 --> 33:53.000
+to scale up
+
+33:53.000 --> 33:55.000
+the image processing.
+
+33:55.000 --> 33:57.000
+To scale up
+
+33:57.000 --> 33:59.000
+the image processing,
+
+33:59.000 --> 34:01.000
+we need to scan
+
+34:01.000 --> 34:03.000
+each image
+
+34:03.000 --> 34:05.000
+in the device area.
+
+34:05.000 --> 34:07.000
+The higher the density,
+
+34:07.000 --> 34:09.000
+the smaller the number
+
+34:09.000 --> 34:11.000
+of frames needed
+
+34:13.000 --> 34:15.000
+for image processing.
+
+34:15.000 --> 34:17.000
+These are the two challenges
+
+34:17.000 --> 34:19.000
+of engineering innovation
+
+34:19.000 --> 34:21.000
+to scale up the throughput.
+
+34:21.000 --> 34:23.000
+In terms of automation,
+
+34:23.000 --> 34:25.000
+we developed a highly adaptive
+
+34:25.000 --> 34:27.000
+algorithm to analyze
+
+34:27.000 --> 34:29.000
+the different single cells.
+
+34:29.000 --> 34:31.000
+We also used
+
+34:31.000 --> 34:33.000
+the function
+
+34:33.000 --> 34:35.000
+to analyze the size
+
+34:35.000 --> 34:37.000
+of the single cell or sphere.
+
+34:39.000 --> 34:41.000
+Is there anything
+
+34:41.000 --> 34:43.000
+you want to discuss?
+
+34:45.000 --> 34:47.000
+I'm a bit curious
+
+34:47.000 --> 34:49.000
+about the fluorescent bag.
+
+34:51.000 --> 34:53.000
+Our fluorescent bag
+
+34:53.000 --> 34:55.000
+uses CellTracker.
+
+34:55.000 --> 34:57.000
+CellTracker
+
+34:57.000 --> 34:59.000
+is a live technology.
+
+34:59.000 --> 35:01.000
+What does it do?
+
+35:03.000 --> 35:05.000
+That's a good question.
+
+35:09.000 --> 35:11.000
+As far as I know,
+
+35:15.000 --> 35:17.000
+it's a bit like
+
+35:17.000 --> 35:19.000
+a metallization product.
+
+35:19.000 --> 35:21.000
+If the cell is alive,
+
+35:21.000 --> 35:23.000
+it will intake
+
+35:23.000 --> 35:25.000
+these bags
+
+35:25.000 --> 35:27.000
+to show the color
+
+35:27.000 --> 35:29.000
+of the cell.
+
+35:29.000 --> 35:31.000
+You may want to know
+
+35:31.000 --> 35:33.000
+what the chemical is.
+
+35:33.000 --> 35:35.000
+I can send you the link.
+
+35:37.000 --> 35:39.000
+I'm curious
+
+35:39.000 --> 35:41.000
+how you can make sure
+
+35:41.000 --> 35:43.000
+that all the cells
+
+35:43.000 --> 35:45.000
+will eat the bag.
+
+35:45.000 --> 35:47.000
+I don't know if
+
+35:47.000 --> 35:49.000
+there is something
+
+35:49.000 --> 35:51.000
+in the sample
+
+35:51.000 --> 35:53.000
+that will be eaten by the cell.
+
+35:53.000 --> 35:55.000
+Are you worried
+
+35:55.000 --> 35:57.000
+about the negative force?
+
+36:01.000 --> 36:03.000
+Yes.
+
+36:03.000 --> 36:05.000
+In this chip,
+
+36:05.000 --> 36:07.000
+the fluorescence
+
+36:07.000 --> 36:09.000
+is very dim.
+
+36:09.000 --> 36:11.000
+As I said,
+
+36:11.000 --> 36:13.000
+some cells may be very weak.
+
+36:13.000 --> 36:15.000
+It's very dim.
+
+36:15.000 --> 36:17.000
+These two cells
+
+36:17.000 --> 36:19.000
+seem to be weaker.
+
+36:19.000 --> 36:21.000
+We try our best
+
+36:21.000 --> 36:23.000
+to minimize the force
+
+36:23.000 --> 36:25.000
+and minimize the negative force.
+
+36:25.000 --> 36:27.000
+As we see in this experiment,
+
+36:27.000 --> 36:29.000
+we use manual
+
+36:29.000 --> 36:31.000
+and brightfield imaging
+
+36:31.000 --> 36:33.000
+to verify
+
+36:33.000 --> 36:35.000
+that the negative force
+
+36:35.000 --> 36:37.000
+is less than 5%,
+
+36:39.000 --> 36:41.000
+so we minimize the negative force.
+
+36:41.000 --> 36:43.000
+The second is
+
+36:43.000 --> 36:45.000
+that we need
+
+36:45.000 --> 36:47.000
+commercialization projects
+
+36:47.000 --> 36:49.000
+to do molecular analysis.
+
+36:49.000 --> 36:51.000
+In this project,
+
+36:51.000 --> 36:53.000
+the real cell readout
+
+36:53.000 --> 36:55.000
+is from sequencing,
+
+36:55.000 --> 36:57.000
+not from fluorescence reading.
+
+36:57.000 --> 36:59.000
+So the readout method
+
+36:59.000 --> 37:01.000
+is different
+
+37:01.000 --> 37:03.000
+with different concerns
+
+37:03.000 --> 37:05.000
+and different methods.
+
+37:05.000 --> 37:07.000
+I didn't understand
+
+37:07.000 --> 37:09.000
+what you said
+
+37:09.000 --> 37:11.000
+about commercialization.
+
+37:11.000 --> 37:13.000
+What is the readout?
+
+37:13.000 --> 37:15.000
+We directly see
+
+37:15.000 --> 37:17.000
+how much transcript recovery
+
+37:17.000 --> 37:19.000
+is required.
+
+37:29.000 --> 37:31.000
+I have another question.
+
+37:35.000 --> 37:37.000
+I just calculated
+
+37:37.000 --> 37:39.000
+the size of the chip.
+
+37:39.000 --> 37:41.000
+For example,
+
+37:41.000 --> 37:43.000
+a cell is about 10 microns,
+
+37:43.000 --> 37:45.000
+and a grid is
+
+37:45.000 --> 37:47.000
+several times the width of the cell.
+
+37:47.000 --> 37:49.000
+If you have
+
+37:49.000 --> 37:51.000
+about 10,000 grids,
+
+37:51.000 --> 37:53.000
+and we think of it as a square,
+
+37:53.000 --> 37:55.000
+so the length of the grid is about 100 grids,
+
+37:55.000 --> 37:57.000
+then the chip
+
+37:57.000 --> 37:59.000
+will be several centimeters
+
+37:59.000 --> 38:01.000
+long.
+
+38:01.000 --> 38:03.000
+Is that right?
+
+38:03.000 --> 38:05.000
+Yes.
+
+38:05.000 --> 38:07.000
+That's about it.
+
+38:07.000 --> 38:09.000
+My question is
+
+38:09.000 --> 38:11.000
+you have a several centimeters
+
+38:11.000 --> 38:13.000
+long chip,
+
+38:13.000 --> 38:15.000
+and you use a channel
+
+38:15.000 --> 38:17.000
+to feed through
+
+38:17.000 --> 38:19.000
+all the slides.
+
+38:19.000 --> 38:21.000
+How many channels
+
+38:21.000 --> 38:23.000
+do you use to feed through
+
+38:23.000 --> 38:25.000
+all the slides?
+
+38:25.000 --> 38:27.000
+If there is no clock
+
+38:27.000 --> 38:29.000
+in the feeding line,
+
+38:29.000 --> 38:31.000
+it will be a whole row.
+
+38:31.000 --> 38:33.000
+All the slides
+
+38:33.000 --> 38:35.000
+will not have feeding.
+
+38:35.000 --> 38:37.000
+Is that right?
+
+38:37.000 --> 38:39.000
+That's a very good question.
+
+38:39.000 --> 38:41.000
+You said
+
+38:41.000 --> 38:43.000
+if the channel is broken,
+
+38:43.000 --> 38:45.000
+all the slides will be dead.
+
+38:45.000 --> 38:47.000
+Yes.
+
+38:47.000 --> 38:49.000
+If the channel is broken,
+
+38:49.000 --> 38:51.000
+there will be no cells.
+
+38:51.000 --> 38:53.000
+This is not a problem
+
+38:53.000 --> 38:55.000
+in our experiment.
+
+38:55.000 --> 38:57.000
+There are two reasons.
+
+38:57.000 --> 38:59.000
+First,
+
+38:59.000 --> 39:01.000
+each branch
+
+39:01.000 --> 39:03.000
+has 64 or 32 chips.
+
+39:03.000 --> 39:05.000
+So
+
+39:05.000 --> 39:07.000
+even if one branch doesn't work,
+
+39:07.000 --> 39:09.000
+we may lose
+
+39:09.000 --> 39:11.000
+some of the cells.
+
+39:11.000 --> 39:13.000
+Second,
+
+39:13.000 --> 39:15.000
+if the channel is 100 microns long,
+
+39:15.000 --> 39:17.000
+it's not easy
+
+39:17.000 --> 39:19.000
+to break it or kill it.
+
+39:19.000 --> 39:21.000
+So there is no problem.
+
+39:21.000 --> 39:23.000
+Thank you.
+
+39:23.000 --> 39:25.000
+How do you make the channel?
+
+39:25.000 --> 39:27.000
+Can you tell us?
+
+39:27.000 --> 39:29.000
+Of course.
+
+39:31.000 --> 39:33.000
+We use
+
+39:33.000 --> 39:35.000
+microfabrication
+
+39:35.000 --> 39:37.000
+to make photolithography.
+
+39:37.000 --> 39:39.000
+We use
+
+39:39.000 --> 39:41.000
+SUA.
+
+39:41.000 --> 39:43.000
+The feature is that
+
+39:43.000 --> 39:45.000
+we can make a channel
+
+39:45.000 --> 39:47.000
+with a wide range of thickness.
+
+39:47.000 --> 39:49.000
+For example,
+
+39:49.000 --> 39:51.000
+one micron to several microns.
+
+39:51.000 --> 39:53.000
+We can define
+
+39:53.000 --> 39:55.000
+the different
+
+39:55.000 --> 39:57.000
+channel sizes.
+
+39:57.000 --> 39:59.000
+Thank you.
+
+39:59.000 --> 40:01.000
+Thank you.
+
+40:01.000 --> 40:03.000
+I think
+
+40:03.000 --> 40:05.000
+it's a good question.
+
+40:05.000 --> 40:07.000
+I think everyone is following.
+
+40:07.000 --> 40:09.000
+Thank you.
+
+40:09.000 --> 40:11.000
+I have to answer
+
+40:11.000 --> 40:13.000
+how to make
+
+40:13.000 --> 40:15.000
+suspension culture
+
+40:15.000 --> 40:17.000
+based on capture.
+
+40:17.000 --> 40:19.000
+We have a
+
+40:19.000 --> 40:21.000
+capture scheme.
+
+40:21.000 --> 40:23.000
+The chips
+
+40:23.000 --> 40:25.000
+are made of PDMS.
+
+40:25.000 --> 40:27.000
+How do we make sure
+
+40:27.000 --> 40:29.000
+that
+
+40:29.000 --> 40:31.000
+it won't stick
+
+40:31.000 --> 40:33.000
+to the chip?
+
+40:33.000 --> 40:35.000
+We use
+
+40:35.000 --> 40:37.000
+a chemical called
+
+40:37.000 --> 40:39.000
+Peronic F108.
+
+40:39.000 --> 40:41.000
+The feature is that
+
+40:41.000 --> 40:43.000
+the two ends
+
+40:43.000 --> 40:45.000
+of the chemical
+
+40:45.000 --> 40:47.000
+have a
+
+40:47.000 --> 40:49.000
+hydrophobic
+
+40:49.000 --> 40:51.000
+core.
+
+40:51.000 --> 40:53.000
+So what happens
+
+40:53.000 --> 40:55.000
+when we load
+
+40:55.000 --> 40:57.000
+the F108 to the chip?
+
+40:57.000 --> 40:59.000
+The hydrophobic core
+
+40:59.000 --> 41:01.000
+will stick to
+
+41:01.000 --> 41:03.000
+the PDMS.
+
+41:03.000 --> 41:05.000
+The two ends
+
+41:05.000 --> 41:07.000
+or the pegs
+
+41:07.000 --> 41:09.000
+will expose
+
+41:09.000 --> 41:11.000
+the surface of the channel.
+
+41:11.000 --> 41:13.000
+When the cell comes in,
+
+41:13.000 --> 41:15.000
+it sees that there are many pegs.
+
+41:15.000 --> 41:17.000
+Pegs are
+
+41:17.000 --> 41:19.000
+a kind of
+
+41:19.000 --> 41:21.000
+anti-biofouling material.
+
+41:21.000 --> 41:23.000
+If we have
+
+41:23.000 --> 41:25.000
+these pegs
+
+41:25.000 --> 41:27.000
+on the surface,
+
+41:27.000 --> 41:29.000
+the cells won't be able to
+
+41:29.000 --> 41:31.000
+stick to the PDMS.
+
+41:31.000 --> 41:33.000
+So we can make
+
+41:33.000 --> 41:35.000
+suspension cell culture.
+
+41:35.000 --> 41:37.000
+In this work,
+
+41:37.000 --> 41:39.000
+we show four different
+
+41:39.000 --> 41:41.000
+breast cancer cell lines.
+
+41:41.000 --> 41:43.000
+You can see
+
+41:43.000 --> 41:45.000
+the sphere-forming cell
+
+41:45.000 --> 41:47.000
+at the top,
+
+41:47.000 --> 41:49.000
+and the anoikis cell at the bottom.
+
+41:49.000 --> 41:51.000
+You can see the single cell
+
+41:51.000 --> 41:53.000
+at day 7 and 14
+
+41:53.000 --> 41:55.000
+started to form
+
+41:55.000 --> 41:57.000
+a humerous sphere.
+
+41:57.000 --> 41:59.000
+The width of the chamber
+
+41:59.000 --> 42:01.000
+is about 100 microns.
+
+42:01.000 --> 42:03.000
+So you can see
+
+42:03.000 --> 42:05.000
+the humerous sphere is relatively small.
+
+42:05.000 --> 42:07.000
+The anoikis cell
+
+42:07.000 --> 42:09.000
+has
+
+42:09.000 --> 42:11.000
+a debris
+
+42:11.000 --> 42:13.000
+or cell
+
+42:13.000 --> 42:15.000
+inside the chip.
+
+42:15.000 --> 42:17.000
+You can see
+
+42:17.000 --> 42:19.000
+that different cell lines
+
+42:19.000 --> 42:21.000
+look different.
+
+42:21.000 --> 42:23.000
+Some look like balls.
+
+42:23.000 --> 42:25.000
+Some look like grapes.
+
+42:25.000 --> 42:27.000
+The morphology is slightly different.
+
+42:31.000 --> 42:33.000
+Can you go back to the first page?
+
+42:33.000 --> 42:35.000
+Sure.
+
+42:35.000 --> 42:37.000
+When you make cell culture,
+
+42:37.000 --> 42:39.000
+you should release the cell first.
+
+42:39.000 --> 42:41.000
+At least don't let it
+
+42:41.000 --> 42:43.000
+get stuck in the channel.
+
+42:43.000 --> 42:45.000
+Right?
+
+42:45.000 --> 42:47.000
+OK.
+
+42:47.000 --> 42:49.000
+After completing cell loading,
+
+42:49.000 --> 42:51.000
+we will wash the cell
+
+42:51.000 --> 42:53.000
+to make sure
+
+42:53.000 --> 42:55.000
+there is no cell on the entrance channel.
+
+42:55.000 --> 42:57.000
+Then we will flip the chip over.
+
+42:57.000 --> 42:59.000
+This is a more detailed
+
+42:59.000 --> 43:01.000
+experiment process.
+
+43:01.000 --> 43:03.000
+So we flip the chip over
+
+43:03.000 --> 43:05.000
+and the cell will fall into the microwave.
+
+43:05.000 --> 43:07.000
+You can see
+
+43:07.000 --> 43:09.000
+from this image
+
+43:09.000 --> 43:11.000
+that this is the capture site.
+
+43:11.000 --> 43:13.000
+You flip it over
+
+43:13.000 --> 43:15.000
+and it falls to the bottom.
+
+43:15.000 --> 43:17.000
+Because of the gravity,
+
+43:17.000 --> 43:19.000
+it falls to the bottom.
+
+43:19.000 --> 43:21.000
+Then it
+
+43:21.000 --> 43:23.000
+grows into a sphere.
+
+43:23.000 --> 43:25.000
+Or it may die.
+
+43:25.000 --> 43:27.000
+OK.
+
+43:27.000 --> 43:29.000
+After flipping the chip over,
+
+43:29.000 --> 43:31.000
+you need to provide nutrients,
+
+43:31.000 --> 43:33.000
+right?
+
+43:33.000 --> 43:35.000
+You need to use the same channel chip
+
+43:35.000 --> 43:37.000
+to do this.
+
+43:37.000 --> 43:39.000
+That's right.
+
+43:39.000 --> 43:41.000
+It's easy to do.
+
+43:41.000 --> 43:43.000
+We just take
+
+43:43.000 --> 43:45.000
+the in-and-out chips
+
+43:45.000 --> 43:47.000
+and put them into CultureMedia.
+
+43:47.000 --> 43:49.000
+CultureMedia has more chips.
+
+43:49.000 --> 43:51.000
+So it will gradually flow
+
+43:51.000 --> 43:53.000
+to the outlet.
+
+43:53.000 --> 43:55.000
+We provide nutrients
+
+43:55.000 --> 43:57.000
+in stages.
+
+43:57.000 --> 43:59.000
+We change
+
+43:59.000 --> 44:01.000
+the frequency of Media
+
+44:01.000 --> 44:03.000
+once a day.
+
+44:03.000 --> 44:05.000
+It's our protocol.
+
+44:05.000 --> 44:07.000
+I see.
+
+44:07.000 --> 44:09.000
+Thank you.
+
+44:09.000 --> 44:11.000
+Thank you.
+
+44:15.000 --> 44:17.000
+We use
+
+44:17.000 --> 44:19.000
+this technology
+
+44:19.000 --> 44:21.000
+to put the cell in.
+
+44:21.000 --> 44:23.000
+You can see the sphere size distribution
+
+44:23.000 --> 44:25.000
+and the sphere formation rate.
+
+44:25.000 --> 44:27.000
+You can see the different cell lines.
+
+44:27.000 --> 44:29.000
+It's quite obvious.
+
+44:29.000 --> 44:31.000
+It's easy to grow into a sphere.
+
+44:31.000 --> 44:33.000
+First, the sphere formation rate
+
+44:33.000 --> 44:35.000
+is high.
+
+44:35.000 --> 44:37.000
+At the same time,
+
+44:37.000 --> 44:39.000
+the size is large.
+
+44:39.000 --> 44:41.000
+It's smaller than other cell lines.
+
+44:41.000 --> 44:43.000
+The result is
+
+44:43.000 --> 44:45.000
+quite consistent.
+
+44:45.000 --> 44:47.000
+It proves
+
+44:47.000 --> 44:49.000
+the capability
+
+44:49.000 --> 44:51.000
+of our technology.
+
+44:51.000 --> 44:53.000
+What else
+
+44:53.000 --> 44:55.000
+can we do
+
+44:55.000 --> 44:57.000
+with this technology?
+
+44:57.000 --> 44:59.000
+We can
+
+44:59.000 --> 45:01.000
+get the
+
+45:01.000 --> 45:03.000
+sphere formation rate
+
+45:03.000 --> 45:05.000
+with this technology.
+
+45:05.000 --> 45:07.000
+We can see more details
+
+45:07.000 --> 45:09.000
+and information.
+
+45:09.000 --> 45:11.000
+First, the relationship
+
+45:11.000 --> 45:13.000
+between stem cell and
+
+45:13.000 --> 45:15.000
+stem cell.
+
+45:15.000 --> 45:17.000
+It's controversial.
+
+45:17.000 --> 45:19.000
+Some people think
+
+45:19.000 --> 45:21.000
+the smaller cell
+
+45:21.000 --> 45:23.000
+is related to
+
+45:23.000 --> 45:25.000
+stem cell gene.
+
+45:25.000 --> 45:27.000
+The lower the stem cell gene,
+
+45:27.000 --> 45:29.000
+the smaller the cell.
+
+45:29.000 --> 45:31.000
+However,
+
+45:31.000 --> 45:33.000
+mitochondria
+
+45:33.000 --> 45:35.000
+have more
+
+45:35.000 --> 45:37.000
+and larger cell lines.
+
+45:37.000 --> 45:39.000
+It increases the size of the cell.
+
+45:39.000 --> 45:41.000
+At the same time,
+
+45:41.000 --> 45:43.000
+it makes the cell look more
+
+45:43.000 --> 45:45.000
+stem-like.
+
+45:45.000 --> 45:47.000
+What's going on?
+
+45:47.000 --> 45:49.000
+We can
+
+45:49.000 --> 45:51.000
+understand stemness
+
+45:51.000 --> 45:53.000
+from sphere formation rate.
+
+45:53.000 --> 45:55.000
+We have a good algorithm
+
+45:55.000 --> 45:57.000
+to analyze
+
+45:57.000 --> 45:59.000
+the size of mitochondria.
+
+45:59.000 --> 46:01.000
+We can study the impact of
+
+46:01.000 --> 46:03.000
+different size groups on sphere formation rate.
+
+46:03.000 --> 46:05.000
+You can see
+
+46:05.000 --> 46:07.000
+cell size distribution.
+
+46:07.000 --> 46:09.000
+We can see
+
+46:09.000 --> 46:11.000
+the size of
+
+46:11.000 --> 46:13.000
+the single cell
+
+46:13.000 --> 46:15.000
+in different cell lines.
+
+46:15.000 --> 46:17.000
+We can see
+
+46:17.000 --> 46:19.000
+the size of
+
+46:19.000 --> 46:21.000
+the single cell
+
+46:21.000 --> 46:23.000
+in different cell lines.
+
+46:23.000 --> 46:25.000
+We can compare
+
+46:25.000 --> 46:27.000
+the size of
+
+46:27.000 --> 46:29.000
+inter-cell line.
+
+46:29.000 --> 46:31.000
+We can compare
+
+46:31.000 --> 46:33.000
+the sphere formation rate
+
+46:33.000 --> 46:35.000
+of the first 30%
+
+46:35.000 --> 46:37.000
+of mitochondria.
+
+46:37.000 --> 46:39.000
+The result is very interesting.
+
+46:39.000 --> 46:41.000
+In the experiment of
+
+46:41.000 --> 46:43.000
+SOM-159,
+
+46:43.000 --> 46:45.000
+we can observe
+
+46:45.000 --> 46:47.000
+that the smaller cell size
+
+46:47.000 --> 46:49.000
+is larger than
+
+46:49.000 --> 46:51.000
+the larger cell
+
+46:51.000 --> 46:53.000
+in the sphere formation rate.
+
+46:53.000 --> 46:55.000
+However,
+
+46:55.000 --> 46:57.000
+in SOM-149 and
+
+46:57.000 --> 46:59.000
+T47,
+
+46:59.000 --> 47:01.000
+the fourth cell line
+
+47:01.000 --> 47:03.000
+has no difference.
+
+47:03.000 --> 47:05.000
+We think
+
+47:05.000 --> 47:07.000
+in different cell lines
+
+47:07.000 --> 47:09.000
+or different pathway regulations,
+
+47:09.000 --> 47:11.000
+they may be different.
+
+47:11.000 --> 47:13.000
+It also explains
+
+47:13.000 --> 47:15.000
+why other people
+
+47:15.000 --> 47:17.000
+get different conclusions.
+
+47:17.000 --> 47:19.000
+We can't study the correlation
+
+47:19.000 --> 47:21.000
+directly from size.
+
+47:21.000 --> 47:23.000
+We have to look at
+
+47:23.000 --> 47:25.000
+gene regulation
+
+47:25.000 --> 47:27.000
+to determine whether it is CSE.
+
+47:27.000 --> 47:29.000
+Size is not a reliable
+
+47:29.000 --> 47:31.000
+CSE marker.
+
+47:31.000 --> 47:33.000
+This is
+
+47:33.000 --> 47:35.000
+the conclusion.
+
+47:35.000 --> 47:37.000
+Next,
+
+47:37.000 --> 47:39.000
+we can check the size
+
+47:39.000 --> 47:41.000
+of the sphere in
+
+47:41.000 --> 47:43.000
+Day 0, Day 7, and Day 14.
+
+47:43.000 --> 47:45.000
+We can see
+
+47:45.000 --> 47:47.000
+the growth
+
+47:47.000 --> 47:49.000
+in each stage.
+
+47:49.000 --> 47:51.000
+We can see
+
+47:51.000 --> 47:53.000
+that in each cell line,
+
+47:53.000 --> 47:55.000
+some cells
+
+47:55.000 --> 47:57.000
+grow very fast in the first week
+
+47:57.000 --> 47:59.000
+and not so fast in the second week.
+
+47:59.000 --> 48:01.000
+In contrast,
+
+48:01.000 --> 48:03.000
+some cells grow very slow
+
+48:03.000 --> 48:05.000
+in the first week,
+
+48:05.000 --> 48:07.000
+but in the second week,
+
+48:07.000 --> 48:09.000
+they grow bigger.
+
+48:09.000 --> 48:11.000
+This is
+
+48:11.000 --> 48:13.000
+the plot
+
+48:13.000 --> 48:15.000
+on the
+
+48:15.000 --> 48:17.000
+scattering plot.
+
+48:17.000 --> 48:19.000
+If we put
+
+48:19.000 --> 48:21.000
+Day 7's sphere diameter
+
+48:21.000 --> 48:23.000
+on X,
+
+48:23.000 --> 48:25.000
+Day 14's on X,
+
+48:25.000 --> 48:27.000
+we can see
+
+48:27.000 --> 48:29.000
+that Day 7's
+
+48:29.000 --> 48:31.000
+sphere diameter
+
+48:31.000 --> 48:33.000
+is basically
+
+48:33.000 --> 48:35.000
+1X.
+
+48:35.000 --> 48:37.000
+If Day 14's
+
+48:37.000 --> 48:39.000
+sphere diameter
+
+48:39.000 --> 48:41.000
+is 1X,
+
+48:41.000 --> 48:43.000
+Day 14's
+
+48:43.000 --> 48:45.000
+sphere diameter
+
+48:45.000 --> 48:47.000
+is 1X.
+
+48:47.000 --> 48:49.000
+Day 14's
+
+48:49.000 --> 48:51.000
+sphere diameter
+
+48:51.000 --> 48:53.000
+is 1X.
+
+48:53.000 --> 48:55.000
+Day 14's
+
+48:55.000 --> 48:57.000
+sphere diameter
+
+48:57.000 --> 48:59.000
+is 1X.
+
+48:59.000 --> 49:01.000
+Day 14's
+
+49:01.000 --> 49:03.000
+sphere diameter
+
+49:03.000 --> 49:05.000
+is 1X.
+
+49:05.000 --> 49:07.000
+Day 14's
+
+49:07.000 --> 49:09.000
+sphere diameter
+
+49:09.000 --> 49:11.000
+is 1X.
+
+49:11.000 --> 49:13.000
+In the theory of
+
+49:13.000 --> 49:15.000
+cancer stem cells,
+
+49:15.000 --> 49:17.000
+oncologists believe
+
+49:17.000 --> 49:19.000
+that there is
+
+49:19.000 --> 49:21.000
+a tumor-stem cell hierarchy,
+
+49:21.000 --> 49:23.000
+meaning that
+
+49:23.000 --> 49:25.000
+it can't further differentiate
+
+49:25.000 --> 49:27.000
+into regular cells.
+
+49:27.000 --> 49:29.000
+We believe that
+
+49:29.000 --> 49:31.000
+these progenitor cells
+
+49:31.000 --> 49:33.000
+are not yet
+
+49:33.000 --> 49:35.000
+fully compatible,
+
+49:35.000 --> 49:37.000
+so they can also
+
+49:37.000 --> 49:39.000
+produce a tumor sphere.
+
+49:39.000 --> 49:41.000
+However,
+
+49:41.000 --> 49:43.000
+it is not a stem cell,
+
+49:43.000 --> 49:45.000
+so it can't
+
+49:45.000 --> 49:47.000
+self-renew
+
+49:47.000 --> 49:49.000
+after proliferating
+
+49:49.000 --> 49:51.000
+several times.
+
+49:51.000 --> 49:53.000
+On the other hand,
+
+49:53.000 --> 49:55.000
+cancer stem cells
+
+49:55.000 --> 49:57.000
+have a quiescent property,
+
+49:57.000 --> 49:59.000
+which means
+
+49:59.000 --> 50:01.000
+they don't like proliferation.
+
+50:01.000 --> 50:03.000
+They may grow slowly at first,
+
+50:03.000 --> 50:05.000
+but it doesn't mean
+
+50:05.000 --> 50:07.000
+they don't want to.
+
+50:07.000 --> 50:09.000
+When I showed this result
+
+50:09.000 --> 50:11.000
+to our collaborators,
+
+50:11.000 --> 50:13.000
+they were very interested.
+
+50:13.000 --> 50:15.000
+In their hypothesis,
+
+50:15.000 --> 50:17.000
+although there are
+
+50:17.000 --> 50:19.000
+so many sphere-forming cells,
+
+50:19.000 --> 50:21.000
+this cell line
+
+50:21.000 --> 50:23.000
+is a special cell line
+
+50:23.000 --> 50:25.000
+with a lot of progenitor cells
+
+50:25.000 --> 50:27.000
+and strong sphere-forming capability.
+
+50:27.000 --> 50:29.000
+That's why
+
+50:29.000 --> 50:31.000
+the proliferation rate
+
+50:31.000 --> 50:33.000
+in the second week
+
+50:33.000 --> 50:35.000
+is so much lower.
+
+50:35.000 --> 50:37.000
+SOM149 is more
+
+50:37.000 --> 50:39.000
+compatible with
+
+50:39.000 --> 50:41.000
+oncologists' cancer stem cell model.
+
+50:41.000 --> 50:43.000
+It may be quiescent at first,
+
+50:43.000 --> 50:45.000
+but it can continue
+
+50:45.000 --> 50:47.000
+to proliferate.
+
+50:47.000 --> 50:49.000
+Through this technology,
+
+50:49.000 --> 50:51.000
+we can see
+
+50:51.000 --> 50:53.000
+the proliferation
+
+50:53.000 --> 50:55.000
+of single-cell
+
+50:55.000 --> 50:57.000
+derived sphere
+
+50:57.000 --> 50:59.000
+and
+
+50:59.000 --> 51:01.000
+study the
+
+51:01.000 --> 51:03.000
+cancer stem cell hierarchy.
+
+51:03.000 --> 51:05.000
+This is the second part
+
+51:05.000 --> 51:07.000
+of our technology presentation.
+
+51:07.000 --> 51:09.000
+To sum up,
+
+51:09.000 --> 51:11.000
+the high-throughput single-cell
+
+51:11.000 --> 51:13.000
+derived sphere as a chip
+
+51:13.000 --> 51:15.000
+can scale from
+
+51:15.000 --> 51:17.000
+800 to
+
+51:17.000 --> 51:19.000
+more than 10,000 wells.
+
+51:19.000 --> 51:21.000
+The capture rate
+
+51:21.000 --> 51:23.000
+is now
+
+51:23.000 --> 51:25.000
+around 76%.
+
+51:25.000 --> 51:27.000
+When capturing the cell,
+
+51:27.000 --> 51:29.000
+the representative cell size
+
+51:29.000 --> 51:31.000
+per population
+
+51:31.000 --> 51:33.000
+is equal to the block.
+
+51:33.000 --> 51:35.000
+We can make sure
+
+51:35.000 --> 51:37.000
+that we didn't
+
+51:37.000 --> 51:39.000
+change the cell
+
+51:39.000 --> 51:41.000
+in the cell process.
+
+51:41.000 --> 51:43.000
+We didn't scale the result.
+
+51:43.000 --> 51:45.000
+We also used
+
+51:45.000 --> 51:47.000
+genetic analysis algorithm
+
+51:47.000 --> 51:49.000
+to help us
+
+51:49.000 --> 51:51.000
+do cell counting
+
+51:51.000 --> 51:53.000
+and cell sphere size measurement.
+
+51:53.000 --> 51:55.000
+Without these functions,
+
+51:55.000 --> 51:57.000
+it is difficult to
+
+51:57.000 --> 51:59.000
+quantify the sphere formation rate
+
+51:59.000 --> 52:01.000
+and observe the dynamic
+
+52:01.000 --> 52:03.000
+of sphere formation.
+
+52:03.000 --> 52:05.000
+At the end of the presentation,
+
+52:05.000 --> 52:07.000
+I told you
+
+52:07.000 --> 52:09.000
+about two different
+
+52:09.000 --> 52:11.000
+experimental results.
+
+52:11.000 --> 52:13.000
+The first one is
+
+52:13.000 --> 52:15.000
+the comparison of cell size
+
+52:15.000 --> 52:17.000
+and cell strength.
+
+52:17.000 --> 52:19.000
+We don't think
+
+52:19.000 --> 52:21.000
+cell size is a good CSE marker.
+
+52:21.000 --> 52:23.000
+We think
+
+52:23.000 --> 52:25.000
+there are more
+
+52:25.000 --> 52:27.000
+gene regulation
+
+52:27.000 --> 52:29.000
+that we need to study
+
+52:29.000 --> 52:31.000
+in the cell,
+
+52:31.000 --> 52:33.000
+not just cell size.
+
+52:33.000 --> 52:35.000
+We also showed
+
+52:35.000 --> 52:37.000
+the ability to track
+
+52:37.000 --> 52:39.000
+the process of sphere formation.
+
+52:39.000 --> 52:41.000
+This can help oncologists
+
+52:41.000 --> 52:43.000
+to study
+
+52:43.000 --> 52:45.000
+tumor stem
+
+52:45.000 --> 52:47.000
+and cancer stem cell hierarchy
+
+52:47.000 --> 52:49.000
+to help them understand
+
+52:49.000 --> 52:51.000
+the details.
+
+52:51.000 --> 52:53.000
+This work
+
+52:53.000 --> 52:55.000
+was published in
+
+52:55.000 --> 52:57.000
+Lab on a Chip last August.
+
+52:57.000 --> 52:59.000
+If you are interested,
+
+52:59.000 --> 53:01.000
+you can check it out.
+
+53:01.000 --> 53:03.000
+Thank you
+
+53:03.000 --> 53:05.000
+our lab
+
+53:05.000 --> 53:07.000
+for being with me
+
+53:07.000 --> 53:09.000
+for an hour.
+
+53:09.000 --> 53:11.000
+If you have any questions,
+
+53:11.000 --> 53:13.000
+feel free to ask.
+
+53:21.000 --> 53:23.000
+I have a question.
+
+53:23.000 --> 53:25.000
+Can you go back to the page
+
+53:25.000 --> 53:27.000
+before the conclusion?
+
+53:29.000 --> 53:31.000
+This page?
+
+53:33.000 --> 53:35.000
+Yes.
+
+53:35.000 --> 53:37.000
+I have a question.
+
+53:37.000 --> 53:39.000
+How do you rule out
+
+53:39.000 --> 53:41.000
+the size of the culture well?
+
+53:41.000 --> 53:43.000
+It's about 100 microns.
+
+53:43.000 --> 53:45.000
+How do you rule out
+
+53:45.000 --> 53:47.000
+the size of the chamber?
+
+53:47.000 --> 53:49.000
+The speed
+
+53:49.000 --> 53:51.000
+is not limited
+
+53:51.000 --> 53:53.000
+to the size of the space.
+
+53:53.000 --> 53:55.000
+It's the
+
+53:55.000 --> 53:57.000
+characteristic of the sphere.
+
+53:57.000 --> 53:59.000
+Is the entrance small?
+
+53:59.000 --> 54:01.000
+I'm asking
+
+54:01.000 --> 54:03.000
+the size of the chamber
+
+54:03.000 --> 54:05.000
+is not limited
+
+54:05.000 --> 54:07.000
+to the size of the chamber.
+
+54:07.000 --> 54:09.000
+The size of the chamber
+
+54:09.000 --> 54:11.000
+is not limited
+
+54:11.000 --> 54:13.000
+to the size of the chamber.
+
+54:13.000 --> 54:15.000
+That's a good question.
+
+54:15.000 --> 54:17.000
+The entrance
+
+54:17.000 --> 54:19.000
+is set at
+
+54:19.000 --> 54:21.000
+50 microns.
+
+54:21.000 --> 54:23.000
+We observed
+
+54:23.000 --> 54:25.000
+the cell population.
+
+54:25.000 --> 54:27.000
+The cell population
+
+54:27.000 --> 54:29.000
+is not more than 50.
+
+54:29.000 --> 54:31.000
+If a cell
+
+54:31.000 --> 54:33.000
+is very powerful,
+
+54:33.000 --> 54:35.000
+it will grow fully in the first week.
+
+54:35.000 --> 54:37.000
+How do I know
+
+54:37.000 --> 54:39.000
+if it will grow slowly
+
+54:39.000 --> 54:41.000
+in the first week?
+
+54:41.000 --> 54:43.000
+That's a good question.
+
+54:43.000 --> 54:45.000
+In fact, we set 100 microns.
+
+54:45.000 --> 54:47.000
+From our experience,
+
+54:47.000 --> 54:49.000
+very few cells can grow
+
+54:49.000 --> 54:51.000
+more than 100 microns.
+
+54:51.000 --> 54:53.000
+The reason you can see so much
+
+54:53.000 --> 54:55.000
+is because our data is
+
+54:55.000 --> 54:57.000
+very large.
+
+54:57.000 --> 54:59.000
+We can observe
+
+54:59.000 --> 55:01.000
+very few cases
+
+55:01.000 --> 55:03.000
+in our data.
+
+55:03.000 --> 55:05.000
+If you are really interested,
+
+55:05.000 --> 55:07.000
+it's not difficult
+
+55:07.000 --> 55:09.000
+to solve this problem.
+
+55:09.000 --> 55:11.000
+We can change the chamber size
+
+55:11.000 --> 55:13.000
+to 150 microns
+
+55:13.000 --> 55:15.000
+to solve the problem.
+
+55:15.000 --> 55:17.000
+However,
+
+55:17.000 --> 55:19.000
+in the context of work,
+
+55:19.000 --> 55:21.000
+the chamber size is a minority.
+
+55:21.000 --> 55:23.000
+It's not the focus of our research.
+
+55:23.000 --> 55:25.000
+Our focus is to demonstrate
+
+55:25.000 --> 55:27.000
+the capability.
+
+55:27.000 --> 55:29.000
+So we set 100 microns
+
+55:29.000 --> 55:31.000
+as the chamber size.
+
+55:39.000 --> 55:41.000
+I have a question.
+
+55:41.000 --> 55:43.000
+How do you
+
+55:43.000 --> 55:45.000
+quantify
+
+55:45.000 --> 55:47.000
+the gene performance
+
+55:47.000 --> 55:49.000
+of a single cell?
+
+55:51.000 --> 55:53.000
+This is my
+
+55:53.000 --> 55:55.000
+other work.
+
+55:55.000 --> 55:57.000
+If you are interested
+
+55:57.000 --> 55:59.000
+in the gene performance
+
+55:59.000 --> 56:01.000
+of a single cell,
+
+56:01.000 --> 56:03.000
+you can read
+
+56:03.000 --> 56:05.000
+a paper published
+
+56:05.000 --> 56:07.000
+in Cell.
+
+56:07.000 --> 56:09.000
+It basically
+
+56:09.000 --> 56:11.000
+barcodes
+
+56:11.000 --> 56:13.000
+each cell
+
+56:13.000 --> 56:15.000
+and transcript.
+
+56:15.000 --> 56:17.000
+From next-generation sequencing,
+
+56:17.000 --> 56:19.000
+we can infer
+
+56:19.000 --> 56:21.000
+which cell
+
+56:21.000 --> 56:23.000
+this transcript
+
+56:23.000 --> 56:25.000
+comes from.
+
+56:25.000 --> 56:27.000
+We can quantify
+
+56:29.000 --> 56:31.000
+the strength of gene performance
+
+56:31.000 --> 56:33.000
+by this way.
+
+56:33.000 --> 56:35.000
+The way it captures
+
+56:35.000 --> 56:37.000
+messenger RNA is
+
+56:37.000 --> 56:39.000
+to put a
+
+56:39.000 --> 56:41.000
+poly-T-tail to capture
+
+56:41.000 --> 56:43.000
+a poly-A-tail.
+
+56:43.000 --> 56:45.000
+So they can hybridize
+
+56:45.000 --> 56:47.000
+and barcode.
+
+56:49.000 --> 56:51.000
+I have already captured
+
+56:51.000 --> 56:53.000
+these cells.
+
+56:53.000 --> 56:55.000
+How do you transfer them
+
+56:55.000 --> 56:57.000
+to a single-cell RNA-seq
+
+56:57.000 --> 56:59.000
+device?
+
+57:01.000 --> 57:03.000
+In molecular
+
+57:03.000 --> 57:05.000
+analysis,
+
+57:05.000 --> 57:07.000
+we use
+
+57:07.000 --> 57:09.000
+a bead
+
+57:09.000 --> 57:11.000
+as our
+
+57:11.000 --> 57:13.000
+mRNA-captured carrier.
+
+57:13.000 --> 57:15.000
+This technology
+
+57:15.000 --> 57:17.000
+is introduced
+
+57:17.000 --> 57:19.000
+by Dropseq.
+
+57:19.000 --> 57:21.000
+They introduce
+
+57:21.000 --> 57:23.000
+this technology
+
+57:23.000 --> 57:25.000
+and license it
+
+57:25.000 --> 57:27.000
+to a company.
+
+57:27.000 --> 57:29.000
+We buy the product
+
+57:29.000 --> 57:31.000
+from the company
+
+57:31.000 --> 57:33.000
+and put the bead
+
+57:33.000 --> 57:35.000
+into our chip
+
+57:35.000 --> 57:37.000
+to capture mRNA.
+
+57:37.000 --> 57:39.000
+We take the bead
+
+57:39.000 --> 57:41.000
+and do downstream amplification
+
+57:41.000 --> 57:43.000
+for gene sequencing.
+
+57:49.000 --> 57:51.000
+It sounds like
+
+57:51.000 --> 57:53.000
+we will succeed.
+
+57:53.000 --> 57:55.000
+We still have a long way to go.
+
+57:55.000 --> 57:57.000
+Yes.
+
+58:07.000 --> 58:09.000
+We don't have any more questions.
+
+58:09.000 --> 58:11.000
+Thank you again
+
+58:11.000 --> 58:13.000
+for the wonderful lecture.
+
+58:15.000 --> 58:17.000
+Thank you for inviting me.
+
+58:19.000 --> 58:21.000
+Thank you.
+

@@ -1,0 +1,6308 @@
+1
+00:00:00,000 --> 00:00:05,000
+Hi everyone, welcome to this week's TARA Talk.
+
+2
+00:00:05,000 --> 00:00:07,000
+The title of today's talk is
+
+3
+00:00:07,000 --> 00:00:11,000
+The Evaluation of Alternative Exposure Metrics
+
+4
+00:00:11,000 --> 00:00:14,000
+for Traffic-Related Air Pollutant Exposure
+
+5
+00:00:14,000 --> 00:00:16,000
+in North Carolina.
+
+6
+00:00:16,000 --> 00:00:18,000
+Let's welcome our speaker today,
+
+7
+00:00:18,000 --> 00:00:21,000
+Zhang Shiying, or you can call her Zhang-C.
+
+8
+00:00:21,000 --> 00:00:25,000
+Let's briefly introduce the speaker's information.
+
+9
+00:00:25,000 --> 00:00:30,000
+She's currently working at Sonoma Technology,
+
+10
+00:00:30,000 --> 00:00:34,000
+a company that specializes in this area.
+
+11
+00:00:34,000 --> 00:00:41,000
+She did her Ph.D. at UNC-North Carolina-Champaign Hill.
+
+12
+00:00:41,000 --> 00:00:44,000
+Before coming to the United States,
+
+13
+00:00:44,000 --> 00:00:46,000
+she was a master's student at the University of Texas,
+
+14
+00:00:46,000 --> 00:00:48,000
+then a master's student at the University of Texas,
+
+15
+00:00:48,000 --> 00:00:50,000
+then a master's student at the University of Texas.
+
+16
+00:00:50,000 --> 00:00:55,000
+She's currently working on a topic that's closely related to her research.
+
+17
+00:00:55,000 --> 00:00:59,000
+Let's welcome our speaker, Zhang Shiying.
+
+18
+00:01:02,000 --> 00:01:04,000
+Hi everyone.
+
+19
+00:01:04,000 --> 00:01:06,000
+Before I start, I want to show you my T-shirt.
+
+20
+00:01:06,000 --> 00:01:08,000
+I won last year.
+
+21
+00:01:08,000 --> 00:01:11,000
+My name is Zhang Shiying.
+
+22
+00:01:11,000 --> 00:01:13,000
+You can call me Zhang-C.
+
+23
+00:01:13,000 --> 00:01:17,000
+Today's topic is
+
+24
+00:01:17,000 --> 00:01:21,000
+how to use air quality models or model-based methods
+
+25
+00:01:21,000 --> 00:01:25,000
+to assess human exposure to air pollution.
+
+26
+00:01:25,000 --> 00:01:28,000
+I'm going to focus on the traffic pollutants.
+
+27
+00:01:28,000 --> 00:01:32,000
+A few days ago, the host asked me to talk about
+
+28
+00:01:32,000 --> 00:01:35,000
+the related issues of air pollution.
+
+29
+00:01:35,000 --> 00:01:38,000
+But because our company has a strict process
+
+30
+00:01:38,000 --> 00:01:43,000
+of reviewing things and publications,
+
+31
+00:01:43,000 --> 00:01:45,000
+I didn't have time to make a new video.
+
+32
+00:01:45,000 --> 00:01:48,000
+So I'm going to talk about my last year's video.
+
+33
+00:01:48,000 --> 00:01:53,000
+This photo was taken in the United States in 1948.
+
+34
+00:01:53,000 --> 00:01:55,000
+Why is air pollution important?
+
+35
+00:01:55,000 --> 00:02:00,000
+This photo was taken in a small town in Pennsylvania in 1948
+
+36
+00:02:00,000 --> 00:02:02,000
+called Donora.
+
+37
+00:02:02,000 --> 00:02:05,000
+The photo on the right was taken at noon.
+
+38
+00:02:05,000 --> 00:02:09,000
+You can see that it wasn't bad weather or raining that day.
+
+39
+00:02:09,000 --> 00:02:12,000
+No, it was a normal noon.
+
+40
+00:02:12,000 --> 00:02:15,000
+The streetlights were all on and the sky looked dark.
+
+41
+00:02:15,000 --> 00:02:18,000
+Air pollution was very serious at that time.
+
+42
+00:02:18,000 --> 00:02:20,000
+After that incident,
+
+43
+00:02:20,000 --> 00:02:22,000
+40 people died in the town.
+
+44
+00:02:22,000 --> 00:02:27,000
+50% of the residents suffered from
+
+45
+00:02:27,000 --> 00:02:32,000
+serious respiratory and cardiovascular diseases.
+
+46
+00:02:32,000 --> 00:02:36,000
+People said that it was very difficult to breathe at that time.
+
+47
+00:02:36,000 --> 00:02:41,000
+This incident caused a lot of resonance in the United States.
+
+48
+00:02:41,000 --> 00:02:44,000
+People said that air pollution was very serious.
+
+49
+00:02:44,000 --> 00:02:46,000
+After that incident,
+
+50
+00:02:46,000 --> 00:02:48,000
+there were a lot of social movements,
+
+51
+00:02:48,000 --> 00:02:51,000
+protests, and government measures.
+
+52
+00:02:51,000 --> 00:02:53,000
+Finally, in 1967,
+
+53
+00:02:53,000 --> 00:02:57,000
+the United States passed the Clean Air Act,
+
+54
+00:02:57,000 --> 00:03:02,000
+which is the most important law in the United States.
+
+55
+00:03:02,000 --> 00:03:05,000
+The Clean Air Act was finally passed,
+
+56
+00:03:05,000 --> 00:03:07,000
+and control began.
+
+57
+00:03:07,000 --> 00:03:09,000
+Was it useful?
+
+58
+00:03:10,000 --> 00:03:12,000
+The answer is yes.
+
+59
+00:03:12,000 --> 00:03:14,000
+Let's take a look at this picture.
+
+60
+00:03:14,000 --> 00:03:16,000
+The word may be too small to see clearly,
+
+61
+00:03:16,000 --> 00:03:17,000
+but it doesn't matter.
+
+62
+00:03:17,000 --> 00:03:21,000
+This is basically the annual air pollution concentration.
+
+63
+00:03:21,000 --> 00:03:24,000
+This is a measured situation.
+
+64
+00:03:24,000 --> 00:03:26,000
+I remember I took this.
+
+65
+00:03:26,000 --> 00:03:29,000
+It should be LA.
+
+66
+00:03:29,000 --> 00:03:35,000
+Each line represents a different city or county.
+
+67
+00:03:35,000 --> 00:03:36,000
+You can see this trend.
+
+68
+00:03:36,000 --> 00:03:40,000
+Every year, air pollution is decreasing.
+
+69
+00:03:40,000 --> 00:03:42,000
+So it's actually useful.
+
+70
+00:03:42,000 --> 00:03:44,000
+Since air pollution has decreased,
+
+71
+00:03:44,000 --> 00:03:47,000
+what are we doing to study air pollution?
+
+72
+00:03:47,000 --> 00:03:49,000
+It's already so low.
+
+73
+00:03:49,000 --> 00:03:51,000
+What are we doing here?
+
+74
+00:03:51,000 --> 00:03:53,000
+The two most important things now
+
+75
+00:03:53,000 --> 00:03:56,000
+are not only in the United States,
+
+76
+00:03:56,000 --> 00:03:57,000
+but also in the world.
+
+77
+00:03:57,000 --> 00:03:59,000
+The two most important air pollutants are
+
+78
+00:03:59,000 --> 00:04:01,000
+1. Smelly sheep
+
+79
+00:04:01,000 --> 00:04:03,000
+2. PM2.5
+
+80
+00:04:03,000 --> 00:04:06,000
+PM2.5 is called a particulate matter
+
+81
+00:04:06,000 --> 00:04:09,000
+with a diameter smaller than 2.5 micrograms.
+
+82
+00:04:12,000 --> 00:04:14,000
+I won't go into detail.
+
+83
+00:04:14,000 --> 00:04:15,000
+But basically,
+
+84
+00:04:15,000 --> 00:04:19,000
+smelly sheep is not directly released.
+
+85
+00:04:19,000 --> 00:04:22,000
+You won't have something that says it's smelly sheep.
+
+86
+00:04:22,000 --> 00:04:23,000
+It won't be like that.
+
+87
+00:04:23,000 --> 00:04:25,000
+The formation of smelly sheep is secondary.
+
+88
+00:04:25,000 --> 00:04:27,000
+In other words, it's not a smelly sheep gas.
+
+89
+00:04:27,000 --> 00:04:29,000
+These gases become smelly sheep
+
+90
+00:04:29,000 --> 00:04:32,000
+after chemical reactions in the air.
+
+91
+00:04:32,000 --> 00:04:35,000
+These gases that are released
+
+92
+00:04:35,000 --> 00:04:40,000
+may not be so harmful to the human body.
+
+93
+00:04:40,000 --> 00:04:41,000
+But after it's released,
+
+94
+00:04:41,000 --> 00:04:44,000
+it becomes smelly sheep
+
+95
+00:04:44,000 --> 00:04:47,000
+and is very harmful to the human body.
+
+96
+00:04:47,000 --> 00:04:51,000
+PM2.5 is simply a very, very small particle.
+
+97
+00:04:51,000 --> 00:04:53,000
+This is a strand of hair.
+
+98
+00:04:53,000 --> 00:04:55,000
+We all love to use this picture.
+
+99
+00:04:55,000 --> 00:04:57,000
+This is a strand of hair.
+
+100
+00:04:57,000 --> 00:05:01,000
+PM10 is a diameter smaller than 10 micrograms.
+
+101
+00:05:01,000 --> 00:05:02,000
+It's about this big.
+
+102
+00:05:02,000 --> 00:05:04,000
+It's a blue circle.
+
+103
+00:05:04,000 --> 00:05:06,000
+PM2.5 is this small.
+
+104
+00:05:06,000 --> 00:05:09,000
+What does being small have to do with it?
+
+105
+00:05:09,000 --> 00:05:12,000
+Being small means that it's easy to pass through your respiratory tract.
+
+106
+00:05:12,000 --> 00:05:14,000
+It can go deeper.
+
+107
+00:05:14,000 --> 00:05:15,000
+It can go into the lungs.
+
+108
+00:05:15,000 --> 00:05:17,000
+It will cause respiratory diseases
+
+109
+00:05:17,000 --> 00:05:19,000
+and even cardiovascular diseases.
+
+110
+00:05:19,000 --> 00:05:21,000
+Let's skip this one first.
+
+111
+00:05:21,000 --> 00:05:23,000
+This is a study
+
+112
+00:05:23,000 --> 00:05:25,000
+that has been very active in recent years
+
+113
+00:05:25,000 --> 00:05:28,000
+called Global Burden of Disease.
+
+114
+00:05:28,000 --> 00:05:30,000
+They publish every year
+
+115
+00:05:30,000 --> 00:05:35,000
+the current ranking of causes of death
+
+116
+00:05:35,000 --> 00:05:37,000
+and how many people die.
+
+117
+00:05:37,000 --> 00:05:39,000
+Why is air pollution important?
+
+118
+00:05:39,000 --> 00:05:42,000
+After the Clean Air Act,
+
+119
+00:05:42,000 --> 00:05:45,000
+the concentration of pollutants decreased every year.
+
+120
+00:05:45,000 --> 00:05:47,000
+But if you look at the whole world,
+
+121
+00:05:47,000 --> 00:05:50,000
+the cause of death from air pollution
+
+122
+00:05:50,000 --> 00:05:56,000
+is ranked fourth in the world.
+
+123
+00:05:57,000 --> 00:06:03,000
+Air pollution is very, very, very important.
+
+124
+00:06:03,000 --> 00:06:12,000
+This is a paper from Nature in 2015.
+
+125
+00:06:12,000 --> 00:06:16,000
+They divided the world into countries
+
+126
+00:06:16,000 --> 00:06:20,000
+and gave the most serious air pollution
+
+127
+00:06:21,000 --> 00:06:29,000
+emission sector.
+
+128
+00:06:29,000 --> 00:06:31,000
+They predicted how many emission sectors
+
+129
+00:06:31,000 --> 00:06:32,000
+would cause death.
+
+130
+00:06:32,000 --> 00:06:34,000
+So if you look at this table,
+
+131
+00:06:34,000 --> 00:06:36,000
+there are different pollutants in the horizontal axis.
+
+132
+00:06:36,000 --> 00:06:38,000
+For example, we have residential energy.
+
+133
+00:06:38,000 --> 00:06:42,000
+Air pollution caused by using energy.
+
+134
+00:06:42,000 --> 00:06:46,000
+Agriculture causes air pollution.
+
+135
+00:06:46,000 --> 00:06:51,000
+Land traffic causes air pollution.
+
+136
+00:06:51,000 --> 00:06:53,000
+You can see the two red boxes,
+
+137
+00:06:53,000 --> 00:06:55,000
+USA and Germany.
+
+138
+00:06:55,000 --> 00:06:57,000
+These two countries
+
+139
+00:06:57,000 --> 00:06:59,000
+cause the most death
+
+140
+00:06:59,000 --> 00:07:05,000
+in the traffic sector.
+
+141
+00:07:05,000 --> 00:07:09,000
+These are some introductions.
+
+142
+00:07:09,000 --> 00:07:13,000
+What am I going to talk about today?
+
+143
+00:07:13,000 --> 00:07:18,000
+This paper was published in 2015.
+
+144
+00:07:18,000 --> 00:07:31,000
+In terms of environmental epidemiology,
+
+145
+00:07:31,000 --> 00:07:34,000
+it is important to look at the relationship
+
+146
+00:07:34,000 --> 00:07:38,000
+between diseases and air pollution.
+
+147
+00:07:38,000 --> 00:07:40,000
+You want to use air pollution variability
+
+148
+00:07:40,000 --> 00:07:42,000
+to explain whether there is a disease
+
+149
+00:07:42,000 --> 00:07:44,000
+or whether there is a disease.
+
+150
+00:07:44,000 --> 00:07:47,000
+In this case,
+
+151
+00:07:47,000 --> 00:07:50,000
+if there are 10 people today,
+
+152
+00:07:50,000 --> 00:07:53,000
+5 people have respiratory diseases,
+
+153
+00:07:53,000 --> 00:07:54,000
+5 people do not.
+
+154
+00:07:54,000 --> 00:07:57,000
+I wonder if this is related to air pollution.
+
+155
+00:07:57,000 --> 00:08:02,000
+When I was doing this statistical model,
+
+156
+00:08:02,000 --> 00:08:04,000
+I found that these 10 people
+
+157
+00:08:04,000 --> 00:08:08,000
+were exposed to the same amount of air pollution.
+
+158
+00:08:08,000 --> 00:08:10,000
+For example, they were all exposed to
+
+159
+00:08:10,000 --> 00:08:13,000
+5 micrograms per cubic meter of PM2.5.
+
+160
+00:08:13,000 --> 00:08:14,000
+At this time,
+
+161
+00:08:14,000 --> 00:08:16,000
+the model can't see anything.
+
+162
+00:08:16,000 --> 00:08:17,000
+5 people are sick, 5 people are not sick,
+
+163
+00:08:17,000 --> 00:08:19,000
+but everyone is exposed to the same amount of air pollution.
+
+164
+00:08:19,000 --> 00:08:22,000
+This means that you can't do anything.
+
+165
+00:08:22,000 --> 00:08:25,000
+This paper talks about
+
+166
+00:08:25,000 --> 00:08:28,000
+the past epidemiological studies,
+
+167
+00:08:28,000 --> 00:08:33,000
+the past studies that link diseases
+
+168
+00:08:33,000 --> 00:08:35,000
+and air pollution.
+
+169
+00:08:35,000 --> 00:08:39,000
+What can be improved?
+
+170
+00:08:39,000 --> 00:08:41,000
+This slide has a lot of words.
+
+171
+00:08:41,000 --> 00:08:43,000
+Basically, the most important thing is
+
+172
+00:08:43,000 --> 00:08:45,000
+the Health Effect Institute.
+
+173
+00:08:45,000 --> 00:08:47,000
+This is a 2009 paper.
+
+174
+00:08:47,000 --> 00:08:48,000
+The Health Effect Institute
+
+175
+00:08:48,000 --> 00:08:51,000
+is a very famous institution
+
+176
+00:08:51,000 --> 00:08:54,000
+that studies health effects.
+
+177
+00:08:54,000 --> 00:09:00,000
+They use data from the American Cancer Society
+
+178
+00:09:00,000 --> 00:09:05,000
+to re-analyze and link
+
+179
+00:09:05,000 --> 00:09:10,000
+the relationship between air pollution and death.
+
+180
+00:09:10,000 --> 00:09:12,000
+As I said before,
+
+181
+00:09:12,000 --> 00:09:13,000
+when you do this,
+
+182
+00:09:13,000 --> 00:09:15,000
+you need to have all the information
+
+183
+00:09:15,000 --> 00:09:17,000
+about whether you are sick or not.
+
+184
+00:09:17,000 --> 00:09:18,000
+Secondly, you need to have data
+
+185
+00:09:18,000 --> 00:09:20,000
+about the exposure of air pollution.
+
+186
+00:09:20,000 --> 00:09:23,000
+How do they do the air pollution exposure data?
+
+187
+00:09:23,000 --> 00:09:29,000
+Basically, they do it in this area.
+
+188
+00:09:29,000 --> 00:09:31,000
+Let me translate it for you.
+
+189
+00:09:31,000 --> 00:09:34,000
+They have a monitoring station
+
+190
+00:09:34,000 --> 00:09:36,000
+set up by the U.S. Department of Environment
+
+191
+00:09:36,000 --> 00:09:38,000
+in the United States.
+
+192
+00:09:38,000 --> 00:09:40,000
+They have a station on both sides,
+
+193
+00:09:40,000 --> 00:09:42,000
+an air pollution station.
+
+194
+00:09:42,000 --> 00:09:44,000
+Their approach is
+
+195
+00:09:44,000 --> 00:09:46,000
+for example,
+
+196
+00:09:46,000 --> 00:09:48,000
+in San Francisco,
+
+197
+00:09:48,000 --> 00:09:50,000
+I have 10 stations.
+
+198
+00:09:50,000 --> 00:09:53,000
+I collect the data of these 10 stations
+
+199
+00:09:53,000 --> 00:09:55,000
+and calculate the average.
+
+200
+00:09:55,000 --> 00:09:58,000
+I say that everyone living in San Francisco
+
+201
+00:09:58,000 --> 00:10:03,000
+has the same air pollution exposure.
+
+202
+00:10:03,000 --> 00:10:05,000
+That is to say,
+
+203
+00:10:05,000 --> 00:10:07,000
+everyone living in San Francisco
+
+204
+00:10:07,000 --> 00:10:09,000
+has the same air pollution exposure.
+
+205
+00:10:09,000 --> 00:10:12,000
+This is the same as what I just said.
+
+206
+00:10:12,000 --> 00:10:13,000
+For example,
+
+207
+00:10:13,000 --> 00:10:15,000
+everyone lives in San Francisco.
+
+208
+00:10:15,000 --> 00:10:16,000
+Some people are sick.
+
+209
+00:10:16,000 --> 00:10:17,000
+Some people are not sick.
+
+210
+00:10:17,000 --> 00:10:22,000
+When I do this epidemiological analysis,
+
+211
+00:10:22,000 --> 00:10:24,000
+I tell my models that
+
+212
+00:10:24,000 --> 00:10:26,000
+whether they are sick or not,
+
+213
+00:10:26,000 --> 00:10:27,000
+as long as they live in San Francisco,
+
+214
+00:10:27,000 --> 00:10:30,000
+their exposure is this high.
+
+215
+00:10:30,000 --> 00:10:32,000
+At this time,
+
+216
+00:10:32,000 --> 00:10:33,000
+you can see that
+
+217
+00:10:33,000 --> 00:10:35,000
+there seems to be a problem.
+
+218
+00:10:38,000 --> 00:10:40,000
+Another question is
+
+219
+00:10:40,000 --> 00:10:43,000
+that the U.S. Department of Environment
+
+220
+00:10:43,000 --> 00:10:46,000
+set up these stations in the United States
+
+221
+00:10:46,000 --> 00:10:48,000
+to measure air pollution.
+
+222
+00:10:48,000 --> 00:10:49,000
+However,
+
+223
+00:10:49,000 --> 00:10:52,000
+many air pollution is not regional.
+
+224
+00:10:52,000 --> 00:10:54,000
+It does not mean that
+
+225
+00:10:54,000 --> 00:10:55,000
+a station can represent
+
+226
+00:10:55,000 --> 00:10:58,000
+the concentration of pollutants in the entire area.
+
+227
+00:10:58,000 --> 00:11:00,000
+The table I listed here
+
+228
+00:11:00,000 --> 00:11:03,000
+is the distance from the road.
+
+229
+00:11:03,000 --> 00:11:05,000
+The unit is meters.
+
+230
+00:11:05,000 --> 00:11:08,000
+The axis is normalized to roadside.
+
+231
+00:11:08,000 --> 00:11:09,000
+That is to say,
+
+232
+00:11:09,000 --> 00:11:11,000
+the concentration of air pollution
+
+233
+00:11:11,000 --> 00:11:13,000
+is standardized,
+
+234
+00:11:13,000 --> 00:11:16,000
+which is the concentration of two roads on the roadside.
+
+235
+00:11:16,000 --> 00:11:19,000
+On the left side of the table,
+
+236
+00:11:19,000 --> 00:11:20,000
+you can see that
+
+237
+00:11:20,000 --> 00:11:21,000
+so many pollutants
+
+238
+00:11:21,000 --> 00:11:24,000
+actually have a very steep gradient.
+
+239
+00:11:24,000 --> 00:11:25,000
+That is to say,
+
+240
+00:11:25,000 --> 00:11:28,000
+between 100 and 150 meters,
+
+241
+00:11:28,000 --> 00:11:31,000
+the concentration has dropped by almost 60%.
+
+242
+00:11:33,000 --> 00:11:34,000
+That is to say,
+
+243
+00:11:34,000 --> 00:11:37,000
+the road distance is only a few meters.
+
+244
+00:11:37,000 --> 00:11:38,000
+There is such a difference in concentration
+
+245
+00:11:38,000 --> 00:11:40,000
+within 100 meters.
+
+246
+00:11:40,000 --> 00:11:42,000
+Can you see such a difference
+
+247
+00:11:42,000 --> 00:11:43,000
+in concentration
+
+248
+00:11:43,000 --> 00:11:44,000
+in a station
+
+249
+00:11:44,000 --> 00:11:47,000
+in a certain corner of the city?
+
+250
+00:11:47,000 --> 00:11:48,000
+You can't see it.
+
+251
+00:11:49,000 --> 00:11:50,000
+The first one,
+
+252
+00:11:50,000 --> 00:11:51,000
+you use that kind of station
+
+253
+00:11:51,000 --> 00:11:54,000
+to represent exposure,
+
+254
+00:11:54,000 --> 00:11:56,000
+the exposure of human body to pollution.
+
+255
+00:11:56,000 --> 00:11:58,000
+You may not be able to catch
+
+256
+00:11:58,000 --> 00:12:01,000
+the hot spot in the urban.
+
+257
+00:12:01,000 --> 00:12:02,000
+Hello, I have a question.
+
+258
+00:12:02,000 --> 00:12:03,000
+Please go ahead.
+
+259
+00:12:03,000 --> 00:12:05,000
+The first one,
+
+260
+00:12:05,000 --> 00:12:06,000
+the horizontal axis is the distance,
+
+261
+00:12:06,000 --> 00:12:08,000
+and the vertical axis is the concentration.
+
+262
+00:12:08,000 --> 00:12:10,000
+In the first few meters,
+
+263
+00:12:10,000 --> 00:12:14,000
+their gradient looks almost the same.
+
+264
+00:12:14,000 --> 00:12:16,000
+But you have,
+
+265
+00:12:16,000 --> 00:12:19,000
+for example, CO, CON,
+
+266
+00:12:19,000 --> 00:12:25,000
+and NO, NO, and N.
+
+267
+00:12:25,000 --> 00:12:27,000
+Don't they have a lot of difference in their atomic mass?
+
+268
+00:12:27,000 --> 00:12:28,000
+If I take one,
+
+269
+00:12:28,000 --> 00:12:30,000
+I think it's just an expansion.
+
+270
+00:12:30,000 --> 00:12:32,000
+Shouldn't the gradient be a lot different?
+
+271
+00:12:32,000 --> 00:12:34,000
+Because there is still a chemical reaction.
+
+272
+00:12:34,000 --> 00:12:36,000
+CO may not have much reaction.
+
+273
+00:12:36,000 --> 00:12:39,000
+NO and NOX may have chemical reactions.
+
+274
+00:12:39,000 --> 00:12:40,000
+It will generate other things.
+
+275
+00:12:40,000 --> 00:12:41,000
+So it may laugh faster,
+
+276
+00:12:41,000 --> 00:12:43,000
+laugh slower, not necessarily.
+
+277
+00:12:43,000 --> 00:12:44,000
+OK, OK.
+
+278
+00:12:44,000 --> 00:12:45,000
+Maybe it's all gas.
+
+279
+00:12:45,000 --> 00:12:46,000
+Even particles are different.
+
+280
+00:12:46,000 --> 00:12:47,000
+Particles may have
+
+281
+00:12:47,000 --> 00:12:49,000
+some different characteristics.
+
+282
+00:12:49,000 --> 00:12:50,000
+I want to add that
+
+283
+00:12:50,000 --> 00:12:52,000
+you have to consider the gradient.
+
+284
+00:12:52,000 --> 00:12:53,000
+So,
+
+285
+00:12:53,000 --> 00:12:55,000
+there is a physical problem.
+
+286
+00:12:55,000 --> 00:12:58,000
+So there is a chemical process.
+
+287
+00:12:58,000 --> 00:12:59,000
+That's right.
+
+288
+00:12:59,000 --> 00:13:00,000
+OK.
+
+289
+00:13:02,000 --> 00:13:03,000
+OK.
+
+290
+00:13:03,000 --> 00:13:04,000
+We just talked about outdoor.
+
+291
+00:13:04,000 --> 00:13:05,000
+For example,
+
+292
+00:13:05,000 --> 00:13:06,000
+you use outdoor,
+
+293
+00:13:06,000 --> 00:13:09,000
+you use the concentration of the side station beam
+
+294
+00:13:09,000 --> 00:13:10,000
+to represent the pollution source.
+
+295
+00:13:10,000 --> 00:13:11,000
+First, you can't catch the hot spot.
+
+296
+00:13:11,000 --> 00:13:12,000
+Like this kind of traffic pollution source.
+
+297
+00:13:12,000 --> 00:13:13,000
+If someone lives,
+
+298
+00:13:13,000 --> 00:13:15,000
+if someone's house is close to the road,
+
+299
+00:13:15,000 --> 00:13:16,000
+you can't catch it.
+
+300
+00:13:16,000 --> 00:13:17,000
+But if it's far away,
+
+301
+00:13:17,000 --> 00:13:18,000
+you can't catch it.
+
+302
+00:13:18,000 --> 00:13:19,000
+Second,
+
+303
+00:13:19,000 --> 00:13:20,000
+in fact,
+
+304
+00:13:20,000 --> 00:13:21,000
+most people
+
+305
+00:13:21,000 --> 00:13:23,000
+spend more time indoors
+
+306
+00:13:23,000 --> 00:13:26,000
+than they spend outdoors.
+
+307
+00:13:26,000 --> 00:13:28,000
+This is a...
+
+308
+00:13:28,000 --> 00:13:30,000
+It should be a Canadian study.
+
+309
+00:13:30,000 --> 00:13:31,000
+They looked at
+
+310
+00:13:31,000 --> 00:13:32,000
+how much time
+
+311
+00:13:32,000 --> 00:13:33,000
+children spend
+
+312
+00:13:33,000 --> 00:13:35,000
+indoors or outdoors.
+
+313
+00:13:35,000 --> 00:13:38,000
+I used the two red boxes.
+
+314
+00:13:38,000 --> 00:13:39,000
+You can see
+
+315
+00:13:39,000 --> 00:13:41,000
+one is in winter,
+
+316
+00:13:41,000 --> 00:13:42,000
+one is in summer.
+
+317
+00:13:42,000 --> 00:13:43,000
+In indoor time,
+
+318
+00:13:44,000 --> 00:13:46,000
+67% in winter,
+
+319
+00:13:46,000 --> 00:13:48,000
+72% in summer.
+
+320
+00:13:48,000 --> 00:13:49,000
+It means that
+
+321
+00:13:49,000 --> 00:13:50,000
+most people
+
+322
+00:13:50,000 --> 00:13:52,000
+spend more time indoors
+
+323
+00:13:52,000 --> 00:13:54,000
+than they spend outdoors.
+
+324
+00:13:54,000 --> 00:13:55,000
+At this time,
+
+325
+00:13:55,000 --> 00:13:57,000
+you use outdoor pollutants
+
+326
+00:13:57,000 --> 00:13:58,000
+to represent...
+
+327
+00:13:58,000 --> 00:14:01,000
+The concentration of the beam
+
+328
+00:14:01,000 --> 00:14:03,000
+to represent human exposure
+
+329
+00:14:03,000 --> 00:14:04,000
+may also be a problem
+
+330
+00:14:04,000 --> 00:14:06,000
+because everyone is indoors.
+
+331
+00:14:06,000 --> 00:14:07,000
+Right?
+
+332
+00:14:07,000 --> 00:14:09,000
+So that's why
+
+333
+00:14:09,000 --> 00:14:10,000
+there is this paper.
+
+334
+00:14:10,000 --> 00:14:11,000
+The first one is
+
+335
+00:14:11,000 --> 00:14:12,000
+Central Sites.
+
+336
+00:14:12,000 --> 00:14:13,000
+Central Sites
+
+337
+00:14:13,000 --> 00:14:14,000
+means
+
+338
+00:14:14,000 --> 00:14:15,000
+those
+
+339
+00:14:15,000 --> 00:14:17,000
+U.S. environmental protection agencies.
+
+340
+00:14:17,000 --> 00:14:18,000
+They can't catch
+
+341
+00:14:18,000 --> 00:14:20,000
+these local sources.
+
+342
+00:14:20,000 --> 00:14:21,000
+Local sources can be
+
+343
+00:14:21,000 --> 00:14:22,000
+traffic
+
+344
+00:14:22,000 --> 00:14:23,000
+or any
+
+345
+00:14:23,000 --> 00:14:24,000
+small sources
+
+346
+00:14:24,000 --> 00:14:26,000
+next to your house.
+
+347
+00:14:26,000 --> 00:14:28,000
+They may not be able to...
+
+348
+00:14:28,000 --> 00:14:30,000
+The second one is
+
+349
+00:14:30,000 --> 00:14:32,000
+using outdoor air pollution
+
+350
+00:14:32,000 --> 00:14:33,000
+to represent exposure
+
+351
+00:14:33,000 --> 00:14:35,000
+may not be very representative
+
+352
+00:14:35,000 --> 00:14:37,000
+because most people are indoors.
+
+353
+00:14:37,000 --> 00:14:38,000
+In theory,
+
+354
+00:14:38,000 --> 00:14:40,000
+you should use indoor air pollution
+
+355
+00:14:40,000 --> 00:14:43,000
+to represent exposure.
+
+356
+00:14:43,000 --> 00:14:46,000
+The goal of this paper
+
+357
+00:14:46,000 --> 00:14:48,000
+is to use model-based...
+
+358
+00:14:48,000 --> 00:14:49,000
+That is to say,
+
+359
+00:14:49,000 --> 00:14:51,000
+use model-based methods
+
+360
+00:14:51,000 --> 00:14:54,000
+to predict...
+
+361
+00:14:54,000 --> 00:14:55,000
+to estimate
+
+362
+00:14:55,000 --> 00:14:57,000
+the intensity of indoor and outdoor
+
+363
+00:14:57,000 --> 00:14:58,000
+and use them
+
+364
+00:14:58,000 --> 00:15:00,000
+to represent human exposure
+
+365
+00:15:00,000 --> 00:15:01,000
+to see
+
+366
+00:15:01,000 --> 00:15:03,000
+how different they are.
+
+367
+00:15:03,000 --> 00:15:05,000
+We can quantify
+
+368
+00:15:05,000 --> 00:15:09,000
+these potential exposure errors
+
+369
+00:15:10,000 --> 00:15:12,000
+This is the model I used.
+
+370
+00:15:12,000 --> 00:15:15,000
+The three yellow boxes
+
+371
+00:15:15,000 --> 00:15:18,000
+are STOKE, STOK, R-Line,
+
+372
+00:15:18,000 --> 00:15:20,000
+and LBL AR models.
+
+373
+00:15:20,000 --> 00:15:23,000
+These three are models.
+
+374
+00:15:23,000 --> 00:15:24,000
+STOKE stands for
+
+375
+00:15:24,000 --> 00:15:26,000
+Spacetime Ordinary Crating.
+
+376
+00:15:26,000 --> 00:15:27,000
+It represents...
+
+377
+00:15:27,000 --> 00:15:28,000
+It's actually
+
+378
+00:15:28,000 --> 00:15:30,000
+an internal and external
+
+379
+00:15:30,000 --> 00:15:31,000
+technology.
+
+380
+00:15:31,000 --> 00:15:32,000
+That technology
+
+381
+00:15:32,000 --> 00:15:33,000
+uses...
+
+382
+00:15:33,000 --> 00:15:34,000
+Its input data
+
+383
+00:15:34,000 --> 00:15:35,000
+is the data
+
+384
+00:15:35,000 --> 00:15:38,000
+from these environmental protection agencies.
+
+385
+00:15:38,000 --> 00:15:40,000
+We use that data
+
+386
+00:15:40,000 --> 00:15:42,000
+to push it inwards and outwards
+
+387
+00:15:42,000 --> 00:15:43,000
+to the census block level.
+
+388
+00:15:43,000 --> 00:15:45,000
+Census block is...
+
+389
+00:15:45,000 --> 00:15:46,000
+Imagine...
+
+390
+00:15:46,000 --> 00:15:47,000
+It's a block.
+
+391
+00:15:47,000 --> 00:15:48,000
+When you're walking,
+
+392
+00:15:48,000 --> 00:15:50,000
+there's a block on the road.
+
+393
+00:15:50,000 --> 00:15:51,000
+It could be a block.
+
+394
+00:15:51,000 --> 00:15:53,000
+So we push those intensities
+
+395
+00:15:53,000 --> 00:15:54,000
+inwards and outwards
+
+396
+00:15:54,000 --> 00:15:56,000
+to these block levels.
+
+397
+00:15:56,000 --> 00:15:58,000
+This represents
+
+398
+00:15:58,000 --> 00:16:00,000
+a background level.
+
+399
+00:16:00,000 --> 00:16:01,000
+I use the data
+
+400
+00:16:01,000 --> 00:16:04,000
+from the Central Monitoring Site
+
+401
+00:16:04,000 --> 00:16:05,000
+to push it inwards and outwards
+
+402
+00:16:05,000 --> 00:16:06,000
+to these places.
+
+403
+00:16:06,000 --> 00:16:07,000
+But it could miss
+
+404
+00:16:07,000 --> 00:16:08,000
+these local sources,
+
+405
+00:16:08,000 --> 00:16:10,000
+such as traffic.
+
+406
+00:16:10,000 --> 00:16:12,000
+R-Line is a line source
+
+407
+00:16:12,000 --> 00:16:14,000
+dispersion model.
+
+408
+00:16:14,000 --> 00:16:15,000
+It's used to predict
+
+409
+00:16:15,000 --> 00:16:17,000
+traffic-related pollution.
+
+410
+00:16:17,000 --> 00:16:18,000
+It basically
+
+411
+00:16:18,000 --> 00:16:19,000
+takes all roads
+
+412
+00:16:19,000 --> 00:16:22,000
+as a line.
+
+413
+00:16:22,000 --> 00:16:23,000
+It uses
+
+414
+00:16:23,000 --> 00:16:24,000
+a simple
+
+415
+00:16:24,000 --> 00:16:25,000
+high-definition
+
+416
+00:16:25,000 --> 00:16:27,000
+method
+
+417
+00:16:27,000 --> 00:16:28,000
+to model
+
+418
+00:16:28,000 --> 00:16:30,000
+traffic pollution.
+
+419
+00:16:30,000 --> 00:16:32,000
+It represents local source.
+
+420
+00:16:32,000 --> 00:16:33,000
+We define local source
+
+421
+00:16:33,000 --> 00:16:35,000
+as traffic pollution.
+
+422
+00:16:35,000 --> 00:16:37,000
+The last LVL-AR model
+
+423
+00:16:37,000 --> 00:16:40,000
+is Lawrence Berkeley Laboratory
+
+424
+00:16:40,000 --> 00:16:42,000
+Air Exchange Rate Model.
+
+425
+00:16:42,000 --> 00:16:44,000
+It's used to
+
+426
+00:16:44,000 --> 00:16:46,000
+predict air exchange rate,
+
+427
+00:16:46,000 --> 00:16:48,000
+which is the air exchange rate
+
+428
+00:16:48,000 --> 00:16:51,000
+for each household.
+
+429
+00:16:51,000 --> 00:16:52,000
+For example,
+
+430
+00:16:52,000 --> 00:16:53,000
+how long
+
+431
+00:16:53,000 --> 00:16:54,000
+will the air
+
+432
+00:16:54,000 --> 00:16:55,000
+in your house
+
+433
+00:16:55,000 --> 00:16:56,000
+be exchanged
+
+434
+00:16:56,000 --> 00:16:58,000
+with the air outside?
+
+435
+00:16:58,000 --> 00:17:00,000
+Using these three models
+
+436
+00:17:00,000 --> 00:17:02,000
+and combining them,
+
+437
+00:17:03,000 --> 00:17:05,000
+we can calculate
+
+438
+00:17:05,000 --> 00:17:07,000
+the six blue boxes.
+
+439
+00:17:07,000 --> 00:17:09,000
+These six boxes
+
+440
+00:17:09,000 --> 00:17:11,000
+represent
+
+441
+00:17:11,000 --> 00:17:13,000
+exposure.
+
+442
+00:17:13,000 --> 00:17:14,000
+We call it
+
+443
+00:17:14,000 --> 00:17:15,000
+exposure metric.
+
+444
+00:17:15,000 --> 00:17:16,000
+We use these six boxes
+
+445
+00:17:16,000 --> 00:17:17,000
+to represent
+
+446
+00:17:17,000 --> 00:17:19,000
+air exposure.
+
+447
+00:17:19,000 --> 00:17:20,000
+What are they?
+
+448
+00:17:20,000 --> 00:17:21,000
+The first one is
+
+449
+00:17:21,000 --> 00:17:22,000
+outdoor stoke,
+
+450
+00:17:22,000 --> 00:17:23,000
+which is
+
+451
+00:17:23,000 --> 00:17:25,000
+outdoor air exposure.
+
+452
+00:17:25,000 --> 00:17:27,000
+It's called stoke.
+
+453
+00:17:27,000 --> 00:17:28,000
+It represents background.
+
+454
+00:17:28,000 --> 00:17:29,000
+Remember,
+
+455
+00:17:29,000 --> 00:17:30,000
+the source of this thing
+
+456
+00:17:30,000 --> 00:17:31,000
+is Central Monitoring Site,
+
+457
+00:17:31,000 --> 00:17:32,000
+which is
+
+458
+00:17:32,000 --> 00:17:34,000
+the U.S. Department of Environment.
+
+459
+00:17:34,000 --> 00:17:35,000
+The second one is
+
+460
+00:17:35,000 --> 00:17:36,000
+outdoor on-road.
+
+461
+00:17:36,000 --> 00:17:37,000
+It represents
+
+462
+00:17:37,000 --> 00:17:39,000
+air pollution
+
+463
+00:17:39,000 --> 00:17:41,000
+caused by
+
+464
+00:17:41,000 --> 00:17:43,000
+traffic.
+
+465
+00:17:43,000 --> 00:17:45,000
+It's modeled
+
+466
+00:17:45,000 --> 00:17:47,000
+by R-Line.
+
+467
+00:17:47,000 --> 00:17:49,000
+Combining these two things,
+
+468
+00:17:49,000 --> 00:17:50,000
+outdoor stoke
+
+469
+00:17:50,000 --> 00:17:51,000
+represents background
+
+470
+00:17:51,000 --> 00:17:52,000
+because it can't
+
+471
+00:17:52,000 --> 00:17:54,000
+capture local source.
+
+472
+00:17:54,000 --> 00:17:56,000
+If you add these two things,
+
+473
+00:17:56,000 --> 00:17:58,000
+you get total exposure.
+
+474
+00:17:58,000 --> 00:17:59,000
+We call it
+
+475
+00:17:59,000 --> 00:18:00,000
+outdoor hybrid,
+
+476
+00:18:00,000 --> 00:18:01,000
+which is hybrid between
+
+477
+00:18:01,000 --> 00:18:03,000
+R-Line and stoke.
+
+478
+00:18:03,000 --> 00:18:04,000
+These three things
+
+479
+00:18:04,000 --> 00:18:05,000
+represent
+
+480
+00:18:05,000 --> 00:18:07,000
+outdoor concentration.
+
+481
+00:18:07,000 --> 00:18:08,000
+Using these three
+
+482
+00:18:08,000 --> 00:18:09,000
+outdoor concentrations
+
+483
+00:18:09,000 --> 00:18:10,000
+as a base,
+
+484
+00:18:10,000 --> 00:18:11,000
+we can combine
+
+485
+00:18:11,000 --> 00:18:12,000
+the air exchange rate.
+
+486
+00:18:12,000 --> 00:18:13,000
+The air exchange rate
+
+487
+00:18:13,000 --> 00:18:14,000
+from the LBL
+
+488
+00:18:14,000 --> 00:18:15,000
+air exchange rate model
+
+489
+00:18:15,000 --> 00:18:16,000
+on the left
+
+490
+00:18:16,000 --> 00:18:17,000
+can be used
+
+491
+00:18:17,000 --> 00:18:18,000
+to calculate
+
+492
+00:18:18,000 --> 00:18:19,000
+the corresponding
+
+493
+00:18:19,000 --> 00:18:21,000
+indoor concentration.
+
+494
+00:18:21,000 --> 00:18:22,000
+We use outdoor concentration
+
+495
+00:18:22,000 --> 00:18:23,000
+to calculate
+
+496
+00:18:23,000 --> 00:18:24,000
+indoor concentration.
+
+497
+00:18:24,000 --> 00:18:25,000
+We have
+
+498
+00:18:25,000 --> 00:18:27,000
+three other metrics,
+
+499
+00:18:27,000 --> 00:18:28,000
+indoor on-road,
+
+500
+00:18:28,000 --> 00:18:29,000
+indoor stoke,
+
+501
+00:18:29,000 --> 00:18:30,000
+and indoor hybrid.
+
+502
+00:18:30,000 --> 00:18:32,000
+There are six metrics in total.
+
+503
+00:18:32,000 --> 00:18:34,000
+I have a question.
+
+504
+00:18:34,000 --> 00:18:36,000
+Go ahead.
+
+505
+00:18:36,000 --> 00:18:38,000
+Do you consider
+
+506
+00:18:38,000 --> 00:18:40,000
+opening and closing
+
+507
+00:18:40,000 --> 00:18:41,000
+the window
+
+508
+00:18:41,000 --> 00:18:43,000
+or just
+
+509
+00:18:43,000 --> 00:18:44,000
+looking at
+
+510
+00:18:44,000 --> 00:18:46,000
+the exchange rate
+
+511
+00:18:46,000 --> 00:18:47,000
+under the air condition?
+
+512
+00:18:47,000 --> 00:18:49,000
+You'll see it later.
+
+513
+00:18:49,000 --> 00:18:51,000
+We'll talk about it later.
+
+514
+00:18:51,000 --> 00:18:53,000
+We'll talk about it later.
+
+515
+00:18:53,000 --> 00:18:55,000
+This slide
+
+516
+00:18:55,000 --> 00:18:57,000
+is about R-Line.
+
+517
+00:18:57,000 --> 00:18:59,000
+R-Line is a dispersion model.
+
+518
+00:18:59,000 --> 00:19:01,000
+You have to use R-Line.
+
+519
+00:19:01,000 --> 00:19:03,000
+In any air pollution model,
+
+520
+00:19:03,000 --> 00:19:05,000
+the most important thing
+
+521
+00:19:05,000 --> 00:19:07,000
+is emission.
+
+522
+00:19:07,000 --> 00:19:08,000
+This slide talks about
+
+523
+00:19:08,000 --> 00:19:10,000
+how emission is calculated
+
+524
+00:19:10,000 --> 00:19:12,000
+and where the data comes from.
+
+525
+00:19:12,000 --> 00:19:14,000
+This is not
+
+526
+00:19:14,000 --> 00:19:15,000
+too important
+
+527
+00:19:15,000 --> 00:19:16,000
+to everyone.
+
+528
+00:19:16,000 --> 00:19:17,000
+Let's not talk about it.
+
+529
+00:19:17,000 --> 00:19:18,000
+This is stoke.
+
+530
+00:19:18,000 --> 00:19:20,000
+It's the same as what I just said.
+
+531
+00:19:20,000 --> 00:19:21,000
+It is an
+
+532
+00:19:21,000 --> 00:19:22,000
+internal and external
+
+533
+00:19:22,000 --> 00:19:24,000
+critting technology.
+
+534
+00:19:24,000 --> 00:19:25,000
+It uses
+
+535
+00:19:25,000 --> 00:19:27,000
+the U.S. Environmental Protection
+
+536
+00:19:27,000 --> 00:19:29,000
+Air Quality System,
+
+537
+00:19:29,000 --> 00:19:30,000
+or AQS,
+
+538
+00:19:30,000 --> 00:19:32,000
+which is
+
+539
+00:19:32,000 --> 00:19:34,000
+the big test stations.
+
+540
+00:19:34,000 --> 00:19:35,000
+Finally,
+
+541
+00:19:35,000 --> 00:19:37,000
+these two things are added up.
+
+542
+00:19:37,000 --> 00:19:39,000
+This is
+
+543
+00:19:39,000 --> 00:19:41,000
+how to calculate
+
+544
+00:19:41,000 --> 00:19:43,000
+the corresponding
+
+545
+00:19:43,000 --> 00:19:45,000
+indoor concentration
+
+546
+00:19:45,000 --> 00:19:46,000
+of the outdoor concentration.
+
+547
+00:19:46,000 --> 00:19:48,000
+This is a very simple
+
+548
+00:19:48,000 --> 00:19:50,000
+mass balance model.
+
+549
+00:19:50,000 --> 00:19:52,000
+The internal
+
+550
+00:19:52,000 --> 00:19:54,000
+concentration
+
+551
+00:19:54,000 --> 00:19:56,000
+and time change
+
+552
+00:19:56,000 --> 00:19:58,000
+are determined by these terms.
+
+553
+00:19:58,000 --> 00:20:00,000
+The first is
+
+554
+00:20:00,000 --> 00:20:02,000
+the outdoor concentration
+
+555
+00:20:02,000 --> 00:20:04,000
+brought in by the
+
+556
+00:20:04,000 --> 00:20:06,000
+air exchange
+
+557
+00:20:06,000 --> 00:20:08,000
+and the
+
+558
+00:20:08,000 --> 00:20:10,000
+internal concentration
+
+559
+00:20:10,000 --> 00:20:12,000
+of the outdoor pollution.
+
+560
+00:20:12,000 --> 00:20:14,000
+This includes
+
+561
+00:20:14,000 --> 00:20:16,000
+deposition,
+
+562
+00:20:16,000 --> 00:20:18,000
+which is the rate
+
+563
+00:20:18,000 --> 00:20:20,000
+of indoor air
+
+564
+00:20:20,000 --> 00:20:22,000
+being excreted.
+
+565
+00:20:22,000 --> 00:20:24,000
+Here are some factors.
+
+566
+00:20:24,000 --> 00:20:26,000
+The penetration factor
+
+567
+00:20:26,000 --> 00:20:28,000
+is the rate of
+
+568
+00:20:28,000 --> 00:20:30,000
+incoming air.
+
+569
+00:20:30,000 --> 00:20:32,000
+The deposition rate
+
+570
+00:20:32,000 --> 00:20:34,000
+is the rate of
+
+571
+00:20:34,000 --> 00:20:36,000
+incoming air.
+
+572
+00:20:36,000 --> 00:20:38,000
+The penetration rate
+
+573
+00:20:38,000 --> 00:20:40,000
+is 1.
+
+574
+00:20:40,000 --> 00:20:42,000
+The deposition rate
+
+575
+00:20:42,000 --> 00:20:44,000
+is 0.5 per hour.
+
+576
+00:20:48,000 --> 00:20:50,000
+The PEM
+
+577
+00:20:50,000 --> 00:20:52,000
+is the rate
+
+578
+00:20:52,000 --> 00:20:54,000
+of incoming air.
+
+579
+00:20:54,000 --> 00:20:56,000
+The particle
+
+580
+00:20:56,000 --> 00:20:58,000
+is lower
+
+581
+00:20:58,000 --> 00:21:00,000
+and the deposition rate
+
+582
+00:21:00,000 --> 00:21:02,000
+is lower.
+
+583
+00:21:02,000 --> 00:21:04,000
+This is
+
+584
+00:21:04,000 --> 00:21:06,000
+the question
+
+585
+00:21:06,000 --> 00:21:08,000
+from the instructor.
+
+586
+00:21:08,000 --> 00:21:10,000
+AER model
+
+587
+00:21:10,000 --> 00:21:12,000
+is to calculate
+
+588
+00:21:12,000 --> 00:21:14,000
+the window.
+
+589
+00:21:14,000 --> 00:21:16,000
+The answer is no.
+
+590
+00:21:16,000 --> 00:21:18,000
+This study
+
+591
+00:21:18,000 --> 00:21:20,000
+is at the census block level.
+
+592
+00:21:20,000 --> 00:21:22,000
+I remember
+
+593
+00:21:22,000 --> 00:21:24,000
+there are
+
+594
+00:21:24,000 --> 00:21:26,000
+330,000 houses
+
+595
+00:21:26,000 --> 00:21:28,000
+in this area.
+
+596
+00:21:28,000 --> 00:21:30,000
+In theory,
+
+597
+00:21:30,000 --> 00:21:32,000
+if you want to use
+
+598
+00:21:32,000 --> 00:21:34,000
+the model,
+
+599
+00:21:34,000 --> 00:21:36,000
+including the window
+
+600
+00:21:36,000 --> 00:21:38,000
+and air conditioning,
+
+601
+00:21:38,000 --> 00:21:40,000
+you won't have the data.
+
+602
+00:21:40,000 --> 00:21:42,000
+Because I can't go to
+
+603
+00:21:42,000 --> 00:21:44,000
+330,000 houses
+
+604
+00:21:44,000 --> 00:21:46,000
+one by one
+
+605
+00:21:46,000 --> 00:21:48,000
+without the data.
+
+606
+00:21:48,000 --> 00:21:50,000
+So we need the simplest
+
+607
+00:21:50,000 --> 00:21:52,000
+model.
+
+608
+00:21:52,000 --> 00:21:54,000
+We don't even consider
+
+609
+00:21:54,000 --> 00:21:56,000
+where the house is.
+
+610
+00:21:56,000 --> 00:21:58,000
+What is the air exchange rate?
+
+611
+00:21:58,000 --> 00:22:00,000
+I won't
+
+612
+00:22:00,000 --> 00:22:02,000
+explain the model
+
+613
+00:22:02,000 --> 00:22:04,000
+in detail.
+
+614
+00:22:04,000 --> 00:22:06,000
+All the parameters,
+
+615
+00:22:06,000 --> 00:22:08,000
+such as how many years
+
+616
+00:22:08,000 --> 00:22:10,000
+the house has been built,
+
+617
+00:22:10,000 --> 00:22:12,000
+how big the floor area is,
+
+618
+00:22:12,000 --> 00:22:14,000
+you need this model.
+
+619
+00:22:14,000 --> 00:22:16,000
+In the past,
+
+620
+00:22:16,000 --> 00:22:18,000
+this model was used
+
+621
+00:22:18,000 --> 00:22:20,000
+to look at 10 or 15 houses.
+
+622
+00:22:20,000 --> 00:22:22,000
+But now
+
+623
+00:22:22,000 --> 00:22:24,000
+I need to look at 330,000 houses.
+
+624
+00:22:24,000 --> 00:22:26,000
+I can't do that.
+
+625
+00:22:26,000 --> 00:22:28,000
+So I need to look for the data.
+
+626
+00:22:28,000 --> 00:22:30,000
+I use the County Property Assessment Record.
+
+627
+00:22:30,000 --> 00:22:32,000
+I can have
+
+628
+00:22:32,000 --> 00:22:34,000
+the data
+
+629
+00:22:34,000 --> 00:22:36,000
+for each house.
+
+630
+00:22:36,000 --> 00:22:38,000
+This is free
+
+631
+00:22:38,000 --> 00:22:40,000
+in North Carolina.
+
+632
+00:22:40,000 --> 00:22:42,000
+It's expensive in California.
+
+633
+00:22:42,000 --> 00:22:44,000
+I'll give you $100.
+
+634
+00:22:44,000 --> 00:22:46,000
+I won't explain
+
+635
+00:22:46,000 --> 00:22:48,000
+the rest of the data.
+
+636
+00:22:48,000 --> 00:22:50,000
+It's basically public available data.
+
+637
+00:22:52,000 --> 00:22:54,000
+There's one thing here.
+
+638
+00:22:56,000 --> 00:22:58,000
+For each census block,
+
+639
+00:22:58,000 --> 00:23:00,000
+I sample
+
+640
+00:23:00,000 --> 00:23:02,000
+about 10 houses.
+
+641
+00:23:02,000 --> 00:23:04,000
+I use the 10 houses
+
+642
+00:23:04,000 --> 00:23:06,000
+to represent the census block.
+
+643
+00:23:06,000 --> 00:23:08,000
+I don't just make 330,000 houses
+
+644
+00:23:08,000 --> 00:23:10,000
+and make them all.
+
+645
+00:23:10,000 --> 00:23:12,000
+This is my modeling domain.
+
+646
+00:23:12,000 --> 00:23:14,000
+These three counties
+
+647
+00:23:14,000 --> 00:23:16,000
+in North Carolina.
+
+648
+00:23:16,000 --> 00:23:18,000
+Orange County is where UNC is.
+
+649
+00:23:18,000 --> 00:23:20,000
+I used to live here.
+
+650
+00:23:20,000 --> 00:23:22,000
+Durham is where
+
+651
+00:23:22,000 --> 00:23:24,000
+Duke University is.
+
+652
+00:23:24,000 --> 00:23:26,000
+Don't go there.
+
+653
+00:23:28,000 --> 00:23:30,000
+This is
+
+654
+00:23:30,000 --> 00:23:32,000
+a snapshot.
+
+655
+00:23:32,000 --> 00:23:34,000
+I use
+
+656
+00:23:34,000 --> 00:23:36,000
+the six exposure metrics
+
+657
+00:23:36,000 --> 00:23:38,000
+I mentioned earlier.
+
+658
+00:23:38,000 --> 00:23:40,000
+This is the map.
+
+659
+00:23:40,000 --> 00:23:42,000
+It's shown here.
+
+660
+00:23:44,000 --> 00:23:46,000
+A is the Outdoor Stoke.
+
+661
+00:23:46,000 --> 00:23:48,000
+It uses
+
+662
+00:23:48,000 --> 00:23:50,000
+the data from the station.
+
+663
+00:23:52,000 --> 00:23:54,000
+B is Outdoor Hybrid.
+
+664
+00:23:54,000 --> 00:23:56,000
+It uses R-Line,
+
+665
+00:23:56,000 --> 00:23:58,000
+the traffic source,
+
+666
+00:23:58,000 --> 00:24:00,000
+and the background,
+
+667
+00:24:00,000 --> 00:24:02,000
+the interpolation
+
+668
+00:24:02,000 --> 00:24:04,000
+data.
+
+669
+00:24:04,000 --> 00:24:06,000
+The two below
+
+670
+00:24:06,000 --> 00:24:08,000
+represent
+
+671
+00:24:08,000 --> 00:24:10,000
+the air quality field
+
+672
+00:24:10,000 --> 00:24:12,000
+in the simple
+
+673
+00:24:12,000 --> 00:24:14,000
+indoor mass balance model.
+
+674
+00:24:18,000 --> 00:24:20,000
+Let's look at the Outdoor Stoke
+
+675
+00:24:20,000 --> 00:24:22,000
+in the upper left corner.
+
+676
+00:24:22,000 --> 00:24:24,000
+Most of the concentration
+
+677
+00:24:24,000 --> 00:24:26,000
+is between
+
+678
+00:24:26,000 --> 00:24:28,000
+24 and 27.
+
+679
+00:24:28,000 --> 00:24:30,000
+There's no spatial
+
+680
+00:24:30,000 --> 00:24:32,000
+variation.
+
+681
+00:24:32,000 --> 00:24:34,000
+That's it.
+
+682
+00:24:34,000 --> 00:24:36,000
+I remember
+
+683
+00:24:36,000 --> 00:24:38,000
+there are only
+
+684
+00:24:38,000 --> 00:24:40,000
+two or three stations
+
+685
+00:24:40,000 --> 00:24:42,000
+in this area.
+
+686
+00:24:42,000 --> 00:24:44,000
+If you have two or three stations
+
+687
+00:24:44,000 --> 00:24:46,000
+with interpolation data,
+
+688
+00:24:46,000 --> 00:24:48,000
+you can only achieve
+
+689
+00:24:48,000 --> 00:24:50,000
+this much.
+
+690
+00:24:50,000 --> 00:24:52,000
+Let's look at the Outdoor Hybrid.
+
+691
+00:24:52,000 --> 00:24:54,000
+If you add the local source
+
+692
+00:24:54,000 --> 00:24:56,000
+data,
+
+693
+00:24:56,000 --> 00:24:58,000
+you can see
+
+694
+00:24:58,000 --> 00:25:00,000
+the map
+
+695
+00:25:00,000 --> 00:25:02,000
+of air pollution.
+
+696
+00:25:02,000 --> 00:25:04,000
+You can tell
+
+697
+00:25:04,000 --> 00:25:06,000
+the difference.
+
+698
+00:25:06,000 --> 00:25:08,000
+Let's look at
+
+699
+00:25:08,000 --> 00:25:10,000
+C, the Indoor Stoke.
+
+700
+00:25:10,000 --> 00:25:12,000
+The station
+
+701
+00:25:12,000 --> 00:25:14,000
+is a transportation source.
+
+702
+00:25:14,000 --> 00:25:16,000
+There are different types of stations.
+
+703
+00:25:16,000 --> 00:25:18,000
+Some are in the background,
+
+704
+00:25:18,000 --> 00:25:20,000
+such as National Park.
+
+705
+00:25:20,000 --> 00:25:22,000
+Some are near the traffic.
+
+706
+00:25:22,000 --> 00:25:24,000
+That's right.
+
+707
+00:25:24,000 --> 00:25:26,000
+We chose the background station
+
+708
+00:25:26,000 --> 00:25:28,000
+for this study.
+
+709
+00:25:28,000 --> 00:25:30,000
+We didn't use urban stations
+
+710
+00:25:30,000 --> 00:25:32,000
+for this study.
+
+711
+00:25:32,000 --> 00:25:34,000
+Did you use
+
+712
+00:25:34,000 --> 00:25:36,000
+the transportation model
+
+713
+00:25:36,000 --> 00:25:38,000
+of R-Line?
+
+714
+00:25:38,000 --> 00:25:40,000
+Yes, I did.
+
+715
+00:25:40,000 --> 00:25:42,000
+I gave the model evaluation
+
+716
+00:25:42,000 --> 00:25:44,000
+in my last talk.
+
+717
+00:25:44,000 --> 00:25:46,000
+Thank you.
+
+718
+00:25:48,000 --> 00:25:50,000
+Let's look at
+
+719
+00:25:50,000 --> 00:25:52,000
+Indoor Stoke.
+
+720
+00:25:52,000 --> 00:25:54,000
+A is the input of C.
+
+721
+00:25:54,000 --> 00:25:56,000
+C and A
+
+722
+00:25:56,000 --> 00:25:58,000
+are compared.
+
+723
+00:25:58,000 --> 00:26:00,000
+First,
+
+724
+00:26:00,000 --> 00:26:02,000
+the color scale is lower.
+
+725
+00:26:02,000 --> 00:26:04,000
+Second,
+
+726
+00:26:04,000 --> 00:26:06,000
+there are more spatial variations.
+
+727
+00:26:06,000 --> 00:26:08,000
+The concentration
+
+728
+00:26:08,000 --> 00:26:10,000
+of C is between
+
+729
+00:26:10,000 --> 00:26:12,000
+7 and 14.
+
+730
+00:26:12,000 --> 00:26:14,000
+Compared to
+
+731
+00:26:14,000 --> 00:26:16,000
+the Outdoor Stoke,
+
+732
+00:26:16,000 --> 00:26:18,000
+it's between 24 and 27.
+
+733
+00:26:18,000 --> 00:26:20,000
+Where do these spatial variations
+
+734
+00:26:20,000 --> 00:26:22,000
+come from?
+
+735
+00:26:22,000 --> 00:26:24,000
+They come from
+
+736
+00:26:24,000 --> 00:26:26,000
+the air exchange rate
+
+737
+00:26:26,000 --> 00:26:28,000
+of different stations.
+
+738
+00:26:28,000 --> 00:26:30,000
+What does this mean?
+
+739
+00:26:30,000 --> 00:26:32,000
+It means that
+
+740
+00:26:32,000 --> 00:26:34,000
+if you only use the Outdoor Stoke,
+
+741
+00:26:34,000 --> 00:26:36,000
+which is what they did,
+
+742
+00:26:36,000 --> 00:26:38,000
+they used that method
+
+743
+00:26:38,000 --> 00:26:40,000
+to predict
+
+744
+00:26:40,000 --> 00:26:42,000
+the exposure.
+
+745
+00:26:42,000 --> 00:26:44,000
+They used that method
+
+746
+00:26:44,000 --> 00:26:46,000
+to estimate the exposure.
+
+747
+00:26:46,000 --> 00:26:48,000
+On the right,
+
+748
+00:26:48,000 --> 00:26:50,000
+you can see
+
+749
+00:26:50,000 --> 00:26:52,000
+the concentration of local source.
+
+750
+00:26:52,000 --> 00:26:54,000
+On the bottom,
+
+751
+00:26:54,000 --> 00:26:56,000
+you can see the map
+
+752
+00:26:56,000 --> 00:26:58,000
+of the Indoor Stoke.
+
+753
+00:26:58,000 --> 00:27:00,000
+You can tell the difference
+
+754
+00:27:00,000 --> 00:27:02,000
+just by looking at the map.
+
+755
+00:27:02,000 --> 00:27:04,000
+The last one,
+
+756
+00:27:04,000 --> 00:27:06,000
+D, is the Indoor Stoke.
+
+757
+00:27:06,000 --> 00:27:08,000
+The input source is B.
+
+758
+00:27:08,000 --> 00:27:10,000
+B to D.
+
+759
+00:27:10,000 --> 00:27:12,000
+You can see
+
+760
+00:27:12,000 --> 00:27:14,000
+the variations are the same.
+
+761
+00:27:14,000 --> 00:27:16,000
+High concentration
+
+762
+00:27:16,000 --> 00:27:18,000
+near the road,
+
+763
+00:27:18,000 --> 00:27:20,000
+low concentration far from the road.
+
+764
+00:27:20,000 --> 00:27:22,000
+However, the concentration
+
+765
+00:27:22,000 --> 00:27:24,000
+on the top
+
+766
+00:27:24,000 --> 00:27:26,000
+is between 90 and 100.
+
+767
+00:27:26,000 --> 00:27:28,000
+On the bottom,
+
+768
+00:27:28,000 --> 00:27:30,000
+it's less than that.
+
+769
+00:27:30,000 --> 00:27:32,000
+When you go to the Indoor Stoke,
+
+770
+00:27:32,000 --> 00:27:34,000
+the absolute concentration
+
+771
+00:27:34,000 --> 00:27:36,000
+will decrease.
+
+772
+00:27:36,000 --> 00:27:38,000
+Here,
+
+773
+00:27:38,000 --> 00:27:40,000
+I'm looking at...
+
+774
+00:27:40,000 --> 00:27:42,000
+Hello.
+
+775
+00:27:42,000 --> 00:27:44,000
+I have a small question
+
+776
+00:27:44,000 --> 00:27:46,000
+about the front page.
+
+777
+00:27:46,000 --> 00:27:48,000
+This is basically a 2D model,
+
+778
+00:27:48,000 --> 00:27:50,000
+right?
+
+779
+00:27:50,000 --> 00:27:52,000
+You can also
+
+780
+00:27:52,000 --> 00:27:54,000
+make it vertical.
+
+781
+00:27:54,000 --> 00:27:56,000
+You can have different heights.
+
+782
+00:27:56,000 --> 00:27:58,000
+Mine is 2 meters
+
+783
+00:27:58,000 --> 00:28:00,000
+away from the ground.
+
+784
+00:28:00,000 --> 00:28:02,000
+2 meters away from the ground.
+
+785
+00:28:02,000 --> 00:28:04,000
+I'm just curious.
+
+786
+00:28:04,000 --> 00:28:06,000
+Is the terrain near here flat?
+
+787
+00:28:06,000 --> 00:28:08,000
+Or is there a hill?
+
+788
+00:28:08,000 --> 00:28:10,000
+This area is quite flat.
+
+789
+00:28:10,000 --> 00:28:12,000
+This area is quite flat.
+
+790
+00:28:12,000 --> 00:28:14,000
+It's a hill to the west.
+
+791
+00:28:14,000 --> 00:28:16,000
+It's quite flat here.
+
+792
+00:28:16,000 --> 00:28:18,000
+Here,
+
+793
+00:28:18,000 --> 00:28:20,000
+I'm using a box plot
+
+794
+00:28:20,000 --> 00:28:22,000
+to show
+
+795
+00:28:22,000 --> 00:28:24,000
+the average concentration.
+
+796
+00:28:24,000 --> 00:28:26,000
+The concentration distribution
+
+797
+00:28:26,000 --> 00:28:28,000
+by pollutant.
+
+798
+00:28:28,000 --> 00:28:30,000
+I forgot
+
+799
+00:28:30,000 --> 00:28:32,000
+what I was going to say.
+
+800
+00:28:32,000 --> 00:28:34,000
+Let's start with CO.
+
+801
+00:28:34,000 --> 00:28:36,000
+Let's start with A.
+
+802
+00:28:36,000 --> 00:28:38,000
+If we only look at...
+
+803
+00:28:38,000 --> 00:28:40,000
+Let's compare
+
+804
+00:28:40,000 --> 00:28:42,000
+the black and white boxes.
+
+805
+00:28:42,000 --> 00:28:44,000
+The black represents
+
+806
+00:28:44,000 --> 00:28:46,000
+the outdoor concentration.
+
+807
+00:28:46,000 --> 00:28:48,000
+The white represents
+
+808
+00:28:48,000 --> 00:28:50,000
+the indoor concentration.
+
+809
+00:28:50,000 --> 00:28:52,000
+You can see that
+
+810
+00:28:52,000 --> 00:28:54,000
+CO is about the same.
+
+811
+00:28:54,000 --> 00:28:56,000
+Look at Stokes.
+
+812
+00:28:56,000 --> 00:28:58,000
+Outdoor and indoor
+
+813
+00:28:58,000 --> 00:29:00,000
+have similar distribution.
+
+814
+00:29:00,000 --> 00:29:02,000
+Why is it similar?
+
+815
+00:29:02,000 --> 00:29:04,000
+It's because
+
+816
+00:29:04,000 --> 00:29:06,000
+the penetration factor
+
+817
+00:29:06,000 --> 00:29:08,000
+and deposition factor
+
+818
+00:29:08,000 --> 00:29:10,000
+of CO is 1.
+
+819
+00:29:10,000 --> 00:29:12,000
+The deposition rate
+
+820
+00:29:12,000 --> 00:29:14,000
+of CO is 0.
+
+821
+00:29:14,000 --> 00:29:16,000
+That's why the indoor and outdoor
+
+822
+00:29:16,000 --> 00:29:18,000
+have similar distribution.
+
+823
+00:29:18,000 --> 00:29:20,000
+Look at Knox.
+
+824
+00:29:20,000 --> 00:29:22,000
+The penetration factor is 1,
+
+825
+00:29:22,000 --> 00:29:24,000
+but the deposition rate is 0.5.
+
+826
+00:29:24,000 --> 00:29:26,000
+You can see that
+
+827
+00:29:26,000 --> 00:29:28,000
+the indoor concentration is lower
+
+828
+00:29:28,000 --> 00:29:30,000
+than the outdoor concentration.
+
+829
+00:29:30,000 --> 00:29:32,000
+It's about half.
+
+830
+00:29:32,000 --> 00:29:34,000
+In the same situation,
+
+831
+00:29:34,000 --> 00:29:36,000
+PM and EC
+
+832
+00:29:36,000 --> 00:29:38,000
+have similar distribution.
+
+833
+00:29:38,000 --> 00:29:40,000
+The indoor concentration is half
+
+834
+00:29:40,000 --> 00:29:42,000
+If the outdoor concentration
+
+835
+00:29:42,000 --> 00:29:44,000
+represents the deposition rate,
+
+836
+00:29:44,000 --> 00:29:46,000
+the PM will stay in the indoor
+
+837
+00:29:46,000 --> 00:29:48,000
+for longer than the deposition rate.
+
+838
+00:29:48,000 --> 00:29:50,000
+After comparing the black and white boxes,
+
+839
+00:29:50,000 --> 00:29:52,000
+let's compare
+
+840
+00:29:52,000 --> 00:29:54,000
+Stokes and Unrow.
+
+841
+00:29:54,000 --> 00:29:56,000
+Stokes and Unrow.
+
+842
+00:29:56,000 --> 00:29:58,000
+The two black and white boxes
+
+843
+00:29:58,000 --> 00:30:00,000
+on the left
+
+844
+00:30:00,000 --> 00:30:02,000
+and the two black and white boxes
+
+845
+00:30:02,000 --> 00:30:04,000
+on the middle.
+
+846
+00:30:04,000 --> 00:30:06,000
+First, look at
+
+847
+00:30:06,000 --> 00:30:08,000
+CO and Knox.
+
+848
+00:30:08,000 --> 00:30:10,000
+CO and Knox.
+
+849
+00:30:10,000 --> 00:30:12,000
+You can see that
+
+850
+00:30:12,000 --> 00:30:14,000
+Stokes is much higher than Unrow
+
+851
+00:30:14,000 --> 00:30:16,000
+in terms of CO.
+
+852
+00:30:16,000 --> 00:30:18,000
+Knox is closer.
+
+853
+00:30:18,000 --> 00:30:20,000
+Why?
+
+854
+00:30:20,000 --> 00:30:22,000
+Because of traffic pollution,
+
+855
+00:30:22,000 --> 00:30:24,000
+the deposition rate of
+
+856
+00:30:24,000 --> 00:30:26,000
+gas cars is very high.
+
+857
+00:30:26,000 --> 00:30:28,000
+I don't have the table here,
+
+858
+00:30:28,000 --> 00:30:30,000
+but I remember
+
+859
+00:30:30,000 --> 00:30:32,000
+that in some places,
+
+860
+00:30:32,000 --> 00:30:34,000
+the deposition rate of gas cars
+
+861
+00:30:34,000 --> 00:30:36,000
+may be up to 40%,
+
+862
+00:30:36,000 --> 00:30:38,000
+which means
+
+863
+00:30:38,000 --> 00:30:40,000
+because gas cars
+
+864
+00:30:40,000 --> 00:30:42,000
+deposit a lot of pollutants,
+
+865
+00:30:42,000 --> 00:30:44,000
+the deposition rate of gas cars
+
+866
+00:30:44,000 --> 00:30:46,000
+is relatively high.
+
+867
+00:30:46,000 --> 00:30:48,000
+In particular,
+
+868
+00:30:48,000 --> 00:30:50,000
+the deposition rate of Stokes and Unrow
+
+869
+00:30:50,000 --> 00:30:52,000
+is actually very low,
+
+870
+00:30:52,000 --> 00:30:54,000
+because the deposition rate
+
+871
+00:30:54,000 --> 00:30:56,000
+of primary PM2
+
+872
+00:30:56,000 --> 00:30:58,000
+is only up to 5%.
+
+873
+00:30:58,000 --> 00:31:00,000
+is only up to 5%.
+
+874
+00:31:00,000 --> 00:31:02,000
+However,
+
+875
+00:31:02,000 --> 00:31:04,000
+the deposition rate of EC
+
+876
+00:31:04,000 --> 00:31:06,000
+is smaller.
+
+877
+00:31:06,000 --> 00:31:08,000
+This is the consequence of
+
+878
+00:31:08,000 --> 00:31:10,000
+the combustion of PM2.5.
+
+879
+00:31:10,000 --> 00:31:12,000
+Because of the combustion of engines,
+
+880
+00:31:12,000 --> 00:31:14,000
+it will burn slightly higher.
+
+881
+00:31:14,000 --> 00:31:18,000
+Here I am looking at
+
+882
+00:31:18,000 --> 00:31:20,000
+the spatial variation
+
+883
+00:31:20,000 --> 00:31:22,000
+after talking about density.
+
+884
+00:31:22,000 --> 00:31:24,000
+I have calculated
+
+885
+00:31:24,000 --> 00:31:26,000
+a value of
+
+886
+00:31:26,000 --> 00:31:28,000
+spatial coefficient
+
+887
+00:31:28,000 --> 00:31:30,000
+of variation.
+
+888
+00:31:30,000 --> 00:31:32,000
+The higher the value
+
+889
+00:31:32,000 --> 00:31:34,000
+of spatial coefficient,
+
+890
+00:31:34,000 --> 00:31:36,000
+the higher the value of
+
+891
+00:31:36,000 --> 00:31:38,000
+spatial variation.
+
+892
+00:31:38,000 --> 00:31:40,000
+What we want to see
+
+893
+00:31:40,000 --> 00:31:42,000
+is whether these things
+
+894
+00:31:42,000 --> 00:31:44,000
+represent exposure.
+
+895
+00:31:44,000 --> 00:31:46,000
+Most people
+
+896
+00:31:46,000 --> 00:31:48,000
+use Stoke's
+
+897
+00:31:48,000 --> 00:31:50,000
+outdoor concentration
+
+898
+00:31:50,000 --> 00:31:52,000
+to represent
+
+899
+00:31:52,000 --> 00:31:54,000
+exposure.
+
+900
+00:31:54,000 --> 00:31:56,000
+The black box
+
+901
+00:31:56,000 --> 00:31:58,000
+on the far left
+
+902
+00:31:58,000 --> 00:32:00,000
+is Stoke's
+
+903
+00:32:00,000 --> 00:32:02,000
+indoor concentration.
+
+904
+00:32:02,000 --> 00:32:04,000
+For example,
+
+905
+00:32:04,000 --> 00:32:06,000
+Stoke's
+
+906
+00:32:06,000 --> 00:32:08,000
+spatial variation
+
+907
+00:32:08,000 --> 00:32:10,000
+is very low.
+
+908
+00:32:10,000 --> 00:32:12,000
+The white box
+
+909
+00:32:12,000 --> 00:32:14,000
+on the far right
+
+910
+00:32:14,000 --> 00:32:16,000
+is Stoke's
+
+911
+00:32:16,000 --> 00:32:18,000
+indoor spatial variation.
+
+912
+00:32:18,000 --> 00:32:20,000
+Why?
+
+913
+00:32:20,000 --> 00:32:22,000
+Because I have added
+
+914
+00:32:22,000 --> 00:32:24,000
+the air exchange rate
+
+915
+00:32:24,000 --> 00:32:26,000
+spatial variation.
+
+916
+00:32:26,000 --> 00:32:28,000
+If you replace
+
+917
+00:32:28,000 --> 00:32:30,000
+the air with air,
+
+918
+00:32:30,000 --> 00:32:32,000
+you get
+
+919
+00:32:32,000 --> 00:32:34,000
+spatial variation.
+
+920
+00:32:34,000 --> 00:32:36,000
+There is a
+
+921
+00:32:36,000 --> 00:32:38,000
+method to
+
+922
+00:32:38,000 --> 00:32:40,000
+classify
+
+923
+00:32:40,000 --> 00:32:42,000
+exposure in
+
+924
+00:32:42,000 --> 00:32:44,000
+epidemiology.
+
+925
+00:32:44,000 --> 00:32:46,000
+Sometimes we do not
+
+926
+00:32:46,000 --> 00:32:48,000
+use absolute density
+
+927
+00:32:48,000 --> 00:32:50,000
+such as 50mcg per cubic meter
+
+928
+00:32:50,000 --> 00:32:52,000
+to represent exposure.
+
+929
+00:32:52,000 --> 00:32:54,000
+Sometimes we just
+
+930
+00:32:54,000 --> 00:32:56,000
+classify it.
+
+931
+00:32:56,000 --> 00:32:58,000
+For example,
+
+932
+00:32:58,000 --> 00:33:00,000
+the low-middle-high
+
+933
+00:33:00,000 --> 00:33:02,000
+group may only expose
+
+934
+00:33:02,000 --> 00:33:04,000
+0-2mcg.
+
+935
+00:33:04,000 --> 00:33:06,000
+The middle group
+
+936
+00:33:06,000 --> 00:33:08,000
+may expose 2-4mcg.
+
+937
+00:33:08,000 --> 00:33:10,000
+The high-middle-high
+
+938
+00:33:10,000 --> 00:33:12,000
+group may expose 4-8mcg.
+
+939
+00:33:12,000 --> 00:33:14,000
+I do the same thing here.
+
+940
+00:33:14,000 --> 00:33:16,000
+I divide the six
+
+941
+00:33:16,000 --> 00:33:18,000
+exposure metrics
+
+942
+00:33:18,000 --> 00:33:20,000
+into five groups,
+
+943
+00:33:20,000 --> 00:33:22,000
+0-20%,
+
+944
+00:33:22,000 --> 00:33:24,000
+20-40,
+
+945
+00:33:24,000 --> 00:33:26,000
+and 50-60.
+
+946
+00:33:26,000 --> 00:33:28,000
+The first group
+
+947
+00:33:28,000 --> 00:33:30,000
+is the indoor
+
+948
+00:33:30,000 --> 00:33:32,000
+hybrid-based exposure.
+
+949
+00:33:32,000 --> 00:33:34,000
+The second group
+
+950
+00:33:34,000 --> 00:33:36,000
+is the
+
+951
+00:33:36,000 --> 00:33:38,000
+indoor hybrid-based
+
+952
+00:33:38,000 --> 00:33:40,000
+exposure.
+
+953
+00:33:40,000 --> 00:33:42,000
+The first group
+
+954
+00:33:42,000 --> 00:33:44,000
+is the
+
+955
+00:33:44,000 --> 00:33:46,000
+indoor hybrid-based
+
+956
+00:33:46,000 --> 00:33:48,000
+exposure.
+
+957
+00:33:48,000 --> 00:33:50,000
+The second group
+
+958
+00:33:50,000 --> 00:33:52,000
+is the
+
+959
+00:33:52,000 --> 00:33:54,000
+indoor hybrid-based
+
+960
+00:33:54,000 --> 00:33:56,000
+exposure.
+
+961
+00:33:58,000 --> 00:34:00,000
+Let's compare
+
+962
+00:34:00,000 --> 00:34:02,000
+the outdoor hybrid-based
+
+963
+00:34:02,000 --> 00:34:04,000
+and the indoor hybrid-based.
+
+964
+00:34:04,000 --> 00:34:06,000
+The red line
+
+965
+00:34:06,000 --> 00:34:08,000
+represents
+
+966
+00:34:08,000 --> 00:34:10,000
+the
+
+967
+00:34:10,000 --> 00:34:12,000
+agreement
+
+968
+00:34:12,000 --> 00:34:14,000
+between
+
+969
+00:34:14,000 --> 00:34:16,000
+the two groups.
+
+970
+00:34:16,000 --> 00:34:18,000
+The higher the number,
+
+971
+00:34:18,000 --> 00:34:20,000
+the more agreeable
+
+972
+00:34:20,000 --> 00:34:22,000
+the agreement is.
+
+973
+00:34:26,000 --> 00:34:28,000
+For example,
+
+974
+00:34:28,000 --> 00:34:30,000
+the 0-20% group
+
+975
+00:34:30,000 --> 00:34:32,000
+is the hybrid-based
+
+976
+00:34:32,000 --> 00:34:34,000
+indoor group.
+
+977
+00:34:34,000 --> 00:34:36,000
+The outdoor hybrid-based
+
+978
+00:34:36,000 --> 00:34:38,000
+group
+
+979
+00:34:38,000 --> 00:34:40,000
+represents
+
+980
+00:34:40,000 --> 00:34:42,000
+50%,
+
+981
+00:34:42,000 --> 00:34:44,000
+49.22% of the
+
+982
+00:34:44,000 --> 00:34:46,000
+exposure.
+
+983
+00:34:46,000 --> 00:34:48,000
+The hybrid-based
+
+984
+00:34:48,000 --> 00:34:50,000
+group
+
+985
+00:34:50,000 --> 00:34:52,000
+represents
+
+986
+00:34:52,000 --> 00:34:54,000
+50% of the
+
+987
+00:34:54,000 --> 00:34:56,000
+exposure.
+
+988
+00:34:56,000 --> 00:34:58,000
+The highest group
+
+989
+00:34:58,000 --> 00:35:00,000
+represents
+
+990
+00:35:00,000 --> 00:35:02,000
+73%,
+
+991
+00:35:02,000 --> 00:35:04,000
+which is
+
+992
+00:35:04,000 --> 00:35:06,000
+the NOx group.
+
+993
+00:35:06,000 --> 00:35:08,000
+The NOx group
+
+994
+00:35:08,000 --> 00:35:10,000
+is the
+
+995
+00:35:10,000 --> 00:35:12,000
+on-road source.
+
+996
+00:35:12,000 --> 00:35:14,000
+The NOx group
+
+997
+00:35:14,000 --> 00:35:16,000
+is the
+
+998
+00:35:16,000 --> 00:35:18,000
+on-road source.
+
+999
+00:35:26,000 --> 00:35:28,000
+Your analysis unit
+
+1000
+00:35:28,000 --> 00:35:30,000
+is the sensor's track.
+
+1001
+00:35:30,000 --> 00:35:32,000
+No, the sensor's block.
+
+1002
+00:35:32,000 --> 00:35:34,000
+What about your spatial resolution?
+
+1003
+00:35:34,000 --> 00:35:36,000
+Your model could be run hourly.
+
+1004
+00:35:36,000 --> 00:35:38,000
+I mean
+
+1005
+00:35:38,000 --> 00:35:40,000
+you have
+
+1006
+00:35:40,000 --> 00:35:42,000
+a sensor track
+
+1007
+00:35:42,000 --> 00:35:44,000
+with hourly data.
+
+1008
+00:35:44,000 --> 00:35:46,000
+Did your contingency
+
+1009
+00:35:46,000 --> 00:35:48,000
+match the group?
+
+1010
+00:35:48,000 --> 00:35:50,000
+Is the sensor's track
+
+1011
+00:35:50,000 --> 00:35:52,000
+hourly data?
+
+1012
+00:35:52,000 --> 00:35:54,000
+No, I remember
+
+1013
+00:35:54,000 --> 00:35:56,000
+I used annual average.
+
+1014
+00:35:56,000 --> 00:35:58,000
+This should be only annual average.
+
+1015
+00:35:58,000 --> 00:36:00,000
+This is not hourly data.
+
+1016
+00:36:00,000 --> 00:36:02,000
+I used sensor's block,
+
+1017
+00:36:02,000 --> 00:36:04,000
+not sensor's track.
+
+1018
+00:36:04,000 --> 00:36:06,000
+Sensor's track has a lot of blocks.
+
+1019
+00:36:08,000 --> 00:36:10,000
+Let's take a look
+
+1020
+00:36:10,000 --> 00:36:12,000
+at the worst case.
+
+1021
+00:36:12,000 --> 00:36:14,000
+I remember
+
+1022
+00:36:14,000 --> 00:36:16,000
+outdoor stock
+
+1023
+00:36:16,000 --> 00:36:18,000
+is widely used
+
+1024
+00:36:18,000 --> 00:36:20,000
+in popular
+
+1025
+00:36:20,000 --> 00:36:22,000
+epidemiological research.
+
+1026
+00:36:22,000 --> 00:36:24,000
+Compare to
+
+1027
+00:36:24,000 --> 00:36:26,000
+hybrid-based indoor,
+
+1028
+00:36:26,000 --> 00:36:28,000
+the red line
+
+1029
+00:36:28,000 --> 00:36:30,000
+is
+
+1030
+00:36:30,000 --> 00:36:32,000
+25.54%.
+
+1031
+00:36:34,000 --> 00:36:36,000
+It means
+
+1032
+00:36:36,000 --> 00:36:38,000
+you could have
+
+1033
+00:36:38,000 --> 00:36:40,000
+such a big exposure error.
+
+1034
+00:36:40,000 --> 00:36:42,000
+Why?
+
+1035
+00:36:42,000 --> 00:36:44,000
+First, you didn't consider local source.
+
+1036
+00:36:44,000 --> 00:36:46,000
+Second, you didn't consider
+
+1037
+00:36:46,000 --> 00:36:48,000
+indoor concentration.
+
+1038
+00:36:48,000 --> 00:36:50,000
+We talked about this.
+
+1039
+00:36:50,000 --> 00:36:52,000
+The surprising thing
+
+1040
+00:36:52,000 --> 00:36:54,000
+about this analysis unit
+
+1041
+00:36:54,000 --> 00:36:56,000
+is that when you use
+
+1042
+00:36:56,000 --> 00:36:58,000
+indoor on-road concentration,
+
+1043
+00:36:58,000 --> 00:37:00,000
+the performance is good.
+
+1044
+00:37:00,000 --> 00:37:02,000
+Remember that
+
+1045
+00:37:02,000 --> 00:37:04,000
+indoor on-road concentration
+
+1046
+00:37:04,000 --> 00:37:06,000
+is only for on-road.
+
+1047
+00:37:06,000 --> 00:37:08,000
+It doesn't consider background level.
+
+1048
+00:37:08,000 --> 00:37:10,000
+Why?
+
+1049
+00:37:10,000 --> 00:37:12,000
+Because
+
+1050
+00:37:12,000 --> 00:37:14,000
+a large part of NOx
+
+1051
+00:37:14,000 --> 00:37:16,000
+comes from gas engine.
+
+1052
+00:37:16,000 --> 00:37:18,000
+It also controls
+
+1053
+00:37:18,000 --> 00:37:20,000
+spatially.
+
+1054
+00:37:20,000 --> 00:37:22,000
+When you only use this unit,
+
+1055
+00:37:22,000 --> 00:37:24,000
+you can see
+
+1056
+00:37:24,000 --> 00:37:26,000
+the high concentration of on-road
+
+1057
+00:37:26,000 --> 00:37:28,000
+and the low concentration of off-road.
+
+1058
+00:37:28,000 --> 00:37:30,000
+As long as you can capture this,
+
+1059
+00:37:30,000 --> 00:37:32,000
+you can capture
+
+1060
+00:37:32,000 --> 00:37:34,000
+most of
+
+1061
+00:37:34,000 --> 00:37:36,000
+the high concentration.
+
+1062
+00:37:36,000 --> 00:37:38,000
+It also considers
+
+1063
+00:37:38,000 --> 00:37:40,000
+indoor concentration.
+
+1064
+00:37:40,000 --> 00:37:42,000
+It uses air exchange rate
+
+1065
+00:37:42,000 --> 00:37:44,000
+to reflect
+
+1066
+00:37:44,000 --> 00:37:46,000
+the air exchange rate
+
+1067
+00:37:46,000 --> 00:37:48,000
+between each house.
+
+1068
+00:37:48,000 --> 00:37:50,000
+The performance is good.
+
+1069
+00:37:50,000 --> 00:37:52,000
+The highest group can reach 89%.
+
+1070
+00:37:54,000 --> 00:37:56,000
+Here, I'm showing
+
+1071
+00:37:56,000 --> 00:37:58,000
+a similar situation.
+
+1072
+00:37:58,000 --> 00:38:00,000
+I use hybrid.
+
+1073
+00:38:00,000 --> 00:38:02,000
+You can see
+
+1074
+00:38:02,000 --> 00:38:04,000
+the area is blank.
+
+1075
+00:38:04,000 --> 00:38:06,000
+Because this is
+
+1076
+00:38:06,000 --> 00:38:08,000
+the answer.
+
+1077
+00:38:08,000 --> 00:38:10,000
+Other things
+
+1078
+00:38:10,000 --> 00:38:12,000
+cut out the answer.
+
+1079
+00:38:12,000 --> 00:38:14,000
+It becomes a box.
+
+1080
+00:38:16,000 --> 00:38:18,000
+Each box
+
+1081
+00:38:18,000 --> 00:38:20,000
+represents
+
+1082
+00:38:20,000 --> 00:38:22,000
+when you use
+
+1083
+00:38:22,000 --> 00:38:24,000
+a specific exposure metric
+
+1084
+00:38:24,000 --> 00:38:26,000
+to represent exposure,
+
+1085
+00:38:26,000 --> 00:38:28,000
+what is the error?
+
+1086
+00:38:28,000 --> 00:38:30,000
+Let's see
+
+1087
+00:38:30,000 --> 00:38:32,000
+the most widely used
+
+1088
+00:38:32,000 --> 00:38:34,000
+exposure metric,
+
+1089
+00:38:34,000 --> 00:38:36,000
+Stoke Outdoor Concentration.
+
+1090
+00:38:36,000 --> 00:38:38,000
+You can see
+
+1091
+00:38:38,000 --> 00:38:40,000
+the normalized difference
+
+1092
+00:38:40,000 --> 00:38:42,000
+is very high.
+
+1093
+00:38:42,000 --> 00:38:44,000
+The average of NOx
+
+1094
+00:38:44,000 --> 00:38:46,000
+is about 80-90%.
+
+1095
+00:38:52,000 --> 00:38:54,000
+The conclusion is
+
+1096
+00:38:54,000 --> 00:38:56,000
+that
+
+1097
+00:38:56,000 --> 00:38:58,000
+it's complicated.
+
+1098
+00:38:58,000 --> 00:39:00,000
+There are many
+
+1099
+00:39:00,000 --> 00:39:02,000
+different analysis and pollution.
+
+1100
+00:39:02,000 --> 00:39:04,000
+The pollution
+
+1101
+00:39:04,000 --> 00:39:06,000
+and traffic
+
+1102
+00:39:06,000 --> 00:39:08,000
+are different.
+
+1103
+00:39:08,000 --> 00:39:10,000
+Bear with me.
+
+1104
+00:39:10,000 --> 00:39:12,000
+Basically,
+
+1105
+00:39:12,000 --> 00:39:14,000
+CO and PN2.5
+
+1106
+00:39:14,000 --> 00:39:16,000
+traffic
+
+1107
+00:39:18,000 --> 00:39:20,000
+is lower.
+
+1108
+00:39:20,000 --> 00:39:22,000
+14% and 6%.
+
+1109
+00:39:22,000 --> 00:39:24,000
+NOx and ECO
+
+1110
+00:39:24,000 --> 00:39:26,000
+are higher.
+
+1111
+00:39:26,000 --> 00:39:28,000
+40% and 44%.
+
+1112
+00:39:30,000 --> 00:39:32,000
+When you use
+
+1113
+00:39:32,000 --> 00:39:34,000
+the indoor infiltration model,
+
+1114
+00:39:34,000 --> 00:39:36,000
+the indoor concentration
+
+1115
+00:39:36,000 --> 00:39:38,000
+is about 60% of
+
+1116
+00:39:38,000 --> 00:39:40,000
+the outdoor concentration.
+
+1117
+00:39:40,000 --> 00:39:42,000
+It will be reduced by 40%.
+
+1118
+00:39:42,000 --> 00:39:44,000
+When you use the outdoor concentration
+
+1119
+00:39:44,000 --> 00:39:46,000
+to represent the exposure,
+
+1120
+00:39:46,000 --> 00:39:48,000
+it's not right.
+
+1121
+00:39:48,000 --> 00:39:50,000
+The concentration is not that high.
+
+1122
+00:39:50,000 --> 00:39:52,000
+The exposure is not that high.
+
+1123
+00:39:52,000 --> 00:39:54,000
+Okay.
+
+1124
+00:40:04,000 --> 00:40:06,000
+It's too complicated.
+
+1125
+00:40:06,000 --> 00:40:08,000
+This is my
+
+1126
+00:40:08,000 --> 00:40:10,000
+acknowledgment.
+
+1127
+00:40:10,000 --> 00:40:12,000
+I used to work at UNC.
+
+1128
+00:40:12,000 --> 00:40:14,000
+The funding source is
+
+1129
+00:40:14,000 --> 00:40:16,000
+EPA's contract.
+
+1130
+00:40:16,000 --> 00:40:18,000
+EPA provides emissions
+
+1131
+00:40:18,000 --> 00:40:20,000
+and meteorological data.
+
+1132
+00:40:20,000 --> 00:40:22,000
+It's not on the slide.
+
+1133
+00:40:22,000 --> 00:40:24,000
+This is a reference.
+
+1134
+00:40:26,000 --> 00:40:28,000
+That's it.
+
+1135
+00:40:28,000 --> 00:40:30,000
+Thank you.
+
+1136
+00:40:34,000 --> 00:40:36,000
+Thank you.
+
+1137
+00:40:36,000 --> 00:40:38,000
+Do you have
+
+1138
+00:40:38,000 --> 00:40:40,000
+any questions?
+
+1139
+00:40:50,000 --> 00:40:52,000
+I don't think so.
+
+1140
+00:40:52,000 --> 00:40:54,000
+Yay!
+
+1141
+00:40:54,000 --> 00:40:56,000
+On Saturday afternoon,
+
+1142
+00:40:56,000 --> 00:40:58,000
+stay healthy.
+
+1143
+00:40:58,000 --> 00:41:00,000
+Don't be so academic.
+
+1144
+00:41:00,000 --> 00:41:02,000
+This is interesting.
+
+1145
+00:41:02,000 --> 00:41:04,000
+You can see it with R-Line.
+
+1146
+00:41:04,000 --> 00:41:06,000
+For example,
+
+1147
+00:41:06,000 --> 00:41:08,000
+why is there a basketball court?
+
+1148
+00:41:08,000 --> 00:41:10,000
+When I started
+
+1149
+00:41:10,000 --> 00:41:12,000
+doing this,
+
+1150
+00:41:12,000 --> 00:41:14,000
+especially after I moved here,
+
+1151
+00:41:14,000 --> 00:41:16,000
+the Golden Gate Bridge
+
+1152
+00:41:16,000 --> 00:41:18,000
+next to San Francisco
+
+1153
+00:41:18,000 --> 00:41:20,000
+is a place
+
+1154
+00:41:20,000 --> 00:41:22,000
+for jogging and cycling.
+
+1155
+00:41:22,000 --> 00:41:24,000
+There are six lanes.
+
+1156
+00:41:24,000 --> 00:41:26,000
+There are three lanes
+
+1157
+00:41:26,000 --> 00:41:28,000
+on each side.
+
+1158
+00:41:28,000 --> 00:41:30,000
+Normally, cars drive very slowly.
+
+1159
+00:41:30,000 --> 00:41:32,000
+In terms of emissions,
+
+1160
+00:41:32,000 --> 00:41:34,000
+the slower the car drives,
+
+1161
+00:41:34,000 --> 00:41:36,000
+the higher the emissions.
+
+1162
+00:41:36,000 --> 00:41:38,000
+People jogging and cycling
+
+1163
+00:41:38,000 --> 00:41:40,000
+are enjoying
+
+1164
+00:41:40,000 --> 00:41:42,000
+the air pollution.
+
+1165
+00:41:42,000 --> 00:41:44,000
+My idea is
+
+1166
+00:41:44,000 --> 00:41:46,000
+if you move
+
+1167
+00:41:46,000 --> 00:41:48,000
+the basketball court
+
+1168
+00:41:48,000 --> 00:41:50,000
+to the middle,
+
+1169
+00:41:50,000 --> 00:41:52,000
+you can save
+
+1170
+00:41:52,000 --> 00:41:54,000
+a lot of energy.
+
+1171
+00:41:54,000 --> 00:41:56,000
+That's it.
+
+1172
+00:41:56,000 --> 00:41:58,000
+Is there a way
+
+1173
+00:41:58,000 --> 00:42:00,000
+to do it in Taiwan?
+
+1174
+00:42:04,000 --> 00:42:06,000
+I have a question.
+
+1175
+00:42:06,000 --> 00:42:08,000
+Please go ahead.
+
+1176
+00:42:08,000 --> 00:42:10,000
+The question is
+
+1177
+00:42:10,000 --> 00:42:12,000
+if you look at
+
+1178
+00:42:12,000 --> 00:42:14,000
+the road emission data,
+
+1179
+00:42:14,000 --> 00:42:16,000
+you won't stand
+
+1180
+00:42:16,000 --> 00:42:18,000
+next to the road
+
+1181
+00:42:18,000 --> 00:42:20,000
+and check
+
+1182
+00:42:20,000 --> 00:42:22,000
+if every car
+
+1183
+00:42:22,000 --> 00:42:24,000
+is a Tesla
+
+1184
+00:42:24,000 --> 00:42:26,000
+or a diesel car.
+
+1185
+00:42:26,000 --> 00:42:28,000
+However,
+
+1186
+00:42:28,000 --> 00:42:30,000
+there is a free parameter.
+
+1187
+00:42:30,000 --> 00:42:32,000
+If all the cars
+
+1188
+00:42:32,000 --> 00:42:34,000
+are Tesla,
+
+1189
+00:42:34,000 --> 00:42:36,000
+half Tesla, half pickup,
+
+1190
+00:42:36,000 --> 00:42:38,000
+and all are big trucks,
+
+1191
+00:42:38,000 --> 00:42:40,000
+how much improvement
+
+1192
+00:42:40,000 --> 00:42:42,000
+can be made?
+
+1193
+00:42:42,000 --> 00:42:44,000
+Is there a way
+
+1194
+00:42:44,000 --> 00:42:46,000
+to justify
+
+1195
+00:42:46,000 --> 00:42:48,000
+how much
+
+1196
+00:42:48,000 --> 00:42:50,000
+public sector resources
+
+1197
+00:42:50,000 --> 00:42:52,000
+are needed
+
+1198
+00:42:52,000 --> 00:42:54,000
+to change the air quality
+
+1199
+00:42:54,000 --> 00:42:56,000
+in a static way?
+
+1200
+00:42:56,000 --> 00:42:58,000
+That's a very important point.
+
+1201
+00:42:58,000 --> 00:43:00,000
+It's called fleet distribution.
+
+1202
+00:43:00,000 --> 00:43:02,000
+When we talk about
+
+1203
+00:43:02,000 --> 00:43:04,000
+traffic pollution,
+
+1204
+00:43:04,000 --> 00:43:06,000
+a very important parameter
+
+1205
+00:43:06,000 --> 00:43:08,000
+is fleet distribution.
+
+1206
+00:43:08,000 --> 00:43:10,000
+Is there a difference
+
+1207
+00:43:10,000 --> 00:43:12,000
+between fleet distribution
+
+1208
+00:43:12,000 --> 00:43:14,000
+and model distribution?
+
+1209
+00:43:14,000 --> 00:43:16,000
+The difference is
+
+1210
+00:43:16,000 --> 00:43:18,000
+that we use
+
+1211
+00:43:18,000 --> 00:43:20,000
+MOOVS,
+
+1212
+00:43:20,000 --> 00:43:22,000
+Motor Vehicle Emission Simulator.
+
+1213
+00:43:22,000 --> 00:43:24,000
+In terms of models,
+
+1214
+00:43:24,000 --> 00:43:26,000
+we use MOOVS.
+
+1215
+00:43:26,000 --> 00:43:28,000
+In terms of models,
+
+1216
+00:43:28,000 --> 00:43:30,000
+you can tell MOOVS
+
+1217
+00:43:30,000 --> 00:43:32,000
+that if half of
+
+1218
+00:43:32,000 --> 00:43:34,000
+the fleet distribution
+
+1219
+00:43:34,000 --> 00:43:36,000
+is electric vehicles
+
+1220
+00:43:36,000 --> 00:43:38,000
+and half is diesel cars,
+
+1221
+00:43:38,000 --> 00:43:40,000
+you can do it
+
+1222
+00:43:40,000 --> 00:43:42,000
+in terms of models.
+
+1223
+00:43:42,000 --> 00:43:44,000
+But if you want
+
+1224
+00:43:44,000 --> 00:43:46,000
+to block a street
+
+1225
+00:43:46,000 --> 00:43:48,000
+and make the entire fleet
+
+1226
+00:43:48,000 --> 00:43:50,000
+50% Tesla,
+
+1227
+00:43:50,000 --> 00:43:52,000
+it's a bit difficult.
+
+1228
+00:43:52,000 --> 00:43:54,000
+You made a very good point.
+
+1229
+00:43:54,000 --> 00:43:56,000
+I don't remember
+
+1230
+00:43:56,000 --> 00:43:58,000
+having seen
+
+1231
+00:43:58,000 --> 00:44:00,000
+a similar study
+
+1232
+00:44:00,000 --> 00:44:02,000
+in fleet distribution.
+
+1233
+00:44:02,000 --> 00:44:04,000
+Have you seen a similar study,
+
+1234
+00:44:04,000 --> 00:44:06,000
+coach?
+
+1235
+00:44:06,000 --> 00:44:08,000
+He's probably taking care of the kids.
+
+1236
+00:44:08,000 --> 00:44:10,000
+I don't remember
+
+1237
+00:44:10,000 --> 00:44:12,000
+having seen a similar study
+
+1238
+00:44:12,000 --> 00:44:14,000
+where we changed the fleet distribution
+
+1239
+00:44:14,000 --> 00:44:16,000
+and changed it to electric vehicles.
+
+1240
+00:44:16,000 --> 00:44:18,000
+I haven't seen such a study.
+
+1241
+00:44:20,000 --> 00:44:22,000
+Thank you.
+
+1242
+00:44:24,000 --> 00:44:26,000
+I have a question.
+
+1243
+00:44:26,000 --> 00:44:28,000
+I'm a bit curious.
+
+1244
+00:44:28,000 --> 00:44:30,000
+When I first saw this topic,
+
+1245
+00:44:30,000 --> 00:44:32,000
+I thought it was very interesting.
+
+1246
+00:44:32,000 --> 00:44:34,000
+Why did you choose that place?
+
+1247
+00:44:34,000 --> 00:44:36,000
+I looked it up on the Internet.
+
+1248
+00:44:36,000 --> 00:44:38,000
+North Carolina
+
+1249
+00:44:38,000 --> 00:44:40,000
+seems to have more
+
+1250
+00:44:40,000 --> 00:44:42,000
+air pollution.
+
+1251
+00:44:42,000 --> 00:44:44,000
+This area is
+
+1252
+00:44:44,000 --> 00:44:46,000
+the NC Piedmont region.
+
+1253
+00:44:46,000 --> 00:44:48,000
+There are four areas in North Carolina.
+
+1254
+00:44:48,000 --> 00:44:50,000
+Coastline,
+
+1255
+00:44:50,000 --> 00:44:52,000
+Piedmont, Mountain,
+
+1256
+00:44:52,000 --> 00:44:54,000
+and I forgot the other one.
+
+1257
+00:44:54,000 --> 00:44:56,000
+Piedmont is like a triangle.
+
+1258
+00:44:56,000 --> 00:44:58,000
+This area is an RTP area,
+
+1259
+00:44:58,000 --> 00:45:00,000
+so the air pollution
+
+1260
+00:45:00,000 --> 00:45:02,000
+is a bit more severe.
+
+1261
+00:45:02,000 --> 00:45:04,000
+Another reason
+
+1262
+00:45:04,000 --> 00:45:06,000
+why I chose these three counties
+
+1263
+00:45:06,000 --> 00:45:08,000
+is because we had a project
+
+1264
+00:45:08,000 --> 00:45:10,000
+with the EPA.
+
+1265
+00:45:10,000 --> 00:45:12,000
+They wanted to use
+
+1266
+00:45:12,000 --> 00:45:14,000
+the metrics I just mentioned
+
+1267
+00:45:14,000 --> 00:45:16,000
+to do their epidemiological research.
+
+1268
+00:45:16,000 --> 00:45:18,000
+They did a study
+
+1269
+00:45:18,000 --> 00:45:20,000
+on heart disease
+
+1270
+00:45:20,000 --> 00:45:22,000
+and wanted to use
+
+1271
+00:45:22,000 --> 00:45:24,000
+air pollution data.
+
+1272
+00:45:24,000 --> 00:45:26,000
+We had a contract
+
+1273
+00:45:26,000 --> 00:45:28,000
+with the EPA
+
+1274
+00:45:28,000 --> 00:45:30,000
+to do this research.
+
+1275
+00:45:30,000 --> 00:45:32,000
+When I talked to them last time,
+
+1276
+00:45:32,000 --> 00:45:34,000
+they said they were already
+
+1277
+00:45:34,000 --> 00:45:36,000
+writing a paper.
+
+1278
+00:45:36,000 --> 00:45:38,000
+I don't know where it went.
+
+1279
+00:45:38,000 --> 00:45:40,000
+So the research you did
+
+1280
+00:45:40,000 --> 00:45:42,000
+in this area
+
+1281
+00:45:42,000 --> 00:45:44,000
+is quite valuable, right?
+
+1282
+00:45:44,000 --> 00:45:46,000
+Because the EPA
+
+1283
+00:45:46,000 --> 00:45:48,000
+is located there.
+
+1284
+00:45:48,000 --> 00:45:50,000
+The EPA's R&D office
+
+1285
+00:45:50,000 --> 00:45:52,000
+is located there.
+
+1286
+00:45:52,000 --> 00:45:54,000
+A lot of research
+
+1287
+00:45:54,000 --> 00:45:56,000
+is done there.
+
+1288
+00:45:56,000 --> 00:45:58,000
+Yesterday,
+
+1289
+00:45:58,000 --> 00:46:00,000
+a few people from UNC
+
+1290
+00:46:00,000 --> 00:46:02,000
+came to the lab.
+
+1291
+00:46:02,000 --> 00:46:04,000
+I asked them,
+
+1292
+00:46:04,000 --> 00:46:06,000
+I heard the air pollution
+
+1293
+00:46:06,000 --> 00:46:08,000
+in UNC is quite severe.
+
+1294
+00:46:08,000 --> 00:46:10,000
+They were surprised.
+
+1295
+00:46:10,000 --> 00:46:12,000
+I said, really?
+
+1296
+00:46:12,000 --> 00:46:14,000
+The air there is much better than California.
+
+1297
+00:46:14,000 --> 00:46:16,000
+I said it's severe
+
+1298
+00:46:16,000 --> 00:46:18,000
+compared to
+
+1299
+00:46:18,000 --> 00:46:20,000
+North Carolina.
+
+1300
+00:46:20,000 --> 00:46:22,000
+Even in Piedmont,
+
+1301
+00:46:22,000 --> 00:46:24,000
+although it's a severe area,
+
+1302
+00:46:24,000 --> 00:46:26,000
+it's still very low.
+
+1303
+00:46:26,000 --> 00:46:28,000
+Okay.
+
+1304
+00:46:28,000 --> 00:46:30,000
+North Carolina is a very clean area.
+
+1305
+00:46:30,000 --> 00:46:32,000
+The population of North Carolina
+
+1306
+00:46:32,000 --> 00:46:34,000
+is only 9 million,
+
+1307
+00:46:34,000 --> 00:46:36,000
+which is four times the population of Taiwan.
+
+1308
+00:46:36,000 --> 00:46:38,000
+In South California,
+
+1309
+00:46:38,000 --> 00:46:40,000
+the population of
+
+1310
+00:46:40,000 --> 00:46:42,000
+one county is 20 million.
+
+1311
+00:46:42,000 --> 00:46:44,000
+Yes.
+
+1312
+00:46:44,000 --> 00:46:46,000
+So I believe
+
+1313
+00:46:46,000 --> 00:46:48,000
+air pollution is more severe.
+
+1314
+00:46:48,000 --> 00:46:50,000
+Yes.
+
+1315
+00:46:50,000 --> 00:46:52,000
+In California,
+
+1316
+00:46:52,000 --> 00:46:54,000
+there are a lot of
+
+1317
+00:46:54,000 --> 00:46:56,000
+near-road studies
+
+1318
+00:46:56,000 --> 00:46:58,000
+and children's health studies.
+
+1319
+00:46:58,000 --> 00:47:00,000
+A lot of those papers
+
+1320
+00:47:00,000 --> 00:47:02,000
+are done by our company's
+
+1321
+00:47:02,000 --> 00:47:04,000
+senior scientists.
+
+1322
+00:47:04,000 --> 00:47:06,000
+They do a lot of research
+
+1323
+00:47:06,000 --> 00:47:08,000
+in LA.
+
+1324
+00:47:08,000 --> 00:47:10,000
+The first project
+
+1325
+00:47:10,000 --> 00:47:12,000
+I joined our company on
+
+1326
+00:47:12,000 --> 00:47:14,000
+was to use R-Line
+
+1327
+00:47:14,000 --> 00:47:16,000
+to predict the air flow
+
+1328
+00:47:16,000 --> 00:47:18,000
+of children
+
+1329
+00:47:18,000 --> 00:47:20,000
+because of air pollution.
+
+1330
+00:47:20,000 --> 00:47:22,000
+The system
+
+1331
+00:47:22,000 --> 00:47:24,000
+is also
+
+1332
+00:47:24,000 --> 00:47:26,000
+targeted at
+
+1333
+00:47:26,000 --> 00:47:28,000
+the entire South Coast
+
+1334
+00:47:28,000 --> 00:47:30,000
+area.
+
+1335
+00:47:30,000 --> 00:47:32,000
+The entire South Coast area.
+
+1336
+00:47:32,000 --> 00:47:34,000
+That area is
+
+1337
+00:47:34,000 --> 00:47:36,000
+well-known
+
+1338
+00:47:36,000 --> 00:47:38,000
+for air pollution.
+
+1339
+00:47:38,000 --> 00:47:40,000
+Actually,
+
+1340
+00:47:40,000 --> 00:47:42,000
+in Joe's
+
+1341
+00:47:44,000 --> 00:47:46,000
+presentation,
+
+1342
+00:47:46,000 --> 00:47:48,000
+I think
+
+1343
+00:47:52,000 --> 00:47:54,000
+this is
+
+1344
+00:47:54,000 --> 00:47:56,000
+a newspaper
+
+1345
+00:47:56,000 --> 00:47:58,000
+from the 1970s.
+
+1346
+00:47:58,000 --> 00:48:00,000
+This is
+
+1347
+00:48:00,000 --> 00:48:02,000
+the Los Angeles Times.
+
+1348
+00:48:02,000 --> 00:48:04,000
+It's an LA newspaper
+
+1349
+00:48:04,000 --> 00:48:06,000
+from that time.
+
+1350
+00:48:06,000 --> 00:48:08,000
+At that time,
+
+1351
+00:48:08,000 --> 00:48:10,000
+they talked about
+
+1352
+00:48:10,000 --> 00:48:12,000
+the problem of
+
+1353
+00:48:12,000 --> 00:48:14,000
+bad oxygen.
+
+1354
+00:48:14,000 --> 00:48:16,000
+I remember
+
+1355
+00:48:16,000 --> 00:48:18,000
+they said
+
+1356
+00:48:18,000 --> 00:48:20,000
+bad oxygen can reach
+
+1357
+00:48:20,000 --> 00:48:22,000
+70 ppb.
+
+1358
+00:48:22,000 --> 00:48:24,000
+That's high.
+
+1359
+00:48:24,000 --> 00:48:26,000
+It can reach 700 ppb
+
+1360
+00:48:26,000 --> 00:48:28,000
+at that time.
+
+1361
+00:48:28,000 --> 00:48:30,000
+Some of our senior scientists
+
+1362
+00:48:30,000 --> 00:48:32,000
+lived in LA when they were young
+
+1363
+00:48:32,000 --> 00:48:34,000
+and they said
+
+1364
+00:48:34,000 --> 00:48:36,000
+standing outside
+
+1365
+00:48:36,000 --> 00:48:38,000
+can make you cry.
+
+1366
+00:48:38,000 --> 00:48:40,000
+That's an older magnitude difference.
+
+1367
+00:48:40,000 --> 00:48:42,000
+It's very exaggerated.
+
+1368
+00:48:42,000 --> 00:48:44,000
+LA is a basin.
+
+1369
+00:48:44,000 --> 00:48:46,000
+It's an air basin.
+
+1370
+00:48:46,000 --> 00:48:48,000
+The air quality
+
+1371
+00:48:48,000 --> 00:48:50,000
+is relatively stable.
+
+1372
+00:48:50,000 --> 00:48:52,000
+Air pollution can't escape.
+
+1373
+00:48:56,000 --> 00:48:58,000
+Thank you for your answer.
+
+1374
+00:48:58,000 --> 00:49:00,000
+I want to ask
+
+1375
+00:49:00,000 --> 00:49:02,000
+if there are any other questions.
+
+1376
+00:49:02,000 --> 00:49:04,000
+If not,
+
+1377
+00:49:04,000 --> 00:49:06,000
+let me promote Taira.
+
+1378
+00:49:06,000 --> 00:49:08,000
+Got it?
+
+1379
+00:49:08,000 --> 00:49:10,000
+I want to
+
+1380
+00:49:10,000 --> 00:49:12,000
+simply say
+
+1381
+00:49:12,000 --> 00:49:14,000
+that
+
+1382
+00:49:14,000 --> 00:49:16,000
+Do you have a question?
+
+1383
+00:49:16,000 --> 00:49:18,000
+No.
+
+1384
+00:49:18,000 --> 00:49:20,000
+OK.
+
+1385
+00:49:20,000 --> 00:49:22,000
+You know what I'm doing.
+
+1386
+00:49:22,000 --> 00:49:24,000
+Let me...
+
+1387
+00:49:24,000 --> 00:49:26,000
+Right.
+
+1388
+00:49:28,000 --> 00:49:30,000
+Let me talk about it.
+
+1389
+00:49:30,000 --> 00:49:32,000
+Basically,
+
+1390
+00:49:32,000 --> 00:49:34,000
+many epidemiologists
+
+1391
+00:49:34,000 --> 00:49:36,000
+and epidemiologists
+
+1392
+00:49:36,000 --> 00:49:38,000
+make
+
+1393
+00:49:38,000 --> 00:49:40,000
+underestimated responses.
+
+1394
+00:49:40,000 --> 00:49:42,000
+The main reason is
+
+1395
+00:49:42,000 --> 00:49:44,000
+from an economic point of view,
+
+1396
+00:49:44,000 --> 00:49:46,000
+when you know
+
+1397
+00:49:46,000 --> 00:49:48,000
+the air quality is bad,
+
+1398
+00:49:48,000 --> 00:49:50,000
+you optimize your behavior.
+
+1399
+00:49:50,000 --> 00:49:52,000
+So,
+
+1400
+00:49:52,000 --> 00:49:54,000
+acute hospital admission
+
+1401
+00:49:54,000 --> 00:49:56,000
+or all the endpoints
+
+1402
+00:49:56,000 --> 00:49:58,000
+are the results
+
+1403
+00:49:58,000 --> 00:50:00,000
+after people optimize their behavior.
+
+1404
+00:50:00,000 --> 00:50:02,000
+So,
+
+1405
+00:50:02,000 --> 00:50:04,000
+for example, ozone,
+
+1406
+00:50:04,000 --> 00:50:06,000
+CO,
+
+1407
+00:50:06,000 --> 00:50:08,000
+you may not see anything
+
+1408
+00:50:08,000 --> 00:50:10,000
+in low concentration.
+
+1409
+00:50:10,000 --> 00:50:12,000
+But in fact,
+
+1410
+00:50:12,000 --> 00:50:14,000
+it's gone.
+
+1411
+00:50:14,000 --> 00:50:16,000
+So,
+
+1412
+00:50:16,000 --> 00:50:18,000
+from an economic
+
+1413
+00:50:18,000 --> 00:50:20,000
+and epidemiological
+
+1414
+00:50:20,000 --> 00:50:22,000
+point of view,
+
+1415
+00:50:22,000 --> 00:50:24,000
+it's a big difference.
+
+1416
+00:50:24,000 --> 00:50:26,000
+When the air quality is bad,
+
+1417
+00:50:26,000 --> 00:50:28,000
+you can choose
+
+1418
+00:50:28,000 --> 00:50:30,000
+a different transportation mode.
+
+1419
+00:50:30,000 --> 00:50:32,000
+For example,
+
+1420
+00:50:32,000 --> 00:50:34,000
+in Taiwan,
+
+1421
+00:50:34,000 --> 00:50:36,000
+you ride a scooter,
+
+1422
+00:50:36,000 --> 00:50:38,000
+but if the air quality is bad,
+
+1423
+00:50:38,000 --> 00:50:40,000
+you ride a bus.
+
+1424
+00:50:40,000 --> 00:50:42,000
+So,
+
+1425
+00:50:42,000 --> 00:50:44,000
+it has nothing to do
+
+1426
+00:50:44,000 --> 00:50:46,000
+with today's topic.
+
+1427
+00:50:46,000 --> 00:50:48,000
+Interesting.
+
+1428
+00:50:48,000 --> 00:50:50,000
+So, what's your name?
+
+1429
+00:50:50,000 --> 00:50:52,000
+Yi.
+
+1430
+00:50:52,000 --> 00:50:54,000
+Yi Xu.
+
+1431
+00:50:54,000 --> 00:50:56,000
+I'd like to ask
+
+1432
+00:50:56,000 --> 00:50:58,000
+if you work on energy policy.
+
+1433
+00:50:58,000 --> 00:51:00,000
+Yes, I do.
+
+1434
+00:51:00,000 --> 00:51:02,000
+I have an article
+
+1435
+00:51:02,000 --> 00:51:04,000
+about Taipei Metro
+
+1436
+00:51:04,000 --> 00:51:06,000
+and air pollution.
+
+1437
+00:51:06,000 --> 00:51:08,000
+In the U.S.,
+
+1438
+00:51:08,000 --> 00:51:10,000
+for example,
+
+1439
+00:51:10,000 --> 00:51:12,000
+when the Energy Bureau
+
+1440
+00:51:12,000 --> 00:51:14,000
+wants to change
+
+1441
+00:51:14,000 --> 00:51:16,000
+their policy,
+
+1442
+00:51:16,000 --> 00:51:18,000
+do they refer to
+
+1443
+00:51:18,000 --> 00:51:20,000
+researchers or companies?
+
+1444
+00:51:20,000 --> 00:51:22,000
+Or do they take an average?
+
+1445
+00:51:22,000 --> 00:51:24,000
+No,
+
+1446
+00:51:24,000 --> 00:51:26,000
+policy set up is basically
+
+1447
+00:51:26,000 --> 00:51:28,000
+a political negotiation process.
+
+1448
+00:51:28,000 --> 00:51:30,000
+For example,
+
+1449
+00:51:30,000 --> 00:51:32,000
+in California,
+
+1450
+00:51:32,000 --> 00:51:34,000
+renewable energy
+
+1451
+00:51:34,000 --> 00:51:36,000
+will be 50% in 2030.
+
+1452
+00:51:36,000 --> 00:51:38,000
+So,
+
+1453
+00:51:38,000 --> 00:51:40,000
+the government's policy
+
+1454
+00:51:40,000 --> 00:51:42,000
+will be like this.
+
+1455
+00:51:42,000 --> 00:51:44,000
+The next step is
+
+1456
+00:51:44,000 --> 00:51:46,000
+to hand it over to California
+
+1457
+00:51:46,000 --> 00:51:48,000
+Air Resources Board
+
+1458
+00:51:48,000 --> 00:51:50,000
+or other government agencies
+
+1459
+00:51:50,000 --> 00:51:52,000
+to implement.
+
+1460
+00:51:52,000 --> 00:51:54,000
+So,
+
+1461
+00:51:54,000 --> 00:51:56,000
+under my overall policy
+
+1462
+00:51:56,000 --> 00:51:58,000
+target,
+
+1463
+00:51:58,000 --> 00:52:00,000
+how do I use
+
+1464
+00:52:00,000 --> 00:52:02,000
+economic instruments?
+
+1465
+00:52:02,000 --> 00:52:04,000
+For example,
+
+1466
+00:52:04,000 --> 00:52:06,000
+I can force companies
+
+1467
+00:52:06,000 --> 00:52:08,000
+to use renewable energy.
+
+1468
+00:52:08,000 --> 00:52:10,000
+So,
+
+1469
+00:52:10,000 --> 00:52:12,000
+our target is to
+
+1470
+00:52:12,000 --> 00:52:14,000
+come up with a way
+
+1471
+00:52:14,000 --> 00:52:16,000
+to use market instruments.
+
+1472
+00:52:16,000 --> 00:52:18,000
+For example,
+
+1473
+00:52:18,000 --> 00:52:20,000
+I can close subsidy
+
+1474
+00:52:20,000 --> 00:52:22,000
+renewable energy
+
+1475
+00:52:22,000 --> 00:52:24,000
+from the fossil fuel
+
+1476
+00:52:24,000 --> 00:52:26,000
+or dirty energy.
+
+1477
+00:52:26,000 --> 00:52:28,000
+In this way,
+
+1478
+00:52:28,000 --> 00:52:30,000
+those firms
+
+1479
+00:52:30,000 --> 00:52:32,000
+will endogenous
+
+1480
+00:52:32,000 --> 00:52:34,000
+and use market
+
+1481
+00:52:34,000 --> 00:52:36,000
+to achieve the result.
+
+1482
+00:52:36,000 --> 00:52:38,000
+I think policy is important
+
+1483
+00:52:38,000 --> 00:52:40,000
+for researchers.
+
+1484
+00:52:40,000 --> 00:52:42,000
+For example,
+
+1485
+00:52:42,000 --> 00:52:44,000
+I'm doing CO2 reduction here.
+
+1486
+00:52:44,000 --> 00:52:46,000
+So,
+
+1487
+00:52:46,000 --> 00:52:48,000
+our institute's funding source
+
+1488
+00:52:48,000 --> 00:52:50,000
+is based on the government's policy.
+
+1489
+00:52:50,000 --> 00:52:52,000
+For example,
+
+1490
+00:52:52,000 --> 00:52:54,000
+if Trump doesn't support
+
+1491
+00:52:54,000 --> 00:52:56,000
+energy,
+
+1492
+00:52:56,000 --> 00:52:58,000
+we will be worried.
+
+1493
+00:52:58,000 --> 00:53:00,000
+Will you be fired?
+
+1494
+00:53:00,000 --> 00:53:02,000
+I don't think so.
+
+1495
+00:53:02,000 --> 00:53:04,000
+But others are worried
+
+1496
+00:53:04,000 --> 00:53:06,000
+about our institute.
+
+1497
+00:53:06,000 --> 00:53:08,000
+Our institute is not only in Caltech,
+
+1498
+00:53:08,000 --> 00:53:10,000
+but also in Stanford and Berkeley.
+
+1499
+00:53:10,000 --> 00:53:12,000
+So,
+
+1500
+00:53:12,000 --> 00:53:14,000
+everyone is worried about it.
+
+1501
+00:53:14,000 --> 00:53:16,000
+But now,
+
+1502
+00:53:16,000 --> 00:53:18,000
+it seems to be guaranteed
+
+1503
+00:53:18,000 --> 00:53:20,000
+to be implemented in 2020.
+
+1504
+00:53:20,000 --> 00:53:22,000
+So,
+
+1505
+00:53:22,000 --> 00:53:24,000
+except Trump,
+
+1506
+00:53:24,000 --> 00:53:26,000
+everyone else is supportive.
+
+1507
+00:53:26,000 --> 00:53:28,000
+I think it's impossible in California.
+
+1508
+00:53:28,000 --> 00:53:30,000
+Our institute is a pioneer
+
+1509
+00:53:30,000 --> 00:53:32,000
+in environmental policy.
+
+1510
+00:53:32,000 --> 00:53:34,000
+So,
+
+1511
+00:53:34,000 --> 00:53:36,000
+even if the government's funding
+
+1512
+00:53:36,000 --> 00:53:38,000
+is not enough,
+
+1513
+00:53:38,000 --> 00:53:40,000
+we have a lot of state funding.
+
+1514
+00:53:40,000 --> 00:53:42,000
+Thank you for your comment.
+
+1515
+00:53:42,000 --> 00:53:44,000
+I think it's interesting.
+
+1516
+00:53:44,000 --> 00:53:46,000
+I'll send you an email later.
+
+1517
+00:53:46,000 --> 00:53:48,000
+I think we can work together.
+
+1518
+00:53:52,000 --> 00:53:54,000
+Let me interrupt.
+
+1519
+00:53:54,000 --> 00:53:56,000
+As I mentioned,
+
+1520
+00:53:56,000 --> 00:53:58,000
+I'm a policy designer.
+
+1521
+00:53:58,000 --> 00:54:00,000
+If I'm not mistaken,
+
+1522
+00:54:00,000 --> 00:54:02,000
+next week's talk
+
+1523
+00:54:02,000 --> 00:54:04,000
+is about economics.
+
+1524
+00:54:04,000 --> 00:54:06,000
+The speaker will talk about
+
+1525
+00:54:06,000 --> 00:54:08,000
+mechanical design.
+
+1526
+00:54:08,000 --> 00:54:10,000
+It's not specific
+
+1527
+00:54:10,000 --> 00:54:12,000
+about energy
+
+1528
+00:54:12,000 --> 00:54:14,000
+or energy policy design.
+
+1529
+00:54:14,000 --> 00:54:16,000
+But it's about
+
+1530
+00:54:16,000 --> 00:54:18,000
+mechanical design itself
+
+1531
+00:54:18,000 --> 00:54:20,000
+from an economic perspective.
+
+1532
+00:54:20,000 --> 00:54:22,000
+I just realized it's related to
+
+1533
+00:54:22,000 --> 00:54:24,000
+what you just discussed.
+
+1534
+00:54:24,000 --> 00:54:26,000
+Yixu,
+
+1535
+00:54:26,000 --> 00:54:28,000
+we can keep in touch.
+
+1536
+00:54:28,000 --> 00:54:30,000
+You should have it.
+
+1537
+00:54:30,000 --> 00:54:32,000
+I'm in control of everything.
+
+1538
+00:54:32,000 --> 00:54:34,000
+Okay.
+
+1539
+00:54:34,000 --> 00:54:36,000
+I'm just cyber-stalking you
+
+1540
+00:54:36,000 --> 00:54:38,000
+right now.
+
+1541
+00:54:38,000 --> 00:54:40,000
+Please.
+
+1542
+00:54:40,000 --> 00:54:42,000
+I already have Zhang Xi.
+
+1543
+00:54:42,000 --> 00:54:44,000
+I can stalk others.
+
+1544
+00:54:44,000 --> 00:54:46,000
+Keep tracking.
+
+1545
+00:54:46,000 --> 00:54:48,000
+Okay.
+
+1546
+00:54:48,000 --> 00:54:50,000
+I don't know
+
+1547
+00:54:50,000 --> 00:54:52,000
+if Jiao Yan has joined
+
+1548
+00:54:52,000 --> 00:54:54,000
+Tyra's members.
+
+1549
+00:54:54,000 --> 00:54:56,000
+If you're interested in joining Tyra...
+
+1550
+00:54:56,000 --> 00:54:58,000
+She gave a talk last year.
+
+1551
+00:54:58,000 --> 00:55:00,000
+Okay.
+
+1552
+00:55:00,000 --> 00:55:02,000
+Yixu,
+
+1553
+00:55:02,000 --> 00:55:04,000
+are you in Tyra?
+
+1554
+00:55:04,000 --> 00:55:06,000
+You're a passerby.
+
+1555
+00:55:06,000 --> 00:55:08,000
+I'm a passerby.
+
+1556
+00:55:08,000 --> 00:55:10,000
+You can join us next time.
+
+1557
+00:55:10,000 --> 00:55:12,000
+Okay.
+
+1558
+00:55:12,000 --> 00:55:14,000
+I'll send you the membership form
+
+1559
+00:55:14,000 --> 00:55:16,000
+right away.
+
+1560
+00:55:16,000 --> 00:55:18,000
+If you're interested,
+
+1561
+00:55:18,000 --> 00:55:20,000
+you're welcome to join Tyra.
+
+1562
+00:55:20,000 --> 00:55:22,000
+There's a lot of people.
+
+1563
+00:55:22,000 --> 00:55:24,000
+Okay.
+
+1564
+00:55:24,000 --> 00:55:26,000
+The biggest problem is
+
+1565
+00:55:26,000 --> 00:55:28,000
+you can't find students
+
+1566
+00:55:28,000 --> 00:55:30,000
+even if you want to.
+
+1567
+00:55:30,000 --> 00:55:32,000
+What kind of students?
+
+1568
+00:55:32,000 --> 00:55:34,000
+PhD students.
+
+1569
+00:55:34,000 --> 00:55:36,000
+You mean me?
+
+1570
+00:55:36,000 --> 00:55:38,000
+I mean me.
+
+1571
+00:55:38,000 --> 00:55:40,000
+I can't find students
+
+1572
+00:55:40,000 --> 00:55:42,000
+if I want to.
+
+1573
+00:55:42,000 --> 00:55:44,000
+Not necessarily.
+
+1574
+00:55:44,000 --> 00:55:46,000
+We'll have students
+
+1575
+00:55:46,000 --> 00:55:48,000
+after the promotion.
+
+1576
+00:55:48,000 --> 00:55:50,000
+We'll have students after the promotion.
+
+1577
+00:55:50,000 --> 00:55:52,000
+Thank you.
+

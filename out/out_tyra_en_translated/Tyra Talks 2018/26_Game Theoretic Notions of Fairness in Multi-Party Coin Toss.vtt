@@ -1,0 +1,6629 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Hello, everyone. Welcome to today's Tera Talk.
+
+00:06.000 --> 00:09.000
+We're honored to have Lin Weikai with us today.
+
+00:09.000 --> 00:12.000
+Lin Weikai has been a good friend of mine for many years.
+
+00:12.000 --> 00:17.000
+Lin Weikai is now a third-year PhD student at Cornell,
+
+00:17.000 --> 00:19.000
+majoring in Computer Science.
+
+00:19.000 --> 00:22.000
+Lin's research focuses on cryptography.
+
+00:22.000 --> 00:26.000
+His main focus is on Oblivious algorithm.
+
+00:26.000 --> 00:33.000
+This allows the algorithm to store data without revealing the content.
+
+00:33.000 --> 00:38.000
+He majored in Chemistry when he was a college student.
+
+00:38.000 --> 00:43.000
+He majored in Computer Science when he was a master's student.
+
+00:43.000 --> 00:49.000
+He majored in Computer Science when he was a master's student.
+
+00:49.000 --> 00:53.000
+Before his PhD,
+
+00:53.000 --> 00:57.000
+he worked as a software engineer at Chengxin.
+
+00:57.000 --> 01:00.000
+He also worked as a research assistant at the Central Academy of Sciences.
+
+01:00.000 --> 01:06.000
+What Lin is going to talk about today is the concept of Oblivious algorithm.
+
+01:06.000 --> 01:10.000
+But today, he's going to talk about a new definition of
+
+01:10.000 --> 01:15.000
+the fairness of multiparty coin tossing.
+
+01:15.000 --> 01:17.000
+Let's give him a round of applause.
+
+01:17.000 --> 01:20.000
+By the way, remember to turn on the microphone when you clap.
+
+01:20.000 --> 01:23.000
+Let's give him a round of applause.
+
+01:28.000 --> 01:32.000
+Thank you for such a wonderful introduction.
+
+01:32.000 --> 01:36.000
+The title is complicated,
+
+01:36.000 --> 01:42.000
+but I assume most of you have heard of the theorem of the game.
+
+01:42.000 --> 01:46.000
+Today's topic is
+
+01:46.000 --> 01:52.000
+the concept of coin toss.
+
+01:52.000 --> 01:57.000
+I'm going to talk about the relationship between coin toss and the theorem of the game.
+
+01:57.000 --> 02:02.000
+This work was done by Zhong Kaimin at the Central Academy of Sciences.
+
+02:02.000 --> 02:07.000
+Guo Yue, Rafael, and I are both at Cornell.
+
+02:07.000 --> 02:14.000
+Cornell Tech is a campus at NYC.
+
+02:15.000 --> 02:21.000
+Cornell has a new campus at NYC.
+
+02:21.000 --> 02:27.000
+Let's talk about the topic of coin toss today.
+
+02:27.000 --> 02:35.000
+The motivation of this research is very realistic.
+
+02:35.000 --> 02:39.000
+Although I usually do theoretical research,
+
+02:39.000 --> 02:42.000
+our motivation is very realistic.
+
+02:42.000 --> 02:44.000
+What is the motivation?
+
+02:44.000 --> 02:49.000
+Trump and Xi want to hold a summit.
+
+02:49.000 --> 02:52.000
+Where will it be held?
+
+02:52.000 --> 02:54.000
+Trump wants to hold it in DC.
+
+02:54.000 --> 02:56.000
+Xi wants to hold it in Beijing.
+
+02:56.000 --> 03:01.000
+If these two people can't get along,
+
+03:01.000 --> 03:02.000
+what should they do?
+
+03:02.000 --> 03:05.000
+The easiest way is to make a decision by tossing a coin.
+
+03:05.000 --> 03:08.000
+If these two people can't get along,
+
+03:08.000 --> 03:10.000
+how can they toss a coin?
+
+03:10.000 --> 03:14.000
+This is a tricky question we are going to discuss today.
+
+03:14.000 --> 03:17.000
+If these two people can't get along, how can they toss a coin?
+
+03:17.000 --> 03:21.000
+Let's not talk about whether the coin toss will be fair or not.
+
+03:21.000 --> 03:23.000
+If they can't get along,
+
+03:23.000 --> 03:26.000
+if Trump tosses a coin here,
+
+03:26.000 --> 03:28.000
+Xi won't believe it even if he doesn't see it.
+
+03:28.000 --> 03:31.000
+So what should they do?
+
+03:32.000 --> 03:35.000
+If I have a way to toss a coin,
+
+03:35.000 --> 03:37.000
+a way to toss a coin remotely,
+
+03:37.000 --> 03:39.000
+if the coin tosses out,
+
+03:39.000 --> 03:40.000
+Xi is in DC,
+
+03:40.000 --> 03:41.000
+Xi is in Beijing.
+
+03:41.000 --> 03:44.000
+If the coin tosses out remotely is fair,
+
+03:44.000 --> 03:46.000
+everyone will be happy.
+
+03:46.000 --> 03:48.000
+Half and half chance.
+
+03:48.000 --> 03:49.000
+In the game,
+
+03:49.000 --> 03:52.000
+someone will tell you that there is a payoff.
+
+03:52.000 --> 03:54.000
+What is the coin toss?
+
+03:54.000 --> 04:00.000
+Which side has how many payoffs or utilities?
+
+04:00.000 --> 04:03.000
+But let's not talk about this.
+
+04:03.000 --> 04:07.000
+In history,
+
+04:07.000 --> 04:11.000
+there is a hotline between the United States and the Soviet Union.
+
+04:11.000 --> 04:13.000
+Maybe there is also a hotline between Trump and Xi.
+
+04:13.000 --> 04:16.000
+If they don't meet, they can talk on the phone.
+
+04:16.000 --> 04:19.000
+If there is a question in the middle,
+
+04:19.000 --> 04:21.000
+you can interrupt me at any time.
+
+04:21.000 --> 04:26.000
+I hope everyone can understand what I am talking about today.
+
+04:26.000 --> 04:28.000
+If you don't understand,
+
+04:28.000 --> 04:30.000
+don't be afraid.
+
+04:30.000 --> 04:32.000
+Try to ask.
+
+04:32.000 --> 04:36.000
+The purpose of the hotline is that
+
+04:36.000 --> 04:38.000
+you say one sentence, I say one sentence,
+
+04:38.000 --> 04:41.000
+and the other party can hear what I say.
+
+04:41.000 --> 04:43.000
+Then there is nothing else.
+
+04:43.000 --> 04:46.000
+So the hotline can't help you directly
+
+04:46.000 --> 04:48.000
+toss a coin.
+
+04:48.000 --> 04:50.000
+It's not such a good thing.
+
+04:50.000 --> 04:52.000
+But what can the hotline do?
+
+04:52.000 --> 04:56.000
+The hotline can communicate on both sides.
+
+04:56.000 --> 04:58.000
+After the communication,
+
+04:58.000 --> 05:02.000
+the hotline may have an output.
+
+05:02.000 --> 05:04.000
+B is equal to 0 or B is equal to 1.
+
+05:04.000 --> 05:06.000
+It's the same side.
+
+05:06.000 --> 05:08.000
+The hotline can do this.
+
+05:08.000 --> 05:11.000
+It can help you create a random variable.
+
+05:11.000 --> 05:13.000
+Its value is 0 or 1.
+
+05:13.000 --> 05:15.000
+The probability is 0.5 or 0.5.
+
+05:15.000 --> 05:19.000
+What I want is to get a random variable.
+
+05:19.000 --> 05:23.000
+It's a random variable defined by math.
+
+05:24.000 --> 05:30.000
+If you are familiar with the random variables defined by math,
+
+05:30.000 --> 05:34.000
+or you've heard of it in class,
+
+05:34.000 --> 05:39.000
+I have a way to get the two sides to toss a coin.
+
+05:39.000 --> 05:41.000
+How do you do it?
+
+05:41.000 --> 05:43.000
+Trump throws a coin first.
+
+05:43.000 --> 05:45.000
+The coin is 1.
+
+05:45.000 --> 05:49.000
+Then Trump says to Xi on the phone,
+
+05:49.000 --> 05:51.000
+my coin is 1.
+
+05:51.000 --> 05:53.000
+Then Xi says,
+
+05:53.000 --> 05:55.000
+I got it.
+
+05:55.000 --> 05:57.000
+Your coin is 1.
+
+05:57.000 --> 06:00.000
+Then both sides agree that the coin is 1.
+
+06:00.000 --> 06:07.000
+If Trump throws a fair coin,
+
+06:07.000 --> 06:10.000
+this method may work.
+
+06:10.000 --> 06:13.000
+But Xi is obviously not happy.
+
+06:13.000 --> 06:15.000
+If Trump is a bad guy,
+
+06:15.000 --> 06:17.000
+and he didn't throw the coin at all,
+
+06:18.000 --> 06:23.000
+it's not a good thing for Xi.
+
+06:23.000 --> 06:26.000
+He won't agree with the result of the coin toss.
+
+06:26.000 --> 06:33.000
+Don't say that Trump made a mistake at the beginning,
+
+06:33.000 --> 06:35.000
+and made it unfair.
+
+06:35.000 --> 06:39.000
+Even if he made a very complicated LeTouJi,
+
+06:39.000 --> 06:41.000
+and recorded it,
+
+06:41.000 --> 06:43.000
+and sent it to Xi through a hotline,
+
+06:43.000 --> 06:48.000
+Xi won't believe it.
+
+06:48.000 --> 06:54.000
+If Trump didn't cheat,
+
+06:54.000 --> 06:56.000
+it may work.
+
+06:56.000 --> 06:58.000
+But neither side believes each other.
+
+06:58.000 --> 07:00.000
+This is a common problem in cryptography.
+
+07:00.000 --> 07:02.000
+If neither side doesn't believe each other,
+
+07:02.000 --> 07:04.000
+what should we do?
+
+07:05.000 --> 07:08.000
+A long time ago,
+
+07:08.000 --> 07:14.000
+there was a technology called commit.
+
+07:14.000 --> 07:20.000
+Trump first calculated a number X
+
+07:20.000 --> 07:25.000
+using SHA.
+
+07:25.000 --> 07:27.000
+Then he told Xi.
+
+07:27.000 --> 07:29.000
+This thing is called commit.
+
+07:29.000 --> 07:31.000
+Xi said,
+
+07:31.000 --> 07:33.000
+you calculated X, I calculated Y,
+
+07:33.000 --> 07:35.000
+and then E.
+
+07:35.000 --> 07:37.000
+Then Trump said,
+
+07:37.000 --> 07:39.000
+my X is below E,
+
+07:39.000 --> 07:41.000
+and then he made a mess.
+
+07:41.000 --> 07:45.000
+In order to hide the E at the beginning.
+
+07:45.000 --> 07:47.000
+Then these two sides,
+
+07:47.000 --> 07:49.000
+X and Y, XOR,
+
+07:49.000 --> 07:53.000
+is the result of the coin toss.
+
+07:53.000 --> 07:55.000
+In cryptography,
+
+07:55.000 --> 07:57.000
+these two things are simplified
+
+07:57.000 --> 07:59.000
+into commit and open.
+
+07:59.000 --> 08:01.000
+That is,
+
+08:01.000 --> 08:03.000
+he wrote an X,
+
+08:03.000 --> 08:07.000
+and then sealed it in the envelope to Xi.
+
+08:07.000 --> 08:09.000
+After Xi received it,
+
+08:09.000 --> 08:11.000
+he opened the envelope.
+
+08:11.000 --> 08:13.000
+The purpose of the envelope
+
+08:13.000 --> 08:15.000
+is to prevent the person
+
+08:15.000 --> 08:19.000
+who wrote the envelope from changing.
+
+08:20.000 --> 08:23.000
+The person who received the envelope
+
+08:23.000 --> 08:25.000
+can't see it for the time being.
+
+08:25.000 --> 08:27.000
+This is called commit and open.
+
+08:27.000 --> 08:29.000
+In the past...
+
+08:29.000 --> 08:31.000
+I have a question.
+
+08:31.000 --> 08:33.000
+Does this hotline
+
+08:33.000 --> 08:35.000
+have a rule
+
+08:35.000 --> 08:37.000
+that you have to do it one by one?
+
+08:37.000 --> 08:39.000
+Can't you say it at the same time?
+
+08:39.000 --> 08:41.000
+If you say it at the same time,
+
+08:41.000 --> 08:43.000
+everyone says 1, 2, 3,
+
+08:43.000 --> 08:45.000
+and I say 1 or 0,
+
+08:45.000 --> 08:47.000
+and everyone says XOR.
+
+08:47.000 --> 08:49.000
+This is a very good question.
+
+08:49.000 --> 08:51.000
+But because everyone doesn't believe it,
+
+08:51.000 --> 08:53.000
+they might say it slowly.
+
+08:53.000 --> 08:55.000
+So...
+
+08:55.000 --> 08:57.000
+This hotline
+
+08:57.000 --> 08:59.000
+has a rule
+
+08:59.000 --> 09:01.000
+that you have to do it one by one.
+
+09:01.000 --> 09:03.000
+You can't say it at the same time.
+
+09:03.000 --> 09:05.000
+You can't say it at the same time.
+
+09:05.000 --> 09:07.000
+I should say that
+
+09:07.000 --> 09:09.000
+I didn't assume
+
+09:09.000 --> 09:11.000
+that this hotline
+
+09:11.000 --> 09:13.000
+had to do it one by one.
+
+09:13.000 --> 09:15.000
+But Trump and Xi agreed
+
+09:15.000 --> 09:17.000
+and...
+
+09:17.000 --> 09:19.000
+If someone says it slowly,
+
+09:19.000 --> 09:21.000
+what should you do?
+
+09:21.000 --> 09:23.000
+Do it again?
+
+09:23.000 --> 09:25.000
+Yes, yes.
+
+09:25.000 --> 09:27.000
+Then it will be endless.
+
+09:27.000 --> 09:29.000
+Okay, good.
+
+09:29.000 --> 09:31.000
+Also,
+
+09:31.000 --> 09:33.000
+when we imagine a hotline,
+
+09:33.000 --> 09:35.000
+we can't judge
+
+09:35.000 --> 09:37.000
+who says it slowly.
+
+09:37.000 --> 09:39.000
+Because of the message delay,
+
+09:39.000 --> 09:41.000
+we can't be sure
+
+09:41.000 --> 09:43.000
+who says it slowly.
+
+09:43.000 --> 09:45.000
+If we do it one by one,
+
+09:45.000 --> 09:47.000
+we can be sure of the order.
+
+09:47.000 --> 09:49.000
+Okay, got it.
+
+09:49.000 --> 09:51.000
+So,
+
+09:51.000 --> 09:53.000
+at the same time,
+
+09:53.000 --> 09:55.000
+on the internet,
+
+09:55.000 --> 09:57.000
+it's hard to judge.
+
+09:59.000 --> 10:01.000
+This is a good question.
+
+10:01.000 --> 10:03.000
+Let's say
+
+10:03.000 --> 10:05.000
+all the protocols
+
+10:05.000 --> 10:07.000
+are one by one.
+
+10:07.000 --> 10:09.000
+And the order is...
+
+10:09.000 --> 10:11.000
+Okay,
+
+10:11.000 --> 10:13.000
+then,
+
+10:13.000 --> 10:15.000
+this thing,
+
+10:15.000 --> 10:17.000
+this commit and open,
+
+10:17.000 --> 10:19.000
+if you have a good commit,
+
+10:19.000 --> 10:21.000
+when you commit,
+
+10:21.000 --> 10:23.000
+the other side can't be opened.
+
+10:23.000 --> 10:25.000
+And the other side of the bus
+
+10:25.000 --> 10:27.000
+can't be tampered with.
+
+10:27.000 --> 10:29.000
+Then this thing,
+
+10:29.000 --> 10:31.000
+this coin toss thing,
+
+10:31.000 --> 10:33.000
+can be done fairly.
+
+10:33.000 --> 10:35.000
+Because when it commits to x in advance,
+
+10:35.000 --> 10:37.000
+it doesn't know what will happen to y.
+
+10:37.000 --> 10:39.000
+And when it commits to y,
+
+10:39.000 --> 10:41.000
+it doesn't know what x is.
+
+10:41.000 --> 10:43.000
+So,
+
+10:43.000 --> 10:45.000
+the result will be
+
+10:45.000 --> 10:47.000
+fair.
+
+10:47.000 --> 10:49.000
+And
+
+10:49.000 --> 10:51.000
+we can be sure
+
+10:51.000 --> 10:53.000
+the other side can't tamper with the result.
+
+10:57.000 --> 10:59.000
+Then,
+
+10:59.000 --> 11:01.000
+this thing,
+
+11:01.000 --> 11:03.000
+we've been talking about fairness.
+
+11:03.000 --> 11:05.000
+What kind of fairness
+
+11:05.000 --> 11:07.000
+do we want?
+
+11:07.000 --> 11:09.000
+The formal definition of
+
+11:09.000 --> 11:11.000
+mathematics is
+
+11:11.000 --> 11:13.000
+the expected value is 0.5.
+
+11:13.000 --> 11:15.000
+The result of the commit is only 0 and 1.
+
+11:15.000 --> 11:17.000
+And the probability is 0.5.
+
+11:17.000 --> 11:19.000
+So the expected value is
+
+11:19.000 --> 11:21.000
+0.5 times 0 plus 0.5 times 1
+
+11:21.000 --> 11:23.000
+equals 0.5.
+
+11:23.000 --> 11:25.000
+I want the expected value
+
+11:25.000 --> 11:27.000
+to be exactly 0.5.
+
+11:27.000 --> 11:29.000
+Then,
+
+11:29.000 --> 11:31.000
+if you look at this thing carefully,
+
+11:31.000 --> 11:33.000
+it's not exactly 0.5.
+
+11:33.000 --> 11:35.000
+I'll talk about this later.
+
+11:35.000 --> 11:37.000
+So it usually adds
+
+11:37.000 --> 11:39.000
+a very small fraction,
+
+11:39.000 --> 11:41.000
+negligible.
+
+11:41.000 --> 11:43.000
+But let's leave it alone.
+
+11:43.000 --> 11:45.000
+I just want 0.5.
+
+11:45.000 --> 11:47.000
+Then,
+
+11:47.000 --> 11:49.000
+this thing,
+
+11:49.000 --> 11:51.000
+unfortunately,
+
+11:51.000 --> 11:53.000
+in the
+
+11:53.000 --> 11:55.000
+previous result,
+
+11:55.000 --> 11:57.000
+a long time ago,
+
+11:57.000 --> 11:59.000
+about 30 years ago,
+
+11:59.000 --> 12:01.000
+what can't we do?
+
+12:03.000 --> 12:05.000
+This
+
+12:05.000 --> 12:07.000
+adversary,
+
+12:07.000 --> 12:09.000
+like Trump or Xi,
+
+12:09.000 --> 12:11.000
+can end
+
+12:11.000 --> 12:13.000
+earlier.
+
+12:13.000 --> 12:15.000
+This protocol is not finished yet.
+
+12:15.000 --> 12:17.000
+He said I'm not going to play like this.
+
+12:17.000 --> 12:19.000
+And
+
+12:19.000 --> 12:21.000
+this adversary
+
+12:21.000 --> 12:23.000
+is
+
+12:23.000 --> 12:25.000
+only when there is a limited
+
+12:25.000 --> 12:27.000
+computing power,
+
+12:27.000 --> 12:29.000
+this
+
+12:29.000 --> 12:31.000
+protocol,
+
+12:31.000 --> 12:33.000
+this is easier for the protocol
+
+12:33.000 --> 12:35.000
+to do.
+
+12:35.000 --> 12:37.000
+Let's assume that Trump and Xi
+
+12:37.000 --> 12:39.000
+have limited
+
+12:39.000 --> 12:41.000
+computing power.
+
+12:41.000 --> 12:43.000
+It's all polynomial time
+
+12:43.000 --> 12:45.000
+algorithm.
+
+12:45.000 --> 12:47.000
+This polynomial time,
+
+12:47.000 --> 12:49.000
+you may not be familiar with it,
+
+12:49.000 --> 12:51.000
+but
+
+12:53.000 --> 12:55.000
+you can make a decision
+
+12:55.000 --> 12:57.000
+within a few seconds.
+
+12:59.000 --> 13:01.000
+Then
+
+13:01.000 --> 13:03.000
+any
+
+13:05.000 --> 13:07.000
+protocol like this,
+
+13:07.000 --> 13:09.000
+in the result of this cliff,
+
+13:09.000 --> 13:11.000
+it can design
+
+13:11.000 --> 13:13.000
+an attacker to crack
+
+13:13.000 --> 13:15.000
+any protocol.
+
+13:15.000 --> 13:17.000
+So
+
+13:17.000 --> 13:19.000
+to achieve the expected value
+
+13:19.000 --> 13:21.000
+is exactly 0.5,
+
+13:21.000 --> 13:23.000
+no protocol can do it.
+
+13:23.000 --> 13:25.000
+The result is
+
+13:25.000 --> 13:27.000
+such a strong impossibility.
+
+13:27.000 --> 13:29.000
+That is to say,
+
+13:29.000 --> 13:31.000
+no protocol can do this.
+
+13:31.000 --> 13:33.000
+In this way,
+
+13:33.000 --> 13:35.000
+let's take a look at this example.
+
+13:35.000 --> 13:37.000
+Just
+
+13:37.000 --> 13:39.000
+commit and open this example.
+
+13:39.000 --> 13:41.000
+Here,
+
+13:41.000 --> 13:43.000
+we are using the
+
+13:43.000 --> 13:45.000
+new hash function.
+
+13:45.000 --> 13:47.000
+It's not new, it's about
+
+13:47.000 --> 13:49.000
+more than ten years.
+
+13:49.000 --> 13:51.000
+So far, everyone still believes that SHA-256
+
+13:51.000 --> 13:53.000
+is difficult to crack.
+
+13:53.000 --> 13:55.000
+For example,
+
+13:55.000 --> 13:57.000
+Bitcoin is still in use.
+
+13:57.000 --> 13:59.000
+How to
+
+13:59.000 --> 14:01.000
+crack it?
+
+14:01.000 --> 14:03.000
+If
+
+14:03.000 --> 14:05.000
+Xi's
+
+14:05.000 --> 14:07.000
+computing power is
+
+14:07.000 --> 14:09.000
+infinite,
+
+14:09.000 --> 14:11.000
+he can easily
+
+14:11.000 --> 14:13.000
+decrypt SHA-256x
+
+14:13.000 --> 14:15.000
+which is equal to a certain number.
+
+14:15.000 --> 14:17.000
+As long as he violently
+
+14:17.000 --> 14:19.000
+tries all the x,
+
+14:19.000 --> 14:21.000
+he can decrypt the x.
+
+14:21.000 --> 14:23.000
+After Xi knows
+
+14:23.000 --> 14:25.000
+the value of x,
+
+14:25.000 --> 14:27.000
+he can choose a relative y
+
+14:27.000 --> 14:29.000
+so that the result is what he likes.
+
+14:29.000 --> 14:31.000
+For example, he likes 0.
+
+14:31.000 --> 14:33.000
+0 represents Beijing.
+
+14:33.000 --> 14:35.000
+So when he sees that the value of x is 1,
+
+14:35.000 --> 14:37.000
+he chooses a y
+
+14:37.000 --> 14:39.000
+so that the result is Beijing.
+
+14:39.000 --> 14:41.000
+Trump doesn't know
+
+14:41.000 --> 14:43.000
+that he was fooled.
+
+14:43.000 --> 14:45.000
+He can only delete 1.
+
+14:45.000 --> 14:47.000
+The result is what Xi wants.
+
+14:47.000 --> 14:49.000
+This is
+
+14:49.000 --> 14:51.000
+if
+
+14:51.000 --> 14:53.000
+one of them
+
+14:53.000 --> 14:55.000
+has
+
+14:55.000 --> 14:57.000
+infinite computing power,
+
+14:57.000 --> 14:59.000
+something may happen.
+
+15:03.000 --> 15:05.000
+But
+
+15:05.000 --> 15:07.000
+what I said last time
+
+15:07.000 --> 15:09.000
+is even stronger.
+
+15:09.000 --> 15:11.000
+Even if Xi only has
+
+15:11.000 --> 15:13.000
+limited computing power,
+
+15:13.000 --> 15:15.000
+he can still attack.
+
+15:15.000 --> 15:17.000
+How effective
+
+15:17.000 --> 15:19.000
+this attack method
+
+15:19.000 --> 15:21.000
+can be?
+
+15:21.000 --> 15:23.000
+It can make the expectation value
+
+15:23.000 --> 15:25.000
+deviate
+
+15:25.000 --> 15:27.000
+to any
+
+15:27.000 --> 15:29.000
+deviation
+
+15:29.000 --> 15:31.000
+to any
+
+15:31.000 --> 15:33.000
+deviation
+
+15:33.000 --> 15:35.000
+to any
+
+15:35.000 --> 15:37.000
+deviation
+
+15:37.000 --> 15:39.000
+to any
+
+15:39.000 --> 15:41.000
+1 in three rounds.
+
+15:41.000 --> 15:43.000
+So
+
+15:43.000 --> 15:45.000
+1 in three rounds.
+
+15:45.000 --> 15:47.000
+The number of attacks
+
+15:47.000 --> 15:49.000
+is about 1 in three rounds.
+
+15:49.000 --> 15:51.000
+This is a very powerful attack.
+
+15:51.000 --> 15:53.000
+For example,
+
+15:53.000 --> 15:55.000
+For example,
+
+15:55.000 --> 15:57.000
+For example,
+
+15:57.000 --> 15:59.000
+the attacker
+
+15:59.000 --> 16:01.000
+has infinite computing power.
+
+16:01.000 --> 16:03.000
+He can make
+
+16:03.000 --> 16:05.000
+his expectation value
+
+16:05.000 --> 16:07.000
+deviate to 0.5.
+
+16:07.000 --> 16:09.000
+He can choose
+
+16:09.000 --> 16:11.000
+what he wants.
+
+16:11.000 --> 16:13.000
+But if he only has
+
+16:13.000 --> 16:15.000
+limited computing power,
+
+16:15.000 --> 16:17.000
+he can't
+
+16:17.000 --> 16:19.000
+make the expectation value
+
+16:19.000 --> 16:21.000
+deviate so much, but he can
+
+16:21.000 --> 16:23.000
+deviate to a certain number,
+
+16:23.000 --> 16:25.000
+which is 1 in three rounds.
+
+16:25.000 --> 16:27.000
+I just gave a random number,
+
+16:27.000 --> 16:29.000
+but according to this protocol,
+
+16:29.000 --> 16:31.000
+it is about 1 in three rounds.
+
+16:31.000 --> 16:33.000
+The expectation value is 1 in three rounds.
+
+16:33.000 --> 16:35.000
+From 0.5 to 0.5 plus 1 in three rounds
+
+16:35.000 --> 16:37.000
+is 0.8.
+
+16:37.000 --> 16:39.000
+So
+
+16:39.000 --> 16:41.000
+the result of
+
+16:41.000 --> 16:43.000
+cleave is very strong.
+
+16:43.000 --> 16:45.000
+You can't make a fair copy.
+
+16:45.000 --> 16:47.000
+Because no matter what protocol,
+
+16:47.000 --> 16:49.000
+it can create an attacker.
+
+16:49.000 --> 16:51.000
+Then
+
+16:51.000 --> 16:53.000
+make an effective attack in a limited time.
+
+16:53.000 --> 16:55.000
+Then
+
+16:55.000 --> 16:57.000
+here
+
+16:57.000 --> 16:59.000
+There is another thing
+
+16:59.000 --> 17:01.000
+to talk about this attack.
+
+17:01.000 --> 17:03.000
+This
+
+17:03.000 --> 17:05.000
+What kind of
+
+17:05.000 --> 17:07.000
+impact will it have at the beginning and end?
+
+17:07.000 --> 17:09.000
+For example,
+
+17:09.000 --> 17:11.000
+at the beginning, I talked about the simplest
+
+17:11.000 --> 17:13.000
+protocol.
+
+17:13.000 --> 17:15.000
+Trump threw a copper plate,
+
+17:15.000 --> 17:17.000
+and Xi Jinping received it and
+
+17:17.000 --> 17:19.000
+admitted that it was a copper plate.
+
+17:19.000 --> 17:21.000
+He admitted the result of the copper plate.
+
+17:21.000 --> 17:23.000
+This thing
+
+17:25.000 --> 17:27.000
+has a fail-stop.
+
+17:27.000 --> 17:29.000
+If one of them
+
+17:29.000 --> 17:31.000
+can end early
+
+17:31.000 --> 17:33.000
+and not late,
+
+17:33.000 --> 17:35.000
+it is difficult to achieve
+
+17:35.000 --> 17:37.000
+a fair result.
+
+17:37.000 --> 17:39.000
+For example, Trump threw a copper plate,
+
+17:39.000 --> 17:41.000
+and he saw this copper plate
+
+17:41.000 --> 17:43.000
+was not what he liked.
+
+17:43.000 --> 17:45.000
+He said, then I won't play.
+
+17:45.000 --> 17:47.000
+Then
+
+17:47.000 --> 17:49.000
+this
+
+17:49.000 --> 17:51.000
+If you don't play, Xi Jinping
+
+17:51.000 --> 17:53.000
+So far
+
+17:53.000 --> 17:55.000
+we still assume that he is
+
+17:55.000 --> 17:57.000
+honest
+
+17:57.000 --> 17:59.000
+to follow the game rules at the beginning.
+
+17:59.000 --> 18:01.000
+He received
+
+18:01.000 --> 18:03.000
+a copper plate message
+
+18:03.000 --> 18:05.000
+and then he
+
+18:05.000 --> 18:07.000
+admitted that the message of the copper plate
+
+18:07.000 --> 18:09.000
+was their consensus.
+
+18:09.000 --> 18:11.000
+But
+
+18:11.000 --> 18:13.000
+one of them is not late,
+
+18:13.000 --> 18:15.000
+what is the other party's consensus?
+
+18:15.000 --> 18:17.000
+This is
+
+18:17.000 --> 18:19.000
+difficult to say.
+
+18:21.000 --> 18:23.000
+In order to have a consensus,
+
+18:23.000 --> 18:25.000
+we usually have to define
+
+18:25.000 --> 18:27.000
+one of them
+
+18:27.000 --> 18:29.000
+is not honest and not late.
+
+18:29.000 --> 18:31.000
+What should the other party say?
+
+18:31.000 --> 18:33.000
+Xi Jinping
+
+18:33.000 --> 18:35.000
+threw a copper plate
+
+18:35.000 --> 18:37.000
+and it was 0.5.
+
+18:37.000 --> 18:39.000
+Or he has to
+
+18:39.000 --> 18:41.000
+fix the output
+
+18:41.000 --> 18:43.000
+0 or 1
+
+18:43.000 --> 18:45.000
+It's hard to say.
+
+18:45.000 --> 18:47.000
+Trump
+
+18:47.000 --> 18:49.000
+can see what he is doing
+
+18:49.000 --> 18:51.000
+honestly
+
+18:51.000 --> 18:53.000
+and decide
+
+18:53.000 --> 18:55.000
+when to end
+
+18:55.000 --> 18:57.000
+and when not to end.
+
+18:57.000 --> 18:59.000
+The entire output
+
+18:59.000 --> 19:01.000
+is completely controlled
+
+19:01.000 --> 19:03.000
+by the dishonest
+
+19:03.000 --> 19:05.000
+party.
+
+19:05.000 --> 19:07.000
+Then
+
+19:07.000 --> 19:09.000
+there is no fairness
+
+19:09.000 --> 19:11.000
+or
+
+19:11.000 --> 19:13.000
+security.
+
+19:13.000 --> 19:15.000
+The result of this copper plate
+
+19:15.000 --> 19:17.000
+output
+
+19:17.000 --> 19:19.000
+its fairness is the security
+
+19:19.000 --> 19:21.000
+I want.
+
+19:21.000 --> 19:23.000
+So
+
+19:23.000 --> 19:25.000
+the focus here is
+
+19:25.000 --> 19:27.000
+this
+
+19:27.000 --> 19:29.000
+computationally bounded
+
+19:29.000 --> 19:31.000
+the attacker's
+
+19:31.000 --> 19:33.000
+computing power is limited
+
+19:33.000 --> 19:35.000
+and it can end early
+
+19:35.000 --> 19:37.000
+these two things.
+
+19:37.000 --> 19:39.000
+If one of them is missing
+
+19:39.000 --> 19:41.000
+we all know
+
+19:41.000 --> 19:43.000
+we all know
+
+19:43.000 --> 19:45.000
+it can be done
+
+19:45.000 --> 19:47.000
+If I assume
+
+19:47.000 --> 19:49.000
+the attacker will never
+
+19:49.000 --> 19:51.000
+end early
+
+19:51.000 --> 19:53.000
+then this copper plate
+
+19:53.000 --> 19:55.000
+can be played
+
+19:55.000 --> 19:57.000
+up to 0.5
+
+19:57.000 --> 19:59.000
+but these two conditions
+
+19:59.000 --> 20:01.000
+these two computationally bounded
+
+20:01.000 --> 20:03.000
+and failstop
+
+20:03.000 --> 20:05.000
+when these two conditions exist at the same time
+
+20:05.000 --> 20:07.000
+we can't do it.
+
+20:07.000 --> 20:09.000
+And the proof that we can't do it
+
+20:09.000 --> 20:11.000
+is to really build a
+
+20:11.000 --> 20:13.000
+attacker
+
+20:13.000 --> 20:15.000
+and then target
+
+20:15.000 --> 20:17.000
+any protocol
+
+20:17.000 --> 20:19.000
+to attack.
+
+20:19.000 --> 20:21.000
+So
+
+20:21.000 --> 20:23.000
+but
+
+20:23.000 --> 20:25.000
+but
+
+20:25.000 --> 20:27.000
+when you look at the first page
+
+20:27.000 --> 20:29.000
+you may find it
+
+20:29.000 --> 20:31.000
+strange
+
+20:31.000 --> 20:33.000
+if Trump can't end early
+
+20:33.000 --> 20:35.000
+then Xi Jinping can
+
+20:35.000 --> 20:37.000
+say I like to be in Beijing
+
+20:37.000 --> 20:39.000
+then I will be in Beijing.
+
+20:39.000 --> 20:41.000
+This is
+
+20:41.000 --> 20:43.000
+another definition
+
+20:43.000 --> 20:45.000
+of
+
+20:45.000 --> 20:47.000
+the focus
+
+20:47.000 --> 20:49.000
+Hello
+
+21:01.000 --> 21:03.000
+Hello
+
+21:05.000 --> 21:07.000
+Is my connection broken?
+
+21:09.000 --> 21:11.000
+I can't hear you.
+
+21:11.000 --> 21:13.000
+Ok
+
+21:13.000 --> 21:15.000
+So
+
+21:15.000 --> 21:17.000
+Can you hear me?
+
+21:17.000 --> 21:19.000
+I can't hear you.
+
+21:19.000 --> 21:21.000
+I can hear you.
+
+21:21.000 --> 21:23.000
+But
+
+21:23.000 --> 21:25.000
+I can't hear the speaker.
+
+21:25.000 --> 21:27.000
+Ok
+
+21:27.000 --> 21:29.000
+Ok
+
+21:35.000 --> 21:37.000
+So the connection is broken.
+
+21:39.000 --> 21:41.000
+Let me contact him.
+
+21:45.000 --> 21:47.000
+Hello
+
+21:47.000 --> 21:49.000
+Can you hear me?
+
+21:49.000 --> 21:51.000
+I can hear you.
+
+21:51.000 --> 21:53.000
+I can hear you.
+
+21:53.000 --> 21:55.000
+I can hear you.
+
+21:55.000 --> 21:57.000
+How are you?
+
+21:57.000 --> 21:59.000
+I can't hear you.
+
+21:59.000 --> 22:01.000
+I am scared.
+
+22:01.000 --> 22:03.000
+I can't hear you.
+
+22:03.000 --> 22:05.000
+I can't hear you.
+
+22:07.000 --> 22:09.020
+So
+
+22:09.020 --> 22:11.020
+I call you
+
+22:11.020 --> 22:13.020
+because
+
+22:13.020 --> 22:15.020
+I can't hear you.
+
+22:15.020 --> 22:17.020
+I can't hear you.
+
+22:17.020 --> 22:19.020
+I can't hear you.
+
+22:19.020 --> 22:21.020
+I can't hear you.
+
+22:21.020 --> 22:23.020
+Can you hear me?
+
+22:27.020 --> 22:29.020
+I can hear you.
+
+22:29.020 --> 22:31.020
+I can hear you.
+
+22:31.020 --> 22:33.020
+I think my internet is down.
+
+22:33.020 --> 22:35.020
+I don't know where I am.
+
+22:35.020 --> 22:37.020
+I just
+
+22:37.020 --> 22:39.020
+talk about
+
+22:39.020 --> 22:41.020
+the commit and open
+
+22:41.020 --> 22:43.020
+protocol can
+
+22:43.020 --> 22:45.020
+protect
+
+22:45.020 --> 22:47.020
+good people.
+
+22:47.020 --> 22:49.020
+And
+
+22:49.020 --> 22:51.020
+why this protocol
+
+22:51.020 --> 22:53.020
+can protect good people?
+
+22:53.020 --> 22:55.020
+If
+
+22:55.020 --> 22:57.020
+one side
+
+22:57.020 --> 22:59.020
+can't finish early,
+
+22:59.020 --> 23:01.020
+the other side
+
+23:01.020 --> 23:03.020
+will be happy to say
+
+23:03.020 --> 23:05.020
+the other side is bad
+
+23:05.020 --> 23:07.020
+so I can
+
+23:07.020 --> 23:09.020
+protect my own interests
+
+23:09.020 --> 23:11.020
+to protect the interests of good people.
+
+23:11.020 --> 23:13.020
+So I will
+
+23:13.020 --> 23:15.020
+produce the result
+
+23:15.020 --> 23:17.020
+that good people like.
+
+23:17.020 --> 23:19.020
+Because
+
+23:19.020 --> 23:21.020
+the other side can't finish early.
+
+23:21.020 --> 23:23.020
+And
+
+23:23.020 --> 23:25.020
+this
+
+23:25.020 --> 23:27.020
+is just
+
+23:27.020 --> 23:29.020
+one example.
+
+23:29.020 --> 23:31.020
+Of course, you can also
+
+23:31.020 --> 23:33.020
+let the other side finish early
+
+23:33.020 --> 23:35.020
+and Trump
+
+23:35.020 --> 23:37.020
+will choose the result he likes.
+
+23:37.020 --> 23:39.020
+This is another case.
+
+23:39.020 --> 23:41.020
+In short,
+
+23:41.020 --> 23:43.020
+the commit and open
+
+23:43.020 --> 23:45.020
+protocol
+
+23:45.020 --> 23:47.020
+can
+
+23:47.020 --> 23:49.020
+guarantee
+
+23:49.020 --> 23:51.020
+the
+
+23:51.020 --> 23:53.020
+previous definition.
+
+23:55.020 --> 23:57.020
+Even if
+
+23:57.020 --> 23:59.020
+one side is attacking
+
+23:59.020 --> 24:01.020
+and the other side's expectation
+
+24:01.020 --> 24:03.020
+is still over 0.5,
+
+24:03.020 --> 24:05.020
+the payoff is still over 0.5.
+
+24:05.020 --> 24:07.020
+Because
+
+24:07.020 --> 24:09.020
+the basic idea
+
+24:09.020 --> 24:11.020
+is simple.
+
+24:11.020 --> 24:13.020
+If one side can't finish early,
+
+24:13.020 --> 24:15.020
+the other side will be happy
+
+24:15.020 --> 24:17.020
+to choose the result he likes.
+
+24:17.020 --> 24:19.020
+He can choose.
+
+24:19.020 --> 24:21.020
+So
+
+24:21.020 --> 24:23.020
+if one side can't finish early,
+
+24:23.020 --> 24:25.020
+the other side is
+
+24:25.020 --> 24:27.020
+a good person.
+
+24:27.020 --> 24:29.020
+If a good person chooses the result he likes,
+
+24:29.020 --> 24:31.020
+his expectation value will not be
+
+24:31.020 --> 24:33.020
+reduced by bad people.
+
+24:35.020 --> 24:37.020
+Is it okay
+
+24:37.020 --> 24:39.020
+to go this far?
+
+24:39.020 --> 24:41.020
+If it's okay,
+
+24:41.020 --> 24:43.020
+it will be a little more complicated later.
+
+24:43.020 --> 24:45.020
+But
+
+24:45.020 --> 24:47.020
+the most important thing to define here
+
+24:47.020 --> 24:49.020
+is to protect the expectation value of good people.
+
+24:49.020 --> 24:51.020
+And the payoff
+
+24:51.020 --> 24:53.020
+is the most important point.
+
+24:53.020 --> 24:55.020
+First,
+
+24:55.020 --> 24:57.020
+we need to define
+
+24:57.020 --> 24:59.020
+what a good person is.
+
+24:59.020 --> 25:01.020
+Second,
+
+25:01.020 --> 25:03.020
+what a payoff is.
+
+25:03.020 --> 25:05.020
+The payoff is
+
+25:05.020 --> 25:07.020
+the protocol.
+
+25:07.020 --> 25:09.020
+After running the result,
+
+25:09.020 --> 25:11.020
+I look at the result and decide
+
+25:11.020 --> 25:13.020
+how much benefit this result will bring me.
+
+25:13.020 --> 25:15.020
+Then
+
+25:15.020 --> 25:17.020
+I define
+
+25:17.020 --> 25:19.020
+that I want to protect the interests of good people.
+
+25:19.020 --> 25:21.020
+The expectation value is greater than a certain number.
+
+25:21.020 --> 25:23.020
+Of course,
+
+25:23.020 --> 25:25.020
+if I say a little more here,
+
+25:25.020 --> 25:27.020
+the payoff
+
+25:27.020 --> 25:29.020
+is completely
+
+25:29.020 --> 25:31.020
+restricted to
+
+25:31.020 --> 25:33.020
+the payoff function
+
+25:33.020 --> 25:35.020
+defined by this example.
+
+25:37.020 --> 25:39.020
+The payoff function itself is very simple.
+
+25:39.020 --> 25:41.020
+But
+
+25:41.020 --> 25:43.020
+in Game Theory,
+
+25:43.020 --> 25:45.020
+there are many strange payoffs
+
+25:45.020 --> 25:47.020
+that will make
+
+25:47.020 --> 25:49.020
+these results strange.
+
+25:49.020 --> 25:51.020
+But we won't discuss those today.
+
+25:51.020 --> 25:53.020
+Even in my paper,
+
+25:53.020 --> 25:55.020
+there is no way to discuss so much
+
+25:55.020 --> 25:57.020
+because there are too many strange payoffs.
+
+25:57.020 --> 25:59.020
+But the simplest
+
+25:59.020 --> 26:01.020
+payoff function
+
+26:01.020 --> 26:03.020
+is the focus
+
+26:03.020 --> 26:05.020
+of this paper.
+
+26:07.020 --> 26:09.020
+Okay,
+
+26:09.020 --> 26:11.020
+next,
+
+26:11.020 --> 26:13.020
+next,
+
+26:13.020 --> 26:15.020
+well,
+
+26:15.020 --> 26:17.020
+well,
+
+26:17.020 --> 26:19.020
+well,
+
+26:19.020 --> 26:21.020
+what you see here
+
+26:21.020 --> 26:23.020
+is that there are only two players
+
+26:23.020 --> 26:25.020
+and two parties
+
+26:25.020 --> 26:27.020
+playing.
+
+26:27.020 --> 26:29.020
+The two parties
+
+26:29.020 --> 26:31.020
+can achieve
+
+26:31.020 --> 26:33.020
+the fairness
+
+26:33.020 --> 26:35.020
+in this
+
+26:35.020 --> 26:37.020
+fairness in interest.
+
+26:37.020 --> 26:39.020
+The result
+
+26:39.020 --> 26:41.020
+may not be fair,
+
+26:41.020 --> 26:43.020
+but the interest is fair.
+
+26:43.020 --> 26:45.020
+Then we start.
+
+26:45.020 --> 26:47.020
+But a very natural question is
+
+26:47.020 --> 26:49.020
+when
+
+26:49.020 --> 26:51.020
+you add one more person,
+
+26:51.020 --> 26:53.020
+is there any way
+
+26:53.020 --> 26:55.020
+to achieve
+
+26:55.020 --> 26:57.020
+the fairness?
+
+26:57.020 --> 26:59.020
+So we just
+
+26:59.020 --> 27:01.020
+add one more person.
+
+27:01.020 --> 27:03.020
+Then
+
+27:03.020 --> 27:05.020
+I don't know if the third person
+
+27:05.020 --> 27:07.020
+is Jin Xiaopang or
+
+27:07.020 --> 27:09.020
+Putin.
+
+27:09.020 --> 27:11.020
+Anyway, it's A, B, C.
+
+27:11.020 --> 27:13.020
+Then
+
+27:13.020 --> 27:15.020
+we assume the simplest
+
+27:15.020 --> 27:17.020
+is
+
+27:17.020 --> 27:19.020
+what kind of output
+
+27:19.020 --> 27:21.020
+do these three people like
+
+27:21.020 --> 27:23.020
+is public.
+
+27:23.020 --> 27:25.020
+It's also public
+
+27:25.020 --> 27:27.020
+who aborts early and
+
+27:27.020 --> 27:29.020
+doesn't play early.
+
+27:29.020 --> 27:31.020
+So if C aborts early
+
+27:31.020 --> 27:33.020
+and doesn't play,
+
+27:33.020 --> 27:35.020
+A and B will not play
+
+27:35.020 --> 27:37.020
+sooner or later.
+
+27:37.020 --> 27:39.020
+So let's assume
+
+27:39.020 --> 27:41.020
+all the messages are public.
+
+27:41.020 --> 27:43.020
+Maybe you can imagine
+
+27:43.020 --> 27:45.020
+three hotlines or something.
+
+27:45.020 --> 27:47.020
+Or
+
+27:47.020 --> 27:49.020
+now this very popular
+
+27:49.020 --> 27:51.020
+blockchain
+
+27:51.020 --> 27:53.020
+messages are all public.
+
+27:53.020 --> 27:55.020
+So if one of them doesn't play
+
+27:55.020 --> 27:57.020
+or if one of them sends
+
+27:57.020 --> 27:59.020
+a message, the other two can
+
+27:59.020 --> 28:01.020
+know at the same time.
+
+28:01.020 --> 28:03.020
+One of the possible applications
+
+28:03.020 --> 28:05.020
+may be
+
+28:05.020 --> 28:07.020
+eating dumplings and tigers
+
+28:07.020 --> 28:09.020
+on the blockchain.
+
+28:09.020 --> 28:11.020
+But how do these three people define
+
+28:11.020 --> 28:13.020
+eating dumplings and tigers?
+
+28:13.020 --> 28:15.020
+You can also say
+
+28:15.020 --> 28:17.020
+the result of
+
+28:17.020 --> 28:19.020
+eating dumplings and tigers
+
+28:19.020 --> 28:21.020
+is 1.
+
+28:21.020 --> 28:23.020
+If the person who chose 1
+
+28:23.020 --> 28:25.020
+is 1,
+
+28:25.020 --> 28:27.020
+then he won.
+
+28:27.020 --> 28:29.020
+If the person who chose 0 is 0,
+
+28:29.020 --> 28:31.020
+he also won.
+
+28:31.020 --> 28:33.020
+Of course, this payoff is not
+
+28:33.020 --> 28:35.020
+0.3. So in some cases,
+
+28:37.020 --> 28:39.020
+the seller of
+
+28:39.020 --> 28:41.020
+eating dumplings and tigers may lose money.
+
+28:41.020 --> 28:43.020
+And the loser is not ABC.
+
+28:43.020 --> 28:45.020
+It's the one who
+
+28:45.020 --> 28:47.020
+opened the casino.
+
+28:47.020 --> 28:49.020
+This is just
+
+28:49.020 --> 28:51.020
+one example.
+
+28:51.020 --> 28:53.020
+But
+
+28:55.020 --> 28:57.020
+in terms of game theory,
+
+28:57.020 --> 28:59.020
+there are many
+
+28:59.020 --> 29:01.020
+forms of this game.
+
+29:01.020 --> 29:03.020
+But for now,
+
+29:03.020 --> 29:05.020
+let's focus
+
+29:05.020 --> 29:07.020
+on this
+
+29:07.020 --> 29:09.020
+simplest example.
+
+29:09.020 --> 29:11.020
+I just want to
+
+29:11.020 --> 29:13.020
+ask
+
+29:13.020 --> 29:15.020
+to protect the
+
+29:15.020 --> 29:17.020
+real
+
+29:17.020 --> 29:19.020
+interest.
+
+29:19.020 --> 29:21.020
+Can we do this?
+
+29:21.020 --> 29:23.020
+Then
+
+29:23.020 --> 29:25.020
+this definition
+
+29:25.020 --> 29:27.020
+we call it Maximin.
+
+29:27.020 --> 29:29.020
+Maximin is also
+
+29:29.020 --> 29:31.020
+a terminology borrowed
+
+29:31.020 --> 29:33.020
+from game theory.
+
+29:33.020 --> 29:35.020
+In the game,
+
+29:35.020 --> 29:37.020
+Maximin means
+
+29:41.020 --> 29:43.020
+everyone
+
+29:43.020 --> 29:45.020
+maximizes
+
+29:45.020 --> 29:47.020
+their own
+
+29:47.020 --> 29:49.020
+interest.
+
+29:49.020 --> 29:51.020
+I want to
+
+29:51.020 --> 29:53.020
+minimize
+
+29:53.020 --> 29:55.020
+my own interest.
+
+29:55.020 --> 29:57.020
+Basically,
+
+29:57.020 --> 29:59.020
+it means
+
+29:59.020 --> 30:01.020
+when others maximize
+
+30:01.020 --> 30:03.020
+their interest,
+
+30:03.020 --> 30:05.020
+I want to maximize
+
+30:05.020 --> 30:07.020
+my own interest.
+
+30:07.020 --> 30:09.020
+Why is it called Maximin?
+
+30:09.020 --> 30:11.020
+Because if one side is maximized
+
+30:11.020 --> 30:13.020
+and the other side is minimized.
+
+30:13.020 --> 30:15.020
+Anyway,
+
+30:15.020 --> 30:17.020
+intuition
+
+30:17.020 --> 30:19.020
+means
+
+30:19.020 --> 30:21.020
+I want to protect good people.
+
+30:21.020 --> 30:23.020
+Good people
+
+30:23.020 --> 30:25.020
+are people who play according to the rules of the game.
+
+30:25.020 --> 30:27.020
+The interest of good people
+
+30:27.020 --> 30:29.020
+should be greater than or equal to 0.5.
+
+30:29.020 --> 30:31.020
+This is the expectation value.
+
+30:31.020 --> 30:33.020
+After this thing is defined,
+
+30:33.020 --> 30:35.020
+the first question we ask is
+
+30:35.020 --> 30:37.020
+whether it can be done.
+
+30:37.020 --> 30:39.020
+Of course, there are other definitions
+
+30:39.020 --> 30:41.020
+of Maximin.
+
+30:41.020 --> 30:43.020
+Some are very natural.
+
+30:43.020 --> 30:45.020
+Some may seem
+
+30:45.020 --> 30:47.020
+unnatural in some scenarios.
+
+30:47.020 --> 30:49.020
+But we'll talk about it
+
+30:49.020 --> 30:51.020
+later.
+
+30:51.020 --> 30:53.020
+For now,
+
+30:53.020 --> 30:55.020
+let's focus on
+
+30:55.020 --> 30:57.020
+the definition of
+
+30:57.020 --> 30:59.020
+protecting good people's interests.
+
+31:01.020 --> 31:03.020
+Let's pause here.
+
+31:03.020 --> 31:05.020
+Is this definition clear?
+
+31:05.020 --> 31:07.020
+My definition is
+
+31:07.020 --> 31:09.020
+that my protocol
+
+31:09.020 --> 31:11.020
+should protect good people's interests.
+
+31:11.020 --> 31:13.020
+This is my definition.
+
+31:13.020 --> 31:15.020
+Then I ask
+
+31:15.020 --> 31:17.020
+whether this protocol
+
+31:17.020 --> 31:19.020
+can be constructed
+
+31:19.020 --> 31:21.020
+to protect good people's interests.
+
+31:21.020 --> 31:23.020
+I have a question.
+
+31:23.020 --> 31:25.020
+You said
+
+31:25.020 --> 31:27.020
+we should protect
+
+31:27.020 --> 31:29.020
+according to the rules of the game.
+
+31:29.020 --> 31:31.020
+This is a starting point
+
+31:31.020 --> 31:33.020
+of your research.
+
+31:33.020 --> 31:35.020
+I can understand this.
+
+31:35.020 --> 31:37.020
+The concept of
+
+31:37.020 --> 31:39.020
+protecting good people's interests
+
+31:39.020 --> 31:41.020
+is translated to
+
+31:41.020 --> 31:43.020
+greater than or equal to 0.5
+
+31:43.020 --> 31:45.020
+for the expected payoff
+
+31:45.020 --> 31:47.020
+of honesty.
+
+31:47.020 --> 31:49.020
+You said your game
+
+31:49.020 --> 31:51.020
+is not zero-sum.
+
+31:51.020 --> 31:53.020
+Is greater than or equal to 0.5
+
+31:53.020 --> 31:55.020
+greater than or equal to 0.5?
+
+31:55.020 --> 31:57.020
+You asked
+
+31:57.020 --> 31:59.020
+a good question.
+
+31:59.020 --> 32:01.020
+I don't write
+
+32:01.020 --> 32:03.020
+a quantifier here.
+
+32:03.020 --> 32:05.020
+For example,
+
+32:05.020 --> 32:07.020
+A, B, C are all honest.
+
+32:07.020 --> 32:09.020
+They all follow the rules of the game.
+
+32:09.020 --> 32:11.020
+Then
+
+32:11.020 --> 32:13.020
+everyone's
+
+32:13.020 --> 32:15.020
+expected value is 0.5.
+
+32:15.020 --> 32:17.020
+So you will ask
+
+32:17.020 --> 32:19.020
+the total expected value is 0.5.
+
+32:19.020 --> 32:21.020
+So I
+
+32:21.020 --> 32:23.020
+don't have a quantifier here.
+
+32:23.020 --> 32:25.020
+It's just that
+
+32:25.020 --> 32:27.020
+every honest is greater than 0.5.
+
+32:29.020 --> 32:31.020
+Oh, I see.
+
+32:31.020 --> 32:33.020
+I define
+
+32:33.020 --> 32:35.020
+it as
+
+32:35.020 --> 32:37.020
+A, B, C
+
+32:37.020 --> 32:39.020
+all follow the rules of the game.
+
+32:39.020 --> 32:41.020
+But they
+
+32:41.020 --> 32:43.020
+may not
+
+32:43.020 --> 32:45.020
+care about each other.
+
+32:45.020 --> 32:47.020
+They may not like each other.
+
+32:47.020 --> 32:49.020
+But they all follow the rules of the game.
+
+32:49.020 --> 32:51.020
+They are all good people.
+
+32:51.020 --> 32:53.020
+So the better way
+
+32:53.020 --> 32:55.020
+is that
+
+32:55.020 --> 32:57.020
+if I follow the rules of the game,
+
+32:57.020 --> 32:59.020
+it's my best choice
+
+32:59.020 --> 33:01.020
+among the players.
+
+33:05.020 --> 33:07.020
+This question
+
+33:07.020 --> 33:09.020
+will become another definition.
+
+33:09.020 --> 33:11.020
+What you just said will become another definition.
+
+33:13.020 --> 33:15.020
+So we'll
+
+33:15.020 --> 33:17.020
+discuss it later.
+
+33:17.020 --> 33:19.020
+OK, thank you.
+
+33:19.020 --> 33:21.020
+OK, so
+
+33:21.020 --> 33:23.020
+if
+
+33:23.020 --> 33:25.020
+this definition
+
+33:25.020 --> 33:27.020
+is not a problem,
+
+33:27.020 --> 33:29.020
+then we can
+
+33:29.020 --> 33:31.020
+discuss
+
+33:31.020 --> 33:33.020
+a simple example.
+
+33:33.020 --> 33:35.020
+When everyone
+
+33:35.020 --> 33:37.020
+wants the result to be
+
+33:37.020 --> 33:39.020
+1, or everyone
+
+33:39.020 --> 33:41.020
+wants the result to be 0,
+
+33:41.020 --> 33:43.020
+then
+
+33:43.020 --> 33:45.020
+this thing
+
+33:45.020 --> 33:47.020
+is extremely simple.
+
+33:47.020 --> 33:49.020
+This thing
+
+33:49.020 --> 33:51.020
+is extremely simple.
+
+33:51.020 --> 33:53.020
+As long as
+
+33:53.020 --> 33:55.020
+everyone sees
+
+33:55.020 --> 33:57.020
+the same side number,
+
+33:57.020 --> 33:59.020
+then everyone outputs
+
+33:59.020 --> 34:01.020
+the same side number.
+
+34:01.020 --> 34:03.020
+As long as everyone sees
+
+34:03.020 --> 34:05.020
+the same side number,
+
+34:05.020 --> 34:07.020
+then everyone outputs 1.
+
+34:07.020 --> 34:09.020
+Then everyone is happy.
+
+34:09.020 --> 34:11.020
+For example,
+
+34:11.020 --> 34:13.020
+if everyone wants the result
+
+34:13.020 --> 34:15.020
+to be 1,
+
+34:15.020 --> 34:17.020
+then everyone outputs 1.
+
+34:17.020 --> 34:19.020
+The dealer
+
+34:19.020 --> 34:21.020
+in the casino is not happy,
+
+34:21.020 --> 34:23.020
+but the rules of the game
+
+34:23.020 --> 34:25.020
+are set.
+
+34:25.020 --> 34:27.020
+The players are happy
+
+34:27.020 --> 34:29.020
+because everyone can win.
+
+34:29.020 --> 34:31.020
+But this example is not very interesting.
+
+34:31.020 --> 34:33.020
+Because
+
+34:33.020 --> 34:35.020
+if
+
+34:35.020 --> 34:37.020
+Trump, Xi and Putin
+
+34:37.020 --> 34:39.020
+all want to go to DC,
+
+34:39.020 --> 34:41.020
+then
+
+34:41.020 --> 34:43.020
+they don't need to discuss this thing.
+
+34:43.020 --> 34:45.020
+They are happy to go to DC.
+
+34:45.020 --> 34:47.020
+So
+
+34:47.020 --> 34:49.020
+this case is not interesting.
+
+34:49.020 --> 34:51.020
+Let's change to
+
+34:51.020 --> 34:53.020
+a more complicated one.
+
+34:53.020 --> 34:55.020
+If one of the players
+
+34:55.020 --> 34:57.020
+has a different side number,
+
+34:57.020 --> 34:59.020
+he is a minority.
+
+34:59.020 --> 35:01.020
+But
+
+35:01.020 --> 35:03.020
+I assume
+
+35:03.020 --> 35:05.020
+the bad guy who doesn't follow the rules of the game
+
+35:05.020 --> 35:07.020
+can only do one thing,
+
+35:07.020 --> 35:09.020
+which is
+
+35:09.020 --> 35:11.020
+he can't play earlier.
+
+35:11.020 --> 35:13.020
+I also have
+
+35:13.020 --> 35:15.020
+a slightly more complicated
+
+35:15.020 --> 35:17.020
+rule of the game
+
+35:17.020 --> 35:19.020
+that can protect
+
+35:19.020 --> 35:21.020
+the interests of good people.
+
+35:21.020 --> 35:23.020
+How to do this rule of the game?
+
+35:23.020 --> 35:25.020
+It's very simple.
+
+35:25.020 --> 35:27.020
+Let the minority throw the coin.
+
+35:27.020 --> 35:29.020
+After throwing the coin,
+
+35:29.020 --> 35:31.020
+he tells the result of the coin
+
+35:31.020 --> 35:33.020
+to the other two players.
+
+35:33.020 --> 35:35.020
+Then the other two players
+
+35:35.020 --> 35:37.020
+are very happy to receive the coin.
+
+35:37.020 --> 35:39.020
+Then the game is over.
+
+35:39.020 --> 35:41.020
+Why
+
+35:41.020 --> 35:43.020
+can this rule of the game
+
+35:43.020 --> 35:45.020
+protect the interests of good people?
+
+35:45.020 --> 35:47.020
+Because
+
+35:47.020 --> 35:49.020
+this game only forces
+
+35:49.020 --> 35:51.020
+one person to speak from the beginning to the end,
+
+35:51.020 --> 35:53.020
+which is the minority.
+
+35:53.020 --> 35:55.020
+If the minority
+
+35:55.020 --> 35:57.020
+speaks,
+
+35:57.020 --> 35:59.020
+he follows the rules of the game.
+
+35:59.020 --> 36:01.020
+If he wants to speak,
+
+36:01.020 --> 36:03.020
+he must follow the rules of the game.
+
+36:03.020 --> 36:05.020
+Otherwise, he will shut up.
+
+36:05.020 --> 36:07.020
+If he speaks,
+
+36:07.020 --> 36:09.020
+it means he follows the rules of the game.
+
+36:09.020 --> 36:11.020
+This coin is also
+
+36:11.020 --> 36:13.020
+fair.
+
+36:13.020 --> 36:15.020
+After the other two players
+
+36:15.020 --> 36:17.020
+receive the coin,
+
+36:17.020 --> 36:19.020
+they follow the rules of the game.
+
+36:19.020 --> 36:21.020
+Because
+
+36:21.020 --> 36:23.020
+everything is fair
+
+36:23.020 --> 36:25.020
+according to the rules of the game.
+
+36:25.020 --> 36:27.020
+If the only person
+
+36:27.020 --> 36:29.020
+who speaks
+
+36:29.020 --> 36:31.020
+does not follow the rules of the game,
+
+36:31.020 --> 36:33.020
+how can he not follow the rules of the game?
+
+36:33.020 --> 36:35.020
+He can only
+
+36:35.020 --> 36:37.020
+shut up.
+
+36:37.020 --> 36:39.020
+He does not say what he should say.
+
+36:39.020 --> 36:41.020
+This is his only way
+
+36:41.020 --> 36:43.020
+not to follow the rules of the game.
+
+36:43.020 --> 36:45.020
+When A and C see B
+
+36:45.020 --> 36:47.020
+do not follow the rules of the game,
+
+36:47.020 --> 36:49.020
+they are happy to decide that B is a bad person.
+
+36:49.020 --> 36:51.020
+A and C can be happy to say
+
+36:51.020 --> 36:53.020
+that we do not care
+
+36:53.020 --> 36:55.020
+about the loss of the bad person.
+
+36:55.020 --> 36:57.020
+We just follow our happiness.
+
+36:57.020 --> 36:59.020
+So
+
+36:59.020 --> 37:01.020
+what I just
+
+37:01.020 --> 37:03.020
+talked about
+
+37:03.020 --> 37:05.020
+is to prove
+
+37:05.020 --> 37:07.020
+that the rules of the game
+
+37:07.020 --> 37:09.020
+can easily protect
+
+37:09.020 --> 37:11.020
+the interests of good people.
+
+37:11.020 --> 37:13.020
+So
+
+37:13.020 --> 37:15.020
+if the only thing
+
+37:15.020 --> 37:17.020
+bad people can do
+
+37:17.020 --> 37:19.020
+is not to play,
+
+37:19.020 --> 37:21.020
+this thing is also easy to do.
+
+37:21.020 --> 37:23.020
+Just
+
+37:23.020 --> 37:25.020
+as I just said,
+
+37:25.020 --> 37:27.020
+throw a coin, send a message,
+
+37:27.020 --> 37:29.020
+and it's over.
+
+37:29.020 --> 37:31.020
+But
+
+37:31.020 --> 37:33.020
+these examples
+
+37:33.020 --> 37:35.020
+of Trump and Xi
+
+37:35.020 --> 37:37.020
+or Putin
+
+37:37.020 --> 37:39.020
+are not like this.
+
+37:39.020 --> 37:41.020
+They may
+
+37:41.020 --> 37:43.020
+not follow the rules of the game,
+
+37:43.020 --> 37:45.020
+not throw a coin,
+
+37:45.020 --> 37:47.020
+so
+
+37:47.020 --> 37:49.020
+the previous one, B
+
+37:49.020 --> 37:51.020
+threw a coin and sent a message,
+
+37:51.020 --> 37:53.020
+this thing is
+
+37:53.020 --> 37:55.020
+that the bad guy
+
+37:55.020 --> 37:57.020
+may not follow this rule at all.
+
+37:57.020 --> 37:59.020
+And
+
+37:59.020 --> 38:01.020
+if he doesn't follow this rule,
+
+38:01.020 --> 38:03.020
+then
+
+38:03.020 --> 38:05.020
+he can't protect
+
+38:05.020 --> 38:07.020
+the interests of good people.
+
+38:07.020 --> 38:09.020
+This is what we call
+
+38:09.020 --> 38:11.020
+random
+
+38:11.020 --> 38:13.020
+input.
+
+38:13.020 --> 38:15.020
+This is what we call
+
+38:15.020 --> 38:17.020
+random input.
+
+38:17.020 --> 38:19.020
+This is what we call
+
+38:19.020 --> 38:21.020
+random input.
+
+38:21.020 --> 38:23.020
+Everything is not fair
+
+38:23.020 --> 38:25.020
+when it is tampered with.
+
+38:25.020 --> 38:27.020
+And
+
+38:27.020 --> 38:29.020
+And
+
+38:29.020 --> 38:31.020
+And
+
+38:31.020 --> 38:33.020
+the main difficulty
+
+38:33.020 --> 38:35.020
+of this project is
+
+38:35.020 --> 38:37.020
+to discuss
+
+38:37.020 --> 38:39.020
+whether this case
+
+38:39.020 --> 38:41.020
+is fair
+
+38:41.020 --> 38:43.020
+to Maximin.
+
+38:43.020 --> 38:45.020
+And
+
+38:45.020 --> 38:47.020
+And
+
+38:47.020 --> 38:49.020
+We
+
+38:49.020 --> 38:51.020
+We
+
+38:51.020 --> 38:53.020
+spent a lot of time
+
+38:53.020 --> 38:55.020
+We spent a lot of time
+
+38:55.020 --> 38:57.020
+discussing whether he can do it or not.
+
+38:57.020 --> 38:59.020
+We can't think of a way
+
+38:59.020 --> 39:01.020
+to really do this thing
+
+39:01.020 --> 39:03.020
+to protect
+
+39:03.020 --> 39:05.020
+honest players.
+
+39:05.020 --> 39:07.020
+But we can't prove
+
+39:07.020 --> 39:09.020
+that he can't do it.
+
+39:09.020 --> 39:11.020
+So we can't do this thing.
+
+39:11.020 --> 39:13.020
+At the beginning,
+
+39:13.020 --> 39:15.020
+we thought he could do it.
+
+39:15.020 --> 39:17.020
+The reason is
+
+39:17.020 --> 39:19.020
+The reason is
+
+39:19.020 --> 39:21.020
+The reason is
+
+39:21.020 --> 39:23.020
+When bad guys
+
+39:23.020 --> 39:25.020
+When bad guys
+
+39:25.020 --> 39:27.020
+are restricted,
+
+39:27.020 --> 39:29.020
+there is a solution.
+
+39:29.020 --> 39:31.020
+There are
+
+39:31.020 --> 39:33.020
+many technologies
+
+39:33.020 --> 39:35.020
+on traditional documents
+
+39:35.020 --> 39:37.020
+that allow
+
+39:37.020 --> 39:39.020
+that allow
+
+39:39.020 --> 39:41.020
+a simple example
+
+39:41.020 --> 39:43.020
+that allows a simple example
+
+39:43.020 --> 39:45.020
+to resist
+
+39:45.020 --> 39:47.020
+the restricted bad guys.
+
+39:47.020 --> 39:49.020
+And then,
+
+39:49.020 --> 39:51.020
+we get a
+
+39:51.020 --> 39:53.020
+cryptographic operation
+
+39:53.020 --> 39:55.020
+and get a
+
+39:55.020 --> 39:57.020
+protocol that
+
+39:57.020 --> 39:59.020
+the bad guys are not restricted
+
+39:59.020 --> 40:01.020
+but still safe.
+
+40:01.020 --> 40:03.020
+This is called the game rule.
+
+40:03.020 --> 40:05.020
+Because
+
+40:05.020 --> 40:07.020
+there are a lot of experiences in our documents,
+
+40:07.020 --> 40:09.020
+we can upgrade
+
+40:09.020 --> 40:11.020
+this security
+
+40:11.020 --> 40:13.020
+in different situations.
+
+40:13.020 --> 40:15.020
+So when we first
+
+40:15.020 --> 40:17.020
+saw this problem,
+
+40:17.020 --> 40:19.020
+we can upgrade
+
+40:19.020 --> 40:21.020
+the security
+
+40:21.020 --> 40:23.020
+with what we already know
+
+40:23.020 --> 40:25.020
+or what we already know
+
+40:25.020 --> 40:27.020
+in the documents.
+
+40:27.020 --> 40:29.020
+But
+
+40:29.020 --> 40:31.020
+later on,
+
+40:31.020 --> 40:33.020
+we moved more documents
+
+40:33.020 --> 40:35.020
+and finally proved that
+
+40:35.020 --> 40:37.020
+it can't be done.
+
+40:37.020 --> 40:39.020
+And
+
+40:39.020 --> 40:41.020
+especially
+
+40:41.020 --> 40:43.020
+the bad guys
+
+40:43.020 --> 40:45.020
+can't be done
+
+40:45.020 --> 40:47.020
+like
+
+40:47.020 --> 40:49.020
+what I said earlier
+
+40:49.020 --> 40:51.020
+about the result of cleave.
+
+40:51.020 --> 40:53.020
+We really built
+
+40:53.020 --> 40:55.020
+a
+
+40:55.020 --> 40:57.020
+limited time attacker
+
+40:57.020 --> 40:59.020
+a polynomial time attacker
+
+40:59.020 --> 41:01.020
+to attack
+
+41:01.020 --> 41:03.020
+any
+
+41:03.020 --> 41:05.020
+protocol like this.
+
+41:05.020 --> 41:07.020
+And
+
+41:07.020 --> 41:09.020
+the middle proof is more complicated.
+
+41:09.020 --> 41:11.020
+I won't talk about it.
+
+41:11.020 --> 41:13.020
+But
+
+41:13.020 --> 41:15.020
+the point is
+
+41:15.020 --> 41:17.020
+these protocols
+
+41:17.020 --> 41:19.020
+can't be done
+
+41:19.020 --> 41:21.020
+in a lot of situations.
+
+41:21.020 --> 41:23.020
+And the proof
+
+41:23.020 --> 41:25.020
+is
+
+41:25.020 --> 41:27.020
+the proof
+
+41:27.020 --> 41:29.020
+taught in high school or
+
+41:29.020 --> 41:31.020
+university math class.
+
+41:31.020 --> 41:33.020
+The technical details
+
+41:33.020 --> 41:35.020
+in the middle
+
+41:35.020 --> 41:37.020
+are skipped.
+
+41:37.020 --> 41:39.020
+But I think
+
+41:39.020 --> 41:41.020
+this
+
+41:41.020 --> 41:43.020
+thing
+
+41:43.020 --> 41:45.020
+should be
+
+41:45.020 --> 41:47.020
+conveyed.
+
+41:47.020 --> 41:49.020
+I defined
+
+41:49.020 --> 41:51.020
+a
+
+41:51.020 --> 41:53.020
+so-called
+
+41:53.020 --> 41:55.020
+fair board
+
+41:55.020 --> 41:57.020
+for a
+
+41:57.020 --> 41:59.020
+specific payoff function.
+
+41:59.020 --> 42:01.020
+This is very specific.
+
+42:01.020 --> 42:03.020
+I have countless payoff functions.
+
+42:03.020 --> 42:05.020
+Only this
+
+42:05.020 --> 42:07.020
+payoff function
+
+42:07.020 --> 42:09.020
+can't be
+
+42:09.020 --> 42:11.020
+fair.
+
+42:11.020 --> 42:13.020
+Maybe other payoff functions can.
+
+42:13.020 --> 42:15.020
+Because
+
+42:15.020 --> 42:17.020
+some payoff functions
+
+42:17.020 --> 42:19.020
+are easy to do.
+
+42:19.020 --> 42:21.020
+For example, if everyone's payoff looks the same,
+
+42:21.020 --> 42:23.020
+it may
+
+42:23.020 --> 42:25.020
+degenerate to a
+
+42:25.020 --> 42:27.020
+case I just discussed.
+
+42:27.020 --> 42:29.020
+And
+
+42:29.020 --> 42:31.020
+the so-called
+
+42:31.020 --> 42:33.020
+profit of the city
+
+42:33.020 --> 42:35.020
+is defined
+
+42:35.020 --> 42:37.020
+in this way.
+
+42:37.020 --> 42:39.020
+So there must be
+
+42:39.020 --> 42:41.020
+some way to define
+
+42:41.020 --> 42:43.020
+the profit.
+
+42:43.020 --> 42:45.020
+But even in such a simple way
+
+42:45.020 --> 42:47.020
+to define
+
+42:47.020 --> 42:49.020
+the profit,
+
+42:49.020 --> 42:51.020
+there is still
+
+42:51.020 --> 42:53.020
+no way to
+
+42:53.020 --> 42:55.020
+protect the profit.
+
+42:55.020 --> 42:57.020
+This is the message
+
+42:57.020 --> 42:59.020
+I want to convey.
+
+42:59.020 --> 43:01.020
+And
+
+43:01.020 --> 43:03.020
+one more thing.
+
+43:03.020 --> 43:05.020
+Even if
+
+43:05.020 --> 43:07.020
+the attacker has limited computing power,
+
+43:07.020 --> 43:09.020
+it still can't be protected.
+
+43:09.020 --> 43:11.020
+If your attacker
+
+43:11.020 --> 43:13.020
+has very limited
+
+43:13.020 --> 43:15.020
+computing power,
+
+43:15.020 --> 43:17.020
+you still can't
+
+43:17.020 --> 43:19.020
+protect the city's
+
+43:19.020 --> 43:21.020
+profit.
+
+43:21.020 --> 43:23.020
+So
+
+43:23.020 --> 43:25.020
+what I just said
+
+43:25.020 --> 43:27.020
+is back to the first example.
+
+43:27.020 --> 43:29.020
+Where should
+
+43:29.020 --> 43:31.020
+Trump and Xi meet?
+
+43:31.020 --> 43:33.020
+They can decide.
+
+43:33.020 --> 43:35.020
+But
+
+43:35.020 --> 43:37.020
+when one person becomes the third person,
+
+43:37.020 --> 43:39.020
+and Putin is added,
+
+43:39.020 --> 43:41.020
+there is no way to
+
+43:41.020 --> 43:43.020
+protect the city's profit.
+
+43:43.020 --> 43:45.020
+This is the
+
+43:45.020 --> 43:47.020
+biggest message
+
+43:47.020 --> 43:49.020
+I want to convey.
+
+43:49.020 --> 43:51.020
+There must be
+
+43:51.020 --> 43:53.020
+one or two people
+
+43:53.020 --> 43:55.020
+whose profits will be damaged.
+
+43:55.020 --> 43:57.020
+And
+
+43:57.020 --> 43:59.020
+the witness here
+
+43:59.020 --> 44:01.020
+is very complicated.
+
+44:01.020 --> 44:03.020
+But
+
+44:03.020 --> 44:05.020
+it's just a simple
+
+44:05.020 --> 44:07.020
+expected value calculation.
+
+44:07.020 --> 44:09.020
+But there are a few more turns.
+
+44:09.020 --> 44:11.020
+But
+
+44:11.020 --> 44:13.020
+I won't
+
+44:13.020 --> 44:15.020
+talk about
+
+44:15.020 --> 44:17.020
+the details.
+
+44:21.020 --> 44:23.020
+So
+
+44:23.020 --> 44:25.020
+to sum up,
+
+44:25.020 --> 44:27.020
+more than three people
+
+44:27.020 --> 44:29.020
+can be grouped
+
+44:29.020 --> 44:31.020
+into
+
+44:31.020 --> 44:33.020
+a larger
+
+44:33.020 --> 44:35.020
+organization.
+
+44:35.020 --> 44:37.020
+For example,
+
+44:37.020 --> 44:39.020
+if I have
+
+44:39.020 --> 44:41.020
+ten people,
+
+44:41.020 --> 44:43.020
+I can group
+
+44:43.020 --> 44:45.020
+them into
+
+44:45.020 --> 44:47.020
+three large groups.
+
+44:47.020 --> 44:49.020
+If
+
+44:49.020 --> 44:51.020
+the three large groups
+
+44:51.020 --> 44:53.020
+correspond to
+
+44:53.020 --> 44:55.020
+what I just said,
+
+44:55.020 --> 44:57.020
+they still can't
+
+44:57.020 --> 44:59.020
+do it.
+
+44:59.020 --> 45:01.020
+Or if I can
+
+45:01.020 --> 45:03.020
+correspond to two people,
+
+45:03.020 --> 45:05.020
+I can tell you
+
+45:05.020 --> 45:07.020
+the result of
+
+45:07.020 --> 45:09.020
+Cliff earlier.
+
+45:09.020 --> 45:11.020
+So
+
+45:11.020 --> 45:13.020
+this...
+
+45:13.020 --> 45:15.020
+Actually I was going to ask
+
+45:15.020 --> 45:17.020
+if you keep saying
+
+45:17.020 --> 45:19.020
+you have three parties
+
+45:19.020 --> 45:21.020
+and you want to generalize
+
+45:21.020 --> 45:23.020
+what N-Party will do.
+
+45:23.020 --> 45:25.020
+Intuitively,
+
+45:25.020 --> 45:27.020
+it makes sense.
+
+45:27.020 --> 45:29.020
+If you can group them
+
+45:29.020 --> 45:31.020
+into three parties,
+
+45:31.020 --> 45:33.020
+you can reduce the problem.
+
+45:33.020 --> 45:35.020
+But if you say
+
+45:35.020 --> 45:37.020
+the bad guys
+
+45:37.020 --> 45:39.020
+can be grouped
+
+45:39.020 --> 45:41.020
+into a group of bad guys,
+
+45:41.020 --> 45:43.020
+you still have to assume
+
+45:43.020 --> 45:45.020
+the bad guys
+
+45:45.020 --> 45:47.020
+are good to each other.
+
+45:47.020 --> 45:49.020
+They are honest.
+
+45:49.020 --> 45:51.020
+So the shared information
+
+45:51.020 --> 45:53.020
+is what they are doing.
+
+45:53.020 --> 45:55.020
+They know
+
+45:55.020 --> 45:57.020
+each other is breaking the rule.
+
+45:57.020 --> 45:59.020
+Yes.
+
+46:03.020 --> 46:05.020
+Your question is very good.
+
+46:05.020 --> 46:07.020
+So I will
+
+46:07.020 --> 46:09.020
+jump a little bit
+
+46:09.020 --> 46:11.020
+to talk about
+
+46:11.020 --> 46:13.020
+high-level.
+
+46:13.020 --> 46:15.020
+I assume
+
+46:15.020 --> 46:17.020
+the bad guys
+
+46:17.020 --> 46:19.020
+I mentioned
+
+46:19.020 --> 46:21.020
+are
+
+46:21.020 --> 46:23.020
+good guys
+
+46:23.020 --> 46:25.020
+and bad guys.
+
+46:25.020 --> 46:27.020
+The bad guys
+
+46:27.020 --> 46:29.020
+have
+
+46:29.020 --> 46:31.020
+a common...
+
+46:31.020 --> 46:33.020
+What is it called?
+
+46:33.020 --> 46:35.020
+For example,
+
+46:35.020 --> 46:37.020
+they have
+
+46:37.020 --> 46:39.020
+a bad guy
+
+46:39.020 --> 46:41.020
+controlling them.
+
+46:41.020 --> 46:43.020
+So your question is
+
+46:43.020 --> 46:45.020
+maybe
+
+46:45.020 --> 46:47.020
+the bad guys A
+
+46:47.020 --> 46:49.020
+and bad guys B
+
+46:49.020 --> 46:51.020
+have different interests.
+
+46:51.020 --> 46:53.020
+So they
+
+46:53.020 --> 46:55.020
+control each other.
+
+46:55.020 --> 46:57.020
+So far,
+
+46:57.020 --> 46:59.020
+I assume
+
+46:59.020 --> 47:01.020
+the bad guys A
+
+47:01.020 --> 47:03.020
+and bad guys B
+
+47:03.020 --> 47:05.020
+have a bad guy leader.
+
+47:05.020 --> 47:07.020
+Maybe he is not
+
+47:07.020 --> 47:09.020
+in the game.
+
+47:09.020 --> 47:11.020
+But he is the leader of the bad guys.
+
+47:11.020 --> 47:13.020
+He controls all the bad guys.
+
+47:13.020 --> 47:15.020
+All the bad guys
+
+47:15.020 --> 47:17.020
+cooperate with each other.
+
+47:19.020 --> 47:21.020
+So
+
+47:21.020 --> 47:23.020
+for the
+
+47:23.020 --> 47:25.020
+bad guys
+
+47:25.020 --> 47:27.020
+or good guys
+
+47:27.020 --> 47:29.020
+two or three
+
+47:29.020 --> 47:31.020
+should be
+
+47:31.020 --> 47:33.020
+easy to explain.
+
+47:33.020 --> 47:35.020
+Did I answer your question?
+
+47:35.020 --> 47:37.020
+Yes.
+
+47:37.020 --> 47:39.020
+It's the same as I thought.
+
+47:39.020 --> 47:41.020
+OK. Thank you.
+
+47:41.020 --> 47:43.020
+I will talk about
+
+47:43.020 --> 47:45.020
+the bad guys A
+
+47:45.020 --> 47:47.020
+and bad guys B.
+
+47:47.020 --> 47:49.020
+Sometimes,
+
+47:49.020 --> 47:51.020
+the bad guys A and bad guys B
+
+47:51.020 --> 47:53.020
+don't always
+
+47:53.020 --> 47:55.020
+have the same leader.
+
+47:55.020 --> 47:57.020
+But
+
+47:57.020 --> 47:59.020
+to sum up,
+
+47:59.020 --> 48:01.020
+most examples
+
+48:01.020 --> 48:03.020
+can't be used
+
+48:03.020 --> 48:05.020
+to protect
+
+48:05.020 --> 48:07.020
+the good guys.
+
+48:07.020 --> 48:09.020
+Unless
+
+48:09.020 --> 48:11.020
+the problem is simple.
+
+48:11.020 --> 48:13.020
+Only one
+
+48:13.020 --> 48:15.020
+person has different preferences.
+
+48:15.020 --> 48:17.020
+And the bad guy is very limited.
+
+48:17.020 --> 48:19.020
+He can only
+
+48:19.020 --> 48:21.020
+play. He can't do anything else.
+
+48:21.020 --> 48:23.020
+Only a small piece
+
+48:23.020 --> 48:25.020
+can be
+
+48:25.020 --> 48:27.020
+justified.
+
+48:27.020 --> 48:29.020
+The justification defined
+
+48:29.020 --> 48:31.020
+under Maximine
+
+48:31.020 --> 48:33.020
+can only be justified
+
+48:33.020 --> 48:35.020
+by a small piece.
+
+48:35.020 --> 48:37.020
+The rest can't be justified.
+
+48:37.020 --> 48:39.020
+It's quite sad.
+
+48:39.020 --> 48:41.020
+Just now,
+
+48:41.020 --> 48:43.020
+the host
+
+48:43.020 --> 48:45.020
+asked
+
+48:45.020 --> 48:47.020
+some good questions.
+
+48:47.020 --> 48:49.020
+For example,
+
+48:49.020 --> 48:51.020
+I defined
+
+48:51.020 --> 48:53.020
+that the good guys' interests can't be damaged.
+
+48:53.020 --> 48:55.020
+My starting point is to protect the good guys' interests.
+
+48:55.020 --> 48:57.020
+The other starting point
+
+48:57.020 --> 48:59.020
+is more like
+
+48:59.020 --> 49:01.020
+game theory's
+
+49:01.020 --> 49:03.020
+Nash Equilibrium.
+
+49:03.020 --> 49:05.020
+The so-called bad guys
+
+49:05.020 --> 49:07.020
+or corrupt parties
+
+49:07.020 --> 49:09.020
+must have
+
+49:09.020 --> 49:11.020
+a certain economic motivation
+
+49:11.020 --> 49:13.020
+to do bad things
+
+49:13.020 --> 49:15.020
+to break the rules.
+
+49:15.020 --> 49:17.020
+This is
+
+49:17.020 --> 49:19.020
+another
+
+49:19.020 --> 49:21.020
+definition.
+
+49:21.020 --> 49:23.020
+This definition is very natural.
+
+49:23.020 --> 49:25.020
+For example,
+
+49:25.020 --> 49:27.020
+I defined a set of game rules
+
+49:27.020 --> 49:29.020
+in a certain game.
+
+49:29.020 --> 49:31.020
+Even if
+
+49:31.020 --> 49:33.020
+there is a
+
+49:33.020 --> 49:35.020
+bad guy controlling
+
+49:35.020 --> 49:37.020
+certain people,
+
+49:37.020 --> 49:39.020
+he becomes a bad guy.
+
+49:39.020 --> 49:41.020
+But the bad guys
+
+49:41.020 --> 49:43.020
+controlled by the boss
+
+49:43.020 --> 49:45.020
+don't have to
+
+49:45.020 --> 49:47.020
+listen to the boss.
+
+49:47.020 --> 49:49.020
+They have to
+
+49:49.020 --> 49:51.020
+listen to
+
+49:51.020 --> 49:53.020
+the boss
+
+49:53.020 --> 49:55.020
+to increase
+
+49:55.020 --> 49:57.020
+their own interests.
+
+49:57.020 --> 49:59.020
+Then,
+
+49:59.020 --> 50:01.020
+Nash Equilibrium
+
+50:01.020 --> 50:03.020
+requires
+
+50:03.020 --> 50:05.020
+the boss
+
+50:05.020 --> 50:07.020
+to increase
+
+50:07.020 --> 50:09.020
+the interests of the bad guys.
+
+50:09.020 --> 50:11.020
+This is
+
+50:11.020 --> 50:13.020
+very difficult
+
+50:13.020 --> 50:15.020
+for the boss.
+
+50:15.020 --> 50:17.020
+Especially,
+
+50:17.020 --> 50:19.020
+for example,
+
+50:19.020 --> 50:21.020
+what I said
+
+50:21.020 --> 50:23.020
+from the beginning is that
+
+50:23.020 --> 50:25.020
+the output is only 0 or 1.
+
+50:25.020 --> 50:27.020
+Your preference
+
+50:27.020 --> 50:29.020
+is only 0 or 1.
+
+50:29.020 --> 50:31.020
+If the boss
+
+50:31.020 --> 50:33.020
+controls both
+
+50:33.020 --> 50:35.020
+0 and 1,
+
+50:35.020 --> 50:37.020
+the boss
+
+50:37.020 --> 50:39.020
+can't
+
+50:39.020 --> 50:41.020
+satisfy
+
+50:41.020 --> 50:43.020
+both sides.
+
+50:43.020 --> 50:45.020
+Because
+
+50:45.020 --> 50:47.020
+one side's interest increases,
+
+50:47.020 --> 50:49.020
+and the other side's interest decreases.
+
+50:51.020 --> 50:53.020
+So,
+
+50:53.020 --> 50:55.020
+this definition is
+
+50:55.020 --> 50:57.020
+called Strong Nash.
+
+50:57.020 --> 50:59.020
+Strong Nash is borrowed
+
+50:59.020 --> 51:01.020
+from Nash Equilibrium.
+
+51:01.020 --> 51:03.020
+But in fact,
+
+51:03.020 --> 51:05.020
+this definition is easier
+
+51:05.020 --> 51:07.020
+to achieve than Maximine.
+
+51:07.020 --> 51:09.020
+Because the boss
+
+51:09.020 --> 51:11.020
+can do less
+
+51:11.020 --> 51:13.020
+and receive more restrictions.
+
+51:19.020 --> 51:21.020
+So,
+
+51:21.020 --> 51:23.020
+it's very easy
+
+51:23.020 --> 51:25.020
+to be fair
+
+51:25.020 --> 51:27.020
+under this definition.
+
+51:27.020 --> 51:29.020
+I don't know
+
+51:29.020 --> 51:31.020
+if the boss is a bad guy,
+
+51:31.020 --> 51:33.020
+or a good guy.
+
+51:33.020 --> 51:35.020
+As long as the two sides
+
+51:35.020 --> 51:37.020
+have different preferences,
+
+51:37.020 --> 51:39.020
+let them play
+
+51:39.020 --> 51:41.020
+what I said at the beginning.
+
+51:41.020 --> 51:43.020
+One side commits
+
+51:43.020 --> 51:45.020
+X,
+
+51:45.020 --> 51:47.020
+the other side
+
+51:47.020 --> 51:49.020
+decides a random Y,
+
+51:49.020 --> 51:51.020
+and the other side
+
+51:51.020 --> 51:53.020
+commits at the beginning,
+
+51:53.020 --> 51:55.020
+opens the envelope
+
+51:55.020 --> 51:57.020
+and decides what X1 and X2 are.
+
+51:57.020 --> 51:59.020
+Everyone
+
+51:59.020 --> 52:01.020
+listens to them.
+
+52:01.020 --> 52:03.020
+No matter how many people are there,
+
+52:03.020 --> 52:05.020
+10, 100, 1000,
+
+52:05.020 --> 52:07.020
+as long as two people
+
+52:07.020 --> 52:09.020
+are working.
+
+52:09.020 --> 52:11.020
+This thing
+
+52:11.020 --> 52:13.020
+is easy to prove.
+
+52:13.020 --> 52:15.020
+Just list all the conditions
+
+52:15.020 --> 52:17.020
+and it can be proved that
+
+52:17.020 --> 52:19.020
+this game rule
+
+52:19.020 --> 52:21.020
+can achieve
+
+52:21.020 --> 52:23.020
+Strong Nash.
+
+52:23.020 --> 52:25.020
+The boss can't
+
+52:25.020 --> 52:27.020
+increase
+
+52:27.020 --> 52:29.020
+the benefits of the boss.
+
+52:37.020 --> 52:39.020
+Let's go back to the first page.
+
+52:41.020 --> 52:43.020
+If you think about it,
+
+52:43.020 --> 52:45.020
+you will find
+
+52:45.020 --> 52:47.020
+these two definitions
+
+52:47.020 --> 52:49.020
+are exactly the same
+
+52:49.020 --> 52:51.020
+in 2Party.
+
+52:51.020 --> 52:53.020
+Because in 2Party,
+
+52:53.020 --> 52:55.020
+there are only two people.
+
+52:55.020 --> 52:57.020
+In 2Party,
+
+52:57.020 --> 52:59.020
+under this payoff,
+
+52:59.020 --> 53:01.020
+it is a completely zero-sum game.
+
+53:01.020 --> 53:03.020
+The situation of the two people
+
+53:03.020 --> 53:05.020
+is symmetrical.
+
+53:05.020 --> 53:07.020
+So the payoff of the bad guy
+
+53:07.020 --> 53:09.020
+is equal to
+
+53:09.020 --> 53:11.020
+the payoff of the good guy.
+
+53:11.020 --> 53:13.020
+This was established
+
+53:13.020 --> 53:15.020
+in Zero-sum.
+
+53:15.020 --> 53:17.020
+In the case of two people,
+
+53:17.020 --> 53:19.020
+there is only one bad guy
+
+53:19.020 --> 53:21.020
+and one good guy.
+
+53:21.020 --> 53:23.020
+So these two definitions are exactly the same.
+
+53:23.020 --> 53:25.020
+But in 3 or 4 people,
+
+53:25.020 --> 53:27.020
+or more people,
+
+53:27.020 --> 53:29.020
+these two definitions are completely different.
+
+53:29.020 --> 53:31.020
+One is
+
+53:31.020 --> 53:33.020
+almost impossible.
+
+53:33.020 --> 53:35.020
+The other is
+
+53:35.020 --> 53:37.020
+almost possible.
+
+53:37.020 --> 53:39.020
+This is a big difference.
+
+53:43.020 --> 53:45.020
+In addition to these two definitions,
+
+53:45.020 --> 53:47.020
+in my paper,
+
+53:47.020 --> 53:49.020
+I will consider
+
+53:49.020 --> 53:51.020
+other definitions.
+
+53:51.020 --> 53:53.020
+Maybe more natural, maybe more complicated,
+
+53:53.020 --> 53:55.020
+I don't know.
+
+53:55.020 --> 53:57.020
+The first one is
+
+53:57.020 --> 53:59.020
+the benefits of good people alone.
+
+53:59.020 --> 54:01.020
+In the case of Group,
+
+54:01.020 --> 54:03.020
+I don't consider the benefits alone.
+
+54:03.020 --> 54:05.020
+I consider the benefits of all good people
+
+54:05.020 --> 54:07.020
+to be added.
+
+54:07.020 --> 54:09.020
+The benefits of good people
+
+54:09.020 --> 54:11.020
+to be reduced
+
+54:11.020 --> 54:13.020
+or the benefits of bad people
+
+54:13.020 --> 54:15.020
+to be added.
+
+54:15.020 --> 54:17.020
+There may be different
+
+54:17.020 --> 54:19.020
+situations.
+
+54:19.020 --> 54:21.020
+For example,
+
+54:21.020 --> 54:23.020
+when the boss controls
+
+54:23.020 --> 54:25.020
+a group of bad guys,
+
+54:25.020 --> 54:27.020
+he may add all the benefits of the bad guys
+
+54:27.020 --> 54:29.020
+and divide them.
+
+54:29.020 --> 54:31.020
+This may be
+
+54:31.020 --> 54:33.020
+a suitable
+
+54:33.020 --> 54:35.020
+model for discussion.
+
+54:35.020 --> 54:37.020
+For example,
+
+54:37.020 --> 54:39.020
+the feasibility of these two
+
+54:39.020 --> 54:41.020
+is between Maximin
+
+54:41.020 --> 54:43.020
+and StrongNash.
+
+54:43.020 --> 54:45.020
+These four definitions
+
+54:45.020 --> 54:47.020
+are a bit complicated,
+
+54:47.020 --> 54:49.020
+so I won't talk about them all.
+
+54:51.020 --> 54:53.020
+Anyway,
+
+54:53.020 --> 54:55.020
+in the case of
+
+54:55.020 --> 54:57.020
+only two people,
+
+54:57.020 --> 54:59.020
+these definitions are equivalent.
+
+54:59.020 --> 55:01.020
+In the case of two people,
+
+55:01.020 --> 55:03.020
+the total is equal to the individual.
+
+55:03.020 --> 55:05.020
+In the case of zero-sum,
+
+55:05.020 --> 55:07.020
+the increase of bad people
+
+55:07.020 --> 55:09.020
+is equal to the decrease of good people.
+
+55:09.020 --> 55:11.020
+So these four definitions
+
+55:11.020 --> 55:13.020
+are the same
+
+55:13.020 --> 55:15.020
+in the case of two people.
+
+55:15.020 --> 55:17.020
+However,
+
+55:17.020 --> 55:19.020
+they are completely different
+
+55:19.020 --> 55:21.020
+in the case of more than three people.
+
+55:23.020 --> 55:25.020
+If you have learned
+
+55:25.020 --> 55:27.020
+or seen
+
+55:27.020 --> 55:29.020
+some game theory,
+
+55:29.020 --> 55:31.020
+you will
+
+55:31.020 --> 55:33.020
+immediately think of
+
+55:33.020 --> 55:35.020
+the question just asked by the host.
+
+55:35.020 --> 55:37.020
+There are
+
+55:37.020 --> 55:39.020
+various settings in game theory,
+
+55:39.020 --> 55:41.020
+such as the payoff function.
+
+55:41.020 --> 55:43.020
+Maybe the payoff function
+
+55:43.020 --> 55:45.020
+I just gave is not the most natural.
+
+55:45.020 --> 55:47.020
+In some cases,
+
+55:47.020 --> 55:49.020
+the payoff of zero-sum is more natural.
+
+55:51.020 --> 55:53.020
+Or in some cases,
+
+55:53.020 --> 55:55.020
+what kind of outcome
+
+55:55.020 --> 55:57.020
+does everyone like?
+
+55:59.020 --> 56:01.020
+What kind of outcome
+
+56:01.020 --> 56:03.020
+does everyone like?
+
+56:03.020 --> 56:05.020
+Where does Trump like to meet?
+
+56:05.020 --> 56:07.020
+Where does Xi like to meet?
+
+56:07.020 --> 56:09.020
+Maybe
+
+56:09.020 --> 56:11.020
+the payoff function
+
+56:11.020 --> 56:13.020
+is not the most natural.
+
+56:13.020 --> 56:15.020
+Maybe it's private.
+
+56:15.020 --> 56:17.020
+Everyone doesn't know.
+
+56:17.020 --> 56:19.020
+This is a more natural setting.
+
+56:19.020 --> 56:21.020
+In some cases,
+
+56:21.020 --> 56:23.020
+it may be like this.
+
+56:23.020 --> 56:25.020
+Of course,
+
+56:25.020 --> 56:27.020
+from the beginning to the end,
+
+56:27.020 --> 56:29.020
+I only talked about
+
+56:29.020 --> 56:31.020
+throwing a coin.
+
+56:31.020 --> 56:33.020
+Then this coin has only two sides,
+
+56:33.020 --> 56:35.020
+0 or 1.
+
+56:35.020 --> 56:37.020
+Then the coin becomes a dice.
+
+56:37.020 --> 56:39.020
+0, 1, 2, 3, 4, 5.
+
+56:39.020 --> 56:41.020
+Or I want to do something more complicated.
+
+56:41.020 --> 56:43.020
+For example,
+
+56:43.020 --> 56:45.020
+Trump and Xi want to
+
+56:45.020 --> 56:47.020
+add their salaries together.
+
+56:47.020 --> 56:49.020
+Something like this.
+
+56:51.020 --> 56:53.020
+These are all questions
+
+56:53.020 --> 56:55.020
+that can be discussed in depth.
+
+56:57.020 --> 56:59.020
+But there are a lot of questions
+
+56:59.020 --> 57:01.020
+that can be studied.
+
+57:01.020 --> 57:03.020
+This paper
+
+57:03.020 --> 57:05.020
+only discussed a small part of
+
+57:05.020 --> 57:07.020
+the blue ones.
+
+57:07.020 --> 57:09.020
+So this is
+
+57:09.020 --> 57:11.020
+the coin toss I talked about today.
+
+57:11.020 --> 57:13.020
+Thank you everyone
+
+57:13.020 --> 57:15.020
+for taking the time to listen to me.
+
+57:15.020 --> 57:17.020
+Thank you.
+
+57:19.020 --> 57:21.020
+Please turn on the microphone.
+
+57:21.020 --> 57:23.020
+Let's give a round of applause
+
+57:23.020 --> 57:25.020
+to our speaker today.
+
+57:29.020 --> 57:31.020
+Do you have any questions?
+
+57:33.020 --> 57:35.020
+No.
+
+57:39.020 --> 57:41.020
+Let me ask you a question.
+
+57:41.020 --> 57:43.020
+This question is not
+
+57:43.020 --> 57:45.020
+related to the content of the lecture.
+
+57:45.020 --> 57:47.020
+Did you publish this paper?
+
+57:47.020 --> 57:49.020
+Or did you throw it away?
+
+57:49.020 --> 57:51.020
+Do you want to
+
+57:51.020 --> 57:53.020
+write down the title of the paper
+
+57:53.020 --> 57:55.020
+and some other information
+
+57:55.020 --> 57:57.020
+that we can find,
+
+57:57.020 --> 57:59.020
+such as the date of the paper
+
+57:59.020 --> 58:01.020
+and so on.
+
+58:01.020 --> 58:03.020
+Then it will be recorded.
+
+58:03.020 --> 58:05.020
+If you are interested,
+
+58:05.020 --> 58:07.020
+you can look for it.
+
+58:07.020 --> 58:09.020
+How can I write it?
+
+58:09.020 --> 58:11.020
+I don't know.
+
+58:11.020 --> 58:13.020
+You can jump back to your PowerPoint.
+
+58:13.020 --> 58:15.020
+Okay.
+
+58:15.020 --> 58:17.020
+Just type it here.
+
+58:17.020 --> 58:19.020
+We can see it now.
+
+58:19.020 --> 58:21.020
+Wait for me.
+
+58:21.020 --> 58:23.020
+Text box.
+
+58:23.020 --> 58:25.020
+Okay.
+
+58:25.020 --> 58:27.020
+Now we are typing the text.
+
+58:27.020 --> 58:29.020
+Do you have any questions?
+
+58:29.020 --> 58:31.020
+Do you have any comments?
+
+58:35.020 --> 58:37.020
+You can ask some basic questions.
+
+58:37.020 --> 58:39.020
+For example,
+
+58:39.020 --> 58:41.020
+what do you study
+
+58:41.020 --> 58:43.020
+and so on.
+
+58:45.020 --> 58:47.020
+I have an interesting question.
+
+58:47.020 --> 58:49.020
+Of course,
+
+58:49.020 --> 58:51.020
+this is the most fundamental
+
+58:51.020 --> 58:53.020
+scenario.
+
+58:53.020 --> 58:55.020
+Then we can
+
+58:55.020 --> 58:57.020
+think about
+
+58:57.020 --> 58:59.020
+a special example.
+
+58:59.020 --> 59:01.020
+But now you...
+
+59:01.020 --> 59:03.020
+Let me think.
+
+59:03.020 --> 59:05.020
+So what you just said
+
+59:05.020 --> 59:07.020
+is basically
+
+59:07.020 --> 59:09.020
+your maximum
+
+59:09.020 --> 59:11.020
+and the two parties below
+
+59:11.020 --> 59:13.020
+are two extremes.
+
+59:13.020 --> 59:15.020
+They can be discussed.
+
+59:15.020 --> 59:17.020
+But those in the middle
+
+59:17.020 --> 59:19.020
+are in, for example,
+
+59:19.020 --> 59:21.020
+how many parties do bad people have?
+
+59:21.020 --> 59:23.020
+Are the interests of bad people
+
+59:23.020 --> 59:25.020
+completely the same?
+
+59:25.020 --> 59:27.020
+In these cases,
+
+59:27.020 --> 59:29.020
+your conclusion
+
+59:29.020 --> 59:31.020
+is related to
+
+59:31.020 --> 59:33.020
+N,
+
+59:33.020 --> 59:35.020
+how many good people and bad people
+
+59:35.020 --> 59:37.020
+are assigned to each other.
+
+59:37.020 --> 59:39.020
+What is the relationship between them?
+
+59:39.020 --> 59:41.020
+Will it affect your conclusion?
+
+59:41.020 --> 59:43.020
+Yes.
+
+59:43.020 --> 59:45.020
+I...
+
+59:45.020 --> 59:47.020
+I just posted
+
+59:47.020 --> 59:49.020
+the conference here.
+
+59:49.020 --> 59:51.020
+I will jump back to my PowerPoint.
+
+59:51.020 --> 59:53.020
+It is...
+
+59:57.020 --> 59:59.020
+In...
+
+59:59.020 --> 01:00:01.020
+In Max and Min,
+
+01:00:01.020 --> 01:00:03.020
+the simple case
+
+01:00:03.020 --> 01:00:05.020
+is that
+
+01:00:05.020 --> 01:00:07.020
+when greater than or equal to 3,
+
+01:00:07.020 --> 01:00:09.020
+it is impossible.
+
+01:00:09.020 --> 01:00:11.020
+In the middle,
+
+01:00:11.020 --> 01:00:13.020
+the group Max and Min
+
+01:00:13.020 --> 01:00:15.020
+is the same as Max and Min,
+
+01:00:15.020 --> 01:00:17.020
+greater than or equal to 3,
+
+01:00:17.020 --> 01:00:19.020
+it is impossible.
+
+01:00:19.020 --> 01:00:21.020
+It is related to N.
+
+01:00:21.020 --> 01:00:23.020
+Three people can't do it,
+
+01:00:23.020 --> 01:00:25.020
+or four people can't do it.
+
+01:00:25.020 --> 01:00:27.020
+In the middle,
+
+01:00:27.020 --> 01:00:29.020
+no matter how many people can do it,
+
+01:00:29.020 --> 01:00:31.020
+it is related to N.
+
+01:00:33.020 --> 01:00:35.020
+Does this answer the question?
+
+01:00:35.020 --> 01:00:37.020
+Yes.
+
+01:00:37.020 --> 01:00:39.020
+Actually, this is just the beginning of my question.
+
+01:00:39.020 --> 01:00:41.020
+I should say that
+
+01:00:41.020 --> 01:00:43.020
+I also expect that
+
+01:00:43.020 --> 01:00:45.020
+this thing is related to N,
+
+01:00:45.020 --> 01:00:47.020
+and N will affect your conclusion.
+
+01:00:47.020 --> 01:00:49.020
+If this is the case,
+
+01:00:49.020 --> 01:00:51.020
+it is closer to
+
+01:00:51.020 --> 01:00:53.020
+the realistic situation.
+
+01:00:53.020 --> 01:00:55.020
+For example,
+
+01:00:55.020 --> 01:00:57.020
+how do you study in computer science?
+
+01:00:57.020 --> 01:00:59.020
+Do you calculate one by one?
+
+01:00:59.020 --> 01:01:01.020
+Or do you use
+
+01:01:01.020 --> 01:01:03.020
+Monte Carlo
+
+01:01:03.020 --> 01:01:05.020
+to use empirical methods
+
+01:01:05.020 --> 01:01:07.020
+to conclude
+
+01:01:07.020 --> 01:01:09.020
+some relationships,
+
+01:01:09.020 --> 01:01:11.020
+such as the relationship with N,
+
+01:01:11.020 --> 01:01:13.020
+or what is the solution
+
+01:01:13.020 --> 01:01:15.020
+under some threshold,
+
+01:01:15.020 --> 01:01:17.020
+what do you usually do?
+
+01:01:17.020 --> 01:01:19.020
+So,
+
+01:01:19.020 --> 01:01:21.020
+the question asked by the host
+
+01:01:21.020 --> 01:01:23.020
+is more like
+
+01:01:23.020 --> 01:01:25.020
+I have
+
+01:01:25.020 --> 01:01:27.020
+a set of definitions
+
+01:01:27.020 --> 01:01:29.020
+on the left,
+
+01:01:29.020 --> 01:01:31.020
+a set of
+
+01:01:31.020 --> 01:01:33.020
+maybe it is the sky,
+
+01:01:33.020 --> 01:01:35.020
+maybe it is
+
+01:01:35.020 --> 01:01:37.020
+some
+
+01:01:37.020 --> 01:01:39.020
+realistic
+
+01:01:39.020 --> 01:01:41.020
+problem motivator
+
+01:01:41.020 --> 01:01:43.020
+definition,
+
+01:01:43.020 --> 01:01:45.020
+a set of
+
+01:01:45.020 --> 01:01:47.020
+motivator definitions,
+
+01:01:47.020 --> 01:01:49.020
+how do I discuss
+
+01:01:49.020 --> 01:01:51.020
+or
+
+01:01:51.020 --> 01:01:53.020
+how do I discuss
+
+01:01:53.020 --> 01:01:55.020
+the definition on the left
+
+01:01:55.020 --> 01:01:57.020
+whether it can be done
+
+01:01:57.020 --> 01:01:59.020
+or not,
+
+01:01:59.020 --> 01:02:01.020
+especially
+
+01:02:01.020 --> 01:02:03.020
+in this
+
+01:02:03.020 --> 01:02:05.020
+current
+
+01:02:05.020 --> 01:02:07.020
+talk discussion
+
+01:02:07.020 --> 01:02:09.020
+it is
+
+01:02:09.020 --> 01:02:11.020
+related to N,
+
+01:02:11.020 --> 01:02:13.020
+and how
+
+01:02:13.020 --> 01:02:15.020
+to say
+
+01:02:15.020 --> 01:02:17.020
+how much can be done
+
+01:02:17.020 --> 01:02:19.020
+and how much can't be done.
+
+01:02:19.020 --> 01:02:21.020
+In this
+
+01:02:21.020 --> 01:02:23.020
+work,
+
+01:02:23.020 --> 01:02:25.020
+there is
+
+01:02:25.020 --> 01:02:27.020
+no good way.
+
+01:02:27.020 --> 01:02:29.020
+In the middle,
+
+01:02:29.020 --> 01:02:31.020
+every case
+
+01:02:31.020 --> 01:02:33.020
+where N is greater than
+
+01:02:33.020 --> 01:02:35.020
+how much can't be done,
+
+01:02:35.020 --> 01:02:37.020
+is used
+
+01:02:37.020 --> 01:02:39.020
+to
+
+01:02:39.020 --> 01:02:41.020
+transform
+
+01:02:41.020 --> 01:02:43.020
+to make another statement
+
+01:02:43.020 --> 01:02:45.020
+N is greater than how much can't be done.
+
+01:02:45.020 --> 01:02:47.020
+For example,
+
+01:02:47.020 --> 01:02:49.020
+at the beginning,
+
+01:02:49.020 --> 01:02:51.020
+N is greater than 2,
+
+01:02:51.020 --> 01:02:53.020
+the first result is
+
+01:02:53.020 --> 01:02:55.020
+the lower bound of cleave.
+
+01:02:55.020 --> 01:02:57.020
+The following
+
+01:02:57.020 --> 01:02:59.020
+is to
+
+01:02:59.020 --> 01:03:01.020
+extend
+
+01:03:01.020 --> 01:03:03.020
+the first
+
+01:03:03.020 --> 01:03:05.020
+cleave's
+
+01:03:05.020 --> 01:03:07.020
+impossibility
+
+01:03:07.020 --> 01:03:09.020
+to 3 and 4.
+
+01:03:15.020 --> 01:03:17.020
+In this example,
+
+01:03:17.020 --> 01:03:19.020
+there is no good way.
+
+01:03:19.020 --> 01:03:21.020
+There may be
+
+01:03:21.020 --> 01:03:23.020
+other examples,
+
+01:03:23.020 --> 01:03:25.020
+but
+
+01:03:25.020 --> 01:03:27.020
+these definitions
+
+01:03:27.020 --> 01:03:29.020
+are
+
+01:03:29.020 --> 01:03:31.020
+the definitions of
+
+01:03:31.020 --> 01:03:33.020
+cleave.
+
+01:03:33.020 --> 01:03:35.020
+We
+
+01:03:35.020 --> 01:03:37.020
+don't have
+
+01:03:37.020 --> 01:03:39.020
+these continuous
+
+01:03:39.020 --> 01:03:41.020
+or
+
+01:03:41.020 --> 01:03:43.020
+continuous
+
+01:03:43.020 --> 01:03:45.020
+or functional
+
+01:03:45.020 --> 01:03:47.020
+mathematical tools
+
+01:03:47.020 --> 01:03:49.020
+to use.
+
+01:03:49.020 --> 01:03:51.020
+For example,
+
+01:03:51.020 --> 01:03:53.020
+I asked
+
+01:03:53.020 --> 01:03:55.020
+if there is
+
+01:03:55.020 --> 01:03:57.020
+Monte Carlo
+
+01:03:57.020 --> 01:03:59.020
+or experiments
+
+01:03:59.020 --> 01:04:01.020
+to prove
+
+01:04:01.020 --> 01:04:03.020
+those
+
+01:04:05.020 --> 01:04:07.020
+experimental
+
+01:04:07.020 --> 01:04:09.020
+methods,
+
+01:04:09.020 --> 01:04:11.020
+we usually
+
+01:04:11.020 --> 01:04:13.020
+avoid them.
+
+01:04:13.020 --> 01:04:15.020
+Because
+
+01:04:15.020 --> 01:04:17.020
+experimental methods
+
+01:04:17.020 --> 01:04:19.020
+are difficult to prove.
+
+01:04:19.020 --> 01:04:21.020
+Even if there are
+
+01:04:21.020 --> 01:04:23.020
+only 3 or 4 small numbers,
+
+01:04:23.020 --> 01:04:25.020
+it is not possible
+
+01:04:25.020 --> 01:04:27.020
+to prove.
+
+01:04:27.020 --> 01:04:29.020
+So,
+
+01:04:29.020 --> 01:04:31.020
+we
+
+01:04:31.020 --> 01:04:33.020
+rarely use them.
+
+01:04:33.020 --> 01:04:35.020
+Maybe
+
+01:04:35.020 --> 01:04:37.020
+we don't know
+
+01:04:37.020 --> 01:04:39.020
+how to use them
+
+01:04:39.020 --> 01:04:41.020
+to prove them.
+
+01:04:41.020 --> 01:04:43.020
+Our
+
+01:04:43.020 --> 01:04:45.020
+proof
+
+01:04:45.020 --> 01:04:47.020
+is here.
+
+01:04:47.020 --> 01:04:49.020
+It is more
+
+01:04:49.020 --> 01:04:51.020
+comprehensive.
+
+01:04:51.020 --> 01:04:53.020
+We calculate the probability.
+
+01:04:53.020 --> 01:04:55.020
+After that,
+
+01:04:55.020 --> 01:04:57.020
+we use...
+
+01:04:57.020 --> 01:04:59.020
+For example,
+
+01:04:59.020 --> 01:05:01.020
+here,
+
+01:05:01.020 --> 01:05:03.020
+we calculate the expectation
+
+01:05:03.020 --> 01:05:05.020
+and the probability.
+
+01:05:05.020 --> 01:05:07.020
+Then, we use the average
+
+01:05:07.020 --> 01:05:09.020
+to conclude
+
+01:05:09.020 --> 01:05:11.020
+whether it is possible or not.
+
+01:05:17.020 --> 01:05:19.020
+I see.
+
+01:05:19.020 --> 01:05:21.020
+Thank you.
+
+01:05:21.020 --> 01:05:23.020
+Do you have any questions?
+
+01:05:23.020 --> 01:05:25.020
+Hello.
+
+01:05:25.020 --> 01:05:27.020
+I have a question.
+
+01:05:27.020 --> 01:05:29.020
+Please go ahead.
+
+01:05:29.020 --> 01:05:31.020
+I still don't understand.
+
+01:05:33.020 --> 01:05:35.020
+Can you
+
+01:05:35.020 --> 01:05:37.020
+explain
+
+01:05:37.020 --> 01:05:39.020
+how to
+
+01:05:39.020 --> 01:05:41.020
+reduce
+
+01:05:41.020 --> 01:05:43.020
+3 to 3?
+
+01:05:43.020 --> 01:05:45.020
+How to reduce
+
+01:05:45.020 --> 01:05:47.020
+almost
+
+01:05:47.020 --> 01:05:49.020
+and malicious
+
+01:05:49.020 --> 01:05:51.020
+to 3?
+
+01:05:51.020 --> 01:05:53.020
+This
+
+01:05:53.020 --> 01:05:55.020
+is a good question.
+
+01:05:57.020 --> 01:05:59.020
+It is very simple.
+
+01:05:59.020 --> 01:06:01.020
+Let's assume
+
+01:06:01.020 --> 01:06:03.020
+n is equal to 4.
+
+01:06:03.020 --> 01:06:05.020
+If n is equal to 4,
+
+01:06:05.020 --> 01:06:07.020
+in this line,
+
+01:06:07.020 --> 01:06:09.020
+unanimous
+
+01:06:09.020 --> 01:06:11.020
+is the same.
+
+01:06:11.020 --> 01:06:13.020
+Almost is one less.
+
+01:06:13.020 --> 01:06:15.020
+Only one less.
+
+01:06:15.020 --> 01:06:17.020
+If n is equal to 4,
+
+01:06:17.020 --> 01:06:19.020
+it is...
+
+01:06:19.020 --> 01:06:21.020
+I just type it.
+
+01:06:21.020 --> 01:06:23.020
+It is 0, 1,
+
+01:06:23.020 --> 01:06:25.020
+1, 1.
+
+01:06:25.020 --> 01:06:27.020
+It is 0, 1, 1.
+
+01:06:27.020 --> 01:06:29.020
+Of course,
+
+01:06:29.020 --> 01:06:31.020
+it is symmetric.
+
+01:06:31.020 --> 01:06:33.020
+0 may be in one person.
+
+01:06:33.020 --> 01:06:35.020
+We don't know.
+
+01:06:35.020 --> 01:06:37.020
+We don't care.
+
+01:06:37.020 --> 01:06:39.020
+It is 0, 1, 1.
+
+01:06:39.020 --> 01:06:41.020
+Then,
+
+01:06:41.020 --> 01:06:43.020
+you have to ask
+
+01:06:43.020 --> 01:06:45.020
+whether
+
+01:06:45.020 --> 01:06:47.020
+there is a rule
+
+01:06:47.020 --> 01:06:49.020
+that allows 4 people
+
+01:06:49.020 --> 01:06:51.020
+to protect
+
+01:06:51.020 --> 01:06:53.020
+the interests of honest people.
+
+01:06:53.020 --> 01:06:55.020
+Let's assume
+
+01:06:55.020 --> 01:06:57.020
+there is a rule
+
+01:06:57.020 --> 01:06:59.020
+that allows
+
+01:06:59.020 --> 01:07:01.020
+4 people
+
+01:07:01.020 --> 01:07:03.020
+to protect
+
+01:07:03.020 --> 01:07:05.020
+the interests of honest people.
+
+01:07:05.020 --> 01:07:07.020
+What do we do?
+
+01:07:07.020 --> 01:07:09.020
+We do
+
+01:07:09.020 --> 01:07:11.020
+that
+
+01:07:11.020 --> 01:07:13.020
+I don't care
+
+01:07:13.020 --> 01:07:15.020
+whether 1, 1, 1, 1 is a good person or a bad person.
+
+01:07:15.020 --> 01:07:17.020
+I tie
+
+01:07:17.020 --> 01:07:19.020
+the two people
+
+01:07:19.020 --> 01:07:21.020
+who like 1 together.
+
+01:07:21.020 --> 01:07:23.020
+It is
+
+01:07:23.020 --> 01:07:25.020
+a person.
+
+01:07:25.020 --> 01:07:27.020
+It is
+
+01:07:27.020 --> 01:07:29.020
+a fatter person.
+
+01:07:29.020 --> 01:07:31.020
+They all like 1.
+
+01:07:31.020 --> 01:07:33.020
+The fatter person
+
+01:07:33.020 --> 01:07:35.020
+likes 1.
+
+01:07:35.020 --> 01:07:37.020
+If
+
+01:07:37.020 --> 01:07:39.020
+there is a rule that allows
+
+01:07:39.020 --> 01:07:41.020
+4 people to protect
+
+01:07:41.020 --> 01:07:43.020
+the interests of honest people,
+
+01:07:43.020 --> 01:07:45.020
+I tie
+
+01:07:45.020 --> 01:07:47.020
+the two people who like 1 together.
+
+01:07:47.020 --> 01:07:49.020
+Then,
+
+01:07:49.020 --> 01:07:51.020
+they
+
+01:07:51.020 --> 01:07:53.020
+play according to the rules of 4 people.
+
+01:07:53.020 --> 01:07:55.020
+I don't care
+
+01:07:55.020 --> 01:07:57.020
+whether it is a good person or a bad person.
+
+01:07:57.020 --> 01:07:59.020
+After
+
+01:07:59.020 --> 01:08:01.020
+I tie
+
+01:08:01.020 --> 01:08:03.020
+the two people together,
+
+01:08:03.020 --> 01:08:05.020
+there are only 3 people left.
+
+01:08:05.020 --> 01:08:07.020
+Their preferences
+
+01:08:07.020 --> 01:08:09.020
+are 0, 1, 1.
+
+01:08:09.020 --> 01:08:11.020
+Their preferences are 1.
+
+01:08:11.020 --> 01:08:13.020
+So, I tie
+
+01:08:13.020 --> 01:08:15.020
+their preferences to 1.
+
+01:08:17.020 --> 01:08:19.020
+If
+
+01:08:19.020 --> 01:08:21.020
+there is a rule that allows
+
+01:08:21.020 --> 01:08:23.020
+4 people to protect the interests of honest people,
+
+01:08:23.020 --> 01:08:25.020
+it is a rule
+
+01:08:25.020 --> 01:08:27.020
+that allows 3 people
+
+01:08:27.020 --> 01:08:29.020
+to protect the interests of honest people.
+
+01:08:29.020 --> 01:08:31.020
+Okay.
+
+01:08:31.020 --> 01:08:33.020
+Okay.
+
+01:08:33.020 --> 01:08:35.020
+It feels like a math problem.
+
+01:08:35.020 --> 01:08:37.020
+Yes.
+
+01:08:37.020 --> 01:08:39.020
+It's what we often do.
+
+01:08:39.020 --> 01:08:41.020
+We don't have a good tool.
+
+01:08:41.020 --> 01:08:43.020
+Is it the same
+
+01:08:43.020 --> 01:08:45.020
+for other preferences?
+
+01:08:45.020 --> 01:08:47.020
+Do you tie all 0s
+
+01:08:47.020 --> 01:08:49.020
+and 1s together?
+
+01:08:49.020 --> 01:08:51.020
+This question
+
+01:08:51.020 --> 01:08:53.020
+is a good question.
+
+01:08:53.020 --> 01:08:55.020
+We tie
+
+01:08:55.020 --> 01:08:57.020
+0s and 1s together.
+
+01:08:57.020 --> 01:08:59.020
+Then, we tie
+
+01:08:59.020 --> 01:09:01.020
+other 0s and 1s together.
+
+01:09:01.020 --> 01:09:03.020
+Why do we tie like this?
+
+01:09:03.020 --> 01:09:05.020
+It's because
+
+01:09:05.020 --> 01:09:07.020
+Cliff's result said
+
+01:09:07.020 --> 01:09:09.020
+that
+
+01:09:09.020 --> 01:09:11.020
+when you play
+
+01:09:11.020 --> 01:09:13.020
+with two parties,
+
+01:09:13.020 --> 01:09:15.020
+you must have a way
+
+01:09:15.020 --> 01:09:17.020
+to make them leave
+
+01:09:17.020 --> 01:09:19.020
+0.5.
+
+01:09:19.020 --> 01:09:21.020
+I don't know
+
+01:09:21.020 --> 01:09:23.020
+if it's from 0.5 to 1
+
+01:09:23.020 --> 01:09:25.020
+or from 0.5 to 0.
+
+01:09:25.020 --> 01:09:27.020
+But there must be one side.
+
+01:09:27.020 --> 01:09:29.020
+I don't know which side it is.
+
+01:09:29.020 --> 01:09:31.020
+He didn't tell you.
+
+01:09:31.020 --> 01:09:33.020
+But after
+
+01:09:33.020 --> 01:09:35.020
+tying 0s and 1s together,
+
+01:09:35.020 --> 01:09:37.020
+if it's one side,
+
+01:09:37.020 --> 01:09:39.020
+in my definition of
+
+01:09:39.020 --> 01:09:41.020
+maximum,
+
+01:09:41.020 --> 01:09:43.020
+it will definitely hurt
+
+01:09:43.020 --> 01:09:45.020
+one of the 0s and 1s.
+
+01:09:45.020 --> 01:09:47.020
+Because 0s and 1s are tied together.
+
+01:09:47.020 --> 01:09:49.020
+Okay.
+
+01:09:49.020 --> 01:09:51.020
+It doesn't matter which side it is.
+
+01:09:51.020 --> 01:09:53.020
+So,
+
+01:09:53.020 --> 01:09:55.020
+I can get
+
+01:09:55.020 --> 01:09:57.020
+a contradiction like this.
+
+01:09:57.020 --> 01:09:59.020
+Okay.
+
+01:09:59.020 --> 01:10:01.020
+It's amazing.
+
+01:10:01.020 --> 01:10:03.020
+The thing is that
+
+01:10:03.020 --> 01:10:05.020
+you can go down
+
+01:10:05.020 --> 01:10:07.020
+a few pages.
+
+01:10:07.020 --> 01:10:09.020
+I don't remember.
+
+01:10:09.020 --> 01:10:11.020
+Go down again.
+
+01:10:11.020 --> 01:10:13.020
+This is also right.
+
+01:10:13.020 --> 01:10:15.020
+The method of
+
+01:10:15.020 --> 01:10:17.020
+strong Nash equilibrium
+
+01:10:17.020 --> 01:10:19.020
+is that you call a 0 and
+
+01:10:19.020 --> 01:10:21.020
+a 1 out.
+
+01:10:21.020 --> 01:10:23.020
+Then they are tied together.
+
+01:10:23.020 --> 01:10:25.020
+The reason why this method
+
+01:10:25.020 --> 01:10:27.020
+can't be used in Max and Min
+
+01:10:27.020 --> 01:10:29.020
+is that you may choose
+
+01:10:29.020 --> 01:10:31.020
+0 and 1.
+
+01:10:31.020 --> 01:10:33.020
+One of them is a bad guy.
+
+01:10:35.020 --> 01:10:37.020
+I'll cut it here.
+
+01:10:41.020 --> 01:10:43.020
+I sent two representatives
+
+01:10:43.020 --> 01:10:45.020
+to point at the board.
+
+01:10:47.020 --> 01:10:49.020
+Why this thing
+
+01:10:49.020 --> 01:10:51.020
+doesn't work
+
+01:10:51.020 --> 01:10:53.020
+in Max and Min?
+
+01:10:53.020 --> 01:10:55.020
+The question is like this.
+
+01:10:55.020 --> 01:10:57.020
+The definition of Max and Min
+
+01:10:57.020 --> 01:10:59.020
+is that
+
+01:10:59.020 --> 01:11:01.020
+the benefits of good people
+
+01:11:01.020 --> 01:11:03.020
+can't be harmed.
+
+01:11:03.020 --> 01:11:05.020
+So,
+
+01:11:05.020 --> 01:11:07.020
+in the definition of Max and Min,
+
+01:11:09.020 --> 01:11:11.020
+the bad guy doesn't care
+
+01:11:11.020 --> 01:11:13.020
+about his own benefits.
+
+01:11:13.020 --> 01:11:15.020
+The bad guy
+
+01:11:15.020 --> 01:11:17.020
+can lose money.
+
+01:11:17.020 --> 01:11:19.020
+But the good guy
+
+01:11:19.020 --> 01:11:21.020
+just wants to harm the good guy maliciously.
+
+01:11:21.020 --> 01:11:23.020
+For example,
+
+01:11:23.020 --> 01:11:25.020
+the red one is the bad guy
+
+01:11:25.020 --> 01:11:27.020
+and the green one is the good guy.
+
+01:11:27.020 --> 01:11:29.020
+Can you tell the difference?
+
+01:11:29.020 --> 01:11:31.020
+The red one is the bad guy
+
+01:11:31.020 --> 01:11:33.020
+and the green one is the good guy.
+
+01:11:33.020 --> 01:11:35.020
+I can tell at the beginning.
+
+01:11:39.020 --> 01:11:41.020
+Sometimes the color is not enough.
+
+01:11:41.020 --> 01:11:43.020
+Because some people
+
+01:11:43.020 --> 01:11:45.020
+have color blindness.
+
+01:11:47.020 --> 01:11:49.020
+There are three bad guys
+
+01:11:49.020 --> 01:11:51.020
+and two good guys.
+
+01:11:51.020 --> 01:11:53.020
+If the bad guy just wants to harm
+
+01:11:53.020 --> 01:11:55.020
+the good guy maliciously,
+
+01:11:55.020 --> 01:11:57.020
+he can point to the bad guy
+
+01:11:57.020 --> 01:11:59.020
+and the good guy will like him.
+
+01:11:59.020 --> 01:12:01.020
+Then he will be harmed.
+
+01:12:01.020 --> 01:12:03.020
+He doesn't care.
+
+01:12:03.020 --> 01:12:05.020
+The good guy is happy.
+
+01:12:05.020 --> 01:12:07.020
+But as long as the good guy is not happy,
+
+01:12:07.020 --> 01:12:09.020
+Max and Min won't work.
+
+01:12:11.020 --> 01:12:13.020
+So, this thing
+
+01:12:13.020 --> 01:12:15.020
+doesn't work in Max and Min.
+
+01:12:15.020 --> 01:12:17.020
+Does it have anything to do with
+
+01:12:17.020 --> 01:12:19.020
+the question
+
+01:12:19.020 --> 01:12:21.020
+the host asked at the beginning?
+
+01:12:21.020 --> 01:12:23.020
+Do I consider
+
+01:12:23.020 --> 01:12:25.020
+all the benefits of the good guy
+
+01:12:25.020 --> 01:12:27.020
+or the benefits of the good guy
+
+01:12:27.020 --> 01:12:29.020
+individually?
+
+01:12:29.020 --> 01:12:31.020
+My strictest condition
+
+01:12:31.020 --> 01:12:33.020
+is that I can't harm
+
+01:12:33.020 --> 01:12:35.020
+every benefit of the good guy.
+
+01:12:35.020 --> 01:12:37.020
+So, Max and Min
+
+01:12:37.020 --> 01:12:39.020
+can't harm every good guy.
+
+01:12:39.020 --> 01:12:41.020
+Yes.
+
+01:12:45.020 --> 01:12:47.020
+This is a difficult question.
+
+01:12:47.020 --> 01:12:49.020
+The definition
+
+01:12:49.020 --> 01:12:51.020
+is tricky.
+
+01:12:51.020 --> 01:12:53.020
+There will be a lot of groups
+
+01:12:53.020 --> 01:12:55.020
+after the number of people.
+
+01:12:57.020 --> 01:12:59.020
+I have a question
+
+01:12:59.020 --> 01:13:01.020
+that is unrelated.
+
+01:13:01.020 --> 01:13:03.020
+If
+
+01:13:03.020 --> 01:13:05.020
+there is
+
+01:13:05.020 --> 01:13:07.020
+something
+
+01:13:07.020 --> 01:13:09.020
+that is completely random
+
+01:13:09.020 --> 01:13:11.020
+and everyone agrees that it is random.
+
+01:13:11.020 --> 01:13:13.020
+For example,
+
+01:13:13.020 --> 01:13:15.020
+there is a quantum stack.
+
+01:13:15.020 --> 01:13:17.020
+For example, the radiation of the sun.
+
+01:13:17.020 --> 01:13:19.020
+This is also possible.
+
+01:13:19.020 --> 01:13:21.020
+But you have to observe
+
+01:13:21.020 --> 01:13:23.020
+the same thing in two places.
+
+01:13:23.020 --> 01:13:25.020
+Yes.
+
+01:13:25.020 --> 01:13:27.020
+There is
+
+01:13:27.020 --> 01:13:29.020
+something called quantum entanglement.
+
+01:13:31.020 --> 01:13:33.020
+Do you know this?
+
+01:13:33.020 --> 01:13:35.020
+I know.
+
+01:13:35.020 --> 01:13:37.020
+There are two examples.
+
+01:13:37.020 --> 01:13:39.020
+For example,
+
+01:13:39.020 --> 01:13:41.020
+they have to spin up together
+
+01:13:41.020 --> 01:13:43.020
+and spin down together.
+
+01:13:43.020 --> 01:13:45.020
+I assign these two
+
+01:13:45.020 --> 01:13:47.020
+to two people
+
+01:13:47.020 --> 01:13:49.020
+who are far away.
+
+01:13:49.020 --> 01:13:51.020
+They observe this example.
+
+01:13:51.020 --> 01:13:53.020
+Spin up
+
+01:13:53.020 --> 01:13:55.020
+means one place.
+
+01:13:55.020 --> 01:13:57.020
+Spin down means another place.
+
+01:13:57.020 --> 01:13:59.020
+In this way,
+
+01:13:59.020 --> 01:14:01.020
+can we solve this problem?
+
+01:14:01.020 --> 01:14:03.020
+We don't need these protocols.
+
+01:14:03.020 --> 01:14:05.020
+There will be
+
+01:14:05.020 --> 01:14:07.020
+some ways
+
+01:14:07.020 --> 01:14:09.020
+that you can operate.
+
+01:14:09.020 --> 01:14:11.020
+Actually,
+
+01:14:11.020 --> 01:14:13.020
+I know entanglement,
+
+01:14:13.020 --> 01:14:15.020
+but I'm not familiar
+
+01:14:15.020 --> 01:14:17.020
+with how to do it.
+
+01:14:17.020 --> 01:14:19.020
+For example,
+
+01:14:19.020 --> 01:14:21.020
+you mentioned that
+
+01:14:21.020 --> 01:14:23.020
+you have to create two examples
+
+01:14:23.020 --> 01:14:25.020
+that have entanglement.
+
+01:14:25.020 --> 01:14:27.020
+I'm not
+
+01:14:27.020 --> 01:14:29.020
+familiar with it.
+
+01:14:29.020 --> 01:14:31.020
+Can we
+
+01:14:31.020 --> 01:14:33.020
+do this entanglement
+
+01:14:33.020 --> 01:14:35.020
+in advance
+
+01:14:35.020 --> 01:14:37.020
+and
+
+01:14:37.020 --> 01:14:39.020
+bias to
+
+01:14:39.020 --> 01:14:41.020
+one side?
+
+01:14:41.020 --> 01:14:43.020
+I'm not sure.
+
+01:14:43.020 --> 01:14:45.020
+Maybe.
+
+01:14:45.020 --> 01:14:47.020
+It seems that
+
+01:14:47.020 --> 01:14:49.020
+we need some proof
+
+01:14:49.020 --> 01:14:51.020
+to prove that
+
+01:14:51.020 --> 01:14:53.020
+the entanglement
+
+01:14:53.020 --> 01:14:55.020
+we created at the beginning
+
+01:14:55.020 --> 01:14:57.020
+is fair.
+
+01:14:57.020 --> 01:14:59.020
+I really don't know.
+
+01:14:59.020 --> 01:15:01.020
+I just heard it.
+
+01:15:01.020 --> 01:15:03.020
+After creating the entanglement,
+
+01:15:03.020 --> 01:15:05.020
+you have to give
+
+01:15:05.020 --> 01:15:07.020
+these two entanglement to two people.
+
+01:15:09.020 --> 01:15:11.020
+In this
+
+01:15:11.020 --> 01:15:13.020
+long-distance definition,
+
+01:15:13.020 --> 01:15:15.020
+it may not be
+
+01:15:15.020 --> 01:15:17.020
+very suitable.
+
+01:15:17.020 --> 01:15:19.020
+I don't know if there is a better explanation
+
+01:15:19.020 --> 01:15:21.020
+that it can't be done.
+
+01:15:21.020 --> 01:15:23.020
+But you have to
+
+01:15:23.020 --> 01:15:25.020
+give two bits
+
+01:15:25.020 --> 01:15:27.020
+to two people,
+
+01:15:27.020 --> 01:15:29.020
+or give two examples to two people.
+
+01:15:29.020 --> 01:15:31.020
+Actually,
+
+01:15:31.020 --> 01:15:33.020
+it doesn't
+
+01:15:33.020 --> 01:15:35.020
+go well with this
+
+01:15:35.020 --> 01:15:37.020
+definition.
+
+01:15:37.020 --> 01:15:39.020
+Why don't I
+
+01:15:39.020 --> 01:15:41.020
+create an entanglement
+
+01:15:41.020 --> 01:15:43.020
+and give the result to two people?
+
+01:15:43.020 --> 01:15:45.020
+OK.
+
+01:15:45.020 --> 01:15:47.020
+It makes sense.
+
+01:15:47.020 --> 01:15:49.020
+It doesn't seem that
+
+01:15:49.020 --> 01:15:51.020
+it can be solved.
+
+01:15:51.020 --> 01:15:53.020
+But I think
+
+01:15:53.020 --> 01:15:55.020
+there is room for discussion.
+
+01:15:55.020 --> 01:15:57.020
+Because some
+
+01:15:57.020 --> 01:15:59.020
+can prove
+
+01:15:59.020 --> 01:16:01.020
+that the entanglement
+
+01:16:01.020 --> 01:16:03.020
+is fair.
+
+01:16:03.020 --> 01:16:05.020
+Another thing
+
+01:16:05.020 --> 01:16:07.020
+I want to ask is
+
+01:16:07.020 --> 01:16:09.020
+at the beginning,
+
+01:16:09.020 --> 01:16:11.020
+what I said
+
+01:16:11.020 --> 01:16:13.020
+is that
+
+01:16:13.020 --> 01:16:15.020
+1, 2, 3,
+
+01:16:15.020 --> 01:16:17.020
+everyone says a number at the same time,
+
+01:16:17.020 --> 01:16:19.020
+and then X, O, 2.
+
+01:16:19.020 --> 01:16:21.020
+Why can't
+
+01:16:21.020 --> 01:16:23.020
+everyone
+
+01:16:23.020 --> 01:16:25.020
+say X, O, 2
+
+01:16:25.020 --> 01:16:27.020
+at the same time
+
+01:16:27.020 --> 01:16:29.020
+and then
+
+01:16:29.020 --> 01:16:31.020
+say the number?
+
+01:16:31.020 --> 01:16:33.020
+If it's
+
+01:16:33.020 --> 01:16:35.020
+more than 12 o'clock,
+
+01:16:35.020 --> 01:16:37.020
+you lose.
+
+01:16:37.020 --> 01:16:39.020
+It's the same with fail-stop.
+
+01:16:39.020 --> 01:16:41.020
+Fail-stop means
+
+01:16:41.020 --> 01:16:43.020
+if you are slow,
+
+01:16:43.020 --> 01:16:45.020
+you lose.
+
+01:16:45.020 --> 01:16:47.020
+Yes, but
+
+01:16:47.020 --> 01:16:49.020
+I think
+
+01:16:49.020 --> 01:16:51.020
+at the same time,
+
+01:16:51.020 --> 01:16:53.020
+it's difficult in practice.
+
+01:16:53.020 --> 01:16:55.020
+One is in China,
+
+01:16:55.020 --> 01:16:57.020
+the other is in the U.S.
+
+01:16:57.020 --> 01:16:59.020
+The distance is
+
+01:16:59.020 --> 01:17:01.020
+quite far.
+
+01:17:01.020 --> 01:17:03.020
+The transmission message
+
+01:17:03.020 --> 01:17:05.020
+may also have a delay
+
+01:17:05.020 --> 01:17:07.020
+of 0.0 seconds.
+
+01:17:07.020 --> 01:17:09.020
+0.0 seconds
+
+01:17:09.020 --> 01:17:11.020
+plus
+
+01:17:11.020 --> 01:17:13.020
+on the food,
+
+01:17:13.020 --> 01:17:15.020
+if the light
+
+01:17:15.020 --> 01:17:17.020
+is directly
+
+01:17:17.020 --> 01:17:19.020
+connected,
+
+01:17:19.020 --> 01:17:21.020
+it may be OK.
+
+01:17:21.020 --> 01:17:23.020
+But the network on the food
+
+01:17:23.020 --> 01:17:25.020
+has passed many host
+
+01:17:25.020 --> 01:17:27.020
+and the delay
+
+01:17:27.020 --> 01:17:29.020
+may be almost 1 second.
+
+01:17:29.020 --> 01:17:31.020
+You can't be sure
+
+01:17:31.020 --> 01:17:33.020
+how much time is there.
+
+01:17:33.020 --> 01:17:35.020
+59 minutes and 59 seconds.
+
+01:17:35.020 --> 01:17:37.020
+Is 1 second enough?
+
+01:17:37.020 --> 01:17:39.020
+Or
+
+01:17:39.020 --> 01:17:41.020
+too much
+
+01:17:41.020 --> 01:17:43.020
+will be a bit slow.
+
+01:17:43.020 --> 01:17:45.020
+It's hard to decide.
+
+01:17:45.020 --> 01:17:47.020
+At the same time,
+
+01:17:47.020 --> 01:17:49.020
+this is mainly
+
+01:17:49.020 --> 01:17:51.020
+difficult to do on the food.
+
+01:17:51.020 --> 01:17:53.020
+So people think
+
+01:17:53.020 --> 01:17:55.020
+if you can't do it
+
+01:17:55.020 --> 01:17:57.020
+or you can't prove it,
+
+01:17:57.020 --> 01:17:59.020
+you give up.
+
+01:18:03.020 --> 01:18:05.020
+Failstuff
+
+01:18:05.020 --> 01:18:07.020
+also requires a time.
+
+01:18:07.020 --> 01:18:09.020
+Yes, failstuff
+
+01:18:09.020 --> 01:18:11.020
+is...
+
+01:18:11.020 --> 01:18:13.020
+Yes, failstuff is...
+
+01:18:13.020 --> 01:18:15.020
+Let me put it this way.
+
+01:18:15.020 --> 01:18:17.020
+At the same time,
+
+01:18:17.020 --> 01:18:19.020
+the rules are tight.
+
+01:18:19.020 --> 01:18:21.020
+At the same time,
+
+01:18:21.020 --> 01:18:23.020
+after my message
+
+01:18:23.020 --> 01:18:25.020
+is sent out,
+
+01:18:25.020 --> 01:18:27.020
+it takes at least
+
+01:18:27.020 --> 01:18:29.020
+1 second to send it.
+
+01:18:29.020 --> 01:18:31.020
+It may not work if I arrive early.
+
+01:18:31.020 --> 01:18:33.020
+Because if I arrive early,
+
+01:18:33.020 --> 01:18:35.020
+there will be a relatively slow output.
+
+01:18:37.020 --> 01:18:39.020
+It won't work if I arrive late.
+
+01:18:39.020 --> 01:18:41.020
+Is it slow output
+
+01:18:41.020 --> 01:18:43.020
+or is it
+
+01:18:43.020 --> 01:18:45.020
+slow? I don't know.
+
+01:18:45.020 --> 01:18:47.020
+But failstuff
+
+01:18:47.020 --> 01:18:49.020
+has a relatively large
+
+01:18:49.020 --> 01:18:51.020
+range.
+
+01:18:51.020 --> 01:18:53.020
+I can
+
+01:18:53.020 --> 01:18:55.020
+arrive in 0 seconds
+
+01:18:55.020 --> 01:18:57.020
+or 10 minutes.
+
+01:18:59.020 --> 01:19:01.020
+So the range is relatively large.
+
+01:19:01.020 --> 01:19:03.020
+If I can't wait for you for 10 minutes
+
+01:19:03.020 --> 01:19:05.020
+and you haven't sent it out,
+
+01:19:05.020 --> 01:19:07.020
+it's just
+
+01:19:07.020 --> 01:19:09.020
+1 second
+
+01:19:09.020 --> 01:19:11.020
+or 1 minute
+
+01:19:11.020 --> 01:19:13.020
+to send it out.
+
+01:19:13.020 --> 01:19:15.020
+So the
+
+01:19:15.020 --> 01:19:17.020
+condition is
+
+01:19:17.020 --> 01:19:19.020
+strictly
+
+01:19:19.020 --> 01:19:21.020
+weak.
+
+01:19:25.020 --> 01:19:27.020
+Very interesting talk. Thank you.
+
+01:19:27.020 --> 01:19:29.020
+Thank you.
+
+01:19:29.020 --> 01:19:31.020
+Actually,
+
+01:19:31.020 --> 01:19:33.020
+it's been more than 10 minutes.
+
+01:19:33.020 --> 01:19:35.020
+Please turn on
+
+01:19:35.020 --> 01:19:37.020
+the microphone again.
+
+01:19:37.020 --> 01:19:39.020
+Thank you to our speaker, Weikai.
+
+01:19:39.020 --> 01:19:41.020
+Thank you, everyone.
+
+01:19:41.020 --> 01:19:43.020
+If you have any questions,
+
+01:19:43.020 --> 01:19:45.020
+you can
+
+01:19:45.020 --> 01:19:47.020
+go to our website and find
+
+01:19:47.020 --> 01:19:49.020
+Weikai's page.
+
+01:19:49.020 --> 01:19:51.020
+It's on the right side of our website.
+
+01:19:51.020 --> 01:19:53.020
+You can click and see his contact information.
+
+01:19:53.020 --> 01:19:55.020
+Or you can also search
+
+01:19:55.020 --> 01:19:57.020
+Weikai or Weikai's paper.
+
+01:19:57.020 --> 01:19:59.020
+You can also see this information.
+
+01:19:59.020 --> 01:20:01.020
+If you are interested in his paper,
+
+01:20:01.020 --> 01:20:03.020
+he just wrote
+
+01:20:03.020 --> 01:20:05.020
+on our
+
+01:20:05.020 --> 01:20:07.020
+screen.
+
+01:20:07.020 --> 01:20:09.020
+You can also see
+
+01:20:09.020 --> 01:20:11.020
+Weikai's speech
+
+01:20:11.020 --> 01:20:13.020
+in a few days.
+
+01:20:13.020 --> 01:20:15.020
+You can also
+
+01:20:15.020 --> 01:20:17.020
+contact Weikai
+
+01:20:17.020 --> 01:20:19.020
+and discuss more.
+
+01:20:19.020 --> 01:20:21.020
+Thank you again.
+
+01:20:21.020 --> 01:20:23.020
+Thank you for attending today's Terra Talk.
+
+01:20:23.020 --> 01:20:25.020
+That's all for today.
+
+01:20:25.020 --> 01:20:27.020
+Thank you, everyone. Bye.
+

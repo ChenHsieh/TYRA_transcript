@@ -1,0 +1,798 @@
+Hello, everyone.
+I am honored to be able to introduce Dr. Sun today.
+Dr. Sun completed her bachelor's degree from 1999 to 2013
+in Plant Pathology and Microbiology at Taiwan University.
+After completing her bachelor's degree from 2003 to 2005,
+she completed her master's degree in Plant Pathology and Microbiology at the same university in Taiwan.
+She then completed her Ph.D. degree from 2005 to 2010 at Purdue University.
+Her major is Chemical Biology.
+After completing her Ph.D. degree, she went to MIT to do her postdoc.
+After four years, she went to UCSF to do her second postdoc and assistant researcher.
+This year, she started her new job as a Senior Scientific Researcher at Genentech.
+Today, Dr. Sun is going to talk about
+Use Single-Cell RNA-Seq to Tackle Complex Biology.
+Now, let's welcome Dr. Sun to give her presentation.
+Hello, everyone. I am Dr. Sun.
+Sorry, my voice is a bit hoarse due to my cold.
+Today, I am going to talk in a simple and easy-to-understand way.
+Just in case, some of you may not have a background in biology.
+I hope you can at least learn about Single-Cell RNA-Seq.
+Here is my personal email and LinkedIn account.
+Although my LinkedIn account is not up to date,
+please feel free to connect with me.
+I will be speaking in Chinese today,
+but I am not sure what the term is in Chinese.
+If you have any questions, please feel free to contact me.
+I don't want to make it too complicated.
+I will be focusing on technology.
+I am currently working at a company,
+so I can't really talk about research projects here.
+I will try my best to talk about the applications of this technology,
+and the principles behind it.
+I hope this will be helpful to those who are interested.
+Before we get into the technology,
+I will briefly review the biology of NTU.
+As you may already know, our body is made up of cells.
+Many cells form organs,
+and eventually form organs in our body,
+becoming a functional human body.
+An interesting fact is that our body is composed of over 20 different types of cells.
+You can see that their forms and functions are very different.
+For example, there are nerve cells, blood cells, muscle cells,
+and even different types of cells in different organs.
+Their functions and forms are very different.
+Let's take a deeper look.
+As you can see, our body is made up of cells.
+Each cell has a nucleus,
+which is a red dot.
+In English, it's called a nucleus.
+In Chinese, it's called a cell nucleus.
+In this cell nucleus, there is a chromosome.
+This chromosome is made up of our genes.
+I think everyone has a concept of genes.
+Genes are our genetic material.
+Genes are our genetic material.
+They are our genetic material.
+Genes are our genetic material.
+Genes are our genetic material.
+In this definition, genes are a DNA segment.
+They can be converted into a useful molecule.
+They can perform the functions and functions that they need.
+The reason for the general description of gene code is that DNA is a so-called ATCG.
+DNA is a so-called ATCG.
+So, if we talk about genes,
+the sequence obtained may be composed of these four ATCGs.
+This is our so-called gene code.
+In molecular biology, there is a so-called central dogma.
+The principle is that we have this genetic material.
+Its main structure is DNA.
+It will be transcribed into RNA.
+RNA will be further transcribed into protein.
+This protein can perform various biological functions.
+As time goes by, the central dogma is gradually extended to more different forms.
+We can even find more different directions from the virus or other systems.
+Today's technology involves a discovery.
+In the past, we thought that DNA was transcribed into RNA.
+But later, scientists found another enzyme that can reverse transcribe RNA back to DNA.
+With the help of this enzyme, many related extension technologies can be built on this basis.
+Today, we will mainly talk about RNA-seq.
+Another way to talk about it is transcriptional analysis or gene expression profiling.
+Basically, we can use gene expression to understand human physiology.
+This picture shows a major timeline and milestone in molecular biology and sequencing technology.
+As many of you know, the first discovery was in 1953.
+In 1977, Sanger's DNA sequencing was developed.
+Later, PCR technology was also developed.
+PCR technology allows us to rapidly increase our DNA in the laboratory.
+Many related technologies can be built on this basis.
+In 1990, the Human Genome Project was launched.
+After 13 years, the Human Genome Project was established.
+At this stage, sequencing costs are still very high.
+It is difficult to operate a sequencing project in a lab.
+In 2005, the next-generation sequencing technology was introduced.
+This technology has greatly reduced the cost of sequencing.
+The next-generation sequencing technology is still widely used.
+In recent years, the third-generation sequencing technology was introduced.
+When was single-cell RNA-seq developed?
+The first report on single-cell RNA-seq was made in 2009.
+Because of the gradual maturation of the technology,
+especially the rapid reduction of sequencing costs,
+single-cell RNA-seq can be operated more widely.
+Now, many extended protocols, technologies, and companies continue to develop rapidly in this field.
+Why do we need to do single-cell RNA-seq?
+Before single-cell RNA-seq, we can look at gene profiling.
+For example, what is the difference between a cancer cell and a normal cell?
+For example, we have a healthy sample and a diseased sample.
+After sequencing, we can compare the gene profiling of these two cells.
+Then we can find out the disease gene.
+Or we can find out which signaling pathway is further activated or inhibited.
+But there is a problem.
+For example, a tumor may contain a variety of different cells.
+There may be immune cells, tumor cells, fibroblasts, and so on.
+If the tumor is broken down and the RNA-seq is obtained,
+the result is a variety of different cells.
+From this heat map,
+we can still see that some genes are inhibited or activated in the diseased sample.
+It is difficult to determine if the disease is caused by immune cells, fibroblasts, or unknown gene cells.
+At this time, if we can do transcriptome profiling at single-cell resolution,
+we can have a deeper understanding of each cell in a tumor tissue.
+Here are some interesting graphs that I saw on the Internet.
+It can give you an idea of why the so-called Bok analysis may cause some misjudgment.
+For example, in this graph,
+each point here has the so-called x-value and y-value.
+Then you can do various calculations.
+For example, the x-value is like this,
+the y-value is like this,
+the x-deviation is like this,
+and the y-deviation is like this.
+But even if you calculate all these values,
+what about the relationship between x and y?
+So if you just do a Bok analysis,
+you may not be able to express the so-called structure behind it.
+Another interesting graph is that
+sometimes if you do a Bok analysis,
+you may get a conclusion that leads you to a wrong direction.
+For example, suppose this is your sample.
+So your sample contains a lot of different animals.
+Then you do a Bok analysis to see what this creature might look like.
+Then you may come to a conclusion that this is what this creature should look like.
+Then you will find that it is very different from the so-called real state.
+The so-called single-celled analysis basically has different methods.
+That is to say, under this technology,
+you can analyze each animal separately
+and find a lot of different features.
+Then based on the features you find,
+you start to do the so-called clustering.
+For example, this graph shows that
+you have already found two features.
+One is Firm and the other is Venom.
+Then even if you just add two features like this,
+you can already cluster a lot of animals into at least two subsets.
+One big subset will be the snakes,
+which has the Venom but doesn't have Firm.
+Then the other big subset may be the so-called
+it doesn't have Venom, but it has Firm.
+When you can add more and more features,
+hopefully, finally, you will be able to
+one individual item will be clustered into one group.
+So this is the whole idea about why you need to do profiling at a single-cell level.
+Then generally in this single-cell field,
+one of their favorite metaphors is
+the so-called fruit smoothie and the so-called fruit salad.
+When you make a Borg RNC asset,
+it's very similar to the so-called fruit smoothie.
+Basically, you put all kinds of fruit and vegetables together.
+The taste you drink is basically
+an average taste of all ingredients.
+So you may not be able to know
+what ingredients are in this.
+Then maybe the ingredients you taste
+are some special strong ingredients.
+Maybe it's an apple, maybe it's a strawberry.
+But you can't know that
+maybe there's some cabbage in it or something else.
+Single-cell is like you're eating a fruit salad.
+Basically, you can taste each individual piece of the fruit.
+So somehow you'll know
+what kind of composition the fruit should be made of.
+So this so-called fruit smoothie to the fruit salad,
+basically what single-cell RNC wants to achieve
+is that you can show the individual cell type
+that causes the biological response or disease.
+Then this summary is a more scientific statement.
+So basically, the so-called Borg RNC
+measures the so-called average expression level
+for each cell across a population of cells.
+Basically, like I just said,
+if you're doing a cancer study,
+you have two samples.
+One is from healthy tissue,
+the other is from diseased tissue.
+Then you grind it up and compare the two samples.
+Its limitation is basically that
+if you want to study a more complex system today,
+for example, you want to study people's brains
+or some more complex organs,
+then this technology
+I'm afraid I can't give you a very clear result.
+Basically, what single-cell does,
+it measures the distribution of expression level
+for each gene across a population of the cells.
+So using this technology,
+every cell has a specific change
+that can be shown.
+Basically, now there are already a lot of
+so-called commercially available single-cell platforms on the market.
+Of course, they all have their own advantages and disadvantages.
+From my personal experience,
+I have two platforms of experience.
+One is the so-called Fluidigm C1.
+The other is called 10x Genomics.
+Now I'm going to quickly introduce
+the two single-cell platforms I've used before.
+Basically, in general,
+the so-called workflow of the single cell,
+its concept is basically the same.
+First of all, you have the so-called tissue of interest,
+either patient tissue or cells,
+which are some of the cells that you are interested in.
+Then, before doing single-cell RIC,
+the most important step is that you have to
+prepare in your own way
+the so-called single-cell suspension.
+Each person may have different approaches.
+For example,
+the so-called FACS to do the single-cell selection,
+or to do some so-called micro-dissection,
+to sort out the cells one by one.
+Then, when you can successfully complete
+your single-cell suspension,
+you basically inject it
+into either single-cell platform.
+Then, in the single-cell platform,
+what it does is basically
+to lyse the cell
+and extract the RNA in it.
+Then, this RNA is
+reverse transcribed
+into the cDNA.
+Then, this cDNA can be amplified
+through PCR.
+After the amplification,
+we build a library.
+Then, these libraries can be sent for sequencing.
+Like I said,
+this is the so-called sequencing result.
+You get the so-called sequence.
+This sequence is basically
+the sequence of A, T, C, and G.
+Then, you may be mapping.
+Because now many genes have been decoded,
+including human, mouse,
+and some species.
+So, according to the source of your sample,
+you can map it to the reference genome.
+Then, you can know
+what the expression of each gene is.
+Then, the last step is
+the so-called computational analysis.
+Because this single-cell RNAC technology
+is relatively new,
+the computational analysis
+is still under development.
+This is basically the same concept.
+You have a tissue that you are interested in.
+First, you have to be able to
+dissociate it into the so-called single-cell suspend.
+Then, there are all kinds of different systems
+that can make the single-cell suspension
+that you need.
+Then, you can further
+dissociate it into the single-cell platform.
+This picture is from a recent review paper.
+So, what you can see here is that
+the single-cell RNAC technology
+has developed very rapidly in recent years.
+It started with the first single-cell paper
+around 2009.
+At that time, the single-cell technology
+was still a very difficult technology.
+It was not possible to operate smoothly
+at every level.
+Then, the number of times you do it
+may be accumulated from dozens of times.
+However, as time goes by,
+there are more and more different types of
+different technologies,
+including the droplet method.
+There are also some
+random capture technologies,
+such as in-tube barcoding,
+and so on.
+Now, you can see that
+basically,
+the single-cell technology
+can already get a lot of cells
+in one experiment.
+Of course, there are many technologies
+that continue to develop
+to get more and more cells.
+Now, I would like to introduce
+two single-cell platforms
+that I have had hands-on experience with.
+The first one is FluDyn.
+FluDyn is probably the first single-cell
+RNA-seq technology in the market.
+Its basic process is very similar to what I just said.
+First, you need to be able to successfully
+dissociate your tissue.
+Basically, this technology
+captures cells to 96 well plate.
+Basically, all the so-called cell lysing,
+RT, and cDNA amplification
+happen in this machine.
+Its output is basically
+the cDNA after the amplification.
+Then you can make a barcode library
+and send for sequencing.
+This is the real situation of the C1 chip.
+This is an image under the microscope.
+You can see that
+this cell basically has a fluorescent label.
+So you can see that
+after running this chip,
+this cell is basically captured in this chip.
+Then all the reactions
+will happen in this reaction.
+Finally, when this reaction is completed,
+you get the cDNA after the amplification.
+Then you can further build your library
+and send for sequencing.
+Then you will get your data.
+According to my personal experience,
+the C1 chip has some advantages
+but also some disadvantages.
+Its advantages are...
+Oh, I may have made a mistake here.
+The first one is relatively long prep time.
+This should be its disadvantage.
+Its prep time is actually very long.
+Of course, if you let your sample
+sit on the ice all the time,
+you may worry that
+its gene expression profile
+may change during that time.
+So basically, we hope that
+before we get the so-called
+light cell,
+the prep time can be as short as possible.
+But this C1 chip
+still has some very good advantages.
+For example, this set of technologies
+allows you to capture single cells
+under the microscope
+one by one.
+For example, this picture shows
+a very beautiful single cell.
+Some wells may not have single cells at all.
+Some wells may have multiple samples.
+Maybe later on,
+when you are building your library,
+you may ignore such samples.
+Because in the subsequent data analysis,
+you may not be able to judge
+whether the data you get is from one cell
+or multiple cells.
+Basically, its biggest disadvantage
+is the so-called throughput.
+Because basically,
+in the most primitive C1 chip,
+it can only capture 96 cells at a time.
+In the later version,
+it may be able to capture 800 at a time.
+But in fact, in reality,
+its efficiency is very poor.
+Maybe only 60% to 70% of the wells
+can capture single cells.
+So in fact,
+the number of cells you can get every time is extremely small.
+So this is the biggest problem with C1.
+And later on,
+a lot of research found that
+even some data that had already been published,
+they found that
+some of the results they got
+were quite related to batch.
+So this technology basically,
+in the current single cell field,
+a lot of people have turned to other better
+better technology choices.
+At present,
+the vast majority of single cell RNA-seq platforms,
+you will probably see,
+is from this company.
+This company is called 10X Genomics.
+Its core technology
+is basically called Gems.
+Gen Bits in Emulsion.
+So its idea is basically
+that it has a lot of these bits.
+And then these bits are basically
+I'm thinking the simplest way to do this is
+I'm going to show you a YouTube video.
+You should be able to quickly understand
+how this technology works.
+Okay.
+Oh, Dr. Sun,
+I'd like to ask if there's any sound in this video?
+Eh...
+It's music, so you can't hear the sound, right?
+Okay.
+But it's okay.
+It's not talking.
+It's not talking.
+Okay.
+Yeah, so...
+It's just background music.
+It's just background music.
+It's just background music.
+It's just background music.
+I think it's easier to use the video.
+Wait a minute.
+Sorry, I'll turn this off.
+So basically, you can see that this is the set of techniques.
+It's probably like this.
+If you compare these two sets of techniques,
+Of course, the biggest advantage of 10X Genomics is that its throughput is very high.
+We can capture more than 10,000 cells in each round.
+If you compare it to 96 or 800 cells, 10X is much better than C1.
+In addition, the advantage of the UMI set of techniques is that it involves some PCR processes.
+This process may also cause some experimental biases.
+The UMI set of techniques can basically help correct these biases.
+In addition, the process of generating Gems is extremely fast.
+It only takes 7 minutes to generate all the Gems.
+So basically, you can make sure that your cells are in a relatively intact state.
+Of course, there are some disadvantages.
+For example, 10X Genomics does not sequence all the transcripts.
+It only does a small part of 3'N.
+So if your research is looking at variants of Gems,
+You basically can't use 10X Genomics.
+On the other hand, many data analysis tools are designed for 10X Genomics.
+So if you use this set of systems,
+You may get more help in subsequent analysis.
+Next, let's talk about some real-world operations.
+In the real world,
+Before injecting into the 10X system,
+We have our tissue of interest.
+Then we may have different sample prep strategies.
+To control our single-cell suspension.
+Before injecting into the 10X chip,
+We basically need to do a cell quality control.
+We need to look at several parameters.
+For example, its viability.
+And basically, this cell looks like a single cell.
+And then there's the cell size.
+Let you know that your protocol is basically able to target the cells you're interested in.
+So the take-home message here will be that
+The sample prep protocol optimization is very important.
+For you to get high-quality single-cell data in the future.
+In the first step, it basically determines most of it.
+After your cell QC pass,
+You make sure that your single-cell suspension is a very good prep.
+Then you can basically inject into the 10X system.
+Then all these steps are basically like a kit.
+And then you can just run it through.
+And now Genome has developed its own computational tool.
+I can do the initial data processing.
+And then you get a so-called gene barcode matrix.
+And then you can use this matrix to do the follow-up analysis.
+For the whole workflow of single-cell data analysis,
+It's basically divided into two stages.
+The first stage, the yellow one, is basically the so-called sequencing QC.
+That is to say, you have to see if your sequencing data is good or bad.
+In this part, it's basically quite mature.
+Because I mentioned before that this technique has been used for many years.
+That set of techniques is basically the so-called sequencing QC.
+It can almost move the whole set to the single-cell RNAC part.
+So at this stage of sequencing QC,
+It's basically looking at the so-called read QC, alignment QC, and mapping QC.
+And now Genome has a set of its own software that can help you finish this thing.
+Finally, you can get a gene barcode matrix.
+And then when you get the gene barcode matrix,
+The red part here is basically the so-called further data processing.
+I'm going to take a little bit of time to talk about it.
+The so-called further data processing here.
+In the first step, I call it matrix LQC.
+What it means is that basically the most important point of this step is to say
+You have to get rid of some of the so-called low-quality cells first.
+Because if you keep these low-quality cells in your dataset,
+A big problem, it might cause a lot of noise.
+And then it might make your subsequent data analysis very difficult.
+So basically, after you remove some of the bad cells,
+You can take your data to further normalization.
+After normalization, you may need to face another problem.
+After all, single cell technology is based on single cell.
+So it will have a lot of unwanted variation.
+For example, it may be a batch effect.
+Then all the cells may be in different cell cycle status.
+These may be information that you are not interested in.
+Then you may need to use some computational methods to either regress it out.
+Or maybe give it a score.
+This may be a more detailed data analysis.
+Then, in short, when you clean up these data through this step,
+Then your dataset can do a lot of downstream data analysis.
+It includes clustering, cell type identification,
+And then you can do the so-called differential gene expression analysis.
+That is to say, you can compare the gene profiling between cell type A and cell type B.
+Which one is the same? Which one is different?
+Or maybe you have a very interested cell population.
+Then you can see what are the cell service markers.
+Or you can compare two situations.
+Then see which single-only pathway is being activated or inhibited.
+These things are very useful information for both basic biology and disease research.
+Then you can also do some network analysis.
+Then some people will even take this single cell to do some so-called pseudo-time analysis.
+The so-called pseudo-time is that we
+Because in a lot of research, such as developmental biology,
+It may look at a bit like a time course.
+That is, how does this cell change from one state to another state with the eyes of time?
+In the past, you may have to take samples at different times.
+Then do the analysis.
+The concept of single cell may be that you may not need to take so many time points.
+You may take one or two time points.
+Because every cell will give you some information.
+Not all cells are in the same state at the same time.
+So you can basically go through every cell.
+It may be at a certain stage in the process of transformation.
+Then it may be in this set of data.
+It will give you a so-called pseudo-time.
+Such information.
+So this is also a very powerful place for single cell.
+Let's talk about the so-called metric cell quality control.
+What is it like in a real state?
+How do you filter out the so-called unhealthy cells or cells you don't want?
+Of course, everyone may have their own criteria.
+Here are some of the most general ways.
+This set of data sets is basically published.
+It uses the so-called human blood cells to make a demo data.
+This scatter plot is the percentage of the mitochondrion versus the UMI number.
+This UMI number can be regarded as how many molecules have been detected.
+So-called how many transcripts have been detected.
+Then every point here basically represents a cell.
+You can see that the majority of the cells are in this position.
+In terms of biology, you will know that the vast majority of the cells are in this position.
+So these cells have a very high UMI number.
+It means that there are a lot of transcripts being detected.
+So it is possible that these signals are not coming from one single cell.
+These may be cell aggregation or multiplex.
+These may be the cells you want to get rid of.
+Because basically this signal is not coming from one single cell.
+Then some other cells you may want to get rid of are the so-called cells.
+So you can see that there are very few UMI that can be detected.
+But it has a very high percentage of mitochondrion.
+Usually when a cell is in an extremely unhealthy state, its mitochondrion will be very high.
+So this is also a general criterion that many people will set to filter out some cells that they think are not worth doing downstream analysis.
+The last cell that may be used for downstream analysis is this one.
+So what does this analysis look like?
+This is basically a result of unbiased clustering.
+So you can see that the sample here is from a human pbmc cell.
+Here, each point represents a cell.
+This type of clustering is called t-SNE clustering.
+Basically, it is a clustering algorithm.
+Basically, what you can understand is that the closer the cells are, the more similar their properties are.
+Basically, they look at, for example, which genes are expressed in this clustering cell, and which genes are expressed in this clustering cell.
+Then they can identify what kind of cells these may be.
+So in a single-cell RNAC experiment, you can quickly identify all kinds of different immune cells.
+For example, this clustering is basically a B-cell.
+The gene expression plotting here further confirms that when you see here, it becomes more purplish, which means that this particular gene is expressed in large quantities.
+This gene is basically a B-cell mutagen.
+So it further confirms that these cells do have B-cell properties.
+For example, this CD3E is basically a T-cell marker.
+It is also expressed in large quantities in this T-cell population.
+Once you get a result like this, you can further study and compare which cells are the same and which cells are different.
+Or you can compare two B-cells in a different sample.
+Then you can compare the gene profiling of the two B-cells to see what is different.
+In this way, the result you get will be a signal that only B-cells give you, rather than a result where all cells are averaged.
+This is roughly the concept of a single-cell.
+Due to time constraints, I will skip the last part.
+This is just an example of what a single-cell can do.
+To summarize, there are some things you may need to consider before conducting a single-cell experiment.
+In my current job, I have to support many single-cell projects on campus.
+Based on my experience with many different projects, I can see that data analysis is still the biggest bottleneck in this technology.
+In terms of generating the data, it is not that difficult.
+However, every time you generate a library of data, it may be over 1,000 cells.
+To be honest, it is not that easy to analyze the data.
+Even though we have a single-cell working group in our company, we still have to figure out what is the best normalization method and what is the best batch correction method.
+In terms of differential gene expression analysis, which method is the best for single-cell analysis?
+Basically, if you know exactly what you want to ask, your single-cell data will be more meaningful.
+However, if you are not sure what you want to see, your data will be lost.
+In my experience, it is very important to optimize the sample prep protocol before going into the single-cell platform.
+If you don't optimize your sample prep properly, you may not get the cells you need.
+Finally, I want to touch on the single-cell genomics.
+The single-cell genomics development is very fast.
+There are many new technologies for different biological problems.
+For example, the single-cell RAC we just talked about is a single-cell suspension.
+However, in some research, you may not be able to get the so-called living tissue.
+For example, if you want to study the brain, you may only get the tissue after a person's death.
+Or you may only get the frozen tissue.
+Basically, you can't get the tissue from a living cell.
+Therefore, there is a so-called single-cell RAC.
+The single-cell RAC takes the tissue from a dead cell and extracts the RNA from it.
+There are also other versions.
+For example, if you are interested in the recombination of T-cells and B-cells, there is also a single-cell RAC like this.
+If you are studying cancer T-cell therapy, it will be very useful.
+If you are studying the chromatin regulation, there is also a single-cell attack C protocol.
+You can see which part of the chromatin is open and which part is closed.
+There is also a new technology called CyC.
+CyC adds a DNA barcoding to the antibody.
+CyC turns it into another RNA molecule.
+CyC turns it into a pseudogene.
+When you run the single-cell platform, CyC becomes an additional signal.
+In addition to obtaining the RNA expression profile, you can also detect the cell service protein signal.
+This technology can also help you with cell type identification.
+Overall, CyC is still developing rapidly in the field of sample processing and data analysis.
+This is a brief introduction to CyC.
+If you are interested in CyC, you can learn more about it.
+Thank you Dr. Sun for giving us a presentation today.
+We will now open the Q&A section.
+I hope everyone can actively discuss or ask questions about what Dr. Sun just said.
+Thank you.
+I just saw a person in the chat asking,
+Do you mind sharing your presentation slides?
+Let's see if Dr. Sun can send the slides to you.
+Okay.
+Another person asked,
+Hi Dr. Sun, for in vivo study, would you suggest to do the qPCR on intracellular organ first,
+then based on the qPCR result to design the experimental for RNA-Seq?
+Do you have any suggestions for the qPCR and RNA-Seq?
+For qPCR,
+if there is a new project coming in,
+we will not go for single cell RNA-Seq.
+We will first look at the existing technology,
+such as qPCR or Bulk RNA-Seq.
+If you want to compare healthy and diseased,
+or knockout or wild-type mice,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If your qPCR can already answer your question,
+we usually prefer to ask them to use a relatively cheap and simple technology to confirm.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+If you want to compare healthy and diseased,
+you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+What software do you use to do batch correction for single-cell RNA-Seq?
+Are you asking about rPackage?
+Hello?
+Oh, rPackage.
+I can answer that.
+Are you doing single-cell RNA-Seq analysis?
+Yes.
+I believe Serat is doing single-cell RNA-Seq analysis.
+Have you heard of Serat?
+If you are interested,
+this is one of the most popular software out there
+and it is being developed for single-cell RNA-Seq.
+It is being developed for single-cell RNA-Seq.
+It is being developed for single-cell RNA-Seq.
+In terms of the CCA,
+it assumes that your dataset is co-variant.
+In terms of the CCA,
+it assumes that your dataset is co-variant.
+In terms of the CCA,
+it assumes that your dataset is co-variant.
+In terms of the CCA,
+it assumes that your dataset is co-variant.
+In terms of the CCA,
+it assumes that your dataset is co-variant.
+My personal favorite batch collection algorithm is MNN.
+My personal favorite batch collection algorithm is MNN.
+It is another package called SCRAN.
+It is another package called SCRAN.
+It is another package called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+It is another patch called SCRAN.
+it is another patch called SCRAN.
+it is another path called SCRAN.
+it is another patch called SCRAN.
+it is another patch called SCRAN.
+it is another patch called SCRAN.
+what is the method of using this feature?
+the SOLIDWORKS?
+can save months, few years, or million years.
+can save months, few years, or million years.
+can save months, few years, or million years.
+the EP-1 like Dropsy or CluedTie Audio see-ent performing
+the EP-1 like Dropsy or CluedTie Audio see-entering
+Jason can hardly get any good result
+because of the technical issue
+The EP-1 like Dropsy or CluedTie Audio see-entering
+Jason can hardly get any good result
+because of the technical issue
+Jason can hardly get any good result
+The EP-1 like Dropsy or CluedTie Audio see-entering
+Jason can hardly get any good result
+because of the technical issue
+Jason can hardly get any good result
+Jason can hardly get any good result
+The EP-1 like Dropsy or CluedTie Audio see-entering
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+The EP-1 like Dropsy or CluedTie Audio see-entering
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result
+Jason can hardly get any good result

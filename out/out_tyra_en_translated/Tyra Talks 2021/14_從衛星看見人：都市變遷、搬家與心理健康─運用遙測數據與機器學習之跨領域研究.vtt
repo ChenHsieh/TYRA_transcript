@@ -1,0 +1,5435 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Thank you all for attending this lecture.
+
+00:08.000 --> 00:13.000
+I am a PhD student at the University of Belize.
+
+00:13.000 --> 00:17.000
+I am very happy to be able to host this lecture for Project TIRA.
+
+00:17.000 --> 00:21.000
+From seeing people from satellites, urban transformation, moving and mental health,
+
+00:21.000 --> 00:24.000
+applying remote data and machine learning cross-field research.
+
+00:24.000 --> 00:27.000
+TIRA is a PhD student from various fields in Taiwan,
+
+00:27.000 --> 00:34.000
+an organization made up of PhD students, post-doctorate researchers and assistant professors.
+
+00:34.000 --> 00:40.000
+We hope to connect young researchers from different fields.
+
+00:40.000 --> 00:44.000
+Today's speaker, Chi-Hsing, we met in the first English class.
+
+00:44.000 --> 00:47.000
+We belong to different fields of science and technology.
+
+00:47.000 --> 00:51.000
+Recently, because of this lecture, we are in contact again.
+
+00:51.000 --> 00:54.000
+I think this is the purpose of Project TIRA.
+
+00:54.000 --> 00:58.000
+To connect scholars from different fields.
+
+00:58.000 --> 01:06.000
+Chi-Hsing just got his doctorate from the Department of Environmental Science at the University of Austria.
+
+01:06.000 --> 01:10.000
+He is currently a post-doctoral researcher at Yale University.
+
+01:10.000 --> 01:12.000
+When he was a post-doctoral student,
+
+01:12.000 --> 01:18.000
+he conducted research on typhoons in Taiwan and the Philippines.
+
+01:18.000 --> 01:22.000
+During his post-doctoral studies, he also conducted research in the United States.
+
+01:22.000 --> 01:26.000
+His current post-doctoral research project is mainly in the Himalayas.
+
+01:26.000 --> 01:32.000
+In the next two years, he will receive the Yale Gallaudet Donnelly Fellowship.
+
+01:32.000 --> 01:35.000
+He is expected to travel from Africa to the world.
+
+01:35.000 --> 01:39.000
+Chi-Hsing will give a lecture for about an hour.
+
+01:39.000 --> 01:43.000
+After that, there will be a Q&A time.
+
+01:43.000 --> 01:47.000
+I don't have much to say about Chi-Hsing, so I'll give you the time.
+
+01:47.000 --> 01:48.000
+Thank you.
+
+01:50.000 --> 01:54.000
+Thank you, everyone.
+
+01:54.000 --> 01:59.000
+Today, I will divide this lecture into two parts.
+
+01:59.000 --> 02:08.000
+The first part is about how we can use satellite imagery and machine learning to detect loss.
+
+02:08.000 --> 02:15.000
+The second part will focus on the relationship between loss and mental health in Denmark.
+
+02:15.000 --> 02:20.000
+Before we start, I'd like to take a short break.
+
+02:20.000 --> 02:24.000
+If you have any questions, please feel free to ask.
+
+02:26.000 --> 02:33.000
+Please let me know if the connection is bad.
+
+02:34.000 --> 02:45.000
+At the beginning, I'd like to talk about my research theme from a view that you may be familiar with.
+
+02:45.000 --> 02:51.000
+In this photo of Taipei City, if you can see my mouse,
+
+02:51.000 --> 02:55.000
+this road here, the road under the building, what is it like?
+
+02:56.000 --> 02:59.000
+In the north of Zhongshuo East Road,
+
+02:59.000 --> 03:07.000
+you can imagine that this area is more like an apartment building.
+
+03:07.000 --> 03:13.000
+The density of the street is higher, and the width of the street is narrower.
+
+03:13.000 --> 03:19.000
+In the south of Zhongshuo East Road, the business district,
+
+03:19.000 --> 03:23.000
+we can see that the construction rate is much lower.
+
+03:23.000 --> 03:26.000
+There is a lot of space between the buildings.
+
+03:26.000 --> 03:31.000
+At the same time, it is not a low-density form.
+
+03:31.000 --> 03:35.000
+If you look at it from a vertical perspective, it has a lot of skyscrapers.
+
+03:35.000 --> 03:43.000
+In the past, many urban planners and environmental scientists
+
+03:43.000 --> 03:52.000
+have been thinking about what kind of urban form is the best or the most sustainable.
+
+03:53.000 --> 03:58.000
+In terms of sustainability, there are two aspects that have often been discussed in the past.
+
+03:58.000 --> 04:05.000
+The first is how to make urban planning reach the goal of carbon reduction under the climate change.
+
+04:05.000 --> 04:12.000
+For example, if today's land use configuration can make the workplace and residences close enough,
+
+04:12.000 --> 04:16.000
+so that people don't have to travel a long distance when they're on vacation,
+
+04:16.000 --> 04:19.000
+this can achieve the effect of carbon reduction.
+
+04:19.000 --> 04:29.000
+The second aspect of the study is to regard the city as a separate system for land use.
+
+04:29.000 --> 04:34.000
+In addition to the city, there are usually rural areas or natural protected areas.
+
+04:34.000 --> 04:37.000
+For environmental scientists and eco-scientists,
+
+04:37.000 --> 04:46.000
+if we can make the city's land use appear in a very limited space range and efficiently expand to other places,
+
+04:46.000 --> 04:52.000
+then we can save more land for agriculture or other crops.
+
+04:52.000 --> 05:04.000
+My interest in the study is a little different from the two aspects of the city as another aspect of the environment.
+
+05:04.000 --> 05:07.000
+What I'm interested in is the part about people.
+
+05:07.000 --> 05:12.000
+When we talk about sustainability, it's not about the sustainability of the environment,
+
+05:12.000 --> 05:15.000
+but it's about people and the environment.
+
+05:15.000 --> 05:21.000
+People themselves have to be able to live in this place in a sustainable way.
+
+05:21.000 --> 05:26.000
+I'm very lucky to work on this project during my Ph.D. period.
+
+05:26.000 --> 05:29.000
+The main theme of the project is psychological health.
+
+05:29.000 --> 05:32.000
+I also had the opportunity to start working on this project.
+
+05:32.000 --> 05:36.000
+I'd like to give you a data on psychological health.
+
+05:37.000 --> 05:39.000
+In the past ten years,
+
+05:39.000 --> 05:43.000
+the World Health Organization has conducted a survey of various countries around the world.
+
+05:43.000 --> 05:47.000
+It can be found that an average of four people in the world
+
+05:47.000 --> 05:51.000
+will have a certain stage in their life when they are affected by any psychological disease.
+
+05:51.000 --> 05:58.000
+This is only the population that has been recorded due to old age.
+
+05:58.000 --> 06:01.000
+In fact, the number will be higher.
+
+06:01.000 --> 06:14.000
+Psychological health has many social factors.
+
+06:14.000 --> 06:20.000
+What is the relationship between the building environment and psychological health?
+
+06:20.000 --> 06:24.000
+I can think of it in three directions.
+
+06:24.000 --> 06:31.000
+The first one is that we can imagine that the sun's exposure to the sun is related to our physical and mental health.
+
+06:31.000 --> 06:34.000
+This will affect our mood.
+
+06:34.000 --> 06:36.000
+In terms of environmental vision,
+
+06:36.000 --> 06:41.000
+people may look out of the window and see what the street scene is.
+
+06:41.000 --> 06:46.000
+Or the environment gives you a feeling of pressure or a sense of pressure.
+
+06:46.000 --> 06:50.000
+This will also cause us to have different reactions psychologically.
+
+06:50.000 --> 06:59.000
+The third point is that the urban structure of our society is closely related to our social interactions.
+
+06:59.000 --> 07:04.000
+Let me give you a simple example of my grandmother's house.
+
+07:04.000 --> 07:08.000
+My grandmother's house is a fishing village in the south of Taiwan.
+
+07:09.000 --> 07:14.000
+The main urban design of this fishing village is like this.
+
+07:14.000 --> 07:20.000
+There is a series of residential areas around the main provincial highway.
+
+07:20.000 --> 07:22.000
+This residential area is a large area.
+
+07:22.000 --> 07:25.000
+The connection in the middle of this large area is a small alley.
+
+07:25.000 --> 07:31.000
+The distance between each small alley is about five meters.
+
+07:31.000 --> 07:33.000
+In other words, the car can't get in.
+
+07:34.000 --> 07:38.000
+There are two main types of houses in this residential area.
+
+07:38.000 --> 07:39.000
+One is a three-room house.
+
+07:39.000 --> 07:43.000
+The other is a Milan-style building with about four or five floors.
+
+07:43.000 --> 07:48.000
+The function of this three-room house in the residential area is that
+
+07:48.000 --> 07:54.000
+there is an underground water drain in the middle of the three-room house.
+
+07:54.000 --> 08:00.000
+So everyone goes to that place to chat and get water.
+
+08:01.000 --> 08:04.000
+Every time I go back to my grandmother's house,
+
+08:04.000 --> 08:14.000
+I can often hear that everyone is quarreling in the alley or in the three-room house.
+
+08:14.000 --> 08:16.000
+But no, they are just chatting.
+
+08:16.000 --> 08:23.000
+In another era, when my grandmother's children grew up and lived in the city,
+
+08:23.000 --> 08:27.000
+some of them moved to Kaohsiung City and moved to Taitung City.
+
+08:27.000 --> 08:31.000
+For example, my father moved to a community building in Taitung City.
+
+08:31.000 --> 08:36.000
+In this community building, their lifestyle became that
+
+08:36.000 --> 08:43.000
+when my father got home, he parked his car and went straight to the 11th floor of the elevator to the apartment.
+
+08:43.000 --> 08:47.000
+Through the legend of the elevator in this apartment,
+
+08:47.000 --> 08:52.000
+he was actually in the same building as his neighbor.
+
+08:52.000 --> 08:56.000
+Maybe there was only a wall or a floor area.
+
+08:56.000 --> 09:04.000
+But even so, it almost completely avoided the possibility of communication with those neighbors.
+
+09:04.000 --> 09:07.000
+So what is the lifestyle of our residents?
+
+09:07.000 --> 09:12.000
+It will also affect the way we interact with our neighbors around us.
+
+09:16.000 --> 09:21.000
+In the past, the study of what kind of urban lifestyle is related to mental health
+
+09:21.000 --> 09:26.000
+is actually a more abstract or simplified way of understanding it.
+
+09:26.000 --> 09:31.000
+It regards urban and rural as a spectrum of urban and rural.
+
+09:31.000 --> 09:34.000
+In this spectrum, they are usually divided into two groups,
+
+09:34.000 --> 09:36.000
+that is, urban people and rural people.
+
+09:36.000 --> 09:42.000
+In these two groups, they conduct a lot of research,
+
+09:42.000 --> 09:46.000
+including in Africa or other European countries, as well as the United States.
+
+09:46.000 --> 09:49.000
+This study is a comprehensive study.
+
+09:49.000 --> 09:52.000
+It collects data from dozens of European and American countries.
+
+09:52.000 --> 09:55.000
+It turns out that in general, in these countries,
+
+09:55.000 --> 10:01.000
+the ratio of depression and anxiety,
+
+10:01.000 --> 10:03.000
+that is, the ratio of population infection,
+
+10:03.000 --> 10:08.000
+is higher in urban areas than in rural areas.
+
+10:09.000 --> 10:17.000
+In the context of globalization and the constant increase of urban population,
+
+10:17.000 --> 10:20.000
+it is almost impossible to say that
+
+10:20.000 --> 10:23.000
+it is because living in a rural area is healthier,
+
+10:23.000 --> 10:26.000
+so we try to encourage everyone to live in a rural area.
+
+10:26.000 --> 10:30.000
+For me, there is a very interesting question here,
+
+10:30.000 --> 10:35.000
+that is, in urban environments,
+
+10:35.000 --> 10:42.000
+what kind of urban design and urban planning
+
+10:42.000 --> 10:46.000
+can be psychological health?
+
+10:46.000 --> 10:49.000
+This is my main research motivation.
+
+10:52.000 --> 10:54.000
+Let me introduce it to you.
+
+10:54.000 --> 10:56.000
+When I was doing this research,
+
+10:56.000 --> 10:58.000
+in fact, there were already a lot of predecessors,
+
+10:58.000 --> 11:00.000
+that is, the previous researchers,
+
+11:00.000 --> 11:03.000
+who had already thought a lot about this issue.
+
+11:03.000 --> 11:04.000
+But in the study method,
+
+11:04.000 --> 11:07.000
+the past research is more limited to small-scale research,
+
+11:07.000 --> 11:10.000
+because they need to go through, for example, questionnaire survey,
+
+11:10.000 --> 11:15.000
+to understand what the living environment
+
+11:15.000 --> 11:18.000
+of their subjects is like.
+
+11:18.000 --> 11:21.000
+Because psychological health is a very complicated issue,
+
+11:21.000 --> 11:23.000
+compared to other areas,
+
+11:23.000 --> 11:28.000
+such as work, career, family life, etc.
+
+11:28.000 --> 11:33.000
+Therefore, when it comes to the living environment,
+
+11:33.000 --> 11:35.000
+in many cases,
+
+11:35.000 --> 11:38.000
+if the sample is small,
+
+11:38.000 --> 11:41.000
+it will be more limited to research.
+
+11:41.000 --> 11:45.000
+Therefore, one of the main breakthroughs in my PhD program
+
+11:45.000 --> 11:49.000
+is how we can use satellite images and big data
+
+11:49.000 --> 11:54.000
+to achieve a large-scale environmental feature,
+
+11:54.000 --> 11:58.000
+and then connect such large-scale spatial information
+
+11:58.000 --> 12:00.000
+with health information storage,
+
+12:00.000 --> 12:02.000
+that is, the entire population of Denmark.
+
+12:05.000 --> 12:06.000
+Let me show you
+
+12:06.000 --> 12:10.000
+what the satellite image I am currently using looks like.
+
+12:13.000 --> 12:15.000
+This image is Landsat,
+
+12:15.000 --> 12:17.000
+a satellite from NASA.
+
+12:17.000 --> 12:21.000
+It is summarized in series from Landsat 5 to Landsat 8,
+
+12:21.000 --> 12:23.000
+from 1984 to the present.
+
+12:23.000 --> 12:26.000
+It took 16 days to take this image,
+
+12:26.000 --> 12:29.000
+so you can see what the image is like.
+
+12:32.000 --> 12:37.000
+This image has an obvious problem
+
+12:37.000 --> 12:40.000
+when it is recognized in the form of a story.
+
+12:40.000 --> 12:44.000
+You can see the comparison of these two images here.
+
+12:44.000 --> 12:47.000
+The one on the left is Google Earth,
+
+12:47.000 --> 12:52.000
+a high-resolution satellite image.
+
+12:52.000 --> 12:54.000
+The one on the right is the same one.
+
+12:55.000 --> 12:57.000
+It is more clear because it is placed further away,
+
+12:57.000 --> 12:59.000
+but if we look at it closely,
+
+12:59.000 --> 13:02.000
+you will find that it is blurry
+
+13:02.000 --> 13:06.000
+like a mosaic.
+
+13:06.000 --> 13:09.000
+It's hard to really see
+
+13:09.000 --> 13:11.000
+which side is the tall building, which side is the low building,
+
+13:11.000 --> 13:12.000
+which side is the crowded residential area,
+
+13:12.000 --> 13:15.000
+and which side is the windshield.
+
+13:16.000 --> 13:20.000
+If you want to use a satellite image
+
+13:20.000 --> 13:23.000
+to understand the entire city's
+
+13:23.000 --> 13:26.000
+shape, structure, and health,
+
+13:26.000 --> 13:28.000
+in my thesis,
+
+13:28.000 --> 13:30.000
+the first part of the problem to be solved is
+
+13:30.000 --> 13:33.000
+how do we use artificial intelligence,
+
+13:33.000 --> 13:35.000
+especially the power of learning,
+
+13:35.000 --> 13:38.000
+to solve the limitation of the satellite image.
+
+13:39.000 --> 13:41.000
+The second part is that
+
+13:41.000 --> 13:44.000
+when we make a breakthrough in methodology,
+
+13:44.000 --> 13:47.000
+and get large-scale spatial information,
+
+13:47.000 --> 13:51.000
+how do we connect it with the satellite image?
+
+13:55.000 --> 13:58.000
+The first part of the study will be
+
+13:58.000 --> 14:01.000
+the first half of the study.
+
+14:01.000 --> 14:02.000
+I will let you ask questions first
+
+14:02.000 --> 14:04.000
+when the first half of the study is over.
+
+14:10.000 --> 14:12.000
+The first part is mainly about
+
+14:12.000 --> 14:15.000
+when we get a satellite image,
+
+14:15.000 --> 14:17.000
+like this picture on the left,
+
+14:17.000 --> 14:19.000
+we hope to convert this satellite image
+
+14:19.000 --> 14:21.000
+through machine learning
+
+14:21.000 --> 14:24.000
+into the spatial information on the right.
+
+14:24.000 --> 14:26.000
+Spatial information includes
+
+14:26.000 --> 14:29.000
+which parts of the image
+
+14:29.000 --> 14:32.000
+belong to the tall building,
+
+14:32.000 --> 14:34.000
+the low building,
+
+14:34.000 --> 14:37.000
+the crowded residential area, and so on.
+
+14:37.000 --> 14:39.000
+In this study,
+
+14:39.000 --> 14:41.000
+we will use the image of
+
+14:41.000 --> 14:43.000
+the limited landsat
+
+14:43.000 --> 14:45.000
+to compare different methods of
+
+14:45.000 --> 14:47.000
+machine learning and deep learning,
+
+14:47.000 --> 14:49.000
+to see which method
+
+14:49.000 --> 14:52.000
+has more advantages in this topic.
+
+14:53.000 --> 14:55.000
+Then we will see that
+
+14:55.000 --> 14:57.000
+if this method can be trained well
+
+14:57.000 --> 14:59.000
+in the Danube case,
+
+14:59.000 --> 15:01.000
+can it be applied to other places
+
+15:01.000 --> 15:04.000
+and have more potential for expansion?
+
+15:04.000 --> 15:07.000
+First of all, this is the framework of our classification.
+
+15:07.000 --> 15:09.000
+As mentioned earlier,
+
+15:09.000 --> 15:13.000
+in terms of urban density,
+
+15:13.000 --> 15:16.000
+it is a concept of gradient.
+
+15:16.000 --> 15:18.000
+It will be divided into low density,
+
+15:18.000 --> 15:20.000
+medium density, and high density.
+
+15:20.000 --> 15:22.000
+In terms of building height,
+
+15:22.000 --> 15:24.000
+this is a system designed
+
+15:24.000 --> 15:26.000
+for the Danube context.
+
+15:26.000 --> 15:28.000
+There are not many tall buildings in the Danube,
+
+15:28.000 --> 15:30.000
+so you can imagine that
+
+15:30.000 --> 15:32.000
+it is a system of building height
+
+15:32.000 --> 15:34.000
+below the third floor.
+
+15:34.000 --> 15:36.000
+Above the third floor,
+
+15:36.000 --> 15:38.000
+we call it an apartment
+
+15:38.000 --> 15:40.000
+or an open space.
+
+15:48.000 --> 15:50.000
+This is an overview of
+
+15:50.000 --> 15:52.000
+the entire research framework.
+
+15:52.000 --> 15:54.000
+In the upper left corner,
+
+15:54.000 --> 15:56.000
+you can see that
+
+15:56.000 --> 15:58.000
+this is the satellite image
+
+15:58.000 --> 16:00.000
+we use,
+
+16:00.000 --> 16:02.000
+which has been integrated
+
+16:02.000 --> 16:04.000
+from 1985 to 2018.
+
+16:04.000 --> 16:06.000
+There is an image that
+
+16:06.000 --> 16:08.000
+has not been affected by the cloud.
+
+16:08.000 --> 16:10.000
+After obtaining this image,
+
+16:10.000 --> 16:12.000
+we need to
+
+16:12.000 --> 16:14.000
+let this model
+
+16:14.000 --> 16:16.000
+learn something.
+
+16:16.000 --> 16:18.000
+We need to give it some training data.
+
+16:18.000 --> 16:20.000
+This training data
+
+16:20.000 --> 16:22.000
+comes from Guangda.
+
+16:22.000 --> 16:24.000
+Guangda is simply
+
+16:24.000 --> 16:26.000
+a laser pulse.
+
+16:26.000 --> 16:28.000
+When it hits an object,
+
+16:28.000 --> 16:30.000
+there is a time difference.
+
+16:30.000 --> 16:32.000
+This time difference can measure the shape of the object.
+
+16:32.000 --> 16:34.000
+Therefore,
+
+16:34.000 --> 16:36.000
+this data is a 3D model
+
+16:36.000 --> 16:38.000
+of the entire Danube.
+
+16:38.000 --> 16:40.000
+We divide this 3D model
+
+16:40.000 --> 16:42.000
+into two parts.
+
+16:42.000 --> 16:44.000
+One is training data,
+
+16:44.000 --> 16:46.000
+and the other is verification data.
+
+16:48.000 --> 16:50.000
+In terms of models,
+
+16:50.000 --> 16:52.000
+we have three models.
+
+16:52.000 --> 16:54.000
+The following is a common
+
+16:54.000 --> 16:56.000
+method of learning
+
+16:56.000 --> 16:58.000
+deep learning.
+
+16:58.000 --> 17:00.000
+It is not deep learning,
+
+17:00.000 --> 17:02.000
+but its computing speed is relatively fast.
+
+17:02.000 --> 17:04.000
+The two models above
+
+17:04.000 --> 17:06.000
+are deep learning models.
+
+17:06.000 --> 17:08.000
+Let's talk about the middle one first.
+
+17:08.000 --> 17:10.000
+It is actually the simplest
+
+17:10.000 --> 17:12.000
+rotating machine model.
+
+17:12.000 --> 17:14.000
+You often hear of CNA.
+
+17:16.000 --> 17:18.000
+The one above
+
+17:18.000 --> 17:20.000
+is a little more complicated than the one below.
+
+17:20.000 --> 17:22.000
+But its base is the same.
+
+17:22.000 --> 17:24.000
+It also comes from a
+
+17:24.000 --> 17:26.000
+3D model.
+
+17:26.000 --> 17:28.000
+In the model design,
+
+17:28.000 --> 17:30.000
+there is a pooling layer
+
+17:30.000 --> 17:32.000
+in the middle.
+
+17:32.000 --> 17:34.000
+To put it simply,
+
+17:34.000 --> 17:36.000
+what it is doing
+
+17:36.000 --> 17:38.000
+is to
+
+17:38.000 --> 17:40.000
+increase the speed of the machine.
+
+17:40.000 --> 17:42.000
+But what is it?
+
+17:42.000 --> 17:44.000
+I would like to introduce it to you now.
+
+17:44.000 --> 17:46.000
+As mentioned earlier,
+
+17:46.000 --> 17:48.000
+when we use high-resolution
+
+17:48.000 --> 17:50.000
+commercial satellites,
+
+17:50.000 --> 17:52.000
+we can clearly see
+
+17:52.000 --> 17:54.000
+the same structure
+
+17:54.000 --> 17:56.000
+and different architectural forms.
+
+17:56.000 --> 17:58.000
+But the same range
+
+17:58.000 --> 18:00.000
+is completely different.
+
+18:00.000 --> 18:02.000
+In the same range,
+
+18:02.000 --> 18:04.000
+it is difficult to see
+
+18:04.000 --> 18:06.000
+which side is the high-rise
+
+18:06.000 --> 18:08.000
+and which side is the flat.
+
+18:08.000 --> 18:10.000
+But if we can
+
+18:10.000 --> 18:12.000
+consider the information
+
+18:12.000 --> 18:14.000
+of the multi-level building,
+
+18:14.000 --> 18:16.000
+it will be a little different.
+
+18:16.000 --> 18:18.000
+For example,
+
+18:18.000 --> 18:20.000
+in this block of the high-rise,
+
+18:20.000 --> 18:22.000
+there are three long
+
+18:24.000 --> 18:26.000
+pixels.
+
+18:26.000 --> 18:28.000
+The reason why the pixels are darker
+
+18:28.000 --> 18:30.000
+is because there are more
+
+18:30.000 --> 18:32.000
+buildings in this area.
+
+18:32.000 --> 18:34.000
+If we look further,
+
+18:34.000 --> 18:36.000
+we can see
+
+18:36.000 --> 18:38.000
+that
+
+18:38.000 --> 18:40.000
+the design of
+
+18:40.000 --> 18:42.000
+this new community
+
+18:42.000 --> 18:44.000
+is more
+
+18:44.000 --> 18:46.000
+urbanized.
+
+18:46.000 --> 18:48.000
+For example,
+
+18:48.000 --> 18:50.000
+the buildings in this area
+
+18:50.000 --> 18:52.000
+are more organic
+
+18:52.000 --> 18:54.000
+and more deformed.
+
+18:54.000 --> 18:56.000
+So,
+
+18:56.000 --> 18:58.000
+on a larger scale,
+
+18:58.000 --> 19:00.000
+we can see that
+
+19:00.000 --> 19:02.000
+the structure can help us
+
+19:02.000 --> 19:04.000
+distinguish which side is the high-rise
+
+19:04.000 --> 19:06.000
+and which side is the flat.
+
+19:08.000 --> 19:10.000
+When we have trained
+
+19:10.000 --> 19:12.000
+these models and data,
+
+19:12.000 --> 19:14.000
+we will use
+
+19:14.000 --> 19:16.000
+the verification data
+
+19:16.000 --> 19:18.000
+to verify the performance of the model.
+
+19:18.000 --> 19:20.000
+What I want to mention here is that
+
+19:20.000 --> 19:22.000
+the year of verification
+
+19:22.000 --> 19:24.000
+data is different
+
+19:24.000 --> 19:26.000
+from the year of training data.
+
+19:26.000 --> 19:28.000
+For example, our training data is 2014,
+
+19:28.000 --> 19:30.000
+but when we verify it,
+
+19:30.000 --> 19:32.000
+we want to know
+
+19:32.000 --> 19:34.000
+whether the model
+
+19:34.000 --> 19:36.000
+that has been trained
+
+19:36.000 --> 19:38.000
+recently can be used
+
+19:38.000 --> 19:40.000
+to draw a historical urban model.
+
+19:40.000 --> 19:42.000
+So, we found data from
+
+19:42.000 --> 19:44.000
+2006 and 1995
+
+19:44.000 --> 19:46.000
+that can be used
+
+19:46.000 --> 19:48.000
+to draw a historical urban model.
+
+19:50.000 --> 19:52.000
+Here is the research result.
+
+19:52.000 --> 19:54.000
+I want to introduce
+
+19:54.000 --> 19:56.000
+the six types of urban models
+
+19:56.000 --> 19:58.000
+in Denmark.
+
+20:00.000 --> 20:02.000
+The first one is the high-rise
+
+20:02.000 --> 20:04.000
+with high density.
+
+20:04.000 --> 20:06.000
+The high-density apartment buildings
+
+20:06.000 --> 20:08.000
+are mainly located in the city center.
+
+20:08.000 --> 20:10.000
+Here, we found two big cities
+
+20:10.000 --> 20:12.000
+in Denmark,
+
+20:12.000 --> 20:14.000
+Denmark and
+
+20:14.000 --> 20:16.000
+Denmark.
+
+20:16.000 --> 20:18.000
+In this picture,
+
+20:18.000 --> 20:20.000
+the high-density apartment buildings
+
+20:20.000 --> 20:22.000
+are represented as one group in immigrant
+
+20:22.000 --> 20:24.000
+communities,
+
+20:24.000 --> 20:26.000
+the rest areas are
+
+20:26.000 --> 20:28.000
+isolated to the city center
+
+20:28.000 --> 20:30.000
+as one group.
+
+20:32.000 --> 20:34.000
+In this picture,
+
+20:34.000 --> 20:36.000
+the high-density apartment buildings
+
+20:36.000 --> 20:38.000
+are represented as one group
+
+20:38.000 --> 20:40.000
+in immigrant communities,
+
+20:40.000 --> 20:42.000
+the rest areas are isolated
+
+20:42.000 --> 20:44.000
+as one group.
+
+20:44.000 --> 20:46.000
+The third and fourth
+
+20:46.000 --> 20:48.000
+sheets of yellow
+
+20:48.000 --> 20:50.000
+architectural formula
+
+20:50.000 --> 20:52.000
+symbolize Denmark's
+
+20:52.000 --> 20:54.000
+major residential system.
+
+20:54.000 --> 20:56.000
+Republican apartments
+
+20:56.000 --> 20:58.000
+are simply
+
+20:58.000 --> 21:00.000
+high-density
+
+21:00.000 --> 21:02.000
+built in contact
+
+21:02.000 --> 21:04.000
+with neighborhood
+
+21:04.000 --> 21:06.000
+between city centers
+
+21:06.000 --> 21:08.000
+and settlements.
+
+21:08.000 --> 21:10.000
+As you can see,
+
+21:10.000 --> 21:12.000
+the yellow part
+
+21:12.000 --> 21:14.000
+of the low-density
+
+21:14.000 --> 21:16.000
+apartment
+
+21:16.000 --> 21:18.000
+is all
+
+21:18.000 --> 21:20.000
+high-density.
+
+21:20.000 --> 21:22.000
+You can imagine
+
+21:22.000 --> 21:24.000
+this type of apartment
+
+21:24.000 --> 21:26.000
+as a house in Europe
+
+21:26.000 --> 21:28.000
+with lots of greenery
+
+21:28.000 --> 21:30.000
+around it.
+
+21:30.000 --> 21:32.000
+What is a low-density
+
+21:32.000 --> 21:34.000
+high-density apartment like?
+
+21:34.000 --> 21:36.000
+This type of apartment
+
+21:36.000 --> 21:38.000
+can be located
+
+21:38.000 --> 21:40.000
+on the outskirts
+
+21:40.000 --> 21:42.000
+of the city
+
+21:42.000 --> 21:44.000
+or around the park
+
+21:44.000 --> 21:46.000
+and next to the river
+
+21:46.000 --> 21:48.000
+to the first row of water.
+
+21:48.000 --> 21:50.000
+It is a high-density apartment.
+
+21:50.000 --> 21:52.000
+The low-density
+
+21:52.000 --> 21:54.000
+low-rise apartment
+
+21:54.000 --> 21:56.000
+is a low-density
+
+21:56.000 --> 21:58.000
+high-density apartment.
+
+22:00.000 --> 22:02.000
+We found that
+
+22:02.000 --> 22:04.000
+in the case of Denmark,
+
+22:04.000 --> 22:06.000
+the low-density
+
+22:06.000 --> 22:08.000
+low-rise apartment
+
+22:08.000 --> 22:10.000
+is more
+
+22:10.000 --> 22:12.000
+common than
+
+22:12.000 --> 22:14.000
+the high-density
+
+22:14.000 --> 22:16.000
+high-density apartment.
+
+22:16.000 --> 22:18.000
+We found that
+
+22:18.000 --> 22:20.000
+in the case of
+
+22:20.000 --> 22:22.000
+Germany,
+
+22:22.000 --> 22:24.000
+the low-density
+
+22:24.000 --> 22:26.000
+low-rise apartment
+
+22:26.000 --> 22:28.000
+is more common than
+
+22:28.000 --> 22:30.000
+the high-density
+
+22:30.000 --> 22:32.000
+high-density apartment.
+
+22:32.000 --> 22:34.000
+We found that
+
+22:34.000 --> 22:36.000
+in the case of Germany,
+
+22:36.000 --> 22:38.000
+the low-density
+
+22:38.000 --> 22:40.000
+low-rise apartment
+
+22:40.000 --> 22:42.000
+is more common than
+
+22:42.000 --> 22:44.000
+the high-density
+
+22:44.000 --> 22:46.000
+high-density apartment.
+
+22:46.000 --> 22:48.000
+We found that
+
+22:48.000 --> 22:50.000
+in the case of
+
+22:50.000 --> 22:52.000
+Germany,
+
+22:52.000 --> 22:54.000
+the low-density
+
+22:54.000 --> 22:56.000
+low-rise apartment
+
+22:56.000 --> 22:58.000
+is more common than
+
+22:58.000 --> 23:00.000
+the high-density
+
+23:00.000 --> 23:02.000
+high-density apartment.
+
+23:02.000 --> 23:04.000
+We found that
+
+23:04.000 --> 23:06.000
+in the case of
+
+23:06.000 --> 23:08.000
+Germany,
+
+23:08.000 --> 23:10.000
+the low-density
+
+23:10.000 --> 23:12.000
+low-density apartment
+
+23:12.000 --> 23:14.000
+is more common than
+
+23:14.000 --> 23:16.000
+the high-density
+
+23:16.000 --> 23:18.000
+high-density apartment.
+
+23:18.000 --> 23:20.000
+We found that
+
+23:20.000 --> 23:22.000
+in the case of
+
+23:22.000 --> 23:24.000
+Germany,
+
+23:24.000 --> 23:26.000
+the low-density
+
+23:26.000 --> 23:28.000
+low-density apartment
+
+23:28.000 --> 23:30.000
+is more common than
+
+23:30.000 --> 23:32.000
+the high-density
+
+23:32.000 --> 23:34.000
+high-density apartment.
+
+23:34.000 --> 23:36.000
+We found that
+
+23:36.000 --> 23:38.000
+in the case of
+
+23:38.000 --> 23:40.000
+Germany,
+
+23:40.000 --> 23:42.000
+the low-density
+
+23:42.000 --> 23:44.000
+low-density apartment
+
+23:44.000 --> 23:46.000
+is more common than
+
+23:46.000 --> 23:48.000
+the high-density
+
+23:48.000 --> 23:50.000
+high-density apartment.
+
+23:50.000 --> 23:52.000
+We found that
+
+23:52.000 --> 23:54.000
+in the case of
+
+23:54.000 --> 23:56.000
+Germany,
+
+23:56.000 --> 23:58.000
+we found that
+
+23:58.000 --> 24:00.000
+in the case of
+
+24:00.000 --> 24:02.000
+Germany,
+
+24:02.000 --> 24:04.000
+the low-density
+
+24:04.000 --> 24:06.000
+high-density apartment
+
+24:06.000 --> 24:08.000
+is more common than
+
+24:08.000 --> 24:10.000
+the high-density
+
+24:10.000 --> 24:12.000
+high-density apartment.
+
+24:12.000 --> 24:14.000
+We found that
+
+24:14.000 --> 24:16.000
+in the case of
+
+24:16.000 --> 24:18.000
+Germany,
+
+24:18.000 --> 24:20.000
+the low-density
+
+24:20.000 --> 24:22.000
+high-density apartment
+
+24:22.000 --> 24:24.000
+is more common than
+
+24:24.000 --> 24:26.000
+the high-density
+
+24:26.000 --> 24:28.000
+high-density apartment.
+
+24:28.000 --> 24:30.000
+We found that
+
+24:30.000 --> 24:32.000
+in the case of
+
+24:32.000 --> 24:34.000
+Germany,
+
+24:34.000 --> 24:36.000
+the low-density
+
+24:36.000 --> 24:38.000
+high-density apartment
+
+24:38.000 --> 24:40.000
+is more common than
+
+24:40.000 --> 24:42.000
+the high-density
+
+24:42.000 --> 24:44.000
+high-density apartment.
+
+24:44.000 --> 24:46.000
+We found that
+
+24:46.000 --> 24:48.000
+in the case of
+
+24:48.000 --> 24:50.000
+Germany,
+
+24:50.000 --> 24:52.000
+the low-density
+
+24:52.000 --> 24:54.000
+high-density apartment
+
+24:54.000 --> 24:56.000
+is more common than
+
+24:56.000 --> 24:58.000
+the high-density
+
+24:58.000 --> 25:00.000
+high-density apartment.
+
+25:22.000 --> 25:24.000
+We found that
+
+25:24.000 --> 25:26.000
+in the case of
+
+25:26.000 --> 25:28.000
+Germany,
+
+25:28.000 --> 25:30.000
+the low-density
+
+25:30.000 --> 25:32.000
+high-density apartment
+
+25:32.000 --> 25:34.000
+is more common than
+
+25:34.000 --> 25:36.000
+the high-density
+
+25:36.000 --> 25:38.000
+high-density apartment.
+
+25:38.000 --> 25:40.000
+We found that
+
+25:40.000 --> 25:42.000
+in the case of
+
+25:42.000 --> 25:44.000
+Germany,
+
+25:44.000 --> 25:46.000
+the low-density
+
+25:46.000 --> 25:48.000
+high-density apartment
+
+25:48.000 --> 25:50.000
+is more common than
+
+25:50.000 --> 25:52.000
+the high-density
+
+25:52.000 --> 25:54.000
+high-density apartment.
+
+25:54.000 --> 25:56.000
+We found that
+
+25:56.000 --> 25:58.000
+in the case of
+
+25:58.000 --> 26:00.000
+Germany,
+
+26:00.000 --> 26:02.000
+the low-density
+
+26:02.000 --> 26:04.000
+high-density apartment
+
+26:04.000 --> 26:06.000
+is more common than
+
+26:06.000 --> 26:08.000
+the high-density
+
+26:08.000 --> 26:10.000
+high-density apartment.
+
+26:10.000 --> 26:12.000
+We found that
+
+26:12.000 --> 26:14.000
+in the case of
+
+26:14.000 --> 26:16.000
+Germany,
+
+26:16.000 --> 26:18.000
+the low-density
+
+26:18.000 --> 26:20.000
+high-density apartment
+
+26:20.000 --> 26:22.000
+is more common than
+
+26:22.000 --> 26:24.000
+the high-density
+
+26:24.000 --> 26:26.000
+high-density apartment.
+
+26:26.000 --> 26:28.000
+We found that
+
+26:28.000 --> 26:30.000
+in the case of
+
+26:30.000 --> 26:32.000
+Germany,
+
+26:32.000 --> 26:34.000
+the low-density
+
+26:34.000 --> 26:36.000
+high-density apartment
+
+26:36.000 --> 26:38.000
+is more common than
+
+26:38.000 --> 26:40.000
+the high-density
+
+26:40.000 --> 26:42.000
+high-density apartment.
+
+26:42.000 --> 26:44.000
+We found that
+
+26:44.000 --> 26:46.000
+in the case of
+
+26:46.000 --> 26:48.000
+Germany,
+
+26:48.000 --> 26:50.000
+the high-density
+
+26:50.000 --> 26:52.000
+high-density apartment
+
+26:52.000 --> 26:54.000
+is more common than
+
+26:54.000 --> 26:56.000
+the high-density
+
+26:56.000 --> 26:58.000
+high-density apartment.
+
+26:58.000 --> 27:00.000
+So I would like to refer to
+
+27:00.000 --> 27:02.000
+the existence of
+
+27:02.000 --> 27:04.000
+the lower and upper
+
+27:04.000 --> 27:06.000
+density apartment
+
+27:06.000 --> 27:08.000
+and the higher-density apartment
+
+27:08.000 --> 27:10.000
+once again.
+
+27:10.000 --> 27:12.000
+The Lower and Upper
+
+27:12.000 --> 27:14.000
+Dependency Parking
+
+27:14.000 --> 27:16.000
+The Lower and Upper
+
+27:16.000 --> 27:18.000
+Dependency Parking
+
+27:18.000 --> 27:20.000
+is more common than
+
+27:20.000 --> 27:22.000
+the lower-density
+
+27:22.000 --> 27:24.000
+lower-density apartment
+
+27:24.000 --> 27:26.000
+on the same floor.
+
+27:26.000 --> 27:28.000
+It is more common
+
+27:28.000 --> 27:30.000
+than the higher-density
+
+27:30.000 --> 27:32.000
+higher-density apartment
+
+27:32.000 --> 27:34.000
+on the same floor.
+
+27:34.000 --> 27:36.000
+The lower-density
+
+27:36.000 --> 27:38.000
+lower-density apartment
+
+27:38.000 --> 27:40.000
+on the same floor
+
+27:40.000 --> 27:42.000
+is more common
+
+27:42.000 --> 27:44.000
+than the higher-density
+
+27:44.000 --> 27:46.000
+higher-density apartment
+
+27:46.000 --> 27:48.000
+on the same floor.
+
+27:48.000 --> 27:50.000
+The Lower and Upper
+
+27:50.000 --> 27:52.000
+Dependency Parking
+
+27:52.000 --> 27:54.000
+is more common
+
+27:54.000 --> 27:56.000
+than
+
+27:56.000 --> 27:58.000
+the lower-density
+
+27:58.000 --> 28:00.000
+lower-density apartment
+
+28:00.000 --> 28:02.000
+on the same floor.
+
+28:02.000 --> 28:04.000
+The Lower and Upper
+
+28:04.000 --> 28:06.000
+Dependency Parking
+
+28:06.000 --> 28:08.000
+is more common
+
+28:08.000 --> 28:10.000
+than
+
+28:10.000 --> 28:12.000
+the lower-density
+
+28:12.000 --> 28:14.000
+lower-density apartment
+
+28:14.000 --> 28:16.000
+on the same floor.
+
+28:16.000 --> 28:18.000
+The Lower and Upper
+
+28:18.000 --> 28:20.000
+Dependency Parking
+
+28:20.000 --> 28:22.000
+is more common
+
+28:22.000 --> 28:24.000
+than
+
+28:24.000 --> 28:26.000
+the lower-density
+
+28:26.000 --> 28:28.000
+lower-density apartment
+
+28:28.000 --> 28:30.000
+on the same floor.
+
+28:30.000 --> 28:32.000
+The Lower and Upper
+
+28:32.000 --> 28:34.000
+Dependency Parking
+
+28:34.000 --> 28:36.000
+is more common
+
+28:36.000 --> 28:38.000
+than
+
+28:38.000 --> 28:40.000
+the lower-density
+
+28:40.000 --> 28:42.000
+lower-density apartment
+
+28:42.000 --> 28:44.000
+on the same floor.
+
+28:44.000 --> 28:46.000
+The Lower and Upper
+
+28:46.000 --> 28:48.000
+Dependency Parking
+
+28:48.000 --> 28:50.000
+is more common
+
+28:50.000 --> 28:52.000
+than
+
+28:52.000 --> 28:54.000
+the lower-density
+
+28:54.000 --> 28:56.000
+lower-density apartment
+
+28:56.000 --> 28:58.000
+on the same floor.
+
+28:58.000 --> 29:00.000
+The Lower and Upper
+
+29:00.000 --> 29:02.000
+Dependency Parking
+
+29:02.000 --> 29:04.000
+is more common
+
+29:04.000 --> 29:06.000
+than
+
+29:06.000 --> 29:08.000
+the lower-density
+
+29:08.000 --> 29:10.000
+lower-density apartment
+
+29:10.000 --> 29:12.000
+on the same floor.
+
+29:36.000 --> 29:38.000
+The Lower and Upper
+
+29:38.000 --> 29:40.000
+Dependency Parking
+
+29:40.000 --> 29:42.000
+is more common
+
+29:42.000 --> 29:44.000
+than
+
+29:44.000 --> 29:46.000
+the lower-density
+
+29:46.000 --> 29:48.000
+lower-density apartment
+
+29:48.000 --> 29:50.000
+on the same floor.
+
+29:50.000 --> 29:52.000
+The Lower and Upper
+
+29:52.000 --> 29:54.000
+Dependency Parking
+
+29:54.000 --> 29:56.000
+is more common
+
+29:56.000 --> 29:58.000
+than
+
+29:58.000 --> 30:00.000
+the lower-density
+
+30:00.000 --> 30:02.000
+lower-density apartment
+
+30:02.000 --> 30:04.000
+on the same floor.
+
+30:04.000 --> 30:06.000
+The Lower and Upper
+
+30:06.000 --> 30:08.000
+Dependency Parking
+
+30:08.000 --> 30:10.000
+is more common
+
+30:10.000 --> 30:12.000
+than
+
+30:12.000 --> 30:14.000
+the lower-density
+
+30:14.000 --> 30:16.000
+lower-density apartment
+
+30:16.000 --> 30:18.000
+on the same floor.
+
+30:18.000 --> 30:20.000
+The Lower and Upper
+
+30:20.000 --> 30:22.000
+Dependency Parking
+
+30:22.000 --> 30:24.000
+is more common
+
+30:24.000 --> 30:26.000
+than
+
+30:26.000 --> 30:28.000
+the lower-density
+
+30:28.000 --> 30:30.000
+lower-density apartment
+
+30:30.000 --> 30:32.000
+on the same floor.
+
+30:34.000 --> 30:36.000
+The Lower and Upper
+
+30:36.000 --> 30:38.000
+Dependency Parking
+
+30:38.000 --> 30:40.000
+is more common
+
+30:40.000 --> 30:42.000
+than
+
+30:42.000 --> 30:44.000
+the lower-density
+
+30:44.000 --> 30:46.000
+lower-density apartment
+
+30:46.000 --> 30:48.000
+on the same floor.
+
+30:48.000 --> 30:50.000
+The Lower and Upper
+
+30:50.000 --> 30:52.000
+Dependency Parking
+
+30:52.000 --> 30:54.000
+is more common
+
+30:54.000 --> 30:56.000
+than
+
+30:56.000 --> 30:58.000
+the lower-density
+
+30:58.000 --> 31:00.000
+lower-density apartment
+
+31:00.000 --> 31:02.000
+on the same floor.
+
+31:02.000 --> 31:04.000
+The Lower and Upper
+
+31:04.000 --> 31:06.000
+Dependency Parking
+
+31:06.000 --> 31:08.000
+is more common
+
+31:08.000 --> 31:10.000
+than
+
+31:10.000 --> 31:12.000
+the lower-density
+
+31:12.000 --> 31:14.000
+lower-density apartment
+
+31:14.000 --> 31:16.000
+on the same floor.
+
+31:16.000 --> 31:18.000
+The Lower and Upper
+
+31:18.000 --> 31:20.000
+Dependency Parking
+
+31:20.000 --> 31:22.000
+is more common
+
+31:22.000 --> 31:24.000
+than
+
+31:24.000 --> 31:26.000
+the lower-density
+
+31:26.000 --> 31:28.000
+lower-density apartment
+
+31:28.000 --> 31:30.000
+on the same floor.
+
+31:30.000 --> 31:32.000
+The Lower and Upper
+
+31:32.000 --> 31:34.000
+Dependency Parking
+
+31:34.000 --> 31:36.000
+is more common
+
+31:36.000 --> 31:38.000
+than
+
+31:38.000 --> 31:40.000
+the lower-density
+
+31:40.000 --> 31:42.000
+lower-density apartment
+
+31:42.000 --> 31:44.000
+on the same floor.
+
+31:44.000 --> 31:46.000
+The Lower and Upper
+
+31:46.000 --> 31:48.000
+Dependency Parking
+
+31:48.000 --> 31:50.000
+is more common
+
+31:50.000 --> 31:52.000
+than
+
+31:52.000 --> 31:54.000
+the lower-density
+
+31:54.000 --> 31:56.000
+lower-density apartment
+
+31:56.000 --> 31:58.000
+on the same floor.
+
+31:58.000 --> 32:00.000
+The Lower and Upper
+
+32:00.000 --> 32:02.000
+Dependency Parking
+
+32:02.000 --> 32:04.000
+is more common
+
+32:04.000 --> 32:06.000
+than
+
+32:06.000 --> 32:08.000
+the lower-density
+
+32:08.000 --> 32:10.000
+lower-density apartment
+
+32:10.000 --> 32:12.000
+on the same floor.
+
+32:12.000 --> 32:14.000
+The Lower and Upper
+
+32:14.000 --> 32:16.000
+Dependency Parking
+
+32:16.000 --> 32:18.000
+is more common
+
+32:18.000 --> 32:20.000
+than
+
+32:20.000 --> 32:22.000
+the lower-density
+
+32:22.000 --> 32:24.000
+lower-density apartment
+
+32:24.000 --> 32:26.000
+on the same floor.
+
+32:26.000 --> 32:28.000
+The Lower and Upper
+
+32:28.000 --> 32:30.000
+Dependency Parking
+
+32:30.000 --> 32:32.000
+is more common
+
+32:32.000 --> 32:34.000
+than
+
+32:34.000 --> 32:36.000
+the lower-density
+
+32:36.000 --> 32:38.000
+lower-density apartment
+
+32:38.000 --> 32:40.000
+on the same floor.
+
+32:40.000 --> 32:42.000
+The Lower and Upper
+
+32:42.000 --> 32:44.000
+Dependency Parking
+
+32:44.000 --> 32:46.000
+is more common
+
+32:46.000 --> 32:48.000
+than
+
+32:48.000 --> 32:50.000
+the lower-density
+
+32:50.000 --> 32:52.000
+lower-density apartment
+
+32:52.000 --> 32:54.000
+on the same floor.
+
+32:54.000 --> 32:56.000
+The Lower and Upper
+
+32:56.000 --> 32:58.000
+Dependency Parking
+
+32:58.000 --> 33:00.000
+is more common
+
+33:00.000 --> 33:02.000
+than
+
+33:02.000 --> 33:04.000
+the lower-density
+
+33:04.000 --> 33:06.000
+lower-density apartment
+
+33:06.000 --> 33:08.000
+on the same floor.
+
+33:08.000 --> 33:10.000
+The Lower and Upper
+
+33:10.000 --> 33:12.000
+Dependency Parking
+
+33:12.000 --> 33:14.000
+is more common
+
+33:14.000 --> 33:16.000
+than
+
+33:16.000 --> 33:18.000
+the lower-density
+
+33:18.000 --> 33:20.000
+lower-density apartment
+
+33:20.000 --> 33:22.000
+on the same floor.
+
+33:22.000 --> 33:24.000
+The Lower and Upper
+
+33:24.000 --> 33:26.000
+Dependency Parking
+
+33:26.000 --> 33:28.000
+is more common
+
+33:28.000 --> 33:30.000
+than
+
+33:30.000 --> 33:32.000
+the lower-density
+
+33:32.000 --> 33:34.000
+lower-density apartment
+
+33:34.000 --> 33:36.000
+on the same floor.
+
+33:36.000 --> 33:38.000
+The Lower and Upper
+
+33:38.000 --> 33:40.000
+Dependency Parking
+
+33:40.000 --> 33:42.000
+is more common
+
+33:42.000 --> 33:44.000
+than
+
+33:44.000 --> 33:46.000
+the lower-density
+
+33:46.000 --> 33:48.000
+lower-density apartment
+
+33:48.000 --> 33:50.000
+on the same floor.
+
+33:50.000 --> 33:52.000
+The lower-density
+
+33:52.000 --> 33:54.000
+lower-density apartment
+
+33:54.000 --> 33:56.000
+is more common
+
+33:56.000 --> 33:58.000
+than
+
+33:58.000 --> 34:00.000
+the lower-density
+
+34:00.000 --> 34:02.000
+lower-density apartment
+
+34:02.000 --> 34:04.000
+on the same floor.
+
+34:04.000 --> 34:06.000
+The Lower and Upper
+
+34:06.000 --> 34:08.000
+Dependency Parking
+
+34:08.000 --> 34:10.000
+is more common
+
+34:10.000 --> 34:12.000
+than
+
+34:12.000 --> 34:14.000
+the lower-density
+
+34:14.000 --> 34:16.000
+lower-density apartment
+
+34:16.000 --> 34:18.000
+on the same floor.
+
+34:18.000 --> 34:20.000
+The Lower and Upper
+
+34:20.000 --> 34:22.000
+Dependency Parking
+
+34:22.000 --> 34:24.000
+is more common
+
+34:24.000 --> 34:26.000
+than
+
+34:26.000 --> 34:28.000
+the lower-density
+
+34:28.000 --> 34:30.000
+lower-density apartment
+
+34:30.000 --> 34:32.000
+on the same floor.
+
+34:32.000 --> 34:34.000
+The Lower and Upper
+
+34:34.000 --> 34:36.000
+Dependency Parking
+
+34:36.000 --> 34:38.000
+is more common
+
+34:38.000 --> 34:40.000
+than
+
+34:40.000 --> 34:42.000
+the lower-density
+
+34:42.000 --> 34:44.000
+lower-density apartment
+
+34:44.000 --> 34:46.000
+on the same floor.
+
+34:46.000 --> 34:48.000
+In other words,
+
+34:48.000 --> 34:50.000
+relative to
+
+34:50.000 --> 34:52.000
+the lower-density
+
+34:52.000 --> 34:54.000
+apartment on the same floor,
+
+34:54.000 --> 34:56.000
+the dwelling environment
+
+34:56.000 --> 34:58.000
+in the lower-density
+
+34:58.000 --> 35:00.000
+apartment
+
+35:00.000 --> 35:02.000
+in the lower-density
+
+35:02.000 --> 35:04.000
+lower-density apartment
+
+35:04.000 --> 35:06.000
+is not as positive
+
+35:06.000 --> 35:08.000
+as the higher-density
+
+35:08.000 --> 35:10.000
+living environment
+
+35:10.000 --> 35:12.000
+in the lower-density
+
+35:12.000 --> 35:14.000
+lower-density
+
+35:14.000 --> 35:16.000
+low-density
+
+35:16.000 --> 35:18.000
+and relative to
+
+35:18.000 --> 35:20.000
+the upper-density
+
+35:20.000 --> 35:22.000
+middle-density
+
+35:22.000 --> 35:24.000
+middle-density
+
+35:24.000 --> 35:26.000
+low-density
+
+35:26.000 --> 35:28.000
+lower-density
+
+35:28.000 --> 35:30.000
+lower-density
+
+35:30.000 --> 35:32.000
+middle-density
+
+35:32.000 --> 35:34.000
+middle-density
+
+35:34.000 --> 35:36.000
+middle-density
+
+35:37.000 --> 35:39.000
+As you can see
+
+35:39.000 --> 35:41.000
+When we go from
+
+35:41.000 --> 35:43.000
+yellow to red
+
+35:43.000 --> 35:45.000
+It is gradually
+
+35:45.000 --> 35:47.000
+more and more modulation
+
+35:47.000 --> 35:49.000
+For example,
+
+35:49.000 --> 35:51.000
+this high-density IR
+
+35:51.000 --> 35:53.000
+In the original right of this curve
+
+35:53.000 --> 35:55.000
+Its risk relative to
+
+35:55.000 --> 35:57.000
+the lower-density is relatively high
+
+35:57.000 --> 35:59.000
+However, when it controls the modulation
+
+35:59.000 --> 36:01.000
+Its risk
+
+36:01.000 --> 36:03.000
+is relatively reduced
+
+36:03.000 --> 36:05.000
+In other words,
+
+36:05.000 --> 36:07.000
+the high-density IR
+
+36:07.000 --> 36:09.000
+can be controlled by
+
+36:09.000 --> 36:11.000
+other social mechanisms
+
+36:11.000 --> 36:13.000
+However, even if it is excluded
+
+36:13.000 --> 36:15.000
+Its risk is about 1.4 times
+
+36:15.000 --> 36:17.000
+higher than
+
+36:17.000 --> 36:19.000
+the low-density IR
+
+36:19.000 --> 36:21.000
+in rural areas
+
+36:23.000 --> 36:25.000
+On the other hand
+
+36:25.000 --> 36:27.000
+What is more interesting is that
+
+36:27.000 --> 36:29.000
+we originally expected that
+
+36:29.000 --> 36:31.000
+rural areas would have the lowest risk
+
+36:31.000 --> 36:33.000
+However, in the case of depression
+
+36:33.000 --> 36:35.000
+As you can see
+
+36:35.000 --> 36:37.000
+The lower-density IR
+
+36:37.000 --> 36:39.000
+is relatively low
+
+36:39.000 --> 36:41.000
+Its risk is actually
+
+36:41.000 --> 36:43.000
+lower than that of rural areas
+
+36:43.000 --> 36:45.000
+In other words, although it is in the urban area
+
+36:45.000 --> 36:47.000
+But in this architectural state
+
+36:47.000 --> 36:49.000
+Its risk is actually
+
+36:49.000 --> 36:51.000
+not higher than that of rural areas
+
+36:57.000 --> 36:59.000
+We just
+
+36:59.000 --> 37:01.000
+found the risk-benefit relationship
+
+37:01.000 --> 37:03.000
+We present its spatial state
+
+37:03.000 --> 37:05.000
+on the map of Denmark
+
+37:05.000 --> 37:07.000
+and
+
+37:07.000 --> 37:09.000
+the three main cities of Denmark
+
+37:09.000 --> 37:11.000
+including Copenhagen
+
+37:11.000 --> 37:13.000
+Aarhus
+
+37:13.000 --> 37:15.000
+and Corpus
+
+37:15.000 --> 37:17.000
+It also produces
+
+37:17.000 --> 37:19.000
+an interesting pattern
+
+37:19.000 --> 37:21.000
+In the original
+
+37:21.000 --> 37:23.000
+we expected that
+
+37:23.000 --> 37:25.000
+rural areas should be pink
+
+37:25.000 --> 37:27.000
+Everyone is happier
+
+37:27.000 --> 37:29.000
+The risk is relatively low
+
+37:29.000 --> 37:31.000
+As you can see
+
+37:31.000 --> 37:33.000
+Not only rural areas are pink
+
+37:33.000 --> 37:35.000
+The city center of the city is also pink
+
+37:35.000 --> 37:37.000
+Especially in the city center
+
+37:37.000 --> 37:39.000
+On the port side
+
+37:39.000 --> 37:41.000
+on the river bank
+
+37:41.000 --> 37:43.000
+and some green areas
+
+37:43.000 --> 37:45.000
+are the areas with the lowest risk
+
+37:47.000 --> 37:49.000
+Which area is the area with the highest risk?
+
+37:49.000 --> 37:51.000
+It is not in the center of the city
+
+37:51.000 --> 37:53.000
+Instead, it is in
+
+37:53.000 --> 37:55.000
+the suburbs
+
+37:55.000 --> 37:57.000
+Especially
+
+37:57.000 --> 37:59.000
+the areas with more walls
+
+37:59.000 --> 38:01.000
+It is relatively
+
+38:01.000 --> 38:03.000
+the area with the highest risk
+
+38:07.000 --> 38:09.000
+So I want to go back
+
+38:09.000 --> 38:11.000
+to the first question
+
+38:11.000 --> 38:13.000
+of today
+
+38:13.000 --> 38:15.000
+What is a more sustainable
+
+38:15.000 --> 38:17.000
+urban mentality?
+
+38:17.000 --> 38:19.000
+According to our research
+
+38:19.000 --> 38:21.000
+on mental health
+
+38:21.000 --> 38:23.000
+In fact, we found that
+
+38:23.000 --> 38:25.000
+there is no
+
+38:25.000 --> 38:27.000
+linear relationship
+
+38:27.000 --> 38:29.000
+The higher the density, the better
+
+38:29.000 --> 38:31.000
+or the lower the density, the better
+
+38:33.000 --> 38:35.000
+We found that
+
+38:35.000 --> 38:37.000
+it is a combination
+
+38:37.000 --> 38:39.000
+of low density
+
+38:39.000 --> 38:41.000
+and high density
+
+38:41.000 --> 38:43.000
+In the case of Denmark
+
+38:43.000 --> 38:45.000
+we found that
+
+38:45.000 --> 38:47.000
+the risk is relatively low
+
+38:47.000 --> 38:49.000
+It is like
+
+38:49.000 --> 38:51.000
+a neighborhood in Denmark
+
+38:51.000 --> 38:53.000
+So you can see
+
+38:53.000 --> 38:55.000
+In this area
+
+38:55.000 --> 38:57.000
+for the residents
+
+38:57.000 --> 38:59.000
+it is relatively easy to access
+
+38:59.000 --> 39:01.000
+public facilities
+
+39:01.000 --> 39:03.000
+including commercial activities
+
+39:03.000 --> 39:05.000
+such as coffee shops
+
+39:05.000 --> 39:07.000
+It is also easy to have rest areas
+
+39:07.000 --> 39:09.000
+such as parks
+
+39:11.000 --> 39:13.000
+In comparison
+
+39:13.000 --> 39:15.000
+In Denmark
+
+39:15.000 --> 39:17.000
+these high density
+
+39:17.000 --> 39:19.000
+low-rise
+
+39:19.000 --> 39:21.000
+high-density flat areas
+
+39:21.000 --> 39:23.000
+When the industrial development of Denmark
+
+39:23.000 --> 39:25.000
+reached its peak in the 1970s
+
+39:25.000 --> 39:27.000
+At that time, because of the huge population
+
+39:27.000 --> 39:29.000
+many houses
+
+39:29.000 --> 39:31.000
+were built outside the city
+
+39:31.000 --> 39:33.000
+When they built
+
+39:33.000 --> 39:35.000
+the design
+
+39:35.000 --> 39:37.000
+the density
+
+39:37.000 --> 39:39.000
+of the population was very high
+
+39:39.000 --> 39:41.000
+but there were no corresponding
+
+39:41.000 --> 39:43.000
+commercial activities or public facilities
+
+39:47.000 --> 39:49.000
+In our research
+
+39:49.000 --> 39:51.000
+we found
+
+39:51.000 --> 39:53.000
+that
+
+39:53.000 --> 39:55.000
+in the case of
+
+39:55.000 --> 39:57.000
+moving houses
+
+39:57.000 --> 39:59.000
+If the residents
+
+39:59.000 --> 40:01.000
+moved to
+
+40:01.000 --> 40:03.000
+high density flat areas
+
+40:07.000 --> 40:09.000
+If the residents
+
+40:09.000 --> 40:11.000
+live in such an environment
+
+40:11.000 --> 40:13.000
+there will be a risk increase
+
+40:13.000 --> 40:15.000
+In other words
+
+40:15.000 --> 40:17.000
+compared to the residents
+
+40:17.000 --> 40:19.000
+of high density flat areas
+
+40:19.000 --> 40:21.000
+If the residents
+
+40:21.000 --> 40:23.000
+moved to
+
+40:23.000 --> 40:25.000
+high density flat areas
+
+40:25.000 --> 40:27.000
+they will face
+
+40:27.000 --> 40:29.000
+a higher risk
+
+40:29.000 --> 40:31.000
+So
+
+40:31.000 --> 40:33.000
+we are talking about
+
+40:33.000 --> 40:35.000
+environmental justice
+
+40:35.000 --> 40:37.000
+or social justice
+
+40:37.000 --> 40:39.000
+In Denmark
+
+40:39.000 --> 40:41.000
+there have been a lot of
+
+40:41.000 --> 40:43.000
+urban renewal cases
+
+40:43.000 --> 40:45.000
+In the process of urban renewal
+
+40:45.000 --> 40:47.000
+the city retained
+
+40:47.000 --> 40:49.000
+or increased the urban green space
+
+40:49.000 --> 40:51.000
+and improved the quality of life
+
+40:51.000 --> 40:53.000
+At the same time
+
+40:53.000 --> 40:55.000
+it also increased the rent in the city center
+
+40:55.000 --> 40:57.000
+In the past
+
+40:57.000 --> 40:59.000
+the city center of Denmark
+
+40:59.000 --> 41:01.000
+was mainly for the workers
+
+41:01.000 --> 41:03.000
+After these places
+
+41:03.000 --> 41:05.000
+were upgraded
+
+41:05.000 --> 41:07.000
+when the rent became more expensive
+
+41:07.000 --> 41:09.000
+some people
+
+41:09.000 --> 41:11.000
+had to move to
+
+41:11.000 --> 41:13.000
+lower rents
+
+41:13.000 --> 41:15.000
+At the same time
+
+41:15.000 --> 41:17.000
+the city council
+
+41:17.000 --> 41:19.000
+contributed a lot
+
+41:19.000 --> 41:21.000
+in this study
+
+41:21.000 --> 41:23.000
+This is a problem
+
+41:23.000 --> 41:25.000
+that needs to be noticed
+
+41:25.000 --> 41:27.000
+in urban planning
+
+41:27.000 --> 41:29.000
+so that we can provide
+
+41:29.000 --> 41:31.000
+a more fair
+
+41:31.000 --> 41:33.000
+and comfortable
+
+41:33.000 --> 41:35.000
+living environment
+
+41:39.000 --> 41:41.000
+Finally
+
+41:41.000 --> 41:43.000
+I would like to summarize
+
+41:43.000 --> 41:45.000
+the position of this study
+
+41:45.000 --> 41:47.000
+in academic research
+
+41:47.000 --> 41:49.000
+First of all
+
+41:49.000 --> 41:51.000
+in the past
+
+41:51.000 --> 41:53.000
+the researchers
+
+41:53.000 --> 41:55.000
+mainly looked at the expansion
+
+41:55.000 --> 41:57.000
+of the city
+
+41:57.000 --> 41:59.000
+and simplified it
+
+41:59.000 --> 42:01.000
+into a concept of
+
+42:01.000 --> 42:03.000
+dual contrast
+
+42:03.000 --> 42:05.000
+But
+
+42:05.000 --> 42:07.000
+in addition to
+
+42:07.000 --> 42:09.000
+the expansion of
+
+42:09.000 --> 42:11.000
+if we can
+
+42:11.000 --> 42:13.000
+look at some
+
+42:13.000 --> 42:15.000
+urban design conditions in more detail
+
+42:15.000 --> 42:17.000
+such as density and height
+
+42:17.000 --> 42:19.000
+we will have a chance
+
+42:19.000 --> 42:21.000
+to talk more
+
+42:21.000 --> 42:23.000
+in the field of urban planning
+
+42:23.000 --> 42:25.000
+and talk more about
+
+42:25.000 --> 42:27.000
+psychological health
+
+42:27.000 --> 42:29.000
+and other research
+
+42:29.000 --> 42:31.000
+related to the extension
+
+42:31.000 --> 42:33.000
+In the second part
+
+42:33.000 --> 42:35.000
+the position of this study
+
+42:35.000 --> 42:37.000
+is to use a global
+
+42:37.000 --> 42:39.000
+method to conduct research
+
+42:39.000 --> 42:41.000
+The advantage of global technology
+
+42:41.000 --> 42:43.000
+is that when this method
+
+42:43.000 --> 42:45.000
+is proposed
+
+42:45.000 --> 42:47.000
+it can be applied to
+
+42:47.000 --> 42:49.000
+many other countries
+
+42:49.000 --> 42:51.000
+At the same time
+
+42:51.000 --> 42:53.000
+it has a limitation
+
+42:53.000 --> 42:55.000
+as mentioned earlier
+
+42:55.000 --> 42:57.000
+because its coverage
+
+42:57.000 --> 42:59.000
+is very large
+
+42:59.000 --> 43:01.000
+and has a long history
+
+43:01.000 --> 43:03.000
+so it is actually
+
+43:03.000 --> 43:05.000
+a relatively limited
+
+43:05.000 --> 43:07.000
+and difficult topic
+
+43:07.000 --> 43:09.000
+Therefore, through
+
+43:09.000 --> 43:11.000
+in-depth study
+
+43:11.000 --> 43:13.000
+we can make progress
+
+43:13.000 --> 43:15.000
+on this topic
+
+43:15.000 --> 43:17.000
+This topic is actually
+
+43:17.000 --> 43:19.000
+very broad
+
+43:19.000 --> 43:21.000
+It requires a lot of people
+
+43:21.000 --> 43:23.000
+from different professional backgrounds
+
+43:23.000 --> 43:25.000
+to join in, including psychology, urban planning
+
+43:25.000 --> 43:27.000
+and epidemiology
+
+43:27.000 --> 43:29.000
+So I look forward to
+
+43:29.000 --> 43:31.000
+discussing more with you
+
+43:35.000 --> 43:37.000
+Finally, I would like to
+
+43:37.000 --> 43:39.000
+briefly share
+
+43:39.000 --> 43:41.000
+my next plan
+
+43:41.000 --> 43:43.000
+I have a fellowship
+
+43:43.000 --> 43:45.000
+in Yale in the next two years
+
+43:45.000 --> 43:47.000
+My plan is
+
+43:47.000 --> 43:49.000
+to expand
+
+43:49.000 --> 43:51.000
+the three-dimensional
+
+43:51.000 --> 43:53.000
+urban characteristics
+
+43:53.000 --> 43:55.000
+I just mentioned
+
+43:55.000 --> 43:57.000
+to the global research area
+
+43:57.000 --> 43:59.000
+Under this global research
+
+43:59.000 --> 44:01.000
+it is not just
+
+44:01.000 --> 44:03.000
+the past
+
+44:03.000 --> 44:05.000
+urban research
+
+44:05.000 --> 44:07.000
+Most of the research areas
+
+44:07.000 --> 44:09.000
+in Yale
+
+44:09.000 --> 44:11.000
+are in large cities
+
+44:11.000 --> 44:13.000
+such as
+
+44:13.000 --> 44:15.000
+5 million people
+
+44:15.000 --> 44:17.000
+The scale of the city
+
+44:17.000 --> 44:19.000
+will receive a lot of research attention
+
+44:19.000 --> 44:21.000
+However, compared to Taiwan
+
+44:21.000 --> 44:23.000
+when urban development
+
+44:23.000 --> 44:25.000
+has reached its peak
+
+44:25.000 --> 44:27.000
+our urban update
+
+44:27.000 --> 44:29.000
+may be a street area
+
+44:29.000 --> 44:31.000
+These small-scale changes
+
+44:31.000 --> 44:33.000
+or small-scale urban developments
+
+44:33.000 --> 44:35.000
+in other Latin American countries
+
+44:35.000 --> 44:37.000
+or even in Africa
+
+44:37.000 --> 44:39.000
+their urban expansion
+
+44:39.000 --> 44:41.000
+tend to start
+
+44:41.000 --> 44:43.000
+from a small change
+
+44:43.000 --> 44:45.000
+These areas
+
+44:45.000 --> 44:47.000
+are relatively small
+
+44:47.000 --> 44:49.000
+and remote
+
+44:49.000 --> 44:51.000
+so it is hard to be seen by satellites
+
+44:51.000 --> 44:53.000
+Therefore, in the past
+
+44:53.000 --> 44:55.000
+we did not do much research
+
+44:55.000 --> 44:57.000
+However, in the future
+
+44:57.000 --> 44:59.000
+we plan to
+
+44:59.000 --> 45:01.000
+do more research
+
+45:01.000 --> 45:03.000
+in this area
+
+45:03.000 --> 45:05.000
+This is a brief
+
+45:05.000 --> 45:07.000
+reference
+
+45:07.000 --> 45:09.000
+for you
+
+45:09.000 --> 45:11.000
+If you are interested
+
+45:11.000 --> 45:13.000
+you can read the articles
+
+45:13.000 --> 45:15.000
+for more details
+
+45:17.000 --> 45:19.000
+That's all for today
+
+45:19.000 --> 45:21.000
+Let's start the discussion
+
+45:21.000 --> 45:23.000
+Thank you, Chi-Hsing
+
+45:23.000 --> 45:25.000
+If there are
+
+45:25.000 --> 45:27.000
+any questions
+
+45:27.000 --> 45:29.000
+please feel free
+
+45:29.000 --> 45:31.000
+to raise your mic
+
+45:31.000 --> 45:33.000
+to join the discussion
+
+45:33.000 --> 45:35.000
+At the first stage
+
+45:35.000 --> 45:37.000
+there was a question
+
+45:37.000 --> 45:39.000
+from Xu Shi-Che
+
+45:39.000 --> 45:41.000
+Do you want to
+
+45:41.000 --> 45:43.000
+raise your mic
+
+45:43.000 --> 45:45.000
+to ask Chi-Hsing?
+
+45:51.000 --> 45:53.000
+Okay
+
+45:53.000 --> 45:55.000
+Xu Shi-Che
+
+45:55.000 --> 45:57.000
+seems to say
+
+45:57.000 --> 45:59.000
+his mic is not working
+
+45:59.000 --> 46:01.000
+Let me ask him
+
+46:01.000 --> 46:03.000
+his question
+
+46:03.000 --> 46:05.000
+His question is
+
+46:05.000 --> 46:07.000
+how much
+
+46:07.000 --> 46:09.000
+overall accuracy
+
+46:09.000 --> 46:11.000
+do you need
+
+46:11.000 --> 46:13.000
+to be able to
+
+46:13.000 --> 46:15.000
+distinguish
+
+46:15.000 --> 46:17.000
+your urban
+
+46:17.000 --> 46:19.000
+development
+
+46:19.000 --> 46:21.000
+between 6 types of urban
+
+46:21.000 --> 46:23.000
+and 2 types of urban
+
+46:23.000 --> 46:25.000
+This is a question
+
+46:25.000 --> 46:27.000
+from the first stage
+
+46:29.000 --> 46:31.000
+That's a good question
+
+46:31.000 --> 46:33.000
+Because
+
+46:33.000 --> 46:35.000
+overall accuracy
+
+46:35.000 --> 46:37.000
+is hard to
+
+46:37.000 --> 46:39.000
+distinguish
+
+46:39.000 --> 46:41.000
+Overall accuracy
+
+46:41.000 --> 46:43.000
+is easy to be
+
+46:43.000 --> 46:45.000
+distinguished
+
+46:45.000 --> 46:47.000
+by one type
+
+46:47.000 --> 46:49.000
+We need to
+
+46:49.000 --> 46:51.000
+look at
+
+46:51.000 --> 46:53.000
+accuracy matrix
+
+46:53.000 --> 46:55.000
+In this matrix
+
+46:55.000 --> 46:57.000
+we can see
+
+46:57.000 --> 46:59.000
+the top 3 are
+
+46:59.000 --> 47:01.000
+horizontal
+
+47:01.000 --> 47:03.000
+and the bottom 3
+
+47:03.000 --> 47:05.000
+are vertical
+
+47:05.000 --> 47:07.000
+and horizontal
+
+47:07.000 --> 47:09.000
+When we
+
+47:09.000 --> 47:11.000
+look at this
+
+47:11.000 --> 47:13.000
+we need to
+
+47:13.000 --> 47:15.000
+look at
+
+47:15.000 --> 47:17.000
+our own performance
+
+47:17.000 --> 47:19.000
+When each performance
+
+47:19.000 --> 47:21.000
+can reach
+
+47:21.000 --> 47:23.000
+60, 70, 80%
+
+47:23.000 --> 47:25.000
+then we can
+
+47:25.000 --> 47:27.000
+distinguish
+
+47:27.000 --> 47:29.000
+Of course 60% is not good
+
+47:29.000 --> 47:31.000
+But for now
+
+47:31.000 --> 47:33.000
+we need to be able to
+
+47:33.000 --> 47:35.000
+distinguish low density
+
+47:35.000 --> 47:37.000
+houses from
+
+47:37.000 --> 47:39.000
+non-houses
+
+47:39.000 --> 47:41.000
+It is relatively difficult
+
+47:41.000 --> 47:43.000
+When we see
+
+47:43.000 --> 47:45.000
+our own performance
+
+47:45.000 --> 47:47.000
+we can know
+
+47:47.000 --> 47:49.000
+how to improve
+
+47:49.000 --> 47:51.000
+our performance
+
+47:57.000 --> 47:59.000
+Any other questions?
+
+48:01.000 --> 48:03.000
+Hello
+
+48:03.000 --> 48:05.000
+I have a question
+
+48:05.000 --> 48:07.000
+about
+
+48:07.000 --> 48:09.000
+Thank you for your speech
+
+48:09.000 --> 48:11.000
+I think it is very interesting
+
+48:11.000 --> 48:13.000
+My question is
+
+48:15.000 --> 48:17.000
+You found that
+
+48:17.000 --> 48:19.000
+urban conditions
+
+48:19.000 --> 48:21.000
+are related to
+
+48:21.000 --> 48:23.000
+residents'
+
+48:23.000 --> 48:25.000
+mental health
+
+48:25.000 --> 48:27.000
+Although it is not a simple
+
+48:27.000 --> 48:29.000
+linear relationship
+
+48:29.000 --> 48:31.000
+I am curious
+
+48:31.000 --> 48:33.000
+At the beginning
+
+48:33.000 --> 48:35.000
+you mentioned some
+
+48:35.000 --> 48:37.000
+possible connections
+
+48:37.000 --> 48:39.000
+For example,
+
+48:39.000 --> 48:41.000
+we can have
+
+48:41.000 --> 48:43.000
+social activities
+
+48:43.000 --> 48:45.000
+so that people can
+
+48:45.000 --> 48:47.000
+get along better
+
+48:47.000 --> 48:49.000
+But you did not
+
+48:49.000 --> 48:51.000
+measure it
+
+48:51.000 --> 48:53.000
+So I am curious
+
+48:53.000 --> 48:55.000
+What is your
+
+48:55.000 --> 48:57.000
+imagination
+
+48:57.000 --> 48:59.000
+about this mechanism
+
+48:59.000 --> 49:01.000
+Do you have any
+
+49:01.000 --> 49:03.000
+future research
+
+49:03.000 --> 49:05.000
+to measure it?
+
+49:05.000 --> 49:07.000
+I think
+
+49:07.000 --> 49:09.000
+this question
+
+49:09.000 --> 49:11.000
+I always
+
+49:11.000 --> 49:13.000
+hear my own answer
+
+49:13.000 --> 49:15.000
+I turn off
+
+49:15.000 --> 49:17.000
+my microphone
+
+49:17.000 --> 49:19.000
+Thank you
+
+49:19.000 --> 49:21.000
+In fact, I think
+
+49:21.000 --> 49:23.000
+when we do quantitative research
+
+49:23.000 --> 49:25.000
+large scale
+
+49:25.000 --> 49:27.000
+or big data research
+
+49:27.000 --> 49:29.000
+we often encounter a limitation
+
+49:29.000 --> 49:31.000
+that when we talk about
+
+49:31.000 --> 49:33.000
+this mechanism
+
+49:33.000 --> 49:35.000
+we can not measure it
+
+49:35.000 --> 49:37.000
+So when we discuss
+
+49:37.000 --> 49:39.000
+For example, when we see
+
+49:39.000 --> 49:41.000
+that Denmark's
+
+49:41.000 --> 49:43.000
+high-rise buildings are
+
+49:43.000 --> 49:45.000
+in a low-risk state
+
+49:45.000 --> 49:47.000
+we will look for
+
+49:47.000 --> 49:49.000
+documents
+
+49:49.000 --> 49:51.000
+through interviews
+
+49:51.000 --> 49:53.000
+or through
+
+49:53.000 --> 49:55.000
+small scale research
+
+49:55.000 --> 49:57.000
+to discuss and respond
+
+49:57.000 --> 49:59.000
+to the document
+
+49:59.000 --> 50:01.000
+However,
+
+50:01.000 --> 50:03.000
+in my research, I did not
+
+50:03.000 --> 50:05.000
+measure it
+
+50:05.000 --> 50:07.000
+In the future,
+
+50:07.000 --> 50:09.000
+is it possible to
+
+50:09.000 --> 50:11.000
+directly measure social interaction?
+
+50:11.000 --> 50:13.000
+At present,
+
+50:13.000 --> 50:15.000
+I see a chance
+
+50:15.000 --> 50:17.000
+to use social media
+
+50:17.000 --> 50:19.000
+such as Facebook
+
+50:19.000 --> 50:21.000
+or Twitter
+
+50:21.000 --> 50:23.000
+to make improvements
+
+50:23.000 --> 50:25.000
+in this area
+
+50:25.000 --> 50:27.000
+I am also curious
+
+50:27.000 --> 50:29.000
+Do you have any ideas
+
+50:29.000 --> 50:31.000
+or suggestions
+
+50:31.000 --> 50:33.000
+I
+
+50:33.000 --> 50:35.000
+I
+
+50:35.000 --> 50:37.000
+I have no special
+
+50:37.000 --> 50:39.000
+I just want to hear
+
+50:39.000 --> 50:41.000
+your expert opinion
+
+50:41.000 --> 50:43.000
+Because I am also quite interested
+
+50:43.000 --> 50:45.000
+to know if you want to measure
+
+50:45.000 --> 50:47.000
+what are the possibilities
+
+50:47.000 --> 50:49.000
+But I do not know
+
+50:49.000 --> 50:51.000
+how to do it
+
+50:53.000 --> 50:55.000
+Hello
+
+50:55.000 --> 50:57.000
+I am also doing
+
+50:57.000 --> 50:59.000
+urban environment and psychological
+
+50:59.000 --> 51:01.000
+research
+
+51:01.000 --> 51:03.000
+But I am doing
+
+51:03.000 --> 51:05.000
+green space
+
+51:05.000 --> 51:07.000
+We will
+
+51:07.000 --> 51:09.000
+Some say
+
+51:09.000 --> 51:11.000
+because there is a
+
+51:11.000 --> 51:13.000
+public space
+
+51:13.000 --> 51:15.000
+so people will gather
+
+51:15.000 --> 51:17.000
+and there will be some social interaction
+
+51:17.000 --> 51:19.000
+There will be
+
+51:19.000 --> 51:21.000
+social well-being
+
+51:21.000 --> 51:23.000
+About this
+
+51:23.000 --> 51:25.000
+public space
+
+51:25.000 --> 51:27.000
+I have a question
+
+51:27.000 --> 51:29.000
+In our research
+
+51:29.000 --> 51:31.000
+it will affect
+
+51:31.000 --> 51:33.000
+mental health
+
+51:33.000 --> 51:35.000
+I want to ask
+
+51:35.000 --> 51:37.000
+In your future research project
+
+51:37.000 --> 51:39.000
+will you
+
+51:39.000 --> 51:41.000
+turn green space
+
+51:41.000 --> 51:43.000
+into your
+
+51:43.000 --> 51:45.000
+control variables?
+
+51:49.000 --> 51:51.000
+In Denmark,
+
+51:51.000 --> 51:53.000
+the whole Northern Europe
+
+51:53.000 --> 51:55.000
+pays a lot of attention to green space
+
+51:55.000 --> 51:57.000
+I have a research
+
+51:57.000 --> 51:59.000
+It is not my research
+
+51:59.000 --> 52:01.000
+but there is a research in our team
+
+52:01.000 --> 52:03.000
+It found that in Denmark
+
+52:03.000 --> 52:05.000
+it uses a standard
+
+52:05.000 --> 52:07.000
+NDE
+
+52:07.000 --> 52:09.000
+It is from satellite image data
+
+52:09.000 --> 52:11.000
+to see
+
+52:11.000 --> 52:13.000
+when children
+
+52:13.000 --> 52:15.000
+in their childhood
+
+52:15.000 --> 52:17.000
+How high is the green space
+
+52:17.000 --> 52:19.000
+for them to adults
+
+52:19.000 --> 52:21.000
+will extend
+
+52:21.000 --> 52:23.000
+different psychological
+
+52:23.000 --> 52:25.000
+I found
+
+52:25.000 --> 52:27.000
+green space is helpful
+
+52:29.000 --> 52:31.000
+In my own research
+
+52:31.000 --> 52:33.000
+Green space
+
+52:33.000 --> 52:35.000
+is a hot topic
+
+52:35.000 --> 52:37.000
+for psychological research
+
+52:37.000 --> 52:39.000
+My next
+
+52:39.000 --> 52:41.000
+research
+
+52:41.000 --> 52:43.000
+I will talk about
+
+52:43.000 --> 52:45.000
+cement
+
+52:45.000 --> 52:47.000
+architecture
+
+52:47.000 --> 52:49.000
+and then
+
+52:49.000 --> 52:51.000
+cross analysis
+
+52:51.000 --> 52:53.000
+When they are
+
+52:53.000 --> 52:55.000
+what combination
+
+52:55.000 --> 52:57.000
+they will do
+
+52:57.000 --> 52:59.000
+effect analysis
+
+53:05.000 --> 53:07.000
+Hello, I am Zhang Anping
+
+53:07.000 --> 53:09.000
+Sorry, you just asked me
+
+53:09.000 --> 53:11.000
+I thought about it
+
+53:11.000 --> 53:13.000
+I am now
+
+53:13.000 --> 53:15.000
+You listen to this thing
+
+53:15.000 --> 53:17.000
+How likely
+
+53:17.000 --> 53:19.000
+If we use
+
+53:19.000 --> 53:21.000
+You see
+
+53:21.000 --> 53:23.000
+Google map
+
+53:23.000 --> 53:25.000
+Timeline
+
+53:25.000 --> 53:27.000
+GPS location
+
+53:27.000 --> 53:29.000
+plus
+
+53:29.000 --> 53:31.000
+Wi-Fi location
+
+53:31.000 --> 53:33.000
+to infer
+
+53:33.000 --> 53:35.000
+a person's behavior
+
+53:35.000 --> 53:37.000
+I am driving
+
+53:37.000 --> 53:39.000
+I am walking
+
+53:39.000 --> 53:41.000
+I am riding a bicycle
+
+53:41.000 --> 53:43.000
+I am running
+
+53:43.000 --> 53:45.000
+We can infer
+
+53:45.000 --> 53:47.000
+a person's behavior
+
+53:47.000 --> 53:49.000
+not on the timeline
+
+53:53.000 --> 53:55.000
+But for the neighbor
+
+53:59.000 --> 54:01.000
+He comes in
+
+54:01.000 --> 54:03.000
+Quite close
+
+54:05.000 --> 54:07.000
+Walking distance
+
+54:09.000 --> 54:11.000
+This is a kind of confusion
+
+54:11.000 --> 54:13.000
+Use that way
+
+54:13.000 --> 54:15.000
+same as
+
+54:15.000 --> 54:17.000
+Satellite system
+
+54:17.000 --> 54:19.000
+Data
+
+54:19.000 --> 54:21.000
+To model
+
+54:21.000 --> 54:23.000
+Or at least to index
+
+54:23.000 --> 54:25.000
+Different people
+
+54:25.000 --> 54:27.000
+The difference in their behavior
+
+54:27.000 --> 54:29.000
+Then put this as
+
+54:29.000 --> 54:31.000
+To label them
+
+54:31.000 --> 54:33.000
+Become a link
+
+54:33.000 --> 54:35.000
+Urban design
+
+54:35.000 --> 54:37.000
+Mental health or other
+
+54:37.000 --> 54:39.000
+Well-being index
+
+54:39.000 --> 54:41.000
+Link
+
+54:41.000 --> 54:43.000
+Possibility
+
+54:45.000 --> 54:47.000
+I think it sounds very interesting
+
+54:47.000 --> 54:49.000
+If you can really get
+
+54:49.000 --> 54:51.000
+For example, Google is willing to study
+
+54:51.000 --> 54:53.000
+File and then apply
+
+54:53.000 --> 54:55.000
+Get these users
+
+54:55.000 --> 54:57.000
+The way you just talked about
+
+54:57.000 --> 54:59.000
+Is it very
+
+54:59.000 --> 55:01.000
+Can break through the current
+
+55:01.000 --> 55:03.000
+I don't know what everyone is doing in this area
+
+55:03.000 --> 55:05.000
+Discussion
+
+55:05.000 --> 55:07.000
+Is that we can really predict
+
+55:07.000 --> 55:09.000
+Some activities and then put the activity
+
+55:09.000 --> 55:11.000
+What kind of space provides what kind of activity
+
+55:11.000 --> 55:13.000
+Then enter the mental health
+
+55:13.000 --> 55:15.000
+Can talk about this
+
+55:17.000 --> 55:19.000
+Hello
+
+55:21.000 --> 55:23.000
+Yes, I heard that I want to respond
+
+55:23.000 --> 55:25.000
+Just now Zhang Yanping and
+
+55:25.000 --> 55:27.000
+Your research is
+
+55:27.000 --> 55:29.000
+Mainly this information privacy
+
+55:29.000 --> 55:31.000
+Problem
+
+55:31.000 --> 55:33.000
+Because you said before
+
+55:33.000 --> 55:35.000
+The Danish Health Insurance Bureau's database
+
+55:35.000 --> 55:37.000
+So it can reflect
+
+55:37.000 --> 55:39.000
+Someone's
+
+55:39.000 --> 55:41.000
+His illness and residence
+
+55:41.000 --> 55:43.000
+A timeline
+
+55:43.000 --> 55:45.000
+I think this
+
+55:45.000 --> 55:47.000
+The feeling of privacy is very
+
+55:47.000 --> 55:49.000
+Very high
+
+55:49.000 --> 55:51.000
+Then you mentioned later
+
+55:51.000 --> 55:53.000
+You also mentioned in the middle
+
+55:53.000 --> 55:55.000
+There is positive
+
+55:55.000 --> 55:57.000
+Force to move
+
+55:57.000 --> 55:59.000
+I don't know how you know
+
+55:59.000 --> 56:01.000
+He is
+
+56:01.000 --> 56:03.000
+In what situation
+
+56:03.000 --> 56:05.000
+This is also a personal
+
+56:05.000 --> 56:07.000
+Privacy information
+
+56:07.000 --> 56:09.000
+You mentioned that you want to put this research
+
+56:09.000 --> 56:11.000
+To other areas in Denmark
+
+56:11.000 --> 56:13.000
+For example, you are in the United States now
+
+56:13.000 --> 56:15.000
+Then you feel
+
+56:15.000 --> 56:17.000
+Denmark you get this database
+
+56:17.000 --> 56:19.000
+The completeness of this information
+
+56:19.000 --> 56:21.000
+Those in the United States
+
+56:21.000 --> 56:23.000
+Or in other countries
+
+56:23.000 --> 56:25.000
+Can you get it
+
+56:25.000 --> 56:27.000
+Because it feels very private
+
+56:27.000 --> 56:29.000
+Personal
+
+56:29.000 --> 56:31.000
+Back to the example of Zhang Yanping
+
+56:31.000 --> 56:33.000
+That is
+
+56:33.000 --> 56:35.000
+Personal
+
+56:35.000 --> 56:37.000
+Personal activity
+
+56:37.000 --> 56:39.000
+But you still have his
+
+56:39.000 --> 56:41.000
+Information about illness
+
+56:43.000 --> 56:45.000
+Research in this area
+
+56:49.000 --> 56:51.000
+The question you asked is very important
+
+56:51.000 --> 56:53.000
+Is privacy
+
+56:53.000 --> 56:55.000
+I can share with you
+
+56:55.000 --> 56:57.000
+Denmark
+
+56:57.000 --> 56:59.000
+Denmark
+
+56:59.000 --> 57:01.000
+Their Bureau of Statistics
+
+57:01.000 --> 57:03.000
+How do they go
+
+57:03.000 --> 57:05.000
+To ensure that researchers
+
+57:05.000 --> 57:07.000
+Do not hurt
+
+57:07.000 --> 57:09.000
+Privacy
+
+57:09.000 --> 57:11.000
+The first one is
+
+57:11.000 --> 57:13.000
+We are in
+
+57:13.000 --> 57:15.000
+Denmark
+
+57:15.000 --> 57:17.000
+Denmark
+
+57:17.000 --> 57:19.000
+Denmark
+
+57:19.000 --> 57:21.000
+Denmark
+
+57:21.000 --> 57:23.000
+Denmark
+
+57:23.000 --> 57:25.000
+Denmark
+
+57:25.000 --> 57:27.000
+Denmark
+
+57:27.000 --> 57:29.000
+Denmark
+
+57:29.000 --> 57:31.000
+Denmark
+
+57:31.000 --> 57:33.000
+Denmark
+
+57:33.000 --> 57:35.000
+Denmark
+
+57:35.000 --> 57:37.000
+Denmark
+
+57:37.000 --> 57:39.000
+Denmark
+
+57:39.000 --> 57:41.000
+Denmark
+
+57:41.000 --> 57:43.000
+Denmark
+
+57:43.000 --> 57:45.000
+Denmark
+
+57:45.000 --> 57:47.000
+Denmark
+
+57:47.000 --> 57:49.000
+Denmark
+
+57:49.000 --> 57:51.000
+Denmark
+
+57:51.000 --> 57:53.000
+Denmark
+
+57:53.000 --> 57:55.000
+Denmark
+
+57:57.000 --> 57:59.000
+Denmark
+
+57:59.000 --> 58:01.000
+Denmark
+
+58:01.000 --> 58:03.000
+Denmark
+
+58:03.000 --> 58:05.000
+Denmark
+
+58:05.000 --> 58:07.000
+Denmark
+
+58:07.000 --> 58:09.000
+Denmark
+
+58:09.000 --> 58:11.000
+Denmark
+
+58:11.000 --> 58:13.000
+Denmark
+
+58:13.000 --> 58:15.000
+Denmark
+
+58:15.000 --> 58:17.000
+Denmark
+
+58:17.000 --> 58:19.000
+Denmark
+
+58:19.000 --> 58:21.000
+Denmark
+
+58:25.000 --> 58:27.000
+sorry I'm back
+
+58:27.000 --> 58:29.000
+sorry I'm back
+
+58:29.000 --> 58:31.000
+can you hear me?
+
+58:31.000 --> 58:33.000
+can you hear me?
+
+58:33.000 --> 58:35.000
+this works, thank you
+
+58:35.000 --> 58:37.000
+this works, thank you
+
+58:37.000 --> 58:39.000
+sorry, I think I connected with the wrong network
+
+58:39.000 --> 58:41.000
+sorry, I think I connected with the wrong network
+
+58:41.000 --> 58:43.000
+I will continue with the
+
+58:43.000 --> 58:45.000
+reply of the question
+
+58:45.000 --> 58:47.000
+reply of the question
+
+58:51.000 --> 58:53.000
+In Denmark
+
+58:53.000 --> 58:55.000
+the statistics office
+
+58:55.000 --> 58:57.000
+to use this data
+
+58:57.000 --> 58:59.000
+first of all
+
+58:59.000 --> 59:01.000
+this data is anonymous
+
+59:01.000 --> 59:03.000
+and the people above
+
+59:03.000 --> 59:05.000
+although we will see
+
+59:05.000 --> 59:07.000
+there is an address code
+
+59:07.000 --> 59:09.000
+but the address code is not an address
+
+59:09.000 --> 59:11.000
+just a statistics office
+
+59:11.000 --> 59:13.000
+behind to connect these
+
+59:13.000 --> 59:15.000
+reading characteristics with their
+
+59:15.000 --> 59:17.000
+social and economic attributes, it needs to have a code
+
+59:17.000 --> 59:19.000
+to connect
+
+59:19.000 --> 59:21.000
+when we researchers
+
+59:21.000 --> 59:23.000
+see the data
+
+59:23.000 --> 59:25.000
+they can't see
+
+59:25.000 --> 59:27.000
+what the address looks like
+
+59:27.000 --> 59:29.000
+we only see those that have been
+
+59:29.000 --> 59:31.000
+linked
+
+59:31.000 --> 59:33.000
+so above
+
+59:33.000 --> 59:35.000
+we can't see who the person is
+
+59:35.000 --> 59:37.000
+and we can't see the name of the address
+
+59:37.000 --> 59:39.000
+or what the name is
+
+59:39.000 --> 59:41.000
+so we
+
+59:41.000 --> 59:43.000
+analyze
+
+59:43.000 --> 59:45.000
+these variable combinations
+
+59:45.000 --> 59:47.000
+and the statistics
+
+59:47.000 --> 59:49.000
+and the statistics
+
+59:49.000 --> 59:51.000
+and the statistics
+
+59:51.000 --> 59:53.000
+and the statistics
+
+59:53.000 --> 59:55.000
+and the statistics
+
+59:55.000 --> 59:57.000
+but we can't take any
+
+59:57.000 --> 59:59.000
+personal information
+
+59:59.000 --> 01:00:01.000
+so in this way
+
+01:00:01.000 --> 01:00:03.000
+we can only get a conclusion
+
+01:00:03.000 --> 01:00:05.000
+but we can't
+
+01:00:05.000 --> 01:00:07.000
+in this process
+
+01:00:07.000 --> 01:00:09.000
+leak any personal information
+
+01:00:09.000 --> 01:00:11.000
+what is it
+
+01:00:11.000 --> 01:00:13.000
+the second one you just mentioned
+
+01:00:13.000 --> 01:00:15.000
+how do I know
+
+01:00:15.000 --> 01:00:17.000
+who is forced to move
+
+01:00:17.000 --> 01:00:19.000
+and who wants to move
+
+01:00:19.000 --> 01:00:21.000
+I don't know
+
+01:00:21.000 --> 01:00:23.000
+in our research
+
+01:00:23.000 --> 01:00:25.000
+we don't actually measure
+
+01:00:25.000 --> 01:00:27.000
+this thing
+
+01:00:27.000 --> 01:00:29.000
+when we respond to documents
+
+01:00:29.000 --> 01:00:31.000
+especially Copenhagen
+
+01:00:31.000 --> 01:00:33.000
+when we respond to documents
+
+01:00:33.000 --> 01:00:35.000
+we find some documents
+
+01:00:35.000 --> 01:00:37.000
+that have been interviewed
+
+01:00:37.000 --> 01:00:39.000
+and they have targeted those
+
+01:00:39.000 --> 01:00:41.000
+recent
+
+01:00:41.000 --> 01:00:43.000
+because of Copenhagen
+
+01:00:43.000 --> 01:00:45.000
+and the rent increase
+
+01:00:45.000 --> 01:00:47.000
+including some of the meetings
+
+01:00:47.000 --> 01:00:49.000
+and some of the records
+
+01:00:49.000 --> 01:00:51.000
+and the records
+
+01:00:51.000 --> 01:00:53.000
+and the results
+
+01:00:53.000 --> 01:00:55.000
+and we
+
+01:00:55.000 --> 01:00:57.000
+take this process
+
+01:00:57.000 --> 01:00:59.000
+as a discussion
+
+01:00:59.000 --> 01:01:01.000
+and put it in our research
+
+01:01:01.000 --> 01:01:03.000
+and put it in our research
+
+01:01:03.000 --> 01:01:05.000
+and the last question
+
+01:01:05.000 --> 01:01:07.000
+is
+
+01:01:07.000 --> 01:01:09.000
+this kind of research
+
+01:01:09.000 --> 01:01:11.000
+is it possible to be studied in other countries
+
+01:01:11.000 --> 01:01:13.000
+is it possible to be studied in other countries
+
+01:01:13.000 --> 01:01:15.000
+in the US
+
+01:01:15.000 --> 01:01:17.000
+I don't know much
+
+01:01:17.000 --> 01:01:19.000
+about US security data
+
+01:01:19.000 --> 01:01:21.000
+but I have some knowledge
+
+01:01:21.000 --> 01:01:23.000
+about Taiwan security data
+
+01:01:23.000 --> 01:01:25.000
+when it comes to Taiwan
+
+01:01:25.000 --> 01:01:27.000
+security data
+
+01:01:27.000 --> 01:01:29.000
+it is possible to study
+
+01:01:29.000 --> 01:01:31.000
+psychological health
+
+01:01:31.000 --> 01:01:33.000
+and we have ICD
+
+01:01:33.000 --> 01:01:35.000
+so in our security data
+
+01:01:35.000 --> 01:01:37.000
+every year
+
+01:01:37.000 --> 01:01:39.000
+it takes a million people
+
+01:01:39.000 --> 01:01:41.000
+to enter security data
+
+01:01:41.000 --> 01:01:43.000
+and these people have their
+
+01:01:43.000 --> 01:01:45.000
+ID
+
+01:01:45.000 --> 01:01:47.000
+but in Taiwan
+
+01:01:47.000 --> 01:01:49.000
+it is different
+
+01:01:49.000 --> 01:01:51.000
+it is limited
+
+01:01:51.000 --> 01:01:53.000
+in living address
+
+01:01:53.000 --> 01:01:55.000
+currently in our security data
+
+01:01:55.000 --> 01:01:57.000
+we can study
+
+01:01:57.000 --> 01:01:59.000
+space information
+
+01:01:59.000 --> 01:02:01.000
+the smallest unit is town
+
+01:02:01.000 --> 01:02:03.000
+so we can only
+
+01:02:03.000 --> 01:02:05.000
+study 360 towns
+
+01:02:05.000 --> 01:02:07.000
+in Taiwan
+
+01:02:07.000 --> 01:02:09.000
+but we can't study
+
+01:02:09.000 --> 01:02:11.000
+250 square meters
+
+01:02:11.000 --> 01:02:13.000
+this is what I know
+
+01:02:13.000 --> 01:02:15.000
+do you have any question?
+
+01:02:19.000 --> 01:02:21.000
+yes, thank you
+
+01:02:27.000 --> 01:02:29.000
+I will ask
+
+01:02:29.000 --> 01:02:31.000
+Xu Shizhe
+
+01:02:31.000 --> 01:02:33.000
+about
+
+01:02:33.000 --> 01:02:35.000
+accuracy
+
+01:02:35.000 --> 01:02:37.000
+he said
+
+01:02:37.000 --> 01:02:39.000
+from the picture
+
+01:02:39.000 --> 01:02:41.000
+if we choose
+
+01:02:41.000 --> 01:02:43.000
+deep lab
+
+01:02:43.000 --> 01:02:45.000
+we will sacrifice
+
+01:02:45.000 --> 01:02:47.000
+high accuracy
+
+01:02:47.000 --> 01:02:49.000
+how to
+
+01:02:49.000 --> 01:02:51.000
+overcome this problem?
+
+01:02:51.000 --> 01:02:53.000
+this is Xu Shizhe
+
+01:02:53.000 --> 01:02:55.000
+I have a question
+
+01:02:55.000 --> 01:02:57.000
+about
+
+01:02:57.000 --> 01:02:59.000
+your second part
+
+01:02:59.000 --> 01:03:01.000
+I am curious
+
+01:03:01.000 --> 01:03:03.000
+about the environment
+
+01:03:03.000 --> 01:03:05.000
+will change
+
+01:03:05.000 --> 01:03:07.000
+and the environment
+
+01:03:07.000 --> 01:03:09.000
+how to
+
+01:03:09.000 --> 01:03:11.000
+incorporate
+
+01:03:11.000 --> 01:03:13.000
+these two
+
+01:03:13.000 --> 01:03:15.000
+aspects
+
+01:03:15.000 --> 01:03:17.000
+into your
+
+01:03:17.000 --> 01:03:19.000
+logistic regression model?
+
+01:03:19.000 --> 01:03:21.000
+this is my second question
+
+01:03:21.000 --> 01:03:23.000
+thank you
+
+01:03:23.000 --> 01:03:25.000
+I will answer
+
+01:03:25.000 --> 01:03:27.000
+Xu Shizhe's question
+
+01:03:27.000 --> 01:03:29.000
+indeed
+
+01:03:29.000 --> 01:03:31.000
+when we look at
+
+01:03:31.000 --> 01:03:33.000
+the picture
+
+01:03:33.000 --> 01:03:35.000
+in the lower left
+
+01:03:35.000 --> 01:03:37.000
+indeed
+
+01:03:37.000 --> 01:03:39.000
+compared to
+
+01:03:39.000 --> 01:03:41.000
+the other two models
+
+01:03:41.000 --> 01:03:43.000
+the accuracy
+
+01:03:43.000 --> 01:03:45.000
+is lower
+
+01:03:45.000 --> 01:03:47.000
+when we
+
+01:03:47.000 --> 01:03:49.000
+consider this
+
+01:03:49.000 --> 01:03:51.000
+we will consider F1-score
+
+01:03:51.000 --> 01:03:53.000
+simply speaking
+
+01:03:53.000 --> 01:03:55.000
+F1-score needs to
+
+01:03:55.000 --> 01:03:57.000
+measure
+
+01:03:57.000 --> 01:03:59.000
+the balance
+
+01:03:59.000 --> 01:04:01.000
+between different categories
+
+01:04:01.000 --> 01:04:03.000
+if one category
+
+01:04:03.000 --> 01:04:05.000
+is very high
+
+01:04:05.000 --> 01:04:07.000
+the accuracy is very high
+
+01:04:07.000 --> 01:04:09.000
+it means
+
+01:04:09.000 --> 01:04:11.000
+if other categories are low
+
+01:04:11.000 --> 01:04:13.000
+it means this category
+
+01:04:13.000 --> 01:04:15.000
+is often overestimated
+
+01:04:15.000 --> 01:04:17.000
+the model will
+
+01:04:17.000 --> 01:04:19.000
+draw the whole map as tall buildings
+
+01:04:19.000 --> 01:04:21.000
+so that all the tall buildings
+
+01:04:21.000 --> 01:04:23.000
+can be measured
+
+01:04:23.000 --> 01:04:25.000
+but not all of them
+
+01:04:25.000 --> 01:04:27.000
+are tall buildings
+
+01:04:27.000 --> 01:04:29.000
+so other buildings
+
+01:04:29.000 --> 01:04:31.000
+are not drawn
+
+01:04:31.000 --> 01:04:33.000
+the accuracy
+
+01:04:33.000 --> 01:04:35.000
+of F1-score
+
+01:04:35.000 --> 01:04:37.000
+should be
+
+01:04:37.000 --> 01:04:39.000
+balanced
+
+01:04:39.000 --> 01:04:41.000
+this is my first question
+
+01:04:41.000 --> 01:04:43.000
+Gao Xian's question
+
+01:04:43.000 --> 01:04:45.000
+is
+
+01:04:45.000 --> 01:04:47.000
+the environment
+
+01:04:47.000 --> 01:04:49.000
+has time and
+
+01:04:49.000 --> 01:04:51.000
+historical changes
+
+01:04:51.000 --> 01:04:53.000
+how to incorporate
+
+01:04:53.000 --> 01:04:55.000
+these two aspects
+
+01:04:55.000 --> 01:04:57.000
+into your research?
+
+01:04:57.000 --> 01:04:59.000
+I have another
+
+01:04:59.000 --> 01:05:01.000
+question
+
+01:05:05.000 --> 01:05:07.000
+when we
+
+01:05:07.000 --> 01:05:09.000
+track Danes'
+
+01:05:09.000 --> 01:05:11.000
+moving records
+
+01:05:11.000 --> 01:05:13.000
+or their
+
+01:05:13.000 --> 01:05:15.000
+historical record
+
+01:05:15.000 --> 01:05:17.000
+there are two factors
+
+01:05:17.000 --> 01:05:19.000
+that affect their
+
+01:05:19.000 --> 01:05:21.000
+environment
+
+01:05:21.000 --> 01:05:23.000
+one is
+
+01:05:23.000 --> 01:05:25.000
+moving
+
+01:05:25.000 --> 01:05:27.000
+another is
+
+01:05:27.000 --> 01:05:29.000
+in Danish data
+
+01:05:29.000 --> 01:05:31.000
+the main environmental
+
+01:05:31.000 --> 01:05:33.000
+changes are
+
+01:05:33.000 --> 01:05:35.000
+from moving
+
+01:05:35.000 --> 01:05:37.000
+not from
+
+01:05:37.000 --> 01:05:39.000
+fast urban expansion
+
+01:05:39.000 --> 01:05:41.000
+how to incorporate
+
+01:05:41.000 --> 01:05:43.000
+this into
+
+01:05:43.000 --> 01:05:45.000
+logistics?
+
+01:05:45.000 --> 01:05:47.000
+in the
+
+01:05:47.000 --> 01:05:49.000
+independent variable
+
+01:05:49.000 --> 01:05:51.000
+that we added
+
+01:05:51.000 --> 01:05:53.000
+in the last
+
+01:05:53.000 --> 01:05:55.000
+five years
+
+01:05:55.000 --> 01:05:57.000
+there is a
+
+01:05:57.000 --> 01:05:59.000
+difference
+
+01:05:59.000 --> 01:06:01.000
+between
+
+01:06:01.000 --> 01:06:03.000
+last five years
+
+01:06:03.000 --> 01:06:05.000
+and this year
+
+01:06:05.000 --> 01:06:07.000
+this difference
+
+01:06:07.000 --> 01:06:09.000
+is a variable
+
+01:06:09.000 --> 01:06:11.000
+in our model
+
+01:06:11.000 --> 01:06:13.000
+the result
+
+01:06:13.000 --> 01:06:15.000
+is
+
+01:06:15.000 --> 01:06:17.000
+these five
+
+01:06:17.000 --> 01:06:19.000
+on the left
+
+01:06:19.000 --> 01:06:21.000
+are not only
+
+01:06:21.000 --> 01:06:23.000
+average
+
+01:06:23.000 --> 01:06:25.000
+but also
+
+01:06:25.000 --> 01:06:27.000
+high density
+
+01:06:27.000 --> 01:06:29.000
+if
+
+01:06:29.000 --> 01:06:31.000
+the change
+
+01:06:31.000 --> 01:06:33.000
+is positive
+
+01:06:33.000 --> 01:06:35.000
+it will
+
+01:06:35.000 --> 01:06:37.000
+have a higher
+
+01:06:37.000 --> 01:06:39.000
+contribution
+
+01:06:39.000 --> 01:06:41.000
+Gao Xian
+
+01:06:41.000 --> 01:06:43.000
+did I answer
+
+01:06:43.000 --> 01:06:45.000
+your question?
+
+01:06:45.000 --> 01:06:47.000
+Yes
+
+01:06:47.000 --> 01:06:49.000
+I am curious
+
+01:06:49.000 --> 01:06:51.000
+if you put them
+
+01:06:51.000 --> 01:06:53.000
+in the model
+
+01:06:53.000 --> 01:06:55.000
+will there be
+
+01:06:55.000 --> 01:06:57.000
+a change
+
+01:06:57.000 --> 01:06:59.000
+or covariance?
+
+01:06:59.000 --> 01:07:01.000
+Yes, there may be
+
+01:07:01.000 --> 01:07:03.000
+a contribution
+
+01:07:03.000 --> 01:07:05.000
+for each model
+
+01:07:05.000 --> 01:07:07.000
+there is a
+
+01:07:07.000 --> 01:07:09.000
+PIF
+
+01:07:09.000 --> 01:07:11.000
+the result is
+
+01:07:11.000 --> 01:07:13.000
+less than 5
+
+01:07:13.000 --> 01:07:15.000
+the contribution is not that obvious
+
+01:07:15.000 --> 01:07:17.000
+I believe
+
+01:07:17.000 --> 01:07:19.000
+there must be
+
+01:07:19.000 --> 01:07:21.000
+a change
+
+01:07:21.000 --> 01:07:23.000
+in the model
+
+01:07:23.000 --> 01:07:25.000
+for each model
+
+01:07:25.000 --> 01:07:27.000
+the result is
+
+01:07:27.000 --> 01:07:29.000
+less than 5
+
+01:07:29.000 --> 01:07:31.000
+the contribution is not that obvious
+
+01:07:31.000 --> 01:07:33.000
+I believe
+
+01:07:33.000 --> 01:07:35.000
+there must be
+
+01:07:35.000 --> 01:07:37.000
+a change
+
+01:07:37.000 --> 01:07:39.000
+in the model
+
+01:07:39.000 --> 01:07:41.000
+for each model
+
+01:07:41.000 --> 01:07:43.000
+the result is less than
+
+01:07:43.000 --> 01:07:45.000
+5
+
+01:07:45.000 --> 01:07:47.000
+the contribution is not that obvious
+
+01:07:47.000 --> 01:07:49.000
+Any other questions?
+
+01:07:59.000 --> 01:08:01.000
+I have no questions
+
+01:08:01.000 --> 01:08:03.000
+Hi
+
+01:08:03.000 --> 01:08:05.000
+My name is Qiao En
+
+01:08:05.000 --> 01:08:07.000
+I am a clinical psychologist
+
+01:08:07.000 --> 01:08:09.000
+I am interested
+
+01:08:09.000 --> 01:08:11.000
+in urban planning
+
+01:08:11.000 --> 01:08:13.000
+and psychology
+
+01:08:13.000 --> 01:08:15.000
+I read a paper
+
+01:08:15.000 --> 01:08:17.000
+about the different functions
+
+01:08:17.000 --> 01:08:19.000
+of land use
+
+01:08:19.000 --> 01:08:21.000
+for those who live in
+
+01:08:21.000 --> 01:08:23.000
+urban areas
+
+01:08:23.000 --> 01:08:25.000
+like Taiwan
+
+01:08:25.000 --> 01:08:27.000
+there are 7 floors
+
+01:08:27.000 --> 01:08:29.000
+1st floor for shops
+
+01:08:29.000 --> 01:08:31.000
+2nd and 3rd floor for residents
+
+01:08:31.000 --> 01:08:33.000
+in this case
+
+01:08:33.000 --> 01:08:35.000
+people are more likely to
+
+01:08:35.000 --> 01:08:37.000
+walk or ride bicycles
+
+01:08:37.000 --> 01:08:39.000
+just like the student
+
+01:08:39.000 --> 01:08:41.000
+who talked about
+
+01:08:41.000 --> 01:08:43.000
+social behavior
+
+01:08:43.000 --> 01:08:45.000
+for those who live in
+
+01:08:45.000 --> 01:08:47.000
+urban areas
+
+01:08:47.000 --> 01:08:49.000
+or high-rise
+
+01:08:49.000 --> 01:08:51.000
+it is not easy
+
+01:08:51.000 --> 01:08:53.000
+for them to walk
+
+01:08:53.000 --> 01:08:55.000
+and be healthy
+
+01:08:55.000 --> 01:08:57.000
+because they have to
+
+01:08:57.000 --> 01:08:59.000
+drive everywhere
+
+01:08:59.000 --> 01:09:01.000
+so I am thinking
+
+01:09:01.000 --> 01:09:03.000
+maybe in the future
+
+01:09:03.000 --> 01:09:05.000
+you can change this
+
+01:09:05.000 --> 01:09:07.000
+to land use
+
+01:09:07.000 --> 01:09:09.000
+is it related to
+
+01:09:09.000 --> 01:09:11.000
+people's walking habits
+
+01:09:11.000 --> 01:09:13.000
+yes
+
+01:09:13.000 --> 01:09:15.000
+I think
+
+01:09:15.000 --> 01:09:17.000
+it is a good direction
+
+01:09:17.000 --> 01:09:19.000
+in the future
+
+01:09:19.000 --> 01:09:21.000
+I am interested
+
+01:09:21.000 --> 01:09:23.000
+in
+
+01:09:23.000 --> 01:09:25.000
+specific
+
+01:09:25.000 --> 01:09:27.000
+like what you said
+
+01:09:27.000 --> 01:09:29.000
+would they
+
+01:09:29.000 --> 01:09:31.000
+want to walk
+
+01:09:31.000 --> 01:09:33.000
+or ride bicycles
+
+01:09:33.000 --> 01:09:35.000
+in the future
+
+01:09:35.000 --> 01:09:37.000
+yes
+
+01:09:37.000 --> 01:09:39.000
+I think
+
+01:09:39.000 --> 01:09:41.000
+I am working on it
+
+01:09:41.000 --> 01:09:43.000
+I think it is interesting
+
+01:09:43.000 --> 01:09:45.000
+it is a new field
+
+01:09:45.000 --> 01:09:47.000
+I have not heard of it
+
+01:09:47.000 --> 01:09:49.000
+but it is interesting
+
+01:09:49.000 --> 01:09:51.000
+thank you
+
+01:09:51.000 --> 01:09:53.000
+what are you doing
+
+01:09:53.000 --> 01:09:55.000
+I am doing
+
+01:09:55.000 --> 01:09:57.000
+health psychology
+
+01:09:57.000 --> 01:09:59.000
+I am doing research
+
+01:09:59.000 --> 01:10:01.000
+about sports
+
+01:10:01.000 --> 01:10:03.000
+and mental health
+
+01:10:03.000 --> 01:10:05.000
+urban planning
+
+01:10:05.000 --> 01:10:07.000
+public transportation
+
+01:10:07.000 --> 01:10:09.000
+yes
+
+01:10:09.000 --> 01:10:11.000
+I think
+
+01:10:11.000 --> 01:10:13.000
+we can
+
+01:10:13.000 --> 01:10:15.000
+talk more
+
+01:10:15.000 --> 01:10:17.000
+in the future
+
+01:10:17.000 --> 01:10:19.000
+if you are interested
+
+01:10:19.000 --> 01:10:21.000
+we can
+
+01:10:21.000 --> 01:10:23.000
+talk more
+
+01:10:23.000 --> 01:10:25.000
+in the future
+
+01:10:25.000 --> 01:10:27.000
+ok
+
+01:10:27.000 --> 01:10:29.000
+thank you
+
+01:10:29.000 --> 01:10:31.000
+thank you
+
+01:10:31.000 --> 01:10:33.000
+thank you
+
+01:10:37.000 --> 01:10:39.000
+do you have any questions
+
+01:10:39.000 --> 01:10:41.000
+for the audience
+
+01:10:41.000 --> 01:10:43.000
+if you don't have any
+
+01:10:43.000 --> 01:10:45.000
+you can
+
+01:10:45.000 --> 01:10:47.000
+contact
+
+01:10:47.000 --> 01:10:49.000
+Cixin
+
+01:10:49.000 --> 01:10:51.000
+later
+
+01:10:51.000 --> 01:10:53.000
+if you have
+
+01:10:53.000 --> 01:10:55.000
+any questions
+
+01:10:55.000 --> 01:10:57.000
+you can
+
+01:10:57.000 --> 01:10:59.000
+contact Cixin
+
+01:10:59.000 --> 01:11:01.000
+privately
+
+01:11:01.000 --> 01:11:03.000
+thank you for your participation
+
+01:11:03.000 --> 01:11:05.000
+Cixin also has
+
+01:11:05.000 --> 01:11:07.000
+anything to add
+
+01:11:07.000 --> 01:11:09.000
+Cixin
+
+01:11:09.000 --> 01:11:11.000
+no
+
+01:11:11.000 --> 01:11:13.000
+thank you
+
+01:11:13.000 --> 01:11:15.000
+thank you
+
+01:11:15.000 --> 01:11:17.000
+thank you for your participation
+
+01:11:17.000 --> 01:11:19.000
+if you
+
+01:11:19.000 --> 01:11:21.000
+haven't joined
+
+01:11:21.000 --> 01:11:23.000
+Project TIRA
+
+01:11:23.000 --> 01:11:25.000
+I have posted the application form
+
+01:11:25.000 --> 01:11:27.000
+in the chat room
+
+01:11:27.000 --> 01:11:29.000
+if you are interested
+
+01:11:29.000 --> 01:11:31.000
+you can join
+
+01:11:31.000 --> 01:11:33.000
+and receive updates
+
+01:11:33.000 --> 01:11:35.000
+thank you for your participation
+
+01:11:35.000 --> 01:11:37.000
+I will turn off the recording
+
+01:11:37.000 --> 01:11:39.000
+if you
+
+01:11:39.000 --> 01:11:41.000
+don't want to be in the recording
+
+01:11:41.000 --> 01:11:43.000
+you can stay
+
+01:11:43.000 --> 01:11:45.000
+after I turn off the recording
+

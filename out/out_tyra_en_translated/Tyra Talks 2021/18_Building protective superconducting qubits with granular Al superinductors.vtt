@@ -1,0 +1,3701 @@
+WEBVTT
+
+00:00.000 --> 00:17.000
+Welcome to today's TARTalk. We are honored to have Dr. Ronson to talk about his research on quantum bit during his Ph.D. class.
+
+00:17.000 --> 00:21.000
+Before we start, let me introduce today's speaker.
+
+00:21.000 --> 00:26.000
+Dr. Ronson graduated from Rochester University in the east of the United States this year.
+
+00:26.000 --> 00:33.000
+His work in his Ph.D. class is mainly to use superconducting man-made atoms to achieve protective superconducting qubits.
+
+00:33.000 --> 00:38.000
+Before his Ph.D. class, he worked in the 3D IC department of TSMC for two and a half years.
+
+00:38.000 --> 00:45.000
+He just finished his Ph.D. class and got his degree.
+
+00:45.000 --> 00:54.000
+He will move to IBM Research as a Research Scientist and continue to develop and integrate his most specialized superconducting quantum chips.
+
+00:54.000 --> 01:00.000
+At the same time, he is also one of the members of the Qiskit Advocate of the IBM Q promotion plan.
+
+01:00.000 --> 01:09.000
+In addition to his main superconducting qubit research, he is also very committed to developing quantum education and games with Qiskit.
+
+01:09.000 --> 01:14.000
+Please turn on the microphone so that our speakers can hear our applause.
+
+01:14.000 --> 01:17.000
+Let's welcome Dr. Ronson to give us today's speech with a warm applause.
+
+01:17.000 --> 01:31.000
+Dr. Ronson, thank you for giving me this opportunity to share with you.
+
+01:31.000 --> 01:36.000
+You can see my laser pointer.
+
+01:37.000 --> 01:40.000
+Thank you.
+
+01:40.000 --> 01:44.000
+What I'm going to share with you today is my work at the Ph.D. class.
+
+01:44.000 --> 01:48.000
+There are three parts of my work at the Ph.D. class.
+
+01:48.000 --> 01:55.000
+The first part is Low-EJ's Josephson-Johnson superconductor.
+
+01:55.000 --> 02:04.000
+The third part is the prototype of a quantum circuit.
+
+02:04.000 --> 02:07.000
+We call it bifloxone qubit.
+
+02:07.000 --> 02:17.000
+Because junction is a little boring, and there are some time constraints, I won't mention junction.
+
+02:17.000 --> 02:25.000
+The main focus is on the bifloxone circuit and a more important component in it, the superconductor.
+
+02:25.000 --> 02:28.000
+Dr. Ronson is here again.
+
+02:28.000 --> 02:31.000
+This circuit is very similar to the bifloxone circuit.
+
+02:31.000 --> 02:39.000
+It's just that the black-shift junction is changed to a cooper-pair box, and the gate is used to connect.
+
+02:39.000 --> 02:50.000
+Because I do Fab, not design, I will try to explain the circuit.
+
+02:50.000 --> 02:57.000
+But there may be some Hamiltonian behind the theory.
+
+02:57.000 --> 03:00.000
+Because of time constraints, I won't mention too much.
+
+03:00.000 --> 03:03.000
+I'm not a specialist in quantum circuits.
+
+03:03.000 --> 03:07.000
+You can discuss any questions you have.
+
+03:07.000 --> 03:14.000
+Because not everyone here is doing qubit, I will briefly mention it.
+
+03:14.000 --> 03:26.000
+In quantum computation technology, especially in qubit hardware, there are mainly five criteria.
+
+03:26.000 --> 03:34.000
+These are the five criteria proposed by Dr. Ronson in 2000.
+
+03:34.000 --> 03:44.000
+The first two are circuit depth, which is how long a circuit can run before the signal disappears.
+
+03:44.000 --> 03:47.000
+So you can put a few gates before the signal disappears.
+
+03:47.000 --> 03:50.000
+The other criteria is the number of qubits.
+
+03:50.000 --> 03:57.000
+So Dr. Ronson's work is more like de-extending the circuit depth of super-canon qubit.
+
+03:57.000 --> 04:05.000
+That is to say, try to increase our either coherent time or dephasing time.
+
+04:05.000 --> 04:14.000
+Here is a recent meme, a web meme.
+
+04:14.000 --> 04:18.000
+It summarizes the paper of super-canon qubit.
+
+04:18.000 --> 04:22.000
+Now we can see that there are 12 kinds of papers.
+
+04:22.000 --> 04:30.000
+Dr. Ronson's work is basically located in these three papers.
+
+04:30.000 --> 04:33.000
+He wrote that Johnson and Johnson can do so many things.
+
+04:33.000 --> 04:35.000
+This is my first work.
+
+04:35.000 --> 04:41.000
+The second is to realize super-inductors, impossible inductors.
+
+04:41.000 --> 04:45.000
+The third one is our prototype.
+
+04:45.000 --> 04:48.000
+We made a new qubit and it is awful.
+
+04:48.000 --> 04:51.000
+Just kidding.
+
+04:51.000 --> 04:57.000
+This is my work at Dr. Ronson's lab.
+
+04:57.000 --> 05:01.000
+The first one is super-inductors.
+
+05:01.000 --> 05:10.000
+We try to realize super-inductors with granular aluminum.
+
+05:10.000 --> 05:16.000
+The second one is super-inductors based on Johnson to realize bifluxon qubits.
+
+05:16.000 --> 05:20.000
+The third one is super-inductors based on granular aluminum to realize bifluxon qubits.
+
+05:20.000 --> 05:23.000
+This is an ongoing project.
+
+05:23.000 --> 05:26.000
+Maybe we can talk about it later.
+
+05:26.000 --> 05:29.000
+But today's main focus is these two.
+
+05:29.000 --> 05:34.000
+Basically, this page is a brief introduction of Johnson.
+
+05:34.000 --> 05:37.000
+Johnson is basically a capacitor.
+
+05:37.000 --> 05:41.000
+Its two sides are super-conductors.
+
+05:41.000 --> 05:46.000
+There is a thin layer of aluminum oxide in the middle.
+
+05:46.000 --> 05:50.000
+In our device, we use aluminum-based.
+
+05:50.000 --> 05:57.000
+We use a shadow mask to grow an aluminum layer in one direction.
+
+05:57.000 --> 06:00.000
+Then introduce some oxygen into the vacuum chamber.
+
+06:00.000 --> 06:04.000
+Then another layer of aluminum is cut in the other direction.
+
+06:05.000 --> 06:07.000
+This is Johnson.
+
+06:07.000 --> 06:13.000
+Johnson can be represented by three elements on the model.
+
+06:13.000 --> 06:19.000
+One of them will affect the resistance of the circuit damping.
+
+06:19.000 --> 06:24.000
+There is also a capacitor and a non-linear inductor.
+
+06:24.000 --> 06:29.000
+The characteristic energy of the capacitor and the inductor is
+
+06:29.000 --> 06:34.000
+Q2 over 2C
+
+06:34.000 --> 06:42.000
+This is the energy generated by the Johnson effect.
+
+06:42.000 --> 06:47.000
+Johnson effect basically describes
+
+06:47.000 --> 06:54.000
+You can use the phase difference of the super-current on both sides of Johnson as a parameter.
+
+06:54.000 --> 06:58.000
+To parameterize the characteristics of the circuit element IV.
+
+06:58.000 --> 07:03.000
+Its current and voltage can be parameterized by phase.
+
+07:03.000 --> 07:07.000
+Then you can get its characteristic energy.
+
+07:07.000 --> 07:12.000
+In practice, what Johnson I did today
+
+07:12.000 --> 07:14.000
+How much is the resistance of the two sides of the circuit?
+
+07:14.000 --> 07:17.000
+It is inversely proportional to Ej.
+
+07:17.000 --> 07:24.000
+Ej and Ec can be used in classical physics.
+
+07:25.000 --> 07:32.000
+You can think of it as the kinetic energy and potential energy in classical physics.
+
+07:32.000 --> 07:38.000
+Ej is like a potential energy in phase representation.
+
+07:38.000 --> 07:40.000
+Ec is like kinetic energy.
+
+07:40.000 --> 07:49.000
+When the quantity of Ej and Ec is in the correct position
+
+07:49.000 --> 07:52.000
+When Ej and Ec are comparable
+
+07:52.000 --> 07:55.000
+Because of the quantum confinement effect
+
+07:55.000 --> 08:00.000
+We can observe the generation of energy levels.
+
+08:00.000 --> 08:09.000
+In quantum computation, we take the first and zeroth connection to do the operation.
+
+08:09.000 --> 08:14.000
+For example, if the energy level is non-equally spaced today
+
+08:14.000 --> 08:21.000
+You can use the microwave to address the ground state and the first excited state more accurately.
+
+08:21.000 --> 08:27.000
+This is the basic concept of quantum computation using superconducting artificial atoms.
+
+08:31.000 --> 08:43.000
+I just mentioned that Ej can be compared to kinetic energy and potential energy.
+
+08:44.000 --> 08:48.000
+In classical physics, we know that kinetic energy and potential energy
+
+08:48.000 --> 08:53.000
+Because of the mathematical structure of kinetic energy and potential energy
+
+08:53.000 --> 08:58.000
+We can expect them to represent their own bases.
+
+08:58.000 --> 09:07.000
+For example, the kinetic energy base is the kinetic energy, and the unknown base is the unknown.
+
+09:07.000 --> 09:12.000
+Therefore, P and delta P and delta X will follow the computational relation.
+
+09:12.000 --> 09:15.000
+You can expect them to have certain principles.
+
+09:15.000 --> 09:20.000
+There is a similar phenomenon in superconducting circuits.
+
+09:20.000 --> 09:30.000
+We use the basis of charging energy, which is the number of cooper pairs.
+
+09:30.000 --> 09:39.000
+And the basis of Josephine energy, which is the parameterized supercurrent phase.
+
+09:39.000 --> 09:49.000
+These two operators will also follow the so-called oscillating principle.
+
+09:49.000 --> 10:00.000
+In superconducting circuits, we are more concerned about charging energy.
+
+10:00.000 --> 10:13.000
+If we want to minimize the charge noise, we need to maximize the phase fluctuation.
+
+10:13.000 --> 10:28.000
+To maximize the phase fluctuation, we need to compress the energy spectrum into a parabola.
+
+10:28.000 --> 10:34.000
+Therefore, we need a large inductance to flatten the parabola.
+
+10:34.000 --> 10:40.000
+In this way, we can get a relatively low charge sensitivity.
+
+10:40.000 --> 10:49.000
+This is why we want to make a superconductor.
+
+10:49.000 --> 11:01.000
+Traditionally, in semiconductor, the way to make a superconductor is to make a line.
+
+11:01.000 --> 11:05.000
+The thinner the line, the larger the inductance.
+
+11:05.000 --> 11:14.000
+Last year, there was a paper to demonstrate how large the inductance can be.
+
+11:14.000 --> 11:24.000
+This paper realized about 1 uH and 30 kΩ.
+
+11:24.000 --> 11:29.000
+The reason why kΩ impedance is an important parameter is that
+
+11:29.000 --> 11:37.000
+we want a superconductor to operate at a certain frequency.
+
+11:37.000 --> 11:42.000
+We want the superconductor to maintain an inductive response.
+
+11:42.000 --> 12:01.000
+That is to say, the operating frequency must be higher than the operating frequency.
+
+12:01.000 --> 12:10.000
+This resonant frequency can be used to equal 1 over square of LC.
+
+12:10.000 --> 12:16.000
+That is to say, if you have a large L and the corresponding F is fixed,
+
+12:16.000 --> 12:21.000
+your specific capacitance must be small enough.
+
+12:21.000 --> 12:25.000
+This will correspond to a high enough impedance.
+
+12:25.000 --> 12:29.000
+The reason why impedance is an important parameter is because of this.
+
+12:29.000 --> 12:37.000
+This paper demonstrates that it is already a limit.
+
+12:37.000 --> 12:40.000
+Because the black part of the device is hollowed out.
+
+12:40.000 --> 12:44.000
+However, it is quite difficult to do this.
+
+12:44.000 --> 12:51.000
+To make a device of hundreds of microns in size and hollow out the substrate,
+
+12:51.000 --> 12:57.000
+leaving only a very thin dielectric, is very challenging.
+
+12:57.000 --> 13:06.000
+Generally, we use superconducting kinetic inductance to do this.
+
+13:06.000 --> 13:08.000
+Here is an example of what we do in our lab.
+
+13:08.000 --> 13:10.000
+We use a material called granular aluminum.
+
+13:10.000 --> 13:13.000
+We will see a simple structure of it later.
+
+13:13.000 --> 13:28.000
+This material is provided by Cooper-Pear kinetic inductance.
+
+13:28.000 --> 13:31.000
+On the other hand, we use Johnson-Johnson inductance.
+
+13:31.000 --> 13:46.000
+I forgot the name of the professor.
+
+13:46.000 --> 13:49.000
+This is Professor Lin's lab.
+
+13:49.000 --> 13:52.000
+This is made by Maruchan and his group.
+
+13:52.000 --> 13:57.000
+This is the largest inductance in the world.
+
+13:57.000 --> 14:01.000
+It is 2.5 microhenry with an impedance of up to 200 kΩ.
+
+14:01.000 --> 14:07.000
+The way they do this is to remove the entire Johnson-Johnson substrate.
+
+14:07.000 --> 14:10.000
+It is similar to the concept of suspended graphene.
+
+14:10.000 --> 14:12.000
+After removing the oxide at the bottom,
+
+14:12.000 --> 14:18.000
+and over-etching, the metal will rise up due to the force.
+
+14:18.000 --> 14:24.000
+By doing this, you can remove the substrate and get a very high impedance.
+
+14:24.000 --> 14:30.000
+This is provided by Johnson-Johnson superconductor.
+
+14:30.000 --> 14:37.000
+This is a simple description of why we need a superconductor.
+
+14:37.000 --> 14:45.000
+These are some of the challenges we face in superkinetic qubit.
+
+14:46.000 --> 14:52.000
+Whichever is smaller, either T1 or T2,
+
+14:52.000 --> 14:58.000
+the shortest decoherence is not equal to Tg.
+
+14:58.000 --> 15:05.000
+The number of times a circuit can operate is the so-called circuit depth.
+
+15:05.000 --> 15:08.000
+What we need to do is to try to extend the circuit depth.
+
+15:09.000 --> 15:24.000
+The next thing I want to talk about is how to extend the circuit depth.
+
+15:24.000 --> 15:28.000
+One way is to use parity protection.
+
+15:29.000 --> 15:31.000
+The concept of parity protection is...
+
+15:31.000 --> 15:34.000
+Sorry, let me first talk about what T1 and T2 are,
+
+15:34.000 --> 15:39.000
+and what we are focusing on in this talk.
+
+15:39.000 --> 15:43.000
+T1 and T2 are a number in the NMR system.
+
+15:43.000 --> 15:54.000
+T1 refers to how long it takes for a qubit or electron to be excited to the first excited state,
+
+15:54.000 --> 15:56.000
+and how long it takes for it to relax back.
+
+15:56.000 --> 16:00.000
+If this is a block sphere in a qubit,
+
+16:00.000 --> 16:11.000
+the physical picture is that when you excite from 0 to 1,
+
+16:11.000 --> 16:15.000
+after a certain amount of time, the ball will slowly shrink back to 0.
+
+16:15.000 --> 16:29.000
+Defacing is more like how to decoherence the information on the face of the xy plane.
+
+16:31.000 --> 16:34.000
+We are mainly talking about the relaxation of T1,
+
+16:34.000 --> 16:43.000
+which is to say, how to suppress from 1 to 0 before 0 to 1.
+
+16:44.000 --> 16:57.000
+I have made a brief video on how to realize 0 and 1 in superconducting qubits.
+
+16:57.000 --> 16:59.000
+This is a device for charge qubits.
+
+16:59.000 --> 17:06.000
+It can be written as 4EC times the number of qubit pairs,
+
+17:06.000 --> 17:09.000
+which is the number of qubit pairs on the island.
+
+17:10.000 --> 17:18.000
+In this structure, we can see that when n is equal to 0,
+
+17:18.000 --> 17:21.000
+it means that there is 0 charge on the island,
+
+17:21.000 --> 17:23.000
+and when n is equal to 1, it means that there is 1 charge on the island.
+
+17:23.000 --> 17:26.000
+There will be individual parabola corresponding to this.
+
+17:28.000 --> 17:31.000
+For example, if you are 0 today, your energy should look like this.
+
+17:31.000 --> 17:34.000
+When there is 1 charge on the island, it looks like this.
+
+17:34.000 --> 17:39.000
+In fact, the energy is the number of qubit pairs you add up,
+
+17:39.000 --> 17:44.000
+and the whole charge is your charging energy.
+
+17:46.000 --> 17:50.000
+If there is a charge running on the island today,
+
+17:50.000 --> 17:54.000
+we expect that your energy will jump from here to here.
+
+17:56.000 --> 17:59.000
+For example, you have some quasi-particle tunneling.
+
+17:59.000 --> 18:02.000
+On the other hand, you will have some local charge noise.
+
+18:02.000 --> 18:06.000
+If you have some local noise today,
+
+18:06.000 --> 18:10.000
+your energy will jump from here to here.
+
+18:12.000 --> 18:20.000
+At this time, if I turn on Jordan-Johnson tunneling today,
+
+18:20.000 --> 18:26.000
+I just saw that Jordan-Johnson is a capacitor.
+
+18:26.000 --> 18:29.000
+The energy diagram we expect looks like this.
+
+18:29.000 --> 18:33.000
+If I turn on Jordan-Johnson effect today,
+
+18:33.000 --> 18:42.000
+what we see is that we will have so-called anti-level crossing,
+
+18:42.000 --> 18:45.000
+and then you will have 0 state and 1 state.
+
+18:46.000 --> 18:53.000
+In this case, it is a similar situation in our system,
+
+18:53.000 --> 18:57.000
+but we only use flux as the basis.
+
+18:58.000 --> 19:06.000
+What we are actually observing is the so-called flux zone.
+
+19:06.000 --> 19:14.000
+The concept of flux zone is the circulation in the circuit today,
+
+19:14.000 --> 19:23.000
+which is your super-current phase winding.
+
+19:23.000 --> 19:26.000
+For example, if you have a flux zone tunnel today,
+
+19:26.000 --> 19:29.000
+your super-current will have an extra graph,
+
+19:29.000 --> 19:33.000
+and your phase will have an extra graph wrapping.
+
+19:34.000 --> 19:38.000
+The concept of flux zone is used to...
+
+19:38.000 --> 19:40.000
+As I mentioned earlier,
+
+19:44.000 --> 19:48.000
+the concept of protection today is...
+
+19:48.000 --> 19:51.000
+Let's say we have a system today,
+
+19:51.000 --> 19:55.000
+which is completely invisible to each other between 0 and 1.
+
+19:55.000 --> 19:56.000
+In other words,
+
+19:57.000 --> 19:58.000
+I have a...
+
+20:00.000 --> 20:01.000
+Let's put it this way.
+
+20:01.000 --> 20:06.000
+Basically, if we play today...
+
+20:06.000 --> 20:12.000
+Because of this Jordan-Johnson tunneling,
+
+20:12.000 --> 20:16.000
+what will happen is that it allows you to jump from 0 to 1,
+
+20:16.000 --> 20:21.000
+but you can also jump from 1 to 0 because of the coupling with the outside world.
+
+20:23.000 --> 20:25.000
+But if we have a switch today,
+
+20:25.000 --> 20:31.000
+we can put the system between 0 and 1.
+
+20:32.000 --> 20:34.000
+Because in this case,
+
+20:34.000 --> 20:41.000
+let's say we have a degeneracy.
+
+20:42.000 --> 20:44.000
+Basically, when I open 0 and 1 today,
+
+20:44.000 --> 20:48.000
+that is, when the switching system is in a different situation,
+
+20:48.000 --> 20:50.000
+I can do...
+
+20:50.000 --> 20:54.000
+When I want to read and write the system today,
+
+20:54.000 --> 20:58.000
+I can do 0 and 1 writing.
+
+20:58.000 --> 21:00.000
+When I want to read today,
+
+21:00.000 --> 21:03.000
+I can let the system enter the so-called protective state.
+
+21:04.000 --> 21:05.000
+At this time,
+
+21:07.000 --> 21:09.000
+the signal will be preserved.
+
+21:09.000 --> 21:13.000
+It can be preserved better.
+
+21:14.000 --> 21:16.000
+I may not have done a good job.
+
+21:16.000 --> 21:21.000
+I tried to use the concept of degeneracy to explain,
+
+21:21.000 --> 21:23.000
+but the effect may not be very good.
+
+21:23.000 --> 21:24.000
+But basically,
+
+21:24.000 --> 21:29.000
+if we write it down...
+
+21:29.000 --> 21:31.000
+Vincent, sorry.
+
+21:32.000 --> 21:33.000
+Vincent, sorry.
+
+21:33.000 --> 21:35.000
+Can I ask a question?
+
+21:35.000 --> 21:36.000
+Yes, you can.
+
+21:36.000 --> 21:37.000
+Hello.
+
+21:37.000 --> 21:39.000
+Can I go back to the last page?
+
+21:39.000 --> 21:40.000
+Yes.
+
+21:42.000 --> 21:44.000
+I want to ask you...
+
+21:45.000 --> 21:48.000
+This seems to be a very basic thing.
+
+21:48.000 --> 21:52.000
+So when you do the rotational...
+
+21:52.000 --> 21:54.000
+Because the part below you,
+
+21:54.000 --> 21:56.000
+minus one-half EJ,
+
+21:56.000 --> 21:58.000
+is your transition,
+
+21:58.000 --> 21:59.000
+right?
+
+21:59.000 --> 22:01.000
+Then the above is basically
+
+22:01.000 --> 22:04.000
+the amount of charge
+
+22:04.000 --> 22:08.000
+on your island.
+
+22:08.000 --> 22:10.000
+If...
+
+22:10.000 --> 22:12.000
+We discussed it last time.
+
+22:12.000 --> 22:14.000
+When you do it,
+
+22:14.000 --> 22:16.000
+you should also see some charge drop.
+
+22:16.000 --> 22:19.000
+It should be on the top.
+
+22:19.000 --> 22:22.000
+It affects NG here.
+
+22:22.000 --> 22:26.000
+So when you do rotation with approximation,
+
+22:26.000 --> 22:29.000
+it should eliminate the above.
+
+22:29.000 --> 22:33.000
+But if it's charge drop,
+
+22:33.000 --> 22:35.000
+the frequency it affects
+
+22:35.000 --> 22:37.000
+will probably affect
+
+22:37.000 --> 22:42.000
+the order of magnitude.
+
+22:44.000 --> 22:46.000
+My understanding is...
+
+22:46.000 --> 22:48.000
+I'm not doing charge qubit.
+
+22:48.000 --> 22:50.000
+But my understanding is
+
+22:50.000 --> 22:52.000
+it's effective the same.
+
+22:52.000 --> 22:54.000
+It won't affect.
+
+22:54.000 --> 22:55.000
+Why?
+
+22:55.000 --> 22:57.000
+So the above...
+
+22:57.000 --> 22:59.000
+4EC N-NG square.
+
+22:59.000 --> 23:02.000
+This basically turns it into frequency.
+
+23:02.000 --> 23:04.000
+So you want to do
+
+23:04.000 --> 23:06.000
+rotation with approximation?
+
+23:08.000 --> 23:09.000
+Yes.
+
+23:09.000 --> 23:10.000
+OK.
+
+23:10.000 --> 23:12.000
+But...
+
+23:12.000 --> 23:13.000
+OK.
+
+23:13.000 --> 23:15.000
+But there's a shift.
+
+23:15.000 --> 23:17.000
+It affects the picture.
+
+23:21.000 --> 23:24.000
+I think it's probably calibrated.
+
+23:24.000 --> 23:25.000
+OK.
+
+23:25.000 --> 23:27.000
+So let's say...
+
+23:27.000 --> 23:29.000
+You usually put
+
+23:29.000 --> 23:31.000
+1,000 electrons.
+
+23:31.000 --> 23:33.000
+Then you jump an electron.
+
+23:33.000 --> 23:35.000
+Your frequency jump
+
+23:35.000 --> 23:38.000
+is about one-third of the jump.
+
+23:38.000 --> 23:40.000
+How much is that?
+
+23:40.000 --> 23:42.000
+Two-thirds?
+
+23:42.000 --> 23:44.000
+Because it's N square.
+
+23:44.000 --> 23:46.000
+So I don't know...
+
+23:46.000 --> 23:48.000
+I should say...
+
+23:48.000 --> 23:50.000
+I think I should say...
+
+23:50.000 --> 23:51.000
+I don't know...
+
+23:51.000 --> 23:54.000
+It's under rotation with approximation.
+
+23:54.000 --> 23:56.000
+In fact,
+
+23:57.000 --> 23:59.000
+I don't know how to do calibration.
+
+23:59.000 --> 24:01.000
+So I can't comment.
+
+24:01.000 --> 24:03.000
+Sorry.
+
+24:03.000 --> 24:04.000
+Yes.
+
+24:04.000 --> 24:06.000
+But my understanding is
+
+24:06.000 --> 24:08.000
+it's...
+
+24:14.000 --> 24:16.000
+In fact, charge jump
+
+24:16.000 --> 24:20.000
+happens for a long time.
+
+24:20.000 --> 24:22.000
+So we actually
+
+24:22.000 --> 24:24.000
+don't really...
+
+24:24.000 --> 24:26.000
+If you really meet it,
+
+24:26.000 --> 24:28.000
+you're not very lucky.
+
+24:28.000 --> 24:30.000
+But we usually
+
+24:30.000 --> 24:32.000
+take it as
+
+24:32.000 --> 24:34.000
+the main calibration.
+
+24:34.000 --> 24:36.000
+So we don't worry about it.
+
+24:36.000 --> 24:38.000
+It's just that it takes a long time.
+
+24:38.000 --> 24:39.000
+For example,
+
+24:39.000 --> 24:40.000
+10 milliseconds,
+
+24:40.000 --> 24:41.000
+you'll see it once.
+
+24:41.000 --> 24:43.000
+10 milliseconds, you'll see it once.
+
+24:43.000 --> 24:45.000
+But if you see it,
+
+24:45.000 --> 24:47.000
+because we basically do single shot,
+
+24:47.000 --> 24:49.000
+so we don't really worry about it.
+
+24:49.000 --> 24:51.000
+So I'm not very convinced.
+
+24:51.000 --> 24:52.000
+Got it.
+
+24:52.000 --> 24:53.000
+OK.
+
+24:53.000 --> 24:54.000
+It doesn't matter.
+
+24:54.000 --> 24:55.000
+Keep going.
+
+24:55.000 --> 24:56.000
+Thank you.
+
+24:56.000 --> 24:57.000
+OK.
+
+24:57.000 --> 24:58.000
+Sorry.
+
+24:58.000 --> 25:00.000
+Then I'll...
+
+25:00.000 --> 25:02.000
+I'll talk about it more smoothly
+
+25:02.000 --> 25:03.000
+this week.
+
+25:03.000 --> 25:05.000
+Because this week...
+
+25:05.000 --> 25:07.000
+Basically, we...
+
+25:09.000 --> 25:11.000
+Our basic concept is
+
+25:11.000 --> 25:13.000
+we're in Flux on Parity.
+
+25:13.000 --> 25:15.000
+I'm going to build a mechanism
+
+25:15.000 --> 25:17.000
+in my circuit
+
+25:17.000 --> 25:19.000
+to turn on and turn off
+
+25:19.000 --> 25:20.000
+my protection.
+
+25:20.000 --> 25:22.000
+Suppose I...
+
+25:22.000 --> 25:24.000
+The concept of on and off protection
+
+25:24.000 --> 25:26.000
+comes from what I just said.
+
+25:26.000 --> 25:28.000
+Suppose it's a degeneracy lifting.
+
+25:28.000 --> 25:29.000
+That is to say,
+
+25:29.000 --> 25:31.000
+suppose my system has degeneracy.
+
+25:31.000 --> 25:33.000
+Then I can somehow prevent
+
+25:33.000 --> 25:35.000
+the degenerated ground state
+
+25:35.000 --> 25:37.000
+between the two.
+
+25:37.000 --> 25:39.000
+They can communicate
+
+25:39.000 --> 25:41.000
+between the two.
+
+25:41.000 --> 25:43.000
+Suppose I have this ability.
+
+25:43.000 --> 25:45.000
+Then I can do one thing.
+
+25:45.000 --> 25:47.000
+That is, I can
+
+25:47.000 --> 25:49.000
+preserve the data
+
+25:49.000 --> 25:51.000
+in the protected state.
+
+25:51.000 --> 25:53.000
+In the unprotected state.
+
+25:53.000 --> 25:55.000
+That is, I can disable this protection.
+
+25:55.000 --> 25:57.000
+Then it has degeneracy lifting.
+
+25:57.000 --> 25:59.000
+Then we can do
+
+25:59.000 --> 26:01.000
+0 and 1 read and write.
+
+26:01.000 --> 26:03.000
+Then this is a...
+
+26:03.000 --> 26:05.000
+a...
+
+26:05.000 --> 26:06.000
+a concept.
+
+26:06.000 --> 26:08.000
+Then our work this time is
+
+26:08.000 --> 26:10.000
+a proof of concept.
+
+26:10.000 --> 26:11.000
+Then we actually use
+
+26:11.000 --> 26:13.000
+the mechanism I just said.
+
+26:13.000 --> 26:15.000
+It's the so-called Aruna-Kesher effect.
+
+26:15.000 --> 26:17.000
+Aruna-Kesher effect is basically
+
+26:17.000 --> 26:19.000
+Aruna-Bohm effect
+
+26:19.000 --> 26:21.000
+which is a dual version of Aruna-Bohm.
+
+26:21.000 --> 26:23.000
+Imagine that
+
+26:23.000 --> 26:25.000
+Aruna-Bohm is
+
+26:25.000 --> 26:27.000
+an electron in the gas.
+
+26:27.000 --> 26:29.000
+Then there are some
+
+26:29.000 --> 26:31.000
+non-zero vector potentials in it.
+
+26:31.000 --> 26:33.000
+When the electron propagates,
+
+26:33.000 --> 26:35.000
+it will have
+
+26:35.000 --> 26:37.000
+destructive or
+
+26:37.000 --> 26:39.000
+constructive interference
+
+26:39.000 --> 26:41.000
+because of this vector potential.
+
+26:41.000 --> 26:43.000
+Then Aruna-Kesher effect
+
+26:43.000 --> 26:45.000
+refers to a fluxon.
+
+26:45.000 --> 26:47.000
+When it is tunneling,
+
+26:47.000 --> 26:49.000
+there is a junction on the left or right
+
+26:49.000 --> 26:51.000
+to do tunneling.
+
+26:51.000 --> 26:53.000
+In the process of tunneling,
+
+26:53.000 --> 26:55.000
+how many charges
+
+26:55.000 --> 26:57.000
+exist on this island
+
+26:57.000 --> 26:59.000
+will have some impact.
+
+26:59.000 --> 27:01.000
+In the case of
+
+27:01.000 --> 27:03.000
+a single electron,
+
+27:03.000 --> 27:05.000
+this tunneling will have
+
+27:05.000 --> 27:07.000
+destructive interference
+
+27:07.000 --> 27:09.000
+which suppresses the
+
+27:09.000 --> 27:11.000
+tunneling of a single fluxon.
+
+27:11.000 --> 27:13.000
+The specific performance
+
+27:13.000 --> 27:15.000
+in Hamiltonian
+
+27:15.000 --> 27:17.000
+is that
+
+27:17.000 --> 27:19.000
+there are two
+
+27:19.000 --> 27:21.000
+degenerate ground states
+
+27:21.000 --> 27:23.000
+in the optimized point.
+
+27:23.000 --> 27:25.000
+However,
+
+27:25.000 --> 27:27.000
+these two states
+
+27:27.000 --> 27:29.000
+cannot see each other.
+
+27:29.000 --> 27:31.000
+This is why
+
+27:31.000 --> 27:33.000
+we call it
+
+27:33.000 --> 27:35.000
+parity protection.
+
+27:45.000 --> 27:47.000
+So,
+
+27:47.000 --> 27:49.000
+do you have any
+
+27:49.000 --> 27:51.000
+questions
+
+27:51.000 --> 27:53.000
+or
+
+27:53.000 --> 27:55.000
+need to explain more clearly?
+
+27:55.000 --> 27:57.000
+If not,
+
+27:57.000 --> 27:59.000
+let's move on to the first part.
+
+27:59.000 --> 28:01.000
+The superconductor.
+
+28:01.000 --> 28:03.000
+The superconductor of quantum mechanics.
+
+28:03.000 --> 28:05.000
+OK.
+
+28:05.000 --> 28:07.000
+I will continue to explain.
+
+28:09.000 --> 28:11.000
+I just mentioned
+
+28:11.000 --> 28:13.000
+how to
+
+28:13.000 --> 28:15.000
+realize the circuit.
+
+28:15.000 --> 28:17.000
+A very important element
+
+28:17.000 --> 28:19.000
+is to
+
+28:19.000 --> 28:21.000
+make the
+
+28:21.000 --> 28:23.000
+superconductor.
+
+28:23.000 --> 28:25.000
+The superconductor
+
+28:25.000 --> 28:27.000
+is made of
+
+28:27.000 --> 28:29.000
+granular aluminum.
+
+28:29.000 --> 28:31.000
+Its microscopic structure
+
+28:31.000 --> 28:33.000
+is like this.
+
+28:33.000 --> 28:35.000
+The red one is aluminum,
+
+28:35.000 --> 28:37.000
+and the green one is aluminum oxide.
+
+28:37.000 --> 28:39.000
+The way to
+
+28:39.000 --> 28:41.000
+grow it is
+
+28:41.000 --> 28:43.000
+to add some oxygen
+
+28:43.000 --> 28:45.000
+to the argon plasma
+
+28:45.000 --> 28:47.000
+during the sputter process.
+
+28:47.000 --> 28:49.000
+Then,
+
+28:49.000 --> 28:51.000
+pressurize
+
+28:51.000 --> 28:53.000
+about 1%
+
+28:53.000 --> 28:55.000
+to 1%
+
+28:55.000 --> 28:57.000
+of the concentration.
+
+28:57.000 --> 28:59.000
+Then,
+
+28:59.000 --> 29:01.000
+we can get a structure like this.
+
+29:01.000 --> 29:03.000
+The grain size is usually
+
+29:03.000 --> 29:05.000
+about 3 to 4 nanometers.
+
+29:05.000 --> 29:07.000
+This graph shows
+
+29:07.000 --> 29:09.000
+the experimental data
+
+29:09.000 --> 29:11.000
+extracted from
+
+29:11.000 --> 29:13.000
+the literature.
+
+29:13.000 --> 29:15.000
+This graph shows
+
+29:15.000 --> 29:17.000
+the TCE and resistivity.
+
+29:17.000 --> 29:19.000
+We can see that
+
+29:19.000 --> 29:21.000
+as the resistivity increases,
+
+29:21.000 --> 29:23.000
+the TCE
+
+29:23.000 --> 29:25.000
+starts to grow.
+
+29:25.000 --> 29:27.000
+The pure aluminum
+
+29:27.000 --> 29:29.000
+is about 1.3K.
+
+29:29.000 --> 29:31.000
+Then, it will grow to 2K.
+
+29:31.000 --> 29:33.000
+In different degrees,
+
+29:33.000 --> 29:35.000
+we can get different films.
+
+29:35.000 --> 29:37.000
+The grain size is different.
+
+29:37.000 --> 29:39.000
+The maximum TCE
+
+29:39.000 --> 29:41.000
+can reach 3K.
+
+29:41.000 --> 29:43.000
+However, when we continue
+
+29:43.000 --> 29:45.000
+to increase the resistivity,
+
+29:45.000 --> 29:47.000
+the TCE will not grow.
+
+29:47.000 --> 29:49.000
+It will not have
+
+29:49.000 --> 29:51.000
+the so-called
+
+29:51.000 --> 29:53.000
+disorderly induced
+
+29:53.000 --> 29:55.000
+SI transition.
+
+29:55.000 --> 29:57.000
+Why do we need to increase
+
+29:57.000 --> 29:59.000
+the resistivity?
+
+29:59.000 --> 30:01.000
+The reason is that
+
+30:01.000 --> 30:03.000
+kinetic inductance
+
+30:03.000 --> 30:05.000
+can increase
+
+30:05.000 --> 30:07.000
+the resistance.
+
+30:07.000 --> 30:09.000
+This is the
+
+30:09.000 --> 30:11.000
+experimental demo
+
+30:11.000 --> 30:13.000
+of a sub-inductor.
+
+30:13.000 --> 30:15.000
+We basically made it
+
+30:15.000 --> 30:17.000
+into a resonator structure
+
+30:17.000 --> 30:19.000
+to measure its
+
+30:19.000 --> 30:21.000
+resonant frequency.
+
+30:21.000 --> 30:23.000
+Then, we can get
+
+30:23.000 --> 30:25.000
+its inductance.
+
+30:25.000 --> 30:27.000
+We got an impedance
+
+30:27.000 --> 30:29.000
+of about 30kΩ
+
+30:29.000 --> 30:31.000
+and an inductor
+
+30:31.000 --> 30:33.000
+of 1.3uH.
+
+30:33.000 --> 30:35.000
+Here are some details
+
+30:35.000 --> 30:37.000
+about the application.
+
+30:37.000 --> 30:39.000
+This is the resistivity
+
+30:39.000 --> 30:41.000
+as a function of oxygen flow.
+
+30:41.000 --> 30:43.000
+We later found that
+
+30:43.000 --> 30:45.000
+the more accurate method
+
+30:45.000 --> 30:47.000
+is to use a flow meter
+
+30:47.000 --> 30:49.000
+instead of oxygen pressure.
+
+30:49.000 --> 30:51.000
+If you are interested in
+
+30:51.000 --> 30:53.000
+the details,
+
+30:53.000 --> 30:55.000
+we can talk about it
+
+30:55.000 --> 30:57.000
+in more detail later.
+
+30:57.000 --> 30:59.000
+The resistivity we made
+
+30:59.000 --> 31:01.000
+can be controlled
+
+31:01.000 --> 31:03.000
+by a flow meter.
+
+31:03.000 --> 31:05.000
+We just mentioned
+
+31:05.000 --> 31:07.000
+that we made it
+
+31:07.000 --> 31:09.000
+into a resonator structure.
+
+31:09.000 --> 31:11.000
+The black part is
+
+31:11.000 --> 31:13.000
+the granular aluminum.
+
+31:13.000 --> 31:15.000
+The white part is the pure aluminum.
+
+31:15.000 --> 31:17.000
+We made it
+
+31:17.000 --> 31:19.000
+into a resonator
+
+31:19.000 --> 31:21.000
+of half-wavelength
+
+31:21.000 --> 31:23.000
+called planar waveguide geometry.
+
+31:23.000 --> 31:25.000
+Then, we threw it into the fridge
+
+31:25.000 --> 31:27.000
+to measure its
+
+31:27.000 --> 31:29.000
+resonant frequency.
+
+31:29.000 --> 31:31.000
+We extracted
+
+31:31.000 --> 31:33.000
+the quality factor.
+
+31:33.000 --> 31:35.000
+We further
+
+31:35.000 --> 31:37.000
+characterized the quality factor
+
+31:37.000 --> 31:39.000
+as a function of temperature.
+
+31:39.000 --> 31:41.000
+We got
+
+31:41.000 --> 31:43.000
+a feature
+
+31:43.000 --> 31:45.000
+of the quality factor
+
+31:45.000 --> 31:47.000
+which is
+
+31:47.000 --> 31:49.000
+a line
+
+31:49.000 --> 31:51.000
+that does not change
+
+31:51.000 --> 31:53.000
+with temperature
+
+31:53.000 --> 31:55.000
+when it is
+
+31:55.000 --> 31:57.000
+below 250kΩ.
+
+31:57.000 --> 31:59.000
+We observed
+
+31:59.000 --> 32:01.000
+that it is
+
+32:01.000 --> 32:03.000
+an exponentially
+
+32:03.000 --> 32:05.000
+decaying
+
+32:05.000 --> 32:07.000
+quality factor.
+
+32:07.000 --> 32:09.000
+It is
+
+32:09.000 --> 32:11.000
+similar to
+
+32:11.000 --> 32:13.000
+the superconductor
+
+32:13.000 --> 32:15.000
+in many disorders.
+
+32:15.000 --> 32:17.000
+We observed
+
+32:17.000 --> 32:19.000
+a two-level system behavior
+
+32:19.000 --> 32:21.000
+at low temperature.
+
+32:21.000 --> 32:23.000
+At high temperature,
+
+32:23.000 --> 32:25.000
+we observed
+
+32:25.000 --> 32:27.000
+a semi-regenerated
+
+32:27.000 --> 32:29.000
+quasi-particle.
+
+32:29.000 --> 32:31.000
+What is the difference between
+
+32:31.000 --> 32:33.000
+these two things?
+
+32:33.000 --> 32:35.000
+At low temperature,
+
+32:35.000 --> 32:37.000
+it is a two-level system.
+
+32:37.000 --> 32:39.000
+A two-level system
+
+32:39.000 --> 32:41.000
+usually has
+
+32:41.000 --> 32:43.000
+some non-saturated
+
+32:43.000 --> 32:45.000
+or non-reactive
+
+32:45.000 --> 32:47.000
+oxides or dielectrics
+
+32:47.000 --> 32:49.000
+in the dielectric
+
+32:49.000 --> 32:51.000
+when the film
+
+32:51.000 --> 32:53.000
+is growing.
+
+32:53.000 --> 32:55.000
+These dielectrics
+
+32:55.000 --> 32:57.000
+will produce
+
+32:57.000 --> 32:59.000
+some local
+
+32:59.000 --> 33:01.000
+electrical dipoles.
+
+33:01.000 --> 33:03.000
+They will have
+
+33:03.000 --> 33:05.000
+some oscillation
+
+33:05.000 --> 33:07.000
+with the
+
+33:07.000 --> 33:09.000
+EM field
+
+33:09.000 --> 33:11.000
+in our
+
+33:11.000 --> 33:13.000
+micro-resonator.
+
+33:13.000 --> 33:15.000
+This will
+
+33:15.000 --> 33:17.000
+cause an additional
+
+33:17.000 --> 33:19.000
+loss.
+
+33:19.000 --> 33:21.000
+This loss
+
+33:21.000 --> 33:23.000
+will not change
+
+33:23.000 --> 33:25.000
+with the temperature.
+
+33:25.000 --> 33:27.000
+At higher temperature,
+
+33:27.000 --> 33:29.000
+a quasi-particle
+
+33:29.000 --> 33:31.000
+will be produced.
+
+33:31.000 --> 33:33.000
+It is similar to
+
+33:33.000 --> 33:35.000
+when you get closer to Tc,
+
+33:35.000 --> 33:37.000
+your couple pair
+
+33:37.000 --> 33:39.000
+will start to break
+
+33:39.000 --> 33:41.000
+due to temperature.
+
+33:41.000 --> 33:43.000
+These normal electrons
+
+33:43.000 --> 33:45.000
+will reduce
+
+33:45.000 --> 33:47.000
+your quality factor.
+
+33:47.000 --> 33:49.000
+These normal electrons
+
+33:49.000 --> 33:51.000
+will produce
+
+33:51.000 --> 33:53.000
+some excitation
+
+33:53.000 --> 33:55.000
+from exponential
+
+33:55.000 --> 33:57.000
+1 over kT
+
+33:57.000 --> 33:59.000
+to produce a model.
+
+33:59.000 --> 34:01.000
+This is the so-called
+
+34:01.000 --> 34:03.000
+Martin-Spartan theory.
+
+34:03.000 --> 34:05.000
+So basically,
+
+34:05.000 --> 34:07.000
+our work here is to verify...
+
+34:07.000 --> 34:09.000
+I have a question.
+
+34:09.000 --> 34:11.000
+Do you have exactly
+
+34:11.000 --> 34:13.000
+the same geometry
+
+34:13.000 --> 34:15.000
+as ordinary aluminum?
+
+34:15.000 --> 34:17.000
+We are curious
+
+34:17.000 --> 34:19.000
+about the difference between
+
+34:19.000 --> 34:21.000
+granular aluminum
+
+34:21.000 --> 34:23.000
+and ordinary aluminum.
+
+34:23.000 --> 34:25.000
+We didn't really
+
+34:25.000 --> 34:27.000
+calibrate the two-level system.
+
+34:27.000 --> 34:29.000
+Pure aluminum
+
+34:29.000 --> 34:31.000
+has a
+
+34:31.000 --> 34:33.000
+very low
+
+34:33.000 --> 34:35.000
+kinetic doctrine,
+
+34:35.000 --> 34:37.000
+so
+
+34:37.000 --> 34:39.000
+we didn't really
+
+34:39.000 --> 34:41.000
+calibrate
+
+34:41.000 --> 34:43.000
+the two-level system.
+
+34:43.000 --> 34:45.000
+Oh, okay.
+
+34:45.000 --> 34:47.000
+I understand.
+
+34:47.000 --> 34:49.000
+I think
+
+34:49.000 --> 34:51.000
+another
+
+34:51.000 --> 34:53.000
+crude comparison
+
+34:53.000 --> 34:55.000
+is that if you
+
+34:55.000 --> 34:57.000
+make exactly the same feature
+
+34:57.000 --> 34:59.000
+but ordinary aluminum,
+
+34:59.000 --> 35:01.000
+what is the difference
+
+35:01.000 --> 35:03.000
+between your QI?
+
+35:03.000 --> 35:05.000
+If your QI is
+
+35:05.000 --> 35:07.000
+TLS lost at low temperature,
+
+35:07.000 --> 35:09.000
+you can compare, right?
+
+35:09.000 --> 35:11.000
+I think
+
+35:11.000 --> 35:13.000
+the two-level system
+
+35:13.000 --> 35:15.000
+I just mentioned
+
+35:15.000 --> 35:17.000
+is highly related to your QI.
+
+35:17.000 --> 35:19.000
+For example, if we make
+
+35:19.000 --> 35:21.000
+granular aluminum,
+
+35:21.000 --> 35:23.000
+I also suspect that our aluminum...
+
+35:23.000 --> 35:25.000
+Because granular aluminum
+
+35:25.000 --> 35:27.000
+is built-in oxide.
+
+35:27.000 --> 35:29.000
+So will the material itself
+
+35:29.000 --> 35:31.000
+have some two-level system loss
+
+35:31.000 --> 35:33.000
+from the structure of the material itself?
+
+35:33.000 --> 35:35.000
+This is also possible.
+
+35:35.000 --> 35:37.000
+Yes, I'm actually
+
+35:37.000 --> 35:39.000
+worried about this.
+
+35:39.000 --> 35:41.000
+Okay, I understand.
+
+35:41.000 --> 35:43.000
+Okay, so...
+
+35:43.000 --> 35:45.000
+The details
+
+35:45.000 --> 35:47.000
+need to be more
+
+35:47.000 --> 35:49.000
+detailed.
+
+35:49.000 --> 35:51.000
+It does require more detailed
+
+35:51.000 --> 35:53.000
+analysis of the structure.
+
+35:53.000 --> 35:55.000
+Because the two-level system is
+
+35:55.000 --> 35:57.000
+the source of
+
+35:57.000 --> 35:59.000
+the NOES of OneOF.
+
+35:59.000 --> 36:01.000
+So
+
+36:01.000 --> 36:03.000
+we need to spend more time on it.
+
+36:03.000 --> 36:05.000
+For example, for surface cleaning,
+
+36:05.000 --> 36:07.000
+we need to be more careful
+
+36:07.000 --> 36:09.000
+and more detailed.
+
+36:09.000 --> 36:11.000
+Right.
+
+36:11.000 --> 36:13.000
+Okay, thank you.
+
+36:13.000 --> 36:15.000
+Thank you.
+
+36:15.000 --> 36:17.000
+And...
+
+36:17.000 --> 36:19.000
+Right, so basically
+
+36:19.000 --> 36:21.000
+what I'm talking about here is
+
+36:21.000 --> 36:23.000
+we are fitting two parameters,
+
+36:23.000 --> 36:25.000
+which are the parameters in practice,
+
+36:25.000 --> 36:27.000
+the results obtained in practice,
+
+36:27.000 --> 36:29.000
+which are my frequency shift and my quality factor.
+
+36:29.000 --> 36:31.000
+Then I can get
+
+36:31.000 --> 36:33.000
+a very good match,
+
+36:33.000 --> 36:35.000
+that is, the contribution of my loss
+
+36:35.000 --> 36:37.000
+is basically
+
+36:37.000 --> 36:39.000
+temperature-independent.
+
+36:39.000 --> 36:41.000
+At low temperature,
+
+36:41.000 --> 36:43.000
+it is temperature-independent
+
+36:43.000 --> 36:45.000
+two-level system loss
+
+36:45.000 --> 36:47.000
+that dominates.
+
+36:47.000 --> 36:49.000
+At high temperature,
+
+36:49.000 --> 36:51.000
+more than 250 mC,
+
+36:51.000 --> 36:53.000
+I can see the sum of
+
+36:53.000 --> 36:55.000
+the sum of the generated
+
+36:55.000 --> 36:57.000
+quasiparticle that dominates.
+
+36:57.000 --> 36:59.000
+Yes, this is a simple summary.
+
+36:59.000 --> 37:01.000
+Okay.
+
+37:01.000 --> 37:03.000
+Next is our
+
+37:03.000 --> 37:05.000
+performance QP.
+
+37:07.000 --> 37:09.000
+This time we use
+
+37:09.000 --> 37:11.000
+Junction to do super-inductor.
+
+37:11.000 --> 37:13.000
+It is closer to
+
+37:13.000 --> 37:15.000
+what Meru and Quarren did.
+
+37:15.000 --> 37:17.000
+Then,
+
+37:17.000 --> 37:19.000
+as we just mentioned,
+
+37:19.000 --> 37:21.000
+using quantum mechanics to do super-inductor
+
+37:21.000 --> 37:23.000
+to build this structure
+
+37:23.000 --> 37:25.000
+is still an ongoing process.
+
+37:25.000 --> 37:27.000
+In this circuit,
+
+37:27.000 --> 37:29.000
+how can this circuit
+
+37:29.000 --> 37:31.000
+be mapped to this place?
+
+37:31.000 --> 37:33.000
+Basically, you turn this 90 degrees,
+
+37:33.000 --> 37:35.000
+then these two junctions,
+
+37:35.000 --> 37:37.000
+these two red cross,
+
+37:37.000 --> 37:39.000
+then this super-inductor,
+
+37:39.000 --> 37:41.000
+half here,
+
+37:41.000 --> 37:43.000
+the other half here,
+
+37:43.000 --> 37:45.000
+then the last two sides
+
+37:45.000 --> 37:47.000
+are connected to this.
+
+37:47.000 --> 37:49.000
+This thing turns 90 degrees counterclockwise,
+
+37:49.000 --> 37:51.000
+then it will be mapped to this graph.
+
+37:51.000 --> 37:53.000
+Then connect to a radar resonator.
+
+37:53.000 --> 37:55.000
+This radar resonator is coupled
+
+37:55.000 --> 37:57.000
+to a microwave line.
+
+37:57.000 --> 37:59.000
+This is a strip-line structure,
+
+37:59.000 --> 38:01.000
+not a coplanar waveguide.
+
+38:01.000 --> 38:03.000
+These are basically
+
+38:03.000 --> 38:05.000
+how we do this device.
+
+38:05.000 --> 38:07.000
+Then,
+
+38:07.000 --> 38:09.000
+the device parameters,
+
+38:09.000 --> 38:11.000
+what we do on the structure
+
+38:11.000 --> 38:13.000
+is that we
+
+38:13.000 --> 38:15.000
+use
+
+38:15.000 --> 38:17.000
+our super-inductor,
+
+38:17.000 --> 38:19.000
+we can't do much in this device.
+
+38:19.000 --> 38:21.000
+Basically,
+
+38:21.000 --> 38:23.000
+I remember
+
+38:23.000 --> 38:25.000
+this device is
+
+38:25.000 --> 38:27.000
+less than a microherry.
+
+38:27.000 --> 38:29.000
+This device
+
+38:31.000 --> 38:33.000
+is less than
+
+38:33.000 --> 38:35.000
+a microherry.
+
+38:35.000 --> 38:37.000
+It's not an ideal device.
+
+38:37.000 --> 38:39.000
+When our super-inductor
+
+38:39.000 --> 38:41.000
+is not big enough,
+
+38:41.000 --> 38:43.000
+we still have
+
+38:43.000 --> 38:45.000
+T1 protection,
+
+38:45.000 --> 38:47.000
+but our defacient protection
+
+38:47.000 --> 38:49.000
+is not too big.
+
+38:49.000 --> 38:51.000
+Basically,
+
+38:51.000 --> 38:53.000
+our T2 data
+
+38:53.000 --> 38:55.000
+is about
+
+38:55.000 --> 38:57.000
+1 microsecond.
+
+38:57.000 --> 38:59.000
+T1 can be
+
+38:59.000 --> 39:01.000
+10 to 100 microseconds.
+
+39:03.000 --> 39:05.000
+Our device
+
+39:05.000 --> 39:07.000
+is
+
+39:07.000 --> 39:09.000
+basically
+
+39:09.000 --> 39:11.000
+a charge-sensitive device
+
+39:11.000 --> 39:13.000
+because it has a coplanar island.
+
+39:13.000 --> 39:15.000
+Then,
+
+39:15.000 --> 39:17.000
+in this device,
+
+39:17.000 --> 39:19.000
+we do
+
+39:19.000 --> 39:21.000
+quasi-particle trap.
+
+39:21.000 --> 39:23.000
+The concept is basically
+
+39:23.000 --> 39:25.000
+because we have
+
+39:25.000 --> 39:27.000
+an island structure,
+
+39:27.000 --> 39:29.000
+we have three different
+
+39:29.000 --> 39:31.000
+films,
+
+39:31.000 --> 39:33.000
+three layers of aluminum.
+
+39:33.000 --> 39:35.000
+They are all aluminum,
+
+39:35.000 --> 39:37.000
+but they are made in different processes.
+
+39:37.000 --> 39:39.000
+These three layers
+
+39:39.000 --> 39:41.000
+can be separated.
+
+39:41.000 --> 39:43.000
+These two are the same layer,
+
+39:43.000 --> 39:45.000
+and this is the other layer.
+
+39:45.000 --> 39:47.000
+We can adjust the thickness
+
+39:47.000 --> 39:49.000
+to make the aluminum in the middle
+
+39:49.000 --> 39:51.000
+thinner.
+
+39:51.000 --> 39:53.000
+The aluminum will have a bigger
+
+39:53.000 --> 39:55.000
+Tc, a bigger bandgap.
+
+39:55.000 --> 39:57.000
+This kind of structure
+
+39:57.000 --> 39:59.000
+can make
+
+39:59.000 --> 40:01.000
+the middle
+
+40:01.000 --> 40:03.000
+island
+
+40:03.000 --> 40:05.000
+have a bigger bandgap.
+
+40:05.000 --> 40:07.000
+So, the quasi-particle
+
+40:07.000 --> 40:09.000
+is not easy to come up,
+
+40:09.000 --> 40:11.000
+and suppress
+
+40:11.000 --> 40:13.000
+the quasi-particle poisoning.
+
+40:13.000 --> 40:15.000
+It is simply controlled
+
+40:15.000 --> 40:17.000
+by the thickness of the film.
+
+40:17.000 --> 40:19.000
+Then,
+
+40:19.000 --> 40:21.000
+we observed that
+
+40:21.000 --> 40:23.000
+in 8 hours,
+
+40:23.000 --> 40:25.000
+we only saw a few times
+
+40:25.000 --> 40:27.000
+the quasi-particle
+
+40:27.000 --> 40:29.000
+jump.
+
+40:29.000 --> 40:31.000
+The number of times is relatively small,
+
+40:31.000 --> 40:33.000
+and each measurement
+
+40:33.000 --> 40:35.000
+ends very quickly.
+
+40:35.000 --> 40:37.000
+If it is a time domain,
+
+40:37.000 --> 40:39.000
+it ends very quickly,
+
+40:39.000 --> 40:41.000
+so we rarely
+
+40:41.000 --> 40:43.000
+encounter it.
+
+40:43.000 --> 40:45.000
+Basically, we measure the data
+
+40:45.000 --> 40:47.000
+and
+
+40:47.000 --> 40:49.000
+this is a relatively impressive
+
+40:49.000 --> 40:51.000
+place.
+
+40:51.000 --> 40:53.000
+If you don't do
+
+40:53.000 --> 40:55.000
+quasi-particle trap,
+
+40:55.000 --> 40:57.000
+the frequency of the jump
+
+40:57.000 --> 40:59.000
+is about 10 ms.
+
+40:59.000 --> 41:01.000
+In our system,
+
+41:01.000 --> 41:03.000
+the shortest
+
+41:03.000 --> 41:05.000
+is also about
+
+41:05.000 --> 41:07.000
+10 ms.
+
+41:07.000 --> 41:09.000
+This
+
+41:09.000 --> 41:11.000
+is our
+
+41:11.000 --> 41:13.000
+frequency domain
+
+41:13.000 --> 41:15.000
+of spectroscopy.
+
+41:15.000 --> 41:17.000
+These are
+
+41:17.000 --> 41:19.000
+X01 transition,
+
+41:19.000 --> 41:21.000
+which is
+
+41:21.000 --> 41:23.000
+the cubic spectrum.
+
+41:23.000 --> 41:25.000
+The blue data
+
+41:25.000 --> 41:27.000
+is the
+
+41:27.000 --> 41:29.000
+unprotected state,
+
+41:29.000 --> 41:31.000
+which is the
+
+41:33.000 --> 41:35.000
+anti-level crossing.
+
+41:35.000 --> 41:37.000
+The orange data
+
+41:37.000 --> 41:39.000
+is the
+
+41:39.000 --> 41:41.000
+island bias 1E,
+
+41:41.000 --> 41:43.000
+which is 0.5.
+
+41:43.000 --> 41:45.000
+We see
+
+41:45.000 --> 41:47.000
+degeneracy,
+
+41:47.000 --> 41:49.000
+which is the Arunacheshire effect.
+
+41:49.000 --> 41:51.000
+When we enable
+
+41:51.000 --> 41:53.000
+the system's protected state,
+
+41:53.000 --> 41:55.000
+we see
+
+41:55.000 --> 41:57.000
+degenerated ground state.
+
+41:57.000 --> 41:59.000
+When
+
+41:59.000 --> 42:01.000
+we enter
+
+42:01.000 --> 42:03.000
+0E,
+
+42:03.000 --> 42:05.000
+we enter the unprotected state,
+
+42:05.000 --> 42:07.000
+and we can do the reading.
+
+42:07.000 --> 42:09.000
+On the other hand,
+
+42:09.000 --> 42:11.000
+the linear fit
+
+42:11.000 --> 42:13.000
+is basically
+
+42:13.000 --> 42:15.000
+the super-inductor.
+
+42:15.000 --> 42:17.000
+We can get
+
+42:17.000 --> 42:19.000
+the super-inductor
+
+42:19.000 --> 42:21.000
+inductance.
+
+42:21.000 --> 42:23.000
+Sorry, the inductance is
+
+42:23.000 --> 42:25.000
+0.1 mH,
+
+42:25.000 --> 42:27.000
+not 1 mH.
+
+42:27.000 --> 42:29.000
+On the other hand,
+
+42:29.000 --> 42:31.000
+we observe
+
+42:31.000 --> 42:33.000
+the
+
+42:33.000 --> 42:35.000
+self-resonance
+
+42:35.000 --> 42:37.000
+frequency, which is
+
+42:37.000 --> 42:39.000
+0.1 mH.
+
+42:39.000 --> 42:41.000
+From this frequency,
+
+42:41.000 --> 42:43.000
+we can get the junction-based super-inductor.
+
+42:43.000 --> 42:45.000
+Its impedance is
+
+42:45.000 --> 42:47.000
+about 4 kΩ.
+
+42:49.000 --> 42:51.000
+The proof-of-concept
+
+42:51.000 --> 42:53.000
+shown here
+
+42:53.000 --> 42:55.000
+is how to
+
+42:55.000 --> 42:57.000
+enable
+
+42:57.000 --> 42:59.000
+the protected state
+
+42:59.000 --> 43:01.000
+and
+
+43:01.000 --> 43:03.000
+compare
+
+43:03.000 --> 43:05.000
+the protected and unprotected state.
+
+43:05.000 --> 43:07.000
+This is the
+
+43:07.000 --> 43:09.000
+microwave protocol.
+
+43:09.000 --> 43:11.000
+The y-axis
+
+43:11.000 --> 43:13.000
+is the charge,
+
+43:13.000 --> 43:15.000
+which means
+
+43:15.000 --> 43:17.000
+I turn on
+
+43:17.000 --> 43:19.000
+the protection
+
+43:19.000 --> 43:21.000
+on i.e. bias 1E,
+
+43:21.000 --> 43:23.000
+and turn off the protection
+
+43:23.000 --> 43:25.000
+on i.e. remove the gate.
+
+43:27.000 --> 43:29.000
+What we do
+
+43:29.000 --> 43:31.000
+is to let the system
+
+43:31.000 --> 43:33.000
+be in unprotected state,
+
+43:33.000 --> 43:35.000
+and then we
+
+43:35.000 --> 43:37.000
+write the system into 1.
+
+43:37.000 --> 43:39.000
+Then we turn on the protection.
+
+43:39.000 --> 43:41.000
+This is a 30-minute
+
+43:41.000 --> 43:43.000
+pause to
+
+43:43.000 --> 43:45.000
+turn on the protection.
+
+43:45.000 --> 43:47.000
+The duration is Δt.
+
+43:47.000 --> 43:49.000
+After Δt,
+
+43:49.000 --> 43:51.000
+I turn off the pause
+
+43:51.000 --> 43:53.000
+and read the system
+
+43:53.000 --> 43:55.000
+to see whether it is in 0 or 1.
+
+43:55.000 --> 43:57.000
+This is the relaxation of the system.
+
+43:57.000 --> 43:59.000
+The delta is here.
+
+43:59.000 --> 44:01.000
+If there is no
+
+44:01.000 --> 44:03.000
+gate,
+
+44:03.000 --> 44:05.000
+the T1 feed
+
+44:05.000 --> 44:07.000
+is about 12 microseconds.
+
+44:07.000 --> 44:09.000
+When I turn on
+
+44:09.000 --> 44:11.000
+the protection,
+
+44:11.000 --> 44:13.000
+the T1 can reach
+
+44:13.000 --> 44:15.000
+100 microseconds,
+
+44:15.000 --> 44:17.000
+which is 10 times
+
+44:17.000 --> 44:19.000
+the improvement.
+
+44:19.000 --> 44:21.000
+However,
+
+44:21.000 --> 44:23.000
+the T1 of this device
+
+44:23.000 --> 44:25.000
+is still quite bad,
+
+44:25.000 --> 44:27.000
+which is only 10 microseconds.
+
+44:27.000 --> 44:29.000
+We can use
+
+44:29.000 --> 44:31.000
+ArrayCatcherEffect
+
+44:31.000 --> 44:33.000
+to demonstrate
+
+44:33.000 --> 44:35.000
+that ArrayCatcherEffect
+
+44:35.000 --> 44:37.000
+can help us achieve
+
+44:37.000 --> 44:39.000
+a protected effect.
+
+44:39.000 --> 44:41.000
+Basically,
+
+44:41.000 --> 44:43.000
+we verify
+
+44:43.000 --> 44:45.000
+this graph
+
+44:45.000 --> 44:47.000
+at different flux-biasing points.
+
+44:47.000 --> 44:49.000
+We can see
+
+44:49.000 --> 44:51.000
+about 10 times
+
+44:51.000 --> 44:53.000
+the improvement.
+
+44:53.000 --> 44:55.000
+The location of 0.3
+
+44:55.000 --> 44:57.000
+is PhiExternal
+
+44:57.000 --> 44:59.000
+and 6 PiExternal
+
+44:59.000 --> 45:01.000
+are matched to
+
+45:01.000 --> 45:03.000
+the read-out resonator.
+
+45:03.000 --> 45:05.000
+Therefore, we get
+
+45:05.000 --> 45:07.000
+0.3
+
+45:07.000 --> 45:09.000
+or 6 GHz.
+
+45:09.000 --> 45:11.000
+These 6 GHz
+
+45:11.000 --> 45:13.000
+are the
+
+45:13.000 --> 45:15.000
+read-out resonator
+
+45:15.000 --> 45:17.000
+frequencies.
+
+45:23.000 --> 45:25.000
+This is the
+
+45:25.000 --> 45:27.000
+conclusion.
+
+45:27.000 --> 45:29.000
+We realize
+
+45:29.000 --> 45:31.000
+a prototype circuit.
+
+45:31.000 --> 45:33.000
+This circuit
+
+45:33.000 --> 45:35.000
+can have
+
+45:35.000 --> 45:37.000
+a protective
+
+45:37.000 --> 45:39.000
+mechanism.
+
+45:39.000 --> 45:41.000
+We can
+
+45:41.000 --> 45:43.000
+enjoy
+
+45:43.000 --> 45:45.000
+a short gate-time
+
+45:45.000 --> 45:47.000
+while
+
+45:47.000 --> 45:49.000
+enjoying a higher
+
+45:49.000 --> 45:51.000
+improvement of T1.
+
+45:51.000 --> 45:53.000
+This is
+
+45:53.000 --> 45:55.000
+the main topic of today.
+
+45:55.000 --> 45:57.000
+Thank you to all my collaborators.
+
+45:57.000 --> 45:59.000
+Thank you for your
+
+45:59.000 --> 46:01.000
+participation.
+
+46:01.000 --> 46:03.000
+I'm ready to take questions.
+
+46:03.000 --> 46:05.000
+Before
+
+46:05.000 --> 46:07.000
+the Q&A,
+
+46:07.000 --> 46:09.000
+let's give a round of
+
+46:09.000 --> 46:11.000
+applause to Wen-Cheng
+
+46:11.000 --> 46:13.000
+for his wonderful speech.
+
+46:13.000 --> 46:15.000
+Of course,
+
+46:15.000 --> 46:17.000
+if you have any questions,
+
+46:17.000 --> 46:19.000
+you can
+
+46:19.000 --> 46:21.000
+open the microphone to ask.
+
+46:23.000 --> 46:25.000
+Is there
+
+46:25.000 --> 46:27.000
+any question?
+
+46:27.000 --> 46:29.000
+Actually, I have a question.
+
+46:29.000 --> 46:31.000
+Let me ask a question first.
+
+46:31.000 --> 46:33.000
+Sorry.
+
+46:33.000 --> 46:35.000
+OK.
+
+46:35.000 --> 46:37.000
+Can I
+
+46:37.000 --> 46:39.000
+ask you a question?
+
+46:39.000 --> 46:41.000
+Sorry.
+
+46:41.000 --> 46:43.000
+OK.
+
+46:43.000 --> 46:45.000
+Very nice talk.
+
+46:45.000 --> 46:47.000
+The result is
+
+46:47.000 --> 46:49.000
+very exciting.
+
+46:49.000 --> 46:51.000
+I want to ask
+
+46:51.000 --> 46:53.000
+about
+
+46:53.000 --> 46:55.000
+the following
+
+46:55.000 --> 46:57.000
+work.
+
+46:57.000 --> 46:59.000
+T1 is
+
+46:59.000 --> 47:01.000
+102 microseconds
+
+47:01.000 --> 47:03.000
+under the protective state.
+
+47:03.000 --> 47:05.000
+I want to ask
+
+47:05.000 --> 47:07.000
+if you have studied
+
+47:07.000 --> 47:09.000
+what limiting factor
+
+47:09.000 --> 47:11.000
+limits it to
+
+47:11.000 --> 47:13.000
+102 microseconds.
+
+47:13.000 --> 47:15.000
+Yes.
+
+47:15.000 --> 47:17.000
+Basically,
+
+47:17.000 --> 47:19.000
+it is...
+
+47:19.000 --> 47:21.000
+It is
+
+47:21.000 --> 47:23.000
+junction symmetry.
+
+47:23.000 --> 47:25.000
+In short, it is junction symmetry.
+
+47:25.000 --> 47:27.000
+If the two junctions
+
+47:27.000 --> 47:29.000
+are not symmetric,
+
+47:29.000 --> 47:31.000
+it will affect
+
+47:31.000 --> 47:33.000
+the original T1.
+
+47:33.000 --> 47:35.000
+Even unprotected state
+
+47:35.000 --> 47:37.000
+will affect T1.
+
+47:37.000 --> 47:39.000
+Yes.
+
+47:39.000 --> 47:41.000
+I don't think
+
+47:41.000 --> 47:43.000
+I put it here.
+
+47:43.000 --> 47:45.000
+Basically,
+
+47:45.000 --> 47:47.000
+if these two junctions
+
+47:47.000 --> 47:49.000
+have either oxidation
+
+47:49.000 --> 47:51.000
+or size asymmetry,
+
+47:51.000 --> 47:53.000
+it will
+
+47:53.000 --> 47:55.000
+limit T1.
+
+47:59.000 --> 48:01.000
+Is it different from
+
+48:01.000 --> 48:03.000
+dielectric loss
+
+48:03.000 --> 48:05.000
+limitation?
+
+48:05.000 --> 48:07.000
+Is it?
+
+48:07.000 --> 48:09.000
+It is not caused by
+
+48:09.000 --> 48:11.000
+two-level system.
+
+48:11.000 --> 48:13.000
+At least,
+
+48:13.000 --> 48:15.000
+in modeling,
+
+48:15.000 --> 48:17.000
+they know better.
+
+48:17.000 --> 48:19.000
+According to their feedback,
+
+48:19.000 --> 48:21.000
+in modeling,
+
+48:21.000 --> 48:23.000
+asymmetry will have a big impact.
+
+48:23.000 --> 48:25.000
+Asymmetry can be
+
+48:25.000 --> 48:27.000
+from our...
+
+48:27.000 --> 48:29.000
+We can look at it
+
+48:29.000 --> 48:31.000
+with a squeegee.
+
+48:31.000 --> 48:33.000
+We can
+
+48:33.000 --> 48:35.000
+look at
+
+48:35.000 --> 48:37.000
+asymmetry
+
+48:37.000 --> 48:39.000
+at the lowest point
+
+48:39.000 --> 48:41.000
+of the field.
+
+48:41.000 --> 48:43.000
+Our equipment is bad.
+
+48:43.000 --> 48:45.000
+We make
+
+48:45.000 --> 48:47.000
+asymmetry,
+
+48:47.000 --> 48:49.000
+put it in modeling,
+
+48:49.000 --> 48:51.000
+and push it out.
+
+48:51.000 --> 48:53.000
+It tells us
+
+48:53.000 --> 48:55.000
+our equipment is bad.
+
+48:55.000 --> 48:57.000
+Or
+
+48:57.000 --> 48:59.000
+maybe not.
+
+48:59.000 --> 49:01.000
+The junction symmetry
+
+49:01.000 --> 49:03.000
+is more particular.
+
+49:03.000 --> 49:05.000
+We must use two junctions.
+
+49:05.000 --> 49:07.000
+The asymmetry of these two junctions
+
+49:07.000 --> 49:09.000
+is quite critical.
+
+49:09.000 --> 49:11.000
+I have a question.
+
+49:11.000 --> 49:13.000
+What is your
+
+49:13.000 --> 49:15.000
+asymmetry?
+
+49:15.000 --> 49:17.000
+For example,
+
+49:17.000 --> 49:19.000
+your asymmetry
+
+49:19.000 --> 49:21.000
+can be parameterized.
+
+49:21.000 --> 49:23.000
+For example,
+
+49:23.000 --> 49:25.000
+in Squid,
+
+49:25.000 --> 49:27.000
+there is a defect.
+
+49:27.000 --> 49:29.000
+How much
+
+49:29.000 --> 49:31.000
+difference
+
+49:31.000 --> 49:33.000
+is there?
+
+49:33.000 --> 49:35.000
+Ideally,
+
+49:35.000 --> 49:37.000
+what is the difference?
+
+49:37.000 --> 49:39.000
+We use
+
+49:39.000 --> 49:41.000
+gigahertz.
+
+49:41.000 --> 49:43.000
+0.6 gigahertz.
+
+49:47.000 --> 49:49.000
+So your
+
+49:49.000 --> 49:51.000
+delta
+
+49:51.000 --> 49:53.000
+is about
+
+49:53.000 --> 49:55.000
+0.4 gigahertz.
+
+49:55.000 --> 49:57.000
+I see.
+
+49:57.000 --> 49:59.000
+There is no difference.
+
+49:59.000 --> 50:01.000
+Asymmetry
+
+50:01.000 --> 50:03.000
+is a must
+
+50:03.000 --> 50:05.000
+for junction.
+
+50:05.000 --> 50:07.000
+Our
+
+50:07.000 --> 50:09.000
+situation is
+
+50:09.000 --> 50:11.000
+that
+
+50:11.000 --> 50:13.000
+our device
+
+50:13.000 --> 50:15.000
+must have these two junctions.
+
+50:15.000 --> 50:17.000
+You can't just make one.
+
+50:17.000 --> 50:19.000
+You have to have both.
+
+50:19.000 --> 50:21.000
+If you make one,
+
+50:21.000 --> 50:23.000
+there will be such a problem.
+
+50:23.000 --> 50:25.000
+The device
+
+50:25.000 --> 50:27.000
+is particular about delta.
+
+50:27.000 --> 50:29.000
+It takes time to tune.
+
+50:31.000 --> 50:33.000
+If you don't mind,
+
+50:33.000 --> 50:35.000
+I have a second question.
+
+50:35.000 --> 50:37.000
+Why your
+
+50:37.000 --> 50:39.000
+super inductor
+
+50:39.000 --> 50:41.000
+junction
+
+50:41.000 --> 50:43.000
+is
+
+50:43.000 --> 50:45.000
+a two-angle junction?
+
+50:45.000 --> 50:47.000
+It looks like
+
+50:47.000 --> 50:49.000
+a rotating-angle junction,
+
+50:49.000 --> 50:51.000
+not a
+
+50:51.000 --> 50:53.000
+stolen-bridge junction.
+
+50:53.000 --> 50:55.000
+Unlike what we did
+
+50:55.000 --> 50:57.000
+in Maryland.
+
+50:57.000 --> 50:59.000
+Our boss doesn't like
+
+50:59.000 --> 51:01.000
+stolen-bridge junction.
+
+51:01.000 --> 51:03.000
+He thinks
+
+51:03.000 --> 51:05.000
+our junction
+
+51:05.000 --> 51:07.000
+won't be broken.
+
+51:07.000 --> 51:09.000
+So I want to fix it,
+
+51:09.000 --> 51:11.000
+but my boss says it's too slow.
+
+51:13.000 --> 51:15.000
+Is your
+
+51:15.000 --> 51:17.000
+blow-dry
+
+51:17.000 --> 51:19.000
+like a trick?
+
+51:19.000 --> 51:21.000
+What?
+
+51:21.000 --> 51:23.000
+Do you have a special trick
+
+51:23.000 --> 51:25.000
+when you blow-dry?
+
+51:25.000 --> 51:27.000
+I remember that
+
+51:27.000 --> 51:29.000
+top-mask
+
+51:29.000 --> 51:31.000
+was a PMMA
+
+51:31.000 --> 51:33.000
+last year.
+
+51:33.000 --> 51:35.000
+It collapsed when I blow-dry it.
+
+51:35.000 --> 51:37.000
+I couldn't finish it in 4 or 5 years.
+
+51:37.000 --> 51:39.000
+My boss told me not to do it again.
+
+51:39.000 --> 51:41.000
+So I want to ask you.
+
+51:45.000 --> 51:47.000
+According to
+
+51:47.000 --> 51:49.000
+normal
+
+51:49.000 --> 51:51.000
+fab,
+
+51:51.000 --> 51:53.000
+our yield
+
+51:53.000 --> 51:55.000
+is quite high.
+
+51:55.000 --> 51:57.000
+As long as
+
+51:57.000 --> 51:59.000
+the first step is OK,
+
+51:59.000 --> 52:01.000
+and the next step is OK,
+
+52:01.000 --> 52:03.000
+it's usually
+
+52:03.000 --> 52:05.000
+not a problem.
+
+52:05.000 --> 52:07.000
+It's usually not a problem.
+
+52:07.000 --> 52:09.000
+No, we just can't do it.
+
+52:09.000 --> 52:11.000
+I've been doing it for
+
+52:11.000 --> 52:13.000
+a week, and my boss said
+
+52:13.000 --> 52:15.000
+there's nothing special
+
+52:15.000 --> 52:17.000
+to fix.
+
+52:17.000 --> 52:19.000
+Nothing special.
+
+52:21.000 --> 52:23.000
+OK.
+
+52:23.000 --> 52:25.000
+I see.
+
+52:25.000 --> 52:27.000
+I'll let others
+
+52:27.000 --> 52:29.000
+ask questions.
+
+52:29.000 --> 52:31.000
+Thank you.
+
+52:33.000 --> 52:35.000
+I have a question.
+
+52:35.000 --> 52:37.000
+Can you go back to
+
+52:37.000 --> 52:39.000
+TC?
+
+52:39.000 --> 52:41.000
+TC and
+
+52:41.000 --> 52:43.000
+granularized.
+
+52:45.000 --> 52:47.000
+My question is
+
+52:47.000 --> 52:49.000
+for different
+
+52:49.000 --> 52:51.000
+samples,
+
+52:51.000 --> 52:53.000
+do you know
+
+52:53.000 --> 52:55.000
+the delta
+
+52:55.000 --> 52:57.000
+bandgap?
+
+52:57.000 --> 52:59.000
+Is it almost
+
+52:59.000 --> 53:01.000
+the same?
+
+53:01.000 --> 53:03.000
+Or not?
+
+53:03.000 --> 53:05.000
+I didn't test it.
+
+53:07.000 --> 53:09.000
+But you feed
+
+53:09.000 --> 53:11.000
+Matisse-Bardini
+
+53:11.000 --> 53:13.000
+and you get the value.
+
+53:13.000 --> 53:15.000
+Oh, no, sorry.
+
+53:15.000 --> 53:17.000
+This TC is independent.
+
+53:17.000 --> 53:19.000
+I just use it
+
+53:19.000 --> 53:21.000
+to test TC.
+
+53:21.000 --> 53:23.000
+Oh, I see.
+
+53:23.000 --> 53:25.000
+So each data is
+
+53:25.000 --> 53:27.000
+transported by TC.
+
+53:27.000 --> 53:29.000
+And there's no microwave.
+
+53:29.000 --> 53:31.000
+Matisse-Bardini uses microwave.
+
+53:31.000 --> 53:33.000
+Right.
+
+53:33.000 --> 53:35.000
+So we don't...
+
+53:35.000 --> 53:37.000
+Suppose
+
+53:37.000 --> 53:39.000
+there should be
+
+53:39.000 --> 53:41.000
+a resonator chip.
+
+53:41.000 --> 53:43.000
+Suppose
+
+53:43.000 --> 53:45.000
+if it's 100% Matisse-Bardini,
+
+53:45.000 --> 53:47.000
+it should be exactly the same.
+
+53:47.000 --> 53:49.000
+But we're worried
+
+53:49.000 --> 53:51.000
+because we don't know
+
+53:51.000 --> 53:53.000
+how much of it is not Matisse-Bardini.
+
+53:53.000 --> 53:55.000
+We're curious.
+
+53:55.000 --> 53:57.000
+Yeah, that's
+
+53:57.000 --> 53:59.000
+a very good point.
+
+53:59.000 --> 54:01.000
+But in that case,
+
+54:01.000 --> 54:03.000
+if it's
+
+54:03.000 --> 54:05.000
+what you want to do,
+
+54:05.000 --> 54:07.000
+you don't want it to be Matisse-Bardini.
+
+54:07.000 --> 54:09.000
+You want the
+
+54:09.000 --> 54:11.000
+alpha factor to be high.
+
+54:11.000 --> 54:13.000
+You want it to
+
+54:13.000 --> 54:15.000
+deviate from Matisse-Bardini.
+
+54:15.000 --> 54:17.000
+Not necessarily.
+
+54:17.000 --> 54:19.000
+But I hope
+
+54:19.000 --> 54:21.000
+if it really comes from
+
+54:21.000 --> 54:23.000
+the energy deposit,
+
+54:23.000 --> 54:25.000
+it can still break the pair.
+
+54:25.000 --> 54:27.000
+Then I can test the documenter.
+
+54:27.000 --> 54:29.000
+Otherwise, it reacts a lot
+
+54:29.000 --> 54:31.000
+but it's useless
+
+54:31.000 --> 54:33.000
+if it doesn't interact with the particle.
+
+54:33.000 --> 54:35.000
+Interesting.
+
+54:35.000 --> 54:37.000
+OK.
+
+54:39.000 --> 54:41.000
+My understanding is
+
+54:41.000 --> 54:43.000
+if it follows BCS,
+
+54:43.000 --> 54:45.000
+it's Matisse-Bardini.
+
+54:45.000 --> 54:47.000
+We haven't
+
+54:47.000 --> 54:49.000
+thought about it.
+
+54:49.000 --> 54:51.000
+At least the first part,
+
+54:51.000 --> 54:53.000
+the alpha factor is good.
+
+54:53.000 --> 54:55.000
+We've demonstrated this part.
+
+54:55.000 --> 54:57.000
+As you can see,
+
+54:57.000 --> 54:59.000
+we want to test it because of this.
+
+54:59.000 --> 55:01.000
+But we're worried
+
+55:01.000 --> 55:03.000
+if it doesn't interact
+
+55:03.000 --> 55:05.000
+with the physical particle
+
+55:05.000 --> 55:07.000
+in a normal response,
+
+55:07.000 --> 55:09.000
+it becomes a very powerful
+
+55:09.000 --> 55:11.000
+but it only reacts with RF.
+
+55:11.000 --> 55:13.000
+It's useless.
+
+55:15.000 --> 55:17.000
+OK.
+
+55:17.000 --> 55:19.000
+Because what I did before
+
+55:19.000 --> 55:21.000
+is HKID.
+
+55:21.000 --> 55:23.000
+The pair I read before
+
+55:23.000 --> 55:25.000
+is more HKID.
+
+55:25.000 --> 55:27.000
+I haven't thought about it.
+
+55:27.000 --> 55:29.000
+OK.
+
+55:29.000 --> 55:31.000
+OK.
+
+55:31.000 --> 55:33.000
+OK.
+
+55:33.000 --> 55:35.000
+As I said last time,
+
+55:35.000 --> 55:37.000
+in low resistivity,
+
+55:37.000 --> 55:39.000
+it usually follows
+
+55:39.000 --> 55:41.000
+strictly
+
+55:41.000 --> 55:43.000
+Matisse-Bardini.
+
+55:43.000 --> 55:45.000
+If you push it
+
+55:45.000 --> 55:47.000
+to close to 800
+
+55:47.000 --> 55:49.000
+or 1000
+
+55:49.000 --> 55:51.000
+Michael-Henry per square,
+
+55:51.000 --> 55:53.000
+sorry,
+
+55:53.000 --> 55:55.000
+you'll get
+
+55:55.000 --> 55:57.000
+a nonlinear phenomenon.
+
+55:57.000 --> 55:59.000
+It makes sense.
+
+55:59.000 --> 56:01.000
+It's in line with the prediction.
+
+56:01.000 --> 56:03.000
+It's not Matisse-Bardini.
+
+56:03.000 --> 56:05.000
+Yes.
+
+56:05.000 --> 56:07.000
+OK.
+
+56:07.000 --> 56:09.000
+This is my question.
+
+56:09.000 --> 56:11.000
+Do you have any other questions?
+
+56:11.000 --> 56:13.000
+If you don't have any questions,
+
+56:13.000 --> 56:15.000
+please turn on
+
+56:15.000 --> 56:17.000
+the microphone.
+
+56:19.000 --> 56:21.000
+OK.
+
+56:21.000 --> 56:23.000
+Now I...
+

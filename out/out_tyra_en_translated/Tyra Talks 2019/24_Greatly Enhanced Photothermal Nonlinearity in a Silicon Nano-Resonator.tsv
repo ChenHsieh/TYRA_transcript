@@ -1,0 +1,984 @@
+start	end	text
+0	8000	Hello, everyone. Welcome to this week's TerraTalk.
+8000	10000	I'm your host, Emma Lin.
+10000	17000	I'm currently working on CO2 reduction in Caltech.
+17000	20000	Welcome to our talk today.
+20000	24000	First, I'd like to introduce our speaker for today, Du Yixiu.
+24000	28000	Du Yixiu is a doctoral student at Stanford University.
+28000	31000	She graduated from the University of Taiwan's Department of Physics.
+31000	33000	During her time at the university,
+33000	36000	she worked as a postdoctoral student at the Zhu Shiwei Laboratory.
+36000	41000	She did research on silicon photonics.
+41000	44000	During her time at the university,
+44000	47000	she went to Berkeley Department of Physics for a year.
+47000	51000	At the time, she did research on graphene synthesis.
+51000	55000	Yixiu is currently in the Department of Physics at Stanford.
+55000	58000	She did her Ph.D. in physics for a year.
+58000	65000	She is currently doing her Ph.D. rotation in Professor Gao Sunhong's lab.
+65000	68000	The lab she is currently working on is
+68000	71000	sound imaging and neuroscience-related research.
+71000	74000	Her next interest in the doctoral program
+74000	78000	is to combine nanophotonics and neuroscience
+78000	80000	to do applications.
+80000	83000	The topic of her presentation today is
+83000	90000	the research she did with Professor Zhu Shiwei at the university.
+90000	94000	The topic of this presentation is
+94000	101000	about the rapid development of silicon memory circuits.
+101000	105000	People have always wanted to combine silicon
+105000	110000	and nanoparticles in a chip
+110000	114000	to achieve a real photonical IC.
+114000	118000	However, silicon components are relatively large,
+118000	121000	so they want to understand
+121000	124000	whether they can reduce the magnitude to nanometers
+124000	126000	to achieve greater density
+126000	129000	while maintaining the nature of nonlinear light.
+129000	132000	The topic of this presentation is
+132000	135000	the great enhanced photothermal nonlinearity
+135000	138000	in a silicon nanoresonator.
+138000	141000	Let's give a round of applause
+141000	144000	to welcome our speaker today, Du Yixiu.
+144000	147000	Thank you for having me.
+147000	150000	I'm Du Yixiu.
+150000	153000	I don't think there are a lot of people here,
+153000	156000	so if you have any questions,
+156000	159000	please feel free to ask.
+159000	162000	I'm Du Yixiu.
+162000	165000	I don't think there are a lot of people here,
+165000	168000	so if you have any questions,
+168000	171000	please feel free to ask.
+171000	174000	I'm Du Yixiu.
+174000	177000	I don't think there are a lot of people here,
+177000	180000	so if you have any questions,
+180000	183000	please feel free to ask.
+183000	186000	I'm Du Yixiu.
+186000	189000	I'm Du Yixiu.
+189000	192000	I don't think there are a lot of people here,
+192000	195000	so if you have any questions,
+195000	198000	please feel free to ask.
+198000	201000	I'm Du Yixiu.
+201000	204000	I don't think there are a lot of people here,
+204000	207000	so if you have any questions,
+207000	210000	please feel free to ask.
+210000	213000	I'm Du Yixiu.
+213000	216000	Nowadays,
+216000	219000	there are some people writing their article
+219000	222000	in 2010 called
+222000	225000	''The Logical Next Step of an Optical Transistor''.
+225000	228000	Now this person publishes his article in 2010 called
+228000	231000	''The Logical Next Step of an Optical Transistor''.
+231000	234000	The article talks about
+234000	237000	two important points
+237000	240000	for nano photonics devices.
+240000	242000	We want great density
+242000	245000	to match the electrical IC.
+245000	248000	We also want a good enough functionality.
+248000	251000	This functionality is like
+251000	254000	an electrolyte.
+254000	257000	We want a good enough electron-electron interaction.
+257000	260000	Through this electron-electron interaction,
+260000	263000	we can control the device.
+263000	266000	Can optical do the same?
+266000	269000	Let's take a look.
+269000	272000	Recently, there is a very popular field
+272000	275000	called Silicon Photonics.
+275000	278000	You can see the timeline.
+278000	281000	In 2003,
+281000	284000	it was Silicon Nanophotonics' birthday.
+284000	287000	That day, everyone thought about
+287000	290000	how to combine
+290000	293000	nanoscale silicon waveguide
+293000	296000	and micronscale optical fiber
+296000	299000	through a technique called
+299000	302000	tapping.
+302000	305000	Then we can extend
+305000	308000	the optical fiber technology
+308000	311000	to silicon waveguide technology.
+311000	314000	I want to emphasize that
+314000	317000	in the past 10 years,
+317000	320000	Silicon Photonics' field
+320000	323000	has developed rapidly.
+323000	326000	Looking back to modern science,
+326000	329000	it is hard to see such a rapid development
+329000	332000	in 10 years.
+332000	335000	Silicon Photonics is
+335000	338000	a very popular field.
+338000	341000	Next,
+341000	344000	I want to talk about
+344000	347000	why everyone wants to
+347000	350000	use silicon
+351000	354000	to realize electronics.
+354000	357000	First,
+357000	360000	we know that there is a lot of silicon in nature,
+360000	363000	so it is very natural abundance.
+363000	366000	On the other hand,
+366000	369000	silicon has very mature fabrication technology,
+369000	372000	so we can make very small devices,
+372000	375000	but we can also make a lot of devices.
+375000	378000	For various reasons,
+378000	381000	electronics has developed rapidly,
+381000	384000	so people want to
+384000	387000	expand it to the photonics platform.
+387000	390000	The reason is that
+390000	393000	if we expand to the photonics platform,
+393000	396000	we may have
+396000	399000	very high speed potential.
+399000	402000	We can potentially reach
+402000	405000	a very high speed switch.
+406000	409000	I want to show you
+409000	412000	the technology that combines
+412000	415000	photonics and electronics.
+415000	418000	Everything in the same platform.
+418000	421000	This is an article published in Nature
+421000	424000	in 2018.
+424000	427000	The left half of the article
+427000	430000	is the electronics device, transistor.
+430000	433000	On the same chip,
+433000	436000	we can see the photonics device.
+436000	439000	If we take a closer look,
+439000	442000	we can see that
+442000	445000	the electronics device
+445000	448000	and the photonics device
+448000	451000	are all on the same chip.
+454000	457000	If you look closely at this scale bar,
+457000	460000	there are countless electrical devices
+460000	463000	on the same chip.
+463000	466000	We can make very good
+466000	469000	electrical-based integrated circuits.
+469000	472000	But in the case of the photonics device,
+472000	475000	we only have one.
+475000	478000	Its scale bar is 10 microns,
+478000	481000	like this microresonator.
+481000	484000	You may ask,
+484000	487000	why don't we make it smaller?
+487000	490000	Why do we have so many electronic devices?
+490000	493000	The reason is that
+493000	496000	we want to reduce the footprint
+496000	499000	from 10 microns to 100 nanometers.
+499000	502000	That's what people think.
+502000	505000	But if we want to reduce the footprint,
+505000	508000	we have to consider other problems.
+508000	511000	For example,
+511000	514000	if we reduce the footprint,
+514000	517000	we will have the same functionality
+517000	520000	as a large size.
+520000	523000	One aspect of the functionality
+523000	526000	is optical nonlinearity.
+526000	529000	The optical nonlinearity of silicon
+529000	532000	is very small.
+532000	535000	The definition of nonlinearity is
+535000	538000	if I increase the intensity of my illumination,
+538000	541000	my refractive index
+541000	544000	will also increase.
+544000	547000	This coefficient represents
+547000	550000	the nature of the nonlinearity of the material itself.
+550000	553000	Because our silicon
+553000	556000	is a very small nonlinearity,
+556000	559000	can we increase its intensity?
+559000	562000	Well, people think like Lipson.
+562000	565000	In Columbia,
+565000	568000	Lipson thought about
+568000	571000	whether to use a resonance structure
+571000	574000	to make the resonance bigger.
+574000	577000	For example,
+577000	580000	the structure of the microresonator,
+580000	583000	the SEM2,
+583000	586000	can reach a very sharp spectrum
+586000	589000	and symbolize a very high quality factor.
+589000	592000	With such a resonance structure,
+592000	595000	we can increase the functionality of our devices.
+595000	598000	However,
+598000	601000	we want to make a very small device.
+601000	604000	Is there a way
+604000	607000	to make such a small device?
+607000	610000	Although the quality factor is very low,
+610000	613000	can we use other ways
+613000	616000	to reduce the quality factor?
+616000	619000	Can we find other nonlinearity mechanisms
+619000	622000	to make our functionality
+623000	626000	maintain the same?
+626000	629000	This is the most classic example
+629000	632000	of a resonator in a microresonator.
+632000	635000	The so-called mixed resonator
+635000	638000	provides a resonance
+638000	641000	at a very small magnitude.
+644000	647000	If we look at this SEM2,
+647000	650000	it has different resonance
+650000	653000	colors,
+653000	656000	such as blue,
+656000	659000	green, and red.
+659000	662000	This microresonator is size-dependent.
+662000	665000	There is a lot of research
+665000	668000	on this matter,
+668000	671000	especially in the past 10 years.
+671000	674000	The so-called high-index material
+674000	677000	has a very special resonance phenomenon.
+677000	680000	It was published in 2017.
+680000	683000	It is Yusuke Nagasaki,
+683000	686000	my collaborator.
+686000	689000	He did the research.
+689000	692000	It is a silicon-on-top-of-quartz structure.
+692000	695000	This structure can fine-tune
+695000	698000	the width of each silicon nanoparticle,
+698000	701000	such as Wx and Wy.
+701000	704000	With different combinations of widths,
+704000	707000	we can get a rainbow-like structure.
+707000	710000	This rainbow-like structure
+710000	713000	tells us that
+713000	716000	we have a very good ability
+716000	719000	to fine-tune the resonance.
+719000	722000	Our future research
+722000	725000	will use a similar sample.
+725000	728000	The next thing I want to talk about
+728000	731000	is that since our nanostructure
+731000	734000	has such a weak resonance,
+734000	737000	is there any way
+737000	740000	to increase it with other mechanisms?
+740000	743000	We all know that
+743000	746000	photothermal is a solution.
+746000	749000	Is there any other mechanism
+749000	752000	to maintain its nonlinearity?
+752000	755000	The answer is that
+755000	758000	we can combine photothermal
+758000	761000	and nonlinear resonance.
+761000	764000	As you know,
+764000	767000	the photothermal effect
+767000	770000	is a very large nonlinear effect.
+770000	773000	In a small-scale nanoparticle,
+773000	776000	it is a very efficient optical heater.
+776000	779000	In this paper in 2017,
+779000	782000	he sprinkled silicon
+782000	785000	on the surface of SiO2
+785000	788000	to show that
+788000	791000	in a specific dimension,
+791000	794000	the silicon nanoparticle
+794000	797000	has a very strong optical heating effect.
+797000	800000	We can heat this silicon nanoparticle
+800000	803000	to about 600K.
+803000	806000	Because of these two reasons,
+806000	809000	it is a very efficient optical heater.
+809000	812000	So maybe we can
+812000	815000	use it to combine
+815000	818000	nano-resonance to achieve
+818000	821000	a greater nonlinear effect.
+821000	824000	So our work combines two things.
+824000	827000	The first thing is a very weak
+827000	830000	nano-resonance,
+830000	833000	but it is a very small nanostructure.
+833000	836000	The other part is
+836000	839000	the photothermal effect.
+839000	842000	The photothermal effect provides
+842000	845000	a very large nonlinear effect.
+845000	848000	If we combine these two things,
+848000	851000	we can get a greater nonlinear effect.
+851000	854000	If we compare
+854000	857000	these two things,
+857000	860000	we can get a very small nanostructure
+860000	863000	and a very good photothermal effect.
+863000	866000	If we compare
+866000	869000	the photothermal effect,
+869000	872000	we can see that
+872000	875000	in ordinary materials,
+875000	878000	the nonlinear coefficient is about
+878000	881000	10 to the power of 9.
+881000	884000	After the enhanced nonlinearity
+884000	887000	of the photosynthesis,
+887000	890000	we can increase the nonlinear coefficient
+890000	893000	by 3 orders.
+893000	896000	This is the process we are going to discuss.
+896000	899000	This is our system.
+899000	902000	We want to achieve
+902000	905000	resonance.
+905000	908000	We need to characterize
+908000	911000	the resonance.
+911000	914000	So we use a dark field system.
+914000	917000	This dark field system
+917000	920000	allows us to get a spectrum
+920000	923000	This is a confocal system.
+923000	926000	The light follows the orange light.
+926000	929000	It hits the object
+929000	932000	and passes through the gobbled mirror
+932000	935000	to select the particle you want.
+935000	938000	Finally, it enters the spectrum meter.
+938000	941000	On the other hand,
+941000	944000	we want to stimulate the photothermal effect.
+944000	947000	So we use a 5.6E laser.
+947000	950000	It passes through the gobbled mirror
+950000	953000	to control where we want to hit the particle.
+953000	956000	It illuminates the silicon nanostructure.
+956000	959000	We also use a dark field system
+959000	962000	to get a background-free,
+962000	965000	clean image.
+965000	968000	This is the resonance we get.
+968000	971000	We can see that by controlling
+971000	974000	different nanostructures,
+974000	977000	such as Wx and Wy,
+977000	980000	we can get a very colorful image.
+980000	983000	This colorful image tells us
+983000	986000	that the resonance of each particle
+986000	989000	is completely different.
+989000	992000	So we can expect
+992000	995000	a different photothermal effect.
+995000	998000	If we look at this line,
+998000	1001000	we can use a 5.6E laser
+1001000	1004000	to do photothermal illumination.
+1004000	1007000	Under this illumination,
+1007000	1010000	we can see that
+1010000	1013000	there are three peaks
+1013000	1016000	of scattering intensity
+1016000	1019000	at three different degrees.
+1019000	1022000	This result is quite similar
+1022000	1025000	to the simulation.
+1025000	1028000	So we can say that
+1028000	1031000	in the silicon nanostructure
+1031000	1034000	at 100 nm,
+1034000	1037000	there is a magnetic dipole,
+1037000	1040000	an electric dipole,
+1040000	1043000	and a magnetic quadrupole.
+1043000	1046000	Why do we choose a 5.6E wavelength?
+1046000	1049000	Because with a 5.6E wavelength,
+1049000	1052000	we can see different resonance peaks
+1052000	1055000	at the same time.
+1055000	1058000	Different resonance peaks
+1058000	1061000	affect the nonlinear behavior.
+1061000	1064000	With the same 5.6E wavelength,
+1064000	1067000	we can trigger
+1067000	1070000	two different absorption peaks.
+1070000	1073000	This is why we choose a 5.6E wavelength.
+1073000	1076000	I have been talking about
+1076000	1079000	nonlinear effects.
+1079000	1082000	In fact, what we want to discuss
+1082000	1085000	is that if we increase
+1085000	1088000	the excitation intensity,
+1088000	1091000	what will happen to
+1091000	1094000	the optical properties?
+1094000	1097000	If it is a linear case,
+1097000	1100000	if we increase the excitation intensity,
+1100000	1103000	the scattering intensity
+1103000	1106000	will also grow linearly.
+1106000	1109000	However, if it is a nonlinear case,
+1109000	1112000	the scattering intensity
+1112000	1115000	will saturate.
+1115000	1118000	Since we want to control
+1118000	1121000	the intensity of the light,
+1121000	1124000	we need to adjust the power.
+1124000	1127000	We can adjust it like this.
+1127000	1130000	Or we can
+1130000	1133000	make good use of
+1133000	1136000	our scanning system.
+1136000	1139000	We can move the beam like this.
+1139000	1142000	By moving it like this,
+1142000	1145000	we can also
+1145000	1148000	saturate the nanostructure
+1148000	1151000	at different intensities.
+1151000	1154000	In this case,
+1154000	1157000	we can see that in a linear case,
+1157000	1160000	there will be a linear scattering growth.
+1160000	1163000	In a nonlinear case,
+1163000	1166000	there is a hole in the middle of our image.
+1166000	1169000	It has a dominance shape.
+1169000	1172000	This dominance shape tells us that
+1172000	1175000	at the center point,
+1175000	1178000	where the intensity of the light is the highest,
+1178000	1181000	we have a relatively small
+1181000	1184000	scattering behavior.
+1184000	1187000	This is a very strange phenomenon.
+1187000	1190000	If we want to quantify this phenomenon,
+1190000	1193000	this is the result of
+1193000	1196000	one of the size 190 nm nanoparticles.
+1196000	1199000	When we increase the excitation intensity,
+1199000	1202000	the scattering intensity will
+1202000	1205000	have a saturation phenomenon.
+1205000	1208000	We will see the point spread function
+1208000	1211000	of this dominance shape.
+1211000	1214000	Similarly,
+1214000	1217000	for example,
+1217000	1220000	we will also see
+1220000	1223000	a saturation phenomenon.
+1223000	1226000	In 170 nm nanoparticles,
+1226000	1229000	we can't find particles at low intensities.
+1229000	1232000	But when we increase the
+1232000	1235000	excitation intensity,
+1235000	1238000	the particles will suddenly come out.
+1238000	1241000	The scattering will suddenly increase a lot.
+1241000	1244000	One thing to note is that
+1244000	1247000	this phenomenon is reversible.
+1247000	1250000	We can restore it.
+1250000	1253000	It is not related to the damage
+1253000	1256000	caused by the light.
+1256000	1259000	To summarize,
+1259000	1262000	different nanoparticles
+1262000	1265000	have different scattering deviations.
+1265000	1268000	Scattering deviations like
+1268000	1271000	100 nm nanoparticles
+1271000	1274000	will have a decrease in intensity.
+1274000	1277000	In 170 nm nanoparticles,
+1277000	1280000	the intensity will increase a lot.
+1280000	1283000	This phenomenon is not only
+1283000	1286000	a nonlinear phenomenon
+1286000	1289000	on this diagonal axis.
+1289000	1292000	In fact,
+1292000	1295000	in different combinations of
+1295000	1298000	Wx and Wy,
+1298000	1301000	we can observe
+1301000	1304000	this very large nonlinear effect.
+1304000	1307000	Why do I say it's very large?
+1307000	1310000	Because in the
+1310000	1313000	nonlinear effect of
+1313000	1316000	normal silicon itself,
+1316000	1319000	we will only produce
+1319000	1322000	about 10 to the power of 9 percent optical modulation.
+1322000	1325000	But in this case,
+1325000	1328000	we will only produce
+1328000	1331000	about 500 percent
+1331000	1334000	or minus 70 percent
+1334000	1337000	nonlinear modulation.
+1337000	1340000	In addition,
+1340000	1343000	I want to talk about another thing.
+1343000	1346000	We just saw a summary.
+1346000	1349000	The nonlinear behavior of
+1349000	1352000	different nanoparticles is different.
+1352000	1355000	What is the relationship between them?
+1355000	1358000	We can see that
+1358000	1361000	in the negative nonlinearity,
+1361000	1364000	like this saturation,
+1364000	1367000	the spectrum on the resonance
+1367000	1370000	is a peak.
+1370000	1373000	On the other hand,
+1373000	1376000	this 170 nm nanoparticle
+1376000	1379000	looks like a dip on the resonance spectrum.
+1379000	1382000	But we won't catch all the peaks.
+1382000	1385000	For example,
+1385000	1388000	this 130 nm nanoparticle
+1388000	1391000	is a scattering peak,
+1391000	1394000	but we can't observe the nonlinear behavior.
+1394000	1397000	Why is that?
+1397000	1400000	We will explain further
+1400000	1403000	with the photo thermal effect we just mentioned.
+1403000	1406000	First of all,
+1406000	1409000	the photo thermal effect
+1409000	1412000	does exist in our system.
+1412000	1415000	We have experimental evidence
+1415000	1418000	and simulated evidence.
+1418000	1421000	In the experimental evidence,
+1421000	1424000	we can use the Raman microscope
+1424000	1427000	to observe how many degrees
+1427000	1430000	the silicon nanoparticle has risen.
+1430000	1433000	Our answer is about a few hundred degrees.
+1433000	1436000	This is quite consistent with the literature.
+1436000	1439000	In the simulation,
+1439000	1442000	we can see that
+1442000	1445000	the silicon nanostructure
+1445000	1448000	only has a very strong temperature increase
+1448000	1451000	in a specific geometry.
+1451000	1454000	This is the photo thermal effect we observed.
+1454000	1457000	If we heat up a silicon nanoparticle,
+1457000	1460000	the photo thermal effect
+1460000	1463000	produces heat.
+1463000	1466000	This heat
+1466000	1469000	increases the refractive index.
+1469000	1472000	This increase in the refractive index
+1472000	1475000	leads to the change in the mean resonance.
+1475000	1478000	This increase in the refractive index
+1478000	1481000	leads to the change in the mean resonance.
+1481000	1484000	This leads to the nonlinear effect we mentioned.
+1484000	1487000	We simulated
+1487000	1490000	this blue curve.
+1490000	1493000	Our scattering
+1493000	1496000	is the blue curve
+1496000	1499000	for different size distributions.
+1499000	1502000	When we increase the radius,
+1502000	1505000	we get the red curve.
+1505000	1508000	Because different particles
+1508000	1511000	have different refractive indexes,
+1511000	1514000	the cross-section of the scattering is different.
+1514000	1517000	If we combine these two lines,
+1517000	1520000	we get the black curve.
+1520000	1523000	This black curve
+1523000	1526000	is very consistent with the experiment.
+1526000	1529000	This black curve is very consistent with the experiment.
+1529000	1532000	This black curve is very consistent with the experiment.
+1532000	1535000	This explains the effect of our observation
+1535000	1538000	of the photo thermal effect.
+1538000	1541000	In addition,
+1541000	1544000	In addition,
+1544000	1547000	we simulated these three
+1547000	1550000	170 and 190 neoparticles
+1550000	1553000	as a single nonlinear curve.
+1553000	1556000	as a single nonlinear curve.
+1556000	1559000	This is very consistent with the experiment.
+1559000	1562000	This further proves that
+1562000	1565000	the photo thermal effect
+1565000	1568000	is the nonlinearity mechanism.
+1568000	1571000	is the nonlinearity mechanism.
+1571000	1574000	If you hear the word photo thermal effect,
+1574000	1577000	many people may think
+1577000	1580000	that if the device is controlled by thermal energy,
+1580000	1583000	it may be very slow.
+1583000	1586000	But in fact,
+1586000	1589000	the photo thermal effect is not necessarily slow.
+1589000	1592000	In terms of magnitude, it is very slow.
+1592000	1595000	But in terms of magnitude,
+1595000	1598000	our experiment and simulation
+1598000	1601000	have shown that
+1601000	1604000	the photo thermal effect observed
+1604000	1607000	on the silicon nanostructure
+1607000	1610000	is very fast.
+1610000	1613000	At this point,
+1613000	1616000	if we turn on the 785nm laser,
+1616000	1619000	there will be a large drop in the velocity.
+1619000	1622000	there will be a large drop in the velocity.
+1622000	1625000	This time scale is about 2ns.
+1625000	1628000	This simulation also tells us the same thing.
+1628000	1631000	This simulation also tells us the same thing.
+1631000	1634000	If we look at this picture,
+1634000	1637000	we can get a very fast thermal response
+1637000	1640000	of 1GHz.
+1640000	1643000	of 1GHz.
+1643000	1646000	It tells us that it is a minus 50% nonlinear effect.
+1646000	1649000	It tells us that it is a minus 50% nonlinear effect.
+1649000	1652000	So we can make a device
+1652000	1655000	with a 50% deviation.
+1655000	1658000	with a 50% deviation.
+1658000	1661000	But it still maintains a very fast speed of 1GHz.
+1661000	1664000	But it still maintains a very fast speed of 1GHz.
+1664000	1667000	Another interesting observation is
+1667000	1670000	that when we
+1670000	1673000	When we
+1673000	1676000	When we
+1676000	1679000	can we go back to the screen?
+1679000	1682000	Can we go back to the screen?
+1682000	1685000	What is the input image?
+1685000	1688000	What is the input image?
+1688000	1691000	What is the input image?
+1691000	1694000	What is the input image?
+1694000	1697000	The x-axis of the laser...
+1698000	1701000	The insert...
+1701000	1704000	The insert...
+1704000	1707000	The insert...
+1715000	1718000	You choose a peak and not a z-axis,
+1718000	1721000	You choose a peak and not a z-axis,
+1721000	1724000	because the laser...
+1724000	1729000	you can choose any size to reach the peak
+1737000	1741000	Our sample is placed at room temperature
+1741000	1746000	but the Photo Thermal Effect is a local thermal effect
+1746000	1751280	So the sensitization of the very small thickness
+1751280	1756280	but the surrounding area is maintained
+1760280	1763280	Thank you for the question
+1763280	1767280	Another interesting phenomenon is
+1767280	1770280	if it is a Photo Thermal Effect
+1770280	1779280	then we change the surrounding thermal diffusion
+1779280	1786280	For example, if the thermal diffusion is changed
+1786280	1789280	then we should see a different phenomenon
+1789280	1792280	The result is that our Point Spreading Function
+1792280	1795280	has a very sharp transition
+1795280	1798280	This is our profile
+1798280	1801280	When we enter high laser intensity
+1801280	1804280	we will have a very strange triangular change
+1804280	1809280	This triangular change tells us a very shaky phenomenon
+1809280	1813280	But we don't know how to explain it yet
+1813280	1817280	Let me make a conclusion
+1817280	1823280	We observed a very large Photo Thermal Nonlinearity
+1823280	1828280	We combined two things to achieve this result
+1828280	1833280	The first thing is that we want to reduce the size
+1833280	1838280	So we will use the material of Mean Resonance
+1838280	1841280	We use the material of nanometer
+1841280	1845280	Usually we think of Mean Resonance
+1845280	1848280	Although the quality factor is very low
+1848280	1853280	but we have other ways to solve this problem
+1853280	1857280	So we meet the size requirement
+1857280	1861280	How to meet the functionality requirement?
+1861280	1866280	We use a very powerful natural
+1866280	1874280	change of Photo Thermal Nonlinearity
+1874280	1877280	Combining these two things
+1877280	1881280	we can create a Photo Thermal Effect
+1881280	1884280	larger than the original Bulk
+1884280	1889280	Because of the Enhanced Mean Resonance
+1889280	1894280	So we can get a very large Nonlinearity Effect
+1894280	1897280	Like this picture
+1897280	1900280	When we increase Excitation Intensity
+1900280	1902280	Scattering Intensity saturates
+1902280	1906280	and even creates a donut shape
+1906280	1908280	Another thing is that
+1908280	1910280	this Photo Thermal Effect
+1910280	1915280	is not necessarily as slow as the large scale
+1915280	1917280	In fact, in a small scale
+1917280	1926280	we have proven the recovery speed of a nanosecond
+1926280	1930280	This allows us to make a 1GHz
+1930280	1935280	about 50% deviation device
+1935280	1939280	So I want to thank you for listening
+1939280	1942280	and thank you to my advisor
+1943280	1945280	at Taiwan University of Physics
+1945280	1949280	And I want to thank my co-authors
+1949280	1951280	like Yusuke Nagasaki
+1951280	1954280	He is at Osaka University
+1954280	1957280	I was lucky enough to go to Osaka University
+1957280	1960280	for a while
+1960280	1962280	and got to know them
+1962280	1964280	They gave me great help
+1964280	1968280	Finally, they helped us with
+1969280	1972280	fabrication
+1972280	1975280	So thank you for listening
+1975280	1978280	I am happy to take any questions
+1978280	1979280	Thank you
+1988280	1993280	Thank you Yusuke
+1993280	1998280	Any questions?
+2017280	2020280	The first question is
+2020280	2023280	I want to know how fabrication is done
+2023280	2031280	Where does silicon-on-quartz come from?
+2031280	2037280	We bought the silicon-on-quartz structure from Company
+2037280	2043280	How does it work?
+2043280	2047280	It uses pure silicon
+2047280	2052280	to oxidize the bottom layer into SiO2
+2052280	2057280	The top layer is cut off with ion beam
+2061280	2066280	Wait, you said you bought the SOI structure?
+2066280	2068280	Yes
+2068280	2073280	Usually the SOI structure is made of silicon
+2073280	2076280	The silicon is thicker
+2076280	2080280	But the SOI structure is different
+2080280	2085280	It's made of quartz
+2085280	2089280	It's made of two layers
+2089280	2091280	So it's wafer-bonding?
+2091280	2093280	Yes
+2097280	2100280	Another question is
+2100280	2105280	I want to know how the donor shape is formed
+2119280	2128280	If we move the excitation beam from left to right
+2128280	2132280	Because the excitation beam is a Gaussian shape
+2132280	2136280	When we pass through the nanostructure
+2136280	2140280	The excitation of the nanostructure
+2140280	2145280	is from the small innumeration to the big innumeration
+2145280	2148280	When the big innumeration occurs
+2148280	2153280	The Gaussian beam hits the nanostructure
+2153280	2158280	So when we do confocal scanning
+2158280	2163280	We are also varying the power density
+2163280	2166280	So the image you show is not the real image
+2166280	2169280	It's a scanning image
+2169280	2175280	The raw data we get is like this
+2175280	2178280	So the image is scanned?
+2178280	2180280	Yes
+2184280	2188280	It's processed at the end
+2188280	2192280	The last question is
+2192280	2196280	This kind of mini-resonator
+2196280	2198280	It has a large load
+2198280	2202280	And it's not easy to couple
+2202280	2207280	My understanding is that it's hard to couple to nanofortanites
+2207280	2211280	Is there any way to solve this problem?
+2211280	2215280	This is a great question
+2215280	2218280	For coupling
+2218280	2221280	Because the mainstream of nanofortanites
+2221280	2224280	Is to use the silicon waveguide
+2224280	2230280	So it's hard to couple to the silicon waveguide
+2230280	2232280	That's right
+2232280	2237280	But we don't necessarily
+2238280	2244280	It can be made like a gate
+2244280	2246280	Like this
+2246280	2249280	This is a potential application
+2249280	2252280	We have a silicon waveguide
+2252280	2257280	We put a mini-resonator on it
+2257280	2262280	If the intensity of my silicon waveguide is very strong
+2262280	2266280	Or we put a high beam on the right
+2266280	2269280	To heat the silicon nanofortanite
+2269280	2273280	We use another kind of wavelength
+2273280	2276280	To communicate
+2276280	2279280	Although the load of the mini-resonator is large
+2279280	2285280	But its load will not affect the communication wavelength
+2285280	2291280	Why not?
+2291280	2296280	Because it's a bit like a pump probe
+2296280	2301280	We use an irrelevant wavelength to pump it
+2301280	2306280	Its purpose is to increase the temperature
+2306280	2311280	Of course, the on-off ratio can be done very well
+2311280	2316280	But your signal will always have a loss
+2316280	2321280	No matter if you have a gate
+2321280	2326280	The loss of your waveguide will always be large
+2326280	2328280	It should be like this
+2328280	2331280	Yes, because it's more of a scatter
+2331280	2335280	But I think we can use engineering
+2335280	2339280	To make the loss smaller through different wavelengths
+2340280	2344280	Like this picture
+2348280	2351280	If we look at the absorption on the right
+2351280	2354280	It's about 800 nm or more
+2354280	2358280	The silicon itself has no absorption
+2358280	2363280	So through different wavelengths
+2363280	2368280	With different geometry of the mini-resonator
+2368280	2373280	We can adjust the absorption
+2373280	2376280	To make the loss as small as possible
+2381280	2386280	Is the main current of silicon waveguide 1.5μm?
+2386280	2391280	Why do you want to do it in the visible range?
+2391280	2394280	Because in the visible range
+2394280	2397280	We have enough absorption
+2397280	2402280	If it's 1.5μm, we don't have enough absorption
+2404280	2411280	Does this become a point to pay attention to in the future?
+2411280	2417280	Because most waveguides should be at 1.5μm or 1.1μm
+2417280	2422280	Yes, so the communication we want to send
+2422280	2426280	Should still be in the range of 1.5μm
+2426280	2429280	But what we emphasize here is
+2429280	2434280	Our nanometer structure can produce enough heat
+2434280	2439280	This heat can be enough to change the refractive index
+2439280	2444280	You mean you still have to use visible to pump
+2444280	2449280	Then you use 1.5 to probe
+2449280	2454280	This is the application in my mind
+2455280	2461280	So the potential structure we saw just now
+2461280	2464280	It hasn't been done yet
+2464280	2468280	It hasn't been done yet
+2468280	2471280	Will ThermoLight affect your 1.5?
+2471280	2477280	Will the evidence of this not being tested be affected?
+2477280	2480280	No, this will be the next project
+2484280	2489280	Hello
+2489280	2496280	Will the refractive index be affected by visible light?
+2496280	2501280	If you choose, like you just said, there are about 5 or 6 waves
+2501280	2504280	If you choose differently, maybe
+2504280	2508280	I think it's about the same
+2508280	2510280	I didn't hear it clearly
+2510280	2513280	No, because the picture you just showed
+2513280	2515280	There are about 4 or 5 peaks
+2515280	2520280	I just asked you why you used the 750-pixel picture
+2520280	2522280	Oh, yeah
+2522280	2524280	But the other lasers
+2524280	2529280	The other wavelength lasers feel more difficult to obtain
+2529280	2531280	A little bit, yeah
+2531280	2533280	Yeah
+2534280	2538280	It's okay, 400
+2538280	2541280	A little more than 400, so there's a chance
+2541280	2545280	This is done in the collaborator lab
+2545280	2550280	Their equipment is only 785
+2555280	2559280	But I think in terms of quantity
+2559280	2563280	I don't think Timescale will guess a lot
+2577280	2579280	Hello
+2590280	2594280	Any other questions?
+2599280	2602280	I have a general question
+2602280	2605280	Because I'm not involved in this field
+2605280	2607280	I want to ask
+2607280	2610280	Basically in this field
+2610280	2613280	The current level of development is
+2613280	2616280	You just said you want to scale
+2616280	2619280	When you want to scale smaller and smaller
+2619280	2622280	You want to maintain the quality of the laser beam
+2622280	2624280	And reduce other costs
+2624280	2626280	In this field
+2626280	2629280	Are there already a lot of people doing it?
+2629280	2631280	Or are you the pioneers?
+2631280	2633280	And besides this direction
+2633280	2636280	What other directions do you think
+2636280	2641280	Have the potential to improve this problem?
+2642280	2644280	I think
+2644280	2648280	The interaction between light and light itself is very small
+2648280	2652280	So generally everyone will try to
+2652280	2656280	Make the resonance structure bigger
+2656280	2660280	Solve this problem through geometric methods
+2660280	2664280	The most famous example is
+2664280	2669280	Microlipson's microbeam resonator
+2669280	2674280	The structure shown in the beginning
+2676280	2679280	So I believe
+2679280	2682280	Photonic's mainstream is something like this
+2682280	2686280	But everyone is still trying
+2686280	2690280	So they haven't thought about how to make the device smaller
+2690280	2692280	Are they just proposing ideas
+2692280	2695280	Or have they already made some prototypes?
+2695280	2698280	Photonic has already made something
+2698280	2703280	Many companies are already selling this kind of device
+2704280	2708280	So what are they doing with the microbeam?
+2708280	2710280	Waveguide
+2710280	2712280	Waveguide control
+2715280	2721280	How do they use the microbeam to control?
+2722280	2724280	Usually
+2724280	2726280	If
+2726280	2729280	If I have a beam
+2729280	2731280	If I have an EM wave
+2731280	2734280	Passed through the waveguide
+2734280	2738280	If the frequency of my EM wave
+2738280	2742280	Just meets the resonance structure of the nanostructure
+2742280	2747280	Then it will be completely trapped in this structure
+2747280	2749280	Will not continue to propagate
+2749280	2752280	So it can play the role of off
+2753280	2757280	The biggest discovery of Microlipson
+2757280	2762280	Is that he put a
+2762280	2765280	Put a potential
+2765280	2767280	Electrical potential
+2767280	2769280	Put a gating
+2769280	2773280	This gating will cause the refractive index to change
+2774280	2778280	So it can choose which light to pass and which light not to pass
+2778280	2781280	I have seen a similar structure before
+2781280	2784280	But it seems to be like
+2784280	2786280	You just
+2786280	2790280	The light is from top to bottom
+2790280	2792280	But it seems to be
+2792280	2794280	A very similar structure
+2794280	2796280	It can go from top left to bottom right
+2796280	2798280	But it can't go from bottom right to top left
+2798280	2800280	But
+2800280	2803280	But I think this thing
+2803280	2804280	I didn't understand at that time
+2804280	2806280	I just looked at its abstract
+2806280	2808280	It can do this
+2812280	2814280	But I wanted to ask you
+2814280	2817280	Do you know how he did it?
+2817280	2819280	I don't know
+2819280	2821280	You can find the abstract
+2821280	2824280	I don't seem to be
+2824280	2826280	Glenn Davison
+2826280	2829280	A professor at Maryland
+2829280	2831280	They are also doing Microlipson
+2831280	2835280	So what you said is that it can only pass in one direction
+2835280	2837280	It can't pass in another direction
+2837280	2839280	Although it uses a pathway
+2839280	2840280	Yes
+2840280	2842280	So I thought it was amazing at that time
+2842280	2846280	But I didn't take a closer look at it
+2846280	2848280	Have to find it again
+2848280	2854280	So what is the biggest advantage of its circular disk type?
+2854280	2858280	Compared to your general straight line web guide
+2858280	2862280	Because it will have a resonance structure
+2862280	2866280	It will have a resonance structure
+2866280	2868280	Called Whisper Gallery
+2868280	2870280	So the energy is stronger
+2870280	2872280	The signal is stronger
+2874280	2876280	I remember you have a picture
+2876280	2878280	It will have about four
+2878280	2880280	Two peaks
+2880280	2882280	I remember in the front or the back
+2884280	2885280	This one
+2885280	2886280	Yes
+2886280	2890280	Their separation
+2890280	2894280	It probably has something to do with the radius of this ring
+2894280	2896280	Or the size
+2896280	2898280	Or the voltage
+2898280	2900280	Of course
+2900280	2904280	So how much is the Q of this one?
+2904280	2908280	This Q is probably 10
+2908280	2910280	5-quart scale
+2912280	2914280	5-quart scale is pretty good
+2914280	2918280	Microcality is also about 6-7 quarts
+2921280	2923280	But in Mi Resonance
+2923280	2927280	The quality factor is probably only 1000
+2927280	2931280	So there is a difference of 3 quarts
+2933280	2937280	So I can only use other mechanisms
+2937280	2940280	To achieve the same energy
+2944280	2945280	Sorry
+2945280	2948280	Mi Resonator has 1000?
+2949280	2950280	Sorry
+2950280	2953280	About 10-100
+2953280	2954280	Ok
+2954280	2956280	So the picture you just showed
+2956280	2958280	Is about 10-100
+2958280	2959280	Yes
+2959280	2960280	Scale
+2960280	2961280	Ok
+2967280	2969280	Thank you everyone for your passionate questions
+2969280	2971280	Anyone else has questions?
+2971280	2973280	No
+2978280	2981280	Du Yixiu
+2981280	2983280	You can
+2983280	2986280	If any of you
+2986280	2988280	Have other questions after the talk
+2988280	2990280	You can contact Du Yixiu
+2990280	2992280	Through his email
+2992280	2995280	And Yixiu you can leave your email in the chat
+2995280	2997280	If you want to ask
+3001280	3004280	Click on the chat on the right
+3009280	3011280	Can I type?
+3011280	3013280	You can
+3019280	3021280	Can you hear me?
+3021280	3022280	Yes
+3022280	3024280	I want to ask
+3024280	3026280	Thank you for your talk
+3026280	3028280	I want to ask
+3028280	3030280	You mentioned that
+3030280	3032280	It has a nonlinear effect
+3032280	3034280	So it changed the N2 part
+3035280	3037280	The current nonlinear effect
+3037280	3039280	Is what I want to compare
+3039280	3041280	Yes
+3041280	3043280	If you have a strong current nonlinear effect
+3043280	3046280	You should also have a strong 2-photon absorption
+3046280	3048280	In this device
+3048280	3050280	I want to say
+3050280	3052280	The question is
+3052280	3054280	If you have a strong 2-photon absorption
+3054280	3057280	You can directly use the 1.5 wavelength
+3057280	3060280	Or use a more transparent wavelength
+3060280	3063280	To achieve a strong nonlinear effect
+3063280	3065280	Nonlinear effect
+3065280	3067280	I don't know if you've tried it
+3067280	3069280	Some people do it like this
+3069280	3071280	But
+3071280	3076280	To trigger the 2-photon absorption
+3076280	3079280	We need a very strong intensity
+3079280	3081280	So they use a femtosecond laser
+3081280	3083280	I see
+3083280	3085280	So you guys
+3085280	3087280	I see
+3087280	3089280	So you guys
+3089280	3091280	Don't have a femtosecond laser
+3091280	3093280	Not that I don't have a problem
+3093280	3096280	We want to use the minimum intensity
+3096280	3098280	Minimum intensity
+3098280	3101280	To trigger the nonlinearity
+3101280	3103280	I see
+3103280	3105280	I can ask
+3105280	3107280	I'm not sure if you compare like this
+3107280	3109280	But I want to
+3109280	3111280	Understand a little bit more
+3111280	3113280	If you put your excitation
+3113280	3115280	These power density
+3115280	3117280	Then you normalize it
+3117280	3119280	Absorption cross action
+3119280	3121280	You probably
+3121280	3123280	How many photons do you need
+3123280	3127280	To start seeing these nonlinear effects
+3132280	3134280	Can you say it again
+3134280	3136280	Because your excitation
+3136280	3138280	Most of the light
+3138280	3140280	Doesn't really couple to
+3140280	3142280	Its resonant mode
+3142280	3144280	Because its gathering cross action is very small
+3144280	3146280	But if you put your
+3146280	3148280	Excitation power density
+3149280	3151280	To normalize its
+3151280	3153280	Absorption cross action
+3153280	3155280	Which means that you
+3155280	3157280	Really excite the structure of the photon
+3157280	3159280	How many photons do you need
+3159280	3161280	To be able to see
+3161280	3163280	Its nonlinear phenomenon
+3166280	3168280	Or
+3168280	3170280	Because you emphasize that it is very strong
+3170280	3172280	You may be able to see very small power
+3172280	3174280	Just
+3174280	3176280	See this nonlinear effect
+3176280	3178280	Do you have some
+3178280	3180280	More quantitative
+3180280	3182280	Comparison method
+3182280	3184280	How much power
+3184280	3186280	Or how many photons
+3186280	3188280	Do you need
+3188280	3190280	How much intensity
+3190280	3192280	If it is
+3198280	3200280	If it is
+3200280	3202280	5
+3202280	3204280	Megawatts per
+3204280	3206280	square meter
+3206280	3208280	Right
+3208280	3210280	General nonlinearity is
+3210280	3212280	10 to the power of 9
+3212280	3214280	I see
+3214280	3216280	In our case
+3216280	3218280	There will be a very large deviation
+3218280	3220280	I see
+3220280	3222280	So if you
+3222280	3224280	10 to the power of 9
+3224280	3226280	If there is such a phenomenon
+3226280	3228280	Then I almost have to
+3228280	3230280	5 times 10 to the power of 9
+3230280	3232280	To be able to use
+3232280	3234280	Absorption of two photons
+3234280	3236280	To achieve a similar effect
+3236280	3238280	I see
+3238280	3240280	I see OK
+3240280	3242280	Then I can probably
+3242280	3244280	Thank you for your answer
+3244280	3246280	Thank you
+3246280	3248280	Thank you
+3250280	3252280	OK
+3252280	3254280	Thank you all for your questions
+3254280	3256280	Then I will stop
+3256280	3258280	That's all for today's speech
+3258280	3260280	I will stop recording

@@ -1,0 +1,1504 @@
+start	end	text
+0	9000	My PhD research is mainly in microfluidics for single-cell analysis.
+9000	14000	In the content of biology, I mainly focus on cancer research.
+14000	22000	Because we generally believe that in cancer, the heterogeneity between cells is stronger.
+22000	31000	For example, when we treat cancer, there will always be some antibody cells that can be used for therapy.
+31000	37000	So if we can use single-cell analysis to see the different characteristics of each cell,
+37000	42000	and find those antibodies to lock them in for treatment,
+42000	47000	we believe that it can improve the efficacy of the treatment.
+48000	53000	My research is divided into two parts.
+53000	59000	The first part is the phenotypic assay, which I will share with you today.
+59000	62000	The second part is also what I'm doing now.
+62000	67000	Because I haven't published the paper yet, so I haven't put it up here yet.
+67000	71000	But the whole direction is like what Jake just introduced.
+71000	75000	As a sample preparation chip,
+75000	83000	we can extract circulating tumor cells from the patient's blood.
+83000	89000	We get gene expression information from the cancer cells in the blood.
+89000	93000	This gene expression information can let us know
+93000	99000	what kind of drugs we can use to treat these patients to get better results.
+99000	102000	For now, to get this gene expression information,
+102000	107000	we usually use the whole flow of chips.
+107000	111000	In other words, we need to use a knife.
+111000	115000	It's more invasive, and the cost will be higher.
+115000	121000	Today, I will share with you the phenotypic assay.
+121000	126000	In the technology development, I mainly focus on scaling and automation
+126000	130000	in the high-throughput single-cell device sphere assays.
+130000	136000	First, I will tell you why we want to do this tumor sphere assay.
+136000	140000	In fact, the purpose is to study these tumor-initiating cells.
+140000	143000	In this process, I will share with you
+143000	149000	why we need to scale up this assay and automate this assay.
+149000	154000	Next, I will tell you how I enable this thing.
+154000	160000	Then, I will use some experiments to show you the functions of my chip.
+160000	164000	Finally, I will conclude my presentation today.
+165000	166000	OK.
+166000	171000	So, our motivation is to study these so-called cancer stem-like cells.
+171000	174000	Our recent research shows that
+174000	179000	there is a relatively small number of tumor-initiating cells.
+179000	181000	They are called cancer stem cells.
+181000	186000	Some people think the term cancer stem cells is too strong.
+186000	189000	They prefer to call them cancer stem-like cells.
+189000	192000	In fact, it is a biological mutation.
+192000	195000	They are a group of antibodies
+195000	199000	with some stem cell-specific cancer cells.
+199000	202000	This tissue group has some characteristics.
+202000	206000	The first one is that it has a relatively strong chemoresistance.
+206000	208000	It will cause tumor relapse.
+208000	212000	In this picture, you can see that this is a primitive tumor.
+212000	215000	The yellow one is CSC, cancer stem cell.
+215000	218000	The blue ones are normal cancer cells.
+218000	222000	If we use traditional cancer treatment,
+222000	225000	these ordinary cells can be removed.
+225000	231000	So, we can see that the tumor size is reduced in clinical trials.
+231000	234000	But what we can't see is this cancer stem cell.
+234000	237000	It has a way to stay quiescent
+237000	240000	and not be affected by the drug.
+240000	242000	After we stop giving drugs,
+242000	245000	the tumor relapse occurs.
+245000	248000	So, in the research scope of CSC,
+248000	252000	we hope to find cancer stem cell-specific therapy.
+252000	257000	So, I eliminated it for this CSC.
+257000	260000	The rest of these normal CSC,
+260000	263000	sorry, these normal cancer cells,
+263000	266000	they don't have the ability to self-renew.
+266000	268000	So, they proliferate.
+268000	273000	In the end, the tumor relapse occurs.
+273000	276000	So, this is the first reason why we want to study CSC.
+276000	280000	The second reason is that we generally believe that
+280000	282000	CSC has a strong migration ability.
+282000	287000	In other words, it is easier to metastasize to the secondary tumor.
+287000	293000	We know that cancer transfer is the biggest challenge in cancer therapy
+293000	295000	and the biggest cause of death.
+295000	297000	So, if we can study CSC more,
+297000	302000	it will be very helpful in therapy, tracking, and research.
+302000	312000	The most traditional way to study CSC is to use surface membrane protein
+312000	316000	or intracellular enzymatic markers.
+316000	320000	For gene expression or protein expression,
+320000	326000	we use different methods, such as full cytometry,
+326000	329000	to separate these different types of cells.
+329000	332000	Then, we can study these CSC groups.
+332000	335000	But the challenge is that
+335000	338000	many of our new markers have not been discovered.
+338000	344000	So, we hope to use other methods to study these CSC populations.
+344000	352000	As a substitute, cell behavior is a common choice.
+352000	360000	We observe that CSC can survive in a suspension culture environment
+360000	364000	and grow into a single-cell-derived tumor sphere.
+364000	367000	In other words, if it is a normal cancer cell,
+367000	373000	it cannot be adhered to the substrate environment.
+373000	377000	It will produce apoptosis.
+377000	381000	But CSC is different.
+381000	384000	It can not only survive in a suspension environment,
+384000	387000	but also grow into a new tumor sphere.
+387000	392000	So, what is the traditional way to do the sphere assay?
+392000	395000	The method is to buy a whale plate,
+395000	398000	as shown in the picture on the bottom right.
+398000	405000	Then, dilute the whale plate to a certain level of cell concentration.
+405000	408000	The whale plate contains one cell.
+408000	411000	As you can see,
+411000	416000	the low-throughput is a distribution of the probability,
+416000	418000	or more specifically,
+418000	424000	96-whale plate contains 20-30 single-cells.
+425000	428000	It is labor-intensive.
+428000	430000	Someone may ask,
+430000	433000	can I use automatic cell dispensing,
+433000	436000	such as flow cytometry,
+436000	440000	to ensure that I can put a cell into a whale?
+440000	444000	In fact, flow cytometry has a big problem.
+444000	447000	Because it is a flow-sorting process,
+447000	450000	it will produce a lot of shear stress.
+450000	455000	So, what is the impact of cell behavior assay on downstream?
+455000	458000	We need to observe if the cell is dead.
+458000	461000	If the cell is dead,
+461000	464000	it is not caused by the suspension environment.
+464000	467000	It is caused by the flow-sorting process.
+467000	469000	The shear stress is too high,
+469000	471000	and the cell can not bear it.
+471000	473000	So, the cell is dead,
+473000	476000	not because it is not CSC.
+476000	481000	These are the existing technology limitations.
+481000	485000	Why do we think automation is important?
+485000	487000	As we mentioned,
+487000	491000	CSC is a relatively small sub-population.
+491000	493000	In the past,
+493000	499000	only 1-5% of tumor cells have this sphere formation tendency.
+499000	505000	We hope this assay can start with a larger single-cell population.
+505000	507000	At least 1,000 single-cells.
+507000	513000	Then we can have a reliable statistical power
+513000	515000	to make our assay conclusion.
+515000	518000	So, we think
+518000	521000	to achieve this throughput,
+521000	524000	microfluidics is an ideal technology
+524000	527000	to make this assay.
+527000	531000	So, this is our chip schematics.
+531000	533000	We want to develop a chip
+533000	536000	with more than 1,000 single-cells.
+536000	539000	Because we have a very large throughput,
+539000	542000	we also need an automatic image analysis.
+542000	545000	Otherwise, we have to read it manually.
+545000	548000	It is a very difficult process.
+548000	549000	Only in this way,
+549000	552000	can we make the whole experiment
+552000	556000	smoothly improve on hardware and software.
+556000	560000	So, this is our motivation.
+560000	562000	I don't know if there is anything I didn't explain clearly.
+562000	564000	Or you can go on.
+566000	568000	Ok, let's continue.
+571000	572000	I want to ask,
+572000	578000	why CSC can survive in suspension culture environment?
+578000	580000	This is a question.
+580000	581000	Did you hear it?
+581000	582000	Yes.
+582000	584000	The question is,
+584000	588000	why CSC can survive in suspension culture environment?
+588000	590000	This is a very interesting question.
+590000	594000	I will answer it in two ways.
+594000	595000	First,
+595000	598000	the definition of CSC is
+598000	601000	we only inject 10 cells into the mouse.
+605000	607000	Can these 10 cells
+607000	610000	generate a new tumor on the mouse?
+610000	611000	If yes,
+611000	612000	we define it as CSC.
+612000	615000	The predecessors defined CSC in this way.
+615000	618000	Then, they used this traditional conventional assay
+618000	619000	to find out
+619000	624000	the cell population of tumors
+624000	629000	can survive in suspension culture environment.
+629000	632000	This is the first way to find it out.
+632000	633000	Why?
+633000	635000	Our idea is
+635000	639000	CSC can survive in suspension culture environment
+639000	644000	by moving through the local environment
+644000	646000	to the blood vessel.
+646000	649000	The blood vessel is a suspension environment.
+649000	651000	If these cells
+651000	654000	die in the suspension environment,
+654000	657000	they can't move to other places.
+657000	659000	So, we believe
+659000	667000	CSC can survive in the blood vessel
+667000	670000	and grow into a tumor in a new local environment.
+670000	675000	We simulate this in vivo environment.
+676000	678000	This is the first way to find out CSC.
+678000	680000	This is the first way to find out CSC.
+680000	683000	The first way is to verify CSC
+683000	688000	and to find out the correlation between CSC and in-vitro experiment.
+688000	691000	The second way is to explain the correlation.
+691000	694000	We think CSC can mimic in-vivo environment
+694000	696000	and survive in suspension culture environment
+696000	702000	and grow into a new tumor sphere.
+702000	704000	Does this answer your question?
+705000	706000	Okay.
+706000	708000	I have a related question.
+708000	711000	When CSC is transferred in the blood vessel,
+711000	713000	is it in the form of a single cell
+713000	716000	or a sphere?
+716000	719000	This is a very good question.
+719000	723000	Most of the cells
+723000	725000	are transferred in the form of a single cell.
+725000	727000	But in recent years,
+727000	729000	the research of circulating tumor cells
+729000	730000	found that
+730000	733000	there are more ways to transfer tumor cells
+733000	738000	in the form of clusters.
+738000	741000	A cluster is not a single cell
+741000	743000	that grows into a sphere
+743000	745000	and is transferred to another place.
+745000	747000	Most people believe that
+747000	749000	a small number of tumor cells
+749000	752000	fall from the original tumor
+752000	755000	and can be circulated.
+756000	758000	You can imagine that
+758000	760000	in a vast ocean,
+760000	762000	is it a warship
+762000	764000	or an aircraft carrier?
+764000	766000	They think that
+766000	768000	a cluster is like an aircraft carrier.
+768000	770000	It is very powerful
+770000	774000	and has a stronger metathesis ability.
+774000	776000	But people think that
+776000	778000	a cluster fell from the original tumor
+778000	780000	and not a single cell
+780000	782000	that grows into a sphere
+783000	785000	and is transferred.
+785000	787000	Do you have an answer?
+787000	789000	Yes.
+789000	791000	OK.
+791000	795000	Are there any other questions?
+795000	797000	I don't think so.
+797000	799000	You can continue.
+799000	801000	I have a question about operation.
+801000	803000	If a worker
+803000	805000	is holding a pipe and dripping,
+805000	809000	can he catch a single cell?
+809000	811000	The best theoretical limit
+811000	813000	is 20-30%.
+813000	815000	You can think of it as
+815000	817000	a cell suspension solution.
+817000	819000	Let's say that
+819000	821000	I know that
+821000	823000	there are 10k cells
+823000	825000	in this tube.
+825000	827000	On average,
+827000	829000	there will be
+829000	831000	a single cell
+831000	833000	in 100mL or 10mL.
+833000	835000	How many cells
+835000	837000	are there?
+837000	839000	There will be a single cell
+839000	841000	in 100mL or 10mL.
+841000	843000	There will be a single cell
+843000	845000	in 100mL or 10mL.
+845000	847000	The best theoretical limit
+847000	849000	is 20-30%.
+849000	851000	In fact,
+851000	853000	the control of cell density
+853000	855000	is not ideal
+855000	857000	when operating.
+857000	859000	So it will be worse than 20-30%.
+859000	861000	It is the operating limit.
+861000	863000	It will be worse.
+863000	865000	But it is almost the same, right?
+865000	867000	For example,
+867000	869000	is it 10% less
+869000	871000	or less than 5%?
+873000	875000	If you have good skills,
+875000	877000	it can be less than 5%.
+877000	879000	If you don't have good skills,
+879000	881000	it can be 5% or less.
+881000	883000	It is difficult to experiment.
+883000	885000	So it's about 15%?
+885000	887000	Yes.
+889000	891000	So if you have
+891000	893000	a 96-well plate,
+893000	895000	if you have a 96-well plate,
+895000	897000	and you have Taipei
+897000	899000	almost 100 times,
+899000	901000	and there are only 15 cells,
+901000	903000	and you only have 1-5% single cell
+903000	905000	that can grow into a sphere,
+905000	907000	it's really hard to do.
+907000	909000	Yes.
+909000	911000	Any other questions?
+911000	913000	No.
+913000	915000	You can continue.
+915000	917000	OK.
+917000	919000	I will continue to present.
+919000	921000	So the first thing I want to discuss
+921000	923000	is how we achieve single cell capture
+923000	925000	in a high-throughput manner.
+925000	927000	The way we implement
+927000	929000	is by microfluidics.
+929000	931000	The principle is quite simple.
+931000	933000	We capture single cells
+933000	935000	by channel blocking.
+935000	937000	So you can imagine
+937000	939000	this is a
+939000	941000	microfluidics microwell
+941000	943000	or microchamber.
+943000	945000	This is a capture site.
+945000	947000	The blue part is the channel.
+947000	949000	This is where the water flows.
+949000	951000	These are the flowing cells.
+951000	953000	When the cells come in,
+953000	955000	they block this place.
+955000	957000	So the flow basically
+957000	959000	stops.
+959000	961000	The next cell will go to the next place.
+961000	963000	So each well has only one cell.
+967000	969000	If we only have
+969000	971000	10-20 chambers,
+971000	973000	a simple design would be fine.
+973000	975000	But in this workbook,
+975000	977000	we have to scale a chip
+977000	979000	up to tens of thousands.
+979000	981000	At this time,
+981000	983000	this simple duplication
+983000	985000	will cause a significant flow imbalance.
+985000	987000	In other words,
+987000	989000	if the entire
+989000	991000	flow cell
+991000	993000	comes in,
+993000	995000	it will mostly be upstream or downstream.
+995000	997000	The capture rate will be very, very low.
+997000	999000	How do I
+999000	1001000	make the cell
+1001000	1003000	uniformly distributed
+1003000	1005000	on this
+1005000	1007000	array?
+1007000	1009000	The method I use is
+1009000	1011000	circuit modeling.
+1011000	1013000	In fact,
+1013000	1015000	microfluidics is like
+1015000	1017000	a flow circuit.
+1017000	1019000	Each channel
+1019000	1021000	has a flow group.
+1021000	1023000	This flow group is mainly
+1023000	1025000	dominated by the capture site.
+1025000	1027000	Because the flow group is the largest,
+1027000	1029000	and the size is the smallest.
+1029000	1031000	The entrance channel and the exit channel
+1031000	1033000	are relatively small.
+1033000	1035000	But because it is very long,
+1035000	1037000	the build-up resistance is also very large.
+1037000	1039000	You can see that the resistance of the entrance channel
+1039000	1041000	accumulates from 1 to 200.
+1041000	1043000	This is a circuit like this.
+1043000	1045000	Why didn't
+1045000	1047000	the simple duplication work?
+1047000	1049000	Because if we want
+1049000	1051000	a good distribution,
+1051000	1053000	each branch of the
+1053000	1055000	current is the same.
+1055000	1057000	We know that
+1057000	1059000	if the upper short
+1059000	1061000	here is very small,
+1061000	1063000	the lower short here is also very small,
+1063000	1065000	then this thing can happen.
+1065000	1067000	But today,
+1067000	1069000	we put 200
+1069000	1071000	negligible short here.
+1071000	1073000	At this time,
+1073000	1075000	the performance of the current
+1075000	1077000	will be much worse than what we want.
+1077000	1079000	How do we balance the current?
+1079000	1081000	Flow resistance
+1081000	1083000	is actually a function
+1083000	1085000	of channel geometry.
+1085000	1087000	You can see that
+1087000	1089000	circular and rectangular
+1089000	1091000	have different functions.
+1091000	1093000	In short, the longer the channel,
+1093000	1095000	the higher the flow resistance.
+1095000	1097000	The wider the width,
+1097000	1099000	the smaller the flow resistance.
+1099000	1101000	So we use
+1101000	1103000	microfabrication
+1103000	1105000	to make
+1105000	1107000	this very small
+1107000	1109000	geometry.
+1111000	1113000	First, this can achieve
+1113000	1115000	high flow resistance.
+1115000	1117000	Second, 10x10
+1117000	1119000	can block our cancer cell.
+1119000	1121000	Because we generally believe that
+1121000	1123000	the size of the cancer cell
+1123000	1125000	is greater than 10 microns.
+1125000	1127000	I will have related data
+1127000	1129000	to explain this later.
+1129000	1131000	We have overcome
+1131000	1133000	the microwave
+1133000	1135000	flow resistance
+1135000	1137000	we have defined here.
+1137000	1139000	What about the entrance channel and the NC channel?
+1139000	1141000	I use this
+1141000	1143000	microfabrication
+1143000	1145000	to make 100 microns
+1145000	1147000	wider and 100 microns higher
+1147000	1149000	geometry.
+1149000	1151000	So I can make the
+1151000	1153000	entrance channel and the NC channel
+1153000	1155000	flow resistance
+1155000	1157000	smaller than these cancer cells.
+1157000	1159000	In short,
+1159000	1161000	we use this microfabrication
+1161000	1163000	to control our flow resistance.
+1163000	1165000	So we have a
+1165000	1167000	very good flow circuit
+1167000	1169000	to achieve single cell capture.
+1171000	1173000	This shows that
+1173000	1175000	we use three
+1175000	1177000	different sizes of chips
+1177000	1179000	to scale.
+1179000	1181000	From 800 to
+1181000	1183000	12800
+1183000	1185000	chamber chips.
+1185000	1187000	The size is probably on a slice.
+1187000	1189000	You can see
+1189000	1191000	that this is a device
+1191000	1193000	and every
+1193000	1195000	chamber we can capture
+1195000	1197000	a single cell.
+1197000	1199000	This is a microscope image.
+1199000	1201000	Our cancer cell is labeled here
+1201000	1203000	as a green fluorescent dye.
+1203000	1205000	You can see that this array
+1205000	1207000	has a very good single cell capture.
+1209000	1211000	Now we have
+1211000	1213000	achieved high-throughput single cell capture.
+1213000	1215000	How do we
+1215000	1217000	analyze it?
+1217000	1219000	This is a comic.
+1223000	1225000	So
+1225000	1227000	based on many habits,
+1227000	1229000	we need to
+1229000	1231000	automate the readout process.
+1231000	1233000	So how do we do it?
+1233000	1235000	Sorry,
+1235000	1237000	I have a question.
+1239000	1241000	You can see
+1241000	1243000	that almost every
+1243000	1245000	size has a single cell capture.
+1245000	1247000	But my question is
+1247000	1249000	if you drop a sample
+1249000	1251000	from beginning to end,
+1251000	1253000	does every size
+1253000	1255000	have a cell?
+1255000	1257000	Or if you drop a sample,
+1257000	1259000	does every size have a
+1259000	1261000	10% size capture?
+1261000	1263000	And you have to fill it up again and again.
+1263000	1265000	That's a very good question.
+1265000	1267000	So the beauty of MicroFluidics
+1267000	1269000	is that we put
+1269000	1271000	cell suspension into the sample.
+1271000	1273000	We don't need any other
+1273000	1275000	equipment. We use gravity flow.
+1275000	1277000	The cell solution
+1277000	1279000	will gradually flow in.
+1279000	1281000	So the whole operation is done by a single arrangement.
+1281000	1283000	It's not the first time, the second time, the third time.
+1283000	1285000	It's done in one go.
+1285000	1287000	It's like this.
+1287000	1289000	Tens of thousands of single cell capture.
+1295000	1297000	Is that reasonable?
+1297000	1299000	It's reasonable.
+1299000	1301000	I'm just curious.
+1301000	1303000	For example,
+1303000	1305000	how much is the reduction
+1305000	1307000	of human power?
+1307000	1309000	I see.
+1309000	1311000	It becomes only one arrangement.
+1311000	1313000	It's all captured.
+1313000	1315000	That's the reduction we achieved.
+1315000	1317000	So how much is the
+1317000	1319000	filling ratio of this chip?
+1319000	1321000	Is it more than 95%?
+1323000	1325000	Do you mean that several chambers
+1325000	1327000	can really capture a single cell?
+1327000	1329000	Is that the question you wanted to ask?
+1329000	1331000	Because this question
+1331000	1333000	is related to how much time
+1333000	1335000	you need to spend.
+1335000	1337000	So if it's one time,
+1337000	1339000	you can change it to this.
+1339000	1341000	For example, you drop it once.
+1341000	1343000	How much is it?
+1343000	1345000	It looks like it's 100%.
+1345000	1347000	At least it's 100% in my eyes.
+1347000	1349000	This publication is the most beautiful.
+1349000	1351000	OK, this capture rate
+1351000	1353000	is 75%
+1353000	1355000	in our routine.
+1355000	1357000	It can be optimized online.
+1357000	1359000	But we consider
+1359000	1361000	other things.
+1361000	1363000	So we think 75% is a better number.
+1363000	1365000	I'll explain it later.
+1365000	1367000	OK.
+1367000	1369000	And 12,875.
+1369000	1371000	That's a lot.
+1371000	1373000	After a cell
+1373000	1375000	is captured,
+1377000	1379000	this chamber will be
+1379000	1381000	interrupted and nothing will come in.
+1381000	1383000	That's right.
+1383000	1385000	It's a very simple principle.
+1387000	1389000	Do you plan to
+1389000	1391000	compress it
+1391000	1393000	directly
+1393000	1395000	or
+1395000	1397000	do some pre-processing?
+1397000	1399000	For example,
+1399000	1401000	how do you differentiate
+1401000	1403000	different cells?
+1403000	1405000	That's a very good question.
+1405000	1407000	The project we want to commercialize
+1407000	1409000	is
+1409000	1411000	molecular analysis
+1411000	1413000	or phenotypic analysis.
+1413000	1415000	In my other project,
+1415000	1417000	we do sample preparation.
+1417000	1419000	We want to
+1419000	1421000	extract
+1421000	1423000	the mRNA transcript
+1423000	1425000	from single cell
+1425000	1427000	and barcode it.
+1427000	1429000	We can use Illumina
+1429000	1431000	to do whole transcript from sequence.
+1431000	1433000	We can't do
+1433000	1435000	sample preparation
+1435000	1437000	directly from the protocol.
+1437000	1439000	We need to go through
+1439000	1441000	upstream cell enrichment.
+1441000	1443000	This is
+1443000	1445000	very competitive.
+1447000	1449000	There are many vendors
+1449000	1451000	in the commercial space
+1451000	1453000	like startups.
+1453000	1455000	They can provide
+1455000	1457000	downstream information
+1457000	1459000	enhancement.
+1459000	1461000	These startups
+1461000	1463000	can take the blood
+1463000	1465000	and put it in the instrument.
+1465000	1467000	The result is
+1467000	1469000	a tumor sample
+1469000	1471000	after purification.
+1471000	1473000	These tumor samples
+1473000	1475000	have very limited meaning.
+1475000	1477000	If you want to have clinical meaning,
+1477000	1479000	you need to know
+1479000	1481000	the gene expression
+1481000	1483000	and gene mutation.
+1483000	1485000	We want to finish the last mile.
+1485000	1487000	The commercially available
+1487000	1489000	technology is
+1489000	1491000	upstream
+1491000	1493000	GTC purification.
+1493000	1495000	We can do sample preparation
+1495000	1497000	after purification
+1497000	1499000	to the sequencer
+1499000	1501000	or next generation sequencing.
+1503000	1505000	Thank you.
+1507000	1509000	The answer is a bit long.
+1511000	1513000	Any other questions?
+1515000	1517000	No, I can continue.
+1517000	1519000	Okay,
+1519000	1521000	I will continue.
+1521000	1523000	I don't want to
+1523000	1525000	analyze so many chambers.
+1525000	1527000	I want to automate
+1527000	1529000	the process.
+1529000	1531000	I use a biocompatible
+1531000	1533000	cell
+1533000	1535000	with green fluorescence.
+1535000	1537000	We can use
+1537000	1539000	fluorescence
+1539000	1541000	to read out the cell.
+1541000	1543000	We thought it would be easy
+1543000	1545000	to read out the cell.
+1545000	1547000	However,
+1547000	1549000	after scanning the image,
+1549000	1551000	we found that
+1551000	1553000	the cell expression is different.
+1553000	1555000	They take the blood
+1555000	1557000	with different efficiency.
+1557000	1559000	You can see the picture
+1559000	1561000	with 5 cells and 6 cells.
+1561000	1563000	Some cells are bright and some are dark.
+1563000	1565000	If we use a simple
+1565000	1567000	search holding,
+1567000	1569000	many cells are ignored.
+1569000	1571000	What should we do?
+1571000	1573000	We need to
+1573000	1575000	use algorithms
+1575000	1577000	to make
+1577000	1579000	the readout more reliable.
+1579000	1581000	There are four steps.
+1581000	1583000	First, we do a contrast
+1583000	1585000	enhancement.
+1585000	1587000	We use a
+1587000	1589000	contrast enhancement
+1589000	1591000	for this part.
+1591000	1593000	I will explain why later.
+1593000	1595000	Next, we use K-means clustering
+1595000	1597000	to find the peak
+1597000	1599000	of the intensity.
+1599000	1601000	Finally,
+1601000	1603000	we can extract local maxima
+1603000	1605000	to find the center
+1605000	1607000	of each cell.
+1607000	1609000	These three images
+1609000	1611000	show the readout
+1611000	1613000	of two or more cells.
+1613000	1615000	That's it.
+1617000	1619000	Contrast enhancement
+1619000	1621000	has a tricky part.
+1621000	1623000	The contrast enhancement
+1623000	1625000	is the goal of histogram equalization.
+1625000	1627000	The sample
+1627000	1629000	has a dark background.
+1629000	1631000	After using
+1631000	1633000	the algorithm,
+1633000	1635000	the whole circle is bright.
+1635000	1637000	We can't use it.
+1637000	1639000	We use contrast-limited
+1639000	1641000	adapted histogram equalization.
+1641000	1643000	We can define
+1643000	1645000	each enhancement panel
+1645000	1647000	to be
+1647000	1649000	660 pixels
+1649000	1651000	or other arbitrary
+1651000	1653000	number of pixels
+1653000	1655000	to do the enhancement.
+1655000	1657000	Under this premise,
+1657000	1659000	we know
+1659000	1661000	the size of a single cell
+1661000	1663000	is several pixels.
+1663000	1665000	We can use this information
+1665000	1667000	to locally magnify
+1667000	1669000	the fluorescent signal
+1669000	1671000	of the cell.
+1671000	1673000	Look at the chamber.
+1673000	1675000	We can effectively
+1675000	1677000	suppress
+1677000	1679000	the background noise
+1679000	1681000	to achieve the image analysis.
+1681000	1683000	These are
+1683000	1685000	the results of
+1685000	1687000	the algorithm.
+1687000	1689000	You can see the suspension cell.
+1689000	1691000	We can effectively
+1691000	1693000	locate
+1693000	1695000	each cell.
+1695000	1697000	This is the state of
+1697000	1699000	adherent culture.
+1699000	1701000	We can effectively
+1701000	1703000	identify one cell, two cells
+1703000	1705000	or many cells
+1705000	1707000	to fill the chamber.
+1707000	1709000	Although
+1709000	1711000	this work is
+1711000	1713000	focused on
+1713000	1715000	suspension culture,
+1715000	1717000	the same capture
+1717000	1719000	mechanism can be used
+1719000	1721000	to achieve adherent cell culture.
+1721000	1723000	This is an example.
+1723000	1725000	The algorithm
+1725000	1727000	can also do
+1727000	1729000	size measurement
+1729000	1731000	and sphere size measurement
+1731000	1733000	to determine
+1733000	1735000	the size of a sphere.
+1735000	1737000	These functions
+1737000	1739000	can only be
+1739000	1741000	implemented
+1741000	1743000	on our corpus.
+1743000	1745000	With this technology
+1745000	1747000	and algorithm,
+1747000	1749000	we can do
+1749000	1751000	the device
+1751000	1753000	test.
+1753000	1755000	The first test is
+1755000	1757000	the capture rate
+1757000	1759000	or capture characterization.
+1759000	1761000	In our test,
+1761000	1763000	we optimize
+1763000	1765000	the capture rate
+1765000	1767000	to 76.5%.
+1767000	1769000	First, we limit
+1769000	1771000	the cell loading time
+1771000	1773000	to 15 minutes.
+1773000	1775000	We don't want to
+1775000	1777000	leave the cell
+1777000	1779000	for more than 15 minutes.
+1779000	1781000	If the cell is left for too long,
+1781000	1783000	it will affect the cell's
+1783000	1785000	viability or
+1785000	1787000	the cell's health.
+1787000	1789000	In this 15-minute loading time,
+1789000	1791000	we try four different
+1791000	1793000	results.
+1793000	1795000	No capture,
+1795000	1797000	single cell,
+1797000	1799000	double cell,
+1799000	1801000	or multiple cell.
+1801000	1803000	In the different
+1803000	1805000	cell loading concentration,
+1805000	1807000	the lower the cell
+1807000	1809000	concentration,
+1809000	1811000	the less cells are left.
+1811000	1813000	If we increase
+1813000	1815000	the loading concentration,
+1815000	1817000	the more chambers
+1817000	1819000	are double cell or multiple cell.
+1819000	1821000	In the cell concentration
+1821000	1823000	trade-off,
+1823000	1825000	50k per mL
+1825000	1827000	in single cell
+1827000	1829000	is 76.5%.
+1829000	1831000	In fact,
+1831000	1833000	if we want to push
+1833000	1835000	the capture rate,
+1835000	1837000	we can use
+1837000	1839000	a lower cell concentration
+1839000	1841000	for 30 minutes.
+1841000	1843000	I think we can push
+1843000	1845000	the cell capture rate
+1845000	1847000	to 80 or 90.
+1847000	1849000	Some friends say
+1849000	1851000	there are more than 10k chambers
+1851000	1853000	with 70% of the load.
+1853000	1855000	This is also good.
+1855000	1857000	We think so, too.
+1857000	1859000	So we set the number here.
+1859000	1861000	Why
+1861000	1863000	is there a double cell
+1863000	1865000	or multiple cell
+1865000	1867000	in higher concentration?
+1867000	1869000	In the chamber design,
+1869000	1871000	we must
+1871000	1873000	let the cell block
+1873000	1875000	the cell capture site
+1875000	1877000	so that the cell can't get in.
+1877000	1879000	If the loading concentration
+1879000	1881000	is high,
+1881000	1883000	there is a possibility
+1883000	1885000	that the first cell
+1885000	1887000	may get in
+1887000	1889000	before the first cell
+1889000	1891000	blocks.
+1891000	1893000	It's hard to avoid
+1893000	1895000	two cells
+1895000	1897000	in the same chamber.
+1897000	1899000	But it doesn't matter.
+1899000	1901000	Even if there is a multiple cell
+1901000	1903000	or double cell,
+1903000	1905000	all the data
+1905000	1907000	is extracted
+1907000	1909000	from single cell.
+1911000	1913000	As we mentioned,
+1913000	1915000	the size of the cancer cell
+1915000	1917000	is very important.
+1917000	1919000	We don't want
+1919000	1921000	cells smaller than 10 microns
+1921000	1923000	or other sizes
+1923000	1925000	to get in.
+1925000	1927000	It will skew
+1927000	1929000	or distort
+1929000	1931000	the whole experiment.
+1931000	1933000	As we mentioned,
+1933000	1935000	the cancer cell
+1935000	1937000	is very
+1937000	1939000	strange.
+1939000	1941000	So we must
+1941000	1943000	ensure that
+1943000	1945000	all sizes can be captured.
+1945000	1947000	So we take
+1947000	1949000	the cell line
+1949000	1951000	from the ground
+1951000	1953000	and make it round
+1953000	1955000	or sphere-shaped
+1955000	1957000	to quantify
+1957000	1959000	its size
+1959000	1961000	with the
+1961000	1963000	diameter.
+1963000	1965000	Then we put the same cell line
+1965000	1967000	or cell
+1967000	1969000	in the tube
+1969000	1971000	to measure its size.
+1971000	1973000	The distribution
+1973000	1975000	is next to it.
+1975000	1977000	As you can see,
+1977000	1979000	the distribution is very similar.
+1979000	1981000	Here are four images
+1981000	1983000	showing relatively small cells
+1983000	1985000	about 11 or 12 microns
+1985000	1987000	in diameter.
+1987000	1989000	This is very rare.
+1989000	1991000	One-thousandth cell
+1991000	1993000	has a diameter of 40 microns.
+1993000	1995000	We can effectively
+1995000	1997000	preserve the size.
+1999000	2001000	To sum up,
+2001000	2003000	there are two challenges
+2003000	2005000	to overcome.
+2005000	2007000	The first one is how to
+2007000	2009000	scale up the throughput.
+2009000	2011000	The second challenge is
+2011000	2013000	how to automate
+2013000	2015000	the readout under
+2015000	2017000	engineering innovation.
+2017000	2019000	To scale up
+2019000	2021000	the throughput
+2021000	2023000	using a highly parallel
+2023000	2025000	flow circuit,
+2025000	2027000	we need
+2027000	2029000	a compact
+2029000	2031000	high-density array
+2031000	2033000	to scale up
+2033000	2035000	the image processing.
+2035000	2037000	To scale up
+2037000	2039000	the image processing,
+2039000	2041000	we need to scan
+2041000	2043000	each image
+2043000	2045000	in the device area.
+2045000	2047000	The higher the density,
+2047000	2049000	the smaller the number
+2049000	2051000	of frames needed
+2053000	2055000	for image processing.
+2055000	2057000	These are the two challenges
+2057000	2059000	of engineering innovation
+2059000	2061000	to scale up the throughput.
+2061000	2063000	In terms of automation,
+2063000	2065000	we developed a highly adaptive
+2065000	2067000	algorithm to analyze
+2067000	2069000	the different single cells.
+2069000	2071000	We also used
+2071000	2073000	the function
+2073000	2075000	to analyze the size
+2075000	2077000	of the single cell or sphere.
+2079000	2081000	Is there anything
+2081000	2083000	you want to discuss?
+2085000	2087000	I'm a bit curious
+2087000	2089000	about the fluorescent bag.
+2091000	2093000	Our fluorescent bag
+2093000	2095000	uses CellTracker.
+2095000	2097000	CellTracker
+2097000	2099000	is a live technology.
+2099000	2101000	What does it do?
+2103000	2105000	That's a good question.
+2109000	2111000	As far as I know,
+2115000	2117000	it's a bit like
+2117000	2119000	a metallization product.
+2119000	2121000	If the cell is alive,
+2121000	2123000	it will intake
+2123000	2125000	these bags
+2125000	2127000	to show the color
+2127000	2129000	of the cell.
+2129000	2131000	You may want to know
+2131000	2133000	what the chemical is.
+2133000	2135000	I can send you the link.
+2137000	2139000	I'm curious
+2139000	2141000	how you can make sure
+2141000	2143000	that all the cells
+2143000	2145000	will eat the bag.
+2145000	2147000	I don't know if
+2147000	2149000	there is something
+2149000	2151000	in the sample
+2151000	2153000	that will be eaten by the cell.
+2153000	2155000	Are you worried
+2155000	2157000	about the negative force?
+2161000	2163000	Yes.
+2163000	2165000	In this chip,
+2165000	2167000	the fluorescence
+2167000	2169000	is very dim.
+2169000	2171000	As I said,
+2171000	2173000	some cells may be very weak.
+2173000	2175000	It's very dim.
+2175000	2177000	These two cells
+2177000	2179000	seem to be weaker.
+2179000	2181000	We try our best
+2181000	2183000	to minimize the force
+2183000	2185000	and minimize the negative force.
+2185000	2187000	As we see in this experiment,
+2187000	2189000	we use manual
+2189000	2191000	and brightfield imaging
+2191000	2193000	to verify
+2193000	2195000	that the negative force
+2195000	2197000	is less than 5%,
+2199000	2201000	so we minimize the negative force.
+2201000	2203000	The second is
+2203000	2205000	that we need
+2205000	2207000	commercialization projects
+2207000	2209000	to do molecular analysis.
+2209000	2211000	In this project,
+2211000	2213000	the real cell readout
+2213000	2215000	is from sequencing,
+2215000	2217000	not from fluorescence reading.
+2217000	2219000	So the readout method
+2219000	2221000	is different
+2221000	2223000	with different concerns
+2223000	2225000	and different methods.
+2225000	2227000	I didn't understand
+2227000	2229000	what you said
+2229000	2231000	about commercialization.
+2231000	2233000	What is the readout?
+2233000	2235000	We directly see
+2235000	2237000	how much transcript recovery
+2237000	2239000	is required.
+2249000	2251000	I have another question.
+2255000	2257000	I just calculated
+2257000	2259000	the size of the chip.
+2259000	2261000	For example,
+2261000	2263000	a cell is about 10 microns,
+2263000	2265000	and a grid is
+2265000	2267000	several times the width of the cell.
+2267000	2269000	If you have
+2269000	2271000	about 10,000 grids,
+2271000	2273000	and we think of it as a square,
+2273000	2275000	so the length of the grid is about 100 grids,
+2275000	2277000	then the chip
+2277000	2279000	will be several centimeters
+2279000	2281000	long.
+2281000	2283000	Is that right?
+2283000	2285000	Yes.
+2285000	2287000	That's about it.
+2287000	2289000	My question is
+2289000	2291000	you have a several centimeters
+2291000	2293000	long chip,
+2293000	2295000	and you use a channel
+2295000	2297000	to feed through
+2297000	2299000	all the slides.
+2299000	2301000	How many channels
+2301000	2303000	do you use to feed through
+2303000	2305000	all the slides?
+2305000	2307000	If there is no clock
+2307000	2309000	in the feeding line,
+2309000	2311000	it will be a whole row.
+2311000	2313000	All the slides
+2313000	2315000	will not have feeding.
+2315000	2317000	Is that right?
+2317000	2319000	That's a very good question.
+2319000	2321000	You said
+2321000	2323000	if the channel is broken,
+2323000	2325000	all the slides will be dead.
+2325000	2327000	Yes.
+2327000	2329000	If the channel is broken,
+2329000	2331000	there will be no cells.
+2331000	2333000	This is not a problem
+2333000	2335000	in our experiment.
+2335000	2337000	There are two reasons.
+2337000	2339000	First,
+2339000	2341000	each branch
+2341000	2343000	has 64 or 32 chips.
+2343000	2345000	So
+2345000	2347000	even if one branch doesn't work,
+2347000	2349000	we may lose
+2349000	2351000	some of the cells.
+2351000	2353000	Second,
+2353000	2355000	if the channel is 100 microns long,
+2355000	2357000	it's not easy
+2357000	2359000	to break it or kill it.
+2359000	2361000	So there is no problem.
+2361000	2363000	Thank you.
+2363000	2365000	How do you make the channel?
+2365000	2367000	Can you tell us?
+2367000	2369000	Of course.
+2371000	2373000	We use
+2373000	2375000	microfabrication
+2375000	2377000	to make photolithography.
+2377000	2379000	We use
+2379000	2381000	SUA.
+2381000	2383000	The feature is that
+2383000	2385000	we can make a channel
+2385000	2387000	with a wide range of thickness.
+2387000	2389000	For example,
+2389000	2391000	one micron to several microns.
+2391000	2393000	We can define
+2393000	2395000	the different
+2395000	2397000	channel sizes.
+2397000	2399000	Thank you.
+2399000	2401000	Thank you.
+2401000	2403000	I think
+2403000	2405000	it's a good question.
+2405000	2407000	I think everyone is following.
+2407000	2409000	Thank you.
+2409000	2411000	I have to answer
+2411000	2413000	how to make
+2413000	2415000	suspension culture
+2415000	2417000	based on capture.
+2417000	2419000	We have a
+2419000	2421000	capture scheme.
+2421000	2423000	The chips
+2423000	2425000	are made of PDMS.
+2425000	2427000	How do we make sure
+2427000	2429000	that
+2429000	2431000	it won't stick
+2431000	2433000	to the chip?
+2433000	2435000	We use
+2435000	2437000	a chemical called
+2437000	2439000	Peronic F108.
+2439000	2441000	The feature is that
+2441000	2443000	the two ends
+2443000	2445000	of the chemical
+2445000	2447000	have a
+2447000	2449000	hydrophobic
+2449000	2451000	core.
+2451000	2453000	So what happens
+2453000	2455000	when we load
+2455000	2457000	the F108 to the chip?
+2457000	2459000	The hydrophobic core
+2459000	2461000	will stick to
+2461000	2463000	the PDMS.
+2463000	2465000	The two ends
+2465000	2467000	or the pegs
+2467000	2469000	will expose
+2469000	2471000	the surface of the channel.
+2471000	2473000	When the cell comes in,
+2473000	2475000	it sees that there are many pegs.
+2475000	2477000	Pegs are
+2477000	2479000	a kind of
+2479000	2481000	anti-biofouling material.
+2481000	2483000	If we have
+2483000	2485000	these pegs
+2485000	2487000	on the surface,
+2487000	2489000	the cells won't be able to
+2489000	2491000	stick to the PDMS.
+2491000	2493000	So we can make
+2493000	2495000	suspension cell culture.
+2495000	2497000	In this work,
+2497000	2499000	we show four different
+2499000	2501000	breast cancer cell lines.
+2501000	2503000	You can see
+2503000	2505000	the sphere-forming cell
+2505000	2507000	at the top,
+2507000	2509000	and the anoikis cell at the bottom.
+2509000	2511000	You can see the single cell
+2511000	2513000	at day 7 and 14
+2513000	2515000	started to form
+2515000	2517000	a humerous sphere.
+2517000	2519000	The width of the chamber
+2519000	2521000	is about 100 microns.
+2521000	2523000	So you can see
+2523000	2525000	the humerous sphere is relatively small.
+2525000	2527000	The anoikis cell
+2527000	2529000	has
+2529000	2531000	a debris
+2531000	2533000	or cell
+2533000	2535000	inside the chip.
+2535000	2537000	You can see
+2537000	2539000	that different cell lines
+2539000	2541000	look different.
+2541000	2543000	Some look like balls.
+2543000	2545000	Some look like grapes.
+2545000	2547000	The morphology is slightly different.
+2551000	2553000	Can you go back to the first page?
+2553000	2555000	Sure.
+2555000	2557000	When you make cell culture,
+2557000	2559000	you should release the cell first.
+2559000	2561000	At least don't let it
+2561000	2563000	get stuck in the channel.
+2563000	2565000	Right?
+2565000	2567000	OK.
+2567000	2569000	After completing cell loading,
+2569000	2571000	we will wash the cell
+2571000	2573000	to make sure
+2573000	2575000	there is no cell on the entrance channel.
+2575000	2577000	Then we will flip the chip over.
+2577000	2579000	This is a more detailed
+2579000	2581000	experiment process.
+2581000	2583000	So we flip the chip over
+2583000	2585000	and the cell will fall into the microwave.
+2585000	2587000	You can see
+2587000	2589000	from this image
+2589000	2591000	that this is the capture site.
+2591000	2593000	You flip it over
+2593000	2595000	and it falls to the bottom.
+2595000	2597000	Because of the gravity,
+2597000	2599000	it falls to the bottom.
+2599000	2601000	Then it
+2601000	2603000	grows into a sphere.
+2603000	2605000	Or it may die.
+2605000	2607000	OK.
+2607000	2609000	After flipping the chip over,
+2609000	2611000	you need to provide nutrients,
+2611000	2613000	right?
+2613000	2615000	You need to use the same channel chip
+2615000	2617000	to do this.
+2617000	2619000	That's right.
+2619000	2621000	It's easy to do.
+2621000	2623000	We just take
+2623000	2625000	the in-and-out chips
+2625000	2627000	and put them into CultureMedia.
+2627000	2629000	CultureMedia has more chips.
+2629000	2631000	So it will gradually flow
+2631000	2633000	to the outlet.
+2633000	2635000	We provide nutrients
+2635000	2637000	in stages.
+2637000	2639000	We change
+2639000	2641000	the frequency of Media
+2641000	2643000	once a day.
+2643000	2645000	It's our protocol.
+2645000	2647000	I see.
+2647000	2649000	Thank you.
+2649000	2651000	Thank you.
+2655000	2657000	We use
+2657000	2659000	this technology
+2659000	2661000	to put the cell in.
+2661000	2663000	You can see the sphere size distribution
+2663000	2665000	and the sphere formation rate.
+2665000	2667000	You can see the different cell lines.
+2667000	2669000	It's quite obvious.
+2669000	2671000	It's easy to grow into a sphere.
+2671000	2673000	First, the sphere formation rate
+2673000	2675000	is high.
+2675000	2677000	At the same time,
+2677000	2679000	the size is large.
+2679000	2681000	It's smaller than other cell lines.
+2681000	2683000	The result is
+2683000	2685000	quite consistent.
+2685000	2687000	It proves
+2687000	2689000	the capability
+2689000	2691000	of our technology.
+2691000	2693000	What else
+2693000	2695000	can we do
+2695000	2697000	with this technology?
+2697000	2699000	We can
+2699000	2701000	get the
+2701000	2703000	sphere formation rate
+2703000	2705000	with this technology.
+2705000	2707000	We can see more details
+2707000	2709000	and information.
+2709000	2711000	First, the relationship
+2711000	2713000	between stem cell and
+2713000	2715000	stem cell.
+2715000	2717000	It's controversial.
+2717000	2719000	Some people think
+2719000	2721000	the smaller cell
+2721000	2723000	is related to
+2723000	2725000	stem cell gene.
+2725000	2727000	The lower the stem cell gene,
+2727000	2729000	the smaller the cell.
+2729000	2731000	However,
+2731000	2733000	mitochondria
+2733000	2735000	have more
+2735000	2737000	and larger cell lines.
+2737000	2739000	It increases the size of the cell.
+2739000	2741000	At the same time,
+2741000	2743000	it makes the cell look more
+2743000	2745000	stem-like.
+2745000	2747000	What's going on?
+2747000	2749000	We can
+2749000	2751000	understand stemness
+2751000	2753000	from sphere formation rate.
+2753000	2755000	We have a good algorithm
+2755000	2757000	to analyze
+2757000	2759000	the size of mitochondria.
+2759000	2761000	We can study the impact of
+2761000	2763000	different size groups on sphere formation rate.
+2763000	2765000	You can see
+2765000	2767000	cell size distribution.
+2767000	2769000	We can see
+2769000	2771000	the size of
+2771000	2773000	the single cell
+2773000	2775000	in different cell lines.
+2775000	2777000	We can see
+2777000	2779000	the size of
+2779000	2781000	the single cell
+2781000	2783000	in different cell lines.
+2783000	2785000	We can compare
+2785000	2787000	the size of
+2787000	2789000	inter-cell line.
+2789000	2791000	We can compare
+2791000	2793000	the sphere formation rate
+2793000	2795000	of the first 30%
+2795000	2797000	of mitochondria.
+2797000	2799000	The result is very interesting.
+2799000	2801000	In the experiment of
+2801000	2803000	SOM-159,
+2803000	2805000	we can observe
+2805000	2807000	that the smaller cell size
+2807000	2809000	is larger than
+2809000	2811000	the larger cell
+2811000	2813000	in the sphere formation rate.
+2813000	2815000	However,
+2815000	2817000	in SOM-149 and
+2817000	2819000	T47,
+2819000	2821000	the fourth cell line
+2821000	2823000	has no difference.
+2823000	2825000	We think
+2825000	2827000	in different cell lines
+2827000	2829000	or different pathway regulations,
+2829000	2831000	they may be different.
+2831000	2833000	It also explains
+2833000	2835000	why other people
+2835000	2837000	get different conclusions.
+2837000	2839000	We can't study the correlation
+2839000	2841000	directly from size.
+2841000	2843000	We have to look at
+2843000	2845000	gene regulation
+2845000	2847000	to determine whether it is CSE.
+2847000	2849000	Size is not a reliable
+2849000	2851000	CSE marker.
+2851000	2853000	This is
+2853000	2855000	the conclusion.
+2855000	2857000	Next,
+2857000	2859000	we can check the size
+2859000	2861000	of the sphere in
+2861000	2863000	Day 0, Day 7, and Day 14.
+2863000	2865000	We can see
+2865000	2867000	the growth
+2867000	2869000	in each stage.
+2869000	2871000	We can see
+2871000	2873000	that in each cell line,
+2873000	2875000	some cells
+2875000	2877000	grow very fast in the first week
+2877000	2879000	and not so fast in the second week.
+2879000	2881000	In contrast,
+2881000	2883000	some cells grow very slow
+2883000	2885000	in the first week,
+2885000	2887000	but in the second week,
+2887000	2889000	they grow bigger.
+2889000	2891000	This is
+2891000	2893000	the plot
+2893000	2895000	on the
+2895000	2897000	scattering plot.
+2897000	2899000	If we put
+2899000	2901000	Day 7's sphere diameter
+2901000	2903000	on X,
+2903000	2905000	Day 14's on X,
+2905000	2907000	we can see
+2907000	2909000	that Day 7's
+2909000	2911000	sphere diameter
+2911000	2913000	is basically
+2913000	2915000	1X.
+2915000	2917000	If Day 14's
+2917000	2919000	sphere diameter
+2919000	2921000	is 1X,
+2921000	2923000	Day 14's
+2923000	2925000	sphere diameter
+2925000	2927000	is 1X.
+2927000	2929000	Day 14's
+2929000	2931000	sphere diameter
+2931000	2933000	is 1X.
+2933000	2935000	Day 14's
+2935000	2937000	sphere diameter
+2937000	2939000	is 1X.
+2939000	2941000	Day 14's
+2941000	2943000	sphere diameter
+2943000	2945000	is 1X.
+2945000	2947000	Day 14's
+2947000	2949000	sphere diameter
+2949000	2951000	is 1X.
+2951000	2953000	In the theory of
+2953000	2955000	cancer stem cells,
+2955000	2957000	oncologists believe
+2957000	2959000	that there is
+2959000	2961000	a tumor-stem cell hierarchy,
+2961000	2963000	meaning that
+2963000	2965000	it can't further differentiate
+2965000	2967000	into regular cells.
+2967000	2969000	We believe that
+2969000	2971000	these progenitor cells
+2971000	2973000	are not yet
+2973000	2975000	fully compatible,
+2975000	2977000	so they can also
+2977000	2979000	produce a tumor sphere.
+2979000	2981000	However,
+2981000	2983000	it is not a stem cell,
+2983000	2985000	so it can't
+2985000	2987000	self-renew
+2987000	2989000	after proliferating
+2989000	2991000	several times.
+2991000	2993000	On the other hand,
+2993000	2995000	cancer stem cells
+2995000	2997000	have a quiescent property,
+2997000	2999000	which means
+2999000	3001000	they don't like proliferation.
+3001000	3003000	They may grow slowly at first,
+3003000	3005000	but it doesn't mean
+3005000	3007000	they don't want to.
+3007000	3009000	When I showed this result
+3009000	3011000	to our collaborators,
+3011000	3013000	they were very interested.
+3013000	3015000	In their hypothesis,
+3015000	3017000	although there are
+3017000	3019000	so many sphere-forming cells,
+3019000	3021000	this cell line
+3021000	3023000	is a special cell line
+3023000	3025000	with a lot of progenitor cells
+3025000	3027000	and strong sphere-forming capability.
+3027000	3029000	That's why
+3029000	3031000	the proliferation rate
+3031000	3033000	in the second week
+3033000	3035000	is so much lower.
+3035000	3037000	SOM149 is more
+3037000	3039000	compatible with
+3039000	3041000	oncologists' cancer stem cell model.
+3041000	3043000	It may be quiescent at first,
+3043000	3045000	but it can continue
+3045000	3047000	to proliferate.
+3047000	3049000	Through this technology,
+3049000	3051000	we can see
+3051000	3053000	the proliferation
+3053000	3055000	of single-cell
+3055000	3057000	derived sphere
+3057000	3059000	and
+3059000	3061000	study the
+3061000	3063000	cancer stem cell hierarchy.
+3063000	3065000	This is the second part
+3065000	3067000	of our technology presentation.
+3067000	3069000	To sum up,
+3069000	3071000	the high-throughput single-cell
+3071000	3073000	derived sphere as a chip
+3073000	3075000	can scale from
+3075000	3077000	800 to
+3077000	3079000	more than 10,000 wells.
+3079000	3081000	The capture rate
+3081000	3083000	is now
+3083000	3085000	around 76%.
+3085000	3087000	When capturing the cell,
+3087000	3089000	the representative cell size
+3089000	3091000	per population
+3091000	3093000	is equal to the block.
+3093000	3095000	We can make sure
+3095000	3097000	that we didn't
+3097000	3099000	change the cell
+3099000	3101000	in the cell process.
+3101000	3103000	We didn't scale the result.
+3103000	3105000	We also used
+3105000	3107000	genetic analysis algorithm
+3107000	3109000	to help us
+3109000	3111000	do cell counting
+3111000	3113000	and cell sphere size measurement.
+3113000	3115000	Without these functions,
+3115000	3117000	it is difficult to
+3117000	3119000	quantify the sphere formation rate
+3119000	3121000	and observe the dynamic
+3121000	3123000	of sphere formation.
+3123000	3125000	At the end of the presentation,
+3125000	3127000	I told you
+3127000	3129000	about two different
+3129000	3131000	experimental results.
+3131000	3133000	The first one is
+3133000	3135000	the comparison of cell size
+3135000	3137000	and cell strength.
+3137000	3139000	We don't think
+3139000	3141000	cell size is a good CSE marker.
+3141000	3143000	We think
+3143000	3145000	there are more
+3145000	3147000	gene regulation
+3147000	3149000	that we need to study
+3149000	3151000	in the cell,
+3151000	3153000	not just cell size.
+3153000	3155000	We also showed
+3155000	3157000	the ability to track
+3157000	3159000	the process of sphere formation.
+3159000	3161000	This can help oncologists
+3161000	3163000	to study
+3163000	3165000	tumor stem
+3165000	3167000	and cancer stem cell hierarchy
+3167000	3169000	to help them understand
+3169000	3171000	the details.
+3171000	3173000	This work
+3173000	3175000	was published in
+3175000	3177000	Lab on a Chip last August.
+3177000	3179000	If you are interested,
+3179000	3181000	you can check it out.
+3181000	3183000	Thank you
+3183000	3185000	our lab
+3185000	3187000	for being with me
+3187000	3189000	for an hour.
+3189000	3191000	If you have any questions,
+3191000	3193000	feel free to ask.
+3201000	3203000	I have a question.
+3203000	3205000	Can you go back to the page
+3205000	3207000	before the conclusion?
+3209000	3211000	This page?
+3213000	3215000	Yes.
+3215000	3217000	I have a question.
+3217000	3219000	How do you rule out
+3219000	3221000	the size of the culture well?
+3221000	3223000	It's about 100 microns.
+3223000	3225000	How do you rule out
+3225000	3227000	the size of the chamber?
+3227000	3229000	The speed
+3229000	3231000	is not limited
+3231000	3233000	to the size of the space.
+3233000	3235000	It's the
+3235000	3237000	characteristic of the sphere.
+3237000	3239000	Is the entrance small?
+3239000	3241000	I'm asking
+3241000	3243000	the size of the chamber
+3243000	3245000	is not limited
+3245000	3247000	to the size of the chamber.
+3247000	3249000	The size of the chamber
+3249000	3251000	is not limited
+3251000	3253000	to the size of the chamber.
+3253000	3255000	That's a good question.
+3255000	3257000	The entrance
+3257000	3259000	is set at
+3259000	3261000	50 microns.
+3261000	3263000	We observed
+3263000	3265000	the cell population.
+3265000	3267000	The cell population
+3267000	3269000	is not more than 50.
+3269000	3271000	If a cell
+3271000	3273000	is very powerful,
+3273000	3275000	it will grow fully in the first week.
+3275000	3277000	How do I know
+3277000	3279000	if it will grow slowly
+3279000	3281000	in the first week?
+3281000	3283000	That's a good question.
+3283000	3285000	In fact, we set 100 microns.
+3285000	3287000	From our experience,
+3287000	3289000	very few cells can grow
+3289000	3291000	more than 100 microns.
+3291000	3293000	The reason you can see so much
+3293000	3295000	is because our data is
+3295000	3297000	very large.
+3297000	3299000	We can observe
+3299000	3301000	very few cases
+3301000	3303000	in our data.
+3303000	3305000	If you are really interested,
+3305000	3307000	it's not difficult
+3307000	3309000	to solve this problem.
+3309000	3311000	We can change the chamber size
+3311000	3313000	to 150 microns
+3313000	3315000	to solve the problem.
+3315000	3317000	However,
+3317000	3319000	in the context of work,
+3319000	3321000	the chamber size is a minority.
+3321000	3323000	It's not the focus of our research.
+3323000	3325000	Our focus is to demonstrate
+3325000	3327000	the capability.
+3327000	3329000	So we set 100 microns
+3329000	3331000	as the chamber size.
+3339000	3341000	I have a question.
+3341000	3343000	How do you
+3343000	3345000	quantify
+3345000	3347000	the gene performance
+3347000	3349000	of a single cell?
+3351000	3353000	This is my
+3353000	3355000	other work.
+3355000	3357000	If you are interested
+3357000	3359000	in the gene performance
+3359000	3361000	of a single cell,
+3361000	3363000	you can read
+3363000	3365000	a paper published
+3365000	3367000	in Cell.
+3367000	3369000	It basically
+3369000	3371000	barcodes
+3371000	3373000	each cell
+3373000	3375000	and transcript.
+3375000	3377000	From next-generation sequencing,
+3377000	3379000	we can infer
+3379000	3381000	which cell
+3381000	3383000	this transcript
+3383000	3385000	comes from.
+3385000	3387000	We can quantify
+3389000	3391000	the strength of gene performance
+3391000	3393000	by this way.
+3393000	3395000	The way it captures
+3395000	3397000	messenger RNA is
+3397000	3399000	to put a
+3399000	3401000	poly-T-tail to capture
+3401000	3403000	a poly-A-tail.
+3403000	3405000	So they can hybridize
+3405000	3407000	and barcode.
+3409000	3411000	I have already captured
+3411000	3413000	these cells.
+3413000	3415000	How do you transfer them
+3415000	3417000	to a single-cell RNA-seq
+3417000	3419000	device?
+3421000	3423000	In molecular
+3423000	3425000	analysis,
+3425000	3427000	we use
+3427000	3429000	a bead
+3429000	3431000	as our
+3431000	3433000	mRNA-captured carrier.
+3433000	3435000	This technology
+3435000	3437000	is introduced
+3437000	3439000	by Dropseq.
+3439000	3441000	They introduce
+3441000	3443000	this technology
+3443000	3445000	and license it
+3445000	3447000	to a company.
+3447000	3449000	We buy the product
+3449000	3451000	from the company
+3451000	3453000	and put the bead
+3453000	3455000	into our chip
+3455000	3457000	to capture mRNA.
+3457000	3459000	We take the bead
+3459000	3461000	and do downstream amplification
+3461000	3463000	for gene sequencing.
+3469000	3471000	It sounds like
+3471000	3473000	we will succeed.
+3473000	3475000	We still have a long way to go.
+3475000	3477000	Yes.
+3487000	3489000	We don't have any more questions.
+3489000	3491000	Thank you again
+3491000	3493000	for the wonderful lecture.
+3495000	3497000	Thank you for inviting me.
+3499000	3501000	Thank you.

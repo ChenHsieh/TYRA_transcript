@@ -1,0 +1,3752 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+You can find the recording online a week and a half later.
+
+00:10.000 --> 00:16.000
+If you have any questions during this process,
+
+00:16.000 --> 00:18.000
+you can leave a comment in the chat box.
+
+00:18.000 --> 00:24.000
+We will have Q&A time at the end for everyone to ask questions.
+
+00:24.000 --> 00:27.000
+Let's get started.
+
+00:31.000 --> 00:35.000
+Thank you everyone for listening to my presentation.
+
+00:35.000 --> 00:39.000
+Hello everyone, I'm Lai Jun-Hai.
+
+00:39.000 --> 00:41.000
+You can call me Matt.
+
+00:41.000 --> 00:47.000
+First of all, I would like to thank Tyra for inviting me to share my research.
+
+00:47.000 --> 00:50.000
+Let me introduce myself.
+
+00:50.000 --> 00:52.000
+I'm from Yonghe, Hsinchu.
+
+00:52.000 --> 00:55.000
+I graduated from National University of China.
+
+00:55.000 --> 01:00.000
+I worked as an engineer for a year and a half at BASF in Taiwan.
+
+01:00.000 --> 01:04.000
+Then I went to UCLA to study engineering.
+
+01:04.000 --> 01:06.000
+I graduated in 2017.
+
+01:06.000 --> 01:11.000
+I am currently working at Startup Battery Streak.
+
+01:11.000 --> 01:14.000
+At the same time, I am also a visiting scholar at UCLA.
+
+01:14.000 --> 01:20.000
+My main work is focused on the development and mass production of new battery materials,
+
+01:20.000 --> 01:23.000
+as well as the transfer between the company and UCLA.
+
+01:24.000 --> 01:27.000
+Today's topic is
+
+01:27.000 --> 01:32.000
+Designing pseudo-capacitance for fast-charging batteries.
+
+01:32.000 --> 01:37.000
+That is, how to apply the mechanism of solid-state batteries to fast-charging batteries.
+
+01:37.000 --> 01:42.000
+First of all, why do we need fast-charging batteries?
+
+01:42.000 --> 01:46.000
+The first motivation is the accumulation of electromagnetic traffic.
+
+01:46.000 --> 01:51.000
+Charging stations are currently set up in three levels.
+
+01:51.000 --> 01:54.000
+The first level is the plug-in that everyone puts at home.
+
+01:54.000 --> 01:57.000
+It can charge 3 to 6 kilometers per hour.
+
+01:57.000 --> 02:00.000
+The second level is the charging station in the parking lot.
+
+02:00.000 --> 02:04.000
+It can charge 20 to 30 kilometers per hour.
+
+02:04.000 --> 02:09.000
+The third level is the fastest Tesla charging station.
+
+02:09.000 --> 02:16.000
+It can charge 5 kilometers per minute.
+
+02:16.000 --> 02:21.000
+Interestingly, the current charging station is still far less than the gas station.
+
+02:21.000 --> 02:26.000
+But it is almost impossible to see such a long queue at the charging station.
+
+02:26.000 --> 02:29.000
+Not everyone has an electric car,
+
+02:29.000 --> 02:35.000
+but 5 kilometers per minute is still too slow compared to the time required for gas.
+
+02:35.000 --> 02:42.000
+The second application of fast-charging batteries is the popularization of renewable energy.
+
+02:42.000 --> 02:47.000
+As of last year, renewable energy has reached one-third of the global power generation.
+
+02:47.000 --> 02:53.000
+50% of the power generation comes from renewable energy.
+
+02:53.000 --> 02:58.000
+Other European countries also reach 20 to 30% of renewable power.
+
+02:58.000 --> 03:05.000
+We all know that when wind and solar energy are converted into electricity,
+
+03:05.000 --> 03:07.000
+they must be paired with suitable batteries.
+
+03:07.000 --> 03:11.000
+However, these batteries can't be charged quickly,
+
+03:11.000 --> 03:13.000
+so they are inefficient.
+
+03:13.000 --> 03:16.000
+For example, when the wind speed is fast,
+
+03:16.000 --> 03:18.000
+there will be a momentary large current.
+
+03:18.000 --> 03:21.000
+The batteries that can't be charged at low power
+
+03:21.000 --> 03:24.000
+will become waste heat and reduce the life of the battery.
+
+03:24.000 --> 03:32.000
+So basically, this concept is the same as the concept of fast-charging batteries paired with aging cell phones.
+
+03:32.000 --> 03:36.000
+The third application of fast-charging batteries is plant-based medical equipment.
+
+03:36.000 --> 03:43.000
+Generally, the supply of such equipment is made up of a battery paired with a capacitor,
+
+03:43.000 --> 03:48.000
+which is in the box at the bottom left.
+
+03:48.000 --> 03:55.000
+Generally, the battery is used to monitor the function of low power for a long time,
+
+03:55.000 --> 03:59.000
+while the capacitor is used to respond to high power in a short time.
+
+03:59.000 --> 04:04.000
+Due to the limited size of the equipment and the need for different organ parts,
+
+04:04.000 --> 04:09.000
+a single high-power battery is used to replace the two-in-one mode.
+
+04:09.000 --> 04:14.000
+This has always been the trend in the development of this type of equipment power supply.
+
+04:14.000 --> 04:18.000
+Of course, in addition to the above three applications,
+
+04:18.000 --> 04:19.000
+there are other applications.
+
+04:19.000 --> 04:21.000
+I won't go into detail here.
+
+04:21.000 --> 04:23.000
+So in this main speech,
+
+04:23.000 --> 04:28.000
+it mainly introduces how to improve the power density and energy density of the storage components using the materials of the capacitor.
+
+04:29.000 --> 04:31.000
+As shown in the picture on the left,
+
+04:31.000 --> 04:34.000
+the x-axis is the energy density,
+
+04:34.000 --> 04:36.000
+and the y-axis is the power density.
+
+04:36.000 --> 04:44.000
+First, I will briefly introduce the materials of the storage components and the techniques required for analysis.
+
+04:44.000 --> 04:53.000
+Then, the first part will start with the high-power supercapacitor material in blue.
+
+04:53.000 --> 04:58.000
+Then, the high-power characteristics will be achieved by using a non-oxidized carbonate residue.
+
+04:58.000 --> 05:01.000
+The second part will start with the lithium battery.
+
+05:01.000 --> 05:06.000
+Here is an example of fluorine,
+
+05:06.000 --> 05:08.000
+L-NBOPF,
+
+05:08.000 --> 05:12.000
+which achieves high power density by nanomerizing the battery material.
+
+05:15.000 --> 05:19.000
+Generally, batteries or supercapacitors are basically composed of two terminals.
+
+05:20.000 --> 05:27.000
+The positive terminal and the negative terminal are placed on the aluminum foil and copper foil respectively.
+
+05:27.000 --> 05:30.000
+The two terminals are separated by a multi-hole separator,
+
+05:30.000 --> 05:33.000
+which is the middle part of the separator,
+
+05:36.000 --> 05:37.000
+to avoid short-circuit.
+
+05:37.000 --> 05:39.000
+When charging the battery, the lithium battery moves in the capacitor,
+
+05:39.000 --> 05:42.000
+and the battery material produces an oxidation reaction.
+
+05:42.000 --> 05:46.000
+At the same time, the battery moves in the external circuit to achieve the balance of the electric current.
+
+05:46.000 --> 05:50.000
+The electric current is the main focus of our discussion today.
+
+05:50.000 --> 05:55.000
+It is mainly composed of the storage material, carbon, and the high-voltage supercapacitor.
+
+05:55.000 --> 05:58.000
+The electric current needs to have a certain vacuum.
+
+05:58.000 --> 05:59.000
+It is like a sponge.
+
+05:59.000 --> 06:01.000
+It must contain enough electrolysis.
+
+06:01.000 --> 06:06.000
+At the same time, it must have enough conductivity to be a high-voltage supercapacitor.
+
+06:08.000 --> 06:11.000
+Although the structure of the battery and the capacitor are the same,
+
+06:11.000 --> 06:13.000
+the storage mechanism is completely different.
+
+06:13.000 --> 06:16.000
+The mechanism of the capacitor is absorbed by the lithium.
+
+06:16.000 --> 06:21.000
+In the external circuit, the aluminum foil and the copper foil are separated and absorbed by the surface of the battery.
+
+06:21.000 --> 06:24.000
+Because the lithium is absorbed by the surface for a short time,
+
+06:24.000 --> 06:26.000
+this mechanism is most conducive to fast charging.
+
+06:26.000 --> 06:29.000
+The disadvantage is that its surface area is limited,
+
+06:29.000 --> 06:32.000
+so the density of energy is generally low.
+
+06:32.000 --> 06:35.000
+In contrast, the storage method of the battery
+
+06:35.000 --> 06:39.000
+uses the oxidation reaction inside the material.
+
+06:39.000 --> 06:43.000
+In this case, the lithium can enter the material,
+
+06:43.000 --> 06:45.000
+and its energy is far greater than that of the capacitor.
+
+06:45.000 --> 06:48.000
+However, since the lithium moves very slowly inside the material,
+
+06:48.000 --> 06:52.000
+it is therefore unable to do high-speed charging.
+
+06:54.000 --> 06:57.000
+Next, we will introduce how to distinguish the battery from the capacitor.
+
+06:57.000 --> 07:00.000
+Basically, it is based on electrical chemistry analysis.
+
+07:00.000 --> 07:03.000
+We will make the pre-analyzed material into an electrolyte
+
+07:03.000 --> 07:05.000
+and test it in the same electrolyte solution.
+
+07:05.000 --> 07:08.000
+Generally, the device to be tested
+
+07:08.000 --> 07:14.000
+has a single-phase electrolyte test on the upper left,
+
+07:14.000 --> 07:19.000
+and a double-phase torque battery test on the lower left.
+
+07:19.000 --> 07:21.000
+There are two main methods of testing.
+
+07:21.000 --> 07:25.000
+The first method is the cyclic voltammetry,
+
+07:25.000 --> 07:27.000
+which is abbreviated as CV.
+
+07:27.000 --> 07:30.000
+The principle is to change the speed of voltage change
+
+07:30.000 --> 07:32.000
+to measure the change in current.
+
+07:32.000 --> 07:34.000
+The second method is the DC voltage test,
+
+07:34.000 --> 07:36.000
+which is abbreviated as GC.
+
+07:36.000 --> 07:39.000
+In the case of DC voltage charging,
+
+07:39.000 --> 07:42.000
+it measures the change in voltage of the battery
+
+07:42.000 --> 07:44.000
+and makes a diagram of the voltage.
+
+07:48.000 --> 07:52.000
+Now we use GC and CV to get the diagram
+
+07:52.000 --> 07:54.000
+to distinguish the battery from the capacitor.
+
+07:54.000 --> 07:56.000
+They are two different storage mechanisms.
+
+07:56.000 --> 07:59.000
+The capacitor on the left can be seen that
+
+07:59.000 --> 08:03.000
+the CV is a rectangle,
+
+08:03.000 --> 08:06.000
+while the GC is basically a diagonal.
+
+08:06.000 --> 08:09.000
+The battery on the right is composed of a set of peaks,
+
+08:09.000 --> 08:14.000
+while the GC is mainly composed of a horizontal line.
+
+08:14.000 --> 08:16.000
+Now that we know how to judge the material of the battery
+
+08:16.000 --> 08:17.000
+and the material of the capacitor,
+
+08:17.000 --> 08:20.000
+we can look for the material of the fast charging battery.
+
+08:20.000 --> 08:23.000
+What characteristics do we hope the fast charging battery has?
+
+08:23.000 --> 08:27.000
+We hope it has the characteristics of electromagnetic chemistry on the left,
+
+08:27.000 --> 08:30.000
+which allows it to be a fast charging battery.
+
+08:30.000 --> 08:33.000
+It also has the characteristics of the material on the right,
+
+08:33.000 --> 08:35.000
+which increases the density of energy
+
+08:35.000 --> 08:38.000
+by storing energy through the reaction of oxygen-chloride.
+
+08:38.000 --> 08:41.000
+This is the material we are looking for.
+
+08:41.000 --> 08:43.000
+The material of the capacitor
+
+08:43.000 --> 08:48.000
+not only has a rectangle CV,
+
+08:48.000 --> 08:52.000
+but also a diagonal GC,
+
+08:52.000 --> 08:57.000
+and it stores energy through the reaction of oxygen-chloride.
+
+08:59.000 --> 09:03.000
+Next, I will talk about the main character I will introduce today,
+
+09:03.000 --> 09:05.000
+which is the T-Phased,
+
+09:05.000 --> 09:07.000
+Orphohombic Phased,
+
+09:07.000 --> 09:08.000
+NB205.
+
+09:08.000 --> 09:11.000
+Next, I will call it NIOVIA.
+
+09:11.000 --> 09:15.000
+In addition to having the characteristics of electromagnetic chemistry,
+
+09:15.000 --> 09:18.000
+its energy density
+
+09:18.000 --> 09:24.000
+is equivalent to the energy density of lithium carbon dioxide,
+
+09:24.000 --> 09:28.000
+which is in the lithium-ion battery.
+
+09:28.000 --> 09:33.000
+Its energy density is 10 times that of the capacitor.
+
+09:33.000 --> 09:35.000
+Its power density,
+
+09:35.000 --> 09:38.000
+which is the power of its fast charging,
+
+09:38.000 --> 09:41.000
+can also reach 10 times that of the battery.
+
+09:41.000 --> 09:43.000
+Its only drawback is that
+
+09:43.000 --> 09:49.000
+it is still oxygen-chloride,
+
+09:49.000 --> 09:51.000
+so its power consumption
+
+09:51.000 --> 09:58.000
+is the first topic we are going to fix.
+
+09:58.000 --> 10:00.000
+The first part
+
+10:00.000 --> 10:06.000
+is to mix carbon with NIOVIA
+
+10:06.000 --> 10:09.000
+to improve the properties of NIOVIA.
+
+10:09.000 --> 10:12.000
+We need to deduce a good NIOVIA,
+
+10:12.000 --> 10:14.000
+and we will eventually deduce
+
+10:14.000 --> 10:17.000
+what kind of properties a good NIOVIA battery needs
+
+10:17.000 --> 10:22.000
+to show the characteristics of its lithium-ion battery.
+
+10:22.000 --> 10:26.000
+A good NIOVIA battery
+
+10:26.000 --> 10:28.000
+basically needs two parts.
+
+10:28.000 --> 10:30.000
+The first is the high-voltage part,
+
+10:30.000 --> 10:35.000
+and the second is the part that can have a high pore density.
+
+10:35.000 --> 10:37.000
+In this study,
+
+10:37.000 --> 10:39.000
+we mainly used three materials.
+
+10:39.000 --> 10:42.000
+The first material is our protagonist, NIOVIA.
+
+10:42.000 --> 10:46.000
+The second material is our chemical-capable
+
+10:46.000 --> 10:50.000
+Reduced Graphene Oxide, also known as RGO.
+
+10:50.000 --> 10:54.000
+Its purpose is to provide short-term conductivity.
+
+10:54.000 --> 10:56.000
+The third material
+
+10:56.000 --> 10:58.000
+is the one on the far right,
+
+10:58.000 --> 11:01.000
+Carbide Derived Carbon, also known as CDC.
+
+11:01.000 --> 11:05.000
+It is a kind of carbon dioxide.
+
+11:05.000 --> 11:07.000
+Its main purpose is that
+
+11:07.000 --> 11:11.000
+it has a polypore structure
+
+11:11.000 --> 11:15.000
+and its size is in the micrometer level,
+
+11:15.000 --> 11:18.000
+so it can provide long-term conductivity.
+
+11:21.000 --> 11:23.000
+The way we prepare the battery
+
+11:23.000 --> 11:27.000
+is to first plant NIOVIA on RGO.
+
+11:27.000 --> 11:32.000
+Next, we combine NIOVIA RGO with CDC
+
+11:32.000 --> 11:36.000
+to get NIOVIA RGO CDC,
+
+11:36.000 --> 11:38.000
+also known as NRC.
+
+11:38.000 --> 11:42.000
+Finally, we make NRC
+
+11:42.000 --> 11:46.000
+into a commercial-grade battery
+
+11:46.000 --> 11:48.000
+and test it to prove that
+
+11:48.000 --> 11:50.000
+it has a high-power and high-density
+
+11:50.000 --> 11:52.000
+storage characteristics
+
+11:52.000 --> 11:54.000
+at the right pore density.
+
+11:56.000 --> 12:00.000
+This slide shows the details of the material equipment.
+
+12:00.000 --> 12:03.000
+The main equipment is
+
+12:03.000 --> 12:07.000
+the water-heating method.
+
+12:07.000 --> 12:09.000
+We put the precursor
+
+12:09.000 --> 12:13.000
+into the autoclave
+
+12:13.000 --> 12:15.000
+and heat it up to 180°C
+
+12:15.000 --> 12:18.000
+for 12 hours.
+
+12:18.000 --> 12:22.000
+Next, we wash the particles
+
+12:22.000 --> 12:27.000
+and dry them.
+
+12:27.000 --> 12:29.000
+After drying,
+
+12:29.000 --> 12:32.000
+we heat it up to 500°C
+
+12:32.000 --> 12:35.000
+to get the body structure we want,
+
+12:35.000 --> 12:37.000
+which is T-phase,
+
+12:37.000 --> 12:39.000
+or ophiobic phase.
+
+12:39.000 --> 12:45.000
+Next, we combine NIOVIA RGO
+
+12:45.000 --> 12:47.000
+with CDC.
+
+12:47.000 --> 12:49.000
+The main purpose is to
+
+12:49.000 --> 12:50.000
+make this composite material
+
+12:50.000 --> 12:52.000
+in the form of surface electrolysis.
+
+12:52.000 --> 12:55.000
+Next, we make it into a battery
+
+12:55.000 --> 12:57.000
+and test it.
+
+12:59.000 --> 13:03.000
+We have 20% NIOVIA,
+
+13:03.000 --> 13:05.000
+40% NRC20,
+
+13:05.000 --> 13:09.000
+and 60% NRC20.
+
+13:09.000 --> 13:11.000
+The BET on the right
+
+13:11.000 --> 13:13.000
+is the analysis of the surface electrolysis.
+
+13:13.000 --> 13:16.000
+It shows that
+
+13:16.000 --> 13:19.000
+the surface electrolysis of the material
+
+13:19.000 --> 13:22.000
+increases with the
+
+13:22.000 --> 13:24.000
+composition of the CDC.
+
+13:24.000 --> 13:26.000
+This means that
+
+13:26.000 --> 13:28.000
+this composite method
+
+13:28.000 --> 13:31.000
+does not cause the CDC to lose its surface area,
+
+13:31.000 --> 13:34.000
+or the CDC to be less airtight,
+
+13:34.000 --> 13:36.000
+or its structure to collapse.
+
+13:36.000 --> 13:38.000
+Therefore, we can use
+
+13:38.000 --> 13:40.000
+a simple ratio to
+
+13:40.000 --> 13:43.000
+achieve the airtightness we need.
+
+13:43.000 --> 13:46.000
+There are also two black dots on the picture.
+
+13:46.000 --> 13:48.000
+These two black dots
+
+13:48.000 --> 13:50.000
+are where we directly plant NIOVIA
+
+13:50.000 --> 13:52.000
+on the CDC.
+
+13:52.000 --> 13:54.000
+If we
+
+13:54.000 --> 13:56.000
+do not use
+
+13:56.000 --> 13:58.000
+this composite method
+
+13:58.000 --> 14:00.000
+but use
+
+14:00.000 --> 14:02.000
+the water-heat method
+
+14:02.000 --> 14:04.000
+to directly plant it on the CDC,
+
+14:04.000 --> 14:06.000
+at high temperature,
+
+14:06.000 --> 14:08.000
+the CDC's
+
+14:08.000 --> 14:10.000
+surface area
+
+14:10.000 --> 14:12.000
+will...
+
+14:12.000 --> 14:14.000
+Because the surface area is too large,
+
+14:14.000 --> 14:16.000
+the surface area will decrease
+
+14:16.000 --> 14:18.000
+at high temperature.
+
+14:18.000 --> 14:20.000
+We want to use the CDC
+
+14:20.000 --> 14:22.000
+to improve the airtightness
+
+14:22.000 --> 14:24.000
+of the electrode.
+
+14:24.000 --> 14:26.000
+This is the idea.
+
+14:28.000 --> 14:30.000
+Next, we need to
+
+14:30.000 --> 14:32.000
+use the CV to judge the electrode.
+
+14:32.000 --> 14:34.000
+Let's see if it is like a battery material
+
+14:34.000 --> 14:36.000
+or an electric material.
+
+14:36.000 --> 14:38.000
+In the case of changing the minority,
+
+14:38.000 --> 14:40.000
+we can get the corresponding current.
+
+14:40.000 --> 14:42.000
+Therefore, we use the current
+
+14:42.000 --> 14:44.000
+to make judgments with the change of the minority.
+
+14:44.000 --> 14:46.000
+If the
+
+14:46.000 --> 14:48.000
+material is like a battery,
+
+14:48.000 --> 14:50.000
+the change of the current
+
+14:50.000 --> 14:52.000
+will be multiplied by the minority.
+
+14:52.000 --> 14:54.000
+If the material
+
+14:54.000 --> 14:56.000
+is like a capacitor,
+
+14:56.000 --> 14:58.000
+the current
+
+14:58.000 --> 15:00.000
+will be multiplied by the minority.
+
+15:00.000 --> 15:02.000
+In other words,
+
+15:02.000 --> 15:04.000
+when the minority is doubled,
+
+15:04.000 --> 15:06.000
+the current will be doubled.
+
+15:06.000 --> 15:08.000
+Combining these two formulas,
+
+15:08.000 --> 15:10.000
+we can get
+
+15:10.000 --> 15:12.000
+the following formula
+
+15:12.000 --> 15:14.000
+from the experiment.
+
+15:14.000 --> 15:16.000
+The current is equal to the magnitude
+
+15:16.000 --> 15:18.000
+multiplied by the minority.
+
+15:18.000 --> 15:20.000
+This is called
+
+15:20.000 --> 15:22.000
+B-value analysis.
+
+15:22.000 --> 15:24.000
+We want the material
+
+15:24.000 --> 15:26.000
+to be as fast as the capacitor.
+
+15:26.000 --> 15:28.000
+Therefore, we want the B-value
+
+15:28.000 --> 15:30.000
+to be as close to 1 as possible.
+
+15:32.000 --> 15:34.000
+This proves that the material
+
+15:34.000 --> 15:36.000
+can do high-speed charging.
+
+15:38.000 --> 15:40.000
+Next,
+
+15:40.000 --> 15:42.000
+the NRC
+
+15:42.000 --> 15:44.000
+can store different
+
+15:44.000 --> 15:46.000
+current
+
+15:46.000 --> 15:48.000
+at different speeds.
+
+15:48.000 --> 15:50.000
+On the left,
+
+15:50.000 --> 15:52.000
+we use the minority
+
+15:52.000 --> 15:54.000
+to burn the NRC.
+
+15:54.000 --> 15:56.000
+The lowest value
+
+15:56.000 --> 15:58.000
+is 100% Cdc.
+
+15:58.000 --> 16:00.000
+The way
+
+16:00.000 --> 16:02.000
+we control the minority
+
+16:02.000 --> 16:04.000
+is from the slowest 30-minute
+
+16:04.000 --> 16:06.000
+charging point on the left to the
+
+16:06.000 --> 16:08.000
+90-second charging point on the right.
+
+16:08.000 --> 16:10.000
+The y-axis is the energy generated by me.
+
+16:10.000 --> 16:12.000
+As time goes by,
+
+16:12.000 --> 16:14.000
+the energy generated by me
+
+16:14.000 --> 16:16.000
+will be reduced.
+
+16:16.000 --> 16:18.000
+We want the line to be as flat as possible.
+
+16:18.000 --> 16:20.000
+This means that the material
+
+16:20.000 --> 16:22.000
+can do high-speed charging
+
+16:22.000 --> 16:24.000
+as well as low-speed charging.
+
+16:24.000 --> 16:26.000
+The lowest value is 100% Cdc.
+
+16:26.000 --> 16:28.000
+As the amount of niobia increases,
+
+16:28.000 --> 16:30.000
+the density of the NRC
+
+16:30.000 --> 16:32.000
+will also increase.
+
+16:32.000 --> 16:34.000
+Up to 40%, the increased current
+
+16:34.000 --> 16:36.000
+will not be affected by the minority.
+
+16:36.000 --> 16:38.000
+From 0% to 20% to 40%,
+
+16:38.000 --> 16:40.000
+the current will remain as flat.
+
+16:42.000 --> 16:44.000
+Up to 60%,
+
+16:44.000 --> 16:46.000
+from the NRC 60,
+
+16:46.000 --> 16:48.000
+we can see that
+
+16:48.000 --> 16:50.000
+the current is lower than
+
+16:50.000 --> 16:52.000
+40% at 90 seconds.
+
+16:52.000 --> 16:54.000
+The highest value is 100%.
+
+16:54.000 --> 16:56.000
+Although the amount of
+
+16:56.000 --> 16:58.000
+niobia is
+
+16:58.000 --> 17:00.000
+higher than 40%,
+
+17:00.000 --> 17:02.000
+we can expect that
+
+17:02.000 --> 17:04.000
+according to the trend,
+
+17:04.000 --> 17:06.000
+when the charging time is less than 90 seconds,
+
+17:06.000 --> 17:08.000
+the NRC 40 will increase.
+
+17:10.000 --> 17:12.000
+On the right is the B-value
+
+17:12.000 --> 17:14.000
+introduced in the previous page.
+
+17:14.000 --> 17:16.000
+When the curve
+
+17:16.000 --> 17:18.000
+is closer to 1,
+
+17:18.000 --> 17:20.000
+we mainly do CV
+
+17:20.000 --> 17:22.000
+for different materials.
+
+17:22.000 --> 17:24.000
+Then we do the
+
+17:24.000 --> 17:26.000
+B-value analysis.
+
+17:26.000 --> 17:28.000
+The result of the analysis is in the lower right corner.
+
+17:28.000 --> 17:30.000
+When the curve is closer to 1,
+
+17:30.000 --> 17:32.000
+it means that the charging speed is faster.
+
+17:32.000 --> 17:34.000
+By this, we can judge
+
+17:34.000 --> 17:36.000
+that the charging speed of
+
+17:36.000 --> 17:38.000
+NRC 40 is faster than
+
+17:38.000 --> 17:40.000
+NRC 60 and 100% niobia.
+
+17:40.000 --> 17:42.000
+This also proves that
+
+17:42.000 --> 17:44.000
+when there is 60% CVC
+
+17:44.000 --> 17:46.000
+stored in the electrode,
+
+17:46.000 --> 17:48.000
+the electrode has sufficient airtightness
+
+17:48.000 --> 17:50.000
+to accommodate sufficient electrolysis
+
+17:50.000 --> 17:52.000
+to show the characteristics of
+
+17:52.000 --> 17:54.000
+niobia lithium-ion battery.
+
+17:56.000 --> 17:58.000
+Finally,
+
+17:58.000 --> 18:00.000
+we combine the NRC 40
+
+18:00.000 --> 18:02.000
+with the traditional lithium-ion electrode
+
+18:02.000 --> 18:04.000
+to form a full electrode
+
+18:04.000 --> 18:06.000
+to do
+
+18:06.000 --> 18:08.000
+CV and GC analysis.
+
+18:10.000 --> 18:12.000
+In terms of CV,
+
+18:12.000 --> 18:14.000
+we can get
+
+18:14.000 --> 18:16.000
+the characteristics of lithium-ion,
+
+18:16.000 --> 18:18.000
+which is a rectangular CV.
+
+18:18.000 --> 18:20.000
+In terms of the
+
+18:20.000 --> 18:22.000
+GC,
+
+18:22.000 --> 18:24.000
+we also get a
+
+18:24.000 --> 18:26.000
+oblique GC.
+
+18:26.000 --> 18:28.000
+At the same time,
+
+18:28.000 --> 18:30.000
+because of the combination of niobia,
+
+18:30.000 --> 18:32.000
+we not only
+
+18:32.000 --> 18:34.000
+increase the energy density
+
+18:34.000 --> 18:36.000
+at low power,
+
+18:36.000 --> 18:38.000
+but also increase the energy density
+
+18:38.000 --> 18:40.000
+at high power.
+
+18:40.000 --> 18:42.000
+At the power of
+
+18:42.000 --> 18:44.000
+3000W per kg,
+
+18:44.000 --> 18:46.000
+we can store
+
+18:46.000 --> 18:48.000
+up to 23W
+
+18:48.000 --> 18:50.000
+per kg of energy density.
+
+18:54.000 --> 18:56.000
+Next,
+
+18:56.000 --> 18:58.000
+I will use the picture on the right to summarize.
+
+18:58.000 --> 19:00.000
+The first part
+
+19:00.000 --> 19:02.000
+is that we use the amount of Cdc
+
+19:02.000 --> 19:04.000
+to adjust the airtightness and
+
+19:04.000 --> 19:06.000
+electrolysis of the NRC composite material.
+
+19:06.000 --> 19:08.000
+At the same time,
+
+19:08.000 --> 19:10.000
+the electrode has high energy
+
+19:10.000 --> 19:12.000
+and fast charge characteristics.
+
+19:12.000 --> 19:14.000
+In other words,
+
+19:14.000 --> 19:16.000
+we use Cdc as the starting point
+
+19:16.000 --> 19:18.000
+to mix different niobia
+
+19:18.000 --> 19:20.000
+to increase its energy density.
+
+19:20.000 --> 19:22.000
+By maximizing airtightness and electrolysis,
+
+19:22.000 --> 19:24.000
+we can increase
+
+19:24.000 --> 19:26.000
+the overall
+
+19:26.000 --> 19:28.000
+energy density of the electrode
+
+19:28.000 --> 19:30.000
+and preserve
+
+19:30.000 --> 19:32.000
+the high power characteristics of Cdc.
+
+19:38.000 --> 19:40.000
+The second part
+
+19:40.000 --> 19:42.000
+I want to share is
+
+19:42.000 --> 19:44.000
+the LNVOPF material
+
+19:44.000 --> 19:46.000
+as a medical equipment energy supply application.
+
+19:48.000 --> 19:50.000
+Speaking of medical equipment energy supply,
+
+19:50.000 --> 19:52.000
+I will use
+
+19:52.000 --> 19:54.000
+an implantable
+
+19:54.000 --> 19:56.000
+cardioverter
+
+19:56.000 --> 19:58.000
+defibrillator
+
+19:58.000 --> 20:00.000
+ICD
+
+20:00.000 --> 20:02.000
+as an example.
+
+20:02.000 --> 20:04.000
+Its Chinese name is
+
+20:04.000 --> 20:06.000
+implantable defibrillator.
+
+20:08.000 --> 20:10.000
+It basically
+
+20:10.000 --> 20:12.000
+detects your heart beat.
+
+20:12.000 --> 20:14.000
+When your heart beats abnormally,
+
+20:14.000 --> 20:16.000
+it will use
+
+20:16.000 --> 20:18.000
+high current to stimulate your heart beat.
+
+20:18.000 --> 20:20.000
+For example,
+
+20:20.000 --> 20:22.000
+when your heart stops beating,
+
+20:22.000 --> 20:24.000
+it will stimulate your heart beat.
+
+20:26.000 --> 20:28.000
+I am not a medical background,
+
+20:28.000 --> 20:30.000
+so I only understand
+
+20:30.000 --> 20:32.000
+the basic concept of this device.
+
+20:32.000 --> 20:34.000
+The main usage method
+
+20:34.000 --> 20:36.000
+is still left to the doctor.
+
+20:38.000 --> 20:40.000
+ICD
+
+20:40.000 --> 20:42.000
+mainly uses
+
+20:42.000 --> 20:44.000
+high current and low current output.
+
+20:44.000 --> 20:46.000
+The low current part
+
+20:46.000 --> 20:48.000
+is mainly responsible for the battery.
+
+20:50.000 --> 20:52.000
+The high current part
+
+20:52.000 --> 20:54.000
+is responsible for the circuit board.
+
+20:58.000 --> 21:00.000
+There is also a device size
+
+21:00.000 --> 21:02.000
+at the bottom.
+
+21:02.000 --> 21:04.000
+The size is about one-fourth of the heart.
+
+21:04.000 --> 21:06.000
+Most of the area
+
+21:06.000 --> 21:08.000
+is actually from the low-voltage circuit.
+
+21:12.000 --> 21:14.000
+Another
+
+21:14.000 --> 21:16.000
+medical device
+
+21:18.000 --> 21:20.000
+is
+
+21:20.000 --> 21:22.000
+DBS
+
+21:22.000 --> 21:24.000
+Deep Brain Stimulator.
+
+21:24.000 --> 21:26.000
+Deep Brain Stimulator.
+
+21:28.000 --> 21:30.000
+This type of device
+
+21:30.000 --> 21:32.000
+has the same principle,
+
+21:32.000 --> 21:34.000
+but the current demand
+
+21:34.000 --> 21:36.000
+is smaller than ICD.
+
+21:38.000 --> 21:40.000
+DBS mainly stimulates
+
+21:40.000 --> 21:42.000
+the brain nerve.
+
+21:42.000 --> 21:44.000
+DBS mainly stimulates
+
+21:44.000 --> 21:46.000
+the brain nerve.
+
+21:46.000 --> 21:48.000
+DBS mainly stimulates
+
+21:48.000 --> 21:50.000
+the brain nerve.
+
+21:52.000 --> 21:54.000
+The power supply
+
+21:54.000 --> 21:56.000
+is also made up of
+
+21:56.000 --> 21:58.000
+a battery and a circuit.
+
+21:58.000 --> 22:00.000
+When we want to
+
+22:00.000 --> 22:02.000
+put this medical device
+
+22:02.000 --> 22:04.000
+in the body,
+
+22:04.000 --> 22:06.000
+we hope that
+
+22:06.000 --> 22:08.000
+its size can be smaller and better
+
+22:08.000 --> 22:10.000
+to save more space.
+
+22:10.000 --> 22:12.000
+When we find the material,
+
+22:12.000 --> 22:14.000
+it has the characteristics
+
+22:14.000 --> 22:16.000
+of a battery and a circuit.
+
+22:16.000 --> 22:18.000
+So,
+
+22:18.000 --> 22:20.000
+we can use a single device
+
+22:20.000 --> 22:22.000
+to make a circuit
+
+22:22.000 --> 22:24.000
+or a battery.
+
+22:24.000 --> 22:26.000
+We prefer the battery
+
+22:26.000 --> 22:28.000
+because the battery size is smaller.
+
+22:28.000 --> 22:30.000
+A single storage device
+
+22:30.000 --> 22:32.000
+will provide the supply of
+
+22:32.000 --> 22:34.000
+the current.
+
+22:34.000 --> 22:36.000
+We can save more
+
+22:36.000 --> 22:38.000
+the power supply
+
+22:38.000 --> 22:40.000
+of medical equipment.
+
+22:44.000 --> 22:46.000
+This material
+
+22:46.000 --> 22:48.000
+is
+
+22:48.000 --> 22:50.000
+L-NBOPF.
+
+22:50.000 --> 22:52.000
+NBOPF
+
+22:52.000 --> 22:54.000
+comes from
+
+22:54.000 --> 22:56.000
+NASKON,
+
+22:56.000 --> 22:58.000
+which is a transformer.
+
+22:58.000 --> 23:00.000
+When it is mixed,
+
+23:00.000 --> 23:02.000
+the voltage
+
+23:02.000 --> 23:04.000
+of this material
+
+23:04.000 --> 23:06.000
+will increase
+
+23:06.000 --> 23:08.000
+with time.
+
+23:08.000 --> 23:10.000
+This means it can store more energy.
+
+23:10.000 --> 23:12.000
+And
+
+23:12.000 --> 23:14.000
+when I
+
+23:14.000 --> 23:16.000
+use it,
+
+23:16.000 --> 23:18.000
+the voltage
+
+23:18.000 --> 23:20.000
+will
+
+23:20.000 --> 23:22.000
+decrease
+
+23:22.000 --> 23:24.000
+with time.
+
+23:24.000 --> 23:26.000
+This means
+
+23:26.000 --> 23:28.000
+the material
+
+23:28.000 --> 23:30.000
+will last longer.
+
+23:30.000 --> 23:32.000
+The storage density
+
+23:32.000 --> 23:34.000
+is the same as
+
+23:34.000 --> 23:36.000
+the lithium carbon dioxide
+
+23:36.000 --> 23:38.000
+in the battery.
+
+23:38.000 --> 23:40.000
+Most importantly,
+
+23:40.000 --> 23:42.000
+this material has
+
+23:42.000 --> 23:44.000
+the characteristics of a battery
+
+23:44.000 --> 23:46.000
+and a circuit.
+
+23:46.000 --> 23:48.000
+Next,
+
+23:48.000 --> 23:50.000
+we will introduce another way
+
+23:50.000 --> 23:52.000
+to distinguish a battery from a circuit.
+
+23:52.000 --> 23:54.000
+We will use X-ray
+
+23:54.000 --> 23:56.000
+diffraction
+
+23:56.000 --> 23:58.000
+to judge
+
+23:58.000 --> 24:00.000
+whether the material
+
+24:00.000 --> 24:02.000
+is
+
+24:02.000 --> 24:04.000
+changing
+
+24:04.000 --> 24:06.000
+with the
+
+24:06.000 --> 24:08.000
+structure of the crystal.
+
+24:08.000 --> 24:10.000
+This is what we call
+
+24:10.000 --> 24:12.000
+X-ray diffraction.
+
+24:12.000 --> 24:14.000
+X-ray diffraction
+
+24:14.000 --> 24:16.000
+occurs when the battery is charged.
+
+24:16.000 --> 24:18.000
+X-ray diffraction
+
+24:18.000 --> 24:20.000
+occurs when the battery is charged.
+
+24:20.000 --> 24:22.000
+X-ray diffraction
+
+24:22.000 --> 24:24.000
+occurs when the battery is charged.
+
+24:24.000 --> 24:26.000
+Let's analyze
+
+24:26.000 --> 24:28.000
+NBOPF.
+
+24:28.000 --> 24:30.000
+NBOPF has two peaks
+
+24:30.000 --> 24:32.000
+that are opposite to each other.
+
+24:32.000 --> 24:34.000
+The peak at low voltage
+
+24:34.000 --> 24:36.000
+is parallel.
+
+24:36.000 --> 24:38.000
+The peak at high voltage
+
+24:38.000 --> 24:40.000
+is not parallel.
+
+24:40.000 --> 24:42.000
+This means that
+
+24:42.000 --> 24:44.000
+the material can be used
+
+24:44.000 --> 24:46.000
+as a battery at low voltage
+
+24:46.000 --> 24:48.000
+and as a circuit at high voltage.
+
+24:48.000 --> 24:50.000
+However,
+
+24:50.000 --> 24:52.000
+this is not that simple.
+
+24:52.000 --> 24:54.000
+The material
+
+24:54.000 --> 24:56.000
+is charged twice
+
+24:56.000 --> 24:58.000
+per hour
+
+24:58.000 --> 25:00.000
+Let me introduce
+
+25:00.000 --> 25:02.000
+a little bit.
+
+25:02.000 --> 25:04.000
+When we talk about charging,
+
+25:04.000 --> 25:06.000
+we use a unit called C-ray.
+
+25:06.000 --> 25:08.000
+We use a unit called C-ray.
+
+25:08.000 --> 25:10.000
+C-ray
+
+25:10.000 --> 25:12.000
+has several Cs.
+
+25:12.000 --> 25:14.000
+This means that it can charge several times
+
+25:14.000 --> 25:16.000
+in an hour.
+
+25:16.000 --> 25:18.000
+When this material
+
+25:18.000 --> 25:20.000
+charges twice per hour,
+
+25:20.000 --> 25:22.000
+when this material charges twice per hour,
+
+25:22.000 --> 25:24.000
+which is the part of 2C,
+
+25:24.000 --> 25:26.000
+it can store
+
+25:26.000 --> 25:28.000
+80-90% of the power.
+
+25:28.000 --> 25:30.000
+However,
+
+25:30.000 --> 25:32.000
+when you shorten the charging time
+
+25:32.000 --> 25:34.000
+to 3 minutes,
+
+25:34.000 --> 25:36.000
+it can only charge 8%.
+
+25:36.000 --> 25:38.000
+The reason is that
+
+25:38.000 --> 25:40.000
+during the charging process,
+
+25:40.000 --> 25:42.000
+it will charge the battery first.
+
+25:42.000 --> 25:44.000
+Then it will charge the capacitor.
+
+25:44.000 --> 25:46.000
+However, the charging speed of the battery
+
+25:46.000 --> 25:48.000
+is too slow,
+
+25:48.000 --> 25:50.000
+so I can't even charge the capacitor.
+
+25:50.000 --> 25:52.000
+So,
+
+25:52.000 --> 25:54.000
+it's a bit like this.
+
+25:54.000 --> 25:56.000
+The main reason is that the charging speed of the battery
+
+25:56.000 --> 25:58.000
+is too slow,
+
+25:58.000 --> 26:00.000
+resulting in a decrease
+
+26:00.000 --> 26:02.000
+in the overall charging speed.
+
+26:02.000 --> 26:04.000
+What we are going to do next
+
+26:04.000 --> 26:06.000
+is to
+
+26:06.000 --> 26:08.000
+use the material
+
+26:08.000 --> 26:10.000
+as a nanometer
+
+26:10.000 --> 26:12.000
+to shorten the time
+
+26:12.000 --> 26:14.000
+and distance
+
+26:14.000 --> 26:16.000
+of the particles in the material
+
+26:16.000 --> 26:18.000
+to increase the charging speed
+
+26:18.000 --> 26:20.000
+of the material.
+
+26:20.000 --> 26:22.000
+Next,
+
+26:22.000 --> 26:24.000
+we are going to synthesize
+
+26:24.000 --> 26:26.000
+this nanometer NVOPF
+
+26:26.000 --> 26:28.000
+and discuss the size
+
+26:28.000 --> 26:30.000
+and characteristics of fast charging.
+
+26:30.000 --> 26:32.000
+First,
+
+26:32.000 --> 26:34.000
+the way we make it is
+
+26:34.000 --> 26:36.000
+to put all the materials
+
+26:36.000 --> 26:38.000
+in the
+
+26:38.000 --> 26:40.000
+solvent thermal
+
+26:40.000 --> 26:42.000
+to synthesize.
+
+26:42.000 --> 26:44.000
+We also put it in the pressure suit.
+
+26:44.000 --> 26:46.000
+Then,
+
+26:46.000 --> 26:48.000
+after 12 hours,
+
+26:48.000 --> 26:50.000
+after 185°C,
+
+26:50.000 --> 26:52.000
+we take the material out
+
+26:52.000 --> 26:54.000
+and clean it.
+
+26:54.000 --> 26:56.000
+We will dry it.
+
+26:56.000 --> 26:58.000
+Next, we use
+
+26:58.000 --> 27:00.000
+XRD, X-Ray Diffraction, to confirm the material.
+
+27:00.000 --> 27:02.000
+After confirming that
+
+27:02.000 --> 27:04.000
+there is no problem with the material
+
+27:04.000 --> 27:06.000
+and there is no impurities in it,
+
+27:06.000 --> 27:08.000
+we will make an electrode
+
+27:08.000 --> 27:10.000
+for electromagnetic testing.
+
+27:12.000 --> 27:14.000
+Here,
+
+27:14.000 --> 27:16.000
+we can get
+
+27:16.000 --> 27:18.000
+different types of
+
+27:18.000 --> 27:20.000
+NVOPF
+
+27:20.000 --> 27:22.000
+based on
+
+27:22.000 --> 27:24.000
+the ratio of the material
+
+27:24.000 --> 27:26.000
+and the temperature of the synthesis.
+
+27:26.000 --> 27:28.000
+Basically, NVOPF
+
+27:28.000 --> 27:30.000
+is a rectangular body.
+
+27:30.000 --> 27:32.000
+We usually get
+
+27:32.000 --> 27:34.000
+brick-shaped
+
+27:34.000 --> 27:36.000
+and if it is longer,
+
+27:36.000 --> 27:38.000
+it becomes rod.
+
+27:38.000 --> 27:40.000
+If it is shorter,
+
+27:40.000 --> 27:42.000
+it becomes pellet.
+
+27:42.000 --> 27:44.000
+We will discuss
+
+27:44.000 --> 27:46.000
+the shape of the
+
+27:46.000 --> 27:48.000
+NVOPF
+
+27:48.000 --> 27:50.000
+and the impact of its size
+
+27:50.000 --> 27:52.000
+on its reaction rate.
+
+27:52.000 --> 27:54.000
+Next,
+
+27:54.000 --> 27:56.000
+we will use bValue
+
+27:56.000 --> 27:58.000
+to analyze
+
+27:58.000 --> 28:00.000
+the properties of the fast charge.
+
+28:02.000 --> 28:04.000
+In the first step,
+
+28:04.000 --> 28:06.000
+we make different
+
+28:06.000 --> 28:08.000
+cVs for the material.
+
+28:08.000 --> 28:10.000
+From these four peaks,
+
+28:10.000 --> 28:12.000
+we can get
+
+28:12.000 --> 28:14.000
+individual bValue.
+
+28:16.000 --> 28:18.000
+Then, we make
+
+28:18.000 --> 28:20.000
+bValue with different
+
+28:20.000 --> 28:22.000
+aspect ratio
+
+28:22.000 --> 28:24.000
+and its size
+
+28:24.000 --> 28:26.000
+to see
+
+28:26.000 --> 28:28.000
+how it changes.
+
+28:32.000 --> 28:34.000
+On the left is
+
+28:34.000 --> 28:36.000
+the NVOPF pellet.
+
+28:36.000 --> 28:38.000
+On the right,
+
+28:38.000 --> 28:40.000
+we change
+
+28:40.000 --> 28:42.000
+the rod
+
+28:42.000 --> 28:44.000
+to reduce
+
+28:44.000 --> 28:46.000
+the aspect ratio
+
+28:46.000 --> 28:48.000
+to the brick
+
+28:48.000 --> 28:50.000
+and the pellet.
+
+28:50.000 --> 28:52.000
+We can see that
+
+28:52.000 --> 28:54.000
+the bValue
+
+28:54.000 --> 28:56.000
+decreases as the aspect ratio decreases.
+
+28:56.000 --> 28:58.000
+This means that
+
+28:58.000 --> 29:00.000
+when we decrease the aspect ratio,
+
+29:00.000 --> 29:02.000
+the characteristics of the fast charge
+
+29:02.000 --> 29:04.000
+will be more and more like the current.
+
+29:04.000 --> 29:06.000
+It can become
+
+29:06.000 --> 29:08.000
+the material
+
+29:08.000 --> 29:10.000
+for the fast charge.
+
+29:12.000 --> 29:14.000
+On the other hand,
+
+29:14.000 --> 29:16.000
+we also
+
+29:16.000 --> 29:18.000
+compare the
+
+29:18.000 --> 29:20.000
+particle size
+
+29:20.000 --> 29:22.000
+to the bValue.
+
+29:22.000 --> 29:24.000
+We combine
+
+29:24.000 --> 29:26.000
+the microns
+
+29:26.000 --> 29:28.000
+and microns
+
+29:28.000 --> 29:30.000
+to reduce the nanometers.
+
+29:30.000 --> 29:32.000
+The nanometers
+
+29:32.000 --> 29:34.000
+are reduced to a few tens of nanometers.
+
+29:34.000 --> 29:36.000
+We can see that
+
+29:36.000 --> 29:38.000
+when the size decreases,
+
+29:38.000 --> 29:40.000
+the bValue also increases.
+
+29:40.000 --> 29:42.000
+The increase in bValue means
+
+29:42.000 --> 29:44.000
+that the smaller the particle,
+
+29:44.000 --> 29:46.000
+the more suitable it is
+
+29:46.000 --> 29:48.000
+for the fast charge.
+
+29:48.000 --> 29:50.000
+The more suitable it is
+
+29:50.000 --> 29:52.000
+for the fast charge.
+
+29:56.000 --> 29:58.000
+The focus here is
+
+29:58.000 --> 30:00.000
+on the microbrick.
+
+30:00.000 --> 30:02.000
+Its peak bValue
+
+30:02.000 --> 30:04.000
+is close to 0.5.
+
+30:04.000 --> 30:06.000
+0.5 means that it is
+
+30:06.000 --> 30:08.000
+like a battery.
+
+30:08.000 --> 30:10.000
+When we make a nanoparticle,
+
+30:10.000 --> 30:12.000
+all of its
+
+30:12.000 --> 30:14.000
+oxidation-reduction reactions
+
+30:14.000 --> 30:16.000
+have a bValue
+
+30:16.000 --> 30:18.000
+of 0.7 or higher.
+
+30:22.000 --> 30:24.000
+Next,
+
+30:24.000 --> 30:26.000
+we will do a charge-electric charge test.
+
+30:26.000 --> 30:28.000
+The nanoparticle
+
+30:28.000 --> 30:30.000
+of the microbrick
+
+30:30.000 --> 30:32.000
+can charge up to 90%
+
+30:32.000 --> 30:34.000
+in 2 hours.
+
+30:34.000 --> 30:36.000
+in 2 hours.
+
+30:36.000 --> 30:38.000
+This means that
+
+30:38.000 --> 30:40.000
+the bValue of the
+
+30:40.000 --> 30:42.000
+NBOPF
+
+30:42.000 --> 30:44.000
+has increased
+
+30:44.000 --> 30:46.000
+significantly
+
+30:46.000 --> 30:48.000
+after the nanoparticle
+
+30:48.000 --> 30:50.000
+has been nanoparticle.
+
+30:50.000 --> 30:52.000
+The bValue of the
+
+30:52.000 --> 30:54.000
+bValue of the
+
+30:54.000 --> 30:56.000
+bValue of the
+
+30:56.000 --> 30:58.000
+bValue of
+
+30:58.000 --> 31:00.000
+bValue of
+
+31:00.000 --> 31:02.000
+bValue of
+
+31:02.000 --> 31:04.000
+bValue of
+
+31:04.000 --> 31:06.000
+bValue of
+
+31:06.000 --> 31:08.000
+bValue of
+
+31:08.000 --> 31:10.000
+bValue of
+
+31:10.000 --> 31:12.000
+bValue of
+
+31:12.000 --> 31:14.000
+bValue of
+
+31:14.000 --> 31:16.000
+bValue of
+
+31:16.000 --> 31:18.000
+bValue of
+
+31:18.000 --> 31:20.000
+bValue of
+
+31:20.000 --> 31:22.000
+bValue of
+
+31:22.000 --> 31:24.000
+bValue of
+
+31:25.000 --> 31:27.000
+bValue of
+
+31:27.000 --> 31:29.000
+bValue of
+
+31:29.000 --> 31:31.000
+bValue of
+
+31:31.000 --> 31:33.000
+bValue of
+
+31:33.000 --> 31:35.000
+bValue of
+
+31:35.000 --> 31:37.000
+bValue of
+
+31:37.000 --> 31:39.000
+bValue of
+
+31:39.000 --> 31:41.000
+bValue of
+
+31:41.000 --> 31:43.000
+bValue of
+
+31:43.000 --> 31:44.000
+bValue of
+
+31:44.000 --> 31:46.000
+bValue of
+
+31:46.000 --> 31:48.000
+bValue of
+
+31:48.000 --> 31:50.000
+bValue of
+
+31:50.000 --> 31:52.000
+bValue of
+
+31:52.000 --> 31:54.000
+bValue of
+
+31:54.000 --> 31:56.000
+bValue of
+
+31:56.000 --> 31:58.000
+bValue of
+
+31:58.000 --> 32:00.000
+bValue of
+
+32:00.000 --> 32:02.000
+bValue of
+
+32:02.000 --> 32:04.000
+bValue of
+
+32:04.000 --> 32:06.000
+bValue of
+
+32:06.000 --> 32:08.000
+bValue of
+
+32:08.000 --> 32:10.000
+bValue of
+
+32:10.000 --> 32:12.000
+bValue of
+
+32:12.000 --> 32:14.000
+bValue of
+
+32:14.000 --> 32:16.000
+bValue of
+
+32:16.000 --> 32:18.000
+bValue of
+
+32:18.000 --> 32:20.000
+bValue of
+
+32:20.000 --> 32:22.000
+bValue of
+
+32:22.000 --> 32:24.000
+bValue of
+
+32:24.000 --> 32:26.000
+bValue of
+
+32:26.000 --> 32:28.000
+bValue of
+
+32:28.000 --> 32:30.000
+bValue of
+
+32:30.000 --> 32:32.000
+bValue of
+
+32:32.000 --> 32:34.000
+bValue of
+
+32:34.000 --> 32:36.000
+bValue of
+
+32:36.000 --> 32:38.000
+bValue of
+
+32:38.000 --> 32:40.000
+bValue of
+
+32:40.000 --> 32:42.000
+bValue of
+
+32:42.000 --> 32:44.000
+bValue of
+
+32:44.000 --> 32:46.000
+bValue of
+
+32:46.000 --> 32:48.000
+bValue of
+
+32:48.000 --> 32:50.000
+bValue of
+
+32:50.000 --> 32:52.000
+bValue of
+
+32:52.000 --> 32:54.000
+bValue of
+
+32:54.000 --> 32:56.000
+bValue of
+
+32:56.000 --> 32:58.000
+bValue of
+
+32:58.000 --> 33:00.000
+bValue of
+
+33:00.000 --> 33:02.000
+bValue of
+
+33:02.000 --> 33:04.000
+bValue of
+
+33:04.000 --> 33:06.000
+bValue of
+
+33:06.000 --> 33:08.000
+bValue of
+
+33:08.000 --> 33:10.000
+bValue of
+
+33:40.000 --> 33:42.000
+bValue of
+
+33:42.000 --> 33:44.000
+bValue of
+
+33:44.000 --> 33:46.000
+bValue of
+
+33:46.000 --> 33:48.000
+bValue of
+
+33:48.000 --> 33:50.000
+bValue of
+
+33:50.000 --> 33:52.000
+bValue of
+
+33:54.000 --> 33:56.000
+bValue of
+
+33:56.000 --> 33:58.000
+bValue of
+
+33:58.000 --> 34:00.000
+bValue of
+
+34:00.000 --> 34:02.000
+bValue of
+
+34:02.000 --> 34:04.000
+bValue of
+
+34:04.000 --> 34:06.000
+bValue of
+
+34:06.000 --> 34:08.000
+bValue of
+
+34:08.000 --> 34:10.000
+bValue of
+
+34:10.000 --> 34:12.000
+bValue of
+
+34:12.000 --> 34:14.000
+bValue of
+
+34:14.000 --> 34:16.000
+bValue of
+
+34:16.000 --> 34:18.000
+bValue of
+
+34:18.000 --> 34:20.000
+bValue of
+
+34:20.000 --> 34:22.000
+bValue of
+
+34:22.000 --> 34:24.000
+bValue of
+
+34:24.000 --> 34:26.000
+bValue of
+
+34:26.000 --> 34:28.000
+bValue of
+
+34:28.000 --> 34:30.000
+bValue of
+
+34:30.000 --> 34:32.000
+bValue of
+
+34:32.000 --> 34:34.000
+bValue of
+
+34:34.000 --> 34:36.000
+cV meters
+
+34:36.000 --> 34:38.000
+compared to the current specifications
+
+34:38.000 --> 34:40.000
+our current current
+
+34:40.000 --> 34:42.000
+is greater than
+
+34:42.000 --> 34:44.000
+greater than these functions
+
+34:44.000 --> 34:46.000
+greater than these specifications
+
+34:46.000 --> 34:48.000
+our frequency
+
+34:48.000 --> 34:50.000
+because of the device
+
+34:50.000 --> 34:52.000
+on the device
+
+34:52.000 --> 34:54.000
+we can only measure
+
+34:54.000 --> 34:56.000
+a few microseconds
+
+34:56.000 --> 34:58.000
+so we only measured
+
+34:58.000 --> 35:00.000
+50Hz
+
+35:00.000 --> 35:02.000
+50Hz
+
+35:02.000 --> 35:04.000
+also covers some
+
+35:04.000 --> 35:06.000
+function frequency
+
+35:10.000 --> 35:12.000
+next
+
+35:12.000 --> 35:14.000
+I will use this graph
+
+35:14.000 --> 35:16.000
+to make a brief summary
+
+35:16.000 --> 35:18.000
+the second part
+
+35:18.000 --> 35:20.000
+we use nanoparticle
+
+35:20.000 --> 35:22.000
+to convert this
+
+35:22.000 --> 35:24.000
+NBOPF
+
+35:24.000 --> 35:26.000
+to fast charge
+
+35:26.000 --> 35:28.000
+in addition
+
+35:28.000 --> 35:30.000
+we also proved
+
+35:30.000 --> 35:32.000
+the feasibility of
+
+35:32.000 --> 35:34.000
+NBOPF
+
+35:36.000 --> 35:38.000
+finally
+
+35:38.000 --> 35:40.000
+I will make a brief summary
+
+35:40.000 --> 35:42.000
+what is
+
+35:42.000 --> 35:44.000
+the so-called
+
+35:44.000 --> 35:46.000
+Taekwondo Message
+
+35:46.000 --> 35:48.000
+first, I hope everyone
+
+35:48.000 --> 35:50.000
+knows what is a nanoparticle
+
+35:50.000 --> 35:52.000
+nanoparticle
+
+35:52.000 --> 35:54.000
+is actually a storage mechanism
+
+35:54.000 --> 35:56.000
+it has the power of the nanoparticle
+
+35:56.000 --> 35:58.000
+and the density of the battery
+
+35:58.000 --> 36:00.000
+and
+
+36:02.000 --> 36:04.000
+the second point
+
+36:04.000 --> 36:06.000
+is how we can judge a nanoparticle
+
+36:06.000 --> 36:08.000
+of course, through
+
+36:08.000 --> 36:10.000
+the method of electromagnetic
+
+36:10.000 --> 36:12.000
+we have such a CV
+
+36:12.000 --> 36:14.000
+we have such a oblique
+
+36:14.000 --> 36:16.000
+GC
+
+36:16.000 --> 36:18.000
+and in the process of my oxygenation
+
+36:18.000 --> 36:20.000
+the material did not change
+
+36:22.000 --> 36:24.000
+finally
+
+36:24.000 --> 36:26.000
+how do we design a nanoparticle
+
+36:26.000 --> 36:28.000
+mainly
+
+36:28.000 --> 36:30.000
+here I demo three points
+
+36:30.000 --> 36:32.000
+the first is
+
+36:32.000 --> 36:34.000
+the first is the conductivity
+
+36:34.000 --> 36:36.000
+and the airtightness
+
+36:36.000 --> 36:38.000
+I control the conductivity and airtightness of my electrode
+
+36:38.000 --> 36:40.000
+to make my
+
+36:40.000 --> 36:42.000
+NBOPF optimized
+
+36:42.000 --> 36:44.000
+the second
+
+36:44.000 --> 36:46.000
+is to make the material nanoparticle
+
+36:46.000 --> 36:48.000
+and adjust its phase change
+
+36:48.000 --> 36:50.000
+to make our general battery material
+
+36:50.000 --> 36:52.000
+it is not affected
+
+36:52.000 --> 36:54.000
+by
+
+36:54.000 --> 36:56.000
+the transfer of ions
+
+36:56.000 --> 36:58.000
+too slow
+
+36:58.000 --> 37:00.000
+let it
+
+37:00.000 --> 37:02.000
+in the part of the battery
+
+37:02.000 --> 37:04.000
+can reach the high speed charge point
+
+37:04.000 --> 37:06.000
+the effect
+
+37:10.000 --> 37:12.000
+thank you
+
+37:14.000 --> 37:16.000
+thank you
+
+37:16.000 --> 37:18.000
+if you have any questions
+
+37:20.000 --> 37:22.000
+please let me know
+
+37:22.000 --> 37:24.000
+thank you
+
+37:24.000 --> 37:26.000
+thank you Matt
+
+37:26.000 --> 37:28.000
+now we can
+
+37:30.000 --> 37:32.000
+start the Q&A
+
+37:32.000 --> 37:34.000
+in the chat box
+
+37:34.000 --> 37:36.000
+there are some questions
+
+37:36.000 --> 37:38.000
+do you want to unmute
+
+37:38.000 --> 37:40.000
+and ask your question
+
+37:46.000 --> 37:48.000
+I want to ask
+
+37:48.000 --> 37:50.000
+what is the electrolyte used
+
+37:50.000 --> 37:52.000
+when you start to make your battery
+
+37:52.000 --> 37:54.000
+it should be organic electrolyte
+
+37:54.000 --> 37:56.000
+right
+
+37:56.000 --> 37:58.000
+yes
+
+37:58.000 --> 38:00.000
+I use
+
+38:00.000 --> 38:02.000
+LIPF-6
+
+38:02.000 --> 38:04.000
+ECDMC
+
+38:04.000 --> 38:06.000
+the general
+
+38:06.000 --> 38:08.000
+electrolyte used
+
+38:08.000 --> 38:10.000
+so we can understand
+
+38:10.000 --> 38:12.000
+why the lowest voltage
+
+38:12.000 --> 38:14.000
+should be around 1.2V
+
+38:14.000 --> 38:16.000
+another question
+
+38:16.000 --> 38:18.000
+what is the
+
+38:18.000 --> 38:20.000
+diagonal direction of
+
+38:20.000 --> 38:22.000
+the nitrogen oxide
+
+38:22.000 --> 38:24.000
+nitrogen oxide
+
+38:24.000 --> 38:26.000
+not supercapacitor
+
+38:26.000 --> 38:28.000
+it should be
+
+38:28.000 --> 38:30.000
+interesting
+
+38:30.000 --> 38:32.000
+or important
+
+38:34.000 --> 38:36.000
+basically
+
+38:36.000 --> 38:38.000
+the diagonal direction
+
+38:38.000 --> 38:40.000
+is between
+
+38:40.000 --> 38:42.000
+1.2V to
+
+38:42.000 --> 38:44.000
+1.2V to 3V
+
+38:44.000 --> 38:46.000
+this is
+
+38:46.000 --> 38:48.000
+here
+
+38:48.000 --> 38:50.000
+here
+
+38:50.000 --> 38:52.000
+the diagonal direction
+
+38:52.000 --> 38:54.000
+is 1.2V to
+
+38:54.000 --> 38:56.000
+1.2V to 2.5V
+
+38:56.000 --> 38:58.000
+this is
+
+38:58.000 --> 39:00.000
+the nitrogen oxide
+
+39:00.000 --> 39:02.000
+the capacity
+
+39:02.000 --> 39:04.000
+should be
+
+39:04.000 --> 39:06.000
+200
+
+39:06.000 --> 39:08.000
+from 1.2V to
+
+39:08.000 --> 39:10.000
+2.5V
+
+39:10.000 --> 39:12.000
+90% of the voltage
+
+39:12.000 --> 39:14.000
+comes from here
+
+39:14.000 --> 39:16.000
+it means
+
+39:16.000 --> 39:18.000
+when it is below 1.2V
+
+39:18.000 --> 39:20.000
+2.5V will be disconnected
+
+39:20.000 --> 39:22.000
+when it is below 1.2V
+
+39:22.000 --> 39:24.000
+the electrolyte will be disconnected
+
+39:24.000 --> 39:26.000
+the material will not be disconnected
+
+39:26.000 --> 39:28.000
+when it is above 2.5V
+
+39:28.000 --> 39:30.000
+you can't see
+
+39:30.000 --> 39:32.000
+the current
+
+39:32.000 --> 39:34.000
+the current will be
+
+39:34.000 --> 39:36.000
+close to 0
+
+39:36.000 --> 39:38.000
+like this picture
+
+39:38.000 --> 39:40.000
+sorry
+
+39:40.000 --> 39:42.000
+the CV is the same
+
+39:42.000 --> 39:44.000
+it will be
+
+39:44.000 --> 39:46.000
+no current
+
+39:46.000 --> 39:48.000
+basically no current
+
+39:48.000 --> 39:50.000
+ok
+
+39:50.000 --> 39:52.000
+you just showed this slide
+
+39:52.000 --> 39:54.000
+so I want to ask the following question
+
+39:54.000 --> 39:56.000
+how do you calculate the B-value
+
+39:56.000 --> 39:58.000
+and the voltage graph in the lower right corner
+
+39:58.000 --> 40:00.000
+now we have
+
+40:00.000 --> 40:02.000
+different CVs
+
+40:02.000 --> 40:04.000
+each CV
+
+40:04.000 --> 40:06.000
+has a current
+
+40:06.000 --> 40:08.000
+in each voltage
+
+40:08.000 --> 40:10.000
+so every current
+
+40:10.000 --> 40:12.000
+will be analyzed
+
+40:12.000 --> 40:14.000
+for the change
+
+40:14.000 --> 40:16.000
+does the B-value have to use the peak current
+
+40:16.000 --> 40:18.000
+or does it have to be any current
+
+40:18.000 --> 40:20.000
+so today in pseudo-capacitance
+
+40:20.000 --> 40:22.000
+pseudo-capacitance
+
+40:22.000 --> 40:24.000
+basically
+
+40:24.000 --> 40:26.000
+it has many
+
+40:26.000 --> 40:28.000
+continuous
+
+40:28.000 --> 40:30.000
+redox reactions
+
+40:30.000 --> 40:32.000
+so when you produce a box
+
+40:32.000 --> 40:34.000
+you can't
+
+40:34.000 --> 40:36.000
+only analyze
+
+40:36.000 --> 40:38.000
+the peak current
+
+40:38.000 --> 40:40.000
+you are not fair to
+
+40:40.000 --> 40:42.000
+the other currents
+
+40:42.000 --> 40:44.000
+so
+
+40:44.000 --> 40:46.000
+basically
+
+40:46.000 --> 40:48.000
+in pseudo-capacitance
+
+40:48.000 --> 40:50.000
+you can use this formula
+
+40:50.000 --> 40:52.000
+on all the voltage graphs
+
+40:52.000 --> 40:54.000
+to draw the continuous curve
+
+40:54.000 --> 40:56.000
+another story
+
+40:56.000 --> 40:58.000
+behind this
+
+40:58.000 --> 41:00.000
+is that the redox
+
+41:00.000 --> 41:02.000
+happens below 2V
+
+41:02.000 --> 41:04.000
+so it doesn't have redox
+
+41:04.000 --> 41:06.000
+so what do you see
+
+41:06.000 --> 41:08.000
+you see EDLC
+
+41:08.000 --> 41:10.000
+what does EDLC mean
+
+41:10.000 --> 41:12.000
+EDLC is the
+
+41:12.000 --> 41:14.000
+reaction rate
+
+41:14.000 --> 41:16.000
+on the surface of the electrode
+
+41:16.000 --> 41:18.000
+so EDLC
+
+41:18.000 --> 41:20.000
+from the electrode
+
+41:20.000 --> 41:22.000
+far away
+
+41:22.000 --> 41:24.000
+to the surface of the electrode
+
+41:24.000 --> 41:26.000
+what do you mean by diffusion control
+
+41:26.000 --> 41:28.000
+yes
+
+41:28.000 --> 41:30.000
+so here we increase
+
+41:30.000 --> 41:32.000
+the density of Cdc
+
+41:32.000 --> 41:34.000
+so the vacuum of the electrode
+
+41:34.000 --> 41:36.000
+increases
+
+41:36.000 --> 41:38.000
+so when there is no redox
+
+41:38.000 --> 41:40.000
+the kinetics
+
+41:40.000 --> 41:42.000
+increases
+
+41:42.000 --> 41:44.000
+so when there is
+
+41:44.000 --> 41:46.000
+redox
+
+41:46.000 --> 41:48.000
+the kinetics increases
+
+41:52.000 --> 41:54.000
+any other questions
+
+41:54.000 --> 41:56.000
+ok thank you
+
+41:56.000 --> 41:58.000
+the last one is later
+
+41:58.000 --> 42:00.000
+so if you have any questions
+
+42:00.000 --> 42:02.000
+I will ask later
+
+42:02.000 --> 42:04.000
+any other
+
+42:04.000 --> 42:06.000
+questions
+
+42:06.000 --> 42:08.000
+hello
+
+42:08.000 --> 42:10.000
+hello
+
+42:10.000 --> 42:12.000
+I want to ask Matt
+
+42:12.000 --> 42:14.000
+some questions
+
+42:14.000 --> 42:16.000
+please
+
+42:16.000 --> 42:18.000
+Matt thank you for your speech
+
+42:18.000 --> 42:20.000
+my main question is
+
+42:20.000 --> 42:22.000
+on your first project
+
+42:22.000 --> 42:24.000
+you were doing
+
+42:24.000 --> 42:26.000
+I want to ask
+
+42:26.000 --> 42:28.000
+how big is the particle size
+
+42:28.000 --> 42:30.000
+of Nairobia
+
+42:30.000 --> 42:32.000
+the particle size is
+
+42:32.000 --> 42:34.000
+here
+
+42:34.000 --> 42:36.000
+you can see on the upper right
+
+42:36.000 --> 42:38.000
+the size is
+
+42:38.000 --> 42:40.000
+20-30 nm
+
+42:40.000 --> 42:42.000
+20-30 nm
+
+42:42.000 --> 42:44.000
+so you
+
+42:44.000 --> 42:46.000
+reduce graphene oxide
+
+42:46.000 --> 42:48.000
+and Cdc
+
+42:48.000 --> 42:50.000
+to increase
+
+42:50.000 --> 42:52.000
+the conductivity of short-circuit and long-circuit
+
+42:52.000 --> 42:54.000
+yes
+
+42:54.000 --> 42:56.000
+Cdc also provides the vacuum
+
+42:56.000 --> 42:58.000
+ok
+
+42:58.000 --> 43:00.000
+I was doing research on
+
+43:00.000 --> 43:02.000
+hierarchical porous carbons
+
+43:02.000 --> 43:04.000
+and
+
+43:04.000 --> 43:06.000
+there are small
+
+43:06.000 --> 43:08.000
+micropores
+
+43:08.000 --> 43:10.000
+and big macropores
+
+43:10.000 --> 43:12.000
+so I was thinking
+
+43:12.000 --> 43:14.000
+if you combine
+
+43:14.000 --> 43:16.000
+other porous materials
+
+43:16.000 --> 43:18.000
+does it increase the
+
+43:18.000 --> 43:20.000
+potential of the capacitor
+
+43:20.000 --> 43:22.000
+yes
+
+43:22.000 --> 43:24.000
+because
+
+43:24.000 --> 43:26.000
+I have enough porosity
+
+43:26.000 --> 43:28.000
+my particles
+
+43:28.000 --> 43:30.000
+can be
+
+43:30.000 --> 43:32.000
+I can
+
+43:32.000 --> 43:34.000
+absorb more electrolyte
+
+43:34.000 --> 43:36.000
+so I can
+
+43:36.000 --> 43:38.000
+there is a slide
+
+43:38.000 --> 43:40.000
+I didn't show
+
+43:40.000 --> 43:42.000
+because I have some time
+
+43:42.000 --> 43:44.000
+so you can see
+
+43:44.000 --> 43:46.000
+why Nairobia
+
+43:46.000 --> 43:48.000
+needs big porosity
+
+43:48.000 --> 43:50.000
+basically
+
+43:50.000 --> 43:52.000
+it comes from
+
+43:52.000 --> 43:54.000
+ok
+
+43:54.000 --> 43:56.000
+basically this slide
+
+43:56.000 --> 43:58.000
+I was doing different
+
+43:58.000 --> 44:00.000
+this is the result from consul
+
+44:00.000 --> 44:02.000
+so
+
+44:02.000 --> 44:04.000
+basically it comes from Nernst equation
+
+44:04.000 --> 44:06.000
+and Poisson
+
+44:06.000 --> 44:08.000
+equation
+
+44:08.000 --> 44:10.000
+Poisson equation represents
+
+44:10.000 --> 44:12.000
+how much
+
+44:12.000 --> 44:14.000
+the dielectric constant is
+
+44:14.000 --> 44:16.000
+so under different voltage
+
+44:16.000 --> 44:18.000
+how many particles are on the surface
+
+44:18.000 --> 44:20.000
+so when the voltage
+
+44:20.000 --> 44:22.000
+moves to
+
+44:22.000 --> 44:24.000
+in the middle of the graph
+
+44:24.000 --> 44:26.000
+basically
+
+44:26.000 --> 44:28.000
+it represents
+
+44:28.000 --> 44:30.000
+how many particles are on the surface
+
+44:30.000 --> 44:32.000
+but when it
+
+44:32.000 --> 44:34.000
+moves to
+
+44:34.000 --> 44:36.000
+below a certain level
+
+44:36.000 --> 44:38.000
+Nairobia starts to react
+
+44:38.000 --> 44:40.000
+I need a lot of
+
+44:40.000 --> 44:42.000
+particles to enter the material
+
+44:42.000 --> 44:44.000
+so when it needs a lot of particles
+
+44:44.000 --> 44:46.000
+to enter the material
+
+44:46.000 --> 44:48.000
+it will cause the surface porosity
+
+44:48.000 --> 44:50.000
+the surface porosity
+
+44:50.000 --> 44:52.000
+is the reason why
+
+44:52.000 --> 44:54.000
+Nairobia's kinetics
+
+44:54.000 --> 44:56.000
+so
+
+44:56.000 --> 44:58.000
+this is the reason why
+
+44:58.000 --> 45:00.000
+this material needs
+
+45:00.000 --> 45:02.000
+high porosity
+
+45:02.000 --> 45:04.000
+so that
+
+45:04.000 --> 45:06.000
+it can maintain
+
+45:06.000 --> 45:08.000
+the characteristics of the dielectric
+
+45:08.000 --> 45:10.000
+or the characteristics
+
+45:10.000 --> 45:12.000
+of the dielectric
+
+45:12.000 --> 45:14.000
+I want to
+
+45:14.000 --> 45:16.000
+follow up
+
+45:16.000 --> 45:18.000
+how did you come up with
+
+45:18.000 --> 45:20.000
+reducing graphene oxide
+
+45:20.000 --> 45:22.000
+plus Cdc
+
+45:22.000 --> 45:24.000
+reducing graphene oxide
+
+45:24.000 --> 45:26.000
+has another advantage
+
+45:26.000 --> 45:28.000
+on the synthesis
+
+45:28.000 --> 45:30.000
+basically if you want to
+
+45:30.000 --> 45:32.000
+grow oxide
+
+45:32.000 --> 45:34.000
+graphene oxide
+
+45:34.000 --> 45:36.000
+the ligand of oxygen
+
+45:36.000 --> 45:38.000
+can be the nucleation site
+
+45:38.000 --> 45:40.000
+of these synthesis
+
+45:40.000 --> 45:42.000
+no matter if you want to grow metal particles
+
+45:42.000 --> 45:44.000
+or oxide particles
+
+45:44.000 --> 45:46.000
+basically it can easily grow on top
+
+45:46.000 --> 45:48.000
+because it has a lot of sites
+
+45:48.000 --> 45:50.000
+the particles you grow
+
+45:50.000 --> 45:52.000
+are small
+
+45:52.000 --> 45:54.000
+so
+
+45:54.000 --> 45:56.000
+graphene oxide
+
+45:56.000 --> 45:58.000
+is like an additive
+
+45:58.000 --> 46:00.000
+it can make your particle size very small
+
+46:00.000 --> 46:02.000
+second, it also increases
+
+46:02.000 --> 46:04.000
+the conductivity
+
+46:04.000 --> 46:06.000
+for graphene oxide
+
+46:06.000 --> 46:08.000
+there are several ways
+
+46:08.000 --> 46:10.000
+for example, you do filtration
+
+46:10.000 --> 46:12.000
+you filter it
+
+46:12.000 --> 46:14.000
+it is
+
+46:14.000 --> 46:16.000
+a two-dimensional structure
+
+46:16.000 --> 46:18.000
+so when you do filtration
+
+46:18.000 --> 46:20.000
+when you do filtration
+
+46:20.000 --> 46:22.000
+it will become
+
+46:22.000 --> 46:24.000
+a very dense electrode
+
+46:24.000 --> 46:26.000
+if it is very dense
+
+46:26.000 --> 46:28.000
+the electrode can't get in
+
+46:28.000 --> 46:30.000
+so we want to
+
+46:30.000 --> 46:32.000
+find a structure
+
+46:32.000 --> 46:34.000
+like Cdc
+
+46:34.000 --> 46:36.000
+this
+
+46:36.000 --> 46:38.000
+structure
+
+46:38.000 --> 46:40.000
+of graphene oxide
+
+46:40.000 --> 46:42.000
+to mix in
+
+46:42.000 --> 46:44.000
+but we don't want to mix too much
+
+46:44.000 --> 46:46.000
+because
+
+46:46.000 --> 46:48.000
+the density of the energy
+
+46:48.000 --> 46:50.000
+is relatively low
+
+46:50.000 --> 46:52.000
+I understand, thank you
+
+46:56.000 --> 46:58.000
+any other questions?
+
+47:04.000 --> 47:06.000
+if not
+
+47:06.000 --> 47:08.000
+I will ask my last question
+
+47:08.000 --> 47:10.000
+after talking about ZMath
+
+47:10.000 --> 47:12.000
+I mentioned
+
+47:12.000 --> 47:14.000
+how to distinguish
+
+47:14.000 --> 47:16.000
+between solid electrolyte and
+
+47:16.000 --> 47:18.000
+solid electrolyte
+
+47:18.000 --> 47:20.000
+but now
+
+47:20.000 --> 47:22.000
+there is a popular topic
+
+47:22.000 --> 47:24.000
+solid electrolyte
+
+47:24.000 --> 47:26.000
+or solid electrolyte
+
+47:26.000 --> 47:28.000
+I want to see
+
+47:28.000 --> 47:30.000
+the difference between
+
+47:30.000 --> 47:32.000
+solid electrolyte and
+
+47:32.000 --> 47:34.000
+other two
+
+47:34.000 --> 47:36.000
+how to distinguish
+
+47:36.000 --> 47:38.000
+how to judge
+
+47:38.000 --> 47:40.000
+actually
+
+47:40.000 --> 47:42.000
+I didn't do the
+
+47:42.000 --> 47:44.000
+because I talked about
+
+47:44.000 --> 47:46.000
+the second topic
+
+47:46.000 --> 47:48.000
+solid electrolyte
+
+47:48.000 --> 47:50.000
+yes, it was
+
+47:50.000 --> 47:52.000
+solid electrolyte
+
+47:52.000 --> 47:54.000
+but we took it
+
+47:54.000 --> 47:56.000
+basically
+
+47:56.000 --> 47:58.000
+we just changed its structure
+
+47:58.000 --> 48:00.000
+then we took it as an electrolyte
+
+48:00.000 --> 48:02.000
+basically
+
+48:02.000 --> 48:04.000
+solid electrolyte
+
+48:06.000 --> 48:08.000
+yes
+
+48:08.000 --> 48:10.000
+I don't know much about this
+
+48:10.000 --> 48:12.000
+what I know about solid electrolyte
+
+48:12.000 --> 48:14.000
+is
+
+48:14.000 --> 48:16.000
+its conductivity
+
+48:16.000 --> 48:18.000
+it must be very thin
+
+48:18.000 --> 48:20.000
+because its conductivity is not as fast as liquid
+
+48:20.000 --> 48:22.000
+although it is solid electrolyte
+
+48:22.000 --> 48:24.000
+but it is not as fast as liquid
+
+48:24.000 --> 48:26.000
+another thing
+
+48:26.000 --> 48:28.000
+everyone says
+
+48:28.000 --> 48:30.000
+solid electrolyte
+
+48:30.000 --> 48:32.000
+it doesn't
+
+48:32.000 --> 48:34.000
+we can
+
+48:34.000 --> 48:36.000
+avoid the SEI reaction
+
+48:36.000 --> 48:38.000
+but actually
+
+48:38.000 --> 48:40.000
+this is a loss
+
+48:40.000 --> 48:42.000
+actually solid electrolyte
+
+48:42.000 --> 48:44.000
+in its first cycle
+
+48:44.000 --> 48:46.000
+its SEI
+
+48:46.000 --> 48:48.000
+has a big impact
+
+48:48.000 --> 48:50.000
+in our group
+
+48:50.000 --> 48:52.000
+in addition to high-speed charge
+
+48:52.000 --> 48:54.000
+another part is
+
+48:54.000 --> 48:56.000
+3D battery
+
+48:56.000 --> 48:58.000
+3D battery is
+
+48:58.000 --> 49:00.000
+the structure of the battery
+
+49:00.000 --> 49:02.000
+to make it a satellite battery
+
+49:02.000 --> 49:04.000
+that part
+
+49:04.000 --> 49:06.000
+in solid electrolyte
+
+49:06.000 --> 49:08.000
+of course we want to use solid electrolyte
+
+49:08.000 --> 49:10.000
+because solid electrolyte
+
+49:10.000 --> 49:12.000
+its density
+
+49:12.000 --> 49:14.000
+is much higher than liquid
+
+49:14.000 --> 49:16.000
+so we can save a lot of liquid
+
+49:16.000 --> 49:18.000
+needed volume
+
+49:18.000 --> 49:20.000
+but they found that in the first cycle
+
+49:20.000 --> 49:22.000
+this SEI
+
+49:22.000 --> 49:24.000
+actually still occurs
+
+49:24.000 --> 49:26.000
+and after it occurs
+
+49:26.000 --> 49:28.000
+because it is solid
+
+49:28.000 --> 49:30.000
+so it is very difficult to solve
+
+49:30.000 --> 49:32.000
+basically your material
+
+49:32.000 --> 49:34.000
+at first it is a tight connection
+
+49:34.000 --> 49:36.000
+it will separate
+
+49:40.000 --> 49:42.000
+thank you
+
+49:46.000 --> 49:48.000
+anyone else have questions?
+
+49:54.000 --> 49:56.000
+if no questions
+
+49:58.000 --> 50:00.000
+Max, do you have your email?
+
+50:00.000 --> 50:02.000
+yes
+
+50:02.000 --> 50:04.000
+I put it in the last slide
+
+50:08.000 --> 50:10.000
+if you have any questions
+
+50:10.000 --> 50:12.000
+you can
+
+50:14.000 --> 50:16.000
+email me
+
+50:20.000 --> 50:22.000
+thank you
+
+50:22.000 --> 50:24.000
+for coming
+
+50:24.000 --> 50:26.000
+and thank you Max
+
+50:26.000 --> 50:28.000
+for giving us such a wonderful speech
+
+50:28.000 --> 50:30.000
+this recording
+
+50:30.000 --> 50:32.000
+you can watch it again
+
+50:32.000 --> 50:34.000
+in a week
+
+50:36.000 --> 50:38.000
+and you can continue
+
+50:38.000 --> 50:40.000
+to discuss with Max
+
+50:40.000 --> 50:42.000
+related research
+
+50:42.000 --> 50:44.000
+so I will stop recording now
+

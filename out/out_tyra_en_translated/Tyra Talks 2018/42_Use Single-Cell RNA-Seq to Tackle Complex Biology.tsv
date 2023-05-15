@@ -1,0 +1,489 @@
+start	end	text
+0	9000	Hello, everyone.
+9000	15000	I am honored to be able to introduce Dr. Sun today.
+15000	23000	Dr. Sun completed her bachelor's degree from 1999 to 2013
+23000	28000	in Plant Pathology and Microbiology at Taiwan University.
+28000	35000	After completing her bachelor's degree from 2003 to 2005,
+35000	43000	she completed her master's degree in Plant Pathology and Microbiology at the same university in Taiwan.
+43000	51000	She then completed her Ph.D. degree from 2005 to 2010 at Purdue University.
+51000	54000	Her major is Chemical Biology.
+54000	58000	After completing her Ph.D. degree, she went to MIT to do her postdoc.
+58000	68000	After four years, she went to UCSF to do her second postdoc and assistant researcher.
+68000	75000	This year, she started her new job as a Senior Scientific Researcher at Genentech.
+76000	80000	Today, Dr. Sun is going to talk about
+80000	85000	Use Single-Cell RNA-Seq to Tackle Complex Biology.
+85000	89000	Now, let's welcome Dr. Sun to give her presentation.
+94000	97000	Hello, everyone. I am Dr. Sun.
+97000	104000	Sorry, my voice is a bit hoarse due to my cold.
+104000	111000	Today, I am going to talk in a simple and easy-to-understand way.
+111000	115000	Just in case, some of you may not have a background in biology.
+115000	121000	I hope you can at least learn about Single-Cell RNA-Seq.
+122000	128000	Here is my personal email and LinkedIn account.
+128000	132000	Although my LinkedIn account is not up to date,
+132000	135000	please feel free to connect with me.
+138000	143000	I will be speaking in Chinese today,
+143000	148000	but I am not sure what the term is in Chinese.
+149000	157000	If you have any questions, please feel free to contact me.
+159000	165000	I don't want to make it too complicated.
+165000	168000	I will be focusing on technology.
+168000	171000	I am currently working at a company,
+171000	176000	so I can't really talk about research projects here.
+176000	182000	I will try my best to talk about the applications of this technology,
+182000	184000	and the principles behind it.
+184000	189000	I hope this will be helpful to those who are interested.
+190000	193000	Before we get into the technology,
+193000	197000	I will briefly review the biology of NTU.
+199000	203000	As you may already know, our body is made up of cells.
+204000	207000	Many cells form organs,
+207000	211000	and eventually form organs in our body,
+211000	214000	becoming a functional human body.
+214000	224000	An interesting fact is that our body is composed of over 20 different types of cells.
+224000	229000	You can see that their forms and functions are very different.
+230000	235000	For example, there are nerve cells, blood cells, muscle cells,
+235000	241000	and even different types of cells in different organs.
+241000	246000	Their functions and forms are very different.
+248000	251000	Let's take a deeper look.
+251000	255000	As you can see, our body is made up of cells.
+255000	259000	Each cell has a nucleus,
+259000	261000	which is a red dot.
+261000	263000	In English, it's called a nucleus.
+263000	265000	In Chinese, it's called a cell nucleus.
+265000	269000	In this cell nucleus, there is a chromosome.
+269000	274000	This chromosome is made up of our genes.
+274000	278000	I think everyone has a concept of genes.
+278000	281000	Genes are our genetic material.
+281000	284000	Genes are our genetic material,
+284000	287000	and they can determine our body functions.
+287000	295000	Generally speaking, genes are basically DNA fragments.
+295000	303000	They can be converted into useful molecules,
+303000	308000	which can perform the functions required by our body.
+308000	311000	We usually talk about gene decoding or gene encryption.
+311000	322000	The main reason is that DNA is composed of a series of ATCG,
+322000	327000	which is a double helix structure made up of four different genes.
+327000	330000	Generally speaking, if we talk about gene decoding,
+330000	335000	the sequence you get may be composed of four ATCG
+335000	338000	in different ways.
+338000	341000	This is our so-called gene code.
+341000	347000	In molecular biology, there is a so-called central dogma.
+347000	357000	It's the principle that we have this genetic material.
+357000	359000	Its main structure is DNA,
+359000	363000	which is transcribed into RNA.
+363000	367000	RNA is further transcribed into protein.
+367000	372000	Protein can perform various biological functions.
+372000	375000	As time goes by,
+375000	382000	the central dogma is gradually extended to more different forms.
+382000	391000	We can even find more different directions from the virus or other systems.
+392000	397000	Today's technology involves a discovery.
+397000	402000	In the past, we thought that DNA was transcribed into RNA.
+402000	407000	Later, scientists found another molecule
+407000	411000	that allows RNA to reverse transcribe back to the DNA.
+411000	414000	Because of the help of this molecule,
+414000	423000	many related extension technologies can be built on this basis.
+423000	429000	Today, we are going to talk about RNAseq.
+429000	435000	In other words, transcriptome analysis,
+435000	439000	or gene expression profiling,
+439000	446000	we can use genes to understand human physiology.
+446000	457000	This picture shows a major timeline and milestone in molecular biology and sequencing technology.
+457000	463000	In 1953, the first discovery of DNA double-stranded structure was made.
+463000	469000	In 1977, Sanger's DNA sequencing was developed.
+469000	473000	Later, PCR technology was also developed.
+473000	480000	PCR technology allows us to rapidly increase our DNA in the lab.
+480000	488000	Many related technologies can be built on this basis.
+488000	492000	In 1990, the Human Genome Project was launched.
+492000	497000	After 13 years, the Human Genome Project was established.
+497000	505000	At this stage, the sequencing cost was still very high.
+505000	513000	It was difficult to operate the sequencing project in the lab.
+513000	520000	In 2005, the Next Generation Sequencing was introduced.
+520000	530000	Next Generation Sequencing is a next-generation sequencing technology.
+530000	535000	This technology has greatly reduced the cost of sequencing.
+535000	543000	More and more Genome Projects related to sequencing can be carried out more smoothly in labs.
+543000	548000	Up to now, Next Generation Sequencing technology is still widely used.
+548000	556000	In recent years, the Third Generation Sequencing technology has been introduced.
+556000	562000	When was Single Cell RNAse developed?
+562000	570000	Single Cell RNAse was first reported in 2009.
+570000	575000	Single Cell RNAse is a technology that is becoming more and more mature.
+575000	583000	Single Cell RNAse is a technology that is becoming more and more mature.
+583000	592000	Many advanced protocols, technologies, and companies continue to develop rapidly in this field.
+592000	600000	Why do we need to do Single Cell RNAse?
+600000	608000	Before Single Cell RNAse, we can look at gene profiling.
+608000	618000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+618000	628000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+628000	638000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+638000	648000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+648000	658000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+658000	668000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+668000	678000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+678000	688000	For example, we need to know the difference between a normal tumor and a cancer tumor.
+688000	696000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+696000	706000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+706000	716000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+716000	726000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+726000	736000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+736000	746000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+746000	756000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+756000	766000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+766000	776000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+776000	786000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+786000	796000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+796000	806000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+806000	816000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+816000	826000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+826000	836000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+836000	846000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+846000	856000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+856000	866000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+866000	876000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+876000	886000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+886000	896000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+896000	906000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+906000	916000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+916000	926000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+926000	936000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+936000	946000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+946000	956000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+956000	966000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+966000	976000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+976000	986000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+986000	996000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+996000	1006000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+1006000	1016000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+1016000	1026000	From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+1026000	1036000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1036000	1046000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1046000	1056000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1056000	1066000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1066000	1076000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1076000	1086000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1086000	1096000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1096000	1106000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1106000	1116000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1116000	1126000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1126000	1136000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1136000	1146000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1146000	1156000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1156000	1166000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1166000	1176000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1176000	1186000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1186000	1196000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1196000	1206000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1206000	1216000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1216000	1226000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1226000	1236000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1236000	1246000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1246000	1256000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1256000	1266000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1266000	1276000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1276000	1286000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1286000	1296000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1296000	1306000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1306000	1316000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1316000	1326000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1326000	1336000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1336000	1346000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1346000	1356000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1356000	1366000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1366000	1376000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1376000	1386000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1386000	1396000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1396000	1406000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1406000	1416000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1416000	1426000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1426000	1436000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1436000	1446000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1446000	1456000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1456000	1466000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1466000	1476000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1476000	1486000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1486000	1496000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1496000	1506000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1506000	1516000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1516000	1526000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1526000	1536000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1536000	1546000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1546000	1556000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1556000	1566000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1566000	1576000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1576000	1586000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1586000	1596000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1596000	1606000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1606000	1616000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1616000	1626000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1626000	1636000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1636000	1646000	The single cell measures the distribution of expression levels for each gene across a population of cells.
+1646000	1656000	Thank you for watching!
+1676000	1686000	Thank you for watching!
+1686000	1696000	Thank you for watching!
+1696000	1706000	Thank you for watching!
+1726000	1736000	Thank you for watching!
+1756000	1766000	Thank you for watching!
+1786000	1796000	Thank you for watching!
+1796000	1806000	Thank you for watching!
+1806000	1816000	Thank you for watching!
+1816000	1826000	Thank you for watching!
+1826000	1836000	Thank you for watching!
+1836000	1846000	Thank you for watching!
+1846000	1856000	Thank you for watching!
+1856000	1866000	Thank you for watching!
+1866000	1876000	Thank you for watching!
+1876000	1886000	Thank you for watching!
+1886000	1896000	Thank you for watching!
+1896000	1906000	Thank you for watching!
+1906000	1916000	Thank you for watching!
+1916000	1926000	Thank you for watching!
+1926000	1936000	Thank you for watching!
+1936000	1946000	Thank you for watching!
+1946000	1956000	Thank you for watching!
+1956000	1966000	Thank you for watching!
+1966000	1976000	Thank you for watching!
+1976000	1986000	Thank you for watching!
+1986000	1996000	Thank you for watching!
+1996000	2006000	Thank you for watching!
+2006000	2016000	Thank you for watching!
+2016000	2026000	Thank you for watching!
+2026000	2036000	Thank you for watching!
+2036000	2046000	Thank you for watching!
+2046000	2056000	Thank you for watching!
+2056000	2066000	Thank you for watching!
+2066000	2076000	Thank you for watching!
+2076000	2086000	Thank you for watching!
+2086000	2096000	Thank you for watching!
+2096000	2106000	Thank you for watching!
+2106000	2116000	Thank you for watching!
+2116000	2126000	Thank you for watching!
+2126000	2136000	Thank you for watching!
+2136000	2146000	Thank you for watching!
+2146000	2156000	Thank you for watching!
+2156000	2166000	Thank you for watching!
+2166000	2176000	Thank you for watching!
+2176000	2186000	Thank you for watching!
+2186000	2196000	Thank you for watching!
+2196000	2206000	Thank you for watching!
+2206000	2216000	Thank you for watching!
+2216000	2226000	Thank you for watching!
+2226000	2236000	Thank you for watching!
+2236000	2246000	Thank you for watching!
+2246000	2256000	Thank you for watching!
+2256000	2266000	Thank you for watching!
+2266000	2276000	Thank you for watching!
+2276000	2286000	Thank you for watching!
+2286000	2296000	Thank you for watching!
+2296000	2306000	Thank you for watching!
+2306000	2316000	Thank you for watching!
+2316000	2326000	Thank you for watching!
+2326000	2336000	Thank you for watching!
+2336000	2346000	Thank you for watching!
+2346000	2356000	Thank you for watching!
+2356000	2366000	Thank you for watching!
+2366000	2376000	Thank you for watching!
+2376000	2386000	Thank you for watching!
+2386000	2396000	Thank you for watching!
+2396000	2406000	Thank you for watching!
+2406000	2416000	Thank you for watching!
+2416000	2426000	Thank you for watching!
+2426000	2436000	Thank you for watching!
+2436000	2446000	Thank you for watching!
+2446000	2456000	Thank you for watching!
+2456000	2466000	Thank you for watching!
+2466000	2476000	Thank you for watching!
+2476000	2486000	Thank you for watching!
+2486000	2496000	Thank you for watching!
+2496000	2506000	Thank you for watching!
+2506000	2516000	Thank you for watching!
+2516000	2526000	Thank you for watching!
+2526000	2536000	Thank you for watching!
+2536000	2546000	Thank you for watching!
+2546000	2556000	Thank you for watching!
+2556000	2566000	Thank you for watching!
+2566000	2576000	Thank you for watching!
+2576000	2586000	Thank you for watching!
+2586000	2596000	Thank you for watching!
+2596000	2606000	Thank you for watching!
+2606000	2616000	Thank you for watching!
+2616000	2626000	Thank you for watching!
+2626000	2636000	Thank you for watching!
+2636000	2646000	Thank you for watching!
+2646000	2656000	Thank you for watching!
+2656000	2666000	Thank you for watching!
+2666000	2676000	Thank you for watching!
+2676000	2686000	Thank you for watching!
+2686000	2696000	Thank you for watching!
+2696000	2706000	Thank you for watching!
+2706000	2716000	Thank you for watching!
+2716000	2726000	Thank you for watching!
+2726000	2736000	Thank you for watching!
+2736000	2746000	Thank you for watching!
+2746000	2756000	Thank you for watching!
+2756000	2766000	Thank you for watching!
+2766000	2776000	Thank you for watching!
+2776000	2786000	Thank you for watching!
+2786000	2796000	Thank you for watching!
+2796000	2806000	Thank you for watching!
+2806000	2816000	Thank you for watching!
+2816000	2826000	Thank you for watching!
+2826000	2836000	Thank you for watching!
+2836000	2846000	Thank you for watching!
+2846000	2856000	Thank you for watching!
+2856000	2866000	Thank you for watching!
+2866000	2876000	Thank you for watching!
+2876000	2886000	Thank you for watching!
+2886000	2896000	Thank you for watching!
+2896000	2906000	Thank you for watching!
+2906000	2916000	Thank you for watching!
+2916000	2926000	Thank you for watching!
+2926000	2936000	Thank you for watching!
+2936000	2946000	Thank you for watching!
+2946000	2956000	Thank you for watching!
+2956000	2966000	Thank you for watching!
+2966000	2976000	Thank you for watching!
+2976000	2986000	Thank you for watching!
+2986000	2996000	Thank you for watching!
+2996000	3006000	Thank you for watching!
+3006000	3016000	Thank you for watching!
+3016000	3026000	Thank you for watching!
+3026000	3036000	Thank you for watching!
+3036000	3046000	Thank you for watching!
+3046000	3056000	Thank you for watching!
+3056000	3066000	Thank you for watching!
+3066000	3076000	Thank you for watching!
+3076000	3086000	Thank you for watching!
+3086000	3096000	Thank you for watching!
+3096000	3106000	Thank you for watching!
+3106000	3126000	Thank you for watching!
+3126000	3136000	Thank you for watching!
+3136000	3146000	Thank you for watching!
+3146000	3156000	Thank you for watching!
+3156000	3166000	Thank you for watching!
+3166000	3176000	Thank you for watching!
+3176000	3186000	Thank you for watching!
+3186000	3196000	Thank you for watching!
+3196000	3206000	Thank you for watching!
+3206000	3216000	Thank you for watching!
+3216000	3226000	Thank you for watching!
+3226000	3236000	Thank you for watching!
+3236000	3246000	Thank you for watching!
+3246000	3256000	Thank you for watching!
+3256000	3266000	Thank you for watching!
+3266000	3276000	Thank you for watching!
+3276000	3286000	Thank you for watching!
+3286000	3296000	Thank you for watching!
+3296000	3306000	Thank you for watching!
+3306000	3316000	Thank you for watching!
+3316000	3326000	Thank you for watching!
+3326000	3336000	Thank you for watching!
+3336000	3346000	Thank you for watching!
+3346000	3356000	Thank you for watching!
+3356000	3366000	Thank you for watching!
+3366000	3376000	Thank you for watching!
+3376000	3386000	Thank you for watching!
+3386000	3396000	Thank you for watching!
+3396000	3406000	Thank you for watching!
+3406000	3416000	Thank you for watching!
+3416000	3426000	Thank you for watching!
+3426000	3436000	Thank you for watching!
+3436000	3446000	Thank you for watching!
+3446000	3456000	Thank you for watching!
+3456000	3466000	Thank you for watching!
+3466000	3476000	Thank you for watching!
+3476000	3486000	Thank you for watching!
+3486000	3496000	Thank you for watching!
+3496000	3506000	Thank you for watching!
+3506000	3516000	Thank you for watching!
+3516000	3526000	Thank you for watching!
+3526000	3536000	Thank you for watching!
+3536000	3546000	Thank you for watching!
+3546000	3556000	Thank you for watching!
+3556000	3566000	Thank you for watching!
+3566000	3576000	Thank you for watching!
+3576000	3586000	Thank you for watching!
+3586000	3596000	Thank you for watching!
+3596000	3606000	Thank you for watching!
+3606000	3616000	Thank you for watching!
+3616000	3626000	Thank you for watching!
+3626000	3636000	Thank you for watching!
+3636000	3646000	Thank you for watching!
+3646000	3656000	Thank you for watching!
+3656000	3666000	Thank you for watching!
+3666000	3676000	Thank you for watching!
+3676000	3686000	Thank you for watching!
+3686000	3696000	Thank you for watching!
+3696000	3706000	Thank you for watching!
+3706000	3716000	Thank you for watching!
+3716000	3726000	Thank you for watching!
+3726000	3736000	Thank you for watching!
+3736000	3746000	Thank you for watching!
+3746000	3756000	Thank you for watching!
+3756000	3766000	Thank you for watching!
+3766000	3776000	Thank you for watching!
+3776000	3786000	Thank you for watching!
+3786000	3796000	Thank you for watching!
+3796000	3806000	Thank you for watching!
+3806000	3816000	Thank you for watching!
+3816000	3826000	Thank you for watching!
+3826000	3836000	Thank you for watching!
+3836000	3846000	Thank you for watching!
+3846000	3856000	Thank you for watching!
+3856000	3866000	Thank you for watching!
+3866000	3876000	Thank you for watching!
+3876000	3886000	Thank you for watching!
+3886000	3896000	Thank you for watching!
+3896000	3906000	Thank you for watching!
+3906000	3916000	Thank you for watching!
+3916000	3926000	Thank you for watching!
+3926000	3936000	Thank you for watching!
+3936000	3946000	Thank you for watching!
+3946000	3956000	Thank you for watching!
+3956000	3966000	Thank you for watching!
+3966000	3976000	Thank you for watching!
+3976000	3986000	Thank you for watching!
+3986000	3996000	Thank you for watching!
+3996000	4006000	Thank you for watching!
+4006000	4016000	Thank you for watching!
+4016000	4026000	Thank you for watching!
+4026000	4036000	Thank you for watching!
+4036000	4046000	Thank you for watching!
+4046000	4056000	Thank you for watching!
+4056000	4066000	Thank you for watching!
+4066000	4076000	Thank you for watching!
+4076000	4086000	Thank you for watching!
+4086000	4096000	Thank you for watching!
+4096000	4106000	Thank you for watching!
+4106000	4116000	Thank you for watching!
+4116000	4126000	Thank you for watching!
+4126000	4136000	Thank you for watching!
+4136000	4146000	Thank you for watching!
+4146000	4156000	Thank you for watching!
+4156000	4166000	Thank you for watching!
+4166000	4176000	Thank you for watching!
+4176000	4186000	Thank you for watching!
+4186000	4196000	Thank you for watching!
+4196000	4206000	Thank you for watching!
+4206000	4216000	Thank you for watching!
+4216000	4226000	Thank you for watching!
+4226000	4236000	Thank you for watching!
+4236000	4246000	Thank you for watching!
+4246000	4256000	Thank you for watching!
+4256000	4266000	Thank you for watching!
+4266000	4276000	Thank you for watching!
+4276000	4286000	Thank you for watching!
+4286000	4296000	Thank you for watching!
+4296000	4306000	Thank you for watching!
+4306000	4316000	Thank you for watching!
+4316000	4326000	Thank you for watching!
+4326000	4336000	Thank you for watching!
+4336000	4346000	Thank you for watching!
+4346000	4356000	Thank you for watching!
+4356000	4366000	Thank you for watching!
+4366000	4376000	Thank you for watching!
+4376000	4386000	Thank you for watching!
+4386000	4396000	Thank you for watching!
+4396000	4406000	Thank you for watching!
+4406000	4416000	Thank you for watching!
+4416000	4426000	Thank you for watching!
+4426000	4436000	Thank you for watching!
+4436000	4446000	Thank you for watching!
+4446000	4456000	Thank you for watching!
+4456000	4466000	Thank you for watching!
+4466000	4476000	Thank you for watching!
+4476000	4486000	Thank you for watching!
+4486000	4496000	Thank you for watching!
+4496000	4506000	Thank you for watching!

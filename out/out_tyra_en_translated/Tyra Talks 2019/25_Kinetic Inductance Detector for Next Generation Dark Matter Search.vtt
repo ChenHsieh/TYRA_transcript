@@ -1,0 +1,7325 @@
+WEBVTT
+
+00:00.000 --> 00:10.000
+Hello, everyone. Welcome to today's Project Terra talk.
+
+00:10.000 --> 00:14.000
+I'm the host today. Just call me Ted.
+
+00:14.000 --> 00:20.000
+Today's speaker is Don Yen-Yong from Caltech.
+
+00:20.000 --> 00:23.000
+He works at NASA JPL in Caltech.
+
+00:23.000 --> 00:31.000
+Today's topic is Connected Inductance Detector for Next-Generation Dark Matter Search.
+
+00:31.000 --> 00:35.000
+So, Yen-Yong, it's your turn.
+
+00:35.000 --> 00:37.000
+Hi, everyone.
+
+00:37.000 --> 00:41.000
+Today's talk is more like an update on the latest situation.
+
+00:41.000 --> 00:45.000
+I think I've talked about what I've done a year ago.
+
+00:45.000 --> 00:49.000
+Actually, the content is pretty much the same, but there's a new progress.
+
+00:49.000 --> 00:55.000
+Some parts of the talk might be fast, and some parts might not be clear.
+
+00:55.000 --> 00:57.000
+If you have any questions, feel free to ask.
+
+00:57.000 --> 01:01.000
+To be honest, I've been very busy lately, so I've only started this morning.
+
+01:01.000 --> 01:05.000
+So if you don't ask questions, it'll be over soon.
+
+01:05.000 --> 01:07.000
+Today's topic is connected...
+
+01:07.000 --> 01:13.000
+Let me add that when you come in, you don't have a microphone on.
+
+01:13.000 --> 01:18.000
+So if you want to ask a question, you have to turn on the microphone.
+
+01:18.000 --> 01:20.000
+So you can ask the question and hear it.
+
+01:20.000 --> 01:27.000
+At the same time, you can also ask the question in the chat next to you.
+
+01:27.000 --> 01:29.000
+Okay, sorry. Yen-Yong, let's get started.
+
+01:29.000 --> 01:31.000
+Okay, I have another question.
+
+01:31.000 --> 01:34.000
+Can you see my mouse?
+
+01:34.000 --> 01:36.000
+Can you see it?
+
+01:36.000 --> 01:37.000
+You can see it, right?
+
+01:37.000 --> 01:41.000
+Because I might talk about this and that a lot, so I need a mouse.
+
+01:42.000 --> 01:50.000
+Okay, so today's topic is Kinetic Inductance Detector for Next Generation Dark Matter Search.
+
+01:50.000 --> 01:53.000
+So as you can see, there are two parts to the topic.
+
+01:53.000 --> 01:59.000
+One part is that we're thinking about looking for dark matter.
+
+01:59.000 --> 02:02.000
+At this stage, we're going to look at future development.
+
+02:02.000 --> 02:08.000
+The other part of this talk is that we think we can apply this.
+
+02:08.000 --> 02:11.000
+We call it KIT, K-I-T, Kinetic Inductance Detector.
+
+02:11.000 --> 02:16.000
+As the next main, we think it's going to be very competitive.
+
+02:16.000 --> 02:18.000
+This technology to do this.
+
+02:18.000 --> 02:23.000
+Okay, and then this work is mainly from where I am.
+
+02:23.000 --> 02:26.000
+Caltech and NASA JPL, which is the Jet Propulsion Laboratory.
+
+02:26.000 --> 02:31.000
+Of course, this whole work is actually based on a bigger project called Super CDMS.
+
+02:31.000 --> 02:32.000
+I'll talk about it later.
+
+02:32.000 --> 02:36.000
+But I want to emphasize that KIT is not a CDMS project yet.
+
+02:36.000 --> 02:38.000
+So it's more like our own R&D.
+
+02:38.000 --> 02:41.000
+But we're doing it in a big collaboration.
+
+02:41.000 --> 02:44.000
+Okay, so now you see this first page.
+
+02:44.000 --> 02:47.000
+The first page is our current prototype.
+
+02:47.000 --> 02:50.000
+That gives you a sense of the size.
+
+02:50.000 --> 02:52.000
+This circle is 3 inches.
+
+02:52.000 --> 02:53.000
+Its diameter is 3 inches.
+
+02:53.000 --> 02:56.000
+It's about the same size as a palm.
+
+02:56.000 --> 03:00.000
+So now you see this little rectangle.
+
+03:00.000 --> 03:03.000
+It's about a half to one millimeter in size.
+
+03:03.000 --> 03:06.000
+And then there are 80 little islands on it.
+
+03:06.000 --> 03:08.000
+I'll explain what it is.
+
+03:08.000 --> 03:10.000
+Okay, and then this box.
+
+03:10.000 --> 03:17.000
+It's basically hanging on a dilution refrigerator.
+
+03:17.000 --> 03:23.000
+So it can be lowered to the temperature of the mini Kelvin level.
+
+03:23.000 --> 03:26.000
+So I'll explain why we're doing this.
+
+03:26.000 --> 03:30.000
+Okay, first of all, today's outline is why.
+
+03:30.000 --> 03:33.000
+Because we don't have a particle physics background today.
+
+03:33.000 --> 03:34.000
+And there seems to be a problem, right?
+
+03:34.000 --> 03:35.000
+So I'm going to explain a little bit today.
+
+03:35.000 --> 03:37.000
+Why do we think there's dark matter?
+
+03:37.000 --> 03:39.000
+What the hell is dark matter?
+
+03:39.000 --> 03:41.000
+So I'm going to use an association here.
+
+03:41.000 --> 03:43.000
+What's more important is that this is our focus.
+
+03:43.000 --> 03:48.000
+Why do we think this low-quality, low-mass dark matter is an important topic now?
+
+03:48.000 --> 03:49.000
+So we want to do this.
+
+03:49.000 --> 03:51.000
+Okay, this is an opening.
+
+03:51.000 --> 03:57.000
+And then I'll talk about the super CDMS detector called HVEV.
+
+03:57.000 --> 03:59.000
+HVE is high voltage.
+
+03:59.000 --> 04:01.000
+EV is the electron volt.
+
+04:01.000 --> 04:06.000
+He's actually talking about what we're doing in a high voltage mode.
+
+04:06.000 --> 04:09.000
+Under this operation, we can have EV resolution.
+
+04:09.000 --> 04:13.000
+Okay, so I'm going to start by saying that this is a CDMS project.
+
+04:13.000 --> 04:15.000
+What did we learn from this?
+
+04:15.000 --> 04:16.000
+So what did we get?
+
+04:16.000 --> 04:18.000
+So where's our sensitivity?
+
+04:18.000 --> 04:22.000
+So from here, I'm going to motivate.
+
+04:22.000 --> 04:27.000
+So why the third part, the kinetic inductance detector, this thing.
+
+04:27.000 --> 04:30.000
+It's going to be something that we think is very potential.
+
+04:30.000 --> 04:35.000
+So now the CDMS proposal is written to 2025.
+
+04:35.000 --> 04:37.000
+So we're actually talking about this thing.
+
+04:37.000 --> 04:39.000
+Dark matter search beyond 2025.
+
+04:39.000 --> 04:42.000
+What kind of outlook do we have?
+
+04:42.000 --> 04:43.000
+What do we think?
+
+04:43.000 --> 04:45.000
+Okay, let's get started.
+
+04:45.000 --> 04:47.000
+Then I welcome you to ask me any questions at any time.
+
+04:47.000 --> 04:49.000
+Otherwise, this talk is really going to be pretty fast.
+
+04:49.000 --> 04:50.000
+And my speech is actually very fast.
+
+04:50.000 --> 04:53.000
+Okay, the first part, low-mass dark matter.
+
+04:53.000 --> 04:57.000
+Okay, first of all, I remember two or three weeks ago.
+
+04:57.000 --> 04:58.000
+I have a very good friend, He Shuyu.
+
+04:58.000 --> 04:59.000
+He talked about a talk.
+
+04:59.000 --> 05:02.000
+He's actually doing the theory of dark matter.
+
+05:02.000 --> 05:04.000
+So why is there dark matter?
+
+05:04.000 --> 05:06.000
+What the hell is dark matter?
+
+05:06.000 --> 05:08.000
+I just have this page today.
+
+05:08.000 --> 05:11.000
+So if you're interested, you want to know more details.
+
+05:11.000 --> 05:12.000
+You can go see his talk.
+
+05:12.000 --> 05:14.000
+He's a very good speaker.
+
+05:14.000 --> 05:15.000
+He taught very well.
+
+05:15.000 --> 05:16.000
+Then I'll summarize here.
+
+05:16.000 --> 05:19.000
+This is some evidence that we think there is dark matter.
+
+05:19.000 --> 05:22.000
+First of all, you see this picture in the upper left corner.
+
+05:22.000 --> 05:29.000
+The y-axis of this picture is the speed of the planet's rotation in the Milky Way.
+
+05:29.000 --> 05:31.000
+What about this horizontal axis?
+
+05:31.000 --> 05:35.000
+It's the distance between these planets and the center of the Milky Way.
+
+05:35.000 --> 05:38.000
+Okay, so now you see that there are dozens of lines here.
+
+05:38.000 --> 05:39.000
+And then more than 20 lines.
+
+05:39.000 --> 05:40.000
+If we take a few steps.
+
+05:40.000 --> 05:43.000
+These lines, each line is a galaxy.
+
+05:43.000 --> 05:44.000
+Then you can go to the galaxy.
+
+05:44.000 --> 05:46.000
+There are a lot of planets in the galaxy.
+
+05:46.000 --> 05:48.000
+The speed of rotation to the center.
+
+05:48.000 --> 05:50.000
+And then the distance to the center.
+
+05:50.000 --> 05:51.000
+You see a line like this.
+
+05:51.000 --> 05:53.000
+It's a galaxy, a galaxy, a galaxy.
+
+05:53.000 --> 05:56.000
+According to Newton's law that we learned in high school.
+
+05:56.000 --> 06:00.000
+If today we assume that Newton's law is correct.
+
+06:00.000 --> 06:01.000
+Or relative theory is correct.
+
+06:01.000 --> 06:02.000
+Then we think he's right.
+
+06:02.000 --> 06:04.000
+OK, what about this line?
+
+06:04.000 --> 06:06.000
+What should it look like?
+
+06:06.000 --> 06:08.000
+It should look like this.
+
+06:08.000 --> 06:10.000
+It's from the top.
+
+06:10.000 --> 06:12.000
+The closer to the center, the faster the rotation.
+
+06:12.000 --> 06:14.000
+And then it goes down like this.
+
+06:14.000 --> 06:17.000
+And then the closer it is to the outside, the slower it rotates.
+
+06:17.000 --> 06:18.000
+OK.
+
+06:18.000 --> 06:19.000
+But in fact, what we see is not like this.
+
+06:19.000 --> 06:20.000
+In fact, what we see is.
+
+06:20.000 --> 06:22.000
+The speed of rotation of these planets.
+
+06:22.000 --> 06:24.000
+It's going to pull up from the center.
+
+06:24.000 --> 06:26.000
+Of course, it's very close to the center.
+
+06:26.000 --> 06:27.000
+We don't understand.
+
+06:27.000 --> 06:29.000
+Because there are a lot of planets in the middle.
+
+06:29.000 --> 06:31.000
+A lot of electrons and so on.
+
+06:31.000 --> 06:33.000
+Then we get rid of the middle.
+
+06:33.000 --> 06:35.000
+He saw that it was almost flat.
+
+06:35.000 --> 06:37.000
+OK, almost flat.
+
+06:37.000 --> 06:39.000
+That means.
+
+06:39.000 --> 06:40.000
+Of course, we can say.
+
+06:40.000 --> 06:41.000
+Then this may be.
+
+06:41.000 --> 06:43.000
+The theory of gravity is incorrect.
+
+06:43.000 --> 06:44.000
+This is possible.
+
+06:44.000 --> 06:47.000
+But gravity has been experimented by a lot of experiments.
+
+06:47.000 --> 06:50.000
+From classical gravity to the theory of gravity.
+
+06:50.000 --> 06:52.000
+The theory of gravity has been very, very accurately verified.
+
+06:52.000 --> 06:54.000
+So then we can think about it in another way.
+
+06:54.000 --> 06:55.000
+Is that?
+
+06:55.000 --> 06:57.000
+Hey, we have quality.
+
+06:57.000 --> 06:59.000
+It exists in that range.
+
+06:59.000 --> 07:00.000
+But we didn't see it.
+
+07:00.000 --> 07:02.000
+We can't see these qualities.
+
+07:02.000 --> 07:03.000
+So we miscalculated.
+
+07:03.000 --> 07:05.000
+But if we add these qualities.
+
+07:05.000 --> 07:07.000
+We can recover like this.
+
+07:07.000 --> 07:09.000
+This is the center of gravity.
+
+07:09.000 --> 07:11.000
+The speed of rotation of this curve.
+
+07:11.000 --> 07:14.000
+OK, this is a hint.
+
+07:14.000 --> 07:16.000
+That is to say, there may be some matter over there.
+
+07:16.000 --> 07:17.000
+We can't see it.
+
+07:17.000 --> 07:19.000
+We call it dark matter.
+
+07:19.000 --> 07:20.000
+But OK.
+
+07:20.000 --> 07:21.000
+So you can imagine this dark matter.
+
+07:21.000 --> 07:23.000
+Under this picture.
+
+07:23.000 --> 07:25.000
+Like a fluid or a gas.
+
+07:25.000 --> 07:27.000
+It's a continuous.
+
+07:27.000 --> 07:30.000
+And then it's distributed smoothly in that space.
+
+07:30.000 --> 07:32.000
+In the middle of the galaxy.
+
+07:32.000 --> 07:33.000
+OK.
+
+07:33.000 --> 07:35.000
+But we don't know its particle nature.
+
+07:35.000 --> 07:37.000
+That is to say, we can understand.
+
+07:37.000 --> 07:38.000
+For example, air or water.
+
+07:38.000 --> 07:40.000
+But we can't find that molecule.
+
+07:40.000 --> 07:41.000
+That H2O.
+
+07:41.000 --> 07:42.000
+OK.
+
+07:42.000 --> 07:44.000
+Now in this upper right corner.
+
+07:44.000 --> 07:46.000
+What you see is a bigger scale.
+
+07:46.000 --> 07:47.000
+This simulation.
+
+07:47.000 --> 07:49.000
+You are in this simulation.
+
+07:49.000 --> 07:51.000
+Every little light spot you see.
+
+07:51.000 --> 07:53.000
+It's all a bunch of galaxies.
+
+07:53.000 --> 07:54.000
+It's no longer one by one.
+
+07:54.000 --> 07:56.000
+It's a bunch of galaxies.
+
+07:56.000 --> 07:57.000
+OK.
+
+07:57.000 --> 07:59.000
+Then this picture is actually white.
+
+07:59.000 --> 08:02.000
+So you can see the black part.
+
+08:02.000 --> 08:03.000
+What about this black part?
+
+08:03.000 --> 08:05.000
+That is, if we assume.
+
+08:05.000 --> 08:07.000
+There is a gas in this universe.
+
+08:07.000 --> 08:09.000
+It's not going to be with other gases.
+
+08:09.000 --> 08:11.000
+This is the interaction.
+
+08:11.000 --> 08:13.000
+But it has weight.
+
+08:13.000 --> 08:15.000
+So it's going to have a denser place.
+
+08:15.000 --> 08:17.000
+Because gravity attracts.
+
+08:17.000 --> 08:19.000
+And then it's going to form.
+
+08:19.000 --> 08:21.000
+Like this spider web structure.
+
+08:21.000 --> 08:24.000
+And then these spider web structures are denser.
+
+08:24.000 --> 08:25.000
+Gravity is heavier.
+
+08:25.000 --> 08:27.000
+It will attract these gases.
+
+08:27.000 --> 08:28.000
+These we can see.
+
+08:28.000 --> 08:29.000
+These normal.
+
+08:29.000 --> 08:31.000
+These substances.
+
+08:31.000 --> 08:32.000
+Gather together.
+
+08:32.000 --> 08:34.000
+And then form a galaxy.
+
+08:34.000 --> 08:35.000
+Then we found out.
+
+08:35.000 --> 08:37.000
+We must be in our computer.
+
+08:37.000 --> 08:38.000
+In this simulation.
+
+08:38.000 --> 08:40.000
+With this kind of content.
+
+08:40.000 --> 08:42.000
+We can.
+
+08:42.000 --> 08:43.000
+Simulate this.
+
+08:43.000 --> 08:45.000
+The evolution of the universe.
+
+08:45.000 --> 08:47.000
+And then we produce what we want.
+
+08:47.000 --> 08:49.000
+The density of this galaxy.
+
+08:49.000 --> 08:51.000
+So we think this is also a proof.
+
+08:51.000 --> 08:53.000
+That is, there is a kind of matter that will not interact.
+
+08:53.000 --> 08:54.000
+Dark matter.
+
+08:54.000 --> 08:56.000
+This is Bully Cluster.
+
+08:56.000 --> 08:57.000
+I won't talk about this.
+
+08:57.000 --> 08:58.000
+Everyone can go.
+
+08:58.000 --> 08:59.000
+This can be googled.
+
+08:59.000 --> 09:00.000
+This is a bit complicated.
+
+09:00.000 --> 09:02.000
+But basically, he said.
+
+09:02.000 --> 09:04.000
+If there are two galaxies colliding today.
+
+09:04.000 --> 09:06.000
+We can see the quality inside.
+
+09:06.000 --> 09:08.000
+Will hit and will not pass.
+
+09:08.000 --> 09:09.000
+The difference in quality.
+
+09:09.000 --> 09:11.000
+Then we found out that he had to have a part.
+
+09:11.000 --> 09:12.000
+Will not touch.
+
+09:12.000 --> 09:13.000
+Passed by.
+
+09:13.000 --> 09:14.000
+OK, what about the last one?
+
+09:14.000 --> 09:16.000
+This is a very, very accurate evidence.
+
+09:16.000 --> 09:18.000
+This is what we see.
+
+09:18.000 --> 09:20.000
+The change in temperature in the whole sky.
+
+09:20.000 --> 09:22.000
+I call the background color of the universe.
+
+09:22.000 --> 09:24.000
+The change in temperature in the whole sky.
+
+09:24.000 --> 09:26.000
+And then he changed this.
+
+09:26.000 --> 09:28.000
+And then we found out.
+
+09:28.000 --> 09:30.000
+If we assume that this change is from.
+
+09:30.000 --> 09:32.000
+When the universe was very, very early.
+
+09:32.000 --> 09:34.000
+These substances.
+
+09:34.000 --> 09:36.000
+This process of gathering together.
+
+09:36.000 --> 09:40.000
+The moment of that temperature.
+
+09:40.000 --> 09:41.000
+OK.
+
+09:41.000 --> 09:42.000
+That.
+
+09:42.000 --> 09:44.000
+These condensed substances.
+
+09:44.000 --> 09:46.000
+It must have a certain proportion.
+
+09:46.000 --> 09:47.000
+Will interact.
+
+09:47.000 --> 09:49.000
+A certain proportion will not collide with each other.
+
+09:49.000 --> 09:51.000
+That proportion can be very, very accurate.
+
+09:51.000 --> 09:52.000
+Fixed.
+
+09:52.000 --> 09:54.000
+This is the case.
+
+09:54.000 --> 09:56.000
+OK, so we know from here.
+
+09:56.000 --> 09:57.000
+Oh, that.
+
+09:57.000 --> 09:59.000
+We can calculate very accurately.
+
+09:59.000 --> 10:01.000
+In this universe.
+
+10:01.000 --> 10:04.000
+20 to 30% will not interact.
+
+10:04.000 --> 10:05.000
+Of this substance.
+
+10:05.000 --> 10:07.000
+Then about 5% will interact.
+
+10:07.000 --> 10:09.000
+What about the rest?
+
+10:09.000 --> 10:11.000
+This is another energy content.
+
+10:11.000 --> 10:12.000
+Dark energy.
+
+10:12.000 --> 10:13.000
+But we won't talk about it today.
+
+10:13.000 --> 10:15.000
+So these are the evidence of dark matter.
+
+10:15.000 --> 10:18.000
+That's a bit like a science.
+
+10:18.000 --> 10:21.000
+Do you have any questions?
+
+10:21.000 --> 10:23.000
+If you are interested in any of these.
+
+10:23.000 --> 10:25.000
+I can talk a little bit.
+
+10:25.000 --> 10:27.000
+Otherwise, we'll go.
+
+10:27.000 --> 10:29.000
+What does this angle scale mean?
+
+10:29.000 --> 10:31.000
+Why is the angle scale?
+
+10:31.000 --> 10:32.000
+Oh, OK.
+
+10:32.000 --> 10:34.000
+So this picture is like this.
+
+10:34.000 --> 10:35.000
+You can of course.
+
+10:35.000 --> 10:36.000
+This thing.
+
+10:36.000 --> 10:38.000
+It's the color next to it.
+
+10:38.000 --> 10:39.000
+The whole universe.
+
+10:39.000 --> 10:41.000
+Just put your temperature on it.
+
+10:41.000 --> 10:43.000
+Different temperatures have different colors.
+
+10:43.000 --> 10:45.000
+But you can do this today.
+
+10:45.000 --> 10:47.000
+A map of the 2D map.
+
+10:47.000 --> 10:49.000
+But it's a universe.
+
+10:49.000 --> 10:50.000
+So his.
+
+10:50.000 --> 10:53.000
+It's a bit like you're doing it.
+
+10:53.000 --> 10:54.000
+Frequency spectrum.
+
+10:54.000 --> 10:56.000
+But his frequency.
+
+10:56.000 --> 10:58.000
+That dimension is the angle.
+
+10:58.000 --> 11:02.000
+OK, OK.
+
+11:02.000 --> 11:03.000
+Is it OK?
+
+11:03.000 --> 11:04.000
+He's doing it.
+
+11:04.000 --> 11:05.000
+It will look like this.
+
+11:06.000 --> 11:09.000
+OK.
+
+11:09.000 --> 11:10.000
+But that.
+
+11:10.000 --> 11:12.000
+Because I'm doing particle physics.
+
+11:12.000 --> 11:14.000
+So we care more about this thing.
+
+11:14.000 --> 11:15.000
+That's what I just said.
+
+11:15.000 --> 11:17.000
+There's a group of gas in the universe.
+
+11:17.000 --> 11:19.000
+It's not going to work at all.
+
+11:19.000 --> 11:21.000
+So if we break it down.
+
+11:21.000 --> 11:23.000
+This is the smallest.
+
+11:23.000 --> 11:25.000
+This is the constituent.
+
+11:25.000 --> 11:26.000
+So what is it?
+
+11:26.000 --> 11:28.000
+Elementary particle?
+
+11:28.000 --> 11:30.000
+It can be one by one.
+
+11:30.000 --> 11:31.000
+Very, very heavy.
+
+11:31.000 --> 11:33.000
+But his number is very small.
+
+11:33.000 --> 11:34.000
+Or he can be one by one.
+
+11:34.000 --> 11:35.000
+Very light.
+
+11:35.000 --> 11:36.000
+But he's very, very many.
+
+11:36.000 --> 11:39.000
+So in the same volume.
+
+11:39.000 --> 11:41.000
+It's produced in that cube.
+
+11:41.000 --> 11:42.000
+The quality inside is the same.
+
+11:42.000 --> 11:44.000
+It's in line with what we just did.
+
+11:44.000 --> 11:46.000
+The observation of these big gases.
+
+11:46.000 --> 11:48.000
+I got the density of this quality.
+
+11:48.000 --> 11:50.000
+Okay, but he's in the particle nature.
+
+11:50.000 --> 11:51.000
+It's going to be very different.
+
+11:51.000 --> 11:54.000
+Now, what you see here.
+
+11:54.000 --> 11:56.000
+OK, this is.
+
+11:56.000 --> 11:58.000
+This is.
+
+11:58.000 --> 11:59.000
+This quality unit.
+
+11:59.000 --> 12:01.000
+So if you're in this background.
+
+12:01.000 --> 12:02.000
+You don't have to explain to me.
+
+12:02.000 --> 12:03.000
+What is EV?
+
+12:03.000 --> 12:06.000
+If you don't know this.
+
+12:06.000 --> 12:08.000
+What unit is this EV?
+
+12:08.000 --> 12:10.000
+I'll give you a sense.
+
+12:10.000 --> 12:13.000
+From this K to M.
+
+12:13.000 --> 12:14.000
+Sorry.
+
+12:14.000 --> 12:16.000
+From this K to M, this neighborhood.
+
+12:16.000 --> 12:18.000
+It's the X-ray that you usually take.
+
+12:18.000 --> 12:19.000
+OK.
+
+12:19.000 --> 12:20.000
+If you're in this.
+
+12:20.000 --> 12:21.000
+This is not.
+
+12:21.000 --> 12:22.000
+This is just the unit.
+
+12:22.000 --> 12:23.000
+EV this range.
+
+12:23.000 --> 12:25.000
+It's visible light.
+
+12:25.000 --> 12:26.000
+Energy and quality can be exchanged.
+
+12:26.000 --> 12:28.000
+So the strength of this energy.
+
+12:28.000 --> 12:29.000
+This is visible light.
+
+12:29.000 --> 12:30.000
+This is X-ray.
+
+12:30.000 --> 12:32.000
+And then this is very, very powerful.
+
+12:32.000 --> 12:33.000
+And then this is here.
+
+12:33.000 --> 12:35.000
+It's very, very light.
+
+12:35.000 --> 12:37.000
+It's like coming here.
+
+12:37.000 --> 12:38.000
+It might be the usual.
+
+12:38.000 --> 12:39.000
+The radio wave on the phone.
+
+12:39.000 --> 12:40.000
+And then go further.
+
+12:40.000 --> 12:41.000
+It's very, very light.
+
+12:41.000 --> 12:43.000
+Light to the particle.
+
+12:43.000 --> 12:46.000
+The length of the material wave can be long.
+
+12:46.000 --> 12:48.000
+This kind of astronomical scale.
+
+12:48.000 --> 12:49.000
+OK.
+
+12:49.000 --> 12:51.000
+Okay, so this is.
+
+12:51.000 --> 12:52.000
+This mass.
+
+12:52.000 --> 12:55.000
+OK, this dark matter candidate mass.
+
+12:55.000 --> 12:56.000
+And then what's below?
+
+12:56.000 --> 12:58.000
+It's all kinds of us now.
+
+12:59.000 --> 13:00.000
+This theory.
+
+13:00.000 --> 13:02.000
+And then you can see that this is almost.
+
+13:02.000 --> 13:04.000
+You can go to the sky and say whatever you want.
+
+13:04.000 --> 13:06.000
+It's the heaviest you can get.
+
+13:06.000 --> 13:08.000
+This is the unit of solar mass.
+
+13:08.000 --> 13:10.000
+He can't use this EV anymore.
+
+13:10.000 --> 13:12.000
+But if we cut this part out and look at it.
+
+13:12.000 --> 13:14.000
+From here to the other end.
+
+13:14.000 --> 13:17.000
+It's dozens of orders of magnitude.
+
+13:17.000 --> 13:18.000
+OK.
+
+13:18.000 --> 13:19.000
+We don't know this thing at all.
+
+13:19.000 --> 13:21.000
+Basically, we don't know this thing at all.
+
+13:21.000 --> 13:22.000
+What is it?
+
+13:22.000 --> 13:23.000
+OK.
+
+13:23.000 --> 13:24.000
+Good.
+
+13:24.000 --> 13:27.000
+So here's a lot of this model.
+
+13:27.000 --> 13:28.000
+That.
+
+13:28.000 --> 13:32.000
+Uh, now I'm going to draw this orange frame.
+
+13:32.000 --> 13:34.000
+OK, this frame.
+
+13:34.000 --> 13:37.000
+Sorry.
+
+13:37.000 --> 13:39.000
+It can be said that in the past 30 or 40 years.
+
+13:39.000 --> 13:42.000
+All I want to know is the particle.
+
+13:42.000 --> 13:45.000
+The experiment of dark matter is focused on this frame.
+
+13:45.000 --> 13:48.000
+There's a reason for this frame.
+
+13:48.000 --> 13:50.000
+The top line of this frame.
+
+13:50.000 --> 13:53.000
+There's a theoretical top line called Unitary Bond.
+
+13:53.000 --> 13:56.000
+If this single particle of this dark matter.
+
+13:56.000 --> 13:59.000
+If it's heavier than this one up here.
+
+13:59.000 --> 14:04.000
+He will, uh, have this mathematical theoretical problem.
+
+14:04.000 --> 14:06.000
+That is to say, it will exceed Unitary.
+
+14:06.000 --> 14:08.000
+I don't know why, but OK.
+
+14:08.000 --> 14:10.000
+So, in theory, we can say that he won't go beyond this.
+
+14:10.000 --> 14:12.000
+Unless he looks really weird.
+
+14:12.000 --> 14:14.000
+For example, he is a black hole or something.
+
+14:14.000 --> 14:16.000
+This thing is going to be astronomical observation.
+
+14:16.000 --> 14:19.000
+That's what we're not going to talk about on the single particle.
+
+14:19.000 --> 14:21.000
+OK, what's next?
+
+14:21.000 --> 14:24.000
+You can see that this is a very clear picture here.
+
+14:24.000 --> 14:29.000
+What does it mean?
+
+14:29.000 --> 14:32.000
+It's his interaction, or his own quality.
+
+14:32.000 --> 14:34.000
+Or the energy he can carry.
+
+14:34.000 --> 14:36.000
+It's probably in this weak interaction.
+
+14:36.000 --> 14:38.000
+The energy scale of this interaction.
+
+14:38.000 --> 14:40.000
+He has a very strong reason.
+
+14:40.000 --> 14:42.000
+I'll talk about it later.
+
+14:42.000 --> 14:44.000
+But you can see that the more important thing is.
+
+14:44.000 --> 14:46.000
+So all the design of the experiment.
+
+14:46.000 --> 14:48.000
+Including, uh, in the collision machine.
+
+14:48.000 --> 14:51.000
+Whether it's a Japanese collision machine, a European collision machine.
+
+14:51.000 --> 14:53.000
+China may build a collision machine in the future.
+
+14:53.000 --> 14:56.000
+Everyone is basically aiming at this orange box.
+
+14:56.000 --> 14:58.000
+Find Dark Matter inside.
+
+14:58.000 --> 15:01.000
+What about all the experiments that don't do this collider?
+
+15:01.000 --> 15:06.000
+Basically, now the major experiments are also in this box.
+
+15:06.000 --> 15:08.000
+OK, but you can see it right away.
+
+15:08.000 --> 15:10.000
+There are 30 orders of magnitude here.
+
+15:10.000 --> 15:15.000
+It's only less than one-tenth.
+
+15:15.000 --> 15:22.000
+OK, so why do they aim at this box?
+
+15:22.000 --> 15:24.000
+Let's talk about it first.
+
+15:24.000 --> 15:26.000
+What kind of technology is this limit?
+
+15:26.000 --> 15:28.000
+Or what kind of technology are they based on?
+
+15:28.000 --> 15:31.000
+They will focus on this box.
+
+15:31.000 --> 15:34.000
+In fact, the concept of measuring Dark Matter is very simple.
+
+15:34.000 --> 15:36.000
+It's like hitting a ball.
+
+15:36.000 --> 15:38.000
+OK, this is the earth.
+
+15:38.000 --> 15:39.000
+Then this is us.
+
+15:39.000 --> 15:42.000
+Then we took some of the materials that people can manipulate.
+
+15:42.000 --> 15:44.000
+To do any of our experimental equipment.
+
+15:44.000 --> 15:49.000
+Then these equipment are nothing more than a bunch of seeds and seeds.
+
+15:49.000 --> 15:52.000
+Here is a seed or seed.
+
+15:52.000 --> 15:55.000
+The earth is in the solar system.
+
+15:55.000 --> 15:57.000
+The solar system is in the galactic system.
+
+15:57.000 --> 15:59.000
+Then the galactic system is full of what I just said.
+
+15:59.000 --> 16:03.000
+The gas of Dark Matter is drifting in the entire galactic system.
+
+16:03.000 --> 16:07.000
+So when our solar system revolves around the center of the galactic system.
+
+16:07.000 --> 16:12.000
+We are constantly like being blown by the wind of Dark Matter.
+
+16:12.000 --> 16:16.000
+OK, so at this time, if we take this seed and seed.
+
+16:16.000 --> 16:19.000
+To build an experiment on the earth.
+
+16:19.000 --> 16:22.000
+Dark Matter will keep going through.
+
+16:22.000 --> 16:24.000
+We think it's very, very small.
+
+16:24.000 --> 16:26.000
+Of course, we haven't measured it yet.
+
+16:26.000 --> 16:29.000
+But it is likely to exist.
+
+16:29.000 --> 16:31.000
+It won't just go through.
+
+16:31.000 --> 16:34.000
+It will hit our experiment and then bounce away.
+
+16:34.000 --> 16:38.000
+At this time, there will be some of this dynamic being picked up.
+
+16:38.000 --> 16:40.000
+On this seed or seed.
+
+16:40.000 --> 16:42.000
+Then we will measure this seed or seed.
+
+16:42.000 --> 16:45.000
+We can know how heavy it is.
+
+16:45.000 --> 16:46.000
+Hit down.
+
+16:46.000 --> 16:48.000
+It will pick up such a large amount of energy.
+
+16:48.000 --> 16:50.000
+We call it Recall Energy.
+
+16:50.000 --> 16:54.000
+OK, let's bring all the numbers in.
+
+16:54.000 --> 16:56.000
+We probably know that.
+
+16:56.000 --> 16:58.000
+Dark Matter to choose.
+
+16:58.000 --> 17:00.000
+How fast we blow the wind of Dark Matter.
+
+17:00.000 --> 17:04.000
+OK, so we know how heavy the seed or seed is.
+
+17:04.000 --> 17:07.000
+Then we can be different.
+
+17:07.000 --> 17:09.000
+This hypothetical Dark Matter Mass.
+
+17:09.000 --> 17:12.000
+To calculate how much energy we can pick up.
+
+17:13.000 --> 17:16.000
+We pick up this recall energy.
+
+17:16.000 --> 17:19.000
+The most efficient scenario is exactly the same as hitting the ball.
+
+17:19.000 --> 17:21.000
+If there is a very heavy thing today.
+
+17:21.000 --> 17:22.000
+Hit a very light thing.
+
+17:22.000 --> 17:23.000
+Or a very light thing.
+
+17:23.000 --> 17:25.000
+Hit a very heavy thing.
+
+17:25.000 --> 17:27.000
+The speed of the two people is almost unchanged.
+
+17:27.000 --> 17:29.000
+So this will not pick up energy.
+
+17:29.000 --> 17:30.000
+But the most efficient time.
+
+17:30.000 --> 17:31.000
+It's the thing that comes across.
+
+17:31.000 --> 17:32.000
+With the thing that is hit.
+
+17:32.000 --> 17:34.000
+The two of them are almost just right.
+
+17:34.000 --> 17:35.000
+So let's estimate that.
+
+17:35.000 --> 17:37.000
+OK, if we assume now.
+
+17:37.000 --> 17:38.000
+Hit Dark Matter.
+
+17:38.000 --> 17:40.000
+The quality of this particle.
+
+17:40.000 --> 17:41.000
+Exactly.
+
+17:41.000 --> 17:44.000
+It's with us to do this experiment.
+
+17:44.000 --> 17:46.000
+The seed is just as heavy.
+
+17:46.000 --> 17:48.000
+What about the energy that he transferred?
+
+17:48.000 --> 17:51.000
+It's probably an X-ray energy.
+
+17:51.000 --> 17:53.000
+So if we can build an experiment today.
+
+17:53.000 --> 17:55.000
+We can measure X-ray.
+
+17:55.000 --> 17:56.000
+This energy.
+
+17:56.000 --> 17:59.000
+We can probably measure this kind of Dark Matter.
+
+17:59.000 --> 18:01.000
+What's the problem here?
+
+18:01.000 --> 18:02.000
+This is high school physics.
+
+18:06.000 --> 18:08.000
+Okay, no problem, I'll go on.
+
+18:09.000 --> 18:12.000
+Then you assume the weight of the dark matter.
+
+18:12.000 --> 18:15.000
+Because all of your detectors are magnets.
+
+18:15.000 --> 18:17.000
+It's similar.
+
+18:17.000 --> 18:19.000
+Isn't that like this?
+
+18:19.000 --> 18:21.000
+You have a predicted dark matter.
+
+18:21.000 --> 18:23.000
+It's about the same weight as a magnet.
+
+18:25.000 --> 18:27.000
+Okay, this is a very good question.
+
+18:27.000 --> 18:28.000
+I'll talk about it later.
+
+18:28.000 --> 18:29.000
+You can imagine.
+
+18:29.000 --> 18:31.000
+So if Dark Matter today.
+
+18:31.000 --> 18:32.000
+It's a super-heavy thing.
+
+18:32.000 --> 18:34.000
+Or a super-light thing.
+
+18:34.000 --> 18:35.000
+I say relatively compared to.
+
+18:35.000 --> 18:37.000
+For example, Proton.
+
+18:37.000 --> 18:39.000
+It's a super-heavy or super-light thing.
+
+18:39.000 --> 18:40.000
+It hits.
+
+18:40.000 --> 18:42.000
+Your experiment doesn't actually pick up any energy.
+
+18:42.000 --> 18:44.000
+Right?
+
+18:44.000 --> 18:46.000
+Yeah, or it's super light.
+
+18:46.000 --> 18:47.000
+Yeah, he's gone.
+
+18:47.000 --> 18:48.000
+Yeah, that's right.
+
+18:48.000 --> 18:50.000
+That's what it is.
+
+18:50.000 --> 18:51.000
+So you can say.
+
+18:51.000 --> 18:53.000
+Use an order of magnitude estimate.
+
+18:53.000 --> 18:54.000
+Just say OK.
+
+18:54.000 --> 18:56.000
+So you use this kind of target particle.
+
+18:56.000 --> 18:58.000
+Basically.
+
+18:58.000 --> 18:59.000
+You set yourself up first.
+
+18:59.000 --> 19:01.000
+It's probably in this order of magnitude.
+
+19:01.000 --> 19:05.000
+To measure the weight of this particle.
+
+19:05.000 --> 19:07.000
+If it's heavy or light, you won't be able to measure it.
+
+19:07.000 --> 19:10.000
+Because the energy transfer will become small.
+
+19:10.000 --> 19:11.000
+Yeah, yeah, yeah.
+
+19:11.000 --> 19:12.000
+Right?
+
+19:12.000 --> 19:13.000
+All right, yeah, all right.
+
+19:13.000 --> 19:16.000
+Okay, let's go back to the other side.
+
+19:16.000 --> 19:20.000
+Well, in general, if you go to a dark matter meeting.
+
+19:20.000 --> 19:22.000
+This is what people usually see.
+
+19:22.000 --> 19:23.000
+What is this picture?
+
+19:23.000 --> 19:24.000
+This picture is.
+
+19:24.000 --> 19:27.000
+This is the imaginary.
+
+19:27.000 --> 19:30.000
+Dark Matter Mass.
+
+19:31.000 --> 19:38.000
+From here is the 10 to the negative 5 times of the GV to the 10 to the 3 times of the GV.
+
+19:38.000 --> 19:40.000
+Uh, okay.
+
+19:40.000 --> 19:43.000
+Okay, so what about these 10 lines?
+
+19:43.000 --> 19:45.000
+It's an already completed experiment.
+
+19:45.000 --> 19:46.000
+Sorry.
+
+19:46.000 --> 19:48.000
+What about these long lines?
+
+19:48.000 --> 19:50.000
+It's about to be released.
+
+19:50.000 --> 19:53.000
+Uh, the results of the experiment that will be released in a few years.
+
+19:53.000 --> 19:55.000
+Okay, what about those dots?
+
+19:55.000 --> 19:57.000
+It's something like conceptual design.
+
+19:57.000 --> 20:00.000
+Or something like, uh.
+
+20:00.000 --> 20:02.000
+Calculate it out and say I project.
+
+20:02.000 --> 20:05.000
+If I have completed this concept, where can I go?
+
+20:05.000 --> 20:07.000
+It's not so realistic.
+
+20:07.000 --> 20:10.000
+Okay, so I'm going to draw a line here.
+
+20:10.000 --> 20:13.000
+It means that I'm done with this experiment and I'm going to put it all back on top.
+
+20:13.000 --> 20:15.000
+Okay, what does that mean?
+
+20:15.000 --> 20:16.000
+It means.
+
+20:16.000 --> 20:19.000
+I open my experiment and then I keep waiting and waiting and waiting.
+
+20:19.000 --> 20:20.000
+I know how long I've been waiting.
+
+20:20.000 --> 20:22.000
+I know how heavy my experiment is.
+
+20:22.000 --> 20:26.000
+Therefore, I know how many protons or neutrons I have waiting there.
+
+20:26.000 --> 20:27.000
+Wait for a long time.
+
+20:27.000 --> 20:28.000
+I didn't wait for anything.
+
+20:28.000 --> 20:30.000
+So I can say.
+
+20:30.000 --> 20:32.000
+How big is it according to my experiment?
+
+20:32.000 --> 20:33.000
+How long have I been waiting?
+
+20:33.000 --> 20:35.000
+And then I didn't see anything.
+
+20:35.000 --> 20:38.000
+I can say with enough confidence.
+
+20:38.000 --> 20:40.000
+Dark matter passes through me.
+
+20:40.000 --> 20:42.000
+The probability of being blocked.
+
+20:42.000 --> 20:44.000
+It's not going to be more than a number.
+
+20:44.000 --> 20:46.000
+Otherwise, I should see something.
+
+20:46.000 --> 20:48.000
+This sentence is a bit long.
+
+20:48.000 --> 20:49.000
+Can you understand?
+
+20:49.000 --> 20:51.000
+Okay, so based on.
+
+20:51.000 --> 20:54.000
+I didn't see any results of the experiment.
+
+20:55.000 --> 20:57.000
+But I know very clearly.
+
+20:57.000 --> 20:58.000
+How long have I been waiting?
+
+20:58.000 --> 21:00.000
+How many things did I use to block?
+
+21:00.000 --> 21:01.000
+Can't block.
+
+21:01.000 --> 21:03.000
+So I can say.
+
+21:03.000 --> 21:05.000
+Dark matter and protons and neutrons.
+
+21:05.000 --> 21:08.000
+The probability of interaction will not exceed a number.
+
+21:08.000 --> 21:09.000
+Then I can.
+
+21:09.000 --> 21:11.000
+For each different assumption.
+
+21:11.000 --> 21:12.000
+The quality of dark matter.
+
+21:12.000 --> 21:13.000
+To calculate a number.
+
+21:13.000 --> 21:15.000
+So in the end, it's a line.
+
+21:15.000 --> 21:16.000
+Then I'll empty it out here.
+
+21:16.000 --> 21:17.000
+Draw it black.
+
+21:17.000 --> 21:18.000
+That is to say.
+
+21:18.000 --> 21:19.000
+Okay, dark matter.
+
+21:19.000 --> 21:20.000
+The interaction.
+
+21:20.000 --> 21:21.000
+If today is.
+
+21:21.000 --> 21:22.000
+If it's EEV.
+
+21:22.000 --> 21:24.000
+It's definitely not.
+
+21:24.000 --> 21:26.000
+The interaction is 10 to 40.
+
+21:26.000 --> 21:27.000
+Must be smaller.
+
+21:27.000 --> 21:28.000
+If it's bigger.
+
+21:28.000 --> 21:30.000
+I should see it.
+
+21:30.000 --> 21:31.000
+OK.
+
+21:31.000 --> 21:33.000
+So these lines are what it means.
+
+21:33.000 --> 21:34.000
+So you can see.
+
+21:34.000 --> 21:35.000
+The current limit is.
+
+21:35.000 --> 21:37.000
+This way.
+
+21:37.000 --> 21:38.000
+That is to say.
+
+21:38.000 --> 21:39.000
+We have to keep going down.
+
+21:39.000 --> 21:40.000
+Keep digging down.
+
+21:40.000 --> 21:41.000
+Until one day we see.
+
+21:41.000 --> 21:42.000
+Dark matter really.
+
+21:42.000 --> 21:44.000
+Always in the detector.
+
+21:44.000 --> 21:45.000
+it is good.
+
+21:45.000 --> 21:46.000
+Then.
+
+21:46.000 --> 21:48.000
+Go back to the question that Ted just asked.
+
+21:48.000 --> 21:50.000
+Now all the experiments here.
+
+21:50.000 --> 21:51.000
+There is sensitivity.
+
+21:51.000 --> 21:52.000
+You can measure.
+
+21:52.000 --> 21:53.000
+You can set a limit.
+
+21:53.000 --> 21:54.000
+Constraint like this.
+
+21:54.000 --> 21:56.000
+But it's probably around here.
+
+21:56.000 --> 21:58.000
+It's all gone.
+
+21:58.000 --> 22:00.000
+And then there's almost no way to measure it any lower.
+
+22:00.000 --> 22:01.000
+Why?
+
+22:01.000 --> 22:03.000
+Because all of these experiments.
+
+22:03.000 --> 22:05.000
+It's all paper and seeds.
+
+22:05.000 --> 22:06.000
+To block dark matter.
+
+22:06.000 --> 22:08.000
+So for these.
+
+22:08.000 --> 22:10.000
+Lighter possible dark matter.
+
+22:10.000 --> 22:12.000
+When it hits.
+
+22:12.000 --> 22:14.000
+The remaining energy is very small.
+
+22:14.000 --> 22:15.000
+In these experiments.
+
+22:15.000 --> 22:16.000
+It can't be measured.
+
+22:16.000 --> 22:17.000
+OK, I can't measure it.
+
+22:17.000 --> 22:18.000
+Then I can't say.
+
+22:18.000 --> 22:20.000
+What should I do here?
+
+22:20.000 --> 22:21.000
+So there's a threshold here.
+
+22:21.000 --> 22:22.000
+Further down.
+
+22:22.000 --> 22:24.000
+We can't measure dark matter.
+
+22:24.000 --> 22:25.000
+This is the first point.
+
+22:25.000 --> 22:27.000
+The second point.
+
+22:27.000 --> 22:29.000
+There's a yellow one down here.
+
+22:29.000 --> 22:30.000
+A very large piece of stuff.
+
+22:30.000 --> 22:31.000
+What is this?
+
+22:31.000 --> 22:32.000
+This is a constant.
+
+22:32.000 --> 22:35.000
+The seeds of the earth.
+
+22:35.000 --> 22:37.000
+Now all the experimental design.
+
+22:37.000 --> 22:39.000
+Basically, there is no clear.
+
+22:39.000 --> 22:40.000
+The way is to say.
+
+22:40.000 --> 22:41.000
+I can be very efficient.
+
+22:41.000 --> 22:43.000
+Distinguish between dark matter and seeds.
+
+22:43.000 --> 22:47.000
+The difference in this signal.
+
+22:47.000 --> 22:48.000
+So if I keep digging today.
+
+22:48.000 --> 22:49.000
+I keep going down.
+
+22:49.000 --> 22:50.000
+Keep drawing.
+
+22:50.000 --> 22:52.000
+It's about this long.
+
+22:52.000 --> 22:53.000
+Here.
+
+22:53.000 --> 22:54.000
+If I keep drawing here.
+
+22:54.000 --> 22:55.000
+Dig it out.
+
+22:55.000 --> 22:57.000
+I still don't see the dark matter.
+
+22:57.000 --> 22:59.000
+Next, I'll go crazy.
+
+22:59.000 --> 23:00.000
+There's always a signal.
+
+23:00.000 --> 23:01.000
+But I probably will.
+
+23:01.000 --> 23:02.000
+We all think.
+
+23:02.000 --> 23:03.000
+Oh, that should be the sun.
+
+23:03.000 --> 23:04.000
+It's coming out.
+
+23:04.000 --> 23:06.000
+Or the radioactivity of the earth.
+
+23:06.000 --> 23:07.000
+Out of the seeds.
+
+23:07.000 --> 23:08.000
+We can't do it again.
+
+23:08.000 --> 23:10.000
+Continue to measure this part.
+
+23:10.000 --> 23:12.000
+At least in the foreseeable future.
+
+23:12.000 --> 23:14.000
+No technology can do this.
+
+23:14.000 --> 23:15.000
+OK.
+
+23:15.000 --> 23:18.000
+Why are these experiments still so focused?
+
+23:18.000 --> 23:19.000
+Dig this part.
+
+23:19.000 --> 23:22.000
+For example, from 10GbE to 50EbE.
+
+23:22.000 --> 23:24.000
+That's the reason.
+
+23:24.000 --> 23:26.000
+Now I'm going to draw these models.
+
+23:26.000 --> 23:28.000
+You can see it.
+
+23:28.000 --> 23:29.000
+It's full of models here.
+
+23:29.000 --> 23:30.000
+That's what I just said.
+
+23:30.000 --> 23:33.000
+It can even extend to 10 to 30.
+
+23:33.000 --> 23:34.000
+No problem.
+
+23:34.000 --> 23:37.000
+But all of this.
+
+23:37.000 --> 23:40.000
+What you can dig here is MSSM.
+
+23:40.000 --> 23:42.000
+This is called super symmetry theory.
+
+23:43.000 --> 23:46.000
+Between the 1980s and 2000s.
+
+23:46.000 --> 23:49.000
+Everyone is very confident about super symmetry theory.
+
+23:49.000 --> 23:51.000
+I think it might be.
+
+23:51.000 --> 23:56.000
+It's a very important theory.
+
+23:56.000 --> 23:59.000
+It also provides a variety of variations.
+
+23:59.000 --> 24:01.000
+It depends on what kind of super symmetry theory you are.
+
+24:01.000 --> 24:03.000
+The dark matter candidate.
+
+24:03.000 --> 24:04.000
+So everyone is confident.
+
+24:04.000 --> 24:05.000
+But keep digging.
+
+24:05.000 --> 24:08.000
+But in fact, the earliest version of super symmetry theory.
+
+24:08.000 --> 24:11.000
+In fact, its prediction should be around 10 to 38.
+
+24:12.000 --> 24:13.000
+It's already been dug up.
+
+24:13.000 --> 24:18.000
+And be ruled out by more than 10 orders of magnitude.
+
+24:18.000 --> 24:19.000
+So much.
+
+24:19.000 --> 24:22.000
+OK, so now we see this P or C or N.
+
+24:22.000 --> 24:24.000
+What about this super symmetry theory?
+
+24:24.000 --> 24:27.000
+It's all very fine-tuned.
+
+24:27.000 --> 24:32.000
+OK, so now we generally think.
+
+24:32.000 --> 24:33.000
+OK.
+
+24:33.000 --> 24:35.000
+Within 5 to 10 years.
+
+24:35.000 --> 24:37.000
+These experiments will be completed.
+
+24:37.000 --> 24:40.000
+The dotted line they draw.
+
+24:40.000 --> 24:42.000
+Unless we are either in this range.
+
+24:42.000 --> 24:44.000
+We found the document.
+
+24:44.000 --> 24:47.000
+Otherwise, these experiments are based on technology.
+
+24:47.000 --> 24:49.000
+There will probably be a lot of difficulty.
+
+24:49.000 --> 24:50.000
+Extend down.
+
+24:50.000 --> 24:51.000
+Because it will meet neutrino.
+
+24:51.000 --> 24:52.000
+This is the first point.
+
+24:52.000 --> 24:53.000
+The second point is.
+
+24:53.000 --> 24:56.000
+In fact, if you are.
+
+24:56.000 --> 24:59.000
+It's a theory that needs to be very natural.
+
+24:59.000 --> 25:01.000
+Not very artificially.
+
+25:01.000 --> 25:03.000
+To find a very difficult to produce.
+
+25:03.000 --> 25:05.000
+The combination of parameters.
+
+25:05.000 --> 25:07.000
+In fact, those natural.
+
+25:08.000 --> 25:10.000
+Theoretical prediction.
+
+25:10.000 --> 25:11.000
+It's already been dug up.
+
+25:11.000 --> 25:12.000
+OK.
+
+25:12.000 --> 25:14.000
+But back to this point.
+
+25:14.000 --> 25:17.000
+In fact, there are still a lot of models down here.
+
+25:17.000 --> 25:18.000
+OK.
+
+25:18.000 --> 25:20.000
+So we want to do.
+
+25:20.000 --> 25:22.000
+Uh.
+
+25:22.000 --> 25:25.000
+We want to find better technology.
+
+25:25.000 --> 25:27.000
+In addition to digging here.
+
+25:27.000 --> 25:30.000
+We want to be able to cover the remaining dozens.
+
+25:30.000 --> 25:32.000
+This order of magnitude is not measured at all.
+
+25:32.000 --> 25:36.000
+Or it's hard to measure.
+
+25:36.000 --> 25:37.000
+OK.
+
+25:37.000 --> 25:38.000
+So what are we going to do?
+
+25:38.000 --> 25:40.000
+I just said.
+
+25:40.000 --> 25:42.000
+We want to block a very light particle.
+
+25:42.000 --> 25:44.000
+We can't use a very heavy magnet or seed to block it.
+
+25:44.000 --> 25:45.000
+Because of this.
+
+25:45.000 --> 25:47.000
+This energy will be very little.
+
+25:47.000 --> 25:49.000
+So that's another thing that humans can control.
+
+25:49.000 --> 25:51.000
+In addition to the magnet and the seed is the electron.
+
+25:51.000 --> 25:53.000
+In fact, there is not much else.
+
+25:53.000 --> 25:54.000
+OK.
+
+25:54.000 --> 25:55.000
+Then I change it to an electron now.
+
+25:55.000 --> 25:56.000
+OK.
+
+25:56.000 --> 25:57.000
+Then I bring the number in.
+
+25:57.000 --> 26:00.000
+The electron is instantly 100 times lighter than the magnet and the seed.
+
+26:00.000 --> 26:01.000
+No, sorry.
+
+26:01.000 --> 26:02.000
+1,000 times.
+
+26:02.000 --> 26:03.000
+2,000 times.
+
+26:03.000 --> 26:04.000
+Almost 2,000 times.
+
+26:05.000 --> 26:07.000
+To a very, very light quality.
+
+26:07.000 --> 26:09.000
+So now I can block it.
+
+26:09.000 --> 26:11.000
+The energy consumed is probably.
+
+26:11.000 --> 26:14.000
+I can be sensitive to 100EV.
+
+26:14.000 --> 26:15.000
+That's dozens of EV.
+
+26:15.000 --> 26:17.000
+Let's talk about dozens of EV.
+
+26:17.000 --> 26:19.000
+But if you use a magnet.
+
+26:19.000 --> 26:22.000
+It's hundreds of EVs that can be measured.
+
+26:22.000 --> 26:24.000
+That is to say, if I want to eat more.
+
+26:24.000 --> 26:26.000
+Eat this light particle more efficiently.
+
+26:26.000 --> 26:27.000
+Give me the energy.
+
+26:27.000 --> 26:29.000
+I have to use light things to block.
+
+26:29.000 --> 26:31.000
+So our idea now is.
+
+26:31.000 --> 26:34.000
+Electron as the target of being hit.
+
+26:34.000 --> 26:36.000
+OK.
+
+26:36.000 --> 26:38.000
+Okay, because he's an electron.
+
+26:38.000 --> 26:40.000
+So he actually has another interaction.
+
+26:40.000 --> 26:43.000
+He will directly put the light.
+
+26:43.000 --> 26:45.000
+Light is the electromagnetic wave.
+
+26:45.000 --> 26:47.000
+So if there is a model today.
+
+26:47.000 --> 26:48.000
+Is.
+
+26:48.000 --> 26:50.000
+Will convert to light or light.
+
+26:50.000 --> 26:52.000
+He will absorb it all.
+
+26:52.000 --> 26:54.000
+At this time, it is not the opposite.
+
+26:54.000 --> 26:56.000
+And then eat some of the energy.
+
+26:56.000 --> 26:58.000
+But we will put all this energy.
+
+26:58.000 --> 27:00.000
+Just like his quality, so much energy.
+
+27:00.000 --> 27:02.000
+The quality will become his energy.
+
+27:02.000 --> 27:03.000
+Eat it all.
+
+27:03.000 --> 27:04.000
+Then we can also measure this.
+
+27:04.000 --> 27:06.000
+If you use electrons.
+
+27:06.000 --> 27:07.000
+OK.
+
+27:07.000 --> 27:09.000
+So we are now.
+
+27:09.000 --> 27:11.000
+I think we should use electrons.
+
+27:11.000 --> 27:13.000
+To replace the straight and neutral.
+
+27:13.000 --> 27:15.000
+To produce for lighter particles.
+
+27:15.000 --> 27:16.000
+This sensitivity.
+
+27:16.000 --> 27:18.000
+Then we will.
+
+27:18.000 --> 27:20.000
+It's a definition of this talk.
+
+27:20.000 --> 27:22.000
+That is to say, we will talk about low mass later.
+
+27:22.000 --> 27:24.000
+Low mass is probably GEV.
+
+27:24.000 --> 27:25.000
+Or lighter particles.
+
+27:25.000 --> 27:27.000
+Then emphasize it again.
+
+27:27.000 --> 27:28.000
+There are so many here.
+
+27:29.000 --> 27:31.000
+For example, dark sector.
+
+27:31.000 --> 27:33.000
+This is the metric.
+
+27:33.000 --> 27:35.000
+Freezing, etc.
+
+27:35.000 --> 27:36.000
+OK.
+
+27:36.000 --> 27:38.000
+Of course, there are.
+
+27:38.000 --> 27:39.000
+Uh.
+
+27:39.000 --> 27:41.000
+We are still experimenting with this.
+
+27:41.000 --> 27:43.000
+I just talked about this.
+
+27:43.000 --> 27:45.000
+The mechanism of hitting the ball.
+
+27:45.000 --> 27:46.000
+But in fact.
+
+27:46.000 --> 27:48.000
+For example, like the theory.
+
+27:48.000 --> 27:50.000
+Uh, he predicted that.
+
+27:50.000 --> 27:52.000
+There will be very natural.
+
+27:52.000 --> 27:53.000
+Can produce this.
+
+27:53.000 --> 27:55.000
+It's not a particle at all.
+
+27:55.000 --> 27:56.000
+It's more like a bunch of.
+
+27:57.000 --> 27:59.000
+That's like this.
+
+27:59.000 --> 28:01.000
+We can actually measure it.
+
+28:01.000 --> 28:03.000
+But of course we have to assume that.
+
+28:03.000 --> 28:05.000
+Assuming he's going to do this.
+
+28:05.000 --> 28:07.000
+This kind of behavior.
+
+28:07.000 --> 28:09.000
+Then we can use this method to measure.
+
+28:09.000 --> 28:11.000
+So in other words, we can.
+
+28:11.000 --> 28:13.000
+If there is such a behavior.
+
+28:13.000 --> 28:15.000
+What is his probability?
+
+28:15.000 --> 28:16.000
+That's for me.
+
+28:16.000 --> 28:18.000
+Uh, like we do experiments.
+
+28:18.000 --> 28:19.000
+A more important point is.
+
+28:19.000 --> 28:21.000
+How do we really.
+
+28:21.000 --> 28:23.000
+To do such an experiment realistically.
+
+28:23.000 --> 28:24.000
+Like I just said.
+
+28:24.000 --> 28:26.000
+We want to maximize this.
+
+28:26.000 --> 28:27.000
+Momentum energy transfer.
+
+28:27.000 --> 28:28.000
+So we have to be very light.
+
+28:28.000 --> 28:30.000
+This target the particle.
+
+28:30.000 --> 28:32.000
+Of course, we want very small, very small noise.
+
+28:32.000 --> 28:34.000
+OK, because of this.
+
+28:34.000 --> 28:36.000
+We can only see a very small signal.
+
+28:36.000 --> 28:38.000
+So there will be enough.
+
+28:38.000 --> 28:39.000
+Signal to noise ratio.
+
+28:39.000 --> 28:40.000
+OK.
+
+28:40.000 --> 28:41.000
+Back to just now.
+
+28:41.000 --> 28:43.000
+We want the sensitivity of sub-Kev.
+
+28:43.000 --> 28:44.000
+OK.
+
+28:44.000 --> 28:45.000
+It takes a few tens of EVs.
+
+28:45.000 --> 28:46.000
+Probably below.
+
+28:46.000 --> 28:47.000
+Then do this.
+
+28:47.000 --> 28:49.000
+GEV or lighter particle.
+
+28:49.000 --> 28:51.000
+To see things.
+
+28:52.000 --> 28:53.000
+OK.
+
+28:53.000 --> 28:55.000
+Of course, there is also a very important thing.
+
+28:55.000 --> 28:57.000
+We must be able to know very clearly.
+
+28:57.000 --> 28:59.000
+The signal I see now.
+
+28:59.000 --> 29:01.000
+It's from the Dark Matter hit me.
+
+29:01.000 --> 29:03.000
+Instead of inexplicably.
+
+29:03.000 --> 29:05.000
+Things in the environment hit my detector.
+
+29:05.000 --> 29:07.000
+But if the energy is very high today.
+
+29:07.000 --> 29:09.000
+This thing is relatively easy.
+
+29:09.000 --> 29:11.000
+Because of this kind of energy in the environment.
+
+29:11.000 --> 29:13.000
+This kind of radioactivity.
+
+29:13.000 --> 29:14.000
+In fact, relatively few.
+
+29:14.000 --> 29:15.000
+Otherwise, in fact, people are dead.
+
+29:15.000 --> 29:17.000
+OK, but if you reduce the energy to very low.
+
+29:17.000 --> 29:19.000
+In fact, you are next to the phone.
+
+29:20.000 --> 29:21.000
+Cell phone signal.
+
+29:21.000 --> 29:23.000
+It looks like that energy.
+
+29:23.000 --> 29:25.000
+If you put it in an experimental environment.
+
+29:25.000 --> 29:27.000
+The temperature of the experimental environment.
+
+29:27.000 --> 29:29.000
+Black radiation.
+
+29:29.000 --> 29:31.000
+That light is also this energy.
+
+29:31.000 --> 29:33.000
+So it started to become very, very much.
+
+29:33.000 --> 29:34.000
+Low-energy particle.
+
+29:34.000 --> 29:36.000
+Keep hitting the detector.
+
+29:36.000 --> 29:37.000
+We need to be able to distinguish.
+
+29:37.000 --> 29:39.000
+That's the only way to do this.
+
+29:39.000 --> 29:43.000
+So in fact, it is relatively challenging.
+
+29:43.000 --> 29:44.000
+OK.
+
+29:44.000 --> 29:46.000
+I won't talk about this picture.
+
+29:46.000 --> 29:48.000
+This picture is actually the thing.
+
+29:48.000 --> 29:49.000
+Ok.
+
+29:49.000 --> 29:50.000
+Ok, I'm done.
+
+29:50.000 --> 29:52.000
+The first part is our motivation.
+
+29:52.000 --> 29:53.000
+Do you have any questions?
+
+29:59.000 --> 30:00.000
+Hello.
+
+30:00.000 --> 30:02.000
+Do you hear me?
+
+30:02.000 --> 30:04.000
+Yes, yes, yes.
+
+30:04.000 --> 30:05.000
+Then I want to.
+
+30:05.000 --> 30:07.000
+I'm the one who does Neoscience.
+
+30:07.000 --> 30:09.000
+So I don't have a background.
+
+30:09.000 --> 30:11.000
+But I want to ask.
+
+30:11.000 --> 30:14.000
+That's how everyone is.
+
+30:14.000 --> 30:15.000
+Is it that?
+
+30:15.000 --> 30:16.000
+Neutrino.
+
+30:16.000 --> 30:17.000
+Oh.
+
+30:17.000 --> 30:19.000
+How do you do it?
+
+30:19.000 --> 30:20.000
+Is it?
+
+30:20.000 --> 30:21.000
+Is it?
+
+30:21.000 --> 30:22.000
+Neutrino.
+
+30:22.000 --> 30:23.000
+This question.
+
+30:23.000 --> 30:24.000
+Is it?
+
+30:24.000 --> 30:25.000
+OK.
+
+30:25.000 --> 30:26.000
+You say.
+
+30:26.000 --> 30:27.000
+What if it's Neutrino?
+
+30:27.000 --> 30:28.000
+How do you do it?
+
+30:28.000 --> 30:29.000
+Because the sun will emit a lot.
+
+30:29.000 --> 30:30.000
+That's right.
+
+30:30.000 --> 30:31.000
+This question can actually be divided into two.
+
+30:31.000 --> 30:32.000
+The first one is.
+
+30:32.000 --> 30:33.000
+I'm not sure.
+
+30:33.000 --> 30:34.000
+What you want to ask is.
+
+30:34.000 --> 30:35.000
+How do we know?
+
+30:35.000 --> 30:36.000
+Neutrino can't be a dark matter.
+
+30:36.000 --> 30:37.000
+How do we know?
+
+30:37.000 --> 30:38.000
+How do we know?
+
+30:38.000 --> 30:39.000
+How do we know?
+
+30:39.000 --> 30:40.000
+How do we know?
+
+30:40.000 --> 30:41.000
+How do we know?
+
+30:41.000 --> 30:42.000
+How do we know?
+
+30:43.000 --> 30:44.000
+How do we know?
+
+30:44.000 --> 30:45.000
+Neutrino can't be a dark matter?
+
+30:45.000 --> 30:46.000
+It's still our detector.
+
+30:46.000 --> 30:47.000
+What about the signal you see is not Neutrino?
+
+30:47.000 --> 30:48.000
+How do you know?
+
+30:48.000 --> 30:49.000
+It should be said that the sun will emit a lot of Neutrino.
+
+30:49.000 --> 30:50.000
+It should be said that the sun will emit a lot of Neutrino.
+
+30:50.000 --> 30:51.000
+It should be said that the sun will emit a lot of Neutrino.
+
+30:51.000 --> 30:52.000
+If you have to first exclude.
+
+30:52.000 --> 30:53.000
+If you have to first exclude.
+
+30:53.000 --> 30:54.000
+Is it possible that Neutrino is not?
+
+30:54.000 --> 30:55.000
+And then do this experiment near the Earth to make it feasible?
+
+30:55.000 --> 30:56.000
+Because the sun if it is.
+
+30:56.000 --> 30:57.000
+The sun is not a very strong interferer.
+
+30:57.000 --> 30:58.000
+That's right.
+
+30:58.000 --> 30:59.000
+That's right.
+
+30:59.000 --> 31:00.000
+Okay.
+
+31:00.000 --> 31:01.000
+The first point.
+
+31:01.000 --> 31:02.000
+We can use the solar system.
+
+31:02.000 --> 31:03.000
+The solar system.
+
+31:12.000 --> 31:19.000
+Why is it called Neutrino now?
+
+31:19.000 --> 31:22.000
+This is that.
+
+31:22.000 --> 31:25.000
+Neutrino's distribution is not the same, is it?
+
+31:25.000 --> 31:28.000
+But why is Neutrino's distribution the same in all three cases?
+
+31:28.000 --> 31:29.000
+It's because of the black matter in it.
+
+31:29.000 --> 31:30.000
+Black matter is functional.
+
+31:30.000 --> 31:31.000
+There's no our detector has the data.
+
+31:31.000 --> 31:32.000
+You are now with us.
+
+31:32.000 --> 31:33.000
+More swing neutrino.
+
+31:33.000 --> 31:34.000
+Neutrino does not form, and now it's coming.
+
+31:34.000 --> 31:35.000
+Linking together.
+
+31:35.000 --> 31:36.000
+Really?
+
+31:36.000 --> 31:40.000
+Then let's talk about the dark matter.
+
+31:41.000 --> 31:43.000
+It takes a long, long time.
+
+31:43.000 --> 31:46.000
+It will slowly gather into what we want now.
+
+31:46.000 --> 31:49.000
+The density of the spider web I just showed.
+
+31:49.000 --> 31:52.000
+Then attract other particles in.
+
+31:52.000 --> 31:55.000
+That time is far more than we know.
+
+31:55.000 --> 31:57.000
+The age of the universe so far.
+
+31:57.000 --> 31:59.000
+Then the amount of planets produced.
+
+31:59.000 --> 32:02.000
+So we know that such a light particle.
+
+32:02.000 --> 32:04.000
+Then its interaction is like Neutrino.
+
+32:04.000 --> 32:08.000
+Because we actually know a lot about Neutrino.
+
+32:08.000 --> 32:09.000
+But it's a good feeling.
+
+32:09.000 --> 32:10.000
+But that is to say.
+
+32:10.000 --> 32:13.000
+We know the strength of its interaction.
+
+32:13.000 --> 32:15.000
+So we know.
+
+32:15.000 --> 32:19.000
+It can't be the dark matter we want.
+
+32:19.000 --> 32:22.000
+OK, unless there's another version of Neutrino.
+
+32:22.000 --> 32:23.000
+That's not.
+
+32:23.000 --> 32:24.000
+That's also new physics.
+
+32:24.000 --> 32:26.000
+So we know Neutrino.
+
+32:26.000 --> 32:28.000
+The first is not to do dark matter.
+
+32:28.000 --> 32:29.000
+The second is if today.
+
+32:29.000 --> 32:30.000
+OK, then the sun will still shoot.
+
+32:30.000 --> 32:32.000
+We know that kind of Neutrino.
+
+32:32.000 --> 32:33.000
+How do we know?
+
+32:33.000 --> 32:37.000
+The signal we see is not Neutrino.
+
+32:37.000 --> 32:39.000
+The answer is we don't know.
+
+32:39.000 --> 32:40.000
+But we know one thing.
+
+32:40.000 --> 32:41.000
+We know how hot the sun is.
+
+32:41.000 --> 32:43.000
+We know how much light it emits.
+
+32:43.000 --> 32:45.000
+We also know almost.
+
+32:45.000 --> 32:47.000
+The principle of emitting this light is.
+
+32:47.000 --> 32:48.000
+Which few.
+
+32:48.000 --> 32:51.000
+The chain of fusion reactions.
+
+32:51.000 --> 32:52.000
+So we know.
+
+32:52.000 --> 32:54.000
+Based on its brightness, its heat.
+
+32:54.000 --> 32:55.000
+Look at these fusion reactions.
+
+32:55.000 --> 32:58.000
+It emits the flux of Neutrino.
+
+32:58.000 --> 33:00.000
+How much should that flow be?
+
+33:00.000 --> 33:02.000
+Plus we know.
+
+33:02.000 --> 33:05.000
+This kind of Neutrino through our detector.
+
+33:05.000 --> 33:07.000
+What is the probability of being blocked?
+
+33:07.000 --> 33:09.000
+OK, so we know.
+
+33:09.000 --> 33:12.000
+Now the detector sees.
+
+33:12.000 --> 33:14.000
+It won't be.
+
+33:14.000 --> 33:16.000
+It won't be Neutrino.
+
+33:16.000 --> 33:18.000
+Because in theory, in the whole experiment.
+
+33:18.000 --> 33:20.000
+The duration will be blocked.
+
+33:20.000 --> 33:22.000
+Maybe it's a few zeros.
+
+33:22.000 --> 33:25.000
+In other words, it won't be blocked.
+
+33:25.000 --> 33:27.000
+So we know there's no problem.
+
+33:27.000 --> 33:28.000
+But based on what I just said.
+
+33:28.000 --> 33:29.000
+I know how hot the sun is.
+
+33:29.000 --> 33:32.000
+So how many Neutrino have been through the earth.
+
+33:32.000 --> 33:33.000
+Through our experiment.
+
+33:33.000 --> 33:35.000
+When our experiment is getting more and more sensitive.
+
+33:35.000 --> 33:37.000
+Can be sensitive to.
+
+33:37.000 --> 33:39.000
+It's worth 47, 48.
+
+33:39.000 --> 33:40.000
+For example, here.
+
+33:40.000 --> 33:42.000
+48, 49.
+
+33:42.000 --> 33:44.000
+At this time, we will be very sensitive.
+
+33:44.000 --> 33:46.000
+To be able to see that kind of Neutrino.
+
+33:46.000 --> 33:48.000
+At this time, we see any signal.
+
+33:48.000 --> 33:50.000
+We can't say.
+
+33:50.000 --> 33:52.000
+It is Dark Matter or Neutrino.
+
+33:52.000 --> 33:54.000
+So here to dig this yellow line.
+
+33:54.000 --> 33:56.000
+This is what I said.
+
+33:56.000 --> 33:57.000
+The experiment will stop here.
+
+33:57.000 --> 33:59.000
+Because we basically don't have it now.
+
+33:59.000 --> 34:01.000
+Reliable technology can tell.
+
+34:01.000 --> 34:03.000
+Is it Neutrino or Dark Matter?
+
+34:05.000 --> 34:06.000
+OK.
+
+34:06.000 --> 34:07.000
+Thank you.
+
+34:07.000 --> 34:09.000
+But in fact, there is a potential way.
+
+34:09.000 --> 34:11.000
+If I can distinguish its direction.
+
+34:11.000 --> 34:12.000
+They all come from the sun.
+
+34:12.000 --> 34:13.000
+Then I will say that people from the sun.
+
+34:13.000 --> 34:14.000
+The probability of Neutrino is very high.
+
+34:14.000 --> 34:16.000
+I don't look over there.
+
+34:16.000 --> 34:17.000
+OK.
+
+34:17.000 --> 34:19.000
+But what I'm talking about now is.
+
+34:19.000 --> 34:21.000
+When this particle hits.
+
+34:21.000 --> 34:22.000
+The energy it leaves.
+
+34:22.000 --> 34:23.000
+We only measure energy.
+
+34:23.000 --> 34:24.000
+We didn't measure.
+
+34:24.000 --> 34:26.000
+The direction of this incoming particle.
+
+34:26.000 --> 34:27.000
+So in fact.
+
+34:27.000 --> 34:28.000
+Unless I can identify this thing.
+
+34:28.000 --> 34:30.000
+Otherwise, I can't tell Neutrino.
+
+34:30.000 --> 34:31.000
+The answer is no.
+
+34:32.000 --> 34:33.000
+OK.
+
+34:34.000 --> 34:35.000
+Excuse me.
+
+34:35.000 --> 34:36.000
+Can I ask another question?
+
+34:36.000 --> 34:37.000
+Please say.
+
+34:37.000 --> 34:38.000
+Just.
+
+34:39.000 --> 34:41.000
+Because I don't understand this at all.
+
+34:41.000 --> 34:42.000
+That.
+
+34:43.000 --> 34:45.000
+That is, the particle accelerator can.
+
+34:45.000 --> 34:46.000
+Can.
+
+34:46.000 --> 34:47.000
+Can.
+
+34:47.000 --> 34:49.000
+Think of a way to find these heavy particles.
+
+34:49.000 --> 34:51.000
+Heavy quality particles.
+
+34:51.000 --> 34:52.000
+That.
+
+34:52.000 --> 34:53.000
+But for example.
+
+34:53.000 --> 34:55.000
+Very light particles.
+
+34:55.000 --> 34:57.000
+Is there no way to find it with an accelerator?
+
+34:57.000 --> 34:58.000
+So.
+
+34:58.000 --> 34:59.000
+You are looking for Dark Matter.
+
+34:59.000 --> 35:00.000
+Assuming this.
+
+35:00.000 --> 35:01.000
+This.
+
+35:02.000 --> 35:03.000
+There is a very light particle.
+
+35:03.000 --> 35:05.000
+Then it could also be Dark Matter.
+
+35:05.000 --> 35:06.000
+You may.
+
+35:06.000 --> 35:07.000
+You are looking for Dark Matter.
+
+35:07.000 --> 35:08.000
+It may also be.
+
+35:08.000 --> 35:09.000
+Solve this.
+
+35:09.000 --> 35:11.000
+For example, find a particularly light particle.
+
+35:11.000 --> 35:12.000
+Then.
+
+35:12.000 --> 35:13.000
+Maybe the theory can't be predicted.
+
+35:13.000 --> 35:14.000
+Or.
+
+35:14.000 --> 35:15.000
+Some theories have been predicted.
+
+35:15.000 --> 35:16.000
+That's it.
+
+35:16.000 --> 35:17.000
+But I don't know.
+
+35:17.000 --> 35:18.000
+Yes.
+
+35:18.000 --> 35:20.000
+So in fact, the accelerator can find Dark Matter.
+
+35:20.000 --> 35:23.000
+And a lot of people are looking for Dark Matter in the accelerator.
+
+35:23.000 --> 35:24.000
+But.
+
+35:24.000 --> 35:26.000
+Looking for Dark Matter in the accelerator.
+
+35:26.000 --> 35:27.000
+Like you said.
+
+35:27.000 --> 35:28.000
+In fact, basically.
+
+35:28.000 --> 35:29.000
+The concept is completely different.
+
+35:29.000 --> 35:30.000
+It is.
+
+35:30.000 --> 35:31.000
+You use your known example.
+
+35:31.000 --> 35:32.000
+Think of a way.
+
+35:32.000 --> 35:33.000
+Create Dark Matter.
+
+35:33.000 --> 35:34.000
+Right.
+
+35:34.000 --> 35:35.000
+But.
+
+35:35.000 --> 35:37.000
+It has a very, very practical reason.
+
+35:37.000 --> 35:39.000
+It's very difficult to do in the accelerator.
+
+35:39.000 --> 35:40.000
+That is.
+
+35:40.000 --> 35:42.000
+You take two examples you already know.
+
+35:42.000 --> 35:43.000
+Put it together.
+
+35:43.000 --> 35:44.000
+Explode.
+
+35:44.000 --> 35:46.000
+In addition to producing a Dark Matter.
+
+35:46.000 --> 35:49.000
+It will produce a lot of other examples.
+
+35:49.000 --> 35:50.000
+In other words.
+
+35:50.000 --> 35:51.000
+Your.
+
+35:51.000 --> 35:52.000
+Next to these.
+
+35:52.000 --> 35:54.000
+After measuring these explosions.
+
+35:54.000 --> 35:55.000
+These products.
+
+35:55.000 --> 35:56.000
+These detectors.
+
+35:56.000 --> 35:57.000
+It's like being constantly.
+
+35:57.000 --> 35:58.000
+It's like being constantly.
+
+35:58.000 --> 35:59.000
+It's like being constantly.
+
+35:59.000 --> 36:00.000
+It's like being constantly.
+
+36:00.000 --> 36:01.000
+It has a certain amount of brightness.
+
+36:01.000 --> 36:02.000
+As long as you do it.
+
+36:02.000 --> 36:03.000
+It will produce a lot of this.
+
+36:03.000 --> 36:04.000
+This kind of showering.
+
+36:04.000 --> 36:05.000
+This kind of background.
+
+36:05.000 --> 36:06.000
+That.
+
+36:06.000 --> 36:08.000
+You basically can't see it.
+
+36:08.000 --> 36:10.000
+If you want to see something.
+
+36:10.000 --> 36:12.000
+It's smaller than the background of this shower.
+
+36:12.000 --> 36:14.000
+Because what you see is bright.
+
+36:14.000 --> 36:15.000
+So.
+
+36:15.000 --> 36:17.000
+Because of the mechanism of the confrontation.
+
+36:17.000 --> 36:20.000
+Their lower threshold is probably hundreds of GV.
+
+36:20.000 --> 36:21.000
+It's probably here.
+
+36:21.000 --> 36:22.000
+So.
+
+36:22.000 --> 36:23.000
+It's probably the accelerator.
+
+36:23.000 --> 36:24.000
+Probably the best.
+
+36:25.000 --> 36:26.000
+Is.
+
+36:26.000 --> 36:27.000
+From here.
+
+36:27.000 --> 36:28.000
+Above.
+
+36:28.000 --> 36:29.000
+They can say with confidence.
+
+36:29.000 --> 36:30.000
+If I see something.
+
+36:30.000 --> 36:31.000
+It's Dark Matter.
+
+36:31.000 --> 36:32.000
+But they didn't see it either.
+
+36:32.000 --> 36:33.000
+So they're also drawing a line.
+
+36:33.000 --> 36:34.000
+But down here.
+
+36:34.000 --> 36:35.000
+They can't have that confidence.
+
+36:35.000 --> 36:36.000
+They can't have that confidence.
+
+36:36.000 --> 36:37.000
+Say I didn't see it.
+
+36:37.000 --> 36:38.000
+Because their environment is too bright.
+
+36:38.000 --> 36:39.000
+No, it's too big.
+
+36:39.000 --> 36:40.000
+But that's right.
+
+36:40.000 --> 36:41.000
+You can find it in the accelerator.
+
+36:41.000 --> 36:42.000
+Ok.
+
+36:42.000 --> 36:43.000
+Ok.
+
+36:43.000 --> 36:44.000
+Ok.
+
+36:44.000 --> 36:45.000
+Ok.
+
+36:45.000 --> 36:46.000
+Ok.
+
+36:46.000 --> 36:47.000
+Ok.
+
+36:47.000 --> 36:48.000
+Ok.
+
+36:48.000 --> 36:49.000
+Ok.
+
+36:49.000 --> 36:50.000
+Ok.
+
+36:50.000 --> 36:51.000
+Ok.
+
+36:51.000 --> 36:52.000
+Ok.
+
+36:52.000 --> 36:53.000
+Ok.
+
+36:53.000 --> 36:54.000
+Ok.
+
+36:54.000 --> 36:55.000
+Is there a problem?
+
+36:55.000 --> 36:56.000
+Is there a problem?
+
+36:56.000 --> 36:57.000
+So.
+
+36:57.000 --> 36:58.000
+So.
+
+36:58.000 --> 36:59.000
+My question is.
+
+36:59.000 --> 37:00.000
+That.
+
+37:00.000 --> 37:01.000
+Uh.
+
+37:01.000 --> 37:02.000
+I mean.
+
+37:02.000 --> 37:03.000
+That is to say.
+
+37:03.000 --> 37:04.000
+Standard model.
+
+37:04.000 --> 37:05.000
+Also.
+
+37:05.000 --> 37:06.000
+Also.
+
+37:06.000 --> 37:07.000
+That is to say.
+
+37:07.000 --> 37:08.000
+Assuming there is a lighter example.
+
+37:08.000 --> 37:09.000
+That.
+
+37:09.000 --> 37:10.000
+Uh-huh.
+
+37:10.000 --> 37:11.000
+Not only in the accelerator.
+
+37:11.000 --> 37:12.000
+I can't see it.
+
+37:12.000 --> 37:13.000
+That standard model.
+
+37:13.000 --> 37:14.000
+I didn't predict it either.
+
+37:14.000 --> 37:15.000
+But again.
+
+37:15.000 --> 37:16.000
+That's right.
+
+37:16.000 --> 37:17.000
+In fact.
+
+37:17.000 --> 37:18.000
+There is.
+
+37:18.000 --> 37:19.000
+Uh.
+
+37:19.000 --> 37:20.000
+There is a high possibility of Dark Matter.
+
+37:20.000 --> 37:21.000
+That's it.
+
+37:21.000 --> 37:22.000
+So.
+
+37:22.000 --> 37:23.000
+Uh.
+
+37:23.000 --> 37:24.000
+So.
+
+37:24.000 --> 37:25.000
+You are looking for Dark Matter.
+
+37:25.000 --> 37:26.000
+If you find a lighter model.
+
+37:26.000 --> 37:27.000
+Standard model.
+
+37:27.000 --> 37:28.000
+I can't predict it.
+
+37:28.000 --> 37:29.000
+That.
+
+37:29.000 --> 37:30.000
+Of course.
+
+37:30.000 --> 37:31.000
+It's a new.
+
+37:31.000 --> 37:32.000
+New.
+
+37:32.000 --> 37:33.000
+New.
+
+37:33.000 --> 37:34.000
+New.
+
+37:34.000 --> 37:35.000
+Physics.
+
+37:35.000 --> 37:36.000
+Is that right?
+
+37:36.000 --> 37:37.000
+Correct.
+
+37:37.000 --> 37:38.000
+As long as we see Dark Matter.
+
+37:38.000 --> 37:39.000
+It must be new physics.
+
+37:39.000 --> 37:40.000
+Ok.
+
+37:40.000 --> 37:41.000
+Because Dark Matter itself.
+
+37:41.000 --> 37:42.000
+It's not in the Standard Model at all.
+
+37:42.000 --> 37:43.000
+Ok.
+
+37:43.000 --> 37:44.000
+Ok.
+
+37:44.000 --> 37:45.000
+Correct.
+
+37:45.000 --> 37:46.000
+Ok.
+
+37:46.000 --> 37:47.000
+Ok.
+
+37:47.000 --> 37:48.000
+Ok.
+
+37:48.000 --> 37:49.000
+Hello.
+
+37:49.000 --> 37:50.000
+Hello.
+
+37:50.000 --> 37:51.000
+Uh.
+
+37:51.000 --> 37:52.000
+Ian seems to have a problem.
+
+37:52.000 --> 37:53.000
+Ian.
+
+37:53.000 --> 37:54.000
+Hello.
+
+37:54.000 --> 37:55.000
+Because I can't see the projection now.
+
+37:55.000 --> 37:56.000
+So you have to read it for me.
+
+37:56.000 --> 37:57.000
+Hey.
+
+37:57.000 --> 37:58.000
+Ian.
+
+37:58.000 --> 37:59.000
+You have to turn on the microphone.
+
+37:59.000 --> 38:00.000
+To ask.
+
+38:00.000 --> 38:01.000
+Can't see.
+
+38:01.000 --> 38:02.000
+Can't see.
+
+38:02.000 --> 38:03.000
+Do you want to talk?
+
+38:03.000 --> 38:04.000
+Ah.
+
+38:04.000 --> 38:05.000
+Ok.
+
+38:05.000 --> 38:06.000
+He said that.
+
+38:06.000 --> 38:07.000
+Assuming.
+
+38:07.000 --> 38:08.000
+Oh.
+
+38:08.000 --> 38:09.000
+Uh.
+
+38:09.000 --> 38:10.000
+Assuming now.
+
+38:10.000 --> 38:11.000
+Dark Matter.
+
+38:11.000 --> 38:12.000
+Uh.
+
+38:12.000 --> 38:13.000
+Uh.
+
+38:13.000 --> 38:14.000
+Uh.
+
+38:14.000 --> 38:15.000
+Uh.
+
+38:15.000 --> 38:16.000
+Uh.
+
+38:16.000 --> 38:17.000
+Uh.
+
+38:17.000 --> 38:18.000
+Uh.
+
+38:18.000 --> 38:19.000
+Uh.
+
+38:19.000 --> 38:20.000
+Uh.
+
+38:20.000 --> 38:21.000
+Uh.
+
+38:21.000 --> 38:22.000
+Yeah.
+
+38:22.000 --> 38:23.000
+OK.
+
+38:23.000 --> 38:24.000
+He only said.
+
+38:24.000 --> 38:25.000
+I have to turn back for my microphone.
+
+38:25.000 --> 38:26.000
+On the sound history.
+
+38:26.000 --> 38:27.000
+He can finally speak.
+
+38:27.000 --> 38:28.000
+Then there may be time to turn back.
+
+38:28.000 --> 38:29.000
+Because...
+
+38:29.000 --> 38:30.000
+The moment he speaks simple.
+
+38:30.000 --> 38:31.000
+He wants to make.
+
+38:31.000 --> 38:32.000
+You have to be able to say everything in English.
+
+38:32.000 --> 38:33.000
+What?
+
+38:33.000 --> 38:34.000
+What are you saying.
+
+38:34.000 --> 38:35.000
+It's OK.
+
+38:35.000 --> 38:36.000
+Don't need to be altered.
+
+38:36.000 --> 38:37.000
+It doesn't matter.
+
+38:37.000 --> 38:38.000
+It's OK.
+
+38:38.000 --> 38:39.000
+You only have to be able to.
+
+38:39.000 --> 38:40.000
+You worked hard.
+
+38:40.000 --> 38:41.000
+It's OK.
+
+38:41.000 --> 38:42.000
+We'll do this.
+
+38:42.000 --> 38:43.000
+And there's another question.
+
+38:43.000 --> 38:44.000
+Yes.
+
+38:44.000 --> 38:45.000
+Which is.
+
+38:45.000 --> 38:46.000
+Which is.
+
+38:46.000 --> 38:47.000
+What Light matter model.
+
+38:47.000 --> 38:48.000
+Is considered to be without dark matter.
+
+38:48.000 --> 38:49.000
+Is considered.
+
+38:50.000 --> 38:51.000
+Oh, no.
+
+38:51.000 --> 38:52.000
+Yes, this is his question.
+
+38:52.000 --> 38:53.000
+This thing is like this.
+
+38:53.000 --> 38:54.000
+Just.
+
+38:54.000 --> 38:56.000
+You take something very heavy.
+
+38:56.000 --> 38:58.000
+To hit something very light.
+
+38:58.000 --> 38:59.000
+What will the result be?
+
+38:59.000 --> 39:00.000
+You take something very heavy.
+
+39:00.000 --> 39:01.000
+Hit something very light.
+
+39:01.000 --> 39:02.000
+We can imagine.
+
+39:02.000 --> 39:03.000
+Take a truck.
+
+39:03.000 --> 39:04.000
+Hit a window.
+
+39:04.000 --> 39:05.000
+The light is hit very far.
+
+39:05.000 --> 39:06.000
+Yes.
+
+39:06.000 --> 39:07.000
+In fact.
+
+39:07.000 --> 39:08.000
+The first signal you see.
+
+39:08.000 --> 39:09.000
+It will be completely Nonsense.
+
+39:09.000 --> 39:10.000
+Will be super big.
+
+39:10.000 --> 39:11.000
+Then it's gone.
+
+39:11.000 --> 39:12.000
+But in fact.
+
+39:12.000 --> 39:13.000
+He just went through.
+
+39:13.000 --> 39:14.000
+He won't leave the energy.
+
+39:14.000 --> 39:15.000
+Sorry.
+
+39:15.000 --> 39:16.000
+Uh.
+
+39:16.000 --> 39:17.000
+I just said it wrong.
+
+39:17.000 --> 39:18.000
+Because he will go straight through.
+
+39:18.000 --> 39:19.000
+He won't put energy.
+
+39:19.000 --> 39:20.000
+So he transferred the energy.
+
+39:20.000 --> 39:21.000
+It will still be very strong.
+
+39:21.000 --> 39:22.000
+Uh.
+
+39:22.000 --> 39:23.000
+I have an equation here.
+
+39:23.000 --> 39:24.000
+OK.
+
+39:24.000 --> 39:25.000
+So this.
+
+39:25.000 --> 39:26.000
+This is that equation.
+
+39:26.000 --> 39:27.000
+That is to say.
+
+39:27.000 --> 39:28.000
+If you go to calculate.
+
+39:28.000 --> 39:29.000
+He left.
+
+39:29.000 --> 39:30.000
+Hit.
+
+39:30.000 --> 39:31.000
+Hit.
+
+39:31.000 --> 39:32.000
+Because in fact.
+
+39:32.000 --> 39:33.000
+Hit is the two people.
+
+39:33.000 --> 39:34.000
+Common response.
+
+39:34.000 --> 39:35.000
+He doesn't care.
+
+39:35.000 --> 39:36.000
+Who hit who.
+
+39:36.000 --> 39:37.000
+Because in fact.
+
+39:37.000 --> 39:38.000
+In his execution.
+
+39:38.000 --> 39:39.000
+They are hit.
+
+39:39.000 --> 39:40.000
+You can't tell who hit who.
+
+39:40.000 --> 39:41.000
+The most effective way.
+
+39:41.000 --> 39:42.000
+Is to hit.
+
+39:42.000 --> 39:43.000
+Hit.
+
+39:43.000 --> 39:44.000
+Hit.
+
+39:44.000 --> 39:45.000
+Hit.
+
+39:45.000 --> 39:46.000
+The most effective way to pass energy to.
+
+39:46.000 --> 39:47.000
+Another person.
+
+39:47.000 --> 39:48.000
+Is.
+
+39:48.000 --> 39:49.000
+Big M is greater than small M.
+
+39:49.000 --> 39:50.000
+But whether it is.
+
+39:50.000 --> 39:51.000
+Big M is greater than small M.
+
+39:51.000 --> 39:52.000
+Or is small M greater than big M.
+
+39:52.000 --> 39:53.000
+This number will be close to zero.
+
+39:53.000 --> 39:54.000
+That is to say.
+
+39:54.000 --> 39:55.000
+You won't leave the energy.
+
+39:55.000 --> 39:56.000
+So.
+
+39:56.000 --> 39:57.000
+This question is more like.
+
+39:57.000 --> 39:58.000
+If today.
+
+39:58.000 --> 39:59.000
+Dark Matter.
+
+39:59.000 --> 40:00.000
+Really move like a proton.
+
+40:00.000 --> 40:01.000
+Then we use electron.
+
+40:01.000 --> 40:02.000
+Is it a good candidate?
+
+40:02.000 --> 40:03.000
+The answer is no.
+
+40:03.000 --> 40:04.000
+Because we will leave.
+
+40:04.000 --> 40:05.000
+Very, very small energy.
+
+40:05.000 --> 40:06.000
+We still can't measure.
+
+40:06.000 --> 40:07.000
+But this thing.
+
+40:07.000 --> 40:08.000
+Effectively.
+
+40:08.000 --> 40:09.000
+Is all these experiments.
+
+40:09.000 --> 40:10.000
+What to do.
+
+40:10.000 --> 40:11.000
+But they didn't see anything.
+
+40:11.000 --> 40:12.000
+So.
+
+40:12.000 --> 40:13.000
+I want to try.
+
+40:13.000 --> 40:14.000
+I have a question.
+
+40:14.000 --> 40:15.000
+I want to ask.
+
+40:15.000 --> 40:16.000
+You just said.
+
+40:16.000 --> 40:17.000
+We can control.
+
+40:17.000 --> 40:18.000
+Just.
+
+40:18.000 --> 40:19.000
+Of course.
+
+40:19.000 --> 40:20.000
+At first.
+
+40:20.000 --> 40:21.000
+Use paper.
+
+40:21.000 --> 40:22.000
+More.
+
+40:22.000 --> 40:23.000
+More people use.
+
+40:23.000 --> 40:24.000
+The method.
+
+40:24.000 --> 40:25.000
+Then.
+
+40:25.000 --> 40:26.000
+Because I can't find it.
+
+40:26.000 --> 40:27.000
+So use electrons.
+
+40:27.000 --> 40:28.000
+So you.
+
+40:28.000 --> 40:29.000
+You just said.
+
+40:29.000 --> 40:30.000
+We can control.
+
+40:30.000 --> 40:31.000
+Paper and electrons.
+
+40:31.000 --> 40:32.000
+What do you mean by control?
+
+40:32.000 --> 40:33.000
+What does it mean?
+
+40:33.000 --> 40:34.000
+If.
+
+40:34.000 --> 40:35.000
+I said control.
+
+40:35.000 --> 40:36.000
+In fact, it is.
+
+40:36.000 --> 40:37.000
+You can spend money.
+
+40:37.000 --> 40:38.000
+Easy to buy materials.
+
+40:38.000 --> 40:39.000
+OK.
+
+40:39.000 --> 40:40.000
+So.
+
+40:41.000 --> 40:42.000
+OK.
+
+40:42.000 --> 40:43.000
+Yes.
+
+40:43.000 --> 40:44.000
+I will talk about some.
+
+40:44.000 --> 40:45.000
+More exotic.
+
+40:45.000 --> 40:46.000
+Yes.
+
+40:46.000 --> 40:47.000
+Ah.
+
+40:47.000 --> 40:48.000
+If the electronic.
+
+40:48.000 --> 40:49.000
+If you can't find it.
+
+40:49.000 --> 40:50.000
+Is it possible to use electricity?
+
+40:50.000 --> 40:51.000
+Because in fact.
+
+40:51.000 --> 40:52.000
+Electricity.
+
+40:52.000 --> 40:53.000
+Electricity and electricity.
+
+40:53.000 --> 40:54.000
+In fact.
+
+40:54.000 --> 40:55.000
+It's about the same.
+
+40:55.000 --> 40:56.000
+No.
+
+40:56.000 --> 40:57.000
+OK.
+
+40:57.000 --> 40:58.000
+OK.
+
+40:58.000 --> 40:59.000
+Percentage.
+
+40:59.000 --> 41:00.000
+That's about the same to me.
+
+41:00.000 --> 41:01.000
+What we're talking about now is.
+
+41:01.000 --> 41:02.000
+If you can find.
+
+41:02.000 --> 41:03.000
+Smaller things.
+
+41:03.000 --> 41:04.000
+For example, that kind.
+
+41:04.000 --> 41:05.000
+Uh.
+
+41:05.000 --> 41:06.000
+What is it called?
+
+41:06.000 --> 41:07.000
+Dirac.
+
+41:07.000 --> 41:08.000
+It's super.
+
+41:08.000 --> 41:09.000
+So effectively.
+
+41:09.000 --> 41:10.000
+You can destroy one.
+
+41:10.000 --> 41:11.000
+For example.
+
+41:11.000 --> 41:12.000
+Quasi-particle.
+
+41:12.000 --> 41:13.000
+That's all possible.
+
+41:13.000 --> 41:14.000
+But.
+
+41:14.000 --> 41:15.000
+Very.
+
+41:15.000 --> 41:16.000
+Expensive.
+
+41:16.000 --> 41:17.000
+Ah.
+
+41:17.000 --> 41:18.000
+Yes.
+
+41:18.000 --> 41:19.000
+Good.
+
+41:19.000 --> 41:20.000
+OK.
+
+41:20.000 --> 41:21.000
+That.
+
+41:21.000 --> 41:22.000
+OK.
+
+41:22.000 --> 41:23.000
+Good.
+
+41:23.000 --> 41:24.000
+Then I'll talk about it first.
+
+41:24.000 --> 41:25.000
+That is.
+
+41:25.000 --> 41:26.000
+Super CDMA.
+
+41:26.000 --> 41:27.000
+HPEV detector.
+
+41:27.000 --> 41:28.000
+This thing.
+
+41:28.000 --> 41:29.000
+What is it?
+
+41:29.000 --> 41:30.000
+Ahem.
+
+41:30.000 --> 41:31.000
+Ahem.
+
+41:31.000 --> 41:32.000
+OK.
+
+41:32.000 --> 41:33.000
+Sorry.
+
+41:33.000 --> 41:34.000
+Good.
+
+41:34.000 --> 41:35.000
+Now here you see a picture.
+
+41:35.000 --> 41:36.000
+This picture.
+
+41:36.000 --> 41:37.000
+Is trying to describe this.
+
+41:37.000 --> 41:38.000
+Germanium.
+
+41:38.000 --> 41:39.000
+This.
+
+41:39.000 --> 41:40.000
+The crystal.
+
+41:40.000 --> 41:41.000
+OK.
+
+41:41.000 --> 41:42.000
+It's a gold.
+
+41:42.000 --> 41:43.000
+Black.
+
+41:43.000 --> 41:44.000
+That's the white line.
+
+41:44.000 --> 41:45.000
+Like this.
+
+41:45.000 --> 41:46.000
+Hit him.
+
+41:46.000 --> 41:47.000
+Then bounce away.
+
+41:47.000 --> 41:48.000
+OK.
+
+41:48.000 --> 41:49.000
+Then he left some energy.
+
+41:49.000 --> 41:50.000
+What about this energy?
+
+41:50.000 --> 41:51.000
+Will come out.
+
+41:51.000 --> 41:52.000
+Ahem.
+
+41:52.000 --> 41:53.000
+This will come out.
+
+41:53.000 --> 41:54.000
+Shake this.
+
+41:54.000 --> 41:55.000
+This crystal lattice.
+
+41:55.000 --> 41:56.000
+So he'll shake there.
+
+41:56.000 --> 41:57.000
+Vibrate.
+
+41:57.000 --> 41:58.000
+That vibrates this thing.
+
+41:58.000 --> 41:59.000
+It's actually a.
+
+41:59.000 --> 42:00.000
+Signal.
+
+42:00.000 --> 42:01.000
+It's called Fona.
+
+42:01.000 --> 42:02.000
+OK.
+
+42:02.000 --> 42:03.000
+And then.
+
+42:03.000 --> 42:04.000
+At the same time, he'll hit this.
+
+42:04.000 --> 42:05.000
+Electronic electric team.
+
+42:05.000 --> 42:06.000
+Because he has enough energy.
+
+42:06.000 --> 42:07.000
+He can.
+
+42:07.000 --> 42:08.000
+He's next to the electronic electric team.
+
+42:08.000 --> 42:09.000
+Sorry.
+
+42:09.000 --> 42:10.000
+So.
+
+42:10.000 --> 42:11.000
+Hey.
+
+42:11.000 --> 42:12.000
+Then we have two signals.
+
+42:12.000 --> 42:13.000
+Can measure.
+
+42:13.000 --> 42:14.000
+One is this.
+
+42:14.000 --> 42:15.000
+Lattice vibration.
+
+42:15.000 --> 42:16.000
+It's called Fona.
+
+42:16.000 --> 42:17.000
+Ah.
+
+42:17.000 --> 42:18.000
+The other one is this.
+
+42:18.000 --> 42:19.000
+Electronic electric team.
+
+42:19.000 --> 42:20.000
+Ah.
+
+42:20.000 --> 42:21.000
+So now.
+
+42:21.000 --> 42:22.000
+How do you do it?
+
+42:22.000 --> 42:23.000
+It's just that we put a big piece of this.
+
+42:23.000 --> 42:24.000
+Crystal.
+
+42:24.000 --> 42:25.000
+This is.
+
+42:25.000 --> 42:26.000
+10 centimeters.
+
+42:26.000 --> 42:27.000
+OK.
+
+42:27.000 --> 42:28.000
+This is 10 centimeters.
+
+42:28.000 --> 42:29.000
+What about its thickness?
+
+42:29.000 --> 42:30.000
+It's 4.5 centimeters.
+
+42:30.000 --> 42:31.000
+It's 5 centimeters.
+
+42:31.000 --> 42:32.000
+It's a big piece.
+
+42:32.000 --> 42:33.000
+You don't seem to be any.
+
+42:33.000 --> 42:34.000
+The thickness of silicon used by TSMC.
+
+42:34.000 --> 42:35.000
+It's a big one.
+
+42:35.000 --> 42:36.000
+And then.
+
+42:36.000 --> 42:37.000
+Let's take this thing.
+
+42:37.000 --> 42:38.000
+Let it work.
+
+42:38.000 --> 42:39.000
+Ah, when it's hit by Jack Berry.
+
+42:39.000 --> 42:40.000
+At the time.
+
+42:40.000 --> 42:41.000
+These fans will drift to it.
+
+42:41.000 --> 42:42.000
+This one.
+
+42:42.000 --> 42:43.000
+To Spread to this.
+
+42:43.000 --> 42:44.000
+This crystal surface.
+
+42:44.000 --> 42:45.000
+This one.
+
+42:45.000 --> 42:47.000
+Hey, this electron pair is, too.
+
+42:47.000 --> 42:50.000
+We'll pull it to the surface of a power plant.
+
+42:50.000 --> 42:51.000
+What about now?
+
+42:51.000 --> 42:52.000
+We're on this surface.
+
+42:52.000 --> 42:53.000
+Do this microbi Britt consideration.
+
+42:53.000 --> 42:55.000
+We're doing a guided circuit.
+
+42:55.000 --> 42:56.000
+So, we're going to use this sugar to rival the arrows.
+
+42:56.000 --> 42:57.000
+Interrupted by these two signals.
+
+42:57.000 --> 42:58.000
+It really changes to measure the two clicks.
+
+42:58.000 --> 42:59.000
+First, we calculate it.
+
+42:59.000 --> 43:00.000
+We calculate pi 2025 by zeros.
+
+43:00.000 --> 43:01.000
+And then we measure pi.
+
+43:01.000 --> 43:02.000
+Well, we can adjust it.
+
+43:03.000 --> 43:07.000
+Interrupt change to measure the Bacon and that organization.
+
+43:07.000 --> 43:08.000
+Okay, this is the concept.
+
+43:08.000 --> 43:12.000
+Okay, then he's got a lot of them in our video to do a different operation mode.
+
+43:12.000 --> 43:13.000
+But what I want to talk about first is this.
+
+43:13.000 --> 43:15.000
+I don't next to meet you.
+
+43:19.000 --> 43:23.000
+Well, it's real, it's a side classical.
+
+43:23.000 --> 43:26.000
+Now, come in hop okay.
+
+43:26.000 --> 43:29.000
+Generate an otmomert here.
+
+43:29.000 --> 43:30.000
+It's all electronic.
+
+43:30.000 --> 43:35.000
+Okay, and then I'm here to give him a super big power plant.
+
+43:35.000 --> 43:43.000
+Okay, then he's going to pull this electronic and electric, and he's going to rush up and down here very quickly.
+
+43:43.000 --> 43:46.000
+Okay, and in the process?
+
+43:46.000 --> 43:50.000
+Because this electronic electric will be far more than he can travel in this lattice.
+
+43:50.000 --> 43:53.000
+The highest terminal velocity.
+
+43:53.000 --> 43:56.000
+So what he's going to do is he's going to start generating.
+
+43:56.000 --> 44:02.000
+He's going to lose or he's going to generate more energy into this.
+
+44:02.000 --> 44:06.000
+Crystal inside to balance his speed, he's going to stay at terminal velocity.
+
+44:06.000 --> 44:08.000
+So you're going to have a lot of this green arrow.
+
+44:08.000 --> 44:10.000
+This is a secondary phenomenon.
+
+44:10.000 --> 44:16.000
+Okay, so you can imagine if we give him a super big bias voltage.
+
+44:16.000 --> 44:18.000
+He's going to generate a lot of wind.
+
+44:18.000 --> 44:22.000
+So we basically just put an electronic electric signal.
+
+44:22.000 --> 44:24.000
+Let him become a big power plant.
+
+44:24.000 --> 44:26.000
+Let him become a super big wind signal.
+
+44:26.000 --> 44:31.000
+And then we use this method to recover.
+
+44:31.000 --> 44:35.000
+Oh, so we created a few electronic electric teams in front of us.
+
+44:35.000 --> 44:38.000
+Okay, so we're going to use this method.
+
+44:38.000 --> 44:42.000
+We just have to give him a few dozen to a hundred or two hundred volts of this power difference.
+
+44:42.000 --> 44:47.000
+Then he can produce dozens of times to a hundred or two hundred times of this.
+
+44:48.000 --> 44:52.000
+This is our approach.
+
+44:52.000 --> 44:56.000
+Then we basically measure this purple piece, which is the sensor.
+
+44:56.000 --> 45:01.000
+Okay, this is a piece of paper we published last year.
+
+45:01.000 --> 45:03.000
+We made an R&D device.
+
+45:03.000 --> 45:06.000
+This device is 2 centimeters.
+
+45:06.000 --> 45:08.000
+This edge is 2 centimeters.
+
+45:08.000 --> 45:10.000
+This is a silicon crystal.
+
+45:10.000 --> 45:12.000
+It's 4 kilometers thick.
+
+45:12.000 --> 45:14.000
+So it's 0.4 centimeters.
+
+45:14.000 --> 45:16.000
+Then we added him.
+
+45:16.000 --> 45:20.000
+We added him 150 volts of this.
+
+45:20.000 --> 45:26.000
+Okay, so we're going to use this high voltage method to generate a lot of secondary.
+
+45:26.000 --> 45:29.000
+Then we use this piece of silver.
+
+45:29.000 --> 45:30.000
+I'll talk about it later.
+
+45:30.000 --> 45:31.000
+To measure this wind.
+
+45:31.000 --> 45:34.000
+Okay, so we can use this method.
+
+45:34.000 --> 45:38.000
+What we get is this signal to noise ratio.
+
+45:38.000 --> 45:42.000
+It's 0.7 percent of the electronic whole pair.
+
+45:43.000 --> 45:45.000
+For example, this is a single electron hole.
+
+45:45.000 --> 45:47.000
+This is a horizontal energy.
+
+45:47.000 --> 45:50.000
+Then the axis is the histogram.
+
+45:50.000 --> 45:52.000
+It doesn't matter what it is.
+
+45:52.000 --> 45:54.000
+This is a single electron hole pair.
+
+45:54.000 --> 45:58.000
+This is a signal of two, three, four electron hole pairs.
+
+45:58.000 --> 45:59.000
+And what about its width?
+
+45:59.000 --> 46:00.000
+It's about 7 percent.
+
+46:00.000 --> 46:02.000
+That's what it means.
+
+46:02.000 --> 46:05.000
+So we have resolution to see.
+
+46:05.000 --> 46:09.000
+Counting this single, single, single, electron hole pair.
+
+46:09.000 --> 46:12.000
+Okay, so we found that we can do it without fear.
+
+46:12.000 --> 46:15.000
+Add this bias voltage to super big.
+
+46:15.000 --> 46:18.000
+We can't see the super, super big signal to noise ratio.
+
+46:18.000 --> 46:19.000
+The answer is no.
+
+46:19.000 --> 46:22.000
+Because when we add more than one breakdown voltage.
+
+46:22.000 --> 46:25.000
+This whole crystal becomes like a semiconductor.
+
+46:25.000 --> 46:26.000
+It's like an island.
+
+46:26.000 --> 46:29.000
+It's been crazy, it's been passing through.
+
+46:29.000 --> 46:30.000
+It will smear.
+
+46:30.000 --> 46:33.000
+We can count this dark matter signal ability.
+
+46:33.000 --> 46:36.000
+So we do this breakdown voltage.
+
+46:37.000 --> 46:40.000
+We found that we don't want to go beyond this breakdown voltage.
+
+46:40.000 --> 46:43.000
+We operate at the bottom of the breakdown voltage.
+
+46:43.000 --> 46:48.000
+We see that it will always have two or three hertz like this.
+
+46:48.000 --> 46:50.000
+Two or three signals every second.
+
+46:50.000 --> 46:53.000
+Then keep coming out, keep coming out.
+
+46:53.000 --> 46:56.000
+The part that comes out is the pink part.
+
+46:56.000 --> 46:58.000
+It's completely different from what we expect.
+
+46:58.000 --> 47:01.000
+The signal that dark matter can produce is different.
+
+47:01.000 --> 47:02.000
+So our assumption is that.
+
+47:02.000 --> 47:03.000
+OK, there's a background here.
+
+47:03.000 --> 47:04.000
+We don't know why.
+
+47:04.000 --> 47:05.000
+It keeps leaking.
+
+47:05.000 --> 47:06.000
+OK, but we don't know.
+
+47:06.000 --> 47:08.000
+But based on such a background.
+
+47:08.000 --> 47:14.000
+We can also set a limit.
+
+47:14.000 --> 47:16.000
+Is it consistent with this background being or not?
+
+47:16.000 --> 47:20.000
+OK, I'm going to do this calculation.
+
+47:20.000 --> 47:21.000
+What about the calculation?
+
+47:21.000 --> 47:23.000
+You can see the picture in the upper right corner.
+
+47:23.000 --> 47:26.000
+OK, CDMS Run 1.
+
+47:26.000 --> 47:28.000
+I just said.
+
+47:28.000 --> 47:31.000
+In traditional experiments, we are all at 10 GeV.
+
+47:31.000 --> 47:34.000
+Or higher to a few TeV to draw this limit.
+
+47:34.000 --> 47:36.000
+But now I'm going back to the experiment.
+
+47:36.000 --> 47:39.000
+We put this detector in our refrigerator.
+
+47:39.000 --> 47:41.000
+Then I gave it a day and a night.
+
+47:41.000 --> 47:43.000
+Then this detector is very small.
+
+47:43.000 --> 47:45.000
+This detector is as big as a rubber band.
+
+47:45.000 --> 47:48.000
+OK, we immediately set a world leading limit.
+
+47:48.000 --> 47:51.000
+What is the world leading limit?
+
+47:51.000 --> 47:52.000
+It's very simple.
+
+47:52.000 --> 47:55.000
+It's not very sensitive to the very bottom.
+
+47:55.000 --> 47:57.000
+It can measure very small probability.
+
+47:57.000 --> 48:00.000
+It's just because we can be sensitive to very small energy.
+
+48:00.000 --> 48:02.000
+So we drew a place where no one has ever been able to draw.
+
+48:02.000 --> 48:04.000
+OK, you can see this place.
+
+48:04.000 --> 48:05.000
+This is sub-mEV.
+
+48:05.000 --> 48:07.000
+So 1 GeV is here.
+
+48:07.000 --> 48:09.000
+10 GeV is what I said.
+
+48:09.000 --> 48:11.000
+WIMP Search is from here to the right.
+
+48:11.000 --> 48:12.000
+So we immediately drew a big piece here.
+
+48:12.000 --> 48:14.000
+This is last year.
+
+48:14.000 --> 48:17.000
+OK, let's say this is just a demonstration.
+
+48:17.000 --> 48:22.000
+This concept is very efficient.
+
+48:22.000 --> 48:24.000
+Then we are this year.
+
+48:24.000 --> 48:26.000
+OK, we have to be very formal.
+
+48:26.000 --> 48:30.000
+Let's make this thing a measurement on the ground.
+
+48:30.000 --> 48:32.000
+Then we are actually yesterday.
+
+48:32.000 --> 48:34.000
+We just unblinded all our data.
+
+48:34.000 --> 48:36.000
+So we should be within a month.
+
+48:36.000 --> 48:38.000
+Everyone doesn't have to sleep on Christmas.
+
+48:38.000 --> 48:41.000
+Then we will put the pair on the archive.
+
+48:41.000 --> 48:42.000
+So there will be a new one in a month.
+
+48:42.000 --> 48:44.000
+Then stay tuned.
+
+48:44.000 --> 48:49.000
+I can't talk about numbers, but I can say.
+
+48:49.000 --> 48:52.000
+We redesigned this R&D device.
+
+48:52.000 --> 48:54.000
+Because we are from here.
+
+48:54.000 --> 48:56.000
+Then go over here and compare it.
+
+48:56.000 --> 49:00.000
+Theoretically, this should be a resolution detector.
+
+49:00.000 --> 49:01.000
+Then we see the difference.
+
+49:01.000 --> 49:02.000
+Then we understand it.
+
+49:02.000 --> 49:04.000
+We redesigned.
+
+49:04.000 --> 49:10.000
+Then the resolution is significantly improved.
+
+49:10.000 --> 49:13.000
+Then what's more important is.
+
+49:13.000 --> 49:14.000
+Back to just now.
+
+49:14.000 --> 49:16.000
+Because I said it would have two or three hertz of leakage.
+
+49:16.000 --> 49:18.000
+Because I don't understand this leakage.
+
+49:18.000 --> 49:21.000
+So if there is a leakage to a certain extent.
+
+49:21.000 --> 49:22.000
+I said OK.
+
+49:22.000 --> 49:24.000
+Then cut it off here.
+
+49:24.000 --> 49:26.000
+The above is a good detector.
+
+49:26.000 --> 49:28.000
+It's hard for me to say anything below.
+
+49:28.000 --> 49:29.000
+Because my background is too high.
+
+49:29.000 --> 49:32.000
+So the most important, the most crucial, is to set a limit.
+
+49:32.000 --> 49:34.000
+In fact, it is to reduce this leakage.
+
+49:34.000 --> 49:37.000
+Then we are actually Achieve Leakage Current Reduction Goal.
+
+49:37.000 --> 49:39.000
+So this is very important.
+
+49:39.000 --> 49:41.000
+What's more interesting is.
+
+49:41.000 --> 49:43.000
+We have been in this year or so.
+
+49:43.000 --> 49:45.000
+In fact, nearly two years.
+
+49:45.000 --> 49:49.000
+We know more about Silicon Crystal.
+
+49:49.000 --> 49:51.000
+Interaction with its environment.
+
+49:51.000 --> 49:52.000
+So we can model.
+
+49:52.000 --> 49:54.000
+That is, these can be produced.
+
+49:54.000 --> 49:57.000
+Not quantized signal.
+
+49:57.000 --> 49:59.000
+What is the distribution?
+
+49:59.000 --> 50:01.000
+Then we can model it.
+
+50:01.000 --> 50:03.000
+So basically, I can say.
+
+50:03.000 --> 50:05.000
+We project to set again.
+
+50:05.000 --> 50:07.000
+We're leading limit.
+
+50:07.000 --> 50:08.000
+If not discovery.
+
+50:08.000 --> 50:09.000
+So stay tuned.
+
+50:09.000 --> 50:11.000
+This is what happens.
+
+50:11.000 --> 50:13.000
+Okay, so here is CDMSHVEV.
+
+50:13.000 --> 50:15.000
+Is there a problem?
+
+50:15.000 --> 50:17.000
+This is a concept.
+
+50:17.000 --> 50:18.000
+Because it's more like saying.
+
+50:18.000 --> 50:20.000
+I want to talk about technology later.
+
+50:20.000 --> 50:21.000
+But if you have any questions about this part.
+
+50:21.000 --> 50:23.000
+You can ask now.
+
+50:27.000 --> 50:29.000
+OK, if you don't have any questions.
+
+50:29.000 --> 50:31.000
+Welcome to take a look.
+
+50:31.000 --> 50:33.000
+This 180410697.
+
+50:33.000 --> 50:35.000
+This, right.
+
+50:35.000 --> 50:38.000
+It should be HVEV and Sensai.
+
+50:38.000 --> 50:40.000
+Are the two that can be set to the lowest.
+
+50:40.000 --> 50:42.000
+What is this called?
+
+50:42.000 --> 50:46.000
+Gathering the cross-section experiment.
+
+50:46.000 --> 50:48.000
+Right.
+
+50:48.000 --> 50:50.000
+Okay.
+
+50:50.000 --> 50:52.000
+Then go down.
+
+50:52.000 --> 50:54.000
+The rest of the part I want to talk about is this.
+
+50:54.000 --> 50:56.000
+Before I talk about it.
+
+50:56.000 --> 50:58.000
+I want to talk about it first.
+
+50:58.000 --> 51:00.000
+In the detector I just showed.
+
+51:00.000 --> 51:02.000
+What is his technology?
+
+51:02.000 --> 51:04.000
+OK, now you see a little.
+
+51:04.000 --> 51:06.000
+A little, a little, a little, a little.
+
+51:06.000 --> 51:08.000
+It's a piece of metal.
+
+51:08.000 --> 51:10.000
+Then we put it in this.
+
+51:10.000 --> 51:12.000
+It will become a super conductor.
+
+51:12.000 --> 51:14.000
+OK, then.
+
+51:14.000 --> 51:16.000
+If there is a pink part today.
+
+51:16.000 --> 51:18.000
+The pink part is just that.
+
+51:18.000 --> 51:20.000
+The big piece of that.
+
+51:20.000 --> 51:22.000
+If I produce this interaction today.
+
+51:22.000 --> 51:24.000
+Then it will float up.
+
+51:24.000 --> 51:26.000
+Then go into this silver part.
+
+51:26.000 --> 51:28.000
+OK, it will destroy this.
+
+51:28.000 --> 51:30.000
+Then this will float in all the way.
+
+51:30.000 --> 51:32.000
+What about this floating in?
+
+51:32.000 --> 51:34.000
+Sorry, it destroys.
+
+51:34.000 --> 51:36.000
+It's called QP.
+
+51:36.000 --> 51:38.000
+Then it will change this.
+
+51:38.000 --> 51:40.000
+The state of the conductor.
+
+51:40.000 --> 51:42.000
+OK, it will be from.
+
+51:42.000 --> 51:44.000
+This is the original conductor.
+
+51:44.000 --> 51:46.000
+The horizontal axis is the conductor.
+
+51:46.000 --> 51:48.000
+The horizontal axis is the effective temperature.
+
+51:48.000 --> 51:50.000
+That little silver effective temperature.
+
+51:50.000 --> 51:52.000
+OK, he was originally a zero conductor.
+
+51:52.000 --> 51:54.000
+Will be very fast transition to.
+
+51:54.000 --> 51:56.000
+There are nine conductors.
+
+51:56.000 --> 51:58.000
+It's a normal conductor.
+
+51:58.000 --> 52:00.000
+Then we just put it.
+
+52:00.000 --> 52:02.000
+In this state of this transition.
+
+52:02.000 --> 52:04.000
+As long as there is a little temperature.
+
+52:04.000 --> 52:06.000
+Or the change of energy in this film.
+
+52:06.000 --> 52:08.000
+This little inside.
+
+52:08.000 --> 52:10.000
+We can see a big signal.
+
+52:10.000 --> 52:12.000
+We use this method to measure.
+
+52:12.000 --> 52:14.000
+But there are some problems.
+
+52:14.000 --> 52:16.000
+His problem is.
+
+52:16.000 --> 52:18.000
+This is a phase transition.
+
+52:18.000 --> 52:20.000
+So his range is very small.
+
+52:20.000 --> 52:22.000
+From a little energy to.
+
+52:22.000 --> 52:24.000
+It's full, it's just a little bit.
+
+52:24.000 --> 52:26.000
+So his dynamic range.
+
+52:26.000 --> 52:28.000
+Is very small.
+
+52:28.000 --> 52:30.000
+That's usually what you need.
+
+52:30.000 --> 52:32.000
+Extra.
+
+52:32.000 --> 52:34.000
+Circuit.
+
+52:34.000 --> 52:36.000
+And it's going to be in the fridge.
+
+52:36.000 --> 52:38.000
+To help him dissipate energy.
+
+52:38.000 --> 52:40.000
+Or help him divert that energy.
+
+52:40.000 --> 52:42.000
+Feedback, so we can.
+
+52:42.000 --> 52:44.000
+It's really stable.
+
+52:44.000 --> 52:46.000
+Operate our detector in this.
+
+52:46.000 --> 52:48.000
+Transition.
+
+52:48.000 --> 52:50.000
+And then, because he's actually a film.
+
+52:50.000 --> 52:52.000
+He's from a zero conductor to a conductor.
+
+52:52.000 --> 52:54.000
+It's also a super small conductor.
+
+52:54.000 --> 52:56.000
+So he's a conventional.
+
+52:56.000 --> 52:58.000
+The impedance of this electronics.
+
+52:58.000 --> 53:00.000
+Is not match.
+
+53:00.000 --> 53:02.000
+So he usually requires.
+
+53:02.000 --> 53:04.000
+This is a cryo electronics.
+
+53:04.000 --> 53:06.000
+To do this.
+
+53:06.000 --> 53:08.000
+When it's time to do it.
+
+53:08.000 --> 53:10.000
+Low impedance match.
+
+53:10.000 --> 53:12.000
+So this is usually.
+
+53:12.000 --> 53:14.000
+This is a very troublesome thing.
+
+53:14.000 --> 53:16.000
+And the most important thing is.
+
+53:16.000 --> 53:18.000
+Typical can be used to do this.
+
+53:18.000 --> 53:20.000
+Transition edge sensor material.
+
+53:20.000 --> 53:22.000
+It's actually not suitable.
+
+53:22.000 --> 53:24.000
+Come to this.
+
+53:24.000 --> 53:26.000
+So it really has to be produced.
+
+53:26.000 --> 53:28.000
+A ts sensor that can catch phonon.
+
+53:28.000 --> 53:30.000
+We also have a trapper.
+
+53:30.000 --> 53:32.000
+Put these phonons.
+
+53:32.000 --> 53:34.000
+Let him run over there, so there are several layers.
+
+53:34.000 --> 53:36.000
+Then this micro fabrication is very complicated.
+
+53:36.000 --> 53:38.000
+Then why do I want to talk about those?
+
+53:38.000 --> 53:40.000
+Because those are basically this kid.
+
+53:40.000 --> 53:42.000
+The problem of the customer service.
+
+53:42.000 --> 53:44.000
+Then I'll talk about how to do it.
+
+53:44.000 --> 53:46.000
+This operation is good.
+
+53:46.000 --> 53:48.000
+The same energy comes in today.
+
+53:48.000 --> 53:50.000
+This picture is the earliest paper.
+
+53:50.000 --> 53:52.000
+He was imagined to be hit by light.
+
+53:52.000 --> 53:54.000
+But you can imagine.
+
+53:54.000 --> 53:56.000
+After he broke up.
+
+53:56.000 --> 53:58.000
+He's on that.
+
+53:58.000 --> 54:00.000
+The effect of the metal on it.
+
+54:00.000 --> 54:02.000
+It's not just the change of the conductor.
+
+54:02.000 --> 54:04.000
+It will also produce.
+
+54:04.000 --> 54:06.000
+The change of the electric sense.
+
+54:06.000 --> 54:08.000
+The change of the electric sense and the change of the conductor is not the same.
+
+54:08.000 --> 54:10.000
+The superconductor.
+
+54:10.000 --> 54:12.000
+It's been produced all the time.
+
+54:12.000 --> 54:14.000
+He won't have a conductor.
+
+54:14.000 --> 54:16.000
+Until the transition.
+
+54:16.000 --> 54:18.000
+Suddenly, a lot of changes.
+
+54:18.000 --> 54:20.000
+And then he went to the normal state.
+
+54:20.000 --> 54:22.000
+But if today is.
+
+54:22.000 --> 54:24.000
+Inductance.
+
+54:24.000 --> 54:26.000
+The change of being broken.
+
+54:26.000 --> 54:28.000
+In fact, it is relatively low function.
+
+54:28.000 --> 54:30.000
+He can operate at a lower temperature.
+
+54:30.000 --> 54:32.000
+That is to say, as long as I have one.
+
+54:32.000 --> 54:34.000
+Enough ice in the refrigerator.
+
+54:34.000 --> 54:36.000
+The transition temperature is much lower than mine.
+
+54:36.000 --> 54:38.000
+I can operate.
+
+54:38.000 --> 54:40.000
+In fact, I do not need to care.
+
+54:40.000 --> 54:42.000
+Do I have a very complicated electronic?
+
+54:42.000 --> 54:44.000
+Can control it?
+
+54:44.000 --> 54:46.000
+This is very important.
+
+54:46.000 --> 54:48.000
+What I'm talking about today is the change of the electric sense.
+
+54:48.000 --> 54:50.000
+How do we make it a good sensor?
+
+54:50.000 --> 54:52.000
+This is a variable electric sense.
+
+54:52.000 --> 54:54.000
+I put it together with a capacitor.
+
+54:54.000 --> 54:56.000
+It becomes a vibrator.
+
+54:56.000 --> 54:58.000
+OK, so if today.
+
+54:58.000 --> 55:00.000
+This electric sense is.
+
+55:00.000 --> 55:02.000
+Eat a little energy.
+
+55:02.000 --> 55:04.000
+A little change.
+
+55:04.000 --> 55:06.000
+That's frequency space today.
+
+55:06.000 --> 55:08.000
+OK, so frequency space.
+
+55:08.000 --> 55:10.000
+This is F, this is S21.
+
+55:10.000 --> 55:12.000
+If you do micro wave S21.
+
+55:12.000 --> 55:14.000
+Then there is a resonance.
+
+55:14.000 --> 55:16.000
+He will run.
+
+55:16.000 --> 55:18.000
+And because there are more inside.
+
+55:18.000 --> 55:20.000
+This thermodynamic activity.
+
+55:20.000 --> 55:22.000
+In fact, it is a quasi-particle recombination.
+
+55:22.000 --> 55:24.000
+So this resonator.
+
+55:24.000 --> 55:26.000
+Or this resonator.
+
+55:26.000 --> 55:28.000
+This quality factor will be reduced.
+
+55:28.000 --> 55:30.000
+So it's not just this.
+
+55:30.000 --> 55:32.000
+Resonance frequency will run.
+
+55:32.000 --> 55:34.000
+Its fat will become fat.
+
+55:34.000 --> 55:36.000
+So it will be like this.
+
+55:36.000 --> 55:38.000
+From this black to the dot, then run back.
+
+55:38.000 --> 55:40.000
+Then we look at this.
+
+55:40.000 --> 55:42.000
+OK, we will know that.
+
+55:42.000 --> 55:44.000
+Oh, here is the signal.
+
+55:44.000 --> 55:46.000
+In fact, how do we realize such a circuit?
+
+55:46.000 --> 55:48.000
+Actually nothing.
+
+55:48.000 --> 55:50.000
+Just put it all together.
+
+55:50.000 --> 55:52.000
+We have a lot of this little.
+
+55:52.000 --> 55:54.000
+LC, LC, LC.
+
+55:54.000 --> 55:56.000
+Then put it all together.
+
+55:56.000 --> 55:58.000
+Then I measured its transmission.
+
+55:58.000 --> 56:00.000
+Or S21.
+
+56:00.000 --> 56:02.000
+I just put all these.
+
+56:02.000 --> 56:04.000
+These resonators.
+
+56:04.000 --> 56:06.000
+The resonant frequency is slightly adjusted to be different.
+
+56:06.000 --> 56:08.000
+Then I measured S21 today.
+
+56:08.000 --> 56:10.000
+You will see one by one.
+
+56:10.000 --> 56:12.000
+One by one, one by one, one by one, one by one.
+
+56:12.000 --> 56:14.000
+OK, then this resonance.
+
+56:14.000 --> 56:16.000
+Will map to, for example, I know.
+
+56:16.000 --> 56:18.000
+By design, this person.
+
+56:18.000 --> 56:20.000
+He should resonate at this frequency.
+
+56:20.000 --> 56:22.000
+This person should resonate at this frequency.
+
+56:22.000 --> 56:24.000
+So I just monitor this one.
+
+56:24.000 --> 56:26.000
+I know he was hit.
+
+56:26.000 --> 56:28.000
+This one runs.
+
+56:28.000 --> 56:30.000
+I know he was hit.
+
+56:30.000 --> 56:32.000
+So this.
+
+56:32.000 --> 56:34.000
+This is how we do this pixelization.
+
+56:34.000 --> 56:36.000
+This concept.
+
+56:36.000 --> 56:38.000
+In fact, you can see that this is a waveguide.
+
+56:38.000 --> 56:40.000
+Then this is a.
+
+56:40.000 --> 56:42.000
+Electrical circuit.
+
+56:42.000 --> 56:44.000
+Then this is a capacitor.
+
+56:44.000 --> 56:46.000
+This waveguide is coupled to it.
+
+56:46.000 --> 56:48.000
+This waveguide is coupled to it.
+
+56:48.000 --> 56:50.000
+In fact, everyone will see it like this.
+
+56:50.000 --> 56:52.000
+There is a waveguide here.
+
+56:52.000 --> 56:54.000
+Up and down, up and down, up and down, up and down.
+
+56:54.000 --> 56:56.000
+OK.
+
+56:56.000 --> 56:58.000
+Then every little island.
+
+56:58.000 --> 57:00.000
+It's all a pixel.
+
+57:00.000 --> 57:02.000
+Sorry, but we can go back.
+
+57:02.000 --> 57:04.000
+Compare to say.
+
+57:04.000 --> 57:06.000
+What if you use TES?
+
+57:06.000 --> 57:08.000
+Because the TES is too small.
+
+57:08.000 --> 57:10.000
+Small to measure.
+
+57:10.000 --> 57:12.000
+You have to put a lot of this little island.
+
+57:12.000 --> 57:14.000
+All connected.
+
+57:14.000 --> 57:16.000
+So in fact, these people are all connected.
+
+57:16.000 --> 57:18.000
+Make a sensor together.
+
+57:18.000 --> 57:20.000
+These people are all connected together.
+
+57:20.000 --> 57:22.000
+So this chip.
+
+57:22.000 --> 57:24.000
+2 cm by 2 cm.
+
+57:24.000 --> 57:26.000
+It's just two channels.
+
+57:26.000 --> 57:28.000
+The signals are all clamped together.
+
+57:28.000 --> 57:30.000
+But a 3-inch wafer like this.
+
+57:30.000 --> 57:32.000
+It's 80 channels.
+
+57:32.000 --> 57:34.000
+Then we now think that 80 channels.
+
+57:34.000 --> 57:36.000
+Do this.
+
+57:36.000 --> 57:38.000
+Positioning is good enough.
+
+57:38.000 --> 57:40.000
+So we don't actually have to push this detector anymore.
+
+57:40.000 --> 57:42.000
+We may have to take this detector.
+
+57:42.000 --> 57:44.000
+To do the dark matter search.
+
+57:44.000 --> 57:46.000
+But we are for this thing.
+
+57:46.000 --> 57:48.000
+Some analysis of robustness.
+
+57:48.000 --> 57:50.000
+I don't know if there's a paper here.
+
+57:50.000 --> 57:52.000
+If you can go and see.
+
+57:52.000 --> 57:54.000
+We think we can put 200 channels.
+
+57:54.000 --> 57:56.000
+Then there will be no confusion.
+
+57:56.000 --> 57:58.000
+So basically.
+
+57:58.000 --> 58:00.000
+This is the future super cdms no lab detector.
+
+58:00.000 --> 58:02.000
+There are a lot of little dots.
+
+58:02.000 --> 58:04.000
+But they are all connected together.
+
+58:04.000 --> 58:06.000
+So in the end, this big piece is a pixel.
+
+58:06.000 --> 58:08.000
+This big piece is a pixel.
+
+58:08.000 --> 58:10.000
+It probably looks like this.
+
+58:10.000 --> 58:12.000
+It has 6 pixels.
+
+58:12.000 --> 58:14.000
+Then we have 80.
+
+58:14.000 --> 58:16.000
+Then we can do more than 200.
+
+58:16.000 --> 58:18.000
+Because in fact.
+
+58:18.000 --> 58:20.000
+Energy resolution wise.
+
+58:20.000 --> 58:22.000
+We have measured.
+
+58:22.000 --> 58:24.000
+Comparable energy resolution.
+
+58:24.000 --> 58:26.000
+But more importantly.
+
+58:26.000 --> 58:28.000
+Recent results suggest.
+
+58:28.000 --> 58:30.000
+We can do sub-EB resolution.
+
+58:30.000 --> 58:32.000
+Then of course.
+
+58:32.000 --> 58:34.000
+In money wise.
+
+58:34.000 --> 58:36.000
+It reduces 60% of fabrication complexity.
+
+58:36.000 --> 58:38.000
+Because in fact.
+
+58:38.000 --> 58:40.000
+This whole piece.
+
+58:40.000 --> 58:42.000
+Is single layer film.
+
+58:42.000 --> 58:44.000
+So.
+
+58:44.000 --> 58:46.000
+Compared with this.
+
+58:46.000 --> 58:48.000
+We are actually a mask.
+
+58:48.000 --> 58:50.000
+Then deposit.
+
+58:50.000 --> 58:52.000
+Then etch.
+
+58:52.000 --> 58:54.000
+Then we have a complete whole circuit.
+
+58:54.000 --> 58:56.000
+So we reduced.
+
+58:56.000 --> 58:58.000
+60% to 70% of this.
+
+58:58.000 --> 59:00.000
+If we go to calculate the steps.
+
+59:00.000 --> 59:02.000
+Then the chemical used is much less.
+
+59:02.000 --> 59:04.000
+So this fabrication EO is much higher.
+
+59:04.000 --> 59:06.000
+And we can easily do.
+
+59:06.000 --> 59:08.000
+100 times of this.
+
+59:08.000 --> 59:10.000
+Pixelization.
+
+59:10.000 --> 59:12.000
+Is multiplexibility.
+
+59:12.000 --> 59:14.000
+Then.
+
+59:14.000 --> 59:16.000
+We don't need thermoelectric feedback.
+
+59:16.000 --> 59:18.000
+We just need to.
+
+59:18.000 --> 59:20.000
+Make it much lower than TC.
+
+59:20.000 --> 59:22.000
+Then we don't need.
+
+59:22.000 --> 59:24.000
+Squid amplifier.
+
+59:24.000 --> 59:26.000
+Because in fact by design.
+
+59:26.000 --> 59:28.000
+This waveguide is 50 ohms.
+
+59:28.000 --> 59:30.000
+So we only need 50 ohms.
+
+59:30.000 --> 59:32.000
+Just connect two coax.
+
+59:32.000 --> 59:34.000
+So this is very simple.
+
+59:34.000 --> 59:36.000
+This is very important to CLR.
+
+59:36.000 --> 59:38.000
+Then this is the second page.
+
+59:38.000 --> 59:40.000
+Then let's talk about.
+
+59:40.000 --> 59:42.000
+How high can we expect?
+
+59:42.000 --> 59:44.000
+Because we are dominated by.
+
+59:44.000 --> 59:46.000
+Low-noise amplifier.
+
+59:46.000 --> 59:48.000
+So in other words.
+
+59:48.000 --> 59:50.000
+As long as I can lower my.
+
+59:50.000 --> 59:52.000
+The noise temperature of the amplifier.
+
+59:52.000 --> 59:54.000
+I can.
+
+59:54.000 --> 59:56.000
+Increase my.
+
+59:56.000 --> 59:58.000
+Resolution here.
+
+59:58.000 --> 01:00:00.000
+Then we use this amplifier now.
+
+01:00:00.000 --> 01:00:02.000
+5K noise temperature.
+
+01:00:02.000 --> 01:00:04.000
+Then our collaborator in JPL.
+
+01:00:04.000 --> 01:00:06.000
+He made a low-noise.
+
+01:00:06.000 --> 01:00:08.000
+Low-noise amplifier.
+
+01:00:08.000 --> 01:00:10.000
+So I just change this to me.
+
+01:00:10.000 --> 01:00:12.000
+I have a factor here.
+
+01:00:12.000 --> 01:00:14.000
+OK.
+
+01:00:14.000 --> 01:00:16.000
+Then.
+
+01:00:16.000 --> 01:00:18.000
+We found one thing.
+
+01:00:18.000 --> 01:00:20.000
+We have to do this match filter.
+
+01:00:20.000 --> 01:00:22.000
+Filter what is noise.
+
+01:00:22.000 --> 01:00:24.000
+What is this pulse template.
+
+01:00:24.000 --> 01:00:26.000
+If we have this today.
+
+01:00:26.000 --> 01:00:28.000
+This pulse decay time.
+
+01:00:28.000 --> 01:00:30.000
+This time constant is longer.
+
+01:00:30.000 --> 01:00:32.000
+We can be on this match filter.
+
+01:00:32.000 --> 01:00:34.000
+Filter more of this.
+
+01:00:34.000 --> 01:00:36.000
+Noise spectrum.
+
+01:00:36.000 --> 01:00:38.000
+Then this characteristic.
+
+01:00:38.000 --> 01:00:40.000
+If the characteristic time of this film becomes longer.
+
+01:00:40.000 --> 01:00:42.000
+We can.
+
+01:00:42.000 --> 01:00:44.000
+Increase better signal to noise ratio.
+
+01:00:44.000 --> 01:00:46.000
+In this paper.
+
+01:00:46.000 --> 01:00:48.000
+Demonstrate that they can put this time.
+
+01:00:48.000 --> 01:00:50.000
+Increase to 3ms.
+
+01:00:50.000 --> 01:00:52.000
+Then we are now 100 microseconds.
+
+01:00:52.000 --> 01:00:54.000
+So OK.
+
+01:00:54.000 --> 01:00:56.000
+Then I put this factor in.
+
+01:00:56.000 --> 01:00:58.000
+Do I put this factor in?
+
+01:00:58.000 --> 01:01:00.000
+OK.
+
+01:01:00.000 --> 01:01:02.000
+Let's not say 3000.
+
+01:01:02.000 --> 01:01:04.000
+Let's say 1500 microseconds.
+
+01:01:04.000 --> 01:01:06.000
+This is actually my boss.
+
+01:01:06.000 --> 01:01:08.000
+Another experiment.
+
+01:01:08.000 --> 01:01:10.000
+They put.
+
+01:01:10.000 --> 01:01:12.000
+This part.
+
+01:01:12.000 --> 01:01:14.000
+Made into material.
+
+01:01:14.000 --> 01:01:16.000
+What does it mean?
+
+01:01:16.000 --> 01:01:18.000
+He put this sensitive inductor.
+
+01:01:18.000 --> 01:01:20.000
+Really we can measure.
+
+01:01:20.000 --> 01:01:22.000
+Material.
+
+01:01:22.000 --> 01:01:24.000
+The other part.
+
+01:01:24.000 --> 01:01:26.000
+Another kind.
+
+01:01:26.000 --> 01:01:28.000
+The gap is bigger.
+
+01:01:28.000 --> 01:01:30.000
+Bigger material.
+
+01:01:30.000 --> 01:01:32.000
+So they won't eat the wind.
+
+01:01:32.000 --> 01:01:34.000
+By this difference.
+
+01:01:34.000 --> 01:01:36.000
+Just by this geometric ratio.
+
+01:01:36.000 --> 01:01:38.000
+He can increase his sensitivity.
+
+01:01:38.000 --> 01:01:40.000
+Then we can do the same thing.
+
+01:01:40.000 --> 01:01:42.000
+That is actually one more layer.
+
+01:01:42.000 --> 01:01:44.000
+Much less than TS.
+
+01:01:44.000 --> 01:01:46.000
+Then we add it up.
+
+01:01:46.000 --> 01:01:48.000
+This ratio.
+
+01:01:48.000 --> 01:01:50.000
+Then.
+
+01:01:50.000 --> 01:01:52.000
+Recently.
+
+01:01:52.000 --> 01:01:54.000
+Recently, there is one in Europe.
+
+01:01:54.000 --> 01:01:56.000
+Do that group.
+
+01:01:56.000 --> 01:01:58.000
+They are doing this thing.
+
+01:01:58.000 --> 01:02:00.000
+They propose a very interesting one.
+
+01:02:00.000 --> 01:02:02.000
+We actually have to calculate.
+
+01:02:02.000 --> 01:02:04.000
+How much we have created.
+
+01:02:04.000 --> 01:02:06.000
+So if you are today.
+
+01:02:06.000 --> 01:02:08.000
+This superconductor.
+
+01:02:08.000 --> 01:02:10.000
+Very small.
+
+01:02:10.000 --> 01:02:12.000
+Very small.
+
+01:02:12.000 --> 01:02:14.000
+You can break a lot.
+
+01:02:14.000 --> 01:02:16.000
+So they used this.
+
+01:02:16.000 --> 01:02:18.000
+Low gap.
+
+01:02:18.000 --> 01:02:20.000
+Very small.
+
+01:02:20.000 --> 01:02:22.000
+This material.
+
+01:02:22.000 --> 01:02:24.000
+We use aluminum now.
+
+01:02:24.000 --> 01:02:26.000
+They can use it.
+
+01:02:26.000 --> 01:02:28.000
+From 0.2.
+
+01:02:28.000 --> 01:02:30.000
+0.2.
+
+01:02:30.000 --> 01:02:32.000
+0.2.
+
+01:02:32.000 --> 01:02:34.000
+0.05.
+
+01:02:34.000 --> 01:02:36.000
+This is also a change.
+
+01:02:36.000 --> 01:02:38.000
+So we put everything.
+
+01:02:38.000 --> 01:02:40.000
+Has been demonstrated.
+
+01:02:40.000 --> 01:02:42.000
+Bring it all in.
+
+01:02:42.000 --> 01:02:44.000
+We will.
+
+01:02:44.000 --> 01:02:46.000
+Bring in the resolution we already have.
+
+01:02:46.000 --> 01:02:48.000
+Rescale.
+
+01:02:48.000 --> 01:02:50.000
+The result we get is 36.
+
+01:02:50.000 --> 01:02:52.000
+That is to say.
+
+01:02:52.000 --> 01:02:54.000
+We are no longer doing.
+
+01:02:54.000 --> 01:02:56.000
+Or we do.
+
+01:02:56.000 --> 01:02:58.000
+Ionization counting.
+
+01:02:58.000 --> 01:03:00.000
+We basically have 36.
+
+01:03:00.000 --> 01:03:02.000
+Resolution.
+
+01:03:02.000 --> 01:03:04.000
+Of course, we can take this thing.
+
+01:03:04.000 --> 01:03:06.000
+Take it instead of TES.
+
+01:03:06.000 --> 01:03:08.000
+Continue to put it on the silicon substrate.
+
+01:03:08.000 --> 01:03:10.000
+Test this.
+
+01:03:10.000 --> 01:03:12.000
+Or this ionization.
+
+01:03:12.000 --> 01:03:14.000
+Then we can do another thing.
+
+01:03:14.000 --> 01:03:16.000
+Is that we put a bunch of kids over there.
+
+01:03:16.000 --> 01:03:18.000
+Directly take the kids to the dark matter.
+
+01:03:18.000 --> 01:03:20.000
+Then we can count.
+
+01:03:20.000 --> 01:03:22.000
+This kind of quantum.
+
+01:03:22.000 --> 01:03:24.000
+This is our plan.
+
+01:03:24.000 --> 01:03:26.000
+Summarize.
+
+01:03:26.000 --> 01:03:28.000
+We think now.
+
+01:03:28.000 --> 01:03:30.000
+Within 5 to 10 years.
+
+01:03:30.000 --> 01:03:32.000
+Humans can either find WIMP.
+
+01:03:32.000 --> 01:03:34.000
+Or we will have a long one.
+
+01:03:34.000 --> 01:03:36.000
+No progress.
+
+01:03:36.000 --> 01:03:38.000
+So everyone is now.
+
+01:03:38.000 --> 01:03:40.000
+Working hard to think about it.
+
+01:03:40.000 --> 01:03:42.000
+Can we shift to low mass dark matter?
+
+01:03:42.000 --> 01:03:44.000
+There are still a lot of models.
+
+01:03:44.000 --> 01:03:46.000
+Not tested yet.
+
+01:03:46.000 --> 01:03:48.000
+We need to have.
+
+01:03:48.000 --> 01:03:50.000
+Electron recoil and nuclear recoil.
+
+01:03:50.000 --> 01:03:52.000
+Two at the same time.
+
+01:03:52.000 --> 01:03:54.000
+Because in fact.
+
+01:03:54.000 --> 01:03:56.000
+In addition to electronic recoil.
+
+01:03:56.000 --> 01:03:58.000
+Can measure very small energy.
+
+01:03:58.000 --> 01:04:00.000
+Nuclear recoil can help us distinguish.
+
+01:04:00.000 --> 01:04:02.000
+What is the signal?
+
+01:04:02.000 --> 01:04:04.000
+What is the background?
+
+01:04:04.000 --> 01:04:06.000
+This is an important thing to start now.
+
+01:04:06.000 --> 01:04:08.000
+Requires substantial improvement.
+
+01:04:08.000 --> 01:04:10.000
+In low-threshold technology.
+
+01:04:10.000 --> 01:04:12.000
+This is the second part.
+
+01:04:12.000 --> 01:04:14.000
+CDMX HPEV demonstration.
+
+01:04:14.000 --> 01:04:16.000
+We have the ability to count.
+
+01:04:16.000 --> 01:04:18.000
+We give it a day.
+
+01:04:18.000 --> 01:04:20.000
+One day on the surface of the lab.
+
+01:04:20.000 --> 01:04:22.000
+We can set a good limit.
+
+01:04:22.000 --> 01:04:24.000
+Of course, our detector.
+
+01:04:24.000 --> 01:04:26.000
+Has been taken to the tunnel.
+
+01:04:26.000 --> 01:04:28.000
+So the next round.
+
+01:04:28.000 --> 01:04:30.000
+Will be the underground round.
+
+01:04:34.000 --> 01:04:36.000
+One day on the surface of the lab.
+
+01:04:36.000 --> 01:04:38.000
+We can constrain.
+
+01:04:38.000 --> 01:04:40.000
+0.4 MeV dark matter mass.
+
+01:04:42.000 --> 01:04:44.000
+The most important thing is the KIT part.
+
+01:04:44.000 --> 01:04:46.000
+We demonstrate competitive energy resolution.
+
+01:04:46.000 --> 01:04:48.000
+The most important thing is.
+
+01:04:48.000 --> 01:04:50.000
+It is actually.
+
+01:04:50.000 --> 01:04:52.000
+Theoretical prediction.
+
+01:04:52.000 --> 01:04:54.000
+If we put all the design numbers.
+
+01:04:54.000 --> 01:04:56.000
+It is quite consistent.
+
+01:04:56.000 --> 01:04:58.000
+Then we are confident.
+
+01:04:58.000 --> 01:05:00.000
+So we can adapt.
+
+01:05:00.000 --> 01:05:02.000
+What others have demonstrated.
+
+01:05:02.000 --> 01:05:04.000
+Assuming we really have.
+
+01:05:04.000 --> 01:05:06.000
+So many resources to adapt.
+
+01:05:06.000 --> 01:05:08.000
+Each one.
+
+01:05:08.000 --> 01:05:10.000
+Its outlook is 100 times.
+
+01:05:10.000 --> 01:05:12.000
+Resolution improvement.
+
+01:05:12.000 --> 01:05:14.000
+It is.
+
+01:05:14.000 --> 01:05:16.000
+Flexible optimization.
+
+01:05:16.000 --> 01:05:18.000
+You want good energy resolution.
+
+01:05:18.000 --> 01:05:20.000
+Just make a pixel.
+
+01:05:20.000 --> 01:05:22.000
+Let all the photons hit you.
+
+01:05:22.000 --> 01:05:24.000
+Or you can do 500 pixels.
+
+01:05:24.000 --> 01:05:26.000
+Then you can have a good.
+
+01:05:26.000 --> 01:05:28.000
+Position reconstruction or tracking.
+
+01:05:28.000 --> 01:05:30.000
+In other words.
+
+01:05:30.000 --> 01:05:32.000
+You can reject the background.
+
+01:05:32.000 --> 01:05:34.000
+When we really want to run dark matter devices.
+
+01:05:34.000 --> 01:05:36.000
+This will still need to be redesigned.
+
+01:05:36.000 --> 01:05:38.000
+And then the point is.
+
+01:05:38.000 --> 01:05:40.000
+It is very easy and reliable fabrication.
+
+01:05:40.000 --> 01:05:42.000
+This is very important for the future.
+
+01:05:42.000 --> 01:05:44.000
+Because the students know.
+
+01:05:44.000 --> 01:05:46.000
+It is very likely that the device has not been done well.
+
+01:05:46.000 --> 01:05:48.000
+So if it's easy to do, it's very important.
+
+01:05:48.000 --> 01:05:50.000
+OK.
+
+01:05:50.000 --> 01:05:52.000
+Because it is very simple.
+
+01:05:52.000 --> 01:05:54.000
+It basically does not have.
+
+01:05:54.000 --> 01:05:56.000
+Just put in an amplifier.
+
+01:05:56.000 --> 01:05:58.000
+Then you can run.
+
+01:05:58.000 --> 01:06:00.000
+OK, that's it.
+
+01:06:00.000 --> 01:06:02.000
+Thank you.
+
+01:06:02.000 --> 01:06:04.000
+Hello everyone.
+
+01:06:04.000 --> 01:06:06.000
+Does anyone have a question?
+
+01:06:06.000 --> 01:06:08.000
+We are good.
+
+01:06:08.000 --> 01:06:10.000
+Good.
+
+01:06:10.000 --> 01:06:12.000
+Good.
+
+01:06:12.000 --> 01:06:14.000
+Good.
+
+01:06:14.000 --> 01:06:16.000
+Good.
+
+01:06:16.000 --> 01:06:18.000
+Good.
+
+01:06:18.000 --> 01:06:20.000
+Good.
+
+01:06:20.000 --> 01:06:22.000
+Good.
+
+01:06:22.000 --> 01:06:24.000
+Good.
+
+01:06:24.000 --> 01:06:26.000
+Good.
+
+01:06:26.000 --> 01:06:28.000
+Good.
+
+01:06:28.000 --> 01:06:30.000
+Good.
+
+01:06:30.000 --> 01:06:32.000
+I want to ask.
+
+01:06:32.000 --> 01:06:34.000
+That is.
+
+01:06:34.000 --> 01:06:36.000
+Is that Ding Zhaozhong.
+
+01:06:36.000 --> 01:06:38.000
+His group is looking for WIMP.
+
+01:06:40.000 --> 01:06:42.000
+And this is not even about to the device?
+
+01:06:44.000 --> 01:06:46.000
+To the space or test.
+
+01:06:46.000 --> 01:06:48.000
+The test is actually done on earth.
+
+01:06:48.000 --> 01:06:50.000
+If we want to.
+
+01:06:50.000 --> 01:06:52.000
+The environment of this experiment.
+
+01:06:52.000 --> 01:06:54.000
+A better environment.
+
+01:06:54.000 --> 01:06:56.000
+Not actually going to the sky.
+
+01:06:56.000 --> 01:06:58.000
+Because we actually measured directly.
+
+01:06:58.000 --> 01:07:02.000
+We hope to go through everything we already know.
+
+01:07:02.000 --> 01:07:04.000
+All kinds of things.
+
+01:07:04.000 --> 01:07:06.000
+And then hit our detector.
+
+01:07:06.000 --> 01:07:08.000
+But our environment is full of cosmic rays.
+
+01:07:08.000 --> 01:07:10.000
+So we actually have the best environment.
+
+01:07:10.000 --> 01:07:12.000
+It's underground.
+
+01:07:12.000 --> 01:07:14.000
+It can be very natural to use the earth's shell to help us isolate the cosmic rays.
+
+01:07:14.000 --> 01:07:16.000
+But we already know.
+
+01:07:16.000 --> 01:07:18.000
+Can go through almost everything.
+
+01:07:18.000 --> 01:07:20.000
+You go to the bottom of the moon.
+
+01:07:20.000 --> 01:07:22.000
+Relatively, you show off the more cosmic rays.
+
+01:07:22.000 --> 01:07:24.000
+But the rate you leave.
+
+01:07:24.000 --> 01:07:26.000
+That is.
+
+01:07:26.000 --> 01:07:28.000
+So most of our experiments are.
+
+01:07:28.000 --> 01:07:30.000
+Eventually, it's going to be done underground.
+
+01:07:30.000 --> 01:07:32.000
+For example, mines and so on.
+
+01:07:32.000 --> 01:07:34.000
+But Ding Zhaozhong's experiment.
+
+01:07:34.000 --> 01:07:36.000
+If you're talking about AMS or AMS.
+
+01:07:36.000 --> 01:07:38.000
+What if it's 02 now?
+
+01:07:38.000 --> 01:07:40.000
+He's not measuring dark matter.
+
+01:07:40.000 --> 01:07:42.000
+He's measuring cosmic rays.
+
+01:07:42.000 --> 01:07:44.000
+The anomaly.
+
+01:07:44.000 --> 01:07:46.000
+And then if this anomaly.
+
+01:07:46.000 --> 01:07:48.000
+It's a very, very strong anomaly.
+
+01:07:48.000 --> 01:07:50.000
+They can try to explain.
+
+01:07:50.000 --> 01:07:52.000
+So is there any dark matter?
+
+01:07:52.000 --> 01:07:54.000
+For example, decay.
+
+01:07:54.000 --> 01:07:56.000
+Or produce such anomalies.
+
+01:07:56.000 --> 01:07:58.000
+For example, suddenly there is a certain kind of energy.
+
+01:07:58.000 --> 01:08:00.000
+On the spectrum of cosmic rays.
+
+01:08:00.000 --> 01:08:02.000
+There are a lot of non-continuous peaks.
+
+01:08:02.000 --> 01:08:04.000
+Then it might be dark matter.
+
+01:08:04.000 --> 01:08:06.000
+So they're actually measuring cosmic rays.
+
+01:08:06.000 --> 01:08:08.000
+So they want to go to the strongest part of the cosmic rays.
+
+01:08:08.000 --> 01:08:10.000
+So they want to go to the atmosphere.
+
+01:08:10.000 --> 01:08:12.000
+Because the atmosphere will actually block the cosmic rays.
+
+01:08:12.000 --> 01:08:14.000
+So they went to the space station.
+
+01:08:14.000 --> 01:08:16.000
+The principle is probably like this.
+
+01:08:16.000 --> 01:08:18.000
+OK.
+
+01:08:24.000 --> 01:08:26.000
+OK.
+
+01:08:26.000 --> 01:08:28.000
+OK.
+
+01:08:28.000 --> 01:08:30.000
+OK.
+
+01:08:30.000 --> 01:08:32.000
+OK.
+
+01:08:32.000 --> 01:08:34.000
+I want to ask another question.
+
+01:08:34.000 --> 01:08:36.000
+OK.
+
+01:08:36.000 --> 01:08:38.000
+It's a bit of an unexpected.
+
+01:08:38.000 --> 01:08:40.000
+But.
+
+01:08:40.000 --> 01:08:42.000
+I want to ask if there is anyone.
+
+01:08:42.000 --> 01:08:44.000
+You're measuring those photons now.
+
+01:08:44.000 --> 01:08:46.000
+Right?
+
+01:08:46.000 --> 01:08:48.000
+And then magnify the signal.
+
+01:08:48.000 --> 01:08:50.000
+Is there anyone.
+
+01:08:50.000 --> 01:08:52.000
+Like using that legal.
+
+01:08:52.000 --> 01:08:54.000
+That is, he measured.
+
+01:08:54.000 --> 01:08:56.000
+For example, you hit it.
+
+01:08:56.000 --> 01:08:58.000
+Then there may be some very small particles.
+
+01:08:58.000 --> 01:09:00.000
+Yes.
+
+01:09:00.000 --> 01:09:02.000
+I actually.
+
+01:09:02.000 --> 01:09:04.000
+I really like this kind of research.
+
+01:09:04.000 --> 01:09:06.000
+Because.
+
+01:09:06.000 --> 01:09:08.000
+You can ask a very legitimate question.
+
+01:09:08.000 --> 01:09:10.000
+That is to say.
+
+01:09:10.000 --> 01:09:12.000
+In fact, we are now.
+
+01:09:12.000 --> 01:09:14.000
+All dark matter will be blocked by us.
+
+01:09:14.000 --> 01:09:16.000
+Interaction is imaginary.
+
+01:09:16.000 --> 01:09:18.000
+Because the only thing we know.
+
+01:09:18.000 --> 01:09:20.000
+Dark matter will really interact.
+
+01:09:20.000 --> 01:09:22.000
+Observed is through gravity.
+
+01:09:22.000 --> 01:09:24.000
+If I say I'm going to design an experiment.
+
+01:09:24.000 --> 01:09:26.000
+Is to use gravity as gravity.
+
+01:09:26.000 --> 01:09:28.000
+To measure dark matter.
+
+01:09:28.000 --> 01:09:30.000
+How sensitive do I want to be?
+
+01:09:30.000 --> 01:09:32.000
+Or what kind of model is dark matter?
+
+01:09:32.000 --> 01:09:34.000
+I measured it.
+
+01:09:34.000 --> 01:09:36.000
+Basically, your question is like this.
+
+01:09:36.000 --> 01:09:38.000
+The answer is.
+
+01:09:38.000 --> 01:09:40.000
+Someone is thinking about this.
+
+01:09:40.000 --> 01:09:42.000
+It's not that I can't do it.
+
+01:09:42.000 --> 01:09:44.000
+But the first dark matter is very, very heavy.
+
+01:09:44.000 --> 01:09:46.000
+How heavy is it?
+
+01:09:46.000 --> 01:09:48.000
+It's about 0.0.
+
+01:09:48.000 --> 01:09:50.000
+Planck's mass.
+
+01:09:50.000 --> 01:09:52.000
+I don't know if you know Planck's mass.
+
+01:09:52.000 --> 01:09:54.000
+We think all gravity.
+
+01:09:54.000 --> 01:09:56.000
+The theory will break down the physical limit.
+
+01:09:56.000 --> 01:09:58.000
+Now.
+
+01:09:58.000 --> 01:10:00.000
+Now we are discussing these scales.
+
+01:10:00.000 --> 01:10:02.000
+What 30 times.
+
+01:10:02.000 --> 01:10:04.000
+No, sorry.
+
+01:10:06.000 --> 01:10:08.000
+Then.
+
+01:10:08.000 --> 01:10:10.000
+This is what they are thinking about.
+
+01:10:10.000 --> 01:10:12.000
+They can use laser.
+
+01:10:12.000 --> 01:10:14.000
+Put some nanoparticles.
+
+01:10:14.000 --> 01:10:16.000
+Press it with laser light.
+
+01:10:16.000 --> 01:10:18.000
+Hold nanoparticles.
+
+01:10:18.000 --> 01:10:20.000
+Then take it.
+
+01:10:20.000 --> 01:10:22.000
+Line up in a vacuum chamber.
+
+01:10:22.000 --> 01:10:24.000
+Line up in a vacuum chamber.
+
+01:10:24.000 --> 01:10:26.000
+These nanoparticles.
+
+01:10:26.000 --> 01:10:28.000
+If the little pig is hit by dark matter.
+
+01:10:28.000 --> 01:10:30.000
+No, sorry.
+
+01:10:30.000 --> 01:10:32.000
+It is passed by dark matter.
+
+01:10:32.000 --> 01:10:34.000
+Then the weight of the dark matter particle.
+
+01:10:34.000 --> 01:10:36.000
+Will affect the position of these little pigs.
+
+01:10:36.000 --> 01:10:38.000
+Then they will start to shake.
+
+01:10:38.000 --> 01:10:40.000
+It's like a gravity wave.
+
+01:10:40.000 --> 01:10:42.000
+The mirror of LIGO.
+
+01:10:42.000 --> 01:10:44.000
+They can use this method to measure.
+
+01:10:44.000 --> 01:10:46.000
+But I think this is a good question.
+
+01:10:46.000 --> 01:10:48.000
+And someone is doing R&D.
+
+01:10:50.000 --> 01:10:52.000
+This is very interesting.
+
+01:10:52.000 --> 01:10:54.000
+This is very interesting.
+
+01:11:12.000 --> 01:11:14.000
+Can I ask?
+
+01:11:14.000 --> 01:11:16.000
+Strange details.
+
+01:11:16.000 --> 01:11:18.000
+Why do you use such a thick wafer?
+
+01:11:18.000 --> 01:11:20.000
+Why do you use such a thick wafer?
+
+01:11:20.000 --> 01:11:22.000
+Or is the whole piece of silicon?
+
+01:11:22.000 --> 01:11:24.000
+Or is the whole piece of silicon?
+
+01:11:24.000 --> 01:11:26.000
+Yes, the whole piece is silicon.
+
+01:11:26.000 --> 01:11:28.000
+Ok, I'll leave it here.
+
+01:11:28.000 --> 01:11:30.000
+In fact, this thickness is so thick.
+
+01:11:30.000 --> 01:11:32.000
+This is 10 cm.
+
+01:11:32.000 --> 01:11:34.000
+This is 4 inches.
+
+01:11:34.000 --> 01:11:36.000
+4 inches wafer.
+
+01:11:36.000 --> 01:11:38.000
+The thickness is a big piece.
+
+01:11:38.000 --> 01:11:40.000
+It's like a big piece of silicon.
+
+01:11:40.000 --> 01:11:42.000
+You don't cut it into pieces.
+
+01:11:42.000 --> 01:11:44.000
+You cut it into pieces.
+
+01:11:44.000 --> 01:11:46.000
+This is not a wafer crystal.
+
+01:11:46.000 --> 01:11:48.000
+Why do you do this?
+
+01:11:48.000 --> 01:11:50.000
+Because we found one thing.
+
+01:11:50.000 --> 01:11:52.000
+Of course you can say that my thickness is 1 km.
+
+01:11:52.000 --> 01:11:54.000
+And then I have 10 pieces.
+
+01:11:54.000 --> 01:11:56.000
+Or my thickness is 1 cm.
+
+01:11:56.000 --> 01:11:58.000
+But I only have one piece.
+
+01:11:58.000 --> 01:12:00.000
+Its total mass.
+
+01:12:00.000 --> 01:12:02.000
+Or the total number of neutron protons it gives you.
+
+01:12:02.000 --> 01:12:04.000
+It's the same.
+
+01:12:04.000 --> 01:12:06.000
+So in theory, your experimental sensitivity is the same.
+
+01:12:06.000 --> 01:12:08.000
+But we found one thing.
+
+01:12:08.000 --> 01:12:10.000
+In the whole process of fabrication.
+
+01:12:10.000 --> 01:12:12.000
+And in the process of transportation.
+
+01:12:12.000 --> 01:12:14.000
+The cosmic radiation has been constantly hitting.
+
+01:12:14.000 --> 01:12:16.000
+The cosmic radiation has been constantly hitting.
+
+01:12:16.000 --> 01:12:18.000
+And then there's a lot of dirt in the air.
+
+01:12:18.000 --> 01:12:20.000
+A lot of radioactivity has also been touching our wafer.
+
+01:12:20.000 --> 01:12:22.000
+And then there's a lot of dirt in the air.
+
+01:12:22.000 --> 01:12:24.000
+And then there's a lot of radioactivity has also been touching our wafer.
+
+01:12:24.000 --> 01:12:26.000
+Whether it's sticking or producing.
+
+01:12:26.000 --> 01:12:28.000
+Whether it's sticking or producing.
+
+01:12:28.000 --> 01:12:30.000
+These elements.
+
+01:12:30.000 --> 01:12:32.000
+So minimize the surface area.
+
+01:12:32.000 --> 01:12:34.000
+So minimize the surface area.
+
+01:12:34.000 --> 01:12:36.000
+The total radioactivity of the whole experiment.
+
+01:12:36.000 --> 01:12:38.000
+So we want it to be a big piece.
+
+01:12:38.000 --> 01:12:40.000
+Not a lot of small pieces.
+
+01:12:40.000 --> 01:12:42.000
+Not a lot of small pieces.
+
+01:12:42.000 --> 01:12:44.000
+Does this make sense?
+
+01:12:44.000 --> 01:12:46.000
+Does this make sense?
+
+01:12:46.000 --> 01:12:48.000
+But I mean, why is it so thick?
+
+01:12:48.000 --> 01:12:50.000
+But I mean, why is it so thick?
+
+01:12:50.000 --> 01:12:52.000
+But I mean, why is it so thick?
+
+01:12:52.000 --> 01:12:54.000
+Because it's very thick.
+
+01:12:54.000 --> 01:12:56.000
+It means that it's very small on the same quality.
+
+01:12:56.000 --> 01:12:58.000
+Or we have the same thickness.
+
+01:12:58.000 --> 01:13:00.000
+Or we have the same total weight.
+
+01:13:00.000 --> 01:13:02.000
+We can also use a thin piece of stone.
+
+01:13:02.000 --> 01:13:04.000
+But its surface area is very large.
+
+01:13:04.000 --> 01:13:06.000
+Ah, I see what you mean.
+
+01:13:06.000 --> 01:13:08.000
+Ah, I see what you mean.
+
+01:13:08.000 --> 01:13:10.000
+Ah, I see what you mean.
+
+01:13:10.000 --> 01:13:12.000
+Ah, I see what you mean.
+
+01:13:12.000 --> 01:13:14.000
+Can I ask a question?
+
+01:13:14.000 --> 01:13:16.000
+How do you do calibration for detectors?
+
+01:13:16.000 --> 01:13:18.000
+How do you do calibration for detectors?
+
+01:13:18.000 --> 01:13:20.000
+How do you do calibration for detectors?
+
+01:13:20.000 --> 01:13:22.000
+This is a bit complicated.
+
+01:13:22.000 --> 01:13:24.000
+Let me talk about this first.
+
+01:13:24.000 --> 01:13:26.000
+Let me talk about this first.
+
+01:13:26.000 --> 01:13:28.000
+This HVEV.
+
+01:13:28.000 --> 01:13:30.000
+We actually hit it with a laser.
+
+01:13:30.000 --> 01:13:32.000
+We have a fiber.
+
+01:13:32.000 --> 01:13:34.000
+We have a fiber.
+
+01:13:34.000 --> 01:13:36.000
+We have a fiber.
+
+01:13:36.000 --> 01:13:38.000
+Because you use a pulse laser.
+
+01:13:38.000 --> 01:13:40.000
+Because you use a pulse laser.
+
+01:13:40.000 --> 01:13:42.000
+We can see this spectrum.
+
+01:13:42.000 --> 01:13:44.000
+We can see this spectrum.
+
+01:13:44.000 --> 01:13:46.000
+This is calibration.
+
+01:13:46.000 --> 01:13:48.000
+This is calibration.
+
+01:14:00.000 --> 01:14:02.000
+Rayleigh active source 1k EV.
+
+01:14:02.000 --> 01:14:04.000
+Rayleigh active source 1k EV.
+
+01:14:04.000 --> 01:14:06.000
+Rayleigh active source 1k EV.
+
+01:14:06.000 --> 01:14:08.000
+Rayleigh active source 1k EV.
+
+01:14:08.000 --> 01:14:10.000
+Rayleigh active source 1k EV.
+
+01:14:12.000 --> 01:14:14.000
+Rayleigh active source 1k EV.
+
+01:14:14.000 --> 01:14:16.000
+Rayleigh active source 1k EV.
+
+01:14:16.000 --> 01:14:18.000
+Rayleigh active source 1k EV.
+
+01:14:18.000 --> 01:14:20.000
+Rayleigh active source 1k EV.
+
+01:14:20.000 --> 01:14:22.000
+Rayleigh active source 1k EV.
+
+01:14:22.000 --> 01:14:24.000
+Rayleigh active source 1k EV.
+
+01:14:24.000 --> 01:14:26.000
+Rayleigh active source 1k EV.
+
+01:14:26.000 --> 01:14:28.000
+Rayleigh active source 1k EV.
+
+01:14:28.000 --> 01:14:30.000
+Rayleigh active source 1k EV.
+
+01:14:30.000 --> 01:14:32.000
+Rayleigh active source 1k EV.
+
+01:14:32.000 --> 01:14:34.000
+Rayleigh warranty veteran.
+
+01:14:34.000 --> 01:14:36.000
+Rayleigh warranty veteran.
+
+01:15:36.000 --> 01:15:38.000
+Rayleigh warranty veteran.
+
+01:15:44.000 --> 01:15:46.000
+Rayleigh warranty veteran.
+
+01:15:46.000 --> 01:15:48.000
+Rayleigh warranty veteran.
+
+01:15:48.000 --> 01:15:50.000
+Rayleigh warranty veteran.
+
+01:15:50.000 --> 01:15:52.000
+Rayleigh warranty veteran.
+
+01:15:56.000 --> 01:15:58.000
+Rayleigh warranty veteran.
+
+01:15:58.000 --> 01:16:00.000
+Rayleigh warranty veteran.
+
+01:16:00.000 --> 01:16:02.000
+Rayleigh warranty veteran.
+
+01:16:02.000 --> 01:16:04.000
+Rayleigh warranty veteran.
+
+01:16:04.000 --> 01:16:06.000
+Rayleigh warranty veteran.
+
+01:16:06.000 --> 01:16:08.000
+Rayleigh warranty veteran.
+
+01:16:08.000 --> 01:16:10.000
+Rayleigh warranty veteran.
+
+01:16:10.000 --> 01:16:12.000
+Rayleigh warranty veteran.
+
+01:16:12.000 --> 01:16:14.000
+Rayleigh warranty veteran.
+
+01:16:14.000 --> 01:16:16.000
+Rayleigh warranty veteran.
+
+01:16:16.000 --> 01:16:18.000
+Rayleigh warranty veteran.
+
+01:16:18.000 --> 01:16:20.000
+Rayleigh warranty veteran.
+
+01:16:20.000 --> 01:16:22.000
+Rayleigh warranty veteran.
+
+01:16:22.000 --> 01:16:24.000
+Rayleigh warranty veteran.
+
+01:16:24.000 --> 01:16:26.000
+Rayleigh warranty veteran.
+
+01:16:26.000 --> 01:16:28.000
+Rayleigh warranty veteran.
+
+01:16:28.000 --> 01:16:30.000
+Rayleigh warranty veteran.
+
+01:16:30.000 --> 01:16:32.000
+Rayleigh warranty veteran.
+
+01:16:32.000 --> 01:16:34.000
+Rayleigh warranty veteran.
+
+01:16:34.000 --> 01:16:36.000
+Rayleigh warranty veteran.
+
+01:16:36.000 --> 01:16:38.000
+Rayleigh warranty veteran.
+
+01:16:38.000 --> 01:16:40.000
+Rayleigh warranty veteran.
+
+01:16:40.000 --> 01:16:42.000
+Rayleigh warranty veteran.
+
+01:16:42.000 --> 01:16:44.000
+Rayleigh warranty veteran.
+
+01:16:44.000 --> 01:16:46.000
+Rayleigh warranty veteran.
+
+01:16:46.000 --> 01:16:48.000
+Rayleigh warranty veteran.
+
+01:16:48.000 --> 01:16:50.000
+Rayleigh warranty veteran.
+
+01:16:50.000 --> 01:16:52.000
+Rayleigh warranty veteran.
+
+01:16:52.000 --> 01:16:54.000
+Rayleigh warranty veteran.
+
+01:16:54.000 --> 01:16:56.000
+Rayleigh warranty veteran.
+
+01:16:56.000 --> 01:16:58.000
+Rayleigh warranty veteran.
+
+01:16:58.000 --> 01:17:00.000
+Rayleigh warranty veteran.
+
+01:17:00.000 --> 01:17:02.000
+Rayleigh warranty veteran.
+
+01:17:02.000 --> 01:17:04.000
+Rayleigh warranty veteran.
+
+01:17:04.000 --> 01:17:06.000
+Rayleigh warranty veteran.
+
+01:17:06.000 --> 01:17:08.000
+Rayleigh warranty veteran.
+
+01:17:08.000 --> 01:17:10.000
+Rayleigh warranty veteran.
+
+01:17:10.000 --> 01:17:12.000
+Rayleigh warranty veteran.
+
+01:17:12.000 --> 01:17:14.000
+Rayleigh warranty veteran.
+
+01:17:14.000 --> 01:17:16.000
+Rayleigh warranty veteran.
+
+01:17:16.000 --> 01:17:18.000
+Rayleigh warranty veteran.
+
+01:17:18.000 --> 01:17:20.000
+Rayleigh warranty veteran.
+
+01:17:20.000 --> 01:17:22.000
+Rayleigh warranty veteran.
+
+01:17:22.000 --> 01:17:24.000
+Rayleigh warranty veteran.
+
+01:17:24.000 --> 01:17:26.000
+Rayleigh warranty veteran.
+
+01:17:26.000 --> 01:17:28.000
+Rayleigh warranty veteran.
+
+01:17:29.000 --> 01:17:32.000
+Rayleigh warranty veteran.
+
+01:17:32.000 --> 01:17:34.000
+Rayleigh warranty veteran.
+
+01:17:34.000 --> 01:17:36.000
+Rayleigh warranty veteran.
+
+01:17:36.000 --> 01:17:38.000
+Rayleigh warranty veteran.
+
+01:17:38.000 --> 01:17:40.000
+Rayleigh warranty veteran.
+
+01:17:40.000 --> 01:17:42.000
+Rayleigh warranty veteran.
+
+01:17:42.000 --> 01:17:44.000
+Rayleigh warranty veteran.
+
+01:17:44.000 --> 01:17:46.000
+Rayleigh warranty veteran.
+
+01:17:46.000 --> 01:17:48.000
+Rayleigh warranty veteran.
+
+01:17:48.000 --> 01:17:50.000
+Rayleigh warranty veteran.
+
+01:17:50.000 --> 01:17:52.000
+Rayleigh warranty veteran.
+
+01:17:52.000 --> 01:17:54.000
+Rayleigh warranty veteran.
+
+01:17:54.000 --> 01:17:56.000
+Rayleigh warranty veteran.
+
+01:17:56.000 --> 01:17:58.000
+Rayleigh warranty veteran.
+
+01:17:58.000 --> 01:18:00.000
+Rayleigh warranty veteran.
+
+01:18:00.000 --> 01:18:02.000
+Rayleigh warranty veteran.
+
+01:18:02.000 --> 01:18:04.000
+Rayleigh warranty veteran.
+
+01:18:04.000 --> 01:18:06.000
+Rayleigh warranty veteran.
+
+01:18:06.000 --> 01:18:08.000
+Rayleigh warranty veteran.
+
+01:18:08.000 --> 01:18:10.000
+Rayleigh warranty veteran.
+
+01:18:10.000 --> 01:18:12.000
+Rayleigh warranty veteran.
+
+01:18:12.000 --> 01:18:14.000
+Rayleigh warranty veteran.
+
+01:18:14.000 --> 01:18:16.000
+Rayleigh warranty veteran.
+
+01:18:16.000 --> 01:18:18.000
+Rayleigh warranty veteran.
+
+01:18:18.000 --> 01:18:20.000
+Rayleigh warranty veteran.
+
+01:18:20.000 --> 01:18:22.000
+Rayleigh warranty veteran.
+
+01:18:22.000 --> 01:18:24.000
+Rayleigh warranty veteran.
+
+01:18:24.000 --> 01:18:50.000
+Rayleigh warranty veteran.
+
+01:18:54.000 --> 01:19:00.000
+Hello, is there anyone who has any questions?
+
+01:19:00.000 --> 01:19:10.000
+Okay, let's give one last round of applause to Rayleigh.
+
+01:19:10.000 --> 01:19:20.000
+Okay, I'll end the recording now.
+

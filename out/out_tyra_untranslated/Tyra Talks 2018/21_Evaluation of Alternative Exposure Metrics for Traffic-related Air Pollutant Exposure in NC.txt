@@ -1,0 +1,334 @@
+好,大家好,我們今天歡迎大家來到我們這個禮拜的TARA TALK,
+那今天的TALK的Title是
+Evaluation of Alternative Exposure Metrics for Traffic-Related Air Pollutant Exposure in North Carolina,
+那我們歡迎我們今天的講者,叫張世穎,我們可以叫他張C,
+那我們簡單介紹一下講者的Information,
+他現在是在Sonoma Technology,一個公司裡面做跟他研究相關的工作,
+那他本身是在UNC,North Carolina,Champaign做,拿到他的PhD,
+那之前來到美國之前呢,他之前是台大公衛,然後台大環衛的Master,
+然後他現在,對,他現在也是做跟他研究很相關的題目,
+那我們今天就歡迎我們的講者,張世穎。
+大家好,開講之前一定要Show一下我的T-Shirt,去年拿冠軍。
+我今天要講的題目是,我叫張世穎,大家叫我張C就可以了,
+那我今天要講的題目是關於,你怎麼樣用Air Quality Model或是Model-Based的方法呢,來評估人體對空氣污染的暴露,
+那我會著重在交通污染源這個部分,那前幾天主持人要我講一下說,你的空氣污染一些相關的議題,
+但是因為我們公司有很嚴的那個,你要講事情啊,Publication那邊有很嚴的審查的過程這樣,
+所以我已經來不及再做新的投影片,所以我就只好拿我去年的投影片來講一下,那這一張照片呢,
+這個是在美國,1948年的時候,為什麼空氣污染重要?這張照片是1948年在Pennsylvania一個小鎮叫做Donora的地方,右邊那張照片是正中午的時候照的。
+你可以看到,那天不是什麼天氣不好啊,下雨,沒有,它就是一個很正常的中午,你看一下路燈全開,然後天空看起來是黑的,那時候就是空氣污染非常非常嚴重。
+那件事情發生之後,那個小鎮就死了40個人,50%的居民有非常嚴重的呼吸道和心血管的疾病,那時候的人就說這個時候是非常難呼吸的。
+這件事情在美國就引起很大的共鳴,就說原來空氣污染是會死人的這麼嚴重。所以在那之後就開始了很多社會運動、抗議,要政府做措施。
+所以終於在1967年美國通過了這個叫做Clean Air Act,這是在美國空氣污染法規裡面最重要的一條法規,總算就通過了,然後就開始管制了。
+有沒有用呢?通過Clean Air Act之後有沒有用呢?答案是有的,所以大家看一下這幾個圖,那字可能太小了,看不清楚,但沒有關係,基本上就是逐年的空氣污染物濃度,這是量測到的情形。
+我記得我拿的這個應該是LA,每一條線代表是不同的城市或是county。你可以看到這個trend,每一年每一年逐年空氣污染都是在下降的,所以說其實是有用的。
+既然空氣污染已經下降了,那我們這些研究空氣污染的人在幹嘛呢?這都已經到那麼低了,我們在這邊到底在幹嘛呢?
+現在最重要的兩個東西,在全世界,不要想說只在美國,兩個最重要的空氣污染物,第一個是臭氧,第二個是PM2.5,PM2.5的全名叫做Particulate Matter with Diameter Smaller than 2.5µg。
+我就不詳細講說這些東西是怎樣,不過基本上臭氧這東西不是直接被排放出來的,你不會有一個東西說它正在排臭氧,不會這樣子。
+臭氧的形成是secondary,也就是說你排了不是臭氧的氣體,這些氣體在空氣中進行化學反應之後就變成臭氧。
+這些排出來的前驅物可能本身對人體沒有那麼嚴重的危害,但它排出來後反應變成臭氧之後就對人體會有非常大的危害。
+PM2.5簡單講就是非常小的particle,你看這個就是一根頭髮,我們都很愛用的一張圖,這是一根頭髮。
+PM10就是說力勁直徑是小於10µg,差不多是這麼大,藍色的圈圈,最後PM2.5就是這麼小。
+小有什麼關係呢?小就代表說它很容易穿越你的呼吸道,可以到更深的地方,可以到肺裡面去,就會引起一些呼吸道疾病,甚至心血管疾病。
+這個我們先跳過。這個是最近幾年一直很active的所謂Global Burden of Disease的研究,它們每年都會發表說,目前造成死亡的因素的排名有哪些,會死多少人,為什麼空氣污染重要?
+剛剛看到說美國的Clean Air Act施行之後,每年污染物濃度是逐漸下降的。但其實你看全世界來講,空氣污染造成死亡的因子,空氣污染這一項原因是全世界排名第四的,僅次於吸煙、高血壓和dietary risk,所以說空氣污染是非常重要的。
+這張圖是2015年的Nature的一篇報告,他們把全世界的排放源分國家,把空氣污染最嚴重的排放源分離出來,預測說這些排放源會造成多少死亡。
+所以你看這張表,橫軸來講是不同的污染源,比如說我們有residential energy,用energy造成的空氣污染,agricultural,種植東西,農作物造成的空氣污染,一直到land traffic,交通造成的污染。
+你可以看到,我兩個紅框框的USA和德國,這兩個國家在交通部分會造成最多的死亡。
+好,這個是一些introduction。今天我要講的是什麼呢?今天我要講的這個已經在2015年發在一篇報告上面了。
+這篇我們是想要講說,因為在流行病學上來講,或者是公共衛生的環境流行病學角度上來講,一個很重要的事情就是來看疾病跟空氣污染的關係。
+你想要用空氣污染的變動來解釋有沒有病或是會不會發病的機率。
+以這個情形來講,如果說今天有10個人,5個人有呼吸道疾病,5個人沒有,我想說那這個會不會跟空氣污染有關?
+結果我在做統計model的時候,我發現這10個人曝露到的空氣污染的濃度都是一樣的,比如說他們全部都曝露在5μg·cm³的pN2部分發在底下。
+這時候你的model就看不出任何東西了。5個人有病,5個人沒病,但是大家曝露到的是一樣的空氣污染,這就代表你做不出東西了。
+這篇報告就是在講說,我們過去的這些流行病學研究,過去的這些連接疾病跟空氣污染的研究,到底是不是有什麼地方可以再改進?
+這個slide有很多字,但基本上最重要的就是這個小小的Health Effects Institute,這是一篇2009年的報告,他們是研究非常有名的機構。
+他們用美國的癌症學會的資料重新分析,然後去連接空氣污染跟死亡的關係。
+就像我剛剛之前講的,你要做這件事情的時候,你當然要有所有的人體的資料,第一個是有病沒病的資料,第二個是有空氣污染曝露的資料。
+在這個空氣污染曝露的資料上,他們是怎麼做的呢?
+這邊就說,基本上這個區塊在講說他們做的,但是我幫您翻譯一下,他們其實就拿了美國環保署在美國設的很多點的monitoring station,就是它有兩側的空氣污染測站。
+他們的做法就是說,比如說以San Francisco來講,可能我有十個測站,我就把這十個測站的資料收集起來,算一個平均,然後我說,所有住在San Francisco裡面的人,他曝露到的空氣污染濃度就是那十個測站兩到的平均,也就是說,所有住在San Francisco的人,他曝露到的濃度是一樣的。
+這個就是跟我剛剛講的情況一樣,就是說,今天大家都住在San Francisco,有些人會有病,有些人會沒有病,但我在做流行病學分析的時候,我跟我的model講,這些人,不管他有病沒病,只要他住在San Francisco,他曝露到的濃度就是這麼高,所以這個時候你就可能可以看出說,這好像有點問題了。
+請問,美國環保署在美國設的這些測站兩到的值,但是有很多空氣污染並不是regional,就是說不是說一個測站可以代表這整個區域的污染物濃度情形。
+這邊我列的這個表,橫軸是離道路的距離,單位是公尺,縱軸是空氣污染的濃度,但是標準化,就是處於在路邊兩到的濃度。
+您可以看到,在左邊這個表,這麼多污染物其實有非常陡的gradient,就是說,在100到150公尺之間,濃度就下降了差不多60%。
+也就是說,道路距離才幾十公尺而已,在100公尺之內就有差這麼多的濃度。您說,放在城市某個角落的一個測站可以看到這樣的濃度差別嗎?一定是看不到的。
+第一個,您用那種測站來代表人體對污染的exposure,那可能就抓不到這些在urban裡面的hot spot的情形。
+請問,前一章的橫軸是距離,縱軸是濃度,就是在前面的幾十公尺,它們的斜率看起來都差不多,可是您上面有CO、CON、NO、NON,它們的原子量不是都差很多嗎?
+如果我naively覺得它是擴散,那不是應該那個斜率要差很多嗎?
+因為還會有化學反應,像CO可能就不太反應,NO跟NOX可能就會有化學反應,它會生成其他的東西,所以它可能效率快一點,效率慢一點,不一定。
+可是它因為都是氣體,那你用particle它就不一樣了,它particle可能有一些不一樣的特性。
+我想補充一下,就是你還要考慮沉降,還有physical的問題,所以就是會有chemical problems。
+剛剛講說outdoor,就是說你用室外的這種側站涼道的濃度來代表污染源。
+第一個,你抓不到hospital,像這種交通污染源,有人家住的離道路很近,你抓不到,側站就很遠的地方你抓不到。
+第二個,其實大部分的人花在室內的時間是比花在室外的時間還要多的。
+這是一個加拿大的研究,他們看說小孩到底平均會花多少時間在室內或室外。
+我用紅框框起來的那兩個,你可以看到說,一個是在冬天的時候,一個是在夏天的時候。
+在室內的時間,其實冬天是67%,夏天是72%,代表說大部分人花在室內的時間是遠大於室外的。
+這個時候,你用室外的側站涼道的濃度來代表人的暴露,可能也會有一點問題,因為大家是在室內。
+這就是為什麼會有這篇論文。
+第一個,中央地區代表美國環保署的側站,它沒有辦法去抓到這些本地源頭,可以說是交通或任何在你家旁邊的小源頭。
+第二,用戶外的空氣污染濃度來代表人的暴露,可能不是太有代表性,因為大部分人都在戶內,理論上應該用戶內的空氣污染濃度來代表人的暴露會比較好。
+這篇論文的目標是,我們完全是用靠model的方式來預測室內和室外的濃度,然後用它們來代表人類的暴露,看它們到底會差多少。
+我們可以用它們來量度這些潛在暴露的錯誤。
+這個是我用的model,三個黃色的框框,Stoke、STOK、R-Line、LBL、AR,這三個是model。
+Stoke是Space-Time Ordinary Creating,代表的是內差外推的技術。
+那個技術的input data就是這些環保署量的測站資料。我們用那些測站資料,內差外推到sensus block level。
+Sensus block就是你走路的時候在馬路上的一個block,那可能就是一個block。
+我們就是把那些濃度內差外推到這些block level。
+這個代表一個background level,就是說我用中央的資料,內差外推到這些地方去,但它很可能會漏掉這些local source,比如說traffic。
+R-Line是一個line source dispersion model,它是專門用來預測交通相關的污染物。
+它基本上就是把所有的道路當成是一個線源,然後它就是很簡單的一個高斯擴散的方式來model交通污染物。
+所以它代表的是local source,在local source這邊我們就定義成交通污染物。
+最後一個LVL-AR model是Lawrence Berkeley Laboratory Air Exchange Rate model。
+這個model是用來預測air exchange rate,就是每個人家的空氣交換率,就是說多少時間你的整個房子的空氣會被跟戶外交換一次。
+用這三個model彼此結合,我就可以算這六個藍色的框框,這六個是我要用來代表exposure metric,就是我們用這六個來代表人體對空氣污染的暴露。
+有哪些呢?第一個就是outdoor stoke,就是戶外的空氣污染濃度,用的是stoke這個方法,代表是background。
+記得這個東西的source是Central Monitoring Site,就是美國環保署的一些策展。
+第二個就是outdoor on-road,代表的是只有交通污染源造成的空氣污染,它就是用R-line來model出來的。
+把這兩個東西結合,因為outdoor的stoke代表的其實是一個background,因為它抓不到這些local source。
+你把這兩個東西加起來,你就是有一個total的exposure,我們就叫它outdoor hybrid,hybrid between R-line and stoke。
+這三個東西代表的是我們outdoor的concentration。
+用這三個outdoor concentration當作base,我們可以結合air exchange rate,剛剛左邊那個LBL,air exchange rate model出來的air exchange rate,我們可以計算相應的這些indoor的concentration,就從outdoor concentration來計算indoor concentration。
+所以我們就有另外三個metric,indoor on-road,indoor stoke,indoor hybrid,總共六個。
+張熙熙,我要問一下,你的air exchange rate,你是有考慮到窗戶的開跟關,還是只是考慮到看在condition下面的交換率?
+等一下你就看到了,等一下就會講到這一塊。
+這個slide在講R-line,R-line是一個dispersion model,所以你必須要用R-line,因為用任何的空氣污染模式,你最重要的東西就是emission。
+這邊在講這些emission是怎麼算的,這些資料來源是哪裡,這個就對大家來講不是太重要,先不要理它。
+這個是stoke,跟我剛剛講的一樣,它是一種內插外推的creeping技術,它用的是美國環保署的air quality system,也就是那些大廁站來的,最後就是把這兩個東西加起來。
+這個是你怎麼樣把……我現在有一個outdoor concentration,我要怎麼算這個corresponding的indoor concentration呢?
+這個地方就是用一個非常簡單的mass balance model,你的戶內濃度跟時間的變化會由這幾個term來決定。
+第一個就是從外面傳進來,隨著室內的air exchange帶進來的室外污染物的濃度,跟把室內污染物的濃度消除的所有機制,包括deposition。
+在這個例子來講又是排出去的,就是室內空氣排出去的速率。
+這邊有一些factor,penetration factor就是說控制說多少會進來,有幾percent會進來,跟deposition rate就是說這個成長有多快。
+基本上大概看一下就是說氣體的部分penetration都是1,就是它100%會進來。
+deposition rate的話CO是沒有,比如說你拿氣體來CO是沒有,那就是有0.5per hour。
+pn的話的部分,就是它penetration factor,就是particle的部分,它的penetration就低一點,deposition rate又更慢一點。
+這個就是剛剛教練問的問題,這個AER model在算什麼東西?它有沒有考慮窗戶?簡單的答案就是沒有。
+這個研究是在總共做了在北卡的三個county,我們做到是census block level,我記得沒錯的話應該是總共有33萬間房子這個地區。
+33萬間房子理論上如果要用model,就是有包含考慮有沒有開窗、有沒有開空調那個情況,其實是有那個model,但是你不會有那個資料。
+因為我們沒有辦法去33萬房子一個一個去跟它講說,你有沒有開房子?你有沒有開窗戶?就沒有,沒有那種資料。
+必須要用一個最簡單的,我們都不考慮,我們就只考慮它用的房子在哪裡,它的air exchange rate會是多少。
+這個model我就不詳細解釋它是怎麼來的,但基本上所有的parameter,像比如說房子是幾年蓋的,floor area有多大,你要用這個model就是需要這些東西。
+過往這個技術是被用來,比如說我可能要看十五間房子,那可能沒有問題,但是我現在要看33萬間房子,我就沒有辦法這樣做,怎麼辦呢?所以我就必須去找這些資料。
+我用的是county property assessment record,我就可以有每一個房子的這些資料。
+這個東西在北卡是免費的,在加州要錢,我記得是LA county好像要送你一百塊。
+其他一些資料我就不詳細解釋它們來源了,不過基本上都是一些public available的資料。
+那這邊有一個事情就是說,每一個census block,我就是讓它sample大概十間房子,然後就用這十間房子代表這整個census block,所以我不是說真的就做了33萬間,然後全部給它做下去。
+這個是我的modeling domain,就是說在北卡的這三個county。Orange county是UNC在的地方,以前我住在這裡。Durham是萬惡督科大學在的地方,所以沒事不要去那個地方。
+那這邊是一個snapshot,就是說我用剛剛講的那六個exposure metric,我算了它們出來,把它們算出來以後就把它畫成這個地圖,然後就show在這邊。
+A就是剛剛說的outdoor stoke,它用的是那些策展的資料,內差外推出來的結果。
+B是outdoor hybrid,就是說是用r-line,就是這些traffic source,加上background,就是這些策展interpolation出來的結果。
+底下的兩個相對應的,用這上面兩個的air quality field,放進剛剛那個簡單的mass balance model算出來的indoor concentration。
+我們先看一下最左上角的outdoor stoke,你可以看到它其實大部分的濃度可能就在24到26甚至27之間,它沒有什麼spatial variation,就這樣子而已。
+為什麼呢?因為我記得在這地方,沒錯的話可能只有兩個還三個策展,你要兩三個策展interpolation出來,它最多就只能做到這樣子。
+但是你看一下這個outdoor hybrid,就是說你加上了這些local source的交通污染源之後,你看到了真實的空氣污染的map,這個地圖其實是長那樣子。
+光這樣看就可以看到說這個差別就有點大了。
+再來我們看一下C,indoor stoke。
+他那個策展不是有一些也是transportation source嗎?因為策展有種類,有些策展是background,例如說在national park或者是tourist,但是有些是在交通的附近。
+所以在這個研究的時候我們挑的是通通都用background station,我們沒有用那種它會離道路很近的那種urban的那種,就沒有必要。
+那你有沒有在你的outline的transportation model做出來有沒有跟交通策展的比?
+有,這個是在上一次我給的talk裡面就有給的model evaluation的結果。
+OK,謝謝。
+indoor stoke,所以剛剛的你看A,A其實就是C的input。
+你看A到C這兩個比起來,第一個看color scale,它下降了不少。
+第二個它開始多出了這些spatial variation,你看到可能在C的濃度範圍可能從7到15之間,7到14之間。
+跟剛剛相比上面的indoor stoke可能就是24到27之間。
+那這些spatial variation是哪裡來的呢?
+這些spatial variation就是從你每一個房子,每一個sensor block,每一個房子不一樣的air exchange rate來的。
+這代表說如果你只用上面那個outdoor stoke,which is what they did,他們就是用那個方法來預測在那些很大流行病學研究裡面,他們就是用那個方法來估計exposure。
+但是你看,你往右邊看,你加上local source,你的濃度其實是那個樣子。
+你往下面看,你看indoor concentration,你的map其實長這樣子。
+所以說其實光看map就知道大概會有一些差異。
+最後一個就是D,indoor hybrid,它的input source就是B來的,B到D。
+你可以看到基本上它的variation大概還是一樣。
+你還是看到在近道路的地方有高濃度,離道路遠一點就有低濃度。
+可是你看到它的濃度,整個濃度就下降很多。
+以上面來講,上面的maximum,我們可能看不到,大概可以看到90幾、100之間都有,下面的maximum可能就沒有到那麼高了。
+所以代表說你到indoor的時候,你的絕對濃度其實是會降低的。
+這個地方呢,我在看說,請說。
+那個我對前頁有個小問題啦,就是這個基本上是2D model嘛對不對,就是平面的嘛。
+你也可以vertical啊也可以啊,你可以有不同的高度啊,但是我這個都是在兩公尺,離地面兩公尺。
+那我只是好奇啦,那這個附近的地形是平原嗎?還是怎樣?還是有山谷啊?
+這一區還蠻平的,再往西邊去才是山,這邊都還蠻平的。
+那這邊就是用box plot來show平均的concentration,就是濃度分佈的情形,然後by pollutant。
+我也忘記要講什麼,我們從CO開始看,就是從A開始。
+如果只看,我們先比較這個黑色跟白色的box。
+黑色的代表是outdoor concentration,白色的代表是indoor concentration。
+那你可以看到說,以這個CO來講呢,好像都差不多。
+你看stoke,outdoor,indoor,distribution差不多,onward也差不多,hybrid也差不多。
+那為什麼呢?為什麼他outdoor,indoor會差不多?
+是因為剛剛看他們的parameter,penetration factor跟deposition factor,CO penetration factor是1,
+他的deposition rate是0,所以他的indoor,outdoor concentration會差不多。
+那你看到nox,他的penetration factor是1,但是他的deposition rate是0.5,
+那你就可以看到說,確實indoor concentration就低了,就比outdoor concentration低了,可能低到有一半。
+那同樣的情形,PM,就是particular matter,PM跟EC,你可以看到說一樣,indoor concentration馬上就少了,
+或outdoor concentration一半。代表什麼呢?代表說你如果要outdoor concentration代表暴露,
+那這個人又比較多時間待在indoor,你可能就會高估他的暴露。
+那剛剛講完這個黑色跟白色的比,現在我們看一下這個stoke跟onward的比較。
+Stoke跟onward的比較,所以是左邊的兩個黑白box,跟中間的這兩個黑白box。
+首先看CO跟nox,CO跟nox這兩個,你可以看到說用stoke的結果其實是比onward高不少,如果是CO來講。
+nox的話就接近一點。這是為什麼呢?因為交通污染,汽機車排放的nox是很高的。
+我這邊沒有那個表,不過我記得沒錯的話,有些地方nox的排放,汽機車可能到40%,就是全總排放的40%。
+也就是說,因為這些汽機車排放很多這種污染物,所以你看到說它就佔比較重的比例。
+那以particulate matter,pn2.5來講,onward的部分其實是很低的,因為它的排放確實,primary pn2.5來講,
+它排放出來的濃度,它的佔總排放可能只有差不多5%而已。
+但是EC來講,EC這種比較小的pn2.5的成分,燃燒產生的這種,因為是引擎很多燃燒,所以它就會佔稍微高一點。
+那這邊我在看的是,剛剛講說比照濃度之後,我現在想要看的是spatial variation。
+所以我這邊算了一個東西叫做spatial coefficient of variation這個值。
+它這個值越大,代表說它的spatial variation就越高。
+那記得,我們現在想要看的是,這些東西用來代表exposure到底好不好,不行不行。
+那記得,大部分的人都是用Stokes的outdoor concentration,就是說以這個拿測站的資料來代表exposure。
+也就是說,最左邊的那個黑box,Stokes的黑box,outdoor Stokes的黑box。
+那你就這樣一眼瞥過去,可以看到說那就差很多了嘛,對不對?
+比如說以NOX來講,我現在看Stokes,它的spatial variation非常低。
+我現在看到白色這個indoor的spatial variation的時候,它就高了,為什麼?
+因為這個時候我就有加入了這個air exchange rate的這個spatial variation,對不對?
+也就是說,你如果用左邊的那個來代替exposure,可能就有點問題,因為它沒有辦法反映這個真實的濃度分布,spatially的濃度分布情況。
+那這邊流行病學上面有一個分類exposure的方法,有的時候我們不會直接用濃度,就是說絕對濃度。
+比如說它是50µg per cubic meter,這個直接的濃度去代表exposure,有時候我們就是用它來分類而已。
+比如說這個低中高,暴露低中,低的這一組可能只暴露到0到2µg,中的這一組暴露中間的這一組可能2到4,高暴露可能4到8,假設是這個情形。
+那這邊我就做類似的事情,我把那六個exposure metric全部分成五組,0到20%,20%到40%,40%到60%,so on so forth。
+那現在我需要一個答案,就是說我現在假設我們真正的exposure是由這個hybrid-based indoor concentration,可以最佳的代表說真正的exposure。
+第一個因為它有考慮local source,第二個它有考慮indoor的concentration,也就是說這個很軸的這個地方,hybrid-based indoor,那個是答案。
+我們把它分成五組,左邊就是說我們要去比較這剩下的五個exposure metric。
+那以這個我們第一個,我們第一個outdoor hybrid跟hybrid-based indoor這兩個比起來看看,斜對角的這個紅色的數字代表的是他們到底agreement有多好。
+數字越高,如果是100%,就代表說他們是100%agree with each other。
+比如說現在這個0到20%這一組,就是說以hybrid-based indoor這一組,也就是說當你用outdoor hybrid代表exposure的時候,只有50%,有49.22%的sensus block會掉在同一組。
+就是你用這五個不同的criteria,你把這些暴露從高到低分成五組的時候,你用hybrid-based indoor跟outdoor hybrid,他們的agreement只會有50%在這個最低的暴露組別裡面。
+最高的組別其實還不錯,因為他們可以到73%,這個是NOx。為什麼會這個樣子呢?因為以NOx來講,它的major contributor是on-road source。
+這兩個不同的metric都有考慮到on-road source,所以如果你能夠抓到local source,基本上你就可以抓到大部分的污染物。
+有一個很快的問題,就是你的analysis unit是sensus track就對了,那你的spatial resolution呢?因為你這model應該可以run hourly吧?
+我的意思是說,你現在有一個sensus track,然後你有hourly的data,那你的contingency,就是有沒有match到那個group的時候,是sensus track hour data?
+沒有,這個地方我記得我是用annual average,這個應該是只有annual average的contingency,這個沒有到hourly level。
+然後我是sensus block,不是sensus track,sensus track大block很多。
+我們來看一下這個最差的情況,就是outdoor stoke。
+記得這個outdoor stoke,也就是說側站base的方法,目前是最廣泛地被用在各種非常有名的流行病學研究上面。
+你可以看到一下,跟這個hybrid base的indoor比起來,斜角線的紅色數字,每個都低於最高25.54%,代表什麼呢?代表你用outdoor stoke,你很可能就有這麼大的exposure error。
+為什麼呢?第一個,沒有考慮local source,第二個,沒有考慮indoor concentration,這個講過了。
+那做這個分析比較驚奇的是,當你用indoor的on-road concentration的時候,它的performance其實很好。
+記得這個indoor on-road concentration,它是只有on-road的部分,它沒有考慮到background level,它沒有用任何側站,它就是model的部分而已。
+為什麼呢?原因跟剛剛一樣,因為很大一部分的NOx是從汽機車來的,而且它有control spatially。
+你只用這個的時候,你可以很清楚地看到,近道路濃度就高,離道路越遠濃度就越低。
+這個東西只要能抓到,基本上你可以抓到大部分的暴露地中高的部分。
+再加上它有考慮indoor concentration,它有用air exchange rate去反映每個house跟house之間的air exchange rate不同的差異,所以它的表現其實還不錯。
+你看看最高的這個group,它可以到89%。
+這邊我在show的是類似剛剛的情況,我用這個hybrid,你看這個沒有hybridindoor這個地方是空白的,因為這個東西我現在把它當作是答案。
+其他的東西去減掉這個答案,然後我就畫成一個box。
+這些每一個box的代表就是說,當你用那個specific exposure metric來代表exposure的時候,你的誤差會有多少。
+一樣,我們先看一下大家最廣泛被用來代表的exposure,就是stoked outdoor concentration。
+你可以看到它這個normalized difference是非常非常高的,你看到NOx的部分,它平均可能有到80-90%,就是說差這麼多。
+結論就是說,其實很複雜,因為我這邊有很多不同的分析,然後不同的污染物,每個污染物交通來的部分到底有多少也是不太一樣,所以這個就bear with me。
+基本上CO跟PN2.5交通來的contribution其實是比較低的,一個是4%,一個是6%。NOx跟ECO就比較高,一個是40%,一個是44%。
+當你用了indoor infiltration的這個model之後,你室內的濃度其實差不多是室外的濃度的60%,就是說它會減低40%,也就是說你用室外的濃度去代表你的exposure的時候就不對了,因為濃度其實是沒有那麼高,你的exposure其實沒有到那麼高。
+這個剩下的就再講得太複雜了。
+這個就是我的acknowledgement,我以前在UNC的同事,然後這個funding source是EPA的contract,EPA一些人也幫忙提供一些mission,然後methodological data,然後我以前的lab mate,教練那時候還沒加入我們,所以他不在這上面,這是reference。
+就這樣,謝謝大家。
+主持人就說,禮拜六下午大家可以去健康一點,不要那麼學術。
+其實我覺得這還蠻有趣的,你用r-line可以看出來,例如說福和橋好了,為什麼旁邊要有籃球場?
+其實我開始做這個以後,尤其我搬來這邊以後,San Francisco這邊的Golden Gate Bridge旁邊是跑步、騎腳踏車的地方,是總共六線道,兩邊各三線道的車。
+平常車在上面都開很慢,以排放來講,車子開越慢的,引擎在發動的狀況下跑越慢的,排放性越高。也就是說,這些在旁邊跑步、騎腳踏車的人,全部都在吸空氣,然後吸得很開心。
+我的想法是,你如果把你的籃球場再往中間移一下的時候,基本上你可以save很大的multi-logic。
+主持人:「就移個幾十公尺,在臺灣地小可能也有辦法嗎?」
+主持人:「我有一個問題。」
+主持人:「這個問題是這樣,因為你現在等於是直接去看這些道路的emission data,你也不會站在路旁邊去檢查說,每一台車開過去的是Tesla還是柴油車還是什麼車。」
+主持人:「這邊可以做一個free parameter,如果今天開過去的全部都是Tesla,跟一半Tesla一半Pickup,跟全部都是大卡車,那可以有多少improvement,那這樣子是不是可以在量化上去justify說,我到底應該要投下多少的公部門的資源去推動這種定性上似乎可以改變空氣品質的政策?」
+主持人:「好,這也是非常重要的一點,就是Fleet Distribution。你在講交通污染源的時候有一個很重要的參數,就是Fleet Distribution,到底每個地方的車的組成有沒有不一樣。
+這個東西我們都是用MOOVS來處理,Motor Vehicle Emission Simulator,在model上面來講是用這個東西來處理的。以model的角度來講,確實你可以跟MOOVS講說,好,我今天假設我的Fleet Distribution有一半都是電車,那一半是柴油車,我可以去做這些調整,然後去看這些東西變化了多少。
+但是你說,所以用model的角度,我覺得是可以做到這件事,就是你剛剛講的這件事情。但你要說把一條街封起來,然後把上面的Fleet全部50%Tesla,50%什麼的,這有點難做。
+但是你講的是非常好的一點。現在Fleet Distribution,我不記得有看過類似的研究。教練,你有沒有看過類似的研究啊?他大概要去顧小孩了。
+我不記得有看到類似的研究,就是說我們把Fleet Distribution改掉,然後去看說換成電車的效益到底好不好。我沒有看到這樣的研究。
+張C,我有一個問題,就是我有點好奇的是,我一開始看到這個題目的時候,我覺得很有趣,就是為什麼要特別選那個地方?所以我上網去查了一下,就是好像說就是North Carolina,像這地方的Air Pollution是比較嚴重的。
+張C,我有一個問題,就是我有點好奇的是,我一開始看到這個題目的時候,我覺得很有趣,就是為什麼要特別選那個地方?所以我上網去查了一下,就是好像說就是North Carolina,像這地方的Air Pollution是比較嚴重的。
+North Carolina有分四個區域,Coastline, Piedmont, Mountain,還有一個忘記什麼了,Piedmont就是有點像三角下那種概念。這個地方因為是RTP Area,所以它的空氣污染是稍微嚴重一點的。
+另外一個原因我為什麼做這三個區域,是因為那時候我們是跟EPA合作有一個計劃,他們就是想要用我剛剛做的那些metric去做他們的流行病學研究,他們有一個冠狀心臟病的研究,他們想要用空氣污染的資料。
+所以那時候就是有這個機會,我們跟EPA有合作,所以就做了這個東西。他們現在,至少我上次跟他們聊天的時候,他們就說他們已經在寫Paper,寫到哪裡我也不知道了。
+主持人:"所以在你們那個地方,在這個地區做的研究算是蠻有價值的?"
+因為環保署在那邊,美國環保署的R&D,Office of Research and Development就在那邊,所以他們也有很多的研究都在那邊來。
+因為我昨天有跟我們Lab,我們Lab剛好有幾個人是從UNC來的,我就問他們說,聽說你們UNC那邊好像空氣污染很嚴重,他們就一臉很驚訝地看著我說,會嗎?我覺得那邊的空氣比加州好太多了。
+主持人:"我剛剛說嚴重,是相對於整個北卡羅來納比起來。其實就算以Piedmont,雖然在UNC算是比較嚴重的地方,它還是很低。北卡羅來納是非常乾淨的地方,北卡羅來納的面積應該是臺灣的四倍大,它人口只有九百萬而已。
+像南加州的LA County,一個County的人口是兩千萬,所以我相信它排放量會比較嚴重。
+主持人:"加州,我們公司有很多鄰近道路的研究,或是跟兒童家庭的研究,很多都是我們公司有一個老闆,他以前是CEO,現在是老闆科學家,合作做的東西。
+他做很多很多都是在LA,我自己加入我們公司第一個做的項目,就是用R-Line來預測小朋友的氣喘,因為碰到空氣污染而造成的氣喘發作。
+那個系統也是針對整個南卡羅來納的地區,那個地方應該是非常非常糟的地方。
+主持人:"前70年代的報紙,洛杉磯時報,那個時候在講臭氧的問題,我記得那時候講臭氧可以到700ppb,700ppb大家可能沒什麼概念。
+歐洲現在的標準是70ppb,那個年代是可以到700ppb。我們公司有一些比較年輕的人,他們小時候住LA,你站在外面就開始流眼淚了。
+加上LA是一個Basin,氣象條件相對比較穩定,空氣污染就跑不掉了。
+主持人:"我現在想要簡單的說,你有問題嗎?"
+主持人:"OK,我看你的那個打開了。那我現在想……。
+主持人:"你現在知道我在幹嘛就對了,那我趕快……。
+主持人:"我可以講一下,基本上很多這個Epidemiology,就是所謂流行病學做出來的這種response都underestimate。
+主持人:"那最主要的原因就是,以經濟學角度來講就是,當你知道空氣不好的時候,你會optimize你的behavior。
+主持人:"所以你的acute hospital admission,或者所有的endpoint,都是在人們optimize他behavior之後的結果。
+主持人:"所以你有些東西,例如說Ozone,CO,你可能在low concentration的時候,你看不出來什麼東西,但事實上它都有response。
+主持人:"只是因為我發現說這個時候的空氣污染不好的時候,我已經不出去了。
+主持人:"所以我是覺得這是跟所謂以經濟學角度來講,跟以流行病學角度來講,這是很大的不同。
+主持人:"因為當你空氣不好的時候,你可以選擇不一樣的transportation mode。
+主持人:"例如說台灣是騎scooter,但是你現在說空氣品質不好,我搭公車。那你的exposure的intensity就不一樣了。
+主持人:"所以人們如果沒有optimize他behavior的時候,基本上他可能效果會更差。
+主持人:"這跟今天的比較沒有關係。
+主持人:"不過也蠻有趣的。
+主持人:"你的名字怎麼念?"
+主持人:"精神醫的醫序,東森的序。
+主持人:"我想問一下,你是做跟能源policy相關的。
+主持人:"我做policy相關,我也有一篇文章是在講台北捷運跟空氣污染。
+主持人:"那像在美國的話,比如說能源局他們要改變他們的policy的時候,他們參考research的多,還是基本上參考公司,還是說他們是取一個average。
+主持人:"Policy的setup基本上是一個political negotiation的process。
+主持人:"假如說我加州,我要推2030年有50%的energy是renewable source。
+主持人:"開始就是說,這個政府的政策這樣出來,然後現在下一步就是,比如說交給Canada Air Resources Board,或者是其他的政府單位要去執行。
+主持人:"那他現在的做法就是說,在我這個overall的policy target之下,我要怎麼樣利用他們叫做economic instrument。
+主持人:"像做能源的話,我做很多是電力市場,那電力市場基本上是一個competitive market。
+主持人:"那現在說,你不能說force這些company,你們都要renewable,就是不能這樣做。
+主持人:"所以很多時候是說,我們的target是這樣,那就是come out with the way,利用這種market的instrument。
+主持人:"然後例如說我可以close subsidy,renewable energy from the fossil fuel,或者是dirty energy。
+主持人:"然後用這種方法,讓那些firm會indigenize他們的decision making process,account for這種pollution externality。
+主持人:"對,就是我,對啊,原則上他們是這樣,就是有一個policy的goal,然後利用market的方法來達到那個結果。
+主持人:"我覺得policy對做研究的人來講是蠻重要的,像我本身是做,我現在在這個地方做的是CO2 reduction。
+主持人:"所以我們這個institute,基本上我們funding的source,就是based on政府的policy。
+主持人:"就像之前川普說,他不support就是energy這類的話,我們那時候就很擔心,我們接下來5年的funding。
+主持人:"我應該是不會,但是其他人就很擔心說,我們這個institute要怎麼辦。
+主持人:"因為我們institute是除了在Caltech以外,我們還有在Stanford,還有在Berkeley。
+主持人:"所以大家就是很擔心這件事情,那現在是有點像是說,好像已經被guarantee可以到2020的樣子。
+主持人:"可以撐到他下台就對了。
+主持人:"就是除了他反對以外,其他人都還蠻support的。
+主持人:"我覺得在加州比較不可能,因為加州基本上算是一個pioneer,在環境政策方面是pioneer。
+主持人:"所以即使是federal的funding沒有下來,你有很多州立的funding。
+主持人:"謝謝你的comment,我覺得這蠻有趣的。
+主持人:"我再send給你email好了,我覺得我們可以合作一些事情。
+主持人:"我稍微插嘴一下。
+主持人:"因為剛剛有提到policy design,如果我沒有搞錯的話,下禮拜的talk應該是經濟系的talk。
+主持人:"那個講者應該就是要講機制設計相關的。
+主持人:"他不是很specific,就是能源的機制或者是能源的policy設計。
+主持人:"不過他是從經濟學的角度去研究機制設計本身。
+主持人:"我只是突然想到,這是跟你們剛剛討論的事情有關係。
+主持人:"對,奕旭,我想我們可以留一下那個聯絡方式。
+奕旭:"你應該有了吧,我現在一切的行動好像都被掌握中。
+主持人:"OK。
+主持人:"太好了。
+奕旭:"我現在正在Cyber Stalking你。
+主持人:"我已經有那個張C的了,我可以再Stalk別人。
+主持人:"OK,好。
+主持人:"那我現在就想說如果,我不知道教研有沒有加入我們Tyra的member。
+主持人:"然後我想說如果有興趣加入Tyra。
+奕旭:"他有啦,他給過talk,他去年給過。
+主持人:"OK,我去年。
+主持人:"好,那如果奕旭,奕旭你有在裡面嗎?你有在Tyra。
+主持人:"你要是路人,你是今天是路人。
+奕旭:"我是路人啦,我是路人。
+主持人:"今天是路人。
+奕旭:"對,下次就可以加入了。
+主持人:"可以可以,好。
+主持人:"我再馬上把會員報名表送給你。
+主持人:"OK,也歡迎有興趣的朋友可以一起加入Tyra。
+奕旭:"會是很多人啦。
+主持人:"OK,好。
+奕旭:"最大的問題是你即使要回台灣找學生你也找不到。
+主持人:"你說找什麼學生?"
+奕旭:"PhD啊。
+主持人:"哦,OK。
+主持人:"你說我嗎?還是誰?"
+奕旭:"我說我啊。
+奕旭:"我如果要找學生我也是找不到學生啊。
+奕旭:"因為沒有人要念啊。
+主持人:"呵呵。
+主持人:"不一定,我們就是就是好好宣傳之後就會有學生了。
+主持人:"好,我今天先,我先把我們的talk的recording先關掉。

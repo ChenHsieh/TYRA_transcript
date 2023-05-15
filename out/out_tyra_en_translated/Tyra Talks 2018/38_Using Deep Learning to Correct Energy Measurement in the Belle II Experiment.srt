@@ -1,0 +1,6032 @@
+1
+00:00:00,000 --> 00:00:15,000
+Welcome everyone to today's TARA speech. First of all, welcome everyone to listen to Huang Kun-hsieh to tell us about Python to play with particles physics experiment.
+
+2
+00:00:16,000 --> 00:00:29,000
+TARA is an online platform. Our goal is to use a free and cross-border way to connect young people all over the world who are engaged in research.
+
+3
+00:00:29,000 --> 00:00:39,000
+We can quickly share each other's results and ideas. We have a website and a fan group. The name of our fan group is Project TARA.
+
+4
+00:00:39,000 --> 00:00:42,000
+You can find us on Facebook.
+
+5
+00:00:42,000 --> 00:00:47,000
+Let me introduce today's speaker. Today's speaker is Huang Kun-hsieh.
+
+6
+00:00:47,000 --> 00:00:55,000
+It's quite interesting. When I was preparing to introduce the speaker, I did a little calculation. I think we have known each other for 10 years.
+
+7
+00:00:56,000 --> 00:01:01,000
+Huang Kun-hsieh studied at the University of Taiwan Physics Department and the University of Taiwan Physics Institute.
+
+8
+00:01:01,000 --> 00:01:08,000
+When he was in the doctor's class, he went to the University of Kyoto. During this period, he was engaged in the study of micro-needle telescope.
+
+9
+00:01:08,000 --> 00:01:16,000
+Later, he did T2K at the University of Kyoto. So Huang Kun-hsieh can be said to be a micro-needle expert.
+
+10
+00:01:17,000 --> 00:01:28,000
+After Huang Kun-hsieh got his doctorate, he went to Bell Institute to do hardware development. He is now a post-doctorate researcher.
+
+11
+00:01:28,000 --> 00:01:32,000
+The topic he will talk to us today is to use Python to play the particle physics experiment.
+
+12
+00:01:32,000 --> 00:01:37,000
+An example of using a convolutional neural network to correct gamma-ray energy measurement.
+
+13
+00:01:38,000 --> 00:01:43,000
+Without further ado, let's give a round of applause to welcome Huang Kun-hsieh.
+
+14
+00:01:43,000 --> 00:01:51,000
+Sorry, I forgot to say one thing. Please mute your microphone if you don't want to speak in the speech.
+
+15
+00:01:51,000 --> 00:01:57,000
+But when you want to applaud, you have to turn on the microphone so that our speaker can feel your enthusiasm.
+
+16
+00:01:57,000 --> 00:02:01,000
+Let's welcome Huang Kun-hsieh.
+
+17
+00:02:02,000 --> 00:02:07,000
+Thank you for the introduction. I have been a speech therapist for a long time.
+
+18
+00:02:07,000 --> 00:02:12,000
+I am very happy that you gave me the opportunity to speak here today.
+
+19
+00:02:12,000 --> 00:02:20,000
+Actually, my speech was shot in Taiwan.
+
+20
+00:02:20,000 --> 00:02:29,000
+So I'm sorry. If you have been to Taiwan, you may have heard the same thing over and over again.
+
+21
+00:02:29,000 --> 00:02:34,000
+My name is Huang Kun-hsieh. I am a post-doctorate student at Taiwan University.
+
+22
+00:02:34,000 --> 00:02:39,000
+I am currently working on a project called Bell 2.
+
+23
+00:02:39,000 --> 00:02:43,000
+I am currently doing a particle physics experiment.
+
+24
+00:02:43,000 --> 00:02:45,000
+I am studying the field of particle physics.
+
+25
+00:02:45,000 --> 00:02:48,000
+In the particle physics experiment, you may take a lot of data.
+
+26
+00:02:48,000 --> 00:02:50,000
+If you take data, you may need to do data analysis.
+
+27
+00:02:50,000 --> 00:02:57,000
+If you do data analysis, it is a very good language.
+
+28
+00:02:57,000 --> 00:03:02,000
+If you want to download it, you can download it here.
+
+29
+00:03:02,000 --> 00:03:06,000
+This is my own photo.
+
+30
+00:03:06,000 --> 00:03:10,000
+I am currently doing post-doctoral research at Taiwan University.
+
+31
+00:03:10,000 --> 00:03:15,000
+I am currently doing research in the field of particle physics.
+
+32
+00:03:15,000 --> 00:03:18,000
+I also like to use my voice.
+
+33
+00:03:18,000 --> 00:03:22,000
+What is my research?
+
+34
+00:03:22,000 --> 00:03:26,000
+The screen you are sharing is your PowerPoint.
+
+35
+00:03:26,000 --> 00:03:29,000
+It's not the part you play. You may have to re-share it.
+
+36
+00:03:29,000 --> 00:03:32,000
+Then choose that.
+
+37
+00:03:32,000 --> 00:03:45,000
+Oh, okay. Let's do it again.
+
+38
+00:03:45,000 --> 00:03:46,000
+Is there such a thing?
+
+39
+00:03:46,000 --> 00:03:49,000
+Choose the screen.
+
+40
+00:03:49,000 --> 00:03:50,000
+Yes.
+
+41
+00:03:50,000 --> 00:03:52,000
+Yes?
+
+42
+00:03:52,000 --> 00:03:58,000
+Okay.
+
+43
+00:03:58,000 --> 00:04:02,000
+What I'm doing now is in a Japanese studio.
+
+44
+00:04:02,000 --> 00:04:06,000
+There is an organization called KK.
+
+45
+00:04:06,000 --> 00:04:11,000
+If you want to listen to Japanese, it's Koe-nen-ruki-kasoku-ken-kyu-kiko.
+
+46
+00:04:11,000 --> 00:04:13,000
+It's simply called KK.
+
+47
+00:04:14,000 --> 00:04:18,000
+There is such a big research device called Bell 2.
+
+48
+00:04:18,000 --> 00:04:20,000
+It's a detector.
+
+49
+00:04:20,000 --> 00:04:24,000
+Mainly, we use Python to simulate and analyze.
+
+50
+00:04:24,000 --> 00:04:26,000
+There is also some data storage.
+
+51
+00:04:26,000 --> 00:04:29,000
+And even push the data to the whole world.
+
+52
+00:04:29,000 --> 00:04:33,000
+Because we have Google Earth that pushes the data to the whole world.
+
+53
+00:04:33,000 --> 00:04:36,000
+They will provide their computing resources.
+
+54
+00:04:36,000 --> 00:04:40,000
+Then I will talk about how to push the data to the whole world.
+
+55
+00:04:40,000 --> 00:04:43,000
+The first thing to talk about is particle physics.
+
+56
+00:04:43,000 --> 00:04:46,000
+I'm sorry.
+
+57
+00:04:46,000 --> 00:04:49,000
+Because the data I prepared is scientific.
+
+58
+00:04:49,000 --> 00:04:51,000
+Some people may not know what particle physics is.
+
+59
+00:04:51,000 --> 00:04:53,000
+So let's talk about what particle physics is.
+
+60
+00:04:53,000 --> 00:04:55,000
+At the beginning, for example, water molecules.
+
+61
+00:04:55,000 --> 00:04:56,000
+You must have heard of water molecules.
+
+62
+00:04:56,000 --> 00:04:58,000
+High school physics should have heard of water molecules.
+
+63
+00:04:58,000 --> 00:04:59,000
+There will be atoms in it.
+
+64
+00:04:59,000 --> 00:05:04,000
+Atoms will have electrons and the nucleus inside.
+
+65
+00:05:04,000 --> 00:05:08,000
+Electrons are the so-called basic particles.
+
+66
+00:05:08,000 --> 00:05:12,000
+In addition, you will find neutrons and neutrons in the nucleus.
+
+67
+00:05:12,000 --> 00:05:16,000
+Neutrons and neutrons are composed of quarks.
+
+68
+00:05:16,000 --> 00:05:22,000
+In fact, the most basic discovery is that there are electrons and quarks.
+
+69
+00:05:22,000 --> 00:05:29,000
+To form the universe we see in our daily lives.
+
+70
+00:05:29,000 --> 00:05:38,000
+Particle physics is to study the interaction between these basic particles and their group.
+
+71
+00:05:38,000 --> 00:05:43,000
+And how to form the law of the universe.
+
+72
+00:05:43,000 --> 00:05:50,000
+How do we study particle physics?
+
+73
+00:05:50,000 --> 00:05:52,000
+We usually do one thing.
+
+74
+00:05:52,000 --> 00:05:58,000
+We will use the accelerator to accelerate the particles to a very fast speed.
+
+75
+00:05:59,000 --> 00:06:01,000
+For example, like this animation.
+
+76
+00:06:01,000 --> 00:06:07,000
+Let the particles and the antiparticles accelerate to a very fast speed.
+
+77
+00:06:07,000 --> 00:06:10,000
+Then there will be a collision in the middle.
+
+78
+00:06:10,000 --> 00:06:13,000
+After we let it collide, it will produce a new one.
+
+79
+00:06:13,000 --> 00:06:19,000
+We rarely see this example in the current universe.
+
+80
+00:06:19,000 --> 00:06:22,000
+It's a more unfamiliar example.
+
+81
+00:06:22,000 --> 00:06:23,000
+In our daily lives.
+
+82
+00:06:23,000 --> 00:06:26,000
+It's not like that kind of thing.
+
+83
+00:06:26,000 --> 00:06:31,000
+We rarely see this kind of thing in the current universe.
+
+84
+00:06:31,000 --> 00:06:36,000
+So we study these new examples.
+
+85
+00:06:36,000 --> 00:06:38,000
+And see what their interaction is like.
+
+86
+00:06:38,000 --> 00:06:41,000
+Neutrons are one of them.
+
+87
+00:06:41,000 --> 00:06:50,000
+In fact, we have a lot of large-scale particle physics experiments.
+
+88
+00:06:50,000 --> 00:06:52,000
+There are many large-scale physics experiments in the world.
+
+89
+00:06:53,000 --> 00:06:55,000
+The first is the collision experiment.
+
+90
+00:06:55,000 --> 00:06:59,000
+For example, if you have heard of similar LHC.
+
+91
+00:06:59,000 --> 00:07:03,000
+What kind of experiments are there under LHC?
+
+92
+00:07:03,000 --> 00:07:05,000
+The biggest three experiments are actually four.
+
+93
+00:07:05,000 --> 00:07:07,000
+The biggest four experiments are CNS, ATLAS.
+
+94
+00:07:07,000 --> 00:07:09,000
+The other experiment is not included.
+
+95
+00:07:09,000 --> 00:07:12,000
+CNS, ATLAS, and LHC-B.
+
+96
+00:07:12,000 --> 00:07:15,000
+In addition, our protagonist today is BELL-2.
+
+97
+00:07:15,000 --> 00:07:17,000
+It is also a collision experiment.
+
+98
+00:07:18,000 --> 00:07:20,000
+It's about electrons.
+
+99
+00:07:20,000 --> 00:07:22,000
+It's about electrons and positive electrons.
+
+100
+00:07:22,000 --> 00:07:25,000
+That is, positive electrons.
+
+101
+00:07:25,000 --> 00:07:26,000
+Electrons are negative electrons.
+
+102
+00:07:26,000 --> 00:07:28,000
+Positive electrons are negative electrons.
+
+103
+00:07:28,000 --> 00:07:30,000
+It's a collision experiment.
+
+104
+00:07:30,000 --> 00:07:31,000
+There are also other kinds of experiments.
+
+105
+00:07:31,000 --> 00:07:33,000
+For example, T2K, which I used to participate in.
+
+106
+00:07:33,000 --> 00:07:35,000
+And then the pressure back in China.
+
+107
+00:07:35,000 --> 00:07:37,000
+Or SNOPLUS in Canada.
+
+108
+00:07:37,000 --> 00:07:39,000
+There are other examples.
+
+109
+00:07:39,000 --> 00:07:42,000
+For example, alpha in LHC.
+
+110
+00:07:43,000 --> 00:07:45,000
+Alpha in SNOPLUS.
+
+111
+00:07:45,000 --> 00:07:49,000
+And the Koto experiment in Japan.
+
+112
+00:07:49,000 --> 00:07:51,000
+I am very happy.
+
+113
+00:07:51,000 --> 00:07:53,000
+When we received the number on April 26th.
+
+114
+00:07:53,000 --> 00:07:56,000
+BELL-2 is the first operation.
+
+115
+00:07:56,000 --> 00:08:01,000
+This is a report at the time.
+
+116
+00:08:01,000 --> 00:08:03,000
+This is the release press.
+
+117
+00:08:03,000 --> 00:08:10,000
+And the first collision event.
+
+118
+00:08:11,000 --> 00:08:16,000
+That's why we're doing BELL-2 experiments.
+
+119
+00:08:16,000 --> 00:08:19,000
+Please give me three minutes.
+
+120
+00:08:22,000 --> 00:08:26,000
+At the beginning, the BELL-2 detector.
+
+121
+00:08:26,000 --> 00:08:30,000
+Actually, it's a detection of B particles.
+
+122
+00:08:30,000 --> 00:08:36,000
+B particles are rare in the universe.
+
+123
+00:08:37,000 --> 00:08:40,000
+We will learn about CP-Violation.
+
+124
+00:08:40,000 --> 00:08:42,000
+That is, the universe is not uniform.
+
+125
+00:08:42,000 --> 00:08:44,000
+With other new physics.
+
+126
+00:08:48,000 --> 00:08:49,000
+What is the universe not uniform?
+
+127
+00:08:49,000 --> 00:08:51,000
+If the universe is not uniform.
+
+128
+00:08:51,000 --> 00:08:54,000
+It will be with us.
+
+129
+00:08:54,000 --> 00:08:56,000
+That's why we only have materials now.
+
+130
+00:08:56,000 --> 00:08:58,000
+Related to our universe.
+
+131
+00:08:58,000 --> 00:09:00,000
+I have a YouTube video.
+
+132
+00:09:00,000 --> 00:09:02,000
+Please take a look.
+
+133
+00:09:02,000 --> 00:09:04,000
+I don't know if YouTube is okay.
+
+134
+00:09:04,000 --> 00:09:06,000
+Wait a minute, I'll play it again.
+
+135
+00:09:23,000 --> 00:09:26,000
+This is the theory of the Big Bang.
+
+136
+00:09:26,000 --> 00:09:31,000
+The universe after the Big Bang.
+
+137
+00:09:31,000 --> 00:09:32,000
+At the time of the Big Bang.
+
+138
+00:09:32,000 --> 00:09:34,000
+Matter and antimatter.
+
+139
+00:09:34,000 --> 00:09:36,000
+It should be the same level.
+
+140
+00:09:41,000 --> 00:09:43,000
+Now there's only matter in the universe.
+
+141
+00:09:43,000 --> 00:09:46,000
+Other antimatter has disappeared.
+
+142
+00:10:02,000 --> 00:10:05,000
+Matter and antimatter.
+
+143
+00:10:05,000 --> 00:10:07,000
+There should be a difference.
+
+144
+00:10:07,000 --> 00:10:09,000
+So they say.
+
+145
+00:10:09,000 --> 00:10:15,000
+In addition to the difference between the electron box and the symmetry.
+
+146
+00:10:15,000 --> 00:10:17,000
+There should be other differences.
+
+147
+00:10:17,000 --> 00:10:19,000
+Other differences are called CP-Violation.
+
+148
+00:10:31,000 --> 00:10:35,000
+Now known as the Kobayashi-Masukawa Theory.
+
+149
+00:10:35,000 --> 00:10:37,000
+It was a revolutionary theory.
+
+150
+00:10:37,000 --> 00:10:40,000
+Which introduced a model that contained six quarks.
+
+151
+00:10:40,000 --> 00:10:44,000
+Even though only three quarks were known at the time.
+
+152
+00:10:44,000 --> 00:10:46,000
+In 2001.
+
+153
+00:10:46,000 --> 00:10:50,000
+The Bell experiment successfully measured CP-Violation.
+
+154
+00:10:50,000 --> 00:10:52,000
+In B meson decays.
+
+155
+00:10:52,000 --> 00:10:55,000
+As predicted by the Kobayashi-Masukawa Theory.
+
+156
+00:11:02,000 --> 00:11:05,000
+There are six quarks.
+
+157
+00:11:05,000 --> 00:11:07,000
+Three or four quarks.
+
+158
+00:11:07,000 --> 00:11:09,000
+Three or four quarks decays.
+
+159
+00:11:09,000 --> 00:11:11,000
+They should have.
+
+160
+00:11:11,000 --> 00:11:15,000
+Matter and antimatter.
+
+161
+00:11:15,000 --> 00:11:17,000
+An asymmetry.
+
+162
+00:11:17,000 --> 00:11:20,000
+Later in the Bell experiment.
+
+163
+00:11:20,000 --> 00:11:22,000
+It was confirmed.
+
+164
+00:11:22,000 --> 00:11:24,000
+Now it's more accurate.
+
+165
+00:11:32,000 --> 00:11:33,000
+In 2008.
+
+166
+00:11:33,000 --> 00:11:36,000
+30 years after their theory paper was published.
+
+167
+00:11:36,000 --> 00:11:38,000
+Professor Kobayashi.
+
+168
+00:11:38,000 --> 00:11:40,000
+And Professor Masukawa.
+
+169
+00:11:40,000 --> 00:11:42,000
+Won the Nobel Prize in Physics.
+
+170
+00:11:42,000 --> 00:11:46,000
+Experimental confirmation of the Kobayashi-Masukawa Theory.
+
+171
+00:11:46,000 --> 00:11:49,000
+By the Bell and Babar experiments.
+
+172
+00:11:49,000 --> 00:11:52,000
+Greatly contributed to their Nobel Prize.
+
+173
+00:11:52,000 --> 00:11:57,000
+It's easy to get the Nobel Prize.
+
+174
+00:12:23,000 --> 00:12:25,000
+Electrons and neutrons.
+
+175
+00:12:25,000 --> 00:12:27,000
+Accelerate to the light.
+
+176
+00:12:27,000 --> 00:12:29,000
+Let them collide.
+
+177
+00:12:29,000 --> 00:12:31,000
+Then they will.
+
+178
+00:12:31,000 --> 00:12:34,000
+If the antimatter is converted to the electron.
+
+179
+00:12:34,000 --> 00:12:36,000
+They will produce.
+
+180
+00:12:36,000 --> 00:12:38,000
+Other kinds.
+
+181
+00:12:38,000 --> 00:12:40,000
+Heavier particles.
+
+182
+00:12:40,000 --> 00:12:41,000
+This annihilation.
+
+183
+00:12:41,000 --> 00:12:44,000
+Transforms the electron and positron.
+
+184
+00:12:44,000 --> 00:12:46,000
+Into a pair of B mesons.
+
+185
+00:12:46,000 --> 00:12:48,000
+Which consists of bottom quarks.
+
+186
+00:12:48,000 --> 00:12:51,000
+Two B mesons.
+
+187
+00:12:51,000 --> 00:12:53,000
+B mesons.
+
+188
+00:12:53,000 --> 00:12:55,000
+These two B mesons.
+
+189
+00:12:55,000 --> 00:12:57,000
+Will decay.
+
+190
+00:12:57,000 --> 00:12:59,000
+Because they have a lot of life.
+
+191
+00:13:06,000 --> 00:13:08,000
+They will decay.
+
+192
+00:13:08,000 --> 00:13:11,000
+Into other kinds.
+
+193
+00:13:11,000 --> 00:13:13,000
+Other kinds of particles.
+
+194
+00:13:13,000 --> 00:13:15,000
+Usually negative.
+
+195
+00:13:16,000 --> 00:13:18,000
+In your detector.
+
+196
+00:13:18,000 --> 00:13:20,000
+Measure their decay.
+
+197
+00:13:20,000 --> 00:13:22,000
+After the example.
+
+198
+00:13:22,000 --> 00:13:24,000
+Then calculate.
+
+199
+00:13:24,000 --> 00:13:26,000
+It should be B mesons.
+
+200
+00:13:45,000 --> 00:13:47,000
+Particles then pass through.
+
+201
+00:13:47,000 --> 00:13:49,000
+The central drift chamber.
+
+202
+00:13:49,000 --> 00:13:51,000
+Here they ionize the gas.
+
+203
+00:13:51,000 --> 00:13:53,000
+Which fills the detector.
+
+204
+00:13:53,000 --> 00:13:55,000
+In this way.
+
+205
+00:13:55,000 --> 00:13:57,000
+A particle's trajectory and momentum.
+
+206
+00:13:57,000 --> 00:13:59,000
+Is obtained.
+
+207
+00:13:59,000 --> 00:14:01,000
+Next comes the top counter.
+
+208
+00:14:01,000 --> 00:14:03,000
+And the aerogel rich counter.
+
+209
+00:14:06,000 --> 00:14:08,000
+A charged particle.
+
+210
+00:14:08,000 --> 00:14:10,000
+Emits Cherenkov radiation.
+
+211
+00:14:10,000 --> 00:14:12,000
+When it enters these detectors.
+
+212
+00:14:12,000 --> 00:14:14,000
+The timing and pattern information.
+
+213
+00:14:14,000 --> 00:14:16,000
+Of the detected Cherenkov radiation.
+
+214
+00:14:16,000 --> 00:14:19,000
+Tells us what kind of particle it is.
+
+215
+00:14:21,000 --> 00:14:24,000
+Then there is an electromagnetic calorimeter.
+
+216
+00:14:25,000 --> 00:14:27,000
+This detector precisely measures.
+
+217
+00:14:27,000 --> 00:14:29,000
+The energy of photons.
+
+218
+00:14:29,000 --> 00:14:31,000
+Electrons.
+
+219
+00:14:31,000 --> 00:14:33,000
+The outermost detector.
+
+220
+00:14:33,000 --> 00:14:35,000
+Is the long living neutral.
+
+221
+00:14:35,000 --> 00:14:37,000
+And muon detector.
+
+222
+00:14:37,000 --> 00:14:39,000
+It detects muons.
+
+223
+00:14:39,000 --> 00:14:41,000
+Which penetrate most of the detector.
+
+224
+00:14:41,000 --> 00:14:43,000
+And neutral chaos.
+
+225
+00:14:43,000 --> 00:14:45,000
+Which cannot be measured.
+
+226
+00:14:45,000 --> 00:14:47,000
+With the inner detectors.
+
+227
+00:15:11,000 --> 00:15:13,000
+It does not have an electrolyte.
+
+228
+00:15:13,000 --> 00:15:15,000
+Because the light does not have an electrolyte.
+
+229
+00:15:15,000 --> 00:15:17,000
+So it is in the middle.
+
+230
+00:15:17,000 --> 00:15:19,000
+Before it touches the ECL.
+
+231
+00:15:19,000 --> 00:15:21,000
+From the point of collision.
+
+232
+00:15:21,000 --> 00:15:23,000
+Before it touches the ECL.
+
+233
+00:15:23,000 --> 00:15:25,000
+It will not be detected.
+
+234
+00:15:25,000 --> 00:15:27,000
+Why is the ECL detected?
+
+235
+00:15:27,000 --> 00:15:29,000
+Because it is denser.
+
+236
+00:15:29,000 --> 00:15:31,000
+So it is easier for light.
+
+237
+00:15:31,000 --> 00:15:33,000
+It is easier to produce a reaction.
+
+238
+00:15:33,000 --> 00:15:35,000
+It will be here.
+
+239
+00:15:35,000 --> 00:15:37,000
+After the reaction.
+
+240
+00:15:37,000 --> 00:15:39,000
+It will be broken down into many kinds.
+
+241
+00:15:39,000 --> 00:15:41,000
+These electrons.
+
+242
+00:15:41,000 --> 00:15:43,000
+In the crystal.
+
+243
+00:15:43,000 --> 00:15:45,000
+It will glow in the crystal.
+
+244
+00:15:47,000 --> 00:15:49,000
+This crystal.
+
+245
+00:15:49,000 --> 00:15:51,000
+Will add a light sensor.
+
+246
+00:15:51,000 --> 00:15:53,000
+Photosensor.
+
+247
+00:15:53,000 --> 00:15:55,000
+You can look at the photosensor.
+
+248
+00:15:55,000 --> 00:15:57,000
+Its energy size.
+
+249
+00:15:57,000 --> 00:15:59,000
+The light on both sides.
+
+250
+00:15:59,000 --> 00:16:01,000
+The intensity of the light.
+
+251
+00:16:01,000 --> 00:16:03,000
+The intensity of the gamma radiation.
+
+252
+00:16:05,000 --> 00:16:07,000
+All the detectors.
+
+253
+00:16:07,000 --> 00:16:09,000
+This is the most important thing today.
+
+254
+00:16:19,000 --> 00:16:21,000
+If you want to go in.
+
+255
+00:16:21,000 --> 00:16:23,000
+I have a link here.
+
+256
+00:16:23,000 --> 00:16:25,000
+You can go back and see for yourself.
+
+257
+00:16:29,000 --> 00:16:31,000
+This is the history of the universe.
+
+258
+00:16:31,000 --> 00:16:33,000
+At the beginning of the big explosion.
+
+259
+00:16:33,000 --> 00:16:35,000
+The universe is very hot.
+
+260
+00:16:35,000 --> 00:16:37,000
+The universe is very cold.
+
+261
+00:16:37,000 --> 00:16:39,000
+Relatively cold.
+
+262
+00:16:39,000 --> 00:16:41,000
+In the primordial universe.
+
+263
+00:16:41,000 --> 00:16:43,000
+We have a lot.
+
+264
+00:16:43,000 --> 00:16:45,000
+There will be a lot in the universe.
+
+265
+00:16:45,000 --> 00:16:47,000
+In real life.
+
+266
+00:16:47,000 --> 00:16:49,000
+In the cold universe.
+
+267
+00:16:51,000 --> 00:16:53,000
+There are many strange examples.
+
+268
+00:16:53,000 --> 00:16:55,000
+In the universe.
+
+269
+00:16:59,000 --> 00:17:01,000
+Our accelerator.
+
+270
+00:17:01,000 --> 00:17:03,000
+Super KKB.
+
+271
+00:17:03,000 --> 00:17:05,000
+He knows.
+
+272
+00:17:05,000 --> 00:17:07,000
+What we are not familiar with now.
+
+273
+00:17:07,000 --> 00:17:09,000
+Strange examples.
+
+274
+00:17:09,000 --> 00:17:11,000
+It often appeared in the universe.
+
+275
+00:17:13,000 --> 00:17:15,000
+These examples.
+
+276
+00:17:15,000 --> 00:17:17,000
+We can understand.
+
+277
+00:17:17,000 --> 00:17:19,000
+From the past to the present.
+
+278
+00:17:21,000 --> 00:17:23,000
+What happened.
+
+279
+00:17:23,000 --> 00:17:25,000
+There may be some.
+
+280
+00:17:25,000 --> 00:17:27,000
+Strange behavior.
+
+281
+00:17:27,000 --> 00:17:29,000
+The universe.
+
+282
+00:17:29,000 --> 00:17:31,000
+Only matter.
+
+283
+00:17:31,000 --> 00:17:33,000
+Still very mysterious.
+
+284
+00:17:33,000 --> 00:17:35,000
+OK.
+
+285
+00:17:35,000 --> 00:17:37,000
+CP violation.
+
+286
+00:17:37,000 --> 00:17:39,000
+Not familiar with the universe.
+
+287
+00:17:39,000 --> 00:17:41,000
+In 1960.
+
+288
+00:17:41,000 --> 00:17:43,000
+These two people.
+
+289
+00:17:43,000 --> 00:17:45,000
+Not discovered.
+
+290
+00:17:45,000 --> 00:17:47,000
+In the K-on ring.
+
+291
+00:17:47,000 --> 00:17:49,000
+Found in the K-on ring.
+
+292
+00:17:49,000 --> 00:17:51,000
+Found in the K-on ring.
+
+293
+00:17:51,000 --> 00:17:53,000
+Xiaoling and Yichuan in 1973.
+
+294
+00:17:53,000 --> 00:17:55,000
+They.
+
+295
+00:17:55,000 --> 00:17:57,000
+Established.
+
+296
+00:17:57,000 --> 00:17:59,000
+Three quarks era.
+
+297
+00:17:59,000 --> 00:18:01,000
+Six quarks.
+
+298
+00:18:01,000 --> 00:18:03,000
+In the standard model.
+
+299
+00:18:03,000 --> 00:18:05,000
+Six quarks.
+
+300
+00:18:05,000 --> 00:18:07,000
+But.
+
+301
+00:18:07,000 --> 00:18:09,000
+We will.
+
+302
+00:18:11,000 --> 00:18:13,000
+B quark decay.
+
+303
+00:18:13,000 --> 00:18:15,000
+There will be a CP violation.
+
+304
+00:18:15,000 --> 00:18:17,000
+In 1980.
+
+305
+00:18:17,000 --> 00:18:19,000
+These two people.
+
+306
+00:18:19,000 --> 00:18:21,000
+There will be a CP violation.
+
+307
+00:18:21,000 --> 00:18:23,000
+In the K-on ring.
+
+308
+00:18:23,000 --> 00:18:25,000
+OK.
+
+309
+00:18:25,000 --> 00:18:27,000
+You may not know.
+
+310
+00:18:27,000 --> 00:18:29,000
+Simply put.
+
+311
+00:18:29,000 --> 00:18:31,000
+Quarks and.
+
+312
+00:18:31,000 --> 00:18:33,000
+Quarks.
+
+313
+00:18:33,000 --> 00:18:35,000
+In fact, most of the quarks are the same.
+
+314
+00:18:35,000 --> 00:18:37,000
+In addition to.
+
+315
+00:18:37,000 --> 00:18:39,000
+They are not the same.
+
+316
+00:18:39,000 --> 00:18:41,000
+They are not the same.
+
+317
+00:18:41,000 --> 00:18:43,000
+Correct.
+
+318
+00:18:43,000 --> 00:18:45,000
+These two.
+
+319
+00:18:45,000 --> 00:18:47,000
+Charge and parity.
+
+320
+00:18:47,000 --> 00:18:49,000
+Quarks and quarks.
+
+321
+00:18:49,000 --> 00:18:51,000
+Different.
+
+322
+00:18:51,000 --> 00:18:53,000
+Quarks and quarks.
+
+323
+00:18:53,000 --> 00:18:55,000
+There is another.
+
+324
+00:18:55,000 --> 00:18:57,000
+In addition to these two properties.
+
+325
+00:18:57,000 --> 00:18:59,000
+Other different properties.
+
+326
+00:18:59,000 --> 00:19:01,000
+Will be called by us.
+
+327
+00:19:01,000 --> 00:19:03,000
+CP violation.
+
+328
+00:19:03,000 --> 00:19:05,000
+For example, like life.
+
+329
+00:19:05,000 --> 00:19:07,000
+Or like.
+
+330
+00:19:07,000 --> 00:19:09,000
+Decay branching ratio.
+
+331
+00:19:09,000 --> 00:19:11,000
+Only here.
+
+332
+00:19:11,000 --> 00:19:13,000
+B quark situation.
+
+333
+00:19:13,000 --> 00:19:15,000
+Of course there are other CP violations.
+
+334
+00:19:15,000 --> 00:19:17,000
+That kind.
+
+335
+00:19:17,000 --> 00:19:19,000
+Only here.
+
+336
+00:19:19,000 --> 00:19:21,000
+Life or decay ratio.
+
+337
+00:19:21,000 --> 00:19:23,000
+What is B quark?
+
+338
+00:19:23,000 --> 00:19:25,000
+What is B quark?
+
+339
+00:19:25,000 --> 00:19:27,000
+This is from the website.
+
+340
+00:19:27,000 --> 00:19:29,000
+Take it over.
+
+341
+00:19:29,000 --> 00:19:31,000
+B quark.
+
+342
+00:19:31,000 --> 00:19:33,000
+It is actually a B and a D.
+
+343
+00:19:33,000 --> 00:19:35,000
+To constitute.
+
+344
+00:19:35,000 --> 00:19:37,000
+It has B 0 and B 0 bar.
+
+345
+00:19:37,000 --> 00:19:39,000
+It has B plus and B minus.
+
+346
+00:19:39,000 --> 00:19:41,000
+Now the universe is.
+
+347
+00:19:41,000 --> 00:19:43,000
+The left side is more material.
+
+348
+00:19:43,000 --> 00:19:45,000
+The right side is less anti-material.
+
+349
+00:19:45,000 --> 00:19:47,000
+Of course now.
+
+350
+00:19:47,000 --> 00:19:49,000
+B quark is very rare.
+
+351
+00:19:49,000 --> 00:19:51,000
+Then.
+
+352
+00:19:51,000 --> 00:19:53,000
+How do we measure.
+
+353
+00:19:53,000 --> 00:19:55,000
+CP violation in B quark.
+
+354
+00:19:55,000 --> 00:19:57,000
+For example, life.
+
+355
+00:19:57,000 --> 00:19:59,000
+After the confrontation.
+
+356
+00:19:59,000 --> 00:20:01,000
+They will fly in the same direction.
+
+357
+00:20:01,000 --> 00:20:03,000
+B quark and B quark.
+
+358
+00:20:03,000 --> 00:20:05,000
+Will fly in the same direction.
+
+359
+00:20:05,000 --> 00:20:07,000
+The longer the life, the longer the flight.
+
+360
+00:20:07,000 --> 00:20:09,000
+The shorter the life, the shorter the flight.
+
+361
+00:20:09,000 --> 00:20:11,000
+That is.
+
+362
+00:20:11,000 --> 00:20:13,000
+Use this to measure B quark or B quark.
+
+363
+00:20:13,000 --> 00:20:15,000
+Life difference.
+
+364
+00:20:15,000 --> 00:20:17,000
+Of course there are some decay modes.
+
+365
+00:20:17,000 --> 00:20:19,000
+B is more.
+
+366
+00:20:19,000 --> 00:20:21,000
+But this.
+
+367
+00:20:21,000 --> 00:20:23,000
+At the same time to verify.
+
+368
+00:20:23,000 --> 00:20:25,000
+They should be.
+
+369
+00:20:25,000 --> 00:20:27,000
+It's different in life.
+
+370
+00:20:27,000 --> 00:20:29,000
+OK.
+
+371
+00:20:29,000 --> 00:20:31,000
+It has a lot of new physics.
+
+372
+00:20:31,000 --> 00:20:33,000
+For example, like.
+
+373
+00:20:33,000 --> 00:20:35,000
+Some of you may have heard of.
+
+374
+00:20:35,000 --> 00:20:37,000
+Maybe it's too difficult.
+
+375
+00:20:37,000 --> 00:20:39,000
+There will be some.
+
+376
+00:20:39,000 --> 00:20:41,000
+Intermediate particles.
+
+377
+00:20:41,000 --> 00:20:43,000
+It may not be.
+
+378
+00:20:43,000 --> 00:20:45,000
+The example we know.
+
+379
+00:20:45,000 --> 00:20:47,000
+So it will be different.
+
+380
+00:20:47,000 --> 00:20:49,000
+And the other one is.
+
+381
+00:20:49,000 --> 00:20:51,000
+Of course it's not just.
+
+382
+00:20:51,000 --> 00:20:53,000
+This is.
+
+383
+00:20:53,000 --> 00:20:55,000
+Yan Yong is also.
+
+384
+00:20:55,000 --> 00:20:57,000
+Researched.
+
+385
+00:20:57,000 --> 00:20:59,000
+His research is.
+
+386
+00:20:59,000 --> 00:21:01,000
+Direct detection.
+
+387
+00:21:01,000 --> 00:21:03,000
+The method.
+
+388
+00:21:03,000 --> 00:21:05,000
+B quark.
+
+389
+00:21:05,000 --> 00:21:07,000
+It's also direct detection.
+
+390
+00:21:07,000 --> 00:21:09,000
+OK.
+
+391
+00:21:09,000 --> 00:21:11,000
+Physics is over.
+
+392
+00:21:11,000 --> 00:21:13,000
+You should be blind.
+
+393
+00:21:13,000 --> 00:21:15,000
+Then.
+
+394
+00:21:15,000 --> 00:21:17,000
+It's more interesting to talk about this.
+
+395
+00:21:17,000 --> 00:21:19,000
+Because I am.
+
+396
+00:21:19,000 --> 00:21:21,000
+Most of them are.
+
+397
+00:21:21,000 --> 00:21:23,000
+People who do software.
+
+398
+00:21:23,000 --> 00:21:25,000
+So the next thing.
+
+399
+00:21:25,000 --> 00:21:27,000
+Should be more.
+
+400
+00:21:27,000 --> 00:21:29,000
+Talk about software.
+
+401
+00:21:29,000 --> 00:21:31,000
+And some examples.
+
+402
+00:21:31,000 --> 00:21:33,000
+For example, like.
+
+403
+00:21:33,000 --> 00:21:35,000
+You know this is.
+
+404
+00:21:35,000 --> 00:21:37,000
+Our Bell 2 detector.
+
+405
+00:21:37,000 --> 00:21:39,000
+It's actually.
+
+406
+00:21:39,000 --> 00:21:41,000
+Its channel number is very amazing.
+
+407
+00:21:41,000 --> 00:21:43,000
+There may be one.
+
+408
+00:21:43,000 --> 00:21:45,000
+One million pixels.
+
+409
+00:21:45,000 --> 00:21:47,000
+That.
+
+410
+00:21:47,000 --> 00:21:49,000
+You have a million pixels.
+
+411
+00:21:49,000 --> 00:21:51,000
+Then every time the collision occurs.
+
+412
+00:21:51,000 --> 00:21:53,000
+Then there will be a lot of B.
+
+413
+00:21:53,000 --> 00:21:55,000
+The event is to remember.
+
+414
+00:21:55,000 --> 00:21:57,000
+Of course, in addition to B.
+
+415
+00:21:57,000 --> 00:21:59,000
+There are a lot of background events.
+
+416
+00:21:59,000 --> 00:22:01,000
+So add up.
+
+417
+00:22:01,000 --> 00:22:03,000
+Very, very much.
+
+418
+00:22:03,000 --> 00:22:05,000
+Then our data size.
+
+419
+00:22:05,000 --> 00:22:07,000
+Then of course this is.
+
+420
+00:22:07,000 --> 00:22:09,000
+You are in the inside of the FPGA.
+
+421
+00:22:09,000 --> 00:22:11,000
+Then put this one million.
+
+422
+00:22:11,000 --> 00:22:13,000
+After throwing away the things you don't want.
+
+423
+00:22:13,000 --> 00:22:15,000
+Then the data size.
+
+424
+00:22:15,000 --> 00:22:17,000
+The size is probably one megabyte.
+
+425
+00:22:17,000 --> 00:22:19,000
+Then the trigger rate is your event rate.
+
+426
+00:22:19,000 --> 00:22:21,000
+If the accelerator is running.
+
+427
+00:22:21,000 --> 00:22:23,000
+Probably.
+
+428
+00:22:23,000 --> 00:22:25,000
+Maximum is 30.
+
+429
+00:22:25,000 --> 00:22:27,000
+30 kilohertz.
+
+430
+00:22:27,000 --> 00:22:29,000
+Like this.
+
+431
+00:22:29,000 --> 00:22:31,000
+This is the maximum.
+
+432
+00:22:31,000 --> 00:22:33,000
+Of course, it's not that high now.
+
+433
+00:22:33,000 --> 00:22:35,000
+The maximum is like this.
+
+434
+00:22:35,000 --> 00:22:37,000
+So the maximum data rate is probably.
+
+435
+00:22:37,000 --> 00:22:39,000
+34 gigabytes per second.
+
+436
+00:22:39,000 --> 00:22:41,000
+Of course, there are only two or three gigabytes now.
+
+437
+00:22:41,000 --> 00:22:43,000
+When running now.
+
+438
+00:22:43,000 --> 00:22:45,000
+Because we are not so high now.
+
+439
+00:22:45,000 --> 00:22:47,000
+That is to run.
+
+440
+00:22:47,000 --> 00:22:49,000
+The accelerator is not fully operational yet.
+
+441
+00:22:49,000 --> 00:22:51,000
+It's not fully operational yet.
+
+442
+00:22:51,000 --> 00:22:53,000
+So it's not as much as 30 gigabytes.
+
+443
+00:22:53,000 --> 00:22:55,000
+Then there are probably only two or three gigabytes.
+
+444
+00:22:55,000 --> 00:22:57,000
+A lot.
+
+445
+00:22:57,000 --> 00:22:59,000
+That.
+
+446
+00:22:59,000 --> 00:23:01,000
+But in fact, two or three gigabytes.
+
+447
+00:23:01,000 --> 00:23:03,000
+Then add some of your simulation.
+
+448
+00:23:03,000 --> 00:23:05,000
+The data produced is actually a lot.
+
+449
+00:23:05,000 --> 00:23:07,000
+Then this page here.
+
+450
+00:23:07,000 --> 00:23:09,000
+It's like this.
+
+451
+00:23:09,000 --> 00:23:11,000
+How much data does it have?
+
+452
+00:23:11,000 --> 00:23:13,000
+That's it.
+
+453
+00:23:13,000 --> 00:23:15,000
+The data is about 30 times a year.
+
+454
+00:23:15,000 --> 00:23:17,000
+Petabyte.
+
+455
+00:23:17,000 --> 00:23:19,000
+Up to 50 petabytes.
+
+456
+00:23:19,000 --> 00:23:21,000
+That's the data.
+
+457
+00:23:21,000 --> 00:23:23,000
+If you don't change the simulation.
+
+458
+00:23:23,000 --> 00:23:25,000
+It's probably 50 petabytes.
+
+459
+00:23:25,000 --> 00:23:27,000
+That's the experiment.
+
+460
+00:23:27,000 --> 00:23:29,000
+If you add the simulation.
+
+461
+00:23:29,000 --> 00:23:31,000
+It's about 200.
+
+462
+00:23:31,000 --> 00:23:33,000
+You can see that Google is about 98.
+
+463
+00:23:33,000 --> 00:23:35,000
+Then Google's search is 98.
+
+464
+00:23:35,000 --> 00:23:37,000
+Then Facebook Upload is 180.
+
+465
+00:23:37,000 --> 00:23:39,000
+Then Google's Internet Archive is 11.
+
+466
+00:23:39,000 --> 00:23:41,000
+11 bytes.
+
+467
+00:23:41,000 --> 00:23:43,000
+Petabyte.
+
+468
+00:23:43,000 --> 00:23:45,000
+It should be petabyte.
+
+469
+00:23:45,000 --> 00:23:47,000
+I forgot how to read it.
+
+470
+00:23:47,000 --> 00:23:49,000
+Then you can know that Bell can actually be with.
+
+471
+00:23:49,000 --> 00:23:51,000
+Google, Facebook.
+
+472
+00:23:51,000 --> 00:23:53,000
+Their data can be compared.
+
+473
+00:23:53,000 --> 00:23:55,000
+It means it's really big.
+
+474
+00:23:55,000 --> 00:23:57,000
+Of course, it's bigger.
+
+475
+00:23:59,000 --> 00:24:01,000
+We're really doing big data.
+
+476
+00:24:01,000 --> 00:24:03,000
+Then the following words are talking about.
+
+477
+00:24:05,000 --> 00:24:07,000
+It's more in-depth.
+
+478
+00:24:07,000 --> 00:24:09,000
+Because we're big data.
+
+479
+00:24:09,000 --> 00:24:11,000
+We need a set of processes.
+
+480
+00:24:11,000 --> 00:24:13,000
+To analyze our data.
+
+481
+00:24:13,000 --> 00:24:15,000
+This is how we do it.
+
+482
+00:24:15,000 --> 00:24:17,000
+Analyze the structure of our data.
+
+483
+00:24:17,000 --> 00:24:19,000
+Where do we put it?
+
+484
+00:24:19,000 --> 00:24:21,000
+Then we save it.
+
+485
+00:24:21,000 --> 00:24:23,000
+The data format is called MDST.
+
+486
+00:24:25,000 --> 00:24:27,000
+It's called Mini Data Summary Table.
+
+487
+00:24:31,000 --> 00:24:33,000
+We want to start with this MDST.
+
+488
+00:24:33,000 --> 00:24:35,000
+There are a lot of unorganized files in MDST.
+
+489
+00:24:37,000 --> 00:24:39,000
+For example, we just saw that.
+
+490
+00:24:39,000 --> 00:24:41,000
+There's no track in detail.
+
+491
+00:24:43,000 --> 00:24:45,000
+There's something else.
+
+492
+00:24:45,000 --> 00:24:47,000
+There's this one in ECL.
+
+493
+00:24:47,000 --> 00:24:49,000
+That's it.
+
+494
+00:24:49,000 --> 00:24:51,000
+We haven't sorted it out yet.
+
+495
+00:24:51,000 --> 00:24:53,000
+Particle or something.
+
+496
+00:24:53,000 --> 00:24:55,000
+Actually turn it into a particle.
+
+497
+00:24:55,000 --> 00:24:57,000
+Or something.
+
+498
+00:24:57,000 --> 00:24:59,000
+We haven't sorted it out yet.
+
+499
+00:24:59,000 --> 00:25:01,000
+We've introduced a module chain.
+
+500
+00:25:01,000 --> 00:25:03,000
+There's a data store.
+
+501
+00:25:03,000 --> 00:25:05,000
+These are a few things.
+
+502
+00:25:05,000 --> 00:25:07,000
+We're basically.
+
+503
+00:25:07,000 --> 00:25:09,000
+We're input data.
+
+504
+00:25:09,000 --> 00:25:11,000
+Put it in the data store.
+
+505
+00:25:11,000 --> 00:25:13,000
+Then put it in the data store.
+
+506
+00:25:13,000 --> 00:25:15,000
+We'll use the module.
+
+507
+00:25:15,000 --> 00:25:17,000
+Then use a path first.
+
+508
+00:25:17,000 --> 00:25:19,000
+Then put in what you need.
+
+509
+00:25:21,000 --> 00:25:23,000
+Put it in.
+
+510
+00:25:23,000 --> 00:25:25,000
+It's called a module.
+
+511
+00:25:25,000 --> 00:25:27,000
+It has different functions.
+
+512
+00:25:27,000 --> 00:25:29,000
+It's actually written in C14.
+
+513
+00:25:29,000 --> 00:25:31,000
+It's written in C14.
+
+514
+00:25:33,000 --> 00:25:35,000
+It's what you just did.
+
+515
+00:25:35,000 --> 00:25:37,000
+What's the track?
+
+516
+00:25:37,000 --> 00:25:39,000
+Then make it an example.
+
+517
+00:25:39,000 --> 00:25:41,000
+The example we see.
+
+518
+00:25:43,000 --> 00:25:45,000
+Then this path.
+
+519
+00:25:45,000 --> 00:25:47,000
+How to put this module in.
+
+520
+00:25:47,000 --> 00:25:49,000
+We use Python to do it.
+
+521
+00:25:51,000 --> 00:25:53,000
+There's something else.
+
+522
+00:25:53,000 --> 00:25:55,000
+After we're done.
+
+523
+00:25:55,000 --> 00:25:57,000
+We output data.
+
+524
+00:25:57,000 --> 00:25:59,000
+We have a root.
+
+525
+00:25:59,000 --> 00:26:01,000
+Our own format.
+
+526
+00:26:03,000 --> 00:26:05,000
+We'll develop a root format.
+
+527
+00:26:05,000 --> 00:26:07,000
+We can also use Python.
+
+528
+00:26:07,000 --> 00:26:09,000
+Analyze this root file.
+
+529
+00:26:09,000 --> 00:26:11,000
+An example like this.
+
+530
+00:26:11,000 --> 00:26:13,000
+For example.
+
+531
+00:26:13,000 --> 00:26:15,000
+We're done with the experiment.
+
+532
+00:26:15,000 --> 00:26:17,000
+We're going to put the NDST.
+
+533
+00:26:17,000 --> 00:26:19,000
+For example, module 1 is low.
+
+534
+00:26:19,000 --> 00:26:21,000
+NDST.
+
+535
+00:26:21,000 --> 00:26:23,000
+And then the particle list.
+
+536
+00:26:23,000 --> 00:26:25,000
+Take it out.
+
+537
+00:26:25,000 --> 00:26:27,000
+There's a track in there.
+
+538
+00:26:27,000 --> 00:26:29,000
+We'll put it in.
+
+539
+00:26:29,000 --> 00:26:31,000
+Turn it into a proton.
+
+540
+00:26:31,000 --> 00:26:33,000
+Or turn it into an electron.
+
+541
+00:26:33,000 --> 00:26:35,000
+Then there's a particle list.
+
+542
+00:26:35,000 --> 00:26:37,000
+And then put that.
+
+543
+00:26:37,000 --> 00:26:39,000
+Some particles.
+
+544
+00:26:39,000 --> 00:26:41,000
+For example, I'm going to make it a bmeson.
+
+545
+00:26:41,000 --> 00:26:43,000
+bmeson will change.
+
+546
+00:26:43,000 --> 00:26:45,000
+Many kinds.
+
+547
+00:26:45,000 --> 00:26:47,000
+It's his daughter's particle.
+
+548
+00:26:47,000 --> 00:26:49,000
+Then put these daughter's particles together.
+
+549
+00:26:49,000 --> 00:26:51,000
+Then combine it into bmeson.
+
+550
+00:26:51,000 --> 00:26:53,000
+Then there will be a new bmeson.
+
+551
+00:26:53,000 --> 00:26:55,000
+That's right.
+
+552
+00:26:55,000 --> 00:26:57,000
+Then we'll make some more choices.
+
+553
+00:26:57,000 --> 00:26:59,000
+It's bmeson.
+
+554
+00:26:59,000 --> 00:27:01,000
+The bmeson he made.
+
+555
+00:27:01,000 --> 00:27:03,000
+The quality is with us.
+
+556
+00:27:03,000 --> 00:27:05,000
+The bmeson we know is too far away.
+
+557
+00:27:05,000 --> 00:27:07,000
+So we don't want this bmeson.
+
+558
+00:27:07,000 --> 00:27:09,000
+Just make some choices.
+
+559
+00:27:09,000 --> 00:27:11,000
+And then write it out at the end.
+
+560
+00:27:11,000 --> 00:27:13,000
+It becomes a root file.
+
+561
+00:27:13,000 --> 00:27:15,000
+The function of Python is.
+
+562
+00:27:15,000 --> 00:27:17,000
+The first aspect is.
+
+563
+00:27:17,000 --> 00:27:19,000
+Build this path.
+
+564
+00:27:19,000 --> 00:27:21,000
+Build this module chain.
+
+565
+00:27:21,000 --> 00:27:23,000
+And then the other one is.
+
+566
+00:27:23,000 --> 00:27:25,000
+You're in the back of the root file.
+
+567
+00:27:25,000 --> 00:27:27,000
+You can use PyRooter to analyze.
+
+568
+00:27:27,000 --> 00:27:29,000
+Or use other packages.
+
+569
+00:27:29,000 --> 00:27:31,000
+Python packages for free.
+
+570
+00:27:31,000 --> 00:27:33,000
+What packages can be used?
+
+571
+00:27:33,000 --> 00:27:35,000
+I'll talk about it later.
+
+572
+00:27:35,000 --> 00:27:37,000
+Two more pages.
+
+573
+00:27:37,000 --> 00:27:39,000
+Let's start with what Rooter is.
+
+574
+00:27:39,000 --> 00:27:41,000
+If you're interested in what Rooter is.
+
+575
+00:27:41,000 --> 00:27:43,000
+Rooter is.
+
+576
+00:27:43,000 --> 00:27:45,000
+It's a way to do data storage.
+
+577
+00:27:45,000 --> 00:27:47,000
+Data analysis.
+
+578
+00:27:47,000 --> 00:27:49,000
+In Hynology Physicist.
+
+579
+00:27:49,000 --> 00:27:51,000
+Hynology Physicist.
+
+580
+00:27:51,000 --> 00:27:53,000
+You can go to his website.
+
+581
+00:27:53,000 --> 00:27:55,000
+I'll write some.
+
+582
+00:27:55,000 --> 00:27:57,000
+Installation instructions here.
+
+583
+00:27:57,000 --> 00:27:59,000
+The most important thing is.
+
+584
+00:27:59,000 --> 00:28:01,000
+Although it is written in C++.
+
+585
+00:28:01,000 --> 00:28:03,000
+You can also use C++ to do it.
+
+586
+00:28:03,000 --> 00:28:05,000
+But you can integrate with the other languages.
+
+587
+00:28:05,000 --> 00:28:07,000
+Such as Python and R.
+
+588
+00:28:07,000 --> 00:28:09,000
+Python is much more resourceful than R.
+
+589
+00:28:09,000 --> 00:28:11,000
+So it's better to use Python.
+
+590
+00:28:11,000 --> 00:28:13,000
+If you don't want to use C++.
+
+591
+00:28:13,000 --> 00:28:15,000
+There's a choice here.
+
+592
+00:28:15,000 --> 00:28:17,000
+You want to use.
+
+593
+00:28:17,000 --> 00:28:19,000
+You want to use Rooter.
+
+594
+00:28:19,000 --> 00:28:21,000
+Then Rooter is in C++.
+
+595
+00:28:21,000 --> 00:28:23,000
+You still use Python Rooter.
+
+596
+00:28:23,000 --> 00:28:25,000
+It's Python by default Rooter.
+
+597
+00:28:25,000 --> 00:28:27,000
+Then there's another option.
+
+598
+00:28:27,000 --> 00:28:29,000
+For example.
+
+599
+00:28:29,000 --> 00:28:31,000
+Rooter on NuPy.
+
+600
+00:28:31,000 --> 00:28:33,000
+Interface between Rooter.
+
+601
+00:28:33,000 --> 00:28:35,000
+Numerical Python.
+
+602
+00:28:35,000 --> 00:28:37,000
+Then there's another one.
+
+603
+00:28:37,000 --> 00:28:39,000
+Rooter Pandas.
+
+604
+00:28:39,000 --> 00:28:41,000
+You can put Rooter's file format.
+
+605
+00:28:41,000 --> 00:28:43,000
+Write it into Pandas DataFrame.
+
+606
+00:28:43,000 --> 00:28:45,000
+The easier one is.
+
+607
+00:28:45,000 --> 00:28:47,000
+Rooter Pandas.
+
+608
+00:28:47,000 --> 00:28:49,000
+Rooter NumPy.
+
+609
+00:28:49,000 --> 00:28:51,000
+You know it doesn't have.
+
+610
+00:28:51,000 --> 00:28:53,000
+It can also be used.
+
+611
+00:28:53,000 --> 00:28:55,000
+But I'm more used to Rooter Pandas.
+
+612
+00:28:55,000 --> 00:28:57,000
+With Rooter.
+
+613
+00:28:57,000 --> 00:28:59,000
+I like Rooter.
+
+614
+00:28:59,000 --> 00:29:01,000
+I use Rooter most often.
+
+615
+00:29:01,000 --> 00:29:03,000
+Then we build.
+
+616
+00:29:03,000 --> 00:29:05,000
+In fact, many people started to use Rooter Pandas.
+
+617
+00:29:07,000 --> 00:29:09,000
+There are some here.
+
+618
+00:29:09,000 --> 00:29:11,000
+It's the same installation instructions.
+
+619
+00:29:11,000 --> 00:29:13,000
+If you are interested.
+
+620
+00:29:13,000 --> 00:29:15,000
+You can install Rooter Pandas.
+
+621
+00:29:15,000 --> 00:29:17,000
+The installation method I wrote.
+
+622
+00:29:17,000 --> 00:29:19,000
+I've tried it myself.
+
+623
+00:29:19,000 --> 00:29:21,000
+Of course, there are other suggestions.
+
+624
+00:29:21,000 --> 00:29:23,000
+For example, PIP.
+
+625
+00:29:23,000 --> 00:29:25,000
+I've tried PIP.
+
+626
+00:29:25,000 --> 00:29:27,000
+I can't install it.
+
+627
+00:29:27,000 --> 00:29:29,000
+I think I can install it.
+
+628
+00:29:31,000 --> 00:29:33,000
+For example.
+
+629
+00:29:33,000 --> 00:29:35,000
+Then.
+
+630
+00:29:35,000 --> 00:29:37,000
+Like LHC.
+
+631
+00:29:37,000 --> 00:29:39,000
+Those experiments.
+
+632
+00:29:39,000 --> 00:29:41,000
+The four experiments.
+
+633
+00:29:41,000 --> 00:29:43,000
+We actually started.
+
+634
+00:29:43,000 --> 00:29:45,000
+Use Jupyter Notebook to start training.
+
+635
+00:29:45,000 --> 00:29:47,000
+It's our new energy.
+
+636
+00:29:47,000 --> 00:29:49,000
+To write analysis programs.
+
+637
+00:29:53,000 --> 00:29:55,000
+We call it StarKit.
+
+638
+00:29:55,000 --> 00:29:57,000
+It's usually three days.
+
+639
+00:29:59,000 --> 00:30:01,000
+There will be three days in about four months.
+
+640
+00:30:01,000 --> 00:30:03,000
+We'll have a meeting in four months.
+
+641
+00:30:05,000 --> 00:30:07,000
+The meeting is held once.
+
+642
+00:30:07,000 --> 00:30:09,000
+Then everyone gathers to have a meeting.
+
+643
+00:30:09,000 --> 00:30:11,000
+For new energy.
+
+644
+00:30:11,000 --> 00:30:13,000
+In the first three days of the collaboration meeting.
+
+645
+00:30:13,000 --> 00:30:15,000
+Then there will be a training.
+
+646
+00:30:15,000 --> 00:30:17,000
+Called StarKit Workshop.
+
+647
+00:30:17,000 --> 00:30:19,000
+Then there will be a meeting for three days.
+
+648
+00:30:21,000 --> 00:30:23,000
+In fact, everyone sits down.
+
+649
+00:30:23,000 --> 00:30:25,000
+Then teach the new energy.
+
+650
+00:30:25,000 --> 00:30:27,000
+How to do our direct analysis.
+
+651
+00:30:27,000 --> 00:30:29,000
+Data processing.
+
+652
+00:30:29,000 --> 00:30:31,000
+Then we use Jupyter Notebook.
+
+653
+00:30:31,000 --> 00:30:33,000
+To do this thing.
+
+654
+00:30:33,000 --> 00:30:35,000
+You can see Jupyter Notebook.
+
+655
+00:30:35,000 --> 00:30:37,000
+Its characteristics are unmistakable.
+
+656
+00:30:37,000 --> 00:30:39,000
+You can see it directly.
+
+657
+00:30:39,000 --> 00:30:41,000
+For example.
+
+658
+00:30:41,000 --> 00:30:43,000
+If you use Lulupandas.
+
+659
+00:30:43,000 --> 00:30:45,000
+You can make it into a table.
+
+660
+00:30:45,000 --> 00:30:47,000
+Then count, min, etc.
+
+661
+00:30:47,000 --> 00:30:49,000
+If you draw a picture.
+
+662
+00:30:49,000 --> 00:30:51,000
+You can keep it on top.
+
+663
+00:30:51,000 --> 00:30:53,000
+Then it's easier for people to see.
+
+664
+00:30:53,000 --> 00:30:55,000
+Of course, this is actually production.
+
+665
+00:30:55,000 --> 00:30:57,000
+You may not need to use Jupyter Notebook.
+
+666
+00:30:57,000 --> 00:30:59,000
+The big advantage of Jupyter Notebook.
+
+667
+00:30:59,000 --> 00:31:01,000
+If you are.
+
+668
+00:31:01,000 --> 00:31:03,000
+Teaching.
+
+669
+00:31:03,000 --> 00:31:05,000
+Or some.
+
+670
+00:31:05,000 --> 00:31:07,000
+After the root analysis.
+
+671
+00:31:07,000 --> 00:31:09,000
+After.
+
+672
+00:31:09,000 --> 00:31:11,000
+If you want to call the picture again.
+
+673
+00:31:11,000 --> 00:31:13,000
+It will be better.
+
+674
+00:31:13,000 --> 00:31:15,000
+There are some.
+
+675
+00:31:15,000 --> 00:31:17,000
+This picture is.
+
+676
+00:31:17,000 --> 00:31:19,000
+How to do software training in high-performance.
+
+677
+00:31:19,000 --> 00:31:21,000
+Basic C++.
+
+678
+00:31:21,000 --> 00:31:23,000
+Basic Data Science.
+
+679
+00:31:23,000 --> 00:31:25,000
+Programming.
+
+680
+00:31:25,000 --> 00:31:27,000
+For example, RootData.
+
+681
+00:31:27,000 --> 00:31:29,000
+Python, Git.
+
+682
+00:31:29,000 --> 00:31:31,000
+Then there are some training.
+
+683
+00:31:31,000 --> 00:31:33,000
+For example, Advanced Root.
+
+684
+00:31:33,000 --> 00:31:35,000
+Then there are others.
+
+685
+00:31:35,000 --> 00:31:37,000
+Then even someone.
+
+686
+00:31:37,000 --> 00:31:39,000
+I want to write NVIDIA.
+
+687
+00:31:39,000 --> 00:31:41,000
+OpenCL.
+
+688
+00:31:41,000 --> 00:31:43,000
+CUDA or OpenCL.
+
+689
+00:31:43,000 --> 00:31:45,000
+There are some.
+
+690
+00:31:45,000 --> 00:31:47,000
+The right side is the training course.
+
+691
+00:31:47,000 --> 00:31:49,000
+For example, like Bell 2 training course.
+
+692
+00:31:49,000 --> 00:31:51,000
+With Atlas CNX HCB.
+
+693
+00:31:51,000 --> 00:31:53,000
+Then there are some advanced training courses.
+
+694
+00:31:53,000 --> 00:31:55,000
+For example, I went to INFN last year.
+
+695
+00:31:55,000 --> 00:31:57,000
+SDC School.
+
+696
+00:31:57,000 --> 00:31:59,000
+That is.
+
+697
+00:31:59,000 --> 00:32:01,000
+After you finish learning.
+
+698
+00:32:01,000 --> 00:32:03,000
+But.
+
+699
+00:32:03,000 --> 00:32:05,000
+Everything is a little bit like this.
+
+700
+00:32:05,000 --> 00:32:07,000
+Then.
+
+701
+00:32:07,000 --> 00:32:09,000
+There is.
+
+702
+00:32:09,000 --> 00:32:11,000
+Here is also possible.
+
+703
+00:32:11,000 --> 00:32:13,000
+Software people may be more interested.
+
+704
+00:32:13,000 --> 00:32:15,000
+Maybe it has nothing to do with physics.
+
+705
+00:32:15,000 --> 00:32:17,000
+I am also participating in this area.
+
+706
+00:32:17,000 --> 00:32:19,000
+In the Bell era.
+
+707
+00:32:19,000 --> 00:32:21,000
+Is.
+
+708
+00:32:21,000 --> 00:32:23,000
+K1K.
+
+709
+00:32:23,000 --> 00:32:25,000
+About ten years ago.
+
+710
+00:32:25,000 --> 00:32:27,000
+We are using Cluster.
+
+711
+00:32:27,000 --> 00:32:29,000
+Central Cluster.
+
+712
+00:32:29,000 --> 00:32:31,000
+Provide everyone Central Cluster.
+
+713
+00:32:31,000 --> 00:32:33,000
+Then everyone comes in.
+
+714
+00:32:33,000 --> 00:32:35,000
+Calculate.
+
+715
+00:32:35,000 --> 00:32:37,000
+But Bell 2.
+
+716
+00:32:37,000 --> 00:32:39,000
+It is obvious.
+
+717
+00:32:39,000 --> 00:32:41,000
+Its accelerator.
+
+718
+00:32:41,000 --> 00:32:43,000
+Already 50 times.
+
+719
+00:32:43,000 --> 00:32:45,000
+So it will.
+
+720
+00:32:45,000 --> 00:32:47,000
+It will be more even rate.
+
+721
+00:32:47,000 --> 00:32:49,000
+Backlight rate will be more.
+
+722
+00:32:49,000 --> 00:32:51,000
+Even rate.
+
+723
+00:32:51,000 --> 00:32:53,000
+Will be more.
+
+724
+00:32:53,000 --> 00:32:55,000
+So of course.
+
+725
+00:32:55,000 --> 00:32:57,000
+There is a lot of backlight.
+
+726
+00:32:57,000 --> 00:32:59,000
+Then we need more.
+
+727
+00:32:59,000 --> 00:33:01,000
+CPU and memory.
+
+728
+00:33:01,000 --> 00:33:03,000
+If it is only K1K.
+
+729
+00:33:03,000 --> 00:33:05,000
+Maybe you only give him money.
+
+730
+00:33:05,000 --> 00:33:07,000
+Then ask him to pay for it.
+
+731
+00:33:07,000 --> 00:33:09,000
+Maybe not.
+
+732
+00:33:09,000 --> 00:33:11,000
+But we have 25 countries.
+
+733
+00:33:11,000 --> 00:33:13,000
+Then 100 institutes.
+
+734
+00:33:13,000 --> 00:33:15,000
+100 institutions participate in this experiment.
+
+735
+00:33:15,000 --> 00:33:17,000
+Then each institution.
+
+736
+00:33:17,000 --> 00:33:19,000
+A little machine to do it.
+
+737
+00:33:19,000 --> 00:33:21,000
+But each institution.
+
+738
+00:33:21,000 --> 00:33:23,000
+It may have different Cluster.
+
+739
+00:33:23,000 --> 00:33:25,000
+Then it may have different grades.
+
+740
+00:33:25,000 --> 00:33:27,000
+Even some institutions.
+
+741
+00:33:27,000 --> 00:33:29,000
+It may be from Amazon.
+
+742
+00:33:29,000 --> 00:33:31,000
+Or Google.
+
+743
+00:33:31,000 --> 00:33:33,000
+Then buy their Cloud Service.
+
+744
+00:33:33,000 --> 00:33:35,000
+That's all right.
+
+745
+00:33:35,000 --> 00:33:37,000
+Then we are very welcome.
+
+746
+00:33:37,000 --> 00:33:39,000
+They do this thing.
+
+747
+00:33:39,000 --> 00:33:41,000
+Then we need to say.
+
+748
+00:33:43,000 --> 00:33:45,000
+There are two important things.
+
+749
+00:33:45,000 --> 00:33:47,000
+So we have to find a way.
+
+750
+00:33:47,000 --> 00:33:49,000
+For example, everyone.
+
+751
+00:33:49,000 --> 00:33:51,000
+Still want to log in.
+
+752
+00:33:51,000 --> 00:33:53,000
+K1K Cluster.
+
+753
+00:33:53,000 --> 00:33:55,000
+Then we can put the job.
+
+754
+00:33:55,000 --> 00:33:57,000
+Is what we need to calculate.
+
+755
+00:33:57,000 --> 00:33:59,000
+We spread all over the world.
+
+756
+00:33:59,000 --> 00:34:01,000
+Is within these 100 institutions.
+
+757
+00:34:01,000 --> 00:34:03,000
+What they provide.
+
+758
+00:34:03,000 --> 00:34:05,000
+What each institution provides.
+
+759
+00:34:05,000 --> 00:34:07,000
+Calculation resources.
+
+760
+00:34:07,000 --> 00:34:09,000
+Then of course they are.
+
+761
+00:34:09,000 --> 00:34:11,000
+Their resources are different.
+
+762
+00:34:11,000 --> 00:34:13,000
+For example, some Cluster.
+
+763
+00:34:13,000 --> 00:34:15,000
+Then of course.
+
+764
+00:34:15,000 --> 00:34:17,000
+Our information will also spread all over the world.
+
+765
+00:34:19,000 --> 00:34:21,000
+Then here.
+
+766
+00:34:21,000 --> 00:34:23,000
+Then we say.
+
+767
+00:34:23,000 --> 00:34:25,000
+How do we do it?
+
+768
+00:34:25,000 --> 00:34:27,000
+There is a software.
+
+769
+00:34:27,000 --> 00:34:29,000
+Then from LCCB.
+
+770
+00:34:29,000 --> 00:34:31,000
+This experiment.
+
+771
+00:34:31,000 --> 00:34:33,000
+LCCB developed this experiment.
+
+772
+00:34:33,000 --> 00:34:35,000
+Our opponent developed it.
+
+773
+00:34:35,000 --> 00:34:37,000
+Then called Dirac.
+
+774
+00:34:37,000 --> 00:34:39,000
+Called Distribute Infrastructure.
+
+775
+00:34:39,000 --> 00:34:41,000
+With Remote Agent Control.
+
+776
+00:34:43,000 --> 00:34:45,000
+When he developed it.
+
+777
+00:34:45,000 --> 00:34:47,000
+He also considered.
+
+778
+00:34:47,000 --> 00:34:49,000
+Everyone will use different things.
+
+779
+00:34:49,000 --> 00:34:51,000
+It's very simple.
+
+780
+00:34:51,000 --> 00:34:53,000
+User Interface.
+
+781
+00:34:53,000 --> 00:34:55,000
+Then you are below.
+
+782
+00:34:55,000 --> 00:34:57,000
+All kinds of Cloud Cluster.
+
+783
+00:34:57,000 --> 00:34:59,000
+If you are interested.
+
+784
+00:34:59,000 --> 00:35:01,000
+GitHub is here.
+
+785
+00:35:01,000 --> 00:35:03,000
+If you look at it yourself.
+
+786
+00:35:03,000 --> 00:35:05,000
+GitHub is here.
+
+787
+00:35:05,000 --> 00:35:07,000
+Then everyone will notice.
+
+788
+00:35:07,000 --> 00:35:09,000
+It's all written in Python.
+
+789
+00:35:09,000 --> 00:35:11,000
+In GitHub.
+
+790
+00:35:11,000 --> 00:35:13,000
+100% is Python.
+
+791
+00:35:13,000 --> 00:35:15,000
+I plug my mouth.
+
+792
+00:35:15,000 --> 00:35:17,000
+Kun Xian's speech.
+
+793
+00:35:17,000 --> 00:35:19,000
+The link of the video.
+
+794
+00:35:19,000 --> 00:35:21,000
+I put it on the side.
+
+795
+00:35:21,000 --> 00:35:23,000
+The place to chat.
+
+796
+00:35:23,000 --> 00:35:25,000
+There is a link.
+
+797
+00:35:25,000 --> 00:35:27,000
+If you want to see those webpages.
+
+798
+00:35:27,000 --> 00:35:29,000
+Go back and look at the webpages.
+
+799
+00:35:29,000 --> 00:35:31,000
+I just didn't copy it.
+
+800
+00:35:31,000 --> 00:35:33,000
+You can go and see.
+
+801
+00:35:37,000 --> 00:35:39,000
+Build Dirac.
+
+802
+00:35:39,000 --> 00:35:41,000
+Build is.
+
+803
+00:35:41,000 --> 00:35:43,000
+Bring LCCB Dirac.
+
+804
+00:35:43,000 --> 00:35:45,000
+Then put your database in.
+
+805
+00:35:45,000 --> 00:35:47,000
+This way.
+
+806
+00:35:47,000 --> 00:35:49,000
+The picture on the left.
+
+807
+00:35:49,000 --> 00:35:51,000
+Data transmission.
+
+808
+00:35:51,000 --> 00:35:53,000
+Data transmission.
+
+809
+00:35:53,000 --> 00:35:55,000
+Green is successful.
+
+810
+00:35:55,000 --> 00:35:57,000
+Red is a failure.
+
+811
+00:35:57,000 --> 00:35:59,000
+You can see the Japanese team.
+
+812
+00:35:59,000 --> 00:36:01,000
+To the United States has been a failure.
+
+813
+00:36:01,000 --> 00:36:03,000
+I don't know what happened.
+
+814
+00:36:03,000 --> 00:36:05,000
+Have been a failure.
+
+815
+00:36:05,000 --> 00:36:07,000
+Other places are successful.
+
+816
+00:36:07,000 --> 00:36:09,000
+More.
+
+817
+00:36:09,000 --> 00:36:11,000
+The prototype is a success.
+
+818
+00:36:11,000 --> 00:36:13,000
+The ratio of failure.
+
+819
+00:36:13,000 --> 00:36:15,000
+Basically we are.
+
+820
+00:36:15,000 --> 00:36:17,000
+We did the experiment.
+
+821
+00:36:17,000 --> 00:36:19,000
+After.
+
+822
+00:36:19,000 --> 00:36:21,000
+Because we are at the end.
+
+823
+00:36:21,000 --> 00:36:23,000
+Will save a copy.
+
+824
+00:36:23,000 --> 00:36:25,000
+Then we will.
+
+825
+00:36:25,000 --> 00:36:27,000
+Push to the United States.
+
+826
+00:36:27,000 --> 00:36:29,000
+BNL.
+
+827
+00:36:29,000 --> 00:36:31,000
+Blue Heaven.
+
+828
+00:36:31,000 --> 00:36:33,000
+In New York.
+
+829
+00:36:33,000 --> 00:36:35,000
+There is a copy.
+
+830
+00:36:35,000 --> 00:36:37,000
+Experimental data.
+
+831
+00:36:37,000 --> 00:36:39,000
+There are some others.
+
+832
+00:36:39,000 --> 00:36:41,000
+Do you have 100 institutes?
+
+833
+00:36:41,000 --> 00:36:43,000
+100 institutes.
+
+834
+00:36:43,000 --> 00:36:45,000
+Every institute.
+
+835
+00:36:45,000 --> 00:36:47,000
+There are a few more.
+
+836
+00:36:47,000 --> 00:36:49,000
+A few more.
+
+837
+00:36:49,000 --> 00:36:51,000
+There will be a total of three.
+
+838
+00:36:51,000 --> 00:36:53,000
+After we do the experiment.
+
+839
+00:36:53,000 --> 00:36:55,000
+We will put two copies of data.
+
+840
+00:36:55,000 --> 00:36:57,000
+Push out to BNL.
+
+841
+00:36:57,000 --> 00:36:59,000
+With other sites.
+
+842
+00:36:59,000 --> 00:37:01,000
+So every site will have.
+
+843
+00:37:01,000 --> 00:37:03,000
+Their own.
+
+844
+00:37:03,000 --> 00:37:05,000
+Data copy.
+
+845
+00:37:07,000 --> 00:37:09,000
+Of course.
+
+846
+00:37:09,000 --> 00:37:11,000
+This is actually the data of the experiment.
+
+847
+00:37:11,000 --> 00:37:13,000
+For example, the simulation.
+
+848
+00:37:13,000 --> 00:37:15,000
+Put it on BNL.
+
+849
+00:37:15,000 --> 00:37:17,000
+Or put it on KK.
+
+850
+00:37:17,000 --> 00:37:19,000
+Put it on other sites.
+
+851
+00:37:19,000 --> 00:37:21,000
+For example, Taiwan also has.
+
+852
+00:37:21,000 --> 00:37:23,000
+In the computer.
+
+853
+00:37:23,000 --> 00:37:25,000
+We also provide resources to them.
+
+854
+00:37:25,000 --> 00:37:27,000
+There is also a storage unit.
+
+855
+00:37:27,000 --> 00:37:29,000
+It will be stored there.
+
+856
+00:37:29,000 --> 00:37:31,000
+Then.
+
+857
+00:37:31,000 --> 00:37:33,000
+For example, I submitted a job.
+
+858
+00:37:33,000 --> 00:37:35,000
+I may need a certain file.
+
+859
+00:37:35,000 --> 00:37:37,000
+He will go to the database.
+
+860
+00:37:37,000 --> 00:37:39,000
+I submitted a job.
+
+861
+00:37:39,000 --> 00:37:41,000
+This job.
+
+862
+00:37:41,000 --> 00:37:43,000
+For example, Italy.
+
+863
+00:37:43,000 --> 00:37:45,000
+This is a job in Italy.
+
+864
+00:37:45,000 --> 00:37:47,000
+For example.
+
+865
+00:37:47,000 --> 00:37:49,000
+In Bologna.
+
+866
+00:37:49,000 --> 00:37:51,000
+In Bologna.
+
+867
+00:37:51,000 --> 00:37:53,000
+He will look for nearby.
+
+868
+00:37:53,000 --> 00:37:55,000
+For example, I want a file.
+
+869
+00:37:55,000 --> 00:37:57,000
+Where is the file in the database?
+
+870
+00:37:57,000 --> 00:37:59,000
+Where is it?
+
+871
+00:37:59,000 --> 00:38:01,000
+He will look for nearby.
+
+872
+00:38:01,000 --> 00:38:03,000
+Nearby storage unit.
+
+873
+00:38:03,000 --> 00:38:05,000
+See if he has it.
+
+874
+00:38:05,000 --> 00:38:07,000
+This is pretty much the case.
+
+875
+00:38:07,000 --> 00:38:09,000
+This time frame.
+
+876
+00:38:09,000 --> 00:38:11,000
+Time relationship.
+
+877
+00:38:11,000 --> 00:38:13,000
+I do not speak in great detail.
+
+878
+00:38:13,000 --> 00:38:15,000
+It is probably such a frame.
+
+879
+00:38:15,000 --> 00:38:17,000
+To do the analysis.
+
+880
+00:38:17,000 --> 00:38:19,000
+OK, then the last thing is.
+
+881
+00:38:19,000 --> 00:38:21,000
+To support.
+
+882
+00:38:21,000 --> 00:38:23,000
+The spirit of implementation.
+
+883
+00:38:23,000 --> 00:38:25,000
+So I say.
+
+884
+00:38:25,000 --> 00:38:27,000
+A case of NNW.
+
+885
+00:38:27,000 --> 00:38:29,000
+In fact, in the high-end.
+
+886
+00:38:29,000 --> 00:38:31,000
+We also started to try.
+
+887
+00:38:31,000 --> 00:38:33,000
+Now we continue to learn to do it.
+
+888
+00:38:33,000 --> 00:38:35,000
+This is the first thing.
+
+889
+00:38:35,000 --> 00:38:37,000
+Then it is just mentioned.
+
+890
+00:38:37,000 --> 00:38:39,000
+EHOMEDIC CHROMETER.
+
+891
+00:38:39,000 --> 00:38:41,000
+This.
+
+892
+00:38:41,000 --> 00:38:43,000
+You can see that it is in.
+
+893
+00:38:43,000 --> 00:38:45,000
+It shines here.
+
+894
+00:38:45,000 --> 00:38:47,000
+Then it is the same.
+
+895
+00:38:47,000 --> 00:38:49,000
+After the gamma ray hits in.
+
+896
+00:38:49,000 --> 00:38:51,000
+It will be decomposed.
+
+897
+00:38:51,000 --> 00:38:53,000
+This is a CSI crystallization.
+
+898
+00:38:53,000 --> 00:38:55,000
+CSI crystallization.
+
+899
+00:38:55,000 --> 00:38:57,000
+Then the decomposition will shine.
+
+900
+00:38:57,000 --> 00:38:59,000
+Of course.
+
+901
+00:38:59,000 --> 00:39:01,000
+It is impossible that only one will shine.
+
+902
+00:39:01,000 --> 00:39:03,000
+This is BELL VR.
+
+903
+00:39:03,000 --> 00:39:05,000
+Everyone is interested.
+
+904
+00:39:05,000 --> 00:39:07,000
+You can download it.
+
+905
+00:39:07,000 --> 00:39:09,000
+The download is here.
+
+906
+00:39:09,000 --> 00:39:11,000
+VR.
+
+907
+00:39:11,000 --> 00:39:13,000
+It has VR.
+
+908
+00:39:13,000 --> 00:39:15,000
+For example.
+
+909
+00:39:15,000 --> 00:39:17,000
+A gamma ray runs in.
+
+910
+00:39:17,000 --> 00:39:19,000
+Then it will.
+
+911
+00:39:19,000 --> 00:39:21,000
+It will decompose a lot of things.
+
+912
+00:39:21,000 --> 00:39:23,000
+Run out.
+
+913
+00:39:23,000 --> 00:39:25,000
+Of course it decomposes a lot of things.
+
+914
+00:39:25,000 --> 00:39:27,000
+It can not only be in one ECL.
+
+915
+00:39:27,000 --> 00:39:29,000
+It is distributed in several ECLs.
+
+916
+00:39:29,000 --> 00:39:31,000
+This VR is really interesting.
+
+917
+00:39:31,000 --> 00:39:33,000
+That.
+
+918
+00:39:33,000 --> 00:39:35,000
+Yes.
+
+919
+00:39:35,000 --> 00:39:37,000
+You can download it.
+
+920
+00:39:37,000 --> 00:39:39,000
+Then.
+
+921
+00:39:39,000 --> 00:39:41,000
+For example.
+
+922
+00:39:41,000 --> 00:39:43,000
+A gamma ray runs in.
+
+923
+00:39:43,000 --> 00:39:45,000
+It will decompose.
+
+924
+00:39:45,000 --> 00:39:47,000
+Then decompose into other things.
+
+925
+00:39:47,000 --> 00:39:49,000
+Then.
+
+926
+00:39:49,000 --> 00:39:51,000
+This is CSI.
+
+927
+00:39:51,000 --> 00:39:53,000
+It is our luminous body.
+
+928
+00:39:53,000 --> 00:39:55,000
+Then it will be divided.
+
+929
+00:39:55,000 --> 00:39:57,000
+Then here.
+
+930
+00:39:57,000 --> 00:39:59,000
+Because.
+
+931
+00:39:59,000 --> 00:40:01,000
+This luminous body will shine.
+
+932
+00:40:01,000 --> 00:40:03,000
+It actually supports the structure.
+
+933
+00:40:03,000 --> 00:40:05,000
+For example, like steel.
+
+934
+00:40:05,000 --> 00:40:07,000
+Aluminum plate.
+
+935
+00:40:07,000 --> 00:40:09,000
+Then it will not shine.
+
+936
+00:40:09,000 --> 00:40:11,000
+So you can't measure it here.
+
+937
+00:40:11,000 --> 00:40:13,000
+Because it may be outside.
+
+938
+00:40:13,000 --> 00:40:15,000
+Lack of energy.
+
+939
+00:40:15,000 --> 00:40:17,000
+It is anyway.
+
+940
+00:40:17,000 --> 00:40:19,000
+Electrolytes in matter.
+
+941
+00:40:19,000 --> 00:40:21,000
+Loss of energy.
+
+942
+00:40:21,000 --> 00:40:23,000
+This is called CSI leakage.
+
+943
+00:40:23,000 --> 00:40:25,000
+Then it may leak to the back.
+
+944
+00:40:25,000 --> 00:40:27,000
+In fact, there will be a leak.
+
+945
+00:40:27,000 --> 00:40:29,000
+What is it actually?
+
+946
+00:40:29,000 --> 00:40:31,000
+For example, like this.
+
+947
+00:40:31,000 --> 00:40:33,000
+The simulation is actually like this.
+
+948
+00:40:33,000 --> 00:40:35,000
+A gamma ray comes in from the right.
+
+949
+00:40:35,000 --> 00:40:37,000
+Then there will be a lot at the back.
+
+950
+00:40:37,000 --> 00:40:39,000
+Leakage.
+
+951
+00:40:39,000 --> 00:40:41,000
+Leakage out.
+
+952
+00:40:41,000 --> 00:40:43,000
+The structure will also have some.
+
+953
+00:40:43,000 --> 00:40:45,000
+Leakage.
+
+954
+00:40:45,000 --> 00:40:47,000
+What will this cause?
+
+955
+00:40:47,000 --> 00:40:49,000
+For example, there is a mode.
+
+956
+00:40:49,000 --> 00:40:51,000
+It is called B plus to low plus.
+
+957
+00:40:51,000 --> 00:40:53,000
+I do not know.
+
+958
+00:40:53,000 --> 00:40:55,000
+Anyway, the back will become.
+
+959
+00:40:55,000 --> 00:40:57,000
+A lot of gamma rays.
+
+960
+00:40:57,000 --> 00:40:59,000
+Then there is a pi plus.
+
+961
+00:40:59,000 --> 00:41:01,000
+Anyway, I remember a lot of gamma rays.
+
+962
+00:41:01,000 --> 00:41:03,000
+Then we are from this.
+
+963
+00:41:03,000 --> 00:41:05,000
+A lot of gamma rays and pi plus.
+
+964
+00:41:05,000 --> 00:41:07,000
+Then we combine it into B plus.
+
+965
+00:41:07,000 --> 00:41:09,000
+Of course, our B plus.
+
+966
+00:41:09,000 --> 00:41:11,000
+The energy of its low mass.
+
+967
+00:41:11,000 --> 00:41:13,000
+Is from this pi plus.
+
+968
+00:41:13,000 --> 00:41:15,000
+Combined with a lot of gamma rays.
+
+969
+00:41:15,000 --> 00:41:17,000
+Then we.
+
+970
+00:41:17,000 --> 00:41:19,000
+If there is a leakage.
+
+971
+00:41:19,000 --> 00:41:21,000
+You will find that OK.
+
+972
+00:41:21,000 --> 00:41:23,000
+B plus energy.
+
+973
+00:41:23,000 --> 00:41:25,000
+It will not be a good one.
+
+974
+00:41:25,000 --> 00:41:27,000
+That is.
+
+975
+00:41:27,000 --> 00:41:29,000
+For example, like the standard.
+
+976
+00:41:29,000 --> 00:41:31,000
+Standard distribution is not.
+
+977
+00:41:31,000 --> 00:41:33,000
+It will be like this.
+
+978
+00:41:33,000 --> 00:41:35,000
+This curve is like this.
+
+979
+00:41:35,000 --> 00:41:37,000
+It will have a tail here.
+
+980
+00:41:37,000 --> 00:41:39,000
+It has a lot of low energy places.
+
+981
+00:41:39,000 --> 00:41:41,000
+Event here.
+
+982
+00:41:41,000 --> 00:41:43,000
+Because it is inaccurate.
+
+983
+00:41:43,000 --> 00:41:45,000
+It will have leakage there.
+
+984
+00:41:45,000 --> 00:41:47,000
+That.
+
+985
+00:41:47,000 --> 00:41:49,000
+This problem appears.
+
+986
+00:41:49,000 --> 00:41:51,000
+Let's take a look.
+
+987
+00:41:51,000 --> 00:41:53,000
+What is ECL?
+
+988
+00:41:53,000 --> 00:41:55,000
+ECL is like this.
+
+989
+00:41:55,000 --> 00:41:57,000
+Eight thousand.
+
+990
+00:41:57,000 --> 00:41:59,000
+Arranged mess.
+
+991
+00:41:59,000 --> 00:42:01,000
+I think it's hard to do.
+
+992
+00:42:01,000 --> 00:42:03,000
+So let's do something simple at the beginning.
+
+993
+00:42:03,000 --> 00:42:05,000
+Do something simple at the beginning.
+
+994
+00:42:05,000 --> 00:42:07,000
+30x30.
+
+995
+00:42:07,000 --> 00:42:09,000
+Crystal array.
+
+996
+00:42:09,000 --> 00:42:11,000
+30x30.
+
+997
+00:42:11,000 --> 00:42:13,000
+Because this is my special.
+
+998
+00:42:13,000 --> 00:42:15,000
+It is done by PyCon.
+
+999
+00:42:15,000 --> 00:42:17,000
+Then this simulation.
+
+1000
+00:42:17,000 --> 00:42:19,000
+If you are interested, you can take a look.
+
+1001
+00:42:19,000 --> 00:42:21,000
+Here.
+
+1002
+00:42:21,000 --> 00:42:23,000
+For everyone.
+
+1003
+00:42:23,000 --> 00:42:25,000
+If we measure the energy.
+
+1004
+00:42:25,000 --> 00:42:27,000
+In fact, it is the energy of each individual crystal.
+
+1005
+00:42:27,000 --> 00:42:29,000
+Then put it together.
+
+1006
+00:42:29,000 --> 00:42:31,000
+Just add it up like this.
+
+1007
+00:42:31,000 --> 00:42:33,000
+Is that OK?
+
+1008
+00:42:33,000 --> 00:42:35,000
+This is the traditional way we measure energy.
+
+1009
+00:42:35,000 --> 00:42:37,000
+OK.
+
+1010
+00:42:37,000 --> 00:42:39,000
+After the gamma ray hits.
+
+1011
+00:42:39,000 --> 00:42:41,000
+It has energy for each crystal.
+
+1012
+00:42:41,000 --> 00:42:43,000
+Measure the energy.
+
+1013
+00:42:43,000 --> 00:42:45,000
+Then we measure the energy of each crystal.
+
+1014
+00:42:45,000 --> 00:42:47,000
+All add up.
+
+1015
+00:42:47,000 --> 00:42:49,000
+This is the way we measure energy.
+
+1016
+00:42:49,000 --> 00:42:51,000
+Like this.
+
+1017
+00:42:51,000 --> 00:42:53,000
+But it will leak.
+
+1018
+00:42:53,000 --> 00:42:55,000
+For example, like this.
+
+1019
+00:42:55,000 --> 00:42:57,000
+The gamma ray hits in.
+
+1020
+00:42:57,000 --> 00:42:59,000
+Hit here.
+
+1021
+00:42:59,000 --> 00:43:01,000
+Some leaked.
+
+1022
+00:43:01,000 --> 00:43:03,000
+It will become OK.
+
+1023
+00:43:03,000 --> 00:43:05,000
+Energy is gone.
+
+1024
+00:43:05,000 --> 00:43:07,000
+For example, we hit.
+
+1025
+00:43:07,000 --> 00:43:09,000
+Gamma ray energy.
+
+1026
+00:43:09,000 --> 00:43:11,000
+Is 200mEV.
+
+1027
+00:43:11,000 --> 00:43:13,000
+Then we hit 10,000 times.
+
+1028
+00:43:13,000 --> 00:43:15,000
+Then we measure the energy.
+
+1029
+00:43:15,000 --> 00:43:17,000
+How is the energy of the gamma ray?
+
+1030
+00:43:17,000 --> 00:43:19,000
+Its distribution will be like this.
+
+1031
+00:43:19,000 --> 00:43:21,000
+Yes.
+
+1032
+00:43:21,000 --> 00:43:23,000
+Of course, there are also 200.
+
+1033
+00:43:23,000 --> 00:43:25,000
+Most of the words.
+
+1034
+00:43:25,000 --> 00:43:27,000
+Will not reach 200.
+
+1035
+00:43:27,000 --> 00:43:29,000
+Even some words.
+
+1036
+00:43:29,000 --> 00:43:31,000
+150, 125.
+
+1037
+00:43:31,000 --> 00:43:33,000
+It will not be able to measure all.
+
+1038
+00:43:33,000 --> 00:43:35,000
+Measure the energy.
+
+1039
+00:43:35,000 --> 00:43:37,000
+Is not accurate.
+
+1040
+00:43:37,000 --> 00:43:39,000
+Measure the energy is not accurate.
+
+1041
+00:43:39,000 --> 00:43:41,000
+How to do it?
+
+1042
+00:43:41,000 --> 00:43:43,000
+Just add it up.
+
+1043
+00:43:43,000 --> 00:43:45,000
+Not good enough.
+
+1044
+00:43:45,000 --> 00:43:47,000
+Then we.
+
+1045
+00:43:47,000 --> 00:43:49,000
+This question.
+
+1046
+00:43:49,000 --> 00:43:51,000
+Is a return question.
+
+1047
+00:43:51,000 --> 00:43:53,000
+Your true energy is 200.
+
+1048
+00:43:53,000 --> 00:43:55,000
+Then your prediction.
+
+1049
+00:43:55,000 --> 00:43:57,000
+Is.
+
+1050
+00:43:57,000 --> 00:43:59,000
+Your prediction.
+
+1051
+00:43:59,000 --> 00:44:01,000
+You want to measure now.
+
+1052
+00:44:01,000 --> 00:44:03,000
+How much is the energy?
+
+1053
+00:44:03,000 --> 00:44:05,000
+Is a return question.
+
+1054
+00:44:05,000 --> 00:44:07,000
+Yes.
+
+1055
+00:44:07,000 --> 00:44:09,000
+But now you have total.
+
+1056
+00:44:09,000 --> 00:44:11,000
+Other crystal patterns.
+
+1057
+00:44:11,000 --> 00:44:13,000
+In fact, I thought later.
+
+1058
+00:44:13,000 --> 00:44:15,000
+A method is.
+
+1059
+00:44:17,000 --> 00:44:19,000
+For example, you go to see alone.
+
+1060
+00:44:19,000 --> 00:44:21,000
+The energy distribution of the crystal.
+
+1061
+00:44:21,000 --> 00:44:23,000
+Then this is.
+
+1062
+00:44:23,000 --> 00:44:25,000
+Gamma ray energy.
+
+1063
+00:44:25,000 --> 00:44:27,000
+Is a crystal.
+
+1064
+00:44:27,000 --> 00:44:29,000
+Slightly to the right.
+
+1065
+00:44:29,000 --> 00:44:31,000
+Its energy distribution.
+
+1066
+00:44:31,000 --> 00:44:33,000
+It's a little different.
+
+1067
+00:44:33,000 --> 00:44:35,000
+Then we suspect.
+
+1068
+00:44:35,000 --> 00:44:37,000
+Is not hit in the middle.
+
+1069
+00:44:37,000 --> 00:44:39,000
+The energy distribution.
+
+1070
+00:44:39,000 --> 00:44:41,000
+Will be different from the middle.
+
+1071
+00:44:41,000 --> 00:44:43,000
+Then he measured.
+
+1072
+00:44:43,000 --> 00:44:45,000
+The degree of leakage.
+
+1073
+00:44:45,000 --> 00:44:47,000
+Should be different.
+
+1074
+00:44:49,000 --> 00:44:51,000
+This is.
+
+1075
+00:44:51,000 --> 00:44:53,000
+Our energy distribution.
+
+1076
+00:44:53,000 --> 00:44:55,000
+Pattern.
+
+1077
+00:44:55,000 --> 00:44:57,000
+Is a picture.
+
+1078
+00:44:57,000 --> 00:44:59,000
+The picture inside.
+
+1079
+00:45:01,000 --> 00:45:03,000
+The picture inside is different.
+
+1080
+00:45:03,000 --> 00:45:05,000
+For example, people are different.
+
+1081
+00:45:05,000 --> 00:45:07,000
+Animals are different.
+
+1082
+00:45:07,000 --> 00:45:09,000
+If the distribution is different.
+
+1083
+00:45:09,000 --> 00:45:11,000
+That means.
+
+1084
+00:45:11,000 --> 00:45:13,000
+Energy will be different.
+
+1085
+00:45:13,000 --> 00:45:15,000
+That's simple.
+
+1086
+00:45:15,000 --> 00:45:17,000
+That's OK.
+
+1087
+00:45:17,000 --> 00:45:19,000
+Then we.
+
+1088
+00:45:19,000 --> 00:45:21,000
+There should be.
+
+1089
+00:45:21,000 --> 00:45:23,000
+There should be a way to do this.
+
+1090
+00:45:23,000 --> 00:45:25,000
+Then we think of.
+
+1091
+00:45:25,000 --> 00:45:27,000
+CNN.
+
+1092
+00:45:29,000 --> 00:45:31,000
+If you have time.
+
+1093
+00:45:31,000 --> 00:45:33,000
+You can go to see.
+
+1094
+00:45:33,000 --> 00:45:35,000
+Course.
+
+1095
+00:45:35,000 --> 00:45:37,000
+CNN.
+
+1096
+00:45:39,000 --> 00:45:41,000
+I think.
+
+1097
+00:45:41,000 --> 00:45:43,000
+The most detailed should be him.
+
+1098
+00:45:45,000 --> 00:45:47,000
+CNN.
+
+1099
+00:45:47,000 --> 00:45:49,000
+Different patterns on the map.
+
+1100
+00:45:49,000 --> 00:45:51,000
+Find some characteristics.
+
+1101
+00:45:51,000 --> 00:45:53,000
+Then use the machine learning method.
+
+1102
+00:45:53,000 --> 00:45:55,000
+Find the characteristics of the machine.
+
+1103
+00:45:55,000 --> 00:45:57,000
+Then do it.
+
+1104
+00:45:57,000 --> 00:45:59,000
+This is the actual simulation.
+
+1105
+00:45:59,000 --> 00:46:01,000
+Result.
+
+1106
+00:46:01,000 --> 00:46:03,000
+Hit the energy here.
+
+1107
+00:46:03,000 --> 00:46:05,000
+There is a pattern here.
+
+1108
+00:46:05,000 --> 00:46:07,000
+If you have learned.
+
+1109
+00:46:07,000 --> 00:46:09,000
+Machine learning.
+
+1110
+00:46:09,000 --> 00:46:11,000
+Our target is.
+
+1111
+00:46:11,000 --> 00:46:13,000
+Y2.
+
+1112
+00:46:13,000 --> 00:46:15,000
+Usually use this.
+
+1113
+00:46:15,000 --> 00:46:17,000
+Y2.
+
+1114
+00:46:17,000 --> 00:46:19,000
+What we want to do.
+
+1115
+00:46:19,000 --> 00:46:21,000
+We want to predict.
+
+1116
+00:46:21,000 --> 00:46:23,000
+How much is the real energy?
+
+1117
+00:46:23,000 --> 00:46:25,000
+We use.
+
+1118
+00:46:25,000 --> 00:46:27,000
+This energy.
+
+1119
+00:46:27,000 --> 00:46:29,000
+Put it at the bottom.
+
+1120
+00:46:29,000 --> 00:46:31,000
+Total energy.
+
+1121
+00:46:31,000 --> 00:46:33,000
+We just.
+
+1122
+00:46:33,000 --> 00:46:35,000
+Put it on top of the energy.
+
+1123
+00:46:35,000 --> 00:46:37,000
+Y2 is like this.
+
+1124
+00:46:39,000 --> 00:46:41,000
+The advantage of doing this is.
+
+1125
+00:46:41,000 --> 00:46:43,000
+If you look at the front.
+
+1126
+00:46:43,000 --> 00:46:45,000
+Because it is less than 200.
+
+1127
+00:46:45,000 --> 00:46:47,000
+Between 0 and 1.
+
+1128
+00:46:47,000 --> 00:46:49,000
+Between 0 and 1.
+
+1129
+00:46:49,000 --> 00:46:51,000
+Our prediction.
+
+1130
+00:46:51,000 --> 00:46:53,000
+Prediction is the result of our CNN.
+
+1131
+00:46:53,000 --> 00:46:55,000
+Then we put the prediction.
+
+1132
+00:46:55,000 --> 00:46:57,000
+Divided by our Dtotal.
+
+1133
+00:46:57,000 --> 00:46:59,000
+You can get our.
+
+1134
+00:46:59,000 --> 00:47:01,000
+The energy predicted by CNN.
+
+1135
+00:47:01,000 --> 00:47:03,000
+The loss function.
+
+1136
+00:47:03,000 --> 00:47:05,000
+Prediction minus Y2.
+
+1137
+00:47:05,000 --> 00:47:07,000
+If you know.
+
+1138
+00:47:07,000 --> 00:47:09,000
+What is CNN?
+
+1139
+00:47:09,000 --> 00:47:11,000
+If you want to know what CNN is.
+
+1140
+00:47:11,000 --> 00:47:13,000
+You can also ask me in person.
+
+1141
+00:47:13,000 --> 00:47:15,000
+Our neural network.
+
+1142
+00:47:15,000 --> 00:47:17,000
+The structure is like this.
+
+1143
+00:47:17,000 --> 00:47:19,000
+I'm sorry.
+
+1144
+00:47:19,000 --> 00:47:21,000
+Because I put it directly.
+
+1145
+00:47:21,000 --> 00:47:23,000
+Production neural network.
+
+1146
+00:47:23,000 --> 00:47:25,000
+Put it in the simulation.
+
+1147
+00:47:25,000 --> 00:47:27,000
+It's a bit too complicated.
+
+1148
+00:47:27,000 --> 00:47:29,000
+After the image.
+
+1149
+00:47:29,000 --> 00:47:31,000
+We use.
+
+1150
+00:47:31,000 --> 00:47:33,000
+I want to.
+
+1151
+00:47:33,000 --> 00:47:35,000
+My idea is to use that.
+
+1152
+00:47:35,000 --> 00:47:37,000
+Google has one.
+
+1153
+00:47:37,000 --> 00:47:39,000
+There is a competition called Imagine.
+
+1154
+00:47:39,000 --> 00:47:41,000
+There is a.
+
+1155
+00:47:43,000 --> 00:47:45,000
+The method of Inception.
+
+1156
+00:47:45,000 --> 00:47:47,000
+He used.
+
+1157
+00:47:47,000 --> 00:47:49,000
+He used parallel.
+
+1158
+00:47:49,000 --> 00:47:51,000
+Then use three different sizes.
+
+1159
+00:47:51,000 --> 00:47:53,000
+3x3, 5x5, 7x7.
+
+1160
+00:47:53,000 --> 00:47:55,000
+Then start to layer by layer.
+
+1161
+00:47:55,000 --> 00:47:57,000
+I only use one layer.
+
+1162
+00:47:57,000 --> 00:47:59,000
+Inception, I only use one layer.
+
+1163
+00:47:59,000 --> 00:48:01,000
+Use this method.
+
+1164
+00:48:01,000 --> 00:48:03,000
+Find characteristics.
+
+1165
+00:48:03,000 --> 00:48:05,000
+Is different.
+
+1166
+00:48:05,000 --> 00:48:07,000
+Size of things.
+
+1167
+00:48:07,000 --> 00:48:09,000
+Why do I.
+
+1168
+00:48:09,000 --> 00:48:11,000
+This 30x30 also uses this method.
+
+1169
+00:48:11,000 --> 00:48:13,000
+Because this method is actually.
+
+1170
+00:48:13,000 --> 00:48:15,000
+Use real ECL method.
+
+1171
+00:48:15,000 --> 00:48:17,000
+I'm sorry.
+
+1172
+00:48:17,000 --> 00:48:19,000
+Use it directly.
+
+1173
+00:48:19,000 --> 00:48:21,000
+Then at the end.
+
+1174
+00:48:21,000 --> 00:48:23,000
+Then pull it.
+
+1175
+00:48:23,000 --> 00:48:25,000
+Then convolution.
+
+1176
+00:48:25,000 --> 00:48:27,000
+Below.
+
+1177
+00:48:27,000 --> 00:48:29,000
+Then pull it flat.
+
+1178
+00:48:29,000 --> 00:48:31,000
+Then get it at the end.
+
+1179
+00:48:31,000 --> 00:48:33,000
+Use Sigma function.
+
+1180
+00:48:33,000 --> 00:48:35,000
+My target function.
+
+1181
+00:48:35,000 --> 00:48:37,000
+My target is limited to 0 to 1.
+
+1182
+00:48:37,000 --> 00:48:39,000
+Then do it at the end.
+
+1183
+00:48:41,000 --> 00:48:43,000
+If you go.
+
+1184
+00:48:43,000 --> 00:48:45,000
+I'm going to hit 4000.
+
+1185
+00:48:47,000 --> 00:48:49,000
+I'm going to hit 10,000.
+
+1186
+00:48:49,000 --> 00:48:51,000
+10,000.
+
+1187
+00:48:51,000 --> 00:48:53,000
+4G EV.
+
+1188
+00:48:53,000 --> 00:48:55,000
+4000 EV Gamma Ray.
+
+1189
+00:48:55,000 --> 00:48:57,000
+I originally got.
+
+1190
+00:48:57,000 --> 00:48:59,000
+The energy distribution should be like this.
+
+1191
+00:48:59,000 --> 00:49:01,000
+Red like this.
+
+1192
+00:49:01,000 --> 00:49:03,000
+Very ugly with a big tail.
+
+1193
+00:49:03,000 --> 00:49:05,000
+Now it's green.
+
+1194
+00:49:05,000 --> 00:49:07,000
+I feel.
+
+1195
+00:49:07,000 --> 00:49:09,000
+You see the middle is back to 4000.
+
+1196
+00:49:09,000 --> 00:49:11,000
+It seems a little bigger.
+
+1197
+00:49:11,000 --> 00:49:13,000
+Although the tail is still there.
+
+1198
+00:49:13,000 --> 00:49:15,000
+But there are tails on both sides.
+
+1199
+00:49:15,000 --> 00:49:17,000
+Not so long.
+
+1200
+00:49:17,000 --> 00:49:19,000
+Then the last result here.
+
+1201
+00:49:19,000 --> 00:49:21,000
+Although a little bad.
+
+1202
+00:49:21,000 --> 00:49:23,000
+Because I didn't go all the way.
+
+1203
+00:49:23,000 --> 00:49:25,000
+OK.
+
+1204
+00:49:25,000 --> 00:49:27,000
+This is.
+
+1205
+00:49:27,000 --> 00:49:29,000
+The picture on the left is.
+
+1206
+00:49:29,000 --> 00:49:31,000
+How much is the real energy?
+
+1207
+00:49:31,000 --> 00:49:33,000
+From 500 to 5000.
+
+1208
+00:49:33,000 --> 00:49:35,000
+Then.
+
+1209
+00:49:35,000 --> 00:49:37,000
+The axis is your real.
+
+1210
+00:49:37,000 --> 00:49:39,000
+Total energy minus your true energy.
+
+1211
+00:49:39,000 --> 00:49:41,000
+Then divided by your true energy.
+
+1212
+00:49:41,000 --> 00:49:43,000
+The more absolute value.
+
+1213
+00:49:43,000 --> 00:49:45,000
+It means that you make more mistakes.
+
+1214
+00:49:45,000 --> 00:49:47,000
+Absolute value means that you make more mistakes.
+
+1215
+00:49:47,000 --> 00:49:49,000
+Then we are in high energy.
+
+1216
+00:49:49,000 --> 00:49:51,000
+Not bad.
+
+1217
+00:49:51,000 --> 00:49:53,000
+You can see.
+
+1218
+00:49:53,000 --> 00:49:55,000
+Up to 2000.
+
+1219
+00:49:55,000 --> 00:49:57,000
+It's almost the same as the original method.
+
+1220
+00:49:57,000 --> 00:49:59,000
+Low energy is a little worse.
+
+1221
+00:49:59,000 --> 00:50:01,000
+Sorry.
+
+1222
+00:50:01,000 --> 00:50:03,000
+I didn't finish persuading.
+
+1223
+00:50:03,000 --> 00:50:05,000
+Really want to persuade.
+
+1224
+00:50:05,000 --> 00:50:07,000
+More than a week.
+
+1225
+00:50:07,000 --> 00:50:09,000
+Then you can persuade it.
+
+1226
+00:50:09,000 --> 00:50:11,000
+I didn't optimize it.
+
+1227
+00:50:11,000 --> 00:50:13,000
+I didn't optimize it.
+
+1228
+00:50:13,000 --> 00:50:15,000
+I didn't optimize it.
+
+1229
+00:50:15,000 --> 00:50:17,000
+Low energy is not very good.
+
+1230
+00:50:17,000 --> 00:50:19,000
+Then on the right.
+
+1231
+00:50:19,000 --> 00:50:21,000
+If you look at it.
+
+1232
+00:50:21,000 --> 00:50:23,000
+It will have that.
+
+1233
+00:50:23,000 --> 00:50:25,000
+This peak will have an rns.
+
+1234
+00:50:25,000 --> 00:50:27,000
+Mean square root.
+
+1235
+00:50:27,000 --> 00:50:29,000
+nse or nse.
+
+1236
+00:50:29,000 --> 00:50:31,000
+Sorry, rns.
+
+1237
+00:50:31,000 --> 00:50:33,000
+Assuming you are normal distribution.
+
+1238
+00:50:33,000 --> 00:50:35,000
+Then look at it.
+
+1239
+00:50:35,000 --> 00:50:37,000
+Uh.
+
+1240
+00:50:37,000 --> 00:50:39,000
+Sigma is its rns.
+
+1241
+00:50:39,000 --> 00:50:41,000
+Then look at rns.
+
+1242
+00:50:41,000 --> 00:50:43,000
+Then look at rns.
+
+1243
+00:50:43,000 --> 00:50:45,000
+Red is the original method.
+
+1244
+00:50:45,000 --> 00:50:47,000
+Green is my method.
+
+1245
+00:50:47,000 --> 00:50:49,000
+Green is OK.
+
+1246
+00:50:49,000 --> 00:50:51,000
+High energy is better than them.
+
+1247
+00:50:51,000 --> 00:50:53,000
+Low energy is not very good.
+
+1248
+00:50:53,000 --> 00:50:55,000
+This is my temporary persuasion.
+
+1249
+00:50:55,000 --> 00:50:57,000
+Sorry.
+
+1250
+00:50:59,000 --> 00:51:01,000
+Simple CNN is still not good enough.
+
+1251
+00:51:01,000 --> 00:51:03,000
+So.
+
+1252
+00:51:03,000 --> 00:51:05,000
+We are.
+
+1253
+00:51:05,000 --> 00:51:07,000
+I did a lot of modifications in private.
+
+1254
+00:51:07,000 --> 00:51:09,000
+For example, the target function has been modified.
+
+1255
+00:51:09,000 --> 00:51:11,000
+When there are some patterns.
+
+1256
+00:51:11,000 --> 00:51:13,000
+We split it into several.
+
+1257
+00:51:13,000 --> 00:51:15,000
+Neural network to train separately.
+
+1258
+00:51:15,000 --> 00:51:17,000
+Then put it together at the end.
+
+1259
+00:51:17,000 --> 00:51:19,000
+This is another way.
+
+1260
+00:51:19,000 --> 00:51:21,000
+We hope to use this method.
+
+1261
+00:51:21,000 --> 00:51:23,000
+To solve the real.
+
+1262
+00:51:23,000 --> 00:51:25,000
+Fail2 problem.
+
+1263
+00:51:25,000 --> 00:51:27,000
+Of course, there are other problems.
+
+1264
+00:51:27,000 --> 00:51:29,000
+For example, every csi crystal.
+
+1265
+00:51:29,000 --> 00:51:31,000
+Assuming.
+
+1266
+00:51:31,000 --> 00:51:33,000
+This simulation is the same.
+
+1267
+00:51:33,000 --> 00:51:35,000
+But in fact.
+
+1268
+00:51:35,000 --> 00:51:37,000
+Fail's csi crystal.
+
+1269
+00:51:37,000 --> 00:51:39,000
+There are more than 100.
+
+1270
+00:51:39,000 --> 00:51:41,000
+Although 8000.
+
+1271
+00:51:41,000 --> 00:51:43,000
+There are more than 100.
+
+1272
+00:51:43,000 --> 00:51:45,000
+There are more than 100.
+
+1273
+00:51:45,000 --> 00:51:47,000
+Then there is.
+
+1274
+00:51:47,000 --> 00:51:49,000
+The shape is not like 2D.
+
+1275
+00:51:49,000 --> 00:51:51,000
+Weird distribution.
+
+1276
+00:51:51,000 --> 00:51:53,000
+It is 3D.
+
+1277
+00:51:53,000 --> 00:51:55,000
+It is also 2D.
+
+1278
+00:51:55,000 --> 00:51:57,000
+It is also 2D.
+
+1279
+00:51:57,000 --> 00:51:59,000
+But it is a cylinder distribution.
+
+1280
+00:51:59,000 --> 00:52:01,000
+Then there are some.
+
+1281
+00:52:01,000 --> 00:52:03,000
+There are some.
+
+1282
+00:52:03,000 --> 00:52:05,000
+For example.
+
+1283
+00:52:05,000 --> 00:52:07,000
+Or.
+
+1284
+00:52:07,000 --> 00:52:09,000
+There are some.
+
+1285
+00:52:09,000 --> 00:52:11,000
+Weird gamma rays.
+
+1286
+00:52:11,000 --> 00:52:13,000
+That thing.
+
+1287
+00:52:13,000 --> 00:52:15,000
+Need to overcome.
+
+1288
+00:52:15,000 --> 00:52:17,000
+So we have a long way to go.
+
+1289
+00:52:17,000 --> 00:52:19,000
+Thank you for your participation today.
+
+1290
+00:52:19,000 --> 00:52:21,000
+If you use neural network.
+
+1291
+00:52:21,000 --> 00:52:23,000
+If you use neural network.
+
+1292
+00:52:23,000 --> 00:52:25,000
+Google DeepGin.
+
+1293
+00:52:25,000 --> 00:52:27,000
+Can put the wolf.
+
+1294
+00:52:27,000 --> 00:52:29,000
+Can put the wolf.
+
+1295
+00:52:29,000 --> 00:52:31,000
+Or put the little flower.
+
+1296
+00:52:31,000 --> 00:52:33,000
+There are some references today.
+
+1297
+00:52:33,000 --> 00:52:35,000
+There are some references today.
+
+1298
+00:52:35,000 --> 00:52:37,000
+You can take a look.
+
+1299
+00:52:37,000 --> 00:52:39,000
+If it's just Bell.
+
+1300
+00:52:39,000 --> 00:52:41,000
+Bell 2's predecessor.
+
+1301
+00:52:41,000 --> 00:52:43,000
+It also has open data.
+
+1302
+00:52:43,000 --> 00:52:45,000
+You can play if you are interested.
+
+1303
+00:52:45,000 --> 00:52:47,000
+Bell 2 is also planning.
+
+1304
+00:52:47,000 --> 00:52:49,000
+Open data.
+
+1305
+00:52:49,000 --> 00:52:51,000
+It's a pity.
+
+1306
+00:52:51,000 --> 00:52:53,000
+There is not so much open data.
+
+1307
+00:52:53,000 --> 00:52:55,000
+That's it.
+
+1308
+00:52:55,000 --> 00:52:57,000
+Thank you Kun Xian.
+
+1309
+00:52:57,000 --> 00:52:59,000
+Thank you Kun Xian.
+
+1310
+00:52:59,000 --> 00:53:01,000
+Thank you Kun Xian.
+
+1311
+00:53:01,000 --> 00:53:03,000
+Does anyone have any questions?
+
+1312
+00:53:03,000 --> 00:53:05,000
+Does anyone have any questions?
+
+1313
+00:53:05,000 --> 00:53:07,000
+What is that?
+
+1314
+00:53:07,000 --> 00:53:09,000
+More than 100 kinds of CSI.
+
+1315
+00:53:09,000 --> 00:53:11,000
+More than 100 kinds of CSI.
+
+1316
+00:53:11,000 --> 00:53:13,000
+Is it different in ratio.
+
+1317
+00:53:13,000 --> 00:53:15,000
+And there are impurities and so on.
+
+1318
+00:53:15,000 --> 00:53:17,000
+Is it different in ratio.
+
+1319
+00:53:17,000 --> 00:53:19,000
+Is it different in ratio.
+
+1320
+00:53:19,000 --> 00:53:21,000
+Is it different in ratio.
+
+1321
+00:53:21,000 --> 00:53:23,000
+It's a little different.
+
+1322
+00:53:23,000 --> 00:53:25,000
+So what is it with him.
+
+1323
+00:53:25,000 --> 00:53:27,000
+The ratio of CSMI is different.
+
+1324
+00:53:27,000 --> 00:53:29,000
+The ratio of CSMI is different.
+
+1325
+00:53:29,000 --> 00:53:31,000
+It's all the same.
+
+1326
+00:53:31,000 --> 00:53:33,000
+It's all the same.
+
+1327
+00:53:33,000 --> 00:53:35,000
+But it's a little different.
+
+1328
+00:53:35,000 --> 00:53:37,000
+But it's a little different.
+
+1329
+00:53:37,000 --> 00:53:39,000
+But it's a little different.
+
+1330
+00:53:39,000 --> 00:53:41,000
+But it's a little different.
+
+1331
+00:53:41,000 --> 00:53:43,000
+Hello.
+
+1332
+00:53:43,000 --> 00:53:45,000
+Hello.
+
+1333
+00:53:45,000 --> 00:53:47,000
+I want to ask a question.
+
+1334
+00:53:47,000 --> 00:53:49,000
+I just saw you write.
+
+1335
+00:53:49,000 --> 00:53:51,000
+When you are in TransCNN.
+
+1336
+00:53:51,000 --> 00:53:53,000
+Your loss function is used.
+
+1337
+00:53:53,000 --> 00:53:55,000
+That is.
+
+1338
+00:53:55,000 --> 00:53:57,000
+That is the ratio.
+
+1339
+00:53:57,000 --> 00:53:59,000
+MSE.
+
+1340
+00:53:59,000 --> 00:54:01,000
+Is there any special reason?
+
+1341
+00:54:01,000 --> 00:54:03,000
+Is there any special reason?
+
+1342
+00:54:03,000 --> 00:54:05,000
+Because intuitively.
+
+1343
+00:54:05,000 --> 00:54:07,000
+I think you want energy.
+
+1344
+00:54:07,000 --> 00:54:09,000
+I think you want energy.
+
+1345
+00:54:09,000 --> 00:54:11,000
+Not the ratio.
+
+1346
+00:54:11,000 --> 00:54:13,000
+Not the ratio.
+
+1347
+00:54:13,000 --> 00:54:15,000
+Not the ratio.
+
+1348
+00:54:15,000 --> 00:54:17,000
+It's a good idea.
+
+1349
+00:54:17,000 --> 00:54:19,000
+It's a good idea.
+
+1350
+00:54:19,000 --> 00:54:21,000
+It's a good idea.
+
+1351
+00:54:21,000 --> 00:54:23,000
+Thank you.
+
+1352
+00:54:23,000 --> 00:54:25,000
+Thank you.
+
+1353
+00:54:25,000 --> 00:54:27,000
+Thank you.
+
+1354
+00:54:27,000 --> 00:54:29,000
+Thank you.
+
+1355
+00:54:29,000 --> 00:54:31,000
+Thank you.
+
+1356
+00:54:31,000 --> 00:54:33,000
+Thank you.
+
+1357
+00:54:33,000 --> 00:54:35,000
+Thank you.
+
+1358
+00:54:35,000 --> 00:54:37,000
+Thank you.
+
+1359
+00:54:37,000 --> 00:54:39,000
+Thank you.
+
+1360
+00:54:39,000 --> 00:54:41,000
+Uh
+
+1361
+00:54:41,000 --> 00:54:43,000
+Uh
+
+1362
+00:54:43,000 --> 00:54:45,000
+Uh
+
+1363
+00:54:45,000 --> 00:54:47,000
+Your question.
+
+1364
+00:54:47,000 --> 00:54:49,000
+Your question.
+
+1365
+00:54:49,000 --> 00:54:51,000
+Your question.
+
+1366
+00:54:51,000 --> 00:54:53,000
+Your question.
+
+1367
+00:54:53,000 --> 00:54:55,000
+Your question.
+
+1368
+00:54:55,000 --> 00:54:57,000
+Your question.
+
+1369
+00:54:57,000 --> 00:54:59,000
+Your question.
+
+1370
+00:54:59,000 --> 00:55:01,000
+Your question.
+
+1371
+00:55:01,000 --> 00:55:03,000
+Your question.
+
+1372
+00:55:03,000 --> 00:55:05,000
+Your question.
+
+1373
+00:55:05,000 --> 00:55:07,000
+Your question.
+
+1374
+00:55:07,000 --> 00:55:09,000
+Your question.
+
+1375
+00:55:09,000 --> 00:55:11,000
+Your question.
+
+1376
+00:55:11,000 --> 00:55:13,000
+Your question.
+
+1377
+00:55:13,000 --> 00:55:15,000
+Your question.
+
+1378
+00:55:15,000 --> 00:55:17,000
+Recognition, recognition.
+
+1379
+00:55:17,000 --> 00:55:19,000
+Recognition, clear information already working.
+
+1380
+00:55:19,000 --> 00:55:21,000
+Recognition, clear information already working.
+
+1381
+00:55:21,000 --> 00:55:22,920
+Know trigger
+
+1382
+00:55:22,920 --> 00:55:24,920
+Trigger.
+
+1383
+00:55:24,920 --> 00:55:26,920
+Trigger.
+
+1384
+00:55:26,920 --> 00:55:28,920
+Trigger.
+
+1385
+00:55:28,920 --> 00:55:30,920
+Trigger.
+
+1386
+00:55:30,920 --> 00:55:32,920
+Trigger.
+
+1387
+00:55:32,920 --> 00:55:34,920
+Trigger.
+
+1388
+00:55:34,920 --> 00:55:36,920
+Trigger.
+
+1389
+00:55:36,920 --> 00:55:38,920
+Trigger.
+
+1390
+00:55:38,920 --> 00:55:40,920
+Trigger.
+
+1391
+00:55:40,920 --> 00:55:42,920
+Trigger.
+
+1392
+00:55:42,920 --> 00:55:44,920
+Trigger.
+
+1393
+00:55:44,920 --> 00:55:46,920
+Trigger.
+
+1394
+00:55:46,920 --> 00:55:48,920
+Trigger.
+
+1395
+00:55:49,760 --> 00:55:51,760
+Trigger.
+
+1396
+00:55:51,760 --> 00:55:53,760
+Trigger.
+
+1397
+00:55:53,760 --> 00:55:55,760
+Trigger.
+
+1398
+00:55:55,760 --> 00:55:57,760
+Trigger.
+
+1399
+00:55:57,760 --> 00:55:59,760
+Trigger.
+
+1400
+00:55:59,760 --> 00:56:01,760
+Trigger.
+
+1401
+00:56:01,760 --> 00:56:03,760
+Trigger.
+
+1402
+00:56:03,760 --> 00:56:05,760
+Trigger.
+
+1403
+00:56:05,760 --> 00:56:07,760
+Trigger.
+
+1404
+00:56:07,760 --> 00:56:09,760
+Trigger.
+
+1405
+00:56:09,760 --> 00:56:11,760
+Trigger.
+
+1406
+00:56:11,760 --> 00:56:13,760
+Trigger.
+
+1407
+00:56:13,760 --> 00:56:15,760
+Trigger.
+
+1408
+00:56:15,760 --> 00:56:17,760
+Trigger.
+
+1409
+00:56:18,600 --> 00:56:20,600
+Trigger.
+
+1410
+00:56:20,600 --> 00:56:22,600
+Trigger.
+
+1411
+00:56:22,600 --> 00:56:24,600
+Trigger.
+
+1412
+00:56:24,600 --> 00:56:26,600
+Trigger.
+
+1413
+00:56:26,600 --> 00:56:28,600
+Trigger.
+
+1414
+00:56:28,600 --> 00:56:30,600
+Trigger.
+
+1415
+00:56:30,600 --> 00:56:32,600
+Trigger.
+
+1416
+00:56:32,600 --> 00:56:34,600
+Trigger.
+
+1417
+00:56:34,600 --> 00:56:36,600
+Trigger.
+
+1418
+00:56:36,600 --> 00:56:38,600
+Trigger.
+
+1419
+00:56:38,600 --> 00:56:40,600
+Trigger.
+
+1420
+00:56:40,600 --> 00:56:42,600
+Trigger.
+
+1421
+00:56:42,600 --> 00:56:44,600
+Trigger.
+
+1422
+00:56:44,600 --> 00:56:46,600
+Trigger.
+
+1423
+00:56:47,160 --> 00:56:49,160
+Sorry. Are there are other?
+
+1424
+00:56:49,160 --> 00:56:50,240
+I heard that you will have the
+
+1425
+00:56:50,240 --> 00:56:52,240
+Ooooo.
+
+1426
+00:56:52,880 --> 00:56:54,880
+Ooooo.
+
+1427
+00:56:54,880 --> 00:56:56,880
+Ooooo.
+
+1428
+00:56:56,880 --> 00:56:58,880
+Ooooo.
+
+1429
+00:56:58,880 --> 00:57:00,880
+Ooooo.
+
+1430
+00:57:00,880 --> 00:57:02,880
+Ooooo.
+
+1431
+00:57:02,880 --> 00:57:04,880
+Ooooo.
+
+1432
+00:57:04,880 --> 00:57:06,880
+Ooooo.
+
+1433
+00:57:06,880 --> 00:57:08,880
+Ooooo.
+
+1434
+00:57:08,880 --> 00:57:10,880
+Ooooo.
+
+1435
+00:57:10,880 --> 00:57:12,880
+Ooooo.
+
+1436
+00:57:12,880 --> 00:57:14,880
+Ooooo..
+
+1437
+00:57:15,380 --> 00:57:17,380
+Like the middle finger and keon.
+
+1438
+00:57:17,380 --> 00:57:19,380
+Like the middle finger and keon.
+
+1439
+00:57:19,380 --> 00:57:21,380
+Like the middle finger and keon.
+
+1440
+00:57:21,380 --> 00:57:23,380
+No, no. They are similar.
+
+1441
+00:57:23,380 --> 00:57:25,380
+Middle finger and electron.
+
+1442
+00:57:25,380 --> 00:57:27,380
+They are obviously different in pose shapes.
+
+1443
+00:57:27,380 --> 00:57:29,380
+Or gamma ray.
+
+1444
+00:57:29,380 --> 00:57:31,380
+Middle finger and gamma ray have different pose shapes.
+
+1445
+00:57:31,380 --> 00:57:33,380
+They can be divided by pose shapes.
+
+1446
+00:57:33,380 --> 00:57:35,380
+Because one is fully battery.
+
+1447
+00:57:35,380 --> 00:57:37,380
+Because one is fully battery.
+
+1448
+00:57:37,380 --> 00:57:39,380
+And the other is
+
+1449
+00:57:39,380 --> 00:57:41,380
+Hedronic shower.
+
+1450
+00:57:41,380 --> 00:57:43,380
+I'm sorry for those who
+
+1451
+00:57:43,380 --> 00:57:45,380
+don't have time to make examples.
+
+1452
+00:57:45,380 --> 00:57:47,380
+One is Hedronic shower and the other is Hedronic shower.
+
+1453
+00:57:47,380 --> 00:57:49,380
+I've heard of it.
+
+1454
+00:57:49,380 --> 00:57:51,380
+So that's how they can be divided.
+
+1455
+00:57:51,380 --> 00:57:53,380
+So that's how they can be divided.
+
+1456
+00:57:53,380 --> 00:57:55,380
+If both are gamma ray
+
+1457
+00:57:55,380 --> 00:57:57,380
+and you say this is backlight gamma ray
+
+1458
+00:57:57,380 --> 00:57:59,380
+and this is signal gamma ray.
+
+1459
+00:57:59,380 --> 00:58:01,380
+Of course, if it's Hedronic shower,
+
+1460
+00:58:01,380 --> 00:58:03,380
+it can be divided.
+
+1461
+00:58:03,380 --> 00:58:05,380
+Just look at it and you'll know.
+
+1462
+00:58:05,380 --> 00:58:07,380
+Just look at it and you'll know.
+
+1463
+00:58:07,380 --> 00:58:09,380
+Just look at it and you'll know.
+
+1464
+00:58:09,380 --> 00:58:11,380
+Anyone else have questions?
+
+1465
+00:58:11,380 --> 00:58:13,380
+Anyone else have questions?
+
+1466
+00:58:17,380 --> 00:58:19,380
+Let me talk about it again.
+
+1467
+00:58:19,380 --> 00:58:21,380
+We'll post this video
+
+1468
+00:58:21,380 --> 00:58:23,380
+We'll post this video
+
+1469
+00:58:23,380 --> 00:58:25,380
+on our website.
+
+1470
+00:58:25,380 --> 00:58:27,380
+You can find the link
+
+1471
+00:58:27,380 --> 00:58:29,380
+on our fan page.
+
+1472
+00:58:29,380 --> 00:58:31,380
+You can find the link
+
+1473
+00:58:31,380 --> 00:58:33,380
+on our fan page.
+
+1474
+00:58:33,380 --> 00:58:35,380
+If you want to review
+
+1475
+00:58:35,380 --> 00:58:37,380
+or want to see the links
+
+1476
+00:58:37,380 --> 00:58:39,380
+or information in Kun's video,
+
+1477
+00:58:39,380 --> 00:58:41,380
+that's what we'll post.
+
+1478
+00:58:41,380 --> 00:58:43,380
+Q&A
+
+1479
+00:58:43,380 --> 00:58:45,380
+Q&A
+
+1480
+00:58:45,380 --> 00:58:47,380
+Q&A
+
+1481
+00:58:47,380 --> 00:58:49,380
+Q&A
+
+1482
+00:58:49,380 --> 00:58:51,380
+Q&A
+
+1483
+00:58:51,380 --> 00:58:53,380
+Q&A
+
+1484
+00:58:53,380 --> 00:58:55,380
+Q&A
+
+1485
+00:58:55,380 --> 00:58:57,380
+Q&A
+
+1486
+00:58:57,380 --> 00:58:59,380
+Q&A
+
+1487
+00:58:59,380 --> 00:59:01,380
+Q&A
+
+1488
+00:59:01,380 --> 00:59:03,380
+Q&A
+
+1489
+00:59:03,380 --> 00:59:05,380
+Q&A
+
+1490
+00:59:05,380 --> 00:59:07,380
+Q&A
+
+1491
+00:59:07,380 --> 00:59:09,380
+Q&A
+
+1492
+00:59:09,380 --> 00:59:11,380
+Q&A
+
+1493
+00:59:11,380 --> 00:59:13,380
+Q&A
+
+1494
+00:59:13,380 --> 00:59:15,380
+Q&A
+
+1495
+00:59:15,380 --> 00:59:17,380
+Q&A
+
+1496
+00:59:17,380 --> 00:59:19,380
+Q&A
+
+1497
+00:59:19,380 --> 00:59:21,380
+Q&A
+
+1498
+00:59:21,380 --> 00:59:23,380
+Q&A
+
+1499
+00:59:23,380 --> 00:59:25,380
+Q&A
+
+1500
+00:59:25,380 --> 00:59:27,380
+Q&A
+
+1501
+00:59:27,380 --> 00:59:29,380
+Q&A
+
+1502
+00:59:29,380 --> 00:59:31,380
+Q&A
+
+1503
+00:59:31,380 --> 00:59:33,380
+Q&A
+
+1504
+00:59:33,380 --> 00:59:35,380
+Q&A
+
+1505
+00:59:35,380 --> 00:59:57,380
+Q&A
+
+1506
+00:59:57,380 --> 00:59:59,380
+Q&A
+
+1507
+00:59:59,380 --> 01:00:01,380
+Q&A
+
+1508
+01:00:01,380 --> 01:00:11,380
+Q&A
+

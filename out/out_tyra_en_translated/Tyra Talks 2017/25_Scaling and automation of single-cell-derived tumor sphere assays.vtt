@@ -1,0 +1,4715 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+My PhD research is mainly in microfluidics for single-cell analysis.
+
+00:09.000 --> 00:14.000
+In the content of biology, I mainly focus on cancer research.
+
+00:14.000 --> 00:22.000
+Because we generally believe that in cancer, the heterogeneity between cells is stronger.
+
+00:22.000 --> 00:31.000
+For example, when we treat cancer, there will always be some antibody cells that can be used for therapy.
+
+00:31.000 --> 00:37.000
+So if we can use single-cell analysis to see the different characteristics of each cell,
+
+00:37.000 --> 00:42.000
+and find those antibodies to lock them in for treatment,
+
+00:42.000 --> 00:47.000
+we believe that it can improve the efficacy of the treatment.
+
+00:48.000 --> 00:53.000
+My research is divided into two parts.
+
+00:53.000 --> 00:59.000
+The first part is the phenotypic assay, which I will share with you today.
+
+00:59.000 --> 01:02.000
+The second part is also what I'm doing now.
+
+01:02.000 --> 01:07.000
+Because I haven't published the paper yet, so I haven't put it up here yet.
+
+01:07.000 --> 01:11.000
+But the whole direction is like what Jake just introduced.
+
+01:11.000 --> 01:15.000
+As a sample preparation chip,
+
+01:15.000 --> 01:23.000
+we can extract circulating tumor cells from the patient's blood.
+
+01:23.000 --> 01:29.000
+We get gene expression information from the cancer cells in the blood.
+
+01:29.000 --> 01:33.000
+This gene expression information can let us know
+
+01:33.000 --> 01:39.000
+what kind of drugs we can use to treat these patients to get better results.
+
+01:39.000 --> 01:42.000
+For now, to get this gene expression information,
+
+01:42.000 --> 01:47.000
+we usually use the whole flow of chips.
+
+01:47.000 --> 01:51.000
+In other words, we need to use a knife.
+
+01:51.000 --> 01:55.000
+It's more invasive, and the cost will be higher.
+
+01:55.000 --> 02:01.000
+Today, I will share with you the phenotypic assay.
+
+02:01.000 --> 02:06.000
+In the technology development, I mainly focus on scaling and automation
+
+02:06.000 --> 02:10.000
+in the high-throughput single-cell device sphere assays.
+
+02:10.000 --> 02:16.000
+First, I will tell you why we want to do this tumor sphere assay.
+
+02:16.000 --> 02:20.000
+In fact, the purpose is to study these tumor-initiating cells.
+
+02:20.000 --> 02:23.000
+In this process, I will share with you
+
+02:23.000 --> 02:29.000
+why we need to scale up this assay and automate this assay.
+
+02:29.000 --> 02:34.000
+Next, I will tell you how I enable this thing.
+
+02:34.000 --> 02:40.000
+Then, I will use some experiments to show you the functions of my chip.
+
+02:40.000 --> 02:44.000
+Finally, I will conclude my presentation today.
+
+02:45.000 --> 02:46.000
+OK.
+
+02:46.000 --> 02:51.000
+So, our motivation is to study these so-called cancer stem-like cells.
+
+02:51.000 --> 02:54.000
+Our recent research shows that
+
+02:54.000 --> 02:59.000
+there is a relatively small number of tumor-initiating cells.
+
+02:59.000 --> 03:01.000
+They are called cancer stem cells.
+
+03:01.000 --> 03:06.000
+Some people think the term cancer stem cells is too strong.
+
+03:06.000 --> 03:09.000
+They prefer to call them cancer stem-like cells.
+
+03:09.000 --> 03:12.000
+In fact, it is a biological mutation.
+
+03:12.000 --> 03:15.000
+They are a group of antibodies
+
+03:15.000 --> 03:19.000
+with some stem cell-specific cancer cells.
+
+03:19.000 --> 03:22.000
+This tissue group has some characteristics.
+
+03:22.000 --> 03:26.000
+The first one is that it has a relatively strong chemoresistance.
+
+03:26.000 --> 03:28.000
+It will cause tumor relapse.
+
+03:28.000 --> 03:32.000
+In this picture, you can see that this is a primitive tumor.
+
+03:32.000 --> 03:35.000
+The yellow one is CSC, cancer stem cell.
+
+03:35.000 --> 03:38.000
+The blue ones are normal cancer cells.
+
+03:38.000 --> 03:42.000
+If we use traditional cancer treatment,
+
+03:42.000 --> 03:45.000
+these ordinary cells can be removed.
+
+03:45.000 --> 03:51.000
+So, we can see that the tumor size is reduced in clinical trials.
+
+03:51.000 --> 03:54.000
+But what we can't see is this cancer stem cell.
+
+03:54.000 --> 03:57.000
+It has a way to stay quiescent
+
+03:57.000 --> 04:00.000
+and not be affected by the drug.
+
+04:00.000 --> 04:02.000
+After we stop giving drugs,
+
+04:02.000 --> 04:05.000
+the tumor relapse occurs.
+
+04:05.000 --> 04:08.000
+So, in the research scope of CSC,
+
+04:08.000 --> 04:12.000
+we hope to find cancer stem cell-specific therapy.
+
+04:12.000 --> 04:17.000
+So, I eliminated it for this CSC.
+
+04:17.000 --> 04:20.000
+The rest of these normal CSC,
+
+04:20.000 --> 04:23.000
+sorry, these normal cancer cells,
+
+04:23.000 --> 04:26.000
+they don't have the ability to self-renew.
+
+04:26.000 --> 04:28.000
+So, they proliferate.
+
+04:28.000 --> 04:33.000
+In the end, the tumor relapse occurs.
+
+04:33.000 --> 04:36.000
+So, this is the first reason why we want to study CSC.
+
+04:36.000 --> 04:40.000
+The second reason is that we generally believe that
+
+04:40.000 --> 04:42.000
+CSC has a strong migration ability.
+
+04:42.000 --> 04:47.000
+In other words, it is easier to metastasize to the secondary tumor.
+
+04:47.000 --> 04:53.000
+We know that cancer transfer is the biggest challenge in cancer therapy
+
+04:53.000 --> 04:55.000
+and the biggest cause of death.
+
+04:55.000 --> 04:57.000
+So, if we can study CSC more,
+
+04:57.000 --> 05:02.000
+it will be very helpful in therapy, tracking, and research.
+
+05:02.000 --> 05:12.000
+The most traditional way to study CSC is to use surface membrane protein
+
+05:12.000 --> 05:16.000
+or intracellular enzymatic markers.
+
+05:16.000 --> 05:20.000
+For gene expression or protein expression,
+
+05:20.000 --> 05:26.000
+we use different methods, such as full cytometry,
+
+05:26.000 --> 05:29.000
+to separate these different types of cells.
+
+05:29.000 --> 05:32.000
+Then, we can study these CSC groups.
+
+05:32.000 --> 05:35.000
+But the challenge is that
+
+05:35.000 --> 05:38.000
+many of our new markers have not been discovered.
+
+05:38.000 --> 05:44.000
+So, we hope to use other methods to study these CSC populations.
+
+05:44.000 --> 05:52.000
+As a substitute, cell behavior is a common choice.
+
+05:52.000 --> 06:00.000
+We observe that CSC can survive in a suspension culture environment
+
+06:00.000 --> 06:04.000
+and grow into a single-cell-derived tumor sphere.
+
+06:04.000 --> 06:07.000
+In other words, if it is a normal cancer cell,
+
+06:07.000 --> 06:13.000
+it cannot be adhered to the substrate environment.
+
+06:13.000 --> 06:17.000
+It will produce apoptosis.
+
+06:17.000 --> 06:21.000
+But CSC is different.
+
+06:21.000 --> 06:24.000
+It can not only survive in a suspension environment,
+
+06:24.000 --> 06:27.000
+but also grow into a new tumor sphere.
+
+06:27.000 --> 06:32.000
+So, what is the traditional way to do the sphere assay?
+
+06:32.000 --> 06:35.000
+The method is to buy a whale plate,
+
+06:35.000 --> 06:38.000
+as shown in the picture on the bottom right.
+
+06:38.000 --> 06:45.000
+Then, dilute the whale plate to a certain level of cell concentration.
+
+06:45.000 --> 06:48.000
+The whale plate contains one cell.
+
+06:48.000 --> 06:51.000
+As you can see,
+
+06:51.000 --> 06:56.000
+the low-throughput is a distribution of the probability,
+
+06:56.000 --> 06:58.000
+or more specifically,
+
+06:58.000 --> 07:04.000
+96-whale plate contains 20-30 single-cells.
+
+07:05.000 --> 07:08.000
+It is labor-intensive.
+
+07:08.000 --> 07:10.000
+Someone may ask,
+
+07:10.000 --> 07:13.000
+can I use automatic cell dispensing,
+
+07:13.000 --> 07:16.000
+such as flow cytometry,
+
+07:16.000 --> 07:20.000
+to ensure that I can put a cell into a whale?
+
+07:20.000 --> 07:24.000
+In fact, flow cytometry has a big problem.
+
+07:24.000 --> 07:27.000
+Because it is a flow-sorting process,
+
+07:27.000 --> 07:30.000
+it will produce a lot of shear stress.
+
+07:30.000 --> 07:35.000
+So, what is the impact of cell behavior assay on downstream?
+
+07:35.000 --> 07:38.000
+We need to observe if the cell is dead.
+
+07:38.000 --> 07:41.000
+If the cell is dead,
+
+07:41.000 --> 07:44.000
+it is not caused by the suspension environment.
+
+07:44.000 --> 07:47.000
+It is caused by the flow-sorting process.
+
+07:47.000 --> 07:49.000
+The shear stress is too high,
+
+07:49.000 --> 07:51.000
+and the cell can not bear it.
+
+07:51.000 --> 07:53.000
+So, the cell is dead,
+
+07:53.000 --> 07:56.000
+not because it is not CSC.
+
+07:56.000 --> 08:01.000
+These are the existing technology limitations.
+
+08:01.000 --> 08:05.000
+Why do we think automation is important?
+
+08:05.000 --> 08:07.000
+As we mentioned,
+
+08:07.000 --> 08:11.000
+CSC is a relatively small sub-population.
+
+08:11.000 --> 08:13.000
+In the past,
+
+08:13.000 --> 08:19.000
+only 1-5% of tumor cells have this sphere formation tendency.
+
+08:19.000 --> 08:25.000
+We hope this assay can start with a larger single-cell population.
+
+08:25.000 --> 08:27.000
+At least 1,000 single-cells.
+
+08:27.000 --> 08:33.000
+Then we can have a reliable statistical power
+
+08:33.000 --> 08:35.000
+to make our assay conclusion.
+
+08:35.000 --> 08:38.000
+So, we think
+
+08:38.000 --> 08:41.000
+to achieve this throughput,
+
+08:41.000 --> 08:44.000
+microfluidics is an ideal technology
+
+08:44.000 --> 08:47.000
+to make this assay.
+
+08:47.000 --> 08:51.000
+So, this is our chip schematics.
+
+08:51.000 --> 08:53.000
+We want to develop a chip
+
+08:53.000 --> 08:56.000
+with more than 1,000 single-cells.
+
+08:56.000 --> 08:59.000
+Because we have a very large throughput,
+
+08:59.000 --> 09:02.000
+we also need an automatic image analysis.
+
+09:02.000 --> 09:05.000
+Otherwise, we have to read it manually.
+
+09:05.000 --> 09:08.000
+It is a very difficult process.
+
+09:08.000 --> 09:09.000
+Only in this way,
+
+09:09.000 --> 09:12.000
+can we make the whole experiment
+
+09:12.000 --> 09:16.000
+smoothly improve on hardware and software.
+
+09:16.000 --> 09:20.000
+So, this is our motivation.
+
+09:20.000 --> 09:22.000
+I don't know if there is anything I didn't explain clearly.
+
+09:22.000 --> 09:24.000
+Or you can go on.
+
+09:26.000 --> 09:28.000
+Ok, let's continue.
+
+09:31.000 --> 09:32.000
+I want to ask,
+
+09:32.000 --> 09:38.000
+why CSC can survive in suspension culture environment?
+
+09:38.000 --> 09:40.000
+This is a question.
+
+09:40.000 --> 09:41.000
+Did you hear it?
+
+09:41.000 --> 09:42.000
+Yes.
+
+09:42.000 --> 09:44.000
+The question is,
+
+09:44.000 --> 09:48.000
+why CSC can survive in suspension culture environment?
+
+09:48.000 --> 09:50.000
+This is a very interesting question.
+
+09:50.000 --> 09:54.000
+I will answer it in two ways.
+
+09:54.000 --> 09:55.000
+First,
+
+09:55.000 --> 09:58.000
+the definition of CSC is
+
+09:58.000 --> 10:01.000
+we only inject 10 cells into the mouse.
+
+10:05.000 --> 10:07.000
+Can these 10 cells
+
+10:07.000 --> 10:10.000
+generate a new tumor on the mouse?
+
+10:10.000 --> 10:11.000
+If yes,
+
+10:11.000 --> 10:12.000
+we define it as CSC.
+
+10:12.000 --> 10:15.000
+The predecessors defined CSC in this way.
+
+10:15.000 --> 10:18.000
+Then, they used this traditional conventional assay
+
+10:18.000 --> 10:19.000
+to find out
+
+10:19.000 --> 10:24.000
+the cell population of tumors
+
+10:24.000 --> 10:29.000
+can survive in suspension culture environment.
+
+10:29.000 --> 10:32.000
+This is the first way to find it out.
+
+10:32.000 --> 10:33.000
+Why?
+
+10:33.000 --> 10:35.000
+Our idea is
+
+10:35.000 --> 10:39.000
+CSC can survive in suspension culture environment
+
+10:39.000 --> 10:44.000
+by moving through the local environment
+
+10:44.000 --> 10:46.000
+to the blood vessel.
+
+10:46.000 --> 10:49.000
+The blood vessel is a suspension environment.
+
+10:49.000 --> 10:51.000
+If these cells
+
+10:51.000 --> 10:54.000
+die in the suspension environment,
+
+10:54.000 --> 10:57.000
+they can't move to other places.
+
+10:57.000 --> 10:59.000
+So, we believe
+
+10:59.000 --> 11:07.000
+CSC can survive in the blood vessel
+
+11:07.000 --> 11:10.000
+and grow into a tumor in a new local environment.
+
+11:10.000 --> 11:15.000
+We simulate this in vivo environment.
+
+11:15.000 --> 11:18.000
+This is how we research CSC.
+
+11:18.000 --> 11:19.000
+Firstly,
+
+11:19.000 --> 11:22.000
+CSC was confirmed
+
+11:22.000 --> 11:27.000
+through invisible experiment!
+
+11:27.000 --> 11:30.000
+Why we developed this correlation experiment?
+
+11:30.000 --> 11:32.000
+It mimics the ways
+
+11:32.000 --> 11:36.000
+how the muscle will survive in blood vessel
+
+11:36.000 --> 11:42.000
+and grow into a tumor in the new local environment!
+
+11:42.000 --> 11:44.000
+Does this answer your question?
+
+11:45.000 --> 11:48.000
+I have a related question.
+
+11:48.000 --> 11:51.000
+When CSC is transferred in blood vessel,
+
+11:51.000 --> 11:53.000
+is it in the form of a single cell
+
+11:53.000 --> 11:56.000
+or a sphere?
+
+11:56.000 --> 11:59.000
+This is a very good question.
+
+11:59.000 --> 12:03.000
+Most of the cells
+
+12:03.000 --> 12:05.000
+are transferred in the form of a single cell.
+
+12:05.000 --> 12:06.000
+But in recent years,
+
+12:06.000 --> 12:09.000
+the research of circulating tumor cells
+
+12:09.000 --> 12:10.000
+found that
+
+12:10.000 --> 12:13.000
+the real cause of the transfer
+
+12:13.000 --> 12:18.000
+is the cluster.
+
+12:18.000 --> 12:21.000
+But the cluster is not a single cell
+
+12:21.000 --> 12:23.000
+that grows into a sphere
+
+12:23.000 --> 12:25.000
+and then transferred to other places.
+
+12:25.000 --> 12:27.000
+People usually believe that
+
+12:27.000 --> 12:29.000
+a small number of cells
+
+12:29.000 --> 12:32.000
+fall from the original tumor
+
+12:32.000 --> 12:35.000
+and it can circulate.
+
+12:35.000 --> 12:38.000
+You can imagine that
+
+12:38.000 --> 12:40.000
+in a vast ocean,
+
+12:40.000 --> 12:42.000
+is it a warship
+
+12:42.000 --> 12:44.000
+or an aircraft carrier?
+
+12:44.000 --> 12:46.000
+People think that
+
+12:46.000 --> 12:48.000
+the cluster is like an aircraft carrier.
+
+12:48.000 --> 12:50.000
+It is very powerful
+
+12:50.000 --> 12:54.000
+and has a stronger metastasis ability.
+
+12:54.000 --> 12:56.000
+But people think that
+
+12:56.000 --> 12:58.000
+the cluster fell from the original tumor
+
+12:58.000 --> 13:00.000
+and not a single cell
+
+13:00.000 --> 13:02.000
+that grows into a sphere
+
+13:02.000 --> 13:05.000
+and then transferred.
+
+13:05.000 --> 13:07.000
+Does this answer your question?
+
+13:07.000 --> 13:09.000
+Yes.
+
+13:09.000 --> 13:11.000
+OK.
+
+13:11.000 --> 13:14.000
+Are there any other questions?
+
+13:16.000 --> 13:17.000
+I don't think so.
+
+13:17.000 --> 13:18.000
+You can continue.
+
+13:18.000 --> 13:21.000
+I want to ask a question about operation.
+
+13:21.000 --> 13:22.000
+For example,
+
+13:22.000 --> 13:24.000
+if a worker
+
+13:24.000 --> 13:26.000
+is holding a pipe and dripping,
+
+13:26.000 --> 13:29.000
+can he get a single cell?
+
+13:29.000 --> 13:31.000
+Now,
+
+13:31.000 --> 13:33.000
+what is the practical number?
+
+13:33.000 --> 13:35.000
+For example, 10%? 20%?
+
+13:35.000 --> 13:37.000
+Or how many?
+
+13:37.000 --> 13:39.000
+The best theoretical limit
+
+13:39.000 --> 13:42.000
+is 20% to 30%.
+
+13:42.000 --> 13:44.000
+You can think of it as
+
+13:44.000 --> 13:46.000
+a cell suspension solution.
+
+13:46.000 --> 13:48.000
+Let's say I know
+
+13:48.000 --> 13:50.000
+that there are 10K cells
+
+13:50.000 --> 13:52.000
+in this tube.
+
+13:52.000 --> 13:54.000
+How many of them are there?
+
+13:54.000 --> 13:56.000
+You can calculate
+
+13:56.000 --> 13:58.000
+that there are one cell
+
+13:58.000 --> 14:00.000
+per 100 or 10 microliters.
+
+14:00.000 --> 14:02.000
+Microliters go one by one.
+
+14:03.000 --> 14:05.000
+The theoretical limit
+
+14:05.000 --> 14:07.000
+of this operation model
+
+14:07.000 --> 14:09.000
+is 20% to 30%.
+
+14:09.000 --> 14:11.000
+In fact,
+
+14:11.000 --> 14:13.000
+the control of cell density
+
+14:13.000 --> 14:15.000
+is not so ideal
+
+14:15.000 --> 14:17.000
+when operating.
+
+14:17.000 --> 14:19.000
+So it will be 20% to 30% worse
+
+14:19.000 --> 14:21.000
+than the operating limit.
+
+14:21.000 --> 14:23.000
+It will be worse,
+
+14:23.000 --> 14:26.000
+but it's almost the same, right?
+
+14:26.000 --> 14:28.000
+For example,
+
+14:28.000 --> 14:30.000
+is it 10% or what?
+
+14:30.000 --> 14:32.000
+Or is it less than 5%?
+
+14:34.000 --> 14:36.000
+If you have good skills,
+
+14:36.000 --> 14:38.000
+it can be less than 5%.
+
+14:38.000 --> 14:40.000
+If you don't have good skills,
+
+14:40.000 --> 14:42.000
+it can be 5% or less.
+
+14:42.000 --> 14:44.000
+It's basically difficult to do experiments.
+
+14:44.000 --> 14:46.000
+So it's about 15% or so.
+
+14:46.000 --> 14:48.000
+Yes,
+
+14:48.000 --> 14:50.000
+so everyone usually...
+
+14:50.000 --> 14:52.000
+Yes,
+
+14:52.000 --> 14:54.000
+so you want to see
+
+14:54.000 --> 14:56.000
+if you have 96 well-planned,
+
+14:56.000 --> 14:58.000
+you have Taipei almost 100 times,
+
+14:58.000 --> 15:00.000
+you have 15 cells,
+
+15:00.000 --> 15:02.000
+and you only have 1% to 5% single cell
+
+15:02.000 --> 15:04.000
+that can grow into a sphere.
+
+15:04.000 --> 15:06.000
+That experiment is too difficult to do.
+
+15:08.000 --> 15:10.000
+Yes,
+
+15:10.000 --> 15:12.000
+are there any other questions?
+
+15:12.000 --> 15:14.000
+I don't think so.
+
+15:14.000 --> 15:16.000
+You can continue.
+
+15:16.000 --> 15:18.000
+Okay,
+
+15:18.000 --> 15:20.000
+I will continue to present.
+
+15:20.000 --> 15:22.000
+So the first thing I want to discuss is
+
+15:22.000 --> 15:24.000
+how we achieve single cell capture
+
+15:24.000 --> 15:26.000
+in a high-throughput manner.
+
+15:26.000 --> 15:28.000
+The way we implement
+
+15:28.000 --> 15:30.000
+is by microfluidics.
+
+15:30.000 --> 15:32.000
+The principle is quite simple.
+
+15:32.000 --> 15:34.000
+We capture single cells
+
+15:34.000 --> 15:36.000
+by channel blocking.
+
+15:36.000 --> 15:38.000
+So you can imagine
+
+15:38.000 --> 15:40.000
+this is a
+
+15:40.000 --> 15:42.000
+microfluidics,
+
+15:42.000 --> 15:44.000
+microwell or microchamber.
+
+15:44.000 --> 15:46.000
+This is a capture site.
+
+15:46.000 --> 15:48.000
+The blue part is the channel,
+
+15:48.000 --> 15:50.000
+where the water flows.
+
+15:50.000 --> 15:52.000
+The round part is the flowing cells.
+
+15:52.000 --> 15:54.000
+When the cells come in,
+
+15:54.000 --> 15:56.000
+they block to this place.
+
+15:56.000 --> 15:58.000
+So the flow basically stops.
+
+15:58.000 --> 16:00.000
+The next cell will go to the next place.
+
+16:00.000 --> 16:02.000
+So every well has only one cell.
+
+16:06.000 --> 16:08.000
+If we only have
+
+16:08.000 --> 16:10.000
+10 or 20 chambers,
+
+16:10.000 --> 16:12.000
+a simple design would be fine.
+
+16:12.000 --> 16:14.000
+But in this workbook,
+
+16:14.000 --> 16:16.000
+we have to scale
+
+16:16.000 --> 16:18.000
+up to tens of thousands of chambers.
+
+16:18.000 --> 16:20.000
+At this time,
+
+16:20.000 --> 16:22.000
+this simple duplication
+
+16:22.000 --> 16:24.000
+will cause a big flow imbalance.
+
+16:24.000 --> 16:26.000
+In other words,
+
+16:28.000 --> 16:30.000
+if the whole
+
+16:30.000 --> 16:32.000
+flow cell comes in,
+
+16:32.000 --> 16:34.000
+it will mostly be upstream or downstream.
+
+16:34.000 --> 16:36.000
+The capture rate
+
+16:36.000 --> 16:38.000
+will be very, very low.
+
+16:38.000 --> 16:40.000
+How do I make
+
+16:40.000 --> 16:42.000
+the cell uniformly distributed
+
+16:42.000 --> 16:44.000
+on this
+
+16:46.000 --> 16:48.000
+array?
+
+16:48.000 --> 16:50.000
+The method I use is
+
+16:50.000 --> 16:52.000
+circuit modeling.
+
+16:52.000 --> 16:54.000
+In fact, this whole microfluidics
+
+16:54.000 --> 16:56.000
+is like a full circuit.
+
+16:56.000 --> 16:58.000
+Every channel
+
+16:58.000 --> 17:00.000
+has a flow group.
+
+17:00.000 --> 17:02.000
+This flow group
+
+17:02.000 --> 17:04.000
+is dominated by the capture site.
+
+17:04.000 --> 17:06.000
+This flow group is the largest
+
+17:06.000 --> 17:08.000
+because the size is the smallest.
+
+17:08.000 --> 17:10.000
+The entrance channel
+
+17:10.000 --> 17:12.000
+and the exit channel
+
+17:12.000 --> 17:14.000
+are relatively small,
+
+17:14.000 --> 17:16.000
+but because they are long,
+
+17:16.000 --> 17:18.000
+the build-up resistance is also large.
+
+17:18.000 --> 17:20.000
+The build-up resistance
+
+17:20.000 --> 17:22.000
+from 1 to 200
+
+17:22.000 --> 17:24.000
+accumulates in each channel.
+
+17:24.000 --> 17:26.000
+We just said that
+
+17:26.000 --> 17:28.000
+simple duplication won't work.
+
+17:28.000 --> 17:30.000
+If we want a good distribution,
+
+17:30.000 --> 17:32.000
+every branch
+
+17:32.000 --> 17:34.000
+has the same current.
+
+17:34.000 --> 17:36.000
+We know that
+
+17:36.000 --> 17:38.000
+if the upper part
+
+17:38.000 --> 17:40.000
+is short,
+
+17:40.000 --> 17:42.000
+the resistance here is small,
+
+17:42.000 --> 17:44.000
+the resistance here is also small,
+
+17:44.000 --> 17:46.000
+this thing can happen.
+
+17:46.000 --> 17:48.000
+But if we put 200
+
+17:48.000 --> 17:50.000
+negligible resistance here,
+
+17:50.000 --> 17:52.000
+the performance of the current
+
+17:52.000 --> 17:54.000
+will be much worse
+
+17:54.000 --> 17:56.000
+than what we want.
+
+17:56.000 --> 17:58.000
+How do we
+
+17:58.000 --> 18:00.000
+balance the current?
+
+18:00.000 --> 18:02.000
+Flow resistance is actually
+
+18:02.000 --> 18:04.000
+a function of channel geometry.
+
+18:04.000 --> 18:06.000
+You can see
+
+18:06.000 --> 18:08.000
+circular or rectangular
+
+18:08.000 --> 18:10.000
+are different functions.
+
+18:10.000 --> 18:12.000
+In short, the longer the channel,
+
+18:12.000 --> 18:14.000
+the higher the resistance.
+
+18:14.000 --> 18:16.000
+The wider the width,
+
+18:16.000 --> 18:18.000
+the smaller the resistance.
+
+18:18.000 --> 18:20.000
+So we use
+
+18:20.000 --> 18:22.000
+microfabrication
+
+18:22.000 --> 18:24.000
+to make the
+
+18:24.000 --> 18:26.000
+opening
+
+18:26.000 --> 18:28.000
+10 microns by 10 microns
+
+18:28.000 --> 18:30.000
+in size.
+
+18:30.000 --> 18:32.000
+First,
+
+18:32.000 --> 18:34.000
+this can achieve high flow resistance.
+
+18:34.000 --> 18:36.000
+Second,
+
+18:36.000 --> 18:38.000
+10 by 10 can block
+
+18:38.000 --> 18:40.000
+the cancer cell.
+
+18:40.000 --> 18:42.000
+We believe that
+
+18:42.000 --> 18:44.000
+the size of the cancer cell
+
+18:44.000 --> 18:46.000
+is greater than 10 microns.
+
+18:46.000 --> 18:48.000
+I will explain this later.
+
+18:50.000 --> 18:52.000
+We have overcome
+
+18:52.000 --> 18:54.000
+the microwave flow resistance
+
+18:54.000 --> 18:56.000
+we have defined here.
+
+18:56.000 --> 18:58.000
+What about the entrance channel
+
+18:58.000 --> 19:00.000
+and the NC channel?
+
+19:00.000 --> 19:02.000
+I use
+
+19:02.000 --> 19:04.000
+microfabrication
+
+19:04.000 --> 19:06.000
+to make a geometry
+
+19:06.000 --> 19:08.000
+100 microns wide
+
+19:08.000 --> 19:10.000
+and 100 microns high.
+
+19:10.000 --> 19:12.000
+I can make the entrance channel
+
+19:12.000 --> 19:14.000
+and the NC channel
+
+19:14.000 --> 19:16.000
+smaller than
+
+19:16.000 --> 19:18.000
+the cancer cells.
+
+19:18.000 --> 19:20.000
+In short,
+
+19:20.000 --> 19:22.000
+we use microfabrication
+
+19:22.000 --> 19:24.000
+to control the flow resistance.
+
+19:24.000 --> 19:26.000
+So we have a good
+
+19:26.000 --> 19:28.000
+flow circuit to achieve
+
+19:28.000 --> 19:30.000
+single cell capture.
+
+19:32.000 --> 19:34.000
+This shows
+
+19:34.000 --> 19:36.000
+three different sizes
+
+19:36.000 --> 19:38.000
+of chips
+
+19:38.000 --> 19:40.000
+from 800
+
+19:40.000 --> 19:42.000
+to 12800
+
+19:42.000 --> 19:44.000
+chamber chips.
+
+19:44.000 --> 19:46.000
+The size is shown
+
+19:46.000 --> 19:48.000
+on the slide.
+
+19:48.000 --> 19:50.000
+This is a
+
+19:50.000 --> 19:52.000
+device mirror.
+
+19:52.000 --> 19:54.000
+Each chamber
+
+19:54.000 --> 19:56.000
+can capture a single cell.
+
+19:56.000 --> 19:58.000
+This is a microscope image.
+
+19:58.000 --> 20:00.000
+The cancer cell is labeled
+
+20:00.000 --> 20:02.000
+as green fluorescent dye.
+
+20:02.000 --> 20:04.000
+The array
+
+20:04.000 --> 20:06.000
+has a good single cell capture.
+
+20:08.000 --> 20:10.000
+Now we can
+
+20:10.000 --> 20:12.000
+achieve high-throughput
+
+20:12.000 --> 20:14.000
+single cell capture.
+
+20:14.000 --> 20:16.000
+How do we analyze it?
+
+20:16.000 --> 20:18.000
+This is a comic.
+
+20:18.000 --> 20:20.000
+I have
+
+20:20.000 --> 20:22.000
+a
+
+20:22.000 --> 20:24.000
+a
+
+20:24.000 --> 20:26.000
+a
+
+20:26.000 --> 20:28.000
+a
+
+20:28.000 --> 20:30.000
+a
+
+20:30.000 --> 20:32.000
+a
+
+20:32.000 --> 20:34.000
+a
+
+20:34.000 --> 20:36.000
+a
+
+20:36.000 --> 20:38.000
+a
+
+20:38.000 --> 20:40.000
+a
+
+20:40.000 --> 20:42.000
+a
+
+20:42.000 --> 20:44.000
+a
+
+20:44.000 --> 20:46.000
+a
+
+20:46.000 --> 20:48.000
+a
+
+20:48.000 --> 20:50.000
+a
+
+20:50.000 --> 20:52.000
+a
+
+20:52.000 --> 20:54.000
+a
+
+20:54.000 --> 20:56.000
+a
+
+20:56.000 --> 20:58.000
+a
+
+20:58.000 --> 21:00.000
+a
+
+21:00.000 --> 21:02.000
+a
+
+21:02.000 --> 21:04.000
+a
+
+21:04.000 --> 21:06.000
+a
+
+21:06.000 --> 21:08.000
+a
+
+21:08.000 --> 21:10.000
+a
+
+21:10.000 --> 21:12.000
+a
+
+21:12.000 --> 21:14.000
+a
+
+21:14.000 --> 21:16.000
+a
+
+21:16.000 --> 21:18.000
+a
+
+21:18.000 --> 21:20.000
+a
+
+21:20.000 --> 21:22.000
+a
+
+21:22.000 --> 21:24.000
+a
+
+21:24.000 --> 21:26.000
+a
+
+21:26.000 --> 21:28.000
+a
+
+21:28.000 --> 21:30.000
+a
+
+21:32.000 --> 21:34.000
+a
+
+21:34.000 --> 21:36.000
+a
+
+21:36.000 --> 21:38.000
+a
+
+21:38.000 --> 21:40.000
+a
+
+21:40.000 --> 21:42.000
+a
+
+21:42.000 --> 21:44.000
+a
+
+21:44.000 --> 21:46.000
+a
+
+21:46.000 --> 21:48.000
+a
+
+21:48.000 --> 21:50.000
+a
+
+21:50.000 --> 21:52.000
+a
+
+21:52.000 --> 21:54.000
+a
+
+21:54.000 --> 21:56.000
+a
+
+21:56.000 --> 21:58.000
+a
+
+21:58.000 --> 22:00.000
+a
+
+22:00.000 --> 22:02.000
+a
+
+22:02.000 --> 22:04.000
+a
+
+22:04.000 --> 22:06.000
+a
+
+22:06.000 --> 22:08.000
+a
+
+22:08.000 --> 22:10.000
+a
+
+22:10.000 --> 22:12.000
+a
+
+22:12.000 --> 22:14.000
+a
+
+22:14.000 --> 22:16.000
+a
+
+22:16.000 --> 22:18.000
+a
+
+22:18.000 --> 22:20.000
+a
+
+22:20.000 --> 22:22.000
+a
+
+22:22.000 --> 22:24.000
+a
+
+22:24.000 --> 22:26.000
+a
+
+22:26.000 --> 22:28.000
+a
+
+22:28.000 --> 22:30.000
+a
+
+22:30.000 --> 22:32.000
+a
+
+22:32.000 --> 22:34.000
+a
+
+22:34.000 --> 22:36.000
+a
+
+22:36.000 --> 22:38.000
+a
+
+22:38.000 --> 22:40.000
+a
+
+22:40.000 --> 22:42.000
+a
+
+22:42.000 --> 22:44.000
+a
+
+22:44.000 --> 22:46.000
+a
+
+22:46.000 --> 22:48.000
+a
+
+22:48.000 --> 22:50.000
+a
+
+22:50.000 --> 22:52.000
+a
+
+22:52.000 --> 22:54.000
+a
+
+22:54.000 --> 22:56.000
+a
+
+22:56.000 --> 22:58.000
+a
+
+22:58.000 --> 23:00.000
+a
+
+23:00.000 --> 23:02.000
+a
+
+23:02.000 --> 23:04.000
+a
+
+23:04.000 --> 23:06.000
+a
+
+23:06.000 --> 23:08.000
+a
+
+23:08.000 --> 23:10.000
+a
+
+23:10.000 --> 23:12.000
+a
+
+23:12.000 --> 23:14.000
+a
+
+23:14.000 --> 23:16.000
+a
+
+23:16.000 --> 23:18.000
+a
+
+23:18.000 --> 23:20.000
+a
+
+23:20.000 --> 23:22.000
+a
+
+23:22.000 --> 23:24.000
+a
+
+23:24.000 --> 23:26.000
+a
+
+23:26.000 --> 23:28.000
+a
+
+23:28.000 --> 23:30.000
+a
+
+23:30.000 --> 23:32.000
+a
+
+23:32.000 --> 23:34.000
+a
+
+23:34.000 --> 23:36.000
+a
+
+23:36.000 --> 23:38.000
+a
+
+23:38.000 --> 23:40.000
+a
+
+23:40.000 --> 23:42.000
+a
+
+23:42.000 --> 23:44.000
+a
+
+23:44.000 --> 23:46.000
+a
+
+23:46.000 --> 23:48.000
+a
+
+23:48.000 --> 23:50.000
+a
+
+23:50.000 --> 23:52.000
+a
+
+23:52.000 --> 23:54.000
+a
+
+23:54.000 --> 23:56.000
+a
+
+23:56.000 --> 23:58.000
+a
+
+23:58.000 --> 24:00.000
+a
+
+24:00.000 --> 24:02.000
+a
+
+24:02.000 --> 24:04.000
+a
+
+24:04.000 --> 24:06.000
+a
+
+24:06.000 --> 24:08.000
+a
+
+24:08.000 --> 24:10.000
+a
+
+24:10.000 --> 24:12.000
+a
+
+24:12.000 --> 24:14.000
+a
+
+24:14.000 --> 24:16.000
+a
+
+24:16.000 --> 24:18.000
+a
+
+24:18.000 --> 24:20.000
+a
+
+24:20.000 --> 24:22.000
+a
+
+24:22.000 --> 24:24.000
+a
+
+24:24.000 --> 24:26.000
+a
+
+24:26.000 --> 24:28.000
+a
+
+24:28.000 --> 24:30.000
+a
+
+24:30.000 --> 24:32.000
+a
+
+24:32.000 --> 24:34.000
+a
+
+24:34.000 --> 24:36.000
+a
+
+24:36.000 --> 24:38.000
+a
+
+24:38.000 --> 24:40.000
+a
+
+24:40.000 --> 24:42.000
+a
+
+24:42.000 --> 24:44.000
+a
+
+24:44.000 --> 24:46.000
+a
+
+24:46.000 --> 24:48.000
+a
+
+24:48.000 --> 24:50.000
+a
+
+24:50.000 --> 24:52.000
+a
+
+24:52.000 --> 24:54.000
+a
+
+24:54.000 --> 24:56.000
+a
+
+24:56.000 --> 24:58.000
+a
+
+24:58.000 --> 25:00.000
+a
+
+25:00.000 --> 25:02.000
+a
+
+25:02.000 --> 25:04.000
+a
+
+25:04.000 --> 25:06.000
+a
+
+25:06.000 --> 25:08.000
+a
+
+25:08.000 --> 25:10.000
+a
+
+25:10.000 --> 25:12.000
+a
+
+25:12.000 --> 25:14.000
+a
+
+25:14.000 --> 25:16.000
+a
+
+25:16.000 --> 25:18.000
+a
+
+25:18.000 --> 25:20.000
+a
+
+25:20.000 --> 25:22.000
+a
+
+25:22.000 --> 25:24.000
+a
+
+25:24.000 --> 25:26.000
+a
+
+25:26.000 --> 25:28.000
+a
+
+25:28.000 --> 25:30.000
+a
+
+25:30.000 --> 25:32.000
+a
+
+25:32.000 --> 25:34.000
+a
+
+25:34.000 --> 25:36.000
+a
+
+25:36.000 --> 25:38.000
+a
+
+25:38.000 --> 25:40.000
+a
+
+25:40.000 --> 25:42.000
+a
+
+25:42.000 --> 25:44.000
+a
+
+25:44.000 --> 25:46.000
+a
+
+25:46.000 --> 25:48.000
+a
+
+25:48.000 --> 25:50.000
+a
+
+25:50.000 --> 25:52.000
+a
+
+25:52.000 --> 25:54.000
+a
+
+25:54.000 --> 25:56.000
+a
+
+25:56.000 --> 25:58.000
+a
+
+25:58.000 --> 26:00.000
+a
+
+26:00.000 --> 26:02.000
+a
+
+26:02.000 --> 26:04.000
+a
+
+26:04.000 --> 26:06.000
+a
+
+26:06.000 --> 26:08.000
+a
+
+26:08.000 --> 26:10.000
+a
+
+26:10.000 --> 26:12.000
+a
+
+26:12.000 --> 26:14.000
+a
+
+26:14.000 --> 26:16.000
+a
+
+26:16.000 --> 26:18.000
+a
+
+26:18.000 --> 26:20.000
+a
+
+26:20.000 --> 26:22.000
+a
+
+26:22.000 --> 26:24.000
+a
+
+26:24.000 --> 26:26.000
+a
+
+26:26.000 --> 26:28.000
+a
+
+26:28.000 --> 26:30.000
+a
+
+26:30.000 --> 26:32.000
+a
+
+26:32.000 --> 26:34.000
+a
+
+26:34.000 --> 26:36.000
+a
+
+26:36.000 --> 26:38.000
+a
+
+26:38.000 --> 26:40.000
+a
+
+26:40.000 --> 26:42.000
+a
+
+26:42.000 --> 26:44.000
+a
+
+26:44.000 --> 26:46.000
+a
+
+26:46.000 --> 26:48.000
+a
+
+26:48.000 --> 26:50.000
+a
+
+26:50.000 --> 26:52.000
+a
+
+26:52.000 --> 26:54.000
+a
+
+26:54.000 --> 26:56.000
+a
+
+26:56.000 --> 26:58.000
+a
+
+26:58.000 --> 27:00.000
+a
+
+27:00.000 --> 27:02.000
+a
+
+27:02.000 --> 27:04.000
+a
+
+27:04.000 --> 27:06.000
+a
+
+27:06.000 --> 27:08.000
+a
+
+27:08.000 --> 27:10.000
+a
+
+27:10.000 --> 27:12.000
+a
+
+27:12.000 --> 27:14.000
+a
+
+27:14.000 --> 27:16.000
+a
+
+27:16.000 --> 27:18.000
+a
+
+27:18.000 --> 27:20.000
+a
+
+27:20.000 --> 27:22.000
+a
+
+27:22.000 --> 27:24.000
+a
+
+27:24.000 --> 27:26.000
+a
+
+27:26.000 --> 27:28.000
+a
+
+27:28.000 --> 27:30.000
+a
+
+27:30.000 --> 27:32.000
+a
+
+27:32.000 --> 27:34.000
+a
+
+27:34.000 --> 27:36.000
+a
+
+27:36.000 --> 27:38.000
+a
+
+27:38.000 --> 27:40.000
+a
+
+27:40.000 --> 27:42.000
+a
+
+27:42.000 --> 27:44.000
+a
+
+27:44.000 --> 27:46.000
+a
+
+27:46.000 --> 27:48.000
+a
+
+27:48.000 --> 27:50.000
+a
+
+27:50.000 --> 27:52.000
+a
+
+27:52.000 --> 27:54.000
+a
+
+27:54.000 --> 27:56.000
+a
+
+27:56.000 --> 27:58.000
+a
+
+27:58.000 --> 28:00.000
+a
+
+28:00.000 --> 28:02.000
+a
+
+28:02.000 --> 28:04.000
+a
+
+28:04.000 --> 28:06.000
+a
+
+28:06.000 --> 28:08.000
+a
+
+28:08.000 --> 28:10.000
+a
+
+28:10.000 --> 28:12.000
+a
+
+28:12.000 --> 28:14.000
+a
+
+28:14.000 --> 28:16.000
+a
+
+28:16.000 --> 28:18.000
+a
+
+28:18.000 --> 28:20.000
+a
+
+28:20.000 --> 28:22.000
+a
+
+28:22.000 --> 28:24.000
+a
+
+28:24.000 --> 28:26.000
+a
+
+28:26.000 --> 28:28.000
+a
+
+28:28.000 --> 28:30.000
+a
+
+28:30.000 --> 28:32.000
+a
+
+28:32.000 --> 28:34.000
+a
+
+28:34.000 --> 28:36.000
+a
+
+28:36.000 --> 28:38.000
+a
+
+28:38.000 --> 28:40.000
+a
+
+28:40.000 --> 28:42.000
+a
+
+28:42.000 --> 28:44.000
+a
+
+28:44.000 --> 28:46.000
+a
+
+28:46.000 --> 28:48.000
+a
+
+28:48.000 --> 28:50.000
+a
+
+28:50.000 --> 28:52.000
+a
+
+28:52.000 --> 28:54.000
+a
+
+28:54.000 --> 28:56.000
+a
+
+28:56.000 --> 28:58.000
+a
+
+28:58.000 --> 29:00.000
+a
+
+29:00.000 --> 29:02.000
+a
+
+29:02.000 --> 29:04.000
+a
+
+29:04.000 --> 29:06.000
+a
+
+29:06.000 --> 29:08.000
+a
+
+29:08.000 --> 29:10.000
+a
+
+29:10.000 --> 29:12.000
+a
+
+29:12.000 --> 29:14.000
+a
+
+29:14.000 --> 29:16.000
+a
+
+29:16.000 --> 29:18.000
+a
+
+29:18.000 --> 29:20.000
+a
+
+29:20.000 --> 29:22.000
+a
+
+29:22.000 --> 29:24.000
+a
+
+29:24.000 --> 29:26.000
+a
+
+29:26.000 --> 29:28.000
+a
+
+29:28.000 --> 29:30.000
+a
+
+29:30.000 --> 29:32.000
+a
+
+29:32.000 --> 29:34.000
+a
+
+29:34.000 --> 29:36.000
+a
+
+29:36.000 --> 29:38.000
+a
+
+29:38.000 --> 29:40.000
+a
+
+29:40.000 --> 29:42.000
+a
+
+29:42.000 --> 29:44.000
+a
+
+29:44.000 --> 29:46.000
+a
+
+29:46.000 --> 29:48.000
+a
+
+29:48.000 --> 29:50.000
+a
+
+29:50.000 --> 29:52.000
+a
+
+29:52.000 --> 29:54.000
+a
+
+29:54.000 --> 29:56.000
+a
+
+29:56.000 --> 29:58.000
+a
+
+29:58.000 --> 30:00.000
+a
+
+30:00.000 --> 30:02.000
+a
+
+30:02.000 --> 30:04.000
+a
+
+30:04.000 --> 30:06.000
+a
+
+30:06.000 --> 30:08.000
+a
+
+30:08.000 --> 30:10.000
+a
+
+30:10.000 --> 30:12.000
+a
+
+30:12.000 --> 30:14.000
+a
+
+30:14.000 --> 30:16.000
+a
+
+30:16.000 --> 30:18.000
+a
+
+30:18.000 --> 30:20.000
+a
+
+30:20.000 --> 30:22.000
+a
+
+30:22.000 --> 30:24.000
+a
+
+30:24.000 --> 30:26.000
+a
+
+30:26.000 --> 30:28.000
+a
+
+30:28.000 --> 30:30.000
+a
+
+30:30.000 --> 30:32.000
+a
+
+30:32.000 --> 30:34.000
+a
+
+30:34.000 --> 30:36.000
+a
+
+30:36.000 --> 30:38.000
+a
+
+30:38.000 --> 30:40.000
+a
+
+30:40.000 --> 30:42.000
+a
+
+30:42.000 --> 30:44.000
+a
+
+30:44.000 --> 30:46.000
+a
+
+30:46.000 --> 30:48.000
+a
+
+30:48.000 --> 30:50.000
+a
+
+30:50.000 --> 30:52.000
+a
+
+30:52.000 --> 30:54.000
+a
+
+30:54.000 --> 30:56.000
+a
+
+30:56.000 --> 30:58.000
+a
+
+30:58.000 --> 31:00.000
+a
+
+31:00.000 --> 31:02.000
+a
+
+31:02.000 --> 31:04.000
+a
+
+31:04.000 --> 31:06.000
+a
+
+31:06.000 --> 31:08.000
+a
+
+31:08.000 --> 31:10.000
+a
+
+31:10.000 --> 31:12.000
+a
+
+31:12.000 --> 31:14.000
+a
+
+31:14.000 --> 31:16.000
+a
+
+31:16.000 --> 31:18.000
+a
+
+31:18.000 --> 31:20.000
+a
+
+31:20.000 --> 31:22.000
+a
+
+31:22.000 --> 31:24.000
+a
+
+31:24.000 --> 31:26.000
+a
+
+31:26.000 --> 31:28.000
+a
+
+31:28.000 --> 31:30.000
+a
+
+31:30.000 --> 31:32.000
+a
+
+31:32.000 --> 31:34.000
+a
+
+31:34.000 --> 31:36.000
+a
+
+31:36.000 --> 31:38.000
+a
+
+31:38.000 --> 31:40.000
+a
+
+31:40.000 --> 31:42.000
+a
+
+31:42.000 --> 31:44.000
+a
+
+31:44.000 --> 31:46.000
+a
+
+31:46.000 --> 31:48.000
+a
+
+31:48.000 --> 31:50.000
+a
+
+31:50.000 --> 31:52.000
+a
+
+31:52.000 --> 31:54.000
+a
+
+31:54.000 --> 31:56.000
+a
+
+31:56.000 --> 31:58.000
+a
+
+31:58.000 --> 32:00.000
+a
+
+32:00.000 --> 32:02.000
+a
+
+32:02.000 --> 32:04.000
+a
+
+32:04.000 --> 32:06.000
+a
+
+32:06.000 --> 32:08.000
+a
+
+32:08.000 --> 32:10.000
+a
+
+32:10.000 --> 32:12.000
+a
+
+32:12.000 --> 32:14.000
+a
+
+32:14.000 --> 32:16.000
+a
+
+32:16.000 --> 32:18.000
+a
+
+32:18.000 --> 32:20.000
+a
+
+32:20.000 --> 32:22.000
+a
+
+32:22.000 --> 32:24.000
+a
+
+32:24.000 --> 32:26.000
+a
+
+32:26.000 --> 32:28.000
+a
+
+32:28.000 --> 32:30.000
+a
+
+32:30.000 --> 32:32.000
+a
+
+32:32.000 --> 32:34.000
+a
+
+32:34.000 --> 32:36.000
+a
+
+32:36.000 --> 32:38.000
+a
+
+32:38.000 --> 32:40.000
+a
+
+32:40.000 --> 32:42.000
+a
+
+32:42.000 --> 32:44.000
+a
+
+32:44.000 --> 32:46.000
+a
+
+32:46.000 --> 32:48.000
+a
+
+32:48.000 --> 32:50.000
+a
+
+32:50.000 --> 32:52.000
+a
+
+32:52.000 --> 32:54.000
+a
+
+32:54.000 --> 32:56.000
+a
+
+32:56.000 --> 32:58.000
+a
+
+32:58.000 --> 33:00.000
+a
+
+33:00.000 --> 33:02.000
+a
+
+33:02.000 --> 33:04.000
+a
+
+33:04.000 --> 33:06.000
+a
+
+33:06.000 --> 33:08.000
+a
+
+33:08.000 --> 33:10.000
+a
+
+33:10.000 --> 33:12.000
+a
+
+33:12.000 --> 33:14.000
+a
+
+33:14.000 --> 33:16.000
+a
+
+33:16.000 --> 33:18.000
+a
+
+33:18.000 --> 33:20.000
+a
+
+33:20.000 --> 33:22.000
+a
+
+33:22.000 --> 33:24.000
+a
+
+33:24.000 --> 33:26.000
+a
+
+33:26.000 --> 33:28.000
+a
+
+33:28.000 --> 33:30.000
+a
+
+33:30.000 --> 33:32.000
+a
+
+33:32.000 --> 33:34.000
+a
+
+33:34.000 --> 33:36.000
+a
+
+33:36.000 --> 33:38.000
+a
+
+33:38.000 --> 33:40.000
+a
+
+33:40.000 --> 33:42.000
+a
+
+33:42.000 --> 33:44.000
+a
+
+33:44.000 --> 33:46.000
+a
+
+33:46.000 --> 33:48.000
+a
+
+33:48.000 --> 33:50.000
+a
+
+33:50.000 --> 33:52.000
+a
+
+33:52.000 --> 33:54.000
+a
+
+33:54.000 --> 33:56.000
+a
+
+33:56.000 --> 33:58.000
+a
+
+33:58.000 --> 34:00.000
+a
+
+34:00.000 --> 34:02.000
+a
+
+34:02.000 --> 34:04.000
+a
+
+34:04.000 --> 34:06.000
+a
+
+34:06.000 --> 34:08.000
+a
+
+34:08.000 --> 34:10.000
+a
+
+34:10.000 --> 34:12.000
+a
+
+34:12.000 --> 34:14.000
+a
+
+34:14.000 --> 34:16.000
+a
+
+34:16.000 --> 34:18.000
+a
+
+34:18.000 --> 34:20.000
+a
+
+34:20.000 --> 34:22.000
+a
+
+34:22.000 --> 34:24.000
+a
+
+34:24.000 --> 34:26.000
+a
+
+34:26.000 --> 34:28.000
+a
+
+34:28.000 --> 34:30.000
+a
+
+34:30.000 --> 34:32.000
+a
+
+34:32.000 --> 34:34.000
+a
+
+34:34.000 --> 34:36.000
+a
+
+34:36.000 --> 34:38.000
+a
+
+34:38.000 --> 34:40.000
+a
+
+34:40.000 --> 34:42.000
+a
+
+34:42.000 --> 34:44.000
+a
+
+34:44.000 --> 34:46.000
+a
+
+34:46.000 --> 34:48.000
+a
+
+34:48.000 --> 34:50.000
+a
+
+34:50.000 --> 34:52.000
+a
+
+34:52.000 --> 34:54.000
+a
+
+34:54.000 --> 34:56.000
+a
+
+34:56.000 --> 34:58.000
+a
+
+34:58.000 --> 35:00.000
+a
+
+35:00.000 --> 35:02.000
+a
+
+35:02.000 --> 35:04.000
+a
+
+35:04.000 --> 35:06.000
+a
+
+35:06.000 --> 35:08.000
+a
+
+35:08.000 --> 35:10.000
+a
+
+35:10.000 --> 35:12.000
+a
+
+35:12.000 --> 35:14.000
+a
+
+35:14.000 --> 35:16.000
+a
+
+35:16.000 --> 35:18.000
+a
+
+35:18.000 --> 35:20.000
+a
+
+35:20.000 --> 35:22.000
+a
+
+35:22.000 --> 35:24.000
+a
+
+35:24.000 --> 35:26.000
+a
+
+35:26.000 --> 35:28.000
+a
+
+35:28.000 --> 35:30.000
+a
+
+35:30.000 --> 35:32.000
+a
+
+35:32.000 --> 35:34.000
+a
+
+35:34.000 --> 35:36.000
+a
+
+35:36.000 --> 35:38.000
+a
+
+35:38.000 --> 35:40.000
+a
+
+35:40.000 --> 35:42.000
+a
+
+35:42.000 --> 35:44.000
+a
+
+35:44.000 --> 35:46.000
+a
+
+35:46.000 --> 35:48.000
+a
+
+35:48.000 --> 35:50.000
+a
+
+35:50.000 --> 35:52.000
+a
+
+35:52.000 --> 35:54.000
+a
+
+35:54.000 --> 35:56.000
+a
+
+35:56.000 --> 35:58.000
+a
+
+35:58.000 --> 36:00.000
+a
+
+36:00.000 --> 36:02.000
+a
+
+36:02.000 --> 36:04.000
+a
+
+36:04.000 --> 36:06.000
+a
+
+36:06.000 --> 36:08.000
+a
+
+36:08.000 --> 36:10.000
+a
+
+36:10.000 --> 36:12.000
+a
+
+36:12.000 --> 36:14.000
+a
+
+36:14.000 --> 36:16.000
+a
+
+36:16.000 --> 36:18.000
+a
+
+36:18.000 --> 36:20.000
+a
+
+36:20.000 --> 36:22.000
+a
+
+36:22.000 --> 36:24.000
+a
+
+36:24.000 --> 36:26.000
+a
+
+36:26.000 --> 36:28.000
+a
+
+36:28.000 --> 36:30.000
+a
+
+36:30.000 --> 36:32.000
+a
+
+36:32.000 --> 36:34.000
+a
+
+36:34.000 --> 36:36.000
+a
+
+36:36.000 --> 36:38.000
+a
+
+36:38.000 --> 36:40.000
+a
+
+36:40.000 --> 36:42.000
+a
+
+36:42.000 --> 36:44.000
+a
+
+36:44.000 --> 36:46.000
+a
+
+36:46.000 --> 36:48.000
+a
+
+36:48.000 --> 36:50.000
+a
+
+36:50.000 --> 36:52.000
+a
+
+36:52.000 --> 36:54.000
+a
+
+36:54.000 --> 36:56.000
+a
+
+36:56.000 --> 36:58.000
+a
+
+36:58.000 --> 37:00.000
+a
+
+37:00.000 --> 37:02.000
+a
+
+37:02.000 --> 37:04.000
+a
+
+37:04.000 --> 37:06.000
+a
+
+37:06.000 --> 37:08.000
+a
+
+37:08.000 --> 37:10.000
+a
+
+37:10.000 --> 37:12.000
+a
+
+37:12.000 --> 37:14.000
+a
+
+37:14.000 --> 37:16.000
+a
+
+37:16.000 --> 37:18.000
+a
+
+37:18.000 --> 37:20.000
+a
+
+37:20.000 --> 37:22.000
+a
+
+37:22.000 --> 37:24.000
+a
+
+37:24.000 --> 37:26.000
+a
+
+37:26.000 --> 37:28.000
+a
+
+37:28.000 --> 37:30.000
+a
+
+37:30.000 --> 37:32.000
+a
+
+37:32.000 --> 37:34.000
+a
+
+37:34.000 --> 37:36.000
+a
+
+37:36.000 --> 37:38.000
+a
+
+37:38.000 --> 37:40.000
+a
+
+37:40.000 --> 37:42.000
+a
+
+37:42.000 --> 37:44.000
+a
+
+37:44.000 --> 37:46.000
+a
+
+37:46.000 --> 37:48.000
+a
+
+37:48.000 --> 37:50.000
+a
+
+37:50.000 --> 37:52.000
+a
+
+37:52.000 --> 37:54.000
+a
+
+37:54.000 --> 37:56.000
+a
+
+37:56.000 --> 37:58.000
+a
+
+37:58.000 --> 38:00.000
+a
+
+38:00.000 --> 38:02.000
+a
+
+38:02.000 --> 38:04.000
+a
+
+38:04.000 --> 38:06.000
+a
+
+38:06.000 --> 38:08.000
+a
+
+38:08.000 --> 38:10.000
+a
+
+38:10.000 --> 38:12.000
+a
+
+38:12.000 --> 38:14.000
+a
+
+38:14.000 --> 38:16.000
+a
+
+38:16.000 --> 38:18.000
+a
+
+38:18.000 --> 38:20.000
+a
+
+38:20.000 --> 38:22.000
+a
+
+38:22.000 --> 38:24.000
+a
+
+38:24.000 --> 38:26.000
+a
+
+38:26.000 --> 38:28.000
+a
+
+38:28.000 --> 38:30.000
+a
+
+38:30.000 --> 38:32.000
+a
+
+38:32.000 --> 38:34.000
+a
+
+38:34.000 --> 38:36.000
+a
+
+38:36.000 --> 38:38.000
+a
+
+38:38.000 --> 38:40.000
+a
+
+38:40.000 --> 38:42.000
+a
+
+38:42.000 --> 38:44.000
+a
+
+38:44.000 --> 38:46.000
+a
+
+38:46.000 --> 38:48.000
+a
+
+38:48.000 --> 38:50.000
+a
+
+38:50.000 --> 38:52.000
+a
+
+38:52.000 --> 38:54.000
+a
+
+38:54.000 --> 38:56.000
+a
+
+38:56.000 --> 38:58.000
+a
+
+38:58.000 --> 39:00.000
+a
+
+39:00.000 --> 39:02.000
+a
+
+39:02.000 --> 39:04.000
+a
+
+39:04.000 --> 39:06.000
+a
+
+39:06.000 --> 39:08.000
+a
+
+39:08.000 --> 39:10.000
+a
+
+39:10.000 --> 39:12.000
+a
+
+39:12.000 --> 39:14.000
+a
+
+39:14.000 --> 39:16.000
+a
+
+39:16.000 --> 39:18.000
+a
+
+39:18.000 --> 39:20.000
+a
+
+39:20.000 --> 39:22.000
+a
+
+39:22.000 --> 39:24.000
+a
+
+39:24.000 --> 39:26.000
+a
+
+39:26.000 --> 39:28.000
+a
+
+39:28.000 --> 39:30.000
+a
+
+39:30.000 --> 39:32.000
+a
+
+39:32.000 --> 39:34.000
+a
+
+39:34.000 --> 39:36.000
+a
+
+39:36.000 --> 39:38.000
+a
+
+39:38.000 --> 39:40.000
+a
+
+39:40.000 --> 39:42.000
+a
+
+39:42.000 --> 39:44.000
+a
+
+39:44.000 --> 39:46.000
+a
+
+39:46.000 --> 39:48.000
+a
+
+39:48.000 --> 39:50.000
+a
+
+39:50.000 --> 39:52.000
+a
+
+39:52.000 --> 39:54.000
+a
+
+39:54.000 --> 39:56.000
+a
+
+39:56.000 --> 39:58.000
+a
+
+39:58.000 --> 40:00.000
+a
+
+40:00.000 --> 40:02.000
+a
+
+40:02.000 --> 40:04.000
+a
+
+40:04.000 --> 40:06.000
+a
+
+40:06.000 --> 40:08.000
+a
+
+40:08.000 --> 40:10.000
+a
+
+40:10.000 --> 40:12.000
+a
+
+40:12.000 --> 40:14.000
+a
+
+40:14.000 --> 40:16.000
+a
+
+40:16.000 --> 40:18.000
+a
+
+40:18.000 --> 40:20.000
+a
+
+40:20.000 --> 40:22.000
+a
+
+40:22.000 --> 40:24.000
+a
+
+40:24.000 --> 40:26.000
+a
+
+40:26.000 --> 40:28.000
+a
+
+40:28.000 --> 40:30.000
+a
+
+40:30.000 --> 40:32.000
+a
+
+40:32.000 --> 40:34.000
+a
+
+40:34.000 --> 40:36.000
+a
+
+40:36.000 --> 40:38.000
+a
+
+40:38.000 --> 40:40.000
+a
+
+40:40.000 --> 40:42.000
+a
+
+40:42.000 --> 40:44.000
+a
+
+40:44.000 --> 40:46.000
+a
+
+40:46.000 --> 40:48.000
+a
+
+40:48.000 --> 40:50.000
+a
+
+40:50.000 --> 40:52.000
+a
+
+40:52.000 --> 40:54.000
+a
+
+40:54.000 --> 40:56.000
+a
+
+40:56.000 --> 40:58.000
+a
+
+40:58.000 --> 41:00.000
+a
+
+41:00.000 --> 41:02.000
+a
+
+41:02.000 --> 41:04.000
+a
+
+41:04.000 --> 41:06.000
+a
+
+41:06.000 --> 41:08.000
+a
+
+41:08.000 --> 41:10.000
+a
+
+41:10.000 --> 41:12.000
+a
+
+41:12.000 --> 41:14.000
+a
+
+41:14.000 --> 41:16.000
+a
+
+41:16.000 --> 41:18.000
+a
+
+41:18.000 --> 41:20.000
+a
+
+41:20.000 --> 41:22.000
+a
+
+41:22.000 --> 41:24.000
+a
+
+41:24.000 --> 41:26.000
+a
+
+41:26.000 --> 41:28.000
+a
+
+41:28.000 --> 41:30.000
+a
+
+41:30.000 --> 41:32.000
+a
+
+41:32.000 --> 41:34.000
+a
+
+41:34.000 --> 41:36.000
+a
+
+41:36.000 --> 41:38.000
+a
+
+41:38.000 --> 41:40.000
+a
+
+41:40.000 --> 41:42.000
+a
+
+41:42.000 --> 41:44.000
+a
+
+41:44.000 --> 41:46.000
+a
+
+41:46.000 --> 41:48.000
+a
+
+41:48.000 --> 41:50.000
+a
+
+41:50.000 --> 41:52.000
+a
+
+41:52.000 --> 41:54.000
+a
+
+41:54.000 --> 41:56.000
+a
+
+41:56.000 --> 41:58.000
+a
+
+41:58.000 --> 42:00.000
+a
+
+42:00.000 --> 42:02.000
+a
+
+42:02.000 --> 42:04.000
+a
+
+42:04.000 --> 42:06.000
+a
+
+42:06.000 --> 42:08.000
+a
+
+42:08.000 --> 42:10.000
+a
+
+42:10.000 --> 42:12.000
+a
+
+42:12.000 --> 42:14.000
+a
+
+42:14.000 --> 42:16.000
+a
+
+42:16.000 --> 42:18.000
+a
+
+42:18.000 --> 42:20.000
+a
+
+42:20.000 --> 42:22.000
+a
+
+42:22.000 --> 42:24.000
+a
+
+42:24.000 --> 42:26.000
+a
+
+42:26.000 --> 42:28.000
+a
+
+42:28.000 --> 42:30.000
+a
+
+42:30.000 --> 42:32.000
+a
+
+42:32.000 --> 42:34.000
+a
+
+42:34.000 --> 42:36.000
+a
+
+42:36.000 --> 42:38.000
+a
+
+42:38.000 --> 42:40.000
+a
+
+42:40.000 --> 42:42.000
+a
+
+42:42.000 --> 42:44.000
+a
+
+42:44.000 --> 42:46.000
+a
+
+42:46.000 --> 42:48.000
+a
+
+42:48.000 --> 42:50.000
+a
+
+42:50.000 --> 42:52.000
+a
+
+42:52.000 --> 42:54.000
+a
+
+42:54.000 --> 42:56.000
+a
+
+42:56.000 --> 42:58.000
+a
+
+42:58.000 --> 43:00.000
+a
+
+43:00.000 --> 43:02.000
+a
+
+43:02.000 --> 43:04.000
+a
+
+43:04.000 --> 43:06.000
+a
+
+43:06.000 --> 43:08.000
+a
+
+43:08.000 --> 43:10.000
+a
+
+43:10.000 --> 43:12.000
+a
+
+43:12.000 --> 43:14.000
+a
+
+43:14.000 --> 43:16.000
+a
+
+43:16.000 --> 43:18.000
+a
+
+43:18.000 --> 43:20.000
+a
+
+43:20.000 --> 43:22.000
+a
+
+43:22.000 --> 43:24.000
+a
+
+43:24.000 --> 43:26.000
+a
+
+43:26.000 --> 43:28.000
+a
+
+43:28.000 --> 43:30.000
+a
+
+43:30.000 --> 43:32.000
+a
+
+43:32.000 --> 43:34.000
+a
+
+43:34.000 --> 43:36.000
+a
+
+43:36.000 --> 43:38.000
+a
+
+43:38.000 --> 43:40.000
+a
+
+43:40.000 --> 43:42.000
+a
+
+43:42.000 --> 43:44.000
+a
+
+43:44.000 --> 43:46.000
+a
+
+43:46.000 --> 43:48.000
+a
+
+43:48.000 --> 43:50.000
+a
+
+43:50.000 --> 43:52.000
+a
+
+43:52.000 --> 43:54.000
+a
+
+43:54.000 --> 43:56.000
+a
+
+43:56.000 --> 43:58.000
+a
+
+43:58.000 --> 44:00.000
+a
+
+44:00.000 --> 44:02.000
+a
+
+44:02.000 --> 44:04.000
+a
+
+44:04.000 --> 44:06.000
+a
+
+44:06.000 --> 44:08.000
+a
+
+44:08.000 --> 44:10.000
+a
+
+44:10.000 --> 44:12.000
+a
+
+44:12.000 --> 44:14.000
+a
+
+44:14.000 --> 44:16.000
+a
+
+44:16.000 --> 44:18.000
+a
+
+44:18.000 --> 44:20.000
+a
+
+44:20.000 --> 44:22.000
+a
+
+44:22.000 --> 44:24.000
+a
+
+44:24.000 --> 44:26.000
+a
+
+44:26.000 --> 44:28.000
+a
+
+44:28.000 --> 44:30.000
+a
+
+44:30.000 --> 44:32.000
+a
+
+44:32.000 --> 44:34.000
+a
+
+44:34.000 --> 44:36.000
+a
+
+44:36.000 --> 44:38.000
+a
+
+44:38.000 --> 44:40.000
+a
+
+44:40.000 --> 44:42.000
+a
+
+44:42.000 --> 44:44.000
+a
+
+44:44.000 --> 44:46.000
+a
+
+44:46.000 --> 44:48.000
+a
+
+44:48.000 --> 44:50.000
+a
+
+44:50.000 --> 44:52.000
+a
+
+44:52.000 --> 44:54.000
+a
+
+44:54.000 --> 44:56.000
+a
+
+44:56.000 --> 44:58.000
+a
+
+44:58.000 --> 45:00.000
+a
+
+45:00.000 --> 45:02.000
+a
+
+45:02.000 --> 45:04.000
+a
+
+45:04.000 --> 45:06.000
+a
+
+45:06.000 --> 45:08.000
+a
+
+45:08.000 --> 45:10.000
+a
+
+45:10.000 --> 45:12.000
+a
+
+45:12.000 --> 45:14.000
+a
+
+45:14.000 --> 45:16.000
+a
+
+45:16.000 --> 45:18.000
+a
+
+45:18.000 --> 45:20.000
+a
+
+45:20.000 --> 45:22.000
+a
+
+45:22.000 --> 45:24.000
+a
+
+45:24.000 --> 45:26.000
+a
+
+45:26.000 --> 45:28.000
+a
+
+45:28.000 --> 45:30.000
+a
+
+45:30.000 --> 45:32.000
+a
+
+45:32.000 --> 45:34.000
+a
+
+45:34.000 --> 45:36.000
+a
+
+45:36.000 --> 45:38.000
+a
+
+45:38.000 --> 45:40.000
+a
+
+45:40.000 --> 45:42.000
+a
+
+45:42.000 --> 45:44.000
+a
+
+45:44.000 --> 45:46.000
+a
+
+45:46.000 --> 45:48.000
+a
+
+45:48.000 --> 45:50.000
+a
+
+45:50.000 --> 45:52.000
+a
+
+45:52.000 --> 45:54.000
+a
+
+45:54.000 --> 45:56.000
+a
+
+45:56.000 --> 45:58.000
+a
+
+45:58.000 --> 46:00.000
+a
+
+46:00.000 --> 46:02.000
+a
+
+46:02.000 --> 46:04.000
+a
+
+46:04.000 --> 46:06.000
+a
+
+46:06.000 --> 46:08.000
+a
+
+46:08.000 --> 46:10.000
+a
+
+46:10.000 --> 46:12.000
+a
+
+46:12.000 --> 46:14.000
+a
+
+46:14.000 --> 46:16.000
+a
+
+46:16.000 --> 46:18.000
+a
+
+46:18.000 --> 46:20.000
+a
+
+46:20.000 --> 46:22.000
+a
+
+46:22.000 --> 46:24.000
+a
+
+46:24.000 --> 46:26.000
+a
+
+46:26.000 --> 46:28.000
+a
+
+46:28.000 --> 46:30.000
+a
+
+46:30.000 --> 46:32.000
+a
+
+46:32.000 --> 46:34.000
+a
+
+46:34.000 --> 46:36.000
+a
+
+46:36.000 --> 46:38.000
+a
+
+46:38.000 --> 46:40.000
+a
+
+46:40.000 --> 46:42.000
+a
+
+46:42.000 --> 46:44.000
+a
+
+46:44.000 --> 46:46.000
+a
+
+46:46.000 --> 46:48.000
+a
+
+46:48.000 --> 46:50.000
+a
+
+46:50.000 --> 46:52.000
+a
+
+46:52.000 --> 46:54.000
+a
+
+46:54.000 --> 46:56.000
+a
+
+46:56.000 --> 46:58.000
+a
+
+46:58.000 --> 47:00.000
+a
+
+47:00.000 --> 47:02.000
+a
+
+47:02.000 --> 47:04.000
+a
+
+47:04.000 --> 47:06.000
+a
+
+47:06.000 --> 47:08.000
+a
+
+47:08.000 --> 47:10.000
+a
+
+47:10.000 --> 47:12.000
+a
+
+47:12.000 --> 47:14.000
+a
+
+47:14.000 --> 47:16.000
+a
+
+47:16.000 --> 47:18.000
+a
+
+47:18.000 --> 47:20.000
+a
+
+47:20.000 --> 47:22.000
+a
+
+47:22.000 --> 47:24.000
+a
+
+47:24.000 --> 47:26.000
+a
+
+47:26.000 --> 47:28.000
+a
+
+47:28.000 --> 47:30.000
+a
+
+47:30.000 --> 47:32.000
+a
+
+47:32.000 --> 47:34.000
+a
+
+47:34.000 --> 47:36.000
+a
+
+47:36.000 --> 47:38.000
+a
+
+47:38.000 --> 47:40.000
+a
+
+47:40.000 --> 47:42.000
+a
+
+47:42.000 --> 47:44.000
+a
+
+47:44.000 --> 47:46.000
+a
+
+47:46.000 --> 47:48.000
+a
+
+47:48.000 --> 47:50.000
+a
+
+47:50.000 --> 47:52.000
+a
+
+47:52.000 --> 47:54.000
+a
+
+47:54.000 --> 47:56.000
+a
+
+47:56.000 --> 47:58.000
+a
+
+47:58.000 --> 48:00.000
+a
+
+48:00.000 --> 48:02.000
+a
+
+48:02.000 --> 48:04.000
+a
+
+48:04.000 --> 48:06.000
+a
+
+48:06.000 --> 48:08.000
+a
+
+48:08.000 --> 48:10.000
+a
+
+48:10.000 --> 48:12.000
+a
+
+48:12.000 --> 48:14.000
+a
+
+48:14.000 --> 48:16.000
+a
+
+48:16.000 --> 48:18.000
+a
+
+48:18.000 --> 48:20.000
+a
+
+48:20.000 --> 48:22.000
+a
+
+48:22.000 --> 48:24.000
+a
+
+48:24.000 --> 48:26.000
+a
+
+48:26.000 --> 48:28.000
+a
+
+48:28.000 --> 48:30.000
+a
+
+48:30.000 --> 48:32.000
+a
+
+48:32.000 --> 48:34.000
+a
+
+48:34.000 --> 48:36.000
+a
+
+48:36.000 --> 48:38.000
+a
+
+48:38.000 --> 48:40.000
+a
+
+48:40.000 --> 48:42.000
+a
+
+48:42.000 --> 48:44.000
+a
+
+48:44.000 --> 48:46.000
+a
+
+48:46.000 --> 48:48.000
+a
+
+48:48.000 --> 48:50.000
+a
+
+48:50.000 --> 48:52.000
+a
+
+48:52.000 --> 48:54.000
+a
+
+48:54.000 --> 48:56.000
+a
+
+48:56.000 --> 48:58.000
+a
+
+48:58.000 --> 49:00.000
+a
+
+49:00.000 --> 49:02.000
+a
+
+49:02.000 --> 49:04.000
+a
+
+49:04.000 --> 49:06.000
+a
+
+49:06.000 --> 49:08.000
+a
+
+49:08.000 --> 49:10.000
+a
+
+49:10.000 --> 49:12.000
+a
+
+49:12.000 --> 49:14.000
+a
+
+49:14.000 --> 49:16.000
+a
+
+49:16.000 --> 49:18.000
+a
+
+49:18.000 --> 49:20.000
+a
+
+49:20.000 --> 49:22.000
+a
+
+49:22.000 --> 49:24.000
+a
+
+49:24.000 --> 49:26.000
+a
+
+49:26.000 --> 49:28.000
+a
+
+49:28.000 --> 49:30.000
+a
+
+49:30.000 --> 49:32.000
+a
+
+49:32.000 --> 49:34.000
+a
+
+49:34.000 --> 49:36.000
+a
+
+49:36.000 --> 49:38.000
+a
+
+49:38.000 --> 49:40.000
+a
+
+49:40.000 --> 49:42.000
+a
+
+49:42.000 --> 49:44.000
+a
+
+49:44.000 --> 49:46.000
+a
+
+49:46.000 --> 49:48.000
+a
+
+49:48.000 --> 49:50.000
+a
+
+49:50.000 --> 49:52.000
+a
+
+49:52.000 --> 49:54.000
+a
+
+49:54.000 --> 49:56.000
+a
+
+49:56.000 --> 49:58.000
+a
+
+49:58.000 --> 50:00.000
+a
+
+50:00.000 --> 50:02.000
+a
+
+50:02.000 --> 50:04.000
+a
+
+50:04.000 --> 50:06.000
+a
+
+50:06.000 --> 50:08.000
+a
+
+50:08.000 --> 50:10.000
+a
+
+50:10.000 --> 50:12.000
+a
+
+50:12.000 --> 50:14.000
+a
+
+50:14.000 --> 50:16.000
+a
+
+50:16.000 --> 50:18.000
+a
+
+50:18.000 --> 50:20.000
+a
+
+50:20.000 --> 50:22.000
+a
+
+50:22.000 --> 50:24.000
+a
+
+50:24.000 --> 50:26.000
+a
+
+50:26.000 --> 50:28.000
+a
+
+50:28.000 --> 50:30.000
+a
+
+50:30.000 --> 50:32.000
+a
+
+50:32.000 --> 50:34.000
+a
+
+50:34.000 --> 50:36.000
+a
+
+50:36.000 --> 50:38.000
+a
+
+50:38.000 --> 50:40.000
+a
+
+50:40.000 --> 50:42.000
+a
+
+50:42.000 --> 50:44.000
+a
+
+50:44.000 --> 50:46.000
+a
+
+50:46.000 --> 50:48.000
+a
+
+50:48.000 --> 50:50.000
+a
+
+50:50.000 --> 50:52.000
+a
+
+50:52.000 --> 50:54.000
+a
+
+50:54.000 --> 50:56.000
+a
+
+50:56.000 --> 50:58.000
+a
+
+50:58.000 --> 51:00.000
+a
+
+51:00.000 --> 51:02.000
+a
+
+51:02.000 --> 51:04.000
+a
+
+51:04.000 --> 51:06.000
+a
+
+51:06.000 --> 51:08.000
+a
+
+51:08.000 --> 51:10.000
+a
+
+51:10.000 --> 51:12.000
+a
+
+51:12.000 --> 51:14.000
+a
+
+51:14.000 --> 51:16.000
+a
+
+51:16.000 --> 51:18.000
+a
+
+51:18.000 --> 51:20.000
+a
+
+51:20.000 --> 51:22.000
+a
+
+51:22.000 --> 51:24.000
+a
+
+51:24.000 --> 51:26.000
+a
+
+51:26.000 --> 51:28.000
+a
+
+51:28.000 --> 51:30.000
+a
+
+51:30.000 --> 51:32.000
+a
+
+51:32.000 --> 51:34.000
+a
+
+51:34.000 --> 51:36.000
+a
+
+51:36.000 --> 51:38.000
+a
+
+51:38.000 --> 51:40.000
+a
+
+51:40.000 --> 51:42.000
+a
+
+51:42.000 --> 51:44.000
+a
+
+51:44.000 --> 51:46.000
+a
+
+51:46.000 --> 51:48.000
+a
+
+51:48.000 --> 51:50.000
+a
+
+51:50.000 --> 51:52.000
+a
+
+51:52.000 --> 51:54.000
+a
+
+51:54.000 --> 51:56.000
+a
+
+51:56.000 --> 51:58.000
+a
+
+51:58.000 --> 52:00.000
+a
+
+52:00.000 --> 52:02.000
+a
+
+52:02.000 --> 52:04.000
+a
+
+52:04.000 --> 52:06.000
+a
+
+52:06.000 --> 52:08.000
+a
+
+52:08.000 --> 52:10.000
+a
+
+52:10.000 --> 52:12.000
+a
+
+52:12.000 --> 52:14.000
+a
+
+52:14.000 --> 52:16.000
+a
+
+52:16.000 --> 52:18.000
+a
+
+52:18.000 --> 52:20.000
+a
+
+52:20.000 --> 52:22.000
+a
+
+52:22.000 --> 52:24.000
+a
+
+52:24.000 --> 52:26.000
+a
+
+52:26.000 --> 52:28.000
+a
+
+52:28.000 --> 52:30.000
+a
+
+52:30.000 --> 52:32.000
+a
+
+52:32.000 --> 52:34.000
+a
+
+52:34.000 --> 52:36.000
+a
+
+52:36.000 --> 52:38.000
+a
+
+52:38.000 --> 52:40.000
+a
+
+52:40.000 --> 52:42.000
+a
+
+52:42.000 --> 52:44.000
+a
+
+52:44.000 --> 52:46.000
+a
+
+52:46.000 --> 52:48.000
+a
+
+52:48.000 --> 52:50.000
+a
+
+52:50.000 --> 52:52.000
+a
+
+52:52.000 --> 52:54.000
+a
+
+52:54.000 --> 52:56.000
+a
+
+52:56.000 --> 52:58.000
+a
+
+52:58.000 --> 53:00.000
+a
+
+53:00.000 --> 53:02.000
+a
+
+53:02.000 --> 53:04.000
+a
+
+53:04.000 --> 53:06.000
+a
+
+53:06.000 --> 53:08.000
+a
+
+53:08.000 --> 53:10.000
+a
+
+53:10.000 --> 53:12.000
+a
+
+53:12.000 --> 53:14.000
+a
+
+53:14.000 --> 53:16.000
+a
+
+53:16.000 --> 53:18.000
+a
+
+53:18.000 --> 53:20.000
+a
+
+53:20.000 --> 53:22.000
+a
+
+53:22.000 --> 53:24.000
+a
+
+53:24.000 --> 53:26.000
+a
+
+53:26.000 --> 53:28.000
+a
+
+53:28.000 --> 53:30.000
+a
+
+53:30.000 --> 53:32.000
+a
+
+53:32.000 --> 53:34.000
+a
+
+53:34.000 --> 53:36.000
+a
+
+53:36.000 --> 53:38.000
+a
+
+53:38.000 --> 53:40.000
+a
+
+53:40.000 --> 53:42.000
+a
+
+53:42.000 --> 53:44.000
+a
+
+53:44.000 --> 53:46.000
+a
+
+53:46.000 --> 53:48.000
+a
+
+53:48.000 --> 53:50.000
+a
+
+53:50.000 --> 53:52.000
+a
+
+53:52.000 --> 53:54.000
+a
+
+53:54.000 --> 53:56.000
+a
+
+53:56.000 --> 53:58.000
+a
+
+53:58.000 --> 54:00.000
+a
+
+54:00.000 --> 54:02.000
+a
+
+54:02.000 --> 54:04.000
+a
+
+54:04.000 --> 54:06.000
+a
+
+54:06.000 --> 54:08.000
+a
+
+54:08.000 --> 54:10.000
+a
+
+54:10.000 --> 54:12.000
+a
+
+54:12.000 --> 54:14.000
+a
+
+54:14.000 --> 54:16.000
+a
+
+54:16.000 --> 54:18.000
+a
+
+54:18.000 --> 54:20.000
+a
+
+54:20.000 --> 54:22.000
+a
+
+54:22.000 --> 54:24.000
+a
+
+54:24.000 --> 54:26.000
+a
+
+54:26.000 --> 54:28.000
+a
+
+54:28.000 --> 54:30.000
+a
+
+54:30.000 --> 54:32.000
+a
+
+54:32.000 --> 54:34.000
+a
+
+54:34.000 --> 54:36.000
+a
+
+54:36.000 --> 54:38.000
+a
+
+54:38.000 --> 54:40.000
+a
+
+54:40.000 --> 54:42.000
+a
+
+54:42.000 --> 54:44.000
+a
+
+54:44.000 --> 54:46.000
+a
+
+54:46.000 --> 54:48.000
+a
+
+54:48.000 --> 54:50.000
+a
+
+54:50.000 --> 54:52.000
+a
+
+54:52.000 --> 54:54.000
+a
+
+54:54.000 --> 54:56.000
+a
+
+54:56.000 --> 54:58.000
+a
+
+54:58.000 --> 55:00.000
+a
+
+55:00.000 --> 55:02.000
+a
+
+55:02.000 --> 55:04.000
+a
+
+55:04.000 --> 55:06.000
+a
+
+55:06.000 --> 55:08.000
+a
+
+55:08.000 --> 55:10.000
+a
+
+55:10.000 --> 55:12.000
+a
+
+55:12.000 --> 55:14.000
+a
+
+55:14.000 --> 55:16.000
+a
+
+55:16.000 --> 55:18.000
+a
+
+55:18.000 --> 55:20.000
+a
+
+55:20.000 --> 55:22.000
+a
+
+55:22.000 --> 55:24.000
+a
+
+55:24.000 --> 55:26.000
+a
+
+55:26.000 --> 55:28.000
+a
+
+55:28.000 --> 55:30.000
+a
+
+55:30.000 --> 55:32.000
+a
+
+55:32.000 --> 55:34.000
+a
+
+55:34.000 --> 55:36.000
+a
+
+55:36.000 --> 55:38.000
+a
+
+55:38.000 --> 55:40.000
+a
+
+55:40.000 --> 55:42.000
+a
+
+55:42.000 --> 55:44.000
+a
+
+55:44.000 --> 55:46.000
+a
+
+55:46.000 --> 55:48.000
+a
+
+55:48.000 --> 55:50.000
+a
+
+55:50.000 --> 55:52.000
+a
+
+55:52.000 --> 55:54.000
+a
+
+55:54.000 --> 55:56.000
+a
+
+55:56.000 --> 55:58.000
+a
+
+55:58.000 --> 56:00.000
+a
+
+56:00.000 --> 56:02.000
+a
+
+56:02.000 --> 56:04.000
+a
+
+56:04.000 --> 56:06.000
+a
+
+56:06.000 --> 56:08.000
+a
+
+56:08.000 --> 56:10.000
+a
+
+56:10.000 --> 56:12.000
+a
+
+56:12.000 --> 56:14.000
+a
+
+56:14.000 --> 56:16.000
+a
+
+56:16.000 --> 56:18.000
+a
+
+56:18.000 --> 56:20.000
+a
+
+56:20.000 --> 56:22.000
+a
+
+56:22.000 --> 56:24.000
+a
+
+56:24.000 --> 56:26.000
+a
+
+56:26.000 --> 56:28.000
+a
+
+56:28.000 --> 56:30.000
+a
+
+56:30.000 --> 56:32.000
+a
+
+56:32.000 --> 56:34.000
+a
+
+56:34.000 --> 56:36.000
+a
+
+56:36.000 --> 56:38.000
+a
+
+56:38.000 --> 56:40.000
+a
+
+56:40.000 --> 56:42.000
+a
+
+56:42.000 --> 56:44.000
+a
+
+56:44.000 --> 56:46.000
+a
+
+56:46.000 --> 56:48.000
+a
+
+56:48.000 --> 56:50.000
+a
+
+56:50.000 --> 56:52.000
+a
+
+56:52.000 --> 56:54.000
+a
+
+56:54.000 --> 56:56.000
+a
+
+56:56.000 --> 56:58.000
+a
+
+56:58.000 --> 57:00.000
+a
+
+57:00.000 --> 57:02.000
+a
+
+57:02.000 --> 57:04.000
+a
+
+57:04.000 --> 57:06.000
+a
+
+57:06.000 --> 57:08.000
+a
+
+57:08.000 --> 57:10.000
+a
+
+57:10.000 --> 57:12.000
+a
+
+57:12.000 --> 57:14.000
+a
+
+57:14.000 --> 57:16.000
+a
+
+57:16.000 --> 57:18.000
+a
+
+57:18.000 --> 57:20.000
+a
+
+57:20.000 --> 57:22.000
+a
+
+57:22.000 --> 57:24.000
+a
+
+57:24.000 --> 57:26.000
+a
+
+57:26.000 --> 57:28.000
+a
+
+57:28.000 --> 57:30.000
+a
+
+57:30.000 --> 57:32.000
+a
+
+57:32.000 --> 57:34.000
+a
+
+57:34.000 --> 57:36.000
+a
+
+57:36.000 --> 57:38.000
+a
+
+57:38.000 --> 57:40.000
+a
+
+57:40.000 --> 57:42.000
+a
+
+57:42.000 --> 57:44.000
+a
+
+57:44.000 --> 57:46.000
+a
+
+57:46.000 --> 57:48.000
+a
+
+57:48.000 --> 57:50.000
+a
+
+57:50.000 --> 57:52.000
+a
+
+57:52.000 --> 57:54.000
+a
+
+57:54.000 --> 57:56.000
+a
+
+57:56.000 --> 57:58.000
+a
+
+57:58.000 --> 58:00.000
+a
+
+58:00.000 --> 58:02.000
+a
+
+58:02.000 --> 58:04.000
+a
+
+58:04.000 --> 58:06.000
+a
+
+58:06.000 --> 58:08.000
+a
+
+58:08.000 --> 58:10.000
+a
+
+58:10.000 --> 58:12.000
+a
+
+58:12.000 --> 58:14.000
+a
+
+58:14.000 --> 58:16.000
+a
+
+58:16.000 --> 58:18.000
+a
+
+58:18.000 --> 58:20.000
+a
+
+58:20.000 --> 58:22.000
+a
+
+58:22.000 --> 58:24.000
+a
+
+58:24.000 --> 58:26.000
+a
+
+58:26.000 --> 58:28.000
+a
+
+58:28.000 --> 58:30.000
+a
+
+58:30.000 --> 58:32.000
+a
+
+58:32.000 --> 58:34.000
+a
+

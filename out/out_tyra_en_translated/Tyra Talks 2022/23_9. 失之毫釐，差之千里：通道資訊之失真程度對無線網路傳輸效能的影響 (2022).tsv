@@ -1,0 +1,3571 @@
+start	end	text
+0	13000	Hello everyone, I am Jason, and I am the host of Taira Talk. Welcome everyone to Taira Talk on April 19th.
+13000	20000	The speaker we invited today is Dr. Zhan Yaojia.
+20000	26000	He is currently a PhD candidate at UC Irvine.
+26000	39000	His main work is in telecommunications and network information information theory.
+39000	49000	He used to study and work at NTU Electronics and Telecommunications.
+49000	59000	He is now a PhD student at UC Irvine, and will study abroad under the auspices of the Ministry of Education.
+60000	63000	The topic of his talk today is
+63000	72000	The impact of information technology on wireless network transmission.
+72000	85000	Let's give the speaker a round of applause.
+90000	95000	Let's give the floor to Yaojia.
+95000	97000	Can you hear me?
+97000	99000	Yes.
+99000	103000	Okay, let's get started.
+103000	105000	In fact, this is channel information.
+105000	110000	Channel information refers to wireless transmission.
+110000	118000	If I know in advance that the transmission is good or bad,
+118000	120000	or if I can even quantify it,
+120000	124000	I can make some configurations in advance in the transmission section.
+124000	127000	This will further improve the efficiency of my transmission.
+127000	132000	But if today's information is not so accurate,
+132000	136000	what impact will it have on my transmission efficiency?
+136000	139000	I hope I can get to this point.
+139000	144000	I know some people today,
+144000	147000	and they may all have a background in telecommunications.
+147000	151000	But most of them are not our peers,
+151000	155000	so I'll see how much I can say.
+155000	157000	Okay, good.
+157000	160000	Today I will mainly talk about these three parts.
+160000	163000	The first part is that I will first review
+163000	168000	how we do information transmission
+168000	173000	when we are in the so-called traffic jam.
+173000	176000	Of course, we have some basic restrictions.
+176000	180000	For example, I hope that the higher the efficiency of my transmission,
+180000	181000	the faster the speed,
+181000	184000	but at the same time I can't let the transmission go wrong.
+184000	186000	So what should I do?
+186000	188000	In fact, in 1948,
+188000	191000	Claude Shannon had already answered this question.
+191000	196000	He had some good results,
+196000	198000	which we will introduce.
+198000	201000	The second part is that I will briefly introduce
+201000	204000	some simple networks,
+204000	208000	such as broadcast networks,
+208000	210000	such as interference networks,
+210000	212000	and interference channels.
+212000	217000	They have some current solutions
+217000	219000	for this kind of transmission problem,
+219000	221000	and some problems have been solved,
+221000	223000	and some problems have not been solved.
+223000	224000	Then, in the absence of a solution,
+224000	225000	how do I deal with it?
+225000	227000	How do I get around with it?
+227000	230000	The last part is actually more like my research.
+230000	234000	If today I don't know
+234000	238000	how these channels and links in the middle
+238000	243000	are,
+243000	244000	the detailed information
+244000	248000	will not have any fundamental impact on my transmission.
+248000	250000	That's the first part.
+250000	252000	In fact, basically,
+252000	254000	when we communicate,
+254000	257000	the channels are always noisy,
+257000	260000	they are always affected or interfered with by the transmission.
+260000	262000	It's the same with wired communication,
+262000	263000	and it's the same with wireless communication,
+263000	265000	and the environment of wireless communication is more complicated.
+265000	268000	Because of the so-called multipath effect,
+268000	272000	the signal is distorted.
+272000	274000	In addition to noise,
+274000	276000	there is also distortion,
+276000	278000	which means that at certain moments,
+278000	279000	at certain times,
+279000	281000	the intensity of my signal is actually very low.
+281000	283000	Let's not discuss this complicated situation today.
+283000	286000	Let's continue to discuss the above situation.
+286000	289000	That is, in wired communication,
+289000	292000	the signal is affected by noise.
+292000	296000	When I receive this information,
+296000	298000	it is inevitable that there will be errors,
+298000	300000	and the information will be wrongly decrypted.
+300000	303000	Common models,
+303000	305000	common models for analysis,
+305000	308000	include...
+308000	309000	Wait a minute.
+309000	310000	Common models for analysis,
+310000	312000	there are the following two.
+312000	314000	The first one is AWGN channel,
+314000	316000	Additive Wide Gaussian Noise channel.
+316000	318000	Basically, what it says is that
+318000	321000	I input x1, x2 to xn.
+321000	324000	The output I receive is y1, y2 to yn.
+324000	328000	The output is what I send,
+328000	331000	plus a random variable with a common distribution.
+331000	333000	This random variable is a mutation.
+333000	335000	But in fact, this problem is still very complicated.
+335000	337000	We have made the problem so simple.
+337000	338000	In fact, it is still very complicated.
+338000	340000	So we will further consider
+340000	344000	a simpler binary symmetric channel.
+344000	345000	It only says that
+345000	348000	the input today is x1 to xn.
+349000	351000	At the receiving end,
+351000	352000	we receive y1 to yn.
+352000	354000	Then we limit x1.
+354000	356000	Every x, every y,
+356000	358000	is only 0 or 1.
+358000	360000	What about the middle channel?
+360000	362000	How does the middle channel
+362000	364000	change these x and x?
+364000	366000	For example, after sending in x1,
+366000	368000	suppose it is 0,
+368000	370000	then it has a certain probability
+370000	372000	that p is converted to 1.
+372000	374000	If it is converted to 1 today,
+374000	376000	then this y1 is 1.
+377000	379000	If it has not changed today,
+379000	380000	then it is still 0.
+380000	382000	Now the question is,
+382000	384000	now the question is,
+384000	386000	if I really use this,
+386000	389000	suppose our channel is simplified like this,
+389000	392000	only 0 or 1 can be fed in.
+392000	394000	But there is a certain probability
+394000	397000	that some input will be flipped,
+397000	399000	will be changed.
+399000	401000	How do I do the transmission?
+401000	403000	How do I do the message transmission?
+403000	404000	One way is
+404000	406000	to send 0 or 1 directly.
+406000	409000	Then I don't do any coding at all.
+409000	411000	In this case,
+411000	414000	the error rate is p.
+414000	416000	Because it has given another x1,
+416000	418000	its probability of being flipped is p.
+418000	420000	So the error rate is p.
+420000	422000	Is there a better way?
+422000	423000	Of course there is.
+423000	425000	We do some basic protection devices,
+425000	427000	protection architecture.
+427000	429000	For example, when I want to send 0,
+429000	431000	I send it three times.
+431000	432000	When I want to send 1,
+432000	433000	I send it three times.
+433000	435000	When I receive it,
+435000	438000	we use the so-called multi-digit method.
+438000	440000	The basic high-speed data can be calculated,
+440000	441000	the error rate will be relatively low.
+441000	443000	It probably looks like this.
+443000	444000	But at the same time,
+444000	446000	in order to send a bit,
+446000	448000	I used three channels.
+448000	450000	So my data rate,
+450000	452000	that is, the speed of my data transmission
+452000	453000	will be reduced.
+453000	454000	Of course,
+454000	456000	if I increase my repeated times,
+456000	459000	it will definitely reduce my error rate.
+459000	460000	But what is the price?
+460000	462000	The price is that my data rate will be reduced.
+462000	467000	And when my channel frequency increases,
+467000	470000	its data rate will drop to 0.
+470000	472000	In fact, this is not the result I want.
+472000	474000	Because in order to protect it,
+474000	475000	I send it so many times.
+475000	478000	As a result, my data rate became low.
+478000	481000	Then my question is,
+481000	484000	is it possible to maintain the data rate at the same time?
+484000	486000	For example, the data rate is not 0.
+486000	489000	Reduce the error rate?
+489000	493000	Then, this is a disaster question.
+493000	496000	This is a problem that everyone can immediately think of.
+496000	498000	But the first contribution is that
+498000	501000	I will further analyze this problem.
+501000	502000	The first one is
+502000	505000	to further disassemble the question itself.
+505000	506000	In the first part,
+506000	508000	we add some conditions.
+508000	512000	The first part is that we do not limit
+512000	514000	coding or decoding.
+514000	515000	For x,
+515000	518000	I did not do any calculations for x.
+518000	519000	For y,
+519000	520000	I did not do any calculations for y.
+520000	523000	There is no problem with computing complexity.
+523000	524000	No matter if it is NP-complete.
+524000	526000	If I have a super-powerful computer,
+526000	528000	it can be instantly calculated.
+528000	532000	Then, we do not limit the usage of channels.
+532000	533000	Then,
+533000	534000	further think about data.
+534000	540000	These data bits can actually be borrowed from a table.
+540000	543000	This table is on the right.
+543000	544000	It sends these bits,
+544000	545000	sends these data.
+545000	546000	In fact, what did I send?
+546000	548000	Which message did I send?
+548000	550000	From 1 to M.
+550000	551000	So,
+551000	553000	the nature of this problem is to say,
+553000	554000	for example,
+554000	557000	I want to send the 10th message.
+557000	560000	How do I design
+560000	562000	this method of transmission
+562000	565000	so that it can be correctly resolved
+565000	567000	at the receiving end?
+567000	568000	Then,
+568000	570000	next is the rate.
+570000	571000	The definition of rate,
+571000	573000	as I just said,
+573000	574000	is that
+574000	576000	in the case of so many channels,
+576000	578000	the usage of n channels,
+578000	580000	how many bits did you send?
+580000	581000	OK, there are M bits here.
+581000	582000	So, in fact,
+582000	585000	you can use log12 as your M to represent it.
+585000	587000	So, there are a total of log12 bits.
+587000	588000	So, you can get a basic,
+588000	589000	this is the basic,
+589000	591000	this is the level that high-level math can get.
+591000	594000	That is, M can actually be written as 2nR square.
+594000	595000	n is the usage of the channel.
+595000	596000	Then,
+596000	599000	R is the transmission speed.
+599000	600000	Okay,
+600000	601000	so, in fact, we will get used to it in the future.
+601000	604000	We are used to using this 2nR square
+604000	610000	to represent the number of messages.
+610000	611000	Then,
+611000	612000	it also tells you that
+612000	614000	I want to make the error rate as small as possible.
+614000	615000	It can only be said that
+615000	616000	at the receiving end,
+616000	618000	I sent a message
+618000	619000	at the transmission end.
+619000	621000	At the receiving end,
+621000	623000	I will design a decoder.
+623000	625000	The fan of the decoder is to guess.
+625000	626000	So,
+626000	628000	guess which message was sent.
+628000	629000	I want to,
+629000	630000	so this error means
+630000	631000	this is my message.
+631000	632000	For example, if I send the 10th message,
+632000	633000	you may guess the 10,000th message.
+633000	636000	That is, an error has occurred.
+636000	638000	Then, we want to make the probability of this event
+638000	640000	as small as possible.
+640000	641000	But,
+641000	642000	I must be,
+642000	643000	for example,
+643000	644000	the event is set,
+644000	645000	for example,
+645000	646000	10 to the 10th square,
+646000	648000	10 to the 100th square,
+648000	649000	and so on,
+649000	651000	this kind of probability.
+651000	652000	Okay,
+652000	653000	so,
+653000	654000	now,
+654000	655000	these restrictions
+655000	656000	are converted
+656000	658000	into a transmission structure like this.
+658000	659000	So,
+659000	660000	there is a message in the lower left corner.
+660000	661000	So many.
+661000	662000	Then,
+662000	663000	I can,
+663000	664000	for example,
+664000	665000	I want to send so many bits.
+665000	666000	In fact,
+666000	668000	I am sending a certain message.
+668000	669000	Then,
+669000	670000	it actually says,
+670000	671000	OK,
+671000	672000	I should pass this message
+672000	673000	through a certain method.
+673000	674000	For example,
+674000	675000	check the table.
+675000	676000	We build a
+676000	677000	code book,
+677000	678000	code book.
+678000	679000	Each message corresponds
+679000	681000	to a set of code words.
+681000	682000	Then,
+682000	684000	I use the way of checking the table
+684000	686000	to make the message
+686000	688000	into a code word.
+688000	689000	Then,
+689000	690000	send it to this channel.
+690000	691000	Some bits are crooked.
+691000	692000	Then,
+692000	693000	received crooked.
+693000	694000	Some of the crooked bits
+694000	695000	may be flipped.
+695000	696000	Then,
+696000	697000	we use the decoder.
+697000	698000	When the decoder is set,
+698000	699000	I know,
+699000	701000	everyone knows what the code book looks like.
+701000	702000	Then,
+702000	703000	we can decode
+703000	704000	the message
+704000	705000	we really want.
+705000	706000	OK,
+706000	707000	so,
+707000	708000	now the question becomes,
+708000	709000	can we design
+709000	710000	such a coding scheme?
+710000	711000	What is the coding scheme?
+711000	712000	It is the code mode.
+712000	713000	Code structure.
+713000	714000	What is the code structure?
+714000	715000	It includes
+715000	716000	the code book.
+716000	718000	The encoder is the same as the book.
+718000	719000	It is just a table.
+719000	720000	And,
+720000	721000	my decoder,
+721000	723000	my decoder,
+723000	725000	my code book requires
+725000	726000	whether it can
+726000	727000	be its
+727000	728000	code rate,
+728000	729000	its transmission speed,
+729000	730000	whether it is
+730000	731000	not zero,
+731000	733000	or not a very small value.
+733000	734000	And,
+734000	735000	my decoding error,
+735000	736000	it can be controlled
+736000	738000	at a very small value.
+738000	739000	OK,
+739000	740000	so,
+740000	741000	this is,
+741000	742000	so,
+742000	743000	now,
+743000	744000	we have formulated
+744000	745000	the problem structure
+745000	746000	like this.
+746000	747000	We have
+747000	748000	the encoder,
+748000	749000	the decoder.
+749000	750000	Then,
+750000	751000	our goal is to
+751000	752000	pass this message
+752000	753000	to the other end.
+753000	754000	Then,
+754000	755000	here,
+755000	756000	I want this mhat,
+756000	757000	that is,
+757000	758000	that is,
+758000	759000	the received end
+759000	760000	guess the m,
+760000	762000	guess the message,
+762000	763000	the less chance of error,
+763000	765000	the better.
+765000	766000	Or,
+766000	767000	it is in a certain,
+767000	769000	the chance of error
+769000	770000	is in a certain value
+770000	771000	below,
+771000	772000	OK.
+772000	773000	Then,
+773000	774000	this answer,
+774000	775000	I can,
+775000	776000	so,
+776000	777000	I just,
+777000	778000	I have already exploded,
+778000	779000	that is,
+779000	780000	that is,
+780000	781000	this is actually possible,
+781000	782000	can be done.
+782000	783000	Otherwise,
+783000	784000	I can't go on,
+784000	785000	right?
+785000	786000	I can't go on.
+786000	787000	Then,
+787000	788000	it is,
+788000	789000	then,
+789000	790000	it is with,
+790000	791000	then,
+791000	792000	this is Shannon's
+792000	793000	contribution
+793000	794000	in 1948,
+794000	795000	which is
+795000	796000	one of his most
+796000	797000	famous contributions.
+797000	798000	Then,
+798000	799000	then,
+799000	800000	he,
+830000	831000	he,
+831000	832000	he made
+832000	833000	a set of
+833000	834000	coding schemes
+834000	835000	including what codebook
+835000	835600	plus the
+835600	836600	processor.
+836600	837600	And then,
+837600	838600	but this m maybe
+838600	839600	big
+839600	840600	let my error rate,
+840600	841600	that is my
+841600	842600	effect,
+842600	843600	that is,
+843600	844600	the error can be
+844600	845600	pulled to what I want
+845600	846600	that,
+846600	847600	that is,
+847600	848600	the level of
+848600	849600	minus 100
+849600	850600	quadrature.
+850600	851600	But,
+851600	852600	if you are
+852600	853600	uh,
+853600	854600	if you shoot
+854600	855600	too quickly
+855600	856600	that legendary speed
+856600	857600	today,
+857600	858600	too fast,
+858600	859600	too high,
+859600	860600	that
+860600	861600	problem came.
+861600	862600	If you
+862600	863600	today,
+863600	864600	then
+864600	865600	uh,
+865600	866600	the problem
+866600	867600	on the project
+867600	868600	came,
+868600	869600	because
+869600	870600	there may
+870600	871600	be
+871600	872600	you for all
+872600	873600	N,
+873600	874600	for all
+874600	875600	uh,
+875600	876600	no matter
+876600	877600	you look for
+877600	878600	all possible
+878600	879600	ways,
+879600	880600	you can't
+880600	881600	let my
+881600	882600	error rate
+882600	883600	be able to
+883600	884600	drop to
+884600	885600	the level
+885600	886600	you want
+886600	887600	.
+887600	888600	For example,
+888600	889600	if you
+889600	890600	start to
+890600	891600	drop to
+891600	892600	10-100
+892600	893600	quadrature,
+893600	894600	10-6
+894600	895600	quadrature,
+895600	896600	10-7
+896600	897600	quadrature,
+897600	898600	you will find
+898600	899600	that
+899600	900600	you can't
+900600	901600	find it,
+901600	902600	no matter
+902600	903600	how much
+903600	904600	you use,
+904600	905600	you can't
+905600	906600	find this
+906600	907600	coding
+907600	908600	method.
+908600	909600	OK,
+909600	910600	so this is
+910600	911600	that,
+911600	912600	this is called
+912600	913600	Noisy Channel
+913600	914600	Coding Theorem,
+914600	915600	and then
+915600	916600	we put this
+916600	917600	in our
+917600	918600	code,
+918600	919600	and then
+919600	920600	there are
+920600	921600	any questions
+921600	922600	you can
+922600	923600	ask,
+923600	924600	because
+924600	925600	in fact,
+925600	926600	I should be,
+926600	927600	yes,
+927600	928600	it should be
+928600	929600	like the
+929600	930600	host said,
+930600	931600	it's really
+931600	932600	quite mathematical
+932600	933600	here,
+933600	934600	and then
+934600	935600	uh,
+935600	936600	I used to
+936600	937600	do is
+937600	938600	more engineering
+938600	939600	problems,
+939600	940600	and then
+940600	941600	turn to
+941600	942600	more theoretical
+942600	943600	problems,
+943600	944600	in fact,
+944600	945600	it was a
+945600	946600	long time
+946600	947600	ago,
+947600	948600	so it's
+948600	949600	completely different,
+949600	950600	it takes some
+950600	951600	time to
+951600	952600	switch,
+952600	953600	OK,
+953600	954600	so here
+954600	955600	is a magical
+955600	956600	number,
+956600	957600	which is
+957600	958600	called
+958600	959600	Channel Capacity,
+959600	960600	and then
+960600	961600	it is
+961600	962600	like this,
+962600	963600	this thing,
+963600	964600	what is
+964600	965600	this thing?
+965600	966600	This thing
+966600	967600	actually,
+967600	968600	uh,
+968600	969600	there is also
+969600	970600	a mathematical
+970600	971600	definition,
+971600	972600	it is,
+972600	973600	uh,
+973600	974600	seems to be
+974600	975600	very complicated,
+975600	976600	which is
+976600	977600	the so-called
+977600	978600	Entropy,
+978600	979600	if you are
+979600	980600	reading physics,
+980600	981600	you will know
+981600	982600	what is called
+982600	983600	Entropy,
+983600	984600	if you are reading
+984600	985600	chemistry,
+985600	986600	you know
+986600	987600	what is
+987600	988600	Entropy,
+988600	989600	it basically
+989600	990600	measures
+990600	991600	how messy
+991600	992600	a system
+992600	993600	is,
+993600	994600	but the
+994600	995600	Entropy here
+995600	996600	is not the
+996600	997600	same as
+997600	998600	that side,
+998600	999600	the Entropy
+999600	1000600	definition here
+1000600	1001600	is that
+1001600	1002600	oh,
+1002600	1003600	if today,
+1003600	1004600	in fact,
+1004600	1005600	the probability
+1005600	1006600	is so much,
+1006600	1007600	p of x,
+1007600	1008600	uh,
+1008600	1009600	px of e,
+1009600	1010600	then multiply by log,
+1010600	1011600	there is also
+1011600	1012600	uh,
+1012600	1013600	p of x,
+1013600	1014600	uh,
+1014600	1015600	p of x,
+1015600	1016600	1,
+1016600	1017600	1,
+1017600	1018600	so much,
+1018600	1019600	and then
+1019600	1020600	zero,
+1020600	1021600	zero in,
+1021600	1022600	the calculated value
+1022600	1023600	is the Entropy
+1023600	1024600	of x,
+1024600	1025600	the Entropy
+1025600	1026600	of random variables
+1026600	1027600	of x.
+1027600	1028600	Okay,
+1028600	1029600	so what it means
+1029600	1030600	is actually
+1030600	1031600	the uncertainty
+1031600	1032600	of x,
+1032600	1033600	and then
+1033600	1034600	the uncertainty
+1034600	1035600	of random variables
+1035600	1036600	of x.
+1036600	1037600	Before you do the experiment,
+1037600	1038600	you don't know
+1038600	1039600	how much it is,
+1039600	1040600	but after you do the experiment,
+1040600	1041600	OK,
+1041600	1042600	how many bits
+1042600	1043600	do you need
+1043600	1044600	to represent
+1044600	1045600	the result of the experiment?
+1045600	1046600	OK,
+1046600	1047600	that is to say,
+1047600	1048600	uh,
+1048600	1049600	how many,
+1049600	1050600	it means that
+1050600	1051600	you have,
+1051600	1052600	uh,
+1052600	1053600	you have,
+1053600	1054600	uh,
+1054600	1055600	yeah,
+1055600	1056600	that's about it,
+1056600	1057600	and then
+1057600	1058600	it's actually
+1058600	1059600	listed on the
+1059600	1060600	internet,
+1060600	1061600	it's
+1061600	1062600	19 equations
+1062600	1063600	for
+1063600	1064600	the
+1064600	1065600	Entropy
+1065600	1066600	of information.
+1066600	1067600	OK,
+1067600	1068600	so we have this thing,
+1068600	1069600	we have this,
+1069600	1070600	after its interpretation,
+1070600	1071600	the Entropy
+1071600	1072600	is,
+1072600	1073600	uh,
+1073600	1074600	the uncertainty
+1074600	1075600	of x,
+1075600	1076600	in terms of bits,
+1076600	1077600	or we need to know
+1077600	1078600	the number of x,
+1078600	1079600	we need to know
+1079600	1080600	the number of bits.
+1080600	1081600	So,
+1081600	1082600	let's see
+1082600	1083600	what this thing is,
+1083600	1084600	I of x,
+1084600	1085600	divided by y,
+1085600	1086600	it,
+1086600	1087600	uh,
+1087600	1088600	its name is
+1088600	1089600	Mutual Information.
+1089600	1090600	It,
+1090600	1091600	from the second
+1091600	1092600	interpretation,
+1092600	1093600	we can see that
+1093600	1094600	it's actually
+1094600	1095600	the uncertainty of x
+1095600	1096600	divided by,
+1096600	1097600	after giving y,
+1097600	1098600	how much uncertainty
+1098600	1099600	does x have left?
+1099600	1100600	OK,
+1100600	1101600	so what does it mean?
+1101600	1102600	It's actually,
+1102600	1103600	if you know,
+1103600	1104600	uh,
+1104600	1105600	in the case of y,
+1105600	1106600	uh,
+1106600	1107600	you know in the case of y,
+1107600	1108600	how many bits
+1108600	1109600	do you actually have,
+1109600	1110600	uh,
+1110600	1111600	you,
+1111600	1112600	you can know
+1112600	1113600	how many bits x is.
+1113600	1114600	So,
+1114600	1115600	to a certain extent,
+1115600	1116600	this is actually
+1116600	1117600	what we want,
+1117600	1118600	in terms of intuitive meaning,
+1118600	1119600	it's actually,
+1119600	1120600	uh,
+1120600	1121600	how many bits x is.
+1121600	1122600	So,
+1122600	1124600	what Mutual Information
+1124600	1125600	actually gives me is,
+1125600	1126600	uh,
+1126600	1127600	x is,
+1127600	1128600	uh,
+1128600	1129600	in the case of giving y,
+1129600	1130600	I know
+1130600	1131600	how many things x has.
+1131600	1132600	I know x's,
+1132600	1134600	what x's value is,
+1134600	1135600	in terms of bits,
+1135600	1136600	like this.
+1136600	1137600	OK,
+1137600	1138600	so,
+1138600	1139600	uh,
+1139600	1140600	so intuitively speaking,
+1140600	1141600	this seems to be
+1141600	1142600	what we want,
+1142600	1143600	but
+1143600	1144600	in fact,
+1144600	1145600	this proof is
+1145600	1146600	very,
+1146600	1147600	very difficult.
+1147600	1148600	And then,
+1148600	1149600	because of this proof,
+1149600	1150600	there's a new field called
+1150600	1151600	telecommunications,
+1151600	1152600	telecommunications engineering,
+1152600	1153600	there's a new field called
+1153600	1154600	news theory.
+1154600	1155600	So,
+1155600	1156600	so this proof,
+1156600	1157600	in fact,
+1157600	1158600	in our field,
+1158600	1159600	the proof is divided into two parts.
+1159600	1160600	The first part is the so-called
+1160600	1161600	converse part.
+1161600	1162600	It proves that,
+1162600	1163600	OK,
+1163600	1164600	my code,
+1164600	1165600	my transmission speed is greater than c,
+1165600	1166600	it's impossible.
+1166600	1167600	The second part is the
+1167600	1168600	achievability part,
+1168600	1169600	which is
+1169600	1170600	achievability is
+1170600	1171600	achievable,
+1171600	1172600	achievable,
+1172600	1173600	that kind of part.
+1173600	1174600	So,
+1174600	1175600	it only says,
+1175600	1176600	uh,
+1176600	1177600	I,
+1177600	1178600	I actually have to find a
+1178600	1179600	way to make
+1179600	1180600	this code
+1180600	1181600	pass,
+1181600	1182600	pass with such a high speed,
+1182600	1183600	pass with such a high speed,
+1183600	1184600	pass with such a high speed,
+1184600	1185600	pass with such a high speed,
+1185600	1186600	OK.
+1186600	1187600	pass with such a high speed,
+1187600	1188600	pass with such a high speed,
+1188600	1189600	OK.
+1189600	1190600	OK.
+1190600	1191600	Of course,
+1191600	1192600	in the process of passing,
+1192600	1193600	we have to,
+1193600	1194600	uh,
+1194600	1195600	we,
+1195600	1196600	but we have to specify my
+1196600	1197600	error rate first,
+1197600	1198600	for example,
+1198600	1199600	10 to the minus 100 times,
+1199600	1200600	and then,
+1200600	1201600	we have to find
+1201600	1202600	such a coding scheme,
+1202600	1203600	and then,
+1203600	1204600	and then,
+1204600	1205600	of course,
+1205600	1206600	nk is any nk,
+1206600	1207600	it may take
+1207600	1208600	a while,
+1208600	1209600	OK.
+1209600	1210600	OK,
+1210600	1211600	then,
+1211600	1212600	sorry,
+1212600	1213600	can I ask a question?
+1213600	1214600	Yes, please.
+1214600	1215600	This is,
+1215600	1216600	uh,
+1216600	1217600	because I don't understand
+1217600	1218600	it at all,
+1218600	1219600	so,
+1219600	1220600	uh,
+1220600	1221600	this is,
+1221600	1222600	I want,
+1222600	1223600	can you give an example?
+1223600	1224600	For example,
+1224600	1225600	suppose I know,
+1225600	1226600	suppose I have a
+1226600	1227600	method of passing,
+1227600	1228600	then,
+1228600	1229600	I,
+1229600	1230600	I,
+1230600	1231600	after I get y,
+1231600	1232600	I'm totally sure
+1232600	1233600	how much x is,
+1233600	1234600	then,
+1234600	1235600	what would i be?
+1235600	1236600	Would i be 0?
+1236600	1237600	OK,
+1237600	1238600	if you know,
+1238600	1239600	for example,
+1239600	1240600	like this,
+1240600	1241600	uh,
+1241600	1242600	uh,
+1242600	1243600	if you say you know,
+1243600	1244600	after you get x,
+1244600	1245600	you totally know
+1245600	1246600	how much x is,
+1246600	1247600	right?
+1247600	1248600	So,
+1248600	1249600	my question is,
+1249600	1250600	you have an ideal channel,
+1250600	1251600	yes,
+1251600	1252600	no noise at all,
+1252600	1253600	yes,
+1253600	1254600	then,
+1254600	1255600	after you get y,
+1255600	1256600	you totally know
+1256600	1257600	how much x is,
+1257600	1258600	yes,
+1258600	1259600	yes,
+1259600	1260600	then,
+1260600	1261600	in the following,
+1261600	1262600	probability should be 0,
+1262600	1263600	right?
+1263600	1264600	No,
+1264600	1265600	no,
+1265600	1266600	so,
+1266600	1267600	the x itself,
+1267600	1268600	the x itself,
+1268600	1269600	it's,
+1269600	1270600	OK,
+1270600	1271600	it means,
+1271600	1272600	if you use this way,
+1272600	1273600	I can,
+1273600	1274600	I can answer you like this,
+1274600	1275600	like,
+1275600	1276600	if you know y,
+1276600	1277600	then,
+1277600	1278600	you know x,
+1278600	1279600	then,
+1279600	1280600	suppose it's a channel
+1280600	1281600	with no noise,
+1281600	1282600	x is actually,
+1282600	1283600	you know y,
+1283600	1284600	you know x,
+1284600	1285600	so,
+1285600	1286600	you know the uncertainty of x,
+1286600	1287600	after you know y,
+1287600	1288600	the uncertainty of x is 0,
+1288600	1289600	so,
+1289600	1290600	this one is 0,
+1290600	1291600	so,
+1291600	1292600	this mutual information,
+1292600	1293600	mutual information
+1293600	1294600	is equal to
+1294600	1295600	x's,
+1295600	1296600	like,
+1296600	1297600	you can think about
+1297600	1298600	how many bits x has,
+1298600	1299600	for example,
+1299600	1300600	if you use this formula
+1300600	1301600	to measure,
+1301600	1302600	for example,
+1302600	1303600	the way you code is
+1303600	1304600	using,
+1304600	1305600	for example,
+1305600	1306600	50% chance is 1,
+1306600	1307600	50% chance is 0,
+1307600	1308600	then,
+1308600	1309600	in this way,
+1309600	1310600	if you can,
+1310600	1311600	you put this,
+1311600	1312600	this,
+1312600	1313600	for example,
+1313600	1314600	you take this data
+1314600	1315600	to calculate
+1315600	1316600	h of x,
+1316600	1317600	the answer will be 1,
+1317600	1318600	OK,
+1318600	1319600	what does it mean?
+1319600	1320600	What does it mean?
+1320600	1321600	So,
+1321600	1322600	p is 1 in 2,
+1322600	1323600	right?
+1323600	1324600	p is 1,
+1324600	1325600	right?
+1325600	1326600	OK,
+1326600	1327600	2 is 1,
+1327600	1328600	then,
+1328600	1329600	log is 1 in 2,
+1329600	1330600	1 in 1 in 2 is 1,
+1330600	1331600	this value is 1,
+1331600	1332600	so,
+1332600	1333600	there are two 1 in 2,
+1333600	1334600	right?
+1334600	1335600	OK,
+1335600	1336600	so,
+1336600	1337600	adding up is 1,
+1337600	1338600	OK,
+1338600	1339600	so,
+1339600	1340600	this value,
+1340600	1341600	i,
+1341600	1342600	this mutual information,
+1342600	1343600	mutual information is 1,
+1343600	1344600	what does it mean?
+1344600	1345600	It means that
+1345600	1346600	my transmission speed
+1346600	1347600	can be 1,
+1347600	1348600	1 bit per channel use,
+1348600	1349600	OK,
+1349600	1350600	so,
+1350600	1351600	channel capacity will be 1,
+1351600	1352600	right,
+1352600	1353600	OK,
+1353600	1354600	right,
+1354600	1355600	and you can easily
+1355600	1356600	prove this thing,
+1356600	1357600	why?
+1357600	1358600	Because the channel is noise,
+1358600	1359600	so,
+1359600	1360600	no matter what you send,
+1360600	1361600	it will receive,
+1361600	1362600	it should be said that
+1362600	1363600	what I received
+1363600	1364600	is exactly the same as what I send,
+1364600	1365600	right?
+1365600	1366600	Then it means that
+1366600	1367600	there is no channel,
+1367600	1368600	I will directly go to
+1368600	1369600	take my,
+1369600	1370600	I know this,
+1370600	1371600	OK,
+1371600	1372600	this base case,
+1372600	1373600	I understand now,
+1373600	1374600	OK,
+1374600	1375600	right,
+1375600	1376600	OK,
+1376600	1377600	then,
+1377600	1378600	I should give a,
+1378600	1379600	I actually wrote an example
+1379600	1380600	in my lecture,
+1380600	1381600	but I forgot to say,
+1381600	1382600	I want to clarify,
+1382600	1383600	that is,
+1383600	1384600	that is,
+1384600	1385600	the example just now
+1385600	1386600	is not to say,
+1386600	1387600	how to say,
+1387600	1388600	in the case of noiseless,
+1388600	1389600	mutual information
+1389600	1390600	is always 1,
+1390600	1391600	the example just now
+1391600	1392600	is 1,
+1392600	1393600	OK,
+1393600	1394600	this is related to
+1394600	1395600	your encoding method,
+1395600	1396600	right?
+1396600	1397600	Right,
+1397600	1398600	OK,
+1398600	1399600	OK,
+1399600	1400600	so,
+1400600	1401600	in my X,
+1401600	1402600	for example,
+1402600	1403600	if today
+1403600	1404600	my X
+1404600	1405600	is 10%,
+1405600	1406600	for example,
+1406600	1407600	like,
+1407600	1408600	another example,
+1408600	1409600	suppose my X,
+1409600	1410600	encoding method
+1410600	1411600	100% is 1,
+1411600	1412600	0% is
+1412600	1413600	0,
+1413600	1414600	that means
+1414600	1415600	everything I send
+1415600	1416600	is all 1,
+1416600	1417600	right?
+1417600	1418600	Right,
+1418600	1419600	right,
+1419600	1420600	that's right,
+1420600	1421600	right,
+1421600	1422600	this is another extreme example,
+1422600	1423600	then,
+1423600	1424600	in this case,
+1424600	1425600	you can figure out that
+1425600	1426600	entropy is actually 0,
+1426600	1427600	right,
+1427600	1428600	because 1 times
+1428600	1429600	so you didn't
+1429600	1430600	send any information
+1430600	1431600	out,
+1431600	1432600	right,
+1432600	1433600	that's right,
+1433600	1434600	then this
+1434600	1435600	is 0,
+1435600	1436600	so,
+1436600	1437600	so that means,
+1437600	1438600	OK,
+1438600	1439600	you want to
+1439600	1440600	say,
+1440600	1441600	OK,
+1441600	1442600	OK,
+1442600	1443600	OK,
+1443600	1444600	OK,
+1444600	1445600	OK,
+1445600	1446600	OK,
+1446600	1447600	OK,
+1447600	1448600	OK,
+1448600	1449600	OK,
+1449600	1450600	OK,
+1450600	1451600	OK,
+1451600	1452600	OK,
+1452600	1453600	OK,
+1453600	1454600	OK,
+1454600	1455600	OK,
+1455600	1456600	OK,
+1456600	1457600	OK,
+1457600	1458600	OK,
+1458600	1459600	OK,
+1459600	1460600	so,
+1460600	1461600	the next thing
+1461600	1462600	we have to ask is,
+1462600	1463600	how do I
+1463600	1464600	get to this thing?
+1464600	1465600	Because I'm
+1465600	1466600	always at this thing,
+1466600	1467600	actually,
+1467600	1468600	because,
+1468600	1469600	how do I get to this thing?
+1469600	1470600	He said,
+1470600	1471600	I can use
+1471600	1472600	such a fast speed
+1472600	1473600	to code,
+1473600	1474600	to pass information.
+1474600	1475600	So,
+1475600	1476600	how do I actually do this thing?
+1476600	1477600	So,
+1477600	1478600	I'm trying to use
+1478600	1479600	some examples
+1479600	1480600	to talk about this.
+1480600	1481600	Because his,
+1481600	1482600	let's see,
+1482600	1483600	let's see if
+1483600	1484600	I can finish
+1484600	1485600	in a short time,
+1485600	1486600	to make it clear,
+1486600	1487600	like this.
+1487600	1488600	OK,
+1488600	1489600	so,
+1489600	1490600	what is the current goal?
+1490600	1491600	I'm going to find a codebook.
+1491600	1492600	And then,
+1492600	1493600	his,
+1493600	1494600	his,
+1494600	1495600	his,
+1495600	1496600	the speed of coding
+1496600	1497600	is,
+1497600	1498600	or his speed of transmission
+1498600	1499600	is very close to
+1499600	1500600	his dc.
+1500600	1501600	And then,
+1501600	1502600	there is a decoder.
+1502600	1503600	He is a decoder.
+1503600	1504600	OK,
+1504600	1505600	so he's looking for these two things.
+1505600	1506600	Let's assume
+1506600	1507600	my input is,
+1507600	1508600	this is 0,
+1508600	1509600	input,
+1509600	1510600	x,
+1510600	1511600	x1 is
+1511600	1512600	0.5 when it is equal to 1,
+1512600	1513600	0.5 when it is equal to 0.
+1513600	1514600	And then,
+1514600	1515600	the channel,
+1515600	1516600	this channel,
+1516600	1517600	the probability of flipping is 0.1.
+1517600	1518600	That is,
+1518600	1519600	if I enter 0 here,
+1519600	1520600	10% of the probability
+1520600	1521600	will be turned into 1,
+1521600	1522600	90% of the probability,
+1522600	1523600	90% of the probability
+1523600	1524600	will still remain the same,
+1524600	1525600	like this.
+1525600	1526600	OK,
+1526600	1527600	OK,
+1527600	1528600	OK,
+1528600	1529600	so,
+1529600	1530600	in fact,
+1530600	1531600	how do they think about this problem?
+1531600	1532600	He actually wants to say,
+1532600	1533600	OK,
+1533600	1534600	then I just randomly generate
+1534600	1535600	that,
+1535600	1536600	I have a random number generator,
+1536600	1537600	I just randomly generate
+1537600	1538600	0 and 1,
+1538600	1539600	a total of n.
+1539600	1540600	Then,
+1540600	1541600	I use this,
+1541600	1542600	these points mean that
+1542600	1543600	there is a set of results.
+1543600	1544600	Then,
+1544600	1545600	I use this big circle
+1545600	1546600	to represent
+1546600	1547600	all possible situations.
+1547600	1548600	So,
+1548600	1549600	these points
+1549600	1550600	are actually
+1550600	1551600	just a few,
+1551600	1552600	just a few examples.
+1552600	1553600	OK,
+1553600	1554600	according to the rule of large numbers,
+1554600	1555600	I use
+1555600	1556600	the probability
+1556600	1557600	XR,
+1557600	1558600	its probability of
+1558600	1559600	1 is 0.5,
+1559600	1560600	the probability of 0
+1560600	1561600	is also 0.5.
+1561600	1562600	So,
+1562600	1563600	what does it mean?
+1563600	1564600	I can find some,
+1564600	1565600	OK,
+1565600	1566600	I can find some,
+1566600	1567600	for example,
+1567600	1568600	this red dot,
+1568600	1569600	I can find some codes,
+1569600	1570600	it is about 50%
+1570600	1571600	of the composition,
+1571600	1572600	about half is 1,
+1572600	1573600	half is,
+1573600	1574600	the other half is 0,
+1574600	1575600	like the red code
+1575600	1576600	is like this.
+1576600	1577600	The green code is also like this,
+1577600	1578600	that is,
+1578600	1579600	the front half is 1,
+1579600	1580600	the back half is 0,
+1580600	1581600	like this green one
+1581600	1582600	is the same,
+1582600	1583600	the front half is 0,
+1583600	1584600	the back half is 1,
+1584600	1585600	OK,
+1585600	1586600	the rule of large numbers
+1586600	1587600	tells us that
+1587600	1589600	I randomly generate
+1589600	1592600	a set of code words,
+1592600	1593600	it will fall into
+1593600	1595600	this blue set,
+1595600	1596600	we call this
+1596600	1597600	typical set,
+1597600	1598600	it will fall into this set,
+1598600	1599600	the probability of it is 1.
+1599600	1600600	Why?
+1600600	1601600	For example,
+1601600	1602600	like this,
+1602600	1603600	for example,
+1603600	1604600	like this,
+1604600	1605600	all of them are
+1605600	1606600	1.
+1606600	1607600	OK,
+1607600	1608600	if today,
+1608600	1609600	although,
+1609600	1610600	all of them are 1.
+1610600	1611600	OK,
+1611600	1612600	then,
+1612600	1613600	this situation
+1613600	1614600	is very unlikely to happen,
+1614600	1615600	right?
+1615600	1616600	Right?
+1616600	1617600	According to the rule of large numbers,
+1617600	1618600	it,
+1618600	1619600	you have to generate all of it,
+1619600	1620600	you have to throw the copper plate,
+1620600	1621600	throw it 10,000 times in a row,
+1621600	1622600	it's all positive,
+1622600	1624600	basically 0.
+1624600	1625600	If all of them
+1625600	1627600	are all 0,
+1627600	1628600	there is a chance of the opposite,
+1628600	1630600	it's all close to 0.
+1630600	1631600	So,
+1631600	1632600	only in,
+1632600	1633600	so,
+1633600	1634600	this thing
+1634600	1635600	will not fall into
+1635600	1636600	this blue area,
+1636600	1637600	this blue area
+1637600	1638600	is the collection of all
+1638600	1639600	that,
+1639600	1640600	54% is 1,
+1640600	1641600	54% is 0,
+1641600	1642600	all the sequences,
+1642600	1643600	all of that,
+1643600	1644600	the code word,
+1644600	1645600	like this.
+1645600	1646600	OK,
+1646600	1647600	if I choose a red code word today,
+1647600	1648600	and then take it,
+1648600	1649600	let it pass,
+1649600	1650600	what will happen to me?
+1650600	1651600	What is this channel
+1651600	1652600	actually doing?
+1652600	1653600	Is to take these
+1653600	1654600	101010,
+1654600	1655600	and then,
+1655600	1656600	I go,
+1656600	1657600	when passing through the channel,
+1657600	1658600	these 10 will be
+1658600	1659600	the most random flip,
+1659600	1660600	some may not change,
+1660600	1662600	some may flip.
+1662600	1663600	That,
+1663600	1664600	there is about 10%,
+1664600	1665600	about 10% of the,
+1665600	1667600	10% of the bit
+1667600	1668600	may be flipped,
+1668600	1670600	90% of the chance will not,
+1670600	1671600	90% of the bit
+1671600	1672600	will not be flipped,
+1672600	1673600	because this is
+1673600	1674600	a channel feature.
+1674600	1675600	OK,
+1675600	1676600	what does it mean
+1676600	1677600	in math?
+1677600	1678600	In fact,
+1678600	1679600	I am the original thing,
+1679600	1680600	plus a sequence,
+1680600	1681600	that is,
+1681600	1682600	I just add
+1682600	1683600	component y,
+1683600	1684600	and then,
+1684600	1685600	what is this zn?
+1685600	1686600	This zn is actually
+1686600	1687600	10% is 1,
+1687600	1688600	90% is 0.
+1688600	1689600	OK,
+1689600	1690600	and then,
+1690600	1691600	that,
+1691600	1692600	that is also very likely,
+1692600	1693600	that is also,
+1693600	1694600	according to the rule of thumb,
+1694600	1695600	this is also very likely,
+1695600	1696600	this is very likely
+1696600	1697600	to happen,
+1697600	1698600	and the probability of happening
+1698600	1699600	is very close to 1.
+1699600	1700600	OK,
+1700600	1701600	what will happen?
+1701600	1702600	What will happen?
+1702600	1703600	It will be found that
+1703600	1704600	my red,
+1704600	1705600	after going through
+1705600	1706600	my own disturbance,
+1706600	1707600	it may be
+1707600	1708600	this red,
+1708600	1709600	in the small circle,
+1709600	1711600	any of the red points.
+1711600	1712600	OK,
+1712600	1713600	then we put
+1713600	1714600	this kind of thing,
+1714600	1715600	every point is actually
+1715600	1716600	a sequence,
+1716600	1717600	n,
+1717600	1718600	the length is n sequence,
+1718600	1719600	0, 1 sequence.
+1719600	1720600	That,
+1720600	1721600	specifically,
+1721600	1722600	which,
+1722600	1723600	which is flipped,
+1723600	1724600	in fact,
+1724600	1725600	we do not know,
+1725600	1726600	we put it all
+1726600	1727600	in here.
+1727600	1728600	That,
+1728600	1729600	I pass
+1729600	1730600	101010
+1730600	1731600	the situation,
+1731600	1733600	I received the y,
+1733600	1734600	uh,
+1734600	1735600	what is it,
+1735600	1736600	like this,
+1736600	1737600	and then,
+1737600	1738600	what is it,
+1738600	1739600	it is 101010
+1739600	1740600	plus that,
+1740600	1741600	all possible,
+1741600	1742600	all,
+1742600	1743600	uh,
+1743600	1744600	the probability of occurrence is very high,
+1744600	1745600	the result of the disturbance,
+1745600	1746600	for example,
+1746600	1747600	there are
+1747600	1748600	the first 10% is 1,
+1748600	1749600	the rest is 0,
+1749600	1750600	then we put it
+1750600	1751600	in this,
+1751600	1752600	this collection.
+1752600	1753600	Then,
+1753600	1754600	this,
+1754600	1755600	then,
+1755600	1756600	this red dot is,
+1756600	1757600	for example,
+1757600	1758600	101010
+1758600	1759600	plus,
+1759600	1760600	the first 10% is 1,
+1760600	1761600	the rest is 0,
+1761600	1762600	the result,
+1762600	1763600	like this.
+1763600	1764600	OK,
+1764600	1765600	the same,
+1765600	1766600	the same thing,
+1766600	1767600	that,
+1767600	1768600	these things are all very likely to happen,
+1768600	1769600	because according to the law of magnitude,
+1769600	1770600	that,
+1770600	1771600	the same truth,
+1771600	1772600	we can,
+1772600	1773600	what,
+1773600	1774600	we can,
+1774600	1775600	uh,
+1775600	1776600	we can see that,
+1776600	1777600	OK,
+1777600	1778600	in fact,
+1778600	1779600	uh,
+1779600	1780600	you just said that the small circle,
+1780600	1781600	in fact,
+1781600	1782600	in the red circle,
+1782600	1783600	the red circle,
+1783600	1784600	it itself also has that,
+1784600	1785600	that,
+1785600	1786600	it itself is channel output,
+1786600	1787600	that is,
+1787600	1788600	its so-called typical set.
+1788600	1789600	We can figure out that,
+1789600	1790600	OK,
+1790600	1791600	Y actually has 51%,
+1791600	1792600	50% is 0,
+1792600	1793600	then we collect those,
+1793600	1794600	half is 1,
+1794600	1795600	half is 0,
+1795600	1796600	those sequences,
+1796600	1797600	we collect them in here.
+1797600	1798600	Then,
+1798600	1799600	we put these green dots,
+1799600	1800600	this green dot,
+1800600	1801600	this green dot,
+1801600	1802600	this green dot,
+1802600	1803600	this green dot,
+1803600	1804600	these four green dots,
+1804600	1805600	through this way of passing,
+1805600	1806600	we can receive these,
+1806600	1807600	uh,
+1807600	1808600	for example,
+1808600	1809600	the green dot on the far left,
+1809600	1810600	what it receives is,
+1810600	1811600	it may be,
+1811600	1812600	this green small circle inside,
+1812600	1813600	the top one,
+1813600	1814600	what it receives is this,
+1814600	1815600	the right one,
+1815600	1816600	the bottom one,
+1816600	1817600	is the one at the bottom.
+1817600	1818600	OK.
+1818600	1819600	Good.
+1819600	1820600	Then,
+1820600	1821600	I'm going to design this decoder.
+1821600	1822600	Of course,
+1822600	1823600	you can observe that,
+1823600	1824600	if the dots I choose today,
+1824600	1825600	are very few,
+1825600	1826600	for example,
+1826600	1827600	I only choose these five dots,
+1827600	1828600	then in fact,
+1828600	1829600	after it is printed,
+1829600	1830600	I see on the Y,
+1830600	1831600	I see on the Y,
+1831600	1832600	that they may not
+1832600	1833600	overlap,
+1833600	1834600	that they may not overlap,
+1834600	1835600	they are all independent,
+1835600	1836600	they are all disjoint.
+1836600	1837600	they are all independent,
+1837600	1838600	they are all disjoint.
+1838600	1839600	So,
+1839600	1840600	what does it mean?
+1840600	1841600	As long as its red dot
+1841600	1842600	appears in the red area,
+1842600	1843600	appears in the red area,
+1843600	1844600	we can see that
+1844600	1845600	Ah,
+1845600	1847600	it wears this.
+1847600	1849600	The green on the left,
+1849600	1850600	if it's sent here,
+1850600	1851600	the green on the left,
+1851600	1854600	We tell directly that
+1854600	1855600	it wears this?
+1855600	1856600	OK.
+1856600	1857600	Therefore,
+1857600	1858600	we can design the decoder.
+1858600	1859600	Then,
+1859600	1860600	I am going to see
+1860600	1861600	I am going to design the decoder.
+1861600	1862600	Then,
+1862600	1863600	I'm going to see
+1863600	1864600	this Y,
+1864600	1865600	or the Sequence
+1865600	1866600	that is received by me
+1866600	1868600	or security
+1868600	1871600	or security
+1871600	1872600	into this compound.
+1872600	1873600	If it's in this set,
+1873600	1875600	if it's in this set,
+1875600	1877600	I will decode the Y
+1877600	1879600	into the corresponding X.
+1879600	1882600	into the corresponding X.
+1882600	1883600	For example,
+1883600	1884600	if Y is in red,
+1884600	1886600	I will decode it into red.
+1886600	1888600	If Y is in the upper left corner,
+1888600	1890600	I will decode it into the upper left corner.
+1890600	1892600	I will decode it into the upper left corner.
+1892600	1893600	OK.
+1893600	1894600	OK.
+1894600	1895600	This is the most mathematical part.
+1895600	1896600	This is the most mathematical part
+1896600	1897600	of the whole decoding.
+1897600	1899600	We can calculate
+1899600	1901600	how many
+1901600	1904600	how many
+1904600	1906600	how many
+1906600	1907600	OK.
+1907600	1908600	I should say like this.
+1908600	1909600	OK.
+1909600	1910600	This is the design of the decoder.
+1910600	1912600	I just said that
+1912600	1913600	if they don't overlap
+1913600	1914600	these small groups
+1914600	1916600	or circles,
+1916600	1917600	then
+1917600	1919600	I can successfully decode
+1919600	1920600	and there is no error, right?
+1920600	1921600	Or the error rate
+1921600	1922600	I can say that
+1922600	1923600	I have no error.
+1923600	1925600	But if today
+1925600	1926600	there is a little
+1926600	1927600	allow a little overlap,
+1927600	1928600	then we can
+1928600	1929600	let the error rate
+1929600	1930600	let the error rate
+1930600	1931600	control the threshold
+1931600	1933600	control the threshold
+1933600	1934600	that we want
+1934600	1935600	10 to the negative 6th square
+1935600	1936600	10 to the negative 100th square.
+1936600	1937600	OK.
+1937600	1938600	Today
+1938600	1939600	Now the problem is that
+1939600	1940600	OK.
+1940600	1941600	We can't choose too many
+1941600	1942600	OK.
+1942600	1943600	We can't choose too many
+1943600	1944600	these points.
+1944600	1945600	For example, we just chose 5 points.
+1945600	1946600	It has made this
+1946600	1947600	red inside
+1947600	1948600	so many crowded
+1948600	1949600	small circles.
+1949600	1950600	If we choose
+1950600	1951600	a few more,
+1951600	1952600	then these small circles
+1952600	1953600	will actually overlap.
+1953600	1954600	As long as there is a large
+1954600	1955600	large-scale overlap
+1955600	1956600	large-scale overlap
+1956600	1957600	large-scale overlap
+1957600	1958600	large-scale overlap
+1958600	1959600	the error rate
+1959600	1960600	and the error rate
+1960600	1961600	is still very high.
+1961600	1962600	OK.
+1962600	1963600	We try to avoid
+1963600	1964600	this situation.
+1964600	1965600	So how do we see it?
+1965600	1966600	Let's see
+1966600	1967600	OK.
+1967600	1968600	Let's see
+1968600	1969600	in this blue circle
+1969600	1970600	how many
+1970600	1971600	how many
+1971600	1972600	how many
+1972600	1973600	how many
+1973600	1974600	code words are in it.
+1974600	1975600	Then we put this
+1975600	1976600	blue circle
+1976600	1977600	called TX
+1977600	1978600	like this.
+1978600	1979600	OK.
+1979600	1980600	TX
+1980600	1981600	Then we use a bar
+1981600	1982600	to represent its
+1982600	1983600	absolute value
+1983600	1984600	to represent its number.
+1984600	1985600	Then you can calculate
+1985600	1986600	its number
+1986600	1987600	is actually about
+1987600	1988600	X
+1988600	1989600	is the entropy of X.
+1989600	1990600	Then its detailed introduction
+1990600	1991600	is
+1991600	1992600	is actually very simple.
+1992600	1993600	You just think about
+1993600	1994600	how do I
+1994600	1995600	if I randomly generate code words
+1995600	1996600	how do I get
+1996600	1997600	the red one?
+1997600	1998600	Then the probability of it being calculated
+1998600	1999600	is about this much.
+1999600	2000600	This is high school math
+2000600	2001600	can be calculated.
+2001600	2002600	Then
+2002600	2003600	through the conversion of high school math
+2003600	2004600	put this
+2004600	2005600	TX
+2005600	2006600	on the square
+2006600	2007600	you can calculate
+2007600	2008600	OK.
+2008600	2009600	It actually draws
+2009600	2010600	a red circle
+2010600	2011600	the probability of a red circle
+2011600	2012600	is 2 to the negative n
+2012600	2013600	X
+2013600	2014600	negative
+2014600	2015600	negative
+2015600	2016600	negative
+2016600	2017600	OK.
+2017600	2018600	But
+2018600	2019600	the probability of a blue circle
+2019600	2020600	is 1.
+2020600	2021600	So
+2021600	2022600	if you collect
+2022600	2023600	all these points
+2023600	2024600	the probability of it being added
+2024600	2025600	will be 1.
+2025600	2026600	So
+2026600	2027600	roughly
+2027600	2028600	in this circle
+2028600	2029600	there are so many
+2029600	2030600	so many
+2030600	2031600	so many
+2031600	2032600	so many
+2032600	2033600	so many
+2033600	2034600	so many
+2034600	2035600	so many
+2035600	2036600	so many
+2036600	2037600	so many
+2037600	2038600	so many
+2038600	2039600	so many
+2039600	2040600	so many
+2040600	2041600	so many
+2041600	2042600	so many
+2042600	2043600	so many
+2043600	2044600	so many
+2044600	2045600	so many
+2045600	2046600	so many
+2046600	2047600	so many
+2047600	2048600	so many
+2048600	2049600	so many
+2049600	2050600	so many
+2050600	2051600	so many
+2051600	2052600	so many
+2052600	2053600	so many
+2053600	2054600	so many
+2054600	2055600	so many
+2055600	2056600	so many
+2056600	2057600	so many
+2057600	2058600	so many
+2058600	2059600	red circles
+2059600	2060600	OK.
+2060600	2061600	So
+2061600	2062600	now
+2062600	2063600	my goal is
+2063600	2064600	to not to
+2064600	2065600	let these
+2065600	2066600	rising circles overlap
+2066600	2067600	so
+2067600	2068600	that
+2068600	2069600	I can
+2069600	2071600	can
+2071600	2072600	can
+2072600	2073600	can
+2073600	2074600	can
+2074600	2075600	let these two
+2075600	2076600	come in
+2076600	2077600	which is
+2077600	2078600	h of
+2078600	2079600	entropy of y
+2079600	2080600	minus entropy of y given x
+2080600	2081600	so
+2081600	2082600	by definition
+2082600	2083600	this thing
+2083600	2084600	my R
+2084600	2085600	is
+2085600	2086600	less than
+2086600	2087600	or equal to
+2087600	2088600	the mutual information
+2088600	2089600	of x and y
+2089600	2090600	like this
+2090600	2091600	OK.
+2091600	2092600	Of course we can
+2092600	2093600	improve
+2093600	2094600	but it's just
+2094600	2095600	a loose statement
+2095600	2096600	we can
+2096600	2097600	improve
+2097600	2098600	to prove
+2098600	2099600	that
+2099600	2100600	this
+2100600	2101600	this
+2101600	2102600	way of
+2102600	2103600	decoding
+2103600	2104600	can be
+2104600	2105600	as small as
+2105600	2106600	we want
+2106600	2107600	OK.
+2107600	2108600	OK.
+2108600	2109600	So
+2109600	2110600	OK.
+2110600	2111600	So
+2111600	2112600	is this
+2112600	2113600	the most mathematical part
+2113600	2114600	of the whole talk
+2114600	2115600	and
+2115600	2116600	then
+2116600	2117600	then
+2117600	2118600	I don't know
+2118600	2119600	if there is any
+2119600	2120600	question
+2120600	2121600	here
+2121600	2122600	OK.
+2122600	2123600	OK.
+2123600	2124600	OK.
+2124600	2125600	OK.
+2125600	2126600	OK.
+2126600	2127600	OK.
+2127600	2128600	OK.
+2128600	2129600	OK.
+2129600	2130600	OK.
+2130600	2131600	OK.
+2131600	2132600	OK.
+2132600	2133600	.
+2133600	2134600	.
+2134600	2135600	.
+2135600	2136600	.
+2136600	2137600	.
+2137600	2138600	.
+2138600	2139600	.
+2139600	2140600	.
+2140600	2141600	.
+2141600	2142600	.
+2142600	2143600	.
+2143600	2144600	.
+2144600	2145600	.
+2145600	2146600	.
+2146600	2147600	.
+2147600	2148600	.
+2148600	2149600	.
+2149600	2150600	.
+2150600	2151600	.
+2151600	2152600	.
+2152600	2153600	.
+2153600	2154600	.
+2154600	2157600	.
+2157600	2158600	.
+2158600	2159600	.
+2159600	2160600	.
+2160600	2161600	.
+2161600	2162600	.
+2162600	2163600	.
+2163600	2164600	.
+2164600	2165600	.
+2165600	2166600	.
+2166600	2167600	.
+2167600	2168600	.
+2168600	2169600	.
+2169600	2170600	.
+2170600	2171600	.
+2171600	2172600	.
+2172600	2173600	.
+2173600	2174600	.
+2174600	2175600	。
+2178600	2183600	.
+2183600	2185600	OK
+2213600	2216600	.
+2216600	2217600	.
+2217600	2218600	.
+2218600	2219600	.
+2219600	2220600	.
+2220600	2221600	.
+2221600	2222600	.
+2233100	2234100	.
+2234100	2236100	.
+2236100	2237100	.
+2237100	2239100	.
+2239100	2241100	.
+2241100	2243100	.
+2243100	2245100	.
+2245100	2247100	.
+2247100	2249100	.
+2249100	2251100	.
+2251100	2253100	.
+2253100	2255100	.
+2255100	2257100	.
+2257100	2259100	.
+2259100	2261100	.
+2261100	2263100	.
+2263100	2265100	.
+2265100	2267100	.
+2267100	2269100	.
+2269100	2271100	.
+2271100	2273100	.
+2273100	2275100	.
+2275100	2277100	.
+2277100	2279100	.
+2279100	2281100	.
+2281100	2283100	.
+2283100	2285100	.
+2285100	2287100	.
+2287100	2289100	.
+2289100	2291100	.
+2291100	2293100	.
+2297100	2299100	.
+2299100	2301100	.
+2301100	2303100	.
+2303100	2305100	.
+2305100	2307100	.
+2307100	2309100	.
+2309100	2311100	.
+2311100	2313100	.
+2313100	2315100	.
+2315100	2317100	.
+2317100	2319100	.
+2319100	2321100	.
+2321100	2323100	.
+2323100	2325100	.
+2325100	2327100	.
+2327100	2329100	.
+2329100	2331100	.
+2331100	2333100	.
+2333100	2335100	.
+2335100	2337100	.
+2337100	2339100	.
+2339100	2341100	.
+2341100	2343100	.
+2343100	2345100	.
+2345100	2347100	.
+2351100	2353100	.
+2353100	2355100	.
+2355100	2357100	.
+2357100	2359100	.
+2359100	2361100	.
+2361100	2363100	.
+2363100	2365100	.
+2365100	2367100	.
+2367100	2369100	.
+2369100	2371100	.
+2371100	2373100	.
+2373100	2375100	.
+2377100	2379100	.
+2379100	2381100	.
+2381100	2383100	.
+2383100	2385100	.
+2385100	2387100	.
+2387100	2389100	.
+2389100	2391100	.
+2391100	2393100	.
+2393100	2395100	.
+2395100	2397100	.
+2397100	2399100	.
+2399100	2401100	.
+2401100	2403100	.
+2403100	2405100	.
+2407100	2409100	.
+2409100	2411100	.
+2411100	2413100	.
+2413100	2415100	.
+2415100	2417100	.
+2417100	2419100	.
+2419100	2421100	.
+2421100	2423100	.
+2423100	2425100	.
+2425100	2427100	.
+2427100	2429100	.
+2429100	2431100	.
+2431100	2433100	.
+2435100	2437100	.
+2437100	2439100	.
+2439100	2441100	.
+2441100	2443100	.
+2443100	2445100	.
+2445100	2447100	.
+2447100	2449100	.
+2449100	2451100	.
+2451100	2453100	.
+2453100	2455100	.
+2455100	2457100	.
+2457100	2459100	.
+2459100	2461100	.
+2461100	2463100	.
+2463100	2465100	.
+2465100	2467100	.
+2467100	2469100	.
+2469100	2471100	.
+2471100	2473100	.
+2473100	2475100	.
+2475100	2477100	.
+2477100	2479100	.
+2479100	2481100	.
+2481100	2483100	.
+2483100	2485100	.
+2487100	2489100	.
+2489100	2491100	.
+2491100	2493100	.
+2493100	2495100	.
+2495100	2497100	.
+2497100	2499100	.
+2499100	2501100	.
+2501100	2503100	.
+2503100	2505100	.
+2505100	2507100	.
+2507100	2509100	.
+2509100	2511100	.
+2511100	2513100	.
+2515100	2517100	.
+2517100	2519100	.
+2519100	2521100	.
+2521100	2523100	.
+2523100	2525100	.
+2525100	2527100	.
+2527100	2529100	.
+2529100	2531100	.
+2531100	2533100	.
+2533100	2535100	.
+2535100	2537100	.
+2537100	2539100	.
+2539100	2541100	.
+2541100	2543100	.
+2545100	2547100	.
+2547100	2549100	.
+2549100	2551100	.
+2551100	2553100	.
+2553100	2555100	.
+2555100	2557100	.
+2557100	2559100	.
+2559100	2561100	.
+2561100	2563100	.
+2563100	2565100	.
+2565100	2567100	.
+2567100	2569100	.
+2571100	2573100	.
+2573100	2575100	.
+2575100	2577100	.
+2577100	2579100	.
+2579100	2581100	.
+2581100	2583100	.
+2583100	2585100	.
+2585100	2587100	.
+2587100	2589100	.
+2589100	2591100	.
+2591100	2593100	.
+2593100	2595100	.
+2595100	2597100	.
+2599100	2601100	.
+2601100	2603100	.
+2603100	2605100	.
+2605100	2607100	.
+2607100	2609100	.
+2609100	2611100	.
+2611100	2613100	.
+2613100	2615100	.
+2615100	2617100	.
+2617100	2619100	.
+2619100	2621100	.
+2621100	2623100	.
+2623100	2625100	.
+2627100	2629100	.
+2629100	2631100	.
+2631100	2633100	.
+2633100	2635100	.
+2635100	2637100	.
+2637100	2639100	.
+2639100	2641100	.
+2641100	2643100	.
+2643100	2645100	.
+2645100	2647100	.
+2647100	2649100	.
+2649100	2651100	.
+2651100	2653100	.
+2655100	2657100	.
+2657100	2659100	.
+2659100	2661100	.
+2661100	2663100	.
+2663100	2665100	.
+2665100	2667100	.
+2667100	2669100	.
+2669100	2671100	.
+2671100	2673100	.
+2673100	2675100	.
+2675100	2677100	.
+2677100	2679100	.
+2679100	2681100	.
+2683100	2685100	.
+2685100	2687100	.
+2687100	2689100	.
+2689100	2691100	.
+2691100	2693100	.
+2693100	2695100	.
+2695100	2697100	.
+2697100	2699100	.
+2699100	2701100	.
+2701100	2703100	.
+2703100	2705100	.
+2705100	2707100	.
+2707100	2709100	.
+2711100	2713100	.
+2713100	2715100	.
+2715100	2717100	.
+2717100	2719100	.
+2719100	2721100	.
+2721100	2723100	.
+2723100	2725100	.
+2725100	2727100	.
+2727100	2729100	.
+2729100	2731100	.
+2731100	2733100	.
+2733100	2735100	.
+2735100	2737100	.
+2737100	2739100	.
+2741100	2743100	.
+2743100	2745100	.
+2745100	2747100	.
+2747100	2749100	.
+2749100	2751100	.
+2751100	2753100	.
+2753100	2755100	.
+2755100	2757100	.
+2757100	2759100	.
+2759100	2761100	.
+2761100	2763100	.
+2763100	2765100	.
+2767100	2769100	.
+2769100	2771100	.
+2771100	2773100	.
+2773100	2775100	.
+2775100	2777100	.
+2777100	2779100	.
+2779100	2781100	.
+2781100	2783100	.
+2783100	2785100	.
+2785100	2787100	.
+2787100	2789100	.
+2789100	2791100	.
+2791100	2793100	.
+2795100	2797100	.
+2797100	2799100	.
+2799100	2801100	.
+2801100	2803100	.
+2803100	2805100	.
+2805100	2807100	.
+2807100	2809100	.
+2809100	2811100	.
+2811100	2813100	.
+2813100	2815100	.
+2815100	2817100	.
+2817100	2819100	.
+2819100	2821100	.
+2821100	2823100	.
+2825100	2827100	.
+2827100	2829100	.
+2829100	2831100	.
+2831100	2833100	.
+2833100	2835100	.
+2835100	2837100	.
+2837100	2839100	.
+2839100	2841100	.
+2841100	2843100	.
+2843100	2845100	.
+2845100	2847100	.
+2847100	2849100	.
+2851100	2853100	.
+2853100	2855100	.
+2855100	2857100	.
+2857100	2859100	.
+2859100	2861100	.
+2861100	2863100	.
+2863100	2865100	.
+2865100	2867100	.
+2867100	2869100	.
+2869100	2871100	.
+2871100	2873100	.
+2873100	2875100	.
+2875100	2877100	.
+2877100	2879100	.
+2881100	2883100	.
+2883100	2885100	.
+2885100	2887100	.
+2887100	2889100	.
+2889100	2891100	.
+2891100	2893100	.
+2893100	2895100	.
+2895100	2897100	.
+2897100	2899100	.
+2899100	2901100	.
+2901100	2903100	.
+2903100	2905100	.
+2907100	2909100	.
+2909100	2911100	.
+2911100	2913100	.
+2913100	2915100	.
+2915100	2917100	.
+2917100	2919100	.
+2919100	2921100	.
+2921100	2923100	.
+2923100	2925100	.
+2925100	2927100	.
+2927100	2929100	.
+2929100	2931100	.
+2931100	2933100	.
+2935100	2937100	.
+2937100	2939100	.
+2939100	2941100	.
+2941100	2943100	.
+2943100	2945100	.
+2945100	2947100	.
+2947100	2949100	.
+2949100	2951100	.
+2951100	2953100	.
+2953100	2955100	.
+2955100	2957100	.
+2957100	2959100	.
+2959100	2961100	.
+2963100	2965100	.
+2965100	2967100	.
+2967100	2969100	.
+2969100	2971100	.
+2971100	2973100	.
+2973100	2975100	.
+2975100	2977100	.
+2977100	2979100	.
+2979100	2981100	.
+2981100	2983100	.
+2983100	2985100	.
+2985100	2987100	.
+2987100	2989100	.
+2989100	2991100	.
+2993100	2995100	.
+2995100	2997100	.
+2997100	2999100	.
+2999100	3001100	.
+3001100	3003100	.
+3003100	3005100	.
+3005100	3007100	.
+3007100	3009100	.
+3009100	3011100	.
+3011100	3013100	.
+3013100	3015100	.
+3015100	3017100	.
+3017100	3019100	.
+3021100	3023100	.
+3023100	3025100	.
+3025100	3027100	.
+3027100	3029100	.
+3029100	3031100	.
+3031100	3033100	.
+3033100	3035100	.
+3035100	3037100	.
+3037100	3039100	.
+3039100	3041100	.
+3041100	3043100	.
+3043100	3045100	.
+3047100	3049100	.
+3049100	3051100	.
+3051100	3053100	.
+3053100	3055100	.
+3055100	3057100	.
+3057100	3059100	.
+3059100	3061100	.
+3061100	3063100	.
+3063100	3065100	.
+3065100	3067100	.
+3067100	3069100	.
+3069100	3071100	.
+3071100	3073100	.
+3075100	3077100	.
+3077100	3079100	.
+3079100	3081100	.
+3081100	3083100	.
+3083100	3085100	.
+3085100	3087100	.
+3087100	3089100	.
+3089100	3091100	.
+3091100	3093100	.
+3093100	3095100	.
+3095100	3097100	.
+3097100	3099100	.
+3099100	3101100	.
+3103100	3105100	.
+3105100	3107100	.
+3107100	3109100	.
+3109100	3111100	.
+3111100	3113100	.
+3113100	3115100	.
+3115100	3117100	.
+3117100	3119100	.
+3119100	3121100	.
+3121100	3123100	.
+3123100	3125100	.
+3125100	3127100	.
+3127100	3129100	.
+3131100	3133100	.
+3133100	3135100	.
+3135100	3137100	.
+3137100	3139100	.
+3139100	3141100	.
+3141100	3143100	.
+3143100	3145100	.
+3145100	3147100	.
+3147100	3149100	.
+3149100	3151100	.
+3151100	3153100	.
+3153100	3155100	.
+3155100	3157100	.
+3159100	3161100	.
+3161100	3163100	.
+3163100	3165100	.
+3165100	3167100	.
+3167100	3169100	.
+3169100	3171100	.
+3171100	3173100	.
+3173100	3175100	.
+3175100	3177100	.
+3177100	3179100	.
+3179100	3181100	.
+3181100	3183100	.
+3183100	3185100	.
+3187100	3189100	.
+3189100	3191100	.
+3191100	3193100	.
+3193100	3195100	.
+3195100	3197100	.
+3197100	3199100	.
+3199100	3201100	.
+3201100	3203100	.
+3203100	3205100	.
+3205100	3207100	.
+3207100	3209100	.
+3209100	3211100	.
+3211100	3213100	.
+3213100	3215100	.
+3217100	3219100	.
+3219100	3221100	.
+3221100	3223100	.
+3223100	3225100	.
+3225100	3227100	.
+3227100	3229100	.
+3229100	3231100	.
+3231100	3233100	.
+3233100	3235100	.
+3235100	3237100	.
+3237100	3239100	.
+3239100	3241100	.
+3243100	3245100	.
+3245100	3247100	.
+3247100	3249100	.
+3249100	3251100	.
+3251100	3253100	.
+3253100	3255100	.
+3255100	3257100	.
+3257100	3259100	.
+3259100	3261100	.
+3261100	3263100	.
+3263100	3265100	.
+3265100	3267100	.
+3267100	3269100	.
+3271100	3273100	.
+3273100	3275100	.
+3275100	3277100	.
+3277100	3279100	.
+3279100	3281100	.
+3281100	3283100	.
+3283100	3285100	.
+3285100	3287100	.
+3287100	3289100	.
+3289100	3291100	.
+3291100	3293100	.
+3293100	3295100	.
+3295100	3297100	.
+3299100	3301100	.
+3301100	3303100	.
+3303100	3305100	.
+3305100	3307100	.
+3307100	3309100	.
+3309100	3311100	.
+3311100	3313100	.
+3313100	3315100	.
+3315100	3317100	.
+3317100	3319100	.
+3319100	3321100	.
+3321100	3323100	.
+3323100	3325100	.
+3327100	3329100	.
+3329100	3331100	.
+3331100	3333100	.
+3333100	3335100	.
+3335100	3337100	.
+3337100	3339100	.
+3339100	3341100	.
+3341100	3343100	.
+3343100	3345100	.
+3345100	3347100	.
+3347100	3349100	.
+3349100	3351100	.
+3351100	3353100	.
+3355100	3357100	.
+3357100	3359100	.
+3359100	3361100	.
+3361100	3363100	.
+3363100	3365100	.
+3365100	3367100	.
+3367100	3369100	.
+3369100	3371100	.
+3371100	3373100	.
+3373100	3375100	.
+3375100	3377100	.
+3377100	3379100	.
+3379100	3381100	.
+3381100	3383100	.
+3385100	3387100	.
+3387100	3389100	.
+3389100	3391100	.
+3391100	3393100	.
+3393100	3395100	.
+3395100	3397100	.
+3397100	3399100	.
+3399100	3401100	.
+3401100	3403100	.
+3403100	3405100	.
+3405100	3407100	.
+3407100	3409100	.
+3411100	3413100	.
+3413100	3415100	.
+3415100	3417100	.
+3417100	3419100	.
+3419100	3421100	.
+3421100	3423100	.
+3423100	3425100	.
+3425100	3427100	.
+3427100	3429100	.
+3429100	3431100	.
+3431100	3433100	.
+3433100	3435100	.
+3435100	3437100	.
+3439100	3441100	.
+3441100	3443100	.
+3443100	3445100	.
+3445100	3447100	.
+3447100	3449100	.
+3449100	3451100	.
+3451100	3453100	.
+3453100	3455100	.
+3455100	3457100	.
+3457100	3459100	.
+3459100	3461100	.
+3461100	3463100	.
+3463100	3465100	.
+3465100	3467100	.
+3469100	3471100	.
+3471100	3473100	.
+3473100	3475100	.
+3475100	3477100	.
+3477100	3479100	.
+3479100	3481100	.
+3481100	3483100	.
+3483100	3485100	.
+3485100	3487100	.
+3487100	3489100	.
+3489100	3491100	.
+3491100	3493100	.
+3493100	3495100	.
+3497100	3499100	.
+3499100	3501100	.
+3501100	3503100	.
+3503100	3505100	.
+3505100	3507100	.
+3507100	3509100	.
+3509100	3511100	.
+3511100	3513100	.
+3513100	3515100	.
+3515100	3517100	.
+3517100	3519100	.
+3519100	3521100	.
+3521100	3523100	.
+3525100	3527100	.
+3527100	3529100	.
+3529100	3531100	.
+3531100	3533100	.
+3533100	3535100	.
+3535100	3537100	.
+3537100	3539100	.
+3539100	3541100	.
+3541100	3543100	.
+3543100	3545100	.
+3545100	3547100	.
+3547100	3549100	.
+3551100	3553100	.
+3553100	3555100	.
+3555100	3557100	.
+3557100	3559100	.
+3559100	3561100	.
+3561100	3563100	.
+3563100	3565100	.
+3565100	3567100	.
+3567100	3569100	.
+3569100	3571100	.
+3571100	3573100	.
+3573100	3575100	.
+3575100	3577100	.
+3577100	3579100	.
+3581100	3583100	.
+3583100	3585100	.
+3585100	3587100	.
+3587100	3589100	.
+3589100	3591100	.
+3591100	3593100	.
+3593100	3595100	.
+3595100	3597100	.
+3597100	3599100	.
+3599100	3601100	.
+3601100	3603100	.
+3603100	3605100	.
+3607100	3609100	.
+3609100	3611100	.
+3611100	3613100	.
+3613100	3615100	.
+3615100	3617100	.
+3617100	3619100	.
+3619100	3621100	.
+3621100	3623100	.
+3623100	3625100	.
+3625100	3627100	.
+3627100	3629100	.
+3629100	3631100	.
+3631100	3633100	.
+3635100	3637100	.
+3637100	3639100	.
+3639100	3641100	.
+3641100	3643100	.
+3643100	3645100	.
+3645100	3647100	.
+3647100	3649100	.
+3649100	3651100	.
+3651100	3653100	.
+3653100	3655100	.
+3655100	3657100	.
+3657100	3659100	.
+3659100	3661100	.
+3661100	3663100	.
+3665100	3667100	.
+3667100	3669100	.
+3669100	3671100	.
+3671100	3673100	.
+3673100	3675100	.
+3675100	3677100	.
+3677100	3679100	.
+3679100	3681100	.
+3681100	3683100	.
+3683100	3685100	.
+3685100	3687100	.
+3687100	3689100	.
+3691100	3693100	.
+3693100	3695100	.
+3695100	3697100	.
+3697100	3699100	.
+3699100	3701100	.
+3701100	3703100	.
+3703100	3705100	.
+3705100	3707100	.
+3707100	3709100	.
+3709100	3711100	.
+3711100	3713100	.
+3713100	3715100	.
+3715100	3717100	.
+3719100	3721100	.
+3721100	3723100	.
+3723100	3725100	.
+3725100	3727100	.
+3727100	3729100	.
+3729100	3731100	.
+3731100	3733100	.
+3733100	3735100	.
+3735100	3737100	.
+3737100	3739100	.
+3739100	3741100	.
+3741100	3743100	.
+3743100	3745100	.
+3745100	3747100	.
+3749100	3751100	.
+3751100	3753100	.
+3753100	3755100	.
+3755100	3757100	.
+3757100	3759100	.
+3759100	3761100	.
+3761100	3763100	.
+3763100	3765100	.
+3765100	3767100	.
+3767100	3769100	.
+3769100	3771100	.
+3771100	3773100	.
+3773100	3775100	.
+3777100	3779100	.
+3779100	3781100	.
+3781100	3783100	.
+3783100	3785100	.
+3785100	3787100	.
+3787100	3789100	.
+3789100	3791100	.
+3791100	3793100	.
+3793100	3795100	.
+3795100	3797100	.
+3797100	3799100	.
+3799100	3801100	.
+3803100	3805100	.
+3805100	3807100	.
+3807100	3809100	.
+3809100	3811100	.
+3811100	3813100	.
+3813100	3815100	.
+3815100	3817100	.
+3817100	3819100	.
+3819100	3821100	.
+3821100	3823100	.
+3823100	3825100	.
+3825100	3827100	.
+3827100	3829100	.
+3831100	3833100	.
+3833100	3835100	.
+3835100	3837100	.
+3837100	3839100	.
+3839100	3841100	.
+3841100	3843100	.
+3843100	3845100	.
+3845100	3847100	.
+3847100	3849100	.
+3849100	3851100	.
+3851100	3853100	.
+3853100	3855100	.
+3855100	3857100	.
+3857100	3859100	.
+3861100	3863100	.
+3863100	3865100	.
+3865100	3867100	.
+3867100	3869100	.
+3869100	3871100	.
+3871100	3873100	.
+3873100	3875100	.
+3875100	3877100	.
+3877100	3879100	.
+3879100	3881100	.
+3881100	3883100	.
+3883100	3885100	.
+3885100	3887100	.
+3889100	3891100	.
+3891100	3893100	.
+3893100	3895100	.
+3895100	3897100	.
+3897100	3899100	.
+3899100	3901100	.
+3901100	3903100	.
+3903100	3905100	.
+3905100	3907100	.
+3907100	3909100	.
+3909100	3911100	.
+3911100	3913100	.
+3913100	3915100	.
+3917100	3919100	.
+3919100	3921100	.
+3921100	3923100	.
+3923100	3925100	.
+3925100	3927100	.
+3927100	3929100	.
+3929100	3931100	.
+3931100	3933100	.
+3933100	3935100	.
+3935100	3937100	.
+3937100	3939100	.
+3939100	3941100	.
+3941100	3943100	.
+3945100	3947100	.
+3947100	3949100	.
+3949100	3951100	.
+3951100	3953100	.
+3953100	3955100	.
+3955100	3957100	.
+3957100	3959100	.
+3959100	3961100	.
+3961100	3963100	.
+3963100	3965100	.
+3965100	3967100	.
+3967100	3969100	.
+3969100	3971100	.
+3975100	3977100	.
+3977100	3979100	.
+3979100	3981100	.
+3981100	3983100	.
+3983100	3985100	.
+3985100	3987100	.
+3987100	3989100	.
+3989100	3991100	.
+3991100	3993100	.
+3993100	3995100	.
+3995100	3997100	.
+4001100	4003100	.
+4003100	4005100	.
+4005100	4007100	.
+4007100	4009100	.
+4009100	4011100	.
+4011100	4013100	.
+4013100	4015100	.
+4015100	4017100	.
+4017100	4019100	.
+4019100	4021100	.
+4021100	4023100	.
+4023100	4025100	.
+4025100	4027100	.
+4029100	4031100	.
+4031100	4033100	.
+4033100	4035100	.
+4035100	4037100	.
+4037100	4039100	.
+4039100	4041100	.
+4041100	4043100	.
+4043100	4045100	.
+4045100	4047100	.
+4047100	4049100	.
+4049100	4051100	.
+4051100	4053100	.
+4055100	4057100	.
+4057100	4059100	.
+4059100	4061100	.
+4061100	4063100	.
+4063100	4065100	.
+4065100	4067100	.
+4067100	4069100	.
+4069100	4071100	.
+4071100	4073100	.
+4073100	4075100	.
+4075100	4077100	.
+4077100	4079100	.
+4079100	4081100	.
+4083100	4085100	.
+4085100	4087100	.
+4087100	4089100	.
+4089100	4091100	.
+4091100	4093100	.
+4093100	4095100	.
+4095100	4097100	.
+4097100	4099100	.
+4099100	4101100	.
+4101100	4103100	.
+4103100	4105100	.
+4105100	4107100	.
+4107100	4109100	.
+4109100	4111100	.
+4115100	4117100	.
+4117100	4119100	.
+4119100	4121100	.
+4121100	4123100	.
+4123100	4125100	.
+4125100	4127100	.
+4127100	4129100	.
+4129100	4131100	.
+4131100	4133100	.
+4133100	4135100	.
+4135100	4137100	.
+4139100	4141100	.
+4141100	4143100	.
+4143100	4145100	.
+4145100	4147100	.
+4147100	4149100	.
+4149100	4151100	.
+4151100	4153100	.
+4153100	4155100	.
+4155100	4157100	.
+4157100	4159100	.
+4159100	4161100	.
+4161100	4163100	.
+4163100	4165100	.
+4165100	4167100	.
+4169100	4171100	.
+4171100	4173100	.
+4173100	4175100	.
+4175100	4177100	.
+4177100	4179100	.
+4179100	4181100	.
+4181100	4183100	.
+4183100	4185100	.
+4185100	4187100	.
+4187100	4189100	.
+4189100	4191100	.
+4191100	4193100	.
+4195100	4197100	.
+4197100	4199100	.
+4199100	4201100	.
+4201100	4203100	.
+4203100	4205100	.
+4205100	4207100	.
+4207100	4209100	.
+4209100	4211100	.
+4211100	4213100	.
+4213100	4215100	.
+4215100	4217100	.
+4217100	4219100	.
+4219100	4221100	.
+4221100	4223100	.
+4225100	4227100	.
+4227100	4229100	.
+4229100	4231100	.
+4231100	4233100	.
+4233100	4235100	.
+4235100	4237100	.
+4237100	4239100	.
+4239100	4241100	.
+4241100	4243100	.
+4243100	4245100	.
+4245100	4247100	.
+4247100	4249100	.
+4249100	4251100	.
+4253100	4255100	.
+4255100	4257100	.
+4257100	4259100	.
+4259100	4261100	.
+4261100	4263100	.
+4263100	4265100	.
+4265100	4267100	.
+4267100	4269100	.
+4269100	4271100	.
+4271100	4273100	.
+4273100	4275100	.
+4275100	4277100	.
+4277100	4279100	.
+4281100	4283100	.
+4283100	4285100	.
+4285100	4287100	.
+4287100	4289100	.
+4289100	4291100	.
+4291100	4293100	.
+4293100	4295100	.
+4295100	4297100	.
+4297100	4299100	.
+4299100	4301100	.
+4301100	4303100	.
+4303100	4305100	.
+4307100	4309100	.
+4309100	4311100	.
+4311100	4313100	.
+4313100	4315100	.
+4315100	4317100	.
+4317100	4319100	.
+4319100	4321100	.
+4321100	4323100	.
+4323100	4325100	.
+4325100	4327100	.
+4327100	4329100	.
+4329100	4331100	.
+4331100	4333100	.
+4335100	4337100	.
+4337100	4339100	.
+4339100	4341100	.
+4341100	4343100	.
+4343100	4345100	.
+4345100	4347100	.
+4347100	4349100	.
+4349100	4351100	.
+4351100	4353100	.
+4353100	4355100	.
+4355100	4357100	.
+4357100	4359100	.
+4359100	4361100	.
+4361100	4363100	.
+4363100	4365100	.
+4365100	4367100	.
+4367100	4369100	.
+4369100	4371100	.
+4371100	4373100	.
+4373100	4375100	.
+4375100	4377100	.
+4377100	4379100	.
+4379100	4381100	.
+4381100	4383100	.
+4383100	4385100	.
+4387100	4389100	.
+4389100	4391100	.
+4391100	4393100	.
+4393100	4395100	.
+4395100	4397100	.
+4397100	4399100	.
+4399100	4401100	.
+4401100	4403100	.
+4403100	4405100	.
+4405100	4407100	.
+4407100	4409100	.
+4409100	4411100	.
+4411100	4413100	.
+4413100	4415100	.
+4417100	4419100	.
+4419100	4421100	.
+4421100	4423100	.
+4423100	4425100	.
+4425100	4427100	.
+4427100	4429100	.
+4429100	4431100	.
+4431100	4433100	.
+4433100	4435100	.
+4435100	4437100	.
+4437100	4439100	.
+4439100	4441100	.
+4443100	4445100	.
+4445100	4447100	.
+4447100	4449100	.
+4449100	4451100	.
+4451100	4453100	.
+4453100	4455100	.
+4455100	4457100	.
+4457100	4459100	.
+4459100	4461100	.
+4461100	4463100	.
+4463100	4465100	.
+4465100	4467100	.
+4467100	4469100	.
+4469100	4471100	.
+4473100	4475100	.
+4475100	4477100	.
+4477100	4479100	.
+4479100	4481100	.
+4481100	4483100	.
+4483100	4485100	.
+4485100	4487100	.
+4487100	4489100	.
+4489100	4491100	.
+4491100	4493100	.
+4493100	4495100	.
+4495100	4497100	.
+4499100	4501100	.
+4501100	4503100	.
+4503100	4505100	.
+4505100	4507100	.
+4507100	4509100	.
+4509100	4511100	.
+4511100	4513100	.
+4513100	4515100	.
+4515100	4517100	.
+4517100	4519100	.
+4519100	4521100	.
+4521100	4523100	.
+4523100	4525100	.
+4527100	4529100	.
+4529100	4531100	.
+4531100	4533100	.
+4533100	4535100	.
+4535100	4537100	.
+4537100	4539100	.
+4539100	4541100	.
+4541100	4543100	.
+4543100	4545100	.
+4545100	4547100	.
+4547100	4549100	.
+4549100	4551100	.
+4551100	4553100	.
+4555100	4557100	.
+4557100	4559100	.
+4559100	4561100	.
+4561100	4563100	.
+4563100	4565100	.
+4565100	4567100	.
+4567100	4569100	.
+4569100	4571100	.
+4571100	4573100	.
+4573100	4575100	.
+4575100	4577100	.
+4577100	4579100	.
+4579100	4581100	.
+4583100	4585100	.
+4585100	4587100	.
+4587100	4589100	.
+4589100	4591100	.
+4591100	4593100	.
+4593100	4595100	.
+4595100	4597100	.
+4597100	4599100	.
+4599100	4601100	.
+4601100	4603100	.
+4603100	4605100	.
+4605100	4607100	.
+4607100	4609100	.
+4611100	4613100	.
+4613100	4615100	.
+4615100	4617100	.
+4617100	4619100	.
+4619100	4621100	.
+4621100	4623100	.
+4623100	4625100	.
+4625100	4627100	.
+4627100	4629100	.
+4629100	4631100	.
+4631100	4633100	.
+4633100	4635100	.
+4635100	4637100	.
+4637100	4639100	.
+4641100	4643100	.
+4643100	4645100	.
+4645100	4647100	.
+4647100	4649100	.
+4649100	4651100	.
+4651100	4653100	.
+4653100	4655100	.
+4655100	4657100	.
+4657100	4659100	.
+4659100	4661100	.
+4661100	4663100	.
+4663100	4665100	.
+4667100	4669100	.
+4669100	4671100	.
+4671100	4673100	.
+4673100	4675100	.
+4675100	4677100	.
+4677100	4679100	.
+4679100	4681100	.
+4681100	4683100	.
+4683100	4685100	.
+4685100	4687100	.
+4687100	4689100	.
+4689100	4691100	.
+4691100	4693100	.
+4693100	4695100	.
+4697100	4699100	.
+4699100	4701100	.
+4701100	4703100	.
+4703100	4705100	.
+4705100	4707100	.
+4707100	4709100	.
+4709100	4711100	.
+4711100	4713100	.
+4713100	4715100	.
+4715100	4717100	.
+4717100	4719100	.
+4719100	4721100	.
+4723100	4725100	.
+4725100	4727100	.
+4727100	4729100	.
+4729100	4731100	.
+4731100	4733100	.
+4733100	4735100	.
+4735100	4737100	.
+4737100	4739100	.
+4739100	4741100	.
+4741100	4743100	.
+4743100	4745100	.
+4745100	4747100	.
+4747100	4749100	.
+4749100	4751100	.
+4753100	4755100	.
+4755100	4757100	.
+4757100	4759100	.
+4759100	4761100	.
+4761100	4763100	.
+4763100	4765100	.
+4765100	4767100	.
+4767100	4769100	.
+4769100	4771100	.
+4771100	4773100	.
+4773100	4775100	.
+4775100	4777100	.
+4779100	4781100	.
+4781100	4783100	.
+4783100	4785100	.
+4785100	4787100	.
+4787100	4789100	.
+4789100	4791100	.
+4791100	4793100	.
+4793100	4795100	.
+4795100	4797100	.
+4797100	4799100	.
+4799100	4801100	.
+4801100	4803100	.
+4803100	4805100	.
+4805100	4807100	.
+4809100	4811100	.
+4811100	4813100	.
+4813100	4815100	.
+4815100	4817100	.
+4817100	4819100	.
+4819100	4821100	.
+4821100	4823100	.
+4823100	4825100	.
+4825100	4827100	.
+4827100	4829100	.
+4829100	4831100	.
+4831100	4833100	.
+4833100	4835100	.
+4837100	4839100	.
+4839100	4841100	.
+4841100	4843100	.
+4843100	4845100	.
+4845100	4847100	.
+4847100	4849100	.
+4849100	4851100	.
+4851100	4853100	.
+4853100	4855100	.
+4855100	4857100	.
+4857100	4859100	.
+4859100	4861100	.
+4863100	4865100	.
+4865100	4867100	.
+4867100	4869100	.
+4869100	4871100	.
+4871100	4873100	.
+4873100	4875100	.
+4875100	4877100	.
+4877100	4879100	.
+4879100	4881100	.
+4881100	4883100	.
+4883100	4885100	.
+4885100	4887100	.
+4887100	4889100	.
+4889100	4891100	.
+4891100	4893100	.
+4893100	4895100	.
+4895100	4897100	.
+4897100	4899100	.
+4899100	4901100	.
+4901100	4903100	.
+4905100	4907100	.
+4907100	4909100	.
+4909100	4911100	.
+4911100	4913100	.
+4913100	4915100	.
+4915100	4917100	.
+4917100	4919100	.
+4919100	4921100	.
+4923100	4925100	.
+4925100	4927100	.
+4927100	4929100	.
+4929100	4931100	.
+4931100	4933100	.
+4933100	4935100	.
+4935100	4937100	.
+4937100	4939100	.
+4939100	4941100	.
+4941100	4943100	.
+4943100	4945100	.
+4947100	4949100	.
+4949100	4951100	.
+4951100	4953100	.
+4953100	4955100	.
+4955100	4957100	.
+4957100	4959100	.
+4959100	4961100	.
+4961100	4963100	.
+4963100	4965100	.
+4965100	4967100	.
+4967100	4969100	.
+4969100	4971100	.
+4971100	4973100	.
+4973100	4975100	.
+4977100	4979100	.
+4979100	4981100	.
+4981100	4983100	.
+4983100	4985100	.
+4985100	4987100	.
+4987100	4989100	.
+4989100	4991100	.
+4991100	4993100	.
+4993100	4995100	.
+4995100	4997100	.
+4997100	4999100	.
+4999100	5001100	.
+5001100	5003100	.
+5005100	5007100	.
+5007100	5009100	.
+5009100	5011100	.
+5011100	5013100	.
+5013100	5015100	.
+5015100	5017100	.
+5017100	5019100	.
+5019100	5021100	.
+5021100	5023100	.
+5023100	5025100	.
+5025100	5027100	.
+5027100	5029100	.
+5029100	5031100	.
+5031100	5033100	.
+5033100	5035100	.
+5035100	5037100	.
+5037100	5039100	.
+5039100	5041100	.
+5041100	5043100	.
+5043100	5045100	.
+5045100	5047100	.
+5047100	5049100	.
+5053100	5055100	.
+5055100	5057100	.
+5059100	5061100	.
+5061100	5063100	.
+5063100	5065100	.
+5065100	5067100	.
+5067100	5069100	.
+5069100	5071100	.
+5071100	5073100	.
+5073100	5075100	.
+5075100	5077100	.
+5077100	5079100	.
+5079100	5081100	.
+5081100	5083100	.
+5083100	5085100	.
+5087100	5089100	.
+5089100	5091100	.
+5091100	5093100	.
+5093100	5095100	.
+5095100	5097100	.
+5097100	5099100	.
+5099100	5101100	.
+5101100	5103100	.
+5103100	5105100	.
+5105100	5107100	.
+5107100	5109100	.
+5109100	5111100	.
+5111100	5113100	.
+5115100	5117100	.
+5117100	5119100	.
+5119100	5121100	.
+5121100	5123100	.
+5123100	5125100	.
+5125100	5127100	.
+5127100	5129100	.
+5129100	5131100	.
+5131100	5133100	.
+5133100	5135100	.
+5135100	5137100	.
+5137100	5139100	.
+5139100	5141100	.
+5143100	5145100	.
+5145100	5147100	.
+5147100	5149100	.
+5149100	5151100	.
+5151100	5153100	.
+5153100	5155100	.
+5155100	5157100	.
+5157100	5159100	.
+5159100	5161100	.
+5161100	5163100	.
+5163100	5165100	.
+5165100	5167100	.
+5167100	5169100	.
+5169100	5171100	.
+5171100	5173100	.
+5177100	5179100	.
+5179100	5181100	.
+5181100	5183100	.
+5183100	5185100	.
+5185100	5187100	.
+5187100	5189100	.
+5189100	5191100	.
+5191100	5193100	.
+5193100	5195100	.
+5195100	5197100	.
+5199100	5201100	.
+5201100	5203100	.
+5203100	5205100	.
+5205100	5207100	.
+5207100	5209100	.
+5209100	5211100	.
+5211100	5213100	.
+5213100	5215100	.
+5215100	5217100	.
+5217100	5219100	.
+5219100	5221100	.
+5221100	5223100	.
+5223100	5225100	.
+5227100	5229100	.
+5229100	5231100	.
+5231100	5233100	.
+5233100	5235100	.
+5235100	5237100	.
+5237100	5239100	.
+5239100	5241100	.
+5241100	5243100	.
+5243100	5245100	.
+5245100	5247100	.
+5247100	5249100	.
+5249100	5251100	.
+5251100	5253100	.
+5255100	5257100	.
+5257100	5259100	.
+5259100	5261100	.
+5261100	5263100	.
+5263100	5265100	.
+5265100	5267100	.
+5267100	5269100	.
+5269100	5271100	.
+5271100	5273100	.
+5273100	5275100	.
+5275100	5277100	.
+5277100	5279100	.
+5279100	5281100	.
+5281100	5283100	.
+5285100	5287100	.
+5287100	5289100	.
+5289100	5291100	.
+5291100	5293100	.
+5293100	5295100	.
+5295100	5297100	.
+5297100	5299100	.
+5299100	5301100	.
+5301100	5303100	.
+5303100	5305100	.
+5305100	5307100	.
+5307100	5309100	.
+5311100	5313100	.
+5313100	5315100	.
+5315100	5317100	.
+5317100	5319100	.
+5319100	5321100	.
+5321100	5323100	.
+5323100	5325100	.
+5325100	5327100	.
+5327100	5329100	.
+5329100	5331100	.
+5331100	5333100	.
+5333100	5335100	.
+5335100	5337100	.
+5337100	5339100	.
+5341100	5343100	.
+5343100	5345100	.
+5345100	5347100	.
+5347100	5349100	.
+5349100	5351100	.
+5351100	5353100	.
+5353100	5355100	.
+5355100	5357100	.
+5357100	5359100	.
+5359100	5361100	.
+5361100	5363100	.
+5363100	5365100	.
+5367100	5369100	.
+5369100	5371100	.
+5371100	5373100	.
+5373100	5375100	.
+5375100	5377100	.
+5377100	5379100	.
+5379100	5381100	.
+5381100	5383100	.
+5383100	5385100	.
+5385100	5387100	.
+5387100	5389100	.
+5389100	5391100	.
+5391100	5393100	.
+5395100	5397100	.
+5397100	5399100	.
+5399100	5401100	.
+5401100	5403100	.
+5403100	5405100	.
+5405100	5407100	.
+5407100	5409100	.
+5409100	5411100	.
+5411100	5413100	.
+5413100	5415100	.
+5415100	5417100	.
+5417100	5419100	.
+5419100	5421100	.
+5423100	5425100	.
+5425100	5427100	.
+5427100	5429100	.
+5429100	5431100	.
+5431100	5433100	.
+5433100	5435100	.
+5435100	5437100	.
+5437100	5439100	.
+5439100	5441100	.
+5441100	5443100	.
+5443100	5445100	.
+5445100	5447100	.
+5447100	5449100	.
+5451100	5453100	.
+5453100	5455100	.
+5455100	5457100	.
+5457100	5459100	.
+5459100	5461100	.
+5461100	5463100	.
+5463100	5465100	.
+5465100	5467100	.
+5467100	5469100	.
+5469100	5471100	.
+5471100	5473100	.
+5473100	5475100	.
+5475100	5477100	.
+5479100	5481100	.
+5481100	5483100	.
+5483100	5485100	.
+5485100	5487100	.
+5487100	5489100	.
+5489100	5491100	.
+5491100	5493100	.
+5493100	5495100	.
+5495100	5497100	.
+5497100	5499100	.
+5499100	5501100	.
+5501100	5503100	.
+5503100	5505100	.
+5509100	5511100	.
+5511100	5513100	.
+5513100	5515100	.
+5515100	5517100	.
+5517100	5519100	.
+5519100	5521100	.
+5521100	5523100	.
+5523100	5525100	.
+5525100	5527100	.
+5527100	5529100	.
+5529100	5531100	.
+5531100	5533100	.
+5533100	5535100	.
+5537100	5539100	.
+5539100	5541100	.
+5541100	5543100	.
+5543100	5545100	.
+5545100	5547100	.
+5547100	5549100	.
+5549100	5551100	.
+5551100	5553100	.
+5553100	5555100	.
+5555100	5557100	.
+5557100	5559100	.
+5559100	5561100	.
+5561100	5563100	.
+5565100	5567100	.
+5567100	5569100	.
+5569100	5571100	.
+5571100	5573100	.
+5573100	5575100	.
+5575100	5577100	.
+5577100	5579100	.
+5579100	5581100	.
+5581100	5583100	.
+5583100	5585100	.
+5585100	5587100	.
+5587100	5589100	.
+5591100	5593100	.
+5593100	5595100	.
+5595100	5597100	.
+5597100	5599100	.
+5599100	5601100	.
+5601100	5603100	.
+5603100	5605100	.
+5605100	5607100	.
+5607100	5609100	.
+5609100	5611100	.
+5611100	5613100	.
+5613100	5615100	.
+5615100	5617100	.
+5617100	5619100	.
+5621100	5623100	.
+5623100	5625100	.
+5625100	5627100	.
+5627100	5629100	.
+5629100	5631100	.
+5631100	5633100	.
+5633100	5635100	.
+5635100	5637100	.
+5637100	5639100	.
+5639100	5641100	.
+5641100	5643100	.
+5643100	5645100	.
+5647100	5649100	.
+5649100	5651100	.
+5651100	5653100	.
+5653100	5655100	.
+5655100	5657100	.
+5657100	5659100	.
+5659100	5661100	.
+5661100	5663100	.
+5663100	5665100	.
+5665100	5667100	.
+5667100	5669100	.
+5669100	5671100	.
+5671100	5673100	.
+5675100	5677100	.
+5677100	5679100	.
+5679100	5681100	.
+5681100	5683100	.
+5683100	5685100	.
+5685100	5687100	.
+5687100	5689100	.
+5689100	5691100	.
+5691100	5693100	.
+5693100	5695100	.
+5695100	5697100	.
+5697100	5699100	.
+5699100	5701100	.
+5703100	5705100	.
+5705100	5707100	.
+5707100	5709100	.
+5709100	5711100	.
+5711100	5713100	.
+5713100	5715100	.
+5715100	5717100	.
+5717100	5719100	.
+5719100	5721100	.
+5721100	5723100	.
+5723100	5725100	.
+5725100	5727100	.
+5727100	5729100	.
+5729100	5731100	.
+5731100	5733100	.
+5733100	5735100	.
+5735100	5737100	.
+5737100	5739100	.
+5739100	5741100	.
+5741100	5743100	.
+5745100	5747100	.
+5747100	5749100	.
+5749100	5751100	.
+5751100	5753100	.
+5753100	5755100	.
+5755100	5757100	.
+5757100	5759100	.
+5761100	5763100	.
+5763100	5765100	.
+5765100	5767100	.
+5767100	5769100	.
+5769100	5771100	.
+5771100	5773100	.
+5773100	5775100	.
+5775100	5777100	.
+5777100	5779100	.
+5779100	5781100	.
+5781100	5783100	.
+5783100	5785100	.
+5785100	5787100	.
+5789100	5791100	.
+5791100	5793100	.
+5793100	5795100	.
+5795100	5797100	.
+5797100	5799100	.
+5799100	5801100	.
+5801100	5803100	.
+5803100	5805100	.
+5805100	5807100	.
+5807100	5809100	.
+5809100	5811100	.
+5811100	5813100	.
+5815100	5817100	.
+5817100	5819100	.
+5819100	5821100	.
+5821100	5823100	.
+5823100	5825100	.
+5825100	5827100	.
+5827100	5829100	.
+5829100	5831100	.
+5831100	5833100	.
+5833100	5835100	.
+5835100	5837100	.
+5837100	5839100	.
+5839100	5841100	.
+5841100	5843100	.
+5845100	5847100	.
+5847100	5849100	.
+5849100	5851100	.
+5851100	5853100	.
+5853100	5855100	.
+5855100	5857100	.
+5857100	5859100	.
+5859100	5861100	.
+5861100	5863100	.
+5863100	5865100	.
+5865100	5867100	.
+5867100	5869100	.
+5869100	5871100	.
+5873100	5875100	.
+5875100	5877100	.
+5877100	5879100	.
+5879100	5881100	.
+5881100	5883100	.
+5883100	5885100	.
+5885100	5887100	.
+5887100	5889100	.
+5889100	5891100	.
+5891100	5893100	.
+5893100	5895100	.
+5895100	5897100	.
+5899100	5901100	.
+5901100	5903100	.
+5903100	5905100	.
+5905100	5907100	.
+5907100	5909100	.
+5909100	5911100	.
+5911100	5913100	.
+5913100	5915100	.
+5915100	5917100	.
+5917100	5919100	.
+5919100	5921100	.
+5921100	5923100	.
+5923100	5925100	.
+5927100	5929100	.
+5929100	5931100	.
+5931100	5933100	.
+5933100	5935100	.
+5935100	5937100	.
+5937100	5939100	.
+5939100	5941100	.
+5941100	5943100	.
+5943100	5945100	.
+5945100	5947100	.
+5947100	5949100	.
+5949100	5951100	.
+5951100	5953100	.
+5953100	5955100	.
+5955100	5957100	.
+5959100	5961100	.
+5961100	5963100	.
+5963100	5965100	.
+5965100	5967100	.
+5967100	5969100	.
+5969100	5971100	.
+5971100	5973100	.
+5973100	5975100	.
+5975100	5977100	.
+5977100	5979100	.
+5979100	5981100	.
+5983100	5985100	.
+5985100	5987100	.
+5987100	5989100	.
+5989100	5991100	.
+5991100	5993100	.
+5993100	5995100	.
+5995100	5997100	.
+5997100	5999100	.
+5999100	6001100	.
+6001100	6003100	.
+6003100	6005100	.
+6005100	6007100	.
+6007100	6009100	.
+6009100	6011100	.
+6011100	6013100	.
+6013100	6015100	.
+6015100	6017100	.
+6017100	6019100	.
+6019100	6021100	.
+6021100	6023100	.
+6025100	6027100	.
+6027100	6029100	.
+6029100	6031100	.
+6031100	6033100	.
+6033100	6035100	.
+6035100	6037100	.
+6039100	6041100	.
+6041100	6043100	.
+6043100	6045100	.
+6045100	6047100	.
+6047100	6049100	.
+6049100	6051100	.
+6051100	6053100	.
+6053100	6055100	.
+6055100	6057100	.
+6057100	6059100	.
+6059100	6061100	.
+6061100	6063100	.
+6063100	6065100	.
+6067100	6069100	.
+6069100	6071100	.
+6071100	6073100	.
+6073100	6075100	.
+6075100	6077100	.
+6077100	6079100	.
+6079100	6081100	.
+6081100	6083100	.
+6083100	6085100	.
+6085100	6087100	.
+6087100	6089100	.
+6089100	6091100	.
+6091100	6093100	.
+6093100	6095100	.
+6097100	6099100	.
+6099100	6101100	.
+6101100	6103100	.
+6103100	6105100	.
+6105100	6107100	.
+6107100	6109100	.
+6109100	6111100	.
+6111100	6113100	.
+6113100	6115100	.
+6115100	6117100	.
+6117100	6119100	.
+6119100	6121100	.
+6121100	6123100	.
+6125100	6127100	.
+6127100	6129100	.
+6129100	6131100	.
+6131100	6133100	.
+6133100	6135100	.
+6135100	6137100	.
+6137100	6139100	.
+6139100	6141100	.
+6141100	6143100	.
+6143100	6145100	.
+6145100	6147100	.
+6147100	6149100	.
+6149100	6151100	.
+6153100	6155100	.
+6155100	6157100	.
+6157100	6159100	.
+6159100	6161100	.
+6161100	6163100	.
+6163100	6165100	.
+6165100	6167100	.
+6167100	6169100	.
+6169100	6171100	.
+6171100	6173100	.
+6173100	6175100	.
+6175100	6177100	.
+6179100	6181100	.
+6181100	6183100	.
+6183100	6185100	.
+6185100	6187100	.
+6187100	6189100	.
+6189100	6191100	.
+6191100	6193100	.
+6193100	6195100	.
+6195100	6197100	.
+6197100	6199100	.
+6199100	6201100	.
+6201100	6203100	.
+6203100	6205100	.
+6207100	6209100	.
+6209100	6211100	.
+6211100	6213100	.
+6213100	6215100	.
+6215100	6217100	.
+6217100	6219100	.
+6219100	6221100	.
+6221100	6223100	.
+6223100	6225100	.
+6225100	6227100	.
+6227100	6229100	.
+6229100	6231100	.
+6231100	6233100	.
+6235100	6237100	.
+6237100	6239100	.
+6239100	6241100	.
+6241100	6243100	.
+6243100	6245100	.
+6245100	6247100	.
+6247100	6249100	.
+6249100	6251100	.
+6251100	6253100	.
+6253100	6255100	.
+6255100	6257100	.
+6257100	6259100	.

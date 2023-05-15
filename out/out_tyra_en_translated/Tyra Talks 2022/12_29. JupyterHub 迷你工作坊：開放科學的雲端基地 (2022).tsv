@@ -1,0 +1,1996 @@
+start	end	text
+0	9000	Today is October 8th, 2022, Taira Talk.
+9000	13000	The speaker we invited today is Ms. Zheng Huaijie.
+13000	16000	The topic she will talk about is
+16000	19000	Jupiter Hub, a mini studio,
+19000	22000	an open science cloud base.
+22000	29000	Let me briefly introduce Huaijie's background.
+29000	39000	In 2010 and 2013, Huaijie obtained a master's and a master's degree in Taiwan University.
+39000	44000	In 2015, she went to Cornell University
+44000	50000	for a PhD in Earth and Atmospheric Science.
+50000	59000	In 2021, Huaijie joined a research team at the University of California, Berkeley.
+59000	63000	She is now working as a post-PhD researcher
+63000	69000	on the Jupiter-Meet-the-Earth project.
+70000	79000	Today, Huaijie will teach us about Jupiter Hub.
+79000	86000	She also mentioned that you don't need any background knowledge or program design skills to participate in this talk.
+86000	91000	However, if you want to store Jupiter resources at the same time during the talk,
+91000	95000	you must prepare a Google or Microsoft account.
+95000	100000	Please prepare for the third part of the talk.
+100000	103000	That's all for my introduction.
+103000	105000	Let's give the floor to Huaijie.
+105000	107000	Thank you, Shi-An.
+107000	109000	Thank you for your introduction.
+109000	118000	It's an honor to be able to invite Tara to give a talk.
+118000	121000	My last talk was in January this year.
+121000	128000	I would like to share with you what I am doing at UC Berkeley.
+128000	138000	Instead of sharing, I would like to focus on Jupiter Hub.
+139000	148000	I would like to share with you what Jupiter Hub is
+148000	152000	and why we call it the cloud base of open science.
+152000	158000	How it can transform our practice of open science.
+163000	164000	Let's get started.
+165000	174000	I would like to share with you what I am doing at the moment.
+174000	176000	I would like to add a little bit.
+176000	181000	My field of expertise is earth science.
+181000	184000	To be more precise, I am studying earth physics,
+184000	185000	rock science,
+185000	186000	meteorology,
+186000	187000	and astrophysics.
+188000	191000	What I am doing at the moment is
+191000	194000	using a lot of satellite data
+194000	196000	and model analysis
+196000	200000	to monitor and understand the changes in ice and snow.
+200000	201000	For example,
+201000	204000	you can see a satellite here.
+204000	206000	It orbits the earth
+206000	209000	and emits green light.
+209000	211000	When it hits the ground,
+211000	214000	the satellite will receive the reflected light.
+215000	218000	Based on the reflected light,
+218000	222000	we can calculate the distance between the satellite and the earth,
+222000	225000	and convert it to the height of the earth.
+225000	231000	If we can do this repeatedly for an ice cube,
+231000	234000	we can get an ice cube
+234000	236000	with the time passing by,
+236000	237000	the height of the surface,
+237000	239000	or the thickness of the ice.
+240000	243000	Then we use some physical models
+243000	245000	to analyze
+245000	247000	the factors
+247000	250000	that affect the thickness of the ice cube.
+250000	252000	It sounds cool,
+252000	254000	and I like it.
+254000	257000	However, most of the academic activities
+257000	259000	that I am doing now
+259000	262000	are similar to what you are doing.
+262000	264000	We need to study
+264000	267000	and explain our research
+267000	269000	to others,
+269000	271000	including colleagues
+271000	273000	and people
+273000	277000	in different fields.
+277000	280000	In addition to research,
+280000	283000	we also have teaching activities
+283000	285000	where we write software
+285000	287000	for others.
+287000	289000	I have done some of these.
+289000	291000	Here are some pictures
+291000	293000	of what I have done
+293000	295000	in the past few years,
+295000	297000	including developing a software
+297000	299000	called KARS.
+299000	301000	I also wrote a website
+301000	304000	called GMT Tutorials.
+304000	305000	In short,
+305000	307000	I teach others
+307000	309000	how to draw pictures
+309000	311000	using GMT software.
+311000	313000	The picture in the lower right corner
+313000	315000	is from a paper
+315000	319000	I published in 2019.
+319000	321000	At that time,
+321000	323000	I discussed with the paper publisher
+323000	325000	how to make some materials
+325000	327000	that can be more efficient
+327000	329000	and faster
+329000	331000	to convey
+331000	333000	some new knowledge
+333000	335000	of the paper
+335000	337000	and make it
+337000	339000	into a news article.
+343000	345000	Back to our topic today,
+345000	347000	we are going to talk about JupyterHub.
+347000	349000	How can we change
+349000	351000	the academic activities
+351000	353000	we do every day?
+353000	355000	Before we talk about JupyterHub,
+355000	357000	let's talk about
+357000	359000	the concept of Jupyter.
+359000	361000	If I were to explain
+361000	363000	what Jupyter is,
+363000	365000	I would say that
+365000	367000	Jupyter is an open
+367000	369000	data science...
+369000	371000	Sorry. Jupyter is an ecosystem
+371000	373000	composed of open data science tools
+373000	375000	and a community
+375000	377000	of open data scientists.
+377000	379000	There might be some professional terminology here,
+379000	381000	so I'll explain a little more.
+381000	383000	The so-called tools here mean
+383000	385000	that if you want to complete
+385000	387000	a task,
+387000	389000	the tools you use...
+389000	391000	For example,
+391000	393000	Photoshop
+393000	395000	is a tool
+395000	397000	for video editing.
+397000	399000	Matplotlib
+399000	401000	is a tool
+401000	403000	used in Python
+403000	405000	for scientific mapping.
+405000	407000	Something like that.
+407000	409000	As for the word
+409000	411000	open,
+411000	413000	it's a little vague.
+413000	415000	To be honest,
+415000	417000	many different aspects
+417000	419000	are considered to be open.
+419000	421000	For example,
+421000	423000	it can refer to the tools you use.
+423000	425000	The source code
+425000	427000	may be public,
+427000	429000	and anyone can modify it.
+429000	431000	On the other hand,
+431000	433000	the way you collaborate
+433000	435000	allows as many people
+435000	437000	as possible to participate
+437000	439000	and contribute and discuss.
+439000	441000	Anyway,
+441000	443000	the core concept of
+443000	445000	the word open
+445000	447000	is
+447000	449000	not to be excluded,
+449000	451000	but to allow as many people
+451000	453000	as possible to participate
+453000	455000	in what you are doing now.
+455000	457000	So we have a lot of tools.
+457000	459000	Some tools are software,
+459000	461000	some tools are hardware,
+461000	463000	and some tools
+463000	465000	are used to describe
+465000	467000	how software and hardware
+467000	469000	interact with each other.
+473000	475000	These tools are different
+475000	477000	from other tools.
+477000	479000	Think about it.
+479000	481000	If you put a tool under a tool,
+481000	483000	a screwdriver may be used to lock the screw,
+483000	485000	and a crowbar may be used
+485000	487000	to twist the wire.
+487000	489000	These tools are independent.
+489000	491000	In data science,
+491000	493000	the so-called tools
+493000	495000	often rely on each other.
+495000	497000	For example,
+497000	499000	if you want to use Matplotlib today,
+499000	501000	you have to install Python first.
+501000	503000	After installing Python,
+503000	505000	you can install Matplotlib,
+505000	507000	and it will work.
+507000	509000	If you draw the interdependence
+509000	511000	between different tools,
+511000	513000	you will see a picture
+513000	515000	that looks like a network,
+515000	517000	or a food chain.
+517000	519000	So we tend to
+519000	521000	call the interdependence
+521000	523000	between tools
+523000	525000	and their interdependence
+525000	527000	an ecosystem.
+527000	529000	An ecosystem like Jupyter
+529000	531000	is not very old.
+531000	533000	The concept of open science
+533000	535000	has only appeared
+535000	537000	for about 20 years
+537000	539000	so far.
+539000	541000	You may feel shorter.
+541000	543000	In the first ten years,
+543000	545000	it was in the early stages.
+545000	547000	Not many people
+547000	549000	were completely exposed
+549000	551000	to this concept.
+551000	553000	One of the most likely
+553000	555000	time to accept this exposure
+555000	557000	is 2015.
+557000	559000	At that time,
+559000	561000	Lego released
+561000	563000	the first gravity wave observation
+563000	565000	in human history.
+565000	567000	It shocked the world.
+567000	569000	They won the Nobel Prize
+569000	571000	in 2017 or 2018.
+573000	575000	Lego
+575000	577000	did more than
+577000	579000	this.
+579000	581000	Of course,
+581000	583000	they are very good
+583000	585000	at writing articles
+585000	587000	and building observatories.
+587000	589000	But they also have
+589000	591000	an open science department.
+591000	593000	This department
+593000	595000	has compiled all the data
+595000	597000	about the gravity wave observation
+597000	599000	and posted it on the Internet.
+599000	601000	Everyone can
+601000	603000	go to their website
+603000	605000	and click on their link.
+605000	607000	You can re-execute the code
+607000	609000	and draw the same picture
+609000	611000	as in their paper.
+611000	613000	I will share
+613000	615000	my video later.
+615000	617000	You can click on the link
+617000	619000	to see what it is.
+619000	621000	After 2015,
+621000	623000	if you use Twitter,
+623000	625000	you may see
+625000	627000	more and more people
+627000	629000	on Twitter
+629000	631000	saying
+631000	633000	how great the open science department is.
+633000	635000	It can make me do things
+635000	637000	I couldn't do before.
+637000	639000	For example,
+639000	641000	this person used his phone
+641000	643000	to analyze the data
+643000	645000	of CIMIP-6 on the train.
+645000	647000	If you don't know what CIMIP-6 is,
+647000	649000	it is a global
+649000	651000	climate simulation database.
+651000	653000	It generates
+653000	655000	TBG data every day.
+655000	657000	The data
+657000	659000	is huge.
+659000	661000	It is not easy
+661000	663000	to analyze the data
+663000	665000	on the train
+665000	667000	with a smart phone.
+669000	671000	What's more,
+671000	673000	NASA has announced
+673000	675000	that
+675000	677000	next year, 2023,
+677000	679000	will be their open science year.
+679000	681000	They have a big project
+681000	683000	called TOPS,
+683000	685000	Transform to Open Science.
+685000	687000	Starting from next year,
+687000	689000	it will take about 4 to 5 years.
+691000	693000	They will
+693000	695000	manage and
+695000	697000	publish the data
+697000	699000	in a big way.
+699000	701000	After next year,
+701000	703000	they will
+703000	705000	adopt a new model,
+705000	707000	a more open science model,
+707000	709000	to manage and publish
+709000	711000	their data
+711000	713000	work flow
+713000	715000	and research results.
+715000	717000	This is a trend.
+717000	719000	We can see this trend.
+719000	721000	Everyone is talking about it.
+721000	723000	Of course, thanks to the development of technology,
+723000	725000	we now have
+725000	727000	different ways
+727000	729000	to practice
+729000	731000	open science.
+733000	735000	Here is an example.
+735000	737000	We know that open science
+737000	739000	is a very common term.
+739000	741000	There are many
+741000	743000	different ways to practice it.
+743000	745000	Here is an example.
+745000	747000	You can see
+747000	749000	these pictures.
+749000	751000	Let's say there is a researcher
+751000	753000	named Jim.
+753000	755000	He just wrote a cool paper
+755000	757000	and published it.
+759000	761000	He wants
+761000	763000	more. He wants to say
+763000	765000	that he wants this paper
+765000	767000	to be
+767000	769000	supported by
+769000	771000	other people.
+771000	773000	He wants everyone
+773000	775000	to be able to
+775000	777000	see his paper,
+777000	779000	check for errors,
+779000	781000	and even
+781000	783000	re-examine his experiment,
+783000	785000	and even
+785000	787000	improve
+787000	789000	his calculations
+789000	791000	in the paper.
+791000	793000	What can he do?
+793000	795000	Here is a method.
+795000	797000	He can use
+797000	799000	Jupyter Notebook.
+799000	801000	In this file,
+801000	803000	he can put all the details of the research,
+803000	805000	including narrative text,
+805000	807000	including city code,
+807000	809000	including
+809000	811000	many interactive
+811000	813000	or non-interactive icons,
+813000	815000	as well as more background resources,
+815000	817000	such as primitive data,
+817000	819000	multimedia,
+819000	821000	and software, etc.
+821000	823000	After he has
+823000	825000	this Jupyter Notebook,
+825000	827000	he can put it in a
+827000	829000	network storage
+829000	831000	so that everyone can read it.
+831000	833000	A more popular storage is
+833000	835000	GitHub.
+835000	837000	He can put it on GitHub
+837000	839000	so that everyone can see it.
+839000	841000	After uploading,
+841000	843000	he does more things
+843000	845000	to make
+845000	847000	this storage
+847000	849000	called
+849000	851000	Finder Ready.
+851000	853000	Simply put,
+853000	855000	he can provide additional information,
+855000	857000	such as
+857000	859000	what kind of software
+859000	861000	you need
+861000	863000	to run the notebook
+863000	865000	in this storage,
+865000	867000	such as Python,
+867000	869000	R,
+869000	871000	Julia, or Matlab.
+871000	873000	He can provide
+873000	875000	background information
+875000	877000	and make a
+877000	879000	set of files.
+879000	881000	He can arrange
+881000	883000	the files.
+883000	885000	When all these things are ready,
+885000	887000	we can use
+887000	889000	a tool called
+889000	891000	Docker
+891000	893000	to
+893000	895000	make this entire storage
+895000	897000	into
+897000	899000	an
+899000	901000	independent
+901000	903000	image.
+903000	905000	It's like
+905000	907000	a mini
+907000	909000	execution environment.
+909000	911000	In this environment,
+911000	913000	you can
+913000	915000	use the same environment
+915000	917000	to run these programs.
+917000	919000	Now, all you have to do is
+919000	921000	share this Docker image
+921000	923000	to other people around the world.
+923000	925000	Then other people
+925000	927000	can perfectly reproduce your research
+927000	929000	without
+929000	931000	additional installation of
+931000	933000	many beautiful softwares.
+933000	935000	The above is
+935000	937000	one of the examples
+937000	939000	of open science.
+939000	941000	It allows people to
+941000	943000	quickly save
+943000	945000	their own research materials.
+945000	947000	How does JupyterHub
+947000	949000	contribute
+949000	951000	to
+951000	953000	the
+953000	955000	data science process?
+955000	957000	If I were to
+957000	959000	explain what JupyterHub is,
+959000	961000	I would say that
+961000	963000	JupyterHub is a tool
+963000	965000	that provides
+965000	967000	convenient data science environment
+967000	969000	on a shared computer.
+969000	971000	What is a
+971000	973000	shared computer?
+973000	975000	Simply put,
+975000	977000	suppose you have
+977000	979000	a computer in your lab,
+979000	981000	and everyone can log in
+981000	983000	and do something on it,
+983000	985000	such as
+985000	987000	writing articles, processing data,
+987000	989000	writing papers, and so on.
+989000	991000	The server
+991000	993000	you can log in to
+993000	995000	and store
+995000	997000	the CPU or GPU
+997000	999000	resources in it
+999000	1001000	is called a shared computer.
+1003000	1005000	Traditionally,
+1005000	1007000	I guess some of you
+1007000	1009000	may have used it,
+1009000	1011000	such as SSH,
+1011000	1013000	to a remote server and do something on it.
+1013000	1015000	Of course,
+1015000	1017000	you have to install a lot of things
+1017000	1019000	in order to do
+1019000	1021000	what you want to do on the server.
+1021000	1023000	JupyterHub
+1023000	1025000	eliminates these steps.
+1025000	1027000	It provides some pre-set
+1027000	1029000	configurations
+1029000	1031000	so that you can
+1031000	1033000	go to the server
+1033000	1035000	without doing anything
+1035000	1037000	and start
+1037000	1039000	your data science analysis.
+1041000	1043000	Here is a picture
+1043000	1045000	of the concept
+1045000	1047000	of JupyterHub.
+1047000	1049000	You can imagine
+1049000	1051000	that there are a lot of people here.
+1051000	1053000	They are going to store
+1053000	1055000	a machine like this.
+1055000	1057000	JupyterHub is running on the machine.
+1057000	1059000	Everyone has to pass a verification first.
+1059000	1061000	When they successfully
+1061000	1063000	log in to the machine,
+1063000	1065000	JupyterHub will provide
+1065000	1067000	several standard interfaces
+1067000	1069000	for them to choose from,
+1069000	1071000	such as the Jupyter Notebook interface.
+1071000	1073000	Then they can start
+1073000	1075000	storing the computing resources
+1075000	1077000	in the machine
+1077000	1079000	through this interface.
+1079000	1081000	Note that the computing resources
+1081000	1083000	are separate from JupyterHub.
+1083000	1085000	JupyterHub
+1085000	1087000	can also prepare several
+1087000	1089000	different computing environments.
+1089000	1091000	For example, it can prepare
+1091000	1093000	a Python environment.
+1093000	1095000	If I need it,
+1095000	1097000	I can log in to JupyterHub
+1097000	1099000	and call the Python environment
+1099000	1101000	and say I want to use Python this time.
+1101000	1103000	At the same time,
+1103000	1105000	JupyterHub can also prepare
+1105000	1107000	another environment
+1107000	1109000	that is completely built
+1109000	1111000	on different tools.
+1111000	1113000	If others want to use it,
+1113000	1115000	they can call it out at any time.
+1115000	1117000	So JupyterHub
+1117000	1119000	is a layer of disassembly
+1119000	1121000	of such a work structure
+1121000	1123000	to make it easier
+1123000	1125000	for open science and cooperation.
+1125000	1127000	Here is another example
+1127000	1129000	to explain
+1129000	1131000	how JupyterHub
+1131000	1133000	can achieve
+1133000	1135000	the goal we want,
+1135000	1137000	that is, the goal of sharing the environment.
+1139000	1141000	Let's say there is a professor
+1141000	1143000	named John.
+1143000	1145000	He is now leading
+1145000	1147000	a large-scale research project.
+1147000	1149000	This large-scale research project
+1149000	1151000	has already
+1151000	1153000	pre-configured
+1153000	1155000	the software he wants to use.
+1155000	1157000	For example, he may want to use Python
+1157000	1159000	for the first time.
+1159000	1161000	He says this is the environment I want.
+1161000	1163000	How does JupyterHub
+1163000	1165000	tell others
+1165000	1167000	to use this environment?
+1167000	1169000	We provide a method
+1169000	1171000	that allows JupyterHub
+1171000	1173000	to cooperate with
+1173000	1175000	the IT staff of the school.
+1175000	1177000	JupyterHub will send
+1177000	1179000	an application form
+1179000	1181000	to the IT staff
+1181000	1183000	and say
+1183000	1185000	this is the environment
+1185000	1187000	I want to design.
+1187000	1189000	This is the environment I want to provide.
+1189000	1191000	These environments
+1191000	1193000	will be configured
+1193000	1195000	in a configuration file
+1195000	1197000	for the IT staff.
+1199000	1201000	After receiving this file,
+1201000	1203000	JupyterHub will
+1203000	1205000	refer to the settings
+1205000	1207000	and open
+1207000	1209000	a thing called Workspace Manager.
+1211000	1213000	In this example,
+1213000	1215000	Workspace Manager is JupyterHub.
+1217000	1219000	So I call it JupyterHub.
+1223000	1225000	The IT staff will open JupyterHub
+1225000	1227000	in the computer of the school.
+1231000	1233000	JupyterHub will read
+1233000	1235000	the file provided
+1235000	1237000	and configure
+1237000	1239000	the work environment
+1239000	1241000	you need,
+1241000	1243000	including Python,
+1243000	1245000	etc.
+1247000	1249000	Finally,
+1249000	1251000	JupyterHub will run
+1251000	1253000	on the cloud server
+1253000	1255000	of the school.
+1257000	1259000	After it is configured,
+1259000	1261000	it will generate
+1261000	1263000	a Docker file.
+1263000	1265000	It's a bit like...
+1269000	1271000	If I talk too much
+1271000	1273000	and you don't understand,
+1273000	1275000	please ask me later.
+1275000	1277000	It will generate a Docker file
+1277000	1279000	and
+1281000	1283000	a URL.
+1283000	1285000	After
+1285000	1287000	getting this URL,
+1287000	1289000	you can send it
+1289000	1291000	to anyone
+1291000	1293000	including students
+1293000	1295000	and their collaborators.
+1295000	1297000	They can connect to
+1297000	1299000	the JupyterHub login page.
+1299000	1301000	As long as
+1301000	1303000	they can verify their identity
+1303000	1305000	and log in,
+1305000	1307000	they can save
+1307000	1309000	the JupyterHub
+1309000	1311000	running on the cloud
+1311000	1313000	and all the
+1313000	1315000	environment configuration
+1315000	1317000	are ready.
+1317000	1319000	No need to install anything else.
+1321000	1323000	This is the concept of
+1323000	1325000	sharing the environment.
+1327000	1329000	That's all for the introduction.
+1329000	1331000	Since this is a mini workshop,
+1331000	1333000	let's try
+1333000	1335000	what JupyterHub is.
+1335000	1337000	The JupyterHub we want
+1337000	1339000	is
+1339000	1341000	a Kalisto
+1341000	1343000	organization.
+1345000	1347000	Kalisto
+1347000	1349000	has
+1349000	1351000	two
+1351000	1353000	non-profit organizations
+1353000	1355000	in Canada.
+1355000	1357000	Their main goal
+1357000	1359000	is to
+1359000	1361000	provide
+1361000	1363000	high school teachers
+1363000	1365000	in Canada
+1365000	1367000	with sufficient resources
+1367000	1369000	to teach students
+1369000	1371000	how to do
+1371000	1373000	data science
+1373000	1375000	and
+1375000	1377000	various teaching modules.
+1379000	1381000	Their
+1381000	1383000	own JupyterHub is called
+1383000	1385000	KalistoHub.
+1385000	1387000	JupyterHub is the name
+1387000	1389000	of the tool.
+1389000	1391000	The tool
+1391000	1393000	is used to
+1393000	1395000	connect the tool
+1395000	1397000	to the cloud.
+1397000	1399000	KalistoHub
+1399000	1401000	is the Kalisto
+1401000	1403000	organization.
+1403000	1405000	They use JupyterHub
+1405000	1407000	to connect
+1407000	1409000	the Kalisto
+1409000	1411000	organization
+1411000	1413000	to the cloud.
+1433000	1435000	This is
+1435000	1437000	my video link.
+1443000	1445000	This is Kalisto's
+1445000	1447000	website.
+1451000	1453000	I will continue to share my screen.
+1459000	1461000	Can you see that I am
+1461000	1463000	on Kalisto's page?
+1465000	1467000	Yes.
+1471000	1473000	Can you hear me?
+1475000	1477000	Yes.
+1477000	1479000	Thank you.
+1479000	1481000	There is a KalistoHub
+1481000	1483000	icon in the upper right corner.
+1483000	1485000	Click it.
+1487000	1489000	You will see
+1489000	1491000	that you can
+1491000	1493000	log in.
+1493000	1495000	Log in with your account.
+1495000	1497000	It will ask you
+1497000	1499000	if you want Google or Microsoft.
+1499000	1501000	You can choose what you want.
+1501000	1503000	I have Google.
+1503000	1505000	This is my
+1505000	1507000	Berkeley account.
+1507000	1509000	I will show you.
+1509000	1511000	When you log in,
+1511000	1513000	you will see this screen.
+1513000	1515000	You are preparing.
+1515000	1517000	Oh, this is not what I want.
+1517000	1519000	Let me do it again.
+1519000	1521000	I want to log in a new one.
+1523000	1525000	Log in.
+1529000	1531000	Log in with my Gmail.
+1537000	1539000	OK.
+1541000	1543000	After you log in,
+1543000	1545000	you will see a page like this.
+1547000	1549000	This page is
+1549000	1551000	one of the standard
+1551000	1553000	interface of
+1553000	1555000	Kalisto.
+1555000	1557000	We usually call it
+1557000	1559000	Notebook interface.
+1559000	1561000	Is everyone OK?
+1561000	1563000	Do you need to wait?
+1565000	1567000	I am OK.
+1569000	1571000	Is BlueJeans
+1571000	1573000	available?
+1573000	1575000	Can you show me
+1575000	1577000	if you need
+1577000	1579000	more time?
+1579000	1581000	He can raise his hand.
+1581000	1583000	But I am not sure
+1583000	1585000	what will happen.
+1585000	1587000	Oh, OK.
+1591000	1593000	Oh, Weiwei.
+1595000	1597000	Let me pull out the chat window.
+1599000	1601000	Now you can use the chat window
+1601000	1603000	to let me know where you are.
+1605000	1607000	But I don't know how to pull it out.
+1607000	1609000	Anyway,
+1609000	1611000	let's continue.
+1613000	1615000	When you see this page,
+1615000	1617000	it means you have successfully logged in
+1617000	1619000	to Kalisto Hub.
+1619000	1621000	You have successfully logged in
+1621000	1623000	to Kalisto Hub,
+1623000	1625000	and you have started using
+1625000	1627000	the computing resources provided by them.
+1627000	1629000	There will be a
+1629000	1631000	file list here.
+1631000	1633000	You will see a file called
+1633000	1635000	Getting Started.
+1635000	1637000	You will see a page
+1637000	1639000	like this.
+1641000	1643000	This is how
+1643000	1645000	Jupyter Notebook
+1645000	1647000	looks like
+1647000	1649000	under the Notebook interface.
+1649000	1651000	You can see that
+1651000	1653000	this is a Notebook file.
+1653000	1655000	It looks very diverse,
+1655000	1657000	but if you click twice
+1657000	1659000	on each block,
+1659000	1661000	you will see their
+1661000	1663000	original information.
+1663000	1665000	The original information
+1665000	1667000	is actually some words.
+1667000	1669000	These words
+1669000	1671000	are written in Markdown format.
+1671000	1673000	So when you are in editing mode,
+1673000	1675000	you can edit as you like.
+1675000	1677000	For example,
+1677000	1679000	I can type blah blah
+1679000	1681000	under this block.
+1681000	1683000	Then,
+1683000	1685000	when you click Run,
+1685000	1687000	it will re-
+1687000	1689000	change this block to display mode.
+1689000	1691000	Like this.
+1691000	1693000	You can see blah blah
+1693000	1695000	under this block.
+1699000	1701000	As I said,
+1701000	1703000	this is a Jupyter Notebook,
+1703000	1705000	so you can also
+1705000	1707000	compute directly on it.
+1707000	1709000	For example,
+1709000	1711000	we can add some blocks
+1711000	1713000	under this Notebook
+1713000	1715000	by clicking Add.
+1715000	1717000	We can click
+1717000	1719000	a block
+1719000	1721000	and type
+1721000	1723000	Hello World.
+1723000	1725000	In the upper right corner,
+1725000	1727000	you can see
+1727000	1729000	what is the core
+1729000	1731000	of this Notebook.
+1731000	1733000	Here it says
+1733000	1735000	Python 3,
+1735000	1737000	which means that
+1737000	1739000	when you click Run,
+1739000	1741000	Notebook will run
+1741000	1743000	these programs
+1743000	1745000	in Python.
+1745000	1747000	For example,
+1747000	1749000	I can type
+1749000	1751000	hello world
+1753000	1755000	and
+1755000	1757000	print a.
+1757000	1759000	After typing,
+1759000	1761000	if you click Run,
+1761000	1763000	it will run this program
+1763000	1765000	in Python.
+1767000	1769000	If you want to add
+1769000	1771000	more columns,
+1771000	1773000	you can also
+1773000	1775000	change the block type
+1775000	1777000	from Code
+1777000	1779000	to Markdown.
+1779000	1781000	You can type here
+1781000	1783000	like
+1783000	1785000	Today is
+1785000	1787000	Ira's speech.
+1789000	1791000	After running,
+1791000	1793000	it will become
+1793000	1795000	the narrative text
+1795000	1797000	in your Notebook.
+1797000	1799000	What I like
+1799000	1801000	about Python Notebook
+1801000	1803000	is the narrative text
+1803000	1805000	The Markdown
+1805000	1807000	supports LaTeX,
+1807000	1809000	so you can type
+1809000	1811000	mathematical formulas here.
+1811000	1813000	For example,
+1813000	1815000	I can type
+1815000	1817000	what?
+1819000	1821000	Q
+1821000	1823000	equals
+1823000	1825000	OK
+1825000	1827000	times
+1833000	1835000	partial T
+1835000	1837000	partial X
+1837000	1839000	This is a
+1839000	1841000	Parallelism.
+1841000	1843000	Then a Parallelism
+1843000	1845000	will appear.
+1845000	1847000	If you traditionally use LaTeX,
+1847000	1849000	it's hard to mix and match like this,
+1849000	1851000	especially when
+1851000	1853000	there is Chinese in your article.
+1853000	1855000	Traditionally,
+1855000	1857000	LaTeX is very difficult to process
+1857000	1859000	Chinese content,
+1859000	1861000	but
+1861000	1863000	in Jupyter Markdown,
+1863000	1865000	because it
+1865000	1867000	originally supports UTF,
+1867000	1869000	you can perfectly
+1869000	1871000	mix these two things together.
+1871000	1873000	It's very convenient.
+1875000	1877000	Is it OK so far?
+1877000	1879000	Should we pause or continue?
+1881000	1883000	I'm OK.
+1883000	1885000	Do you have any questions?
+1887000	1889000	Although there may be something to trouble you,
+1889000	1891000	I always look at the chat box,
+1891000	1893000	so if there are any questions
+1893000	1895000	in the chat,
+1895000	1897000	can you interrupt me a little?
+1897000	1899000	OK.
+1899000	1901000	Or if you see someone raising their hand,
+1901000	1903000	you can interrupt me at any time.
+1903000	1905000	I will help you pay attention to these.
+1905000	1907000	You can continue.
+1907000	1909000	Thank you.
+1909000	1911000	We just talked about
+1911000	1913000	Jupyter Notebook and Core.
+1913000	1915000	These two things are separate.
+1915000	1917000	Depending on the user's needs,
+1917000	1919000	we can switch between different cores.
+1919000	1921000	So let's switch to a different core.
+1921000	1923000	Let's try not to use Python now.
+1923000	1925000	If you move the mouse
+1925000	1927000	to the menu above,
+1927000	1929000	then select Kernel.
+1929000	1931000	Then,
+1931000	1933000	at the bottom of the Kernel,
+1933000	1935000	there is a Change Kernel.
+1935000	1937000	You will see that
+1937000	1939000	there are two cores in Callisto Hub.
+1939000	1941000	One is Python, the other is R.
+1941000	1943000	Let's try R.
+1943000	1945000	Now,
+1945000	1947000	this Jupyter Notebook
+1947000	1949000	is running R,
+1949000	1951000	not Python.
+1951000	1953000	If we re-run
+1953000	1955000	Hello World,
+1955000	1957000	it will...
+1957000	1959000	Oh, this part is still useful.
+1959000	1961000	Because there is also this part in R.
+1961000	1963000	But the syntax of R itself
+1963000	1965000	is like this.
+1965000	1967000	This part of Python
+1967000	1969000	cannot be executed.
+1974000	1976000	Something like this.
+1976000	1978000	Run.
+1978000	1980000	It will execute
+1980000	1982000	this part of the program
+1982000	1984000	in the way of R.
+1986000	1988000	If you draw a picture on it,
+1988000	1990000	for example,
+1990000	1992000	let's quickly make an X.
+1992000	1994000	This is the program of R,
+1994000	1996000	so if you don't understand,
+1996000	1998000	you are welcome to ask me anytime.
+1998000	2000000	But now,
+2000000	2002000	I have to set five data points.
+2003000	2005000	Then draw these five data points.
+2006000	2008000	Then I can press
+2008000	2010000	Shift and Enter
+2010000	2012000	to run this program.
+2019000	2021000	Then it will call the jpg in R
+2021000	2023000	to draw this thing.
+2026000	2028000	For the jpg in Python,
+2028000	2030000	the jpg in Python
+2030000	2032000	is also similar.
+2034000	2036000	Now,
+2036000	2038000	we change the kernel
+2038000	2040000	back to Python.
+2040000	2042000	Change.
+2042000	2044000	Then we bring it to the bottom.
+2044000	2046000	Let's try it.
+2046000	2048000	Use Python to draw.
+2048000	2050000	In Python,
+2050000	2052000	you have to enter some jpgs first.
+2052000	2054000	For example,
+2058000	2060000	here,
+2060000	2062000	I call
+2062000	2064000	matplotlib and
+2064000	2066000	numpy
+2066000	2068000	to do things for me.
+2068000	2070000	Then,
+2088000	2090000	roughly like this,
+2090000	2092000	you can draw a picture of Sine.
+2096000	2098000	You can see that these two pictures
+2098000	2100000	look very different.
+2100000	2102000	To some extent,
+2102000	2104000	they are actually two different jpg sets.
+2104000	2106000	The one above is R.
+2106000	2108000	The one below is Python.
+2110000	2112000	Of course, if you want,
+2112000	2114000	you can also save this picture.
+2114000	2116000	We can add one more command,
+2116000	2118000	and we call it
+2120000	2122000	test.png.
+2126000	2128000	After drawing,
+2128000	2130000	after re-executing,
+2130000	2132000	test.png
+2132000	2134000	will appear in the file list.
+2134000	2136000	If we go back to the file list,
+2136000	2138000	File,
+2138000	2140000	File, then Open,
+2140000	2142000	you will go back to the file list screen.
+2142000	2144000	You will see that
+2144000	2146000	a new file called test has appeared.
+2146000	2148000	Open it,
+2148000	2150000	you can see this png file.
+2150000	2152000	You can also select it,
+2152000	2154000	and then download it.
+2154000	2156000	The download button is
+2156000	2158000	here,
+2158000	2160000	this part of the top row.
+2162000	2164000	You can download it to your own computer.
+2166000	2168000	The above is a simple
+2168000	2170000	way to operate
+2170000	2172000	the notebook interface.
+2172000	2174000	You can find that we are really using
+2174000	2176000	JupyterHub,
+2176000	2178000	the computing resources provided by Callisto
+2178000	2180000	to help you do some scientific analysis.
+2180000	2182000	Of course, it also has
+2182000	2184000	some traditional
+2184000	2186000	4-in-1 operating modes.
+2186000	2188000	If you move the mouse
+2188000	2190000	to the New
+2190000	2192000	on the list,
+2192000	2194000	press it,
+2194000	2196000	you will see several options.
+2196000	2198000	You can open a new notebook.
+2198000	2200000	You can also open other types of files.
+2200000	2202000	There is a file here
+2202000	2204000	called Terminal.
+2204000	2206000	After pressing it,
+2206000	2208000	you can turn on
+2208000	2210000	a traditional terminal,
+2210000	2212000	and then operate
+2212000	2214000	what you want to operate,
+2214000	2216000	such as LOS or
+2216000	2218000	PWD, etc.,
+2218000	2220000	anything you want.
+2220000	2222000	What I want to show you here is
+2222000	2224000	the so-called installation settings.
+2224000	2226000	This command needs to wait,
+2226000	2228000	because it uses
+2228000	2230000	Conda,
+2230000	2232000	a settings software,
+2232000	2234000	to install the settings.
+2234000	2236000	It's a software,
+2236000	2238000	and sometimes it takes a long time.
+2238000	2240000	But...
+2242000	2244000	It looks like there's still some time.
+2244000	2246000	But...
+2246000	2248000	Oh, I'm out.
+2248000	2250000	You can see that
+2250000	2252000	it's already pre-installed.
+2252000	2254000	There are a lot of settings pre-installed,
+2254000	2256000	including...
+2256000	2258000	For example, in Python,
+2258000	2260000	because I'm more familiar with Python,
+2260000	2262000	you can see that
+2264000	2266000	there are
+2266000	2268000	Dask,
+2268000	2270000	a set of parallel algorithms,
+2270000	2272000	and then, for example,
+2272000	2274000	there's Geopandas,
+2274000	2276000	a set of geospatial data,
+2276000	2278000	and then, for example,
+2278000	2280000	there's also
+2280000	2282000	HDF5,
+2282000	2284000	a set of HDF files,
+2284000	2286000	as well as
+2286000	2288000	a variety of
+2288000	2290000	other kinds of
+2290000	2292000	settings.
+2292000	2294000	Of course, there's also Matplotlib here,
+2294000	2296000	and other different
+2296000	2298000	visualizations, such as
+2298000	2300000	I think it should have Cborn installed.
+2300000	2302000	Cborn is
+2302000	2304000	probably here.
+2306000	2308000	Scientific analysis is more common,
+2308000	2310000	like SciPy,
+2310000	2312000	or non-Python files.
+2312000	2314000	As you can see,
+2314000	2316000	if someone can help you
+2316000	2318000	pre-install these settings,
+2318000	2320000	then you don't have to
+2320000	2322000	spend so much effort
+2322000	2324000	to install the settings,
+2324000	2326000	and deal with the problems of
+2326000	2328000	each other's reliance.
+2328000	2330000	Sometimes these problems
+2330000	2332000	will greatly hinder
+2332000	2334000	the progress of a research.
+2334000	2336000	So, is it still OK here?
+2336000	2338000	If it's still OK,
+2338000	2340000	we'll move on to the next stage.
+2342000	2344000	I'm OK.
+2344000	2346000	OK, OK.
+2348000	2350000	OK, let's go back to
+2350000	2352000	the file list.
+2354000	2356000	In this file list,
+2358000	2360000	we just talked about
+2360000	2362000	Notebook Entry,
+2362000	2364000	which is a traditional
+2364000	2366000	Github interface.
+2366000	2368000	I want to introduce
+2368000	2370000	a relatively new
+2370000	2372000	interface called Lab.
+2372000	2374000	The way to save it is
+2374000	2376000	to cut off the tree
+2376000	2378000	in the file list,
+2378000	2380000	and change it to Lab.
+2384000	2386000	Then,
+2386000	2388000	enter it.
+2388000	2390000	When you do this,
+2394000	2396000	you will enter
+2396000	2398000	another interface
+2398000	2400000	called Lab.
+2400000	2402000	If you need
+2402000	2404000	some information,
+2404000	2406000	you can go back to our video.
+2406000	2408000	There should be steps
+2408000	2410000	in the following videos.
+2412000	2414000	The interface of Lab
+2414000	2416000	looks a little different
+2416000	2418000	from that of Notebook.
+2418000	2420000	The biggest difference is
+2420000	2422000	that the interface of Lab
+2422000	2424000	consists of many different small panels.
+2424000	2426000	For example, the left panel
+2426000	2428000	is for file browsing,
+2428000	2430000	and the right panel
+2430000	2432000	is for test.png.
+2432000	2434000	You can click twice
+2434000	2436000	and the right panel
+2436000	2438000	will show the test.png.
+2438000	2440000	Of course,
+2440000	2442000	the Notebook is already open
+2442000	2444000	and you can see the information
+2444000	2446000	is still there.
+2446000	2448000	So they actually
+2448000	2450000	store the same server,
+2450000	2452000	but with different interfaces.
+2452000	2454000	What can we do
+2454000	2456000	with the Notebook?
+2456000	2458000	You can see
+2458000	2460000	a blue plus sign in the upper left corner.
+2460000	2462000	Click it
+2462000	2464000	to open the start page.
+2464000	2466000	In the start page,
+2466000	2468000	you can choose
+2468000	2470000	what kind of content you want to start.
+2470000	2472000	You can start a notebook
+2472000	2474000	with Python as the core,
+2474000	2476000	or with R as the core.
+2476000	2478000	Or you can
+2478000	2480000	start a terminal
+2480000	2482000	and do the same thing as before,
+2482000	2484000	like start with S.
+2488000	2490000	As I said,
+2490000	2492000	the best selling point of Lab
+2492000	2494000	is that it has different panels
+2494000	2496000	for window browsing.
+2496000	2498000	The advantage of doing this
+2498000	2500000	is that you can compare the two.
+2500000	2502000	For example,
+2502000	2504000	if you go back to the iPad and Notebook
+2504000	2506000	and move to the bottom of the page,
+2506000	2508000	and click the right button
+2508000	2510000	to see the list,
+2510000	2512000	you can see that there are a lot of lists.
+2512000	2514000	One of them is called
+2514000	2516000	Create New View for Output.
+2516000	2518000	Click it.
+2518000	2520000	This picture will move to a new panel.
+2520000	2522000	You can move it around.
+2522000	2524000	It's like
+2524000	2526000	many powerful software
+2526000	2528000	these days.
+2528000	2530000	You can compare it with different pictures.
+2530000	2532000	For example, I can re-draw one.
+2532000	2534000	I'll change it to Cosine.
+2534000	2536000	Re-draw.
+2536000	2538000	Oh, this is also a comparison.
+2538000	2540000	But I can change it.
+2540000	2542000	Copy.
+2542000	2544000	Do the same thing.
+2544000	2546000	But here I want to make it Sine.
+2546000	2548000	Re-draw.
+2548000	2550000	Then you can compare this picture
+2550000	2552000	with this picture.
+2552000	2554000	And so on.
+2556000	2558000	JupyterLab
+2558000	2560000	also supports a lot of other
+2560000	2562000	not only Notebook,
+2562000	2564000	but also a lot of other file display modes.
+2564000	2566000	For example, if you click the PNG file,
+2566000	2568000	it will jump out of the PNG file.
+2568000	2570000	If you click the CSV file,
+2570000	2572000	it can also display the CSV file
+2572000	2574000	in a display way.
+2574000	2576000	And so on.
+2576000	2578000	It also has
+2578000	2580000	some more gorgeous settings.
+2580000	2582000	For example,
+2582000	2584000	if you move to the
+2584000	2586000	list above,
+2586000	2588000	there is a list called
+2588000	2590000	Settings.
+2590000	2592000	The first one is Scene.
+2592000	2594000	Here you can choose
+2594000	2596000	whether to use
+2596000	2598000	bright colors or dark colors.
+2598000	2600000	The default is bright colors.
+2600000	2602000	But I prefer dark colors.
+2602000	2604000	So I'll change it to dark colors.
+2604000	2606000	Let's see what happens.
+2606000	2608000	It's dark colors.
+2612000	2614000	In addition,
+2614000	2616000	you can do more customization.
+2616000	2618000	For example,
+2618000	2620000	if you open Settings,
+2620000	2622000	there is a Language.
+2622000	2624000	But at the moment,
+2624000	2626000	there is only English language.
+2626000	2628000	But we can install Chinese language.
+2628000	2630000	For example,
+2630000	2632000	if we go to Terminal,
+2632000	2634000	and use pip,
+2634000	2636000	to install...
+2636000	2638000	What's the name of this package?
+2638000	2640000	It's called
+2640000	2642000	JupyterLab
+2644000	2646000	Language Pack.
+2648000	2650000	Chinese.
+2650000	2652000	Taiwan.
+2652000	2654000	Something like that.
+2654000	2656000	Install.
+2656000	2658000	Then it will start to install.
+2658000	2660000	That's right.
+2660000	2662000	You are now installing
+2662000	2664000	the package you want on
+2664000	2666000	a server called CallistoHub.
+2666000	2668000	After installation,
+2668000	2670000	you need to re-organize this lab.
+2670000	2672000	Just click on Re-organize.
+2674000	2676000	Then the whole lab will be re-organized.
+2676000	2678000	So,
+2680000	2682000	if you go to Settings,
+2682000	2684000	Language,
+2684000	2686000	you should see Chinese.
+2686000	2688000	You can choose Chinese or Taiwanese.
+2688000	2690000	Go in.
+2690000	2692000	Then Reload.
+2698000	2700000	The JupyterLab with Chinese version
+2700000	2702000	will appear.
+2702000	2704000	Maybe it's not that perfect.
+2704000	2706000	You can see some of them are not translated.
+2706000	2708000	Because the JupyterLab
+2708000	2710000	translation project
+2710000	2712000	is still in progress.
+2712000	2714000	They are all public projects.
+2714000	2716000	So if you are interested in contributing,
+2716000	2718000	you can ask me.
+2718000	2720000	I can send you the link.
+2720000	2722000	But you can also google
+2722000	2724000	the translation project link.
+2728000	2730000	So far, I don't know if you have any questions.
+2734000	2736000	OK.
+2740000	2742000	I don't see any questions.
+2742000	2744000	That's great.
+2744000	2746000	It seems that everyone is very
+2746000	2748000	into the situation.
+2748000	2750000	I don't know.
+2750000	2752000	Does everyone follow?
+2752000	2754000	I'm following.
+2754000	2756000	It doesn't matter.
+2756000	2758000	OK.
+2758000	2760000	Because if you want to repeat it later,
+2760000	2762000	you can refer to my first video.
+2762000	2764000	There should be some details in the video
+2764000	2766000	to explain how to do these things.
+2770000	2772000	The last part,
+2772000	2774000	I want to share with you
+2774000	2776000	some of the functions of Hub.
+2778000	2780000	So if we go to
+2780000	2782000	the menu,
+2782000	2784000	File,
+2784000	2786000	and then the second one,
+2786000	2788000	you should see the Hub control panel
+2788000	2790000	or Hub control panel.
+2790000	2792000	If you don't know how to install Chinese,
+2792000	2794000	it's called Hub control panel.
+2794000	2796000	Click it.
+2796000	2798000	A control panel will pop up.
+2798000	2800000	Wow, it's so bright.
+2800000	2802000	If you don't mind,
+2802000	2804000	I'll turn on a light.
+2804000	2806000	Because it's getting dark here.
+2806000	2808000	I'll be right back.
+2808000	2810000	OK.
+2822000	2824000	On this control panel,
+2824000	2826000	you should only see two options.
+2826000	2828000	The first option is
+2828000	2830000	to stop
+2830000	2832000	the server just now.
+2834000	2836000	Now,
+2836000	2838000	click it.
+2842000	2844000	Let's try to click
+2844000	2846000	this dot.
+2846000	2848000	Now the server has been stopped.
+2848000	2850000	If we go back to the previous page,
+2850000	2852000	you can see
+2852000	2854000	the server is unavailable or unreachable.
+2854000	2856000	Because the server has been stopped.
+2856000	2858000	But we can restart it.
+2858000	2860000	So,
+2860000	2862000	we can click here
+2862000	2864000	to restart.
+2864000	2866000	Or we can go back to the previous page
+2866000	2868000	and click Start My Server.
+2868000	2870000	It's up to you.
+2870000	2872000	Let's restart it.
+2876000	2878000	OK.
+2878000	2880000	It's done.
+2880000	2882000	The preset interface will be
+2882000	2884000	the notebook interface.
+2884000	2886000	But you can see
+2886000	2888000	the generated files are still there.
+2888000	2890000	The test.png is still there.
+2890000	2892000	However,
+2892000	2894000	if you switch to the lab interface,
+2896000	2898000	you may find something
+2898000	2900000	different.
+2900000	2902000	Let's take a look.
+2902000	2904000	OK.
+2906000	2908000	If you click
+2908000	2910000	the menu,
+2910000	2912000	you may find the Chinese file is gone.
+2912000	2914000	Why?
+2914000	2916000	Why is the file still there,
+2916000	2918000	but
+2918000	2920000	the Chinese file is gone?
+2920000	2922000	Here,
+2922000	2924000	I'd like to use this observation
+2924000	2926000	to explain the full line
+2926000	2928000	of JupyterHub.
+2928000	2930000	If you are a JupyterHub
+2930000	2932000	administrator,
+2932000	2934000	you can set the files or structures
+2934000	2936000	in JupyterHub
+2936000	2938000	which parts can't be changed by the user,
+2938000	2940000	and which parts can be changed by the user.
+2940000	2942000	However, when you finish this server,
+2942000	2944000	it will reset.
+2944000	2946000	The file we installed just now
+2946000	2948000	has been reset.
+2948000	2950000	If you want to re-install JupyterHub,
+2950000	2952000	you have to install it again.
+2952000	2954000	However,
+2954000	2956000	the administrator can also decide
+2956000	2958000	which parts can be saved
+2958000	2960000	by the user forever.
+2960000	2962000	In other words,
+2962000	2964000	if you just generate the files
+2964000	2966000	in those places,
+2966000	2968000	you can save these files.
+2968000	2970000	Every time you restart JupyterHub,
+2970000	2972000	these files will not disappear.
+2972000	2974000	For example, the test.png
+2974000	2976000	will always be saved
+2976000	2978000	in this server.
+2978000	2980000	As far as I know,
+2980000	2982000	there is a time limit
+2982000	2984000	in Kalisto.
+2984000	2986000	If you don't log in
+2986000	2988000	for more than 10 days,
+2988000	2990000	your file will be deleted.
+2990000	2992000	Every hub
+2992000	2994000	has its own rules.
+2994000	2996000	For more details,
+2996000	2998000	you can refer to their settings.
+2998000	3000000	If we go back to the Control Panel,
+3000000	3002000	you will see a Token.
+3002000	3004000	In the upper left corner,
+3004000	3006000	there is a Token.
+3006000	3008000	If you click on it,
+3008000	3010000	you can see some
+3010000	3012000	complicated things.
+3012000	3014000	Most of the things here
+3014000	3016000	are used by the administrator.
+3016000	3018000	However, I want to talk about
+3018000	3020000	the things below.
+3020000	3022000	For example,
+3022000	3026000	if you click on the
+3026000	3028000	OAuth application,
+3028000	3030000	JupyterHub
+3030000	3032000	is compatible
+3032000	3034000	with OAuth.
+3034000	3036000	This means that
+3036000	3038000	according to the administrator's
+3038000	3040000	own ideas,
+3040000	3042000	they can use
+3042000	3044000	third-party account information
+3044000	3046000	to enter
+3046000	3048000	JupyterHub verification.
+3048000	3050000	For example,
+3050000	3052000	Kalisto Hub
+3052000	3054000	uses your Google account
+3054000	3056000	or Microsoft account
+3056000	3058000	to verify.
+3058000	3060000	However,
+3060000	3062000	JupyterHub
+3062000	3064000	in our team
+3064000	3066000	uses GitHub account
+3066000	3068000	to do third-party verification.
+3068000	3070000	The advantage of doing this is
+3070000	3072000	that the administrator
+3072000	3074000	can save a lot of time
+3074000	3076000	in managing users and their accounts.
+3076000	3078000	Because you are
+3078000	3080000	distributing this responsibility
+3080000	3082000	to third-party groups.
+3082000	3084000	I personally think it's good
+3084000	3086000	because you can imagine
+3086000	3088000	that almost every researcher
+3088000	3090000	has Google
+3090000	3092000	and GitHub.
+3092000	3094000	If you can use these accounts
+3094000	3096000	to log in to GitHub,
+3096000	3098000	it is very convenient.
+3100000	3102000	OK.
+3102000	3104000	That's about it.
+3104000	3106000	In the same video,
+3106000	3108000	I will also put
+3108000	3110000	some screenshots.
+3110000	3112000	Let's take a look.
+3112000	3114000	Notebook Entry,
+3114000	3116000	Web Entry.
+3116000	3118000	If today
+3118000	3120000	JupyterHub is running on a large
+3120000	3122000	Google cloud
+3122000	3124000	or Amazon cloud,
+3124000	3126000	it may provide
+3126000	3128000	an option
+3128000	3130000	when starting the server.
+3130000	3132000	It may say
+3132000	3134000	how many CPUs do you need
+3134000	3136000	for this server?
+3136000	3138000	You can choose
+3138000	3140000	to run a large server
+3140000	3142000	or a small server.
+3142000	3144000	Kalisto is a free hub,
+3144000	3146000	so it provides
+3146000	3148000	all users
+3148000	3150000	with one CPU.
+3150000	3152000	That is,
+3152000	3154000	you can only use one CPU
+3154000	3156000	to do things.
+3156000	3158000	This screenshot is
+3158000	3160000	taken from my research hub.
+3160000	3162000	You can see that
+3162000	3164000	we can open up to 64 CPUs.
+3164000	3166000	In fact, there are 64 CPUs
+3166000	3168000	plus GPU options.
+3168000	3170000	It's more luxurious.
+3172000	3174000	The other screenshot
+3174000	3176000	is only
+3176000	3178000	seen by the manager of the hub.
+3178000	3180000	You can see
+3180000	3182000	some
+3184000	3186000	If you are a manager,
+3186000	3188000	you can see
+3188000	3190000	how many people are using this hub,
+3190000	3192000	who are using it,
+3192000	3194000	and who haven't used it for a long time.
+3195000	3197000	You can
+3197000	3199000	stop it.
+3199000	3201000	If you find any abnormal usage,
+3201000	3203000	you can turn off their hub.
+3203000	3205000	Then they can't continue to use it.
+3205000	3207000	Something like that.
+3207000	3209000	Let's take a look at
+3209000	3211000	the manager's interface.
+3215000	3217000	There is a problem here.
+3217000	3219000	It's almost an hour,
+3219000	3221000	so I want to stop
+3221000	3223000	to see if there are any questions.
+3223000	3225000	I have a question.
+3227000	3229000	If Kalisto
+3229000	3231000	is a user,
+3231000	3233000	how should you use it?
+3233000	3235000	Good question.
+3239000	3241000	If we go back to the hub,
+3241000	3243000	you can see
+3243000	3245000	in the Getting Started
+3245000	3247000	notebook, there are some links.
+3247000	3249000	You can click on these links.
+3249000	3251000	For example,
+3251000	3253000	you can click on
+3253000	3255000	Kalisto Jupyter and Python Basics Notebook
+3255000	3257000	in Preparation.
+3257000	3259000	Then
+3259000	3261000	this hub will start
+3261000	3263000	retrieving the resources
+3263000	3265000	stored on GitHub.
+3265000	3267000	Then copy a copy to the hub.
+3269000	3271000	After they are done,
+3273000	3275000	your hub space
+3275000	3277000	will have more resources.
+3277000	3279000	These resources
+3279000	3281000	are the resources you can use to learn.
+3281000	3283000	It's out.
+3283000	3285000	This is the new notebook I just retrieved.
+3285000	3287000	This notebook teaches you
+3287000	3289000	Python.
+3289000	3291000	There is a YouTube video
+3291000	3293000	here.
+3293000	3295000	You can watch it.
+3295000	3297000	You can watch it like this.
+3299000	3301000	There are some other things
+3301000	3303000	at the bottom.
+3303000	3305000	You can add text statements
+3305000	3307000	and run these programs.
+3307000	3309000	Let's see what happens next.
+3311000	3313000	Oh, there is a video.
+3313000	3315000	I'd like to watch it, but I'll watch it another day.
+3317000	3319000	So it's like a teaching hub.
+3319000	3321000	It's a teaching hub.
+3321000	3323000	There are various teaching websites.
+3323000	3325000	Yes, it's a teaching hub.
+3325000	3327000	If we go back to the
+3327000	3329000	previous lab interface,
+3329000	3331000	you can see
+3331000	3333000	if you click on Reorganize,
+3333000	3335000	you can see
+3335000	3337000	a new folder.
+3337000	3339000	If you click on it,
+3339000	3341000	you can see a lot of things in it.
+3341000	3343000	This is what you just downloaded.
+3345000	3347000	In addition to the previous notebook,
+3347000	3349000	there are many other notebooks
+3349000	3351000	that you can refer to.
+3351000	3353000	In short,
+3353000	3355000	it's a large-scale resource
+3355000	3357000	that is provided to
+3357000	3359000	elementary and junior high school teachers
+3359000	3361000	for their use of data science.
+3361000	3363000	You can see
+3363000	3365000	what modules have been created.
+3365000	3367000	In addition to using this method to browse,
+3367000	3369000	Calista also provides resources.
+3369000	3371000	There should be another Calista Learning Module.
+3371000	3373000	If you click on it,
+3373000	3375000	you will be connected to another page of Calista.
+3375000	3377000	There are a lot of learning modules at the bottom.
+3379000	3381000	So if you are a teacher today,
+3381000	3383000	you can say,
+3383000	3385000	which module do you want your students to learn today?
+3385000	3387000	Just click on it.
+3387000	3389000	Then the content of the module will be directly
+3389000	3391000	retrieved to JupyterHub.
+3391000	3393000	Or you can ask your students to click on it themselves.
+3395000	3397000	Students can use their account
+3397000	3399000	to directly execute
+3399000	3401000	what's on it.
+3403000	3405000	There are many other resources here.
+3405000	3407000	One of my favorite resources
+3407000	3409000	is that they have
+3409000	3411000	the content of
+3411000	3413000	cooperating with indigenous people in North America.
+3413000	3415000	For example,
+3415000	3417000	if you click on it,
+3417000	3419000	there is a trap.
+3421000	3423000	You can use data analysis
+3423000	3425000	to see
+3425000	3427000	which side of the trap
+3427000	3429000	is the best for catching fish.
+3431000	3433000	It is a learning module,
+3433000	3435000	so when you click on it,
+3435000	3437000	it will be retrieved to your hub.
+3437000	3439000	Then you can start
+3439000	3441000	doing these interesting data analysis.
+3441000	3443000	Oh, I'm done.
+3443000	3445000	Okay, it's here.
+3445000	3447000	Then you can see
+3447000	3449000	what's here. Let's try it.
+3451000	3453000	Oh,
+3453000	3455000	there is a map.
+3455000	3457000	This is an interactive map.
+3457000	3459000	You can drag and drop here.
+3459000	3461000	This is
+3461000	3463000	a fishing ground near Vancouver.
+3463000	3465000	And so on.
+3465000	3467000	So Callisto
+3467000	3469000	provides a lot of teaching resources
+3469000	3471000	to help you familiarize yourself
+3471000	3473000	with data science.
+3473000	3475000	Of course, for you,
+3475000	3477000	there is JupyterHub.
+3477000	3479000	It looks cool.
+3479000	3481000	These data
+3481000	3483000	are all
+3483000	3485000	going through
+3485000	3487000	Callisto.
+3487000	3489000	Is it an organization?
+3489000	3491000	Do they need to be certified?
+3491000	3493000	How do you decide
+3493000	3495000	whether or not to upload these data?
+3495000	3497000	Callisto is a kind of project.
+3497000	3499000	It is a project of cooperation between two organizations.
+3499000	3501000	Two
+3501000	3503000	non-profit organizations, NPO.
+3503000	3505000	It is a cooperation project.
+3505000	3507000	These two organizations
+3507000	3509000	have a team
+3509000	3511000	to maintain Callisto.
+3511000	3513000	All the modules
+3513000	3515000	are written by them.
+3515000	3517000	But the data they use
+3517000	3519000	should be from somewhere else.
+3519000	3521000	For example, the fishing data
+3521000	3523000	is from the local
+3523000	3525000	tribe.
+3525000	3527000	Then it is imported.
+3527000	3529000	In addition,
+3529000	3531000	there are also a lot of public data on science.
+3531000	3533000	They should use those public data
+3533000	3535000	to show
+3535000	3537000	how data science works.
+3537000	3539000	I see.
+3539000	3541000	Thank you.
+3543000	3545000	Actually, there is one last part.
+3547000	3549000	If you are satisfied,
+3549000	3551000	we can stop here.
+3555000	3557000	It's okay.
+3557000	3559000	We can continue.
+3559000	3561000	Really?
+3561000	3563000	If you
+3563000	3565000	think it's okay,
+3565000	3567000	I will talk about the rest of the video.
+3567000	3569000	The last part
+3569000	3571000	is
+3571000	3573000	to provide you with more resources.
+3579000	3581000	In addition to
+3581000	3583000	Callisto Hub,
+3583000	3585000	there are many
+3585000	3587000	other Hubs.
+3587000	3589000	For example, a commonly used Hub service
+3589000	3591000	is Binder.
+3591000	3593000	Binder
+3593000	3595000	is used to
+3595000	3597000	turn a GitHub
+3597000	3599000	storage into
+3599000	3601000	a Hub that can be executed
+3601000	3603000	immediately.
+3603000	3605000	For example,
+3605000	3607000	this is an article I posted
+3607000	3609000	last year.
+3609000	3611000	Its
+3611000	3613000	supplementary information
+3613000	3615000	is
+3615000	3617000	a
+3617000	3619000	GitHub page.
+3619000	3621000	You can find a link
+3621000	3623000	on this GitHub page.
+3623000	3625000	Let me see if I can
+3625000	3627000	switch to that page.
+3627000	3629000	Oh,
+3629000	3631000	this GitHub page
+3631000	3633000	is the supplementary information
+3633000	3635000	of the article I just posted.
+3635000	3637000	There will be a link
+3637000	3639000	to Binder below.
+3639000	3641000	If you click on it,
+3641000	3643000	you can start something called Binder.
+3643000	3645000	It will take you to a place
+3645000	3647000	similar to Jupyter
+3647000	3649000	on the GitHub page.
+3649000	3651000	You can
+3651000	3653000	review the information
+3653000	3655000	in this article,
+3655000	3657000	and then
+3657000	3659000	re-create
+3659000	3661000	each image in this article.
+3661000	3663000	There are
+3663000	3665000	many details to explain.
+3669000	3671000	This is Binder,
+3671000	3673000	another service provided by GitHub.
+3673000	3675000	It looks like this.
+3675000	3677000	This is
+3677000	3679000	related to earth science.
+3679000	3681000	It's called Pangeo Cloud.
+3681000	3683000	It's kind of
+3683000	3685000	semi-public.
+3685000	3687000	As long as you are doing earth science,
+3687000	3689000	you can use their service.
+3689000	3691000	After registration
+3691000	3693000	and review,
+3693000	3695000	you can start using their
+3695000	3697000	JupyterHub deployed on
+3697000	3699000	Google Cloud and Amazon.
+3699000	3701000	You can directly save
+3701000	3703000	cloud computing resources
+3703000	3705000	on JupyterHub.
+3705000	3707000	It's cool.
+3707000	3709000	Of course, there is Callisto.
+3709000	3711000	We won't talk about it.
+3711000	3713000	If you think
+3713000	3715000	Callisto Learning Module
+3715000	3717000	is a bit complicated,
+3717000	3719000	or you want a quick
+3719000	3721000	learning resource we recommend,
+3721000	3723000	there are two.
+3723000	3725000	You can refer to them.
+3725000	3727000	You can directly
+3727000	3729000	go to the hub
+3729000	3731000	and enter the terminal,
+3731000	3733000	or you can enter any of them.
+3733000	3735000	You can enter any of them.
+3735000	3737000	These two are actually
+3737000	3739000	the storage on GitHub.
+3739000	3741000	You can put all the
+3741000	3743000	content on the hub.
+3743000	3745000	For example,
+3745000	3747000	let's use League
+3747000	3749000	as a reference.
+3749000	3751000	Copy and go back to the hub.
+3751000	3753000	Open the terminal.
+3757000	3759000	Paste it.
+3759000	3761000	After you paste it,
+3761000	3763000	you can see
+3763000	3765000	a demo JupyterGit
+3765000	3767000	in the main folder.
+3767000	3769000	There are a lot of things
+3769000	3771000	when you click on it.
+3771000	3773000	Let's take a look.
+3773000	3775000	There is an ip1v here.
+3775000	3777000	This is an iPython notebook
+3777000	3779000	that can be executed.
+3779000	3781000	Other notebooks should be
+3781000	3783000	in the folder,
+3783000	3785000	such as intro Jupyter.
+3785000	3787000	You can see all kinds of
+3787000	3789000	introduction to Jupyter tools.
+3789000	3791000	In short,
+3791000	3793000	there are a lot of learning resources here.
+3793000	3795000	You are welcome to
+3795000	3797000	try it out
+3797000	3799000	at any time.
+3801000	3803000	In the last two or three videos,
+3803000	3805000	I want to briefly explain
+3805000	3807000	that if you really
+3807000	3809000	like JupyterHub,
+3809000	3811000	and you want to
+3811000	3813000	install JupyterHub for your
+3813000	3815000	research team,
+3815000	3817000	what should you do?
+3819000	3821000	First of all,
+3821000	3823000	JupyterHub provides
+3823000	3825000	two standard versions.
+3825000	3827000	One is called The Littlest JupyterHub.
+3827000	3829000	This version
+3829000	3831000	is specifically for
+3831000	3833000	small teams,
+3833000	3835000	between 0 to 100 people.
+3837000	3839000	In short,
+3839000	3841000	it is simplified.
+3841000	3843000	You don't have to spend
+3843000	3845000	a lot of effort.
+3845000	3847000	You can install it on your
+3847000	3849000	lab server
+3849000	3851000	for your colleagues or students.
+3851000	3853000	The other version is
+3853000	3855000	JupyterHub on Kubernetes.
+3855000	3857000	This version
+3857000	3859000	is specifically for
+3859000	3861000	large cloud
+3861000	3863000	installations.
+3863000	3865000	For example,
+3865000	3867000	JupyterHub installation
+3867000	3869000	on Amazon
+3869000	3871000	or Microsoft Azure.
+3871000	3873000	This version is for
+3873000	3875000	hundreds or thousands of people,
+3875000	3877000	or JupyterHub installation
+3877000	3879000	on a supercomputer.
+3881000	3883000	If you want to install it,
+3883000	3885000	choose one
+3885000	3887000	that suits you.
+3887000	3889000	Even so,
+3889000	3891000	you may still feel
+3891000	3893000	that the technical performance
+3893000	3895000	is too high.
+3895000	3897000	After all,
+3897000	3899000	most people are not
+3899000	3901000	good at it.
+3901000	3903000	Of course, we also see this difficulty.
+3903000	3905000	In 2019,
+3905000	3907000	some of us
+3907000	3909000	in the Jupyter team
+3909000	3911000	at Berkeley
+3911000	3913000	established a non-profit organization
+3913000	3915000	called 2I2C,
+3915000	3917000	or the International Interactive
+3917000	3919000	Computing Collaboration.
+3919000	3921000	The purpose of
+3921000	3923000	this non-profit organization
+3923000	3925000	is to provide
+3925000	3927000	various open science
+3927000	3929000	and technology services.
+3929000	3931000	One of the most
+3931000	3933000	developed services
+3933000	3935000	is to provide
+3935000	3937000	research teams or organizations
+3937000	3939000	to install and manage
+3939000	3941000	their JupyterHub.
+3941000	3943000	Most of their
+3943000	3945000	funding comes from
+3945000	3947000	the John Zuckerberg
+3947000	3949000	Initiative,
+3949000	3951000	the one on Facebook.
+3951000	3953000	However,
+3953000	3955000	they also receive
+3955000	3957000	funding from
+3957000	3959000	the International Interactive
+3959000	3961000	Computing Collaboration.
+3961000	3963000	The Callisto
+3963000	3965000	and Pangeo
+3965000	3967000	hubs we just saw
+3967000	3969000	were set up
+3969000	3971000	by 2I2C.
+3971000	3973000	However,
+3973000	3975000	Binder and our own
+3975000	3977000	research hub are not.
+3977000	3979000	Our own research hub
+3979000	3981000	is more gorgeous
+3981000	3983000	because we have to test
+3983000	3985000	a lot of things.
+3985000	3987000	Our hub looks like this.
+3987000	3989000	Let me show you.
+3989000	3991000	It should be here.
+3999000	4001000	I don't think I can start.
+4005000	4007000	Looks like I have to wait.
+4009000	4011000	I'll come back later.
+4011000	4013000	So,
+4013000	4015000	what we want to achieve
+4015000	4017000	through 2I2C
+4017000	4019000	is that
+4019000	4021000	one day in the future,
+4021000	4023000	as a researcher,
+4023000	4025000	all your research activities
+4025000	4027000	and academic activities
+4027000	4029000	can take place on the cloud.
+4029000	4031000	Your own research team
+4031000	4033000	will collaborate on the cloud.
+4033000	4035000	You have to save
+4035000	4037000	HPC computing resources
+4037000	4039000	and use JupyterHub
+4039000	4041000	to log in.
+4041000	4043000	The school itself
+4043000	4045000	may have a JupyterHub.
+4045000	4047000	When you have a lecture
+4047000	4049000	or a lecture,
+4049000	4051000	you can use their hub
+4051000	4053000	to give others
+4053000	4055000	what you want
+4055000	4057000	them to learn.
+4059000	4061000	Even if you attend
+4061000	4063000	an international conference,
+4063000	4065000	this conference
+4065000	4067000	may have a hub
+4067000	4069000	for the participants
+4069000	4071000	to log in
+4071000	4073000	and learn new skills
+4073000	4075000	through the hub.
+4079000	4081000	That's about it.
+4085000	4087000	Finally, I want to say
+4087000	4089000	that all the progress of open science
+4089000	4091000	is not done by ourselves.
+4091000	4093000	There are many
+4093000	4095000	community members.
+4095000	4097000	For example,
+4097000	4099000	what I can share with you today
+4099000	4101000	is a tribute to
+4101000	4103000	our entire research team
+4103000	4105000	at Berkeley,
+4105000	4107000	JupyterMeteors.
+4107000	4109000	I put all their people here
+4109000	4111000	and let you know
+4111000	4113000	what the JupyterMeteors
+4113000	4115000	project is doing.
+4115000	4117000	Thank you very much.
+4119000	4121000	If you have any questions,
+4121000	4123000	you can contact me
+4123000	4125000	by text message
+4125000	4127000	or via ZXL.
+4127000	4129000	You can contact me anytime.
+4131000	4133000	This is my last video.
+4133000	4135000	Thank you.
+4135000	4137000	Thank you, Huaijie.
+4137000	4139000	If you are interested,
+4139000	4141000	you can turn on the microphone
+4141000	4143000	and give Huaijie a round of applause.
+4149000	4151000	Let me
+4153000	4155000	find the
+4155000	4157000	POAP code.
+4157000	4159000	Let me find it.
+4159000	4161000	If you have any questions,
+4161000	4163000	you can ask now.
+4183000	4185000	Thank you for your applause.
+4187000	4189000	Thank you for your applause.
+4193000	4195000	Let me write down
+4195000	4197000	the POAP code.
+4201000	4203000	Thank you for your participation.
+4203000	4205000	Thank you.
+4205000	4207000	I have a question.
+4209000	4211000	For your first video,
+4211000	4213000	do you want to
+4213000	4215000	share it on
+4215000	4217000	Tyra's website?
+4217000	4219000	Otherwise,
+4219000	4221000	your sharing
+4221000	4223000	should be only temporary.
+4225000	4227000	Let me think about it.
+4227000	4229000	I can share it
+4229000	4231000	to the participants.
+4231000	4233000	Absolutely no problem.
+4233000	4235000	This video will be released soon.
+4235000	4237000	But I don't know if I can share it on the website.
+4237000	4239000	I will contact you later.
+4239000	4241000	No problem.
+4247000	4249000	Also,
+4253000	4255000	I have a question.
+4257000	4259000	Many
+4259000	4261000	quantum computing
+4261000	4263000	companies
+4263000	4265000	do similar things,
+4265000	4267000	such as
+4267000	4269000	sharing their
+4269000	4271000	computing resources
+4271000	4273000	on the cloud.
+4273000	4275000	Do you
+4275000	4277000	write the code
+4277000	4279000	on Python
+4279000	4281000	and upload it to their server?
+4281000	4283000	They will run the code for you.
+4283000	4285000	Their hardware is different,
+4285000	4287000	but they will run the code for you.
+4287000	4289000	Actually, this is a more traditional way.
+4289000	4291000	A more traditional way
+4291000	4293000	to use a supercomputer
+4293000	4295000	is that there is
+4295000	4297000	something like a work processor.
+4297000	4299000	You have to
+4299000	4301000	upload your
+4301000	4303000	code to the
+4303000	4305000	work processor.
+4305000	4307000	The work processor
+4307000	4309000	will deploy
+4309000	4311000	and decide
+4311000	4313000	how many computing resources
+4313000	4315000	to run your code
+4315000	4317000	at what time.
+4317000	4319000	Finally,
+4319000	4321000	the result will be packed
+4321000	4323000	and sent to you.
+4323000	4325000	This is a more
+4325000	4327000	traditional way.
+4327000	4329000	The way we promote now is
+4329000	4331000	to save
+4331000	4333000	the part of the work processor.
+4333000	4335000	JupyterHub itself can be used as a work processor.
+4335000	4337000	As long as you use the right
+4337000	4339000	structure, such as Kubernetes,
+4339000	4341000	the actual
+4341000	4343000	technical details are a bit complicated.
+4343000	4345000	I will make it simple.
+4345000	4347000	As long as you use
+4347000	4349000	the structure of Kubernetes,
+4349000	4351000	you can
+4351000	4353000	use JupyterHub
+4353000	4355000	as a scheduler.
+4355000	4357000	As a work processor,
+4357000	4359000	you can decide
+4359000	4361000	how many resources
+4361000	4363000	you want to use
+4363000	4365000	at the beginning of your script.
+4365000	4367000	You can use several nodes,
+4367000	4369000	several clusters,
+4369000	4371000	and then you start running.
+4371000	4373000	JupyterHub
+4373000	4375000	and Dask,
+4375000	4377000	Dask is a suite of parallel algorithms
+4377000	4379000	I just mentioned,
+4379000	4381000	with Dask's
+4381000	4383000	external components.
+4385000	4387000	As long as you use Dask,
+4387000	4389000	you can
+4389000	4391000	open a few
+4391000	4393000	control panels
+4393000	4395000	in JupyterHub
+4395000	4397000	to monitor
+4397000	4399000	how many CPUs
+4399000	4401000	you use
+4401000	4403000	when running
+4403000	4405000	these program codes
+4405000	4407000	in real time.
+4409000	4411000	If you have questions,
+4411000	4413000	you can ask me
+4413000	4415000	in the chat room.
+4415000	4417000	Thanks for watching.
+4440000	4442000	It seems that
+4442000	4444000	the gun has disappeared.
+4448000	4450000	It's okay. Let's wait for it.
+4469000	4471000	If you have questions,
+4471000	4473000	you can ask me
+4473000	4475000	in the chat room.
+4499000	4501000	If you have questions,
+4501000	4503000	you can ask me
+4503000	4505000	in the chat room.
+4505000	4507000	Thanks for watching.
+4529000	4531000	Thanks for watching.
+4531000	4533000	Thanks for watching.
+4559000	4561000	武藤阿輝是甚麼意思
+4561000	4563000	魏柏輕
+4563000	4565000	魏輕
+4565000	4567000	魏輕
+4567000	4569000	魏輕
+4569000	4571000	魏輕
+4571000	4573000	魏輕
+4573000	4575000	魏輕
+4575000	4577000	魏輕
+4577000	4579000	魏輕
+4579000	4581000	魏輕
+4581000	4583000	魏輕
+4583000	4585000	魏輕
+4585000	4587000	魏輕
+4587000	4589000	魏輕
+4589000	4591000	魏輕
+4591000	4593000	魏輕
+4593000	4595000	魏輕
+4595000	4597000	魏輕
+4597000	4599000	魏輕
+4599000	4601000	魏輕
+4601000	4603000	魏輕
+4603000	4605000	魏輕
+4605000	4607000	魏輕
+4607000	4609000	魏輕
+4609000	4611000	魏輕
+4611000	4613000	魏輕
+4613000	4615000	魏輕
+4615000	4617000	魏輕
+4617000	4619000	魏輕
+4619000	4621000	魏輕
+4621000	4623000	魏輕
+4623000	4625000	魏輕
+4625000	4627000	魏輕
+4627000	4629000	魏輕
+4629000	4631000	魏輕
+4631000	4633000	魏輕
+4633000	4635000	魏輕
+4635000	4637000	魏輕
+4637000	4639000	魏輕
+4639000	4641000	魏輕
+4641000	4643000	魏輕
+4643000	4645000	魏輕
+4645000	4647000	魏輕
+4647000	4649000	魏輕
+4649000	4651000	魏輕
+4651000	4653000	魏輕
+4653000	4655000	魏輕
+4655000	4657000	魏輕
+4657000	4659000	魏輕
+4659000	4661000	魏輕
+4661000	4663000	魏輕
+4663000	4665000	魏輕
+4665000	4667000	魏輕
+4667000	4669000	魏輕
+4669000	4671000	魏輕
+4672000	4674000	デスク
+4674000	4676000	ダスク
+4676000	4678000	デスク
+4687000	4689000	デスク
+4689000	4697000	カリスタハブ
+4719000	4724000	ダスク
+4724000	4726000	ダスク
+4726000	4733000	ダスケートウェイ
+4733000	4736000	ダスク
+4737000	4751000	ダスケートウェイ
+4751000	4758000	ダスケートウェイ
+4758000	4768000	ダスケートウェイ
+4768000	4778000	ダスケートウェイ
+4778000	4788000	ダスケートウェイ
+4788000	4798000	ダスケートウェイ
+4798000	4808000	ダスケートウェイ
+4808000	4818000	ダスケートウェイ
+4818000	4828000	ダスケートウェイ
+4828000	4838000	ダスケートウェイ
+4838000	4858000	ダスケートウェイ
+4858000	4878000	ダスケートウェイ
+4878000	4898000	ダスケートウェイ
+4898000	4918000	ダスケートウェイ
+4919000	4920000	好像沒有
+4920000	4924000	那我就把錄影關掉

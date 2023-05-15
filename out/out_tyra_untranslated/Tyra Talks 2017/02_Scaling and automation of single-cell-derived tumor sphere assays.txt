@@ -1,0 +1,1677 @@
+我PhD的研究主要是在
+Microfluidics for Single Cell Analysis
+那在Biology的Content裡面
+我主要專注於癌症的研究
+因為我們一般相信在癌症上
+細胞之間的抑制性更強
+像是說我們在治療癌症的時候
+總是會有一些抗藥的細胞
+可以治療
+所以如果我們可以用Single Cell Analysis
+看到每個細胞不同的特性
+並找到那些具有抗藥性的細胞
+鎖定他們做治療
+我們認為可以讓
+治療的效率更好
+那我整個研究的範圍
+分兩個階段
+那這部分也是今天要跟大家分享的部分
+第二個部分也是我現在在做的
+因為還沒有發表論文
+所以這邊還沒有放上來
+但是整個大方向就像剛剛Jack所介紹的
+我抓回一個Sample Preparation的Chip
+可以讓這個
+可以從病人的血液裡面
+萃取出Circulating Tumor Cells
+我們藉由這些在血液中的癌細胞
+獲得他的基因表現資訊
+那這些基因表現資訊就可以
+讓我們知道說這些病人
+我們可以用怎樣的藥物來做治療
+會有更好的效果
+現在來說要知道這些基因表現的資訊
+一般都是用整個腫瘤的切片
+換言之就是要一個
+要開刀會比較有侵入性
+然後同時成本也會比較高
+那今天我就以Phenotypic Assay這邊
+跟大家分享
+那在Technology的Development上面
+我主要是Focusing on Scaling and Automation
+在這個High-throughput Single-Cell Device Sphere Assays
+我首先會跟大家介紹說
+為什麼我們想要做這個Tumor Sphere Assay
+那其實目的就是要去研究這些
+Tumor Initiating Cells
+那在這個過程中
+我會跟大家分享
+為什麼我們需要去Scale Up這個Assay
+然後Automate這個Assay
+接著我會跟大家介紹
+我怎麼Enable這件事情
+那再用一些實驗
+跟大家展現說我的Chip有哪些功能
+最後總結我的今天的Presentation
+OK
+所以我們的動機就是要研究這些
+所謂的Cancer Stem Like Cells
+我們最近的研究指出說
+在這個整個癌症的族群裡面
+有一個比較少量的族群
+他們叫做Cancer Stem Cells
+有些人覺得Cancer Stem Cells這個詞
+太過於強烈
+他們比較喜歡叫它Cancer Stem Like Cells
+那其實就是一個生物學上的爭辯
+他們就是一群比較具有抗藥性
+具有一些幹細胞特質的癌細胞
+那這個子族群它有一些特性
+第一個就是它有比較強烈的
+Chemo Resistance
+會造成Tumor Relapse
+所以以這個圖來講
+你看到這是一個原始的Tumor
+黃色的這個是CSC
+Cancer Stem Cell
+藍色這些是正常的癌細胞
+如果我們用傳統的癌症治療
+這些普通的細胞可以被殺掉
+所以我們在臨床上可以看到說
+這個Tumor的Size確實被縮小了
+但是我們看不到的是這個
+Cancer Stem Cell
+它有辦法Stay Quiescent
+然後不受到這個藥物的影響
+在我們停止了給藥之後
+這個Tumor Relapse就發生了
+所以在這個CSC的研究範圍裡面
+我們希望可以找出
+Cancer Stem Cell Specific Therapy
+所以我針對這個CSC
+把它消滅掉
+那剩下的這些正常的CSC
+不好意思
+正常的Cancer Cell
+它因為沒有Cell Renewal的能力
+所以它就會Proliferate
+最後就產生Tumor Regression
+就漸漸敗亡掉了
+所以這是第一個
+為什麼我們想要研究CSC的原因
+第二個
+大家普遍也相信說
+CSC有比較強的Migration能力
+換言之
+它更容易Metastasize到
+這個Secondary Tumor
+而我們知道
+這個癌症轉移才是我們
+癌症治療上最大的挑戰
+也是致死最大的原因
+所以如果我們可以更加詳細的話
+無論是對於治療
+或者是追蹤
+或研究
+都有很大的幫助
+那現在研究這些CSC的方法
+現在最傳統的方法是用
+Surface Membrane Protein
+或是Intracellular Enzymatic Markers
+都是選擇
+針對這些Gene Expression
+或是蛋白的表現
+去做染色
+所以用不同的方法
+像是Full Cytometry
+去分開這些不同種類的細胞
+我們就可以去研究這些CSC的族群
+但是這個的挑戰是說
+有很多我們新的Markers
+沒有被發現的
+所以我們希望
+能夠用其他的方式
+也來研究這些CSC的族群
+那作為一個替代方案
+Cell Behavior
+是一個
+現在大家也蠻常用的選擇
+這些CSC在
+在我們Inviso上
+我們會觀察到
+它可以生存於
+這個Suspension Culture Environment
+然後長成一個
+Single Cell Derived Tumor Sphere
+就是說
+如果是正常的Cancer Cell
+Egg不能讓它Adhere
+到Substrate的環境裡面
+它會產生Apoptosis
+就是這個細胞就會
+但是CSC不一樣
+Suspension Culture Environment
+它不但可以生存下來
+它還可以長成一個新的Tumor Sphere
+那要做這個Sphere Assay
+傳統的做法又怎麼樣呢
+大家的做法是
+買一個Whale Plate
+像這個右下圖
+這邊給大家看的
+那你就
+3號用Dilution的方法
+試著Dilute到
+一定的Cell Concentration
+所以你用賭一個機率說
+一個Whale裡面有一個Cell
+那你
+大家可以猜到
+這樣的方法
+第一個Low Throughput
+就是我們用猜的
+所以它會是一個
+機率的分布
+或者更Specific
+就是
+那你可能就是
+96 Whale Plate
+你可能拿到
+2、30個Single Cell
+那同時也是
+非常的Labor Intensive
+那有人可能可以說
+我是不是可以用
+Automatic Cell Dispensing
+就是像是
+Flow Cytometry這樣的技術
+讓我們一個Whale裡面確保
+我可以丟一個細胞進去
+但事實上
+Flow Cytometry
+有很大的問題
+因為它是Flow Sorting
+速度非常的快
+這個過程中
+會產生很大的Shear Stress
+對我們Downstream
+要做Cell Behavior Assay的話
+它的影響
+我們要觀察
+Cell會不會死掉
+那Cell
+在我們實驗中
+可能真的死掉了
+但它不是因為
+Suspension Environment造成的
+它可能是這個
+Flow Sorting的過程中
+它的Shear Stress太大
+這個細胞基本上承受不了
+所以它就
+它就死掉
+而不是因為
+它不是CSI
+所以這是我們
+現有Technology上的一些限制
+所以為什麼
+我們覺得說
+Automation非常重要呢
+就我們剛剛提到的
+我們認為CSC
+是一個相當相當少的
+Subpopulation
+從我們過去的實驗發現
+大概只有1到5%的
+Tumor Cell
+有這個Sphere Formation的傾向
+所以我們希望這個Assay可以
+有一個更大的
+Single Cell Population
+至少有1000個Single Cell
+這樣才有一個
+比較Reliable
+好的Statistical Power
+來做我們實驗結論
+所以我們
+認為說
+要達到這樣的一個Souput
+Microfluidics是一個
+相當理想的Technology
+來做這樣的一個Assay
+所以這是我們一個
+Chip的Schematics
+我們想要開發一個Chip
+能夠有超過1000個
+Single Cell的Chip
+那因為我們有
+非常非常大的Souput
+我們也要有一個
+Automatic Image Analysis
+不然我們必須
+人工一個一個讀
+那很辛苦的過程
+這樣子才可以讓整個
+實驗很順利的
+從硬體上和軟體上
+得到改進
+所以這就是我們的
+動機
+不知道有沒有哪裡
+講得不清楚的
+還是可以繼續往下做
+有問題嗎?
+沒有
+那就繼續吧
+OK
+我想問一下
+為什麼CSC
+可以存活在
+Suspension Coaching
+這是一個問題
+你有聽到嗎?
+有這個問題就是說
+為什麼CSC可以
+Survive in Suspension Coaching Environment
+這是一個很有趣的問題
+我覺得從兩個
+方向來回答
+第一個就是CSC
+它的定義其實是說
+我們只打10個細胞
+到老鼠裡面
+那
+這個10個細胞
+有沒有辦法在這個
+老鼠上面形成一個新的Tumor
+如果可以的話
+我們定義它是CSC
+那前人就是用這樣的方法
+先定義好CSC
+然後再用這種傳統的
+去發現說
+這些能夠產生
+Tumor的
+Cell Population
+有在Suspension Coaching Environment
+生存的能力
+這是第一個
+這是如何去發現它這個事情
+那你說為什麼呢?
+我們的一個想法是說
+像是我們CSC可以在
+癌症轉移的時候
+首先
+穿越這個Local
+Motivated Environment到這個血管裡面
+血管裡面就是一個
+Suspension Environment
+如果這些Cell在這個
+Suspension Environment就會死掉的話
+它是沒有辦法轉移到
+其他地方的
+所以我們相信說它是可以
+它因為在這個血管中
+Circulating
+這個Suspension Environment
+它可以存活下來
+然後再到一個新的Local Environment
+長成一個Tumor
+我們在這個Invital的環境
+這樣子Invital的狀況
+來研究這些CSC
+所以這是兩個切入的角度
+第一個是說我們第一個
+CSC的驗證
+還有它跟Invital實驗的
+Correlation我們發現有這樣的趨勢
+那第二個層面我們
+解釋為什麼有這樣Correlation
+我們覺得它Mimic
+就是我們Invital在血管中Suspension存活
+然後可以再Grow into a
+New Tumor Sphere
+這個行為來解釋
+這樣有回答到你的問題嗎
+我有一個相關的問題
+就是當這個CSC在
+血液裡面轉移的時候
+它到底是以Single Cell的形態
+還是Sphere的形態進行轉移
+這個也是一個
+非常非常好的問題
+就是我們發現大部分的
+大部分的細胞
+都是以Single Cell的方式在轉移
+但近幾年這個
+Circulating Tumor Cell的研究其實發現到說
+真正造成遠端轉移的
+事實上
+事實上有更多的是
+Cluster的方式在轉移
+但這個Cluster不是說
+不是說一個Cell
+直接長成一個Sphere
+然後再轉移到其他地方
+大家一般比較相信是說
+原本的這個Tumor上面
+就掉下來一小撮的細胞
+那它可以
+Circulate
+然後用一個
+想像是說在一個汪洋大海上
+你是一條戰艦這樣走
+還是一個航空母艦群
+那他們覺得說
+這個Cluster就像航空母艦群一樣
+就是非常的強大
+有更強的Metastasis
+的能力
+但是目前大家認為是說
+它是原本就是Cluster掉下來
+而不是說它是在
+Single Cell Circulating的過程中
+長成Sphere再轉移的
+這樣有回答嗎
+有有有
+OK
+現場還有其他的問題嗎
+應該沒有
+可以繼續
+我問一個操作型的問題
+如果說這種員工
+拿滴管在那邊滴滴滴
+他可以
+就是抓到Single Cell
+現在Practical的數字
+大概是比如說10%嗎
+20%嗎
+還是多少
+最好最好的
+理論極限是20-30%
+因為你就想要說
+你就調一個Cell Suspension
+Solution
+我知道這個Tube
+裡面可能是10K個Cell
+在多少Volume裡面
+所以你就算說
+平均100mL或10mL
+會有一顆Cell
+mL這樣一個一個取
+這樣一個一個
+操作模式
+它的理論
+極限就是20-30%
+那在實際操作的時候
+其實
+Cell Density的控制往往沒有那麼理想
+所以會比
+20-30%再差一些
+操作上的
+會差一些
+可是差不多
+比如說
+在10%還是怎樣
+還是就是少5%
+還是什麼之類的
+技巧好
+可以少5%之類的
+技巧不好可以很慘
+可以5%或更低
+基本上很難做實驗
+所以大概就是15%
+之類的
+對所以大家一般
+對
+所以你想想看
+如果你有96 Whirlpool
+你台配了快100次
+15個Cell
+然後你只有1-5%的Single Cell
+可以長成Sphere
+那個實驗實在是太難做了
+對還有其他問題嗎
+應該沒有了
+可以繼續
+好那我繼續往下
+Present
+所以第一個我要討論的是說
+那我們怎麼achieve single cell capture
+in a high throughput manner
+我們implement的方式
+是用微流道系統
+那原理相當的簡單
+我們capture single cells
+by channel blocking
+所以你可以想像這是一個
+微流道上面的
+微流道
+那這是一個
+capture site
+藍色的地方就是channel
+就是流水的地方
+那這個圓圓的就是falling cells
+那你這個Cell進來之後
+就會block住這個地方
+所以這個flow基本上就停止了
+下一個Cell就會往下一個地方走
+所以每一個whirl就只有一個Cell
+那我們如果是只有
+一二十個chamber這樣做
+可能很簡單的設計就好
+但是在我們這個work
+裡面我們要scale
+一個chip可能要上萬個
+在這個時候
+這種simple duplication
+就會造成相當大的flow imbalance
+換言之
+換言之
+如果是整個
+我們load cell進來
+它就會大部分在upstream或downstream
+那我們capture rate
+會非常非常的差
+那在這邊我要怎麼讓這個
+Cell uniformly distribute
+在這個
+array上面呢
+我用的方法
+就是用這個
+Circuit Modeling
+其實這整個Microfluidics
+就很像是一個flow circuit一樣
+我們這一個
+每一個channel都有一個流阻
+那這個流阻主要是
+有這個capture size dominant
+因為它這流阻最大
+它因為size最小的關係
+那在這個entrance channel
+還有exit channel上它就是一個
+相對小但是它因為很長
+所以整個build up resistance也很大
+你可以看到可能是這個entrance channel
+resistance從1到200
+這樣每一個每一個channel累積起來
+就這樣一個circuit
+那我們剛剛說simple duplication
+為什麼不會work
+因為我們如果要有一個好的distribution
+就是每一個branch
+這個電流都是
+一樣嘛
+那我們知道說如果這裡的
+上面short
+就是這邊電阻都很小
+那這邊電阻也很小
+這個事情就可以發生
+但是我們今天
+放了200個
+被可忽略的電阻
+這時候這個電流表現就會
+跟我們要的差很多
+那我們怎麼來做
+平衡電流這件事情呢
+flow resistance其實就是一個
+channel geometry的function
+那你可以看到
+就是circular或rectangular
+這些不同的function
+但是總而言之呢
+你channel越長它就resistance越高
+那你width越寬
+就越小
+所以我們設計上
+就是利用我們的microfabrication
+讓我們的這個
+非常小
+大概是10micron by 10micron
+的一個geometry
+的opening
+那第一個這個可以achieve high flow resistance
+第二個
+10 by 10剛好可以block住
+我們的cancer cell
+因為我們一般相信cancer cell的這個
+大小大概是大於10micron以上
+我等一下也會有相關的data
+來說明這一點
+那
+我們克服了
+我們這樣在這裡定義的這個
+整個microwave的flow resistance
+這個entrance channel跟entrance channel
+怎麼辦呢
+我就利用這個
+利用這個microfabrication
+我們做100micron寬
+100micron高的一個geometry
+所以我讓
+我才可以讓這個entrance channel
+還有edge channel的流阻是
+大的小於
+這些capture size
+所以總結來說
+我們利用這個microfabrication
+來控制我們的flow resistance
+所以我們有一個很好的flow circuit
+來achieve這個
+single cell capture
+那這裡就是
+展現說我們有
+利用這個機制scale的
+三種
+大小的chip
+從800到
+12800個chamber的chip
+都有
+那這個size大概就是在一個size上面
+你可以看到說
+這個是一個device鏡照
+那每一個chamber
+我們都可以capture single cell
+那這是一個microscope的image
+我們的cancer cell
+在這邊label了這個
+綠色的flow resistance
+那可以看到這整個array有相當好的
+single cell capture
+那我們現在已經
+有辦法achieve
+這個high throughput single cell capture
+我們要怎麼分析它呢
+這是一個漫畫
+我有一個
+一個一個
+一個看這些data
+所以基於這個
+很多的習慣
+我只好想辦法automate
+這個readout process
+所以怎麼做呢
+不好意思
+今天看到
+幾乎每一個size都有
+有capture
+但是我的問題是說
+比如說你一次把sample滴進去
+然後它一次從頭流到尾
+就每個size都有cell嗎
+還是你比如說
+滴一次然後就會有capture
+有10%的size
+有capture
+再填
+非常非常好的問題
+所以Michael Foley的beauty就是說
+我們就把這個cell suspension
+放到我們的inlay裡面
+那我們其實也不用任何其他的器材
+我們用gravity flow
+它這個cell solution就會漸漸的流進去
+所以這整個動作
+都是一個排配就完成的
+並沒有說第一次第二次第三次
+一次到位
+就造成這樣子
+10s of thousands of single cell capture
+厲害
+這樣合理嗎
+合理啊
+我只是好奇說
+真的比如說
+human power的那個
+reduction差多少
+了解
+就是變成
+只有一次排配就全部capture完
+這是我們做到的reduction
+所以這個
+chip的filling ratio大概是多少
+有到超過譬如說
+95%之類的
+你是說有幾個chamber
+真正只要single cell capture嗎
+對 我想你剛剛是想問這個問題嗎
+因為這個問題會跟你要花多少時間
+去弄有關係
+所以如果一次就好
+那問題又可以換成怎樣
+比如說你就第一次
+filling ratio大概是多少
+這看起來是百分之百
+至少用眼睛看是百分之百
+接近百分之百
+這是取最漂亮
+這個capture rate我們現在
+做一般實驗routine是
+75%
+可以再往上optimize
+但是我們其他的考慮
+所以我們覺得說75%
+是一個比較好的數字
+我會待會再做說明
+而且12,870
+超多
+那個一個cell
+一個cell被capture之後
+那個
+這個
+chamber就會變成斷路
+然後就不會再有東西進來
+沒錯 非常簡單的
+道理
+你們到時候預計
+假如說要commercialize的時候
+是想說把
+直接把寫意
+滴進來嗎 還是說要做怎麼樣的pre-process
+假如說
+sample進來有各式各樣的cell
+然後你要怎麼differentiate
+非常非常好的問題
+對
+我們想要commercialize的project
+其實是
+molecular analysis
+phenotypic analysis
+那在我另一個project裡面
+我們是做sample preparation
+就是我們要
+把這個single cell裡面的
+mRNA transcript 萃取出來
+然後做一些barcoding
+所以我們可以用Illumina
+sequencer去做
+whole transcriptome sequence
+那sample preparation這一塊
+我們沒辦法直接從寫意
+我們還是要經過一些
+upstream的cell enrichment
+那其實在這一塊
+已經相當相當的competitive
+在
+商業
+commercial space有非常多的vendor
+像startup在做這些東西
+那我們希望說
+可以提供一個
+downstream information
+的enhancement
+他說我們可以
+拿這個血液然後放到
+我的instrument裡面
+拿出來的是
+purify之後的tumor sample
+那這些tumor sample
+其實
+意義很有限
+因為你要真的有臨床上的意義
+你必須知道說你有什麼基因表現
+或你有哪些mutation
+所以我們希望說完成這個last mile
+我們現在
+commercially available的technology是
+upstream的
+GTC purification
+那我們可以做purification
+之後的sample preparation
+進到sequencer
+或next generation sequencing
+ok 謝謝
+對
+回答有點長
+ok
+還有其他問題嗎
+沒有
+可以繼續了
+那我繼續往下
+往下說明
+所以因為實在不想要
+分析那麼多chamber
+我想辦法要怎麼automate這個process
+我用的方法就是
+第一個我用一個biocompatible
+帶讓這個cell有一個green fluorescence
+所以說
+我們可以用這個fluorescence
+來read out cell
+那原本想說這應該很簡單
+有fluorescence
+就可以讀出來
+我們整個scan過我們的image
+發現
+因為cell的表現不一樣
+他們taking這個帶
+有不同
+所以可以看到像這個圖
+有五個cell
+有的很亮有的很暗
+所以如果我們用一個很簡單的
+search holding的話
+基本上是很多
+細胞被我們忽略
+那怎麼辦呢
+我們需要想辦法
+用一些algorithm
+來讓我們的read out
+更reliable
+那簡單講起來我們就是四個過程
+先做一個contrast enhancement
+那這個部分我們特別
+用了一個
+contrast enhancement
+那待會解釋說為什麼
+那接下來用這個k-means clustering
+的方法找到這個
+intensity的
+峰值
+所以我最後可以萃取這個
+local maximum
+找到我們每個細胞的正中心
+那這三個image
+就表示說
+這兩個cell或很多個cell
+我們讀出來的
+結果就是這樣子
+那剛剛講到這個contrast enhancement
+有一個比較tricky的地方
+一般大家喜歡用的
+contrast enhancement是這個
+global histogram equalization
+那因為我們的sample
+整個background特別暗
+所以用這個最常用的algorithm
+之後整個chamber都亮了起來
+基本上是沒有辦法用
+那我們利用這個
+contrast limited
+adaptive histogram equalization
+這個algorithm我們可以去
+定義說我們每一個
+enhancement的panel
+可能是660個pixel
+或是其他arbitrary
+number of pixels來做enhancement
+那因為在我們
+這個前提之下
+我們知道一個single cell的
+大小大概是若干個pixel
+所以我們利用這個資訊
+就可以很有效的
+locally放大這個cell
+部分的
+torsion signal
+這個chamber的地方
+我們就很有效的抑制住
+這些background noise
+來達到
+我們的影像分析
+那這些是我們這個
+algorithm的一個
+通過展現
+你可以看到這個suspension cell
+我們很有效的
+找到每一個cell的位置
+那這是一個
+adherent culture的狀態
+一樣的我們可以很有效的
+去辨別一個cell
+兩個cell或甚至非常多的
+cell把這個chamber塞滿
+既然秀了這個圖
+也順便說一下
+我這個work雖然是focus在
+suspension culture
+但其實同樣的capture
+mechanism也可以拿來
+做adherent cell culture
+這就是一個例子
+那
+這個algorithm同時也可以
+做size measurement
+然後sphere size measurement
+用我們gaffier的
+大小
+這些功能
+在我們focus上面
+是有implement到
+ok
+所以有了這個technology
+然後有了這個algorithm
+就可以拿來做我們
+我們這個device的測試
+第一個我們測的就是
+大家都有興趣的
+capture rate
+capture characterization
+在我們的測試裡面
+我們optimize我們的capture rate
+在76.5%左右
+那我們第一個我們限制我們的
+cell loading time到15分鐘
+因為我們不希望說
+就是load cell 15分鐘
+超過15分鐘
+cell load太久會對
+cell的viability造成影響
+或是影響這個細胞
+健不健康
+那在這個15分鐘的loading time
+裡面我們嘗試了
+四種不同的cell concentration
+你也看到
+我們有分成
+四個不同的結果
+那在這個不同的
+loading concentration
+你可以看到
+loading cell concentration
+越低沒有cell的狀況
+就越少
+那如果我們增加
+loading concentration
+就越來越多的chamber是
+double cell或multiple cell
+所以我們在這個
+cell concentration上要做一個tradeoff
+在single cell
+capture是最
+好的表現大概是
+76.5%
+事實上如果真的想要
+push這個capture rate這個數字
+我們可以用更低的
+cell concentration
+然後可能用30分鐘
+我是認為是有可能推到80幾
+甚至90的cell capture rate
+但是我們認為
+像剛剛有朋友就說
+已經有一萬多個chamber
+打了七折
+這樣的折數
+其實也還好
+我們確實也是這樣認為
+所以就把這個數字定在這個地方
+那為什麼更高的
+concentration會有double cell或multiple cell
+capture呢
+主要就是在我們這個
+chamber的設計裡面
+我們必須要讓這個
+cell去block數字的cell capture
+下一個cell才進不來
+那如果我們今天的
+concentration很高的話
+就有一個情形可能發生
+就是你在第一個cell
+block之前
+第一個cell很有可能就跟著它的屁股
+進來
+那這時候我們就很難避免說
+同時有兩個
+cell在同一個chamber裡面
+不過這都沒有關係
+即使有multiple cell或double cell
+我們都可以用我們的algorithm去
+去除這些chamber
+確保說我們所有的
+data都是從single cell
+萃取出來的
+那剛剛我們也提到了
+cancer cell的size非常的重要
+我們不希望說
+可能有很多小於10micron的cell
+或是其他size的cell
+我們沒辦法抓到
+那我們等於是說
+會skew或是說扭曲
+這個整個實驗的
+實驗的過程
+而且cancer cell我們剛剛就說
+特別的
+千奇百怪
+而且genetic特別的高
+所以我們要確保它size
+各種不同的size都可以抓到
+所以我們就把
+這個cell line
+從地上面tription
+拿下來
+就變成圓形或sphere的這個形狀
+去quantify
+它的
+大小或它的diameter
+得到的這個分布
+然後再把
+同一種cell line或同一種
+細胞漏到我們tription裡面
+再量它的大小
+然後得到的
+distribution就在旁邊
+你可以看到這個distribution是非常非常
+的類似
+那這邊就是四個image
+展現說這個比較相對小的細胞
+可能11micron 12micron
+左右的直徑
+到這個非常非常稀有
+可能千分之一
+到40micron大小的直徑
+非常巨大
+就我們可以有效的保留
+這個大小的資訊
+所以到這邊我們總結
+來說
+要克服的兩個挑戰
+第一個是怎麼scale up
+我們的throughput
+那第二個挑戰是說要怎麼
+在這個throughput之下
+能夠自動化我們的readout
+那我們的engineering innovation
+是說
+利用這個highly parallel flow circuit
+來scale up
+我們的throughput
+其實我們也是很
+有一個很
+compact的high density
+array讓我們整個image
+想像就是
+我們如果要
+用這個fluorescent imaging
+的話我們也是要
+一個一個圖片的scan
+整個
+我們device area
+讓它的density越高的話
+我們需要拍照的
+frame的數量就會越少
+所以
+imaging就更快
+這是我們兩個engineering innovation
+針對throughput scaling
+那對於automation上
+我們開發了一個
+highly adaptive algorithm
+來分析這些不同的single cell
+那我們也
+有功能
+來分析這個single cell
+或是sphere它的大小
+或格數
+到這邊
+大家有沒有什麼想要
+討論的地方
+我有點好奇
+fluorescent dye是什麼東西
+我們的fluorescent dye
+是用cell tracker
+cell tracker dye是life technology
+那它染的是什麼
+這是很好的問題
+據我了解
+它是
+它是有點像說
+metabolism product
+就是說如果這個cell是活的
+它會intake這些
+dye到它的細胞裡面
+展現這個顏色
+像你可能想問的
+是什麼chemical
+連結發給你
+討論看看
+是不是還好
+我比較好奇的是說
+你要怎麼確定所有的
+cell都會吃那個dye
+就是
+global病人sample應該是
+會不會有一些東西
+是跟我們吃在一起
+所以你是說
+是不是有可能
+你是擔心force negative的狀況
+對
+在這個chip裡面
+確實說如果你的fluorescent
+非常非常的暗
+像我剛剛講有些cell可能
+metabolism很弱很弱
+所以它特別的暗
+不像這兩個細胞
+就好像比較弱
+所以我們盡量讓我們的algorithm
+可以去讀到它
+但確實這個algorithm有它的極限
+我們會有force negative
+但是在我們整個實驗的過程中
+我們有manual
+和brightfield的影像
+去驗證說我們的force negative
+是小於5%
+所以minimize
+這樣的一個concern
+那第二個就是
+我們真的要做commercialization
+的project是做manipular analysis
+所以事實上在那個project上面
+我們真正的cell readout
+是從sequencing來看
+不是用這個fluorescent reading
+所以它的readout方式不一樣
+又會有不同的
+不同的concern
+不同的方式
+我剛剛沒有聽到
+你是說是用什麼來看
+那個commercialized
+的readout是什麼
+我們直接看它sequencing出來
+每個cell有多少的transcript recovery
+所以我們是整個在
+molecular level去看這個
+定義一個cell
+好
+對
+我有另外一個問題
+就是
+我剛剛很快的算了一下
+你那個chip
+可能會有的size
+比如說你一個細胞
+大概就是10ish micron
+然後你這一個格子大概是幾倍的
+細胞的寬度
+然後如果你今天說你要有
+一萬個左右的格子
+然後我們把它寫成正方形
+所以邊長大概是一百格
+然後你這個chip就會變成是一個
+好幾公分邊長的chip
+是這樣嗎
+對
+你看這邊就是
+對差不多就是這樣
+好那我的問題
+就是你是一個好幾公分邊長的chip
+然後
+其實你是用一個流道去
+feed through所有的
+沒有是幾個流道
+去feed through你所有的這個size
+那你那個
+feeding的那個line
+如果不是有clock或是有幹嘛的話
+就會卡一整排嘛
+對不對
+它之後的你全部都不會有feeding嘛
+是這樣嗎
+這問題問的非常
+非常好
+像我這邊
+斷掉後面的全死了
+對
+如果它是真的整個斷掉的話
+其實它這個後面就沒辦法有sell
+那這個
+其實在我們的實驗中沒有真的造成
+太大的問題原因有兩個
+第一個就是我們這個
+一個branch
+每個chip可能就
+64個或是32個
+所以即使有一個branch不work
+我們可能就是損失掉
+若干percent的佔利
+那第二個
+這個channel有100micron高
+所以要讓它整個斷掉或
+讀死其實還是蠻不容易的
+還蠻少見的
+所以大致上沒有這個問題發生
+謝謝老闆
+那你們是怎麼做這個channel
+可以說嗎
+當然當然
+這個
+我們是用micro fabrication
+在五層室裡面做photolithography
+那我們用的
+光阻
+叫做SUA
+它的feature就是說可以做一個
+厚度
+範圍很廣的像是說
+1micron到甚至幾micron
+它都可以做得出來
+所以我們才可以定義出這些不同的
+這個channel大小
+好
+謝謝
+謝謝
+我覺得都是很好的問題
+大家看來都有在follow
+很感謝
+我怎麼在這個
+capture的基礎上
+做suspension culture
+所以我們現在有一個
+capture scheme
+我們這個chip是用PDMS
+這個材料做的
+那麼我們要怎麼確保說
+放到這個chip裡面
+的時候它不會
+黏在這個chip上面呢
+我們這時候就用了一個chemical
+叫做peronic f108
+它這個特性就是說它這個
+chemical有這個兩端
+不穩
+一個比較
+hydrophobic
+的
+core
+所以我們load這個f108
+到我們的chip上面會產生怎樣的
+狀況呢
+就是這個hydrophobic的core
+會黏在PDMS上面
+那這兩端
+的長鏈
+或是說這個peg
+會exposed在
+channel的表面
+所以細胞進來的時候會看到
+這裡有好多peg
+那peg事實上
+就是一種anti-biofouling
+的材料
+所以我們如果有這些peg
+的長鏈在這個表面上的話
+這些細胞就沒辦法
+黏著在PDMS上面
+所以我們可以做
+suspension cell culture
+那在這個
+work裡面我們展現了
+四種不同的
+breast cancer cell line
+你可以看到上排的
+就是sphere forming cell
+下排的就是anoic cell
+就是死掉的細胞
+你可以看到這個single cell
+在day 7, day 14的時候
+開始長成了一個
+tumor sphere
+那這個
+chamber的寬度大概是100 micron
+所以你可以大概知道這個tumor是比較
+小的一個sphere
+那這個anoic cell的話
+你就可以看到說
+它有一個debris
+或是它這個細胞的屍體基本上
+就留在這個chip裡面
+那你也可以看到說不同的cell line
+很有趣
+它們的sphere看起來不太一樣
+有的看起來比較像球
+有的看起來像葡萄一樣
+morphology有一點稍微的不同
+ok
+所以利用我們這個
+你可以回到前一頁嗎
+就是你在做cell closure的時候
+你應該要先把這個cell release
+出來吧,對不對,就是至少不要讓它卡住
+那個
+剛剛那個通道,是嗎
+ok
+所以在完成cell loading
+之後呢,我們會
+先wash
+確保說這個entrance channel上面
+已經沒有cell,然後這時候
+我們會把這個chip翻過來
+這是比較細節的這個
+過程,所以我們把這個chip翻過來
+然後這個cell就會掉到
+microwave裡面
+所以你可以看到
+從這個影像我大概覺得
+這是capture site吧,這上面這邊
+那你翻過來它就掉到下面
+那因為gravity的關係,它掉到了
+這個chamber的一個角落
+然後它就
+它就在這個地方可以開始
+長成一個sphere,或是它可能會
+死掉
+ok,所以你在它
+翻過來之後你還要提供譬如說
+它那些nutrients吧,對不對
+就是用同樣一個channel
+去做這件事情
+沒錯,就是
+操作上其實都相當的容易
+就我們就把這些
+init out的東西取起來
+然後放進culture media
+那culture media我們就
+故意讓它這邊比較多,所以它就會
+漸漸的流,流到out裡面
+就是我們有
+不間斷的提供這些nutrition
+那我們大概
+我們換media的頻率
+是一天一次
+一直以來都是我們的protocol
+ok,了解
+好,謝謝
+謝謝
+我們用
+用了這個technology,然後把這個cell
+load進去就可以開始看
+sphere size distribution,還有它的
+sphere formation rate
+你可以看到不同的cell line,像這個
+someone finite很顯然的它特別
+容易長sphere
+第一個sphere formation rate很高
+然後同時
+這個大小也特別大
+那相較其他的cell line
+可能就稍小一些
+那這個結果跟我們之前的
+這個paper報的度字
+都相當的吻合,所以也算是
+驗證了我們這個technology
+的capability
+那這個technology可以
+做更多什麼不同的事情
+之前的technology
+就是
+歷經千辛萬苦,他們可以得到
+這個sphere formation rate
+我們用這個technology,我們可以看到
+更多的detail資訊
+第一個就是
+cell size跟stemness
+CSC的關係,事實上我們
+如果看這個paper
+這是一個很有爭議性的東西
+有一些人認為說比較小的
+細胞,它跟這個
+幹細胞的基因有相關
+所以你有幹細胞的基因調節
+它細胞就會比較小一點
+但是有一些
+這個mitochondria的
+就是這個粒線體
+更多更大
+它就可以,它會增加這個
+細胞的大小,同時也讓
+這個細胞看起來更stem-like
+更有chemoresistance
+所以這到底是怎麼回事呢
+從我們這個實驗
+因為我們可以從
+sphere formation rate來了解stemness
+那我們同時也有
+一個很好的algorithm可以分析
+我們的族群大小
+所以我們就可以研究不同的size group
+對於sphere formation rate的影響
+所以你看到這邊
+這邊cell size distribution
+我們可以完整的
+看出我們這個不同
+四個cell line,我們一開始
+漏進去它的
+single cell size
+分佈長得怎麼樣
+可以看到這兩個細胞看起來
+是偏比較大,這兩個可能
+小一點,那我們再
+inter cell line
+的
+comparison,換言之
+我們在同一個cell line,我們取前30%
+跟後30%
+來比較它的sphere formation rate
+那這結果事實上非常非常有趣
+你也看到
+在這個SUM159的
+這個實驗中
+我們觀察到
+smaller cell size
+大大的超越了這個比較大的
+大的
+cell,它在sphere formation rate上面的表現
+可是在這個SUM149
+還有T47
+相反的表現
+然後第四個cell line
+事實上是沒看到任何的差異
+那我們認為說
+在不同的cell line或甚至不同的
+pathway regulation
+可能各有不同
+也試著說為什麼其他人
+得到不一樣的結論
+我們不能直接從size
+去斷言這個correlation
+我們必須真的去看它的
+gene regulation
+來推斷說它是不是CSE
+size我們認為不是一個
+可靠的CSE marker
+所以這是這裡的
+一個結論
+那接下來我們因為也可以check
+這個sphere在day 0
+7, day 14的大小
+然後去了解說
+在每一個階段
+它成長的一個過程
+所以我們可以看說
+發現在
+每一個不同的cell line裡面
+有些cell它很有趣
+第一個禮拜長得特別快
+第二個禮拜就不怎麼長
+有些cell相反
+它第一個禮拜長得特別慢
+但是在第二週卻是突然爆發式
+長成一個更大的sphere
+那
+這個就是我們
+把它plot在
+這個scattering plot上面的一個
+展現
+你看我們如果可以把
+這個day 7的sphere diameter
+放在x軸上
+day 14放在x軸上
+這個圖上面我們可以
+分成不同的區塊
+如果day 7大小是一樣的
+它基本上就是一個1x的
+線在這邊
+但是它double它的size
+你可以看到它是在這個
+線上
+所以我們可以看到不同的cell line它有不同的特性
+在one finite我們看到說
+它是一個比較
+平均的分布
+就是它1x到2x都有
+但這個one finite就特別有趣
+我們發現說它傾向於
+在第二週長得更快一點
+所以它整個scattering plot
+會更集中在1.5
+至2x的範圍之間
+那你可能會問說
+這個有什麼意義呢?
+在cancer stem cell的理論裡面
+oncologist
+也相信說
+他們有一個tumor stem cell hierarchy
+就是說
+cancer stem cell下面會有
+progenitor cells
+那progenitor cells會再further differentiate
+into regular cells
+那我們認為說
+這些progenitor cells
+有些因為
+還沒有完全適合的特性
+它可能也可以
+產生一個tumor sphere
+但是因為
+它畢竟不是stem cell
+它proliferate了幾次之後
+它就會損失
+因為沒辦法再self-renewal
+它沒辦法再繼續有效的成長下去
+所以它的proliferation rate
+會下降
+而在另一方面
+cancer stem cell或stem cell
+有quiescent的特性
+它不太喜歡proliferate
+所以它可能一開始長得慢
+但不代表它不想長
+所以當我把這個
+result給我們的collaborator看
+他就非常非常感興趣
+他在他的hypothesis裡面
+他認為
+雖然有這麼多的sphere-forming cells
+但他認為這個cell line
+是一個很特別的cell line
+它的progenitor特別多
+有特別強的sphere-forming capability
+所以
+你才會看到說
+它在第二週的proliferation rate下降這麼多
+而SOM1-49
+他認為會比較符合
+oncologist的cancer stem cell
+model
+換言之它可能一開始會quiescent
+但是它有繼續往前
+往上proliferate的能力
+那
+藉由這個technology
+可以看到說
+這些
+single-cell derived sphere
+proliferation的狀況
+研究
+cancer stem cell hierarchy
+所以這是我們
+展示我們technology的第二個環節
+總結來說
+我們今天討論的這個
+high throughput single-cell derived sphere
+SA chip
+我們每個chip可以scale from
+800個well到
+1萬多個well
+那在capture rate上面我們現在是
+調整在76%左右
+在capture cell的時候
+我們
+representative cell size
+population
+所以我們可以確保
+我們沒有
+在cell的過程中
+改變了
+這個細胞
+我們沒有去scale the result
+那我們也
+analytic analysis algorithm
+來幫助我們
+做cell counting
+還有cell sphere size measurement
+沒有這些功能我們就
+很難去量化
+這些sphere formation rate
+還有觀察它sphere formation
+的dynamic
+那在
+最後
+跟大家報告了兩個
+不同的
+實驗結果
+第一個是cell size跟cell strength
+的比較,我們結論是
+我們不認為cell size是一個
+很好的CSC marker
+那我們認為它有更多
+不同的
+gene regulation在下面
+在細胞裡面我們需要去
+研究,而不是只看cell size
+那同時我們也展現了
+我們追蹤每個
+sphere formation的
+過程的能力,那這個可以幫助
+oncologist在
+研究這個
+tumor stem
+cancer stem cell hierarchy
+幫助他們了解
+這裡面的細節
+那這個work
+事實上在去年的八月已經
+發表在lab on the chip,所以如果大家
+有興趣的話可以去看一看
+那我最後謝謝
+這是我們的實驗室
+陪我在這邊坐了一個小時
+如果有什麼問題大家可以
+交流交流
+那個我有個小問題
+就是你可以回到conclusion
+前面那一頁嗎
+可以,這一頁
+對,就是
+左邊那個圖
+我想問一個問題就是說你要怎麼
+rule out,因為你的
+cultural well size大概是100micro
+你要怎麼rule out就是原本就
+已經很接近那個chamber size
+的sphere
+然後它那個速度不是因為
+本身就受限於那個空間
+的大小,而是它
+是那個sphere本身的
+特性
+我現在問的是譬如說day 7
+那個sphere原本就已經很接近那個chamber
+的大小了,那它當然就沒辦法
+再進去,它本來就是
+你說進去
+這個問題問得很好
+就是
+這位同學講的是這個entrance
+我們entrance就是設定在
+50micro左右,那因為我們
+觀察了這個cell population
+一般沒有的cell會大於50
+所以基本上所有cell都可以進去
+那另一位同學問的是說
+那萬一說有個cell真的特別的
+厲害,它第一個禮拜就漲滿了
+那我怎麼知道說它第一個禮拜
+不是因為它真的變慢
+還是說我是不給它空間漲
+這個問題問得非常好
+事實上我們設置100micro
+就是從我們經驗上發現
+很少cell可以漲到超過
+100micro這個大小
+那你之所以可以看到這麼多
+是因為我們這個data真的是比較海量
+所以確實也是讓我們觀察到很多
+超過100micro的case
+但是從我們data
+我們還是看到總體的case
+是較少的,那如果同學
+真的很有興趣的話
+就是要改變,要解決這個問題
+也不難,就把我們chamber改成
+100micro就可以去
+就可以去解決說
+我們有這個concern
+但是因為在這個work
+的context裡面,畢竟是少數
+也不是我們研究的重點
+我們的重點是在
+demonstrate這個capability
+所以我們還是以100micro的
+chamber大小給大家呈現
+我想要問一下
+我比較好奇的就是
+當你抓到這隻ghost cell之後
+你要怎麼去
+quantify他的基因表現
+對,這是我
+這是我另一個work
+如果你對於單細胞的
+基因表現很有興趣的話
+你可以去看
+一篇
+發表在cell上的paper叫
+DropSeq,他基本上就是
+用barcoding
+去barcode每一個cell
+還有每一個transcript
+所以我們從
+next generation sequencing
+可以去追回說
+這一段transcript
+他是從哪一個cell出來
+他是從哪一個copy出來
+那用這種非常定量的方式
+我們就可以
+去quantify
+基因表現的強弱
+那他抓取
+這些messenger RNA
+的方式就是
+放一個polyT tail
+去抓這個polyA tail
+所以他們就可以
+hybridize,然後做barcoding
+像你們
+已經capture到了這些cell
+你們是怎麼樣把
+transcript到
+single cell RNAseq
+的device裡面去
+在
+做molecular analysis的
+我們
+利用了一個
+bead當作我們的
+mRNA
+capture carrier,事實上這個
+technology就是剛剛我講
+DropSeq那篇paper所引進的
+那我們就是
+他們引進了這個technology
+同時也license這個technology
+給一家公司製造
+所以我們就直接向那家公司買
+這個產品,然後把這個
+bead放到我們的chip裡面
+做mRNA
+capture
+所以我們就把這些bead拿出來
+做downstream
+amplification,就可以進sequencing
+ok
+了解,謝謝
+聽起來
+聽起來會成功
+還有很多要努力
+好
+我們現場沒有問題了
+那我們就再次感謝
+宇森今天精彩的演講
+謝謝邀請我來
+謝謝邀請我來

@@ -1,0 +1,3983 @@
+WEBVTT
+
+00:00.000 --> 00:15.000
+我們今天非常非常榮幸呢能請到建智來跟我們談談就是他在blockchain相關的研究
+
+00:15.000 --> 00:21.000
+那在讓建智開始這個他的演講之前呢先讓我介紹一下建智
+
+00:21.000 --> 00:28.000
+建智或是大家可以叫他Joseph是這個University of Waterloo的PhD student
+
+00:28.000 --> 00:34.000
+他現在在的系所呢是Electrical and Computer Engineering Faculty of Engineering
+
+00:34.000 --> 00:39.000
+然後呢在他來到這個University of Waterloo之前呢
+
+00:39.000 --> 00:44.000
+他曾經在台灣就是帶領銀行的新創銀行團隊呢
+
+00:44.000 --> 00:51.000
+這個做這個Banking System的這個程式設計
+
+00:51.000 --> 00:58.000
+然後呢他同時有Collaborate跟Microsoft Taiwan Collaborate就是相關就是Medical System的研究
+
+00:58.000 --> 01:03.000
+那他的這個Doctoral Research主要是就是今天的主題Blockchain
+
+01:03.000 --> 01:11.000
+然後呢他除此之外他也對比如說IoT Edge Computing Security還有AI都有涉獵而且是非常有興趣
+
+01:11.000 --> 01:15.000
+那除此之外在這個主要研究之外呢
+
+01:15.000 --> 01:22.000
+他同時也有Volunteer在Mentor台灣的學生參加就是
+
+01:22.000 --> 01:26.000
+Sorry申請這個全世界的這個PhD Program
+
+01:26.000 --> 01:29.000
+然後他也同時也有
+
+01:29.000 --> 01:32.000
+Sorry我看一下喔
+
+01:32.000 --> 01:35.000
+Sorry我中文英文翻譯有點問題
+
+01:35.000 --> 01:37.000
+我只用英文唸好了
+
+01:37.000 --> 01:47.000
+Volunteer to mentor new graduate student in his department and the Taiwan Global Ambassador of UW's Office of Advancement
+
+01:47.000 --> 01:55.000
+然後呢他非常鼓勵台灣的學生可以跳出舒適圈追尋他們的夢想
+
+01:55.000 --> 02:00.000
+好那我這邊先關掉
+
+02:01.000 --> 02:05.000
+今天劍之要給我們帶來的演講題目是
+
+02:05.000 --> 02:11.000
+An Implementation of Fake News Prevention by Blockchain and Entropy-Based Incentive Mechanism
+
+02:11.000 --> 02:14.000
+那麻煩大家現在把麥克風打開
+
+02:14.000 --> 02:17.000
+因為我們的麥克風現在預設是關掉的
+
+02:17.000 --> 02:19.000
+先把麥克風全部打開
+
+02:19.000 --> 02:23.000
+然後我們用熱烈的掌聲來歡迎我們今天的講者為我們帶來精彩的演講
+
+02:24.000 --> 02:30.000
+好那交給你了
+
+02:30.000 --> 02:32.000
+Thank you everyone
+
+02:32.000 --> 02:34.000
+And thanks 劍勇
+
+02:34.000 --> 02:38.000
+I originally thought I use the Chinese to give a speech
+
+02:38.000 --> 02:42.000
+But I promised my English workshop to give an English presentation
+
+02:42.000 --> 02:46.000
+So I still use English to give my presentation
+
+02:46.000 --> 02:48.000
+But if you have any question
+
+02:48.000 --> 02:51.000
+Feel free to ask in Chinese or English
+
+02:51.000 --> 02:53.000
+Both are fine
+
+02:53.000 --> 02:59.000
+So I'm so glad to give you this presentation
+
+02:59.000 --> 03:05.000
+It's about we use blockchain technique to come back with the fake news
+
+03:05.000 --> 03:07.000
+But before into the research
+
+03:07.000 --> 03:13.000
+I would like to introduce my background and to let you understand me more
+
+03:13.000 --> 03:22.000
+So this is my background
+
+03:22.000 --> 03:24.000
+Actually I'm born in Taiwan
+
+03:24.000 --> 03:28.000
+And when I graduated, I worked in Taiwan for several years
+
+03:28.000 --> 03:34.000
+And as you can see, I originally in Hsinchu
+
+03:34.000 --> 03:39.000
+And then I go back to Taipei and do some software development
+
+03:39.000 --> 03:42.000
+And then I go to the banks
+
+03:42.000 --> 03:44.000
+Issan Bank and China Trust
+
+03:44.000 --> 03:46.000
+And then before I joined UW
+
+03:46.000 --> 03:53.000
+I collaborated with Microsoft Taiwan as a technical consultant
+
+03:53.000 --> 03:56.000
+And my educational background is that
+
+03:56.000 --> 04:03.000
+I'm a computer science master degree in National Taiwan Ocean University
+
+04:04.000 --> 04:11.000
+And for this part is that I introduced that in my master thesis
+
+04:11.000 --> 04:15.000
+We developed some facial recognition system
+
+04:15.000 --> 04:19.000
+That you could input the sentences and your image
+
+04:19.000 --> 04:25.000
+And then our system could to generate animation like you
+
+04:25.000 --> 04:29.000
+And this animation can say some sentences
+
+04:29.000 --> 04:32.000
+So it's pretty interesting
+
+04:32.000 --> 04:37.000
+And as you can see right now
+
+04:37.000 --> 04:41.000
+A lot of application like this published very famous
+
+04:41.000 --> 04:44.000
+So yeah, it's a life is a joke
+
+04:44.000 --> 04:47.000
+If we put this product on the market
+
+04:47.000 --> 04:50.000
+Maybe I'm a millionaire now, right?
+
+04:50.000 --> 04:55.000
+And if I graduated and, you know, for engineering students
+
+04:55.000 --> 05:01.000
+Seniors told you, you could go to the Hsinchu to get a job
+
+05:01.000 --> 05:03.000
+And then you can get a lot of stocks
+
+05:03.000 --> 05:05.000
+Then you can retire very soon
+
+05:05.000 --> 05:07.000
+So it was my dream
+
+05:07.000 --> 05:11.000
+So when I graduated, I went to Hsinchu
+
+05:11.000 --> 05:17.000
+But, you know, in that year, we met some financial crisis
+
+05:17.000 --> 05:27.000
+So I came back to Taipei to do software development
+
+05:28.000 --> 05:34.000
+And at that time, I was very interested in mobile development
+
+05:34.000 --> 05:37.000
+And in that generation, in that year
+
+05:37.000 --> 05:43.000
+The Microsoft collaborated with the Nokia to deliver the new devices
+
+05:43.000 --> 05:47.000
+That's the Nokia and the Windows phone on the market
+
+05:47.000 --> 05:50.000
+So I joined one company
+
+05:50.000 --> 05:55.000
+We as a manager and a team to develop some mobile apps
+
+05:55.000 --> 05:59.000
+As you can see, yeah, the interesting one is the repost
+
+05:59.000 --> 06:06.000
+We transfer the Nokia's games
+
+06:06.000 --> 06:08.000
+It's a Barbie game, right?
+
+06:08.000 --> 06:10.000
+If you're a child, you use this app
+
+06:10.000 --> 06:15.000
+You can change the process of the app to us in this games
+
+06:15.000 --> 06:21.000
+We transfer it from the iPhone and Android system to Windows phone
+
+06:21.000 --> 06:24.000
+And then we do some application
+
+06:24.000 --> 06:28.000
+We do some applications for, you know, the care, right?
+
+06:28.000 --> 06:33.000
+And tool for the Taiwan taxi and also for the easy taxi
+
+06:33.000 --> 06:38.000
+All these applications, I was so excited that I did this application
+
+06:38.000 --> 06:43.000
+Because, you know, in apps, if you are a programmer
+
+06:43.000 --> 06:48.000
+The apps could give you a very straightforward feedback from customers
+
+06:48.000 --> 06:50.000
+So it's very interesting
+
+06:51.000 --> 06:57.000
+However, the life gave me another joke
+
+06:57.000 --> 07:04.000
+Is that the Windows phone did not succeed at that time
+
+07:04.000 --> 07:09.000
+So, yeah, after I did this job for more than one year
+
+07:09.000 --> 07:13.000
+I found that, yeah, no, this job cannot help me to
+
+07:13.000 --> 07:17.000
+Enough money for me to buy, yeah
+
+07:17.000 --> 07:23.000
+So I joined to banks and to run the directives
+
+07:23.000 --> 07:26.000
+Some financial products and we built a system
+
+07:26.000 --> 07:28.000
+It's called the Muiris
+
+07:28.000 --> 07:31.000
+And this Muiris is a very powerful system
+
+07:31.000 --> 07:33.000
+At the banking operations
+
+07:33.000 --> 07:35.000
+If you are a trader, you could use this system
+
+07:35.000 --> 07:40.000
+To record any financial products in this system
+
+07:40.000 --> 07:46.000
+And all the Taiwan, the first tier, the banks use this system
+
+07:46.000 --> 07:48.000
+So I went to China Trust
+
+07:48.000 --> 07:52.000
+And then I went to Hunter
+
+07:52.000 --> 07:56.000
+Invite me to join Yishan Bank to introduce Muiris to their banks
+
+07:56.000 --> 07:59.000
+And then when I finished this Muiris project
+
+07:59.000 --> 08:03.000
+Yeah, we made a big project in Taiwan
+
+08:03.000 --> 08:08.000
+Is that the Asian Pacific Organization came to Taiwan
+
+08:08.000 --> 08:13.000
+They do some resource to how does Taiwan do
+
+08:14.000 --> 08:18.000
+In the anti-money laundry, which is a fine system
+
+08:18.000 --> 08:22.000
+And so when I, I was kidding that
+
+08:22.000 --> 08:26.000
+So, yeah, I'm one of the Taiwan representative
+
+08:26.000 --> 08:28.000
+The national teams in Taiwan is very honored for us
+
+08:28.000 --> 08:31.000
+But it's really tough to do that
+
+08:31.000 --> 08:34.000
+We need to finish it out of the requirements in a very short time
+
+08:34.000 --> 08:37.000
+But, yeah, the final result is very good
+
+08:37.000 --> 08:42.000
+And I also got a promotion in Yishan Bank
+
+08:42.000 --> 08:45.000
+So far, it looks so good
+
+08:45.000 --> 08:50.000
+So why I want to go study abroad
+
+08:50.000 --> 08:53.000
+That's because that I was thinking about that
+
+08:53.000 --> 08:57.000
+If I still stay in Taiwan, right
+
+08:57.000 --> 09:02.000
+Maybe I could gather good jobs and to be promoted
+
+09:02.000 --> 09:04.000
+Continue to be promoted
+
+09:04.000 --> 09:08.000
+But, yeah, I was very
+
+09:08.000 --> 09:14.000
+I heard about some great new technology skills
+
+09:14.000 --> 09:17.000
+Or some new products from Silicon Valley
+
+09:17.000 --> 09:19.000
+Or from North America
+
+09:19.000 --> 09:24.000
+So it was always be my dream to study abroad
+
+09:24.000 --> 09:27.000
+So I was so hesitate
+
+09:27.000 --> 09:34.000
+But, yeah, I just to give myself a chance to do this
+
+09:34.000 --> 09:39.000
+And so right now I was thinking about that
+
+09:39.000 --> 09:42.000
+The thing is that if you have a dream
+
+09:42.000 --> 09:45.000
+It only could stop you, it's just yourself
+
+09:45.000 --> 09:50.000
+So I just want to encourage all of my friends
+
+09:50.000 --> 09:56.000
+Or the participants or some young students in this meeting
+
+09:56.000 --> 09:59.000
+You could to just to check your dreams
+
+09:59.000 --> 10:03.000
+Or not to limit yourself
+
+10:04.000 --> 10:07.000
+And so right now I'm here in Canada
+
+10:07.000 --> 10:12.000
+So I saw a lot of beautiful things
+
+10:12.000 --> 10:16.000
+But, yeah, the period is also
+
+10:16.000 --> 10:19.000
+When I prepare for this study process
+
+10:19.000 --> 10:21.000
+I met a lot of difficulties
+
+10:21.000 --> 10:26.000
+But, yeah, it's worth it, I think
+
+10:26.000 --> 10:29.000
+And, yeah, this is my
+
+10:29.000 --> 10:30.000
+A lot of my motto is that
+
+10:31.000 --> 10:33.000
+Actually adventure may hurt you
+
+10:33.000 --> 10:38.000
+But monotony, which means that you always do the same things
+
+10:38.000 --> 10:42.000
+It will kill you, kill you creative or other things
+
+10:42.000 --> 10:45.000
+So, yeah, that's all my background introduction
+
+10:45.000 --> 10:49.000
+So I will stop here for a while
+
+10:49.000 --> 10:52.000
+If you have any question, you could ask me right now
+
+11:00.000 --> 11:11.000
+OK, I think you have any question
+
+11:11.000 --> 11:16.000
+Feel free to ask me and we can discuss more
+
+11:16.000 --> 11:21.000
+And so I wrote some of my experiences in my blog
+
+11:21.000 --> 11:23.000
+And some medium if you have
+
+11:23.000 --> 11:26.000
+You could check it and to get more detail
+
+11:26.000 --> 11:29.000
+If you also want to trust your dreams
+
+11:29.000 --> 11:31.000
+Or you have some dream career
+
+11:31.000 --> 11:36.000
+Or you could also find me on those pages
+
+11:36.000 --> 11:41.000
+And, yeah, we could discuss more about your passion
+
+11:41.000 --> 11:47.000
+And, OK, so let's get to our main research topic today
+
+11:47.000 --> 11:50.000
+Today we're going to talk about
+
+11:50.000 --> 11:56.000
+How to use the blockchain to prevent the fake news
+
+11:56.000 --> 11:58.000
+Yeah, actually what is the fake news
+
+11:58.000 --> 12:03.000
+It is a complete fabrication
+
+12:03.000 --> 12:07.000
+Which means people to forge something
+
+12:07.000 --> 12:09.000
+Or to mimic something
+
+12:09.000 --> 12:11.000
+And they're very similar to the real
+
+12:11.000 --> 12:15.000
+You are not able to confirm what the fact is
+
+12:15.000 --> 12:19.000
+What is the real, what is the fact
+
+12:19.000 --> 12:21.000
+And so what is the
+
+12:21.000 --> 12:25.000
+Actually the spread of fake news
+
+12:25.000 --> 12:28.000
+Is not in the long future
+
+12:28.000 --> 12:29.000
+It happens right now
+
+12:29.000 --> 12:31.000
+You could see this slide
+
+12:31.000 --> 12:34.000
+In the left-hand upside
+
+12:34.000 --> 12:36.000
+Is the U.S. stock market
+
+12:36.000 --> 12:38.000
+In one day you could see the picture
+
+12:38.000 --> 12:40.000
+It drops sharply
+
+12:40.000 --> 12:41.000
+But why
+
+12:41.000 --> 12:43.000
+Because at that day
+
+12:43.000 --> 12:47.000
+The news says that the Trumps
+
+12:47.000 --> 12:50.000
+The Obama was dead
+
+12:50.000 --> 12:52.000
+But it's a rumor, right
+
+12:52.000 --> 12:57.000
+But however the stock market to drop very sharply
+
+12:57.000 --> 12:59.000
+By this fake news
+
+12:59.000 --> 13:01.000
+And other examples in this slide
+
+13:01.000 --> 13:04.000
+We all know that the Cambridge Analytic
+
+13:04.000 --> 13:07.000
+They collect the users' preferences
+
+13:07.000 --> 13:11.000
+And to make some news or articles
+
+13:11.000 --> 13:13.000
+That you are interested in
+
+13:13.000 --> 13:18.000
+And to affect your opinion in some specific issues
+
+13:18.000 --> 13:20.000
+And also the Russian
+
+13:20.000 --> 13:24.000
+They use some propagandas to affect the basis
+
+13:24.000 --> 13:26.000
+The resource of basis
+
+13:26.000 --> 13:30.000
+So all these are the current threat
+
+13:30.000 --> 13:36.000
+To our society and democracy and the economy
+
+13:36.000 --> 13:38.000
+Also in Taiwan
+
+13:38.000 --> 13:39.000
+Taiwan is the same
+
+13:39.000 --> 13:41.000
+Actually in the research
+
+13:41.000 --> 13:44.000
+Taiwan is the most
+
+13:44.000 --> 13:48.000
+We got the most threat from the whole world
+
+13:48.000 --> 13:49.000
+We are number one
+
+13:49.000 --> 13:50.000
+So it's very
+
+13:50.000 --> 13:51.000
+Like I said
+
+13:51.000 --> 13:52.000
+It's not a long
+
+13:52.000 --> 13:54.000
+Not a threat in a long distance
+
+13:54.000 --> 13:56.000
+It's the current
+
+13:56.000 --> 14:01.000
+It happened currently right now
+
+14:01.000 --> 14:06.000
+So why people invest in fake news
+
+14:06.000 --> 14:10.000
+That is because they can get a lot of revenues
+
+14:10.000 --> 14:13.000
+Based on the lower cost
+
+14:13.000 --> 14:18.000
+Right now the cost of producing the fake news
+
+14:18.000 --> 14:19.000
+It's very cheap
+
+14:19.000 --> 14:22.000
+But if you can affect a big topic
+
+14:22.000 --> 14:26.000
+Like the U.S. president election
+
+14:26.000 --> 14:29.000
+Or some very huge topic
+
+14:29.000 --> 14:32.000
+You could get a huge, huge revenues
+
+14:32.000 --> 14:34.000
+So why not
+
+14:34.000 --> 14:35.000
+Why don't we do that
+
+14:35.000 --> 14:41.000
+If I can impact a lot of people
+
+14:41.000 --> 14:44.000
+By very low cost
+
+14:44.000 --> 14:48.000
+Actually the malicious people
+
+14:48.000 --> 14:53.000
+Of course they will do that
+
+14:53.000 --> 14:58.000
+And also the AI technology makes things worse
+
+14:58.000 --> 15:02.000
+Because in my this slide
+
+15:02.000 --> 15:05.000
+This is Jordan Peele
+
+15:05.000 --> 15:08.000
+He is a U.S. actor
+
+15:08.000 --> 15:13.000
+He collaborated with technology companies
+
+15:13.000 --> 15:17.000
+They use the AI technique to
+
+15:17.000 --> 15:21.000
+The deep fake technique to produce the video
+
+15:21.000 --> 15:24.000
+And to let Obama to say some words
+
+15:24.000 --> 15:26.000
+They want him to say
+
+15:26.000 --> 15:28.000
+So AI make the fake news
+
+15:28.000 --> 15:32.000
+To be produced more easier
+
+15:32.000 --> 15:34.000
+And so
+
+15:34.000 --> 15:37.000
+But in a traditional ways
+
+15:37.000 --> 15:40.000
+Our research mainly focus on
+
+15:41.000 --> 15:45.000
+To detect the fake news automatically
+
+15:45.000 --> 15:47.000
+How we do that
+
+15:47.000 --> 15:49.000
+You see this picture that
+
+15:49.000 --> 15:51.000
+We have different algorithms
+
+15:51.000 --> 15:54.000
+But mainly we use some machine learning algorithms
+
+15:54.000 --> 15:57.000
+We find some clues
+
+15:57.000 --> 16:01.000
+For example if you are the fake news comes in
+
+16:01.000 --> 16:06.000
+And we find whether the IP address is correct or not
+
+16:06.000 --> 16:09.000
+And its content has some
+
+16:09.000 --> 16:11.000
+We use this or not
+
+16:11.000 --> 16:14.000
+So we use some patterns to detect
+
+16:14.000 --> 16:17.000
+And to decide whether this fake news is
+
+16:17.000 --> 16:20.000
+Whether this news is correct or not
+
+16:20.000 --> 16:21.000
+But like I said
+
+16:21.000 --> 16:25.000
+AI makes things very similar to real
+
+16:25.000 --> 16:29.000
+The algorithms does not have
+
+16:29.000 --> 16:34.000
+Have the great performance right now
+
+16:34.000 --> 16:38.000
+So some big companies like Google
+
+16:38.000 --> 16:40.000
+Or Facebook
+
+16:40.000 --> 16:43.000
+They begin to use some
+
+16:43.000 --> 16:46.000
+Human beings power capabilities to
+
+16:46.000 --> 16:49.000
+Help AI to check the contents
+
+16:49.000 --> 16:51.000
+Authenticity
+
+16:51.000 --> 16:52.000
+How they do that
+
+16:52.000 --> 16:54.000
+They build some teams
+
+16:54.000 --> 16:57.000
+They collaborate with the local professions
+
+16:57.000 --> 17:00.000
+They have the ability to check the content
+
+17:00.000 --> 17:04.000
+Is correct or not
+
+17:04.000 --> 17:06.000
+And Facebook also did the same things
+
+17:06.000 --> 17:10.000
+They built a team internal
+
+17:10.000 --> 17:13.000
+And those teams will check some news
+
+17:13.000 --> 17:15.000
+The authenticity
+
+17:15.000 --> 17:18.000
+And to make your
+
+17:18.000 --> 17:20.000
+Some news
+
+17:20.000 --> 17:23.000
+When news push to your device
+
+17:23.000 --> 17:24.000
+They will be real
+
+17:24.000 --> 17:31.000
+And they will build some fake news
+
+17:31.000 --> 17:32.000
+And in Taiwan
+
+17:32.000 --> 17:35.000
+We also have one organization
+
+17:35.000 --> 17:37.000
+And you could see that
+
+17:37.000 --> 17:41.000
+It's the Taiwan Fact Check Center
+
+17:41.000 --> 17:44.000
+And you could go on their website
+
+17:44.000 --> 17:45.000
+And to see
+
+17:45.000 --> 17:46.000
+They could check
+
+17:46.000 --> 17:48.000
+They will check some news
+
+17:48.000 --> 17:55.000
+And tell you this is correct or incorrect
+
+17:55.000 --> 17:56.000
+OK
+
+17:56.000 --> 18:00.000
+So I stop here
+
+18:00.000 --> 18:03.000
+And for these solutions
+
+18:03.000 --> 18:06.000
+Like Google or Facebook
+
+18:06.000 --> 18:09.000
+Or the Taiwan Fact Check Center
+
+18:09.000 --> 18:10.000
+Those are good solutions
+
+18:10.000 --> 18:17.000
+But these solutions are
+
+18:17.000 --> 18:20.000
+Are managed by a central organization
+
+18:20.000 --> 18:23.000
+We don't know how they work
+
+18:23.000 --> 18:26.000
+It's like a black box
+
+18:26.000 --> 18:30.000
+If they did not do this job well
+
+18:30.000 --> 18:32.000
+You did not know right
+
+18:32.000 --> 18:36.000
+You just can trust them
+
+18:36.000 --> 18:38.000
+So in our solution
+
+18:38.000 --> 18:43.000
+We used decentralized solutions
+
+18:43.000 --> 18:48.000
+Which means that we will form a team
+
+18:48.000 --> 18:49.000
+Form a call
+
+18:49.000 --> 18:51.000
+A lot of people
+
+18:51.000 --> 18:53.000
+They are advisors
+
+18:53.000 --> 18:55.000
+They will verify some contents
+
+18:55.000 --> 18:59.000
+But this solution does not manage
+
+18:59.000 --> 19:01.000
+By only one company
+
+19:01.000 --> 19:04.000
+It's managed by everyone
+
+19:04.000 --> 19:06.000
+Who joined this system
+
+19:06.000 --> 19:08.000
+So this is our paper
+
+19:08.000 --> 19:12.000
+And just accepted by DTN
+
+19:12.000 --> 19:14.000
+2021 in November
+
+19:14.000 --> 19:17.000
+So after the meeting
+
+19:17.000 --> 19:19.000
+If you have more interesting details
+
+19:19.000 --> 19:20.000
+You could
+
+19:20.000 --> 19:21.000
+But it's not published yet
+
+19:21.000 --> 19:23.000
+Maybe in December
+
+19:23.000 --> 19:24.000
+So in December
+
+19:24.000 --> 19:26.000
+You could check this content
+
+19:26.000 --> 19:27.000
+In more detail
+
+19:31.000 --> 19:32.000
+Ok so
+
+19:32.000 --> 19:35.000
+I think we can get into the detail
+
+19:35.000 --> 19:37.000
+So for
+
+19:37.000 --> 19:41.000
+This work is from another paper
+
+19:41.000 --> 19:46.000
+That invented by some researchers
+
+19:46.000 --> 19:48.000
+In the UK
+
+19:48.000 --> 19:49.000
+As you can see
+
+19:49.000 --> 19:54.000
+In the middle of this architecture
+
+19:54.000 --> 19:56.000
+There is a group
+
+19:56.000 --> 19:58.000
+That we call the uprising actors
+
+19:58.000 --> 20:00.000
+These are some professions
+
+20:00.000 --> 20:02.000
+They have ability to check
+
+20:02.000 --> 20:04.000
+The content is correct or not
+
+20:04.000 --> 20:05.000
+And in that side
+
+20:05.000 --> 20:08.000
+When the content creator
+
+20:08.000 --> 20:10.000
+Is the content creators
+
+20:10.000 --> 20:12.000
+Are people who create
+
+20:12.000 --> 20:15.000
+The digital content
+
+20:15.000 --> 20:16.000
+Maybe you are a writer
+
+20:16.000 --> 20:18.000
+Or you are a photographer
+
+20:18.000 --> 20:20.000
+And you make some content
+
+20:20.000 --> 20:22.000
+And you could send your content
+
+20:22.000 --> 20:24.000
+Into our system
+
+20:24.000 --> 20:27.000
+And then those uprising actors
+
+20:27.000 --> 20:30.000
+Will verify your content to check
+
+20:30.000 --> 20:34.000
+Or your content is real or fake
+
+20:34.000 --> 20:37.000
+And then they will send back to you
+
+20:37.000 --> 20:38.000
+The uprising result
+
+20:38.000 --> 20:40.000
+Then those uprising result
+
+20:40.000 --> 20:42.000
+Will be saved in the
+
+20:42.000 --> 20:44.000
+Blockchain network
+
+20:44.000 --> 20:45.000
+After that
+
+20:45.000 --> 20:47.000
+The right-hand side users
+
+20:47.000 --> 20:49.000
+When it comes into our system
+
+20:49.000 --> 20:51.000
+They could check the
+
+20:51.000 --> 20:53.000
+Authenticity of the contents
+
+20:53.000 --> 20:56.000
+From our blockchain network
+
+20:57.000 --> 21:00.000
+So that's an overview
+
+21:00.000 --> 21:03.000
+Architecture of the system
+
+21:03.000 --> 21:04.000
+Our system's architecture
+
+21:04.000 --> 21:07.000
+Is similar to this architecture
+
+21:07.000 --> 21:10.000
+But in the following slide
+
+21:10.000 --> 21:11.000
+I will introduce the differences
+
+21:11.000 --> 21:15.000
+Between architecture and this
+
+21:17.000 --> 21:20.000
+And this is interesting
+
+21:20.000 --> 21:23.000
+Like I said
+
+21:24.000 --> 21:26.000
+If we all rely on
+
+21:26.000 --> 21:27.000
+Facebook or Google
+
+21:27.000 --> 21:30.000
+To help us to check the content
+
+21:30.000 --> 21:31.000
+How do I know
+
+21:31.000 --> 21:35.000
+They do their job very well
+
+21:35.000 --> 21:37.000
+Maybe they just have to
+
+21:37.000 --> 21:39.000
+They did not do very seriously
+
+21:39.000 --> 21:44.000
+So I still could still see some fake news
+
+21:44.000 --> 21:46.000
+But in this system
+
+21:46.000 --> 21:49.000
+You could to select the people
+
+21:49.000 --> 21:52.000
+Or some authorities media
+
+21:52.000 --> 21:54.000
+You trust
+
+21:54.000 --> 21:55.000
+And then to get them
+
+21:55.000 --> 21:58.000
+To be your oppressing actors
+
+21:58.000 --> 22:00.000
+So for example
+
+22:00.000 --> 22:02.000
+If in this case
+
+22:02.000 --> 22:04.000
+I selected
+
+22:04.000 --> 22:06.000
+One is the BBC
+
+22:06.000 --> 22:09.000
+It's a media
+
+22:09.000 --> 22:12.000
+And I also selected some people
+
+22:12.000 --> 22:14.000
+Professor Smith or Mr. John
+
+22:14.000 --> 22:18.000
+Maybe some celebrities you trust
+
+22:18.000 --> 22:21.000
+If they say this news is real
+
+22:21.000 --> 22:23.000
+You will trust that
+
+22:23.000 --> 22:25.000
+So maybe for example in Taiwan
+
+22:25.000 --> 22:27.000
+Maybe you are very
+
+22:27.000 --> 22:29.000
+Trustful
+
+22:29.000 --> 22:32.000
+If he say this news is real
+
+22:32.000 --> 22:34.000
+Okay, I will trust him
+
+22:34.000 --> 22:36.000
+So you could select these people
+
+22:36.000 --> 22:39.000
+To be your trusted parties
+
+22:39.000 --> 22:42.000
+And when the news comes in
+
+22:42.000 --> 22:46.000
+We will call your call
+
+22:46.000 --> 22:49.000
+A group of oppressing actors
+
+22:49.000 --> 22:51.000
+They will give you the opinion
+
+22:51.000 --> 22:59.000
+But is this news is correct or not
+
+22:59.000 --> 23:00.000
+And so but
+
+23:00.000 --> 23:03.000
+Why we need to use the blockchain
+
+23:03.000 --> 23:05.000
+In the system
+
+23:05.000 --> 23:06.000
+Why don't we just use
+
+23:06.000 --> 23:08.000
+The traditional databases
+
+23:08.000 --> 23:11.000
+We just accept the oppressing results
+
+23:11.000 --> 23:14.000
+We don't need to use the blockchain, right
+
+23:14.000 --> 23:15.000
+But actually blockchain
+
+23:15.000 --> 23:18.000
+Has some characteristic
+
+23:18.000 --> 23:20.000
+That if once your data
+
+23:20.000 --> 23:22.000
+Is accepted in blockchain
+
+23:22.000 --> 23:23.000
+You cannot modify that
+
+23:23.000 --> 23:26.000
+Because everyone has one ledger
+
+23:26.000 --> 23:27.000
+In their node
+
+23:27.000 --> 23:30.000
+Is this not possible
+
+23:30.000 --> 23:33.000
+To modify all the ledgers, right
+
+23:33.000 --> 23:35.000
+And another case is that
+
+23:35.000 --> 23:39.000
+If you modify the ledger
+
+23:39.000 --> 23:40.000
+In only one node
+
+23:40.000 --> 23:42.000
+It will be easier to be fine
+
+23:42.000 --> 23:45.000
+Because we have some
+
+23:45.000 --> 23:47.000
+Hashtag
+
+23:47.000 --> 23:48.000
+In computer science
+
+23:48.000 --> 23:50.000
+The hashpoint is that
+
+23:50.000 --> 23:52.000
+For example, in my node
+
+23:52.000 --> 23:55.000
+I have a hashpoint to point to your node
+
+23:55.000 --> 23:57.000
+But if you modify
+
+23:57.000 --> 24:00.000
+The hashpoint is based on your content
+
+24:00.000 --> 24:01.000
+If you modify the content
+
+24:01.000 --> 24:03.000
+The hashpoint will be modified
+
+24:03.000 --> 24:06.000
+So it will be easier to be found that
+
+24:06.000 --> 24:09.000
+Somebody modified the data
+
+24:09.000 --> 24:13.000
+So blockchain will be a great solution
+
+24:13.000 --> 24:16.000
+To maintain the correctness of the data
+
+24:17.000 --> 24:21.000
+And we go back to give you some knowledge
+
+24:21.000 --> 24:23.000
+How does the blockchain work
+
+24:23.000 --> 24:25.000
+Actually you can see this picture
+
+24:25.000 --> 24:28.000
+And if you have a transaction
+
+24:28.000 --> 24:30.000
+In this system
+
+24:30.000 --> 24:34.000
+And the nodes will compete
+
+24:34.000 --> 24:37.000
+To try to verify it
+
+24:37.000 --> 24:40.000
+And once this data verified
+
+24:40.000 --> 24:43.000
+You will be set to the blockchain
+
+24:43.000 --> 24:45.000
+That is in a button
+
+24:45.000 --> 24:47.000
+We have some red blocks
+
+24:47.000 --> 24:52.000
+And they are picked by the hashpoint
+
+24:52.000 --> 24:53.000
+Right
+
+24:53.000 --> 24:58.000
+So this is how the blockchain works
+
+24:58.000 --> 25:00.000
+And then it's just
+
+25:00.000 --> 25:03.000
+There are many, many blockchains right now
+
+25:03.000 --> 25:07.000
+So it's a very simple classification
+
+25:07.000 --> 25:09.000
+One is the public
+
+25:09.000 --> 25:11.000
+And another is the private
+
+25:11.000 --> 25:13.000
+Public means that everyone
+
+25:13.000 --> 25:16.000
+And could to send a transaction
+
+25:16.000 --> 25:19.000
+In this blockchain network
+
+25:19.000 --> 25:21.000
+Like bitcoin
+
+25:21.000 --> 25:23.000
+People know about bitcoin and all
+
+25:23.000 --> 25:26.000
+But in private blockchain
+
+25:26.000 --> 25:28.000
+Only people approved
+
+25:28.000 --> 25:30.000
+Will be can send the transaction
+
+25:30.000 --> 25:32.000
+Into the system
+
+25:32.000 --> 25:36.000
+And so this private blockchain
+
+25:36.000 --> 25:38.000
+Often be used in the corporations
+
+25:38.000 --> 25:41.000
+Not for the public
+
+25:41.000 --> 25:44.000
+And yeah so
+
+25:44.000 --> 25:45.000
+And another
+
+25:45.000 --> 25:47.000
+Since you need to know in blockchain
+
+25:47.000 --> 25:49.000
+Is the proof of work
+
+25:49.000 --> 25:52.000
+And proof of stake
+
+25:52.000 --> 25:53.000
+What is proof of work
+
+25:53.000 --> 25:56.000
+It means that
+
+25:56.000 --> 25:57.000
+If we have a transaction
+
+25:57.000 --> 25:59.000
+And we have a lot of nodes
+
+25:59.000 --> 26:01.000
+Which node can record
+
+26:01.000 --> 26:04.000
+This data into blockchain
+
+26:04.000 --> 26:08.000
+And if you are proof of work mechanism
+
+26:08.000 --> 26:09.000
+The nodes will compete
+
+26:09.000 --> 26:12.000
+To solve a complicated math problem
+
+26:12.000 --> 26:13.000
+And this process
+
+26:13.000 --> 26:15.000
+We call it the mining
+
+26:15.000 --> 26:17.000
+Right so it's a famous word
+
+26:17.000 --> 26:19.000
+Or it's very popular to be heard
+
+26:19.000 --> 26:21.000
+If you solve this problem
+
+26:21.000 --> 26:23.000
+Then you get the right
+
+26:23.000 --> 26:26.000
+To set data into blockchain
+
+26:26.000 --> 26:28.000
+But yeah and the proof of work
+
+26:28.000 --> 26:30.000
+Is right now the blockchain
+
+26:30.000 --> 26:33.000
+And the ethereum used
+
+26:33.000 --> 26:35.000
+And the proof of stake is that
+
+26:35.000 --> 26:37.000
+Oh no we don't
+
+26:37.000 --> 26:38.000
+To solve the math problem
+
+26:38.000 --> 26:40.000
+We just use some stake
+
+26:40.000 --> 26:41.000
+What does that mean
+
+26:41.000 --> 26:42.000
+Is that if you want to
+
+26:42.000 --> 26:44.000
+Record data into blockchain
+
+26:44.000 --> 26:47.000
+You need to pay some fees
+
+26:47.000 --> 26:49.000
+And if you pay higher
+
+26:49.000 --> 26:51.000
+You will be get higher chance
+
+26:51.000 --> 26:53.000
+To get the right
+
+26:53.000 --> 26:54.000
+To be selected to get the right
+
+26:54.000 --> 26:57.000
+To set data into blockchain
+
+26:57.000 --> 26:59.000
+So these two solutions
+
+26:59.000 --> 27:05.000
+Are called resist the hackers
+
+27:05.000 --> 27:07.000
+Because in the proof of work
+
+27:07.000 --> 27:09.000
+We want to control
+
+27:09.000 --> 27:11.000
+Our right to record data
+
+27:11.000 --> 27:12.000
+In blockchain
+
+27:12.000 --> 27:14.000
+You need to control
+
+27:14.000 --> 27:19.000
+More than 51% computers in the world
+
+27:19.000 --> 27:22.000
+And in proof of stake
+
+27:22.000 --> 27:26.000
+You need to pay more than 51% stakes
+
+27:26.000 --> 27:27.000
+Then you will get the right
+
+27:27.000 --> 27:32.000
+To record data
+
+27:32.000 --> 27:34.000
+And then so you can see that
+
+27:35.000 --> 27:38.000
+In blockchain actually
+
+27:38.000 --> 27:40.000
+I think people heard about
+
+27:40.000 --> 27:41.000
+One news is in Taiwan
+
+27:41.000 --> 27:43.000
+That one day some people
+
+27:43.000 --> 27:46.000
+Buy a lottery right
+
+27:46.000 --> 27:50.000
+Then they collect a lot of people
+
+27:50.000 --> 27:53.000
+People to buy the lottery together
+
+27:53.000 --> 27:56.000
+But one man denied
+
+27:56.000 --> 27:57.000
+He denied that
+
+27:57.000 --> 28:00.000
+Said oh no this lottery
+
+28:00.000 --> 28:02.000
+Only belongs to me
+
+28:02.000 --> 28:03.000
+But if you use blockchain
+
+28:03.000 --> 28:05.000
+The solution the problem
+
+28:05.000 --> 28:07.000
+Will not exist
+
+28:07.000 --> 28:09.000
+Because in blockchain
+
+28:09.000 --> 28:10.000
+Everything will
+
+28:10.000 --> 28:12.000
+Very transparency
+
+28:12.000 --> 28:13.000
+And we could trust
+
+28:13.000 --> 28:15.000
+Who did the transaction
+
+28:15.000 --> 28:18.000
+So that's the one
+
+28:18.000 --> 28:19.000
+The blockchain could support
+
+28:19.000 --> 28:20.000
+Our daily life
+
+28:20.000 --> 28:22.000
+Actually they can solve
+
+28:22.000 --> 28:23.000
+A lot of things
+
+28:23.000 --> 28:24.000
+Like if you're trying to vote in
+
+28:24.000 --> 28:27.000
+Or to test some
+
+28:27.000 --> 28:31.000
+The fishery or some products
+
+28:31.000 --> 28:33.000
+The original prices of the product
+
+28:33.000 --> 28:37.000
+By using a blockchain
+
+28:37.000 --> 28:39.000
+And then in this system
+
+28:39.000 --> 28:42.000
+You could
+
+28:42.000 --> 28:43.000
+I would like to introduce
+
+28:43.000 --> 28:44.000
+The hyperledger fabric
+
+28:44.000 --> 28:46.000
+It's the blockchain that
+
+28:46.000 --> 28:48.000
+Proposed by IBM
+
+28:48.000 --> 28:51.000
+And this is the permission
+
+28:51.000 --> 28:53.000
+Private blockchain that I said
+
+28:53.000 --> 28:55.000
+It's for the companies
+
+28:55.000 --> 28:58.000
+Not for the public
+
+28:58.000 --> 29:02.000
+And how they work
+
+29:02.000 --> 29:03.000
+You could see this flow
+
+29:03.000 --> 29:05.000
+If you have a transaction
+
+29:05.000 --> 29:06.000
+You could propose to
+
+29:06.000 --> 29:08.000
+The execution chain code
+
+29:08.000 --> 29:11.000
+The chain code is the smart contract
+
+29:11.000 --> 29:13.000
+In the blockchain network
+
+29:13.000 --> 29:14.000
+I think people will
+
+29:14.000 --> 29:16.000
+Heard about smart contract
+
+29:16.000 --> 29:18.000
+Often very often
+
+29:18.000 --> 29:20.000
+And then the smart contract
+
+29:20.000 --> 29:22.000
+Will check your content
+
+29:22.000 --> 29:25.000
+To check is there any mistake
+
+29:25.000 --> 29:26.000
+In your content
+
+29:26.000 --> 29:28.000
+And then send back to you
+
+29:28.000 --> 29:30.000
+And when you get a permission
+
+29:30.000 --> 29:31.000
+You can send your
+
+29:31.000 --> 29:32.000
+Submit your transaction
+
+29:32.000 --> 29:34.000
+To the ordering services
+
+29:34.000 --> 29:35.000
+And then the ordering services
+
+29:35.000 --> 29:37.000
+Will to decide
+
+29:37.000 --> 29:39.000
+How to record your data
+
+29:39.000 --> 29:41.000
+Into the blockchain
+
+29:41.000 --> 29:45.000
+And it's different to the bitcoin
+
+29:45.000 --> 29:46.000
+The hyperledger fabric
+
+29:46.000 --> 29:47.000
+Does not use the
+
+29:47.000 --> 29:52.000
+Proof of work mechanism
+
+29:52.000 --> 29:53.000
+Which means that
+
+29:53.000 --> 29:55.000
+Then we don't need to spend
+
+29:55.000 --> 29:58.000
+A lot of energy or money
+
+29:58.000 --> 30:01.000
+To do the mining process
+
+30:01.000 --> 30:02.000
+So it will be faster
+
+30:02.000 --> 30:05.000
+And save energy
+
+30:05.000 --> 30:07.000
+Than the blockchain
+
+30:07.000 --> 30:11.000
+Than the bitcoin
+
+30:11.000 --> 30:13.000
+So for this
+
+30:13.000 --> 30:15.000
+In our paper
+
+30:15.000 --> 30:17.000
+This is our main architecture
+
+30:17.000 --> 30:19.000
+The main difference is that
+
+30:19.000 --> 30:20.000
+You could see that
+
+30:20.000 --> 30:23.000
+In the data persistent layer
+
+30:23.000 --> 30:24.000
+Our blockchain
+
+30:24.000 --> 30:26.000
+We use the hyperledger fabric
+
+30:26.000 --> 30:28.000
+But in a previous work
+
+30:28.000 --> 30:30.000
+That did not mention that
+
+30:30.000 --> 30:32.000
+Which blockchain they used
+
+30:32.000 --> 30:34.000
+Also we
+
+30:34.000 --> 30:37.000
+How do you incentive
+
+30:37.000 --> 30:41.000
+To let the oppressing actors
+
+30:41.000 --> 30:42.000
+To do things well
+
+30:42.000 --> 30:45.000
+We invented incentive mechanisms
+
+30:45.000 --> 30:47.000
+To that people
+
+30:47.000 --> 30:49.000
+Willing to do things very well
+
+30:49.000 --> 30:53.000
+Not to produce some dishonest
+
+30:53.000 --> 30:57.000
+Behaviors
+
+30:57.000 --> 31:00.000
+And then our system will
+
+31:00.000 --> 31:01.000
+Tell you that
+
+31:01.000 --> 31:02.000
+If you send
+
+31:02.000 --> 31:03.000
+The content creator
+
+31:03.000 --> 31:05.000
+Send one content into our system
+
+31:05.000 --> 31:07.000
+Our system will tell you
+
+31:07.000 --> 31:10.000
+How much percent
+
+31:10.000 --> 31:13.000
+This content is real or fake
+
+31:13.000 --> 31:15.000
+Like this slide shows
+
+31:15.000 --> 31:16.000
+The content is the
+
+31:16.000 --> 31:18.000
+66% is real
+
+31:18.000 --> 31:20.000
+And 80% is fake
+
+31:20.000 --> 31:22.000
+And this opinion is from
+
+31:22.000 --> 31:24.000
+The people you trust
+
+31:24.000 --> 31:25.000
+In your trust list
+
+31:25.000 --> 31:28.000
+So you could use this
+
+31:28.000 --> 31:30.000
+Oppressing result to judge
+
+31:30.000 --> 31:36.000
+This news is fake or not
+
+31:36.000 --> 31:38.000
+And so this is our main floor
+
+31:38.000 --> 31:41.000
+And we
+
+31:41.000 --> 31:43.000
+We was
+
+31:43.000 --> 31:45.000
+We refer to the history and that
+
+31:45.000 --> 31:46.000
+In the beginning
+
+31:46.000 --> 31:48.000
+Our system will accept
+
+31:48.000 --> 31:51.000
+The participant to add some
+
+31:51.000 --> 31:53.000
+So they will get
+
+31:53.000 --> 31:54.000
+Some credit point
+
+31:54.000 --> 31:55.000
+And then they can use the
+
+31:55.000 --> 31:57.000
+Credit point to
+
+31:57.000 --> 31:59.000
+Do some oppressing
+
+31:59.000 --> 32:02.000
+And then we can get a trust score
+
+32:02.000 --> 32:04.000
+And then
+
+32:04.000 --> 32:05.000
+When we get a trust score
+
+32:05.000 --> 32:06.000
+So we could
+
+32:06.000 --> 32:07.000
+For example
+
+32:07.000 --> 32:09.000
+In the previous
+
+32:09.000 --> 32:11.000
+This example
+
+32:11.000 --> 32:13.000
+Most of the majority thinks that
+
+32:13.000 --> 32:15.000
+This content is real
+
+32:15.000 --> 32:18.000
+So the minority
+
+32:18.000 --> 32:19.000
+Why this minority
+
+32:19.000 --> 32:20.000
+Think this content
+
+32:20.000 --> 32:21.000
+Is fake
+
+32:21.000 --> 32:24.000
+So our system will give reward
+
+32:24.000 --> 32:26.000
+To those people
+
+32:26.000 --> 32:28.000
+That are
+
+32:28.000 --> 32:30.000
+Belongs to the majority
+
+32:30.000 --> 32:32.000
+And to get the punishment
+
+32:32.000 --> 32:34.000
+To people who are in the minority
+
+32:34.000 --> 32:35.000
+Right
+
+32:35.000 --> 32:37.000
+Because
+
+32:37.000 --> 32:38.000
+All people are professions
+
+32:38.000 --> 32:41.000
+Why you think this
+
+32:41.000 --> 32:44.000
+Content is fake
+
+32:44.000 --> 32:45.000
+Not correct
+
+32:45.000 --> 32:49.000
+Not similar to the majority's opinion
+
+32:50.000 --> 32:52.000
+And then before I get into
+
+32:52.000 --> 32:54.000
+How to calculate the trust score
+
+32:54.000 --> 32:57.000
+I want to introduce one concept
+
+32:57.000 --> 32:58.000
+Is that
+
+32:58.000 --> 33:00.000
+We call it entropy
+
+33:00.000 --> 33:02.000
+And
+
+33:02.000 --> 33:03.000
+Yeah, don't
+
+33:03.000 --> 33:05.000
+Don't think it too complicated
+
+33:05.000 --> 33:07.000
+I don't want to
+
+33:07.000 --> 33:09.000
+Introduce some to
+
+33:09.000 --> 33:11.000
+Academia or some to top
+
+33:11.000 --> 33:12.000
+Concept
+
+33:12.000 --> 33:14.000
+You can only see that
+
+33:14.000 --> 33:16.000
+This concept is from the
+
+33:16.000 --> 33:17.000
+Chemistry
+
+33:17.000 --> 33:18.000
+And from
+
+33:18.000 --> 33:19.000
+Yeah
+
+33:19.000 --> 33:20.000
+Example is that
+
+33:20.000 --> 33:23.000
+If you have a glass of water
+
+33:23.000 --> 33:25.000
+And you put ink into water
+
+33:25.000 --> 33:26.000
+The water will
+
+33:26.000 --> 33:28.000
+The ink will
+
+33:28.000 --> 33:29.000
+From one point
+
+33:29.000 --> 33:31.000
+And will spread to everywhere
+
+33:31.000 --> 33:32.000
+Right
+
+33:32.000 --> 33:35.000
+So entropy is to
+
+33:35.000 --> 33:37.000
+Measure this phenomena
+
+33:37.000 --> 33:39.000
+All the things
+
+33:39.000 --> 33:43.000
+Is it a disorder or not
+
+33:43.000 --> 33:45.000
+If the entropy is high
+
+33:45.000 --> 33:46.000
+Because
+
+33:46.000 --> 33:47.000
+It means that
+
+33:47.000 --> 33:52.000
+The things is more disorder
+
+33:52.000 --> 33:54.000
+I could put here
+
+33:54.000 --> 33:56.000
+And so
+
+33:56.000 --> 33:57.000
+In this slide
+
+33:57.000 --> 33:58.000
+You could see that
+
+33:58.000 --> 33:59.000
+The red point
+
+33:59.000 --> 34:02.000
+Is really, really similar to
+
+34:02.000 --> 34:03.000
+You could imagine that
+
+34:03.000 --> 34:05.000
+The one red point is one people
+
+34:05.000 --> 34:08.000
+If their opinion are the same
+
+34:08.000 --> 34:10.000
+It's just like the low entropy, right
+
+34:10.000 --> 34:11.000
+They will
+
+34:11.000 --> 34:13.000
+Stay together very closely
+
+34:13.000 --> 34:16.000
+But if their opinion divergent
+
+34:16.000 --> 34:18.000
+They will have high entropy, right
+
+34:18.000 --> 34:23.000
+So their opinion will not the same
+
+34:23.000 --> 34:24.000
+So
+
+34:24.000 --> 34:25.000
+I will continue
+
+34:25.000 --> 34:27.000
+Begin to tell you
+
+34:27.000 --> 34:30.000
+How we calculate the trust score
+
+34:30.000 --> 34:32.000
+And I will put some equations there
+
+34:32.000 --> 34:34.000
+But you don't need to
+
+34:34.000 --> 34:36.000
+To look very detail into equations
+
+34:36.000 --> 34:39.000
+You just need to look at the numbers
+
+34:39.000 --> 34:40.000
+Okay
+
+34:40.000 --> 34:42.000
+But for this example
+
+34:42.000 --> 34:44.000
+If we have five prices
+
+34:44.000 --> 34:46.000
+And three of them agree
+
+34:46.000 --> 34:48.000
+And two of them reject
+
+34:48.000 --> 34:50.000
+So we could get that
+
+34:50.000 --> 34:54.000
+The possibility of real
+
+34:54.000 --> 34:56.000
+Is three divided by
+
+34:56.000 --> 34:58.000
+Based on
+
+34:58.000 --> 35:01.000
+This is the possibility
+
+35:01.000 --> 35:03.000
+And this is three
+
+35:03.000 --> 35:05.000
+Divide five, so it's 0.5
+
+35:05.000 --> 35:08.000
+And p fact will be two
+
+35:08.000 --> 35:11.000
+Divided five will be 0.4
+
+35:11.000 --> 35:12.000
+And then we put this
+
+35:12.000 --> 35:15.000
+The p real and p fact into this equation
+
+35:15.000 --> 35:18.000
+Then we can get the entropy for this case
+
+35:18.000 --> 35:21.000
+Will be 0.70
+
+35:21.000 --> 35:22.000
+Okay
+
+35:22.000 --> 35:24.000
+Just remember the number
+
+35:24.000 --> 35:26.000
+And
+
+35:26.000 --> 35:28.000
+Another case is that if we have
+
+35:28.000 --> 35:30.000
+The four prices agree
+
+35:30.000 --> 35:32.000
+Only one
+
+35:32.000 --> 35:34.000
+Reject
+
+35:34.000 --> 35:36.000
+You could get that
+
+35:36.000 --> 35:39.000
+In this case, the people have the
+
+35:39.000 --> 35:41.000
+More consistent opinion, right
+
+35:41.000 --> 35:43.000
+So the entropy will lower
+
+35:43.000 --> 35:46.000
+And in the example one
+
+35:46.000 --> 35:47.000
+The entropy is higher
+
+35:47.000 --> 35:50.000
+So our system encourage people to
+
+35:50.000 --> 35:53.000
+Let their opinion consistent
+
+35:53.000 --> 35:57.000
+So when the high
+
+35:57.000 --> 36:01.000
+High entropy, our reward or
+
+36:01.000 --> 36:03.000
+Punishment
+
+36:03.000 --> 36:05.000
+Will lower
+
+36:05.000 --> 36:07.000
+But in the
+
+36:07.000 --> 36:09.000
+In the example two
+
+36:09.000 --> 36:11.000
+Our reward and the punishment
+
+36:11.000 --> 36:16.000
+Will be higher
+
+36:16.000 --> 36:19.000
+So I will give you a table
+
+36:19.000 --> 36:21.000
+And to show you how we calculate
+
+36:21.000 --> 36:22.000
+The trust score
+
+36:22.000 --> 36:24.000
+And so
+
+36:24.000 --> 36:26.000
+If you remember the metaphor
+
+36:26.000 --> 36:28.000
+I said before
+
+36:28.000 --> 36:29.000
+In the beginning
+
+36:29.000 --> 36:32.000
+This is of five people
+
+36:32.000 --> 36:33.000
+And
+
+36:33.000 --> 36:35.000
+Yeah, they have some opinions
+
+36:35.000 --> 36:38.000
+In the specific news
+
+36:38.000 --> 36:41.000
+And their initial stakes is that
+
+36:41.000 --> 36:43.000
+A1 put 5000
+
+36:43.000 --> 36:45.000
+Into the system
+
+36:45.000 --> 36:47.000
+A2 put 1000
+
+36:47.000 --> 36:50.000
+And then the total stakes is the 21000
+
+36:50.000 --> 36:53.000
+And you could get the
+
+36:53.000 --> 36:55.000
+The credit point or appraiser
+
+36:55.000 --> 36:58.000
+And there is the 5000
+
+36:58.000 --> 37:00.000
+To divide the 21000
+
+37:00.000 --> 37:02.000
+So we could get the
+
+37:02.000 --> 37:05.000
+Each appraiser's credit point
+
+37:05.000 --> 37:06.000
+Of
+
+37:06.000 --> 37:08.000
+Credit point of appraiser
+
+37:08.000 --> 37:09.000
+Right
+
+37:09.000 --> 37:12.000
+So it's just a simple
+
+37:12.000 --> 37:16.000
+Simple math
+
+37:16.000 --> 37:17.000
+Okay, so
+
+37:17.000 --> 37:19.000
+We right now we have
+
+37:19.000 --> 37:20.000
+Know how the
+
+37:20.000 --> 37:22.000
+Credit point
+
+37:22.000 --> 37:23.000
+Of the appraiser
+
+37:23.000 --> 37:25.000
+And then
+
+37:25.000 --> 37:26.000
+When they get
+
+37:26.000 --> 37:28.000
+When the appraiser get opinion to the content
+
+37:28.000 --> 37:29.000
+They could say that
+
+37:29.000 --> 37:32.000
+Oh, I'm 100%
+
+37:32.000 --> 37:35.000
+Sure that this news is fake
+
+37:36.000 --> 37:38.000
+Or real or fake
+
+37:38.000 --> 37:41.000
+But like A2
+
+37:41.000 --> 37:43.000
+He could also say that
+
+37:43.000 --> 37:48.000
+Oh, this content is a little bit tough for me to judge
+
+37:48.000 --> 37:53.000
+So I just have the 70% confidence
+
+37:53.000 --> 37:55.000
+That it is true
+
+37:55.000 --> 37:57.000
+So our trust score
+
+37:57.000 --> 38:00.000
+Will be the CPOA
+
+38:00.000 --> 38:02.000
+To multiply the confidence
+
+38:02.000 --> 38:04.000
+So you could see that
+
+38:04.000 --> 38:08.000
+This SOA is the score of authentic
+
+38:08.000 --> 38:10.000
+Is the all people agrees
+
+38:10.000 --> 38:12.000
+And their SOA
+
+38:12.000 --> 38:16.000
+The summation of the all the SOA
+
+38:16.000 --> 38:19.000
+And here is the sum score of fake
+
+38:19.000 --> 38:25.000
+Is the same as the score of authentic
+
+38:25.000 --> 38:27.000
+And we also summation
+
+38:27.000 --> 38:29.000
+All the people disagree
+
+38:29.000 --> 38:31.000
+And the summation their SOA
+
+38:31.000 --> 38:33.000
+To get the final result
+
+38:34.000 --> 38:36.000
+So that's the trust
+
+38:36.000 --> 38:38.000
+How we calculate the trust score
+
+38:41.000 --> 38:43.000
+And then when we know the trust score
+
+38:43.000 --> 38:46.000
+Like I said, our system will decide
+
+38:47.000 --> 38:53.000
+Will reflect the reward or punishment to each appraisers
+
+38:53.000 --> 38:56.000
+And we define that our basic reward
+
+38:56.000 --> 39:00.000
+Is the total stake to modify the 0.1%
+
+39:00.000 --> 39:02.000
+So in this case
+
+39:02.000 --> 39:03.000
+Will be 21
+
+39:03.000 --> 39:06.000
+And the basic punishment will be higher
+
+39:06.000 --> 39:07.000
+More higher than the reward
+
+39:07.000 --> 39:12.000
+Because we want to stop the malicious nodes
+
+39:12.000 --> 39:15.000
+So the basic punishment will be total stake
+
+39:15.000 --> 39:17.000
+Multiply the 10%
+
+39:17.000 --> 39:21.000
+So it will be the 2100
+
+39:21.000 --> 39:24.000
+And then the reward of the content
+
+39:24.000 --> 39:28.000
+Which means that when once content comes in
+
+39:29.000 --> 39:31.000
+And how many reward
+
+39:31.000 --> 39:34.000
+We will reflect to all the appraisers
+
+39:34.000 --> 39:36.000
+Who did their jobs
+
+39:36.000 --> 39:39.000
+So our equation will be
+
+39:40.000 --> 39:43.000
+We use the basic reward to modify
+
+39:43.000 --> 39:48.000
+The value of the 1 to minus the entropy S
+
+39:48.000 --> 39:51.000
+So you could see that in this case
+
+39:51.000 --> 39:57.000
+We know that in our example 1
+
+39:57.000 --> 40:01.000
+Our entropy is 0.97
+
+40:01.000 --> 40:08.000
+So the ROC or POC will be 6.3 and 6.3 respectively
+
+40:12.000 --> 40:13.000
+Okay
+
+40:14.000 --> 40:18.000
+So then we know that the basic reward
+
+40:18.000 --> 40:22.000
+And we know the reward of content
+
+40:22.000 --> 40:24.000
+And the punishment of content
+
+40:24.000 --> 40:27.000
+And how we reflect to each appraiser
+
+40:27.000 --> 40:32.000
+And we will calculate the ratio of SOA
+
+40:32.000 --> 40:33.000
+Which means that
+
+40:35.000 --> 40:39.000
+For example, in SOA, we have the 0.66
+
+40:39.000 --> 40:42.000
+And for A1, we will know that
+
+40:42.000 --> 40:48.000
+There are 36% of the trust score
+
+40:49.000 --> 40:52.000
+The score of authentic is come from
+
+40:52.000 --> 40:55.000
+Is come from the appraiser 1
+
+40:55.000 --> 40:58.000
+So we will use this ratio to reflect
+
+40:58.000 --> 41:02.000
+The reward to each appraiser
+
+41:02.000 --> 41:05.000
+And for the punishment is the same
+
+41:05.000 --> 41:07.000
+We will know that
+
+41:07.000 --> 41:12.000
+How you contribute to the trust of the fake
+
+41:12.000 --> 41:15.000
+And then if you contribute
+
+41:15.000 --> 41:18.000
+Or you occupy more percentage
+
+41:18.000 --> 41:21.000
+You will get more reward or more punishment
+
+41:21.000 --> 41:26.000
+Okay
+
+41:26.000 --> 41:29.000
+So in here, you can see
+
+41:29.000 --> 41:32.000
+We calculate the ratio of ROC and the ratio of POC
+
+41:32.000 --> 41:36.000
+Which each appraiser need to be reflected
+
+41:36.000 --> 41:39.000
+It will be added or be reduced
+
+41:39.000 --> 41:43.000
+And then when we reflect it
+
+41:43.000 --> 41:46.000
+You can see that for, for example, in for A1
+
+41:46.000 --> 41:50.000
+The initial, its initial state is 5,000
+
+41:50.000 --> 41:55.000
+And after state is the 5,000 point 23
+
+41:55.000 --> 41:58.000
+So we could get all the after states
+
+41:58.000 --> 42:01.000
+And then we can calculate the after credit point
+
+42:01.000 --> 42:03.000
+So this is a cycle
+
+42:03.000 --> 42:07.000
+When every content, when we finish the appraising process
+
+42:07.000 --> 42:12.000
+We will have the new states and the new credit point
+
+42:12.000 --> 42:16.000
+And then they will get ready to accept another content
+
+42:17.000 --> 42:20.000
+And if any appraiser
+
+42:20.000 --> 42:23.000
+Their credit point is close to zero
+
+42:23.000 --> 42:25.000
+Which means that their stakes are heavy
+
+42:25.000 --> 42:29.000
+They got a lot of the punishment
+
+42:29.000 --> 42:30.000
+And their credit point
+
+42:30.000 --> 42:32.000
+Their stakes is equal to zero
+
+42:32.000 --> 42:35.000
+And we will go back to our main flow
+
+42:35.000 --> 42:38.000
+The initial process that to accept
+
+42:38.000 --> 42:42.000
+To ask this appraiser
+
+42:43.000 --> 42:45.000
+Do you need to add more stakes
+
+42:45.000 --> 42:51.000
+To continue to be the appraiser
+
+42:51.000 --> 42:53.000
+So that's how
+
+42:53.000 --> 42:56.000
+So we only finish the
+
+42:56.000 --> 43:01.000
+I think that the most difficult part in our presentation
+
+43:01.000 --> 43:03.000
+Is to calculate the trust score
+
+43:03.000 --> 43:08.000
+And in this slide that we do some experiments
+
+43:08.000 --> 43:10.000
+That to improve
+
+43:10.000 --> 43:13.000
+To prove that our system could be a scale
+
+43:13.000 --> 43:16.000
+On a lot of the users
+
+43:16.000 --> 43:17.000
+You could see that
+
+43:17.000 --> 43:18.000
+And in the left side
+
+43:18.000 --> 43:21.000
+The picture shows that our system could
+
+43:21.000 --> 43:23.000
+In our testing environment
+
+43:23.000 --> 43:26.000
+We use the four servers
+
+43:26.000 --> 43:31.000
+And the throughput is still goes well
+
+43:31.000 --> 43:33.000
+But in our system
+
+43:33.000 --> 43:34.000
+We set the contents
+
+43:34.000 --> 43:39.000
+The maxima of the content is the eight megabytes
+
+43:39.000 --> 43:40.000
+Because you could imagine
+
+43:40.000 --> 43:44.000
+If we compress the content
+
+43:44.000 --> 43:46.000
+For videos or some
+
+43:46.000 --> 43:48.000
+We use the in-camera size
+
+43:48.000 --> 43:50.000
+There is the technique
+
+43:50.000 --> 43:52.000
+You could use the content to
+
+43:52.000 --> 43:53.000
+As the input
+
+43:53.000 --> 43:54.000
+And we have the output
+
+43:54.000 --> 43:57.000
+It's a very short
+
+43:57.000 --> 44:00.000
+Screen or some contents
+
+44:00.000 --> 44:04.000
+And it will not to occupy a lot of size
+
+44:04.000 --> 44:07.000
+So our limitation of the content
+
+44:07.000 --> 44:09.000
+Would be the eight megabytes
+
+44:09.000 --> 44:11.000
+And the right-hand side
+
+44:11.000 --> 44:13.000
+The picture shows that
+
+44:13.000 --> 44:17.000
+We all know that the computer system
+
+44:17.000 --> 44:19.000
+Is rely on the fault tolerance
+
+44:19.000 --> 44:20.000
+Which means that
+
+44:20.000 --> 44:23.000
+If the main server fails
+
+44:23.000 --> 44:26.000
+Our systems should still work well
+
+44:26.000 --> 44:28.000
+You could see that
+
+44:28.000 --> 44:30.000
+For example, you put a Facebook
+
+44:30.000 --> 44:32.000
+One server crashed down
+
+44:32.000 --> 44:34.000
+And you cannot use the Facebook
+
+44:34.000 --> 44:35.000
+It's not good
+
+44:35.000 --> 44:37.000
+So this is the right-hand side
+
+44:37.000 --> 44:39.000
+The picture shows that
+
+44:39.000 --> 44:43.000
+If we make some server failure
+
+44:43.000 --> 44:46.000
+Our system still could work well
+
+44:46.000 --> 44:54.000
+And the latency will not to increase very much
+
+44:54.000 --> 44:59.000
+Okay, so I think we can get into conclusion
+
+44:59.000 --> 45:01.000
+So yeah, so our system
+
+45:01.000 --> 45:04.000
+I asked to summarize some take-home points
+
+45:04.000 --> 45:06.000
+For all of you
+
+45:06.000 --> 45:09.000
+Yeah, as you remember that
+
+45:09.000 --> 45:12.000
+I've said that the AI technique
+
+45:12.000 --> 45:14.000
+Is getting better and better
+
+45:14.000 --> 45:17.000
+So the traditional algorithms
+
+45:17.000 --> 45:20.000
+Does not get the great performance
+
+45:20.000 --> 45:23.000
+To detect the fake news automatic
+
+45:23.000 --> 45:26.000
+So if we use the human's capabilities
+
+45:26.000 --> 45:28.000
+We will have a better solution
+
+45:28.000 --> 45:33.000
+Than the traditional AI algorithms
+
+45:33.000 --> 45:35.000
+But of course we could combine
+
+45:35.000 --> 45:38.000
+The advantage for the AI algorithms
+
+45:38.000 --> 45:40.000
+And the human-based capability
+
+45:40.000 --> 45:43.000
+For example, we can use AI technique
+
+45:43.000 --> 45:47.000
+To build the first layer of filters
+
+45:47.000 --> 45:49.000
+And people can get into
+
+45:49.000 --> 45:51.000
+To check the results, right
+
+45:51.000 --> 45:52.000
+But the most important part
+
+45:52.000 --> 45:55.000
+Is the blockchain network
+
+45:55.000 --> 45:56.000
+Because it's decentralized
+
+45:56.000 --> 46:00.000
+Not to manage it by only one companies
+
+46:00.000 --> 46:02.000
+It's transparency
+
+46:02.000 --> 46:05.000
+And very easier to find some data
+
+46:05.000 --> 46:07.000
+It's being modified
+
+46:07.000 --> 46:09.000
+And so in this experience
+
+46:09.000 --> 46:12.000
+We know that our system
+
+46:12.000 --> 46:14.000
+Is the architecture is peaceful
+
+46:14.000 --> 46:16.000
+And we could
+
+46:16.000 --> 46:19.000
+It has potential to be deployed
+
+46:19.000 --> 46:21.000
+In thousands of machines
+
+46:21.000 --> 46:24.000
+And the most important part
+
+46:24.000 --> 46:27.000
+Is that our incentive mechanism
+
+46:27.000 --> 46:29.000
+Offers this architecture
+
+46:29.000 --> 46:31.000
+Commercial potential
+
+46:31.000 --> 46:33.000
+You could imagine that to
+
+46:33.000 --> 46:34.000
+If you are a writer
+
+46:34.000 --> 46:36.000
+Or you are a photographer
+
+46:36.000 --> 46:38.000
+You could use our system
+
+46:38.000 --> 46:41.000
+To get some proof
+
+46:41.000 --> 46:43.000
+That your content is real
+
+46:43.000 --> 46:45.000
+And your reputation
+
+46:45.000 --> 46:47.000
+Will getting better, right
+
+46:47.000 --> 46:49.000
+And you are a journalist
+
+46:49.000 --> 46:51.000
+Or you are some
+
+46:51.000 --> 46:55.000
+If people doing a fact checking
+
+46:55.000 --> 46:58.000
+And you can get reward from our system
+
+46:58.000 --> 47:00.000
+So there is also
+
+47:00.000 --> 47:02.000
+Then this will have
+
+47:02.000 --> 47:04.000
+Get some commercial proof
+
+47:04.000 --> 47:06.000
+And for building
+
+47:06.000 --> 47:07.000
+This is the
+
+47:07.000 --> 47:09.000
+Fact News Precision Systems
+
+47:12.000 --> 47:13.000
+Okay
+
+47:13.000 --> 47:15.000
+So that's for
+
+47:15.000 --> 47:17.000
+It's a long presentation
+
+47:17.000 --> 47:18.000
+So I'll stop here
+
+47:18.000 --> 47:20.000
+And I'll tell you here
+
+47:20.000 --> 47:23.000
+Is that this research is
+
+47:23.000 --> 47:25.000
+Supported by Ripple
+
+47:25.000 --> 47:27.000
+Is the World Wide
+
+47:27.000 --> 47:29.000
+Payment Protocol
+
+47:29.000 --> 47:32.000
+And also by
+
+47:32.000 --> 47:34.000
+National Science and Engineering
+
+47:34.000 --> 47:36.000
+Research Council of Canada
+
+47:36.000 --> 47:37.000
+Okay
+
+47:37.000 --> 47:38.000
+And also thanks my mentor
+
+47:38.000 --> 47:40.000
+To give me
+
+47:40.000 --> 47:42.000
+A lot of suggestions
+
+47:42.000 --> 47:44.000
+And help when I
+
+47:44.000 --> 47:46.000
+Study for and to
+
+47:46.000 --> 47:49.000
+Find some research ideas
+
+47:49.000 --> 47:51.000
+Or some
+
+47:51.000 --> 47:54.000
+Know more people how to do well
+
+47:54.000 --> 47:56.000
+In a PhD program
+
+47:56.000 --> 47:59.000
+So I will introduce
+
+47:59.000 --> 48:00.000
+Her Facebook
+
+48:00.000 --> 48:02.000
+And
+
+48:02.000 --> 48:04.000
+She wrote a lot of great things
+
+48:04.000 --> 48:06.000
+For all of you who wants to
+
+48:06.000 --> 48:09.000
+Study for or you have some
+
+48:09.000 --> 48:11.000
+If you are women
+
+48:11.000 --> 48:13.000
+That is the best
+
+48:13.000 --> 48:15.000
+Facebook for you to check
+
+48:15.000 --> 48:16.000
+So I put it here
+
+48:16.000 --> 48:17.000
+And I want to thank
+
+48:17.000 --> 48:19.000
+Catherine to be my mentor
+
+48:19.000 --> 48:21.000
+And give me more
+
+48:21.000 --> 48:23.000
+Help
+
+48:24.000 --> 48:26.000
+Okay, so
+
+48:26.000 --> 48:28.000
+That's all the presentation
+
+48:28.000 --> 48:30.000
+And if you have a question
+
+48:30.000 --> 48:32.000
+You could ask me right now
+
+48:32.000 --> 48:35.000
+Or after the presentation
+
+48:35.000 --> 48:37.000
+You could also drop me a mail
+
+48:37.000 --> 48:39.000
+Or find me on
+
+48:39.000 --> 48:41.000
+Or also
+
+48:41.000 --> 48:43.000
+We will discuss with you
+
+48:43.000 --> 48:45.000
+More detail or any questions you have
+
+48:45.000 --> 48:48.000
+Yeah, thank you so much
+
+48:48.000 --> 48:49.000
+So yeah, actually
+
+48:49.000 --> 48:52.000
+So before we start our Q&A session
+
+48:52.000 --> 48:55.000
+Please turn on your microphones again
+
+48:55.000 --> 48:57.000
+So let's thank
+
+48:57.000 --> 49:01.000
+Jianzhi for the very interesting talk
+
+49:01.000 --> 49:03.000
+Thank you, thank you
+
+49:03.000 --> 49:06.000
+Okay, so
+
+49:06.000 --> 49:08.000
+I'm not sure, but I'm guessing that
+
+49:08.000 --> 49:10.000
+Some of our attendees
+
+49:10.000 --> 49:12.000
+Would like to ask in Mandarin Chinese
+
+49:12.000 --> 49:14.000
+Probably, I guess
+
+49:14.000 --> 49:16.000
+But, I mean, any kind of language
+
+49:16.000 --> 49:17.000
+As long as you can communicate
+
+49:17.000 --> 49:18.000
+That will all be fine
+
+49:18.000 --> 49:20.000
+So, yeah
+
+49:20.000 --> 49:22.000
+I'm happy to ask questions
+
+49:22.000 --> 49:25.000
+Anyone?
+
+49:25.000 --> 49:27.000
+Hello, hi
+
+49:27.000 --> 49:29.000
+I'm Shanna
+
+49:29.000 --> 49:30.000
+And I would like to know
+
+49:30.000 --> 49:31.000
+Because I noticed that
+
+49:31.000 --> 49:33.000
+Actually you have no experience
+
+49:33.000 --> 49:34.000
+Studying abroad, right?
+
+49:34.000 --> 49:36.000
+This is your first time
+
+49:36.000 --> 49:37.000
+Yeah
+
+49:37.000 --> 49:39.000
+How do you practice English?
+
+49:39.000 --> 49:41.000
+Sorry, it's not related to your content
+
+49:41.000 --> 49:43.000
+But I'm just curious
+
+49:43.000 --> 49:44.000
+Yeah
+
+49:44.000 --> 49:46.000
+Oh, yeah, it's an interesting question
+
+49:46.000 --> 49:49.000
+Is that I think
+
+49:49.000 --> 49:51.000
+I learned some English
+
+49:51.000 --> 49:54.000
+Speaking practicing courses in UW
+
+49:54.000 --> 49:57.000
+So, yeah, they gave me a lot of practice
+
+49:57.000 --> 50:04.000
+To
+
+50:04.000 --> 50:06.000
+Try to join
+
+50:06.000 --> 50:08.000
+Reach some
+
+50:08.000 --> 50:09.000
+Course master
+
+50:09.000 --> 50:12.000
+The class near UW
+
+50:12.000 --> 50:14.000
+So there's a lot of chance for me
+
+50:14.000 --> 50:16.000
+Practicing English, yeah
+
+50:17.000 --> 50:20.000
+Is that answer your question?
+
+50:20.000 --> 50:22.000
+Oh, yes
+
+50:22.000 --> 50:24.000
+And I heard some people said
+
+50:24.000 --> 50:26.000
+That we should prepare
+
+50:26.000 --> 50:28.000
+Maybe we should join the like
+
+50:28.000 --> 50:30.000
+UHSL
+
+50:30.000 --> 50:32.000
+It's faster than we prepare English fast
+
+50:32.000 --> 50:33.000
+How do you think about that?
+
+50:33.000 --> 50:35.000
+If I cannot reach the score
+
+50:35.000 --> 50:37.000
+That my school wants
+
+50:37.000 --> 50:39.000
+And did I need to apply for the language
+
+50:39.000 --> 50:42.000
+UHSL first or
+
+50:42.000 --> 50:43.000
+I just prepare English
+
+50:43.000 --> 50:45.000
+And until I get a score
+
+50:45.000 --> 50:46.000
+Get a TOEFL, pass the TOEFL
+
+50:46.000 --> 50:50.000
+And then apply for the language school
+
+50:50.000 --> 50:53.000
+Right
+
+50:53.000 --> 50:55.000
+I think this is
+
+50:55.000 --> 50:57.000
+Another interesting question
+
+50:57.000 --> 51:00.000
+Actually, I will suggest that
+
+51:00.000 --> 51:03.000
+It depends if you
+
+51:03.000 --> 51:06.000
+I will suggest to prepare English
+
+51:06.000 --> 51:09.000
+And try your best to pass the TOEFL
+
+51:09.000 --> 51:12.000
+Or IELTS in Taiwan
+
+51:12.000 --> 51:15.000
+Because if you
+
+51:15.000 --> 51:16.000
+Go study abroad
+
+51:16.000 --> 51:18.000
+And you go to some language schools
+
+51:18.000 --> 51:20.000
+The cost is really
+
+51:20.000 --> 51:21.000
+It's very high
+
+51:21.000 --> 51:24.000
+And then it will spend a lot of money
+
+51:24.000 --> 51:27.000
+But the most important thing
+
+51:27.000 --> 51:29.000
+Is the but
+
+51:29.000 --> 51:31.000
+If you
+
+51:31.000 --> 51:33.000
+Sometimes
+
+51:33.000 --> 51:35.000
+Some people are struggling
+
+51:35.000 --> 51:39.000
+To pass the exams
+
+51:39.000 --> 51:41.000
+So if you found that
+
+51:41.000 --> 51:43.000
+You cannot concentrate to
+
+51:43.000 --> 51:45.000
+Prepare for the exam
+
+51:45.000 --> 51:50.000
+And you stuck on the TOEFL exam
+
+51:50.000 --> 51:52.000
+And also the schools offer
+
+51:52.000 --> 51:54.000
+Some opportunities that
+
+51:54.000 --> 51:56.000
+They say you could go to the university
+
+51:56.000 --> 51:58.000
+To take the language courses
+
+51:58.000 --> 52:00.000
+And then you can get over
+
+52:00.000 --> 52:02.000
+I would say you just go
+
+52:02.000 --> 52:07.000
+Because the time is important
+
+52:07.000 --> 52:10.000
+Do not to stuck one
+
+52:10.000 --> 52:13.000
+One stage for a long time
+
+52:13.000 --> 52:19.000
+I think that would be my answer
+
+52:19.000 --> 52:21.000
+Thank you, Tom
+
+52:21.000 --> 52:24.000
+Yeah, so I have a question
+
+52:24.000 --> 52:28.000
+So if we go back to your title
+
+52:28.000 --> 52:30.000
+I think you're saying that
+
+52:30.000 --> 52:34.000
+This technique is mainly for
+
+52:34.000 --> 52:36.000
+How do I say this
+
+52:36.000 --> 52:39.000
+For deploying against fake news
+
+52:40.000 --> 52:43.000
+But if you let the people decide
+
+52:43.000 --> 52:46.000
+What will be the thing that they recognize
+
+52:46.000 --> 52:48.000
+They basically just vote
+
+52:48.000 --> 52:52.000
+Let's say Barack Obama just died
+
+52:52.000 --> 52:55.000
+And if you let the internet vote
+
+52:55.000 --> 52:57.000
+Probably 99% of the people will say
+
+52:57.000 --> 52:59.000
+That's a fake news
+
+52:59.000 --> 53:01.000
+But let's say objectively true thing
+
+53:01.000 --> 53:04.000
+That cannot be voted to become a truth
+
+53:04.000 --> 53:05.000
+In your system
+
+53:05.000 --> 53:07.000
+How do you comment about that
+
+53:07.000 --> 53:09.000
+Yeah, like I said
+
+53:09.000 --> 53:12.000
+We trust the majority opinion
+
+53:12.000 --> 53:14.000
+In our system
+
+53:14.000 --> 53:18.000
+We have the reward and punishment mechanism
+
+53:18.000 --> 53:22.000
+To make you to do the correct
+
+53:22.000 --> 53:24.000
+And the honest things
+
+53:24.000 --> 53:28.000
+Actually in all of the blockchain network
+
+53:28.000 --> 53:31.000
+They have the specific incentive mechanism
+
+53:31.000 --> 53:34.000
+To prevent from some malicious notes
+
+53:35.000 --> 53:37.000
+So if you join our
+
+53:37.000 --> 53:41.000
+We have two mechanism to prevent
+
+53:41.000 --> 53:45.000
+This the notes to adjust to vote
+
+53:45.000 --> 53:48.000
+Actually they will do their best
+
+53:48.000 --> 53:51.000
+Because the first if they join our system
+
+53:51.000 --> 53:54.000
+They need to pay for pay fees for
+
+53:54.000 --> 53:55.000
+Like I said the stakes
+
+53:55.000 --> 53:57.000
+So it's a cost
+
+53:57.000 --> 53:58.000
+And then if we join system
+
+53:58.000 --> 54:02.000
+And you did not do your job very well
+
+54:02.000 --> 54:05.000
+You will get the punishment
+
+54:05.000 --> 54:07.000
+And then eventually
+
+54:07.000 --> 54:09.000
+You will be prohibited
+
+54:09.000 --> 54:12.000
+To be the oppressors in our system
+
+54:12.000 --> 54:15.000
+So our mechanism of incentive
+
+54:15.000 --> 54:20.000
+Is core concept to incentive people
+
+54:20.000 --> 54:22.000
+To check the content seriously
+
+54:22.000 --> 54:28.000
+And to vote correctly
+
+54:28.000 --> 54:31.000
+So if I understand correctly
+
+54:31.000 --> 54:32.000
+Basically the assumption
+
+54:32.000 --> 54:34.000
+That you are going with
+
+54:34.000 --> 54:38.000
+Is that people generally have good intention
+
+54:38.000 --> 54:39.000
+And they are answering
+
+54:39.000 --> 54:41.000
+Based on their good intention
+
+54:41.000 --> 54:43.000
+Regardless of the truth
+
+54:43.000 --> 54:46.000
+So say Obama just died
+
+54:46.000 --> 54:47.000
+Nobody knows
+
+54:47.000 --> 54:51.000
+And they basically just like saying
+
+54:51.000 --> 54:53.000
+It's not a good news
+
+54:53.000 --> 54:55.000
+Because it's just not the thing
+
+54:55.000 --> 54:58.000
+That is well established that I know
+
+54:58.000 --> 55:00.000
+But it's true
+
+55:00.000 --> 55:01.000
+So in your system
+
+55:01.000 --> 55:04.000
+It's basically working against
+
+55:04.000 --> 55:06.000
+Malicious information
+
+55:06.000 --> 55:09.000
+But not exactly news
+
+55:09.000 --> 55:12.000
+Can I say that
+
+55:12.000 --> 55:16.000
+I could say how to define the bad news
+
+55:16.000 --> 55:22.000
+Is that the content should be correct
+
+55:22.000 --> 55:28.000
+So when you say Obama is dead
+
+55:28.000 --> 55:30.000
+If it's not a truth
+
+55:30.000 --> 55:34.000
+Our system will consider it is a bad news
+
+55:34.000 --> 55:37.000
+But in my scenario
+
+55:37.000 --> 55:42.000
+I'm saying what if he really just died
+
+55:42.000 --> 55:45.000
+But nobody knows like 10 minutes ago
+
+55:45.000 --> 55:48.000
+And I go out and say
+
+55:48.000 --> 55:50.000
+Hey guys, he just died
+
+55:50.000 --> 55:53.000
+That will be a fake news in your system
+
+55:53.000 --> 55:54.000
+Because nobody knows
+
+55:54.000 --> 55:56.000
+That's true
+
+55:57.000 --> 55:58.000
+Yeah, you're right
+
+55:58.000 --> 56:02.000
+But if you say Obama is dead
+
+56:02.000 --> 56:04.000
+But nobody knows
+
+56:04.000 --> 56:08.000
+I would say that
+
+56:08.000 --> 56:12.000
+This situation is really
+
+56:12.000 --> 56:14.000
+It's extremely
+
+56:14.000 --> 56:17.000
+That's quite a situation news
+
+56:17.000 --> 56:19.000
+Yeah, so I think
+
+56:19.000 --> 56:22.000
+Because those oppressing actors
+
+56:22.000 --> 56:25.000
+Are very capable to check the contents
+
+56:25.000 --> 56:32.000
+So if they hesitate to give some opinions
+
+56:32.000 --> 56:34.000
+Their confidence will lower
+
+56:34.000 --> 56:39.000
+So the trust score of the agree
+
+56:39.000 --> 56:41.000
+Authentic and the fact
+
+56:41.000 --> 56:43.000
+They will be very similar
+
+56:43.000 --> 56:46.000
+So our system will not treat it
+
+56:46.000 --> 56:51.000
+In your case as a very tend to be real
+
+56:51.000 --> 56:53.000
+Or fake, it will be a bad news
+
+56:54.000 --> 57:00.000
+But we could give you an objective opinion
+
+57:00.000 --> 57:02.000
+To check this content
+
+57:04.000 --> 57:06.000
+I see
+
+57:06.000 --> 57:08.000
+Okay
+
+57:08.000 --> 57:11.000
+I do have some comment about the previous question
+
+57:11.000 --> 57:13.000
+Just like
+
+57:13.000 --> 57:14.000
+Okay
+
+57:14.000 --> 57:16.000
+Okay, first, thank you for a nice talk
+
+57:16.000 --> 57:18.000
+And for the tokenomics design
+
+57:18.000 --> 57:21.000
+I think that's about how you make a dispute system
+
+57:21.000 --> 57:23.000
+Because for now it's like a one-time votes
+
+57:23.000 --> 57:25.000
+And you just get the result done
+
+57:25.000 --> 57:27.000
+But if you see like
+
+57:27.000 --> 57:30.000
+In order for the prediction market
+
+57:30.000 --> 57:31.000
+Just like if you predict
+
+57:31.000 --> 57:35.000
+And like whether Obama will die between like 2021
+
+57:35.000 --> 57:38.000
+And people at 2021 votes
+
+57:38.000 --> 57:42.000
+Maybe 3% of the voters enough to get yes or no
+
+57:42.000 --> 57:45.000
+But if you don't trust the result
+
+57:45.000 --> 57:49.000
+You can put your stake against that voting result
+
+57:49.000 --> 57:51.000
+And then more people need to vote
+
+57:51.000 --> 57:56.000
+If you stake like maybe 1% of the total token
+
+57:56.000 --> 57:59.000
+Then all of the people need to vote
+
+57:59.000 --> 58:03.000
+So I guess you need to kind of like refine
+
+58:03.000 --> 58:06.000
+The appeal system or the tokenomics
+
+58:06.000 --> 58:12.000
+Because I think the previous question is quite valid
+
+58:12.000 --> 58:17.000
+Because you assume that like the majority vote
+
+58:17.000 --> 58:18.000
+Will know the truth
+
+58:18.000 --> 58:20.000
+But maybe it takes some time right
+
+58:20.000 --> 58:24.000
+So but if you like you want to label the news in 10 minutes
+
+58:24.000 --> 58:29.000
+And definitely well it's hard to get information
+
+58:29.000 --> 58:33.000
+To propagate to like the society or the civilization
+
+58:33.000 --> 58:35.000
+To get people votes and get the correct result
+
+58:35.000 --> 58:40.000
+So I guess you just need to have a dispute system
+
+58:40.000 --> 58:41.000
+I guess
+
+58:41.000 --> 58:42.000
+Yeah, sure
+
+58:42.000 --> 58:44.000
+But like you said
+
+58:44.000 --> 58:45.000
+Yeah
+
+58:46.000 --> 58:51.000
+If you want to get news in just 10 minutes
+
+58:51.000 --> 58:54.000
+To see if it's correct or not
+
+58:54.000 --> 58:57.000
+It will be difficult to achieve that
+
+58:57.000 --> 58:59.000
+Because maybe like Elon said
+
+58:59.000 --> 59:03.000
+The news is not just known by minority people
+
+59:03.000 --> 59:08.000
+But yeah, for this case
+
+59:08.000 --> 59:12.000
+I think for previous the current solutions
+
+59:12.000 --> 59:16.000
+I think people will have
+
+59:16.000 --> 59:18.000
+Like we have put more stakes
+
+59:18.000 --> 59:23.000
+Or we can to introduce more
+
+59:23.000 --> 59:25.000
+The sub-parties, the libraries
+
+59:25.000 --> 59:27.000
+And we can ask their opinions
+
+59:27.000 --> 59:31.000
+So our speed will get in faster
+
+59:34.000 --> 59:39.000
+Yeah, well I do think this is a very interesting
+
+59:39.000 --> 59:41.000
+Actually very valuable research
+
+59:41.000 --> 59:43.000
+I'm just being curious
+
+59:43.000 --> 59:48.000
+Yeah, so anyone has other questions
+
+59:51.000 --> 59:52.000
+I have some questions
+
+59:52.000 --> 59:59.000
+Do you really plan to launch this thing in a public chain
+
+59:59.000 --> 01:00:02.000
+Because I was saying the past like two years
+
+01:00:02.000 --> 01:00:05.000
+Hyperledger is not like really striving
+
+01:00:05.000 --> 01:00:08.000
+And even though like the gas fee
+
+01:00:08.000 --> 01:00:10.000
+And the transaction fee is an issue
+
+01:00:10.000 --> 01:00:12.000
+For like Bitcoin in Syria
+
+01:00:12.000 --> 01:00:14.000
+But for the new generation
+
+01:00:14.000 --> 01:00:15.000
+Like high throughput blockchain
+
+01:00:15.000 --> 01:00:17.000
+Also support smart contract
+
+01:00:17.000 --> 01:00:20.000
+Then it will be a much better platform
+
+01:00:20.000 --> 01:00:21.000
+I would say
+
+01:00:21.000 --> 01:00:24.000
+Because well Hyperledger is definitely more
+
+01:00:24.000 --> 01:00:26.000
+Like clean and more permission
+
+01:00:26.000 --> 01:00:31.000
+But how to really scale the platform
+
+01:00:31.000 --> 01:00:34.000
+I would say like public chain is still better
+
+01:00:34.000 --> 01:00:36.000
+Than the permission chain
+
+01:00:37.000 --> 01:00:40.000
+Yeah, actually you are right
+
+01:00:40.000 --> 01:00:44.000
+We plan to introduce some
+
+01:00:44.000 --> 01:00:46.000
+Digital tokens in our system
+
+01:00:46.000 --> 01:00:49.000
+Because we need to get the reward or punishment
+
+01:00:49.000 --> 01:00:53.000
+So Ethereum will be the one choice
+
+01:00:53.000 --> 01:00:56.000
+That we consider to transfer
+
+01:00:56.000 --> 01:00:58.000
+The Hyperledger to the Ethereum
+
+01:00:58.000 --> 01:01:02.000
+And also there are other tokens
+
+01:01:02.000 --> 01:01:03.000
+That invented right now
+
+01:01:03.000 --> 01:01:05.000
+They have a great
+
+01:01:05.000 --> 01:01:07.000
+Because the Ethereum and Bitcoin
+
+01:01:07.000 --> 01:01:10.000
+Their speed is too slow
+
+01:01:10.000 --> 01:01:15.000
+But there are lots of faster blockchain network
+
+01:01:15.000 --> 01:01:17.000
+So we consider to
+
+01:01:17.000 --> 01:01:20.000
+Yeah, like you said to transfer
+
+01:01:20.000 --> 01:01:27.000
+From the private blockchain to the public
+
+01:01:27.000 --> 01:01:30.000
+Okay, thank you for applying
+
+01:01:30.000 --> 01:01:31.000
+Yeah, thank you
+
+01:01:32.000 --> 01:01:37.000
+Okay, so one last time
+
+01:01:37.000 --> 01:01:39.000
+Anybody has question
+
+01:01:39.000 --> 01:01:42.000
+Okay, if not, please again
+
+01:01:42.000 --> 01:01:44.000
+Really turn on your microphone
+
+01:01:44.000 --> 01:01:47.000
+So let's thank our speaker again
+
+01:01:47.000 --> 01:01:49.000
+That's a very interesting talk
+
+01:01:49.000 --> 01:01:51.000
+Thank you, thank you everyone
+
+01:01:51.000 --> 01:01:52.000
+If you have any question
+
+01:01:52.000 --> 01:01:55.000
+If you also have any question, please
+

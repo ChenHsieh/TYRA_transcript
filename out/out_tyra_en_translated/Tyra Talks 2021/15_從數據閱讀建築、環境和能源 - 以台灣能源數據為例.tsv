@@ -1,0 +1,1742 @@
+start	end	text
+0	11000	Hello, everyone. Thank you for coming to Project Terra. I'm your host, Su-Yi-An.
+11000	13000	I'm your host, Hu-Jun-Wei.
+13000	21000	I'm delighted to be joined by Fu-Chun to give us a presentation.
+21000	28000	The topic is Data, Reading, Architecture, Environment and Energy, using Taiwan's energy data as an example.
+28000	33000	Later on, I'll talk about today's process.
+33000	38000	Later on, I'll talk about today's process.
+38000	43000	Today's presentation is hosted by Project Terra.
+43000	46000	Later on, we'll record the entire presentation.
+46000	52000	In other words, after the presentation, if you want to listen to it again or share it with your friends,
+52000	57000	you can go to Project Terra's website to view today's recording.
+57000	63000	During the presentation, if you have any questions,
+63000	72000	you're welcome to raise your hand or ask your question in the chat.
+72000	78000	The hosts will monitor your questions and talk to the speakers.
+78000	83000	If you have a bigger or more complicated question,
+83000	87000	we'll have an open Q&A session at the end of the presentation.
+87000	91000	Please feel free to ask your questions.
+91000	95000	That's about it for today's presentation.
+95000	100000	Now, let's have another host, Hu-Jun-Wei, to introduce today's speaker, Fu-Chun.
+101000	102000	Hello, everyone.
+102000	110000	Fu-Chun is a Ph.D. student at the University of Singapore, NUS.
+110000	118000	He is currently studying architecture and urban data science in the University of Singapore.
+118000	123000	His research focuses on the application of large data related to architecture,
+123000	129000	including architectural energy, indoor environment comfort, and architectural IoT data, etc.
+129000	133000	At the same time, he is also doing some community activities in the lab.
+133000	140000	For example, he held an energy prediction competition at the well-known data platform Kaggle the year before last,
+140000	146000	and provided data science courses to the public in an open platform course, EDS.
+147000	150000	Interestingly, before Fu-Chun was a Ph.D. student,
+150000	157000	he worked as a three-year data scientist at a Taiwanese innovation company,
+157000	159000	Knowledge Analysis Based Exploration,
+159000	163000	and was committed to the development of large data related to architecture,
+163000	169000	including the detection of labor abnormalities, energy prediction, and data visualization, etc.
+169000	174000	In addition, he is also involved in the development of artificial intelligence services
+174000	177000	and energy data analysis of the Taipei City Government.
+177000	185000	Today, Fu-Chun will focus more on issues related to food in the industry.
+185000	190000	In today's speech, he will talk about the academic development of energy prediction,
+190000	195000	and finally share how to work with open data to do energy prediction.
+195000	197000	Let's welcome Fu-Chun.
+200000	202000	Can you hear me?
+202000	204000	Yes, we can.
+204000	205000	Great.
+205000	211000	Next, let me play my video.
+213000	219000	Today's topic is data reading, architecture, environment, and energy,
+219000	221000	based on Taiwan energy data.
+221000	226000	This speech is mainly about architecture data prediction models,
+226000	229000	as well as the introduction of related open data.
+229000	231000	At the end of the speech,
+231000	234000	I will use the open data provided by Taipei Electric Power Corporation,
+234000	236000	and the weather forecast provided by the Meteorological Bureau,
+236000	238000	to cooperate with the model of machine learning,
+238000	241000	to make an energy prediction service that can predict the future.
+241000	244000	I hope the difficulty of today's speech is not too high.
+244000	245000	The main thing is to let everyone know
+245000	249000	how to apply data science in human resources or architecture.
+249000	254000	I hope everyone can get to know more about open data
+254000	256000	and how to do these things.
+258000	259000	OK.
+263000	265000	This is my basic self-introduction.
+265000	267000	I am a Ph.D. student at INU-S.
+267000	270000	I graduated from Shenzhen University of Technology,
+270000	275000	and I had three years of experience as a data scientist before I got my Ph.D.
+275000	279000	This also allows me to focus on the problems in the industry
+279000	282000	during my Ph.D. career.
+283000	285000	This is what I just said.
+285000	289000	We have been doing some community-related things.
+289000	291000	For example, in the Cargo Competition,
+291000	294000	if you are playing this kind of data science competition,
+294000	296000	this is the most famous competition at present.
+296000	299000	We have held an energy prediction competition on it.
+299000	301000	In addition, we also have some open data.
+301000	303000	I put it in Cargo.
+303000	305000	Cargo not only holds competitions,
+305000	307000	but also provides an open data platform
+307000	310000	for everyone to upload data and play together.
+310000	314000	In addition, we also have OpenCourse on EDX.
+314000	318000	It is mainly about construction, architecture, and engineering.
+318000	320000	It is about building data,
+320000	324000	including indoor humidity, CO2, and energy.
+324000	328000	How to use some Python programs
+328000	330000	to process these data,
+330000	333000	and how to build a simple machine learning model.
+333000	335000	Its difficulty is very simple.
+335000	337000	Even people who don't have much programming experience
+337000	339000	can take this course.
+339000	342000	You don't need to have professional knowledge in architecture.
+342000	344000	As long as you want to learn
+344000	348000	how to use Python in the scientific field
+348000	350000	or in some simple data processing,
+350000	353000	I think this course is quite suitable.
+353000	355000	This is today's agenda.
+355000	359000	Because today's topic is mainly energy prediction,
+359000	362000	we will spend some time reviewing
+362000	364000	past energy prediction models and methods.
+364000	367000	Next, we will use Cargo Competition
+367000	369000	energy prediction competition as an example.
+369000	373000	How do people predict energy?
+373000	376000	What strategy do data scientists use
+376000	379000	to accurately predict energy?
+379000	382000	Next is Project Study.
+382000	385000	We will use Taiwan's open energy data
+385000	387000	to do a simple experiment
+387000	389000	to see how it works.
+389000	392000	Finally, we will introduce some interesting open data sets.
+392000	395000	It is mainly about Taiwan's weather,
+395000	398000	or open data sets related to holidays.
+400000	401000	First of all,
+401000	403000	I would like to let you feel
+403000	407000	what the energy trend looks like.
+407000	408000	This is a year,
+408000	412000	from January 2017 to the end of the year.
+412000	414000	This is an actual electricity meter
+414000	416000	obtained from a campus in Taiwan.
+416000	418000	First, I would like to let you observe
+418000	421000	what is special about this electricity meter.
+422000	427000	First, we can zoom in here.
+427000	430000	You can see that after zooming in,
+430000	432000	you can see some trends.
+432000	434000	Because it collects data every hour,
+434000	435000	so you can see that
+435000	439000	a day is actually a profile like this.
+439000	440000	It will have a peak,
+440000	441000	which is around noon.
+441000	444000	So you can see that the first pattern
+444000	446000	is actually a weekly pattern.
+446000	448000	It is weekly.
+449000	453000	1 to 5 is actually a fixed working pattern.
+453000	455000	It is high at noon and low at night.
+455000	456000	But there is no one on the 6th,
+456000	459000	so the peak is a little lower.
+472000	474000	The next pattern is vocation.
+475000	478000	1 to 5 is very low.
+478000	480000	That's because it's the Chinese New Year.
+480000	482000	It's the time of the lunar new year,
+482000	484000	so the energy is relatively low.
+484000	486000	In addition, there is a seasonal trend.
+486000	489000	In the summer or hot weather,
+489000	490000	the energy is relatively high.
+490000	492000	In the winter or cold weather,
+492000	493000	the energy is relatively low.
+493000	494000	This is normal
+494000	495000	because Taiwan is a country
+495000	496000	that focuses on heat.
+496000	498000	Most of us don't have heaters,
+498000	499000	so in winter,
+499000	501000	the energy is relatively low.
+502000	505000	So this is our first and simplest model.
+505000	507000	It is also a more classic model.
+507000	510000	It is a TOWT model
+510000	512000	proposed by Lawrence Berkeley National Lab.
+512000	515000	TOW stands for Time of Week.
+515000	516000	That is to say,
+516000	519000	if we take the number of hours of a week
+519000	521000	as X-axis and draw it out,
+521000	523000	the energy is actually 365 days.
+523000	525000	If you put it on this graph,
+525000	526000	you can see that 1 to 5
+526000	528000	is actually very regular,
+528000	530000	which is higher during the day.
+530000	533000	It is relatively low at night.
+533000	534000	So we have several variables.
+534000	536000	The first one is the time of week.
+536000	537000	The second variable is what I just said.
+537000	539000	It actually has something to do
+539000	540000	with the temperature of the outside air.
+540000	542000	So what we draw here
+542000	543000	is the relationship
+543000	546000	between temperature and energy.
+546000	549000	But we also distinguish
+549000	551000	whether it is occupied or unoccupied.
+551000	552000	That is to say,
+552000	553000	is there anyone or no one here?
+553000	555000	But we can see that at night,
+555000	557000	we will define it as the so-called no one.
+557000	558000	During the day,
+558000	560000	we will define it as the so-called someone.
+560000	562000	So this division is actually very rough.
+562000	564000	It may be according to what time to go to work,
+564000	565000	what time to get off work,
+565000	566000	and then cut it like this.
+566000	567000	But when you cut it out,
+567000	568000	you can see that
+568000	569000	when it is occupied,
+569000	571000	its trend is very obvious.
+571000	572000	This is a
+574000	575000	low-temperature
+576000	577000	and high-temperature
+578000	579000	transition.
+579000	580000	Occupied is that it is
+582000	583000	with regression.
+583000	585000	It is actually a linear model.
+585000	586000	That's it.
+586000	588000	Basically, it is with
+588000	589000	a linear model.
+589000	590000	There will be a linear model.
+590000	592000	Then it is related to temperature.
+592000	594000	The return line of temperature here
+594000	595000	is a
+596000	598000	division to return.
+598000	599000	Because in fact,
+600000	603000	it is related to temperature.
+603000	605000	If you call it out,
+605000	606000	you will find that
+606000	608000	cooling is actually related.
+608000	610000	If in some Korean countries,
+610000	612000	when your temperature is getting lower,
+612000	613000	its energy will rise.
+613000	615000	That's mainly because of heating.
+616000	618000	It's a simple linear return.
+618000	620000	So often you can
+620000	622000	Of course, you can use a polynomial,
+622000	624000	maybe two-dimensional or three-dimensional to beat.
+624000	626000	Of course, you can also use a division.
+626000	627000	Then again, if it is occupied,
+627000	629000	there is no one.
+629000	631000	Then it will be more like
+631000	632000	using temperature to return.
+632000	633000	It is a
+633000	634000	single
+634000	636000	one-dimensional
+636000	637000	linear return.
+637000	638000	Because at night,
+638000	640000	it is usually simpler.
+642000	644000	This is the result of the return.
+644000	646000	In fact,
+646000	648000	it can catch the profile.
+648000	650000	It's just that sometimes the effect
+650000	652000	is not so good in some details.
+652000	653000	You can see some details
+653000	654000	There will be a shock.
+654000	656000	So its R-squared is about
+656000	658000	less than 0.6.
+658000	660000	The next one is a more traditional
+660000	662000	physical model, thermal network.
+662000	664000	It is basically the structure of the building.
+664000	666000	There is heat melt, heat bamboo.
+666000	667000	That is to say,
+667000	669000	the temperature of the outside world
+669000	671000	and the temperature inside
+671000	672000	its temperature difference
+672000	673000	will cause
+673000	675000	its heat to be stored
+675000	677000	in the wall.
+677000	679000	Or it is said that it is
+679000	681000	looking at the thickness of the wall
+681000	683000	or its material.
+683000	685000	Then decide how fast
+685000	687000	it goes into the room.
+687000	689000	So usually outside
+689000	691000	For example, the surface temperature of the wall
+691000	693000	and the surface temperature of the wall
+693000	695000	in the room will have a
+695000	696000	type.
+696000	698000	In addition, the temperature difference
+698000	700000	in the room will be relatively
+700000	701000	slower.
+701000	703000	So under this condition,
+703000	705000	we will actually
+705000	707000	make a building
+707000	709000	all made up of heat melt and heat bamboo.
+709000	711000	For example,
+711000	713000	we may have
+713000	715000	three heat bamboo
+715000	717000	and two heat melt.
+717000	719000	The outer wall or
+719000	721000	internal mass
+721000	723000	is a bit like an indoor furniture or an indoor wall.
+723000	725000	The whole building can be done
+725000	727000	in this way.
+727000	729000	Its advantage is that it is very precise.
+729000	731000	Its disadvantage is that you have to
+731000	733000	decide how many heat melt and heat bamboo it has.
+733000	735000	To be honest, this thing is not very simple.
+735000	737000	The next one
+737000	739000	is the machine learning
+739000	741000	that we are more popular with now.
+741000	743000	Here is an example of
+743000	745000	LightGBM model.
+745000	747000	Let's use this model to
+747000	749000	make it.
+749000	751000	The main advantage of this model is that
+751000	753000	its computing speed is very fast and
+753000	755000	its tuning is relatively simple.
+755000	757000	So we usually use
+757000	759000	this model
+759000	761000	to do some competitions or some early tests
+761000	763000	and so on.
+763000	765000	Most of the participants
+765000	767000	use this model
+767000	769000	to do the cargo competition later.
+769000	771000	The model here is actually
+771000	773000	the time we just said.
+773000	775000	It may be the number of hours in a day.
+775000	777000	It is also a Sunday.
+777000	779000	In addition, there is outdoor air temperature.
+779000	781000	There are other IOTs
+781000	783000	or META
+783000	785000	or Lag Feature.
+785000	787000	It can eat more parameters
+787000	789000	than the linear model just now
+789000	791000	to capture some more
+791000	793000	detailed information.
+797000	799000	In addition,
+799000	801000	there are so many variables
+801000	803000	we just mentioned.
+803000	805000	For example, CO2 or
+805000	807000	temperature
+807000	809000	or weekday
+809000	811000	or seasonal hours.
+811000	813000	Which of these variables
+813000	815000	is the most important?
+815000	817000	The model of LightGBM can also tell us
+817000	819000	that in the process of modeling,
+819000	821000	we found that
+821000	823000	the energy 24 hours ago
+823000	825000	is the most important.
+825000	827000	Then there is the outdoor temperature, etc.
+827000	829000	It can tell you the importance of these parameters.
+829000	831000	The importance is relatively low.
+831000	833000	Maybe you can
+833000	835000	get rid of it.
+835000	837000	Of course,
+837000	839000	some people will think that
+839000	841000	the result of LightGBM
+841000	843000	will be better than
+843000	845000	the linear model just now.
+845000	847000	It is less
+847000	849000	detailed.
+849000	851000	The score is 0.6.
+851000	853000	Some people will think
+853000	855000	that Neural Network
+855000	857000	is another
+857000	859000	popular method.
+859000	861000	We often need to learn more about this method.
+861000	863000	Indeed, this method
+863000	865000	is often used in energy prediction.
+865000	867000	Such as LSTM or RNN.
+867000	869000	However,
+869000	871000	unlike Tree-based models,
+871000	873000	such as LightGBM,
+873000	875000	XGBoost,
+875000	877000	or Random Forest,
+877000	879000	RNN
+879000	881000	usually requires
+881000	883000	more training time.
+883000	885000	When you tune this model,
+885000	887000	you will spend a lot of time and energy.
+887000	889000	So in a short-term
+889000	891000	competition or a mid-term project,
+891000	893000	we still use
+893000	895000	Tree-based models like LightGBM.
+895000	897000	It is relatively fast
+897000	899000	and efficient.
+901000	903000	Let's jump to
+903000	905000	the Kaggle competition.
+905000	907000	Let's see how
+907000	909000	professional data scientists
+909000	911000	predict
+911000	913000	the building's
+913000	915000	population.
+915000	917000	First, let me briefly introduce Kaggle.
+917000	919000	Some people may not be familiar with it.
+919000	921000	Kaggle is a subsidiary
+921000	923000	of Google.
+923000	925000	It is an online community
+925000	927000	where data scientists,
+927000	929000	students,
+929000	931000	or social people
+931000	933000	can share their ideas,
+933000	935000	share data,
+935000	937000	and participate in the competition.
+937000	939000	There are three parts
+939000	941000	of Kaggle platform.
+941000	943000	The first part is competition.
+943000	945000	There will be some sponsors.
+945000	947000	It could be a company
+947000	949000	or a school.
+949000	951000	They will give prizes.
+951000	953000	Kaggle will help them hold the competition.
+953000	955000	There are some interesting competitions.
+955000	957000	For example, Jamstree,
+957000	959000	where you can use Wi-Fi
+959000	961000	to predict where people are.
+963000	965000	Next is dataset.
+965000	967000	People can freely
+967000	969000	upload their dataset.
+969000	971000	For example,
+971000	973000	COVID-19 vaccine development,
+973000	975000	or Netflix,
+975000	977000	or Trump's Twitter.
+977000	979000	This is also an interesting topic.
+979000	981000	Datasets include
+981000	983000	professional or non-professional
+983000	985000	data.
+985000	987000	It is an interesting platform.
+987000	989000	The last part is
+989000	991000	notebook.
+991000	993000	It is a code.
+993000	995000	People will put their code on it.
+995000	997000	It includes
+997000	999000	how to visualize
+999000	1001000	or model.
+1001000	1003000	Basically,
+1003000	1005000	you can copy the notebook
+1005000	1007000	and do the same thing.
+1007000	1009000	This notebook can
+1009000	1011000	connect to the competition
+1011000	1013000	and dataset.
+1013000	1015000	Basically, you can use
+1015000	1017000	the cloud resources,
+1017000	1019000	CPU and GPU,
+1019000	1021000	to run the dataset
+1021000	1023000	on the platform.
+1023000	1025000	You can even use the resources
+1025000	1027000	to participate in the competition.
+1027000	1029000	You don't even need to use
+1029000	1031000	your local notebook to run the model.
+1031000	1033000	You can use the cloud resources
+1033000	1035000	to upload and compute the data.
+1035000	1037000	Let me introduce
+1037000	1039000	what the competition is.
+1039000	1041000	There are
+1041000	1043000	more than 2,000
+1043000	1045000	data sets.
+1045000	1047000	They are from more than 1,000
+1047000	1049000	countries around the world.
+1049000	1051000	We want to find a good algorithm
+1051000	1053000	to accurately predict
+1053000	1055000	the resources of most of the buildings.
+1055000	1057000	In the past,
+1057000	1059000	most researchers
+1059000	1061000	said that
+1061000	1063000	some buildings are very fast,
+1063000	1065000	some buildings are very accurate,
+1065000	1067000	some buildings are very easy to run,
+1067000	1069000	and so on.
+1069000	1071000	But if we have so many buildings
+1071000	1073000	across different countries,
+1073000	1075000	it will be a more general way.
+1075000	1077000	It's not just a case of
+1077000	1079000	a single building or a single country.
+1079000	1081000	This is the purpose
+1081000	1083000	of the energy competition.
+1083000	1085000	To find the most general
+1085000	1087000	and accurate way.
+1089000	1091000	This dataset
+1091000	1093000	contains some data,
+1093000	1095000	such as the most basic
+1095000	1097000	meter reading.
+1097000	1099000	This is mainly
+1099000	1101000	the data of the meter.
+1101000	1103000	It may be 24 hours,
+1103000	1105000	single year data,
+1105000	1107000	and its height.
+1107000	1109000	In addition, there is building meta,
+1109000	1111000	what kind of site it is,
+1111000	1113000	and what kind of
+1113000	1115000	purpose it is.
+1115000	1117000	It may be office buildings, it may be school buildings,
+1117000	1119000	square feet, floor area, etc.
+1119000	1121000	It also provides
+1121000	1123000	temperature, humidity,
+1123000	1125000	cloud load, etc.
+1127000	1129000	In this competition, it will provide
+1129000	1131000	training data for 2016
+1131000	1133000	to train your model.
+1133000	1135000	You have to predict the energy data
+1135000	1137000	for 2017 and 2018.
+1139000	1141000	In this competition,
+1141000	1143000	the method of the competition is
+1143000	1145000	that you will first download your dataset,
+1145000	1147000	which is your training data.
+1147000	1149000	It includes the electric meter data
+1149000	1151000	and weather data.
+1151000	1153000	After training your model,
+1153000	1155000	you can
+1155000	1157000	upload your answer.
+1157000	1159000	After uploading,
+1159000	1161000	it will calculate a score.
+1161000	1163000	You can see the score
+1163000	1165000	on the leaderboard.
+1167000	1169000	Now let's take a look at
+1169000	1171000	the result of this competition.
+1171000	1173000	First of all, it is very interesting that
+1173000	1175000	most of the applications are Python.
+1175000	1177000	Python is the most popular application now.
+1177000	1179000	There is a little bit, but not the most.
+1181000	1183000	What kind of machine learning models
+1183000	1185000	do you use?
+1185000	1187000	In this competition, it is usually
+1187000	1189000	gradient boosting.
+1189000	1191000	Because this data belongs to
+1191000	1193000	tabular data,
+1193000	1195000	it is structured,
+1195000	1197000	like Excel table data.
+1197000	1199000	In TreeBase model,
+1199000	1201000	they are best at solving this problem.
+1201000	1203000	In NN,
+1203000	1205000	it is not impossible to deal with this problem.
+1205000	1207000	Because the training time is too long,
+1207000	1209000	and you need to tune the parameters
+1209000	1211000	for a long time.
+1211000	1213000	Then there are some tags.
+1213000	1215000	You can find that
+1215000	1217000	most of the notebooks
+1217000	1219000	are provided by EDA or Beginner,
+1219000	1221000	which are more visualized.
+1223000	1225000	Data is its exploration,
+1225000	1227000	which parameters it has,
+1227000	1229000	its distribution,
+1229000	1231000	and its time series.
+1235000	1237000	Let's take a look at
+1237000	1239000	most of the solutions.
+1239000	1241000	You can see that
+1241000	1243000	the rank is from
+1243000	1245000	high to low,
+1245000	1247000	from 9th to over 2000.
+1247000	1249000	You can see that the score
+1249000	1251000	can be from low to high.
+1251000	1253000	Low means that this side is better.
+1253000	1255000	Because the score here is actually
+1255000	1257000	error, the lower the better.
+1257000	1259000	You can see that
+1259000	1261000	most people use
+1261000	1263000	removeAllLiers
+1263000	1265000	to remove data,
+1265000	1267000	and imputation
+1267000	1269000	is to make some
+1269000	1271000	data maintenance.
+1271000	1273000	Not everyone does this.
+1273000	1275000	In Feature Strategy,
+1275000	1277000	in Holiday Feature,
+1277000	1279000	and Categorical Statistical Feature,
+1279000	1281000	it depends on each person.
+1281000	1283000	It doesn't seem to be consistent.
+1283000	1285000	The number of Feature that everyone uses
+1285000	1287000	is either a lot or a little.
+1287000	1289000	Some people just didn't publish it.
+1289000	1291000	I think the most interesting thing is
+1291000	1293000	in Feature Strategy,
+1293000	1295000	you can see that the numbers here
+1295000	1297000	represent the number of models.
+1297000	1299000	The higher the score,
+1299000	1301000	the more models they prefer to use.
+1301000	1303000	Why is that?
+1303000	1305000	In this kind of data competition,
+1305000	1307000	if you use a single model,
+1307000	1309000	its performance is usually limited.
+1309000	1311000	But if you use different models today,
+1311000	1313000	for example, you use NN,
+1313000	1315000	you use lightGBN,
+1315000	1317000	or you use different modeling methods,
+1317000	1319000	you put all the results of these modeling
+1319000	1321000	If you use a simple average,
+1321000	1323000	sometimes you can get very good results.
+1323000	1325000	Maybe 0.5 times the first model,
+1325000	1327000	0.5 times the second model,
+1327000	1329000	and then add it up,
+1329000	1331000	its performance may be better than individual models.
+1331000	1333000	So that's why they use so many
+1333000	1335000	models to do the average.
+1335000	1337000	Because it can
+1337000	1339000	effectively improve the performance of the model.
+1343000	1345000	Let's take out the top five
+1345000	1347000	and take a look at its content.
+1347000	1349000	The most important thing is that
+1349000	1351000	in preprocessing,
+1351000	1353000	it is very important to remove anomalies
+1353000	1355000	or outliers.
+1355000	1357000	Because in this competition,
+1357000	1359000	there are a lot of data missing and outliers.
+1359000	1361000	In fact, this is not only found in this competition.
+1361000	1363000	In fact, most of the real world data
+1363000	1365000	is like this,
+1365000	1367000	a lot of data missing, a lot of outliers.
+1367000	1369000	If you don't do this,
+1369000	1371000	it may cause your model to learn
+1371000	1373000	some strange patterns or phenomena.
+1373000	1375000	Next is features.
+1375000	1377000	This is not necessarily the case.
+1377000	1379000	Some people use 10, some use 28.
+1379000	1381000	Some have outliers, some don't.
+1381000	1383000	It depends on how you choose.
+1383000	1385000	In modeling,
+1385000	1387000	you can see that most of them use
+1387000	1389000	LinearGBN, XGBoost,
+1389000	1391000	which are tree-based models.
+1391000	1393000	There are relatively few NNN models.
+1393000	1395000	Post-processing,
+1395000	1397000	as I just said, is a model
+1397000	1399000	to do the average.
+1399000	1401000	It's actually ensembling.
+1401000	1403000	I made a lot of models today and
+1404000	1406000	this is a simple
+1406000	1408000	flowchart they provide.
+1408000	1410000	This is the first flowchart they provide.
+1410000	1412000	You can see the pre-processing in front of it.
+1412000	1414000	This is what I just said.
+1414000	1416000	Feature engineering.
+1416000	1418000	Then there are a lot of models.
+1418000	1420000	Finally, do the ensembling prediction.
+1420000	1422000	These predicted results
+1422000	1424000	are averaged.
+1424000	1426000	In fact,
+1426000	1428000	every
+1428000	1430000	flowchart in the competition is a bit like this.
+1430000	1432000	They do some pre-processing.
+1432000	1434000	Then there are a lot of models.
+1434000	1436000	Then do the ensembling.
+1436000	1438000	This is also a classic
+1438000	1440000	machine learning pipeline.
+1440000	1442000	Pre-processing, modeling,
+1442000	1444000	and then
+1444000	1446000	if it's ensembling,
+1446000	1448000	it's more of a special use than set.
+1448000	1450000	It's a method
+1450000	1452000	that will be used to get high scores.
+1454000	1456000	The third is a similar method.
+1456000	1458000	This competition,
+1458000	1460000	to be honest,
+1460000	1462000	is more data science.
+1462000	1464000	If the audience
+1464000	1466000	is more interested
+1466000	1468000	in this place,
+1468000	1470000	you can check the details
+1470000	1472000	in our publication.
+1472000	1474000	We have a review paper
+1474000	1476000	for this competition.
+1476000	1478000	You can go up and see the details of this competition.
+1478000	1480000	If you want to know the program,
+1480000	1482000	you can go to Github
+1482000	1484000	to find some models
+1484000	1486000	or some details.
+1486000	1488000	In addition,
+1488000	1490000	we even have their interview videos.
+1490000	1492000	You can also find these YouTube videos
+1492000	1494000	from Github
+1494000	1496000	to see how they introduce their models
+1496000	1498000	and how they do things.
+1498000	1500000	The main purpose of talking about Kaggle today
+1500000	1502000	is to give some
+1502000	1504000	slightly interested in
+1504000	1506000	energy prediction, but not
+1506000	1508000	too familiar with these machine learning models.
+1508000	1510000	It's a simple overview.
+1510000	1512000	How does this competition work?
+1512000	1514000	What kind of model is it?
+1516000	1518000	Next, we will talk about
+1518000	1520000	our project study today.
+1520000	1522000	We want to do low prediction
+1522000	1524000	using data from Taiwan.
+1524000	1526000	We want to ask
+1526000	1528000	if we can really do
+1528000	1530000	an energy prediction service.
+1532000	1534000	Let me put this PowerPoint
+1534000	1536000	aside first.
+1536000	1538000	This is the Kaggle
+1538000	1540000	platform I just mentioned.
+1540000	1542000	If you go to
+1542000	1544000	kaggle.com,
+1544000	1546000	you can come in here.
+1546000	1548000	There will be a bunch of competitions,
+1548000	1550000	some data, and notebooks.
+1550000	1552000	Here,
+1552000	1554000	Project Tyra has created
+1554000	1556000	four notebooks.
+1556000	1558000	You can see that
+1558000	1560000	there are a lot of Python programs in this notebook.
+1560000	1562000	You can just copy
+1562000	1564000	and run it.
+1564000	1566000	Here,
+1566000	1568000	I want to copy
+1568000	1570000	this notebook I have already built.
+1570000	1572000	If you want to copy
+1572000	1574000	and you want to use my notebook,
+1574000	1576000	you can use the Copy & Edit Notebook here.
+1576000	1578000	Click on it.
+1578000	1580000	It will create a new copy here.
+1584000	1586000	You can see that
+1586000	1588000	it will use
+1588000	1590000	cloud resources in this notebook.
+1590000	1592000	But it's on the narrow path now.
+1592000	1594000	There are some datasets here.
+1596000	1598000	The dataset here is
+1598000	1600000	from the Kaggle dataset.
+1600000	1602000	You can read it directly
+1602000	1604000	into this notebook.
+1604000	1606000	You can see some CPU and RAM here.
+1606000	1608000	You can even run GPU
+1608000	1610000	and use its cloud resources
+1610000	1612000	to do some operations.
+1612000	1614000	In this notebook,
+1614000	1616000	the first thing we need to do
+1616000	1618000	is to download data.
+1618000	1620000	We want to download weather data
+1620000	1622000	and energy data.
+1622000	1624000	Let's run this thing
+1624000	1626000	on the scene.
+1626000	1628000	Run all.
+1628000	1630000	At the same time,
+1630000	1632000	let's introduce
+1632000	1634000	today's dataset.
+1634000	1636000	The first is energy data.
+1636000	1638000	It's data from Taiwan Electricity.
+1638000	1640000	It contains
+1640000	1642000	some peak
+1642000	1644000	power consumption
+1644000	1646000	per day.
+1646000	1648000	The peak power consumption
+1648000	1650000	of Taiwan Electricity
+1650000	1652000	per day.
+1652000	1654000	In addition,
+1654000	1656000	there are energy categories
+1656000	1658000	of Taiwan Electricity.
+1658000	1660000	There are a lot of energy categories in Taiwan.
+1660000	1662000	There are traditional
+1662000	1664000	blue gas,
+1664000	1666000	blue coal, nuclear energy,
+1666000	1668000	and wind and solar energy.
+1668000	1670000	These data
+1670000	1672000	are also released by Taiwan Electricity.
+1674000	1676000	In addition,
+1676000	1678000	I know some listeners
+1678000	1680000	are more interested in
+1680000	1682000	local energy.
+1682000	1684000	For example,
+1684000	1686000	how much electricity they use
+1686000	1688000	in a village or a city.
+1688000	1690000	Taiwan Electricity does have some data
+1690000	1692000	in this part,
+1692000	1694000	but it's not covered
+1694000	1696000	in today's speech.
+1696000	1698000	In addition, there are some village metadata,
+1698000	1700000	such as its precision,
+1700000	1702000	population,
+1702000	1704000	and area.
+1704000	1706000	For example, the open data provided by this website.
+1706000	1708000	If you want to know
+1708000	1710000	its outline, you can also find
+1710000	1712000	the open data provided by Hulu.
+1712000	1714000	The picture on the left
+1714000	1716000	is a good data visualization.
+1716000	1718000	It's a picture provided
+1718000	1720000	by Prof. Chen
+1720000	1722000	from FB.
+1722000	1724000	As you can see,
+1724000	1726000	the village area
+1726000	1728000	and energy are mapped
+1728000	1730000	together to see
+1730000	1732000	the density of energy.
+1734000	1736000	Let's take a look
+1736000	1738000	at the data
+1738000	1740000	provided by Hulu.
+1740000	1742000	First,
+1742000	1744000	we have the weather data.
+1744000	1746000	We got the weather data
+1746000	1748000	from the weather data.
+1748000	1750000	We got data for 2 years.
+1750000	1752000	The first year,
+1752000	1754000	the winter temperature was lower than the summer one,
+1754000	1756000	and the second year,
+1756000	1758000	the temperature was higher than
+1758000	1760000	the summer one.
+1760000	1762000	The third year,
+1762000	1764000	we took the average of the three points
+1764000	1766000	and used them as feature
+1766000	1768000	to predict the power consumption.
+1768000	1770000	The next one is the energy data
+1770000	1772000	from Taiwan.
+1772000	1774000	There are a lot of data in it.
+1774000	1776000	In addition to the
+1776000	1778000	monitoring load,
+1778000	1780000	there are also data from various
+1780000	1782000	power generation sources.
+1782000	1784000	We can take a look at
+1784000	1786000	the industrial power consumption
+1786000	1788000	and the electricity consumption.
+1788000	1790000	For industrial power consumption,
+1790000	1792000	we can see that
+1792000	1794000	the annual power consumption
+1794000	1796000	is relatively low.
+1796000	1798000	The annual power consumption
+1798000	1800000	is relatively low.
+1800000	1802000	On weekends,
+1802000	1804000	there is a fixed pattern.
+1804000	1806000	There is a fixed pattern.
+1806000	1808000	This is the so-called
+1808000	1810000	near-peak power supply.
+1810000	1812000	This is the so-called
+1812000	1814000	near-peak power supply.
+1814000	1816000	The power station must decide
+1816000	1818000	how much electricity
+1818000	1820000	to deal with the maximum
+1820000	1822000	load on that day.
+1822000	1824000	We can't let the maximum load
+1824000	1826000	exceed the power supply,
+1826000	1828000	or there will be power outages.
+1828000	1830000	Next, there are wind power
+1830000	1832000	and solar power.
+1832000	1834000	Solar power is
+1834000	1836000	relatively general.
+1836000	1838000	It depends on how much radiation
+1838000	1840000	you have that day.
+1840000	1842000	In summer, it's more.
+1842000	1844000	In winter, it's less.
+1844000	1846000	Let's go back
+1846000	1848000	to the data set.
+1848000	1850000	As you can see,
+1850000	1852000	weather data is what I just said.
+1852000	1854000	You can use this to observe
+1854000	1856000	the historical weather data.
+1856000	1858000	the historical weather data.
+1858000	1860000	This is the platform
+1860000	1862000	that Cargo just grabbed.
+1862000	1864000	This is the platform that Cargo just grabbed.
+1864000	1866000	There is also a local weather forecast.
+1866000	1868000	You can use the forecast API
+1868000	1870000	provided by the Meteorological Bureau
+1870000	1872000	to catch the forecast for the next week
+1872000	1874000	and the weather forecast every three hours.
+1874000	1876000	Google Trend
+1876000	1878000	is more interesting.
+1878000	1880000	You can search
+1880000	1882000	the search volume
+1882000	1884000	of a keyword on Google.
+1884000	1886000	For example, you can search
+1886000	1888000	the search volume
+1888000	1890000	of a keyword on Google.
+1890000	1892000	You can see a pattern.
+1892000	1894000	One, two, three, four.
+1894000	1896000	Sorry, I typed it wrong.
+1896000	1898000	It's actually two, three, four, five.
+1898000	1900000	It's Saturday and Sunday.
+1900000	1902000	You can also say
+1902000	1904000	that if I use
+1904000	1906000	the date as a unit,
+1906000	1908000	you can see that
+1908000	1910000	one, two, three, four, five is higher,
+1910000	1912000	and six is lower.
+1912000	1914000	If you look at one and two,
+1914000	1916000	you can see that
+1916000	1918000	this is in the United States,
+1918000	1920000	so it's actually lower
+1920000	1922000	in the New Year
+1922000	1924000	or in the National Day.
+1924000	1926000	You can also see
+1926000	1928000	that if I use
+1928000	1930000	Taiwan's data as an example,
+1930000	1932000	the search volume
+1932000	1934000	mentioned in the first video
+1934000	1936000	is the search volume
+1936000	1938000	in Taiwan Campus.
+1938000	1940000	If you compare the search volume
+1940000	1942000	of Microsoft Excel,
+1942000	1944000	you can see that
+1944000	1946000	it can correspond to
+1946000	1948000	some holidays,
+1948000	1950000	such as the New Year,
+1950000	1952000	and the search volume of
+1952000	1954000	Excel becomes lower.
+1954000	1956000	For example,
+1956000	1958000	the search volume of
+1958000	1960000	Microsoft Excel,
+1960000	1962000	whether it's tourism
+1962000	1964000	or your sales volume,
+1964000	1966000	is a very useful keyword
+1966000	1968000	to compare.
+1968000	1970000	This is also mentioned that
+1970000	1972000	if our Power Meter
+1972000	1974000	is classified,
+1974000	1976000	you can find that
+1976000	1978000	some buildings are
+1978000	1980000	related to education,
+1980000	1982000	and some buildings
+1982000	1984000	may be related to
+1984000	1986000	the office,
+1986000	1988000	which is also a very interesting
+1988000	1990000	open data set.
+1990000	1992000	Here I have provided
+1992000	1994000	how to grab data
+1994000	1996000	in Google Trend.
+1996000	1998000	You can see that
+1998000	2000000	it's lower in the New Year
+2000000	2002000	and lower in the National Day.
+2002000	2004000	For example,
+2004000	2006000	October 10th.
+2006000	2008000	October 10th, 11th, 12th, and 13th
+2008000	2010000	are National Day holidays,
+2010000	2012000	so these days are also lower.
+2012000	2014000	Holiday data
+2014000	2016000	is actually
+2016000	2018000	from a website
+2018000	2020000	called TimeDate.
+2020000	2022000	You can find
+2022000	2024000	the holiday of
+2024000	2026000	each country on it.
+2026000	2028000	You just need to enter
+2028000	2030000	your country's name on the website
+2030000	2032000	and its year.
+2032000	2034000	Then you can find the national holiday
+2034000	2036000	that corresponds to that country.
+2036000	2038000	This is also a very useful website,
+2038000	2040000	so I also grabbed
+2040000	2042000	some data.
+2042000	2044000	In this notebook,
+2044000	2046000	the main thing we do is
+2046000	2048000	to grab data.
+2048000	2050000	In the end,
+2050000	2052000	what we can
+2052000	2054000	generate is like this.
+2054000	2056000	In this notebook,
+2056000	2058000	there is
+2058000	2060000	an output.
+2060000	2062000	We can output
+2062000	2064000	Google Trend CSV, Demand CSV, Holiday.
+2064000	2066000	You can even download
+2066000	2068000	the data directly from here.
+2068000	2070000	It's quite convenient to
+2070000	2072000	store data
+2072000	2074000	and build a notebook.
+2076000	2078000	Next,
+2078000	2080000	if we want to
+2080000	2082000	predict Taiwan's
+2082000	2084000	energy,
+2084000	2086000	we need to build a model.
+2086000	2088000	Here,
+2090000	2092000	our goal is to
+2092000	2094000	meet the deadline on time.
+2094000	2096000	Of course, there are other things
+2096000	2098000	that we don't need to cover.
+2098000	2100000	Let's use a simple
+2100000	2102000	time-to-time load to predict.
+2102000	2104000	This is one data per day,
+2104000	2106000	which is the highest energy load
+2106000	2108000	in a day.
+2108000	2110000	If we only use the simplest
+2110000	2112000	weekday to predict,
+2112000	2114000	that is,
+2114000	2116000	let's say it's Monday or Tuesday,
+2116000	2118000	or it's Saturday or Sunday.
+2118000	2120000	First of all,
+2120000	2122000	we can look at its trend.
+2122000	2124000	0 to 4 is Monday to Friday,
+2124000	2126000	and 5 to 6 is Saturday.
+2126000	2128000	1 to 5 is higher,
+2128000	2130000	and Saturday is lower.
+2130000	2132000	It's normal.
+2132000	2134000	If we build a model like this,
+2134000	2136000	it will look like
+2136000	2138000	a weekly forecast.
+2138000	2140000	It's like a blue line.
+2140000	2142000	This is the so-called prediction.
+2142000	2144000	It's very inaccurate,
+2144000	2146000	because it only has
+2146000	2148000	the feature of Monday.
+2148000	2150000	Its Oscar O is only 0.1.
+2150000	2152000	It's terrible.
+2152000	2154000	For the second model,
+2154000	2156000	if we want to be more seasonal,
+2156000	2158000	we can add weather conditions.
+2158000	2160000	We only add temperature today.
+2160000	2162000	The temperature here
+2162000	2164000	is the overall energy
+2164000	2166000	forecast in Taiwan.
+2166000	2168000	So we simply sample
+2168000	2170000	the temperature of three regions,
+2170000	2172000	Taipei, Tainan, and Taichung.
+2172000	2174000	You can see that
+2174000	2176000	if we
+2176000	2178000	use temperature
+2178000	2180000	and energy
+2180000	2182000	to get a plot,
+2182000	2184000	you can see that
+2184000	2186000	there is a very obvious curve on weekday,
+2186000	2188000	and there is a very obvious curve on weekend.
+2188000	2190000	We use a two-dimensional curve
+2190000	2192000	to draw it.
+2192000	2194000	You can see that there is a very obvious relationship here.
+2194000	2196000	So
+2196000	2198000	after we add it here,
+2198000	2200000	you can see that this prediction
+2200000	2202000	is actually a lot more accurate.
+2202000	2204000	It can roughly draw this seasonal line,
+2204000	2206000	and its Oscar can reach 0.81.
+2206000	2208000	Sorry, I forgot to mention that
+2208000	2210000	the training data is used to train
+2210000	2212000	the whole year of 2019,
+2212000	2214000	and then use 2020
+2214000	2216000	as our test data to see its accuracy.
+2216000	2218000	So you can see
+2218000	2220000	that even if we only have
+2220000	2222000	weekly weather conditions,
+2222000	2224000	the prediction of the next year
+2224000	2226000	is actually quite accurate.
+2226000	2228000	The third model
+2228000	2230000	is to say that
+2230000	2232000	in addition to the weather conditions here,
+2232000	2234000	we can see some
+2234000	2236000	of the predictions here,
+2236000	2238000	but it's not very accurate.
+2238000	2240000	The main reason is that the model can't know
+2240000	2242000	which day is the holiday,
+2242000	2244000	so you have to tell it this feature.
+2244000	2246000	The third model is called Holiday,
+2246000	2248000	which is the holiday data
+2248000	2250000	we just got from IronDate.
+2252000	2254000	How many types
+2254000	2256000	of holiday types are there here?
+2256000	2258000	0 is the most common,
+2258000	2260000	1 is the most
+2260000	2262000	common ordinary day,
+2262000	2264000	that is, it doesn't have a holiday,
+2264000	2266000	and 2 is the weekend.
+2266000	2268000	You can see that their grouping methods
+2268000	2270000	are not the same.
+2270000	2272000	After adding this,
+2272000	2274000	you can see that the prediction
+2274000	2276000	here in the new year seems to be a little lower.
+2276000	2278000	For example, around October 10,
+2278000	2280000	it will also be here
+2280000	2282000	in these three days,
+2282000	2284000	its prediction value will also be lower.
+2284000	2286000	That's because there's a feature
+2286000	2288000	added to it,
+2288000	2290000	so it's improved from 0.81 to
+2290000	2292000	almost 0.9.
+2292000	2294000	The most important thing is that
+2294000	2296000	our scope can actually predict
+2296000	2298000	the energy for the next week,
+2298000	2300000	so it actually includes the previous day,
+2300000	2302000	including the previous seven days
+2302000	2304000	and so on, these past energy data
+2304000	2306000	can actually be our feature.
+2306000	2308000	For example, I'm going to predict tomorrow's energy,
+2308000	2310000	but if I can know
+2310000	2312000	what the trend
+2312000	2314000	of today's energy looks like,
+2314000	2316000	then we can use today's trend
+2316000	2318000	and maybe add a little bit more.
+2318000	2320000	If the temperature is high, we can add a little bit.
+2320000	2322000	Then predict tomorrow's energy.
+2322000	2324000	So the energy data
+2324000	2326000	from the previous day or the previous seven days
+2326000	2328000	is also a pretty useful feature.
+2328000	2330000	I'm here in Australia.
+2330000	2332000	If we add
+2332000	2334000	the energy data
+2334000	2336000	from the previous day
+2336000	2338000	and the previous seven days
+2338000	2340000	and two weeks ago,
+2340000	2342000	you can see that
+2342000	2344000	in fact,
+2344000	2346000	they are highly related,
+2346000	2348000	that is, the previous day
+2348000	2350000	our current energy
+2350000	2352000	their relationship
+2352000	2354000	is very close.
+2354000	2356000	The previous seven days or the previous 14 days
+2356000	2358000	are also very close,
+2358000	2360000	which is also reasonable.
+2360000	2362000	It's like 9 o'clock in the morning
+2362000	2364000	and 9 o'clock in the morning yesterday.
+2364000	2366000	It's like 9 o'clock now and 9 o'clock
+2366000	2368000	a week ago, and it's like
+2368000	2370000	9 o'clock two weeks ago.
+2370000	2372000	So after adding this feature,
+2372000	2374000	our Oscar can directly
+2374000	2376000	increase to 0.94.
+2376000	2378000	This thing is of course based on
+2378000	2380000	my short-term prediction today.
+2380000	2382000	If you predict tomorrow or the next week's energy,
+2382000	2384000	then I can use this
+2384000	2386000	energy from the previous few days as my feature.
+2388000	2390000	OK, so here,
+2390000	2392000	this notebook is mainly to do this model training,
+2392000	2394000	which is to establish this model.
+2394000	2396000	At the end of this model,
+2396000	2398000	when it is to be output,
+2398000	2400000	we will actually use two years of data to do training.
+2400000	2402000	Just to do some validation,
+2402000	2404000	we might have to come out a year ago
+2404000	2406000	to see how it works.
+2406000	2408000	If the parameters of this model are fine
+2408000	2410000	and the effect is very good,
+2410000	2412000	then we can use two years of data
+2412000	2414000	to do training.
+2414000	2416000	So the output here is
+2416000	2418000	actually a light GBM model.
+2420000	2422000	The last notebook here
+2422000	2424000	is actually a real-time prediction.
+2424000	2426000	Then we use the light GBM model
+2426000	2428000	we built just now
+2428000	2430000	to import it in.
+2430000	2432000	Then we can use this model to predict.
+2432000	2434000	Just before doing the prediction,
+2434000	2436000	we still have to grab some data.
+2436000	2438000	Because what we just grabbed is historical data.
+2438000	2440000	If we want to predict the energy
+2440000	2442000	for the next seven days,
+2442000	2444000	then we have to catch the future weather forecast.
+2444000	2446000	Then we have to catch
+2446000	2448000	the holiday data.
+2448000	2450000	Then we also have to catch
+2450000	2452000	the energy data from the previous few days
+2452000	2454000	as our feature.
+2454000	2456000	So the first thing here
+2456000	2458000	is to spread some
+2458000	2460000	energy data.
+2460000	2462000	Here we can see
+2462000	2464000	that we will catch
+2464000	2466000	all the energy data this year.
+2466000	2468000	Then you can see that
+2468000	2470000	here is
+2472000	2474000	the energy data
+2474000	2476000	a month ago.
+2476000	2478000	You can see that it is December,
+2478000	2480000	January, and then the data by the end of January.
+2480000	2482000	Here is also
+2482000	2484000	the estimated data
+2484000	2486000	provided by Taiden.
+2486000	2488000	Their predicted data
+2488000	2490000	to predict what it looks like
+2490000	2492000	at the bottom of the peak.
+2492000	2494000	Then we will
+2494000	2496000	catch the weather forecast
+2496000	2498000	from the Central Meteorological Bureau.
+2498000	2500000	Then we can predict
+2500000	2502000	the energy for the next seven days.
+2502000	2504000	Basically, we use the model
+2504000	2506000	of LightGBM.
+2506000	2508000	Here we can catch the weather forecast
+2508000	2510000	for Taipei, Taichung, and Tainan.
+2510000	2512000	Because this is a notebook I made
+2512000	2514000	a week ago.
+2514000	2516000	January 28th to February 3rd
+2516000	2518000	is the estimated date.
+2518000	2520000	So this is Taipei, Taichung, and Tainan.
+2520000	2522000	Here is the temperature provided by the weather forecast.
+2522000	2524000	Then
+2524000	2526000	the following
+2526000	2528000	are some features,
+2528000	2530000	such as the week,
+2530000	2532000	one day ago, seven days ago,
+2532000	2534000	and 14 days ago.
+2534000	2536000	Because only the first day
+2536000	2538000	has the energy of the day before,
+2538000	2540000	so there will be data here.
+2540000	2542000	From the second day,
+2542000	2544000	there will be no data on the first day.
+2544000	2546000	Because our prediction will actually start
+2546000	2548000	from the first day,
+2548000	2550000	and then predict the second day, the third day.
+2550000	2552000	Then the data of the day before,
+2552000	2554000	we will use the prediction value of the day before to put it in.
+2554000	2556000	So we can look at
+2556000	2558000	the prediction result.
+2558000	2560000	The prediction result can actually be seen here.
+2560000	2562000	That is to say,
+2564000	2566000	here is the data.
+2566000	2568000	The limit is what happened in the past.
+2568000	2570000	The blue line and the green line are
+2570000	2572000	the LGBM model we predicted.
+2572000	2574000	The green line is the LGBM prediction.
+2574000	2576000	You can see that our prediction seems to be low.
+2576000	2578000	So we can
+2578000	2580000	predict it.
+2580000	2582000	We can evaluate it later.
+2582000	2584000	What is the difference between the two
+2584000	2586000	we predicted with LGBM?
+2586000	2588000	Who is more accurate?
+2588000	2590000	Or what is the difference between the two features?
+2590000	2592000	Because this is
+2592000	2594000	the prediction 11 days ago.
+2594000	2596000	So I didn't make any changes to it.
+2596000	2598000	We can now
+2598000	2600000	take a look at the prediction result.
+2602000	2604000	Ok.
+2606000	2608000	This is the prediction result.
+2608000	2610000	You can see that the orange line
+2610000	2612000	is the
+2612000	2614000	LGBM prediction.
+2614000	2616000	The blue line is the LGBM prediction.
+2616000	2618000	You can see that
+2618000	2620000	at the beginning,
+2620000	2622000	the error was very high.
+2622000	2624000	The blue bar is the error.
+2624000	2626000	We almost accurately predicted
+2626000	2628000	what the energy would be like three days ago.
+2628000	2630000	But as time goes by,
+2630000	2632000	the accuracy is getting worse and worse.
+2632000	2634000	It's mainly because of the weather forecast.
+2634000	2636000	It's very likely that
+2636000	2638000	the accuracy of the weather forecast
+2638000	2640000	is getting worse and worse
+2640000	2642000	from the first day to the second day.
+2642000	2644000	Or the temperature I brought in
+2644000	2646000	is not enough.
+2646000	2648000	So the prediction is not very accurate.
+2648000	2650000	LGBM's prediction
+2650000	2652000	is relatively stable.
+2652000	2654000	It can maintain
+2654000	2656000	a certain error every day.
+2656000	2658000	I don't know how to do it.
+2658000	2660000	The error of the prediction
+2660000	2662000	is mostly positive.
+2662000	2664000	But this is just a seven-day data.
+2664000	2666000	So it can't be
+2666000	2668000	simply solved like this.
+2668000	2670000	You can find this phenomenon
+2670000	2672000	from these seven days.
+2672000	2674000	The accuracy of the prediction
+2674000	2676000	is not very different.
+2676000	2678000	Ok.
+2678000	2680000	I also put the link of the notebook here.
+2680000	2682000	If you are interested, you can go to Kaggle.
+2682000	2684000	Or you can search for the keyword
+2684000	2686000	pocket tyrant.
+2686000	2688000	Notebook.
+2690000	2692000	I didn't miss anything in the beginning.
+2692000	2694000	The first part is
+2694000	2696000	the introduction of OpenDataSet.
+2696000	2698000	A brief summary of today's summary.
+2698000	2700000	In the field of architecture,
+2700000	2702000	in the part of energy prediction,
+2702000	2704000	in addition to being affected
+2704000	2706000	by external conditions
+2706000	2708000	and the variables of these environments,
+2708000	2710000	behavior is also very important.
+2710000	2712000	When do people go to work?
+2712000	2714000	What time does he go to work?
+2714000	2716000	Is it holiday or non-holiday that day?
+2716000	2718000	Or is it weekend?
+2718000	2720000	In fact, it has a great impact.
+2720000	2722000	The second point is that we actually
+2722000	2724000	learned from Kaggle Competition,
+2724000	2726000	which is what we learned in the energy prediction competition.
+2726000	2728000	First of all, the tree-based model
+2728000	2730000	is actually
+2730000	2732000	most of the solutions
+2732000	2734000	that Wiener will use.
+2734000	2736000	Mainly because of its performance
+2736000	2738000	and its training time
+2738000	2740000	and tuning parameter time
+2740000	2742000	can achieve a balance.
+2742000	2744000	Then you can achieve good performance.
+2744000	2746000	So everyone will use this method.
+2746000	2748000	The other thing is that
+2748000	2750000	the data scientists in it
+2750000	2752000	mainly focus on this.
+2752000	2754000	What I mean is that these data scientists
+2754000	2756000	don't have any personnel or
+2756000	2758000	building-related background.
+2758000	2760000	But based on their data skills,
+2760000	2762000	it is the sharing of the community above.
+2762000	2764000	Everyone shares with each other
+2764000	2766000	what they found in these data.
+2766000	2768000	What are the characteristics?
+2768000	2770000	Then everyone can use these knowledge
+2770000	2772000	to make the most accurate predictions
+2772000	2774000	based on their model experience
+2774000	2776000	and their know-how.
+2776000	2778000	So the winners in the front
+2778000	2780000	don't have any professional
+2780000	2782000	building-related background.
+2782000	2784000	Then there is the actual
+2784000	2786000	demand forecasting model.
+2786000	2788000	Then use Taiwan energy
+2788000	2790000	to do the actual part.
+2790000	2792000	In fact, Taiwan Open Data is very
+2792000	2794000	enough to do such a model.
+2794000	2796000	It takes about two years.
+2796000	2798000	But in my opinion,
+2798000	2800000	Taiwan Open Data is already enough
+2800000	2802000	to build a model with good accuracy.
+2802000	2804000	In the field of architecture.
+2804000	2806000	Then there is
+2806000	2808000	its performance.
+2808000	2810000	It's pretty good.
+2810000	2812000	Everyone can do more than 0.9.
+2812000	2814000	And it's also very simple.
+2814000	2816000	You can support it for free
+2816000	2818000	in the Kaggle platform.
+2818000	2820000	Finally, it is Open Dataset.
+2820000	2822000	In fact, Taiwan has a very rich
+2822000	2824000	and very diversified dataset.
+2824000	2826000	Compared to other Open Datasets
+2826000	2828000	Open Datasets are very limited.
+2828000	2830000	Taiwan has a lot.
+2830000	2832000	Of course, there are a lot of messy
+2832000	2834000	and I don't know how to use the dataset.
+2834000	2836000	But in fact, there are some very useful
+2836000	2838000	and very interesting datasets that
+2838000	2840000	everyone can play.
+2840000	2842000	In addition, these datasets can help
+2842000	2844000	researchers like us
+2844000	2846000	to find some interesting patterns.
+2846000	2848000	For example, Google Search
+2848000	2850000	can also help you
+2850000	2852000	to find some details
+2852000	2854000	in Building Energy.
+2854000	2856000	Next, we will have 10 minutes
+2856000	2858000	for Q&A.
+2860000	2862000	Thank you for the wonderful
+2862000	2864000	presentation today.
+2864000	2866000	You made a very good
+2866000	2868000	summary.
+2868000	2870000	About the competition
+2870000	2872000	of Azure,
+2872000	2874000	the competition on the Kaggle platform,
+2874000	2876000	and some model introduction,
+2876000	2878000	LGBM,
+2878000	2880000	XGBoost,
+2880000	2882000	or Neural Network,
+2882000	2884000	as well as the overall introduction
+2884000	2886000	of architecture prediction
+2886000	2888000	and Open Data Science.
+2888000	2890000	It's very exciting.
+2890000	2892000	Now we see that
+2892000	2894000	in the chat box,
+2894000	2896000	a friend asked
+2896000	2898000	that he wanted to ask
+2898000	2900000	that there may be no accurate
+2900000	2902000	temperature prediction in the future
+2902000	2904000	when actually using it.
+2904000	2906000	Will the performance of the model
+2906000	2908000	be affected at this time?
+2908000	2910000	In fact, it will.
+2910000	2912000	It should be said that
+2912000	2914000	the difference in temperature
+2914000	2916000	may be that
+2916000	2918000	according to our observation,
+2918000	2920000	the temperature difference in weather forecast
+2920000	2922000	is very full.
+2922000	2924000	But the temperature
+2924000	2926000	prediction error
+2926000	2928000	is about 1-2 degrees.
+2928000	2930000	Most weather forecasts
+2930000	2932000	can accurately predict
+2932000	2934000	the temperature profile.
+2934000	2936000	For example, 18-29 degrees
+2936000	2938000	is actually quite accurate.
+2938000	2940000	Next is the architecture energy.
+2940000	2942000	It's actually a pretty stable
+2942000	2944000	profile.
+2944000	2946000	It's not because the temperature suddenly rises
+2946000	2948000	or falls.
+2948000	2950000	So in this regard,
+2950000	2952000	although the weather forecast
+2952000	2954000	is not completely accurate,
+2954000	2956000	it does not affect
+2956000	2958000	the accuracy of the prediction.
+2958000	2960000	Of course, if you want to predict
+2960000	2962000	the next month or next week,
+2962000	2964000	the prediction error may be slightly higher.
+2964000	2966000	But if you predict
+2966000	2968000	one day tomorrow or three days later,
+2968000	2970000	I don't think the accuracy of the energy
+2970000	2972000	will be much higher.
+2976000	2978000	Thank you for your answer.
+2978000	2980000	Do you have any questions
+2980000	2982000	for the audience here?
+2982000	2984000	You can mute your questions
+2984000	2986000	or type them in the chat.
+2994000	2996000	Hello, I'm Louis.
+2996000	2998000	I have one last question.
+2998000	3000000	It's a very good question.
+3000000	3002000	It's a time series question.
+3002000	3004000	How do you do validation?
+3004000	3006000	You mentioned that you use
+3006000	3008000	2019's trend on 2019
+3008000	3010000	and then 2020's
+3010000	3012000	to predict.
+3012000	3014000	Is there a more complete
+3014000	3016000	way to do validation?
+3018000	3020000	Sorry to interrupt,
+3020000	3022000	but before you answer,
+3022000	3024000	I'd like to ask the audience
+3024000	3026000	to introduce their backgrounds.
+3026000	3028000	So that we can
+3028000	3030000	get to know each other better.
+3030000	3032000	Thank you.
+3034000	3036000	I'm in the US.
+3036000	3038000	I'm a data scientist.
+3038000	3040000	I haven't done much
+3040000	3042000	on the time series,
+3042000	3044000	but I think it's pretty interesting.
+3044000	3046000	I'd like to learn more.
+3046000	3048000	No problem. Thank you for your question.
+3048000	3050000	For the time series,
+3050000	3052000	I'm not sure
+3052000	3054000	what you mean by validation.
+3054000	3056000	But if you mean
+3056000	3058000	how to cut the fold,
+3058000	3060000	how to cut the data
+3060000	3062000	to do cross-validation.
+3062000	3064000	For example, we cut four or five
+3064000	3066000	common cuts.
+3066000	3068000	We don't do shuffle.
+3068000	3070000	We don't do random
+3070000	3072000	cut.
+3072000	3074000	We don't do random
+3074000	3076000	cut.
+3076000	3078000	We don't do random cross-validation.
+3078000	3080000	For example,
+3080000	3082000	we do training
+3082000	3084000	for the first four years,
+3084000	3086000	and then validation for the last year.
+3086000	3088000	Or we do training for the next four years,
+3088000	3090000	and then validation for the first year.
+3090000	3092000	We want to
+3092000	3094000	cut the time series
+3094000	3096000	to do cross-validation,
+3096000	3098000	not to do random
+3098000	3100000	cut.
+3100000	3102000	We don't do random
+3102000	3104000	cut.
+3104000	3106000	Because time series
+3106000	3108000	is related to
+3108000	3110000	time before and after.
+3110000	3112000	So you can't
+3112000	3114000	randomly do validation.
+3114000	3116000	Does this answer your question?
+3116000	3118000	Yes.
+3118000	3120000	Thank you.
+3120000	3122000	Okay.
+3124000	3126000	What a wonderful discussion.
+3126000	3128000	Does anyone
+3128000	3130000	have any questions
+3130000	3132000	to ask?
+3132000	3134000	Hi, I'm
+3134000	3136000	Xie Cheng.
+3136000	3138000	Can you hear me?
+3138000	3140000	Okay.
+3140000	3142000	Hi.
+3142000	3144000	I used to study in Taiwan University.
+3144000	3146000	Now I'm studying in the US.
+3146000	3148000	My question is
+3148000	3150000	if
+3150000	3152000	your model needs to be
+3152000	3154000	used in the future,
+3154000	3156000	will there be any security concerns?
+3156000	3158000	For example,
+3158000	3160000	maybe not too serious security.
+3160000	3162000	Maybe there is a sudden event.
+3162000	3164000	For example,
+3164000	3166000	there is a joke about Excel
+3166000	3168000	that occurs on holidays,
+3168000	3170000	resulting in a large increase
+3170000	3172000	in the search volume of Excel
+3172000	3174000	on holidays,
+3174000	3176000	or something like that.
+3176000	3178000	How to avoid
+3178000	3180000	this kind of
+3180000	3182000	negative situation?
+3182000	3184000	Yes, there is such a situation.
+3184000	3186000	If you apply it to the industry,
+3186000	3188000	you still have to set a threshold.
+3188000	3190000	If the temperature
+3190000	3192000	is normal in Taiwan,
+3192000	3194000	it may be 0 to
+3194000	3196000	40 degrees or so.
+3196000	3198000	You may say
+3198000	3200000	there is a mistake here,
+3200000	3202000	I may stop my service.
+3202000	3204000	You may tell users
+3204000	3206000	why the service has stopped.
+3206000	3208000	For example,
+3208000	3210000	you can't use automatic
+3210000	3212000	or something like that.
+3212000	3214000	This is really necessary to add
+3214000	3216000	additional rules to avoid such a situation.
+3216000	3218000	Because in the industry,
+3218000	3220000	if you use this kind of low prediction
+3220000	3222000	to do automatic control,
+3222000	3224000	there will be such a risk.
+3224000	3226000	Cool.
+3226000	3228000	I want to ask another question
+3228000	3230000	related to Cargo.
+3230000	3232000	I have been studying for a while.
+3232000	3234000	I saw that last year,
+3234000	3236000	I don't know what to say now.
+3236000	3238000	Anyway, I saw two competitions last year.
+3238000	3240000	One is the target of wheat,
+3240000	3242000	and the other is
+3242000	3244000	the image detection of
+3244000	3246000	a special type.
+3246000	3248000	In fact, I also know some traditional
+3248000	3250000	breeders who have collected a lot of
+3250000	3252000	this kind of image data.
+3252000	3254000	Their quality may not be
+3254000	3256000	so uniform,
+3256000	3258000	but they may have to give up.
+3258000	3260000	But if you put it on Cargo now,
+3260000	3262000	let this kind of
+3262000	3264000	data scientist community
+3264000	3266000	have a good result.
+3266000	3268000	I'm curious about this kind of academic unit
+3268000	3270000	to put the data on it,
+3270000	3272000	and then let everyone
+3272000	3274000	come together
+3274000	3276000	to find a solution
+3276000	3278000	and then publish it.
+3278000	3280000	Is there anything to pay attention to
+3280000	3282000	in this process?
+3282000	3284000	How is it usually achieved?
+3284000	3286000	This Cargo competition,
+3286000	3288000	because I was
+3288000	3290000	preparing for this competition
+3290000	3292000	at the end of the previous year.
+3292000	3294000	At that time, I had not yet
+3294000	3296000	entered the lab,
+3296000	3298000	so I did not participate in this part.
+3298000	3300000	But as far as I know,
+3300000	3302000	they will actually do some cleaning first.
+3302000	3304000	I mean, this is our lab,
+3304000	3306000	because we are the organizer.
+3306000	3308000	We will process these data first
+3308000	3310000	and then confirm that
+3310000	3312000	the quality of these data is probably no problem.
+3312000	3314000	Then it will be sent to Cargo
+3314000	3316000	and their team to explain the data.
+3316000	3318000	Cargo also has a group of
+3318000	3320000	very professional data scientists
+3320000	3322000	to check the quality of the data,
+3322000	3324000	which is probably OK,
+3324000	3326000	and they won't clear the data for you,
+3326000	3328000	because data missing and outliers
+3328000	3330000	are things to deal with in the competition.
+3330000	3332000	Then they will go and see
+3332000	3334000	if the data is OK,
+3334000	3336000	and then they will
+3336000	3338000	test it internally
+3338000	3340000	and confirm that
+3340000	3342000	if the data is used for the competition,
+3342000	3344000	how much training data and validation data
+3344000	3346000	do I have?
+3346000	3348000	Although when we give him the data,
+3348000	3350000	we give him two years of training and one year of validation.
+3350000	3352000	But they strongly recommend
+3352000	3354000	one year of training and two years of prediction.
+3354000	3356000	They have their
+3356000	3358000	basis,
+3358000	3360000	which is what they think,
+3360000	3362000	and we respect it.
+3362000	3364000	They have a lot of know-how
+3364000	3366000	to organize this competition.
+3366000	3368000	Most of the Cargo competitions so far
+3368000	3370000	are not very controversial,
+3370000	3372000	so I think Cargo and their internal team
+3372000	3374000	are still very strong.
+3374000	3376000	If it's more local,
+3376000	3378000	their data platform,
+3378000	3380000	competition platform,
+3380000	3382000	sometimes they have a lot of controversy,
+3382000	3384000	and sometimes the quality of the competition
+3384000	3386000	is poor,
+3386000	3388000	but I can't say that the competition platform is wrong.
+3388000	3390000	That is, their internal professionals
+3390000	3392000	don't have much resources,
+3392000	3394000	so they can't hire such a large team
+3394000	3396000	to check the details of these competitions.
+3396000	3398000	In addition, the domestic platform
+3398000	3400000	doesn't charge
+3400000	3402000	the organizer.
+3402000	3404000	If it's in Cargo,
+3404000	3406000	the organizer will use their team
+3406000	3408000	to check the data and collect the fees.
+3408000	3410000	So the prize is not only
+3410000	3412000	the organizer
+3412000	3414000	who provides the prize,
+3414000	3416000	but also the host of the competition
+3416000	3418000	who needs to pay
+3418000	3420000	an extra fee to Cargo.
+3420000	3422000	Yes,
+3422000	3424000	to ensure that this competition
+3424000	3426000	is of good quality.
+3426000	3428000	Thank you. Nice talk.
+3428000	3430000	Thank you for your question.
+3430000	3432000	I don't rule out
+3432000	3434000	any discussion
+3434000	3436000	about Open Data Say
+3436000	3438000	in Cargo competitions.
+3438000	3440000	You can ask any questions.
+3440000	3442000	It's fun.
+3442000	3444000	Due to time constraints,
+3444000	3446000	we will open the last question.
+3446000	3448000	Let's see
+3448000	3450000	if there are any questions from the audience.
+3458000	3460000	If not,
+3460000	3462000	we will open the last question
+3462000	3464000	for our host.
+3464000	3466000	It's the same.
+3466000	3468000	Please introduce yourself.
+3468000	3470000	Hello,
+3470000	3472000	host and audience.
+3472000	3474000	I am
+3474000	3476000	the host,
+3476000	3478000	Hu Junwei.
+3478000	3480000	My father
+3480000	3482000	used to be a student of
+3482000	3484000	NTUC,
+3484000	3486000	and I studied
+3486000	3488000	renewable energy systems
+3488000	3490000	at NTUC.
+3490000	3492000	I am very interested in
+3492000	3494000	today's topic.
+3494000	3496000	I have a question.
+3496000	3498000	This model
+3498000	3500000	can be used
+3500000	3502000	to assess
+3502000	3504000	events in energy
+3504000	3506000	or social development
+3506000	3508000	such as dynamic events.
+3508000	3510000	For example,
+3510000	3512000	in 2016 and 2017,
+3512000	3514000	there was a power outage
+3514000	3516000	in Taipei.
+3516000	3518000	Is there a way
+3518000	3520000	to predict
+3520000	3522000	when there will be
+3522000	3524000	a power outage
+3524000	3526000	in the next few days?
+3526000	3528000	Or
+3528000	3530000	in the case of
+3530000	3532000	COVID-19,
+3532000	3534000	many countries
+3534000	3536000	are working
+3536000	3538000	from home,
+3538000	3540000	so the energy use
+3540000	3542000	will be very different.
+3542000	3544000	Is there a way
+3544000	3546000	to do dynamic analysis
+3546000	3548000	for specific events?
+3548000	3550000	I would like to hear
+3550000	3552000	your opinion.
+3552000	3554000	I think it's pretty cool.
+3554000	3556000	First of all,
+3556000	3558000	if it is a power outage
+3558000	3560000	or a power outage,
+3560000	3562000	I think it is relatively difficult.
+3562000	3564000	The first is that it is a rare event,
+3564000	3566000	so the rare event
+3566000	3568000	may only happen
+3568000	3570000	ten times in the past.
+3570000	3572000	It's hard to predict
+3572000	3574000	because there is not enough data
+3574000	3576000	for training.
+3576000	3578000	Even if there are
+3578000	3580000	a lot of events,
+3580000	3582000	you need enough features
+3582000	3584000	to describe them.
+3584000	3586000	For example,
+3586000	3588000	you need to detect
+3588000	3590000	voltage, current,
+3590000	3592000	frequency,
+3592000	3594000	etc.
+3594000	3596000	I don't know
+3596000	3598000	if there is such open data,
+3598000	3600000	but I know Kaggle
+3600000	3602000	can also find open data like this.
+3602000	3604000	Next,
+3604000	3606000	let me think of
+3606000	3608000	a recent competition
+3608000	3610000	in IEEE.
+3610000	3612000	They are specifically predicting
+3612000	3614000	what the energy forecast
+3614000	3616000	will look like after COVID-19.
+3616000	3618000	They are heading
+3618000	3620000	electricity demand forecasting post-COVID.
+3620000	3622000	They want to know
+3622000	3624000	what changes will happen
+3624000	3626000	to most energy
+3626000	3628000	after COVID-19.
+3628000	3630000	Most of them should be
+3630000	3632000	related to
+3632000	3634000	human behavior.
+3634000	3636000	I have done
+3636000	3638000	one thing before.
+3638000	3640000	If you use Google Keywords,
+3640000	3642000	I can show you
+3642000	3644000	quickly today.
+3644000	3646000	If you use Google Trends,
+3646000	3648000	this is what I found recently.
+3648000	3650000	It is quite related to
+3650000	3652000	travel keywords.
+3652000	3654000	For example,
+3654000	3656000	I went to
+3656000	3658000	travel.
+3664000	3666000	You can see that
+3666000	3668000	it suddenly dropped
+3668000	3670000	on March 1st.
+3670000	3672000	It was quite stable
+3672000	3674000	in the first four years.
+3674000	3676000	It dropped in the summer,
+3676000	3678000	but it suddenly dropped
+3678000	3680000	in March this year.
+3680000	3682000	Of course,
+3682000	3684000	this is just a correlation.
+3684000	3686000	Whether this is a causal relationship
+3686000	3688000	may be confirmed in more detail.
+3688000	3690000	This is just an example.
+3690000	3692000	You can find out from some data
+3692000	3694000	if you can predict
+3694000	3696000	what will happen
+3696000	3698000	to the energy
+3698000	3700000	after COVID-19.
+3700000	3702000	This is also what everyone is concerned about.
+3702000	3704000	I am not sure
+3704000	3706000	if this can be done.
+3706000	3708000	You can find out
+3708000	3710000	whether to describe
+3710000	3712000	this feature.
+3712000	3714000	This is a very cool question.
+3714000	3716000	Thank you.
+3718000	3720000	Thank you for the wonderful explanation.
+3722000	3724000	Due to time constraints,
+3724000	3726000	I know that
+3726000	3728000	everyone here may have
+3728000	3730000	some potential questions.
+3730000	3732000	However,
+3732000	3734000	this is the end of
+3734000	3736000	today's presentation.
+3736000	3738000	Thank you again,
+3738000	3740000	Fuxun.
+3740000	3742000	If you are interested
+3742000	3744000	in this topic
+3744000	3746000	or the speaker,
+3746000	3748000	you can contact her
+3748000	3750000	through e-mail
+3750000	3752000	or social media
+3752000	3754000	related to Fuxun.
+3754000	3756000	If you are interested
+3756000	3758000	in different fields
+3758000	3760000	and different topics
+3760000	3762000	of different speakers,
+3762000	3764000	you are welcome to
+3764000	3766000	continue to participate
+3766000	3768000	in Project Tara's activities
+3768000	3770000	as a speaker.
+3770000	3772000	Thank you for your participation today.
+3772000	3774000	I wish you a pleasant day
+3774000	3776000	or evening.
+3776000	3778000	Thank you.

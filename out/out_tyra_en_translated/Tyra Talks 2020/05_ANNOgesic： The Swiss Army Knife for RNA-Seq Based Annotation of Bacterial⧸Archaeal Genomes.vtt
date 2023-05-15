@@ -1,0 +1,7220 @@
+WEBVTT
+
+00:00.000 --> 00:11.000
+Today, I am very honored to invite Dr. Yu Song-Huan, our speaker, to give us an online presentation.
+
+00:11.000 --> 00:18.000
+Dr. Yu Song-Huan's school and research unit is the Max Planck Institute of Biochemistry.
+
+00:18.000 --> 00:22.000
+His main research area is focused on bioinformatics.
+
+00:22.000 --> 00:26.000
+Today, he is going to talk about the topic of
+
+00:26.000 --> 00:34.000
+Energizing the Three-Arm Knife for RNA-Seq-Based Entotation of Bacterial Archaeogenomics.
+
+00:34.000 --> 00:39.000
+Now, Dr. Yu Song-Huan, please introduce the topic to us.
+
+00:39.000 --> 00:42.000
+Thank you for the introduction.
+
+00:42.000 --> 00:48.000
+Basically, what I am going to talk about today is a tool for analyzing biological information.
+
+00:48.000 --> 00:57.000
+This tool is mainly used in the analysis of large data, which is often used and very important.
+
+00:57.000 --> 00:59.000
+It is mainly used in RNA sequencing.
+
+00:59.000 --> 01:02.000
+Later, I will introduce the basic background.
+
+01:02.000 --> 01:08.000
+We are focused on the providence of gene assistance for bacteria and fungi.
+
+01:08.000 --> 01:14.000
+I believe that not all the audience comes from biology.
+
+01:14.000 --> 01:19.000
+So, I will briefly introduce the background.
+
+01:19.000 --> 01:25.000
+I believe that quite a few speakers have talked about the background.
+
+01:25.000 --> 01:30.000
+If I am not clear enough, you can also go back and look at the part of the speakers.
+
+01:30.000 --> 01:36.000
+They are all very good.
+
+01:36.000 --> 01:44.000
+The whole organism needs to undergo a process of normal metabolism growth.
+
+01:44.000 --> 01:50.000
+That is, all their genes need to function normally.
+
+01:50.000 --> 01:58.000
+We all know that genetic material is actually stored in DNA, which is the gene we are talking about.
+
+01:58.000 --> 02:01.000
+DNA is a structure of double-bone spiral.
+
+02:01.000 --> 02:03.000
+You can see that there are two bones here.
+
+02:04.000 --> 02:09.000
+When the DNA is copied, it will be like a zipper.
+
+02:09.000 --> 02:11.000
+These two bones will be released.
+
+02:11.000 --> 02:14.000
+Then one of them will be used as a template.
+
+02:14.000 --> 02:19.000
+According to this template, we will have DNA polymerase.
+
+02:19.000 --> 02:25.000
+It will read the genetic code above and then copy another bone to form a new DNA.
+
+02:26.000 --> 02:31.000
+However, in order for the DNA to function properly,
+
+02:31.000 --> 02:38.000
+in most cases, it still needs to reach the protein level.
+
+02:38.000 --> 02:42.000
+There is a middle product called RNA in the middle.
+
+02:42.000 --> 02:47.000
+From DNA to RNA, we call it transcription.
+
+02:47.000 --> 02:49.000
+It's very simple.
+
+02:49.000 --> 02:52.000
+DNA will decompose into a single bone.
+
+02:52.000 --> 02:56.000
+RNA polymerase will be combined with the single-bone DNA.
+
+02:56.000 --> 03:02.000
+It will read their genetic code and produce another single-bone structure.
+
+03:02.000 --> 03:04.000
+We call it RNA.
+
+03:04.000 --> 03:08.000
+RNA can interact with the ribosome.
+
+03:08.000 --> 03:13.000
+This process is called translation.
+
+03:13.000 --> 03:20.000
+These RNAs will be compared with the correct amino acid.
+
+03:20.000 --> 03:23.000
+Then it will be combined into a functional protein.
+
+03:23.000 --> 03:25.000
+This is the case in most cases.
+
+03:25.000 --> 03:29.000
+A very important topic in recent years is that
+
+03:29.000 --> 03:37.000
+biologists use big data to analyze some of the phenomena of biologics.
+
+03:37.000 --> 03:39.000
+Or to understand the situation of biological manipulation.
+
+03:39.000 --> 03:43.000
+We can also roughly divide it into these three levels.
+
+03:43.000 --> 03:45.000
+DNA level, RNA level, and protein level.
+
+03:46.000 --> 03:50.000
+These big data studies are called biologics.
+
+03:50.000 --> 03:52.000
+In English, it's omics.
+
+03:52.000 --> 03:56.000
+DNA can form genomics.
+
+03:56.000 --> 03:58.000
+RNA has transcriptomics.
+
+03:58.000 --> 04:00.000
+Protein has proteomics.
+
+04:00.000 --> 04:02.000
+Basically, it's like this.
+
+04:02.000 --> 04:03.000
+This is omics data.
+
+04:03.000 --> 04:09.000
+They all have different levels of omics data.
+
+04:10.000 --> 04:14.000
+We can study different projects at different levels.
+
+04:14.000 --> 04:16.000
+Or different studies.
+
+04:16.000 --> 04:23.000
+For example, if we want to know the situation of the sample we get.
+
+04:23.000 --> 04:25.000
+Maybe we need to go to DNA level.
+
+04:25.000 --> 04:28.000
+Let's see if there is any change in the genome.
+
+04:28.000 --> 04:32.000
+If we want to see if some gene mutation
+
+04:32.000 --> 04:37.000
+will cause the sample we want to study
+
+04:37.000 --> 04:42.000
+to have a morphological change.
+
+04:42.000 --> 04:44.000
+Then we might have to do proteomics.
+
+04:44.000 --> 04:48.000
+Different omics data have different uses.
+
+04:48.000 --> 04:52.000
+Different research directions.
+
+04:52.000 --> 04:56.000
+Speaking of omics data, we need to talk about
+
+04:56.000 --> 05:01.000
+several important technological developments in recent years.
+
+05:01.000 --> 05:03.000
+This led to the emergence of omics data.
+
+05:03.000 --> 05:06.000
+At the beginning, around the 1970s,
+
+05:06.000 --> 05:08.000
+there was the first generation of sequencing.
+
+05:08.000 --> 05:10.000
+It's mainly focused on DNA.
+
+05:10.000 --> 05:14.000
+Simply put, because when DNA is copied,
+
+05:14.000 --> 05:17.000
+it needs to use nucleic acids.
+
+05:17.000 --> 05:19.000
+Four different nucleic acids.
+
+05:19.000 --> 05:21.000
+Simply put, C, G, A, T.
+
+05:21.000 --> 05:24.000
+These four different letters represent four different nucleic acids.
+
+05:25.000 --> 05:27.000
+When copying these nucleic acids,
+
+05:27.000 --> 05:30.000
+it should be said that in this DNA,
+
+05:30.000 --> 05:34.000
+the four nucleic acids have different sequences,
+
+05:34.000 --> 05:38.000
+which leads to a difference in genetic code.
+
+05:38.000 --> 05:40.000
+Then different products will be produced.
+
+05:40.000 --> 05:44.000
+Sanger is a scientist.
+
+05:44.000 --> 05:50.000
+He used different lights to mark these four different nucleic acids.
+
+05:50.000 --> 05:54.000
+So you can imagine that when this DNA is to be copied,
+
+05:54.000 --> 05:58.000
+this single cell will receive these fluorescent nucleic acids.
+
+05:58.000 --> 06:00.000
+After these fluorescent lights are emitted,
+
+06:00.000 --> 06:02.000
+we can use this fluorescent light.
+
+06:02.000 --> 06:05.000
+By detecting this fluorescent light, we can know
+
+06:05.000 --> 06:10.000
+what the sequence of this gene looks like.
+
+06:10.000 --> 06:12.000
+What is its genetic code?
+
+06:12.000 --> 06:14.000
+Simply put, it's like this.
+
+06:14.000 --> 06:17.000
+This is the first generation of sequencing.
+
+06:17.000 --> 06:19.000
+The problem now is that the first generation of sequencing,
+
+06:19.000 --> 06:21.000
+of course, is also used a lot.
+
+06:21.000 --> 06:23.000
+Even now it is still in use.
+
+06:23.000 --> 06:25.000
+But it has a few shortcomings.
+
+06:25.000 --> 06:29.000
+The first one is that it can't be automated.
+
+06:29.000 --> 06:32.000
+Because when we want to do this sequence,
+
+06:32.000 --> 06:35.000
+we need to amplify our sample first.
+
+06:35.000 --> 06:37.000
+Then we can do the sequence.
+
+06:37.000 --> 06:38.000
+In the first generation,
+
+06:38.000 --> 06:41.000
+it can't be automated.
+
+06:41.000 --> 06:46.000
+The second one is that its genes need ...
+
+06:46.000 --> 06:48.000
+There is no way to do the overall gene.
+
+06:48.000 --> 06:52.000
+I can't take all the DNA out of a cell
+
+06:52.000 --> 06:54.000
+and do the sequencing directly.
+
+06:54.000 --> 06:55.000
+There is no way.
+
+06:55.000 --> 06:58.000
+So we need to have an assumption first.
+
+06:58.000 --> 07:01.000
+We know that this gene may ask
+
+07:01.000 --> 07:02.000
+what we want.
+
+07:02.000 --> 07:04.000
+So we do the sequence.
+
+07:04.000 --> 07:06.000
+The third one is that
+
+07:06.000 --> 07:09.000
+in terms of gene sequence,
+
+07:09.000 --> 07:15.000
+our target gene usually has a certain length.
+
+07:15.000 --> 07:17.000
+So when we do the sequence,
+
+07:17.000 --> 07:21.000
+there is a high probability of error.
+
+07:21.000 --> 07:23.000
+We can imagine that
+
+07:23.000 --> 07:25.000
+if we have a shorter sequence,
+
+07:25.000 --> 07:30.000
+there is less chance of error.
+
+07:30.000 --> 07:33.000
+But if our target gene is longer,
+
+07:33.000 --> 07:37.000
+there is a greater chance of error.
+
+07:37.000 --> 07:41.000
+So if there are people doing experiments,
+
+07:41.000 --> 07:42.000
+we know that
+
+07:42.000 --> 07:45.000
+if we do the sequence again,
+
+07:45.000 --> 07:47.000
+sometimes at the end,
+
+07:47.000 --> 07:52.000
+there is a lot of quality drop.
+
+07:52.000 --> 07:54.000
+The reason is the accumulation of error.
+
+07:54.000 --> 07:56.000
+So there are these problems.
+
+07:56.000 --> 07:57.000
+Although there are these problems,
+
+07:57.000 --> 08:00.000
+people still use it quite often.
+
+08:00.000 --> 08:02.000
+So in the early 2000s,
+
+08:02.000 --> 08:05.000
+there was another one.
+
+08:05.000 --> 08:07.000
+We call it Next Generation Sequencing.
+
+08:07.000 --> 08:10.000
+It is to solve the shortcomings of the first generation sequence.
+
+08:10.000 --> 08:12.000
+Next Generation Sequencing can be done at different levels.
+
+08:12.000 --> 08:14.000
+For example, it can do DNA sequencing,
+
+08:14.000 --> 08:16.000
+and it can do RNA sequencing.
+
+08:16.000 --> 08:24.000
+Then it can automatically copy a large number of samples that we are interested in.
+
+08:24.000 --> 08:26.000
+It's not just to get a specific gene,
+
+08:26.000 --> 08:28.000
+but we can get all the genes.
+
+08:28.000 --> 08:31.000
+There is no problem with sequencing.
+
+08:31.000 --> 08:33.000
+So it solves this problem.
+
+08:33.000 --> 08:34.000
+How does it do it?
+
+08:34.000 --> 08:35.000
+It's very simple.
+
+08:35.000 --> 08:38.000
+DNA and RNA are actually similar.
+
+08:38.000 --> 08:39.000
+Simply put,
+
+08:39.000 --> 08:42.000
+we take a cell,
+
+08:42.000 --> 08:45.000
+and then we lysate the outside.
+
+08:45.000 --> 08:48.000
+Then we extract the genetic material we want,
+
+08:48.000 --> 08:50.000
+whether it's DNA or RNA.
+
+08:50.000 --> 08:53.000
+Then we break it into pieces,
+
+08:53.000 --> 08:55.000
+which is a relatively small piece,
+
+08:55.000 --> 08:59.000
+usually 200 to 300 nucleic acid lengths.
+
+08:59.000 --> 09:03.000
+Then we will connect the two ends with the adapter.
+
+09:03.000 --> 09:05.000
+This adapter can be glued to the flow cell,
+
+09:05.000 --> 09:07.000
+which is on this piece.
+
+09:07.000 --> 09:10.000
+It can stick a lot of DNA.
+
+09:10.000 --> 09:11.000
+After that,
+
+09:11.000 --> 09:13.000
+after it is glued,
+
+09:13.000 --> 09:14.000
+and then we go to the primer,
+
+09:14.000 --> 09:17.000
+it can be easy to copy.
+
+09:17.000 --> 09:21.000
+You can see that there is a lot of DNA here.
+
+09:21.000 --> 09:23.000
+Then we use the machine to read.
+
+09:23.000 --> 09:29.000
+We can know a lot of different DNA fragments at once.
+
+09:29.000 --> 09:32.000
+Suddenly we may have millions,
+
+09:32.000 --> 09:36.000
+even tens of millions of DNA fragments,
+
+09:36.000 --> 09:38.000
+which can be sequenced by us.
+
+09:38.000 --> 09:43.000
+These things are good tools for us to do analysis.
+
+09:43.000 --> 09:46.000
+Maybe it's still not clear here.
+
+09:46.000 --> 09:47.000
+What is it for?
+
+09:47.000 --> 09:50.000
+I simply use a very simple example,
+
+09:50.000 --> 09:54.000
+let everyone understand the use of this technology,
+
+09:54.000 --> 09:56.000
+or its strength.
+
+09:56.000 --> 09:57.000
+Simply put,
+
+09:57.000 --> 09:58.000
+if we have two people today,
+
+09:58.000 --> 09:59.000
+one is normal,
+
+09:59.000 --> 10:01.000
+which is generally not sick,
+
+10:01.000 --> 10:03.000
+nor have any bad habits.
+
+10:03.000 --> 10:05.000
+The second is a person who has a smoking habit.
+
+10:05.000 --> 10:10.000
+Then we go to take their genome cells,
+
+10:10.000 --> 10:11.000
+then we go to take the genome,
+
+10:11.000 --> 10:12.000
+then we go to take the genome,
+
+10:12.000 --> 10:13.000
+then we go to do the sequencing.
+
+10:13.000 --> 10:16.000
+The data we get may look like this.
+
+10:16.000 --> 10:18.000
+These two are actually histograms.
+
+10:18.000 --> 10:20.000
+You can imagine the height,
+
+10:20.000 --> 10:23.000
+in fact, how many DNA fragments,
+
+10:23.000 --> 10:25.000
+we call DNA reads,
+
+10:25.000 --> 10:26.000
+it accumulates on it.
+
+10:26.000 --> 10:27.000
+So the higher,
+
+10:27.000 --> 10:29.000
+it means that the more DNA accumulates here.
+
+10:29.000 --> 10:32.000
+It means that its performance is higher.
+
+10:32.000 --> 10:35.000
+Just here there is a gene A,
+
+10:35.000 --> 10:38.000
+in the case of normal people,
+
+10:38.000 --> 10:41.000
+it does not have a very high level of performance.
+
+10:41.000 --> 10:43.000
+But on people who have smoking,
+
+10:43.000 --> 10:45.000
+it has a very high level of performance.
+
+10:45.000 --> 10:49.000
+It is said that smoking will affect this gene,
+
+10:49.000 --> 10:52.000
+will make this gene alive,
+
+10:52.000 --> 10:55.000
+or make it perform more.
+
+10:55.000 --> 10:57.000
+It may cause some diseases,
+
+10:57.000 --> 10:59.000
+it may cause cancer, etc.
+
+10:59.000 --> 11:00.000
+Then you compare gene B,
+
+11:00.000 --> 11:02.000
+there is no such situation.
+
+11:02.000 --> 11:05.000
+It is said that gene B is not the key gene.
+
+11:05.000 --> 11:07.000
+Then we do not use
+
+11:07.000 --> 11:09.000
+next-generation sequencing technology,
+
+11:09.000 --> 11:11.000
+we may need to determine first
+
+11:11.000 --> 11:14.000
+that gene A is the gene we want to study,
+
+11:14.000 --> 11:16.000
+then we do the sequencing.
+
+11:16.000 --> 11:19.000
+But in next-generation sequencing is different.
+
+11:19.000 --> 11:21.000
+We can have no hypothesis.
+
+11:21.000 --> 11:24.000
+We can do it in a data-driven way,
+
+11:24.000 --> 11:26.000
+that is, we do the sequencing first.
+
+11:26.000 --> 11:29.000
+We know these two people,
+
+11:29.000 --> 11:31.000
+they must have something different,
+
+11:31.000 --> 11:32.000
+but we do not know what gene,
+
+11:32.000 --> 11:34.000
+it does not matter, we do the sequencing,
+
+11:34.000 --> 11:35.000
+and then we do the comparison.
+
+11:35.000 --> 11:36.000
+From this direction of comparison,
+
+11:36.000 --> 11:39.000
+we can find a lot of candidates,
+
+11:39.000 --> 11:41.000
+and then we do downstream analysis.
+
+11:41.000 --> 11:43.000
+That is, we use next-generation sequencing,
+
+11:43.000 --> 11:47.000
+we can start from hypothesis-driven,
+
+11:47.000 --> 11:48.000
+sorry, I should say,
+
+11:48.000 --> 11:52.000
+assumption or hypothesis-driven study,
+
+11:52.000 --> 11:55.000
+into a data-driven study.
+
+11:55.000 --> 11:57.000
+So that is,
+
+11:57.000 --> 11:59.000
+we can use next-generation sequencing,
+
+11:59.000 --> 12:02.000
+this way of big data,
+
+12:02.000 --> 12:07.000
+to enhance or help us do biological research.
+
+12:07.000 --> 12:09.000
+But in fact,
+
+12:09.000 --> 12:13.000
+there is still a problem with this sequencing.
+
+12:13.000 --> 12:15.000
+For example, we got today,
+
+12:15.000 --> 12:17.000
+we finished the experiment,
+
+12:17.000 --> 12:19.000
+we got our data,
+
+12:19.000 --> 12:21.000
+and then we go to read.
+
+12:21.000 --> 12:23.000
+We found that there are indeed two blocks,
+
+12:23.000 --> 12:26.000
+it has a high level of performance.
+
+12:26.000 --> 12:27.000
+Now the question is,
+
+12:27.000 --> 12:30.000
+we do not know what these two blocks are.
+
+12:30.000 --> 12:32.000
+If we do not know what protein it is,
+
+12:32.000 --> 12:33.000
+or do not know what gene it is,
+
+12:33.000 --> 12:36.000
+we can not do downstream analysis.
+
+12:36.000 --> 12:38.000
+So, is it possible,
+
+12:38.000 --> 12:40.000
+we directly use these sequencing,
+
+12:40.000 --> 12:41.000
+what I do,
+
+12:41.000 --> 12:42.000
+what I do now,
+
+12:42.000 --> 12:45.000
+this tool is focused on RNA.
+
+12:45.000 --> 12:48.000
+Can we directly use RNA sequencing data,
+
+12:48.000 --> 12:50.000
+we automatically find out,
+
+12:50.000 --> 12:52.000
+we want the genomic features.
+
+12:52.000 --> 12:53.000
+Where is the gene?
+
+12:53.000 --> 12:54.000
+What is this gene?
+
+12:54.000 --> 12:55.000
+Where is the protein?
+
+12:55.000 --> 12:57.000
+What is this protein?
+
+12:57.000 --> 12:59.000
+Is there a way to do this kind of thing?
+
+12:59.000 --> 13:00.000
+If so,
+
+13:00.000 --> 13:02.000
+we can do downstream analysis.
+
+13:02.000 --> 13:03.000
+The advantage is,
+
+13:03.000 --> 13:04.000
+in fact,
+
+13:04.000 --> 13:05.000
+how to say,
+
+13:05.000 --> 13:06.000
+but now,
+
+13:06.000 --> 13:07.000
+of course,
+
+13:07.000 --> 13:08.000
+there are a lot of public databases,
+
+13:08.000 --> 13:11.000
+have stored the information of these annotations.
+
+13:11.000 --> 13:12.000
+In fact,
+
+13:12.000 --> 13:14.000
+we can easily read it to our,
+
+13:14.000 --> 13:16.000
+with our RNA sequencing to compare.
+
+13:16.000 --> 13:17.000
+For example,
+
+13:17.000 --> 13:18.000
+this CDS,
+
+13:18.000 --> 13:19.000
+that is,
+
+13:19.000 --> 13:20.000
+the meaning of coding sequence,
+
+13:20.000 --> 13:21.000
+that is,
+
+13:21.000 --> 13:22.000
+the meaning of protein.
+
+13:22.000 --> 13:23.000
+There is a protein here.
+
+13:23.000 --> 13:24.000
+Then we know,
+
+13:24.000 --> 13:25.000
+this segment,
+
+13:25.000 --> 13:27.000
+it is actually the protein performance.
+
+13:27.000 --> 13:28.000
+OK, good.
+
+13:28.000 --> 13:30.000
+But now the question is,
+
+13:30.000 --> 13:31.000
+RNA sequence,
+
+13:31.000 --> 13:32.000
+in fact,
+
+13:32.000 --> 13:34.000
+contains or contains more information.
+
+13:34.000 --> 13:35.000
+Some useful information,
+
+13:35.000 --> 13:36.000
+in fact,
+
+13:36.000 --> 13:38.000
+not necessarily stored in these databases.
+
+13:38.000 --> 13:39.000
+The second is,
+
+13:39.000 --> 13:41.000
+usually stored in these databases,
+
+13:41.000 --> 13:43.000
+are the wild type,
+
+13:43.000 --> 13:44.000
+sequencing,
+
+13:44.000 --> 13:45.000
+or wild type,
+
+13:45.000 --> 13:47.000
+wild type annotations are more.
+
+13:47.000 --> 13:49.000
+But you may be in this experiment,
+
+13:49.000 --> 13:50.000
+your condition is different.
+
+13:50.000 --> 13:52.000
+We did some of the mutation,
+
+13:52.000 --> 13:54.000
+we did some of the different training,
+
+13:54.000 --> 13:56.000
+resulting in our data may be different.
+
+13:56.000 --> 14:00.000
+These annotations may not necessarily be used.
+
+14:01.000 --> 14:02.000
+So,
+
+14:02.000 --> 14:03.000
+for example,
+
+14:03.000 --> 14:04.000
+we are in this data,
+
+14:04.000 --> 14:06.000
+can not see more hidden information.
+
+14:06.000 --> 14:07.000
+For example,
+
+14:07.000 --> 14:08.000
+here is a starting value,
+
+14:08.000 --> 14:09.000
+transcript starting sign,
+
+14:09.000 --> 14:10.000
+abbreviated TSS.
+
+14:10.000 --> 14:11.000
+On both sides of the two sides,
+
+14:11.000 --> 14:13.000
+there are 5' UTR and 3' UTR,
+
+14:13.000 --> 14:14.000
+that is,
+
+14:14.000 --> 14:15.000
+will not be transferred out of the region.
+
+14:15.000 --> 14:16.000
+Look here,
+
+14:16.000 --> 14:19.000
+there is actually a section of the transfer block,
+
+14:19.000 --> 14:20.000
+but only here is the protein,
+
+14:20.000 --> 14:21.000
+that is,
+
+14:21.000 --> 14:22.000
+this section and this section,
+
+14:22.000 --> 14:24.000
+will not be transferred into protein.
+
+14:24.000 --> 14:25.000
+But recently,
+
+14:25.000 --> 14:26.000
+a lot of research has been found,
+
+14:26.000 --> 14:27.000
+in fact,
+
+14:27.000 --> 14:28.000
+these two blocks,
+
+14:28.000 --> 14:29.000
+it may be some,
+
+14:29.000 --> 14:30.000
+uh,
+
+14:30.000 --> 14:31.000
+controlled protein,
+
+14:31.000 --> 14:32.000
+where they will interact,
+
+14:32.000 --> 14:34.000
+it will affect the later protein transfer.
+
+14:34.000 --> 14:36.000
+This is a very important block,
+
+14:36.000 --> 14:38.000
+but most databases
+
+14:38.000 --> 14:40.000
+will not provide this information.
+
+14:40.000 --> 14:41.000
+There is another one here,
+
+14:41.000 --> 14:43.000
+very high expression of the block,
+
+14:43.000 --> 14:46.000
+that may be a non-coding RNA,
+
+14:46.000 --> 14:48.000
+we will introduce this thing in detail later.
+
+14:48.000 --> 14:50.000
+In terms of cells,
+
+14:50.000 --> 14:53.000
+we call it small non-coding RNA or SRA.
+
+14:53.000 --> 14:54.000
+So,
+
+14:54.000 --> 14:55.000
+is there any way we can
+
+14:55.000 --> 14:56.000
+integrate these
+
+14:56.000 --> 14:58.000
+multiple genomic features,
+
+14:58.000 --> 14:59.000
+and then we will produce a
+
+14:59.000 --> 15:01.000
+high-quality annotation
+
+15:01.000 --> 15:02.000
+to help everyone,
+
+15:02.000 --> 15:04.000
+so that users can use it?
+
+15:04.000 --> 15:05.000
+And is it possible to customize,
+
+15:05.000 --> 15:06.000
+that is,
+
+15:06.000 --> 15:07.000
+what is my RNA sequence,
+
+15:07.000 --> 15:09.000
+based on my sequence data
+
+15:09.000 --> 15:11.000
+to do annotation?
+
+15:11.000 --> 15:12.000
+Is it possible
+
+15:12.000 --> 15:14.000
+that we can not only know these genes,
+
+15:14.000 --> 15:16.000
+we can also know its function?
+
+15:16.000 --> 15:18.000
+These questions are our motivation
+
+15:18.000 --> 15:20.000
+to design this tool.
+
+15:20.000 --> 15:22.000
+In fact, there are many,
+
+15:22.000 --> 15:23.000
+in fact, there are many tools
+
+15:23.000 --> 15:24.000
+that can do these,
+
+15:24.000 --> 15:25.000
+uh,
+
+15:25.000 --> 15:26.000
+do annotation.
+
+15:26.000 --> 15:27.000
+But they all have some,
+
+15:27.000 --> 15:28.000
+uh,
+
+15:28.000 --> 15:29.000
+shortcomings.
+
+15:29.000 --> 15:30.000
+Most of the tools,
+
+15:30.000 --> 15:31.000
+they are all based on
+
+15:31.000 --> 15:32.000
+genome sequence.
+
+15:32.000 --> 15:33.000
+What does it mean?
+
+15:33.000 --> 15:34.000
+That is, they only refer to
+
+15:34.000 --> 15:35.000
+this,
+
+15:35.000 --> 15:36.000
+there are some,
+
+15:36.000 --> 15:37.000
+uh,
+
+15:37.000 --> 15:38.000
+for example,
+
+15:38.000 --> 15:39.000
+we do bacteria,
+
+15:39.000 --> 15:40.000
+some bacteria,
+
+15:40.000 --> 15:41.000
+it already knows
+
+15:41.000 --> 15:43.000
+what the gene code looks like.
+
+15:43.000 --> 15:45.000
+So it only based on this gene code,
+
+15:45.000 --> 15:46.000
+and then do the analysis.
+
+15:46.000 --> 15:47.000
+It will not look at
+
+15:47.000 --> 15:49.000
+how many reads to,
+
+15:49.000 --> 15:50.000
+to, uh,
+
+15:50.000 --> 15:51.000
+compare to the position we want,
+
+15:51.000 --> 15:52.000
+or the gene we want,
+
+15:52.000 --> 15:53.000
+these information,
+
+15:53.000 --> 15:54.000
+it will not consider.
+
+15:54.000 --> 15:55.000
+So it leads to,
+
+15:55.000 --> 15:57.000
+this prediction,
+
+15:57.000 --> 15:58.000
+uh,
+
+15:58.000 --> 15:59.000
+things are not necessarily
+
+15:59.000 --> 16:00.000
+in line with our needs,
+
+16:00.000 --> 16:01.000
+and the accuracy rate is usually
+
+16:01.000 --> 16:03.000
+not so high.
+
+16:03.000 --> 16:04.000
+The second,
+
+16:04.000 --> 16:06.000
+they also lack a systematic comparison.
+
+16:06.000 --> 16:07.000
+For example,
+
+16:07.000 --> 16:08.000
+we use a tool,
+
+16:08.000 --> 16:09.000
+we go,
+
+16:09.000 --> 16:10.000
+uh,
+
+16:10.000 --> 16:11.000
+to predict,
+
+16:11.000 --> 16:12.000
+uh,
+
+16:12.000 --> 16:13.000
+a part of the starting point,
+
+16:13.000 --> 16:14.000
+and then we use another tool,
+
+16:14.000 --> 16:15.000
+we go to predict,
+
+16:15.000 --> 16:16.000
+this,
+
+16:16.000 --> 16:17.000
+the part of the terminus.
+
+16:17.000 --> 16:18.000
+As a result,
+
+16:18.000 --> 16:19.000
+we find that these two
+
+16:19.000 --> 16:20.000
+predict the result
+
+16:20.000 --> 16:21.000
+is contradictory.
+
+16:21.000 --> 16:22.000
+Often there is such a thing
+
+16:22.000 --> 16:23.000
+to happen.
+
+16:23.000 --> 16:24.000
+That is to say,
+
+16:24.000 --> 16:25.000
+they will not systematically
+
+16:25.000 --> 16:26.000
+to compare.
+
+16:26.000 --> 16:27.000
+Okay.
+
+16:27.000 --> 16:28.000
+So this is,
+
+16:28.000 --> 16:29.000
+uh,
+
+16:29.000 --> 16:30.000
+we want to do this,
+
+16:30.000 --> 16:31.000
+the reason for the analgesic,
+
+16:31.000 --> 16:32.000
+uh,
+
+16:32.000 --> 16:33.000
+it is the first tool,
+
+16:33.000 --> 16:34.000
+we are using RNA sequencing,
+
+16:34.000 --> 16:35.000
+the data,
+
+16:35.000 --> 16:36.000
+to do the genome notation.
+
+16:36.000 --> 16:37.000
+That is especially for bacteria,
+
+16:38.000 --> 16:41.000
+and archaea research.
+
+16:41.000 --> 16:42.000
+Now introduce the analgesic,
+
+16:42.000 --> 16:43.000
+this tool,
+
+16:43.000 --> 16:44.000
+uh,
+
+16:44.000 --> 16:45.000
+its several features,
+
+16:45.000 --> 16:47.000
+the first is that we can
+
+16:47.000 --> 16:49.000
+analyze different protocols,
+
+16:49.000 --> 16:51.000
+RNA sequencing data.
+
+16:51.000 --> 16:52.000
+RNA sequencing,
+
+16:52.000 --> 16:53.000
+it has a lot of different protocols,
+
+16:53.000 --> 16:55.000
+in order to do different purposes.
+
+16:55.000 --> 16:56.000
+Uh,
+
+16:56.000 --> 16:57.000
+we can,
+
+16:57.000 --> 16:58.000
+we integrate
+
+16:58.000 --> 16:59.000
+many different
+
+16:59.000 --> 17:01.000
+RNA sequencing protocols.
+
+17:01.000 --> 17:02.000
+The second,
+
+17:02.000 --> 17:03.000
+we compare a lot of existing,
+
+17:03.000 --> 17:04.000
+uh,
+
+17:04.000 --> 17:05.000
+biological information tool.
+
+17:05.000 --> 17:06.000
+Then,
+
+17:06.000 --> 17:07.000
+we do the combination,
+
+17:07.000 --> 17:08.000
+even,
+
+17:08.000 --> 17:09.000
+we do,
+
+17:09.000 --> 17:11.000
+the optimization of variables.
+
+17:11.000 --> 17:12.000
+Then,
+
+17:12.000 --> 17:13.000
+we even,
+
+17:13.000 --> 17:14.000
+if some of the,
+
+17:14.000 --> 17:15.000
+uh,
+
+17:15.000 --> 17:16.000
+methods are not too good,
+
+17:16.000 --> 17:17.000
+we do improve.
+
+17:17.000 --> 17:19.000
+If the features we want,
+
+17:19.000 --> 17:20.000
+it does not have,
+
+17:20.000 --> 17:22.000
+the existing tool can predict,
+
+17:22.000 --> 17:25.000
+then we will create a new one.
+
+17:25.000 --> 17:27.000
+This is a modular tool,
+
+17:27.000 --> 17:28.000
+that is to say,
+
+17:28.000 --> 17:29.000
+it is very flexible.
+
+17:29.000 --> 17:30.000
+The user can,
+
+17:30.000 --> 17:32.000
+for their own needs,
+
+17:32.000 --> 17:33.000
+and then build,
+
+17:33.000 --> 17:35.000
+build the tool you want,
+
+17:35.000 --> 17:37.000
+and then do the analysis.
+
+17:37.000 --> 17:38.000
+Then,
+
+17:38.000 --> 17:40.000
+the interface is consistent.
+
+17:40.000 --> 17:41.000
+Finally,
+
+17:41.000 --> 17:43.000
+we will also provide some statistics,
+
+17:43.000 --> 17:45.000
+and visualization,
+
+17:45.000 --> 17:46.000
+so that everyone can see,
+
+17:46.000 --> 17:47.000
+to analyze,
+
+17:47.000 --> 17:48.000
+your,
+
+17:48.000 --> 17:49.000
+uh,
+
+17:49.000 --> 17:50.000
+generated notation,
+
+17:50.000 --> 17:52.000
+some accuracy,
+
+17:52.000 --> 17:54.000
+and information.
+
+17:54.000 --> 17:55.000
+So,
+
+17:55.000 --> 17:56.000
+the overall purpose is,
+
+17:56.000 --> 17:58.000
+we hope to be able to produce a,
+
+17:58.000 --> 17:59.000
+systematized,
+
+17:59.000 --> 18:01.000
+and high-quality notation,
+
+18:01.000 --> 18:03.000
+and then be able to include,
+
+18:03.000 --> 18:05.000
+different genomic features,
+
+18:05.000 --> 18:06.000
+and then let the user can,
+
+18:06.000 --> 18:07.000
+overall,
+
+18:07.000 --> 18:08.000
+to see,
+
+18:08.000 --> 18:10.000
+to analyze their data.
+
+18:10.000 --> 18:11.000
+Simply put,
+
+18:11.000 --> 18:12.000
+for example,
+
+18:12.000 --> 18:13.000
+Lego,
+
+18:13.000 --> 18:14.000
+piece by piece,
+
+18:14.000 --> 18:15.000
+Lego piece,
+
+18:15.000 --> 18:16.000
+that is,
+
+18:16.000 --> 18:17.000
+RNA sequencing reads.
+
+18:17.000 --> 18:18.000
+Then,
+
+18:18.000 --> 18:19.000
+of course,
+
+18:19.000 --> 18:20.000
+we can add other information,
+
+18:20.000 --> 18:21.000
+but it is not necessary.
+
+18:21.000 --> 18:22.000
+After that,
+
+18:22.000 --> 18:23.000
+we can assemble,
+
+18:23.000 --> 18:25.000
+into a variety of different models.
+
+18:25.000 --> 18:26.000
+These models,
+
+18:26.000 --> 18:27.000
+can be tailored to the user's needs,
+
+18:27.000 --> 18:28.000
+you can assemble,
+
+18:28.000 --> 18:29.000
+the model you want,
+
+18:29.000 --> 18:31.000
+and then do your prediction.
+
+18:31.000 --> 18:32.000
+In the end,
+
+18:32.000 --> 18:33.000
+it will give you a,
+
+18:33.000 --> 18:35.000
+high-quality notation.
+
+18:35.000 --> 18:36.000
+At present,
+
+18:36.000 --> 18:37.000
+Jessica has been able to predict,
+
+18:37.000 --> 18:39.000
+more than 20 different features,
+
+18:39.000 --> 18:40.000
+the accuracy rate,
+
+18:40.000 --> 18:42.000
+is about 80% or more.
+
+18:42.000 --> 18:43.000
+Today,
+
+18:43.000 --> 18:45.000
+because it is impossible to introduce so much,
+
+18:45.000 --> 18:46.000
+we will focus on a few,
+
+18:46.000 --> 18:47.000
+core features,
+
+18:47.000 --> 18:48.000
+to introduce to everyone.
+
+18:48.000 --> 18:49.000
+These features,
+
+18:49.000 --> 18:51.000
+these core features,
+
+18:51.000 --> 18:52.000
+in fact,
+
+18:52.000 --> 18:53.000
+we often use,
+
+18:53.000 --> 18:55.000
+to predict other things,
+
+18:55.000 --> 18:58.000
+a core.
+
+18:58.000 --> 18:59.000
+Before introducing,
+
+18:59.000 --> 19:00.000
+Jessica,
+
+19:00.000 --> 19:02.000
+introduced two protocols,
+
+19:02.000 --> 19:04.000
+two RNA sequencing protocols.
+
+19:04.000 --> 19:05.000
+These two sequencing,
+
+19:05.000 --> 19:06.000
+to do annotation,
+
+19:06.000 --> 19:08.000
+is very helpful.
+
+19:08.000 --> 19:09.000
+Of course,
+
+19:09.000 --> 19:11.000
+if the audience of biologists,
+
+19:11.000 --> 19:12.000
+if you want to directly use,
+
+19:12.000 --> 19:14.000
+traditional RNA sequencing,
+
+19:14.000 --> 19:15.000
+to do analysis,
+
+19:15.000 --> 19:17.000
+there is no problem at all.
+
+19:17.000 --> 19:18.000
+It's just that we think,
+
+19:18.000 --> 19:19.000
+these two protocols,
+
+19:19.000 --> 19:21.000
+can help to do annotation.
+
+19:21.000 --> 19:22.000
+The first one is,
+
+19:22.000 --> 19:23.000
+Differential RNA Sequencing,
+
+19:23.000 --> 19:24.000
+called D-RNA-Seq.
+
+19:24.000 --> 19:25.000
+In fact,
+
+19:25.000 --> 19:27.000
+the number of applications is also very wide.
+
+19:27.000 --> 19:28.000
+Simply put,
+
+19:28.000 --> 19:29.000
+RNA reads,
+
+19:29.000 --> 19:31.000
+it can be divided into two different types.
+
+19:31.000 --> 19:33.000
+One is called Primary Transcript,
+
+19:33.000 --> 19:34.000
+that is,
+
+19:34.000 --> 19:35.000
+Triphosphate Binds,
+
+19:35.000 --> 19:36.000
+at the front.
+
+19:36.000 --> 19:38.000
+The second is called Processing RNA,
+
+19:38.000 --> 19:39.000
+that is,
+
+19:39.000 --> 19:41.000
+it does not have Triphosphate Binding.
+
+19:41.000 --> 19:42.000
+What is Primary Transcript?
+
+19:42.000 --> 19:44.000
+If you look at this picture,
+
+19:44.000 --> 19:45.000
+this red line,
+
+19:45.000 --> 19:46.000
+is actually reads.
+
+19:46.000 --> 19:47.000
+That is,
+
+19:47.000 --> 19:48.000
+it is in this,
+
+19:48.000 --> 19:50.000
+will shift the starting value,
+
+19:50.000 --> 19:51.000
+part.
+
+19:51.000 --> 19:53.000
+If it is included in the starting value,
+
+19:53.000 --> 19:54.000
+it will have this Triphosphate,
+
+19:54.000 --> 19:55.000
+here.
+
+19:55.000 --> 19:56.000
+If not,
+
+19:56.000 --> 19:57.000
+like these,
+
+19:57.000 --> 19:58.000
+these five different,
+
+19:58.000 --> 19:59.000
+these five reads,
+
+19:59.000 --> 20:01.000
+it is the middle part.
+
+20:01.000 --> 20:02.000
+OK.
+
+20:02.000 --> 20:03.000
+Then we add an element,
+
+20:03.000 --> 20:04.000
+called Tags.
+
+20:04.000 --> 20:06.000
+It will degrade the Processing RNA.
+
+20:06.000 --> 20:07.000
+So,
+
+20:07.000 --> 20:10.000
+with no Tag Tree Library,
+
+20:10.000 --> 20:12.000
+its Primary Transcript,
+
+20:12.000 --> 20:13.000
+and Processing RNA,
+
+20:13.000 --> 20:15.000
+the ratio will not change.
+
+20:15.000 --> 20:16.000
+But in Tag Tree Library,
+
+20:16.000 --> 20:17.000
+the whole ratio,
+
+20:17.000 --> 20:18.000
+Primary Transcript,
+
+20:18.000 --> 20:19.000
+the ratio will be,
+
+20:19.000 --> 20:20.000
+will be Enriched,
+
+20:20.000 --> 20:21.000
+will be improved.
+
+20:21.000 --> 20:23.000
+So when we do RNA Sequencing,
+
+20:23.000 --> 20:25.000
+we compare these two libraries,
+
+20:25.000 --> 20:26.000
+we will find that,
+
+20:26.000 --> 20:27.000
+at the starting point,
+
+20:27.000 --> 20:29.000
+this Tag Tree Library,
+
+20:29.000 --> 20:30.000
+will be significantly,
+
+20:30.000 --> 20:32.000
+higher than the Non-Tag Tree Library.
+
+20:32.000 --> 20:34.000
+This will allow us,
+
+20:34.000 --> 20:35.000
+to quickly determine,
+
+20:35.000 --> 20:37.000
+where is the starting point,
+
+20:37.000 --> 20:39.000
+the starting point of the transition.
+
+20:39.000 --> 20:40.000
+If we know the starting point of the transition,
+
+20:40.000 --> 20:42.000
+it can help us to determine,
+
+20:42.000 --> 20:43.000
+there will be,
+
+20:43.000 --> 20:45.000
+there may be some genes,
+
+20:45.000 --> 20:47.000
+there may be some UTRs,
+
+20:47.000 --> 20:49.000
+some very important information.
+
+20:49.000 --> 20:50.000
+OK.
+
+20:50.000 --> 20:51.000
+And this Resolution is very high,
+
+20:51.000 --> 20:53.000
+can go to Single Neutral Type.
+
+20:53.000 --> 20:55.000
+The second Protocol is,
+
+20:55.000 --> 20:57.000
+RNA Sequencing with Transcript Fragmentation.
+
+20:57.000 --> 20:58.000
+General RNA Molecule,
+
+20:58.000 --> 20:59.000
+is about what I just said,
+
+20:59.000 --> 21:01.000
+about 200 to 300 Nucleotides.
+
+21:01.000 --> 21:02.000
+If we do directly,
+
+21:02.000 --> 21:03.000
+sequencing,
+
+21:03.000 --> 21:04.000
+this situation will often occur,
+
+21:04.000 --> 21:06.000
+that is, we will lose,
+
+21:06.000 --> 21:07.000
+3'N,
+
+21:07.000 --> 21:08.000
+that is, the end of the information.
+
+21:08.000 --> 21:09.000
+What is the reason?
+
+21:09.000 --> 21:11.000
+Because our reads,
+
+21:11.000 --> 21:12.000
+as I just said,
+
+21:12.000 --> 21:13.000
+the longer the length,
+
+21:13.000 --> 21:14.000
+the higher the probability of error,
+
+21:14.000 --> 21:16.000
+or the higher the accumulation rate.
+
+21:16.000 --> 21:17.000
+In order to,
+
+21:17.000 --> 21:19.000
+sometimes the error,
+
+21:19.000 --> 21:21.000
+the error ratio reaches a certain level,
+
+21:21.000 --> 21:22.000
+we are very difficult to use these,
+
+21:22.000 --> 21:24.000
+to help these reads to detect,
+
+21:24.000 --> 21:25.000
+it is in,
+
+21:25.000 --> 21:26.000
+which position of the genome.
+
+21:26.000 --> 21:27.000
+Because,
+
+21:27.000 --> 21:28.000
+this score,
+
+21:28.000 --> 21:29.000
+the score of the mapping is not high.
+
+21:29.000 --> 21:31.000
+So, when we are doing the mapping,
+
+21:31.000 --> 21:32.000
+we will do a Quality Trimming,
+
+21:32.000 --> 21:33.000
+is to put these,
+
+21:33.000 --> 21:34.000
+error rate,
+
+21:34.000 --> 21:36.000
+or when doing sequencing,
+
+21:36.000 --> 21:38.000
+the quality is relatively poor,
+
+21:38.000 --> 21:39.000
+we cut it off,
+
+21:39.000 --> 21:40.000
+remove it,
+
+21:40.000 --> 21:41.000
+and then only use the remaining part,
+
+21:41.000 --> 21:42.000
+to do the sequencing.
+
+21:42.000 --> 21:43.000
+Because it was cut off,
+
+21:43.000 --> 21:45.000
+so 3'N information,
+
+21:45.000 --> 21:46.000
+will be lost.
+
+21:46.000 --> 21:48.000
+If we do a,
+
+21:48.000 --> 21:49.000
+Fragmentation,
+
+21:49.000 --> 21:51.000
+to make this RNA reads shorter,
+
+21:51.000 --> 21:53.000
+usually we will set to 80 to 100.
+
+21:53.000 --> 21:55.000
+At this time,
+
+21:55.000 --> 21:56.000
+it will make this,
+
+21:56.000 --> 21:59.000
+the number of neutrophils that have been sacrificed,
+
+21:59.000 --> 22:00.000
+can be reduced.
+
+22:00.000 --> 22:02.000
+That will make us able to,
+
+22:02.000 --> 22:05.000
+detect the whole gene transcription location,
+
+22:05.000 --> 22:07.000
+from the beginning to the end,
+
+22:07.000 --> 22:08.000
+maybe we can detect it.
+
+22:08.000 --> 22:10.000
+This can help us to see,
+
+22:10.000 --> 22:12.000
+which are the real areas,
+
+22:12.000 --> 22:13.000
+this transition,
+
+22:13.000 --> 22:14.000
+where is the transition area.
+
+22:14.000 --> 22:16.000
+OK, those are the two protocols.
+
+22:16.000 --> 22:17.000
+OK,
+
+22:17.000 --> 22:18.000
+to enter this,
+
+22:18.000 --> 22:19.000
+our core feature,
+
+22:19.000 --> 22:21.000
+our most important feature,
+
+22:21.000 --> 22:22.000
+called Transcript Boundary Detection.
+
+22:22.000 --> 22:23.000
+Because if we do not know,
+
+22:23.000 --> 22:25.000
+where is the boundary,
+
+22:25.000 --> 22:27.000
+we certainly have no way,
+
+22:27.000 --> 22:29.000
+to easily judge,
+
+22:29.000 --> 22:31.000
+the location of this gene,
+
+22:31.000 --> 22:32.000
+or its length.
+
+22:32.000 --> 22:34.000
+So the boundary is very important.
+
+22:34.000 --> 22:35.000
+This is the starting point,
+
+22:35.000 --> 22:36.000
+TSS,
+
+22:36.000 --> 22:37.000
+as we just said,
+
+22:37.000 --> 22:39.000
+if we have the RNA-seq,
+
+22:39.000 --> 22:40.000
+we can easily judge,
+
+22:40.000 --> 22:41.000
+this place.
+
+22:41.000 --> 22:42.000
+Then,
+
+22:42.000 --> 22:44.000
+this is more common,
+
+22:44.000 --> 22:45.000
+we often use,
+
+22:45.000 --> 22:47.000
+biological data analysis tool,
+
+22:47.000 --> 22:48.000
+there are three,
+
+22:48.000 --> 22:49.000
+called TSS Predictor,
+
+22:49.000 --> 22:50.000
+TSS-SAR,
+
+22:50.000 --> 22:51.000
+TSS-SAR.
+
+22:51.000 --> 22:52.000
+Then we have,
+
+22:52.000 --> 22:53.000
+after comparison,
+
+22:53.000 --> 22:54.000
+found that TSS Predictor,
+
+22:54.000 --> 22:55.000
+is the best,
+
+22:55.000 --> 22:56.000
+the highest accuracy tool.
+
+22:56.000 --> 22:58.000
+But the problem is,
+
+22:58.000 --> 23:00.000
+it has a lot of parameters,
+
+23:00.000 --> 23:02.000
+and its parameters are very sensitive.
+
+23:02.000 --> 23:03.000
+If we change a little bit,
+
+23:03.000 --> 23:04.000
+the whole result,
+
+23:04.000 --> 23:06.000
+will be very different.
+
+23:06.000 --> 23:07.000
+So we have to do,
+
+23:07.000 --> 23:08.000
+optimization.
+
+23:08.000 --> 23:09.000
+Then,
+
+23:09.000 --> 23:10.000
+I will introduce this part,
+
+23:10.000 --> 23:11.000
+below later.
+
+23:11.000 --> 23:12.000
+Terminator,
+
+23:12.000 --> 23:13.000
+is the terminal part,
+
+23:13.000 --> 23:14.000
+there is a very common tool,
+
+23:14.000 --> 23:16.000
+called TrenternHP.
+
+23:16.000 --> 23:17.000
+This tool,
+
+23:17.000 --> 23:18.000
+but it has a shortcoming,
+
+23:18.000 --> 23:19.000
+that is,
+
+23:19.000 --> 23:20.000
+it only uses,
+
+23:20.000 --> 23:21.000
+genome sequence,
+
+23:21.000 --> 23:22.000
+to do,
+
+23:22.000 --> 23:23.000
+reference sequence,
+
+23:23.000 --> 23:24.000
+to do predictions.
+
+23:24.000 --> 23:25.000
+So the accuracy is not too high,
+
+23:25.000 --> 23:27.000
+so we also made some improvements.
+
+23:27.000 --> 23:28.000
+Then,
+
+23:28.000 --> 23:29.000
+if,
+
+23:29.000 --> 23:30.000
+our,
+
+23:30.000 --> 23:31.000
+sample,
+
+23:31.000 --> 23:32.000
+in,
+
+23:32.000 --> 23:33.000
+database,
+
+23:33.000 --> 23:34.000
+has stored,
+
+23:34.000 --> 23:35.000
+the information of the protein,
+
+23:35.000 --> 23:36.000
+we can directly read.
+
+23:36.000 --> 23:37.000
+If not,
+
+23:37.000 --> 23:38.000
+we can use,
+
+23:38.000 --> 23:39.000
+RET,
+
+23:39.000 --> 23:40.000
+this tool,
+
+23:40.000 --> 23:41.000
+it can,
+
+23:41.000 --> 23:42.000
+this,
+
+23:42.000 --> 23:43.000
+use,
+
+23:43.000 --> 23:44.000
+clean source,
+
+23:44.000 --> 23:45.000
+and,
+
+23:45.000 --> 23:46.000
+annotation,
+
+23:46.000 --> 23:47.000
+sample,
+
+23:47.000 --> 23:48.000
+or,
+
+23:48.000 --> 23:49.000
+how to say,
+
+23:49.000 --> 23:50.000
+species.
+
+23:50.000 --> 23:51.000
+Then,
+
+23:51.000 --> 23:52.000
+we transfer it,
+
+23:52.000 --> 23:53.000
+to our target,
+
+23:53.000 --> 23:54.000
+species.
+
+23:54.000 --> 23:55.000
+Then,
+
+23:55.000 --> 23:56.000
+we have,
+
+23:56.000 --> 23:57.000
+this,
+
+23:57.000 --> 23:58.000
+just mentioned,
+
+23:58.000 --> 23:59.000
+fragmentation,
+
+23:59.000 --> 24:00.000
+RNA sequence,
+
+24:00.000 --> 24:01.000
+we can also easily,
+
+24:01.000 --> 24:02.000
+read,
+
+24:02.000 --> 24:03.000
+where is transcript.
+
+24:03.000 --> 24:04.000
+Then,
+
+24:04.000 --> 24:05.000
+finally,
+
+24:05.000 --> 24:06.000
+we compare,
+
+24:06.000 --> 24:07.000
+we have starting value,
+
+24:07.000 --> 24:08.000
+we have protein value,
+
+24:08.000 --> 24:09.000
+we have transcript,
+
+24:09.000 --> 24:10.000
+we have terminator,
+
+24:10.000 --> 24:11.000
+naturally,
+
+24:12.000 --> 24:13.000
+then this is,
+
+24:13.000 --> 24:14.000
+simply to see,
+
+24:14.000 --> 24:15.000
+how we can achieve,
+
+24:15.000 --> 24:16.000
+Boundary.
+
+24:16.000 --> 24:17.000
+Then,
+
+24:17.000 --> 24:18.000
+let's take a closer look at,
+
+24:18.000 --> 24:19.000
+these,
+
+24:19.000 --> 24:20.000
+feature prediction.
+
+24:20.000 --> 24:21.000
+The first one is,
+
+24:21.000 --> 24:22.000
+TSS.
+
+24:22.000 --> 24:23.000
+I just said,
+
+24:23.000 --> 24:24.000
+TSS,
+
+24:24.000 --> 24:25.000
+is,
+
+24:25.000 --> 24:26.000
+tool,
+
+24:26.000 --> 24:27.000
+is TSS predictor.
+
+24:27.000 --> 24:28.000
+Then,
+
+24:28.000 --> 24:29.000
+in order to do,
+
+24:29.000 --> 24:30.000
+parameter optimization,
+
+24:30.000 --> 24:31.000
+we use,
+
+24:31.000 --> 24:32.000
+a machine learning based,
+
+24:32.000 --> 24:33.000
+optimization method,
+
+24:33.000 --> 24:34.000
+called,
+
+24:34.000 --> 24:35.000
+Genetic Algorithm.
+
+24:35.000 --> 24:36.000
+Genetic Algorithm,
+
+24:36.000 --> 24:37.000
+this is morphology,
+
+24:37.000 --> 24:38.000
+I will introduce later.
+
+24:38.000 --> 24:39.000
+Simply put,
+
+24:39.000 --> 24:40.000
+Genetic Algorithm,
+
+24:40.000 --> 24:41.000
+uses,
+
+24:41.000 --> 24:42.000
+two different,
+
+24:42.000 --> 24:43.000
+changes,
+
+24:43.000 --> 24:44.000
+to achieve,
+
+24:44.000 --> 24:45.000
+the purpose of optimization.
+
+24:45.000 --> 24:46.000
+Simply put,
+
+24:46.000 --> 24:47.000
+for example,
+
+24:47.000 --> 24:48.000
+we have,
+
+24:48.000 --> 24:49.000
+today,
+
+24:49.000 --> 24:50.000
+this black line,
+
+24:50.000 --> 24:51.000
+represents,
+
+24:51.000 --> 24:52.000
+all the results,
+
+24:52.000 --> 24:53.000
+that is,
+
+24:53.000 --> 24:54.000
+all of our,
+
+24:54.000 --> 24:55.000
+parameter,
+
+24:55.000 --> 24:56.000
+array combination,
+
+24:56.000 --> 24:57.000
+all the results,
+
+24:57.000 --> 24:58.000
+are just,
+
+24:58.000 --> 24:59.000
+make up this line,
+
+24:59.000 --> 25:00.000
+every point,
+
+25:00.000 --> 25:01.000
+it is a,
+
+25:01.000 --> 25:02.000
+parameter result.
+
+25:02.000 --> 25:03.000
+Then,
+
+25:03.000 --> 25:04.000
+the lower part,
+
+25:04.000 --> 25:05.000
+means the worse,
+
+25:05.000 --> 25:06.000
+the performance is worse,
+
+25:06.000 --> 25:07.000
+the higher the performance,
+
+25:07.000 --> 25:08.000
+the better.
+
+25:08.000 --> 25:09.000
+Then,
+
+25:09.000 --> 25:10.000
+we will,
+
+25:10.000 --> 25:11.000
+randomly choose,
+
+25:11.000 --> 25:12.000
+a point,
+
+25:12.000 --> 25:13.000
+then,
+
+25:13.000 --> 25:14.000
+we may,
+
+25:14.000 --> 25:15.000
+add one,
+
+25:15.000 --> 25:16.000
+then we find,
+
+25:16.000 --> 25:17.000
+oh,
+
+25:17.000 --> 25:18.000
+two results,
+
+25:18.000 --> 25:19.000
+better than one,
+
+25:19.000 --> 25:20.000
+we keep two,
+
+25:20.000 --> 25:21.000
+then we add one,
+
+25:21.000 --> 25:22.000
+find three,
+
+25:22.000 --> 25:23.000
+better than two,
+
+25:23.000 --> 25:24.000
+so we keep three,
+
+25:24.000 --> 25:25.000
+this traditional,
+
+25:25.000 --> 25:26.000
+algorithmic method,
+
+25:26.000 --> 25:27.000
+keep doing,
+
+25:27.000 --> 25:28.000
+will do this point,
+
+25:28.000 --> 25:29.000
+right?
+
+25:29.000 --> 25:30.000
+Then we add one,
+
+25:30.000 --> 25:31.000
+we will find,
+
+25:31.000 --> 25:32.000
+hey,
+
+25:32.000 --> 25:33.000
+the result,
+
+25:33.000 --> 25:34.000
+seems not as good as before,
+
+25:34.000 --> 25:35.000
+we will leave the previous,
+
+25:35.000 --> 25:36.000
+then we will keep doing,
+
+25:36.000 --> 25:37.000
+will find,
+
+25:37.000 --> 25:38.000
+not as good as this,
+
+25:38.000 --> 25:39.000
+this is the best,
+
+25:39.000 --> 25:40.000
+optimized point,
+
+25:40.000 --> 25:41.000
+but we,
+
+25:41.000 --> 25:42.000
+there is another point,
+
+25:42.000 --> 25:43.000
+actually better than it,
+
+25:43.000 --> 25:44.000
+then we,
+
+25:44.000 --> 25:45.000
+so it can not,
+
+25:45.000 --> 25:46.000
+really find,
+
+25:46.000 --> 25:47.000
+optimization,
+
+25:47.000 --> 25:48.000
+what is the optimized part,
+
+25:48.000 --> 25:49.000
+how,
+
+25:49.000 --> 25:50.000
+that,
+
+25:50.000 --> 25:51.000
+genetic algorithm,
+
+25:51.000 --> 25:52.000
+what is the concept,
+
+25:52.000 --> 25:53.000
+that is,
+
+25:53.000 --> 25:54.000
+we also,
+
+25:54.000 --> 25:55.000
+randomly take a point,
+
+25:55.000 --> 25:56.000
+but we have a,
+
+25:56.000 --> 25:57.000
+huge change,
+
+25:57.000 --> 25:58.000
+that huge change,
+
+25:58.000 --> 25:59.000
+will randomly,
+
+25:59.000 --> 26:00.000
+run,
+
+26:00.000 --> 26:01.000
+assign parameter,
+
+26:01.000 --> 26:02.000
+so you do not know,
+
+26:02.000 --> 26:03.000
+run to where,
+
+26:03.000 --> 26:04.000
+may run to this point,
+
+26:04.000 --> 26:05.000
+then we find,
+
+26:05.000 --> 26:06.000
+hey,
+
+26:06.000 --> 26:07.000
+better than this,
+
+26:07.000 --> 26:08.000
+then,
+
+26:08.000 --> 26:09.000
+next,
+
+26:09.000 --> 26:10.000
+we adjust a macro,
+
+26:10.000 --> 26:11.000
+add 1,
+
+26:11.000 --> 26:12.000
+we find,
+
+26:12.000 --> 26:13.000
+3,
+
+26:13.000 --> 26:14.000
+better than 2,
+
+26:14.000 --> 26:15.000
+we take 3,
+
+26:15.000 --> 26:16.000
+then add 1,
+
+26:16.000 --> 26:17.000
+add 1,
+
+26:17.000 --> 26:18.000
+add 1,
+
+26:18.000 --> 26:19.000
+naturally,
+
+26:19.000 --> 26:20.000
+we will slowly run here,
+
+26:20.000 --> 26:21.000
+so simply,
+
+26:21.000 --> 26:22.000
+that is,
+
+26:22.000 --> 26:23.000
+through this global change,
+
+26:23.000 --> 26:24.000
+we can help us find,
+
+26:24.000 --> 26:25.000
+global optimization,
+
+26:25.000 --> 26:26.000
+that,
+
+26:26.000 --> 26:27.000
+macro adjustment,
+
+26:27.000 --> 26:28.000
+help us find,
+
+26:28.000 --> 26:29.000
+local optimization,
+
+26:29.000 --> 26:30.000
+so that,
+
+26:30.000 --> 26:31.000
+after we combine the two,
+
+26:31.000 --> 26:32.000
+we can find,
+
+26:32.000 --> 26:33.000
+the best,
+
+26:33.000 --> 26:34.000
+optimization method,
+
+26:34.000 --> 26:35.000
+that because,
+
+26:35.000 --> 26:36.000
+TSS predictor,
+
+26:36.000 --> 26:37.000
+too much,
+
+26:37.000 --> 26:38.000
+so,
+
+26:38.000 --> 26:39.000
+we,
+
+26:39.000 --> 26:40.000
+transform a little bit,
+
+26:40.000 --> 26:41.000
+this,
+
+26:41.000 --> 26:42.000
+genetic algorithm,
+
+26:42.000 --> 26:43.000
+that is,
+
+26:43.000 --> 26:44.000
+we have one more step,
+
+26:44.000 --> 26:45.000
+we have a global change,
+
+26:45.000 --> 26:46.000
+that is,
+
+26:46.000 --> 26:47.000
+we randomly assign,
+
+26:47.000 --> 26:48.000
+all parameters,
+
+26:48.000 --> 26:49.000
+that,
+
+26:49.000 --> 26:50.000
+we do evaluation,
+
+26:50.000 --> 26:51.000
+then,
+
+26:51.000 --> 26:52.000
+we only take a few parameters,
+
+26:52.000 --> 26:53.000
+to change,
+
+26:53.000 --> 26:54.000
+the same,
+
+26:54.000 --> 26:55.000
+randomly assign,
+
+26:55.000 --> 26:56.000
+a few,
+
+26:56.000 --> 26:57.000
+not all,
+
+26:57.000 --> 26:58.000
+that,
+
+26:58.000 --> 26:59.000
+will be large change,
+
+26:59.000 --> 27:00.000
+then,
+
+27:00.000 --> 27:01.000
+we do evaluation,
+
+27:01.000 --> 27:02.000
+then,
+
+27:02.000 --> 27:03.000
+we do macro,
+
+27:03.000 --> 27:04.000
+then do evaluation,
+
+27:04.000 --> 27:05.000
+so,
+
+27:06.000 --> 27:07.000
+we will get,
+
+27:07.000 --> 27:08.000
+our optimized parameters,
+
+27:08.000 --> 27:09.000
+OK,
+
+27:09.000 --> 27:10.000
+that,
+
+27:10.000 --> 27:11.000
+this is our result,
+
+27:11.000 --> 27:12.000
+we use,
+
+27:12.000 --> 27:13.000
+in three different,
+
+27:13.000 --> 27:14.000
+bacteria,
+
+27:14.000 --> 27:15.000
+bacteria,
+
+27:15.000 --> 27:16.000
+bacteria,
+
+27:16.000 --> 27:17.000
+and so on,
+
+27:17.000 --> 27:18.000
+we will find,
+
+27:18.000 --> 27:19.000
+that,
+
+27:19.000 --> 27:20.000
+after optimization,
+
+27:20.000 --> 27:21.000
+the sensitivity,
+
+27:21.000 --> 27:22.000
+are largely,
+
+27:22.000 --> 27:23.000
+have increased,
+
+27:23.000 --> 27:24.000
+especially,
+
+27:24.000 --> 27:25.000
+this,
+
+27:25.000 --> 27:26.000
+we have increased,
+
+27:26.000 --> 27:27.000
+about 30% sensitivity,
+
+27:27.000 --> 27:28.000
+that,
+
+27:28.000 --> 27:29.000
+in the specificity part,
+
+27:29.000 --> 27:30.000
+it is difficult to see,
+
+27:30.000 --> 27:31.000
+what changes,
+
+27:31.000 --> 27:32.000
+the main reason,
+
+27:32.000 --> 27:33.000
+is because,
+
+27:33.000 --> 27:34.000
+data sets,
+
+27:34.000 --> 27:35.000
+this,
+
+27:35.000 --> 27:36.000
+this,
+
+27:36.000 --> 27:37.000
+bacteria,
+
+27:37.000 --> 27:38.000
+may have 100,
+
+27:38.000 --> 27:39.000
+nucleic acid,
+
+27:39.000 --> 27:40.000
+but its starting value,
+
+27:40.000 --> 27:41.000
+may be only 1000,
+
+27:41.000 --> 27:42.000
+that is to say,
+
+27:42.000 --> 27:43.000
+there are more than 900,000,
+
+27:43.000 --> 27:44.000
+nucleotide,
+
+27:44.000 --> 27:45.000
+it is actually,
+
+27:45.000 --> 27:46.000
+not the starting value,
+
+27:46.000 --> 27:47.000
+so it is 900,000,
+
+27:47.000 --> 27:48.000
+than 1000,
+
+27:48.000 --> 27:49.000
+this is very,
+
+27:49.000 --> 27:50.000
+unbalanced,
+
+27:50.000 --> 27:51.000
+will lead to,
+
+27:51.000 --> 27:52.000
+its specificity,
+
+27:52.000 --> 27:53.000
+has always been very high,
+
+27:53.000 --> 27:54.000
+because you,
+
+27:54.000 --> 27:55.000
+as long as you,
+
+27:55.000 --> 27:56.000
+always say,
+
+27:56.000 --> 27:57.000
+it is not the starting value,
+
+27:57.000 --> 27:58.000
+it is actually,
+
+27:58.000 --> 27:59.000
+prediction accuracy,
+
+27:59.000 --> 28:00.000
+is also very high,
+
+28:00.000 --> 28:01.000
+so,
+
+28:01.000 --> 28:02.000
+this is the problem,
+
+28:02.000 --> 28:03.000
+but,
+
+28:03.000 --> 28:04.000
+the number of,
+
+28:04.000 --> 28:05.000
+golden grape bacteria,
+
+28:05.000 --> 28:06.000
+here,
+
+28:06.000 --> 28:07.000
+has dropped,
+
+28:07.000 --> 28:08.000
+about 2000,
+
+28:08.000 --> 28:09.000
+we can,
+
+28:09.000 --> 28:10.000
+remove 2000,
+
+28:10.000 --> 28:11.000
+nucleotide,
+
+28:11.000 --> 28:12.000
+ok,
+
+28:12.000 --> 28:13.000
+this is,
+
+28:13.000 --> 28:14.000
+the starting value part,
+
+28:14.000 --> 28:15.000
+let's look at,
+
+28:15.000 --> 28:16.000
+this transcript,
+
+28:16.000 --> 28:17.000
+is the part of the transition block,
+
+28:17.000 --> 28:18.000
+because,
+
+28:18.000 --> 28:19.000
+we have sequencing data,
+
+28:19.000 --> 28:20.000
+so,
+
+28:20.000 --> 28:21.000
+we can easily,
+
+28:21.000 --> 28:22.000
+see,
+
+28:22.000 --> 28:23.000
+its,
+
+28:23.000 --> 28:24.000
+gene performance,
+
+28:24.000 --> 28:25.000
+so,
+
+28:25.000 --> 28:26.000
+we can set,
+
+28:26.000 --> 28:27.000
+a cut-off,
+
+28:27.000 --> 28:28.000
+as long as,
+
+28:28.000 --> 28:29.000
+higher than this cut-off,
+
+28:29.000 --> 28:30.000
+we will determine,
+
+28:30.000 --> 28:31.000
+we will determine,
+
+28:31.000 --> 28:32.000
+it has performance,
+
+28:32.000 --> 28:33.000
+so,
+
+28:33.000 --> 28:34.000
+the reason for the cut-off,
+
+28:34.000 --> 28:35.000
+is actually,
+
+28:35.000 --> 28:36.000
+some mapping,
+
+28:36.000 --> 28:37.000
+it is noise,
+
+28:37.000 --> 28:38.000
+it is random mapping,
+
+28:38.000 --> 28:39.000
+so,
+
+28:39.000 --> 28:40.000
+we do not need to deduct these parts,
+
+28:40.000 --> 28:41.000
+so,
+
+28:41.000 --> 28:42.000
+we set a cut-off for it,
+
+28:42.000 --> 28:43.000
+then,
+
+28:43.000 --> 28:44.000
+in addition,
+
+28:44.000 --> 28:45.000
+we also set a tolerance,
+
+28:45.000 --> 28:46.000
+that is,
+
+28:46.000 --> 28:47.000
+if this performance,
+
+28:47.000 --> 28:48.000
+has a,
+
+28:48.000 --> 28:49.000
+temporary,
+
+28:49.000 --> 28:50.000
+short-term decline,
+
+28:50.000 --> 28:51.000
+we can tolerate,
+
+28:51.000 --> 28:52.000
+then,
+
+28:52.000 --> 28:53.000
+we can connect,
+
+28:53.000 --> 28:54.000
+a few,
+
+28:54.000 --> 28:55.000
+transcripts,
+
+28:55.000 --> 28:56.000
+out,
+
+28:56.000 --> 28:57.000
+then,
+
+28:57.000 --> 28:58.000
+we can compare,
+
+28:58.000 --> 28:59.000
+with our genes,
+
+28:59.000 --> 29:00.000
+because usually,
+
+29:00.000 --> 29:01.000
+a gene,
+
+29:01.000 --> 29:02.000
+so,
+
+29:02.000 --> 29:03.000
+we can use,
+
+29:03.000 --> 29:04.000
+this gene,
+
+29:04.000 --> 29:05.000
+information,
+
+29:05.000 --> 29:06.000
+to help us,
+
+29:06.000 --> 29:07.000
+to connect,
+
+29:07.000 --> 29:08.000
+this is,
+
+29:08.000 --> 29:09.000
+we do,
+
+29:09.000 --> 29:10.000
+this,
+
+29:10.000 --> 29:11.000
+transcript,
+
+29:11.000 --> 29:12.000
+block,
+
+29:12.000 --> 29:13.000
+this,
+
+29:13.000 --> 29:14.000
+prediction,
+
+29:14.000 --> 29:15.000
+way,
+
+29:15.000 --> 29:16.000
+then,
+
+29:16.000 --> 29:17.000
+finally,
+
+29:17.000 --> 29:18.000
+talk about,
+
+29:18.000 --> 29:19.000
+this,
+
+29:19.000 --> 29:20.000
+terminal,
+
+29:20.000 --> 29:21.000
+then,
+
+29:21.000 --> 29:22.000
+actually,
+
+29:22.000 --> 29:23.000
+terminal,
+
+29:23.000 --> 29:24.000
+there is,
+
+29:24.000 --> 29:25.000
+a common tool,
+
+29:25.000 --> 29:26.000
+called,
+
+29:26.000 --> 29:27.000
+TrenturnHP,
+
+29:27.000 --> 29:28.000
+but,
+
+29:28.000 --> 29:29.000
+we found,
+
+29:29.000 --> 29:30.000
+when we use,
+
+29:30.000 --> 29:31.000
+very intuitively,
+
+29:31.000 --> 29:32.000
+to,
+
+29:32.000 --> 29:33.000
+to judge,
+
+29:33.000 --> 29:34.000
+if this is,
+
+29:34.000 --> 29:35.000
+a terminal,
+
+29:35.000 --> 29:36.000
+point,
+
+29:36.000 --> 29:37.000
+then,
+
+29:37.000 --> 29:38.000
+its performance,
+
+29:38.000 --> 29:39.000
+should be,
+
+29:39.000 --> 29:40.000
+significantly,
+
+29:40.000 --> 29:41.000
+down,
+
+29:41.000 --> 29:42.000
+or end,
+
+29:42.000 --> 29:43.000
+is no longer,
+
+29:43.000 --> 29:44.000
+right,
+
+29:44.000 --> 29:45.000
+so,
+
+29:45.000 --> 29:46.000
+we went to see,
+
+29:46.000 --> 29:47.000
+this highest point,
+
+29:47.000 --> 29:48.000
+and the lowest point,
+
+29:48.000 --> 29:49.000
+it should have,
+
+29:49.000 --> 29:50.000
+a decreasing,
+
+29:50.000 --> 29:51.000
+if there is,
+
+29:51.000 --> 29:52.000
+we say,
+
+29:52.000 --> 29:53.000
+this is the correct,
+
+29:53.000 --> 29:54.000
+terminators,
+
+29:54.000 --> 29:55.000
+but,
+
+29:55.000 --> 29:56.000
+the problem is,
+
+29:56.000 --> 29:57.000
+some,
+
+29:57.000 --> 29:58.000
+TrenturnHP,
+
+29:58.000 --> 29:59.000
+it predicts,
+
+29:59.000 --> 30:00.000
+this terminator,
+
+30:00.000 --> 30:01.000
+or,
+
+30:01.000 --> 30:02.000
+it is false,
+
+30:02.000 --> 30:03.000
+or,
+
+30:03.000 --> 30:04.000
+it is in this,
+
+30:04.000 --> 30:05.000
+uh,
+
+30:05.000 --> 30:06.000
+condition,
+
+30:06.000 --> 30:07.000
+in this sample,
+
+30:07.000 --> 30:08.000
+it has no effect,
+
+30:08.000 --> 30:09.000
+or,
+
+30:09.000 --> 30:10.000
+there is no performance,
+
+30:10.000 --> 30:11.000
+this,
+
+30:11.000 --> 30:12.000
+basically,
+
+30:12.000 --> 30:13.000
+this CDS,
+
+30:13.000 --> 30:14.000
+has no performance,
+
+30:14.000 --> 30:15.000
+then,
+
+30:15.000 --> 30:16.000
+this terminator,
+
+30:16.000 --> 30:17.000
+naturally,
+
+30:17.000 --> 30:18.000
+has no function,
+
+30:18.000 --> 30:19.000
+so,
+
+30:19.000 --> 30:20.000
+by this way,
+
+30:20.000 --> 30:21.000
+we can increase,
+
+30:21.000 --> 30:22.000
+our specificity,
+
+30:22.000 --> 30:23.000
+then,
+
+30:23.000 --> 30:24.000
+we can remove,
+
+30:24.000 --> 30:25.000
+some of the,
+
+30:25.000 --> 30:26.000
+but,
+
+30:26.000 --> 30:27.000
+how do we increase,
+
+30:27.000 --> 30:28.000
+sensitivity,
+
+30:28.000 --> 30:29.000
+uh,
+
+30:29.000 --> 30:30.000
+for example,
+
+30:30.000 --> 30:31.000
+if today,
+
+30:31.000 --> 30:32.000
+we have two proteins,
+
+30:32.000 --> 30:33.000
+uh,
+
+30:33.000 --> 30:34.000
+it,
+
+30:34.000 --> 30:35.000
+the direction is relative,
+
+30:35.000 --> 30:36.000
+then,
+
+30:36.000 --> 30:37.000
+naturally,
+
+30:37.000 --> 30:38.000
+there should be,
+
+30:38.000 --> 30:39.000
+a terminal,
+
+30:39.000 --> 30:40.000
+otherwise,
+
+30:40.000 --> 30:41.000
+it will be like this,
+
+30:41.000 --> 30:42.000
+turn,
+
+30:42.000 --> 30:43.000
+turn,
+
+30:43.000 --> 30:44.000
+turn,
+
+30:44.000 --> 30:45.000
+turn,
+
+30:45.000 --> 30:46.000
+turn,
+
+30:46.000 --> 30:47.000
+turn,
+
+30:47.000 --> 30:48.000
+turn,
+
+30:48.000 --> 30:49.000
+turn,
+
+30:49.000 --> 30:50.000
+turn,
+
+30:50.000 --> 30:51.000
+turn,
+
+30:51.000 --> 30:52.000
+turn,
+
+30:52.000 --> 30:53.000
+turn,
+
+30:53.000 --> 30:54.000
+turn,
+
+30:54.000 --> 30:55.000
+turn,
+
+30:55.000 --> 30:56.000
+turn,
+
+30:56.000 --> 30:57.000
+turn,
+
+30:57.000 --> 30:58.000
+there's hairpin loop,
+
+30:58.000 --> 30:59.000
+we're talking,
+
+30:59.000 --> 31:00.000
+about hairpin,
+
+31:00.000 --> 31:01.000
+so,
+
+31:01.000 --> 31:02.000
+it has two-level structure,
+
+31:02.000 --> 31:03.000
+very stable,
+
+31:03.000 --> 31:04.000
+so,
+
+31:04.000 --> 31:05.000
+we're going to search,
+
+31:05.000 --> 31:06.000
+this part,
+
+31:06.000 --> 31:07.000
+this position,
+
+31:07.000 --> 31:08.000
+this,
+
+31:08.000 --> 31:10.000
+the middle of two proteins,
+
+31:10.000 --> 31:11.000
+do we have,
+
+31:11.000 --> 31:12.000
+this two-level structure,
+
+31:12.000 --> 31:13.000
+if yes,
+
+31:13.000 --> 31:14.000
+then,
+
+31:14.000 --> 31:15.000
+uh,
+
+31:15.000 --> 31:16.000
+this,
+
+31:16.000 --> 31:17.000
+performance,
+
+31:17.000 --> 31:18.000
+this RNA,
+
+31:18.000 --> 31:19.000
+and sequencing the,
+
+31:19.000 --> 31:20.000
+this performance,
+
+31:20.000 --> 31:21.000
+and there are these,
+
+31:21.000 --> 31:22.000
+deterioration pattern,
+
+31:22.000 --> 31:23.000
+we will judgment,
+
+31:23.000 --> 31:24.000
+it is a terminator,
+
+31:24.000 --> 31:25.000
+then,
+
+31:25.000 --> 31:26.000
+thus,
+
+31:26.000 --> 31:27.000
+the sensitivity,
+
+31:27.000 --> 31:28.000
+so,
+
+31:28.000 --> 31:29.000
+the whole terminator,
+
+31:29.000 --> 31:30.000
+prediction accuracy,
+
+31:30.000 --> 31:31.000
+can be mentioned,
+
+31:31.000 --> 31:32.000
+about 80% or so,
+
+31:32.000 --> 31:33.000
+good,
+
+31:33.000 --> 31:34.000
+then,
+
+31:34.000 --> 31:35.000
+this is our,
+
+31:35.000 --> 31:36.000
+a real example,
+
+31:36.000 --> 31:37.000
+this is,
+
+31:37.000 --> 31:38.000
+uh,
+
+31:38.000 --> 31:39.000
+a golden grape ball,
+
+31:39.000 --> 31:40.000
+an example,
+
+31:40.000 --> 31:41.000
+you can see,
+
+31:41.000 --> 31:42.000
+the red,
+
+31:42.000 --> 31:43.000
+this histogram,
+
+31:43.000 --> 31:44.000
+it is,
+
+31:44.000 --> 31:45.000
+we're talking about,
+
+31:45.000 --> 31:46.000
+fragmentation RNA-seq,
+
+31:46.000 --> 31:47.000
+you can see,
+
+31:47.000 --> 31:48.000
+it covers,
+
+31:48.000 --> 31:49.000
+the whole transcript,
+
+31:49.000 --> 31:50.000
+can cover,
+
+31:50.000 --> 31:51.000
+this block,
+
+31:51.000 --> 31:52.000
+then,
+
+31:52.000 --> 31:53.000
+general RNA sequencing,
+
+31:53.000 --> 31:54.000
+this is differential RNA sequencing,
+
+31:54.000 --> 31:55.000
+you can see,
+
+31:55.000 --> 31:56.000
+this information,
+
+31:56.000 --> 31:57.000
+good,
+
+31:57.000 --> 31:58.000
+then,
+
+31:58.000 --> 31:59.000
+we just talked about,
+
+31:59.000 --> 32:00.000
+this dRNA-seq,
+
+32:00.000 --> 32:01.000
+through this text tree,
+
+32:01.000 --> 32:02.000
+and non-text tree comparison,
+
+32:02.000 --> 32:03.000
+we can know,
+
+32:03.000 --> 32:04.000
+TSS,
+
+32:04.000 --> 32:05.000
+uh,
+
+32:05.000 --> 32:06.000
+where is the starting point,
+
+32:06.000 --> 32:07.000
+you can see,
+
+32:07.000 --> 32:08.000
+obviously,
+
+32:08.000 --> 32:09.000
+there is a text tree library,
+
+32:09.000 --> 32:10.000
+obviously,
+
+32:10.000 --> 32:11.000
+higher than non-text tree library,
+
+32:11.000 --> 32:12.000
+so,
+
+32:12.000 --> 32:13.000
+this is a TSS,
+
+32:13.000 --> 32:14.000
+here,
+
+32:14.000 --> 32:15.000
+then,
+
+32:15.000 --> 32:16.000
+we use,
+
+32:16.000 --> 32:17.000
+terminator prediction,
+
+32:17.000 --> 32:18.000
+we find TSS,
+
+32:18.000 --> 32:19.000
+terminator is here,
+
+32:19.000 --> 32:20.000
+then,
+
+32:20.000 --> 32:21.000
+CDS,
+
+32:21.000 --> 32:22.000
+protein is here,
+
+32:22.000 --> 32:23.000
+then,
+
+32:23.000 --> 32:24.000
+naturally,
+
+32:24.000 --> 32:25.000
+then,
+
+32:25.000 --> 32:26.000
+with this feature,
+
+32:26.000 --> 32:27.000
+we can,
+
+32:27.000 --> 32:28.000
+extend,
+
+32:28.000 --> 32:29.000
+to predict more things,
+
+32:29.000 --> 32:30.000
+for example,
+
+32:30.000 --> 32:31.000
+we can predict,
+
+32:31.000 --> 32:32.000
+where is the transition,
+
+32:32.000 --> 32:33.000
+where is the operon,
+
+32:33.000 --> 32:34.000
+you can see,
+
+32:34.000 --> 32:35.000
+for example,
+
+32:35.000 --> 32:36.000
+this example,
+
+32:36.000 --> 32:37.000
+there is a transcript,
+
+32:37.000 --> 32:39.000
+there is a whole transition block,
+
+32:39.000 --> 32:40.000
+then,
+
+32:40.000 --> 32:41.000
+there are two proteins in this block,
+
+32:41.000 --> 32:42.000
+meaning,
+
+32:42.000 --> 32:43.000
+these two proteins,
+
+32:43.000 --> 32:44.000
+they are together,
+
+32:44.000 --> 32:46.000
+transferred and transferred,
+
+32:46.000 --> 32:47.000
+so,
+
+32:47.000 --> 32:48.000
+these two proteins,
+
+32:48.000 --> 32:49.000
+it is possible,
+
+32:49.000 --> 32:50.000
+they are related in public use,
+
+32:50.000 --> 32:51.000
+then,
+
+32:51.000 --> 32:53.000
+we can also find promoter,
+
+32:53.000 --> 32:54.000
+then,
+
+32:54.000 --> 32:55.000
+promoter,
+
+32:55.000 --> 32:56.000
+it will accelerate,
+
+32:56.000 --> 32:57.000
+or promote,
+
+32:57.000 --> 32:58.000
+this,
+
+32:58.000 --> 32:59.000
+we do the transition,
+
+32:59.000 --> 33:00.000
+this,
+
+33:00.000 --> 33:01.000
+this,
+
+33:01.000 --> 33:02.000
+process,
+
+33:02.000 --> 33:03.000
+so,
+
+33:03.000 --> 33:04.000
+usually,
+
+33:04.000 --> 33:05.000
+it is in TSS,
+
+33:05.000 --> 33:06.000
+which is the front of the starting point,
+
+33:06.000 --> 33:07.000
+about 35 to 50,
+
+33:07.000 --> 33:08.000
+this nucleic acid,
+
+33:08.000 --> 33:09.000
+this position,
+
+33:09.000 --> 33:10.000
+so,
+
+33:10.000 --> 33:11.000
+when we,
+
+33:11.000 --> 33:12.000
+we already have TSS information,
+
+33:12.000 --> 33:13.000
+naturally,
+
+33:13.000 --> 33:14.000
+we can extract,
+
+33:14.000 --> 33:15.000
+extract the front,
+
+33:15.000 --> 33:16.000
+or extract the front,
+
+33:16.000 --> 33:17.000
+these sequences,
+
+33:17.000 --> 33:18.000
+then,
+
+33:18.000 --> 33:19.000
+we do,
+
+33:19.000 --> 33:20.000
+this,
+
+33:20.000 --> 33:21.000
+this promoter,
+
+33:21.000 --> 33:22.000
+analysis,
+
+33:22.000 --> 33:23.000
+then,
+
+33:23.000 --> 33:24.000
+we can find,
+
+33:24.000 --> 33:25.000
+oh,
+
+33:25.000 --> 33:26.000
+indeed,
+
+33:26.000 --> 33:27.000
+it has a very specific,
+
+33:27.000 --> 33:28.000
+sequence,
+
+33:28.000 --> 33:29.000
+code,
+
+33:29.000 --> 33:30.000
+TA,
+
+33:30.000 --> 33:31.000
+TAAT,
+
+33:31.000 --> 33:32.000
+this,
+
+33:32.000 --> 33:33.000
+in bacteria,
+
+33:33.000 --> 33:34.000
+we call it pre-know box,
+
+33:34.000 --> 33:35.000
+it is a promoter,
+
+33:35.000 --> 33:36.000
+ok,
+
+33:36.000 --> 33:37.000
+good,
+
+33:37.000 --> 33:38.000
+now,
+
+33:38.000 --> 33:39.000
+we have,
+
+33:39.000 --> 33:40.000
+this,
+
+33:40.000 --> 33:41.000
+transcript boundary,
+
+33:41.000 --> 33:42.000
+then,
+
+33:42.000 --> 33:43.000
+sometimes,
+
+33:43.000 --> 33:44.000
+it is very interesting,
+
+33:44.000 --> 33:45.000
+that is,
+
+33:45.000 --> 33:46.000
+what we just said at the beginning,
+
+33:46.000 --> 33:47.000
+sometimes,
+
+33:47.000 --> 33:48.000
+we will find,
+
+33:48.000 --> 33:49.000
+it has a very high expression block,
+
+33:49.000 --> 33:50.000
+but,
+
+33:50.000 --> 33:51.000
+it is not a protein,
+
+33:51.000 --> 33:52.000
+so,
+
+33:52.000 --> 33:53.000
+this is a very common,
+
+33:53.000 --> 33:54.000
+a topic,
+
+33:54.000 --> 33:55.000
+called non-coding RNA,
+
+33:55.000 --> 33:56.000
+no matter in which field,
+
+33:56.000 --> 33:57.000
+you do nucleation,
+
+33:57.000 --> 33:58.000
+you do,
+
+33:58.000 --> 33:59.000
+cell,
+
+33:59.000 --> 34:00.000
+bacteria,
+
+34:00.000 --> 34:01.000
+will,
+
+34:01.000 --> 34:02.000
+will be involved,
+
+34:02.000 --> 34:03.000
+will want to do this,
+
+34:03.000 --> 34:04.000
+what is non-coding RNA,
+
+34:04.000 --> 34:05.000
+that is,
+
+34:05.000 --> 34:06.000
+we just said,
+
+34:06.000 --> 34:07.000
+traditional,
+
+34:07.000 --> 34:08.000
+in fact,
+
+34:08.000 --> 34:09.000
+it should be DNA,
+
+34:09.000 --> 34:10.000
+into RNA,
+
+34:10.000 --> 34:11.000
+RNA into protein,
+
+34:11.000 --> 34:12.000
+but,
+
+34:12.000 --> 34:13.000
+there is,
+
+34:13.000 --> 34:14.000
+there is a special case,
+
+34:14.000 --> 34:15.000
+that is,
+
+34:15.000 --> 34:16.000
+DNA into,
+
+34:16.000 --> 34:17.000
+into RNA,
+
+34:17.000 --> 34:18.000
+it will produce,
+
+34:18.000 --> 34:19.000
+a very interesting,
+
+34:19.000 --> 34:20.000
+secondary structure,
+
+34:20.000 --> 34:21.000
+that is,
+
+34:21.000 --> 34:22.000
+it can interact,
+
+34:22.000 --> 34:23.000
+it can interact with,
+
+34:23.000 --> 34:24.000
+with this RNA,
+
+34:24.000 --> 34:25.000
+it can control,
+
+34:25.000 --> 34:26.000
+a lot of different things,
+
+34:26.000 --> 34:27.000
+you can see,
+
+34:27.000 --> 34:28.000
+in,
+
+34:28.000 --> 34:29.000
+in this bacteria,
+
+34:29.000 --> 34:30.000
+in the research of,
+
+34:30.000 --> 34:31.000
+Sermal RNA,
+
+34:31.000 --> 34:32.000
+from 2000 to,
+
+34:32.000 --> 34:33.000
+2000,
+
+34:33.000 --> 34:34.000
+2016,
+
+34:34.000 --> 34:35.000
+this publication,
+
+34:35.000 --> 34:36.000
+the number,
+
+34:36.000 --> 34:37.000
+is an increase in the number,
+
+34:37.000 --> 34:38.000
+say,
+
+34:38.000 --> 34:39.000
+it is a very important,
+
+34:39.000 --> 34:40.000
+topic,
+
+34:40.000 --> 34:41.000
+so,
+
+34:41.000 --> 34:42.000
+we use,
+
+34:42.000 --> 34:43.000
+analgesic,
+
+34:43.000 --> 34:44.000
+you can also read,
+
+34:44.000 --> 34:45.000
+non-coding RNA,
+
+34:45.000 --> 34:46.000
+how to do it,
+
+34:46.000 --> 34:47.000
+because,
+
+34:47.000 --> 34:48.000
+non-coding RNA,
+
+34:48.000 --> 34:49.000
+in it,
+
+34:49.000 --> 34:50.000
+there is a type,
+
+34:50.000 --> 34:51.000
+this type,
+
+34:51.000 --> 34:52.000
+we can use an example later,
+
+34:52.000 --> 34:53.000
+very simple,
+
+34:53.000 --> 34:54.000
+let everyone see,
+
+34:54.000 --> 34:55.000
+that simply speaking,
+
+34:55.000 --> 34:56.000
+that is,
+
+34:56.000 --> 34:57.000
+intergenic,
+
+34:57.000 --> 34:58.000
+the,
+
+34:58.000 --> 34:59.000
+the position,
+
+34:59.000 --> 35:00.000
+that is,
+
+35:00.000 --> 35:01.000
+it is like an island,
+
+35:01.000 --> 35:02.000
+not with any protein,
+
+35:02.000 --> 35:03.000
+there is a connection,
+
+35:03.000 --> 35:04.000
+that this,
+
+35:04.000 --> 35:05.000
+if this part,
+
+35:05.000 --> 35:06.000
+we can,
+
+35:06.000 --> 35:07.000
+directly judge,
+
+35:07.000 --> 35:08.000
+it is very likely to be Sermal RNA,
+
+35:08.000 --> 35:09.000
+of course,
+
+35:09.000 --> 35:10.000
+we will look at its length,
+
+35:10.000 --> 35:11.000
+Sermal RNA length,
+
+35:11.000 --> 35:12.000
+usually,
+
+35:12.000 --> 35:14.000
+within 300 to 500 nucleotides,
+
+35:14.000 --> 35:15.000
+so,
+
+35:15.000 --> 35:16.000
+if it does not have any,
+
+35:16.000 --> 35:17.000
+with protein,
+
+35:17.000 --> 35:18.000
+any contact,
+
+35:18.000 --> 35:19.000
+high,
+
+35:19.000 --> 35:20.000
+high expression,
+
+35:20.000 --> 35:21.000
+and then there is the starting value,
+
+35:21.000 --> 35:22.000
+the length,
+
+35:22.000 --> 35:23.000
+again,
+
+35:23.000 --> 35:24.000
+less than 300 to 500,
+
+35:24.000 --> 35:25.000
+then we can directly judge,
+
+35:25.000 --> 35:26.000
+it is very likely to be,
+
+35:26.000 --> 35:27.000
+Sermal RNA,
+
+35:27.000 --> 35:28.000
+non-coding RNA,
+
+35:28.000 --> 35:29.000
+if its distance is too long,
+
+35:29.000 --> 35:30.000
+we will go to see,
+
+35:30.000 --> 35:31.000
+is there a part of the part,
+
+35:31.000 --> 35:32.000
+a,
+
+35:32.000 --> 35:33.000
+a,
+
+35:33.000 --> 35:34.000
+a point,
+
+35:34.000 --> 35:35.000
+is that it has this,
+
+35:35.000 --> 35:36.000
+obvious,
+
+35:36.000 --> 35:37.000
+large magnitude,
+
+35:37.000 --> 35:38.000
+expression of the decline,
+
+35:38.000 --> 35:39.000
+if there is,
+
+35:39.000 --> 35:40.000
+it is very likely,
+
+35:40.000 --> 35:41.000
+this paragraph,
+
+35:41.000 --> 35:42.000
+is that we did not predict,
+
+35:42.000 --> 35:43.000
+the Terminator,
+
+35:43.000 --> 35:44.000
+so,
+
+35:44.000 --> 35:45.000
+here may be,
+
+35:45.000 --> 35:46.000
+Sermal RNA,
+
+35:46.000 --> 35:47.000
+or is there,
+
+35:47.000 --> 35:48.000
+is there a possibility,
+
+35:48.000 --> 35:49.000
+it is a process inside,
+
+35:49.000 --> 35:50.000
+that is,
+
+35:50.000 --> 35:51.000
+process inside,
+
+35:51.000 --> 35:52.000
+that is,
+
+35:52.000 --> 35:53.000
+it has enzyme,
+
+35:53.000 --> 35:54.000
+it will cut the gene,
+
+35:54.000 --> 35:55.000
+let it,
+
+35:55.000 --> 35:56.000
+this paragraph,
+
+35:56.000 --> 35:57.000
+that is,
+
+35:57.000 --> 35:58.000
+take it to do,
+
+35:58.000 --> 35:59.000
+do prediction,
+
+35:59.000 --> 36:00.000
+that is,
+
+36:00.000 --> 36:01.000
+it will cut this paragraph,
+
+36:01.000 --> 36:02.000
+and then this paragraph,
+
+36:02.000 --> 36:03.000
+becomes a functional Sermal RNA,
+
+36:03.000 --> 36:04.000
+if this situation,
+
+36:04.000 --> 36:05.000
+we also think,
+
+36:05.000 --> 36:06.000
+it is possible,
+
+36:06.000 --> 36:07.000
+that another location,
+
+36:07.000 --> 36:08.000
+is in UTR-derived,
+
+36:08.000 --> 36:09.000
+that is,
+
+36:09.000 --> 36:10.000
+it will,
+
+36:10.000 --> 36:11.000
+it will be with protein,
+
+36:11.000 --> 36:12.000
+together,
+
+36:12.000 --> 36:13.000
+transition,
+
+36:13.000 --> 36:14.000
+sorry,
+
+36:14.000 --> 36:15.000
+but it will not transition,
+
+36:15.000 --> 36:16.000
+into the protein area,
+
+36:16.000 --> 36:17.000
+that is,
+
+36:17.000 --> 36:18.000
+at the end of the part,
+
+36:18.000 --> 36:19.000
+if it has TSS,
+
+36:19.000 --> 36:20.000
+that is,
+
+36:20.000 --> 36:21.000
+already to the end,
+
+36:21.000 --> 36:22.000
+obviously to the end,
+
+36:22.000 --> 36:23.000
+but it has a start value,
+
+36:23.000 --> 36:24.000
+or it has a process inside,
+
+36:24.000 --> 36:25.000
+will cut it,
+
+36:25.000 --> 36:26.000
+that it is very likely,
+
+36:26.000 --> 36:27.000
+in fact,
+
+36:27.000 --> 36:28.000
+it is Sermal RNA,
+
+36:28.000 --> 36:29.000
+at the end,
+
+36:29.000 --> 36:30.000
+that is,
+
+36:30.000 --> 36:31.000
+if it has a start value,
+
+36:31.000 --> 36:32.000
+that end,
+
+36:32.000 --> 36:33.000
+in,
+
+36:33.000 --> 36:34.000
+to reach,
+
+36:34.000 --> 36:35.000
+protein time,
+
+36:35.000 --> 36:36.000
+it has a process inside,
+
+36:36.000 --> 36:37.000
+here,
+
+36:37.000 --> 36:38.000
+or it has an expression,
+
+36:38.000 --> 36:39.000
+a significant decline,
+
+36:39.000 --> 36:40.000
+we also think,
+
+36:40.000 --> 36:41.000
+it may be Sermal RNA,
+
+36:41.000 --> 36:42.000
+the other is,
+
+36:42.000 --> 36:43.000
+Interstitial,
+
+36:43.000 --> 36:44.000
+that is,
+
+36:44.000 --> 36:45.000
+it is two proteins,
+
+36:45.000 --> 36:46.000
+transition,
+
+36:46.000 --> 36:47.000
+as mentioned earlier,
+
+36:47.000 --> 36:48.000
+it is a transition together,
+
+36:48.000 --> 36:49.000
+two proteins,
+
+36:49.000 --> 36:50.000
+and then in the middle,
+
+36:50.000 --> 36:51.000
+this block,
+
+36:51.000 --> 36:54.000
+with 5'-LUT is very similar,
+
+36:54.000 --> 36:55.000
+if it has a start value,
+
+36:55.000 --> 36:57.000
+because there is a process inside associate,
+
+36:57.000 --> 36:58.000
+or its end,
+
+36:58.000 --> 37:00.000
+it has a significant decline,
+
+37:00.000 --> 37:03.000
+that it may also be Sermal RNA,
+
+37:03.000 --> 37:04.000
+good,
+
+37:04.000 --> 37:05.000
+let's take a look,
+
+37:05.000 --> 37:06.000
+this,
+
+37:06.000 --> 37:07.000
+our algorithm,
+
+37:07.000 --> 37:08.000
+will not work,
+
+37:08.000 --> 37:09.000
+so we apply it,
+
+37:09.000 --> 37:10.000
+in several,
+
+37:10.000 --> 37:11.000
+uh,
+
+37:11.000 --> 37:12.000
+uh,
+
+37:12.000 --> 37:13.000
+strands,
+
+37:13.000 --> 37:14.000
+several proteins,
+
+37:14.000 --> 37:15.000
+first of all,
+
+37:15.000 --> 37:16.000
+this is a,
+
+37:16.000 --> 37:17.000
+Intergenic Sermal RNA,
+
+37:17.000 --> 37:18.000
+you can pay attention to see,
+
+37:18.000 --> 37:19.000
+in this,
+
+37:19.000 --> 37:20.000
+uh,
+
+37:20.000 --> 37:21.000
+uh,
+
+37:21.000 --> 37:23.000
+transcript is very obvious,
+
+37:23.000 --> 37:24.000
+high expression,
+
+37:24.000 --> 37:25.000
+then there is TSS,
+
+37:25.000 --> 37:26.000
+that is,
+
+37:26.000 --> 37:27.000
+start value here,
+
+37:27.000 --> 37:30.000
+then we go to take this sequence,
+
+37:30.000 --> 37:31.000
+we go to the data base to compare,
+
+37:31.000 --> 37:33.000
+it is a known Sermal RNA,
+
+37:33.000 --> 37:35.000
+that we can not only find the known,
+
+37:35.000 --> 37:37.000
+we can find some unknown,
+
+37:37.000 --> 37:38.000
+some novel,
+
+37:38.000 --> 37:39.000
+for example,
+
+37:39.000 --> 37:40.000
+here,
+
+37:40.000 --> 37:41.000
+it is the same expression,
+
+37:41.000 --> 37:42.000
+that is,
+
+37:42.000 --> 37:43.000
+there is TSS here,
+
+37:43.000 --> 37:44.000
+it has not been reported,
+
+37:44.000 --> 37:45.000
+it is Sermal RNA,
+
+37:45.000 --> 37:46.000
+but it is obvious,
+
+37:46.000 --> 37:47.000
+if it has expression,
+
+37:47.000 --> 37:48.000
+there must be something there,
+
+37:48.000 --> 37:49.000
+so it is very likely,
+
+37:49.000 --> 37:50.000
+it is not found,
+
+37:50.000 --> 37:51.000
+Sermal RNA,
+
+37:51.000 --> 37:52.000
+that is,
+
+37:52.000 --> 37:53.000
+in 5'UTR,
+
+37:53.000 --> 37:54.000
+you can see,
+
+37:54.000 --> 37:55.000
+about the front part,
+
+37:55.000 --> 37:56.000
+it is a transition,
+
+37:56.000 --> 37:57.000
+here,
+
+37:57.000 --> 37:58.000
+protein here,
+
+37:58.000 --> 37:59.000
+that front un-transition block,
+
+37:59.000 --> 38:00.000
+there is a very extreme,
+
+38:00.000 --> 38:01.000
+high expression,
+
+38:01.000 --> 38:02.000
+block,
+
+38:02.000 --> 38:03.000
+then we go to cut it to see,
+
+38:03.000 --> 38:04.000
+then here,
+
+38:04.000 --> 38:05.000
+there is a very fast decline,
+
+38:05.000 --> 38:06.000
+we go to cut it to see,
+
+38:06.000 --> 38:07.000
+found that it is,
+
+38:07.000 --> 38:08.000
+a known Sermal RNA,
+
+38:08.000 --> 38:09.000
+that is,
+
+38:09.000 --> 38:10.000
+3'N,
+
+38:10.000 --> 38:11.000
+has reached the end,
+
+38:12.000 --> 38:14.000
+there is a very high expression,
+
+38:14.000 --> 38:15.000
+then we go to see,
+
+38:15.000 --> 38:17.000
+it is also a known Sermal RNA,
+
+38:17.000 --> 38:18.000
+that is,
+
+38:18.000 --> 38:19.000
+inter-CDS,
+
+38:19.000 --> 38:20.000
+these two CDS,
+
+38:20.000 --> 38:21.000
+it is a transition,
+
+38:21.000 --> 38:22.000
+you can see,
+
+38:22.000 --> 38:23.000
+it is a transition,
+
+38:23.000 --> 38:24.000
+in the middle part,
+
+38:24.000 --> 38:26.000
+there is a sudden high expression,
+
+38:26.000 --> 38:27.000
+there is also a TSS,
+
+38:27.000 --> 38:28.000
+then we go to see,
+
+38:28.000 --> 38:30.000
+it is also a known Sermal RNA,
+
+38:30.000 --> 38:31.000
+that is,
+
+38:31.000 --> 38:32.000
+antisense,
+
+38:32.000 --> 38:33.000
+I just did not talk about antisense,
+
+38:33.000 --> 38:34.000
+basically,
+
+38:34.000 --> 38:35.000
+it is in a direction,
+
+38:35.000 --> 38:36.000
+there is protein,
+
+38:36.000 --> 38:37.000
+for example,
+
+38:37.000 --> 38:38.000
+it is in this direction,
+
+38:38.000 --> 38:39.000
+from right to left,
+
+38:39.000 --> 38:40.000
+this direction of the transition,
+
+38:40.000 --> 38:41.000
+it is going down,
+
+38:41.000 --> 38:43.000
+it means it is in this direction,
+
+38:43.000 --> 38:45.000
+then it is a protein,
+
+38:45.000 --> 38:47.000
+but in its relative direction,
+
+38:47.000 --> 38:48.000
+from left to right,
+
+38:48.000 --> 38:51.000
+it also has a block is expressed,
+
+38:51.000 --> 38:53.000
+they are overlapping,
+
+38:53.000 --> 38:54.000
+then we go to see,
+
+38:54.000 --> 38:55.000
+found that here,
+
+38:55.000 --> 38:56.000
+in fact,
+
+38:56.000 --> 38:57.000
+it is also a Sermal RNA,
+
+38:57.000 --> 38:59.000
+then we call it antisense,
+
+38:59.000 --> 39:00.000
+Sermal RNA,
+
+39:00.000 --> 39:01.000
+that is,
+
+39:01.000 --> 39:02.000
+it is different from the protein in the direction,
+
+39:02.000 --> 39:04.000
+overlap each other,
+
+39:04.000 --> 39:05.000
+OK,
+
+39:05.000 --> 39:06.000
+then,
+
+39:06.000 --> 39:07.000
+since we have seen these cases,
+
+39:07.000 --> 39:08.000
+we want to know,
+
+39:08.000 --> 39:10.000
+what is the accuracy rate?
+
+39:10.000 --> 39:11.000
+So,
+
+39:11.000 --> 39:14.000
+we went to compare four different bacteria,
+
+39:14.000 --> 39:18.000
+they all already have a known Sermal RNA list,
+
+39:18.000 --> 39:20.000
+then we go to predict,
+
+39:20.000 --> 39:22.000
+we found that our detection rate,
+
+39:22.000 --> 39:24.000
+probably up to 80%,
+
+39:24.000 --> 39:25.000
+according to different species,
+
+39:25.000 --> 39:26.000
+different percentages,
+
+39:26.000 --> 39:28.000
+but 80% to 90%,
+
+39:28.000 --> 39:30.000
+we can detect all of them,
+
+39:30.000 --> 39:33.000
+known Sermal RNA,
+
+39:33.000 --> 39:34.000
+that is,
+
+39:34.000 --> 39:35.000
+there is no problem,
+
+39:35.000 --> 39:36.000
+that unknown,
+
+39:36.000 --> 39:38.000
+we will not have a lot of mutations?
+
+39:38.000 --> 39:39.000
+So,
+
+39:39.000 --> 39:41.000
+we have a cooperation with NIH,
+
+39:41.000 --> 39:43.000
+then they use our tool to analyze,
+
+39:43.000 --> 39:44.000
+Bordetella pertussis,
+
+39:44.000 --> 39:46.000
+is also a bacteria,
+
+39:46.000 --> 39:48.000
+then he found 15,
+
+39:48.000 --> 39:49.000
+they think it is possible,
+
+39:49.000 --> 39:51.000
+Sermal RNA candidate,
+
+39:51.000 --> 39:52.000
+some of which,
+
+39:52.000 --> 39:53.000
+they think it is possible,
+
+39:53.000 --> 39:54.000
+but,
+
+39:54.000 --> 39:55.000
+Energetic did not predict,
+
+39:55.000 --> 39:57.000
+if you see the ID,
+
+39:57.000 --> 39:58.000
+Energetic ID,
+
+39:58.000 --> 39:59.000
+we have predicted,
+
+39:59.000 --> 40:00.000
+that is not,
+
+40:00.000 --> 40:01.000
+we do not think it,
+
+40:01.000 --> 40:02.000
+Energetic,
+
+40:02.000 --> 40:03.000
+do not think it is,
+
+40:03.000 --> 40:04.000
+that result,
+
+40:04.000 --> 40:05.000
+that is,
+
+40:05.000 --> 40:07.000
+there are about 10,
+
+40:07.000 --> 40:09.000
+is the correct prediction,
+
+40:09.000 --> 40:10.000
+that is,
+
+40:10.000 --> 40:12.000
+really is Sermal RNA,
+
+40:12.000 --> 40:14.000
+or really is not Sermal RNA,
+
+40:14.000 --> 40:15.000
+so,
+
+40:15.000 --> 40:17.000
+there is about 70% accuracy,
+
+40:17.000 --> 40:19.000
+that we simply introduce a case,
+
+40:19.000 --> 40:20.000
+we think,
+
+40:20.000 --> 40:22.000
+we all think very interesting case,
+
+40:22.000 --> 40:23.000
+that this is,
+
+40:23.000 --> 40:25.000
+two proteins here,
+
+40:25.000 --> 40:27.000
+in the middle,
+
+40:27.000 --> 40:29.000
+there is a very high expression of Sermal RNA,
+
+40:29.000 --> 40:31.000
+we predict it is Sermal RNA,
+
+40:31.000 --> 40:32.000
+OK,
+
+40:32.000 --> 40:35.000
+its length is about 67 nucleotides,
+
+40:35.000 --> 40:37.000
+is 67 nucleotide length,
+
+40:37.000 --> 40:38.000
+then,
+
+40:38.000 --> 40:39.000
+we know that this is very interesting,
+
+40:39.000 --> 40:40.000
+Maxine fat burning,
+
+40:40.000 --> 40:42.000
+it is known to suppress,
+
+40:42.000 --> 40:45.000
+the expression of the cause of the disease,
+
+40:45.000 --> 40:46.000
+so,
+
+40:46.000 --> 40:48.000
+if we do not add Maxine fat burning,
+
+40:48.000 --> 40:50.000
+you will find that this Sermal RNA exists,
+
+40:50.000 --> 40:51.000
+67,
+
+40:51.000 --> 40:52.000
+there is a very strong signal,
+
+40:52.000 --> 40:53.000
+that is,
+
+40:53.000 --> 40:54.000
+this Sermal RNA really exists,
+
+40:54.000 --> 40:56.000
+it really will function,
+
+40:56.000 --> 40:57.000
+but,
+
+40:57.000 --> 40:58.000
+if we add Maxine fat burning,
+
+40:58.000 --> 41:01.000
+because the cause of the disease was reduced,
+
+41:01.000 --> 41:03.000
+you will find that the expression of this Sermal RNA is also reduced,
+
+41:03.000 --> 41:04.000
+it is said that this Sermal RNA,
+
+41:04.000 --> 41:06.000
+it is related to the disease,
+
+41:06.000 --> 41:07.000
+OK,
+
+41:07.000 --> 41:08.000
+then,
+
+41:08.000 --> 41:09.000
+the study has found that,
+
+41:09.000 --> 41:10.000
+BVG-AS,
+
+41:10.000 --> 41:11.000
+it is two,
+
+41:11.000 --> 41:12.000
+called two-component system,
+
+41:12.000 --> 41:14.000
+they will interact,
+
+41:14.000 --> 41:15.000
+then,
+
+41:15.000 --> 41:17.000
+how to say,
+
+41:17.000 --> 41:20.000
+will promote the expression of the cause of the disease,
+
+41:20.000 --> 41:21.000
+when we,
+
+41:21.000 --> 41:23.000
+if we go to mutate,
+
+41:23.000 --> 41:25.000
+this BVG-AS,
+
+41:25.000 --> 41:26.000
+you will find that,
+
+41:26.000 --> 41:28.000
+no matter if you add Maxine fat burning,
+
+41:28.000 --> 41:29.000
+this,
+
+41:29.000 --> 41:30.000
+Sermal RNA,
+
+41:30.000 --> 41:31.000
+its expression is reduced,
+
+41:31.000 --> 41:32.000
+that is to say,
+
+41:32.000 --> 41:33.000
+this Sermal RNA,
+
+41:33.000 --> 41:34.000
+it will also be,
+
+41:34.000 --> 41:35.000
+this,
+
+41:35.000 --> 41:36.000
+BVG-AS,
+
+41:36.000 --> 41:37.000
+two-component system,
+
+41:37.000 --> 41:38.000
+control,
+
+41:38.000 --> 41:39.000
+in addition,
+
+41:39.000 --> 41:40.000
+there is a thing called,
+
+41:40.000 --> 41:41.000
+HFQ,
+
+41:41.000 --> 41:42.000
+it is a global,
+
+41:42.000 --> 41:43.000
+Sermal RNA binding chaperone,
+
+41:43.000 --> 41:44.000
+that is,
+
+41:44.000 --> 41:45.000
+it will be with many,
+
+41:45.000 --> 41:46.000
+different Sermal RNA,
+
+41:46.000 --> 41:47.000
+do the interaction,
+
+41:47.000 --> 41:48.000
+that,
+
+41:48.000 --> 41:50.000
+the purpose is to help these Sermal RNA,
+
+41:50.000 --> 41:51.000
+to,
+
+41:51.000 --> 41:52.000
+find,
+
+41:52.000 --> 41:53.000
+to,
+
+41:53.000 --> 41:54.000
+its target,
+
+41:54.000 --> 41:55.000
+above,
+
+41:55.000 --> 41:56.000
+so,
+
+41:56.000 --> 41:57.000
+when this HFQ,
+
+41:57.000 --> 41:58.000
+when this HFQ,
+
+41:58.000 --> 41:59.000
+is mutated,
+
+41:59.000 --> 42:00.000
+you will find,
+
+42:00.000 --> 42:01.000
+Sermal RNA,
+
+42:01.000 --> 42:02.000
+reduced more,
+
+42:02.000 --> 42:03.000
+so,
+
+42:03.000 --> 42:04.000
+here,
+
+42:04.000 --> 42:05.000
+it is very simple,
+
+42:05.000 --> 42:06.000
+to launch a,
+
+42:06.000 --> 42:07.000
+hypothesis,
+
+42:07.000 --> 42:08.000
+that is,
+
+42:08.000 --> 42:09.000
+this Sermal RNA,
+
+42:09.000 --> 42:10.000
+it is related to the cause of the disease,
+
+42:10.000 --> 42:12.000
+it will do the interaction with HFQ,
+
+42:12.000 --> 42:13.000
+to find its target,
+
+42:13.000 --> 42:14.000
+to,
+
+42:14.000 --> 42:15.000
+target gene,
+
+42:15.000 --> 42:16.000
+that,
+
+42:16.000 --> 42:17.000
+it will also be,
+
+42:17.000 --> 42:18.000
+BVG-AS,
+
+42:18.000 --> 42:19.000
+control,
+
+42:19.000 --> 42:20.000
+so,
+
+42:20.000 --> 42:21.000
+from here,
+
+42:21.000 --> 42:22.000
+we can see that,
+
+42:22.000 --> 42:23.000
+in fact,
+
+42:23.000 --> 42:24.000
+analgesic,
+
+42:24.000 --> 42:25.000
+we have predicted,
+
+42:25.000 --> 42:26.000
+novel Sermal RNA,
+
+42:26.000 --> 42:27.000
+with a certain accuracy rate,
+
+42:27.000 --> 42:28.000
+good,
+
+42:28.000 --> 42:29.000
+in addition to Sermal RNA,
+
+42:29.000 --> 42:30.000
+we can also,
+
+42:30.000 --> 42:31.000
+as we just said,
+
+42:31.000 --> 42:32.000
+predict 20,
+
+42:32.000 --> 42:33.000
+20 different genomic features,
+
+42:33.000 --> 42:34.000
+so,
+
+42:34.000 --> 42:35.000
+we will compare,
+
+42:35.000 --> 42:36.000
+each different,
+
+42:36.000 --> 42:37.000
+feature,
+
+42:37.000 --> 42:38.000
+their database,
+
+42:38.000 --> 42:39.000
+that,
+
+42:39.000 --> 42:40.000
+most of the database,
+
+42:40.000 --> 42:41.000
+it has Ecoline,
+
+42:41.000 --> 42:42.000
+large-sensitivity data,
+
+42:42.000 --> 42:43.000
+so,
+
+42:43.000 --> 42:44.000
+we use large-sensitivity to do,
+
+42:44.000 --> 42:45.000
+that,
+
+42:45.000 --> 42:46.000
+we have differential RNA sequencing,
+
+42:46.000 --> 42:47.000
+or,
+
+42:47.000 --> 42:48.000
+we only use traditional RNA-seq,
+
+42:48.000 --> 42:49.000
+that,
+
+42:49.000 --> 42:50.000
+most of the accuracy rate,
+
+42:50.000 --> 42:51.000
+can reach about 80%,
+
+42:51.000 --> 42:52.000
+the prediction accuracy rate,
+
+42:52.000 --> 42:53.000
+but,
+
+42:53.000 --> 42:54.000
+there are two,
+
+42:54.000 --> 42:55.000
+very special,
+
+42:55.000 --> 42:56.000
+one is called TSS,
+
+42:56.000 --> 42:57.000
+which is the starting value,
+
+42:57.000 --> 42:58.000
+one is Promoter,
+
+42:58.000 --> 42:59.000
+one is only 6%,
+
+42:59.000 --> 43:00.000
+one is 39%,
+
+43:00.000 --> 43:01.000
+but, of course,
+
+43:01.000 --> 43:02.000
+we can also understand,
+
+43:02.000 --> 43:03.000
+because Promoter and TSS,
+
+43:03.000 --> 43:04.000
+are related,
+
+43:04.000 --> 43:05.000
+Promoter is usually,
+
+43:05.000 --> 43:06.000
+on the top of TSS,
+
+43:06.000 --> 43:07.000
+35 to 50,
+
+43:07.000 --> 43:09.000
+nucleotide length,
+
+43:09.000 --> 43:10.000
+so,
+
+43:10.000 --> 43:11.000
+TSS is not good,
+
+43:11.000 --> 43:12.000
+Promoter,
+
+43:12.000 --> 43:13.000
+of course,
+
+43:13.000 --> 43:14.000
+will not be good,
+
+43:14.000 --> 43:15.000
+so,
+
+43:15.000 --> 43:16.000
+why not,
+
+43:16.000 --> 43:17.000
+we will see,
+
+43:17.000 --> 43:18.000
+that,
+
+43:18.000 --> 43:19.000
+this is,
+
+43:19.000 --> 43:20.000
+in Public Database,
+
+43:20.000 --> 43:21.000
+RegulonDB,
+
+43:21.000 --> 43:22.000
+three,
+
+43:22.000 --> 43:23.000
+RNA sequencing data,
+
+43:23.000 --> 43:24.000
+they,
+
+43:24.000 --> 43:25.000
+then,
+
+43:25.000 --> 43:26.000
+you will find,
+
+43:26.000 --> 43:27.000
+they have,
+
+43:27.000 --> 43:28.000
+very large,
+
+43:28.000 --> 43:29.000
+sequence,
+
+43:29.000 --> 43:30.000
+only 43,
+
+43:30.000 --> 43:31.000
+starting value,
+
+43:31.000 --> 43:32.000
+they are,
+
+43:32.000 --> 43:33.000
+can be found,
+
+43:33.000 --> 43:34.000
+that,
+
+43:34.000 --> 43:35.000
+there are many,
+
+43:35.000 --> 43:36.000
+most of them,
+
+43:36.000 --> 43:37.000
+they are self-evident,
+
+43:37.000 --> 43:38.000
+there is no overlap,
+
+43:38.000 --> 43:39.000
+then,
+
+43:39.000 --> 43:40.000
+we suspect,
+
+43:40.000 --> 43:41.000
+this data,
+
+43:41.000 --> 43:42.000
+there should be a problem,
+
+43:42.000 --> 43:43.000
+because,
+
+43:43.000 --> 43:44.000
+they are all Ecoline,
+
+43:44.000 --> 43:45.000
+how can the difference be so big,
+
+43:45.000 --> 43:46.000
+so,
+
+43:46.000 --> 43:47.000
+we want to say,
+
+43:47.000 --> 43:48.000
+then,
+
+43:48.000 --> 43:49.000
+we put,
+
+43:49.000 --> 43:50.000
+all,
+
+43:50.000 --> 43:51.000
+these three,
+
+43:51.000 --> 43:52.000
+Database,
+
+43:52.000 --> 43:53.000
+plus,
+
+43:53.000 --> 43:54.000
+these data,
+
+43:54.000 --> 43:55.000
+these TSS data,
+
+43:55.000 --> 43:56.000
+we all go forward,
+
+43:56.000 --> 43:57.000
+to find Promoter,
+
+43:57.000 --> 43:58.000
+see if we can find Promoter,
+
+43:58.000 --> 43:59.000
+the result,
+
+43:59.000 --> 44:00.000
+is like this,
+
+44:00.000 --> 44:01.000
+these three,
+
+44:01.000 --> 44:02.000
+Database,
+
+44:02.000 --> 44:03.000
+Dataset,
+
+44:03.000 --> 44:04.000
+they have no way,
+
+44:04.000 --> 44:05.000
+to find,
+
+44:05.000 --> 44:06.000
+the existence of Promoter,
+
+44:06.000 --> 44:07.000
+but,
+
+44:07.000 --> 44:08.000
+in Energetic,
+
+44:08.000 --> 44:09.000
+80% of TSS,
+
+44:09.000 --> 44:10.000
+can find,
+
+44:10.000 --> 44:11.000
+with this Promoter,
+
+44:11.000 --> 44:12.000
+Association,
+
+44:12.000 --> 44:13.000
+so,
+
+44:13.000 --> 44:14.000
+we can know,
+
+44:14.000 --> 44:15.000
+these three,
+
+44:15.000 --> 44:16.000
+Public,
+
+44:16.000 --> 44:17.000
+these three,
+
+44:17.000 --> 44:18.000
+Public Dataset,
+
+44:18.000 --> 44:19.000
+actually,
+
+44:19.000 --> 44:20.000
+there is a problem,
+
+44:20.000 --> 44:21.000
+then,
+
+44:21.000 --> 44:22.000
+Energetic,
+
+44:22.000 --> 44:23.000
+it is actually,
+
+44:23.000 --> 44:24.000
+accuracy,
+
+44:24.000 --> 44:25.000
+in providing,
+
+44:25.000 --> 44:26.000
+Annotation,
+
+44:26.000 --> 44:27.000
+it is a,
+
+44:27.000 --> 44:28.000
+high-quality,
+
+44:28.000 --> 44:29.000
+Annotation,
+
+44:29.000 --> 44:30.000
+OK,
+
+44:30.000 --> 44:31.000
+then,
+
+44:31.000 --> 44:32.000
+I want,
+
+44:32.000 --> 44:34.000
+to introduce here,
+
+44:34.000 --> 44:35.000
+then,
+
+44:35.000 --> 44:36.000
+other Features,
+
+44:36.000 --> 44:37.000
+if you are interested,
+
+44:37.000 --> 44:38.000
+we can discuss,
+
+44:38.000 --> 44:39.000
+we can discuss,
+
+44:39.000 --> 44:40.000
+no problem,
+
+44:40.000 --> 44:41.000
+then,
+
+44:41.000 --> 44:42.000
+finally,
+
+44:42.000 --> 44:43.000
+I want to,
+
+44:43.000 --> 44:44.000
+give you a little,
+
+44:44.000 --> 44:45.000
+report,
+
+44:45.000 --> 44:46.000
+give you a little,
+
+44:46.000 --> 44:47.000
+advertising,
+
+44:47.000 --> 44:48.000
+welcome everyone to use,
+
+44:48.000 --> 44:49.000
+basically,
+
+44:49.000 --> 44:50.000
+it is like this,
+
+44:50.000 --> 44:51.000
+this,
+
+44:51.000 --> 44:52.000
+our,
+
+44:52.000 --> 44:53.000
+Energetic,
+
+44:53.000 --> 44:54.000
+has been,
+
+44:54.000 --> 44:55.000
+integrated,
+
+44:55.000 --> 44:56.000
+to NIH,
+
+44:56.000 --> 44:57.000
+biological information,
+
+44:57.000 --> 44:58.000
+list,
+
+44:58.000 --> 44:59.000
+inside,
+
+44:59.000 --> 45:00.000
+so,
+
+45:00.000 --> 45:01.000
+NIH,
+
+45:01.000 --> 45:02.000
+can also be very free,
+
+45:02.000 --> 45:03.000
+they are also very,
+
+45:03.000 --> 45:04.000
+often use our tool,
+
+45:04.000 --> 45:05.000
+then,
+
+45:05.000 --> 45:06.000
+the second is,
+
+45:06.000 --> 45:07.000
+LabOne,
+
+45:07.000 --> 45:08.000
+it is a,
+
+45:08.000 --> 45:09.000
+organization,
+
+45:09.000 --> 45:10.000
+it will collect,
+
+45:10.000 --> 45:11.000
+various,
+
+45:11.000 --> 45:12.000
+different,
+
+45:12.000 --> 45:13.000
+biological information,
+
+45:13.000 --> 45:14.000
+software,
+
+45:14.000 --> 45:15.000
+they are,
+
+45:15.000 --> 45:16.000
+when they collect,
+
+45:16.000 --> 45:17.000
+software,
+
+45:17.000 --> 45:18.000
+they will do,
+
+45:18.000 --> 45:19.000
+voting,
+
+45:19.000 --> 45:20.000
+will let this,
+
+45:20.000 --> 45:21.000
+they can vote,
+
+45:21.000 --> 45:22.000
+they feel better,
+
+45:22.000 --> 45:23.000
+then,
+
+45:23.000 --> 45:24.000
+we were,
+
+45:24.000 --> 45:25.000
+recorded that week,
+
+45:25.000 --> 45:26.000
+voting,
+
+45:26.000 --> 45:27.000
+we are,
+
+45:27.000 --> 45:28.000
+top three,
+
+45:28.000 --> 45:29.000
+position,
+
+45:29.000 --> 45:30.000
+then,
+
+45:30.000 --> 45:31.000
+the other Energetic,
+
+45:31.000 --> 45:32.000
+was also reported,
+
+45:32.000 --> 45:33.000
+by RNA-seq blog,
+
+45:33.000 --> 45:34.000
+then,
+
+45:34.000 --> 45:35.000
+when we have preprinted,
+
+45:35.000 --> 45:36.000
+we will be reported,
+
+45:36.000 --> 45:37.000
+to RNA-seq blog,
+
+45:37.000 --> 45:38.000
+that blog,
+
+45:38.000 --> 45:39.000
+is also a lot of people,
+
+45:39.000 --> 45:40.000
+in addition,
+
+45:40.000 --> 45:41.000
+we are now,
+
+45:41.000 --> 45:42.000
+this Energetic,
+
+45:42.000 --> 45:43.000
+has been applied to,
+
+45:43.000 --> 45:44.000
+very,
+
+45:44.000 --> 45:45.000
+very,
+
+45:45.000 --> 45:46.000
+different,
+
+45:46.000 --> 45:47.000
+very,
+
+45:47.000 --> 45:48.000
+different,
+
+45:48.000 --> 45:49.000
+bacteria,
+
+45:49.000 --> 45:50.000
+so,
+
+45:50.000 --> 45:51.000
+a lot of,
+
+45:51.000 --> 45:52.000
+published,
+
+45:52.000 --> 45:53.000
+paper,
+
+45:53.000 --> 45:54.000
+then,
+
+45:54.000 --> 45:55.000
+some,
+
+45:55.000 --> 45:56.000
+tools,
+
+45:56.000 --> 45:57.000
+also started to use,
+
+45:57.000 --> 45:58.000
+our tools,
+
+45:58.000 --> 45:59.000
+as a,
+
+45:59.000 --> 46:00.000
+standard,
+
+46:00.000 --> 46:01.000
+because we are,
+
+46:01.000 --> 46:02.000
+the first tool,
+
+46:02.000 --> 46:03.000
+to use RNA-seq,
+
+46:03.000 --> 46:04.000
+to do,
+
+46:04.000 --> 46:05.000
+non-coding RNA,
+
+46:05.000 --> 46:06.000
+prediction,
+
+46:06.000 --> 46:07.000
+so,
+
+46:07.000 --> 46:08.000
+they also started,
+
+46:08.000 --> 46:09.000
+to integrate,
+
+46:09.000 --> 46:10.000
+these Energetic,
+
+46:10.000 --> 46:11.000
+tools,
+
+46:11.000 --> 46:12.000
+or compare,
+
+46:12.000 --> 46:13.000
+our tools,
+
+46:13.000 --> 46:14.000
+then,
+
+46:14.000 --> 46:15.000
+recently,
+
+46:15.000 --> 46:16.000
+a lot of,
+
+46:16.000 --> 46:17.000
+papers,
+
+46:17.000 --> 46:18.000
+have been published,
+
+46:18.000 --> 46:19.000
+so,
+
+46:19.000 --> 46:20.000
+I will,
+
+46:20.000 --> 46:21.000
+I will also,
+
+46:21.000 --> 46:22.000
+reply,
+
+46:22.000 --> 46:23.000
+if I have a bug,
+
+46:23.000 --> 46:24.000
+welcome to tell me,
+
+46:24.000 --> 46:25.000
+then I can also,
+
+46:25.000 --> 46:26.000
+correct,
+
+46:26.000 --> 46:27.000
+so,
+
+46:27.000 --> 46:28.000
+this is,
+
+46:28.000 --> 46:29.000
+our GitHub,
+
+46:29.000 --> 46:30.000
+basically,
+
+46:30.000 --> 46:31.000
+Energetic,
+
+46:31.000 --> 46:32.000
+is stored here,
+
+46:32.000 --> 46:33.000
+it is an open source,
+
+46:33.000 --> 46:34.000
+everyone can,
+
+46:34.000 --> 46:35.000
+use at will,
+
+46:35.000 --> 46:36.000
+you want to modify,
+
+46:36.000 --> 46:37.000
+or how,
+
+46:37.000 --> 46:38.000
+there is no problem,
+
+46:38.000 --> 46:39.000
+if there is any problem,
+
+46:39.000 --> 46:40.000
+this issue,
+
+46:40.000 --> 46:41.000
+you can also open,
+
+46:41.000 --> 46:42.000
+then I can also,
+
+46:42.000 --> 46:43.000
+go to see,
+
+46:43.000 --> 46:44.000
+to upgrade,
+
+46:44.000 --> 46:45.000
+OK,
+
+46:45.000 --> 46:46.000
+good,
+
+46:46.000 --> 46:47.000
+finally,
+
+46:47.000 --> 46:48.000
+Energetic,
+
+46:48.000 --> 46:49.000
+is the first,
+
+46:49.000 --> 46:50.000
+modular,
+
+46:50.000 --> 46:51.000
+and systematic,
+
+46:51.000 --> 46:52.000
+RNA-seq-based tool,
+
+46:52.000 --> 46:53.000
+to do,
+
+46:53.000 --> 46:54.000
+genome annotations,
+
+46:54.000 --> 46:55.000
+mainly for,
+
+46:55.000 --> 46:56.000
+bacteria and archaea,
+
+46:56.000 --> 46:57.000
+then we compare,
+
+46:57.000 --> 46:58.000
+a lot of different tools,
+
+46:58.000 --> 46:59.000
+then we integrate,
+
+46:59.000 --> 47:00.000
+the best one,
+
+47:00.000 --> 47:01.000
+then,
+
+47:01.000 --> 47:02.000
+we also create,
+
+47:02.000 --> 47:03.000
+then improve,
+
+47:03.000 --> 47:04.000
+these methods,
+
+47:04.000 --> 47:05.000
+we not only integrate,
+
+47:05.000 --> 47:06.000
+we also improve,
+
+47:06.000 --> 47:07.000
+then we can,
+
+47:07.000 --> 47:08.000
+systematically,
+
+47:08.000 --> 47:09.000
+to compare,
+
+47:09.000 --> 47:10.000
+to detect,
+
+47:10.000 --> 47:11.000
+many different,
+
+47:11.000 --> 47:12.000
+genomic features,
+
+47:12.000 --> 47:13.000
+then we also,
+
+47:13.000 --> 47:14.000
+optimize,
+
+47:14.000 --> 47:15.000
+necessary to optimize,
+
+47:15.000 --> 47:16.000
+these parameters,
+
+47:16.000 --> 47:17.000
+so,
+
+47:17.000 --> 47:18.000
+users can freely,
+
+47:18.000 --> 47:19.000
+to use,
+
+47:19.000 --> 47:20.000
+to do,
+
+47:20.000 --> 47:21.000
+you want to do,
+
+47:21.000 --> 47:22.000
+feature detection,
+
+47:22.000 --> 47:23.000
+then we provide,
+
+47:23.000 --> 47:24.000
+statistics,
+
+47:24.000 --> 47:25.000
+and visualization,
+
+47:25.000 --> 47:26.000
+for your reference,
+
+47:26.000 --> 47:27.000
+OK,
+
+47:27.000 --> 47:28.000
+finally,
+
+47:28.000 --> 47:29.000
+is to give you a,
+
+47:29.000 --> 47:30.000
+high-quality annotations,
+
+47:30.000 --> 47:31.000
+then,
+
+47:31.000 --> 47:32.000
+in the future,
+
+47:32.000 --> 47:33.000
+we hope to continue,
+
+47:33.000 --> 47:34.000
+is,
+
+47:34.000 --> 47:35.000
+to use deep learning,
+
+47:35.000 --> 47:36.000
+to improve,
+
+47:36.000 --> 47:37.000
+our predictions,
+
+47:37.000 --> 47:38.000
+deep learning,
+
+47:38.000 --> 47:39.000
+it is a,
+
+47:39.000 --> 47:40.000
+up-to-date,
+
+47:40.000 --> 47:41.000
+machine learning method,
+
+47:41.000 --> 47:42.000
+then the other is,
+
+47:42.000 --> 47:43.000
+we also hope,
+
+47:43.000 --> 47:44.000
+to integrate more,
+
+47:44.000 --> 47:45.000
+RNA-seq protocol data,
+
+47:45.000 --> 47:46.000
+to help us,
+
+47:46.000 --> 47:47.000
+improve,
+
+47:47.000 --> 47:48.000
+our prediction accuracy,
+
+47:48.000 --> 47:49.000
+we also hope,
+
+47:49.000 --> 47:50.000
+to extend,
+
+47:50.000 --> 47:51.000
+our function,
+
+47:51.000 --> 47:52.000
+to,
+
+47:52.000 --> 47:53.000
+virus,
+
+47:53.000 --> 47:54.000
+and,
+
+47:54.000 --> 47:55.000
+biological research,
+
+47:55.000 --> 47:56.000
+above,
+
+47:56.000 --> 47:57.000
+that,
+
+47:57.000 --> 47:58.000
+finally,
+
+47:58.000 --> 47:59.000
+thank you,
+
+47:59.000 --> 48:00.000
+my,
+
+48:00.000 --> 48:01.000
+this is my,
+
+48:01.000 --> 48:02.000
+subject,
+
+48:02.000 --> 48:03.000
+although,
+
+48:03.000 --> 48:04.000
+I have left,
+
+48:04.000 --> 48:05.000
+for a while,
+
+48:05.000 --> 48:06.000
+but,
+
+48:06.000 --> 48:07.000
+this,
+
+48:07.000 --> 48:08.000
+we have been updating,
+
+48:08.000 --> 48:09.000
+that,
+
+48:09.000 --> 48:10.000
+this is my,
+
+48:10.000 --> 48:11.000
+boss,
+
+48:11.000 --> 48:12.000
+then his,
+
+48:12.000 --> 48:13.000
+people below,
+
+48:13.000 --> 48:14.000
+help me,
+
+48:14.000 --> 48:15.000
+experiment data,
+
+48:15.000 --> 48:16.000
+that,
+
+48:16.000 --> 48:17.000
+this is our,
+
+48:17.000 --> 48:18.000
+bioinformatics team,
+
+48:18.000 --> 48:19.000
+that,
+
+48:19.000 --> 48:20.000
+NIH,
+
+48:20.000 --> 48:21.000
+help us,
+
+48:21.000 --> 48:22.000
+experiment,
+
+48:22.000 --> 48:23.000
+cooperation subject,
+
+48:23.000 --> 48:24.000
+that,
+
+48:24.000 --> 48:25.000
+this is my boss now,
+
+48:25.000 --> 48:26.000
+although,
+
+48:26.000 --> 48:27.000
+I have jumped to,
+
+48:27.000 --> 48:28.000
+proteomics,
+
+48:28.000 --> 48:29.000
+and,
+
+48:29.000 --> 48:30.000
+multiomics,
+
+48:30.000 --> 48:31.000
+and,
+
+48:31.000 --> 48:32.000
+single cell,
+
+48:32.000 --> 48:33.000
+less touch,
+
+48:33.000 --> 48:34.000
+RNA-seq,
+
+48:34.000 --> 48:35.000
+this,
+
+48:35.000 --> 48:36.000
+bacteria,
+
+48:36.000 --> 48:37.000
+RNA-seq part,
+
+48:37.000 --> 48:38.000
+but,
+
+48:38.000 --> 48:39.000
+he still,
+
+48:39.000 --> 48:40.000
+give us a lot of freedom,
+
+48:40.000 --> 48:41.000
+can go,
+
+48:41.000 --> 48:42.000
+maintain,
+
+48:42.000 --> 48:43.000
+my tool,
+
+48:43.000 --> 48:44.000
+probably,
+
+48:44.000 --> 48:45.000
+that,
+
+48:45.000 --> 48:46.000
+if there are any questions,
+
+48:46.000 --> 48:47.000
+I am very,
+
+48:47.000 --> 48:48.000
+welcome,
+
+48:48.000 --> 48:49.000
+then,
+
+48:49.000 --> 48:50.000
+we can discuss together,
+
+48:50.000 --> 48:51.000
+thank you.
+
+48:52.000 --> 48:53.000
+OK,
+
+48:53.000 --> 48:54.000
+thank you,
+
+48:54.000 --> 48:55.000
+Songpan,
+
+48:55.000 --> 48:56.000
+help us do such a wonderful speech,
+
+48:56.000 --> 48:57.000
+OK,
+
+48:57.000 --> 48:58.000
+now,
+
+48:58.000 --> 48:59.000
+audience,
+
+48:59.000 --> 49:00.000
+is there anyone who has any questions,
+
+49:00.000 --> 49:01.000
+you can turn on your microphone,
+
+49:01.000 --> 49:02.000
+then,
+
+49:02.000 --> 49:03.000
+ask questions,
+
+49:07.000 --> 49:08.000
+OK,
+
+49:08.000 --> 49:09.000
+if not,
+
+49:09.000 --> 49:10.000
+I will,
+
+49:10.000 --> 49:11.000
+have,
+
+49:11.000 --> 49:12.000
+OK,
+
+49:12.000 --> 49:13.000
+hello,
+
+49:13.000 --> 49:14.000
+I am,
+
+49:14.000 --> 49:15.000
+British,
+
+49:15.000 --> 49:16.000
+Bristol University,
+
+49:16.000 --> 49:17.000
+first time,
+
+49:17.000 --> 49:18.000
+to attend,
+
+49:18.000 --> 49:19.000
+this conference,
+
+49:19.000 --> 49:20.000
+thank you,
+
+49:20.000 --> 49:21.000
+have you heard,
+
+49:21.000 --> 49:22.000
+yes,
+
+49:22.000 --> 49:23.000
+yes,
+
+49:23.000 --> 49:24.000
+yes,
+
+49:24.000 --> 49:25.000
+thank you,
+
+49:25.000 --> 49:26.000
+one question,
+
+49:26.000 --> 49:27.000
+you mentioned,
+
+49:27.000 --> 49:28.000
+that,
+
+49:28.000 --> 49:29.000
+there is a,
+
+49:29.000 --> 49:30.000
+TSS optimization,
+
+49:30.000 --> 49:31.000
+that is,
+
+49:31.000 --> 49:32.000
+parameter adjustment,
+
+49:32.000 --> 49:33.000
+that,
+
+49:33.000 --> 49:34.000
+myself,
+
+49:34.000 --> 49:35.000
+recently,
+
+49:35.000 --> 49:36.000
+was taught by the boss,
+
+49:36.000 --> 49:37.000
+to analyze,
+
+49:37.000 --> 49:38.000
+proteomics,
+
+49:38.000 --> 49:39.000
+that adjustment,
+
+49:39.000 --> 49:40.000
+refers to,
+
+49:40.000 --> 49:41.000
+comparing,
+
+49:41.000 --> 49:42.000
+the RNA sequencing,
+
+49:42.000 --> 49:43.000
+with
+
+49:43.000 --> 49:44.000
+the Z-score,
+
+49:44.000 --> 49:45.000
+how do you,
+
+49:45.000 --> 49:46.000
+how do you say,
+
+49:46.000 --> 49:47.000
+that part is,
+
+49:47.000 --> 49:48.000
+relatively,
+
+49:48.000 --> 49:49.000
+not so,
+
+49:49.000 --> 49:50.000
+complicated,
+
+49:50.000 --> 49:51.000
+because,
+
+49:51.000 --> 49:52.000
+we are,
+
+49:52.000 --> 49:53.000
+our,
+
+49:53.000 --> 49:54.000
+we are,
+
+49:54.000 --> 49:55.000
+the WebLab,
+
+49:55.000 --> 49:56.000
+members,
+
+49:56.000 --> 49:57.000
+they are,
+
+49:57.000 --> 49:58.000
+seriously,
+
+49:58.000 --> 49:59.000
+to really
+
+49:59.000 --> 50:00.000
+use the meat of the body,
+
+50:00.000 --> 50:01.000
+to compare,
+
+50:01.000 --> 50:02.000
+this,
+
+50:02.000 --> 50:03.000
+RNA sequencing of data,
+
+50:03.000 --> 50:04.000
+so they are very certain,
+
+50:04.000 --> 50:05.000
+to find out the meat,
+
+50:05.000 --> 50:06.000
+after the comparison,
+
+50:06.000 --> 50:07.000
+set,
+
+50:07.000 --> 50:08.000
+so these sets,
+
+50:08.000 --> 50:09.000
+is our Golden Standard,
+
+50:09.000 --> 50:10.000
+so I'm going to compare,
+
+50:10.000 --> 50:11.000
+this set,
+
+50:11.000 --> 50:12.000
+and then calculate,
+
+50:12.000 --> 50:13.000
+sensitivity,
+
+50:13.000 --> 50:14.000
+and specificity,
+
+50:14.000 --> 50:15.000
+right,
+
+50:15.000 --> 50:16.000
+so,
+
+50:16.000 --> 50:17.000
+I did not use,
+
+50:17.000 --> 50:18.000
+P-value,
+
+50:18.000 --> 50:19.000
+this thing,
+
+50:19.000 --> 50:20.000
+right,
+
+50:20.000 --> 50:21.000
+but,
+
+50:21.000 --> 50:22.000
+if you are doing,
+
+50:22.000 --> 50:23.000
+proteomics,
+
+50:23.000 --> 50:24.000
+then,
+
+50:24.000 --> 50:25.000
+it is possible,
+
+50:25.000 --> 50:26.000
+you need to compare,
+
+50:26.000 --> 50:27.000
+P-value,
+
+50:27.000 --> 50:28.000
+but,
+
+50:28.000 --> 50:29.000
+how to do this in detail,
+
+50:29.000 --> 50:30.000
+we may,
+
+50:30.000 --> 50:31.000
+need to know,
+
+50:31.000 --> 50:32.000
+ah,
+
+50:32.000 --> 50:34.000
+the purpose of your research,
+
+50:34.000 --> 50:35.000
+and,
+
+50:35.000 --> 50:36.000
+optimization,
+
+50:36.000 --> 50:37.000
+or,
+
+50:37.000 --> 50:38.000
+you can do this,
+
+50:38.000 --> 50:39.000
+so,
+
+50:39.000 --> 50:40.000
+you need to know,
+
+50:40.000 --> 50:41.000
+how to do this,
+
+50:41.000 --> 50:42.000
+to determine,
+
+50:42.000 --> 50:43.000
+this,
+
+50:43.000 --> 50:44.000
+right,
+
+50:44.000 --> 50:45.000
+thank you.
+
+50:45.000 --> 50:46.000
+Okay,
+
+50:46.000 --> 50:47.000
+so I have a question,
+
+50:47.000 --> 50:48.000
+which is,
+
+50:48.000 --> 50:49.000
+thank you for providing,
+
+50:49.000 --> 50:50.000
+this,
+
+50:50.000 --> 50:51.000
+this,
+
+50:51.000 --> 50:52.000
+this,
+
+50:52.000 --> 50:53.000
+this,
+
+50:53.000 --> 50:54.000
+this,
+
+50:54.000 --> 50:55.000
+this,
+
+50:55.000 --> 50:56.000
+this,
+
+50:56.000 --> 50:57.000
+this,
+
+50:57.000 --> 50:58.000
+this,
+
+50:58.000 --> 50:59.000
+this,
+
+50:59.000 --> 51:00.000
+this,
+
+51:00.000 --> 51:01.000
+this,
+
+51:01.000 --> 51:02.000
+this,
+
+51:02.000 --> 51:03.000
+this,
+
+51:03.000 --> 51:04.000
+this,
+
+51:04.000 --> 51:05.000
+this,
+
+51:05.000 --> 51:06.000
+this,
+
+51:06.000 --> 51:07.000
+this,
+
+51:07.000 --> 51:08.000
+this,
+
+51:08.000 --> 51:09.000
+this,
+
+51:09.000 --> 51:10.000
+this,
+
+51:10.000 --> 51:11.000
+this,
+
+51:11.000 --> 51:12.000
+this,
+
+51:12.000 --> 51:13.000
+this,
+
+51:13.000 --> 51:14.000
+this,
+
+51:14.000 --> 51:15.000
+this,
+
+51:15.000 --> 51:16.000
+this,
+
+51:16.000 --> 51:17.000
+this,
+
+51:17.000 --> 51:18.000
+this,
+
+51:18.000 --> 51:19.000
+this,
+
+51:19.000 --> 51:20.000
+this,
+
+51:20.000 --> 51:21.000
+this,
+
+51:21.000 --> 51:22.000
+this,
+
+51:22.000 --> 51:23.000
+and this.
+
+51:23.000 --> 51:24.000
+So,
+
+51:24.000 --> 51:25.000
+the question I want to ask you is,
+
+51:25.000 --> 51:26.000
+about your research,
+
+51:27.000 --> 51:28.000
+I did,
+
+51:28.000 --> 51:31.000
+some solar star system complexes,
+
+51:31.000 --> 51:34.000
+what are the general characteristics of this solar star system,
+
+51:34.000 --> 51:35.000
+and how do you determine
+
+51:35.000 --> 51:36.000
+the individual characteristics,
+
+51:36.000 --> 51:37.000
+for example,
+
+51:37.000 --> 51:38.000
+we have different,
+
+51:38.000 --> 51:39.000
+uh,
+
+51:39.000 --> 51:40.000
+patients,
+
+51:40.000 --> 51:41.000
+their,
+
+51:41.000 --> 51:42.000
+for example,
+
+51:42.000 --> 51:43.000
+we want to know,
+
+51:43.000 --> 51:44.000
+we want to know,
+
+51:44.000 --> 51:46.000
+does it change the pathology of the pathology,
+
+51:47.000 --> 51:48.000
+that this thing,
+
+51:48.000 --> 51:49.000
+for,
+
+51:49.000 --> 51:51.000
+for annotation,
+
+51:51.000 --> 51:53.000
+the requirements are relatively low,
+
+51:54.000 --> 51:55.000
+so they will usually,
+
+51:55.000 --> 51:57.000
+usually go to see the pathology of the change,
+
+51:57.000 --> 51:59.000
+to do statistics analysis,
+
+51:59.000 --> 52:00.000
+right,
+
+52:00.000 --> 52:01.000
+but he,
+
+52:01.000 --> 52:02.000
+this method,
+
+52:02.000 --> 52:05.000
+he can study some of these pathologies,
+
+52:05.000 --> 52:06.000
+that is,
+
+52:06.000 --> 52:07.000
+the performance of RNN,
+
+52:07.000 --> 52:08.000
+uh,
+
+52:08.000 --> 52:09.000
+polygons,
+
+52:09.000 --> 52:10.000
+or,
+
+52:10.000 --> 52:12.000
+does he have any RNA performance?
+
+52:12.000 --> 52:13.000
+Can you use this tool?
+
+52:14.000 --> 52:15.000
+There may be no way,
+
+52:15.000 --> 52:17.000
+because if you want to do,
+
+52:17.000 --> 52:18.000
+look at the performance of RNA,
+
+52:18.000 --> 52:19.000
+in fact,
+
+52:19.000 --> 52:20.000
+we do,
+
+52:20.000 --> 52:21.000
+simply do mapping,
+
+52:21.000 --> 52:22.000
+we can get this,
+
+52:22.000 --> 52:23.000
+uh,
+
+52:23.000 --> 52:24.000
+that is,
+
+52:24.000 --> 52:25.000
+we generally talk about this,
+
+52:25.000 --> 52:26.000
+we just said,
+
+52:26.000 --> 52:27.000
+at the beginning of this histogram part,
+
+52:28.000 --> 52:29.000
+that is,
+
+52:29.000 --> 52:30.000
+you can get,
+
+52:32.000 --> 52:33.000
+you can get this thing,
+
+52:34.000 --> 52:35.000
+that,
+
+52:35.000 --> 52:36.000
+usually we do,
+
+52:36.000 --> 52:37.000
+will not do,
+
+52:37.000 --> 52:38.000
+there is a need to see,
+
+52:38.000 --> 52:39.000
+non-coding RNA,
+
+52:39.000 --> 52:40.000
+UTRR,
+
+52:40.000 --> 52:41.000
+and so on,
+
+52:41.000 --> 52:42.000
+less,
+
+52:42.000 --> 52:43.000
+but of course,
+
+52:43.000 --> 52:44.000
+if they,
+
+52:44.000 --> 52:45.000
+someone wants to use,
+
+52:45.000 --> 52:46.000
+there is no problem,
+
+52:46.000 --> 52:47.000
+it can also be done,
+
+52:47.000 --> 52:48.000
+it can also be analyzed,
+
+52:48.000 --> 52:49.000
+absolutely no problem,
+
+52:49.000 --> 52:50.000
+can be used,
+
+52:50.000 --> 52:51.000
+just that I am,
+
+52:51.000 --> 52:52.000
+I am just less,
+
+52:52.000 --> 52:53.000
+almost did not see anyone,
+
+52:53.000 --> 52:54.000
+will do,
+
+52:54.000 --> 52:55.000
+to do,
+
+52:55.000 --> 52:56.000
+want to go to see,
+
+52:56.000 --> 52:57.000
+non-coding RNA,
+
+52:57.000 --> 52:58.000
+or go to see,
+
+52:58.000 --> 52:59.000
+this UTRR,
+
+52:59.000 --> 53:00.000
+or look at the binding type,
+
+53:00.000 --> 53:01.000
+and so on,
+
+53:01.000 --> 53:02.000
+less,
+
+53:02.000 --> 53:03.000
+usually go,
+
+53:03.000 --> 53:04.000
+directly to see,
+
+53:04.000 --> 53:05.000
+UTRR,
+
+53:05.000 --> 53:06.000
+will be more,
+
+53:06.000 --> 53:07.000
+understand,
+
+53:07.000 --> 53:08.000
+good,
+
+53:08.000 --> 53:09.000
+thank you,
+
+53:13.000 --> 53:14.000
+that,
+
+53:14.000 --> 53:15.000
+there are people,
+
+53:15.000 --> 53:16.000
+any questions?
+
+53:22.000 --> 53:23.000
+OK,
+
+53:23.000 --> 53:24.000
+if not,
+
+53:24.000 --> 53:25.000
+then we thank,
+
+53:25.000 --> 53:26.000
+Songwan today,
+
+53:26.000 --> 53:27.000
+to give us this speech,
+
+53:27.000 --> 53:28.000
+that we look forward to next time,
+
+53:28.000 --> 53:29.000
+if you still have a chance,
+
+53:29.000 --> 53:30.000
+can come again,
+
+53:30.000 --> 53:31.000
+Taiwan,
+
+53:31.000 --> 53:33.000
+update the latest research,
+
+53:33.000 --> 53:34.000
+thank you,
+
+53:34.000 --> 53:35.000
+thank you,
+
+53:35.000 --> 53:36.000
+thank you,
+

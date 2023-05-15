@@ -1,0 +1,1884 @@
+start	end	text
+0	29000	Thank you very much to the host and thank you very much to the audience for coming today to enjoy the light, and then I am Bo Xuan, and then I am going to talk about the topic here, although there are several English words here, but I think maybe if you are not doing economics, maybe these words, each word guess out what it means, but together do not know what it means, so I will slowly explain that is anyway, the editor will slowly know what I am doing.
+29000	47000	What am I doing? Let's start by explaining the topic. First of all, what we are doing is games, so this is the game. I want to use a few minutes to briefly introduce what the theory of the game is, which is a more scientific introduction.
+47000	61000	First of all, what is a game? In fact, when you see the game, you may think of online games, table tennis, scissor-paper, or something like that.
+61000	74000	In fact, these are all included in this range. For us, the game is actually a mathematical way to describe a strategic environment where we are interacting with people.
+74000	93000	As I just said, it actually contains a lot of different situations, such as describing what we eat in our daily life, and we don't know what to eat, so we use scissor-paper to decide. This can also be described, or more complicated, such as a game of Go, which may not be able to play all day.
+93000	114000	In fact, it can also be described in such a game theory. It is very comprehensive, but basically it can be divided into two categories in our game. First of all, the first category is Normal Form. I'm not sure what Chinese should be called. Maybe it's called formal expression, but I'll just call it Normal Form.
+114000	133000	In the Normal Form, all the players involved in the game all make a move at the same time. It's like scissor-paper. So if you don't know what I'm talking about, you can imagine the environment of scissor-paper. Everyone makes a move at the same time.
+133000	150000	The other situation is what I'm going to talk about today, which is Extensive Form. All players make a move at the same time. It's like Go. Everyone makes a move, and then I make a move, and then someone else makes a move. Basically, the game can be divided into these two categories.
+150000	175000	Now I'm going to introduce the basic mathematical definition of these two categories. The following two videos are a bit dry. If you have any questions, you can ask me right away if you don't understand the mathematical symbols. First of all, let's look at Normal Form, which is the situation where everyone makes a move at the same time. In this situation, we can actually use three things in mathematics to define it.
+175000	190000	First of all, we need to have a collection to say how many players there are now. For example, if two people are playing scissor-paper with me and Gao Xian, then this N is 1 and 2. 1 is me, 2 is Gao Xian.
+190000	211000	Next, we need to describe how many moves each person can make. So at this time, for each player i, I will use si to express the number of moves he can make. For example, in scissor-paper, everyone has three moves.
+212000	225000	Next, we collect all the people who can make a move into an array. For example, if there are N people, I will collect them into A1 to AN. Then we call it a strategy combination.
+226000	241000	Next, the third thing is that I know what strategy combinations there are, and I know how many people are playing. Next, I have to decide who wins and who loses. In this case, we need to use a function to express it. At this time, we call it a payoff function.
+241000	264000	So for each player i, this UI is actually a combination of moves from everyone to how many rewards you can get. For example, in scissor-paper, we are playing with Gao Xian. If I make scissors and he makes paper, I win. So in this strategy combination, what I get is 1 and what Gao Xian gets is 0.
+265000	270000	It's like this. You can use these three elements to express a strategy environment where you make a move at the same time.
+271000	295000	In math, we want to predict what kind of result people will play in this situation. The mathematical prediction we proposed is basically that the most likely result to be played should be the most stable result. At this time, we use a concept called balance to say what is the most likely result.
+296000	310000	The concept of balance is actually that it is defined on a strategy combination. We will say that a certain strategy combination is a balance, which means that for each player, if I know what he does, I am not willing to change the move.
+310000	331000	So in this case, it means that this is a balance. So if it is expressed mathematically, we say that a strategy combination A is a simple strategy balance, which means that for each player, he actually uses this A-I, which means that it is a move used by players other than I.
+332000	345000	So in this case, it means that player I uses this A-I, which is actually better than any other move for his revenge. If this is true for each player, then we say that this is a simple strategy balance.
+346000	353000	I want to stop for a few seconds, do you have any questions? If not, I will continue to talk about another part.
+354000	358000	OK, then I will continue.
+358000	366000	What we have just finished talking about is Normal Form. Next, we will talk about Extensive Form, which is the situation where everyone takes turns to make moves.
+366000	382000	So at this time, you think that it is actually very similar to the previous Normal Form in terms of mathematical structure. It is the same as having a combination to describe how many players there are. In addition, we also need a combination to describe the moves that everyone can make.
+382000	395000	But now everyone takes turns to make moves, so now there are three things left to describe. The first is who does what in what place.
+395000	402000	So this means that we have to describe all possible situations, and then in this case, who does what and what he can do.
+402000	414000	There are several different mathematical expressions, but here I use a more common mathematical expression to describe what I just said.
+414000	427000	First of all, when talking about these notations, if you think there are a lot of mathematical symbols, you can imagine that this is a game of Go. Now N is 1 and 2, that is, there are black stones and white stones.
+427000	435000	Then S is all possible places, so if it is a 19x19 chessboard, there are 361 possible points.
+435000	445000	The next first one is that we are describing all possible situations, which is actually all the chess pieces that are still in progress.
+445000	454000	That is, you may play half of the chess pieces or the chess pieces that have been played. We use a set called H, which actually represents history.
+454000	461000	This combination describes all possible situations, that is, half of the chess pieces, etc. I collect them all in this combination.
+461000	471000	So this combination is actually very large, and then each element in this combination actually means that the previous experience has been put in order.
+471000	479000	For example, the first step of the black stone line is in Tianyuan, which is an element in the history, and now the white stone has put down another hand.
+479000	483000	These things will be collected in this history.
+484000	490000	There is a relatively small set Z in this history set, and we call it Terminal History.
+490000	495000	So this is all the chess pieces that have been played, and I put them in this set.
+495000	499000	Because by the time our revenge is based on this set.
+499000	504000	The second thing we have to decide is who is doing what in what situation.
+505000	507000	First of all, who is it?
+507000	514000	That is to say, it is actually a function P, and then this function is from all possible chess pieces that have not been played.
+514000	524000	In the chess piece, it is printed to the player's collection, which means that this move should be the turn of the black chess or the white chess.
+524000	528000	So this is P, this function is helping us.
+529000	531000	Then the third thing is what.
+531000	535000	That is, in every situation, I know that this person is now the turn of the black chess.
+535000	538000	What actions can be done?
+538000	541000	Then I will use Row as a Correspondence to describe.
+541000	549000	What he printed here is a piece of paper from the history set to a possible action set.
+549000	552000	It means that this description says what I can do now.
+553000	557000	Then how do we decide who wins and who loses?
+557000	560000	It is the same as using our familiar UI to show.
+560000	565000	Like this thing, it is a function from a final outcome Z to a ten-digit line.
+565000	570000	For example, if it is in Go, I look at the chess pieces I play.
+570000	574000	If someone's D is bigger, who wins?
+574000	577000	This is how we describe the game.
+578000	582000	Then in this case, we have the same theoretical prediction.
+582000	585000	Then our theoretical prediction here is actually using a concept.
+585000	590000	It is also balanced, but it is actually called perfectly balanced.
+590000	594000	Then in this case, it is everyone's strategy.
+594000	598000	It is actually in every situation where you can move.
+598000	604000	This means that it is from each H, and then it is the turn of the player I to do the action.
+604000	607000	Printed to say that you can do the action here.
+607000	613000	So a strategy is equal to telling me that every time it's my turn to move, what action do I want to do?
+613000	621000	When I know what everyone's strategy is, I say that a strategy set is perfectly balanced.
+621000	625000	It means that it is balanced in every history.
+625000	631000	In this case, this is a little bit more balanced than the previous mathematical concept.
+632000	635000	I know very well that the first few minutes are actually very boring.
+635000	637000	Because it is actually just defining math.
+637000	639000	But it may become more interesting later.
+639000	643000	Because I started talking about some more real-world games.
+643000	646000	I just want to stop here for a few seconds.
+646000	649000	I want to make sure that the audience has any questions.
+652000	655000	If there is no problem, then I will continue.
+655000	660000	What I just said is actually a 10-minute version of Crash Course.
+660000	663000	The next thing I want to talk about is Behavioral Game Theory.
+663000	668000	In other words, we think about whether this game predicts people's behavior well or not.
+671000	676000	Basically, we are thinking about whether it is balanced to predict people's behavior well.
+676000	679000	This is the most important question in Behavioral Game Theory.
+679000	684000	At this time, we can consider a game first.
+684000	687000	This is called a mystery game.
+688000	695000	This game is actually a game proposed by Keynes in the 1930s.
+695000	700000	At this time, you can imagine that there was a mystery game.
+700000	706000	Imagine that there are six bonus points left in the final of the mystery game.
+706000	715000	Then they will publish the photos of the six bonus points on the newspaper.
+715000	720000	At this time, in order to increase the exposure of everyone, the newspaper held a lottery.
+720000	724000	The lottery is to see the photos of the six bonus points.
+724000	731000	Please choose who will be the most popular person in this lottery.
+731000	735000	Who is the most popular person to vote for?
+735000	738000	At this time, if you are participating in the lottery,
+738000	740000	you are actually thinking about something in your head.
+740000	744000	It's not about which bonus point is the most handsome or beautiful.
+744000	751000	What you are thinking about is how others will think which one is the most handsome or beautiful.
+751000	755000	So this means that you are not thinking about what he absolutely thinks,
+755000	758000	but at the same time you are thinking about what others think.
+758000	762000	At the same time, when you think so, others will also think that you will think so about me.
+762000	766000	Should I also think about it based on this matter?
+766000	769000	How should others think about me?
+769000	772000	So this is what Keynes described as the stock market.
+773000	775000	When everyone is buying and selling stocks,
+775000	782000	they don't really care about how good this company is,
+782000	785000	but what they care about is how others evaluate these companies.
+785000	789000	If I can make money, if others evaluate this company well,
+789000	791000	should I consider doing business at this time?
+791000	793000	Something like this.
+793000	797000	Next, I'm going to talk about a game version.
+797000	800000	So the audience can play this game with me later.
+801000	805000	Let's imagine that there are 11 people in this chat room.
+805000	807000	So imagine that we play this game together.
+807000	809000	N is equal to 11.
+809000	817000	The process of this game is that everyone chooses an integer from 0 to 100 at the same time.
+817000	826000	The winner of this game is the person who chooses the number closest to the average of two-thirds of all people.
+827000	831000	The person with the closest number is the winner of this game.
+831000	832000	Although I can't see everyone,
+832000	834000	but if you are interested, you can take a pen and paper.
+834000	836000	I'll give you a few seconds to think about it.
+836000	838000	If we play this game together here,
+838000	841000	what number would you like to choose?
+841000	842000	Anyway, let's think about it a little bit.
+842000	845000	Then I'll talk about what the theoretical prediction will be.
+845000	857000	Okay, I think everyone should have thought about it.
+857000	859000	Let me talk about it now.
+859000	861000	Anyway, let's think about it first.
+861000	863000	How do you think about this game?
+863000	866000	How many numbers did you choose?
+866000	870000	Let's take a look at what the theoretical prediction will predict.
+870000	872000	In this case,
+872000	875000	the theoretical prediction will make a very extreme prediction.
+875000	881000	It predicts that the balance of this game is that all players should choose 0.
+881000	883000	This will be a balance.
+883000	885000	Think about it.
+885000	886000	If I go to check, this thing is a balance.
+886000	888000	It means I'm going to check.
+888000	891000	Suppose I know that everyone else chooses 0,
+891000	893000	what should I choose?
+893000	894000	Suppose I don't choose 0 today.
+894000	896000	If I change to a number x,
+896000	902000	In this case, the average of all types will be x divided by 11,
+902000	904000	and then multiplied by 2.
+904000	906000	The person who is closest to this number will win.
+906000	908000	Obviously, in this case,
+908000	912000	0 will be closer to my target number than x.
+912000	914000	So it means that if I choose any number,
+914000	917000	it will only make me lose.
+917000	920000	So it means that I have to choose 0.
+920000	922000	If you go through some mathematical checks,
+922000	926000	you will find that this balance is actually the only balance in this game.
+926000	932000	So this is basically a very extreme theoretical prediction.
+932000	940000	Let's take a look at how everyone actually plays.
+940000	946000	This is the first person to do this experiment in 1995.
+946000	948000	Then he found this.
+948000	950000	I think it's quite a change.
+950000	953000	It's a picture of the whole behavior game theory.
+953000	958000	This is the first experimental data just described.
+958000	963000	Then you can see that this is the actual distribution of data.
+963000	965000	Then he found that in this case,
+965000	969000	no one chose theoretical prediction.
+969000	971000	This means that the theoretical prediction of 0
+971000	976000	is not a very good model for explaining data.
+976000	980000	You can also see that there are some particularly prominent points here.
+980000	982000	For example, there are 33 and 22 here,
+982000	984000	which are some particularly prominent numbers.
+984000	991000	This experimental data has been constantly replicated since 1995.
+991000	994000	It has been constantly replicated all over the world.
+994000	996000	This is a very, very stable result.
+996000	1000000	You can see that basically no one will choose 0 anywhere.
+1000000	1007000	Then you can see that a lot of people choose 50, 33, 22, or 10.
+1007000	1010000	So he wanted to say that this balance
+1010000	1015000	may not be a good description of the situation of such data.
+1015000	1017000	So because of this data,
+1017000	1022000	we inspired another model to take over to explain behavior.
+1022000	1024000	This model is called Level K.
+1024000	1027000	The Level K model actually assumes that everyone
+1027000	1032000	can only think of a certain number,
+1032000	1034000	just a few layers.
+1034000	1040000	This model assumes that everyone can think of different levels.
+1040000	1042000	The beginning of everything is the level 0 people.
+1042000	1044000	Level 0 people mean that
+1044000	1046000	he was stupid when he saw this game.
+1046000	1049000	He didn't even know what number I should choose in this game.
+1049000	1052000	So this model assumes that
+1052000	1055000	these people pick a random number from 0 to 100.
+1055000	1057000	Anyway, it's completely unstrategic.
+1057000	1060000	He just picked one at random.
+1060000	1062000	What about Level 1 people?
+1062000	1064000	He would like to say OK.
+1064000	1067000	He assumes that other people are all Level 0.
+1067000	1070000	So today he wants to respond in the most appropriate way.
+1070000	1072000	Other players are all Level 0 people.
+1072000	1074000	At this time, he will calculate OK.
+1074000	1076000	In this case,
+1076000	1078000	if other people are all Level 0,
+1078000	1080000	then my expected value is average.
+1080000	1083000	The expected value of the number I chose for other people should be 50.
+1083000	1086000	So I want to choose 2 out of 50,
+1086000	1088000	which is the number 33.
+1088000	1090000	Next,
+1090000	1092000	Level 2 people will assume that
+1092000	1094000	other people are all Level 1.
+1094000	1097000	So other people will choose 33.
+1097000	1099000	Then I have to choose 2 out of 33,
+1099000	1101000	which is 22.
+1101000	1103000	So it goes on and on.
+1103000	1105000	Because of this,
+1105000	1107000	the Level K model can basically explain
+1107000	1110000	the information that appears here.
+1110000	1112000	Here you can see that
+1112000	1114000	a lot of people are at a lower density.
+1114000	1116000	They may be Level 0 Uniform.
+1116000	1118000	Then you can see that
+1118000	1120000	there is a peak here,
+1120000	1122000	which means that
+1122000	1124000	a lot of people may be Level 1.
+1124000	1126000	Then there is a large density near 22.
+1126000	1128000	They may be people who want to be Level 2.
+1130000	1132000	So...
+1132000	1134000	Excuse me.
+1134000	1136000	But why...
+1136000	1138000	For example, I am a Level N person.
+1138000	1140000	Why do I have to assume that
+1140000	1142000	everyone is exactly the same
+1142000	1144000	as Level 1?
+1144000	1146000	Can't I assume that there is no distribution?
+1146000	1148000	Oh, that's a very good question.
+1148000	1150000	Because this is another thing that
+1150000	1152000	we are going to deal with in this article.
+1152000	1154000	We will talk about it soon.
+1154000	1156000	But thank you.
+1156000	1158000	This is just a simple introduction
+1158000	1160000	to the whole process of file development.
+1160000	1162000	This is the first version of the model.
+1164000	1166000	But next,
+1166000	1168000	with this model,
+1168000	1170000	although it is mentioned by Yan Yong just now,
+1170000	1172000	this model actually
+1172000	1174000	makes some very strong assumptions.
+1174000	1176000	For example, people who choose N times
+1176000	1178000	assume that everyone chooses N-1.
+1178000	1180000	But at least this model
+1180000	1182000	can actually explain a lot of
+1182000	1184000	strategic behavior in the case of Normal Form.
+1186000	1188000	But if you go back again,
+1188000	1190000	imagine that at the beginning,
+1190000	1192000	in the case of Eccentric Form,
+1192000	1194000	there is no model
+1194000	1196000	that is similar to
+1196000	1198000	Hierarchical Thinking.
+1200000	1202000	Our goal in this paper
+1202000	1204000	is to propose
+1204000	1206000	a concept of the same solution
+1206000	1208000	on Eccentric Form,
+1208000	1210000	which is also a model
+1210000	1212000	of layered thinking.
+1212000	1214000	This is probably my introduction.
+1214000	1216000	In addition to Yan Yong's question,
+1216000	1218000	I will answer it right away.
+1218000	1220000	Do other listeners have any questions?
+1220000	1222000	If not,
+1222000	1224000	I will continue.
+1224000	1226000	Next, let's talk about
+1226000	1228000	our model.
+1228000	1230000	Let's imagine
+1230000	1232000	why the
+1232000	1234000	Level K model
+1234000	1236000	is directly linked to
+1236000	1238000	the Eccentric Form.
+1238000	1240000	At this time,
+1240000	1242000	the Level K model
+1242000	1244000	defines the situation
+1244000	1246000	where everyone makes a move at the same time.
+1246000	1248000	In other words, the original Level K model
+1248000	1250000	does not consider
+1250000	1252000	the past behavior of others
+1252000	1254000	and should update my own
+1254000	1256000	thoughts on others.
+1256000	1258000	It did not build it
+1258000	1260000	into this model.
+1260000	1262000	That is to say,
+1262000	1264000	when you face a situation
+1264000	1266000	where you make a move at the same time,
+1266000	1268000	this model can be used.
+1268000	1270000	But when you face a situation
+1270000	1272000	where others make a move in turn,
+1272000	1274000	the Level K model
+1274000	1276000	predicts how smart
+1276000	1278000	you should be.
+1278000	1280000	The next logical question
+1280000	1282000	is that we can look at
+1282000	1284000	this simple example.
+1284000	1286000	Let me use this tree
+1286000	1288000	to briefly explain and then
+1288000	1290000	respond to some definitions of
+1290000	1292000	the Eccentric Form Game.
+1292000	1294000	Basically, we have a
+1294000	1296000	H that defines all the chess pieces.
+1296000	1298000	H here actually describes the
+1298000	1300000	whole tree.
+1300000	1302000	Here, each top point
+1302000	1304000	tells us where each decision
+1304000	1306000	is made.
+1306000	1308000	The P function tells me
+1308000	1310000	who is in charge of
+1310000	1312000	each top point.
+1312000	1314000	Let's assume that
+1314000	1316000	Gao Xian and I are playing this game.
+1316000	1318000	Gao Xian is the second player,
+1318000	1320000	and I am the first player.
+1320000	1322000	Sorry, the host has been cued by me.
+1322000	1324000	But it doesn't matter.
+1324000	1326000	If Gao Xian is a person
+1326000	1328000	who can think of four layers,
+1328000	1330000	he will think that
+1330000	1332000	Bo Xian can think of three layers.
+1332000	1334000	If Bo Xian can think of
+1334000	1336000	one or two layers,
+1336000	1338000	he will choose A
+1338000	1340000	at the beginning.
+1340000	1342000	If Bo Xian can think of three layers,
+1342000	1344000	he will choose B.
+1344000	1346000	If Bo Xian can think of
+1346000	1348000	four layers,
+1348000	1350000	he will think that
+1350000	1352000	Bo Xian must think of three layers.
+1352000	1354000	So in this situation,
+1354000	1356000	he will definitely choose B.
+1356000	1358000	Then I will definitely
+1358000	1360000	go to the right branch.
+1360000	1362000	But if you find out
+1362000	1364000	that Bo Xian chose A,
+1364000	1366000	then this situation
+1366000	1368000	is a
+1368000	1370000	incompatible situation
+1370000	1372000	in terms of
+1372000	1374000	how many layers
+1374000	1376000	you want to think of.
+1376000	1378000	This means that
+1378000	1380000	I think Bo Xian wants to think of three layers,
+1380000	1382000	so I must be on the right side.
+1382000	1384000	But today it happened on the left side.
+1384000	1386000	This is a problem that
+1386000	1388000	may occur if you
+1388000	1390000	look at it carefully.
+1390000	1392000	If you look at
+1392000	1394000	this incompatibility,
+1394000	1396000	you will find that there are actually two problems.
+1396000	1398000	The first one is what Yan Yong just mentioned.
+1398000	1400000	All players
+1400000	1402000	assume that others are one level less than him.
+1402000	1404000	This means that
+1404000	1406000	Gao Xian thinks of four layers,
+1406000	1408000	but he does not think of other possibilities.
+1408000	1410000	Bo Xian may not be so smart.
+1410000	1412000	He may not only think of three layers,
+1412000	1414000	he may only think of two layers or one layer.
+1414000	1416000	So this is a problem with the original model.
+1416000	1418000	So he can't be directly
+1418000	1420000	integrated into the game.
+1420000	1422000	Another problem is
+1422000	1424000	when you see the actions of others,
+1424000	1426000	you should update
+1426000	1428000	your evaluation of others.
+1428000	1430000	For example, in this game,
+1430000	1432000	if Gao Xian sees
+1432000	1434000	the left side,
+1434000	1436000	then he should immediately notice
+1436000	1438000	that Bo Xian is definitely not thinking of three layers.
+1438000	1440000	But this behavior
+1440000	1442000	is not built
+1442000	1444000	in the original static model.
+1444000	1446000	So these two things
+1446000	1448000	are the two points
+1448000	1450000	that our model wants to break through.
+1450000	1452000	At the same time, we have to deal with these two problems.
+1452000	1454000	Next,
+1454000	1456000	let's talk about our model.
+1456000	1458000	First of all,
+1458000	1460000	this is a place that Yan Yong mentioned.
+1460000	1462000	How do we deal with the first point?
+1462000	1464000	The first point is
+1464000	1466000	the Cognitive Hierarchy Approach.
+1466000	1468000	After these two words came out,
+1468000	1470000	they finally put the whole
+1470000	1472000	topic together.
+1472000	1474000	This Cognitive Hierarchy Approach
+1474000	1476000	is a
+1476000	1478000	advanced version of the Level K model.
+1478000	1480000	It was introduced after 9 years
+1480000	1482000	of Level K.
+1482000	1484000	The operation process of this model is as follows.
+1484000	1486000	Every player
+1486000	1488000	will have a level
+1488000	1490000	at the beginning.
+1490000	1492000	Then everyone
+1492000	1494000	draws this level independently
+1494000	1496000	from the probability distribution.
+1496000	1498000	At this time,
+1498000	1500000	Level K players no longer assume
+1500000	1502000	that everyone is just Level K-1.
+1502000	1504000	He assumes that everyone
+1504000	1506000	may be Level 0, may be Level 1,
+1506000	1508000	or may be from O to
+1508000	1510000	Level K-1.
+1510000	1512000	So these are all possible.
+1512000	1514000	Next,
+1514000	1516000	Level K players
+1516000	1518000	may mistakenly think that everyone
+1518000	1520000	is from Level 0 to Level K-1.
+1520000	1522000	However,
+1522000	1524000	their evaluation of others is not so wrong.
+1524000	1526000	That is,
+1526000	1528000	their evaluation is at least
+1528000	1530000	correct.
+1530000	1532000	For those who are less than
+1532000	1534000	my level,
+1534000	1536000	their relative proportion
+1536000	1538000	is correct.
+1538000	1540000	Next,
+1540000	1542000	from a mathematical point of view,
+1542000	1544000	we can use
+1544000	1546000	Mu ij to express this thing.
+1546000	1548000	Mu is
+1548000	1550000	a probability density.
+1550000	1552000	This is
+1552000	1554000	the evaluation of
+1554000	1556000	Player i and Player j.
+1556000	1558000	The K on the top
+1558000	1560000	means that
+1560000	1562000	Level K player i's evaluation of Player j.
+1562000	1564000	At this time,
+1564000	1566000	L is the probability
+1566000	1568000	of Player j being L.
+1568000	1570000	If L is
+1570000	1572000	greater than or equal to K,
+1572000	1574000	it means that
+1574000	1576000	others can think at least the same level as me
+1576000	1578000	or be smarter than me.
+1578000	1580000	In this model,
+1580000	1582000	if you are a Level K player,
+1582000	1584000	you will feel that
+1584000	1586000	you are smarter than me.
+1586000	1588000	At this time, I put 0 as the probability density.
+1588000	1590000	But if L is strictly
+1590000	1592000	less than K,
+1592000	1594000	the probability density
+1594000	1596000	is the same as
+1596000	1598000	the real probability distribution.
+1598000	1600000	The only difference is that
+1600000	1602000	I have re-normalized it.
+1602000	1604000	It is re-normalized by
+1604000	1606000	Level 0 to Level K-1.
+1606000	1608000	At this time,
+1608000	1610000	these players are not so smart
+1610000	1612000	in our model.
+1612000	1614000	It is possible that
+1614000	1616000	everyone is smart.
+1616000	1618000	It assumes that
+1618000	1620000	others think less than you,
+1620000	1622000	but their ideas
+1622000	1624000	are not so wrong.
+1624000	1626000	It is because
+1626000	1628000	the overall distribution of others is correct.
+1628000	1630000	At this time,
+1630000	1632000	players have truncated rational expectations.
+1632000	1634000	You can observe
+1634000	1636000	that when we
+1636000	1638000	do a direct exercise,
+1638000	1640000	when K is infinitely large,
+1640000	1642000	you can see that
+1642000	1644000	in this expression,
+1644000	1646000	the ratio will be 1,
+1646000	1648000	because the probability distribution
+1648000	1650000	is 1.
+1650000	1652000	This means that
+1652000	1654000	you can have
+1654000	1656000	fully rational expectations.
+1656000	1658000	But if you
+1658000	1660000	only think about K,
+1660000	1662000	you only have a partial
+1662000	1664000	evaluation of other people's ideas.
+1664000	1666000	If you have
+1666000	1668000	some questions
+1668000	1670000	about K,
+1670000	1672000	we can discuss later.
+1672000	1674000	But this article
+1674000	1676000	is like this.
+1676000	1678000	It is an extension of Level K.
+1678000	1680000	We can
+1680000	1682000	deal with the first problem,
+1682000	1684000	that is,
+1684000	1686000	every player's
+1686000	1688000	idea of ​​Level is a fixed point.
+1688000	1690000	Next,
+1690000	1692000	we will deal with how to update the message.
+1692000	1694000	At this time,
+1694000	1696000	we assume that
+1696000	1698000	every history shot
+1698000	1700000	will update its
+1700000	1702000	after-effects probability,
+1702000	1704000	and then use Bayes' law
+1704000	1706000	to update the after-effects probability.
+1706000	1708000	This means that
+1708000	1710000	I can keep updating my
+1710000	1712000	evaluation of others,
+1712000	1714000	and then I use
+1714000	1716000	other people's past behavior
+1716000	1718000	to update my evaluation.
+1718000	1720000	When you make this assumption,
+1720000	1722000	you will immediately face
+1722000	1724000	a problem,
+1724000	1726000	that is, if the
+1726000	1728000	after-effects probability is
+1728000	1730000	0,
+1730000	1732000	then the after-effects probability
+1732000	1734000	will not be well-defined.
+1734000	1736000	In fact,
+1736000	1738000	there are many articles
+1738000	1740000	dealing with
+1740000	1742000	0 after-effects probability.
+1742000	1744000	However,
+1744000	1746000	there is no such problem
+1746000	1748000	in this model.
+1748000	1750000	The reason is
+1750000	1752000	that no matter
+1752000	1754000	what level you are,
+1754000	1756000	you will have a certain chance
+1756000	1758000	to think that the other person is
+1758000	1760000	level 0.
+1760000	1762000	When it comes to doing things,
+1762000	1764000	people at level 0 will choose
+1764000	1766000	at will.
+1766000	1768000	In every
+1768000	1770000	history, you will think
+1770000	1772000	that this thing is possible,
+1772000	1774000	because at least there is a level 0,
+1774000	1776000	he will choose there.
+1776000	1778000	That is to say,
+1778000	1780000	my after-effects probability
+1780000	1782000	is well-defined.
+1782000	1784000	All players
+1784000	1786000	simply respond
+1786000	1788000	to my belief
+1788000	1790000	correctly.
+1790000	1792000	If you can understand
+1792000	1794000	this part,
+1794000	1796000	basically you have understood
+1796000	1798000	our model.
+1798000	1800000	To review a little more,
+1800000	1802000	let's go back to the example
+1802000	1804000	just now.
+1804000	1806000	At this time,
+1806000	1808000	let's take a look at what
+1808000	1810000	our model is doing.
+1810000	1812000	We use this vector
+1812000	1814000	to show
+1814000	1816000	his evaluation of me.
+1816000	1818000	Because he thinks I may be level 0,
+1818000	1820000	level 1, level 2, level 3.
+1820000	1822000	Four elements are enough
+1822000	1824000	to express this probability density.
+1824000	1826000	So today,
+1826000	1828000	when the model sees
+1828000	1830000	that I chose A at the beginning,
+1830000	1832000	let's compare
+1832000	1834000	the three models
+1834000	1836000	he gave us.
+1836000	1838000	He assumes
+1838000	1840000	that all players
+1840000	1842000	can think of A as four elements,
+1842000	1844000	but he thinks B must be three elements.
+1844000	1846000	So anyway,
+1846000	1848000	he only puts the probability density at level 3.
+1848000	1850000	Because of this,
+1850000	1852000	you can immediately see
+1852000	1854000	the incompatibility problem.
+1854000	1856000	Now let's take a look
+1856000	1858000	at what he will give me
+1858000	1860000	if we use the 2004 model.
+1860000	1862000	At this time,
+1862000	1864000	we can see
+1864000	1866000	that the 2004 model
+1866000	1868000	is also a static model.
+1868000	1870000	Therefore,
+1870000	1872000	his evaluation of others will not be updated.
+1872000	1874000	He always thinks that others
+1874000	1876000	work with truncated rational expectation.
+1876000	1878000	So his evaluation afterwards
+1878000	1880000	is always assuming
+1880000	1882000	that others are level 0 to level 3.
+1882000	1884000	So his denominator is 0 plus 3.
+1884000	1886000	Then his denominator
+1886000	1888000	is just 0, 1, 2, 3.
+1888000	1890000	So this is just starting
+1890000	1892000	from the real distribution.
+1892000	1894000	Assuming that others
+1894000	1896000	only have the possibility of 0 to 3.
+1896000	1898000	Next,
+1898000	1900000	let's talk about
+1900000	1902000	the possibility of his evaluation
+1902000	1904000	in our model.
+1904000	1906000	First of all,
+1906000	1908000	when the high-level player
+1908000	1910000	sees that I chose A,
+1910000	1912000	he will start to think
+1912000	1914000	why I chose A.
+1914000	1916000	He will think
+1916000	1918000	that there are several possibilities.
+1918000	1920000	The first one is
+1920000	1922000	that Boxuan is actually a level 0
+1922000	1924000	and he is fooling around.
+1924000	1926000	So if he is level 0,
+1926000	1928000	I have half a chance to choose left
+1928000	1930000	and half a chance to choose right.
+1930000	1932000	So if I am level 0,
+1932000	1934000	I have half a chance to choose left.
+1934000	1936000	The other possibility is that
+1936000	1938000	Boxuan may be level 1 or level 2.
+1938000	1940000	So all the possibilities
+1940000	1942000	appear on the left are put in the denominator,
+1942000	1944000	which is one-half of P0 plus P1 plus P2.
+1944000	1946000	The above is
+1946000	1948000	what Bayes' law tells us.
+1948000	1950000	We can observe the after-effects probability.
+1950000	1952000	We know that
+1952000	1954000	under this sub-game,
+1954000	1956000	the high-level player can immediately
+1956000	1958000	rule out the possibility that Boxuan is level 3.
+1958000	1960000	Because if he is level 3,
+1960000	1962000	I will definitely be in another sub-game.
+1962000	1964000	But now I'm here.
+1964000	1966000	This means that
+1966000	1968000	when I calculate the after-effects probability,
+1968000	1970000	I will completely kill him.
+1974000	1976000	This is basically the illustration
+1976000	1978000	of Bayes' law.
+1978000	1980000	You can pause for a moment.
+1980000	1982000	If you have any questions,
+1982000	1984000	I just saw a question in the chat room.
+1984000	1986000	Let me take a look.
+1986000	1988000	Oh,
+1988000	1990000	here is
+1990000	1992000	Thank you
+1992000	1994000	Yi Ouyang.
+1994000	1996000	He asked a question.
+1996000	1998000	What assumption did we make
+1998000	2000000	on the probability density?
+2000000	2002000	We actually assumed
+2002000	2004000	that each PK is greater than 0.
+2004000	2006000	This assumption is
+2006000	2008000	without loss of generality.
+2008000	2010000	Thank you.
+2010000	2012000	But here we assume that
+2012000	2014000	there is full support.
+2014000	2016000	OK.
+2016000	2018000	Then
+2018000	2020000	I will continue.
+2020000	2022000	Thank you very much for the question.
+2022000	2024000	Next,
+2024000	2026000	this is a bit technical.
+2026000	2028000	But let me introduce a little bit.
+2028000	2030000	Under this model setting,
+2030000	2032000	what general rules
+2032000	2034000	do we have?
+2034000	2036000	First of all,
+2036000	2038000	under any extensible game,
+2040000	2042000	let's say there are many people today.
+2042000	2044000	Let's say it's me and Gao Xian today.
+2044000	2046000	Then add a mysterious player X.
+2046000	2048000	Let's say there are three people playing.
+2048000	2050000	This theorem tells us that
+2050000	2052000	if there are more than two people today,
+2052000	2054000	the after-effects probability
+2054000	2056000	in each place
+2056000	2058000	is actually a
+2058000	2060000	joint probability
+2060000	2062000	of each player.
+2062000	2064000	This theorem tells us that
+2064000	2066000	no matter where you are,
+2066000	2068000	the joint probability of your after-effects
+2068000	2070000	will be
+2070000	2072000	independent of each player.
+2072000	2074000	This also means that
+2074000	2076000	what others did,
+2076000	2078000	like what X did,
+2078000	2080000	will not affect my evaluation of Gao Xian.
+2080000	2082000	What Gao Xian did
+2082000	2084000	will not affect my evaluation of X.
+2084000	2086000	Then the second theorem,
+2086000	2088000	in fact, we can see
+2088000	2090000	that when this game
+2090000	2092000	becomes longer and longer,
+2092000	2094000	I will have more evidence
+2094000	2096000	to know which level
+2096000	2098000	I am.
+2098000	2100000	So next,
+2100000	2102000	I think the other person
+2102000	2104000	has fewer and fewer
+2104000	2106000	possibilities.
+2106000	2108000	This means that when the history
+2108000	2110000	becomes longer,
+2110000	2112000	my support will be smaller and smaller.
+2112000	2114000	The third one is
+2114000	2116000	that
+2116000	2118000	we think that
+2118000	2120000	there is a model solution
+2120000	2122000	under this model.
+2122000	2124000	Because you can see that
+2124000	2126000	when K becomes infinitely large,
+2126000	2128000	people have fully rational expectations.
+2128000	2130000	In this situation,
+2130000	2132000	people will naturally ask
+2132000	2134000	whether our model
+2134000	2136000	will choose to be balanced
+2136000	2138000	when K becomes infinitely large.
+2138000	2140000	The answer is not necessarily.
+2140000	2142000	In other words,
+2142000	2144000	if K does not choose to be balanced,
+2144000	2146000	it has nothing to do with logic.
+2146000	2148000	In other words,
+2148000	2150000	we can find an example
+2150000	2152000	that K will choose to be balanced,
+2152000	2154000	and we can also find an example
+2154000	2156000	that K will never choose to be balanced.
+2156000	2158000	So this is a more general definition.
+2158000	2160000	This is a more technical result.
+2160000	2162000	But I just listed it here.
+2162000	2164000	I won't say much.
+2164000	2166000	The above is actually
+2166000	2168000	more like a pure mathematical model
+2168000	2170000	in my eyes.
+2170000	2172000	There are many different ideas
+2172000	2174000	about science.
+2174000	2176000	But at least in my opinion,
+2176000	2178000	if a model is a good model,
+2178000	2180000	it can be
+2180000	2182000	detected
+2182000	2184000	or denied
+2184000	2186000	by actual data.
+2186000	2188000	In the current situation,
+2188000	2190000	what we have found
+2190000	2192000	is actually a mathematical solution,
+2192000	2194000	and it is a bit
+2194000	2196000	too general.
+2196000	2198000	So we can't find
+2198000	2200000	any more
+2200000	2202000	falsifiable theoretical predictions.
+2202000	2204000	So next,
+2204000	2206000	in order to get some predictions
+2206000	2208000	that we can test in practice,
+2208000	2210000	let's consider
+2210000	2212000	the following very specific decision situation.
+2214000	2216000	OK, let's consider
+2216000	2218000	the following game.
+2218000	2220000	There are two people here.
+2220000	2222000	Let's change someone today.
+2222000	2224000	Let's play with Yan Yong.
+2224000	2226000	OK, let's play the game.
+2226000	2228000	Today's game is
+2228000	2230000	take turns.
+2230000	2232000	At the beginning,
+2232000	2234000	you can imagine it as an investment game.
+2234000	2236000	We are going to raise a...
+2236000	2238000	For example,
+2238000	2240000	you can say watermelon, pumpkin,
+2240000	2242000	or electronic chicken.
+2242000	2244000	But at the beginning, the size is one unit.
+2244000	2246000	Then every day,
+2246000	2248000	we take turns to feed it,
+2248000	2250000	water it, or invest.
+2250000	2252000	Every day,
+2252000	2254000	everyone can do two actions.
+2254000	2256000	Either I decide to take,
+2256000	2258000	I want to take this chicken,
+2258000	2260000	or I want to harvest this pumpkin.
+2260000	2262000	If I decide to harvest,
+2262000	2264000	the person who decides to harvest
+2264000	2266000	can divide it into a larger part,
+2266000	2268000	and the person who is harvested
+2268000	2270000	can take a smaller part.
+2270000	2272000	At the same time,
+2272000	2274000	you have another option every day.
+2274000	2276000	I can invest C dollars
+2276000	2278000	into this.
+2278000	2280000	For example, you water this pumpkin
+2280000	2282000	and let it grow today.
+2282000	2284000	Or you decide to take this electronic chicken.
+2284000	2286000	Then this game is over.
+2286000	2288000	According to the distribution we said,
+2288000	2290000	divide this thing.
+2290000	2292000	But if you decide to invest,
+2292000	2294000	this is actually a
+2294000	2296000	strategic risk.
+2296000	2298000	It's a strategic risk action.
+2298000	2300000	Because
+2300000	2302000	if you choose to invest,
+2302000	2304000	you have an advantage that
+2304000	2306000	you can make this thing bigger.
+2306000	2308000	But your disadvantage is
+2308000	2310000	that the next day it's someone else's turn to decide.
+2310000	2312000	You have to decide to take
+2312000	2314000	or continue to invest.
+2314000	2316000	So if you think
+2316000	2318000	if someone else wants to invest,
+2318000	2320000	you may think that I will invest today.
+2320000	2322000	But if you think you want to take today,
+2322000	2324000	if you think you want to take tomorrow,
+2324000	2326000	you may think you want to take today.
+2326000	2328000	Because if someone else takes it,
+2328000	2330000	someone else will get a bigger part tomorrow,
+2330000	2332000	and you will get a smaller part.
+2332000	2334000	So there is a trade-off here.
+2334000	2336000	But this is just a big concept of the game.
+2336000	2338000	There will be a more detailed introduction later.
+2338000	2340000	This game is actually called
+2340000	2342000	the centripetal game.
+2346000	2348000	Before I introduce the centripetal game,
+2348000	2350000	I will respond to
+2350000	2352000	Yi Ouyang's question.
+2352000	2354000	Yes, this is
+2354000	2356000	common knowledge.
+2356000	2358000	Everyone knows the distribution of odds.
+2358000	2360000	Thank you for your question.
+2360000	2362000	I will continue to talk about the centripetal game.
+2362000	2364000	Why is this thing called
+2364000	2366000	centripetal game?
+2366000	2368000	If you draw it as a tree map,
+2368000	2370000	it looks like a centripetal game.
+2370000	2372000	It's just because of this.
+2372000	2374000	The view of this tree map is like this.
+2374000	2376000	At the beginning,
+2376000	2378000	Player 1 does things.
+2378000	2380000	If he decides to take it at the beginning,
+2380000	2382000	he takes 1 and others take 0.
+2382000	2384000	But on the first day,
+2384000	2386000	he can also decide to pass.
+2386000	2388000	If he passes,
+2388000	2390000	this thing becomes C,
+2390000	2392000	which increases the unit of C.
+2392000	2394000	So if it's Player 2's turn on the second day,
+2394000	2396000	Player 1 can only take C.
+2396000	2398000	Player 2 can take 1 plus C.
+2398000	2400000	Player 2 can decide to pass or take.
+2400000	2402000	If Player 2 decides to pass,
+2402000	2404000	it's my turn on the third day.
+2404000	2406000	So you can imagine that
+2406000	2408000	if I take this on the third day,
+2408000	2410000	my odds become 1 plus 2C.
+2410000	2412000	Then others
+2412000	2414000	can only take 2C.
+2414000	2416000	So in this case,
+2416000	2418000	let's assume that
+2418000	2420000	we have a total of 2S days.
+2420000	2422000	So everyone can do S actions.
+2422000	2424000	This is just a
+2424000	2426000	technical assumption.
+2426000	2428000	Let's assume that
+2428000	2430000	every increase of C
+2430000	2432000	is between 1 to 1.
+2432000	2434000	This assumption
+2434000	2436000	is not a very strict assumption.
+2436000	2438000	We just make this thing
+2438000	2440000	become an interesting question.
+2440000	2442000	You can imagine that
+2442000	2444000	if C is too big,
+2444000	2446000	everyone will keep passing.
+2446000	2448000	So it's not interesting.
+2448000	2450000	If C is too small,
+2450000	2452000	everyone will
+2452000	2454000	just take it.
+2454000	2456000	It's too trivial.
+2456000	2458000	So we consider
+2458000	2460000	a more interesting range.
+2460000	2462000	In these assumptions,
+2462000	2464000	we can see
+2464000	2466000	how everyone
+2466000	2468000	will play this game.
+2468000	2470000	Here is a balanced prediction.
+2470000	2472000	Everyone
+2472000	2474000	has to take
+2474000	2476000	as long as he can do actions.
+2476000	2478000	So we can go back and check
+2478000	2480000	the definition of balance.
+2480000	2482000	That is to say,
+2482000	2484000	everyone has to do the best actions
+2484000	2486000	in every history.
+2486000	2488000	So let's go back one by one.
+2488000	2490000	Let's look at the last day.
+2490000	2492000	It's the second person's turn.
+2492000	2494000	He can decide
+2494000	2496000	whether to take or pass.
+2496000	2498000	If I take,
+2498000	2500000	I can take 1 plus 2S-1
+2500000	2502000	times C.
+2502000	2504000	But if I decide to pass,
+2504000	2506000	I am 2SC.
+2506000	2508000	In this case,
+2508000	2510000	for the last day,
+2510000	2512000	player 2 wants to
+2512000	2514000	take.
+2514000	2516000	It's more profitable to take.
+2516000	2518000	So if we go back
+2518000	2520000	to the last day,
+2520000	2522000	if player 1 knows
+2522000	2524000	that player 2 will take the next day,
+2524000	2526000	after the same calculation,
+2526000	2528000	player 1 will think it's better to take.
+2528000	2530000	If it's player 2's turn
+2530000	2532000	on the second day,
+2532000	2534000	player 2 will also think it's better to take.
+2534000	2536000	We can see that
+2536000	2538000	the perfect balance
+2538000	2540000	predicts an extreme result.
+2540000	2542000	No matter how long the game is,
+2542000	2544000	no matter how big C is,
+2544000	2546000	between 1 to 1.3,
+2546000	2548000	player 2 will always take.
+2548000	2550000	So no matter how long the game is,
+2550000	2552000	it won't continue.
+2552000	2554000	Let's think about this.
+2554000	2556000	Excuse me.
+2556000	2558000	My question is
+2558000	2560000	that you said
+2560000	2562000	you wanted to do an experiment.
+2562000	2564000	When you finished
+2564000	2566000	the theory part,
+2566000	2568000	I wanted to ask
+2568000	2570000	if you wrote a Monte Carlo
+2570000	2572000	to see how it would look like.
+2572000	2574000	For example,
+2574000	2576000	how many people play,
+2576000	2578000	how many Cs,
+2578000	2580000	what would the face space look like?
+2580000	2582000	Your question is really good.
+2582000	2584000	You are a worm in my stomach.
+2584000	2586000	This is something that will appear
+2586000	2588000	after a few videos.
+2588000	2590000	Sorry.
+2590000	2592000	Sorry, everyone.
+2592000	2594000	My worm is talking again.
+2594000	2596000	I'm familiar with him,
+2596000	2598000	so he knows what I'm going to say.
+2598000	2600000	So I just want to introduce
+2600000	2602000	the game environment.
+2602000	2604000	Next, let's see
+2604000	2606000	why we choose Centipede Game.
+2606000	2608000	First of all,
+2608000	2610000	this...
+2610000	2612000	Sorry, I just laughed.
+2612000	2614000	The interesting thing about
+2614000	2616000	the centipede game is
+2616000	2618000	that it has been experimented for 30 years.
+2618000	2620000	Then we thought
+2620000	2622000	we should find an environment
+2622000	2624000	where the existing theory is not good,
+2624000	2626000	so that there is room for new theory development.
+2626000	2628000	Let's take a look now.
+2628000	2630000	For those who are
+2630000	2632000	unfamiliar with this experiment,
+2632000	2634000	I would like to explain a little bit
+2634000	2636000	what the data of this experiment will look like.
+2636000	2638000	Let's say we are now
+2638000	2640000	not good at math. Let's say we only have 10 people.
+2640000	2642000	If there are 10 people,
+2642000	2644000	let's do the experiment.
+2644000	2646000	The experimenter will randomly
+2646000	2648000	pair two people and pair two people.
+2648000	2650000	So there are five teams here.
+2650000	2652000	So after each team starts playing this game,
+2652000	2654000	my observation
+2654000	2656000	is that a team of players will have an observation value,
+2656000	2658000	which is the day
+2658000	2660000	they decided
+2660000	2662000	to take it.
+2662000	2664000	So this is the observation value,
+2664000	2666000	which is my terminal period.
+2666000	2668000	Our balanced prediction
+2668000	2670000	is a degenerate distribution,
+2670000	2672000	that is, all the probability densities
+2672000	2674000	will be placed on the first day.
+2674000	2676000	But in fact,
+2676000	2678000	in 1992,
+2678000	2680000	this was the first experiment
+2680000	2682000	my boss did,
+2682000	2684000	he found that only 1% of people
+2684000	2686000	would choose to be balanced.
+2686000	2688000	This means that balancing in this situation
+2688000	2690000	is not a good prediction.
+2690000	2692000	In fact, it should be a pretty bad prediction.
+2694000	2696000	The first reason is
+2696000	2698000	that the actual behavior
+2698000	2700000	is very, very far
+2700000	2702000	from the existing balanced theory.
+2702000	2704000	So people may think that
+2704000	2706000	our theory has room to play.
+2706000	2708000	At the same time,
+2708000	2710000	we are dealing with this environment.
+2710000	2712000	In fact, there is a purpose that is one more than two times.
+2712000	2714000	Because in the past 30 years,
+2714000	2716000	this is a no-fail game.
+2716000	2718000	In fact, it has been repeated
+2718000	2720000	many times.
+2720000	2722000	But there are two possible
+2722000	2724000	methods in the experiment.
+2724000	2726000	One is to use the extensive form,
+2726000	2728000	that is, I ask everyone once
+2728000	2730000	whether you want to take it or pass it today.
+2730000	2732000	The other is to ask other people
+2732000	2734000	if you know that other people want to pass it,
+2734000	2736000	do you want to take it or pass it?
+2736000	2738000	So this is what I ask one after another.
+2738000	2740000	But the same experiment,
+2740000	2742000	you can also ask another question.
+2742000	2744000	My other approach is
+2744000	2746000	I directly ask
+2746000	2748000	how many days do you want to take
+2748000	2750000	and I ask another person
+2750000	2752000	how many days do you want to take.
+2752000	2754000	So these two things,
+2754000	2756000	many people are arguing
+2756000	2758000	whether these two questions
+2758000	2760000	are still under debate.
+2760000	2762000	So because of this,
+2762000	2764000	we are going to talk about
+2764000	2766000	theoretical prediction.
+2766000	2768000	It is not only testable,
+2768000	2770000	but we also want to solve
+2770000	2772000	a big debate
+2772000	2774000	in the method theory of
+2774000	2776000	experimental economics.
+2776000	2778000	This is why we choose martial arts.
+2778000	2780000	Next, before I start talking about
+2780000	2782000	my theoretical prediction,
+2782000	2784000	I will briefly explain
+2784000	2786000	what these two methods look like.
+2786000	2788000	This example is a six-legged centipede.
+2788000	2790000	There are two people,
+2790000	2792000	so there are six stages here.
+2792000	2794000	So in Extensive Form,
+2794000	2796000	you can look at the above picture.
+2796000	2798000	I just simply ask the first person
+2798000	2800000	if you want to take it or pass it,
+2800000	2802000	and then I ask the second person
+2802000	2804000	if you want to take it or pass it.
+2804000	2806000	At the same time,
+2806000	2808000	I can also ask him
+2808000	2810000	how many decisions
+2810000	2812000	do you want to make
+2812000	2814000	when you decide to take it.
+2814000	2816000	Take the first time means
+2816000	2818000	I want to take it on the first day.
+2818000	2820000	Take the second time means
+2820000	2822000	I want to pass it on the first day,
+2822000	2824000	and I want to take it on the second day.
+2824000	2826000	The second option is
+2826000	2828000	I want to take it on the third day.
+2828000	2830000	The third option means
+2830000	2832000	I want to take it on the fifth day
+2832000	2834000	or I want to pass it on forever.
+2834000	2836000	So for both players,
+2836000	2838000	they have four choices.
+2838000	2840000	So these two methods
+2840000	2842000	have balanced predictions.
+2842000	2844000	Theoretically,
+2844000	2846000	no matter what form you use
+2846000	2848000	to play this game,
+2848000	2850000	you have to take it on the first day.
+2850000	2852000	So under these two methods,
+2852000	2854000	theoretical prediction
+2854000	2856000	is the same as
+2856000	2858000	Degenerate Distribution.
+2858000	2860000	All probability densities are placed on the first day.
+2860000	2862000	But our model predicts
+2862000	2864000	that the results of these two methods
+2864000	2866000	will be different.
+2866000	2868000	The following is
+2868000	2870000	our article
+2870000	2872000	on the most difficult to prove theorem.
+2872000	2874000	The following is the theorem.
+2874000	2876000	For any centripetal game,
+2876000	2878000	you can see that
+2878000	2880000	in our current centripetal game,
+2880000	2882000	there are two parameters that can determine
+2882000	2884000	the centripetal game.
+2884000	2886000	The first is c,
+2886000	2888000	which is how much weight
+2888000	2890000	this centripetal can increase
+2890000	2892000	every time.
+2892000	2894000	The second is s,
+2894000	2896000	which is how many feet this centripetal has.
+2896000	2898000	The theorem is for any c and s.
+2898000	2900000	It is a theorem for any
+2900000	2902000	prior to the level.
+2902000	2904000	it is a theorem for any
+2904000	2906000	prior to the level.
+2906000	2908000	Now, let's say I do an experiment today.
+2908000	2910000	I randomized
+2910000	2912000	my method of doing the experiment.
+2912000	2914000	I randomized that some people
+2914000	2916000	I use NormalFoam to play.
+2916000	2918000	Some people use ExtensiveFoam.
+2918000	2920000	The result I get is
+2920000	2922000	that under NormalFoam,
+2922000	2924000	I can find a probability density function
+2924000	2926000	or calculate the cumulative probability density function.
+2926000	2928000	Then I can also find out the cumulative probability density function
+2928000	2930000	under ExtensiveFoam.
+2930000	2932000	Then the next theoretical prediction is
+2932000	2934000	that the cumulative probability density function
+2934000	2936000	under NormalFoam
+2936000	2938000	will be First-Order Stochastically Dominate.
+2938000	2940000	will be First-Order Stochastically Dominate.
+2940000	2942000	This is the cumulative probability density
+2942000	2944000	under ExtensiveFoam.
+2944000	2946000	This is the cumulative probability density
+2946000	2948000	under ExtensiveFoam.
+2948000	2950000	This theorem can be introduced first.
+2950000	2952000	What is FOSD?
+2952000	2954000	I thought about it before the speech.
+2954000	2956000	It seems to be showing me a good example.
+2956000	2958000	If you don't like it,
+2958000	2960000	you can leave a message again.
+2960000	2962000	Everyone says that
+2962000	2964000	In the exam.
+2964000	2966000	The scans of this year are harder.
+2966000	2968000	Or simpler than last year.
+2968000	2970000	You can also make a comparison.
+2970000	2972000	What is the difference?
+2974000	2976000	The first order esperiential
+2976000	2978000	is faster this year.
+2978000	2980000	First Order Stochastically Dominate
+2980000	2982000	I believe this theorem shows
+2982000	2984000	I'm looking at the top, front,
+2984000	2986000	middle, back, bottom.
+2986000	2988000	If my top score is 70 last year,
+2988000	2990000	I will be 80 this year.
+2990000	2992000	If my front score is 65 last year,
+2992000	2994000	I will be 70 this year.
+2994000	2996000	So it's more than every score.
+2996000	2998000	In fact, it is the corresponding score
+2998000	3000000	for each PR value.
+3000000	3002000	If this year's score is higher than last year's,
+3002000	3004000	then this year's score is relatively simple.
+3004000	3006000	In the sense of FOSD.
+3006000	3008000	So if you change it to
+3008000	3010000	cumulative probability density,
+3010000	3012000	it will look like this.
+3012000	3014000	If the red line is FOSD,
+3014000	3016000	the blue line means that
+3016000	3018000	the red line will always be pressed
+3018000	3020000	under the blue line.
+3020000	3022000	Or the red line will be
+3022000	3024000	on the right side of the blue line.
+3024000	3026000	The next question is
+3026000	3028000	what our theoretical prediction
+3028000	3030000	will look like in this situation.
+3030000	3032000	Here is a simple example.
+3032000	3034000	If you have four corners,
+3034000	3036000	your possible terminal node
+3036000	3038000	is the first, second,
+3038000	3040000	third, fourth day,
+3040000	3042000	or the last day,
+3042000	3044000	so it's the fifth day.
+3044000	3046000	So there are five possibilities.
+3046000	3048000	The blue one is
+3048000	3050000	the result of our dynamic CH prediction.
+3050000	3052000	The red line is
+3052000	3054000	the result of our
+3054000	3056000	theoretical prediction.
+3056000	3058000	The red line is
+3058000	3060000	the result of our
+3060000	3062000	theoretical prediction.
+3062000	3064000	The red line is
+3064000	3066000	the result of our
+3066000	3068000	theoretical prediction.
+3068000	3070000	No matter where you play,
+3070000	3072000	no matter what your C and S look like,
+3072000	3074000	you will always see this relationship.
+3074000	3076000	The blue line is on the red line.
+3076000	3078000	So today,
+3078000	3080000	no matter what your
+3080000	3082000	Distribution of Levels looks like,
+3082000	3084000	what you move is just the absolute position
+3084000	3086000	of the blue line and the red line.
+3086000	3088000	But relatively speaking,
+3088000	3090000	the blue line will always be
+3090000	3092000	on the red line.
+3092000	3094000	So this is our theoretical prediction.
+3094000	3096000	Let's say that
+3096000	3098000	each player is playing with
+3098000	3100000	Extensive Form Game,
+3100000	3102000	it will be more balanced.
+3102000	3104000	In a sense,
+3104000	3106000	they will decide to take earlier.
+3106000	3108000	So here I want to
+3108000	3110000	talk a little bit about
+3110000	3112000	why this thing is
+3112000	3114000	testable.
+3114000	3116000	Because when I'm doing an experiment today,
+3116000	3118000	I'm in the same group of collectors,
+3118000	3120000	I'm going to randomize,
+3120000	3122000	some people can play with Normal Form,
+3122000	3124000	this blue line
+3124000	3126000	and the red line
+3126000	3128000	are directly what we theoretically
+3128000	3130000	see in the data.
+3130000	3132000	So when we see this next,
+3132000	3134000	we have a lot of
+3134000	3136000	statistical tools to say
+3136000	3138000	whether the blue line is
+3138000	3140000	significantly different from the red line.
+3140000	3142000	And we can see that
+3142000	3144000	the two of them are FOSD different.
+3144000	3146000	So this is why
+3146000	3148000	our experiment results are testable.
+3148000	3150000	Then the second thing is
+3150000	3152000	why this theoretical prediction
+3152000	3154000	is very good for experimentalists.
+3154000	3156000	It is also a stress test for us.
+3156000	3158000	Because
+3158000	3160000	this theory, although it has a lot of parameters
+3160000	3162000	in it at the beginning,
+3162000	3164000	but in the end our statement is parameter-free,
+3164000	3166000	that is, it is not related to any function,
+3166000	3168000	not related to any parameter.
+3168000	3170000	So the only requirement is
+3170000	3172000	that I do randomization
+3172000	3174000	in the same group of collectors.
+3174000	3176000	This means that as an experimenter,
+3176000	3178000	you can pick a C and S at will.
+3178000	3180000	So at this time you can say
+3180000	3182000	that I want 10 legs for my martial arts,
+3182000	3184000	I want 20 legs,
+3184000	3186000	and I want to pick 0.5 for my C,
+3186000	3188000	so I can pick 0.7 and 0.8 at a time.
+3188000	3190000	In these cases,
+3190000	3192000	the only change is
+3192000	3194000	the shape of blue and red,
+3194000	3196000	but the relative position is still
+3196000	3198000	always here,
+3198000	3200000	the blue line is always on the red line.
+3200000	3202000	So it means that for the experimenter,
+3202000	3204000	he has a lot of freedom.
+3204000	3206000	And again, because it is
+3206000	3208000	all right,
+3208000	3210000	it means that I do this experiment
+3210000	3212000	in Taiwan, or in Europe,
+3212000	3214000	or in the United States,
+3214000	3216000	he has to see this.
+3216000	3218000	So it means that our theory provides
+3218000	3220000	a very strong theoretical prediction.
+3220000	3222000	Although it is very, very,
+3222000	3224000	that is to say,
+3224000	3226000	if you do it wrong in any way,
+3226000	3228000	there is no way to present our results,
+3228000	3230000	it may deny our theory.
+3230000	3232000	But in other words,
+3232000	3234000	if I do this experiment,
+3234000	3236000	it means that our theory
+3236000	3238000	is a very, very big support.
+3238000	3240000	So this is
+3240000	3242000	this is
+3242000	3244000	we have different statements in paper,
+3244000	3246000	but this is a more generalized
+3246000	3248000	version of a statement.
+3248000	3250000	Then,
+3250000	3252000	because I think the time is almost up,
+3252000	3254000	so I might just summarize it a little bit.
+3254000	3256000	Then we will leave some time for Q&A.
+3256000	3258000	If you have any questions,
+3258000	3260000	we can meet again,
+3260000	3262000	we can talk a little bit after five minutes.
+3262000	3264000	In conclusion,
+3264000	3266000	what did we do with this model?
+3266000	3268000	The most important message is that
+3268000	3270000	when you see the behavior of others in the past,
+3270000	3272000	it actually tells you
+3272000	3274000	where the progress of the game is now.
+3274000	3276000	It also tells you
+3276000	3278000	how many layers it can think of.
+3278000	3280000	This message is actually hidden
+3280000	3282000	in other people's past behavior.
+3282000	3284000	Then if we say
+3284000	3286000	we apply any static model directly,
+3286000	3288000	whether it is level K or CH model,
+3288000	3290000	it will actually find that
+3290000	3292000	our ideas and the behavior we see
+3292000	3294000	may be inconsistent.
+3294000	3296000	So at this time,
+3296000	3298000	we use the new model we provide
+3298000	3300000	to solve this incompatibility problem.
+3300000	3302000	For those
+3302000	3304000	who do CS computing here,
+3304000	3306000	we can think about
+3306000	3308000	the question that may come to mind
+3308000	3310000	is whether this thing is easy to solve.
+3310000	3312000	In fact, my response is
+3312000	3314000	that our model is
+3314000	3316000	a very easy thing for the computer.
+3316000	3318000	The reason is
+3318000	3320000	that its code can actually
+3320000	3322000	be rewritten with a for loop.
+3322000	3324000	That is to say,
+3324000	3326000	people at each level
+3326000	3328000	actually use the same method to do things.
+3328000	3330000	When I solve this model,
+3330000	3332000	I first think about people at level 1.
+3332000	3334000	Suppose everyone is level 0.
+3334000	3336000	Then I will solve what is the best thing to do at level 1.
+3336000	3338000	Then people at level 2
+3338000	3340000	will look at what level 0 and level 1 are doing.
+3340000	3342000	Then I will explain what these people are doing.
+3342000	3344000	Then I update my belief.
+3344000	3346000	Then I choose what is the best behavior
+3346000	3348000	Next, people at level 3
+3348000	3350000	assume that others are level 1, level 0, level 1, level 2.
+3350000	3352000	Then do the same thing.
+3352000	3354000	So it is actually a recursive definition method.
+3354000	3356000	It is very easy to solve in math.
+3356000	3358000	It is very easy to calculate on the computer.
+3358000	3360000	But relative to the balanced model,
+3360000	3362000	it is actually solving a fixed point problem.
+3362000	3364000	Because everyone must
+3364000	3366000	respond to each other at the same time.
+3366000	3368000	So at this time,
+3368000	3370000	it's like you're solving several equations.
+3370000	3372000	So at this time,
+3372000	3374000	you may not have chosen the right conditions at the beginning.
+3374000	3376000	But in our model,
+3376000	3378000	it is the only one.
+3378000	3380000	And it exists.
+3380000	3382000	And it is very easy to solve.
+3382000	3384000	So these are some good properties.
+3384000	3386000	The other part of the article
+3386000	3388000	is a very strong
+3388000	3390000	theory prediction
+3390000	3392000	that can be denied in practice.
+3392000	3394000	that can be denied in practice.
+3394000	3396000	That is to say,
+3396000	3398000	we assume that in a group of the same number,
+3398000	3400000	you use the extension function to play
+3400000	3402000	or the normal function to play
+3402000	3404000	, we will find that
+3404000	3406000	all the players
+3406000	3408000	should take it earlier
+3408000	3410000	in the sense of FOSD.
+3410000	3412000	In the sense of FOSD.
+3412000	3414000	This is true for any sense of beginning.
+3414000	3416000	And it is true in any place.
+3416000	3418000	So this is a very strong assumption.
+3418000	3420000	So when this assumption
+3420000	3422000	can be proven,
+3422000	3424000	it means that
+3424000	3426000	it is a great support for our theory.
+3426000	3428000	At the end,
+3428000	3430000	some future prospects
+3430000	3432000	can be extended.
+3432000	3434000	The first one is the experiment.
+3434000	3436000	Now I am thinking with my teacher
+3436000	3438000	and Wang Daoyi from NTU.
+3438000	3440000	How do we set up an experiment
+3440000	3442000	to verify our strong prediction?
+3442000	3444000	The next theory is
+3444000	3446000	at least the second point.
+3446000	3448000	The theory is the second episode
+3448000	3450000	I am writing now.
+3450000	3452000	It's about the same model.
+3452000	3454000	In the second article,
+3454000	3456000	I can briefly talk about it,
+3456000	3458000	but I can't talk much because I don't have much time.
+3458000	3460000	The first thing to think about
+3460000	3462000	is that
+3462000	3464000	in this game,
+3464000	3466000	you will have
+3466000	3468000	incomplete information.
+3468000	3470000	It's like playing Dezopuk.
+3470000	3472000	All the information
+3472000	3474000	is the two hand cards
+3474000	3476000	on your hand
+3476000	3478000	and the card on the table.
+3478000	3480000	But you don't know
+3480000	3482000	what the player's hand card is.
+3482000	3484000	So in general,
+3484000	3486000	we can only predict
+3486000	3488000	what the player's hand card
+3488000	3490000	will look like
+3490000	3492000	when he or she decides to play.
+3492000	3494000	But
+3494000	3496000	in our theory today,
+3496000	3498000	when someone else is going to play
+3498000	3500000	or decide to fold,
+3500000	3502000	can you update
+3502000	3504000	if the other player is a good match?
+3504000	3506000	If the other player
+3506000	3508000	just randomly plays,
+3508000	3510000	you may know that
+3510000	3512000	you don't have to care about his hand card.
+3512000	3514000	This should be a level 0.
+3514000	3516000	This theory already has
+3516000	3518000	a building in it, but it's not very tractable.
+3518000	3520000	So now I'm writing
+3520000	3522000	a new theory
+3522000	3524000	to discuss this matter.
+3524000	3526000	In two months,
+3526000	3528000	I'm going to use this
+3528000	3530000	second bullet point to test my candidates.
+3530000	3532000	Then there are other applications.
+3532000	3534000	Our theory
+3534000	3536000	is a very general setting.
+3536000	3538000	It can be applied to a lot of places.
+3538000	3540000	For example, social learning.
+3540000	3542000	This may be something like
+3542000	3544000	you've never been to a restaurant
+3544000	3546000	and you're not sure
+3546000	3548000	if the restaurant is good or bad.
+3548000	3550000	All you see is
+3550000	3552000	a group of people queuing up.
+3552000	3554000	At this time,
+3554000	3556000	the general theory may be
+3556000	3558000	that I only use the behavior of others
+3558000	3560000	to update whether this restaurant is good or not.
+3560000	3562000	But it's very likely
+3562000	3564000	that if you see this restaurant
+3564000	3566000	queueing up every time,
+3566000	3568000	but you go to see the medicine,
+3568000	3570000	many people say it's not ideal.
+3570000	3572000	At this time,
+3572000	3574000	you have to update your belief
+3574000	3576000	that those people in line
+3576000	3578000	may be level 0 people.
+3578000	3580000	This means that their behavior
+3580000	3582000	is not too much
+3582000	3584000	in line.
+3584000	3586000	It's not really
+3586000	3588000	how delicious this thing is.
+3588000	3590000	If our model is applied
+3590000	3592000	to social learning,
+3592000	3594000	a similar situation may occur.
+3594000	3596000	Then you can also apply it to
+3596000	3598000	political science, such as voting.
+3598000	3600000	For example, if you vote for a candidate,
+3600000	3602000	it's like playing a game with a voter.
+3602000	3604000	The candidate keeps raising his ID,
+3604000	3606000	and the voter decides
+3606000	3608000	whether to vote for him or another person.
+3608000	3610000	So it's very likely that
+3610000	3612000	after he raises his ID,
+3612000	3614000	you update that this candidate
+3614000	3616000	may be a level 0 candidate.
+3616000	3618000	Then there may be
+3618000	3620000	the case of negotiation.
+3620000	3622000	In any game where you have to take turns
+3622000	3624000	to make a move,
+3624000	3626000	our theory actually applies.
+3626000	3628000	Thank you very much for your participation today.
+3628000	3630000	You can e-mail me.
+3630000	3632000	If you have any questions,
+3632000	3634000	you can contact me.
+3634000	3636000	This article is actually finished.
+3636000	3638000	It's already pre-printed.
+3638000	3640000	If you want to see the draft,
+3640000	3642000	you can find it on my website.
+3642000	3644000	I will also share this video with you.
+3644000	3646000	I will also put it on the website,
+3646000	3648000	so you can go and see it.
+3648000	3650000	Next, because this speech
+3650000	3652000	is recorded,
+3652000	3654000	you can also find it on Project Tyra.
+3654000	3656000	Thank you very much.
+3684000	3686000	Okay.
+3686000	3688000	Now it should be better.
+3688000	3690000	Okay.
+3690000	3692000	I'll say it again.
+3692000	3694000	Thank you very much
+3694000	3696000	for Boxuan's speech,
+3696000	3698000	especially for your detailed explanation
+3698000	3700000	to help me understand
+3700000	3702000	your theoretical model.
+3702000	3704000	I think because we just
+3704000	3706000	opened some Q&A answers
+3706000	3708000	in the process,
+3708000	3710000	because it's still being recorded,
+3710000	3712000	we can open a few more questions.
+3712000	3714000	I think the Q&A time
+3714000	3716000	is divided into two parts.
+3716000	3718000	The first part is to keep recording.
+3718000	3720000	The second part, I will turn off the recording
+3720000	3722000	and we will save time.
+3722000	3724000	So now in the process of recording,
+3724000	3726000	I don't know if there are any questions
+3726000	3728000	that the audience wants to ask.
+3728000	3730000	You can look at the microphone yourself.
+3730000	3732000	Someone just asked
+3732000	3734000	in the message area,
+3734000	3736000	did you say In-N-Out hamburger?
+3736000	3738000	I said yes.
+3738000	3740000	My answer is yes.
+3740000	3742000	I also want to ask a question.
+3742000	3744000	I want to brush up on my sense of presence.
+3744000	3746000	I actually think
+3746000	3748000	because you mentioned a lot of
+3748000	3750000	detailed explanations,
+3750000	3752000	so it really helped me.
+3752000	3754000	I actually have a question.
+3754000	3756000	You just mentioned the number guessing game.
+3756000	3758000	In fact, in the number guessing game,
+3758000	3760000	I feel that its essence
+3760000	3762000	is a bit like
+3762000	3764000	there is no competition between players.
+3764000	3766000	In the later martial arts game,
+3766000	3768000	what I mean by no competition
+3768000	3770000	is that I just have to
+3770000	3772000	work hard to guess the correct number.
+3772000	3774000	In fact, in the later martial arts game,
+3774000	3776000	there is competition.
+3776000	3778000	And I have to guess
+3778000	3780000	that you don't want to
+3780000	3782000	win in this round,
+3782000	3784000	but you are still
+3784000	3786000	greedy enough.
+3786000	3788000	So I think there seems to be
+3788000	3790000	some fundamental differences
+3790000	3792000	between these two games.
+3792000	3794000	So I'm not sure
+3794000	3796000	if this is a question
+3796000	3798000	of clarification.
+3798000	3800000	But in fact,
+3800000	3802000	thank you very much for your question.
+3802000	3804000	There are some differences
+3804000	3806000	between these two games.
+3806000	3808000	First of all,
+3808000	3810000	because it is a no-attack round 6 move,
+3810000	3812000	and then it is a number guessing game,
+3812000	3814000	it is a move at the same time.
+3814000	3816000	Secondly,
+3816000	3818000	in fact,
+3818000	3820000	because when you are
+3820000	3822000	a move at the same time,
+3822000	3824000	how do you say
+3824000	3826000	In the end, the winner is
+3826000	3828000	the one who is closest to the winner.
+3828000	3830000	So in a way,
+3830000	3832000	the one who is closest to the winner wins.
+3832000	3834000	But his problem is that
+3834000	3836000	his payoff does not grow
+3836000	3838000	because of what you do.
+3838000	3840000	If you win, you win. If you lose, you lose.
+3840000	3842000	But in the martial arts game,
+3842000	3844000	if you two go together,
+3844000	3846000	you two decide to
+3846000	3848000	say that we go together for 10 days
+3848000	3850000	and then start playing this game,
+3850000	3852000	it is true that in a way,
+3852000	3854000	he will cheat and say that
+3854000	3856000	I decided to take the lead first.
+3856000	3858000	So it is true that
+3858000	3860000	his thinking may be different
+3860000	3862000	in two games.
+3862000	3864000	But thank you very much for your question.
+3864000	3866000	Yes, because it feels like the previous
+3866000	3868000	number guessing game
+3868000	3870000	because its answer is fixed.
+3870000	3872000	The martial arts game
+3872000	3874000	is not fixed.
+3874000	3876000	It follows another person at any time.
+3876000	3878000	So I don't know if these two differences
+3878000	3880000	will affect your model settings.
+3880000	3882000	In fact, it is not very likely
+3882000	3884000	because our model is set in a very general situation.
+3884000	3886000	Speaking of this solution,
+3886000	3888000	if you are interested,
+3888000	3890000	you can type in the comment area
+3890000	3892000	and swipe a row.
+3892000	3894000	It doesn't matter if you are shy.
+3894000	3896000	We can also talk about
+3896000	3898000	what number you chose after the recording.
+3898000	3900000	I am quite curious.
+3900000	3902000	Yes, but you can see that
+3902000	3904000	it is 25.
+3904000	3906000	Good.
+3906000	3908000	It's pretty good.
+3908000	3910000	Then you can choose the number 20.
+3910000	3912000	50.
+3912000	3914000	OK.
+3914000	3916000	Anyway, everyone can choose.
+3916000	3918000	If you are shy, you can talk about it later.
+3918000	3920000	I have a question.
+3920000	3922000	First of all, Xu Youzhen chose 25.
+3922000	3924000	It's not me.
+3924000	3926000	The problem is that
+3926000	3928000	you make an assumption.
+3928000	3930000	This assumption is that
+3930000	3932000	those who participate in this game
+3932000	3934000	will make the most rational
+3934000	3936000	and best choice.
+3936000	3938000	The real limitation is that
+3938000	3940000	he is not smart enough.
+3940000	3942000	Or we say that his thinking depth is limited.
+3942000	3944000	But like Gao Xian said,
+3944000	3946000	how do you know that
+3946000	3948000	when you really want to implement
+3948000	3950000	this experiment to a group of people,
+3950000	3952000	there will be no bad guys.
+3952000	3954000	Or he deliberately
+3954000	3956000	does not follow the rules.
+3956000	3958000	Or he had an accident at home yesterday,
+3958000	3960000	so his choice of behavior is very strange.
+3960000	3962000	Something like that.
+3962000	3964000	Will this thing be an interesting probe?
+3964000	3966000	Can you take the experiment
+3966000	3968000	you want to implement
+3968000	3970000	to reverse it?
+3970000	3972000	If I measured it today,
+3972000	3974000	I can prove that
+3974000	3976000	this group of people may have
+3976000	3978000	had an accident at home.
+3980000	3982000	Thank you very much for your question.
+3982000	3984000	It sounds a bit noisy,
+3984000	3986000	but it's actually a very serious question.
+3986000	3988000	The first is that
+3988000	3990000	our theory
+3990000	3992000	does not say
+3992000	3994000	that he may be a
+3994000	3996000	setting defect
+3996000	3998000	or a model feature.
+3998000	4000000	Our only limitation is that
+4000000	4002000	he can't choose
+4002000	4004000	the degree of that place.
+4004000	4006000	It's not because he made a mistake,
+4006000	4008000	but because his brain can't think so much.
+4008000	4010000	In other cases,
+4010000	4012000	some people deliberately
+4012000	4014000	continue to pass on in martial arts.
+4014000	4016000	It is very likely that
+4016000	4018000	he is a level 0 person in our model.
+4018000	4020000	But of course,
+4020000	4022000	there is another type of people
+4022000	4024000	who like to pass on.
+4024000	4026000	So his decision-making behavior
+4026000	4028000	is to pass on wherever he meets.
+4028000	4030000	Our model is actually
+4030000	4032000	more like a method theory.
+4032000	4034000	Of course, it can be extended
+4034000	4036000	to say that I can add
+4036000	4038000	other crazy types of people
+4038000	4040000	into it.
+4040000	4042000	Our model is also used
+4042000	4044000	to simply rewrite
+4044000	4046000	how many types there are.
+4046000	4048000	Our model is more like
+4048000	4050000	what mistakes they made.
+4050000	4052000	In fact, I can talk about
+4052000	4054000	the fact that
+4054000	4056000	some people are thinking about this in
+4056000	4058000	experimental economics.
+4058000	4060000	For example,
+4060000	4062000	we have a game
+4062000	4064000	called the dictator game.
+4064000	4066000	Let's say I play a game with you today.
+4066000	4068000	I have 100 yuan to share.
+4068000	4070000	I decide how much I want to share with you.
+4070000	4072000	You have nothing to say.
+4072000	4074000	I'll give you as much money as you want.
+4074000	4076000	We can use this to
+4076000	4078000	measure other people's preferences.
+4078000	4080000	For example,
+4080000	4082000	how much other people's preferences
+4082000	4084000	are fair to society.
+4084000	4086000	We can use
+4086000	4088000	other environments
+4088000	4090000	to measure
+4090000	4092000	how much
+4092000	4094000	other people's preferences
+4094000	4096000	are fair to society.
+4096000	4098000	Or
+4098000	4100000	there is another game
+4100000	4102000	called the final match.
+4102000	4104000	This game is very similar.
+4104000	4106000	The first person decides
+4106000	4108000	how much money I want to give you.
+4108000	4110000	The second person decides
+4110000	4112000	whether to accept this offer or not.
+4112000	4114000	If he doesn't want it,
+4114000	4116000	everyone won't take it.
+4116000	4118000	If he accepts it,
+4118000	4120000	he will use this method.
+4120000	4122000	We can also use
+4122000	4124000	how much money he will give to others
+4124000	4126000	and whether others will accept it
+4126000	4128000	to see what he thinks of others.
+4128000	4130000	In fact,
+4130000	4132000	at least in the final match,
+4132000	4134000	there are other games
+4134000	4136000	that try to detect
+4136000	4138000	other people's preferences
+4138000	4140000	in addition to strategic thinking.
+4140000	4142000	That's all for now.
+4142000	4144000	Thank you for your questions.
+4144000	4146000	Do you have any other questions?
+4146000	4148000	Or we can
+4148000	4150000	stop recording and chat later.
+4152000	4154000	Does anyone
+4154000	4156000	have any questions
+4156000	4158000	before the recording ends?
+4158000	4160000	Can I ask a question?
+4160000	4162000	Sure.
+4162000	4164000	Hello, I am
+4164000	4166000	Huang Feiyang from Jianqiao University.
+4166000	4168000	I am a neurosurgeon.
+4168000	4170000	I have two questions.
+4170000	4172000	The first one
+4172000	4174000	is more like your extension.
+4174000	4176000	Because it seems that
+4176000	4178000	your model depends on
+4178000	4180000	assuming that
+4180000	4182000	this person knows
+4182000	4184000	his level very clearly.
+4184000	4186000	Is there a possibility that
+4186000	4188000	he is not sure of his level
+4188000	4190000	in terms of distribution?
+4190000	4192000	It sounds like this.
+4192000	4194000	Because I feel that
+4194000	4196000	in fact, the detector
+4196000	4198000	may not be sure where he is.
+4198000	4200000	This is the first question.
+4200000	4202000	The second question is more technical.
+4202000	4204000	In fact,
+4204000	4206000	your prediction is that
+4206000	4208000	extensive games
+4208000	4210000	will be found earlier
+4210000	4212000	than normal game.
+4214000	4216000	I want to ask
+4216000	4218000	how do you prove FOSD in practice?
+4218000	4220000	Because even if you are poor,
+4220000	4222000	you can only guess
+4222000	4224000	that he may be close to FOSD.
+4224000	4226000	Because if you can't find the antithesis,
+4226000	4228000	it doesn't mean he doesn't exist.
+4228000	4230000	So how much in practice
+4230000	4232000	will let you
+4232000	4234000	be sure that
+4234000	4236000	your inference is correct?
+4236000	4238000	Both questions
+4238000	4240000	are very good.
+4240000	4242000	Thank you very much for your question.
+4242000	4244000	Let's do it one by one.
+4244000	4246000	First,
+4246000	4248000	the technical point is that
+4248000	4250000	I totally agree with you.
+4250000	4252000	After all,
+4252000	4254000	this is the first
+4254000	4256000	method in Extensible.
+4256000	4258000	So I think
+4258000	4260000	this is totally feasible.
+4260000	4262000	In fact,
+4262000	4264000	what I know is that
+4264000	4266000	some people's methods
+4266000	4268000	in normal game
+4268000	4270000	are more like this.
+4270000	4272000	Although everyone
+4272000	4274000	has a different level.
+4274000	4276000	It may be different
+4276000	4278000	in every game.
+4278000	4280000	But everyone has a capacity.
+4280000	4282000	No matter how smart I am,
+4282000	4284000	I still play to a certain extent.
+4284000	4286000	But based on different games
+4286000	4288000	and different people
+4288000	4290000	and different opponents,
+4290000	4292000	I have different beliefs.
+4292000	4294000	In this case,
+4294000	4296000	the level I may show is different.
+4296000	4298000	This is another kind of extension.
+4298000	4300000	But as you just mentioned,
+4300000	4302000	I'm not sure
+4302000	4304000	what my level is today.
+4304000	4306000	In the process of playing the game,
+4306000	4308000	you will learn several things at the same time.
+4308000	4310000	First, you will learn
+4310000	4312000	how smart you are.
+4312000	4314000	Second, how smart others are.
+4314000	4316000	Third, if there is incomplete information,
+4316000	4318000	what does the incomplete information
+4318000	4320000	of others look like?
+4320000	4322000	If so,
+4322000	4324000	you may learn a lot
+4324000	4326000	under your model setting.
+4326000	4328000	But I think it's totally feasible.
+4328000	4330000	Thank you for your first question.
+4330000	4332000	Next, let's talk about the second question.
+4332000	4334000	The second question is about the experiment.
+4334000	4336000	I think what you said
+4336000	4338000	is right.
+4338000	4340000	We can only say that
+4340000	4342000	given the FOSD relationship,
+4342000	4344000	we can only say that
+4344000	4346000	we can only say that
+4346000	4348000	given the FOSD relationship,
+4348000	4350000	we can only say that
+4350000	4352000	we can only say that
+4352000	4354000	we can only say that
+4354000	4356000	we can only say that
+4356000	4358000	although FOSD is possible.
+4358000	4360000	although FOSD is possible.
+4360000	4362000	how to say
+4362000	4364000	any arena
+4364000	4366000	any arena
+4366000	4368000	The makeup of our team
+4368000	4370000	the makeup of our team
+4370000	4372000	But the meme
+4372000	4374000	But the meme
+4374000	4376000	A rough case
+4376000	4378000	A rough case
+4378000	4380000	A rough case
+4380000	4382000	a rough case
+4382000	4384000	A rough case
+4384000	4386000	We try our best to pick some extreme cases
+4386000	4388000	We try our best to pick some extreme cases
+4388000	4390000	If in these cases
+4390000	4392000	It all shows
+4392000	4394000	At least we see that in fact
+4394000	4396000	Because the blue line and the red line are two CDFs
+4396000	4398000	This is a result that can be directly observed in practice
+4398000	4400000	So if we say
+4400000	4402000	In all kinds of extreme situations
+4402000	4404000	In all kinds of extreme situations
+4404000	4406000	In all kinds of extreme situations
+4406000	4408000	We all see the blue line and the red line
+4408000	4410000	If there is such a relationship
+4410000	4412000	Then maybe we can only say
+4412000	4414000	We only meet a necessary condition
+4414000	4416000	But this does not mean that it is a sufficient condition
+4416000	4418000	I think what you said is something like this
+4418000	4420000	It's true that we're just
+4420000	4422000	If we pick a C or S
+4422000	4424000	If we pick a C or S
+4424000	4426000	It's just to verify that the necessary conditions are met
+4426000	4428000	The sufficient conditions may not be right
+4428000	4430000	But what we can do
+4430000	4432000	But what we can do
+4432000	4434000	The best thing we can do in practice is
+4434000	4436000	It's like trying to deny our model
+4436000	4438000	It's like trying to deny our model
+4438000	4440000	If we say that we have no way to deny it
+4440000	4442000	Maybe it can be said that our model is right
+4442000	4444000	But how right is it
+4444000	4446000	It does take more and more
+4446000	4448000	How do you explain
+4448000	4450000	Because after all, in many cases
+4450000	4452000	When you verify the model
+4452000	4454000	You are just verifying the prediction that it can be tested
+4454000	4456000	So in this case
+4456000	4458000	You are based on the model
+4458000	4460000	Some of the results found
+4460000	4462000	Let me see if it will meet this thing
+4462000	4464000	It's like verifying its necessary conditions
+4464000	4466000	If this thing is wrong, the model will be counterproductive
+4466000	4468000	But I think the questions you ask are very good
+4468000	4470000	I'm not sure if my answer is good
+4470000	4472000	I'm very sorry
+4472000	4474000	Thank you very much for your question
+4474000	4476000	I don't know if I can answer you
+4476000	4478000	Yes, thank you
+4478000	4480000	Thank you very much
+4480000	4482000	If the answer is not good, you can talk to me later
+4482000	4484000	Thank you, thank you for your question
+4486000	4488000	Thank you Boxuan
+4488000	4490000	I'll turn off the recording right away
+4490000	4492000	Before turning off the recording
+4492000	4494000	Do you want to do the last clarification
+4494000	4496000	For
+4496000	4498000	Maybe there will be potential viewers in the future
+4498000	4500000	Will watch your video
+4500000	4502000	So do you want to do the final interpretation
+4502000	4504000	Or concluding remark
+4504000	4506000	I think it seems
+4506000	4508000	Thank you for giving me this opportunity
+4508000	4510000	But I think I seem to have talked about it
+4510000	4512000	Because mainly
+4512000	4514000	I think I have talked about it
+4514000	4516000	Yes yes yes
+4516000	4518000	But thank you
+4518000	4520000	If there are future viewers who want to watch
+4520000	4522000	Thank you very much
+4522000	4524000	Thank you very much for watching
+4524000	4526000	No no no
+4526000	4528000	Thank you Boxuan, I'll turn off the recording now

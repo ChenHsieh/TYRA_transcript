@@ -1,0 +1,719 @@
+WEBVTT
+
+00:00.000 --> 00:15.000
+各位聽眾還有孫博士大家好,今天很榮幸能夠幫孫博士做學經歷介紹。
+
+00:15.000 --> 00:43.000
+孫博士在1999年到2003年做碩士學位,當他結束他的大學學位之後,他在2003年到2005年在同樣的台灣大學做碩士學位。
+
+00:43.000 --> 00:54.000
+接下來,他到普渡大學做Ph.D.學位,從2005年到2010年,他的專業是化學生物學。
+
+00:54.000 --> 01:08.000
+接下來,完成他的Ph.D.學位之後,他到MIT做PostDoc,做了四年之後,他又到UCSF做他的第二個PostDoc和Assistant Researcher。
+
+01:08.000 --> 01:15.000
+今年,他開始他的新工作,主要是在Genentech做Senior Scientific Researcher。
+
+01:15.000 --> 01:25.000
+今天,孫博士要為我們演講的內容是,Use Single Cell RNAseq to Tackle Complex Biology。
+
+01:25.000 --> 01:29.000
+我們現在請孫博士幫我們做他的演講內容。
+
+01:30.000 --> 01:37.000
+嗨,大家好,我是孫博士。
+
+01:38.000 --> 01:44.000
+我現在感冒,所以聲音會比較差一點。
+
+01:44.000 --> 01:55.000
+今天我會用一個比較簡單易懂的方式來講,以防萬一有些人不是生物領域的背景。
+
+01:55.000 --> 02:05.000
+我會用一個比較簡單易懂的方式來講,以防萬一有些人不是生物領域的背景。
+
+02:05.000 --> 02:15.000
+我會用一個比較簡單易懂的方式來講,以防萬一有些人不是生物領域的背景。
+
+02:16.000 --> 02:28.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文是什麼,所以會有一點中文交雜。
+
+02:28.000 --> 02:38.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+02:38.000 --> 02:48.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+02:48.000 --> 02:58.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+02:58.000 --> 03:08.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:08.000 --> 03:18.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:18.000 --> 03:28.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:28.000 --> 03:38.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:38.000 --> 03:48.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:48.000 --> 03:58.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+03:58.000 --> 04:08.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+04:08.000 --> 04:18.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+04:18.000 --> 04:28.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+04:28.000 --> 04:38.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+04:38.000 --> 04:48.000
+我今天主要還是用中文講,不過有一些專有名詞我不是非常確定它的中文交雜。
+
+04:48.000 --> 05:08.000
+在正式的定義上,基因基本上就是一個DNA片段,然後它可以轉譯成一個有用的分子,然後可以行使它需要的生理功能。
+
+05:08.500 --> 05:26.500
+我們一般講基因接碼或者是基因密碼,實際上主要原因是因為DNA主要是由一連串的所謂的ATCG,四個不同的基因所構成的雙骨螺旋結構。
+
+05:26.500 --> 05:40.500
+我們一般講基因接碼或者是基因密碼,實際上主要原因是因為DNA主要是由一連串的所謂的ATCG,四個不同的基因所構成的雙骨螺旋結構。
+
+05:41.500 --> 06:07.000
+在分子生物學中,有一個叫做中心定理,它的原則就是我們擁有這個遺傳物質,它主要結構是DNA,然後它會轉譯成RNA,然後RNA會再次轉譯成蛋白質。
+
+06:07.200 --> 06:32.000
+這個蛋白質基本上可以從事各式各樣的生物學功能。隨著時間的演進,中心定理慢慢地被延伸出更多不同的形式,甚至在病毒上或其他系統上發現更多不同的方向。
+
+06:32.200 --> 06:51.580
+像今天的技術其實也會牽扯到一個發現,以往我們都認為就是DNA轉譯成RNA,可是後來科學家也發現了有另外一種酵素,它可以讓RNA轉譯成DNA。
+
+06:51.580 --> 07:03.720
+因為有這個酵素的幫忙,所以很多相關延伸的技術就能夠在這樣的基礎上建立出來。
+
+07:03.920 --> 07:26.100
+今天我們主要要講述的是所謂的RNA-seq,另外一種講法就是所謂的transcriptal analysis,或者是gene expression的profiling,基本上就是我們可以藉由會表達的基因來了解人的生理功能。
+
+07:27.100 --> 07:53.340
+在這張圖中所顯示的是一些在分子生物學和sequencing技術上的重大時間軸和 milestone,也許很多人已經知道,就是1953年基本上DNA雙組結構第一次被知道,然後到了1977年,Sanger's DNA sequencing被發展出來,然後之後PCR這個技術也被發展出來。
+
+07:53.380 --> 08:07.980
+PCR的技術基本上就是我們可以在實驗室裡面快速地去增殖我們的DNA,所以讓很多相關的技術也能夠在這上面被建立出來。
+
+08:08.300 --> 08:32.880
+1990年開始了所謂的human genome project,然後經過了大概13年的時間,human genome project能夠得以成立,主要在這個階段的時候,因為sequencing cost依然非常高昂,所以在一般的lab裡面其實比較難去操作一些所謂的sequencing project。
+
+08:32.880 --> 09:02.340
+但是直到了差不多2005年這個時候,出現了所謂的next-generation sequencing,也就是一個比較次世代的另外一種sequencing的技術,這個技術造成了sequencing的cost降低了非常多,所以讓更多更多跟sequencing相關的genomic project能夠更順利地在各個實驗室裡面進行。
+
+09:03.240 --> 09:16.460
+直到現在,這個next-generation sequencing的技術還是被大量的應用,到最近這幾年甚至出現了第三代的所謂third-generation sequencing,which is based on the nanopore技術。
+
+09:17.460 --> 09:43.080
+至於這個single-celled RNA-C是什麼時候被發展出來的呢?它的第一個正式的report,它的single-celled這項技術是大約在2009年這個時候,所以從這邊你可以看見,就是因為各項技術的逐漸成熟,尤其是sequencing cost的快速降低,使這個single-celled RNA-C能夠得以被更大量的操作。
+
+09:43.240 --> 09:52.300
+然後到現在,很多衍生的protocol或者是technology,甚至很多的company都繼續在這一塊領域上面快速的發展。
+
+09:54.820 --> 10:00.860
+現在進入到所謂的single-celled RNA-C,第一個問題當然是說,為什麼我們需要做single-celled RNA-C?
+
+10:01.820 --> 10:29.180
+在single-celled RNA-C之前,其實大家已經可以快速的去看所謂的gene profiling,一般用的基本上就是一個很簡單的例子,假設我們要知道說,一個cancer,一個tumor細胞,它跟正常的細胞有什麼不一樣,那可能我們的做法就是,我們有一個健康的sample跟一個disease的sample,
+
+10:29.200 --> 10:57.140
+然後我可能把它的RNA抽取出來之後,然後去做sequencing,然後做完sequencing之後,我可能就比較說,這兩個組織,他們的基因表現有哪些地方一樣或不一樣,然後我可能可以找出某一些所謂的致病基因,或者是說,也許在哪一條signal-only pathway被further activate或inhibit,然後而可能造成這個疾病的產生。
+
+10:57.140 --> 10:57.980
+可是在這樣的基礎下,會有一個問題,就是說,例如說,以一個tumor來講的話,一個tumor組織裡面,它可能包含了各式各樣不同的細胞,可能有immune cells,可能有所謂的tumor cell,可能有fibroblast,一些亂七八糟的細胞在裡面,那你如果就是直接把這個tumor整個磨碎之後,然後去取它的RNA出來定序,那你其實得到的是一個,一個從各式各樣細胞所給你的一個tumor組織裡面,那你如果就是直接把這個tumor整個磨碎之後,然後去取它的RNA出來定序,那你其實得到的是一個,一個從各式各樣細胞所給你的一個tumor組織裡面,那你如果就是直接把這個tumor整個磨碎
+
+11:27.140 --> 11:28.140
+那雖然說從這樣子的一個heat map來看,有時候你仍然是可以看見,就是averagely有一些基因被inhibit或者是activate在disease的sample裡面,但是有時候你很難去確定說,哦,到底這樣子的,這樣子的結果是因為either是免疫細胞所造成的,或者是也許是fibroblast所造成的,又或者是可能一些你所不知道的基質細胞所造成的,所以呢,也許是fibroblast所造成的,又或者是可能一些你所不知道的基質細胞所造成的,所以呢,也許是fibroblast所造成的,又或者是可能一些你所不知道的基質細胞所造成的,所以呢,也許是fibroblast所造成的,又或者是可能一些你所不知道的基質細胞所造成
+
+11:57.900 --> 12:08.140
+所以這個時候呢,如果我們有辦法做所謂的transcriptome的profiling at the single cell resolution,那它就能夠大大的提高,就是我們對
+
+12:09.940 --> 12:17.100
+假設一個tumor組織裡面,每一個細胞它是如何去造成這個疾病,能夠有一個更深入的了解。
+
+12:17.100 --> 12:18.100
+那這邊呢,我用幾張就是在網路上面看到人家share一些很有趣的圖,就是可以很簡單的讓你有個概念就是說,為什麼有時候所謂的block analysis呢,它可能會造成一些誤判。例如說,像以這張圖來講,這裡的每一個點點有所謂的x value跟y value,然後呢,你可能可以去做各種的calculation,你可以去算,哦,可能這個x的平均值是這樣,y的平均值是這樣子,然後呢,你可能可以去做各種的calculation,你可以去算,哦,可能這個x的平均值是這樣,y的平均值是這樣子,然後呢,你可能可以去做各種的calculation,你可以去算,哦,可能這個x的平均值是這樣,y的平均值是這樣子,然後呢,你可能可以去做各種的cal
+
+12:47.100 --> 12:56.200
+x的standard deviation,y的standard deviation,那它的correlation是這樣子。可是就算你把這些value都算出來了,那x跟y的關係呢?
+
+12:56.200 --> 13:06.040
+所以說,如果你只是去做一個block analysis的話,你可能會將它背後的所謂structure,你沒有辦法真實的去表達出來。
+
+13:06.440 --> 13:34.380
+然後呢,另外一個很有趣的圖是說,有的時候呢,如果你去做一個block analysis,你得到一個conclusion,它可能呢,會誤導你去一個錯誤的方向。例如說,假設呢,這個是你的sample,所以你的sample就是contain了很多各式各樣的動物,然後呢,你去做一個block analysis,去看說,啊,這個生物可能是長什麼樣,然後最後呢,你可能得到的一個結論,哦,這個是這個生物該長的樣子。
+
+13:34.380 --> 14:04.240
+那你就會發現,其實它與所謂的真實狀態是差了非常多的。那所謂的single cell的analysis呢,基本上它不同的做法就是說,在這項技術之下,你有辦法呢,每一隻動物你都單獨的去做分析,然後去找到很多不同的feature,然後based on那些你所找到的feature,然後你就開始去做所謂的clustery。例如說,以這張圖來顯示說,ok,你已經找到了兩個feature,一個是firm,一個是venom。
+
+14:04.380 --> 14:34.360
+然後呢,即使你這樣子加入,只是加入兩個feature,你已經可以把這一些一大堆的動物clustered into at least two subsets,one big subset will be the snakes, which has the venom, but doesn't have firm,然後另外一個big subset呢,可能就是所謂的它雖然沒有venom,但是還有firm的,然後呢,當你能夠add in more and more features,那最後hopefully,finally, you will be able to like,
+
+14:35.020 --> 14:44.220
+one individual item will be clustered into one group,所以這就是the whole idea about why you need to do a profiling at a single cell level。
+
+14:46.100 --> 15:04.360
+然後一般在這個single cell領域的人,他們最喜歡用的一個比喻呢,就是,呃,就是所謂的fruit smoothie跟所謂的fruit salad,然後當你做一個bargain asset的時候呢,就很像是,呃,很像是所謂的fruit smoothie,
+
+15:04.360 --> 15:28.400
+基本上你就是把各式各樣的水果蔬菜全部打在一起,那你喝起來的那個味道呢,基本上呢,它是一個所謂的average taste of all ingredient,那所以你可能沒有辦法去知道說這個裡面到底有哪一些成分,然後可能你所taste到的那個成分呢,可能只是裡面某一些例如特別strong的ingredient,maybe是apple,maybe是strawberry,
+
+15:28.400 --> 15:55.820
+但是,但是你並沒有辦法知道說,也許這裡面也有一些cabbage或者是一些其他的東西,那呢,那single cell它就很像是,呃,很像是你在吃fruit salad,那你基本上你能夠taste到的味道呢,你已經有辦法就是說,基本上你可以tasting each individual pieces of the fruit,所以somehow你就會知道說它真正的composition應該是由哪些水果所組成的。
+
+15:56.820 --> 16:24.700
+所以所謂的這種所謂from fruit to,呃,from fruit smoothie to the fruit salad,基本上它所希望能夠達,single cell RNAase所希望達到的狀態呢,就是說你有辦法去顯示individual cell type that cause the biological response或者是disease,然後這邊這個summary是一個比較可能,呃,比較scientific上面的一個說法,
+
+16:24.980 --> 16:48.380
+所以基本上所謂的bark RNAase呢,它,它所測量的是所謂的average expression level for each cell across the population of cells,呃,基本上就是就像我剛剛說的,如果你在做一個cancer的研究,那你就是兩個sample,一個是from healthy tissue,另外一個是from disease tissue,那你就是把它磨碎了之後,兩個sample去做比較,
+
+16:48.780 --> 17:08.300
+那它的limitation基本上就是說,如果呢,呃,你今天是想要研究一個比較複雜的system,例如說你想要研究人的腦,或者是研究一些比較複雜的器官,那呢,這一項技術恐怕就沒有辦法給你一個非常明確的結果。
+
+17:09.300 --> 17:27.380
+那基本上那single cell他做的呢,他沒覺得是distribution of expression level for each genes across a population of the cells,所以呢,利用這項技術呢,每個cell他的specific change就能夠,呃,被顯露出來。
+
+17:28.380 --> 17:52.180
+那基本上現在市面上已經有就是,呃,不少所謂的commercial available的single cellplatform,那,呃,那當然他們各有各的優缺點,那我個人,從我個人的經驗呢,我有經驗的兩個platform,一個是所謂的fluidic C1,另外一個就是,呃,叫做10S genomics的system。
+
+17:53.180 --> 18:02.740
+OK,那現在我接下來我會,呃,快速的介紹這兩個我曾經用過的single cell的platform。
+
+18:04.140 --> 18:20.140
+那基本上呢,in general,所謂的workflow of the single cell,呃,就是他的概念基本上是一樣的,就是首先呢,你有所謂的你的tissue of interest,either是patient tissue或者是cells,呃,就是一些你感興趣的細胞組織。
+
+18:20.500 --> 18:37.980
+然後呢,在做single cell之前呢,最重要的一步呢,就是你必須要有你自己的方式去prepare所謂的single cell isolation,suspension這個東西,那每一個人可能有不同的做法。
+
+18:37.980 --> 19:03.660
+呃,可能是經由,例如說所謂的一個facts去做single cell的篩選,或者是去做一些,呃,一些所謂的microdexaction,能夠去去把一個一個cell把它sort出來,然後呢,當你能夠成功的去完成你的single cell suspension之後,基本上你就是把它inject到either single cell的platform。
+
+19:03.660 --> 19:03.980
+然後呢,在那個single cell platform,他做的事情呢,基本上他就是呢,把cell list掉,然後抽取出他裡面的RNA,然後這個RNA呢,他就是透過剛剛所謂的reverse transcribe的方式呢,把它reverse transcribe into the cDNA,然後這個cDNA再透過PCR的方式呢,能夠把它去把它amplify出來,amplify出來之後的這一些product呢,我們再去建立一個library,然後這些library就可以send for sequence,然後呢,在那個single cell platform,他做的事情呢,基本上他就是呢,把cell list掉,然後抽取出他裡面的RNA,然後這個RNA呢,他就是透過剛剛所謂的reverse transcribe的方式呢,把它reverse transcribe into the cDNA,然後這個cDNA再透過PCR的方式呢,能夠把它去把它amplify出來
+
+19:33.660 --> 20:03.640
+然後就像剛剛說的,這個就是所謂的sequencing的結果,你就是得到所謂的一個序列,這序列可能就是,就基本上就是ATCG的序列,然後你可能在mapping,因為現在就是,現在很多基因都已經解序了,包括人的老鼠的,或者還有一些物種,所以說根據你的sample的來源,你可以mapping to the reference gene,
+
+20:03.660 --> 20:27.640
+那你就可以知道,你就可以知道說,哦,你每一個基因的表達量大概是怎麼樣的一個情況,然後呢,最後一步就是做所謂的computational analysis,那因為這一項single cell RNAC的技術還是相對性的,所以現在在computational analysis這一塊也是正在幾度在被發展的一塊領域,
+
+20:28.640 --> 20:53.620
+那這邊基本上是一樣的概念,就是說,你有一個你感興趣的tissue,首先你要能夠有辦法去把它dissociate成所謂的single cell suspend,然後呢,這邊就有各式各樣不同的系統呢,能夠去做出你所需要的single cell的suspension,然後你就可以further apply into the single cell platform。
+
+20:53.620 --> 21:23.600
+然後,呃,這一個圖是從,呃,一個近期的review paper摘選出來的,所以這邊可以看見的是,就是說,呃,近年來這個single cell RNAC的技術,它發展的非常的迅速,從2009年左右的第一篇single cell的paper開始了,在當時這個single cell,它還是一個非常,呃,可能一個非常困難的技術,可能不是每個level它都有辦法去,就是順利操作的。
+
+21:23.620 --> 21:53.480
+然後可能你一次你一次的量呢,可能就是也許可能從幾十個,然後慢慢的這樣子去累積,然後可是呢,隨著時間的進展呢,這裡有越來越多各式各樣的不同技術,包括說它可能現在可以利用drop drop drop droplet的方式,或者還有包括一些,呃,random capture的technology或者一些,呃,into barcoding等等方式的方式的。
+
+21:54.000 --> 22:10.900
+呃,技術的演進,然後呢,現在呢,你可以看見就是每一個新基本上就是說,現在做的single cell的技術呢,你已經可以在,呃,一個實驗裡面,你就可以拿到非常非常多的細胞數量。
+
+22:10.900 --> 22:24.960
+那那當然就是目前很多這方面相關技術,他們,呃,繼續在發展的一個目標,就是能夠再拿到更多更多的細胞數量去做分析。
+
+22:25.960 --> 22:54.600
+那現在我,呃,我會介紹大概兩個我自己本身有過hands on經驗的single cell platform,第一個就是fluidine,走這個fluidine,它可能是,呃,幾乎是最早就是into the market的一套,呃,的一套single cell RNAseq的技術,那它的基本流程呢,跟剛剛講的也很像,就是首先呢,你要有,你要能夠成功的dissociate你的tissue,
+
+22:54.600 --> 23:24.400
+然後呢,然後基本上這一套技術,它是將cell capture到96 wellplay,然後那基本上就是所有的所謂的cell lysine,然後RT,還有cDNA的amplification,全部都在這這輛機器裡面發生,然後呢,之後呢,它的output出來呢,基本上就是所謂的cDNA的,就是amplify完之後的一個cDNA,然後你就可以把它去
+
+23:25.600 --> 23:50.200
+做一個barcode的library,然後stand for sequencing,那這個基本上就是,呃,就是這一個,這一個c1 shift它真實的狀況,那這個是在那個microscope下面的一個image,所以你可以看見就是說,這個細胞它基本上是有螢光標定的,所以說你可以看見就是,呃,
+
+23:51.040 --> 24:20.000
+就是在在跑完這個去之後呢,一個細胞呢,它基本上就被capture在,呃,在這個去裡面,然後呢,之後所有的反應呢,都會在這個反應槽裡面發生,然後最後呢,最後當這個反應完成之後,你拿到了,你拿到你amplify完之後的cDNA,然後你就可以further去建立一個library,然後stand for sequencing,
+
+24:20.000 --> 24:49.600
+然後你就會拿到你的data,那根據我個人的經驗,就是操作這個c1呢,它有一些,呃,優點,但是也有不少的缺點,然後呢,它的優點,呃,它它的一些,哦,我這邊可能弄錯,它這一個,我這說的relatively longer prep time,這應該是它的缺點,就是它其實整個整個製備的時間是非常長的,那那當然就是說,如果你就是讓你的sample就是
+
+24:49.840 --> 25:02.280
+可能一直sit on the ice,那基本上你可能會擔心說,它的gene expression profile可能會在那一段時間裡面改變,所以說基本上我們是希望說,呃,在拿到
+
+25:02.960 --> 25:08.160
+在拿到所謂的,呃,在line cell之前那個能夠
+
+25:08.160 --> 25:38.120
+呃,能夠製備的時間能夠越短越好,那但是這個c1技術它還是有一些很不錯的優點,例如說包含說這一套技術呢,你能夠在顯微鏡底下一個一個的channel去檢視說,你是不是capture到single cell,例如說像這一個圖顯示,這個就是一個很漂亮的single cell,然後有些well,它可能是完全沒有single cell的,然後呢,也會有一些well,它可能
+
+25:38.160 --> 25:49.440
+就會有multiple sample,那可能later on呢,當你在建立你的library的時候,像這樣子的sample,你可能就會把它ignore掉,因為呢,在後續的data analysis的時候,你並沒有辦法去
+
+25:50.080 --> 25:55.560
+去很好的判斷出,到底你拿到的data是from one cell或者是multiple cells
+
+25:56.520 --> 26:06.320
+那它的缺點呢,基本上它的缺點,最大的一個缺點就是所謂的,呃,它最大的一個缺點就是所謂的throughput,因為基本上呢,在最原始的c1
+
+26:06.520 --> 26:24.440
+它一次只能capture96個細胞,那在後來的version,它可能一次可以capture800個,可是其實在真實的情況下,它的efficiency是非常差的,可能只有60%到70%的well能夠有單細胞的capture
+
+26:25.040 --> 26:31.400
+所以其實你每一次能夠拿到的細胞量是極少的,所以這個是這個c1它最大的問題
+
+26:31.840 --> 26:42.360
+而且後來呢,後續很多研究都發現,包括一些,甚至一些已經published的data,他們後續都發現他們得到的一些結果,最後發現都跟
+
+26:43.040 --> 26:51.360
+呃,batch有相當大的關係,所以這一套技術基本上,以在現在single cell的領域來講,很多人已經
+
+26:51.960 --> 26:53.920
+呃,轉向其他更好的
+
+26:54.920 --> 26:56.920
+更好的技術選擇
+
+26:58.040 --> 27:07.680
+那目前呢,絕大多數的single cell RNA-seq的platform,大概你會看到的,就是from this company,這家company叫做10x genomics
+
+27:07.960 --> 27:15.760
+那它,呃,它的core technology呢,基本上就是這個叫做gens,所謂的gen beats in emulsion
+
+27:16.160 --> 27:23.640
+所以它的idea基本上就是說呢,它有很多的這一種beats,然後呢,這一些beats基本上呢,呃
+
+27:24.720 --> 27:31.800
+我在想這方面最簡單的是,我是打算直接讓大家看一個youtube的video
+
+27:32.080 --> 27:37.400
+應該你就可以很快速的了解,就是how,how這一項技術work
+
+27:38.840 --> 27:39.120
+yeah
+
+27:53.920 --> 27:54.160
+嗯
+
+28:09.280 --> 28:12.360
+欸,孫博士,我想請問一下,他這個影片有聲音嗎?
+
+28:12.880 --> 28:14.040
+欸
+
+28:15.080 --> 28:17.280
+他就是音樂,所以你聽不到聲音是不是?
+
+28:18.560 --> 28:22.120
+不過沒關係啊,他他他沒有講話啦,他沒有講話
+
+28:22.560 --> 28:23.640
+對,所以
+
+28:23.920 --> 28:26.320
+他只是就是有背景音樂這樣子
+
+29:53.920 --> 30:07.560
+OK,yeah,對,我覺得用,我覺得用那個影片簡單多了,對,所以
+
+30:08.200 --> 30:14.280
+欸欸欸,等一下,sorry,我把這個關掉,OK
+
+30:14.600 --> 30:29.880
+對,所以呢,基本上你可以看到,這是這一套技術,他就是,呃,大概就是如此,然後呢,如果以簡,如果簡單的稍微比較一下這兩套技術的話呢
+
+30:30.400 --> 30:39.840
+那當然這個tenant genomic,他最大的優點就在於說,他的throughput是非常高的,他每一個run呢,基本上我們可以capture
+
+30:39.840 --> 31:09.800
+more than 10,000 cells,當你如果就是compare to like 96 or 800 cell,then 10x is much better than C1,然後呢,另外呢,呃,另外像像這個所謂的UMI的這一套技術,他的好處是可以,呃,因為,呃,因為在這一套single cell run的時候,他involve了一些所謂PCR的process,那所以可能這個process他也會造成一些實驗上的bug
+
+31:09.840 --> 31:37.320
+bias,那這個UMI的這一套技術基本上可以後續幫忙去將這個bias把他correct過來,然後另外呢,在這個整個,呃,所謂的gen生成的過程當中是極快的,他只需要7分鐘的時間,所有的gen他基本上就完成了,所以說,呃,如果基本上你也可以確保說,就是你的cell基本上可以在一個比較intact的狀態
+
+31:37.800 --> 32:06.960
+那當然他也是會有一些缺點,呃,例如說像這個10x genomic,他基本上他sequencing的時候呢,他並不是sequencing全部的method,呃,全部的transcript,他只是做一個3'n的一個小少,呃,他只是等於是他只是trans去sequencing 3'n的一小段而已,所以如果說你的研究呢,是在看一些所謂的gen的variant的話,
+
+32:07.120 --> 32:31.200
+那這個10x的話,基本上你是沒有辦法使用的,然後另外一方面,呃,現在非常多的所謂data analysis的tool的話,他也是針對這個10x genomics這個platform來做設計,所以,呃,如果說你是用這一套系統的話,有時候好處是,呃,你可能在後續的分析上會得到比較多的幫助。
+
+32:31.520 --> 32:36.780
+OK,那接下來就是可能。
+
+32:36.780 --> 32:39.380
+就是,呃。
+
+32:39.380 --> 32:49.680
+就是講一些比較,呃,真實操作上的事情,那在真實的實驗室操作的話呢,基本上就是,呃,在。
+
+32:50.400 --> 33:01.460
+呃,在引測到這個10月system之前呢,那我們就是有我們的tissue of interest,然後我們可能會有不同的sample prep的strategy去。
+
+33:02.140 --> 33:19.460
+去製備出我們的single cell suspension,那這個single cell suspension呢,在你引測到10月這個去之前呢,我們基本上都需要做一個sale的quality control,那基本上我們看了幾個,我們需要看的幾個,呃,幾個parameter,包括說。
+
+33:19.460 --> 33:37.840
+它的violate,然後,然後還有就是基本上這個cell看起來是不是所有的cell都是single cell,然後還有包括像它的sale,它的salesize讓你知道說,你這個protocol呢,基本上是不是能夠target你所感興趣的細胞?
+
+33:38.200 --> 33:54.700
+所以的take home messagehere will be that,呃,the sample prepprotocol的optimization是非常重要的,對於你後續能夠拿到high quality的single cell data,呃,在第一步其實基本上已經決定了大部分。
+
+33:54.700 --> 34:24.520
+那當你的cell QC,基本上你的cell QC pass之後呢,你確保說你的single cell suspension是一個非常好的prep之後,那你基本上你就可以inject到這個10S system,然後呢,所有的這些步驟基本上它就是一個像是一個kit的狀態,然後就是可以很簡單的running through,然後現在genomic他們也有develop他們自己的,呃,program,呃,他們自己的computational tool,我可以做。
+
+34:24.820 --> 34:36.000
+最初步的data processing,最後你就會拿到一個所謂的gene barcode的metric,然後你可以用這個metric去做分,去做後續的分析。
+
+34:36.840 --> 34:54.040
+那對於single cell RAC的data analysis的整個workflow呢?呃,這一簡單講,它基本上可以分成兩個階段,第一個階段呢?呃,這裡顯示黃色的第一個階段,基本上是所謂的sequence in QC,就是說。
+
+34:54.040 --> 35:23.620
+你要看你的sequence in data是好或不好,那在這個部分基本上算是發展的還算蠻成熟的,因為之前有提過像bug RAC這套技術已經行使了,行使非常非常多年,那那一套技術基本上所謂的sequence in QC是可以整套,幾乎可以整套搬來到這個single cell RAC的部分,所以說在這個階段的sequence in QC,它基本上就是看所謂的read QC alignment QC跟mapping QC。
+
+35:24.160 --> 35:54.020
+然後呢?呃,然後現在巡邏,米他基本上已經有一套他自己的軟體可以幫你做完這件事情,最後你就可以拿到一個金巴扣的matrix,然後當你拿到了金巴扣的matrix之後呢?這邊紅色的部分呢?基本上就是所謂你進一步的data processing,那這裡我會呃,花一點點時間去稍微講一下,那所謂這邊的進一步的data processing,在第一步呢?這裡我叫它叫做matrix,
+
+35:54.020 --> 36:15.600
+so QC,它的意思是說呢?呃,基本上這一步的最重要點就是說,你要將一些所謂的low quality cell把它先移除掉,因為你如果把這些low quality cell繼續放在你的data set中間,一個很大的問題,它可能會造成很多的noise,然後可能會讓你後續的data analysis變得非常的困難。
+
+36:16.560 --> 36:45.580
+那基本上你remove掉一些不好的cell之後呢?你就可以將你的data去進一步做normalization,然後呢?這邊說就是after normalization,你可能需要面對的另外一個問題就是說,畢竟single cell這套技術呢?它是它就是based on single cell,所以說它會有非常多的一些,呃,你可能wanted,對不對?
+
+36:46.180 --> 37:13.060
+然後可能是所有的,是要可能在不同的cell cycle status這些東西,就是這些可能對你來說你是你所不感興趣的資訊,那你可能會需要用一些computation的方式去把它eitherregress out或者是可能給他一個score,呃,這可能比較是data比較細部的東西,然後總之就是當你這些data呢?經由這一步的clean up之後呢?
+
+37:13.060 --> 37:42.640
+那你這個data set,他就可以去進行很多的downstream的data analysis,包含了你可以去將他做cluster,你可以做cell type identification,然後呢,你可以去做所謂的differential gene expression analysis,就是說你可能可以去比較說,哦,這個cell type A跟cell type B,他們之間的gene profiling有哪些東西是一樣的,哪些東西是不一樣的,又或者是說你可能有一個很感興趣的cell population,
+
+37:42.640 --> 38:12.200
+然後你可能可以去看說,哦,那他的cell service marker有哪一些,又或者是說你去compare兩個狀況,然後看看哪個single only pathway being activate或者inhibit,那這些東西對於不管是biology,basic biology或者是disease的研究都會是非常有用的資訊,然後呢,你也可以去做一些network的分析,然後甚至有些人會拿這個single cell的去做一些所謂shuttle time的分析,呃,所謂shuttle time就是說我們,呃,
+
+38:12.200 --> 38:41.120
+因為在很多例如說developmental biology的研究上面呢,他可能會去看一個跟,呃,有點像是一個time course,就是隨著時間的眼睛,這個細胞它是怎麼從一個狀態變成另外一個狀態這方面的,那像以往來講的話,你可能就是要在不同的時間點去取sample,然後去做分析,那single cell他的概念的話,他可能是說,哦,你可能不需要取到那麼多的時間點,你可能就是取,呃,一個,呃,
+
+38:42.200 --> 39:07.200
+可能一兩個時間點,然後因為所有的,因為每一個細胞他都會給你一些資訊,那不會所有的細胞,他們都是同時在一模一樣的state下,所以呢,你基本上你就可以透過每個細胞,他可能都是在一個轉變過程當中的某一個階段,然後呢,他可能你的這一組data裡面,他就會給了你一個所謂shuttle time的這樣子的一個information,
+
+39:07.200 --> 39:36.960
+然後所以就,所以這也是single cell他一個蠻powerful的地方,那這邊回來講一下所謂的matrix cell quality control,那就是在真實狀態下是大概是一個怎麼樣的做法,那基本上呢,當然說你要怎麼去filter out所謂不健康的細胞或者你不要的細胞,當然每個人可能有他自己的criteria,
+
+39:37.200 --> 40:07.160
+那這邊講的是一些最general的方式,那這一組data在基本上是,呃,已經就是published的,所謂他是拿所謂的human的血液細胞來做,來做一個demo的data,那他這邊他所plotting的呢,基本上就是他這個scatterplot,他是plot,就是percentage of the mitochondria gene versus,呃,the umi number,呃,這個umi number,你可能就可以把它當做就是說,就是how many molecule
+
+40:07.160 --> 40:37.160
+being detected這樣子,就是所謂的how many transcript being detected這樣子,然後呢,那這裡每一個點他基本上代表的就是一個細胞,那你可以看到majority of the,呃,majority of the cell,他是在這個位置的,那一百,biology來講,你會知道說,噢,絕大多數的細胞,他是處於這個位置,所以呢,像這一個tail,這部分的這一些細胞呢,他擁有非常高的umi number,就代表說他有非常多的,呃,
+
+40:37.160 --> 41:06.760
+transcript被detect,所以呢,很有可能這些,這一些signal,他不是coming from one single cell,他有可能是either cell aggregation或者是multiplex,那這些可能是一些你要把它去除掉的細胞,因為他基本上這個signal,他不是coming from one single cell,然後另外一些cell,你可能想要把它去除掉的呢,就是所謂的這個tail,所以這個tail你可以看到,他基本上呢,他能夠被detect到的umi非常的少,但是呢,他,他具有
+
+41:06.840 --> 41:34.600
+非常高的mitochondria gene的percentage,然後通常當一個細胞,他在極度不健康的狀態下的話,通常他的mitochondria gene都會非常的高,所以呢,這也是一般很多人會設的一個criteria,去filter掉一些,他所他認為一些,呃,不值得做downstream analysis部分的細胞,那可能最後用於做downstream analysis細胞,就是這裡這一塊,
+
+41:34.600 --> 41:35.160
+那呢,那基本上就是,呃,這個analysis看起來會是怎麼樣呢?那,呃,這裡的話,基本上就是一個unbiased clustering之後的一個結果,對,你可以看到,就是說,呃,這邊這裡的sample是from human pbmc細胞,那這裡一樣,就是每一個點呢,每一個點就是代表一個細胞,那這樣的plotting方式叫所謂的testingplot,他基本上是一個,呃,他是透過一個algorithm,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃,去,呃
+
+42:05.600 --> 42:17.440
+你可以理解的概念就是說,當細胞,呃,越接近,呃,越靠近的話,代表說他們的property是越像的,那
+
+42:18.400 --> 42:33.280
+那基本上他們就是透過去看說,例如說這個cluster的細胞,他可能哪一些基因被大量表達,然後這cluster細胞,哪些基因被大量表達,然後呢,他就可以去identify說,噢,這些可能是
+
+42:33.680 --> 42:44.000
+什麼樣子的細胞,所以呢,在一個single cell rnc的實驗裡面呢,你就可以很快的去identify出來
+
+42:44.600 --> 42:53.560
+各式各樣不同的email cells,for example,像這一個class,他基本上是一個b cell,那他這邊的gene expression plotting呢
+
+42:54.000 --> 43:17.560
+他就是for the confirm說,你看到當這裡become more purple,代表說這個particular gene,他是被大量表達的,那這一個這個基因基本上是b cell的marker gene,所以他是for the confirm說,這些細胞,他的確是擁有b cell的property,然後那像這個cd3e,他基本上是t cell的marker,然後的確他也在這一個t cell的population被大量表達
+
+43:18.120 --> 43:31.920
+那你一旦拿到像這樣子的結果之後呢,你就可以你就可以去,嗯,你就可以在更進一步的研究當中,你可能就可以去,呃,比較說,噢,maybe
+
+43:31.920 --> 44:01.560
+這個細胞跟這個細胞,他們有哪些地方是一樣,哪些地方不一樣,又或者是說你可能有另外一個不同狀況下的sample,然後呢,你同時找到了b cell,然後你去比較兩個b cell,他們的gene profiling有什麼不一樣,對,那這樣子你得到的結果呢,就會是只有b cell給你的signal,而不是說這裡全部cell average最後的一個結果,這大概就是整體
+
+44:01.960 --> 44:31.840
+的一個概念,那我想因為時間的關係,我就直接skip最後一個部分,因為這基本上只是用一個example去,呃,講說就是single cell大概可以做的事情,那簡單做summary的話,就是在進行single cell的實驗之前,這裡有一些東西你可能會需要考量的,因為呃,就我目前本身的工作來講的,就是我一個很大的一個部分,是我
+
+44:31.840 --> 45:01.800
+基本上要supporting我們group,呃,我們整個campus裡面很多很多的single cell的project,然後呢,從我們大量的大大量project,different project的經驗裡面呢,可以發現到一點就是說,基本上data analysis呢,它依然是這一套技術一個最大的瓶頸,因為呢,in terms of generating the data其實並沒有到那麼的困難,可是呢,當你,可是你可以看到你每次一generate一個library的data
+
+45:01.800 --> 45:31.520
+基本上它可能是over 1000 cell的data,那你要怎麼去分析它,就變得其實坦白講不是那麼的容易,即使到現在在我們公司裡面的bioinformatic group,他們呃,就是我們還有所謂的single cell working group,我們都還必須要呃,每個禮拜去figure out說,噢,什麼是最好的normalization方法,然後什麼是最好的batch correction的方法,然後甚至我們到目前為止可能都還不知道in terms of
+
+45:31.520 --> 45:42.520
+如果我們要做所謂的differential gene expression analysis的話,對於single cell RAC來講的話,哪一個方式是最好的,所以說基本上
+
+45:43.800 --> 45:57.080
+基本上,嗯,基本上就是說,如果呢,如果說你非常清楚,就是說你到底要問的問題是什麼的話,那你越清楚的話,基本上你可能
+
+45:57.920 --> 46:13.280
+呃,你的這個single cell data對你的意義會越大,因為如果說你只是覺得啊,這套技術很酷,那反正先做了再說,我也不是很確定我到底想看到什麼,那你就會讓後續的分析變得有一點像無頭蒼蠅一樣,那你可能
+
+46:13.840 --> 46:30.320
+你可能最後那個data雖然很robust,可是你可能就會完全lost在那個data裡面,然後呢,另外,呃,另外一些在實際操作上的問題是在於說,呃,我自己的經驗裡面,我看到所謂的
+
+46:30.320 --> 46:51.400
+呃,就是before the cell go into the going to the single cell platform,很重要的就是所謂的sample protocol的optimization,因為如果說你沒有好好的optimized你的sample prep的話,那基本上你可能你極有可能拿不到你需要的細胞。
+
+46:52.120 --> 46:54.120
+那,呃。
+
+46:55.240 --> 47:10.120
+然後最後呢,最後,呃,我想他就是說,其實現在在single cell genomic這一塊,他發展的非常迅速,然後現在有各式各樣很新的技術,針對不同的biological的問題。
+
+47:10.120 --> 47:40.000
+呃,都發展了出他自己的protocol,包括呢,像,呃,我剛剛講的是所謂的single cell RAC,你可以看到我們多半是starting with所謂的single cell suspension,所以是所謂的leaving cell,但是但是同樣的在有一些,呃,研究裡面呢,你可能沒有辦法拿到所謂的活組織,例如說如果你想要研究,呃,maybe人的腦或者是什麼的,那你可能能夠拿到的就是可能就是。
+
+47:40.120 --> 48:09.720
+呃,人死亡之後的組織,呃,或者是你可能只能夠拿到frozen tissue,那基本上你不可能去prep,你不可能從一個leaving的cell去做preparation,所以說現在也有所謂的protocol,他基本上他就是從這一些已經,呃,死亡的細胞裡面呢,然後他去取出他的細胞核,然後呢,從細胞核裡面呢,去抽取他的RNA,然後去做所謂的,呃,single nucleus的RNA C。
+
+48:10.120 --> 48:40.100
+然後另外呢,像這邊也有一些其他的version,例如說如果你對於所謂的,呃,所謂的那種T,T cell,B cell,那種所謂的VDJ的recombination很感興趣的話呢,現在也有這樣子的protocol,你可以去做理解,那像這樣子的研究,基本上對於如果你是在研究所謂的cancer,呃,T,呃,T cell相關的therapy的領域的話,那他就會非常非常的有用,然後呢,如果說你,你的biological question是,呃。
+
+48:40.120 --> 49:10.060
+比較是說,你看的是所謂的chromatin,chromatin的,呃,chromatin的regulation的話呢,那現在也有所謂的single cell的attack C的protocol,你就可以去看說,呃,可能就是在這個chromatin哪些地方是比較open,哪些地方是比較close,現在也有這樣子的做法,然後呢,現在也有一個比較新的技術叫做side C,基本上就是他就是把antibody呢,加上了一個,呃,所謂的。
+
+49:10.280 --> 49:37.060
+DNA barcoding,把它變成好像是另外一個,呃,RNA molecule一樣,然後呢,他就會變成是一個所謂的shuttle gene,然後當你在run這一個single cell platform的時候呢,同時間這個東西呢,他就會變成一個additional signal,所以說你除了能夠得到RNA的,呃,RNA的expression profile之外呢,你也能夠。
+
+49:37.900 --> 49:52.420
+你也能夠就是dictate到一些所謂的,呃,sale service protein的signal,然後這一這一項技術,他基本上他也可以讓你在做sale type identification的時候有很大的幫助。
+
+49:52.420 --> 50:22.400
+所以就是overall,就是這一塊,其實他目前還是在,呃,非常快速發展的一套的一個領域,包括就是,呃,在sample processing的部分,還有data analysis的部分,那今天大家就是做這樣子一個比較表面的介紹,對,然後你可能可以針對你感興趣的部分,然後可能可以去做更深入的就是了解。
+
+50:22.480 --> 50:24.680
+然後跟應用這樣子。
+
+50:25.760 --> 50:26.100
+ok。
+
+50:27.380 --> 50:27.640
+要。
+
+50:31.680 --> 50:38.720
+要講完了,好,那我們就給孫博士一個掌聲,謝謝他今天給我們的演講。
+
+50:38.720 --> 50:39.220
+謝謝。
+
+50:43.620 --> 50:55.340
+然後,那我們現在開放Q&A的section,那希望大家能夠踴躍的對針對剛才孫博士所演講的內容做一些討論或是一些提問,謝謝。
+
+50:58.100 --> 51:05.900
+那我剛才,我現在在chat這邊看到有一個人,他有提問說,do you mind share your presentation slides?
+
+51:06.900 --> 51:25.400
+嗯,嗯,應該可以,只要是,yeah,應該可以吧,對,因為反正這裡好像都沒有什麼,我想請那個,假如你有需要的話,那現在孫博士這邊他有提供他的那個email。
+
+51:26.400 --> 51:40.400
+那假如說你不嫌棄的話,就是用email的方式去提供,就是聯絡孫博士,然後看孫博士有沒有辦法能夠把他的email,就把這個slide給你傳來傳送給你,這樣子。
+
+51:41.400 --> 51:43.400
+謝謝。OK。
+
+51:44.400 --> 52:01.400
+然後,現在又有另外一個PK,他說,hi,Dr. Sun,for in vivo study,would you suggest to do the qPCR on intracellular organ first,then based on the qPCR result to design the experimental for RNA-seq?
+
+52:01.400 --> 52:15.400
+是說,你有沒有覺得在做這種,可以先做qPCR,再去用RNA-seq?
+
+52:16.400 --> 52:43.400
+QPCR,我覺得當然通常就是像我們,嗯,像我們就是,嗯,基本上像像在在在我們group裡面,如果有一個new project coming in的話,來講的確是我們一開始我們都不會就說,哦,對,你就go for single cell RNA-seq,對,所以我們的確都是會先看看,就是說,你有沒有先用過一些現在。
+
+52:44.400 --> 53:00.400
+已經有的技術,像也許像你說的qPCR,或者是就是bug RNA-seq就好了,因為也許你就是想說,哦,你可能就是要比較一個健康跟disease,或者是一個knockout mice,一個wild type mice,然後你可能就是要看。
+
+53:00.400 --> 53:23.400
+嗯,看某一個,假設你要看一個某某某某一個特定的新東西,所以有沒有不同之類的,那的確如果你的qPCR已經可以回答你的問題的話,那當然通常我們都是prefer先叫他們先用一個相對便宜簡單的技術先去做確認,然後呢?
+
+53:23.400 --> 53:45.400
+然後你可能要再想說,那有你在做完這個qPCR或者是bug RNA-seq之後,有什麼問題是你還不能夠回答的?對,那可能才會考慮說,才會考慮說,嗯,也許你可以去問,是不是可以用一個single cell RNA-seq的方式來做?
+
+53:45.400 --> 54:15.400
+因為例如說,假設你可能你可能會預期說,啊,這兩個東西應該有某一些gene set應該被enrich或者什麼,可是你卻沒有看到這個結果,然後,呃,你可能,呃,假設你有兩個fail,呃,你有兩個long好的from mouse,一個knockout,一個wild type,然後你可能預期說,maybe這個結果也許只是contribute by maybe 10% of the whole pool of cells,然後所以你可能就覺得,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail,然後你可能預期說,啊,那可能就是一個fail
+
+54:15.400 --> 54:30.840
+因為也許他就是contribute一個very small population of the cell,那,那我也沒有辦法有一個很好的方式把那個cell把他isolate出來去做QPCR或者是facts,analysis或者什麼,那
+
+54:30.840 --> 55:00.840
+那這樣的話,也許single cell RAC有可能可以幫到這個忙,對,然後可能你本來看不出差異的地方,也許經由single cell RAC,然後去幫你把你要的cell population identify出來之後,你再去做比較,也許你就有機會能夠看到差異,大概是這樣子,因為我覺得有時候有點project,就就是這比較project dependent,所以有時候也不是說in vivo study,你就一定要怎麼做或者是怎麼樣,比較是說你到底要看什麼,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的,對,可能是比較有可能的
+
+55:01.840 --> 55:13.840
+- 要一個overall的概念,我覺得問題會比較好回答,然後用哪些軟體來做batch correction for single cell RAC,你是問R package嗎,還是
+
+55:13.840 --> 55:18.840
+- 喂?
+
+55:18.840 --> 55:23.840
+- 那個吳先生說對
+
+55:23.840 --> 55:35.840
+- R package,我可以講的是說目前,目前如果你有,你自己本身有在做single cell RAC的分析嗎?
+
+55:36.840 --> 55:47.840
+- 哦,是的,好的,因為現在在single cell RAC這一塊的話,我相信Sara,你有聽過Sara嗎?
+
+55:47.840 --> 56:04.840
+- 哦,好的,無論如何,好吧,反正就是,就是如果你真的很感興趣的話,就是你只要上網搜尋Sara的話,基本上它是one of the most popular one,然後也算是最多人接受的一個軟體在做,
+
+56:04.840 --> 56:19.840
+那我相信,呃,一個原因是因為它算是一個最早期開始,就是針對這個single cell去做相關tool的development的,然後所以我覺得它還蠻,呃,蠻well established的。
+
+56:19.840 --> 56:45.840
+- 所以說in terms of the batch correction,在這一個Sara裡面的話,它其實它現在已經有一套技術叫做CCA,concatenational correlation analysis的方式,這些東西,哦,對,另外一個好處about Sara是它的online tutorial非常的詳細,就是說我東西全部基本上都在網路上,非常easy,就是follow這樣,所以我相信這也是另外一個原因很多人在用Sara的關係。
+
+56:45.840 --> 57:10.840
+- 那就我自己的經驗來講的話,因為in terms of the CCA,它有一個前提,基本上就是說,當你如果要做CCA這個correction,它的前提是說,它assume你這堆data set,它是covariant,就是說它們的variant基本上是,呃,就是相同的,所以我覺得就是除非說你兩個sample,假設你兩個sample都是tumor cell,那你選擇一個比較簡單的就是一個活動,而這個活動,呃,就算是一個比較簡單的,那這個活動,呃,就是比較簡單的,那這個活動就是一個比較簡單的,那這個活動就是一個比較簡單的。
+
+57:10.840 --> 57:38.680
+所以我覺得就是除非說你兩個sample,假設你兩個sample都是tumor sample好了,那你可能可以用CCA的方式去做batch correction,可能會蠻成功的,可是如果說你的sample一個是tumor,一個是normal tissue,你用CCA去做的話,我自己看到的狀況是往往會overcorrect,因為它基本上它已經assume你這兩個sample可能要很像,那基本上這個假設就是不對的。
+
+57:38.680 --> 57:38.700
+所以目前我個人現在比較喜歡的batch correction algorithm是另外一個叫做MNN的,呃,它的話它基本上是另外一個package叫做scran這個art tool,我覺得,然後它的developer是Aaron,就是Aaron,我覺得它,它,呃,has been very focus on just developing art tool for analyzing the single cell RNAC,然後我覺得它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,呃,它很會,
+
+58:08.680 --> 58:37.560
+很多tool其實都還蠻有趣的,那它所有的東西應該都在bioconductor上面,所以你可以如果感興趣的話可以從它所providing的這些tool開始去看,那關於MNN相關的東西也已經publish了,所以也可以從paper裡面去了解一下,我個人認為以batch correction來講,我個人是prefer MNN多於CCA,對,那大概是這樣子吧,
+
+58:37.560 --> 59:07.520
+好,我們現在有一個觀眾想要用語音問你,那請他先來發言一下,呃,請問聽得到嗎?啊,可以,哦,就是,呃,我大概一兩年前有讀過一篇single cell相關的文章,然後他們是在做development的,那可能我的資訊已經蠻落後,但是我就是蠻好奇說,呃,因為他們在paper裡面就是描述啊,他們就是在觀測development嘛,
+
+59:07.560 --> 59:35.720
+就是從cell differentiation,從一開始沒有differentiate到最後differentiate完,他們想要觀察那個過程,但是他們在做了實驗之後發現是說,在differentiate過程中其實有非常非常多的noise,就是在population的時候有非常非常多的noise,就是可能有些cell是這一些表現是增加,另外一些cell是減少,但是最終他們都同樣都differentiate到同一個cell type這樣子,
+
+59:36.380 --> 01:00:03.920
+那所以他們那個時候就是結論就是並沒有辦法使用這個,得到一個很清楚的了解,呃,結論,那我想知道說,就是譬如說你已經是在看已經differentiate的cell type,然後想要了解他們同一個group或是跟其他不同cell type做,呃,他們表現的比較的時候有沒有同樣就是就是noise很大的問題,
+
+01:00:03.920 --> 01:00:12.560
+還是說當這個細胞已經是完全了differentiate以後,他們彼此間都很相近呢?
+
+01:00:12.560 --> 01:00:13.560
+呃,你這一篇,你所謂這篇paper他用的技術是什麼?他是用C,呃,fluidic C1嗎?還是他還是他還記得,那還蠻久以前,你蠻久以前是兩年以前嗎?呃,應該是兩年內,一個一年或兩年,ok,ok,沒有,因為我是覺得,因為,呃,我只是覺得如果超過兩年或者是更久以前,我覺得蠻有可能這一篇,呃,他either是用例如drop C,或者是可能就是,呃,我只是覺得如果超過兩年或者是更久以前,我覺得蠻有可能這一篇,呃,他either是用例如drop C,或者是可能就是,呃,我只是覺得如果超過兩年或者是更久以前,我覺得蠻有可能這一篇,呃,我只是覺得如果超過兩年
+
+01:00:42.760 --> 01:00:47.600
+右往,認為現在對說是所謂的plug in C1 的話。
+
+01:00:48.320 --> 01:00:57.660
+應該說,首先,他得不到一個很好的結果,一個極有可能是technology的問題,對,因為呃,因為像。
+
+01:00:57.660 --> 01:01:27.620
+沒有,他請繼續,哦,因為就我自己,呃,因為我我自己一開始做single cell rnc 的時候,在當時只有full time C1是available的,所以說,呃,當時我一開始用這個full time C1的時候,其實最後坦白講,最後的結果基本上是完全是,幾乎是等於完全不能夠用的,因為他會有極嚴重的badge correct,呃,就是badge incorrect,
+
+01:01:27.660 --> 01:01:50.780
+effect的問題,所以說像,呃,像你看到那篇paper來講的話,我覺得會有一個可能是說,他可能他的sample可能是不是就是有好,好幾個library在做,他就是他不是全部只是只是一個batch去做,他可能是好幾個batch是這樣嗎?
+
+01:01:50.780 --> 01:02:20.760
+是,呃,我想他那天的重點可能就是在於說,在differentiation的過程中,其實你沒有辦法很明顯觀測到一個train,因為differentiate完成以後,他們是可以發,可以判斷出,哦,這些cells都現在都譬如說強烈表現morbid gene,但是他就是說,在differentiate過程中,他們就是每個細胞會採取不同的路線成為他們的,呃。
+
+01:02:20.960 --> 01:02:49.920
+final的cell type,就是沒有一個說很明確的說,哦,我已經是經過一二三四五這個step,他們有可能是一三二四五之類的那樣子,所以當他們在比較他們整個所有的data說,就是他們說是noise很高,但是我不知道說在已經分化的細胞裡面有沒有任何,譬如說你這一些細胞在面對一個外來的影響,他們做反應的時候,
+
+01:02:50.220 --> 01:02:56.220
+是都會很,大家都的反應都很像呢?還是會會有不一樣?
+
+01:02:57.700 --> 01:03:16.860
+嗯,我覺得這一個可能也有點,我只能說這可能有點case by case,因為因為至少我目前我看過的data的話,我覺得我覺得就是。
+
+01:03:16.860 --> 01:03:17.860
+嗯,對啊,我覺得這如果沒有一個實例的話,好像還蠻難判斷的,對啊,沒關係,謝謝,我也只是就是,因為其實我對這個領域不是很了解,只是當初看了這邊paypal覺得很有趣,所以想要更加了解說,現在有沒有任何關於這方面的你的看法,或者是新的發現,嗯,好,謝謝,嗯,那我們現在有一個加成,他在想要問孫先生的問題,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,嗯,
+
+01:03:46.860 --> 01:04:13.740
+孫博士說有關於你的,就是可不可以分享你從那個學界轉業界的這個經驗,不過我想說,因為現在這個跟我們的演講內容比較沒有這麼直接的關係,我想請這個加成如果能夠私底下去問孫博士的話會比較好,那我們現在有一個get five,他有兩個問題,那我想請問一下,那get five,如果你可以用語音來做這個直接問我們的孫博士嗎?
+
+01:04:14.700 --> 01:04:41.740
+OK,好,呃,有聽到嗎?有,嗯,好,呃,呃,謝謝,呃,孫博士演講,我想要問的是,因為你在,呃,演講過程說,說第一個方法就是badge dependent是非常的嚴重,然後他是一個問題,那我就想要請問就是,那第二個方法,他就更那個badge independent嗎?
+
+01:04:41.900 --> 01:05:07.500
+那,呃,就是還有衍生的問題是,呃,因為badge dependent,就是讓我聽起來,可能是sample prep方面,就是可能會影響到gene expression的結果,那這樣的話,我想要了解是在做,呃,這個技術的時候,sample prep大概要多久,然後那個gene expression有可能會因為sample prep而改變嗎?
+
+01:05:07.500 --> 01:05:37.460
+其實你所謂的sample prep是指說,呃,以10x來講,就是他在before injecting into 10x的那個sample prep,就是single cell isolation這個state,那這真的是very project dependent,因為像目前我自己已經手工的project,有一些project,他基本上只是cancer cell line,那這種東西,所謂的sample prep,基本上就是很簡單的cell culture,就是可能把他trips in起來,然後就ready to go,
+
+01:05:37.500 --> 01:06:07.460
+那那可能就是個20分鐘以內的事情,對,那可是呢,有一些人呢,他可能是從patient tissue開始做dissociation,然後呢,那可能至少就是,然後甚至做完dissociation之後,他還要做一個fact sorting,然後他可能要受不同的population,所以他整個過程可能是半天,可能是6個小時,對,然後,嗯,對啊,所以我覺得這sample prep的時間,當然,
+
+01:06:07.500 --> 01:06:37.460
+我只能說,我們當然希望他越短越好,對,但是真的是非常的project dependent,那所以才會說,通常在inject到10x之前,我們會做一個所謂的cell quality control,因為至少就是我們知道說,他在經過一趟這麼長時間的被處理之後,在這個single cell的狀態,他現在他的viability是多少,然後他的cell number是多少,然後他看起來的樣子是不是仍然是你可能會感興趣的那個細胞?
+
+01:06:38.500 --> 01:06:51.480
+嗯,然後他說,嗯哼,就是就是說,第一個方法會badge dependent,是因為他處理的過程要比較冗長嗎?
+
+01:06:51.480 --> 01:07:21.440
+第一個,關於復旦失敗,為什麼他badge會這麼的嚴重?說真的,我們也不知道為什麼,對,然後呢,其實10x他本身也有所謂的badge effect,嗯,我這邊可能沒有,我暫時手邊沒有真的data可以show給你看,就是說,其實我們從我們很多的,呃,的已經做過project裡面,其實有看到,即使我,呃,inject完全一模一樣的sample,就是完全一模一樣的,
+
+01:07:21.480 --> 01:07:51.480
+我把它inject到兩個well,然後兩個well呢,各自做成一個library去做sequencing,然後sequencing出來的結果,然後我把它去做unbiased clustering,其實他會非常的像,就是說他就是他被identify出來的cell cluster,呃,的,呃,the subset,他其實會非常的像,可是他往往不會,呃,百分之百的overlap在一起,他會有一點點的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致的,呃,不一致
+
+01:07:51.480 --> 01:08:06.200
+一點點的shift,啊,那我可以,然後目前看起來是什麼造成batch event,那,呃,一般來講,我,我們目前覺得最大可能的原因是所謂的,呃,sequencing
+
+01:08:06.200 --> 01:08:20.520
+desk的問題,就是,呃,就是你的sequencing size,對,因為你每一個東西如果是獨立去sequencing的話,你沒有辦法確保說,呃,即使是完全一模一樣的sample,可是他畢竟是在
+
+01:08:20.840 --> 01:08:41.720
+round sequencing,他是兩個不同的flow cell,那你沒有辦法確保說他兩個sequencing desk,或者是每一個細胞都是完全一模一樣的,然後,那所以這個問題其實,所以我才說,呃,現在computation呢是一個很大很大的重點,因為照理講,我們希望我們能夠有的computation tool能夠幫我們dealing with all this issue,
+
+01:08:42.720 --> 01:09:11.400
+透過例如normalization的方式,regress out的方式,downsampling的方式,希望能夠幫我們做最好的correction,對,大概是如此,對,嗯哼,所以意思是,呃,sequencing方面也還是會有一些error的存在,我覺得這也,這應該也不算是error吧,就只能說他就是會有一些technical的,呃,你沒有辦法避免的地方,對,但是,但是就像我說的,
+
+01:09:11.400 --> 01:09:23.280
+這些問題其實suppose,如果我們有一個很好的normalization的方式,很好的dealing with confounder的方式,這些其實都是可以被解決的,嗯哼,好,謝謝。
+
+01:09:24.280 --> 01:09:50.280
+好,那我也有一個問題想要問一下孫博士,就有關您剛才講的,既然就是從,假如說是從一個那個tumor裡面,一個tumor的tissue裡面去isolate這個single cell,你經過sorting,然後到sequencing,這樣子長時間的這樣子的一個處理,一些所謂的tumor microenvironment會造成對於這個single cell的一些gene profiling的change會有一些的一定的影響,
+
+01:09:50.600 --> 01:10:07.080
+那為了要去確保說這個single cell是good for,single cell RNA-seq的這樣子的一個方式,你所謂的那個quality control可以稍微解釋一下,詳細的說明是怎麼樣的一個quality control的processing嗎?
+
+01:10:07.080 --> 01:10:37.000
+好,其實我其實就是在他們已經都做完所有的所謂的single cell quality control,其實只是一個非常簡單的trap and blue staining,所以就是一個live and dead,然後呢,然後,然後直接是,然後就是take,直接就是take所謂的那個imaging,就是live and dead之後,然後,然後那個機器他就會take就是可能50個imaging。
+
+01:10:37.200 --> 01:11:06.840
+這樣子,然後就去看看說,就是你的cell看起來怎麼樣,就整體的product看起來有沒有很多的debris啊,然後看起來是不是很乾淨啊,然後他可能用就是contract的方式去測說到底有多少cell是viable的啊,然後他可能會去很快速的量一下你的cell size,其實,其實我們所謂的cell QC也就只是這樣子而已,那當然就是說,我們一本上會希望說你的vulnerability至少要在90%以上,
+
+01:11:06.840 --> 01:11:35.880
+或者如果你的sample是比較precious,比較rare一點的話,maybe七八十以上,因為如果說你當時你做一個cell QC,然後你看到你只有20%的vulnerability的話,那甚至你也不用想說要做下一步,因為基本上就是浪費嘛,對啊,因為說實在的就是一個telnet做起來也是好幾千塊的,好幾千塊美金的事情,然後再包含sequencing的費用,對啊,所以。
+
+01:11:37.800 --> 01:11:49.000
+那假如說是,就是剛剛講說像是一些frozen tissue,你也沒辦法拿到fresh的,那那possibly這些cell應該都是dead cell,那是不是在這個情況上?
+
+01:11:49.000 --> 01:12:18.520
+是,對,所以所以可以用single nuclei的方式,就是基本上就是,呃,不過當然啦,就是說當然最好是希望說那個tissue他基本上他就是fresh,呃,就是所謂的fresh frozen的tissue,就是說最好盡量不要經過任何的fixing reagent那方面的處理,所以說他的做法就是說基本上,呃,你可能就是一個fresh frozen tissue,然後可能把它invade在invading material,
+
+01:12:18.520 --> 01:12:48.280
+or something like OCT,然後你可能就是可以cut出一些tissue之後呢,然後去,呃,基本上就是抽取他的細胞核,因為他的細胞核裡面就會有一些,呃,所謂的maybe pre RNA或者是,呃,就是對,就就就是你等於取出他的細胞核之後,然後再將他的細胞核去,呃,life之後從那裡面去拿所謂的RNA,那那些RNA可能就會有所謂的,呃,
+
+01:12:48.280 --> 01:13:17.400
+可能mature或者immature的RNA,那這些東西的話,呃,基本上還是可以透過10A genomic的技術,然後讓那些RNA就是去被prime之後的RT,然後就變成cDNA,然後後續再去做定序這樣子,所以這還是有機會可以做得到的,不過當然以這套技術來講,你可能最後能夠detect到的基因的,呃,數量可能就會比較少,
+
+01:13:17.400 --> 01:13:44.920
+然後再包括說sample processing,呃,就是後續你sequence完之後,你sequence你data的processing,其實也和,呃,另外一種方式有一點點的不同,就是你在mapping的時候,基本上,呃,像如果我們是用我剛剛講的主要那一套來講的話,我們主要是mapping to axon,那如果是single nuclide的話,我們google已經發現說,你可能同時也要mapping to intro,
+
+01:13:45.640 --> 01:14:13.560
+因為這樣子它可以提高你mapping的rate,大概是這樣子,反正就是說會有一點點不同,可是只是就是某一些課題下,你就是沒有辦法拿到活體的組織,那這個single nuclide方式基本上提供了給你一個additional option,你可以去做這樣子,就算是一個alternative approach這樣子,呃,對,那它基本上是成功的,就是這,這是
+
+01:14:14.280 --> 01:14:16.840
+確定已經可以成功操作的。
+
+01:14:17.400 --> 01:14:20.120
+嗯,好,謝謝,那還有沒有誰有問題的?
+
+01:14:25.560 --> 01:14:30.920
+呃,是安在talking,可是我沒有聽到是安的聲音哦。
+
+01:14:30.920 --> 01:14:45.560
+好,不好意思,我只是忘了關麥克風而已,好,那我們再再問一次,現在現場的聽眾有誰還有任何問題的嗎?
+
+01:14:51.160 --> 01:14:57.320
+好,如果沒有的話,我們再以再再次的展生,謝謝孫博士現在這次給我們的這個演講。
+
+01:15:00.920 --> 01:15:02.120
+好,謝謝。
+

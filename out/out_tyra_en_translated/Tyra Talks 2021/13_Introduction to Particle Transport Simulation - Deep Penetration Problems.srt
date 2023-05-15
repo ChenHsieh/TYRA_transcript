@@ -1,0 +1,2388 @@
+1
+00:00:00,000 --> 00:00:10,000
+The first TerraTalk in 2021, today is January 9th.
+
+2
+00:00:10,000 --> 00:00:17,000
+We are very happy today to invite Dr. Wang Mengren to tell us about his topic today.
+
+3
+00:00:17,000 --> 00:00:23,000
+His topic today is Introduction to Particle Transport Simulation Deep Penetration Problems.
+
+4
+00:00:23,000 --> 00:00:27,000
+Before we start, let me introduce our speaker today.
+
+5
+00:00:27,000 --> 00:00:29,000
+His name is Vince Mengren.
+
+6
+00:00:29,000 --> 00:00:39,000
+He is a Research Scientist at the University of Utah.
+
+7
+00:00:39,000 --> 00:00:42,000
+Let me introduce his background.
+
+8
+00:00:42,000 --> 00:00:49,000
+He is a Research Scientist at the University of Utah.
+
+9
+00:00:50,000 --> 00:00:59,000
+Before this, he got his PhD in Nuclear Engineering at Virginia Tech in 2019.
+
+10
+00:00:59,000 --> 00:01:05,000
+His main research interest is Particle Transport Simulation.
+
+11
+00:01:05,000 --> 00:01:07,000
+This is the topic he will talk about today.
+
+12
+00:01:07,000 --> 00:01:11,000
+There is another topic that is not today's topic, but it is very cool.
+
+13
+00:01:11,000 --> 00:01:16,000
+It is Robotic Arm Applications in Nuclear Industry.
+
+14
+00:01:16,000 --> 00:01:19,000
+Obviously, you can't do anything by yourself.
+
+15
+00:01:19,000 --> 00:01:21,000
+This is a very important application.
+
+16
+00:01:21,000 --> 00:01:25,000
+There is a very special thing.
+
+17
+00:01:25,000 --> 00:01:26,000
+This is our online speech.
+
+18
+00:01:26,000 --> 00:01:28,000
+Let's give a round of applause to welcome our speaker.
+
+19
+00:01:28,000 --> 00:01:32,000
+Please turn on the microphone so that our speaker can hear our applause.
+
+20
+00:01:32,000 --> 00:01:40,000
+Let's give a round of applause to welcome Vince to give us a wonderful speech today.
+
+21
+00:01:40,000 --> 00:01:41,000
+I'll leave it to you.
+
+22
+00:01:41,000 --> 00:01:43,000
+Thank you, Ian.
+
+23
+00:01:43,000 --> 00:01:47,000
+First of all, thank you all for coming to listen to my speech.
+
+24
+00:01:47,000 --> 00:01:52,000
+My topic today is Introduction to Particle Transport Simulation.
+
+25
+00:01:52,000 --> 00:01:56,000
+Basically, Particle Transport Simulation can be used in many ways.
+
+26
+00:01:56,000 --> 00:02:00,000
+My main focus today is Deep Penetration Problem.
+
+27
+00:02:00,000 --> 00:02:03,000
+I will introduce what Deep Penetration Problem is later.
+
+28
+00:02:03,000 --> 00:02:07,000
+In fact, this chart has already told you some information.
+
+29
+00:02:07,000 --> 00:02:12,000
+At first, I will talk about what Particle Transport is.
+
+30
+00:02:12,000 --> 00:02:15,000
+Why do we need Particle Transport?
+
+31
+00:02:15,000 --> 00:02:20,000
+Second, what are the main applications?
+
+32
+00:02:20,000 --> 00:02:23,000
+I just said that Particle Transport has many applications.
+
+33
+00:02:23,000 --> 00:02:26,000
+If I have to talk about everything, I won't be able to finish it in an hour.
+
+34
+00:02:26,000 --> 00:02:28,000
+So I'm focusing on Deep Penetration Problem today.
+
+35
+00:02:28,000 --> 00:02:30,000
+It's actually a shielding problem.
+
+36
+00:02:30,000 --> 00:02:35,000
+Basically, you need to have a method to do this simulation.
+
+37
+00:02:35,000 --> 00:02:37,000
+There is a Governing Equation behind it.
+
+38
+00:02:37,000 --> 00:02:41,000
+Then you have to develop some methods to solve it.
+
+39
+00:02:41,000 --> 00:02:44,000
+I will talk about what the mainstream methods are now.
+
+40
+00:02:44,000 --> 00:02:46,000
+What are their advantages and disadvantages?
+
+41
+00:02:46,000 --> 00:02:48,000
+What are some more advanced methods?
+
+42
+00:02:48,000 --> 00:02:51,000
+Basically, I'm talking about Variance Reduction Techniques here.
+
+43
+00:02:51,000 --> 00:02:55,000
+Finally, of course, I will give a Demonstration Problem.
+
+44
+00:02:55,000 --> 00:02:57,000
+Finally, there is a Summary.
+
+45
+00:02:57,000 --> 00:03:03,000
+Before we solve any problem,
+
+46
+00:03:03,000 --> 00:03:06,000
+we have to talk about the Governing Equation behind it.
+
+47
+00:03:06,000 --> 00:03:12,000
+The Governing Equation behind Particle Transport is the Boltzmann Transport Equation.
+
+48
+00:03:12,000 --> 00:03:16,000
+You can see that the above equation looks very complicated.
+
+49
+00:03:16,000 --> 00:03:18,000
+This is General Form.
+
+50
+00:03:18,000 --> 00:03:20,000
+You have Time Dependent Terms.
+
+51
+00:03:20,000 --> 00:03:23,000
+We talk about Particle Streaming.
+
+52
+00:03:23,000 --> 00:03:26,000
+Your particle will be in Boundary Loss.
+
+53
+00:03:26,000 --> 00:03:28,000
+Then you may have an extra position.
+
+54
+00:03:28,000 --> 00:03:32,000
+For example, if you are an electrolyte, you may have magnetic force.
+
+55
+00:03:33,000 --> 00:03:36,000
+Gravity is generally not considered.
+
+56
+00:03:36,000 --> 00:03:38,000
+Because the particle is very small.
+
+57
+00:03:38,000 --> 00:03:40,000
+Then you have Collision.
+
+58
+00:03:40,000 --> 00:03:43,000
+The right side is basically Particle Gain.
+
+59
+00:03:43,000 --> 00:03:48,000
+When we calculate the Particle Transport,
+
+60
+00:03:48,000 --> 00:03:51,000
+We will talk about whether it is Lost or Gain.
+
+61
+00:03:51,000 --> 00:03:53,000
+You can see that the left side is basically Lost.
+
+62
+00:03:53,000 --> 00:03:54,000
+The right side is Gain.
+
+63
+00:03:54,000 --> 00:03:59,000
+I won't focus too much on Mathematics.
+
+64
+00:03:59,000 --> 00:04:03,000
+Because if you are not doing this field,
+
+65
+00:04:03,000 --> 00:04:06,000
+Mathematics will take a long time to understand.
+
+66
+00:04:06,000 --> 00:04:10,000
+The above is General Form.
+
+67
+00:04:10,000 --> 00:04:12,000
+The following is basically
+
+68
+00:04:12,000 --> 00:04:18,000
+If you need to do radiation transfer calculation.
+
+69
+00:04:18,000 --> 00:04:20,000
+Calculate their mass.
+
+70
+00:04:20,000 --> 00:04:22,000
+This is the Governing Equation we usually use.
+
+71
+00:04:22,000 --> 00:04:24,000
+This is from the above equation.
+
+72
+00:04:24,000 --> 00:04:28,000
+We talk about Steady State and Linear Boltzmann Equation.
+
+73
+00:04:28,000 --> 00:04:31,000
+You can see that there is a word called Linear here.
+
+74
+00:04:31,000 --> 00:04:33,000
+Steady State should not need to explain, everyone knows.
+
+75
+00:04:33,000 --> 00:04:36,000
+Basically, what we mean by Linear here is
+
+76
+00:04:36,000 --> 00:04:40,000
+For example, if you want to calculate the mass today.
+
+77
+00:04:40,000 --> 00:04:43,000
+For example, I am Photon today.
+
+78
+00:04:43,000 --> 00:04:45,000
+Photon will cause mass to me.
+
+79
+00:04:45,000 --> 00:04:49,000
+Today I assume that there will be no effect between Photon and Photon.
+
+80
+00:04:49,000 --> 00:04:51,000
+So this Linear is from here.
+
+81
+00:04:51,000 --> 00:04:53,000
+So you can see here
+
+82
+00:04:53,000 --> 00:04:55,000
+Basically, it only looks like once.
+
+83
+00:04:55,000 --> 00:05:00,000
+This is the function we want to solve.
+
+84
+00:05:00,000 --> 00:05:03,000
+We call it Flux.
+
+85
+00:05:03,000 --> 00:05:05,000
+Basically, you can see that the above and below
+
+86
+00:05:05,000 --> 00:05:08,000
+These two equations actually look a bit like.
+
+87
+00:05:08,000 --> 00:05:10,000
+The only difference is that one is General Form.
+
+88
+00:05:10,000 --> 00:05:14,000
+The other is Specifically.
+
+89
+00:05:14,000 --> 00:05:17,000
+We are not too independent and it is Linear.
+
+90
+00:05:17,000 --> 00:05:27,000
+We can explain a little bit about what this equation is doing.
+
+91
+00:05:27,000 --> 00:05:29,000
+Just use this example.
+
+92
+00:05:29,000 --> 00:05:31,000
+This example is basically if you go to the hospital.
+
+93
+00:05:31,000 --> 00:05:34,000
+You often see these X-ray machines.
+
+94
+00:05:34,000 --> 00:05:38,000
+This X-ray machine basically has a radiation source inside.
+
+95
+00:05:38,000 --> 00:05:40,000
+The middle one is inside.
+
+96
+00:05:40,000 --> 00:05:44,000
+Basically, a general X-ray machine is a beam of light.
+
+97
+00:05:45,000 --> 00:05:49,000
+Basically, you can circle a boundary.
+
+98
+00:05:49,000 --> 00:05:54,000
+If this beam of light runs out of this system.
+
+99
+00:05:54,000 --> 00:05:56,000
+I don't think about it.
+
+100
+00:05:56,000 --> 00:05:58,000
+Because it basically won't come back.
+
+101
+00:05:58,000 --> 00:06:00,000
+Basically, my patient may be here.
+
+102
+00:06:00,000 --> 00:06:03,000
+You basically have to estimate the number of patients.
+
+103
+00:06:03,000 --> 00:06:06,000
+The beam of light that goes out here.
+
+104
+00:06:06,000 --> 00:06:08,000
+I just talked about streaming.
+
+105
+00:06:08,000 --> 00:06:11,000
+This beam of light has run out of this boundary.
+
+106
+00:06:11,000 --> 00:06:15,000
+Basically, it is unlikely to hit back again.
+
+107
+00:06:15,000 --> 00:06:18,000
+On the one hand, the energy you hit is getting lower and lower.
+
+108
+00:06:18,000 --> 00:06:21,000
+Its path will be shorter and shorter.
+
+109
+00:06:21,000 --> 00:06:24,000
+So this is basically a little bit.
+
+110
+00:06:24,000 --> 00:06:26,000
+Just connect this equation.
+
+111
+00:06:26,000 --> 00:06:28,000
+What is he talking about?
+
+112
+00:06:28,000 --> 00:06:30,000
+Take advantage of this problem.
+
+113
+00:06:30,000 --> 00:06:31,000
+OK.
+
+114
+00:06:31,000 --> 00:06:34,000
+Speaking of Particle Transport.
+
+115
+00:06:34,000 --> 00:06:36,000
+Its application is actually very wide.
+
+116
+00:06:36,000 --> 00:06:41,000
+What I just talked about is a medical radiation device.
+
+117
+00:06:41,000 --> 00:06:45,000
+Or a physical accelerator that is often used.
+
+118
+00:06:45,000 --> 00:06:47,000
+You need to generate high energy particles.
+
+119
+00:06:47,000 --> 00:06:50,000
+Basically, you know that when the electric field is turning.
+
+120
+00:06:50,000 --> 00:06:52,000
+You will put the light out.
+
+121
+00:06:52,000 --> 00:06:57,000
+Basically, you will need to design its radiation barrier.
+
+122
+00:06:57,000 --> 00:06:58,000
+How do you design it?
+
+123
+00:06:58,000 --> 00:07:01,000
+To make the staff at work.
+
+124
+00:07:01,000 --> 00:07:06,000
+Don't let its dosage exceed the specified limit.
+
+125
+00:07:06,000 --> 00:07:11,000
+Whether it's nuclear fusion or nuclear separation reaction.
+
+126
+00:07:11,000 --> 00:07:13,000
+I basically need it.
+
+127
+00:07:13,000 --> 00:07:15,000
+Nuclear fusion reaction, if you need a place.
+
+128
+00:07:15,000 --> 00:07:18,000
+Basically, it's the same as I said.
+
+129
+00:07:18,000 --> 00:07:20,000
+It's basically a high-energy particle.
+
+130
+00:07:20,000 --> 00:07:21,000
+You cut it out again.
+
+131
+00:07:21,000 --> 00:07:22,000
+It will emit light.
+
+132
+00:07:22,000 --> 00:07:25,000
+Basically, you will have the same radiation barrier.
+
+133
+00:07:25,000 --> 00:07:27,000
+The problem needs to be calculated.
+
+134
+00:07:27,000 --> 00:07:29,000
+Nuclear separation reaction is no longer necessary.
+
+135
+00:07:30,000 --> 00:07:33,000
+From the core to the radiation barrier outside.
+
+136
+00:07:33,000 --> 00:07:36,000
+Basically, you need Particle Transport.
+
+137
+00:07:36,000 --> 00:07:37,000
+Okay.
+
+138
+00:07:37,000 --> 00:07:41,000
+Here is a brief introduction to Deep Penetration Problem.
+
+139
+00:07:41,000 --> 00:07:43,000
+Basically, I just talked about Particle Transport.
+
+140
+00:07:43,000 --> 00:07:44,000
+There are many applications.
+
+141
+00:07:44,000 --> 00:07:48,000
+Basically, Deep Penetration Problem is radiation barrier calculation.
+
+142
+00:07:48,000 --> 00:07:52,000
+How much radiation barrier material do you need?
+
+143
+00:07:52,000 --> 00:07:54,000
+In front of your staff.
+
+144
+00:07:54,000 --> 00:07:58,000
+Let your dosage reach the value you want.
+
+145
+00:07:58,000 --> 00:07:59,000
+It's not too high.
+
+146
+00:07:59,000 --> 00:08:02,000
+Basically, we talk about Deep Penetration Problem in academia.
+
+147
+00:08:02,000 --> 00:08:04,000
+Why do we talk about Deep Penetration Problem?
+
+148
+00:08:04,000 --> 00:08:06,000
+Because these particles need to go through.
+
+149
+00:08:06,000 --> 00:08:10,000
+If it has to go through such a thick barrier.
+
+150
+00:08:10,000 --> 00:08:12,000
+Basically, this calculation is not very easy.
+
+151
+00:08:12,000 --> 00:08:15,000
+So basically, we talk about Deep Penetration Problem.
+
+152
+00:08:15,000 --> 00:08:17,000
+Generally speaking, if you are talking about radiation barriers.
+
+153
+00:08:17,000 --> 00:08:19,000
+We will have an interesting example.
+
+154
+00:08:19,000 --> 00:08:21,000
+Basically, there are only three.
+
+155
+00:08:21,000 --> 00:08:22,000
+Mainly the first two.
+
+156
+00:08:22,000 --> 00:08:23,000
+Medium value and light value.
+
+157
+00:08:23,000 --> 00:08:26,000
+Basically, there is time for electrons.
+
+158
+00:08:26,000 --> 00:08:28,000
+Basically, when you need electrons.
+
+159
+00:08:28,000 --> 00:08:31,000
+Most of them are in medical equipment.
+
+160
+00:08:31,000 --> 00:08:34,000
+Medical radiation radiation source equipment.
+
+161
+00:08:34,000 --> 00:08:36,000
+In the nuclear industry.
+
+162
+00:08:36,000 --> 00:08:38,000
+Basically, we do not consider this.
+
+163
+00:08:38,000 --> 00:08:39,000
+Because it is an electrolyte.
+
+164
+00:08:39,000 --> 00:08:40,000
+Then it's light.
+
+165
+00:08:40,000 --> 00:08:42,000
+It basically can't get out.
+
+166
+00:08:42,000 --> 00:08:44,000
+And the nuclear industry is basically.
+
+167
+00:08:44,000 --> 00:08:47,000
+The barriers you don't see are basically very thick.
+
+168
+00:08:47,000 --> 00:08:48,000
+So these two.
+
+169
+00:08:48,000 --> 00:08:49,000
+The first two are basically without electricity.
+
+170
+00:08:49,000 --> 00:08:51,000
+So it's easier to get out.
+
+171
+00:08:51,000 --> 00:08:54,000
+Basically.
+
+172
+00:08:54,000 --> 00:08:55,000
+Basically, every calculation.
+
+173
+00:08:55,000 --> 00:08:57,000
+You have to have his goal.
+
+174
+00:08:57,000 --> 00:08:59,000
+Basically, we just talked about it.
+
+175
+00:08:59,000 --> 00:09:02,000
+You have to protect the staff.
+
+176
+00:09:02,000 --> 00:09:03,000
+And you have to calculate.
+
+177
+00:09:03,000 --> 00:09:05,000
+Know how much your dosage is.
+
+178
+00:09:05,000 --> 00:09:10,000
+Here I listed some of the general.
+
+179
+00:09:10,000 --> 00:09:13,000
+The unit we will use for radiation.
+
+180
+00:09:13,000 --> 00:09:16,000
+You can take a look.
+
+181
+00:09:16,000 --> 00:09:19,000
+This is not directly related to the topic I am talking about today.
+
+182
+00:09:19,000 --> 00:09:21,000
+Just mention it a little bit.
+
+183
+00:09:21,000 --> 00:09:23,000
+You basically have some units.
+
+184
+00:09:23,000 --> 00:09:27,000
+It is considered to be biological.
+
+185
+00:09:27,000 --> 00:09:29,000
+Like these are what we usually use.
+
+186
+00:09:29,000 --> 00:09:31,000
+Some of them are not.
+
+187
+00:09:31,000 --> 00:09:33,000
+Because you have these different particles.
+
+188
+00:09:33,000 --> 00:09:36,000
+It may cause damage to our human body.
+
+189
+00:09:36,000 --> 00:09:37,000
+Will be different.
+
+190
+00:09:37,000 --> 00:09:38,000
+Especially the seed.
+
+191
+00:09:38,000 --> 00:09:40,000
+OK.
+
+192
+00:09:40,000 --> 00:09:42,000
+Ok, then.
+
+193
+00:09:42,000 --> 00:09:45,000
+If we take a system to do.
+
+194
+00:09:45,000 --> 00:09:46,000
+Which one is.
+
+195
+00:09:46,000 --> 00:09:47,000
+If there is a color system.
+
+196
+00:09:47,000 --> 00:09:48,000
+Let's do it.
+
+197
+00:09:48,000 --> 00:09:49,000
+For example.
+
+198
+00:09:49,000 --> 00:09:51,000
+You can take this.
+
+199
+00:09:52,000 --> 00:09:54,000
+This should be very necessary in Taiwan now.
+
+200
+00:09:54,000 --> 00:09:55,000
+Because Taiwan is basically.
+
+201
+00:09:55,000 --> 00:09:57,000
+Now the nuclear power plant is going to be established.
+
+202
+00:09:57,000 --> 00:09:58,000
+You will have these radiation.
+
+203
+00:09:58,000 --> 00:10:00,000
+In the process of loading the barrel.
+
+204
+00:10:00,000 --> 00:10:01,000
+In the process of shipping.
+
+205
+00:10:01,000 --> 00:10:03,000
+You basically have to.
+
+206
+00:10:03,000 --> 00:10:06,000
+Calculate how much radiation it will protect.
+
+207
+00:10:06,000 --> 00:10:08,000
+Basically, you can see.
+
+208
+00:10:08,000 --> 00:10:10,000
+Here is the nuclear fuel inside.
+
+209
+00:10:10,000 --> 00:10:12,000
+These nuclear fuels are basically.
+
+210
+00:10:12,000 --> 00:10:15,000
+Burned in the reactor.
+
+211
+00:10:15,000 --> 00:10:17,000
+I'm talking about burning here.
+
+212
+00:10:17,000 --> 00:10:18,000
+Actually, it's not burning.
+
+213
+00:10:18,000 --> 00:10:20,000
+It is nuclear transmutation.
+
+214
+00:10:20,000 --> 00:10:22,000
+Yes, because basically the nuclear reaction.
+
+215
+00:10:22,000 --> 00:10:25,000
+It's not the same as the general chemical reaction.
+
+216
+00:10:25,000 --> 00:10:27,000
+Yes, basically you.
+
+217
+00:10:27,000 --> 00:10:28,000
+Burned in the reactor.
+
+218
+00:10:28,000 --> 00:10:31,000
+It's basically been activated.
+
+219
+00:10:31,000 --> 00:10:33,000
+Is being activated.
+
+220
+00:10:33,000 --> 00:10:34,000
+Then you basically.
+
+221
+00:10:34,000 --> 00:10:36,000
+There may be these.
+
+222
+00:10:36,000 --> 00:10:37,000
+These radiation.
+
+223
+00:10:37,000 --> 00:10:39,000
+These radiation are basically.
+
+224
+00:10:39,000 --> 00:10:40,000
+Spent nuclear.
+
+225
+00:10:40,000 --> 00:10:41,000
+Is.
+
+226
+00:10:41,000 --> 00:10:42,000
+Used nuclear fuel.
+
+227
+00:10:42,000 --> 00:10:44,000
+Basically, it may be released.
+
+228
+00:10:44,000 --> 00:10:46,000
+Basically, you can't just.
+
+229
+00:10:46,000 --> 00:10:47,000
+Take it out.
+
+230
+00:10:47,000 --> 00:10:48,000
+Then.
+
+231
+00:10:48,000 --> 00:10:50,000
+Use people to operate.
+
+232
+00:10:50,000 --> 00:10:52,000
+So basically it's all mechanical.
+
+233
+00:10:52,000 --> 00:10:53,000
+Then put it in these barrels.
+
+234
+00:10:53,000 --> 00:10:55,000
+These barrels are basically very thick.
+
+235
+00:10:55,000 --> 00:10:57,000
+That light inside.
+
+236
+00:10:57,000 --> 00:10:59,000
+Inside is the inner barrel.
+
+237
+00:10:59,000 --> 00:11:00,000
+Basically, that steel.
+
+238
+00:11:00,000 --> 00:11:02,000
+That stainless steel is basically.
+
+239
+00:11:02,000 --> 00:11:04,000
+It's already 25 centimeters thick.
+
+240
+00:11:04,000 --> 00:11:06,000
+So basically there is such a thick.
+
+241
+00:11:06,000 --> 00:11:07,000
+There is such a thick.
+
+242
+00:11:07,000 --> 00:11:08,000
+Radiation barrier.
+
+243
+00:11:08,000 --> 00:11:09,000
+You basically have some particles.
+
+244
+00:11:09,000 --> 00:11:11,000
+You don't need to think about it at all.
+
+245
+00:11:11,000 --> 00:11:12,000
+For example, Alpha Particle.
+
+246
+00:11:12,000 --> 00:11:13,000
+Alpha Particle.
+
+247
+00:11:13,000 --> 00:11:14,000
+You are basically in the air.
+
+248
+00:11:14,000 --> 00:11:16,000
+It's about five centimeters.
+
+249
+00:11:16,000 --> 00:11:17,000
+So don't say you have.
+
+250
+00:11:17,000 --> 00:11:18,000
+You have a little bit.
+
+251
+00:11:18,000 --> 00:11:19,000
+Then Electron doesn't have to say.
+
+252
+00:11:19,000 --> 00:11:21,000
+It is very light and has electricity.
+
+253
+00:11:21,000 --> 00:11:22,000
+Then Neutrinos basically.
+
+254
+00:11:22,000 --> 00:11:23,000
+It doesn't react with matter.
+
+255
+00:11:23,000 --> 00:11:25,000
+So we don't consider it.
+
+256
+00:11:25,000 --> 00:11:26,000
+So basically.
+
+257
+00:11:26,000 --> 00:11:27,000
+Ah.
+
+258
+00:11:27,000 --> 00:11:28,000
+We basically.
+
+259
+00:11:28,000 --> 00:11:29,000
+You are in the nuclear industry.
+
+260
+00:11:29,000 --> 00:11:30,000
+We have to calculate.
+
+261
+00:11:30,000 --> 00:11:31,000
+Ah.
+
+262
+00:11:31,000 --> 00:11:32,000
+If it's a measure.
+
+263
+00:11:32,000 --> 00:11:34,000
+Basically, most of them are these two.
+
+264
+00:11:34,000 --> 00:11:36,000
+And it's about 100%.
+
+265
+00:11:36,000 --> 00:11:37,000
+The rest is basically.
+
+266
+00:11:37,000 --> 00:11:39,000
+You can say it is negligible.
+
+267
+00:11:39,000 --> 00:11:41,000
+It depends on the case.
+
+268
+00:11:41,000 --> 00:11:42,000
+OK.
+
+269
+00:11:42,000 --> 00:11:43,000
+So basically you can see that.
+
+270
+00:11:43,000 --> 00:11:45,000
+Because we only.
+
+271
+00:11:45,000 --> 00:11:48,000
+Only interested in this non-electric particle.
+
+272
+00:11:48,000 --> 00:11:49,000
+So we just use this.
+
+273
+00:11:49,000 --> 00:11:50,000
+Steady linear.
+
+274
+00:11:50,000 --> 00:11:52,000
+Steady linear Boltzmann equation.
+
+275
+00:11:52,000 --> 00:11:53,000
+Basically, you can use it directly.
+
+276
+00:11:53,000 --> 00:11:54,000
+Ah.
+
+277
+00:11:54,000 --> 00:11:55,000
+To do this calculation.
+
+278
+00:11:55,000 --> 00:11:56,000
+OK.
+
+279
+00:11:56,000 --> 00:11:57,000
+Ok.
+
+280
+00:11:57,000 --> 00:11:58,000
+Then you want to do this calculation.
+
+281
+00:11:58,000 --> 00:11:59,000
+The physical model behind you has developed well.
+
+282
+00:11:59,000 --> 00:12:00,000
+It is.
+
+283
+00:12:00,000 --> 00:12:01,000
+Ah.
+
+284
+00:12:01,000 --> 00:12:02,000
+Transport equation.
+
+285
+00:12:02,000 --> 00:12:04,000
+Basically, you basically have to.
+
+286
+00:12:04,000 --> 00:12:06,000
+To solve this equation.
+
+287
+00:12:06,000 --> 00:12:07,000
+Ah.
+
+288
+00:12:07,000 --> 00:12:08,000
+But that equation.
+
+289
+00:12:08,000 --> 00:12:09,000
+You just saw it.
+
+290
+00:12:09,000 --> 00:12:10,000
+Basically, it has.
+
+291
+00:12:10,000 --> 00:12:11,000
+Ah.
+
+292
+00:12:11,000 --> 00:12:12,000
+If you expand all the variables.
+
+293
+00:12:12,000 --> 00:12:13,000
+Include.
+
+294
+00:12:13,000 --> 00:12:14,000
+If it includes time.
+
+295
+00:12:14,000 --> 00:12:15,000
+It has seven variables.
+
+296
+00:12:15,000 --> 00:12:16,000
+Ah.
+
+297
+00:12:16,000 --> 00:12:17,000
+XYZ.
+
+298
+00:12:17,000 --> 00:12:18,000
+Ah.
+
+299
+00:12:18,000 --> 00:12:19,000
+Then the energy.
+
+300
+00:12:19,000 --> 00:12:20,000
+Then the angle.
+
+301
+00:12:20,000 --> 00:12:21,000
+Is the particle.
+
+302
+00:12:21,000 --> 00:12:22,000
+What angle does it shoot?
+
+303
+00:12:22,000 --> 00:12:23,000
+Then.
+
+304
+00:12:23,000 --> 00:12:24,000
+There are basically two angles.
+
+305
+00:12:24,000 --> 00:12:25,000
+It has.
+
+306
+00:12:25,000 --> 00:12:26,000
+Ah.
+
+307
+00:12:26,000 --> 00:12:27,000
+Z-multiple and polar.
+
+308
+00:12:27,000 --> 00:12:28,000
+And then.
+
+309
+00:12:28,000 --> 00:12:29,000
+It also has time.
+
+310
+00:12:29,000 --> 00:12:30,000
+Basically, there are seven.
+
+311
+00:12:30,000 --> 00:12:31,000
+Then it.
+
+312
+00:12:31,000 --> 00:12:32,000
+That.
+
+313
+00:12:32,000 --> 00:12:33,000
+That.
+
+314
+00:12:33,000 --> 00:12:34,000
+That.
+
+315
+00:12:34,000 --> 00:12:35,000
+That.
+
+316
+00:12:35,000 --> 00:12:36,000
+That.
+
+317
+00:12:36,000 --> 00:12:37,000
+That.
+
+318
+00:12:37,000 --> 00:12:38,000
+That.
+
+319
+00:12:38,000 --> 00:12:39,000
+That.
+
+320
+00:12:39,000 --> 00:12:40,000
+That.
+
+321
+00:12:40,000 --> 00:12:41,000
+That.
+
+322
+00:12:41,000 --> 00:12:42,000
+That.
+
+323
+00:12:42,000 --> 00:12:43,000
+That.
+
+324
+00:12:43,000 --> 00:12:44,000
+That.
+
+325
+00:12:44,000 --> 00:12:45,000
+That.
+
+326
+00:12:45,000 --> 00:12:46,000
+That.
+
+327
+00:12:46,000 --> 00:12:47,000
+That.
+
+328
+00:12:47,000 --> 00:12:48,000
+That.
+
+329
+00:12:48,000 --> 00:12:49,000
+That.
+
+330
+00:12:49,000 --> 00:12:50,000
+That.
+
+331
+00:12:50,000 --> 00:12:51,000
+That.
+
+332
+00:12:51,000 --> 00:12:52,000
+Ah.
+
+333
+00:12:52,000 --> 00:12:53,000
+Ah.
+
+334
+00:12:53,000 --> 00:12:54,000
+Ah.
+
+335
+00:12:54,000 --> 00:12:55,000
+Ah, basically, you can only solve the number.
+
+336
+00:12:55,000 --> 00:12:56,000
+So, basically, the number is.
+
+337
+00:12:56,000 --> 00:12:57,000
+This is the first deterministic model here.
+
+338
+00:12:57,000 --> 00:12:58,000
+You really have to go.
+
+339
+00:12:58,000 --> 00:12:59,000
+This equation.
+
+340
+00:12:59,000 --> 00:13:00,000
+Break it down one piece at a time.
+
+341
+00:13:00,000 --> 00:13:01,000
+Then you can see it has a lot of.
+
+342
+00:13:01,000 --> 00:13:02,000
+It is a square of space.
+
+343
+00:13:02,000 --> 00:13:03,000
+It is XYZ.
+
+344
+00:13:03,000 --> 00:13:04,000
+You have to break everything down.
+
+345
+00:13:04,000 --> 00:13:05,000
+And then you have to break down the energy.
+
+346
+00:13:05,000 --> 00:13:06,000
+And then there are two parts of the angle.
+
+347
+00:13:06,000 --> 00:13:07,000
+You have to break down.
+
+348
+00:13:07,000 --> 00:13:08,000
+So, this is basically a module.
+
+349
+00:13:09,000 --> 00:13:10,000
+It is a very difficult process.
+
+350
+00:13:10,000 --> 00:13:11,000
+There is another method.
+
+351
+00:13:11,000 --> 00:13:12,000
+It is basically a Monte Carlo method.
+
+352
+00:13:12,000 --> 00:13:13,000
+You can put this whole.
+
+353
+00:13:13,000 --> 00:13:14,000
+You can use this method.
+
+354
+00:13:14,000 --> 00:13:15,000
+Basically, you can.
+
+355
+00:13:15,000 --> 00:13:16,000
+You do not have to go directly.
+
+356
+00:13:16,000 --> 00:13:17,000
+The one who solved the equation.
+
+357
+00:13:17,000 --> 00:13:18,000
+You basically, we are.
+
+358
+00:13:18,000 --> 00:13:19,000
+All the physical processes.
+
+359
+00:13:19,000 --> 00:13:20,000
+Turn it into a probability function.
+
+360
+00:13:20,000 --> 00:13:21,000
+Then go down to do the signal.
+
+361
+00:13:21,000 --> 00:13:22,000
+Basically, these two methods.
+
+362
+00:13:22,000 --> 00:13:23,000
+It has good and bad.
+
+363
+00:13:23,000 --> 00:13:24,000
+So, basically, I am now.
+
+364
+00:13:24,000 --> 00:13:25,000
+I will talk about it next.
+
+365
+00:13:25,000 --> 00:13:26,000
+Where is it good and bad?
+
+366
+00:13:26,000 --> 00:13:27,000
+And why is it bad?
+
+367
+00:13:27,000 --> 00:13:28,000
+Because it is a.
+
+368
+00:13:28,000 --> 00:13:29,000
+It is a, it is a, it is a, it is a, it is a.
+
+369
+00:13:29,000 --> 00:13:30,000
+It is a, it is a, it is a, it is a.
+
+370
+00:13:30,000 --> 00:13:38,000
+It is a, it is a, it is a.
+
+371
+00:13:38,000 --> 00:13:48,000
+It is a, it is a, it is a.
+
+372
+00:13:48,000 --> 00:13:58,000
+It is a, it is a, it is a.
+
+373
+00:13:58,000 --> 00:14:08,000
+It is a, it is a, it is a.
+
+374
+00:14:08,000 --> 00:14:18,000
+It is a, it is a, it is a.
+
+375
+00:14:18,000 --> 00:14:28,000
+It is a, it is a, it is a.
+
+376
+00:14:28,000 --> 00:14:38,000
+It is a, it is a, it is a.
+
+377
+00:14:38,000 --> 00:14:46,000
+It is a, it is a.
+
+378
+00:14:46,000 --> 00:14:56,000
+It is a, it is a.
+
+379
+00:14:56,000 --> 00:15:06,000
+It is a, it is a, it is a.
+
+380
+00:15:06,000 --> 00:15:16,000
+It is a, it is a.
+
+381
+00:15:16,000 --> 00:15:26,000
+It is a, it is a.
+
+382
+00:15:26,000 --> 00:15:36,000
+It is a, it is a.
+
+383
+00:15:36,000 --> 00:15:46,000
+It is a, it is a.
+
+384
+00:15:46,000 --> 00:15:56,000
+It is a, it is a.
+
+385
+00:15:56,000 --> 00:16:06,000
+It is a, it is a.
+
+386
+00:16:06,000 --> 00:16:16,000
+It is a, it is a.
+
+387
+00:16:16,000 --> 00:16:26,000
+It is a, it is a.
+
+388
+00:16:26,000 --> 00:16:36,000
+It is a, it is a.
+
+389
+00:16:36,000 --> 00:16:46,000
+It is a, it is a.
+
+390
+00:16:46,000 --> 00:16:56,000
+It is a, it is a.
+
+391
+00:16:56,000 --> 00:17:06,000
+It is a, it is a.
+
+392
+00:17:06,000 --> 00:17:16,000
+It is a, it is a.
+
+393
+00:17:16,000 --> 00:17:26,000
+It is a, it is a.
+
+394
+00:17:26,000 --> 00:17:36,000
+It is a, it is a.
+
+395
+00:17:36,000 --> 00:17:46,000
+It is a, it is a.
+
+396
+00:17:46,000 --> 00:17:56,000
+It is a, it is a.
+
+397
+00:17:56,000 --> 00:18:06,000
+It is a, it is a.
+
+398
+00:18:06,000 --> 00:18:16,000
+It is a, it is a.
+
+399
+00:18:16,000 --> 00:18:26,000
+It is a, it is a.
+
+400
+00:18:26,000 --> 00:18:36,000
+It is a, it is a.
+
+401
+00:18:36,000 --> 00:18:46,000
+It is a, it is a.
+
+402
+00:18:46,000 --> 00:18:56,000
+It is a, it is a.
+
+403
+00:18:56,000 --> 00:19:06,000
+It is a, it is a.
+
+404
+00:19:06,000 --> 00:19:16,000
+It is a, it is a.
+
+405
+00:19:16,000 --> 00:19:26,000
+It is a, it is a.
+
+406
+00:19:26,000 --> 00:19:36,000
+It is a, it is a.
+
+407
+00:19:36,000 --> 00:19:46,000
+It is a, it is a.
+
+408
+00:19:46,000 --> 00:19:56,000
+It is a, it is a.
+
+409
+00:19:56,000 --> 00:20:06,000
+It is a, it is a.
+
+410
+00:20:06,000 --> 00:20:16,000
+It is a, it is a.
+
+411
+00:20:16,000 --> 00:20:26,000
+It is a, it is a.
+
+412
+00:20:26,000 --> 00:20:36,000
+It is a, it is a.
+
+413
+00:20:36,000 --> 00:20:46,000
+It is a, it is a.
+
+414
+00:20:46,000 --> 00:20:56,000
+It is a, it is a.
+
+415
+00:20:56,000 --> 00:21:06,000
+It is a, it is a.
+
+416
+00:21:06,000 --> 00:21:16,000
+It is a, it is a.
+
+417
+00:21:16,000 --> 00:21:26,000
+It is a, it is a.
+
+418
+00:21:26,000 --> 00:21:36,000
+It is a, it is a.
+
+419
+00:21:36,000 --> 00:21:46,000
+It is a, it is a.
+
+420
+00:21:46,000 --> 00:21:56,000
+It is a, it is a.
+
+421
+00:21:56,000 --> 00:22:06,000
+It is a, it is a.
+
+422
+00:22:06,000 --> 00:22:16,000
+It is a, it is a.
+
+423
+00:22:16,000 --> 00:22:26,000
+It is a, it is a.
+
+424
+00:22:26,000 --> 00:22:36,000
+It is a, it is a.
+
+425
+00:22:36,000 --> 00:22:46,000
+It is a, it is a.
+
+426
+00:22:46,000 --> 00:22:56,000
+It is a, it is a.
+
+427
+00:22:56,000 --> 00:23:06,000
+It is a, it is a.
+
+428
+00:23:06,000 --> 00:23:16,000
+It is a.
+
+429
+00:23:16,000 --> 00:23:26,000
+It is a, it is a.
+
+430
+00:23:26,000 --> 00:23:36,000
+It is a, it is a.
+
+431
+00:23:36,000 --> 00:23:46,000
+It is a, it is a.
+
+432
+00:23:46,000 --> 00:23:56,000
+It is a, it is a.
+
+433
+00:23:56,000 --> 00:24:06,000
+It is a, it is a.
+
+434
+00:24:06,000 --> 00:24:16,000
+It is a, it is a.
+
+435
+00:24:16,000 --> 00:24:26,000
+It is a, it is a.
+
+436
+00:24:26,000 --> 00:24:36,000
+It is a, it is a.
+
+437
+00:24:36,000 --> 00:24:46,000
+It is a, it is a.
+
+438
+00:24:46,000 --> 00:24:56,000
+It is a, it is a.
+
+439
+00:24:56,000 --> 00:25:06,000
+It is a, it is a.
+
+440
+00:25:06,000 --> 00:25:16,000
+It is a, it is a.
+
+441
+00:25:16,000 --> 00:25:26,000
+It is a, it is a.
+
+442
+00:25:26,000 --> 00:25:36,000
+It is a, it is a.
+
+443
+00:25:36,000 --> 00:25:46,000
+It is a, it is a.
+
+444
+00:25:46,000 --> 00:25:56,000
+It is a, it is a.
+
+445
+00:25:56,000 --> 00:26:06,000
+It is a, it is a.
+
+446
+00:26:06,000 --> 00:26:16,000
+It is a, it is a.
+
+447
+00:26:16,000 --> 00:26:26,000
+It is a, it is a.
+
+448
+00:26:26,000 --> 00:26:36,000
+It is a, it is a.
+
+449
+00:26:36,000 --> 00:26:46,000
+It is a, it is a.
+
+450
+00:26:46,000 --> 00:26:56,000
+It is a, it is a.
+
+451
+00:26:56,000 --> 00:27:06,000
+It is a, it is a.
+
+452
+00:27:06,000 --> 00:27:14,000
+It is a, it is a.
+
+453
+00:27:14,000 --> 00:27:22,000
+It is a, it is a.
+
+454
+00:27:22,000 --> 00:27:30,000
+It is a, it is a.
+
+455
+00:27:30,000 --> 00:27:40,000
+It is a, it is a.
+
+456
+00:27:40,000 --> 00:27:50,000
+It is a, it is a.
+
+457
+00:27:50,000 --> 00:28:00,000
+It is a, it is a.
+
+458
+00:28:00,000 --> 00:28:10,000
+It is a, it is a.
+
+459
+00:28:10,000 --> 00:28:20,000
+It is a, it is a.
+
+460
+00:28:20,000 --> 00:28:30,000
+It is a, it is a.
+
+461
+00:28:30,000 --> 00:28:40,000
+It is a, it is a.
+
+462
+00:28:40,000 --> 00:28:50,000
+It is a, it is a.
+
+463
+00:28:50,000 --> 00:29:00,000
+It is a, it is a.
+
+464
+00:29:00,000 --> 00:29:10,000
+It is a, it is a.
+
+465
+00:29:10,000 --> 00:29:18,000
+It is a, it is a.
+
+466
+00:29:18,000 --> 00:29:26,000
+It is a, it is a.
+
+467
+00:29:26,000 --> 00:29:34,000
+It is a, it is a.
+
+468
+00:29:34,000 --> 00:29:44,000
+It is a, it is a.
+
+469
+00:29:44,000 --> 00:29:54,000
+It is a, it is a.
+
+470
+00:29:54,000 --> 00:30:04,000
+It is a, it is a.
+
+471
+00:30:04,000 --> 00:30:14,000
+It is a, it is a.
+
+472
+00:30:14,000 --> 00:30:24,000
+It is a, it is a.
+
+473
+00:30:24,000 --> 00:30:34,000
+It is a, it is a.
+
+474
+00:30:34,000 --> 00:30:44,000
+It is a, it is a.
+
+475
+00:30:44,000 --> 00:30:54,000
+It is a, it is a.
+
+476
+00:30:54,000 --> 00:31:04,000
+It is a, it is a.
+
+477
+00:31:04,000 --> 00:31:14,000
+It is a, it is a.
+
+478
+00:31:14,000 --> 00:31:24,000
+It is a, it is a.
+
+479
+00:31:24,000 --> 00:31:34,000
+It is a, it is a.
+
+480
+00:31:34,000 --> 00:31:44,000
+It is a, it is a.
+
+481
+00:31:44,000 --> 00:31:54,000
+It is a, it is a.
+
+482
+00:31:54,000 --> 00:32:04,000
+It is a, it is a.
+
+483
+00:32:04,000 --> 00:32:14,000
+It is a, it is a.
+
+484
+00:32:14,000 --> 00:32:24,000
+It is a, it is a.
+
+485
+00:32:24,000 --> 00:32:34,000
+It is a, it is a.
+
+486
+00:32:34,000 --> 00:32:44,000
+It is a, it is a.
+
+487
+00:32:44,000 --> 00:32:54,000
+It is a, it is a.
+
+488
+00:32:54,000 --> 00:33:04,000
+It is a, it is a.
+
+489
+00:33:04,000 --> 00:33:14,000
+It is a, it is a.
+
+490
+00:33:14,000 --> 00:33:24,000
+It is a, it is a.
+
+491
+00:33:24,000 --> 00:33:34,000
+It is a, it is a.
+
+492
+00:33:34,000 --> 00:33:44,000
+It is a, it is a.
+
+493
+00:33:44,000 --> 00:33:54,000
+It is a, it is a.
+
+494
+00:33:54,000 --> 00:34:04,000
+It is a, it is a.
+
+495
+00:34:04,000 --> 00:34:14,000
+It is a, it is a.
+
+496
+00:34:14,000 --> 00:34:24,000
+It is a, it is a.
+
+497
+00:34:24,000 --> 00:34:34,000
+It is a, it is a.
+
+498
+00:34:34,000 --> 00:34:44,000
+It is a, it is a.
+
+499
+00:34:44,000 --> 00:34:54,000
+It is a, it is a.
+
+500
+00:34:54,000 --> 00:35:04,000
+It is a, it is a.
+
+501
+00:35:04,000 --> 00:35:14,000
+It is a, it is a.
+
+502
+00:35:14,000 --> 00:35:24,000
+It is a, it is a.
+
+503
+00:35:24,000 --> 00:35:34,000
+It is a, it is a.
+
+504
+00:35:34,000 --> 00:35:44,000
+It is a, it is a.
+
+505
+00:35:44,000 --> 00:35:54,000
+It is a, it is a.
+
+506
+00:35:54,000 --> 00:36:04,000
+It is a, it is a.
+
+507
+00:36:04,000 --> 00:36:14,000
+It is a, it is a.
+
+508
+00:36:14,000 --> 00:36:24,000
+It is a, it is a.
+
+509
+00:36:24,000 --> 00:36:34,000
+It is a, it is a.
+
+510
+00:36:34,000 --> 00:36:44,000
+It is a, it is a.
+
+511
+00:36:44,000 --> 00:36:54,000
+It is a, it is a.
+
+512
+00:36:54,000 --> 00:37:04,000
+It is a, it is a.
+
+513
+00:37:04,000 --> 00:37:14,000
+It is a, it is a.
+
+514
+00:37:14,000 --> 00:37:24,000
+It is a, it is a.
+
+515
+00:37:24,000 --> 00:37:34,000
+It is a, it is a.
+
+516
+00:37:34,000 --> 00:37:44,000
+It is a, it is a.
+
+517
+00:37:44,000 --> 00:37:54,000
+It is a, it is a.
+
+518
+00:37:54,000 --> 00:38:04,000
+It is a, it is a.
+
+519
+00:38:04,000 --> 00:38:14,000
+It is a, it is a.
+
+520
+00:38:14,000 --> 00:38:24,000
+It is a, it is a.
+
+521
+00:38:24,000 --> 00:38:34,000
+It is a, it is a.
+
+522
+00:38:34,000 --> 00:38:44,000
+It is a, it is a.
+
+523
+00:38:44,000 --> 00:38:54,000
+It is a, it is a.
+
+524
+00:38:54,000 --> 00:39:04,000
+It is a, it is a.
+
+525
+00:39:04,000 --> 00:39:14,000
+It is a, it is a.
+
+526
+00:39:14,000 --> 00:39:24,000
+It is a, it is a.
+
+527
+00:39:24,000 --> 00:39:34,000
+It is a, it is a.
+
+528
+00:39:34,000 --> 00:39:44,000
+It is a, it is a.
+
+529
+00:39:44,000 --> 00:39:54,000
+It is a, it is a.
+
+530
+00:39:54,000 --> 00:40:04,000
+It is a, it is a.
+
+531
+00:40:04,000 --> 00:40:14,000
+It is a, it is a.
+
+532
+00:40:14,000 --> 00:40:24,000
+It is a, it is a.
+
+533
+00:40:24,000 --> 00:40:34,000
+It is a, it is a.
+
+534
+00:40:34,000 --> 00:40:44,000
+It is a, it is a.
+
+535
+00:40:44,000 --> 00:40:54,000
+It is a, it is a.
+
+536
+00:40:54,000 --> 00:41:04,000
+It is a, it is a.
+
+537
+00:41:04,000 --> 00:41:14,000
+It is a, it is a.
+
+538
+00:41:14,000 --> 00:41:24,000
+It is a, it is a.
+
+539
+00:41:24,000 --> 00:41:34,000
+It is a, it is a.
+
+540
+00:41:34,000 --> 00:41:44,000
+It is a, it is a.
+
+541
+00:41:44,000 --> 00:41:54,000
+It is a, it is a.
+
+542
+00:41:54,000 --> 00:42:04,000
+It is a, it is a.
+
+543
+00:42:04,000 --> 00:42:14,000
+It is a, it is a.
+
+544
+00:42:14,000 --> 00:42:24,000
+It is a, it is a.
+
+545
+00:42:24,000 --> 00:42:34,000
+It is a, it is a.
+
+546
+00:42:34,000 --> 00:42:44,000
+It is a, it is a.
+
+547
+00:42:44,000 --> 00:42:54,000
+It is a, it is a.
+
+548
+00:42:54,000 --> 00:43:04,000
+It is a, it is a.
+
+549
+00:43:04,000 --> 00:43:14,000
+It is a, it is a.
+
+550
+00:43:14,000 --> 00:43:24,000
+It is a, it is a.
+
+551
+00:43:24,000 --> 00:43:34,000
+It is a, it is a.
+
+552
+00:43:34,000 --> 00:43:44,000
+It is a, it is a.
+
+553
+00:43:44,000 --> 00:43:54,000
+It is a, it is a.
+
+554
+00:43:54,000 --> 00:44:04,000
+It is a, it is a.
+
+555
+00:44:04,000 --> 00:44:14,000
+It is a, it is a.
+
+556
+00:44:14,000 --> 00:44:24,000
+It is a, it is a.
+
+557
+00:44:24,000 --> 00:44:34,000
+It is a, it is a.
+
+558
+00:44:34,000 --> 00:44:44,000
+It is a.
+
+559
+00:44:44,000 --> 00:44:54,000
+It is a.
+
+560
+00:44:54,000 --> 00:45:04,000
+It is a.
+
+561
+00:45:04,000 --> 00:45:14,000
+It is a.
+
+562
+00:45:14,000 --> 00:45:24,000
+It is a.
+
+563
+00:45:24,000 --> 00:45:34,000
+It is a.
+
+564
+00:45:34,000 --> 00:45:44,000
+It is a.
+
+565
+00:45:44,000 --> 00:45:54,000
+It is a.
+
+566
+00:45:54,000 --> 00:46:04,000
+It is a.
+
+567
+00:46:04,000 --> 00:46:14,000
+It is a.
+
+568
+00:46:14,000 --> 00:46:24,000
+It is a.
+
+569
+00:46:24,000 --> 00:46:34,000
+It is a.
+
+570
+00:46:34,000 --> 00:46:44,000
+It is a.
+
+571
+00:46:44,000 --> 00:46:54,000
+It is a.
+
+572
+00:46:54,000 --> 00:47:04,000
+It is a.
+
+573
+00:47:04,000 --> 00:47:14,000
+It is a.
+
+574
+00:47:14,000 --> 00:47:24,000
+It is a.
+
+575
+00:47:24,000 --> 00:47:34,000
+It is a.
+
+576
+00:47:34,000 --> 00:47:44,000
+It is a.
+
+577
+00:47:44,000 --> 00:47:54,000
+It is a.
+
+578
+00:47:54,000 --> 00:48:04,000
+It is a.
+
+579
+00:48:04,000 --> 00:48:14,000
+It is a.
+
+580
+00:48:14,000 --> 00:48:24,000
+It is a.
+
+581
+00:48:24,000 --> 00:48:34,000
+It is a.
+
+582
+00:48:34,000 --> 00:48:44,000
+It is a.
+
+583
+00:48:44,000 --> 00:48:54,000
+It is a.
+
+584
+00:48:54,000 --> 00:49:04,000
+It is a.
+
+585
+00:49:04,000 --> 00:49:14,000
+It is a.
+
+586
+00:49:14,000 --> 00:49:24,000
+It is a.
+
+587
+00:49:24,000 --> 00:49:34,000
+It is a.
+
+588
+00:49:34,000 --> 00:49:44,000
+It is a.
+
+589
+00:49:44,000 --> 00:49:54,000
+It is a.
+
+590
+00:49:54,000 --> 00:50:04,000
+It is a.
+
+591
+00:50:04,000 --> 00:50:14,000
+It is a.
+
+592
+00:50:14,000 --> 00:50:24,000
+It is a.
+
+593
+00:50:24,000 --> 00:50:34,000
+It is a.
+
+594
+00:50:34,000 --> 00:50:44,000
+It is a.
+
+595
+00:50:44,000 --> 00:50:54,000
+It is a.
+
+596
+00:50:54,000 --> 00:51:04,000
+It is a.
+
+597
+00:51:04,000 --> 00:51:04,000
+
+

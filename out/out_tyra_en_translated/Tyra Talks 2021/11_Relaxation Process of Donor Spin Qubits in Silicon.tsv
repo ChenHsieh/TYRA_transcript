@@ -1,0 +1,627 @@
+start	end	text
+0	16000	Hello everyone, welcome to today's Taira Talk on November 14th.
+16000	21000	We are honored to have Yuli Xue as our speaker today.
+21000	33000	She is currently a post-doctoral researcher at the University of New South Wales.
+33000	38000	Her doctoral program is at Purdue University, EECS.
+38000	48000	Her research focuses on physics and the defects in semiconductors.
+48000	54000	Her research focuses on simulation, but has a close relationship with experiments.
+54000	64000	Today's topic is the relaxation process of donor spin-tubing in silica.
+64000	81000	Before we get started, let's give Yuli a round of applause.
+81000	90000	Now we will hand over to Yuli.
+90000	100000	Today I will be talking about how to use donor spin-tubing as a quantum computer.
+100000	107000	And how the relaxation process plays an important role.
+107000	110000	There are five parts to this talk.
+110000	116000	The first part is about quantum computing.
+116000	124000	There are many different types of quantum computing.
+124000	130000	Some people use superconducting qubits, others use topological qubits.
+130000	135000	Today I will focus on semiconductor qubits.
+135000	143000	I will be using donor spin-tubing as a quantum computer.
+143000	148000	Next I will talk about spin relaxation.
+148000	152000	What does it have to do with quantum computing?
+152000	158000	How does it help to calculate spin relaxation time?
+158000	164000	Next I will talk about how to calculate spin relaxation time.
+164000	179000	Lastly, I will talk about the results of the experiment.
+179000	186000	The first part is about quantum computing.
+186000	192000	What are the differences between classical and quantum computers?
+192000	198000	For classical qubits, you can only choose either 0 or 1.
+198000	202000	For quantum qubits, you can choose either 0 or 1.
+202000	210000	This means that when you operate on quantum qubits, you can operate on 0 and 1 at the same time.
+210000	215000	If you only have a single qubit, it doesn't seem very powerful.
+216000	224000	However, if you have two qubits, you can operate on four states.
+224000	229000	Quantum computers can operate on these four states at the same time.
+229000	237000	If you have n qubits, you can operate on 2n qubits at the same time.
+237000	240000	This is very powerful.
+240000	248000	If you want to solve the riddle, you can try the first method.
+248000	251000	If it doesn't work, you can try the second method.
+251000	254000	If it doesn't work, you can try the third method.
+254000	257000	Quantum computers can try 100 methods at a time.
+257000	263000	Quantum computers can solve complex problems in a short time.
+263000	266000	Quantum computers can be used widely.
+266000	275000	For example, data security, database search, quantum chemistry, or machine learning.
+275000	285000	Next, I will introduce the most basic unit of quantum computers.
+285000	291000	Quantum computers are mainly composed of 0 and 1 like classical qubits.
+291000	298000	Quantum computers can operate on 0 and 1 at the same time.
+298000	302000	We use the block sphere as a representation.
+302000	310000	Quantum computers can not only operate on two qubits, but also on a channel or other points.
+310000	313000	This information is very important.
+313000	321000	Quantum computers can use quantum operators such as linear or horizontal derivatives.
+321000	327000	Quantum computers can also use quantum operators such as electron spin, downspin, offspin, nuclear spin, or upspin, downspin.
+327000	337000	Quantum computers can also use quantum operators such as electron ground state and first excited state.
+337000	345000	For example, if we take electron spin as an example,
+345000	350000	1 is upspin, 0 is downspin.
+350000	354000	This is our single qubit.
+354000	358000	First, we need to add magnetic field.
+358000	365000	Electron spin is a magnet.
+365000	371000	When it is parallel to the magnetic field or in the opposite direction, its energy will be different.
+371000	376000	When the energy of the magnetic field is split, the two states are separated.
+376000	383000	If we want to operate electron spin, we can add an AC magnetic field.
+383000	392000	If the frequency of the AC magnetic field and the energy of the AC magnetic field are matched,
+392000	395000	a resonance will occur.
+395000	405000	The resonance will go from 1 to 0, then to 1, then to 0, then to 1.
+405000	417000	The definition of qubit operation is the time evolution of two coherent states.
+417000	423000	For example, we can measure the qubit after a certain period of time.
+423000	429000	We will find that the qubit is originally in state 1, but after a certain period of time, it becomes 0.
+429000	434000	In this way, we can realize the NOT gate in logic design.
+434000	437000	1 becomes 0, 0 becomes 1.
+437000	441000	This is our single qubit operation.
+441000	447000	If we have two qubits, the most famous gate is called CNOT gate.
+447000	453000	CNOT gate means that when we have control qubit, control bit and target bit,
+453000	460000	when the control bit is 0, the input is 0 and 1, and the output is 0 and 1.
+460000	470000	When the control bit is 1, the input is 0 and 1, and the output is 0 and 1.
+470000	472000	This is CNOT gate.
+472000	475000	How to use electron spin?
+475000	482000	There is an interaction between two electron spins called exchange interaction.
+483000	490000	If they work, it means that when the control spin is in the up spin and it is in the down spin,
+490000	494000	the effect of the second electron spin is different.
+494000	496000	How is it different?
+496000	502000	For example, when you turn to this channel, the speed of the precessed channel will be different.
+502000	508000	For example, after tau z, the spin turns half a circle.
+508000	516000	When you measure, the spin is still in the down spin.
+516000	525000	But in this case, because the control spin is different from the other direction,
+525000	527000	the spin turns faster.
+527000	532000	Because of the interaction, the spin turns faster.
+533000	536000	For example, after tau z, the spin turns half a circle.
+536000	538000	When you measure, the spin is in the up spin.
+538000	540000	Originally, the spin is in the down spin, but now it is in the up spin.
+540000	542000	One spin is not changed, and the other spin is changed.
+542000	546000	This is how CNOT gate is realized.
+546000	550000	If we have a single qubit gate and CNOT gate,
+550000	554000	we can do quantum computation,
+554000	559000	which is to realize a universal quantum computation.
+559000	565000	Next, we will introduce the donor spin qubit.
+565000	571000	For example, we need an electron spin to store 0 and 1.
+571000	575000	But we need to localize the electron spin.
+575000	578000	For example, there are so many electrons in silicon solid.
+578000	581000	How do we know which one we want to control?
+582000	592000	The concept is that the silicon and the phosphorus are next to each other.
+592000	597000	One has 14 electrons, and the other has 15 electrons.
+597000	605000	When you take out a silicon and replace it with phosphorus,
+605000	608000	it will have one more electron.
+609000	617000	In this way, the electron will go around the sphere.
+617000	626000	The premise is that the electron will not run away at low temperature.
+626000	629000	If it is at high temperature, it will run away when the energy is high.
+629000	634000	This is our main structure.
+634000	637000	The advantage is that the strain is very small.
+637000	640000	It does not squeeze to the side.
+640000	646000	Because they are next to each other, the quality is very close.
+648000	653000	In 1998, Bruce Kane proposed this proposal.
+653000	658000	He said that he wanted to put phosphorus in a certain position,
+658000	666000	confine an electron, and use it as a quantum computer.
+666000	672000	First, we need to encode 0 and 1 in the electron's up-spin and down-spin,
+672000	677000	or in the donor's up-spin and down-spin, or in the nuclear's up-spin and down-spin.
+677000	680000	Next, we need a low temperature.
+680000	685000	This way, the electron will run around here.
+686000	694000	How do we realize the single-qubit gate and the two-qubit gate?
+694000	698000	For the single-qubit gate, we can use the magnetic field of the AC.
+698000	701000	We try to have resonance with it.
+701000	705000	The resonance frequency can be controlled by the gate above.
+705000	710000	For example, if the gate is positive, the electron will be sucked up.
+710000	713000	In this way, the resonance frequency will change.
+713000	719000	When the electron is sucked up, the distance between it and the nucleus is large,
+719000	721000	and the interaction between them is small.
+721000	724000	The interaction will affect the resonance frequency.
+724000	728000	In this way, for example,
+728000	736000	if the two-qubit gate is coupled with a different bias,
+736000	740000	the two-qubit gate will have different resonance frequencies.
+740000	744000	If we only want to operate the left-hand qubit,
+744000	754000	we can tune the magnetic field of the AC to match the resonance frequency.
+754000	760000	At this time, only the left-hand qubit will rotate,
+760000	763000	and the right-hand qubit will not be affected.
+763000	769000	In this way, we can operate the left-hand qubit or the right-hand qubit.
+769000	773000	As for the two-qubit gate,
+773000	779000	as mentioned earlier, the two electrons will have an exchange interaction.
+779000	786000	If the J-gate in the middle does not turn on,
+786000	790000	the two qubits will not interact.
+790000	794000	Their interaction is very weak.
+794000	799000	For example, if I add a qubit and suck two electrons in the middle,
+799000	802000	their wave function overlap will be very large,
+802000	804000	and their interaction will be very strong.
+804000	806000	Then we can do the so-called C-knot gate.
+806000	821000	Can you tell me how much is the ionization energy of this electron?
+821000	825000	Or if you can use the photon frequency,
+825000	832000	and what is the energy of the splitting next to it?
+832000	839000	First of all, the ionization energy is 45.6 mEV.
+839000	844000	So mEV is about gigahertz,
+844000	847000	which is about this range.
+848000	853000	For the Zeeman splitting,
+853000	860000	the Zeeman splitting of the electron is also about 0.1 to 1 mEV.
+860000	865000	If your magnetic field is between 1 Tesla to 10 Tesla,
+865000	870000	your Zeeman splitting is also in the range of gigahertz.
+870000	872000	If it is a nuclear spin,
+872000	878000	then the Zeeman splitting will be about 1000 times smaller.
+878000	883000	Don't tell me that your temperature is 100 mC.
+883000	885000	Isn't that a bit too high?
+885000	891000	Your thermal radiation seems to be in this range.
+891000	895000	Too high.
+895000	897000	Because if it is 1K,
+897000	899000	it is about 100 gigahertz.
+899000	901000	So if it is 100 mC,
+901000	903000	it is about 10 gigahertz.
+903000	905000	A little higher than you.
+905000	908000	Isn't that too high?
+908000	925000	You mean the energy difference is too small, right?
+925000	927000	No, I mean,
+927000	931000	in the environment of 100 mC photon bath,
+931000	936000	all your states can be randomized.
+936000	939000	Or you can analyze them directly.
+939000	943000	Sorry.
+943000	944000	Wait a minute.
+944000	947000	Ted, your microphone is on.
+947000	951000	There seems to be some noise over there.
+951000	954000	Can you mute it directly?
+954000	959000	Okay, I will mute it directly.
+959000	961000	You can continue to discuss.
+961000	965000	You mean photon or phonon?
+965000	967000	Photon.
+967000	969000	I just want to know
+969000	972000	where is your operating energy scale now.
+972000	976000	So what is the temperature of your environment
+976000	982000	to become the so-called environment without interference?
+982000	986000	There should be no photon here.
+986000	990000	No, there are photons everywhere, right?
+990000	992000	It should be phonon.
+992000	994000	But it is phonon.
+994000	997000	It should be phonon.
+997000	1001000	No, even if you are in the cryostat,
+1001000	1005000	there will be thermal radiation if there is temperature.
+1005000	1007000	Right?
+1007000	1009000	Yes.
+1009000	1013000	Otherwise, how do you define vacuum temperature?
+1013000	1017000	Thermal radiation.
+1017000	1021000	This is what the theorists are talking about now.
+1021000	1025000	In the end, there may be real problems in the experiment.
+1025000	1030000	We will see its performance later.
+1030000	1033000	Okay, let me see if I can finish later.
+1033000	1037000	Actually, I am quite curious about the different approaches.
+1037000	1043000	For example, what is the difference between the cryostat and the constraint?
+1043000	1045000	I am mainly curious about this.
+1045000	1049000	Sorry, I am not sure if I can answer your question.
+1049000	1051000	But we can discuss it later.
+1051000	1053000	Okay, we can discuss it later.
+1053000	1055000	Thank you.
+1055000	1057000	I have a question here.
+1057000	1059000	Hello.
+1059000	1061000	Hi.
+1061000	1063000	I have a question.
+1063000	1067000	I think B and TESLA are quite big.
+1067000	1071000	Why are they so different?
+1071000	1075000	Why are they so different?
+1075000	1077000	Yes.
+1077000	1081000	The first B is for z-splitting.
+1081000	1085000	The first B is for z-splitting.
+1085000	1089000	It is connected to the resonance frequency.
+1089000	1092140	It is connected to the resonance frequency.
+1092140	1097900	It shows how much the AC magnetic field is.
+1097900	1100900	However, its strength is different.
+1100900	1108900	Its strength is depend on the Robeot oscillation.
+1109000	1111900	But, its strength is quite slow eventually.
+1111900	1116000	You don't have to be fast to use Robeot oscillation.
+1116000	1118000	Because
+1118000	1126000	So, your BAC will correspond to the size of the off-diagonal term.
+1126000	1128000	Yes.
+1128000	1130000	What is B?
+1130000	1134000	B is the size of the Zeeman speeding.
+1134000	1136000	It is the inch gap.
+1136000	1138000	Yes.
+1138000	1140000	Ok.
+1140000	1142000	I am curious.
+1142000	1144000	Why don't you need to use Robeot oscillation?
+1144000	1148000	I am not sure how much T1 and T2 are in this system.
+1148000	1150000	Can you tell me the number?
+1150000	1155000	Why don't you want the quantum gate to be faster?
+1155000	1158000	I am a little bit surprised.
+1158000	1160000	Ok.
+1160000	1170000	I am not sure how short the measurement time is.
+1170000	1175000	Theoretically, T1 and T2 should be faster.
+1175000	1180000	But, I am not sure what is the limitation in the experiment.
+1180000	1185000	So, maybe I am wrong.
+1185000	1189000	T1 and T2 should be faster.
+1189000	1196000	However, T1 is a few seconds.
+1196000	1200000	T2 is a few seconds.
+1200000	1202000	I don't have a good number.
+1202000	1204000	However,
+1204000	1224000	the applied AC magnetic field allows Robeot oscillation to reach 10 nanoseconds.
+1224000	1229000	So, it is pretty fast.
+1229000	1231000	Thank you.
+1231000	1233000	Ok.
+1233000	1235000	I am sorry.
+1235000	1237000	I can comment on this.
+1237000	1239000	In the experiment,
+1239000	1245000	the time resolution is about 1 nanosecond.
+1245000	1247000	It is the shortest.
+1247000	1249000	It is the shortest.
+1249000	1251000	Ok. Thank you.
+1251000	1253000	I am sorry.
+1253000	1255000	Let me interrupt you.
+1255000	1259000	Please tell us your name and
+1259000	1263000	briefly introduce yourself.
+1263000	1265000	Thank you.
+1265000	1267000	Ok.
+1267000	1269000	So,
+1269000	1271000	I will continue.
+1271000	1273000	So,
+1273000	1278000	we want to realize the proposal using STM technique.
+1278000	1280000	What is STM technique?
+1280000	1284000	You have a scanning tunneling microscope tip.
+1284000	1293000	You can remove the silicon in a certain position.
+1293000	1296000	Then, you can dope phosphorus in this position.
+1296000	1299000	This is actually a very difficult technique.
+1299000	1303000	In the past, we doped silicon in a more random way.
+1303000	1309000	We did not particularly control where the phosphorus atom should be placed.
+1309000	1315000	This scanning tunneling microscope technique can control this.
+1315000	1318000	It controls this variable.
+1318000	1320000	So,
+1320000	1324000	Michelle Siemens Group
+1324000	1327000	at UNSW
+1327000	1330000	made a device that looks like this.
+1330000	1334000	The gate and donor are made using STM.
+1334000	1336000	So,
+1336000	1340000	the gate is removed and the donor is placed.
+1340000	1346000	You can control the shape of the gate and the donor.
+1346000	1350000	Another difficult part is
+1350000	1356000	to load and read the electrons on the donor.
+1356000	1359000	In 2010,
+1359000	1361000	Andrew Marlowe
+1362000	1369000	used STM to control the Fermi level of the SCT.
+1369000	1374000	This allows the electrons to be tunneled to the SCT
+1374000	1378000	or from the SCT tunnel to the donor.
+1378000	1384000	When the Fermi level of the SCT is
+1384000	1389000	in the middle of the upspin and downspin,
+1389000	1393000	only the upspin electrons can be tunneled to the SCT.
+1393000	1397000	The downspin electrons cannot be tunneled to the SCT.
+1397000	1401000	So, if you measure the current peak,
+1401000	1405000	the electrons are on the upspin.
+1405000	1407000	If you do not measure anything,
+1407000	1411000	the electrons are on the downspin.
+1411000	1415000	Then we can measure the electron spin.
+1415000	1417000	So,
+1417000	1419000	in 1998,
+1419000	1422000	Ken proposed this proposal.
+1422000	1426000	In 2010,
+1426000	1430000	Andrew Marlowe did the electron spin readout.
+1430000	1432000	In 2015,
+1432000	1437000	he did the single-qubit gate operation.
+1437000	1439000	In 2019,
+1439000	1443000	he did the two-qubit gate operation.
+1443000	1445000	Now,
+1445000	1451000	we are going to build a large-scale quantum computer.
+1451000	1455000	Sorry, can I interrupt?
+1455000	1457000	I'm Ted.
+1457000	1459000	Sure.
+1459000	1462000	You just talked about the readout.
+1462000	1465000	Can you tell us about the single-qubit gate in the middle?
+1465000	1470000	Which electron does it send to the AC field?
+1470000	1472000	It should be ESR.
+1472000	1474000	Yes, it is ESR.
+1474000	1476000	Well,
+1476000	1478000	it is...
+1478000	1480000	Well,
+1480000	1484000	it is...
+1484000	1486000	If it is ESR,
+1486000	1488000	there is...
+1488000	1490000	I did not draw it here.
+1490000	1492000	There is a global...
+1492000	1494000	There is a global...
+1494000	1496000	There is a global...
+1496000	1498000	There is a global...
+1499000	1503000	You can produce a globalized AC field
+1503000	1506000	and control it.
+1506000	1508000	But there is no...
+1508000	1510000	But there is no...
+1510000	1514000	It is a top-gate or back-gate.
+1514000	1516000	It is not a...
+1516000	1518000	It is not a...
+1518000	1520000	It is not a...
+1520000	1522000	It is not a...
+1522000	1526000	It is not a...
+1526000	1529000	What are the advantages of the donor spin qubit?
+1529000	1534000	First, it has a long coherence time.
+1534000	1536000	For example,
+1536000	1538000	the natural silicon is silicon 28.
+1538000	1540000	The nuclear spin is 0.
+1540000	1542000	It means
+1542000	1546000	only the donor's nuclear spin and the electron's nuclear spin are not 0.
+1546000	1551000	Most of the other spins have no interaction.
+1551000	1553000	For example,
+1553000	1555000	it has a long coherence time.
+1555000	1557000	It has a clear boundary.
+1557000	1559000	For example,
+1559000	1561000	if you have a phosphorus donor,
+1561000	1563000	it looks the same.
+1563000	1565000	It is very helpful to scale up.
+1565000	1567000	Next,
+1567000	1569000	the semiconductor industry
+1569000	1571000	has a very mature technology for silicon.
+1571000	1573000	It can be applied later.
+1573000	1575000	It can be applied later.
+1575000	1577000	The disadvantage is
+1577000	1579000	the STM technology
+1579000	1581000	The disadvantage is
+1581000	1583000	the STM technology
+1613000	1615000	We need to control it very carefully.
+1615000	1617000	We need to control it very carefully.
+1617000	1619000	We don't know this.
+1619000	1621000	We don't know this.
+1621000	1623000	It is not good.
+1623000	1625000	Let's introduce the donor spin qubit.
+1625000	1627000	Let's introduce the donor spin qubit.
+1627000	1629000	Let's introduce the donor spin qubit.
+1629000	1631000	Next,
+1631000	1633000	I have a question.
+1633000	1635000	I want to introduce myself.
+1635000	1637000	I am Zhang Yuanyong.
+1637000	1639000	I am a high-performance physicist.
+1639000	1641000	I am a high-performance physicist.
+1641640	1643000	Before you works
+1643000	1645000	Before you works
+1645000	1647000	before you repairs in the future,
+1647000	1649000	before you repairs in the future,
+1649000	1651000	How clean does vapor look?
+1651000	1653000	How clean does vapor look?
+1653000	1655000	Can we buy it?
+1655000	1657400	Yes,
+1657400	1659000	we just mentioned
+1659000	1661000	we just mentioned
+1661000	1663000	the natural silicon is still
+1663000	1665000	5% silicon-29
+1665000	1667000	The silicon-29 means
+1667000	1669000	there is a nuclear spin.
+1669000	1671000	So,
+1671000	1673000	the trend is
+1673000	1675000	to use purified silicon
+1675000	1677000	to minimize the silicon-29
+1677000	1679000	to minimize the silicon-29
+1679000	1681000	So, the requirement is quite high.
+1681000	1683000	So, the requirement is quite high.
+1683000	1685000	I have a follow-up question
+1685000	1687000	I have a follow-up question
+1687000	1689000	Is the purified silicon commercially available?
+1689000	1691000	Is the purified silicon commercially available?
+1691000	1693000	Or do we need to make it specially?
+1693000	1695000	I think we need to make it
+1695000	1697000	with a special factory
+1697000	1699000	not a mass production
+1699000	1701000	not a mass production
+1701000	1703000	I'm not sure
+1703000	1705000	but it seems like this
+1705000	1707000	Ok, thank you
+1707000	1709000	Ok, thank you
+1709000	1711000	Ok, next I will introduce
+1711000	1713000	what is spin relaxation
+1713000	1715000	what is spin relaxation
+1715000	1717000	What is the importance of spin relaxation
+1717000	1719000	What is the importance of spin relaxation
+1719000	1721000	or T1 time?
+1721000	1723000	First, if you load an electron
+1723000	1725000	and you want to read out
+1725000	1727000	If you load in up spin
+1727000	1729000	then it should be in up spin
+1729000	1731000	if you read out
+1731000	1733000	If it relaxes in this process
+1733000	1735000	If it relaxes in this process
+1735000	1737000	from up spin to down spin
+1737000	1739000	you will have an error
+1739000	1741000	a read out error
+1741000	1743000	This error is quite fatal
+1743000	1745000	This error is quite fatal
+1745000	1747000	We need a lot of design
+1747000	1749000	We need a lot of design
+1749000	1751000	If there is a fault tolerant quantum computer
+1751000	1753000	If there is a fault tolerant quantum computer
+1753000	1755000	can handle this error
+1755000	1757000	can handle this error
+1757000	1757760	The current design is
+1757760	1759000	The current design is
+1759000	1761000	In the case of fidelity
+1761000	1763000	99%
+1763000	1765000	So we hope
+1765000	1767000	in the case of fidelity
+1767000	1769000	99%
+1769000	1771000	so we hope
+1771000	1773000	that the longer the spin relaxation time
+1773000	1775000	that the longer the spin relaxation time
+1775000	1777000	the longer the spin relaxation time
+1777000	1779000	So t 1
+1779000	1781000	t 1
+1781000	1783000	t 1
+1783000	1785000	t 2
+1785000	1787000	t 2
+1787000	1789000	t 2
+1791000	1793000	t 2
+1793000	1795000	t 2
+1795000	1797000	t 1
+1797000	1799000	t 1
+1799000	1801000	t 2
+1801000	1803000	t 2
+1803000	1805000	t 1
+1805000	1807000	t 2
+1807000	1809000	t 2
+1809000	1811500	t 2
+1816500	1819000	t 2
+1819500	1822500	t 2
+1822500	1825000	t 2
+1825000	1827500	t 2
+1827500	1830500	t 2
+1830500	1832500	t 2
+1832500	1835000	t 2
+1835000	1837500	t 2
+1837500	1840000	t 2
+1840000	1842000	t 2
+1842000	1843500	t 2
+1843500	1845000	t 2
+1845000	1847000	t 2
+1847000	1848500	t 2
+1848500	1851000	t 2
+1851000	1857500	t 2
+1858500	1863500	t 2
+1863500	1868000	t 1
+1870500	1889500	t 1
+1893500	1915500	t 1
+1915500	1937500	t 1
+1937500	1957500	t 1
+1957500	1977500	t 1
+1977500	1997500	t 1
+1997500	2025500	t 1
+2025500	2035500	t 1
+2035500	2045500	t 1
+2045500	2065500	t 1
+2065500	2085500	t 1
+2085500	2105500	t 1
+2105500	2125500	t 1
+2125500	2147500	t 1
+2147500	2167500	t 1
+2167500	2187500	t 1
+2187500	2207500	t 1
+2207500	2227500	t 1
+2227500	2247500	t 1
+2247500	2267500	t 1
+2267500	2295500	t 1
+2295500	2315500	t 1
+2315500	2335500	t 1
+2335500	2355500	t 1
+2355500	2365500	t 1
+2365500	2375500	t 1
+2375500	2395500	t 1
+2395500	2415500	t 1
+2415500	2435500	t 1
+2435500	2455500	t 1
+2455500	2475500	t 1
+2475500	2495500	t 1
+2495500	2515500	t 1
+2515500	2535500	t 1
+2535500	2555500	t 1
+2555500	2565500	t 1
+2565500	2575500	t 1
+2575500	2595500	t 1
+2595500	2615500	t 1
+2615500	2635500	t 1
+2635500	2655500	t 1
+2655500	2675500	t 1
+2675500	2695500	t 1
+2695500	2715500	t 1
+2715500	2735500	t 1
+2735500	2755500	t 1
+2755500	2775500	t 1
+2775500	2795500	t 1
+2795500	2815500	t 1
+2815500	2835500	t 1
+2835500	2855500	t 1
+2855500	2875500	t 1
+2875500	2885500	t 1
+2885500	2895500	t 1
+2895500	2915500	t 1
+2915500	2935500	t 1
+2935500	2955500	t 1
+2955500	2975500	t 1
+2975500	2995500	t 1
+2995500	3015500	t 1
+3015500	3035500	t 1
+3035500	3055500	t 1
+3055500	3075500	t 1
+3075500	3095500	t 1
+3095500	3115500	t 1
+3115500	3135500	t 1
+3135500	3155500	t 1
+3155500	3175500	t 1
+3175500	3195500	t 1
+3195500	3215500	t 1
+3215500	3235500	t 1
+3235500	3255500	t 1
+3255500	3275500	t 1
+3275500	3295500	t 1
+3295500	3315500	t 1
+3315500	3335500	t 1
+3335500	3355500	t 1
+3355500	3375500	t 1
+3375500	3395500	t 1
+3395500	3415500	t 1
+3415500	3435500	t 1
+3435500	3455500	t 1
+3455500	3475500	t 1
+3475500	3495500	t 1
+3495500	3515500	t 1
+3515500	3535500	t 1
+3535500	3555500	t 1
+3555500	3575500	t 1
+3575500	3595500	t 1
+3595500	3605500	t 1
+3605500	3615500	t 1
+3615500	3635500	t 1
+3635500	3655500	t 1
+3655500	3675500	t 1
+3675500	3695500	t 1
+3695500	3715500	t 1
+3715500	3735500	t 1
+3735500	3755500	t 1
+3755500	3775500	t 1
+3775500	3795500	t 1
+3795500	3815500	t 1
+3815500	3835500	t 1
+3835500	3855500	t 1
+3855500	3875500	t 1
+3875500	3895500	t 1
+3895500	3915500	t 1
+3915500	3935500	t 1
+3935500	3955500	t 1
+3955500	3975500	t 1
+3975500	3995500	t 1
+3995500	4015500	t 1
+4015500	4035500	t 1
+4035500	4055500	t 1
+4055500	4075500	t 1
+4075500	4095500	t 1
+4095500	4115500	t 1
+4115500	4135500	t 1
+4135500	4155500	t 1
+4155500	4175500	t 1
+4175500	4195500	t 1
+4195500	4215500	t 1
+4215500	4235500	t 1
+4235500	4255500	t 1
+4255500	4275500	t 1
+4275500	4285500	t 1
+4285500	4295500	t 1
+4295500	4305500	t 1
+4305500	4315500	t 1
+4315500	4335500	t 1
+4335500	4355500	t 1
+4355500	4375500	t 1
+4375500	4395500	t 1
+4395500	4415500	t 1
+4415500	4435500	t 1
+4435500	4463500	t 1
+4463500	4473500	t 1
+4473500	4483500	t 1
+4483500	4503500	t 1
+4503500	4523500	t 1
+4523500	4543500	t 1
+4543500	4563500	t 1
+4563500	4583500	t 1
+4583500	4603500	t 1
+4603500	4623500	t 1
+4623500	4643500	t 1
+4643500	4663500	t 1
+4663500	4683500	t 1
+4683500	4703500	t 1
+4703500	4713500	t 1
+4713500	4716500	t 1

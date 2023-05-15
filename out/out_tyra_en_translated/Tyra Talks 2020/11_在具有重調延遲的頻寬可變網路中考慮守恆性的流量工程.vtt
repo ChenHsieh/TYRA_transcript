@@ -1,0 +1,8660 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Hello everyone, welcome to today's Tarot Talk. I am the host today, Zhang Yanyong.
+
+00:08.000 --> 00:18.000
+We are very honored to invite Dr. Zeng Sihao, a colleague at my school, to tell us about the topic of his research on the Internet today.
+
+00:18.000 --> 00:28.000
+His research focuses on the parallel and variable traffic engineering of re-adjusting latency.
+
+00:28.000 --> 00:32.000
+Let me introduce Dr. Sihao.
+
+00:32.000 --> 00:41.000
+Dr. Sihao majored in Electrical Engineering at NTU.
+
+00:41.000 --> 00:47.000
+He then went to Cornell to study ECE, Electrical Engineering.
+
+00:47.000 --> 00:56.000
+He then came to Caltech to study Computer and Mathematical Science.
+
+00:56.000 --> 01:03.000
+He then studied Engineering and Applied Science.
+
+01:03.000 --> 01:09.000
+Let's give the floor to Dr. Sihao.
+
+01:09.000 --> 01:14.000
+Thank you, Yanyong, for the introduction.
+
+01:14.000 --> 01:19.000
+This topic is actually a bit long and difficult to understand.
+
+01:19.000 --> 01:24.000
+However, when Yanyong invited me to give a talk, I thought that since it is a talk,
+
+01:24.000 --> 01:28.000
+why not talk about a topic that is actually related to my research?
+
+01:28.000 --> 01:33.000
+So I took the ICMP paper that I submitted last year.
+
+01:33.000 --> 01:38.000
+Today I will try to make it as simple as possible.
+
+01:38.000 --> 01:42.000
+Although this topic looks very difficult, you don't have to worry too much.
+
+01:42.000 --> 01:49.000
+Its English title is Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay.
+
+01:49.000 --> 01:54.000
+So I just translated the English title into Chinese.
+
+01:54.000 --> 01:59.000
+As for what each term means, we will see later.
+
+01:59.000 --> 02:04.000
+If you have any questions in the middle, please feel free to interrupt me at any time and ask me questions.
+
+02:05.000 --> 02:10.000
+In addition, Caltech has a special system called Computing and Mathematical Science.
+
+02:10.000 --> 02:15.000
+This system is actually under Engineering.
+
+02:15.000 --> 02:20.000
+Although C stands for Engineering, the department seems to be under it.
+
+02:20.000 --> 02:25.000
+It seems that the relationship between division and department is not quite the same,
+
+02:25.000 --> 02:30.000
+but it is actually not very important.
+
+02:30.000 --> 02:33.000
+So why do we want to study this topic?
+
+02:33.000 --> 02:36.000
+My research topic is mainly about the Internet.
+
+02:36.000 --> 02:39.000
+What is the Internet? The Internet is actually a bunch of things connected together.
+
+02:39.000 --> 02:41.000
+Why do we want to connect a bunch of things together?
+
+02:41.000 --> 02:44.000
+Basically, we want to communicate with each other.
+
+02:44.000 --> 02:47.000
+We send some things, some information from one end of the Internet,
+
+02:47.000 --> 02:50.000
+and we hope to get this information on the other end.
+
+02:50.000 --> 02:53.000
+Or we want to send some goods, such as a logistics network.
+
+02:53.000 --> 02:58.000
+For example, we want to transport fruits from Chiayi to Taipei.
+
+02:58.000 --> 03:00.000
+This is also a network.
+
+03:00.000 --> 03:03.000
+In fact, most of my research is on the Internet of information,
+
+03:03.000 --> 03:10.000
+that is, the Internet of communication between some electronic products or electronic devices using electronic signals.
+
+03:10.000 --> 03:15.000
+How are these networks usually transmitted?
+
+03:15.000 --> 03:18.000
+That is to say, how is this information transmitted on the Internet?
+
+03:18.000 --> 03:22.000
+Usually, for example, we will have our own personal equipment.
+
+03:22.000 --> 03:25.000
+For example, today's lecture is the same.
+
+03:25.000 --> 03:29.000
+We may use a computer or a tablet or a mobile phone.
+
+03:29.000 --> 03:31.000
+We will connect to the Internet.
+
+03:31.000 --> 03:33.000
+What does it mean to connect to the Internet?
+
+03:33.000 --> 03:40.000
+In fact, we are sending a piece of information to a place called an exchanger, a router.
+
+03:40.000 --> 03:44.000
+Sometimes this router also has a wireless exchanger,
+
+03:44.000 --> 03:47.000
+such as AP, Access Point.
+
+03:47.000 --> 03:50.000
+This is for wireless networks.
+
+03:50.000 --> 03:53.000
+Sometimes you will also use a base station to receive these things.
+
+03:53.000 --> 03:56.000
+After these terminals receive the message,
+
+03:56.000 --> 04:01.000
+they will send it through an exchanger to a space.
+
+04:01.000 --> 04:04.000
+Then we will be on the other side of the space.
+
+04:04.000 --> 04:09.000
+Maybe someone else uses another device to get this information.
+
+04:09.000 --> 04:12.000
+This is basically how the whole network works.
+
+04:12.000 --> 04:14.000
+In this case,
+
+04:14.000 --> 04:19.000
+because we use an exchanger to connect a lot of different devices,
+
+04:19.000 --> 04:23.000
+we may put our information into an exchanger
+
+04:23.000 --> 04:27.000
+and then go to another place to get something else.
+
+04:27.000 --> 04:32.000
+In order to get a specific thing,
+
+04:32.000 --> 04:35.000
+we have to establish a point-to-point connection with it.
+
+04:35.000 --> 04:37.000
+This is actually quite important.
+
+04:37.000 --> 04:40.000
+In the early days, the Internet was a bit like a telephone line.
+
+04:40.000 --> 04:42.000
+At that time, there was a connection god.
+
+04:42.000 --> 04:44.000
+When the two of us wanted to communicate,
+
+04:44.000 --> 04:47.000
+there must be a line in the middle to communicate with us.
+
+04:47.000 --> 04:49.000
+But today, the Internet is not necessary.
+
+04:49.000 --> 04:53.000
+Today, the Internet actually sends a lot of different traffic
+
+04:53.000 --> 04:56.000
+in various ways, using this kind of exchanger,
+
+04:56.000 --> 05:02.000
+one by one to our target destination.
+
+05:02.000 --> 05:05.000
+These terminals can be various things.
+
+05:05.000 --> 05:08.000
+For example, you can be a so-called cloud terminal,
+
+05:08.000 --> 05:10.000
+a server at the far end.
+
+05:10.000 --> 05:13.000
+Or when we play games with others,
+
+05:13.000 --> 05:15.000
+we may have a server.
+
+05:15.000 --> 05:18.000
+We may also receive messages from others.
+
+05:18.000 --> 05:20.000
+For example, the 5G network, which is very popular recently,
+
+05:20.000 --> 05:25.000
+is actually talking about the communication at the wireless terminal.
+
+05:25.000 --> 05:30.000
+Obviously, no matter how we get the information at the far end,
+
+05:30.000 --> 05:33.000
+we have to go through these exchangers in the middle
+
+05:33.000 --> 05:35.000
+or through the network in the middle
+
+05:35.000 --> 05:38.000
+to help us pass the information from one end to the other.
+
+05:38.000 --> 05:41.000
+So even if we have 5G now,
+
+05:41.000 --> 05:43.000
+5G means that
+
+05:43.000 --> 05:48.000
+5G is very fast from our wireless device to our base station.
+
+05:48.000 --> 05:49.000
+But after it gets to the base station,
+
+05:49.000 --> 05:50.000
+no matter what you do,
+
+05:50.000 --> 05:53.000
+you still have to go through the network in the middle to help you.
+
+05:53.000 --> 06:00.000
+So this network is the main focus of my network research.
+
+06:00.000 --> 06:02.000
+This is called the broadband network.
+
+06:02.000 --> 06:03.000
+Broadband network means that
+
+06:03.000 --> 06:10.000
+there is a great distance between the two terminals.
+
+06:10.000 --> 06:13.000
+Relatively speaking, if we are only in a local area,
+
+06:13.000 --> 06:16.000
+this is called LAN,
+
+06:16.000 --> 06:22.000
+which stands for Local Area Network.
+
+06:22.000 --> 06:23.000
+Actually, I don't know how to say it in Chinese,
+
+06:23.000 --> 06:26.000
+but it's a local network.
+
+06:26.000 --> 06:29.000
+So what's the problem with broadband networks?
+
+06:29.000 --> 06:32.000
+Because these broadband networks are connected to very far places,
+
+06:32.000 --> 06:34.000
+we know that
+
+06:34.000 --> 06:36.000
+when we use telecommunications to send things,
+
+06:36.000 --> 06:39.000
+electricity is actually very easy to consume.
+
+06:39.000 --> 06:44.000
+So how do we send them?
+
+06:44.000 --> 06:46.000
+We have to use a very special kind of wire.
+
+06:46.000 --> 06:49.000
+We definitely can't use the kind of wire that we usually use to plug breadboards.
+
+06:49.000 --> 06:53.000
+We must use a very special kind of wire to send.
+
+06:53.000 --> 06:56.000
+So how do we send these things?
+
+06:56.000 --> 06:58.000
+We will send them from one terminal to the other.
+
+06:58.000 --> 07:00.000
+There must be a very special wire in the middle.
+
+07:00.000 --> 07:01.000
+This actually requires cost.
+
+07:01.000 --> 07:08.000
+But this cost is sometimes justifiable.
+
+07:08.000 --> 07:10.000
+It can be accepted.
+
+07:10.000 --> 07:12.000
+If the service I want to provide can make me earn more money,
+
+07:12.000 --> 07:15.000
+then of course I am willing to spend a lot of money
+
+07:15.000 --> 07:21.000
+to build this kind of expensive link.
+
+07:21.000 --> 07:24.000
+You can think of it as these lines in the middle
+
+07:24.000 --> 07:26.000
+to connect to two very far places.
+
+07:26.000 --> 07:29.000
+For example, many big companies do this.
+
+07:29.000 --> 07:33.000
+For example, Microsoft or Google.
+
+07:33.000 --> 07:36.000
+Because they usually provide some cloud services.
+
+07:36.000 --> 07:38.000
+For example, you may sometimes use
+
+07:38.000 --> 07:40.000
+Google Sheets, Google Gmail,
+
+07:40.000 --> 07:43.000
+or Microsoft Hotmail,
+
+07:43.000 --> 07:44.000
+like this kind of thing,
+
+07:44.000 --> 07:47.000
+or all kinds of different services,
+
+07:47.000 --> 07:49.000
+such as YouTube.
+
+07:49.000 --> 07:52.000
+They just store the data all over the world.
+
+07:52.000 --> 07:55.000
+They will let you get the data very quickly.
+
+07:56.000 --> 08:00.000
+For example, they will build their own broadband network.
+
+08:00.000 --> 08:01.000
+What are the benefits of this?
+
+08:01.000 --> 08:03.000
+If you have this broadband network,
+
+08:03.000 --> 08:06.000
+I can effectively adjust
+
+08:06.000 --> 08:09.000
+how I want to use these lines.
+
+08:09.000 --> 08:12.000
+If I can effectively use these lines,
+
+08:12.000 --> 08:14.000
+I have a better chance of reducing my costs
+
+08:14.000 --> 08:16.000
+and making more money.
+
+08:16.000 --> 08:17.000
+Basically like this.
+
+08:17.000 --> 08:20.000
+So now most companies
+
+08:20.000 --> 08:23.000
+are investing a lot in building their own network.
+
+08:23.000 --> 08:28.000
+Instead of purely using some more traditional Internet.
+
+08:28.000 --> 08:31.000
+For example, we may sign a contract with AT&T
+
+08:31.000 --> 08:33.000
+or we sign a contract with Taiwan Cable.
+
+08:33.000 --> 08:35.000
+They actually provide the network,
+
+08:35.000 --> 08:38.000
+but the network is not under the control of these companies.
+
+08:38.000 --> 08:42.000
+Sometimes you can't adjust
+
+08:42.000 --> 08:45.000
+how to use your connection in the middle.
+
+08:45.000 --> 08:47.000
+So these big companies usually
+
+08:47.000 --> 08:49.000
+will build their own network,
+
+08:49.000 --> 08:52.000
+and then they will operate these networks themselves
+
+08:52.000 --> 08:54.000
+to achieve higher performance.
+
+08:55.000 --> 08:57.000
+We just mentioned that
+
+08:57.000 --> 09:00.000
+the network is so far away.
+
+09:00.000 --> 09:02.000
+These lines in the middle are actually quite special.
+
+09:02.000 --> 09:04.000
+What kind of lines are these lines?
+
+09:04.000 --> 09:06.000
+They are not ordinary blue lines.
+
+09:06.000 --> 09:08.000
+Of course there are ordinary blue lines,
+
+09:08.000 --> 09:11.000
+but the amount of blue lines that can be passed is limited.
+
+09:11.000 --> 09:12.000
+And it's more expensive.
+
+09:12.000 --> 09:14.000
+So most of the time we use
+
+09:14.000 --> 09:18.000
+cheaper blue lines with higher economic value.
+
+09:18.000 --> 09:20.000
+This is actually not a blue line.
+
+09:20.000 --> 09:23.000
+This is a blue line that uses optical technology
+
+09:23.000 --> 09:26.000
+to transmit signals through this light wire.
+
+09:26.000 --> 09:28.000
+This light wire is actually cheaper.
+
+09:28.000 --> 09:31.000
+And then there is a lot of information that can be transmitted by the light wire.
+
+09:31.000 --> 09:32.000
+Because you use light.
+
+09:32.000 --> 09:33.000
+Compared to electrical signals,
+
+09:33.000 --> 09:37.000
+you have all kinds of different frequencies.
+
+09:37.000 --> 09:38.000
+It can also be used.
+
+09:38.000 --> 09:39.000
+And the speed of light is also quite fast.
+
+09:39.000 --> 09:42.000
+It doesn't need to use electronic signals
+
+09:42.000 --> 09:44.000
+to receive it first and then transmit it.
+
+09:44.000 --> 09:47.000
+They just enhance the strength of light
+
+09:47.000 --> 09:48.000
+and then continue to transmit.
+
+09:48.000 --> 09:50.000
+So it actually has a lot of benefits.
+
+09:50.000 --> 09:51.000
+That is to say,
+
+09:51.000 --> 09:56.000
+most of these big companies
+
+09:56.000 --> 09:58.000
+will use some light wires
+
+09:58.000 --> 10:00.000
+to transmit signals far away,
+
+10:00.000 --> 10:02.000
+and then turn it into electrical signals
+
+10:02.000 --> 10:03.000
+at the end point.
+
+10:03.000 --> 10:05.000
+Then we communicate with electrical signals.
+
+10:05.000 --> 10:07.000
+These light wires are actually
+
+10:07.000 --> 10:12.000
+better than ordinary blue lines.
+
+10:12.000 --> 10:14.000
+That is to say, it has a higher economic value.
+
+10:14.000 --> 10:17.000
+But how do you say on this broadband network,
+
+10:17.000 --> 10:19.000
+no matter how cheap it is,
+
+10:19.000 --> 10:20.000
+you have to pull a few hundred kilometers,
+
+10:20.000 --> 10:22.000
+it will be expensive right away.
+
+10:22.000 --> 10:23.000
+So no matter,
+
+10:23.000 --> 10:25.000
+and you are in maintenance,
+
+10:25.000 --> 10:26.000
+or in operation,
+
+10:26.000 --> 10:27.000
+it's actually not cheap.
+
+10:27.000 --> 10:30.000
+So these light wires on the broadband network
+
+10:30.000 --> 10:34.000
+are actually a kind of expensive equipment.
+
+10:34.000 --> 10:37.000
+Usually we don't want to say
+
+10:37.000 --> 10:40.000
+that our light wires can't be used.
+
+10:40.000 --> 10:42.000
+What does it mean not to be used?
+
+10:42.000 --> 10:45.000
+That is to say, light wires are actually usable.
+
+10:45.000 --> 10:46.000
+That is to say,
+
+10:46.000 --> 10:48.000
+my signal can go through this light wire.
+
+10:48.000 --> 10:50.000
+That is to say, after I go through this light wire,
+
+10:50.000 --> 10:52.000
+I can get my signal.
+
+10:52.000 --> 10:54.000
+Let's use a simple example here.
+
+10:54.000 --> 10:55.000
+How do we send a signal
+
+10:55.000 --> 10:57.000
+from one end to the other?
+
+10:57.000 --> 10:58.000
+You can imagine that
+
+10:58.000 --> 11:00.000
+we are on both ends of the light wire.
+
+11:00.000 --> 11:03.000
+We can actually send it,
+
+11:03.000 --> 11:05.000
+we can send it at its frequency.
+
+11:05.000 --> 11:06.000
+If we think of a white paper,
+
+11:06.000 --> 11:08.000
+we can draw a dot on the white paper.
+
+11:08.000 --> 11:10.000
+Then we put this paper through the light wire.
+
+11:10.000 --> 11:12.000
+The light wire will pass this paper to the other side.
+
+11:12.000 --> 11:13.000
+Then I look at this paper.
+
+11:13.000 --> 11:15.000
+Ah, what is your signal?
+
+11:15.000 --> 11:18.000
+If the other person can interpret your signal,
+
+11:18.000 --> 11:21.000
+that means your signal has been successfully passed.
+
+11:21.000 --> 11:23.000
+So let's use this simple example to see.
+
+11:23.000 --> 11:25.000
+Suppose I have a big white paper now.
+
+11:25.000 --> 11:27.000
+I can send this white paper to the other side.
+
+11:27.000 --> 11:29.000
+Then I can tell the other person
+
+11:29.000 --> 11:30.000
+a similar code.
+
+11:30.000 --> 11:32.000
+Say, if you see me
+
+11:32.000 --> 11:34.000
+put a dot on the left, it's 0.
+
+11:34.000 --> 11:37.000
+Put a dot on the right, it's 1.
+
+11:37.000 --> 11:38.000
+In this case,
+
+11:38.000 --> 11:41.000
+we can use this code to send information.
+
+11:41.000 --> 11:42.000
+As long as you have 0 and 1,
+
+11:42.000 --> 11:46.000
+you can generate a lot of different information
+
+11:46.000 --> 11:49.000
+in this sequence.
+
+11:49.000 --> 11:50.000
+The problem is,
+
+11:50.000 --> 11:52.000
+this actually sounds pretty good.
+
+11:52.000 --> 11:54.000
+Then we keep sending this.
+
+11:54.000 --> 11:55.000
+For example, my left, right,
+
+11:55.000 --> 11:56.000
+right, left, left, right, right.
+
+11:56.000 --> 11:58.000
+Then we can quickly send out the signal.
+
+11:58.000 --> 11:59.000
+Isn't that great?
+
+11:59.000 --> 12:00.000
+But what is reality?
+
+12:00.000 --> 12:03.000
+Reality is that all signals follow the message.
+
+12:03.000 --> 12:05.000
+That is to say, everyone is sending something.
+
+12:05.000 --> 12:07.000
+In the past, it was not so beautiful
+
+12:07.000 --> 12:09.000
+in the middle of the opposite.
+
+12:09.000 --> 12:11.000
+In the middle, there must be some
+
+12:11.000 --> 12:14.000
+battery signal or light signal interference.
+
+12:14.000 --> 12:16.000
+Let's take a simple example today.
+
+12:16.000 --> 12:17.000
+Suppose we have a message.
+
+12:17.000 --> 12:20.000
+It will draw this thing on the paper.
+
+12:20.000 --> 12:22.000
+For example, I draw this dot.
+
+12:22.000 --> 12:25.000
+Shake it left and right.
+
+12:25.000 --> 12:26.000
+When we get to the other side,
+
+12:26.000 --> 12:27.000
+we look like
+
+12:27.000 --> 12:29.000
+For example, I received a signal of shake.
+
+12:29.000 --> 12:30.000
+For example, like this.
+
+12:30.000 --> 12:32.000
+It's a little bit off.
+
+12:32.000 --> 12:34.000
+But it's still roughly on the left.
+
+12:34.000 --> 12:36.000
+So in the middle of this case,
+
+12:36.000 --> 12:39.000
+we can say that this is still zero.
+
+12:39.000 --> 12:40.000
+I probably know it's zero.
+
+12:40.000 --> 12:42.000
+Anyway, although there is a little bit of noise,
+
+12:42.000 --> 12:44.000
+but it's roughly the signal on the left.
+
+12:44.000 --> 12:48.000
+So I know it's zero from my code.
+
+12:48.000 --> 12:50.000
+Then it is possible that noise
+
+12:50.000 --> 12:51.000
+may also put your signal
+
+12:51.000 --> 12:53.000
+a little bit in a different direction.
+
+12:53.000 --> 12:54.000
+In this case,
+
+12:54.000 --> 12:57.000
+you are probably also quite confident that
+
+12:57.000 --> 12:59.000
+this signal is actually on the left.
+
+12:59.000 --> 13:01.000
+So it's zero.
+
+13:01.000 --> 13:03.000
+But if I give you a signal like this today,
+
+13:04.000 --> 13:07.000
+Is it on the left or on the right?
+
+13:07.000 --> 13:08.000
+It seems to be a little bit on the left
+
+13:08.000 --> 13:09.000
+and a little bit on the right, right?
+
+13:09.000 --> 13:11.000
+So it's not easy to judge.
+
+13:11.000 --> 13:12.000
+If we draw a line,
+
+13:12.000 --> 13:13.000
+that is to say,
+
+13:13.000 --> 13:15.000
+we separate the original left and right
+
+13:15.000 --> 13:17.000
+and draw the line out a little bit.
+
+13:17.000 --> 13:19.000
+It's actually still on the left.
+
+13:19.000 --> 13:20.000
+So I know this signal
+
+13:20.000 --> 13:22.000
+is probably still zero.
+
+13:22.000 --> 13:24.000
+But sometimes it's just not so lucky.
+
+13:24.000 --> 13:26.000
+For example, this noise is actually very big.
+
+13:26.000 --> 13:29.000
+It pushed my signal to the very right.
+
+13:29.000 --> 13:30.000
+How do you know
+
+13:30.000 --> 13:32.000
+it's zero or one at this time?
+
+13:32.000 --> 13:33.000
+Then we might say
+
+13:33.000 --> 13:35.000
+your original signal is one.
+
+13:35.000 --> 13:36.000
+But in fact,
+
+13:36.000 --> 13:38.000
+the original signal I sent was zero.
+
+13:38.000 --> 13:40.000
+So in this situation,
+
+13:40.000 --> 13:42.000
+my signal is actually
+
+13:42.000 --> 13:44.000
+unable to successfully send to the opposite side.
+
+13:44.000 --> 13:45.000
+That is to say,
+
+13:45.000 --> 13:46.000
+in this case,
+
+13:46.000 --> 13:48.000
+if the noise is very big,
+
+13:48.000 --> 13:50.000
+I can't actually successfully
+
+13:50.000 --> 13:52.000
+send the message I want to send
+
+13:52.000 --> 13:54.000
+through the light to the opposite side.
+
+13:54.000 --> 13:56.000
+So in this case,
+
+13:56.000 --> 13:57.000
+we can say that
+
+13:57.000 --> 13:59.000
+this light can't be used.
+
+13:59.000 --> 14:00.000
+Because you can't successfully
+
+14:00.000 --> 14:02.000
+send the signal to the opposite side.
+
+14:04.000 --> 14:06.000
+Let's use an example to see
+
+14:06.000 --> 14:08.000
+if this kind of situation
+
+14:08.000 --> 14:10.000
+is actually very rare,
+
+14:10.000 --> 14:11.000
+then it doesn't matter.
+
+14:11.000 --> 14:12.000
+For example, I might have
+
+14:12.000 --> 14:13.000
+a million times, ten million times,
+
+14:13.000 --> 14:14.000
+a hundred million times,
+
+14:14.000 --> 14:15.000
+I only happen to have
+
+14:15.000 --> 14:16.000
+a very unfortunate
+
+14:16.000 --> 14:18.000
+case of my signal being intercepted.
+
+14:18.000 --> 14:19.000
+Then I just throw it away.
+
+14:19.000 --> 14:20.000
+I might just ask the other side
+
+14:20.000 --> 14:21.000
+to re-send it again or something.
+
+14:21.000 --> 14:22.000
+There's probably no problem.
+
+14:22.000 --> 14:24.000
+If we take these two,
+
+14:24.000 --> 14:25.000
+for example,
+
+14:25.000 --> 14:26.000
+I either send zero
+
+14:26.000 --> 14:27.000
+or send one,
+
+14:27.000 --> 14:29.000
+the signal that is disturbed by the noise
+
+14:29.000 --> 14:31.000
+will be drawn out to take a look.
+
+14:31.000 --> 14:32.000
+For example,
+
+14:32.000 --> 14:34.000
+it might look like this.
+
+14:34.000 --> 14:35.000
+That is to say,
+
+14:35.000 --> 14:37.000
+if I send zero,
+
+14:37.000 --> 14:38.000
+we use red to show
+
+14:38.000 --> 14:39.000
+the situation when I send zero.
+
+14:39.000 --> 14:40.000
+After sending zero,
+
+14:40.000 --> 14:42.000
+it may be disturbed by the noise.
+
+14:42.000 --> 14:43.000
+The signal I see
+
+14:43.000 --> 14:44.000
+at the receiving end
+
+14:44.000 --> 14:45.000
+may look like this,
+
+14:45.000 --> 14:47.000
+scattered everywhere.
+
+14:47.000 --> 14:48.000
+Similarly,
+
+14:48.000 --> 14:49.000
+if I originally send one,
+
+14:49.000 --> 14:51.000
+it is the green signal one
+
+14:51.000 --> 14:52.000
+that I originally sent,
+
+14:52.000 --> 14:53.000
+it may also be disturbed by the noise
+
+14:53.000 --> 14:55.000
+and scatter like this.
+
+14:55.000 --> 14:57.000
+But even in this situation,
+
+14:57.000 --> 14:58.000
+although we can see
+
+14:58.000 --> 15:00.000
+that some signals
+
+15:00.000 --> 15:03.000
+may be misjudged,
+
+15:03.000 --> 15:04.000
+but generally speaking,
+
+15:04.000 --> 15:05.000
+most of the signals
+
+15:05.000 --> 15:07.000
+are still distinguishable.
+
+15:07.000 --> 15:08.000
+In this situation,
+
+15:08.000 --> 15:09.000
+this light wire
+
+15:09.000 --> 15:10.000
+can still be used
+
+15:10.000 --> 15:12.000
+because most of the signals
+
+15:12.000 --> 15:13.000
+are actually fine.
+
+15:13.000 --> 15:16.000
+There is no problem in judgment.
+
+15:16.000 --> 15:17.000
+But if today's situation
+
+15:17.000 --> 15:18.000
+is like this,
+
+15:18.000 --> 15:19.000
+in today's situation,
+
+15:19.000 --> 15:20.000
+the noise
+
+15:20.000 --> 15:21.000
+scatters my signal
+
+15:21.000 --> 15:22.000
+to such an extent
+
+15:22.000 --> 15:23.000
+that most of the red
+
+15:23.000 --> 15:24.000
+and green signals
+
+15:24.000 --> 15:25.000
+are actually mixed together.
+
+15:25.000 --> 15:26.000
+In this case,
+
+15:26.000 --> 15:28.000
+it is easy for me to make a misjudgment.
+
+15:28.000 --> 15:30.000
+Even if I send one at the beginning,
+
+15:30.000 --> 15:31.000
+I may have a big chance
+
+15:31.000 --> 15:33.000
+to be judged as zero.
+
+15:33.000 --> 15:34.000
+Even if I send zero,
+
+15:34.000 --> 15:35.000
+I have a lot of chances
+
+15:35.000 --> 15:36.000
+to be judged as one.
+
+15:36.000 --> 15:38.000
+In this situation,
+
+15:38.000 --> 15:39.000
+it is difficult for you
+
+15:39.000 --> 15:40.000
+to say that
+
+15:40.000 --> 15:41.000
+you can't use this light wire
+
+15:41.000 --> 15:43.000
+because its noise
+
+15:43.000 --> 15:44.000
+is far greater than
+
+15:44.000 --> 15:49.000
+the signal energy of your signal.
+
+15:49.000 --> 15:50.000
+In this situation,
+
+15:50.000 --> 15:51.000
+we have to separate
+
+15:51.000 --> 15:52.000
+these two
+
+15:52.000 --> 15:54.000
+original zeros and ones.
+
+15:54.000 --> 15:55.000
+If we separate them,
+
+15:55.000 --> 15:56.000
+we have a chance
+
+15:56.000 --> 15:59.000
+to be judged as one.
+
+15:59.000 --> 16:00.000
+At that time,
+
+16:00.000 --> 16:01.000
+you will consume
+
+16:01.000 --> 16:02.000
+more energy.
+
+16:02.000 --> 16:03.000
+Or,
+
+16:03.000 --> 16:04.000
+in this situation,
+
+16:04.000 --> 16:05.000
+you may reach
+
+16:05.000 --> 16:06.000
+the level of energy
+
+16:06.000 --> 16:07.000
+your machine can send
+
+16:07.000 --> 16:08.000
+every time
+
+16:08.000 --> 16:09.000
+you lower the width
+
+16:09.000 --> 16:10.000
+of the white paper.
+
+16:10.000 --> 16:11.000
+Then you may say
+
+16:11.000 --> 16:13.000
+that this thing cannot be used.
+
+16:13.000 --> 16:14.000
+So this is the signal
+
+16:14.000 --> 16:15.000
+that will be affected
+
+16:15.000 --> 16:16.000
+by the intensity
+
+16:16.000 --> 16:18.000
+of the noise signal
+
+16:18.000 --> 16:19.000
+to cause
+
+16:19.000 --> 16:21.000
+whether this light wire
+
+16:21.000 --> 16:22.000
+can be used
+
+16:22.000 --> 16:23.000
+or not.
+
+16:23.000 --> 16:24.000
+Of course,
+
+16:24.000 --> 16:25.000
+sometimes it is
+
+16:25.000 --> 16:27.000
+a more unfortunate situation.
+
+16:27.000 --> 16:28.000
+But,
+
+16:28.000 --> 16:29.000
+in fact,
+
+16:29.000 --> 16:30.000
+sometimes we are
+
+16:30.000 --> 16:31.000
+very lucky.
+
+16:31.000 --> 16:32.000
+Because when we
+
+16:32.000 --> 16:33.000
+operate the light wire,
+
+16:33.000 --> 16:34.000
+we usually
+
+16:34.000 --> 16:35.000
+separate these two signals
+
+16:35.000 --> 16:36.000
+very widely.
+
+16:36.000 --> 16:37.000
+This is the so-called
+
+16:37.000 --> 16:38.000
+conservative operation.
+
+16:38.000 --> 16:39.000
+In this situation,
+
+16:39.000 --> 16:40.000
+there are not so many
+
+16:40.000 --> 16:41.000
+noise signals.
+
+16:41.000 --> 16:43.000
+Even if there are noise signals,
+
+16:43.000 --> 16:44.000
+we will see that
+
+16:44.000 --> 16:45.000
+these two groups
+
+16:45.000 --> 16:46.000
+are actually
+
+16:46.000 --> 16:47.000
+quite widely separated.
+
+16:47.000 --> 16:48.000
+That is to say,
+
+16:48.000 --> 16:49.000
+if I give you
+
+16:49.000 --> 16:50.000
+zero at the beginning,
+
+16:50.000 --> 16:52.000
+then I will
+
+16:52.000 --> 16:53.000
+probably
+
+16:53.000 --> 16:54.000
+have no problem
+
+16:54.000 --> 16:55.000
+to easily
+
+16:55.000 --> 16:56.000
+determine that
+
+16:56.000 --> 16:57.000
+this is zero.
+
+16:57.000 --> 16:58.000
+Similarly,
+
+16:58.000 --> 16:59.000
+I can easily
+
+16:59.000 --> 17:00.000
+know that
+
+17:00.000 --> 17:01.000
+the group on the right
+
+17:01.000 --> 17:02.000
+is probably one.
+
+17:02.000 --> 17:03.000
+In this situation,
+
+17:03.000 --> 17:04.000
+in fact,
+
+17:04.000 --> 17:05.000
+we will now say
+
+17:05.000 --> 17:06.000
+that this light wire
+
+17:06.000 --> 17:07.000
+can be used.
+
+17:07.000 --> 17:08.000
+It's really good.
+
+17:08.000 --> 17:09.000
+But in fact,
+
+17:09.000 --> 17:10.000
+at the same time,
+
+17:10.000 --> 17:11.000
+we can find that
+
+17:11.000 --> 17:13.000
+there are still a lot of blanks here.
+
+17:13.000 --> 17:14.000
+In fact,
+
+17:14.000 --> 17:15.000
+we can
+
+17:15.000 --> 17:16.000
+make this white paper
+
+17:16.000 --> 17:18.000
+more efficient.
+
+17:18.000 --> 17:19.000
+What should we do?
+
+17:19.000 --> 17:21.000
+We not only give zero,
+
+17:21.000 --> 17:22.000
+but we can also
+
+17:22.000 --> 17:23.000
+give some other...
+
+17:23.000 --> 17:24.000
+We can also
+
+17:24.000 --> 17:25.000
+subdivide this
+
+17:25.000 --> 17:26.000
+white paper
+
+17:26.000 --> 17:27.000
+into four equal parts.
+
+17:27.000 --> 17:28.000
+Let's say
+
+17:28.000 --> 17:29.000
+if I see
+
+17:29.000 --> 17:30.000
+this dot on the far left,
+
+17:30.000 --> 17:31.000
+then I actually
+
+17:31.000 --> 17:32.000
+want to tell you that it's zero.
+
+17:32.000 --> 17:33.000
+I want to
+
+17:33.000 --> 17:34.000
+say one zero
+
+17:34.000 --> 17:35.000
+on the far right.
+
+17:35.000 --> 17:36.000
+Similarly,
+
+17:36.000 --> 17:37.000
+we can see
+
+17:37.000 --> 17:38.000
+these dots in the middle.
+
+17:38.000 --> 17:39.000
+I just say zero one.
+
+17:39.000 --> 17:40.000
+If this signal
+
+17:40.000 --> 17:41.000
+is actually not
+
+17:41.000 --> 17:42.000
+disturbed by noise,
+
+17:42.000 --> 17:43.000
+then in fact,
+
+17:43.000 --> 17:44.000
+we can still
+
+17:44.000 --> 17:45.000
+successfully
+
+17:45.000 --> 17:46.000
+receive these signals.
+
+17:46.000 --> 17:47.000
+Because
+
+17:47.000 --> 17:48.000
+these signals
+
+17:48.000 --> 17:49.000
+are still
+
+17:49.000 --> 17:50.000
+roughly in
+
+17:50.000 --> 17:51.000
+their original positions.
+
+17:51.000 --> 17:52.000
+Since they are
+
+17:52.000 --> 17:53.000
+roughly in
+
+17:53.000 --> 17:54.000
+their original positions,
+
+17:54.000 --> 17:55.000
+we can still
+
+17:55.000 --> 17:56.000
+easily judge that
+
+17:56.000 --> 17:57.000
+if I see
+
+17:57.000 --> 17:58.000
+a signal here today,
+
+17:58.000 --> 17:59.000
+then I probably know
+
+17:59.000 --> 18:00.000
+that there is no problem.
+
+18:00.000 --> 18:01.000
+Its original signal
+
+18:01.000 --> 18:02.000
+is actually
+
+18:02.000 --> 18:03.000
+zero.
+
+18:03.000 --> 18:04.000
+Its original signal
+
+18:04.000 --> 18:05.000
+is zero.
+
+18:05.000 --> 18:06.000
+Like this.
+
+18:06.000 --> 18:07.000
+So,
+
+18:07.000 --> 18:08.000
+at the same time,
+
+18:08.000 --> 18:09.000
+how many signals
+
+18:09.000 --> 18:10.000
+can we send
+
+18:10.000 --> 18:11.000
+with a piece of white paper?
+
+18:11.000 --> 18:12.000
+It's not just
+
+18:12.000 --> 18:13.000
+related to
+
+18:13.000 --> 18:14.000
+the size of this piece of white paper.
+
+18:14.000 --> 18:15.000
+It's also related
+
+18:15.000 --> 18:16.000
+to the noise
+
+18:16.000 --> 18:17.000
+it receives.
+
+18:17.000 --> 18:18.000
+So this is
+
+18:18.000 --> 18:19.000
+the so-called
+
+18:19.000 --> 18:20.000
+noise ratio,
+
+18:20.000 --> 18:21.000
+SNR.
+
+18:21.000 --> 18:22.000
+So,
+
+18:22.000 --> 18:23.000
+the bigger my piece of white paper is,
+
+18:23.000 --> 18:24.000
+the more
+
+18:24.000 --> 18:25.000
+I can send
+
+18:25.000 --> 18:26.000
+messages.
+
+18:26.000 --> 18:27.000
+At the same time,
+
+18:27.000 --> 18:28.000
+I can not only say
+
+18:28.000 --> 18:29.000
+zero or one,
+
+18:29.000 --> 18:30.000
+I can also say
+
+18:30.000 --> 18:31.000
+zero zero,
+
+18:31.000 --> 18:32.000
+zero one,
+
+18:32.000 --> 18:33.000
+one zero one.
+
+18:33.000 --> 18:34.000
+That means
+
+18:34.000 --> 18:35.000
+the messages I can send
+
+18:35.000 --> 18:36.000
+at the same time
+
+18:36.000 --> 18:37.000
+are more.
+
+18:37.000 --> 18:38.000
+The more,
+
+18:38.000 --> 18:39.000
+that means
+
+18:39.000 --> 18:40.000
+my frequency is higher.
+
+18:40.000 --> 18:41.000
+What about SNR?
+
+18:41.000 --> 18:42.000
+Of course,
+
+18:42.000 --> 18:43.000
+at the same time,
+
+18:43.000 --> 18:44.000
+if you have a lot of noise,
+
+18:44.000 --> 18:45.000
+then you can
+
+18:45.000 --> 18:46.000
+do less things.
+
+18:46.000 --> 18:47.000
+Because although
+
+18:47.000 --> 18:48.000
+your piece of white paper is big,
+
+18:48.000 --> 18:49.000
+at the same time,
+
+18:49.000 --> 18:50.000
+the amount of messages
+
+18:50.000 --> 18:51.000
+you can receive
+
+18:51.000 --> 18:52.000
+is not that much.
+
+18:52.000 --> 18:53.000
+The messages you can successfully
+
+18:53.000 --> 18:54.000
+see on the other side
+
+18:54.000 --> 18:55.000
+are not that much.
+
+18:55.000 --> 18:56.000
+Now,
+
+18:56.000 --> 18:57.000
+if we consider
+
+18:57.000 --> 18:58.000
+the transmission of
+
+18:58.000 --> 18:59.000
+signals,
+
+18:59.000 --> 19:00.000
+it's like this.
+
+19:00.000 --> 19:01.000
+If we want to
+
+19:01.000 --> 19:02.000
+send a signal
+
+19:02.000 --> 19:03.000
+from the left
+
+19:03.000 --> 19:04.000
+to the right
+
+19:04.000 --> 19:05.000
+via a light
+
+19:05.000 --> 19:06.000
+to the right,
+
+19:06.000 --> 19:07.000
+we can think that
+
+19:07.000 --> 19:08.000
+our signal
+
+19:08.000 --> 19:09.000
+is a bit like
+
+19:09.000 --> 19:10.000
+a piece of white paper.
+
+19:10.000 --> 19:11.000
+Then we
+
+19:11.000 --> 19:12.000
+decide
+
+19:12.000 --> 19:13.000
+the code
+
+19:13.000 --> 19:14.000
+between each other.
+
+19:14.000 --> 19:15.000
+For example,
+
+19:15.000 --> 19:16.000
+if I see on the left,
+
+19:16.000 --> 19:17.000
+this is zero zero,
+
+19:17.000 --> 19:18.000
+zero zero,
+
+19:18.000 --> 19:19.000
+zero one,
+
+19:19.000 --> 19:20.000
+one one,
+
+19:20.000 --> 19:21.000
+one one zero,
+
+19:21.000 --> 19:22.000
+like this,
+
+19:22.000 --> 19:23.000
+this is called
+
+19:23.000 --> 19:24.000
+modulation.
+
+19:24.000 --> 19:25.000
+Modulation
+
+19:25.000 --> 19:26.000
+means
+
+19:26.000 --> 19:27.000
+adjusting
+
+19:27.000 --> 19:28.000
+the relationship
+
+19:28.000 --> 19:29.000
+between
+
+19:29.000 --> 19:30.000
+your changes
+
+19:30.000 --> 19:31.000
+and your
+
+19:31.000 --> 19:32.000
+signal.
+
+19:32.000 --> 19:33.000
+What is this
+
+19:33.000 --> 19:34.000
+modulation?
+
+19:34.000 --> 19:35.000
+If the other side
+
+19:35.000 --> 19:36.000
+also knows
+
+19:36.000 --> 19:37.000
+this modulation,
+
+19:37.000 --> 19:38.000
+after you send
+
+19:38.000 --> 19:39.000
+the signal,
+
+19:39.000 --> 19:40.000
+the other side
+
+19:40.000 --> 19:41.000
+can interpret
+
+19:41.000 --> 19:42.000
+your signal.
+
+19:42.000 --> 19:43.000
+It's a bit like
+
+19:43.000 --> 19:44.000
+if I say
+
+19:44.000 --> 19:45.000
+the leftmost point
+
+19:45.000 --> 19:46.000
+is zero zero,
+
+19:46.000 --> 19:47.000
+zero zero,
+
+19:47.000 --> 19:48.000
+like this.
+
+19:48.000 --> 19:49.000
+Then we can
+
+19:49.000 --> 19:50.000
+send the signal
+
+19:50.000 --> 19:51.000
+from one side
+
+19:51.000 --> 19:52.000
+of the light
+
+19:52.000 --> 19:53.000
+to the other side.
+
+19:53.000 --> 19:54.000
+Of course,
+
+19:54.000 --> 19:55.000
+it's not that good.
+
+19:55.000 --> 19:56.000
+If there is no
+
+19:56.000 --> 19:57.000
+modulation interference,
+
+19:57.000 --> 19:58.000
+of course it's good.
+
+19:58.000 --> 19:59.000
+In fact,
+
+19:59.000 --> 20:00.000
+we can
+
+20:00.000 --> 20:01.000
+put a lot of points,
+
+20:01.000 --> 20:02.000
+but because of
+
+20:02.000 --> 20:03.000
+the modulation,
+
+20:03.000 --> 20:04.000
+like the example
+
+20:04.000 --> 20:05.000
+we just saw,
+
+20:05.000 --> 20:06.000
+because of the modulation,
+
+20:06.000 --> 20:07.000
+so we actually
+
+20:07.000 --> 20:08.000
+see the signal
+
+20:08.000 --> 20:09.000
+at the receiving end
+
+20:09.000 --> 20:10.000
+here,
+
+20:10.000 --> 20:11.000
+the signal
+
+20:11.000 --> 20:12.000
+is a bit
+
+20:12.000 --> 20:13.000
+not the original position,
+
+20:13.000 --> 20:14.000
+it may be a little bit
+
+20:14.000 --> 20:15.000
+off,
+
+20:15.000 --> 20:16.000
+but if it's not
+
+20:16.000 --> 20:17.000
+off a lot,
+
+20:17.000 --> 20:18.000
+we can still
+
+20:18.000 --> 20:19.000
+successfully know
+
+20:19.000 --> 20:20.000
+what the original
+
+20:20.000 --> 20:21.000
+signal looks like.
+
+20:21.000 --> 20:22.000
+If you see
+
+20:22.000 --> 20:23.000
+the signal is probably
+
+20:23.000 --> 20:24.000
+in this area,
+
+20:24.000 --> 20:25.000
+then we know
+
+20:25.000 --> 20:26.000
+it was originally
+
+20:26.000 --> 20:27.000
+this point.
+
+20:27.000 --> 20:28.000
+Then we can
+
+20:28.000 --> 20:29.000
+check our meter
+
+20:29.000 --> 20:30.000
+and say
+
+20:30.000 --> 20:31.000
+this is zero zero.
+
+20:31.000 --> 20:32.000
+After this,
+
+20:32.000 --> 20:33.000
+we can actually
+
+20:33.000 --> 20:34.000
+not need
+
+20:34.000 --> 20:35.000
+these colors
+
+20:35.000 --> 20:36.000
+to mark them,
+
+20:36.000 --> 20:37.000
+right?
+
+20:37.000 --> 20:38.000
+That is to say,
+
+20:38.000 --> 20:39.000
+what is my
+
+20:39.000 --> 20:40.000
+modulation?
+
+20:40.000 --> 20:41.000
+How do I
+
+20:41.000 --> 20:42.000
+divide this white paper
+
+20:42.000 --> 20:43.000
+into several
+
+20:43.000 --> 20:44.000
+different areas
+
+20:45.000 --> 20:46.000
+and then I use
+
+20:46.000 --> 20:47.000
+each point
+
+20:47.000 --> 20:48.000
+to represent
+
+20:48.000 --> 20:49.000
+a signal.
+
+20:49.000 --> 20:50.000
+If I say
+
+20:50.000 --> 20:51.000
+there is not
+
+20:51.000 --> 20:52.000
+much noise
+
+20:52.000 --> 20:53.000
+on the other side,
+
+20:53.000 --> 20:54.000
+I can say
+
+20:54.000 --> 20:55.000
+it's probably
+
+20:55.000 --> 20:56.000
+in this area
+
+20:56.000 --> 20:57.000
+and it corresponds
+
+20:57.000 --> 20:58.000
+to this point.
+
+20:58.000 --> 20:59.000
+This point
+
+20:59.000 --> 21:00.000
+represents a signal.
+
+21:00.000 --> 21:01.000
+So this is
+
+21:01.000 --> 21:02.000
+what we
+
+21:02.000 --> 21:03.000
+generally call
+
+21:03.000 --> 21:04.000
+constellation,
+
+21:04.000 --> 21:05.000
+that is,
+
+21:05.000 --> 21:06.000
+if I see
+
+21:06.000 --> 21:07.000
+this point,
+
+21:07.000 --> 21:08.000
+what is
+
+21:08.000 --> 21:09.000
+the signal?
+
+21:09.000 --> 21:10.000
+Usually,
+
+21:10.000 --> 21:11.000
+at the receiving end,
+
+21:11.000 --> 21:12.000
+we will
+
+21:12.000 --> 21:13.000
+make a judgment
+
+21:13.000 --> 21:14.000
+based on
+
+21:14.000 --> 21:15.000
+the message
+
+21:15.000 --> 21:16.000
+to see
+
+21:16.000 --> 21:17.000
+which signal
+
+21:17.000 --> 21:18.000
+is more similar
+
+21:18.000 --> 21:19.000
+to the original one.
+
+21:19.000 --> 21:20.000
+Then we will
+
+21:20.000 --> 21:21.000
+interpret the
+
+21:21.000 --> 21:22.000
+original signal.
+
+21:22.000 --> 21:23.000
+So we can
+
+21:23.000 --> 21:24.000
+also see that
+
+21:24.000 --> 21:25.000
+this noise
+
+21:25.000 --> 21:26.000
+actually
+
+21:26.000 --> 21:27.000
+depends on
+
+21:27.000 --> 21:28.000
+the strength of
+
+21:28.000 --> 21:29.000
+the noise
+
+21:29.000 --> 21:30.000
+is related to
+
+21:30.000 --> 21:31.000
+the frequency of
+
+21:31.000 --> 21:32.000
+our signal.
+
+21:32.000 --> 21:33.000
+Sometimes we
+
+21:33.000 --> 21:34.000
+say
+
+21:34.000 --> 21:35.000
+why we can
+
+21:35.000 --> 21:36.000
+say
+
+21:36.000 --> 21:37.000
+we buy a line today
+
+21:37.000 --> 21:38.000
+and we say
+
+21:38.000 --> 21:39.000
+its frequency is
+
+21:39.000 --> 21:40.000
+10 GB
+
+21:40.000 --> 21:41.000
+or we say
+
+21:41.000 --> 21:42.000
+it is 100 GB.
+
+21:42.000 --> 21:43.000
+In fact,
+
+21:43.000 --> 21:44.000
+the frequency of
+
+21:44.000 --> 21:45.000
+this line
+
+21:45.000 --> 21:46.000
+is related to
+
+21:46.000 --> 21:47.000
+noise.
+
+21:47.000 --> 21:48.000
+The reason is
+
+21:48.000 --> 21:49.000
+because
+
+21:49.000 --> 21:50.000
+we generally
+
+21:50.000 --> 21:51.000
+operate these lines
+
+21:51.000 --> 21:52.000
+in a conservative way.
+
+21:52.000 --> 21:53.000
+For example,
+
+21:53.000 --> 21:54.000
+these lines
+
+21:54.000 --> 21:55.000
+may have
+
+21:55.000 --> 21:56.000
+expected
+
+21:56.000 --> 21:57.000
+noise
+
+21:57.000 --> 21:58.000
+in the natural world
+
+21:58.000 --> 21:59.000
+which is
+
+21:59.000 --> 22:00.000
+something like
+
+22:00.000 --> 22:01.000
+this.
+
+22:01.000 --> 22:02.000
+Then we will
+
+22:02.000 --> 22:03.000
+give a very strong
+
+22:03.000 --> 22:04.000
+signal
+
+22:04.000 --> 22:05.000
+to separate it.
+
+22:05.000 --> 22:06.000
+In this way,
+
+22:06.000 --> 22:07.000
+we can
+
+22:07.000 --> 22:08.000
+ensure that
+
+22:08.000 --> 22:09.000
+we can
+
+22:09.000 --> 22:10.000
+always
+
+22:10.000 --> 22:11.000
+restore
+
+22:11.000 --> 22:12.000
+the
+
+22:12.000 --> 22:13.000
+original
+
+22:13.000 --> 22:14.000
+signal.
+
+22:14.000 --> 22:15.000
+Then we say
+
+22:15.000 --> 22:16.000
+this line
+
+22:16.000 --> 22:17.000
+probably has
+
+22:17.000 --> 22:18.000
+capacity.
+
+22:18.000 --> 22:19.000
+In fact,
+
+22:19.000 --> 22:20.000
+when we actually
+
+22:20.000 --> 22:21.000
+send a signal,
+
+22:21.000 --> 22:22.000
+we are not
+
+22:22.000 --> 22:23.000
+only
+
+22:23.000 --> 22:24.000
+a blank sheet.
+
+22:24.000 --> 22:25.000
+We are not
+
+22:25.000 --> 22:26.000
+only one-dimensional.
+
+22:26.000 --> 22:27.000
+Sometimes we
+
+22:27.000 --> 22:28.000
+use multiple dimensions
+
+22:28.000 --> 22:29.000
+or in this case
+
+22:29.000 --> 22:30.000
+we use two-dimensional
+
+22:30.000 --> 22:31.000
+to show.
+
+22:31.000 --> 22:32.000
+For example,
+
+22:32.000 --> 22:33.000
+I have a
+
+22:33.000 --> 22:34.000
+two-dimensional signal
+
+22:34.000 --> 22:35.000
+and we will
+
+22:35.000 --> 22:36.000
+also be
+
+22:36.000 --> 22:37.000
+disturbed by
+
+22:37.000 --> 22:38.000
+noise.
+
+22:38.000 --> 22:39.000
+These signals
+
+22:39.000 --> 22:40.000
+scatter
+
+22:40.000 --> 22:41.000
+and we
+
+22:41.000 --> 22:42.000
+can see that
+
+22:42.000 --> 22:43.000
+the degree of
+
+22:43.000 --> 22:44.000
+scattering is
+
+22:44.000 --> 22:45.000
+not much.
+
+22:45.000 --> 22:46.000
+So we can
+
+22:46.000 --> 22:47.000
+still clearly
+
+22:47.000 --> 22:48.000
+tell if
+
+22:48.000 --> 22:49.000
+this signal
+
+22:49.000 --> 22:50.000
+is in this area
+
+22:50.000 --> 22:51.000
+and its
+
+22:51.000 --> 22:52.000
+original signal
+
+22:52.000 --> 22:53.000
+is here.
+
+22:53.000 --> 22:54.000
+So it
+
+22:54.000 --> 22:55.000
+can still
+
+22:55.000 --> 22:56.000
+successfully
+
+22:56.000 --> 22:57.000
+pull our
+
+22:57.000 --> 22:58.000
+signal from
+
+22:58.000 --> 22:59.000
+one side
+
+22:59.000 --> 23:00.000
+to the other.
+
+23:00.000 --> 23:01.000
+The advantage of
+
+23:01.000 --> 23:02.000
+two-dimensional,
+
+23:02.000 --> 23:03.000
+three-dimensional
+
+23:03.000 --> 23:04.000
+or multiple dimensions
+
+23:04.000 --> 23:05.000
+is that
+
+23:05.000 --> 23:06.000
+we can
+
+23:06.000 --> 23:07.000
+expand this
+
+23:07.000 --> 23:08.000
+blank sheet
+
+23:08.000 --> 23:09.000
+so we
+
+23:09.000 --> 23:10.000
+can see that
+
+23:10.000 --> 23:11.000
+the width of
+
+23:11.000 --> 23:12.000
+this line
+
+23:12.000 --> 23:13.000
+is actually
+
+23:13.000 --> 23:14.000
+the ratio
+
+23:14.000 --> 23:15.000
+of the signal
+
+23:15.000 --> 23:16.000
+to its
+
+23:16.000 --> 23:17.000
+noise.
+
+23:17.000 --> 23:18.000
+The noise
+
+23:18.000 --> 23:19.000
+ratio
+
+23:19.000 --> 23:20.000
+has a
+
+23:20.000 --> 23:21.000
+very strong
+
+23:21.000 --> 23:22.000
+relationship.
+
+23:22.000 --> 23:23.000
+Generally speaking,
+
+23:23.000 --> 23:24.000
+most of
+
+23:24.000 --> 23:25.000
+the time,
+
+23:25.000 --> 23:26.000
+as we
+
+23:26.000 --> 23:27.000
+just said,
+
+23:27.000 --> 23:28.000
+although
+
+23:28.000 --> 23:29.000
+this line
+
+23:29.000 --> 23:30.000
+is 50
+
+23:30.000 --> 23:31.000
+Gbps,
+
+23:31.000 --> 23:32.000
+which is
+
+23:32.000 --> 23:33.000
+50 x
+
+23:33.000 --> 23:34.000
+10
+
+23:34.000 --> 23:35.000
+9
+
+23:35.000 --> 23:36.000
+square
+
+23:36.000 --> 23:37.000
+bits,
+
+23:37.000 --> 23:38.000
+we can
+
+23:38.000 --> 23:39.000
+still
+
+23:39.000 --> 23:40.000
+clearly
+
+23:40.000 --> 23:41.000
+tell
+
+23:41.000 --> 23:42.000
+if
+
+23:42.000 --> 23:43.000
+this
+
+23:43.000 --> 23:44.000
+noise
+
+23:44.000 --> 23:45.000
+is
+
+23:45.000 --> 23:46.000
+in
+
+23:46.000 --> 23:47.000
+this area
+
+23:47.000 --> 23:48.000
+and
+
+23:48.000 --> 23:49.000
+its
+
+23:49.000 --> 23:50.000
+original
+
+23:50.000 --> 23:51.000
+signal
+
+23:51.000 --> 23:52.000
+is here
+
+23:52.000 --> 23:53.000
+and
+
+23:53.000 --> 23:54.000
+its
+
+23:54.000 --> 23:55.000
+noise
+
+23:55.000 --> 23:56.000
+ratio
+
+23:56.000 --> 23:57.000
+is here.
+
+23:57.000 --> 23:58.000
+So
+
+23:58.000 --> 23:59.000
+this
+
+23:59.000 --> 24:00.000
+noise
+
+24:00.000 --> 24:01.000
+ratio
+
+24:01.000 --> 24:02.000
+is
+
+24:02.000 --> 24:03.000
+about
+
+24:03.000 --> 24:04.000
+this much.
+
+24:04.000 --> 24:05.000
+So
+
+24:05.000 --> 24:06.000
+we can
+
+24:06.000 --> 24:07.000
+clearly
+
+24:07.000 --> 24:08.000
+tell
+
+24:08.000 --> 24:09.000
+if
+
+24:09.000 --> 24:10.000
+this
+
+24:10.000 --> 24:11.000
+noise
+
+24:11.000 --> 24:12.000
+is
+
+24:12.000 --> 24:13.000
+in
+
+24:13.000 --> 24:14.000
+this
+
+24:14.000 --> 24:15.000
+area
+
+24:15.000 --> 24:16.000
+and
+
+24:16.000 --> 24:17.000
+its
+
+24:17.000 --> 24:18.000
+original
+
+24:18.000 --> 24:19.000
+signal
+
+24:19.000 --> 24:20.000
+is here
+
+24:20.000 --> 24:21.000
+and
+
+24:21.000 --> 24:22.000
+its
+
+24:22.000 --> 24:23.000
+original
+
+24:23.000 --> 24:24.000
+noise
+
+24:24.000 --> 24:25.000
+ratio
+
+24:25.000 --> 24:26.000
+is here
+
+24:26.000 --> 24:27.000
+and
+
+24:27.000 --> 24:28.000
+its
+
+24:28.000 --> 24:29.000
+original
+
+24:29.000 --> 24:30.000
+signal
+
+24:30.000 --> 24:31.000
+is here
+
+24:31.000 --> 24:32.000
+and
+
+24:32.000 --> 24:33.000
+its
+
+24:33.000 --> 24:34.000
+original
+
+24:34.000 --> 24:35.000
+signal
+
+24:35.000 --> 24:36.000
+is here.
+
+24:36.000 --> 24:37.000
+So
+
+24:37.000 --> 24:38.000
+I can
+
+24:38.000 --> 24:39.000
+modify
+
+24:39.000 --> 24:40.000
+the
+
+24:40.000 --> 24:41.000
+modulation
+
+24:41.000 --> 24:42.000
+code.
+
+24:42.000 --> 24:43.000
+If I
+
+24:43.000 --> 24:44.000
+modify
+
+24:44.000 --> 24:45.000
+the
+
+24:45.000 --> 24:46.000
+modulation,
+
+24:46.000 --> 24:47.000
+I can
+
+24:47.000 --> 24:48.000
+send more
+
+24:48.000 --> 24:49.000
+messages
+
+24:49.000 --> 24:50.000
+to the
+
+24:50.000 --> 24:51.000
+other side
+
+24:51.000 --> 24:52.000
+at the
+
+24:52.000 --> 24:53.000
+same time.
+
+24:53.000 --> 24:54.000
+So
+
+24:54.000 --> 24:55.000
+this
+
+24:55.000 --> 24:56.000
+effectively
+
+24:56.000 --> 24:57.000
+improves
+
+24:57.000 --> 24:58.000
+my frequency.
+
+24:58.000 --> 24:59.000
+So
+
+24:59.000 --> 25:00.000
+even though
+
+25:00.000 --> 25:01.000
+we still
+
+25:01.000 --> 25:02.000
+receive the
+
+25:02.000 --> 25:03.000
+same
+
+25:03.000 --> 25:04.000
+signal,
+
+25:04.000 --> 25:05.000
+I can
+
+25:05.000 --> 25:06.000
+still
+
+25:06.000 --> 25:07.000
+modify
+
+25:07.000 --> 25:08.000
+the
+
+25:08.000 --> 25:09.000
+modulation
+
+25:09.000 --> 25:10.000
+code.
+
+25:10.000 --> 25:11.000
+So
+
+25:11.000 --> 25:12.000
+I can
+
+25:12.000 --> 25:13.000
+modify
+
+25:13.000 --> 25:14.000
+the
+
+25:14.000 --> 25:15.000
+modulation
+
+25:15.000 --> 25:16.000
+code
+
+25:16.000 --> 25:17.000
+and
+
+25:17.000 --> 25:18.000
+send
+
+25:18.000 --> 25:19.000
+more
+
+25:19.000 --> 25:20.000
+messages
+
+25:20.000 --> 25:21.000
+to the
+
+25:21.000 --> 25:22.000
+other side
+
+25:22.000 --> 25:23.000
+at the
+
+25:23.000 --> 25:24.000
+same
+
+25:24.000 --> 25:25.000
+time.
+
+25:25.000 --> 25:26.000
+So
+
+25:26.000 --> 25:27.000
+I can
+
+25:27.000 --> 25:28.000
+modify
+
+25:28.000 --> 25:29.000
+the
+
+25:29.000 --> 25:30.000
+modulation
+
+25:30.000 --> 25:31.000
+code
+
+25:31.000 --> 25:32.000
+and
+
+25:32.000 --> 25:33.000
+send
+
+25:33.000 --> 25:34.000
+more
+
+25:34.000 --> 25:35.000
+messages
+
+25:35.000 --> 25:36.000
+to the
+
+25:36.000 --> 25:37.000
+other side
+
+25:37.000 --> 25:38.000
+at the
+
+25:38.000 --> 25:39.000
+same
+
+25:39.000 --> 25:40.000
+time.
+
+25:40.000 --> 25:41.000
+So
+
+25:41.000 --> 25:42.000
+I can
+
+25:42.000 --> 25:43.000
+modify
+
+25:43.000 --> 25:44.000
+the
+
+25:44.000 --> 25:45.000
+modulation
+
+25:45.000 --> 25:46.000
+code
+
+25:46.000 --> 25:47.000
+and
+
+25:47.000 --> 25:48.000
+send
+
+25:48.000 --> 25:49.000
+more
+
+25:49.000 --> 25:50.000
+messages
+
+25:50.000 --> 25:51.000
+to the
+
+25:51.000 --> 25:52.000
+other side
+
+25:52.000 --> 25:53.000
+at the
+
+25:53.000 --> 25:54.000
+same
+
+25:54.000 --> 25:55.000
+time.
+
+25:55.000 --> 25:56.000
+So
+
+25:56.000 --> 25:57.000
+I can
+
+25:57.000 --> 25:58.000
+modify
+
+25:58.000 --> 25:59.000
+the
+
+25:59.000 --> 26:00.000
+modulation
+
+26:00.000 --> 26:01.000
+code
+
+26:01.000 --> 26:02.000
+and
+
+26:02.000 --> 26:03.000
+send
+
+26:03.000 --> 26:04.000
+more
+
+26:04.000 --> 26:05.000
+messages
+
+26:05.000 --> 26:06.000
+to the
+
+26:06.000 --> 26:07.000
+other side
+
+26:07.000 --> 26:08.000
+at the
+
+26:08.000 --> 26:09.000
+same
+
+26:09.000 --> 26:10.000
+time.
+
+26:10.000 --> 26:11.000
+So
+
+26:11.000 --> 26:12.000
+I can
+
+26:12.000 --> 26:13.000
+modify
+
+26:13.000 --> 26:14.000
+the
+
+26:14.000 --> 26:15.000
+modulation
+
+26:15.000 --> 26:16.000
+code
+
+26:16.000 --> 26:17.000
+and
+
+26:17.000 --> 26:18.000
+send
+
+26:18.000 --> 26:19.000
+more
+
+26:19.000 --> 26:20.000
+messages
+
+26:20.000 --> 26:21.000
+to the
+
+26:21.000 --> 26:22.000
+other side
+
+26:22.000 --> 26:23.000
+at the
+
+26:23.000 --> 26:24.000
+same
+
+26:24.000 --> 26:25.000
+time.
+
+26:25.000 --> 26:26.000
+So
+
+26:26.000 --> 26:27.000
+I can
+
+26:27.000 --> 26:28.000
+modify
+
+26:28.000 --> 26:29.000
+the
+
+26:29.000 --> 26:30.000
+modulation
+
+26:30.000 --> 26:31.000
+code
+
+26:31.000 --> 26:32.000
+and
+
+26:32.000 --> 26:33.000
+send
+
+26:33.000 --> 26:34.000
+more
+
+26:34.000 --> 26:35.000
+messages
+
+26:35.000 --> 26:36.000
+to the
+
+26:36.000 --> 26:37.000
+other side
+
+26:37.000 --> 26:38.000
+at the
+
+26:38.000 --> 26:39.000
+same
+
+26:39.000 --> 26:40.000
+time.
+
+26:40.000 --> 26:41.000
+So
+
+26:41.000 --> 26:42.000
+I can
+
+26:42.000 --> 26:43.000
+modify
+
+26:43.000 --> 26:44.000
+the
+
+26:44.000 --> 26:45.000
+modulation
+
+26:45.000 --> 26:46.000
+code
+
+26:46.000 --> 26:47.000
+and
+
+26:47.000 --> 26:48.000
+send
+
+26:48.000 --> 26:49.000
+more
+
+26:49.000 --> 26:50.000
+messages
+
+26:50.000 --> 26:51.000
+to the
+
+26:51.000 --> 26:52.000
+other side
+
+26:52.000 --> 26:53.000
+at the
+
+26:53.000 --> 26:54.000
+same
+
+26:54.000 --> 26:55.000
+time.
+
+26:55.000 --> 26:56.000
+So
+
+26:56.000 --> 26:57.000
+I can
+
+26:57.000 --> 26:58.000
+modify
+
+26:58.000 --> 26:59.000
+the
+
+26:59.000 --> 27:00.000
+modulation
+
+27:00.000 --> 27:01.000
+code
+
+27:01.000 --> 27:02.000
+and
+
+27:02.000 --> 27:03.000
+send
+
+27:03.000 --> 27:04.000
+more
+
+27:04.000 --> 27:05.000
+messages
+
+27:05.000 --> 27:06.000
+to the
+
+27:06.000 --> 27:07.000
+other side
+
+27:07.000 --> 27:08.000
+at the
+
+27:08.000 --> 27:09.000
+same
+
+27:09.000 --> 27:10.000
+time.
+
+27:10.000 --> 27:11.000
+So
+
+27:11.000 --> 27:12.000
+I can
+
+27:12.000 --> 27:13.000
+modify
+
+27:13.000 --> 27:14.000
+the
+
+27:14.000 --> 27:15.000
+modulation
+
+27:15.000 --> 27:16.000
+code
+
+27:16.000 --> 27:17.000
+and
+
+27:17.000 --> 27:18.000
+send
+
+27:18.000 --> 27:19.000
+more
+
+27:19.000 --> 27:20.000
+messages
+
+27:20.000 --> 27:21.000
+to the
+
+27:21.000 --> 27:22.000
+other side
+
+27:22.000 --> 27:23.000
+at the
+
+27:23.000 --> 27:24.000
+same
+
+27:24.000 --> 27:25.000
+time.
+
+27:25.000 --> 27:26.000
+So
+
+27:26.000 --> 27:27.000
+I can
+
+27:27.000 --> 27:28.000
+modify
+
+27:28.000 --> 27:29.000
+the
+
+27:29.000 --> 27:30.000
+modulation
+
+27:30.000 --> 27:31.000
+code
+
+27:31.000 --> 27:32.000
+and
+
+27:32.000 --> 27:33.000
+send
+
+27:33.000 --> 27:34.000
+more
+
+27:34.000 --> 27:35.000
+messages
+
+27:35.000 --> 27:36.000
+to the
+
+27:36.000 --> 27:37.000
+other side
+
+27:37.000 --> 27:38.000
+at the
+
+27:38.000 --> 27:39.000
+same
+
+27:39.000 --> 27:40.000
+time.
+
+27:40.000 --> 27:41.000
+So
+
+27:41.000 --> 27:42.000
+I can
+
+27:42.000 --> 27:43.000
+modify
+
+27:43.000 --> 27:44.000
+the
+
+27:44.000 --> 27:45.000
+modulation
+
+27:45.000 --> 27:46.000
+code
+
+27:46.000 --> 27:47.000
+and
+
+27:47.000 --> 27:48.000
+send
+
+27:48.000 --> 27:49.000
+more
+
+27:49.000 --> 27:50.000
+messages
+
+27:50.000 --> 27:51.000
+to the
+
+27:51.000 --> 27:52.000
+other side
+
+27:52.000 --> 27:53.000
+at the
+
+27:53.000 --> 27:54.000
+same
+
+27:54.000 --> 27:55.000
+time.
+
+27:55.000 --> 27:56.000
+So
+
+27:56.000 --> 27:57.000
+I can
+
+27:57.000 --> 27:58.000
+modify
+
+27:58.000 --> 27:59.000
+the
+
+27:59.000 --> 28:00.000
+modulation
+
+28:00.000 --> 28:01.000
+code
+
+28:01.000 --> 28:02.000
+and
+
+28:02.000 --> 28:03.000
+send
+
+28:03.000 --> 28:04.000
+more
+
+28:04.000 --> 28:05.000
+messages
+
+28:05.000 --> 28:06.000
+to the
+
+28:06.000 --> 28:07.000
+other side
+
+28:07.000 --> 28:08.000
+at the
+
+28:08.000 --> 28:09.000
+same
+
+28:09.000 --> 28:10.000
+time.
+
+28:10.000 --> 28:11.000
+So
+
+28:11.000 --> 28:12.000
+I can
+
+28:12.000 --> 28:13.000
+modify
+
+28:13.000 --> 28:14.000
+the
+
+28:14.000 --> 28:15.000
+modulation
+
+28:15.000 --> 28:16.000
+code
+
+28:16.000 --> 28:17.000
+and
+
+28:17.000 --> 28:18.000
+send
+
+28:18.000 --> 28:19.000
+more
+
+28:19.000 --> 28:20.000
+messages
+
+28:20.000 --> 28:21.000
+to the
+
+28:21.000 --> 28:22.000
+other side
+
+28:22.000 --> 28:23.000
+at the
+
+28:23.000 --> 28:24.000
+same
+
+28:24.000 --> 28:25.000
+time.
+
+28:25.000 --> 28:26.000
+So
+
+28:26.000 --> 28:27.000
+I can
+
+28:27.000 --> 28:28.000
+modify
+
+28:28.000 --> 28:29.000
+the
+
+28:29.000 --> 28:30.000
+modulation
+
+28:30.000 --> 28:31.000
+code
+
+28:31.000 --> 28:32.000
+and
+
+28:32.000 --> 28:33.000
+send
+
+28:33.000 --> 28:34.000
+more
+
+28:34.000 --> 28:35.000
+messages
+
+28:35.000 --> 28:36.000
+to the
+
+28:36.000 --> 28:37.000
+other side
+
+28:37.000 --> 28:38.000
+at the
+
+28:38.000 --> 28:39.000
+same
+
+28:39.000 --> 28:40.000
+time.
+
+28:40.000 --> 28:41.000
+So
+
+28:41.000 --> 28:42.000
+I can
+
+28:42.000 --> 28:43.000
+modify
+
+28:43.000 --> 28:44.000
+the
+
+28:44.000 --> 28:45.000
+modulation
+
+28:45.000 --> 28:46.000
+code
+
+28:46.000 --> 28:47.000
+and
+
+28:47.000 --> 28:48.000
+send
+
+28:48.000 --> 28:49.000
+more
+
+28:49.000 --> 28:50.000
+messages
+
+28:50.000 --> 28:51.000
+to the
+
+28:51.000 --> 28:52.000
+other side
+
+28:52.000 --> 28:53.000
+at the
+
+28:53.000 --> 28:54.000
+same
+
+28:54.000 --> 28:55.000
+time.
+
+28:55.000 --> 28:56.000
+So
+
+28:56.000 --> 28:57.000
+I can
+
+28:57.000 --> 28:58.000
+modify
+
+28:58.000 --> 28:59.000
+the
+
+28:59.000 --> 29:00.000
+modulation
+
+29:00.000 --> 29:01.000
+code
+
+29:01.000 --> 29:02.000
+and
+
+29:02.000 --> 29:03.000
+send
+
+29:03.000 --> 29:04.000
+more
+
+29:04.000 --> 29:05.000
+messages
+
+29:05.000 --> 29:06.000
+to the
+
+29:06.000 --> 29:07.000
+other side
+
+29:07.000 --> 29:08.000
+at the
+
+29:08.000 --> 29:09.000
+same
+
+29:09.000 --> 29:10.000
+time.
+
+29:10.000 --> 29:11.000
+So
+
+29:11.000 --> 29:12.000
+I can
+
+29:12.000 --> 29:13.000
+modify
+
+29:13.000 --> 29:14.000
+the
+
+29:14.000 --> 29:15.000
+modulation
+
+29:15.000 --> 29:16.000
+code
+
+29:16.000 --> 29:17.000
+and
+
+29:17.000 --> 29:18.000
+send
+
+29:18.000 --> 29:19.000
+more
+
+29:19.000 --> 29:20.000
+messages
+
+29:20.000 --> 29:21.000
+to the
+
+29:21.000 --> 29:22.000
+other side
+
+29:22.000 --> 29:23.000
+at the
+
+29:23.000 --> 29:24.000
+same
+
+29:24.000 --> 29:25.000
+time.
+
+29:25.000 --> 29:26.000
+So
+
+29:26.000 --> 29:27.000
+if
+
+29:27.000 --> 29:28.000
+we have
+
+29:28.000 --> 29:29.000
+the
+
+29:29.000 --> 29:30.000
+light source
+
+29:30.000 --> 29:31.000
+now,
+
+29:31.000 --> 29:32.000
+we can
+
+29:32.000 --> 29:33.000
+modify
+
+29:33.000 --> 29:34.000
+the
+
+29:34.000 --> 29:35.000
+code
+
+29:35.000 --> 29:36.000
+to
+
+29:36.000 --> 29:37.000
+increase
+
+29:37.000 --> 29:38.000
+the
+
+29:38.000 --> 29:39.000
+frequency.
+
+29:39.000 --> 29:40.000
+But
+
+29:40.000 --> 29:41.000
+the
+
+29:41.000 --> 29:42.000
+signal
+
+29:42.000 --> 29:43.000
+can't
+
+29:43.000 --> 29:44.000
+be
+
+29:44.000 --> 29:45.000
+very
+
+29:45.000 --> 29:46.000
+noisy.
+
+29:46.000 --> 29:47.000
+So
+
+29:47.000 --> 29:48.000
+this is
+
+29:48.000 --> 29:49.000
+the
+
+29:49.000 --> 29:50.000
+architecture
+
+29:50.000 --> 29:51.000
+that
+
+29:51.000 --> 29:52.000
+Microsoft
+
+29:52.000 --> 29:53.000
+has
+
+29:53.000 --> 29:54.000
+proposed.
+
+29:54.000 --> 29:55.000
+Or
+
+29:55.000 --> 29:56.000
+there
+
+29:56.000 --> 29:57.000
+is a
+
+29:57.000 --> 29:58.000
+drawback.
+
+29:58.000 --> 29:59.000
+It's not a
+
+29:59.000 --> 30:00.000
+drawback.
+
+30:00.000 --> 30:01.000
+It's a
+
+30:01.000 --> 30:02.000
+trade-off.
+
+30:02.000 --> 30:03.000
+Yes,
+
+30:03.000 --> 30:04.000
+what we
+
+30:04.000 --> 30:05.000
+just said
+
+30:05.000 --> 30:06.000
+was
+
+30:06.000 --> 30:07.000
+great.
+
+30:07.000 --> 30:08.000
+If
+
+30:08.000 --> 30:09.000
+we
+
+30:09.000 --> 30:10.000
+can
+
+30:10.000 --> 30:11.000
+use
+
+30:11.000 --> 30:12.000
+different
+
+30:12.000 --> 30:13.000
+constellation
+
+30:13.000 --> 30:14.000
+maps
+
+30:14.000 --> 30:15.000
+to
+
+30:15.000 --> 30:16.000
+achieve
+
+30:16.000 --> 30:17.000
+better
+
+30:17.000 --> 30:18.000
+frequency.
+
+30:18.000 --> 30:19.000
+But
+
+30:19.000 --> 30:20.000
+the
+
+30:20.000 --> 30:21.000
+problem is
+
+30:21.000 --> 30:22.000
+that
+
+30:22.000 --> 30:23.000
+you
+
+30:23.000 --> 30:24.000
+need to
+
+30:24.000 --> 30:25.000
+reconfigure
+
+30:25.000 --> 30:26.000
+the
+
+30:26.000 --> 30:27.000
+map
+
+30:27.000 --> 30:28.000
+to
+
+30:28.000 --> 30:29.000
+achieve
+
+30:29.000 --> 30:30.000
+good
+
+30:30.000 --> 30:31.000
+frequency.
+
+30:31.000 --> 30:32.000
+If
+
+30:32.000 --> 30:33.000
+you
+
+30:33.000 --> 30:34.000
+have
+
+30:34.000 --> 30:35.000
+a
+
+30:35.000 --> 30:36.000
+new
+
+30:36.000 --> 30:37.000
+map,
+
+30:37.000 --> 30:38.000
+you
+
+30:38.000 --> 30:39.000
+need to
+
+30:39.000 --> 30:40.000
+reconfigure
+
+30:40.000 --> 30:41.000
+it.
+
+30:41.000 --> 30:42.000
+You
+
+30:42.000 --> 30:43.000
+need to
+
+30:43.000 --> 30:44.000
+reconfigure
+
+30:44.000 --> 30:45.000
+it.
+
+30:45.000 --> 30:46.000
+So
+
+30:46.000 --> 30:47.000
+I
+
+30:47.000 --> 30:48.000
+need to
+
+30:48.000 --> 30:49.000
+reconfigure
+
+30:49.000 --> 30:50.000
+it.
+
+30:50.000 --> 30:51.000
+So
+
+30:51.000 --> 30:52.000
+we
+
+30:52.000 --> 30:53.000
+need to
+
+30:53.000 --> 30:54.000
+reconfigure
+
+30:54.000 --> 30:55.000
+the
+
+30:55.000 --> 30:56.000
+map
+
+30:56.000 --> 30:57.000
+to
+
+30:57.000 --> 30:58.000
+achieve
+
+30:58.000 --> 30:59.000
+good
+
+30:59.000 --> 31:00.000
+frequency.
+
+31:00.000 --> 31:01.000
+So
+
+31:01.000 --> 31:02.000
+I
+
+31:02.000 --> 31:03.000
+need to
+
+31:03.000 --> 31:04.000
+reconfigure
+
+31:04.000 --> 31:05.000
+it.
+
+31:05.000 --> 31:06.000
+So
+
+31:06.000 --> 31:07.000
+I
+
+31:07.000 --> 31:08.000
+need to
+
+31:08.000 --> 31:09.000
+reconfigure
+
+31:09.000 --> 31:10.000
+it.
+
+31:10.000 --> 31:11.000
+So
+
+31:11.000 --> 31:12.000
+I
+
+31:12.000 --> 31:13.000
+need to
+
+31:13.000 --> 31:14.000
+reconfigure
+
+31:14.000 --> 31:15.000
+it.
+
+31:15.000 --> 31:16.000
+So
+
+31:16.000 --> 31:17.000
+I
+
+31:17.000 --> 31:18.000
+need to
+
+31:18.000 --> 31:19.000
+reconfigure
+
+31:19.000 --> 31:20.000
+it.
+
+31:20.000 --> 31:21.000
+So
+
+31:21.000 --> 31:22.000
+I
+
+31:22.000 --> 31:23.000
+need to
+
+31:23.000 --> 31:24.000
+reconfigure
+
+31:24.000 --> 31:25.000
+it.
+
+31:25.000 --> 31:26.000
+So
+
+31:26.000 --> 31:27.000
+if we
+
+31:27.000 --> 31:28.000
+suddenly
+
+31:28.000 --> 31:29.000
+reconfigure
+
+31:29.000 --> 31:30.000
+the
+
+31:30.000 --> 31:31.000
+map,
+
+31:31.000 --> 31:32.000
+the
+
+31:32.000 --> 31:33.000
+map
+
+31:33.000 --> 31:34.000
+will
+
+31:34.000 --> 31:35.000
+suddenly
+
+31:35.000 --> 31:36.000
+break.
+
+31:36.000 --> 31:37.000
+The
+
+31:37.000 --> 31:38.000
+broken
+
+31:38.000 --> 31:39.000
+map
+
+31:39.000 --> 31:40.000
+will
+
+31:40.000 --> 31:41.000
+cause
+
+31:41.000 --> 31:42.000
+the
+
+31:42.000 --> 31:43.000
+traffic
+
+31:43.000 --> 31:44.000
+disturbance
+
+31:44.000 --> 31:45.000
+caused
+
+31:45.000 --> 31:46.000
+by
+
+31:46.000 --> 31:47.000
+the
+
+31:47.000 --> 31:48.000
+network
+
+31:48.000 --> 31:49.000
+sending
+
+31:49.000 --> 31:50.000
+signals to
+
+31:50.000 --> 31:51.000
+the
+
+31:51.000 --> 31:52.000
+network.
+
+31:52.000 --> 31:53.000
+So
+
+31:53.000 --> 31:54.000
+the
+
+31:54.000 --> 31:55.000
+traffic
+
+31:55.000 --> 31:56.000
+will
+
+31:56.000 --> 31:57.000
+be
+
+31:57.000 --> 31:58.000
+disrupted
+
+31:58.000 --> 31:59.000
+or
+
+31:59.000 --> 32:00.000
+thrown away.
+
+32:00.000 --> 32:01.000
+So
+
+32:01.000 --> 32:02.000
+the
+
+32:02.000 --> 32:03.000
+users
+
+32:03.000 --> 32:04.000
+will
+
+32:04.000 --> 32:05.000
+protest.
+
+32:05.000 --> 32:06.000
+For
+
+32:06.000 --> 32:07.000
+example,
+
+32:07.000 --> 32:08.000
+if you
+
+32:08.000 --> 32:09.000
+call
+
+32:09.000 --> 32:10.000
+the
+
+32:10.000 --> 32:11.000
+network
+
+32:11.000 --> 32:12.000
+to
+
+32:12.000 --> 32:13.000
+slow
+
+32:13.000 --> 32:14.000
+down
+
+32:14.000 --> 32:15.000
+or
+
+32:15.000 --> 32:16.000
+break
+
+32:16.000 --> 32:17.000
+the
+
+32:17.000 --> 32:18.000
+network,
+
+32:18.000 --> 32:19.000
+it
+
+32:19.000 --> 32:20.000
+will
+
+32:20.000 --> 32:21.000
+cause
+
+32:21.000 --> 32:22.000
+the
+
+32:22.000 --> 32:23.000
+network
+
+32:23.000 --> 32:24.000
+to
+
+32:24.000 --> 32:25.000
+slow
+
+32:25.000 --> 32:26.000
+down
+
+32:26.000 --> 32:27.000
+or
+
+32:27.000 --> 32:28.000
+break
+
+32:28.000 --> 32:29.000
+the
+
+32:29.000 --> 32:30.000
+network.
+
+32:30.000 --> 32:31.000
+So
+
+32:31.000 --> 32:32.000
+the
+
+32:32.000 --> 32:33.000
+traffic
+
+32:33.000 --> 32:34.000
+will
+
+32:34.000 --> 32:35.000
+be
+
+32:35.000 --> 32:36.000
+disrupted
+
+32:36.000 --> 32:37.000
+or
+
+32:37.000 --> 32:38.000
+thrown away.
+
+32:38.000 --> 32:39.000
+So
+
+32:39.000 --> 32:40.000
+the
+
+32:40.000 --> 32:41.000
+traffic
+
+32:41.000 --> 32:42.000
+will
+
+32:42.000 --> 32:43.000
+be
+
+32:43.000 --> 32:44.000
+disrupted
+
+32:44.000 --> 32:45.000
+or
+
+32:45.000 --> 32:46.000
+broken.
+
+32:46.000 --> 32:47.000
+So
+
+32:47.000 --> 32:48.000
+the
+
+32:48.000 --> 32:49.000
+traffic
+
+33:19.000 --> 33:20.000
+will
+
+33:20.000 --> 33:21.000
+be
+
+33:21.000 --> 33:22.000
+disrupted
+
+33:22.000 --> 33:23.000
+or
+
+33:23.000 --> 33:24.000
+broken.
+
+33:24.000 --> 33:25.000
+So
+
+33:25.000 --> 33:26.000
+the
+
+33:26.000 --> 33:27.000
+network
+
+33:27.000 --> 33:28.000
+will
+
+33:28.000 --> 33:29.000
+be
+
+33:29.000 --> 33:30.000
+disrupted
+
+33:30.000 --> 33:31.000
+or
+
+33:31.000 --> 33:32.000
+broken.
+
+33:32.000 --> 33:33.000
+The
+
+33:33.000 --> 33:34.000
+traffic
+
+33:34.000 --> 33:35.000
+will
+
+33:35.000 --> 33:36.000
+be
+
+33:36.000 --> 33:37.000
+broken or
+
+33:37.000 --> 33:38.000
+broken.
+
+33:38.000 --> 33:39.000
+The
+
+33:39.000 --> 33:40.000
+traffic
+
+33:40.000 --> 33:41.000
+will
+
+33:41.000 --> 33:42.000
+be
+
+33:42.000 --> 33:43.000
+disrupted
+
+33:43.000 --> 33:44.000
+or
+
+33:44.000 --> 33:45.000
+broken.
+
+33:45.000 --> 33:46.000
+So
+
+33:46.000 --> 33:47.000
+the
+
+33:47.000 --> 33:48.000
+traffic
+
+33:48.000 --> 33:49.000
+will
+
+33:49.000 --> 33:50.000
+be
+
+33:50.000 --> 33:51.000
+disrupted
+
+33:51.000 --> 33:52.000
+or
+
+33:52.000 --> 33:53.000
+broken
+
+33:53.000 --> 33:54.000
+or
+
+33:54.000 --> 33:55.000
+damaged
+
+33:55.000 --> 33:56.000
+or
+
+33:56.000 --> 33:57.000
+so.
+
+33:57.000 --> 33:58.000
+So
+
+33:58.000 --> 33:59.000
+the
+
+33:59.000 --> 34:00.000
+traffic
+
+34:00.000 --> 34:01.000
+will
+
+34:01.000 --> 34:02.000
+be
+
+34:02.000 --> 34:03.000
+disrupted
+
+34:03.000 --> 34:04.000
+or
+
+34:04.000 --> 34:05.000
+broken.
+
+34:05.000 --> 34:06.000
+So
+
+34:06.000 --> 34:07.000
+the
+
+34:07.000 --> 34:08.000
+traffic
+
+34:08.000 --> 34:09.000
+will
+
+34:09.000 --> 34:10.000
+be
+
+34:10.000 --> 34:11.000
+disrupted
+
+34:11.000 --> 34:12.000
+or
+
+34:12.000 --> 34:13.000
+damaged
+
+34:13.000 --> 34:14.000
+or
+
+34:14.000 --> 34:15.000
+so.
+
+34:15.000 --> 34:16.000
+So
+
+34:16.000 --> 34:17.000
+the
+
+34:47.000 --> 34:49.000
+network
+
+34:49.000 --> 34:50.000
+will
+
+34:50.000 --> 34:51.000
+be
+
+34:51.000 --> 34:52.000
+disrupted
+
+34:52.000 --> 34:53.000
+or
+
+34:53.000 --> 34:54.000
+broken
+
+34:54.000 --> 34:55.000
+or
+
+34:55.000 --> 34:56.000
+damaged
+
+34:56.000 --> 34:57.000
+or
+
+34:57.000 --> 34:58.000
+damaged
+
+34:58.000 --> 34:59.000
+or
+
+34:59.000 --> 35:00.000
+damaged
+
+35:00.000 --> 35:01.000
+or
+
+35:01.000 --> 35:02.000
+other
+
+35:02.000 --> 35:03.000
+traffic
+
+35:03.000 --> 35:04.000
+will
+
+35:04.000 --> 35:05.000
+be
+
+35:05.000 --> 35:06.000
+disrupted
+
+35:06.000 --> 35:07.000
+or
+
+35:07.000 --> 35:08.000
+broken
+
+35:08.000 --> 35:09.000
+or
+
+35:09.000 --> 35:10.000
+damaged
+
+35:10.000 --> 35:11.000
+or
+
+35:11.000 --> 35:12.000
+damaged
+
+35:12.000 --> 35:13.000
+or
+
+35:13.000 --> 35:14.000
+damaged
+
+35:14.000 --> 35:15.000
+or
+
+35:15.000 --> 35:16.000
+****
+
+35:16.000 --> 35:19.000
+disrupted
+
+35:19.000 --> 35:20.000
+or
+
+35:20.000 --> 35:21.000
+trashed
+
+35:21.000 --> 35:23.000
+or
+
+35:23.000 --> 35:29.000
+controlled
+
+35:29.000 --> 35:30.000
+traffic
+
+35:30.000 --> 35:31.000
+by
+
+35:31.000 --> 35:32.000
+walking
+
+35:32.000 --> 35:33.000
+or
+
+35:33.000 --> 35:34.000
+biking
+
+35:34.000 --> 35:35.000
+or
+
+35:35.000 --> 35:37.000
+traveling
+
+35:37.000 --> 35:38.000
+by
+
+35:38.000 --> 35:39.000
+running
+
+35:39.000 --> 35:40.000
+or
+
+35:40.000 --> 35:42.000
+traveling
+
+35:42.000 --> 35:43.000
+express
+
+35:43.000 --> 35:47.000
+The traffic may be slightly affected by the movement of the network,
+
+35:47.000 --> 35:52.000
+but it is not directly affected by the movement of the network.
+
+35:52.000 --> 35:54.000
+This is similar to
+
+35:54.000 --> 35:56.000
+what the paper said
+
+35:56.000 --> 35:58.000
+in the past.
+
+35:58.000 --> 36:00.000
+If we want to
+
+36:00.000 --> 36:02.000
+change the
+
+36:02.000 --> 36:03.000
+traffic,
+
+36:03.000 --> 36:06.000
+we should change the concept in stages.
+
+36:06.000 --> 36:11.000
+This is the update of the multi-step.
+
+36:11.000 --> 36:13.000
+So,
+
+36:13.000 --> 36:15.000
+we can see the difference.
+
+36:15.000 --> 36:17.000
+If we use the original proposal,
+
+36:17.000 --> 36:18.000
+which is to cut it off directly,
+
+36:18.000 --> 36:20.000
+and then restore it,
+
+36:20.000 --> 36:22.000
+we may cause a huge
+
+36:22.000 --> 36:25.000
+churn.
+
+36:25.000 --> 36:28.000
+But if we have several steps now,
+
+36:28.000 --> 36:31.000
+what should we do?
+
+36:31.000 --> 36:34.000
+What should we do
+
+36:34.000 --> 36:36.000
+in each step?
+
+36:36.000 --> 36:39.000
+This is what we want to do.
+
+36:39.000 --> 36:42.000
+In this paper,
+
+36:42.000 --> 36:44.000
+what kind of update
+
+36:44.000 --> 36:46.000
+do we want to do?
+
+36:46.000 --> 36:47.000
+In fact,
+
+36:47.000 --> 36:49.000
+I try not to interfere with
+
+36:49.000 --> 36:50.000
+so much
+
+36:50.000 --> 36:51.000
+network traffic
+
+36:51.000 --> 36:52.000
+in each step.
+
+36:52.000 --> 36:53.000
+This sounds quite intuitive.
+
+36:53.000 --> 36:55.000
+If I can
+
+36:55.000 --> 36:57.000
+get to my
+
+36:57.000 --> 36:59.000
+final destination today,
+
+36:59.000 --> 37:01.000
+and in each step,
+
+37:01.000 --> 37:02.000
+I will not
+
+37:02.000 --> 37:03.000
+let my
+
+37:03.000 --> 37:05.000
+original network traffic
+
+37:05.000 --> 37:07.000
+be cut off.
+
+37:07.000 --> 37:08.000
+It may only lose a little,
+
+37:08.000 --> 37:09.000
+but not too much.
+
+37:09.000 --> 37:10.000
+For me,
+
+37:10.000 --> 37:11.000
+the less loss,
+
+37:11.000 --> 37:13.000
+the better.
+
+37:13.000 --> 37:15.000
+If the best situation is that
+
+37:15.000 --> 37:17.000
+I do not lose any traffic at all,
+
+37:17.000 --> 37:18.000
+I can get to the end.
+
+37:18.000 --> 37:20.000
+But because you have to adjust,
+
+37:20.000 --> 37:21.000
+you have to
+
+37:21.000 --> 37:22.000
+have some lines that cannot be used.
+
+37:22.000 --> 37:23.000
+So, you will definitely lose a little,
+
+37:23.000 --> 37:25.000
+but you do not lose too much.
+
+37:25.000 --> 37:27.000
+This should be
+
+37:27.000 --> 37:29.000
+a conceptually
+
+37:29.000 --> 37:31.000
+better
+
+37:31.000 --> 37:33.000
+adjustment plan.
+
+37:33.000 --> 37:34.000
+The concept of
+
+37:34.000 --> 37:36.000
+not losing too much
+
+37:36.000 --> 37:37.000
+is called perseverance.
+
+37:37.000 --> 37:38.000
+Perseverance
+
+37:38.000 --> 37:39.000
+is the so-called
+
+37:39.000 --> 37:40.000
+consistency.
+
+37:40.000 --> 37:41.000
+That is,
+
+37:41.000 --> 37:42.000
+this traffic,
+
+37:42.000 --> 37:43.000
+originally,
+
+37:43.000 --> 37:44.000
+for example,
+
+37:44.000 --> 37:45.000
+if it is 1,
+
+37:45.000 --> 37:46.000
+it can be conservative.
+
+37:46.000 --> 37:47.000
+It can not
+
+37:47.000 --> 37:48.000
+lose much.
+
+37:48.000 --> 37:49.000
+Its loss
+
+37:49.000 --> 37:50.000
+may be less than
+
+37:50.000 --> 37:51.000
+how much.
+
+37:51.000 --> 37:52.000
+We call it
+
+37:52.000 --> 37:53.000
+perseverance level.
+
+37:53.000 --> 37:54.000
+Of course,
+
+37:54.000 --> 37:55.000
+we hope that
+
+37:55.000 --> 37:56.000
+this perseverance level
+
+37:56.000 --> 37:57.000
+is
+
+37:57.000 --> 37:58.000
+the higher,
+
+37:58.000 --> 37:59.000
+the better.
+
+37:59.000 --> 38:00.000
+Perseverance
+
+38:00.000 --> 38:01.000
+is originally
+
+38:01.000 --> 38:02.000
+1.
+
+38:02.000 --> 38:03.000
+How much
+
+38:03.000 --> 38:04.000
+do I need
+
+38:04.000 --> 38:05.000
+for the rest?
+
+38:05.000 --> 38:06.000
+For example,
+
+38:06.000 --> 38:07.000
+0.9,
+
+38:07.000 --> 38:08.000
+0.8,
+
+38:08.000 --> 38:09.000
+like this.
+
+38:09.000 --> 38:10.000
+Like this.
+
+38:10.000 --> 38:11.000
+So,
+
+38:11.000 --> 38:12.000
+what is
+
+38:12.000 --> 38:13.000
+our final
+
+38:13.000 --> 38:14.000
+plan?
+
+38:14.000 --> 38:15.000
+Our plan
+
+38:15.000 --> 38:16.000
+becomes that
+
+38:16.000 --> 38:17.000
+we want to
+
+38:17.000 --> 38:18.000
+get to the end
+
+38:18.000 --> 38:19.000
+as soon as possible,
+
+38:19.000 --> 38:20.000
+but we do not want
+
+38:20.000 --> 38:21.000
+to lose too much
+
+38:21.000 --> 38:22.000
+traffic
+
+38:22.000 --> 38:23.000
+in each step
+
+38:23.000 --> 38:24.000
+in the middle.
+
+38:24.000 --> 38:25.000
+It becomes that
+
+38:25.000 --> 38:26.000
+we look for
+
+38:26.000 --> 38:27.000
+the so-called
+
+38:27.000 --> 38:28.000
+perseverance way,
+
+38:28.000 --> 38:29.000
+which is
+
+38:29.000 --> 38:30.000
+to consider
+
+38:30.000 --> 38:31.000
+the consistency of
+
+38:31.000 --> 38:32.000
+traffic engineering.
+
+38:32.000 --> 38:33.000
+The consistency of
+
+38:33.000 --> 38:34.000
+traffic engineering
+
+38:34.000 --> 38:35.000
+means that
+
+38:35.000 --> 38:36.000
+we want to
+
+38:36.000 --> 38:37.000
+get to the end
+
+38:37.000 --> 38:38.000
+as soon as possible,
+
+38:38.000 --> 38:39.000
+but we do not want to
+
+38:39.000 --> 38:40.000
+lose too much
+
+38:40.000 --> 38:41.000
+traffic
+
+38:41.000 --> 38:42.000
+in each step
+
+38:42.000 --> 38:43.000
+in the middle.
+
+38:43.000 --> 38:44.000
+This is
+
+38:44.000 --> 38:45.000
+what we
+
+38:45.000 --> 38:46.000
+proposed
+
+38:46.000 --> 38:47.000
+in the middle
+
+38:47.000 --> 38:48.000
+of this paper.
+
+38:48.000 --> 38:49.000
+We want to
+
+38:49.000 --> 38:50.000
+do this
+
+38:50.000 --> 38:51.000
+new proposal.
+
+38:51.000 --> 38:52.000
+We think
+
+38:52.000 --> 38:53.000
+this is
+
+38:53.000 --> 38:54.000
+actually better
+
+38:54.000 --> 38:55.000
+than the
+
+38:55.000 --> 38:56.000
+original
+
+38:56.000 --> 38:57.000
+churn-based
+
+38:57.000 --> 38:58.000
+proposal.
+
+38:58.000 --> 38:59.000
+Why?
+
+38:59.000 --> 39:00.000
+Because
+
+39:00.000 --> 39:01.000
+in the churn-based
+
+39:01.000 --> 39:02.000
+proposal,
+
+39:02.000 --> 39:03.000
+you cut off
+
+39:03.000 --> 39:04.000
+most of the
+
+39:04.000 --> 39:05.000
+traffic,
+
+39:05.000 --> 39:06.000
+so you will
+
+39:06.000 --> 39:07.000
+get a
+
+39:07.000 --> 39:08.000
+very serious
+
+39:08.000 --> 39:09.000
+network interference.
+
+39:09.000 --> 39:10.000
+This is
+
+39:10.000 --> 39:11.000
+actually the
+
+39:11.000 --> 39:12.000
+so-called
+
+39:12.000 --> 39:13.000
+perseverance level
+
+39:13.000 --> 39:14.000
+zero.
+
+39:14.000 --> 39:15.000
+Between
+
+39:15.000 --> 39:16.000
+the two
+
+39:16.000 --> 39:17.000
+steps,
+
+39:17.000 --> 39:18.000
+what can
+
+39:18.000 --> 39:19.000
+I lose the most?
+
+39:19.000 --> 39:20.000
+I can lose
+
+39:20.000 --> 39:21.000
+all my traffic.
+
+39:21.000 --> 39:22.000
+All traffic
+
+39:22.000 --> 39:23.000
+can be cut off,
+
+39:23.000 --> 39:24.000
+which is
+
+39:24.000 --> 39:25.000
+perseverance level
+
+39:25.000 --> 39:26.000
+zero.
+
+39:26.000 --> 39:27.000
+However,
+
+39:27.000 --> 39:28.000
+if we
+
+39:28.000 --> 39:29.000
+keep a
+
+39:29.000 --> 39:30.000
+higher
+
+39:30.000 --> 39:31.000
+perseverance level,
+
+39:31.000 --> 39:32.000
+for example,
+
+39:32.000 --> 39:33.000
+0.5,
+
+39:33.000 --> 39:34.000
+there are
+
+39:34.000 --> 39:35.000
+two middle
+
+39:35.000 --> 39:36.000
+steps in
+
+39:36.000 --> 39:37.000
+the update
+
+39:37.000 --> 39:38.000
+plan.
+
+39:38.000 --> 39:39.000
+In each
+
+39:39.000 --> 39:40.000
+plan,
+
+39:40.000 --> 39:41.000
+I lose
+
+39:41.000 --> 39:42.000
+at most
+
+39:42.000 --> 39:43.000
+half of the
+
+39:43.000 --> 39:44.000
+traffic.
+
+39:44.000 --> 39:45.000
+For example,
+
+39:45.000 --> 39:46.000
+if my
+
+39:46.000 --> 39:47.000
+traffic was
+
+39:47.000 --> 39:48.000
+from the
+
+39:48.000 --> 39:49.000
+left to the
+
+39:49.000 --> 39:50.000
+right,
+
+39:50.000 --> 39:51.000
+all my
+
+39:51.000 --> 39:52.000
+lines were
+
+39:52.000 --> 39:53.000
+used up.
+
+39:53.000 --> 39:54.000
+In the first
+
+39:54.000 --> 39:55.000
+step,
+
+39:55.000 --> 39:56.000
+I pulled
+
+39:56.000 --> 39:57.000
+the traffic
+
+39:57.000 --> 39:58.000
+from the
+
+39:58.000 --> 39:59.000
+top line
+
+39:59.000 --> 40:00.000
+down
+
+40:00.000 --> 40:01.000
+and cut
+
+40:01.000 --> 40:02.000
+them
+
+40:02.000 --> 40:03.000
+off.
+
+40:03.000 --> 40:04.000
+In this way,
+
+40:04.000 --> 40:05.000
+I keep
+
+40:05.000 --> 40:06.000
+at least
+
+40:06.000 --> 40:07.000
+half of
+
+40:07.000 --> 40:08.000
+my
+
+40:08.000 --> 40:09.000
+traffic.
+
+40:09.000 --> 40:10.000
+In the
+
+40:10.000 --> 40:11.000
+entire
+
+40:11.000 --> 40:12.000
+update process,
+
+40:12.000 --> 40:13.000
+Can you
+
+40:13.000 --> 40:14.000
+go back
+
+40:14.000 --> 40:15.000
+to the
+
+40:15.000 --> 40:16.000
+last page?
+
+40:16.000 --> 40:17.000
+Yes,
+
+40:17.000 --> 40:18.000
+it's in the
+
+40:18.000 --> 40:19.000
+last page.
+
+40:19.000 --> 40:20.000
+It's in the
+
+40:20.000 --> 40:21.000
+last page.
+
+40:21.000 --> 40:22.000
+There are
+
+40:22.000 --> 40:23.000
+several pages
+
+40:23.000 --> 40:24.000
+in the
+
+40:24.000 --> 40:25.000
+last page.
+
+40:25.000 --> 40:26.000
+This one?
+
+40:26.000 --> 40:27.000
+Yes.
+
+40:27.000 --> 40:28.000
+It's a bit
+
+40:28.000 --> 40:29.000
+laggy.
+
+40:29.000 --> 40:30.000
+Yes,
+
+40:30.000 --> 40:31.000
+this page.
+
+40:31.000 --> 40:32.000
+I don't know
+
+40:32.000 --> 40:33.000
+if this is
+
+40:33.000 --> 40:34.000
+practical.
+
+40:34.000 --> 40:35.000
+For example,
+
+40:35.000 --> 40:36.000
+you show
+
+40:36.000 --> 40:37.000
+a step,
+
+40:37.000 --> 40:38.000
+the first
+
+40:38.000 --> 40:39.000
+version,
+
+40:39.000 --> 40:40.000
+and then you
+
+40:40.000 --> 40:41.000
+propose
+
+40:41.000 --> 40:42.000
+unstep.
+
+40:42.000 --> 40:43.000
+The next
+
+40:43.000 --> 40:44.000
+thing I think of
+
+40:44.000 --> 40:45.000
+is why
+
+40:45.000 --> 40:46.000
+don't you
+
+40:46.000 --> 40:47.000
+make it
+
+40:47.000 --> 40:48.000
+infinite?
+
+40:48.000 --> 40:49.000
+This
+
+40:49.000 --> 40:50.000
+line becomes
+
+40:50.000 --> 40:51.000
+a smooth
+
+40:51.000 --> 40:52.000
+function.
+
+40:52.000 --> 40:53.000
+A very
+
+40:53.000 --> 40:54.000
+good question.
+
+40:54.000 --> 40:55.000
+Your
+
+40:55.000 --> 40:56.000
+limitation
+
+40:56.000 --> 40:57.000
+is not
+
+40:57.000 --> 40:58.000
+how big
+
+40:58.000 --> 40:59.000
+a step
+
+40:59.000 --> 41:00.000
+is,
+
+41:00.000 --> 41:01.000
+right?
+
+41:01.000 --> 41:02.000
+But what
+
+41:02.000 --> 41:03.000
+does every step
+
+41:03.000 --> 41:04.000
+mean?
+
+41:04.000 --> 41:05.000
+Every step
+
+41:05.000 --> 41:06.000
+needs at
+
+41:06.000 --> 41:07.000
+least one
+
+41:07.000 --> 41:08.000
+line,
+
+41:08.000 --> 41:09.000
+right?
+
+41:09.000 --> 41:10.000
+But the
+
+41:10.000 --> 41:11.000
+network is
+
+41:11.000 --> 41:12.000
+made up
+
+41:12.000 --> 41:13.000
+of limited
+
+41:13.000 --> 41:14.000
+lines,
+
+41:14.000 --> 41:15.000
+so you
+
+41:15.000 --> 41:16.000
+can't have
+
+41:16.000 --> 41:17.000
+infinite steps
+
+41:17.000 --> 41:18.000
+because you
+
+41:18.000 --> 41:19.000
+need at
+
+41:19.000 --> 41:20.000
+least one
+
+41:20.000 --> 41:21.000
+line every
+
+41:21.000 --> 41:22.000
+time.
+
+41:22.000 --> 41:23.000
+So you
+
+41:23.000 --> 41:24.000
+can only
+
+41:24.000 --> 41:25.000
+have n
+
+41:25.000 --> 41:26.000
+lines,
+
+41:26.000 --> 41:27.000
+so you
+
+41:27.000 --> 41:28.000
+can only
+
+41:28.000 --> 41:29.000
+have
+
+41:29.000 --> 41:30.000
+one
+
+41:30.000 --> 41:31.000
+line every
+
+41:31.000 --> 41:32.000
+time.
+
+41:32.000 --> 41:33.000
+For
+
+41:33.000 --> 41:34.000
+example,
+
+41:34.000 --> 41:35.000
+if I
+
+41:35.000 --> 41:36.000
+want to
+
+41:36.000 --> 41:37.000
+make a
+
+41:37.000 --> 41:38.000
+better
+
+41:38.000 --> 41:39.000
+step,
+
+41:39.000 --> 41:40.000
+but
+
+41:40.000 --> 41:41.000
+it
+
+41:41.000 --> 41:42.000
+gets
+
+41:42.000 --> 41:43.000
+bigger
+
+41:43.000 --> 41:44.000
+in the
+
+41:44.000 --> 41:45.000
+middle,
+
+41:45.000 --> 41:46.000
+I
+
+41:46.000 --> 41:47.000
+don't
+
+41:47.000 --> 41:48.000
+enjoy
+
+41:48.000 --> 41:49.000
+anything.
+
+41:49.000 --> 41:50.000
+I
+
+41:50.000 --> 41:51.000
+lose
+
+41:51.000 --> 41:52.000
+some
+
+41:52.000 --> 41:53.000
+frequency.
+
+41:53.000 --> 41:54.000
+So
+
+41:54.000 --> 41:55.000
+we want
+
+41:55.000 --> 41:56.000
+the process
+
+41:56.000 --> 41:57.000
+to be
+
+41:57.000 --> 41:58.000
+as short
+
+41:58.000 --> 41:59.000
+as
+
+41:59.000 --> 42:00.000
+possible.
+
+42:00.000 --> 42:01.000
+We
+
+42:01.000 --> 42:02.000
+can't do
+
+42:02.000 --> 42:03.000
+that in
+
+42:03.000 --> 42:04.000
+reality.
+
+42:04.000 --> 42:05.000
+The
+
+42:05.000 --> 42:06.000
+second
+
+42:06.000 --> 42:07.000
+thing is
+
+42:07.000 --> 42:08.000
+that even
+
+42:08.000 --> 42:09.000
+if we
+
+42:09.000 --> 42:10.000
+consider
+
+42:10.000 --> 42:11.000
+an infinite
+
+42:11.000 --> 42:12.000
+network,
+
+42:12.000 --> 42:13.000
+we
+
+42:13.000 --> 42:14.000
+don't want
+
+42:14.000 --> 42:15.000
+to do
+
+42:15.000 --> 42:16.000
+that because
+
+42:16.000 --> 42:17.000
+we want
+
+42:17.000 --> 42:18.000
+to get
+
+42:18.000 --> 42:19.000
+to the
+
+42:19.000 --> 42:20.000
+new
+
+42:20.000 --> 42:21.000
+state as
+
+42:21.000 --> 42:22.000
+soon as
+
+42:22.000 --> 42:23.000
+possible
+
+42:23.000 --> 42:24.000
+so that
+
+42:24.000 --> 42:25.000
+we
+
+42:25.000 --> 42:26.000
+can have
+
+42:26.000 --> 42:27.000
+more
+
+42:27.000 --> 42:28.000
+flexibility.
+
+42:28.000 --> 42:29.000
+For
+
+42:29.000 --> 42:30.000
+example,
+
+42:30.000 --> 42:31.000
+we can
+
+42:31.000 --> 42:32.000
+ask a
+
+42:32.000 --> 42:33.000
+few
+
+42:33.000 --> 42:34.000
+questions.
+
+42:34.000 --> 42:35.000
+We
+
+42:35.000 --> 42:36.000
+call this
+
+42:36.000 --> 42:37.000
+a
+
+42:37.000 --> 42:38.000
+re-adaptation
+
+42:38.000 --> 42:39.000
+planning
+
+42:39.000 --> 42:40.000
+problem.
+
+42:40.000 --> 42:41.000
+How
+
+42:41.000 --> 42:42.000
+do I
+
+42:42.000 --> 42:43.000
+adjust
+
+42:43.000 --> 42:44.000
+this
+
+42:44.000 --> 42:45.000
+variable
+
+42:45.000 --> 42:46.000
+network
+
+42:46.000 --> 42:47.000
+plan?
+
+42:47.000 --> 42:48.000
+How
+
+42:48.000 --> 42:49.000
+many
+
+42:49.000 --> 42:50.000
+steps
+
+42:50.000 --> 42:51.000
+do I
+
+42:51.000 --> 42:52.000
+need to
+
+42:52.000 --> 42:53.000
+do?
+
+42:53.000 --> 42:54.000
+The
+
+42:54.000 --> 42:55.000
+first
+
+42:55.000 --> 42:56.000
+question is
+
+42:56.000 --> 42:57.000
+how
+
+42:57.000 --> 42:58.000
+do I
+
+42:58.000 --> 42:59.000
+solve this
+
+42:59.000 --> 43:00.000
+problem?
+
+43:00.000 --> 43:01.000
+Is
+
+43:01.000 --> 43:02.000
+there
+
+43:02.000 --> 43:03.000
+a way
+
+43:03.000 --> 43:04.000
+to
+
+43:04.000 --> 43:05.000
+solve it?
+
+43:05.000 --> 43:06.000
+Unfortunately,
+
+43:06.000 --> 43:07.000
+this is
+
+43:07.000 --> 43:08.000
+a very
+
+43:08.000 --> 43:09.000
+difficult
+
+43:09.000 --> 43:10.000
+problem
+
+43:10.000 --> 43:11.000
+called
+
+43:11.000 --> 43:12.000
+NP-hard.
+
+43:12.000 --> 43:13.000
+This
+
+43:13.000 --> 43:14.000
+is a
+
+43:14.000 --> 43:15.000
+very
+
+43:15.000 --> 43:16.000
+difficult
+
+43:16.000 --> 43:17.000
+problem
+
+43:17.000 --> 43:18.000
+in
+
+43:18.000 --> 43:19.000
+computer
+
+43:19.000 --> 43:20.000
+science.
+
+43:20.000 --> 43:21.000
+It's
+
+43:21.000 --> 43:22.000
+basically
+
+43:22.000 --> 43:23.000
+very difficult
+
+43:23.000 --> 43:24.000
+to
+
+43:24.000 --> 43:25.000
+solve
+
+43:25.000 --> 43:26.000
+this
+
+43:26.000 --> 43:27.000
+problem.
+
+43:27.000 --> 43:28.000
+If
+
+43:28.000 --> 43:29.000
+I
+
+43:29.000 --> 43:30.000
+didn't
+
+43:30.000 --> 43:31.000
+calculate it
+
+43:31.000 --> 43:32.000
+accurately,
+
+43:32.000 --> 43:33.000
+it's
+
+43:33.000 --> 43:34.000
+basically
+
+43:34.000 --> 43:35.000
+the same
+
+43:35.000 --> 43:36.000
+as
+
+43:36.000 --> 43:37.000
+the
+
+43:37.000 --> 43:38.000
+NP-hard
+
+43:38.000 --> 43:39.000
+problem.
+
+43:39.000 --> 43:40.000
+The
+
+43:40.000 --> 43:41.000
+problem
+
+43:41.000 --> 43:42.000
+is
+
+43:42.000 --> 43:43.000
+too
+
+43:43.000 --> 43:44.000
+difficult.
+
+43:44.000 --> 43:45.000
+It's
+
+43:45.000 --> 43:46.000
+not only
+
+43:46.000 --> 43:47.000
+difficult
+
+43:47.000 --> 43:48.000
+to find
+
+43:48.000 --> 43:49.000
+the best
+
+43:49.000 --> 43:50.000
+plan,
+
+43:50.000 --> 43:51.000
+it's
+
+43:51.000 --> 43:52.000
+also
+
+43:52.000 --> 43:53.000
+difficult
+
+43:53.000 --> 43:54.000
+to
+
+43:54.000 --> 43:55.000
+solve
+
+43:55.000 --> 43:56.000
+the
+
+43:56.000 --> 43:57.000
+problem.
+
+43:57.000 --> 43:58.000
+This
+
+43:58.000 --> 43:59.000
+is
+
+43:59.000 --> 44:00.000
+a very
+
+44:00.000 --> 44:01.000
+difficult
+
+44:01.000 --> 44:02.000
+problem.
+
+44:02.000 --> 44:03.000
+It's
+
+44:03.000 --> 44:04.000
+very
+
+44:04.000 --> 44:05.000
+difficult
+
+44:05.000 --> 44:06.000
+to
+
+44:06.000 --> 44:07.000
+solve
+
+44:07.000 --> 44:08.000
+the
+
+44:08.000 --> 44:09.000
+problem.
+
+44:09.000 --> 44:10.000
+The
+
+44:10.000 --> 44:11.000
+problem
+
+44:11.000 --> 44:12.000
+is
+
+44:12.000 --> 44:13.000
+too
+
+44:13.000 --> 44:14.000
+difficult
+
+44:14.000 --> 44:15.000
+to
+
+44:15.000 --> 44:16.000
+solve.
+
+44:16.000 --> 44:17.000
+It's
+
+44:17.000 --> 44:18.000
+very
+
+44:18.000 --> 44:19.000
+difficult
+
+44:19.000 --> 44:20.000
+to
+
+44:20.000 --> 44:21.000
+solve
+
+44:21.000 --> 44:22.000
+the
+
+44:22.000 --> 44:23.000
+problem.
+
+44:23.000 --> 44:24.000
+It's
+
+44:24.000 --> 44:25.000
+a
+
+44:25.000 --> 44:26.000
+very
+
+44:26.000 --> 44:27.000
+difficult
+
+44:27.000 --> 44:28.000
+problem.
+
+44:28.000 --> 44:29.000
+The
+
+44:29.000 --> 44:30.000
+problem
+
+44:30.000 --> 44:31.000
+is
+
+44:31.000 --> 44:32.000
+not
+
+44:32.000 --> 44:33.000
+so
+
+44:33.000 --> 44:34.000
+difficult
+
+44:34.000 --> 44:35.000
+that
+
+44:35.000 --> 44:36.000
+it's
+
+44:36.000 --> 44:37.000
+not
+
+44:37.000 --> 44:38.000
+so
+
+44:38.000 --> 44:39.000
+difficult
+
+44:39.000 --> 44:40.000
+that
+
+44:40.000 --> 44:41.000
+it's
+
+44:41.000 --> 44:42.000
+not
+
+44:42.000 --> 44:43.000
+so
+
+44:43.000 --> 44:44.000
+difficult
+
+44:44.000 --> 44:45.000
+that
+
+44:45.000 --> 44:46.000
+it's
+
+44:46.000 --> 44:47.000
+not
+
+44:47.000 --> 44:48.000
+so
+
+44:48.000 --> 44:49.000
+difficult
+
+44:49.000 --> 44:50.000
+that
+
+44:50.000 --> 44:51.000
+it's
+
+44:51.000 --> 44:52.000
+not
+
+44:52.000 --> 44:53.000
+so
+
+44:53.000 --> 44:54.000
+difficult
+
+44:54.000 --> 44:55.000
+that
+
+44:55.000 --> 44:56.000
+it's
+
+44:56.000 --> 44:57.000
+not
+
+44:57.000 --> 44:58.000
+so
+
+44:58.000 --> 44:59.000
+difficult
+
+44:59.000 --> 45:00.000
+that
+
+45:00.000 --> 45:01.000
+it's
+
+45:01.000 --> 45:02.000
+not
+
+45:02.000 --> 45:03.000
+so
+
+45:03.000 --> 45:04.000
+difficult
+
+45:04.000 --> 45:05.000
+that
+
+45:05.000 --> 45:06.000
+pride
+
+45:06.000 --> 45:07.000
+is
+
+45:07.000 --> 45:08.000
+not
+
+45:08.000 --> 45:09.000
+so
+
+45:09.000 --> 45:10.000
+difficult
+
+45:10.000 --> 45:11.000
+that
+
+45:11.000 --> 45:12.000
+it's
+
+45:12.000 --> 45:13.000
+not
+
+45:13.000 --> 45:14.000
+so
+
+45:14.000 --> 45:15.000
+difficult
+
+45:15.000 --> 45:16.000
+that
+
+45:16.000 --> 45:17.000
+it is
+
+45:17.000 --> 45:18.000
+not
+
+45:18.000 --> 45:19.000
+so
+
+45:19.000 --> 45:20.000
+difficult
+
+45:20.000 --> 45:21.000
+that
+
+45:21.000 --> 45:22.000
+pride
+
+45:22.000 --> 45:23.000
+is
+
+45:23.000 --> 45:24.000
+not
+
+45:24.000 --> 45:25.000
+so
+
+45:25.000 --> 45:26.000
+difficult
+
+45:26.000 --> 45:27.000
+that
+
+45:27.000 --> 45:28.000
+it is
+
+45:28.000 --> 45:29.000
+not
+
+45:29.000 --> 45:30.000
+so
+
+45:30.000 --> 45:31.000
+difficult
+
+45:31.000 --> 45:32.000
+that
+
+45:32.000 --> 45:33.000
+pride
+
+45:33.000 --> 45:34.000
+it is
+
+45:34.000 --> 45:35.000
+it
+
+45:35.000 --> 45:36.000
+is
+
+45:36.000 --> 45:37.000
+not
+
+45:37.000 --> 45:38.000
+so
+
+45:38.000 --> 45:39.000
+difficult
+
+45:39.000 --> 45:40.000
+that
+
+45:40.000 --> 45:41.000
+pride
+
+45:41.000 --> 45:42.000
+it is
+
+45:42.000 --> 45:43.000
+so
+
+45:43.000 --> 45:44.000
+difficult
+
+45:44.000 --> 45:45.000
+that
+
+45:45.000 --> 45:46.000
+it is
+
+45:46.000 --> 45:47.000
+so
+
+45:47.000 --> 45:48.000
+difficult
+
+45:48.000 --> 45:49.000
+that
+
+45:49.000 --> 45:50.000
+pride
+
+45:50.000 --> 45:51.000
+is
+
+45:51.000 --> 45:52.000
+not
+
+45:52.000 --> 45:53.000
+so
+
+45:53.000 --> 45:53.040
+difficult
+
+45:53.040 --> 45:54.040
+that
+
+45:54.040 --> 45:55.040
+pride
+
+45:55.040 --> 45:56.040
+is
+
+45:56.040 --> 45:57.000
+not
+
+45:57.000 --> 45:58.020
+so
+
+45:58.020 --> 45:59.020
+difficult
+
+45:59.020 --> 46:00.020
+that
+
+46:00.020 --> 46:01.020
+王
+
+46:01.020 --> 46:02.020
+王
+
+46:02.020 --> 46:03.020
+王
+
+46:03.020 --> 46:04.020
+王
+
+46:04.020 --> 46:05.020
+王
+
+46:05.020 --> 46:06.020
+王
+
+46:06.020 --> 46:07.020
+王
+
+46:07.020 --> 46:08.020
+王
+
+46:08.020 --> 46:09.020
+王
+
+46:09.020 --> 46:10.020
+王
+
+46:10.020 --> 46:11.020
+王
+
+46:11.020 --> 46:12.020
+王
+
+46:12.020 --> 46:13.020
+王
+
+46:13.020 --> 46:14.020
+王
+
+46:14.020 --> 46:15.020
+王
+
+46:15.020 --> 46:18.020
+王
+
+46:18.020 --> 46:19.000
+王
+
+46:20.000 --> 46:22.000
+王
+
+46:25.000 --> 46:26.000
+王
+
+46:26.000 --> 46:27.000
+王
+
+46:27.000 --> 46:28.000
+王
+
+46:28.000 --> 46:29.020
+王
+
+46:29.020 --> 46:30.020
+王
+
+46:30.020 --> 46:31.020
+王
+
+46:31.020 --> 46:32.020
+王
+
+46:32.020 --> 46:33.020
+王
+
+46:33.020 --> 46:34.020
+王
+
+46:34.020 --> 46:35.020
+王
+
+46:35.020 --> 46:36.020
+王
+
+46:36.020 --> 46:37.020
+王
+
+46:37.020 --> 46:38.020
+王
+
+46:38.020 --> 46:39.020
+王
+
+46:39.020 --> 46:40.020
+王
+
+46:40.020 --> 46:41.020
+王
+
+46:41.020 --> 46:42.020
+王
+
+46:42.020 --> 46:43.020
+王
+
+46:43.020 --> 46:44.020
+王
+
+46:44.020 --> 46:45.020
+王
+
+46:45.020 --> 46:46.020
+王
+
+46:46.020 --> 46:47.020
+王
+
+46:47.020 --> 46:48.020
+王
+
+46:48.020 --> 46:49.020
+王
+
+46:49.020 --> 46:51.020
+王
+
+46:51.020 --> 46:52.020
+王
+
+46:52.020 --> 46:53.020
+王
+
+46:55.020 --> 46:56.020
+王
+
+46:56.040 --> 46:57.040
+王
+
+47:00.040 --> 47:01.040
+王
+
+47:07.040 --> 47:08.040
+王
+
+47:14.040 --> 47:15.040
+王
+
+47:15.040 --> 47:16.040
+王
+
+47:16.040 --> 47:17.040
+王
+
+47:17.060 --> 47:18.060
+王
+
+47:21.060 --> 47:22.060
+王
+
+47:22.060 --> 47:23.060
+王
+
+47:23.060 --> 47:24.060
+王
+
+47:25.060 --> 47:26.060
+王
+
+47:26.060 --> 47:27.060
+王
+
+47:27.060 --> 47:28.060
+王
+
+47:28.060 --> 47:29.060
+王
+
+47:29.060 --> 47:30.060
+王
+
+47:30.060 --> 47:31.060
+王
+
+47:31.060 --> 47:32.060
+王
+
+47:32.060 --> 47:33.060
+王
+
+47:33.060 --> 47:34.060
+王
+
+47:34.060 --> 47:35.060
+王
+
+47:37.060 --> 47:38.060
+王
+
+47:39.060 --> 47:40.060
+王
+
+47:40.060 --> 47:41.060
+王
+
+47:41.060 --> 47:42.060
+王
+
+47:42.060 --> 47:43.060
+王
+
+47:43.060 --> 47:44.060
+王
+
+47:44.060 --> 47:45.060
+王
+
+47:45.060 --> 47:46.060
+王
+
+47:46.080 --> 47:52.080
+So, did our proposal really cut off the traffic?
+
+47:52.080 --> 47:57.080
+Did we really avoid this from happening?
+
+47:57.080 --> 47:59.080
+And then,
+
+47:59.080 --> 48:02.080
+we said that we have heuristics.
+
+48:02.080 --> 48:05.080
+Is this heuristic easy to calculate?
+
+48:05.080 --> 48:07.080
+Or is it actually difficult to calculate?
+
+48:07.080 --> 48:09.080
+If it's also difficult to calculate,
+
+48:09.080 --> 48:10.080
+we didn't mention one thing,
+
+48:10.080 --> 48:12.080
+and then we have to calculate for a long time,
+
+48:12.080 --> 48:13.080
+for example, for ten minutes,
+
+48:13.080 --> 48:14.080
+we can only update our link.
+
+48:14.100 --> 48:16.100
+If we update our link,
+
+48:16.100 --> 48:18.100
+and then the traffic changes,
+
+48:18.100 --> 48:20.100
+then we won't have enough time.
+
+48:20.100 --> 48:23.100
+So, we hope that it can be calculated soon.
+
+48:23.100 --> 48:25.100
+So, we did some experiments.
+
+48:25.100 --> 48:27.100
+We first used
+
+48:27.100 --> 48:31.100
+Microsoft's Microsoft Swan
+
+48:31.100 --> 48:33.100
+and Google's Beeple
+
+48:33.100 --> 48:35.100
+to do the experiment.
+
+48:35.100 --> 48:37.100
+And then our
+
+48:37.100 --> 48:38.100
+Skynet design heuristic,
+
+48:38.100 --> 48:40.100
+we call it ALG.
+
+48:40.120 --> 48:41.120
+And OPT,
+
+48:41.120 --> 48:45.120
+we call it the best solution.
+
+48:45.120 --> 48:48.120
+So, let's answer the first question.
+
+48:48.120 --> 48:50.120
+After we add this
+
+48:50.120 --> 48:52.120
+heuristic condition,
+
+48:52.120 --> 48:55.120
+can we get
+
+48:55.120 --> 48:57.120
+a better rating?
+
+48:57.120 --> 48:59.120
+The conclusion is yes.
+
+48:59.120 --> 49:04.120
+This row equal to one,
+
+49:04.120 --> 49:06.120
+if we call this heuristic
+
+49:06.120 --> 49:07.120
+as 1,
+
+49:07.120 --> 49:08.120
+we can never
+
+49:08.120 --> 49:09.120
+lose any rating.
+
+49:09.140 --> 49:10.140
+That means we basically
+
+49:10.140 --> 49:12.140
+don't update our links.
+
+49:12.140 --> 49:14.140
+We can never
+
+49:14.140 --> 49:16.140
+lose any network traffic.
+
+49:16.140 --> 49:18.140
+The simplest way is
+
+49:18.140 --> 49:19.140
+we don't move,
+
+49:19.140 --> 49:21.140
+and we will never lose any traffic.
+
+49:21.140 --> 49:23.140
+The original overall rating
+
+49:23.140 --> 49:24.140
+is like this,
+
+49:24.140 --> 49:26.140
+the column on the far left.
+
+49:26.140 --> 49:27.140
+The column on the far right
+
+49:27.140 --> 49:29.140
+is the solution
+
+49:29.140 --> 49:31.140
+proposed by Microsoft.
+
+49:31.140 --> 49:32.140
+If we lose in the middle,
+
+49:32.140 --> 49:34.140
+how much can we get in the end?
+
+49:34.140 --> 49:35.140
+We can see that
+
+49:35.140 --> 49:37.140
+even if we add
+
+49:37.160 --> 49:39.160
+this perseverance limitation,
+
+49:39.160 --> 49:40.160
+we still,
+
+49:40.160 --> 49:42.160
+whether it's the best solution
+
+49:42.160 --> 49:44.160
+or our heuristic,
+
+49:44.160 --> 49:45.160
+in the end,
+
+49:45.160 --> 49:48.160
+they can be the same
+
+49:48.160 --> 49:50.160
+as the solution
+
+49:50.160 --> 49:53.160
+proposed by Microsoft.
+
+49:53.160 --> 49:55.160
+Basically the same.
+
+49:55.160 --> 49:56.160
+That is to say,
+
+49:56.160 --> 49:57.160
+although we have perseverance limitation,
+
+49:57.160 --> 49:59.160
+we are more smooth
+
+49:59.160 --> 50:00.160
+than the original proposal
+
+50:00.160 --> 50:01.160
+proposed by Microsoft.
+
+50:01.160 --> 50:03.160
+But we can't get
+
+50:03.160 --> 50:04.160
+the best rating
+
+50:04.160 --> 50:05.160
+because of that.
+
+50:05.160 --> 50:06.160
+In fact,
+
+50:06.180 --> 50:07.180
+we can't get
+
+50:07.180 --> 50:08.180
+the same rating
+
+50:08.180 --> 50:09.180
+as Microsoft.
+
+50:09.180 --> 50:10.180
+So,
+
+50:10.180 --> 50:11.180
+this is the answer
+
+50:11.180 --> 50:13.180
+to the first question.
+
+50:13.180 --> 50:15.180
+The second question is
+
+50:15.180 --> 50:17.180
+what kind of number
+
+50:17.180 --> 50:19.180
+should we set
+
+50:19.180 --> 50:20.180
+as our perseverance level?
+
+50:20.180 --> 50:21.180
+That is,
+
+50:21.180 --> 50:22.180
+what kind of loss
+
+50:22.180 --> 50:23.180
+can we accept?
+
+50:23.180 --> 50:24.180
+We can see
+
+50:24.180 --> 50:26.180
+what the second picture
+
+50:26.180 --> 50:27.180
+is about.
+
+50:27.180 --> 50:28.180
+That is,
+
+50:28.180 --> 50:29.180
+the process of update,
+
+50:29.180 --> 50:30.180
+the process of overall rating increase.
+
+50:30.180 --> 50:32.180
+If we start with
+
+50:32.180 --> 50:34.180
+a 0.5 perseverance,
+
+50:34.200 --> 50:35.200
+0.5 perseverance,
+
+50:35.200 --> 50:36.200
+that is to say,
+
+50:36.200 --> 50:37.200
+I can accept
+
+50:37.200 --> 50:39.200
+that I only have 0.5 left.
+
+50:39.200 --> 50:40.200
+Of course,
+
+50:40.200 --> 50:42.200
+we give the system operator
+
+50:42.200 --> 50:43.200
+a lot of space
+
+50:43.200 --> 50:45.200
+to adjust these lines.
+
+50:45.200 --> 50:46.200
+So we can reach
+
+50:46.200 --> 50:48.200
+our final level very quickly.
+
+50:48.200 --> 50:49.200
+Of course,
+
+50:49.200 --> 50:51.200
+the less loss I am willing to accept,
+
+50:51.200 --> 50:52.200
+that is to say,
+
+50:52.200 --> 50:54.200
+the higher the perseverance limitation I require,
+
+50:54.200 --> 50:56.200
+the less links
+
+50:56.200 --> 50:57.200
+I can update every time.
+
+50:57.200 --> 50:58.200
+Because if I cut off a lot of links,
+
+50:58.200 --> 51:00.200
+I can't ensure
+
+51:00.200 --> 51:02.200
+that the original
+
+51:02.220 --> 51:04.220
+load flow
+
+51:04.220 --> 51:06.220
+can still reach
+
+51:06.220 --> 51:08.220
+the original 0.9 level.
+
+51:08.220 --> 51:09.220
+That is to say,
+
+51:09.220 --> 51:10.220
+it will be slower.
+
+51:10.220 --> 51:12.220
+This requires more steps
+
+51:12.220 --> 51:16.220
+to reach the final level.
+
+51:16.220 --> 51:18.220
+So the higher the perseverance limitation,
+
+51:18.220 --> 51:19.220
+of course,
+
+51:19.220 --> 51:21.220
+the slower you will be.
+
+51:21.220 --> 51:22.220
+Then we will ask,
+
+51:22.220 --> 51:26.220
+if there is a perseverance limitation,
+
+51:26.240 --> 51:28.240
+what is the relationship
+
+51:28.240 --> 51:30.240
+with my
+
+51:30.240 --> 51:33.240
+converge time?
+
+51:33.240 --> 51:34.240
+Of course,
+
+51:34.240 --> 51:37.240
+if you are willing to
+
+51:37.240 --> 51:39.240
+accept more interference,
+
+51:39.240 --> 51:40.240
+that is to say,
+
+51:40.240 --> 51:41.240
+if you are willing to accept more disturbance,
+
+51:41.240 --> 51:42.240
+the faster you will
+
+51:42.240 --> 51:44.240
+get to your final state.
+
+51:44.240 --> 51:45.240
+This is the same as the picture just now.
+
+51:45.240 --> 51:47.240
+This is a more detailed picture.
+
+51:47.240 --> 51:48.240
+That is to say,
+
+51:48.240 --> 51:51.240
+we ran 1000 random cases,
+
+51:51.240 --> 51:52.240
+and we found that
+
+51:52.240 --> 51:53.240
+of course,
+
+51:53.240 --> 51:54.240
+the higher the perseverance level,
+
+51:54.260 --> 51:56.260
+the more time it takes to converge.
+
+51:58.260 --> 51:59.260
+We can find that
+
+51:59.260 --> 52:00.260
+most of the time,
+
+52:00.260 --> 52:02.260
+your perseverance level
+
+52:02.260 --> 52:05.260
+is between 0.5 and 0.7.
+
+52:05.260 --> 52:06.260
+That is to say,
+
+52:06.260 --> 52:08.260
+it will converge pretty fast.
+
+52:08.260 --> 52:11.260
+It will converge pretty fast.
+
+52:11.260 --> 52:12.260
+It won't converge
+
+52:12.260 --> 52:14.260
+when it is set to a very high level.
+
+52:14.260 --> 52:16.260
+So our best choice is this.
+
+52:16.260 --> 52:17.260
+That is to say,
+
+52:17.260 --> 52:19.260
+we can converge
+
+52:19.260 --> 52:20.260
+in 3 to 5 steps.
+
+52:20.260 --> 52:21.260
+At the same time,
+
+52:21.260 --> 52:22.260
+we keep the original
+
+52:22.280 --> 52:24.280
+flow rate between 0.5 and 0.7.
+
+52:24.280 --> 52:25.280
+That's actually not bad.
+
+52:25.280 --> 52:26.280
+At least 7 steps.
+
+52:26.280 --> 52:27.280
+Compared to the original
+
+52:27.280 --> 52:28.280
+that we threw away directly,
+
+52:28.280 --> 52:30.280
+we still have 5 to 7 steps
+
+52:30.280 --> 52:31.280
+to throw away.
+
+52:33.280 --> 52:35.280
+We originally
+
+52:35.280 --> 52:36.280
+argued that
+
+52:36.280 --> 52:37.280
+this perseverance level
+
+52:37.280 --> 52:39.280
+can make the whole process
+
+52:39.280 --> 52:40.280
+smoother.
+
+52:40.280 --> 52:41.280
+That is to say,
+
+52:41.280 --> 52:42.280
+we won't throw away a lot of traffic.
+
+52:42.280 --> 52:43.280
+Is that so?
+
+52:43.280 --> 52:45.280
+Let's take a look at
+
+52:45.280 --> 52:47.280
+the degree of vibration
+
+52:47.280 --> 52:50.280
+in the update process.
+
+52:50.300 --> 52:51.300
+The more vibration,
+
+52:51.300 --> 52:52.300
+the more to the right.
+
+52:52.300 --> 52:53.300
+The less vibration,
+
+52:53.300 --> 52:54.300
+the more to the left.
+
+52:54.300 --> 52:55.300
+Can you see
+
+52:55.300 --> 52:56.300
+that we have introduced
+
+52:56.300 --> 52:57.300
+these two methods
+
+52:57.300 --> 52:59.300
+of perseverance limitation?
+
+52:59.300 --> 53:01.300
+Its vibrations are very few.
+
+53:01.300 --> 53:02.300
+It's not very few.
+
+53:02.300 --> 53:03.300
+Its vibrations are smaller
+
+53:03.300 --> 53:04.300
+than the original
+
+53:04.300 --> 53:06.300
+Microsoft Red1 method.
+
+53:06.300 --> 53:07.300
+That is to say,
+
+53:07.300 --> 53:08.300
+our perseverance limitation
+
+53:08.300 --> 53:10.300
+does help
+
+53:10.300 --> 53:12.300
+the whole update process
+
+53:12.300 --> 53:13.300
+to be smoother.
+
+53:15.300 --> 53:16.300
+The last question
+
+53:16.300 --> 53:17.300
+we want to answer is that
+
+53:17.320 --> 53:19.320
+this is great.
+
+53:19.320 --> 53:20.320
+We are very smooth.
+
+53:20.320 --> 53:21.320
+But how long
+
+53:21.320 --> 53:22.320
+does it take to get it?
+
+53:22.320 --> 53:23.320
+If it takes a long time,
+
+53:23.320 --> 53:24.320
+it will be lost.
+
+53:25.320 --> 53:26.320
+Let's take a look at
+
+53:26.320 --> 53:27.320
+the computation time.
+
+53:27.320 --> 53:28.320
+The computation time
+
+53:28.320 --> 53:29.320
+is how long
+
+53:29.320 --> 53:30.320
+it takes
+
+53:30.320 --> 53:31.320
+to find
+
+53:31.320 --> 53:33.320
+a solution.
+
+53:34.320 --> 53:35.320
+The time on our watch
+
+53:35.320 --> 53:36.320
+is millisecond.
+
+53:36.320 --> 53:37.320
+That is to say,
+
+53:37.320 --> 53:38.320
+millisecond.
+
+53:42.320 --> 53:44.320
+If we want to find the best solution,
+
+53:44.320 --> 53:45.320
+it can't be calculated
+
+53:45.320 --> 53:46.320
+in a very short time.
+
+53:46.340 --> 53:47.340
+But in fact,
+
+53:47.340 --> 53:49.340
+if your network is very small,
+
+53:49.340 --> 53:51.340
+this thing can be solved by force.
+
+53:51.340 --> 53:52.340
+You just force
+
+53:52.340 --> 53:54.340
+to find all the possible solutions.
+
+53:54.340 --> 53:55.340
+In fact,
+
+53:55.340 --> 53:56.340
+it can be calculated quite quickly.
+
+53:56.340 --> 53:57.340
+For example,
+
+53:57.340 --> 53:58.340
+if you want to find the best solution,
+
+53:58.340 --> 54:01.340
+it takes 67 milliseconds.
+
+54:01.340 --> 54:03.340
+If you have a bigger network,
+
+54:03.340 --> 54:05.340
+a bigger network,
+
+54:05.340 --> 54:06.340
+it takes more seconds.
+
+54:06.340 --> 54:08.340
+Until you have this,
+
+54:08.340 --> 54:09.340
+for example,
+
+54:09.340 --> 54:11.340
+this is a Google network.
+
+54:11.340 --> 54:12.340
+Google network,
+
+54:12.340 --> 54:13.340
+you have to spend
+
+54:13.340 --> 54:15.340
+1.2 times 16 times
+
+54:15.360 --> 54:16.360
+milliseconds to find one.
+
+54:16.360 --> 54:17.360
+How much is that?
+
+54:17.360 --> 54:18.360
+This is about
+
+54:18.360 --> 54:19.360
+more than 1,000 seconds
+
+54:19.360 --> 54:20.360
+to calculate
+
+54:20.360 --> 54:22.360
+the process of updating once.
+
+54:22.360 --> 54:23.360
+After you finish the calculation,
+
+54:23.360 --> 54:24.360
+after 1,000 seconds,
+
+54:24.360 --> 54:25.360
+you may have changed the message again.
+
+54:25.360 --> 54:26.360
+Then you just
+
+54:26.360 --> 54:28.360
+wasted your time.
+
+54:28.360 --> 54:29.360
+In contrast,
+
+54:29.360 --> 54:30.360
+our algorithm,
+
+54:30.360 --> 54:31.360
+our heuristic,
+
+54:31.360 --> 54:33.360
+only takes more than 300 milliseconds
+
+54:33.360 --> 54:34.360
+to calculate.
+
+54:34.360 --> 54:35.360
+That is to say,
+
+54:35.360 --> 54:36.360
+in less than a second,
+
+54:36.360 --> 54:39.360
+we can tell the entire network
+
+54:39.360 --> 54:41.360
+how to adjust.
+
+54:41.360 --> 54:43.360
+This efficiency is very high.
+
+54:43.380 --> 54:45.380
+The speed of our calculation
+
+54:45.380 --> 54:46.380
+is very fast.
+
+54:46.380 --> 54:47.380
+And we can also
+
+54:47.380 --> 54:48.380
+let this
+
+54:48.380 --> 54:49.380
+be found in the previous
+
+54:49.380 --> 54:50.380
+few experiments.
+
+54:50.380 --> 54:52.380
+In fact, the algorithm we proposed
+
+54:52.380 --> 54:54.380
+is not much different from the best solution.
+
+54:54.380 --> 54:56.380
+Although we can't prove
+
+54:56.380 --> 54:58.380
+that they are always close to each other,
+
+54:58.380 --> 55:00.380
+because we just said
+
+55:00.380 --> 55:02.380
+that this thing can't be
+
+55:02.380 --> 55:05.380
+done on this mirror.
+
+55:05.380 --> 55:06.380
+But in fact,
+
+55:06.380 --> 55:08.380
+in terms of real things,
+
+55:08.380 --> 55:09.380
+the solution we calculated
+
+55:09.380 --> 55:11.380
+is not much different from the best solution.
+
+55:11.400 --> 55:13.400
+And our algorithm
+
+55:13.400 --> 55:14.400
+is very fast.
+
+55:14.400 --> 55:15.400
+This is the benefit
+
+55:15.400 --> 55:17.400
+of our new solution.
+
+55:18.400 --> 55:19.400
+To sum up,
+
+55:19.400 --> 55:21.400
+what is this paper
+
+55:21.400 --> 55:22.400
+talking about?
+
+55:22.400 --> 55:23.400
+This paper says
+
+55:23.400 --> 55:25.400
+that instead of cutting
+
+55:25.400 --> 55:26.400
+all the lines directly
+
+55:26.400 --> 55:27.400
+and then update them,
+
+55:27.400 --> 55:28.400
+and then we use
+
+55:28.400 --> 55:29.400
+a higher frequency
+
+55:29.400 --> 55:31.400
+to send new traffic,
+
+55:31.400 --> 55:33.400
+we should consider
+
+55:33.400 --> 55:34.400
+consistency.
+
+55:34.400 --> 55:35.400
+That is, we need to make sure
+
+55:35.400 --> 55:37.400
+that the network traffic
+
+55:37.400 --> 55:39.400
+is not lost too much
+
+55:39.420 --> 55:41.420
+in the process of traffic.
+
+55:41.420 --> 55:44.420
+Considering this consistency,
+
+55:44.420 --> 55:46.420
+it won't cause too much burden.
+
+55:46.420 --> 55:47.420
+Because we have
+
+55:47.420 --> 55:48.420
+a very good algorithm.
+
+55:48.420 --> 55:50.420
+It can quickly
+
+55:50.420 --> 55:51.420
+solve this problem.
+
+55:51.420 --> 55:52.420
+It can quickly approach this problem.
+
+55:52.420 --> 55:53.420
+It's not a solution,
+
+55:53.420 --> 55:54.420
+but it can quickly
+
+55:54.420 --> 55:55.420
+find a solution.
+
+55:55.420 --> 55:56.420
+And this solution
+
+55:56.420 --> 55:59.420
+is actually pretty good.
+
+55:59.420 --> 56:00.420
+It's not much different
+
+56:00.420 --> 56:01.420
+from the best solution.
+
+56:01.420 --> 56:03.420
+It's not much different
+
+56:03.420 --> 56:04.420
+from the performance
+
+56:04.420 --> 56:05.420
+of cutting directly.
+
+56:05.420 --> 56:06.420
+But it's very
+
+56:06.420 --> 56:08.420
+smoother than
+
+56:08.440 --> 56:10.440
+cutting directly.
+
+56:12.440 --> 56:13.440
+Of course, we also admit that
+
+56:13.440 --> 56:17.440
+in addition to consistency,
+
+56:17.440 --> 56:19.440
+system operators
+
+56:19.440 --> 56:20.440
+can also consider
+
+56:20.440 --> 56:21.440
+more different aspects.
+
+56:21.440 --> 56:22.440
+For example,
+
+56:22.440 --> 56:23.440
+in the middle of the network,
+
+56:23.440 --> 56:24.440
+in the middle of the update,
+
+56:24.440 --> 56:25.440
+we hope that
+
+56:25.440 --> 56:26.440
+these traffic
+
+56:26.440 --> 56:28.440
+are not lost too much.
+
+56:28.440 --> 56:30.440
+We may also hope that
+
+56:30.440 --> 56:32.440
+they have some other
+
+56:32.440 --> 56:34.440
+characteristics.
+
+56:34.440 --> 56:35.440
+For example,
+
+56:35.440 --> 56:36.440
+each traffic
+
+56:36.460 --> 56:38.460
+cannot be less than
+
+56:38.460 --> 56:41.460
+the absolute traffic.
+
+56:41.460 --> 56:42.460
+For example,
+
+56:42.460 --> 56:44.460
+I must be greater than 10Mbps,
+
+56:44.460 --> 56:45.460
+I must be greater than 20Mbps.
+
+56:45.460 --> 56:47.460
+It may not be a percentage,
+
+56:47.460 --> 56:48.460
+but an absolute traffic.
+
+56:48.460 --> 56:49.460
+We must maintain
+
+56:49.460 --> 56:50.460
+how much traffic.
+
+56:50.460 --> 56:51.460
+Otherwise,
+
+56:51.460 --> 56:52.460
+I won't,
+
+56:52.460 --> 56:53.460
+for example,
+
+56:53.460 --> 56:54.460
+I won't feel a lot of delay
+
+56:54.460 --> 56:55.460
+in the middle of playing video games.
+
+56:55.460 --> 56:57.460
+How much traffic do I need at least?
+
+56:57.460 --> 56:58.460
+For example, like this.
+
+56:58.460 --> 56:59.460
+So this system operator
+
+56:59.460 --> 57:00.460
+can actually adjust
+
+57:00.460 --> 57:01.460
+their requirements
+
+57:01.460 --> 57:03.460
+for the network.
+
+57:03.480 --> 57:04.480
+And then,
+
+57:04.480 --> 57:05.480
+let this network
+
+57:05.480 --> 57:07.480
+operate more effectively,
+
+57:07.480 --> 57:08.480
+more efficiently.
+
+57:08.480 --> 57:09.480
+And they can,
+
+57:09.480 --> 57:10.480
+in the end,
+
+57:10.480 --> 57:12.480
+get a better balance.
+
+57:12.480 --> 57:13.480
+That's all
+
+57:13.480 --> 57:15.480
+for my speech today.
+
+57:15.480 --> 57:17.480
+If you have any questions,
+
+57:17.480 --> 57:18.480
+please feel free to ask.
+
+57:18.480 --> 57:20.480
+Thank you for listening.
+
+57:20.480 --> 57:21.480
+This topic,
+
+57:21.480 --> 57:22.480
+this topic
+
+57:22.480 --> 57:24.480
+is a little bit harder.
+
+57:24.480 --> 57:25.480
+So,
+
+57:25.480 --> 57:26.480
+if you have any questions,
+
+57:26.480 --> 57:27.480
+please feel free to ask.
+
+57:29.480 --> 57:30.480
+Let me welcome,
+
+57:30.480 --> 57:31.480
+let me give a round of applause
+
+57:31.480 --> 57:32.480
+on behalf of everyone.
+
+57:33.480 --> 57:34.480
+Yeah.
+
+57:34.480 --> 57:35.480
+Okay,
+
+57:35.480 --> 57:36.480
+do you have any questions?
+
+57:36.480 --> 57:37.480
+Do you have any questions?
+
+57:37.480 --> 57:39.480
+Let me ask.
+
+57:39.480 --> 57:40.480
+Yes.
+
+57:40.480 --> 57:41.480
+For example,
+
+57:41.480 --> 57:42.480
+if you are now
+
+57:42.480 --> 57:43.480
+changing
+
+57:43.480 --> 57:44.480
+their,
+
+57:44.480 --> 57:45.480
+for example,
+
+57:45.480 --> 57:47.480
+the two ends of the fiber.
+
+57:47.480 --> 57:48.480
+For example,
+
+57:48.480 --> 57:49.480
+the way they receive
+
+57:49.480 --> 57:51.480
+modulation.
+
+57:51.480 --> 57:52.480
+Yes.
+
+57:52.480 --> 57:53.480
+So,
+
+57:53.480 --> 57:54.480
+on the hardware,
+
+57:54.480 --> 57:55.480
+will this thing need to be changed for a long time?
+
+57:55.480 --> 57:56.480
+For example,
+
+57:56.480 --> 57:57.480
+you were,
+
+57:58.480 --> 57:59.480
+for example,
+
+57:59.480 --> 58:00.480
+you said green light, red light, blue light.
+
+58:00.480 --> 58:01.480
+Maybe it was only red and yellow.
+
+58:01.480 --> 58:02.480
+Then you added
+
+58:02.500 --> 58:03.500
+green light into it.
+
+58:03.500 --> 58:04.500
+Yes.
+
+58:04.500 --> 58:05.500
+Will it work
+
+58:05.500 --> 58:07.500
+on the hardware?
+
+58:07.500 --> 58:08.500
+This is a very good question.
+
+58:08.500 --> 58:09.500
+Yes,
+
+58:09.500 --> 58:10.500
+it works.
+
+58:10.500 --> 58:11.500
+Then how long does it take?
+
+58:11.500 --> 58:13.500
+At the time of RedOne,
+
+58:13.500 --> 58:14.500
+in 2018,
+
+58:14.500 --> 58:15.500
+it took
+
+58:16.500 --> 58:18.500
+a few dozen to a few hundred milliseconds.
+
+58:19.500 --> 58:20.500
+Every step,
+
+58:20.500 --> 58:21.500
+a few dozen to a few hundred milliseconds.
+
+58:21.500 --> 58:22.500
+Of course,
+
+58:22.500 --> 58:23.500
+we can consider,
+
+58:23.500 --> 58:24.500
+if you say
+
+58:24.500 --> 58:25.500
+a few dozen to a few hundred milliseconds,
+
+58:25.500 --> 58:26.500
+there is no difference, right?
+
+58:26.500 --> 58:27.500
+But if you consider
+
+58:27.500 --> 58:28.500
+these are broadband networks,
+
+58:28.500 --> 58:29.500
+these broadband networks
+
+58:29.500 --> 58:31.500
+carry a lot of traffic.
+
+58:31.520 --> 58:33.520
+It may have a few terabytes of traffic
+
+58:33.520 --> 58:36.520
+or a few thousand terabytes.
+
+58:36.520 --> 58:38.520
+Multiplied by a few hundred milliseconds,
+
+58:38.520 --> 58:40.520
+that is a very objective
+
+58:40.520 --> 58:41.520
+traffic loss.
+
+58:43.520 --> 58:44.520
+But,
+
+58:44.520 --> 58:45.520
+how did it work before?
+
+58:45.520 --> 58:46.520
+It used to be like
+
+58:46.520 --> 58:47.520
+you said,
+
+58:47.520 --> 58:48.520
+what if you want to add red light,
+
+58:48.520 --> 58:49.520
+add blue light?
+
+58:49.520 --> 58:50.520
+It is to turn off both sides first.
+
+58:51.520 --> 58:53.520
+Because your laser needs to be adjusted again.
+
+58:53.520 --> 58:54.520
+After you adjust the laser again,
+
+58:54.520 --> 58:56.520
+you let it send out the laser again.
+
+58:57.520 --> 58:58.520
+So,
+
+58:58.520 --> 58:59.520
+turning it off and restarting
+
+58:59.540 --> 59:01.540
+is actually very slow.
+
+59:01.540 --> 59:02.540
+Now,
+
+59:02.540 --> 59:03.540
+why does it need a few hundred milliseconds?
+
+59:03.540 --> 59:04.540
+It was mentioned
+
+59:04.540 --> 59:05.540
+in the original RedOne paper.
+
+59:05.540 --> 59:06.540
+They said,
+
+59:06.540 --> 59:07.540
+if we say
+
+59:07.540 --> 59:09.540
+turning it off and restarting
+
+59:09.540 --> 59:10.540
+is a major factor
+
+59:10.540 --> 59:12.540
+in causing this delay,
+
+59:12.540 --> 59:14.540
+we can try not to turn it off and restart.
+
+59:14.540 --> 59:16.540
+If you don't turn it off and restart,
+
+59:16.540 --> 59:18.540
+they can't make it work
+
+59:18.540 --> 59:20.540
+at that time.
+
+59:20.540 --> 59:22.540
+But they estimate that
+
+59:22.540 --> 59:24.540
+if you don't turn it off and restart,
+
+59:24.540 --> 59:26.540
+it may only take
+
+59:26.540 --> 59:28.540
+a microsecond
+
+59:28.560 --> 59:30.560
+to reach
+
+59:30.560 --> 59:32.560
+the goal of re-adjustment.
+
+59:33.560 --> 59:34.560
+If we say
+
+59:34.560 --> 59:35.560
+our future network
+
+59:35.560 --> 59:36.560
+can be seamless,
+
+59:36.560 --> 59:37.560
+that is,
+
+59:37.560 --> 59:38.560
+if I want to re-adjust,
+
+59:38.560 --> 59:39.560
+I can re-adjust immediately.
+
+59:39.560 --> 59:40.560
+Then,
+
+59:40.560 --> 59:41.560
+of course,
+
+59:41.560 --> 59:42.560
+our research
+
+59:42.560 --> 59:43.560
+has nothing
+
+59:43.560 --> 59:44.560
+to do with
+
+59:44.560 --> 59:47.560
+their original research.
+
+59:47.560 --> 59:48.560
+Because we basically
+
+59:48.560 --> 59:49.560
+don't lose anything.
+
+59:50.560 --> 59:51.560
+So,
+
+59:51.560 --> 59:52.560
+I think this question is very important.
+
+59:52.560 --> 59:53.560
+In the end,
+
+59:53.560 --> 59:54.560
+how is it done on hardware?
+
+59:54.560 --> 59:55.560
+Can it be done?
+
+59:55.560 --> 59:56.560
+Yes, it can be done.
+
+59:56.580 --> 59:57.580
+Is there any other
+
+59:57.580 --> 59:58.580
+research requirement on hardware?
+
+59:58.580 --> 59:59.580
+Yes,
+
+59:59.580 --> 01:00:00.580
+that is,
+
+01:00:00.580 --> 01:00:01.580
+how do we adjust
+
+01:00:01.580 --> 01:00:02.580
+this modulation
+
+01:00:02.580 --> 01:00:03.580
+dynamically?
+
+01:00:04.580 --> 01:00:05.580
+In fact,
+
+01:00:05.580 --> 01:00:06.580
+there are many ways
+
+01:00:06.580 --> 01:00:07.580
+that can be thought of.
+
+01:00:07.580 --> 01:00:08.580
+For example,
+
+01:00:08.580 --> 01:00:09.580
+we can send the modulation
+
+01:00:09.580 --> 01:00:10.580
+in advance,
+
+01:00:10.580 --> 01:00:11.580
+right?
+
+01:00:11.580 --> 01:00:12.580
+Then I will tell the other person
+
+01:00:12.580 --> 01:00:14.580
+when I start
+
+01:00:14.580 --> 01:00:16.580
+to use this new modulation.
+
+01:00:17.580 --> 01:00:18.580
+In the middle,
+
+01:00:18.580 --> 01:00:19.580
+it may need
+
+01:00:19.580 --> 01:00:20.580
+some ways
+
+01:00:20.580 --> 01:00:21.580
+to let the two sides communicate.
+
+01:00:21.580 --> 01:00:22.580
+For example,
+
+01:00:22.580 --> 01:00:23.580
+you want to use a clock.
+
+01:00:23.580 --> 01:00:24.580
+That is,
+
+01:00:24.580 --> 01:00:25.580
+you want to make
+
+01:00:25.600 --> 01:00:26.600
+the timing
+
+01:00:26.600 --> 01:00:27.600
+good enough.
+
+01:00:27.600 --> 01:00:28.600
+For example,
+
+01:00:28.600 --> 01:00:29.600
+I will immediately switch
+
+01:00:29.600 --> 01:00:30.600
+both sides at 7 o'clock.
+
+01:00:30.600 --> 01:00:31.600
+This is actually quite difficult
+
+01:00:31.600 --> 01:00:32.600
+because you have to
+
+01:00:32.600 --> 01:00:33.600
+synchronize both sides.
+
+01:00:33.600 --> 01:00:34.600
+That is to say,
+
+01:00:34.600 --> 01:00:35.600
+your time is consistent.
+
+01:00:35.600 --> 01:00:36.600
+In fact,
+
+01:00:36.600 --> 01:00:37.600
+sometimes it's not that easy.
+
+01:00:37.600 --> 01:00:38.600
+Another way is
+
+01:00:38.600 --> 01:00:39.600
+you send some
+
+01:00:39.600 --> 01:00:41.600
+this packet,
+
+01:00:41.600 --> 01:00:42.600
+send some information.
+
+01:00:42.600 --> 01:00:43.600
+That is,
+
+01:00:43.600 --> 01:00:44.600
+in addition to your
+
+01:00:44.600 --> 01:00:45.600
+information,
+
+01:00:45.600 --> 01:00:46.600
+send some
+
+01:00:46.600 --> 01:00:47.600
+control messages
+
+01:00:47.600 --> 01:00:48.600
+to the other side
+
+01:00:48.600 --> 01:00:49.600
+and tell him
+
+01:00:49.600 --> 01:00:50.600
+I want to start using it.
+
+01:00:50.600 --> 01:00:51.600
+Then,
+
+01:00:51.600 --> 01:00:52.600
+which packet
+
+01:00:52.600 --> 01:00:53.600
+do I start using?
+
+01:00:53.600 --> 01:00:54.600
+For example,
+
+01:00:54.620 --> 01:00:55.620
+it's a little more complicated.
+
+01:00:55.620 --> 01:00:56.620
+Because the current
+
+01:00:56.620 --> 01:00:58.620
+system is not designed like this.
+
+01:00:58.620 --> 01:00:59.620
+Their original system
+
+01:00:59.620 --> 01:01:00.620
+may have imagined
+
+01:01:00.620 --> 01:01:01.620
+that once you turn it on,
+
+01:01:01.620 --> 01:01:02.620
+what is the modulation?
+
+01:01:02.620 --> 01:01:03.620
+Just keep using it.
+
+01:01:04.620 --> 01:01:05.620
+So, in the middle,
+
+01:01:05.620 --> 01:01:06.620
+there are actually
+
+01:01:06.620 --> 01:01:08.620
+a lot of research that can be done.
+
+01:01:10.620 --> 01:01:12.620
+Does this answer your question?
+
+01:01:12.620 --> 01:01:13.620
+Yes.
+
+01:01:14.620 --> 01:01:15.620
+So, you said
+
+01:01:15.620 --> 01:01:16.620
+Microsoft
+
+01:01:17.620 --> 01:01:19.620
+changed
+
+01:01:19.620 --> 01:01:20.620
+the modulation method like this.
+
+01:01:20.620 --> 01:01:22.620
+How many times can it be improved?
+
+01:01:22.620 --> 01:01:23.620
+Or how many percent?
+
+01:01:23.640 --> 01:01:24.640
+How many times can it be improved?
+
+01:01:24.640 --> 01:01:25.640
+Its improvement
+
+01:01:25.640 --> 01:01:28.640
+is actually pretty good.
+
+01:01:28.640 --> 01:01:29.640
+Let me find
+
+01:01:29.640 --> 01:01:31.640
+its original paper.
+
+01:01:37.640 --> 01:01:38.640
+I don't know if you can see
+
+01:01:38.640 --> 01:01:39.640
+the original.
+
+01:01:39.640 --> 01:01:40.640
+It's not good for me to show the paper directly.
+
+01:01:40.640 --> 01:01:41.640
+But it doesn't matter.
+
+01:01:43.640 --> 01:01:44.640
+Let's take a look.
+
+01:01:44.640 --> 01:01:45.640
+When you show it,
+
+01:01:45.640 --> 01:01:47.640
+before you finish,
+
+01:01:47.640 --> 01:01:48.640
+you swipe to its title page
+
+01:01:48.640 --> 01:01:50.640
+and show the author.
+
+01:01:51.640 --> 01:01:52.640
+The author.
+
+01:01:52.660 --> 01:01:53.660
+Do you know why?
+
+01:01:53.660 --> 01:01:54.660
+Does it mean you can see the author?
+
+01:01:54.660 --> 01:01:55.660
+Yes.
+
+01:01:57.660 --> 01:01:59.660
+If you look at its original paper,
+
+01:01:59.660 --> 01:02:00.660
+it's actually...
+
+01:02:00.660 --> 01:02:01.660
+Let me see.
+
+01:02:05.660 --> 01:02:06.660
+It can actually improve
+
+01:02:06.660 --> 01:02:08.660
+a lot of traffic.
+
+01:02:09.660 --> 01:02:10.660
+Or it can
+
+01:02:10.660 --> 01:02:12.660
+avoid traffic drop.
+
+01:02:12.660 --> 01:02:14.660
+But because their original
+
+01:02:15.660 --> 01:02:16.660
+paper
+
+01:02:16.660 --> 01:02:17.660
+talks about
+
+01:02:17.660 --> 01:02:19.660
+a pretty simple
+
+01:02:19.660 --> 01:02:20.660
+network.
+
+01:02:20.660 --> 01:02:21.660
+It only has four points.
+
+01:02:22.660 --> 01:02:23.660
+These four points
+
+01:02:23.660 --> 01:02:24.660
+are in California.
+
+01:02:25.660 --> 01:02:26.660
+So this
+
+01:02:26.660 --> 01:02:28.660
+is just a prototype.
+
+01:02:28.660 --> 01:02:29.660
+So
+
+01:02:29.660 --> 01:02:31.660
+when it's actually used,
+
+01:02:32.660 --> 01:02:33.660
+we can only say
+
+01:02:33.660 --> 01:02:34.660
+it has a lot of potential.
+
+01:02:34.660 --> 01:02:35.660
+But in the end,
+
+01:02:35.660 --> 01:02:36.660
+when it's actually used,
+
+01:02:37.660 --> 01:02:38.660
+it's not sure
+
+01:02:38.660 --> 01:02:39.660
+if it's good or not.
+
+01:02:39.660 --> 01:02:40.660
+But this idea
+
+01:02:40.660 --> 01:02:41.660
+has a lot of potential.
+
+01:02:42.660 --> 01:02:43.660
+This is the paper.
+
+01:02:44.660 --> 01:02:45.660
+Whatsoever published this paper.
+
+01:02:45.680 --> 01:02:46.680
+Whatsoever published this paper.
+
+01:02:50.680 --> 01:02:51.680
+The purpose of this paper
+
+01:02:51.680 --> 01:02:52.680
+is to say
+
+01:02:52.680 --> 01:02:53.680
+this idea is pretty good.
+
+01:02:53.680 --> 01:02:54.680
+But
+
+01:02:54.680 --> 01:02:55.680
+our update
+
+01:02:55.680 --> 01:02:56.680
+doesn't need to be so crude.
+
+01:02:56.680 --> 01:02:57.680
+It can be more detailed.
+
+01:02:57.680 --> 01:02:58.680
+This concept.
+
+01:03:01.680 --> 01:03:02.680
+Of course, if we have better
+
+01:03:02.680 --> 01:03:04.680
+hardware in the future,
+
+01:03:04.680 --> 01:03:05.680
+then...
+
+01:03:05.680 --> 01:03:06.680
+Go ahead.
+
+01:03:06.680 --> 01:03:07.680
+My question is this.
+
+01:03:07.680 --> 01:03:08.680
+When you're doing
+
+01:03:08.680 --> 01:03:09.680
+your simulation,
+
+01:03:09.680 --> 01:03:10.680
+basically,
+
+01:03:10.680 --> 01:03:12.680
+you have to have some assumptions
+
+01:03:12.680 --> 01:03:13.680
+about disturbance.
+
+01:03:13.700 --> 01:03:14.700
+Yes.
+
+01:03:14.700 --> 01:03:16.700
+What kind of
+
+01:03:16.700 --> 01:03:18.700
+situation are you in
+
+01:03:18.700 --> 01:03:19.700
+to compare?
+
+01:03:19.700 --> 01:03:20.700
+So your disturbance
+
+01:03:20.700 --> 01:03:21.700
+is like,
+
+01:03:21.700 --> 01:03:22.700
+Google,
+
+01:03:22.700 --> 01:03:23.700
+what do they do?
+
+01:03:23.700 --> 01:03:24.700
+Or how do you
+
+01:03:24.700 --> 01:03:25.700
+generate
+
+01:03:25.700 --> 01:03:26.700
+the disturbance
+
+01:03:26.700 --> 01:03:27.700
+in your simulation?
+
+01:03:28.700 --> 01:03:29.700
+This is a good question.
+
+01:03:29.700 --> 01:03:30.700
+So
+
+01:03:30.700 --> 01:03:31.700
+what I actually generate
+
+01:03:31.700 --> 01:03:32.700
+is not disturbance.
+
+01:03:32.700 --> 01:03:33.700
+What I generate is
+
+01:03:34.700 --> 01:03:35.700
+this link
+
+01:03:35.700 --> 01:03:36.700
+the current state
+
+01:03:36.700 --> 01:03:37.700
+and the next state.
+
+01:03:38.700 --> 01:03:39.700
+So I actually
+
+01:03:39.700 --> 01:03:40.700
+added a layer
+
+01:03:40.700 --> 01:03:41.700
+of assumption.
+
+01:03:41.700 --> 01:03:42.700
+That is to say,
+
+01:03:42.720 --> 01:03:43.720
+let's assume that
+
+01:03:43.720 --> 01:03:44.720
+my current link
+
+01:03:44.720 --> 01:03:45.720
+can only send
+
+01:03:45.720 --> 01:03:46.720
+50 gigabytes per second.
+
+01:03:46.720 --> 01:03:48.720
+50 Gbps.
+
+01:03:48.720 --> 01:03:49.720
+And then
+
+01:03:49.720 --> 01:03:50.720
+because
+
+01:03:50.720 --> 01:03:52.720
+the noise has dropped
+
+01:03:52.720 --> 01:03:53.720
+I can send 100 Gbps now.
+
+01:03:53.720 --> 01:03:55.720
+How should I update?
+
+01:03:56.720 --> 01:03:57.720
+So
+
+01:03:57.720 --> 01:03:58.720
+in the middle
+
+01:03:58.720 --> 01:03:59.720
+I put the
+
+01:03:59.720 --> 01:04:00.720
+relationship between
+
+01:04:00.720 --> 01:04:01.720
+noise and signal
+
+01:04:01.720 --> 01:04:02.720
+in there.
+
+01:04:02.720 --> 01:04:03.720
+In fact,
+
+01:04:03.720 --> 01:04:04.720
+in operation,
+
+01:04:04.720 --> 01:04:05.720
+of course,
+
+01:04:05.720 --> 01:04:06.720
+there are
+
+01:04:06.720 --> 01:04:08.720
+other restrictions.
+
+01:04:10.720 --> 01:04:11.720
+In fact,
+
+01:04:11.740 --> 01:04:12.740
+there is also in the paper.
+
+01:04:12.740 --> 01:04:13.740
+But I don't want to
+
+01:04:13.740 --> 01:04:14.740
+show this paper again.
+
+01:04:14.740 --> 01:04:15.740
+That is to say,
+
+01:04:15.740 --> 01:04:16.740
+the adjustment of our screen width
+
+01:04:16.740 --> 01:04:17.740
+is actually
+
+01:04:17.740 --> 01:04:18.740
+not continuous.
+
+01:04:18.740 --> 01:04:19.740
+That is to say,
+
+01:04:19.740 --> 01:04:20.740
+the screen width
+
+01:04:20.740 --> 01:04:21.740
+we can use
+
+01:04:21.740 --> 01:04:22.740
+is not continuous.
+
+01:04:22.740 --> 01:04:23.740
+For example,
+
+01:04:23.740 --> 01:04:24.740
+25 Mbps,
+
+01:04:24.740 --> 01:04:25.740
+50 Mbps,
+
+01:04:25.740 --> 01:04:26.740
+100 Mbps,
+
+01:04:26.740 --> 01:04:27.740
+150,
+
+01:04:27.740 --> 01:04:28.740
+like this.
+
+01:04:28.740 --> 01:04:29.740
+So,
+
+01:04:29.740 --> 01:04:30.740
+you are actually
+
+01:04:30.740 --> 01:04:31.740
+choosing these kinds.
+
+01:04:31.740 --> 01:04:32.740
+No matter how much noise you have,
+
+01:04:32.740 --> 01:04:33.740
+when it reaches
+
+01:04:33.740 --> 01:04:34.740
+a certain point
+
+01:04:34.740 --> 01:04:35.740
+you can probably
+
+01:04:35.740 --> 01:04:36.740
+adjust it up.
+
+01:04:36.740 --> 01:04:37.740
+You can adjust it
+
+01:04:37.740 --> 01:04:38.740
+from 100 to 150
+
+01:04:38.740 --> 01:04:39.740
+or 150 to 200.
+
+01:04:39.760 --> 01:04:41.760
+But in fact,
+
+01:04:41.760 --> 01:04:42.760
+why can you adjust
+
+01:04:42.760 --> 01:04:43.760
+the principle
+
+01:04:43.760 --> 01:04:44.760
+is what I just said
+
+01:04:44.760 --> 01:04:45.760
+about the noise.
+
+01:04:45.760 --> 01:04:46.760
+So, in fact,
+
+01:04:46.760 --> 01:04:48.760
+how is it measured?
+
+01:04:48.760 --> 01:04:49.760
+I don't have
+
+01:04:49.760 --> 01:04:51.760
+this information.
+
+01:04:51.760 --> 01:04:52.760
+I just
+
+01:04:52.760 --> 01:04:53.760
+make an assumption
+
+01:04:53.760 --> 01:04:54.760
+based on the range
+
+01:04:54.760 --> 01:04:55.760
+it can adjust.
+
+01:04:57.760 --> 01:04:58.760
+So, my assumption
+
+01:04:58.760 --> 01:04:59.760
+is that
+
+01:04:59.760 --> 01:05:00.760
+the original link
+
+01:05:00.760 --> 01:05:01.760
+may be
+
+01:05:01.760 --> 01:05:02.760
+in this
+
+01:05:02.760 --> 01:05:03.760
+100 Gbps
+
+01:05:03.760 --> 01:05:04.760
+mode.
+
+01:05:04.760 --> 01:05:05.760
+Because
+
+01:05:05.760 --> 01:05:06.760
+my
+
+01:05:06.760 --> 01:05:07.760
+noise
+
+01:05:07.760 --> 01:05:08.760
+may be reduced,
+
+01:05:08.780 --> 01:05:09.780
+so now
+
+01:05:09.780 --> 01:05:10.780
+suddenly this link
+
+01:05:10.780 --> 01:05:11.780
+can reach 200 Gbps.
+
+01:05:11.780 --> 01:05:12.780
+If it is
+
+01:05:12.780 --> 01:05:13.780
+in this situation,
+
+01:05:13.780 --> 01:05:14.780
+how do we
+
+01:05:14.780 --> 01:05:15.780
+go from 100 to 200 Gbps?
+
+01:05:17.780 --> 01:05:18.780
+So, a better way
+
+01:05:18.780 --> 01:05:19.780
+is
+
+01:05:19.780 --> 01:05:20.780
+you have already
+
+01:05:20.780 --> 01:05:21.780
+assumed
+
+01:05:21.780 --> 01:05:22.780
+your work goal
+
+01:05:22.780 --> 01:05:23.780
+is to adjust like this.
+
+01:05:23.780 --> 01:05:24.780
+But you tell it
+
+01:05:24.780 --> 01:05:25.780
+how to be smarter.
+
+01:05:25.780 --> 01:05:26.780
+Not that
+
+01:05:26.780 --> 01:05:27.780
+it's not
+
+01:05:27.780 --> 01:05:28.780
+that
+
+01:05:28.780 --> 01:05:29.780
+it's not like
+
+01:05:29.780 --> 01:05:30.780
+at the analog level
+
+01:05:30.780 --> 01:05:31.780
+that
+
+01:05:31.780 --> 01:05:32.780
+the noise pattern is like this,
+
+01:05:32.780 --> 01:05:33.780
+so we should
+
+01:05:33.780 --> 01:05:34.780
+decide
+
+01:05:34.780 --> 01:05:35.780
+what state to adjust.
+
+01:05:35.780 --> 01:05:36.780
+That is already
+
+01:05:36.780 --> 01:05:37.780
+a given
+
+01:05:37.800 --> 01:05:38.800
+assumption.
+
+01:05:38.800 --> 01:05:39.800
+Yes, a given.
+
+01:05:39.800 --> 01:05:40.800
+So, let's say
+
+01:05:40.800 --> 01:05:41.800
+my device tells me
+
+01:05:41.800 --> 01:05:42.800
+this thing.
+
+01:05:42.800 --> 01:05:43.800
+I see.
+
+01:05:43.800 --> 01:05:44.800
+My research
+
+01:05:44.800 --> 01:05:45.800
+is usually
+
+01:05:45.800 --> 01:05:46.800
+at a higher level.
+
+01:05:46.800 --> 01:05:47.800
+So, let's say
+
+01:05:47.800 --> 01:05:48.800
+the device tells me
+
+01:05:48.800 --> 01:05:49.800
+these things,
+
+01:05:49.800 --> 01:05:50.800
+how do I plan
+
+01:05:50.800 --> 01:05:51.800
+this thing?
+
+01:05:54.800 --> 01:05:55.800
+Okay, anyone else
+
+01:05:55.800 --> 01:05:56.800
+have any questions?
+
+01:05:59.800 --> 01:06:00.800
+Okay, if not,
+
+01:06:00.800 --> 01:06:01.800
+let's
+
+01:06:01.800 --> 01:06:02.800
+give another round of applause
+
+01:06:02.800 --> 01:06:03.800
+to Shihai.
+
+01:06:03.800 --> 01:06:04.800
+Thank you, everyone.
+
+01:06:04.820 --> 01:06:05.820
+Thank you.
+
+01:06:06.820 --> 01:06:07.820
+Okay, that's all
+
+01:06:07.820 --> 01:06:09.820
+for today's lecture.
+
+01:06:09.820 --> 01:06:10.820
+I'll...
+

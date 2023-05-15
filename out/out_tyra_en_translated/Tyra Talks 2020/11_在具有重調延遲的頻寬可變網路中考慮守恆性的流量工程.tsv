@@ -1,0 +1,2887 @@
+start	end	text
+0	8000	Hello everyone, welcome to today's Tarot Talk. I am the host today, Zhang Yanyong.
+8000	18000	We are very honored to invite Dr. Zeng Sihao, a colleague at my school, to tell us about the topic of his research on the Internet today.
+18000	28000	His research focuses on the parallel and variable traffic engineering of re-adjusting latency.
+28000	32000	Let me introduce Dr. Sihao.
+32000	41000	Dr. Sihao majored in Electrical Engineering at NTU.
+41000	47000	He then went to Cornell to study ECE, Electrical Engineering.
+47000	56000	He then came to Caltech to study Computer and Mathematical Science.
+56000	63000	He then studied Engineering and Applied Science.
+63000	69000	Let's give the floor to Dr. Sihao.
+69000	74000	Thank you, Yanyong, for the introduction.
+74000	79000	This topic is actually a bit long and difficult to understand.
+79000	84000	However, when Yanyong invited me to give a talk, I thought that since it is a talk,
+84000	88000	why not talk about a topic that is actually related to my research?
+88000	93000	So I took the ICMP paper that I submitted last year.
+93000	98000	Today I will try to make it as simple as possible.
+98000	102000	Although this topic looks very difficult, you don't have to worry too much.
+102000	109000	Its English title is Perseverance-Aware Traffic Engineering in Rate-Adaptive Networks with Reconfiguration Delay.
+109000	114000	So I just translated the English title into Chinese.
+114000	119000	As for what each term means, we will see later.
+119000	124000	If you have any questions in the middle, please feel free to interrupt me at any time and ask me questions.
+125000	130000	In addition, Caltech has a special system called Computing and Mathematical Science.
+130000	135000	This system is actually under Engineering.
+135000	140000	Although C stands for Engineering, the department seems to be under it.
+140000	145000	It seems that the relationship between division and department is not quite the same,
+145000	150000	but it is actually not very important.
+150000	153000	So why do we want to study this topic?
+153000	156000	My research topic is mainly about the Internet.
+156000	159000	What is the Internet? The Internet is actually a bunch of things connected together.
+159000	161000	Why do we want to connect a bunch of things together?
+161000	164000	Basically, we want to communicate with each other.
+164000	167000	We send some things, some information from one end of the Internet,
+167000	170000	and we hope to get this information on the other end.
+170000	173000	Or we want to send some goods, such as a logistics network.
+173000	178000	For example, we want to transport fruits from Chiayi to Taipei.
+178000	180000	This is also a network.
+180000	183000	In fact, most of my research is on the Internet of information,
+183000	190000	that is, the Internet of communication between some electronic products or electronic devices using electronic signals.
+190000	195000	How are these networks usually transmitted?
+195000	198000	That is to say, how is this information transmitted on the Internet?
+198000	202000	Usually, for example, we will have our own personal equipment.
+202000	205000	For example, today's lecture is the same.
+205000	209000	We may use a computer or a tablet or a mobile phone.
+209000	211000	We will connect to the Internet.
+211000	213000	What does it mean to connect to the Internet?
+213000	220000	In fact, we are sending a piece of information to a place called an exchanger, a router.
+220000	224000	Sometimes this router also has a wireless exchanger,
+224000	227000	such as AP, Access Point.
+227000	230000	This is for wireless networks.
+230000	233000	Sometimes you will also use a base station to receive these things.
+233000	236000	After these terminals receive the message,
+236000	241000	they will send it through an exchanger to a space.
+241000	244000	Then we will be on the other side of the space.
+244000	249000	Maybe someone else uses another device to get this information.
+249000	252000	This is basically how the whole network works.
+252000	254000	In this case,
+254000	259000	because we use an exchanger to connect a lot of different devices,
+259000	263000	we may put our information into an exchanger
+263000	267000	and then go to another place to get something else.
+267000	272000	In order to get a specific thing,
+272000	275000	we have to establish a point-to-point connection with it.
+275000	277000	This is actually quite important.
+277000	280000	In the early days, the Internet was a bit like a telephone line.
+280000	282000	At that time, there was a connection god.
+282000	284000	When the two of us wanted to communicate,
+284000	287000	there must be a line in the middle to communicate with us.
+287000	289000	But today, the Internet is not necessary.
+289000	293000	Today, the Internet actually sends a lot of different traffic
+293000	296000	in various ways, using this kind of exchanger,
+296000	302000	one by one to our target destination.
+302000	305000	These terminals can be various things.
+305000	308000	For example, you can be a so-called cloud terminal,
+308000	310000	a server at the far end.
+310000	313000	Or when we play games with others,
+313000	315000	we may have a server.
+315000	318000	We may also receive messages from others.
+318000	320000	For example, the 5G network, which is very popular recently,
+320000	325000	is actually talking about the communication at the wireless terminal.
+325000	330000	Obviously, no matter how we get the information at the far end,
+330000	333000	we have to go through these exchangers in the middle
+333000	335000	or through the network in the middle
+335000	338000	to help us pass the information from one end to the other.
+338000	341000	So even if we have 5G now,
+341000	343000	5G means that
+343000	348000	5G is very fast from our wireless device to our base station.
+348000	349000	But after it gets to the base station,
+349000	350000	no matter what you do,
+350000	353000	you still have to go through the network in the middle to help you.
+353000	360000	So this network is the main focus of my network research.
+360000	362000	This is called the broadband network.
+362000	363000	Broadband network means that
+363000	370000	there is a great distance between the two terminals.
+370000	373000	Relatively speaking, if we are only in a local area,
+373000	376000	this is called LAN,
+376000	382000	which stands for Local Area Network.
+382000	383000	Actually, I don't know how to say it in Chinese,
+383000	386000	but it's a local network.
+386000	389000	So what's the problem with broadband networks?
+389000	392000	Because these broadband networks are connected to very far places,
+392000	394000	we know that
+394000	396000	when we use telecommunications to send things,
+396000	399000	electricity is actually very easy to consume.
+399000	404000	So how do we send them?
+404000	406000	We have to use a very special kind of wire.
+406000	409000	We definitely can't use the kind of wire that we usually use to plug breadboards.
+409000	413000	We must use a very special kind of wire to send.
+413000	416000	So how do we send these things?
+416000	418000	We will send them from one terminal to the other.
+418000	420000	There must be a very special wire in the middle.
+420000	421000	This actually requires cost.
+421000	428000	But this cost is sometimes justifiable.
+428000	430000	It can be accepted.
+430000	432000	If the service I want to provide can make me earn more money,
+432000	435000	then of course I am willing to spend a lot of money
+435000	441000	to build this kind of expensive link.
+441000	444000	You can think of it as these lines in the middle
+444000	446000	to connect to two very far places.
+446000	449000	For example, many big companies do this.
+449000	453000	For example, Microsoft or Google.
+453000	456000	Because they usually provide some cloud services.
+456000	458000	For example, you may sometimes use
+458000	460000	Google Sheets, Google Gmail,
+460000	463000	or Microsoft Hotmail,
+463000	464000	like this kind of thing,
+464000	467000	or all kinds of different services,
+467000	469000	such as YouTube.
+469000	472000	They just store the data all over the world.
+472000	475000	They will let you get the data very quickly.
+476000	480000	For example, they will build their own broadband network.
+480000	481000	What are the benefits of this?
+481000	483000	If you have this broadband network,
+483000	486000	I can effectively adjust
+486000	489000	how I want to use these lines.
+489000	492000	If I can effectively use these lines,
+492000	494000	I have a better chance of reducing my costs
+494000	496000	and making more money.
+496000	497000	Basically like this.
+497000	500000	So now most companies
+500000	503000	are investing a lot in building their own network.
+503000	508000	Instead of purely using some more traditional Internet.
+508000	511000	For example, we may sign a contract with AT&T
+511000	513000	or we sign a contract with Taiwan Cable.
+513000	515000	They actually provide the network,
+515000	518000	but the network is not under the control of these companies.
+518000	522000	Sometimes you can't adjust
+522000	525000	how to use your connection in the middle.
+525000	527000	So these big companies usually
+527000	529000	will build their own network,
+529000	532000	and then they will operate these networks themselves
+532000	534000	to achieve higher performance.
+535000	537000	We just mentioned that
+537000	540000	the network is so far away.
+540000	542000	These lines in the middle are actually quite special.
+542000	544000	What kind of lines are these lines?
+544000	546000	They are not ordinary blue lines.
+546000	548000	Of course there are ordinary blue lines,
+548000	551000	but the amount of blue lines that can be passed is limited.
+551000	552000	And it's more expensive.
+552000	554000	So most of the time we use
+554000	558000	cheaper blue lines with higher economic value.
+558000	560000	This is actually not a blue line.
+560000	563000	This is a blue line that uses optical technology
+563000	566000	to transmit signals through this light wire.
+566000	568000	This light wire is actually cheaper.
+568000	571000	And then there is a lot of information that can be transmitted by the light wire.
+571000	572000	Because you use light.
+572000	573000	Compared to electrical signals,
+573000	577000	you have all kinds of different frequencies.
+577000	578000	It can also be used.
+578000	579000	And the speed of light is also quite fast.
+579000	582000	It doesn't need to use electronic signals
+582000	584000	to receive it first and then transmit it.
+584000	587000	They just enhance the strength of light
+587000	588000	and then continue to transmit.
+588000	590000	So it actually has a lot of benefits.
+590000	591000	That is to say,
+591000	596000	most of these big companies
+596000	598000	will use some light wires
+598000	600000	to transmit signals far away,
+600000	602000	and then turn it into electrical signals
+602000	603000	at the end point.
+603000	605000	Then we communicate with electrical signals.
+605000	607000	These light wires are actually
+607000	612000	better than ordinary blue lines.
+612000	614000	That is to say, it has a higher economic value.
+614000	617000	But how do you say on this broadband network,
+617000	619000	no matter how cheap it is,
+619000	620000	you have to pull a few hundred kilometers,
+620000	622000	it will be expensive right away.
+622000	623000	So no matter,
+623000	625000	and you are in maintenance,
+625000	626000	or in operation,
+626000	627000	it's actually not cheap.
+627000	630000	So these light wires on the broadband network
+630000	634000	are actually a kind of expensive equipment.
+634000	637000	Usually we don't want to say
+637000	640000	that our light wires can't be used.
+640000	642000	What does it mean not to be used?
+642000	645000	That is to say, light wires are actually usable.
+645000	646000	That is to say,
+646000	648000	my signal can go through this light wire.
+648000	650000	That is to say, after I go through this light wire,
+650000	652000	I can get my signal.
+652000	654000	Let's use a simple example here.
+654000	655000	How do we send a signal
+655000	657000	from one end to the other?
+657000	658000	You can imagine that
+658000	660000	we are on both ends of the light wire.
+660000	663000	We can actually send it,
+663000	665000	we can send it at its frequency.
+665000	666000	If we think of a white paper,
+666000	668000	we can draw a dot on the white paper.
+668000	670000	Then we put this paper through the light wire.
+670000	672000	The light wire will pass this paper to the other side.
+672000	673000	Then I look at this paper.
+673000	675000	Ah, what is your signal?
+675000	678000	If the other person can interpret your signal,
+678000	681000	that means your signal has been successfully passed.
+681000	683000	So let's use this simple example to see.
+683000	685000	Suppose I have a big white paper now.
+685000	687000	I can send this white paper to the other side.
+687000	689000	Then I can tell the other person
+689000	690000	a similar code.
+690000	692000	Say, if you see me
+692000	694000	put a dot on the left, it's 0.
+694000	697000	Put a dot on the right, it's 1.
+697000	698000	In this case,
+698000	701000	we can use this code to send information.
+701000	702000	As long as you have 0 and 1,
+702000	706000	you can generate a lot of different information
+706000	709000	in this sequence.
+709000	710000	The problem is,
+710000	712000	this actually sounds pretty good.
+712000	714000	Then we keep sending this.
+714000	715000	For example, my left, right,
+715000	716000	right, left, left, right, right.
+716000	718000	Then we can quickly send out the signal.
+718000	719000	Isn't that great?
+719000	720000	But what is reality?
+720000	723000	Reality is that all signals follow the message.
+723000	725000	That is to say, everyone is sending something.
+725000	727000	In the past, it was not so beautiful
+727000	729000	in the middle of the opposite.
+729000	731000	In the middle, there must be some
+731000	734000	battery signal or light signal interference.
+734000	736000	Let's take a simple example today.
+736000	737000	Suppose we have a message.
+737000	740000	It will draw this thing on the paper.
+740000	742000	For example, I draw this dot.
+742000	745000	Shake it left and right.
+745000	746000	When we get to the other side,
+746000	747000	we look like
+747000	749000	For example, I received a signal of shake.
+749000	750000	For example, like this.
+750000	752000	It's a little bit off.
+752000	754000	But it's still roughly on the left.
+754000	756000	So in the middle of this case,
+756000	759000	we can say that this is still zero.
+759000	760000	I probably know it's zero.
+760000	762000	Anyway, although there is a little bit of noise,
+762000	764000	but it's roughly the signal on the left.
+764000	768000	So I know it's zero from my code.
+768000	770000	Then it is possible that noise
+770000	771000	may also put your signal
+771000	773000	a little bit in a different direction.
+773000	774000	In this case,
+774000	777000	you are probably also quite confident that
+777000	779000	this signal is actually on the left.
+779000	781000	So it's zero.
+781000	783000	But if I give you a signal like this today,
+784000	787000	Is it on the left or on the right?
+787000	788000	It seems to be a little bit on the left
+788000	789000	and a little bit on the right, right?
+789000	791000	So it's not easy to judge.
+791000	792000	If we draw a line,
+792000	793000	that is to say,
+793000	795000	we separate the original left and right
+795000	797000	and draw the line out a little bit.
+797000	799000	It's actually still on the left.
+799000	800000	So I know this signal
+800000	802000	is probably still zero.
+802000	804000	But sometimes it's just not so lucky.
+804000	806000	For example, this noise is actually very big.
+806000	809000	It pushed my signal to the very right.
+809000	810000	How do you know
+810000	812000	it's zero or one at this time?
+812000	813000	Then we might say
+813000	815000	your original signal is one.
+815000	816000	But in fact,
+816000	818000	the original signal I sent was zero.
+818000	820000	So in this situation,
+820000	822000	my signal is actually
+822000	824000	unable to successfully send to the opposite side.
+824000	825000	That is to say,
+825000	826000	in this case,
+826000	828000	if the noise is very big,
+828000	830000	I can't actually successfully
+830000	832000	send the message I want to send
+832000	834000	through the light to the opposite side.
+834000	836000	So in this case,
+836000	837000	we can say that
+837000	839000	this light can't be used.
+839000	840000	Because you can't successfully
+840000	842000	send the signal to the opposite side.
+844000	846000	Let's use an example to see
+846000	848000	if this kind of situation
+848000	850000	is actually very rare,
+850000	851000	then it doesn't matter.
+851000	852000	For example, I might have
+852000	853000	a million times, ten million times,
+853000	854000	a hundred million times,
+854000	855000	I only happen to have
+855000	856000	a very unfortunate
+856000	858000	case of my signal being intercepted.
+858000	859000	Then I just throw it away.
+859000	860000	I might just ask the other side
+860000	861000	to re-send it again or something.
+861000	862000	There's probably no problem.
+862000	864000	If we take these two,
+864000	865000	for example,
+865000	866000	I either send zero
+866000	867000	or send one,
+867000	869000	the signal that is disturbed by the noise
+869000	871000	will be drawn out to take a look.
+871000	872000	For example,
+872000	874000	it might look like this.
+874000	875000	That is to say,
+875000	877000	if I send zero,
+877000	878000	we use red to show
+878000	879000	the situation when I send zero.
+879000	880000	After sending zero,
+880000	882000	it may be disturbed by the noise.
+882000	883000	The signal I see
+883000	884000	at the receiving end
+884000	885000	may look like this,
+885000	887000	scattered everywhere.
+887000	888000	Similarly,
+888000	889000	if I originally send one,
+889000	891000	it is the green signal one
+891000	892000	that I originally sent,
+892000	893000	it may also be disturbed by the noise
+893000	895000	and scatter like this.
+895000	897000	But even in this situation,
+897000	898000	although we can see
+898000	900000	that some signals
+900000	903000	may be misjudged,
+903000	904000	but generally speaking,
+904000	905000	most of the signals
+905000	907000	are still distinguishable.
+907000	908000	In this situation,
+908000	909000	this light wire
+909000	910000	can still be used
+910000	912000	because most of the signals
+912000	913000	are actually fine.
+913000	916000	There is no problem in judgment.
+916000	917000	But if today's situation
+917000	918000	is like this,
+918000	919000	in today's situation,
+919000	920000	the noise
+920000	921000	scatters my signal
+921000	922000	to such an extent
+922000	923000	that most of the red
+923000	924000	and green signals
+924000	925000	are actually mixed together.
+925000	926000	In this case,
+926000	928000	it is easy for me to make a misjudgment.
+928000	930000	Even if I send one at the beginning,
+930000	931000	I may have a big chance
+931000	933000	to be judged as zero.
+933000	934000	Even if I send zero,
+934000	935000	I have a lot of chances
+935000	936000	to be judged as one.
+936000	938000	In this situation,
+938000	939000	it is difficult for you
+939000	940000	to say that
+940000	941000	you can't use this light wire
+941000	943000	because its noise
+943000	944000	is far greater than
+944000	949000	the signal energy of your signal.
+949000	950000	In this situation,
+950000	951000	we have to separate
+951000	952000	these two
+952000	954000	original zeros and ones.
+954000	955000	If we separate them,
+955000	956000	we have a chance
+956000	959000	to be judged as one.
+959000	960000	At that time,
+960000	961000	you will consume
+961000	962000	more energy.
+962000	963000	Or,
+963000	964000	in this situation,
+964000	965000	you may reach
+965000	966000	the level of energy
+966000	967000	your machine can send
+967000	968000	every time
+968000	969000	you lower the width
+969000	970000	of the white paper.
+970000	971000	Then you may say
+971000	973000	that this thing cannot be used.
+973000	974000	So this is the signal
+974000	975000	that will be affected
+975000	976000	by the intensity
+976000	978000	of the noise signal
+978000	979000	to cause
+979000	981000	whether this light wire
+981000	982000	can be used
+982000	983000	or not.
+983000	984000	Of course,
+984000	985000	sometimes it is
+985000	987000	a more unfortunate situation.
+987000	988000	But,
+988000	989000	in fact,
+989000	990000	sometimes we are
+990000	991000	very lucky.
+991000	992000	Because when we
+992000	993000	operate the light wire,
+993000	994000	we usually
+994000	995000	separate these two signals
+995000	996000	very widely.
+996000	997000	This is the so-called
+997000	998000	conservative operation.
+998000	999000	In this situation,
+999000	1000000	there are not so many
+1000000	1001000	noise signals.
+1001000	1003000	Even if there are noise signals,
+1003000	1004000	we will see that
+1004000	1005000	these two groups
+1005000	1006000	are actually
+1006000	1007000	quite widely separated.
+1007000	1008000	That is to say,
+1008000	1009000	if I give you
+1009000	1010000	zero at the beginning,
+1010000	1012000	then I will
+1012000	1013000	probably
+1013000	1014000	have no problem
+1014000	1015000	to easily
+1015000	1016000	determine that
+1016000	1017000	this is zero.
+1017000	1018000	Similarly,
+1018000	1019000	I can easily
+1019000	1020000	know that
+1020000	1021000	the group on the right
+1021000	1022000	is probably one.
+1022000	1023000	In this situation,
+1023000	1024000	in fact,
+1024000	1025000	we will now say
+1025000	1026000	that this light wire
+1026000	1027000	can be used.
+1027000	1028000	It's really good.
+1028000	1029000	But in fact,
+1029000	1030000	at the same time,
+1030000	1031000	we can find that
+1031000	1033000	there are still a lot of blanks here.
+1033000	1034000	In fact,
+1034000	1035000	we can
+1035000	1036000	make this white paper
+1036000	1038000	more efficient.
+1038000	1039000	What should we do?
+1039000	1041000	We not only give zero,
+1041000	1042000	but we can also
+1042000	1043000	give some other...
+1043000	1044000	We can also
+1044000	1045000	subdivide this
+1045000	1046000	white paper
+1046000	1047000	into four equal parts.
+1047000	1048000	Let's say
+1048000	1049000	if I see
+1049000	1050000	this dot on the far left,
+1050000	1051000	then I actually
+1051000	1052000	want to tell you that it's zero.
+1052000	1053000	I want to
+1053000	1054000	say one zero
+1054000	1055000	on the far right.
+1055000	1056000	Similarly,
+1056000	1057000	we can see
+1057000	1058000	these dots in the middle.
+1058000	1059000	I just say zero one.
+1059000	1060000	If this signal
+1060000	1061000	is actually not
+1061000	1062000	disturbed by noise,
+1062000	1063000	then in fact,
+1063000	1064000	we can still
+1064000	1065000	successfully
+1065000	1066000	receive these signals.
+1066000	1067000	Because
+1067000	1068000	these signals
+1068000	1069000	are still
+1069000	1070000	roughly in
+1070000	1071000	their original positions.
+1071000	1072000	Since they are
+1072000	1073000	roughly in
+1073000	1074000	their original positions,
+1074000	1075000	we can still
+1075000	1076000	easily judge that
+1076000	1077000	if I see
+1077000	1078000	a signal here today,
+1078000	1079000	then I probably know
+1079000	1080000	that there is no problem.
+1080000	1081000	Its original signal
+1081000	1082000	is actually
+1082000	1083000	zero.
+1083000	1084000	Its original signal
+1084000	1085000	is zero.
+1085000	1086000	Like this.
+1086000	1087000	So,
+1087000	1088000	at the same time,
+1088000	1089000	how many signals
+1089000	1090000	can we send
+1090000	1091000	with a piece of white paper?
+1091000	1092000	It's not just
+1092000	1093000	related to
+1093000	1094000	the size of this piece of white paper.
+1094000	1095000	It's also related
+1095000	1096000	to the noise
+1096000	1097000	it receives.
+1097000	1098000	So this is
+1098000	1099000	the so-called
+1099000	1100000	noise ratio,
+1100000	1101000	SNR.
+1101000	1102000	So,
+1102000	1103000	the bigger my piece of white paper is,
+1103000	1104000	the more
+1104000	1105000	I can send
+1105000	1106000	messages.
+1106000	1107000	At the same time,
+1107000	1108000	I can not only say
+1108000	1109000	zero or one,
+1109000	1110000	I can also say
+1110000	1111000	zero zero,
+1111000	1112000	zero one,
+1112000	1113000	one zero one.
+1113000	1114000	That means
+1114000	1115000	the messages I can send
+1115000	1116000	at the same time
+1116000	1117000	are more.
+1117000	1118000	The more,
+1118000	1119000	that means
+1119000	1120000	my frequency is higher.
+1120000	1121000	What about SNR?
+1121000	1122000	Of course,
+1122000	1123000	at the same time,
+1123000	1124000	if you have a lot of noise,
+1124000	1125000	then you can
+1125000	1126000	do less things.
+1126000	1127000	Because although
+1127000	1128000	your piece of white paper is big,
+1128000	1129000	at the same time,
+1129000	1130000	the amount of messages
+1130000	1131000	you can receive
+1131000	1132000	is not that much.
+1132000	1133000	The messages you can successfully
+1133000	1134000	see on the other side
+1134000	1135000	are not that much.
+1135000	1136000	Now,
+1136000	1137000	if we consider
+1137000	1138000	the transmission of
+1138000	1139000	signals,
+1139000	1140000	it's like this.
+1140000	1141000	If we want to
+1141000	1142000	send a signal
+1142000	1143000	from the left
+1143000	1144000	to the right
+1144000	1145000	via a light
+1145000	1146000	to the right,
+1146000	1147000	we can think that
+1147000	1148000	our signal
+1148000	1149000	is a bit like
+1149000	1150000	a piece of white paper.
+1150000	1151000	Then we
+1151000	1152000	decide
+1152000	1153000	the code
+1153000	1154000	between each other.
+1154000	1155000	For example,
+1155000	1156000	if I see on the left,
+1156000	1157000	this is zero zero,
+1157000	1158000	zero zero,
+1158000	1159000	zero one,
+1159000	1160000	one one,
+1160000	1161000	one one zero,
+1161000	1162000	like this,
+1162000	1163000	this is called
+1163000	1164000	modulation.
+1164000	1165000	Modulation
+1165000	1166000	means
+1166000	1167000	adjusting
+1167000	1168000	the relationship
+1168000	1169000	between
+1169000	1170000	your changes
+1170000	1171000	and your
+1171000	1172000	signal.
+1172000	1173000	What is this
+1173000	1174000	modulation?
+1174000	1175000	If the other side
+1175000	1176000	also knows
+1176000	1177000	this modulation,
+1177000	1178000	after you send
+1178000	1179000	the signal,
+1179000	1180000	the other side
+1180000	1181000	can interpret
+1181000	1182000	your signal.
+1182000	1183000	It's a bit like
+1183000	1184000	if I say
+1184000	1185000	the leftmost point
+1185000	1186000	is zero zero,
+1186000	1187000	zero zero,
+1187000	1188000	like this.
+1188000	1189000	Then we can
+1189000	1190000	send the signal
+1190000	1191000	from one side
+1191000	1192000	of the light
+1192000	1193000	to the other side.
+1193000	1194000	Of course,
+1194000	1195000	it's not that good.
+1195000	1196000	If there is no
+1196000	1197000	modulation interference,
+1197000	1198000	of course it's good.
+1198000	1199000	In fact,
+1199000	1200000	we can
+1200000	1201000	put a lot of points,
+1201000	1202000	but because of
+1202000	1203000	the modulation,
+1203000	1204000	like the example
+1204000	1205000	we just saw,
+1205000	1206000	because of the modulation,
+1206000	1207000	so we actually
+1207000	1208000	see the signal
+1208000	1209000	at the receiving end
+1209000	1210000	here,
+1210000	1211000	the signal
+1211000	1212000	is a bit
+1212000	1213000	not the original position,
+1213000	1214000	it may be a little bit
+1214000	1215000	off,
+1215000	1216000	but if it's not
+1216000	1217000	off a lot,
+1217000	1218000	we can still
+1218000	1219000	successfully know
+1219000	1220000	what the original
+1220000	1221000	signal looks like.
+1221000	1222000	If you see
+1222000	1223000	the signal is probably
+1223000	1224000	in this area,
+1224000	1225000	then we know
+1225000	1226000	it was originally
+1226000	1227000	this point.
+1227000	1228000	Then we can
+1228000	1229000	check our meter
+1229000	1230000	and say
+1230000	1231000	this is zero zero.
+1231000	1232000	After this,
+1232000	1233000	we can actually
+1233000	1234000	not need
+1234000	1235000	these colors
+1235000	1236000	to mark them,
+1236000	1237000	right?
+1237000	1238000	That is to say,
+1238000	1239000	what is my
+1239000	1240000	modulation?
+1240000	1241000	How do I
+1241000	1242000	divide this white paper
+1242000	1243000	into several
+1243000	1244000	different areas
+1245000	1246000	and then I use
+1246000	1247000	each point
+1247000	1248000	to represent
+1248000	1249000	a signal.
+1249000	1250000	If I say
+1250000	1251000	there is not
+1251000	1252000	much noise
+1252000	1253000	on the other side,
+1253000	1254000	I can say
+1254000	1255000	it's probably
+1255000	1256000	in this area
+1256000	1257000	and it corresponds
+1257000	1258000	to this point.
+1258000	1259000	This point
+1259000	1260000	represents a signal.
+1260000	1261000	So this is
+1261000	1262000	what we
+1262000	1263000	generally call
+1263000	1264000	constellation,
+1264000	1265000	that is,
+1265000	1266000	if I see
+1266000	1267000	this point,
+1267000	1268000	what is
+1268000	1269000	the signal?
+1269000	1270000	Usually,
+1270000	1271000	at the receiving end,
+1271000	1272000	we will
+1272000	1273000	make a judgment
+1273000	1274000	based on
+1274000	1275000	the message
+1275000	1276000	to see
+1276000	1277000	which signal
+1277000	1278000	is more similar
+1278000	1279000	to the original one.
+1279000	1280000	Then we will
+1280000	1281000	interpret the
+1281000	1282000	original signal.
+1282000	1283000	So we can
+1283000	1284000	also see that
+1284000	1285000	this noise
+1285000	1286000	actually
+1286000	1287000	depends on
+1287000	1288000	the strength of
+1288000	1289000	the noise
+1289000	1290000	is related to
+1290000	1291000	the frequency of
+1291000	1292000	our signal.
+1292000	1293000	Sometimes we
+1293000	1294000	say
+1294000	1295000	why we can
+1295000	1296000	say
+1296000	1297000	we buy a line today
+1297000	1298000	and we say
+1298000	1299000	its frequency is
+1299000	1300000	10 GB
+1300000	1301000	or we say
+1301000	1302000	it is 100 GB.
+1302000	1303000	In fact,
+1303000	1304000	the frequency of
+1304000	1305000	this line
+1305000	1306000	is related to
+1306000	1307000	noise.
+1307000	1308000	The reason is
+1308000	1309000	because
+1309000	1310000	we generally
+1310000	1311000	operate these lines
+1311000	1312000	in a conservative way.
+1312000	1313000	For example,
+1313000	1314000	these lines
+1314000	1315000	may have
+1315000	1316000	expected
+1316000	1317000	noise
+1317000	1318000	in the natural world
+1318000	1319000	which is
+1319000	1320000	something like
+1320000	1321000	this.
+1321000	1322000	Then we will
+1322000	1323000	give a very strong
+1323000	1324000	signal
+1324000	1325000	to separate it.
+1325000	1326000	In this way,
+1326000	1327000	we can
+1327000	1328000	ensure that
+1328000	1329000	we can
+1329000	1330000	always
+1330000	1331000	restore
+1331000	1332000	the
+1332000	1333000	original
+1333000	1334000	signal.
+1334000	1335000	Then we say
+1335000	1336000	this line
+1336000	1337000	probably has
+1337000	1338000	capacity.
+1338000	1339000	In fact,
+1339000	1340000	when we actually
+1340000	1341000	send a signal,
+1341000	1342000	we are not
+1342000	1343000	only
+1343000	1344000	a blank sheet.
+1344000	1345000	We are not
+1345000	1346000	only one-dimensional.
+1346000	1347000	Sometimes we
+1347000	1348000	use multiple dimensions
+1348000	1349000	or in this case
+1349000	1350000	we use two-dimensional
+1350000	1351000	to show.
+1351000	1352000	For example,
+1352000	1353000	I have a
+1353000	1354000	two-dimensional signal
+1354000	1355000	and we will
+1355000	1356000	also be
+1356000	1357000	disturbed by
+1357000	1358000	noise.
+1358000	1359000	These signals
+1359000	1360000	scatter
+1360000	1361000	and we
+1361000	1362000	can see that
+1362000	1363000	the degree of
+1363000	1364000	scattering is
+1364000	1365000	not much.
+1365000	1366000	So we can
+1366000	1367000	still clearly
+1367000	1368000	tell if
+1368000	1369000	this signal
+1369000	1370000	is in this area
+1370000	1371000	and its
+1371000	1372000	original signal
+1372000	1373000	is here.
+1373000	1374000	So it
+1374000	1375000	can still
+1375000	1376000	successfully
+1376000	1377000	pull our
+1377000	1378000	signal from
+1378000	1379000	one side
+1379000	1380000	to the other.
+1380000	1381000	The advantage of
+1381000	1382000	two-dimensional,
+1382000	1383000	three-dimensional
+1383000	1384000	or multiple dimensions
+1384000	1385000	is that
+1385000	1386000	we can
+1386000	1387000	expand this
+1387000	1388000	blank sheet
+1388000	1389000	so we
+1389000	1390000	can see that
+1390000	1391000	the width of
+1391000	1392000	this line
+1392000	1393000	is actually
+1393000	1394000	the ratio
+1394000	1395000	of the signal
+1395000	1396000	to its
+1396000	1397000	noise.
+1397000	1398000	The noise
+1398000	1399000	ratio
+1399000	1400000	has a
+1400000	1401000	very strong
+1401000	1402000	relationship.
+1402000	1403000	Generally speaking,
+1403000	1404000	most of
+1404000	1405000	the time,
+1405000	1406000	as we
+1406000	1407000	just said,
+1407000	1408000	although
+1408000	1409000	this line
+1409000	1410000	is 50
+1410000	1411000	Gbps,
+1411000	1412000	which is
+1412000	1413000	50 x
+1413000	1414000	10
+1414000	1415000	9
+1415000	1416000	square
+1416000	1417000	bits,
+1417000	1418000	we can
+1418000	1419000	still
+1419000	1420000	clearly
+1420000	1421000	tell
+1421000	1422000	if
+1422000	1423000	this
+1423000	1424000	noise
+1424000	1425000	is
+1425000	1426000	in
+1426000	1427000	this area
+1427000	1428000	and
+1428000	1429000	its
+1429000	1430000	original
+1430000	1431000	signal
+1431000	1432000	is here
+1432000	1433000	and
+1433000	1434000	its
+1434000	1435000	noise
+1435000	1436000	ratio
+1436000	1437000	is here.
+1437000	1438000	So
+1438000	1439000	this
+1439000	1440000	noise
+1440000	1441000	ratio
+1441000	1442000	is
+1442000	1443000	about
+1443000	1444000	this much.
+1444000	1445000	So
+1445000	1446000	we can
+1446000	1447000	clearly
+1447000	1448000	tell
+1448000	1449000	if
+1449000	1450000	this
+1450000	1451000	noise
+1451000	1452000	is
+1452000	1453000	in
+1453000	1454000	this
+1454000	1455000	area
+1455000	1456000	and
+1456000	1457000	its
+1457000	1458000	original
+1458000	1459000	signal
+1459000	1460000	is here
+1460000	1461000	and
+1461000	1462000	its
+1462000	1463000	original
+1463000	1464000	noise
+1464000	1465000	ratio
+1465000	1466000	is here
+1466000	1467000	and
+1467000	1468000	its
+1468000	1469000	original
+1469000	1470000	signal
+1470000	1471000	is here
+1471000	1472000	and
+1472000	1473000	its
+1473000	1474000	original
+1474000	1475000	signal
+1475000	1476000	is here.
+1476000	1477000	So
+1477000	1478000	I can
+1478000	1479000	modify
+1479000	1480000	the
+1480000	1481000	modulation
+1481000	1482000	code.
+1482000	1483000	If I
+1483000	1484000	modify
+1484000	1485000	the
+1485000	1486000	modulation,
+1486000	1487000	I can
+1487000	1488000	send more
+1488000	1489000	messages
+1489000	1490000	to the
+1490000	1491000	other side
+1491000	1492000	at the
+1492000	1493000	same time.
+1493000	1494000	So
+1494000	1495000	this
+1495000	1496000	effectively
+1496000	1497000	improves
+1497000	1498000	my frequency.
+1498000	1499000	So
+1499000	1500000	even though
+1500000	1501000	we still
+1501000	1502000	receive the
+1502000	1503000	same
+1503000	1504000	signal,
+1504000	1505000	I can
+1505000	1506000	still
+1506000	1507000	modify
+1507000	1508000	the
+1508000	1509000	modulation
+1509000	1510000	code.
+1510000	1511000	So
+1511000	1512000	I can
+1512000	1513000	modify
+1513000	1514000	the
+1514000	1515000	modulation
+1515000	1516000	code
+1516000	1517000	and
+1517000	1518000	send
+1518000	1519000	more
+1519000	1520000	messages
+1520000	1521000	to the
+1521000	1522000	other side
+1522000	1523000	at the
+1523000	1524000	same
+1524000	1525000	time.
+1525000	1526000	So
+1526000	1527000	I can
+1527000	1528000	modify
+1528000	1529000	the
+1529000	1530000	modulation
+1530000	1531000	code
+1531000	1532000	and
+1532000	1533000	send
+1533000	1534000	more
+1534000	1535000	messages
+1535000	1536000	to the
+1536000	1537000	other side
+1537000	1538000	at the
+1538000	1539000	same
+1539000	1540000	time.
+1540000	1541000	So
+1541000	1542000	I can
+1542000	1543000	modify
+1543000	1544000	the
+1544000	1545000	modulation
+1545000	1546000	code
+1546000	1547000	and
+1547000	1548000	send
+1548000	1549000	more
+1549000	1550000	messages
+1550000	1551000	to the
+1551000	1552000	other side
+1552000	1553000	at the
+1553000	1554000	same
+1554000	1555000	time.
+1555000	1556000	So
+1556000	1557000	I can
+1557000	1558000	modify
+1558000	1559000	the
+1559000	1560000	modulation
+1560000	1561000	code
+1561000	1562000	and
+1562000	1563000	send
+1563000	1564000	more
+1564000	1565000	messages
+1565000	1566000	to the
+1566000	1567000	other side
+1567000	1568000	at the
+1568000	1569000	same
+1569000	1570000	time.
+1570000	1571000	So
+1571000	1572000	I can
+1572000	1573000	modify
+1573000	1574000	the
+1574000	1575000	modulation
+1575000	1576000	code
+1576000	1577000	and
+1577000	1578000	send
+1578000	1579000	more
+1579000	1580000	messages
+1580000	1581000	to the
+1581000	1582000	other side
+1582000	1583000	at the
+1583000	1584000	same
+1584000	1585000	time.
+1585000	1586000	So
+1586000	1587000	I can
+1587000	1588000	modify
+1588000	1589000	the
+1589000	1590000	modulation
+1590000	1591000	code
+1591000	1592000	and
+1592000	1593000	send
+1593000	1594000	more
+1594000	1595000	messages
+1595000	1596000	to the
+1596000	1597000	other side
+1597000	1598000	at the
+1598000	1599000	same
+1599000	1600000	time.
+1600000	1601000	So
+1601000	1602000	I can
+1602000	1603000	modify
+1603000	1604000	the
+1604000	1605000	modulation
+1605000	1606000	code
+1606000	1607000	and
+1607000	1608000	send
+1608000	1609000	more
+1609000	1610000	messages
+1610000	1611000	to the
+1611000	1612000	other side
+1612000	1613000	at the
+1613000	1614000	same
+1614000	1615000	time.
+1615000	1616000	So
+1616000	1617000	I can
+1617000	1618000	modify
+1618000	1619000	the
+1619000	1620000	modulation
+1620000	1621000	code
+1621000	1622000	and
+1622000	1623000	send
+1623000	1624000	more
+1624000	1625000	messages
+1625000	1626000	to the
+1626000	1627000	other side
+1627000	1628000	at the
+1628000	1629000	same
+1629000	1630000	time.
+1630000	1631000	So
+1631000	1632000	I can
+1632000	1633000	modify
+1633000	1634000	the
+1634000	1635000	modulation
+1635000	1636000	code
+1636000	1637000	and
+1637000	1638000	send
+1638000	1639000	more
+1639000	1640000	messages
+1640000	1641000	to the
+1641000	1642000	other side
+1642000	1643000	at the
+1643000	1644000	same
+1644000	1645000	time.
+1645000	1646000	So
+1646000	1647000	I can
+1647000	1648000	modify
+1648000	1649000	the
+1649000	1650000	modulation
+1650000	1651000	code
+1651000	1652000	and
+1652000	1653000	send
+1653000	1654000	more
+1654000	1655000	messages
+1655000	1656000	to the
+1656000	1657000	other side
+1657000	1658000	at the
+1658000	1659000	same
+1659000	1660000	time.
+1660000	1661000	So
+1661000	1662000	I can
+1662000	1663000	modify
+1663000	1664000	the
+1664000	1665000	modulation
+1665000	1666000	code
+1666000	1667000	and
+1667000	1668000	send
+1668000	1669000	more
+1669000	1670000	messages
+1670000	1671000	to the
+1671000	1672000	other side
+1672000	1673000	at the
+1673000	1674000	same
+1674000	1675000	time.
+1675000	1676000	So
+1676000	1677000	I can
+1677000	1678000	modify
+1678000	1679000	the
+1679000	1680000	modulation
+1680000	1681000	code
+1681000	1682000	and
+1682000	1683000	send
+1683000	1684000	more
+1684000	1685000	messages
+1685000	1686000	to the
+1686000	1687000	other side
+1687000	1688000	at the
+1688000	1689000	same
+1689000	1690000	time.
+1690000	1691000	So
+1691000	1692000	I can
+1692000	1693000	modify
+1693000	1694000	the
+1694000	1695000	modulation
+1695000	1696000	code
+1696000	1697000	and
+1697000	1698000	send
+1698000	1699000	more
+1699000	1700000	messages
+1700000	1701000	to the
+1701000	1702000	other side
+1702000	1703000	at the
+1703000	1704000	same
+1704000	1705000	time.
+1705000	1706000	So
+1706000	1707000	I can
+1707000	1708000	modify
+1708000	1709000	the
+1709000	1710000	modulation
+1710000	1711000	code
+1711000	1712000	and
+1712000	1713000	send
+1713000	1714000	more
+1714000	1715000	messages
+1715000	1716000	to the
+1716000	1717000	other side
+1717000	1718000	at the
+1718000	1719000	same
+1719000	1720000	time.
+1720000	1721000	So
+1721000	1722000	I can
+1722000	1723000	modify
+1723000	1724000	the
+1724000	1725000	modulation
+1725000	1726000	code
+1726000	1727000	and
+1727000	1728000	send
+1728000	1729000	more
+1729000	1730000	messages
+1730000	1731000	to the
+1731000	1732000	other side
+1732000	1733000	at the
+1733000	1734000	same
+1734000	1735000	time.
+1735000	1736000	So
+1736000	1737000	I can
+1737000	1738000	modify
+1738000	1739000	the
+1739000	1740000	modulation
+1740000	1741000	code
+1741000	1742000	and
+1742000	1743000	send
+1743000	1744000	more
+1744000	1745000	messages
+1745000	1746000	to the
+1746000	1747000	other side
+1747000	1748000	at the
+1748000	1749000	same
+1749000	1750000	time.
+1750000	1751000	So
+1751000	1752000	I can
+1752000	1753000	modify
+1753000	1754000	the
+1754000	1755000	modulation
+1755000	1756000	code
+1756000	1757000	and
+1757000	1758000	send
+1758000	1759000	more
+1759000	1760000	messages
+1760000	1761000	to the
+1761000	1762000	other side
+1762000	1763000	at the
+1763000	1764000	same
+1764000	1765000	time.
+1765000	1766000	So
+1766000	1767000	if
+1767000	1768000	we have
+1768000	1769000	the
+1769000	1770000	light source
+1770000	1771000	now,
+1771000	1772000	we can
+1772000	1773000	modify
+1773000	1774000	the
+1774000	1775000	code
+1775000	1776000	to
+1776000	1777000	increase
+1777000	1778000	the
+1778000	1779000	frequency.
+1779000	1780000	But
+1780000	1781000	the
+1781000	1782000	signal
+1782000	1783000	can't
+1783000	1784000	be
+1784000	1785000	very
+1785000	1786000	noisy.
+1786000	1787000	So
+1787000	1788000	this is
+1788000	1789000	the
+1789000	1790000	architecture
+1790000	1791000	that
+1791000	1792000	Microsoft
+1792000	1793000	has
+1793000	1794000	proposed.
+1794000	1795000	Or
+1795000	1796000	there
+1796000	1797000	is a
+1797000	1798000	drawback.
+1798000	1799000	It's not a
+1799000	1800000	drawback.
+1800000	1801000	It's a
+1801000	1802000	trade-off.
+1802000	1803000	Yes,
+1803000	1804000	what we
+1804000	1805000	just said
+1805000	1806000	was
+1806000	1807000	great.
+1807000	1808000	If
+1808000	1809000	we
+1809000	1810000	can
+1810000	1811000	use
+1811000	1812000	different
+1812000	1813000	constellation
+1813000	1814000	maps
+1814000	1815000	to
+1815000	1816000	achieve
+1816000	1817000	better
+1817000	1818000	frequency.
+1818000	1819000	But
+1819000	1820000	the
+1820000	1821000	problem is
+1821000	1822000	that
+1822000	1823000	you
+1823000	1824000	need to
+1824000	1825000	reconfigure
+1825000	1826000	the
+1826000	1827000	map
+1827000	1828000	to
+1828000	1829000	achieve
+1829000	1830000	good
+1830000	1831000	frequency.
+1831000	1832000	If
+1832000	1833000	you
+1833000	1834000	have
+1834000	1835000	a
+1835000	1836000	new
+1836000	1837000	map,
+1837000	1838000	you
+1838000	1839000	need to
+1839000	1840000	reconfigure
+1840000	1841000	it.
+1841000	1842000	You
+1842000	1843000	need to
+1843000	1844000	reconfigure
+1844000	1845000	it.
+1845000	1846000	So
+1846000	1847000	I
+1847000	1848000	need to
+1848000	1849000	reconfigure
+1849000	1850000	it.
+1850000	1851000	So
+1851000	1852000	we
+1852000	1853000	need to
+1853000	1854000	reconfigure
+1854000	1855000	the
+1855000	1856000	map
+1856000	1857000	to
+1857000	1858000	achieve
+1858000	1859000	good
+1859000	1860000	frequency.
+1860000	1861000	So
+1861000	1862000	I
+1862000	1863000	need to
+1863000	1864000	reconfigure
+1864000	1865000	it.
+1865000	1866000	So
+1866000	1867000	I
+1867000	1868000	need to
+1868000	1869000	reconfigure
+1869000	1870000	it.
+1870000	1871000	So
+1871000	1872000	I
+1872000	1873000	need to
+1873000	1874000	reconfigure
+1874000	1875000	it.
+1875000	1876000	So
+1876000	1877000	I
+1877000	1878000	need to
+1878000	1879000	reconfigure
+1879000	1880000	it.
+1880000	1881000	So
+1881000	1882000	I
+1882000	1883000	need to
+1883000	1884000	reconfigure
+1884000	1885000	it.
+1885000	1886000	So
+1886000	1887000	if we
+1887000	1888000	suddenly
+1888000	1889000	reconfigure
+1889000	1890000	the
+1890000	1891000	map,
+1891000	1892000	the
+1892000	1893000	map
+1893000	1894000	will
+1894000	1895000	suddenly
+1895000	1896000	break.
+1896000	1897000	The
+1897000	1898000	broken
+1898000	1899000	map
+1899000	1900000	will
+1900000	1901000	cause
+1901000	1902000	the
+1902000	1903000	traffic
+1903000	1904000	disturbance
+1904000	1905000	caused
+1905000	1906000	by
+1906000	1907000	the
+1907000	1908000	network
+1908000	1909000	sending
+1909000	1910000	signals to
+1910000	1911000	the
+1911000	1912000	network.
+1912000	1913000	So
+1913000	1914000	the
+1914000	1915000	traffic
+1915000	1916000	will
+1916000	1917000	be
+1917000	1918000	disrupted
+1918000	1919000	or
+1919000	1920000	thrown away.
+1920000	1921000	So
+1921000	1922000	the
+1922000	1923000	users
+1923000	1924000	will
+1924000	1925000	protest.
+1925000	1926000	For
+1926000	1927000	example,
+1927000	1928000	if you
+1928000	1929000	call
+1929000	1930000	the
+1930000	1931000	network
+1931000	1932000	to
+1932000	1933000	slow
+1933000	1934000	down
+1934000	1935000	or
+1935000	1936000	break
+1936000	1937000	the
+1937000	1938000	network,
+1938000	1939000	it
+1939000	1940000	will
+1940000	1941000	cause
+1941000	1942000	the
+1942000	1943000	network
+1943000	1944000	to
+1944000	1945000	slow
+1945000	1946000	down
+1946000	1947000	or
+1947000	1948000	break
+1948000	1949000	the
+1949000	1950000	network.
+1950000	1951000	So
+1951000	1952000	the
+1952000	1953000	traffic
+1953000	1954000	will
+1954000	1955000	be
+1955000	1956000	disrupted
+1956000	1957000	or
+1957000	1958000	thrown away.
+1958000	1959000	So
+1959000	1960000	the
+1960000	1961000	traffic
+1961000	1962000	will
+1962000	1963000	be
+1963000	1964000	disrupted
+1964000	1965000	or
+1965000	1966000	broken.
+1966000	1967000	So
+1967000	1968000	the
+1968000	1969000	traffic
+1999000	2000000	will
+2000000	2001000	be
+2001000	2002000	disrupted
+2002000	2003000	or
+2003000	2004000	broken.
+2004000	2005000	So
+2005000	2006000	the
+2006000	2007000	network
+2007000	2008000	will
+2008000	2009000	be
+2009000	2010000	disrupted
+2010000	2011000	or
+2011000	2012000	broken.
+2012000	2013000	The
+2013000	2014000	traffic
+2014000	2015000	will
+2015000	2016000	be
+2016000	2017000	broken or
+2017000	2018000	broken.
+2018000	2019000	The
+2019000	2020000	traffic
+2020000	2021000	will
+2021000	2022000	be
+2022000	2023000	disrupted
+2023000	2024000	or
+2024000	2025000	broken.
+2025000	2026000	So
+2026000	2027000	the
+2027000	2028000	traffic
+2028000	2029000	will
+2029000	2030000	be
+2030000	2031000	disrupted
+2031000	2032000	or
+2032000	2033000	broken
+2033000	2034000	or
+2034000	2035000	damaged
+2035000	2036000	or
+2036000	2037000	so.
+2037000	2038000	So
+2038000	2039000	the
+2039000	2040000	traffic
+2040000	2041000	will
+2041000	2042000	be
+2042000	2043000	disrupted
+2043000	2044000	or
+2044000	2045000	broken.
+2045000	2046000	So
+2046000	2047000	the
+2047000	2048000	traffic
+2048000	2049000	will
+2049000	2050000	be
+2050000	2051000	disrupted
+2051000	2052000	or
+2052000	2053000	damaged
+2053000	2054000	or
+2054000	2055000	so.
+2055000	2056000	So
+2056000	2057000	the
+2087000	2089000	network
+2089000	2090000	will
+2090000	2091000	be
+2091000	2092000	disrupted
+2092000	2093000	or
+2093000	2094000	broken
+2094000	2095000	or
+2095000	2096000	damaged
+2096000	2097000	or
+2097000	2098000	damaged
+2098000	2099000	or
+2099000	2100000	damaged
+2100000	2101000	or
+2101000	2102000	other
+2102000	2103000	traffic
+2103000	2104000	will
+2104000	2105000	be
+2105000	2106000	disrupted
+2106000	2107000	or
+2107000	2108000	broken
+2108000	2109000	or
+2109000	2110000	damaged
+2110000	2111000	or
+2111000	2112000	damaged
+2112000	2113000	or
+2113000	2114000	damaged
+2114000	2115000	or
+2115000	2116000	****
+2116000	2119000	disrupted
+2119000	2120000	or
+2120000	2121000	trashed
+2121000	2123000	or
+2123000	2129000	controlled
+2129000	2130000	traffic
+2130000	2131000	by
+2131000	2132000	walking
+2132000	2133000	or
+2133000	2134000	biking
+2134000	2135000	or
+2135000	2137000	traveling
+2137000	2138000	by
+2138000	2139000	running
+2139000	2140000	or
+2140000	2142000	traveling
+2142000	2143000	express
+2143000	2147000	The traffic may be slightly affected by the movement of the network,
+2147000	2152000	but it is not directly affected by the movement of the network.
+2152000	2154000	This is similar to
+2154000	2156000	what the paper said
+2156000	2158000	in the past.
+2158000	2160000	If we want to
+2160000	2162000	change the
+2162000	2163000	traffic,
+2163000	2166000	we should change the concept in stages.
+2166000	2171000	This is the update of the multi-step.
+2171000	2173000	So,
+2173000	2175000	we can see the difference.
+2175000	2177000	If we use the original proposal,
+2177000	2178000	which is to cut it off directly,
+2178000	2180000	and then restore it,
+2180000	2182000	we may cause a huge
+2182000	2185000	churn.
+2185000	2188000	But if we have several steps now,
+2188000	2191000	what should we do?
+2191000	2194000	What should we do
+2194000	2196000	in each step?
+2196000	2199000	This is what we want to do.
+2199000	2202000	In this paper,
+2202000	2204000	what kind of update
+2204000	2206000	do we want to do?
+2206000	2207000	In fact,
+2207000	2209000	I try not to interfere with
+2209000	2210000	so much
+2210000	2211000	network traffic
+2211000	2212000	in each step.
+2212000	2213000	This sounds quite intuitive.
+2213000	2215000	If I can
+2215000	2217000	get to my
+2217000	2219000	final destination today,
+2219000	2221000	and in each step,
+2221000	2222000	I will not
+2222000	2223000	let my
+2223000	2225000	original network traffic
+2225000	2227000	be cut off.
+2227000	2228000	It may only lose a little,
+2228000	2229000	but not too much.
+2229000	2230000	For me,
+2230000	2231000	the less loss,
+2231000	2233000	the better.
+2233000	2235000	If the best situation is that
+2235000	2237000	I do not lose any traffic at all,
+2237000	2238000	I can get to the end.
+2238000	2240000	But because you have to adjust,
+2240000	2241000	you have to
+2241000	2242000	have some lines that cannot be used.
+2242000	2243000	So, you will definitely lose a little,
+2243000	2245000	but you do not lose too much.
+2245000	2247000	This should be
+2247000	2249000	a conceptually
+2249000	2251000	better
+2251000	2253000	adjustment plan.
+2253000	2254000	The concept of
+2254000	2256000	not losing too much
+2256000	2257000	is called perseverance.
+2257000	2258000	Perseverance
+2258000	2259000	is the so-called
+2259000	2260000	consistency.
+2260000	2261000	That is,
+2261000	2262000	this traffic,
+2262000	2263000	originally,
+2263000	2264000	for example,
+2264000	2265000	if it is 1,
+2265000	2266000	it can be conservative.
+2266000	2267000	It can not
+2267000	2268000	lose much.
+2268000	2269000	Its loss
+2269000	2270000	may be less than
+2270000	2271000	how much.
+2271000	2272000	We call it
+2272000	2273000	perseverance level.
+2273000	2274000	Of course,
+2274000	2275000	we hope that
+2275000	2276000	this perseverance level
+2276000	2277000	is
+2277000	2278000	the higher,
+2278000	2279000	the better.
+2279000	2280000	Perseverance
+2280000	2281000	is originally
+2281000	2282000	1.
+2282000	2283000	How much
+2283000	2284000	do I need
+2284000	2285000	for the rest?
+2285000	2286000	For example,
+2286000	2287000	0.9,
+2287000	2288000	0.8,
+2288000	2289000	like this.
+2289000	2290000	Like this.
+2290000	2291000	So,
+2291000	2292000	what is
+2292000	2293000	our final
+2293000	2294000	plan?
+2294000	2295000	Our plan
+2295000	2296000	becomes that
+2296000	2297000	we want to
+2297000	2298000	get to the end
+2298000	2299000	as soon as possible,
+2299000	2300000	but we do not want
+2300000	2301000	to lose too much
+2301000	2302000	traffic
+2302000	2303000	in each step
+2303000	2304000	in the middle.
+2304000	2305000	It becomes that
+2305000	2306000	we look for
+2306000	2307000	the so-called
+2307000	2308000	perseverance way,
+2308000	2309000	which is
+2309000	2310000	to consider
+2310000	2311000	the consistency of
+2311000	2312000	traffic engineering.
+2312000	2313000	The consistency of
+2313000	2314000	traffic engineering
+2314000	2315000	means that
+2315000	2316000	we want to
+2316000	2317000	get to the end
+2317000	2318000	as soon as possible,
+2318000	2319000	but we do not want to
+2319000	2320000	lose too much
+2320000	2321000	traffic
+2321000	2322000	in each step
+2322000	2323000	in the middle.
+2323000	2324000	This is
+2324000	2325000	what we
+2325000	2326000	proposed
+2326000	2327000	in the middle
+2327000	2328000	of this paper.
+2328000	2329000	We want to
+2329000	2330000	do this
+2330000	2331000	new proposal.
+2331000	2332000	We think
+2332000	2333000	this is
+2333000	2334000	actually better
+2334000	2335000	than the
+2335000	2336000	original
+2336000	2337000	churn-based
+2337000	2338000	proposal.
+2338000	2339000	Why?
+2339000	2340000	Because
+2340000	2341000	in the churn-based
+2341000	2342000	proposal,
+2342000	2343000	you cut off
+2343000	2344000	most of the
+2344000	2345000	traffic,
+2345000	2346000	so you will
+2346000	2347000	get a
+2347000	2348000	very serious
+2348000	2349000	network interference.
+2349000	2350000	This is
+2350000	2351000	actually the
+2351000	2352000	so-called
+2352000	2353000	perseverance level
+2353000	2354000	zero.
+2354000	2355000	Between
+2355000	2356000	the two
+2356000	2357000	steps,
+2357000	2358000	what can
+2358000	2359000	I lose the most?
+2359000	2360000	I can lose
+2360000	2361000	all my traffic.
+2361000	2362000	All traffic
+2362000	2363000	can be cut off,
+2363000	2364000	which is
+2364000	2365000	perseverance level
+2365000	2366000	zero.
+2366000	2367000	However,
+2367000	2368000	if we
+2368000	2369000	keep a
+2369000	2370000	higher
+2370000	2371000	perseverance level,
+2371000	2372000	for example,
+2372000	2373000	0.5,
+2373000	2374000	there are
+2374000	2375000	two middle
+2375000	2376000	steps in
+2376000	2377000	the update
+2377000	2378000	plan.
+2378000	2379000	In each
+2379000	2380000	plan,
+2380000	2381000	I lose
+2381000	2382000	at most
+2382000	2383000	half of the
+2383000	2384000	traffic.
+2384000	2385000	For example,
+2385000	2386000	if my
+2386000	2387000	traffic was
+2387000	2388000	from the
+2388000	2389000	left to the
+2389000	2390000	right,
+2390000	2391000	all my
+2391000	2392000	lines were
+2392000	2393000	used up.
+2393000	2394000	In the first
+2394000	2395000	step,
+2395000	2396000	I pulled
+2396000	2397000	the traffic
+2397000	2398000	from the
+2398000	2399000	top line
+2399000	2400000	down
+2400000	2401000	and cut
+2401000	2402000	them
+2402000	2403000	off.
+2403000	2404000	In this way,
+2404000	2405000	I keep
+2405000	2406000	at least
+2406000	2407000	half of
+2407000	2408000	my
+2408000	2409000	traffic.
+2409000	2410000	In the
+2410000	2411000	entire
+2411000	2412000	update process,
+2412000	2413000	Can you
+2413000	2414000	go back
+2414000	2415000	to the
+2415000	2416000	last page?
+2416000	2417000	Yes,
+2417000	2418000	it's in the
+2418000	2419000	last page.
+2419000	2420000	It's in the
+2420000	2421000	last page.
+2421000	2422000	There are
+2422000	2423000	several pages
+2423000	2424000	in the
+2424000	2425000	last page.
+2425000	2426000	This one?
+2426000	2427000	Yes.
+2427000	2428000	It's a bit
+2428000	2429000	laggy.
+2429000	2430000	Yes,
+2430000	2431000	this page.
+2431000	2432000	I don't know
+2432000	2433000	if this is
+2433000	2434000	practical.
+2434000	2435000	For example,
+2435000	2436000	you show
+2436000	2437000	a step,
+2437000	2438000	the first
+2438000	2439000	version,
+2439000	2440000	and then you
+2440000	2441000	propose
+2441000	2442000	unstep.
+2442000	2443000	The next
+2443000	2444000	thing I think of
+2444000	2445000	is why
+2445000	2446000	don't you
+2446000	2447000	make it
+2447000	2448000	infinite?
+2448000	2449000	This
+2449000	2450000	line becomes
+2450000	2451000	a smooth
+2451000	2452000	function.
+2452000	2453000	A very
+2453000	2454000	good question.
+2454000	2455000	Your
+2455000	2456000	limitation
+2456000	2457000	is not
+2457000	2458000	how big
+2458000	2459000	a step
+2459000	2460000	is,
+2460000	2461000	right?
+2461000	2462000	But what
+2462000	2463000	does every step
+2463000	2464000	mean?
+2464000	2465000	Every step
+2465000	2466000	needs at
+2466000	2467000	least one
+2467000	2468000	line,
+2468000	2469000	right?
+2469000	2470000	But the
+2470000	2471000	network is
+2471000	2472000	made up
+2472000	2473000	of limited
+2473000	2474000	lines,
+2474000	2475000	so you
+2475000	2476000	can't have
+2476000	2477000	infinite steps
+2477000	2478000	because you
+2478000	2479000	need at
+2479000	2480000	least one
+2480000	2481000	line every
+2481000	2482000	time.
+2482000	2483000	So you
+2483000	2484000	can only
+2484000	2485000	have n
+2485000	2486000	lines,
+2486000	2487000	so you
+2487000	2488000	can only
+2488000	2489000	have
+2489000	2490000	one
+2490000	2491000	line every
+2491000	2492000	time.
+2492000	2493000	For
+2493000	2494000	example,
+2494000	2495000	if I
+2495000	2496000	want to
+2496000	2497000	make a
+2497000	2498000	better
+2498000	2499000	step,
+2499000	2500000	but
+2500000	2501000	it
+2501000	2502000	gets
+2502000	2503000	bigger
+2503000	2504000	in the
+2504000	2505000	middle,
+2505000	2506000	I
+2506000	2507000	don't
+2507000	2508000	enjoy
+2508000	2509000	anything.
+2509000	2510000	I
+2510000	2511000	lose
+2511000	2512000	some
+2512000	2513000	frequency.
+2513000	2514000	So
+2514000	2515000	we want
+2515000	2516000	the process
+2516000	2517000	to be
+2517000	2518000	as short
+2518000	2519000	as
+2519000	2520000	possible.
+2520000	2521000	We
+2521000	2522000	can't do
+2522000	2523000	that in
+2523000	2524000	reality.
+2524000	2525000	The
+2525000	2526000	second
+2526000	2527000	thing is
+2527000	2528000	that even
+2528000	2529000	if we
+2529000	2530000	consider
+2530000	2531000	an infinite
+2531000	2532000	network,
+2532000	2533000	we
+2533000	2534000	don't want
+2534000	2535000	to do
+2535000	2536000	that because
+2536000	2537000	we want
+2537000	2538000	to get
+2538000	2539000	to the
+2539000	2540000	new
+2540000	2541000	state as
+2541000	2542000	soon as
+2542000	2543000	possible
+2543000	2544000	so that
+2544000	2545000	we
+2545000	2546000	can have
+2546000	2547000	more
+2547000	2548000	flexibility.
+2548000	2549000	For
+2549000	2550000	example,
+2550000	2551000	we can
+2551000	2552000	ask a
+2552000	2553000	few
+2553000	2554000	questions.
+2554000	2555000	We
+2555000	2556000	call this
+2556000	2557000	a
+2557000	2558000	re-adaptation
+2558000	2559000	planning
+2559000	2560000	problem.
+2560000	2561000	How
+2561000	2562000	do I
+2562000	2563000	adjust
+2563000	2564000	this
+2564000	2565000	variable
+2565000	2566000	network
+2566000	2567000	plan?
+2567000	2568000	How
+2568000	2569000	many
+2569000	2570000	steps
+2570000	2571000	do I
+2571000	2572000	need to
+2572000	2573000	do?
+2573000	2574000	The
+2574000	2575000	first
+2575000	2576000	question is
+2576000	2577000	how
+2577000	2578000	do I
+2578000	2579000	solve this
+2579000	2580000	problem?
+2580000	2581000	Is
+2581000	2582000	there
+2582000	2583000	a way
+2583000	2584000	to
+2584000	2585000	solve it?
+2585000	2586000	Unfortunately,
+2586000	2587000	this is
+2587000	2588000	a very
+2588000	2589000	difficult
+2589000	2590000	problem
+2590000	2591000	called
+2591000	2592000	NP-hard.
+2592000	2593000	This
+2593000	2594000	is a
+2594000	2595000	very
+2595000	2596000	difficult
+2596000	2597000	problem
+2597000	2598000	in
+2598000	2599000	computer
+2599000	2600000	science.
+2600000	2601000	It's
+2601000	2602000	basically
+2602000	2603000	very difficult
+2603000	2604000	to
+2604000	2605000	solve
+2605000	2606000	this
+2606000	2607000	problem.
+2607000	2608000	If
+2608000	2609000	I
+2609000	2610000	didn't
+2610000	2611000	calculate it
+2611000	2612000	accurately,
+2612000	2613000	it's
+2613000	2614000	basically
+2614000	2615000	the same
+2615000	2616000	as
+2616000	2617000	the
+2617000	2618000	NP-hard
+2618000	2619000	problem.
+2619000	2620000	The
+2620000	2621000	problem
+2621000	2622000	is
+2622000	2623000	too
+2623000	2624000	difficult.
+2624000	2625000	It's
+2625000	2626000	not only
+2626000	2627000	difficult
+2627000	2628000	to find
+2628000	2629000	the best
+2629000	2630000	plan,
+2630000	2631000	it's
+2631000	2632000	also
+2632000	2633000	difficult
+2633000	2634000	to
+2634000	2635000	solve
+2635000	2636000	the
+2636000	2637000	problem.
+2637000	2638000	This
+2638000	2639000	is
+2639000	2640000	a very
+2640000	2641000	difficult
+2641000	2642000	problem.
+2642000	2643000	It's
+2643000	2644000	very
+2644000	2645000	difficult
+2645000	2646000	to
+2646000	2647000	solve
+2647000	2648000	the
+2648000	2649000	problem.
+2649000	2650000	The
+2650000	2651000	problem
+2651000	2652000	is
+2652000	2653000	too
+2653000	2654000	difficult
+2654000	2655000	to
+2655000	2656000	solve.
+2656000	2657000	It's
+2657000	2658000	very
+2658000	2659000	difficult
+2659000	2660000	to
+2660000	2661000	solve
+2661000	2662000	the
+2662000	2663000	problem.
+2663000	2664000	It's
+2664000	2665000	a
+2665000	2666000	very
+2666000	2667000	difficult
+2667000	2668000	problem.
+2668000	2669000	The
+2669000	2670000	problem
+2670000	2671000	is
+2671000	2672000	not
+2672000	2673000	so
+2673000	2674000	difficult
+2674000	2675000	that
+2675000	2676000	it's
+2676000	2677000	not
+2677000	2678000	so
+2678000	2679000	difficult
+2679000	2680000	that
+2680000	2681000	it's
+2681000	2682000	not
+2682000	2683000	so
+2683000	2684000	difficult
+2684000	2685000	that
+2685000	2686000	it's
+2686000	2687000	not
+2687000	2688000	so
+2688000	2689000	difficult
+2689000	2690000	that
+2690000	2691000	it's
+2691000	2692000	not
+2692000	2693000	so
+2693000	2694000	difficult
+2694000	2695000	that
+2695000	2696000	it's
+2696000	2697000	not
+2697000	2698000	so
+2698000	2699000	difficult
+2699000	2700000	that
+2700000	2701000	it's
+2701000	2702000	not
+2702000	2703000	so
+2703000	2704000	difficult
+2704000	2705000	that
+2705000	2706000	pride
+2706000	2707000	is
+2707000	2708000	not
+2708000	2709000	so
+2709000	2710000	difficult
+2710000	2711000	that
+2711000	2712000	it's
+2712000	2713000	not
+2713000	2714000	so
+2714000	2715000	difficult
+2715000	2716000	that
+2716000	2717000	it is
+2717000	2718000	not
+2718000	2719000	so
+2719000	2720000	difficult
+2720000	2721000	that
+2721000	2722000	pride
+2722000	2723000	is
+2723000	2724000	not
+2724000	2725000	so
+2725000	2726000	difficult
+2726000	2727000	that
+2727000	2728000	it is
+2728000	2729000	not
+2729000	2730000	so
+2730000	2731000	difficult
+2731000	2732000	that
+2732000	2733000	pride
+2733000	2734000	it is
+2734000	2735000	it
+2735000	2736000	is
+2736000	2737000	not
+2737000	2738000	so
+2738000	2739000	difficult
+2739000	2740000	that
+2740000	2741000	pride
+2741000	2742000	it is
+2742000	2743000	so
+2743000	2744000	difficult
+2744000	2745000	that
+2745000	2746000	it is
+2746000	2747000	so
+2747000	2748000	difficult
+2748000	2749000	that
+2749000	2750000	pride
+2750000	2751000	is
+2751000	2752000	not
+2752000	2753000	so
+2753000	2753040	difficult
+2753040	2754040	that
+2754040	2755040	pride
+2755040	2756040	is
+2756040	2757000	not
+2757000	2758020	so
+2758020	2759020	difficult
+2759020	2760020	that
+2760020	2761020	王
+2761020	2762020	王
+2762020	2763020	王
+2763020	2764020	王
+2764020	2765020	王
+2765020	2766020	王
+2766020	2767020	王
+2767020	2768020	王
+2768020	2769020	王
+2769020	2770020	王
+2770020	2771020	王
+2771020	2772020	王
+2772020	2773020	王
+2773020	2774020	王
+2774020	2775020	王
+2775020	2778020	王
+2778020	2779000	王
+2780000	2782000	王
+2785000	2786000	王
+2786000	2787000	王
+2787000	2788000	王
+2788000	2789020	王
+2789020	2790020	王
+2790020	2791020	王
+2791020	2792020	王
+2792020	2793020	王
+2793020	2794020	王
+2794020	2795020	王
+2795020	2796020	王
+2796020	2797020	王
+2797020	2798020	王
+2798020	2799020	王
+2799020	2800020	王
+2800020	2801020	王
+2801020	2802020	王
+2802020	2803020	王
+2803020	2804020	王
+2804020	2805020	王
+2805020	2806020	王
+2806020	2807020	王
+2807020	2808020	王
+2808020	2809020	王
+2809020	2811020	王
+2811020	2812020	王
+2812020	2813020	王
+2815020	2816020	王
+2816040	2817040	王
+2820040	2821040	王
+2827040	2828040	王
+2834040	2835040	王
+2835040	2836040	王
+2836040	2837040	王
+2837060	2838060	王
+2841060	2842060	王
+2842060	2843060	王
+2843060	2844060	王
+2845060	2846060	王
+2846060	2847060	王
+2847060	2848060	王
+2848060	2849060	王
+2849060	2850060	王
+2850060	2851060	王
+2851060	2852060	王
+2852060	2853060	王
+2853060	2854060	王
+2854060	2855060	王
+2857060	2858060	王
+2859060	2860060	王
+2860060	2861060	王
+2861060	2862060	王
+2862060	2863060	王
+2863060	2864060	王
+2864060	2865060	王
+2865060	2866060	王
+2866080	2872080	So, did our proposal really cut off the traffic?
+2872080	2877080	Did we really avoid this from happening?
+2877080	2879080	And then,
+2879080	2882080	we said that we have heuristics.
+2882080	2885080	Is this heuristic easy to calculate?
+2885080	2887080	Or is it actually difficult to calculate?
+2887080	2889080	If it's also difficult to calculate,
+2889080	2890080	we didn't mention one thing,
+2890080	2892080	and then we have to calculate for a long time,
+2892080	2893080	for example, for ten minutes,
+2893080	2894080	we can only update our link.
+2894100	2896100	If we update our link,
+2896100	2898100	and then the traffic changes,
+2898100	2900100	then we won't have enough time.
+2900100	2903100	So, we hope that it can be calculated soon.
+2903100	2905100	So, we did some experiments.
+2905100	2907100	We first used
+2907100	2911100	Microsoft's Microsoft Swan
+2911100	2913100	and Google's Beeple
+2913100	2915100	to do the experiment.
+2915100	2917100	And then our
+2917100	2918100	Skynet design heuristic,
+2918100	2920100	we call it ALG.
+2920120	2921120	And OPT,
+2921120	2925120	we call it the best solution.
+2925120	2928120	So, let's answer the first question.
+2928120	2930120	After we add this
+2930120	2932120	heuristic condition,
+2932120	2935120	can we get
+2935120	2937120	a better rating?
+2937120	2939120	The conclusion is yes.
+2939120	2944120	This row equal to one,
+2944120	2946120	if we call this heuristic
+2946120	2947120	as 1,
+2947120	2948120	we can never
+2948120	2949120	lose any rating.
+2949140	2950140	That means we basically
+2950140	2952140	don't update our links.
+2952140	2954140	We can never
+2954140	2956140	lose any network traffic.
+2956140	2958140	The simplest way is
+2958140	2959140	we don't move,
+2959140	2961140	and we will never lose any traffic.
+2961140	2963140	The original overall rating
+2963140	2964140	is like this,
+2964140	2966140	the column on the far left.
+2966140	2967140	The column on the far right
+2967140	2969140	is the solution
+2969140	2971140	proposed by Microsoft.
+2971140	2972140	If we lose in the middle,
+2972140	2974140	how much can we get in the end?
+2974140	2975140	We can see that
+2975140	2977140	even if we add
+2977160	2979160	this perseverance limitation,
+2979160	2980160	we still,
+2980160	2982160	whether it's the best solution
+2982160	2984160	or our heuristic,
+2984160	2985160	in the end,
+2985160	2988160	they can be the same
+2988160	2990160	as the solution
+2990160	2993160	proposed by Microsoft.
+2993160	2995160	Basically the same.
+2995160	2996160	That is to say,
+2996160	2997160	although we have perseverance limitation,
+2997160	2999160	we are more smooth
+2999160	3000160	than the original proposal
+3000160	3001160	proposed by Microsoft.
+3001160	3003160	But we can't get
+3003160	3004160	the best rating
+3004160	3005160	because of that.
+3005160	3006160	In fact,
+3006180	3007180	we can't get
+3007180	3008180	the same rating
+3008180	3009180	as Microsoft.
+3009180	3010180	So,
+3010180	3011180	this is the answer
+3011180	3013180	to the first question.
+3013180	3015180	The second question is
+3015180	3017180	what kind of number
+3017180	3019180	should we set
+3019180	3020180	as our perseverance level?
+3020180	3021180	That is,
+3021180	3022180	what kind of loss
+3022180	3023180	can we accept?
+3023180	3024180	We can see
+3024180	3026180	what the second picture
+3026180	3027180	is about.
+3027180	3028180	That is,
+3028180	3029180	the process of update,
+3029180	3030180	the process of overall rating increase.
+3030180	3032180	If we start with
+3032180	3034180	a 0.5 perseverance,
+3034200	3035200	0.5 perseverance,
+3035200	3036200	that is to say,
+3036200	3037200	I can accept
+3037200	3039200	that I only have 0.5 left.
+3039200	3040200	Of course,
+3040200	3042200	we give the system operator
+3042200	3043200	a lot of space
+3043200	3045200	to adjust these lines.
+3045200	3046200	So we can reach
+3046200	3048200	our final level very quickly.
+3048200	3049200	Of course,
+3049200	3051200	the less loss I am willing to accept,
+3051200	3052200	that is to say,
+3052200	3054200	the higher the perseverance limitation I require,
+3054200	3056200	the less links
+3056200	3057200	I can update every time.
+3057200	3058200	Because if I cut off a lot of links,
+3058200	3060200	I can't ensure
+3060200	3062200	that the original
+3062220	3064220	load flow
+3064220	3066220	can still reach
+3066220	3068220	the original 0.9 level.
+3068220	3069220	That is to say,
+3069220	3070220	it will be slower.
+3070220	3072220	This requires more steps
+3072220	3076220	to reach the final level.
+3076220	3078220	So the higher the perseverance limitation,
+3078220	3079220	of course,
+3079220	3081220	the slower you will be.
+3081220	3082220	Then we will ask,
+3082220	3086220	if there is a perseverance limitation,
+3086240	3088240	what is the relationship
+3088240	3090240	with my
+3090240	3093240	converge time?
+3093240	3094240	Of course,
+3094240	3097240	if you are willing to
+3097240	3099240	accept more interference,
+3099240	3100240	that is to say,
+3100240	3101240	if you are willing to accept more disturbance,
+3101240	3102240	the faster you will
+3102240	3104240	get to your final state.
+3104240	3105240	This is the same as the picture just now.
+3105240	3107240	This is a more detailed picture.
+3107240	3108240	That is to say,
+3108240	3111240	we ran 1000 random cases,
+3111240	3112240	and we found that
+3112240	3113240	of course,
+3113240	3114240	the higher the perseverance level,
+3114260	3116260	the more time it takes to converge.
+3118260	3119260	We can find that
+3119260	3120260	most of the time,
+3120260	3122260	your perseverance level
+3122260	3125260	is between 0.5 and 0.7.
+3125260	3126260	That is to say,
+3126260	3128260	it will converge pretty fast.
+3128260	3131260	It will converge pretty fast.
+3131260	3132260	It won't converge
+3132260	3134260	when it is set to a very high level.
+3134260	3136260	So our best choice is this.
+3136260	3137260	That is to say,
+3137260	3139260	we can converge
+3139260	3140260	in 3 to 5 steps.
+3140260	3141260	At the same time,
+3141260	3142260	we keep the original
+3142280	3144280	flow rate between 0.5 and 0.7.
+3144280	3145280	That's actually not bad.
+3145280	3146280	At least 7 steps.
+3146280	3147280	Compared to the original
+3147280	3148280	that we threw away directly,
+3148280	3150280	we still have 5 to 7 steps
+3150280	3151280	to throw away.
+3153280	3155280	We originally
+3155280	3156280	argued that
+3156280	3157280	this perseverance level
+3157280	3159280	can make the whole process
+3159280	3160280	smoother.
+3160280	3161280	That is to say,
+3161280	3162280	we won't throw away a lot of traffic.
+3162280	3163280	Is that so?
+3163280	3165280	Let's take a look at
+3165280	3167280	the degree of vibration
+3167280	3170280	in the update process.
+3170300	3171300	The more vibration,
+3171300	3172300	the more to the right.
+3172300	3173300	The less vibration,
+3173300	3174300	the more to the left.
+3174300	3175300	Can you see
+3175300	3176300	that we have introduced
+3176300	3177300	these two methods
+3177300	3179300	of perseverance limitation?
+3179300	3181300	Its vibrations are very few.
+3181300	3182300	It's not very few.
+3182300	3183300	Its vibrations are smaller
+3183300	3184300	than the original
+3184300	3186300	Microsoft Red1 method.
+3186300	3187300	That is to say,
+3187300	3188300	our perseverance limitation
+3188300	3190300	does help
+3190300	3192300	the whole update process
+3192300	3193300	to be smoother.
+3195300	3196300	The last question
+3196300	3197300	we want to answer is that
+3197320	3199320	this is great.
+3199320	3200320	We are very smooth.
+3200320	3201320	But how long
+3201320	3202320	does it take to get it?
+3202320	3203320	If it takes a long time,
+3203320	3204320	it will be lost.
+3205320	3206320	Let's take a look at
+3206320	3207320	the computation time.
+3207320	3208320	The computation time
+3208320	3209320	is how long
+3209320	3210320	it takes
+3210320	3211320	to find
+3211320	3213320	a solution.
+3214320	3215320	The time on our watch
+3215320	3216320	is millisecond.
+3216320	3217320	That is to say,
+3217320	3218320	millisecond.
+3222320	3224320	If we want to find the best solution,
+3224320	3225320	it can't be calculated
+3225320	3226320	in a very short time.
+3226340	3227340	But in fact,
+3227340	3229340	if your network is very small,
+3229340	3231340	this thing can be solved by force.
+3231340	3232340	You just force
+3232340	3234340	to find all the possible solutions.
+3234340	3235340	In fact,
+3235340	3236340	it can be calculated quite quickly.
+3236340	3237340	For example,
+3237340	3238340	if you want to find the best solution,
+3238340	3241340	it takes 67 milliseconds.
+3241340	3243340	If you have a bigger network,
+3243340	3245340	a bigger network,
+3245340	3246340	it takes more seconds.
+3246340	3248340	Until you have this,
+3248340	3249340	for example,
+3249340	3251340	this is a Google network.
+3251340	3252340	Google network,
+3252340	3253340	you have to spend
+3253340	3255340	1.2 times 16 times
+3255360	3256360	milliseconds to find one.
+3256360	3257360	How much is that?
+3257360	3258360	This is about
+3258360	3259360	more than 1,000 seconds
+3259360	3260360	to calculate
+3260360	3262360	the process of updating once.
+3262360	3263360	After you finish the calculation,
+3263360	3264360	after 1,000 seconds,
+3264360	3265360	you may have changed the message again.
+3265360	3266360	Then you just
+3266360	3268360	wasted your time.
+3268360	3269360	In contrast,
+3269360	3270360	our algorithm,
+3270360	3271360	our heuristic,
+3271360	3273360	only takes more than 300 milliseconds
+3273360	3274360	to calculate.
+3274360	3275360	That is to say,
+3275360	3276360	in less than a second,
+3276360	3279360	we can tell the entire network
+3279360	3281360	how to adjust.
+3281360	3283360	This efficiency is very high.
+3283380	3285380	The speed of our calculation
+3285380	3286380	is very fast.
+3286380	3287380	And we can also
+3287380	3288380	let this
+3288380	3289380	be found in the previous
+3289380	3290380	few experiments.
+3290380	3292380	In fact, the algorithm we proposed
+3292380	3294380	is not much different from the best solution.
+3294380	3296380	Although we can't prove
+3296380	3298380	that they are always close to each other,
+3298380	3300380	because we just said
+3300380	3302380	that this thing can't be
+3302380	3305380	done on this mirror.
+3305380	3306380	But in fact,
+3306380	3308380	in terms of real things,
+3308380	3309380	the solution we calculated
+3309380	3311380	is not much different from the best solution.
+3311400	3313400	And our algorithm
+3313400	3314400	is very fast.
+3314400	3315400	This is the benefit
+3315400	3317400	of our new solution.
+3318400	3319400	To sum up,
+3319400	3321400	what is this paper
+3321400	3322400	talking about?
+3322400	3323400	This paper says
+3323400	3325400	that instead of cutting
+3325400	3326400	all the lines directly
+3326400	3327400	and then update them,
+3327400	3328400	and then we use
+3328400	3329400	a higher frequency
+3329400	3331400	to send new traffic,
+3331400	3333400	we should consider
+3333400	3334400	consistency.
+3334400	3335400	That is, we need to make sure
+3335400	3337400	that the network traffic
+3337400	3339400	is not lost too much
+3339420	3341420	in the process of traffic.
+3341420	3344420	Considering this consistency,
+3344420	3346420	it won't cause too much burden.
+3346420	3347420	Because we have
+3347420	3348420	a very good algorithm.
+3348420	3350420	It can quickly
+3350420	3351420	solve this problem.
+3351420	3352420	It can quickly approach this problem.
+3352420	3353420	It's not a solution,
+3353420	3354420	but it can quickly
+3354420	3355420	find a solution.
+3355420	3356420	And this solution
+3356420	3359420	is actually pretty good.
+3359420	3360420	It's not much different
+3360420	3361420	from the best solution.
+3361420	3363420	It's not much different
+3363420	3364420	from the performance
+3364420	3365420	of cutting directly.
+3365420	3366420	But it's very
+3366420	3368420	smoother than
+3368440	3370440	cutting directly.
+3372440	3373440	Of course, we also admit that
+3373440	3377440	in addition to consistency,
+3377440	3379440	system operators
+3379440	3380440	can also consider
+3380440	3381440	more different aspects.
+3381440	3382440	For example,
+3382440	3383440	in the middle of the network,
+3383440	3384440	in the middle of the update,
+3384440	3385440	we hope that
+3385440	3386440	these traffic
+3386440	3388440	are not lost too much.
+3388440	3390440	We may also hope that
+3390440	3392440	they have some other
+3392440	3394440	characteristics.
+3394440	3395440	For example,
+3395440	3396440	each traffic
+3396460	3398460	cannot be less than
+3398460	3401460	the absolute traffic.
+3401460	3402460	For example,
+3402460	3404460	I must be greater than 10Mbps,
+3404460	3405460	I must be greater than 20Mbps.
+3405460	3407460	It may not be a percentage,
+3407460	3408460	but an absolute traffic.
+3408460	3409460	We must maintain
+3409460	3410460	how much traffic.
+3410460	3411460	Otherwise,
+3411460	3412460	I won't,
+3412460	3413460	for example,
+3413460	3414460	I won't feel a lot of delay
+3414460	3415460	in the middle of playing video games.
+3415460	3417460	How much traffic do I need at least?
+3417460	3418460	For example, like this.
+3418460	3419460	So this system operator
+3419460	3420460	can actually adjust
+3420460	3421460	their requirements
+3421460	3423460	for the network.
+3423480	3424480	And then,
+3424480	3425480	let this network
+3425480	3427480	operate more effectively,
+3427480	3428480	more efficiently.
+3428480	3429480	And they can,
+3429480	3430480	in the end,
+3430480	3432480	get a better balance.
+3432480	3433480	That's all
+3433480	3435480	for my speech today.
+3435480	3437480	If you have any questions,
+3437480	3438480	please feel free to ask.
+3438480	3440480	Thank you for listening.
+3440480	3441480	This topic,
+3441480	3442480	this topic
+3442480	3444480	is a little bit harder.
+3444480	3445480	So,
+3445480	3446480	if you have any questions,
+3446480	3447480	please feel free to ask.
+3449480	3450480	Let me welcome,
+3450480	3451480	let me give a round of applause
+3451480	3452480	on behalf of everyone.
+3453480	3454480	Yeah.
+3454480	3455480	Okay,
+3455480	3456480	do you have any questions?
+3456480	3457480	Do you have any questions?
+3457480	3459480	Let me ask.
+3459480	3460480	Yes.
+3460480	3461480	For example,
+3461480	3462480	if you are now
+3462480	3463480	changing
+3463480	3464480	their,
+3464480	3465480	for example,
+3465480	3467480	the two ends of the fiber.
+3467480	3468480	For example,
+3468480	3469480	the way they receive
+3469480	3471480	modulation.
+3471480	3472480	Yes.
+3472480	3473480	So,
+3473480	3474480	on the hardware,
+3474480	3475480	will this thing need to be changed for a long time?
+3475480	3476480	For example,
+3476480	3477480	you were,
+3478480	3479480	for example,
+3479480	3480480	you said green light, red light, blue light.
+3480480	3481480	Maybe it was only red and yellow.
+3481480	3482480	Then you added
+3482500	3483500	green light into it.
+3483500	3484500	Yes.
+3484500	3485500	Will it work
+3485500	3487500	on the hardware?
+3487500	3488500	This is a very good question.
+3488500	3489500	Yes,
+3489500	3490500	it works.
+3490500	3491500	Then how long does it take?
+3491500	3493500	At the time of RedOne,
+3493500	3494500	in 2018,
+3494500	3495500	it took
+3496500	3498500	a few dozen to a few hundred milliseconds.
+3499500	3500500	Every step,
+3500500	3501500	a few dozen to a few hundred milliseconds.
+3501500	3502500	Of course,
+3502500	3503500	we can consider,
+3503500	3504500	if you say
+3504500	3505500	a few dozen to a few hundred milliseconds,
+3505500	3506500	there is no difference, right?
+3506500	3507500	But if you consider
+3507500	3508500	these are broadband networks,
+3508500	3509500	these broadband networks
+3509500	3511500	carry a lot of traffic.
+3511520	3513520	It may have a few terabytes of traffic
+3513520	3516520	or a few thousand terabytes.
+3516520	3518520	Multiplied by a few hundred milliseconds,
+3518520	3520520	that is a very objective
+3520520	3521520	traffic loss.
+3523520	3524520	But,
+3524520	3525520	how did it work before?
+3525520	3526520	It used to be like
+3526520	3527520	you said,
+3527520	3528520	what if you want to add red light,
+3528520	3529520	add blue light?
+3529520	3530520	It is to turn off both sides first.
+3531520	3533520	Because your laser needs to be adjusted again.
+3533520	3534520	After you adjust the laser again,
+3534520	3536520	you let it send out the laser again.
+3537520	3538520	So,
+3538520	3539520	turning it off and restarting
+3539540	3541540	is actually very slow.
+3541540	3542540	Now,
+3542540	3543540	why does it need a few hundred milliseconds?
+3543540	3544540	It was mentioned
+3544540	3545540	in the original RedOne paper.
+3545540	3546540	They said,
+3546540	3547540	if we say
+3547540	3549540	turning it off and restarting
+3549540	3550540	is a major factor
+3550540	3552540	in causing this delay,
+3552540	3554540	we can try not to turn it off and restart.
+3554540	3556540	If you don't turn it off and restart,
+3556540	3558540	they can't make it work
+3558540	3560540	at that time.
+3560540	3562540	But they estimate that
+3562540	3564540	if you don't turn it off and restart,
+3564540	3566540	it may only take
+3566540	3568540	a microsecond
+3568560	3570560	to reach
+3570560	3572560	the goal of re-adjustment.
+3573560	3574560	If we say
+3574560	3575560	our future network
+3575560	3576560	can be seamless,
+3576560	3577560	that is,
+3577560	3578560	if I want to re-adjust,
+3578560	3579560	I can re-adjust immediately.
+3579560	3580560	Then,
+3580560	3581560	of course,
+3581560	3582560	our research
+3582560	3583560	has nothing
+3583560	3584560	to do with
+3584560	3587560	their original research.
+3587560	3588560	Because we basically
+3588560	3589560	don't lose anything.
+3590560	3591560	So,
+3591560	3592560	I think this question is very important.
+3592560	3593560	In the end,
+3593560	3594560	how is it done on hardware?
+3594560	3595560	Can it be done?
+3595560	3596560	Yes, it can be done.
+3596580	3597580	Is there any other
+3597580	3598580	research requirement on hardware?
+3598580	3599580	Yes,
+3599580	3600580	that is,
+3600580	3601580	how do we adjust
+3601580	3602580	this modulation
+3602580	3603580	dynamically?
+3604580	3605580	In fact,
+3605580	3606580	there are many ways
+3606580	3607580	that can be thought of.
+3607580	3608580	For example,
+3608580	3609580	we can send the modulation
+3609580	3610580	in advance,
+3610580	3611580	right?
+3611580	3612580	Then I will tell the other person
+3612580	3614580	when I start
+3614580	3616580	to use this new modulation.
+3617580	3618580	In the middle,
+3618580	3619580	it may need
+3619580	3620580	some ways
+3620580	3621580	to let the two sides communicate.
+3621580	3622580	For example,
+3622580	3623580	you want to use a clock.
+3623580	3624580	That is,
+3624580	3625580	you want to make
+3625600	3626600	the timing
+3626600	3627600	good enough.
+3627600	3628600	For example,
+3628600	3629600	I will immediately switch
+3629600	3630600	both sides at 7 o'clock.
+3630600	3631600	This is actually quite difficult
+3631600	3632600	because you have to
+3632600	3633600	synchronize both sides.
+3633600	3634600	That is to say,
+3634600	3635600	your time is consistent.
+3635600	3636600	In fact,
+3636600	3637600	sometimes it's not that easy.
+3637600	3638600	Another way is
+3638600	3639600	you send some
+3639600	3641600	this packet,
+3641600	3642600	send some information.
+3642600	3643600	That is,
+3643600	3644600	in addition to your
+3644600	3645600	information,
+3645600	3646600	send some
+3646600	3647600	control messages
+3647600	3648600	to the other side
+3648600	3649600	and tell him
+3649600	3650600	I want to start using it.
+3650600	3651600	Then,
+3651600	3652600	which packet
+3652600	3653600	do I start using?
+3653600	3654600	For example,
+3654620	3655620	it's a little more complicated.
+3655620	3656620	Because the current
+3656620	3658620	system is not designed like this.
+3658620	3659620	Their original system
+3659620	3660620	may have imagined
+3660620	3661620	that once you turn it on,
+3661620	3662620	what is the modulation?
+3662620	3663620	Just keep using it.
+3664620	3665620	So, in the middle,
+3665620	3666620	there are actually
+3666620	3668620	a lot of research that can be done.
+3670620	3672620	Does this answer your question?
+3672620	3673620	Yes.
+3674620	3675620	So, you said
+3675620	3676620	Microsoft
+3677620	3679620	changed
+3679620	3680620	the modulation method like this.
+3680620	3682620	How many times can it be improved?
+3682620	3683620	Or how many percent?
+3683640	3684640	How many times can it be improved?
+3684640	3685640	Its improvement
+3685640	3688640	is actually pretty good.
+3688640	3689640	Let me find
+3689640	3691640	its original paper.
+3697640	3698640	I don't know if you can see
+3698640	3699640	the original.
+3699640	3700640	It's not good for me to show the paper directly.
+3700640	3701640	But it doesn't matter.
+3703640	3704640	Let's take a look.
+3704640	3705640	When you show it,
+3705640	3707640	before you finish,
+3707640	3708640	you swipe to its title page
+3708640	3710640	and show the author.
+3711640	3712640	The author.
+3712660	3713660	Do you know why?
+3713660	3714660	Does it mean you can see the author?
+3714660	3715660	Yes.
+3717660	3719660	If you look at its original paper,
+3719660	3720660	it's actually...
+3720660	3721660	Let me see.
+3725660	3726660	It can actually improve
+3726660	3728660	a lot of traffic.
+3729660	3730660	Or it can
+3730660	3732660	avoid traffic drop.
+3732660	3734660	But because their original
+3735660	3736660	paper
+3736660	3737660	talks about
+3737660	3739660	a pretty simple
+3739660	3740660	network.
+3740660	3741660	It only has four points.
+3742660	3743660	These four points
+3743660	3744660	are in California.
+3745660	3746660	So this
+3746660	3748660	is just a prototype.
+3748660	3749660	So
+3749660	3751660	when it's actually used,
+3752660	3753660	we can only say
+3753660	3754660	it has a lot of potential.
+3754660	3755660	But in the end,
+3755660	3756660	when it's actually used,
+3757660	3758660	it's not sure
+3758660	3759660	if it's good or not.
+3759660	3760660	But this idea
+3760660	3761660	has a lot of potential.
+3762660	3763660	This is the paper.
+3764660	3765660	Whatsoever published this paper.
+3765680	3766680	Whatsoever published this paper.
+3770680	3771680	The purpose of this paper
+3771680	3772680	is to say
+3772680	3773680	this idea is pretty good.
+3773680	3774680	But
+3774680	3775680	our update
+3775680	3776680	doesn't need to be so crude.
+3776680	3777680	It can be more detailed.
+3777680	3778680	This concept.
+3781680	3782680	Of course, if we have better
+3782680	3784680	hardware in the future,
+3784680	3785680	then...
+3785680	3786680	Go ahead.
+3786680	3787680	My question is this.
+3787680	3788680	When you're doing
+3788680	3789680	your simulation,
+3789680	3790680	basically,
+3790680	3792680	you have to have some assumptions
+3792680	3793680	about disturbance.
+3793700	3794700	Yes.
+3794700	3796700	What kind of
+3796700	3798700	situation are you in
+3798700	3799700	to compare?
+3799700	3800700	So your disturbance
+3800700	3801700	is like,
+3801700	3802700	Google,
+3802700	3803700	what do they do?
+3803700	3804700	Or how do you
+3804700	3805700	generate
+3805700	3806700	the disturbance
+3806700	3807700	in your simulation?
+3808700	3809700	This is a good question.
+3809700	3810700	So
+3810700	3811700	what I actually generate
+3811700	3812700	is not disturbance.
+3812700	3813700	What I generate is
+3814700	3815700	this link
+3815700	3816700	the current state
+3816700	3817700	and the next state.
+3818700	3819700	So I actually
+3819700	3820700	added a layer
+3820700	3821700	of assumption.
+3821700	3822700	That is to say,
+3822720	3823720	let's assume that
+3823720	3824720	my current link
+3824720	3825720	can only send
+3825720	3826720	50 gigabytes per second.
+3826720	3828720	50 Gbps.
+3828720	3829720	And then
+3829720	3830720	because
+3830720	3832720	the noise has dropped
+3832720	3833720	I can send 100 Gbps now.
+3833720	3835720	How should I update?
+3836720	3837720	So
+3837720	3838720	in the middle
+3838720	3839720	I put the
+3839720	3840720	relationship between
+3840720	3841720	noise and signal
+3841720	3842720	in there.
+3842720	3843720	In fact,
+3843720	3844720	in operation,
+3844720	3845720	of course,
+3845720	3846720	there are
+3846720	3848720	other restrictions.
+3850720	3851720	In fact,
+3851740	3852740	there is also in the paper.
+3852740	3853740	But I don't want to
+3853740	3854740	show this paper again.
+3854740	3855740	That is to say,
+3855740	3856740	the adjustment of our screen width
+3856740	3857740	is actually
+3857740	3858740	not continuous.
+3858740	3859740	That is to say,
+3859740	3860740	the screen width
+3860740	3861740	we can use
+3861740	3862740	is not continuous.
+3862740	3863740	For example,
+3863740	3864740	25 Mbps,
+3864740	3865740	50 Mbps,
+3865740	3866740	100 Mbps,
+3866740	3867740	150,
+3867740	3868740	like this.
+3868740	3869740	So,
+3869740	3870740	you are actually
+3870740	3871740	choosing these kinds.
+3871740	3872740	No matter how much noise you have,
+3872740	3873740	when it reaches
+3873740	3874740	a certain point
+3874740	3875740	you can probably
+3875740	3876740	adjust it up.
+3876740	3877740	You can adjust it
+3877740	3878740	from 100 to 150
+3878740	3879740	or 150 to 200.
+3879760	3881760	But in fact,
+3881760	3882760	why can you adjust
+3882760	3883760	the principle
+3883760	3884760	is what I just said
+3884760	3885760	about the noise.
+3885760	3886760	So, in fact,
+3886760	3888760	how is it measured?
+3888760	3889760	I don't have
+3889760	3891760	this information.
+3891760	3892760	I just
+3892760	3893760	make an assumption
+3893760	3894760	based on the range
+3894760	3895760	it can adjust.
+3897760	3898760	So, my assumption
+3898760	3899760	is that
+3899760	3900760	the original link
+3900760	3901760	may be
+3901760	3902760	in this
+3902760	3903760	100 Gbps
+3903760	3904760	mode.
+3904760	3905760	Because
+3905760	3906760	my
+3906760	3907760	noise
+3907760	3908760	may be reduced,
+3908780	3909780	so now
+3909780	3910780	suddenly this link
+3910780	3911780	can reach 200 Gbps.
+3911780	3912780	If it is
+3912780	3913780	in this situation,
+3913780	3914780	how do we
+3914780	3915780	go from 100 to 200 Gbps?
+3917780	3918780	So, a better way
+3918780	3919780	is
+3919780	3920780	you have already
+3920780	3921780	assumed
+3921780	3922780	your work goal
+3922780	3923780	is to adjust like this.
+3923780	3924780	But you tell it
+3924780	3925780	how to be smarter.
+3925780	3926780	Not that
+3926780	3927780	it's not
+3927780	3928780	that
+3928780	3929780	it's not like
+3929780	3930780	at the analog level
+3930780	3931780	that
+3931780	3932780	the noise pattern is like this,
+3932780	3933780	so we should
+3933780	3934780	decide
+3934780	3935780	what state to adjust.
+3935780	3936780	That is already
+3936780	3937780	a given
+3937800	3938800	assumption.
+3938800	3939800	Yes, a given.
+3939800	3940800	So, let's say
+3940800	3941800	my device tells me
+3941800	3942800	this thing.
+3942800	3943800	I see.
+3943800	3944800	My research
+3944800	3945800	is usually
+3945800	3946800	at a higher level.
+3946800	3947800	So, let's say
+3947800	3948800	the device tells me
+3948800	3949800	these things,
+3949800	3950800	how do I plan
+3950800	3951800	this thing?
+3954800	3955800	Okay, anyone else
+3955800	3956800	have any questions?
+3959800	3960800	Okay, if not,
+3960800	3961800	let's
+3961800	3962800	give another round of applause
+3962800	3963800	to Shihai.
+3963800	3964800	Thank you, everyone.
+3964820	3965820	Thank you.
+3966820	3967820	Okay, that's all
+3967820	3969820	for today's lecture.
+3969820	3970820	I'll...

@@ -1,0 +1,598 @@
+start	end	text
+0	10000	The first TerraTalk in 2021, today is January 9th.
+10000	17000	We are very happy today to invite Dr. Wang Mengren to tell us about his topic today.
+17000	23000	His topic today is Introduction to Particle Transport Simulation Deep Penetration Problems.
+23000	27000	Before we start, let me introduce our speaker today.
+27000	29000	His name is Vince Mengren.
+29000	39000	He is a Research Scientist at the University of Utah.
+39000	42000	Let me introduce his background.
+42000	49000	He is a Research Scientist at the University of Utah.
+50000	59000	Before this, he got his PhD in Nuclear Engineering at Virginia Tech in 2019.
+59000	65000	His main research interest is Particle Transport Simulation.
+65000	67000	This is the topic he will talk about today.
+67000	71000	There is another topic that is not today's topic, but it is very cool.
+71000	76000	It is Robotic Arm Applications in Nuclear Industry.
+76000	79000	Obviously, you can't do anything by yourself.
+79000	81000	This is a very important application.
+81000	85000	There is a very special thing.
+85000	86000	This is our online speech.
+86000	88000	Let's give a round of applause to welcome our speaker.
+88000	92000	Please turn on the microphone so that our speaker can hear our applause.
+92000	100000	Let's give a round of applause to welcome Vince to give us a wonderful speech today.
+100000	101000	I'll leave it to you.
+101000	103000	Thank you, Ian.
+103000	107000	First of all, thank you all for coming to listen to my speech.
+107000	112000	My topic today is Introduction to Particle Transport Simulation.
+112000	116000	Basically, Particle Transport Simulation can be used in many ways.
+116000	120000	My main focus today is Deep Penetration Problem.
+120000	123000	I will introduce what Deep Penetration Problem is later.
+123000	127000	In fact, this chart has already told you some information.
+127000	132000	At first, I will talk about what Particle Transport is.
+132000	135000	Why do we need Particle Transport?
+135000	140000	Second, what are the main applications?
+140000	143000	I just said that Particle Transport has many applications.
+143000	146000	If I have to talk about everything, I won't be able to finish it in an hour.
+146000	148000	So I'm focusing on Deep Penetration Problem today.
+148000	150000	It's actually a shielding problem.
+150000	155000	Basically, you need to have a method to do this simulation.
+155000	157000	There is a Governing Equation behind it.
+157000	161000	Then you have to develop some methods to solve it.
+161000	164000	I will talk about what the mainstream methods are now.
+164000	166000	What are their advantages and disadvantages?
+166000	168000	What are some more advanced methods?
+168000	171000	Basically, I'm talking about Variance Reduction Techniques here.
+171000	175000	Finally, of course, I will give a Demonstration Problem.
+175000	177000	Finally, there is a Summary.
+177000	183000	Before we solve any problem,
+183000	186000	we have to talk about the Governing Equation behind it.
+186000	192000	The Governing Equation behind Particle Transport is the Boltzmann Transport Equation.
+192000	196000	You can see that the above equation looks very complicated.
+196000	198000	This is General Form.
+198000	200000	You have Time Dependent Terms.
+200000	203000	We talk about Particle Streaming.
+203000	206000	Your particle will be in Boundary Loss.
+206000	208000	Then you may have an extra position.
+208000	212000	For example, if you are an electrolyte, you may have magnetic force.
+213000	216000	Gravity is generally not considered.
+216000	218000	Because the particle is very small.
+218000	220000	Then you have Collision.
+220000	223000	The right side is basically Particle Gain.
+223000	228000	When we calculate the Particle Transport,
+228000	231000	We will talk about whether it is Lost or Gain.
+231000	233000	You can see that the left side is basically Lost.
+233000	234000	The right side is Gain.
+234000	239000	I won't focus too much on Mathematics.
+239000	243000	Because if you are not doing this field,
+243000	246000	Mathematics will take a long time to understand.
+246000	250000	The above is General Form.
+250000	252000	The following is basically
+252000	258000	If you need to do radiation transfer calculation.
+258000	260000	Calculate their mass.
+260000	262000	This is the Governing Equation we usually use.
+262000	264000	This is from the above equation.
+264000	268000	We talk about Steady State and Linear Boltzmann Equation.
+268000	271000	You can see that there is a word called Linear here.
+271000	273000	Steady State should not need to explain, everyone knows.
+273000	276000	Basically, what we mean by Linear here is
+276000	280000	For example, if you want to calculate the mass today.
+280000	283000	For example, I am Photon today.
+283000	285000	Photon will cause mass to me.
+285000	289000	Today I assume that there will be no effect between Photon and Photon.
+289000	291000	So this Linear is from here.
+291000	293000	So you can see here
+293000	295000	Basically, it only looks like once.
+295000	300000	This is the function we want to solve.
+300000	303000	We call it Flux.
+303000	305000	Basically, you can see that the above and below
+305000	308000	These two equations actually look a bit like.
+308000	310000	The only difference is that one is General Form.
+310000	314000	The other is Specifically.
+314000	317000	We are not too independent and it is Linear.
+317000	327000	We can explain a little bit about what this equation is doing.
+327000	329000	Just use this example.
+329000	331000	This example is basically if you go to the hospital.
+331000	334000	You often see these X-ray machines.
+334000	338000	This X-ray machine basically has a radiation source inside.
+338000	340000	The middle one is inside.
+340000	344000	Basically, a general X-ray machine is a beam of light.
+345000	349000	Basically, you can circle a boundary.
+349000	354000	If this beam of light runs out of this system.
+354000	356000	I don't think about it.
+356000	358000	Because it basically won't come back.
+358000	360000	Basically, my patient may be here.
+360000	363000	You basically have to estimate the number of patients.
+363000	366000	The beam of light that goes out here.
+366000	368000	I just talked about streaming.
+368000	371000	This beam of light has run out of this boundary.
+371000	375000	Basically, it is unlikely to hit back again.
+375000	378000	On the one hand, the energy you hit is getting lower and lower.
+378000	381000	Its path will be shorter and shorter.
+381000	384000	So this is basically a little bit.
+384000	386000	Just connect this equation.
+386000	388000	What is he talking about?
+388000	390000	Take advantage of this problem.
+390000	391000	OK.
+391000	394000	Speaking of Particle Transport.
+394000	396000	Its application is actually very wide.
+396000	401000	What I just talked about is a medical radiation device.
+401000	405000	Or a physical accelerator that is often used.
+405000	407000	You need to generate high energy particles.
+407000	410000	Basically, you know that when the electric field is turning.
+410000	412000	You will put the light out.
+412000	417000	Basically, you will need to design its radiation barrier.
+417000	418000	How do you design it?
+418000	421000	To make the staff at work.
+421000	426000	Don't let its dosage exceed the specified limit.
+426000	431000	Whether it's nuclear fusion or nuclear separation reaction.
+431000	433000	I basically need it.
+433000	435000	Nuclear fusion reaction, if you need a place.
+435000	438000	Basically, it's the same as I said.
+438000	440000	It's basically a high-energy particle.
+440000	441000	You cut it out again.
+441000	442000	It will emit light.
+442000	445000	Basically, you will have the same radiation barrier.
+445000	447000	The problem needs to be calculated.
+447000	449000	Nuclear separation reaction is no longer necessary.
+450000	453000	From the core to the radiation barrier outside.
+453000	456000	Basically, you need Particle Transport.
+456000	457000	Okay.
+457000	461000	Here is a brief introduction to Deep Penetration Problem.
+461000	463000	Basically, I just talked about Particle Transport.
+463000	464000	There are many applications.
+464000	468000	Basically, Deep Penetration Problem is radiation barrier calculation.
+468000	472000	How much radiation barrier material do you need?
+472000	474000	In front of your staff.
+474000	478000	Let your dosage reach the value you want.
+478000	479000	It's not too high.
+479000	482000	Basically, we talk about Deep Penetration Problem in academia.
+482000	484000	Why do we talk about Deep Penetration Problem?
+484000	486000	Because these particles need to go through.
+486000	490000	If it has to go through such a thick barrier.
+490000	492000	Basically, this calculation is not very easy.
+492000	495000	So basically, we talk about Deep Penetration Problem.
+495000	497000	Generally speaking, if you are talking about radiation barriers.
+497000	499000	We will have an interesting example.
+499000	501000	Basically, there are only three.
+501000	502000	Mainly the first two.
+502000	503000	Medium value and light value.
+503000	506000	Basically, there is time for electrons.
+506000	508000	Basically, when you need electrons.
+508000	511000	Most of them are in medical equipment.
+511000	514000	Medical radiation radiation source equipment.
+514000	516000	In the nuclear industry.
+516000	518000	Basically, we do not consider this.
+518000	519000	Because it is an electrolyte.
+519000	520000	Then it's light.
+520000	522000	It basically can't get out.
+522000	524000	And the nuclear industry is basically.
+524000	527000	The barriers you don't see are basically very thick.
+527000	528000	So these two.
+528000	529000	The first two are basically without electricity.
+529000	531000	So it's easier to get out.
+531000	534000	Basically.
+534000	535000	Basically, every calculation.
+535000	537000	You have to have his goal.
+537000	539000	Basically, we just talked about it.
+539000	542000	You have to protect the staff.
+542000	543000	And you have to calculate.
+543000	545000	Know how much your dosage is.
+545000	550000	Here I listed some of the general.
+550000	553000	The unit we will use for radiation.
+553000	556000	You can take a look.
+556000	559000	This is not directly related to the topic I am talking about today.
+559000	561000	Just mention it a little bit.
+561000	563000	You basically have some units.
+563000	567000	It is considered to be biological.
+567000	569000	Like these are what we usually use.
+569000	571000	Some of them are not.
+571000	573000	Because you have these different particles.
+573000	576000	It may cause damage to our human body.
+576000	577000	Will be different.
+577000	578000	Especially the seed.
+578000	580000	OK.
+580000	582000	Ok, then.
+582000	585000	If we take a system to do.
+585000	586000	Which one is.
+586000	587000	If there is a color system.
+587000	588000	Let's do it.
+588000	589000	For example.
+589000	591000	You can take this.
+592000	594000	This should be very necessary in Taiwan now.
+594000	595000	Because Taiwan is basically.
+595000	597000	Now the nuclear power plant is going to be established.
+597000	598000	You will have these radiation.
+598000	600000	In the process of loading the barrel.
+600000	601000	In the process of shipping.
+601000	603000	You basically have to.
+603000	606000	Calculate how much radiation it will protect.
+606000	608000	Basically, you can see.
+608000	610000	Here is the nuclear fuel inside.
+610000	612000	These nuclear fuels are basically.
+612000	615000	Burned in the reactor.
+615000	617000	I'm talking about burning here.
+617000	618000	Actually, it's not burning.
+618000	620000	It is nuclear transmutation.
+620000	622000	Yes, because basically the nuclear reaction.
+622000	625000	It's not the same as the general chemical reaction.
+625000	627000	Yes, basically you.
+627000	628000	Burned in the reactor.
+628000	631000	It's basically been activated.
+631000	633000	Is being activated.
+633000	634000	Then you basically.
+634000	636000	There may be these.
+636000	637000	These radiation.
+637000	639000	These radiation are basically.
+639000	640000	Spent nuclear.
+640000	641000	Is.
+641000	642000	Used nuclear fuel.
+642000	644000	Basically, it may be released.
+644000	646000	Basically, you can't just.
+646000	647000	Take it out.
+647000	648000	Then.
+648000	650000	Use people to operate.
+650000	652000	So basically it's all mechanical.
+652000	653000	Then put it in these barrels.
+653000	655000	These barrels are basically very thick.
+655000	657000	That light inside.
+657000	659000	Inside is the inner barrel.
+659000	660000	Basically, that steel.
+660000	662000	That stainless steel is basically.
+662000	664000	It's already 25 centimeters thick.
+664000	666000	So basically there is such a thick.
+666000	667000	There is such a thick.
+667000	668000	Radiation barrier.
+668000	669000	You basically have some particles.
+669000	671000	You don't need to think about it at all.
+671000	672000	For example, Alpha Particle.
+672000	673000	Alpha Particle.
+673000	674000	You are basically in the air.
+674000	676000	It's about five centimeters.
+676000	677000	So don't say you have.
+677000	678000	You have a little bit.
+678000	679000	Then Electron doesn't have to say.
+679000	681000	It is very light and has electricity.
+681000	682000	Then Neutrinos basically.
+682000	683000	It doesn't react with matter.
+683000	685000	So we don't consider it.
+685000	686000	So basically.
+686000	687000	Ah.
+687000	688000	We basically.
+688000	689000	You are in the nuclear industry.
+689000	690000	We have to calculate.
+690000	691000	Ah.
+691000	692000	If it's a measure.
+692000	694000	Basically, most of them are these two.
+694000	696000	And it's about 100%.
+696000	697000	The rest is basically.
+697000	699000	You can say it is negligible.
+699000	701000	It depends on the case.
+701000	702000	OK.
+702000	703000	So basically you can see that.
+703000	705000	Because we only.
+705000	708000	Only interested in this non-electric particle.
+708000	709000	So we just use this.
+709000	710000	Steady linear.
+710000	712000	Steady linear Boltzmann equation.
+712000	713000	Basically, you can use it directly.
+713000	714000	Ah.
+714000	715000	To do this calculation.
+715000	716000	OK.
+716000	717000	Ok.
+717000	718000	Then you want to do this calculation.
+718000	719000	The physical model behind you has developed well.
+719000	720000	It is.
+720000	721000	Ah.
+721000	722000	Transport equation.
+722000	724000	Basically, you basically have to.
+724000	726000	To solve this equation.
+726000	727000	Ah.
+727000	728000	But that equation.
+728000	729000	You just saw it.
+729000	730000	Basically, it has.
+730000	731000	Ah.
+731000	732000	If you expand all the variables.
+732000	733000	Include.
+733000	734000	If it includes time.
+734000	735000	It has seven variables.
+735000	736000	Ah.
+736000	737000	XYZ.
+737000	738000	Ah.
+738000	739000	Then the energy.
+739000	740000	Then the angle.
+740000	741000	Is the particle.
+741000	742000	What angle does it shoot?
+742000	743000	Then.
+743000	744000	There are basically two angles.
+744000	745000	It has.
+745000	746000	Ah.
+746000	747000	Z-multiple and polar.
+747000	748000	And then.
+748000	749000	It also has time.
+749000	750000	Basically, there are seven.
+750000	751000	Then it.
+751000	752000	That.
+752000	753000	That.
+753000	754000	That.
+754000	755000	That.
+755000	756000	That.
+756000	757000	That.
+757000	758000	That.
+758000	759000	That.
+759000	760000	That.
+760000	761000	That.
+761000	762000	That.
+762000	763000	That.
+763000	764000	That.
+764000	765000	That.
+765000	766000	That.
+766000	767000	That.
+767000	768000	That.
+768000	769000	That.
+769000	770000	That.
+770000	771000	That.
+771000	772000	Ah.
+772000	773000	Ah.
+773000	774000	Ah.
+774000	775000	Ah, basically, you can only solve the number.
+775000	776000	So, basically, the number is.
+776000	777000	This is the first deterministic model here.
+777000	778000	You really have to go.
+778000	779000	This equation.
+779000	780000	Break it down one piece at a time.
+780000	781000	Then you can see it has a lot of.
+781000	782000	It is a square of space.
+782000	783000	It is XYZ.
+783000	784000	You have to break everything down.
+784000	785000	And then you have to break down the energy.
+785000	786000	And then there are two parts of the angle.
+786000	787000	You have to break down.
+787000	788000	So, this is basically a module.
+789000	790000	It is a very difficult process.
+790000	791000	There is another method.
+791000	792000	It is basically a Monte Carlo method.
+792000	793000	You can put this whole.
+793000	794000	You can use this method.
+794000	795000	Basically, you can.
+795000	796000	You do not have to go directly.
+796000	797000	The one who solved the equation.
+797000	798000	You basically, we are.
+798000	799000	All the physical processes.
+799000	800000	Turn it into a probability function.
+800000	801000	Then go down to do the signal.
+801000	802000	Basically, these two methods.
+802000	803000	It has good and bad.
+803000	804000	So, basically, I am now.
+804000	805000	I will talk about it next.
+805000	806000	Where is it good and bad?
+806000	807000	And why is it bad?
+807000	808000	Because it is a.
+808000	809000	It is a, it is a, it is a, it is a, it is a.
+809000	810000	It is a, it is a, it is a, it is a.
+810000	818000	It is a, it is a, it is a.
+818000	828000	It is a, it is a, it is a.
+828000	838000	It is a, it is a, it is a.
+838000	848000	It is a, it is a, it is a.
+848000	858000	It is a, it is a, it is a.
+858000	868000	It is a, it is a, it is a.
+868000	878000	It is a, it is a, it is a.
+878000	886000	It is a, it is a.
+886000	896000	It is a, it is a.
+896000	906000	It is a, it is a, it is a.
+906000	916000	It is a, it is a.
+916000	926000	It is a, it is a.
+926000	936000	It is a, it is a.
+936000	946000	It is a, it is a.
+946000	956000	It is a, it is a.
+956000	966000	It is a, it is a.
+966000	976000	It is a, it is a.
+976000	986000	It is a, it is a.
+986000	996000	It is a, it is a.
+996000	1006000	It is a, it is a.
+1006000	1016000	It is a, it is a.
+1016000	1026000	It is a, it is a.
+1026000	1036000	It is a, it is a.
+1036000	1046000	It is a, it is a.
+1046000	1056000	It is a, it is a.
+1056000	1066000	It is a, it is a.
+1066000	1076000	It is a, it is a.
+1076000	1086000	It is a, it is a.
+1086000	1096000	It is a, it is a.
+1096000	1106000	It is a, it is a.
+1106000	1116000	It is a, it is a.
+1116000	1126000	It is a, it is a.
+1126000	1136000	It is a, it is a.
+1136000	1146000	It is a, it is a.
+1146000	1156000	It is a, it is a.
+1156000	1166000	It is a, it is a.
+1166000	1176000	It is a, it is a.
+1176000	1186000	It is a, it is a.
+1186000	1196000	It is a, it is a.
+1196000	1206000	It is a, it is a.
+1206000	1216000	It is a, it is a.
+1216000	1226000	It is a, it is a.
+1226000	1236000	It is a, it is a.
+1236000	1246000	It is a, it is a.
+1246000	1256000	It is a, it is a.
+1256000	1266000	It is a, it is a.
+1266000	1276000	It is a, it is a.
+1276000	1286000	It is a, it is a.
+1286000	1296000	It is a, it is a.
+1296000	1306000	It is a, it is a.
+1306000	1316000	It is a, it is a.
+1316000	1326000	It is a, it is a.
+1326000	1336000	It is a, it is a.
+1336000	1346000	It is a, it is a.
+1346000	1356000	It is a, it is a.
+1356000	1366000	It is a, it is a.
+1366000	1376000	It is a, it is a.
+1376000	1386000	It is a, it is a.
+1386000	1396000	It is a.
+1396000	1406000	It is a, it is a.
+1406000	1416000	It is a, it is a.
+1416000	1426000	It is a, it is a.
+1426000	1436000	It is a, it is a.
+1436000	1446000	It is a, it is a.
+1446000	1456000	It is a, it is a.
+1456000	1466000	It is a, it is a.
+1466000	1476000	It is a, it is a.
+1476000	1486000	It is a, it is a.
+1486000	1496000	It is a, it is a.
+1496000	1506000	It is a, it is a.
+1506000	1516000	It is a, it is a.
+1516000	1526000	It is a, it is a.
+1526000	1536000	It is a, it is a.
+1536000	1546000	It is a, it is a.
+1546000	1556000	It is a, it is a.
+1556000	1566000	It is a, it is a.
+1566000	1576000	It is a, it is a.
+1576000	1586000	It is a, it is a.
+1586000	1596000	It is a, it is a.
+1596000	1606000	It is a, it is a.
+1606000	1616000	It is a, it is a.
+1616000	1626000	It is a, it is a.
+1626000	1634000	It is a, it is a.
+1634000	1642000	It is a, it is a.
+1642000	1650000	It is a, it is a.
+1650000	1660000	It is a, it is a.
+1660000	1670000	It is a, it is a.
+1670000	1680000	It is a, it is a.
+1680000	1690000	It is a, it is a.
+1690000	1700000	It is a, it is a.
+1700000	1710000	It is a, it is a.
+1710000	1720000	It is a, it is a.
+1720000	1730000	It is a, it is a.
+1730000	1740000	It is a, it is a.
+1740000	1750000	It is a, it is a.
+1750000	1758000	It is a, it is a.
+1758000	1766000	It is a, it is a.
+1766000	1774000	It is a, it is a.
+1774000	1784000	It is a, it is a.
+1784000	1794000	It is a, it is a.
+1794000	1804000	It is a, it is a.
+1804000	1814000	It is a, it is a.
+1814000	1824000	It is a, it is a.
+1824000	1834000	It is a, it is a.
+1834000	1844000	It is a, it is a.
+1844000	1854000	It is a, it is a.
+1854000	1864000	It is a, it is a.
+1864000	1874000	It is a, it is a.
+1874000	1884000	It is a, it is a.
+1884000	1894000	It is a, it is a.
+1894000	1904000	It is a, it is a.
+1904000	1914000	It is a, it is a.
+1914000	1924000	It is a, it is a.
+1924000	1934000	It is a, it is a.
+1934000	1944000	It is a, it is a.
+1944000	1954000	It is a, it is a.
+1954000	1964000	It is a, it is a.
+1964000	1974000	It is a, it is a.
+1974000	1984000	It is a, it is a.
+1984000	1994000	It is a, it is a.
+1994000	2004000	It is a, it is a.
+2004000	2014000	It is a, it is a.
+2014000	2024000	It is a, it is a.
+2024000	2034000	It is a, it is a.
+2034000	2044000	It is a, it is a.
+2044000	2054000	It is a, it is a.
+2054000	2064000	It is a, it is a.
+2064000	2074000	It is a, it is a.
+2074000	2084000	It is a, it is a.
+2084000	2094000	It is a, it is a.
+2094000	2104000	It is a, it is a.
+2104000	2114000	It is a, it is a.
+2114000	2124000	It is a, it is a.
+2124000	2134000	It is a, it is a.
+2134000	2144000	It is a, it is a.
+2144000	2154000	It is a, it is a.
+2154000	2164000	It is a, it is a.
+2164000	2174000	It is a, it is a.
+2174000	2184000	It is a, it is a.
+2184000	2194000	It is a, it is a.
+2194000	2204000	It is a, it is a.
+2204000	2214000	It is a, it is a.
+2214000	2224000	It is a, it is a.
+2224000	2234000	It is a, it is a.
+2234000	2244000	It is a, it is a.
+2244000	2254000	It is a, it is a.
+2254000	2264000	It is a, it is a.
+2264000	2274000	It is a, it is a.
+2274000	2284000	It is a, it is a.
+2284000	2294000	It is a, it is a.
+2294000	2304000	It is a, it is a.
+2304000	2314000	It is a, it is a.
+2314000	2324000	It is a, it is a.
+2324000	2334000	It is a, it is a.
+2334000	2344000	It is a, it is a.
+2344000	2354000	It is a, it is a.
+2354000	2364000	It is a, it is a.
+2364000	2374000	It is a, it is a.
+2374000	2384000	It is a, it is a.
+2384000	2394000	It is a, it is a.
+2394000	2404000	It is a, it is a.
+2404000	2414000	It is a, it is a.
+2414000	2424000	It is a, it is a.
+2424000	2434000	It is a, it is a.
+2434000	2444000	It is a, it is a.
+2444000	2454000	It is a, it is a.
+2454000	2464000	It is a, it is a.
+2464000	2474000	It is a, it is a.
+2474000	2484000	It is a, it is a.
+2484000	2494000	It is a, it is a.
+2494000	2504000	It is a, it is a.
+2504000	2514000	It is a, it is a.
+2514000	2524000	It is a, it is a.
+2524000	2534000	It is a, it is a.
+2534000	2544000	It is a, it is a.
+2544000	2554000	It is a, it is a.
+2554000	2564000	It is a, it is a.
+2564000	2574000	It is a, it is a.
+2574000	2584000	It is a, it is a.
+2584000	2594000	It is a, it is a.
+2594000	2604000	It is a, it is a.
+2604000	2614000	It is a, it is a.
+2614000	2624000	It is a, it is a.
+2624000	2634000	It is a, it is a.
+2634000	2644000	It is a, it is a.
+2644000	2654000	It is a, it is a.
+2654000	2664000	It is a, it is a.
+2664000	2674000	It is a, it is a.
+2674000	2684000	It is a.
+2684000	2694000	It is a.
+2694000	2704000	It is a.
+2704000	2714000	It is a.
+2714000	2724000	It is a.
+2724000	2734000	It is a.
+2734000	2744000	It is a.
+2744000	2754000	It is a.
+2754000	2764000	It is a.
+2764000	2774000	It is a.
+2774000	2784000	It is a.
+2784000	2794000	It is a.
+2794000	2804000	It is a.
+2804000	2814000	It is a.
+2814000	2824000	It is a.
+2824000	2834000	It is a.
+2834000	2844000	It is a.
+2844000	2854000	It is a.
+2854000	2864000	It is a.
+2864000	2874000	It is a.
+2874000	2884000	It is a.
+2884000	2894000	It is a.
+2894000	2904000	It is a.
+2904000	2914000	It is a.
+2914000	2924000	It is a.
+2924000	2934000	It is a.
+2934000	2944000	It is a.
+2944000	2954000	It is a.
+2954000	2964000	It is a.
+2964000	2974000	It is a.
+2974000	2984000	It is a.
+2984000	2994000	It is a.
+2994000	3004000	It is a.
+3004000	3014000	It is a.
+3014000	3024000	It is a.
+3024000	3034000	It is a.
+3034000	3044000	It is a.
+3044000	3054000	It is a.
+3054000	3064000	It is a.
+3064000	3064000	

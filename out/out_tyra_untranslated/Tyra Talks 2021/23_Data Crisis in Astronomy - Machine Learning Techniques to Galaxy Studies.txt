@@ -1,0 +1,1280 @@
+今天我們很榮幸能請到鄭亭雲博士來跟我們討論今天的演講,他今天要講的題目是Data Crisis in Astronomy,Machine Learning Techniques to Galaxy Studies,在我們開始演講之前呢,先讓我來介紹一下亭雲
+亭雲現在是在Center for Extragalactic Astronomy,在Durham University,在UK,他本身是一個天文物理學家,他在台灣拿到他的大學和碩士學位,然後他就到了Nottingham,也是UK,拿到了博士學位,在去年的時候拿到博士學位。
+他主要的研究興趣是銀河系的演化,就是Galaxy Evolution,還有銀河系的形成,Formation,他現在非常非常的focus在用Machine Learning的技術來做Galaxy Survey的研究。
+在今天的演講中呢,他當然會講他最專長的部分,就是用Machine Learning來對Galaxy Study,然後他當然會講一下以前的work,然後呢,他也會講說Machine Learning對未來的Galaxy Studies有什麼樣的幫助。
+那好,那就此時此刻,請大家把麥克風打開囉,讓我們用熱烈的掌聲歡迎亭雲來為我們帶來今天精彩的演講。
+好,那就交給亭雲。
+謝謝大家,謝謝,謝謝大家,謝謝就是非常熱情的介紹,那大家好,就是早安,午安,晚安,因為大家四散各地,那我是亭雲,我現在是就是Darwin University的博士研究員,那今天就是先跟大家抱歉一下,就是我應該會蠻多中英夾雜的部分,因為我的speaker notes沒有辦法顯示出來,然後我平常基本上都是講英文,
+所以我中文有時候會卡的還蠻嚴重的。
+好,那我今天呢,想跟大家分享的主要就是Machine Learning這個東西呢,現在在天文呢,就是開始就比較多有人在使用,那這主要是我博班的一個就是研究的主題,那我今天就會分享一下我博班做的一些paper。
+那first of all,就是先跟大家介紹一下,就是什麼是天文學家呢?那基本上我每次跟大家就是介紹說我是個天文學家的時候,就是每個人就會對天文學家有很不一樣的想像,那多數的時候一般人聽到就問我說,哎,那你知道就是金牛座下週的運勢是什麼嗎?然後或者是大家就會指著天空的某星星啊,就問我說,哎,那你知道那個星星是什麼嗎?那我就必須要很誠實的說,我真的不知道。
+然後像是如果去跟人家說,我是博壽研究員啊,然後我媽就會很誇張,就會跟大家說,哦,你知道我們女兒在做教授啊是什麼的,就是沒有那麼誇張,就媽媽請冷靜,那其實真的來講的話,不過你是觀測天文學家還是理論天文學家,其實我們每天最常做的事情就是打電腦。
+所以我們平常不是在寫code,就是在debug,那尤其是我們最常做的東西應該就是data analysis,那你可能是就是分析,就是比如說特定的一些星系,那或者是像我的話呢,就是呃,我是分析,就是表示survey的data,就是大資料的data,那我可能一次分析可能會是幾十萬或甚至到上百萬的galaxy在做。
+那我本身的研究興趣呢,有兩個方向,一部分是星系分類,就是galaxy morphological classification,那另外一部分是比較偏宇宙學方面的,那我做的是Lama Nama Forest或是IgMCGN,那不知道這個專有名詞的意思是什麼沒有關係,因為今天我主要的內容其實會focus在星系分類上,就它相對來講是比較straightforward的一些概念。
+那我這邊呢,顯示這個圖呢,這邊這是一個最有名的,就是星系分類的一個系統,那它是用人眼去分類的,那我們叫做Hubble sequence,就是以非常有名的天文學家Hubble去命名的一個東西,那星系分類呢,其實可以分成很多種,就是你可以依照不同的亮度啊,或是不同的演化程度去分類,或甚至不同的星系結構,但其實人眼分類就是非常不幸的,
+它是目前在天文裡面其實最常用的一個系統,那這個Hubble sequence我們已經沿用它大概就是差不多快100年了。
+那再來呢,講到big data的部分啊,就是這裡我顯示的是就是近幾年就是我們各種survey的,各種survey的data,那你可以看到說從左圖這邊啊,就是不論是目前你可以看到的天文survey裡面,
+我們的data scale大概就是terabyte scale,那甚至到未來呢,我們預計會有的已經可以突破大概petabyte scale,所以我們就會發現說就是data長得非常非常的快,因為電腦科技的關係,我們可以存取很多很多的data,但是問題是我們目前天文界裡面就是使用傳統的分析方式,並沒有辦法這麼有效率的去處理這麼大,
+一匹的data,那就變成一個情況就是說我們空有data,但是我們卻沒有辦法處理它,那這些這些大數據的就是這些survey的data轉換成就是星系大有多少個星系呢?我今天大概show一個就是數字給大家看一下,那自2005年開始就是SDSS是一個非常有名的大型巡田計劃,那它大概有5000,它大概觀測了5000萬個星系左右,
+但實際上我們真的能夠分析,呃,真的做了分析,真的做了呃,比較多精細的研究,大概就只有快100萬個星系而已,那你就知道說我們分析的速度其實是非常非常的緩慢的,是遠遠不及我們data可以呃,data generation的速度,那在呃,在信息分類上呢,有個最有名的計劃就是galaxy zoo,那galaxy zoo呢,他們是呃,就是
+廣召各個就是呃,普羅大眾來一起做呃,星系分類,因為星系分類你可以想像,它其實是一個非常straight forward的一個東西,就是你看一個星系,就是它有沒有螺旋幣,那你大概就可以分析說,哦,它是不是橢圓星系還是螺旋星系的概念,那galaxy zoo就是衝著這一點,他覺得普羅大眾也可以做這樣的事情,所以他們就是讓普羅大眾來一起參與這樣星系分類計劃,但即使他們召集了就是全世界的人
+一起去做這樣的分析,大概三年的時間,他們只就是分類了大概就是90萬個galaxy而已,所以你就知道說,如果呃,比如說像我現在自己本身做的data是data,就是data,那這個部分的data呢,它的起始initial data就有大概
+30兆galaxy,那我本身自己就是我發過的paper裡面,我做的分析大概有兩兆galaxy,所以你就知道,如果說我們今天要讓要用傳統的方式去做,要用冷眼的方式去分析照get,even就是照galaxy zoo的方式去做,你都可能我這輩子都做不完,所以我們這時候就需要一些就是幫忙,那我這邊說,當我們說,呃,we are in trouble,其實我一直是說,I am in trouble
+因為太多的data,那我自己本身做就是這種大型survey分析的人,我根本做不完,那我這時候呢,就需要很多人就會開始去傾向找像就是呃,機器學習的幫忙,大概就是我今天的主題,那這裡呢,你可以看到就是我稍微秀一下,就是呃,機器學習的應用在天文研究上,就是哎,機器學習在天文研究上,就是最近的paper,就近幾年的paper,那你可以看到說,就是
+呃,近幾年就是非常exponential growth,就是你有越來越多的paper在做相關的事情,那我大概是2017年的時候開始就是念博班,那我念博班的時候,我印象很深刻,就是那時候基本上沒有什麼人在做,大家就只是在開始做而已,但是其實過後就大概每一天我都會有一篇新的paper,就哎,每一天都會看到一個新的paper在講,跟就是machinery有關的應用,這樣子
+那我大概說一下,就是呃,在天文裡面呢,就是其實在現在computer science,我覺得大概是差不多的情況,就是呃,machinery就是在我們大致上的應用,如果你以他的,呃,以他的方法來分的話,我們大概有分supervised,unsupervised,或是self-supervised,那當然還有其他的就是比較detail的東西,我就先暫時不講,這是比較大概的分類
+那這三類呢,我等一下就是都會稍微有提到,所以才說我的talk今天會比較technical,那你有什麼任何問題,就是你跟machinery不太熟的,就可以立刻提出來,沒有關係,那呃,在應用上面呢,就是你可以分,大致分為三種不同的問題,你可以在做classification,就是分類的問題,或是regression,就是你想要predict一個continuous的value,或者是你做data generation
+那這些都是machinery就是可以幫助上的地方,那這三種我基本上都有涉獵,不過我今天會focus在classification problem上,那在呃,呃,在他的目的性來講的,多數家在天文上我們想要做的事情就是,呃,照剛剛講的嘛,因為我們有很多很多的data,但是我們的傳統分析的方式遠遠不及於就是處理這些data,那最最大的問題是我們想要處理,呃,
+效率問題,efficiency,那有很大一部分還有幾,呃,關乎到就是我們如何去,呃,major一些就是,呃,quantity,那
+machine learning,因為他本呃,machine learning基本上可以幫助我們去對一些測量上的精準度,就是可以,呃,可以改善一些測量的精準度,所以目前最大兩個,我們在使用machine learning的目的上,就是為了可以改善efficiency and accuracy
+但我今天,呃,除了這兩個之外呢,我最主要的一個部分會想要跟大家聊聊,就是what else we can do,就是what else,except for the,呃,efficiency and accuracy,what else we can do using machine learning
+就是you can be more creative when you,呃,when it comes to the machine learning
+那,呃,綜合剛剛以前大家前面所講的,就是有點長的開頭,我今天大概就會分成兩個部分,一個部分呢,會講到就是非常短的一個部分,就是講,呃,using supervised machine learning,然後how to improve your efficiency,accuracy,那第一個部分呢,就會講到我剛剛提的,就是what else you can do,那這部分呢,我會比較focus在unsupervised machine learning跟self supervised machine learning
+那我們回到剛剛就是最開始的hub sequence,那我們現在先簡化一下問題,基本上就是,呃,我不知道大家對星系的概念是怎樣,但我就是盡量以大家就是可能都不是我的領域去解釋,所以我解釋會比較淺白一點
+那星系,呃,你一般可以分成兩大類,就是橢圓星系跟螺旋星系,那他們分類其實很簡單,就是有沒有螺旋幣的概念
+那,呃,大家不知道可以看到我的滑鼠
+哦,你們看得到我的滑鼠嗎?可以可以,那螺旋幣呢,就是非常明顯就是這個就是螺旋的這個形狀,那只要有這螺旋幣的呃出現呢,那基本上我們就是定義它為螺旋星系,那另外一種就是定義它為橢圓星系
+所以目前為止應該可以只要說就是它其實是一個很直白可以,呃,很簡單可以分類的東西,所以這是之所以為什麼Galaxy Zoo可以就是讓普羅大眾一起來幫忙這件事情
+那,呃,一開始呢,就是我,不好意思,我可以問個問題嗎?嗯,對,我我比較問一個難易服的問題,就是說那些星系為什麼他們都是這種二維的一個像圓盤的形狀,他們有沒有可能是一個,例如說三維的球,那個球殼的形狀,對,哦,他他其實是啊,就是因為你現在目前看到就是你覺得是二維,那因為是projection的關係,但其實每個星系都是都是有一個depth在
+的,那以橢圓星系來講,他們基本上,呃,他們基本上就是像一個球,在三維空間中,他們就像一個球,那他們的light distribution也是比較,呃,比較就是球的分布的形狀,但是如果你今天看的是比如說螺旋星系spiral galaxy,它會比較像disc的形狀,所以它的你如果今天把它project到3D上的話,你的你的亮度的分布會比較像一個盤子,而不是像一個球
+所以這也是在分析上,嗯,對,所以為什麼,為什麼他就我的問題是,為什麼有些他是一個盤子的形狀,而不是你覺得你就是一個三維的對稱形狀
+嗯,這是蠻好的問題,所以這部分應該,呃,這部分主要是因為,呃
+嗯,他在形成的時候呢,就是比如說像這部分其實有點蠻難回答的,但其實主要就跟他的演化跟形成有關,那目前我們最一最目前最有的理論是覺得說,呃,我們從spiral galaxy開始,那他是先,呃
+呃,呃,氣體會先,呃,我講英文可以嗎?OK,可以啊,可以啊,對,就是,呃,所以spiral galaxy,they think that,呃,in the beginning,呃,you will have some gas that accretion into,呃,this structure,它不是球狀的這種,它是反而是,呃,捲進來,那是一個平面的捲進來的概念,成為一個我們所謂的,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃,呃
+為叫做accretion disk的形狀
+對,它反而不是一個整個球這樣子,全部一起聚成一起的一個形狀
+對,那一開始我們,我們認知上它清晰的主要形成應該是會從那個開始
+那我們就,呃,所以我們認知上是覺得spiral galaxy先形成
+然後漸漸的藉由merge,就是兩個galaxy撞在一起的概念,我們才把那個momentum就是釋散之後
+才會面面慢慢的形成就是球狀的形狀,因為球狀是比較是equilibrium的形狀,呃,的狀態
+這樣可以解決到你的問題嗎?
+嗯,但,沒關係,我們等一下再討論好了
+好,對,因為這部分其實要講還蠻久的,跟我今天講的比較沒有什麼太大的關聯
+對,然後那第一部分呢,就是supervised的部分呢
+呃,先跟大家介紹一下什麼叫supervised
+那supervised machine learning呢,就是很簡單的概念,就是我們餵圖片給machine
+然後我們給予一個label
+就是,比如說像上面我就說,噢,這告訴machine說這個是狗
+那下面就跟它講說這是炸雞
+然後餵了它很多很多的照片,就是不同狗的照片啊,不同炸雞的照片啊
+然後machine學習之後呢,我再問它說,噢,那這些東西就給它一個它從來沒看過的照片,問它說這是狗還是炸雞
+就是這樣的概念,那supervised是非常常用的一個東西
+那在我2020年的paper裡面呢,就是我其實研究了10種不同的supervised machine learning algorithm
+但我今天會focus在confluential neural network
+那confluential neural network,呃,先快速的介紹給就是不太熟machine learning的人知道
+那它idea就是我們有confluential layers,就是做feature extraction
+那confluential layers它其實在做的事情呢,就是,呃,有點像就是濾鏡的概念
+它其實就是想要捕捉一個,一些features它可以,呃,the best represent,呃,你的image
+就是在你要predict這些label的時候,呃,哪一些重點,哪一些重點是machine做判斷的重點
+在這個影像上哪一個部分是,呃,它machine做判斷的重點
+那你在confluential layers裡面呢,比如說第一層啊,這邊有6channel
+那你每一個channel呢,都會用不同的metrics,那基本上就是不同的濾鏡的概念
+然後去,呃,所以你這邊就會得到6個不同的image,就是from input image
+經過濾鏡之後你會得到6個不同的image
+然後就這樣layer by layer,你就會慢慢的會得到一些,就是,呃,得到一些就是它知道說哪個部分
+影像上的哪個部分,是你做判斷最重要的部分
+那machine會慢慢的去學到這一點
+那我們往下看就是這個狗的這邊啊,就是給你一個概念
+這邊用heatmap to,呃,去顯示說哪個部分是它真的pay attention的地方
+那machine會,where is that pay attention
+那你看到就是,如果你想要辨別這是哪一種狗
+那你,就是紅色的部分就是它,你必須要,呃,machine會發現說
+喔,如果我要判斷它是哪一種品種的狗
+就是紅色的部分是我需要pay attention的地方
+那再來呢,他們就會把這些extracted features,呃,就是input to,就是connect,呃,fully connect layers
+那經過這個之後他們就把所有的,呃,算是把所有的features都串聯在一起之後呢
+再經由softmax function去給一個,就是機率的概念
+給一個,這一個class,一個機率
+那比如說就是說它是狗還是貓的機率
+那基於這個機率呢,machine就可以給予一個分類
+那這就是confusional neural network在做的事情
+那,呃,剛剛講到就是,呃,呃,狗跟炸雞的例子嘛
+那在我的例子裡面呢,就是我input,呃,galaxy images
+那我的image是from dark energy survey
+那藉由這個image呢,我一樣就是告訴,我是用galaxy zoo的,呃,visual classification去train我的machine
+那,呃,就是基本上就是告訴他們說,這個galaxy是optical,這個galaxy是,呃,spirals
+那最後呢,就是在給machine經過學習之後呢,再問machine說
+噢,this new galaxy它是optical還是spiral galaxy的概念
+那這部分呢,就是這個部分的研究,我們得到一些算是小小蠻有趣的就是結果
+那,第一個部分呢,是,呃,我們發現說有一些galaxy它CNN就是很確定它是,呃,spiral galaxy
+但是,我們確,我們就是看galaxy zoo的classification發現說,欸,他們覺得它是橢圓星系
+那我們到後來發現說,因為depth data它其實是有比較好的resolution
+然後也有比較deep的depth,就是它可以觀測到比較,呃,深的景
+所以呢,就是在RB,galaxy zoo用的data就是還要更好的意思啦
+所以你就可以發現說,在這,我show的這兩張圖裡面,它們都是同一個星系
+可是就是在左邊啊,depth data就是很明顯的有顯示出一個spiral arm的structure
+但是在右邊的slown data是,就是SDSS的data是沒有看出來的
+那galaxy zoo是based on SDSS data去做,呃,visual classification
+所以我們就發現說,噢,呃,using our machine learning,就是我們發現說就是
+還有depth data,呃,之前我們最可靠的一個visual classification catalog need to be updated
+那我們發現說,就是大概有2.5%的galaxy是missleveled,然後需要被update
+那經過校正之後呢,我們這個,我們change這個CNN呢,是可以達到
+就是做這個binary classification,它可以達到大概99%的accuracy
+quite impressive,and in some cases,它
+in some cases,它是幾乎比,就是,呃,人眼都還要更厲害的,尤其是在
+呃,更暗的情況下,或是更higher redshift的情況下,就是它是比
+呃,人眼還要來得更精確的
+那這樣就是它的heavy ending了嘛,就是聽起來好像,欸,galaxy classification using supervised machine learning
+好像,欸,一切都很靠譜,你可以到99%的accuracy,那沒什麼好擔心的啦
+但是not quite yet,就是,呃,我們目前就是你應該可以大概想像到
+就是我剛剛提到說,hubble sequence是我們目前最常用的,呃,分類系統
+那它是基於人眼去定義的
+那我不知道你對人類有多大的就是信心,但是我個人是沒有什麼太大的信心
+人眼我個人是覺得是非常非常的biased
+那,呃,有很多的研究當然就顯示出,就是直接point out說
+就是即使是兩個非常專業的,呃,清晰的天文學家
+那他們在做分類的時候呢,他們的結果可能也不一定會match
+那尤其是你image的resolution,或者是image的quality有變的話
+那兩個人可能意見就會,就會相左,就會不太一樣
+所以那我們再來就看,就是hubble sequence again
+那剛剛我們提,就是做supervised的時候,我們做其實很簡單
+就我們做的是土岩星系跟螺旋星系
+但其實它分得很細,然後你也不知道它為什麼可以分到這麼細
+就我自己做,呃,galaxy morphology做了很久
+但我個人還是覺得不是很能理解它們到底為什麼可以分這麼細
+就比如說像spiral galaxies
+它可以再分為至少,是至少三個不同的,呃,演化stage
+就是A,C,A,C,S,B,N,S,C
+那它們是不同的演化狀態
+那土岩星系就稍微比較可以理解一點
+它是基於不同的elasticity去分,就是,呃,可能還有七種不同的stage
+那再來還有一個更讓人就是,呃,無法理解的就是lenticular galaxies
+lenticular galaxies是一種,呃,介於土岩星系跟螺旋星系之間
+一個很尷尬的存在
+然後它沒有spiral arms
+就是它基本上明顯來講是沒有spiral arms
+但有時候可能是因為resolution的關係
+但是它有,它的結構上是比較像spiral galaxies的
+所以我們就是把它稱,就我們認為說
+我目前的理論是認為說它是一個介於中間
+就是可能transition parad
+那我們還有另外一種叫spiral bar galaxies
+就是它中間,呃,星系的中心是有一個棒子的存在
+這種叫bar galaxies
+那當然還有就是剩下我們沒有辦法,真的沒有辦法去分類的
+就叫irregular galaxies
+它長相就是比較奇怪
+那我們再來就剛剛你提到的就是這些分類的狀況
+那我不知道你們大家,應該是不能留言
+所以你們可以開麥克風直接講
+就是測試一下,你們可不可以分辨哪一個是螺旋星系
+這個其實大家可以開麥克風直接講
+但是其實大家也可以留言
+如果大家想要投票來統計一下
+也是可以直接在旁邊打的
+你我好像是看不到留言
+我可以,因為你現在在分享螢幕
+但是我可以幫你看
+有人說3
+我猜4
+也有人說4
+1也有一票
+3也有一票
+所以3現在兩票,4現在兩票
+1現在一票
+2很不受歡迎,2都沒有
+又1又3
+對,大概是這樣
+好,那這個的答案呢
+是3
+就是3是early spiral galaxies
+就是比較早期的
+剛剛看到就是大概SA這個部分
+那這題是比較簡單的
+那再來下一題呢
+哪一個是橢圓星系
+好
+那個YT的
+是要回答上一題還是這一題
+應該是上一題的
+所以從Ethan
+sorry不是Ethan
+Alpha
+好,開始,是4
+那我要答
+我不知道欸,2嗎
+ok
+4跟2
+大概是2,2又一票
+ok
+跟YT是同樣的答案,我現在非常有信心
+還有,威凱也答2
+YT專家
+ok
+好,那我們要公布答案囉
+這邊沒有半個是橢圓星系
+哦
+對,就是大家可以光
+就是其實大家可以給一個概念
+就是這邊
+1跟2跟4你們覺得感覺
+好像是橢圓星系的
+他們其實都是Lenticular galaxies
+所以你們大家可以感受到
+就是人眼判斷其實是一個非常
+非常不精確的
+一個方式
+給大家一個感覺
+ok,所以這就到了我
+另外一個研究
+我目前也是比較常在做這個部分
+比較有興趣這個部分
+不好意思,我可以請教一個問題嗎
+可以
+就是剛才那些問題裡面
+可能我剛才有miss掉
+就是你怎麼知道正確答案是什麼
+我的正確答案是
+這是一個好問題
+就是我們正確答案其實是依照
+另外一個天文學家
+就另外兩個天文學家
+他目前來講是我們覺得最精確的
+判斷上去
+給正確答案,但其實他們有可能是錯的
+所以
+依照你們講有可能這其實是
+可能2可能真的是Lenticular galaxies
+我們不確定
+但是就是依照他的答案來講
+我們當他是正確答案
+ok,了解,謝謝
+但其實1跟2都是
+有一點點tricky
+我會講是有一點點tricky
+2我可能會比較傾向於說它是
+Lenticular galaxies
+就是他判斷上是真的很tricky
+那我其實主要想要表達一個概念就是
+這個判斷基準點
+其實那個decision boundary
+沒有沒有這麼的
+精確
+然後這也就是
+為什麼讓我去想要去
+開啟我這個
+第二部分的就是研究
+那這部分的研究呢
+就是我起始於就是想要
+回答這個問題就是如果
+if a machine can comprehensively see all galaxies
+那他會怎麼categorize them
+那基本上的idea
+就是我希望可以用machine
+classification去取代
+人眼的classification
+因為現在我們的galaxy morphology
+basically就是based on
+這個Hubble sequence
+那這個Hubble sequence已經用了100多年了
+那其實還沒有100多年,是快100年了
+所以it is good timing
+for them to change
+to revolutionize an idea
+那這個問題本身呢
+就會有兩個部分你必須要處理
+一個就是你要怎麼讓machine
+comprehensively see
+那第二部分就是how to
+do the categorization
+那第一個部分呢
+我想到的部分
+當然有很多不同的approach
+因為其實這部分除了我之外呢
+還有另外一個團隊在做
+那
+我這篇paper之前呢
+其實也有另外兩篇paper
+但我們用的方法都是不一樣的方法
+那我這邊選擇
+使用的是用auto encoder
+那不確定你們大家對auto encoder
+有沒有很熟悉
+那auto encoder本身其實就是一個
+self supervised machine learning algorithm
+那
+叫self supervised就是
+它的input跟output
+其實就是同一個data
+你在training machine的時候
+你input跟output就是一模一樣的東西
+那idea就是說
+當你今天比如說像這個image
+那經過convolutional layers
+你嘗試去extract some features
+然後可以
+代表這個input image
+那用這些
+你extracted latent features
+然後你想要去重建
+你的image
+成為你的output
+那ideally就是你的output跟你的input
+要越像越好
+那如果它就是重建的很好
+那就表示你的latent features
+有抓到重點嘛
+那這就是一個
+我使用auto encoder的原因
+然後用它來就是做feature extraction
+找到一些比較好的features
+那再來
+unsupervised machine learning
+就是以這張圖做代表
+就是很簡單我們不告訴
+machine
+這些image是什麼
+我們不告訴它什麼是狗
+我們也不告訴它什麼是炸雞
+我們就是給它這一批圖
+然後就說你分類就請分類
+那很明顯可以看到一點就是
+因為我們沒有給它
+任何prior knowledge
+所以其實unsupervised machine learning
+很常遇到一個情況就是
+machine的分類跟
+我們人科學上
+想要做的分類是完全不一樣的
+就是完全match不了
+所以那你要如何讓它
+comprehensively去
+comprehensive的idea就是跟
+人的概念可以比較合在一起的
+跟我們想做的科學
+是比較有關的
+就會是一個很大的困難點
+不好意思我可不可以問一個
+比較naive的問題就是說
+你們在analyze這些圖的時候
+你們是會把它
+例如說像CNB一樣把它做
+一個fully transform map到一個
+power spectrum上面然後再做machine learning
+的analysis還是就直接做這個
+直接對它的
+例如說galaxy的mass distribution
+然後直接做分析
+直接把它套用到machine learning的model裡面
+我們是直接
+就是用image
+連mass distribution
+那部分也不會做
+因為我們是做galaxy morphology
+所以其實我們重點就只在於
+跟人眼看的時候做分析
+就是看那個image本身長怎樣
+所以就希望
+machine去capture
+image的feature
+這樣子而已
+那我想再問一個問題
+因為你這image
+是white noise或者red noise之類的
+那為什麼不像
+例如說像CNB一樣他們也是有
+很強的white noise
+那為什麼你們
+也許有人這樣做我的問題是
+會不會你們做一個例如說
+做一個mapping
+把它mapping到另外一個不同的
+例如說fully transform
+那也許會更好的做分析
+因為就像這些狗的圖或
+炸雞的圖他們的white noise也是很強
+例如說炸雞上面的炸雞粉
+就是一個white noise
+它會影響到你的分析
+那如果你直接對這個image做分析的話
+會比較困難
+那會不會就是
+做fully transform會比較好
+會不會有人這麼做呢
+fully transform我是沒有聽過
+但是你提到蠻重要的一點
+就是我們其實都有pre-process
+就是先把noise處理掉
+noise處理掉
+其實是蠻重要的一個步驟
+所以我們所有的image
+都是先pre-process過的
+那當然還有的時候
+比如說我剛剛提到supervised的部分
+我甚至還有用就是gradient image
+而不是就是純粹linear image
+就是很多pre-processing process
+是需要先做的
+了解 謝謝
+好
+那這
+左圖呢就是我主要做的pipeline
+用的pipeline
+那在feature learning的process呢
+我其實是用比較特別的auto encoder
+它是叫vector quantized
+bi-rational auto encoder
+那它是google demined在幾年前
+就是做的一個algorithm
+那the idea
+就是為什麼要用這個呢
+其實它有一個很大的好處就是
+vector quantization
+它可以加速
+整個feature learning的過程
+因為如果沒有vector quantization
+這個process的話
+我之前的另外的研究
+就是我用一般的
+convolution auto encoder
+那它在
+feature learning
+就是10萬個影像左右
+用GPU的情況下
+它大概要跑4到5天
+但是使用就是
+vector quantized bi-rational auto encoder
+它基本上只要跑幾個小時
+所以你可以發現這個
+非常大的一個躍進
+所以這就是為什麼讓我
+使用這個部分的原因
+那加速這個feature learning的過程的話
+對於未來就是如果我想要
+進一步的去
+延伸這個研究去讓它
+就比如說adaptive survey data
+上的話也會比較有幫助
+因為survey data本身就已經
+非常非常的huge
+那如果它10萬個就要跑4到5天
+那我可能也是跑不完
+那再來呢就是
+我們after feature learning
+那現在就是每一個image
+每一個image
+is represented by a set of
+adaptive features
+就是剛剛講的lantern features
+那我們用這個lantern features
+去做unsupervised machine learning
+所以我們就
+這部分我們使用hierarchical clustering
+那hierarchical clustering
+的概念其實蠻簡單的
+就是每一個image
+一開始每一個image
+都是一個group
+那我們就是漸漸的把它
+merge
+依照lantern features的相似度
+排列組合的相似度
+去gradually merge them
+那這樣用這個
+algorithm的好處是
+很多
+machine learning的clustering algorithm
+它其實都需要你去
+假設就是先給一個
+data distribution
+比如說Gaussian distribution
+你可能會先需要
+事先假設或事先知道一些
+這個data是怎樣
+在feature space是怎樣distributed
+那但是hierarchical clustering
+就是不需要做這樣的事情
+所以相對來講就是比較
+沒有bias的存在
+那再來在這個
+研究上呢就是我們
+我的時間有點趕
+在這個研究上呢
+就是有三個很重要的
+就是策略就是我們有
+提出來那這個部分就是
+讓我們的
+讓我這個就是classification
+skin是比較
+比較more sensible
+那第一個部分呢
+就是我們在
+做feature learning
+的時候呢我們多
+考慮了一個快速clustering
+的result那這個快速的
+clustering呢我們就是把它
+分成兩個group
+那idea呢為什麼要這樣
+做idea就是說我們
+想要我們extracted
+features它不只可以
+就是重建你的input image
+同時間你希望capture
+some features是可以
+被好好的在feature space
+上好好的被分成兩
+兩團這樣子兩個group
+那
+這樣子的做法呢就是
+還蠻有效於就是stabilize
+我們整個algorithm去
+分出那initial two groups
+那idea就像這邊這是一個
+小小簡單的result就是
+經過這樣子的
+經過這樣子的設計之後呢
+呃我們always在
+如果我們強迫我們的
+hierarchical clustering去分就是兩個
+group的時候呢
+我們always會拿到一個就是less feature
+group跟feature group
+他們呃這部分相對
+是很好理解因為你知道他們就是based on
+variation嘛就是
+how different you are
+所以應該都會有
+less feature group跟feature group
+但是呢經過我們這樣的
+設計就是加了一個extra
+clustering這樣feature learning的
+過程中呢我們的
+less feature group跟feature group
+他們呃
+visual morphology的
+percentage
+different
+呃
+就是不同人眼分類的
+星系在這些
+less feature group或是feature group裡面的
+比例是穩定的
+那這部分就是蠻重要
+的事情因為如果你沒有加上
+這個clustering的過程的話
+那他他可能還是會
+降分可是比例上就會
+有差那你就會發現說哦
+這個整體machine他其實
+大致上你知道他分的好像是
+那個方向可是他其實是沒有很stable
+的那這個
+involve這個strategy就變得
+很重要
+那第二點呢就是
+呃hierarchical
+clustering目前你有你可以
+看到就是線上有的code他基本上
+就是allowed a single cut
+single cut意思就是說我在這個
+這個圖上面就是畫一條
+horizontal的直線
+那呃
+這條直線上就是
+就是告訴你說
+哦這就是我的頂那
+你算出來有多少個
+cluster就是多少clusters
+但是這樣會有一個很大的問題
+尤其是在gas morphology上會有
+一個很大的問題呃
+就是說呃
+如果你在比如說
+if took galaxies
+橢圓星系你可以想像說
+就是橢圓星系其實他們
+extracted features是不會差太多的
+那很好想像
+因為其實橢圓星系本身長相
+在2D上其實本身長相
+是沒有差很多那當然他
+extracted features就不會差到哪裡去
+可是spiral galaxies
+不一樣就是他的長相
+變化可以很大
+比如說你的spiral arms
+在不同的位置啊或是你的spiral arms
+比較貼近你的bodge
+或是比較遠離你的bodge
+整體就會差很多但是他們都叫
+spiral galaxies
+所以如果你只允許
+就是single curse的話
+你就會造成一個情況就是你
+你的less feature group
+有太多不必要的
+呃clusters
+但是你的feature group
+可能就會不夠
+你的group可能就是產生不夠
+所以在這一點上呢
+我們就
+在這個研究裡面我們就是
+允許他有不同的
+在每一條線上呢
+不同的branch裡面
+在這個merger tree
+我們允許不同的distance cut
+那接下來很明顯
+一個問題就會變成是
+where to cut
+我們要在哪裡做那個界線
+那這裡呢就是我要先
+就是跳出講一個很重要的問題
+就是在你做
+unsupervised machine learning的時候
+還有做
+做這個研究的時候
+一個很基本的問題很fundamental的問題
+就是how many classes
+would you have
+那這其實是一個就是
+到底要分多少類呢
+那這個問題其實在每一個unsupervised machine learning
+都是一個蠻tricky的question
+ideally
+你當然是你可以分
+無限多個你想要
+但是總會到一個程度就是
+你會發現說
+他統計上根本沒有任何的意義了
+如果你分太多的話
+那剛剛提到說就是在
+在我之前其實有另外兩個
+paper是做這個相關的
+那他們在
+他們分出來的galaxy morphology classification
+就大概把
+先這樣講
+哈勃大概分了
+嚴格來說你可以說他分了
+大大類
+那之前的paper呢
+他們分了就是大概160個
+classification
+那你就會知道說就是
+160個就不是不可以
+但是在
+就是你在分析上
+科學研究上你會發現說
+就是好像感覺不太
+能夠去發現一些
+similarity或是做一些
+就是可以conclude something
+所以
+就變得非常重要
+就是
+怎樣的數字才是正確的
+那在這裡呢
+就是我們選擇用了一個
+跟其他之前的
+research非常不同的方式
+那我們的方式就是
+我們想要用
+the variation of galaxy orientation
+那這是什麼意思呢
+基本上就是你會發現有些galaxy
+有些spiral galaxies
+他們其實看起來
+差不多的可是他們就好像只是
+轉了一個角度而已
+那這樣子的galaxy
+就是在你如果使用auto encoder
+的情況下他們明明就是
+轉一個角度而已
+可是因為auto encoder
+就是會把他們
+extracted features會完全不一樣
+所以auto encoder
+after auto encoder
+你在使用clustering的時候
+他們會被分到不同的group裡面
+那這樣就不是我們想要的
+因為如果他們structure長得差不多
+我們當然就希望他們被放在同一個group裡面
+那idea
+就是說在你這個merger tree上
+總會有一個點
+就是
+因為他們都是based on
+similarity
+所以在某一個點的時候你會發現
+有一個cluster它產生的原因
+是因為這個galaxy orientation
+那我們如果可以
+就是找到說
+where this happened
+what is distance
+of this galaxy orientation
+那我們就可以有辦法
+可以用這個去做一個distance cut
+那這樣就可以
+解決我們第一個
+strategy出現的問題
+where to cut
+那這個galaxy orientation就可以provide
+the place where to cut
+in each different branch
+然後呢它也可以解決很重要的問題
+就是我們要有多少個
+分類
+那它就可以提供一個
+a number of classification
+that doesn't behave
+galaxy orientation
+好
+那這個最後的結果呢
+就是給我們27個clusters
+就是27個classes
+那這個數字
+definitely just much more reasonable
+than 160
+雖然是有點bias in my opinion
+但是我覺得多數的天文學家
+應該會agree with me
+就是27應該是比
+160在galaxy morphology上
+是比較更合理的
+那我們細節上我不會講太多
+但是就是我們有分析上
+分析發現說他們基本上是
+依照就是galaxy structure
+還有galaxy shape
+然後
+去有這樣子的分類
+那這張圖呢
+就是稍微比較難解釋一點
+但大致上的概念
+就是說
+一個bar
+這邊一個bar就是一個group
+所以你可以看到說
+這邊有兩個group
+然後這裡有三個group
+就是machine classified group
+那這裡大致上的概念就是說
+一個galaxy
+with similar structure
+就是他們結構上很相似的
+因為他們被分到同一個group
+就表示說他們結構上是很相似的
+但
+visually classified
+can be visually classified
+as multiple different morphology
+比如說像這邊就是
+這個group裡面的galaxy
+他可以在你給人眼判斷的時候
+他們會被分類成
+either elliptical galaxy
+或是lenticular galaxy
+那這邊的不同藍色的部分呢
+就是有不同fraction of bar galaxies
+越深色的表示
+他本身裡面有比較多的
+bar galaxies
+那我們今天就大概show一個
+example 就是
+這個group裡面
+with no
+significant bar galaxies
+bar features
+然後這個是比較weak
+bar features 然後還有一個group
+就是有比較strong bar features
+那再來還有
+再來還有一個點呢
+就是你會發現說
+蠻重要的一點就是你會發現說
+就是
+visual classification
+像剛剛提到的
+galaxy with similar structure
+他可以被visually classified
+as multiple different
+galaxy morphology
+那尤其是比如說lenticular galaxy
+那我們剛剛也有提到說lenticular galaxy
+就是一個很尷尬的存在
+他介於橢圓星系跟
+螺旋星系之間
+那我們進一步的就去對
+就是group
+某一個group裡面就是有mix
+with lenticular galaxy去做一些分析
+那我們這邊用的是search index
+他就是大概
+基本上的概念就是你數字越小
+就是越比較偏向於this galaxy
+然後我們意思就是說
+比較偏向於螺旋星系
+數字越大的話就是比較
+越偏向於blotch galaxy
+然後就是elliptical galaxy 橢圓星系
+那lenticular galaxy
+我們發現說就是藍色這個
+group 27
+他是有
+他是mix with lenticular galaxy
+and early spiral
+那red one是mix with elliptical galaxy
+and lenticular galaxy
+那只有黃色這一個
+是真的就是
+fall off lenticular galaxy
+所以你可以發現說
+就是
+以結構上來說的話
+只有非常
+就是剛剛好moderate
+structure
+can be called lenticular galaxy
+多數時候呢人眼的判斷上
+就是lenticular galaxy其實都跟
+early spiral還有
+就是elliptical galaxy是
+完全混在一起
+他結構上是沒有那麼容易被分出來的
+那我們最後呢就是
+把我們就是分出來的27個
+clusters就是做一些物理性質的比較
+那你這邊大家可以看到就是我們有
+color, absolute magnitude
+stellar mass and size
+physical size
+那大致上你可以看到說我們
+每一個cluster之間呢
+有微小
+就是微小但是是明顯的一個差異
+那他有一個就是
+明顯的transition
+明顯的變化這樣子
+慢慢的就是潛在的變化
+那這裡呢就是
+two plots
+基本上這兩個plot就是
+我們信息分析上比較常
+plot的一個plot
+color magnitude diagram
+mass size diagram
+那我把
+信息的部分呢是visual classification
+我們就是放在那邊做
+一個comparison的概念
+那你就可以發現說就是
+我們這27 clusters
+他其實
+wellly distributed between
+different visual morphology
+表示說就是其實
+你用這樣子的分類方式
+透過信息分類的方式呢
+其實是有
+說不定會有辦法去
+發現一些就是missing morphology
+他其實是需要被identify的
+但是在visual classification
+他可能沒有那麼明顯
+就是眼睛沒有辦法那麼
+敏感的去發現他其實有
+這樣子的差異
+那基本上就是我
+大概到這樣子結束了
+那這個部分的研究呢
+continue的follow-up plan還在繼續
+那我最主要的目的呢
+是想要就是用machine learning
+去建立一個
+我叫他operate machine classification scheme
+就是他希望他可以
+provide unbiased and reproducible
+machine classification scheme
+可以被
+就是不同的人使用
+不同的surface去使用
+甚至可以apply到different redshift
+那這樣的概念就是
+這是一個蠻ambitious的
+一個計畫
+但是
+這個部分呢就是我覺得
+是有辦法可以revolutionize
+about what we know in current
+gassy morphology
+因為我們現在過度rely on
+visual classification
+那我覺得今天主要的分享
+是想要跟大家說就是
+machine learning是一個growing area
+然後
+在天文界裡面多數我們
+現在還是focus在accuracy
+的改善上
+這樣子
+但其實machine learning他有更多更多的potential
+是可以被挖掘的
+那譬如說像這裡
+我們就是用machine的判斷
+去想辦法改變
+我們現在就是對
+一些天文上的一些觀念
+就希望他可以改變一些我們對天文上
+固有的概念
+那大致上就是這樣
+謝謝大家
+那麻煩大家把麥克風打開喔
+我們用熱烈的掌聲感謝
+我們今天帶來精彩的演講
+好那我們
+接下來就開始提問
+但是在大家提問之前啊我要先
+就是幫剛剛有在這個
+對話框打問題的朋友
+先提出他們的問題喔
+大家不好意思等一下就第一個問題呢
+是在所有的algorithm裡面
+哪些是比較好的呢
+我覺得這個問題
+有一點太
+general所以如果那個提出問題的
+朋友想要verify的話
+可以就是直接打開麥克風講沒有關係
+如果沒有的話
+那我們就直接請婷筠回答囉
+好
+像剛剛講的確是
+這個有一點點quite general
+我覺得這
+depends on your
+topic吧
+但是以
+對我剛剛最後那個部分
+來講的話
+以我這個classification
+skin來說的話
+那目前我
+使用的algorithm我覺得是
+已經算是我所有algorithm
+裡面目前最好的
+combination了
+因為我覺得O2NGO的可能是
+這個問題的最好的解釋
+那之前的研究有人用
+self-organized map
+也是一種
+unsupervised machine learning的一種方式
+但是我覺得它不
+急於就是O2NGO
+的有效那剛剛提到
+galaxy orientation的部分
+有很多人會想要先做
+就是derotate
+derotate galaxy讓它全部
+都朝向同一個方向
+那樣子也有另外的algorithm
+就是也是O2NGO的
+形式但是是先做
+rotate的概念
+所以其實現在有很多很多不同的
+algorithm是可以被使用的
+可是我覺得
+the simplest is the best
+目前我覺得就是
+這個pipeline
+我在使用這個pipeline是我目前覺得
+是最好的一個combination
+對
+不然我也不會使用它
+所以
+希望這樣回答
+那待會可以
+就是在chat
+如果他有further comment的話
+那我們還有下一個問題下一個問題是
+Alpha還有Herman
+他們說你可以請你簡單介紹
+你的另外一個那個
+Lyman-Alpha-Forest還有那個IgM
+的project嗎
+可以那個部分呢
+就是他也是用
+我本身還是用supervised machine learning
+就是我用convolutional network
+然後我有一些quiescent spectra
+我嘗試去identify
+using convolutional network
+去identify Lyman-Alpha-Forest
+and also predict some physical property
+like current density
+and Doppler width
+and the rate shift of these systems
+那我目前的狀況就是
+我現在在寫一篇paper
+就是我們這個machine已經
+developed
+然後我們用這個machine
+它是chained with Mach spectra
+但是它可以
+predict values
+for observation spectra as well
+所以我們現在是把這個machine
+provide到
+不知道highest data
+它是一個very high resolution
+from Keck Observatory
+所以我們現在就是
+用這個部分
+然後build a catalogue
+所以這是另外一個catalogue paper
+我們現在正在寫
+那這之後呢基於這個catalogue
+因為我們現在有很多
+在Lyman-Alpha-Forest上
+之前有一個catalogue
+是2012
+所以你知道蠻久以前的
+那他那個作者呢
+他本身用了三年的時間
+去分析15個spectra
+那現在我們的CNN
+本身可以跟他達到
+一樣的accuracy
+但是我們只需要五分鐘
+就可以分析一個quiescent spectra
+所以我們現在的data量就變得很多
+因為highest data其實是有
+就是有幾百個spectra
+但是他當初只能分析15個
+所以基於這樣的catalogue呢
+我們之後就會做一些
+IgM或是IgM transitional
+去CGN的一些研究
+這樣
+好 希望
+就是這樣有回答到
+如果要再進一步發問也可以繼續發問
+那我個人是有一個問題
+就是我的問題是這樣
+就是除了拿你的algorithm來
+做一些這個套在真的data上面
+你們有沒有試過
+拿這個去套
+你知道他的underlying physics assumption
+的simulation
+然後看會發生什麼事情
+比如說dark matter的mass都很重的galaxy
+他會不會都落在你的classification
+的其中一類
+或是dark metalist會落在其中一類
+所以你可以了解說
+這些classes
+到底是underlying physics可能是什麼
+有想過這樣做嗎
+其實這就是我目前
+現在正在做的其中一個project
+那方向有點不太一樣
+因為那個是
+你提到的部分是在下一步
+我想做的事情
+我們目前現在在做的部分
+是我們用simulation
+然後我們apply
+classification scheme
+然後去看說
+不同的classification
+不同的classification
+我們trace back
+history
+去看說他有沒有比較
+單一的history
+基本上我們想知道說
+我們的classification scheme
+是不是比visual classification
+更physically meaningful
+那這是我目前
+跟simulation合作在做的
+因為這個部分是比較重要
+我們必須要先確認
+我們的classification可不可以
+truly represent
+some physical meaning
+就是你剛剛提到的
+我們會希望可以
+如果我們證實了這部分
+就是加強confirm這部分之後
+下一步我們就會想知道說
+那怎樣的physics會influence
+我們去形成這樣的galaxy morphology
+那不論是從
+simulation來看還是從
+observation來看的話
+這部分都會非常有趣
+因為如果從simulation來看的話
+我們就可以直接
+看到就是
+以解研就是說
+那今天的galaxy morphology是
+依照怎樣的physics process去形成的
+那從observation來看的話
+就你有辦法可以
+build something like
+family tree of a galaxy
+這樣的idea
+或者是你可以跟
+既然我們有很多不同的term
+就是用來定義galaxy
+比如說像是slow rotator
+或是
+red nuggets
+blue nuggets
+他們有可能其實就只是
+因為他們的
+formation history是不同的
+那我們希望說machine
+給予一個比較精細的
+classification
+可以有助於解釋這樣的問題
+謝謝
+那大家還有問題嗎
+我可以問個問題嗎
+好
+我其實有兩個問題
+然後第一個問題就是
+就是你剛剛說
+那個orientation
+那是有就是
+什麼algorithm你可以看一個galaxy的圖
+然後就可以知道
+它的orientation應該是怎樣
+所以你可以
+就是把它轉回到你要的方向
+然後另外一個問題是
+你們用的
+data有沒有用就是
+multiple color的data
+一起下去train
+因為就是morphology跟
+galaxy color應該是有很強的
+correlation 這樣感覺會有
+更多information可以用
+對
+第一個問題的部分呢
+它其實是
+the rotation
+是一個非常非常難
+處理的問題
+簡單講你可以思考一下就是
+那你的reference point是哪裡
+那你怎麼知道
+就是你要先測量說
+where to see the
+orientation direction
+那再來是你的reference point
+是在哪裡
+所以這部分當然有人
+你可以做因為你其實是可以定義說
+它的那個major axis跟minor axis
+是在哪裡
+那你可能用major axis或minor axis去
+define說那你這個galaxy的
+rotation的方向是哪裡
+你大概可以這樣做但是
+問題上就是它還是有點tricky
+的狀況
+那這個部分一直以來都是在
+在我們這個
+因為前面之前有兩個不同的研究
+那這部分就是
+很多人都想要處理
+這個galaxy orientation的問題
+可是我們今天這個研究
+我們這部分的研究就是
+換一個方向思考就想說
+它可能可以不是一個問題
+它可能可以幫助我們去更有效的
+決定到底
+需要產生
+那目前它還不是一個ideal的
+ideal的解決方式
+但是
+就是它反正目前就是
+我們這個paper的概念
+是一個不一樣的方式去解決這個問題
+你不一定要把它當成是一個
+你必須要把它解決的事情
+你必須要derotate
+你可以把它就當作一個constraint
+就是讓你決定說
+那到底how many clusters
+才是最合理的
+這樣
+這樣有解決到你的問題嗎
+了解了解謝謝
+第二個部分
+第二個部分的問題是什麼
+第二個部分是你們有沒有用
+multiple color去train
+對
+那個部分也是目前我正在做的事情
+因為我們一開始
+因為我在做這個project的時候
+我是phd student
+我基本上沒有這麼多的
+memory或space
+去放這麼多data
+所以我那時候只有用single color去train
+對
+這就很像是resource不夠的問題
+但是的確在這個部分
+就是multicolor
+會是蠻重要的一個點
+但是multicolor在處理上
+還有另外一個問題
+就是我們目前有遇到的
+就是要很小心的一件事情是
+的確galaxy morphology跟color
+是有一些關聯
+但是它並不是
+並不是
+完全
+要怎麼講
+我們知道most of the elliptical galaxies
+they are passive
+they are red
+但是會有就是例外
+那所謂的例外就是
+我們有red
+elliptical galaxies
+那今天我們
+就是現在有在思考說
+到底要用multicolor還是用single color
+因為single color其實可以
+purely讓你focus
+在galaxy morphology上
+那你就可以知道說
+今天如果可能
+有一些東西它
+有一些galaxy它其實本身是blue
+但它卻是elliptical
+這類的
+你單看它的galaxy morphology
+你分類才是準的
+但如果你今天involve那些color information的話
+那你可能在
+你可能會加上
+extra bias在裡面
+讓學訓覺得說
+它要這樣分才是對的
+所以這部分其實處理上有點tricky
+那我們現在還在處理
+到底要怎麼delete
+data的部分
+了解了解
+謝謝
+好 大家還有問題嗎
+如果沒有問題的話
+我們再次熱烈的掌聲
+感謝婷筠
+為我們帶來精彩的演講
+謝謝

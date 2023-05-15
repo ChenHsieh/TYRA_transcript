@@ -1,0 +1,820 @@
+哈囉,大家晚安,歡迎大家來到今天的Tarot Talk,今天我們很榮幸請到我們的講者,彭路,Lucas 彭,來跟我們講這個關於他的,基本上是他剛畢業,他的博士論文的題目,Clocked Atom Delivery to a Photonic Crystal Wave Guide,然後是有Simulation的部分,然後有實驗結果的部分,然後他本來是在加州理工學院的Kimball Group,
+做Quantum Optics,我先介紹一下彭路的背景,等我一下,我把他關掉了,我把我的筆記關掉了,
+彭路的博士研究主要是Focus在這個Quantum Simulation Platform by Trapping Atoms Close to the Surface of a Photonic Crystal Wave Guide,然後他在拿到博士學位之後,他到北加一個叫AO Sensing的公司,主要現在是在做Quantum Sensing Technology的開發,
+彭路其實是我加州理工學院的學長,他本來是台大電機雙物理,然後在畢業之後就到Caltech拿到博士學位,然後現在在北加,他今天要跟我們講的題目我剛才講了,提醒大家如果要鼓掌的話要把麥克風打開,要不然我們的講者會聽不到,所以那我們就鼓掌,歡迎彭路給我們帶來今天的演講,謝謝,
+好,那你開始吧,
+謝謝張艾永讓我今天有這個機會可以分享我的研究,那我講的過程中如果大家有任何問題就隨時歡迎打斷我的問題,
+好,那我今天要講的題目就是我的PhD的研究,主要是研究如何把色原子放到這個Photonic Crystal Wave Guide的附近,然後主要的用途是這個如果成功的可以把原子捕捉在這個Photonic Crystal Wave Guide的附近的話,就可以拿來做一個Quantum Simulation的平台,
+那首先我會講一下我們實驗用的系統,就是這個看到這個透明的Photonic Crystal Wave Guide,那原子主要就是要捕捉在兩支Wave Guide中間這個孔隙的中間,
+那所以我先介紹一下為什麼這個系統相比於其他系統,比如說Nano Fiber或是Cavity QED有什麼不一樣的地方,有什麼優勢,那當然也有它會帶來什麼挑戰,
+那接著就是會介紹一下我開發的一個模擬的程式,就是可以模擬原子如何在這個Photonic Crystal Wave Guide附近移動,然後並且藉由這些模擬來算出一個2D的Spectrum,那得到這個Spectrum之後就可以了解原子在Wave Guide附近的行為,
+那最後會show一些實驗的結果,然後跟模擬的結果來互相比較,然後看到我們可以從中得到什麼結論。
+那首先這個研究的目的最終就是要做到一個很強的光跟原子的交互作用,那這個為什麼重要呢,是因為在一些量子科技的研究,比如說量子光學或是一些量子資訊的研究裡面,
+就是通常我們會用光來傳遞一些量子資訊,然後這些量子資訊傳到之後可以希望它轉移到另外一個System裡面,因為這些System可能它們的Life Time比較長,可以讓你的量子資訊可以留久一點,以便你做更多的處理。
+那有些是在ML領域裡一個研究的方向,就是如何把這個量子資訊從光轉移到原子上面,那要做到這個事情就必須要有很強的光跟原子的交互作用。
+那當然最簡單的方式就是你想要把光聚焦到一個很小很小的範圍上,大概是一個波長的範圍,那在這個焦距量放一個原子就可以讓原子跟光產生交互作用。
+那這種方式的限制就是,因為你的光的這個範圍最終還是被你的波長限制,所以利用這種方式的話,你光跟原子的交互作用的機率可能就是差的數量值。
+那要怎樣讓這個機率可以更高呢?一種方式就是把原子放在一個cavity裡面,那你可以想像說這個就是好像光在這個cavity裡面一直反射,那每次經過這個原子的時候就會多一個機會跟原子交互作用。
+所以透過這種方式就可以大幅提高光跟原子交互作用的機率。那除了用一個cavity以外,你也可以使用像這種micro-toray的resonator的結構。
+那其實它也是有點像cavity,只是光會在這個圈裡面一直繞繞繞,那每經過一次原子可以有多一個機會跟原子交互作用。
+那另外一種方式就是提高原子的數量,比如說regular atom,就是說你只要其中有一個原子跟你的光子產生交互作用,它就會躍遷到一個很高的quantum number的state。
+那這樣子它可以阻隔其他原子,繼續跟這個光子產生交互作用。所以好像一坨原子就可以等效成一顆很巨大的原子這種感覺。
+那剛剛講的說,在cavity裡面光來回反射產生交互作用是一種看法。那另外一種想法就是,你可以想像說這個cavity改變了光子的density of state,
+所以讓你的原子可以有更多的state可以交互作用,這也是另外一種看的角度。
+那除了cavity QED以外,還有另外一種就是waveguide QED的system。
+那這種waveguide QED簡單來講就是,你可以把模型看成像一個很細的fiber跟一個原子,那光在這個fiber裡面移動的時候,
+你可以想像它有一個input的電場,然後有一個transmittance跟一個反射的電場。
+那這個system你可以計算出它的反射的公式是長這個樣子。
+那裡面最重要的一個數字是γ1d。γ1d你可以想像它是原子放出一個光子之後,它這個光子跑到光線裡面的機率。
+因為我們希望很強的光跟原子的交互作用,所以這個機率就是越高越好。
+那這個γ1d就是光子decay到空間其他你不要的state的機率。
+所以說這個strong addon photon coupling的研究就是你要能夠讓γ1d是越高越好。
+那怎樣讓這個變高呢?就是你有幾個方向可以做。
+第一個方向就是你可以去減少molar area,就是你把光侷限在越小的範圍裡面,它跟原子的交互作用的機率就越高。
+那另外一個方向是你可以減少proof velocity,就是說光在光線裡面走越慢的話,它也有越多的機會跟原子產生交互作用。
+所以一個重要的figure of merit就是γ1d就是γ'。
+就是光decay到你要的state,就是在光線裡面的state,除以光decay到其他你不要的state的一個ratio。
+我們先是以做這個system,就是一個final crystal waveguide。
+那final crystal waveguide跟一般的光線有什麼不一樣呢?
+有一個重點就是一般的光線離光線的距離有一個波長的限制。
+γ1d跟γ'的ratio在現在實驗裡大概是4%左右。
+所以這樣子90%的光是沒有跟原子交互作用,只是會透過原子。
+那理論上如果再把光能夠抓到很靠近final crystal waveguide的話,γ1d over γ'可以提高到20%左右。
+所以這樣子的話只有0.2%的光會透過沒有跟原子交互作用。
+為什麼γ1d over γ'可以這麼高呢?
+其中一個原因就是final crystal waveguide可以讓你去控制你的groove velocity。
+比如說你的光如果很靠近final crystal band edge的話,它的groove velocity就會變得很低。
+所以比如說在我們的system裡面,你的groove velocity可能就只有0.1%的光速。
+而另外一個原因就是你這個final crystal waveguide你可以把它做成各種形狀,
+所以你可以設計這個形狀讓你的光是侷限在一個很小的範圍裡面。
+比如說像這個我們用的system是讓光集中在中間這個縫隙裡面,
+所以可以讓光是侷限在一個比波長平方更小的面積裡面,
+所以這樣可以大幅提高光跟原子的交互作用。
+所以在這種系統裡面光是一個原子就可以反射幾乎所有的光,
+所以可以把它想像成是一個fountain mirror。
+那waveguide QED除了像我們實驗室用的這種我們叫做alligator final crystal waveguide以外,
+也有各種各樣,比如說像有一種方式是你可以把光纖加熱然後拉長,
+它就變成一個很細很細的光纖,就是nanofiber。
+然後你可以在裡面放一些樹脯之類的,它就會把原子在周圍形成一些trap,
+所以就可以把原子捕捉在這個光纖的周圍。
+另外一種系統在像Huffle的Lukin Group他們有做到這種也是一個final crystal waveguide,
+他們用的方式是他們用一個opical tweezer把原子抓住,
+然後把它拖到這個final crystal waveguide的附近,
+然後再讓它跟final crystal waveguide裡面的guide mode產生交互作用。
+那像普魯大學的成龍他們也有做一個系統,
+就是在substrate上面做這種resonator,
+也是用opical tweezer的方式把原子捕捉在這些結構的附近。
+那final crystal waveguide一個特別的地方就是,
+final crystal waveguide還有一個general的問題,
+就是像這樣子的structure通常都是什麼材料?
+應該通常depend on你要在這個waveguide裡面傳的光是什麼波長,
+你會希望它是就是越透明越好。
+所以比如說像我們用的這個CZM的波長的話,
+就是850nm、890nm,我們就是用Zirconitride。
+Zirconitride,OK,OK,了解,好,謝謝。
+所以你就是可能根據你要的材料,根據你要的波長來選擇你想要的材料。
+比如說很常用也有這種telecom waveband,
+你就可以弄一些silica之類的材料。
+OK,所以waveguide有一個特別的地方是你可以去設計你的waveguide,
+讓你的不同的頻率的光在裡面有不同的波長。
+所以比如說像這個是bandstructure圖,橫軸就是wavenumber,
+然後直軸是頻率。
+你看在這個頻率的時候,比如說某個頻率是光就不能在裡面導了,
+它就是一個bandgap的一種概念。
+那在bandgap的這個邊邊,就是叫bandedge的地方,
+你可以看到它的這個dΩdk是趨近於零,
+所以就表示它的groove velocity變得很小。
+所以在這種情況下,它的density of state就變得很高。
+所以如果你原子的月圈的頻率是在這個附近的話,
+你就可以想像說它可以跟很多state相交互作用,
+就這樣可以大幅增加它dΩdk到這個state裡面的機率。
+所以通常我們就會讓這個formula crystal waveguide是設計說,
+它的bandedge是很接近原子的月圈頻率。
+那所以你可以想像說原子的月圈頻率可以在這個bandgap的外面,
+或在bandgap的裡面。
+所以先進一種情況就是原子的月圈頻率在bandgap的外面的時候,
+你可以看到這個頻率是可以在waveguide裡面傳導的。
+所以說,比如說這個原子它從激發態變到ground state的時候,
+它會放出一個光子。
+那這個光子是在這個可以傳導的頻率,
+所以它就會在這個waveguide上面移動。
+所以可以想像看整個waveguide上面的原子之間的交互作用都是一樣強。
+那這是一種regime。
+那另外一個regime就是說,如果你把原子的月圈的頻率放到bandgap裡面,
+那因為這個頻率的光就沒有辦法在waveguide裡面傳導了,
+它就會形成一個exponential decay的光子的雲在原子的附近。
+所以這時候就比較有意思了,
+就是你可以控制原子離得越遠,它們的交互作用就越低,
+然後原子越近的話,交互作用就越長。
+所以可以想像說,這個就可以比較有一些local interaction。
+那接下來會解釋說,在這種regime裡面,
+你如何去控制兩兩的原子產生韌力的交互作用。
+所以理論上,你只要有一維的系統,
+你就可以讓原子之間產生可以去engineer韌力的Hamiltonian。
+那我們先從一個比較簡單的waveguide外面的例子來講起。
+那這是我們實驗室在2015年做的一個實驗。
+那這個實驗的方式就是把這個waveguide,
+應該說用一個雷射光照在這個waveguide上面,
+它就會形成這樣子的干涉條紋。
+那你可以看到干涉條紋就是有一些intensity maxima在這裡,還有這裡,
+我們把它稱呼為Z1、Z2。
+那如果你的這個雷射的頻率是略低於原子的越線頻率的話,
+它就會把原子吸引到這個intensity maxima的地方。
+所以透過這種方式,我們就會把一些原子抓到這個brown crystal waveguide的附近。
+那這個地方它是在waveguide的上面一些,
+所以它不是在waveguide的正中間。
+所以在這個地方,γ1d over γ'大概是2吧。
+所以就表示說它decay的時候,
+它的光子decay到這個waveguide裡面的機率,
+是比它decay到真空裡面的機率高了兩倍。
+那這個有意思的地方就是,
+如果你原子是抓在這個periodically,
+把它抓在這個brown crystal waveguide上面,
+只要它們之間的間距是整數的波長倍的話,
+一個光子就可以跟整個原子的collective state產生交互作用。
+那它們這樣子的話,交互作用會增強原子的數量。
+比如說如果你有NA一個原子的話,
+那它們之間的交互作用就會增強NA倍。
+但是它們decay到free space還是一樣的數量,
+所以你原子越多的話,它就會有更多的機率去decay到這個waveguide裡面。
+那這是一個類似像superradiant的現象。
+那這個實驗裡面呢,原子的數量就是利用你抓了多久來控制的。
+比如說你抓了越久之後,原子就會逃出你的trap外面。
+所以在這邊你可以看到,當剛抓住原子的時候,
+這個decay的速度是很快的。
+那你慢慢放久的時候,這個decay的速度就掉下來了。
+那我們可以發現說,這的確是原子增加的時候,
+可以增加它跟waveguide state的交互作用。
+那也可以用一樣的方式做一樣的實驗,
+但是這時候我們可以把這個waveguide的bandage調到原子的外面,
+雖然原子的躍進頻率是在這個bandgap的裡面。
+那這時候你就可以發現說,像這裡有兩個trace,
+就是這個綠色的trace,就是描述說你的原子之間的,
+應該說你描述這個photon decay到waveguide裡面的強度。
+那這個藍色的trace,就是測量說原子之間的交互作用有多長。
+那這個交互作用的強度呢,你可以根據你量出來的,
+就是spectrum的,它是不是對稱來決定。
+如果交互作用越強,那你的spectrum出來就不會是對稱。
+所以這樣是可以間接的測量原子之間的交互作用有多強。
+所以你發現說,如果原子的躍進頻率進入這個bandgap裡面的時候,
+其實這個光子沒有decay到waveguide裡面,
+但是原子之間的交互作用還是遠大於光子decay到waveguide裡面的機率。
+所以這表示說,這個waveguide裡面,
+在bandgap這個region裡面,原子的確是交互作用就是,
+應該說光子在原子之外是形成一個spatial decay的cloud。
+所以接下來,如果你可以把原子抓在waveguide裡面形成一串的話,
+那你可以外加一個磁場,讓每個原子的zeeman state都在不一樣的門階。
+那這時候你可以用一個外加的雷射光,然後增加一個sideband,
+那這個sideband就可以match到原子之間的zeeman state的頻率的差。
+那你就可以engineer兩兩任意原子之間的交互作用。
+那比如說在這邊有一個系統,就是它抓了一個一維的原子array,
+然後之間兩兩都有交互作用,再讓最右邊跟最左邊有交互作用。
+就可以simulate一個圓圈的spin, which is the many-body fixed system。
+可以回到上頁嗎?
+我不是很懂你說兩兩交互作用為什麼會變成一個圈,它沒有頭尾最後那兩個交互作用。
+應該說,比如說你要讓其中兩個原子產生交互作用的時候,
+你就必須讓,你先看一下這個state,就是這個原子裡面它會有三個state,
+它有兩個ground state跟一個excited state。
+上面我知道,喔沒事我看到了,因為我的想法是說,
+你不是都跟隔壁的產生交互作用嗎,怎麼會變成像是那種periodic boundary condition,
+就是這樣變成一個圈圈,你有畫了,就是頭尾是有交互作用。
+對,但是這個不一定只跟隔壁的發生交互作用,
+其實它有沒有交互作用depend on你的guiding mode的頻率,
+是不是跟你的另外一個state的頻率有resonance。
+你可以想像說你可以加一個磁場,就是一個gradient磁場,
+讓每一個原子的這個zeeman state都有一點點不一樣的頻率。
+所以基本上你就是可以挑就對了,你不是一定要跟隔壁的產生交互作用。
+對,你可以藉由外加的雷射的頻率來挑說你要哪兩個原子產生交互作用。
+喔,OK,OK,I see。
+你好,我可以請問一下嗎,這個跟gradient echo memory有沒有很像。
+有點像spin echo。
+就GM gradient echo memory它是一個慢慢增加的磁場,
+然後形成每個位置的連接會有稍微的不一樣的spreading。
+對,對,有點像這種。
+那它們兩個的差別有沒有誰比較佔有優勢。
+應該是說,其實我剛剛講說用一個健強的磁場來增加一個,
+來產生一個difference,那你也不一定要用一個磁場,
+你可以用AC source tree的方式來讓它每個state有不一樣的頻率。
+所以這種情況下你就可以,不一定是要一個gradient,
+你可以是每一個原子都可以有一個它專屬的一個雷射,
+讓它產生不同的shift這樣子。
+好,謝謝。
+接下來會介紹一下我們實驗所用的alligator functional waveguide。
+那這裡就是我們整個系統的樣子。
+那首先這個整個系統是懸掛在這個chip中間的窗戶的上面。
+那我們跟這個waveguide交互作用的方式主要是透過這個光線。
+那這個光線是黏在這個chip的上面,
+然後讓它可以跟這個waveguide couple在一起。
+那可以看到這個waveguide上很多其他的結構,
+比如說像這裡有一個coupler,
+然後這邊有一些mechanical的structure是要拉住這個device,
+讓中間這兩個並不會貼在一起。
+所以這個角度是有經過automize,
+讓你中間的final crystal可以有適當的張力,
+可以維持中間的gap是一樣寬。
+那另外這些結構就是負責把雷射經過的時候產生的熱給傳走。
+你有沒有發現說即使你只輸入幾個microwave雷射的時候,
+因為這個整個結構是很小的,所以它都會變得非常的熱。
+那這是一個結構,這是device的SEM。
+可是你們沒有做active cooling對不對?
+你們就只是在光學桌上這樣?
+對,其實我們還要加熱,因為我們沒有辦法冷卻它,
+所以有時候你調它的頻率的方式是你把它加熱,
+加熱之後它就可以改變它的bandage的地方。
+所以你們不只是沒有這樣做,你們其實是不想要active cooling?
+對,其實你要做也不是不行,只是我們沒有做active cooling。
+而且其實太冷也有一個壞處,就是你冷的話你的seize也會黏到上面,
+所以有時候你可能希望它越熱越好。
+請問一下,你說的結構大概是幾百個nm,
+然後你說你需要用fiber是不是因為這結構很小,
+你需要用emanation wave進去跟原子作用?
+對,因為最終你要把光送到這個way guide裡面,
+所以說我們用的方式是把光纖黏到chip上面,
+讓它跟這個way guide對齊。
+其實一開始我也蠻驚訝的,你以為光纖很大,
+然後這個way guide可能只有幾百nm那麼大,
+你會以為它的mode沒有很match,
+但如果你去算這個way guide的mode的話,
+你會發現其實它跟光纖的mode有match到90%,
+所以其實實際上大概有50%的光就可以真的去傳到這個way guide裡面。
+那這個光從光纖出來是emanation wave嗎?
+還是一個正常的波傳遞過去?
+因為是single mode fiber,
+所以它有點像是一個在光纖裡面蓋的mode,
+它剛出來是直接對到這個way guide的mode上面,
+所以只要它的mode是match的話就可以繼續在這個way guide裡面傳。
+所以它不是emanation wave,
+但它也不是完全是高纖維,
+它是一個在way guide裡面傳的single mode的mode的樣子。
+那個mode長什麼樣子,
+depends on你的折射率的gradient是長什麼樣子。
+好,謝謝。
+那這個就是實驗的照片,
+就是我們把光纖黏在chip上面,
+然後把它mount到一個viewport上面,
+之後再把整個viewport裝到真空的chamber裡面。
+那我先稍微簡介一下這個CZM的energy level。
+那這個CZM就是它的fine structure裡面,
+我們主要就是用它的6s跟6p的state。
+那6s的state是它的ground state,
+那6p的state的fine structure,
+是因為那個spin orbit coupling就會有兩個不同的能階。
+那如果你在考慮到hyperfine structure的話,
+那就是因為nuclear spin跟你的電子spin有交互作用,
+它就會細分成,ground state細分成是fn3跟fn4兩個能階。
+然後就是這個6p urban z-state也可以分成兩個能階,
+然後接下來上面這個分成四個能階。
+那一般而言把這個就是頻率比較高的這個transition,
+頻率比較低的這個transition叫做D1,
+然後比較高頻率的叫D2。
+然後我們這個fine crystal waveguide的設計是讓D1對應到一個band edge,
+然後D2對應到另外一個band edge。
+那你可以想像一個比較簡單的想法就是說,
+我們用一個band edge的頻率,
+就是用D1來捕捉這個原子,
+然後用另外一個頻率,
+比如說用D2來trap這個原子。
+所以比如說你把D2的雷射放到這個waveguide裡面,
+然後讓它稍微有點blue detune的話,
+因為在blue detune的情況下,原子就會被這個推到intensity minima的地方,
+所以你看這個原子就會被trap到比較粗的地方。
+那這時候你可以用另外一個edge,
+只是用D1的頻率來probe它,
+因為D1的頻率是另外一個band edge,
+所以它的intensity會在這個粗的地方比較強。
+那在這個情況下,你就可以用一個頻率來捕捉,
+另外一個頻率來偵測這個原子。
+那當然這是一個簡化的模型,
+之後會稍微介紹下去,會有更多的細節在這裡面。
+所以我們實驗的主要目的,
+就是希望原子可以被捕捉在這個fine crystal gap裡面,
+並且希望每一個size都可以捕捉到一顆原子。
+那如果可以做到這件事情的話,
+你可以想像可以把它推廣到一些更複雜的系統裡面,
+比如說二維的fine crystal。
+那這裡我先簡介一些我們實驗上用到的,
+比較基本的原子的冷卻跟捕捉的技巧。
+我們先用到的方法主要就是有Moth,
+還有Dipole Trap,特別是這個Optical Lattice,
+還有一個冷卻的技巧叫Degenerate Raman Sidon Cooling。
+那這個Moth呢,這是一個捕捉,
+這是繞著原子團的一個方法,
+那它就是你總共有六道雷射,
+然後你可以把它想像說是在每個方向,
+它都是有點像Doppler Cooling一樣,
+只是它原子,就是往下面方向走的原子
+就會被吸收一個光子,然後再重新放出它,
+所以它會得到一個動量的kick,
+所以它就會被冷卻。
+那加這個磁場的目的呢,
+就是希望就要引入一個空間dependent的shift,
+讓你可以產生confinement,
+所以你同時有了confinement又有了冷卻的話,
+就可以做出一個Moth。
+那另外一個方式,應該說另外一個概念,
+就是這個Optical Dipole Trap,
+那就是剛剛解釋過的說,
+如果你的雷射的頻率,
+就是略低於你的原子的躍進頻率的話,
+那這時候它就會對你的能階產生一個shift,
+所以在這種情況下,
+你的ground state就會往下shift,
+然後excited state就會往上shift,
+所以你可以看到,
+所以在ground state的原子,
+它就會產生一個空間dependent的potential,
+那這時候你的原子躍進的頻率也會改變,
+所以這時候你可以,
+之後我會講一下這個如何幫助我們去了解原子在空間中的什麼地方。
+所以比如說,如果你的原子,
+你的雷射的頻率略低於你的原子的躍進頻率的話,
+就會產生一個,
+呃,一個,呃,
+原子就會被吸到你的intensity maxima的地方,
+那如果你是Blue Detune的光的話,
+原子就會被吹開intensity maxima,
+所以如果你的potential裡面有intensity minima的話,
+原子會被聚集在那個地方。
+那這有不同的configuration,
+最簡單的話就是一個Gaussian beam,
+它就可以產生一個trap,
+那我們在實驗室裡是利用兩道雷射形成一個standing wave,
+那這時候原子就可以被捕捉在這個standing wave裡面,
+那看起來好像是一個lattice一樣,
+所以叫optical lattice。
+那原子被抓到那個optical lattice裡面之後,
+我們還是需要把它冷卻,
+那冷卻的方式我們這裡用的是叫degenerate Raman-Seidman cooling,
+那這是一個蠻巧妙的方式,
+那它的方式就是你可以外加一個磁場,
+讓原子不同的這個mf state產生一點,呃,能階的變化,
+那如果你這個每個mf state之間的能量的差,
+剛好等於你這個原子在你的optical lattice裡面,
+震動的那個,呃,h-bar-omega能量的話,
+那你可以看到就是這個,
+這個under-1的這個震動的state,
+跟隔壁這個mf state的under-0的state是在同一個能量的,
+那這時候你可以利用這個Raman transition的方式,
+把原子從這個n等於1,
+然後把它transfer到這個under-0的state,
+然後再把它pump回去,
+所以它就是一個,這個經過這個cycle之後,
+這個原子就會減少一個震動的框框,
+所以一直重複這個過程,
+理論上你可以把原子全部冷卻到你的這個,
+呃,trap裡面震動的機態,
+所以透過這種方式,
+我們可以讓原子在這個optical lattice裡面達到一個滿冷的溫度。
+那一旦你原子被trap到optical lattice裡面之後,
+我們這裡實驗的方式就是把optical lattice移動,
+就是你只要改變其中一個雷射的頻率,
+你的整個interference的pattern就開始移動了。
+所以我們可以用這種方式讓原子去經過我們的frontal crystal waveguide。
+那這裡的目的是,
+可能每一個這個optical lattice的intended minimum,
+intended maximum的一片,
+我們把它叫做一個pancake,
+比如說裡面可能抓了500個原子,
+那這個500個原子裡面可能只有少部分會跟frontal crystal waveguide產生互動,
+但是我們一個實驗的cycle裡面,
+可能就有2000個pancake經過這個frontal crystal waveguide。
+所以透過這種方式就可以盡量讓更多原子跟frontal crystal waveguide產生互動。
+那這是我們實驗的一個簡單的圖。
+那首先我們就是把原子做一個MOD在這個source chamber裡面,
+然後接下來我們用一個雷射把它踢到我們主要chamber裡面的另外一個MOD。
+然後我們把原子再從MOD把它冷卻,
+然後trap在optical lattice裡面。
+那這個optical lattice是兩道雷射所構成的一個柱波。
+然後一旦原子被抓到optical lattice裡面之後,
+我們再改變其中一條雷射的頻率,
+然後把原子全部送到這個device附近。
+那這個原子在device附近的時候,
+我們就可以放入幾道光到這個waveguide裡面。
+比如說其中一條是一個probe laser,
+那這個雷射就是調到d1的頻率,
+那它就可以去,如果原子在frontal crystal waveguide附近的話,
+它就會吸收這個probe的光。
+那我們可以從這個probe,
+透過這個waveguide的量來測量有多少原子跟waveguide的交互作用。
+另外我們可以放入各種trap的potential在這個waveguide上面。
+那另外一個很重要的component是說,
+這個optical lattice在經過waveguide的時候,
+會有一些光漏到這個waveguide裡面。
+那我們也可以偵測到這個漏出來的optical lattice的光。
+然後透過這個光可以知道這個optical lattice哪一部分現在正在經過waveguide,
+主要可能是在波峰的地方在經過waveguide,
+還是在波谷的地方正在經過waveguide。
+所以透過這樣我們可以有更多的資料來了解原子在frontal crystal waveguide附近移動的過程。
+所以這是一個實驗結果,
+我們可以看到原子在T20的時候經過frontal crystal waveguide,
+橫軸是時間,
+縱軸是這個probe in的頻率。
+那我們可以把probe in從-50MHz調到-50MHz的de-tuning,
+然後原子在T20的時候經過waveguide。
+這是其中一個photodial偵測到的資料。
+那另外一個photodial是專門偵測漏出來optical lattice的光。
+我們可以看到原子在經過的時候,
+它就會產生一個periodic的信號。
+那這個信號的頻率就取決於這個optical lattice經過frontal crystal waveguide的速度有多快。
+所以比如說你看我們這裡,
+那這個信號的頻率就取決於這個optical lattice經過frontal crystal waveguide的速度有多快。
+所以比如說你看我們這邊是用差不多1.2MHz的頻率在移動這個optical lattice,
+所以它跑出來的訊號就是1.2MHz。
+那透過這個訊號我們可以知道什麼時間原子正在經過frontal crystal waveguide。
+要特別注意一下這邊的時間的timescale是microsecond,
+然後右邊這個圖的timescale是millisecond。
+所以說在這個兩格的blob裡面,
+直接就是有上千個optical lattice的pancake經過frontal crystal waveguide。
+請問你們實驗上有辦法知道每一個位置都有原子嗎?
+就是你們實驗上有測量嗎?
+我們可以知道有多少原子在frontal crystal waveguide的附近。
+所以現在任何一個時刻可能都會有1到2個原子經過frontal crystal waveguide。
+然後我們實驗估計說每一個pancake差不多都會有一顆原子去經過frontal crystal waveguide的gap裡面,
+就是我們真的想要去抓到原子的地方。
+所以實驗的目的是為什麼要用optical lattice,
+就是希望可以說得到一個cycle。
+比如說你可以每一個pancake都抓到一個原子在這個gap裡面的話,
+那如果100個pancake經過,你可能可以抓到100個原子。
+所以這個實驗目的是希望可以找出一個trapping cycle,
+讓你每一個optical lattice cycle都可以抓到一顆原子。
+好,謝謝。
+當然這個我們還沒有達到這個目標,
+就是做了PHD研究就是往這個方向稍微前進了一點點。
+我們剛剛看到說這個實驗的setup會產生一個這樣的實驗的結果。
+那到底要怎麼去interpretate這個實驗結果呢?
+那就是要透過一個模擬的輔助可以幫助我們了解說,
+這些原子的軌跡如何對應到我們得到的實驗結果。
+那首先這個模擬的軟體就是說,
+它就是一個multicolor simulation,
+就是原子被散佈在這個optical lattice裡面,
+然後formalize之後再移動到phonic crystal 微蓋的附近。
+然後根據這些optical dipole potential讓每個原子移動,
+然後最後收集這些軌跡,
+然後透過這些軌跡來算出我們應該得到的spectrum。
+那這個模擬本身其實概念上面很複雜,
+但是在實作上面就會有一些挑戰。
+那主要就是因為那是一個periodic potential,
+而且是你要希望可以量一個很大的範圍,
+讓你的原子可以在這個potential裡面formalize。
+所以像我們的simulation domain大概是幾十個micron平方的範圍。
+那但是這個phonic crystal是一個很小的device,
+它的大小是幾百個nm到一個micron的範圍的大小,
+所以整個實驗是非常memory intense,
+所以很大部分是optimize,
+它盡量用越少的記憶體越好。
+那這個模擬的概念是讓原子從很遠的地方,
+模擬它如何移動到phonic crystal微蓋的附近,
+然後再模擬各種optical dipole force跟probing的bin profile,
+然後計算出你會得到的spectrum。
+然後也可以做3D的模擬。
+那比如說這是一個模擬的結果,
+那這裡可以看到這些線是原子的軌跡,
+那這個原子的軌跡我們可以把它細分成一些不同類別的軌跡,
+比如說這些綠色的軌跡是它進入了這個模擬crystal微蓋的gap裡面,
+那這些是我們最有興趣的原子。
+那另外一些藍色的軌跡是它繞到device的外面,
+然後紅色是它撞到device的表面。
+那所以接下來我們就要利用這些軌跡來計算出一個spectrum。
+那如何計算這個spectrum呢?
+你可以把原子的軌跡把它distribute到這個一維的微蓋上面,
+比如說這裡就放了幾個原子,
+然後每一個微蓋segment你可以把它用一個matrix來表示,
+那這個matrix就是它的transfer matrix,
+比如說微蓋有自己的transfer matrix,
+然後每個原子也有自己的transfer matrix。
+那這個原子的transfer matrix取決於它所在的位置,
+那我們可以看到,比如說你可以放一個,
+就是這個γ1d是被probe的強度,在那個位置的強度來決定,
+所以原子在微蓋附近的距離就是決定了γ1d的強度,
+所以每個原子的transfer matrix都是不一樣的。
+那把這些所有matrix乘起來就可以得到一個total transfer matrix,
+然後從那邊就可以得出整個系統的transmittance跟reflection。
+那接下來看模擬會有什麼結果。
+所以說我剛剛解釋一下如何透過模擬來得出這些原子的軌跡,
+那接下來要講解說如何透過這個模擬來連結我們實驗的結果。
+那我們這裡要介紹一個我們使用的工具,
+我們把它稱之為clock spectrum,
+那為什麼叫clock呢?
+是因為我們alpha lattice把原子送到這個device附近,
+所以這個原子是週期性的被送到這個final crystal的附近。
+所以比如說你的chirping的頻率如果是1MHz的話,
+那每一個micron都會有一波原子經過。
+所以理論上你可以得到一個週期性的信號,
+那個週期性的信號就是取決於你的原子來到你的device的頻率。
+所以比如說我們看這個probe出來的光子的話,
+把它做成histogram,
+就可以發現說以這個alpha lattice做的頻率而言,
+它就是一個週期性的信號。
+而且我剛剛也講過了,
+我們可以透過另外一個photodial來偵測,
+露出來的alpha lattice的信號。
+所以那個就給我們一個鐘,
+讓我們可以知道現在是alpha lattice哪一個部分正在經過我們的waveguide。
+所以如果你把整個幾ms的信號全部摺疊到一個alpha lattice period裡面的話,
+就可以得到一個histogram。
+那這個histogram就告訴你說,
+在alpha lattice的頻率裡面的不同的時間,
+這個整個device的transmittance有多少。
+那這個就告訴你說有多少原子正在跟這個device產生交互作用。
+那如果你對每一個detuning都做這個實驗的話,
+你可以得到一個二維的spectrum。
+所以看這個二維的圖裡面,
+橫軸的是時間,
+那這裡是1.2us,
+然後縱軸是你的probe的detuning。
+所以這個二維的spectrum可以蘊含一些原子在photocrystal waveguide附近移動的資訊。
+所以接下來的工作就是要如何把原子的軌跡對應到這個二維的spectrum上面。
+那我們這裡實驗的方式就是有一些不同的mode。
+那像剛剛講過的就是我們讓這個bandage對應到C-D1跟D2的transition。
+那還有另外一個mode是另外一個polarization。
+像我剛剛講的bandage是針對於當你的polarization是跟這個waveguide平行的時候,
+那如果垂直的時候它就會有另外一組bandgap。
+但是這個bandgap是遠離於C-D1跟D2的頻率的。
+所以說對於這個偏振而言,這個C-D1跟D2的頻率在上面就好像是一個普通waveguide一樣。
+所以這裡可以看到這個TE mode,就是D1跟D2是bandage這個mode。
+在D1跟D2的頻率就是有很明顯的,在X方向有很明顯的結構。
+比如說D2,intensity就是集中在細的部位,D1的話intensity是集中在粗的部位。
+我們主要是用這兩個mode來進行probing跟捕捉原子的一個功能。
+然後TM mode的話,你可以看到在這個沿著waveguide的方向,它幾乎就是均勻的強度。
+因為在這個頻率的時候,因為C-D1跟D2的頻率是遠離於TM bandgap的。
+所以說在C-D1跟D2的頻率,在這個mode裡面,fine crystal waveguide就好像是一個正常的waveguide一樣。
+然後這個mode比較不一樣的地方是,它的強度是在waveguide的上面跟下面是最強的。
+所以它有一個很有用的特性,你可以幫助我們去保護我們Device的表面。
+如果你讓它是Bloody chain的話,它就可以把靠近的原子給彈走,讓它不會去黏在Device的表面。
+同時它還可以在Gap裡面跟Gap外面產生一個很大的Ace structure,讓我們可以偵測多少原子是經過了這個Gap的中間。
+那這是一個細節,剛剛我們講說用一個mode來做trapping,其實是一個簡化。
+其實我們需要把兩個mode來結合才能產生一個在三維上都是穩定的trap。
+那接下來我們有一個有趣的挑戰,我們發現說要產生一個trap,你的兩個mode的能量必須有一個ratio。
+如果沒有這個ratio外面的話,這個trap就不會是一個穩定的trap了。
+但是有一個困難就是說,不同的頻率coupled到waveguide裡面的強度是不一樣的。
+所以我們沒有辦法直接的測量說到底有多少光是在waveguide裡面。
+所以我們到底要如何去知道兩個mode的強度的ratio有多少呢?
+那這時候透過連接你的實驗結果跟模擬的結果,就可以去知道說在waveguide裡面的光到底有多強。
+那另外一個實驗的目的就是告訴我們timing。
+就是這裡有一個原子,這是一個trapping的方式,原子進來waveguide中間的時候,它是在譬如說在efference4的state。
+那在原子中間的時候,我們在正確的時間把它pump到excited state,然後讓它decay到ground state的話,
+可以看到它從一個比較淺的potential,然後被pump到一個比較深的potential裡面,這時候原子就可以被抓住了。
+不然的話它就會進來然後又出去,因為這是一個有點類似於一個conservative potential。
+那要得到這種結果,就是我們必須要知道原子經過這個gap的時間。
+所以同樣的模擬可以告訴我們說,它到底應該在什麼時間會經過fine crystal waveguide的gap裡面。
+那問一個問題,就是你的模擬有包含干擾嗎?
+比如說environmental thermal radiation這些東西,或是各種你,因為我不知道你dominant的背景干擾是什麼,是什麼然後有嗎?有包含嗎?
+因為這個thermal radiation相比於我們其他的mode,比如說我們這個alpha lattice的強度就是幾百個mW,
+然後裡面guided mode停留的是幾個μW,所以他們的intensity遠大於這個thermal radiation,所以我們是不用考慮thermal radiation。
+那有其他的干擾是已知的然後需要考慮的嗎?
+有一個應該不能把它歸類為干擾吧,這是一個很大的因素,就是Casper-Poller force,原子在很接近這個,會有一個吸引力。
+那個吸引力就是如果你不考慮的話,結果就會差蠻多的。
+所以這是一個一開始沒有想到,但是事後發現會有很重要影響的一個因素。
+了解,謝謝。
+那有一些干擾因素,比如說device的震動,我們會想說它是懸掛的一個有點像一個線,所以它如果熱起來可能會震動。
+那我們有測量它的震動頻率,然後發現是遠大於原子在trap裡面震動的頻率,所以那可以暫時不用考慮。
+OK,那我們這裡可以解釋一下如何去calibrate這三個不同的mode。
+那我想先介紹比較簡單的問題是如何去calibrate opical lattice beam。
+那這其實也不是calibrate,因為我們已經知道了opical lattice beam有多強,所以只是驗證一下這是一個可行的方式。
+那這是一個模擬的結果,那這裡的原子的density是遠大於真實的density,只是真實的density大概只有這個十分之一。
+那這個模擬的結果可以讓我們了解一下原子在device附近是怎麼移動的。
+那在這個模擬裡面呢,有用到的ponential是兩個opical lattice,跟我剛剛提到的cathodic polar force。
+原子在很接近divergence的時候會受到一個吸引力,那這個吸引力就是周圍這一圈藍色的ponential。
+所以其實它是一個非常強的ponential。
+那像右邊我們就可以看到模擬出來的cathodic spectrum。
+那我們可以像原子在,因為原子是在opical lattice帶來的,所以它們是一條一條來的。
+可以想像像那一條經過final crystal way guide的時候就會造成最大的吸收。
+然後它並不是在zero detuning,因為opical lattice是red detuning,所以它會帶來一個blue detuning。
+像前面也講到opical double trap的時候,會提到說red detuning的ponential會讓你的ground state降低,但是你的excited state變高。
+所以說整體的躍進頻率也會變大,所以可以看到這些原子的transition的頻率變成是一個正的detuning。
+那這裡可以看到一坨是往下的,這一坨是因為cathodic polar ponential帶來的一個現象。
+那你會想說剛剛cathodic polar告訴你的也是一個吸引力的ponential,如果excited state不變的話,它應該會讓你的躍進頻率也變大,那這裡怎麼會是red detuning呢?
+原因是因為cathodic polar ponential影響到你excited state。
+那對於CZM我們用的這個D1 transition而言,它造成的excited state的變化其實是ground state的兩倍。
+所以它excited state其實是降低的程度是比ground state降低的程度還要多兩倍,所以實際上躍進頻率是變小的。
+所以在受到cathodic polar的影響下,它反而會變成是反而detuning是負的。
+那我們可以看到左邊的是實驗的結果,所以發現兩者其實還蠻match的,而且在detuning的大小是一樣的,所以這表示說我們模擬的parameter跟實驗是一致的。
+那這時候可以來量一些我們不知道的東西,比如說我們可以來量一個TM的guided mode的強度。
+那這裡是加了這個TM guided mode的一個模擬。
+那這個TM guided mode是blue retuning,所以它在waveguide的上面跟下面會產生一個排斥的ponential。
+所以可以看到原子是被這個排斥的ponential給彈走,同時還改變了進入這些gap的原子軌跡。
+所以右邊這個圖就是模擬跟實驗的比較。
+那我們可以看到二維三維的模擬其實非常類似,所以它們的差別就不細講了。
+不過可以看到模擬跟實驗也是非常的接近。
+那我們可以看到增加這個ponential之後,它就造成了一些對於這個二維的crossband產生的一些影響。
+那最大的影響就是你可以看到它產生了一個往下降的feature。
+那這個feature就是原子在爬這個ponential被彈走的時候,隨時間不同會看到不同的ponential造成的。
+那這時候我們就可以match我們實驗放進來的光的能量跟模擬的來做個對比。
+那我們可以發現說模擬的光的強度是比實際上少的。
+那這是因為這裡實驗測量到的光的強度是在我們放電fiber裡面的光的強度。
+那真的couple到這個waveguide裡面的強度其實是比這還要小不少的。
+所以經過這樣的方式我們可以估計出來差不多fiber coupling的efficiency是30%左右。
+那這個efficiency跟用別的方式測量出來的結果是一致的。
+所以用這種方式我們就可以直接在device裡面測量出我們放進該類模擬的強度。
+那這些feature它都各別對應到什麼樣的軌跡呢?
+我們可以看到這裡藍色的feature對應到右邊藍色的軌跡。
+所以它們是繞過device外面的,所以它們看到比較少的該類模擬,所以它們沒有受到太大的acceleration。
+然後這些往上爬的軌跡也是看到這個藍色的該類模擬,所以它看到一個越來越強的radiation值,所以它的月圈頻率就會越來越低。
+那最後這些穿過中間的會看到在中間這個gap裡面的acceleration,所以它們對應到這些綠色的結果。
+我們可以看到我們可以用這種方式來知道這些原子團經過device附近的時間還有它們的位置。
+我們大概有100ns的time resolution跟50ns的空間resolution。
+那我們可以用同樣的方式來做TMO,我們可以看到也是match的相當的不錯。
+但是比較意思的時候,就是我們發現說在device裡面的能量的強度是比我們放進實驗裡的還要多的。
+但是這其實並不意外,就是因為我們用的是TMO,那TMO是在這個D1、D2是在band edge上面。
+所以在band edge的時候,因為它的groove velocity變得很小,所以它其實這個光輝在裡面的強度是會被hence的。
+所以其實在ray guide裡面的光的強度是大於在放進去的。
+這是告訴我們的確是有這個slow light effect。
+那像剛剛講的就是這個不同類別的trajectory,我們可以在模擬裡面把它分離出來,
+就是看它們個別對於這個box vector有什麼貢獻。
+比如說這個是在中間的原子造成的貢獻,跟在外圍原子的貢獻,跟這些藍色其他原子的貢獻。
+所以這個很重要的功能就是告訴我們說真的有沒有原子去經過這個gap裡面。
+因為這是我們希望去捕捉的原子,所以我們希望了解說是不是真的有原子會經過這個gap。
+那我們可以發現說,像如果我們在這個時間取一個cut的話,你會發現說它有兩個dip。
+那在這個模擬裡面就告訴我們說,其中一個dip主要是來自於中間原子的貢獻,然後另外一個dip是其他原子的貢獻。
+所以說像我們剛剛在實驗裡面也可以觀察說,在這個時間出現這兩個dip,
+所以可以告訴我們說的確是有原子去經過中間這個final crystal的gap。
+然後藉由比較它跟模擬的結果,我們可以差不多估計說每一個pancake就會有1到2個原子經過這個gap。
+同時這個模擬也告訴我們說,應該在什麼時間去把這個原子pump到比較深的trap裡面。
+然後它這個dip的位置呢,告訴我們那邊的AC structure,
+所以告訴我們說應該要什麼樣頻率的雷射去把這個原子pump到比較深的trap。
+所以透過比較這個模擬的實驗,第一點我們可以去calibrate我們的guided mode的強度,
+讓我們造出我們想要的trap。
+然後第二點是它告訴我們什麼時機去pump原子。
+然後它還告訴我們是怎樣的detuning,用什麼detuning去把原子pump到trap裡面。
+那最後就是講一下這個比較意外的結果,就是我們可以去probe說這個Casper polar force有多強。
+所以比如說這裡有兩個模擬,右邊就是沒有Casper polar force,左邊是有Casper polar force。
+我們發現說它們差別在於說這邊有沒有一個往下墜的一個feature。
+那我發現說在實驗室確實有出現這個feature,那透過比較這兩個feature,就是fit這兩個feature,
+我們也可以去得出這個Casper polar potential,然後得到這個potential的coefficient跟文獻提到的是一致的。
+好,那我們最後講一下這個離開之後,應該說離開的時候實驗室進行的一些新的研究。
+那這個一個新的方式,我們剛剛看到說要把這個chip放到真空腔裡面其實是非常麻煩的。
+因為你要黏16個fiber,然後把它再mount到這個viewport,再把它放到chamber裡面,那通常都會花掉我們兩整天的時間。
+那現在新一代的實驗室不需要光纖,你可以直接用眼尾鏡的objective把雷射focus到這個coupler上面,
+就可以直接從真空腔外面couple到這個waveguide裡面,就可以大大減低更換chip所需要的時間,
+也提供我們更多的optical access,讓我們可以放更多的beam,有更近距離的觀察。
+另外一個方式是,我們可以不用optical lattice改用optical tweezer。
+optical lattice的好處是,它短時間內給我們很多的原子,就是它短時間內讓很多原子經過這個device附近,
+可以提供我們很多的sample size,可以去extract剛剛我提到的那些資訊。
+但是如果你想要更fine-tune你的原子的位置的話,其實你可以用optical tweezer,
+那你可以把原子在一維的waveguide上面做一些比較細微的控制,
+這樣可以更直接去probe兩個原子之間交互動的強度。
+這是在二維market crystal上的一些應用的構想。
+這是今天演講的一個總結,首先我講了為什麼我們要做strong atom-photon interaction,
+然後我解釋一下我們是如何把原子傳送到fine-tune waveguide附近。
+接下來我介紹一個numerical simulation,模擬這些原子的trajectory,
+然後從這些trajectory算出一個二維的spectrum。
+最後我比較了實驗的spectrum跟模擬的spectrum,看到說它提供了一些用途,
+它可以幫助我們去調整guided mode的強度,
+然後去了解原子在waveguide附近的行為,
+然後幫助我們了解要用什麼時間跟怎樣的tuning去把原子pump到trap裡面去。
+最後它也可以幫助我們去了解back and forth,
+以及原子在fine-tune waveguide附近所受到的吸引力的強度。
+謝謝大家。
+我們先要鼓掌感謝我們今天的講者,但是還是一樣,提醒大家把麥克風打開,我們這樣子才聽得到大家的掌聲。
+謝謝大家,不是,抱歉,謝謝彭路給我們帶來精彩的演講。
+好,我們接下來要進行發問了,但是在大家發問之前,我們先來廣告一下好了。
+就是如果大家支持project TARA在做的事情,支持我們的理念,支持我們推廣台灣在海外的學者,
+大家彼此分享彼此研究的成果,我們也歡迎大家加入project TARA當會員,
+而不是只是follow我們的facebook,然後看我們的每個禮拜的po文這樣子。
+加入的方法大家可以在facebook的po文上找到,我們其實也很歡迎,
+而且我們其實也需要大家來主動的分享,如果大家有有趣的研究的發展和結果,
+報名來給演講的方式也可以在我們facebook上,還有我們網頁上的資訊找到。
+好,那我們現在開始進行那個Q&A,大家有問題嗎?
+我有問題,請問你上面說的就是用optical lattice去deliver你的原子,是deliver到photonic crystal上面去嗎?
+最終的目的是希望可以把它deliver到兩個photonic crystal的gap裡面,並且讓原子留在這個gap裡面。
+那目前的方式是?
+你的lattice的間隔有辦法那麼容易的控制到跟你的crystal的間隔是嗎?
+就是其實這個optical lattice的,它是兩個Gaussian beam,應該說是兩道Gaussian beam構成的,
+那我們把這個photonic crystal waveguide放在這個Gaussian beam的位置上面,
+那我們用的optical lattice的這個beam的位置大概就是60micron,
+那你看這個device的大小大概是一點多micron,所以其實大部分的原子並沒有經過這個photonic crystal waveguide的附近,
+但是在每一個pan可以經過的時候總會有幾十個會出現在這個waveguide的附近,
+然後在那幾十個中間可能又有一兩顆會跑到這個gap裡面去。
+我以為它是可以一對一的送上去。
+這很難,因為你看這個gap的大小是200nm,所以首先你的波長都沒那麼小,
+第二點就算你可以focus到一個波長的大小,你的right light lamp就會變很小,
+所以就沒辦法像我們剛剛從那麼大的一個mod load到這個operator裡面,
+像我們load完之後我們整個原子雲大概有2mm那麼大,所以我們一次送過去才可以有幾千個pan可以,
+那如果你把光focus到這麼小的話,其實有點像剛剛提到這個optical tracer的方式,
+這個optical tracer就是focus到波長的大小,但是相對的原因就只能trap一顆原子,
+然後把這個原子放到附近去。
+它有它的好處,但它的難度是在於說你要真的抓到一顆原子,
+並且再把原子移到fine crystal wave蓋上的時候,那個原子都不能夠丟掉。
+所以也是有它的難度在。
+好的,謝謝。
+我有個問題,我想要請問說,
+你說你們實驗目的就是你們希望最後可以實現strong metal light interaction嗎?
+我想說,你們比較長遠的目標是,
+當你們實現strong interaction的時候,你們想要用它來做什麼?
+對,就是,
+其實最主要的目的是希望這個可以成為一個模擬many-body physics的一個系統。
+那除了這裡貼的這張就是可以做一個這種quantum magnetism simulation以外,
+還有一個蠻有意思的實驗就是說你可以,
+比如說你現在一般的cavity QED就是你的鏡子,這是一個很大的classical object。
+那你可以想像說,
+比如說你抓了五顆原子,然後中間隔幾個side,
+然後中間又抓一個原子,然後空幾個side,又抓了五顆原子。
+那你左右那五顆原子就好像是一個black mirror一樣。
+所以就表示你的原子跟你的鏡子本身都是一個quantum object,
+這就是一個很有意思的。
+所以你可以,
+就是,然後透過剛剛講的這種你可以兩兩產生這個,
+兩兩產生這個,兩兩產生pairwise Hamiltonian的方式,
+你就可以做出各種各樣的quantum simulation。
+然後還有一個有意思,剛剛沒有提到的一個應用就是說,
+這個有一個跟一般的way guide QED不同的地方在於說,
+因為它是有一個dielectric structure,
+然後這個dielectric structure是讓你的,
+就是強迫你的這個光的intensity是黏在這個structure上面。
+所以你可以讓你的原子之間的距離是比free space的波長還要小。
+那這時候就有一個有意思的現象就是說,
+你這些原子radiate到free space裡面的光其實是彼此干涉掉了。
+所以這時候你可以大幅降低他們spontaneous emission的強度。
+所以這是一個一般的way guide QED沒有辦法做到的一個事情。
+所以像剛剛,如果你能夠大幅suppress你decay到free space的頻率的話,
+你可以想像說這可以做成一個quantum memory的system。
+還有問題嗎,大家?如果沒有問題的話,我問一個問題。
+那個你可以跳到那個Casimir force那一頁嗎?
+你可以再解釋一下這一頁你想要表達,
+就是你想要傳達的那個point是什麼?
+對,就是一開始模擬的時候沒有加這個Casimir force這一項。
+所以你可以看到說,我們就想說,
+我們這個模擬是最簡單的一個情況,
+就是我們什麼guidemode都沒有加,
+就是只有probe跟alpha lattice。
+然後這個alpha lattice是ready tuned嘛,
+所以想說整個系統裡面的光都是ready tuned,
+所以我們看到的原子應該全部的月星頻率都會,
+應該說我們的probe的月星頻率都要是正的才能看到這個原子。
+但實際上我們發現說,都會出現這個往下掉的這個feature。
+那之後發現說,其實這個就是Casimir polar force。
+那Casimir polar force它算是一個吸引力,
+那它造成了excited state的這個quantum memory,
+那這個quantum memory它算是一個吸引力,
+那Casimir polar force它算是一個吸引力,
+那它造成了excited state的往下shift的量是比ground state要多的,
+所以其實它造成的是一個,
+它會讓你月星頻率是降低的,
+所以你看到的是一個redshift的一個頻率。
+然後同時它CNN也看到一樣的現象。
+那如果我這樣問呢,就是說,
+如果你就是說,你不加Casimir force,
+然後你simulation的resolution當然很高嘛,
+然後你比較你這個experimental data,
+它有多大的inconsistence。
+你就是說,比如說我們不知道Casimir polar coefficient有多強,
+可以透過這種方式來把它extract出來。
+對,我對這個很有興趣。
+對,這是,我們可以得到一個數量級,
+但它很難量到很接近。
+有一個原因是因為,
+excited polar其實是,
+它對於,
+就是它的potential,
+就是跟這個原子跟dialytic的距離是
+z3的,
+1 over z3這樣子的一個dependent。
+所以它是一個,
+應該說一個降得很快的potential。
+所以原子越接近的時候,
+它就跑得越快。
+它真的跟很深的地方交互作用的時間是很短的。
+所以你看到我們量到這裡的shift差不多是
+-20MHz,
+對應到差不多是1mK.
+所以你看到它其實在,
+有點忘了這距離多少,可能是幾十,
+幾十nm外面的時候其實已經幾乎都被吸掉了。
+所以我們可以match,
+match個大概,但是
+如果你要match到很準確的話,
+其實就是很難用這種方式來量。
+-你這個東西有publish嗎?
+我可以拿你找到的detail嗎?
+有,我們有PNAS的一篇paper,
+裡面有提到這個事情。
+-那你之後可以傳給我一個連結或什麼。
+OK啊,不過我們並不是真的,
+應該說pair目的不是在量這個,所以。
+-我知道,我的想法是這樣,
+就是我認為這個東西你可以有,
+有一個potential可以optimize to,
+you know, Casimir force detector,
+但是顯然這個東西它的目的不是這樣,
+所以看起來似乎有機會,
+但是因為我對量Casimir force,
+couple to new physics蠻有興趣的。
+我記得好像有篇paper它是,
+用那個Evanescent field,
+它用藍色Evanescent field,
+讓原子去跟這個平衡,
+然後就可以透過這種方式來量,
+量那個Casimir force。
+其實有點累,
+因為我們這個device沒辦法設計,
+讓它跟它平衡到一個穩定的trap,
+所以我們沒有辦法停住,
+它是經過的時候,
+順便有這個potential,
+我們可以看到它對它的影響。
+-OK,我覺得這很酷,我們之後再討論。
+好,那大家還有問題嗎?
+如果沒有問題的話,
+大家把麥克風打開吧,
+我們再次鼓掌,
+謝謝彭路為我們帶來今天的演講。

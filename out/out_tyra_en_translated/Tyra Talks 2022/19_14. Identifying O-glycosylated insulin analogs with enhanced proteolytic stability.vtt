@@ -1,0 +1,6995 @@
+WEBVTT
+
+00:00.000 --> 00:06.000
+Hello everyone, welcome to today's TARA Talk.
+
+00:06.000 --> 00:11.000
+TARA stands for Taiwanese Young Researchers Association.
+
+00:11.000 --> 00:15.000
+It is a friendly forum for young researchers in Taiwan.
+
+00:15.000 --> 00:22.000
+We hold TARA Talk every week and every weekend throughout the year.
+
+00:22.000 --> 00:27.000
+The format and content of this talk are very free and diverse.
+
+00:27.000 --> 00:33.000
+Researchers can share their academic achievements,
+
+00:33.000 --> 00:36.000
+practice online presentations,
+
+00:36.000 --> 00:40.000
+or get to know potential future collaborators.
+
+00:40.000 --> 00:43.000
+Today's speaker is...
+
+00:43.000 --> 00:49.000
+Wei-Zhe, would you like to share your screen?
+
+00:49.000 --> 00:50.000
+Okay.
+
+00:58.000 --> 01:00.000
+Is it on?
+
+01:00.000 --> 01:01.000
+Yes, it is.
+
+01:01.000 --> 01:04.000
+Today's speaker is Wei-Zhe Xu.
+
+01:04.000 --> 01:11.000
+He is currently a PhD student at the University of Colorado Boulder
+
+01:11.000 --> 01:20.000
+in Chemical and Biological Engineering.
+
+01:20.000 --> 01:28.000
+Today's talk is on Identifying Signature of...
+
+01:28.000 --> 01:31.000
+Sorry, I don't know how to pronounce that word.
+
+01:31.000 --> 01:38.000
+Protolytic Stability and Dimerization Properties.
+
+01:38.000 --> 01:40.000
+He is a simulator.
+
+01:40.000 --> 01:45.000
+He gave a wonderful talk at TARA.
+
+01:45.000 --> 01:48.000
+As usual at TARA,
+
+01:48.000 --> 01:50.000
+before the talk starts,
+
+01:50.000 --> 02:00.000
+we will turn on the microphone and give a warm welcome to Wei-Zhe.
+
+02:07.000 --> 02:09.000
+Okay, thank you.
+
+02:09.000 --> 02:12.000
+Should I start?
+
+02:12.000 --> 02:14.000
+Yes, you can start.
+
+02:15.000 --> 02:17.000
+Hello everyone, I am Wei-Zhe Xu.
+
+02:17.000 --> 02:23.000
+I am currently a PhD student at the University of Colorado Boulder.
+
+02:23.000 --> 02:27.000
+My main interest in this course is to use...
+
+02:27.000 --> 02:29.000
+computer molecular dynamics simulations...
+
+02:29.000 --> 02:32.000
+to study different biological and physical phenomena...
+
+02:32.000 --> 02:34.000
+or develop related algorithms.
+
+02:34.000 --> 02:39.000
+Thank you for coming to this talk.
+
+02:39.000 --> 02:46.000
+Today's talk is similar to the one I gave at TARA.
+
+02:46.000 --> 02:51.000
+This is my first time to use Chinese...
+
+02:51.000 --> 02:55.000
+to explain this academic research.
+
+02:55.000 --> 02:59.000
+Please let me know if you have any questions.
+
+02:59.000 --> 03:01.000
+It's okay to interrupt me.
+
+03:01.000 --> 03:05.000
+Without further ado, let's get started.
+
+03:05.000 --> 03:07.000
+Today we are going to discuss...
+
+03:07.000 --> 03:10.000
+how to use computer simulation...
+
+03:10.000 --> 03:13.000
+to find out the factors that affect...
+
+03:13.000 --> 03:15.000
+the properties of the permutations.
+
+03:15.000 --> 03:19.000
+Before we get into today's topic,
+
+03:19.000 --> 03:22.000
+let's take a look at what a permutation looks like.
+
+03:22.000 --> 03:25.000
+A permutation is a protein molecule.
+
+03:25.000 --> 03:28.000
+It is composed of two amino acids.
+
+03:28.000 --> 03:32.000
+The blue one and the yellow one.
+
+03:32.000 --> 03:34.000
+They are chain A and chain B.
+
+03:34.000 --> 03:38.000
+You may have heard of it.
+
+03:38.000 --> 03:40.000
+The biggest relationship between a permutation and humans...
+
+03:40.000 --> 03:45.000
+is that it is widely used in diabetes treatment.
+
+03:45.000 --> 03:49.000
+For example, there are 34 million people in the US...
+
+03:49.000 --> 03:51.000
+who are diabetic.
+
+03:51.000 --> 03:54.000
+7 million of them use permutations...
+
+03:54.000 --> 03:56.000
+as their main treatment method.
+
+03:56.000 --> 03:59.000
+Most of the treatment channels for permutations...
+
+03:59.000 --> 04:02.000
+are done through subcutaneous injection.
+
+04:02.000 --> 04:04.000
+Diabetic patients...
+
+04:04.000 --> 04:08.000
+usually need to be injected 30 minutes before meals.
+
+04:08.000 --> 04:10.000
+This means that diabetes patients...
+
+04:10.000 --> 04:14.000
+need to be injected 2-3 times a day.
+
+04:14.000 --> 04:18.000
+If you need to be injected 2-3 times a day,
+
+04:18.000 --> 04:20.000
+it will be very uncomfortable.
+
+04:20.000 --> 04:23.000
+The biggest drawback of subcutaneous injection...
+
+04:23.000 --> 04:26.000
+is that it is very invasive.
+
+04:26.000 --> 04:28.000
+In the past 20 years,
+
+04:28.000 --> 04:31.000
+scientists have tried to develop...
+
+04:31.000 --> 04:34.000
+non-invasive treatment channels...
+
+04:34.000 --> 04:39.000
+to reduce the use of subcutaneous injection.
+
+04:39.000 --> 04:44.000
+One of the most potential treatment channels...
+
+04:44.000 --> 04:46.000
+is the so-called oral-diphtheria.
+
+04:46.000 --> 04:48.000
+20 years have passed.
+
+04:48.000 --> 04:50.000
+This research has been going on for more than 20 years.
+
+04:50.000 --> 04:52.000
+Why is it that...
+
+04:52.000 --> 04:55.000
+we don't hear much about...
+
+04:55.000 --> 04:58.000
+oral-diphtheria drugs on the market?
+
+04:58.000 --> 05:00.000
+The reason is that...
+
+05:00.000 --> 05:02.000
+the development of oral-diphtheria drugs...
+
+05:02.000 --> 05:05.000
+has many major challenges.
+
+05:05.000 --> 05:07.000
+Most of these challenges...
+
+05:07.000 --> 05:10.000
+come from the digestive system of the human body.
+
+05:10.000 --> 05:14.000
+The first challenge is that...
+
+05:14.000 --> 05:17.000
+when the gastrointestinal tract goes through the human stomach,
+
+05:17.000 --> 05:20.000
+gastric acid will destroy the gastrointestinal structure.
+
+05:20.000 --> 05:23.000
+The gastrointestinal tract will lose its function.
+
+05:23.000 --> 05:25.000
+Basically, this challenge...
+
+05:25.000 --> 05:27.000
+has been completely solved...
+
+05:27.000 --> 05:31.000
+some time ago.
+
+05:31.000 --> 05:33.000
+Most of the mainstream use...
+
+05:33.000 --> 05:37.000
+is to use some special materials to protect the gastrointestinal tract.
+
+05:37.000 --> 05:40.000
+The gastrointestinal tract can...
+
+05:40.000 --> 05:42.000
+This special material...
+
+05:42.000 --> 05:44.000
+will not be dissolved in the case of acidity.
+
+05:44.000 --> 05:46.000
+This can protect the gastrointestinal tract...
+
+05:46.000 --> 05:49.000
+from being corroded by gastric acid.
+
+05:49.000 --> 05:51.000
+When leaving the stomach,
+
+05:51.000 --> 05:53.000
+the gastrointestinal tract...
+
+05:53.000 --> 05:55.000
+will be dissolved.
+
+05:55.000 --> 05:57.000
+The gastrointestinal tract will be dissolved.
+
+05:57.000 --> 05:59.000
+The drug will be released.
+
+05:59.000 --> 06:02.000
+The first challenge has been solved.
+
+06:02.000 --> 06:04.000
+But it was a major challenge...
+
+06:04.000 --> 06:06.000
+in the development of oral-diphtheria drugs.
+
+06:06.000 --> 06:08.000
+The next two challenges...
+
+06:08.000 --> 06:10.000
+have not been completely solved yet.
+
+06:10.000 --> 06:12.000
+The first challenge is that...
+
+06:12.000 --> 06:15.000
+the stability of the gastrointestinal system is not very good.
+
+06:15.000 --> 06:17.000
+The reason is that...
+
+06:17.000 --> 06:19.000
+many digestive enzymes in the gastrointestinal system...
+
+06:19.000 --> 06:21.000
+destroy the gastrointestinal tract.
+
+06:21.000 --> 06:23.000
+This will also cause the gastrointestinal tract to lose its function.
+
+06:23.000 --> 06:25.000
+In addition, the gastrointestinal tract...
+
+06:25.000 --> 06:27.000
+is not very transparent to the cell membrane.
+
+06:27.000 --> 06:29.000
+Usually, we will see that...
+
+06:29.000 --> 06:31.000
+two gastrointestinal molecules...
+
+06:31.000 --> 06:33.000
+may gather together...
+
+06:33.000 --> 06:35.000
+and then...
+
+06:35.000 --> 06:38.000
+become a so-called gastrointestinal 2-gene.
+
+06:38.000 --> 06:40.000
+This 2-gene...
+
+06:40.000 --> 06:42.000
+is a relatively large molecule.
+
+06:42.000 --> 06:45.000
+So it is more difficult to pass through the cell membrane.
+
+06:45.000 --> 06:47.000
+The human body's absorption...
+
+06:47.000 --> 06:49.000
+of gastrointestinal 2-gene...
+
+06:49.000 --> 06:51.000
+will also become lower.
+
+06:51.000 --> 06:53.000
+So the following two challenges...
+
+06:53.000 --> 06:55.000
+have not been completely solved yet.
+
+06:55.000 --> 06:57.000
+Therefore, if we want to develop oral-diphtheria drugs,
+
+06:57.000 --> 06:59.000
+we know that...
+
+06:59.000 --> 07:01.000
+we hope that oral-diphtheria drugs...
+
+07:01.000 --> 07:03.000
+will achieve at least two goals.
+
+07:03.000 --> 07:05.000
+The first goal is that...
+
+07:05.000 --> 07:07.000
+we hope that it has enough resistance...
+
+07:07.000 --> 07:09.000
+to the digestive enzymes in the human body.
+
+07:09.000 --> 07:11.000
+The second goal is that...
+
+07:11.000 --> 07:13.000
+we hope that it has a relatively low gathering tendency...
+
+07:13.000 --> 07:15.000
+so that it is easier to reach a higher absorption...
+
+07:15.000 --> 07:17.000
+of gastrointestinal 2-gene.
+
+07:17.000 --> 07:19.000
+In the past few years,
+
+07:19.000 --> 07:21.000
+there have been a lot of different research methods...
+
+07:21.000 --> 07:23.000
+to experiment with...
+
+07:23.000 --> 07:25.000
+how to achieve these two goals at the same time.
+
+07:25.000 --> 07:27.000
+A few years ago,
+
+07:27.000 --> 07:29.000
+in a chemistry synthesis lab...
+
+07:29.000 --> 07:31.000
+that we worked with,
+
+07:31.000 --> 07:33.000
+they found that...
+
+07:33.000 --> 07:35.000
+in a specific location of the gastrointestinal tract,
+
+07:35.000 --> 07:37.000
+a specific type of sugar can be added...
+
+07:37.000 --> 07:39.000
+to improve...
+
+07:39.000 --> 07:41.000
+the gastrointestinal tract's resistance...
+
+07:41.000 --> 07:43.000
+to enzymes.
+
+07:43.000 --> 07:45.000
+In addition,
+
+07:45.000 --> 07:47.000
+it can effectively reduce its gathering tendency.
+
+07:47.000 --> 07:49.000
+This method is called sugarification.
+
+07:49.000 --> 07:51.000
+Basically,
+
+07:51.000 --> 07:53.000
+it is the structure of...
+
+07:53.000 --> 07:55.000
+a sugar molecule...
+
+07:55.000 --> 07:57.000
+connected to a gastrointestinal tract.
+
+07:57.000 --> 07:59.000
+In the research...
+
+07:59.000 --> 08:01.000
+conducted by our laboratory,
+
+08:01.000 --> 08:03.000
+they studied a total of 12 different...
+
+08:03.000 --> 08:05.000
+gastrointestinal tracts.
+
+08:05.000 --> 08:07.000
+You can see that...
+
+08:07.000 --> 08:09.000
+these 12 gastrointestinal tracts...
+
+08:09.000 --> 08:11.000
+basically have three control mutations.
+
+08:11.000 --> 08:13.000
+The first one is...
+
+08:13.000 --> 08:15.000
+the location of sugarification.
+
+08:15.000 --> 08:17.000
+Here, you can see...
+
+08:17.000 --> 08:19.000
+my mouse.
+
+08:19.000 --> 08:21.000
+This is the structure of the gastrointestinal tract.
+
+08:21.000 --> 08:23.000
+These balls...
+
+08:23.000 --> 08:25.000
+are basically the amino acids...
+
+08:25.000 --> 08:27.000
+that can be sugarified.
+
+08:27.000 --> 08:29.000
+There are a total of 51 amino acids in the gastrointestinal tract.
+
+08:29.000 --> 08:31.000
+Only five of them...
+
+08:31.000 --> 08:33.000
+can be added to sugar.
+
+08:33.000 --> 08:35.000
+The first mutation is...
+
+08:35.000 --> 08:37.000
+the location of sugarification.
+
+08:37.000 --> 08:39.000
+The second mutation is...
+
+08:39.000 --> 08:41.000
+the type of sugar.
+
+08:41.000 --> 08:43.000
+For example, we can see here...
+
+08:43.000 --> 08:45.000
+GALNAC.
+
+08:45.000 --> 08:47.000
+In English, it's N-Acetyl Glycosamin.
+
+08:47.000 --> 08:49.000
+I'm not sure how to say it in Chinese,
+
+08:49.000 --> 08:51.000
+but it's a type of sugar.
+
+08:51.000 --> 08:53.000
+The other type of sugar is MANOS.
+
+08:53.000 --> 08:55.000
+The main purpose is to study...
+
+08:55.000 --> 08:57.000
+the sugarification mechanism of these two types of sugar.
+
+08:57.000 --> 08:59.000
+The third type is...
+
+08:59.000 --> 09:01.000
+the size of the type of sugar.
+
+09:01.000 --> 09:03.000
+You can see that the last few types of sugar...
+
+09:03.000 --> 09:05.000
+from the 7th to the 13th...
+
+09:05.000 --> 09:07.000
+basically use MANOS...
+
+09:07.000 --> 09:09.000
+as the base of the type of sugar.
+
+09:09.000 --> 09:11.000
+They may use the type of sugar...
+
+09:11.000 --> 09:13.000
+the type of MANOS...
+
+09:13.000 --> 09:15.000
+the type of MANOS-2 or type of MANOS-3...
+
+09:15.000 --> 09:17.000
+to modify the structure of the amino acid.
+
+09:17.000 --> 09:19.000
+For example,
+
+09:19.000 --> 09:21.000
+you can see that...
+
+09:21.000 --> 09:23.000
+the picture here...
+
+09:23.000 --> 09:25.000
+is the structure of a sugarified amino acid.
+
+09:25.000 --> 09:27.000
+The blue and yellow...
+
+09:27.000 --> 09:29.000
+are the amino acids.
+
+09:29.000 --> 09:31.000
+The purple is...
+
+09:31.000 --> 09:33.000
+the type of MANOS-3.
+
+09:33.000 --> 09:35.000
+The location of sugarification...
+
+09:35.000 --> 09:37.000
+is the B27 amino acid.
+
+09:37.000 --> 09:39.000
+OK.
+
+09:39.000 --> 09:41.000
+So...
+
+09:41.000 --> 09:43.000
+in our...
+
+09:43.000 --> 09:45.000
+collaborative lab...
+
+09:45.000 --> 09:47.000
+research,
+
+09:47.000 --> 09:49.000
+how did they...
+
+09:49.000 --> 09:51.000
+from these different sugarified amino acids...
+
+09:51.000 --> 09:53.000
+find a structure...
+
+09:53.000 --> 09:55.000
+that is more likely to be used as an amino acid...
+
+09:55.000 --> 09:57.000
+for oral medication?
+
+09:57.000 --> 09:59.000
+They did a series of experiments.
+
+09:59.000 --> 10:01.000
+Today, I'm going to talk about the most important one.
+
+10:01.000 --> 10:03.000
+First of all,
+
+10:03.000 --> 10:05.000
+they measured the resistance of the amino acids.
+
+10:05.000 --> 10:07.000
+Basically,
+
+10:07.000 --> 10:09.000
+I put the amino acids...
+
+10:09.000 --> 10:11.000
+and the sugarified amino acids...
+
+10:11.000 --> 10:13.000
+in the same solution...
+
+10:13.000 --> 10:15.000
+to monitor...
+
+10:15.000 --> 10:17.000
+when the amino acid...
+
+10:17.000 --> 10:19.000
+is cut off.
+
+10:19.000 --> 10:21.000
+Then, we can measure...
+
+10:21.000 --> 10:23.000
+how long it takes...
+
+10:23.000 --> 10:25.000
+for the sugarified amino acids...
+
+10:25.000 --> 10:27.000
+to be broken down by the amino acids.
+
+10:27.000 --> 10:29.000
+The time it takes...
+
+10:29.000 --> 10:31.000
+is called alpha-contription half-life.
+
+10:31.000 --> 10:33.000
+Alpha-contription half-life...
+
+10:33.000 --> 10:35.000
+is the amino acid...
+
+10:35.000 --> 10:37.000
+that our collaborative lab uses.
+
+10:37.000 --> 10:39.000
+It can break down the amino acids.
+
+10:39.000 --> 10:41.000
+Half-life means...
+
+10:41.000 --> 10:43.000
+the amino acids...
+
+10:43.000 --> 10:45.000
+are cut into two parts.
+
+10:45.000 --> 10:47.000
+So, they lose some of their quality.
+
+10:47.000 --> 10:49.000
+The weight is reduced.
+
+10:49.000 --> 10:51.000
+So, we can detect...
+
+10:51.000 --> 10:53.000
+the amino acids.
+
+10:53.000 --> 10:55.000
+Basically, the longer it takes...
+
+10:55.000 --> 10:57.000
+means that the amino acids...
+
+10:57.000 --> 10:59.000
+need to break down the amino acids.
+
+10:59.000 --> 11:01.000
+The longer it takes...
+
+11:01.000 --> 11:03.000
+means that the structure of the amino acids...
+
+11:03.000 --> 11:05.000
+is more resistant to the amino acids.
+
+11:05.000 --> 11:07.000
+On the far left, we can see...
+
+11:07.000 --> 11:09.000
+the so-called wild-type.
+
+11:09.000 --> 11:11.000
+It's a circular amino acid.
+
+11:11.000 --> 11:13.000
+It doesn't go through any type of sugar.
+
+11:13.000 --> 11:15.000
+We can see that...
+
+11:15.000 --> 11:17.000
+in the 12 types of amino acids...
+
+11:17.000 --> 11:19.000
+the numbers 9, 10, and 13...
+
+11:19.000 --> 11:21.000
+are the half-life...
+
+11:21.000 --> 11:23.000
+of the alpha-contription half-life.
+
+11:23.000 --> 11:25.000
+This means that...
+
+11:25.000 --> 11:27.000
+the amino acids need to break down...
+
+11:27.000 --> 11:29.000
+the amino acids...
+
+11:29.000 --> 11:31.000
+for a longer time.
+
+11:31.000 --> 11:33.000
+This means that...
+
+11:33.000 --> 11:35.000
+the amino acids are more resistant to the amino acids.
+
+11:35.000 --> 11:37.000
+The important ones are 10 and 13.
+
+11:37.000 --> 11:39.000
+9 is a little bit higher than the wild-type.
+
+11:39.000 --> 11:41.000
+10 and 13 are significantly better...
+
+11:41.000 --> 11:43.000
+than the circular amino acids.
+
+11:43.000 --> 11:45.000
+Coincidentally,
+
+11:45.000 --> 11:47.000
+these three structures...
+
+11:47.000 --> 11:49.000
+also have...
+
+11:49.000 --> 11:51.000
+relatively low...
+
+11:51.000 --> 11:53.000
+relative gathering tendency.
+
+11:53.000 --> 11:55.000
+On the right,
+
+11:55.000 --> 11:57.000
+you can see that...
+
+11:57.000 --> 11:59.000
+the wild-type is on the far left.
+
+11:59.000 --> 12:01.000
+The three on the right are 9, 10, and 13.
+
+12:01.000 --> 12:03.000
+The blue part of the graph...
+
+12:03.000 --> 12:05.000
+shows the ratio of the amino acids.
+
+12:05.000 --> 12:07.000
+The green part...
+
+12:07.000 --> 12:09.000
+shows the ratio of the half-life.
+
+12:09.000 --> 12:11.000
+We hope that...
+
+12:11.000 --> 12:13.000
+the lower the relative gathering tendency,
+
+12:13.000 --> 12:15.000
+the better.
+
+12:15.000 --> 12:17.000
+The higher the amino acid ratio,
+
+12:17.000 --> 12:19.000
+the better.
+
+12:19.000 --> 12:21.000
+We can see that...
+
+12:21.000 --> 12:23.000
+9, 10, and 13...
+
+12:23.000 --> 12:25.000
+are more resistant to the amino acids.
+
+12:25.000 --> 12:27.000
+We can see that...
+
+12:27.000 --> 12:29.000
+these three amino acids...
+
+12:29.000 --> 12:31.000
+have relatively low relative gathering tendency.
+
+12:31.000 --> 12:33.000
+What is the most important discovery...
+
+12:33.000 --> 12:35.000
+of this study?
+
+12:35.000 --> 12:37.000
+The most important discovery is that...
+
+12:37.000 --> 12:39.000
+if you look at the structure of 9, 10, and 13,
+
+12:39.000 --> 12:41.000
+its name is a little bit long.
+
+12:41.000 --> 12:43.000
+It's a little bit strange.
+
+12:43.000 --> 12:45.000
+But from its name,
+
+12:45.000 --> 12:47.000
+you can probably tell that...
+
+12:47.000 --> 12:49.000
+these three structures...
+
+12:49.000 --> 12:51.000
+are all in the position of...
+
+12:51.000 --> 12:53.000
+the B27.
+
+12:53.000 --> 12:55.000
+The group that is connected to the B27...
+
+12:55.000 --> 12:57.000
+are the single-unit...
+
+12:57.000 --> 12:59.000
+2-gene...
+
+12:59.000 --> 13:01.000
+or 3-gene.
+
+13:01.000 --> 13:03.000
+So, the most important discovery...
+
+13:03.000 --> 13:05.000
+of this study is that...
+
+13:05.000 --> 13:07.000
+scientists found that...
+
+13:07.000 --> 13:09.000
+among these 10 kinds of...
+
+13:09.000 --> 13:11.000
+amino acids,
+
+13:11.000 --> 13:13.000
+if we connect the single-unit...
+
+13:13.000 --> 13:15.000
+2-gene...
+
+13:15.000 --> 13:17.000
+or 3-gene to the B27,
+
+13:17.000 --> 13:19.000
+it can effectively improve the quality...
+
+13:19.000 --> 13:21.000
+of the amino acids.
+
+13:21.000 --> 13:23.000
+It is more suitable to be used...
+
+13:23.000 --> 13:25.000
+as an oral medication.
+
+13:25.000 --> 13:27.000
+We already know that...
+
+13:27.000 --> 13:29.000
+in the experiment...
+
+13:29.000 --> 13:31.000
+in the general chemical synthesis experiment,
+
+13:31.000 --> 13:33.000
+we are likely to be able to...
+
+13:33.000 --> 13:35.000
+experiment with a dozen kinds of...
+
+13:35.000 --> 13:37.000
+amino acids one by one...
+
+13:37.000 --> 13:39.000
+and then synthesize them one by one.
+
+13:39.000 --> 13:41.000
+Then compare them one by one with wild-type...
+
+13:41.000 --> 13:43.000
+to identify which amino acid...
+
+13:43.000 --> 13:45.000
+has the best quality.
+
+13:45.000 --> 13:47.000
+But if we want to find...
+
+13:47.000 --> 13:49.000
+the best amino acid for oral medication,
+
+13:49.000 --> 13:51.000
+if we want to find the best...
+
+13:51.000 --> 13:53.000
+amino acid,
+
+13:53.000 --> 13:55.000
+do we need to synthesize...
+
+13:55.000 --> 13:57.000
+thousands of kinds of...
+
+13:57.000 --> 13:59.000
+amino acids?
+
+13:59.000 --> 14:01.000
+Of course, this process...
+
+14:01.000 --> 14:03.000
+is very time-consuming.
+
+14:03.000 --> 14:05.000
+Usually, to synthesize...
+
+14:05.000 --> 14:07.000
+an amino acid...
+
+14:07.000 --> 14:09.000
+that does not exist in the natural world,
+
+14:09.000 --> 14:11.000
+it may take a few months.
+
+14:11.000 --> 14:13.000
+If it is long, it may take 1-2 years.
+
+14:13.000 --> 14:15.000
+So, when...
+
+14:15.000 --> 14:17.000
+chemical synthesizers...
+
+14:17.000 --> 14:19.000
+synthesize these amino acids,
+
+14:19.000 --> 14:21.000
+they think that...
+
+14:21.000 --> 14:23.000
+this is too much trouble...
+
+14:23.000 --> 14:25.000
+and too much time...
+
+14:25.000 --> 14:27.000
+and too much money.
+
+14:27.000 --> 14:29.000
+Then they start to think that...
+
+14:29.000 --> 14:31.000
+if I can't quickly and efficiently...
+
+14:31.000 --> 14:33.000
+use chemical synthesis to complete this thing,
+
+14:33.000 --> 14:35.000
+I don't know if computer simulation...
+
+14:35.000 --> 14:37.000
+can do this thing.
+
+14:37.000 --> 14:39.000
+That's why...
+
+14:39.000 --> 14:41.000
+our co-worker...
+
+14:41.000 --> 14:43.000
+came to us...
+
+14:43.000 --> 14:45.000
+to do a computer simulation.
+
+14:45.000 --> 14:47.000
+The answer to this question is...
+
+14:47.000 --> 14:49.000
+of course, it's possible.
+
+14:49.000 --> 14:51.000
+We can use computer simulation...
+
+14:51.000 --> 14:53.000
+to predict...
+
+14:53.000 --> 14:55.000
+which of the selected...
+
+14:55.000 --> 14:57.000
+amino acids...
+
+14:57.000 --> 14:59.000
+may contain the best...
+
+14:59.000 --> 15:01.000
+amino acid.
+
+15:01.000 --> 15:03.000
+Our simulation method...
+
+15:03.000 --> 15:05.000
+is called molecular thermodynamics simulation.
+
+15:05.000 --> 15:07.000
+Molecular thermodynamics simulation...
+
+15:07.000 --> 15:09.000
+is a very vast subject.
+
+15:09.000 --> 15:11.000
+It has a lot of...
+
+15:11.000 --> 15:13.000
+hundreds of...
+
+15:13.000 --> 15:15.000
+different simulations.
+
+15:15.000 --> 15:17.000
+Before I talk about...
+
+15:17.000 --> 15:19.000
+the common points of these simulations,
+
+15:19.000 --> 15:21.000
+we can think about...
+
+15:21.000 --> 15:23.000
+a simple question about sports.
+
+15:23.000 --> 15:25.000
+For example, you start from...
+
+15:25.000 --> 15:27.000
+your door today.
+
+15:27.000 --> 15:29.000
+You walk 1 meter every second.
+
+15:29.000 --> 15:31.000
+Where will you be after 10 seconds?
+
+15:31.000 --> 15:33.000
+The answer is...
+
+15:33.000 --> 15:35.000
+you will be 10 meters away from your home.
+
+15:35.000 --> 15:37.000
+This is a very simple question...
+
+15:37.000 --> 15:39.000
+about sports.
+
+15:39.000 --> 15:41.000
+Most students in high school...
+
+15:41.000 --> 15:43.000
+are familiar with...
+
+15:43.000 --> 15:45.000
+complex sports questions.
+
+15:45.000 --> 15:47.000
+For example, acceleration...
+
+15:47.000 --> 15:49.000
+and force.
+
+15:49.000 --> 15:51.000
+These questions are basically...
+
+15:51.000 --> 15:53.000
+as long as we know the starting speed...
+
+15:53.000 --> 15:55.000
+and starting position of an object...
+
+15:55.000 --> 15:57.000
+and we consider the force...
+
+15:57.000 --> 15:59.000
+and acceleration...
+
+15:59.000 --> 16:01.000
+we can estimate...
+
+16:01.000 --> 16:03.000
+where the object will appear...
+
+16:03.000 --> 16:05.000
+at a certain point in time.
+
+16:05.000 --> 16:07.000
+In a complex system,
+
+16:07.000 --> 16:09.000
+we can even know...
+
+16:09.000 --> 16:11.000
+the position, speed...
+
+16:11.000 --> 16:13.000
+and acceleration of the object...
+
+16:13.000 --> 16:15.000
+at any point in time...
+
+16:15.000 --> 16:17.000
+or even the energy.
+
+16:17.000 --> 16:19.000
+Basically,
+
+16:19.000 --> 16:21.000
+this is what molecular dynamics...
+
+16:21.000 --> 16:23.000
+is doing.
+
+16:23.000 --> 16:25.000
+In simple terms,
+
+16:25.000 --> 16:27.000
+molecular dynamics...
+
+16:27.000 --> 16:29.000
+is an effective way...
+
+16:29.000 --> 16:31.000
+to solve...
+
+16:31.000 --> 16:33.000
+a series of...
+
+16:33.000 --> 16:35.000
+Newton's second law...
+
+16:35.000 --> 16:37.000
+and the Hamiltonian.
+
+16:37.000 --> 16:39.000
+How is molecular dynamics...
+
+16:39.000 --> 16:41.000
+actually done?
+
+16:41.000 --> 16:43.000
+In a molecular dynamics simulation...
+
+16:43.000 --> 16:45.000
+we have a simulation box.
+
+16:45.000 --> 16:47.000
+In this simulation box...
+
+16:47.000 --> 16:49.000
+we put in all the...
+
+16:49.000 --> 16:51.000
+atoms and molecules we want to simulate.
+
+16:51.000 --> 16:53.000
+For example,
+
+16:53.000 --> 16:55.000
+if I want to simulate...
+
+16:55.000 --> 16:57.000
+a permutation of a number...
+
+16:57.000 --> 16:59.000
+I put the permutation of a number...
+
+16:59.000 --> 17:01.000
+into the simulation box.
+
+17:01.000 --> 17:03.000
+I want to simulate...
+
+17:03.000 --> 17:05.000
+a water-soluble...
+
+17:05.000 --> 17:07.000
+water-soluble...
+
+17:07.000 --> 17:09.000
+water-soluble...
+
+17:09.000 --> 17:11.000
+water-soluble...
+
+17:11.000 --> 17:13.000
+water-soluble.
+
+17:13.000 --> 17:15.000
+If I want to keep...
+
+17:15.000 --> 17:17.000
+the system neutral...
+
+17:17.000 --> 17:19.000
+I add some...
+
+17:19.000 --> 17:21.000
+oxygen or nitrogen...
+
+17:21.000 --> 17:23.000
+to keep the system neutral.
+
+17:23.000 --> 17:25.000
+Basically,
+
+17:25.000 --> 17:27.000
+in the...
+
+17:27.000 --> 17:29.000
+simulation box...
+
+17:29.000 --> 17:31.000
+for each atom...
+
+17:31.000 --> 17:33.000
+for each atom and molecule...
+
+17:33.000 --> 17:35.000
+we have the initial speed...
+
+17:35.000 --> 17:37.000
+speed, position...
+
+17:37.000 --> 17:39.000
+and energy...
+
+17:39.000 --> 17:41.000
+and so on.
+
+17:41.000 --> 17:43.000
+Through these initial conditions...
+
+17:43.000 --> 17:45.000
+initial conditions...
+
+17:45.000 --> 17:47.000
+or initial conditions...
+
+17:47.000 --> 17:49.000
+if you've studied the equation...
+
+17:49.000 --> 17:51.000
+it's actually initial conditions.
+
+17:51.000 --> 17:53.000
+With these initial conditions...
+
+17:53.000 --> 17:55.000
+we can calculate...
+
+17:55.000 --> 17:57.000
+all the atoms...
+
+17:57.000 --> 17:59.000
+at a certain point in the future...
+
+17:59.000 --> 18:01.000
+the position...
+
+18:01.000 --> 18:03.000
+the speed...
+
+18:03.000 --> 18:05.000
+the energy...
+
+18:05.000 --> 18:07.000
+and so on.
+
+18:07.000 --> 18:09.000
+In a molecular dynamic simulation...
+
+18:09.000 --> 18:11.000
+we can know...
+
+18:11.000 --> 18:13.000
+in the simulation box...
+
+18:13.000 --> 18:15.000
+how each object...
+
+18:15.000 --> 18:17.000
+moves...
+
+18:17.000 --> 18:19.000
+or even...
+
+18:19.000 --> 18:21.000
+in our case...
+
+18:21.000 --> 18:23.000
+how the inner structure...
+
+18:23.000 --> 18:25.000
+is close or far from each other.
+
+18:25.000 --> 18:27.000
+The animation you see now...
+
+18:27.000 --> 18:29.000
+you can see different parts...
+
+18:29.000 --> 18:31.000
+moving around.
+
+18:31.000 --> 18:33.000
+Basically,
+
+18:33.000 --> 18:35.000
+molecular dynamic simulation...
+
+18:35.000 --> 18:37.000
+allows us to see...
+
+18:37.000 --> 18:39.000
+how an atom...
+
+18:39.000 --> 18:41.000
+or an atom and an atom...
+
+18:41.000 --> 18:43.000
+interact with each other.
+
+18:43.000 --> 18:45.000
+With the method...
+
+18:45.000 --> 18:47.000
+we can define...
+
+18:47.000 --> 18:49.000
+the goal of our research.
+
+18:49.000 --> 18:51.000
+Our method is...
+
+18:51.000 --> 18:53.000
+molecular dynamic simulation.
+
+18:53.000 --> 18:55.000
+Our goal is...
+
+18:55.000 --> 18:57.000
+to build a simulation...
+
+18:57.000 --> 18:59.000
+so we don't have to...
+
+18:59.000 --> 19:01.000
+do chemical synthesis.
+
+19:01.000 --> 19:03.000
+We can find...
+
+19:03.000 --> 19:05.000
+the most likely...
+
+19:05.000 --> 19:07.000
+high-resistance...
+
+19:07.000 --> 19:09.000
+and low-resistance structure...
+
+19:09.000 --> 19:11.000
+from a series of...
+
+19:11.000 --> 19:13.000
+carboxylic acids.
+
+19:13.000 --> 19:15.000
+This is our overall goal.
+
+19:15.000 --> 19:17.000
+In order to build...
+
+19:17.000 --> 19:19.000
+this simulation method...
+
+19:19.000 --> 19:21.000
+we basically focus on...
+
+19:21.000 --> 19:23.000
+the 12 elements...
+
+19:23.000 --> 19:25.000
+of carboxylic acids...
+
+19:25.000 --> 19:27.000
+studied by experimentalists.
+
+19:27.000 --> 19:29.000
+In the simulation...
+
+19:29.000 --> 19:31.000
+we first find...
+
+19:31.000 --> 19:33.000
+5 elements of carboxylic acids.
+
+19:33.000 --> 19:35.000
+Starting from these 5 elements...
+
+19:35.000 --> 19:37.000
+each of them...
+
+19:37.000 --> 19:39.000
+is like a template.
+
+19:39.000 --> 19:41.000
+Each template...
+
+19:41.000 --> 19:43.000
+can be used to generate...
+
+19:43.000 --> 19:45.000
+12 carboxylic acids.
+
+19:45.000 --> 19:47.000
+There are 65 elements...
+
+19:47.000 --> 19:49.000
+in the template.
+
+19:49.000 --> 19:51.000
+Each of these 65 elements...
+
+19:51.000 --> 19:53.000
+is a long enough...
+
+19:53.000 --> 19:55.000
+molecular dynamic simulation.
+
+19:55.000 --> 19:57.000
+The basic logic...
+
+19:57.000 --> 19:59.000
+is that...
+
+19:59.000 --> 20:01.000
+we run a carboxylic acid simulation...
+
+20:01.000 --> 20:03.000
+followed by a carboxylic acid simulation.
+
+20:03.000 --> 20:05.000
+We compare...
+
+20:05.000 --> 20:07.000
+the trajectories...
+
+20:07.000 --> 20:09.000
+or the physical properties...
+
+20:09.000 --> 20:11.000
+to see if there are any differences.
+
+20:11.000 --> 20:13.000
+We try to figure out...
+
+20:13.000 --> 20:15.000
+what are the causes...
+
+20:15.000 --> 20:17.000
+that lead to...
+
+20:17.000 --> 20:19.000
+carboxylic acid resistance...
+
+20:19.000 --> 20:21.000
+or carboxylic acid resistance.
+
+20:21.000 --> 20:23.000
+We know that...
+
+20:23.000 --> 20:25.000
+the entire process...
+
+20:25.000 --> 20:27.000
+is...
+
+20:27.000 --> 20:29.000
+just by looking at...
+
+20:29.000 --> 20:31.000
+the carboxylic acid simulation...
+
+20:31.000 --> 20:33.000
+we can't see anything.
+
+20:33.000 --> 20:35.000
+Too many atoms and molecules...
+
+20:35.000 --> 20:37.000
+are moving at the same time.
+
+20:37.000 --> 20:39.000
+Many things...
+
+20:39.000 --> 20:41.000
+have to be...
+
+20:41.000 --> 20:43.000
+quantified in the simulation.
+
+20:43.000 --> 20:45.000
+The workflow...
+
+20:45.000 --> 20:47.000
+is to set up a hypothesis.
+
+20:47.000 --> 20:49.000
+We can assume that...
+
+20:49.000 --> 20:51.000
+a certain amount of carboxylic acid...
+
+20:51.000 --> 20:53.000
+is...
+
+20:53.000 --> 20:55.000
+able to affect...
+
+20:55.000 --> 20:57.000
+the carboxylic acid resistance...
+
+20:57.000 --> 20:59.000
+or the carboxylic acid resistance.
+
+20:59.000 --> 21:01.000
+Then we use the simulation...
+
+21:01.000 --> 21:03.000
+to calculate the amount of carboxylic acid...
+
+21:03.000 --> 21:05.000
+and compare it with the experiment.
+
+21:05.000 --> 21:07.000
+If it matches the experiment...
+
+21:07.000 --> 21:09.000
+it means that the hypothesis...
+
+21:09.000 --> 21:11.000
+is plausible.
+
+21:11.000 --> 21:13.000
+If it doesn't match...
+
+21:13.000 --> 21:15.000
+it means that the hypothesis...
+
+21:15.000 --> 21:17.000
+is not plausible.
+
+21:17.000 --> 21:19.000
+In this research...
+
+21:19.000 --> 21:21.000
+we set up many different hypotheses...
+
+21:21.000 --> 21:23.000
+for two types of carboxylic acid resistance...
+
+21:23.000 --> 21:25.000
+and carboxylic acid resistance.
+
+21:25.000 --> 21:27.000
+There are many words here.
+
+21:27.000 --> 21:29.000
+I won't explain them one by one...
+
+21:29.000 --> 21:31.000
+because they will be mentioned later.
+
+21:31.000 --> 21:33.000
+Let's take a look...
+
+21:33.000 --> 21:35.000
+at the hypothesis.
+
+21:35.000 --> 21:37.000
+First, we will focus on...
+
+21:37.000 --> 21:39.000
+the carboxylic acid resistance...
+
+21:39.000 --> 21:41.000
+of the carboxylic acid.
+
+21:41.000 --> 21:43.000
+Then we will look back...
+
+21:43.000 --> 21:45.000
+at the togethering of carboxylic acid.
+
+21:45.000 --> 21:47.000
+Then we will look at...
+
+21:47.000 --> 21:49.000
+the carboxylic acid resistance...
+
+21:49.000 --> 21:51.000
+of the carboxylic acid.
+
+21:51.000 --> 21:53.000
+And then we will...
+
+21:53.000 --> 21:55.000
+talk about the interaction between...
+
+21:55.000 --> 21:57.000
+carboxylic acid and carboxylic acid.
+
+21:57.000 --> 21:59.000
+The interaction between...
+
+21:59.000 --> 22:01.000
+carboxylic acid and carboxylic acid...
+
+22:01.000 --> 22:03.000
+is mainly...
+
+22:05.000 --> 22:07.000
+The first step is...
+
+22:07.000 --> 22:09.000
+I simplify it.
+
+22:09.000 --> 22:11.000
+The mechanism is...
+
+22:11.000 --> 22:13.000
+First, the carboxylic acid and carboxylic acid...
+
+22:13.000 --> 22:15.000
+will be combined.
+
+22:15.000 --> 22:17.000
+After that, the carboxylic acid will cut...
+
+22:17.000 --> 22:19.000
+some positions of the carboxylic acid.
+
+22:19.000 --> 22:21.000
+Then cut the carboxylic acid into two halves...
+
+22:21.000 --> 22:23.000
+or even three halves...
+
+22:23.000 --> 22:25.000
+three parts, four parts, etc.
+
+22:25.000 --> 22:27.000
+But basically, as long as the carboxylic acid is cut...
+
+22:27.000 --> 22:29.000
+it will lose its function.
+
+22:29.000 --> 22:31.000
+In all 51 amino acids of carboxylic acid...
+
+22:31.000 --> 22:33.000
+five of them...
+
+22:33.000 --> 22:35.000
+may be...
+
+22:35.000 --> 22:37.000
+cut off by alpha-carbotripsin...
+
+22:37.000 --> 22:39.000
+the carboxylic acid.
+
+22:39.000 --> 22:41.000
+The two places...
+
+22:41.000 --> 22:43.000
+that are most likely to be cut off...
+
+22:43.000 --> 22:45.000
+are B25 and B26...
+
+22:45.000 --> 22:47.000
+the two amino acids.
+
+22:47.000 --> 22:49.000
+You can see here...
+
+22:49.000 --> 22:51.000
+some of the rings...
+
+22:51.000 --> 22:53.000
+are the structure of the carboxylic acid.
+
+22:53.000 --> 22:55.000
+They will be cut off.
+
+22:55.000 --> 22:57.000
+Where is the cut off?
+
+22:57.000 --> 22:59.000
+For example,
+
+22:59.000 --> 23:01.000
+for B25 carboxylic acid...
+
+23:01.000 --> 23:03.000
+the cut off is between...
+
+23:03.000 --> 23:05.000
+B25 and B26...
+
+23:05.000 --> 23:07.000
+the part of the carboxylic acid.
+
+23:07.000 --> 23:09.000
+For B26 carboxylic acid...
+
+23:09.000 --> 23:11.000
+the cut off is between...
+
+23:11.000 --> 23:13.000
+B26 and B27...
+
+23:13.000 --> 23:15.000
+the part of the carboxylic acid.
+
+23:15.000 --> 23:17.000
+Based on this understanding...
+
+23:17.000 --> 23:19.000
+we know that...
+
+23:19.000 --> 23:21.000
+the carboxylic acid...
+
+23:21.000 --> 23:23.000
+needs to be cut off.
+
+23:23.000 --> 23:25.000
+There is a necessary factor...
+
+23:25.000 --> 23:27.000
+that is...
+
+23:27.000 --> 23:29.000
+the carboxylic acid...
+
+23:29.000 --> 23:31.000
+needs to be cut off...
+
+23:31.000 --> 23:33.000
+in order to cut off the carboxylic acid.
+
+23:33.000 --> 23:35.000
+The whole set of logic...
+
+23:35.000 --> 23:37.000
+that we study...
+
+23:37.000 --> 23:39.000
+is to see...
+
+23:39.000 --> 23:41.000
+what is the necessary factor...
+
+23:41.000 --> 23:43.000
+that needs to be cut off.
+
+23:43.000 --> 23:45.000
+We need to see...
+
+23:45.000 --> 23:47.000
+if there is a way...
+
+23:47.000 --> 23:49.000
+to destroy the necessary factor.
+
+23:49.000 --> 23:51.000
+In this case...
+
+23:51.000 --> 23:53.000
+the necessary factor is...
+
+23:53.000 --> 23:55.000
+that the carboxylic acid...
+
+23:55.000 --> 23:57.000
+needs to be cut off...
+
+23:57.000 --> 23:59.000
+in order to cut off the carboxylic acid.
+
+23:59.000 --> 24:01.000
+The first assumption...
+
+24:01.000 --> 24:03.000
+is that...
+
+24:03.000 --> 24:05.000
+if the carboxylic acid is stored...
+
+24:05.000 --> 24:07.000
+inside the carboxylic acid...
+
+24:07.000 --> 24:09.000
+it won't be cut off.
+
+24:09.000 --> 24:11.000
+This assumption means that...
+
+24:11.000 --> 24:13.000
+the structure...
+
+24:13.000 --> 24:15.000
+has a higher resistance to carboxylic acid.
+
+24:15.000 --> 24:17.000
+This is a full assertion.
+
+24:17.000 --> 24:19.000
+We assume that if a...
+
+24:19.000 --> 24:21.000
+sugar is added to the carboxylic acid...
+
+24:21.000 --> 24:23.000
+the cut-off sugar is...
+
+24:23.000 --> 24:25.000
+guaranteed to be stored inside.
+
+24:25.000 --> 24:27.000
+This is a possible...
+
+24:27.000 --> 24:29.000
+and effective mechanism.
+
+24:29.000 --> 24:31.000
+What do we need to do in this simulation?
+
+24:31.000 --> 24:33.000
+How do we quantify this?
+
+24:33.000 --> 24:35.000
+How do we quantify this?
+
+24:35.000 --> 24:37.000
+How do we quantify this?
+
+24:37.000 --> 24:39.000
+We measure something called SASA.
+
+24:39.000 --> 24:41.000
+Solve an Accessible Surface Area.
+
+24:41.000 --> 24:43.000
+Solve an Accessible Surface Area.
+
+24:43.000 --> 24:45.000
+On paper, this means that...
+
+24:45.000 --> 24:47.000
+the surface area...
+
+24:47.000 --> 24:49.000
+of a carboxylic acid...
+
+24:49.000 --> 24:51.000
+in the carboxylic acid environment.
+
+24:51.000 --> 24:53.000
+This means that...
+
+24:53.000 --> 24:55.000
+the larger the SASA...
+
+24:55.000 --> 24:57.000
+the larger the surface area...
+
+24:57.000 --> 24:59.000
+of the carboxylic acid.
+
+24:59.000 --> 25:01.000
+We assume that...
+
+25:01.000 --> 25:03.000
+the carboxylic acid...
+
+25:03.000 --> 25:05.000
+is exposed outside.
+
+25:05.000 --> 25:07.000
+If it's covered inside...
+
+25:07.000 --> 25:09.000
+it may not even be exposed to water.
+
+25:09.000 --> 25:11.000
+So our assumption today is...
+
+25:11.000 --> 25:13.000
+if a carboxylic acid...
+
+25:13.000 --> 25:15.000
+can lower the SASA...
+
+25:15.000 --> 25:17.000
+of the carboxylic acid B25 and B26...
+
+25:17.000 --> 25:19.000
+it is very likely...
+
+25:19.000 --> 25:21.000
+that it can raise the resistance...
+
+25:21.000 --> 25:23.000
+of the carboxylic acid...
+
+25:23.000 --> 25:25.000
+to the carboxylic acid.
+
+25:25.000 --> 25:27.000
+Let's take a look...
+
+25:27.000 --> 25:29.000
+This diagram looks a bit complicated...
+
+25:29.000 --> 25:31.000
+but basically...
+
+25:31.000 --> 25:33.000
+B25 and B26...
+
+25:33.000 --> 25:35.000
+are the SASA...
+
+25:35.000 --> 25:37.000
+of two different positions.
+
+25:37.000 --> 25:39.000
+The axis...
+
+25:39.000 --> 25:41.000
+is the time it takes...
+
+25:41.000 --> 25:43.000
+for the carboxylic acid...
+
+25:43.000 --> 25:45.000
+to digest the carboxylic acid.
+
+25:45.000 --> 25:47.000
+So...
+
+25:47.000 --> 25:49.000
+the simplest way...
+
+25:49.000 --> 25:51.000
+since there are many data points...
+
+25:51.000 --> 25:53.000
+the simplest way...
+
+25:53.000 --> 25:55.000
+is to look at the numbers 10 and 13...
+
+25:55.000 --> 25:57.000
+the two carboxylic acids.
+
+25:57.000 --> 25:59.000
+Numbers 10 and 13...
+
+25:59.000 --> 26:01.000
+are the two carboxylic acids...
+
+26:01.000 --> 26:03.000
+that have the highest resistance...
+
+26:03.000 --> 26:05.000
+to the carboxylic acid...
+
+26:05.000 --> 26:07.000
+in the experiment.
+
+26:07.000 --> 26:09.000
+We can see that...
+
+26:09.000 --> 26:11.000
+these two carboxylic acids...
+
+26:11.000 --> 26:13.000
+have a half-life...
+
+26:13.000 --> 26:15.000
+longer than the other carboxylic acids.
+
+26:15.000 --> 26:17.000
+This is the result of the experiment.
+
+26:17.000 --> 26:19.000
+It shows that...
+
+26:19.000 --> 26:21.000
+the carboxylic acid resistance...
+
+26:21.000 --> 26:23.000
+is higher in the experiment.
+
+26:23.000 --> 26:25.000
+We can also see that...
+
+26:25.000 --> 26:27.000
+these two carboxylic acids...
+
+26:27.000 --> 26:29.000
+especially number 13...
+
+26:29.000 --> 26:31.000
+have the lowest SASA value.
+
+26:31.000 --> 26:33.000
+This means that...
+
+26:33.000 --> 26:35.000
+when the SASA value is low...
+
+26:35.000 --> 26:37.000
+the carboxylic acid resistance...
+
+26:37.000 --> 26:39.000
+can be improved.
+
+26:39.000 --> 26:41.000
+Although...
+
+26:41.000 --> 26:43.000
+number 10 and 13...
+
+26:43.000 --> 26:45.000
+seem to be consistent...
+
+26:45.000 --> 26:47.000
+with the experiment results...
+
+26:47.000 --> 26:49.000
+there are many exceptions.
+
+26:49.000 --> 26:51.000
+For example, in the square on the right...
+
+26:51.000 --> 26:53.000
+we can see that...
+
+26:53.000 --> 26:55.000
+the half-life of the carboxylic acid...
+
+26:55.000 --> 26:57.000
+is relatively low.
+
+26:57.000 --> 26:59.000
+This means that...
+
+26:59.000 --> 27:01.000
+the carboxylic acid resistance...
+
+27:01.000 --> 27:03.000
+is relatively low.
+
+27:03.000 --> 27:05.000
+However, the SASA value...
+
+27:05.000 --> 27:07.000
+is actually in the middle.
+
+27:07.000 --> 27:09.000
+This is contrary...
+
+27:09.000 --> 27:11.000
+to the experiment results.
+
+27:11.000 --> 27:13.000
+So, from this...
+
+27:13.000 --> 27:15.000
+measurement method...
+
+27:15.000 --> 27:17.000
+we can only know that...
+
+27:17.000 --> 27:19.000
+the SASA measurement method...
+
+27:19.000 --> 27:21.000
+can only give us...
+
+27:21.000 --> 27:23.000
+partial accurate prediction.
+
+27:23.000 --> 27:25.000
+For those...
+
+27:25.000 --> 27:27.000
+carboxylic acids...
+
+27:27.000 --> 27:29.000
+with high SASA resistance...
+
+27:29.000 --> 27:31.000
+their prediction may be accurate.
+
+27:31.000 --> 27:33.000
+However, for those...
+
+27:33.000 --> 27:35.000
+in the middle value...
+
+27:35.000 --> 27:37.000
+their prediction ability...
+
+27:37.000 --> 27:39.000
+is not so good.
+
+27:39.000 --> 27:41.000
+Obviously, we have to...
+
+27:41.000 --> 27:43.000
+find a better...
+
+27:43.000 --> 27:45.000
+model...
+
+27:45.000 --> 27:47.000
+to...
+
+27:47.000 --> 27:49.000
+to model this phenomenon.
+
+27:49.000 --> 27:51.000
+Basically, this model...
+
+27:51.000 --> 27:53.000
+the first model...
+
+27:53.000 --> 27:55.000
+is to look at...
+
+27:55.000 --> 27:57.000
+the interface between...
+
+27:57.000 --> 27:59.000
+the transfer function and the coefficient.
+
+27:59.000 --> 28:01.000
+The second model...
+
+28:01.000 --> 28:03.000
+is based on...
+
+28:03.000 --> 28:05.000
+the 2-level structure of the transfer function.
+
+28:05.000 --> 28:07.000
+First of all, the 2-level structure of the transfer function...
+
+28:07.000 --> 28:09.000
+is related to...
+
+28:09.000 --> 28:11.000
+the location of the carboxylic acid.
+
+28:11.000 --> 28:13.000
+Let's look at...
+
+28:13.000 --> 28:15.000
+this graph.
+
+28:15.000 --> 28:17.000
+This circle represents...
+
+28:17.000 --> 28:19.000
+the carboxylic acid...
+
+28:19.000 --> 28:21.000
+which is B25 or B26.
+
+28:21.000 --> 28:23.000
+The location of the carboxylic acid...
+
+28:23.000 --> 28:25.000
+is C and P1'.
+
+28:25.000 --> 28:27.000
+P1' is the carboxylic acid next to C.
+
+28:27.000 --> 28:29.000
+It is...
+
+28:29.000 --> 28:31.000
+the direction of the carbon.
+
+28:31.000 --> 28:33.000
+The opposite direction is...
+
+28:33.000 --> 28:35.000
+P1, P2 and P3.
+
+28:37.000 --> 28:39.000
+In the past experiments...
+
+28:39.000 --> 28:41.000
+we found that...
+
+28:41.000 --> 28:43.000
+the area from P1 to P3...
+
+28:43.000 --> 28:45.000
+is usually...
+
+28:45.000 --> 28:47.000
+from the past experiments...
+
+28:47.000 --> 28:49.000
+the area from P1 to P3...
+
+28:49.000 --> 28:51.000
+is usually...
+
+28:51.000 --> 28:53.000
+from the past experiments...
+
+28:53.000 --> 28:55.000
+the area from P1 to P3...
+
+28:55.000 --> 28:57.000
+is the omega3 structure...
+
+28:57.000 --> 28:59.000
+in the combination with...
+
+28:59.000 --> 29:01.000
+alpha-carbotrypsin.
+
+29:01.000 --> 29:03.000
+This omega3 structure...
+
+29:05.000 --> 29:07.000
+is a necessary factor...
+
+29:07.000 --> 29:09.000
+required...
+
+29:09.000 --> 29:11.000
+for therefore,
+
+29:11.000 --> 29:13.000
+for example,
+
+29:13.000 --> 29:15.000
+our target omega3...
+
+29:15.000 --> 29:17.000
+oding is very important.
+
+29:17.000 --> 29:19.000
+loss of atoms is between B25 and B26.
+
+29:21.000 --> 29:23.000
+Which means...
+
+29:23.000 --> 29:25.000
+from P1 to P3 are equal to...
+
+29:25.000 --> 29:27.000
+if we take B25 as an example,
+
+29:27.000 --> 29:29.000
+P1 is 24,
+
+29:29.000 --> 29:31.000
+followed by 2 3 2 2,
+
+29:31.000 --> 29:33.000
+for B26,
+
+29:33.000 --> 29:35.000
+P1 P2 P3 are 23-25.
+
+29:35.000 --> 29:37.000
+If we take both actions,
+
+29:37.000 --> 29:39.000
+B25-B26,
+
+29:39.000 --> 29:41.000
+we need to consider B22-B25,
+
+29:41.000 --> 29:43.000
+P1-P3,
+
+29:43.000 --> 29:45.000
+the 2-level structure.
+
+29:47.000 --> 29:49.000
+Here,
+
+29:49.000 --> 29:51.000
+our assumption is
+
+29:51.000 --> 29:53.000
+if P1-P3
+
+29:53.000 --> 29:55.000
+become
+
+29:55.000 --> 29:57.000
+the lower the beta-shear tendency,
+
+29:57.000 --> 29:59.000
+it will be able to
+
+29:59.000 --> 30:01.000
+increase the antiparticle resistance.
+
+30:01.000 --> 30:03.000
+Here,
+
+30:03.000 --> 30:05.000
+I would like to remind you that
+
+30:05.000 --> 30:07.000
+our logic is always the same.
+
+30:07.000 --> 30:09.000
+When we assume
+
+30:09.000 --> 30:11.000
+the beta-shear is
+
+30:11.000 --> 30:13.000
+the necessary condition
+
+30:13.000 --> 30:15.000
+for the antiparticle resistance,
+
+30:15.000 --> 30:17.000
+we will try to break this condition.
+
+30:17.000 --> 30:19.000
+Let's assume that
+
+30:19.000 --> 30:21.000
+P1-P3
+
+30:21.000 --> 30:23.000
+become the lower the beta-shear tendency,
+
+30:23.000 --> 30:25.000
+it will be able to
+
+30:25.000 --> 30:27.000
+avoid the antiparticle resistance.
+
+30:27.000 --> 30:29.000
+In simulation,
+
+30:29.000 --> 30:31.000
+how do we calculate
+
+30:31.000 --> 30:33.000
+the beta-shear tendency
+
+30:33.000 --> 30:35.000
+in this region?
+
+30:35.000 --> 30:37.000
+Here is a graph called
+
+30:37.000 --> 30:39.000
+Raman-Schrödinger plot.
+
+30:39.000 --> 30:41.000
+I won't go into details here.
+
+30:41.000 --> 30:43.000
+Basically,
+
+30:43.000 --> 30:45.000
+it measures
+
+30:45.000 --> 30:47.000
+each amino acid,
+
+30:47.000 --> 30:49.000
+we are interested in amino acids,
+
+30:49.000 --> 30:51.000
+B22-B25,
+
+30:51.000 --> 30:53.000
+each amino acid,
+
+30:53.000 --> 30:55.000
+and locate
+
+30:55.000 --> 30:57.000
+the location of
+
+30:57.000 --> 30:59.000
+each point
+
+30:59.000 --> 31:01.000
+in the graph.
+
+31:01.000 --> 31:03.000
+The more red points
+
+31:03.000 --> 31:05.000
+appear in this region,
+
+31:05.000 --> 31:07.000
+it means
+
+31:07.000 --> 31:09.000
+the higher the antiparticle resistance
+
+31:09.000 --> 31:11.000
+is.
+
+31:11.000 --> 31:13.000
+We hope that
+
+31:13.000 --> 31:15.000
+the lower the beta-shear tendency.
+
+31:15.000 --> 31:17.000
+Let's see
+
+31:17.000 --> 31:19.000
+the simulation data.
+
+31:19.000 --> 31:21.000
+Here,
+
+31:21.000 --> 31:23.000
+the graph looks
+
+31:23.000 --> 31:25.000
+a bit complicated,
+
+31:25.000 --> 31:27.000
+so I won't
+
+31:27.000 --> 31:29.000
+go into details.
+
+31:29.000 --> 31:31.000
+Basically,
+
+31:31.000 --> 31:33.000
+here is the conclusion.
+
+31:33.000 --> 31:35.000
+We found that
+
+31:35.000 --> 31:37.000
+the beta-shear tendency
+
+31:37.000 --> 31:39.000
+of P1 to P3
+
+31:39.000 --> 31:41.000
+is not related to
+
+31:41.000 --> 31:43.000
+the antiparticle resistance
+
+31:43.000 --> 31:45.000
+of the guide tree.
+
+31:45.000 --> 31:47.000
+Some of them
+
+31:47.000 --> 31:49.000
+are not even related.
+
+31:49.000 --> 31:51.000
+This means
+
+31:51.000 --> 31:53.000
+that
+
+31:53.000 --> 31:55.000
+our hypothesis
+
+31:55.000 --> 31:57.000
+is wrong.
+
+31:57.000 --> 31:59.000
+The reason is
+
+31:59.000 --> 32:01.000
+that
+
+32:01.000 --> 32:03.000
+if you are interested,
+
+32:03.000 --> 32:05.000
+I can explain it later.
+
+32:05.000 --> 32:07.000
+Basically,
+
+32:07.000 --> 32:09.000
+the takeaway here
+
+32:09.000 --> 32:11.000
+is that
+
+32:11.000 --> 32:13.000
+the second hypothesis is still wrong.
+
+32:13.000 --> 32:15.000
+Since the second hypothesis is still wrong,
+
+32:15.000 --> 32:17.000
+we have to think about the third hypothesis.
+
+32:17.000 --> 32:19.000
+Let me
+
+32:19.000 --> 32:21.000
+help you review.
+
+32:21.000 --> 32:23.000
+The first hypothesis
+
+32:23.000 --> 32:25.000
+is based on
+
+32:25.000 --> 32:27.000
+the difference between
+
+32:27.000 --> 32:29.000
+the antiparticle resistance
+
+32:29.000 --> 32:31.000
+of P1 to P3.
+
+32:31.000 --> 32:33.000
+The second hypothesis
+
+32:33.000 --> 32:35.000
+is based on
+
+32:35.000 --> 32:37.000
+the second structure of the guide tree.
+
+32:37.000 --> 32:39.000
+The third hypothesis
+
+32:39.000 --> 32:41.000
+is based on
+
+32:41.000 --> 32:43.000
+the interaction between
+
+32:43.000 --> 32:45.000
+the guide tree
+
+32:45.000 --> 32:47.000
+and the antiparticle resistance
+
+32:47.000 --> 32:49.000
+of P1 to P3.
+
+32:49.000 --> 32:51.000
+In the past,
+
+32:51.000 --> 32:53.000
+we found that
+
+32:53.000 --> 32:55.000
+alpha-chromotrypsin
+
+32:55.000 --> 32:57.000
+interacts with
+
+32:57.000 --> 32:59.000
+the protein
+
+32:59.000 --> 33:01.000
+that can be cut
+
+33:01.000 --> 33:03.000
+by alpha-chromotrypsin.
+
+33:03.000 --> 33:05.000
+In this example,
+
+33:05.000 --> 33:07.000
+we can see
+
+33:07.000 --> 33:09.000
+that
+
+33:09.000 --> 33:11.000
+the yellow circle
+
+33:11.000 --> 33:13.000
+is the part of the guide tree.
+
+33:13.000 --> 33:15.000
+The square below
+
+33:15.000 --> 33:17.000
+is the amino acid
+
+33:17.000 --> 33:19.000
+of alpha-chromotrypsin.
+
+33:19.000 --> 33:21.000
+In the past,
+
+33:21.000 --> 33:23.000
+we found that
+
+33:23.000 --> 33:25.000
+alpha-chromotrypsin interacts
+
+33:25.000 --> 33:27.000
+with the amino acid of
+
+33:27.000 --> 33:29.000
+alpha-chromotrypsin.
+
+33:29.000 --> 33:31.000
+The interaction between
+
+33:31.000 --> 33:33.000
+alpha-chromotrypsin and
+
+33:33.000 --> 33:35.000
+alpha-chromotrypsin
+
+33:35.000 --> 33:37.000
+is very common.
+
+33:37.000 --> 33:39.000
+The four groups
+
+33:39.000 --> 33:41.000
+are the standard
+
+33:41.000 --> 33:43.000
+interactions
+
+33:43.000 --> 33:45.000
+between the
+
+33:45.000 --> 33:47.000
+alpha-chromotrypsin
+
+33:47.000 --> 33:49.000
+and the
+
+33:49.000 --> 33:51.000
+alpha-chromotrypsin.
+
+33:51.000 --> 33:53.000
+In this example,
+
+33:53.000 --> 33:55.000
+alpha-chromotrypsin
+
+33:55.000 --> 33:57.000
+interacts with
+
+33:57.000 --> 33:59.000
+the amino acid of
+
+33:59.000 --> 34:01.000
+alpha-chromotrypsin.
+
+34:01.000 --> 34:03.000
+The interaction between
+
+34:03.000 --> 34:05.000
+alpha-chromotrypsin
+
+34:05.000 --> 34:07.000
+and
+
+34:07.000 --> 34:09.000
+alpha-chromotrypsin
+
+34:09.000 --> 34:11.000
+is very common.
+
+34:11.000 --> 34:13.000
+The interaction between
+
+34:13.000 --> 34:15.000
+alpha-chromotrypsin
+
+34:15.000 --> 34:17.000
+and
+
+34:17.000 --> 34:19.000
+alpha-chromotrypsin
+
+34:19.000 --> 34:21.000
+is very common.
+
+34:21.000 --> 34:23.000
+In the case of
+
+34:23.000 --> 34:25.000
+alpha-chromotrypsin,
+
+34:25.000 --> 34:27.000
+the interaction
+
+34:27.000 --> 34:29.000
+between
+
+34:29.000 --> 34:31.000
+alpha-chromotrypsin
+
+34:31.000 --> 34:33.000
+and
+
+34:33.000 --> 34:35.000
+alpha-chromotrypsin
+
+34:35.000 --> 34:37.000
+is very common.
+
+34:37.000 --> 34:39.000
+We found that
+
+34:39.000 --> 34:41.000
+the interaction between
+
+34:41.000 --> 34:43.000
+alpha-chromotrypsin
+
+34:43.000 --> 34:45.000
+and
+
+34:45.000 --> 34:47.000
+alpha-chromotrypsin
+
+34:47.000 --> 34:49.000
+is very common.
+
+34:49.000 --> 34:51.000
+The biggest difference between
+
+34:51.000 --> 34:53.000
+alpha-chromotrypsin and
+
+34:53.000 --> 34:55.000
+alpha-chromotrypsin is that
+
+34:55.000 --> 34:57.000
+alpha-chromotrypsin contains
+
+34:57.000 --> 34:59.000
+a type of sugar,
+
+34:59.000 --> 35:01.000
+whereas alpha-chromotrypsin
+
+35:01.000 --> 35:03.000
+does not.
+
+35:03.000 --> 35:05.000
+Let's assume that
+
+35:05.000 --> 35:07.000
+the addition of
+
+35:07.000 --> 35:09.000
+a type of sugar
+
+35:09.000 --> 35:11.000
+can disrupt
+
+35:11.000 --> 35:13.000
+the network of
+
+35:13.000 --> 35:15.000
+alpha-chromotrypsin.
+
+35:15.000 --> 35:17.000
+In other words,
+
+35:17.000 --> 35:19.000
+if alpha-chromotrypsin
+
+35:19.000 --> 35:21.000
+prefers sugar
+
+35:21.000 --> 35:23.000
+as a donor,
+
+35:23.000 --> 35:25.000
+alpha-chromotrypsin will
+
+35:25.000 --> 35:27.000
+interact with sugar
+
+35:27.000 --> 35:29.000
+to create
+
+35:29.000 --> 35:31.000
+a bond between
+
+35:31.000 --> 35:33.000
+alpha-chromotrypsin
+
+35:33.000 --> 35:35.000
+and
+
+35:35.000 --> 35:37.000
+alpha-chromotrypsin.
+
+35:37.000 --> 35:39.000
+For example,
+
+35:39.000 --> 35:41.000
+there are several couples
+
+35:41.000 --> 35:43.000
+in front of you
+
+35:43.000 --> 35:45.000
+and you want to
+
+35:45.000 --> 35:47.000
+disrupt the bond between
+
+35:47.000 --> 35:49.000
+them,
+
+35:49.000 --> 35:51.000
+so you throw down
+
+35:51.000 --> 35:53.000
+a type of sugar,
+
+35:53.000 --> 35:55.000
+like alpha-chromotrypsin.
+
+35:55.000 --> 35:57.000
+Alpha-chromotrypsin
+
+35:57.000 --> 35:59.000
+and
+
+35:59.000 --> 36:01.000
+alpha-chromotrypsin
+
+36:01.000 --> 36:03.000
+form a new bond.
+
+36:03.000 --> 36:05.000
+Let's assume that
+
+36:05.000 --> 36:07.000
+sugar can disrupt
+
+36:07.000 --> 36:09.000
+the network of
+
+36:09.000 --> 36:11.000
+alpha-chromotrypsin
+
+36:11.000 --> 36:13.000
+and alpha-chromotrypsin.
+
+36:13.000 --> 36:15.000
+Let's see
+
+36:15.000 --> 36:17.000
+if simulation
+
+36:17.000 --> 36:19.000
+supports this assumption.
+
+36:19.000 --> 36:21.000
+First,
+
+36:21.000 --> 36:23.000
+we can see
+
+36:23.000 --> 36:25.000
+the two structures
+
+36:25.000 --> 36:27.000
+with the highest
+
+36:27.000 --> 36:29.000
+alpha-chromotrypsin.
+
+36:29.000 --> 36:31.000
+We know that
+
+36:31.000 --> 36:33.000
+10 and 13
+
+36:33.000 --> 36:35.000
+have the highest
+
+36:35.000 --> 36:37.000
+alpha-chromotrypsin.
+
+36:37.000 --> 36:39.000
+13 is the first one.
+
+36:39.000 --> 36:41.000
+13,
+
+36:41.000 --> 36:43.000
+we call it
+
+36:43.000 --> 36:45.000
+the adsorption power
+
+36:45.000 --> 36:47.000
+which can be
+
+36:47.000 --> 36:49.000
+caused by
+
+36:49.000 --> 36:51.000
+alpha-chromotrypsin
+
+36:51.000 --> 36:53.000
+and
+
+36:53.000 --> 36:55.000
+alpha-chromotrypsin.
+
+36:55.000 --> 36:57.000
+13
+
+36:57.000 --> 36:59.000
+has four
+
+36:59.000 --> 37:01.000
+adsorption power
+
+37:01.000 --> 37:03.000
+with
+
+37:03.000 --> 37:05.000
+the highest
+
+37:05.000 --> 37:07.000
+alpha-chromotrypsin.
+
+37:07.000 --> 37:09.000
+9
+
+37:09.000 --> 37:11.000
+has two
+
+37:11.000 --> 37:13.000
+adsorption power.
+
+37:13.000 --> 37:15.000
+5 and 12
+
+37:15.000 --> 37:17.000
+have similar
+
+37:17.000 --> 37:19.000
+adsorption power
+
+37:19.000 --> 37:21.000
+with alpha-chromotrypsin.
+
+37:21.000 --> 37:23.000
+Therefore,
+
+37:23.000 --> 37:25.000
+as long as there is
+
+37:25.000 --> 37:27.000
+adsorption power,
+
+37:27.000 --> 37:29.000
+alpha-chromotrypsin
+
+37:29.000 --> 37:31.000
+is better
+
+37:31.000 --> 37:33.000
+for alpha-chromotrypsin.
+
+37:33.000 --> 37:35.000
+We can see
+
+37:35.000 --> 37:37.000
+as long as there is
+
+37:37.000 --> 37:39.000
+more adsorption power,
+
+37:39.000 --> 37:41.000
+alpha-chromotrypsin
+
+37:41.000 --> 37:43.000
+is better for
+
+37:43.000 --> 37:45.000
+alpha-chromotrypsin.
+
+37:45.000 --> 37:47.000
+The rest
+
+37:47.000 --> 37:49.000
+are
+
+37:49.000 --> 37:51.000
+alpha-chromotrypsin
+
+37:51.000 --> 37:53.000
+with lower
+
+37:53.000 --> 37:55.000
+adsorption power
+
+37:55.000 --> 37:57.000
+than
+
+37:57.000 --> 37:59.000
+alpha-chromotrypsin.
+
+37:59.000 --> 38:01.000
+Only
+
+38:01.000 --> 38:03.000
+number 6
+
+38:03.000 --> 38:05.000
+has lower
+
+38:05.000 --> 38:07.000
+adsorption power
+
+38:07.000 --> 38:09.000
+than alpha-chromotrypsin.
+
+38:09.000 --> 38:11.000
+Although
+
+38:11.000 --> 38:13.000
+number 6
+
+38:13.000 --> 38:15.000
+has adsorption power,
+
+38:15.000 --> 38:17.000
+we can see
+
+38:17.000 --> 38:19.000
+that the adsorption power
+
+38:19.000 --> 38:21.000
+is not very stable.
+
+38:21.000 --> 38:23.000
+Therefore,
+
+38:23.000 --> 38:25.000
+number 6
+
+38:25.000 --> 38:27.000
+has almost
+
+38:27.000 --> 38:29.000
+no adsorption power.
+
+38:29.000 --> 38:31.000
+Therefore,
+
+38:31.000 --> 38:33.000
+only number 6
+
+38:33.000 --> 38:35.000
+has adsorption power
+
+38:35.000 --> 38:37.000
+than alpha-chromotrypsin.
+
+38:37.000 --> 38:39.000
+Therefore,
+
+38:39.000 --> 38:41.000
+number 6
+
+38:41.000 --> 38:43.000
+has
+
+38:43.000 --> 38:45.000
+almost
+
+38:45.000 --> 38:47.000
+no adsorption power
+
+38:47.000 --> 38:49.000
+than alpha-chromotrypsin.
+
+38:49.000 --> 38:51.000
+Therefore,
+
+38:51.000 --> 38:53.000
+number 6
+
+38:53.000 --> 38:55.000
+has
+
+38:55.000 --> 38:57.000
+almost
+
+38:57.000 --> 38:59.000
+no adsorption power
+
+38:59.000 --> 39:01.000
+than alpha-chromotrypsin.
+
+39:01.000 --> 39:03.000
+Therefore,
+
+39:03.000 --> 39:05.000
+number 6
+
+39:05.000 --> 39:07.000
+has
+
+39:07.000 --> 39:09.000
+almost
+
+39:09.000 --> 39:11.000
+no adsorption power
+
+39:11.000 --> 39:13.000
+than alpha-chromotrypsin.
+
+39:13.000 --> 39:15.000
+Therefore,
+
+39:15.000 --> 39:17.000
+number 6
+
+39:17.000 --> 39:19.000
+has
+
+39:19.000 --> 39:21.000
+almost
+
+39:21.000 --> 39:23.000
+no adsorption power
+
+39:23.000 --> 39:25.000
+than alpha-chromotrypsin.
+
+39:25.000 --> 39:27.000
+Therefore,
+
+39:27.000 --> 39:29.000
+number 6
+
+39:29.000 --> 39:31.000
+has
+
+39:31.000 --> 39:33.000
+almost
+
+39:33.000 --> 39:35.000
+no adsorption power
+
+39:35.000 --> 39:37.000
+than alpha-chromotrypsin.
+
+39:37.000 --> 39:39.000
+Therefore,
+
+39:39.000 --> 39:41.000
+number 6
+
+39:41.000 --> 39:43.000
+has
+
+39:43.000 --> 39:45.000
+almost
+
+39:45.000 --> 39:47.000
+no adsorption power
+
+39:47.000 --> 39:49.000
+than alpha-chromotrypsin.
+
+39:49.000 --> 39:51.000
+Therefore,
+
+39:51.000 --> 39:53.000
+number 6
+
+39:53.000 --> 39:55.000
+has
+
+39:55.000 --> 39:57.000
+almost
+
+39:57.000 --> 39:59.000
+no adsorption power
+
+39:59.000 --> 40:01.000
+than alpha-chromotrypsin.
+
+40:01.000 --> 40:03.000
+Therefore,
+
+40:03.000 --> 40:05.000
+number 6
+
+40:05.000 --> 40:07.000
+has
+
+40:07.000 --> 40:09.000
+almost
+
+40:09.000 --> 40:11.000
+no adsorption power
+
+40:11.000 --> 40:13.000
+than alpha-chromotrypsin.
+
+40:13.000 --> 40:15.000
+Therefore,
+
+40:15.000 --> 40:17.000
+number 6
+
+40:17.000 --> 40:19.000
+has
+
+40:19.000 --> 40:21.000
+almost
+
+40:21.000 --> 40:23.000
+no adsorption power
+
+40:23.000 --> 40:25.000
+than alpha-chromotrypsin.
+
+40:25.000 --> 40:27.000
+Therefore,
+
+40:27.000 --> 40:29.000
+number 6
+
+40:29.000 --> 40:31.000
+has
+
+40:31.000 --> 40:33.000
+almost
+
+40:33.000 --> 40:35.000
+no adsorption power
+
+40:35.000 --> 40:37.000
+than alpha-chromotrypsin.
+
+40:37.000 --> 40:39.000
+Therefore,
+
+40:39.000 --> 40:41.000
+number 6
+
+40:41.000 --> 40:43.000
+has
+
+40:43.000 --> 40:45.000
+almost
+
+40:45.000 --> 40:47.000
+no adsorption power
+
+40:47.000 --> 40:49.000
+than alpha-chromotrypsin.
+
+40:49.000 --> 40:51.000
+Therefore,
+
+40:51.000 --> 40:53.000
+number 6
+
+40:53.000 --> 40:55.000
+has
+
+40:55.000 --> 40:57.000
+almost
+
+40:57.000 --> 40:59.000
+no adsorption power
+
+40:59.000 --> 41:01.000
+than alpha-chromotrypsin.
+
+41:01.000 --> 41:03.000
+Therefore,
+
+41:03.000 --> 41:05.000
+number 6
+
+41:05.000 --> 41:07.000
+has
+
+41:07.000 --> 41:09.000
+almost
+
+41:09.000 --> 41:11.000
+no adsorption power
+
+41:11.000 --> 41:13.000
+than alpha-chromotrypsin.
+
+41:13.000 --> 41:15.000
+Therefore,
+
+41:15.000 --> 41:17.000
+number 6
+
+41:17.000 --> 41:19.000
+has
+
+41:19.000 --> 41:21.000
+almost
+
+41:21.000 --> 41:23.000
+no adsorption power
+
+41:23.000 --> 41:25.000
+than alpha-chromotrypsin.
+
+41:25.000 --> 41:27.000
+Therefore,
+
+41:27.000 --> 41:29.000
+number 6
+
+41:29.000 --> 41:31.000
+has
+
+41:31.000 --> 41:33.000
+almost
+
+41:33.000 --> 41:35.000
+no adsorption power
+
+41:35.000 --> 41:37.000
+than alpha-chromotrypsin.
+
+41:37.000 --> 41:39.000
+Therefore,
+
+41:39.000 --> 41:41.000
+number 6
+
+41:41.000 --> 41:43.000
+has
+
+41:43.000 --> 41:45.000
+almost
+
+41:45.000 --> 41:47.000
+no adsorption power
+
+41:47.000 --> 41:49.000
+than alpha-chromotrypsin.
+
+41:49.000 --> 41:51.000
+Therefore,
+
+41:51.000 --> 41:53.000
+number 6
+
+41:53.000 --> 41:55.000
+has
+
+41:55.000 --> 41:57.000
+almost
+
+41:57.000 --> 41:59.000
+no adsorption power
+
+41:59.000 --> 42:01.000
+than alpha-chromotrypsin.
+
+42:01.000 --> 42:03.000
+Therefore,
+
+42:03.000 --> 42:05.000
+number 6
+
+42:05.000 --> 42:07.000
+has
+
+42:07.000 --> 42:09.000
+almost
+
+42:09.000 --> 42:11.000
+no adsorption power
+
+42:11.000 --> 42:13.000
+than alpha-chromotrypsin.
+
+42:13.000 --> 42:15.000
+Therefore,
+
+42:15.000 --> 42:17.000
+number 6
+
+42:17.000 --> 42:19.000
+has
+
+42:19.000 --> 42:21.000
+almost
+
+42:21.000 --> 42:23.000
+no adsorption power
+
+42:23.000 --> 42:25.000
+than alpha-chromotrypsin.
+
+42:25.000 --> 42:27.000
+Therefore,
+
+42:27.000 --> 42:29.000
+number 6
+
+42:29.000 --> 42:31.000
+has
+
+42:31.000 --> 42:33.000
+almost
+
+42:33.000 --> 42:35.000
+no adsorption power
+
+42:35.000 --> 42:37.000
+than alpha-chromotrypsin.
+
+42:37.000 --> 42:39.000
+Therefore,
+
+42:39.000 --> 42:41.000
+number 6
+
+42:41.000 --> 42:43.000
+has
+
+42:43.000 --> 42:45.000
+almost
+
+42:45.000 --> 42:47.000
+no adsorption power
+
+42:47.000 --> 42:49.000
+than alpha-chromotrypsin.
+
+42:49.000 --> 42:51.000
+Therefore,
+
+42:51.000 --> 42:53.000
+number 6
+
+42:53.000 --> 42:55.000
+has
+
+42:55.000 --> 42:57.000
+almost
+
+42:57.000 --> 42:59.000
+no adsorption power
+
+42:59.000 --> 43:01.000
+than alpha-chromotrypsin.
+
+43:01.000 --> 43:03.000
+Therefore,
+
+43:03.000 --> 43:05.000
+number 6
+
+43:05.000 --> 43:07.000
+has
+
+43:07.000 --> 43:09.000
+almost
+
+43:09.000 --> 43:11.000
+no adsorption power
+
+43:11.000 --> 43:13.000
+than alpha-chromotrypsin.
+
+43:13.000 --> 43:15.000
+Therefore,
+
+43:15.000 --> 43:17.000
+number 6
+
+43:17.000 --> 43:19.000
+has
+
+43:19.000 --> 43:21.000
+almost
+
+43:21.000 --> 43:23.000
+no adsorption power
+
+43:23.000 --> 43:25.000
+than alpha-chromotrypsin.
+
+43:25.000 --> 43:27.000
+Therefore,
+
+43:27.000 --> 43:29.000
+number 6
+
+43:29.000 --> 43:31.000
+has
+
+43:31.000 --> 43:33.000
+almost
+
+43:33.000 --> 43:35.000
+no adsorption power
+
+43:35.000 --> 43:37.000
+than alpha-chromotrypsin.
+
+43:37.000 --> 43:39.000
+Therefore,
+
+43:39.000 --> 43:41.000
+number 6
+
+43:41.000 --> 43:43.000
+has
+
+43:43.000 --> 43:45.000
+almost
+
+43:45.000 --> 43:47.000
+no adsorption power
+
+43:47.000 --> 43:49.000
+than alpha-chromotrypsin.
+
+43:49.000 --> 43:51.000
+Therefore,
+
+43:51.000 --> 43:53.000
+number 6
+
+43:53.000 --> 43:55.000
+has
+
+43:55.000 --> 43:57.000
+almost
+
+43:57.000 --> 43:59.000
+no adsorption power
+
+43:59.000 --> 44:01.000
+than alpha-chromotrypsin.
+
+44:01.000 --> 44:03.000
+Therefore,
+
+44:03.000 --> 44:05.000
+number 6
+
+44:05.000 --> 44:07.000
+has
+
+44:07.000 --> 44:09.000
+almost
+
+44:09.000 --> 44:11.000
+no adsorption power
+
+44:11.000 --> 44:13.000
+than alpha-chromotrypsin.
+
+44:13.000 --> 44:15.000
+Therefore,
+
+44:15.000 --> 44:17.000
+number 6
+
+44:17.000 --> 44:19.000
+has
+
+44:19.000 --> 44:21.000
+almost
+
+44:21.000 --> 44:23.000
+no adsorption power
+
+44:23.000 --> 44:25.000
+than alpha-chromotrypsin.
+
+44:25.000 --> 44:27.000
+Therefore,
+
+44:27.000 --> 44:29.000
+number 6
+
+44:29.000 --> 44:31.000
+has
+
+44:31.000 --> 44:33.000
+almost
+
+44:33.000 --> 44:35.000
+no adsorption power
+
+44:35.000 --> 44:37.000
+than alpha-chromotrypsin.
+
+44:37.000 --> 44:39.000
+Therefore,
+
+44:39.000 --> 44:41.000
+number 6
+
+44:41.000 --> 44:43.000
+has
+
+44:43.000 --> 44:45.000
+almost
+
+44:45.000 --> 44:47.000
+no adsorption power
+
+44:47.000 --> 44:49.000
+than alpha-chromotrypsin.
+
+44:49.000 --> 44:51.000
+Therefore,
+
+44:51.000 --> 44:53.000
+number 6
+
+44:53.000 --> 44:55.000
+has
+
+44:55.000 --> 44:57.000
+almost
+
+44:57.000 --> 44:59.000
+no adsorption power
+
+44:59.000 --> 45:01.000
+than alpha-chromotrypsin.
+
+45:01.000 --> 45:03.000
+Therefore,
+
+45:03.000 --> 45:05.000
+number 6
+
+45:05.000 --> 45:07.000
+has
+
+45:07.000 --> 45:09.000
+almost
+
+45:09.000 --> 45:11.000
+no adsorption power
+
+45:11.000 --> 45:13.000
+than alpha-chromotrypsin.
+
+45:13.000 --> 45:15.000
+Therefore,
+
+45:15.000 --> 45:17.000
+number 6
+
+45:17.000 --> 45:19.000
+has
+
+45:19.000 --> 45:21.000
+almost
+
+45:21.000 --> 45:23.000
+no adsorption power
+
+45:23.000 --> 45:25.000
+than alpha-chromotrypsin.
+
+45:25.000 --> 45:27.000
+Therefore,
+
+45:27.000 --> 45:29.000
+number 6
+
+45:29.000 --> 45:31.000
+has
+
+45:31.000 --> 45:33.000
+almost
+
+45:33.000 --> 45:35.000
+no adsorption power
+
+45:35.000 --> 45:37.000
+than alpha-chromotrypsin.
+
+45:37.000 --> 45:39.000
+Therefore,
+
+45:39.000 --> 45:41.000
+number 6
+
+45:41.000 --> 45:43.000
+has
+
+45:43.000 --> 45:45.000
+almost
+
+45:45.000 --> 45:47.000
+no adsorption power
+
+45:47.000 --> 45:49.000
+than alpha-chromotrypsin.
+
+45:49.000 --> 45:51.000
+Therefore,
+
+45:51.000 --> 45:53.000
+number 6
+
+45:53.000 --> 45:55.000
+has
+
+45:55.000 --> 45:57.000
+almost
+
+45:57.000 --> 45:59.000
+no adsorption power
+
+45:59.000 --> 46:01.000
+than alpha-chromotrypsin.
+
+46:01.000 --> 46:03.000
+Therefore,
+
+46:03.000 --> 46:05.000
+number 6
+
+46:05.000 --> 46:07.000
+has
+
+46:07.000 --> 46:09.000
+almost
+
+46:09.000 --> 46:11.000
+no adsorption power
+
+46:11.000 --> 46:13.000
+than alpha-chromotrypsin.
+
+46:13.000 --> 46:15.000
+Therefore,
+
+46:15.000 --> 46:17.000
+number 6
+
+46:17.000 --> 46:19.000
+has
+
+46:19.000 --> 46:21.000
+almost
+
+46:21.000 --> 46:23.000
+no adsorption power
+
+46:23.000 --> 46:25.000
+than alpha-chromotrypsin.
+
+46:25.000 --> 46:27.000
+Therefore,
+
+46:27.000 --> 46:29.000
+number 6
+
+46:29.000 --> 46:31.000
+has
+
+46:31.000 --> 46:33.000
+almost
+
+46:33.000 --> 46:35.000
+no adsorption power
+
+46:35.000 --> 46:37.000
+than alpha-chromotrypsin.
+
+46:37.000 --> 46:39.000
+Therefore,
+
+46:39.000 --> 46:41.000
+number 6
+
+46:41.000 --> 46:43.000
+has
+
+46:43.000 --> 46:45.000
+almost
+
+46:45.000 --> 46:47.000
+no adsorption power
+
+46:47.000 --> 46:49.000
+than alpha-chromotrypsin.
+
+46:49.000 --> 46:51.000
+Therefore,
+
+46:51.000 --> 46:53.000
+number 6
+
+46:53.000 --> 46:55.000
+has
+
+46:55.000 --> 46:57.000
+almost
+
+46:57.000 --> 46:59.000
+no adsorption power
+
+46:59.000 --> 47:01.000
+than alpha-chromotrypsin.
+
+47:01.000 --> 47:03.000
+Therefore,
+
+47:03.000 --> 47:05.000
+number 6
+
+47:05.000 --> 47:07.000
+has
+
+47:07.000 --> 47:09.000
+almost
+
+47:09.000 --> 47:11.000
+no adsorption power
+
+47:11.000 --> 47:13.000
+than alpha-chromotrypsin.
+
+47:13.000 --> 47:15.000
+Therefore,
+
+47:15.000 --> 47:17.000
+number 6
+
+47:17.000 --> 47:19.000
+has
+
+47:19.000 --> 47:21.000
+almost
+
+47:21.000 --> 47:23.000
+no adsorption power
+
+47:23.000 --> 47:25.000
+than alpha-chromotrypsin.
+
+47:25.000 --> 47:27.000
+Therefore,
+
+47:27.000 --> 47:29.000
+number 6
+
+47:29.000 --> 47:31.000
+has
+
+47:31.000 --> 47:33.000
+almost
+
+47:33.000 --> 47:35.000
+no adsorption power
+
+47:35.000 --> 47:37.000
+than alpha-chromotrypsin.
+
+47:37.000 --> 47:39.000
+Therefore,
+
+47:39.000 --> 47:41.000
+number 6
+
+47:41.000 --> 47:43.000
+has
+
+47:43.000 --> 47:45.000
+almost
+
+47:45.000 --> 47:47.000
+no adsorption power
+
+47:47.000 --> 47:49.000
+than alpha-chromotrypsin.
+
+47:49.000 --> 47:51.000
+Therefore,
+
+47:51.000 --> 47:53.000
+number 6
+
+47:53.000 --> 47:55.000
+has
+
+47:55.000 --> 47:57.000
+almost
+
+47:57.000 --> 47:59.000
+no adsorption power
+
+47:59.000 --> 48:01.000
+than alpha-chromotrypsin.
+
+48:01.000 --> 48:03.000
+Therefore,
+
+48:03.000 --> 48:05.000
+number 6
+
+48:05.000 --> 48:07.000
+has
+
+48:07.000 --> 48:09.000
+almost
+
+48:09.000 --> 48:11.000
+no adsorption power
+
+48:11.000 --> 48:13.000
+than alpha-chromotrypsin.
+
+48:13.000 --> 48:15.000
+Therefore,
+
+48:15.000 --> 48:17.000
+number 6
+
+48:17.000 --> 48:19.000
+has
+
+48:19.000 --> 48:21.000
+almost
+
+48:21.000 --> 48:23.000
+no adsorption power
+
+48:23.000 --> 48:25.000
+than alpha-chromotrypsin.
+
+48:25.000 --> 48:27.000
+Therefore,
+
+48:27.000 --> 48:29.000
+number 6
+
+48:29.000 --> 48:31.000
+has
+
+48:31.000 --> 48:33.000
+almost
+
+48:33.000 --> 48:35.000
+no adsorption power
+
+48:35.000 --> 48:37.000
+than alpha-chromotrypsin.
+
+48:37.000 --> 48:39.000
+Therefore,
+
+48:39.000 --> 48:41.000
+number 6
+
+48:41.000 --> 48:43.000
+has
+
+48:43.000 --> 48:45.000
+almost
+
+48:45.000 --> 48:47.000
+no adsorption power
+
+48:47.000 --> 48:49.000
+than alpha-chromotrypsin.
+
+48:49.000 --> 48:51.000
+Therefore,
+
+48:51.000 --> 48:53.000
+number 6
+
+48:53.000 --> 48:55.000
+has
+
+48:55.000 --> 48:57.000
+almost
+
+48:57.000 --> 48:59.000
+no adsorption power
+
+48:59.000 --> 49:01.000
+than alpha-chromotrypsin.
+
+49:01.000 --> 49:03.000
+Therefore,
+
+49:03.000 --> 49:05.000
+number 6
+
+49:05.000 --> 49:07.000
+has
+
+49:07.000 --> 49:09.000
+almost
+
+49:09.000 --> 49:11.000
+no adsorption power
+
+49:11.000 --> 49:13.000
+than alpha-chromotrypsin.
+
+49:13.000 --> 49:15.000
+Therefore,
+
+49:15.000 --> 49:17.000
+number 6
+
+49:17.000 --> 49:19.000
+has
+
+49:19.000 --> 49:21.000
+almost
+
+49:21.000 --> 49:23.000
+no adsorption power
+
+49:23.000 --> 49:25.000
+than alpha-chromotrypsin.
+
+49:25.000 --> 49:27.000
+Therefore,
+
+49:27.000 --> 49:29.000
+number 6
+
+49:29.000 --> 49:31.000
+has
+
+49:31.000 --> 49:33.000
+almost
+
+49:33.000 --> 49:35.000
+no adsorption power
+
+49:35.000 --> 49:37.000
+than alpha-chromotrypsin.
+
+49:37.000 --> 49:39.000
+Therefore,
+
+49:39.000 --> 49:41.000
+number 6
+
+49:41.000 --> 49:43.000
+has
+
+49:43.000 --> 49:45.000
+almost
+
+49:45.000 --> 49:47.000
+no adsorption power
+
+49:47.000 --> 49:49.000
+than alpha-chromotrypsin.
+
+49:49.000 --> 49:51.000
+Therefore,
+
+49:51.000 --> 49:53.000
+number 6
+
+49:53.000 --> 49:55.000
+has
+
+49:55.000 --> 49:57.000
+almost
+
+49:57.000 --> 49:59.000
+no adsorption power
+
+49:59.000 --> 50:01.000
+than alpha-chromotrypsin.
+
+50:01.000 --> 50:03.000
+Therefore,
+
+50:03.000 --> 50:05.000
+number 6
+
+50:05.000 --> 50:07.000
+has
+
+50:07.000 --> 50:09.000
+almost
+
+50:09.000 --> 50:11.000
+no adsorption power
+
+50:11.000 --> 50:13.000
+than alpha-chromotrypsin.
+
+50:13.000 --> 50:15.000
+Therefore,
+
+50:15.000 --> 50:17.000
+number 6
+
+50:17.000 --> 50:19.000
+has
+
+50:19.000 --> 50:21.000
+almost
+
+50:21.000 --> 50:23.000
+no adsorption power
+
+50:23.000 --> 50:25.000
+than alpha-chromotrypsin.
+
+50:25.000 --> 50:27.000
+Therefore,
+
+50:27.000 --> 50:29.000
+number 6
+
+50:29.000 --> 50:31.000
+has
+
+50:31.000 --> 50:33.000
+almost
+
+50:33.000 --> 50:35.000
+no adsorption power
+
+50:35.000 --> 50:37.000
+than alpha-chromotrypsin.
+
+50:37.000 --> 50:39.000
+Therefore,
+
+50:39.000 --> 50:41.000
+number 6
+
+50:41.000 --> 50:43.000
+has
+
+50:43.000 --> 50:45.000
+almost
+
+50:45.000 --> 50:47.000
+no adsorption power
+
+50:47.000 --> 50:49.000
+than alpha-chromotrypsin.
+
+50:49.000 --> 50:51.000
+Therefore,
+
+50:51.000 --> 50:53.000
+number 6
+
+50:53.000 --> 50:55.000
+has
+
+50:55.000 --> 50:57.000
+almost
+
+50:57.000 --> 50:59.000
+no adsorption power
+
+50:59.000 --> 51:01.000
+than alpha-chromotrypsin.
+
+51:01.000 --> 51:03.000
+Therefore,
+
+51:03.000 --> 51:05.000
+number 6
+
+51:05.000 --> 51:07.000
+has
+
+51:07.000 --> 51:09.000
+almost
+
+51:09.000 --> 51:11.000
+no adsorption power
+
+51:11.000 --> 51:13.000
+than alpha-chromotrypsin.
+
+51:13.000 --> 51:15.000
+Therefore,
+
+51:15.000 --> 51:17.000
+number 6
+
+51:17.000 --> 51:19.000
+has
+
+51:19.000 --> 51:21.000
+almost
+
+51:21.000 --> 51:23.000
+no adsorption power
+
+51:23.000 --> 51:25.000
+than alpha-chromotrypsin.
+
+51:25.000 --> 51:27.000
+Therefore,
+
+51:27.000 --> 51:29.000
+number 6
+
+51:29.000 --> 51:31.000
+has
+
+51:31.000 --> 51:33.000
+almost
+
+51:33.000 --> 51:35.000
+no adsorption power
+
+51:35.000 --> 51:37.000
+than alpha-chromotrypsin.
+
+51:37.000 --> 51:39.000
+Therefore,
+
+51:39.000 --> 51:41.000
+number 6
+
+51:41.000 --> 51:43.000
+has
+
+51:43.000 --> 51:45.000
+almost
+
+51:45.000 --> 51:47.000
+no adsorption power
+
+51:47.000 --> 51:49.000
+than alpha-chromotrypsin.
+
+51:49.000 --> 51:51.000
+Therefore,
+
+51:51.000 --> 51:53.000
+number 6
+
+51:53.000 --> 51:55.000
+has
+
+51:55.000 --> 51:57.000
+almost
+
+51:57.000 --> 51:59.000
+no adsorption power
+
+51:59.000 --> 52:01.000
+than alpha-chromotrypsin.
+
+52:01.000 --> 52:03.000
+Therefore,
+
+52:03.000 --> 52:05.000
+number 6
+
+52:05.000 --> 52:07.000
+has
+
+52:07.000 --> 52:09.000
+almost
+
+52:09.000 --> 52:11.000
+no adsorption power
+
+52:11.000 --> 52:13.000
+than alpha-chromotrypsin.
+
+52:13.000 --> 52:15.000
+Therefore,
+
+52:15.000 --> 52:17.000
+number 6
+
+52:17.000 --> 52:19.000
+has
+
+52:19.000 --> 52:21.000
+almost
+
+52:21.000 --> 52:23.000
+no adsorption power
+
+52:23.000 --> 52:25.000
+than alpha-chromotrypsin.
+
+52:25.000 --> 52:27.000
+Therefore,
+
+52:27.000 --> 52:29.000
+number 6
+
+52:29.000 --> 52:31.000
+has
+
+52:31.000 --> 52:33.000
+almost
+
+52:33.000 --> 52:35.000
+no adsorption power
+
+52:35.000 --> 52:37.000
+than alpha-chromotrypsin.
+
+52:37.000 --> 52:39.000
+Therefore,
+
+52:39.000 --> 52:41.000
+number 6
+
+52:41.000 --> 52:43.000
+has
+
+52:43.000 --> 52:45.000
+almost
+
+52:45.000 --> 52:47.000
+no adsorption power
+
+52:47.000 --> 52:49.000
+than alpha-chromotrypsin.
+
+52:49.000 --> 52:51.000
+Therefore,
+
+52:51.000 --> 52:53.000
+number 6
+
+52:53.000 --> 52:55.000
+has
+
+52:55.000 --> 52:57.000
+almost
+
+52:57.000 --> 52:59.000
+no adsorption power
+
+52:59.000 --> 53:01.000
+than alpha-chromotrypsin.
+
+53:01.000 --> 53:03.000
+Therefore,
+
+53:03.000 --> 53:05.000
+number 6
+
+53:05.000 --> 53:07.000
+has
+
+53:07.000 --> 53:09.000
+almost
+
+53:09.000 --> 53:11.000
+no adsorption power
+
+53:11.000 --> 53:13.000
+than alpha-chromotrypsin.
+
+53:13.000 --> 53:15.000
+Therefore,
+
+53:15.000 --> 53:17.000
+number 6
+
+53:17.000 --> 53:19.000
+has
+
+53:19.000 --> 53:21.000
+almost
+
+53:21.000 --> 53:23.000
+no adsorption power
+
+53:23.000 --> 53:25.000
+than alpha-chromotrypsin.
+
+53:25.000 --> 53:27.000
+Therefore,
+
+53:27.000 --> 53:29.000
+number 6
+
+53:29.000 --> 53:31.000
+has
+
+53:31.000 --> 53:33.000
+almost
+
+53:33.000 --> 53:35.000
+no adsorption power
+
+53:35.000 --> 53:37.000
+than alpha-chromotrypsin.
+
+53:37.000 --> 53:39.000
+Therefore,
+
+53:39.000 --> 53:41.000
+number 6
+
+53:41.000 --> 53:43.000
+has
+
+53:43.000 --> 53:45.000
+almost
+
+53:45.000 --> 53:47.000
+no adsorption power
+
+53:47.000 --> 53:49.000
+than alpha-chromotrypsin.
+
+53:49.000 --> 53:51.000
+Therefore,
+
+53:51.000 --> 53:53.000
+number 6
+
+53:53.000 --> 53:55.000
+has
+
+53:55.000 --> 53:57.000
+almost
+
+53:57.000 --> 53:59.000
+no adsorption power
+
+53:59.000 --> 54:01.000
+than alpha-chromotrypsin.
+
+54:01.000 --> 54:03.000
+Therefore,
+
+54:03.000 --> 54:05.000
+number 6
+
+54:05.000 --> 54:07.000
+has
+
+54:07.000 --> 54:09.000
+almost
+
+54:09.000 --> 54:11.000
+no adsorption power
+
+54:11.000 --> 54:13.000
+than alpha-chromotrypsin.
+
+54:13.000 --> 54:15.000
+Therefore,
+
+54:15.000 --> 54:17.000
+number 6
+
+54:17.000 --> 54:19.000
+has
+
+54:19.000 --> 54:21.000
+almost
+
+54:21.000 --> 54:23.000
+no adsorption power
+
+54:23.000 --> 54:25.000
+than alpha-chromotrypsin.
+
+54:25.000 --> 54:27.000
+Therefore,
+
+54:27.000 --> 54:29.000
+number 6
+
+54:29.000 --> 54:31.000
+has
+
+54:31.000 --> 54:33.000
+almost
+
+54:33.000 --> 54:35.000
+no adsorption power
+
+54:35.000 --> 54:37.000
+than alpha-chromotrypsin.
+
+54:37.000 --> 54:39.000
+Therefore,
+
+54:39.000 --> 54:41.000
+number 6
+
+54:41.000 --> 54:43.000
+has
+
+54:43.000 --> 54:45.000
+almost
+
+54:45.000 --> 54:47.000
+no adsorption power
+
+54:47.000 --> 54:49.000
+than alpha-chromotrypsin.
+
+54:49.000 --> 54:51.000
+Therefore,
+
+54:51.000 --> 54:53.000
+number 6
+
+54:53.000 --> 54:55.000
+has
+
+54:55.000 --> 54:57.000
+almost
+
+54:57.000 --> 54:59.000
+no adsorption power
+
+54:59.000 --> 55:01.000
+than alpha-chromotrypsin.
+
+55:01.000 --> 55:03.000
+Therefore,
+
+55:03.000 --> 55:05.000
+number 6
+
+55:05.000 --> 55:07.000
+has
+
+55:07.000 --> 55:09.000
+almost
+
+55:09.000 --> 55:11.000
+no adsorption power
+
+55:11.000 --> 55:13.000
+than alpha-chromotrypsin.
+
+55:13.000 --> 55:15.000
+Therefore,
+
+55:15.000 --> 55:17.000
+number 6
+
+55:17.000 --> 55:19.000
+has
+
+55:19.000 --> 55:21.000
+almost
+
+55:21.000 --> 55:23.000
+no adsorption power
+
+55:23.000 --> 55:25.000
+than alpha-chromotrypsin.
+
+55:25.000 --> 55:27.000
+Therefore,
+
+55:27.000 --> 55:29.000
+number 6
+
+55:29.000 --> 55:31.000
+has
+
+55:31.000 --> 55:33.000
+almost
+
+55:33.000 --> 55:35.000
+no adsorption power
+
+55:35.000 --> 55:37.000
+than alpha-chromotrypsin.
+
+55:37.000 --> 55:39.000
+Therefore,
+
+55:39.000 --> 55:41.000
+number 6
+
+55:41.000 --> 55:43.000
+has
+
+55:43.000 --> 55:45.000
+almost
+
+55:45.000 --> 55:47.000
+no adsorption power
+
+55:47.000 --> 55:49.000
+than alpha-chromotrypsin.
+
+55:49.000 --> 55:51.000
+Therefore,
+
+55:51.000 --> 55:53.000
+number 6
+
+55:53.000 --> 55:55.000
+has
+
+55:55.000 --> 55:57.000
+almost
+
+55:57.000 --> 55:59.000
+no adsorption power
+
+55:59.000 --> 56:01.000
+than alpha-chromotrypsin.
+
+56:01.000 --> 56:03.000
+Therefore,
+
+56:03.000 --> 56:05.000
+number 6
+
+56:05.000 --> 56:07.000
+has
+
+56:07.000 --> 56:09.000
+almost
+
+56:09.000 --> 56:11.000
+no adsorption power
+
+56:11.000 --> 56:13.000
+than alpha-chromotrypsin.
+
+56:13.000 --> 56:15.000
+Therefore,
+
+56:15.000 --> 56:17.000
+number 6
+
+56:17.000 --> 56:19.000
+has
+
+56:19.000 --> 56:21.000
+almost
+
+56:21.000 --> 56:23.000
+no adsorption power
+
+56:23.000 --> 56:25.000
+than alpha-chromotrypsin.
+
+56:25.000 --> 56:27.000
+Therefore,
+
+56:27.000 --> 56:29.000
+number 6
+
+56:29.000 --> 56:31.000
+has
+
+56:31.000 --> 56:33.000
+almost
+
+56:33.000 --> 56:35.000
+no adsorption power
+
+56:35.000 --> 56:37.000
+than alpha-chromotrypsin.
+
+56:37.000 --> 56:39.000
+Therefore,
+
+56:39.000 --> 56:41.000
+number 6
+
+56:41.000 --> 56:43.000
+has
+
+56:43.000 --> 56:45.000
+almost
+
+56:45.000 --> 56:47.000
+no adsorption power
+
+56:47.000 --> 56:49.000
+than alpha-chromotrypsin.
+
+56:49.000 --> 56:51.000
+Therefore,
+
+56:51.000 --> 56:53.000
+number 6
+
+56:53.000 --> 56:55.000
+has
+
+56:55.000 --> 56:57.000
+almost
+
+56:57.000 --> 56:59.000
+no adsorption power
+
+56:59.000 --> 57:01.000
+than alpha-chromotrypsin.
+
+57:01.000 --> 57:03.000
+Therefore,
+
+57:03.000 --> 57:05.000
+number 6
+
+57:05.000 --> 57:07.000
+has
+
+57:07.000 --> 57:09.000
+almost
+
+57:09.000 --> 57:11.000
+no adsorption power
+
+57:11.000 --> 57:13.000
+than alpha-chromotrypsin.
+
+57:13.000 --> 57:15.000
+Therefore,
+
+57:15.000 --> 57:17.000
+number 6
+
+57:17.000 --> 57:19.000
+has
+
+57:19.000 --> 57:21.000
+almost
+
+57:21.000 --> 57:23.000
+no adsorption power
+
+57:23.000 --> 57:25.000
+than alpha-chromotrypsin.
+
+57:25.000 --> 57:27.000
+Therefore,
+
+57:27.000 --> 57:29.000
+number 6
+
+57:29.000 --> 57:31.000
+has
+
+57:31.000 --> 57:33.000
+almost
+
+57:33.000 --> 57:35.000
+no adsorption power
+
+57:35.000 --> 57:37.000
+than alpha-chromotrypsin.
+
+57:37.000 --> 57:39.000
+Therefore,
+
+57:39.000 --> 57:41.000
+number 6
+
+57:41.000 --> 57:43.000
+has
+
+57:43.000 --> 57:45.000
+almost
+
+57:45.000 --> 57:47.000
+no adsorption power
+
+57:47.000 --> 57:49.000
+than alpha-chromotrypsin.
+
+57:49.000 --> 57:51.000
+Therefore,
+
+57:51.000 --> 57:53.000
+number 6
+
+57:53.000 --> 57:55.000
+has
+
+57:55.000 --> 57:57.000
+almost
+
+57:57.000 --> 57:59.000
+no adsorption power
+
+57:59.000 --> 58:01.000
+than alpha-chromotrypsin.
+
+58:01.000 --> 58:03.000
+Therefore,
+
+58:03.000 --> 58:05.000
+number 6
+
+58:05.000 --> 58:07.000
+has
+
+58:07.000 --> 58:09.000
+almost
+
+58:09.000 --> 58:11.000
+no adsorption power
+
+58:11.000 --> 58:13.000
+than alpha-chromotrypsin.
+
+58:13.000 --> 58:15.000
+Therefore,
+
+58:15.000 --> 58:17.000
+number 6
+
+58:17.000 --> 58:19.000
+has
+
+58:19.000 --> 58:21.000
+almost
+
+58:21.000 --> 58:23.000
+no adsorption power
+
+58:23.000 --> 58:25.000
+than alpha-chromotrypsin.
+
+58:25.000 --> 58:27.000
+Therefore,
+
+58:27.000 --> 58:29.000
+number 6
+
+58:29.000 --> 58:31.000
+has
+
+58:31.000 --> 58:33.000
+almost
+
+58:33.000 --> 58:35.000
+no adsorption power
+
+58:35.000 --> 58:37.000
+than alpha-chromotrypsin.
+
+58:37.000 --> 58:39.000
+Therefore,
+
+58:39.000 --> 58:41.000
+number 6
+
+58:41.000 --> 58:43.000
+has
+
+58:43.000 --> 58:45.000
+almost
+
+58:45.000 --> 58:47.000
+no adsorption power
+
+58:47.000 --> 58:49.000
+than alpha-chromotrypsin.
+
+58:49.000 --> 58:51.000
+Therefore,
+
+58:51.000 --> 58:53.000
+number 6
+
+58:53.000 --> 58:55.000
+has
+
+58:55.000 --> 58:57.000
+almost
+
+58:57.000 --> 58:59.000
+no adsorption power
+
+58:59.000 --> 59:01.000
+than alpha-chromotrypsin.
+
+59:01.000 --> 59:03.000
+Therefore,
+
+59:03.000 --> 59:05.000
+number 6
+
+59:05.000 --> 59:07.000
+has
+
+59:07.000 --> 59:09.000
+almost
+
+59:09.000 --> 59:11.000
+no adsorption power
+
+59:11.000 --> 59:13.000
+than alpha-chromotrypsin.
+
+59:13.000 --> 59:15.000
+Therefore,
+
+59:15.000 --> 59:17.000
+number 6
+
+59:17.000 --> 59:19.000
+has
+
+59:19.000 --> 59:21.000
+almost
+
+59:21.000 --> 59:23.000
+no adsorption power
+
+59:23.000 --> 59:25.000
+than alpha-chromotrypsin.
+
+59:25.000 --> 59:27.000
+Therefore,
+
+59:27.000 --> 59:29.000
+number 6
+
+59:29.000 --> 59:31.000
+has
+
+59:31.000 --> 59:33.000
+almost
+
+59:33.000 --> 59:35.000
+no adsorption power
+
+59:35.000 --> 59:37.000
+than alpha-chromotrypsin.
+
+59:37.000 --> 59:39.000
+Therefore,
+
+59:39.000 --> 59:41.000
+number 6
+
+59:41.000 --> 59:43.000
+has
+
+59:43.000 --> 59:45.000
+almost
+
+59:45.000 --> 59:47.000
+no adsorption power
+
+59:47.000 --> 59:49.000
+than alpha-chromotrypsin.
+
+59:49.000 --> 59:51.000
+Therefore,
+
+59:51.000 --> 59:53.000
+number 6
+
+59:53.000 --> 59:55.000
+has
+
+59:55.000 --> 59:57.000
+almost
+
+59:57.000 --> 59:59.000
+no adsorption power
+
+59:59.000 --> 01:00:01.000
+than alpha-chromotrypsin.
+
+01:00:01.000 --> 01:00:03.000
+Therefore,
+
+01:00:03.000 --> 01:00:05.000
+number 6
+
+01:00:05.000 --> 01:00:07.000
+has
+
+01:00:07.000 --> 01:00:09.000
+almost
+
+01:00:09.000 --> 01:00:11.000
+no adsorption power
+
+01:00:11.000 --> 01:00:13.000
+than alpha-chromotrypsin.
+
+01:00:13.000 --> 01:00:15.000
+Therefore,
+
+01:00:15.000 --> 01:00:17.000
+number 6
+
+01:00:17.000 --> 01:00:19.000
+has
+
+01:00:19.000 --> 01:00:21.000
+almost
+
+01:00:21.000 --> 01:00:23.000
+no adsorption power
+
+01:00:23.000 --> 01:00:25.000
+than alpha-chromotrypsin.
+
+01:00:25.000 --> 01:00:27.000
+Therefore,
+
+01:00:27.000 --> 01:00:29.000
+number 6
+
+01:00:29.000 --> 01:00:31.000
+has
+
+01:00:31.000 --> 01:00:33.000
+almost
+
+01:00:33.000 --> 01:00:35.000
+no adsorption power
+
+01:00:35.000 --> 01:00:37.000
+than alpha-chromotrypsin.
+
+01:00:37.000 --> 01:00:39.000
+Therefore,
+
+01:00:39.000 --> 01:00:41.000
+number 6
+
+01:00:41.000 --> 01:00:43.000
+has
+
+01:00:43.000 --> 01:00:45.000
+almost
+
+01:00:45.000 --> 01:00:47.000
+no adsorption power
+
+01:00:47.000 --> 01:00:49.000
+than alpha-chromotrypsin.
+
+01:00:49.000 --> 01:00:51.000
+Therefore,
+
+01:00:51.000 --> 01:00:53.000
+number 6
+
+01:00:53.000 --> 01:00:55.000
+has
+
+01:00:55.000 --> 01:00:57.000
+almost
+
+01:00:57.000 --> 01:00:59.000
+no adsorption power
+
+01:00:59.000 --> 01:01:01.000
+than alpha-chromotrypsin.
+
+01:01:01.000 --> 01:01:03.000
+Therefore,
+
+01:01:03.000 --> 01:01:05.000
+number 6
+
+01:01:05.000 --> 01:01:07.000
+has
+
+01:01:07.000 --> 01:01:09.000
+almost
+
+01:01:09.000 --> 01:01:11.000
+no adsorption power
+
+01:01:11.000 --> 01:01:13.000
+than alpha-chromotrypsin.
+
+01:01:13.000 --> 01:01:15.000
+Therefore,
+
+01:01:15.000 --> 01:01:17.000
+number 6
+
+01:01:17.000 --> 01:01:19.000
+has
+
+01:01:19.000 --> 01:01:21.000
+almost
+
+01:01:21.000 --> 01:01:23.000
+no adsorption power
+
+01:01:23.000 --> 01:01:25.000
+than alpha-chromotrypsin.
+
+01:01:25.000 --> 01:01:27.000
+Therefore,
+
+01:01:27.000 --> 01:01:29.000
+number 6
+
+01:01:29.000 --> 01:01:31.000
+has
+
+01:01:31.000 --> 01:01:33.000
+almost
+
+01:01:33.000 --> 01:01:35.000
+no adsorption power
+
+01:01:35.000 --> 01:01:37.000
+than alpha-chromotrypsin.
+
+01:01:37.000 --> 01:01:39.000
+Therefore,
+
+01:01:39.000 --> 01:01:41.000
+number 6
+
+01:01:41.000 --> 01:01:43.000
+has
+
+01:01:43.000 --> 01:01:45.000
+almost
+
+01:01:45.000 --> 01:01:47.000
+no adsorption power
+
+01:01:47.000 --> 01:01:49.000
+than alpha-chromotrypsin.
+
+01:01:49.000 --> 01:01:51.000
+Therefore,
+
+01:01:51.000 --> 01:01:53.000
+number 6
+
+01:01:53.000 --> 01:01:55.000
+has
+
+01:01:55.000 --> 01:01:57.000
+almost
+
+01:01:57.000 --> 01:01:59.000
+no adsorption power
+
+01:01:59.000 --> 01:02:01.000
+than alpha-chromotrypsin.
+
+01:02:01.000 --> 01:02:03.000
+Therefore,
+
+01:02:03.000 --> 01:02:05.000
+number 6
+
+01:02:05.000 --> 01:02:07.000
+has
+
+01:02:07.000 --> 01:02:09.000
+almost
+
+01:02:09.000 --> 01:02:11.000
+no adsorption power
+
+01:02:11.000 --> 01:02:13.000
+than alpha-chromotrypsin.
+
+01:02:13.000 --> 01:02:15.000
+Therefore,
+
+01:02:15.000 --> 01:02:17.000
+number 6
+
+01:02:17.000 --> 01:02:19.000
+has
+
+01:02:19.000 --> 01:02:21.000
+almost
+
+01:02:21.000 --> 01:02:23.000
+no adsorption power
+
+01:02:23.000 --> 01:02:25.000
+than alpha-chromotrypsin.
+
+01:02:25.000 --> 01:02:27.000
+Therefore,
+
+01:02:27.000 --> 01:02:29.000
+number 6
+
+01:02:29.000 --> 01:02:31.000
+has
+
+01:02:31.000 --> 01:02:33.000
+almost
+
+01:02:33.000 --> 01:02:35.000
+no adsorption power
+
+01:02:35.000 --> 01:02:37.000
+than alpha-chromotrypsin.
+
+01:02:37.000 --> 01:02:39.000
+Therefore,
+
+01:02:39.000 --> 01:02:41.000
+number 6
+
+01:02:41.000 --> 01:02:43.000
+has
+
+01:02:43.000 --> 01:02:45.000
+almost
+
+01:02:45.000 --> 01:02:47.000
+no adsorption power
+
+01:02:47.000 --> 01:02:49.000
+than alpha-chromotrypsin.
+
+01:02:49.000 --> 01:02:51.000
+Therefore,
+
+01:02:51.000 --> 01:02:53.000
+number 6
+
+01:02:53.000 --> 01:02:55.000
+has
+
+01:02:55.000 --> 01:02:57.000
+almost
+
+01:02:57.000 --> 01:02:59.000
+no adsorption power
+
+01:02:59.000 --> 01:03:01.000
+than alpha-chromotrypsin.
+
+01:03:01.000 --> 01:03:03.000
+Therefore,
+
+01:03:03.000 --> 01:03:05.000
+number 6
+
+01:03:05.000 --> 01:03:07.000
+has
+
+01:03:07.000 --> 01:03:09.000
+almost
+
+01:03:09.000 --> 01:03:11.000
+no adsorption power
+
+01:03:11.000 --> 01:03:13.000
+than alpha-chromotrypsin.
+
+01:03:13.000 --> 01:03:15.000
+Therefore,
+
+01:03:15.000 --> 01:03:17.000
+number 6
+
+01:03:17.000 --> 01:03:19.000
+has
+
+01:03:19.000 --> 01:03:21.000
+almost
+
+01:03:21.000 --> 01:03:23.000
+no adsorption power
+
+01:03:23.000 --> 01:03:25.000
+than alpha-chromotrypsin.
+
+01:03:25.000 --> 01:03:27.000
+Therefore,
+
+01:03:27.000 --> 01:03:29.000
+number 6
+
+01:03:29.000 --> 01:03:31.000
+has
+
+01:03:31.000 --> 01:03:33.000
+almost
+
+01:03:33.000 --> 01:03:35.000
+no adsorption power
+
+01:03:35.000 --> 01:03:37.000
+than alpha-chromotrypsin.
+
+01:03:37.000 --> 01:03:39.000
+Therefore,
+
+01:03:39.000 --> 01:03:41.000
+number 6
+
+01:03:41.000 --> 01:03:43.000
+has
+
+01:03:43.000 --> 01:03:45.000
+almost
+
+01:03:45.000 --> 01:03:47.000
+no adsorption power
+
+01:03:47.000 --> 01:03:49.000
+than alpha-chromotrypsin.
+
+01:03:49.000 --> 01:03:51.000
+Therefore,
+
+01:03:51.000 --> 01:03:53.000
+number 6
+
+01:03:53.000 --> 01:03:55.000
+has
+
+01:03:55.000 --> 01:03:57.000
+almost
+
+01:03:57.000 --> 01:03:59.000
+no adsorption power
+
+01:03:59.000 --> 01:04:01.000
+than alpha-chromotrypsin.
+
+01:04:01.000 --> 01:04:03.000
+Therefore,
+
+01:04:03.000 --> 01:04:05.000
+number 6
+
+01:04:05.000 --> 01:04:07.000
+has
+
+01:04:07.000 --> 01:04:09.000
+almost
+
+01:04:09.000 --> 01:04:11.000
+no adsorption power
+
+01:04:11.000 --> 01:04:13.000
+than alpha-chromotrypsin.
+
+01:04:13.000 --> 01:04:15.000
+Therefore,
+
+01:04:15.000 --> 01:04:17.000
+number 6
+
+01:04:17.000 --> 01:04:19.000
+has
+
+01:04:19.000 --> 01:04:21.000
+almost
+
+01:04:21.000 --> 01:04:23.000
+no adsorption power
+
+01:04:23.000 --> 01:04:25.000
+than alpha-chromotrypsin.
+
+01:04:25.000 --> 01:04:27.000
+Therefore,
+
+01:04:27.000 --> 01:04:29.000
+number 6
+
+01:04:29.000 --> 01:04:31.000
+has
+
+01:04:31.000 --> 01:04:33.000
+almost
+
+01:04:33.000 --> 01:04:35.000
+no adsorption power
+
+01:04:35.000 --> 01:04:37.000
+than alpha-chromotrypsin.
+
+01:04:37.000 --> 01:04:39.000
+Therefore,
+
+01:04:39.000 --> 01:04:41.000
+number 6
+
+01:04:41.000 --> 01:04:43.000
+has
+
+01:04:43.000 --> 01:04:45.000
+almost
+
+01:04:45.000 --> 01:04:47.000
+no adsorption power
+
+01:04:47.000 --> 01:04:49.000
+than alpha-chromotrypsin.
+
+01:04:49.000 --> 01:04:51.000
+Therefore,
+
+01:04:51.000 --> 01:04:53.000
+number 6
+
+01:04:53.000 --> 01:04:55.000
+has
+
+01:04:55.000 --> 01:04:57.000
+almost
+
+01:04:57.000 --> 01:04:59.000
+no adsorption power
+
+01:04:59.000 --> 01:05:01.000
+than alpha-chromotrypsin.
+
+01:05:01.000 --> 01:05:03.000
+Therefore,
+
+01:05:03.000 --> 01:05:05.000
+number 6
+
+01:05:05.000 --> 01:05:07.000
+has
+
+01:05:07.000 --> 01:05:09.000
+almost
+
+01:05:09.000 --> 01:05:11.000
+no adsorption power
+
+01:05:11.000 --> 01:05:13.000
+than alpha-chromotrypsin.
+
+01:05:13.000 --> 01:05:15.000
+Therefore,
+
+01:05:15.000 --> 01:05:17.000
+number 6
+
+01:05:17.000 --> 01:05:19.000
+has
+
+01:05:19.000 --> 01:05:21.000
+almost
+
+01:05:21.000 --> 01:05:23.000
+no adsorption power
+
+01:05:23.000 --> 01:05:25.000
+than alpha-chromotrypsin.
+
+01:05:25.000 --> 01:05:27.000
+Therefore,
+
+01:05:27.000 --> 01:05:29.000
+number 6
+
+01:05:29.000 --> 01:05:31.000
+has
+
+01:05:31.000 --> 01:05:33.000
+almost
+
+01:05:33.000 --> 01:05:35.000
+no adsorption power
+
+01:05:35.000 --> 01:05:37.000
+than alpha-chromotrypsin.
+
+01:05:37.000 --> 01:05:39.000
+Therefore,
+
+01:05:39.000 --> 01:05:41.000
+number 6
+
+01:05:41.000 --> 01:05:43.000
+has
+
+01:05:43.000 --> 01:05:45.000
+almost
+
+01:05:45.000 --> 01:05:47.000
+no adsorption power
+
+01:05:47.000 --> 01:05:49.000
+than alpha-chromotrypsin.
+
+01:05:49.000 --> 01:05:51.000
+Therefore,
+
+01:05:51.000 --> 01:05:53.000
+number 6
+
+01:05:53.000 --> 01:05:55.000
+has
+
+01:05:55.000 --> 01:05:57.000
+almost
+
+01:05:57.000 --> 01:05:59.000
+no adsorption power
+
+01:05:59.000 --> 01:06:01.000
+than alpha-chromotrypsin.
+
+01:06:01.000 --> 01:06:03.000
+Therefore,
+
+01:06:03.000 --> 01:06:05.000
+number 6
+
+01:06:05.000 --> 01:06:07.000
+has
+
+01:06:07.000 --> 01:06:09.000
+almost
+
+01:06:09.000 --> 01:06:11.000
+no adsorption power
+
+01:06:11.000 --> 01:06:13.000
+than alpha-chromotrypsin.
+
+01:06:13.000 --> 01:06:15.000
+Therefore,
+
+01:06:15.000 --> 01:06:17.000
+number 6
+
+01:06:17.000 --> 01:06:19.000
+has
+
+01:06:19.000 --> 01:06:21.000
+almost
+
+01:06:21.000 --> 01:06:23.000
+no adsorption power
+
+01:06:23.000 --> 01:06:25.000
+than alpha-chromotrypsin.
+
+01:06:25.000 --> 01:06:27.000
+Therefore,
+
+01:06:27.000 --> 01:06:29.000
+number 6
+
+01:06:29.000 --> 01:06:31.000
+has
+
+01:06:31.000 --> 01:06:33.000
+almost
+
+01:06:33.000 --> 01:06:35.000
+no adsorption power
+
+01:06:35.000 --> 01:06:37.000
+than alpha-chromotrypsin.
+
+01:06:37.000 --> 01:06:39.000
+Therefore,
+
+01:06:39.000 --> 01:06:41.000
+number 6
+
+01:06:41.000 --> 01:06:43.000
+has
+
+01:06:43.000 --> 01:06:45.000
+almost
+
+01:06:45.000 --> 01:06:47.000
+no adsorption power
+
+01:06:47.000 --> 01:06:49.000
+than alpha-chromotrypsin.
+
+01:06:49.000 --> 01:06:51.000
+Therefore,
+
+01:06:51.000 --> 01:06:53.000
+number 6
+
+01:06:53.000 --> 01:06:55.000
+has
+
+01:06:55.000 --> 01:06:57.000
+almost
+
+01:06:57.000 --> 01:06:59.000
+no adsorption power
+
+01:06:59.000 --> 01:07:01.000
+than alpha-chromotrypsin.
+
+01:07:01.000 --> 01:07:03.000
+Therefore,
+
+01:07:03.000 --> 01:07:05.000
+number 6
+
+01:07:05.000 --> 01:07:07.000
+has
+
+01:07:07.000 --> 01:07:09.000
+almost
+
+01:07:09.000 --> 01:07:11.000
+no adsorption power
+
+01:07:11.000 --> 01:07:13.000
+than alpha-chromotrypsin.
+
+01:07:13.000 --> 01:07:15.000
+Therefore,
+
+01:07:15.000 --> 01:07:17.000
+number 6
+
+01:07:17.000 --> 01:07:19.000
+has
+
+01:07:19.000 --> 01:07:21.000
+almost
+
+01:07:21.000 --> 01:07:23.000
+no adsorption power
+
+01:07:23.000 --> 01:07:25.000
+than alpha-chromotrypsin.
+
+01:07:25.000 --> 01:07:27.000
+Therefore,
+
+01:07:27.000 --> 01:07:29.000
+number 6
+
+01:07:29.000 --> 01:07:31.000
+has
+
+01:07:31.000 --> 01:07:33.000
+almost
+
+01:07:33.000 --> 01:07:35.000
+no adsorption power
+
+01:07:35.000 --> 01:07:37.000
+than alpha-chromotrypsin.
+
+01:07:37.000 --> 01:07:39.000
+Therefore,
+
+01:07:39.000 --> 01:07:41.000
+number 6
+
+01:07:41.000 --> 01:07:43.000
+has
+
+01:07:43.000 --> 01:07:45.000
+almost
+
+01:07:45.000 --> 01:07:47.000
+no adsorption power
+
+01:07:47.000 --> 01:07:49.000
+than alpha-chromotrypsin.
+
+01:07:49.000 --> 01:07:51.000
+Therefore,
+
+01:07:51.000 --> 01:07:53.000
+number 6
+
+01:07:53.000 --> 01:07:55.000
+has
+
+01:07:55.000 --> 01:07:57.000
+almost
+
+01:07:57.000 --> 01:07:59.000
+no adsorption power
+
+01:07:59.000 --> 01:08:01.000
+than alpha-chromotrypsin.
+
+01:08:01.000 --> 01:08:03.000
+Therefore,
+
+01:08:03.000 --> 01:08:05.000
+number 6
+
+01:08:05.000 --> 01:08:07.000
+has
+
+01:08:07.000 --> 01:08:09.000
+almost
+
+01:08:09.000 --> 01:08:11.000
+no adsorption power
+
+01:08:11.000 --> 01:08:13.000
+than alpha-chromotrypsin.
+
+01:08:13.000 --> 01:08:15.000
+Therefore,
+
+01:08:15.000 --> 01:08:17.000
+number 6
+
+01:08:17.000 --> 01:08:19.000
+has
+
+01:08:19.000 --> 01:08:21.000
+almost
+
+01:08:21.000 --> 01:08:23.000
+no adsorption power
+
+01:08:23.000 --> 01:08:25.000
+than alpha-chromotrypsin.
+
+01:08:25.000 --> 01:08:27.000
+Therefore,
+
+01:08:27.000 --> 01:08:29.000
+number 6
+
+01:08:29.000 --> 01:08:31.000
+has
+
+01:08:31.000 --> 01:08:33.000
+almost
+
+01:08:33.000 --> 01:08:35.000
+no adsorption power
+
+01:08:35.000 --> 01:08:37.000
+than alpha-chromotrypsin.
+
+01:08:37.000 --> 01:08:39.000
+Therefore,
+
+01:08:39.000 --> 01:08:41.000
+number 6
+
+01:08:41.000 --> 01:08:43.000
+has
+
+01:08:43.000 --> 01:08:45.000
+almost
+
+01:08:45.000 --> 01:08:47.000
+no adsorption power
+
+01:08:47.000 --> 01:08:49.000
+than alpha-chromotrypsin.
+
+01:08:49.000 --> 01:08:51.000
+Therefore,
+
+01:08:51.000 --> 01:08:53.000
+number 6
+
+01:08:53.000 --> 01:08:55.000
+has
+
+01:08:55.000 --> 01:08:57.000
+almost
+
+01:08:57.000 --> 01:08:59.000
+no adsorption power
+
+01:08:59.000 --> 01:09:01.000
+than alpha-chromotrypsin.
+
+01:09:01.000 --> 01:09:03.000
+Therefore,
+
+01:09:03.000 --> 01:09:05.000
+number 6
+
+01:09:05.000 --> 01:09:07.000
+has
+
+01:09:07.000 --> 01:09:09.000
+almost
+
+01:09:09.000 --> 01:09:11.000
+no adsorption power
+
+01:09:11.000 --> 01:09:13.000
+than alpha-chromotrypsin.
+
+01:09:13.000 --> 01:09:15.000
+Therefore,
+
+01:09:15.000 --> 01:09:17.000
+number 6
+
+01:09:17.000 --> 01:09:19.000
+has
+
+01:09:19.000 --> 01:09:21.000
+almost
+
+01:09:21.000 --> 01:09:23.000
+no adsorption power
+
+01:09:23.000 --> 01:09:25.000
+than alpha-chromotrypsin.
+
+01:09:25.000 --> 01:09:27.000
+Therefore,
+
+01:09:27.000 --> 01:09:29.000
+number 6
+
+01:09:29.000 --> 01:09:31.000
+has
+
+01:09:31.000 --> 01:09:33.000
+almost
+
+01:09:33.000 --> 01:09:35.000
+no adsorption power
+
+01:09:35.000 --> 01:09:37.000
+than alpha-chromotrypsin.
+
+01:09:37.000 --> 01:09:39.000
+Therefore,
+
+01:09:39.000 --> 01:09:41.000
+number 6
+
+01:09:41.000 --> 01:09:43.000
+has
+
+01:09:43.000 --> 01:09:45.000
+almost
+
+01:09:45.000 --> 01:09:47.000
+no adsorption power
+
+01:09:47.000 --> 01:09:49.000
+than alpha-chromotrypsin.
+
+01:09:49.000 --> 01:09:51.000
+Therefore,
+
+01:09:51.000 --> 01:09:53.000
+number 6
+
+01:09:53.000 --> 01:09:55.000
+has
+
+01:09:55.000 --> 01:09:57.000
+almost
+
+01:09:57.000 --> 01:09:59.000
+no adsorption power
+
+01:09:59.000 --> 01:10:01.000
+than alpha-chromotrypsin.
+
+01:10:01.000 --> 01:10:03.000
+Therefore,
+
+01:10:03.000 --> 01:10:05.000
+number 6
+
+01:10:05.000 --> 01:10:07.000
+has
+
+01:10:07.000 --> 01:10:09.000
+almost
+
+01:10:09.000 --> 01:10:11.000
+no adsorption power
+
+01:10:11.000 --> 01:10:13.000
+than alpha-chromotrypsin.
+
+01:10:13.000 --> 01:10:15.000
+Therefore,
+
+01:10:15.000 --> 01:10:17.000
+number 6
+
+01:10:17.000 --> 01:10:19.000
+has
+
+01:10:19.000 --> 01:10:21.000
+almost
+
+01:10:21.000 --> 01:10:23.000
+no adsorption power
+
+01:10:23.000 --> 01:10:25.000
+than alpha-chromotrypsin.
+
+01:10:25.000 --> 01:10:27.000
+Therefore,
+
+01:10:27.000 --> 01:10:29.000
+number 6
+
+01:10:29.000 --> 01:10:31.000
+has
+
+01:10:31.000 --> 01:10:33.000
+almost
+
+01:10:33.000 --> 01:10:35.000
+no adsorption power
+
+01:10:35.000 --> 01:10:37.000
+than alpha-chromotrypsin.
+
+01:10:37.000 --> 01:10:39.000
+Therefore,
+
+01:10:39.000 --> 01:10:41.000
+number 6
+
+01:10:41.000 --> 01:10:43.000
+has
+
+01:10:43.000 --> 01:10:45.000
+almost
+
+01:10:45.000 --> 01:10:47.000
+no adsorption power
+
+01:10:47.000 --> 01:10:49.000
+than alpha-chromotrypsin.
+
+01:10:49.000 --> 01:10:51.000
+Therefore,
+
+01:10:51.000 --> 01:10:53.000
+number 6
+
+01:10:53.000 --> 01:10:55.000
+has
+
+01:10:55.000 --> 01:10:57.000
+almost
+
+01:10:57.000 --> 01:10:59.000
+no adsorption power
+
+01:10:59.000 --> 01:11:01.000
+than alpha-chromotrypsin.
+
+01:11:01.000 --> 01:11:03.000
+Therefore,
+
+01:11:03.000 --> 01:11:05.000
+number 6
+
+01:11:05.000 --> 01:11:07.000
+has
+
+01:11:07.000 --> 01:11:09.000
+almost
+
+01:11:09.000 --> 01:11:11.000
+no adsorption power
+
+01:11:11.000 --> 01:11:13.000
+than alpha-chromotrypsin.
+
+01:11:13.000 --> 01:11:15.000
+Therefore,
+
+01:11:15.000 --> 01:11:17.000
+number 6
+
+01:11:17.000 --> 01:11:19.000
+has
+
+01:11:19.000 --> 01:11:21.000
+almost
+
+01:11:21.000 --> 01:11:23.000
+no adsorption power
+
+01:11:23.000 --> 01:11:25.000
+than alpha-chromotrypsin.
+
+01:11:25.000 --> 01:11:27.000
+Therefore,
+
+01:11:27.000 --> 01:11:29.000
+number 6
+
+01:11:29.000 --> 01:11:31.000
+has
+
+01:11:31.000 --> 01:11:33.000
+almost
+
+01:11:33.000 --> 01:11:35.000
+no adsorption power
+
+01:11:35.000 --> 01:11:37.000
+than alpha-chromotrypsin.
+
+01:11:37.000 --> 01:11:39.000
+Therefore,
+
+01:11:39.000 --> 01:11:41.000
+number 6
+
+01:11:41.000 --> 01:11:43.000
+has
+
+01:11:43.000 --> 01:11:45.000
+almost
+
+01:11:45.000 --> 01:11:47.000
+no adsorption power
+
+01:11:47.000 --> 01:11:49.000
+than alpha-chromotrypsin.
+
+01:11:49.000 --> 01:11:51.000
+Therefore,
+
+01:11:51.000 --> 01:11:53.000
+number 6
+
+01:11:53.000 --> 01:11:55.000
+has
+
+01:11:55.000 --> 01:11:57.000
+almost
+
+01:11:57.000 --> 01:11:59.000
+no adsorption power
+
+01:11:59.000 --> 01:12:01.000
+than alpha-chromotrypsin.
+
+01:12:01.000 --> 01:12:03.000
+Therefore,
+
+01:12:03.000 --> 01:12:05.000
+number 6
+
+01:12:05.000 --> 01:12:07.000
+has
+
+01:12:07.000 --> 01:12:09.000
+almost
+
+01:12:09.000 --> 01:12:11.000
+no adsorption power
+
+01:12:11.000 --> 01:12:13.000
+than alpha-chromotrypsin.
+
+01:12:13.000 --> 01:12:15.000
+Therefore,
+
+01:12:15.000 --> 01:12:17.000
+number 6
+
+01:12:17.000 --> 01:12:19.000
+has
+
+01:12:19.000 --> 01:12:21.000
+almost
+
+01:12:21.000 --> 01:12:23.000
+no adsorption power
+
+01:12:23.000 --> 01:12:25.000
+than alpha-chromotrypsin.
+
+01:12:25.000 --> 01:12:27.000
+Therefore,
+
+01:12:27.000 --> 01:12:29.000
+number 6
+
+01:12:29.000 --> 01:12:31.000
+has
+
+01:12:31.000 --> 01:12:33.000
+almost
+
+01:12:33.000 --> 01:12:35.000
+no adsorption power
+
+01:12:35.000 --> 01:12:37.000
+than alpha-chromotrypsin.
+
+01:12:37.000 --> 01:12:39.000
+Therefore,
+
+01:12:39.000 --> 01:12:41.000
+number 6
+
+01:12:41.000 --> 01:12:43.000
+has
+
+01:12:43.000 --> 01:12:45.000
+almost
+
+01:12:45.000 --> 01:12:47.000
+no adsorption power
+
+01:12:47.000 --> 01:12:49.000
+than alpha-chromotrypsin.
+
+01:12:49.000 --> 01:12:51.000
+Therefore,
+
+01:12:51.000 --> 01:12:53.000
+number 6
+
+01:12:53.000 --> 01:12:55.000
+has
+
+01:12:55.000 --> 01:12:57.000
+almost
+
+01:12:57.000 --> 01:12:59.000
+no adsorption power
+
+01:12:59.000 --> 01:13:01.000
+than alpha-chromotrypsin.
+
+01:13:01.000 --> 01:13:03.000
+Therefore,
+
+01:13:03.000 --> 01:13:05.000
+number 6
+
+01:13:05.000 --> 01:13:07.000
+has
+
+01:13:07.000 --> 01:13:09.000
+almost
+
+01:13:09.000 --> 01:13:11.000
+no adsorption power
+
+01:13:11.000 --> 01:13:13.000
+than alpha-chromotrypsin.
+
+01:13:13.000 --> 01:13:15.000
+Therefore,
+
+01:13:15.000 --> 01:13:17.000
+number 6
+
+01:13:17.000 --> 01:13:19.000
+has
+
+01:13:19.000 --> 01:13:21.000
+almost
+
+01:13:21.000 --> 01:13:23.000
+no adsorption power
+
+01:13:23.000 --> 01:13:25.000
+than alpha-chromotrypsin.
+
+01:13:25.000 --> 01:13:27.000
+Therefore,
+
+01:13:27.000 --> 01:13:29.000
+number 6
+
+01:13:29.000 --> 01:13:31.000
+has
+
+01:13:31.000 --> 01:13:33.000
+almost
+
+01:13:33.000 --> 01:13:35.000
+no adsorption power
+
+01:13:35.000 --> 01:13:37.000
+than alpha-chromotrypsin.
+
+01:13:37.000 --> 01:13:39.000
+Therefore,
+
+01:13:39.000 --> 01:13:41.000
+number 6
+
+01:13:41.000 --> 01:13:43.000
+has
+
+01:13:43.000 --> 01:13:45.000
+almost
+
+01:13:45.000 --> 01:13:47.000
+no adsorption power
+
+01:13:47.000 --> 01:13:49.000
+than alpha-chromotrypsin.
+
+01:13:49.000 --> 01:13:51.000
+Therefore,
+
+01:13:51.000 --> 01:13:53.000
+number 6
+
+01:13:53.000 --> 01:13:55.000
+has
+
+01:13:55.000 --> 01:13:57.000
+almost
+
+01:13:57.000 --> 01:13:59.000
+no adsorption power
+
+01:13:59.000 --> 01:14:01.000
+than alpha-chromotrypsin.
+
+01:14:01.000 --> 01:14:03.000
+Therefore,
+
+01:14:03.000 --> 01:14:05.000
+number 6
+
+01:14:05.000 --> 01:14:07.000
+has
+
+01:14:07.000 --> 01:14:09.000
+almost
+
+01:14:09.000 --> 01:14:11.000
+no adsorption power
+
+01:14:11.000 --> 01:14:13.000
+than alpha-chromotrypsin.
+
+01:14:13.000 --> 01:14:15.000
+Therefore,
+
+01:14:15.000 --> 01:14:17.000
+number 6
+
+01:14:17.000 --> 01:14:19.000
+has
+
+01:14:19.000 --> 01:14:21.000
+almost
+
+01:14:21.000 --> 01:14:23.000
+no adsorption power
+
+01:14:23.000 --> 01:14:25.000
+than alpha-chromotrypsin.
+
+01:14:25.000 --> 01:14:27.000
+Therefore,
+
+01:14:27.000 --> 01:14:29.000
+number 6
+
+01:14:29.000 --> 01:14:31.000
+has
+
+01:14:31.000 --> 01:14:33.000
+almost
+
+01:14:33.000 --> 01:14:35.000
+no adsorption power
+
+01:14:35.000 --> 01:14:37.000
+than alpha-chromotrypsin.
+
+01:14:37.000 --> 01:14:39.000
+Therefore,
+
+01:14:39.000 --> 01:14:41.000
+number 6
+
+01:14:41.000 --> 01:14:43.000
+has
+
+01:14:43.000 --> 01:14:45.000
+almost
+
+01:14:45.000 --> 01:14:47.000
+no adsorption power
+
+01:14:47.000 --> 01:14:49.000
+than alpha-chromotrypsin.
+
+01:14:49.000 --> 01:14:51.000
+Therefore,
+
+01:14:51.000 --> 01:14:53.000
+number 6
+
+01:14:53.000 --> 01:14:55.000
+has
+
+01:14:55.000 --> 01:14:57.000
+almost
+
+01:14:57.000 --> 01:14:59.000
+no adsorption power
+
+01:14:59.000 --> 01:15:01.000
+than alpha-chromotrypsin.
+
+01:15:01.000 --> 01:15:03.000
+Therefore,
+
+01:15:03.000 --> 01:15:05.000
+number 6
+
+01:15:05.000 --> 01:15:07.000
+has
+
+01:15:07.000 --> 01:15:09.000
+almost
+
+01:15:09.000 --> 01:15:11.000
+no adsorption power
+
+01:15:11.000 --> 01:15:13.000
+than alpha-chromotrypsin.
+
+01:15:13.000 --> 01:15:15.000
+Therefore,
+
+01:15:15.000 --> 01:15:17.000
+number 6
+
+01:15:17.000 --> 01:15:19.000
+has
+
+01:15:19.000 --> 01:15:21.000
+almost
+
+01:15:21.000 --> 01:15:23.000
+no adsorption power
+
+01:15:23.000 --> 01:15:25.000
+than alpha-chromotrypsin.
+
+01:15:25.000 --> 01:15:27.000
+Therefore,
+
+01:15:27.000 --> 01:15:29.000
+number 6
+
+01:15:29.000 --> 01:15:31.000
+has
+
+01:15:31.000 --> 01:15:33.000
+almost
+
+01:15:33.000 --> 01:15:35.000
+no adsorption power
+
+01:15:35.000 --> 01:15:37.000
+than alpha-chromotrypsin.
+
+01:15:37.000 --> 01:15:39.000
+Therefore,
+
+01:15:39.000 --> 01:15:41.000
+number 6
+
+01:15:41.000 --> 01:15:43.000
+has
+
+01:15:43.000 --> 01:15:45.000
+almost
+
+01:15:45.000 --> 01:15:47.000
+no adsorption power
+
+01:15:47.000 --> 01:15:49.000
+than alpha-chromotrypsin.
+
+01:15:49.000 --> 01:15:51.000
+Therefore,
+
+01:15:51.000 --> 01:15:53.000
+number 6
+
+01:15:53.000 --> 01:15:55.000
+has
+
+01:15:55.000 --> 01:15:57.000
+almost
+
+01:15:57.000 --> 01:15:59.000
+no adsorption power
+
+01:15:59.000 --> 01:16:01.000
+than alpha-chromotrypsin.
+
+01:16:01.000 --> 01:16:03.000
+Therefore,
+
+01:16:03.000 --> 01:16:05.000
+number 6
+
+01:16:05.000 --> 01:16:07.000
+has
+
+01:16:07.000 --> 01:16:09.000
+almost
+
+01:16:09.000 --> 01:16:11.000
+no adsorption power
+
+01:16:11.000 --> 01:16:13.000
+than alpha-chromotrypsin.
+
+01:16:13.000 --> 01:16:15.000
+Therefore,
+
+01:16:15.000 --> 01:16:17.000
+number 6
+
+01:16:17.000 --> 01:16:19.000
+has
+
+01:16:19.000 --> 01:16:21.000
+almost
+
+01:16:21.000 --> 01:16:23.000
+no adsorption power
+
+01:16:23.000 --> 01:16:25.000
+than alpha-chromotrypsin.
+
+01:16:25.000 --> 01:16:27.000
+Therefore,
+
+01:16:27.000 --> 01:16:29.000
+number 6
+
+01:16:29.000 --> 01:16:31.000
+has
+
+01:16:31.000 --> 01:16:33.000
+almost
+
+01:16:33.000 --> 01:16:35.000
+no adsorption power
+
+01:16:35.000 --> 01:16:37.000
+than alpha-chromotrypsin.
+
+01:16:37.000 --> 01:16:39.000
+Therefore,
+
+01:16:39.000 --> 01:16:41.000
+number 6
+
+01:16:41.000 --> 01:16:43.000
+has
+
+01:16:43.000 --> 01:16:45.000
+almost
+
+01:16:45.000 --> 01:16:47.000
+no adsorption power
+
+01:16:47.000 --> 01:16:49.000
+than alpha-chromotrypsin.
+
+01:16:49.000 --> 01:16:51.000
+Therefore,
+
+01:16:51.000 --> 01:16:53.000
+number 6
+
+01:16:53.000 --> 01:16:55.000
+has
+
+01:16:55.000 --> 01:16:57.000
+almost
+
+01:16:57.000 --> 01:16:59.000
+no adsorption power
+
+01:16:59.000 --> 01:17:01.000
+than alpha-chromotrypsin.
+
+01:17:01.000 --> 01:17:03.000
+Therefore,
+
+01:17:03.000 --> 01:17:05.000
+number 6
+
+01:17:05.000 --> 01:17:07.000
+has
+
+01:17:07.000 --> 01:17:09.000
+almost
+
+01:17:09.000 --> 01:17:11.000
+no adsorption power
+
+01:17:11.000 --> 01:17:13.000
+than alpha-chromotrypsin.
+
+01:17:13.000 --> 01:17:15.000
+Therefore,
+
+01:17:15.000 --> 01:17:17.000
+number 6
+
+01:17:17.000 --> 01:17:19.000
+has
+
+01:17:19.000 --> 01:17:21.000
+almost
+
+01:17:21.000 --> 01:17:23.000
+no adsorption power
+
+01:17:23.000 --> 01:17:25.000
+than alpha-chromotrypsin.
+
+01:17:25.000 --> 01:17:27.000
+Therefore,
+
+01:17:27.000 --> 01:17:29.000
+number 6
+
+01:17:29.000 --> 01:17:31.000
+has
+
+01:17:31.000 --> 01:17:33.000
+almost
+
+01:17:33.000 --> 01:17:35.000
+no adsorption power
+
+01:17:35.000 --> 01:17:37.000
+than alpha-chromotrypsin.
+
+01:17:37.000 --> 01:17:39.000
+Therefore,
+
+01:17:39.000 --> 01:17:41.000
+number 6
+
+01:17:41.000 --> 01:17:43.000
+has
+
+01:17:43.000 --> 01:17:45.000
+almost
+
+01:17:45.000 --> 01:17:47.000
+no adsorption power
+
+01:17:47.000 --> 01:17:49.000
+than alpha-chromotrypsin.
+
+01:17:49.000 --> 01:17:51.000
+Therefore,
+
+01:17:51.000 --> 01:17:53.000
+number 6
+
+01:17:53.000 --> 01:17:55.000
+has
+
+01:17:55.000 --> 01:17:57.000
+almost
+
+01:17:57.000 --> 01:17:59.000
+no adsorption power
+
+01:17:59.000 --> 01:18:01.000
+than alpha-chromotrypsin.
+
+01:18:01.000 --> 01:18:03.000
+Therefore,
+
+01:18:03.000 --> 01:18:05.000
+number 6
+
+01:18:05.000 --> 01:18:07.000
+has
+
+01:18:07.000 --> 01:18:09.000
+almost
+
+01:18:09.000 --> 01:18:11.000
+no adsorption power
+
+01:18:11.000 --> 01:18:13.000
+than alpha-chromotrypsin.
+
+01:18:13.000 --> 01:18:15.000
+Therefore,
+
+01:18:15.000 --> 01:18:17.000
+number 6
+
+01:18:17.000 --> 01:18:19.000
+has
+
+01:18:19.000 --> 01:18:21.000
+almost
+
+01:18:21.000 --> 01:18:23.000
+no adsorption power
+
+01:18:23.000 --> 01:18:25.000
+than alpha-chromotrypsin.
+
+01:18:25.000 --> 01:18:27.000
+Therefore,
+
+01:18:27.000 --> 01:18:29.000
+number 6
+
+01:18:29.000 --> 01:18:31.000
+has
+
+01:18:31.000 --> 01:18:33.000
+almost
+
+01:18:33.000 --> 01:18:35.000
+no adsorption power
+
+01:18:35.000 --> 01:18:37.000
+than alpha-chromotrypsin.
+
+01:18:37.000 --> 01:18:39.000
+Therefore,
+
+01:18:39.000 --> 01:18:41.000
+number 6
+
+01:18:41.000 --> 01:18:43.000
+has
+
+01:18:43.000 --> 01:18:45.000
+almost
+
+01:18:45.000 --> 01:18:47.000
+no adsorption power
+
+01:18:47.000 --> 01:18:49.000
+than alpha-chromotrypsin.
+
+01:18:49.000 --> 01:18:51.000
+Therefore,
+
+01:18:51.000 --> 01:18:53.000
+number 6
+
+01:18:53.000 --> 01:18:55.000
+has
+
+01:18:55.000 --> 01:18:57.000
+almost
+
+01:18:57.000 --> 01:18:59.000
+no adsorption power
+
+01:18:59.000 --> 01:19:01.000
+than alpha-chromotrypsin.
+
+01:19:01.000 --> 01:19:03.000
+Therefore,
+
+01:19:03.000 --> 01:19:05.000
+number 6
+
+01:19:05.000 --> 01:19:07.000
+has
+
+01:19:07.000 --> 01:19:09.000
+almost
+
+01:19:09.000 --> 01:19:11.000
+no adsorption power
+
+01:19:11.000 --> 01:19:13.000
+than alpha-chromotrypsin.
+
+01:19:13.000 --> 01:19:15.000
+Therefore,
+
+01:19:15.000 --> 01:19:17.000
+number 6
+
+01:19:17.000 --> 01:19:19.000
+has
+
+01:19:19.000 --> 01:19:21.000
+almost
+
+01:19:21.000 --> 01:19:23.000
+no adsorption power
+
+01:19:23.000 --> 01:19:25.000
+than alpha-chromotrypsin.
+
+01:19:25.000 --> 01:19:27.000
+Therefore,
+
+01:19:27.000 --> 01:19:29.000
+number 6
+
+01:19:29.000 --> 01:19:31.000
+has
+
+01:19:31.000 --> 01:19:33.000
+almost
+
+01:19:33.000 --> 01:19:35.000
+no adsorption power
+
+01:19:35.000 --> 01:19:37.000
+than alpha-chromotrypsin.
+
+01:19:37.000 --> 01:19:39.000
+Therefore,
+
+01:19:39.000 --> 01:19:41.000
+number 6
+
+01:19:41.000 --> 01:19:43.000
+has
+
+01:19:43.000 --> 01:19:45.000
+almost
+
+01:19:45.000 --> 01:19:47.000
+no adsorption power
+
+01:19:47.000 --> 01:19:49.000
+than alpha-chromotrypsin.
+
+01:19:49.000 --> 01:19:51.000
+Therefore,
+
+01:19:51.000 --> 01:19:53.000
+number 6
+
+01:19:53.000 --> 01:19:55.000
+has
+
+01:19:55.000 --> 01:19:57.000
+almost
+
+01:19:57.000 --> 01:19:59.000
+no adsorption power
+
+01:19:59.000 --> 01:20:01.000
+than alpha-chromotrypsin.
+
+01:20:01.000 --> 01:20:03.000
+Therefore,
+
+01:20:03.000 --> 01:20:05.000
+number 6
+
+01:20:05.000 --> 01:20:07.000
+has
+
+01:20:07.000 --> 01:20:09.000
+almost
+
+01:20:09.000 --> 01:20:11.000
+no adsorption power
+
+01:20:11.000 --> 01:20:13.000
+than alpha-chromotrypsin.
+
+01:20:13.000 --> 01:20:15.000
+Therefore,
+
+01:20:15.000 --> 01:20:17.000
+number 6
+
+01:20:17.000 --> 01:20:19.000
+has
+
+01:20:19.000 --> 01:20:21.000
+almost
+
+01:20:21.000 --> 01:20:23.000
+no adsorption power
+
+01:20:23.000 --> 01:20:25.000
+than alpha-chromotrypsin.
+
+01:20:25.000 --> 01:20:27.000
+Therefore,
+
+01:20:27.000 --> 01:20:29.000
+number 6
+
+01:20:29.000 --> 01:20:31.000
+has
+

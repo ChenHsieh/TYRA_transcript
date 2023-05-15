@@ -1,0 +1,799 @@
+start	end	text
+0	9000	Hello, everyone.
+9000	15000	I am honored to be able to introduce Dr. Sun today.
+15000	23000	Dr. Sun completed her bachelor's degree from 1999 to 2013
+23000	28000	in Plant Pathology and Microbiology at Taiwan University.
+28000	35000	After completing her bachelor's degree from 2003 to 2005,
+35000	43000	she completed her master's degree in Plant Pathology and Microbiology at the same university in Taiwan.
+43000	51000	She then completed her Ph.D. degree from 2005 to 2010 at Purdue University.
+51000	54000	Her major is Chemical Biology.
+54000	58000	After completing her Ph.D. degree, she went to MIT to do her postdoc.
+58000	68000	After four years, she went to UCSF to do her second postdoc and assistant researcher.
+68000	75000	This year, she started her new job as a Senior Scientific Researcher at Genentech.
+76000	80000	Today, Dr. Sun is going to talk about
+80000	85000	Use Single-Cell RNA-Seq to Tackle Complex Biology.
+85000	89000	Now, let's welcome Dr. Sun to give her presentation.
+94000	97000	Hello, everyone. I am Dr. Sun.
+97000	104000	Sorry, my voice is a bit hoarse due to my cold.
+104000	111000	Today, I am going to talk in a simple and easy-to-understand way.
+111000	115000	Just in case, some of you may not have a background in biology.
+115000	121000	I hope you can at least learn about Single-Cell RNA-Seq.
+122000	128000	Here is my personal email and LinkedIn account.
+128000	132000	Although my LinkedIn account is not up to date,
+132000	135000	please feel free to connect with me.
+138000	143000	I will be speaking in Chinese today,
+143000	148000	but I am not sure what the term is in Chinese.
+149000	157000	If you have any questions, please feel free to contact me.
+159000	165000	I don't want to make it too complicated.
+165000	168000	I will be focusing on technology.
+168000	171000	I am currently working at a company,
+171000	176000	so I can't really talk about research projects here.
+176000	182000	I will try my best to talk about the applications of this technology,
+182000	184000	and the principles behind it.
+184000	189000	I hope this will be helpful to those who are interested.
+190000	193000	Before we get into the technology,
+193000	197000	I will briefly review the biology of NTU.
+199000	203000	As you may already know, our body is made up of cells.
+204000	207000	Many cells form organs,
+207000	211000	and eventually form organs in our body,
+211000	214000	becoming a functional human body.
+214000	224000	An interesting fact is that our body is composed of over 20 different types of cells.
+224000	229000	You can see that their forms and functions are very different.
+230000	235000	For example, there are nerve cells, blood cells, muscle cells,
+235000	241000	and even different types of cells in different organs.
+241000	246000	Their functions and forms are very different.
+248000	251000	Let's take a deeper look.
+251000	255000	As you can see, our body is made up of cells.
+255000	259000	Each cell has a nucleus,
+259000	261000	which is a red dot.
+261000	263000	In English, it's called a nucleus.
+263000	265000	In Chinese, it's called a cell nucleus.
+265000	269000	In this cell nucleus, there is a chromosome.
+269000	274000	This chromosome is made up of our genes.
+274000	278000	I think everyone has a concept of genes.
+278000	281000	Genes are our genetic material.
+281000	284000	Genes are our genetic material.
+284000	287000	They are our genetic material.
+287000	290000	Genes are our genetic material.
+290000	293000	Genes are our genetic material.
+293000	299000	In this definition, genes are a DNA segment.
+299000	304000	They can be converted into a useful molecule.
+304000	309000	They can perform the functions and functions that they need.
+309000	322000	The reason for the general description of gene code is that DNA is a so-called ATCG.
+322000	327000	DNA is a so-called ATCG.
+327000	330000	So, if we talk about genes,
+330000	338000	the sequence obtained may be composed of these four ATCGs.
+338000	342000	This is our so-called gene code.
+342000	351000	In molecular biology, there is a so-called central dogma.
+351000	357000	The principle is that we have this genetic material.
+357000	359000	Its main structure is DNA.
+359000	363000	It will be transcribed into RNA.
+363000	367000	RNA will be further transcribed into protein.
+367000	373000	This protein can perform various biological functions.
+373000	382000	As time goes by, the central dogma is gradually extended to more different forms.
+382000	392000	We can even find more different directions from the virus or other systems.
+392000	397000	Today's technology involves a discovery.
+397000	402000	In the past, we thought that DNA was transcribed into RNA.
+402000	411000	But later, scientists found another enzyme that can reverse transcribe RNA back to DNA.
+412000	423000	With the help of this enzyme, many related extension technologies can be built on this basis.
+423000	429000	Today, we will mainly talk about RNA-seq.
+429000	439000	Another way to talk about it is transcriptional analysis or gene expression profiling.
+439000	446000	Basically, we can use gene expression to understand human physiology.
+446000	457000	This picture shows a major timeline and milestone in molecular biology and sequencing technology.
+457000	463000	As many of you know, the first discovery was in 1953.
+463000	469000	In 1977, Sanger's DNA sequencing was developed.
+469000	473000	Later, PCR technology was also developed.
+473000	480000	PCR technology allows us to rapidly increase our DNA in the laboratory.
+480000	488000	Many related technologies can be built on this basis.
+488000	492000	In 1990, the Human Genome Project was launched.
+492000	497000	After 13 years, the Human Genome Project was established.
+497000	505000	At this stage, sequencing costs are still very high.
+505000	513000	It is difficult to operate a sequencing project in a lab.
+513000	529000	In 2005, the next-generation sequencing technology was introduced.
+529000	535000	This technology has greatly reduced the cost of sequencing.
+535000	547000	The next-generation sequencing technology is still widely used.
+547000	556000	In recent years, the third-generation sequencing technology was introduced.
+556000	562000	When was single-cell RNA-seq developed?
+562000	570000	The first report on single-cell RNA-seq was made in 2009.
+570000	575000	Because of the gradual maturation of the technology,
+575000	579000	especially the rapid reduction of sequencing costs,
+579000	583000	single-cell RNA-seq can be operated more widely.
+583000	592000	Now, many extended protocols, technologies, and companies continue to develop rapidly in this field.
+592000	600000	Why do we need to do single-cell RNA-seq?
+600000	608000	Before single-cell RNA-seq, we can look at gene profiling.
+609000	621000	For example, what is the difference between a cancer cell and a normal cell?
+621000	629000	For example, we have a healthy sample and a diseased sample.
+629000	645000	After sequencing, we can compare the gene profiling of these two cells.
+645000	648000	Then we can find out the disease gene.
+648000	657000	Or we can find out which signaling pathway is further activated or inhibited.
+658000	662000	But there is a problem.
+662000	670000	For example, a tumor may contain a variety of different cells.
+670000	676000	There may be immune cells, tumor cells, fibroblasts, and so on.
+677000	683000	If the tumor is broken down and the RNA-seq is obtained,
+683000	688000	the result is a variety of different cells.
+688000	691000	From this heat map,
+691000	701000	we can still see that some genes are inhibited or activated in the diseased sample.
+701000	716000	It is difficult to determine if the disease is caused by immune cells, fibroblasts, or unknown gene cells.
+716000	725000	At this time, if we can do transcriptome profiling at single-cell resolution,
+725000	737000	we can have a deeper understanding of each cell in a tumor tissue.
+738000	744000	Here are some interesting graphs that I saw on the Internet.
+744000	752000	It can give you an idea of why the so-called Bok analysis may cause some misjudgment.
+752000	755000	For example, in this graph,
+755000	760000	each point here has the so-called x-value and y-value.
+760000	762000	Then you can do various calculations.
+762000	765000	For example, the x-value is like this,
+765000	767000	the y-value is like this,
+767000	769000	the x-deviation is like this,
+769000	771000	and the y-deviation is like this.
+771000	774000	But even if you calculate all these values,
+774000	776000	what about the relationship between x and y?
+776000	779000	So if you just do a Bok analysis,
+779000	786000	you may not be able to express the so-called structure behind it.
+787000	790000	Another interesting graph is that
+790000	793000	sometimes if you do a Bok analysis,
+793000	798000	you may get a conclusion that leads you to a wrong direction.
+798000	801000	For example, suppose this is your sample.
+801000	805000	So your sample contains a lot of different animals.
+805000	809000	Then you do a Bok analysis to see what this creature might look like.
+809000	814000	Then you may come to a conclusion that this is what this creature should look like.
+814000	819000	Then you will find that it is very different from the so-called real state.
+819000	823000	The so-called single-celled analysis basically has different methods.
+823000	826000	That is to say, under this technology,
+826000	830000	you can analyze each animal separately
+830000	833000	and find a lot of different features.
+833000	836000	Then based on the features you find,
+836000	839000	you start to do the so-called clustering.
+839000	841000	For example, this graph shows that
+841000	843000	you have already found two features.
+843000	845000	One is Firm and the other is Venom.
+845000	848000	Then even if you just add two features like this,
+848000	854000	you can already cluster a lot of animals into at least two subsets.
+854000	858000	One big subset will be the snakes,
+858000	861000	which has the Venom but doesn't have Firm.
+861000	865000	Then the other big subset may be the so-called
+865000	868000	it doesn't have Venom, but it has Firm.
+868000	871000	When you can add more and more features,
+871000	874000	hopefully, finally, you will be able to
+874000	878000	one individual item will be clustered into one group.
+878000	884000	So this is the whole idea about why you need to do profiling at a single-cell level.
+886000	889000	Then generally in this single-cell field,
+889000	892000	one of their favorite metaphors is
+892000	897000	the so-called fruit smoothie and the so-called fruit salad.
+897000	900000	When you make a Borg RNC asset,
+900000	904000	it's very similar to the so-called fruit smoothie.
+904000	908000	Basically, you put all kinds of fruit and vegetables together.
+908000	910000	The taste you drink is basically
+910000	914000	an average taste of all ingredients.
+914000	918000	So you may not be able to know
+918000	921000	what ingredients are in this.
+921000	924000	Then maybe the ingredients you taste
+924000	927000	are some special strong ingredients.
+927000	930000	Maybe it's an apple, maybe it's a strawberry.
+930000	932000	But you can't know that
+932000	936000	maybe there's some cabbage in it or something else.
+936000	942000	Single-cell is like you're eating a fruit salad.
+942000	950000	Basically, you can taste each individual piece of the fruit.
+950000	952000	So somehow you'll know
+952000	956000	what kind of composition the fruit should be made of.
+957000	963000	So this so-called fruit smoothie to the fruit salad,
+963000	969000	basically what single-cell RNC wants to achieve
+969000	973000	is that you can show the individual cell type
+973000	976000	that causes the biological response or disease.
+977000	984000	Then this summary is a more scientific statement.
+984000	987000	So basically, the so-called Borg RNC
+987000	991000	measures the so-called average expression level
+991000	994000	for each cell across a population of cells.
+994000	996000	Basically, like I just said,
+996000	998000	if you're doing a cancer study,
+998000	1000000	you have two samples.
+1000000	1002000	One is from healthy tissue,
+1002000	1004000	the other is from diseased tissue.
+1004000	1008000	Then you grind it up and compare the two samples.
+1008000	1011000	Its limitation is basically that
+1011000	1017000	if you want to study a more complex system today,
+1017000	1020000	for example, you want to study people's brains
+1020000	1023000	or some more complex organs,
+1023000	1025000	then this technology
+1025000	1028000	I'm afraid I can't give you a very clear result.
+1029000	1031000	Basically, what single-cell does,
+1031000	1034000	it measures the distribution of expression level
+1034000	1038000	for each gene across a population of the cells.
+1038000	1040000	So using this technology,
+1040000	1043000	every cell has a specific change
+1043000	1047000	that can be shown.
+1048000	1052000	Basically, now there are already a lot of
+1052000	1057000	so-called commercially available single-cell platforms on the market.
+1057000	1060000	Of course, they all have their own advantages and disadvantages.
+1060000	1063000	From my personal experience,
+1063000	1065000	I have two platforms of experience.
+1065000	1067000	One is the so-called Fluidigm C1.
+1067000	1072000	The other is called 10x Genomics.
+1074000	1078000	Now I'm going to quickly introduce
+1078000	1083000	the two single-cell platforms I've used before.
+1084000	1086000	Basically, in general,
+1086000	1088000	the so-called workflow of the single cell,
+1088000	1090000	its concept is basically the same.
+1090000	1094000	First of all, you have the so-called tissue of interest,
+1094000	1097000	either patient tissue or cells,
+1097000	1100000	which are some of the cells that you are interested in.
+1100000	1105000	Then, before doing single-cell RIC,
+1105000	1108000	the most important step is that you have to
+1108000	1110000	prepare in your own way
+1110000	1114000	the so-called single-cell suspension.
+1115000	1118000	Each person may have different approaches.
+1118000	1120000	For example,
+1120000	1123000	the so-called FACS to do the single-cell selection,
+1123000	1128000	or to do some so-called micro-dissection,
+1128000	1133000	to sort out the cells one by one.
+1133000	1137000	Then, when you can successfully complete
+1137000	1139000	your single-cell suspension,
+1139000	1141000	you basically inject it
+1141000	1144000	into either single-cell platform.
+1144000	1146000	Then, in the single-cell platform,
+1146000	1148000	what it does is basically
+1148000	1150000	to lyse the cell
+1150000	1152000	and extract the RNA in it.
+1152000	1154000	Then, this RNA is
+1154000	1156000	reverse transcribed
+1156000	1160000	into the cDNA.
+1160000	1163000	Then, this cDNA can be amplified
+1163000	1165000	through PCR.
+1165000	1167000	After the amplification,
+1168000	1171000	we build a library.
+1171000	1174000	Then, these libraries can be sent for sequencing.
+1174000	1176000	Like I said,
+1176000	1179000	this is the so-called sequencing result.
+1179000	1183000	You get the so-called sequence.
+1183000	1185000	This sequence is basically
+1185000	1187000	the sequence of A, T, C, and G.
+1187000	1189000	Then, you may be mapping.
+1189000	1193000	Because now many genes have been decoded,
+1193000	1195000	including human, mouse,
+1195000	1197000	and some species.
+1197000	1201000	So, according to the source of your sample,
+1201000	1204000	you can map it to the reference genome.
+1204000	1207000	Then, you can know
+1207000	1212000	what the expression of each gene is.
+1212000	1214000	Then, the last step is
+1214000	1217000	the so-called computational analysis.
+1217000	1219000	Because this single-cell RNAC technology
+1219000	1221000	is relatively new,
+1221000	1224000	the computational analysis
+1224000	1228000	is still under development.
+1228000	1232000	This is basically the same concept.
+1232000	1235000	You have a tissue that you are interested in.
+1235000	1237000	First, you have to be able to
+1237000	1240000	dissociate it into the so-called single-cell suspend.
+1240000	1244000	Then, there are all kinds of different systems
+1244000	1247000	that can make the single-cell suspension
+1247000	1249000	that you need.
+1249000	1251000	Then, you can further
+1251000	1255000	dissociate it into the single-cell platform.
+1255000	1262000	This picture is from a recent review paper.
+1262000	1265000	So, what you can see here is that
+1265000	1267000	the single-cell RNAC technology
+1267000	1270000	has developed very rapidly in recent years.
+1270000	1273000	It started with the first single-cell paper
+1273000	1275000	around 2009.
+1275000	1277000	At that time, the single-cell technology
+1277000	1279000	was still a very difficult technology.
+1279000	1281000	It was not possible to operate smoothly
+1281000	1283000	at every level.
+1283000	1287000	Then, the number of times you do it
+1287000	1293000	may be accumulated from dozens of times.
+1293000	1295000	However, as time goes by,
+1295000	1297000	there are more and more different types of
+1297000	1299000	different technologies,
+1299000	1303000	including the droplet method.
+1303000	1305000	There are also some
+1305000	1308000	random capture technologies,
+1308000	1311000	such as in-tube barcoding,
+1311000	1315000	and so on.
+1315000	1318000	Now, you can see that
+1318000	1320000	basically,
+1320000	1323000	the single-cell technology
+1323000	1327000	can already get a lot of cells
+1327000	1331000	in one experiment.
+1331000	1335000	Of course, there are many technologies
+1336000	1339000	that continue to develop
+1339000	1345000	to get more and more cells.
+1345000	1349000	Now, I would like to introduce
+1349000	1351000	two single-cell platforms
+1351000	1354000	that I have had hands-on experience with.
+1354000	1356000	The first one is FluDyn.
+1356000	1360000	FluDyn is probably the first single-cell
+1360000	1366000	RNA-seq technology in the market.
+1366000	1370000	Its basic process is very similar to what I just said.
+1370000	1373000	First, you need to be able to successfully
+1373000	1375000	dissociate your tissue.
+1375000	1378000	Basically, this technology
+1378000	1381000	captures cells to 96 well plate.
+1381000	1387000	Basically, all the so-called cell lysing,
+1387000	1390000	RT, and cDNA amplification
+1390000	1393000	happen in this machine.
+1393000	1396000	Its output is basically
+1396000	1401000	the cDNA after the amplification.
+1401000	1407000	Then you can make a barcode library
+1407000	1410000	and send for sequencing.
+1411000	1419000	This is the real situation of the C1 chip.
+1419000	1423000	This is an image under the microscope.
+1423000	1425000	You can see that
+1425000	1428000	this cell basically has a fluorescent label.
+1428000	1431000	So you can see that
+1431000	1434000	after running this chip,
+1434000	1440000	this cell is basically captured in this chip.
+1440000	1443000	Then all the reactions
+1443000	1448000	will happen in this reaction.
+1448000	1452000	Finally, when this reaction is completed,
+1452000	1456000	you get the cDNA after the amplification.
+1456000	1459000	Then you can further build your library
+1459000	1460000	and send for sequencing.
+1460000	1463000	Then you will get your data.
+1463000	1466000	According to my personal experience,
+1466000	1469000	the C1 chip has some advantages
+1469000	1471000	but also some disadvantages.
+1471000	1475000	Its advantages are...
+1475000	1478000	Oh, I may have made a mistake here.
+1478000	1481000	The first one is relatively long prep time.
+1481000	1482000	This should be its disadvantage.
+1482000	1485000	Its prep time is actually very long.
+1485000	1489000	Of course, if you let your sample
+1489000	1492000	sit on the ice all the time,
+1492000	1494000	you may worry that
+1494000	1496000	its gene expression profile
+1496000	1498000	may change during that time.
+1498000	1501000	So basically, we hope that
+1501000	1505000	before we get the so-called
+1505000	1507000	light cell,
+1507000	1513000	the prep time can be as short as possible.
+1513000	1515000	But this C1 chip
+1515000	1517000	still has some very good advantages.
+1517000	1520000	For example, this set of technologies
+1520000	1524000	allows you to capture single cells
+1524000	1527000	under the microscope
+1527000	1529000	one by one.
+1529000	1531000	For example, this picture shows
+1531000	1533000	a very beautiful single cell.
+1533000	1536000	Some wells may not have single cells at all.
+1536000	1540000	Some wells may have multiple samples.
+1540000	1541000	Maybe later on,
+1541000	1543000	when you are building your library,
+1543000	1546000	you may ignore such samples.
+1546000	1548000	Because in the subsequent data analysis,
+1548000	1552000	you may not be able to judge
+1552000	1554000	whether the data you get is from one cell
+1554000	1556000	or multiple cells.
+1556000	1560000	Basically, its biggest disadvantage
+1560000	1564000	is the so-called throughput.
+1564000	1565000	Because basically,
+1565000	1566000	in the most primitive C1 chip,
+1566000	1569000	it can only capture 96 cells at a time.
+1569000	1571000	In the later version,
+1571000	1573000	it may be able to capture 800 at a time.
+1573000	1576000	But in fact, in reality,
+1576000	1578000	its efficiency is very poor.
+1578000	1582000	Maybe only 60% to 70% of the wells
+1582000	1584000	can capture single cells.
+1584000	1585000	So in fact,
+1585000	1588000	the number of cells you can get every time is extremely small.
+1588000	1591000	So this is the biggest problem with C1.
+1591000	1592000	And later on,
+1592000	1594000	a lot of research found that
+1594000	1597000	even some data that had already been published,
+1597000	1599000	they found that
+1599000	1601000	some of the results they got
+1601000	1605000	were quite related to batch.
+1605000	1607000	So this technology basically,
+1607000	1609000	in the current single cell field,
+1609000	1613000	a lot of people have turned to other better
+1613000	1617000	better technology choices.
+1617000	1618000	At present,
+1618000	1621000	the vast majority of single cell RNA-seq platforms,
+1621000	1623000	you will probably see,
+1623000	1625000	is from this company.
+1625000	1627000	This company is called 10X Genomics.
+1627000	1630000	Its core technology
+1630000	1633000	is basically called Gems.
+1633000	1636000	Gen Bits in Emulsion.
+1636000	1638000	So its idea is basically
+1638000	1640000	that it has a lot of these bits.
+1640000	1643000	And then these bits are basically
+1643000	1646000	I'm thinking the simplest way to do this is
+1646000	1651000	I'm going to show you a YouTube video.
+1651000	1654000	You should be able to quickly understand
+1654000	1657000	how this technology works.
+1663000	1667000	Okay.
+1689000	1690000	Oh, Dr. Sun,
+1690000	1692000	I'd like to ask if there's any sound in this video?
+1692000	1694000	Eh...
+1694000	1697000	It's music, so you can't hear the sound, right?
+1697000	1698000	Okay.
+1698000	1699000	But it's okay.
+1699000	1701000	It's not talking.
+1701000	1702000	It's not talking.
+1702000	1703000	Okay.
+1703000	1704000	Yeah, so...
+1704000	1706000	It's just background music.
+1722000	1743000	It's just background music.
+1743000	1771000	It's just background music.
+1771000	1800000	It's just background music.
+1800000	1808000	I think it's easier to use the video.
+1808000	1810000	Wait a minute.
+1810000	1816000	Sorry, I'll turn this off.
+1816000	1822000	So basically, you can see that this is the set of techniques.
+1822000	1825000	It's probably like this.
+1826000	1830000	If you compare these two sets of techniques,
+1830000	1837000	Of course, the biggest advantage of 10X Genomics is that its throughput is very high.
+1837000	1843000	We can capture more than 10,000 cells in each round.
+1843000	1851000	If you compare it to 96 or 800 cells, 10X is much better than C1.
+1851000	1866000	In addition, the advantage of the UMI set of techniques is that it involves some PCR processes.
+1866000	1870000	This process may also cause some experimental biases.
+1870000	1878000	The UMI set of techniques can basically help correct these biases.
+1879000	1885000	In addition, the process of generating Gems is extremely fast.
+1885000	1889000	It only takes 7 minutes to generate all the Gems.
+1889000	1897000	So basically, you can make sure that your cells are in a relatively intact state.
+1897000	1900000	Of course, there are some disadvantages.
+1900000	1909000	For example, 10X Genomics does not sequence all the transcripts.
+1909000	1921000	It only does a small part of 3'N.
+1921000	1927000	So if your research is looking at variants of Gems,
+1927000	1931000	You basically can't use 10X Genomics.
+1931000	1941000	On the other hand, many data analysis tools are designed for 10X Genomics.
+1941000	1945000	So if you use this set of systems,
+1945000	1951000	You may get more help in subsequent analysis.
+1952000	1964000	Next, let's talk about some real-world operations.
+1964000	1968000	In the real world,
+1968000	1974000	Before injecting into the 10X system,
+1974000	1977000	We have our tissue of interest.
+1977000	1981000	Then we may have different sample prep strategies.
+1981000	1985000	To control our single-cell suspension.
+1985000	1990000	Before injecting into the 10X chip,
+1990000	1993000	We basically need to do a cell quality control.
+1993000	1999000	We need to look at several parameters.
+1999000	2003000	For example, its viability.
+2003000	2007000	And basically, this cell looks like a single cell.
+2007000	2011000	And then there's the cell size.
+2011000	2018000	Let you know that your protocol is basically able to target the cells you're interested in.
+2018000	2021000	So the take-home message here will be that
+2021000	2026000	The sample prep protocol optimization is very important.
+2026000	2030000	For you to get high-quality single-cell data in the future.
+2030000	2034000	In the first step, it basically determines most of it.
+2034000	2039000	After your cell QC pass,
+2039000	2043000	You make sure that your single-cell suspension is a very good prep.
+2043000	2047000	Then you can basically inject into the 10X system.
+2047000	2053000	Then all these steps are basically like a kit.
+2053000	2057000	And then you can just run it through.
+2057000	2063000	And now Genome has developed its own computational tool.
+2063000	2067000	I can do the initial data processing.
+2067000	2071000	And then you get a so-called gene barcode matrix.
+2071000	2076000	And then you can use this matrix to do the follow-up analysis.
+2077000	2083000	For the whole workflow of single-cell data analysis,
+2083000	2087000	It's basically divided into two stages.
+2087000	2093000	The first stage, the yellow one, is basically the so-called sequencing QC.
+2093000	2098000	That is to say, you have to see if your sequencing data is good or bad.
+2098000	2102000	In this part, it's basically quite mature.
+2102000	2108000	Because I mentioned before that this technique has been used for many years.
+2108000	2112000	That set of techniques is basically the so-called sequencing QC.
+2112000	2116000	It can almost move the whole set to the single-cell RNAC part.
+2116000	2119000	So at this stage of sequencing QC,
+2119000	2124000	It's basically looking at the so-called read QC, alignment QC, and mapping QC.
+2124000	2131000	And now Genome has a set of its own software that can help you finish this thing.
+2131000	2134000	Finally, you can get a gene barcode matrix.
+2134000	2137000	And then when you get the gene barcode matrix,
+2137000	2143000	The red part here is basically the so-called further data processing.
+2143000	2148000	I'm going to take a little bit of time to talk about it.
+2148000	2151000	The so-called further data processing here.
+2151000	2155000	In the first step, I call it matrix LQC.
+2155000	2159000	What it means is that basically the most important point of this step is to say
+2159000	2164000	You have to get rid of some of the so-called low-quality cells first.
+2164000	2168000	Because if you keep these low-quality cells in your dataset,
+2168000	2171000	A big problem, it might cause a lot of noise.
+2171000	2176000	And then it might make your subsequent data analysis very difficult.
+2176000	2181000	So basically, after you remove some of the bad cells,
+2181000	2184000	You can take your data to further normalization.
+2185000	2192000	After normalization, you may need to face another problem.
+2192000	2199000	After all, single cell technology is based on single cell.
+2199000	2206000	So it will have a lot of unwanted variation.
+2206000	2208000	For example, it may be a batch effect.
+2208000	2211000	Then all the cells may be in different cell cycle status.
+2212000	2216000	These may be information that you are not interested in.
+2216000	2221000	Then you may need to use some computational methods to either regress it out.
+2221000	2224000	Or maybe give it a score.
+2224000	2227000	This may be a more detailed data analysis.
+2227000	2232000	Then, in short, when you clean up these data through this step,
+2232000	2237000	Then your dataset can do a lot of downstream data analysis.
+2238000	2244000	It includes clustering, cell type identification,
+2244000	2248000	And then you can do the so-called differential gene expression analysis.
+2248000	2255000	That is to say, you can compare the gene profiling between cell type A and cell type B.
+2255000	2259000	Which one is the same? Which one is different?
+2259000	2262000	Or maybe you have a very interested cell population.
+2262000	2266000	Then you can see what are the cell service markers.
+2266000	2269000	Or you can compare two situations.
+2269000	2273000	Then see which single-only pathway is being activated or inhibited.
+2273000	2280000	These things are very useful information for both basic biology and disease research.
+2280000	2283000	Then you can also do some network analysis.
+2283000	2288000	Then some people will even take this single cell to do some so-called pseudo-time analysis.
+2289000	2292000	The so-called pseudo-time is that we
+2292000	2296000	Because in a lot of research, such as developmental biology,
+2296000	2300000	It may look at a bit like a time course.
+2300000	2307000	That is, how does this cell change from one state to another state with the eyes of time?
+2307000	2311000	In the past, you may have to take samples at different times.
+2311000	2313000	Then do the analysis.
+2313000	2318000	The concept of single cell may be that you may not need to take so many time points.
+2318000	2323000	You may take one or two time points.
+2323000	2327000	Because every cell will give you some information.
+2327000	2331000	Not all cells are in the same state at the same time.
+2331000	2334000	So you can basically go through every cell.
+2334000	2339000	It may be at a certain stage in the process of transformation.
+2340000	2343000	Then it may be in this set of data.
+2343000	2346000	It will give you a so-called pseudo-time.
+2346000	2349000	Such information.
+2349000	2357000	So this is also a very powerful place for single cell.
+2357000	2362000	Let's talk about the so-called metric cell quality control.
+2362000	2368000	What is it like in a real state?
+2368000	2374000	How do you filter out the so-called unhealthy cells or cells you don't want?
+2374000	2377000	Of course, everyone may have their own criteria.
+2377000	2380000	Here are some of the most general ways.
+2380000	2385000	This set of data sets is basically published.
+2385000	2392000	It uses the so-called human blood cells to make a demo data.
+2392000	2402000	This scatter plot is the percentage of the mitochondrion versus the UMI number.
+2402000	2408000	This UMI number can be regarded as how many molecules have been detected.
+2408000	2411000	So-called how many transcripts have been detected.
+2411000	2415000	Then every point here basically represents a cell.
+2416000	2422000	You can see that the majority of the cells are in this position.
+2422000	2429000	In terms of biology, you will know that the vast majority of the cells are in this position.
+2429000	2435000	So these cells have a very high UMI number.
+2435000	2438000	It means that there are a lot of transcripts being detected.
+2438000	2443000	So it is possible that these signals are not coming from one single cell.
+2443000	2447000	These may be cell aggregation or multiplex.
+2447000	2450000	These may be the cells you want to get rid of.
+2450000	2454000	Because basically this signal is not coming from one single cell.
+2454000	2459000	Then some other cells you may want to get rid of are the so-called cells.
+2459000	2464000	So you can see that there are very few UMI that can be detected.
+2464000	2469000	But it has a very high percentage of mitochondrion.
+2470000	2476000	Usually when a cell is in an extremely unhealthy state, its mitochondrion will be very high.
+2476000	2488000	So this is also a general criterion that many people will set to filter out some cells that they think are not worth doing downstream analysis.
+2488000	2495000	The last cell that may be used for downstream analysis is this one.
+2496000	2501000	So what does this analysis look like?
+2501000	2507000	This is basically a result of unbiased clustering.
+2507000	2514000	So you can see that the sample here is from a human pbmc cell.
+2514000	2519000	Here, each point represents a cell.
+2519000	2522000	This type of clustering is called t-SNE clustering.
+2522000	2525000	Basically, it is a clustering algorithm.
+2525000	2537000	Basically, what you can understand is that the closer the cells are, the more similar their properties are.
+2538000	2549000	Basically, they look at, for example, which genes are expressed in this clustering cell, and which genes are expressed in this clustering cell.
+2549000	2555000	Then they can identify what kind of cells these may be.
+2555000	2567000	So in a single-cell RNAC experiment, you can quickly identify all kinds of different immune cells.
+2567000	2571000	For example, this clustering is basically a B-cell.
+2571000	2581000	The gene expression plotting here further confirms that when you see here, it becomes more purplish, which means that this particular gene is expressed in large quantities.
+2581000	2584000	This gene is basically a B-cell mutagen.
+2584000	2589000	So it further confirms that these cells do have B-cell properties.
+2589000	2593000	For example, this CD3E is basically a T-cell marker.
+2593000	2597000	It is also expressed in large quantities in this T-cell population.
+2598000	2618000	Once you get a result like this, you can further study and compare which cells are the same and which cells are different.
+2618000	2625000	Or you can compare two B-cells in a different sample.
+2625000	2629000	Then you can compare the gene profiling of the two B-cells to see what is different.
+2629000	2640000	In this way, the result you get will be a signal that only B-cells give you, rather than a result where all cells are averaged.
+2640000	2643000	This is roughly the concept of a single-cell.
+2644000	2648000	Due to time constraints, I will skip the last part.
+2648000	2657000	This is just an example of what a single-cell can do.
+2657000	2665000	To summarize, there are some things you may need to consider before conducting a single-cell experiment.
+2666000	2677000	In my current job, I have to support many single-cell projects on campus.
+2677000	2691000	Based on my experience with many different projects, I can see that data analysis is still the biggest bottleneck in this technology.
+2691000	2696000	In terms of generating the data, it is not that difficult.
+2696000	2705000	However, every time you generate a library of data, it may be over 1,000 cells.
+2705000	2711000	To be honest, it is not that easy to analyze the data.
+2711000	2728000	Even though we have a single-cell working group in our company, we still have to figure out what is the best normalization method and what is the best batch correction method.
+2728000	2740000	In terms of differential gene expression analysis, which method is the best for single-cell analysis?
+2741000	2761000	Basically, if you know exactly what you want to ask, your single-cell data will be more meaningful.
+2761000	2781000	However, if you are not sure what you want to see, your data will be lost.
+2781000	2800000	In my experience, it is very important to optimize the sample prep protocol before going into the single-cell platform.
+2800000	2812000	If you don't optimize your sample prep properly, you may not get the cells you need.
+2812000	2822000	Finally, I want to touch on the single-cell genomics.
+2822000	2827000	The single-cell genomics development is very fast.
+2827000	2832000	There are many new technologies for different biological problems.
+2833000	2843000	For example, the single-cell RAC we just talked about is a single-cell suspension.
+2844000	2852000	However, in some research, you may not be able to get the so-called living tissue.
+2852000	2862000	For example, if you want to study the brain, you may only get the tissue after a person's death.
+2862000	2866000	Or you may only get the frozen tissue.
+2866000	2871000	Basically, you can't get the tissue from a living cell.
+2871000	2874000	Therefore, there is a so-called single-cell RAC.
+2874000	2890000	The single-cell RAC takes the tissue from a dead cell and extracts the RNA from it.
+2890000	2893000	There are also other versions.
+2893000	2905000	For example, if you are interested in the recombination of T-cells and B-cells, there is also a single-cell RAC like this.
+2905000	2916000	If you are studying cancer T-cell therapy, it will be very useful.
+2917000	2931000	If you are studying the chromatin regulation, there is also a single-cell attack C protocol.
+2931000	2940000	You can see which part of the chromatin is open and which part is closed.
+2940000	2944000	There is also a new technology called CyC.
+2944000	2951000	CyC adds a DNA barcoding to the antibody.
+2951000	2957000	CyC turns it into another RNA molecule.
+2957000	2960000	CyC turns it into a pseudogene.
+2960000	2969000	When you run the single-cell platform, CyC becomes an additional signal.
+2969000	2984000	In addition to obtaining the RNA expression profile, you can also detect the cell service protein signal.
+2984000	2992000	This technology can also help you with cell type identification.
+2993000	3007000	Overall, CyC is still developing rapidly in the field of sample processing and data analysis.
+3008000	3014000	This is a brief introduction to CyC.
+3014000	3024000	If you are interested in CyC, you can learn more about it.
+3024000	3039000	Thank you Dr. Sun for giving us a presentation today.
+3039000	3047000	We will now open the Q&A section.
+3047000	3055000	I hope everyone can actively discuss or ask questions about what Dr. Sun just said.
+3055000	3056000	Thank you.
+3056000	3063000	I just saw a person in the chat asking,
+3063000	3069000	Do you mind sharing your presentation slides?
+3093000	3101000	Let's see if Dr. Sun can send the slides to you.
+3101000	3103000	Okay.
+3104000	3108000	Another person asked,
+3108000	3116000	Hi Dr. Sun, for in vivo study, would you suggest to do the qPCR on intracellular organ first,
+3116000	3122000	then based on the qPCR result to design the experimental for RNA-Seq?
+3123000	3137000	Do you have any suggestions for the qPCR and RNA-Seq?
+3137000	3145000	For qPCR,
+3145000	3150000	if there is a new project coming in,
+3150000	3156000	we will not go for single cell RNA-Seq.
+3157000	3166000	We will first look at the existing technology,
+3166000	3171000	such as qPCR or Bulk RNA-Seq.
+3171000	3176000	If you want to compare healthy and diseased,
+3176000	3181000	or knockout or wild-type mice,
+3181000	3191000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3191000	3196000	If your qPCR can already answer your question,
+3196000	3204000	we usually prefer to ask them to use a relatively cheap and simple technology to confirm.
+3204000	3209000	If you want to compare healthy and diseased,
+3209000	3217000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3217000	3222000	If you want to compare healthy and diseased,
+3222000	3229000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3229000	3234000	If you want to compare healthy and diseased,
+3234000	3242000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3242000	3247000	If you want to compare healthy and diseased,
+3247000	3254000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3254000	3259000	If you want to compare healthy and diseased,
+3259000	3267000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3267000	3272000	If you want to compare healthy and diseased,
+3272000	3279000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3279000	3284000	If you want to compare healthy and diseased,
+3284000	3291000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3291000	3296000	If you want to compare healthy and diseased,
+3296000	3304000	you may want to look at whether there is a difference in a specific single-cell RNA-Seq.
+3305000	3311000	What software do you use to do batch correction for single-cell RNA-Seq?
+3311000	3317000	Are you asking about rPackage?
+3317000	3322000	Hello?
+3322000	3326000	Oh, rPackage.
+3326000	3331000	I can answer that.
+3331000	3336000	Are you doing single-cell RNA-Seq analysis?
+3336000	3341000	Yes.
+3341000	3346000	I believe Serat is doing single-cell RNA-Seq analysis.
+3346000	3351000	Have you heard of Serat?
+3352000	3357000	If you are interested,
+3357000	3363000	this is one of the most popular software out there
+3363000	3368000	and it is being developed for single-cell RNA-Seq.
+3368000	3373000	It is being developed for single-cell RNA-Seq.
+3373000	3378000	It is being developed for single-cell RNA-Seq.
+3408000	3413000	In terms of the CCA,
+3413000	3418000	it assumes that your dataset is co-variant.
+3418000	3423000	In terms of the CCA,
+3423000	3428000	it assumes that your dataset is co-variant.
+3428000	3433000	In terms of the CCA,
+3433000	3438000	it assumes that your dataset is co-variant.
+3438000	3443000	In terms of the CCA,
+3443000	3448000	it assumes that your dataset is co-variant.
+3448000	3453000	In terms of the CCA,
+3453000	3458000	it assumes that your dataset is co-variant.
+3458000	3463000	My personal favorite batch collection algorithm is MNN.
+3463000	3468000	My personal favorite batch collection algorithm is MNN.
+3468000	3473000	It is another package called SCRAN.
+3473000	3478000	It is another package called SCRAN.
+3478000	3483000	It is another package called SCRAN.
+3483000	3488000	It is another patch called SCRAN.
+3488000	3493000	It is another patch called SCRAN.
+3493000	3498000	It is another patch called SCRAN.
+3498000	3503000	It is another patch called SCRAN.
+3563000	3568000	It is another patch called SCRAN.
+3568000	3573000	It is another patch called SCRAN.
+3573000	3578000	It is another patch called SCRAN.
+3578000	3583000	It is another patch called SCRAN.
+3583000	3588000	It is another patch called SCRAN.
+3588000	3593000	it is another patch called SCRAN.
+3593000	3598000	it is another path called SCRAN.
+3598000	3603000	it is another patch called SCRAN.
+3603000	3608000	it is another patch called SCRAN.
+3608000	3613000	it is another patch called SCRAN.
+3613300	3618000	what is the method of using this feature?
+3618000	3623000	the SOLIDWORKS?
+3623000	3628000	can save months, few years, or million years.
+3628000	3633000	can save months, few years, or million years.
+3633000	3638000	can save months, few years, or million years.
+3638000	3645000	the EP-1 like Dropsy or CluedTie Audio see-ent performing
+3645000	3651000	the EP-1 like Dropsy or CluedTie Audio see-entering
+3651000	3659000	Jason can hardly get any good result
+3659000	3664000	because of the technical issue
+3664000	3670000	The EP-1 like Dropsy or CluedTie Audio see-entering
+3670000	3676000	Jason can hardly get any good result
+3676000	3682000	because of the technical issue
+3682000	3689000	Jason can hardly get any good result
+3689000	3694000	The EP-1 like Dropsy or CluedTie Audio see-entering
+3694000	3699000	Jason can hardly get any good result
+3699000	3704000	because of the technical issue
+3704000	3709000	Jason can hardly get any good result
+3709000	3714000	Jason can hardly get any good result
+3714000	3719000	The EP-1 like Dropsy or CluedTie Audio see-entering
+3719000	3724000	Jason can hardly get any good result
+3724000	3729000	Jason can hardly get any good result
+3729000	3734000	Jason can hardly get any good result
+3734000	3739000	Jason can hardly get any good result
+3739000	3744000	The EP-1 like Dropsy or CluedTie Audio see-entering
+3744000	3749000	Jason can hardly get any good result
+3749000	3754000	Jason can hardly get any good result
+3754000	3759000	Jason can hardly get any good result
+3759000	3764000	Jason can hardly get any good result
+3764000	3769000	Jason can hardly get any good result
+3769000	3774000	Jason can hardly get any good result
+3774000	3784000	Jason can hardly get any good result
+3784000	3789000	Jason can hardly get any good result
+3789000	3799000	Jason can hardly get any good result
+3799000	3809000	Jason can hardly get any good result
+3809000	3819000	Jason can hardly get any good result
+3819000	3829000	Jason can hardly get any good result
+3829000	3844000	Jason can hardly get any good result
+3844000	3854000	Jason can hardly get any good result
+3854000	3864000	Jason can hardly get any good result
+3864000	3874000	Jason can hardly get any good result
+3874000	3884000	Jason can hardly get any good result
+3884000	3894000	Jason can hardly get any good result
+3894000	3904000	Jason can hardly get any good result
+3904000	3914000	Jason can hardly get any good result
+3914000	3924000	Jason can hardly get any good result
+3924000	3934000	Jason can hardly get any good result
+3934000	3944000	Jason can hardly get any good result
+3944000	3954000	Jason can hardly get any good result
+3954000	3964000	Jason can hardly get any good result
+3964000	3974000	Jason can hardly get any good result
+3974000	3984000	Jason can hardly get any good result
+3984000	3994000	Jason can hardly get any good result
+3994000	4004000	Jason can hardly get any good result
+4004000	4014000	Jason can hardly get any good result
+4014000	4024000	Jason can hardly get any good result
+4024000	4034000	Jason can hardly get any good result
+4034000	4044000	Jason can hardly get any good result
+4044000	4054000	Jason can hardly get any good result
+4054000	4064000	Jason can hardly get any good result
+4064000	4074000	Jason can hardly get any good result
+4074000	4084000	Jason can hardly get any good result
+4084000	4094000	Jason can hardly get any good result
+4094000	4104000	Jason can hardly get any good result
+4104000	4114000	Jason can hardly get any good result
+4114000	4124000	Jason can hardly get any good result
+4124000	4134000	Jason can hardly get any good result
+4134000	4144000	Jason can hardly get any good result
+4144000	4154000	Jason can hardly get any good result
+4154000	4164000	Jason can hardly get any good result
+4164000	4174000	Jason can hardly get any good result
+4174000	4184000	Jason can hardly get any good result
+4184000	4194000	Jason can hardly get any good result
+4194000	4204000	Jason can hardly get any good result
+4204000	4214000	Jason can hardly get any good result
+4214000	4224000	Jason can hardly get any good result
+4224000	4234000	Jason can hardly get any good result
+4234000	4244000	Jason can hardly get any good result
+4244000	4254000	Jason can hardly get any good result
+4254000	4264000	Jason can hardly get any good result
+4264000	4274000	Jason can hardly get any good result
+4274000	4284000	Jason can hardly get any good result
+4284000	4294000	Jason can hardly get any good result
+4294000	4304000	Jason can hardly get any good result
+4304000	4314000	Jason can hardly get any good result
+4314000	4324000	Jason can hardly get any good result
+4324000	4334000	Jason can hardly get any good result
+4334000	4344000	Jason can hardly get any good result
+4344000	4354000	Jason can hardly get any good result
+4354000	4364000	Jason can hardly get any good result
+4364000	4374000	Jason can hardly get any good result
+4374000	4384000	Jason can hardly get any good result
+4384000	4394000	Jason can hardly get any good result
+4394000	4404000	Jason can hardly get any good result
+4404000	4414000	Jason can hardly get any good result
+4414000	4424000	Jason can hardly get any good result
+4424000	4434000	Jason can hardly get any good result
+4434000	4444000	Jason can hardly get any good result
+4444000	4454000	Jason can hardly get any good result
+4454000	4464000	Jason can hardly get any good result
+4464000	4474000	Jason can hardly get any good result
+4474000	4484000	Jason can hardly get any good result
+4484000	4494000	Jason can hardly get any good result
+4494000	4502000	Jason can hardly get any good result

@@ -1,0 +1,2820 @@
+好,那我就開始
+喔,我被嚇到
+好,那個就是
+所以我今天要講說就是
+呃
+我要來描述流體
+可是我是要用就是
+量子力學中的確定類推測來描述這流體
+那在開始之前我來
+就是可能要講一下
+到底為什麼流體力學的這個
+通常是這個Navier-Stokes
+非常非線性的方程式
+怎麼可能會跟這個
+線性的確定的方程式有任何關聯
+那其實這個
+這個其實並不是一個發現
+這個是早在1926年
+就已經
+就已經發現這兩個方程式是有很緊密的關聯
+那
+我通常這樣想就是
+尤拉方程呢就是
+他的那個背後的物理原理
+就是說
+他有幾個postulate
+就是說如果你沒有
+如果粒子沒有受力的話
+那速度就只是跟著
+跟著particle的速度走
+所以也就是流體的速度就是
+速度是被
+速度adapt
+然後呢
+但是其實流體裡面有一個內力
+就是那個壓力
+然後那個Euler假設
+就是說這個是一個
+這是一個保守場
+所以他就已經是一個gradient of function
+然後最後這個
+這gradient of function
+也就是pressure force
+是被唯一選定
+使得說流體是
+是不可壓縮流
+然後這個
+這些假設合在一起就是會
+就是寫出這個
+不可壓縮Euler equation
+然後這個方程式裡面
+最困難的部分實際上就是
+這個慣性的這個
+這個部分因為他
+他的方程式裡面有這個非前進項
+就是u dot gradient u
+有
+對就是像dust
+那為什麼會
+對我如果第一個
+question就變成這個會很簡單
+呃
+你可以呃
+可以說簡單也可以說
+不簡單就是他沒有那麼直接
+他是一個非前進方式
+那東西會叫做Burgers equation
+然後
+對對對
+你要模擬的話你可以就是直接丟
+很多particle然後就直接讓他就亂飛
+那最後你要預測說最後的
+密度是什麼這個部分
+他其實是可以明確寫下來
+尤其是一維的時候他可以明確寫下來
+然後會出現shockwave
+其實還是有一些有趣的現象
+那個也不是很直接可以寫下來
+然後那些都是非前進現象
+對就光是那個
+看起來是一個很簡單的物理
+實際上因為他除去的是非前進
+他只是跑出來現象很多非前進的現象
+像shockwave
+那些東西會出現
+對
+算是簡單版但是
+但是還是沒有那麼trivial
+然後這個非前進
+像是其實你Euler equation
+其實可以被改寫成不同的方式
+像Lagrange Helmholtz
+這一大堆人就是從
+同樣的方法寫Euler equation
+可是那個非前進像永遠都在那邊
+全部都是因為那個low of inertia
+但實際上有一個
+有一個線性方程
+其實他裡面就內建了一個low of inertia
+然後
+這樣
+就是
+for this complex
+value wave function
+寫成這樣子
+我先把那個
+potential term丟掉
+這看起來很像那個heat equation
+數學convention就是那個delta
+就是那個Laplacian
+通常是gradient平方
+這看起來很像熱方程
+不過就是多了一個i
+然後呢
+h bar就是從我整個talk裡面
+他只是一個常數而已
+然後
+其實這個shorting function
+你不應該把他當作是heat equation
+他其實是一個wave equation
+而且是一個dispersive wave equation
+也就是不同的波長的波
+會走不同的速度
+然後
+也就是如果
+我去看這個波的group velocity
+然後你就去看
+dispersion relation
+實際上會正比於wave number
+然後那個
+wave number就是
+通常是measure by
+波寫成E2的IC
+就是gradient C
+就會顯示他的wave number
+然後
+重點是就是說wave number
+還有那個波的這個
+政府實際上全部都是被
+只是被那個group velocity
+然後wave number自己又是
+那個group velocity
+所以你就會得到一個就是
+velocity advected by velocity
+的現象
+也就是他裡面只是內建了一個
+像我們剛剛看到飛行性現象
+只是因為速度是寫成
+他的exponent的微分
+所以說根據這個變數變換
+你就會看到那個
+本來非線性的東西可能會變線性
+或線性可能會變非線性
+然後那個這個Schrodinger equation
+把它取log以後
+然後得到的東西就會是
+就會是這個慣性現象
+然後這其實就是
+在1926年的時候做的
+就是說那個時候1925年
+就是剛寫下Schrodinger equation
+然後隔年就說
+那我們就把那個amplitude
+square寫成流體的density
+也就是
+那個可以把它當作是probability density
+然後呢
+然後你把這整個系統當作是流體
+然後那個流體的速度呢
+就是gradient of theta
+也就是剛才那個group velocity
+那你這樣寫的話
+你就把這些東西帶進去
+然後把時部
+區域分離然後你就會發現
+基本上就會是一個
+如果有看過流體的話
+你會發現這個就是
+第一條方式是
+conservation of mass
+第二個是conservation of momentum
+唯一跟那個
+就是可壓縮
+的固點流體不一樣是這個
+然後這個也是到最後
+就是氧化成封面
+的一個關鍵
+然後
+不過這個像我們之後
+就不會出現
+因為你可以知道我等一下會把
+compressible equation把它
+就是加個壓力然後讓它變incompressible
+然後
+在那個情況下壓力
+density會變constant
+所以其實我們就
+等會就不用管一下
+對
+所以剛剛只是前言就是說
+這兩個其實是有一個觀點的樣子
+前言是少偉的第一個
+之後的第一個是
+第一個是那個
+第一個是
+就是那個叫做
+continuity equation
+Q是那個密度
+所以
+所以這個只是那個
+質量守恆
+hbar.0
+你hbar.0
+看起來很像
+但是那個
+它那個hbar.0
+流體的速度也不見了
+除非你的θ的那個
+gradientθ趨近無窮大
+對
+沒有就是那個
+你看第三行
+如果你hbar.0的話
+你的θ就會
+你可以讓
+hbar變很小很小
+它就會變成就是
+它就會變得很接近流體
+接近流體
+但是你不能直接斥等
+就把這個當作變數變換
+在這個新的變數下
+我已經QRQR
+後來換hbar32
+ok
+但這個就imply你的θ就已經是
+無窮正當函數
+就當作是
+就假設這個
+換我這個
+那就ok
+所以我talk的overview
+就是說
+我一開始就是直接
+simulate
+給大家看simulation的結果
+然後呢
+接下來我會想要講它背後的
+有一個就是比剛才那個變數變換
+還要更深層的一個理論
+叫做geometric cleft variables
+我不知道那邊可以講到多少
+最後這個dynamics的部分
+我會就是大約講一下結果
+但是中間可能有些部分
+就是
+我就盡量講
+如果大家有不懂的地方的話
+盡量提問
+我會用到一些
+比較複雜的數學
+我們就發了一個paper叫
+把cat換smoke
+其實就是說
+就是做一些那個
+流體的模擬
+所以我們那個paper
+就是用google
+就會看到我們
+好,就是我們用那個medlon的idea
+然後呢就是有
+就是想要說把fluid density
+就是說我們要
+instead of using density
+和velocity來描述流體
+我們就是用complex value
+wave function
+來做一個變數變換
+然後這個fluid velocity
+其實有這個你可以
+gradient theta你可以把它寫成
+右邊這個式子
+如果你對量子力學
+熟悉的話就會發現
+這個其實就是
+-i gradient就是那個momentum operator
+所以它其實就是evaluate
+那個momentum operator
+不過這個重點是
+這個就算看起來
+好像很棒
+velocity is just a function of function
+表示其實你就不會有
+任何的vorticity
+你再取velocity再取curl
+以後你就看那個
+局部的角動量你會發現完全是零
+也就是你的potential
+你的velocity就只能是這種
+potential flow
+完全沒有漩渦的那種流體
+然後那種流體就變得太簡單
+就不有趣
+要解決這個問題的話就是
+我們就是考慮那個
+component Schrodinger equation
+然後你可以把這種東西想成是
+spin half particle
+或是你把它當成兩個component
+然後
+它的Schrodinger equation還是一樣
+component wise就是滿足
+還是一樣的one component Schrodinger equation
+然後呢
+剛剛那個變數變換
+就是流體的密度
+還是一樣是
+amplitude squared
+但這個情況就是
+兩個channel的
+density的和
+然後速度場
+也是一樣就是用剛剛那個
+momentum operator
+然後你把這個寫下來的話其實它就會變成是
+兩component的
+那個速度
+但是做這種
+線性組合就看它們的密度
+然後就線性組合
+然後在這個情況下你再取curl的話就不會再變
+所以其實它就是可以
+有就是更多的
+可以描述更多
+有趣的流體的那個狀態
+所以我們就
+從one component換成two component
+的wave function來描述流體
+然後
+現在就是說
+要描述流體的話
+要描述incompressible
+流體就我們已經有那個
+inertial motion
+要描述就是不可壓縮流體的話
+我們就把我們就加一個
+potential term
+這個對應到的速度場剛好就是
+divergence tree
+就像Euler equation的時候
+加上壓力項
+流體變不可壓縮流是一樣的
+然後我們就把這個
+constraint of Schrodinger equation
+就是incompressible Schrodinger equation
+然後它的解呢我們就把它叫
+incompressible Schrodinger flow
+然後
+然後那個
+這就跟其他的incompressible flow一樣
+你只要速度是
+你只要有那個continuity equation
+就是說
+你只要質量是守恆的
+然後再加上它是不可壓縮流體
+就是那個體積是
+隨著時間是不會變的話
+那它的密度也會隨著時間
+就是也不會變
+所以你可以就是initially
+如果density是constant的話
+它就永遠都是constant
+我的問題很簡潔
+好
+其實你把它現在變成說
+你把它變成一個two-component
+的vector
+就是你現在是two-component
+然後你就覺得說
+那就是如果我今天把screen
+是zero的話它不會有density
+可是你現在有兩-component的話
+等於是你需要這樣
+所以你至少要兩-component
+可是那有什麼implication
+變成screen 1
+可以其實我們一開始推的時候
+就是n-component
+然後
+two-component
+然後我們之後就是說
+two-component就夠
+然後這個夠的意思是
+是真的有一個就是說
+在
+我在中間
+talk的在比較後面的地方
+我們會有一個指問題
+就是說給定任何速度場
+能不能夠找到就是這個
+two-component wave function
+等於說它對應到速度場剛好是match
+給定的
+然後就發現two-component做的還不錯
+就表示說
+忽然間它就可以
+那是在二維嗎
+三維
+你說domain嗎
+還是
+就是流體的domain
+就是流體的空間
+對,三維
+二維或三維
+sorry
+sorry
+所以你右手邊有四個variable
+就是每個size
+對
+左手邊的話拼幾個
+一個的話
+就是兩個或三個
+所以你如果是兩個的時候
+代表右邊有一個redundancy
+那
+那redundancy你知道嗎
+你說兩個的時候
+就是說四個component
+那個好像是
+像是四維向量
+可是本來是只有三維向量
+要被描述
+它是有redundancy
+然後
+我想一下
+它是一個symmetry
+什麼
+redundancy是一個symmetry
+有,它其實
+後面會開始有點複雜
+它有一個symmetry是
+就是說
+你這樣寫下速度場的時候
+應該說
+到最後我們會做
+就是不可壓縮流
+不可壓縮流它只是那個速度場
+就再降了一些維度
+就是說所有的速度場
+它都可以做一個projection
+就是quotient掉所有的
+這件事情以後
+那個
+這個空間
+然後這個空間其實到最後dominant就只有
+就given
+curl of u
+就可以唯一決定u的多少
+然後那curl of u
+會被map到
+這個two component
+wave function
+所對應到的spin vector或block vector
+做掃出來的面積
+之類的
+每一個symmetry是面積不變的
+的變換
+它都會是對應到
+一模一樣的速度場
+所以就是到後面
+你會看到一個很大的
+就是redundant degree of freedom
+所以右手邊
+一般quantum mechanics
+你的overall frame是不重要的
+所以它是physical還是
+還是
+一樣它剛好
+就match到剛剛速度場的
+就是對速度場裡面
+就需要做pressure projection
+的那個
+的redundancy
+最終還蠻會match
+我速度場裡面本來就需要
+要除掉
+那個
+某個redundancy來描述
+那個不可壓縮流
+然後剛好對應到
+就是shorting the equation
+裡面的phase shift
+那為什麼你不管
+這個
+這個是
+其實
+就是domain
+甚至是更高維度
+它也是可以這樣做
+這個其實是因為那個
+我不知道怎麼講
+就是
+簡單來說
+verticity是一個tool form
+然後只有那個東西是
+是那個什麼
+是需要拿來描述流體
+也就是
+就是
+如果我講說那個速度
+不可壓縮流其實是
+是那個什麼
+是等價於某一隻屍體
+然後那是一個tool form
+就是你到最後其實只需要
+一個map
+到一個
+頂多只需要二維空間
+所以你的vortex是一個co-dimension
+對對對
+假設它在
+這個方向就是一個constant
+它不會這樣歪來歪去
+它可以歪來歪去沒有關係
+後面你會看到
+現在就假設這只是madeleine給我的
+這樣子
+不會講turbulence
+就專門講turbulence這件事情
+但是我會講一般的vortex
+dynamics
+然後它的
+數值模擬非常的簡單
+就是
+你只要做一個回圈
+然後每一步你就稍微解一下linear shorting
+然後它就是對應到
+你的場
+它就會像是模擬了
+像是那個慣性運動
+然後接下來你就apply potential force
+然後把它就是
+就是讓速度場變成divergence tree
+然後
+所以我們就開始做一些模擬
+然後最後我們發現其實它就是對於
+那個
+simulating vortex dynamics
+非常的成功
+什麼是vortex
+就是說我剛剛不是說curve
+velocity那個東西叫做vorticity
+然後在真正流體裡面
+他們常常就是
+他們只會出現在
+就是從boundary裡面
+就是從boundary線出來
+然後所以它一開始形成的時候
+就會是已經是low dimensional
+就是two dimensional geometry
+然後那就是vortex sheet
+然後vortex sheet其實不穩定它會快速的就是
+捲成一個一個vortex filaments
+然後它會變成一維的一些
+vortex結構
+然後那些結構它會變得很穩定
+所以我們日常生活中看到很多vortex它都是
+一維的這種vortex filaments
+旁邊那兩個是真的照片嗎
+這三個都是照片
+喔是照片不是什麼photoshop
+做出來的假照片
+這看起來是
+看起來是真照片
+顏色看起來很鮮豔
+加濾鏡
+加濾鏡算成照片
+這是黑白的
+這也是真正的影片
+可是vortex filaments其實很難
+一般用一般的
+一般的那個什麼fluid
+software其實很難模擬
+因為這些vortex的
+motion其實是
+非常sensitive
+它的那個vortex
+thickness
+也就是
+vortex如果變粗一點
+它就忽然間變很難
+很細的時候它就可以衝很快
+所以說如果你要真正把
+而且整個流體它又是dominated by
+就是整個fluid motion
+它又是dominated by
+這些one dimensional filament
+所以你要把整個流體
+你要計算到就是
+quantitatively correct
+需要用非常高的high resolution
+去resolve那些vortex
+要不然那個thickness
+就會被解讀錯誤
+然後就會整個那個
+整個vortex的dynamics就會是
+quantitatively wrong
+所以你either是需要非常貴的那種
+或者你需要用一些很複雜的
+方法是要去
+真正用一些曲線來描述那些vortex
+然後真正做那些
+拓撲的reconnection
+然後
+但如果用Schrodinger equation
+我先講一下
+就是說這個
+困難處你可以從一些benchmark test
+看到,有一個現象叫
+leapfrogging vortex rings
+如果你把兩個vortex ring就是前後掰
+然後後面那個ring它就會被吸到
+吸到前面那一個
+然後這個真正影片
+就是它們就會交換位置
+然後你就會看到兩個
+那個線上的人看到會不會都是
+那個
+反正就是兩個ring會leapfrogging
+可是如果你用一般的
+那個,你用一般的
+數值模式,一般的數值方法
+寫Euler equation
+or Navier-Stokes equation
+就算你是用非常高級的方法
+做出的網格的話
+你兩個vortex它很快就會merge在一起
+然後你就看不到那個leapfrogging的現象
+然後現在我們就是解
+我們剛剛
+推出來的incompressible Schrodinger flow
+用一模一樣的resolution size
+然後你可以看到它卻可以
+做這個
+可以重現這個
+觀察到的物理現象
+然後
+我問一個問題
+你現在所說的
+重現這個現象
+是說quantitative可以看到這個
+樣子,但是說
+你把它換去parameter
+真的可以
+quantitative可以變成那個
+剛剛你看到的
+對啊,因為
+這裡面當然是有一些parameter
+所以如果你想要做進一步的
+parameter
+tuning的話,當然是可以
+因為這個現象其實很單純
+就只是兩個ring
+然後它有一定的vortex
+然後在ring是夠小的時候
+它最後的dynamics就是dominated
+就是vortex filaments
+的dynamics
+然後那個東西就是
+就算是Schrodinger也可以推出來
+在那個漸進
+行為下面
+它是一樣
+就是
+你可以推出
+它那個
+兩個ring就會這樣跳
+對
+然後這種
+系統真的很robust,你只要把兩個ring放在一起
+它就會跳
+等於它的淡進化距離
+都會跳
+所以我們就只是隨便擺
+然後它就會跳
+然後另外一個現象也是
+也是一個很簡單的setup
+你把兩個vortex ring就是互相射
+但是有一個角度
+然後它們就會相撞,然後接下來它們就會reconnect
+然後就會從另外兩個方向
+再分離開來
+然後這個真實的實驗
+影片
+你會看到兩個ring
+它就是相衝然後再分離
+這樣子
+如果你用一般的
+LT
+的這個
+的solver
+它就是很難模擬這件事情
+它真的需要非常高的解析度
+才有辦法做到
+所以一樣就是用我們的方法
+就是在一個很粗的網格
+就可以發現這個現象
+然後我剛剛說
+就是說一般的
+一般模擬LT
+的時候它的grid resolution
+其實dominant
+很大一部分,所以你會看到說
+用一些傳統方法
+去
+用一些傳統
+用傳統方法去看那個
+那個節
+你會發現在不同的resolution
+你看到的結果
+所以用我們的方法在很粗的網格
+它就接近收音
+然後我們還可以模擬一些
+有趣的其他的現象
+像是
+就是可以用在
+computer graphics裡面
+比如說可以模擬jet
+可以模擬obstacle
+後面的
+vortex segment
+然後可以模擬moving obstacle
+這影片要
+看起來順的時候才好看
+然後還有那個
+還有另外一個
+moving obstacle
+然後因為它在這種
+vortex dynamics如果可以算得很準的話
+像我們的方法
+你就會看到比較真實的
+vortex
+然後這個也是在真正
+在computer graphics的應用裡面
+因為兩個
+兩個墨水相撞
+然後你會看到secondary small ring
+shoot off
+我已經做的時間就是把兩個
+就是一兩拖
+就是ink
+它就會
+它也會看到
+然後問一下
+網格粗細
+網格粗細
+就是說
+那個
+我的computation grid
+每一邊要切多少
+多少份
+通常
+通常
+可能一般就是常會切
+256
+乘以256乘以256
+或512乘以512
+然後那個就是需要到
+就是常常都需要
+到非常那個
+要吃掉非常大的記憶體或是
+需要用到cluster去計算
+我這個是64乘以64乘以64
+通常是在這個網格
+然後你就在這些grid裡面介紹
+對
+就在這些網格
+相對什麼意思
+我問你
+相對你中間放的東西多大
+喔
+就你就看這張圖
+就是
+64 64 64的意思
+就是如果你
+電腦就是放大看的話
+那個
+它底下那灰灰的部分
+其實是那個網格
+你可以看到那個格線
+那個就真正我在這個
+在離散的那個計算上面的
+網格
+所以長度的尺規其實是
+normalize to 100
+對
+對
+就是它有一個physical size
+就是一公尺乘一公尺乘一公尺
+然後呢
+就是64分之一
+這樣子
+然後就把它尺上那個位置
+就變成是這個世界裡面的最小尺度
+然後在這個尺度上面
+我模擬它這個離散版本的
+這個微分方程
+然後理論上在這個尺度
+那個
+說到無窮小的時候
+理論上它會收斂到
+到那個真正連續的世界的
+的界
+然後這個圖片就是說
+64乘64乘64的時候
+就已經很接近了,可是在傳統方法
+你需要到更高的解析度
+才有辦法
+為什麼要選這個
+這個就是那個community
+有點變態
+然後你其實可以加入gravity
+所以就可以
+就微微有一點那個密度
+的現象
+然後那個是利用到
+因為有two component這件事情
+可以玩一些花樣
+比如說兩個component的potential
+放有點不一樣的時候
+你就可以做一些這種效應
+就是
+因為那個
+浮力
+空氣浮力
+被往後推
+然後這邊是bar
+hbar有個單位
+就是公尺平方
+公尺
+公尺平方除以秒
+然後那個
+所以說我通常會把它
+就是取一個dimensionless的量
+所以就根據
+我的真正的尺度
+就是比如一公尺乘一公尺
+它就有一個
+有一個就是characteristic length
+一公尺
+然後就開始除掉這些量
+然後憑經驗
+就是這個
+plan constant跟真正的plan constant
+沒有任何關係
+我最後的分析會說
+其實你不用靠近0它就一定會跑出來
+就是說
+我們的經驗發現我的hbar其實可以選很大
+然後你剛剛看到的現象
+都是hbar選很大的時候
+的結果,然後最後我們做數學
+分析就發現它的那個
+在hbar就算很大的時候
+它perturbed的
+結果就是說
+它跟Euler equation的差
+所造成的效應
+就是只有在vortex的地方
+會夠明顯,然後其他地方它都會
+收斂的非常快到Euler equation
+就是有
+這類的那個什麼
+然後在這種情況下你就會發現
+它就會很快
+在hbar選很大的時候它就會收斂到
+就是vortex dominated
+的Euler equation
+然後你就會發現那個
+這個可能要到後面的時候我講
+不知道我在說什麼
+但
+但沒有錯就是
+hbar到很小的時候
+它才會變成
+exactly是Euler equation
+你剛剛看到就是說,我在hbar很大的時候
+我可以去模擬一些
+現象,然後是match
+我在流體裡面看到的現象
+所以剛剛是同樣是vortex
+對
+也可以
+也會一樣就是在蠻粗的網格
+對,常常你hbar
+太小的話
+對,然後在
+那裡面其實是hbar你要選
+hbar會對應到那個
+一個
+如果大家知道超流體的話
+裡面有一個hbar,然後那個東西會造成
+vortex的quantization
+然後也就是每一個vortex
+的unit會只能是被quantize
+成hbar的總數
+然後在那個情況下的話
+你就會看到說hbar很小
+你就同一個,你要有同樣粗細的
+你要有同樣strength的vortex
+裡面其實就有一大堆的小vortex
+組合出來
+然後你可以把真正的流體
+當作是有
+就是vortex變成是continuum
+就是說
+vortex可以取任何次數
+大小,你也可以當作是
+hbar是無窮小,然後有大堆的vortex
+組合出來
+可是在hbar很大的時候,它還是會有一些
+比較粗的vortex
+那些vortex dynamics就跟流體裡面的
+vortex dynamics是類似
+呃
+呃
+所以simulation的
+部分是
+因為nonlinear
+是什麼的nonlinear
+還是因為它有些特殊的難題
+有兩個優勢
+一個是
+一個是那個什麼
+就是方法變簡單
+就是nonlinear term你不需要去管
+要怎麼去理善化
+因為那個東西是蠻困難的
+理善化你只要
+理善線性系統
+所以在numerical method裡面是變成是
+就是從
+就是一個極度的簡化
+然後另外一個是
+就是說我就算是去模擬
+就用很高階的方法去模擬
+那些nonlinear overlay
+你看到在粗的網格上面
+它還是沒有辦法去模擬那些現象
+然後在我們的方法就是
+我在很粗的網格就可以模擬那些現象
+然後especially on those
+所以主要是這兩個優勢
+如果還有人問
+那個hbar的物理是什麼
+它不是有高等級的問題嗎
+hbar的物理
+在這個流體的世界裡面
+它就是
+你可以把它當作是一個parameter
+然後它會連結到就是說
+那個
+通常看到
+很多那個什麼
+像比如說
+這個動畫裡面
+你看到後面有一小坨一小坨
+那個
+它其實到最後
+Vortex它會想要一直cascade到很小的尺度
+然後看起來很像turbulence
+可是它其實會因為hbar的關係
+hbar不為0的情況
+它會到某個尺度
+它就不會再繼續下降
+然後那個是Vortex的compensation
+你剛才講到
+你剛才都沒有假設
+對
+不會
+會啊
+它還是會cascade
+那個什麼
+那個粘滯像是
+本來的流體它就會
+Vortex會cascade
+粘滯像的意思是說
+在某個尺度下面的時候
+粘滯像會dominate
+在某個尺度下流體就消失了
+那個Vortex就不會再繼續cascade
+它就會變成是diffusion
+然後就不見了
+然後就把那個能量吃掉
+所以說我們在看
+那個turbulence是看
+因為像說
+如果我的粘滯像就是越來越小
+它就越來越容易造成
+有很多很小的尺度
+還沒有被吃掉
+看起來就是turbulence
+然後在沒有粘滯像的話
+很容易發展成
+這其實還是open problem
+到底turbulence是怎麼誕生的
+可是一個typical情況就是
+它會從大尺度一直cascade到小尺度
+然後就dominate成一個
+就是spectrum
+就不同的
+所以你是說
+反而是粘滯性太大
+不會沒有turbulence
+粘滯性太大
+你就看不到turbulence
+因為它還沒有產生新的Vortex
+新的Vortex
+它就糊掉了
+然後
+記得在三位的時候
+cascade和universe
+cascade還記得
+有沒有辦法解決
+turbulence
+我們還沒有做那一方面的
+就是computation
+我們有想說就是
+去就是
+用一個很大的網格
+就是解析度很高的網格
+然後放
+就是一些就是
+隨機的速度場
+也就是隨機的wave function
+然後用我們的方法模擬
+然後去看它的energy spectrum
+然後去看看去比對
+那個turbulence
+但在這個work我們還沒有做那件事情
+但是通常如果你要看說
+這個東西能不能model
+turbulence中就先從
+energy spectrum去看
+因為我以為cascade
+versusuniverse cascade
+是最重要的東西
+有沒有辦法
+是啊
+之一,但是還是有其他
+其實就是說
+我感覺當時
+很多研究
+在theory的角度
+我會覺得
+universe cascade
+比較好
+為何
+然後我們還有就是
+左邊是
+simulation,右邊是
+真正的影片
+這個是我們常常去
+秀給別人看
+可以用我們很簡單的演算法
+然後去做一些
+遞增的模擬
+然後這邊是第一部分
+的remark就是說
+它是就是說
+它就是突破了我們
+傳統上想像流體的計算
+通常的那個框架
+是什麼樣子
+通常我們會說要怎麼樣去理想化
+那些飛行現象
+然後在這個框架下面就發現根本沒有這個問題
+然後還有就是說
+特別在
+一些Vortex Dynamics
+我們可以模擬
+那些現象,然後通常
+會想像說要模擬那些現象
+我們需要解Euler equation
+然後
+要在很高階
+很細的網格
+才有辦法模擬現象
+然後還有一個比較
+數學上面
+有趣的一個
+就是說
+這個就是
+incompressible Schrodinger flow的equation
+寫起來是這樣
+然後restricted
+一個
+divergence-free constraint
+然後這個divergence-free constraint
+其實可以翻寫成
+就是還是用
+Wave function還有Laplace來寫
+Wave function整個方程式的
+只剩下Laplace
+然後這個其實是一個
+從流體到Schrodinger
+一個很特別的地方就是說
+流體你常常會需要講到
+你用到很多那個數學結構
+然後你常常只能討論說
+二維還三維
+或是就是你要在某個manifold上面
+那這邊的話其實Laplace
+可以定義在非常弱的空間
+你可以只有一個graph
+然後還是可以討論graph
+或是point cloud
+就甚至不用微弱概念
+然後在那個世界裡面還是可以討論
+類似流體的現象
+我們是沒有
+我們這個是一個surface
+所以這還算是manifold
+可是然後呢
+然後我們就是有這個兔子
+然後有它的graph
+然後就從那個graph就可以得到graph Laplace
+然後那個資訊就是唯一你需要知道
+然後你就直接去解剛才的那個
+interpressible Schrodinger equation
+然後你就可以很輕易的
+就是用一樣的複雜度
+就可以就是在
+這種很一般的空間上面模擬流體
+然後
+那是剛剛是我第一部分
+然後呢
+接下來我要講它就是
+背後就是說那個什麼
+這些wave function
+所表述的這個
+的東西
+跟那個什麼
+它所encode的資訊
+跟那個什麼
+跟流體裡面encode資訊的關聯
+然後這個會用到一個東西叫做
+叫clutch variables
+就是我們
+發展這個理論
+就是可以把Schrodinger equation
+跟classical field連結
+然後
+然後我們有個side project
+就是用這個東西去做一些
+就是vortex visualization的工具
+notation就是說
+我們常常就是速度
+我們速度常常都是用vector field來表示
+所以就是看到右邊就是
+一個魚缸裡面
+就是很多箭頭
+or alternatively你可以考慮它的
+例如我叫covector
+或是
+把index往下丟
+或是它長相就會變成是
+你可以把它
+想像成就是你把每個箭頭
+換成那個
+它的垂直補空間的一些
+hyperplane
+然後的場
+differential form
+它的定義是說
+differential form就是說它可以被積分
+它可以沿著一些曲線積分
+就是說它是one form
+它就表示它可以沿著一維的東西積分
+然後它沿著一維積分的evaluation
+我們把它定義成就是
+剛才的速度場
+的那個circulation
+的線積分
+然後它通常被
+visualize這些hyperplane
+你看到一堆這種
+一堆一堆的這些plane
+然後沿著一個曲線積分的時候
+那個曲線就是
+相交於這個
+這些hyperplane的那個
+的密度
+相交的那個密度
+然後積分起來
+那個量就是你的積分量
+所以常常就是用這些hyperplane去描述
+這個velocity one form
+我還需要
+就是有一個
+就是抽象概念叫pullback
+就是如果你有兩個空間
+然後你有一個函數map
+就是從一個左邊的空間送到右邊空間的話
+右邊如果有像剛剛那種differential form
+你可以把它就是pullback
+變成是左邊的空間的differential form
+也就是從左邊
+原本只能在右邊空間積分
+可以跑到左邊積分
+然後那個定義就是說
+沿著某一個幾何上面積分
+它定義就是說你先把它map到右邊
+然後evaluate右邊
+然後那個符號就定義成f star alpha
+然後就是因為那個什麼
+通常你不用這個符號的話
+就是你常常都會寫對假空間
+所以這個就是一個
+幾何裡面我們常常就是寫pullback
+這樣就好
+然後pullback
+還是有一些漂亮的
+一些定理這樣子
+這個我總會用到
+但是那個只是在一個很細節的推導
+所以我這邊就不講了
+只是說有一些很漂亮的
+比如說什麼f
+pullback
+pullback
+會跟那個什麼
+有個東西叫exterior derivative
+然後這個事情如果你用一般的語言去寫的話
+就是會非常難看出來
+所以我們才會
+就是喜歡用這個
+就是用這種
+coordinate free的
+回生幾何的notation
+有一種特殊的pullback
+是在流體裡面的話
+就是說你考慮那個map
+pullback是flow map
+就是你那個流體在流的時候
+就是
+你的map就是從時間為零的那個空間
+送到時間為t的那個世界的空間
+然後這樣子的話
+你就可以去
+那就是從那個速度場
+自然就是產生那個map
+然後那個什麼
+在時間為t的那個
+世界裡面的那個物理量
+你就可以把它pullback到時間為零
+那東西叫做
+Lagrangian Coordinate
+在Lagrangian Coordinate上面的物理量
+然後常常我們會喜歡去討論
+在那個Lagrangian Coordinate的物理量呢
+對時間的微分就看那個東西是不是
+隨著流或是守恆的
+然後那個微分我們就是叫做Lead Derivative
+然後
+如果那個物理量隨著時間也會變的話
+它只是就會變成是那個
+叫做就generalize
+在下面那個
+alpha對時間還有微分
+Lead Derivative
+然後
+然後我等會常常會講說
+這個物理量只是被purely of the vector
+只是被流體carry走
+他意思是說
+是說他把它pullback到
+Lagrangian Coordinate以後
+它隨時間是不變的
+大家聽得懂嗎
+沒關係反正那個什麼
+速度
+那個Euler equation他把它寫成
+in terms of velocity one form
+寫起來就是這樣
+就是說其實速度的那個one form
+也就是剛才那些
+就是visualize的剛才的一個hyperplane
+那個covector
+那些differential form
+其實它只是被purely of the vector
+up to右邊呢出現一個
+那個derivative of some function
+微分集我們常常說
+那個叫做一個exact form
+然後
+然後那exact form就是selected
+意思就是說
+那個velocity form
+是divergence free
+然後那個
+Vorticity equation其實是這樣
+Vorticity是被purely of the vector
+然後這邊Vorticity
+被視為是一個two form
+Vorticity被視為是一個two form的意思是說
+Vorticity
+其實是一個量它不是一個向量場
+而它是一個量
+它要等著被在二維
+的曲面上面集中
+所以我們常常會說Vorticity two form
+我們常常會說Vorticity flux
+就是說其實我們真的關心
+我們能夠measure的全部都是這種flux的概念
+都是要在二維的曲面上面集中
+然後
+然後
+然後
+如果你把那個什麼
+如果你看到一個曲面它隨著時間在那邊漂流
+然後你全部把它pull back
+到它時間位領的狀態
+然後去把那個
+二維的Vorticity flux
+全部就是放回原本的空間
+去看的話你會發現它隨時會變
+也就是Vorticity是被purely of the vector
+你要問
+Vector的意思
+不是說
+你再問一次
+就是流體裡面就是
+還是有一個速度場
+是U
+U跟Eta的關係
+U跟那個Velocity one form的關係
+互相就是
+Eta是Velocity flat
+就是
+它是它的covector
+然後
+那個
+物理量是直接被一個
+就是在這個
+速度場裡面只是被purely of the vector
+就是說
+它隨著時間
+就是
+就是你看到那個L sub U
+就是說它depend on
+還是depend on那個速度
+然後Eta
+U又是depend on Eta
+所以它只是這個非正式的方程式
+Vorticity equation也是一樣
+就是說其實
+Vorticity必須要是等於
+D of Eta
+或是D of U flat
+所以Omega又是跟那個
+速度場是couple在一起
+然後在這個情況下你又再講說
+Vorticity只是被
+Velocity purely of the vector
+也就是滿足這個equation的話
+那合在一起它就是也等於加於Omega
+我這只是講說它的那個
+就是
+這個沒有什麼好處或不好處
+只是不同的formulation
+就是我們
+從Euler那個年代
+我們都是講說purely of the vector
+就是這個詞並不是
+我發明的
+所以這沒有什麼
+不好處
+我只是說
+我只是
+說我的purely of the vector
+定義是用力derivative
+可能只是一般的material
+derivative或只是U dot grad
+這個量等於什麼東西
+我可以想像是
+寫一個通用的
+對
+U dot grad
+對你說的那個
+U dot grad那個東西
+是指適用於zero form
+然後比較少人只講說
+對於one form two form或其他tensor
+是要怎麼被journalize
+然後常常在那種情況下
+常常人們就只能夠寫說
+我把那些tensor我寫一個basis
+然後對於那些
+它的前面的係數
+它們就變成zero form
+然後你可以在那個上面去做
+對它時間片位分
+加上U dot grad的那個東西
+可是常常右端上就不會等於零
+這個是因為它沒有take care of
+就是說它其實不應該是一個function
+而是一個tensor
+所以你的literate經常是一個
+對它包含了
+它包含了那些東西
+所以說
+常常大家會很surprise說
+Vorticity不應該被寫成右端像是零
+所以我這邊多了一個equation
+常常我們大家看Vorticity
+是把它當作是vector的話
+或是說three components
+然後配上一些
+配上某個basis
+然後你會發現它右端像不是零
+然後那個東西就被視為叫做Vortex stretching term
+然後這常常會說二維和三維的流體
+所以不一樣就是說
+不同維度有時候會有Vortex stretching
+有時候沒有
+有時候它是co-dimension
+不一樣的時候
+你原本應該是用tensor
+然後背了vector東西
+要翻譯成係數
+係數是不是purely a vector的時候
+就是有這個差
+然後這邊就是想要強調
+我的動畫就是全部都只用上面的notation
+我就用derivative就可以代表
+就用比較簡單的notation
+可以代表
+這些需要用到的東西
+好
+前面是notation
+然後我現在可以講什麼是clebsch representation
+這樣
+就是說在clebsch
+大家知道它是1850年代的人
+clebsch-gordan coefficient大家聽過
+他可能更多人就不知道量子儀式
+clebsch
+他們好像是同一個時代的人
+但是他們是描述
+他們並不是拿來描述
+量子力學
+他們是想描述SU
+那個是在19世紀的中期
+所以大家聽clebsch想說
+多近代的人
+沒有它是那個
+19世紀中
+但它有一部分工作是在
+流體比
+在clebsch以前
+流體不是只討論
+potential flow
+因為一來大家還不太清楚
+大家還不太知道curl
+這個operator
+而且那個時候也沒有飛機
+大家最關心的流體問題
+就是要輸送水分
+水管
+所以常常都是potential flow
+所以在那個情況下
+流體就是常常
+velocity one form就是d of some function
+就是velocity vector field
+velocity vector field
+這是potential
+但這個問題就是說
+就沒有velocity
+所以clebsch他寫了一篇paper
+就在Helmholtz第一次
+發明了這個velocity
+那篇paper的後一年
+他就馬上就想說
+potential flow應該要被generalize
+要不然就那個velocity接軌
+所以他就
+他考慮了另外兩個potential
+一個是叫lambda一個叫mu
+他就說那我把velocity one form
+就寫成lambda d mu
+加上d phi
+然後呢
+故意這樣寫
+他就是generally會有維持實體
+這個是在那個年代很盛行
+因為像在熱力學你也可以看到
+就是說什麼熱量
+不是那個什麼
+不是close
+然後就發現他是那個
+就把他故意寫成t d s
+然後
+那個時候
+大家就是說
+你會很容易看到這種lambda d mu
+這種consideration
+所以這個是蠻自然的
+然後那個時候d phi你就可以當作
+那個時候用來做potential
+就是說lambda d mu可能不一定是divergence free
+可是我就故意加上d phi
+他就一定可以divergence free
+只要phi全都夠好的話
+然後如果這樣的話
+那我去看他的velocity two form
+發現他剛好就是d lambda wedge d mu
+然後phi就不重要了
+可以但是是這樣
+你給定任何lambda mu
+phi可以被solve
+by the fact that
+eta needs to be
+divergence free
+就是說那個
+decomposition剩餘的那一項
+或是
+就是說任何向量
+你可以
+三維
+任何三維向量場
+你可以分成divergence free part
+和curl free part
+你是想問說這個是不是唯一的分解嗎
+他不唯一
+所以phi不是well-defined
+沒有啊
+就像那個什麼
+一般的potential flow也不是well-defined
+就是你phi可以講任何場數
+d phi是well-defined
+左段向是well-defined
+這沒有什麼well-defined或不well-defined
+只是說這個東西可以被represented by
+這些coefficient
+就並不是說
+phi是被defined成
+eta的d inverse
+那這裡面可以說他不是well-defined
+就是說
+我現在只考慮一個速度場
+他是d of some function
+然後去討論那些function
+要怎麼去描述這個流體
+然後caption就是說
+我要多一點potential
+三個potential
+然後故意擺這個form
+使得說他不會
+curl free
+他不是
+orthogonal splitting
+我並不claim說
+這個是一個splitting
+所以沒有well-defined
+或不是unique splitting
+他不是這樣子
+然後你也可以考慮說
+那這裡面的gauge symmetry是什麼
+shuffle lambda mu phi
+然後他對應到左邊還是一樣
+這的確是有很多的
+這應該很容易看出來
+然後
+老子這邊就提到說
+omega長這個樣子
+omega長這個樣子的意思是說
+等會你會看到
+他其實就是lambda mu plane上面的area form
+這很像那什麼gradient mu
+gradient lambda cross gradient mu
+那種感覺
+一個小小的area
+ok
+可以
+對
+他已經可以當作是
+如果你要把他當作是某個vector potential
+omega會對應到他的
+magnetic field或是curvature
+對對對
+其實等會我會用到這件事情
+然後
+所以cache當時的工作
+就是說我有提
+就是把他當作是三個potential
+來描述
+然後你還可以問說
+那三個potential
+要滿足什麼creation
+然後就發現其實就是那些function
+只是被purely elected
+然後phi呢
+而是lambda和mu是被purely elected
+然後呢phi只是那個什麼
+就是說每個時間點他是故意去選擇
+所有那個eta
+會是divergence free and for all time
+然後這個是cache的工作
+然後呢但他其實那個什麼
+並沒有那麼有名
+然後那個
+但是近代還是有一些工作
+就是用在上面
+然後比如說Marston他們
+就是就發現cache representation
+可以讓流體
+你可以把流體描述成
+Hamiltonian system
+Hamiltonian system就是通常你會看到一個
+什麼generalized coordinate
+和他所對應到的momentum
+就會有一個那個position momentum的那個
+關係只是無窮微版本
+這樣子因為流體有無窮微的自由度
+然後那個
+然後剛剛的lambda和mu
+剛好會對應到
+就是position和momentum
+再兩個加一點這樣
+然後所以他裡面有一些漂亮的
+數學結構
+然而就是那個
+大家會覺得這東西有點太人工了
+就是覺得好像不太實用
+最主要原因就是因為
+就是有一大堆的流體沒有辦法
+一大堆的向量常識沒有辦法被顯示
+lambda體沒有加上purely
+然後這個是
+他並不是只是說
+他並不是只是說他不是那個什麼
+有些速度層可以設計很奇怪
+然後不認識他
+他就是topologically是separated
+就是說如果你的eta
+是寫成lambda體沒有加diff的話
+那有一個量
+叫做helicity
+是你把那個
+就是你速度場
+跟frequency是體的
+就是做內積
+他的總積分
+會度量說那個
+流體裡面的
+vortex line的平均
+平均打結的量
+也就像那個
+你看看
+如果你有兩個vortex filaments然後剛好有一個linking
+這樣helicity就不在裡面
+然後
+然後他可以用積分
+描述
+可是如果說lambda體沒有加
+如果eta寫的lambda體沒有加diff的話
+他的total helicity會在裡面
+然後就會
+就會造成那個
+有一大堆速度場那些helicity不會領的東西
+就是topologically
+沒辦法被描述
+描述成這種情況
+沒辦法描述成catch representation
+而且就算可以的話
+其實要真正找出那個lambda
+是很困難的
+而且就算找到他也不為意
+就像你剛剛查到的
+有
+然後如果在更高維度的
+流體的話比方五維流體
+他有一個稍微再高一階的
+helicity
+比方二維流體他就沒有人會討論
+helicity
+然後三維五維七維
+四維的流體你還是可以討論
+three dimensional
+他隨著流體
+會是periodic
+他是可以被積分在
+三維的
+還是一個three form
+然後如果是
+所以說三維流體的話
+他整個就是一個
+封閉空間
+他就是應該是守恆的
+然後五維流體他就
+他對應到transcendent five form
+一直到
+就是看你維度有多高
+你就可以寫下很多
+那個新的concept
+transcendent
+然後
+因為有這些困難度
+所以有些人想說我還是想要寫clutch representation
+所以他們就發明了
+一個東西叫做multi-component clutch variable
+就是我就
+lambda和mu就弄很多很多項
+然後加在一起
+然後後面就defi
+然後defi就是
+就是做pressure projection
+可是這樣其實
+非常的那個什麼
+沒有新的insight
+因為也就trivial解
+就是你就把它
+三三維的情況你就把它寫成
+就是velocity one form寫成colony的樣子
+這exactly就是一個clutch representation
+multi-component clutch representation
+所以其實你並沒有比Lagrange還要
+那個多的新的insight
+但是有一篇很有趣的paper
+是在1970
+80年代
+那個時候
+就是說他用另外一種新的
+generalized clutch variable的方法
+是這樣
+你把那個lambda mu
+剛才那個就是
+關鍵的那個term
+你把lambda mu合在一起當作是一個map
+是從流體domain送到R2
+然後omega等於
+dlambda wedge dmu的意思是
+二維空間
+平面空間的那個area
+poured back by這個map的意思
+也就是它是做那個變數變化
+幾何上面可以把它講成說
+你就把那個s
+也就是lambda mu合在一起
+那個
+R2 vector value
+當作是這個function map
+從三維硬到二維
+然後你在左邊呢
+你隨便畫一個任何的二維曲面
+然後你在上面可以討論
+它上面的vorticity flux
+它值剛好會等於右手邊的
+那個面積
+這樣子
+我畫多少時間
+大約
+然後
+這個東西就有一個很自然的generalization
+你就可以想像說你把那個lambda mu
+我不要把它當作R2
+我可以當作任意的two-dimensional manifold
+所以你就可以把它
+就是考慮說我會把它畫在球面
+然後呢
+那個
+然後那個vorticity還是可以當作是它
+那個球面上面的area
+poured back
+你就沒辦法寫lambda vector
+你就只能寫成這種變數變化
+這樣子
+然後
+如果這樣的話你會發現
+helicity就不一定有了
+所以就可以發現至少三維流體
+裡面就有大部分的流體
+可以被approximate
+維度不一定要一樣
+我這是一個continuous map
+sc continuous map
+然後
+你就可以討論它的poured back
+就在右邊地方有個two-form
+你就可以把它poured back
+變成也是一個two-form
+然後那個two-form呢
+把右邊的area from poured back
+乘vorticity的話
+它就是一個
+它就像是一個
+它就是capture representation
+因為capture representation的核心
+就是說omega等於g
+lambda vector
+就是它把二維的area from poured back
+乘vorticity
+就是我會說
+syntactic manifold
+就是有一個non-degenerate two-form
+對對對
+對
+syntactic manifold value function
+然後它所induce出來的
+無窮維版本的syntactic structure
+就會是
+當時Marston他們看的
+好
+
+
+
+
+
+
+
+
+
+
+
+
+
+那connection的coverage
+會剛好在你底下manifold的
+那個syntactic form
+那個是key form
+就是把poisson equation
+就是poisson bracket
+會剛好變b bracket
+然後本來的
+Hamiltonian equation就會變成
+那個
+Heisenberg equation
+那個跟這邊沒有關係
+只是說在那個裡面他們會需要用
+有一個定義叫做pre-confirm bundle
+我剛好這邊會需要的是
+一模一樣的定義
+所以我就把它叫做pre-confirm bundle
+data是一個one form
+然後你就可以當作是這個bundle上面的
+connection
+connection的意思就是說
+它定義了什麼叫做
+我底下manifold如果從一個點走到另外一個點
+然後它所對應到的那個fiber上面的位置
+我們要討論什麼叫做parallel transport
+然後你會看到這叫hyperplane field
+它就是講說
+就是如果切於這個
+這叫hyperplane的話意思就是parallel
+然後如果它這個都錯開的意思就是說
+我這底下走一圈以後
+然後我說parallel transport回來
+它可能會走到不同的高度
+然後那個就是Bogospo那定義
+會有一個落差
+然後那個落差的大小就是說
+我的那個
+那個裡面的
+裡面的曲率有多少
+就是這個library
+換了意思就是
+那個phase
+就是通常是
+就是U1的那個
+就是說
+wave function的定義程式是說
+對於底下空間的每一個x和p
+我定義一個
+就是說一個它的
+那個amplitude
+就是它有多少
+幾率在哪個地方
+還再加上一個phase factor
+就是說我可以有同樣的密度
+可是我只可以插一座IPR
+然後可以就在這個factor上面評
+那個
+這個是把那個什麼
+就是另外一個變數就是那個什麼
+density
+因為它是
+它其實也是
+有另外一個數字
+可是那個的bundle
+是trivial bundle
+它只是cross r
+可是這個phase它其實比較複雜
+有點像是cross s1
+但in general它可能會打結
+然後你要這個寫cross s1
+所以它必須要用bundle的語言來寫
+所以說常常就是
+那個
+在就是說
+就是
+density就只是當作是底下
+底下manifold的一個函數
+就好了
+可是如果要講phase的話
+它沒辦法被well defined
+就是你要選一個gauge才能說它的phase是差多少
+所以這個fiber其實是一個compact
+喔對
+在量子力學的話通常是compact
+那這是什麼決定
+fiber structure
+或是global structure
+到底是全球化的
+喔你說我到底要怎麼選
+選sigma還是選Q
+那樣子
+我看那個什麼
+我看維基百科啊
+它是只有
+講u1 principle bundle
+over
+一個syntactic manifold
+就是我這邊稍微generalize一點
+就是說我只要是一文字在裡面就好了
+所以它可以是
+就是不一定是有
+u1的structure
+不知道為什麼
+我的意思是就算今天是全球還是
+我以為你的國國創改
+就能選擇的自由
+對
+那我就不知道物理學家是通常怎麼去
+選這個
+在做geometric quantization的時候
+要怎麼去選
+要怎麼去挑選
+有時候是存在性都有問題
+但是如果說有存在很多
+要怎麼去選
+對
+然後只要你有
+pre-quantum structure
+你就可以馬上討論它所對應到
+那個什麼
+就是velocity capture map
+velocity capture map
+也就是把流體的domain
+種到上面那個bundle的東西就叫做
+velocity capture map
+它可以拿來就是pull back
+上面那叫hyperplane field
+然後把底下的area form
+或是syntactic form
+pull back成velocity field
+有一個很重要的幾何意義是說
+那個
+其實啊
+如果說我的右邊的那個
+右邊那個syntactic manifold 剛好是只有二維的話
+然後假設我的fluid domain
+是只有三維的話
+有一個很有趣的現象就是說
+如果我在右邊
+前面畫一個區域它的preimage
+一定會是一個Vortex tube
+Vortex tube的定義是說
+它會是一個三維的區面
+但是那個Vorticity flux through
+它的那個boundary是零
+Vorticity剛好就是
+Vortex line 剛好就是平行這個tube
+然後
+如果你把這些region縮小成一個點的話
+你會發現它就是
+preimage of point
+是Vortex line
+所以在那個什麼
+應用數學裡面有一個
+很有名的話叫level set方法
+就是說任何這種
+一些幾何形狀
+常常你可以用一個level set function
+你就用一個implicit function
+去描述
+S就像是這個implicit function
+只是它不是map到R2
+它是map到一般的syntactic manifold
+然後呢它描述的那些
+geometry就是Vortex line
+所以它這個是一個
+很自然的幾何的物件
+就是說Vortex line
+看起來很複雜
+但是如果你有這個geometric
+variable的話
+它其實就是那個level set function
+所以如果你有這個level set function
+你要去visualize
+這些Vortex structure就變得非常容易
+然後
+所以這個就motivate我們
+有一個side project
+就是如果要讓
+但是
+記得如果說要讓這個level set
+interpretation成立的話
+你需要讓剛才底下那個syntactic manifold
+是只能有二維的
+然後可是如果我們
+選R2的話我們知道它就沒有helicity
+所以太無聊
+然後我們已經知道說S2
+就是剛剛那個
+有一個兩頁的paper
+有說這個就有general helicity
+然後呢
+那如果底下的domain是S2
+那你就要問說要選一個pre-quantum bundle
+要怎麼選
+然後就發現其實已經知道有一個pre-quantum bundle
+就是half-vibration
+上面那個Q剛好是S3
+S3是四維空間裡面的
+三維球
+三維的
+面也就是那個面是三維
+然後要了解
+那個structure最容易的方法
+是用四元素
+四元素就是
+那個
+a加bi
+是那個負數
+你可以加上
+那個
+cj加dk
+都是虛數
+有三維的虛數空間
+然後呢
+然後滿足一些乘法
+i平方等於負1
+j平方等於負1
+就像那個什麼
+那個polymatrix
+然後
+所以你有四個自由度
+四元素有四個自由度
+然後呢三維球面其實就是
+滿足它是normalized
+滿足normalized的話
+其實這個東西是常常被用在
+描述三維的旋轉
+我需要在什麼時候結束嗎
+我是想說講完這個第二部分我就可以結束了
+然後如果大家想繼續聽
+我會繼續講
+那個三維的旋轉
+是這樣就是說
+任何的
+花子動畫
+Q是一個
+單位四元素
+它描述三維旋轉
+就像是SU2
+因為它就是SU2空間
+然後呢
+intel的旋轉就是說
+你任何的三維向量
+要被旋轉的三維向量
+其實都寫成ijk的span
+你就地球上面任何一個點
+然後呢
+你就寫成就是
+一個虛數的四元素
+然後你把左邊長Q
+把右邊長Q
+單位四元素的話
+它結果還是虛數
+還是一個三維虛數
+所以它就有一個R3乘R3的變換
+就是三維旋轉
+然後如果你把那個Q
+就是多做一個fake shift
+就是前面長E2的iT
+T是一個時數
+就是你只是乘上一個cos
+cos something
+加上i something
+你會發現你的那個旋轉
+就是多了一個
+沿著那個北極點
+旋轉這樣子
+也就是那個北極點其實是這個變換下面的
+invariant vector
+這樣子
+我把那個Q bar iQ
+把它叫做是
+pi of Q, pi是projection
+就是把S3的Q
+map出來變成是
+北極點的新位置
+這就是一個S3送來S2的map
+這個map就叫做half map
+然後它的那個
+它從R3上R2
+然後它的那個fiber direction
+就是說那個projection
+全部被project同一個點的preimage
+就是一個fiber,一維的fiber
+那個fiber呢
+就是被generated by剛剛E2的iQ
+乘上E2的iQ
+其實這個
+三維的球面
+感覺很抽象對不對
+可是其實你可以visualize它
+因為三維球面你可以用stereographic projections
+把它tamping到R3
+就像是二維球面
+你可以把它tamping到R2
+就是極點投影
+那個極點投影
+S3你也可以把它tamping到R3
+所以S3上面的幾乎所有東西
+都可以visualize
+R3的東西
+而且是保角變換,所以說你看它角度都會是對的
+然後
+所以這張圖就是
+那個
+這張圖是
+是那個
+所有的,而且是我放了一千個fiber
+在那個
+就是剛才我說的那個half fiber
+它其實會長這樣,很交錯
+所以這個是一個fiber bundle
+然後那個,這些
+每一條圈,每一個fiber
+都是一個S1的圈
+它全部都map到S2上面
+某個點
+然後index set of
+這些fiber
+就是S2
+也就是北極點的位置
+然後剩下
+自由度就是你可以在
+北極點旋轉
+看到S3就是這個structure
+然後每個fiber就是generated by
+e2的it
+然後呢
+ok,然後那個什麼
+vertical direction就是
+i
+乘上i的動作,就是說如果說
+e2的it是它的那個
+是可以跑到這些方向的話
+那infinitesimally乘上i
+就是往這個方向乘的意思
+然後呢,它的垂直補空間
+你就會得到
+一個one form
+然後把它叫θ
+然後這個是
+然後代數上面
+你可以當作是說那個
+因為它垂直補空間,所以說
+它那個什麼
+θ這個one form的量詞就是說
+任何的infinitesimal motion,你把它project
+到fiber direction這樣子
+也就是內積i乘上q
+然後這個
+這個結構是在每個點都是成立
+然後記得剛剛看那些fiber
+都是互相交錯,所以你會看到那個
+就是θ就是這種
+nowhere integral
+這樣子
+大家可以穿越
+這個是
+沒有,就我把分析列出來
+就是如果你真的去看的話
+你會看到它真的是nowhere integral
+然後這個是真正的那個
+我在S3裡面就是我這種quaternion
+畫出來以後,然後stereographic
+到R3,然後再用
+三維
+3D列印機印出來的樣子
+在學校的時候也是這樣
+所以它就變成S3
+印表機,對
+四維印表機
+好
+然後
+然後其實它滿足了一個
+然後剛好這個選擇
+它剛好滿足剛才說的pre-quantum bundle
+所以這個是,就是那個pre-quantum structure
+pre-quantum structure
+也就是它的那個
+然後這個東西其實你可以把它visualize
+這樣子,就是說S3
+那個
+S3裡面就是有那個fiber
+fiber direction
+就像剛才R3裡面有那個Z direction
+現在變成是S3的
+fiber direction,所以你可以把那些direction
+當作一般世界的Z軸
+也就是它的重力的方向
+然後它的垂直補空間就是一些
+平台,就是你在那個平台上面走的時候
+站穩
+然後nowhere integrable意思就是說
+其實你那個
+其實如果你要
+你如果要走一圈的話
+如果你要走一圈回來,你會發現
+你必須要一直爬上樓梯
+然後你才能回到同一個地方
+這就是那個前面那個
+dθ等於pi star sigma的意思
+就是說
+dθ剛剛說是投影到fiber direction
+也就是說
+也就是說如果你畫一個圈
+或者你先畫一個
+在S3裡面的曲線,然後你去記那個θ
+那個量
+也就是說
+你會發現你走那個方向
+可是你都是dot
+fiber direction,所以說你其實記出來的物理量
+就是你的total work
+抵抗重力往上爬的那個work
+然後dθ
+就是說走一圈回來以後
+它不等於零的意思其實就是說
+你要走到回到同點
+你會發現你的進攻
+進攻是不等於零的
+這個也是用我們的這個S3
+來進行出來的
+所以你會看到這個
+這是那個有名的那個什麼
+那個不可能的樓梯
+然後通常這個都是
+大眾上面大家都是了解說
+這個是視覺錯覺
+可是那個是在R3裡面你必須要用視覺錯覺
+才能夠理解,可是在R3其實這個是
+everywhere都是這樣子
+因為在S3裡面的平台
+都是no ending的,所以
+它一定要變成這個樣子
+然後所以
+然後剛才
+就是一堆抽象的東西
+然後我們發現就是其中一個就是
+不錯的例子就是half vibration
+所以說如果我們把cache variable
+原本是R3
+那個project R2換成S3
+S2的時候
+那cache的那個psi
+會變到S
+剛好就會變成是
+我們的那個shortening equation裡面的
+wave function
+然後那個velocity被pull back
+回來剛好就是
+Madeleine transform
+你看Madeleine transform我們用C2 value
+wave function,你用那個A加Bi
+C加Di其實你可以把它展開成
+兩個四元素
+然後記得我們那個什麼
+我們那個都normalize成1的,因為是incompressible case
+所以是density的等於
+其實psi是個那個
+是S3 value function
+都是normalize的,quaternion
+或是C2 vectors
+然後注意到說
+我們做phase shift的時候
+那個什麼
+沒有,這個只是
+對,就是
+我要把A加Bi加C
+加Di就是展開成A加Bi
+加Cj加Dk有很多種不同的方法
+但是我故意這樣
+選它會造成說我左邊
+complex scalar
+右邊我會變成
+乘上quaternion
+所以我會這樣選
+然後Madeleine transform記得是
+剛剛那個momentum operator
+把evaluate出來
+然後
+其實你會發現quaternion
+就是deep psi,projected to Ipsi
+我們看到
+I gradient就是說
+gradient取完以後再把project到
+Ipsi身上
+那個exactly就是剛剛那個θ的動作
+就是project到fiber direction
+or gravity direction那樣
+也就它剛好是pull back
+of that one form
+所以說速度長pull back
+exactly就是那個clutch representation
+所以說在這個S3
+也在這個S3
+prequantum structure底下
+的那個clutch variable
+剛好就是Madeleine transform
+然後我們知道
+那個什麼given velocity
+那個form你就有一個
+vorticity的clutch variable
+然後那個vorticity clutch variable
+剛好就是psi bar Ipsi
+然後那個東西就是那個
+我們在量子力學
+學到的那個block vector
+意思就是說那個block vector
+是vorticity clutch map
+然後記得那個什麼
+vorticity clutch map有一個很神奇的功能
+它是level size function of vortex line
+所以說那個
+如果你有wave function的話
+那你就可以找到它的block vector
+然後那個block vector說
+在球面上面畫出來的面積
+preimage就會是vortex
+vortex
+vortex tube
+這個有趣的應用就是說你要怎麼
+就是說given velocity field
+找到那個wave function
+這樣的話就可以visualize它所有的vortex tube
+as an implicit function
+然後
+我這邊直接秀一些結果
+就這個就turns into
+一個叫做vortex detection
+的application
+vortex detection就是說
+你要一個速度場
+你要怎麼樣去
+找vortex在集中哪裡
+然後常用的方法這樣
+我就
+這是一個flow data
+一個delta win
+在low math number以後
+的configuration
+然後你會看到一些vortex shedding
+然後
+在那個velocity field底下
+你可以就是說
+傳統的方法就是說你就直接算它的vorticity
+然後取它的node然後就threshold
+然後你就會看到說這個地方vorticity比較大
+一些比較
+複雜的方法叫lambda2 method
+或是什麼q criterion method
+就是說有一些heuristic就是說你去看那個
+velocity的local jacobian
+然後去算一下eigenvalue
+這個地方是不是locally rotating
+然後去判斷vortex在哪裡
+這些方法都是heuristic
+你看到這些tube都不會是vortex tube
+然後我們就是
+研發了一個方法是說given velocity field
+可以convert成
+wave function然後從那邊就可以
+找到它的spin vector
+然後和它的那個
+它的那個
+然後它的spin vector的話
+它就是level set function
+vortex tubes
+所以你就可以很容易就是說
+就是那個
+你就可以去visualize它的那個vortex structure
+然後它就是通常是
+can reveal much more information
+而且這些是數學上是
+vortex tube而不是heuristic
+就是算一些
+operator然後看它的eigenvalue
+然後說roughly是rotating
+or not
+而且
+發現就是
+絕大多數的velocity都可以被appreciate
+像是就是說
+vortex有linking number
+也就是0還能試題的情況
+然後今天要解這個東西其實我們是解一個那個
+解一個很像影像處理的問題
+然後最後會發現它其實就是一個
+Ginsberg-Landau model
+就是
+通常這個影像處理問題我們可能會說
+我有一些parameter
+然後我想去match我觀察到的現象
+所以就是說我的parameter就是
+就是我要找一個psi
+然後說它就是
+要距離那個
+速度場要
+那個給定速度場要夠近
+這個叫fidelity term
+那有個問題就是說
+就是那個什麼
+那個剛提到說
+有那個gauge
+redundant gauge symmetry
+就是說如果我那個s啊
+你像那個block vector我底下那個
+我就post compose
+一個area-preserving differential coefficient
+它的那個
+它對應到的vortex
+其實是一模一樣的
+但vortex其實是pull back of area
+所以你右邊就是攪拌攪拌
+那個
+它pull back的area是一樣
+所以有這個
+這麼大的redundant gauge symmetry
+的話
+那個什麼
+我們還是想要找一個就是
+比較好的
+所以就偷偷多加一個就是symmetry breaking term
+比如說
+我要在這裡面所有攪和的
+植物的地方我找一個就是說
+最光滑的解
+加這個解的話就
+變成是一個
+比較好的optimization問題
+所以這fidelity and regularization
+所以這個通常就是
+你像處理行都是這樣兩個term
+fidelity and regularization
+可是這兩個term
+剛好是這個fiber的
+兩個direct
+re-quantum structure
+的兩個direction
+就如果你有一個deep side
+你把它project到fiber direction
+然後它的剩餘方向就會是說
+你在那個不同的fiber
+走多快
+然後那個project下來就是說
+在s上面
+就在那個底下的那個
+二維的球面上面
+走多快
+所以
+你會發現說
+DS就是水平方向
+縱軸方向就是速度方向
+可是我速度我是想要
+看那個fidelity term
+但其實就是你就換一個
+gauge就好了
+我把那個d換成那個d減掉i
+因為剛才
+你剛剛有提到那個
+學員connection剛好等於速度長
+我在這個地方你可以故意這樣挑
+這樣挑完以後
+這個就是我的新的covariant derivative
+那樣挑完以後
+這個
+nabla side
+它projected on fiber direction
+剛好就是我的fidelity term
+然後那個水平方向
+還是本來的那個DS
+就是非0
+等於0的話就是我剛剛那個redundant gauge symmetry
+所以我就是
+也就是說剛才那個
+就是說
+如果我選0的話
+感覺本來問題應該就只有這樣子
+比如說我找一個size的時候
+最接近eta
+那我怎麼選
+通常在
+optimization的方法就是
+我一開始epson先選很大
+因為選越大這個東西越好解
+右邊那個DS是好的
+然後我解到
+差不多收斂的時候我再把epson調小
+然後就一直同時這樣去看它那個解
+然後最後epson調到
+幾乎為0的時候
+我就trace我那個
+suboptimal solution
+它最後就會
+當epson等於0的時候它就會貼到那個
+就是說
+minimize前面那個
+size star theta
+fidelity term會被minimize
+而且是
+對
+算是
+可以這樣說
+就是說你可以看到那個
+就是兩個direction然後不同的
+不同的位置對不對
+那個叫做一個bergier sphere
+在fiber和那個
+不是fiber方向
+的那個metric是anisotropic
+然後那個
+那個概念是在維芬計畫用來做
+什麼collapse
+S3 into S2
+那這邊是剛好用在
+不同的
+然後那個
+所以根據畢達哥拉斯定理
+就是上面那個平方和呢
+就是
+只不過是那個什麼
+它的那個
+只是null blob size
+的大小而已
+只是說用一個anisotropic
+就你剛剛提到的
+對
+就visualize
+anisotropic norm長的就是這樣
+anisotropic
+呃
+哦
+叫kingsbrand
+是因為那個
+那個
+因為這是normalize sub size
+然後你加上它是normalize
+directly energy
+deep side norm square
+只是那個d是用conveyor
+derivative
+有magnetic field那種感覺
+在那底下的解就會開始出現
+一些vortex solution
+在你tie裡面會看到
+然後你看那些vortex
+這真的就是我在visualize的vortex
+然後
+而且就是一些離子
+這樣子
+然後這個是剛剛在調查
+Wing的選項
+然後我們還
+就是跟那個什麼
+其他大學他們在做一些生物的
+什麼鳥類的流體計算
+我們就跟他要一些流體的data
+然後就可以幫他們做一些
+就是
+就是找
+那個鳥附近的速度場
+那個
+速度場convert成wave function
+然後設定block vector
+preimage of area
+然後vortex2
+比他們就直接用
+vorticity threshold
+還要多資訊
+這樣子
+這是我第二部分
+然後我覺得就可以聽了
+後面那個部分就是
+我是想證明說一些數學的
+推導
+然後
+然後就是
+就是講說那個
+我這個
+我在defense的時候已經講完
+全部啊
+我這邊有一些有趣的東西
+就是
+Lorentz force跟Quantum Hall effect的關係
+Quantum Hall effect
+是說當你有一個量子的現象
+就是Quantum Mechanics
+加上Magnetic Field
+然後就會出現一些
+就是在
+就是Lorentz force的
+Quantum版本
+然後呢
+可是我們把Quantum Mechanics的
+那個什麼的動力系統
+會發現跟流體很像
+同樣的那個Lorentz force
+Lorentz force就是Coriolis force
+所以說我可以去模擬
+那個那種就是
+有Coriolis force的流體
+可是我的方法並不是在速度上
+加上這個Coriolis force
+而是我是解Shortening Equation
+但偷偷加了一個Magnetic Field
+所以這模擬結果就是長
+長這樣你會真的看到就是
+吃到一杯都是逆時針的排床
+然後吃到飲料都是
+對
+然後這個是我完全沒有解任何的流體
+我是只是解
+我只是解Shortening Equation
+Magnetic Field
+然後
+嗯
+嗯
+對啊
+然後還有很多Open Problem
+這只是一個新的框架的開頭
+然後還有很多問題沒有看
+比如說我其實很大一部分都沒有講說
+我用這個新框架能不能夠得到
+很多新的
+Open Problem
+然後有些東西就是
+我們現在還沒有辦法做真正
+很大的Claim
+然後
+然後那個
+還有說就是如果我的
+我不是要討論Open Equation 而是討論一般的流體
+或是一般的Conservation Law
+就是可以到很一般
+比如說Traffic Flow
+那些東西都是某種廣義的流體
+但那種情況就是
+只是說那個只是慣性系統
+和一個保守場
+這樣簡單的事情
+然後裡面有一些
+守恆量然後他有時候有一些
+Catch Representation
+像MHD裡面就是大部分都是Catch Representation
+我想說這可能
+可以去討論他的框架版本
+好我講完了
+大家如果有問題的話
+請在留言
+現場應該聽得到
+什麼
+對什麼的
+我覺得會有耶
+可是我覺得我需要
+更了解說
+什麼東西
+然後就做一些Benchmark
+這可能氣候模擬
+可能比較好
+天氣預測那個我覺得Data Driven
+還比較好
+我現在看過他們State of Art的
+的chalk
+潮版
+等一下他們是
+可是我看過很好的
+印象就是說
+就是說
+我有在看到一些
+就是Crappy的Simulation
+我有聽到一些talk
+就是你就用正確的方法
+可以做到
+非常精準
+雖然說那個不是真正流
+不是流體
+但是也是Conservation
+是那個海嘯的模擬
+地震發生以後
+他那個海嘯
+他很久以前就已經有那個
+就已經發展了90年代
+然後呢
+但並不是每天都有海嘯
+所以其實你沒有辦法
+verify
+他跟那個日本海嘯
+Benchmark
+是non-linear的還是
+non-linear的
+因為那個海嘯的
+water wave
+是non-linear system
+對
+他就是就從那個物理的model
+到數學的那個
+就是說shadow water equation
+這個equation
+本來就已經有可能會有誤差了
+他要海底下的那個地形
+他就是info的一個地形
+他要說海岸線什麼
+到最後真正那個什麼wave
+arrive的時間和高度幾乎都是
+那個就是
+有被覺得說
+只要你的
+就是說真的要做那種預測的話
+我覺得是你只要花心思
+都是可以做到很好的
+我有一個類似的問題
+就是我一直在想的application
+就是都怎麼在想
+那個time series
+喔你說那個
+他們現在
+就是我們一開始一直在想
+就是如果他們
+我其實不太知道像比如說像小六啊
+或者是他們在剪那個DMT啊
+他們想要用各種各樣的
+就是first principle去想辦法
+做一些新的material
+你知道他現在做到什麼
+我不知道
+我要
+比較一下說
+現在DFT通常下的那些term
+是長什麼樣類型
+然後我知道比如說
+比如說像
+我就講最簡單的Greenspan model
+就不用講到很複雜的
+DFT
+就只是Greenspan model
+通常你看到的非線性term
+通常都是
+就是說
+在哪裡
+就是
+那個
+我說這邊是Greenspan 藍島
+就是說
+通常Greenspan 藍島
+會說Psy不是送到S3的map
+而是送到
+D2或R4的map
+然後接下來呢
+可是他不是normalize
+後面再多加一個非線性項
+然後非線性項就是說
+就是說是
+canalize
+大概如果不等於1的話
+他就會想要往等於1的方向走
+的那種一個未能term
+然後當然跟Python有關
+所以說非線性項
+然後那個項也會出現在
+就是
+GP虧損
+就是超流體的GP虧損
+就是很多非線性
+所以是在practical裡面調
+就是電動的
+對對
+常常會覺得說
+假如我要model
+然後那個是一個很自然的
+滿足一些symmetry
+然後也可以看得出
+他的數學意義
+所以常常你看到很多model
+多加term走的那種
+就是這種二次式
+加上去
+可是像這個是一個不太一樣的看法
+就是真的做一個projection
+或者說一個constraint
+的系統
+所以比如像GP虧損
+就是超流體的方式
+其實就變成是這種incompressible
+這個flow
+所以就是數學上
+有點不一樣的看法
+所以如果是往那方向發展
+我不知道有沒有一些新的
+這樣子
+好
+那如果沒有其他問題
+就再次謝謝
+我們

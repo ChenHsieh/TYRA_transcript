@@ -1,0 +1,1503 @@
+My PhD research is mainly in microfluidics for single-cell analysis.
+In the content of biology, I mainly focus on cancer research.
+Because we generally believe that in cancer, the heterogeneity between cells is stronger.
+For example, when we treat cancer, there will always be some antibody cells that can be used for therapy.
+So if we can use single-cell analysis to see the different characteristics of each cell,
+and find those antibodies to lock them in for treatment,
+we believe that it can improve the efficacy of the treatment.
+My research is divided into two parts.
+The first part is the phenotypic assay, which I will share with you today.
+The second part is also what I'm doing now.
+Because I haven't published the paper yet, so I haven't put it up here yet.
+But the whole direction is like what Jake just introduced.
+As a sample preparation chip,
+we can extract circulating tumor cells from the patient's blood.
+We get gene expression information from the cancer cells in the blood.
+This gene expression information can let us know
+what kind of drugs we can use to treat these patients to get better results.
+For now, to get this gene expression information,
+we usually use the whole flow of chips.
+In other words, we need to use a knife.
+It's more invasive, and the cost will be higher.
+Today, I will share with you the phenotypic assay.
+In the technology development, I mainly focus on scaling and automation
+in the high-throughput single-cell device sphere assays.
+First, I will tell you why we want to do this tumor sphere assay.
+In fact, the purpose is to study these tumor-initiating cells.
+In this process, I will share with you
+why we need to scale up this assay and automate this assay.
+Next, I will tell you how I enable this thing.
+Then, I will use some experiments to show you the functions of my chip.
+Finally, I will conclude my presentation today.
+OK.
+So, our motivation is to study these so-called cancer stem-like cells.
+Our recent research shows that
+there is a relatively small number of tumor-initiating cells.
+They are called cancer stem cells.
+Some people think the term cancer stem cells is too strong.
+They prefer to call them cancer stem-like cells.
+In fact, it is a biological mutation.
+They are a group of antibodies
+with some stem cell-specific cancer cells.
+This tissue group has some characteristics.
+The first one is that it has a relatively strong chemoresistance.
+It will cause tumor relapse.
+In this picture, you can see that this is a primitive tumor.
+The yellow one is CSC, cancer stem cell.
+The blue ones are normal cancer cells.
+If we use traditional cancer treatment,
+these ordinary cells can be removed.
+So, we can see that the tumor size is reduced in clinical trials.
+But what we can't see is this cancer stem cell.
+It has a way to stay quiescent
+and not be affected by the drug.
+After we stop giving drugs,
+the tumor relapse occurs.
+So, in the research scope of CSC,
+we hope to find cancer stem cell-specific therapy.
+So, I eliminated it for this CSC.
+The rest of these normal CSC,
+sorry, these normal cancer cells,
+they don't have the ability to self-renew.
+So, they proliferate.
+In the end, the tumor relapse occurs.
+So, this is the first reason why we want to study CSC.
+The second reason is that we generally believe that
+CSC has a strong migration ability.
+In other words, it is easier to metastasize to the secondary tumor.
+We know that cancer transfer is the biggest challenge in cancer therapy
+and the biggest cause of death.
+So, if we can study CSC more,
+it will be very helpful in therapy, tracking, and research.
+The most traditional way to study CSC is to use surface membrane protein
+or intracellular enzymatic markers.
+For gene expression or protein expression,
+we use different methods, such as full cytometry,
+to separate these different types of cells.
+Then, we can study these CSC groups.
+But the challenge is that
+many of our new markers have not been discovered.
+So, we hope to use other methods to study these CSC populations.
+As a substitute, cell behavior is a common choice.
+We observe that CSC can survive in a suspension culture environment
+and grow into a single-cell-derived tumor sphere.
+In other words, if it is a normal cancer cell,
+it cannot be adhered to the substrate environment.
+It will produce apoptosis.
+But CSC is different.
+It can not only survive in a suspension environment,
+but also grow into a new tumor sphere.
+So, what is the traditional way to do the sphere assay?
+The method is to buy a whale plate,
+as shown in the picture on the bottom right.
+Then, dilute the whale plate to a certain level of cell concentration.
+The whale plate contains one cell.
+As you can see,
+the low-throughput is a distribution of the probability,
+or more specifically,
+96-whale plate contains 20-30 single-cells.
+It is labor-intensive.
+Someone may ask,
+can I use automatic cell dispensing,
+such as flow cytometry,
+to ensure that I can put a cell into a whale?
+In fact, flow cytometry has a big problem.
+Because it is a flow-sorting process,
+it will produce a lot of shear stress.
+So, what is the impact of cell behavior assay on downstream?
+We need to observe if the cell is dead.
+If the cell is dead,
+it is not caused by the suspension environment.
+It is caused by the flow-sorting process.
+The shear stress is too high,
+and the cell can not bear it.
+So, the cell is dead,
+not because it is not CSC.
+These are the existing technology limitations.
+Why do we think automation is important?
+As we mentioned,
+CSC is a relatively small sub-population.
+In the past,
+only 1-5% of tumor cells have this sphere formation tendency.
+We hope this assay can start with a larger single-cell population.
+At least 1,000 single-cells.
+Then we can have a reliable statistical power
+to make our assay conclusion.
+So, we think
+to achieve this throughput,
+microfluidics is an ideal technology
+to make this assay.
+So, this is our chip schematics.
+We want to develop a chip
+with more than 1,000 single-cells.
+Because we have a very large throughput,
+we also need an automatic image analysis.
+Otherwise, we have to read it manually.
+It is a very difficult process.
+Only in this way,
+can we make the whole experiment
+smoothly improve on hardware and software.
+So, this is our motivation.
+I don't know if there is anything I didn't explain clearly.
+Or you can go on.
+Ok, let's continue.
+I want to ask,
+why CSC can survive in suspension culture environment?
+This is a question.
+Did you hear it?
+Yes.
+The question is,
+why CSC can survive in suspension culture environment?
+This is a very interesting question.
+I will answer it in two ways.
+First,
+the definition of CSC is
+we only inject 10 cells into the mouse.
+Can these 10 cells
+generate a new tumor on the mouse?
+If yes,
+we define it as CSC.
+The predecessors defined CSC in this way.
+Then, they used this traditional conventional assay
+to find out
+the cell population of tumors
+can survive in suspension culture environment.
+This is the first way to find it out.
+Why?
+Our idea is
+CSC can survive in suspension culture environment
+by moving through the local environment
+to the blood vessel.
+The blood vessel is a suspension environment.
+If these cells
+die in the suspension environment,
+they can't move to other places.
+So, we believe
+CSC can survive in the blood vessel
+and grow into a tumor in a new local environment.
+We simulate this in vivo environment.
+This is the first way to find out CSC.
+This is the first way to find out CSC.
+The first way is to verify CSC
+and to find out the correlation between CSC and in-vitro experiment.
+The second way is to explain the correlation.
+We think CSC can mimic in-vivo environment
+and survive in suspension culture environment
+and grow into a new tumor sphere.
+Does this answer your question?
+Okay.
+I have a related question.
+When CSC is transferred in the blood vessel,
+is it in the form of a single cell
+or a sphere?
+This is a very good question.
+Most of the cells
+are transferred in the form of a single cell.
+But in recent years,
+the research of circulating tumor cells
+found that
+there are more ways to transfer tumor cells
+in the form of clusters.
+A cluster is not a single cell
+that grows into a sphere
+and is transferred to another place.
+Most people believe that
+a small number of tumor cells
+fall from the original tumor
+and can be circulated.
+You can imagine that
+in a vast ocean,
+is it a warship
+or an aircraft carrier?
+They think that
+a cluster is like an aircraft carrier.
+It is very powerful
+and has a stronger metathesis ability.
+But people think that
+a cluster fell from the original tumor
+and not a single cell
+that grows into a sphere
+and is transferred.
+Do you have an answer?
+Yes.
+OK.
+Are there any other questions?
+I don't think so.
+You can continue.
+I have a question about operation.
+If a worker
+is holding a pipe and dripping,
+can he catch a single cell?
+The best theoretical limit
+is 20-30%.
+You can think of it as
+a cell suspension solution.
+Let's say that
+I know that
+there are 10k cells
+in this tube.
+On average,
+there will be
+a single cell
+in 100mL or 10mL.
+How many cells
+are there?
+There will be a single cell
+in 100mL or 10mL.
+There will be a single cell
+in 100mL or 10mL.
+The best theoretical limit
+is 20-30%.
+In fact,
+the control of cell density
+is not ideal
+when operating.
+So it will be worse than 20-30%.
+It is the operating limit.
+It will be worse.
+But it is almost the same, right?
+For example,
+is it 10% less
+or less than 5%?
+If you have good skills,
+it can be less than 5%.
+If you don't have good skills,
+it can be 5% or less.
+It is difficult to experiment.
+So it's about 15%?
+Yes.
+So if you have
+a 96-well plate,
+if you have a 96-well plate,
+and you have Taipei
+almost 100 times,
+and there are only 15 cells,
+and you only have 1-5% single cell
+that can grow into a sphere,
+it's really hard to do.
+Yes.
+Any other questions?
+No.
+You can continue.
+OK.
+I will continue to present.
+So the first thing I want to discuss
+is how we achieve single cell capture
+in a high-throughput manner.
+The way we implement
+is by microfluidics.
+The principle is quite simple.
+We capture single cells
+by channel blocking.
+So you can imagine
+this is a
+microfluidics microwell
+or microchamber.
+This is a capture site.
+The blue part is the channel.
+This is where the water flows.
+These are the flowing cells.
+When the cells come in,
+they block this place.
+So the flow basically
+stops.
+The next cell will go to the next place.
+So each well has only one cell.
+If we only have
+10-20 chambers,
+a simple design would be fine.
+But in this workbook,
+we have to scale a chip
+up to tens of thousands.
+At this time,
+this simple duplication
+will cause a significant flow imbalance.
+In other words,
+if the entire
+flow cell
+comes in,
+it will mostly be upstream or downstream.
+The capture rate will be very, very low.
+How do I
+make the cell
+uniformly distributed
+on this
+array?
+The method I use is
+circuit modeling.
+In fact,
+microfluidics is like
+a flow circuit.
+Each channel
+has a flow group.
+This flow group is mainly
+dominated by the capture site.
+Because the flow group is the largest,
+and the size is the smallest.
+The entrance channel and the exit channel
+are relatively small.
+But because it is very long,
+the build-up resistance is also very large.
+You can see that the resistance of the entrance channel
+accumulates from 1 to 200.
+This is a circuit like this.
+Why didn't
+the simple duplication work?
+Because if we want
+a good distribution,
+each branch of the
+current is the same.
+We know that
+if the upper short
+here is very small,
+the lower short here is also very small,
+then this thing can happen.
+But today,
+we put 200
+negligible short here.
+At this time,
+the performance of the current
+will be much worse than what we want.
+How do we balance the current?
+Flow resistance
+is actually a function
+of channel geometry.
+You can see that
+circular and rectangular
+have different functions.
+In short, the longer the channel,
+the higher the flow resistance.
+The wider the width,
+the smaller the flow resistance.
+So we use
+microfabrication
+to make
+this very small
+geometry.
+First, this can achieve
+high flow resistance.
+Second, 10x10
+can block our cancer cell.
+Because we generally believe that
+the size of the cancer cell
+is greater than 10 microns.
+I will have related data
+to explain this later.
+We have overcome
+the microwave
+flow resistance
+we have defined here.
+What about the entrance channel and the NC channel?
+I use this
+microfabrication
+to make 100 microns
+wider and 100 microns higher
+geometry.
+So I can make the
+entrance channel and the NC channel
+flow resistance
+smaller than these cancer cells.
+In short,
+we use this microfabrication
+to control our flow resistance.
+So we have a
+very good flow circuit
+to achieve single cell capture.
+This shows that
+we use three
+different sizes of chips
+to scale.
+From 800 to
+12800
+chamber chips.
+The size is probably on a slice.
+You can see
+that this is a device
+and every
+chamber we can capture
+a single cell.
+This is a microscope image.
+Our cancer cell is labeled here
+as a green fluorescent dye.
+You can see that this array
+has a very good single cell capture.
+Now we have
+achieved high-throughput single cell capture.
+How do we
+analyze it?
+This is a comic.
+So
+based on many habits,
+we need to
+automate the readout process.
+So how do we do it?
+Sorry,
+I have a question.
+You can see
+that almost every
+size has a single cell capture.
+But my question is
+if you drop a sample
+from beginning to end,
+does every size
+have a cell?
+Or if you drop a sample,
+does every size have a
+10% size capture?
+And you have to fill it up again and again.
+That's a very good question.
+So the beauty of MicroFluidics
+is that we put
+cell suspension into the sample.
+We don't need any other
+equipment. We use gravity flow.
+The cell solution
+will gradually flow in.
+So the whole operation is done by a single arrangement.
+It's not the first time, the second time, the third time.
+It's done in one go.
+It's like this.
+Tens of thousands of single cell capture.
+Is that reasonable?
+It's reasonable.
+I'm just curious.
+For example,
+how much is the reduction
+of human power?
+I see.
+It becomes only one arrangement.
+It's all captured.
+That's the reduction we achieved.
+So how much is the
+filling ratio of this chip?
+Is it more than 95%?
+Do you mean that several chambers
+can really capture a single cell?
+Is that the question you wanted to ask?
+Because this question
+is related to how much time
+you need to spend.
+So if it's one time,
+you can change it to this.
+For example, you drop it once.
+How much is it?
+It looks like it's 100%.
+At least it's 100% in my eyes.
+This publication is the most beautiful.
+OK, this capture rate
+is 75%
+in our routine.
+It can be optimized online.
+But we consider
+other things.
+So we think 75% is a better number.
+I'll explain it later.
+OK.
+And 12,875.
+That's a lot.
+After a cell
+is captured,
+this chamber will be
+interrupted and nothing will come in.
+That's right.
+It's a very simple principle.
+Do you plan to
+compress it
+directly
+or
+do some pre-processing?
+For example,
+how do you differentiate
+different cells?
+That's a very good question.
+The project we want to commercialize
+is
+molecular analysis
+or phenotypic analysis.
+In my other project,
+we do sample preparation.
+We want to
+extract
+the mRNA transcript
+from single cell
+and barcode it.
+We can use Illumina
+to do whole transcript from sequence.
+We can't do
+sample preparation
+directly from the protocol.
+We need to go through
+upstream cell enrichment.
+This is
+very competitive.
+There are many vendors
+in the commercial space
+like startups.
+They can provide
+downstream information
+enhancement.
+These startups
+can take the blood
+and put it in the instrument.
+The result is
+a tumor sample
+after purification.
+These tumor samples
+have very limited meaning.
+If you want to have clinical meaning,
+you need to know
+the gene expression
+and gene mutation.
+We want to finish the last mile.
+The commercially available
+technology is
+upstream
+GTC purification.
+We can do sample preparation
+after purification
+to the sequencer
+or next generation sequencing.
+Thank you.
+The answer is a bit long.
+Any other questions?
+No, I can continue.
+Okay,
+I will continue.
+I don't want to
+analyze so many chambers.
+I want to automate
+the process.
+I use a biocompatible
+cell
+with green fluorescence.
+We can use
+fluorescence
+to read out the cell.
+We thought it would be easy
+to read out the cell.
+However,
+after scanning the image,
+we found that
+the cell expression is different.
+They take the blood
+with different efficiency.
+You can see the picture
+with 5 cells and 6 cells.
+Some cells are bright and some are dark.
+If we use a simple
+search holding,
+many cells are ignored.
+What should we do?
+We need to
+use algorithms
+to make
+the readout more reliable.
+There are four steps.
+First, we do a contrast
+enhancement.
+We use a
+contrast enhancement
+for this part.
+I will explain why later.
+Next, we use K-means clustering
+to find the peak
+of the intensity.
+Finally,
+we can extract local maxima
+to find the center
+of each cell.
+These three images
+show the readout
+of two or more cells.
+That's it.
+Contrast enhancement
+has a tricky part.
+The contrast enhancement
+is the goal of histogram equalization.
+The sample
+has a dark background.
+After using
+the algorithm,
+the whole circle is bright.
+We can't use it.
+We use contrast-limited
+adapted histogram equalization.
+We can define
+each enhancement panel
+to be
+660 pixels
+or other arbitrary
+number of pixels
+to do the enhancement.
+Under this premise,
+we know
+the size of a single cell
+is several pixels.
+We can use this information
+to locally magnify
+the fluorescent signal
+of the cell.
+Look at the chamber.
+We can effectively
+suppress
+the background noise
+to achieve the image analysis.
+These are
+the results of
+the algorithm.
+You can see the suspension cell.
+We can effectively
+locate
+each cell.
+This is the state of
+adherent culture.
+We can effectively
+identify one cell, two cells
+or many cells
+to fill the chamber.
+Although
+this work is
+focused on
+suspension culture,
+the same capture
+mechanism can be used
+to achieve adherent cell culture.
+This is an example.
+The algorithm
+can also do
+size measurement
+and sphere size measurement
+to determine
+the size of a sphere.
+These functions
+can only be
+implemented
+on our corpus.
+With this technology
+and algorithm,
+we can do
+the device
+test.
+The first test is
+the capture rate
+or capture characterization.
+In our test,
+we optimize
+the capture rate
+to 76.5%.
+First, we limit
+the cell loading time
+to 15 minutes.
+We don't want to
+leave the cell
+for more than 15 minutes.
+If the cell is left for too long,
+it will affect the cell's
+viability or
+the cell's health.
+In this 15-minute loading time,
+we try four different
+results.
+No capture,
+single cell,
+double cell,
+or multiple cell.
+In the different
+cell loading concentration,
+the lower the cell
+concentration,
+the less cells are left.
+If we increase
+the loading concentration,
+the more chambers
+are double cell or multiple cell.
+In the cell concentration
+trade-off,
+50k per mL
+in single cell
+is 76.5%.
+In fact,
+if we want to push
+the capture rate,
+we can use
+a lower cell concentration
+for 30 minutes.
+I think we can push
+the cell capture rate
+to 80 or 90.
+Some friends say
+there are more than 10k chambers
+with 70% of the load.
+This is also good.
+We think so, too.
+So we set the number here.
+Why
+is there a double cell
+or multiple cell
+in higher concentration?
+In the chamber design,
+we must
+let the cell block
+the cell capture site
+so that the cell can't get in.
+If the loading concentration
+is high,
+there is a possibility
+that the first cell
+may get in
+before the first cell
+blocks.
+It's hard to avoid
+two cells
+in the same chamber.
+But it doesn't matter.
+Even if there is a multiple cell
+or double cell,
+all the data
+is extracted
+from single cell.
+As we mentioned,
+the size of the cancer cell
+is very important.
+We don't want
+cells smaller than 10 microns
+or other sizes
+to get in.
+It will skew
+or distort
+the whole experiment.
+As we mentioned,
+the cancer cell
+is very
+strange.
+So we must
+ensure that
+all sizes can be captured.
+So we take
+the cell line
+from the ground
+and make it round
+or sphere-shaped
+to quantify
+its size
+with the
+diameter.
+Then we put the same cell line
+or cell
+in the tube
+to measure its size.
+The distribution
+is next to it.
+As you can see,
+the distribution is very similar.
+Here are four images
+showing relatively small cells
+about 11 or 12 microns
+in diameter.
+This is very rare.
+One-thousandth cell
+has a diameter of 40 microns.
+We can effectively
+preserve the size.
+To sum up,
+there are two challenges
+to overcome.
+The first one is how to
+scale up the throughput.
+The second challenge is
+how to automate
+the readout under
+engineering innovation.
+To scale up
+the throughput
+using a highly parallel
+flow circuit,
+we need
+a compact
+high-density array
+to scale up
+the image processing.
+To scale up
+the image processing,
+we need to scan
+each image
+in the device area.
+The higher the density,
+the smaller the number
+of frames needed
+for image processing.
+These are the two challenges
+of engineering innovation
+to scale up the throughput.
+In terms of automation,
+we developed a highly adaptive
+algorithm to analyze
+the different single cells.
+We also used
+the function
+to analyze the size
+of the single cell or sphere.
+Is there anything
+you want to discuss?
+I'm a bit curious
+about the fluorescent bag.
+Our fluorescent bag
+uses CellTracker.
+CellTracker
+is a live technology.
+What does it do?
+That's a good question.
+As far as I know,
+it's a bit like
+a metallization product.
+If the cell is alive,
+it will intake
+these bags
+to show the color
+of the cell.
+You may want to know
+what the chemical is.
+I can send you the link.
+I'm curious
+how you can make sure
+that all the cells
+will eat the bag.
+I don't know if
+there is something
+in the sample
+that will be eaten by the cell.
+Are you worried
+about the negative force?
+Yes.
+In this chip,
+the fluorescence
+is very dim.
+As I said,
+some cells may be very weak.
+It's very dim.
+These two cells
+seem to be weaker.
+We try our best
+to minimize the force
+and minimize the negative force.
+As we see in this experiment,
+we use manual
+and brightfield imaging
+to verify
+that the negative force
+is less than 5%,
+so we minimize the negative force.
+The second is
+that we need
+commercialization projects
+to do molecular analysis.
+In this project,
+the real cell readout
+is from sequencing,
+not from fluorescence reading.
+So the readout method
+is different
+with different concerns
+and different methods.
+I didn't understand
+what you said
+about commercialization.
+What is the readout?
+We directly see
+how much transcript recovery
+is required.
+I have another question.
+I just calculated
+the size of the chip.
+For example,
+a cell is about 10 microns,
+and a grid is
+several times the width of the cell.
+If you have
+about 10,000 grids,
+and we think of it as a square,
+so the length of the grid is about 100 grids,
+then the chip
+will be several centimeters
+long.
+Is that right?
+Yes.
+That's about it.
+My question is
+you have a several centimeters
+long chip,
+and you use a channel
+to feed through
+all the slides.
+How many channels
+do you use to feed through
+all the slides?
+If there is no clock
+in the feeding line,
+it will be a whole row.
+All the slides
+will not have feeding.
+Is that right?
+That's a very good question.
+You said
+if the channel is broken,
+all the slides will be dead.
+Yes.
+If the channel is broken,
+there will be no cells.
+This is not a problem
+in our experiment.
+There are two reasons.
+First,
+each branch
+has 64 or 32 chips.
+So
+even if one branch doesn't work,
+we may lose
+some of the cells.
+Second,
+if the channel is 100 microns long,
+it's not easy
+to break it or kill it.
+So there is no problem.
+Thank you.
+How do you make the channel?
+Can you tell us?
+Of course.
+We use
+microfabrication
+to make photolithography.
+We use
+SUA.
+The feature is that
+we can make a channel
+with a wide range of thickness.
+For example,
+one micron to several microns.
+We can define
+the different
+channel sizes.
+Thank you.
+Thank you.
+I think
+it's a good question.
+I think everyone is following.
+Thank you.
+I have to answer
+how to make
+suspension culture
+based on capture.
+We have a
+capture scheme.
+The chips
+are made of PDMS.
+How do we make sure
+that
+it won't stick
+to the chip?
+We use
+a chemical called
+Peronic F108.
+The feature is that
+the two ends
+of the chemical
+have a
+hydrophobic
+core.
+So what happens
+when we load
+the F108 to the chip?
+The hydrophobic core
+will stick to
+the PDMS.
+The two ends
+or the pegs
+will expose
+the surface of the channel.
+When the cell comes in,
+it sees that there are many pegs.
+Pegs are
+a kind of
+anti-biofouling material.
+If we have
+these pegs
+on the surface,
+the cells won't be able to
+stick to the PDMS.
+So we can make
+suspension cell culture.
+In this work,
+we show four different
+breast cancer cell lines.
+You can see
+the sphere-forming cell
+at the top,
+and the anoikis cell at the bottom.
+You can see the single cell
+at day 7 and 14
+started to form
+a humerous sphere.
+The width of the chamber
+is about 100 microns.
+So you can see
+the humerous sphere is relatively small.
+The anoikis cell
+has
+a debris
+or cell
+inside the chip.
+You can see
+that different cell lines
+look different.
+Some look like balls.
+Some look like grapes.
+The morphology is slightly different.
+Can you go back to the first page?
+Sure.
+When you make cell culture,
+you should release the cell first.
+At least don't let it
+get stuck in the channel.
+Right?
+OK.
+After completing cell loading,
+we will wash the cell
+to make sure
+there is no cell on the entrance channel.
+Then we will flip the chip over.
+This is a more detailed
+experiment process.
+So we flip the chip over
+and the cell will fall into the microwave.
+You can see
+from this image
+that this is the capture site.
+You flip it over
+and it falls to the bottom.
+Because of the gravity,
+it falls to the bottom.
+Then it
+grows into a sphere.
+Or it may die.
+OK.
+After flipping the chip over,
+you need to provide nutrients,
+right?
+You need to use the same channel chip
+to do this.
+That's right.
+It's easy to do.
+We just take
+the in-and-out chips
+and put them into CultureMedia.
+CultureMedia has more chips.
+So it will gradually flow
+to the outlet.
+We provide nutrients
+in stages.
+We change
+the frequency of Media
+once a day.
+It's our protocol.
+I see.
+Thank you.
+Thank you.
+We use
+this technology
+to put the cell in.
+You can see the sphere size distribution
+and the sphere formation rate.
+You can see the different cell lines.
+It's quite obvious.
+It's easy to grow into a sphere.
+First, the sphere formation rate
+is high.
+At the same time,
+the size is large.
+It's smaller than other cell lines.
+The result is
+quite consistent.
+It proves
+the capability
+of our technology.
+What else
+can we do
+with this technology?
+We can
+get the
+sphere formation rate
+with this technology.
+We can see more details
+and information.
+First, the relationship
+between stem cell and
+stem cell.
+It's controversial.
+Some people think
+the smaller cell
+is related to
+stem cell gene.
+The lower the stem cell gene,
+the smaller the cell.
+However,
+mitochondria
+have more
+and larger cell lines.
+It increases the size of the cell.
+At the same time,
+it makes the cell look more
+stem-like.
+What's going on?
+We can
+understand stemness
+from sphere formation rate.
+We have a good algorithm
+to analyze
+the size of mitochondria.
+We can study the impact of
+different size groups on sphere formation rate.
+You can see
+cell size distribution.
+We can see
+the size of
+the single cell
+in different cell lines.
+We can see
+the size of
+the single cell
+in different cell lines.
+We can compare
+the size of
+inter-cell line.
+We can compare
+the sphere formation rate
+of the first 30%
+of mitochondria.
+The result is very interesting.
+In the experiment of
+SOM-159,
+we can observe
+that the smaller cell size
+is larger than
+the larger cell
+in the sphere formation rate.
+However,
+in SOM-149 and
+T47,
+the fourth cell line
+has no difference.
+We think
+in different cell lines
+or different pathway regulations,
+they may be different.
+It also explains
+why other people
+get different conclusions.
+We can't study the correlation
+directly from size.
+We have to look at
+gene regulation
+to determine whether it is CSE.
+Size is not a reliable
+CSE marker.
+This is
+the conclusion.
+Next,
+we can check the size
+of the sphere in
+Day 0, Day 7, and Day 14.
+We can see
+the growth
+in each stage.
+We can see
+that in each cell line,
+some cells
+grow very fast in the first week
+and not so fast in the second week.
+In contrast,
+some cells grow very slow
+in the first week,
+but in the second week,
+they grow bigger.
+This is
+the plot
+on the
+scattering plot.
+If we put
+Day 7's sphere diameter
+on X,
+Day 14's on X,
+we can see
+that Day 7's
+sphere diameter
+is basically
+1X.
+If Day 14's
+sphere diameter
+is 1X,
+Day 14's
+sphere diameter
+is 1X.
+Day 14's
+sphere diameter
+is 1X.
+Day 14's
+sphere diameter
+is 1X.
+Day 14's
+sphere diameter
+is 1X.
+Day 14's
+sphere diameter
+is 1X.
+In the theory of
+cancer stem cells,
+oncologists believe
+that there is
+a tumor-stem cell hierarchy,
+meaning that
+it can't further differentiate
+into regular cells.
+We believe that
+these progenitor cells
+are not yet
+fully compatible,
+so they can also
+produce a tumor sphere.
+However,
+it is not a stem cell,
+so it can't
+self-renew
+after proliferating
+several times.
+On the other hand,
+cancer stem cells
+have a quiescent property,
+which means
+they don't like proliferation.
+They may grow slowly at first,
+but it doesn't mean
+they don't want to.
+When I showed this result
+to our collaborators,
+they were very interested.
+In their hypothesis,
+although there are
+so many sphere-forming cells,
+this cell line
+is a special cell line
+with a lot of progenitor cells
+and strong sphere-forming capability.
+That's why
+the proliferation rate
+in the second week
+is so much lower.
+SOM149 is more
+compatible with
+oncologists' cancer stem cell model.
+It may be quiescent at first,
+but it can continue
+to proliferate.
+Through this technology,
+we can see
+the proliferation
+of single-cell
+derived sphere
+and
+study the
+cancer stem cell hierarchy.
+This is the second part
+of our technology presentation.
+To sum up,
+the high-throughput single-cell
+derived sphere as a chip
+can scale from
+800 to
+more than 10,000 wells.
+The capture rate
+is now
+around 76%.
+When capturing the cell,
+the representative cell size
+per population
+is equal to the block.
+We can make sure
+that we didn't
+change the cell
+in the cell process.
+We didn't scale the result.
+We also used
+genetic analysis algorithm
+to help us
+do cell counting
+and cell sphere size measurement.
+Without these functions,
+it is difficult to
+quantify the sphere formation rate
+and observe the dynamic
+of sphere formation.
+At the end of the presentation,
+I told you
+about two different
+experimental results.
+The first one is
+the comparison of cell size
+and cell strength.
+We don't think
+cell size is a good CSE marker.
+We think
+there are more
+gene regulation
+that we need to study
+in the cell,
+not just cell size.
+We also showed
+the ability to track
+the process of sphere formation.
+This can help oncologists
+to study
+tumor stem
+and cancer stem cell hierarchy
+to help them understand
+the details.
+This work
+was published in
+Lab on a Chip last August.
+If you are interested,
+you can check it out.
+Thank you
+our lab
+for being with me
+for an hour.
+If you have any questions,
+feel free to ask.
+I have a question.
+Can you go back to the page
+before the conclusion?
+This page?
+Yes.
+I have a question.
+How do you rule out
+the size of the culture well?
+It's about 100 microns.
+How do you rule out
+the size of the chamber?
+The speed
+is not limited
+to the size of the space.
+It's the
+characteristic of the sphere.
+Is the entrance small?
+I'm asking
+the size of the chamber
+is not limited
+to the size of the chamber.
+The size of the chamber
+is not limited
+to the size of the chamber.
+That's a good question.
+The entrance
+is set at
+50 microns.
+We observed
+the cell population.
+The cell population
+is not more than 50.
+If a cell
+is very powerful,
+it will grow fully in the first week.
+How do I know
+if it will grow slowly
+in the first week?
+That's a good question.
+In fact, we set 100 microns.
+From our experience,
+very few cells can grow
+more than 100 microns.
+The reason you can see so much
+is because our data is
+very large.
+We can observe
+very few cases
+in our data.
+If you are really interested,
+it's not difficult
+to solve this problem.
+We can change the chamber size
+to 150 microns
+to solve the problem.
+However,
+in the context of work,
+the chamber size is a minority.
+It's not the focus of our research.
+Our focus is to demonstrate
+the capability.
+So we set 100 microns
+as the chamber size.
+I have a question.
+How do you
+quantify
+the gene performance
+of a single cell?
+This is my
+other work.
+If you are interested
+in the gene performance
+of a single cell,
+you can read
+a paper published
+in Cell.
+It basically
+barcodes
+each cell
+and transcript.
+From next-generation sequencing,
+we can infer
+which cell
+this transcript
+comes from.
+We can quantify
+the strength of gene performance
+by this way.
+The way it captures
+messenger RNA is
+to put a
+poly-T-tail to capture
+a poly-A-tail.
+So they can hybridize
+and barcode.
+I have already captured
+these cells.
+How do you transfer them
+to a single-cell RNA-seq
+device?
+In molecular
+analysis,
+we use
+a bead
+as our
+mRNA-captured carrier.
+This technology
+is introduced
+by Dropseq.
+They introduce
+this technology
+and license it
+to a company.
+We buy the product
+from the company
+and put the bead
+into our chip
+to capture mRNA.
+We take the bead
+and do downstream amplification
+for gene sequencing.
+It sounds like
+we will succeed.
+We still have a long way to go.
+Yes.
+We don't have any more questions.
+Thank you again
+for the wonderful lecture.
+Thank you for inviting me.
+Thank you.

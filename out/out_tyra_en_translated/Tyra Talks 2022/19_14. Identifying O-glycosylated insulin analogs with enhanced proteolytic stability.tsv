@@ -1,0 +1,2332 @@
+start	end	text
+0	6000	Hello everyone, welcome to today's TARA Talk.
+6000	11000	TARA stands for Taiwanese Young Researchers Association.
+11000	15000	It is a friendly forum for young researchers in Taiwan.
+15000	22000	We hold TARA Talk every week and every weekend throughout the year.
+22000	27000	The format and content of this talk are very free and diverse.
+27000	33000	Researchers can share their academic achievements,
+33000	36000	practice online presentations,
+36000	40000	or get to know potential future collaborators.
+40000	43000	Today's speaker is...
+43000	49000	Wei-Zhe, would you like to share your screen?
+49000	50000	Okay.
+58000	60000	Is it on?
+60000	61000	Yes, it is.
+61000	64000	Today's speaker is Wei-Zhe Xu.
+64000	71000	He is currently a PhD student at the University of Colorado Boulder
+71000	80000	in Chemical and Biological Engineering.
+80000	88000	Today's talk is on Identifying Signature of...
+88000	91000	Sorry, I don't know how to pronounce that word.
+91000	98000	Protolytic Stability and Dimerization Properties.
+98000	100000	He is a simulator.
+100000	105000	He gave a wonderful talk at TARA.
+105000	108000	As usual at TARA,
+108000	110000	before the talk starts,
+110000	120000	we will turn on the microphone and give a warm welcome to Wei-Zhe.
+127000	129000	Okay, thank you.
+129000	132000	Should I start?
+132000	134000	Yes, you can start.
+135000	137000	Hello everyone, I am Wei-Zhe Xu.
+137000	143000	I am currently a PhD student at the University of Colorado Boulder.
+143000	147000	My main interest in this course is to use...
+147000	149000	computer molecular dynamics simulations...
+149000	152000	to study different biological and physical phenomena...
+152000	154000	or develop related algorithms.
+154000	159000	Thank you for coming to this talk.
+159000	166000	Today's talk is similar to the one I gave at TARA.
+166000	171000	This is my first time to use Chinese...
+171000	175000	to explain this academic research.
+175000	179000	Please let me know if you have any questions.
+179000	181000	It's okay to interrupt me.
+181000	185000	Without further ado, let's get started.
+185000	187000	Today we are going to discuss...
+187000	190000	how to use computer simulation...
+190000	193000	to find out the factors that affect...
+193000	195000	the properties of the permutations.
+195000	199000	Before we get into today's topic,
+199000	202000	let's take a look at what a permutation looks like.
+202000	205000	A permutation is a protein molecule.
+205000	208000	It is composed of two amino acids.
+208000	212000	The blue one and the yellow one.
+212000	214000	They are chain A and chain B.
+214000	218000	You may have heard of it.
+218000	220000	The biggest relationship between a permutation and humans...
+220000	225000	is that it is widely used in diabetes treatment.
+225000	229000	For example, there are 34 million people in the US...
+229000	231000	who are diabetic.
+231000	234000	7 million of them use permutations...
+234000	236000	as their main treatment method.
+236000	239000	Most of the treatment channels for permutations...
+239000	242000	are done through subcutaneous injection.
+242000	244000	Diabetic patients...
+244000	248000	usually need to be injected 30 minutes before meals.
+248000	250000	This means that diabetes patients...
+250000	254000	need to be injected 2-3 times a day.
+254000	258000	If you need to be injected 2-3 times a day,
+258000	260000	it will be very uncomfortable.
+260000	263000	The biggest drawback of subcutaneous injection...
+263000	266000	is that it is very invasive.
+266000	268000	In the past 20 years,
+268000	271000	scientists have tried to develop...
+271000	274000	non-invasive treatment channels...
+274000	279000	to reduce the use of subcutaneous injection.
+279000	284000	One of the most potential treatment channels...
+284000	286000	is the so-called oral-diphtheria.
+286000	288000	20 years have passed.
+288000	290000	This research has been going on for more than 20 years.
+290000	292000	Why is it that...
+292000	295000	we don't hear much about...
+295000	298000	oral-diphtheria drugs on the market?
+298000	300000	The reason is that...
+300000	302000	the development of oral-diphtheria drugs...
+302000	305000	has many major challenges.
+305000	307000	Most of these challenges...
+307000	310000	come from the digestive system of the human body.
+310000	314000	The first challenge is that...
+314000	317000	when the gastrointestinal tract goes through the human stomach,
+317000	320000	gastric acid will destroy the gastrointestinal structure.
+320000	323000	The gastrointestinal tract will lose its function.
+323000	325000	Basically, this challenge...
+325000	327000	has been completely solved...
+327000	331000	some time ago.
+331000	333000	Most of the mainstream use...
+333000	337000	is to use some special materials to protect the gastrointestinal tract.
+337000	340000	The gastrointestinal tract can...
+340000	342000	This special material...
+342000	344000	will not be dissolved in the case of acidity.
+344000	346000	This can protect the gastrointestinal tract...
+346000	349000	from being corroded by gastric acid.
+349000	351000	When leaving the stomach,
+351000	353000	the gastrointestinal tract...
+353000	355000	will be dissolved.
+355000	357000	The gastrointestinal tract will be dissolved.
+357000	359000	The drug will be released.
+359000	362000	The first challenge has been solved.
+362000	364000	But it was a major challenge...
+364000	366000	in the development of oral-diphtheria drugs.
+366000	368000	The next two challenges...
+368000	370000	have not been completely solved yet.
+370000	372000	The first challenge is that...
+372000	375000	the stability of the gastrointestinal system is not very good.
+375000	377000	The reason is that...
+377000	379000	many digestive enzymes in the gastrointestinal system...
+379000	381000	destroy the gastrointestinal tract.
+381000	383000	This will also cause the gastrointestinal tract to lose its function.
+383000	385000	In addition, the gastrointestinal tract...
+385000	387000	is not very transparent to the cell membrane.
+387000	389000	Usually, we will see that...
+389000	391000	two gastrointestinal molecules...
+391000	393000	may gather together...
+393000	395000	and then...
+395000	398000	become a so-called gastrointestinal 2-gene.
+398000	400000	This 2-gene...
+400000	402000	is a relatively large molecule.
+402000	405000	So it is more difficult to pass through the cell membrane.
+405000	407000	The human body's absorption...
+407000	409000	of gastrointestinal 2-gene...
+409000	411000	will also become lower.
+411000	413000	So the following two challenges...
+413000	415000	have not been completely solved yet.
+415000	417000	Therefore, if we want to develop oral-diphtheria drugs,
+417000	419000	we know that...
+419000	421000	we hope that oral-diphtheria drugs...
+421000	423000	will achieve at least two goals.
+423000	425000	The first goal is that...
+425000	427000	we hope that it has enough resistance...
+427000	429000	to the digestive enzymes in the human body.
+429000	431000	The second goal is that...
+431000	433000	we hope that it has a relatively low gathering tendency...
+433000	435000	so that it is easier to reach a higher absorption...
+435000	437000	of gastrointestinal 2-gene.
+437000	439000	In the past few years,
+439000	441000	there have been a lot of different research methods...
+441000	443000	to experiment with...
+443000	445000	how to achieve these two goals at the same time.
+445000	447000	A few years ago,
+447000	449000	in a chemistry synthesis lab...
+449000	451000	that we worked with,
+451000	453000	they found that...
+453000	455000	in a specific location of the gastrointestinal tract,
+455000	457000	a specific type of sugar can be added...
+457000	459000	to improve...
+459000	461000	the gastrointestinal tract's resistance...
+461000	463000	to enzymes.
+463000	465000	In addition,
+465000	467000	it can effectively reduce its gathering tendency.
+467000	469000	This method is called sugarification.
+469000	471000	Basically,
+471000	473000	it is the structure of...
+473000	475000	a sugar molecule...
+475000	477000	connected to a gastrointestinal tract.
+477000	479000	In the research...
+479000	481000	conducted by our laboratory,
+481000	483000	they studied a total of 12 different...
+483000	485000	gastrointestinal tracts.
+485000	487000	You can see that...
+487000	489000	these 12 gastrointestinal tracts...
+489000	491000	basically have three control mutations.
+491000	493000	The first one is...
+493000	495000	the location of sugarification.
+495000	497000	Here, you can see...
+497000	499000	my mouse.
+499000	501000	This is the structure of the gastrointestinal tract.
+501000	503000	These balls...
+503000	505000	are basically the amino acids...
+505000	507000	that can be sugarified.
+507000	509000	There are a total of 51 amino acids in the gastrointestinal tract.
+509000	511000	Only five of them...
+511000	513000	can be added to sugar.
+513000	515000	The first mutation is...
+515000	517000	the location of sugarification.
+517000	519000	The second mutation is...
+519000	521000	the type of sugar.
+521000	523000	For example, we can see here...
+523000	525000	GALNAC.
+525000	527000	In English, it's N-Acetyl Glycosamin.
+527000	529000	I'm not sure how to say it in Chinese,
+529000	531000	but it's a type of sugar.
+531000	533000	The other type of sugar is MANOS.
+533000	535000	The main purpose is to study...
+535000	537000	the sugarification mechanism of these two types of sugar.
+537000	539000	The third type is...
+539000	541000	the size of the type of sugar.
+541000	543000	You can see that the last few types of sugar...
+543000	545000	from the 7th to the 13th...
+545000	547000	basically use MANOS...
+547000	549000	as the base of the type of sugar.
+549000	551000	They may use the type of sugar...
+551000	553000	the type of MANOS...
+553000	555000	the type of MANOS-2 or type of MANOS-3...
+555000	557000	to modify the structure of the amino acid.
+557000	559000	For example,
+559000	561000	you can see that...
+561000	563000	the picture here...
+563000	565000	is the structure of a sugarified amino acid.
+565000	567000	The blue and yellow...
+567000	569000	are the amino acids.
+569000	571000	The purple is...
+571000	573000	the type of MANOS-3.
+573000	575000	The location of sugarification...
+575000	577000	is the B27 amino acid.
+577000	579000	OK.
+579000	581000	So...
+581000	583000	in our...
+583000	585000	collaborative lab...
+585000	587000	research,
+587000	589000	how did they...
+589000	591000	from these different sugarified amino acids...
+591000	593000	find a structure...
+593000	595000	that is more likely to be used as an amino acid...
+595000	597000	for oral medication?
+597000	599000	They did a series of experiments.
+599000	601000	Today, I'm going to talk about the most important one.
+601000	603000	First of all,
+603000	605000	they measured the resistance of the amino acids.
+605000	607000	Basically,
+607000	609000	I put the amino acids...
+609000	611000	and the sugarified amino acids...
+611000	613000	in the same solution...
+613000	615000	to monitor...
+615000	617000	when the amino acid...
+617000	619000	is cut off.
+619000	621000	Then, we can measure...
+621000	623000	how long it takes...
+623000	625000	for the sugarified amino acids...
+625000	627000	to be broken down by the amino acids.
+627000	629000	The time it takes...
+629000	631000	is called alpha-contription half-life.
+631000	633000	Alpha-contription half-life...
+633000	635000	is the amino acid...
+635000	637000	that our collaborative lab uses.
+637000	639000	It can break down the amino acids.
+639000	641000	Half-life means...
+641000	643000	the amino acids...
+643000	645000	are cut into two parts.
+645000	647000	So, they lose some of their quality.
+647000	649000	The weight is reduced.
+649000	651000	So, we can detect...
+651000	653000	the amino acids.
+653000	655000	Basically, the longer it takes...
+655000	657000	means that the amino acids...
+657000	659000	need to break down the amino acids.
+659000	661000	The longer it takes...
+661000	663000	means that the structure of the amino acids...
+663000	665000	is more resistant to the amino acids.
+665000	667000	On the far left, we can see...
+667000	669000	the so-called wild-type.
+669000	671000	It's a circular amino acid.
+671000	673000	It doesn't go through any type of sugar.
+673000	675000	We can see that...
+675000	677000	in the 12 types of amino acids...
+677000	679000	the numbers 9, 10, and 13...
+679000	681000	are the half-life...
+681000	683000	of the alpha-contription half-life.
+683000	685000	This means that...
+685000	687000	the amino acids need to break down...
+687000	689000	the amino acids...
+689000	691000	for a longer time.
+691000	693000	This means that...
+693000	695000	the amino acids are more resistant to the amino acids.
+695000	697000	The important ones are 10 and 13.
+697000	699000	9 is a little bit higher than the wild-type.
+699000	701000	10 and 13 are significantly better...
+701000	703000	than the circular amino acids.
+703000	705000	Coincidentally,
+705000	707000	these three structures...
+707000	709000	also have...
+709000	711000	relatively low...
+711000	713000	relative gathering tendency.
+713000	715000	On the right,
+715000	717000	you can see that...
+717000	719000	the wild-type is on the far left.
+719000	721000	The three on the right are 9, 10, and 13.
+721000	723000	The blue part of the graph...
+723000	725000	shows the ratio of the amino acids.
+725000	727000	The green part...
+727000	729000	shows the ratio of the half-life.
+729000	731000	We hope that...
+731000	733000	the lower the relative gathering tendency,
+733000	735000	the better.
+735000	737000	The higher the amino acid ratio,
+737000	739000	the better.
+739000	741000	We can see that...
+741000	743000	9, 10, and 13...
+743000	745000	are more resistant to the amino acids.
+745000	747000	We can see that...
+747000	749000	these three amino acids...
+749000	751000	have relatively low relative gathering tendency.
+751000	753000	What is the most important discovery...
+753000	755000	of this study?
+755000	757000	The most important discovery is that...
+757000	759000	if you look at the structure of 9, 10, and 13,
+759000	761000	its name is a little bit long.
+761000	763000	It's a little bit strange.
+763000	765000	But from its name,
+765000	767000	you can probably tell that...
+767000	769000	these three structures...
+769000	771000	are all in the position of...
+771000	773000	the B27.
+773000	775000	The group that is connected to the B27...
+775000	777000	are the single-unit...
+777000	779000	2-gene...
+779000	781000	or 3-gene.
+781000	783000	So, the most important discovery...
+783000	785000	of this study is that...
+785000	787000	scientists found that...
+787000	789000	among these 10 kinds of...
+789000	791000	amino acids,
+791000	793000	if we connect the single-unit...
+793000	795000	2-gene...
+795000	797000	or 3-gene to the B27,
+797000	799000	it can effectively improve the quality...
+799000	801000	of the amino acids.
+801000	803000	It is more suitable to be used...
+803000	805000	as an oral medication.
+805000	807000	We already know that...
+807000	809000	in the experiment...
+809000	811000	in the general chemical synthesis experiment,
+811000	813000	we are likely to be able to...
+813000	815000	experiment with a dozen kinds of...
+815000	817000	amino acids one by one...
+817000	819000	and then synthesize them one by one.
+819000	821000	Then compare them one by one with wild-type...
+821000	823000	to identify which amino acid...
+823000	825000	has the best quality.
+825000	827000	But if we want to find...
+827000	829000	the best amino acid for oral medication,
+829000	831000	if we want to find the best...
+831000	833000	amino acid,
+833000	835000	do we need to synthesize...
+835000	837000	thousands of kinds of...
+837000	839000	amino acids?
+839000	841000	Of course, this process...
+841000	843000	is very time-consuming.
+843000	845000	Usually, to synthesize...
+845000	847000	an amino acid...
+847000	849000	that does not exist in the natural world,
+849000	851000	it may take a few months.
+851000	853000	If it is long, it may take 1-2 years.
+853000	855000	So, when...
+855000	857000	chemical synthesizers...
+857000	859000	synthesize these amino acids,
+859000	861000	they think that...
+861000	863000	this is too much trouble...
+863000	865000	and too much time...
+865000	867000	and too much money.
+867000	869000	Then they start to think that...
+869000	871000	if I can't quickly and efficiently...
+871000	873000	use chemical synthesis to complete this thing,
+873000	875000	I don't know if computer simulation...
+875000	877000	can do this thing.
+877000	879000	That's why...
+879000	881000	our co-worker...
+881000	883000	came to us...
+883000	885000	to do a computer simulation.
+885000	887000	The answer to this question is...
+887000	889000	of course, it's possible.
+889000	891000	We can use computer simulation...
+891000	893000	to predict...
+893000	895000	which of the selected...
+895000	897000	amino acids...
+897000	899000	may contain the best...
+899000	901000	amino acid.
+901000	903000	Our simulation method...
+903000	905000	is called molecular thermodynamics simulation.
+905000	907000	Molecular thermodynamics simulation...
+907000	909000	is a very vast subject.
+909000	911000	It has a lot of...
+911000	913000	hundreds of...
+913000	915000	different simulations.
+915000	917000	Before I talk about...
+917000	919000	the common points of these simulations,
+919000	921000	we can think about...
+921000	923000	a simple question about sports.
+923000	925000	For example, you start from...
+925000	927000	your door today.
+927000	929000	You walk 1 meter every second.
+929000	931000	Where will you be after 10 seconds?
+931000	933000	The answer is...
+933000	935000	you will be 10 meters away from your home.
+935000	937000	This is a very simple question...
+937000	939000	about sports.
+939000	941000	Most students in high school...
+941000	943000	are familiar with...
+943000	945000	complex sports questions.
+945000	947000	For example, acceleration...
+947000	949000	and force.
+949000	951000	These questions are basically...
+951000	953000	as long as we know the starting speed...
+953000	955000	and starting position of an object...
+955000	957000	and we consider the force...
+957000	959000	and acceleration...
+959000	961000	we can estimate...
+961000	963000	where the object will appear...
+963000	965000	at a certain point in time.
+965000	967000	In a complex system,
+967000	969000	we can even know...
+969000	971000	the position, speed...
+971000	973000	and acceleration of the object...
+973000	975000	at any point in time...
+975000	977000	or even the energy.
+977000	979000	Basically,
+979000	981000	this is what molecular dynamics...
+981000	983000	is doing.
+983000	985000	In simple terms,
+985000	987000	molecular dynamics...
+987000	989000	is an effective way...
+989000	991000	to solve...
+991000	993000	a series of...
+993000	995000	Newton's second law...
+995000	997000	and the Hamiltonian.
+997000	999000	How is molecular dynamics...
+999000	1001000	actually done?
+1001000	1003000	In a molecular dynamics simulation...
+1003000	1005000	we have a simulation box.
+1005000	1007000	In this simulation box...
+1007000	1009000	we put in all the...
+1009000	1011000	atoms and molecules we want to simulate.
+1011000	1013000	For example,
+1013000	1015000	if I want to simulate...
+1015000	1017000	a permutation of a number...
+1017000	1019000	I put the permutation of a number...
+1019000	1021000	into the simulation box.
+1021000	1023000	I want to simulate...
+1023000	1025000	a water-soluble...
+1025000	1027000	water-soluble...
+1027000	1029000	water-soluble...
+1029000	1031000	water-soluble...
+1031000	1033000	water-soluble.
+1033000	1035000	If I want to keep...
+1035000	1037000	the system neutral...
+1037000	1039000	I add some...
+1039000	1041000	oxygen or nitrogen...
+1041000	1043000	to keep the system neutral.
+1043000	1045000	Basically,
+1045000	1047000	in the...
+1047000	1049000	simulation box...
+1049000	1051000	for each atom...
+1051000	1053000	for each atom and molecule...
+1053000	1055000	we have the initial speed...
+1055000	1057000	speed, position...
+1057000	1059000	and energy...
+1059000	1061000	and so on.
+1061000	1063000	Through these initial conditions...
+1063000	1065000	initial conditions...
+1065000	1067000	or initial conditions...
+1067000	1069000	if you've studied the equation...
+1069000	1071000	it's actually initial conditions.
+1071000	1073000	With these initial conditions...
+1073000	1075000	we can calculate...
+1075000	1077000	all the atoms...
+1077000	1079000	at a certain point in the future...
+1079000	1081000	the position...
+1081000	1083000	the speed...
+1083000	1085000	the energy...
+1085000	1087000	and so on.
+1087000	1089000	In a molecular dynamic simulation...
+1089000	1091000	we can know...
+1091000	1093000	in the simulation box...
+1093000	1095000	how each object...
+1095000	1097000	moves...
+1097000	1099000	or even...
+1099000	1101000	in our case...
+1101000	1103000	how the inner structure...
+1103000	1105000	is close or far from each other.
+1105000	1107000	The animation you see now...
+1107000	1109000	you can see different parts...
+1109000	1111000	moving around.
+1111000	1113000	Basically,
+1113000	1115000	molecular dynamic simulation...
+1115000	1117000	allows us to see...
+1117000	1119000	how an atom...
+1119000	1121000	or an atom and an atom...
+1121000	1123000	interact with each other.
+1123000	1125000	With the method...
+1125000	1127000	we can define...
+1127000	1129000	the goal of our research.
+1129000	1131000	Our method is...
+1131000	1133000	molecular dynamic simulation.
+1133000	1135000	Our goal is...
+1135000	1137000	to build a simulation...
+1137000	1139000	so we don't have to...
+1139000	1141000	do chemical synthesis.
+1141000	1143000	We can find...
+1143000	1145000	the most likely...
+1145000	1147000	high-resistance...
+1147000	1149000	and low-resistance structure...
+1149000	1151000	from a series of...
+1151000	1153000	carboxylic acids.
+1153000	1155000	This is our overall goal.
+1155000	1157000	In order to build...
+1157000	1159000	this simulation method...
+1159000	1161000	we basically focus on...
+1161000	1163000	the 12 elements...
+1163000	1165000	of carboxylic acids...
+1165000	1167000	studied by experimentalists.
+1167000	1169000	In the simulation...
+1169000	1171000	we first find...
+1171000	1173000	5 elements of carboxylic acids.
+1173000	1175000	Starting from these 5 elements...
+1175000	1177000	each of them...
+1177000	1179000	is like a template.
+1179000	1181000	Each template...
+1181000	1183000	can be used to generate...
+1183000	1185000	12 carboxylic acids.
+1185000	1187000	There are 65 elements...
+1187000	1189000	in the template.
+1189000	1191000	Each of these 65 elements...
+1191000	1193000	is a long enough...
+1193000	1195000	molecular dynamic simulation.
+1195000	1197000	The basic logic...
+1197000	1199000	is that...
+1199000	1201000	we run a carboxylic acid simulation...
+1201000	1203000	followed by a carboxylic acid simulation.
+1203000	1205000	We compare...
+1205000	1207000	the trajectories...
+1207000	1209000	or the physical properties...
+1209000	1211000	to see if there are any differences.
+1211000	1213000	We try to figure out...
+1213000	1215000	what are the causes...
+1215000	1217000	that lead to...
+1217000	1219000	carboxylic acid resistance...
+1219000	1221000	or carboxylic acid resistance.
+1221000	1223000	We know that...
+1223000	1225000	the entire process...
+1225000	1227000	is...
+1227000	1229000	just by looking at...
+1229000	1231000	the carboxylic acid simulation...
+1231000	1233000	we can't see anything.
+1233000	1235000	Too many atoms and molecules...
+1235000	1237000	are moving at the same time.
+1237000	1239000	Many things...
+1239000	1241000	have to be...
+1241000	1243000	quantified in the simulation.
+1243000	1245000	The workflow...
+1245000	1247000	is to set up a hypothesis.
+1247000	1249000	We can assume that...
+1249000	1251000	a certain amount of carboxylic acid...
+1251000	1253000	is...
+1253000	1255000	able to affect...
+1255000	1257000	the carboxylic acid resistance...
+1257000	1259000	or the carboxylic acid resistance.
+1259000	1261000	Then we use the simulation...
+1261000	1263000	to calculate the amount of carboxylic acid...
+1263000	1265000	and compare it with the experiment.
+1265000	1267000	If it matches the experiment...
+1267000	1269000	it means that the hypothesis...
+1269000	1271000	is plausible.
+1271000	1273000	If it doesn't match...
+1273000	1275000	it means that the hypothesis...
+1275000	1277000	is not plausible.
+1277000	1279000	In this research...
+1279000	1281000	we set up many different hypotheses...
+1281000	1283000	for two types of carboxylic acid resistance...
+1283000	1285000	and carboxylic acid resistance.
+1285000	1287000	There are many words here.
+1287000	1289000	I won't explain them one by one...
+1289000	1291000	because they will be mentioned later.
+1291000	1293000	Let's take a look...
+1293000	1295000	at the hypothesis.
+1295000	1297000	First, we will focus on...
+1297000	1299000	the carboxylic acid resistance...
+1299000	1301000	of the carboxylic acid.
+1301000	1303000	Then we will look back...
+1303000	1305000	at the togethering of carboxylic acid.
+1305000	1307000	Then we will look at...
+1307000	1309000	the carboxylic acid resistance...
+1309000	1311000	of the carboxylic acid.
+1311000	1313000	And then we will...
+1313000	1315000	talk about the interaction between...
+1315000	1317000	carboxylic acid and carboxylic acid.
+1317000	1319000	The interaction between...
+1319000	1321000	carboxylic acid and carboxylic acid...
+1321000	1323000	is mainly...
+1325000	1327000	The first step is...
+1327000	1329000	I simplify it.
+1329000	1331000	The mechanism is...
+1331000	1333000	First, the carboxylic acid and carboxylic acid...
+1333000	1335000	will be combined.
+1335000	1337000	After that, the carboxylic acid will cut...
+1337000	1339000	some positions of the carboxylic acid.
+1339000	1341000	Then cut the carboxylic acid into two halves...
+1341000	1343000	or even three halves...
+1343000	1345000	three parts, four parts, etc.
+1345000	1347000	But basically, as long as the carboxylic acid is cut...
+1347000	1349000	it will lose its function.
+1349000	1351000	In all 51 amino acids of carboxylic acid...
+1351000	1353000	five of them...
+1353000	1355000	may be...
+1355000	1357000	cut off by alpha-carbotripsin...
+1357000	1359000	the carboxylic acid.
+1359000	1361000	The two places...
+1361000	1363000	that are most likely to be cut off...
+1363000	1365000	are B25 and B26...
+1365000	1367000	the two amino acids.
+1367000	1369000	You can see here...
+1369000	1371000	some of the rings...
+1371000	1373000	are the structure of the carboxylic acid.
+1373000	1375000	They will be cut off.
+1375000	1377000	Where is the cut off?
+1377000	1379000	For example,
+1379000	1381000	for B25 carboxylic acid...
+1381000	1383000	the cut off is between...
+1383000	1385000	B25 and B26...
+1385000	1387000	the part of the carboxylic acid.
+1387000	1389000	For B26 carboxylic acid...
+1389000	1391000	the cut off is between...
+1391000	1393000	B26 and B27...
+1393000	1395000	the part of the carboxylic acid.
+1395000	1397000	Based on this understanding...
+1397000	1399000	we know that...
+1399000	1401000	the carboxylic acid...
+1401000	1403000	needs to be cut off.
+1403000	1405000	There is a necessary factor...
+1405000	1407000	that is...
+1407000	1409000	the carboxylic acid...
+1409000	1411000	needs to be cut off...
+1411000	1413000	in order to cut off the carboxylic acid.
+1413000	1415000	The whole set of logic...
+1415000	1417000	that we study...
+1417000	1419000	is to see...
+1419000	1421000	what is the necessary factor...
+1421000	1423000	that needs to be cut off.
+1423000	1425000	We need to see...
+1425000	1427000	if there is a way...
+1427000	1429000	to destroy the necessary factor.
+1429000	1431000	In this case...
+1431000	1433000	the necessary factor is...
+1433000	1435000	that the carboxylic acid...
+1435000	1437000	needs to be cut off...
+1437000	1439000	in order to cut off the carboxylic acid.
+1439000	1441000	The first assumption...
+1441000	1443000	is that...
+1443000	1445000	if the carboxylic acid is stored...
+1445000	1447000	inside the carboxylic acid...
+1447000	1449000	it won't be cut off.
+1449000	1451000	This assumption means that...
+1451000	1453000	the structure...
+1453000	1455000	has a higher resistance to carboxylic acid.
+1455000	1457000	This is a full assertion.
+1457000	1459000	We assume that if a...
+1459000	1461000	sugar is added to the carboxylic acid...
+1461000	1463000	the cut-off sugar is...
+1463000	1465000	guaranteed to be stored inside.
+1465000	1467000	This is a possible...
+1467000	1469000	and effective mechanism.
+1469000	1471000	What do we need to do in this simulation?
+1471000	1473000	How do we quantify this?
+1473000	1475000	How do we quantify this?
+1475000	1477000	How do we quantify this?
+1477000	1479000	We measure something called SASA.
+1479000	1481000	Solve an Accessible Surface Area.
+1481000	1483000	Solve an Accessible Surface Area.
+1483000	1485000	On paper, this means that...
+1485000	1487000	the surface area...
+1487000	1489000	of a carboxylic acid...
+1489000	1491000	in the carboxylic acid environment.
+1491000	1493000	This means that...
+1493000	1495000	the larger the SASA...
+1495000	1497000	the larger the surface area...
+1497000	1499000	of the carboxylic acid.
+1499000	1501000	We assume that...
+1501000	1503000	the carboxylic acid...
+1503000	1505000	is exposed outside.
+1505000	1507000	If it's covered inside...
+1507000	1509000	it may not even be exposed to water.
+1509000	1511000	So our assumption today is...
+1511000	1513000	if a carboxylic acid...
+1513000	1515000	can lower the SASA...
+1515000	1517000	of the carboxylic acid B25 and B26...
+1517000	1519000	it is very likely...
+1519000	1521000	that it can raise the resistance...
+1521000	1523000	of the carboxylic acid...
+1523000	1525000	to the carboxylic acid.
+1525000	1527000	Let's take a look...
+1527000	1529000	This diagram looks a bit complicated...
+1529000	1531000	but basically...
+1531000	1533000	B25 and B26...
+1533000	1535000	are the SASA...
+1535000	1537000	of two different positions.
+1537000	1539000	The axis...
+1539000	1541000	is the time it takes...
+1541000	1543000	for the carboxylic acid...
+1543000	1545000	to digest the carboxylic acid.
+1545000	1547000	So...
+1547000	1549000	the simplest way...
+1549000	1551000	since there are many data points...
+1551000	1553000	the simplest way...
+1553000	1555000	is to look at the numbers 10 and 13...
+1555000	1557000	the two carboxylic acids.
+1557000	1559000	Numbers 10 and 13...
+1559000	1561000	are the two carboxylic acids...
+1561000	1563000	that have the highest resistance...
+1563000	1565000	to the carboxylic acid...
+1565000	1567000	in the experiment.
+1567000	1569000	We can see that...
+1569000	1571000	these two carboxylic acids...
+1571000	1573000	have a half-life...
+1573000	1575000	longer than the other carboxylic acids.
+1575000	1577000	This is the result of the experiment.
+1577000	1579000	It shows that...
+1579000	1581000	the carboxylic acid resistance...
+1581000	1583000	is higher in the experiment.
+1583000	1585000	We can also see that...
+1585000	1587000	these two carboxylic acids...
+1587000	1589000	especially number 13...
+1589000	1591000	have the lowest SASA value.
+1591000	1593000	This means that...
+1593000	1595000	when the SASA value is low...
+1595000	1597000	the carboxylic acid resistance...
+1597000	1599000	can be improved.
+1599000	1601000	Although...
+1601000	1603000	number 10 and 13...
+1603000	1605000	seem to be consistent...
+1605000	1607000	with the experiment results...
+1607000	1609000	there are many exceptions.
+1609000	1611000	For example, in the square on the right...
+1611000	1613000	we can see that...
+1613000	1615000	the half-life of the carboxylic acid...
+1615000	1617000	is relatively low.
+1617000	1619000	This means that...
+1619000	1621000	the carboxylic acid resistance...
+1621000	1623000	is relatively low.
+1623000	1625000	However, the SASA value...
+1625000	1627000	is actually in the middle.
+1627000	1629000	This is contrary...
+1629000	1631000	to the experiment results.
+1631000	1633000	So, from this...
+1633000	1635000	measurement method...
+1635000	1637000	we can only know that...
+1637000	1639000	the SASA measurement method...
+1639000	1641000	can only give us...
+1641000	1643000	partial accurate prediction.
+1643000	1645000	For those...
+1645000	1647000	carboxylic acids...
+1647000	1649000	with high SASA resistance...
+1649000	1651000	their prediction may be accurate.
+1651000	1653000	However, for those...
+1653000	1655000	in the middle value...
+1655000	1657000	their prediction ability...
+1657000	1659000	is not so good.
+1659000	1661000	Obviously, we have to...
+1661000	1663000	find a better...
+1663000	1665000	model...
+1665000	1667000	to...
+1667000	1669000	to model this phenomenon.
+1669000	1671000	Basically, this model...
+1671000	1673000	the first model...
+1673000	1675000	is to look at...
+1675000	1677000	the interface between...
+1677000	1679000	the transfer function and the coefficient.
+1679000	1681000	The second model...
+1681000	1683000	is based on...
+1683000	1685000	the 2-level structure of the transfer function.
+1685000	1687000	First of all, the 2-level structure of the transfer function...
+1687000	1689000	is related to...
+1689000	1691000	the location of the carboxylic acid.
+1691000	1693000	Let's look at...
+1693000	1695000	this graph.
+1695000	1697000	This circle represents...
+1697000	1699000	the carboxylic acid...
+1699000	1701000	which is B25 or B26.
+1701000	1703000	The location of the carboxylic acid...
+1703000	1705000	is C and P1'.
+1705000	1707000	P1' is the carboxylic acid next to C.
+1707000	1709000	It is...
+1709000	1711000	the direction of the carbon.
+1711000	1713000	The opposite direction is...
+1713000	1715000	P1, P2 and P3.
+1717000	1719000	In the past experiments...
+1719000	1721000	we found that...
+1721000	1723000	the area from P1 to P3...
+1723000	1725000	is usually...
+1725000	1727000	from the past experiments...
+1727000	1729000	the area from P1 to P3...
+1729000	1731000	is usually...
+1731000	1733000	from the past experiments...
+1733000	1735000	the area from P1 to P3...
+1735000	1737000	is the omega3 structure...
+1737000	1739000	in the combination with...
+1739000	1741000	alpha-carbotrypsin.
+1741000	1743000	This omega3 structure...
+1745000	1747000	is a necessary factor...
+1747000	1749000	required...
+1749000	1751000	for therefore,
+1751000	1753000	for example,
+1753000	1755000	our target omega3...
+1755000	1757000	oding is very important.
+1757000	1759000	loss of atoms is between B25 and B26.
+1761000	1763000	Which means...
+1763000	1765000	from P1 to P3 are equal to...
+1765000	1767000	if we take B25 as an example,
+1767000	1769000	P1 is 24,
+1769000	1771000	followed by 2 3 2 2,
+1771000	1773000	for B26,
+1773000	1775000	P1 P2 P3 are 23-25.
+1775000	1777000	If we take both actions,
+1777000	1779000	B25-B26,
+1779000	1781000	we need to consider B22-B25,
+1781000	1783000	P1-P3,
+1783000	1785000	the 2-level structure.
+1787000	1789000	Here,
+1789000	1791000	our assumption is
+1791000	1793000	if P1-P3
+1793000	1795000	become
+1795000	1797000	the lower the beta-shear tendency,
+1797000	1799000	it will be able to
+1799000	1801000	increase the antiparticle resistance.
+1801000	1803000	Here,
+1803000	1805000	I would like to remind you that
+1805000	1807000	our logic is always the same.
+1807000	1809000	When we assume
+1809000	1811000	the beta-shear is
+1811000	1813000	the necessary condition
+1813000	1815000	for the antiparticle resistance,
+1815000	1817000	we will try to break this condition.
+1817000	1819000	Let's assume that
+1819000	1821000	P1-P3
+1821000	1823000	become the lower the beta-shear tendency,
+1823000	1825000	it will be able to
+1825000	1827000	avoid the antiparticle resistance.
+1827000	1829000	In simulation,
+1829000	1831000	how do we calculate
+1831000	1833000	the beta-shear tendency
+1833000	1835000	in this region?
+1835000	1837000	Here is a graph called
+1837000	1839000	Raman-Schrödinger plot.
+1839000	1841000	I won't go into details here.
+1841000	1843000	Basically,
+1843000	1845000	it measures
+1845000	1847000	each amino acid,
+1847000	1849000	we are interested in amino acids,
+1849000	1851000	B22-B25,
+1851000	1853000	each amino acid,
+1853000	1855000	and locate
+1855000	1857000	the location of
+1857000	1859000	each point
+1859000	1861000	in the graph.
+1861000	1863000	The more red points
+1863000	1865000	appear in this region,
+1865000	1867000	it means
+1867000	1869000	the higher the antiparticle resistance
+1869000	1871000	is.
+1871000	1873000	We hope that
+1873000	1875000	the lower the beta-shear tendency.
+1875000	1877000	Let's see
+1877000	1879000	the simulation data.
+1879000	1881000	Here,
+1881000	1883000	the graph looks
+1883000	1885000	a bit complicated,
+1885000	1887000	so I won't
+1887000	1889000	go into details.
+1889000	1891000	Basically,
+1891000	1893000	here is the conclusion.
+1893000	1895000	We found that
+1895000	1897000	the beta-shear tendency
+1897000	1899000	of P1 to P3
+1899000	1901000	is not related to
+1901000	1903000	the antiparticle resistance
+1903000	1905000	of the guide tree.
+1905000	1907000	Some of them
+1907000	1909000	are not even related.
+1909000	1911000	This means
+1911000	1913000	that
+1913000	1915000	our hypothesis
+1915000	1917000	is wrong.
+1917000	1919000	The reason is
+1919000	1921000	that
+1921000	1923000	if you are interested,
+1923000	1925000	I can explain it later.
+1925000	1927000	Basically,
+1927000	1929000	the takeaway here
+1929000	1931000	is that
+1931000	1933000	the second hypothesis is still wrong.
+1933000	1935000	Since the second hypothesis is still wrong,
+1935000	1937000	we have to think about the third hypothesis.
+1937000	1939000	Let me
+1939000	1941000	help you review.
+1941000	1943000	The first hypothesis
+1943000	1945000	is based on
+1945000	1947000	the difference between
+1947000	1949000	the antiparticle resistance
+1949000	1951000	of P1 to P3.
+1951000	1953000	The second hypothesis
+1953000	1955000	is based on
+1955000	1957000	the second structure of the guide tree.
+1957000	1959000	The third hypothesis
+1959000	1961000	is based on
+1961000	1963000	the interaction between
+1963000	1965000	the guide tree
+1965000	1967000	and the antiparticle resistance
+1967000	1969000	of P1 to P3.
+1969000	1971000	In the past,
+1971000	1973000	we found that
+1973000	1975000	alpha-chromotrypsin
+1975000	1977000	interacts with
+1977000	1979000	the protein
+1979000	1981000	that can be cut
+1981000	1983000	by alpha-chromotrypsin.
+1983000	1985000	In this example,
+1985000	1987000	we can see
+1987000	1989000	that
+1989000	1991000	the yellow circle
+1991000	1993000	is the part of the guide tree.
+1993000	1995000	The square below
+1995000	1997000	is the amino acid
+1997000	1999000	of alpha-chromotrypsin.
+1999000	2001000	In the past,
+2001000	2003000	we found that
+2003000	2005000	alpha-chromotrypsin interacts
+2005000	2007000	with the amino acid of
+2007000	2009000	alpha-chromotrypsin.
+2009000	2011000	The interaction between
+2011000	2013000	alpha-chromotrypsin and
+2013000	2015000	alpha-chromotrypsin
+2015000	2017000	is very common.
+2017000	2019000	The four groups
+2019000	2021000	are the standard
+2021000	2023000	interactions
+2023000	2025000	between the
+2025000	2027000	alpha-chromotrypsin
+2027000	2029000	and the
+2029000	2031000	alpha-chromotrypsin.
+2031000	2033000	In this example,
+2033000	2035000	alpha-chromotrypsin
+2035000	2037000	interacts with
+2037000	2039000	the amino acid of
+2039000	2041000	alpha-chromotrypsin.
+2041000	2043000	The interaction between
+2043000	2045000	alpha-chromotrypsin
+2045000	2047000	and
+2047000	2049000	alpha-chromotrypsin
+2049000	2051000	is very common.
+2051000	2053000	The interaction between
+2053000	2055000	alpha-chromotrypsin
+2055000	2057000	and
+2057000	2059000	alpha-chromotrypsin
+2059000	2061000	is very common.
+2061000	2063000	In the case of
+2063000	2065000	alpha-chromotrypsin,
+2065000	2067000	the interaction
+2067000	2069000	between
+2069000	2071000	alpha-chromotrypsin
+2071000	2073000	and
+2073000	2075000	alpha-chromotrypsin
+2075000	2077000	is very common.
+2077000	2079000	We found that
+2079000	2081000	the interaction between
+2081000	2083000	alpha-chromotrypsin
+2083000	2085000	and
+2085000	2087000	alpha-chromotrypsin
+2087000	2089000	is very common.
+2089000	2091000	The biggest difference between
+2091000	2093000	alpha-chromotrypsin and
+2093000	2095000	alpha-chromotrypsin is that
+2095000	2097000	alpha-chromotrypsin contains
+2097000	2099000	a type of sugar,
+2099000	2101000	whereas alpha-chromotrypsin
+2101000	2103000	does not.
+2103000	2105000	Let's assume that
+2105000	2107000	the addition of
+2107000	2109000	a type of sugar
+2109000	2111000	can disrupt
+2111000	2113000	the network of
+2113000	2115000	alpha-chromotrypsin.
+2115000	2117000	In other words,
+2117000	2119000	if alpha-chromotrypsin
+2119000	2121000	prefers sugar
+2121000	2123000	as a donor,
+2123000	2125000	alpha-chromotrypsin will
+2125000	2127000	interact with sugar
+2127000	2129000	to create
+2129000	2131000	a bond between
+2131000	2133000	alpha-chromotrypsin
+2133000	2135000	and
+2135000	2137000	alpha-chromotrypsin.
+2137000	2139000	For example,
+2139000	2141000	there are several couples
+2141000	2143000	in front of you
+2143000	2145000	and you want to
+2145000	2147000	disrupt the bond between
+2147000	2149000	them,
+2149000	2151000	so you throw down
+2151000	2153000	a type of sugar,
+2153000	2155000	like alpha-chromotrypsin.
+2155000	2157000	Alpha-chromotrypsin
+2157000	2159000	and
+2159000	2161000	alpha-chromotrypsin
+2161000	2163000	form a new bond.
+2163000	2165000	Let's assume that
+2165000	2167000	sugar can disrupt
+2167000	2169000	the network of
+2169000	2171000	alpha-chromotrypsin
+2171000	2173000	and alpha-chromotrypsin.
+2173000	2175000	Let's see
+2175000	2177000	if simulation
+2177000	2179000	supports this assumption.
+2179000	2181000	First,
+2181000	2183000	we can see
+2183000	2185000	the two structures
+2185000	2187000	with the highest
+2187000	2189000	alpha-chromotrypsin.
+2189000	2191000	We know that
+2191000	2193000	10 and 13
+2193000	2195000	have the highest
+2195000	2197000	alpha-chromotrypsin.
+2197000	2199000	13 is the first one.
+2199000	2201000	13,
+2201000	2203000	we call it
+2203000	2205000	the adsorption power
+2205000	2207000	which can be
+2207000	2209000	caused by
+2209000	2211000	alpha-chromotrypsin
+2211000	2213000	and
+2213000	2215000	alpha-chromotrypsin.
+2215000	2217000	13
+2217000	2219000	has four
+2219000	2221000	adsorption power
+2221000	2223000	with
+2223000	2225000	the highest
+2225000	2227000	alpha-chromotrypsin.
+2227000	2229000	9
+2229000	2231000	has two
+2231000	2233000	adsorption power.
+2233000	2235000	5 and 12
+2235000	2237000	have similar
+2237000	2239000	adsorption power
+2239000	2241000	with alpha-chromotrypsin.
+2241000	2243000	Therefore,
+2243000	2245000	as long as there is
+2245000	2247000	adsorption power,
+2247000	2249000	alpha-chromotrypsin
+2249000	2251000	is better
+2251000	2253000	for alpha-chromotrypsin.
+2253000	2255000	We can see
+2255000	2257000	as long as there is
+2257000	2259000	more adsorption power,
+2259000	2261000	alpha-chromotrypsin
+2261000	2263000	is better for
+2263000	2265000	alpha-chromotrypsin.
+2265000	2267000	The rest
+2267000	2269000	are
+2269000	2271000	alpha-chromotrypsin
+2271000	2273000	with lower
+2273000	2275000	adsorption power
+2275000	2277000	than
+2277000	2279000	alpha-chromotrypsin.
+2279000	2281000	Only
+2281000	2283000	number 6
+2283000	2285000	has lower
+2285000	2287000	adsorption power
+2287000	2289000	than alpha-chromotrypsin.
+2289000	2291000	Although
+2291000	2293000	number 6
+2293000	2295000	has adsorption power,
+2295000	2297000	we can see
+2297000	2299000	that the adsorption power
+2299000	2301000	is not very stable.
+2301000	2303000	Therefore,
+2303000	2305000	number 6
+2305000	2307000	has almost
+2307000	2309000	no adsorption power.
+2309000	2311000	Therefore,
+2311000	2313000	only number 6
+2313000	2315000	has adsorption power
+2315000	2317000	than alpha-chromotrypsin.
+2317000	2319000	Therefore,
+2319000	2321000	number 6
+2321000	2323000	has
+2323000	2325000	almost
+2325000	2327000	no adsorption power
+2327000	2329000	than alpha-chromotrypsin.
+2329000	2331000	Therefore,
+2331000	2333000	number 6
+2333000	2335000	has
+2335000	2337000	almost
+2337000	2339000	no adsorption power
+2339000	2341000	than alpha-chromotrypsin.
+2341000	2343000	Therefore,
+2343000	2345000	number 6
+2345000	2347000	has
+2347000	2349000	almost
+2349000	2351000	no adsorption power
+2351000	2353000	than alpha-chromotrypsin.
+2353000	2355000	Therefore,
+2355000	2357000	number 6
+2357000	2359000	has
+2359000	2361000	almost
+2361000	2363000	no adsorption power
+2363000	2365000	than alpha-chromotrypsin.
+2365000	2367000	Therefore,
+2367000	2369000	number 6
+2369000	2371000	has
+2371000	2373000	almost
+2373000	2375000	no adsorption power
+2375000	2377000	than alpha-chromotrypsin.
+2377000	2379000	Therefore,
+2379000	2381000	number 6
+2381000	2383000	has
+2383000	2385000	almost
+2385000	2387000	no adsorption power
+2387000	2389000	than alpha-chromotrypsin.
+2389000	2391000	Therefore,
+2391000	2393000	number 6
+2393000	2395000	has
+2395000	2397000	almost
+2397000	2399000	no adsorption power
+2399000	2401000	than alpha-chromotrypsin.
+2401000	2403000	Therefore,
+2403000	2405000	number 6
+2405000	2407000	has
+2407000	2409000	almost
+2409000	2411000	no adsorption power
+2411000	2413000	than alpha-chromotrypsin.
+2413000	2415000	Therefore,
+2415000	2417000	number 6
+2417000	2419000	has
+2419000	2421000	almost
+2421000	2423000	no adsorption power
+2423000	2425000	than alpha-chromotrypsin.
+2425000	2427000	Therefore,
+2427000	2429000	number 6
+2429000	2431000	has
+2431000	2433000	almost
+2433000	2435000	no adsorption power
+2435000	2437000	than alpha-chromotrypsin.
+2437000	2439000	Therefore,
+2439000	2441000	number 6
+2441000	2443000	has
+2443000	2445000	almost
+2445000	2447000	no adsorption power
+2447000	2449000	than alpha-chromotrypsin.
+2449000	2451000	Therefore,
+2451000	2453000	number 6
+2453000	2455000	has
+2455000	2457000	almost
+2457000	2459000	no adsorption power
+2459000	2461000	than alpha-chromotrypsin.
+2461000	2463000	Therefore,
+2463000	2465000	number 6
+2465000	2467000	has
+2467000	2469000	almost
+2469000	2471000	no adsorption power
+2471000	2473000	than alpha-chromotrypsin.
+2473000	2475000	Therefore,
+2475000	2477000	number 6
+2477000	2479000	has
+2479000	2481000	almost
+2481000	2483000	no adsorption power
+2483000	2485000	than alpha-chromotrypsin.
+2485000	2487000	Therefore,
+2487000	2489000	number 6
+2489000	2491000	has
+2491000	2493000	almost
+2493000	2495000	no adsorption power
+2495000	2497000	than alpha-chromotrypsin.
+2497000	2499000	Therefore,
+2499000	2501000	number 6
+2501000	2503000	has
+2503000	2505000	almost
+2505000	2507000	no adsorption power
+2507000	2509000	than alpha-chromotrypsin.
+2509000	2511000	Therefore,
+2511000	2513000	number 6
+2513000	2515000	has
+2515000	2517000	almost
+2517000	2519000	no adsorption power
+2519000	2521000	than alpha-chromotrypsin.
+2521000	2523000	Therefore,
+2523000	2525000	number 6
+2525000	2527000	has
+2527000	2529000	almost
+2529000	2531000	no adsorption power
+2531000	2533000	than alpha-chromotrypsin.
+2533000	2535000	Therefore,
+2535000	2537000	number 6
+2537000	2539000	has
+2539000	2541000	almost
+2541000	2543000	no adsorption power
+2543000	2545000	than alpha-chromotrypsin.
+2545000	2547000	Therefore,
+2547000	2549000	number 6
+2549000	2551000	has
+2551000	2553000	almost
+2553000	2555000	no adsorption power
+2555000	2557000	than alpha-chromotrypsin.
+2557000	2559000	Therefore,
+2559000	2561000	number 6
+2561000	2563000	has
+2563000	2565000	almost
+2565000	2567000	no adsorption power
+2567000	2569000	than alpha-chromotrypsin.
+2569000	2571000	Therefore,
+2571000	2573000	number 6
+2573000	2575000	has
+2575000	2577000	almost
+2577000	2579000	no adsorption power
+2579000	2581000	than alpha-chromotrypsin.
+2581000	2583000	Therefore,
+2583000	2585000	number 6
+2585000	2587000	has
+2587000	2589000	almost
+2589000	2591000	no adsorption power
+2591000	2593000	than alpha-chromotrypsin.
+2593000	2595000	Therefore,
+2595000	2597000	number 6
+2597000	2599000	has
+2599000	2601000	almost
+2601000	2603000	no adsorption power
+2603000	2605000	than alpha-chromotrypsin.
+2605000	2607000	Therefore,
+2607000	2609000	number 6
+2609000	2611000	has
+2611000	2613000	almost
+2613000	2615000	no adsorption power
+2615000	2617000	than alpha-chromotrypsin.
+2617000	2619000	Therefore,
+2619000	2621000	number 6
+2621000	2623000	has
+2623000	2625000	almost
+2625000	2627000	no adsorption power
+2627000	2629000	than alpha-chromotrypsin.
+2629000	2631000	Therefore,
+2631000	2633000	number 6
+2633000	2635000	has
+2635000	2637000	almost
+2637000	2639000	no adsorption power
+2639000	2641000	than alpha-chromotrypsin.
+2641000	2643000	Therefore,
+2643000	2645000	number 6
+2645000	2647000	has
+2647000	2649000	almost
+2649000	2651000	no adsorption power
+2651000	2653000	than alpha-chromotrypsin.
+2653000	2655000	Therefore,
+2655000	2657000	number 6
+2657000	2659000	has
+2659000	2661000	almost
+2661000	2663000	no adsorption power
+2663000	2665000	than alpha-chromotrypsin.
+2665000	2667000	Therefore,
+2667000	2669000	number 6
+2669000	2671000	has
+2671000	2673000	almost
+2673000	2675000	no adsorption power
+2675000	2677000	than alpha-chromotrypsin.
+2677000	2679000	Therefore,
+2679000	2681000	number 6
+2681000	2683000	has
+2683000	2685000	almost
+2685000	2687000	no adsorption power
+2687000	2689000	than alpha-chromotrypsin.
+2689000	2691000	Therefore,
+2691000	2693000	number 6
+2693000	2695000	has
+2695000	2697000	almost
+2697000	2699000	no adsorption power
+2699000	2701000	than alpha-chromotrypsin.
+2701000	2703000	Therefore,
+2703000	2705000	number 6
+2705000	2707000	has
+2707000	2709000	almost
+2709000	2711000	no adsorption power
+2711000	2713000	than alpha-chromotrypsin.
+2713000	2715000	Therefore,
+2715000	2717000	number 6
+2717000	2719000	has
+2719000	2721000	almost
+2721000	2723000	no adsorption power
+2723000	2725000	than alpha-chromotrypsin.
+2725000	2727000	Therefore,
+2727000	2729000	number 6
+2729000	2731000	has
+2731000	2733000	almost
+2733000	2735000	no adsorption power
+2735000	2737000	than alpha-chromotrypsin.
+2737000	2739000	Therefore,
+2739000	2741000	number 6
+2741000	2743000	has
+2743000	2745000	almost
+2745000	2747000	no adsorption power
+2747000	2749000	than alpha-chromotrypsin.
+2749000	2751000	Therefore,
+2751000	2753000	number 6
+2753000	2755000	has
+2755000	2757000	almost
+2757000	2759000	no adsorption power
+2759000	2761000	than alpha-chromotrypsin.
+2761000	2763000	Therefore,
+2763000	2765000	number 6
+2765000	2767000	has
+2767000	2769000	almost
+2769000	2771000	no adsorption power
+2771000	2773000	than alpha-chromotrypsin.
+2773000	2775000	Therefore,
+2775000	2777000	number 6
+2777000	2779000	has
+2779000	2781000	almost
+2781000	2783000	no adsorption power
+2783000	2785000	than alpha-chromotrypsin.
+2785000	2787000	Therefore,
+2787000	2789000	number 6
+2789000	2791000	has
+2791000	2793000	almost
+2793000	2795000	no adsorption power
+2795000	2797000	than alpha-chromotrypsin.
+2797000	2799000	Therefore,
+2799000	2801000	number 6
+2801000	2803000	has
+2803000	2805000	almost
+2805000	2807000	no adsorption power
+2807000	2809000	than alpha-chromotrypsin.
+2809000	2811000	Therefore,
+2811000	2813000	number 6
+2813000	2815000	has
+2815000	2817000	almost
+2817000	2819000	no adsorption power
+2819000	2821000	than alpha-chromotrypsin.
+2821000	2823000	Therefore,
+2823000	2825000	number 6
+2825000	2827000	has
+2827000	2829000	almost
+2829000	2831000	no adsorption power
+2831000	2833000	than alpha-chromotrypsin.
+2833000	2835000	Therefore,
+2835000	2837000	number 6
+2837000	2839000	has
+2839000	2841000	almost
+2841000	2843000	no adsorption power
+2843000	2845000	than alpha-chromotrypsin.
+2845000	2847000	Therefore,
+2847000	2849000	number 6
+2849000	2851000	has
+2851000	2853000	almost
+2853000	2855000	no adsorption power
+2855000	2857000	than alpha-chromotrypsin.
+2857000	2859000	Therefore,
+2859000	2861000	number 6
+2861000	2863000	has
+2863000	2865000	almost
+2865000	2867000	no adsorption power
+2867000	2869000	than alpha-chromotrypsin.
+2869000	2871000	Therefore,
+2871000	2873000	number 6
+2873000	2875000	has
+2875000	2877000	almost
+2877000	2879000	no adsorption power
+2879000	2881000	than alpha-chromotrypsin.
+2881000	2883000	Therefore,
+2883000	2885000	number 6
+2885000	2887000	has
+2887000	2889000	almost
+2889000	2891000	no adsorption power
+2891000	2893000	than alpha-chromotrypsin.
+2893000	2895000	Therefore,
+2895000	2897000	number 6
+2897000	2899000	has
+2899000	2901000	almost
+2901000	2903000	no adsorption power
+2903000	2905000	than alpha-chromotrypsin.
+2905000	2907000	Therefore,
+2907000	2909000	number 6
+2909000	2911000	has
+2911000	2913000	almost
+2913000	2915000	no adsorption power
+2915000	2917000	than alpha-chromotrypsin.
+2917000	2919000	Therefore,
+2919000	2921000	number 6
+2921000	2923000	has
+2923000	2925000	almost
+2925000	2927000	no adsorption power
+2927000	2929000	than alpha-chromotrypsin.
+2929000	2931000	Therefore,
+2931000	2933000	number 6
+2933000	2935000	has
+2935000	2937000	almost
+2937000	2939000	no adsorption power
+2939000	2941000	than alpha-chromotrypsin.
+2941000	2943000	Therefore,
+2943000	2945000	number 6
+2945000	2947000	has
+2947000	2949000	almost
+2949000	2951000	no adsorption power
+2951000	2953000	than alpha-chromotrypsin.
+2953000	2955000	Therefore,
+2955000	2957000	number 6
+2957000	2959000	has
+2959000	2961000	almost
+2961000	2963000	no adsorption power
+2963000	2965000	than alpha-chromotrypsin.
+2965000	2967000	Therefore,
+2967000	2969000	number 6
+2969000	2971000	has
+2971000	2973000	almost
+2973000	2975000	no adsorption power
+2975000	2977000	than alpha-chromotrypsin.
+2977000	2979000	Therefore,
+2979000	2981000	number 6
+2981000	2983000	has
+2983000	2985000	almost
+2985000	2987000	no adsorption power
+2987000	2989000	than alpha-chromotrypsin.
+2989000	2991000	Therefore,
+2991000	2993000	number 6
+2993000	2995000	has
+2995000	2997000	almost
+2997000	2999000	no adsorption power
+2999000	3001000	than alpha-chromotrypsin.
+3001000	3003000	Therefore,
+3003000	3005000	number 6
+3005000	3007000	has
+3007000	3009000	almost
+3009000	3011000	no adsorption power
+3011000	3013000	than alpha-chromotrypsin.
+3013000	3015000	Therefore,
+3015000	3017000	number 6
+3017000	3019000	has
+3019000	3021000	almost
+3021000	3023000	no adsorption power
+3023000	3025000	than alpha-chromotrypsin.
+3025000	3027000	Therefore,
+3027000	3029000	number 6
+3029000	3031000	has
+3031000	3033000	almost
+3033000	3035000	no adsorption power
+3035000	3037000	than alpha-chromotrypsin.
+3037000	3039000	Therefore,
+3039000	3041000	number 6
+3041000	3043000	has
+3043000	3045000	almost
+3045000	3047000	no adsorption power
+3047000	3049000	than alpha-chromotrypsin.
+3049000	3051000	Therefore,
+3051000	3053000	number 6
+3053000	3055000	has
+3055000	3057000	almost
+3057000	3059000	no adsorption power
+3059000	3061000	than alpha-chromotrypsin.
+3061000	3063000	Therefore,
+3063000	3065000	number 6
+3065000	3067000	has
+3067000	3069000	almost
+3069000	3071000	no adsorption power
+3071000	3073000	than alpha-chromotrypsin.
+3073000	3075000	Therefore,
+3075000	3077000	number 6
+3077000	3079000	has
+3079000	3081000	almost
+3081000	3083000	no adsorption power
+3083000	3085000	than alpha-chromotrypsin.
+3085000	3087000	Therefore,
+3087000	3089000	number 6
+3089000	3091000	has
+3091000	3093000	almost
+3093000	3095000	no adsorption power
+3095000	3097000	than alpha-chromotrypsin.
+3097000	3099000	Therefore,
+3099000	3101000	number 6
+3101000	3103000	has
+3103000	3105000	almost
+3105000	3107000	no adsorption power
+3107000	3109000	than alpha-chromotrypsin.
+3109000	3111000	Therefore,
+3111000	3113000	number 6
+3113000	3115000	has
+3115000	3117000	almost
+3117000	3119000	no adsorption power
+3119000	3121000	than alpha-chromotrypsin.
+3121000	3123000	Therefore,
+3123000	3125000	number 6
+3125000	3127000	has
+3127000	3129000	almost
+3129000	3131000	no adsorption power
+3131000	3133000	than alpha-chromotrypsin.
+3133000	3135000	Therefore,
+3135000	3137000	number 6
+3137000	3139000	has
+3139000	3141000	almost
+3141000	3143000	no adsorption power
+3143000	3145000	than alpha-chromotrypsin.
+3145000	3147000	Therefore,
+3147000	3149000	number 6
+3149000	3151000	has
+3151000	3153000	almost
+3153000	3155000	no adsorption power
+3155000	3157000	than alpha-chromotrypsin.
+3157000	3159000	Therefore,
+3159000	3161000	number 6
+3161000	3163000	has
+3163000	3165000	almost
+3165000	3167000	no adsorption power
+3167000	3169000	than alpha-chromotrypsin.
+3169000	3171000	Therefore,
+3171000	3173000	number 6
+3173000	3175000	has
+3175000	3177000	almost
+3177000	3179000	no adsorption power
+3179000	3181000	than alpha-chromotrypsin.
+3181000	3183000	Therefore,
+3183000	3185000	number 6
+3185000	3187000	has
+3187000	3189000	almost
+3189000	3191000	no adsorption power
+3191000	3193000	than alpha-chromotrypsin.
+3193000	3195000	Therefore,
+3195000	3197000	number 6
+3197000	3199000	has
+3199000	3201000	almost
+3201000	3203000	no adsorption power
+3203000	3205000	than alpha-chromotrypsin.
+3205000	3207000	Therefore,
+3207000	3209000	number 6
+3209000	3211000	has
+3211000	3213000	almost
+3213000	3215000	no adsorption power
+3215000	3217000	than alpha-chromotrypsin.
+3217000	3219000	Therefore,
+3219000	3221000	number 6
+3221000	3223000	has
+3223000	3225000	almost
+3225000	3227000	no adsorption power
+3227000	3229000	than alpha-chromotrypsin.
+3229000	3231000	Therefore,
+3231000	3233000	number 6
+3233000	3235000	has
+3235000	3237000	almost
+3237000	3239000	no adsorption power
+3239000	3241000	than alpha-chromotrypsin.
+3241000	3243000	Therefore,
+3243000	3245000	number 6
+3245000	3247000	has
+3247000	3249000	almost
+3249000	3251000	no adsorption power
+3251000	3253000	than alpha-chromotrypsin.
+3253000	3255000	Therefore,
+3255000	3257000	number 6
+3257000	3259000	has
+3259000	3261000	almost
+3261000	3263000	no adsorption power
+3263000	3265000	than alpha-chromotrypsin.
+3265000	3267000	Therefore,
+3267000	3269000	number 6
+3269000	3271000	has
+3271000	3273000	almost
+3273000	3275000	no adsorption power
+3275000	3277000	than alpha-chromotrypsin.
+3277000	3279000	Therefore,
+3279000	3281000	number 6
+3281000	3283000	has
+3283000	3285000	almost
+3285000	3287000	no adsorption power
+3287000	3289000	than alpha-chromotrypsin.
+3289000	3291000	Therefore,
+3291000	3293000	number 6
+3293000	3295000	has
+3295000	3297000	almost
+3297000	3299000	no adsorption power
+3299000	3301000	than alpha-chromotrypsin.
+3301000	3303000	Therefore,
+3303000	3305000	number 6
+3305000	3307000	has
+3307000	3309000	almost
+3309000	3311000	no adsorption power
+3311000	3313000	than alpha-chromotrypsin.
+3313000	3315000	Therefore,
+3315000	3317000	number 6
+3317000	3319000	has
+3319000	3321000	almost
+3321000	3323000	no adsorption power
+3323000	3325000	than alpha-chromotrypsin.
+3325000	3327000	Therefore,
+3327000	3329000	number 6
+3329000	3331000	has
+3331000	3333000	almost
+3333000	3335000	no adsorption power
+3335000	3337000	than alpha-chromotrypsin.
+3337000	3339000	Therefore,
+3339000	3341000	number 6
+3341000	3343000	has
+3343000	3345000	almost
+3345000	3347000	no adsorption power
+3347000	3349000	than alpha-chromotrypsin.
+3349000	3351000	Therefore,
+3351000	3353000	number 6
+3353000	3355000	has
+3355000	3357000	almost
+3357000	3359000	no adsorption power
+3359000	3361000	than alpha-chromotrypsin.
+3361000	3363000	Therefore,
+3363000	3365000	number 6
+3365000	3367000	has
+3367000	3369000	almost
+3369000	3371000	no adsorption power
+3371000	3373000	than alpha-chromotrypsin.
+3373000	3375000	Therefore,
+3375000	3377000	number 6
+3377000	3379000	has
+3379000	3381000	almost
+3381000	3383000	no adsorption power
+3383000	3385000	than alpha-chromotrypsin.
+3385000	3387000	Therefore,
+3387000	3389000	number 6
+3389000	3391000	has
+3391000	3393000	almost
+3393000	3395000	no adsorption power
+3395000	3397000	than alpha-chromotrypsin.
+3397000	3399000	Therefore,
+3399000	3401000	number 6
+3401000	3403000	has
+3403000	3405000	almost
+3405000	3407000	no adsorption power
+3407000	3409000	than alpha-chromotrypsin.
+3409000	3411000	Therefore,
+3411000	3413000	number 6
+3413000	3415000	has
+3415000	3417000	almost
+3417000	3419000	no adsorption power
+3419000	3421000	than alpha-chromotrypsin.
+3421000	3423000	Therefore,
+3423000	3425000	number 6
+3425000	3427000	has
+3427000	3429000	almost
+3429000	3431000	no adsorption power
+3431000	3433000	than alpha-chromotrypsin.
+3433000	3435000	Therefore,
+3435000	3437000	number 6
+3437000	3439000	has
+3439000	3441000	almost
+3441000	3443000	no adsorption power
+3443000	3445000	than alpha-chromotrypsin.
+3445000	3447000	Therefore,
+3447000	3449000	number 6
+3449000	3451000	has
+3451000	3453000	almost
+3453000	3455000	no adsorption power
+3455000	3457000	than alpha-chromotrypsin.
+3457000	3459000	Therefore,
+3459000	3461000	number 6
+3461000	3463000	has
+3463000	3465000	almost
+3465000	3467000	no adsorption power
+3467000	3469000	than alpha-chromotrypsin.
+3469000	3471000	Therefore,
+3471000	3473000	number 6
+3473000	3475000	has
+3475000	3477000	almost
+3477000	3479000	no adsorption power
+3479000	3481000	than alpha-chromotrypsin.
+3481000	3483000	Therefore,
+3483000	3485000	number 6
+3485000	3487000	has
+3487000	3489000	almost
+3489000	3491000	no adsorption power
+3491000	3493000	than alpha-chromotrypsin.
+3493000	3495000	Therefore,
+3495000	3497000	number 6
+3497000	3499000	has
+3499000	3501000	almost
+3501000	3503000	no adsorption power
+3503000	3505000	than alpha-chromotrypsin.
+3505000	3507000	Therefore,
+3507000	3509000	number 6
+3509000	3511000	has
+3511000	3513000	almost
+3513000	3515000	no adsorption power
+3515000	3517000	than alpha-chromotrypsin.
+3517000	3519000	Therefore,
+3519000	3521000	number 6
+3521000	3523000	has
+3523000	3525000	almost
+3525000	3527000	no adsorption power
+3527000	3529000	than alpha-chromotrypsin.
+3529000	3531000	Therefore,
+3531000	3533000	number 6
+3533000	3535000	has
+3535000	3537000	almost
+3537000	3539000	no adsorption power
+3539000	3541000	than alpha-chromotrypsin.
+3541000	3543000	Therefore,
+3543000	3545000	number 6
+3545000	3547000	has
+3547000	3549000	almost
+3549000	3551000	no adsorption power
+3551000	3553000	than alpha-chromotrypsin.
+3553000	3555000	Therefore,
+3555000	3557000	number 6
+3557000	3559000	has
+3559000	3561000	almost
+3561000	3563000	no adsorption power
+3563000	3565000	than alpha-chromotrypsin.
+3565000	3567000	Therefore,
+3567000	3569000	number 6
+3569000	3571000	has
+3571000	3573000	almost
+3573000	3575000	no adsorption power
+3575000	3577000	than alpha-chromotrypsin.
+3577000	3579000	Therefore,
+3579000	3581000	number 6
+3581000	3583000	has
+3583000	3585000	almost
+3585000	3587000	no adsorption power
+3587000	3589000	than alpha-chromotrypsin.
+3589000	3591000	Therefore,
+3591000	3593000	number 6
+3593000	3595000	has
+3595000	3597000	almost
+3597000	3599000	no adsorption power
+3599000	3601000	than alpha-chromotrypsin.
+3601000	3603000	Therefore,
+3603000	3605000	number 6
+3605000	3607000	has
+3607000	3609000	almost
+3609000	3611000	no adsorption power
+3611000	3613000	than alpha-chromotrypsin.
+3613000	3615000	Therefore,
+3615000	3617000	number 6
+3617000	3619000	has
+3619000	3621000	almost
+3621000	3623000	no adsorption power
+3623000	3625000	than alpha-chromotrypsin.
+3625000	3627000	Therefore,
+3627000	3629000	number 6
+3629000	3631000	has
+3631000	3633000	almost
+3633000	3635000	no adsorption power
+3635000	3637000	than alpha-chromotrypsin.
+3637000	3639000	Therefore,
+3639000	3641000	number 6
+3641000	3643000	has
+3643000	3645000	almost
+3645000	3647000	no adsorption power
+3647000	3649000	than alpha-chromotrypsin.
+3649000	3651000	Therefore,
+3651000	3653000	number 6
+3653000	3655000	has
+3655000	3657000	almost
+3657000	3659000	no adsorption power
+3659000	3661000	than alpha-chromotrypsin.
+3661000	3663000	Therefore,
+3663000	3665000	number 6
+3665000	3667000	has
+3667000	3669000	almost
+3669000	3671000	no adsorption power
+3671000	3673000	than alpha-chromotrypsin.
+3673000	3675000	Therefore,
+3675000	3677000	number 6
+3677000	3679000	has
+3679000	3681000	almost
+3681000	3683000	no adsorption power
+3683000	3685000	than alpha-chromotrypsin.
+3685000	3687000	Therefore,
+3687000	3689000	number 6
+3689000	3691000	has
+3691000	3693000	almost
+3693000	3695000	no adsorption power
+3695000	3697000	than alpha-chromotrypsin.
+3697000	3699000	Therefore,
+3699000	3701000	number 6
+3701000	3703000	has
+3703000	3705000	almost
+3705000	3707000	no adsorption power
+3707000	3709000	than alpha-chromotrypsin.
+3709000	3711000	Therefore,
+3711000	3713000	number 6
+3713000	3715000	has
+3715000	3717000	almost
+3717000	3719000	no adsorption power
+3719000	3721000	than alpha-chromotrypsin.
+3721000	3723000	Therefore,
+3723000	3725000	number 6
+3725000	3727000	has
+3727000	3729000	almost
+3729000	3731000	no adsorption power
+3731000	3733000	than alpha-chromotrypsin.
+3733000	3735000	Therefore,
+3735000	3737000	number 6
+3737000	3739000	has
+3739000	3741000	almost
+3741000	3743000	no adsorption power
+3743000	3745000	than alpha-chromotrypsin.
+3745000	3747000	Therefore,
+3747000	3749000	number 6
+3749000	3751000	has
+3751000	3753000	almost
+3753000	3755000	no adsorption power
+3755000	3757000	than alpha-chromotrypsin.
+3757000	3759000	Therefore,
+3759000	3761000	number 6
+3761000	3763000	has
+3763000	3765000	almost
+3765000	3767000	no adsorption power
+3767000	3769000	than alpha-chromotrypsin.
+3769000	3771000	Therefore,
+3771000	3773000	number 6
+3773000	3775000	has
+3775000	3777000	almost
+3777000	3779000	no adsorption power
+3779000	3781000	than alpha-chromotrypsin.
+3781000	3783000	Therefore,
+3783000	3785000	number 6
+3785000	3787000	has
+3787000	3789000	almost
+3789000	3791000	no adsorption power
+3791000	3793000	than alpha-chromotrypsin.
+3793000	3795000	Therefore,
+3795000	3797000	number 6
+3797000	3799000	has
+3799000	3801000	almost
+3801000	3803000	no adsorption power
+3803000	3805000	than alpha-chromotrypsin.
+3805000	3807000	Therefore,
+3807000	3809000	number 6
+3809000	3811000	has
+3811000	3813000	almost
+3813000	3815000	no adsorption power
+3815000	3817000	than alpha-chromotrypsin.
+3817000	3819000	Therefore,
+3819000	3821000	number 6
+3821000	3823000	has
+3823000	3825000	almost
+3825000	3827000	no adsorption power
+3827000	3829000	than alpha-chromotrypsin.
+3829000	3831000	Therefore,
+3831000	3833000	number 6
+3833000	3835000	has
+3835000	3837000	almost
+3837000	3839000	no adsorption power
+3839000	3841000	than alpha-chromotrypsin.
+3841000	3843000	Therefore,
+3843000	3845000	number 6
+3845000	3847000	has
+3847000	3849000	almost
+3849000	3851000	no adsorption power
+3851000	3853000	than alpha-chromotrypsin.
+3853000	3855000	Therefore,
+3855000	3857000	number 6
+3857000	3859000	has
+3859000	3861000	almost
+3861000	3863000	no adsorption power
+3863000	3865000	than alpha-chromotrypsin.
+3865000	3867000	Therefore,
+3867000	3869000	number 6
+3869000	3871000	has
+3871000	3873000	almost
+3873000	3875000	no adsorption power
+3875000	3877000	than alpha-chromotrypsin.
+3877000	3879000	Therefore,
+3879000	3881000	number 6
+3881000	3883000	has
+3883000	3885000	almost
+3885000	3887000	no adsorption power
+3887000	3889000	than alpha-chromotrypsin.
+3889000	3891000	Therefore,
+3891000	3893000	number 6
+3893000	3895000	has
+3895000	3897000	almost
+3897000	3899000	no adsorption power
+3899000	3901000	than alpha-chromotrypsin.
+3901000	3903000	Therefore,
+3903000	3905000	number 6
+3905000	3907000	has
+3907000	3909000	almost
+3909000	3911000	no adsorption power
+3911000	3913000	than alpha-chromotrypsin.
+3913000	3915000	Therefore,
+3915000	3917000	number 6
+3917000	3919000	has
+3919000	3921000	almost
+3921000	3923000	no adsorption power
+3923000	3925000	than alpha-chromotrypsin.
+3925000	3927000	Therefore,
+3927000	3929000	number 6
+3929000	3931000	has
+3931000	3933000	almost
+3933000	3935000	no adsorption power
+3935000	3937000	than alpha-chromotrypsin.
+3937000	3939000	Therefore,
+3939000	3941000	number 6
+3941000	3943000	has
+3943000	3945000	almost
+3945000	3947000	no adsorption power
+3947000	3949000	than alpha-chromotrypsin.
+3949000	3951000	Therefore,
+3951000	3953000	number 6
+3953000	3955000	has
+3955000	3957000	almost
+3957000	3959000	no adsorption power
+3959000	3961000	than alpha-chromotrypsin.
+3961000	3963000	Therefore,
+3963000	3965000	number 6
+3965000	3967000	has
+3967000	3969000	almost
+3969000	3971000	no adsorption power
+3971000	3973000	than alpha-chromotrypsin.
+3973000	3975000	Therefore,
+3975000	3977000	number 6
+3977000	3979000	has
+3979000	3981000	almost
+3981000	3983000	no adsorption power
+3983000	3985000	than alpha-chromotrypsin.
+3985000	3987000	Therefore,
+3987000	3989000	number 6
+3989000	3991000	has
+3991000	3993000	almost
+3993000	3995000	no adsorption power
+3995000	3997000	than alpha-chromotrypsin.
+3997000	3999000	Therefore,
+3999000	4001000	number 6
+4001000	4003000	has
+4003000	4005000	almost
+4005000	4007000	no adsorption power
+4007000	4009000	than alpha-chromotrypsin.
+4009000	4011000	Therefore,
+4011000	4013000	number 6
+4013000	4015000	has
+4015000	4017000	almost
+4017000	4019000	no adsorption power
+4019000	4021000	than alpha-chromotrypsin.
+4021000	4023000	Therefore,
+4023000	4025000	number 6
+4025000	4027000	has
+4027000	4029000	almost
+4029000	4031000	no adsorption power
+4031000	4033000	than alpha-chromotrypsin.
+4033000	4035000	Therefore,
+4035000	4037000	number 6
+4037000	4039000	has
+4039000	4041000	almost
+4041000	4043000	no adsorption power
+4043000	4045000	than alpha-chromotrypsin.
+4045000	4047000	Therefore,
+4047000	4049000	number 6
+4049000	4051000	has
+4051000	4053000	almost
+4053000	4055000	no adsorption power
+4055000	4057000	than alpha-chromotrypsin.
+4057000	4059000	Therefore,
+4059000	4061000	number 6
+4061000	4063000	has
+4063000	4065000	almost
+4065000	4067000	no adsorption power
+4067000	4069000	than alpha-chromotrypsin.
+4069000	4071000	Therefore,
+4071000	4073000	number 6
+4073000	4075000	has
+4075000	4077000	almost
+4077000	4079000	no adsorption power
+4079000	4081000	than alpha-chromotrypsin.
+4081000	4083000	Therefore,
+4083000	4085000	number 6
+4085000	4087000	has
+4087000	4089000	almost
+4089000	4091000	no adsorption power
+4091000	4093000	than alpha-chromotrypsin.
+4093000	4095000	Therefore,
+4095000	4097000	number 6
+4097000	4099000	has
+4099000	4101000	almost
+4101000	4103000	no adsorption power
+4103000	4105000	than alpha-chromotrypsin.
+4105000	4107000	Therefore,
+4107000	4109000	number 6
+4109000	4111000	has
+4111000	4113000	almost
+4113000	4115000	no adsorption power
+4115000	4117000	than alpha-chromotrypsin.
+4117000	4119000	Therefore,
+4119000	4121000	number 6
+4121000	4123000	has
+4123000	4125000	almost
+4125000	4127000	no adsorption power
+4127000	4129000	than alpha-chromotrypsin.
+4129000	4131000	Therefore,
+4131000	4133000	number 6
+4133000	4135000	has
+4135000	4137000	almost
+4137000	4139000	no adsorption power
+4139000	4141000	than alpha-chromotrypsin.
+4141000	4143000	Therefore,
+4143000	4145000	number 6
+4145000	4147000	has
+4147000	4149000	almost
+4149000	4151000	no adsorption power
+4151000	4153000	than alpha-chromotrypsin.
+4153000	4155000	Therefore,
+4155000	4157000	number 6
+4157000	4159000	has
+4159000	4161000	almost
+4161000	4163000	no adsorption power
+4163000	4165000	than alpha-chromotrypsin.
+4165000	4167000	Therefore,
+4167000	4169000	number 6
+4169000	4171000	has
+4171000	4173000	almost
+4173000	4175000	no adsorption power
+4175000	4177000	than alpha-chromotrypsin.
+4177000	4179000	Therefore,
+4179000	4181000	number 6
+4181000	4183000	has
+4183000	4185000	almost
+4185000	4187000	no adsorption power
+4187000	4189000	than alpha-chromotrypsin.
+4189000	4191000	Therefore,
+4191000	4193000	number 6
+4193000	4195000	has
+4195000	4197000	almost
+4197000	4199000	no adsorption power
+4199000	4201000	than alpha-chromotrypsin.
+4201000	4203000	Therefore,
+4203000	4205000	number 6
+4205000	4207000	has
+4207000	4209000	almost
+4209000	4211000	no adsorption power
+4211000	4213000	than alpha-chromotrypsin.
+4213000	4215000	Therefore,
+4215000	4217000	number 6
+4217000	4219000	has
+4219000	4221000	almost
+4221000	4223000	no adsorption power
+4223000	4225000	than alpha-chromotrypsin.
+4225000	4227000	Therefore,
+4227000	4229000	number 6
+4229000	4231000	has
+4231000	4233000	almost
+4233000	4235000	no adsorption power
+4235000	4237000	than alpha-chromotrypsin.
+4237000	4239000	Therefore,
+4239000	4241000	number 6
+4241000	4243000	has
+4243000	4245000	almost
+4245000	4247000	no adsorption power
+4247000	4249000	than alpha-chromotrypsin.
+4249000	4251000	Therefore,
+4251000	4253000	number 6
+4253000	4255000	has
+4255000	4257000	almost
+4257000	4259000	no adsorption power
+4259000	4261000	than alpha-chromotrypsin.
+4261000	4263000	Therefore,
+4263000	4265000	number 6
+4265000	4267000	has
+4267000	4269000	almost
+4269000	4271000	no adsorption power
+4271000	4273000	than alpha-chromotrypsin.
+4273000	4275000	Therefore,
+4275000	4277000	number 6
+4277000	4279000	has
+4279000	4281000	almost
+4281000	4283000	no adsorption power
+4283000	4285000	than alpha-chromotrypsin.
+4285000	4287000	Therefore,
+4287000	4289000	number 6
+4289000	4291000	has
+4291000	4293000	almost
+4293000	4295000	no adsorption power
+4295000	4297000	than alpha-chromotrypsin.
+4297000	4299000	Therefore,
+4299000	4301000	number 6
+4301000	4303000	has
+4303000	4305000	almost
+4305000	4307000	no adsorption power
+4307000	4309000	than alpha-chromotrypsin.
+4309000	4311000	Therefore,
+4311000	4313000	number 6
+4313000	4315000	has
+4315000	4317000	almost
+4317000	4319000	no adsorption power
+4319000	4321000	than alpha-chromotrypsin.
+4321000	4323000	Therefore,
+4323000	4325000	number 6
+4325000	4327000	has
+4327000	4329000	almost
+4329000	4331000	no adsorption power
+4331000	4333000	than alpha-chromotrypsin.
+4333000	4335000	Therefore,
+4335000	4337000	number 6
+4337000	4339000	has
+4339000	4341000	almost
+4341000	4343000	no adsorption power
+4343000	4345000	than alpha-chromotrypsin.
+4345000	4347000	Therefore,
+4347000	4349000	number 6
+4349000	4351000	has
+4351000	4353000	almost
+4353000	4355000	no adsorption power
+4355000	4357000	than alpha-chromotrypsin.
+4357000	4359000	Therefore,
+4359000	4361000	number 6
+4361000	4363000	has
+4363000	4365000	almost
+4365000	4367000	no adsorption power
+4367000	4369000	than alpha-chromotrypsin.
+4369000	4371000	Therefore,
+4371000	4373000	number 6
+4373000	4375000	has
+4375000	4377000	almost
+4377000	4379000	no adsorption power
+4379000	4381000	than alpha-chromotrypsin.
+4381000	4383000	Therefore,
+4383000	4385000	number 6
+4385000	4387000	has
+4387000	4389000	almost
+4389000	4391000	no adsorption power
+4391000	4393000	than alpha-chromotrypsin.
+4393000	4395000	Therefore,
+4395000	4397000	number 6
+4397000	4399000	has
+4399000	4401000	almost
+4401000	4403000	no adsorption power
+4403000	4405000	than alpha-chromotrypsin.
+4405000	4407000	Therefore,
+4407000	4409000	number 6
+4409000	4411000	has
+4411000	4413000	almost
+4413000	4415000	no adsorption power
+4415000	4417000	than alpha-chromotrypsin.
+4417000	4419000	Therefore,
+4419000	4421000	number 6
+4421000	4423000	has
+4423000	4425000	almost
+4425000	4427000	no adsorption power
+4427000	4429000	than alpha-chromotrypsin.
+4429000	4431000	Therefore,
+4431000	4433000	number 6
+4433000	4435000	has
+4435000	4437000	almost
+4437000	4439000	no adsorption power
+4439000	4441000	than alpha-chromotrypsin.
+4441000	4443000	Therefore,
+4443000	4445000	number 6
+4445000	4447000	has
+4447000	4449000	almost
+4449000	4451000	no adsorption power
+4451000	4453000	than alpha-chromotrypsin.
+4453000	4455000	Therefore,
+4455000	4457000	number 6
+4457000	4459000	has
+4459000	4461000	almost
+4461000	4463000	no adsorption power
+4463000	4465000	than alpha-chromotrypsin.
+4465000	4467000	Therefore,
+4467000	4469000	number 6
+4469000	4471000	has
+4471000	4473000	almost
+4473000	4475000	no adsorption power
+4475000	4477000	than alpha-chromotrypsin.
+4477000	4479000	Therefore,
+4479000	4481000	number 6
+4481000	4483000	has
+4483000	4485000	almost
+4485000	4487000	no adsorption power
+4487000	4489000	than alpha-chromotrypsin.
+4489000	4491000	Therefore,
+4491000	4493000	number 6
+4493000	4495000	has
+4495000	4497000	almost
+4497000	4499000	no adsorption power
+4499000	4501000	than alpha-chromotrypsin.
+4501000	4503000	Therefore,
+4503000	4505000	number 6
+4505000	4507000	has
+4507000	4509000	almost
+4509000	4511000	no adsorption power
+4511000	4513000	than alpha-chromotrypsin.
+4513000	4515000	Therefore,
+4515000	4517000	number 6
+4517000	4519000	has
+4519000	4521000	almost
+4521000	4523000	no adsorption power
+4523000	4525000	than alpha-chromotrypsin.
+4525000	4527000	Therefore,
+4527000	4529000	number 6
+4529000	4531000	has
+4531000	4533000	almost
+4533000	4535000	no adsorption power
+4535000	4537000	than alpha-chromotrypsin.
+4537000	4539000	Therefore,
+4539000	4541000	number 6
+4541000	4543000	has
+4543000	4545000	almost
+4545000	4547000	no adsorption power
+4547000	4549000	than alpha-chromotrypsin.
+4549000	4551000	Therefore,
+4551000	4553000	number 6
+4553000	4555000	has
+4555000	4557000	almost
+4557000	4559000	no adsorption power
+4559000	4561000	than alpha-chromotrypsin.
+4561000	4563000	Therefore,
+4563000	4565000	number 6
+4565000	4567000	has
+4567000	4569000	almost
+4569000	4571000	no adsorption power
+4571000	4573000	than alpha-chromotrypsin.
+4573000	4575000	Therefore,
+4575000	4577000	number 6
+4577000	4579000	has
+4579000	4581000	almost
+4581000	4583000	no adsorption power
+4583000	4585000	than alpha-chromotrypsin.
+4585000	4587000	Therefore,
+4587000	4589000	number 6
+4589000	4591000	has
+4591000	4593000	almost
+4593000	4595000	no adsorption power
+4595000	4597000	than alpha-chromotrypsin.
+4597000	4599000	Therefore,
+4599000	4601000	number 6
+4601000	4603000	has
+4603000	4605000	almost
+4605000	4607000	no adsorption power
+4607000	4609000	than alpha-chromotrypsin.
+4609000	4611000	Therefore,
+4611000	4613000	number 6
+4613000	4615000	has
+4615000	4617000	almost
+4617000	4619000	no adsorption power
+4619000	4621000	than alpha-chromotrypsin.
+4621000	4623000	Therefore,
+4623000	4625000	number 6
+4625000	4627000	has
+4627000	4629000	almost
+4629000	4631000	no adsorption power
+4631000	4633000	than alpha-chromotrypsin.
+4633000	4635000	Therefore,
+4635000	4637000	number 6
+4637000	4639000	has
+4639000	4641000	almost
+4641000	4643000	no adsorption power
+4643000	4645000	than alpha-chromotrypsin.
+4645000	4647000	Therefore,
+4647000	4649000	number 6
+4649000	4651000	has
+4651000	4653000	almost
+4653000	4655000	no adsorption power
+4655000	4657000	than alpha-chromotrypsin.
+4657000	4659000	Therefore,
+4659000	4661000	number 6
+4661000	4663000	has
+4663000	4665000	almost
+4665000	4667000	no adsorption power
+4667000	4669000	than alpha-chromotrypsin.
+4669000	4671000	Therefore,
+4671000	4673000	number 6
+4673000	4675000	has
+4675000	4677000	almost
+4677000	4679000	no adsorption power
+4679000	4681000	than alpha-chromotrypsin.
+4681000	4683000	Therefore,
+4683000	4685000	number 6
+4685000	4687000	has
+4687000	4689000	almost
+4689000	4691000	no adsorption power
+4691000	4693000	than alpha-chromotrypsin.
+4693000	4695000	Therefore,
+4695000	4697000	number 6
+4697000	4699000	has
+4699000	4701000	almost
+4701000	4703000	no adsorption power
+4703000	4705000	than alpha-chromotrypsin.
+4705000	4707000	Therefore,
+4707000	4709000	number 6
+4709000	4711000	has
+4711000	4713000	almost
+4713000	4715000	no adsorption power
+4715000	4717000	than alpha-chromotrypsin.
+4717000	4719000	Therefore,
+4719000	4721000	number 6
+4721000	4723000	has
+4723000	4725000	almost
+4725000	4727000	no adsorption power
+4727000	4729000	than alpha-chromotrypsin.
+4729000	4731000	Therefore,
+4731000	4733000	number 6
+4733000	4735000	has
+4735000	4737000	almost
+4737000	4739000	no adsorption power
+4739000	4741000	than alpha-chromotrypsin.
+4741000	4743000	Therefore,
+4743000	4745000	number 6
+4745000	4747000	has
+4747000	4749000	almost
+4749000	4751000	no adsorption power
+4751000	4753000	than alpha-chromotrypsin.
+4753000	4755000	Therefore,
+4755000	4757000	number 6
+4757000	4759000	has
+4759000	4761000	almost
+4761000	4763000	no adsorption power
+4763000	4765000	than alpha-chromotrypsin.
+4765000	4767000	Therefore,
+4767000	4769000	number 6
+4769000	4771000	has
+4771000	4773000	almost
+4773000	4775000	no adsorption power
+4775000	4777000	than alpha-chromotrypsin.
+4777000	4779000	Therefore,
+4779000	4781000	number 6
+4781000	4783000	has
+4783000	4785000	almost
+4785000	4787000	no adsorption power
+4787000	4789000	than alpha-chromotrypsin.
+4789000	4791000	Therefore,
+4791000	4793000	number 6
+4793000	4795000	has
+4795000	4797000	almost
+4797000	4799000	no adsorption power
+4799000	4801000	than alpha-chromotrypsin.
+4801000	4803000	Therefore,
+4803000	4805000	number 6
+4805000	4807000	has
+4807000	4809000	almost
+4809000	4811000	no adsorption power
+4811000	4813000	than alpha-chromotrypsin.
+4813000	4815000	Therefore,
+4815000	4817000	number 6
+4817000	4819000	has
+4819000	4821000	almost
+4821000	4823000	no adsorption power
+4823000	4825000	than alpha-chromotrypsin.
+4825000	4827000	Therefore,
+4827000	4829000	number 6
+4829000	4831000	has

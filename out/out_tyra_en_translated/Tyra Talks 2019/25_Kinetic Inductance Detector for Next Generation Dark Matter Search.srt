@@ -1,0 +1,9764 @@
+1
+00:00:00,000 --> 00:00:10,000
+Hello, everyone. Welcome to today's Project Terra talk.
+
+2
+00:00:10,000 --> 00:00:14,000
+I'm the host today. Just call me Ted.
+
+3
+00:00:14,000 --> 00:00:20,000
+Today's speaker is Don Yen-Yong from Caltech.
+
+4
+00:00:20,000 --> 00:00:23,000
+He works at NASA JPL in Caltech.
+
+5
+00:00:23,000 --> 00:00:31,000
+Today's topic is Connected Inductance Detector for Next-Generation Dark Matter Search.
+
+6
+00:00:31,000 --> 00:00:35,000
+So, Yen-Yong, it's your turn.
+
+7
+00:00:35,000 --> 00:00:37,000
+Hi, everyone.
+
+8
+00:00:37,000 --> 00:00:41,000
+Today's talk is more like an update on the latest situation.
+
+9
+00:00:41,000 --> 00:00:45,000
+I think I've talked about what I've done a year ago.
+
+10
+00:00:45,000 --> 00:00:49,000
+Actually, the content is pretty much the same, but there's a new progress.
+
+11
+00:00:49,000 --> 00:00:55,000
+Some parts of the talk might be fast, and some parts might not be clear.
+
+12
+00:00:55,000 --> 00:00:57,000
+If you have any questions, feel free to ask.
+
+13
+00:00:57,000 --> 00:01:01,000
+To be honest, I've been very busy lately, so I've only started this morning.
+
+14
+00:01:01,000 --> 00:01:05,000
+So if you don't ask questions, it'll be over soon.
+
+15
+00:01:05,000 --> 00:01:07,000
+Today's topic is connected...
+
+16
+00:01:07,000 --> 00:01:13,000
+Let me add that when you come in, you don't have a microphone on.
+
+17
+00:01:13,000 --> 00:01:18,000
+So if you want to ask a question, you have to turn on the microphone.
+
+18
+00:01:18,000 --> 00:01:20,000
+So you can ask the question and hear it.
+
+19
+00:01:20,000 --> 00:01:27,000
+At the same time, you can also ask the question in the chat next to you.
+
+20
+00:01:27,000 --> 00:01:29,000
+Okay, sorry. Yen-Yong, let's get started.
+
+21
+00:01:29,000 --> 00:01:31,000
+Okay, I have another question.
+
+22
+00:01:31,000 --> 00:01:34,000
+Can you see my mouse?
+
+23
+00:01:34,000 --> 00:01:36,000
+Can you see it?
+
+24
+00:01:36,000 --> 00:01:37,000
+You can see it, right?
+
+25
+00:01:37,000 --> 00:01:41,000
+Because I might talk about this and that a lot, so I need a mouse.
+
+26
+00:01:42,000 --> 00:01:50,000
+Okay, so today's topic is Kinetic Inductance Detector for Next Generation Dark Matter Search.
+
+27
+00:01:50,000 --> 00:01:53,000
+So as you can see, there are two parts to the topic.
+
+28
+00:01:53,000 --> 00:01:59,000
+One part is that we're thinking about looking for dark matter.
+
+29
+00:01:59,000 --> 00:02:02,000
+At this stage, we're going to look at future development.
+
+30
+00:02:02,000 --> 00:02:08,000
+The other part of this talk is that we think we can apply this.
+
+31
+00:02:08,000 --> 00:02:11,000
+We call it KIT, K-I-T, Kinetic Inductance Detector.
+
+32
+00:02:11,000 --> 00:02:16,000
+As the next main, we think it's going to be very competitive.
+
+33
+00:02:16,000 --> 00:02:18,000
+This technology to do this.
+
+34
+00:02:18,000 --> 00:02:23,000
+Okay, and then this work is mainly from where I am.
+
+35
+00:02:23,000 --> 00:02:26,000
+Caltech and NASA JPL, which is the Jet Propulsion Laboratory.
+
+36
+00:02:26,000 --> 00:02:31,000
+Of course, this whole work is actually based on a bigger project called Super CDMS.
+
+37
+00:02:31,000 --> 00:02:32,000
+I'll talk about it later.
+
+38
+00:02:32,000 --> 00:02:36,000
+But I want to emphasize that KIT is not a CDMS project yet.
+
+39
+00:02:36,000 --> 00:02:38,000
+So it's more like our own R&D.
+
+40
+00:02:38,000 --> 00:02:41,000
+But we're doing it in a big collaboration.
+
+41
+00:02:41,000 --> 00:02:44,000
+Okay, so now you see this first page.
+
+42
+00:02:44,000 --> 00:02:47,000
+The first page is our current prototype.
+
+43
+00:02:47,000 --> 00:02:50,000
+That gives you a sense of the size.
+
+44
+00:02:50,000 --> 00:02:52,000
+This circle is 3 inches.
+
+45
+00:02:52,000 --> 00:02:53,000
+Its diameter is 3 inches.
+
+46
+00:02:53,000 --> 00:02:56,000
+It's about the same size as a palm.
+
+47
+00:02:56,000 --> 00:03:00,000
+So now you see this little rectangle.
+
+48
+00:03:00,000 --> 00:03:03,000
+It's about a half to one millimeter in size.
+
+49
+00:03:03,000 --> 00:03:06,000
+And then there are 80 little islands on it.
+
+50
+00:03:06,000 --> 00:03:08,000
+I'll explain what it is.
+
+51
+00:03:08,000 --> 00:03:10,000
+Okay, and then this box.
+
+52
+00:03:10,000 --> 00:03:17,000
+It's basically hanging on a dilution refrigerator.
+
+53
+00:03:17,000 --> 00:03:23,000
+So it can be lowered to the temperature of the mini Kelvin level.
+
+54
+00:03:23,000 --> 00:03:26,000
+So I'll explain why we're doing this.
+
+55
+00:03:26,000 --> 00:03:30,000
+Okay, first of all, today's outline is why.
+
+56
+00:03:30,000 --> 00:03:33,000
+Because we don't have a particle physics background today.
+
+57
+00:03:33,000 --> 00:03:34,000
+And there seems to be a problem, right?
+
+58
+00:03:34,000 --> 00:03:35,000
+So I'm going to explain a little bit today.
+
+59
+00:03:35,000 --> 00:03:37,000
+Why do we think there's dark matter?
+
+60
+00:03:37,000 --> 00:03:39,000
+What the hell is dark matter?
+
+61
+00:03:39,000 --> 00:03:41,000
+So I'm going to use an association here.
+
+62
+00:03:41,000 --> 00:03:43,000
+What's more important is that this is our focus.
+
+63
+00:03:43,000 --> 00:03:48,000
+Why do we think this low-quality, low-mass dark matter is an important topic now?
+
+64
+00:03:48,000 --> 00:03:49,000
+So we want to do this.
+
+65
+00:03:49,000 --> 00:03:51,000
+Okay, this is an opening.
+
+66
+00:03:51,000 --> 00:03:57,000
+And then I'll talk about the super CDMS detector called HVEV.
+
+67
+00:03:57,000 --> 00:03:59,000
+HVE is high voltage.
+
+68
+00:03:59,000 --> 00:04:01,000
+EV is the electron volt.
+
+69
+00:04:01,000 --> 00:04:06,000
+He's actually talking about what we're doing in a high voltage mode.
+
+70
+00:04:06,000 --> 00:04:09,000
+Under this operation, we can have EV resolution.
+
+71
+00:04:09,000 --> 00:04:13,000
+Okay, so I'm going to start by saying that this is a CDMS project.
+
+72
+00:04:13,000 --> 00:04:15,000
+What did we learn from this?
+
+73
+00:04:15,000 --> 00:04:16,000
+So what did we get?
+
+74
+00:04:16,000 --> 00:04:18,000
+So where's our sensitivity?
+
+75
+00:04:18,000 --> 00:04:22,000
+So from here, I'm going to motivate.
+
+76
+00:04:22,000 --> 00:04:27,000
+So why the third part, the kinetic inductance detector, this thing.
+
+77
+00:04:27,000 --> 00:04:30,000
+It's going to be something that we think is very potential.
+
+78
+00:04:30,000 --> 00:04:35,000
+So now the CDMS proposal is written to 2025.
+
+79
+00:04:35,000 --> 00:04:37,000
+So we're actually talking about this thing.
+
+80
+00:04:37,000 --> 00:04:39,000
+Dark matter search beyond 2025.
+
+81
+00:04:39,000 --> 00:04:42,000
+What kind of outlook do we have?
+
+82
+00:04:42,000 --> 00:04:43,000
+What do we think?
+
+83
+00:04:43,000 --> 00:04:45,000
+Okay, let's get started.
+
+84
+00:04:45,000 --> 00:04:47,000
+Then I welcome you to ask me any questions at any time.
+
+85
+00:04:47,000 --> 00:04:49,000
+Otherwise, this talk is really going to be pretty fast.
+
+86
+00:04:49,000 --> 00:04:50,000
+And my speech is actually very fast.
+
+87
+00:04:50,000 --> 00:04:53,000
+Okay, the first part, low-mass dark matter.
+
+88
+00:04:53,000 --> 00:04:57,000
+Okay, first of all, I remember two or three weeks ago.
+
+89
+00:04:57,000 --> 00:04:58,000
+I have a very good friend, He Shuyu.
+
+90
+00:04:58,000 --> 00:04:59,000
+He talked about a talk.
+
+91
+00:04:59,000 --> 00:05:02,000
+He's actually doing the theory of dark matter.
+
+92
+00:05:02,000 --> 00:05:04,000
+So why is there dark matter?
+
+93
+00:05:04,000 --> 00:05:06,000
+What the hell is dark matter?
+
+94
+00:05:06,000 --> 00:05:08,000
+I just have this page today.
+
+95
+00:05:08,000 --> 00:05:11,000
+So if you're interested, you want to know more details.
+
+96
+00:05:11,000 --> 00:05:12,000
+You can go see his talk.
+
+97
+00:05:12,000 --> 00:05:14,000
+He's a very good speaker.
+
+98
+00:05:14,000 --> 00:05:15,000
+He taught very well.
+
+99
+00:05:15,000 --> 00:05:16,000
+Then I'll summarize here.
+
+100
+00:05:16,000 --> 00:05:19,000
+This is some evidence that we think there is dark matter.
+
+101
+00:05:19,000 --> 00:05:22,000
+First of all, you see this picture in the upper left corner.
+
+102
+00:05:22,000 --> 00:05:29,000
+The y-axis of this picture is the speed of the planet's rotation in the Milky Way.
+
+103
+00:05:29,000 --> 00:05:31,000
+What about this horizontal axis?
+
+104
+00:05:31,000 --> 00:05:35,000
+It's the distance between these planets and the center of the Milky Way.
+
+105
+00:05:35,000 --> 00:05:38,000
+Okay, so now you see that there are dozens of lines here.
+
+106
+00:05:38,000 --> 00:05:39,000
+And then more than 20 lines.
+
+107
+00:05:39,000 --> 00:05:40,000
+If we take a few steps.
+
+108
+00:05:40,000 --> 00:05:43,000
+These lines, each line is a galaxy.
+
+109
+00:05:43,000 --> 00:05:44,000
+Then you can go to the galaxy.
+
+110
+00:05:44,000 --> 00:05:46,000
+There are a lot of planets in the galaxy.
+
+111
+00:05:46,000 --> 00:05:48,000
+The speed of rotation to the center.
+
+112
+00:05:48,000 --> 00:05:50,000
+And then the distance to the center.
+
+113
+00:05:50,000 --> 00:05:51,000
+You see a line like this.
+
+114
+00:05:51,000 --> 00:05:53,000
+It's a galaxy, a galaxy, a galaxy.
+
+115
+00:05:53,000 --> 00:05:56,000
+According to Newton's law that we learned in high school.
+
+116
+00:05:56,000 --> 00:06:00,000
+If today we assume that Newton's law is correct.
+
+117
+00:06:00,000 --> 00:06:01,000
+Or relative theory is correct.
+
+118
+00:06:01,000 --> 00:06:02,000
+Then we think he's right.
+
+119
+00:06:02,000 --> 00:06:04,000
+OK, what about this line?
+
+120
+00:06:04,000 --> 00:06:06,000
+What should it look like?
+
+121
+00:06:06,000 --> 00:06:08,000
+It should look like this.
+
+122
+00:06:08,000 --> 00:06:10,000
+It's from the top.
+
+123
+00:06:10,000 --> 00:06:12,000
+The closer to the center, the faster the rotation.
+
+124
+00:06:12,000 --> 00:06:14,000
+And then it goes down like this.
+
+125
+00:06:14,000 --> 00:06:17,000
+And then the closer it is to the outside, the slower it rotates.
+
+126
+00:06:17,000 --> 00:06:18,000
+OK.
+
+127
+00:06:18,000 --> 00:06:19,000
+But in fact, what we see is not like this.
+
+128
+00:06:19,000 --> 00:06:20,000
+In fact, what we see is.
+
+129
+00:06:20,000 --> 00:06:22,000
+The speed of rotation of these planets.
+
+130
+00:06:22,000 --> 00:06:24,000
+It's going to pull up from the center.
+
+131
+00:06:24,000 --> 00:06:26,000
+Of course, it's very close to the center.
+
+132
+00:06:26,000 --> 00:06:27,000
+We don't understand.
+
+133
+00:06:27,000 --> 00:06:29,000
+Because there are a lot of planets in the middle.
+
+134
+00:06:29,000 --> 00:06:31,000
+A lot of electrons and so on.
+
+135
+00:06:31,000 --> 00:06:33,000
+Then we get rid of the middle.
+
+136
+00:06:33,000 --> 00:06:35,000
+He saw that it was almost flat.
+
+137
+00:06:35,000 --> 00:06:37,000
+OK, almost flat.
+
+138
+00:06:37,000 --> 00:06:39,000
+That means.
+
+139
+00:06:39,000 --> 00:06:40,000
+Of course, we can say.
+
+140
+00:06:40,000 --> 00:06:41,000
+Then this may be.
+
+141
+00:06:41,000 --> 00:06:43,000
+The theory of gravity is incorrect.
+
+142
+00:06:43,000 --> 00:06:44,000
+This is possible.
+
+143
+00:06:44,000 --> 00:06:47,000
+But gravity has been experimented by a lot of experiments.
+
+144
+00:06:47,000 --> 00:06:50,000
+From classical gravity to the theory of gravity.
+
+145
+00:06:50,000 --> 00:06:52,000
+The theory of gravity has been very, very accurately verified.
+
+146
+00:06:52,000 --> 00:06:54,000
+So then we can think about it in another way.
+
+147
+00:06:54,000 --> 00:06:55,000
+Is that?
+
+148
+00:06:55,000 --> 00:06:57,000
+Hey, we have quality.
+
+149
+00:06:57,000 --> 00:06:59,000
+It exists in that range.
+
+150
+00:06:59,000 --> 00:07:00,000
+But we didn't see it.
+
+151
+00:07:00,000 --> 00:07:02,000
+We can't see these qualities.
+
+152
+00:07:02,000 --> 00:07:03,000
+So we miscalculated.
+
+153
+00:07:03,000 --> 00:07:05,000
+But if we add these qualities.
+
+154
+00:07:05,000 --> 00:07:07,000
+We can recover like this.
+
+155
+00:07:07,000 --> 00:07:09,000
+This is the center of gravity.
+
+156
+00:07:09,000 --> 00:07:11,000
+The speed of rotation of this curve.
+
+157
+00:07:11,000 --> 00:07:14,000
+OK, this is a hint.
+
+158
+00:07:14,000 --> 00:07:16,000
+That is to say, there may be some matter over there.
+
+159
+00:07:16,000 --> 00:07:17,000
+We can't see it.
+
+160
+00:07:17,000 --> 00:07:19,000
+We call it dark matter.
+
+161
+00:07:19,000 --> 00:07:20,000
+But OK.
+
+162
+00:07:20,000 --> 00:07:21,000
+So you can imagine this dark matter.
+
+163
+00:07:21,000 --> 00:07:23,000
+Under this picture.
+
+164
+00:07:23,000 --> 00:07:25,000
+Like a fluid or a gas.
+
+165
+00:07:25,000 --> 00:07:27,000
+It's a continuous.
+
+166
+00:07:27,000 --> 00:07:30,000
+And then it's distributed smoothly in that space.
+
+167
+00:07:30,000 --> 00:07:32,000
+In the middle of the galaxy.
+
+168
+00:07:32,000 --> 00:07:33,000
+OK.
+
+169
+00:07:33,000 --> 00:07:35,000
+But we don't know its particle nature.
+
+170
+00:07:35,000 --> 00:07:37,000
+That is to say, we can understand.
+
+171
+00:07:37,000 --> 00:07:38,000
+For example, air or water.
+
+172
+00:07:38,000 --> 00:07:40,000
+But we can't find that molecule.
+
+173
+00:07:40,000 --> 00:07:41,000
+That H2O.
+
+174
+00:07:41,000 --> 00:07:42,000
+OK.
+
+175
+00:07:42,000 --> 00:07:44,000
+Now in this upper right corner.
+
+176
+00:07:44,000 --> 00:07:46,000
+What you see is a bigger scale.
+
+177
+00:07:46,000 --> 00:07:47,000
+This simulation.
+
+178
+00:07:47,000 --> 00:07:49,000
+You are in this simulation.
+
+179
+00:07:49,000 --> 00:07:51,000
+Every little light spot you see.
+
+180
+00:07:51,000 --> 00:07:53,000
+It's all a bunch of galaxies.
+
+181
+00:07:53,000 --> 00:07:54,000
+It's no longer one by one.
+
+182
+00:07:54,000 --> 00:07:56,000
+It's a bunch of galaxies.
+
+183
+00:07:56,000 --> 00:07:57,000
+OK.
+
+184
+00:07:57,000 --> 00:07:59,000
+Then this picture is actually white.
+
+185
+00:07:59,000 --> 00:08:02,000
+So you can see the black part.
+
+186
+00:08:02,000 --> 00:08:03,000
+What about this black part?
+
+187
+00:08:03,000 --> 00:08:05,000
+That is, if we assume.
+
+188
+00:08:05,000 --> 00:08:07,000
+There is a gas in this universe.
+
+189
+00:08:07,000 --> 00:08:09,000
+It's not going to be with other gases.
+
+190
+00:08:09,000 --> 00:08:11,000
+This is the interaction.
+
+191
+00:08:11,000 --> 00:08:13,000
+But it has weight.
+
+192
+00:08:13,000 --> 00:08:15,000
+So it's going to have a denser place.
+
+193
+00:08:15,000 --> 00:08:17,000
+Because gravity attracts.
+
+194
+00:08:17,000 --> 00:08:19,000
+And then it's going to form.
+
+195
+00:08:19,000 --> 00:08:21,000
+Like this spider web structure.
+
+196
+00:08:21,000 --> 00:08:24,000
+And then these spider web structures are denser.
+
+197
+00:08:24,000 --> 00:08:25,000
+Gravity is heavier.
+
+198
+00:08:25,000 --> 00:08:27,000
+It will attract these gases.
+
+199
+00:08:27,000 --> 00:08:28,000
+These we can see.
+
+200
+00:08:28,000 --> 00:08:29,000
+These normal.
+
+201
+00:08:29,000 --> 00:08:31,000
+These substances.
+
+202
+00:08:31,000 --> 00:08:32,000
+Gather together.
+
+203
+00:08:32,000 --> 00:08:34,000
+And then form a galaxy.
+
+204
+00:08:34,000 --> 00:08:35,000
+Then we found out.
+
+205
+00:08:35,000 --> 00:08:37,000
+We must be in our computer.
+
+206
+00:08:37,000 --> 00:08:38,000
+In this simulation.
+
+207
+00:08:38,000 --> 00:08:40,000
+With this kind of content.
+
+208
+00:08:40,000 --> 00:08:42,000
+We can.
+
+209
+00:08:42,000 --> 00:08:43,000
+Simulate this.
+
+210
+00:08:43,000 --> 00:08:45,000
+The evolution of the universe.
+
+211
+00:08:45,000 --> 00:08:47,000
+And then we produce what we want.
+
+212
+00:08:47,000 --> 00:08:49,000
+The density of this galaxy.
+
+213
+00:08:49,000 --> 00:08:51,000
+So we think this is also a proof.
+
+214
+00:08:51,000 --> 00:08:53,000
+That is, there is a kind of matter that will not interact.
+
+215
+00:08:53,000 --> 00:08:54,000
+Dark matter.
+
+216
+00:08:54,000 --> 00:08:56,000
+This is Bully Cluster.
+
+217
+00:08:56,000 --> 00:08:57,000
+I won't talk about this.
+
+218
+00:08:57,000 --> 00:08:58,000
+Everyone can go.
+
+219
+00:08:58,000 --> 00:08:59,000
+This can be googled.
+
+220
+00:08:59,000 --> 00:09:00,000
+This is a bit complicated.
+
+221
+00:09:00,000 --> 00:09:02,000
+But basically, he said.
+
+222
+00:09:02,000 --> 00:09:04,000
+If there are two galaxies colliding today.
+
+223
+00:09:04,000 --> 00:09:06,000
+We can see the quality inside.
+
+224
+00:09:06,000 --> 00:09:08,000
+Will hit and will not pass.
+
+225
+00:09:08,000 --> 00:09:09,000
+The difference in quality.
+
+226
+00:09:09,000 --> 00:09:11,000
+Then we found out that he had to have a part.
+
+227
+00:09:11,000 --> 00:09:12,000
+Will not touch.
+
+228
+00:09:12,000 --> 00:09:13,000
+Passed by.
+
+229
+00:09:13,000 --> 00:09:14,000
+OK, what about the last one?
+
+230
+00:09:14,000 --> 00:09:16,000
+This is a very, very accurate evidence.
+
+231
+00:09:16,000 --> 00:09:18,000
+This is what we see.
+
+232
+00:09:18,000 --> 00:09:20,000
+The change in temperature in the whole sky.
+
+233
+00:09:20,000 --> 00:09:22,000
+I call the background color of the universe.
+
+234
+00:09:22,000 --> 00:09:24,000
+The change in temperature in the whole sky.
+
+235
+00:09:24,000 --> 00:09:26,000
+And then he changed this.
+
+236
+00:09:26,000 --> 00:09:28,000
+And then we found out.
+
+237
+00:09:28,000 --> 00:09:30,000
+If we assume that this change is from.
+
+238
+00:09:30,000 --> 00:09:32,000
+When the universe was very, very early.
+
+239
+00:09:32,000 --> 00:09:34,000
+These substances.
+
+240
+00:09:34,000 --> 00:09:36,000
+This process of gathering together.
+
+241
+00:09:36,000 --> 00:09:40,000
+The moment of that temperature.
+
+242
+00:09:40,000 --> 00:09:41,000
+OK.
+
+243
+00:09:41,000 --> 00:09:42,000
+That.
+
+244
+00:09:42,000 --> 00:09:44,000
+These condensed substances.
+
+245
+00:09:44,000 --> 00:09:46,000
+It must have a certain proportion.
+
+246
+00:09:46,000 --> 00:09:47,000
+Will interact.
+
+247
+00:09:47,000 --> 00:09:49,000
+A certain proportion will not collide with each other.
+
+248
+00:09:49,000 --> 00:09:51,000
+That proportion can be very, very accurate.
+
+249
+00:09:51,000 --> 00:09:52,000
+Fixed.
+
+250
+00:09:52,000 --> 00:09:54,000
+This is the case.
+
+251
+00:09:54,000 --> 00:09:56,000
+OK, so we know from here.
+
+252
+00:09:56,000 --> 00:09:57,000
+Oh, that.
+
+253
+00:09:57,000 --> 00:09:59,000
+We can calculate very accurately.
+
+254
+00:09:59,000 --> 00:10:01,000
+In this universe.
+
+255
+00:10:01,000 --> 00:10:04,000
+20 to 30% will not interact.
+
+256
+00:10:04,000 --> 00:10:05,000
+Of this substance.
+
+257
+00:10:05,000 --> 00:10:07,000
+Then about 5% will interact.
+
+258
+00:10:07,000 --> 00:10:09,000
+What about the rest?
+
+259
+00:10:09,000 --> 00:10:11,000
+This is another energy content.
+
+260
+00:10:11,000 --> 00:10:12,000
+Dark energy.
+
+261
+00:10:12,000 --> 00:10:13,000
+But we won't talk about it today.
+
+262
+00:10:13,000 --> 00:10:15,000
+So these are the evidence of dark matter.
+
+263
+00:10:15,000 --> 00:10:18,000
+That's a bit like a science.
+
+264
+00:10:18,000 --> 00:10:21,000
+Do you have any questions?
+
+265
+00:10:21,000 --> 00:10:23,000
+If you are interested in any of these.
+
+266
+00:10:23,000 --> 00:10:25,000
+I can talk a little bit.
+
+267
+00:10:25,000 --> 00:10:27,000
+Otherwise, we'll go.
+
+268
+00:10:27,000 --> 00:10:29,000
+What does this angle scale mean?
+
+269
+00:10:29,000 --> 00:10:31,000
+Why is the angle scale?
+
+270
+00:10:31,000 --> 00:10:32,000
+Oh, OK.
+
+271
+00:10:32,000 --> 00:10:34,000
+So this picture is like this.
+
+272
+00:10:34,000 --> 00:10:35,000
+You can of course.
+
+273
+00:10:35,000 --> 00:10:36,000
+This thing.
+
+274
+00:10:36,000 --> 00:10:38,000
+It's the color next to it.
+
+275
+00:10:38,000 --> 00:10:39,000
+The whole universe.
+
+276
+00:10:39,000 --> 00:10:41,000
+Just put your temperature on it.
+
+277
+00:10:41,000 --> 00:10:43,000
+Different temperatures have different colors.
+
+278
+00:10:43,000 --> 00:10:45,000
+But you can do this today.
+
+279
+00:10:45,000 --> 00:10:47,000
+A map of the 2D map.
+
+280
+00:10:47,000 --> 00:10:49,000
+But it's a universe.
+
+281
+00:10:49,000 --> 00:10:50,000
+So his.
+
+282
+00:10:50,000 --> 00:10:53,000
+It's a bit like you're doing it.
+
+283
+00:10:53,000 --> 00:10:54,000
+Frequency spectrum.
+
+284
+00:10:54,000 --> 00:10:56,000
+But his frequency.
+
+285
+00:10:56,000 --> 00:10:58,000
+That dimension is the angle.
+
+286
+00:10:58,000 --> 00:11:02,000
+OK, OK.
+
+287
+00:11:02,000 --> 00:11:03,000
+Is it OK?
+
+288
+00:11:03,000 --> 00:11:04,000
+He's doing it.
+
+289
+00:11:04,000 --> 00:11:05,000
+It will look like this.
+
+290
+00:11:06,000 --> 00:11:09,000
+OK.
+
+291
+00:11:09,000 --> 00:11:10,000
+But that.
+
+292
+00:11:10,000 --> 00:11:12,000
+Because I'm doing particle physics.
+
+293
+00:11:12,000 --> 00:11:14,000
+So we care more about this thing.
+
+294
+00:11:14,000 --> 00:11:15,000
+That's what I just said.
+
+295
+00:11:15,000 --> 00:11:17,000
+There's a group of gas in the universe.
+
+296
+00:11:17,000 --> 00:11:19,000
+It's not going to work at all.
+
+297
+00:11:19,000 --> 00:11:21,000
+So if we break it down.
+
+298
+00:11:21,000 --> 00:11:23,000
+This is the smallest.
+
+299
+00:11:23,000 --> 00:11:25,000
+This is the constituent.
+
+300
+00:11:25,000 --> 00:11:26,000
+So what is it?
+
+301
+00:11:26,000 --> 00:11:28,000
+Elementary particle?
+
+302
+00:11:28,000 --> 00:11:30,000
+It can be one by one.
+
+303
+00:11:30,000 --> 00:11:31,000
+Very, very heavy.
+
+304
+00:11:31,000 --> 00:11:33,000
+But his number is very small.
+
+305
+00:11:33,000 --> 00:11:34,000
+Or he can be one by one.
+
+306
+00:11:34,000 --> 00:11:35,000
+Very light.
+
+307
+00:11:35,000 --> 00:11:36,000
+But he's very, very many.
+
+308
+00:11:36,000 --> 00:11:39,000
+So in the same volume.
+
+309
+00:11:39,000 --> 00:11:41,000
+It's produced in that cube.
+
+310
+00:11:41,000 --> 00:11:42,000
+The quality inside is the same.
+
+311
+00:11:42,000 --> 00:11:44,000
+It's in line with what we just did.
+
+312
+00:11:44,000 --> 00:11:46,000
+The observation of these big gases.
+
+313
+00:11:46,000 --> 00:11:48,000
+I got the density of this quality.
+
+314
+00:11:48,000 --> 00:11:50,000
+Okay, but he's in the particle nature.
+
+315
+00:11:50,000 --> 00:11:51,000
+It's going to be very different.
+
+316
+00:11:51,000 --> 00:11:54,000
+Now, what you see here.
+
+317
+00:11:54,000 --> 00:11:56,000
+OK, this is.
+
+318
+00:11:56,000 --> 00:11:58,000
+This is.
+
+319
+00:11:58,000 --> 00:11:59,000
+This quality unit.
+
+320
+00:11:59,000 --> 00:12:01,000
+So if you're in this background.
+
+321
+00:12:01,000 --> 00:12:02,000
+You don't have to explain to me.
+
+322
+00:12:02,000 --> 00:12:03,000
+What is EV?
+
+323
+00:12:03,000 --> 00:12:06,000
+If you don't know this.
+
+324
+00:12:06,000 --> 00:12:08,000
+What unit is this EV?
+
+325
+00:12:08,000 --> 00:12:10,000
+I'll give you a sense.
+
+326
+00:12:10,000 --> 00:12:13,000
+From this K to M.
+
+327
+00:12:13,000 --> 00:12:14,000
+Sorry.
+
+328
+00:12:14,000 --> 00:12:16,000
+From this K to M, this neighborhood.
+
+329
+00:12:16,000 --> 00:12:18,000
+It's the X-ray that you usually take.
+
+330
+00:12:18,000 --> 00:12:19,000
+OK.
+
+331
+00:12:19,000 --> 00:12:20,000
+If you're in this.
+
+332
+00:12:20,000 --> 00:12:21,000
+This is not.
+
+333
+00:12:21,000 --> 00:12:22,000
+This is just the unit.
+
+334
+00:12:22,000 --> 00:12:23,000
+EV this range.
+
+335
+00:12:23,000 --> 00:12:25,000
+It's visible light.
+
+336
+00:12:25,000 --> 00:12:26,000
+Energy and quality can be exchanged.
+
+337
+00:12:26,000 --> 00:12:28,000
+So the strength of this energy.
+
+338
+00:12:28,000 --> 00:12:29,000
+This is visible light.
+
+339
+00:12:29,000 --> 00:12:30,000
+This is X-ray.
+
+340
+00:12:30,000 --> 00:12:32,000
+And then this is very, very powerful.
+
+341
+00:12:32,000 --> 00:12:33,000
+And then this is here.
+
+342
+00:12:33,000 --> 00:12:35,000
+It's very, very light.
+
+343
+00:12:35,000 --> 00:12:37,000
+It's like coming here.
+
+344
+00:12:37,000 --> 00:12:38,000
+It might be the usual.
+
+345
+00:12:38,000 --> 00:12:39,000
+The radio wave on the phone.
+
+346
+00:12:39,000 --> 00:12:40,000
+And then go further.
+
+347
+00:12:40,000 --> 00:12:41,000
+It's very, very light.
+
+348
+00:12:41,000 --> 00:12:43,000
+Light to the particle.
+
+349
+00:12:43,000 --> 00:12:46,000
+The length of the material wave can be long.
+
+350
+00:12:46,000 --> 00:12:48,000
+This kind of astronomical scale.
+
+351
+00:12:48,000 --> 00:12:49,000
+OK.
+
+352
+00:12:49,000 --> 00:12:51,000
+Okay, so this is.
+
+353
+00:12:51,000 --> 00:12:52,000
+This mass.
+
+354
+00:12:52,000 --> 00:12:55,000
+OK, this dark matter candidate mass.
+
+355
+00:12:55,000 --> 00:12:56,000
+And then what's below?
+
+356
+00:12:56,000 --> 00:12:58,000
+It's all kinds of us now.
+
+357
+00:12:59,000 --> 00:13:00,000
+This theory.
+
+358
+00:13:00,000 --> 00:13:02,000
+And then you can see that this is almost.
+
+359
+00:13:02,000 --> 00:13:04,000
+You can go to the sky and say whatever you want.
+
+360
+00:13:04,000 --> 00:13:06,000
+It's the heaviest you can get.
+
+361
+00:13:06,000 --> 00:13:08,000
+This is the unit of solar mass.
+
+362
+00:13:08,000 --> 00:13:10,000
+He can't use this EV anymore.
+
+363
+00:13:10,000 --> 00:13:12,000
+But if we cut this part out and look at it.
+
+364
+00:13:12,000 --> 00:13:14,000
+From here to the other end.
+
+365
+00:13:14,000 --> 00:13:17,000
+It's dozens of orders of magnitude.
+
+366
+00:13:17,000 --> 00:13:18,000
+OK.
+
+367
+00:13:18,000 --> 00:13:19,000
+We don't know this thing at all.
+
+368
+00:13:19,000 --> 00:13:21,000
+Basically, we don't know this thing at all.
+
+369
+00:13:21,000 --> 00:13:22,000
+What is it?
+
+370
+00:13:22,000 --> 00:13:23,000
+OK.
+
+371
+00:13:23,000 --> 00:13:24,000
+Good.
+
+372
+00:13:24,000 --> 00:13:27,000
+So here's a lot of this model.
+
+373
+00:13:27,000 --> 00:13:28,000
+That.
+
+374
+00:13:28,000 --> 00:13:32,000
+Uh, now I'm going to draw this orange frame.
+
+375
+00:13:32,000 --> 00:13:34,000
+OK, this frame.
+
+376
+00:13:34,000 --> 00:13:37,000
+Sorry.
+
+377
+00:13:37,000 --> 00:13:39,000
+It can be said that in the past 30 or 40 years.
+
+378
+00:13:39,000 --> 00:13:42,000
+All I want to know is the particle.
+
+379
+00:13:42,000 --> 00:13:45,000
+The experiment of dark matter is focused on this frame.
+
+380
+00:13:45,000 --> 00:13:48,000
+There's a reason for this frame.
+
+381
+00:13:48,000 --> 00:13:50,000
+The top line of this frame.
+
+382
+00:13:50,000 --> 00:13:53,000
+There's a theoretical top line called Unitary Bond.
+
+383
+00:13:53,000 --> 00:13:56,000
+If this single particle of this dark matter.
+
+384
+00:13:56,000 --> 00:13:59,000
+If it's heavier than this one up here.
+
+385
+00:13:59,000 --> 00:14:04,000
+He will, uh, have this mathematical theoretical problem.
+
+386
+00:14:04,000 --> 00:14:06,000
+That is to say, it will exceed Unitary.
+
+387
+00:14:06,000 --> 00:14:08,000
+I don't know why, but OK.
+
+388
+00:14:08,000 --> 00:14:10,000
+So, in theory, we can say that he won't go beyond this.
+
+389
+00:14:10,000 --> 00:14:12,000
+Unless he looks really weird.
+
+390
+00:14:12,000 --> 00:14:14,000
+For example, he is a black hole or something.
+
+391
+00:14:14,000 --> 00:14:16,000
+This thing is going to be astronomical observation.
+
+392
+00:14:16,000 --> 00:14:19,000
+That's what we're not going to talk about on the single particle.
+
+393
+00:14:19,000 --> 00:14:21,000
+OK, what's next?
+
+394
+00:14:21,000 --> 00:14:24,000
+You can see that this is a very clear picture here.
+
+395
+00:14:24,000 --> 00:14:29,000
+What does it mean?
+
+396
+00:14:29,000 --> 00:14:32,000
+It's his interaction, or his own quality.
+
+397
+00:14:32,000 --> 00:14:34,000
+Or the energy he can carry.
+
+398
+00:14:34,000 --> 00:14:36,000
+It's probably in this weak interaction.
+
+399
+00:14:36,000 --> 00:14:38,000
+The energy scale of this interaction.
+
+400
+00:14:38,000 --> 00:14:40,000
+He has a very strong reason.
+
+401
+00:14:40,000 --> 00:14:42,000
+I'll talk about it later.
+
+402
+00:14:42,000 --> 00:14:44,000
+But you can see that the more important thing is.
+
+403
+00:14:44,000 --> 00:14:46,000
+So all the design of the experiment.
+
+404
+00:14:46,000 --> 00:14:48,000
+Including, uh, in the collision machine.
+
+405
+00:14:48,000 --> 00:14:51,000
+Whether it's a Japanese collision machine, a European collision machine.
+
+406
+00:14:51,000 --> 00:14:53,000
+China may build a collision machine in the future.
+
+407
+00:14:53,000 --> 00:14:56,000
+Everyone is basically aiming at this orange box.
+
+408
+00:14:56,000 --> 00:14:58,000
+Find Dark Matter inside.
+
+409
+00:14:58,000 --> 00:15:01,000
+What about all the experiments that don't do this collider?
+
+410
+00:15:01,000 --> 00:15:06,000
+Basically, now the major experiments are also in this box.
+
+411
+00:15:06,000 --> 00:15:08,000
+OK, but you can see it right away.
+
+412
+00:15:08,000 --> 00:15:10,000
+There are 30 orders of magnitude here.
+
+413
+00:15:10,000 --> 00:15:15,000
+It's only less than one-tenth.
+
+414
+00:15:15,000 --> 00:15:22,000
+OK, so why do they aim at this box?
+
+415
+00:15:22,000 --> 00:15:24,000
+Let's talk about it first.
+
+416
+00:15:24,000 --> 00:15:26,000
+What kind of technology is this limit?
+
+417
+00:15:26,000 --> 00:15:28,000
+Or what kind of technology are they based on?
+
+418
+00:15:28,000 --> 00:15:31,000
+They will focus on this box.
+
+419
+00:15:31,000 --> 00:15:34,000
+In fact, the concept of measuring Dark Matter is very simple.
+
+420
+00:15:34,000 --> 00:15:36,000
+It's like hitting a ball.
+
+421
+00:15:36,000 --> 00:15:38,000
+OK, this is the earth.
+
+422
+00:15:38,000 --> 00:15:39,000
+Then this is us.
+
+423
+00:15:39,000 --> 00:15:42,000
+Then we took some of the materials that people can manipulate.
+
+424
+00:15:42,000 --> 00:15:44,000
+To do any of our experimental equipment.
+
+425
+00:15:44,000 --> 00:15:49,000
+Then these equipment are nothing more than a bunch of seeds and seeds.
+
+426
+00:15:49,000 --> 00:15:52,000
+Here is a seed or seed.
+
+427
+00:15:52,000 --> 00:15:55,000
+The earth is in the solar system.
+
+428
+00:15:55,000 --> 00:15:57,000
+The solar system is in the galactic system.
+
+429
+00:15:57,000 --> 00:15:59,000
+Then the galactic system is full of what I just said.
+
+430
+00:15:59,000 --> 00:16:03,000
+The gas of Dark Matter is drifting in the entire galactic system.
+
+431
+00:16:03,000 --> 00:16:07,000
+So when our solar system revolves around the center of the galactic system.
+
+432
+00:16:07,000 --> 00:16:12,000
+We are constantly like being blown by the wind of Dark Matter.
+
+433
+00:16:12,000 --> 00:16:16,000
+OK, so at this time, if we take this seed and seed.
+
+434
+00:16:16,000 --> 00:16:19,000
+To build an experiment on the earth.
+
+435
+00:16:19,000 --> 00:16:22,000
+Dark Matter will keep going through.
+
+436
+00:16:22,000 --> 00:16:24,000
+We think it's very, very small.
+
+437
+00:16:24,000 --> 00:16:26,000
+Of course, we haven't measured it yet.
+
+438
+00:16:26,000 --> 00:16:29,000
+But it is likely to exist.
+
+439
+00:16:29,000 --> 00:16:31,000
+It won't just go through.
+
+440
+00:16:31,000 --> 00:16:34,000
+It will hit our experiment and then bounce away.
+
+441
+00:16:34,000 --> 00:16:38,000
+At this time, there will be some of this dynamic being picked up.
+
+442
+00:16:38,000 --> 00:16:40,000
+On this seed or seed.
+
+443
+00:16:40,000 --> 00:16:42,000
+Then we will measure this seed or seed.
+
+444
+00:16:42,000 --> 00:16:45,000
+We can know how heavy it is.
+
+445
+00:16:45,000 --> 00:16:46,000
+Hit down.
+
+446
+00:16:46,000 --> 00:16:48,000
+It will pick up such a large amount of energy.
+
+447
+00:16:48,000 --> 00:16:50,000
+We call it Recall Energy.
+
+448
+00:16:50,000 --> 00:16:54,000
+OK, let's bring all the numbers in.
+
+449
+00:16:54,000 --> 00:16:56,000
+We probably know that.
+
+450
+00:16:56,000 --> 00:16:58,000
+Dark Matter to choose.
+
+451
+00:16:58,000 --> 00:17:00,000
+How fast we blow the wind of Dark Matter.
+
+452
+00:17:00,000 --> 00:17:04,000
+OK, so we know how heavy the seed or seed is.
+
+453
+00:17:04,000 --> 00:17:07,000
+Then we can be different.
+
+454
+00:17:07,000 --> 00:17:09,000
+This hypothetical Dark Matter Mass.
+
+455
+00:17:09,000 --> 00:17:12,000
+To calculate how much energy we can pick up.
+
+456
+00:17:13,000 --> 00:17:16,000
+We pick up this recall energy.
+
+457
+00:17:16,000 --> 00:17:19,000
+The most efficient scenario is exactly the same as hitting the ball.
+
+458
+00:17:19,000 --> 00:17:21,000
+If there is a very heavy thing today.
+
+459
+00:17:21,000 --> 00:17:22,000
+Hit a very light thing.
+
+460
+00:17:22,000 --> 00:17:23,000
+Or a very light thing.
+
+461
+00:17:23,000 --> 00:17:25,000
+Hit a very heavy thing.
+
+462
+00:17:25,000 --> 00:17:27,000
+The speed of the two people is almost unchanged.
+
+463
+00:17:27,000 --> 00:17:29,000
+So this will not pick up energy.
+
+464
+00:17:29,000 --> 00:17:30,000
+But the most efficient time.
+
+465
+00:17:30,000 --> 00:17:31,000
+It's the thing that comes across.
+
+466
+00:17:31,000 --> 00:17:32,000
+With the thing that is hit.
+
+467
+00:17:32,000 --> 00:17:34,000
+The two of them are almost just right.
+
+468
+00:17:34,000 --> 00:17:35,000
+So let's estimate that.
+
+469
+00:17:35,000 --> 00:17:37,000
+OK, if we assume now.
+
+470
+00:17:37,000 --> 00:17:38,000
+Hit Dark Matter.
+
+471
+00:17:38,000 --> 00:17:40,000
+The quality of this particle.
+
+472
+00:17:40,000 --> 00:17:41,000
+Exactly.
+
+473
+00:17:41,000 --> 00:17:44,000
+It's with us to do this experiment.
+
+474
+00:17:44,000 --> 00:17:46,000
+The seed is just as heavy.
+
+475
+00:17:46,000 --> 00:17:48,000
+What about the energy that he transferred?
+
+476
+00:17:48,000 --> 00:17:51,000
+It's probably an X-ray energy.
+
+477
+00:17:51,000 --> 00:17:53,000
+So if we can build an experiment today.
+
+478
+00:17:53,000 --> 00:17:55,000
+We can measure X-ray.
+
+479
+00:17:55,000 --> 00:17:56,000
+This energy.
+
+480
+00:17:56,000 --> 00:17:59,000
+We can probably measure this kind of Dark Matter.
+
+481
+00:17:59,000 --> 00:18:01,000
+What's the problem here?
+
+482
+00:18:01,000 --> 00:18:02,000
+This is high school physics.
+
+483
+00:18:06,000 --> 00:18:08,000
+Okay, no problem, I'll go on.
+
+484
+00:18:09,000 --> 00:18:12,000
+Then you assume the weight of the dark matter.
+
+485
+00:18:12,000 --> 00:18:15,000
+Because all of your detectors are magnets.
+
+486
+00:18:15,000 --> 00:18:17,000
+It's similar.
+
+487
+00:18:17,000 --> 00:18:19,000
+Isn't that like this?
+
+488
+00:18:19,000 --> 00:18:21,000
+You have a predicted dark matter.
+
+489
+00:18:21,000 --> 00:18:23,000
+It's about the same weight as a magnet.
+
+490
+00:18:25,000 --> 00:18:27,000
+Okay, this is a very good question.
+
+491
+00:18:27,000 --> 00:18:28,000
+I'll talk about it later.
+
+492
+00:18:28,000 --> 00:18:29,000
+You can imagine.
+
+493
+00:18:29,000 --> 00:18:31,000
+So if Dark Matter today.
+
+494
+00:18:31,000 --> 00:18:32,000
+It's a super-heavy thing.
+
+495
+00:18:32,000 --> 00:18:34,000
+Or a super-light thing.
+
+496
+00:18:34,000 --> 00:18:35,000
+I say relatively compared to.
+
+497
+00:18:35,000 --> 00:18:37,000
+For example, Proton.
+
+498
+00:18:37,000 --> 00:18:39,000
+It's a super-heavy or super-light thing.
+
+499
+00:18:39,000 --> 00:18:40,000
+It hits.
+
+500
+00:18:40,000 --> 00:18:42,000
+Your experiment doesn't actually pick up any energy.
+
+501
+00:18:42,000 --> 00:18:44,000
+Right?
+
+502
+00:18:44,000 --> 00:18:46,000
+Yeah, or it's super light.
+
+503
+00:18:46,000 --> 00:18:47,000
+Yeah, he's gone.
+
+504
+00:18:47,000 --> 00:18:48,000
+Yeah, that's right.
+
+505
+00:18:48,000 --> 00:18:50,000
+That's what it is.
+
+506
+00:18:50,000 --> 00:18:51,000
+So you can say.
+
+507
+00:18:51,000 --> 00:18:53,000
+Use an order of magnitude estimate.
+
+508
+00:18:53,000 --> 00:18:54,000
+Just say OK.
+
+509
+00:18:54,000 --> 00:18:56,000
+So you use this kind of target particle.
+
+510
+00:18:56,000 --> 00:18:58,000
+Basically.
+
+511
+00:18:58,000 --> 00:18:59,000
+You set yourself up first.
+
+512
+00:18:59,000 --> 00:19:01,000
+It's probably in this order of magnitude.
+
+513
+00:19:01,000 --> 00:19:05,000
+To measure the weight of this particle.
+
+514
+00:19:05,000 --> 00:19:07,000
+If it's heavy or light, you won't be able to measure it.
+
+515
+00:19:07,000 --> 00:19:10,000
+Because the energy transfer will become small.
+
+516
+00:19:10,000 --> 00:19:11,000
+Yeah, yeah, yeah.
+
+517
+00:19:11,000 --> 00:19:12,000
+Right?
+
+518
+00:19:12,000 --> 00:19:13,000
+All right, yeah, all right.
+
+519
+00:19:13,000 --> 00:19:16,000
+Okay, let's go back to the other side.
+
+520
+00:19:16,000 --> 00:19:20,000
+Well, in general, if you go to a dark matter meeting.
+
+521
+00:19:20,000 --> 00:19:22,000
+This is what people usually see.
+
+522
+00:19:22,000 --> 00:19:23,000
+What is this picture?
+
+523
+00:19:23,000 --> 00:19:24,000
+This picture is.
+
+524
+00:19:24,000 --> 00:19:27,000
+This is the imaginary.
+
+525
+00:19:27,000 --> 00:19:30,000
+Dark Matter Mass.
+
+526
+00:19:31,000 --> 00:19:38,000
+From here is the 10 to the negative 5 times of the GV to the 10 to the 3 times of the GV.
+
+527
+00:19:38,000 --> 00:19:40,000
+Uh, okay.
+
+528
+00:19:40,000 --> 00:19:43,000
+Okay, so what about these 10 lines?
+
+529
+00:19:43,000 --> 00:19:45,000
+It's an already completed experiment.
+
+530
+00:19:45,000 --> 00:19:46,000
+Sorry.
+
+531
+00:19:46,000 --> 00:19:48,000
+What about these long lines?
+
+532
+00:19:48,000 --> 00:19:50,000
+It's about to be released.
+
+533
+00:19:50,000 --> 00:19:53,000
+Uh, the results of the experiment that will be released in a few years.
+
+534
+00:19:53,000 --> 00:19:55,000
+Okay, what about those dots?
+
+535
+00:19:55,000 --> 00:19:57,000
+It's something like conceptual design.
+
+536
+00:19:57,000 --> 00:20:00,000
+Or something like, uh.
+
+537
+00:20:00,000 --> 00:20:02,000
+Calculate it out and say I project.
+
+538
+00:20:02,000 --> 00:20:05,000
+If I have completed this concept, where can I go?
+
+539
+00:20:05,000 --> 00:20:07,000
+It's not so realistic.
+
+540
+00:20:07,000 --> 00:20:10,000
+Okay, so I'm going to draw a line here.
+
+541
+00:20:10,000 --> 00:20:13,000
+It means that I'm done with this experiment and I'm going to put it all back on top.
+
+542
+00:20:13,000 --> 00:20:15,000
+Okay, what does that mean?
+
+543
+00:20:15,000 --> 00:20:16,000
+It means.
+
+544
+00:20:16,000 --> 00:20:19,000
+I open my experiment and then I keep waiting and waiting and waiting.
+
+545
+00:20:19,000 --> 00:20:20,000
+I know how long I've been waiting.
+
+546
+00:20:20,000 --> 00:20:22,000
+I know how heavy my experiment is.
+
+547
+00:20:22,000 --> 00:20:26,000
+Therefore, I know how many protons or neutrons I have waiting there.
+
+548
+00:20:26,000 --> 00:20:27,000
+Wait for a long time.
+
+549
+00:20:27,000 --> 00:20:28,000
+I didn't wait for anything.
+
+550
+00:20:28,000 --> 00:20:30,000
+So I can say.
+
+551
+00:20:30,000 --> 00:20:32,000
+How big is it according to my experiment?
+
+552
+00:20:32,000 --> 00:20:33,000
+How long have I been waiting?
+
+553
+00:20:33,000 --> 00:20:35,000
+And then I didn't see anything.
+
+554
+00:20:35,000 --> 00:20:38,000
+I can say with enough confidence.
+
+555
+00:20:38,000 --> 00:20:40,000
+Dark matter passes through me.
+
+556
+00:20:40,000 --> 00:20:42,000
+The probability of being blocked.
+
+557
+00:20:42,000 --> 00:20:44,000
+It's not going to be more than a number.
+
+558
+00:20:44,000 --> 00:20:46,000
+Otherwise, I should see something.
+
+559
+00:20:46,000 --> 00:20:48,000
+This sentence is a bit long.
+
+560
+00:20:48,000 --> 00:20:49,000
+Can you understand?
+
+561
+00:20:49,000 --> 00:20:51,000
+Okay, so based on.
+
+562
+00:20:51,000 --> 00:20:54,000
+I didn't see any results of the experiment.
+
+563
+00:20:55,000 --> 00:20:57,000
+But I know very clearly.
+
+564
+00:20:57,000 --> 00:20:58,000
+How long have I been waiting?
+
+565
+00:20:58,000 --> 00:21:00,000
+How many things did I use to block?
+
+566
+00:21:00,000 --> 00:21:01,000
+Can't block.
+
+567
+00:21:01,000 --> 00:21:03,000
+So I can say.
+
+568
+00:21:03,000 --> 00:21:05,000
+Dark matter and protons and neutrons.
+
+569
+00:21:05,000 --> 00:21:08,000
+The probability of interaction will not exceed a number.
+
+570
+00:21:08,000 --> 00:21:09,000
+Then I can.
+
+571
+00:21:09,000 --> 00:21:11,000
+For each different assumption.
+
+572
+00:21:11,000 --> 00:21:12,000
+The quality of dark matter.
+
+573
+00:21:12,000 --> 00:21:13,000
+To calculate a number.
+
+574
+00:21:13,000 --> 00:21:15,000
+So in the end, it's a line.
+
+575
+00:21:15,000 --> 00:21:16,000
+Then I'll empty it out here.
+
+576
+00:21:16,000 --> 00:21:17,000
+Draw it black.
+
+577
+00:21:17,000 --> 00:21:18,000
+That is to say.
+
+578
+00:21:18,000 --> 00:21:19,000
+Okay, dark matter.
+
+579
+00:21:19,000 --> 00:21:20,000
+The interaction.
+
+580
+00:21:20,000 --> 00:21:21,000
+If today is.
+
+581
+00:21:21,000 --> 00:21:22,000
+If it's EEV.
+
+582
+00:21:22,000 --> 00:21:24,000
+It's definitely not.
+
+583
+00:21:24,000 --> 00:21:26,000
+The interaction is 10 to 40.
+
+584
+00:21:26,000 --> 00:21:27,000
+Must be smaller.
+
+585
+00:21:27,000 --> 00:21:28,000
+If it's bigger.
+
+586
+00:21:28,000 --> 00:21:30,000
+I should see it.
+
+587
+00:21:30,000 --> 00:21:31,000
+OK.
+
+588
+00:21:31,000 --> 00:21:33,000
+So these lines are what it means.
+
+589
+00:21:33,000 --> 00:21:34,000
+So you can see.
+
+590
+00:21:34,000 --> 00:21:35,000
+The current limit is.
+
+591
+00:21:35,000 --> 00:21:37,000
+This way.
+
+592
+00:21:37,000 --> 00:21:38,000
+That is to say.
+
+593
+00:21:38,000 --> 00:21:39,000
+We have to keep going down.
+
+594
+00:21:39,000 --> 00:21:40,000
+Keep digging down.
+
+595
+00:21:40,000 --> 00:21:41,000
+Until one day we see.
+
+596
+00:21:41,000 --> 00:21:42,000
+Dark matter really.
+
+597
+00:21:42,000 --> 00:21:44,000
+Always in the detector.
+
+598
+00:21:44,000 --> 00:21:45,000
+it is good.
+
+599
+00:21:45,000 --> 00:21:46,000
+Then.
+
+600
+00:21:46,000 --> 00:21:48,000
+Go back to the question that Ted just asked.
+
+601
+00:21:48,000 --> 00:21:50,000
+Now all the experiments here.
+
+602
+00:21:50,000 --> 00:21:51,000
+There is sensitivity.
+
+603
+00:21:51,000 --> 00:21:52,000
+You can measure.
+
+604
+00:21:52,000 --> 00:21:53,000
+You can set a limit.
+
+605
+00:21:53,000 --> 00:21:54,000
+Constraint like this.
+
+606
+00:21:54,000 --> 00:21:56,000
+But it's probably around here.
+
+607
+00:21:56,000 --> 00:21:58,000
+It's all gone.
+
+608
+00:21:58,000 --> 00:22:00,000
+And then there's almost no way to measure it any lower.
+
+609
+00:22:00,000 --> 00:22:01,000
+Why?
+
+610
+00:22:01,000 --> 00:22:03,000
+Because all of these experiments.
+
+611
+00:22:03,000 --> 00:22:05,000
+It's all paper and seeds.
+
+612
+00:22:05,000 --> 00:22:06,000
+To block dark matter.
+
+613
+00:22:06,000 --> 00:22:08,000
+So for these.
+
+614
+00:22:08,000 --> 00:22:10,000
+Lighter possible dark matter.
+
+615
+00:22:10,000 --> 00:22:12,000
+When it hits.
+
+616
+00:22:12,000 --> 00:22:14,000
+The remaining energy is very small.
+
+617
+00:22:14,000 --> 00:22:15,000
+In these experiments.
+
+618
+00:22:15,000 --> 00:22:16,000
+It can't be measured.
+
+619
+00:22:16,000 --> 00:22:17,000
+OK, I can't measure it.
+
+620
+00:22:17,000 --> 00:22:18,000
+Then I can't say.
+
+621
+00:22:18,000 --> 00:22:20,000
+What should I do here?
+
+622
+00:22:20,000 --> 00:22:21,000
+So there's a threshold here.
+
+623
+00:22:21,000 --> 00:22:22,000
+Further down.
+
+624
+00:22:22,000 --> 00:22:24,000
+We can't measure dark matter.
+
+625
+00:22:24,000 --> 00:22:25,000
+This is the first point.
+
+626
+00:22:25,000 --> 00:22:27,000
+The second point.
+
+627
+00:22:27,000 --> 00:22:29,000
+There's a yellow one down here.
+
+628
+00:22:29,000 --> 00:22:30,000
+A very large piece of stuff.
+
+629
+00:22:30,000 --> 00:22:31,000
+What is this?
+
+630
+00:22:31,000 --> 00:22:32,000
+This is a constant.
+
+631
+00:22:32,000 --> 00:22:35,000
+The seeds of the earth.
+
+632
+00:22:35,000 --> 00:22:37,000
+Now all the experimental design.
+
+633
+00:22:37,000 --> 00:22:39,000
+Basically, there is no clear.
+
+634
+00:22:39,000 --> 00:22:40,000
+The way is to say.
+
+635
+00:22:40,000 --> 00:22:41,000
+I can be very efficient.
+
+636
+00:22:41,000 --> 00:22:43,000
+Distinguish between dark matter and seeds.
+
+637
+00:22:43,000 --> 00:22:47,000
+The difference in this signal.
+
+638
+00:22:47,000 --> 00:22:48,000
+So if I keep digging today.
+
+639
+00:22:48,000 --> 00:22:49,000
+I keep going down.
+
+640
+00:22:49,000 --> 00:22:50,000
+Keep drawing.
+
+641
+00:22:50,000 --> 00:22:52,000
+It's about this long.
+
+642
+00:22:52,000 --> 00:22:53,000
+Here.
+
+643
+00:22:53,000 --> 00:22:54,000
+If I keep drawing here.
+
+644
+00:22:54,000 --> 00:22:55,000
+Dig it out.
+
+645
+00:22:55,000 --> 00:22:57,000
+I still don't see the dark matter.
+
+646
+00:22:57,000 --> 00:22:59,000
+Next, I'll go crazy.
+
+647
+00:22:59,000 --> 00:23:00,000
+There's always a signal.
+
+648
+00:23:00,000 --> 00:23:01,000
+But I probably will.
+
+649
+00:23:01,000 --> 00:23:02,000
+We all think.
+
+650
+00:23:02,000 --> 00:23:03,000
+Oh, that should be the sun.
+
+651
+00:23:03,000 --> 00:23:04,000
+It's coming out.
+
+652
+00:23:04,000 --> 00:23:06,000
+Or the radioactivity of the earth.
+
+653
+00:23:06,000 --> 00:23:07,000
+Out of the seeds.
+
+654
+00:23:07,000 --> 00:23:08,000
+We can't do it again.
+
+655
+00:23:08,000 --> 00:23:10,000
+Continue to measure this part.
+
+656
+00:23:10,000 --> 00:23:12,000
+At least in the foreseeable future.
+
+657
+00:23:12,000 --> 00:23:14,000
+No technology can do this.
+
+658
+00:23:14,000 --> 00:23:15,000
+OK.
+
+659
+00:23:15,000 --> 00:23:18,000
+Why are these experiments still so focused?
+
+660
+00:23:18,000 --> 00:23:19,000
+Dig this part.
+
+661
+00:23:19,000 --> 00:23:22,000
+For example, from 10GbE to 50EbE.
+
+662
+00:23:22,000 --> 00:23:24,000
+That's the reason.
+
+663
+00:23:24,000 --> 00:23:26,000
+Now I'm going to draw these models.
+
+664
+00:23:26,000 --> 00:23:28,000
+You can see it.
+
+665
+00:23:28,000 --> 00:23:29,000
+It's full of models here.
+
+666
+00:23:29,000 --> 00:23:30,000
+That's what I just said.
+
+667
+00:23:30,000 --> 00:23:33,000
+It can even extend to 10 to 30.
+
+668
+00:23:33,000 --> 00:23:34,000
+No problem.
+
+669
+00:23:34,000 --> 00:23:37,000
+But all of this.
+
+670
+00:23:37,000 --> 00:23:40,000
+What you can dig here is MSSM.
+
+671
+00:23:40,000 --> 00:23:42,000
+This is called super symmetry theory.
+
+672
+00:23:43,000 --> 00:23:46,000
+Between the 1980s and 2000s.
+
+673
+00:23:46,000 --> 00:23:49,000
+Everyone is very confident about super symmetry theory.
+
+674
+00:23:49,000 --> 00:23:51,000
+I think it might be.
+
+675
+00:23:51,000 --> 00:23:56,000
+It's a very important theory.
+
+676
+00:23:56,000 --> 00:23:59,000
+It also provides a variety of variations.
+
+677
+00:23:59,000 --> 00:24:01,000
+It depends on what kind of super symmetry theory you are.
+
+678
+00:24:01,000 --> 00:24:03,000
+The dark matter candidate.
+
+679
+00:24:03,000 --> 00:24:04,000
+So everyone is confident.
+
+680
+00:24:04,000 --> 00:24:05,000
+But keep digging.
+
+681
+00:24:05,000 --> 00:24:08,000
+But in fact, the earliest version of super symmetry theory.
+
+682
+00:24:08,000 --> 00:24:11,000
+In fact, its prediction should be around 10 to 38.
+
+683
+00:24:12,000 --> 00:24:13,000
+It's already been dug up.
+
+684
+00:24:13,000 --> 00:24:18,000
+And be ruled out by more than 10 orders of magnitude.
+
+685
+00:24:18,000 --> 00:24:19,000
+So much.
+
+686
+00:24:19,000 --> 00:24:22,000
+OK, so now we see this P or C or N.
+
+687
+00:24:22,000 --> 00:24:24,000
+What about this super symmetry theory?
+
+688
+00:24:24,000 --> 00:24:27,000
+It's all very fine-tuned.
+
+689
+00:24:27,000 --> 00:24:32,000
+OK, so now we generally think.
+
+690
+00:24:32,000 --> 00:24:33,000
+OK.
+
+691
+00:24:33,000 --> 00:24:35,000
+Within 5 to 10 years.
+
+692
+00:24:35,000 --> 00:24:37,000
+These experiments will be completed.
+
+693
+00:24:37,000 --> 00:24:40,000
+The dotted line they draw.
+
+694
+00:24:40,000 --> 00:24:42,000
+Unless we are either in this range.
+
+695
+00:24:42,000 --> 00:24:44,000
+We found the document.
+
+696
+00:24:44,000 --> 00:24:47,000
+Otherwise, these experiments are based on technology.
+
+697
+00:24:47,000 --> 00:24:49,000
+There will probably be a lot of difficulty.
+
+698
+00:24:49,000 --> 00:24:50,000
+Extend down.
+
+699
+00:24:50,000 --> 00:24:51,000
+Because it will meet neutrino.
+
+700
+00:24:51,000 --> 00:24:52,000
+This is the first point.
+
+701
+00:24:52,000 --> 00:24:53,000
+The second point is.
+
+702
+00:24:53,000 --> 00:24:56,000
+In fact, if you are.
+
+703
+00:24:56,000 --> 00:24:59,000
+It's a theory that needs to be very natural.
+
+704
+00:24:59,000 --> 00:25:01,000
+Not very artificially.
+
+705
+00:25:01,000 --> 00:25:03,000
+To find a very difficult to produce.
+
+706
+00:25:03,000 --> 00:25:05,000
+The combination of parameters.
+
+707
+00:25:05,000 --> 00:25:07,000
+In fact, those natural.
+
+708
+00:25:08,000 --> 00:25:10,000
+Theoretical prediction.
+
+709
+00:25:10,000 --> 00:25:11,000
+It's already been dug up.
+
+710
+00:25:11,000 --> 00:25:12,000
+OK.
+
+711
+00:25:12,000 --> 00:25:14,000
+But back to this point.
+
+712
+00:25:14,000 --> 00:25:17,000
+In fact, there are still a lot of models down here.
+
+713
+00:25:17,000 --> 00:25:18,000
+OK.
+
+714
+00:25:18,000 --> 00:25:20,000
+So we want to do.
+
+715
+00:25:20,000 --> 00:25:22,000
+Uh.
+
+716
+00:25:22,000 --> 00:25:25,000
+We want to find better technology.
+
+717
+00:25:25,000 --> 00:25:27,000
+In addition to digging here.
+
+718
+00:25:27,000 --> 00:25:30,000
+We want to be able to cover the remaining dozens.
+
+719
+00:25:30,000 --> 00:25:32,000
+This order of magnitude is not measured at all.
+
+720
+00:25:32,000 --> 00:25:36,000
+Or it's hard to measure.
+
+721
+00:25:36,000 --> 00:25:37,000
+OK.
+
+722
+00:25:37,000 --> 00:25:38,000
+So what are we going to do?
+
+723
+00:25:38,000 --> 00:25:40,000
+I just said.
+
+724
+00:25:40,000 --> 00:25:42,000
+We want to block a very light particle.
+
+725
+00:25:42,000 --> 00:25:44,000
+We can't use a very heavy magnet or seed to block it.
+
+726
+00:25:44,000 --> 00:25:45,000
+Because of this.
+
+727
+00:25:45,000 --> 00:25:47,000
+This energy will be very little.
+
+728
+00:25:47,000 --> 00:25:49,000
+So that's another thing that humans can control.
+
+729
+00:25:49,000 --> 00:25:51,000
+In addition to the magnet and the seed is the electron.
+
+730
+00:25:51,000 --> 00:25:53,000
+In fact, there is not much else.
+
+731
+00:25:53,000 --> 00:25:54,000
+OK.
+
+732
+00:25:54,000 --> 00:25:55,000
+Then I change it to an electron now.
+
+733
+00:25:55,000 --> 00:25:56,000
+OK.
+
+734
+00:25:56,000 --> 00:25:57,000
+Then I bring the number in.
+
+735
+00:25:57,000 --> 00:26:00,000
+The electron is instantly 100 times lighter than the magnet and the seed.
+
+736
+00:26:00,000 --> 00:26:01,000
+No, sorry.
+
+737
+00:26:01,000 --> 00:26:02,000
+1,000 times.
+
+738
+00:26:02,000 --> 00:26:03,000
+2,000 times.
+
+739
+00:26:03,000 --> 00:26:04,000
+Almost 2,000 times.
+
+740
+00:26:05,000 --> 00:26:07,000
+To a very, very light quality.
+
+741
+00:26:07,000 --> 00:26:09,000
+So now I can block it.
+
+742
+00:26:09,000 --> 00:26:11,000
+The energy consumed is probably.
+
+743
+00:26:11,000 --> 00:26:14,000
+I can be sensitive to 100EV.
+
+744
+00:26:14,000 --> 00:26:15,000
+That's dozens of EV.
+
+745
+00:26:15,000 --> 00:26:17,000
+Let's talk about dozens of EV.
+
+746
+00:26:17,000 --> 00:26:19,000
+But if you use a magnet.
+
+747
+00:26:19,000 --> 00:26:22,000
+It's hundreds of EVs that can be measured.
+
+748
+00:26:22,000 --> 00:26:24,000
+That is to say, if I want to eat more.
+
+749
+00:26:24,000 --> 00:26:26,000
+Eat this light particle more efficiently.
+
+750
+00:26:26,000 --> 00:26:27,000
+Give me the energy.
+
+751
+00:26:27,000 --> 00:26:29,000
+I have to use light things to block.
+
+752
+00:26:29,000 --> 00:26:31,000
+So our idea now is.
+
+753
+00:26:31,000 --> 00:26:34,000
+Electron as the target of being hit.
+
+754
+00:26:34,000 --> 00:26:36,000
+OK.
+
+755
+00:26:36,000 --> 00:26:38,000
+Okay, because he's an electron.
+
+756
+00:26:38,000 --> 00:26:40,000
+So he actually has another interaction.
+
+757
+00:26:40,000 --> 00:26:43,000
+He will directly put the light.
+
+758
+00:26:43,000 --> 00:26:45,000
+Light is the electromagnetic wave.
+
+759
+00:26:45,000 --> 00:26:47,000
+So if there is a model today.
+
+760
+00:26:47,000 --> 00:26:48,000
+Is.
+
+761
+00:26:48,000 --> 00:26:50,000
+Will convert to light or light.
+
+762
+00:26:50,000 --> 00:26:52,000
+He will absorb it all.
+
+763
+00:26:52,000 --> 00:26:54,000
+At this time, it is not the opposite.
+
+764
+00:26:54,000 --> 00:26:56,000
+And then eat some of the energy.
+
+765
+00:26:56,000 --> 00:26:58,000
+But we will put all this energy.
+
+766
+00:26:58,000 --> 00:27:00,000
+Just like his quality, so much energy.
+
+767
+00:27:00,000 --> 00:27:02,000
+The quality will become his energy.
+
+768
+00:27:02,000 --> 00:27:03,000
+Eat it all.
+
+769
+00:27:03,000 --> 00:27:04,000
+Then we can also measure this.
+
+770
+00:27:04,000 --> 00:27:06,000
+If you use electrons.
+
+771
+00:27:06,000 --> 00:27:07,000
+OK.
+
+772
+00:27:07,000 --> 00:27:09,000
+So we are now.
+
+773
+00:27:09,000 --> 00:27:11,000
+I think we should use electrons.
+
+774
+00:27:11,000 --> 00:27:13,000
+To replace the straight and neutral.
+
+775
+00:27:13,000 --> 00:27:15,000
+To produce for lighter particles.
+
+776
+00:27:15,000 --> 00:27:16,000
+This sensitivity.
+
+777
+00:27:16,000 --> 00:27:18,000
+Then we will.
+
+778
+00:27:18,000 --> 00:27:20,000
+It's a definition of this talk.
+
+779
+00:27:20,000 --> 00:27:22,000
+That is to say, we will talk about low mass later.
+
+780
+00:27:22,000 --> 00:27:24,000
+Low mass is probably GEV.
+
+781
+00:27:24,000 --> 00:27:25,000
+Or lighter particles.
+
+782
+00:27:25,000 --> 00:27:27,000
+Then emphasize it again.
+
+783
+00:27:27,000 --> 00:27:28,000
+There are so many here.
+
+784
+00:27:29,000 --> 00:27:31,000
+For example, dark sector.
+
+785
+00:27:31,000 --> 00:27:33,000
+This is the metric.
+
+786
+00:27:33,000 --> 00:27:35,000
+Freezing, etc.
+
+787
+00:27:35,000 --> 00:27:36,000
+OK.
+
+788
+00:27:36,000 --> 00:27:38,000
+Of course, there are.
+
+789
+00:27:38,000 --> 00:27:39,000
+Uh.
+
+790
+00:27:39,000 --> 00:27:41,000
+We are still experimenting with this.
+
+791
+00:27:41,000 --> 00:27:43,000
+I just talked about this.
+
+792
+00:27:43,000 --> 00:27:45,000
+The mechanism of hitting the ball.
+
+793
+00:27:45,000 --> 00:27:46,000
+But in fact.
+
+794
+00:27:46,000 --> 00:27:48,000
+For example, like the theory.
+
+795
+00:27:48,000 --> 00:27:50,000
+Uh, he predicted that.
+
+796
+00:27:50,000 --> 00:27:52,000
+There will be very natural.
+
+797
+00:27:52,000 --> 00:27:53,000
+Can produce this.
+
+798
+00:27:53,000 --> 00:27:55,000
+It's not a particle at all.
+
+799
+00:27:55,000 --> 00:27:56,000
+It's more like a bunch of.
+
+800
+00:27:57,000 --> 00:27:59,000
+That's like this.
+
+801
+00:27:59,000 --> 00:28:01,000
+We can actually measure it.
+
+802
+00:28:01,000 --> 00:28:03,000
+But of course we have to assume that.
+
+803
+00:28:03,000 --> 00:28:05,000
+Assuming he's going to do this.
+
+804
+00:28:05,000 --> 00:28:07,000
+This kind of behavior.
+
+805
+00:28:07,000 --> 00:28:09,000
+Then we can use this method to measure.
+
+806
+00:28:09,000 --> 00:28:11,000
+So in other words, we can.
+
+807
+00:28:11,000 --> 00:28:13,000
+If there is such a behavior.
+
+808
+00:28:13,000 --> 00:28:15,000
+What is his probability?
+
+809
+00:28:15,000 --> 00:28:16,000
+That's for me.
+
+810
+00:28:16,000 --> 00:28:18,000
+Uh, like we do experiments.
+
+811
+00:28:18,000 --> 00:28:19,000
+A more important point is.
+
+812
+00:28:19,000 --> 00:28:21,000
+How do we really.
+
+813
+00:28:21,000 --> 00:28:23,000
+To do such an experiment realistically.
+
+814
+00:28:23,000 --> 00:28:24,000
+Like I just said.
+
+815
+00:28:24,000 --> 00:28:26,000
+We want to maximize this.
+
+816
+00:28:26,000 --> 00:28:27,000
+Momentum energy transfer.
+
+817
+00:28:27,000 --> 00:28:28,000
+So we have to be very light.
+
+818
+00:28:28,000 --> 00:28:30,000
+This target the particle.
+
+819
+00:28:30,000 --> 00:28:32,000
+Of course, we want very small, very small noise.
+
+820
+00:28:32,000 --> 00:28:34,000
+OK, because of this.
+
+821
+00:28:34,000 --> 00:28:36,000
+We can only see a very small signal.
+
+822
+00:28:36,000 --> 00:28:38,000
+So there will be enough.
+
+823
+00:28:38,000 --> 00:28:39,000
+Signal to noise ratio.
+
+824
+00:28:39,000 --> 00:28:40,000
+OK.
+
+825
+00:28:40,000 --> 00:28:41,000
+Back to just now.
+
+826
+00:28:41,000 --> 00:28:43,000
+We want the sensitivity of sub-Kev.
+
+827
+00:28:43,000 --> 00:28:44,000
+OK.
+
+828
+00:28:44,000 --> 00:28:45,000
+It takes a few tens of EVs.
+
+829
+00:28:45,000 --> 00:28:46,000
+Probably below.
+
+830
+00:28:46,000 --> 00:28:47,000
+Then do this.
+
+831
+00:28:47,000 --> 00:28:49,000
+GEV or lighter particle.
+
+832
+00:28:49,000 --> 00:28:51,000
+To see things.
+
+833
+00:28:52,000 --> 00:28:53,000
+OK.
+
+834
+00:28:53,000 --> 00:28:55,000
+Of course, there is also a very important thing.
+
+835
+00:28:55,000 --> 00:28:57,000
+We must be able to know very clearly.
+
+836
+00:28:57,000 --> 00:28:59,000
+The signal I see now.
+
+837
+00:28:59,000 --> 00:29:01,000
+It's from the Dark Matter hit me.
+
+838
+00:29:01,000 --> 00:29:03,000
+Instead of inexplicably.
+
+839
+00:29:03,000 --> 00:29:05,000
+Things in the environment hit my detector.
+
+840
+00:29:05,000 --> 00:29:07,000
+But if the energy is very high today.
+
+841
+00:29:07,000 --> 00:29:09,000
+This thing is relatively easy.
+
+842
+00:29:09,000 --> 00:29:11,000
+Because of this kind of energy in the environment.
+
+843
+00:29:11,000 --> 00:29:13,000
+This kind of radioactivity.
+
+844
+00:29:13,000 --> 00:29:14,000
+In fact, relatively few.
+
+845
+00:29:14,000 --> 00:29:15,000
+Otherwise, in fact, people are dead.
+
+846
+00:29:15,000 --> 00:29:17,000
+OK, but if you reduce the energy to very low.
+
+847
+00:29:17,000 --> 00:29:19,000
+In fact, you are next to the phone.
+
+848
+00:29:20,000 --> 00:29:21,000
+Cell phone signal.
+
+849
+00:29:21,000 --> 00:29:23,000
+It looks like that energy.
+
+850
+00:29:23,000 --> 00:29:25,000
+If you put it in an experimental environment.
+
+851
+00:29:25,000 --> 00:29:27,000
+The temperature of the experimental environment.
+
+852
+00:29:27,000 --> 00:29:29,000
+Black radiation.
+
+853
+00:29:29,000 --> 00:29:31,000
+That light is also this energy.
+
+854
+00:29:31,000 --> 00:29:33,000
+So it started to become very, very much.
+
+855
+00:29:33,000 --> 00:29:34,000
+Low-energy particle.
+
+856
+00:29:34,000 --> 00:29:36,000
+Keep hitting the detector.
+
+857
+00:29:36,000 --> 00:29:37,000
+We need to be able to distinguish.
+
+858
+00:29:37,000 --> 00:29:39,000
+That's the only way to do this.
+
+859
+00:29:39,000 --> 00:29:43,000
+So in fact, it is relatively challenging.
+
+860
+00:29:43,000 --> 00:29:44,000
+OK.
+
+861
+00:29:44,000 --> 00:29:46,000
+I won't talk about this picture.
+
+862
+00:29:46,000 --> 00:29:48,000
+This picture is actually the thing.
+
+863
+00:29:48,000 --> 00:29:49,000
+Ok.
+
+864
+00:29:49,000 --> 00:29:50,000
+Ok, I'm done.
+
+865
+00:29:50,000 --> 00:29:52,000
+The first part is our motivation.
+
+866
+00:29:52,000 --> 00:29:53,000
+Do you have any questions?
+
+867
+00:29:59,000 --> 00:30:00,000
+Hello.
+
+868
+00:30:00,000 --> 00:30:02,000
+Do you hear me?
+
+869
+00:30:02,000 --> 00:30:04,000
+Yes, yes, yes.
+
+870
+00:30:04,000 --> 00:30:05,000
+Then I want to.
+
+871
+00:30:05,000 --> 00:30:07,000
+I'm the one who does Neoscience.
+
+872
+00:30:07,000 --> 00:30:09,000
+So I don't have a background.
+
+873
+00:30:09,000 --> 00:30:11,000
+But I want to ask.
+
+874
+00:30:11,000 --> 00:30:14,000
+That's how everyone is.
+
+875
+00:30:14,000 --> 00:30:15,000
+Is it that?
+
+876
+00:30:15,000 --> 00:30:16,000
+Neutrino.
+
+877
+00:30:16,000 --> 00:30:17,000
+Oh.
+
+878
+00:30:17,000 --> 00:30:19,000
+How do you do it?
+
+879
+00:30:19,000 --> 00:30:20,000
+Is it?
+
+880
+00:30:20,000 --> 00:30:21,000
+Is it?
+
+881
+00:30:21,000 --> 00:30:22,000
+Neutrino.
+
+882
+00:30:22,000 --> 00:30:23,000
+This question.
+
+883
+00:30:23,000 --> 00:30:24,000
+Is it?
+
+884
+00:30:24,000 --> 00:30:25,000
+OK.
+
+885
+00:30:25,000 --> 00:30:26,000
+You say.
+
+886
+00:30:26,000 --> 00:30:27,000
+What if it's Neutrino?
+
+887
+00:30:27,000 --> 00:30:28,000
+How do you do it?
+
+888
+00:30:28,000 --> 00:30:29,000
+Because the sun will emit a lot.
+
+889
+00:30:29,000 --> 00:30:30,000
+That's right.
+
+890
+00:30:30,000 --> 00:30:31,000
+This question can actually be divided into two.
+
+891
+00:30:31,000 --> 00:30:32,000
+The first one is.
+
+892
+00:30:32,000 --> 00:30:33,000
+I'm not sure.
+
+893
+00:30:33,000 --> 00:30:34,000
+What you want to ask is.
+
+894
+00:30:34,000 --> 00:30:35,000
+How do we know?
+
+895
+00:30:35,000 --> 00:30:36,000
+Neutrino can't be a dark matter.
+
+896
+00:30:36,000 --> 00:30:37,000
+How do we know?
+
+897
+00:30:37,000 --> 00:30:38,000
+How do we know?
+
+898
+00:30:38,000 --> 00:30:39,000
+How do we know?
+
+899
+00:30:39,000 --> 00:30:40,000
+How do we know?
+
+900
+00:30:40,000 --> 00:30:41,000
+How do we know?
+
+901
+00:30:41,000 --> 00:30:42,000
+How do we know?
+
+902
+00:30:43,000 --> 00:30:44,000
+How do we know?
+
+903
+00:30:44,000 --> 00:30:45,000
+Neutrino can't be a dark matter?
+
+904
+00:30:45,000 --> 00:30:46,000
+It's still our detector.
+
+905
+00:30:46,000 --> 00:30:47,000
+What about the signal you see is not Neutrino?
+
+906
+00:30:47,000 --> 00:30:48,000
+How do you know?
+
+907
+00:30:48,000 --> 00:30:49,000
+It should be said that the sun will emit a lot of Neutrino.
+
+908
+00:30:49,000 --> 00:30:50,000
+It should be said that the sun will emit a lot of Neutrino.
+
+909
+00:30:50,000 --> 00:30:51,000
+It should be said that the sun will emit a lot of Neutrino.
+
+910
+00:30:51,000 --> 00:30:52,000
+If you have to first exclude.
+
+911
+00:30:52,000 --> 00:30:53,000
+If you have to first exclude.
+
+912
+00:30:53,000 --> 00:30:54,000
+Is it possible that Neutrino is not?
+
+913
+00:30:54,000 --> 00:30:55,000
+And then do this experiment near the Earth to make it feasible?
+
+914
+00:30:55,000 --> 00:30:56,000
+Because the sun if it is.
+
+915
+00:30:56,000 --> 00:30:57,000
+The sun is not a very strong interferer.
+
+916
+00:30:57,000 --> 00:30:58,000
+That's right.
+
+917
+00:30:58,000 --> 00:30:59,000
+That's right.
+
+918
+00:30:59,000 --> 00:31:00,000
+Okay.
+
+919
+00:31:00,000 --> 00:31:01,000
+The first point.
+
+920
+00:31:01,000 --> 00:31:02,000
+We can use the solar system.
+
+921
+00:31:02,000 --> 00:31:03,000
+The solar system.
+
+922
+00:31:12,000 --> 00:31:19,000
+Why is it called Neutrino now?
+
+923
+00:31:19,000 --> 00:31:22,000
+This is that.
+
+924
+00:31:22,000 --> 00:31:25,000
+Neutrino's distribution is not the same, is it?
+
+925
+00:31:25,000 --> 00:31:28,000
+But why is Neutrino's distribution the same in all three cases?
+
+926
+00:31:28,000 --> 00:31:29,000
+It's because of the black matter in it.
+
+927
+00:31:29,000 --> 00:31:30,000
+Black matter is functional.
+
+928
+00:31:30,000 --> 00:31:31,000
+There's no our detector has the data.
+
+929
+00:31:31,000 --> 00:31:32,000
+You are now with us.
+
+930
+00:31:32,000 --> 00:31:33,000
+More swing neutrino.
+
+931
+00:31:33,000 --> 00:31:34,000
+Neutrino does not form, and now it's coming.
+
+932
+00:31:34,000 --> 00:31:35,000
+Linking together.
+
+933
+00:31:35,000 --> 00:31:36,000
+Really?
+
+934
+00:31:36,000 --> 00:31:40,000
+Then let's talk about the dark matter.
+
+935
+00:31:41,000 --> 00:31:43,000
+It takes a long, long time.
+
+936
+00:31:43,000 --> 00:31:46,000
+It will slowly gather into what we want now.
+
+937
+00:31:46,000 --> 00:31:49,000
+The density of the spider web I just showed.
+
+938
+00:31:49,000 --> 00:31:52,000
+Then attract other particles in.
+
+939
+00:31:52,000 --> 00:31:55,000
+That time is far more than we know.
+
+940
+00:31:55,000 --> 00:31:57,000
+The age of the universe so far.
+
+941
+00:31:57,000 --> 00:31:59,000
+Then the amount of planets produced.
+
+942
+00:31:59,000 --> 00:32:02,000
+So we know that such a light particle.
+
+943
+00:32:02,000 --> 00:32:04,000
+Then its interaction is like Neutrino.
+
+944
+00:32:04,000 --> 00:32:08,000
+Because we actually know a lot about Neutrino.
+
+945
+00:32:08,000 --> 00:32:09,000
+But it's a good feeling.
+
+946
+00:32:09,000 --> 00:32:10,000
+But that is to say.
+
+947
+00:32:10,000 --> 00:32:13,000
+We know the strength of its interaction.
+
+948
+00:32:13,000 --> 00:32:15,000
+So we know.
+
+949
+00:32:15,000 --> 00:32:19,000
+It can't be the dark matter we want.
+
+950
+00:32:19,000 --> 00:32:22,000
+OK, unless there's another version of Neutrino.
+
+951
+00:32:22,000 --> 00:32:23,000
+That's not.
+
+952
+00:32:23,000 --> 00:32:24,000
+That's also new physics.
+
+953
+00:32:24,000 --> 00:32:26,000
+So we know Neutrino.
+
+954
+00:32:26,000 --> 00:32:28,000
+The first is not to do dark matter.
+
+955
+00:32:28,000 --> 00:32:29,000
+The second is if today.
+
+956
+00:32:29,000 --> 00:32:30,000
+OK, then the sun will still shoot.
+
+957
+00:32:30,000 --> 00:32:32,000
+We know that kind of Neutrino.
+
+958
+00:32:32,000 --> 00:32:33,000
+How do we know?
+
+959
+00:32:33,000 --> 00:32:37,000
+The signal we see is not Neutrino.
+
+960
+00:32:37,000 --> 00:32:39,000
+The answer is we don't know.
+
+961
+00:32:39,000 --> 00:32:40,000
+But we know one thing.
+
+962
+00:32:40,000 --> 00:32:41,000
+We know how hot the sun is.
+
+963
+00:32:41,000 --> 00:32:43,000
+We know how much light it emits.
+
+964
+00:32:43,000 --> 00:32:45,000
+We also know almost.
+
+965
+00:32:45,000 --> 00:32:47,000
+The principle of emitting this light is.
+
+966
+00:32:47,000 --> 00:32:48,000
+Which few.
+
+967
+00:32:48,000 --> 00:32:51,000
+The chain of fusion reactions.
+
+968
+00:32:51,000 --> 00:32:52,000
+So we know.
+
+969
+00:32:52,000 --> 00:32:54,000
+Based on its brightness, its heat.
+
+970
+00:32:54,000 --> 00:32:55,000
+Look at these fusion reactions.
+
+971
+00:32:55,000 --> 00:32:58,000
+It emits the flux of Neutrino.
+
+972
+00:32:58,000 --> 00:33:00,000
+How much should that flow be?
+
+973
+00:33:00,000 --> 00:33:02,000
+Plus we know.
+
+974
+00:33:02,000 --> 00:33:05,000
+This kind of Neutrino through our detector.
+
+975
+00:33:05,000 --> 00:33:07,000
+What is the probability of being blocked?
+
+976
+00:33:07,000 --> 00:33:09,000
+OK, so we know.
+
+977
+00:33:09,000 --> 00:33:12,000
+Now the detector sees.
+
+978
+00:33:12,000 --> 00:33:14,000
+It won't be.
+
+979
+00:33:14,000 --> 00:33:16,000
+It won't be Neutrino.
+
+980
+00:33:16,000 --> 00:33:18,000
+Because in theory, in the whole experiment.
+
+981
+00:33:18,000 --> 00:33:20,000
+The duration will be blocked.
+
+982
+00:33:20,000 --> 00:33:22,000
+Maybe it's a few zeros.
+
+983
+00:33:22,000 --> 00:33:25,000
+In other words, it won't be blocked.
+
+984
+00:33:25,000 --> 00:33:27,000
+So we know there's no problem.
+
+985
+00:33:27,000 --> 00:33:28,000
+But based on what I just said.
+
+986
+00:33:28,000 --> 00:33:29,000
+I know how hot the sun is.
+
+987
+00:33:29,000 --> 00:33:32,000
+So how many Neutrino have been through the earth.
+
+988
+00:33:32,000 --> 00:33:33,000
+Through our experiment.
+
+989
+00:33:33,000 --> 00:33:35,000
+When our experiment is getting more and more sensitive.
+
+990
+00:33:35,000 --> 00:33:37,000
+Can be sensitive to.
+
+991
+00:33:37,000 --> 00:33:39,000
+It's worth 47, 48.
+
+992
+00:33:39,000 --> 00:33:40,000
+For example, here.
+
+993
+00:33:40,000 --> 00:33:42,000
+48, 49.
+
+994
+00:33:42,000 --> 00:33:44,000
+At this time, we will be very sensitive.
+
+995
+00:33:44,000 --> 00:33:46,000
+To be able to see that kind of Neutrino.
+
+996
+00:33:46,000 --> 00:33:48,000
+At this time, we see any signal.
+
+997
+00:33:48,000 --> 00:33:50,000
+We can't say.
+
+998
+00:33:50,000 --> 00:33:52,000
+It is Dark Matter or Neutrino.
+
+999
+00:33:52,000 --> 00:33:54,000
+So here to dig this yellow line.
+
+1000
+00:33:54,000 --> 00:33:56,000
+This is what I said.
+
+1001
+00:33:56,000 --> 00:33:57,000
+The experiment will stop here.
+
+1002
+00:33:57,000 --> 00:33:59,000
+Because we basically don't have it now.
+
+1003
+00:33:59,000 --> 00:34:01,000
+Reliable technology can tell.
+
+1004
+00:34:01,000 --> 00:34:03,000
+Is it Neutrino or Dark Matter?
+
+1005
+00:34:05,000 --> 00:34:06,000
+OK.
+
+1006
+00:34:06,000 --> 00:34:07,000
+Thank you.
+
+1007
+00:34:07,000 --> 00:34:09,000
+But in fact, there is a potential way.
+
+1008
+00:34:09,000 --> 00:34:11,000
+If I can distinguish its direction.
+
+1009
+00:34:11,000 --> 00:34:12,000
+They all come from the sun.
+
+1010
+00:34:12,000 --> 00:34:13,000
+Then I will say that people from the sun.
+
+1011
+00:34:13,000 --> 00:34:14,000
+The probability of Neutrino is very high.
+
+1012
+00:34:14,000 --> 00:34:16,000
+I don't look over there.
+
+1013
+00:34:16,000 --> 00:34:17,000
+OK.
+
+1014
+00:34:17,000 --> 00:34:19,000
+But what I'm talking about now is.
+
+1015
+00:34:19,000 --> 00:34:21,000
+When this particle hits.
+
+1016
+00:34:21,000 --> 00:34:22,000
+The energy it leaves.
+
+1017
+00:34:22,000 --> 00:34:23,000
+We only measure energy.
+
+1018
+00:34:23,000 --> 00:34:24,000
+We didn't measure.
+
+1019
+00:34:24,000 --> 00:34:26,000
+The direction of this incoming particle.
+
+1020
+00:34:26,000 --> 00:34:27,000
+So in fact.
+
+1021
+00:34:27,000 --> 00:34:28,000
+Unless I can identify this thing.
+
+1022
+00:34:28,000 --> 00:34:30,000
+Otherwise, I can't tell Neutrino.
+
+1023
+00:34:30,000 --> 00:34:31,000
+The answer is no.
+
+1024
+00:34:32,000 --> 00:34:33,000
+OK.
+
+1025
+00:34:34,000 --> 00:34:35,000
+Excuse me.
+
+1026
+00:34:35,000 --> 00:34:36,000
+Can I ask another question?
+
+1027
+00:34:36,000 --> 00:34:37,000
+Please say.
+
+1028
+00:34:37,000 --> 00:34:38,000
+Just.
+
+1029
+00:34:39,000 --> 00:34:41,000
+Because I don't understand this at all.
+
+1030
+00:34:41,000 --> 00:34:42,000
+That.
+
+1031
+00:34:43,000 --> 00:34:45,000
+That is, the particle accelerator can.
+
+1032
+00:34:45,000 --> 00:34:46,000
+Can.
+
+1033
+00:34:46,000 --> 00:34:47,000
+Can.
+
+1034
+00:34:47,000 --> 00:34:49,000
+Think of a way to find these heavy particles.
+
+1035
+00:34:49,000 --> 00:34:51,000
+Heavy quality particles.
+
+1036
+00:34:51,000 --> 00:34:52,000
+That.
+
+1037
+00:34:52,000 --> 00:34:53,000
+But for example.
+
+1038
+00:34:53,000 --> 00:34:55,000
+Very light particles.
+
+1039
+00:34:55,000 --> 00:34:57,000
+Is there no way to find it with an accelerator?
+
+1040
+00:34:57,000 --> 00:34:58,000
+So.
+
+1041
+00:34:58,000 --> 00:34:59,000
+You are looking for Dark Matter.
+
+1042
+00:34:59,000 --> 00:35:00,000
+Assuming this.
+
+1043
+00:35:00,000 --> 00:35:01,000
+This.
+
+1044
+00:35:02,000 --> 00:35:03,000
+There is a very light particle.
+
+1045
+00:35:03,000 --> 00:35:05,000
+Then it could also be Dark Matter.
+
+1046
+00:35:05,000 --> 00:35:06,000
+You may.
+
+1047
+00:35:06,000 --> 00:35:07,000
+You are looking for Dark Matter.
+
+1048
+00:35:07,000 --> 00:35:08,000
+It may also be.
+
+1049
+00:35:08,000 --> 00:35:09,000
+Solve this.
+
+1050
+00:35:09,000 --> 00:35:11,000
+For example, find a particularly light particle.
+
+1051
+00:35:11,000 --> 00:35:12,000
+Then.
+
+1052
+00:35:12,000 --> 00:35:13,000
+Maybe the theory can't be predicted.
+
+1053
+00:35:13,000 --> 00:35:14,000
+Or.
+
+1054
+00:35:14,000 --> 00:35:15,000
+Some theories have been predicted.
+
+1055
+00:35:15,000 --> 00:35:16,000
+That's it.
+
+1056
+00:35:16,000 --> 00:35:17,000
+But I don't know.
+
+1057
+00:35:17,000 --> 00:35:18,000
+Yes.
+
+1058
+00:35:18,000 --> 00:35:20,000
+So in fact, the accelerator can find Dark Matter.
+
+1059
+00:35:20,000 --> 00:35:23,000
+And a lot of people are looking for Dark Matter in the accelerator.
+
+1060
+00:35:23,000 --> 00:35:24,000
+But.
+
+1061
+00:35:24,000 --> 00:35:26,000
+Looking for Dark Matter in the accelerator.
+
+1062
+00:35:26,000 --> 00:35:27,000
+Like you said.
+
+1063
+00:35:27,000 --> 00:35:28,000
+In fact, basically.
+
+1064
+00:35:28,000 --> 00:35:29,000
+The concept is completely different.
+
+1065
+00:35:29,000 --> 00:35:30,000
+It is.
+
+1066
+00:35:30,000 --> 00:35:31,000
+You use your known example.
+
+1067
+00:35:31,000 --> 00:35:32,000
+Think of a way.
+
+1068
+00:35:32,000 --> 00:35:33,000
+Create Dark Matter.
+
+1069
+00:35:33,000 --> 00:35:34,000
+Right.
+
+1070
+00:35:34,000 --> 00:35:35,000
+But.
+
+1071
+00:35:35,000 --> 00:35:37,000
+It has a very, very practical reason.
+
+1072
+00:35:37,000 --> 00:35:39,000
+It's very difficult to do in the accelerator.
+
+1073
+00:35:39,000 --> 00:35:40,000
+That is.
+
+1074
+00:35:40,000 --> 00:35:42,000
+You take two examples you already know.
+
+1075
+00:35:42,000 --> 00:35:43,000
+Put it together.
+
+1076
+00:35:43,000 --> 00:35:44,000
+Explode.
+
+1077
+00:35:44,000 --> 00:35:46,000
+In addition to producing a Dark Matter.
+
+1078
+00:35:46,000 --> 00:35:49,000
+It will produce a lot of other examples.
+
+1079
+00:35:49,000 --> 00:35:50,000
+In other words.
+
+1080
+00:35:50,000 --> 00:35:51,000
+Your.
+
+1081
+00:35:51,000 --> 00:35:52,000
+Next to these.
+
+1082
+00:35:52,000 --> 00:35:54,000
+After measuring these explosions.
+
+1083
+00:35:54,000 --> 00:35:55,000
+These products.
+
+1084
+00:35:55,000 --> 00:35:56,000
+These detectors.
+
+1085
+00:35:56,000 --> 00:35:57,000
+It's like being constantly.
+
+1086
+00:35:57,000 --> 00:35:58,000
+It's like being constantly.
+
+1087
+00:35:58,000 --> 00:35:59,000
+It's like being constantly.
+
+1088
+00:35:59,000 --> 00:36:00,000
+It's like being constantly.
+
+1089
+00:36:00,000 --> 00:36:01,000
+It has a certain amount of brightness.
+
+1090
+00:36:01,000 --> 00:36:02,000
+As long as you do it.
+
+1091
+00:36:02,000 --> 00:36:03,000
+It will produce a lot of this.
+
+1092
+00:36:03,000 --> 00:36:04,000
+This kind of showering.
+
+1093
+00:36:04,000 --> 00:36:05,000
+This kind of background.
+
+1094
+00:36:05,000 --> 00:36:06,000
+That.
+
+1095
+00:36:06,000 --> 00:36:08,000
+You basically can't see it.
+
+1096
+00:36:08,000 --> 00:36:10,000
+If you want to see something.
+
+1097
+00:36:10,000 --> 00:36:12,000
+It's smaller than the background of this shower.
+
+1098
+00:36:12,000 --> 00:36:14,000
+Because what you see is bright.
+
+1099
+00:36:14,000 --> 00:36:15,000
+So.
+
+1100
+00:36:15,000 --> 00:36:17,000
+Because of the mechanism of the confrontation.
+
+1101
+00:36:17,000 --> 00:36:20,000
+Their lower threshold is probably hundreds of GV.
+
+1102
+00:36:20,000 --> 00:36:21,000
+It's probably here.
+
+1103
+00:36:21,000 --> 00:36:22,000
+So.
+
+1104
+00:36:22,000 --> 00:36:23,000
+It's probably the accelerator.
+
+1105
+00:36:23,000 --> 00:36:24,000
+Probably the best.
+
+1106
+00:36:25,000 --> 00:36:26,000
+Is.
+
+1107
+00:36:26,000 --> 00:36:27,000
+From here.
+
+1108
+00:36:27,000 --> 00:36:28,000
+Above.
+
+1109
+00:36:28,000 --> 00:36:29,000
+They can say with confidence.
+
+1110
+00:36:29,000 --> 00:36:30,000
+If I see something.
+
+1111
+00:36:30,000 --> 00:36:31,000
+It's Dark Matter.
+
+1112
+00:36:31,000 --> 00:36:32,000
+But they didn't see it either.
+
+1113
+00:36:32,000 --> 00:36:33,000
+So they're also drawing a line.
+
+1114
+00:36:33,000 --> 00:36:34,000
+But down here.
+
+1115
+00:36:34,000 --> 00:36:35,000
+They can't have that confidence.
+
+1116
+00:36:35,000 --> 00:36:36,000
+They can't have that confidence.
+
+1117
+00:36:36,000 --> 00:36:37,000
+Say I didn't see it.
+
+1118
+00:36:37,000 --> 00:36:38,000
+Because their environment is too bright.
+
+1119
+00:36:38,000 --> 00:36:39,000
+No, it's too big.
+
+1120
+00:36:39,000 --> 00:36:40,000
+But that's right.
+
+1121
+00:36:40,000 --> 00:36:41,000
+You can find it in the accelerator.
+
+1122
+00:36:41,000 --> 00:36:42,000
+Ok.
+
+1123
+00:36:42,000 --> 00:36:43,000
+Ok.
+
+1124
+00:36:43,000 --> 00:36:44,000
+Ok.
+
+1125
+00:36:44,000 --> 00:36:45,000
+Ok.
+
+1126
+00:36:45,000 --> 00:36:46,000
+Ok.
+
+1127
+00:36:46,000 --> 00:36:47,000
+Ok.
+
+1128
+00:36:47,000 --> 00:36:48,000
+Ok.
+
+1129
+00:36:48,000 --> 00:36:49,000
+Ok.
+
+1130
+00:36:49,000 --> 00:36:50,000
+Ok.
+
+1131
+00:36:50,000 --> 00:36:51,000
+Ok.
+
+1132
+00:36:51,000 --> 00:36:52,000
+Ok.
+
+1133
+00:36:52,000 --> 00:36:53,000
+Ok.
+
+1134
+00:36:53,000 --> 00:36:54,000
+Ok.
+
+1135
+00:36:54,000 --> 00:36:55,000
+Is there a problem?
+
+1136
+00:36:55,000 --> 00:36:56,000
+Is there a problem?
+
+1137
+00:36:56,000 --> 00:36:57,000
+So.
+
+1138
+00:36:57,000 --> 00:36:58,000
+So.
+
+1139
+00:36:58,000 --> 00:36:59,000
+My question is.
+
+1140
+00:36:59,000 --> 00:37:00,000
+That.
+
+1141
+00:37:00,000 --> 00:37:01,000
+Uh.
+
+1142
+00:37:01,000 --> 00:37:02,000
+I mean.
+
+1143
+00:37:02,000 --> 00:37:03,000
+That is to say.
+
+1144
+00:37:03,000 --> 00:37:04,000
+Standard model.
+
+1145
+00:37:04,000 --> 00:37:05,000
+Also.
+
+1146
+00:37:05,000 --> 00:37:06,000
+Also.
+
+1147
+00:37:06,000 --> 00:37:07,000
+That is to say.
+
+1148
+00:37:07,000 --> 00:37:08,000
+Assuming there is a lighter example.
+
+1149
+00:37:08,000 --> 00:37:09,000
+That.
+
+1150
+00:37:09,000 --> 00:37:10,000
+Uh-huh.
+
+1151
+00:37:10,000 --> 00:37:11,000
+Not only in the accelerator.
+
+1152
+00:37:11,000 --> 00:37:12,000
+I can't see it.
+
+1153
+00:37:12,000 --> 00:37:13,000
+That standard model.
+
+1154
+00:37:13,000 --> 00:37:14,000
+I didn't predict it either.
+
+1155
+00:37:14,000 --> 00:37:15,000
+But again.
+
+1156
+00:37:15,000 --> 00:37:16,000
+That's right.
+
+1157
+00:37:16,000 --> 00:37:17,000
+In fact.
+
+1158
+00:37:17,000 --> 00:37:18,000
+There is.
+
+1159
+00:37:18,000 --> 00:37:19,000
+Uh.
+
+1160
+00:37:19,000 --> 00:37:20,000
+There is a high possibility of Dark Matter.
+
+1161
+00:37:20,000 --> 00:37:21,000
+That's it.
+
+1162
+00:37:21,000 --> 00:37:22,000
+So.
+
+1163
+00:37:22,000 --> 00:37:23,000
+Uh.
+
+1164
+00:37:23,000 --> 00:37:24,000
+So.
+
+1165
+00:37:24,000 --> 00:37:25,000
+You are looking for Dark Matter.
+
+1166
+00:37:25,000 --> 00:37:26,000
+If you find a lighter model.
+
+1167
+00:37:26,000 --> 00:37:27,000
+Standard model.
+
+1168
+00:37:27,000 --> 00:37:28,000
+I can't predict it.
+
+1169
+00:37:28,000 --> 00:37:29,000
+That.
+
+1170
+00:37:29,000 --> 00:37:30,000
+Of course.
+
+1171
+00:37:30,000 --> 00:37:31,000
+It's a new.
+
+1172
+00:37:31,000 --> 00:37:32,000
+New.
+
+1173
+00:37:32,000 --> 00:37:33,000
+New.
+
+1174
+00:37:33,000 --> 00:37:34,000
+New.
+
+1175
+00:37:34,000 --> 00:37:35,000
+Physics.
+
+1176
+00:37:35,000 --> 00:37:36,000
+Is that right?
+
+1177
+00:37:36,000 --> 00:37:37,000
+Correct.
+
+1178
+00:37:37,000 --> 00:37:38,000
+As long as we see Dark Matter.
+
+1179
+00:37:38,000 --> 00:37:39,000
+It must be new physics.
+
+1180
+00:37:39,000 --> 00:37:40,000
+Ok.
+
+1181
+00:37:40,000 --> 00:37:41,000
+Because Dark Matter itself.
+
+1182
+00:37:41,000 --> 00:37:42,000
+It's not in the Standard Model at all.
+
+1183
+00:37:42,000 --> 00:37:43,000
+Ok.
+
+1184
+00:37:43,000 --> 00:37:44,000
+Ok.
+
+1185
+00:37:44,000 --> 00:37:45,000
+Correct.
+
+1186
+00:37:45,000 --> 00:37:46,000
+Ok.
+
+1187
+00:37:46,000 --> 00:37:47,000
+Ok.
+
+1188
+00:37:47,000 --> 00:37:48,000
+Ok.
+
+1189
+00:37:48,000 --> 00:37:49,000
+Hello.
+
+1190
+00:37:49,000 --> 00:37:50,000
+Hello.
+
+1191
+00:37:50,000 --> 00:37:51,000
+Uh.
+
+1192
+00:37:51,000 --> 00:37:52,000
+Ian seems to have a problem.
+
+1193
+00:37:52,000 --> 00:37:53,000
+Ian.
+
+1194
+00:37:53,000 --> 00:37:54,000
+Hello.
+
+1195
+00:37:54,000 --> 00:37:55,000
+Because I can't see the projection now.
+
+1196
+00:37:55,000 --> 00:37:56,000
+So you have to read it for me.
+
+1197
+00:37:56,000 --> 00:37:57,000
+Hey.
+
+1198
+00:37:57,000 --> 00:37:58,000
+Ian.
+
+1199
+00:37:58,000 --> 00:37:59,000
+You have to turn on the microphone.
+
+1200
+00:37:59,000 --> 00:38:00,000
+To ask.
+
+1201
+00:38:00,000 --> 00:38:01,000
+Can't see.
+
+1202
+00:38:01,000 --> 00:38:02,000
+Can't see.
+
+1203
+00:38:02,000 --> 00:38:03,000
+Do you want to talk?
+
+1204
+00:38:03,000 --> 00:38:04,000
+Ah.
+
+1205
+00:38:04,000 --> 00:38:05,000
+Ok.
+
+1206
+00:38:05,000 --> 00:38:06,000
+He said that.
+
+1207
+00:38:06,000 --> 00:38:07,000
+Assuming.
+
+1208
+00:38:07,000 --> 00:38:08,000
+Oh.
+
+1209
+00:38:08,000 --> 00:38:09,000
+Uh.
+
+1210
+00:38:09,000 --> 00:38:10,000
+Assuming now.
+
+1211
+00:38:10,000 --> 00:38:11,000
+Dark Matter.
+
+1212
+00:38:11,000 --> 00:38:12,000
+Uh.
+
+1213
+00:38:12,000 --> 00:38:13,000
+Uh.
+
+1214
+00:38:13,000 --> 00:38:14,000
+Uh.
+
+1215
+00:38:14,000 --> 00:38:15,000
+Uh.
+
+1216
+00:38:15,000 --> 00:38:16,000
+Uh.
+
+1217
+00:38:16,000 --> 00:38:17,000
+Uh.
+
+1218
+00:38:17,000 --> 00:38:18,000
+Uh.
+
+1219
+00:38:18,000 --> 00:38:19,000
+Uh.
+
+1220
+00:38:19,000 --> 00:38:20,000
+Uh.
+
+1221
+00:38:20,000 --> 00:38:21,000
+Uh.
+
+1222
+00:38:21,000 --> 00:38:22,000
+Yeah.
+
+1223
+00:38:22,000 --> 00:38:23,000
+OK.
+
+1224
+00:38:23,000 --> 00:38:24,000
+He only said.
+
+1225
+00:38:24,000 --> 00:38:25,000
+I have to turn back for my microphone.
+
+1226
+00:38:25,000 --> 00:38:26,000
+On the sound history.
+
+1227
+00:38:26,000 --> 00:38:27,000
+He can finally speak.
+
+1228
+00:38:27,000 --> 00:38:28,000
+Then there may be time to turn back.
+
+1229
+00:38:28,000 --> 00:38:29,000
+Because...
+
+1230
+00:38:29,000 --> 00:38:30,000
+The moment he speaks simple.
+
+1231
+00:38:30,000 --> 00:38:31,000
+He wants to make.
+
+1232
+00:38:31,000 --> 00:38:32,000
+You have to be able to say everything in English.
+
+1233
+00:38:32,000 --> 00:38:33,000
+What?
+
+1234
+00:38:33,000 --> 00:38:34,000
+What are you saying.
+
+1235
+00:38:34,000 --> 00:38:35,000
+It's OK.
+
+1236
+00:38:35,000 --> 00:38:36,000
+Don't need to be altered.
+
+1237
+00:38:36,000 --> 00:38:37,000
+It doesn't matter.
+
+1238
+00:38:37,000 --> 00:38:38,000
+It's OK.
+
+1239
+00:38:38,000 --> 00:38:39,000
+You only have to be able to.
+
+1240
+00:38:39,000 --> 00:38:40,000
+You worked hard.
+
+1241
+00:38:40,000 --> 00:38:41,000
+It's OK.
+
+1242
+00:38:41,000 --> 00:38:42,000
+We'll do this.
+
+1243
+00:38:42,000 --> 00:38:43,000
+And there's another question.
+
+1244
+00:38:43,000 --> 00:38:44,000
+Yes.
+
+1245
+00:38:44,000 --> 00:38:45,000
+Which is.
+
+1246
+00:38:45,000 --> 00:38:46,000
+Which is.
+
+1247
+00:38:46,000 --> 00:38:47,000
+What Light matter model.
+
+1248
+00:38:47,000 --> 00:38:48,000
+Is considered to be without dark matter.
+
+1249
+00:38:48,000 --> 00:38:49,000
+Is considered.
+
+1250
+00:38:50,000 --> 00:38:51,000
+Oh, no.
+
+1251
+00:38:51,000 --> 00:38:52,000
+Yes, this is his question.
+
+1252
+00:38:52,000 --> 00:38:53,000
+This thing is like this.
+
+1253
+00:38:53,000 --> 00:38:54,000
+Just.
+
+1254
+00:38:54,000 --> 00:38:56,000
+You take something very heavy.
+
+1255
+00:38:56,000 --> 00:38:58,000
+To hit something very light.
+
+1256
+00:38:58,000 --> 00:38:59,000
+What will the result be?
+
+1257
+00:38:59,000 --> 00:39:00,000
+You take something very heavy.
+
+1258
+00:39:00,000 --> 00:39:01,000
+Hit something very light.
+
+1259
+00:39:01,000 --> 00:39:02,000
+We can imagine.
+
+1260
+00:39:02,000 --> 00:39:03,000
+Take a truck.
+
+1261
+00:39:03,000 --> 00:39:04,000
+Hit a window.
+
+1262
+00:39:04,000 --> 00:39:05,000
+The light is hit very far.
+
+1263
+00:39:05,000 --> 00:39:06,000
+Yes.
+
+1264
+00:39:06,000 --> 00:39:07,000
+In fact.
+
+1265
+00:39:07,000 --> 00:39:08,000
+The first signal you see.
+
+1266
+00:39:08,000 --> 00:39:09,000
+It will be completely Nonsense.
+
+1267
+00:39:09,000 --> 00:39:10,000
+Will be super big.
+
+1268
+00:39:10,000 --> 00:39:11,000
+Then it's gone.
+
+1269
+00:39:11,000 --> 00:39:12,000
+But in fact.
+
+1270
+00:39:12,000 --> 00:39:13,000
+He just went through.
+
+1271
+00:39:13,000 --> 00:39:14,000
+He won't leave the energy.
+
+1272
+00:39:14,000 --> 00:39:15,000
+Sorry.
+
+1273
+00:39:15,000 --> 00:39:16,000
+Uh.
+
+1274
+00:39:16,000 --> 00:39:17,000
+I just said it wrong.
+
+1275
+00:39:17,000 --> 00:39:18,000
+Because he will go straight through.
+
+1276
+00:39:18,000 --> 00:39:19,000
+He won't put energy.
+
+1277
+00:39:19,000 --> 00:39:20,000
+So he transferred the energy.
+
+1278
+00:39:20,000 --> 00:39:21,000
+It will still be very strong.
+
+1279
+00:39:21,000 --> 00:39:22,000
+Uh.
+
+1280
+00:39:22,000 --> 00:39:23,000
+I have an equation here.
+
+1281
+00:39:23,000 --> 00:39:24,000
+OK.
+
+1282
+00:39:24,000 --> 00:39:25,000
+So this.
+
+1283
+00:39:25,000 --> 00:39:26,000
+This is that equation.
+
+1284
+00:39:26,000 --> 00:39:27,000
+That is to say.
+
+1285
+00:39:27,000 --> 00:39:28,000
+If you go to calculate.
+
+1286
+00:39:28,000 --> 00:39:29,000
+He left.
+
+1287
+00:39:29,000 --> 00:39:30,000
+Hit.
+
+1288
+00:39:30,000 --> 00:39:31,000
+Hit.
+
+1289
+00:39:31,000 --> 00:39:32,000
+Because in fact.
+
+1290
+00:39:32,000 --> 00:39:33,000
+Hit is the two people.
+
+1291
+00:39:33,000 --> 00:39:34,000
+Common response.
+
+1292
+00:39:34,000 --> 00:39:35,000
+He doesn't care.
+
+1293
+00:39:35,000 --> 00:39:36,000
+Who hit who.
+
+1294
+00:39:36,000 --> 00:39:37,000
+Because in fact.
+
+1295
+00:39:37,000 --> 00:39:38,000
+In his execution.
+
+1296
+00:39:38,000 --> 00:39:39,000
+They are hit.
+
+1297
+00:39:39,000 --> 00:39:40,000
+You can't tell who hit who.
+
+1298
+00:39:40,000 --> 00:39:41,000
+The most effective way.
+
+1299
+00:39:41,000 --> 00:39:42,000
+Is to hit.
+
+1300
+00:39:42,000 --> 00:39:43,000
+Hit.
+
+1301
+00:39:43,000 --> 00:39:44,000
+Hit.
+
+1302
+00:39:44,000 --> 00:39:45,000
+Hit.
+
+1303
+00:39:45,000 --> 00:39:46,000
+The most effective way to pass energy to.
+
+1304
+00:39:46,000 --> 00:39:47,000
+Another person.
+
+1305
+00:39:47,000 --> 00:39:48,000
+Is.
+
+1306
+00:39:48,000 --> 00:39:49,000
+Big M is greater than small M.
+
+1307
+00:39:49,000 --> 00:39:50,000
+But whether it is.
+
+1308
+00:39:50,000 --> 00:39:51,000
+Big M is greater than small M.
+
+1309
+00:39:51,000 --> 00:39:52,000
+Or is small M greater than big M.
+
+1310
+00:39:52,000 --> 00:39:53,000
+This number will be close to zero.
+
+1311
+00:39:53,000 --> 00:39:54,000
+That is to say.
+
+1312
+00:39:54,000 --> 00:39:55,000
+You won't leave the energy.
+
+1313
+00:39:55,000 --> 00:39:56,000
+So.
+
+1314
+00:39:56,000 --> 00:39:57,000
+This question is more like.
+
+1315
+00:39:57,000 --> 00:39:58,000
+If today.
+
+1316
+00:39:58,000 --> 00:39:59,000
+Dark Matter.
+
+1317
+00:39:59,000 --> 00:40:00,000
+Really move like a proton.
+
+1318
+00:40:00,000 --> 00:40:01,000
+Then we use electron.
+
+1319
+00:40:01,000 --> 00:40:02,000
+Is it a good candidate?
+
+1320
+00:40:02,000 --> 00:40:03,000
+The answer is no.
+
+1321
+00:40:03,000 --> 00:40:04,000
+Because we will leave.
+
+1322
+00:40:04,000 --> 00:40:05,000
+Very, very small energy.
+
+1323
+00:40:05,000 --> 00:40:06,000
+We still can't measure.
+
+1324
+00:40:06,000 --> 00:40:07,000
+But this thing.
+
+1325
+00:40:07,000 --> 00:40:08,000
+Effectively.
+
+1326
+00:40:08,000 --> 00:40:09,000
+Is all these experiments.
+
+1327
+00:40:09,000 --> 00:40:10,000
+What to do.
+
+1328
+00:40:10,000 --> 00:40:11,000
+But they didn't see anything.
+
+1329
+00:40:11,000 --> 00:40:12,000
+So.
+
+1330
+00:40:12,000 --> 00:40:13,000
+I want to try.
+
+1331
+00:40:13,000 --> 00:40:14,000
+I have a question.
+
+1332
+00:40:14,000 --> 00:40:15,000
+I want to ask.
+
+1333
+00:40:15,000 --> 00:40:16,000
+You just said.
+
+1334
+00:40:16,000 --> 00:40:17,000
+We can control.
+
+1335
+00:40:17,000 --> 00:40:18,000
+Just.
+
+1336
+00:40:18,000 --> 00:40:19,000
+Of course.
+
+1337
+00:40:19,000 --> 00:40:20,000
+At first.
+
+1338
+00:40:20,000 --> 00:40:21,000
+Use paper.
+
+1339
+00:40:21,000 --> 00:40:22,000
+More.
+
+1340
+00:40:22,000 --> 00:40:23,000
+More people use.
+
+1341
+00:40:23,000 --> 00:40:24,000
+The method.
+
+1342
+00:40:24,000 --> 00:40:25,000
+Then.
+
+1343
+00:40:25,000 --> 00:40:26,000
+Because I can't find it.
+
+1344
+00:40:26,000 --> 00:40:27,000
+So use electrons.
+
+1345
+00:40:27,000 --> 00:40:28,000
+So you.
+
+1346
+00:40:28,000 --> 00:40:29,000
+You just said.
+
+1347
+00:40:29,000 --> 00:40:30,000
+We can control.
+
+1348
+00:40:30,000 --> 00:40:31,000
+Paper and electrons.
+
+1349
+00:40:31,000 --> 00:40:32,000
+What do you mean by control?
+
+1350
+00:40:32,000 --> 00:40:33,000
+What does it mean?
+
+1351
+00:40:33,000 --> 00:40:34,000
+If.
+
+1352
+00:40:34,000 --> 00:40:35,000
+I said control.
+
+1353
+00:40:35,000 --> 00:40:36,000
+In fact, it is.
+
+1354
+00:40:36,000 --> 00:40:37,000
+You can spend money.
+
+1355
+00:40:37,000 --> 00:40:38,000
+Easy to buy materials.
+
+1356
+00:40:38,000 --> 00:40:39,000
+OK.
+
+1357
+00:40:39,000 --> 00:40:40,000
+So.
+
+1358
+00:40:41,000 --> 00:40:42,000
+OK.
+
+1359
+00:40:42,000 --> 00:40:43,000
+Yes.
+
+1360
+00:40:43,000 --> 00:40:44,000
+I will talk about some.
+
+1361
+00:40:44,000 --> 00:40:45,000
+More exotic.
+
+1362
+00:40:45,000 --> 00:40:46,000
+Yes.
+
+1363
+00:40:46,000 --> 00:40:47,000
+Ah.
+
+1364
+00:40:47,000 --> 00:40:48,000
+If the electronic.
+
+1365
+00:40:48,000 --> 00:40:49,000
+If you can't find it.
+
+1366
+00:40:49,000 --> 00:40:50,000
+Is it possible to use electricity?
+
+1367
+00:40:50,000 --> 00:40:51,000
+Because in fact.
+
+1368
+00:40:51,000 --> 00:40:52,000
+Electricity.
+
+1369
+00:40:52,000 --> 00:40:53,000
+Electricity and electricity.
+
+1370
+00:40:53,000 --> 00:40:54,000
+In fact.
+
+1371
+00:40:54,000 --> 00:40:55,000
+It's about the same.
+
+1372
+00:40:55,000 --> 00:40:56,000
+No.
+
+1373
+00:40:56,000 --> 00:40:57,000
+OK.
+
+1374
+00:40:57,000 --> 00:40:58,000
+OK.
+
+1375
+00:40:58,000 --> 00:40:59,000
+Percentage.
+
+1376
+00:40:59,000 --> 00:41:00,000
+That's about the same to me.
+
+1377
+00:41:00,000 --> 00:41:01,000
+What we're talking about now is.
+
+1378
+00:41:01,000 --> 00:41:02,000
+If you can find.
+
+1379
+00:41:02,000 --> 00:41:03,000
+Smaller things.
+
+1380
+00:41:03,000 --> 00:41:04,000
+For example, that kind.
+
+1381
+00:41:04,000 --> 00:41:05,000
+Uh.
+
+1382
+00:41:05,000 --> 00:41:06,000
+What is it called?
+
+1383
+00:41:06,000 --> 00:41:07,000
+Dirac.
+
+1384
+00:41:07,000 --> 00:41:08,000
+It's super.
+
+1385
+00:41:08,000 --> 00:41:09,000
+So effectively.
+
+1386
+00:41:09,000 --> 00:41:10,000
+You can destroy one.
+
+1387
+00:41:10,000 --> 00:41:11,000
+For example.
+
+1388
+00:41:11,000 --> 00:41:12,000
+Quasi-particle.
+
+1389
+00:41:12,000 --> 00:41:13,000
+That's all possible.
+
+1390
+00:41:13,000 --> 00:41:14,000
+But.
+
+1391
+00:41:14,000 --> 00:41:15,000
+Very.
+
+1392
+00:41:15,000 --> 00:41:16,000
+Expensive.
+
+1393
+00:41:16,000 --> 00:41:17,000
+Ah.
+
+1394
+00:41:17,000 --> 00:41:18,000
+Yes.
+
+1395
+00:41:18,000 --> 00:41:19,000
+Good.
+
+1396
+00:41:19,000 --> 00:41:20,000
+OK.
+
+1397
+00:41:20,000 --> 00:41:21,000
+That.
+
+1398
+00:41:21,000 --> 00:41:22,000
+OK.
+
+1399
+00:41:22,000 --> 00:41:23,000
+Good.
+
+1400
+00:41:23,000 --> 00:41:24,000
+Then I'll talk about it first.
+
+1401
+00:41:24,000 --> 00:41:25,000
+That is.
+
+1402
+00:41:25,000 --> 00:41:26,000
+Super CDMA.
+
+1403
+00:41:26,000 --> 00:41:27,000
+HPEV detector.
+
+1404
+00:41:27,000 --> 00:41:28,000
+This thing.
+
+1405
+00:41:28,000 --> 00:41:29,000
+What is it?
+
+1406
+00:41:29,000 --> 00:41:30,000
+Ahem.
+
+1407
+00:41:30,000 --> 00:41:31,000
+Ahem.
+
+1408
+00:41:31,000 --> 00:41:32,000
+OK.
+
+1409
+00:41:32,000 --> 00:41:33,000
+Sorry.
+
+1410
+00:41:33,000 --> 00:41:34,000
+Good.
+
+1411
+00:41:34,000 --> 00:41:35,000
+Now here you see a picture.
+
+1412
+00:41:35,000 --> 00:41:36,000
+This picture.
+
+1413
+00:41:36,000 --> 00:41:37,000
+Is trying to describe this.
+
+1414
+00:41:37,000 --> 00:41:38,000
+Germanium.
+
+1415
+00:41:38,000 --> 00:41:39,000
+This.
+
+1416
+00:41:39,000 --> 00:41:40,000
+The crystal.
+
+1417
+00:41:40,000 --> 00:41:41,000
+OK.
+
+1418
+00:41:41,000 --> 00:41:42,000
+It's a gold.
+
+1419
+00:41:42,000 --> 00:41:43,000
+Black.
+
+1420
+00:41:43,000 --> 00:41:44,000
+That's the white line.
+
+1421
+00:41:44,000 --> 00:41:45,000
+Like this.
+
+1422
+00:41:45,000 --> 00:41:46,000
+Hit him.
+
+1423
+00:41:46,000 --> 00:41:47,000
+Then bounce away.
+
+1424
+00:41:47,000 --> 00:41:48,000
+OK.
+
+1425
+00:41:48,000 --> 00:41:49,000
+Then he left some energy.
+
+1426
+00:41:49,000 --> 00:41:50,000
+What about this energy?
+
+1427
+00:41:50,000 --> 00:41:51,000
+Will come out.
+
+1428
+00:41:51,000 --> 00:41:52,000
+Ahem.
+
+1429
+00:41:52,000 --> 00:41:53,000
+This will come out.
+
+1430
+00:41:53,000 --> 00:41:54,000
+Shake this.
+
+1431
+00:41:54,000 --> 00:41:55,000
+This crystal lattice.
+
+1432
+00:41:55,000 --> 00:41:56,000
+So he'll shake there.
+
+1433
+00:41:56,000 --> 00:41:57,000
+Vibrate.
+
+1434
+00:41:57,000 --> 00:41:58,000
+That vibrates this thing.
+
+1435
+00:41:58,000 --> 00:41:59,000
+It's actually a.
+
+1436
+00:41:59,000 --> 00:42:00,000
+Signal.
+
+1437
+00:42:00,000 --> 00:42:01,000
+It's called Fona.
+
+1438
+00:42:01,000 --> 00:42:02,000
+OK.
+
+1439
+00:42:02,000 --> 00:42:03,000
+And then.
+
+1440
+00:42:03,000 --> 00:42:04,000
+At the same time, he'll hit this.
+
+1441
+00:42:04,000 --> 00:42:05,000
+Electronic electric team.
+
+1442
+00:42:05,000 --> 00:42:06,000
+Because he has enough energy.
+
+1443
+00:42:06,000 --> 00:42:07,000
+He can.
+
+1444
+00:42:07,000 --> 00:42:08,000
+He's next to the electronic electric team.
+
+1445
+00:42:08,000 --> 00:42:09,000
+Sorry.
+
+1446
+00:42:09,000 --> 00:42:10,000
+So.
+
+1447
+00:42:10,000 --> 00:42:11,000
+Hey.
+
+1448
+00:42:11,000 --> 00:42:12,000
+Then we have two signals.
+
+1449
+00:42:12,000 --> 00:42:13,000
+Can measure.
+
+1450
+00:42:13,000 --> 00:42:14,000
+One is this.
+
+1451
+00:42:14,000 --> 00:42:15,000
+Lattice vibration.
+
+1452
+00:42:15,000 --> 00:42:16,000
+It's called Fona.
+
+1453
+00:42:16,000 --> 00:42:17,000
+Ah.
+
+1454
+00:42:17,000 --> 00:42:18,000
+The other one is this.
+
+1455
+00:42:18,000 --> 00:42:19,000
+Electronic electric team.
+
+1456
+00:42:19,000 --> 00:42:20,000
+Ah.
+
+1457
+00:42:20,000 --> 00:42:21,000
+So now.
+
+1458
+00:42:21,000 --> 00:42:22,000
+How do you do it?
+
+1459
+00:42:22,000 --> 00:42:23,000
+It's just that we put a big piece of this.
+
+1460
+00:42:23,000 --> 00:42:24,000
+Crystal.
+
+1461
+00:42:24,000 --> 00:42:25,000
+This is.
+
+1462
+00:42:25,000 --> 00:42:26,000
+10 centimeters.
+
+1463
+00:42:26,000 --> 00:42:27,000
+OK.
+
+1464
+00:42:27,000 --> 00:42:28,000
+This is 10 centimeters.
+
+1465
+00:42:28,000 --> 00:42:29,000
+What about its thickness?
+
+1466
+00:42:29,000 --> 00:42:30,000
+It's 4.5 centimeters.
+
+1467
+00:42:30,000 --> 00:42:31,000
+It's 5 centimeters.
+
+1468
+00:42:31,000 --> 00:42:32,000
+It's a big piece.
+
+1469
+00:42:32,000 --> 00:42:33,000
+You don't seem to be any.
+
+1470
+00:42:33,000 --> 00:42:34,000
+The thickness of silicon used by TSMC.
+
+1471
+00:42:34,000 --> 00:42:35,000
+It's a big one.
+
+1472
+00:42:35,000 --> 00:42:36,000
+And then.
+
+1473
+00:42:36,000 --> 00:42:37,000
+Let's take this thing.
+
+1474
+00:42:37,000 --> 00:42:38,000
+Let it work.
+
+1475
+00:42:38,000 --> 00:42:39,000
+Ah, when it's hit by Jack Berry.
+
+1476
+00:42:39,000 --> 00:42:40,000
+At the time.
+
+1477
+00:42:40,000 --> 00:42:41,000
+These fans will drift to it.
+
+1478
+00:42:41,000 --> 00:42:42,000
+This one.
+
+1479
+00:42:42,000 --> 00:42:43,000
+To Spread to this.
+
+1480
+00:42:43,000 --> 00:42:44,000
+This crystal surface.
+
+1481
+00:42:44,000 --> 00:42:45,000
+This one.
+
+1482
+00:42:45,000 --> 00:42:47,000
+Hey, this electron pair is, too.
+
+1483
+00:42:47,000 --> 00:42:50,000
+We'll pull it to the surface of a power plant.
+
+1484
+00:42:50,000 --> 00:42:51,000
+What about now?
+
+1485
+00:42:51,000 --> 00:42:52,000
+We're on this surface.
+
+1486
+00:42:52,000 --> 00:42:53,000
+Do this microbi Britt consideration.
+
+1487
+00:42:53,000 --> 00:42:55,000
+We're doing a guided circuit.
+
+1488
+00:42:55,000 --> 00:42:56,000
+So, we're going to use this sugar to rival the arrows.
+
+1489
+00:42:56,000 --> 00:42:57,000
+Interrupted by these two signals.
+
+1490
+00:42:57,000 --> 00:42:58,000
+It really changes to measure the two clicks.
+
+1491
+00:42:58,000 --> 00:42:59,000
+First, we calculate it.
+
+1492
+00:42:59,000 --> 00:43:00,000
+We calculate pi 2025 by zeros.
+
+1493
+00:43:00,000 --> 00:43:01,000
+And then we measure pi.
+
+1494
+00:43:01,000 --> 00:43:02,000
+Well, we can adjust it.
+
+1495
+00:43:03,000 --> 00:43:07,000
+Interrupt change to measure the Bacon and that organization.
+
+1496
+00:43:07,000 --> 00:43:08,000
+Okay, this is the concept.
+
+1497
+00:43:08,000 --> 00:43:12,000
+Okay, then he's got a lot of them in our video to do a different operation mode.
+
+1498
+00:43:12,000 --> 00:43:13,000
+But what I want to talk about first is this.
+
+1499
+00:43:13,000 --> 00:43:15,000
+I don't next to meet you.
+
+1500
+00:43:19,000 --> 00:43:23,000
+Well, it's real, it's a side classical.
+
+1501
+00:43:23,000 --> 00:43:26,000
+Now, come in hop okay.
+
+1502
+00:43:26,000 --> 00:43:29,000
+Generate an otmomert here.
+
+1503
+00:43:29,000 --> 00:43:30,000
+It's all electronic.
+
+1504
+00:43:30,000 --> 00:43:35,000
+Okay, and then I'm here to give him a super big power plant.
+
+1505
+00:43:35,000 --> 00:43:43,000
+Okay, then he's going to pull this electronic and electric, and he's going to rush up and down here very quickly.
+
+1506
+00:43:43,000 --> 00:43:46,000
+Okay, and in the process?
+
+1507
+00:43:46,000 --> 00:43:50,000
+Because this electronic electric will be far more than he can travel in this lattice.
+
+1508
+00:43:50,000 --> 00:43:53,000
+The highest terminal velocity.
+
+1509
+00:43:53,000 --> 00:43:56,000
+So what he's going to do is he's going to start generating.
+
+1510
+00:43:56,000 --> 00:44:02,000
+He's going to lose or he's going to generate more energy into this.
+
+1511
+00:44:02,000 --> 00:44:06,000
+Crystal inside to balance his speed, he's going to stay at terminal velocity.
+
+1512
+00:44:06,000 --> 00:44:08,000
+So you're going to have a lot of this green arrow.
+
+1513
+00:44:08,000 --> 00:44:10,000
+This is a secondary phenomenon.
+
+1514
+00:44:10,000 --> 00:44:16,000
+Okay, so you can imagine if we give him a super big bias voltage.
+
+1515
+00:44:16,000 --> 00:44:18,000
+He's going to generate a lot of wind.
+
+1516
+00:44:18,000 --> 00:44:22,000
+So we basically just put an electronic electric signal.
+
+1517
+00:44:22,000 --> 00:44:24,000
+Let him become a big power plant.
+
+1518
+00:44:24,000 --> 00:44:26,000
+Let him become a super big wind signal.
+
+1519
+00:44:26,000 --> 00:44:31,000
+And then we use this method to recover.
+
+1520
+00:44:31,000 --> 00:44:35,000
+Oh, so we created a few electronic electric teams in front of us.
+
+1521
+00:44:35,000 --> 00:44:38,000
+Okay, so we're going to use this method.
+
+1522
+00:44:38,000 --> 00:44:42,000
+We just have to give him a few dozen to a hundred or two hundred volts of this power difference.
+
+1523
+00:44:42,000 --> 00:44:47,000
+Then he can produce dozens of times to a hundred or two hundred times of this.
+
+1524
+00:44:48,000 --> 00:44:52,000
+This is our approach.
+
+1525
+00:44:52,000 --> 00:44:56,000
+Then we basically measure this purple piece, which is the sensor.
+
+1526
+00:44:56,000 --> 00:45:01,000
+Okay, this is a piece of paper we published last year.
+
+1527
+00:45:01,000 --> 00:45:03,000
+We made an R&D device.
+
+1528
+00:45:03,000 --> 00:45:06,000
+This device is 2 centimeters.
+
+1529
+00:45:06,000 --> 00:45:08,000
+This edge is 2 centimeters.
+
+1530
+00:45:08,000 --> 00:45:10,000
+This is a silicon crystal.
+
+1531
+00:45:10,000 --> 00:45:12,000
+It's 4 kilometers thick.
+
+1532
+00:45:12,000 --> 00:45:14,000
+So it's 0.4 centimeters.
+
+1533
+00:45:14,000 --> 00:45:16,000
+Then we added him.
+
+1534
+00:45:16,000 --> 00:45:20,000
+We added him 150 volts of this.
+
+1535
+00:45:20,000 --> 00:45:26,000
+Okay, so we're going to use this high voltage method to generate a lot of secondary.
+
+1536
+00:45:26,000 --> 00:45:29,000
+Then we use this piece of silver.
+
+1537
+00:45:29,000 --> 00:45:30,000
+I'll talk about it later.
+
+1538
+00:45:30,000 --> 00:45:31,000
+To measure this wind.
+
+1539
+00:45:31,000 --> 00:45:34,000
+Okay, so we can use this method.
+
+1540
+00:45:34,000 --> 00:45:38,000
+What we get is this signal to noise ratio.
+
+1541
+00:45:38,000 --> 00:45:42,000
+It's 0.7 percent of the electronic whole pair.
+
+1542
+00:45:43,000 --> 00:45:45,000
+For example, this is a single electron hole.
+
+1543
+00:45:45,000 --> 00:45:47,000
+This is a horizontal energy.
+
+1544
+00:45:47,000 --> 00:45:50,000
+Then the axis is the histogram.
+
+1545
+00:45:50,000 --> 00:45:52,000
+It doesn't matter what it is.
+
+1546
+00:45:52,000 --> 00:45:54,000
+This is a single electron hole pair.
+
+1547
+00:45:54,000 --> 00:45:58,000
+This is a signal of two, three, four electron hole pairs.
+
+1548
+00:45:58,000 --> 00:45:59,000
+And what about its width?
+
+1549
+00:45:59,000 --> 00:46:00,000
+It's about 7 percent.
+
+1550
+00:46:00,000 --> 00:46:02,000
+That's what it means.
+
+1551
+00:46:02,000 --> 00:46:05,000
+So we have resolution to see.
+
+1552
+00:46:05,000 --> 00:46:09,000
+Counting this single, single, single, electron hole pair.
+
+1553
+00:46:09,000 --> 00:46:12,000
+Okay, so we found that we can do it without fear.
+
+1554
+00:46:12,000 --> 00:46:15,000
+Add this bias voltage to super big.
+
+1555
+00:46:15,000 --> 00:46:18,000
+We can't see the super, super big signal to noise ratio.
+
+1556
+00:46:18,000 --> 00:46:19,000
+The answer is no.
+
+1557
+00:46:19,000 --> 00:46:22,000
+Because when we add more than one breakdown voltage.
+
+1558
+00:46:22,000 --> 00:46:25,000
+This whole crystal becomes like a semiconductor.
+
+1559
+00:46:25,000 --> 00:46:26,000
+It's like an island.
+
+1560
+00:46:26,000 --> 00:46:29,000
+It's been crazy, it's been passing through.
+
+1561
+00:46:29,000 --> 00:46:30,000
+It will smear.
+
+1562
+00:46:30,000 --> 00:46:33,000
+We can count this dark matter signal ability.
+
+1563
+00:46:33,000 --> 00:46:36,000
+So we do this breakdown voltage.
+
+1564
+00:46:37,000 --> 00:46:40,000
+We found that we don't want to go beyond this breakdown voltage.
+
+1565
+00:46:40,000 --> 00:46:43,000
+We operate at the bottom of the breakdown voltage.
+
+1566
+00:46:43,000 --> 00:46:48,000
+We see that it will always have two or three hertz like this.
+
+1567
+00:46:48,000 --> 00:46:50,000
+Two or three signals every second.
+
+1568
+00:46:50,000 --> 00:46:53,000
+Then keep coming out, keep coming out.
+
+1569
+00:46:53,000 --> 00:46:56,000
+The part that comes out is the pink part.
+
+1570
+00:46:56,000 --> 00:46:58,000
+It's completely different from what we expect.
+
+1571
+00:46:58,000 --> 00:47:01,000
+The signal that dark matter can produce is different.
+
+1572
+00:47:01,000 --> 00:47:02,000
+So our assumption is that.
+
+1573
+00:47:02,000 --> 00:47:03,000
+OK, there's a background here.
+
+1574
+00:47:03,000 --> 00:47:04,000
+We don't know why.
+
+1575
+00:47:04,000 --> 00:47:05,000
+It keeps leaking.
+
+1576
+00:47:05,000 --> 00:47:06,000
+OK, but we don't know.
+
+1577
+00:47:06,000 --> 00:47:08,000
+But based on such a background.
+
+1578
+00:47:08,000 --> 00:47:14,000
+We can also set a limit.
+
+1579
+00:47:14,000 --> 00:47:16,000
+Is it consistent with this background being or not?
+
+1580
+00:47:16,000 --> 00:47:20,000
+OK, I'm going to do this calculation.
+
+1581
+00:47:20,000 --> 00:47:21,000
+What about the calculation?
+
+1582
+00:47:21,000 --> 00:47:23,000
+You can see the picture in the upper right corner.
+
+1583
+00:47:23,000 --> 00:47:26,000
+OK, CDMS Run 1.
+
+1584
+00:47:26,000 --> 00:47:28,000
+I just said.
+
+1585
+00:47:28,000 --> 00:47:31,000
+In traditional experiments, we are all at 10 GeV.
+
+1586
+00:47:31,000 --> 00:47:34,000
+Or higher to a few TeV to draw this limit.
+
+1587
+00:47:34,000 --> 00:47:36,000
+But now I'm going back to the experiment.
+
+1588
+00:47:36,000 --> 00:47:39,000
+We put this detector in our refrigerator.
+
+1589
+00:47:39,000 --> 00:47:41,000
+Then I gave it a day and a night.
+
+1590
+00:47:41,000 --> 00:47:43,000
+Then this detector is very small.
+
+1591
+00:47:43,000 --> 00:47:45,000
+This detector is as big as a rubber band.
+
+1592
+00:47:45,000 --> 00:47:48,000
+OK, we immediately set a world leading limit.
+
+1593
+00:47:48,000 --> 00:47:51,000
+What is the world leading limit?
+
+1594
+00:47:51,000 --> 00:47:52,000
+It's very simple.
+
+1595
+00:47:52,000 --> 00:47:55,000
+It's not very sensitive to the very bottom.
+
+1596
+00:47:55,000 --> 00:47:57,000
+It can measure very small probability.
+
+1597
+00:47:57,000 --> 00:48:00,000
+It's just because we can be sensitive to very small energy.
+
+1598
+00:48:00,000 --> 00:48:02,000
+So we drew a place where no one has ever been able to draw.
+
+1599
+00:48:02,000 --> 00:48:04,000
+OK, you can see this place.
+
+1600
+00:48:04,000 --> 00:48:05,000
+This is sub-mEV.
+
+1601
+00:48:05,000 --> 00:48:07,000
+So 1 GeV is here.
+
+1602
+00:48:07,000 --> 00:48:09,000
+10 GeV is what I said.
+
+1603
+00:48:09,000 --> 00:48:11,000
+WIMP Search is from here to the right.
+
+1604
+00:48:11,000 --> 00:48:12,000
+So we immediately drew a big piece here.
+
+1605
+00:48:12,000 --> 00:48:14,000
+This is last year.
+
+1606
+00:48:14,000 --> 00:48:17,000
+OK, let's say this is just a demonstration.
+
+1607
+00:48:17,000 --> 00:48:22,000
+This concept is very efficient.
+
+1608
+00:48:22,000 --> 00:48:24,000
+Then we are this year.
+
+1609
+00:48:24,000 --> 00:48:26,000
+OK, we have to be very formal.
+
+1610
+00:48:26,000 --> 00:48:30,000
+Let's make this thing a measurement on the ground.
+
+1611
+00:48:30,000 --> 00:48:32,000
+Then we are actually yesterday.
+
+1612
+00:48:32,000 --> 00:48:34,000
+We just unblinded all our data.
+
+1613
+00:48:34,000 --> 00:48:36,000
+So we should be within a month.
+
+1614
+00:48:36,000 --> 00:48:38,000
+Everyone doesn't have to sleep on Christmas.
+
+1615
+00:48:38,000 --> 00:48:41,000
+Then we will put the pair on the archive.
+
+1616
+00:48:41,000 --> 00:48:42,000
+So there will be a new one in a month.
+
+1617
+00:48:42,000 --> 00:48:44,000
+Then stay tuned.
+
+1618
+00:48:44,000 --> 00:48:49,000
+I can't talk about numbers, but I can say.
+
+1619
+00:48:49,000 --> 00:48:52,000
+We redesigned this R&D device.
+
+1620
+00:48:52,000 --> 00:48:54,000
+Because we are from here.
+
+1621
+00:48:54,000 --> 00:48:56,000
+Then go over here and compare it.
+
+1622
+00:48:56,000 --> 00:49:00,000
+Theoretically, this should be a resolution detector.
+
+1623
+00:49:00,000 --> 00:49:01,000
+Then we see the difference.
+
+1624
+00:49:01,000 --> 00:49:02,000
+Then we understand it.
+
+1625
+00:49:02,000 --> 00:49:04,000
+We redesigned.
+
+1626
+00:49:04,000 --> 00:49:10,000
+Then the resolution is significantly improved.
+
+1627
+00:49:10,000 --> 00:49:13,000
+Then what's more important is.
+
+1628
+00:49:13,000 --> 00:49:14,000
+Back to just now.
+
+1629
+00:49:14,000 --> 00:49:16,000
+Because I said it would have two or three hertz of leakage.
+
+1630
+00:49:16,000 --> 00:49:18,000
+Because I don't understand this leakage.
+
+1631
+00:49:18,000 --> 00:49:21,000
+So if there is a leakage to a certain extent.
+
+1632
+00:49:21,000 --> 00:49:22,000
+I said OK.
+
+1633
+00:49:22,000 --> 00:49:24,000
+Then cut it off here.
+
+1634
+00:49:24,000 --> 00:49:26,000
+The above is a good detector.
+
+1635
+00:49:26,000 --> 00:49:28,000
+It's hard for me to say anything below.
+
+1636
+00:49:28,000 --> 00:49:29,000
+Because my background is too high.
+
+1637
+00:49:29,000 --> 00:49:32,000
+So the most important, the most crucial, is to set a limit.
+
+1638
+00:49:32,000 --> 00:49:34,000
+In fact, it is to reduce this leakage.
+
+1639
+00:49:34,000 --> 00:49:37,000
+Then we are actually Achieve Leakage Current Reduction Goal.
+
+1640
+00:49:37,000 --> 00:49:39,000
+So this is very important.
+
+1641
+00:49:39,000 --> 00:49:41,000
+What's more interesting is.
+
+1642
+00:49:41,000 --> 00:49:43,000
+We have been in this year or so.
+
+1643
+00:49:43,000 --> 00:49:45,000
+In fact, nearly two years.
+
+1644
+00:49:45,000 --> 00:49:49,000
+We know more about Silicon Crystal.
+
+1645
+00:49:49,000 --> 00:49:51,000
+Interaction with its environment.
+
+1646
+00:49:51,000 --> 00:49:52,000
+So we can model.
+
+1647
+00:49:52,000 --> 00:49:54,000
+That is, these can be produced.
+
+1648
+00:49:54,000 --> 00:49:57,000
+Not quantized signal.
+
+1649
+00:49:57,000 --> 00:49:59,000
+What is the distribution?
+
+1650
+00:49:59,000 --> 00:50:01,000
+Then we can model it.
+
+1651
+00:50:01,000 --> 00:50:03,000
+So basically, I can say.
+
+1652
+00:50:03,000 --> 00:50:05,000
+We project to set again.
+
+1653
+00:50:05,000 --> 00:50:07,000
+We're leading limit.
+
+1654
+00:50:07,000 --> 00:50:08,000
+If not discovery.
+
+1655
+00:50:08,000 --> 00:50:09,000
+So stay tuned.
+
+1656
+00:50:09,000 --> 00:50:11,000
+This is what happens.
+
+1657
+00:50:11,000 --> 00:50:13,000
+Okay, so here is CDMSHVEV.
+
+1658
+00:50:13,000 --> 00:50:15,000
+Is there a problem?
+
+1659
+00:50:15,000 --> 00:50:17,000
+This is a concept.
+
+1660
+00:50:17,000 --> 00:50:18,000
+Because it's more like saying.
+
+1661
+00:50:18,000 --> 00:50:20,000
+I want to talk about technology later.
+
+1662
+00:50:20,000 --> 00:50:21,000
+But if you have any questions about this part.
+
+1663
+00:50:21,000 --> 00:50:23,000
+You can ask now.
+
+1664
+00:50:27,000 --> 00:50:29,000
+OK, if you don't have any questions.
+
+1665
+00:50:29,000 --> 00:50:31,000
+Welcome to take a look.
+
+1666
+00:50:31,000 --> 00:50:33,000
+This 180410697.
+
+1667
+00:50:33,000 --> 00:50:35,000
+This, right.
+
+1668
+00:50:35,000 --> 00:50:38,000
+It should be HVEV and Sensai.
+
+1669
+00:50:38,000 --> 00:50:40,000
+Are the two that can be set to the lowest.
+
+1670
+00:50:40,000 --> 00:50:42,000
+What is this called?
+
+1671
+00:50:42,000 --> 00:50:46,000
+Gathering the cross-section experiment.
+
+1672
+00:50:46,000 --> 00:50:48,000
+Right.
+
+1673
+00:50:48,000 --> 00:50:50,000
+Okay.
+
+1674
+00:50:50,000 --> 00:50:52,000
+Then go down.
+
+1675
+00:50:52,000 --> 00:50:54,000
+The rest of the part I want to talk about is this.
+
+1676
+00:50:54,000 --> 00:50:56,000
+Before I talk about it.
+
+1677
+00:50:56,000 --> 00:50:58,000
+I want to talk about it first.
+
+1678
+00:50:58,000 --> 00:51:00,000
+In the detector I just showed.
+
+1679
+00:51:00,000 --> 00:51:02,000
+What is his technology?
+
+1680
+00:51:02,000 --> 00:51:04,000
+OK, now you see a little.
+
+1681
+00:51:04,000 --> 00:51:06,000
+A little, a little, a little, a little.
+
+1682
+00:51:06,000 --> 00:51:08,000
+It's a piece of metal.
+
+1683
+00:51:08,000 --> 00:51:10,000
+Then we put it in this.
+
+1684
+00:51:10,000 --> 00:51:12,000
+It will become a super conductor.
+
+1685
+00:51:12,000 --> 00:51:14,000
+OK, then.
+
+1686
+00:51:14,000 --> 00:51:16,000
+If there is a pink part today.
+
+1687
+00:51:16,000 --> 00:51:18,000
+The pink part is just that.
+
+1688
+00:51:18,000 --> 00:51:20,000
+The big piece of that.
+
+1689
+00:51:20,000 --> 00:51:22,000
+If I produce this interaction today.
+
+1690
+00:51:22,000 --> 00:51:24,000
+Then it will float up.
+
+1691
+00:51:24,000 --> 00:51:26,000
+Then go into this silver part.
+
+1692
+00:51:26,000 --> 00:51:28,000
+OK, it will destroy this.
+
+1693
+00:51:28,000 --> 00:51:30,000
+Then this will float in all the way.
+
+1694
+00:51:30,000 --> 00:51:32,000
+What about this floating in?
+
+1695
+00:51:32,000 --> 00:51:34,000
+Sorry, it destroys.
+
+1696
+00:51:34,000 --> 00:51:36,000
+It's called QP.
+
+1697
+00:51:36,000 --> 00:51:38,000
+Then it will change this.
+
+1698
+00:51:38,000 --> 00:51:40,000
+The state of the conductor.
+
+1699
+00:51:40,000 --> 00:51:42,000
+OK, it will be from.
+
+1700
+00:51:42,000 --> 00:51:44,000
+This is the original conductor.
+
+1701
+00:51:44,000 --> 00:51:46,000
+The horizontal axis is the conductor.
+
+1702
+00:51:46,000 --> 00:51:48,000
+The horizontal axis is the effective temperature.
+
+1703
+00:51:48,000 --> 00:51:50,000
+That little silver effective temperature.
+
+1704
+00:51:50,000 --> 00:51:52,000
+OK, he was originally a zero conductor.
+
+1705
+00:51:52,000 --> 00:51:54,000
+Will be very fast transition to.
+
+1706
+00:51:54,000 --> 00:51:56,000
+There are nine conductors.
+
+1707
+00:51:56,000 --> 00:51:58,000
+It's a normal conductor.
+
+1708
+00:51:58,000 --> 00:52:00,000
+Then we just put it.
+
+1709
+00:52:00,000 --> 00:52:02,000
+In this state of this transition.
+
+1710
+00:52:02,000 --> 00:52:04,000
+As long as there is a little temperature.
+
+1711
+00:52:04,000 --> 00:52:06,000
+Or the change of energy in this film.
+
+1712
+00:52:06,000 --> 00:52:08,000
+This little inside.
+
+1713
+00:52:08,000 --> 00:52:10,000
+We can see a big signal.
+
+1714
+00:52:10,000 --> 00:52:12,000
+We use this method to measure.
+
+1715
+00:52:12,000 --> 00:52:14,000
+But there are some problems.
+
+1716
+00:52:14,000 --> 00:52:16,000
+His problem is.
+
+1717
+00:52:16,000 --> 00:52:18,000
+This is a phase transition.
+
+1718
+00:52:18,000 --> 00:52:20,000
+So his range is very small.
+
+1719
+00:52:20,000 --> 00:52:22,000
+From a little energy to.
+
+1720
+00:52:22,000 --> 00:52:24,000
+It's full, it's just a little bit.
+
+1721
+00:52:24,000 --> 00:52:26,000
+So his dynamic range.
+
+1722
+00:52:26,000 --> 00:52:28,000
+Is very small.
+
+1723
+00:52:28,000 --> 00:52:30,000
+That's usually what you need.
+
+1724
+00:52:30,000 --> 00:52:32,000
+Extra.
+
+1725
+00:52:32,000 --> 00:52:34,000
+Circuit.
+
+1726
+00:52:34,000 --> 00:52:36,000
+And it's going to be in the fridge.
+
+1727
+00:52:36,000 --> 00:52:38,000
+To help him dissipate energy.
+
+1728
+00:52:38,000 --> 00:52:40,000
+Or help him divert that energy.
+
+1729
+00:52:40,000 --> 00:52:42,000
+Feedback, so we can.
+
+1730
+00:52:42,000 --> 00:52:44,000
+It's really stable.
+
+1731
+00:52:44,000 --> 00:52:46,000
+Operate our detector in this.
+
+1732
+00:52:46,000 --> 00:52:48,000
+Transition.
+
+1733
+00:52:48,000 --> 00:52:50,000
+And then, because he's actually a film.
+
+1734
+00:52:50,000 --> 00:52:52,000
+He's from a zero conductor to a conductor.
+
+1735
+00:52:52,000 --> 00:52:54,000
+It's also a super small conductor.
+
+1736
+00:52:54,000 --> 00:52:56,000
+So he's a conventional.
+
+1737
+00:52:56,000 --> 00:52:58,000
+The impedance of this electronics.
+
+1738
+00:52:58,000 --> 00:53:00,000
+Is not match.
+
+1739
+00:53:00,000 --> 00:53:02,000
+So he usually requires.
+
+1740
+00:53:02,000 --> 00:53:04,000
+This is a cryo electronics.
+
+1741
+00:53:04,000 --> 00:53:06,000
+To do this.
+
+1742
+00:53:06,000 --> 00:53:08,000
+When it's time to do it.
+
+1743
+00:53:08,000 --> 00:53:10,000
+Low impedance match.
+
+1744
+00:53:10,000 --> 00:53:12,000
+So this is usually.
+
+1745
+00:53:12,000 --> 00:53:14,000
+This is a very troublesome thing.
+
+1746
+00:53:14,000 --> 00:53:16,000
+And the most important thing is.
+
+1747
+00:53:16,000 --> 00:53:18,000
+Typical can be used to do this.
+
+1748
+00:53:18,000 --> 00:53:20,000
+Transition edge sensor material.
+
+1749
+00:53:20,000 --> 00:53:22,000
+It's actually not suitable.
+
+1750
+00:53:22,000 --> 00:53:24,000
+Come to this.
+
+1751
+00:53:24,000 --> 00:53:26,000
+So it really has to be produced.
+
+1752
+00:53:26,000 --> 00:53:28,000
+A ts sensor that can catch phonon.
+
+1753
+00:53:28,000 --> 00:53:30,000
+We also have a trapper.
+
+1754
+00:53:30,000 --> 00:53:32,000
+Put these phonons.
+
+1755
+00:53:32,000 --> 00:53:34,000
+Let him run over there, so there are several layers.
+
+1756
+00:53:34,000 --> 00:53:36,000
+Then this micro fabrication is very complicated.
+
+1757
+00:53:36,000 --> 00:53:38,000
+Then why do I want to talk about those?
+
+1758
+00:53:38,000 --> 00:53:40,000
+Because those are basically this kid.
+
+1759
+00:53:40,000 --> 00:53:42,000
+The problem of the customer service.
+
+1760
+00:53:42,000 --> 00:53:44,000
+Then I'll talk about how to do it.
+
+1761
+00:53:44,000 --> 00:53:46,000
+This operation is good.
+
+1762
+00:53:46,000 --> 00:53:48,000
+The same energy comes in today.
+
+1763
+00:53:48,000 --> 00:53:50,000
+This picture is the earliest paper.
+
+1764
+00:53:50,000 --> 00:53:52,000
+He was imagined to be hit by light.
+
+1765
+00:53:52,000 --> 00:53:54,000
+But you can imagine.
+
+1766
+00:53:54,000 --> 00:53:56,000
+After he broke up.
+
+1767
+00:53:56,000 --> 00:53:58,000
+He's on that.
+
+1768
+00:53:58,000 --> 00:54:00,000
+The effect of the metal on it.
+
+1769
+00:54:00,000 --> 00:54:02,000
+It's not just the change of the conductor.
+
+1770
+00:54:02,000 --> 00:54:04,000
+It will also produce.
+
+1771
+00:54:04,000 --> 00:54:06,000
+The change of the electric sense.
+
+1772
+00:54:06,000 --> 00:54:08,000
+The change of the electric sense and the change of the conductor is not the same.
+
+1773
+00:54:08,000 --> 00:54:10,000
+The superconductor.
+
+1774
+00:54:10,000 --> 00:54:12,000
+It's been produced all the time.
+
+1775
+00:54:12,000 --> 00:54:14,000
+He won't have a conductor.
+
+1776
+00:54:14,000 --> 00:54:16,000
+Until the transition.
+
+1777
+00:54:16,000 --> 00:54:18,000
+Suddenly, a lot of changes.
+
+1778
+00:54:18,000 --> 00:54:20,000
+And then he went to the normal state.
+
+1779
+00:54:20,000 --> 00:54:22,000
+But if today is.
+
+1780
+00:54:22,000 --> 00:54:24,000
+Inductance.
+
+1781
+00:54:24,000 --> 00:54:26,000
+The change of being broken.
+
+1782
+00:54:26,000 --> 00:54:28,000
+In fact, it is relatively low function.
+
+1783
+00:54:28,000 --> 00:54:30,000
+He can operate at a lower temperature.
+
+1784
+00:54:30,000 --> 00:54:32,000
+That is to say, as long as I have one.
+
+1785
+00:54:32,000 --> 00:54:34,000
+Enough ice in the refrigerator.
+
+1786
+00:54:34,000 --> 00:54:36,000
+The transition temperature is much lower than mine.
+
+1787
+00:54:36,000 --> 00:54:38,000
+I can operate.
+
+1788
+00:54:38,000 --> 00:54:40,000
+In fact, I do not need to care.
+
+1789
+00:54:40,000 --> 00:54:42,000
+Do I have a very complicated electronic?
+
+1790
+00:54:42,000 --> 00:54:44,000
+Can control it?
+
+1791
+00:54:44,000 --> 00:54:46,000
+This is very important.
+
+1792
+00:54:46,000 --> 00:54:48,000
+What I'm talking about today is the change of the electric sense.
+
+1793
+00:54:48,000 --> 00:54:50,000
+How do we make it a good sensor?
+
+1794
+00:54:50,000 --> 00:54:52,000
+This is a variable electric sense.
+
+1795
+00:54:52,000 --> 00:54:54,000
+I put it together with a capacitor.
+
+1796
+00:54:54,000 --> 00:54:56,000
+It becomes a vibrator.
+
+1797
+00:54:56,000 --> 00:54:58,000
+OK, so if today.
+
+1798
+00:54:58,000 --> 00:55:00,000
+This electric sense is.
+
+1799
+00:55:00,000 --> 00:55:02,000
+Eat a little energy.
+
+1800
+00:55:02,000 --> 00:55:04,000
+A little change.
+
+1801
+00:55:04,000 --> 00:55:06,000
+That's frequency space today.
+
+1802
+00:55:06,000 --> 00:55:08,000
+OK, so frequency space.
+
+1803
+00:55:08,000 --> 00:55:10,000
+This is F, this is S21.
+
+1804
+00:55:10,000 --> 00:55:12,000
+If you do micro wave S21.
+
+1805
+00:55:12,000 --> 00:55:14,000
+Then there is a resonance.
+
+1806
+00:55:14,000 --> 00:55:16,000
+He will run.
+
+1807
+00:55:16,000 --> 00:55:18,000
+And because there are more inside.
+
+1808
+00:55:18,000 --> 00:55:20,000
+This thermodynamic activity.
+
+1809
+00:55:20,000 --> 00:55:22,000
+In fact, it is a quasi-particle recombination.
+
+1810
+00:55:22,000 --> 00:55:24,000
+So this resonator.
+
+1811
+00:55:24,000 --> 00:55:26,000
+Or this resonator.
+
+1812
+00:55:26,000 --> 00:55:28,000
+This quality factor will be reduced.
+
+1813
+00:55:28,000 --> 00:55:30,000
+So it's not just this.
+
+1814
+00:55:30,000 --> 00:55:32,000
+Resonance frequency will run.
+
+1815
+00:55:32,000 --> 00:55:34,000
+Its fat will become fat.
+
+1816
+00:55:34,000 --> 00:55:36,000
+So it will be like this.
+
+1817
+00:55:36,000 --> 00:55:38,000
+From this black to the dot, then run back.
+
+1818
+00:55:38,000 --> 00:55:40,000
+Then we look at this.
+
+1819
+00:55:40,000 --> 00:55:42,000
+OK, we will know that.
+
+1820
+00:55:42,000 --> 00:55:44,000
+Oh, here is the signal.
+
+1821
+00:55:44,000 --> 00:55:46,000
+In fact, how do we realize such a circuit?
+
+1822
+00:55:46,000 --> 00:55:48,000
+Actually nothing.
+
+1823
+00:55:48,000 --> 00:55:50,000
+Just put it all together.
+
+1824
+00:55:50,000 --> 00:55:52,000
+We have a lot of this little.
+
+1825
+00:55:52,000 --> 00:55:54,000
+LC, LC, LC.
+
+1826
+00:55:54,000 --> 00:55:56,000
+Then put it all together.
+
+1827
+00:55:56,000 --> 00:55:58,000
+Then I measured its transmission.
+
+1828
+00:55:58,000 --> 00:56:00,000
+Or S21.
+
+1829
+00:56:00,000 --> 00:56:02,000
+I just put all these.
+
+1830
+00:56:02,000 --> 00:56:04,000
+These resonators.
+
+1831
+00:56:04,000 --> 00:56:06,000
+The resonant frequency is slightly adjusted to be different.
+
+1832
+00:56:06,000 --> 00:56:08,000
+Then I measured S21 today.
+
+1833
+00:56:08,000 --> 00:56:10,000
+You will see one by one.
+
+1834
+00:56:10,000 --> 00:56:12,000
+One by one, one by one, one by one, one by one.
+
+1835
+00:56:12,000 --> 00:56:14,000
+OK, then this resonance.
+
+1836
+00:56:14,000 --> 00:56:16,000
+Will map to, for example, I know.
+
+1837
+00:56:16,000 --> 00:56:18,000
+By design, this person.
+
+1838
+00:56:18,000 --> 00:56:20,000
+He should resonate at this frequency.
+
+1839
+00:56:20,000 --> 00:56:22,000
+This person should resonate at this frequency.
+
+1840
+00:56:22,000 --> 00:56:24,000
+So I just monitor this one.
+
+1841
+00:56:24,000 --> 00:56:26,000
+I know he was hit.
+
+1842
+00:56:26,000 --> 00:56:28,000
+This one runs.
+
+1843
+00:56:28,000 --> 00:56:30,000
+I know he was hit.
+
+1844
+00:56:30,000 --> 00:56:32,000
+So this.
+
+1845
+00:56:32,000 --> 00:56:34,000
+This is how we do this pixelization.
+
+1846
+00:56:34,000 --> 00:56:36,000
+This concept.
+
+1847
+00:56:36,000 --> 00:56:38,000
+In fact, you can see that this is a waveguide.
+
+1848
+00:56:38,000 --> 00:56:40,000
+Then this is a.
+
+1849
+00:56:40,000 --> 00:56:42,000
+Electrical circuit.
+
+1850
+00:56:42,000 --> 00:56:44,000
+Then this is a capacitor.
+
+1851
+00:56:44,000 --> 00:56:46,000
+This waveguide is coupled to it.
+
+1852
+00:56:46,000 --> 00:56:48,000
+This waveguide is coupled to it.
+
+1853
+00:56:48,000 --> 00:56:50,000
+In fact, everyone will see it like this.
+
+1854
+00:56:50,000 --> 00:56:52,000
+There is a waveguide here.
+
+1855
+00:56:52,000 --> 00:56:54,000
+Up and down, up and down, up and down, up and down.
+
+1856
+00:56:54,000 --> 00:56:56,000
+OK.
+
+1857
+00:56:56,000 --> 00:56:58,000
+Then every little island.
+
+1858
+00:56:58,000 --> 00:57:00,000
+It's all a pixel.
+
+1859
+00:57:00,000 --> 00:57:02,000
+Sorry, but we can go back.
+
+1860
+00:57:02,000 --> 00:57:04,000
+Compare to say.
+
+1861
+00:57:04,000 --> 00:57:06,000
+What if you use TES?
+
+1862
+00:57:06,000 --> 00:57:08,000
+Because the TES is too small.
+
+1863
+00:57:08,000 --> 00:57:10,000
+Small to measure.
+
+1864
+00:57:10,000 --> 00:57:12,000
+You have to put a lot of this little island.
+
+1865
+00:57:12,000 --> 00:57:14,000
+All connected.
+
+1866
+00:57:14,000 --> 00:57:16,000
+So in fact, these people are all connected.
+
+1867
+00:57:16,000 --> 00:57:18,000
+Make a sensor together.
+
+1868
+00:57:18,000 --> 00:57:20,000
+These people are all connected together.
+
+1869
+00:57:20,000 --> 00:57:22,000
+So this chip.
+
+1870
+00:57:22,000 --> 00:57:24,000
+2 cm by 2 cm.
+
+1871
+00:57:24,000 --> 00:57:26,000
+It's just two channels.
+
+1872
+00:57:26,000 --> 00:57:28,000
+The signals are all clamped together.
+
+1873
+00:57:28,000 --> 00:57:30,000
+But a 3-inch wafer like this.
+
+1874
+00:57:30,000 --> 00:57:32,000
+It's 80 channels.
+
+1875
+00:57:32,000 --> 00:57:34,000
+Then we now think that 80 channels.
+
+1876
+00:57:34,000 --> 00:57:36,000
+Do this.
+
+1877
+00:57:36,000 --> 00:57:38,000
+Positioning is good enough.
+
+1878
+00:57:38,000 --> 00:57:40,000
+So we don't actually have to push this detector anymore.
+
+1879
+00:57:40,000 --> 00:57:42,000
+We may have to take this detector.
+
+1880
+00:57:42,000 --> 00:57:44,000
+To do the dark matter search.
+
+1881
+00:57:44,000 --> 00:57:46,000
+But we are for this thing.
+
+1882
+00:57:46,000 --> 00:57:48,000
+Some analysis of robustness.
+
+1883
+00:57:48,000 --> 00:57:50,000
+I don't know if there's a paper here.
+
+1884
+00:57:50,000 --> 00:57:52,000
+If you can go and see.
+
+1885
+00:57:52,000 --> 00:57:54,000
+We think we can put 200 channels.
+
+1886
+00:57:54,000 --> 00:57:56,000
+Then there will be no confusion.
+
+1887
+00:57:56,000 --> 00:57:58,000
+So basically.
+
+1888
+00:57:58,000 --> 00:58:00,000
+This is the future super cdms no lab detector.
+
+1889
+00:58:00,000 --> 00:58:02,000
+There are a lot of little dots.
+
+1890
+00:58:02,000 --> 00:58:04,000
+But they are all connected together.
+
+1891
+00:58:04,000 --> 00:58:06,000
+So in the end, this big piece is a pixel.
+
+1892
+00:58:06,000 --> 00:58:08,000
+This big piece is a pixel.
+
+1893
+00:58:08,000 --> 00:58:10,000
+It probably looks like this.
+
+1894
+00:58:10,000 --> 00:58:12,000
+It has 6 pixels.
+
+1895
+00:58:12,000 --> 00:58:14,000
+Then we have 80.
+
+1896
+00:58:14,000 --> 00:58:16,000
+Then we can do more than 200.
+
+1897
+00:58:16,000 --> 00:58:18,000
+Because in fact.
+
+1898
+00:58:18,000 --> 00:58:20,000
+Energy resolution wise.
+
+1899
+00:58:20,000 --> 00:58:22,000
+We have measured.
+
+1900
+00:58:22,000 --> 00:58:24,000
+Comparable energy resolution.
+
+1901
+00:58:24,000 --> 00:58:26,000
+But more importantly.
+
+1902
+00:58:26,000 --> 00:58:28,000
+Recent results suggest.
+
+1903
+00:58:28,000 --> 00:58:30,000
+We can do sub-EB resolution.
+
+1904
+00:58:30,000 --> 00:58:32,000
+Then of course.
+
+1905
+00:58:32,000 --> 00:58:34,000
+In money wise.
+
+1906
+00:58:34,000 --> 00:58:36,000
+It reduces 60% of fabrication complexity.
+
+1907
+00:58:36,000 --> 00:58:38,000
+Because in fact.
+
+1908
+00:58:38,000 --> 00:58:40,000
+This whole piece.
+
+1909
+00:58:40,000 --> 00:58:42,000
+Is single layer film.
+
+1910
+00:58:42,000 --> 00:58:44,000
+So.
+
+1911
+00:58:44,000 --> 00:58:46,000
+Compared with this.
+
+1912
+00:58:46,000 --> 00:58:48,000
+We are actually a mask.
+
+1913
+00:58:48,000 --> 00:58:50,000
+Then deposit.
+
+1914
+00:58:50,000 --> 00:58:52,000
+Then etch.
+
+1915
+00:58:52,000 --> 00:58:54,000
+Then we have a complete whole circuit.
+
+1916
+00:58:54,000 --> 00:58:56,000
+So we reduced.
+
+1917
+00:58:56,000 --> 00:58:58,000
+60% to 70% of this.
+
+1918
+00:58:58,000 --> 00:59:00,000
+If we go to calculate the steps.
+
+1919
+00:59:00,000 --> 00:59:02,000
+Then the chemical used is much less.
+
+1920
+00:59:02,000 --> 00:59:04,000
+So this fabrication EO is much higher.
+
+1921
+00:59:04,000 --> 00:59:06,000
+And we can easily do.
+
+1922
+00:59:06,000 --> 00:59:08,000
+100 times of this.
+
+1923
+00:59:08,000 --> 00:59:10,000
+Pixelization.
+
+1924
+00:59:10,000 --> 00:59:12,000
+Is multiplexibility.
+
+1925
+00:59:12,000 --> 00:59:14,000
+Then.
+
+1926
+00:59:14,000 --> 00:59:16,000
+We don't need thermoelectric feedback.
+
+1927
+00:59:16,000 --> 00:59:18,000
+We just need to.
+
+1928
+00:59:18,000 --> 00:59:20,000
+Make it much lower than TC.
+
+1929
+00:59:20,000 --> 00:59:22,000
+Then we don't need.
+
+1930
+00:59:22,000 --> 00:59:24,000
+Squid amplifier.
+
+1931
+00:59:24,000 --> 00:59:26,000
+Because in fact by design.
+
+1932
+00:59:26,000 --> 00:59:28,000
+This waveguide is 50 ohms.
+
+1933
+00:59:28,000 --> 00:59:30,000
+So we only need 50 ohms.
+
+1934
+00:59:30,000 --> 00:59:32,000
+Just connect two coax.
+
+1935
+00:59:32,000 --> 00:59:34,000
+So this is very simple.
+
+1936
+00:59:34,000 --> 00:59:36,000
+This is very important to CLR.
+
+1937
+00:59:36,000 --> 00:59:38,000
+Then this is the second page.
+
+1938
+00:59:38,000 --> 00:59:40,000
+Then let's talk about.
+
+1939
+00:59:40,000 --> 00:59:42,000
+How high can we expect?
+
+1940
+00:59:42,000 --> 00:59:44,000
+Because we are dominated by.
+
+1941
+00:59:44,000 --> 00:59:46,000
+Low-noise amplifier.
+
+1942
+00:59:46,000 --> 00:59:48,000
+So in other words.
+
+1943
+00:59:48,000 --> 00:59:50,000
+As long as I can lower my.
+
+1944
+00:59:50,000 --> 00:59:52,000
+The noise temperature of the amplifier.
+
+1945
+00:59:52,000 --> 00:59:54,000
+I can.
+
+1946
+00:59:54,000 --> 00:59:56,000
+Increase my.
+
+1947
+00:59:56,000 --> 00:59:58,000
+Resolution here.
+
+1948
+00:59:58,000 --> 01:00:00,000
+Then we use this amplifier now.
+
+1949
+01:00:00,000 --> 01:00:02,000
+5K noise temperature.
+
+1950
+01:00:02,000 --> 01:00:04,000
+Then our collaborator in JPL.
+
+1951
+01:00:04,000 --> 01:00:06,000
+He made a low-noise.
+
+1952
+01:00:06,000 --> 01:00:08,000
+Low-noise amplifier.
+
+1953
+01:00:08,000 --> 01:00:10,000
+So I just change this to me.
+
+1954
+01:00:10,000 --> 01:00:12,000
+I have a factor here.
+
+1955
+01:00:12,000 --> 01:00:14,000
+OK.
+
+1956
+01:00:14,000 --> 01:00:16,000
+Then.
+
+1957
+01:00:16,000 --> 01:00:18,000
+We found one thing.
+
+1958
+01:00:18,000 --> 01:00:20,000
+We have to do this match filter.
+
+1959
+01:00:20,000 --> 01:00:22,000
+Filter what is noise.
+
+1960
+01:00:22,000 --> 01:00:24,000
+What is this pulse template.
+
+1961
+01:00:24,000 --> 01:00:26,000
+If we have this today.
+
+1962
+01:00:26,000 --> 01:00:28,000
+This pulse decay time.
+
+1963
+01:00:28,000 --> 01:00:30,000
+This time constant is longer.
+
+1964
+01:00:30,000 --> 01:00:32,000
+We can be on this match filter.
+
+1965
+01:00:32,000 --> 01:00:34,000
+Filter more of this.
+
+1966
+01:00:34,000 --> 01:00:36,000
+Noise spectrum.
+
+1967
+01:00:36,000 --> 01:00:38,000
+Then this characteristic.
+
+1968
+01:00:38,000 --> 01:00:40,000
+If the characteristic time of this film becomes longer.
+
+1969
+01:00:40,000 --> 01:00:42,000
+We can.
+
+1970
+01:00:42,000 --> 01:00:44,000
+Increase better signal to noise ratio.
+
+1971
+01:00:44,000 --> 01:00:46,000
+In this paper.
+
+1972
+01:00:46,000 --> 01:00:48,000
+Demonstrate that they can put this time.
+
+1973
+01:00:48,000 --> 01:00:50,000
+Increase to 3ms.
+
+1974
+01:00:50,000 --> 01:00:52,000
+Then we are now 100 microseconds.
+
+1975
+01:00:52,000 --> 01:00:54,000
+So OK.
+
+1976
+01:00:54,000 --> 01:00:56,000
+Then I put this factor in.
+
+1977
+01:00:56,000 --> 01:00:58,000
+Do I put this factor in?
+
+1978
+01:00:58,000 --> 01:01:00,000
+OK.
+
+1979
+01:01:00,000 --> 01:01:02,000
+Let's not say 3000.
+
+1980
+01:01:02,000 --> 01:01:04,000
+Let's say 1500 microseconds.
+
+1981
+01:01:04,000 --> 01:01:06,000
+This is actually my boss.
+
+1982
+01:01:06,000 --> 01:01:08,000
+Another experiment.
+
+1983
+01:01:08,000 --> 01:01:10,000
+They put.
+
+1984
+01:01:10,000 --> 01:01:12,000
+This part.
+
+1985
+01:01:12,000 --> 01:01:14,000
+Made into material.
+
+1986
+01:01:14,000 --> 01:01:16,000
+What does it mean?
+
+1987
+01:01:16,000 --> 01:01:18,000
+He put this sensitive inductor.
+
+1988
+01:01:18,000 --> 01:01:20,000
+Really we can measure.
+
+1989
+01:01:20,000 --> 01:01:22,000
+Material.
+
+1990
+01:01:22,000 --> 01:01:24,000
+The other part.
+
+1991
+01:01:24,000 --> 01:01:26,000
+Another kind.
+
+1992
+01:01:26,000 --> 01:01:28,000
+The gap is bigger.
+
+1993
+01:01:28,000 --> 01:01:30,000
+Bigger material.
+
+1994
+01:01:30,000 --> 01:01:32,000
+So they won't eat the wind.
+
+1995
+01:01:32,000 --> 01:01:34,000
+By this difference.
+
+1996
+01:01:34,000 --> 01:01:36,000
+Just by this geometric ratio.
+
+1997
+01:01:36,000 --> 01:01:38,000
+He can increase his sensitivity.
+
+1998
+01:01:38,000 --> 01:01:40,000
+Then we can do the same thing.
+
+1999
+01:01:40,000 --> 01:01:42,000
+That is actually one more layer.
+
+2000
+01:01:42,000 --> 01:01:44,000
+Much less than TS.
+
+2001
+01:01:44,000 --> 01:01:46,000
+Then we add it up.
+
+2002
+01:01:46,000 --> 01:01:48,000
+This ratio.
+
+2003
+01:01:48,000 --> 01:01:50,000
+Then.
+
+2004
+01:01:50,000 --> 01:01:52,000
+Recently.
+
+2005
+01:01:52,000 --> 01:01:54,000
+Recently, there is one in Europe.
+
+2006
+01:01:54,000 --> 01:01:56,000
+Do that group.
+
+2007
+01:01:56,000 --> 01:01:58,000
+They are doing this thing.
+
+2008
+01:01:58,000 --> 01:02:00,000
+They propose a very interesting one.
+
+2009
+01:02:00,000 --> 01:02:02,000
+We actually have to calculate.
+
+2010
+01:02:02,000 --> 01:02:04,000
+How much we have created.
+
+2011
+01:02:04,000 --> 01:02:06,000
+So if you are today.
+
+2012
+01:02:06,000 --> 01:02:08,000
+This superconductor.
+
+2013
+01:02:08,000 --> 01:02:10,000
+Very small.
+
+2014
+01:02:10,000 --> 01:02:12,000
+Very small.
+
+2015
+01:02:12,000 --> 01:02:14,000
+You can break a lot.
+
+2016
+01:02:14,000 --> 01:02:16,000
+So they used this.
+
+2017
+01:02:16,000 --> 01:02:18,000
+Low gap.
+
+2018
+01:02:18,000 --> 01:02:20,000
+Very small.
+
+2019
+01:02:20,000 --> 01:02:22,000
+This material.
+
+2020
+01:02:22,000 --> 01:02:24,000
+We use aluminum now.
+
+2021
+01:02:24,000 --> 01:02:26,000
+They can use it.
+
+2022
+01:02:26,000 --> 01:02:28,000
+From 0.2.
+
+2023
+01:02:28,000 --> 01:02:30,000
+0.2.
+
+2024
+01:02:30,000 --> 01:02:32,000
+0.2.
+
+2025
+01:02:32,000 --> 01:02:34,000
+0.05.
+
+2026
+01:02:34,000 --> 01:02:36,000
+This is also a change.
+
+2027
+01:02:36,000 --> 01:02:38,000
+So we put everything.
+
+2028
+01:02:38,000 --> 01:02:40,000
+Has been demonstrated.
+
+2029
+01:02:40,000 --> 01:02:42,000
+Bring it all in.
+
+2030
+01:02:42,000 --> 01:02:44,000
+We will.
+
+2031
+01:02:44,000 --> 01:02:46,000
+Bring in the resolution we already have.
+
+2032
+01:02:46,000 --> 01:02:48,000
+Rescale.
+
+2033
+01:02:48,000 --> 01:02:50,000
+The result we get is 36.
+
+2034
+01:02:50,000 --> 01:02:52,000
+That is to say.
+
+2035
+01:02:52,000 --> 01:02:54,000
+We are no longer doing.
+
+2036
+01:02:54,000 --> 01:02:56,000
+Or we do.
+
+2037
+01:02:56,000 --> 01:02:58,000
+Ionization counting.
+
+2038
+01:02:58,000 --> 01:03:00,000
+We basically have 36.
+
+2039
+01:03:00,000 --> 01:03:02,000
+Resolution.
+
+2040
+01:03:02,000 --> 01:03:04,000
+Of course, we can take this thing.
+
+2041
+01:03:04,000 --> 01:03:06,000
+Take it instead of TES.
+
+2042
+01:03:06,000 --> 01:03:08,000
+Continue to put it on the silicon substrate.
+
+2043
+01:03:08,000 --> 01:03:10,000
+Test this.
+
+2044
+01:03:10,000 --> 01:03:12,000
+Or this ionization.
+
+2045
+01:03:12,000 --> 01:03:14,000
+Then we can do another thing.
+
+2046
+01:03:14,000 --> 01:03:16,000
+Is that we put a bunch of kids over there.
+
+2047
+01:03:16,000 --> 01:03:18,000
+Directly take the kids to the dark matter.
+
+2048
+01:03:18,000 --> 01:03:20,000
+Then we can count.
+
+2049
+01:03:20,000 --> 01:03:22,000
+This kind of quantum.
+
+2050
+01:03:22,000 --> 01:03:24,000
+This is our plan.
+
+2051
+01:03:24,000 --> 01:03:26,000
+Summarize.
+
+2052
+01:03:26,000 --> 01:03:28,000
+We think now.
+
+2053
+01:03:28,000 --> 01:03:30,000
+Within 5 to 10 years.
+
+2054
+01:03:30,000 --> 01:03:32,000
+Humans can either find WIMP.
+
+2055
+01:03:32,000 --> 01:03:34,000
+Or we will have a long one.
+
+2056
+01:03:34,000 --> 01:03:36,000
+No progress.
+
+2057
+01:03:36,000 --> 01:03:38,000
+So everyone is now.
+
+2058
+01:03:38,000 --> 01:03:40,000
+Working hard to think about it.
+
+2059
+01:03:40,000 --> 01:03:42,000
+Can we shift to low mass dark matter?
+
+2060
+01:03:42,000 --> 01:03:44,000
+There are still a lot of models.
+
+2061
+01:03:44,000 --> 01:03:46,000
+Not tested yet.
+
+2062
+01:03:46,000 --> 01:03:48,000
+We need to have.
+
+2063
+01:03:48,000 --> 01:03:50,000
+Electron recoil and nuclear recoil.
+
+2064
+01:03:50,000 --> 01:03:52,000
+Two at the same time.
+
+2065
+01:03:52,000 --> 01:03:54,000
+Because in fact.
+
+2066
+01:03:54,000 --> 01:03:56,000
+In addition to electronic recoil.
+
+2067
+01:03:56,000 --> 01:03:58,000
+Can measure very small energy.
+
+2068
+01:03:58,000 --> 01:04:00,000
+Nuclear recoil can help us distinguish.
+
+2069
+01:04:00,000 --> 01:04:02,000
+What is the signal?
+
+2070
+01:04:02,000 --> 01:04:04,000
+What is the background?
+
+2071
+01:04:04,000 --> 01:04:06,000
+This is an important thing to start now.
+
+2072
+01:04:06,000 --> 01:04:08,000
+Requires substantial improvement.
+
+2073
+01:04:08,000 --> 01:04:10,000
+In low-threshold technology.
+
+2074
+01:04:10,000 --> 01:04:12,000
+This is the second part.
+
+2075
+01:04:12,000 --> 01:04:14,000
+CDMX HPEV demonstration.
+
+2076
+01:04:14,000 --> 01:04:16,000
+We have the ability to count.
+
+2077
+01:04:16,000 --> 01:04:18,000
+We give it a day.
+
+2078
+01:04:18,000 --> 01:04:20,000
+One day on the surface of the lab.
+
+2079
+01:04:20,000 --> 01:04:22,000
+We can set a good limit.
+
+2080
+01:04:22,000 --> 01:04:24,000
+Of course, our detector.
+
+2081
+01:04:24,000 --> 01:04:26,000
+Has been taken to the tunnel.
+
+2082
+01:04:26,000 --> 01:04:28,000
+So the next round.
+
+2083
+01:04:28,000 --> 01:04:30,000
+Will be the underground round.
+
+2084
+01:04:34,000 --> 01:04:36,000
+One day on the surface of the lab.
+
+2085
+01:04:36,000 --> 01:04:38,000
+We can constrain.
+
+2086
+01:04:38,000 --> 01:04:40,000
+0.4 MeV dark matter mass.
+
+2087
+01:04:42,000 --> 01:04:44,000
+The most important thing is the KIT part.
+
+2088
+01:04:44,000 --> 01:04:46,000
+We demonstrate competitive energy resolution.
+
+2089
+01:04:46,000 --> 01:04:48,000
+The most important thing is.
+
+2090
+01:04:48,000 --> 01:04:50,000
+It is actually.
+
+2091
+01:04:50,000 --> 01:04:52,000
+Theoretical prediction.
+
+2092
+01:04:52,000 --> 01:04:54,000
+If we put all the design numbers.
+
+2093
+01:04:54,000 --> 01:04:56,000
+It is quite consistent.
+
+2094
+01:04:56,000 --> 01:04:58,000
+Then we are confident.
+
+2095
+01:04:58,000 --> 01:05:00,000
+So we can adapt.
+
+2096
+01:05:00,000 --> 01:05:02,000
+What others have demonstrated.
+
+2097
+01:05:02,000 --> 01:05:04,000
+Assuming we really have.
+
+2098
+01:05:04,000 --> 01:05:06,000
+So many resources to adapt.
+
+2099
+01:05:06,000 --> 01:05:08,000
+Each one.
+
+2100
+01:05:08,000 --> 01:05:10,000
+Its outlook is 100 times.
+
+2101
+01:05:10,000 --> 01:05:12,000
+Resolution improvement.
+
+2102
+01:05:12,000 --> 01:05:14,000
+It is.
+
+2103
+01:05:14,000 --> 01:05:16,000
+Flexible optimization.
+
+2104
+01:05:16,000 --> 01:05:18,000
+You want good energy resolution.
+
+2105
+01:05:18,000 --> 01:05:20,000
+Just make a pixel.
+
+2106
+01:05:20,000 --> 01:05:22,000
+Let all the photons hit you.
+
+2107
+01:05:22,000 --> 01:05:24,000
+Or you can do 500 pixels.
+
+2108
+01:05:24,000 --> 01:05:26,000
+Then you can have a good.
+
+2109
+01:05:26,000 --> 01:05:28,000
+Position reconstruction or tracking.
+
+2110
+01:05:28,000 --> 01:05:30,000
+In other words.
+
+2111
+01:05:30,000 --> 01:05:32,000
+You can reject the background.
+
+2112
+01:05:32,000 --> 01:05:34,000
+When we really want to run dark matter devices.
+
+2113
+01:05:34,000 --> 01:05:36,000
+This will still need to be redesigned.
+
+2114
+01:05:36,000 --> 01:05:38,000
+And then the point is.
+
+2115
+01:05:38,000 --> 01:05:40,000
+It is very easy and reliable fabrication.
+
+2116
+01:05:40,000 --> 01:05:42,000
+This is very important for the future.
+
+2117
+01:05:42,000 --> 01:05:44,000
+Because the students know.
+
+2118
+01:05:44,000 --> 01:05:46,000
+It is very likely that the device has not been done well.
+
+2119
+01:05:46,000 --> 01:05:48,000
+So if it's easy to do, it's very important.
+
+2120
+01:05:48,000 --> 01:05:50,000
+OK.
+
+2121
+01:05:50,000 --> 01:05:52,000
+Because it is very simple.
+
+2122
+01:05:52,000 --> 01:05:54,000
+It basically does not have.
+
+2123
+01:05:54,000 --> 01:05:56,000
+Just put in an amplifier.
+
+2124
+01:05:56,000 --> 01:05:58,000
+Then you can run.
+
+2125
+01:05:58,000 --> 01:06:00,000
+OK, that's it.
+
+2126
+01:06:00,000 --> 01:06:02,000
+Thank you.
+
+2127
+01:06:02,000 --> 01:06:04,000
+Hello everyone.
+
+2128
+01:06:04,000 --> 01:06:06,000
+Does anyone have a question?
+
+2129
+01:06:06,000 --> 01:06:08,000
+We are good.
+
+2130
+01:06:08,000 --> 01:06:10,000
+Good.
+
+2131
+01:06:10,000 --> 01:06:12,000
+Good.
+
+2132
+01:06:12,000 --> 01:06:14,000
+Good.
+
+2133
+01:06:14,000 --> 01:06:16,000
+Good.
+
+2134
+01:06:16,000 --> 01:06:18,000
+Good.
+
+2135
+01:06:18,000 --> 01:06:20,000
+Good.
+
+2136
+01:06:20,000 --> 01:06:22,000
+Good.
+
+2137
+01:06:22,000 --> 01:06:24,000
+Good.
+
+2138
+01:06:24,000 --> 01:06:26,000
+Good.
+
+2139
+01:06:26,000 --> 01:06:28,000
+Good.
+
+2140
+01:06:28,000 --> 01:06:30,000
+Good.
+
+2141
+01:06:30,000 --> 01:06:32,000
+I want to ask.
+
+2142
+01:06:32,000 --> 01:06:34,000
+That is.
+
+2143
+01:06:34,000 --> 01:06:36,000
+Is that Ding Zhaozhong.
+
+2144
+01:06:36,000 --> 01:06:38,000
+His group is looking for WIMP.
+
+2145
+01:06:40,000 --> 01:06:42,000
+And this is not even about to the device?
+
+2146
+01:06:44,000 --> 01:06:46,000
+To the space or test.
+
+2147
+01:06:46,000 --> 01:06:48,000
+The test is actually done on earth.
+
+2148
+01:06:48,000 --> 01:06:50,000
+If we want to.
+
+2149
+01:06:50,000 --> 01:06:52,000
+The environment of this experiment.
+
+2150
+01:06:52,000 --> 01:06:54,000
+A better environment.
+
+2151
+01:06:54,000 --> 01:06:56,000
+Not actually going to the sky.
+
+2152
+01:06:56,000 --> 01:06:58,000
+Because we actually measured directly.
+
+2153
+01:06:58,000 --> 01:07:02,000
+We hope to go through everything we already know.
+
+2154
+01:07:02,000 --> 01:07:04,000
+All kinds of things.
+
+2155
+01:07:04,000 --> 01:07:06,000
+And then hit our detector.
+
+2156
+01:07:06,000 --> 01:07:08,000
+But our environment is full of cosmic rays.
+
+2157
+01:07:08,000 --> 01:07:10,000
+So we actually have the best environment.
+
+2158
+01:07:10,000 --> 01:07:12,000
+It's underground.
+
+2159
+01:07:12,000 --> 01:07:14,000
+It can be very natural to use the earth's shell to help us isolate the cosmic rays.
+
+2160
+01:07:14,000 --> 01:07:16,000
+But we already know.
+
+2161
+01:07:16,000 --> 01:07:18,000
+Can go through almost everything.
+
+2162
+01:07:18,000 --> 01:07:20,000
+You go to the bottom of the moon.
+
+2163
+01:07:20,000 --> 01:07:22,000
+Relatively, you show off the more cosmic rays.
+
+2164
+01:07:22,000 --> 01:07:24,000
+But the rate you leave.
+
+2165
+01:07:24,000 --> 01:07:26,000
+That is.
+
+2166
+01:07:26,000 --> 01:07:28,000
+So most of our experiments are.
+
+2167
+01:07:28,000 --> 01:07:30,000
+Eventually, it's going to be done underground.
+
+2168
+01:07:30,000 --> 01:07:32,000
+For example, mines and so on.
+
+2169
+01:07:32,000 --> 01:07:34,000
+But Ding Zhaozhong's experiment.
+
+2170
+01:07:34,000 --> 01:07:36,000
+If you're talking about AMS or AMS.
+
+2171
+01:07:36,000 --> 01:07:38,000
+What if it's 02 now?
+
+2172
+01:07:38,000 --> 01:07:40,000
+He's not measuring dark matter.
+
+2173
+01:07:40,000 --> 01:07:42,000
+He's measuring cosmic rays.
+
+2174
+01:07:42,000 --> 01:07:44,000
+The anomaly.
+
+2175
+01:07:44,000 --> 01:07:46,000
+And then if this anomaly.
+
+2176
+01:07:46,000 --> 01:07:48,000
+It's a very, very strong anomaly.
+
+2177
+01:07:48,000 --> 01:07:50,000
+They can try to explain.
+
+2178
+01:07:50,000 --> 01:07:52,000
+So is there any dark matter?
+
+2179
+01:07:52,000 --> 01:07:54,000
+For example, decay.
+
+2180
+01:07:54,000 --> 01:07:56,000
+Or produce such anomalies.
+
+2181
+01:07:56,000 --> 01:07:58,000
+For example, suddenly there is a certain kind of energy.
+
+2182
+01:07:58,000 --> 01:08:00,000
+On the spectrum of cosmic rays.
+
+2183
+01:08:00,000 --> 01:08:02,000
+There are a lot of non-continuous peaks.
+
+2184
+01:08:02,000 --> 01:08:04,000
+Then it might be dark matter.
+
+2185
+01:08:04,000 --> 01:08:06,000
+So they're actually measuring cosmic rays.
+
+2186
+01:08:06,000 --> 01:08:08,000
+So they want to go to the strongest part of the cosmic rays.
+
+2187
+01:08:08,000 --> 01:08:10,000
+So they want to go to the atmosphere.
+
+2188
+01:08:10,000 --> 01:08:12,000
+Because the atmosphere will actually block the cosmic rays.
+
+2189
+01:08:12,000 --> 01:08:14,000
+So they went to the space station.
+
+2190
+01:08:14,000 --> 01:08:16,000
+The principle is probably like this.
+
+2191
+01:08:16,000 --> 01:08:18,000
+OK.
+
+2192
+01:08:24,000 --> 01:08:26,000
+OK.
+
+2193
+01:08:26,000 --> 01:08:28,000
+OK.
+
+2194
+01:08:28,000 --> 01:08:30,000
+OK.
+
+2195
+01:08:30,000 --> 01:08:32,000
+OK.
+
+2196
+01:08:32,000 --> 01:08:34,000
+I want to ask another question.
+
+2197
+01:08:34,000 --> 01:08:36,000
+OK.
+
+2198
+01:08:36,000 --> 01:08:38,000
+It's a bit of an unexpected.
+
+2199
+01:08:38,000 --> 01:08:40,000
+But.
+
+2200
+01:08:40,000 --> 01:08:42,000
+I want to ask if there is anyone.
+
+2201
+01:08:42,000 --> 01:08:44,000
+You're measuring those photons now.
+
+2202
+01:08:44,000 --> 01:08:46,000
+Right?
+
+2203
+01:08:46,000 --> 01:08:48,000
+And then magnify the signal.
+
+2204
+01:08:48,000 --> 01:08:50,000
+Is there anyone.
+
+2205
+01:08:50,000 --> 01:08:52,000
+Like using that legal.
+
+2206
+01:08:52,000 --> 01:08:54,000
+That is, he measured.
+
+2207
+01:08:54,000 --> 01:08:56,000
+For example, you hit it.
+
+2208
+01:08:56,000 --> 01:08:58,000
+Then there may be some very small particles.
+
+2209
+01:08:58,000 --> 01:09:00,000
+Yes.
+
+2210
+01:09:00,000 --> 01:09:02,000
+I actually.
+
+2211
+01:09:02,000 --> 01:09:04,000
+I really like this kind of research.
+
+2212
+01:09:04,000 --> 01:09:06,000
+Because.
+
+2213
+01:09:06,000 --> 01:09:08,000
+You can ask a very legitimate question.
+
+2214
+01:09:08,000 --> 01:09:10,000
+That is to say.
+
+2215
+01:09:10,000 --> 01:09:12,000
+In fact, we are now.
+
+2216
+01:09:12,000 --> 01:09:14,000
+All dark matter will be blocked by us.
+
+2217
+01:09:14,000 --> 01:09:16,000
+Interaction is imaginary.
+
+2218
+01:09:16,000 --> 01:09:18,000
+Because the only thing we know.
+
+2219
+01:09:18,000 --> 01:09:20,000
+Dark matter will really interact.
+
+2220
+01:09:20,000 --> 01:09:22,000
+Observed is through gravity.
+
+2221
+01:09:22,000 --> 01:09:24,000
+If I say I'm going to design an experiment.
+
+2222
+01:09:24,000 --> 01:09:26,000
+Is to use gravity as gravity.
+
+2223
+01:09:26,000 --> 01:09:28,000
+To measure dark matter.
+
+2224
+01:09:28,000 --> 01:09:30,000
+How sensitive do I want to be?
+
+2225
+01:09:30,000 --> 01:09:32,000
+Or what kind of model is dark matter?
+
+2226
+01:09:32,000 --> 01:09:34,000
+I measured it.
+
+2227
+01:09:34,000 --> 01:09:36,000
+Basically, your question is like this.
+
+2228
+01:09:36,000 --> 01:09:38,000
+The answer is.
+
+2229
+01:09:38,000 --> 01:09:40,000
+Someone is thinking about this.
+
+2230
+01:09:40,000 --> 01:09:42,000
+It's not that I can't do it.
+
+2231
+01:09:42,000 --> 01:09:44,000
+But the first dark matter is very, very heavy.
+
+2232
+01:09:44,000 --> 01:09:46,000
+How heavy is it?
+
+2233
+01:09:46,000 --> 01:09:48,000
+It's about 0.0.
+
+2234
+01:09:48,000 --> 01:09:50,000
+Planck's mass.
+
+2235
+01:09:50,000 --> 01:09:52,000
+I don't know if you know Planck's mass.
+
+2236
+01:09:52,000 --> 01:09:54,000
+We think all gravity.
+
+2237
+01:09:54,000 --> 01:09:56,000
+The theory will break down the physical limit.
+
+2238
+01:09:56,000 --> 01:09:58,000
+Now.
+
+2239
+01:09:58,000 --> 01:10:00,000
+Now we are discussing these scales.
+
+2240
+01:10:00,000 --> 01:10:02,000
+What 30 times.
+
+2241
+01:10:02,000 --> 01:10:04,000
+No, sorry.
+
+2242
+01:10:06,000 --> 01:10:08,000
+Then.
+
+2243
+01:10:08,000 --> 01:10:10,000
+This is what they are thinking about.
+
+2244
+01:10:10,000 --> 01:10:12,000
+They can use laser.
+
+2245
+01:10:12,000 --> 01:10:14,000
+Put some nanoparticles.
+
+2246
+01:10:14,000 --> 01:10:16,000
+Press it with laser light.
+
+2247
+01:10:16,000 --> 01:10:18,000
+Hold nanoparticles.
+
+2248
+01:10:18,000 --> 01:10:20,000
+Then take it.
+
+2249
+01:10:20,000 --> 01:10:22,000
+Line up in a vacuum chamber.
+
+2250
+01:10:22,000 --> 01:10:24,000
+Line up in a vacuum chamber.
+
+2251
+01:10:24,000 --> 01:10:26,000
+These nanoparticles.
+
+2252
+01:10:26,000 --> 01:10:28,000
+If the little pig is hit by dark matter.
+
+2253
+01:10:28,000 --> 01:10:30,000
+No, sorry.
+
+2254
+01:10:30,000 --> 01:10:32,000
+It is passed by dark matter.
+
+2255
+01:10:32,000 --> 01:10:34,000
+Then the weight of the dark matter particle.
+
+2256
+01:10:34,000 --> 01:10:36,000
+Will affect the position of these little pigs.
+
+2257
+01:10:36,000 --> 01:10:38,000
+Then they will start to shake.
+
+2258
+01:10:38,000 --> 01:10:40,000
+It's like a gravity wave.
+
+2259
+01:10:40,000 --> 01:10:42,000
+The mirror of LIGO.
+
+2260
+01:10:42,000 --> 01:10:44,000
+They can use this method to measure.
+
+2261
+01:10:44,000 --> 01:10:46,000
+But I think this is a good question.
+
+2262
+01:10:46,000 --> 01:10:48,000
+And someone is doing R&D.
+
+2263
+01:10:50,000 --> 01:10:52,000
+This is very interesting.
+
+2264
+01:10:52,000 --> 01:10:54,000
+This is very interesting.
+
+2265
+01:11:12,000 --> 01:11:14,000
+Can I ask?
+
+2266
+01:11:14,000 --> 01:11:16,000
+Strange details.
+
+2267
+01:11:16,000 --> 01:11:18,000
+Why do you use such a thick wafer?
+
+2268
+01:11:18,000 --> 01:11:20,000
+Why do you use such a thick wafer?
+
+2269
+01:11:20,000 --> 01:11:22,000
+Or is the whole piece of silicon?
+
+2270
+01:11:22,000 --> 01:11:24,000
+Or is the whole piece of silicon?
+
+2271
+01:11:24,000 --> 01:11:26,000
+Yes, the whole piece is silicon.
+
+2272
+01:11:26,000 --> 01:11:28,000
+Ok, I'll leave it here.
+
+2273
+01:11:28,000 --> 01:11:30,000
+In fact, this thickness is so thick.
+
+2274
+01:11:30,000 --> 01:11:32,000
+This is 10 cm.
+
+2275
+01:11:32,000 --> 01:11:34,000
+This is 4 inches.
+
+2276
+01:11:34,000 --> 01:11:36,000
+4 inches wafer.
+
+2277
+01:11:36,000 --> 01:11:38,000
+The thickness is a big piece.
+
+2278
+01:11:38,000 --> 01:11:40,000
+It's like a big piece of silicon.
+
+2279
+01:11:40,000 --> 01:11:42,000
+You don't cut it into pieces.
+
+2280
+01:11:42,000 --> 01:11:44,000
+You cut it into pieces.
+
+2281
+01:11:44,000 --> 01:11:46,000
+This is not a wafer crystal.
+
+2282
+01:11:46,000 --> 01:11:48,000
+Why do you do this?
+
+2283
+01:11:48,000 --> 01:11:50,000
+Because we found one thing.
+
+2284
+01:11:50,000 --> 01:11:52,000
+Of course you can say that my thickness is 1 km.
+
+2285
+01:11:52,000 --> 01:11:54,000
+And then I have 10 pieces.
+
+2286
+01:11:54,000 --> 01:11:56,000
+Or my thickness is 1 cm.
+
+2287
+01:11:56,000 --> 01:11:58,000
+But I only have one piece.
+
+2288
+01:11:58,000 --> 01:12:00,000
+Its total mass.
+
+2289
+01:12:00,000 --> 01:12:02,000
+Or the total number of neutron protons it gives you.
+
+2290
+01:12:02,000 --> 01:12:04,000
+It's the same.
+
+2291
+01:12:04,000 --> 01:12:06,000
+So in theory, your experimental sensitivity is the same.
+
+2292
+01:12:06,000 --> 01:12:08,000
+But we found one thing.
+
+2293
+01:12:08,000 --> 01:12:10,000
+In the whole process of fabrication.
+
+2294
+01:12:10,000 --> 01:12:12,000
+And in the process of transportation.
+
+2295
+01:12:12,000 --> 01:12:14,000
+The cosmic radiation has been constantly hitting.
+
+2296
+01:12:14,000 --> 01:12:16,000
+The cosmic radiation has been constantly hitting.
+
+2297
+01:12:16,000 --> 01:12:18,000
+And then there's a lot of dirt in the air.
+
+2298
+01:12:18,000 --> 01:12:20,000
+A lot of radioactivity has also been touching our wafer.
+
+2299
+01:12:20,000 --> 01:12:22,000
+And then there's a lot of dirt in the air.
+
+2300
+01:12:22,000 --> 01:12:24,000
+And then there's a lot of radioactivity has also been touching our wafer.
+
+2301
+01:12:24,000 --> 01:12:26,000
+Whether it's sticking or producing.
+
+2302
+01:12:26,000 --> 01:12:28,000
+Whether it's sticking or producing.
+
+2303
+01:12:28,000 --> 01:12:30,000
+These elements.
+
+2304
+01:12:30,000 --> 01:12:32,000
+So minimize the surface area.
+
+2305
+01:12:32,000 --> 01:12:34,000
+So minimize the surface area.
+
+2306
+01:12:34,000 --> 01:12:36,000
+The total radioactivity of the whole experiment.
+
+2307
+01:12:36,000 --> 01:12:38,000
+So we want it to be a big piece.
+
+2308
+01:12:38,000 --> 01:12:40,000
+Not a lot of small pieces.
+
+2309
+01:12:40,000 --> 01:12:42,000
+Not a lot of small pieces.
+
+2310
+01:12:42,000 --> 01:12:44,000
+Does this make sense?
+
+2311
+01:12:44,000 --> 01:12:46,000
+Does this make sense?
+
+2312
+01:12:46,000 --> 01:12:48,000
+But I mean, why is it so thick?
+
+2313
+01:12:48,000 --> 01:12:50,000
+But I mean, why is it so thick?
+
+2314
+01:12:50,000 --> 01:12:52,000
+But I mean, why is it so thick?
+
+2315
+01:12:52,000 --> 01:12:54,000
+Because it's very thick.
+
+2316
+01:12:54,000 --> 01:12:56,000
+It means that it's very small on the same quality.
+
+2317
+01:12:56,000 --> 01:12:58,000
+Or we have the same thickness.
+
+2318
+01:12:58,000 --> 01:13:00,000
+Or we have the same total weight.
+
+2319
+01:13:00,000 --> 01:13:02,000
+We can also use a thin piece of stone.
+
+2320
+01:13:02,000 --> 01:13:04,000
+But its surface area is very large.
+
+2321
+01:13:04,000 --> 01:13:06,000
+Ah, I see what you mean.
+
+2322
+01:13:06,000 --> 01:13:08,000
+Ah, I see what you mean.
+
+2323
+01:13:08,000 --> 01:13:10,000
+Ah, I see what you mean.
+
+2324
+01:13:10,000 --> 01:13:12,000
+Ah, I see what you mean.
+
+2325
+01:13:12,000 --> 01:13:14,000
+Can I ask a question?
+
+2326
+01:13:14,000 --> 01:13:16,000
+How do you do calibration for detectors?
+
+2327
+01:13:16,000 --> 01:13:18,000
+How do you do calibration for detectors?
+
+2328
+01:13:18,000 --> 01:13:20,000
+How do you do calibration for detectors?
+
+2329
+01:13:20,000 --> 01:13:22,000
+This is a bit complicated.
+
+2330
+01:13:22,000 --> 01:13:24,000
+Let me talk about this first.
+
+2331
+01:13:24,000 --> 01:13:26,000
+Let me talk about this first.
+
+2332
+01:13:26,000 --> 01:13:28,000
+This HVEV.
+
+2333
+01:13:28,000 --> 01:13:30,000
+We actually hit it with a laser.
+
+2334
+01:13:30,000 --> 01:13:32,000
+We have a fiber.
+
+2335
+01:13:32,000 --> 01:13:34,000
+We have a fiber.
+
+2336
+01:13:34,000 --> 01:13:36,000
+We have a fiber.
+
+2337
+01:13:36,000 --> 01:13:38,000
+Because you use a pulse laser.
+
+2338
+01:13:38,000 --> 01:13:40,000
+Because you use a pulse laser.
+
+2339
+01:13:40,000 --> 01:13:42,000
+We can see this spectrum.
+
+2340
+01:13:42,000 --> 01:13:44,000
+We can see this spectrum.
+
+2341
+01:13:44,000 --> 01:13:46,000
+This is calibration.
+
+2342
+01:13:46,000 --> 01:13:48,000
+This is calibration.
+
+2343
+01:14:00,000 --> 01:14:02,000
+Rayleigh active source 1k EV.
+
+2344
+01:14:02,000 --> 01:14:04,000
+Rayleigh active source 1k EV.
+
+2345
+01:14:04,000 --> 01:14:06,000
+Rayleigh active source 1k EV.
+
+2346
+01:14:06,000 --> 01:14:08,000
+Rayleigh active source 1k EV.
+
+2347
+01:14:08,000 --> 01:14:10,000
+Rayleigh active source 1k EV.
+
+2348
+01:14:12,000 --> 01:14:14,000
+Rayleigh active source 1k EV.
+
+2349
+01:14:14,000 --> 01:14:16,000
+Rayleigh active source 1k EV.
+
+2350
+01:14:16,000 --> 01:14:18,000
+Rayleigh active source 1k EV.
+
+2351
+01:14:18,000 --> 01:14:20,000
+Rayleigh active source 1k EV.
+
+2352
+01:14:20,000 --> 01:14:22,000
+Rayleigh active source 1k EV.
+
+2353
+01:14:22,000 --> 01:14:24,000
+Rayleigh active source 1k EV.
+
+2354
+01:14:24,000 --> 01:14:26,000
+Rayleigh active source 1k EV.
+
+2355
+01:14:26,000 --> 01:14:28,000
+Rayleigh active source 1k EV.
+
+2356
+01:14:28,000 --> 01:14:30,000
+Rayleigh active source 1k EV.
+
+2357
+01:14:30,000 --> 01:14:32,000
+Rayleigh active source 1k EV.
+
+2358
+01:14:32,000 --> 01:14:34,000
+Rayleigh warranty veteran.
+
+2359
+01:14:34,000 --> 01:14:36,000
+Rayleigh warranty veteran.
+
+2360
+01:15:36,000 --> 01:15:38,000
+Rayleigh warranty veteran.
+
+2361
+01:15:44,000 --> 01:15:46,000
+Rayleigh warranty veteran.
+
+2362
+01:15:46,000 --> 01:15:48,000
+Rayleigh warranty veteran.
+
+2363
+01:15:48,000 --> 01:15:50,000
+Rayleigh warranty veteran.
+
+2364
+01:15:50,000 --> 01:15:52,000
+Rayleigh warranty veteran.
+
+2365
+01:15:56,000 --> 01:15:58,000
+Rayleigh warranty veteran.
+
+2366
+01:15:58,000 --> 01:16:00,000
+Rayleigh warranty veteran.
+
+2367
+01:16:00,000 --> 01:16:02,000
+Rayleigh warranty veteran.
+
+2368
+01:16:02,000 --> 01:16:04,000
+Rayleigh warranty veteran.
+
+2369
+01:16:04,000 --> 01:16:06,000
+Rayleigh warranty veteran.
+
+2370
+01:16:06,000 --> 01:16:08,000
+Rayleigh warranty veteran.
+
+2371
+01:16:08,000 --> 01:16:10,000
+Rayleigh warranty veteran.
+
+2372
+01:16:10,000 --> 01:16:12,000
+Rayleigh warranty veteran.
+
+2373
+01:16:12,000 --> 01:16:14,000
+Rayleigh warranty veteran.
+
+2374
+01:16:14,000 --> 01:16:16,000
+Rayleigh warranty veteran.
+
+2375
+01:16:16,000 --> 01:16:18,000
+Rayleigh warranty veteran.
+
+2376
+01:16:18,000 --> 01:16:20,000
+Rayleigh warranty veteran.
+
+2377
+01:16:20,000 --> 01:16:22,000
+Rayleigh warranty veteran.
+
+2378
+01:16:22,000 --> 01:16:24,000
+Rayleigh warranty veteran.
+
+2379
+01:16:24,000 --> 01:16:26,000
+Rayleigh warranty veteran.
+
+2380
+01:16:26,000 --> 01:16:28,000
+Rayleigh warranty veteran.
+
+2381
+01:16:28,000 --> 01:16:30,000
+Rayleigh warranty veteran.
+
+2382
+01:16:30,000 --> 01:16:32,000
+Rayleigh warranty veteran.
+
+2383
+01:16:32,000 --> 01:16:34,000
+Rayleigh warranty veteran.
+
+2384
+01:16:34,000 --> 01:16:36,000
+Rayleigh warranty veteran.
+
+2385
+01:16:36,000 --> 01:16:38,000
+Rayleigh warranty veteran.
+
+2386
+01:16:38,000 --> 01:16:40,000
+Rayleigh warranty veteran.
+
+2387
+01:16:40,000 --> 01:16:42,000
+Rayleigh warranty veteran.
+
+2388
+01:16:42,000 --> 01:16:44,000
+Rayleigh warranty veteran.
+
+2389
+01:16:44,000 --> 01:16:46,000
+Rayleigh warranty veteran.
+
+2390
+01:16:46,000 --> 01:16:48,000
+Rayleigh warranty veteran.
+
+2391
+01:16:48,000 --> 01:16:50,000
+Rayleigh warranty veteran.
+
+2392
+01:16:50,000 --> 01:16:52,000
+Rayleigh warranty veteran.
+
+2393
+01:16:52,000 --> 01:16:54,000
+Rayleigh warranty veteran.
+
+2394
+01:16:54,000 --> 01:16:56,000
+Rayleigh warranty veteran.
+
+2395
+01:16:56,000 --> 01:16:58,000
+Rayleigh warranty veteran.
+
+2396
+01:16:58,000 --> 01:17:00,000
+Rayleigh warranty veteran.
+
+2397
+01:17:00,000 --> 01:17:02,000
+Rayleigh warranty veteran.
+
+2398
+01:17:02,000 --> 01:17:04,000
+Rayleigh warranty veteran.
+
+2399
+01:17:04,000 --> 01:17:06,000
+Rayleigh warranty veteran.
+
+2400
+01:17:06,000 --> 01:17:08,000
+Rayleigh warranty veteran.
+
+2401
+01:17:08,000 --> 01:17:10,000
+Rayleigh warranty veteran.
+
+2402
+01:17:10,000 --> 01:17:12,000
+Rayleigh warranty veteran.
+
+2403
+01:17:12,000 --> 01:17:14,000
+Rayleigh warranty veteran.
+
+2404
+01:17:14,000 --> 01:17:16,000
+Rayleigh warranty veteran.
+
+2405
+01:17:16,000 --> 01:17:18,000
+Rayleigh warranty veteran.
+
+2406
+01:17:18,000 --> 01:17:20,000
+Rayleigh warranty veteran.
+
+2407
+01:17:20,000 --> 01:17:22,000
+Rayleigh warranty veteran.
+
+2408
+01:17:22,000 --> 01:17:24,000
+Rayleigh warranty veteran.
+
+2409
+01:17:24,000 --> 01:17:26,000
+Rayleigh warranty veteran.
+
+2410
+01:17:26,000 --> 01:17:28,000
+Rayleigh warranty veteran.
+
+2411
+01:17:29,000 --> 01:17:32,000
+Rayleigh warranty veteran.
+
+2412
+01:17:32,000 --> 01:17:34,000
+Rayleigh warranty veteran.
+
+2413
+01:17:34,000 --> 01:17:36,000
+Rayleigh warranty veteran.
+
+2414
+01:17:36,000 --> 01:17:38,000
+Rayleigh warranty veteran.
+
+2415
+01:17:38,000 --> 01:17:40,000
+Rayleigh warranty veteran.
+
+2416
+01:17:40,000 --> 01:17:42,000
+Rayleigh warranty veteran.
+
+2417
+01:17:42,000 --> 01:17:44,000
+Rayleigh warranty veteran.
+
+2418
+01:17:44,000 --> 01:17:46,000
+Rayleigh warranty veteran.
+
+2419
+01:17:46,000 --> 01:17:48,000
+Rayleigh warranty veteran.
+
+2420
+01:17:48,000 --> 01:17:50,000
+Rayleigh warranty veteran.
+
+2421
+01:17:50,000 --> 01:17:52,000
+Rayleigh warranty veteran.
+
+2422
+01:17:52,000 --> 01:17:54,000
+Rayleigh warranty veteran.
+
+2423
+01:17:54,000 --> 01:17:56,000
+Rayleigh warranty veteran.
+
+2424
+01:17:56,000 --> 01:17:58,000
+Rayleigh warranty veteran.
+
+2425
+01:17:58,000 --> 01:18:00,000
+Rayleigh warranty veteran.
+
+2426
+01:18:00,000 --> 01:18:02,000
+Rayleigh warranty veteran.
+
+2427
+01:18:02,000 --> 01:18:04,000
+Rayleigh warranty veteran.
+
+2428
+01:18:04,000 --> 01:18:06,000
+Rayleigh warranty veteran.
+
+2429
+01:18:06,000 --> 01:18:08,000
+Rayleigh warranty veteran.
+
+2430
+01:18:08,000 --> 01:18:10,000
+Rayleigh warranty veteran.
+
+2431
+01:18:10,000 --> 01:18:12,000
+Rayleigh warranty veteran.
+
+2432
+01:18:12,000 --> 01:18:14,000
+Rayleigh warranty veteran.
+
+2433
+01:18:14,000 --> 01:18:16,000
+Rayleigh warranty veteran.
+
+2434
+01:18:16,000 --> 01:18:18,000
+Rayleigh warranty veteran.
+
+2435
+01:18:18,000 --> 01:18:20,000
+Rayleigh warranty veteran.
+
+2436
+01:18:20,000 --> 01:18:22,000
+Rayleigh warranty veteran.
+
+2437
+01:18:22,000 --> 01:18:24,000
+Rayleigh warranty veteran.
+
+2438
+01:18:24,000 --> 01:18:50,000
+Rayleigh warranty veteran.
+
+2439
+01:18:54,000 --> 01:19:00,000
+Hello, is there anyone who has any questions?
+
+2440
+01:19:00,000 --> 01:19:10,000
+Okay, let's give one last round of applause to Rayleigh.
+
+2441
+01:19:10,000 --> 01:19:20,000
+Okay, I'll end the recording now.
+

@@ -1,0 +1,3182 @@
+WEBVTT
+
+00:00.000 --> 00:07.000
+Hello, everyone. Good evening. Welcome to today's Tower Talk.
+
+00:07.000 --> 00:12.000
+Today, we are very honored to have our speaker, Lucas Peng,
+
+00:12.000 --> 00:17.000
+to talk to us about this. Basically, he just graduated from his doctorate thesis.
+
+00:17.000 --> 00:21.000
+Clocked atom delivery to a photonic crystal waveguide.
+
+00:21.000 --> 00:25.000
+And then there's the simulation part, and then there's the experimental part.
+
+00:25.000 --> 00:31.000
+And then he used to be in the Kimball Group at the California Institute of Technology, doing quantum optics.
+
+00:31.000 --> 00:36.000
+So let me introduce the background of Lucas Peng.
+
+00:36.000 --> 00:45.000
+Wait a minute, I'll turn it off.
+
+00:45.000 --> 01:05.000
+Lucas Peng's doctoral research is mainly focused on the quantum simulation platform by trapping atoms close to the surface of photonic crystal waveguide.
+
+01:05.000 --> 01:11.000
+And then after he got his doctorate, he went to a company in North Carolina called AO Sensing,
+
+01:11.000 --> 01:15.000
+which is currently developing quantum sensing technology.
+
+01:15.000 --> 01:18.000
+Lucas Peng is actually a senior at the California Institute of Technology.
+
+01:18.000 --> 01:21.000
+He was originally a biophysicist at the University of Taiwan.
+
+01:21.000 --> 01:25.000
+And then after graduation, he went to Caltech and got his doctorate.
+
+01:25.000 --> 01:28.000
+And now he's in North Carolina.
+
+01:28.000 --> 01:30.000
+He's going to talk to us about the topic I just talked about.
+
+01:31.000 --> 01:34.000
+If you want to applaud, you have to turn on the microphone.
+
+01:34.000 --> 01:36.000
+Otherwise, our speakers won't be able to hear you.
+
+01:36.000 --> 01:40.000
+So let's applaud and welcome Lucas Peng to give us today's speech.
+
+01:40.000 --> 01:44.000
+Thank you.
+
+01:44.000 --> 01:46.000
+Okay, you can start.
+
+01:46.000 --> 01:50.000
+Thank you, Mr. Zhang, for giving me the opportunity to share my research.
+
+01:50.000 --> 01:55.000
+If you have any questions during my presentation, please feel free to interrupt me at any time.
+
+01:56.000 --> 02:00.000
+The topic I'm going to talk about today is my Ph.D. research.
+
+02:00.000 --> 02:07.000
+It's mainly about how to put color atoms near the photonic crystal waveguide.
+
+02:07.000 --> 02:14.000
+The main purpose is that if you can successfully capture the atoms near the photonic crystal waveguide,
+
+02:14.000 --> 02:17.000
+you can use it as a quantum simulation platform.
+
+02:18.000 --> 02:24.000
+First, I'm going to talk about our experimental system.
+
+02:24.000 --> 02:29.000
+This is the transparent photonic crystal waveguide.
+
+02:29.000 --> 02:35.000
+The atoms are trapped in the gap between the two waveguides.
+
+02:35.000 --> 02:39.000
+So let me first explain why this system is different from other systems,
+
+02:39.000 --> 02:43.000
+such as nanofiber or cavity QED.
+
+02:43.000 --> 02:46.000
+What's the difference? What's the advantage?
+
+02:46.000 --> 02:50.000
+And of course, what challenges will it bring?
+
+02:50.000 --> 02:56.000
+Next, I'm going to introduce a simulation program I developed.
+
+02:56.000 --> 03:03.000
+It simulates how atoms move near the photonic crystal waveguide.
+
+03:03.000 --> 03:09.000
+And it calculates a 2D spectrum using these simulations.
+
+03:09.000 --> 03:14.000
+After getting this spectrum, we can understand the behavior of atoms near the waveguide.
+
+03:14.000 --> 03:20.000
+Finally, it will show some experiment results and compare them with the simulation results.
+
+03:20.000 --> 03:25.000
+Then we can see what conclusions we can get from it.
+
+03:25.000 --> 03:33.000
+First of all, the purpose of this research is to achieve a very strong interaction between light and atoms.
+
+03:33.000 --> 03:35.000
+Why is this important?
+
+03:35.000 --> 03:42.000
+In the study of quantum technology, such as quantum mechanics or quantum information,
+
+03:42.000 --> 03:46.000
+we usually use light to transmit quantum information.
+
+03:46.000 --> 03:52.000
+When the quantum information is transmitted, we hope it will be transferred to another system.
+
+03:52.000 --> 03:55.000
+Because these systems have a longer lifetime,
+
+03:55.000 --> 04:00.000
+the quantum information can be kept longer to do more processing.
+
+04:00.000 --> 04:09.000
+In the field of ML, one of the research directions is to transfer quantum information from light to atoms.
+
+04:09.000 --> 04:13.000
+To do this, we need a very strong interaction between light and atoms.
+
+04:13.000 --> 04:19.000
+Of course, the simplest way is to focus light on a very small area,
+
+04:19.000 --> 04:21.000
+which is about a wavelength.
+
+04:21.000 --> 04:26.000
+Then put an atom in the focal length to interact with light and atoms.
+
+04:26.000 --> 04:35.000
+The limitation of this method is that the area of light is ultimately limited by the wavelength.
+
+04:35.000 --> 04:41.000
+In this way, the probability of interaction between light and atoms is very low.
+
+04:41.000 --> 04:44.000
+How to make this probability higher?
+
+04:44.000 --> 04:48.000
+One way is to put the atom in a cavity.
+
+04:48.000 --> 04:52.000
+You can imagine that the light is reflected in the cavity.
+
+04:52.000 --> 04:56.000
+Every time the light passes through the atom, it will have one more chance to interact with the atom.
+
+04:56.000 --> 05:01.000
+In this way, the probability of interaction between light and atoms can be greatly increased.
+
+05:01.000 --> 05:11.000
+In addition to using a cavity, you can also use a resonator structure like this microtoray.
+
+05:11.000 --> 05:13.000
+In fact, it is a bit like a cavity.
+
+05:13.000 --> 05:15.000
+The light will keep circling in this circle.
+
+05:15.000 --> 05:19.000
+Every time the light passes through the atom, it will have one more chance to interact with the atom.
+
+05:20.000 --> 05:23.000
+Another way is to increase the number of atoms.
+
+05:23.000 --> 05:25.000
+For example, the Rieper atom.
+
+05:25.000 --> 05:28.000
+As long as one of the atoms interacts with the light,
+
+05:28.000 --> 05:35.000
+it will move to a high quantum number state.
+
+05:35.000 --> 05:39.000
+In this way, it can block other atoms and continue to interact with the light.
+
+05:39.000 --> 05:46.000
+So it seems that one atom can be equivalent to a huge atom.
+
+05:47.000 --> 05:54.000
+What I just said is that the light is reflected back and forth in the cavity.
+
+05:54.000 --> 06:01.000
+Another way is to imagine that the cavity changes the density of light.
+
+06:01.000 --> 06:04.000
+So the atoms can have more states to interact with.
+
+06:04.000 --> 06:08.000
+This is another way to look at it.
+
+06:09.000 --> 06:15.000
+In addition to the cavity QED, there is another system called waveguide QED.
+
+06:15.000 --> 06:23.000
+The waveguide QED is a model that can be seen as a very thin fiber and an atom.
+
+06:23.000 --> 06:26.000
+When the light moves in this fiber,
+
+06:26.000 --> 06:30.000
+you can imagine that it has an input capacitor,
+
+06:30.000 --> 06:38.000
+a transmittance and a reflection capacitor.
+
+06:38.000 --> 06:48.000
+You can calculate the reflection formula of this system.
+
+06:48.000 --> 06:50.000
+The most important number in it is gamma1d.
+
+06:50.000 --> 07:00.000
+Gamma1d is the probability that the light will move to the fiber after the atom decays.
+
+07:00.000 --> 07:04.000
+Because we want a very strong interaction between light and atoms,
+
+07:04.000 --> 07:06.000
+the higher the probability, the better.
+
+07:06.000 --> 07:14.000
+Gamma' is the probability that the light decays to other unnecessary states in space.
+
+07:15.000 --> 07:23.000
+The research of strong atom-photon coupling is to make gamma1d higher and better.
+
+07:23.000 --> 07:25.000
+How to make it higher?
+
+07:25.000 --> 07:28.000
+There are several ways to do it.
+
+07:28.000 --> 07:32.000
+One way is to reduce the molar area.
+
+07:32.000 --> 07:37.000
+The smaller the area, the higher the probability of interaction between light and atoms.
+
+07:37.000 --> 07:42.000
+Another way is to reduce the proof velocity.
+
+07:42.000 --> 07:46.000
+Proof velocity means that the slower the light moves in the fiber,
+
+07:46.000 --> 07:49.000
+the more chance it has to interact with the atoms.
+
+07:54.000 --> 07:58.000
+An important figure of merit is gamma1d to gamma'.
+
+07:58.000 --> 08:02.000
+The light decays to the state you want,
+
+08:02.000 --> 08:04.000
+which is the state in the fiber.
+
+08:04.000 --> 08:09.000
+The light decays to the state you want, which is the state in the fiber.
+
+08:13.000 --> 08:17.000
+The system we made in the lab is a finite crystal waveguide.
+
+08:17.000 --> 08:20.000
+What is the difference between a finite crystal waveguide and a normal light fiber?
+
+08:20.000 --> 08:29.000
+The point is that the distance from the light fiber to the atom is limited by the wavelength.
+
+08:29.000 --> 08:36.000
+The ratio of gamma1d to gamma' is about 4% in the current experiment.
+
+08:36.000 --> 08:43.000
+90% of the light does not interact with the atom, but only passes through the atom.
+
+08:43.000 --> 08:49.000
+In theory, if the light can be captured very close to the finite crystal waveguide,
+
+08:49.000 --> 08:53.000
+gamma1d over gamma' can be increased to about 20.
+
+08:53.000 --> 09:01.000
+In this way, only 0.2% of the light will interact with the atom.
+
+09:03.000 --> 09:08.000
+Why is gamma1d over gamma' so high?
+
+09:08.000 --> 09:15.000
+The reason is that the finite crystal waveguide allows you to control the group velocity.
+
+09:15.000 --> 09:19.000
+For example, if the light is very close to the finite crystal band edge,
+
+09:19.000 --> 09:21.000
+the group velocity becomes very low.
+
+09:21.000 --> 09:28.000
+For example, in our system, the group velocity can only be 1 tenth of the light.
+
+09:28.000 --> 09:34.000
+Another reason is that the finite crystal waveguide can be made into a variety of shapes.
+
+09:34.000 --> 09:39.000
+You can design this shape to limit the light in a very small range.
+
+09:39.000 --> 09:45.000
+For example, the system we use allows the light to be concentrated in the middle gap.
+
+09:46.000 --> 09:51.000
+This allows the light to be limited to a smaller area than the wavelength.
+
+09:51.000 --> 09:54.000
+This can greatly improve the interaction between light and atoms.
+
+09:57.000 --> 10:02.000
+In this system, light is an atom, and it can reflect almost all light.
+
+10:02.000 --> 10:05.000
+You can imagine it as a quantum mirror.
+
+10:06.000 --> 10:13.000
+Waveguide QED, in addition to the finite crystal waveguide called Alligator,
+
+10:13.000 --> 10:15.000
+also has a variety of applications.
+
+10:15.000 --> 10:19.000
+For example, you can extend the heat of the light,
+
+10:19.000 --> 10:23.000
+and it will become a very thin light, the nano fiber.
+
+10:23.000 --> 10:27.000
+You can also put some trees in it.
+
+10:27.000 --> 10:31.000
+It will form some traps in the environment.
+
+10:31.000 --> 10:36.000
+This will capture the atoms around the light.
+
+10:36.000 --> 10:41.000
+Another system, like Huffle's Looking Group,
+
+10:41.000 --> 10:44.000
+is also a finite crystal waveguide.
+
+10:44.000 --> 10:48.000
+They use an optical tweezer to hold the atom,
+
+10:48.000 --> 10:52.000
+and drag it near the finite crystal waveguide.
+
+10:52.000 --> 10:57.000
+This allows it to interact with the guided mode in the finite crystal waveguide.
+
+10:58.000 --> 11:02.000
+At Purdue University, they also have a system
+
+11:02.000 --> 11:07.000
+that uses an optical tweezer to capture the atoms
+
+11:07.000 --> 11:13.000
+near the finite crystal waveguide.
+
+11:17.000 --> 11:21.000
+Another special feature of the finite crystal waveguide is...
+
+11:21.000 --> 11:23.000
+One more question.
+
+11:23.000 --> 11:25.000
+This is a general question.
+
+11:25.000 --> 11:28.000
+What kind of material do you use for structures like this?
+
+11:28.000 --> 11:35.000
+It depends on what kind of waveguide you want to transmit the light.
+
+11:35.000 --> 11:39.000
+You want it to be as transparent as possible.
+
+11:39.000 --> 11:45.000
+For example, the CZM waveguide we use is 890nm.
+
+11:45.000 --> 11:48.000
+We use Zirconitride.
+
+11:54.000 --> 11:56.000
+Got it. Thank you.
+
+11:56.000 --> 12:02.000
+So you can choose the material you want based on the wavelength you want.
+
+12:02.000 --> 12:05.000
+For example, we often use Telecom Waveband.
+
+12:05.000 --> 12:09.000
+You can also use materials like Silica.
+
+12:12.000 --> 12:14.000
+A special feature of the waveguide
+
+12:14.000 --> 12:16.000
+is that you can design your waveguide
+
+12:16.000 --> 12:22.000
+to have different wavelengths in different frequencies.
+
+12:22.000 --> 12:25.000
+For example, this is a bandstructure graph.
+
+12:25.000 --> 12:28.000
+The horizontal axis is the wave number,
+
+12:28.000 --> 12:31.000
+and the vertical axis is the frequency.
+
+12:31.000 --> 12:33.000
+You can see that at this frequency...
+
+12:33.000 --> 12:36.000
+For example, at a certain frequency, the light can't fall inside.
+
+12:36.000 --> 12:39.000
+This is a concept called bandgap.
+
+12:39.000 --> 12:43.000
+At the edge of the bandgap,
+
+12:43.000 --> 12:47.000
+you can see that the dΩdk is equal to 0.
+
+12:47.000 --> 12:50.000
+This means that the group velocity is very small.
+
+12:50.000 --> 12:54.000
+So in this case, the density of states is very high.
+
+12:54.000 --> 12:58.000
+So if the frequency of the original wave is around here,
+
+12:58.000 --> 13:02.000
+you can imagine that it can interact with many states.
+
+13:02.000 --> 13:05.000
+This can greatly increase the probability of decaying to the state.
+
+13:05.000 --> 13:10.000
+So we usually design the FWG to have a bandgap
+
+13:10.000 --> 13:12.000
+that is very close to the original wavelength.
+
+13:13.000 --> 13:19.000
+So you can imagine that the dΩdk can be outside the bandgap,
+
+13:19.000 --> 13:21.000
+or inside the bandgap.
+
+13:21.000 --> 13:24.000
+The first case is that when the dΩdk is outside the bandgap,
+
+13:24.000 --> 13:28.000
+you can see that this frequency can be transmitted in the waveguide.
+
+13:28.000 --> 13:32.000
+For example, when the original wave goes from GF to GF,
+
+13:32.000 --> 13:33.000
+it emits a light.
+
+13:33.000 --> 13:37.000
+This light is at the frequency that can be transmitted,
+
+13:37.000 --> 13:39.000
+so it will move on the waveguide.
+
+13:39.000 --> 13:44.000
+So you can imagine that the interaction between the atoms on the waveguide is as strong.
+
+13:44.000 --> 13:46.000
+This is a region.
+
+13:46.000 --> 13:51.000
+Another region is that if you put the frequency of the atom's wavelength into the bandgap,
+
+13:51.000 --> 13:55.000
+because the light of this frequency cannot be transmitted inside the waveguide,
+
+13:55.000 --> 14:01.000
+it will form an exponential decay light cloud near the atom.
+
+14:01.000 --> 14:03.000
+So it's more interesting at this time.
+
+14:03.000 --> 14:07.000
+The farther the atoms are, the lower their interaction.
+
+14:07.000 --> 14:10.000
+The closer the atoms are, the longer the interaction.
+
+14:10.000 --> 14:15.000
+So you can imagine that this can have some local interaction.
+
+14:15.000 --> 14:20.000
+Next, I will explain how to control the two atoms in this region
+
+14:20.000 --> 14:22.000
+to produce a convenient interaction.
+
+14:22.000 --> 14:25.000
+So in theory, as long as you have a one-dimensional system,
+
+14:25.000 --> 14:30.000
+you can let the atoms produce a Hamiltonian that can be engineered conveniently.
+
+14:30.000 --> 14:35.000
+Let's start with a simple example outside the waveguide.
+
+14:38.000 --> 14:44.000
+This is an experiment we did in our lab in 2015.
+
+14:44.000 --> 14:53.000
+The way to do this experiment is to use a laser beam to shine on the waveguide.
+
+14:53.000 --> 14:56.000
+It will form such an interference pattern.
+
+14:56.000 --> 15:02.000
+You can see that the interference pattern has some intensity maxima here and here.
+
+15:02.000 --> 15:04.000
+We call it Z1, Z2.
+
+15:04.000 --> 15:10.000
+If the laser frequency is slightly lower than the intensity of the atom,
+
+15:10.000 --> 15:14.000
+it will attract the atoms to the intensity maxima.
+
+15:14.000 --> 15:21.000
+By this way, we will catch some atoms near the front crystal waveguide.
+
+15:21.000 --> 15:27.000
+This place is above the waveguide, so it's not in the middle of the waveguide.
+
+15:27.000 --> 15:30.000
+So in this place, γ1d over γ' is about 2.
+
+15:30.000 --> 15:41.000
+This means that when it decays, the probability of it decaying to the waveguide is 2 times higher than the probability of it decaying to the vacuum.
+
+15:41.000 --> 15:51.000
+What's interesting about this is that if the atoms are periodically caught on the front crystal waveguide,
+
+15:51.000 --> 16:01.000
+if the interference between them is the wavelength of the vacuum,
+
+16:01.000 --> 16:10.000
+an atom can interact with the entire collective state of the atom.
+
+16:10.000 --> 16:15.000
+In this way, the interaction will enhance the number of atoms.
+
+16:15.000 --> 16:21.000
+For example, if you have nA atoms, the interaction between them will increase nA times.
+
+16:21.000 --> 16:25.000
+But the number of atoms decays to free space is the same.
+
+16:25.000 --> 16:30.000
+So the more atoms you have, the more likely it is to decay to the waveguide.
+
+16:30.000 --> 16:33.000
+This is a phenomenon similar to superradiance.
+
+16:33.000 --> 16:42.000
+In this experiment, the number of atoms is used to control how long you have been caught.
+
+16:42.000 --> 16:46.000
+The longer you have been caught, the more likely the atom will escape your trap.
+
+16:46.000 --> 16:52.000
+So here you can see that when the atom is caught, the decay speed is very fast.
+
+16:52.000 --> 16:55.000
+When you let it go for a long time, the decay speed drops.
+
+16:55.000 --> 17:05.000
+We can see that when the number of atoms increases, the interaction between it and the state of the waveguide increases.
+
+17:05.000 --> 17:14.000
+You can do the same experiment in the same way.
+
+17:14.000 --> 17:20.000
+But this time we can adjust the bandage of the waveguide to the outside of the atom.
+
+17:20.000 --> 17:23.000
+Although the wavelength frequency of the atom is inside the bandgap.
+
+17:23.000 --> 17:28.000
+At this time, you can see that there are two traces here.
+
+17:28.000 --> 17:39.000
+The green trace describes the intensity of the photon decay to the waveguide.
+
+17:39.000 --> 17:44.000
+The blue trace measures how long the interaction between the atoms is.
+
+17:44.000 --> 17:51.000
+The intensity of this interaction can be determined by the symmetry of the measured spectrum.
+
+17:51.000 --> 17:54.000
+If the interaction is stronger, the spectrum will not be symmetrical.
+
+17:54.000 --> 17:58.000
+So you can measure how strong the interaction between the atoms is.
+
+17:58.000 --> 18:03.000
+You can see that when the wavelength frequency of the atom enters the bandgap,
+
+18:03.000 --> 18:09.000
+The photon does not decay to the waveguide.
+
+18:09.000 --> 18:17.000
+But the interaction between the atoms is still greater than the probability of the photon decaying to the waveguide.
+
+18:17.000 --> 18:32.000
+This means that in the bandgap region, the photon is still a potential decay cloud.
+
+18:32.000 --> 18:45.000
+Next, if you can put the atoms in the waveguide and form a string,
+
+18:45.000 --> 18:53.000
+You can add a magnetic field to make each atom's Zeeman state different.
+
+18:53.000 --> 19:00.000
+For example, you can use an extra laser beam to add a sideband.
+
+19:00.000 --> 19:07.000
+The sideband can match the difference in the frequency of the Zeeman state between the atoms.
+
+19:07.000 --> 19:11.000
+Then you can engineer the interaction between two random atoms.
+
+19:11.000 --> 19:16.000
+For example, the system here has a one-dimensional atom array.
+
+19:16.000 --> 19:18.000
+There are interactions between the two arrays.
+
+19:18.000 --> 19:22.000
+The interaction between the rightmost and the leftmost sideband can be simulated.
+
+19:22.000 --> 19:28.000
+It is a circular system.
+
+19:36.000 --> 19:39.000
+Excuse me, can I go back to the page?
+
+19:39.000 --> 19:41.000
+I don't quite understand.
+
+19:41.000 --> 19:42.000
+Wait a minute, I don't quite understand.
+
+19:42.000 --> 19:44.000
+You said two interactions.
+
+19:44.000 --> 19:46.000
+Why does it become a circle?
+
+19:46.000 --> 19:49.000
+It doesn't overlap the last two interactions.
+
+19:49.000 --> 19:55.000
+For example, when you want to make two atoms interact,
+
+19:55.000 --> 19:57.000
+You have to let...
+
+19:57.000 --> 19:58.000
+Take a look at this state first.
+
+19:58.000 --> 20:01.000
+There are three states in this atom.
+
+20:01.000 --> 20:04.000
+There are two ground states and one excited state.
+
+20:04.000 --> 20:07.000
+No, I know what's up there.
+
+20:07.000 --> 20:09.000
+Oh, no, it's okay, I saw it.
+
+20:09.000 --> 20:10.000
+Because my idea is,
+
+20:10.000 --> 20:12.000
+Don't you all interact with the neighbors?
+
+20:12.000 --> 20:15.000
+How did it become a periodic boundary condition?
+
+20:15.000 --> 20:16.000
+That's how it becomes a circle.
+
+20:16.000 --> 20:17.000
+You're right.
+
+20:17.000 --> 20:19.000
+The beginning and the end also interact.
+
+20:19.000 --> 20:23.000
+Yes, but it doesn't necessarily only interact with the neighbors.
+
+20:23.000 --> 20:24.000
+Does it interact?
+
+20:24.000 --> 20:27.000
+It depends on the frequency of your guiding mode.
+
+20:27.000 --> 20:33.000
+Does it resonate with the frequency of your other state?
+
+20:33.000 --> 20:37.000
+You can imagine that you can add a magnetic field.
+
+20:37.000 --> 20:39.000
+It's a gradient magnetic field.
+
+20:39.000 --> 20:43.000
+Let every atom's Zeeman state have a slightly different frequency.
+
+20:46.000 --> 20:48.000
+So basically, you can just pick it up.
+
+20:48.000 --> 20:49.000
+You don't have to...
+
+20:49.000 --> 20:54.000
+You can use an extra laser frequency to pick up the two atoms.
+
+20:54.000 --> 20:57.000
+Oh, okay, okay, I see.
+
+20:57.000 --> 20:59.000
+Hello, can I ask a question?
+
+20:59.000 --> 21:04.000
+Is this similar to gradient echo memory?
+
+21:04.000 --> 21:11.000
+It's a bit like spin echo.
+
+21:11.000 --> 21:17.000
+Gn, gradient echo memory, is a magnetic field that slowly increases.
+
+21:17.000 --> 21:23.000
+Then every connection will have a slightly different splitting.
+
+21:23.000 --> 21:26.000
+Yes, it's a bit like this.
+
+21:26.000 --> 21:28.000
+Is there a difference between the two?
+
+21:28.000 --> 21:33.000
+Who has the advantage?
+
+21:33.000 --> 21:36.000
+I should say...
+
+21:36.000 --> 21:41.000
+I just said that using a strong magnetic field to create a difference.
+
+21:41.000 --> 21:43.000
+But you don't have to use a magnetic field.
+
+21:43.000 --> 21:49.000
+You can use the AC source shape to let each state have a different frequency.
+
+21:49.000 --> 21:53.000
+In this case, you don't necessarily need a gradient.
+
+21:53.000 --> 22:04.000
+You can have a laser for each atom to generate different shapes.
+
+22:05.000 --> 22:07.000
+Okay, thank you.
+
+22:12.000 --> 22:18.000
+Next, I will introduce the Delegator Functional Crystal Waveguide we use.
+
+22:18.000 --> 22:26.000
+This is what the whole system looks like.
+
+22:26.000 --> 22:33.000
+First of all, the whole system is hanging on the window in the middle of the chip.
+
+22:33.000 --> 22:38.000
+The way we interact with the waveguide is mainly through the light.
+
+22:38.000 --> 22:41.000
+The light is stuck to the chip.
+
+22:41.000 --> 22:45.000
+Then it can be coupled with the waveguide.
+
+22:45.000 --> 22:49.000
+You can see that there are many other structures on the waveguide.
+
+22:49.000 --> 22:52.000
+For example, there is a coupler here.
+
+22:52.000 --> 22:55.000
+Then there are some mechanical structures here.
+
+22:55.000 --> 23:03.000
+The purpose of the coupler is to pull the device so that the two beams in the middle do not stick together.
+
+23:03.000 --> 23:16.000
+So this angle is optimized so that the center of the waveguide can maintain the gap.
+
+23:16.000 --> 23:23.000
+In addition, these structures are responsible for the heat generated by the laser.
+
+23:25.000 --> 23:30.000
+You will find that even if you only input a few microwave lasers,
+
+23:30.000 --> 23:37.000
+Because the whole structure is very small, it will become very hot.
+
+23:37.000 --> 23:44.000
+This is a device, SEM.
+
+23:44.000 --> 23:48.000
+But you don't do active cooling, do you?
+
+23:48.000 --> 23:52.000
+You just do it in the light.
+
+23:52.000 --> 23:56.000
+In fact, we still have to heat it up.
+
+23:56.000 --> 23:59.000
+Because we can't cool it down.
+
+23:59.000 --> 24:03.000
+So sometimes you adjust the frequency to heat it up.
+
+24:03.000 --> 24:10.000
+After heating it up, you can change its bandage.
+
+24:10.000 --> 24:16.000
+So you don't just do it, but you don't want active cooling.
+
+24:16.000 --> 24:23.000
+It's not that you can't do it, but we don't do active cooling.
+
+24:23.000 --> 24:26.000
+And there's a bad thing about being too cold.
+
+24:26.000 --> 24:29.000
+If you're cold, your laser will stick to it.
+
+24:29.000 --> 24:34.000
+So sometimes you want it to get hotter and hotter.
+
+24:34.000 --> 24:36.000
+Excuse me.
+
+24:36.000 --> 24:37.000
+Thank you.
+
+24:37.000 --> 24:42.000
+You said your structure is about a few hundred nanometers.
+
+24:42.000 --> 24:45.000
+Then you said you need to use fiber.
+
+24:45.000 --> 24:47.000
+Is it because this structure is very small?
+
+24:47.000 --> 24:51.000
+You need to use evanescent wave to go in.
+
+24:51.000 --> 24:54.000
+With the effect of atoms.
+
+24:54.000 --> 24:55.000
+Yes.
+
+24:55.000 --> 24:59.000
+Because in the end you want to send the light to the waveguide.
+
+24:59.000 --> 25:04.000
+So the way we use it is to put...
+
+25:04.000 --> 25:05.000
+You can see it on this side.
+
+25:05.000 --> 25:10.000
+We stick the fiber to the chip.
+
+25:10.000 --> 25:12.000
+Align it with the waveguide.
+
+25:12.000 --> 25:14.000
+I was surprised at first.
+
+25:14.000 --> 25:16.000
+You think the fiber is big.
+
+25:16.000 --> 25:19.000
+The waveguide is only a few hundred nanometers.
+
+25:19.000 --> 25:21.000
+You think its mode doesn't match.
+
+25:21.000 --> 25:23.000
+But if you calculate the waveguide's mode.
+
+25:23.000 --> 25:27.000
+You find that the fiber's mode matches 90%.
+
+25:28.000 --> 25:37.000
+In fact, about 50% of the light can be sent to the waveguide.
+
+25:37.000 --> 25:45.000
+Is the light coming from the evanescent wave?
+
+25:45.000 --> 25:50.000
+Or is it a normal wave transmitted?
+
+25:50.000 --> 25:53.000
+Because it's single-mode fiber.
+
+25:53.000 --> 26:00.000
+It's like a mode built in fiber.
+
+26:00.000 --> 26:04.000
+It just came out and it's directly on the waveguide's mode.
+
+26:04.000 --> 26:08.000
+So as long as its mode is matched, it can continue to pass through the waveguide.
+
+26:08.000 --> 26:11.000
+It's not an evanescent wave.
+
+26:11.000 --> 26:13.000
+But it's not a Gaussian beam.
+
+26:13.000 --> 26:17.000
+It's a single-mode fiber in the waveguide.
+
+26:18.000 --> 26:25.000
+The mode depends on the gradient of the evanescent wave.
+
+26:31.000 --> 26:33.000
+This is an experiment photo.
+
+26:33.000 --> 26:36.000
+We stick the light on the chip.
+
+26:36.000 --> 26:41.000
+Mount it on a viewport.
+
+26:41.000 --> 26:46.000
+Then install the viewport into the vacuum chamber.
+
+26:48.000 --> 26:55.000
+Let me briefly explain the CZM's energy level.
+
+26:55.000 --> 27:04.000
+The CZM's fine structure uses 6S and 6P states.
+
+27:04.000 --> 27:06.000
+6S is the ground state.
+
+27:06.000 --> 27:08.000
+6P is the fine structure.
+
+27:08.000 --> 27:12.000
+Because of the spin-orbit coupling, there are two different connections.
+
+27:12.000 --> 27:15.000
+If you consider the hyperfine structure,
+
+27:15.000 --> 27:20.000
+it's because of the nuclear spin and the electron spin.
+
+27:20.000 --> 27:25.000
+The ground state is subdivided into Fn3 and Fn4.
+
+27:25.000 --> 27:33.000
+The 6P state can also be divided into two connections.
+
+27:33.000 --> 27:36.000
+The upper one is divided into four connections.
+
+27:37.000 --> 27:45.000
+The lower frequency is called D1.
+
+27:45.000 --> 27:48.000
+The higher frequency is called D2.
+
+27:52.000 --> 27:57.000
+The design of the finite crystal waveguide allows D1 to correspond to a band edge.
+
+27:57.000 --> 27:59.000
+D2 corresponds to another band edge.
+
+27:59.000 --> 28:02.000
+You can imagine a simple idea.
+
+28:03.000 --> 28:10.000
+You use a band edge frequency, D1, to capture the atom.
+
+28:10.000 --> 28:14.000
+You use another frequency, D2, to trap the atom.
+
+28:14.000 --> 28:20.000
+For example, if you put D2's laser into the waveguide,
+
+28:20.000 --> 28:22.000
+and make it slightly blue detuned,
+
+28:22.000 --> 28:27.000
+the atom will be pushed to the intensity minima.
+
+28:27.000 --> 28:31.000
+The atom will be trapped to the thickest point.
+
+28:31.000 --> 28:35.000
+You can use another band edge frequency, D1, to probe the atom.
+
+28:35.000 --> 28:37.000
+Because D1 is another band edge,
+
+28:37.000 --> 28:40.000
+the intensity will be stronger at the thickest point.
+
+28:40.000 --> 28:44.000
+In this case, you can use one frequency to capture,
+
+28:44.000 --> 28:47.000
+and another frequency to detect the atom.
+
+28:47.000 --> 28:52.000
+Of course, this is a simplified model.
+
+28:52.000 --> 28:57.000
+There will be more details in the introduction.
+
+29:02.000 --> 29:08.000
+The main purpose of our experiment is to capture the atom in the finite crystal gap.
+
+29:08.000 --> 29:11.000
+And we hope that each size can capture an atom.
+
+29:11.000 --> 29:14.000
+If you can do this,
+
+29:14.000 --> 29:18.000
+you can think about promoting it to more complex systems,
+
+29:18.000 --> 29:21.000
+such as binary finite crystal.
+
+29:22.000 --> 29:30.000
+Here is a brief description of the basic atom cooling and capturing techniques used in the experiment.
+
+29:30.000 --> 29:35.000
+The methods used are MOP,
+
+29:35.000 --> 29:38.000
+Dipole Trap,
+
+29:38.000 --> 29:40.000
+Optical Lattice,
+
+29:40.000 --> 29:44.000
+and a cooling technique called Degenerate Raman Side-In Cooling.
+
+29:44.000 --> 29:50.000
+MOP is a method of surrounding the atom group.
+
+29:50.000 --> 29:52.000
+There are six lasers in total.
+
+29:52.000 --> 29:57.000
+You can imagine that it is like a Doppler cooling in every direction.
+
+29:57.000 --> 30:03.000
+The atom going down will be absorbed by the light
+
+30:03.000 --> 30:05.000
+and released from the inside,
+
+30:05.000 --> 30:07.000
+so it will get a momentum kick,
+
+30:07.000 --> 30:10.000
+and it will be cooled.
+
+30:10.000 --> 30:16.000
+The purpose of adding this magnetic field is to introduce a space-dependent shift
+
+30:16.000 --> 30:18.000
+to generate confinement.
+
+30:18.000 --> 30:21.000
+If you have confinement and cooling,
+
+30:21.000 --> 30:23.000
+you can make a MOP.
+
+30:27.000 --> 30:31.000
+Another concept is Optical Dipole Trap.
+
+30:31.000 --> 30:33.000
+As I just explained,
+
+30:33.000 --> 30:38.000
+if the frequency of the laser is slightly lower than the frequency of the atomic moon,
+
+30:38.000 --> 30:41.000
+it will produce a shift to your connection.
+
+30:41.000 --> 30:43.000
+In this case,
+
+30:43.000 --> 30:46.000
+the ground state will shift down,
+
+30:46.000 --> 30:48.000
+and the excited state will shift up.
+
+30:48.000 --> 30:50.000
+You can see that in the ground state atom,
+
+30:50.000 --> 30:54.000
+it will produce a space-dependent potential.
+
+30:54.000 --> 30:57.000
+At this time, the frequency of the atomic moon can also change.
+
+30:57.000 --> 31:04.000
+I will talk about how to help us understand where the atom is in space.
+
+31:04.000 --> 31:10.000
+For example, if the frequency of the laser is slightly lower than the frequency of the atomic moon,
+
+31:10.000 --> 31:18.000
+the atom will be sucked into the Intensity Maxima.
+
+31:18.000 --> 31:20.000
+If the light is Blue Detuned,
+
+31:20.000 --> 31:24.000
+the atom will be blown away by the Intensity Maxima.
+
+31:24.000 --> 31:27.000
+So if there is Intensity Minima in your potential,
+
+31:27.000 --> 31:29.000
+the atom will be gathered in that place.
+
+31:31.000 --> 31:33.000
+There are different configurations.
+
+31:33.000 --> 31:35.000
+The simplest is Gaussian Beam.
+
+31:35.000 --> 31:37.000
+It can produce a trap.
+
+31:37.000 --> 31:41.000
+In the lab, we use two lasers to form a standing wave.
+
+31:41.000 --> 31:45.000
+At this time, the atom can be captured in the standing wave.
+
+31:45.000 --> 31:47.000
+It looks like a lattice.
+
+31:47.000 --> 31:49.000
+This is called Optical Lattice.
+
+31:51.000 --> 31:54.000
+After the atom is caught in the Optical Lattice,
+
+31:54.000 --> 31:55.000
+we still need to cool it.
+
+31:55.000 --> 31:59.000
+The cooling method we use here is called Degenerate Raman Sibon Cooling.
+
+31:59.000 --> 32:01.000
+This is a very ingenious way.
+
+32:01.000 --> 32:04.000
+The way is that you can add a magnetic field
+
+32:04.000 --> 32:09.000
+to produce a little change in the connection between atoms in different MF states.
+
+32:09.000 --> 32:13.000
+If the difference in energy between each MF state
+
+32:13.000 --> 32:19.000
+is just equal to the energy of the H-bar omega
+
+32:19.000 --> 32:22.000
+that vibrates in your Optical Lattice,
+
+32:22.000 --> 32:28.000
+you can see that the vibrating state of under 1
+
+32:28.000 --> 32:32.000
+is the same energy as the under 0 state of the next MF state.
+
+32:32.000 --> 32:35.000
+At this time, you can use the Raman Transition method
+
+32:35.000 --> 32:40.000
+to transfer the atom from n equals 1 to the under 0 state
+
+32:40.000 --> 32:42.000
+and then pump it back.
+
+32:42.000 --> 32:44.000
+After this cycle,
+
+32:44.000 --> 32:47.000
+the atom can reduce the vibration frame.
+
+32:47.000 --> 32:49.000
+By repeating this process,
+
+32:49.000 --> 32:51.000
+in theory, you can cool the atom
+
+32:51.000 --> 32:55.000
+to the vibration state in your trap.
+
+32:55.000 --> 32:57.000
+By doing this,
+
+32:57.000 --> 33:01.000
+we can cool the atom in the Optical Lattice.
+
+33:05.000 --> 33:08.000
+Once the atom is trapped in the Optical Lattice,
+
+33:08.000 --> 33:12.000
+the way we experiment here is to move the Optical Lattice.
+
+33:12.000 --> 33:15.000
+As long as you change one of the laser frequencies,
+
+33:15.000 --> 33:18.000
+the entire interference pattern will start to move.
+
+33:18.000 --> 33:23.000
+We can use this method to let the atom pass through the Phonar Crystal Lake guy.
+
+33:24.000 --> 33:26.000
+The purpose is that
+
+33:26.000 --> 33:32.000
+each piece of the Optical Lattice's MF
+
+33:32.000 --> 33:33.000
+is called a pancake.
+
+33:33.000 --> 33:37.000
+For example, there are 500 atoms in it.
+
+33:37.000 --> 33:39.000
+Of these 500 atoms,
+
+33:39.000 --> 33:42.000
+only a small part will interact with the Phonar Crystal Lake guy.
+
+33:42.000 --> 33:45.000
+But in the experiment cycle,
+
+33:45.000 --> 33:50.000
+there are 2000 pancakes passing through the Phonar Crystal Lake guy.
+
+33:50.000 --> 33:52.000
+Through this method,
+
+33:52.000 --> 33:56.000
+we can try to let more atoms interact with the Phonar Crystal Lake guy.
+
+34:00.000 --> 34:06.000
+This is a simple picture of our experiment.
+
+34:06.000 --> 34:12.000
+First, we make a MOD of the atom in the Source Chamber.
+
+34:12.000 --> 34:17.000
+Then we use a laser to kick it into another MOD in the main chamber.
+
+34:17.000 --> 34:21.000
+Then we cool the atom in the MOD
+
+34:21.000 --> 34:23.000
+and trap it in the Optical Lattice.
+
+34:23.000 --> 34:27.000
+The Optical Lattice is a beam of two lasers.
+
+34:27.000 --> 34:31.000
+Once the atom is caught in the Optical Lattice,
+
+34:31.000 --> 34:33.000
+we change the frequency of one of the lasers
+
+34:33.000 --> 34:37.000
+and move the atom near the device.
+
+34:37.000 --> 34:40.000
+When the atom is near the device,
+
+34:40.000 --> 34:43.000
+we can put a few beams into the waveguide.
+
+34:43.000 --> 34:47.000
+One of the beams is a Probe Laser.
+
+34:47.000 --> 34:52.000
+This laser adjusts the frequency of D1 of the DZM.
+
+34:52.000 --> 34:58.000
+If the atom is near the Phonar Crystal Lake guy,
+
+34:58.000 --> 35:00.000
+it will absorb the light of the Probe.
+
+35:00.000 --> 35:07.000
+We can use the amount of Probe through the waveguide
+
+35:07.000 --> 35:12.000
+to measure how many atoms interact with the waveguide.
+
+35:12.000 --> 35:19.000
+We can also put various trapped potentials into the waveguide.
+
+35:19.000 --> 35:22.000
+Another important component is that
+
+35:22.000 --> 35:25.000
+when the Optical Lattice passes through the waveguide,
+
+35:25.000 --> 35:28.000
+some light will be emitted into the waveguide.
+
+35:28.000 --> 35:33.000
+We can also detect the light emitted by the Optical Lattice.
+
+35:33.000 --> 35:38.000
+Through this light, we can know which part of the Optical Lattice is passing through the waveguide.
+
+35:38.000 --> 35:41.000
+Is it passing through the waveguide at the peak?
+
+35:41.000 --> 35:44.000
+Or is it passing through the waveguide at the valley?
+
+35:44.000 --> 35:47.000
+Through this, we can have more data to understand
+
+35:47.000 --> 35:51.000
+how the atom moves near the Phonar Crystal Lake guy.
+
+35:56.000 --> 35:58.000
+This is an experimental result.
+
+35:58.000 --> 36:03.000
+We can see that the atom passes through the Phonar Crystal Lake guy at T20.
+
+36:03.000 --> 36:05.000
+The horizontal axis is the time,
+
+36:05.000 --> 36:08.000
+and the vertical axis is the frequency of the Probe Beam.
+
+36:08.000 --> 36:15.000
+We can turn the Probe Beam from negative 50 MHz to positive 50 MHz detuning.
+
+36:15.000 --> 36:18.000
+The atom passes through the waveguide at T20.
+
+36:22.000 --> 36:25.000
+This is the data from one of the photodials.
+
+36:25.000 --> 36:30.000
+The photodial specifically detects the light emitted by the Optical Lattice.
+
+36:30.000 --> 36:36.000
+When the atom passes through, it generates a periodic signal.
+
+36:36.000 --> 36:43.000
+The frequency of this signal depends on how fast the Optical Lattice passes through the Phonar Crystal Lake guy.
+
+36:43.000 --> 36:51.000
+For example, we are using a frequency of about 1.2 MHz to move the Optical Lattice.
+
+36:51.000 --> 36:55.000
+The signal is 1.2 MHz.
+
+36:56.000 --> 37:06.000
+Through this signal, we can know what time the atom is passing through the Phonar Crystal Lake guy.
+
+37:06.000 --> 37:10.000
+Note that the time scale here is microsecond.
+
+37:10.000 --> 37:14.000
+The time scale on the right is millisecond.
+
+37:14.000 --> 37:22.000
+So there are thousands of Optical Lattice pancakes passing through the Phonar Crystal Lake guy in these two Blobs.
+
+37:26.000 --> 37:37.000
+Do you know the number of atoms in each Blob?
+
+37:37.000 --> 37:43.000
+We can know how many atoms are near the Phonar Crystal Lake guy.
+
+37:43.000 --> 37:52.000
+At any time, there may be one or two atoms passing through the Phonar Crystal Lake guy.
+
+37:52.000 --> 38:02.000
+We estimate that each pancake will have one atom passing through the gap of the Phonar Crystal Lake guy.
+
+38:02.000 --> 38:07.000
+This is where we really want to catch the atoms.
+
+38:07.000 --> 38:13.000
+The reason why we use Optical Lattice is to get a cycle.
+
+38:13.000 --> 38:18.000
+For example, each pancake can catch one atom in the gap.
+
+38:18.000 --> 38:23.000
+If 100 pancakes pass through the gap, we can catch 100 atoms.
+
+38:23.000 --> 38:27.000
+The purpose of this experiment is to find a trapping cycle.
+
+38:27.000 --> 38:33.000
+So that each Optical Lattice cycle can catch one atom.
+
+38:33.000 --> 38:37.000
+Of course, we haven't reached this goal yet.
+
+38:37.000 --> 38:43.000
+But my PhD research is moving in this direction.
+
+38:44.000 --> 38:51.000
+We just saw that the setup of the experiment can produce such an experiment result.
+
+38:51.000 --> 38:55.000
+How do we interpret this experiment result?
+
+38:55.000 --> 39:05.000
+Through simulation, we can help us understand how these atomic trajectories correspond to the experimental results we get.
+
+39:06.000 --> 39:12.000
+This simulation is a Monte Carlo simulation.
+
+39:12.000 --> 39:16.000
+The atoms are scattered in the Optical Lattice.
+
+39:16.000 --> 39:20.000
+They are then formalized and moved to the vicinity of the Phonar Crystal Lake guy.
+
+39:20.000 --> 39:25.000
+According to the Optical Dipole Potential, each atom moves.
+
+39:25.000 --> 39:31.000
+Finally, we collect these trajectories and calculate the spectrum we should get.
+
+39:32.000 --> 39:36.000
+The concept of simulation is very complicated.
+
+39:36.000 --> 39:40.000
+But there are some challenges in practice.
+
+39:40.000 --> 39:45.000
+Because it is a periodic potential,
+
+39:45.000 --> 39:52.000
+you need to measure a large area for the atoms to formalize in this potential.
+
+39:52.000 --> 39:58.000
+For example, our simulation domain is a few tens of microns.
+
+39:58.000 --> 40:01.000
+But the Phonar Crystal is a very small device.
+
+40:01.000 --> 40:06.000
+Its size is a few hundred nanometers to a micron.
+
+40:06.000 --> 40:11.000
+So the whole experiment is very memory-intensive.
+
+40:11.000 --> 40:15.000
+So most of the time, it is optimized to use as little data as possible.
+
+40:15.000 --> 40:24.000
+The concept of simulation is to let the atoms simulate how they move from a faraway place to the vicinity of the Phonar Crystal Lake guy.
+
+40:25.000 --> 40:36.000
+Then simulate various Optical Dipole Force and Probing Beam Profile to calculate the spectrum you will get.
+
+40:36.000 --> 40:40.000
+You can also do 3D simulation.
+
+40:40.000 --> 40:44.000
+For example, this is a simulation result.
+
+40:44.000 --> 40:47.000
+You can see the lines here are the atomic trajectories.
+
+40:47.000 --> 40:54.000
+The atomic trajectories can be subdivided into different types of trajectories.
+
+40:54.000 --> 40:59.000
+For example, these green trajectories are the gaps in the Phonar Crystal Lake guy.
+
+40:59.000 --> 41:01.000
+These are the atoms we are most interested in.
+
+41:01.000 --> 41:05.000
+The other blue trajectories are the ones that go around the outside of the device.
+
+41:05.000 --> 41:08.000
+The red ones are the ones that hit the surface of the device.
+
+41:09.000 --> 41:17.000
+Next, we're going to use these trajectories to calculate a spectrum.
+
+41:17.000 --> 41:20.000
+How do you calculate the spectrum?
+
+41:20.000 --> 41:27.000
+You can distribute the atomic trajectories to the top of the Phonar Crystal Lake guy.
+
+41:27.000 --> 41:29.000
+For example, there are a few atoms here.
+
+41:29.000 --> 41:34.000
+You can use a matrix to represent each segment of the Phonar Crystal Lake guy.
+
+41:34.000 --> 41:38.000
+This matrix is called the transfer matrix.
+
+41:38.000 --> 41:40.000
+The Phonar Crystal Lake guy has its own transfer matrix.
+
+41:40.000 --> 41:42.000
+Each atom has its own transfer matrix.
+
+41:42.000 --> 41:48.000
+The transfer matrix of the atoms depends on the location of the atoms.
+
+41:48.000 --> 41:59.000
+We can see that the Gamma 1D is determined by the strength of the probe at that location.
+
+41:59.000 --> 42:05.000
+The distance between the atoms near the Phonar Crystal Lake guy determines the strength of the Gamma 1D.
+
+42:05.000 --> 42:08.000
+The transfer matrix of each atom is different.
+
+42:08.000 --> 42:13.000
+If we multiply all these matrices, we get the total transfer matrix.
+
+42:13.000 --> 42:19.000
+From there, we can get the transmission and reflection of the entire system.
+
+42:22.000 --> 42:26.000
+Next, let's see what the simulation results will be.
+
+42:26.000 --> 42:33.000
+I just explained how to get the atomic trajectories through simulation.
+
+42:33.000 --> 42:41.000
+Next, I will explain how to connect the results of our experiment through simulation.
+
+42:46.000 --> 42:49.000
+Here is a tool we use.
+
+42:49.000 --> 42:51.000
+We call it the Clock Spectrum.
+
+42:51.000 --> 42:52.000
+Why is it called Clock?
+
+42:52.000 --> 42:55.000
+Because our apical lattice sends the atoms near the device.
+
+42:55.000 --> 43:00.000
+The atoms are cyclically sent near the Phonar Crystal.
+
+43:00.000 --> 43:06.000
+For example, if your chirping frequency is 1MHz, each micron will have an atom passing through.
+
+43:06.000 --> 43:10.000
+Theoretically, you can get a cyclic signal.
+
+43:10.000 --> 43:16.000
+The cyclic signal depends on the frequency of the atoms coming to your device.
+
+43:17.000 --> 43:23.000
+For example, if we look at the light coming out of the probe and make it into a histogram,
+
+43:23.000 --> 43:31.000
+we can see that the frequency of the apical lattice is a cyclic signal.
+
+43:31.000 --> 43:38.000
+We can also detect the apical lattice signal through another photodiode.
+
+43:38.000 --> 43:48.000
+This gives us a clock so that we can know which part of the apical lattice is passing through our waveguide.
+
+43:48.000 --> 44:01.000
+If you fold the signals of each microsecond into an apical lattice period, you can get a histogram.
+
+44:02.000 --> 44:20.000
+The histogram tells you how many atoms are interacting with the device at different times in the apical lattice frequency.
+
+44:20.000 --> 44:27.000
+If you do this experiment for each detuning, you can get a two-dimensional spectrum.
+
+44:27.000 --> 44:38.000
+In this two-dimensional picture, the horizontal axis is the time, and the vertical axis is the probe detuning.
+
+44:38.000 --> 44:45.000
+This two-dimensional spectrum can convey some information about the atoms moving near the Phonar Crystal waveguide.
+
+44:45.000 --> 44:52.000
+The next step is to find out how to match the atomic trajectory to the two-dimensional spectrum.
+
+44:53.000 --> 44:57.000
+There are different modes for this experiment.
+
+44:57.000 --> 45:04.000
+As mentioned earlier, we let the bandage correspond to the transition of C-joint D1 and D2.
+
+45:04.000 --> 45:08.000
+Another mode is polarization.
+
+45:08.000 --> 45:15.000
+As mentioned earlier, the bandage corresponds to when the polarization is parallel to the waveguide.
+
+45:15.000 --> 45:19.000
+If it is perpendicular, there will be another bandgap.
+
+45:19.000 --> 45:23.000
+However, this bandgap is far from the frequency of C-joint D1 and D2.
+
+45:23.000 --> 45:32.000
+So for this proof, the frequency of C-joint D1 and D2 is like a normal waveguide.
+
+45:32.000 --> 45:35.000
+Here you can see TE mode.
+
+45:35.000 --> 45:38.000
+D1 and D2 are bandage modes.
+
+45:38.000 --> 45:44.000
+The frequency of D1 and D2 has a very obvious x-direction structure.
+
+45:44.000 --> 45:49.000
+For example, D2's intensity is concentrated in the thin part.
+
+45:49.000 --> 45:52.000
+D1's intensity is concentrated in the thick part.
+
+45:52.000 --> 45:58.000
+We mainly use these two modes to probe and capture the atoms.
+
+45:58.000 --> 46:05.000
+TE mode, you can see that it is almost uniform in the direction of the waveguide.
+
+46:05.000 --> 46:10.000
+TE mode, you can see that it is almost uniform in the direction of the waveguide.
+
+46:10.000 --> 46:15.000
+Because the frequency of C-joint D1 and D2 is far from the TEM bandgap,
+
+46:15.000 --> 46:20.000
+the frequency of C-joint D1 and D2 is like a normal waveguide.
+
+46:20.000 --> 46:25.000
+the frequency of C-joint D1 and D2 is like a normal waveguide.
+
+46:25.000 --> 46:32.000
+This mode is different in that its intensity is the strongest above and below the waveguide.
+
+46:32.000 --> 46:38.000
+So it has a very useful feature that can help us protect the surface of the device.
+
+46:38.000 --> 46:41.000
+If you let it be a blue-D-chain, it can bounce away the atoms near it,
+
+46:41.000 --> 46:44.000
+so that it won't stick to the surface of the device.
+
+46:44.000 --> 46:50.000
+At the same time, it can produce a large A-structure inside the gap and outside the gap,
+
+46:50.000 --> 46:54.000
+so that we can detect how many atoms pass through the gap.
+
+46:54.000 --> 46:58.000
+This is a detail.
+
+46:58.000 --> 47:02.000
+We just said that using a mode to do trapping is actually a simplification.
+
+47:02.000 --> 47:07.000
+We need to combine two modes to produce a stable trap on the three-dimensional surface.
+
+47:07.000 --> 47:12.000
+We need to combine two modes to produce a stable trap on the three-dimensional surface.
+
+47:12.000 --> 47:16.000
+There is another interesting challenge.
+
+47:16.000 --> 47:23.000
+We found that to produce a trap, the energy of two modes must have a ratio.
+
+47:23.000 --> 47:28.000
+If there is no ratio, the trap will not be a stable trap.
+
+47:28.000 --> 47:30.000
+But there is a problem.
+
+47:30.000 --> 47:35.000
+The intensity of different frequencies coupled to the waveguide is different.
+
+47:35.000 --> 47:40.000
+So we can't directly measure how much light is in the waveguide.
+
+47:40.000 --> 47:45.000
+So how do we know the intensity ratio of two modes?
+
+47:45.000 --> 47:49.000
+By combining the experiment results and simulation results,
+
+47:49.000 --> 47:54.000
+we can know how strong the light in the waveguide is.
+
+47:56.000 --> 47:59.000
+Another purpose of the experiment is to tell us the timing.
+
+47:59.000 --> 48:03.000
+Here is a way of trapping.
+
+48:03.000 --> 48:06.000
+When the atom enters the middle of the waveguide,
+
+48:06.000 --> 48:08.000
+for example, it is in the state f4.
+
+48:08.000 --> 48:12.000
+When the atom is in the middle, we pump it to the excited state at the right time.
+
+48:12.000 --> 48:15.000
+When the atom is in the middle, we pump it to the excited state at the right time.
+
+48:15.000 --> 48:20.000
+We can see that the atom is pumped from a light potential to a deep potential.
+
+48:20.000 --> 48:23.000
+At this time, the atom can be trapped.
+
+48:23.000 --> 48:26.000
+Otherwise, the atom will come in and go out again.
+
+48:26.000 --> 48:30.000
+Because this is a conservative potential.
+
+48:30.000 --> 48:38.000
+To get this result, we need to know the time of the atom passing the gap.
+
+48:38.000 --> 48:46.000
+The same simulation can tell us the time of the atom passing the gap.
+
+48:52.000 --> 48:53.000
+Let's look at this first.
+
+48:53.000 --> 48:55.000
+I have a question.
+
+48:55.000 --> 49:01.000
+Does your simulation include interference?
+
+49:01.000 --> 49:05.000
+For example, environmental, thermal, radiation, etc.
+
+49:06.000 --> 49:10.000
+Because I don't know what is the background interference of Dominant.
+
+49:10.000 --> 49:12.000
+Does it include?
+
+49:12.000 --> 49:19.000
+Thermal radiation, compared to other modes,
+
+49:19.000 --> 49:27.000
+For example, the strength of the output lattice is hundreds of milliwatts.
+
+49:27.000 --> 49:30.000
+The Guided Mode contains several microwatts.
+
+49:30.000 --> 49:34.000
+Their intensity is much greater than thermal radiation.
+
+49:34.000 --> 49:37.000
+So we don't need to consider thermal radiation.
+
+49:37.000 --> 49:41.000
+Is there any other known interference that needs to be considered?
+
+49:41.000 --> 49:44.000
+There is one.
+
+49:44.000 --> 49:46.000
+It can't be classified as interference.
+
+49:46.000 --> 49:48.000
+This is a big factor.
+
+49:48.000 --> 49:49.000
+Casper-Poller force.
+
+49:49.000 --> 49:55.000
+The atom is very close to the attraction force.
+
+49:55.000 --> 49:59.000
+If you don't consider the attraction force, the result will be quite different.
+
+49:59.000 --> 50:03.000
+I didn't think of it at first.
+
+50:03.000 --> 50:07.000
+But later I found it to be a very important factor.
+
+50:07.000 --> 50:11.000
+I see. Thank you.
+
+50:11.000 --> 50:14.000
+There are some interference factors.
+
+50:14.000 --> 50:16.000
+For example, the vibration of the device.
+
+50:16.000 --> 50:20.000
+We can think of it as a suspension line.
+
+50:20.000 --> 50:22.000
+If it heats up, it may vibrate.
+
+50:22.000 --> 50:26.000
+We have measured the frequency of its vibration.
+
+50:26.000 --> 50:32.000
+I found that it is much greater than the frequency of the atom vibrating in the trap.
+
+50:32.000 --> 50:35.000
+So we don't need to consider it for the time being.
+
+50:41.000 --> 50:47.000
+Let's explain how to calibrate these three different modes.
+
+50:47.000 --> 50:52.000
+I want to introduce a simple question first.
+
+50:52.000 --> 50:56.000
+The question is how to calibrate the optical lattice beam.
+
+50:56.000 --> 50:57.000
+This is not a calibration.
+
+50:57.000 --> 50:59.000
+Because we already know how strong the optical lattice beam is.
+
+50:59.000 --> 51:02.000
+It's just a way to verify that this is a feasible method.
+
+51:02.000 --> 51:04.000
+This is a simulation result.
+
+51:04.000 --> 51:09.000
+The density of the atom here is much greater than the real density.
+
+51:09.000 --> 51:12.000
+The real density is only about one-tenth.
+
+51:12.000 --> 51:19.000
+This simulation result can let us know how the atom moves near the device.
+
+51:19.000 --> 51:26.000
+The potentials used in this simulation are two optical lattices and the Kessler-Potter force I just mentioned.
+
+51:26.000 --> 51:30.000
+The atom will be attracted when it is very close to the device.
+
+51:30.000 --> 51:35.000
+The attraction is the blue potential around it.
+
+51:35.000 --> 51:39.000
+It is a very strong potential.
+
+51:43.000 --> 51:47.000
+On the right, we can see the simulated clock spectrum.
+
+51:48.000 --> 51:53.000
+The atom is attracted by the optical lattice.
+
+51:53.000 --> 51:55.000
+So it's not coming one by one.
+
+51:55.000 --> 51:59.000
+We can think of it as passing through the final crystal.
+
+51:59.000 --> 52:02.000
+It will cause the biggest absorption.
+
+52:02.000 --> 52:06.000
+It's not zero detuning.
+
+52:06.000 --> 52:08.000
+Because the optical lattice is red detuning.
+
+52:08.000 --> 52:12.000
+So it brings a blue detuning.
+
+52:12.000 --> 52:19.000
+As mentioned before, the red detuning potential will reduce the ground state.
+
+52:19.000 --> 52:21.000
+But the excited state will be higher.
+
+52:21.000 --> 52:24.000
+So the overall frequency will also increase.
+
+52:24.000 --> 52:30.000
+So we can see that the frequency of the atomic transition is a positive detuning.
+
+52:30.000 --> 52:32.000
+Here we can see that it's going down.
+
+52:32.000 --> 52:38.000
+This is a phenomenon caused by the Kessler-Potter potential.
+
+52:38.000 --> 52:43.000
+The Kessler-Potter potential is also an attractive potential.
+
+52:43.000 --> 52:51.000
+If the excited state doesn't change, the frequency of the atomic transition will also increase.
+
+52:51.000 --> 52:53.000
+So it's a red detuning.
+
+52:53.000 --> 52:58.000
+The reason is that the Kessler-Potter potential affects the excited state.
+
+52:58.000 --> 53:01.000
+For the cesium D1 transition,
+
+53:01.000 --> 53:07.000
+the change in the excited state is actually twice the ground state.
+
+53:07.000 --> 53:14.000
+So the decrease in the excited state is actually twice as much as the decrease in the ground state.
+
+53:14.000 --> 53:16.000
+So in fact, the frequency of the atomic transition is getting smaller.
+
+53:16.000 --> 53:22.000
+So under the influence of the Kessler-Potter potential, the detuning is negative.
+
+53:22.000 --> 53:25.000
+We can see that the left is the result of the experiment.
+
+53:25.000 --> 53:27.000
+So we find that the two are actually quite matched.
+
+53:27.000 --> 53:30.000
+And the size of the detuning is the same.
+
+53:30.000 --> 53:35.000
+This means that the parameters of the simulation and the experiment are the same.
+
+53:37.000 --> 53:41.000
+At this time, we can measure something we don't know.
+
+53:41.000 --> 53:44.000
+For example, we can measure the length of the TM guided mode.
+
+53:44.000 --> 53:49.000
+This is a simulation of the TM guided mode.
+
+53:49.000 --> 53:52.000
+The TM guided mode is a blue detuning.
+
+53:52.000 --> 53:56.000
+So it generates a negative Kessler-Potter potential above and below the waveguide.
+
+53:56.000 --> 54:01.000
+So we can see that the atoms are ejected by the Kessler-Potter potential.
+
+54:01.000 --> 54:06.000
+At the same time, it changes the direction of the atoms entering the gap.
+
+54:15.000 --> 54:20.000
+The picture on the right is a comparison of the simulation and the experiment.
+
+54:20.000 --> 54:23.000
+We can see that the simulation of the two-dimensional surface is actually very similar.
+
+54:23.000 --> 54:26.000
+So their differences are not detailed.
+
+54:26.000 --> 54:30.000
+However, we can see that the simulation and the experiment are very similar.
+
+54:30.000 --> 54:32.000
+We can see that after adding this potential,
+
+54:32.000 --> 54:37.000
+it has some impact on the two-dimensional Kessler-Potter potential.
+
+54:37.000 --> 54:43.000
+The biggest impact is that you can see that it generates a feature that goes down.
+
+54:43.000 --> 54:54.000
+This feature is caused by the difference in time when the atoms are ejected by the Kessler-Potter potential.
+
+54:56.000 --> 55:08.000
+Now we can compare the light energy of the experiment with the simulation.
+
+55:08.000 --> 55:15.000
+We can see that the light intensity of the simulation is actually less.
+
+55:15.000 --> 55:22.000
+This is because the light intensity measured in the experiment is the light intensity in the fiber.
+
+55:22.000 --> 55:26.000
+The light intensity in the waveguide is actually much less.
+
+55:26.000 --> 55:33.000
+So we can estimate that the fiber coupling efficiency is about 30%.
+
+55:33.000 --> 55:40.000
+The efficiency is the same as measured in other ways.
+
+55:42.000 --> 55:48.000
+In this way, we can directly measure the intensity of the light energy in the device.
+
+55:53.000 --> 55:57.000
+What kind of trajectory does this feature correspond to?
+
+55:57.000 --> 56:04.000
+We can see that the blue feature corresponds to the blue trajectory on the right.
+
+56:04.000 --> 56:11.000
+They are outside the device, so they see less guided modes and receive less AC short-circuits.
+
+56:11.000 --> 56:16.000
+The trajectory that climbs up is the blue guided mode,
+
+56:16.000 --> 56:24.000
+so it sees a longer value chain, and the frequency is getting lower and lower.
+
+56:24.000 --> 56:34.000
+In the middle gap, the AC short-circuit corresponds to the green result.
+
+56:34.000 --> 56:44.000
+We can see that we can use this method to know the time and location of the atoms near the device.
+
+56:44.000 --> 56:51.000
+There are about 100 ns time resolution and 50 ns space resolution.
+
+56:54.000 --> 56:57.000
+We can use the same method to do TMO.
+
+56:57.000 --> 57:02.000
+We can see that it matches quite well.
+
+57:02.000 --> 57:10.000
+Interestingly, we found that the intensity of the energy in the device is much more than what we put into the experiment.
+
+57:10.000 --> 57:15.000
+But this is not surprising, because we are using TEMO.
+
+57:15.000 --> 57:19.000
+TEMO's D1 detour is on the band edge.
+
+57:20.000 --> 57:26.000
+Because the band edge's group velocity becomes smaller,
+
+57:26.000 --> 57:30.000
+the intensity of the light inside will be enhanced.
+
+57:30.000 --> 57:36.000
+The intensity of the light inside the VGAI is greater than what we put into the experiment.
+
+57:36.000 --> 57:39.000
+This tells us that there is a slow light effect.
+
+57:39.000 --> 57:44.000
+As I said, there are different types of trajectories.
+
+57:44.000 --> 57:51.000
+We can separate them in the simulation to see what each of them contributes to the flux vector.
+
+57:51.000 --> 57:55.000
+For example, the contribution caused by the middle atom,
+
+57:55.000 --> 58:00.000
+the contribution caused by the outer atom, and the contribution caused by the other blue atoms.
+
+58:00.000 --> 58:03.000
+This is a very important feature.
+
+58:03.000 --> 58:08.000
+This is a very important feature.
+
+58:08.000 --> 58:12.000
+It tells us if there is really an atom passing through the gap.
+
+58:12.000 --> 58:14.000
+Because this is the atom we want to capture.
+
+58:14.000 --> 58:18.000
+So we want to know if there is really an atom passing through the gap.
+
+58:18.000 --> 58:24.000
+We can find that if we take a cut at this time,
+
+58:24.000 --> 58:26.000
+you will find that there are two dips.
+
+58:26.000 --> 58:31.000
+The simulation tells us that one of the dips mainly comes from the contribution of the middle atom.
+
+58:31.000 --> 58:33.000
+The other dip is the contribution of other atoms.
+
+58:33.000 --> 58:39.000
+So we can observe that there are two dips at this time in the experiment.
+
+58:39.000 --> 58:45.000
+So it can tell us that there are indeed atoms passing through the gap in the middle.
+
+58:45.000 --> 58:48.000
+By comparing the simulation results,
+
+58:48.000 --> 58:54.000
+we can estimate that each pancake will have one or two atoms passing through the gap.
+
+58:55.000 --> 58:58.000
+At the same time, the simulation also tells us
+
+58:58.000 --> 59:03.000
+when to pump the atom into the deeper trap.
+
+59:03.000 --> 59:08.000
+The position of the dip tells us the AC structure over there.
+
+59:08.000 --> 59:14.000
+So it tells us what frequency of the laser should pump the atom into the deeper trap.
+
+59:14.000 --> 59:18.000
+By comparing the simulation and the experiment,
+
+59:19.000 --> 59:25.000
+First, we can calibrate the strength of the guided mode to create the trap we want.
+
+59:25.000 --> 59:28.000
+Second, it tells us when to pump the atom.
+
+59:28.000 --> 59:34.000
+Third, it tells us what detuning to use to pump the atom into the trap.
+
+59:36.000 --> 59:40.000
+Finally, let's talk about the more unexpected result.
+
+59:40.000 --> 59:45.000
+We can probe how strong the Kasper-Potter force is.
+
+59:45.000 --> 59:46.000
+For example, there are two simulations.
+
+59:46.000 --> 59:49.000
+The right one has no Kasper-Potter force.
+
+59:49.000 --> 59:50.000
+The left one has Kasper-Potter force.
+
+59:50.000 --> 59:57.000
+The difference is that there is a feature that goes down here.
+
+59:57.000 --> 01:00:00.000
+We found that this feature does appear in the experiment.
+
+01:00:00.000 --> 01:00:04.000
+By comparing the two features,
+
+01:00:04.000 --> 01:00:10.000
+we can get the Kasper-Potter potential.
+
+01:00:10.000 --> 01:00:16.000
+The potential coefficient is the same as mentioned in the simulation.
+
+01:00:20.000 --> 01:00:30.000
+Finally, let's talk about the new research I did when I left.
+
+01:00:30.000 --> 01:00:38.000
+A new way to put the chip into the vacuum chamber is very troublesome.
+
+01:00:38.000 --> 01:00:45.000
+You have to stick 16 fibers to the U-Port and then put it into the chamber.
+
+01:00:45.000 --> 01:00:48.000
+It usually takes us two days.
+
+01:00:48.000 --> 01:00:51.000
+The new generation of experiments does not require light.
+
+01:00:51.000 --> 01:00:59.000
+You can directly focus the laser on the coupler with the microscope objective.
+
+01:00:59.000 --> 01:01:05.000
+You can directly couple from the vacuum chamber to the waveguide.
+
+01:01:06.000 --> 01:01:10.000
+This can greatly reduce the time it takes to replace the chip.
+
+01:01:10.000 --> 01:01:13.000
+It also provides more optical access.
+
+01:01:13.000 --> 01:01:18.000
+We can put more beams and have closer observation.
+
+01:01:21.000 --> 01:01:27.000
+Another way is that we can use optical tweezers instead of optical lasers.
+
+01:01:27.000 --> 01:01:31.000
+The advantage of optical lasers is that it gives us a lot of atoms in a short time.
+
+01:01:31.000 --> 01:01:36.000
+The advantage of optical lasers is that it gives us a lot of atoms in a short time.
+
+01:01:36.000 --> 01:01:42.000
+It can extract the information I just mentioned.
+
+01:01:42.000 --> 01:01:47.000
+If you want to fine-tune the position of the atoms, you can use optical tweezers.
+
+01:01:47.000 --> 01:01:55.000
+You can fine-tune the position of the atoms on the one-dimensional waveguide.
+
+01:01:55.000 --> 01:02:01.000
+In this way, you can probe the interaction between two atoms more directly.
+
+01:02:03.000 --> 01:02:09.000
+This is a summary of the applications of the two-dimensional waveguide.
+
+01:02:11.000 --> 01:02:15.000
+This is a summary of the two-dimensional waveguide.
+
+01:02:15.000 --> 01:02:20.000
+First, I talked about why we want to do Strong Atom Photon Interaction.
+
+01:02:20.000 --> 01:02:25.000
+Then, I explained how we send the atoms near the waveguide.
+
+01:02:25.000 --> 01:02:30.000
+Next, I will introduce a numerical simulation.
+
+01:02:30.000 --> 01:02:33.000
+This is a numerical simulation to simulate the trajectory of the atoms.
+
+01:02:33.000 --> 01:02:37.000
+Then, calculate a two-dimensional spectrum from these trajectories.
+
+01:02:37.000 --> 01:02:42.000
+Then, calculate a two-dimensional spectrum from these trajectories.
+
+01:02:42.000 --> 01:02:46.000
+It can help us adjust the strength of the guided mode.
+
+01:02:46.000 --> 01:02:50.000
+It can help us understand the behavior of the atoms near the waveguide.
+
+01:02:50.000 --> 01:02:55.000
+It can help us understand the time and how the neutrino pumps the atoms into the trap.
+
+01:02:55.000 --> 01:03:06.000
+It can help us understand the attraction force of the atoms near the dielectric.
+
+01:03:06.000 --> 01:03:08.000
+Thank you.
+
+01:03:09.000 --> 01:03:12.000
+Thank you, everyone.
+
+01:03:12.000 --> 01:03:15.000
+Let's applaud to thank our speaker today.
+
+01:03:15.000 --> 01:03:17.000
+Please turn on the microphone.
+
+01:03:17.000 --> 01:03:21.000
+Then, we can hear your applause.
+
+01:03:21.000 --> 01:03:24.000
+Thank you for giving us this wonderful speech.
+
+01:03:29.000 --> 01:03:34.000
+Next, we are going to have a Q&A.
+
+01:03:34.000 --> 01:03:38.000
+Before we start, let me advertise something.
+
+01:03:38.000 --> 01:03:41.000
+If you support what Project TARA is doing,
+
+01:03:41.000 --> 01:03:42.000
+and support our ideas,
+
+01:03:42.000 --> 01:03:45.000
+and support us to promote overseas scholars in Taiwan,
+
+01:03:45.000 --> 01:03:47.000
+and share the results of our research,
+
+01:03:47.000 --> 01:03:50.000
+we welcome you to join Project TARA as a member,
+
+01:03:50.000 --> 01:03:52.000
+not just follow our Facebook page
+
+01:03:52.000 --> 01:03:56.000
+and read our weekly posts.
+
+01:03:56.000 --> 01:03:58.000
+You can find the way to join
+
+01:03:58.000 --> 01:04:00.000
+on the Facebook post.
+
+01:04:00.000 --> 01:04:02.000
+We welcome you
+
+01:04:02.000 --> 01:04:05.000
+and we need you to share
+
+01:04:05.000 --> 01:04:08.000
+the results of your research.
+
+01:04:08.000 --> 01:04:11.000
+You can find the way to join
+
+01:04:11.000 --> 01:04:13.000
+on our Facebook page
+
+01:04:13.000 --> 01:04:16.000
+and our website.
+
+01:04:16.000 --> 01:04:19.000
+Now, let's start the Q&A.
+
+01:04:19.000 --> 01:04:21.000
+Any questions?
+
+01:04:21.000 --> 01:04:23.000
+I have a question.
+
+01:04:23.000 --> 01:04:26.000
+What you just said
+
+01:04:26.000 --> 01:04:29.000
+is using Optical Lattice
+
+01:04:29.000 --> 01:04:32.000
+to deliver your origin
+
+01:04:32.000 --> 01:04:38.000
+to the photonic crystal?
+
+01:04:38.000 --> 01:04:42.000
+The ultimate goal is to deliver it
+
+01:04:42.000 --> 01:04:45.000
+to the gap between the two photonic crystals
+
+01:04:45.000 --> 01:04:50.000
+and let the origin stay in the gap.
+
+01:04:50.000 --> 01:04:53.000
+The current method is...
+
+01:04:53.000 --> 01:04:56.000
+Is it possible to easily control
+
+01:04:56.000 --> 01:04:58.000
+the gap between your lattice
+
+01:04:58.000 --> 01:05:03.000
+and the gap between your crystals?
+
+01:05:03.000 --> 01:05:05.000
+This is...
+
+01:05:05.000 --> 01:05:07.000
+This is Optical Lattice's...
+
+01:05:07.000 --> 01:05:11.000
+It consists of two Gaussian beams.
+
+01:05:11.000 --> 01:05:14.000
+We put the photonic crystal waveguide
+
+01:05:14.000 --> 01:05:17.000
+on the position of the Gaussian beam.
+
+01:05:17.000 --> 01:05:21.000
+The position of the beam
+
+01:05:21.000 --> 01:05:24.000
+is about 60 microns.
+
+01:05:24.000 --> 01:05:27.000
+The size of the device
+
+01:05:27.000 --> 01:05:29.000
+is about 1 microns.
+
+01:05:29.000 --> 01:05:31.000
+Most of the origin
+
+01:05:31.000 --> 01:05:34.000
+does not pass
+
+01:05:34.000 --> 01:05:36.000
+near the photonic crystal waveguide.
+
+01:05:36.000 --> 01:05:38.000
+But when each pan can pass,
+
+01:05:38.000 --> 01:05:41.000
+dozens of them
+
+01:05:41.000 --> 01:05:43.000
+will appear near the waveguide.
+
+01:05:43.000 --> 01:05:44.000
+Among those dozens,
+
+01:05:44.000 --> 01:05:49.000
+one or two may run into the gap.
+
+01:05:49.000 --> 01:05:53.000
+I think it can be delivered one-to-one.
+
+01:05:53.000 --> 01:05:54.000
+This is very difficult.
+
+01:05:54.000 --> 01:05:59.000
+Because the gap is 200 nanometers.
+
+01:05:59.000 --> 01:06:02.000
+The wavelength is not that small.
+
+01:06:02.000 --> 01:06:04.000
+Even if you can focus on
+
+01:06:04.000 --> 01:06:07.000
+the wavelength,
+
+01:06:07.000 --> 01:06:08.000
+the Rayleigh Lambda will be very small.
+
+01:06:08.000 --> 01:06:10.000
+So you can't...
+
+01:06:10.000 --> 01:06:12.000
+It's impossible to load
+
+01:06:12.000 --> 01:06:14.000
+such a large mod
+
+01:06:14.000 --> 01:06:16.000
+into the Optical Lattice.
+
+01:06:16.000 --> 01:06:18.000
+After loading,
+
+01:06:18.000 --> 01:06:20.000
+the Rayleigh Lambda is about 2 nanometers.
+
+01:06:20.000 --> 01:06:21.000
+It takes thousands of pancakes
+
+01:06:21.000 --> 01:06:23.000
+to deliver one-to-one.
+
+01:06:23.000 --> 01:06:26.000
+If you focus on such a small wavelength,
+
+01:06:26.000 --> 01:06:28.000
+it's a bit like
+
+01:06:28.000 --> 01:06:30.000
+what I just mentioned,
+
+01:06:30.000 --> 01:06:31.000
+the optical tracer.
+
+01:06:31.000 --> 01:06:33.000
+The optical tracer focuses on
+
+01:06:33.000 --> 01:06:35.000
+the wavelength.
+
+01:06:35.000 --> 01:06:36.000
+Relatively speaking,
+
+01:06:36.000 --> 01:06:37.000
+you can only trap one ray
+
+01:06:37.000 --> 01:06:40.000
+and put it near the waveguide.
+
+01:06:40.000 --> 01:06:42.000
+It has its advantages.
+
+01:06:42.000 --> 01:06:43.000
+The difficulty is that
+
+01:06:43.000 --> 01:06:45.000
+you have to catch a ray
+
+01:06:45.000 --> 01:06:47.000
+and move the ray
+
+01:06:47.000 --> 01:06:49.000
+to the waveguide.
+
+01:06:49.000 --> 01:06:51.000
+You can't lose the ray.
+
+01:06:51.000 --> 01:06:53.000
+So it's difficult.
+
+01:06:56.000 --> 01:06:58.000
+Okay, thank you.
+
+01:07:00.000 --> 01:07:02.000
+I have a question.
+
+01:07:02.000 --> 01:07:03.000
+I want to ask...
+
+01:07:03.000 --> 01:07:05.000
+You said your goal is
+
+01:07:05.000 --> 01:07:07.000
+to achieve strong
+
+01:07:07.000 --> 01:07:09.000
+metroid interaction.
+
+01:07:09.000 --> 01:07:11.000
+I want to ask
+
+01:07:11.000 --> 01:07:13.000
+your long-term goal is
+
+01:07:13.000 --> 01:07:16.000
+when you achieve strong interaction,
+
+01:07:16.000 --> 01:07:18.000
+what do you want to do with it?
+
+01:07:40.000 --> 01:07:42.000
+The main goal is
+
+01:07:42.000 --> 01:07:44.000
+to simulate
+
+01:07:44.000 --> 01:07:46.000
+the system of
+
+01:07:46.000 --> 01:07:48.000
+many-body physics.
+
+01:07:48.000 --> 01:07:50.000
+In addition to
+
+01:07:50.000 --> 01:07:52.000
+the simulation of
+
+01:07:52.000 --> 01:07:54.000
+quantum magnetism,
+
+01:07:54.000 --> 01:07:56.000
+there is another
+
+01:07:56.000 --> 01:07:58.000
+interesting experiment.
+
+01:07:58.000 --> 01:08:00.000
+For example,
+
+01:08:00.000 --> 01:08:02.000
+the cavity QED
+
+01:08:02.000 --> 01:08:04.000
+is a classical object
+
+01:08:04.000 --> 01:08:06.000
+with a large diameter.
+
+01:08:06.000 --> 01:08:08.000
+You can imagine
+
+01:08:08.000 --> 01:08:10.000
+if you catch five atoms
+
+01:08:10.000 --> 01:08:12.000
+and put a side in the middle,
+
+01:08:12.000 --> 01:08:14.000
+the middle is an atom again,
+
+01:08:14.000 --> 01:08:16.000
+and the side is five atoms.
+
+01:08:16.000 --> 01:08:18.000
+The five atoms on the left and right
+
+01:08:18.000 --> 01:08:20.000
+is like a black mirror.
+
+01:08:20.000 --> 01:08:22.000
+That means the atom
+
+01:08:22.000 --> 01:08:24.000
+and the mirror
+
+01:08:24.000 --> 01:08:26.000
+are quantum objects.
+
+01:08:26.000 --> 01:08:28.000
+This is very interesting.
+
+01:08:32.000 --> 01:08:34.000
+Through what I said,
+
+01:08:34.000 --> 01:08:36.000
+you can create
+
+01:08:36.000 --> 01:08:38.000
+pairwise Hamiltonian
+
+01:08:38.000 --> 01:08:40.000
+in quantum simulation.
+
+01:08:40.000 --> 01:08:42.000
+You can create
+
+01:08:42.000 --> 01:08:44.000
+various quantum simulations
+
+01:08:44.000 --> 01:08:46.000
+in pairwise Hamiltonian.
+
+01:08:46.000 --> 01:08:48.000
+There is another interesting
+
+01:08:48.000 --> 01:08:50.000
+application that I didn't mention.
+
+01:08:50.000 --> 01:08:52.000
+This is different from
+
+01:08:52.000 --> 01:08:54.000
+the general waveguide QD,
+
+01:08:54.000 --> 01:08:56.000
+because it has a
+
+01:08:56.000 --> 01:08:58.000
+dielectric structure.
+
+01:08:58.000 --> 01:09:00.000
+This dielectric structure
+
+01:09:00.000 --> 01:09:02.000
+forces the intensity of the light
+
+01:09:02.000 --> 01:09:04.000
+to stick to the structure.
+
+01:09:04.000 --> 01:09:06.000
+So you can make
+
+01:09:06.000 --> 01:09:08.000
+the distance between the atoms
+
+01:09:08.000 --> 01:09:10.000
+smaller than the wavelength
+
+01:09:10.000 --> 01:09:12.000
+of free space.
+
+01:09:12.000 --> 01:09:14.000
+This is an interesting phenomenon.
+
+01:09:14.000 --> 01:09:16.000
+The light radiated
+
+01:09:16.000 --> 01:09:18.000
+to the free space
+
+01:09:18.000 --> 01:09:20.000
+is interfered by the atoms.
+
+01:09:20.000 --> 01:09:22.000
+This can greatly reduce
+
+01:09:22.000 --> 01:09:24.000
+the intensity of spontaneous emission.
+
+01:09:24.000 --> 01:09:26.000
+This is something
+
+01:09:26.000 --> 01:09:28.000
+that general waveguide QD
+
+01:09:28.000 --> 01:09:30.000
+can't do.
+
+01:09:36.000 --> 01:09:38.000
+If you can
+
+01:09:38.000 --> 01:09:40.000
+greatly suppress
+
+01:09:40.000 --> 01:09:42.000
+the frequency of decay
+
+01:09:42.000 --> 01:09:44.000
+to free space,
+
+01:09:44.000 --> 01:09:46.000
+you can make
+
+01:09:46.000 --> 01:09:48.000
+a quantum memory system.
+
+01:09:52.000 --> 01:09:54.000
+Do you have any questions?
+
+01:09:54.000 --> 01:09:56.000
+If not,
+
+01:09:56.000 --> 01:09:58.000
+I have a question.
+
+01:09:58.000 --> 01:10:00.000
+Can you jump to the
+
+01:10:00.000 --> 01:10:02.000
+Kashmir Force page?
+
+01:10:06.000 --> 01:10:08.000
+You can explain
+
+01:10:08.000 --> 01:10:10.000
+what you want to convey
+
+01:10:10.000 --> 01:10:12.000
+in this page.
+
+01:10:12.000 --> 01:10:14.000
+How do you see this?
+
+01:10:14.000 --> 01:10:16.000
+At the beginning of the simulation,
+
+01:10:16.000 --> 01:10:18.000
+we didn't add
+
+01:10:18.000 --> 01:10:20.000
+the Kashmir Force page.
+
+01:10:20.000 --> 01:10:22.000
+You can see that
+
+01:10:22.000 --> 01:10:24.000
+this simulation
+
+01:10:24.000 --> 01:10:26.000
+is the simplest
+
+01:10:26.000 --> 01:10:28.000
+one.
+
+01:10:28.000 --> 01:10:30.000
+We didn't add any
+
+01:10:30.000 --> 01:10:32.000
+guide mode,
+
+01:10:32.000 --> 01:10:34.000
+only probe and optical lattice.
+
+01:10:34.000 --> 01:10:36.000
+The optical lattice
+
+01:10:36.000 --> 01:10:38.000
+is ready-tuned.
+
+01:10:38.000 --> 01:10:40.000
+The light in the whole system
+
+01:10:40.000 --> 01:10:42.000
+is ready-tuned.
+
+01:10:42.000 --> 01:10:44.000
+All the atoms we see
+
+01:10:44.000 --> 01:10:46.000
+should have
+
+01:10:46.000 --> 01:10:48.000
+the same
+
+01:10:48.000 --> 01:10:50.000
+probe frequency
+
+01:10:50.000 --> 01:10:52.000
+to see the atoms.
+
+01:10:52.000 --> 01:10:54.000
+But we found that
+
+01:10:54.000 --> 01:10:56.000
+they all fall down.
+
+01:10:56.000 --> 01:10:58.000
+I found that
+
+01:10:58.000 --> 01:11:00.000
+this is the Kashmir Force.
+
+01:11:00.000 --> 01:11:02.000
+The Kashmir Force
+
+01:11:02.000 --> 01:11:04.000
+is an attraction.
+
+01:11:04.000 --> 01:11:06.000
+The amount of excited state
+
+01:11:06.000 --> 01:11:08.000
+is more than ground state.
+
+01:11:08.000 --> 01:11:10.000
+It can make
+
+01:11:10.000 --> 01:11:12.000
+the probe frequency
+
+01:11:12.000 --> 01:11:14.000
+decrease.
+
+01:11:14.000 --> 01:11:16.000
+You can see the redshift frequency.
+
+01:11:18.000 --> 01:11:20.000
+At the same time,
+
+01:11:20.000 --> 01:11:22.000
+you can see the same phenomenon in CM.
+
+01:11:22.000 --> 01:11:24.000
+If I ask
+
+01:11:24.000 --> 01:11:26.000
+in this way,
+
+01:11:26.000 --> 01:11:28.000
+if you don't add Kashmir Force,
+
+01:11:28.000 --> 01:11:30.000
+the simulation resolution
+
+01:11:30.000 --> 01:11:32.000
+will be too high.
+
+01:11:32.000 --> 01:11:34.000
+If you compare the experimental data,
+
+01:11:34.000 --> 01:11:36.000
+how much inconsistency
+
+01:11:36.000 --> 01:11:38.000
+does it have?
+
+01:11:38.000 --> 01:11:40.000
+For example,
+
+01:11:40.000 --> 01:11:42.000
+we don't know how strong
+
+01:11:42.000 --> 01:11:44.000
+the caterpillar coefficient is.
+
+01:11:44.000 --> 01:11:46.000
+We can extract it in this way.
+
+01:11:46.000 --> 01:11:48.000
+I'm very interested in this.
+
+01:11:50.000 --> 01:11:52.000
+We can get a number
+
+01:11:52.000 --> 01:11:54.000
+which is difficult to measure.
+
+01:11:54.000 --> 01:11:56.000
+There is a reason.
+
+01:11:56.000 --> 01:11:58.000
+The caterpillar
+
+01:11:58.000 --> 01:12:00.000
+has a
+
+01:12:00.000 --> 01:12:02.000
+potential
+
+01:12:02.000 --> 01:12:04.000
+which is
+
+01:12:04.000 --> 01:12:06.000
+1 over z3.
+
+01:12:06.000 --> 01:12:08.000
+It's a
+
+01:12:08.000 --> 01:12:10.000
+1 over z3
+
+01:12:10.000 --> 01:12:12.000
+dependent.
+
+01:12:12.000 --> 01:12:14.000
+It's a
+
+01:12:14.000 --> 01:12:16.000
+very fast
+
+01:12:16.000 --> 01:12:18.000
+potential.
+
+01:12:18.000 --> 01:12:20.000
+The closer it is to the origin,
+
+01:12:20.000 --> 01:12:22.000
+the faster it runs.
+
+01:12:22.000 --> 01:12:24.000
+The interaction time
+
+01:12:24.000 --> 01:12:26.000
+with the deep place is very short.
+
+01:12:26.000 --> 01:12:28.000
+The shift here is
+
+01:12:28.000 --> 01:12:30.000
+negative 20
+
+01:12:30.000 --> 01:12:32.000
+megahertz.
+
+01:12:32.000 --> 01:12:34.000
+It corresponds to
+
+01:12:34.000 --> 01:12:36.000
+1 millikelvin.
+
+01:12:36.000 --> 01:12:38.000
+I don't remember
+
+01:12:38.000 --> 01:12:40.000
+the distance.
+
+01:12:40.000 --> 01:12:42.000
+Maybe it's
+
+01:12:42.000 --> 01:12:44.000
+outside of dozens of nanometers.
+
+01:12:44.000 --> 01:12:46.000
+It's almost gone.
+
+01:12:46.000 --> 01:12:48.000
+We can match
+
+01:12:48.000 --> 01:12:50.000
+the approximate value.
+
+01:12:50.000 --> 01:12:52.000
+If you want to match it accurately,
+
+01:12:52.000 --> 01:12:54.000
+it's hard to do it in this way.
+
+01:12:56.000 --> 01:12:58.000
+Do you publish this?
+
+01:12:58.000 --> 01:13:00.000
+Can I find the details?
+
+01:13:00.000 --> 01:13:02.000
+Yes, we have
+
+01:13:02.000 --> 01:13:04.000
+a paper in PNAS
+
+01:13:04.000 --> 01:13:06.000
+which mentions this.
+
+01:13:06.000 --> 01:13:08.000
+You can send me the link later.
+
+01:13:12.000 --> 01:13:14.000
+The purpose of the paper is not to measure this.
+
+01:13:14.000 --> 01:13:16.000
+I know.
+
+01:13:16.000 --> 01:13:18.000
+My idea is
+
+01:13:18.000 --> 01:13:20.000
+there is a potential
+
+01:13:20.000 --> 01:13:22.000
+which can be optimized
+
+01:13:22.000 --> 01:13:24.000
+to Casimir force detector.
+
+01:13:24.000 --> 01:13:26.000
+Obviously, this is not the purpose.
+
+01:13:26.000 --> 01:13:28.000
+It looks like there is a chance.
+
+01:13:28.000 --> 01:13:30.000
+I'm interested in
+
+01:13:30.000 --> 01:13:32.000
+Casimir force
+
+01:13:32.000 --> 01:13:34.000
+coupled to new physics.
+
+01:13:34.000 --> 01:13:36.000
+I remember there is a paper
+
+01:13:36.000 --> 01:13:38.000
+which uses blue evanescent field
+
+01:13:38.000 --> 01:13:40.000
+to balance the atoms.
+
+01:13:40.000 --> 01:13:42.000
+It can measure
+
+01:13:42.000 --> 01:13:44.000
+Casimir force in this way.
+
+01:13:44.000 --> 01:13:46.000
+It's a bit tiring.
+
+01:13:46.000 --> 01:13:48.000
+We can't design
+
+01:13:48.000 --> 01:13:50.000
+a stable trap
+
+01:13:50.000 --> 01:13:52.000
+to balance it.
+
+01:13:52.000 --> 01:13:54.000
+There is a potential
+
+01:13:54.000 --> 01:13:56.000
+which can be optimized
+
+01:13:56.000 --> 01:13:58.000
+to Casimir force.
+
+01:13:58.000 --> 01:14:00.000
+I think it's cool.
+
+01:14:00.000 --> 01:14:02.000
+We can discuss it later.
+
+01:14:02.000 --> 01:14:04.000
+Do you have any questions?
+
+01:14:06.000 --> 01:14:08.000
+If you don't have any questions,
+
+01:14:08.000 --> 01:14:10.000
+please turn on the microphone.
+
+01:14:10.000 --> 01:14:12.000
+Let's give a round of applause
+
+01:14:12.000 --> 01:14:14.000
+to Peng Lu for his speech.
+
+01:14:14.000 --> 01:14:16.000
+Thank you.
+
+01:14:22.000 --> 01:14:24.000
+Thank you.
+

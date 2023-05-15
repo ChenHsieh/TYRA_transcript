@@ -1,0 +1,2951 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Hello, everyone. Welcome to this week's TerraTalk.
+
+00:08.000 --> 00:10.000
+I'm your host, Emma Lin.
+
+00:10.000 --> 00:17.000
+I'm currently working on CO2 reduction in Caltech.
+
+00:17.000 --> 00:20.000
+Welcome to our talk today.
+
+00:20.000 --> 00:24.000
+First, I'd like to introduce our speaker for today, Du Yixiu.
+
+00:24.000 --> 00:28.000
+Du Yixiu is a doctoral student at Stanford University.
+
+00:28.000 --> 00:31.000
+She graduated from the University of Taiwan's Department of Physics.
+
+00:31.000 --> 00:33.000
+During her time at the university,
+
+00:33.000 --> 00:36.000
+she worked as a postdoctoral student at the Zhu Shiwei Laboratory.
+
+00:36.000 --> 00:41.000
+She did research on silicon photonics.
+
+00:41.000 --> 00:44.000
+During her time at the university,
+
+00:44.000 --> 00:47.000
+she went to Berkeley Department of Physics for a year.
+
+00:47.000 --> 00:51.000
+At the time, she did research on graphene synthesis.
+
+00:51.000 --> 00:55.000
+Yixiu is currently in the Department of Physics at Stanford.
+
+00:55.000 --> 00:58.000
+She did her Ph.D. in physics for a year.
+
+00:58.000 --> 01:05.000
+She is currently doing her Ph.D. rotation in Professor Gao Sunhong's lab.
+
+01:05.000 --> 01:08.000
+The lab she is currently working on is
+
+01:08.000 --> 01:11.000
+sound imaging and neuroscience-related research.
+
+01:11.000 --> 01:14.000
+Her next interest in the doctoral program
+
+01:14.000 --> 01:18.000
+is to combine nanophotonics and neuroscience
+
+01:18.000 --> 01:20.000
+to do applications.
+
+01:20.000 --> 01:23.000
+The topic of her presentation today is
+
+01:23.000 --> 01:30.000
+the research she did with Professor Zhu Shiwei at the university.
+
+01:30.000 --> 01:34.000
+The topic of this presentation is
+
+01:34.000 --> 01:41.000
+about the rapid development of silicon memory circuits.
+
+01:41.000 --> 01:45.000
+People have always wanted to combine silicon
+
+01:45.000 --> 01:50.000
+and nanoparticles in a chip
+
+01:50.000 --> 01:54.000
+to achieve a real photonical IC.
+
+01:54.000 --> 01:58.000
+However, silicon components are relatively large,
+
+01:58.000 --> 02:01.000
+so they want to understand
+
+02:01.000 --> 02:04.000
+whether they can reduce the magnitude to nanometers
+
+02:04.000 --> 02:06.000
+to achieve greater density
+
+02:06.000 --> 02:09.000
+while maintaining the nature of nonlinear light.
+
+02:09.000 --> 02:12.000
+The topic of this presentation is
+
+02:12.000 --> 02:15.000
+the great enhanced photothermal nonlinearity
+
+02:15.000 --> 02:18.000
+in a silicon nanoresonator.
+
+02:18.000 --> 02:21.000
+Let's give a round of applause
+
+02:21.000 --> 02:24.000
+to welcome our speaker today, Du Yixiu.
+
+02:24.000 --> 02:27.000
+Thank you for having me.
+
+02:27.000 --> 02:30.000
+I'm Du Yixiu.
+
+02:30.000 --> 02:33.000
+I don't think there are a lot of people here,
+
+02:33.000 --> 02:36.000
+so if you have any questions,
+
+02:36.000 --> 02:39.000
+please feel free to ask.
+
+02:39.000 --> 02:42.000
+I'm Du Yixiu.
+
+02:42.000 --> 02:45.000
+I don't think there are a lot of people here,
+
+02:45.000 --> 02:48.000
+so if you have any questions,
+
+02:48.000 --> 02:51.000
+please feel free to ask.
+
+02:51.000 --> 02:54.000
+I'm Du Yixiu.
+
+02:54.000 --> 02:57.000
+I don't think there are a lot of people here,
+
+02:57.000 --> 03:00.000
+so if you have any questions,
+
+03:00.000 --> 03:03.000
+please feel free to ask.
+
+03:03.000 --> 03:06.000
+I'm Du Yixiu.
+
+03:06.000 --> 03:09.000
+I'm Du Yixiu.
+
+03:09.000 --> 03:12.000
+I don't think there are a lot of people here,
+
+03:12.000 --> 03:15.000
+so if you have any questions,
+
+03:15.000 --> 03:18.000
+please feel free to ask.
+
+03:18.000 --> 03:21.000
+I'm Du Yixiu.
+
+03:21.000 --> 03:24.000
+I don't think there are a lot of people here,
+
+03:24.000 --> 03:27.000
+so if you have any questions,
+
+03:27.000 --> 03:30.000
+please feel free to ask.
+
+03:30.000 --> 03:33.000
+I'm Du Yixiu.
+
+03:33.000 --> 03:36.000
+Nowadays,
+
+03:36.000 --> 03:39.000
+there are some people writing their article
+
+03:39.000 --> 03:42.000
+in 2010 called
+
+03:42.000 --> 03:45.000
+''The Logical Next Step of an Optical Transistor''.
+
+03:45.000 --> 03:48.000
+Now this person publishes his article in 2010 called
+
+03:48.000 --> 03:51.000
+''The Logical Next Step of an Optical Transistor''.
+
+03:51.000 --> 03:54.000
+The article talks about
+
+03:54.000 --> 03:57.000
+two important points
+
+03:57.000 --> 04:00.000
+for nano photonics devices.
+
+04:00.000 --> 04:02.000
+We want great density
+
+04:02.000 --> 04:05.000
+to match the electrical IC.
+
+04:05.000 --> 04:08.000
+We also want a good enough functionality.
+
+04:08.000 --> 04:11.000
+This functionality is like
+
+04:11.000 --> 04:14.000
+an electrolyte.
+
+04:14.000 --> 04:17.000
+We want a good enough electron-electron interaction.
+
+04:17.000 --> 04:20.000
+Through this electron-electron interaction,
+
+04:20.000 --> 04:23.000
+we can control the device.
+
+04:23.000 --> 04:26.000
+Can optical do the same?
+
+04:26.000 --> 04:29.000
+Let's take a look.
+
+04:29.000 --> 04:32.000
+Recently, there is a very popular field
+
+04:32.000 --> 04:35.000
+called Silicon Photonics.
+
+04:35.000 --> 04:38.000
+You can see the timeline.
+
+04:38.000 --> 04:41.000
+In 2003,
+
+04:41.000 --> 04:44.000
+it was Silicon Nanophotonics' birthday.
+
+04:44.000 --> 04:47.000
+That day, everyone thought about
+
+04:47.000 --> 04:50.000
+how to combine
+
+04:50.000 --> 04:53.000
+nanoscale silicon waveguide
+
+04:53.000 --> 04:56.000
+and micronscale optical fiber
+
+04:56.000 --> 04:59.000
+through a technique called
+
+04:59.000 --> 05:02.000
+tapping.
+
+05:02.000 --> 05:05.000
+Then we can extend
+
+05:05.000 --> 05:08.000
+the optical fiber technology
+
+05:08.000 --> 05:11.000
+to silicon waveguide technology.
+
+05:11.000 --> 05:14.000
+I want to emphasize that
+
+05:14.000 --> 05:17.000
+in the past 10 years,
+
+05:17.000 --> 05:20.000
+Silicon Photonics' field
+
+05:20.000 --> 05:23.000
+has developed rapidly.
+
+05:23.000 --> 05:26.000
+Looking back to modern science,
+
+05:26.000 --> 05:29.000
+it is hard to see such a rapid development
+
+05:29.000 --> 05:32.000
+in 10 years.
+
+05:32.000 --> 05:35.000
+Silicon Photonics is
+
+05:35.000 --> 05:38.000
+a very popular field.
+
+05:38.000 --> 05:41.000
+Next,
+
+05:41.000 --> 05:44.000
+I want to talk about
+
+05:44.000 --> 05:47.000
+why everyone wants to
+
+05:47.000 --> 05:50.000
+use silicon
+
+05:51.000 --> 05:54.000
+to realize electronics.
+
+05:54.000 --> 05:57.000
+First,
+
+05:57.000 --> 06:00.000
+we know that there is a lot of silicon in nature,
+
+06:00.000 --> 06:03.000
+so it is very natural abundance.
+
+06:03.000 --> 06:06.000
+On the other hand,
+
+06:06.000 --> 06:09.000
+silicon has very mature fabrication technology,
+
+06:09.000 --> 06:12.000
+so we can make very small devices,
+
+06:12.000 --> 06:15.000
+but we can also make a lot of devices.
+
+06:15.000 --> 06:18.000
+For various reasons,
+
+06:18.000 --> 06:21.000
+electronics has developed rapidly,
+
+06:21.000 --> 06:24.000
+so people want to
+
+06:24.000 --> 06:27.000
+expand it to the photonics platform.
+
+06:27.000 --> 06:30.000
+The reason is that
+
+06:30.000 --> 06:33.000
+if we expand to the photonics platform,
+
+06:33.000 --> 06:36.000
+we may have
+
+06:36.000 --> 06:39.000
+very high speed potential.
+
+06:39.000 --> 06:42.000
+We can potentially reach
+
+06:42.000 --> 06:45.000
+a very high speed switch.
+
+06:46.000 --> 06:49.000
+I want to show you
+
+06:49.000 --> 06:52.000
+the technology that combines
+
+06:52.000 --> 06:55.000
+photonics and electronics.
+
+06:55.000 --> 06:58.000
+Everything in the same platform.
+
+06:58.000 --> 07:01.000
+This is an article published in Nature
+
+07:01.000 --> 07:04.000
+in 2018.
+
+07:04.000 --> 07:07.000
+The left half of the article
+
+07:07.000 --> 07:10.000
+is the electronics device, transistor.
+
+07:10.000 --> 07:13.000
+On the same chip,
+
+07:13.000 --> 07:16.000
+we can see the photonics device.
+
+07:16.000 --> 07:19.000
+If we take a closer look,
+
+07:19.000 --> 07:22.000
+we can see that
+
+07:22.000 --> 07:25.000
+the electronics device
+
+07:25.000 --> 07:28.000
+and the photonics device
+
+07:28.000 --> 07:31.000
+are all on the same chip.
+
+07:34.000 --> 07:37.000
+If you look closely at this scale bar,
+
+07:37.000 --> 07:40.000
+there are countless electrical devices
+
+07:40.000 --> 07:43.000
+on the same chip.
+
+07:43.000 --> 07:46.000
+We can make very good
+
+07:46.000 --> 07:49.000
+electrical-based integrated circuits.
+
+07:49.000 --> 07:52.000
+But in the case of the photonics device,
+
+07:52.000 --> 07:55.000
+we only have one.
+
+07:55.000 --> 07:58.000
+Its scale bar is 10 microns,
+
+07:58.000 --> 08:01.000
+like this microresonator.
+
+08:01.000 --> 08:04.000
+You may ask,
+
+08:04.000 --> 08:07.000
+why don't we make it smaller?
+
+08:07.000 --> 08:10.000
+Why do we have so many electronic devices?
+
+08:10.000 --> 08:13.000
+The reason is that
+
+08:13.000 --> 08:16.000
+we want to reduce the footprint
+
+08:16.000 --> 08:19.000
+from 10 microns to 100 nanometers.
+
+08:19.000 --> 08:22.000
+That's what people think.
+
+08:22.000 --> 08:25.000
+But if we want to reduce the footprint,
+
+08:25.000 --> 08:28.000
+we have to consider other problems.
+
+08:28.000 --> 08:31.000
+For example,
+
+08:31.000 --> 08:34.000
+if we reduce the footprint,
+
+08:34.000 --> 08:37.000
+we will have the same functionality
+
+08:37.000 --> 08:40.000
+as a large size.
+
+08:40.000 --> 08:43.000
+One aspect of the functionality
+
+08:43.000 --> 08:46.000
+is optical nonlinearity.
+
+08:46.000 --> 08:49.000
+The optical nonlinearity of silicon
+
+08:49.000 --> 08:52.000
+is very small.
+
+08:52.000 --> 08:55.000
+The definition of nonlinearity is
+
+08:55.000 --> 08:58.000
+if I increase the intensity of my illumination,
+
+08:58.000 --> 09:01.000
+my refractive index
+
+09:01.000 --> 09:04.000
+will also increase.
+
+09:04.000 --> 09:07.000
+This coefficient represents
+
+09:07.000 --> 09:10.000
+the nature of the nonlinearity of the material itself.
+
+09:10.000 --> 09:13.000
+Because our silicon
+
+09:13.000 --> 09:16.000
+is a very small nonlinearity,
+
+09:16.000 --> 09:19.000
+can we increase its intensity?
+
+09:19.000 --> 09:22.000
+Well, people think like Lipson.
+
+09:22.000 --> 09:25.000
+In Columbia,
+
+09:25.000 --> 09:28.000
+Lipson thought about
+
+09:28.000 --> 09:31.000
+whether to use a resonance structure
+
+09:31.000 --> 09:34.000
+to make the resonance bigger.
+
+09:34.000 --> 09:37.000
+For example,
+
+09:37.000 --> 09:40.000
+the structure of the microresonator,
+
+09:40.000 --> 09:43.000
+the SEM2,
+
+09:43.000 --> 09:46.000
+can reach a very sharp spectrum
+
+09:46.000 --> 09:49.000
+and symbolize a very high quality factor.
+
+09:49.000 --> 09:52.000
+With such a resonance structure,
+
+09:52.000 --> 09:55.000
+we can increase the functionality of our devices.
+
+09:55.000 --> 09:58.000
+However,
+
+09:58.000 --> 10:01.000
+we want to make a very small device.
+
+10:01.000 --> 10:04.000
+Is there a way
+
+10:04.000 --> 10:07.000
+to make such a small device?
+
+10:07.000 --> 10:10.000
+Although the quality factor is very low,
+
+10:10.000 --> 10:13.000
+can we use other ways
+
+10:13.000 --> 10:16.000
+to reduce the quality factor?
+
+10:16.000 --> 10:19.000
+Can we find other nonlinearity mechanisms
+
+10:19.000 --> 10:22.000
+to make our functionality
+
+10:23.000 --> 10:26.000
+maintain the same?
+
+10:26.000 --> 10:29.000
+This is the most classic example
+
+10:29.000 --> 10:32.000
+of a resonator in a microresonator.
+
+10:32.000 --> 10:35.000
+The so-called mixed resonator
+
+10:35.000 --> 10:38.000
+provides a resonance
+
+10:38.000 --> 10:41.000
+at a very small magnitude.
+
+10:44.000 --> 10:47.000
+If we look at this SEM2,
+
+10:47.000 --> 10:50.000
+it has different resonance
+
+10:50.000 --> 10:53.000
+colors,
+
+10:53.000 --> 10:56.000
+such as blue,
+
+10:56.000 --> 10:59.000
+green, and red.
+
+10:59.000 --> 11:02.000
+This microresonator is size-dependent.
+
+11:02.000 --> 11:05.000
+There is a lot of research
+
+11:05.000 --> 11:08.000
+on this matter,
+
+11:08.000 --> 11:11.000
+especially in the past 10 years.
+
+11:11.000 --> 11:14.000
+The so-called high-index material
+
+11:14.000 --> 11:17.000
+has a very special resonance phenomenon.
+
+11:17.000 --> 11:20.000
+It was published in 2017.
+
+11:20.000 --> 11:23.000
+It is Yusuke Nagasaki,
+
+11:23.000 --> 11:26.000
+my collaborator.
+
+11:26.000 --> 11:29.000
+He did the research.
+
+11:29.000 --> 11:32.000
+It is a silicon-on-top-of-quartz structure.
+
+11:32.000 --> 11:35.000
+This structure can fine-tune
+
+11:35.000 --> 11:38.000
+the width of each silicon nanoparticle,
+
+11:38.000 --> 11:41.000
+such as Wx and Wy.
+
+11:41.000 --> 11:44.000
+With different combinations of widths,
+
+11:44.000 --> 11:47.000
+we can get a rainbow-like structure.
+
+11:47.000 --> 11:50.000
+This rainbow-like structure
+
+11:50.000 --> 11:53.000
+tells us that
+
+11:53.000 --> 11:56.000
+we have a very good ability
+
+11:56.000 --> 11:59.000
+to fine-tune the resonance.
+
+11:59.000 --> 12:02.000
+Our future research
+
+12:02.000 --> 12:05.000
+will use a similar sample.
+
+12:05.000 --> 12:08.000
+The next thing I want to talk about
+
+12:08.000 --> 12:11.000
+is that since our nanostructure
+
+12:11.000 --> 12:14.000
+has such a weak resonance,
+
+12:14.000 --> 12:17.000
+is there any way
+
+12:17.000 --> 12:20.000
+to increase it with other mechanisms?
+
+12:20.000 --> 12:23.000
+We all know that
+
+12:23.000 --> 12:26.000
+photothermal is a solution.
+
+12:26.000 --> 12:29.000
+Is there any other mechanism
+
+12:29.000 --> 12:32.000
+to maintain its nonlinearity?
+
+12:32.000 --> 12:35.000
+The answer is that
+
+12:35.000 --> 12:38.000
+we can combine photothermal
+
+12:38.000 --> 12:41.000
+and nonlinear resonance.
+
+12:41.000 --> 12:44.000
+As you know,
+
+12:44.000 --> 12:47.000
+the photothermal effect
+
+12:47.000 --> 12:50.000
+is a very large nonlinear effect.
+
+12:50.000 --> 12:53.000
+In a small-scale nanoparticle,
+
+12:53.000 --> 12:56.000
+it is a very efficient optical heater.
+
+12:56.000 --> 12:59.000
+In this paper in 2017,
+
+12:59.000 --> 13:02.000
+he sprinkled silicon
+
+13:02.000 --> 13:05.000
+on the surface of SiO2
+
+13:05.000 --> 13:08.000
+to show that
+
+13:08.000 --> 13:11.000
+in a specific dimension,
+
+13:11.000 --> 13:14.000
+the silicon nanoparticle
+
+13:14.000 --> 13:17.000
+has a very strong optical heating effect.
+
+13:17.000 --> 13:20.000
+We can heat this silicon nanoparticle
+
+13:20.000 --> 13:23.000
+to about 600K.
+
+13:23.000 --> 13:26.000
+Because of these two reasons,
+
+13:26.000 --> 13:29.000
+it is a very efficient optical heater.
+
+13:29.000 --> 13:32.000
+So maybe we can
+
+13:32.000 --> 13:35.000
+use it to combine
+
+13:35.000 --> 13:38.000
+nano-resonance to achieve
+
+13:38.000 --> 13:41.000
+a greater nonlinear effect.
+
+13:41.000 --> 13:44.000
+So our work combines two things.
+
+13:44.000 --> 13:47.000
+The first thing is a very weak
+
+13:47.000 --> 13:50.000
+nano-resonance,
+
+13:50.000 --> 13:53.000
+but it is a very small nanostructure.
+
+13:53.000 --> 13:56.000
+The other part is
+
+13:56.000 --> 13:59.000
+the photothermal effect.
+
+13:59.000 --> 14:02.000
+The photothermal effect provides
+
+14:02.000 --> 14:05.000
+a very large nonlinear effect.
+
+14:05.000 --> 14:08.000
+If we combine these two things,
+
+14:08.000 --> 14:11.000
+we can get a greater nonlinear effect.
+
+14:11.000 --> 14:14.000
+If we compare
+
+14:14.000 --> 14:17.000
+these two things,
+
+14:17.000 --> 14:20.000
+we can get a very small nanostructure
+
+14:20.000 --> 14:23.000
+and a very good photothermal effect.
+
+14:23.000 --> 14:26.000
+If we compare
+
+14:26.000 --> 14:29.000
+the photothermal effect,
+
+14:29.000 --> 14:32.000
+we can see that
+
+14:32.000 --> 14:35.000
+in ordinary materials,
+
+14:35.000 --> 14:38.000
+the nonlinear coefficient is about
+
+14:38.000 --> 14:41.000
+10 to the power of 9.
+
+14:41.000 --> 14:44.000
+After the enhanced nonlinearity
+
+14:44.000 --> 14:47.000
+of the photosynthesis,
+
+14:47.000 --> 14:50.000
+we can increase the nonlinear coefficient
+
+14:50.000 --> 14:53.000
+by 3 orders.
+
+14:53.000 --> 14:56.000
+This is the process we are going to discuss.
+
+14:56.000 --> 14:59.000
+This is our system.
+
+14:59.000 --> 15:02.000
+We want to achieve
+
+15:02.000 --> 15:05.000
+resonance.
+
+15:05.000 --> 15:08.000
+We need to characterize
+
+15:08.000 --> 15:11.000
+the resonance.
+
+15:11.000 --> 15:14.000
+So we use a dark field system.
+
+15:14.000 --> 15:17.000
+This dark field system
+
+15:17.000 --> 15:20.000
+allows us to get a spectrum
+
+15:20.000 --> 15:23.000
+This is a confocal system.
+
+15:23.000 --> 15:26.000
+The light follows the orange light.
+
+15:26.000 --> 15:29.000
+It hits the object
+
+15:29.000 --> 15:32.000
+and passes through the gobbled mirror
+
+15:32.000 --> 15:35.000
+to select the particle you want.
+
+15:35.000 --> 15:38.000
+Finally, it enters the spectrum meter.
+
+15:38.000 --> 15:41.000
+On the other hand,
+
+15:41.000 --> 15:44.000
+we want to stimulate the photothermal effect.
+
+15:44.000 --> 15:47.000
+So we use a 5.6E laser.
+
+15:47.000 --> 15:50.000
+It passes through the gobbled mirror
+
+15:50.000 --> 15:53.000
+to control where we want to hit the particle.
+
+15:53.000 --> 15:56.000
+It illuminates the silicon nanostructure.
+
+15:56.000 --> 15:59.000
+We also use a dark field system
+
+15:59.000 --> 16:02.000
+to get a background-free,
+
+16:02.000 --> 16:05.000
+clean image.
+
+16:05.000 --> 16:08.000
+This is the resonance we get.
+
+16:08.000 --> 16:11.000
+We can see that by controlling
+
+16:11.000 --> 16:14.000
+different nanostructures,
+
+16:14.000 --> 16:17.000
+such as Wx and Wy,
+
+16:17.000 --> 16:20.000
+we can get a very colorful image.
+
+16:20.000 --> 16:23.000
+This colorful image tells us
+
+16:23.000 --> 16:26.000
+that the resonance of each particle
+
+16:26.000 --> 16:29.000
+is completely different.
+
+16:29.000 --> 16:32.000
+So we can expect
+
+16:32.000 --> 16:35.000
+a different photothermal effect.
+
+16:35.000 --> 16:38.000
+If we look at this line,
+
+16:38.000 --> 16:41.000
+we can use a 5.6E laser
+
+16:41.000 --> 16:44.000
+to do photothermal illumination.
+
+16:44.000 --> 16:47.000
+Under this illumination,
+
+16:47.000 --> 16:50.000
+we can see that
+
+16:50.000 --> 16:53.000
+there are three peaks
+
+16:53.000 --> 16:56.000
+of scattering intensity
+
+16:56.000 --> 16:59.000
+at three different degrees.
+
+16:59.000 --> 17:02.000
+This result is quite similar
+
+17:02.000 --> 17:05.000
+to the simulation.
+
+17:05.000 --> 17:08.000
+So we can say that
+
+17:08.000 --> 17:11.000
+in the silicon nanostructure
+
+17:11.000 --> 17:14.000
+at 100 nm,
+
+17:14.000 --> 17:17.000
+there is a magnetic dipole,
+
+17:17.000 --> 17:20.000
+an electric dipole,
+
+17:20.000 --> 17:23.000
+and a magnetic quadrupole.
+
+17:23.000 --> 17:26.000
+Why do we choose a 5.6E wavelength?
+
+17:26.000 --> 17:29.000
+Because with a 5.6E wavelength,
+
+17:29.000 --> 17:32.000
+we can see different resonance peaks
+
+17:32.000 --> 17:35.000
+at the same time.
+
+17:35.000 --> 17:38.000
+Different resonance peaks
+
+17:38.000 --> 17:41.000
+affect the nonlinear behavior.
+
+17:41.000 --> 17:44.000
+With the same 5.6E wavelength,
+
+17:44.000 --> 17:47.000
+we can trigger
+
+17:47.000 --> 17:50.000
+two different absorption peaks.
+
+17:50.000 --> 17:53.000
+This is why we choose a 5.6E wavelength.
+
+17:53.000 --> 17:56.000
+I have been talking about
+
+17:56.000 --> 17:59.000
+nonlinear effects.
+
+17:59.000 --> 18:02.000
+In fact, what we want to discuss
+
+18:02.000 --> 18:05.000
+is that if we increase
+
+18:05.000 --> 18:08.000
+the excitation intensity,
+
+18:08.000 --> 18:11.000
+what will happen to
+
+18:11.000 --> 18:14.000
+the optical properties?
+
+18:14.000 --> 18:17.000
+If it is a linear case,
+
+18:17.000 --> 18:20.000
+if we increase the excitation intensity,
+
+18:20.000 --> 18:23.000
+the scattering intensity
+
+18:23.000 --> 18:26.000
+will also grow linearly.
+
+18:26.000 --> 18:29.000
+However, if it is a nonlinear case,
+
+18:29.000 --> 18:32.000
+the scattering intensity
+
+18:32.000 --> 18:35.000
+will saturate.
+
+18:35.000 --> 18:38.000
+Since we want to control
+
+18:38.000 --> 18:41.000
+the intensity of the light,
+
+18:41.000 --> 18:44.000
+we need to adjust the power.
+
+18:44.000 --> 18:47.000
+We can adjust it like this.
+
+18:47.000 --> 18:50.000
+Or we can
+
+18:50.000 --> 18:53.000
+make good use of
+
+18:53.000 --> 18:56.000
+our scanning system.
+
+18:56.000 --> 18:59.000
+We can move the beam like this.
+
+18:59.000 --> 19:02.000
+By moving it like this,
+
+19:02.000 --> 19:05.000
+we can also
+
+19:05.000 --> 19:08.000
+saturate the nanostructure
+
+19:08.000 --> 19:11.000
+at different intensities.
+
+19:11.000 --> 19:14.000
+In this case,
+
+19:14.000 --> 19:17.000
+we can see that in a linear case,
+
+19:17.000 --> 19:20.000
+there will be a linear scattering growth.
+
+19:20.000 --> 19:23.000
+In a nonlinear case,
+
+19:23.000 --> 19:26.000
+there is a hole in the middle of our image.
+
+19:26.000 --> 19:29.000
+It has a dominance shape.
+
+19:29.000 --> 19:32.000
+This dominance shape tells us that
+
+19:32.000 --> 19:35.000
+at the center point,
+
+19:35.000 --> 19:38.000
+where the intensity of the light is the highest,
+
+19:38.000 --> 19:41.000
+we have a relatively small
+
+19:41.000 --> 19:44.000
+scattering behavior.
+
+19:44.000 --> 19:47.000
+This is a very strange phenomenon.
+
+19:47.000 --> 19:50.000
+If we want to quantify this phenomenon,
+
+19:50.000 --> 19:53.000
+this is the result of
+
+19:53.000 --> 19:56.000
+one of the size 190 nm nanoparticles.
+
+19:56.000 --> 19:59.000
+When we increase the excitation intensity,
+
+19:59.000 --> 20:02.000
+the scattering intensity will
+
+20:02.000 --> 20:05.000
+have a saturation phenomenon.
+
+20:05.000 --> 20:08.000
+We will see the point spread function
+
+20:08.000 --> 20:11.000
+of this dominance shape.
+
+20:11.000 --> 20:14.000
+Similarly,
+
+20:14.000 --> 20:17.000
+for example,
+
+20:17.000 --> 20:20.000
+we will also see
+
+20:20.000 --> 20:23.000
+a saturation phenomenon.
+
+20:23.000 --> 20:26.000
+In 170 nm nanoparticles,
+
+20:26.000 --> 20:29.000
+we can't find particles at low intensities.
+
+20:29.000 --> 20:32.000
+But when we increase the
+
+20:32.000 --> 20:35.000
+excitation intensity,
+
+20:35.000 --> 20:38.000
+the particles will suddenly come out.
+
+20:38.000 --> 20:41.000
+The scattering will suddenly increase a lot.
+
+20:41.000 --> 20:44.000
+One thing to note is that
+
+20:44.000 --> 20:47.000
+this phenomenon is reversible.
+
+20:47.000 --> 20:50.000
+We can restore it.
+
+20:50.000 --> 20:53.000
+It is not related to the damage
+
+20:53.000 --> 20:56.000
+caused by the light.
+
+20:56.000 --> 20:59.000
+To summarize,
+
+20:59.000 --> 21:02.000
+different nanoparticles
+
+21:02.000 --> 21:05.000
+have different scattering deviations.
+
+21:05.000 --> 21:08.000
+Scattering deviations like
+
+21:08.000 --> 21:11.000
+100 nm nanoparticles
+
+21:11.000 --> 21:14.000
+will have a decrease in intensity.
+
+21:14.000 --> 21:17.000
+In 170 nm nanoparticles,
+
+21:17.000 --> 21:20.000
+the intensity will increase a lot.
+
+21:20.000 --> 21:23.000
+This phenomenon is not only
+
+21:23.000 --> 21:26.000
+a nonlinear phenomenon
+
+21:26.000 --> 21:29.000
+on this diagonal axis.
+
+21:29.000 --> 21:32.000
+In fact,
+
+21:32.000 --> 21:35.000
+in different combinations of
+
+21:35.000 --> 21:38.000
+Wx and Wy,
+
+21:38.000 --> 21:41.000
+we can observe
+
+21:41.000 --> 21:44.000
+this very large nonlinear effect.
+
+21:44.000 --> 21:47.000
+Why do I say it's very large?
+
+21:47.000 --> 21:50.000
+Because in the
+
+21:50.000 --> 21:53.000
+nonlinear effect of
+
+21:53.000 --> 21:56.000
+normal silicon itself,
+
+21:56.000 --> 21:59.000
+we will only produce
+
+21:59.000 --> 22:02.000
+about 10 to the power of 9 percent optical modulation.
+
+22:02.000 --> 22:05.000
+But in this case,
+
+22:05.000 --> 22:08.000
+we will only produce
+
+22:08.000 --> 22:11.000
+about 500 percent
+
+22:11.000 --> 22:14.000
+or minus 70 percent
+
+22:14.000 --> 22:17.000
+nonlinear modulation.
+
+22:17.000 --> 22:20.000
+In addition,
+
+22:20.000 --> 22:23.000
+I want to talk about another thing.
+
+22:23.000 --> 22:26.000
+We just saw a summary.
+
+22:26.000 --> 22:29.000
+The nonlinear behavior of
+
+22:29.000 --> 22:32.000
+different nanoparticles is different.
+
+22:32.000 --> 22:35.000
+What is the relationship between them?
+
+22:35.000 --> 22:38.000
+We can see that
+
+22:38.000 --> 22:41.000
+in the negative nonlinearity,
+
+22:41.000 --> 22:44.000
+like this saturation,
+
+22:44.000 --> 22:47.000
+the spectrum on the resonance
+
+22:47.000 --> 22:50.000
+is a peak.
+
+22:50.000 --> 22:53.000
+On the other hand,
+
+22:53.000 --> 22:56.000
+this 170 nm nanoparticle
+
+22:56.000 --> 22:59.000
+looks like a dip on the resonance spectrum.
+
+22:59.000 --> 23:02.000
+But we won't catch all the peaks.
+
+23:02.000 --> 23:05.000
+For example,
+
+23:05.000 --> 23:08.000
+this 130 nm nanoparticle
+
+23:08.000 --> 23:11.000
+is a scattering peak,
+
+23:11.000 --> 23:14.000
+but we can't observe the nonlinear behavior.
+
+23:14.000 --> 23:17.000
+Why is that?
+
+23:17.000 --> 23:20.000
+We will explain further
+
+23:20.000 --> 23:23.000
+with the photo thermal effect we just mentioned.
+
+23:23.000 --> 23:26.000
+First of all,
+
+23:26.000 --> 23:29.000
+the photo thermal effect
+
+23:29.000 --> 23:32.000
+does exist in our system.
+
+23:32.000 --> 23:35.000
+We have experimental evidence
+
+23:35.000 --> 23:38.000
+and simulated evidence.
+
+23:38.000 --> 23:41.000
+In the experimental evidence,
+
+23:41.000 --> 23:44.000
+we can use the Raman microscope
+
+23:44.000 --> 23:47.000
+to observe how many degrees
+
+23:47.000 --> 23:50.000
+the silicon nanoparticle has risen.
+
+23:50.000 --> 23:53.000
+Our answer is about a few hundred degrees.
+
+23:53.000 --> 23:56.000
+This is quite consistent with the literature.
+
+23:56.000 --> 23:59.000
+In the simulation,
+
+23:59.000 --> 24:02.000
+we can see that
+
+24:02.000 --> 24:05.000
+the silicon nanostructure
+
+24:05.000 --> 24:08.000
+only has a very strong temperature increase
+
+24:08.000 --> 24:11.000
+in a specific geometry.
+
+24:11.000 --> 24:14.000
+This is the photo thermal effect we observed.
+
+24:14.000 --> 24:17.000
+If we heat up a silicon nanoparticle,
+
+24:17.000 --> 24:20.000
+the photo thermal effect
+
+24:20.000 --> 24:23.000
+produces heat.
+
+24:23.000 --> 24:26.000
+This heat
+
+24:26.000 --> 24:29.000
+increases the refractive index.
+
+24:29.000 --> 24:32.000
+This increase in the refractive index
+
+24:32.000 --> 24:35.000
+leads to the change in the mean resonance.
+
+24:35.000 --> 24:38.000
+This increase in the refractive index
+
+24:38.000 --> 24:41.000
+leads to the change in the mean resonance.
+
+24:41.000 --> 24:44.000
+This leads to the nonlinear effect we mentioned.
+
+24:44.000 --> 24:47.000
+We simulated
+
+24:47.000 --> 24:50.000
+this blue curve.
+
+24:50.000 --> 24:53.000
+Our scattering
+
+24:53.000 --> 24:56.000
+is the blue curve
+
+24:56.000 --> 24:59.000
+for different size distributions.
+
+24:59.000 --> 25:02.000
+When we increase the radius,
+
+25:02.000 --> 25:05.000
+we get the red curve.
+
+25:05.000 --> 25:08.000
+Because different particles
+
+25:08.000 --> 25:11.000
+have different refractive indexes,
+
+25:11.000 --> 25:14.000
+the cross-section of the scattering is different.
+
+25:14.000 --> 25:17.000
+If we combine these two lines,
+
+25:17.000 --> 25:20.000
+we get the black curve.
+
+25:20.000 --> 25:23.000
+This black curve
+
+25:23.000 --> 25:26.000
+is very consistent with the experiment.
+
+25:26.000 --> 25:29.000
+This black curve is very consistent with the experiment.
+
+25:29.000 --> 25:32.000
+This black curve is very consistent with the experiment.
+
+25:32.000 --> 25:35.000
+This explains the effect of our observation
+
+25:35.000 --> 25:38.000
+of the photo thermal effect.
+
+25:38.000 --> 25:41.000
+In addition,
+
+25:41.000 --> 25:44.000
+In addition,
+
+25:44.000 --> 25:47.000
+we simulated these three
+
+25:47.000 --> 25:50.000
+170 and 190 neoparticles
+
+25:50.000 --> 25:53.000
+as a single nonlinear curve.
+
+25:53.000 --> 25:56.000
+as a single nonlinear curve.
+
+25:56.000 --> 25:59.000
+This is very consistent with the experiment.
+
+25:59.000 --> 26:02.000
+This further proves that
+
+26:02.000 --> 26:05.000
+the photo thermal effect
+
+26:05.000 --> 26:08.000
+is the nonlinearity mechanism.
+
+26:08.000 --> 26:11.000
+is the nonlinearity mechanism.
+
+26:11.000 --> 26:14.000
+If you hear the word photo thermal effect,
+
+26:14.000 --> 26:17.000
+many people may think
+
+26:17.000 --> 26:20.000
+that if the device is controlled by thermal energy,
+
+26:20.000 --> 26:23.000
+it may be very slow.
+
+26:23.000 --> 26:26.000
+But in fact,
+
+26:26.000 --> 26:29.000
+the photo thermal effect is not necessarily slow.
+
+26:29.000 --> 26:32.000
+In terms of magnitude, it is very slow.
+
+26:32.000 --> 26:35.000
+But in terms of magnitude,
+
+26:35.000 --> 26:38.000
+our experiment and simulation
+
+26:38.000 --> 26:41.000
+have shown that
+
+26:41.000 --> 26:44.000
+the photo thermal effect observed
+
+26:44.000 --> 26:47.000
+on the silicon nanostructure
+
+26:47.000 --> 26:50.000
+is very fast.
+
+26:50.000 --> 26:53.000
+At this point,
+
+26:53.000 --> 26:56.000
+if we turn on the 785nm laser,
+
+26:56.000 --> 26:59.000
+there will be a large drop in the velocity.
+
+26:59.000 --> 27:02.000
+there will be a large drop in the velocity.
+
+27:02.000 --> 27:05.000
+This time scale is about 2ns.
+
+27:05.000 --> 27:08.000
+This simulation also tells us the same thing.
+
+27:08.000 --> 27:11.000
+This simulation also tells us the same thing.
+
+27:11.000 --> 27:14.000
+If we look at this picture,
+
+27:14.000 --> 27:17.000
+we can get a very fast thermal response
+
+27:17.000 --> 27:20.000
+of 1GHz.
+
+27:20.000 --> 27:23.000
+of 1GHz.
+
+27:23.000 --> 27:26.000
+It tells us that it is a minus 50% nonlinear effect.
+
+27:26.000 --> 27:29.000
+It tells us that it is a minus 50% nonlinear effect.
+
+27:29.000 --> 27:32.000
+So we can make a device
+
+27:32.000 --> 27:35.000
+with a 50% deviation.
+
+27:35.000 --> 27:38.000
+with a 50% deviation.
+
+27:38.000 --> 27:41.000
+But it still maintains a very fast speed of 1GHz.
+
+27:41.000 --> 27:44.000
+But it still maintains a very fast speed of 1GHz.
+
+27:44.000 --> 27:47.000
+Another interesting observation is
+
+27:47.000 --> 27:50.000
+that when we
+
+27:50.000 --> 27:53.000
+When we
+
+27:53.000 --> 27:56.000
+When we
+
+27:56.000 --> 27:59.000
+can we go back to the screen?
+
+27:59.000 --> 28:02.000
+Can we go back to the screen?
+
+28:02.000 --> 28:05.000
+What is the input image?
+
+28:05.000 --> 28:08.000
+What is the input image?
+
+28:08.000 --> 28:11.000
+What is the input image?
+
+28:11.000 --> 28:14.000
+What is the input image?
+
+28:14.000 --> 28:17.000
+The x-axis of the laser...
+
+28:18.000 --> 28:21.000
+The insert...
+
+28:21.000 --> 28:24.000
+The insert...
+
+28:24.000 --> 28:27.000
+The insert...
+
+28:35.000 --> 28:38.000
+You choose a peak and not a z-axis,
+
+28:38.000 --> 28:41.000
+You choose a peak and not a z-axis,
+
+28:41.000 --> 28:44.000
+because the laser...
+
+28:44.000 --> 28:49.000
+you can choose any size to reach the peak
+
+28:57.000 --> 29:01.000
+Our sample is placed at room temperature
+
+29:01.000 --> 29:06.000
+but the Photo Thermal Effect is a local thermal effect
+
+29:06.000 --> 29:11.280
+So the sensitization of the very small thickness
+
+29:11.280 --> 29:16.280
+but the surrounding area is maintained
+
+29:20.280 --> 29:23.280
+Thank you for the question
+
+29:23.280 --> 29:27.280
+Another interesting phenomenon is
+
+29:27.280 --> 29:30.280
+if it is a Photo Thermal Effect
+
+29:30.280 --> 29:39.280
+then we change the surrounding thermal diffusion
+
+29:39.280 --> 29:46.280
+For example, if the thermal diffusion is changed
+
+29:46.280 --> 29:49.280
+then we should see a different phenomenon
+
+29:49.280 --> 29:52.280
+The result is that our Point Spreading Function
+
+29:52.280 --> 29:55.280
+has a very sharp transition
+
+29:55.280 --> 29:58.280
+This is our profile
+
+29:58.280 --> 30:01.280
+When we enter high laser intensity
+
+30:01.280 --> 30:04.280
+we will have a very strange triangular change
+
+30:04.280 --> 30:09.280
+This triangular change tells us a very shaky phenomenon
+
+30:09.280 --> 30:13.280
+But we don't know how to explain it yet
+
+30:13.280 --> 30:17.280
+Let me make a conclusion
+
+30:17.280 --> 30:23.280
+We observed a very large Photo Thermal Nonlinearity
+
+30:23.280 --> 30:28.280
+We combined two things to achieve this result
+
+30:28.280 --> 30:33.280
+The first thing is that we want to reduce the size
+
+30:33.280 --> 30:38.280
+So we will use the material of Mean Resonance
+
+30:38.280 --> 30:41.280
+We use the material of nanometer
+
+30:41.280 --> 30:45.280
+Usually we think of Mean Resonance
+
+30:45.280 --> 30:48.280
+Although the quality factor is very low
+
+30:48.280 --> 30:53.280
+but we have other ways to solve this problem
+
+30:53.280 --> 30:57.280
+So we meet the size requirement
+
+30:57.280 --> 31:01.280
+How to meet the functionality requirement?
+
+31:01.280 --> 31:06.280
+We use a very powerful natural
+
+31:06.280 --> 31:14.280
+change of Photo Thermal Nonlinearity
+
+31:14.280 --> 31:17.280
+Combining these two things
+
+31:17.280 --> 31:21.280
+we can create a Photo Thermal Effect
+
+31:21.280 --> 31:24.280
+larger than the original Bulk
+
+31:24.280 --> 31:29.280
+Because of the Enhanced Mean Resonance
+
+31:29.280 --> 31:34.280
+So we can get a very large Nonlinearity Effect
+
+31:34.280 --> 31:37.280
+Like this picture
+
+31:37.280 --> 31:40.280
+When we increase Excitation Intensity
+
+31:40.280 --> 31:42.280
+Scattering Intensity saturates
+
+31:42.280 --> 31:46.280
+and even creates a donut shape
+
+31:46.280 --> 31:48.280
+Another thing is that
+
+31:48.280 --> 31:50.280
+this Photo Thermal Effect
+
+31:50.280 --> 31:55.280
+is not necessarily as slow as the large scale
+
+31:55.280 --> 31:57.280
+In fact, in a small scale
+
+31:57.280 --> 32:06.280
+we have proven the recovery speed of a nanosecond
+
+32:06.280 --> 32:10.280
+This allows us to make a 1GHz
+
+32:10.280 --> 32:15.280
+about 50% deviation device
+
+32:15.280 --> 32:19.280
+So I want to thank you for listening
+
+32:19.280 --> 32:22.280
+and thank you to my advisor
+
+32:23.280 --> 32:25.280
+at Taiwan University of Physics
+
+32:25.280 --> 32:29.280
+And I want to thank my co-authors
+
+32:29.280 --> 32:31.280
+like Yusuke Nagasaki
+
+32:31.280 --> 32:34.280
+He is at Osaka University
+
+32:34.280 --> 32:37.280
+I was lucky enough to go to Osaka University
+
+32:37.280 --> 32:40.280
+for a while
+
+32:40.280 --> 32:42.280
+and got to know them
+
+32:42.280 --> 32:44.280
+They gave me great help
+
+32:44.280 --> 32:48.280
+Finally, they helped us with
+
+32:49.280 --> 32:52.280
+fabrication
+
+32:52.280 --> 32:55.280
+So thank you for listening
+
+32:55.280 --> 32:58.280
+I am happy to take any questions
+
+32:58.280 --> 32:59.280
+Thank you
+
+33:08.280 --> 33:13.280
+Thank you Yusuke
+
+33:13.280 --> 33:18.280
+Any questions?
+
+33:37.280 --> 33:40.280
+The first question is
+
+33:40.280 --> 33:43.280
+I want to know how fabrication is done
+
+33:43.280 --> 33:51.280
+Where does silicon-on-quartz come from?
+
+33:51.280 --> 33:57.280
+We bought the silicon-on-quartz structure from Company
+
+33:57.280 --> 34:03.280
+How does it work?
+
+34:03.280 --> 34:07.280
+It uses pure silicon
+
+34:07.280 --> 34:12.280
+to oxidize the bottom layer into SiO2
+
+34:12.280 --> 34:17.280
+The top layer is cut off with ion beam
+
+34:21.280 --> 34:26.280
+Wait, you said you bought the SOI structure?
+
+34:26.280 --> 34:28.280
+Yes
+
+34:28.280 --> 34:33.280
+Usually the SOI structure is made of silicon
+
+34:33.280 --> 34:36.280
+The silicon is thicker
+
+34:36.280 --> 34:40.280
+But the SOI structure is different
+
+34:40.280 --> 34:45.280
+It's made of quartz
+
+34:45.280 --> 34:49.280
+It's made of two layers
+
+34:49.280 --> 34:51.280
+So it's wafer-bonding?
+
+34:51.280 --> 34:53.280
+Yes
+
+34:57.280 --> 35:00.280
+Another question is
+
+35:00.280 --> 35:05.280
+I want to know how the donor shape is formed
+
+35:19.280 --> 35:28.280
+If we move the excitation beam from left to right
+
+35:28.280 --> 35:32.280
+Because the excitation beam is a Gaussian shape
+
+35:32.280 --> 35:36.280
+When we pass through the nanostructure
+
+35:36.280 --> 35:40.280
+The excitation of the nanostructure
+
+35:40.280 --> 35:45.280
+is from the small innumeration to the big innumeration
+
+35:45.280 --> 35:48.280
+When the big innumeration occurs
+
+35:48.280 --> 35:53.280
+The Gaussian beam hits the nanostructure
+
+35:53.280 --> 35:58.280
+So when we do confocal scanning
+
+35:58.280 --> 36:03.280
+We are also varying the power density
+
+36:03.280 --> 36:06.280
+So the image you show is not the real image
+
+36:06.280 --> 36:09.280
+It's a scanning image
+
+36:09.280 --> 36:15.280
+The raw data we get is like this
+
+36:15.280 --> 36:18.280
+So the image is scanned?
+
+36:18.280 --> 36:20.280
+Yes
+
+36:24.280 --> 36:28.280
+It's processed at the end
+
+36:28.280 --> 36:32.280
+The last question is
+
+36:32.280 --> 36:36.280
+This kind of mini-resonator
+
+36:36.280 --> 36:38.280
+It has a large load
+
+36:38.280 --> 36:42.280
+And it's not easy to couple
+
+36:42.280 --> 36:47.280
+My understanding is that it's hard to couple to nanofortanites
+
+36:47.280 --> 36:51.280
+Is there any way to solve this problem?
+
+36:51.280 --> 36:55.280
+This is a great question
+
+36:55.280 --> 36:58.280
+For coupling
+
+36:58.280 --> 37:01.280
+Because the mainstream of nanofortanites
+
+37:01.280 --> 37:04.280
+Is to use the silicon waveguide
+
+37:04.280 --> 37:10.280
+So it's hard to couple to the silicon waveguide
+
+37:10.280 --> 37:12.280
+That's right
+
+37:12.280 --> 37:17.280
+But we don't necessarily
+
+37:18.280 --> 37:24.280
+It can be made like a gate
+
+37:24.280 --> 37:26.280
+Like this
+
+37:26.280 --> 37:29.280
+This is a potential application
+
+37:29.280 --> 37:32.280
+We have a silicon waveguide
+
+37:32.280 --> 37:37.280
+We put a mini-resonator on it
+
+37:37.280 --> 37:42.280
+If the intensity of my silicon waveguide is very strong
+
+37:42.280 --> 37:46.280
+Or we put a high beam on the right
+
+37:46.280 --> 37:49.280
+To heat the silicon nanofortanite
+
+37:49.280 --> 37:53.280
+We use another kind of wavelength
+
+37:53.280 --> 37:56.280
+To communicate
+
+37:56.280 --> 37:59.280
+Although the load of the mini-resonator is large
+
+37:59.280 --> 38:05.280
+But its load will not affect the communication wavelength
+
+38:05.280 --> 38:11.280
+Why not?
+
+38:11.280 --> 38:16.280
+Because it's a bit like a pump probe
+
+38:16.280 --> 38:21.280
+We use an irrelevant wavelength to pump it
+
+38:21.280 --> 38:26.280
+Its purpose is to increase the temperature
+
+38:26.280 --> 38:31.280
+Of course, the on-off ratio can be done very well
+
+38:31.280 --> 38:36.280
+But your signal will always have a loss
+
+38:36.280 --> 38:41.280
+No matter if you have a gate
+
+38:41.280 --> 38:46.280
+The loss of your waveguide will always be large
+
+38:46.280 --> 38:48.280
+It should be like this
+
+38:48.280 --> 38:51.280
+Yes, because it's more of a scatter
+
+38:51.280 --> 38:55.280
+But I think we can use engineering
+
+38:55.280 --> 38:59.280
+To make the loss smaller through different wavelengths
+
+39:00.280 --> 39:04.280
+Like this picture
+
+39:08.280 --> 39:11.280
+If we look at the absorption on the right
+
+39:11.280 --> 39:14.280
+It's about 800 nm or more
+
+39:14.280 --> 39:18.280
+The silicon itself has no absorption
+
+39:18.280 --> 39:23.280
+So through different wavelengths
+
+39:23.280 --> 39:28.280
+With different geometry of the mini-resonator
+
+39:28.280 --> 39:33.280
+We can adjust the absorption
+
+39:33.280 --> 39:36.280
+To make the loss as small as possible
+
+39:41.280 --> 39:46.280
+Is the main current of silicon waveguide 1.5μm?
+
+39:46.280 --> 39:51.280
+Why do you want to do it in the visible range?
+
+39:51.280 --> 39:54.280
+Because in the visible range
+
+39:54.280 --> 39:57.280
+We have enough absorption
+
+39:57.280 --> 40:02.280
+If it's 1.5μm, we don't have enough absorption
+
+40:04.280 --> 40:11.280
+Does this become a point to pay attention to in the future?
+
+40:11.280 --> 40:17.280
+Because most waveguides should be at 1.5μm or 1.1μm
+
+40:17.280 --> 40:22.280
+Yes, so the communication we want to send
+
+40:22.280 --> 40:26.280
+Should still be in the range of 1.5μm
+
+40:26.280 --> 40:29.280
+But what we emphasize here is
+
+40:29.280 --> 40:34.280
+Our nanometer structure can produce enough heat
+
+40:34.280 --> 40:39.280
+This heat can be enough to change the refractive index
+
+40:39.280 --> 40:44.280
+You mean you still have to use visible to pump
+
+40:44.280 --> 40:49.280
+Then you use 1.5 to probe
+
+40:49.280 --> 40:54.280
+This is the application in my mind
+
+40:55.280 --> 41:01.280
+So the potential structure we saw just now
+
+41:01.280 --> 41:04.280
+It hasn't been done yet
+
+41:04.280 --> 41:08.280
+It hasn't been done yet
+
+41:08.280 --> 41:11.280
+Will ThermoLight affect your 1.5?
+
+41:11.280 --> 41:17.280
+Will the evidence of this not being tested be affected?
+
+41:17.280 --> 41:20.280
+No, this will be the next project
+
+41:24.280 --> 41:29.280
+Hello
+
+41:29.280 --> 41:36.280
+Will the refractive index be affected by visible light?
+
+41:36.280 --> 41:41.280
+If you choose, like you just said, there are about 5 or 6 waves
+
+41:41.280 --> 41:44.280
+If you choose differently, maybe
+
+41:44.280 --> 41:48.280
+I think it's about the same
+
+41:48.280 --> 41:50.280
+I didn't hear it clearly
+
+41:50.280 --> 41:53.280
+No, because the picture you just showed
+
+41:53.280 --> 41:55.280
+There are about 4 or 5 peaks
+
+41:55.280 --> 42:00.280
+I just asked you why you used the 750-pixel picture
+
+42:00.280 --> 42:02.280
+Oh, yeah
+
+42:02.280 --> 42:04.280
+But the other lasers
+
+42:04.280 --> 42:09.280
+The other wavelength lasers feel more difficult to obtain
+
+42:09.280 --> 42:11.280
+A little bit, yeah
+
+42:11.280 --> 42:13.280
+Yeah
+
+42:14.280 --> 42:18.280
+It's okay, 400
+
+42:18.280 --> 42:21.280
+A little more than 400, so there's a chance
+
+42:21.280 --> 42:25.280
+This is done in the collaborator lab
+
+42:25.280 --> 42:30.280
+Their equipment is only 785
+
+42:35.280 --> 42:39.280
+But I think in terms of quantity
+
+42:39.280 --> 42:43.280
+I don't think Timescale will guess a lot
+
+42:57.280 --> 42:59.280
+Hello
+
+43:10.280 --> 43:14.280
+Any other questions?
+
+43:19.280 --> 43:22.280
+I have a general question
+
+43:22.280 --> 43:25.280
+Because I'm not involved in this field
+
+43:25.280 --> 43:27.280
+I want to ask
+
+43:27.280 --> 43:30.280
+Basically in this field
+
+43:30.280 --> 43:33.280
+The current level of development is
+
+43:33.280 --> 43:36.280
+You just said you want to scale
+
+43:36.280 --> 43:39.280
+When you want to scale smaller and smaller
+
+43:39.280 --> 43:42.280
+You want to maintain the quality of the laser beam
+
+43:42.280 --> 43:44.280
+And reduce other costs
+
+43:44.280 --> 43:46.280
+In this field
+
+43:46.280 --> 43:49.280
+Are there already a lot of people doing it?
+
+43:49.280 --> 43:51.280
+Or are you the pioneers?
+
+43:51.280 --> 43:53.280
+And besides this direction
+
+43:53.280 --> 43:56.280
+What other directions do you think
+
+43:56.280 --> 44:01.280
+Have the potential to improve this problem?
+
+44:02.280 --> 44:04.280
+I think
+
+44:04.280 --> 44:08.280
+The interaction between light and light itself is very small
+
+44:08.280 --> 44:12.280
+So generally everyone will try to
+
+44:12.280 --> 44:16.280
+Make the resonance structure bigger
+
+44:16.280 --> 44:20.280
+Solve this problem through geometric methods
+
+44:20.280 --> 44:24.280
+The most famous example is
+
+44:24.280 --> 44:29.280
+Microlipson's microbeam resonator
+
+44:29.280 --> 44:34.280
+The structure shown in the beginning
+
+44:36.280 --> 44:39.280
+So I believe
+
+44:39.280 --> 44:42.280
+Photonic's mainstream is something like this
+
+44:42.280 --> 44:46.280
+But everyone is still trying
+
+44:46.280 --> 44:50.280
+So they haven't thought about how to make the device smaller
+
+44:50.280 --> 44:52.280
+Are they just proposing ideas
+
+44:52.280 --> 44:55.280
+Or have they already made some prototypes?
+
+44:55.280 --> 44:58.280
+Photonic has already made something
+
+44:58.280 --> 45:03.280
+Many companies are already selling this kind of device
+
+45:04.280 --> 45:08.280
+So what are they doing with the microbeam?
+
+45:08.280 --> 45:10.280
+Waveguide
+
+45:10.280 --> 45:12.280
+Waveguide control
+
+45:15.280 --> 45:21.280
+How do they use the microbeam to control?
+
+45:22.280 --> 45:24.280
+Usually
+
+45:24.280 --> 45:26.280
+If
+
+45:26.280 --> 45:29.280
+If I have a beam
+
+45:29.280 --> 45:31.280
+If I have an EM wave
+
+45:31.280 --> 45:34.280
+Passed through the waveguide
+
+45:34.280 --> 45:38.280
+If the frequency of my EM wave
+
+45:38.280 --> 45:42.280
+Just meets the resonance structure of the nanostructure
+
+45:42.280 --> 45:47.280
+Then it will be completely trapped in this structure
+
+45:47.280 --> 45:49.280
+Will not continue to propagate
+
+45:49.280 --> 45:52.280
+So it can play the role of off
+
+45:53.280 --> 45:57.280
+The biggest discovery of Microlipson
+
+45:57.280 --> 46:02.280
+Is that he put a
+
+46:02.280 --> 46:05.280
+Put a potential
+
+46:05.280 --> 46:07.280
+Electrical potential
+
+46:07.280 --> 46:09.280
+Put a gating
+
+46:09.280 --> 46:13.280
+This gating will cause the refractive index to change
+
+46:14.280 --> 46:18.280
+So it can choose which light to pass and which light not to pass
+
+46:18.280 --> 46:21.280
+I have seen a similar structure before
+
+46:21.280 --> 46:24.280
+But it seems to be like
+
+46:24.280 --> 46:26.280
+You just
+
+46:26.280 --> 46:30.280
+The light is from top to bottom
+
+46:30.280 --> 46:32.280
+But it seems to be
+
+46:32.280 --> 46:34.280
+A very similar structure
+
+46:34.280 --> 46:36.280
+It can go from top left to bottom right
+
+46:36.280 --> 46:38.280
+But it can't go from bottom right to top left
+
+46:38.280 --> 46:40.280
+But
+
+46:40.280 --> 46:43.280
+But I think this thing
+
+46:43.280 --> 46:44.280
+I didn't understand at that time
+
+46:44.280 --> 46:46.280
+I just looked at its abstract
+
+46:46.280 --> 46:48.280
+It can do this
+
+46:52.280 --> 46:54.280
+But I wanted to ask you
+
+46:54.280 --> 46:57.280
+Do you know how he did it?
+
+46:57.280 --> 46:59.280
+I don't know
+
+46:59.280 --> 47:01.280
+You can find the abstract
+
+47:01.280 --> 47:04.280
+I don't seem to be
+
+47:04.280 --> 47:06.280
+Glenn Davison
+
+47:06.280 --> 47:09.280
+A professor at Maryland
+
+47:09.280 --> 47:11.280
+They are also doing Microlipson
+
+47:11.280 --> 47:15.280
+So what you said is that it can only pass in one direction
+
+47:15.280 --> 47:17.280
+It can't pass in another direction
+
+47:17.280 --> 47:19.280
+Although it uses a pathway
+
+47:19.280 --> 47:20.280
+Yes
+
+47:20.280 --> 47:22.280
+So I thought it was amazing at that time
+
+47:22.280 --> 47:26.280
+But I didn't take a closer look at it
+
+47:26.280 --> 47:28.280
+Have to find it again
+
+47:28.280 --> 47:34.280
+So what is the biggest advantage of its circular disk type?
+
+47:34.280 --> 47:38.280
+Compared to your general straight line web guide
+
+47:38.280 --> 47:42.280
+Because it will have a resonance structure
+
+47:42.280 --> 47:46.280
+It will have a resonance structure
+
+47:46.280 --> 47:48.280
+Called Whisper Gallery
+
+47:48.280 --> 47:50.280
+So the energy is stronger
+
+47:50.280 --> 47:52.280
+The signal is stronger
+
+47:54.280 --> 47:56.280
+I remember you have a picture
+
+47:56.280 --> 47:58.280
+It will have about four
+
+47:58.280 --> 48:00.280
+Two peaks
+
+48:00.280 --> 48:02.280
+I remember in the front or the back
+
+48:04.280 --> 48:05.280
+This one
+
+48:05.280 --> 48:06.280
+Yes
+
+48:06.280 --> 48:10.280
+Their separation
+
+48:10.280 --> 48:14.280
+It probably has something to do with the radius of this ring
+
+48:14.280 --> 48:16.280
+Or the size
+
+48:16.280 --> 48:18.280
+Or the voltage
+
+48:18.280 --> 48:20.280
+Of course
+
+48:20.280 --> 48:24.280
+So how much is the Q of this one?
+
+48:24.280 --> 48:28.280
+This Q is probably 10
+
+48:28.280 --> 48:30.280
+5-quart scale
+
+48:32.280 --> 48:34.280
+5-quart scale is pretty good
+
+48:34.280 --> 48:38.280
+Microcality is also about 6-7 quarts
+
+48:41.280 --> 48:43.280
+But in Mi Resonance
+
+48:43.280 --> 48:47.280
+The quality factor is probably only 1000
+
+48:47.280 --> 48:51.280
+So there is a difference of 3 quarts
+
+48:53.280 --> 48:57.280
+So I can only use other mechanisms
+
+48:57.280 --> 49:00.280
+To achieve the same energy
+
+49:04.280 --> 49:05.280
+Sorry
+
+49:05.280 --> 49:08.280
+Mi Resonator has 1000?
+
+49:09.280 --> 49:10.280
+Sorry
+
+49:10.280 --> 49:13.280
+About 10-100
+
+49:13.280 --> 49:14.280
+Ok
+
+49:14.280 --> 49:16.280
+So the picture you just showed
+
+49:16.280 --> 49:18.280
+Is about 10-100
+
+49:18.280 --> 49:19.280
+Yes
+
+49:19.280 --> 49:20.280
+Scale
+
+49:20.280 --> 49:21.280
+Ok
+
+49:27.280 --> 49:29.280
+Thank you everyone for your passionate questions
+
+49:29.280 --> 49:31.280
+Anyone else has questions?
+
+49:31.280 --> 49:33.280
+No
+
+49:38.280 --> 49:41.280
+Du Yixiu
+
+49:41.280 --> 49:43.280
+You can
+
+49:43.280 --> 49:46.280
+If any of you
+
+49:46.280 --> 49:48.280
+Have other questions after the talk
+
+49:48.280 --> 49:50.280
+You can contact Du Yixiu
+
+49:50.280 --> 49:52.280
+Through his email
+
+49:52.280 --> 49:55.280
+And Yixiu you can leave your email in the chat
+
+49:55.280 --> 49:57.280
+If you want to ask
+
+50:01.280 --> 50:04.280
+Click on the chat on the right
+
+50:09.280 --> 50:11.280
+Can I type?
+
+50:11.280 --> 50:13.280
+You can
+
+50:19.280 --> 50:21.280
+Can you hear me?
+
+50:21.280 --> 50:22.280
+Yes
+
+50:22.280 --> 50:24.280
+I want to ask
+
+50:24.280 --> 50:26.280
+Thank you for your talk
+
+50:26.280 --> 50:28.280
+I want to ask
+
+50:28.280 --> 50:30.280
+You mentioned that
+
+50:30.280 --> 50:32.280
+It has a nonlinear effect
+
+50:32.280 --> 50:34.280
+So it changed the N2 part
+
+50:35.280 --> 50:37.280
+The current nonlinear effect
+
+50:37.280 --> 50:39.280
+Is what I want to compare
+
+50:39.280 --> 50:41.280
+Yes
+
+50:41.280 --> 50:43.280
+If you have a strong current nonlinear effect
+
+50:43.280 --> 50:46.280
+You should also have a strong 2-photon absorption
+
+50:46.280 --> 50:48.280
+In this device
+
+50:48.280 --> 50:50.280
+I want to say
+
+50:50.280 --> 50:52.280
+The question is
+
+50:52.280 --> 50:54.280
+If you have a strong 2-photon absorption
+
+50:54.280 --> 50:57.280
+You can directly use the 1.5 wavelength
+
+50:57.280 --> 51:00.280
+Or use a more transparent wavelength
+
+51:00.280 --> 51:03.280
+To achieve a strong nonlinear effect
+
+51:03.280 --> 51:05.280
+Nonlinear effect
+
+51:05.280 --> 51:07.280
+I don't know if you've tried it
+
+51:07.280 --> 51:09.280
+Some people do it like this
+
+51:09.280 --> 51:11.280
+But
+
+51:11.280 --> 51:16.280
+To trigger the 2-photon absorption
+
+51:16.280 --> 51:19.280
+We need a very strong intensity
+
+51:19.280 --> 51:21.280
+So they use a femtosecond laser
+
+51:21.280 --> 51:23.280
+I see
+
+51:23.280 --> 51:25.280
+So you guys
+
+51:25.280 --> 51:27.280
+I see
+
+51:27.280 --> 51:29.280
+So you guys
+
+51:29.280 --> 51:31.280
+Don't have a femtosecond laser
+
+51:31.280 --> 51:33.280
+Not that I don't have a problem
+
+51:33.280 --> 51:36.280
+We want to use the minimum intensity
+
+51:36.280 --> 51:38.280
+Minimum intensity
+
+51:38.280 --> 51:41.280
+To trigger the nonlinearity
+
+51:41.280 --> 51:43.280
+I see
+
+51:43.280 --> 51:45.280
+I can ask
+
+51:45.280 --> 51:47.280
+I'm not sure if you compare like this
+
+51:47.280 --> 51:49.280
+But I want to
+
+51:49.280 --> 51:51.280
+Understand a little bit more
+
+51:51.280 --> 51:53.280
+If you put your excitation
+
+51:53.280 --> 51:55.280
+These power density
+
+51:55.280 --> 51:57.280
+Then you normalize it
+
+51:57.280 --> 51:59.280
+Absorption cross action
+
+51:59.280 --> 52:01.280
+You probably
+
+52:01.280 --> 52:03.280
+How many photons do you need
+
+52:03.280 --> 52:07.280
+To start seeing these nonlinear effects
+
+52:12.280 --> 52:14.280
+Can you say it again
+
+52:14.280 --> 52:16.280
+Because your excitation
+
+52:16.280 --> 52:18.280
+Most of the light
+
+52:18.280 --> 52:20.280
+Doesn't really couple to
+
+52:20.280 --> 52:22.280
+Its resonant mode
+
+52:22.280 --> 52:24.280
+Because its gathering cross action is very small
+
+52:24.280 --> 52:26.280
+But if you put your
+
+52:26.280 --> 52:28.280
+Excitation power density
+
+52:29.280 --> 52:31.280
+To normalize its
+
+52:31.280 --> 52:33.280
+Absorption cross action
+
+52:33.280 --> 52:35.280
+Which means that you
+
+52:35.280 --> 52:37.280
+Really excite the structure of the photon
+
+52:37.280 --> 52:39.280
+How many photons do you need
+
+52:39.280 --> 52:41.280
+To be able to see
+
+52:41.280 --> 52:43.280
+Its nonlinear phenomenon
+
+52:46.280 --> 52:48.280
+Or
+
+52:48.280 --> 52:50.280
+Because you emphasize that it is very strong
+
+52:50.280 --> 52:52.280
+You may be able to see very small power
+
+52:52.280 --> 52:54.280
+Just
+
+52:54.280 --> 52:56.280
+See this nonlinear effect
+
+52:56.280 --> 52:58.280
+Do you have some
+
+52:58.280 --> 53:00.280
+More quantitative
+
+53:00.280 --> 53:02.280
+Comparison method
+
+53:02.280 --> 53:04.280
+How much power
+
+53:04.280 --> 53:06.280
+Or how many photons
+
+53:06.280 --> 53:08.280
+Do you need
+
+53:08.280 --> 53:10.280
+How much intensity
+
+53:10.280 --> 53:12.280
+If it is
+
+53:18.280 --> 53:20.280
+If it is
+
+53:20.280 --> 53:22.280
+5
+
+53:22.280 --> 53:24.280
+Megawatts per
+
+53:24.280 --> 53:26.280
+square meter
+
+53:26.280 --> 53:28.280
+Right
+
+53:28.280 --> 53:30.280
+General nonlinearity is
+
+53:30.280 --> 53:32.280
+10 to the power of 9
+
+53:32.280 --> 53:34.280
+I see
+
+53:34.280 --> 53:36.280
+In our case
+
+53:36.280 --> 53:38.280
+There will be a very large deviation
+
+53:38.280 --> 53:40.280
+I see
+
+53:40.280 --> 53:42.280
+So if you
+
+53:42.280 --> 53:44.280
+10 to the power of 9
+
+53:44.280 --> 53:46.280
+If there is such a phenomenon
+
+53:46.280 --> 53:48.280
+Then I almost have to
+
+53:48.280 --> 53:50.280
+5 times 10 to the power of 9
+
+53:50.280 --> 53:52.280
+To be able to use
+
+53:52.280 --> 53:54.280
+Absorption of two photons
+
+53:54.280 --> 53:56.280
+To achieve a similar effect
+
+53:56.280 --> 53:58.280
+I see
+
+53:58.280 --> 54:00.280
+I see OK
+
+54:00.280 --> 54:02.280
+Then I can probably
+
+54:02.280 --> 54:04.280
+Thank you for your answer
+
+54:04.280 --> 54:06.280
+Thank you
+
+54:06.280 --> 54:08.280
+Thank you
+
+54:10.280 --> 54:12.280
+OK
+
+54:12.280 --> 54:14.280
+Thank you all for your questions
+
+54:14.280 --> 54:16.280
+Then I will stop
+
+54:16.280 --> 54:18.280
+That's all for today's speech
+
+54:18.280 --> 54:20.280
+I will stop recording
+

@@ -1,0 +1,1861 @@
+start	end	text
+0	7000	Thank you everyone for coming to this talk.
+7000	15000	We are very happy to invite Dr. Lin Shujing from the University of Columbia, UBC, Canada.
+15000	24000	Dr. Lin was trained at the University of Zhongshan Medical University,
+24000	29000	in the Department of Radiation Science and Imaging.
+29000	31000	After graduating from this university,
+31000	35000	he obtained the qualification of a Radiologist of the Republic of China.
+35000	39000	However, he was very interested in academic research,
+39000	46000	so he later completed a master's degree from the Institute of Brain Science at the University of Columbia.
+46000	47000	After the master's degree,
+47000	52000	he also served as a research assistant at the University of Yangming,
+52000	56000	Rongzhong, Taipei City Hospital, and Jiaotong University.
+56000	61000	In 2012, he went to the University of Columbia, UBC, Canada,
+61000	64000	to start his doctorate in Neuroscience.
+64000	68000	He graduated in 2018.
+68000	75000	Today's talk is mainly about his doctoral thesis.
+75000	79000	I am very happy and grateful that he is here to share with us.
+79000	86000	This talk is about the connection between the functions of the brain and neurodegenerative diseases,
+86000	89000	as well as the connection between cognitive functions.
+89000	100000	Let's welcome him with a round of applause.
+100000	103000	Can you turn up the volume?
+103000	107000	If not, let me know in the chat.
+107000	108000	I can do it here.
+108000	110000	You can? Okay.
+110000	112000	Thank you for the introduction.
+112000	117000	What I am going to talk about today is basically what I did in my PhD thesis.
+117000	128000	The structure of today's talk will be based on the order of the chapters in my thesis.
+128000	130000	The title is a bit long.
+130000	133000	Let me explain.
+133000	138000	The title of my thesis is called Advanced Neural Analysis of Resin-stained Functional Connectivity
+138000	142000	to Probe Exactive Functions in Parkinson's Disease and Multiple Sclerosis.
+142000	150000	In simple terms, it is a way to look at the connection between the functions of the brain and cognitive functions
+150000	155000	in neurodegenerative diseases.
+155000	158000	Let's move on.
+158000	161000	I wrote seven chapters in total.
+161000	167000	The presentation will follow the order of the chapters.
+167000	171000	In the first part, I will put the first and second chapters together.
+171000	175000	The purpose of putting the first and second chapters together is to give you a brief introduction,
+175000	179000	including the symptoms of these two diseases and their clinical symptoms.
+179000	181000	I will also put the second chapter together
+181000	185000	because the second chapter is purely about behavioral studies.
+185000	191000	So it will give you a more comprehensive introduction.
+191000	195000	The third and sixth chapters are related to fMRI.
+195000	200000	In short, we used different methods to analyze Resin-stained fMRI data.
+200000	205000	We got different measurements.
+205000	211000	On the one hand, we want to see if these different measurements can be used as biomarkers
+211000	214000	to clearly distinguish between patients and normal people.
+214000	219000	On the other hand, we want to see if these measurements are related to fMRI.
+219000	222000	The seventh chapter is summary.
+222000	227000	Let's move on to the first and second chapters.
+227000	233000	In the first chapter, we will briefly introduce Parkinson's disease and multiple sclerosis.
+233000	237000	These two neurodegenerative diseases are the main structure of the whole paper.
+237000	241000	Parkinson's disease is more familiar to Taiwanese people.
+241000	243000	It is a neurodegenerative disease,
+243000	247000	which is common in men and older patients,
+247000	249000	for example, about 50 or 60 years old.
+249000	254000	Another type of multiple sclerosis is called multiple sclerosis,
+254000	259000	but it is more common in slightly younger women.
+260000	265000	It is more common in Europe and the United States,
+265000	270000	such as the United States, Canada, and North Europe.
+270000	274000	It is also common in Taiwan, but relatively rare.
+274000	278000	The picture on the right is a brief introduction.
+278000	284000	The basic cause of multiple sclerosis is that the nerve on the left is a nerve tree,
+284000	287000	and there is a bulge on the outside called the myelin.
+287000	292000	The structure of the myelin is attacked by a killer T cell,
+292000	296000	so it is a kind of autoimmune disease.
+296000	302000	This attack will cause the transmission of the nerve signal to slow down or cause some errors.
+302000	306000	On the clinical table, we can see that there is a problem with the coordination between the head and the eyes,
+306000	311000	and the patient's walking will be more unbalanced.
+311000	315000	There are also a lot of visual problems,
+315000	317000	and the patient often says,
+317000	319000	oh, I'm very tired. This is called fatigue.
+319000	321000	There are also some cognitive function disorders.
+321000	325000	Another Parkinson's disease is more common.
+325000	330000	The main cause of the disease is that the neurotransmitter in the brain is not enough,
+330000	333000	and this neurotransmitter is called dopamine or dopamine.
+333000	336000	In normal people's brains, you can see this picture.
+336000	341000	This black part is a neurotransmitter that produces dopamine,
+341000	345000	and this part is called the subcentral nigra.
+345000	348000	You can see that it's very dark here,
+348000	352000	but in Parkinson's disease patients, these black things are gone,
+352000	355000	which is the death of neurotransmitters that produce dopamine,
+355000	359000	which leads to insufficient concentration of neurotransmitter.
+359000	366000	For example, we often hear tremor,
+366000	370000	and there is a problem with sleep, and there is a problem with walking balance.
+370000	374000	In addition, there are also some cognitive function disorders.
+374000	379000	So you can see that PD and MS are two very different diseases,
+379000	384000	but they both produce cognitive impairment.
+384000	388000	According to clinical evidence and previous literature review,
+388000	393000	MS produces the most cognitive functions,
+393000	396000	including executive function,
+396000	399000	and Parkinson's disease visual memory.
+399000	402000	PD is also an executive function,
+402000	405000	and most people will have these problems,
+405000	409000	as well as walking memory and visual spatial abilities.
+409000	414000	In addition to the clinical evidence and literature review,
+414000	419000	we are also very interested in whether these cognitive function disorders
+419000	425000	are related to the severity of their clinical disease or other factors.
+425000	430000	So in the second part, we did a simple analysis.
+430000	433000	We use Canonical Correlation Analysis,
+433000	435000	abbreviated as CCA,
+435000	438000	to see if their cognitive function performance
+438000	442000	is related to other clinical data.
+442000	444000	Let me briefly introduce what CCA is.
+444000	447000	It is a multivariate statistical approach.
+447000	451000	The main purpose of CCA is to find two pieces of data.
+451000	454000	Let's say we have two pieces of data, U and V.
+454000	458000	The purpose of CCA is to find these so-called weights.
+458000	461000	These weights will let us know
+461000	466000	what kind of linear combination will make U and V the most relevant.
+466000	469000	In other words, CCA finds this weight,
+469000	472000	and then we can infer
+472000	475000	whether X1 is the most relevant,
+475000	478000	or whether Y2 is the most relevant.
+478000	481000	In the second part of the study,
+481000	485000	one of the data is the demographic on clinical data,
+485000	488000	such as the severity of the disease or age.
+488000	491000	The other piece of data is the performance of cognitive function.
+491000	492000	We did some tests,
+492000	496000	and then we took their scores to make a set of data.
+496000	500000	Let's take a look at the results on PD.
+500000	504000	As we said, the purpose of CCA is to find linear combinations
+504000	507000	to make these two pieces of data the most relevant.
+507000	509000	So here you can see that
+509000	512000	these two pieces of data are indeed very relevant.
+512000	515000	The relevant factor is 0.9.
+515000	519000	One of them is demographic on clinical data,
+519000	521000	and the other is cognitive function.
+521000	523000	Because we put gender in it,
+524000	527000	all the variables are...
+527000	530000	Wait a minute, it's not out yet.
+530000	533000	All the variables are positive,
+533000	537000	and the positive loading is related to the male.
+537000	541000	All the negative loading is related to the female.
+541000	545000	And then, if all the variables are the same,
+545000	548000	for example, positive loading,
+548000	550000	they are both positive.
+550000	553000	If negative loading occurs,
+553000	555000	they are both positive.
+555000	558000	This means that if this number goes up,
+558000	561000	the other numbers related to it will also go up.
+561000	564000	So let's take a look now.
+564000	567000	In general, the result tells us that
+567000	569000	in the case of PD patients,
+569000	575000	if the male is also in a more serious state of depression,
+575000	579000	it has nothing to do with cognitive function.
+579000	582000	But let's take a look at the following.
+582000	585000	In other words, women with higher education
+585000	588000	have a longer period of education,
+588000	592000	which has a lot to do with most of the better cognitive functions.
+592000	596000	These are a series of tests we tested.
+596000	598000	Actually, this is not what we tested.
+598000	601000	This is a database called PPMI.
+601000	604000	If you are interested, we can discuss it later.
+604000	608000	They tested a lot of different cognitive domains.
+608000	611000	In principle, the higher the number,
+611000	614000	the better the cognitive function and the better the response.
+614000	617000	So you can see that women with higher education
+617000	619000	have better cognitive performance.
+619000	622000	As for MS, let's take a look.
+622000	625000	This is the data we received.
+625000	626000	The same thing.
+626000	630000	The positive loading is related to the male.
+630000	633000	If the negative loading is related to the female.
+633000	635000	Let's take a look at the cognitive function part.
+635000	638000	These two are TMT, trial making test A and B.
+638000	641000	Basically, it's a test of attention,
+641000	644000	and executive function.
+644000	647000	What you can find is that in women,
+647000	649000	you can see that if it's a woman,
+649000	650000	negative loading,
+650000	654000	these two tests will perform better on women.
+654000	661000	At the same time, we have another set of different cognitive functions.
+661000	664000	Here, you can see that if it's a male,
+664000	667000	it will be related to EDS.
+667000	671000	EDS is an indicator on MS Clinical.
+671000	673000	The higher the EDS value,
+673000	675000	the more serious the disease.
+675000	676000	On the other side,
+676000	678000	it's the Wisconsin Consultant Error.
+678000	681000	In other words, the higher the EDS value,
+681000	682000	the more serious the disease,
+682000	684000	the more mistakes it makes.
+684000	686000	On the other hand,
+686000	687000	for women,
+687000	689000	their performance will be better.
+689000	699000	You can see that these two tests are closely related.
+699000	701000	So,
+701000	704000	here is a conclusion.
+704000	707000	We have categorized the same and different cognitive functions
+707000	710000	of PD and MS.
+710000	711000	For the same function,
+711000	715000	we find that gender is a very important factor,
+715000	717000	whether it's PD or MS.
+717000	719000	Especially for women,
+719000	722000	their cognitive functions seem to be better.
+722000	724000	On the other hand,
+724000	726000	for PD,
+726000	729000	the higher the EDS value,
+729000	732000	the better the cognitive function.
+732000	735000	We can use the so-called Cognitive Research Theory
+735000	737000	to explain this.
+737000	739000	In this theory,
+739000	746000	the longer the EDS value,
+746000	750000	the more protective it is.
+750000	753000	So, if a person has been educated for a long time,
+753000	757000	he may get sick later in life.
+757000	759000	The early education
+759000	762000	may not be able to protect his cognitive function.
+762000	763000	In addition,
+763000	764000	we also found that
+764000	766000	in the case of PD,
+766000	768000	at first,
+768000	769000	we were surprised to find that
+769000	772000	the clinical indicators of PD
+772000	774000	are not related to cognitive functions.
+774000	776000	One possibility is that
+776000	778000	the clinical indicators of PD,
+778000	780000	which is similar to MS EDSS,
+780000	782000	but we call it UPDRS,
+782000	786000	are actually evaluated
+786000	789000	based on the symptoms of the action.
+789000	791000	It is also possible that
+791000	794000	the neurotransmitters
+794000	796000	related to action
+796000	798000	and cognitive functions are different.
+798000	799000	In addition, in the case of MS,
+799000	801000	we can see that
+801000	803000	the more serious the disease is,
+803000	806000	it is related to the worse cognitive functions.
+806000	807000	As we just mentioned,
+807000	809000	it made more mistakes.
+809000	811000	Okay,
+811000	813000	this part is purely about
+813000	815000	the fact that
+815000	818000	there is no FMI involved in behavior.
+818000	821000	Next, we are going to talk about FMI.
+821000	822000	As we all know,
+822000	825000	if you have a little bit of research on MS,
+825000	828000	Functional MRI is a non-invasive method.
+828000	830000	We can use this non-invasive method
+830000	832000	to study the human brain
+832000	834000	or the activity in the animal brain.
+834000	837000	And we usually take this material
+837000	840000	for a period of time.
+840000	843000	Most of the data we use
+843000	846000	in this study is racing state,
+846000	848000	which means that we require the victim
+848000	850000	to lie in the machine,
+850000	851000	close their eyes,
+851000	853000	and don't think about anything special.
+853000	855000	This is called racing state.
+855000	857000	This method is actually
+857000	860000	more feasible in clinical trials,
+860000	862000	because many of the victims are patients,
+862000	864000	and they can't cooperate with you
+864000	866000	to do some tasks.
+866000	867000	For example, you may have to
+867000	868000	respond to a case,
+868000	870000	which is a little difficult for patients,
+870000	872000	especially patients with Parkinson's disease.
+872000	875000	In addition, even if it is racing state,
+875000	877000	the victim did not do anything.
+877000	879000	It still relies on the activity of the brain
+879000	881000	to communicate a lot of cognitive functions.
+881000	883000	Then,
+883000	885000	I will explain the so-called
+885000	887000	functional connectivity here.
+887000	889000	In other words,
+889000	891000	because this word often appears in the back,
+891000	893000	for example, we get the racing state
+893000	894000	fMRI data.
+894000	896000	What we need to analyze now is to look at
+896000	898000	its functional connectivity.
+898000	900000	Suppose you are interested in
+900000	902000	many different brains today.
+902000	904000	The so-called functional connectivity
+904000	907000	is the signal of fMRI in these brains.
+907000	911000	Are they related to each other?
+911000	913000	I'll just use a picture to explain.
+913000	916000	It may be easier to understand.
+916000	918000	Suppose you have a brain today,
+918000	920000	and we are interested in three areas.
+920000	922000	We call it Region of Interest,
+922000	924000	which is called RRI.
+924000	926000	After some preliminary processing,
+926000	928000	such as the difference in time,
+928000	930000	or the difference in head movement,
+930000	932000	we get these fMRI data.
+932000	934000	It's a bit like
+934000	936000	getting these fMRI data
+936000	938000	is to get the fMRI signals
+938000	940000	of these three brains.
+940000	942000	Then use some statistical methods to calculate
+942000	944000	whether the fMRI signals between
+944000	946000	Brain 1 and Brain 2 are related.
+946000	948000	If they are related,
+948000	950000	we will think that these two brain areas
+950000	952000	are connected to each other.
+952000	954000	In addition, there are many
+954000	956000	different ways to calculate.
+956000	958000	The most common is
+958000	960000	Pairwise Correlation.
+960000	962000	There is also Partial Correlation
+962000	964000	or Mutual Information.
+964000	966000	There are many ways to calculate.
+966000	968000	There is no limit to this.
+968000	970000	It depends on how you use it.
+970000	972000	The most common thing we see is a matrix,
+972000	974000	a color-coded matrix.
+974000	976000	If you are interested in this,
+976000	978000	it means that
+978000	980000	RRI1 and RRI2 are highly related.
+980000	982000	It means that
+982000	984000	RRI1 and RRI2 are related.
+984000	986000	We know that they are connected.
+986000	988000	In conclusion,
+988000	990000	even if
+990000	992000	we are in a resting state,
+992000	994000	we can still use this kind of data
+994000	996000	to observe
+996000	998000	its functional connectivity
+998000	1000000	and then study
+1000000	1002000	whether these functional connectivity
+1002000	1004000	are related or not.
+1004000	1006000	Next,
+1006000	1008000	since we want to study
+1008000	1010000	cognitive functions,
+1010000	1012000	especially Exciter Functions,
+1012000	1014000	because both PDS and MS
+1014000	1016000	are prone to
+1016000	1018000	Exciter Functions.
+1018000	1020000	So we did some
+1020000	1022000	literature review.
+1022000	1024000	We found that
+1024000	1026000	these are the brain areas
+1026000	1028000	that are most related
+1028000	1030000	to Exciter Functions
+1030000	1032000	You can see that
+1032000	1034000	most of the connections
+1034000	1036000	are Frontal Parietal Region.
+1036000	1038000	It means that
+1038000	1040000	Frontal Parietal Region
+1040000	1042000	and Exciter Functions
+1042000	1044000	are related.
+1044000	1046000	PDS is the same.
+1046000	1048000	Frontal Parietal Region
+1048000	1050000	and RCP are also related.
+1050000	1052000	In addition,
+1052000	1054000	there are connections in the opposite brain area.
+1054000	1056000	So we have a conclusion that
+1056000	1058000	the so-called Long Range Connection
+1058000	1060000	is very important
+1060000	1062000	for Exciter Functions.
+1066000	1068000	The so-called Long Range Connection
+1068000	1070000	is a cortical-to-cortical connection.
+1070000	1072000	Just like what we said here,
+1072000	1074000	Frontal to Parietal.
+1074000	1076000	Next,
+1076000	1078000	what we just observed
+1078000	1080000	is very similar to a model.
+1080000	1082000	This was proposed by
+1082000	1084000	Melvin Cohen in 2001.
+1084000	1086000	They believe that
+1086000	1088000	there are three components in Exciter Function.
+1088000	1090000	The first one is Input.
+1090000	1092000	Input is the transfer of
+1092000	1094000	sensory information to
+1094000	1096000	the internal state.
+1096000	1098000	The internal state is in the Prefrontal Cortex.
+1098000	1100000	These signals are transferred to
+1100000	1102000	the Prefrontal Cortex for processing.
+1102000	1104000	After processing,
+1104000	1106000	the Prefrontal Cortex transfers the signals
+1106000	1108000	to the Output Component.
+1108000	1110000	The Output Component
+1110000	1112000	is in the subcortical area.
+1112000	1114000	The Prefrontal Cortex
+1114000	1116000	is in the subcortical region.
+1116000	1118000	The Output Component
+1118000	1120000	and the Subcortical Region
+1120000	1122000	must cooperate with the
+1122000	1124000	Motor Cortex
+1124000	1126000	to execute the
+1126000	1128000	processed signals.
+1130000	1132000	It is very important
+1132000	1134000	to study the cognitive functions
+1134000	1136000	as well as
+1136000	1138000	how different brain areas
+1138000	1140000	work together
+1140000	1142000	and cooperate.
+1142000	1144000	This is the main goal
+1144000	1146000	and architecture of the paper.
+1146000	1148000	This is the main goal
+1148000	1150000	and architecture of the paper.
+1150000	1152000	That's all for today's presentation.
+1152000	1154000	That's all for today's presentation.
+1154000	1156000	We have already explained
+1156000	1158000	the first and second chapters.
+1158000	1160000	We will move on to the
+1160000	1162000	FMI section.
+1162000	1164000	The third chapter is
+1164000	1166000	focused on connection.
+1166000	1168000	However,
+1168000	1170000	I found that
+1170000	1172000	the third chapter is too long,
+1172000	1174000	so I will skip it for now.
+1174000	1176000	We can discuss it later.
+1176000	1178000	We can discuss it later.
+1178000	1180000	The fourth chapter is
+1180000	1182000	static brain organization.
+1182000	1184000	The fourth chapter is
+1184000	1186000	static brain organization.
+1186000	1188000	The fifth chapter is
+1188000	1190000	dynamic functional connectivity.
+1190000	1192000	The fifth chapter is
+1192000	1194000	dynamic functional connectivity.
+1194000	1196000	The fifth chapter is
+1196000	1198000	sliding window approach.
+1198000	1200000	We will put together
+1200000	1202000	the fourth and fifth chapters
+1202000	1204000	to see if
+1204000	1206000	these measurements
+1206000	1207900	are related to
+1207900	1209900	clinical indicators or cognitive functions.
+1209900	1209900	
+1209900	1211900	clinical indicators or cognitive functions.
+1211900	1213900	That's the conclusion of the seventh chapter.
+1213900	1215900	That's all.
+1215900	1217900	Now we are moving to
+1217900	1219900	the fourth chapter,
+1219900	1221900	the FDIL section.
+1221900	1223900	Does anyone have any questions?
+1223900	1225900	Does anyone have any questions?
+1225900	1227900	Let's get started
+1227900	1229900	with the fourth chapter.
+1229900	1231900	The fourth chapter is
+1231900	1233900	the Brain Organization section.
+1233900	1235900	The so-called
+1235900	1237900	Brain Organization
+1237900	1239900	is to study
+1239900	1241900	how the brain
+1241900	1243900	is organized.
+1243900	1245900	There are several main principles.
+1245900	1247900	First, we see
+1247900	1249900	Functional Integration,
+1249900	1251900	Functional Segregation, and
+1251900	1253900	HUB Structure.
+1253900	1255900	I will use a picture to explain.
+1255900	1257900	As you can see,
+1257900	1259900	there are many dots and lines.
+1259900	1261900	Each dot represents
+1261900	1263900	a brain region in our brain,
+1263900	1265900	the RRI.
+1265900	1267900	Each line represents
+1267900	1269900	the connection between
+1269900	1271900	the two brain regions.
+1271900	1273900	We think they have a connection.
+1273900	1275900	The picture on the right
+1275900	1277900	has many different colors.
+1277900	1279900	Each color represents
+1279900	1281900	the individual community.
+1281900	1283900	In other words,
+1283900	1285900	this region
+1285900	1287900	will form a network
+1287900	1289900	between each other.
+1289900	1291900	The so-called
+1291900	1293900	Functional Integration
+1293900	1295900	represents
+1295900	1297900	how well
+1297900	1299900	the neural signal
+1299900	1301900	is integrated
+1301900	1303900	globally in the brain.
+1303900	1305900	It is a community
+1305900	1307900	that crosses different colors.
+1307900	1309900	On the other hand,
+1309900	1311900	Functional Segregation
+1311900	1313900	represents how well
+1313900	1315900	the neural signal
+1315900	1317900	is integrated
+1317900	1319900	in the individual community.
+1319900	1321900	So, Functional Integration
+1321900	1323900	and Functional Segregation
+1323900	1325900	are the opposite.
+1325900	1327900	One is in the community,
+1327900	1329900	the other is across the community.
+1329900	1331900	Finally, there is a concept
+1331900	1333900	called HUB Structure.
+1333900	1335900	Let's look at
+1335900	1337900	the middle dot.
+1337900	1339900	As you can see,
+1339900	1341900	the HUB Structure
+1341900	1343900	has more dots than
+1343900	1345900	other dots in the community.
+1345900	1347900	This means that
+1347900	1349900	the RRI is very important
+1349900	1351900	in this network.
+1351900	1353900	It plays a central role.
+1353900	1355900	So, we think
+1355900	1357900	it is a HUB Structure.
+1357900	1359900	At the same time,
+1359900	1361900	it has many different connections
+1361900	1363900	than other dots.
+1363900	1365900	HUB Structure Integration
+1365900	1367900	and Segregation
+1367900	1369900	can be obtained
+1369900	1371900	through Graph Analysis.
+1371900	1373900	So far, I think
+1373900	1375900	Graph Theory
+1375900	1377900	is a good way
+1377900	1379900	to integrate
+1379900	1381900	Functional Connectivity.
+1381900	1383900	As we mentioned before,
+1383900	1385900	after you get
+1385900	1387900	the correlation matrix,
+1387900	1389900	you will have too much information.
+1389900	1391900	At the same time,
+1391900	1393900	if you have hundreds of RRIs,
+1393900	1395900	you don't know where to start.
+1395900	1397900	So, Graph Theory
+1397900	1399900	is a good way
+1399900	1401900	to tell you
+1401900	1403900	whether your network
+1403900	1405900	is integrated or segregated.
+1405900	1407900	In addition,
+1407900	1409900	you can get many
+1409900	1411900	different Graphical Measures
+1411900	1413900	through Graph Theory.
+1413900	1415900	Each Measure
+1415900	1417900	represents a network feature.
+1417900	1419900	These Measures
+1419900	1421900	can be connected
+1421900	1423900	to cognitive functions.
+1423900	1425900	So,
+1425900	1427900	these are the research
+1427900	1429900	done on normal people.
+1429900	1431900	As for the disease,
+1431900	1433900	we also did some
+1433900	1435900	literature review.
+1435900	1437900	Overall,
+1437900	1439900	we can see that
+1439900	1441900	Graphical Measures
+1441900	1443900	are not different
+1443900	1445900	from normal people.
+1445900	1447900	It is possible that
+1447900	1449900	Graphical Measures
+1449900	1451900	can be biomarkers.
+1451900	1453900	In fact,
+1453900	1455900	we have connected
+1455900	1457900	Graphical Measures
+1457900	1459900	to Cognitive Functions
+1459900	1461900	to show the difference
+1461900	1463900	between normal people
+1463900	1465900	and patients,
+1465900	1467900	so that
+1467900	1469900	we can connect
+1469900	1471900	the difference
+1471900	1473900	to Cognitive Functions.
+1473900	1475900	Ok,
+1475900	1477900	let's talk about
+1477900	1479900	Material Methods.
+1479900	1481900	We have two cohorts,
+1481900	1483900	PT and MS.
+1483900	1485900	PT and normal people.
+1485900	1487900	As for MS,
+1487900	1489900	when we were collecting data,
+1489900	1491900	normal people
+1491900	1493900	and patients
+1493900	1495900	are not age-matched,
+1495900	1497900	so I put all MS in
+1497900	1499900	to see if their measurements
+1499900	1501900	are related to Cognitive Functions.
+1501900	1503900	We call it
+1503900	1505900	Brain Behavior Analysis.
+1505900	1507900	In addition,
+1507900	1509900	we took 18 MS
+1509900	1511900	and 15 normal people
+1511900	1513900	to do a t-test
+1513900	1515900	to see if
+1515900	1517900	our measurements can be biomarkers.
+1517900	1519900	In addition,
+1519900	1521900	in terms of data,
+1521900	1523900	PT has
+1523900	1525900	Overall Cognition,
+1525900	1527900	which is a Modular Cognitive Assessment.
+1527900	1529900	In addition,
+1529900	1531900	there are tests for different Cognitive Domains,
+1531900	1533900	such as
+1533900	1535900	Visual Special Ability,
+1535900	1537900	Learning,
+1537900	1539900	Working Memory,
+1539900	1541900	Excitement Function, etc.
+1541900	1543900	In terms of MS,
+1543900	1545900	we can divide it into
+1545900	1547900	Working Memory,
+1547900	1549900	Processing Speed,
+1549900	1551900	and Excitement Function.
+1551900	1553900	At the same time,
+1553900	1555900	we also did a questionnaire
+1555900	1557900	to measure their
+1557900	1559900	Depression,
+1559900	1561900	Anxiety,
+1561900	1563900	and Fatigue.
+1563900	1565900	As I mentioned earlier,
+1565900	1567900	the most important thing in GraphQL
+1567900	1569900	is points and lines,
+1569900	1571900	i.e., ROI and Connection.
+1571900	1573900	We have 68 ROI here.
+1573900	1575900	As for Connection,
+1575900	1577900	after retrieving the FMR signal,
+1577900	1579900	we do Partial Correlation,
+1579900	1581900	which is
+1581900	1583900	Partial Correlation Matrix.
+1583900	1585900	Here,
+1585900	1587900	we consider it as Functional Connection,
+1587900	1589900	so we have points and lines,
+1589900	1591900	and we can do the following analysis.
+1591900	1593900	We use Brain Connectivity Toolbox
+1593900	1595900	to do Graph Theory.
+1595900	1597900	It is a free download of
+1597900	1599900	ManLab Toolbox.
+1599900	1601900	You can download it online.
+1601900	1603900	As for the GraphQL Majors,
+1603900	1605900	we can divide them into
+1605900	1607900	Global Majors and Nodal Majors.
+1607900	1609900	In Global Majors,
+1609900	1611900	there is a number
+1611900	1613900	for each subject.
+1613900	1615900	This number represents
+1615900	1617900	the characteristics of the brain
+1617900	1619900	globally.
+1619900	1621900	For example,
+1621900	1623900	Global Efficiency,
+1623900	1625900	Pathline,
+1625900	1627900	Rich Coop,
+1627900	1629900	Coefficient,
+1629900	1631900	Modularity,
+1631900	1633900	and so on.
+1633900	1635900	I won't go into details
+1635900	1637900	of each number.
+1637900	1639900	In short,
+1639900	1641900	they represent
+1641900	1643900	Functional Segregation
+1643900	1645900	and Functional Integration.
+1645900	1647900	Nodal Majors
+1647900	1649900	Here,
+1649900	1651900	I mainly use
+1651900	1653900	Betweenness Centrality
+1653900	1655900	and Local Efficiency.
+1655900	1657900	Betweenness Centrality
+1657900	1659900	represents that
+1659900	1661900	the higher the value,
+1661900	1663900	the more important
+1663900	1665900	the RRI is in the network.
+1665900	1667900	Local Efficiency
+1667900	1669900	represents that
+1669900	1671900	the higher the value,
+1671900	1673900	the higher the Functional Connectivity
+1673900	1675900	of the RRI.
+1675900	1677900	If the value is different
+1677900	1679900	in patients and in patients,
+1679900	1681900	it may become a biomarker.
+1681900	1683900	The so-called Brain Behavior Analysis
+1683900	1685900	uses correlation and regression
+1685900	1687900	to evaluate
+1687900	1689900	if these measures
+1689900	1691900	are related to cognition.
+1691900	1693900	Let's look at
+1693900	1695900	the results of PT.
+1695900	1697900	There are no differences
+1697900	1699900	in Global Majors.
+1699900	1701900	However, we find that
+1701900	1703900	Local Efficiency and Betweenness Centrality
+1703900	1705900	have significant differences.
+1705900	1707900	Let's look at the picture.
+1707900	1709900	This is the result of
+1709900	1711900	Local Efficiency on PT.
+1711900	1713900	You can see that
+1713900	1715900	there are a lot of
+1715900	1717900	dots on the right.
+1717900	1719900	Each dot represents
+1719900	1721900	an RRI.
+1721900	1723900	We have a total of 68 RRIs.
+1723900	1725900	These orange dots
+1725900	1727900	represent that
+1727900	1729900	these RRIs are actually
+1729900	1731900	increasing in PT.
+1731900	1733900	This is Local Efficiency.
+1733900	1735900	In PT,
+1735900	1737900	these RRIs
+1737900	1739900	actually increase
+1739900	1741900	their functional connectivity.
+1741900	1743900	It's a bit different from what we usually think.
+1743900	1745900	Let's look at
+1745900	1747900	Betweenness Centrality.
+1747900	1749900	These blue dots
+1749900	1751900	represent
+1751900	1753900	that their Betweenness Centrality
+1753900	1755900	is decreasing.
+1755900	1757900	In PT,
+1757900	1759900	these numbers are relatively low.
+1759900	1761900	RRIs like
+1761900	1763900	Superior Frontal Cortex
+1763900	1765900	or Parietal Cortex
+1765900	1767900	represent that
+1767900	1769900	these dots are
+1769900	1771900	the Hub Structure.
+1771900	1773900	In theory,
+1773900	1775900	these dots are very important.
+1775900	1777900	However, in PT,
+1777900	1779900	these RRIs
+1779900	1781900	are not that important.
+1781900	1783900	Interestingly,
+1783900	1785900	these two RRIs
+1785900	1787900	on the right are
+1787900	1789900	Local Clearance Accumbance.
+1789900	1791900	These two RRIs
+1791900	1793900	are more important in PT.
+1793900	1795900	Their Betweenness Centrality
+1795900	1797900	is higher.
+1797900	1799900	We think that
+1799900	1801900	this might be related to
+1801900	1803900	Compensation or Adaptation.
+1803900	1805900	We will explain it later.
+1805900	1807900	This is the result of t-test.
+1807900	1809900	In the next part of
+1809900	1811900	Brain Behavior Analysis,
+1811900	1813900	we will do Correlation and Linear Regression.
+1813900	1815900	I can tell you that
+1815900	1817900	you will not see any result.
+1817900	1819900	As for Correlation,
+1819900	1821900	there is an SDMT,
+1821900	1823900	Symbol Digital Modality Test.
+1823900	1825900	It mainly tests process speed.
+1825900	1827900	It is related to
+1827900	1829900	Global Efficiency and Pathline.
+1829900	1831900	Let's take a look at the graph.
+1831900	1833900	Let's take a look at this one.
+1833900	1835900	Global Efficiency
+1835900	1837900	The higher the number of Global Efficiency,
+1837900	1839900	the better the neural signal
+1839900	1841900	is integrated in the brain
+1841900	1843900	in different communities.
+1843900	1845900	Unexpectedly,
+1845900	1847900	the higher the number of Global Efficiency,
+1847900	1849900	the better the neural signal
+1849900	1851900	is integrated in the brain.
+1851900	1853900	It is related to
+1853900	1855900	poor cognitive performance.
+1855900	1857900	The graph on the right
+1857900	1859900	is related to
+1859900	1861900	Global Efficiency.
+1861900	1863900	The higher the number of
+1863900	1865900	Pathline,
+1865900	1867900	the lower the number of Global Efficiency.
+1867900	1869900	These two graphs
+1869900	1871900	tell us the same thing.
+1871900	1873900	The higher the number of
+1873900	1875900	Global Efficiency,
+1875900	1877900	the lower the neural signal
+1877900	1879900	is integrated in the brain.
+1879900	1881900	It is related to
+1881900	1883900	poor cognitive performance.
+1883900	1885900	Let's take a look at
+1885900	1887900	MS.
+1887900	1897900	MS
+1897900	1899900	MS
+1899900	1901900	MS
+1901900	1903900	MS
+1903900	1905900	MS
+1905900	1907900	MS
+1907900	1909900	MS
+1909900	1911900	MS
+1911900	1913900	MS
+1913900	1915900	MS
+1915900	1917900	MS
+1917900	1919900	MS
+1919900	1921900	MS
+1921900	1923900	MS
+1923900	1925900	MS
+1925900	1927900	MS
+1927900	1929900	MS
+1929900	1931900	MS
+1931900	1933900	MS
+1933900	1935900	MS
+1935900	1937900	MS
+1937900	1939900	MS
+1939900	1941900	MS
+1941900	1943900	MS
+1943900	1945900	MS
+1945900	1947900	MS
+1947900	1949900	MS
+1949900	1951900	MS
+1951900	1953900	MS
+1953900	1955900	MS
+1955900	1957900	MS
+1957900	1959900	MS
+1959900	1961900	MS
+1961900	1963900	MS
+1963900	1965900	MS
+1965900	1967900	MS
+1967900	1969900	MS
+1969900	1971900	MS
+1971900	1973900	MS
+1973900	1975900	MS
+1975900	1977900	MS
+1977900	1979900	MS
+1979900	1981900	MS
+1981900	1983900	MS
+1983900	1985900	MS
+1985900	1987900	MS
+1987900	1989900	MS
+1989900	1991900	MS
+1991900	1993900	MS
+1993900	1995900	MS
+1995900	1997900	MS
+1997900	1999900	MS
+1999900	2001900	MS
+2001900	2003900	MS
+2003900	2005900	MS
+2005900	2007900	MS
+2007900	2009900	MS
+2009900	2011900	MS
+2011900	2013900	MS
+2013900	2015900	MS
+2015900	2017900	MS
+2017900	2019900	MS
+2019900	2021900	MS
+2021900	2023900	MS
+2023900	2025900	MS
+2025900	2027900	MS
+2027900	2029900	MS
+2029900	2031900	MS
+2031900	2033900	MS
+2033900	2035900	MS
+2035900	2037900	MS
+2037900	2039900	MS
+2039900	2041900	MS
+2041900	2043900	MS
+2043900	2045900	MS
+2045900	2047900	MS
+2047900	2049900	MS
+2049900	2051900	MS
+2051900	2055900	MS
+2055900	2057900	MS
+2057900	2059900	MS
+2059900	2061900	MS
+2061900	2063900	MS
+2063900	2065900	MS
+2065900	2067900	MS
+2067900	2069900	MS
+2069900	2071900	MS
+2071900	2073900	MS
+2073900	2075900	MS
+2075900	2077900	MS
+2077900	2079900	MS
+2079900	2081900	MS
+2081900	2083900	MS
+2083900	2085900	MS
+2085900	2087900	MS
+2087900	2089900	MS
+2089900	2091900	MS
+2091900	2093900	MS
+2093900	2095900	MS
+2095900	2097900	MS
+2097900	2099900	MS
+2099900	2101900	MS
+2101900	2103900	MS
+2103900	2105900	MS
+2105900	2107900	MS
+2107900	2109900	MS
+2109900	2111900	MS
+2111900	2113900	MS
+2113900	2115900	MS
+2115900	2117900	MS
+2117900	2119900	MS
+2119900	2121900	MS
+2121900	2123900	MS
+2123900	2125900	MS
+2125900	2127900	MS
+2127900	2129900	MS
+2129900	2131900	MS
+2131900	2133900	MS
+2133900	2135900	MS
+2135900	2137900	MS
+2137900	2139900	MS
+2139900	2143900	MS
+2143900	2145900	MS
+2145900	2147900	MS
+2147900	2149900	MS
+2149900	2151900	MS
+2151900	2153900	MS
+2153900	2155900	MS
+2155900	2157900	MS
+2157900	2159900	MS
+2159900	2161900	MS
+2161900	2163900	MS
+2163900	2165900	MS
+2165900	2167900	MS
+2167900	2169900	MS
+2169900	2171900	MS
+2171900	2173900	MS
+2173900	2175900	MS
+2175900	2177900	MS
+2177900	2179900	MS
+2179900	2181900	MS
+2181900	2183900	MS
+2183900	2185900	MS
+2185900	2187900	MS
+2187900	2189900	MS
+2189900	2191900	MS
+2191900	2193900	MS
+2193900	2195900	MS
+2195900	2197900	MS
+2197900	2199900	MS
+2199900	2201900	MS
+2201900	2203900	MS
+2203900	2205900	MS
+2205900	2207900	MS
+2207900	2209900	MS
+2209900	2211900	MS
+2211900	2213900	MS
+2213900	2215900	MS
+2215900	2217900	MS
+2217900	2219900	MS
+2219900	2221900	MS
+2221900	2223900	MS
+2223900	2225900	MS
+2225900	2227900	MS
+2227900	2229900	MS
+2229900	2231900	MS
+2231900	2233900	MS
+2233900	2235900	MS
+2235900	2237900	MS
+2237900	2239900	MS
+2239900	2241900	MS
+2241900	2243900	MS
+2243900	2245900	MS
+2245900	2247900	MS
+2247900	2249900	MS
+2249900	2251900	MS
+2251900	2253900	MS
+2253900	2255900	MS
+2255900	2257900	MS
+2257900	2259900	MS
+2259900	2261900	MS
+2261900	2263900	MS
+2263900	2265900	MS
+2265900	2267900	MS
+2267900	2269900	MS
+2269900	2271900	MS
+2271900	2273900	MS
+2273900	2275900	MS
+2275900	2277900	MS
+2277900	2279900	MS
+2279900	2281900	MS
+2281900	2283900	MS
+2283900	2285900	MS
+2285900	2287900	MS
+2287900	2289900	MS
+2289900	2291900	MS
+2291900	2293900	MS
+2293900	2295900	MS
+2295900	2297900	MS
+2297900	2299900	MS
+2299900	2301900	MS
+2301900	2303900	MS
+2303900	2305900	MS
+2305900	2307900	MS
+2307900	2309900	MS
+2309900	2311900	MS
+2311900	2313900	MS
+2313900	2315900	MS
+2315900	2317900	MS
+2317900	2319900	MS
+2319900	2321900	MS
+2321900	2323900	MS
+2323900	2325900	MS
+2325900	2327900	MS
+2327900	2329900	MS
+2329900	2331900	MS
+2331900	2333900	MS
+2333900	2335900	MS
+2335900	2337900	MS
+2337900	2339900	MS
+2339900	2341900	MS
+2341900	2343900	MS
+2343900	2345900	MS
+2345900	2347900	MS
+2347900	2349900	MS
+2349900	2351900	MS
+2351900	2353900	MS
+2353900	2355900	MS
+2355900	2357900	MS
+2357900	2359900	MS
+2359900	2361900	MS
+2361900	2363900	MS
+2363900	2365900	MS
+2365900	2367900	MS
+2367900	2369900	MS
+2369900	2371900	MS
+2371900	2373900	MS
+2373900	2375900	MS
+2375900	2377900	MS
+2377900	2379900	MS
+2379900	2381900	MS
+2381900	2383900	MS
+2383900	2385900	MS
+2385900	2387900	MS
+2387900	2389900	MS
+2389900	2391900	MS
+2391900	2393900	MS
+2393900	2395900	MS
+2395900	2397900	MS
+2397900	2399900	MS
+2399900	2401900	MS
+2401900	2403900	MS
+2403900	2405900	MS
+2405900	2407900	MS
+2407900	2409900	MS
+2409900	2411900	MS
+2411900	2413900	MS
+2413900	2415900	MS
+2415900	2417900	MS
+2417900	2419900	MS
+2419900	2421900	MS
+2421900	2423900	MS
+2423900	2425900	MS
+2425900	2427900	MS
+2427900	2429900	MS
+2429900	2431900	MS
+2431900	2433900	MS
+2433900	2435900	MS
+2435900	2437900	MS
+2437900	2439900	MS
+2439900	2441900	MS
+2441900	2443900	MS
+2443900	2445900	MS
+2445900	2447900	MS
+2447900	2449900	MS
+2449900	2451900	MS
+2451900	2453900	MS
+2453900	2455900	MS
+2455900	2457900	MS
+2457900	2459900	MS
+2459900	2461900	MS
+2461900	2463900	MS
+2463900	2465900	MS
+2465900	2467900	MS
+2467900	2469900	MS
+2469900	2471900	MS
+2471900	2473900	MS
+2473900	2475900	MS
+2475900	2477900	MS
+2477900	2479900	MS
+2479900	2481900	MS
+2481900	2483900	MS
+2483900	2485900	MS
+2485900	2487900	MS
+2487900	2489900	MS
+2489900	2491900	MS
+2491900	2493900	MS
+2493900	2495900	MS
+2495900	2497900	MS
+2497900	2499900	MS
+2499900	2501900	MS
+2501900	2503900	MS
+2503900	2505900	MS
+2505900	2507900	MS
+2507900	2509900	MS
+2509900	2511900	MS
+2511900	2513900	MS
+2513900	2515900	MS
+2515900	2517900	MS
+2517900	2519900	MS
+2519900	2521900	MS
+2521900	2523900	MS
+2523900	2525900	MS
+2525900	2527900	MS
+2527900	2529900	MS
+2529900	2531900	MS
+2531900	2533900	MS
+2533900	2535900	MS
+2535900	2537900	MS
+2537900	2539900	MS
+2539900	2541900	MS
+2541900	2543900	MS
+2543900	2545900	MS
+2545900	2547900	MS
+2547900	2549900	MS
+2549900	2551900	MS
+2551900	2553900	MS
+2553900	2555900	MS
+2555900	2557900	MS
+2557900	2559900	MS
+2559900	2561900	MS
+2561900	2563900	MS
+2563900	2565900	MS
+2565900	2567900	MS
+2567900	2569900	MS
+2569900	2571900	MS
+2571900	2573900	MS
+2573900	2575900	MS
+2575900	2577900	MS
+2577900	2579900	MS
+2579900	2581900	MS
+2581900	2583900	MS
+2583900	2585900	MS
+2585900	2587900	MS
+2587900	2589900	MS
+2589900	2591900	MS
+2591900	2593900	MS
+2593900	2595900	MS
+2595900	2597900	MS
+2597900	2599900	MS
+2599900	2601900	MS
+2601900	2603900	MS
+2603900	2605900	MS
+2605900	2607900	MS
+2607900	2609900	MS
+2609900	2611900	MS
+2611900	2613900	MS
+2613900	2615900	MS
+2615900	2617900	MS
+2617900	2619900	MS
+2619900	2621900	MS
+2621900	2623900	MS
+2623900	2625900	MS
+2625900	2627900	MS
+2627900	2629900	MS
+2629900	2631900	MS
+2631900	2633900	MS
+2633900	2635900	MS
+2635900	2637900	MS
+2637900	2639900	MS
+2639900	2641900	MS
+2641900	2643900	MS
+2643900	2645900	MS
+2645900	2647900	MS
+2647900	2649900	MS
+2649900	2651900	MS
+2651900	2653900	MS
+2653900	2655900	MS
+2655900	2657900	MS
+2657900	2659900	MS
+2659900	2661900	MS
+2661900	2663900	MS
+2663900	2665900	MS
+2665900	2667900	MS
+2667900	2669900	MS
+2669900	2671900	MS
+2671900	2673900	MS
+2673900	2675900	MS
+2675900	2677900	MS
+2677900	2679900	MS
+2679900	2681900	MS
+2681900	2683900	MS
+2683900	2685900	MS
+2685900	2687900	MS
+2687900	2689900	MS
+2689900	2691900	MS
+2691900	2693900	MS
+2693900	2695900	MS
+2695900	2697900	MS
+2697900	2699900	MS
+2699900	2701900	MS
+2701900	2703900	MS
+2703900	2705900	MS
+2705900	2707900	MS
+2707900	2709900	MS
+2709900	2711900	MS
+2711900	2713900	MS
+2713900	2715900	MS
+2715900	2717900	MS
+2717900	2719900	MS
+2719900	2721900	MS
+2721900	2723900	MS
+2723900	2725900	MS
+2725900	2727900	MS
+2727900	2729900	MS
+2729900	2731900	MS
+2731900	2733900	MS
+2733900	2735900	MS
+2735900	2737900	MS
+2737900	2739900	MS
+2739900	2741900	MS
+2741900	2743900	MS
+2743900	2745900	MS
+2745900	2747900	MS
+2747900	2749900	MS
+2749900	2751900	MS
+2751900	2753900	MS
+2753900	2755900	MS
+2755900	2757900	MS
+2757900	2759900	MS
+2759900	2761900	MS
+2761900	2763900	MS
+2763900	2765900	MS
+2765900	2767900	MS
+2767900	2769900	MS
+2769900	2771900	MS
+2771900	2773900	MS
+2773900	2775900	MS
+2775900	2777900	MS
+2777900	2779900	MS
+2779900	2781900	MS
+2781900	2783900	MS
+2783900	2785900	MS
+2785900	2787900	MS
+2787900	2789900	MS
+2789900	2791900	MS
+2791900	2793900	MS
+2793900	2795900	MS
+2795900	2797900	MS
+2797900	2799900	MS
+2799900	2801900	MS
+2801900	2803900	MS
+2803900	2805900	MS
+2805900	2807900	MS
+2807900	2809900	MS
+2809900	2811900	MS
+2811900	2813900	MS
+2813900	2815900	MS
+2815900	2817900	MS
+2817900	2819900	MS
+2819900	2821900	MS
+2821900	2823900	MS
+2823900	2825900	MS
+2825900	2827900	MS
+2827900	2829900	MS
+2829900	2831900	MS
+2831900	2833900	MS
+2833900	2835900	MS
+2835900	2837900	MS
+2837900	2839900	MS
+2839900	2841900	MS
+2841900	2843900	MS
+2843900	2845900	MS
+2845900	2847900	MS
+2847900	2849900	MS
+2849900	2851900	MS
+2851900	2853900	MS
+2853900	2855900	MS
+2855900	2857900	MS
+2857900	2859900	MS
+2859900	2861900	MS
+2861900	2863900	MS
+2863900	2865900	MS
+2865900	2867900	MS
+2867900	2869900	MS
+2869900	2871900	MS
+2871900	2873900	MS
+2873900	2875900	MS
+2875900	2877900	MS
+2877900	2879900	MS
+2879900	2881900	MS
+2881900	2883900	MS
+2883900	2885900	MS
+2885900	2887900	MS
+2887900	2889900	MS
+2889900	2891900	MS
+2891900	2893900	MS
+2893900	2895900	MS
+2895900	2897900	MS
+2897900	2899900	MS
+2899900	2901900	MS
+2901900	2903900	MS
+2903900	2905900	MS
+2905900	2907900	MS
+2907900	2909900	MS
+2909900	2911900	MS
+2911900	2913900	MS
+2913900	2915900	MS
+2915900	2917900	MS
+2917900	2919900	MS
+2919900	2921900	MS
+2921900	2923900	MS
+2923900	2925900	MS
+2925900	2927900	MS
+2927900	2929900	MS
+2929900	2931900	MS
+2931900	2933900	MS
+2933900	2935900	MS
+2935900	2937900	MS
+2937900	2939900	MS
+2939900	2941900	MS
+2941900	2943900	MS
+2943900	2945900	MS
+2945900	2947900	MS
+2947900	2949900	MS
+2949900	2951900	MS
+2951900	2953900	MS
+2953900	2955900	MS
+2955900	2957900	MS
+2957900	2959900	MS
+2959900	2961900	MS
+2961900	2963900	MS
+2963900	2965900	MS
+2965900	2967900	MS
+2967900	2969900	MS
+2969900	2971900	MS
+2971900	2973900	MS
+2973900	2975900	MS
+2975900	2977900	MS
+2977900	2979900	MS
+2979900	2981900	MS
+2981900	2983900	MS
+2983900	2985900	MS
+2985900	2987900	MS
+2987900	2989900	MS
+2989900	2991900	MS
+2991900	2993900	MS
+2993900	2995900	MS
+2995900	2997900	MS
+2997900	2999900	MS
+2999900	3001900	MS
+3001900	3003900	MS
+3003900	3005900	MS
+3005900	3007900	MS
+3007900	3009900	MS
+3009900	3011900	MS
+3011900	3013900	MS
+3013900	3015900	MS
+3015900	3017900	MS
+3017900	3019900	MS
+3019900	3021900	MS
+3021900	3023900	MS
+3023900	3025900	MS
+3025900	3027900	MS
+3027900	3029900	MS
+3029900	3031900	MS
+3031900	3033900	MS
+3033900	3035900	MS
+3035900	3037900	MS
+3037900	3039900	MS
+3039900	3041900	MS
+3041900	3043900	MS
+3043900	3045900	MS
+3045900	3047900	MS
+3047900	3049900	MS
+3049900	3051900	MS
+3051900	3053900	MS
+3053900	3055900	MS
+3055900	3057900	MS
+3057900	3059900	MS
+3059900	3061900	MS
+3061900	3063900	MS
+3063900	3065900	MS
+3065900	3067900	MS
+3067900	3069900	MS
+3069900	3071900	MS
+3071900	3073900	MS
+3073900	3075900	MS
+3075900	3077900	MS
+3077900	3079900	MS
+3079900	3081900	MS
+3081900	3083900	MS
+3083900	3085900	MS
+3085900	3087900	MS
+3087900	3089900	MS
+3089900	3091900	MS
+3091900	3093900	MS
+3093900	3095900	MS
+3095900	3097900	MS
+3097900	3099900	MS
+3099900	3101900	MS
+3101900	3103900	MS
+3103900	3105900	MS
+3105900	3107900	MS
+3107900	3109900	MS
+3109900	3111900	MS
+3111900	3113900	MS
+3113900	3115900	MS
+3115900	3117900	MS
+3117900	3119900	MS
+3119900	3121900	MS
+3121900	3123900	MS
+3123900	3125900	MS
+3125900	3127900	MS
+3127900	3129900	MS
+3129900	3131900	MS
+3131900	3133900	MS
+3133900	3135900	MS
+3135900	3137900	MS
+3137900	3139900	MS
+3139900	3141900	MS
+3141900	3143900	MS
+3143900	3145900	MS
+3145900	3147900	MS
+3147900	3149900	MS
+3149900	3151900	MS
+3151900	3153900	MS
+3153900	3155900	MS
+3155900	3157900	MS
+3157900	3159900	MS
+3159900	3161900	MS
+3161900	3163900	MS
+3163900	3165900	MS
+3165900	3167900	MS
+3167900	3169900	MS
+3169900	3171900	MS
+3171900	3173900	MS
+3173900	3175900	MS
+3175900	3177900	MS
+3177900	3179900	MS
+3179900	3181900	MS
+3181900	3183900	MS
+3183900	3185900	MS
+3185900	3187900	MS
+3187900	3189900	MS
+3189900	3191900	MS
+3191900	3193900	MS
+3193900	3195900	MS
+3195900	3197900	MS
+3197900	3199900	MS
+3199900	3201900	MS
+3201900	3203900	MS
+3203900	3205900	MS
+3205900	3207900	MS
+3207900	3209900	MS
+3209900	3211900	MS
+3211900	3213900	MS
+3213900	3215900	MS
+3215900	3217900	MS
+3217900	3219900	MS
+3219900	3221900	MS
+3221900	3223900	MS
+3223900	3225900	MS
+3225900	3227900	MS
+3227900	3229900	MS
+3229900	3231900	MS
+3231900	3233900	MS
+3233900	3235900	MS
+3235900	3237900	MS
+3237900	3239900	MS
+3239900	3241900	MS
+3241900	3243900	MS
+3243900	3245900	MS
+3245900	3247900	MS
+3247900	3249900	MS
+3249900	3251900	MS
+3251900	3253900	MS
+3253900	3255900	MS
+3255900	3257900	MS
+3257900	3259900	MS
+3259900	3261900	MS
+3261900	3263900	MS
+3263900	3265900	MS
+3265900	3267900	MS
+3267900	3269900	MS
+3269900	3271900	MS
+3271900	3273900	MS
+3273900	3275900	MS
+3275900	3277900	MS
+3277900	3279900	MS
+3279900	3281900	MS
+3281900	3283900	MS
+3283900	3285900	MS
+3285900	3287900	MS
+3287900	3289900	MS
+3289900	3291900	MS
+3291900	3293900	MS
+3293900	3295900	MS
+3295900	3297900	MS
+3297900	3299900	MS
+3299900	3301900	MS
+3301900	3303900	MS
+3303900	3305900	MS
+3305900	3307900	MS
+3307900	3309900	MS
+3309900	3311900	MS
+3311900	3313900	MS
+3313900	3315900	MS
+3315900	3317900	MS
+3317900	3319900	MS
+3319900	3321900	MS
+3321900	3323900	MS
+3323900	3325900	MS
+3325900	3327900	MS
+3327900	3329900	MS
+3329900	3331900	MS
+3331900	3333900	MS
+3333900	3335900	MS
+3335900	3337900	MS
+3337900	3339900	MS
+3339900	3341900	MS
+3341900	3343900	MS
+3343900	3345900	MS
+3345900	3347900	MS
+3347900	3349900	MS
+3349900	3351900	MS
+3351900	3353900	MS
+3353900	3355900	MS
+3355900	3357900	MS
+3357900	3359900	MS
+3359900	3361900	MS
+3361900	3363900	MS
+3363900	3365900	MS
+3365900	3367900	MS
+3367900	3369900	MS
+3369900	3371900	MS
+3371900	3373900	MS
+3373900	3375900	MS
+3375900	3377900	MS
+3377900	3379900	MS
+3379900	3381900	MS
+3381900	3383900	MS
+3383900	3385900	MS
+3385900	3387900	MS
+3387900	3389900	MS
+3389900	3391900	MS
+3391900	3393900	MS
+3393900	3395900	MS
+3395900	3397900	MS
+3397900	3399900	MS
+3399900	3401900	MS
+3401900	3403900	MS
+3403900	3405900	MS
+3405900	3407900	MS
+3407900	3409900	MS
+3409900	3411900	MS
+3411900	3413900	MS
+3413900	3415900	MS
+3415900	3417900	MS
+3417900	3419900	MS
+3419900	3421900	MS
+3421900	3423900	MS
+3423900	3425900	MS
+3425900	3427900	MS
+3427900	3429900	MS
+3429900	3431900	MS
+3431900	3433900	MS
+3433900	3435900	MS
+3435900	3437900	MS
+3437900	3439900	MS
+3439900	3441900	MS
+3441900	3443900	MS
+3443900	3445900	MS
+3445900	3447900	MS
+3447900	3449900	MS
+3449900	3451900	MS
+3451900	3453900	MS
+3453900	3455900	MS
+3455900	3457900	MS
+3457900	3459900	MS
+3459900	3461900	MS
+3461900	3463900	MS
+3463900	3465900	MS
+3465900	3467900	MS
+3467900	3469900	MS
+3469900	3471900	MS
+3471900	3473900	MS
+3473900	3475900	MS
+3475900	3477900	MS
+3477900	3479900	MS
+3479900	3481900	MS
+3481900	3483900	MS
+3483900	3485900	MS
+3485900	3487900	MS
+3487900	3489900	MS
+3489900	3491900	MS
+3491900	3493900	MS
+3493900	3495900	MS
+3495900	3497900	MS
+3497900	3499900	MS
+3499900	3501900	MS
+3501900	3503900	MS
+3503900	3505900	MS
+3505900	3507900	MS
+3507900	3509900	MS
+3509900	3511900	MS
+3511900	3513900	MS
+3513900	3515900	MS
+3515900	3517900	MS
+3517900	3519900	MS
+3519900	3521900	MS
+3521900	3523900	MS
+3523900	3525900	MS
+3525900	3527900	MS
+3527900	3529900	MS
+3529900	3531900	MS
+3531900	3533900	MS
+3533900	3535900	MS
+3535900	3537900	MS
+3537900	3539900	MS
+3539900	3541900	MS
+3541900	3543900	MS
+3543900	3545900	MS
+3545900	3547900	MS
+3547900	3549900	MS
+3549900	3551900	MS
+3551900	3553900	MS
+3553900	3555900	MS
+3555900	3557900	MS
+3557900	3559900	MS
+3559900	3561900	MS
+3561900	3563900	MS
+3563900	3565900	MS
+3565900	3567900	MS
+3567900	3569900	MS
+3569900	3571900	MS
+3571900	3573900	MS
+3573900	3575900	MS
+3575900	3577900	MS
+3577900	3579900	MS
+3579900	3581900	MS
+3581900	3583900	MS
+3583900	3585900	MS
+3585900	3587900	MS
+3587900	3589900	MS
+3589900	3591900	MS
+3591900	3593900	MS
+3593900	3595900	MS
+3595900	3597900	MS
+3597900	3599900	MS
+3599900	3601900	MS
+3601900	3603900	MS
+3603900	3605900	MS
+3605900	3607900	MS
+3607900	3609900	MS
+3609900	3611900	MS
+3611900	3613900	MS
+3613900	3615900	MS
+3615900	3617900	MS
+3617900	3619900	MS
+3619900	3621900	MS
+3621900	3623900	MS
+3623900	3625900	MS
+3625900	3627900	MS
+3627900	3629900	MS
+3629900	3631900	MS
+3631900	3633900	MS
+3633900	3635900	MS
+3635900	3637900	MS
+3637900	3639900	MS
+3639900	3641900	MS
+3641900	3643900	MS
+3643900	3645900	MS
+3645900	3647900	MS
+3647900	3649900	MS
+3649900	3651900	MS
+3651900	3653900	MS
+3653900	3655900	MS
+3655900	3657900	MS
+3657900	3659900	MS
+3659900	3661900	MS
+3661900	3663900	MS
+3663900	3665900	MS
+3665900	3667900	MS
+3667900	3669900	MS
+3669900	3671900	MS
+3671900	3673900	MS
+3673900	3675900	MS
+3675900	3677900	MS
+3677900	3679900	MS
+3679900	3681900	MS
+3681900	3683900	MS
+3683900	3685900	MS
+3685900	3687900	MS
+3687900	3689900	MS
+3689900	3691900	MS
+3691900	3693900	MS
+3693900	3695900	MS
+3695900	3697900	MS
+3697900	3699900	MS
+3699900	3701900	MS
+3701900	3703900	MS
+3703900	3705900	MS
+3705900	3707900	MS
+3707900	3709900	MS
+3709900	3711900	MS
+3711900	3713900	MS
+3713900	3715900	MS
+3715900	3717900	MS
+3717900	3719900	MS
+3719900	3721900	MS
+3721900	3723900	MS
+3723900	3725900	MS
+3725900	3727900	MS
+3727900	3729900	MS
+3729900	3731900	MS
+3731900	3733900	MS
+3733900	3735900	MS
+3735900	3737900	MS
+3737900	3739900	MS
+3739900	3741900	MS
+3741900	3743900	MS
+3743900	3745900	MS
+3745900	3747900	MS
+3747900	3749900	MS
+3749900	3751900	MS
+3751900	3753900	MS
+3753900	3755900	MS
+3755900	3757900	MS
+3757900	3759900	MS
+3759900	3761900	MS
+3761900	3763900	MS
+3763900	3765900	MS
+3765900	3767900	MS
+3767900	3769900	MS
+3769900	3771900	MS
+3771900	3773900	MS
+3773900	3775900	MS
+3775900	3777900	MS
+3777900	3779900	MS
+3779900	3781900	MS
+3781900	3783900	MS
+3783900	3785900	MS
+3785900	3787900	MS
+3787900	3789900	MS
+3789900	3791900	MS
+3791900	3793900	MS
+3793900	3795900	MS
+3795900	3797900	MS
+3797900	3799900	MS
+3799900	3801900	MS
+3801900	3803900	MS
+3803900	3805900	MS
+3805900	3807900	MS
+3807900	3809900	MS
+3809900	3811900	MS
+3811900	3813900	MS
+3813900	3815900	MS
+3815900	3817900	MS
+3817900	3819900	MS
+3819900	3820900	MS
+3820900	3822900	MS
+3822900	3825900	MS
+3825900	3827900	MS
+3827900	3831900	MS
+3831900	3833900	MS
+3833900	3834900	MS
+3834900	3835900	MS
+3835900	3836900	MS
+3836900	3838900	MS
+3838900	3839900	MS
+3839900	3842900	MS
+3842900	3848900	MS
+3848900	3851900	MS
+3851900	3854900	MS
+3854900	3857900	MS
+3857900	3860900	MS
+3860900	3863900	MS
+3863900	3866900	MS
+3866900	3869900	MS
+3869900	3872900	MS
+3872900	3875900	MS
+3875900	3878900	MS
+3878900	3881900	MS
+3881900	3884900	MS
+3884900	3887900	MS
+3887900	3890900	MS
+3890900	3893900	MS
+3893900	3896900	MS
+3896900	3899900	MS
+3899900	3902900	MS
+3902900	3905900	MS
+3905900	3908900	MS
+3908900	3911900	MS
+3911900	3914900	MS
+3914900	3917900	MS
+3917900	3920900	MS
+3920900	3923900	MS
+3923900	3926900	MS
+3926900	3929900	MS
+3929900	3932900	MS
+3932900	3935900	MS
+3935900	3938900	MS
+3938900	3941900	MS
+3941900	3944900	MS
+3944900	3947900	MS
+3947900	3950900	MS
+3950900	3953900	MS
+3953900	3956900	MS
+3956900	3959900	MS
+3959900	3962900	MS
+3962900	3965900	MS
+3965900	3968900	MS
+3968900	3971900	MS
+3971900	3974900	MS
+3974900	3977900	MS
+3977900	3980900	MS
+3980900	3983900	MS
+3983900	3986900	MS
+3986900	3989900	MS
+3989900	3992900	MS
+3992900	3995900	MS
+3995900	3998900	MS
+3998900	4001900	MS
+4001900	4004900	MS
+4004900	4007900	MS
+4007900	4010900	MS
+4010900	4013900	MS
+4013900	4016900	MS
+4016900	4019900	MS
+4019900	4022900	MS
+4022900	4025900	MS
+4025900	4028900	MS
+4028900	4031900	MS
+4031900	4034900	MS
+4034900	4037900	MS
+4037900	4042900	MS
+4042900	4047900	MS
+4047900	4052900	MS
+4052900	4057900	MS
+4057900	4062900	MS
+4062900	4067900	MS
+4067900	4072900	MS
+4072900	4077900	MS
+4077900	4082900	MS
+4082900	4087900	MS
+4087900	4092900	MS
+4092900	4097900	MS
+4097900	4102900	MS
+4102900	4107900	MS
+4107900	4112900	MS
+4112900	4117900	MS
+4117900	4122900	MS
+4122900	4127900	MS
+4127900	4132900	MS
+4132900	4137900	MS
+4137900	4142900	MS
+4142900	4147900	MS
+4147900	4152900	MS
+4152900	4157900	MS
+4157900	4162900	MS
+4162900	4167900	MS
+4167900	4172900	MS
+4172900	4177900	MS
+4177900	4182900	MS
+4182900	4187900	MS
+4187900	4192900	MS
+4192900	4197900	MS
+4197900	4202900	MS
+4202900	4207900	MS
+4207900	4212900	MS
+4212900	4217900	MS
+4217900	4222900	MS
+4222900	4227900	MS
+4227900	4232900	MS
+4232900	4237900	MS
+4237900	4242900	MS
+4242900	4247900	MS
+4247900	4252900	MS
+4252900	4257900	MS
+4257900	4262900	MS
+4262900	4267900	MS
+4267900	4272900	MS
+4272900	4277900	MS
+4277900	4282900	MS
+4282900	4287900	MS
+4287900	4292900	MS
+4292900	4297900	MS
+4297900	4302900	MS
+4302900	4307900	MS
+4307900	4312900	MS
+4312900	4317900	MS
+4317900	4322900	MS
+4322900	4327900	MS
+4327900	4332900	MS
+4332900	4337900	MS

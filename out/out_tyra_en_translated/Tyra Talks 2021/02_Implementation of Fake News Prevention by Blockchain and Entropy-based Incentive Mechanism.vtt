@@ -1,0 +1,1439 @@
+WEBVTT
+
+00:00.000 --> 00:08.000
+Welcome back to today's Tarot Talk.
+
+00:08.000 --> 00:15.000
+We are honored to have Joseph here to talk about blockchain research.
+
+00:15.000 --> 00:20.000
+Before he starts, let me introduce him.
+
+00:20.000 --> 00:28.000
+Joseph is a Ph.D. student at the University of Waterloo.
+
+00:28.000 --> 00:34.000
+His major is Electrical and Computer Engineering, Faculty of Engineering.
+
+00:34.000 --> 00:39.000
+Before he came to the University of Waterloo,
+
+00:39.000 --> 00:51.000
+he was leading a new banking system design team in Taiwan.
+
+00:51.000 --> 00:58.000
+He also collaborated with Microsoft Taiwan on medical system research.
+
+00:58.000 --> 01:03.000
+His doctoral research is about blockchain.
+
+01:03.000 --> 01:11.000
+He is also interested in IoT, edge computing, security, and AI.
+
+01:11.000 --> 01:16.000
+In addition to his doctoral research,
+
+01:16.000 --> 01:26.000
+he also volunteered to mentor Taiwanese students to apply for Ph.D. programs.
+
+01:26.000 --> 01:41.000
+He also volunteers to mentor new graduate students in his department
+
+01:41.000 --> 01:46.000
+and the Taiwan Global Ambassador of UW's Office of Advancement.
+
+01:46.000 --> 01:54.000
+He encourages Taiwanese students to jump out of their comfort zone and pursue their dreams.
+
+01:54.000 --> 02:04.000
+Today's topic is
+
+02:04.000 --> 02:14.000
+An Implementation of Fake News Prevention by Blockchain and Entropy-Based Incentive Mechanism.
+
+02:14.000 --> 02:22.000
+Let's welcome Joseph with a round of applause.
+
+02:44.000 --> 02:46.000
+Thank you for giving my presentation.
+
+02:46.000 --> 02:54.000
+If you have any questions, feel free to ask in Chinese or English.
+
+02:54.000 --> 03:00.000
+I'm so glad to give you this presentation.
+
+03:00.000 --> 03:06.000
+It's about how we use blockchain techniques to combat fake news.
+
+03:06.000 --> 03:20.000
+Before we get into the research, I would like to introduce my background and to let you understand me more.
+
+03:20.000 --> 03:23.000
+This is my background.
+
+03:23.000 --> 03:25.000
+Actually, I was born in Taiwan.
+
+03:25.000 --> 03:29.000
+When I graduated, I worked in Taiwan for several years.
+
+03:30.000 --> 03:35.000
+As you can see, I originally worked in Hsinchu.
+
+03:35.000 --> 03:40.000
+Then I went back to Taipei to do some software development.
+
+03:40.000 --> 03:44.000
+Then I went to the banks, Yishan Bank and China Trust.
+
+03:44.000 --> 03:53.000
+Before I joined UW, I collaborated with Microsoft Taiwan as a technical consultant.
+
+03:54.000 --> 04:03.000
+My educational background is that I have a master's degree in computer science at National Taiwan Ocean University.
+
+04:03.000 --> 04:12.000
+For this project, I introduced that in my master's thesis.
+
+04:12.000 --> 04:19.000
+We developed a facial recognition system that you could input the sentences and your image.
+
+04:20.000 --> 04:29.000
+Then our system could generate an animation like you and the animation can say some sentences.
+
+04:29.000 --> 04:34.000
+It's a pretty interesting application in that year.
+
+04:34.000 --> 04:41.000
+As you can see right now, a lot of applications like this are published and very famous.
+
+04:42.000 --> 04:44.000
+That was a joke.
+
+04:44.000 --> 04:50.000
+If we put this product on the market, maybe I'm a millionaire now, right?
+
+04:50.000 --> 05:01.000
+When I graduated, for engineering students, seniors told you, you could go to Hsinchu to get a job.
+
+05:01.000 --> 05:03.000
+Then you can get a lot of stocks.
+
+05:03.000 --> 05:05.000
+Then you can retire very soon.
+
+05:05.000 --> 05:07.000
+It was my dream.
+
+05:07.000 --> 05:11.000
+When I graduated, I went to Hsinchu.
+
+05:11.000 --> 05:18.000
+But in that year, we met some financial crisis.
+
+05:18.000 --> 05:27.000
+So I came back to Taipei to do software development.
+
+05:27.000 --> 05:34.000
+At that time, I was very interested in mobile development.
+
+05:34.000 --> 05:43.000
+In that year, Microsoft collaborated with Nokia to deliver the new devices.
+
+05:43.000 --> 05:46.000
+There's Nokia and Windows Phone on the market.
+
+05:46.000 --> 05:55.000
+So I joined one company as a product manager and did a team to develop some mobile apps.
+
+05:56.000 --> 06:00.000
+As you can see, the interesting one is the repost.
+
+06:00.000 --> 06:07.000
+We transfer the Nokia's games.
+
+06:07.000 --> 06:09.000
+It's a Barbie game, right?
+
+06:09.000 --> 06:15.000
+If you're a child and you use this app, you can change the process of the app to us in these games.
+
+06:15.000 --> 06:21.000
+We transfer it from the iPhone and Android system to Windows Phone.
+
+06:21.000 --> 06:24.000
+And then we do some applications.
+
+06:24.000 --> 06:28.000
+We did some applications for, you know, the care, right?
+
+06:28.000 --> 06:33.000
+And two for Taiwan Taxi and also for EasyTag.
+
+06:33.000 --> 06:34.000
+All these applications.
+
+06:34.000 --> 06:43.000
+I was so excited that I did this application because, you know, in apps, if you are a programmer,
+
+06:43.000 --> 06:48.000
+the apps could give you a very straightforward feedback from customers.
+
+06:48.000 --> 06:50.000
+So it's very interesting.
+
+06:50.000 --> 06:57.000
+However, the life gave me another joke.
+
+06:57.000 --> 07:03.000
+It's that the Windows Phone did not succeed at that time.
+
+07:03.000 --> 07:17.000
+So, yeah, after I did this job for more than one year, I found that, yeah, no, this job cannot help me to earn enough money for me to buy.
+
+07:17.000 --> 07:26.000
+So I joined two banks and to run the directives, some financial products, and then we built a system.
+
+07:26.000 --> 07:28.000
+It's called the mirrorless.
+
+07:28.000 --> 07:32.000
+And this mirrorless is a very powerful system that the banking operations.
+
+07:32.000 --> 07:40.000
+If you are a trader, you could use this system to record any financial products in this system.
+
+07:40.000 --> 07:46.000
+And all the time in the first year, the banks use this system.
+
+07:46.000 --> 07:48.000
+So I went to China Trust.
+
+07:48.000 --> 07:56.000
+And then I, when the Hunter invited me to join EasyTag to introduce mirrorless to their banks.
+
+07:56.000 --> 08:03.000
+And then when I finished this mirrorless project, yeah, we made a big project in Taiwan.
+
+08:03.000 --> 08:08.000
+It's that the Asian Pacific organization came to Taiwan.
+
+08:08.000 --> 08:17.000
+They do some resource to how does Taiwan do in the anti-money laundry, which is a fine teaching.
+
+08:17.000 --> 08:22.000
+And so when I, I was kidding that.
+
+08:22.000 --> 08:27.000
+So, yeah, I am one of the Taiwan representative, the national teams in Taiwan.
+
+08:27.000 --> 08:31.000
+It's very honest for us, but it's very tough to do that.
+
+08:31.000 --> 08:34.000
+We need to finish it out of the requirements in a very short time.
+
+08:34.000 --> 08:37.000
+But, yeah, the final result is very good.
+
+08:37.000 --> 08:41.000
+And I also got a promotion in Eastland Bank.
+
+08:41.000 --> 08:45.000
+So, so far, it looks so good.
+
+08:45.000 --> 08:48.000
+So why I want to go study abroad.
+
+08:48.000 --> 08:56.000
+Yeah, that's because I was thinking about that if I still stay in Taiwan.
+
+08:57.000 --> 09:04.000
+Maybe I could gather good jobs and to be promoted, continue to be promoted.
+
+09:04.000 --> 09:19.000
+But, yeah, I was very, I heard about some great new technology skills or some new products from Silicon Bay or from North America.
+
+09:19.000 --> 09:24.000
+So it was always my, be my dream to study abroad.
+
+09:24.000 --> 09:27.000
+So I was so hesitant.
+
+09:27.000 --> 09:34.000
+But, yeah, I just had to give myself a chance to do this.
+
+09:34.000 --> 09:39.000
+And so right now I was thinking about that.
+
+09:39.000 --> 09:44.000
+The thing is that if you have a dream, it only could stop you.
+
+09:44.000 --> 09:45.000
+It's just that yourself.
+
+09:46.000 --> 09:57.000
+So I just want to encourage all of my friends or all the participants or some young students in this meeting.
+
+09:57.000 --> 10:06.000
+You could just to check your dreams or not to limit yourself.
+
+10:06.000 --> 10:08.000
+And so right now I'm here in Canada.
+
+10:08.000 --> 10:13.000
+So I, yeah, I saw a lot of beautiful things.
+
+10:13.000 --> 10:22.000
+And, but, yeah, the period is also when I prepare for this study, I met a lot of difficulties.
+
+10:22.000 --> 10:27.000
+And, yeah, but, yeah, it's worth it, I think.
+
+10:28.000 --> 10:42.000
+And, yeah, this is my another my motto is that actually adventure may hurt you, but monotony, which means that you always do the same things will kill you, kill you creative or other things.
+
+10:42.000 --> 10:45.000
+So, yeah, that's all my background introduction.
+
+10:45.000 --> 10:50.000
+So I will stop here for a while.
+
+10:50.000 --> 10:52.000
+If you have any question, you could ask me right now.
+
+10:57.000 --> 11:16.000
+Okay, I think I think you have any question feel free to ask me, and we can discuss more.
+
+11:17.000 --> 11:22.000
+And so I wrote some my experiences in my blog and some medium.
+
+11:22.000 --> 11:26.000
+If you have, you could check it and to get more detail.
+
+11:26.000 --> 11:36.000
+If you also want to trust your dreams, or you have some dream career, or if you could also find me on those pages.
+
+11:36.000 --> 11:41.000
+And, yeah, we could discuss more about your patient.
+
+11:41.000 --> 11:47.000
+Okay, so let's get to our main research topic today.
+
+11:47.000 --> 11:56.000
+Today we're going to talk about how to use the blockchain to prevent the tech news.
+
+11:56.000 --> 12:18.000
+Yeah, actually, what is the tech news. It is a concrete, complete fabrication, which means people to approach something or to mimic something and that is similar to a real, you are not able to confirm on the fact is, what is the real, what is the fact.
+
+12:18.000 --> 12:40.000
+And so, what is the actually the great effect news is not in the long future. It happens right now, you can see this slide in the depth and upside is the US stock market in one day, you can see the picture is dropped sharply.
+
+12:40.000 --> 13:01.000
+But why, because at that day, a news says that the Trump's, the Obama was dead, but it's a rumor, right? But however, the stock market to drop very sharply by this tech news and other examples in this slide.
+
+13:02.000 --> 13:04.000
+We all know that the Cambridge Analytics.
+
+13:04.000 --> 13:18.000
+They collect the users previous and to make some news or articles that you are interested in, and to affect your opinion in some specific issues.
+
+13:18.000 --> 13:33.000
+And also, the Russian used some propaganda to affect the results of the crisis. So, all these are the current threat to our society and democracy and the economy.
+
+13:33.000 --> 13:55.000
+Also, in Taiwan is the same. Actually, in the research, Taiwan is the most, you know, we got the most weight from the whole world. We are number one. So, it's very, like I said, it's not a long, not a straight in a long distance is the current.
+
+13:56.000 --> 13:58.000
+It happened currently right now.
+
+13:59.000 --> 14:18.000
+So, why people invest in tech news? That is because they can get a lot of the news. That's a very lower cost. Right now, the cost of producing the tech news is very cheap.
+
+14:19.000 --> 14:32.000
+But if you can affect a big topic, like the U.S. president election or some very huge topic, you could get a huge, huge revenues. Right?
+
+14:33.000 --> 14:50.000
+So, why don't we do that? If I can impact a lot of people by a very low cost, actually, the malicious people will, of course, they will do that.
+
+14:51.000 --> 15:07.000
+And also, AI technology makes things worse. Because in my this slide, that this is Jordan Peele. He's a U.S. actor.
+
+15:07.000 --> 15:25.000
+He collaborated with technology companies that use the AI technique to, you know, the deep tech technique to produce the video and to let Obama to say some words they want him to say.
+
+15:25.000 --> 15:29.000
+So, AI makes the tech news to be produced more easier.
+
+15:30.000 --> 15:45.000
+And so, but in a traditional ways, our research mainly focus on how to use the computer to detect the tech news automatically.
+
+15:45.000 --> 15:54.000
+How we do that? You see this picture that we have different algorithms, but mainly we use some machine learning algorithms.
+
+15:54.000 --> 16:10.000
+We find some clues. For example, if you are the tech news comes in and we find whether the IP address is correct or not, and its content has some weird things or not.
+
+16:11.000 --> 16:31.000
+So, we use some patterns to detect and to decide whether this tech news is, whether this news is correct or not. But like I said, AI makes things very similar to real. The algorithms does not have the great performance right now.
+
+16:32.000 --> 16:50.000
+So, some big companies like Google or Facebook, they begin to use some human beings power capabilities to help AI to check the content's authenticity.
+
+16:51.000 --> 17:01.000
+How they do that? They build some teams, they collaborate with the local professionals, they have the ability to check the content is correct or not.
+
+17:01.000 --> 17:27.000
+And Facebook also did the same things. They built a team internal, and those teams will check some news, the authenticity, and to make your news, when news push to your device, they will be real, and they will build some tech news.
+
+17:31.000 --> 17:53.000
+And in Taiwan, we also have one organization, and you could see that is the Taiwan TechTrack Center, and you could go on their website and to see, they will check some news and tell you this is correct or incorrect.
+
+17:54.000 --> 18:20.000
+Okay, so I stop here, and for these solutions, like Google or Facebook, or the Taiwan TechTrack Center, those are good solutions, but these solutions are managed by a central organization, right?
+
+18:20.000 --> 18:34.000
+We don't know how they work. It's like a black box. If they do not do their job well, you do not know, right? You just can trust them.
+
+18:34.000 --> 18:55.000
+So, in our solution, we used decentralized solutions, which means that we will form a team, form a core, a lot of people, they are advisors, and they will verify some contents.
+
+18:56.000 --> 19:14.000
+But this solution does not manage by only one company. It's managed by everyone who joined this system. So, this is our paper, and just accepted by DTNs 2021 in November.
+
+19:14.000 --> 19:27.000
+So, after the meeting, if you have more interest in detail, you could, but it's not published yet, maybe in December. So, in December, you can check this content in more detail.
+
+19:28.000 --> 19:47.000
+Okay, so I think we can get into the detail. So, this work is from another paper that was invented by some researchers in the UK.
+
+19:47.000 --> 20:04.000
+As you can see, in the middle of this architecture, there is a group that we call the appraising actors. These are some professionals, they have ability to check the content is correct or not.
+
+20:04.000 --> 20:23.000
+And in that side, content creators are people who create the digital content. Maybe you are a writer or you are a photographer, and you make some content, and you could send your content into our system.
+
+20:24.000 --> 20:44.000
+And then, those appraising actors will verify your content to check, oh, your content is real or fake, and then they will send back to you the appraising result, and then those appraising results will be saved in the blockchain network.
+
+20:45.000 --> 20:55.000
+After that, the right-hand side users, when they come into our system, they could check the authenticity of the contents from our blockchain network.
+
+20:56.000 --> 21:14.000
+So, that's an overview of the architecture of the system. Our system's architecture is similar to this architecture, but in the following slide, I will introduce the differences between our architecture and this.
+
+21:15.000 --> 21:34.000
+And this slide is interesting. Like I said, if we all rely on Facebook or Google to help us to check the content, how do I know they do their job very well?
+
+21:35.000 --> 21:57.000
+Maybe they did not do very seriously, so I still could see some fake news. But in this system, you could select the people or some authorities, media you trust, and then let them be your appraising actors.
+
+21:58.000 --> 22:22.000
+So, for example, in this case, I selected one is the BBC. It's a media, right? And I also selected some people, Professor Smith, Mr. John, maybe some celebrities you trust. If they say this news is real, you will trust that, right?
+
+22:23.000 --> 22:39.000
+So, maybe, for example, in Taiwan, maybe you are very confident, right? If he says this news is real, okay, I will trust him. So, you could select these people to be your trusted parties.
+
+22:39.000 --> 22:55.000
+And when the news comes in, we call it a quorum, a group of appraising actors. They will give you their opinion. Is this news correct or not?
+
+22:55.000 --> 23:13.000
+And so, but why we need to use the blockchain in this system? Why don't we just use the traditional databases? We just accept the appraising results. We don't need to use the blockchain, right?
+
+23:13.000 --> 23:32.000
+But actually, blockchain has some characteristics that if once your data is set in blockchain, you cannot modify that because everyone has one ledger in their node. Is this possible to modify all the ledgers, right?
+
+23:33.000 --> 23:55.000
+And another case is that if you modify the ledger in only one node, it will be easier to be fine because we have some, you know, some hash tag in computer science. The hash point is that, for example, in my node, I have a hash point to point to your node.
+
+23:55.000 --> 24:17.000
+But if you modify, the hash point is based on your content. If you modify the content, the hash point will be modified. So, it will be easier to be found that somebody modified the data. So, blockchain will be a great solution to maintain the correctness of the data.
+
+24:18.000 --> 24:37.000
+And we go back to give you some knowledge. How does the blockchain work? Actually, you can see this picture. And if you have a transaction in this system, and the nodes will compete to try to verify it.
+
+24:37.000 --> 24:55.000
+And once this data is verified, you will be set to the blockchain like this. In the bottom, we have some red blocks, and they are ticked by the hash point, right? So, this is how the blockchain works.
+
+24:55.000 --> 25:19.000
+And then it's just, there are many, many blockchains right now. So, it's a very simple classification. One is the public, and another is the private. Public means that everyone could send a transaction in this blockchain network, like Bitcoin.
+
+25:19.000 --> 25:40.000
+People know about Bitcoin and all of it. But in private blockchain, only people approved can send the transaction into the system. And so, this private blockchain often be used in the corporations, not for the public.
+
+25:41.000 --> 26:04.000
+And another thing you need to know in blockchain is the proof of work and proof of stake. What is proof of work? This means that if we have a transaction and we have a lot of nodes, which node can record this data into blockchain?
+
+26:04.000 --> 26:25.000
+And if you are proof of work mechanism, the nodes will compete to solve a complicated math problem. And this process, we call it mining, right? So, it's a famous word, or it's very popular to be heard. If you solve this problem, then you get the right to set data into blockchain.
+
+26:26.000 --> 26:41.000
+But, yeah, and the proof of work is right now the blockchain and the Ethereum used. And the proof of stake is that, oh, no, we don't to solve the math problem. We just use some stake. What does that mean?
+
+26:41.000 --> 26:57.000
+What does that mean is that if you want to record data into blockchain, you need to pay some fees. And if you pay higher, you will get higher chance to get the right, to be selected to get the right to set data into blockchain.
+
+26:57.000 --> 27:18.000
+So, these two solutions could resist the hackers, because in the proof of work, we want to control our right to record data in blockchain. You need to control more than 51% computers in the world.
+
+27:19.000 --> 27:29.000
+And in proof of stake, you need to pay more than 51% stakes, then you could get the right to record data.
+
+27:30.000 --> 27:46.000
+And then, so, you can see that. So, in blockchain, actually, I think people heard about one news in Taiwan, that one bank, some people buy a lottery, right?
+
+27:46.000 --> 28:02.000
+Then they collect a lot of people to buy the lottery together. But one man denied, he denied that, said, oh, no, this lottery only belongs to me.
+
+28:02.000 --> 28:15.000
+But if you use blockchain, the solution, the problem will not exist, because in blockchain, everything will vary transparency, and we could just update the transaction.
+
+28:15.000 --> 28:35.000
+So, that's the one of the blockchain could support our day life. Actually, they can solve a lot of things, like if you're trying to vote in, or to test some fishery or some products, the original prices of the product by using a blockchain.
+
+28:35.000 --> 28:56.000
+And then, in this system, you could, I would like to introduce the hybrid ledger framework. It's the blockchain that proposed by IBM. And this is the permission, a private blockchain that I said is for the companies, not for the public.
+
+28:57.000 --> 29:12.000
+And how they work, you can see this flow. If you have a transaction, you could propose to the execution chain code. The chain code is the smart contract in the blockchain network.
+
+29:12.000 --> 29:27.000
+I think people heard about smart contract often, very often. And then the smart contract will check your content to check is there any mistake in your content, and then send back to you.
+
+29:27.000 --> 29:44.000
+And when you get a permission, you can submit your transaction to the auditing services. And then the auditing services will decide how to record your data into the blockchain. And it's different to the Bitcoin.
+
+29:44.000 --> 30:09.000
+The hybrid ledger framework does not use the proof-of-work mechanism, which means that we don't need to spend a lot of energy or money to do the mining process. So, it will be faster and save energy than the blockchain, than the Bitcoin.
+
+30:10.000 --> 30:31.000
+So, in our paper, this is our main architecture. The main difference is that you can see that in the data persistent layer, our blockchain, we use the hybrid ledger framework. But in the previous work, they did not mention which blockchain they used.
+
+30:32.000 --> 30:54.000
+Also, we have incentive to let the oppressing actors to do things well. We invented incentive mechanisms to let people willing to do things very well, not to produce some dishonest behaviors.
+
+30:55.000 --> 31:12.000
+And then our system will tell you that if the content creator sends one content into our system, our system will tell you how much percent of this content is real or fake.
+
+31:12.000 --> 31:33.000
+Like this slide shows, the content is 66% is real and 80% is fake. This opinion is from the people you trust, in your trust list. So, you could use this oppressing result to judge this news is fake or not.
+
+31:34.000 --> 32:01.000
+And so, this is our main flow, and we refer to the history on that. In the beginning, our system will accept the participant to add some new stakes, so they will get some credit point. And then they can use the credit point to do some oppressing, and then we can get a trust score.
+
+32:02.000 --> 32:21.000
+And then when we get a trust score, so we could, for example, in the previous, this example, most of the majority thinks that this content is real. So, the minority, why this minority think this content is fake?
+
+32:21.000 --> 32:47.000
+So, our system will give reward to those people that are, belongs to the majority, and to get the punishment to people who are in the minority, right? Because all people are professions, why you think this content is fake, not correct, not similar to the majority's opinion.
+
+32:48.000 --> 32:59.000
+And then before I get into how to calculate the trust score, I want to introduce one concept is that we call it entropy.
+
+33:00.000 --> 33:16.000
+And yeah, don't think it too complicated. I don't want to introduce some to academia or some to top concept. You can only see that this concept is from the chemistry.
+
+33:17.000 --> 33:31.000
+And from, yeah, example is that if you have a glass of water and you put ink into the water, the water will, the ink will from one point and will spread to everywhere, right?
+
+33:32.000 --> 33:49.000
+So, entropy is to measure this phenomenon of a sense. Is it a disorder or not? If the entropy is high, because it means that the sense is more disordered.
+
+33:50.000 --> 34:05.000
+I could put here. And so, in this slide, you could see that the red point is really, really similar to, you could imagine that the one red point is one people.
+
+34:06.000 --> 34:20.000
+Every day, our opinion on the same. It's just like a little entropy, right? They will stay together very closely. But if their opinion divergent, they will have high entropy, right? So, their opinion will not the same.
+
+34:21.000 --> 34:38.000
+So, I'll continue begin to tell you how we figure the trust school, and I will put some equations there but you don't need to, to look very detail into equations, you just need to look at the numbers.
+
+34:39.000 --> 34:48.000
+Okay, but for this example, if we have five oppressors, and three of them agree, and the two of them reject.
+
+34:49.000 --> 35:10.000
+So we could get that the possibility of radio is three divided by this on this this is a possibility, and this is three divided five so it's the 0.5, and the P fact will be true divided five will be 0.4.
+
+35:11.000 --> 35:19.000
+And then we put this the period and P fact into this equation, then we can get to the entropy for this case will be the raw point.
+
+35:20.000 --> 35:23.000
+Okay, let's just remember the number.
+
+35:23.000 --> 35:33.000
+And another case is that if we have the, the four oppressors agree, only one of reject.
+
+35:34.000 --> 35:47.000
+You could get that, you know, in this case, the people have the more consistent opinion right so the entropy will lower and in the example one entropy is higher.
+
+35:48.000 --> 35:54.000
+So our system, encourage people to let their opinion, consistent.
+
+35:55.000 --> 36:17.000
+I entropy, our reward or punishment will lower, but in the, in the example to our reward and the punishment will be higher.
+
+36:17.000 --> 36:30.000
+So, I will give you a table and to show you how we calculate the trust score. And so, if you remember the metaphor, I said before, in the beginning.
+
+36:31.000 --> 36:52.000
+This is our five people, and they have some opinions in the specific news, and then their initial stakes is that a one put 5000 into the system, a to put 1000, and then a total stakes is the 21,000.
+
+36:52.000 --> 36:56.000
+So, you could get the, the credit point or oppressor.
+
+36:56.000 --> 37:09.000
+And there's those is the 5000 to divide 21,000 so we could get the age appraisers credit point of credit point over process.
+
+37:09.000 --> 37:10.000
+Right.
+
+37:10.000 --> 37:16.000
+So it's just a simple, simple math.
+
+37:16.000 --> 37:37.000
+Okay, so we right now we have no how the point of the appraisers, and then when they get when the appraisers gave opinion to the content they could say that, oh, I'm 100% to throw that this news is back on.
+
+37:38.000 --> 37:41.000
+But, like, a to.
+
+37:41.000 --> 37:55.000
+He could also say that, oh, this, the content is a little bit tough for me to charge. So I, I just have the 70% confidence that it is true.
+
+37:56.000 --> 38:14.000
+So our trust score will be the CPOA to multiply the confidence. So you could see that this SOA is the score of authentic is the older people agrees and their SOA the summation of the older SOA.
+
+38:15.000 --> 38:27.000
+And here is the sum score of egg is the same as a straw score of score, score of authentic. And we also submission.
+
+38:27.000 --> 38:38.000
+All the people's degrees, and the summation the SOF to get the final score. So is the trust the how we calculate trust score.
+
+38:39.000 --> 38:45.000
+And then when we know our trust score, like I said, our system will decide.
+
+38:45.000 --> 39:00.000
+We will reflect the reward or punishment to each appraisers, and we define that our basic reward is the total stake to modify the 0.1 percentage.
+
+39:00.000 --> 39:12.000
+So, in this case, will be 21 and basic punishment will be higher or higher than the reward because we want to stop the malicious knows.
+
+39:13.000 --> 39:22.000
+So, the basic punishment will be total stake, multiply the 10%. So, it will be the 2100.
+
+39:22.000 --> 39:36.000
+And then the reward of the content, which means that when content comes in, and how many reward we will reflect to all the appraisers who did their jobs.
+
+39:36.000 --> 39:40.000
+So, our equation will be.
+
+39:40.000 --> 40:01.000
+We use the basic reward to modify the value of the one minus the entropy s. So, in, you could see that in this case, we know that, you know, our example one, our entropy is 0.9697.
+
+40:01.000 --> 40:04.000
+So, the RLC or PLC will be.
+
+40:05.000 --> 40:08.000
+6.3 and 6.3 respectively.
+
+40:12.000 --> 40:13.000
+Okay.
+
+40:14.000 --> 40:27.000
+So, then we know that the basic reward, and we don't know the reward of content and the punishment of content and the how we reflect to each appraisers.
+
+40:27.000 --> 40:33.000
+And we could, we will to calculate the ratio of which means that.
+
+40:34.000 --> 40:48.000
+For example, in SOA, we have 0.66 and for A1, we will know that there are 36% of the trust score.
+
+40:48.000 --> 40:52.000
+The score of authentic is come from.
+
+40:52.000 --> 40:55.000
+It's come from the appraiser one, right?
+
+40:55.000 --> 41:02.000
+So, we will use this ratio to reflect the reward to each appraiser.
+
+41:02.000 --> 41:05.000
+And for the punishment, it's the same.
+
+41:05.000 --> 41:12.000
+We will know that how you contribute to the trust of the fake, right?
+
+41:12.000 --> 41:22.000
+And then if you contribute, or you occupy more percentage, you will get more reward or more punishment.
+
+41:26.000 --> 41:27.000
+Okay, so.
+
+41:27.000 --> 41:40.000
+In here, you can see we calculate a ratio of the RLC and the ratio of PLC, which each appraisers need to be reflected to be added or be reduced.
+
+41:40.000 --> 41:53.000
+And then, when we reflect it, you can see that for, for example, in for A1, the initial is initial state is 5,000 and after state is the 5,000 point.
+
+41:53.000 --> 42:02.000
+23, so we could get all the after stakes, and then we can calculate the after credit point.
+
+42:02.000 --> 42:16.000
+So, this is a cycle when every content, when we finish the appraising process, we will have the new stakes and the new credit point, and then they will get ready to accept content.
+
+42:17.000 --> 42:30.000
+And if any appraisers, their credit point is close to zero, which means that their stakes already, they get, they got a lot of the punishment and their credit point.
+
+42:31.000 --> 42:48.000
+Their stakes is equal to zero, and we will go back to our main floor, the initial process that to accept to ask this appraisers, do we need to add more stakes to continue to be the appraisers?
+
+42:49.000 --> 43:03.000
+So, that's how, so we only finish the, I think that the most difficult part in our presentation is to calculate the trust score.
+
+43:04.000 --> 43:23.000
+And in this slide that we do some experiments that to improve, to prove that our system could be a scale on a lot of the users, you could see that, and in the left side, the picture shows that our system could be in our testing environment.
+
+43:23.000 --> 43:48.000
+We use the 4 servers and the throughput is still goes well, but in our system, we set the contents, the maxima of the content is the 8 megabytes, because you could imagine that if we could compress the content for videos or some, we use the in-camera size.
+
+43:48.000 --> 43:51.000
+There is the technique you could use the content to.
+
+43:52.000 --> 43:55.000
+As the input, and we have the output is a very short.
+
+43:55.000 --> 44:08.000
+Um, or some contents, and it will not to occupy a lot of size. So, our intention of the content will be the 8 megabytes.
+
+44:09.000 --> 44:28.000
+And the right hand side, the picture shows that we all know that the computer system is rely on the tolerance, which means that if the main server fails, our systems should still work well. Right? You could see that.
+
+44:28.000 --> 44:57.000
+Okay, so I think we can get into.
+
+44:57.000 --> 44:58.000
+Conclusion.
+
+44:59.000 --> 45:05.000
+So, yeah, so our system, I asked to summarize some take home points for all of you.
+
+45:06.000 --> 45:14.000
+Yeah, as you remember that I've said that the AI technique is getting better and better. So.
+
+45:15.000 --> 45:22.000
+The traditional algorithm does not get the great performance to detect the automatic.
+
+45:23.000 --> 45:28.000
+So, if we use the human's capabilities, we will be a better solution.
+
+45:29.000 --> 45:32.000
+Um, then the traditional algorithms.
+
+45:33.000 --> 45:41.000
+But, of course, we could combine the advantage for the AI algorithms and the human based capability. For example, we can.
+
+45:42.000 --> 45:54.000
+Use AI technique to do the 1st day of filters and people can get into the check the results. Right? But the most important part is the blockchain network.
+
+45:55.000 --> 46:00.000
+Because it's the decentralized not to manage it by only 1 companies.
+
+46:01.000 --> 46:06.000
+It's a transparency and very easier to find some data is being modified.
+
+46:07.000 --> 46:11.000
+And so in this experience, we know that our system.
+
+46:12.000 --> 46:15.000
+It's the architecture is peaceful, and we could.
+
+46:16.000 --> 46:20.000
+It has potential to be deployed in some sense of machines.
+
+46:21.000 --> 46:26.000
+And the most important part is that our incentive mechanism.
+
+46:27.000 --> 46:30.000
+Offers this architecture commercial potential.
+
+46:30.000 --> 46:31.000
+You can imagine that to.
+
+46:32.000 --> 46:36.000
+If you are a writer, or you are a photographer, you could use our system.
+
+46:37.000 --> 46:39.000
+To get some proof.
+
+46:40.000 --> 46:45.000
+That your content is for you, and your, your reputation will getting better. Right?
+
+46:46.000 --> 46:49.000
+And you are a journalist, or you are some.
+
+46:50.000 --> 46:53.000
+If people doing the fact checking.
+
+46:54.000 --> 46:56.000
+And you can get reward for our system.
+
+46:56.000 --> 46:58.000
+So, there is also.
+
+46:59.000 --> 47:04.000
+Then this will get some commercial and purpose and for building.
+
+47:05.000 --> 47:08.000
+On this, the technical precision systems.
+
+47:10.000 --> 47:11.000
+Okay.
+
+47:12.000 --> 47:13.000
+So, that's.
+
+47:14.000 --> 47:21.000
+It's a long presentation, so I stopped here, and I actually here is that this research is.
+
+47:22.000 --> 47:28.000
+Supported by report is the payment protocol.
+
+47:29.000 --> 47:30.000
+And also.
+
+47:31.000 --> 47:33.000
+By our national science and engineering.
+
+47:34.000 --> 47:36.000
+Research Council of Canada.
+
+47:37.000 --> 47:39.000
+And also thanks my mentor to give me.
+
+47:41.000 --> 47:43.000
+A lot of suggestions and help when I.
+
+47:44.000 --> 47:45.000
+And to.
+
+47:46.000 --> 47:47.000
+Find some.
+
+47:48.000 --> 47:50.000
+Research ideas or some.
+
+47:52.000 --> 47:53.000
+No more people how to do well.
+
+47:54.000 --> 47:57.000
+In a program, so I will introduce.
+
+47:59.000 --> 48:00.000
+Facebook and.
+
+48:01.000 --> 48:05.000
+You got a lot of great things for all of you who wants to.
+
+48:06.000 --> 48:08.000
+Study for, or you have some.
+
+48:09.000 --> 48:14.000
+If you are women is that is the best for you to check.
+
+48:14.000 --> 48:16.000
+So, I put it here and out of thing.
+
+48:17.000 --> 48:20.000
+To be my mentor and give me more.
+
+48:21.000 --> 48:22.000
+Help.
+
+48:24.000 --> 48:25.000
+So.
+
+48:26.000 --> 48:29.000
+That's all the presentation and if you have a question.
+
+48:30.000 --> 48:31.000
+You could ask me right now.
+
+48:32.000 --> 48:33.000
+Or.
+
+48:33.000 --> 48:37.000
+After the presentation, you could also drop me a mail or find me.
+
+48:38.000 --> 48:39.000
+I also.
+
+48:40.000 --> 48:41.000
+We will discuss with you.
+
+48:42.000 --> 48:44.000
+Or detail or any questions you have.
+
+48:45.000 --> 48:46.000
+Thank you so much.
+
+48:48.000 --> 48:53.000
+So, yeah, actually, so before we start our QA session, please turn on your microphones again.
+
+48:54.000 --> 48:58.000
+So, let's thank for the very interesting talk.
+
+49:01.000 --> 49:02.000
+Thank you.
+
+49:03.000 --> 49:04.000
+So.
+
+49:05.000 --> 49:11.000
+I'm not sure, but I'm guessing that some of our attendees would like to ask in Mandarin Chinese.
+
+49:12.000 --> 49:17.000
+Probably, I guess, but I mean, any kind of language as long as you can come in, that will all be fine.
+
+49:18.000 --> 49:20.000
+So, yeah, so please feel free to ask questions.
+
+49:22.000 --> 49:23.000
+Anyone.
+
+49:25.000 --> 49:26.000
+Hello.
+
+49:26.000 --> 49:27.000
+Hi, I'm.
+
+49:28.000 --> 49:33.000
+And I would like to know, because I noticed that actually you have no experience starting a board, right?
+
+49:34.000 --> 49:35.000
+It's your first time.
+
+49:36.000 --> 49:38.000
+How do you how do you practice English?
+
+49:39.000 --> 49:41.000
+Sorry, it's not related to your content, but I'm just curious.
+
+49:42.000 --> 49:43.000
+Yeah.
+
+49:43.000 --> 49:46.000
+Oh, yeah, so interesting question is that I think.
+
+49:47.000 --> 49:51.000
+I joined some English speaking practice in crosses in.
+
+49:52.000 --> 49:55.000
+So, yeah, they gave me a lot of practice to.
+
+49:57.000 --> 49:58.000
+To.
+
+50:03.000 --> 50:09.000
+I to join, which some master the crops near.
+
+50:10.000 --> 50:13.000
+So, there's that option for me to practice in English.
+
+50:13.000 --> 50:14.000
+Yeah.
+
+50:17.000 --> 50:18.000
+Is that answer your question?
+
+50:19.000 --> 50:23.000
+Oh, yes, and I heard some people say that we should prepare.
+
+50:24.000 --> 50:25.000
+Maybe we should join the, like.
+
+50:27.000 --> 50:29.000
+It's faster than we prepare English fast.
+
+50:30.000 --> 50:31.000
+How do you think about that?
+
+50:32.000 --> 50:37.000
+If I cannot reach the score that I want, and did I need to apply for the language?
+
+50:37.000 --> 50:46.000
+Or English, and I'm here, I get a score, get a total capital, and then apply for the school.
+
+50:51.000 --> 50:54.000
+Okay, this is not an interesting questions yet.
+
+50:55.000 --> 50:58.000
+Actually, I will suggest that this depends.
+
+50:59.000 --> 51:00.000
+If you.
+
+51:01.000 --> 51:04.000
+I will suggest to prepare English.
+
+51:05.000 --> 51:07.000
+And try your best to pass the top.
+
+51:09.000 --> 51:12.000
+In Taiwan, because if you.
+
+51:13.000 --> 51:16.000
+Go study abroad and you go to some language schools.
+
+51:17.000 --> 51:19.000
+The cost is to leave is very high.
+
+51:20.000 --> 51:22.000
+And then it will spend a lot of money.
+
+51:23.000 --> 51:26.000
+But, but the most important thing is the.
+
+51:26.000 --> 51:29.000
+If you sometimes.
+
+51:30.000 --> 51:35.000
+Some people are struggling to passing to pass the exams.
+
+51:36.000 --> 51:38.000
+So, if you found that you.
+
+51:39.000 --> 51:40.000
+You cannot concentrate to.
+
+51:41.000 --> 51:42.000
+Prepare for it.
+
+51:43.000 --> 51:46.000
+And you stuck on the example.
+
+51:48.000 --> 51:54.000
+And also the schools offer some opportunities that they say you could go to the university.
+
+51:54.000 --> 51:59.000
+They say you could go to the university to take the language courses, and then you can get over.
+
+52:00.000 --> 52:02.000
+I would say you just go because.
+
+52:04.000 --> 52:05.000
+The time is important.
+
+52:07.000 --> 52:08.000
+Do not to stack 1.
+
+52:10.000 --> 52:15.000
+1 stage for a long time. Yeah, I was, I think that would be my answer.
+
+52:21.000 --> 52:23.000
+Yeah, so I have a question.
+
+52:24.000 --> 52:25.000
+So, um.
+
+52:25.000 --> 52:32.000
+So, if we go back to your title, I think you're saying that this technique is mainly for.
+
+52:34.000 --> 52:40.000
+Um, how do I say this for deploying against fake news, quote, unquote news, right?
+
+52:40.000 --> 52:46.000
+But if you let the people decide what will be the thing that they recognize, right?
+
+52:46.000 --> 52:48.000
+They basically just vote.
+
+52:49.000 --> 52:52.000
+Let's say Barack Obama just died.
+
+52:52.000 --> 52:58.000
+And if you let the Internet vote, probably 99% of the people will say that's a fake news.
+
+52:58.000 --> 52:59.000
+Right.
+
+52:59.000 --> 53:05.000
+But let's say objectively true thing that cannot be voted to become a truth in your system.
+
+53:05.000 --> 53:06.000
+How do you comment about that?
+
+53:07.000 --> 53:08.000
+Uh, yeah, like I said.
+
+53:09.000 --> 53:13.000
+Um, we trust the majority opinion, right in our system.
+
+53:14.000 --> 53:23.000
+We have the reward and the punishment mechanisms to make make you to do the correct and the honest.
+
+53:25.000 --> 53:34.000
+Actually, in all of the production network, they have the specific incentive mechanism to prevent from some malicious notes.
+
+53:35.000 --> 53:36.000
+So, if you joined our.
+
+53:37.000 --> 53:40.000
+We have 2 mechanism to prevent.
+
+53:41.000 --> 53:45.000
+This, uh, the notes to adjust them to vote.
+
+53:46.000 --> 53:53.000
+Actually, they will do their best because the 1st, if they join our system, they need to pay for pay fees for.
+
+53:54.000 --> 53:56.000
+I say the stakes, so it's a cost.
+
+53:57.000 --> 54:01.000
+And then if we join the system, and you did not do your job very well.
+
+54:01.000 --> 54:02.000
+You will get.
+
+54:03.000 --> 54:06.000
+The, uh, the punishment, and then eventually.
+
+54:07.000 --> 54:11.000
+You are not, you will be prohibited to be the oppressors in our system.
+
+54:12.000 --> 54:14.000
+So, our mechanism of incentive.
+
+54:15.000 --> 54:18.000
+It's a core concept to incentive people.
+
+54:20.000 --> 54:23.000
+To check the content seriously and to fault.
+
+54:23.000 --> 54:24.000
+Correct.
+
+54:28.000 --> 54:34.000
+So, if I understand correctly, basically, the assumption that you're going with is that.
+
+54:35.000 --> 54:42.000
+People generally have good intention, and they are answering based on their good intention, regardless of the truth.
+
+54:43.000 --> 54:43.000
+
+
+54:43.000 --> 54:45.000
+So, say, Obama just died.
+
+54:46.000 --> 54:47.000
+Nobody knows.
+
+54:47.000 --> 54:48.000
+And they basically just.
+
+54:49.000 --> 54:50.000
+Like.
+
+54:51.000 --> 54:57.000
+Saying it's not a good news because it's just not the thing that is well established that I know.
+
+54:58.000 --> 54:59.000
+But it's true.
+
+54:59.000 --> 55:00.000
+It's true.
+
+55:00.000 --> 55:00.000
+
+
+55:00.000 --> 55:08.000
+So, but so, in your system, it's basically working against malicious information, but not exactly news.
+
+55:09.000 --> 55:10.000
+And I say that.
+
+55:11.000 --> 55:19.000
+Um, I could say how to define the news is that the content should be.
+
+55:20.000 --> 55:21.000
+Correct.
+
+55:21.000 --> 55:22.000
+Right.
+
+55:22.000 --> 55:26.000
+So, when people, when you say Obama is that.
+
+55:28.000 --> 55:29.000
+If it's not a truth.
+
+55:30.000 --> 55:34.000
+Our system will consider it is a back news.
+
+55:34.000 --> 55:35.000
+Right.
+
+55:35.000 --> 55:38.000
+Yeah, but in my scenario, I'm saying.
+
+55:38.000 --> 55:41.000
+What if he really just died?
+
+55:42.000 --> 55:49.000
+But nobody knows, like, 10 minutes ago, I go out and say, hey, guys, he just died.
+
+55:50.000 --> 55:52.000
+That will be the fake news in your system.
+
+55:53.000 --> 55:54.000
+Nobody knows if that's true.
+
+55:56.000 --> 55:57.000
+Yeah, you're right, but.
+
+56:00.000 --> 56:03.000
+If you say Obama is dead, but nobody knows.
+
+56:04.000 --> 56:05.000
+Um.
+
+56:07.000 --> 56:10.000
+I would say that this situation is really.
+
+56:12.000 --> 56:13.000
+Hmm.
+
+56:13.000 --> 56:15.000
+That's why this is news.
+
+56:17.000 --> 56:18.000
+Yeah, so.
+
+56:19.000 --> 56:25.000
+I think because the most oppressing actors are very capable to check the contents.
+
+56:26.000 --> 56:34.000
+So, if they, if they hesitate to give some opinions, their confidence will lower.
+
+56:35.000 --> 56:38.000
+So, the trust the score of the.
+
+56:39.000 --> 56:43.000
+Agree authentic and the fact there will be very similar.
+
+56:44.000 --> 56:47.000
+So, our system will not trade it in your case.
+
+56:48.000 --> 56:49.000
+It's a very.
+
+56:50.000 --> 56:53.000
+Can do your real effect will be a balance.
+
+56:54.000 --> 56:56.000
+But we could give you.
+
+56:57.000 --> 56:58.000
+Objective.
+
+56:59.000 --> 57:00.000
+Opinion.
+
+57:00.000 --> 57:01.000
+To check this content.
+
+57:04.000 --> 57:05.000
+I see.
+
+57:06.000 --> 57:07.000
+Okay.
+
+57:08.000 --> 57:11.000
+I do have some comment about a previous question.
+
+57:11.000 --> 57:12.000
+Just like.
+
+57:13.000 --> 57:14.000
+Okay.
+
+57:14.000 --> 57:15.000
+Okay.
+
+57:15.000 --> 57:16.000
+First, thank you for a nice talk.
+
+57:16.000 --> 57:20.000
+And for the token number design, I think that's about how you make a dispute system.
+
+57:21.000 --> 57:24.000
+Because for now, it's like a 1 time votes and you just get the result done.
+
+57:24.000 --> 57:25.000
+It's done.
+
+57:25.000 --> 57:35.000
+But if you see, like, uh, in order for the prediction market, just like, if you predict and and like, whether Obama will die between, like, 2021st.
+
+57:35.000 --> 57:40.000
+And people at 2021st votes, maybe 3% of the voter is enough to get.
+
+57:41.000 --> 57:42.000
+Yes or no.
+
+57:42.000 --> 57:49.000
+But if you don't, if you don't trust the result, you can put your, your state against that voting result.
+
+57:49.000 --> 57:51.000
+And and then more people need to vote.
+
+57:51.000 --> 57:58.000
+Like, if you stay, like, maybe 1% of the total, total, total, like, token, then all of the people need to vote.
+
+57:59.000 --> 58:06.000
+So, so I guess you need to kind of, like, refine the, the appeal system or the tokenomic.
+
+58:06.000 --> 58:17.000
+Because I think the previous, the previous, like, question is quite valid, because you assume that, like, the majority vote.
+
+58:17.000 --> 58:20.000
+Well, well, well, not the truth, but maybe it takes some time, right?
+
+58:20.000 --> 58:26.000
+So, but if you like, you want to label the news in 10 minutes, and definitely.
+
+58:26.000 --> 58:35.000
+Well, it's hard to get information to propagate to, like, the society or civilization to get people votes and get the correct result.
+
+58:35.000 --> 58:41.000
+So, I guess you just need to have a dispute system, I guess.
+
+58:41.000 --> 58:42.000
+Yeah, sure.
+
+58:42.000 --> 58:43.000
+Yeah.
+
+58:44.000 --> 58:45.000
+Okay.
+
+58:45.000 --> 58:46.000
+Yeah.
+
+58:46.000 --> 58:57.000
+If you want to get a news in just 10 minutes to see if it's correct or not, yeah, it will be difficult to achieve that.
+
+58:57.000 --> 59:03.000
+Because maybe, like Elon said, the news is not just known by minority people.
+
+59:04.000 --> 59:07.000
+But, yeah.
+
+59:07.000 --> 59:28.000
+For this case, I think for previous, the current solutions, I think people will have, like, we have put more stakes or to, we can to, to introduce more, the sub-parties, the libraries that, and we can ask their opinions.
+
+59:28.000 --> 59:35.000
+So our speed will get in faster.
+
+59:35.000 --> 59:36.000
+Yeah.
+
+59:36.000 --> 59:42.000
+Well, I do think this is a very interesting, actually very valuable research.
+
+59:42.000 --> 59:44.000
+I'm just being curious.
+
+59:44.000 --> 59:45.000
+Like, yeah.
+
+59:45.000 --> 59:52.000
+So, anyone has other questions?
+
+59:53.000 --> 59:59.000
+Do you really, like, plan to launch this thing in a public chain?
+
+59:59.000 --> 01:00:05.000
+Because I would say in the past, like, two years, hyperledger is not, like, really thriving.
+
+01:00:06.000 --> 01:00:21.000
+And even though, like, the gas fee and the transaction fee is an issue for, like, Bitcoin and Ethereum, but for the new generation, like, high throughput blockchain, also support a smart contract, then it will be a much better, like, platform, I would say.
+
+01:00:21.000 --> 01:00:36.000
+Because, well, hyperledger is definitely more, like, clean and more permission, but how to really scale the, how to really scale the platform, I would say, like, public chain is still better than the permission chain.
+
+01:00:36.000 --> 01:00:37.000
+Yeah.
+
+01:00:37.000 --> 01:00:38.000
+Yeah.
+
+01:00:38.000 --> 01:00:40.000
+Actually, you're right.
+
+01:00:40.000 --> 01:00:49.000
+We plan to introduce some digital tokens in our system because we need to get the reward or punishment.
+
+01:00:49.000 --> 01:00:58.000
+So, Ethereum will be the one choice that we consider to transfer the hyperledger to the Ethereum.
+
+01:00:58.000 --> 01:01:03.000
+And also, there are other tokens that are invented right now.
+
+01:01:03.000 --> 01:01:09.000
+They have a great, because they, Ethereum and Bitcoin, their speed is too slow, right?
+
+01:01:09.000 --> 01:01:14.000
+But there are lots of faster blockchain network.
+
+01:01:14.000 --> 01:01:23.000
+So, we consider to, yeah, like you said, to transfer from the private blockchain to the public.
+
+01:01:23.000 --> 01:01:24.000
+Yeah.
+
+01:01:25.000 --> 01:01:26.000
+Okay.
+
+01:01:26.000 --> 01:01:28.000
+Thank you for applying.
+
+01:01:28.000 --> 01:01:29.000
+Yeah.
+
+01:01:29.000 --> 01:01:30.000
+Thank you.
+
+01:01:30.000 --> 01:01:31.000
+Thank you for asking.
+
+01:01:35.000 --> 01:01:36.000
+Okay.
+
+01:01:36.000 --> 01:01:37.000
+So, one last time.
+
+01:01:37.000 --> 01:01:39.000
+Anybody has a question?
+
+01:01:39.000 --> 01:01:40.000
+Okay.
+
+01:01:40.000 --> 01:01:44.000
+If not, please, again, really turn on your microphone.
+
+01:01:44.000 --> 01:01:47.000
+So, let's thank our speaker again.
+
+01:01:47.000 --> 01:01:49.000
+That's a very interesting talk.
+
+01:01:49.000 --> 01:01:50.000
+Thank you.
+
+01:01:50.000 --> 01:01:51.000
+Thank you.
+
+01:01:51.000 --> 01:01:54.000
+Do you also have any questions?
+

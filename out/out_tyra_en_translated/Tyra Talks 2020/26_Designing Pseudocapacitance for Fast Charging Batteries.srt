@@ -1,0 +1,5020 @@
+1
+00:00:00,000 --> 00:00:10,000
+You can find the recording online a week and a half later.
+
+2
+00:00:10,000 --> 00:00:16,000
+If you have any questions during this process,
+
+3
+00:00:16,000 --> 00:00:18,000
+you can leave a comment in the chat box.
+
+4
+00:00:18,000 --> 00:00:24,000
+We will have Q&A time at the end for everyone to ask questions.
+
+5
+00:00:24,000 --> 00:00:27,000
+Let's get started.
+
+6
+00:00:31,000 --> 00:00:35,000
+Thank you everyone for listening to my presentation.
+
+7
+00:00:35,000 --> 00:00:39,000
+Hello everyone, I'm Lai Jun-Hai.
+
+8
+00:00:39,000 --> 00:00:41,000
+You can call me Matt.
+
+9
+00:00:41,000 --> 00:00:47,000
+First of all, I would like to thank Tyra for inviting me to share my research.
+
+10
+00:00:47,000 --> 00:00:50,000
+Let me introduce myself.
+
+11
+00:00:50,000 --> 00:00:52,000
+I'm from Yonghe, Hsinchu.
+
+12
+00:00:52,000 --> 00:00:55,000
+I graduated from National University of China.
+
+13
+00:00:55,000 --> 00:01:00,000
+I worked as an engineer for a year and a half at BASF in Taiwan.
+
+14
+00:01:00,000 --> 00:01:04,000
+Then I went to UCLA to study engineering.
+
+15
+00:01:04,000 --> 00:01:06,000
+I graduated in 2017.
+
+16
+00:01:06,000 --> 00:01:11,000
+I am currently working at Startup Battery Streak.
+
+17
+00:01:11,000 --> 00:01:14,000
+At the same time, I am also a visiting scholar at UCLA.
+
+18
+00:01:14,000 --> 00:01:20,000
+My main work is focused on the development and mass production of new battery materials,
+
+19
+00:01:20,000 --> 00:01:23,000
+as well as the transfer between the company and UCLA.
+
+20
+00:01:24,000 --> 00:01:27,000
+Today's topic is
+
+21
+00:01:27,000 --> 00:01:32,000
+Designing pseudo-capacitance for fast-charging batteries.
+
+22
+00:01:32,000 --> 00:01:37,000
+That is, how to apply the mechanism of solid-state batteries to fast-charging batteries.
+
+23
+00:01:37,000 --> 00:01:42,000
+First of all, why do we need fast-charging batteries?
+
+24
+00:01:42,000 --> 00:01:46,000
+The first motivation is the accumulation of electromagnetic traffic.
+
+25
+00:01:46,000 --> 00:01:51,000
+Charging stations are currently set up in three levels.
+
+26
+00:01:51,000 --> 00:01:54,000
+The first level is the plug-in that everyone puts at home.
+
+27
+00:01:54,000 --> 00:01:57,000
+It can charge 3 to 6 kilometers per hour.
+
+28
+00:01:57,000 --> 00:02:00,000
+The second level is the charging station in the parking lot.
+
+29
+00:02:00,000 --> 00:02:04,000
+It can charge 20 to 30 kilometers per hour.
+
+30
+00:02:04,000 --> 00:02:09,000
+The third level is the fastest Tesla charging station.
+
+31
+00:02:09,000 --> 00:02:16,000
+It can charge 5 kilometers per minute.
+
+32
+00:02:16,000 --> 00:02:21,000
+Interestingly, the current charging station is still far less than the gas station.
+
+33
+00:02:21,000 --> 00:02:26,000
+But it is almost impossible to see such a long queue at the charging station.
+
+34
+00:02:26,000 --> 00:02:29,000
+Not everyone has an electric car,
+
+35
+00:02:29,000 --> 00:02:35,000
+but 5 kilometers per minute is still too slow compared to the time required for gas.
+
+36
+00:02:35,000 --> 00:02:42,000
+The second application of fast-charging batteries is the popularization of renewable energy.
+
+37
+00:02:42,000 --> 00:02:47,000
+As of last year, renewable energy has reached one-third of the global power generation.
+
+38
+00:02:47,000 --> 00:02:53,000
+50% of the power generation comes from renewable energy.
+
+39
+00:02:53,000 --> 00:02:58,000
+Other European countries also reach 20 to 30% of renewable power.
+
+40
+00:02:58,000 --> 00:03:05,000
+We all know that when wind and solar energy are converted into electricity,
+
+41
+00:03:05,000 --> 00:03:07,000
+they must be paired with suitable batteries.
+
+42
+00:03:07,000 --> 00:03:11,000
+However, these batteries can't be charged quickly,
+
+43
+00:03:11,000 --> 00:03:13,000
+so they are inefficient.
+
+44
+00:03:13,000 --> 00:03:16,000
+For example, when the wind speed is fast,
+
+45
+00:03:16,000 --> 00:03:18,000
+there will be a momentary large current.
+
+46
+00:03:18,000 --> 00:03:21,000
+The batteries that can't be charged at low power
+
+47
+00:03:21,000 --> 00:03:24,000
+will become waste heat and reduce the life of the battery.
+
+48
+00:03:24,000 --> 00:03:32,000
+So basically, this concept is the same as the concept of fast-charging batteries paired with aging cell phones.
+
+49
+00:03:32,000 --> 00:03:36,000
+The third application of fast-charging batteries is plant-based medical equipment.
+
+50
+00:03:36,000 --> 00:03:43,000
+Generally, the supply of such equipment is made up of a battery paired with a capacitor,
+
+51
+00:03:43,000 --> 00:03:48,000
+which is in the box at the bottom left.
+
+52
+00:03:48,000 --> 00:03:55,000
+Generally, the battery is used to monitor the function of low power for a long time,
+
+53
+00:03:55,000 --> 00:03:59,000
+while the capacitor is used to respond to high power in a short time.
+
+54
+00:03:59,000 --> 00:04:04,000
+Due to the limited size of the equipment and the need for different organ parts,
+
+55
+00:04:04,000 --> 00:04:09,000
+a single high-power battery is used to replace the two-in-one mode.
+
+56
+00:04:09,000 --> 00:04:14,000
+This has always been the trend in the development of this type of equipment power supply.
+
+57
+00:04:14,000 --> 00:04:18,000
+Of course, in addition to the above three applications,
+
+58
+00:04:18,000 --> 00:04:19,000
+there are other applications.
+
+59
+00:04:19,000 --> 00:04:21,000
+I won't go into detail here.
+
+60
+00:04:21,000 --> 00:04:23,000
+So in this main speech,
+
+61
+00:04:23,000 --> 00:04:28,000
+it mainly introduces how to improve the power density and energy density of the storage components using the materials of the capacitor.
+
+62
+00:04:29,000 --> 00:04:31,000
+As shown in the picture on the left,
+
+63
+00:04:31,000 --> 00:04:34,000
+the x-axis is the energy density,
+
+64
+00:04:34,000 --> 00:04:36,000
+and the y-axis is the power density.
+
+65
+00:04:36,000 --> 00:04:44,000
+First, I will briefly introduce the materials of the storage components and the techniques required for analysis.
+
+66
+00:04:44,000 --> 00:04:53,000
+Then, the first part will start with the high-power supercapacitor material in blue.
+
+67
+00:04:53,000 --> 00:04:58,000
+Then, the high-power characteristics will be achieved by using a non-oxidized carbonate residue.
+
+68
+00:04:58,000 --> 00:05:01,000
+The second part will start with the lithium battery.
+
+69
+00:05:01,000 --> 00:05:06,000
+Here is an example of fluorine,
+
+70
+00:05:06,000 --> 00:05:08,000
+L-NBOPF,
+
+71
+00:05:08,000 --> 00:05:12,000
+which achieves high power density by nanomerizing the battery material.
+
+72
+00:05:15,000 --> 00:05:19,000
+Generally, batteries or supercapacitors are basically composed of two terminals.
+
+73
+00:05:20,000 --> 00:05:27,000
+The positive terminal and the negative terminal are placed on the aluminum foil and copper foil respectively.
+
+74
+00:05:27,000 --> 00:05:30,000
+The two terminals are separated by a multi-hole separator,
+
+75
+00:05:30,000 --> 00:05:33,000
+which is the middle part of the separator,
+
+76
+00:05:36,000 --> 00:05:37,000
+to avoid short-circuit.
+
+77
+00:05:37,000 --> 00:05:39,000
+When charging the battery, the lithium battery moves in the capacitor,
+
+78
+00:05:39,000 --> 00:05:42,000
+and the battery material produces an oxidation reaction.
+
+79
+00:05:42,000 --> 00:05:46,000
+At the same time, the battery moves in the external circuit to achieve the balance of the electric current.
+
+80
+00:05:46,000 --> 00:05:50,000
+The electric current is the main focus of our discussion today.
+
+81
+00:05:50,000 --> 00:05:55,000
+It is mainly composed of the storage material, carbon, and the high-voltage supercapacitor.
+
+82
+00:05:55,000 --> 00:05:58,000
+The electric current needs to have a certain vacuum.
+
+83
+00:05:58,000 --> 00:05:59,000
+It is like a sponge.
+
+84
+00:05:59,000 --> 00:06:01,000
+It must contain enough electrolysis.
+
+85
+00:06:01,000 --> 00:06:06,000
+At the same time, it must have enough conductivity to be a high-voltage supercapacitor.
+
+86
+00:06:08,000 --> 00:06:11,000
+Although the structure of the battery and the capacitor are the same,
+
+87
+00:06:11,000 --> 00:06:13,000
+the storage mechanism is completely different.
+
+88
+00:06:13,000 --> 00:06:16,000
+The mechanism of the capacitor is absorbed by the lithium.
+
+89
+00:06:16,000 --> 00:06:21,000
+In the external circuit, the aluminum foil and the copper foil are separated and absorbed by the surface of the battery.
+
+90
+00:06:21,000 --> 00:06:24,000
+Because the lithium is absorbed by the surface for a short time,
+
+91
+00:06:24,000 --> 00:06:26,000
+this mechanism is most conducive to fast charging.
+
+92
+00:06:26,000 --> 00:06:29,000
+The disadvantage is that its surface area is limited,
+
+93
+00:06:29,000 --> 00:06:32,000
+so the density of energy is generally low.
+
+94
+00:06:32,000 --> 00:06:35,000
+In contrast, the storage method of the battery
+
+95
+00:06:35,000 --> 00:06:39,000
+uses the oxidation reaction inside the material.
+
+96
+00:06:39,000 --> 00:06:43,000
+In this case, the lithium can enter the material,
+
+97
+00:06:43,000 --> 00:06:45,000
+and its energy is far greater than that of the capacitor.
+
+98
+00:06:45,000 --> 00:06:48,000
+However, since the lithium moves very slowly inside the material,
+
+99
+00:06:48,000 --> 00:06:52,000
+it is therefore unable to do high-speed charging.
+
+100
+00:06:54,000 --> 00:06:57,000
+Next, we will introduce how to distinguish the battery from the capacitor.
+
+101
+00:06:57,000 --> 00:07:00,000
+Basically, it is based on electrical chemistry analysis.
+
+102
+00:07:00,000 --> 00:07:03,000
+We will make the pre-analyzed material into an electrolyte
+
+103
+00:07:03,000 --> 00:07:05,000
+and test it in the same electrolyte solution.
+
+104
+00:07:05,000 --> 00:07:08,000
+Generally, the device to be tested
+
+105
+00:07:08,000 --> 00:07:14,000
+has a single-phase electrolyte test on the upper left,
+
+106
+00:07:14,000 --> 00:07:19,000
+and a double-phase torque battery test on the lower left.
+
+107
+00:07:19,000 --> 00:07:21,000
+There are two main methods of testing.
+
+108
+00:07:21,000 --> 00:07:25,000
+The first method is the cyclic voltammetry,
+
+109
+00:07:25,000 --> 00:07:27,000
+which is abbreviated as CV.
+
+110
+00:07:27,000 --> 00:07:30,000
+The principle is to change the speed of voltage change
+
+111
+00:07:30,000 --> 00:07:32,000
+to measure the change in current.
+
+112
+00:07:32,000 --> 00:07:34,000
+The second method is the DC voltage test,
+
+113
+00:07:34,000 --> 00:07:36,000
+which is abbreviated as GC.
+
+114
+00:07:36,000 --> 00:07:39,000
+In the case of DC voltage charging,
+
+115
+00:07:39,000 --> 00:07:42,000
+it measures the change in voltage of the battery
+
+116
+00:07:42,000 --> 00:07:44,000
+and makes a diagram of the voltage.
+
+117
+00:07:48,000 --> 00:07:52,000
+Now we use GC and CV to get the diagram
+
+118
+00:07:52,000 --> 00:07:54,000
+to distinguish the battery from the capacitor.
+
+119
+00:07:54,000 --> 00:07:56,000
+They are two different storage mechanisms.
+
+120
+00:07:56,000 --> 00:07:59,000
+The capacitor on the left can be seen that
+
+121
+00:07:59,000 --> 00:08:03,000
+the CV is a rectangle,
+
+122
+00:08:03,000 --> 00:08:06,000
+while the GC is basically a diagonal.
+
+123
+00:08:06,000 --> 00:08:09,000
+The battery on the right is composed of a set of peaks,
+
+124
+00:08:09,000 --> 00:08:14,000
+while the GC is mainly composed of a horizontal line.
+
+125
+00:08:14,000 --> 00:08:16,000
+Now that we know how to judge the material of the battery
+
+126
+00:08:16,000 --> 00:08:17,000
+and the material of the capacitor,
+
+127
+00:08:17,000 --> 00:08:20,000
+we can look for the material of the fast charging battery.
+
+128
+00:08:20,000 --> 00:08:23,000
+What characteristics do we hope the fast charging battery has?
+
+129
+00:08:23,000 --> 00:08:27,000
+We hope it has the characteristics of electromagnetic chemistry on the left,
+
+130
+00:08:27,000 --> 00:08:30,000
+which allows it to be a fast charging battery.
+
+131
+00:08:30,000 --> 00:08:33,000
+It also has the characteristics of the material on the right,
+
+132
+00:08:33,000 --> 00:08:35,000
+which increases the density of energy
+
+133
+00:08:35,000 --> 00:08:38,000
+by storing energy through the reaction of oxygen-chloride.
+
+134
+00:08:38,000 --> 00:08:41,000
+This is the material we are looking for.
+
+135
+00:08:41,000 --> 00:08:43,000
+The material of the capacitor
+
+136
+00:08:43,000 --> 00:08:48,000
+not only has a rectangle CV,
+
+137
+00:08:48,000 --> 00:08:52,000
+but also a diagonal GC,
+
+138
+00:08:52,000 --> 00:08:57,000
+and it stores energy through the reaction of oxygen-chloride.
+
+139
+00:08:59,000 --> 00:09:03,000
+Next, I will talk about the main character I will introduce today,
+
+140
+00:09:03,000 --> 00:09:05,000
+which is the T-Phased,
+
+141
+00:09:05,000 --> 00:09:07,000
+Orphohombic Phased,
+
+142
+00:09:07,000 --> 00:09:08,000
+NB205.
+
+143
+00:09:08,000 --> 00:09:11,000
+Next, I will call it NIOVIA.
+
+144
+00:09:11,000 --> 00:09:15,000
+In addition to having the characteristics of electromagnetic chemistry,
+
+145
+00:09:15,000 --> 00:09:18,000
+its energy density
+
+146
+00:09:18,000 --> 00:09:24,000
+is equivalent to the energy density of lithium carbon dioxide,
+
+147
+00:09:24,000 --> 00:09:28,000
+which is in the lithium-ion battery.
+
+148
+00:09:28,000 --> 00:09:33,000
+Its energy density is 10 times that of the capacitor.
+
+149
+00:09:33,000 --> 00:09:35,000
+Its power density,
+
+150
+00:09:35,000 --> 00:09:38,000
+which is the power of its fast charging,
+
+151
+00:09:38,000 --> 00:09:41,000
+can also reach 10 times that of the battery.
+
+152
+00:09:41,000 --> 00:09:43,000
+Its only drawback is that
+
+153
+00:09:43,000 --> 00:09:49,000
+it is still oxygen-chloride,
+
+154
+00:09:49,000 --> 00:09:51,000
+so its power consumption
+
+155
+00:09:51,000 --> 00:09:58,000
+is the first topic we are going to fix.
+
+156
+00:09:58,000 --> 00:10:00,000
+The first part
+
+157
+00:10:00,000 --> 00:10:06,000
+is to mix carbon with NIOVIA
+
+158
+00:10:06,000 --> 00:10:09,000
+to improve the properties of NIOVIA.
+
+159
+00:10:09,000 --> 00:10:12,000
+We need to deduce a good NIOVIA,
+
+160
+00:10:12,000 --> 00:10:14,000
+and we will eventually deduce
+
+161
+00:10:14,000 --> 00:10:17,000
+what kind of properties a good NIOVIA battery needs
+
+162
+00:10:17,000 --> 00:10:22,000
+to show the characteristics of its lithium-ion battery.
+
+163
+00:10:22,000 --> 00:10:26,000
+A good NIOVIA battery
+
+164
+00:10:26,000 --> 00:10:28,000
+basically needs two parts.
+
+165
+00:10:28,000 --> 00:10:30,000
+The first is the high-voltage part,
+
+166
+00:10:30,000 --> 00:10:35,000
+and the second is the part that can have a high pore density.
+
+167
+00:10:35,000 --> 00:10:37,000
+In this study,
+
+168
+00:10:37,000 --> 00:10:39,000
+we mainly used three materials.
+
+169
+00:10:39,000 --> 00:10:42,000
+The first material is our protagonist, NIOVIA.
+
+170
+00:10:42,000 --> 00:10:46,000
+The second material is our chemical-capable
+
+171
+00:10:46,000 --> 00:10:50,000
+Reduced Graphene Oxide, also known as RGO.
+
+172
+00:10:50,000 --> 00:10:54,000
+Its purpose is to provide short-term conductivity.
+
+173
+00:10:54,000 --> 00:10:56,000
+The third material
+
+174
+00:10:56,000 --> 00:10:58,000
+is the one on the far right,
+
+175
+00:10:58,000 --> 00:11:01,000
+Carbide Derived Carbon, also known as CDC.
+
+176
+00:11:01,000 --> 00:11:05,000
+It is a kind of carbon dioxide.
+
+177
+00:11:05,000 --> 00:11:07,000
+Its main purpose is that
+
+178
+00:11:07,000 --> 00:11:11,000
+it has a polypore structure
+
+179
+00:11:11,000 --> 00:11:15,000
+and its size is in the micrometer level,
+
+180
+00:11:15,000 --> 00:11:18,000
+so it can provide long-term conductivity.
+
+181
+00:11:21,000 --> 00:11:23,000
+The way we prepare the battery
+
+182
+00:11:23,000 --> 00:11:27,000
+is to first plant NIOVIA on RGO.
+
+183
+00:11:27,000 --> 00:11:32,000
+Next, we combine NIOVIA RGO with CDC
+
+184
+00:11:32,000 --> 00:11:36,000
+to get NIOVIA RGO CDC,
+
+185
+00:11:36,000 --> 00:11:38,000
+also known as NRC.
+
+186
+00:11:38,000 --> 00:11:42,000
+Finally, we make NRC
+
+187
+00:11:42,000 --> 00:11:46,000
+into a commercial-grade battery
+
+188
+00:11:46,000 --> 00:11:48,000
+and test it to prove that
+
+189
+00:11:48,000 --> 00:11:50,000
+it has a high-power and high-density
+
+190
+00:11:50,000 --> 00:11:52,000
+storage characteristics
+
+191
+00:11:52,000 --> 00:11:54,000
+at the right pore density.
+
+192
+00:11:56,000 --> 00:12:00,000
+This slide shows the details of the material equipment.
+
+193
+00:12:00,000 --> 00:12:03,000
+The main equipment is
+
+194
+00:12:03,000 --> 00:12:07,000
+the water-heating method.
+
+195
+00:12:07,000 --> 00:12:09,000
+We put the precursor
+
+196
+00:12:09,000 --> 00:12:13,000
+into the autoclave
+
+197
+00:12:13,000 --> 00:12:15,000
+and heat it up to 180°C
+
+198
+00:12:15,000 --> 00:12:18,000
+for 12 hours.
+
+199
+00:12:18,000 --> 00:12:22,000
+Next, we wash the particles
+
+200
+00:12:22,000 --> 00:12:27,000
+and dry them.
+
+201
+00:12:27,000 --> 00:12:29,000
+After drying,
+
+202
+00:12:29,000 --> 00:12:32,000
+we heat it up to 500°C
+
+203
+00:12:32,000 --> 00:12:35,000
+to get the body structure we want,
+
+204
+00:12:35,000 --> 00:12:37,000
+which is T-phase,
+
+205
+00:12:37,000 --> 00:12:39,000
+or ophiobic phase.
+
+206
+00:12:39,000 --> 00:12:45,000
+Next, we combine NIOVIA RGO
+
+207
+00:12:45,000 --> 00:12:47,000
+with CDC.
+
+208
+00:12:47,000 --> 00:12:49,000
+The main purpose is to
+
+209
+00:12:49,000 --> 00:12:50,000
+make this composite material
+
+210
+00:12:50,000 --> 00:12:52,000
+in the form of surface electrolysis.
+
+211
+00:12:52,000 --> 00:12:55,000
+Next, we make it into a battery
+
+212
+00:12:55,000 --> 00:12:57,000
+and test it.
+
+213
+00:12:59,000 --> 00:13:03,000
+We have 20% NIOVIA,
+
+214
+00:13:03,000 --> 00:13:05,000
+40% NRC20,
+
+215
+00:13:05,000 --> 00:13:09,000
+and 60% NRC20.
+
+216
+00:13:09,000 --> 00:13:11,000
+The BET on the right
+
+217
+00:13:11,000 --> 00:13:13,000
+is the analysis of the surface electrolysis.
+
+218
+00:13:13,000 --> 00:13:16,000
+It shows that
+
+219
+00:13:16,000 --> 00:13:19,000
+the surface electrolysis of the material
+
+220
+00:13:19,000 --> 00:13:22,000
+increases with the
+
+221
+00:13:22,000 --> 00:13:24,000
+composition of the CDC.
+
+222
+00:13:24,000 --> 00:13:26,000
+This means that
+
+223
+00:13:26,000 --> 00:13:28,000
+this composite method
+
+224
+00:13:28,000 --> 00:13:31,000
+does not cause the CDC to lose its surface area,
+
+225
+00:13:31,000 --> 00:13:34,000
+or the CDC to be less airtight,
+
+226
+00:13:34,000 --> 00:13:36,000
+or its structure to collapse.
+
+227
+00:13:36,000 --> 00:13:38,000
+Therefore, we can use
+
+228
+00:13:38,000 --> 00:13:40,000
+a simple ratio to
+
+229
+00:13:40,000 --> 00:13:43,000
+achieve the airtightness we need.
+
+230
+00:13:43,000 --> 00:13:46,000
+There are also two black dots on the picture.
+
+231
+00:13:46,000 --> 00:13:48,000
+These two black dots
+
+232
+00:13:48,000 --> 00:13:50,000
+are where we directly plant NIOVIA
+
+233
+00:13:50,000 --> 00:13:52,000
+on the CDC.
+
+234
+00:13:52,000 --> 00:13:54,000
+If we
+
+235
+00:13:54,000 --> 00:13:56,000
+do not use
+
+236
+00:13:56,000 --> 00:13:58,000
+this composite method
+
+237
+00:13:58,000 --> 00:14:00,000
+but use
+
+238
+00:14:00,000 --> 00:14:02,000
+the water-heat method
+
+239
+00:14:02,000 --> 00:14:04,000
+to directly plant it on the CDC,
+
+240
+00:14:04,000 --> 00:14:06,000
+at high temperature,
+
+241
+00:14:06,000 --> 00:14:08,000
+the CDC's
+
+242
+00:14:08,000 --> 00:14:10,000
+surface area
+
+243
+00:14:10,000 --> 00:14:12,000
+will...
+
+244
+00:14:12,000 --> 00:14:14,000
+Because the surface area is too large,
+
+245
+00:14:14,000 --> 00:14:16,000
+the surface area will decrease
+
+246
+00:14:16,000 --> 00:14:18,000
+at high temperature.
+
+247
+00:14:18,000 --> 00:14:20,000
+We want to use the CDC
+
+248
+00:14:20,000 --> 00:14:22,000
+to improve the airtightness
+
+249
+00:14:22,000 --> 00:14:24,000
+of the electrode.
+
+250
+00:14:24,000 --> 00:14:26,000
+This is the idea.
+
+251
+00:14:28,000 --> 00:14:30,000
+Next, we need to
+
+252
+00:14:30,000 --> 00:14:32,000
+use the CV to judge the electrode.
+
+253
+00:14:32,000 --> 00:14:34,000
+Let's see if it is like a battery material
+
+254
+00:14:34,000 --> 00:14:36,000
+or an electric material.
+
+255
+00:14:36,000 --> 00:14:38,000
+In the case of changing the minority,
+
+256
+00:14:38,000 --> 00:14:40,000
+we can get the corresponding current.
+
+257
+00:14:40,000 --> 00:14:42,000
+Therefore, we use the current
+
+258
+00:14:42,000 --> 00:14:44,000
+to make judgments with the change of the minority.
+
+259
+00:14:44,000 --> 00:14:46,000
+If the
+
+260
+00:14:46,000 --> 00:14:48,000
+material is like a battery,
+
+261
+00:14:48,000 --> 00:14:50,000
+the change of the current
+
+262
+00:14:50,000 --> 00:14:52,000
+will be multiplied by the minority.
+
+263
+00:14:52,000 --> 00:14:54,000
+If the material
+
+264
+00:14:54,000 --> 00:14:56,000
+is like a capacitor,
+
+265
+00:14:56,000 --> 00:14:58,000
+the current
+
+266
+00:14:58,000 --> 00:15:00,000
+will be multiplied by the minority.
+
+267
+00:15:00,000 --> 00:15:02,000
+In other words,
+
+268
+00:15:02,000 --> 00:15:04,000
+when the minority is doubled,
+
+269
+00:15:04,000 --> 00:15:06,000
+the current will be doubled.
+
+270
+00:15:06,000 --> 00:15:08,000
+Combining these two formulas,
+
+271
+00:15:08,000 --> 00:15:10,000
+we can get
+
+272
+00:15:10,000 --> 00:15:12,000
+the following formula
+
+273
+00:15:12,000 --> 00:15:14,000
+from the experiment.
+
+274
+00:15:14,000 --> 00:15:16,000
+The current is equal to the magnitude
+
+275
+00:15:16,000 --> 00:15:18,000
+multiplied by the minority.
+
+276
+00:15:18,000 --> 00:15:20,000
+This is called
+
+277
+00:15:20,000 --> 00:15:22,000
+B-value analysis.
+
+278
+00:15:22,000 --> 00:15:24,000
+We want the material
+
+279
+00:15:24,000 --> 00:15:26,000
+to be as fast as the capacitor.
+
+280
+00:15:26,000 --> 00:15:28,000
+Therefore, we want the B-value
+
+281
+00:15:28,000 --> 00:15:30,000
+to be as close to 1 as possible.
+
+282
+00:15:32,000 --> 00:15:34,000
+This proves that the material
+
+283
+00:15:34,000 --> 00:15:36,000
+can do high-speed charging.
+
+284
+00:15:38,000 --> 00:15:40,000
+Next,
+
+285
+00:15:40,000 --> 00:15:42,000
+the NRC
+
+286
+00:15:42,000 --> 00:15:44,000
+can store different
+
+287
+00:15:44,000 --> 00:15:46,000
+current
+
+288
+00:15:46,000 --> 00:15:48,000
+at different speeds.
+
+289
+00:15:48,000 --> 00:15:50,000
+On the left,
+
+290
+00:15:50,000 --> 00:15:52,000
+we use the minority
+
+291
+00:15:52,000 --> 00:15:54,000
+to burn the NRC.
+
+292
+00:15:54,000 --> 00:15:56,000
+The lowest value
+
+293
+00:15:56,000 --> 00:15:58,000
+is 100% Cdc.
+
+294
+00:15:58,000 --> 00:16:00,000
+The way
+
+295
+00:16:00,000 --> 00:16:02,000
+we control the minority
+
+296
+00:16:02,000 --> 00:16:04,000
+is from the slowest 30-minute
+
+297
+00:16:04,000 --> 00:16:06,000
+charging point on the left to the
+
+298
+00:16:06,000 --> 00:16:08,000
+90-second charging point on the right.
+
+299
+00:16:08,000 --> 00:16:10,000
+The y-axis is the energy generated by me.
+
+300
+00:16:10,000 --> 00:16:12,000
+As time goes by,
+
+301
+00:16:12,000 --> 00:16:14,000
+the energy generated by me
+
+302
+00:16:14,000 --> 00:16:16,000
+will be reduced.
+
+303
+00:16:16,000 --> 00:16:18,000
+We want the line to be as flat as possible.
+
+304
+00:16:18,000 --> 00:16:20,000
+This means that the material
+
+305
+00:16:20,000 --> 00:16:22,000
+can do high-speed charging
+
+306
+00:16:22,000 --> 00:16:24,000
+as well as low-speed charging.
+
+307
+00:16:24,000 --> 00:16:26,000
+The lowest value is 100% Cdc.
+
+308
+00:16:26,000 --> 00:16:28,000
+As the amount of niobia increases,
+
+309
+00:16:28,000 --> 00:16:30,000
+the density of the NRC
+
+310
+00:16:30,000 --> 00:16:32,000
+will also increase.
+
+311
+00:16:32,000 --> 00:16:34,000
+Up to 40%, the increased current
+
+312
+00:16:34,000 --> 00:16:36,000
+will not be affected by the minority.
+
+313
+00:16:36,000 --> 00:16:38,000
+From 0% to 20% to 40%,
+
+314
+00:16:38,000 --> 00:16:40,000
+the current will remain as flat.
+
+315
+00:16:42,000 --> 00:16:44,000
+From 0% to 60%,
+
+316
+00:16:44,000 --> 00:16:46,000
+the NRC will be
+
+317
+00:16:46,000 --> 00:16:48,000
+charged at 90 seconds.
+
+318
+00:16:48,000 --> 00:16:50,000
+The current is
+
+319
+00:16:50,000 --> 00:16:52,000
+less than 40%.
+
+320
+00:16:52,000 --> 00:16:54,000
+The highest value, 100%,
+
+321
+00:16:54,000 --> 00:16:56,000
+although the total
+
+322
+00:16:56,000 --> 00:16:58,000
+current is
+
+323
+00:16:58,000 --> 00:17:00,000
+less than 40%,
+
+324
+00:17:00,000 --> 00:17:02,000
+we can expect
+
+325
+00:17:02,000 --> 00:17:04,000
+that when the charging time
+
+326
+00:17:04,000 --> 00:17:06,000
+is less than 90 seconds,
+
+327
+00:17:06,000 --> 00:17:08,000
+the NRC will increase by 40%.
+
+328
+00:17:10,000 --> 00:17:12,000
+On the right is the B-value
+
+329
+00:17:12,000 --> 00:17:14,000
+introduced in the previous page.
+
+330
+00:17:14,000 --> 00:17:16,000
+When the curve
+
+331
+00:17:16,000 --> 00:17:18,000
+is closer to 1,
+
+332
+00:17:18,000 --> 00:17:20,000
+we mainly do CV
+
+333
+00:17:20,000 --> 00:17:22,000
+for different materials.
+
+334
+00:17:22,000 --> 00:17:24,000
+Then we do
+
+335
+00:17:24,000 --> 00:17:26,000
+the analysis of B-value.
+
+336
+00:17:26,000 --> 00:17:28,000
+The result of the analysis is in the lower right corner.
+
+337
+00:17:28,000 --> 00:17:30,000
+When the curve is closer to 1,
+
+338
+00:17:30,000 --> 00:17:32,000
+it means that the charging speed is faster.
+
+339
+00:17:32,000 --> 00:17:34,000
+By this, we can judge
+
+340
+00:17:34,000 --> 00:17:36,000
+that the charging speed of
+
+341
+00:17:36,000 --> 00:17:38,000
+NRC40 is faster than
+
+342
+00:17:38,000 --> 00:17:40,000
+NRC60 and 100%
+
+343
+00:17:40,000 --> 00:17:42,000
+of NIOBIA.
+
+344
+00:17:42,000 --> 00:17:44,000
+This also proves that when 60%
+
+345
+00:17:44,000 --> 00:17:46,000
+of the CVC is stored in the electrode,
+
+346
+00:17:46,000 --> 00:17:48,000
+the electrode has sufficient airtightness
+
+347
+00:17:48,000 --> 00:17:50,000
+to accommodate sufficient electrolysis
+
+348
+00:17:50,000 --> 00:17:52,000
+to show the characteristics
+
+349
+00:17:52,000 --> 00:17:54,000
+of NIOBIA lithium-ion battery.
+
+350
+00:17:56,000 --> 00:17:58,000
+Finally,
+
+351
+00:17:58,000 --> 00:18:00,000
+we combine the NRC40
+
+352
+00:18:00,000 --> 00:18:02,000
+with the traditional lithium-ion electrode
+
+353
+00:18:02,000 --> 00:18:04,000
+to form a full electrode
+
+354
+00:18:04,000 --> 00:18:06,000
+to do
+
+355
+00:18:06,000 --> 00:18:08,000
+the analysis of CV
+
+356
+00:18:08,000 --> 00:18:10,000
+and GC.
+
+357
+00:18:10,000 --> 00:18:12,000
+In terms of CV,
+
+358
+00:18:12,000 --> 00:18:14,000
+we can get
+
+359
+00:18:14,000 --> 00:18:16,000
+the characteristics of the lithium-ion
+
+360
+00:18:16,000 --> 00:18:18,000
+we just talked about,
+
+361
+00:18:18,000 --> 00:18:20,000
+which is that it is a rectangular CV.
+
+362
+00:18:20,000 --> 00:18:22,000
+In terms of GC,
+
+363
+00:18:22,000 --> 00:18:24,000
+we also get
+
+364
+00:18:24,000 --> 00:18:26,000
+a oblique GC.
+
+365
+00:18:26,000 --> 00:18:28,000
+At the same time,
+
+366
+00:18:28,000 --> 00:18:30,000
+due to the combination of NIOBIA,
+
+367
+00:18:30,000 --> 00:18:32,000
+we not only
+
+368
+00:18:32,000 --> 00:18:34,000
+increase the energy density
+
+369
+00:18:34,000 --> 00:18:36,000
+at low power,
+
+370
+00:18:36,000 --> 00:18:38,000
+but also increase the energy density
+
+371
+00:18:38,000 --> 00:18:40,000
+at high power.
+
+372
+00:18:40,000 --> 00:18:42,000
+At the power of
+
+373
+00:18:42,000 --> 00:18:44,000
+3000W per kg,
+
+374
+00:18:44,000 --> 00:18:46,000
+we can store
+
+375
+00:18:46,000 --> 00:18:48,000
+up to 23W
+
+376
+00:18:48,000 --> 00:18:50,000
+per kg of energy density.
+
+377
+00:18:54,000 --> 00:18:56,000
+Next,
+
+378
+00:18:56,000 --> 00:18:58,000
+I will briefly summarize the figure on the right.
+
+379
+00:18:58,000 --> 00:19:00,000
+The first part
+
+380
+00:19:00,000 --> 00:19:02,000
+is that we use the amount of Cdc
+
+381
+00:19:02,000 --> 00:19:04,000
+to adjust the airtightness and
+
+382
+00:19:04,000 --> 00:19:06,000
+conductivity of the NRC composite material.
+
+383
+00:19:06,000 --> 00:19:08,000
+At the same time,
+
+384
+00:19:08,000 --> 00:19:10,000
+it has high energy and
+
+385
+00:19:10,000 --> 00:19:12,000
+fast charging characteristics.
+
+386
+00:19:12,000 --> 00:19:14,000
+In other words,
+
+387
+00:19:14,000 --> 00:19:16,000
+we use Cdc as the starting point
+
+388
+00:19:16,000 --> 00:19:18,000
+to mix different NIOBIA
+
+389
+00:19:18,000 --> 00:19:20,000
+to increase its energy density.
+
+390
+00:19:20,000 --> 00:19:22,000
+By maximizing the airtightness and conductivity,
+
+391
+00:19:22,000 --> 00:19:24,000
+we can increase
+
+392
+00:19:24,000 --> 00:19:26,000
+the overall
+
+393
+00:19:26,000 --> 00:19:28,000
+energy density of the NRC
+
+394
+00:19:28,000 --> 00:19:30,000
+and preserve
+
+395
+00:19:30,000 --> 00:19:32,000
+the high power characteristics of Cdc.
+
+396
+00:19:38,000 --> 00:19:40,000
+The second part
+
+397
+00:19:40,000 --> 00:19:42,000
+I want to share is
+
+398
+00:19:42,000 --> 00:19:44,000
+the LNVOPF material
+
+399
+00:19:44,000 --> 00:19:46,000
+as a medical equipment energy supply application.
+
+400
+00:19:48,000 --> 00:19:50,000
+Speaking of medical equipment energy supply,
+
+401
+00:19:50,000 --> 00:19:52,000
+I will use
+
+402
+00:19:52,000 --> 00:19:54,000
+an implantable
+
+403
+00:19:54,000 --> 00:19:56,000
+cardioverter
+
+404
+00:19:56,000 --> 00:19:58,000
+defibrillator
+
+405
+00:19:58,000 --> 00:20:00,000
+ICD
+
+406
+00:20:00,000 --> 00:20:02,000
+as an example.
+
+407
+00:20:02,000 --> 00:20:04,000
+Its Chinese name is
+
+408
+00:20:04,000 --> 00:20:06,000
+implantable defibrillator.
+
+409
+00:20:08,000 --> 00:20:10,000
+It basically
+
+410
+00:20:10,000 --> 00:20:12,000
+detects your heart beat.
+
+411
+00:20:12,000 --> 00:20:14,000
+When your heart beats abnormally,
+
+412
+00:20:14,000 --> 00:20:16,000
+it will use
+
+413
+00:20:16,000 --> 00:20:18,000
+high current to stimulate your heart beat.
+
+414
+00:20:18,000 --> 00:20:20,000
+For example,
+
+415
+00:20:20,000 --> 00:20:22,000
+when your heart stops beating,
+
+416
+00:20:22,000 --> 00:20:24,000
+it will stimulate your heart beat.
+
+417
+00:20:26,000 --> 00:20:28,000
+I am not a medical background,
+
+418
+00:20:28,000 --> 00:20:30,000
+so I only understand
+
+419
+00:20:30,000 --> 00:20:32,000
+the basic concept of this device.
+
+420
+00:20:32,000 --> 00:20:34,000
+The main usage method
+
+421
+00:20:34,000 --> 00:20:36,000
+is still left to the doctor.
+
+422
+00:20:38,000 --> 00:20:40,000
+ICD
+
+423
+00:20:40,000 --> 00:20:42,000
+mainly uses
+
+424
+00:20:42,000 --> 00:20:44,000
+high current and low current output.
+
+425
+00:20:44,000 --> 00:20:46,000
+The low current part
+
+426
+00:20:46,000 --> 00:20:48,000
+is mainly responsible for the battery.
+
+427
+00:20:50,000 --> 00:20:52,000
+The high current part
+
+428
+00:20:52,000 --> 00:20:54,000
+is responsible for the circuit board.
+
+429
+00:20:58,000 --> 00:21:00,000
+There is also a device size
+
+430
+00:21:00,000 --> 00:21:02,000
+at the bottom.
+
+431
+00:21:02,000 --> 00:21:04,000
+The size is about one-fourth of the heart.
+
+432
+00:21:04,000 --> 00:21:06,000
+Most of the area
+
+433
+00:21:06,000 --> 00:21:08,000
+is actually from the low-voltage circuit.
+
+434
+00:21:12,000 --> 00:21:14,000
+Another
+
+435
+00:21:14,000 --> 00:21:16,000
+medical device
+
+436
+00:21:18,000 --> 00:21:20,000
+is
+
+437
+00:21:20,000 --> 00:21:22,000
+DBS
+
+438
+00:21:22,000 --> 00:21:24,000
+Deep Brain Stimulator.
+
+439
+00:21:24,000 --> 00:21:26,000
+Deep Brain Stimulator.
+
+440
+00:21:28,000 --> 00:21:30,000
+This type of device
+
+441
+00:21:30,000 --> 00:21:32,000
+has the same principle,
+
+442
+00:21:32,000 --> 00:21:34,000
+but the current demand
+
+443
+00:21:34,000 --> 00:21:36,000
+is smaller than ICD.
+
+444
+00:21:38,000 --> 00:21:40,000
+DBS mainly stimulates
+
+445
+00:21:40,000 --> 00:21:42,000
+the brain nerve.
+
+446
+00:21:42,000 --> 00:21:44,000
+DBS mainly stimulates
+
+447
+00:21:44,000 --> 00:21:46,000
+the brain nerve.
+
+448
+00:21:46,000 --> 00:21:48,000
+DBS mainly stimulates
+
+449
+00:21:48,000 --> 00:21:50,000
+the brain nerve.
+
+450
+00:21:52,000 --> 00:21:54,000
+The power supply
+
+451
+00:21:54,000 --> 00:21:56,000
+is also made up of
+
+452
+00:21:56,000 --> 00:21:58,000
+a battery and a circuit.
+
+453
+00:21:58,000 --> 00:22:00,000
+When we want to
+
+454
+00:22:00,000 --> 00:22:02,000
+put this medical device
+
+455
+00:22:02,000 --> 00:22:04,000
+in the body,
+
+456
+00:22:04,000 --> 00:22:06,000
+we hope that
+
+457
+00:22:06,000 --> 00:22:08,000
+its size can be smaller and better
+
+458
+00:22:08,000 --> 00:22:10,000
+to save more space.
+
+459
+00:22:10,000 --> 00:22:12,000
+For example,
+
+460
+00:22:12,000 --> 00:22:14,000
+we want to find a material
+
+461
+00:22:14,000 --> 00:22:16,000
+that has the characteristics of a battery and a circuit.
+
+462
+00:22:18,000 --> 00:22:20,000
+We need to make a device
+
+463
+00:22:20,000 --> 00:22:22,000
+either a circuit
+
+464
+00:22:22,000 --> 00:22:24,000
+or a battery.
+
+465
+00:22:24,000 --> 00:22:26,000
+We want to make a device
+
+466
+00:22:26,000 --> 00:22:28,000
+that prefers a battery
+
+467
+00:22:28,000 --> 00:22:30,000
+because the size of the battery is smaller.
+
+468
+00:22:30,000 --> 00:22:32,000
+We use a single storage device
+
+469
+00:22:32,000 --> 00:22:34,000
+to provide these two currents.
+
+470
+00:22:34,000 --> 00:22:36,000
+This way we can save a lot of
+
+471
+00:22:36,000 --> 00:22:38,000
+the power supply
+
+472
+00:22:38,000 --> 00:22:40,000
+and medical equipment space.
+
+473
+00:22:44,000 --> 00:22:46,000
+This material
+
+474
+00:22:46,000 --> 00:22:48,000
+is
+
+475
+00:22:48,000 --> 00:22:50,000
+LNVOPF.
+
+476
+00:22:52,000 --> 00:22:54,000
+LNVOPF
+
+477
+00:22:54,000 --> 00:22:56,000
+mainly comes from
+
+478
+00:22:56,000 --> 00:22:58,000
+the transformation of
+
+479
+00:22:58,000 --> 00:23:00,000
+the structure of
+
+480
+00:23:00,000 --> 00:23:02,000
+the nascon-nucleotide conductor.
+
+481
+00:23:02,000 --> 00:23:04,000
+After being mixed,
+
+482
+00:23:04,000 --> 00:23:06,000
+the voltage of the
+
+483
+00:23:06,000 --> 00:23:08,000
+LNVOPF
+
+484
+00:23:08,000 --> 00:23:10,000
+increases,
+
+485
+00:23:10,000 --> 00:23:12,000
+which means it can
+
+486
+00:23:12,000 --> 00:23:14,000
+store more energy.
+
+487
+00:23:14,000 --> 00:23:16,000
+When I
+
+488
+00:23:16,000 --> 00:23:18,000
+put this
+
+489
+00:23:18,000 --> 00:23:20,000
+in the body,
+
+490
+00:23:20,000 --> 00:23:22,000
+the change in
+
+491
+00:23:22,000 --> 00:23:24,000
+the size of the
+
+492
+00:23:24,000 --> 00:23:26,000
+LNVOPF
+
+493
+00:23:26,000 --> 00:23:28,000
+also decreases.
+
+494
+00:23:28,000 --> 00:23:30,000
+This means that
+
+495
+00:23:30,000 --> 00:23:32,000
+the size of the
+
+496
+00:23:32,000 --> 00:23:34,000
+LNVOPF
+
+497
+00:23:34,000 --> 00:23:36,000
+is similar to
+
+498
+00:23:36,000 --> 00:23:38,000
+the lithium carbon dioxide
+
+499
+00:23:38,000 --> 00:23:40,000
+in the battery.
+
+500
+00:23:40,000 --> 00:23:42,000
+The most important thing is
+
+501
+00:23:42,000 --> 00:23:44,000
+that this material
+
+502
+00:23:44,000 --> 00:23:46,000
+has the characteristics of
+
+503
+00:23:46,000 --> 00:23:48,000
+battery and current.
+
+504
+00:23:48,000 --> 00:23:50,000
+Next we will introduce
+
+505
+00:23:50,000 --> 00:23:52,000
+another way to
+
+506
+00:23:52,000 --> 00:23:54,000
+distinguish the battery
+
+507
+00:23:54,000 --> 00:23:56,000
+from the current,
+
+508
+00:23:56,000 --> 00:23:58,000
+which is to use
+
+509
+00:23:58,000 --> 00:24:00,000
+X-ray diffraction
+
+510
+00:24:00,000 --> 00:24:02,000
+XRD analysis
+
+511
+00:24:02,000 --> 00:24:04,000
+to find out
+
+512
+00:24:04,000 --> 00:24:06,000
+if there is a change
+
+513
+00:24:06,000 --> 00:24:08,000
+in the structure of the
+
+514
+00:24:08,000 --> 00:24:10,000
+metal body,
+
+515
+00:24:10,000 --> 00:24:12,000
+which is the
+
+516
+00:24:12,000 --> 00:24:14,000
+x-ray diffraction
+
+517
+00:24:14,000 --> 00:24:16,000
+in the material.
+
+518
+00:24:16,000 --> 00:24:18,000
+In general, the charge of the
+
+519
+00:24:18,000 --> 00:24:20,000
+battery follows the
+
+520
+00:24:20,000 --> 00:24:22,000
+x-ray diffraction,
+
+521
+00:24:22,000 --> 00:24:24,000
+while the charge of the
+
+522
+00:24:24,000 --> 00:24:26,000
+nucleotide is
+
+523
+00:24:26,000 --> 00:24:28,000
+stored in the
+
+524
+00:24:28,000 --> 00:24:30,000
+solid.
+
+525
+00:24:30,000 --> 00:24:32,000
+In low voltage peak,
+
+526
+00:24:32,000 --> 00:24:34,000
+it follows the x-ray diffraction,
+
+527
+00:24:34,000 --> 00:24:36,000
+while in high voltage peak,
+
+528
+00:24:36,000 --> 00:24:38,000
+there is no x-ray diffraction.
+
+529
+00:24:38,000 --> 00:24:40,000
+This means that this material
+
+530
+00:24:40,000 --> 00:24:42,000
+can be used as a battery
+
+531
+00:24:42,000 --> 00:24:44,000
+in low voltage,
+
+532
+00:24:44,000 --> 00:24:46,000
+and can be used as a current
+
+533
+00:24:46,000 --> 00:24:48,000
+in high voltage.
+
+534
+00:24:48,000 --> 00:24:50,000
+But this
+
+535
+00:24:50,000 --> 00:24:52,000
+thing is not as simple as you think.
+
+536
+00:24:52,000 --> 00:24:54,000
+This material
+
+537
+00:24:54,000 --> 00:24:56,000
+is charged twice
+
+538
+00:24:56,000 --> 00:24:58,000
+every hour
+
+539
+00:24:58,000 --> 00:25:00,000
+Here,
+
+540
+00:25:00,000 --> 00:25:02,000
+let me introduce a little bit.
+
+541
+00:25:02,000 --> 00:25:04,000
+When we talk about charging,
+
+542
+00:25:04,000 --> 00:25:06,000
+we use a unit called C-ray.
+
+543
+00:25:06,000 --> 00:25:08,000
+This unit
+
+544
+00:25:08,000 --> 00:25:10,000
+C-ray
+
+545
+00:25:10,000 --> 00:25:12,000
+Everyone says a few Cs,
+
+546
+00:25:12,000 --> 00:25:14,000
+which means it can charge several times
+
+547
+00:25:14,000 --> 00:25:16,000
+in an hour.
+
+548
+00:25:16,000 --> 00:25:18,000
+So in this material,
+
+549
+00:25:18,000 --> 00:25:20,000
+it charges twice
+
+550
+00:25:20,000 --> 00:25:22,000
+every hour,
+
+551
+00:25:22,000 --> 00:25:24,000
+which is the part of 2C.
+
+552
+00:25:24,000 --> 00:25:26,000
+Basically, it can also store
+
+553
+00:25:26,000 --> 00:25:28,000
+80-90% of the charge.
+
+554
+00:25:28,000 --> 00:25:30,000
+But when you
+
+555
+00:25:30,000 --> 00:25:32,000
+shorten the charging time to
+
+556
+00:25:32,000 --> 00:25:34,000
+3 minutes, it can only charge
+
+557
+00:25:34,000 --> 00:25:36,000
+8%.
+
+558
+00:25:36,000 --> 00:25:38,000
+The reason is that during the charging process,
+
+559
+00:25:38,000 --> 00:25:40,000
+it will charge the battery first.
+
+560
+00:25:40,000 --> 00:25:42,000
+Then it
+
+561
+00:25:42,000 --> 00:25:44,000
+goes through the capacitor part.
+
+562
+00:25:44,000 --> 00:25:46,000
+But because the charging speed of the battery part
+
+563
+00:25:46,000 --> 00:25:48,000
+is too slow today,
+
+564
+00:25:48,000 --> 00:25:50,000
+I can't even charge the capacitor.
+
+565
+00:25:50,000 --> 00:25:52,000
+So
+
+566
+00:25:52,000 --> 00:25:54,000
+it's a bit like this.
+
+567
+00:25:54,000 --> 00:25:56,000
+Mainly because the charging speed of the battery
+
+568
+00:25:56,000 --> 00:25:58,000
+is too slow,
+
+569
+00:25:58,000 --> 00:26:00,000
+the overall charging speed
+
+570
+00:26:00,000 --> 00:26:02,000
+will decrease.
+
+571
+00:26:02,000 --> 00:26:04,000
+Next,
+
+572
+00:26:04,000 --> 00:26:06,000
+this study
+
+573
+00:26:06,000 --> 00:26:08,000
+is to use
+
+574
+00:26:08,000 --> 00:26:10,000
+the material nanometrization
+
+575
+00:26:10,000 --> 00:26:12,000
+to shorten the time
+
+576
+00:26:12,000 --> 00:26:14,000
+and distance
+
+577
+00:26:14,000 --> 00:26:16,000
+of the particles in the material
+
+578
+00:26:16,000 --> 00:26:18,000
+to increase the
+
+579
+00:26:18,000 --> 00:26:20,000
+charging speed of the material.
+
+580
+00:26:20,000 --> 00:26:22,000
+Next,
+
+581
+00:26:22,000 --> 00:26:24,000
+we are going to synthesize
+
+582
+00:26:24,000 --> 00:26:26,000
+this nanometer NVOPF
+
+583
+00:26:26,000 --> 00:26:28,000
+and discuss
+
+584
+00:26:28,000 --> 00:26:30,000
+the size of the size
+
+585
+00:26:30,000 --> 00:26:32,000
+for fast charging.
+
+586
+00:26:32,000 --> 00:26:34,000
+First, the way we make it is
+
+587
+00:26:34,000 --> 00:26:36,000
+to put all our
+
+588
+00:26:36,000 --> 00:26:38,000
+materials into
+
+589
+00:26:38,000 --> 00:26:40,000
+this solvent thermal
+
+590
+00:26:40,000 --> 00:26:42,000
+method to synthesize. We also put it
+
+591
+00:26:42,000 --> 00:26:44,000
+into the pressure suit.
+
+592
+00:26:44,000 --> 00:26:46,000
+After
+
+593
+00:26:46,000 --> 00:26:48,000
+12 hours,
+
+594
+00:26:48,000 --> 00:26:50,000
+after 185°C,
+
+595
+00:26:50,000 --> 00:26:52,000
+we take out the material and
+
+596
+00:26:52,000 --> 00:26:54,000
+clean it.
+
+597
+00:26:54,000 --> 00:26:56,000
+We will dry it.
+
+598
+00:26:56,000 --> 00:26:58,000
+Next, we use
+
+599
+00:26:58,000 --> 00:27:00,000
+XRD, X-ray diffraction, to confirm the material.
+
+600
+00:27:00,000 --> 00:27:02,000
+After confirming that the material
+
+601
+00:27:02,000 --> 00:27:04,000
+has no problems and no impurities
+
+602
+00:27:04,000 --> 00:27:06,000
+in it, we will make it
+
+603
+00:27:06,000 --> 00:27:08,000
+an electrode for electromagnetic testing.
+
+604
+00:27:12,000 --> 00:27:14,000
+Here,
+
+605
+00:27:14,000 --> 00:27:16,000
+we use
+
+606
+00:27:16,000 --> 00:27:18,000
+the ratio of the material
+
+607
+00:27:18,000 --> 00:27:20,000
+and the temperature of the
+
+608
+00:27:20,000 --> 00:27:22,000
+synthesis to get different
+
+609
+00:27:22,000 --> 00:27:24,000
+shapes of NVOPF.
+
+610
+00:27:24,000 --> 00:27:26,000
+Basically, this NVOPF is a
+
+611
+00:27:26,000 --> 00:27:28,000
+rectangular body.
+
+612
+00:27:28,000 --> 00:27:30,000
+We usually get a brick
+
+613
+00:27:30,000 --> 00:27:32,000
+shape.
+
+614
+00:27:32,000 --> 00:27:34,000
+If it is longer,
+
+615
+00:27:34,000 --> 00:27:36,000
+it becomes a rod.
+
+616
+00:27:36,000 --> 00:27:38,000
+If it is shorter, it becomes a pellet.
+
+617
+00:27:38,000 --> 00:27:40,000
+If the pellet is small, it becomes a particle.
+
+618
+00:27:40,000 --> 00:27:42,000
+We are going to
+
+619
+00:27:42,000 --> 00:27:44,000
+discuss the shape
+
+620
+00:27:44,000 --> 00:27:46,000
+of the NVOPF
+
+621
+00:27:46,000 --> 00:27:48,000
+and the size of it.
+
+622
+00:27:48,000 --> 00:27:50,000
+We will also discuss the impact of its
+
+623
+00:27:50,000 --> 00:27:52,000
+reaction speed.
+
+624
+00:27:52,000 --> 00:27:54,000
+Next, we
+
+625
+00:27:54,000 --> 00:27:56,000
+use the b-value method
+
+626
+00:27:56,000 --> 00:27:58,000
+to analyze
+
+627
+00:27:58,000 --> 00:28:00,000
+the properties of the fast charge.
+
+628
+00:28:02,000 --> 00:28:04,000
+In the first step, we
+
+629
+00:28:04,000 --> 00:28:06,000
+make a different number of
+
+630
+00:28:06,000 --> 00:28:08,000
+CVs for the material.
+
+631
+00:28:08,000 --> 00:28:10,000
+From these four peaks,
+
+632
+00:28:10,000 --> 00:28:12,000
+we can get
+
+633
+00:28:12,000 --> 00:28:14,000
+individual b-values.
+
+634
+00:28:16,000 --> 00:28:18,000
+Then, we make
+
+635
+00:28:18,000 --> 00:28:20,000
+b-values with different
+
+636
+00:28:20,000 --> 00:28:22,000
+aspect ratios,
+
+637
+00:28:22,000 --> 00:28:24,000
+different widths,
+
+638
+00:28:24,000 --> 00:28:26,000
+and its size
+
+639
+00:28:26,000 --> 00:28:28,000
+to see
+
+640
+00:28:28,000 --> 00:28:30,000
+how it changes.
+
+641
+00:28:32,000 --> 00:28:34,000
+On the left,
+
+642
+00:28:34,000 --> 00:28:36,000
+this is the NVOPF
+
+643
+00:28:36,000 --> 00:28:38,000
+pellet.
+
+644
+00:28:38,000 --> 00:28:40,000
+On the right,
+
+645
+00:28:40,000 --> 00:28:42,000
+we use the rod
+
+646
+00:28:42,000 --> 00:28:44,000
+to make changes.
+
+647
+00:28:44,000 --> 00:28:46,000
+The aspect ratio
+
+648
+00:28:46,000 --> 00:28:48,000
+gradually decreases to
+
+649
+00:28:48,000 --> 00:28:50,000
+the brick shape,
+
+650
+00:28:50,000 --> 00:28:52,000
+and finally to the pellet shape.
+
+651
+00:28:52,000 --> 00:28:54,000
+The b-value
+
+652
+00:28:54,000 --> 00:28:56,000
+decreases as the aspect ratio
+
+653
+00:28:56,000 --> 00:28:58,000
+decreases.
+
+654
+00:28:58,000 --> 00:29:00,000
+When we decrease the aspect ratio
+
+655
+00:29:00,000 --> 00:29:02,000
+of the material,
+
+656
+00:29:02,000 --> 00:29:04,000
+the characteristics of the fast charge
+
+657
+00:29:04,000 --> 00:29:06,000
+will be more and more like a capacitor.
+
+658
+00:29:06,000 --> 00:29:08,000
+It can be used
+
+659
+00:29:08,000 --> 00:29:10,000
+as a material for high-speed charge.
+
+660
+00:29:12,000 --> 00:29:14,000
+On the other hand,
+
+661
+00:29:14,000 --> 00:29:16,000
+we also
+
+662
+00:29:16,000 --> 00:29:18,000
+compare
+
+663
+00:29:18,000 --> 00:29:20,000
+the particle size
+
+664
+00:29:20,000 --> 00:29:22,000
+to the b-value.
+
+665
+00:29:22,000 --> 00:29:24,000
+We combine
+
+666
+00:29:24,000 --> 00:29:26,000
+microns
+
+667
+00:29:26,000 --> 00:29:28,000
+and microns.
+
+668
+00:29:28,000 --> 00:29:30,000
+Then, we reduce to nanometers.
+
+669
+00:29:30,000 --> 00:29:32,000
+From hundreds of nanometers
+
+670
+00:29:32,000 --> 00:29:34,000
+to dozens of nanometers.
+
+671
+00:29:34,000 --> 00:29:36,000
+We can see that
+
+672
+00:29:36,000 --> 00:29:38,000
+when the size decreases,
+
+673
+00:29:38,000 --> 00:29:40,000
+the b-value also increases.
+
+674
+00:29:40,000 --> 00:29:42,000
+The increase in b-value
+
+675
+00:29:42,000 --> 00:29:44,000
+means that the smaller the particle,
+
+676
+00:29:44,000 --> 00:29:46,000
+the more suitable it is
+
+677
+00:29:46,000 --> 00:29:48,000
+to be used
+
+678
+00:29:48,000 --> 00:29:50,000
+as a capacitor.
+
+679
+00:29:56,000 --> 00:29:58,000
+The focus here
+
+680
+00:29:58,000 --> 00:30:00,000
+is on the microbrick.
+
+681
+00:30:00,000 --> 00:30:02,000
+Its peak b-value
+
+682
+00:30:02,000 --> 00:30:04,000
+is close to 0.5.
+
+683
+00:30:04,000 --> 00:30:06,000
+0.5 means
+
+684
+00:30:06,000 --> 00:30:08,000
+the same reaction as a battery.
+
+685
+00:30:08,000 --> 00:30:10,000
+When we make a nanoparticle,
+
+686
+00:30:10,000 --> 00:30:12,000
+all the reactions
+
+687
+00:30:12,000 --> 00:30:14,000
+of the oxidation reaction
+
+688
+00:30:14,000 --> 00:30:16,000
+have a b-value
+
+689
+00:30:16,000 --> 00:30:18,000
+of 0.7 or higher.
+
+690
+00:30:22,000 --> 00:30:24,000
+Next,
+
+691
+00:30:24,000 --> 00:30:26,000
+we do the charge-resistance test.
+
+692
+00:30:26,000 --> 00:30:28,000
+The nanoparticle
+
+693
+00:30:28,000 --> 00:30:30,000
+of NVOPF
+
+694
+00:30:30,000 --> 00:30:32,000
+can charge up to 90%
+
+695
+00:30:32,000 --> 00:30:34,000
+in 2 hours
+
+696
+00:30:34,000 --> 00:30:36,000
+in 3 minutes.
+
+697
+00:30:36,000 --> 00:30:38,000
+This means that
+
+698
+00:30:38,000 --> 00:30:40,000
+after the nanoparticle
+
+699
+00:30:40,000 --> 00:30:42,000
+of NVOPF
+
+700
+00:30:42,000 --> 00:30:44,000
+has been nanoparticulated,
+
+701
+00:30:44,000 --> 00:30:46,000
+the reaction rate
+
+702
+00:30:46,000 --> 00:30:48,000
+of the battery
+
+703
+00:30:48,000 --> 00:30:50,000
+has increased significantly.
+
+704
+00:30:50,000 --> 00:30:52,000
+This also leads to an increase
+
+705
+00:30:52,000 --> 00:30:54,000
+in the reaction rate of our capacitors.
+
+706
+00:30:54,000 --> 00:30:56,000
+The NVOPF
+
+707
+00:30:56,000 --> 00:30:58,000
+and nanoparticles
+
+708
+00:30:58,000 --> 00:31:00,000
+of NVOPF
+
+709
+00:31:00,000 --> 00:31:02,000
+can charge up to 80%
+
+710
+00:31:02,000 --> 00:31:04,000
+in 100 seconds.
+
+711
+00:31:08,000 --> 00:31:10,000
+We mainly test
+
+712
+00:31:10,000 --> 00:31:12,000
+two temperatures.
+
+713
+00:31:12,000 --> 00:31:14,000
+The first is room temperature.
+
+714
+00:31:14,000 --> 00:31:16,000
+The second is 37 degrees,
+
+715
+00:31:16,000 --> 00:31:18,000
+which is our human body temperature.
+
+716
+00:31:18,000 --> 00:31:20,000
+The main reason for this test
+
+717
+00:31:20,000 --> 00:31:22,000
+is that we want to put this material
+
+718
+00:31:22,000 --> 00:31:24,000
+into the human body.
+
+719
+00:31:24,000 --> 00:31:26,000
+In this environment,
+
+720
+00:31:26,000 --> 00:31:28,000
+the NVOPF
+
+721
+00:31:28,000 --> 00:31:30,000
+can charge up to 80%
+
+722
+00:31:30,000 --> 00:31:32,000
+in 100 seconds
+
+723
+00:31:32,000 --> 00:31:34,000
+in the human body
+
+724
+00:31:34,000 --> 00:31:36,000
+temperature.
+
+725
+00:31:36,000 --> 00:31:38,000
+The energy
+
+726
+00:31:38,000 --> 00:31:40,000
+of the NVOPF
+
+727
+00:31:40,000 --> 00:31:42,000
+can reach
+
+728
+00:31:42,000 --> 00:31:44,000
+100 watts
+
+729
+00:31:44,000 --> 00:31:46,000
+per kilogram
+
+730
+00:31:46,000 --> 00:31:48,000
+in 4000 watts
+
+731
+00:31:48,000 --> 00:31:50,000
+per kilogram.
+
+732
+00:31:50,000 --> 00:31:52,000
+This means that
+
+733
+00:31:52,000 --> 00:31:54,000
+the energy density
+
+734
+00:31:54,000 --> 00:31:56,000
+of the NVOPF
+
+735
+00:31:56,000 --> 00:31:58,000
+can reach 100 watts
+
+736
+00:31:58,000 --> 00:32:00,000
+per kilogram.
+
+737
+00:32:02,000 --> 00:32:04,000
+Finally, we apply
+
+738
+00:32:04,000 --> 00:32:06,000
+this material
+
+739
+00:32:06,000 --> 00:32:08,000
+to the
+
+740
+00:32:08,000 --> 00:32:10,000
+Deep Brain Stimulator
+
+741
+00:32:10,000 --> 00:32:12,000
+DBS application.
+
+742
+00:32:12,000 --> 00:32:14,000
+We all know that
+
+743
+00:32:16,000 --> 00:32:18,000
+this device
+
+744
+00:32:18,000 --> 00:32:20,000
+must have
+
+745
+00:32:20,000 --> 00:32:22,000
+a soldering mode
+
+746
+00:32:22,000 --> 00:32:24,000
+and a battery mode.
+
+747
+00:32:24,000 --> 00:32:26,000
+We charge it
+
+748
+00:32:26,000 --> 00:32:28,000
+with a fixed current.
+
+749
+00:32:28,000 --> 00:32:30,000
+Then the current
+
+750
+00:32:30,000 --> 00:32:32,000
+will convert the energy
+
+751
+00:32:32,000 --> 00:32:34,000
+to output
+
+752
+00:32:34,000 --> 00:32:36,000
+in the form of a capacitor.
+
+753
+00:32:36,000 --> 00:32:38,000
+So we designed
+
+754
+00:32:38,000 --> 00:32:40,000
+two different modes.
+
+755
+00:32:40,000 --> 00:32:42,000
+The first is the capacitor mode,
+
+756
+00:32:42,000 --> 00:32:44,000
+which means that both charging and discharging
+
+757
+00:32:44,000 --> 00:32:46,000
+are soldering.
+
+758
+00:32:46,000 --> 00:32:48,000
+The capacitor mode
+
+759
+00:32:48,000 --> 00:32:50,000
+allows us to
+
+760
+00:32:50,000 --> 00:32:52,000
+detect
+
+761
+00:32:52,000 --> 00:32:54,000
+the overall
+
+762
+00:32:54,000 --> 00:32:56,000
+amount of current
+
+763
+00:32:56,000 --> 00:32:58,000
+in the body.
+
+764
+00:32:58,000 --> 00:33:00,000
+The discharging mode
+
+765
+00:33:00,000 --> 00:33:02,000
+allows us to
+
+766
+00:33:02,000 --> 00:33:04,000
+give feedback to the body
+
+767
+00:33:04,000 --> 00:33:06,000
+and use the current
+
+768
+00:33:06,000 --> 00:33:08,000
+to perform different
+
+769
+00:33:08,000 --> 00:33:10,000
+treatments.
+
+770
+00:33:10,000 --> 00:33:12,000
+So there are these two modes.
+
+771
+00:33:14,000 --> 00:33:16,000
+The battery mode
+
+772
+00:33:16,000 --> 00:33:18,000
+uses the soldering mode
+
+773
+00:33:18,000 --> 00:33:20,000
+to charge the battery.
+
+774
+00:33:20,000 --> 00:33:22,000
+The capacitor mode
+
+775
+00:33:22,000 --> 00:33:24,000
+uses the
+
+776
+00:33:24,000 --> 00:33:26,000
+discharging mode
+
+777
+00:33:26,000 --> 00:33:28,000
+to discharge.
+
+778
+00:33:28,000 --> 00:33:30,000
+So the capacitor mode is
+
+779
+00:33:30,000 --> 00:33:32,000
+discharging.
+
+780
+00:33:32,000 --> 00:33:34,000
+The battery mode
+
+781
+00:33:34,000 --> 00:33:36,000
+uses the discharging mode
+
+782
+00:33:36,000 --> 00:33:38,000
+to discharge.
+
+783
+00:33:38,000 --> 00:33:40,000
+So basically,
+
+784
+00:33:40,000 --> 00:33:42,000
+we use these two modes
+
+785
+00:33:42,000 --> 00:33:44,000
+to operate the battery.
+
+786
+00:33:44,000 --> 00:33:46,000
+The battery
+
+787
+00:33:46,000 --> 00:33:48,000
+can discharge
+
+788
+00:33:48,000 --> 00:33:50,000
+up to 1,000 rounds
+
+789
+00:33:50,000 --> 00:33:52,000
+in this mode
+
+790
+00:33:52,000 --> 00:33:54,000
+with the
+
+791
+00:33:54,000 --> 00:33:56,000
+electric current
+
+792
+00:33:56,000 --> 00:33:58,000
+and the high-speed
+
+793
+00:33:58,000 --> 00:34:00,000
+discharging current
+
+794
+00:34:00,000 --> 00:34:02,000
+of the soldering current.
+
+795
+00:34:02,000 --> 00:34:04,000
+In each round,
+
+796
+00:34:04,000 --> 00:34:06,000
+it can provide
+
+797
+00:34:06,000 --> 00:34:08,000
+at least 3,000 soldering
+
+798
+00:34:08,000 --> 00:34:10,000
+to measure
+
+799
+00:34:10,000 --> 00:34:12,000
+and give feedback.
+
+800
+00:34:12,000 --> 00:34:14,000
+The battery can also
+
+801
+00:34:14,000 --> 00:34:16,000
+provide 60% electric current.
+
+802
+00:34:16,000 --> 00:34:18,000
+Let's compare
+
+803
+00:34:18,000 --> 00:34:20,000
+our battery
+
+804
+00:34:20,000 --> 00:34:22,000
+with the current
+
+805
+00:34:22,000 --> 00:34:24,000
+DBS specifications.
+
+806
+00:34:24,000 --> 00:34:26,000
+Basically,
+
+807
+00:34:26,000 --> 00:34:28,000
+our output current
+
+808
+00:34:28,000 --> 00:34:30,000
+is from 4,000
+
+809
+00:34:30,000 --> 00:34:32,000
+microampere,
+
+810
+00:34:32,000 --> 00:34:34,000
+which is 4 mA
+
+811
+00:34:34,000 --> 00:34:36,000
+to 12 mA.
+
+812
+00:34:36,000 --> 00:34:38,000
+Compared to the current specifications,
+
+813
+00:34:38,000 --> 00:34:40,000
+our current
+
+814
+00:34:40,000 --> 00:34:42,000
+output current
+
+815
+00:34:42,000 --> 00:34:44,000
+is greater than
+
+816
+00:34:44,000 --> 00:34:46,000
+these specifications.
+
+817
+00:34:46,000 --> 00:34:48,000
+In terms of frequency,
+
+818
+00:34:48,000 --> 00:34:50,000
+we can only measure
+
+819
+00:34:50,000 --> 00:34:52,000
+a few microseconds
+
+820
+00:34:52,000 --> 00:34:54,000
+on the device
+
+821
+00:34:54,000 --> 00:34:56,000
+because
+
+822
+00:34:56,000 --> 00:34:58,000
+the device
+
+823
+00:34:58,000 --> 00:35:00,000
+only measures 50Hz.
+
+824
+00:35:00,000 --> 00:35:02,000
+This 50Hz
+
+825
+00:35:02,000 --> 00:35:04,000
+also covers
+
+826
+00:35:04,000 --> 00:35:06,000
+the frequency required
+
+827
+00:35:06,000 --> 00:35:08,000
+for some of these functions.
+
+828
+00:35:10,000 --> 00:35:12,000
+Next,
+
+829
+00:35:12,000 --> 00:35:14,000
+I will use this graph
+
+830
+00:35:14,000 --> 00:35:16,000
+to make a brief summary.
+
+831
+00:35:16,000 --> 00:35:18,000
+In the second part,
+
+832
+00:35:18,000 --> 00:35:20,000
+we use nanoparticle
+
+833
+00:35:20,000 --> 00:35:22,000
+to convert the
+
+834
+00:35:22,000 --> 00:35:24,000
+NBOPF, which cannot be
+
+835
+00:35:24,000 --> 00:35:26,000
+fast charged,
+
+836
+00:35:26,000 --> 00:35:28,000
+into fast charge.
+
+837
+00:35:28,000 --> 00:35:30,000
+In addition,
+
+838
+00:35:30,000 --> 00:35:32,000
+we also proved the
+
+839
+00:35:32,000 --> 00:35:34,000
+feasibility of the
+
+840
+00:35:34,000 --> 00:35:36,000
+soldering current
+
+841
+00:35:36,000 --> 00:35:38,000
+in DBS.
+
+842
+00:35:38,000 --> 00:35:40,000
+Let me make a brief summary.
+
+843
+00:35:40,000 --> 00:35:42,000
+What is
+
+844
+00:35:42,000 --> 00:35:44,000
+the so-called
+
+845
+00:35:44,000 --> 00:35:46,000
+take-home message?
+
+846
+00:35:46,000 --> 00:35:48,000
+First, I hope everyone
+
+847
+00:35:48,000 --> 00:35:50,000
+knows what a soldering current is.
+
+848
+00:35:50,000 --> 00:35:52,000
+A soldering current is
+
+849
+00:35:52,000 --> 00:35:54,000
+actually a storage mechanism
+
+850
+00:35:54,000 --> 00:35:56,000
+that has the power of the
+
+851
+00:35:56,000 --> 00:35:58,000
+soldering current and the
+
+852
+00:35:58,000 --> 00:36:00,000
+density of the battery.
+
+853
+00:36:02,000 --> 00:36:04,000
+The second point is
+
+854
+00:36:04,000 --> 00:36:06,000
+how we can judge the soldering current.
+
+855
+00:36:06,000 --> 00:36:08,000
+Of course, it is through
+
+856
+00:36:08,000 --> 00:36:10,000
+the method of electromagnetic mechanics.
+
+857
+00:36:10,000 --> 00:36:12,000
+We have such a CV,
+
+858
+00:36:12,000 --> 00:36:14,000
+a oblique GC,
+
+859
+00:36:14,000 --> 00:36:16,000
+and no change
+
+860
+00:36:16,000 --> 00:36:18,000
+in the material during
+
+861
+00:36:18,000 --> 00:36:20,000
+the oxidation process.
+
+862
+00:36:22,000 --> 00:36:24,000
+Finally,
+
+863
+00:36:24,000 --> 00:36:26,000
+how do we design a soldering current?
+
+864
+00:36:26,000 --> 00:36:28,000
+Mainly,
+
+865
+00:36:28,000 --> 00:36:30,000
+there are three points in my demo.
+
+866
+00:36:30,000 --> 00:36:32,000
+The first is
+
+867
+00:36:32,000 --> 00:36:34,000
+the conductivity and
+
+868
+00:36:34,000 --> 00:36:36,000
+airtightness.
+
+869
+00:36:36,000 --> 00:36:38,000
+The conductivity and
+
+870
+00:36:38,000 --> 00:36:40,000
+airtightness of my electrode
+
+871
+00:36:40,000 --> 00:36:42,000
+can optimize my soldering current.
+
+872
+00:36:42,000 --> 00:36:44,000
+The second point is
+
+873
+00:36:44,000 --> 00:36:46,000
+to nanomaterialize the material
+
+874
+00:36:46,000 --> 00:36:48,000
+and adjust its phase change
+
+875
+00:36:48,000 --> 00:36:50,000
+so that the material of our
+
+876
+00:36:50,000 --> 00:36:52,000
+general battery
+
+877
+00:36:52,000 --> 00:36:54,000
+is not
+
+878
+00:36:54,000 --> 00:36:56,000
+too slow
+
+879
+00:36:56,000 --> 00:36:58,000
+in the transfer of ions.
+
+880
+00:36:58,000 --> 00:37:00,000
+In the part of the battery,
+
+881
+00:37:00,000 --> 00:37:02,000
+it can
+
+882
+00:37:02,000 --> 00:37:04,000
+reach the high speed
+
+883
+00:37:04,000 --> 00:37:06,000
+charging point.
+
+884
+00:37:14,000 --> 00:37:16,000
+Thank you for your attention.
+
+885
+00:37:16,000 --> 00:37:18,000
+If you have any questions,
+
+886
+00:37:20,000 --> 00:37:22,000
+please feel free to ask.
+
+887
+00:37:22,000 --> 00:37:24,000
+Thank you.
+
+888
+00:37:24,000 --> 00:37:26,000
+Thank you, Matt.
+
+889
+00:37:26,000 --> 00:37:28,000
+Now we can
+
+890
+00:37:28,000 --> 00:37:30,000
+start the Q&A.
+
+891
+00:37:30,000 --> 00:37:32,000
+In the chat box,
+
+892
+00:37:32,000 --> 00:37:34,000
+Gavin has some questions.
+
+893
+00:37:34,000 --> 00:37:36,000
+Do you want to unmute
+
+894
+00:37:36,000 --> 00:37:38,000
+and ask your question?
+
+895
+00:37:44,000 --> 00:37:46,000
+I would like to ask
+
+896
+00:37:46,000 --> 00:37:48,000
+what is the electrolyte used
+
+897
+00:37:48,000 --> 00:37:50,000
+when you start soldering?
+
+898
+00:37:50,000 --> 00:37:52,000
+It should be an organic electrolyte.
+
+899
+00:37:52,000 --> 00:37:54,000
+Because your reference electrode
+
+900
+00:37:54,000 --> 00:37:56,000
+is for aluminum.
+
+901
+00:37:56,000 --> 00:37:58,000
+That's right.
+
+902
+00:37:58,000 --> 00:38:00,000
+I use
+
+903
+00:38:00,000 --> 00:38:02,000
+LiPF6
+
+904
+00:38:02,000 --> 00:38:04,000
+ECDMC.
+
+905
+00:38:04,000 --> 00:38:06,000
+It is an electrolyte
+
+906
+00:38:06,000 --> 00:38:08,000
+for lithium battery.
+
+907
+00:38:08,000 --> 00:38:10,000
+So we can understand
+
+908
+00:38:10,000 --> 00:38:12,000
+why your lowest voltage
+
+909
+00:38:12,000 --> 00:38:14,000
+is around 1.2V.
+
+910
+00:38:14,000 --> 00:38:16,000
+Another question is
+
+911
+00:38:16,000 --> 00:38:18,000
+what is the distribution
+
+912
+00:38:18,000 --> 00:38:20,000
+of the oxygen-oxide
+
+913
+00:38:20,000 --> 00:38:22,000
+in the electrode?
+
+914
+00:38:22,000 --> 00:38:24,000
+Because recently,
+
+915
+00:38:24,000 --> 00:38:26,000
+there is no supercapacitor.
+
+916
+00:38:26,000 --> 00:38:28,000
+I believe the distribution
+
+917
+00:38:28,000 --> 00:38:30,000
+of oxygen-oxide
+
+918
+00:38:30,000 --> 00:38:32,000
+should be an interesting
+
+919
+00:38:32,000 --> 00:38:34,000
+or important question.
+
+920
+00:38:34,000 --> 00:38:36,000
+Basically,
+
+921
+00:38:36,000 --> 00:38:38,000
+the distribution
+
+922
+00:38:38,000 --> 00:38:40,000
+is between
+
+923
+00:38:40,000 --> 00:38:42,000
+1.2V and
+
+924
+00:38:42,000 --> 00:38:44,000
+1.2V to 3V.
+
+925
+00:38:48,000 --> 00:38:50,000
+Here.
+
+926
+00:38:50,000 --> 00:38:52,000
+The distribution
+
+927
+00:38:52,000 --> 00:38:54,000
+is from 1.2V
+
+928
+00:38:54,000 --> 00:38:56,000
+to 2.5V.
+
+929
+00:38:56,000 --> 00:38:58,000
+Here.
+
+930
+00:38:58,000 --> 00:39:00,000
+The capacity
+
+931
+00:39:00,000 --> 00:39:02,000
+of niobium oxide
+
+932
+00:39:02,000 --> 00:39:04,000
+should be
+
+933
+00:39:04,000 --> 00:39:06,000
+200mA.
+
+934
+00:39:06,000 --> 00:39:08,000
+When it is full, it is 200mA.
+
+935
+00:39:08,000 --> 00:39:10,000
+From 1.2V to 2.5V
+
+936
+00:39:10,000 --> 00:39:12,000
+means 90% of the voltage
+
+937
+00:39:12,000 --> 00:39:14,000
+comes from here.
+
+938
+00:39:14,000 --> 00:39:16,000
+Does it mean that
+
+939
+00:39:16,000 --> 00:39:18,000
+when it is less than 1.2V,
+
+940
+00:39:18,000 --> 00:39:20,000
+it will be more than 2.5V?
+
+941
+00:39:20,000 --> 00:39:22,000
+When it is less than 1.2V,
+
+942
+00:39:22,000 --> 00:39:24,000
+the electrolyte will be dissociated.
+
+943
+00:39:24,000 --> 00:39:26,000
+The material won't be dissociated.
+
+944
+00:39:26,000 --> 00:39:28,000
+When it is more than 2.5V,
+
+945
+00:39:28,000 --> 00:39:30,000
+you can't see
+
+946
+00:39:30,000 --> 00:39:32,000
+the value of the current.
+
+947
+00:39:32,000 --> 00:39:34,000
+The current will be
+
+948
+00:39:34,000 --> 00:39:36,000
+close to zero.
+
+949
+00:39:36,000 --> 00:39:38,000
+It is the same as
+
+950
+00:39:38,000 --> 00:39:40,000
+this picture.
+
+951
+00:39:40,000 --> 00:39:42,000
+The CV is the same.
+
+952
+00:39:42,000 --> 00:39:44,000
+It will be less than
+
+953
+00:39:44,000 --> 00:39:46,000
+3V.
+
+954
+00:39:46,000 --> 00:39:48,000
+Basically, it is less than 3V.
+
+955
+00:39:48,000 --> 00:39:50,000
+OK.
+
+956
+00:39:50,000 --> 00:39:52,000
+You showed this slide,
+
+957
+00:39:52,000 --> 00:39:54,000
+so I want to ask you
+
+958
+00:39:54,000 --> 00:39:56,000
+the following question.
+
+959
+00:39:56,000 --> 00:39:58,000
+How do you calculate
+
+960
+00:39:58,000 --> 00:40:00,000
+the B-value and the electrolyte?
+
+961
+00:40:00,000 --> 00:40:02,000
+We scan different CVs.
+
+962
+00:40:02,000 --> 00:40:04,000
+Each CV
+
+963
+00:40:04,000 --> 00:40:06,000
+has a current
+
+964
+00:40:06,000 --> 00:40:08,000
+at each voltage.
+
+965
+00:40:08,000 --> 00:40:10,000
+We analyze
+
+966
+00:40:10,000 --> 00:40:12,000
+each current
+
+967
+00:40:12,000 --> 00:40:14,000
+for the change of the minority.
+
+968
+00:40:14,000 --> 00:40:16,000
+B-value should be
+
+969
+00:40:16,000 --> 00:40:18,000
+less than 3V,
+
+970
+00:40:18,000 --> 00:40:20,000
+or it doesn't matter
+
+971
+00:40:20,000 --> 00:40:22,000
+even if it is any current.
+
+972
+00:40:22,000 --> 00:40:24,000
+In pseudo-capacitor,
+
+973
+00:40:24,000 --> 00:40:26,000
+basically,
+
+974
+00:40:26,000 --> 00:40:28,000
+there are
+
+975
+00:40:28,000 --> 00:40:30,000
+consecutive
+
+976
+00:40:30,000 --> 00:40:32,000
+redox reactions.
+
+977
+00:40:32,000 --> 00:40:34,000
+When you produce
+
+978
+00:40:34,000 --> 00:40:36,000
+a box,
+
+979
+00:40:36,000 --> 00:40:38,000
+you only analyze
+
+980
+00:40:38,000 --> 00:40:40,000
+the current at the peak.
+
+981
+00:40:40,000 --> 00:40:42,000
+You are not fair
+
+982
+00:40:42,000 --> 00:40:44,000
+to the electrons
+
+983
+00:40:44,000 --> 00:40:46,000
+Basically,
+
+984
+00:40:46,000 --> 00:40:48,000
+in pseudo-capacitor,
+
+985
+00:40:48,000 --> 00:40:50,000
+you can use this formula
+
+986
+00:40:50,000 --> 00:40:52,000
+on all CVs
+
+987
+00:40:52,000 --> 00:40:54,000
+to draw the continuous curve.
+
+988
+00:40:54,000 --> 00:40:56,000
+Another story
+
+989
+00:40:56,000 --> 00:40:58,000
+behind this is
+
+990
+00:40:58,000 --> 00:41:00,000
+the redox happens
+
+991
+00:41:00,000 --> 00:41:02,000
+below 2V.
+
+992
+00:41:02,000 --> 00:41:04,000
+It is less than 2V.
+
+993
+00:41:04,000 --> 00:41:06,000
+What do you see without redox?
+
+994
+00:41:06,000 --> 00:41:08,000
+You see EDLC.
+
+995
+00:41:08,000 --> 00:41:10,000
+What does EDLC mean?
+
+996
+00:41:10,000 --> 00:41:12,000
+EDLC means
+
+997
+00:41:12,000 --> 00:41:14,000
+the reaction
+
+998
+00:41:14,000 --> 00:41:16,000
+of the electron.
+
+999
+00:41:16,000 --> 00:41:18,000
+For example,
+
+1000
+00:41:18,000 --> 00:41:20,000
+the electron travels
+
+1001
+00:41:20,000 --> 00:41:22,000
+from far away
+
+1002
+00:41:22,000 --> 00:41:24,000
+to the surface of the electrode.
+
+1003
+00:41:24,000 --> 00:41:26,000
+What do you mean by diffusion control?
+
+1004
+00:41:26,000 --> 00:41:28,000
+Yes.
+
+1005
+00:41:28,000 --> 00:41:30,000
+In addition,
+
+1006
+00:41:30,000 --> 00:41:32,000
+we increase
+
+1007
+00:41:32,000 --> 00:41:34,000
+the density of Cdc,
+
+1008
+00:41:34,000 --> 00:41:36,000
+which increases the vacuum of the electrode.
+
+1009
+00:41:36,000 --> 00:41:38,000
+Without redox,
+
+1010
+00:41:38,000 --> 00:41:40,000
+the kinetic
+
+1011
+00:41:40,000 --> 00:41:42,000
+energy of the electrode
+
+1012
+00:41:42,000 --> 00:41:44,000
+increases.
+
+1013
+00:41:44,000 --> 00:41:46,000
+With redox,
+
+1014
+00:41:46,000 --> 00:41:48,000
+the kinetic energy of the electrode
+
+1015
+00:41:48,000 --> 00:41:50,000
+also increases.
+
+1016
+00:41:50,000 --> 00:41:52,000
+Any other questions?
+
+1017
+00:41:52,000 --> 00:41:54,000
+Thank you.
+
+1018
+00:41:54,000 --> 00:41:56,000
+The last question
+
+1019
+00:41:56,000 --> 00:41:58,000
+is the last one.
+
+1020
+00:41:58,000 --> 00:42:00,000
+Any other questions?
+
+1021
+00:42:00,000 --> 00:42:02,000
+I will ask later.
+
+1022
+00:42:02,000 --> 00:42:04,000
+Any other
+
+1023
+00:42:04,000 --> 00:42:06,000
+questions?
+
+1024
+00:42:06,000 --> 00:42:08,000
+Hello.
+
+1025
+00:42:08,000 --> 00:42:10,000
+I would like to ask Matt
+
+1026
+00:42:10,000 --> 00:42:12,000
+some questions.
+
+1027
+00:42:14,000 --> 00:42:16,000
+Matt, thank you for your speech.
+
+1028
+00:42:16,000 --> 00:42:18,000
+My main question is
+
+1029
+00:42:18,000 --> 00:42:20,000
+about your first project.
+
+1030
+00:42:20,000 --> 00:42:22,000
+At that time,
+
+1031
+00:42:22,000 --> 00:42:24,000
+I would like to know
+
+1032
+00:42:24,000 --> 00:42:26,000
+the particle size of
+
+1033
+00:42:26,000 --> 00:42:28,000
+Nairobia.
+
+1034
+00:42:28,000 --> 00:42:30,000
+The particle size
+
+1035
+00:42:30,000 --> 00:42:32,000
+is about
+
+1036
+00:42:32,000 --> 00:42:34,000
+here.
+
+1037
+00:42:34,000 --> 00:42:36,000
+You can see it in the upper right corner.
+
+1038
+00:42:36,000 --> 00:42:38,000
+The particle size is
+
+1039
+00:42:38,000 --> 00:42:40,000
+about 20-30 nm.
+
+1040
+00:42:40,000 --> 00:42:42,000
+20-30 nm.
+
+1041
+00:42:42,000 --> 00:42:44,000
+So,
+
+1042
+00:42:44,000 --> 00:42:46,000
+you will combine
+
+1043
+00:42:46,000 --> 00:42:48,000
+reduced graphene oxide and Cdc
+
+1044
+00:42:48,000 --> 00:42:50,000
+to increase
+
+1045
+00:42:50,000 --> 00:42:52,000
+the conductivity of the electrode.
+
+1046
+00:42:52,000 --> 00:42:54,000
+That's right.
+
+1047
+00:42:54,000 --> 00:42:56,000
+Cdc also provides vacuum.
+
+1048
+00:42:56,000 --> 00:42:58,000
+OK.
+
+1049
+00:42:58,000 --> 00:43:00,000
+I am doing research on
+
+1050
+00:43:00,000 --> 00:43:02,000
+hierarchical porous carbons.
+
+1051
+00:43:02,000 --> 00:43:04,000
+There are
+
+1052
+00:43:04,000 --> 00:43:06,000
+small micropores
+
+1053
+00:43:06,000 --> 00:43:08,000
+and large macropores.
+
+1054
+00:43:08,000 --> 00:43:10,000
+So,
+
+1055
+00:43:10,000 --> 00:43:12,000
+I am thinking
+
+1056
+00:43:12,000 --> 00:43:14,000
+that if we combine
+
+1057
+00:43:14,000 --> 00:43:16,000
+other vacuum materials,
+
+1058
+00:43:16,000 --> 00:43:18,000
+will it increase
+
+1059
+00:43:18,000 --> 00:43:20,000
+the conductivity of the electrode?
+
+1060
+00:43:20,000 --> 00:43:22,000
+Yes.
+
+1061
+00:43:22,000 --> 00:43:24,000
+Because
+
+1062
+00:43:24,000 --> 00:43:26,000
+I have enough vacuum,
+
+1063
+00:43:26,000 --> 00:43:28,000
+I can
+
+1064
+00:43:28,000 --> 00:43:30,000
+absorb more
+
+1065
+00:43:30,000 --> 00:43:32,000
+electrolytes
+
+1066
+00:43:32,000 --> 00:43:34,000
+into the electrode.
+
+1067
+00:43:36,000 --> 00:43:38,000
+There is a slide
+
+1068
+00:43:38,000 --> 00:43:40,000
+that I did not show.
+
+1069
+00:43:40,000 --> 00:43:42,000
+We still have some time.
+
+1070
+00:43:42,000 --> 00:43:44,000
+You can see
+
+1071
+00:43:44,000 --> 00:43:46,000
+why Nairobia requires
+
+1072
+00:43:46,000 --> 00:43:48,000
+a large vacuum.
+
+1073
+00:43:48,000 --> 00:43:50,000
+Basically,
+
+1074
+00:43:50,000 --> 00:43:52,000
+it comes from
+
+1075
+00:43:52,000 --> 00:43:54,000
+OK.
+
+1076
+00:43:54,000 --> 00:43:56,000
+This slide
+
+1077
+00:43:56,000 --> 00:43:58,000
+shows the result
+
+1078
+00:43:58,000 --> 00:44:00,000
+calculated by
+
+1079
+00:44:00,000 --> 00:44:02,000
+Nernst
+
+1080
+00:44:02,000 --> 00:44:04,000
+equation
+
+1081
+00:44:04,000 --> 00:44:06,000
+and Poisson equation.
+
+1082
+00:44:06,000 --> 00:44:08,000
+Poisson equation
+
+1083
+00:44:08,000 --> 00:44:10,000
+represents the
+
+1084
+00:44:10,000 --> 00:44:12,000
+dielectric constant
+
+1085
+00:44:12,000 --> 00:44:14,000
+of the material.
+
+1086
+00:44:14,000 --> 00:44:16,000
+So, under different voltages,
+
+1087
+00:44:16,000 --> 00:44:18,000
+how many electrons
+
+1088
+00:44:18,000 --> 00:44:20,000
+are on the surface.
+
+1089
+00:44:20,000 --> 00:44:22,000
+When the voltage
+
+1090
+00:44:22,000 --> 00:44:24,000
+moves to
+
+1091
+00:44:24,000 --> 00:44:26,000
+the middle of the graph,
+
+1092
+00:44:26,000 --> 00:44:28,000
+the capacitive part
+
+1093
+00:44:28,000 --> 00:44:30,000
+shows how many electrons
+
+1094
+00:44:30,000 --> 00:44:32,000
+are on the surface of the material.
+
+1095
+00:44:32,000 --> 00:44:34,000
+But when the voltage
+
+1096
+00:44:34,000 --> 00:44:36,000
+moves to a certain level,
+
+1097
+00:44:36,000 --> 00:44:38,000
+Nairobia starts to react.
+
+1098
+00:44:38,000 --> 00:44:40,000
+I need a large amount of
+
+1099
+00:44:40,000 --> 00:44:42,000
+electrons to enter the material.
+
+1100
+00:44:42,000 --> 00:44:44,000
+So, when it needs a large amount of electrons
+
+1101
+00:44:44,000 --> 00:44:46,000
+to enter the material,
+
+1102
+00:44:46,000 --> 00:44:48,000
+it will cause a surface vacuum.
+
+1103
+00:44:48,000 --> 00:44:50,000
+The surface vacuum
+
+1104
+00:44:50,000 --> 00:44:52,000
+is the reason
+
+1105
+00:44:52,000 --> 00:44:54,000
+why Nairobia's
+
+1106
+00:44:54,000 --> 00:44:56,000
+connectivity drops.
+
+1107
+00:44:56,000 --> 00:44:58,000
+That's why
+
+1108
+00:44:58,000 --> 00:45:00,000
+the material needs
+
+1109
+00:45:00,000 --> 00:45:02,000
+higher concavity
+
+1110
+00:45:02,000 --> 00:45:04,000
+to maintain
+
+1111
+00:45:04,000 --> 00:45:06,000
+the characteristics of
+
+1112
+00:45:06,000 --> 00:45:08,000
+the capacitive part
+
+1113
+00:45:08,000 --> 00:45:10,000
+at high speed
+
+1114
+00:45:10,000 --> 00:45:12,000
+or at high voltage.
+
+1115
+00:45:14,000 --> 00:45:16,000
+I have a follow-up question.
+
+1116
+00:45:16,000 --> 00:45:18,000
+How did you come up with
+
+1117
+00:45:18,000 --> 00:45:20,000
+reducing graphene oxide
+
+1118
+00:45:20,000 --> 00:45:22,000
+with Cdc?
+
+1119
+00:45:22,000 --> 00:45:24,000
+Reducing graphene oxide
+
+1120
+00:45:24,000 --> 00:45:26,000
+has another advantage
+
+1121
+00:45:26,000 --> 00:45:28,000
+in the synthesis.
+
+1122
+00:45:28,000 --> 00:45:30,000
+Basically,
+
+1123
+00:45:30,000 --> 00:45:32,000
+if you want to grow oxide,
+
+1124
+00:45:32,000 --> 00:45:34,000
+the oxygen ligand
+
+1125
+00:45:34,000 --> 00:45:36,000
+of graphene oxide
+
+1126
+00:45:36,000 --> 00:45:38,000
+can be the nucleation site
+
+1127
+00:45:38,000 --> 00:45:40,000
+of these oxides.
+
+1128
+00:45:40,000 --> 00:45:42,000
+Whether you want to grow metal particles
+
+1129
+00:45:42,000 --> 00:45:44,000
+or oxide particles,
+
+1130
+00:45:44,000 --> 00:45:46,000
+they are easy to grow on top.
+
+1131
+00:45:46,000 --> 00:45:48,000
+Since there are many sites,
+
+1132
+00:45:48,000 --> 00:45:50,000
+the particles can grow
+
+1133
+00:45:50,000 --> 00:45:52,000
+very small.
+
+1134
+00:45:54,000 --> 00:45:56,000
+Graphene oxide
+
+1135
+00:45:56,000 --> 00:45:58,000
+is like an additive.
+
+1136
+00:45:58,000 --> 00:46:00,000
+It can make your particle size very small.
+
+1137
+00:46:00,000 --> 00:46:02,000
+Second, it also increases
+
+1138
+00:46:02,000 --> 00:46:04,000
+the conductivity.
+
+1139
+00:46:04,000 --> 00:46:06,000
+In the case of graphene oxide,
+
+1140
+00:46:06,000 --> 00:46:08,000
+there are several ways to produce electricity.
+
+1141
+00:46:08,000 --> 00:46:10,000
+For example, when you do filtration,
+
+1142
+00:46:10,000 --> 00:46:12,000
+you use filtration to make it stack together.
+
+1143
+00:46:12,000 --> 00:46:14,000
+Because it is
+
+1144
+00:46:14,000 --> 00:46:16,000
+a two-dimensional structure,
+
+1145
+00:46:16,000 --> 00:46:18,000
+so when you do filtration,
+
+1146
+00:46:18,000 --> 00:46:20,000
+it will naturally
+
+1147
+00:46:20,000 --> 00:46:22,000
+become a very dense electrode.
+
+1148
+00:46:22,000 --> 00:46:24,000
+If it is a very dense electrode,
+
+1149
+00:46:24,000 --> 00:46:26,000
+basically,
+
+1150
+00:46:26,000 --> 00:46:28,000
+the electrolyte cannot penetrate.
+
+1151
+00:46:28,000 --> 00:46:30,000
+So we want to find
+
+1152
+00:46:30,000 --> 00:46:32,000
+a special structure,
+
+1153
+00:46:32,000 --> 00:46:34,000
+which is Cdc.
+
+1154
+00:46:36,000 --> 00:46:38,000
+This kind of
+
+1155
+00:46:38,000 --> 00:46:40,000
+structure of graphene oxide
+
+1156
+00:46:40,000 --> 00:46:42,000
+is mixed inside.
+
+1157
+00:46:42,000 --> 00:46:44,000
+But we don't want to mix too much,
+
+1158
+00:46:44,000 --> 00:46:46,000
+because if we mix too much,
+
+1159
+00:46:46,000 --> 00:46:48,000
+the density of the energy
+
+1160
+00:46:48,000 --> 00:46:50,000
+will be relatively reduced.
+
+1161
+00:46:50,000 --> 00:46:52,000
+Got it.
+
+1162
+00:46:52,000 --> 00:46:54,000
+Thank you.
+
+1163
+00:46:56,000 --> 00:46:58,000
+Are there any other questions?
+
+1164
+00:47:04,000 --> 00:47:06,000
+If not,
+
+1165
+00:47:06,000 --> 00:47:08,000
+I will ask my last question.
+
+1166
+00:47:08,000 --> 00:47:10,000
+After talking about ZMath,
+
+1167
+00:47:10,000 --> 00:47:12,000
+you mentioned
+
+1168
+00:47:12,000 --> 00:47:14,000
+how to distinguish the battery,
+
+1169
+00:47:14,000 --> 00:47:16,000
+but now
+
+1170
+00:47:16,000 --> 00:47:18,000
+in the telecom industry,
+
+1171
+00:47:18,000 --> 00:47:20,000
+there is a more popular topic,
+
+1172
+00:47:20,000 --> 00:47:22,000
+which is solid-state electrolyte or solid-state electrolyte.
+
+1173
+00:47:22,000 --> 00:47:24,000
+I want to know
+
+1174
+00:47:24,000 --> 00:47:26,000
+the difference between
+
+1175
+00:47:26,000 --> 00:47:28,000
+solid-state electrolyte
+
+1176
+00:47:28,000 --> 00:47:30,000
+and the other two,
+
+1177
+00:47:30,000 --> 00:47:32,000
+or how to distinguish them.
+
+1178
+00:47:34,000 --> 00:47:36,000
+Actually,
+
+1179
+00:47:36,000 --> 00:47:38,000
+I haven't done the study electrolyte part.
+
+1180
+00:47:38,000 --> 00:47:40,000
+You want to ask
+
+1181
+00:47:40,000 --> 00:47:42,000
+the study electrolyte part, right?
+
+1182
+00:47:42,000 --> 00:47:44,000
+Because I mentioned that
+
+1183
+00:47:44,000 --> 00:47:46,000
+the second topic,
+
+1184
+00:47:46,000 --> 00:47:48,000
+solid-state electrolyte,
+
+1185
+00:47:48,000 --> 00:47:50,000
+is also a popular topic.
+
+1186
+00:47:50,000 --> 00:47:52,000
+Yes, it used to be
+
+1187
+00:47:52,000 --> 00:47:54,000
+solid-state electrolyte,
+
+1188
+00:47:54,000 --> 00:47:56,000
+but we changed
+
+1189
+00:47:56,000 --> 00:47:58,000
+its structure,
+
+1190
+00:47:58,000 --> 00:48:00,000
+and used it as an electrolyte.
+
+1191
+00:48:02,000 --> 00:48:04,000
+Basically,
+
+1192
+00:48:04,000 --> 00:48:06,000
+solid-state electrolyte,
+
+1193
+00:48:08,000 --> 00:48:10,000
+I don't know much about it.
+
+1194
+00:48:10,000 --> 00:48:12,000
+What I know about solid-state electrolyte
+
+1195
+00:48:12,000 --> 00:48:14,000
+is that
+
+1196
+00:48:14,000 --> 00:48:16,000
+its conductivity
+
+1197
+00:48:16,000 --> 00:48:18,000
+must be very thin.
+
+1198
+00:48:18,000 --> 00:48:20,000
+Because its conductivity is not as fast as liquid.
+
+1199
+00:48:20,000 --> 00:48:22,000
+Although it is a solid-state electrolyte,
+
+1200
+00:48:22,000 --> 00:48:24,000
+it is not as fast as liquid.
+
+1201
+00:48:24,000 --> 00:48:26,000
+Another thing is that
+
+1202
+00:48:26,000 --> 00:48:28,000
+everyone says that
+
+1203
+00:48:28,000 --> 00:48:30,000
+solid-state electrolyte
+
+1204
+00:48:32,000 --> 00:48:34,000
+can avoid
+
+1205
+00:48:34,000 --> 00:48:36,000
+SEI reaction.
+
+1206
+00:48:36,000 --> 00:48:38,000
+But in fact,
+
+1207
+00:48:38,000 --> 00:48:40,000
+this is a mistake.
+
+1208
+00:48:40,000 --> 00:48:42,000
+In fact, solid-state electrolyte
+
+1209
+00:48:42,000 --> 00:48:44,000
+will have a big effect
+
+1210
+00:48:44,000 --> 00:48:46,000
+on its SEI
+
+1211
+00:48:46,000 --> 00:48:48,000
+in its first cycle.
+
+1212
+00:48:48,000 --> 00:48:50,000
+In our group,
+
+1213
+00:48:50,000 --> 00:48:52,000
+in addition to doing high-speed charge,
+
+1214
+00:48:52,000 --> 00:48:54,000
+another part is
+
+1215
+00:48:54,000 --> 00:48:56,000
+3D battery.
+
+1216
+00:48:56,000 --> 00:48:58,000
+3D battery is to make some
+
+1217
+00:48:58,000 --> 00:49:00,000
+electrical structure to make it a satellite battery.
+
+1218
+00:49:00,000 --> 00:49:02,000
+In that part,
+
+1219
+00:49:04,000 --> 00:49:06,000
+for solid-state electrolyte,
+
+1220
+00:49:06,000 --> 00:49:08,000
+we hope to use solid-state electrolyte.
+
+1221
+00:49:08,000 --> 00:49:10,000
+Because solid-state electrolyte
+
+1222
+00:49:10,000 --> 00:49:12,000
+has a higher density
+
+1223
+00:49:12,000 --> 00:49:14,000
+than liquid.
+
+1224
+00:49:14,000 --> 00:49:16,000
+So we can save a lot of liquid
+
+1225
+00:49:16,000 --> 00:49:18,000
+needed volume.
+
+1226
+00:49:18,000 --> 00:49:20,000
+But they found that in the first cycle,
+
+1227
+00:49:20,000 --> 00:49:22,000
+this SEI
+
+1228
+00:49:22,000 --> 00:49:24,000
+will still occur.
+
+1229
+00:49:24,000 --> 00:49:26,000
+And after it occurs,
+
+1230
+00:49:26,000 --> 00:49:28,000
+because it is a solid-state electrolyte,
+
+1231
+00:49:28,000 --> 00:49:30,000
+it is very difficult to solve.
+
+1232
+00:49:30,000 --> 00:49:32,000
+Basically, your material is closely connected at the beginning.
+
+1233
+00:49:32,000 --> 00:49:34,000
+But after the first cycle,
+
+1234
+00:49:34,000 --> 00:49:36,000
+it will separate.
+
+1235
+00:49:40,000 --> 00:49:42,000
+Thank you for your answer.
+
+1236
+00:49:46,000 --> 00:49:48,000
+Are there any other questions?
+
+1237
+00:49:54,000 --> 00:49:56,000
+If there are no questions,
+
+1238
+00:49:56,000 --> 00:49:58,000
+Max,
+
+1239
+00:49:58,000 --> 00:50:00,000
+did you leave your email?
+
+1240
+00:50:00,000 --> 00:50:02,000
+Yes,
+
+1241
+00:50:02,000 --> 00:50:04,000
+I put it in the last slide.
+
+1242
+00:50:08,000 --> 00:50:10,000
+If you have any questions,
+
+1243
+00:50:10,000 --> 00:50:12,000
+you can
+
+1244
+00:50:14,000 --> 00:50:16,000
+send me an email.
+
+1245
+00:50:20,000 --> 00:50:22,000
+Thank you for your participation.
+
+1246
+00:50:22,000 --> 00:50:24,000
+Thank you, Max,
+
+1247
+00:50:24,000 --> 00:50:26,000
+for giving us such a wonderful speech.
+
+1248
+00:50:28,000 --> 00:50:30,000
+This recording
+
+1249
+00:50:30,000 --> 00:50:32,000
+will be available online
+
+1250
+00:50:32,000 --> 00:50:34,000
+in about a week.
+
+1251
+00:50:34,000 --> 00:50:36,000
+You can continue
+
+1252
+00:50:36,000 --> 00:50:38,000
+to discuss
+
+1253
+00:50:38,000 --> 00:50:40,000
+with Max
+
+1254
+00:50:40,000 --> 00:50:42,000
+related research.
+
+1255
+00:50:42,000 --> 00:50:44,000
+Thank you.
+

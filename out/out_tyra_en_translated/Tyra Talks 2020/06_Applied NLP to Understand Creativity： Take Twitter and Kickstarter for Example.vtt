@@ -1,0 +1,4919 @@
+WEBVTT
+
+00:00.000 --> 00:13.000
+Hello everyone, I am the host of today's presentation. My name is Lu Haoran. I am currently studying for my doctorate degree at the University of Connecticut in the United States.
+
+00:13.000 --> 00:17.000
+I am also a staff member of Project Terra.
+
+00:17.000 --> 00:37.000
+Project Terra provides online presentations to young Taiwanese scholars from all over the world.
+
+00:38.000 --> 00:43.000
+Today's speaker is Mark Du Youlin.
+
+00:43.000 --> 00:50.000
+I would like to start by reminding Mark that what we are about to see is not his video.
+
+00:50.000 --> 00:54.000
+Therefore, I would like to ask him to share his screen.
+
+00:54.000 --> 01:12.000
+Mark's past experience is in social science and education. His major is artificial intelligence, which includes personality, creativity, and consumer behavior.
+
+01:13.000 --> 01:23.000
+After his research on cognitive science, his current research is related to natural language.
+
+01:23.000 --> 01:29.000
+He is now a research assistant at the Center for Cognitive Neuroscience at the University of Connecticut.
+
+01:29.000 --> 01:32.000
+He also has a personal website.
+
+01:32.000 --> 01:39.000
+You are welcome to visit Project Terra's website for more information.
+
+01:39.000 --> 01:45.000
+Today's topic is Applied NLP to Understand Creativity.
+
+01:45.000 --> 01:49.000
+Take Twitter and Kickstarter for example.
+
+01:49.000 --> 01:55.000
+It focuses on the knowledge of reverse engineering and applied psychology.
+
+01:55.000 --> 01:59.000
+I believe everyone is very interested in today's presentation.
+
+01:59.000 --> 02:03.000
+Thank you for attending today's presentation.
+
+02:03.000 --> 02:15.000
+Before Mark's presentation, I would like to ask everyone to leave a comment in the chat area.
+
+02:15.000 --> 02:18.000
+I will pass this question to Mark.
+
+02:18.000 --> 02:19.000
+Please reply.
+
+02:19.000 --> 02:22.000
+Now I will give the floor to Mark.
+
+02:22.000 --> 02:24.000
+Hello, everyone.
+
+02:24.000 --> 02:28.000
+Thank you for attending today's online presentation.
+
+02:29.000 --> 02:33.000
+Today's topic is about public knowledge.
+
+02:33.000 --> 02:36.000
+My name is Du Youlin.
+
+02:36.000 --> 02:38.000
+My English name is Mark.
+
+02:38.000 --> 02:40.000
+I will jump to my self-introduction page first.
+
+02:40.000 --> 02:42.000
+My name is Mark.
+
+02:42.000 --> 02:47.000
+At first, I studied social science at the University of Connecticut.
+
+02:47.000 --> 02:56.000
+Then I transferred to the adult education department at the University of Connecticut.
+
+02:56.000 --> 03:00.000
+Then I stayed at the University of Connecticut.
+
+03:00.000 --> 03:05.000
+I was a research assistant at CS.
+
+03:05.000 --> 03:11.000
+Now I am a research assistant at the Center for Neuroscience Research at the University of Connecticut.
+
+03:11.000 --> 03:18.000
+When I was in college, there was a professor who specializes in human resources management.
+
+03:18.000 --> 03:21.000
+He was interested in creativity.
+
+03:21.000 --> 03:25.000
+So I learned from him.
+
+03:25.000 --> 03:29.000
+When I graduated from college, I worked on an AI project.
+
+03:29.000 --> 03:32.000
+So I am also quite interested in computer science.
+
+03:32.000 --> 03:36.000
+I will combine these two topics today.
+
+03:36.000 --> 03:44.000
+If you are interested in psychology, computer science, computer science, or data science,
+
+03:44.000 --> 03:47.000
+you are welcome to communicate with me.
+
+03:47.000 --> 03:49.000
+Data science has three parts.
+
+03:49.000 --> 03:52.000
+If you have seen the literature diagram,
+
+03:52.000 --> 03:54.000
+The top left corner is computer science.
+
+03:54.000 --> 03:56.000
+The top right corner is data science.
+
+03:56.000 --> 03:58.000
+The bottom is domain knowledge.
+
+03:58.000 --> 04:00.000
+It depends on which major you are majoring in.
+
+04:00.000 --> 04:04.000
+This field is really fascinating.
+
+04:04.000 --> 04:08.000
+I will share it now.
+
+04:08.000 --> 04:14.000
+There are four parts to my outline today.
+
+04:14.000 --> 04:16.000
+The second part is self-introduction.
+
+04:17.000 --> 04:21.000
+The second part is about public knowledge.
+
+04:21.000 --> 04:26.000
+In general, people think that creativity is good.
+
+04:26.000 --> 04:29.000
+In theory, the public knowledge website is very popular.
+
+04:29.000 --> 04:33.000
+If you are very creative, I will share my research results.
+
+04:33.000 --> 04:39.000
+The third part is about behavioral economics.
+
+04:39.000 --> 04:41.000
+It's called reversal bias.
+
+04:42.000 --> 04:44.000
+In a certain situation, we will choose A.
+
+04:44.000 --> 04:46.000
+In a certain situation, we will choose B.
+
+04:46.000 --> 04:50.000
+Why do we have such a reversal bias?
+
+04:50.000 --> 04:52.000
+I will explain more later.
+
+04:52.000 --> 04:54.000
+The last part is the conclusion.
+
+04:54.000 --> 04:58.000
+Let's review today's topic.
+
+04:58.000 --> 05:00.000
+Creative Fundraising.
+
+05:00.000 --> 05:04.000
+How to write a creative fundraising?
+
+05:04.000 --> 05:06.000
+How to raise the most money?
+
+05:06.000 --> 05:11.000
+The tool I use is the latent language analysis in natural language processing.
+
+05:11.000 --> 05:16.000
+I use KS as an example.
+
+05:16.000 --> 05:20.000
+Let me briefly explain the definition of creativity.
+
+05:20.000 --> 05:23.000
+There are two definitions of creativity.
+
+05:23.000 --> 05:25.000
+The first one is the most familiar to us.
+
+05:25.000 --> 05:27.000
+It's novelty.
+
+05:27.000 --> 05:30.000
+It's the level of imagination.
+
+05:30.000 --> 05:32.000
+The second one is more interesting.
+
+05:32.000 --> 05:34.000
+The second one is useful.
+
+05:34.000 --> 05:36.000
+It's not just imagination.
+
+05:36.000 --> 05:40.000
+Your imagination can be used.
+
+05:40.000 --> 05:42.000
+That's the so-called creativity.
+
+05:42.000 --> 05:48.000
+There is a theory that creativity is economic theory.
+
+05:48.000 --> 05:52.000
+If you can achieve great success in the economy,
+
+05:52.000 --> 05:58.000
+we will think you are a useful ability.
+
+05:58.000 --> 06:02.000
+That's all for today.
+
+06:05.000 --> 06:07.000
+Sorry.
+
+06:11.000 --> 06:14.000
+At the beginning of the first day,
+
+06:14.000 --> 06:17.000
+I want to invite you to do a small activity.
+
+06:17.000 --> 06:21.000
+This activity is a question.
+
+06:21.000 --> 06:26.000
+The three pictures on the screen are the three products on Kickstarter.
+
+06:26.000 --> 06:29.000
+The leftmost one is a ten-second toothbrush.
+
+06:29.000 --> 06:31.000
+When you open your mouth,
+
+06:31.000 --> 06:37.000
+the machine will clean your teeth in ten seconds.
+
+06:37.000 --> 06:39.000
+This is the leftmost one.
+
+06:39.000 --> 06:43.000
+The middle one is the 8K VR glasses.
+
+06:43.000 --> 06:49.000
+The rightmost one is the first smart watch in the world.
+
+06:49.000 --> 06:51.000
+These three are on Kickstarter.
+
+06:51.000 --> 06:58.000
+I want you to guess which one is more creative.
+
+06:58.000 --> 07:02.000
+In terms of natural language processing,
+
+07:02.000 --> 07:05.000
+which one is more creative?
+
+07:05.000 --> 07:09.000
+Which one gets the most money?
+
+07:09.000 --> 07:12.000
+If you use consumer questionnaire,
+
+07:12.000 --> 07:15.000
+which one is more likely to be chosen by consumers?
+
+07:28.000 --> 07:37.000
+At this time, I want to cut it back.
+
+07:45.000 --> 07:47.000
+Everyone guessed it.
+
+07:47.000 --> 07:52.000
+One person said he thought it was VR.
+
+07:52.000 --> 07:54.000
+The other three said it was a toothbrush.
+
+07:54.000 --> 07:57.000
+Four people said it was a toothbrush.
+
+07:57.000 --> 07:59.000
+More and more people chose the toothbrush.
+
+07:59.000 --> 08:01.000
+More and more people chose the toothbrush.
+
+08:04.000 --> 08:05.000
+This is quite interesting.
+
+08:05.000 --> 08:08.000
+I also want to brush my teeth clean in ten seconds.
+
+08:20.000 --> 08:23.000
+Let's wait another 20 seconds.
+
+08:23.000 --> 08:24.000
+Okay.
+
+08:26.000 --> 08:31.000
+I want to tell you that the screen has turned white again.
+
+08:31.000 --> 08:35.000
+Let me check the comments.
+
+08:39.000 --> 08:40.000
+Okay.
+
+08:40.000 --> 08:45.000
+Let me take a look.
+
+08:45.000 --> 08:49.000
+Two people said it was VR.
+
+08:49.000 --> 08:52.000
+The other three said it was 567.
+
+08:52.000 --> 08:56.000
+About seven people said it was a toothbrush.
+
+08:56.000 --> 08:57.000
+Okay.
+
+08:57.000 --> 09:00.000
+Let me switch back.
+
+09:00.000 --> 09:01.000
+Okay.
+
+09:01.000 --> 09:06.000
+Let me announce the answer.
+
+09:06.000 --> 09:21.000
+Sorry, my mouse...
+
+09:21.000 --> 09:23.000
+I can't see my mouse.
+
+09:23.000 --> 09:25.000
+Oh, there it is.
+
+09:25.000 --> 09:27.000
+Okay.
+
+09:27.000 --> 09:28.000
+Announce the answer.
+
+09:28.000 --> 09:32.000
+The mouse on the far left has the lowest amount of money.
+
+09:33.000 --> 09:37.000
+The mouse on the far right has the highest amount of money.
+
+09:37.000 --> 09:41.000
+However, if it is processed by a natural source and a questionnaire,
+
+09:41.000 --> 09:43.000
+it will be the opposite.
+
+09:43.000 --> 09:46.000
+As everyone voted,
+
+09:46.000 --> 09:49.000
+everyone prefers a ten-second toothbrush.
+
+09:49.000 --> 09:52.000
+If it is processed by a natural source,
+
+09:52.000 --> 09:55.000
+the ten-second toothbrush is the most creative.
+
+09:55.000 --> 09:56.000
+Okay.
+
+09:56.000 --> 09:58.000
+You may think,
+
+09:58.000 --> 09:59.000
+how can it be like this?
+
+09:59.000 --> 10:02.000
+It looks like a great product.
+
+10:02.000 --> 10:05.000
+How can it have such a low amount of money?
+
+10:05.000 --> 10:09.000
+Next, I will introduce it.
+
+10:11.000 --> 10:12.000
+Okay.
+
+10:12.000 --> 10:18.000
+This product is recognized as one of the most creative products in history.
+
+10:18.000 --> 10:20.000
+It is our iPhone.
+
+10:20.000 --> 10:25.000
+Before Apple launched the iPhone,
+
+10:25.000 --> 10:28.000
+it failed about 12 times.
+
+10:28.000 --> 10:32.000
+Except for iPod, Macintosh, and Apple II.
+
+10:32.000 --> 10:35.000
+It failed about 12 times.
+
+10:35.000 --> 10:37.000
+Among these 12 times,
+
+10:37.000 --> 10:40.000
+there are 9 products.
+
+10:40.000 --> 10:41.000
+I listed them here.
+
+10:41.000 --> 10:43.000
+1, 2, 3, 4, 5, 6, 7, 8, 9.
+
+10:43.000 --> 10:46.000
+These 9 products have something in common.
+
+10:46.000 --> 10:48.000
+They all have something in common.
+
+10:48.000 --> 10:50.000
+In fact, there is something in common
+
+10:50.000 --> 10:54.000
+on the iPhone.
+
+10:54.000 --> 10:56.000
+But the iPhone didn't fail.
+
+10:56.000 --> 10:58.000
+And this feature
+
+10:58.000 --> 11:01.000
+became the selling point of the iPhone.
+
+11:01.000 --> 11:04.000
+It became the selling point of the iPhone.
+
+11:04.000 --> 11:06.000
+Let's review it.
+
+11:06.000 --> 11:08.000
+There are Newton, Lisa,
+
+11:08.000 --> 11:12.000
+Apple TV, and palm-shaped computer.
+
+11:12.000 --> 11:16.000
+There are many reasons for the failure of these products.
+
+11:16.000 --> 11:18.000
+But they have one thing in common.
+
+11:18.000 --> 11:20.000
+The iPhone has it, too.
+
+11:20.000 --> 11:22.000
+It's too expensive.
+
+11:24.000 --> 11:26.000
+Frankly speaking,
+
+11:26.000 --> 11:28.000
+I personally think
+
+11:28.000 --> 11:31.000
+the design of the iPhone is really amazing.
+
+11:31.000 --> 11:33.000
+But in terms of business strategy,
+
+11:33.000 --> 11:35.000
+especially in terms of pricing,
+
+11:35.000 --> 11:39.000
+it is a completely wrong strategy.
+
+11:39.000 --> 11:41.000
+Because it failed 9 times in a row.
+
+11:41.000 --> 11:43.000
+This is definitely not a coincidence.
+
+11:43.000 --> 11:46.000
+This is definitely the consumer's preference.
+
+11:46.000 --> 11:48.000
+So we can see that
+
+11:48.000 --> 11:50.000
+if a creative product
+
+11:50.000 --> 11:52.000
+is priced too high,
+
+11:52.000 --> 11:56.000
+the probability of failure is very high.
+
+11:56.000 --> 11:58.000
+Even a genius like Dr. Jia
+
+11:58.000 --> 12:00.000
+can't save this thing.
+
+12:00.000 --> 12:02.000
+Next,
+
+12:02.000 --> 12:07.000
+before I solve this problem,
+
+12:07.000 --> 12:12.000
+let me introduce the natural resource processing tool I use.
+
+12:12.000 --> 12:14.000
+This tool is called
+
+12:14.000 --> 12:16.000
+latent semantic analysis.
+
+12:16.000 --> 12:18.000
+It's a very interesting field in AI.
+
+12:18.000 --> 12:23.000
+It's called latent semantic analysis.
+
+12:23.000 --> 12:25.000
+This language analysis
+
+12:25.000 --> 12:27.000
+assumes that
+
+12:27.000 --> 12:29.000
+the similar text
+
+12:29.000 --> 12:31.000
+between text and text
+
+12:31.000 --> 12:34.000
+is less creative.
+
+12:34.000 --> 12:36.000
+If these two words
+
+12:36.000 --> 12:39.000
+are far apart on the language network,
+
+12:39.000 --> 12:42.000
+if the probability of it appearing in the same article
+
+12:42.000 --> 12:44.000
+is relatively low,
+
+12:44.000 --> 12:47.000
+then we assume that it is more creative.
+
+12:47.000 --> 12:49.000
+Because you think of something
+
+12:49.000 --> 12:51.000
+that others may not think of.
+
+12:51.000 --> 12:53.000
+People rarely connect
+
+12:53.000 --> 12:55.000
+10 seconds with machines and tools.
+
+12:55.000 --> 12:57.000
+So of course,
+
+12:57.000 --> 12:59.000
+it is more creative.
+
+12:59.000 --> 13:01.000
+Latent semantic analysis,
+
+13:01.000 --> 13:04.000
+in addition to being used in this creative field,
+
+13:04.000 --> 13:07.000
+it can help you sort your articles.
+
+13:07.000 --> 13:09.000
+You can throw about five sentences.
+
+13:09.000 --> 13:11.000
+After five sentences,
+
+13:11.000 --> 13:13.000
+it may divide you into two concepts.
+
+13:13.000 --> 13:15.000
+In these two concepts,
+
+13:15.000 --> 13:17.000
+there will be a lot of words below.
+
+13:17.000 --> 13:19.000
+You can see that
+
+13:19.000 --> 13:21.000
+the meaning of the A group of words is closer.
+
+13:21.000 --> 13:24.000
+The meaning of the B group of words is closer.
+
+13:24.000 --> 13:26.000
+The result may be different from what you think.
+
+13:26.000 --> 13:29.000
+So if you are interested in LSA,
+
+13:29.000 --> 13:33.000
+you can search on the Internet
+
+13:33.000 --> 13:35.000
+and try it.
+
+13:35.000 --> 13:36.000
+This is LSA.
+
+13:36.000 --> 13:39.000
+This picture is a bit out of place.
+
+13:39.000 --> 13:41.000
+To put it simply,
+
+13:41.000 --> 13:44.000
+this is a screenshot of a paper.
+
+13:44.000 --> 13:47.000
+This paper was written by
+
+13:47.000 --> 13:49.000
+a professor at UNC,
+
+13:49.000 --> 13:51.000
+Kurt Gray.
+
+13:51.000 --> 13:53.000
+He led a paper.
+
+13:53.000 --> 13:56.000
+He measured creativity with words.
+
+13:56.000 --> 13:59.000
+The green one below is Low Creativity.
+
+13:59.000 --> 14:01.000
+He asked the audience
+
+14:01.000 --> 14:03.000
+to write words
+
+14:04.000 --> 14:06.000
+with their own ideas.
+
+14:06.000 --> 14:08.000
+They kept writing and writing.
+
+14:08.000 --> 14:10.000
+They tried to write something creative.
+
+14:10.000 --> 14:12.000
+For example,
+
+14:12.000 --> 14:14.000
+this group below
+
+14:14.000 --> 14:16.000
+is called Grape, Strawberry, Fruit.
+
+14:16.000 --> 14:18.000
+These are all fruits.
+
+14:18.000 --> 14:20.000
+This is very close.
+
+14:20.000 --> 14:21.000
+In terms of definition,
+
+14:21.000 --> 14:23.000
+we can say that it is less creative.
+
+14:23.000 --> 14:24.000
+For the above,
+
+14:24.000 --> 14:28.000
+Grease, Slick, Sick, Nelsia, Ocean, Glass,
+
+14:28.000 --> 14:30.000
+it seems that
+
+14:30.000 --> 14:32.000
+they appear in the same article.
+
+14:32.000 --> 14:34.000
+We define that
+
+14:34.000 --> 14:36.000
+this person
+
+14:36.000 --> 14:38.000
+is more creative
+
+14:38.000 --> 14:40.000
+and more imaginative.
+
+14:42.000 --> 14:44.000
+After introducing
+
+14:44.000 --> 14:46.000
+the method of measuring creativity,
+
+14:46.000 --> 14:49.000
+let's go back to the previous question.
+
+14:49.000 --> 14:51.000
+Why do we like creativity
+
+14:51.000 --> 14:53.000
+when we do
+
+14:53.000 --> 14:55.000
+paper research,
+
+14:55.000 --> 14:58.000
+but we don't like it when we actually buy it?
+
+14:58.000 --> 15:00.000
+As you just saw,
+
+15:00.000 --> 15:02.000
+if you do paper research,
+
+15:02.000 --> 15:04.000
+when you actually
+
+15:04.000 --> 15:06.000
+talk about it,
+
+15:06.000 --> 15:08.000
+you will choose
+
+15:08.000 --> 15:10.000
+creative products.
+
+15:10.000 --> 15:12.000
+Computers can also measure this.
+
+15:12.000 --> 15:14.000
+But if you put it
+
+15:14.000 --> 15:16.000
+on the website
+
+15:16.000 --> 15:18.000
+or sell it
+
+15:18.000 --> 15:20.000
+directly on the market,
+
+15:20.000 --> 15:22.000
+sometimes
+
+15:22.000 --> 15:24.000
+these very novel products
+
+15:24.000 --> 15:27.000
+are not sold well.
+
+15:27.000 --> 15:29.000
+Why is this?
+
+15:29.000 --> 15:31.000
+Because
+
+15:31.000 --> 15:33.000
+we are actually
+
+15:33.000 --> 15:35.000
+very
+
+15:35.000 --> 15:37.000
+risk-averse.
+
+15:37.000 --> 15:39.000
+When a product is
+
+15:39.000 --> 15:41.000
+different from others,
+
+15:41.000 --> 15:43.000
+consumers
+
+15:43.000 --> 15:45.000
+like your creativity.
+
+15:45.000 --> 15:47.000
+But on the other hand,
+
+15:47.000 --> 15:49.000
+you have to think that
+
+15:49.000 --> 15:51.000
+your product is very creative,
+
+15:51.000 --> 15:53.000
+but because it is new,
+
+15:53.000 --> 15:55.000
+we have never seen you before.
+
+15:55.000 --> 15:57.000
+We will have uncertainty.
+
+15:57.000 --> 15:59.000
+Uncertainty will produce
+
+15:59.000 --> 16:01.000
+another thing called risk.
+
+16:01.000 --> 16:03.000
+Let's take
+
+16:03.000 --> 16:05.000
+Kickstarter as an example.
+
+16:05.000 --> 16:07.000
+Kickstarter is a fundraising website.
+
+16:07.000 --> 16:09.000
+Before your fundraising amount
+
+16:09.000 --> 16:11.000
+reaches the target,
+
+16:11.000 --> 16:13.000
+it will not be sold.
+
+16:13.000 --> 16:15.000
+Your money may be invested
+
+16:15.000 --> 16:17.000
+and it may be reimbursed.
+
+16:17.000 --> 16:19.000
+Because the investment failed,
+
+16:19.000 --> 16:21.000
+it can't be sold.
+
+16:21.000 --> 16:23.000
+At this time, consumers will measure
+
+16:23.000 --> 16:25.000
+the risk.
+
+16:25.000 --> 16:27.000
+If I buy your product,
+
+16:27.000 --> 16:29.000
+aka invest in your product,
+
+16:29.000 --> 16:31.000
+will it evaporate
+
+16:31.000 --> 16:33.000
+or not be sold?
+
+16:33.000 --> 16:35.000
+So when your product is
+
+16:35.000 --> 16:37.000
+very novel,
+
+16:37.000 --> 16:39.000
+on the other hand,
+
+16:39.000 --> 16:41.000
+people will be a little scared
+
+16:41.000 --> 16:43.000
+and dare not buy it.
+
+16:43.000 --> 16:45.000
+When I asked my friends before,
+
+16:45.000 --> 16:47.000
+I got a similar result.
+
+16:47.000 --> 16:49.000
+My friends also chose this way.
+
+16:49.000 --> 16:51.000
+Their reason is that
+
+16:51.000 --> 16:53.000
+they really want to buy it,
+
+16:53.000 --> 16:55.000
+but it is too expensive.
+
+16:55.000 --> 16:57.000
+This is what people think.
+
+16:57.000 --> 16:59.000
+This is very strange.
+
+16:59.000 --> 17:01.000
+So,
+
+17:01.000 --> 17:03.000
+do we like
+
+17:03.000 --> 17:05.000
+creative products
+
+17:05.000 --> 17:07.000
+or hate creative products?
+
+17:07.000 --> 17:09.000
+This is very strange.
+
+17:09.000 --> 17:11.000
+It means that
+
+17:11.000 --> 17:13.000
+our attitude has changed.
+
+17:13.000 --> 17:15.000
+We like it and we hate it.
+
+17:15.000 --> 17:17.000
+I want to cut this thing
+
+17:17.000 --> 17:19.000
+from the level of
+
+17:19.000 --> 17:21.000
+behavior economics.
+
+17:21.000 --> 17:23.000
+In behavior economics,
+
+17:23.000 --> 17:25.000
+there is a thing called
+
+17:25.000 --> 17:27.000
+conversion preference.
+
+17:27.000 --> 17:29.000
+These two economists
+
+17:29.000 --> 17:31.000
+did research in 1973.
+
+17:31.000 --> 17:33.000
+When we
+
+17:33.000 --> 17:35.000
+choose a product,
+
+17:35.000 --> 17:37.000
+if its price
+
+17:37.000 --> 17:39.000
+is fluctuating,
+
+17:39.000 --> 17:41.000
+we will put the
+
+17:41.000 --> 17:43.000
+high and low rankings
+
+17:43.000 --> 17:45.000
+of this price
+
+17:45.000 --> 17:47.000
+to make a conversion.
+
+17:47.000 --> 17:49.000
+A is better than B,
+
+17:49.000 --> 17:51.000
+but after the price adjustment,
+
+17:51.000 --> 17:53.000
+B is suddenly better than A.
+
+17:53.000 --> 17:55.000
+This is very contradictory
+
+17:55.000 --> 17:57.000
+to traditional economics.
+
+17:57.000 --> 17:59.000
+No matter what,
+
+17:59.000 --> 18:01.000
+A is good.
+
+18:01.000 --> 18:03.000
+No matter how the price changes,
+
+18:03.000 --> 18:05.000
+I will definitely choose it.
+
+18:05.000 --> 18:07.000
+This is the development
+
+18:07.000 --> 18:09.000
+of behavior economics.
+
+18:09.000 --> 18:11.000
+This is a small experiment.
+
+18:11.000 --> 18:13.000
+Which plan do you
+
+18:13.000 --> 18:15.000
+prefer?
+
+18:15.000 --> 18:17.000
+We are now
+
+18:17.000 --> 18:19.000
+investing in a plan
+
+18:19.000 --> 18:21.000
+to save African children.
+
+18:21.000 --> 18:23.000
+We spend $1,000 to save
+
+18:23.000 --> 18:25.000
+100 children's lives.
+
+18:25.000 --> 18:27.000
+We feed them.
+
+18:27.000 --> 18:29.000
+This is the first plan.
+
+18:29.000 --> 18:31.000
+Or we use
+
+18:31.000 --> 18:33.000
+$2,000
+
+18:33.000 --> 18:35.000
+to save
+
+18:35.000 --> 18:37.000
+300
+
+18:37.000 --> 18:39.000
+African children's lives.
+
+18:39.000 --> 18:41.000
+This is very
+
+18:41.000 --> 18:43.000
+intuitive.
+
+18:43.000 --> 18:45.000
+The proportion is not equal.
+
+18:45.000 --> 18:47.000
+$2,000 can save
+
+18:47.000 --> 18:49.000
+300 lives.
+
+18:49.000 --> 18:51.000
+The return on investment is higher than the previous plan.
+
+18:51.000 --> 18:53.000
+There is no doubt.
+
+18:53.000 --> 18:55.000
+Moreover,
+
+18:55.000 --> 18:57.000
+life is priceless.
+
+18:57.000 --> 18:59.000
+You can't use money to measure life.
+
+18:59.000 --> 19:01.000
+It is reasonable to
+
+19:01.000 --> 19:03.000
+choose A.
+
+19:03.000 --> 19:05.000
+However,
+
+19:05.000 --> 19:07.000
+if
+
+19:07.000 --> 19:09.000
+today
+
+19:09.000 --> 19:11.000
+I cover
+
+19:11.000 --> 19:13.000
+A plan
+
+19:13.000 --> 19:15.000
+to save 100 lives,
+
+19:15.000 --> 19:17.000
+B plan to save 300 lives,
+
+19:17.000 --> 19:19.000
+A plan is $1,000,
+
+19:19.000 --> 19:21.000
+but
+
+19:21.000 --> 19:23.000
+I cover
+
+19:23.000 --> 19:25.000
+B plan $2,000,
+
+19:25.000 --> 19:27.000
+I ask you
+
+19:27.000 --> 19:29.000
+if you save 300 lives,
+
+19:29.000 --> 19:31.000
+how much money
+
+19:31.000 --> 19:33.000
+do you think the government
+
+19:33.000 --> 19:35.000
+should spend to
+
+19:35.000 --> 19:37.000
+save these lives?
+
+19:37.000 --> 19:39.000
+However,
+
+19:39.000 --> 19:41.000
+usually
+
+19:41.000 --> 19:43.000
+the beneficiary will answer
+
+19:43.000 --> 19:45.000
+the price lower than $2,000.
+
+19:45.000 --> 19:47.000
+For example,
+
+19:47.000 --> 19:49.000
+$1,500, $1,400, $1,300
+
+19:49.000 --> 19:51.000
+will not
+
+19:51.000 --> 19:53.000
+jump to $3,000.
+
+19:53.000 --> 19:55.000
+They will
+
+19:55.000 --> 19:57.000
+use your $1,000
+
+19:57.000 --> 19:59.000
+to save 100 lives.
+
+19:59.000 --> 20:01.000
+This is
+
+20:01.000 --> 20:03.000
+Daniel Kahneman
+
+20:03.000 --> 20:05.000
+and Tversky's
+
+20:05.000 --> 20:07.000
+anchoring bias.
+
+20:07.000 --> 20:09.000
+When you are given a set amount of money,
+
+20:09.000 --> 20:11.000
+you will make some mistakes later.
+
+20:11.000 --> 20:13.000
+You will not
+
+20:13.000 --> 20:15.000
+multiply
+
+20:15.000 --> 20:17.000
+100 to 300,
+
+20:17.000 --> 20:19.000
+1,000 to 3,000.
+
+20:19.000 --> 20:21.000
+We will save a little
+
+20:21.000 --> 20:23.000
+$1,500, $1,600 will not
+
+20:23.000 --> 20:25.000
+jump to $2,000.
+
+20:25.000 --> 20:27.000
+This is the anchoring bias
+
+20:27.000 --> 20:29.000
+in behavioral psychology.
+
+20:37.000 --> 20:39.000
+Let's go back to
+
+20:39.000 --> 20:41.000
+the product
+
+20:41.000 --> 20:43.000
+of creativity.
+
+20:43.000 --> 20:45.000
+Psychologists
+
+20:45.000 --> 20:47.000
+do a series
+
+20:47.000 --> 20:49.000
+of experiments
+
+20:49.000 --> 20:51.000
+on creativity
+
+20:51.000 --> 20:53.000
+and risk.
+
+20:53.000 --> 20:55.000
+There are two groups of beneficiaries.
+
+20:55.000 --> 20:57.000
+The first group
+
+20:57.000 --> 20:59.000
+is the control group.
+
+20:59.000 --> 21:01.000
+It presents a product
+
+21:01.000 --> 21:03.000
+that is not creative like the iPhone.
+
+21:03.000 --> 21:05.000
+The beneficiary uses
+
+21:05.000 --> 21:07.000
+an attitude test
+
+21:07.000 --> 21:09.000
+to connect
+
+21:11.000 --> 21:13.000
+the creative product
+
+21:13.000 --> 21:15.000
+with positive words,
+
+21:15.000 --> 21:17.000
+such as happiness and warmth.
+
+21:17.000 --> 21:19.000
+The positive words are connected.
+
+21:19.000 --> 21:21.000
+The negative words
+
+21:21.000 --> 21:23.000
+such as disgust and ugliness
+
+21:23.000 --> 21:25.000
+are separated.
+
+21:25.000 --> 21:27.000
+The other group
+
+21:27.000 --> 21:29.000
+does the same experiment.
+
+21:29.000 --> 21:31.000
+The beneficiary gets a creative product
+
+21:31.000 --> 21:33.000
+and assigns
+
+21:33.000 --> 21:35.000
+positive words to the creative product.
+
+21:35.000 --> 21:37.000
+The negative words are
+
+21:37.000 --> 21:39.000
+far away from the product.
+
+21:39.000 --> 21:41.000
+Creativity
+
+21:41.000 --> 21:43.000
+is very social.
+
+21:43.000 --> 21:45.000
+In theory,
+
+21:45.000 --> 21:47.000
+if you don't talk about it,
+
+21:47.000 --> 21:49.000
+everyone will think
+
+21:49.000 --> 21:51.000
+that you like creative products.
+
+21:51.000 --> 21:53.000
+The more, the better.
+
+21:53.000 --> 21:55.000
+The more, the better.
+
+21:55.000 --> 21:57.000
+Whether it's business or other aspects,
+
+21:57.000 --> 21:59.000
+as long as this person is creative,
+
+21:59.000 --> 22:01.000
+everyone thinks it's great.
+
+22:01.000 --> 22:03.000
+The attitude test is implicit.
+
+22:03.000 --> 22:05.000
+It doesn't affect
+
+22:05.000 --> 22:07.000
+your social expectations.
+
+22:07.000 --> 22:09.000
+If you have a different view
+
+22:09.000 --> 22:11.000
+from the society,
+
+22:11.000 --> 22:13.000
+it can be tested.
+
+22:13.000 --> 22:15.000
+This is the so-called
+
+22:15.000 --> 22:17.000
+inner attitude test.
+
+22:17.000 --> 22:19.000
+Let's talk about
+
+22:19.000 --> 22:21.000
+the experiment group.
+
+22:21.000 --> 22:23.000
+What is the behavior
+
+22:23.000 --> 22:25.000
+of the other group?
+
+22:25.000 --> 22:27.000
+There is a balloon
+
+22:27.000 --> 22:29.000
+next to the iPhone.
+
+22:29.000 --> 22:31.000
+The experimenter
+
+22:31.000 --> 22:33.000
+will accidentally
+
+22:33.000 --> 22:35.000
+poke the balloon.
+
+22:35.000 --> 22:37.000
+The balloon will explode.
+
+22:37.000 --> 22:39.000
+When the balloon explodes,
+
+22:39.000 --> 22:41.000
+the beneficiary will hear the sound.
+
+22:41.000 --> 22:43.000
+The beneficiary will be surprised.
+
+22:43.000 --> 22:45.000
+The sound is enough
+
+22:45.000 --> 22:47.000
+to scare the beneficiary.
+
+22:47.000 --> 22:49.000
+After the beneficiary is scared,
+
+22:49.000 --> 22:51.000
+there is a little cash in the balloon.
+
+22:51.000 --> 22:53.000
+It means
+
+22:53.000 --> 22:55.000
+the money is yours.
+
+22:55.000 --> 22:57.000
+In other words,
+
+22:57.000 --> 22:59.000
+you don't know how the balloon will explode.
+
+22:59.000 --> 23:01.000
+The sound will scare you.
+
+23:01.000 --> 23:03.000
+You will feel disgusted.
+
+23:03.000 --> 23:05.000
+After this uncertainty,
+
+23:05.000 --> 23:07.000
+there will be some cash.
+
+23:07.000 --> 23:09.000
+It simulates
+
+23:09.000 --> 23:11.000
+the creative
+
+23:11.000 --> 23:13.000
+and high-risk creativity.
+
+23:13.000 --> 23:15.000
+They asked the beneficiary
+
+23:15.000 --> 23:17.000
+to do an inner attitude test.
+
+23:17.000 --> 23:19.000
+As a result,
+
+23:19.000 --> 23:21.000
+the experimenter
+
+23:21.000 --> 23:23.000
+found that
+
+23:23.000 --> 23:25.000
+the group without balloons
+
+23:25.000 --> 23:27.000
+have a good relationship
+
+23:27.000 --> 23:29.000
+with the beneficiary.
+
+23:29.000 --> 23:31.000
+But the group above
+
+23:31.000 --> 23:33.000
+had a different experience.
+
+23:33.000 --> 23:35.000
+The group above
+
+23:35.000 --> 23:37.000
+has an inner attitude.
+
+23:37.000 --> 23:39.000
+They are not
+
+23:39.000 --> 23:41.000
+so close to the beneficiary.
+
+23:43.000 --> 23:45.000
+Their relationship
+
+23:45.000 --> 23:47.000
+with the beneficiary
+
+23:47.000 --> 23:49.000
+will be easier.
+
+23:49.000 --> 23:51.000
+The beneficiary will feel disliked
+
+23:51.000 --> 23:53.000
+and sick.
+
+23:53.000 --> 23:55.000
+Faced with
+
+23:55.000 --> 23:57.000
+the high risk
+
+23:57.000 --> 23:59.000
+of scaring people,
+
+23:59.000 --> 24:01.000
+our attitude
+
+24:01.000 --> 24:03.000
+towards entrepreneurship
+
+24:03.000 --> 24:05.000
+will change.
+
+24:09.000 --> 24:11.000
+So,
+
+24:11.000 --> 24:13.000
+our attitude towards entrepreneurship will change.
+
+24:13.000 --> 24:15.000
+How do we explain this?
+
+24:15.000 --> 24:17.000
+This is
+
+24:17.000 --> 24:19.000
+based on
+
+24:19.000 --> 24:21.000
+the reversal bias of
+
+24:21.000 --> 24:23.000
+the group above.
+
+24:23.000 --> 24:25.000
+Let's say
+
+24:25.000 --> 24:27.000
+you want to choose a handsome guy
+
+24:27.000 --> 24:29.000
+to be your partner.
+
+24:29.000 --> 24:31.000
+I will present
+
+24:31.000 --> 24:33.000
+three options.
+
+24:33.000 --> 24:35.000
+The first one is Tom Cruise.
+
+24:35.000 --> 24:37.000
+The second one is Joe Kerman.
+
+24:37.000 --> 24:39.000
+The third one is Elon Musk.
+
+24:39.000 --> 24:41.000
+Tom Cruise is more handsome
+
+24:41.000 --> 24:43.000
+than Joe Kerman.
+
+24:43.000 --> 24:45.000
+Joe Kerman can sing
+
+24:45.000 --> 24:47.000
+and he is also handsome.
+
+24:47.000 --> 24:49.000
+He also acted in a movie.
+
+24:49.000 --> 24:51.000
+Elon Musk is also
+
+24:51.000 --> 24:53.000
+one of the candidates.
+
+24:53.000 --> 24:55.000
+However,
+
+24:55.000 --> 24:57.000
+if you compare Elon Musk
+
+24:57.000 --> 24:59.000
+with Tom Cruise,
+
+24:59.000 --> 25:01.000
+Tom Cruise is not
+
+25:01.000 --> 25:03.000
+as handsome as Elon Musk.
+
+25:03.000 --> 25:05.000
+Some people
+
+25:05.000 --> 25:07.000
+may think
+
+25:07.000 --> 25:09.000
+Elon Musk is
+
+25:09.000 --> 25:11.000
+an entrepreneur
+
+25:11.000 --> 25:13.000
+and he is smart.
+
+25:13.000 --> 25:15.000
+He is smarter than Tom Cruise.
+
+25:15.000 --> 25:17.000
+So,
+
+25:17.000 --> 25:19.000
+people will choose Elon Musk
+
+25:19.000 --> 25:21.000
+over Tom Cruise.
+
+25:21.000 --> 25:23.000
+So,
+
+25:23.000 --> 25:25.000
+A is greater than B,
+
+25:25.000 --> 25:27.000
+B is greater than C,
+
+25:27.000 --> 25:29.000
+but C is greater than A.
+
+25:29.000 --> 25:31.000
+This is a magical inequality.
+
+25:31.000 --> 25:33.000
+This is
+
+25:33.000 --> 25:35.000
+the experiment
+
+25:35.000 --> 25:37.000
+of Daniel Kahneman,
+
+25:37.000 --> 25:39.000
+his partner,
+
+25:39.000 --> 25:41.000
+who did
+
+25:41.000 --> 25:43.000
+a classic
+
+25:43.000 --> 25:45.000
+economic experiment.
+
+25:45.000 --> 25:47.000
+You may think
+
+25:47.000 --> 25:49.000
+how to calculate
+
+25:49.000 --> 25:51.000
+the weight of power.
+
+25:51.000 --> 25:53.000
+Is smart more important
+
+25:53.000 --> 25:55.000
+or handsome?
+
+25:55.000 --> 25:57.000
+Or is it as important
+
+25:57.000 --> 25:59.000
+as Joe Kerman's dancing?
+
+25:59.000 --> 26:01.000
+Which one is more important?
+
+26:01.000 --> 26:03.000
+It is strange.
+
+26:03.000 --> 26:05.000
+We have to use a mathematical formula
+
+26:05.000 --> 26:07.000
+or it is illogical.
+
+26:09.000 --> 26:11.000
+This is
+
+26:11.000 --> 26:13.000
+what I learned
+
+26:13.000 --> 26:15.000
+from YouTube.
+
+26:15.000 --> 26:17.000
+It is
+
+26:17.000 --> 26:19.000
+a course
+
+26:19.000 --> 26:21.000
+by Amos Tversky
+
+26:21.000 --> 26:23.000
+in 1981.
+
+26:23.000 --> 26:25.000
+It is called
+
+26:25.000 --> 26:27.000
+Measuring Inequality.
+
+26:27.000 --> 26:29.000
+It was
+
+26:29.000 --> 26:31.000
+uploaded to YouTube
+
+26:31.000 --> 26:33.000
+in October 2019.
+
+26:33.000 --> 26:35.000
+It is called
+
+26:35.000 --> 26:37.000
+Measuring Inequality.
+
+26:37.000 --> 26:39.000
+He wrote
+
+26:39.000 --> 26:41.000
+this proof.
+
+26:41.000 --> 26:43.000
+It is
+
+26:43.000 --> 26:45.000
+9, 13, 19 points.
+
+26:45.000 --> 26:47.000
+Let's interpret it
+
+26:47.000 --> 26:49.000
+as a product's quality
+
+26:49.000 --> 26:51.000
+or creativity.
+
+26:51.000 --> 26:53.000
+9 points of creativity, 13 points of creativity, 19 points of creativity.
+
+26:53.000 --> 26:55.000
+Of course,
+
+26:55.000 --> 26:57.000
+19 points of creativity is higher than 9 points of creativity.
+
+26:57.000 --> 26:59.000
+It is unquestionable.
+
+26:59.000 --> 27:01.000
+What about the left?
+
+27:01.000 --> 27:03.000
+The left is the price of the product.
+
+27:03.000 --> 27:05.000
+No one
+
+27:05.000 --> 27:07.000
+wants to buy things with 30 dollars.
+
+27:07.000 --> 27:09.000
+Try to use 10 dollars.
+
+27:09.000 --> 27:11.000
+So,
+
+27:11.000 --> 27:13.000
+our preference is
+
+27:13.000 --> 27:15.000
+from left to right,
+
+27:15.000 --> 27:17.000
+from top to bottom.
+
+27:17.000 --> 27:19.000
+Then,
+
+27:19.000 --> 27:21.000
+we multiply
+
+27:21.000 --> 27:23.000
+these six numbers
+
+27:23.000 --> 27:25.000
+by 9.
+
+27:25.000 --> 27:27.000
+We use
+
+27:27.000 --> 27:29.000
+the product's
+
+27:29.000 --> 27:31.000
+quality score
+
+27:31.000 --> 27:33.000
+to multiply
+
+27:33.000 --> 27:35.000
+the product's price.
+
+27:35.000 --> 27:37.000
+Let's say
+
+27:37.000 --> 27:39.000
+13 times 30 is
+
+27:39.000 --> 27:41.000
+390.
+
+27:41.000 --> 27:43.000
+Let's take 390
+
+27:43.000 --> 27:45.000
+as a general attitude.
+
+27:45.000 --> 27:47.000
+Overall,
+
+27:47.000 --> 27:49.000
+how much does he like this product?
+
+27:49.000 --> 27:51.000
+For
+
+27:51.000 --> 27:53.000
+normal logic,
+
+27:53.000 --> 27:55.000
+let's look at the orange arrow.
+
+27:55.000 --> 27:57.000
+The orange arrow is normal logic.
+
+27:57.000 --> 27:59.000
+It is
+
+27:59.000 --> 28:01.000
+from top to bottom.
+
+28:01.000 --> 28:03.000
+The lower right corner
+
+28:03.000 --> 28:05.000
+is
+
+28:05.000 --> 28:07.000
+the lower
+
+28:07.000 --> 28:09.000
+the score.
+
+28:09.000 --> 28:11.000
+We can use
+
+28:11.000 --> 28:13.000
+lower cost
+
+28:13.000 --> 28:15.000
+to buy this product.
+
+28:15.000 --> 28:17.000
+This is normal logic.
+
+28:17.000 --> 28:19.000
+However,
+
+28:19.000 --> 28:21.000
+under certain conditions,
+
+28:21.000 --> 28:23.000
+you can see the middle
+
+28:23.000 --> 28:25.000
+line.
+
+28:25.000 --> 28:27.000
+There is a god logic.
+
+28:27.000 --> 28:29.000
+It will
+
+28:29.000 --> 28:31.000
+show 270
+
+28:31.000 --> 28:33.000
+to 260.
+
+28:33.000 --> 28:35.000
+We call it
+
+28:35.000 --> 28:37.000
+risk.
+
+28:37.000 --> 28:39.000
+In this case,
+
+28:39.000 --> 28:41.000
+we don't care about the risk.
+
+28:41.000 --> 28:43.000
+We don't care.
+
+28:43.000 --> 28:45.000
+270 is high risk.
+
+28:45.000 --> 28:47.000
+If
+
+28:47.000 --> 28:49.000
+there is a god logic,
+
+28:49.000 --> 28:51.000
+how does it work?
+
+28:51.000 --> 28:53.000
+On the left,
+
+28:53.000 --> 28:55.000
+we multiply
+
+28:55.000 --> 28:57.000
+by
+
+28:57.000 --> 28:59.000
+10.
+
+28:59.000 --> 29:01.000
+We multiply
+
+29:01.000 --> 29:03.000
+by 10.
+
+29:03.000 --> 29:05.000
+On the right,
+
+29:05.000 --> 29:07.000
+the growth rate
+
+29:07.000 --> 29:09.000
+is not that high.
+
+29:09.000 --> 29:11.000
+On the left,
+
+29:11.000 --> 29:13.000
+30 and 10
+
+29:13.000 --> 29:15.000
+are 3 times higher.
+
+29:15.000 --> 29:17.000
+9 and 19
+
+29:17.000 --> 29:19.000
+are not 3 times higher.
+
+29:19.000 --> 29:21.000
+Let's assume
+
+29:21.000 --> 29:23.000
+we don't care about
+
+29:23.000 --> 29:25.000
+creativity.
+
+29:25.000 --> 29:27.000
+We don't multiply.
+
+29:27.000 --> 29:29.000
+The price is double.
+
+29:29.000 --> 29:31.000
+The number of creativity
+
+29:31.000 --> 29:33.000
+is not
+
+29:33.000 --> 29:35.000
+the growth rate.
+
+29:35.000 --> 29:37.000
+In this case,
+
+29:37.000 --> 29:39.000
+the matrix
+
+29:39.000 --> 29:41.000
+will be
+
+29:41.000 --> 29:43.000
+multiplied by
+
+29:43.000 --> 29:45.000
+the god logic.
+
+29:45.000 --> 29:47.000
+Under certain conditions,
+
+29:47.000 --> 29:49.000
+we are afraid of
+
+29:49.000 --> 29:51.000
+the risk.
+
+29:51.000 --> 29:53.000
+Under certain conditions,
+
+29:53.000 --> 29:55.000
+we don't care about the risk.
+
+29:55.000 --> 29:57.000
+It is
+
+29:57.000 --> 29:59.000
+hard to understand.
+
+29:59.000 --> 30:01.000
+So,
+
+30:01.000 --> 30:03.000
+I think it is better
+
+30:03.000 --> 30:05.000
+to use crisis analysis.
+
+30:05.000 --> 30:07.000
+In general,
+
+30:07.000 --> 30:09.000
+we have the same
+
+30:09.000 --> 30:11.000
+statistical chart.
+
+30:11.000 --> 30:13.000
+We have the same
+
+30:13.000 --> 30:15.000
+preference for a thing.
+
+30:15.000 --> 30:17.000
+So,
+
+30:17.000 --> 30:19.000
+we draw a straight line.
+
+30:19.000 --> 30:21.000
+However,
+
+30:21.000 --> 30:23.000
+our preference for creativity
+
+30:23.000 --> 30:25.000
+is not a straight line
+
+30:25.000 --> 30:27.000
+but a curve.
+
+30:27.000 --> 30:29.000
+At first,
+
+30:29.000 --> 30:31.000
+we like creativity.
+
+30:31.000 --> 30:33.000
+However,
+
+30:33.000 --> 30:35.000
+as the price goes up,
+
+30:35.000 --> 30:37.000
+we only go from 9 to 19
+
+30:37.000 --> 30:39.000
+instead of 27.
+
+30:39.000 --> 30:41.000
+So,
+
+30:41.000 --> 30:43.000
+our creativity
+
+30:43.000 --> 30:45.000
+is not a straight line
+
+30:45.000 --> 30:47.000
+but a curve
+
+30:47.000 --> 30:49.000
+on the chart.
+
+30:49.000 --> 30:51.000
+So,
+
+30:51.000 --> 30:53.000
+it is close to the concept of crisis.
+
+30:53.000 --> 30:55.000
+As you know,
+
+30:55.000 --> 30:57.000
+behavioral economics
+
+30:57.000 --> 30:59.000
+shows the preference
+
+30:59.000 --> 31:01.000
+for a thing
+
+31:01.000 --> 31:03.000
+in the way of crisis analysis.
+
+31:03.000 --> 31:05.000
+Traditional economics
+
+31:05.000 --> 31:07.000
+is a curve.
+
+31:07.000 --> 31:09.000
+It is a straight line.
+
+31:09.000 --> 31:11.000
+It is very intuitive.
+
+31:11.000 --> 31:13.000
+However, human beings are irrational.
+
+31:13.000 --> 31:15.000
+When the price
+
+31:15.000 --> 31:17.000
+goes up to a certain level,
+
+31:17.000 --> 31:19.000
+the preference
+
+31:19.000 --> 31:21.000
+for a thing
+
+31:21.000 --> 31:23.000
+becomes smaller and smaller.
+
+31:23.000 --> 31:25.000
+This is the difference
+
+31:25.000 --> 31:27.000
+between traditional economics
+
+31:27.000 --> 31:29.000
+and behavioral economics.
+
+31:29.000 --> 31:31.000
+In fact,
+
+31:31.000 --> 31:33.000
+it lacks professional knowledge.
+
+31:33.000 --> 31:35.000
+I asked a senior
+
+31:35.000 --> 31:37.000
+how to explain
+
+31:37.000 --> 31:39.000
+the curve
+
+31:39.000 --> 31:41.000
+to a manager.
+
+31:41.000 --> 31:43.000
+He said
+
+31:43.000 --> 31:45.000
+it lacks domain expertise.
+
+31:45.000 --> 31:47.000
+You need professional knowledge.
+
+31:47.000 --> 31:49.000
+You can't explain it
+
+31:49.000 --> 31:51.000
+to your manager
+
+31:51.000 --> 31:53.000
+with your professional knowledge.
+
+31:53.000 --> 31:55.000
+This is the concept of curve.
+
+31:55.000 --> 31:57.000
+To sum up,
+
+31:57.000 --> 31:59.000
+if your idea
+
+31:59.000 --> 32:01.000
+is very novel,
+
+32:01.000 --> 32:03.000
+you should
+
+32:03.000 --> 32:05.000
+lower
+
+32:05.000 --> 32:07.000
+your price.
+
+32:07.000 --> 32:09.000
+Don't raise
+
+32:09.000 --> 32:11.000
+your price.
+
+32:11.000 --> 32:13.000
+People will be afraid.
+
+32:13.000 --> 32:15.000
+They will think
+
+32:15.000 --> 32:17.000
+your idea is good
+
+32:17.000 --> 32:19.000
+but
+
+32:19.000 --> 32:21.000
+on the other hand,
+
+32:21.000 --> 32:23.000
+if your idea
+
+32:23.000 --> 32:25.000
+is very low,
+
+32:25.000 --> 32:27.000
+you should
+
+32:27.000 --> 32:29.000
+use your imagination.
+
+32:29.000 --> 32:31.000
+For example,
+
+32:31.000 --> 32:33.000
+when a YouTuber
+
+32:33.000 --> 32:35.000
+uploads a video,
+
+32:35.000 --> 32:37.000
+the cost is low.
+
+32:37.000 --> 32:39.000
+So,
+
+32:39.000 --> 32:41.000
+if you want to be a successful YouTuber,
+
+32:41.000 --> 32:43.000
+you need to
+
+32:43.000 --> 32:45.000
+use your imagination
+
+32:45.000 --> 32:47.000
+to make your video popular.
+
+32:47.000 --> 32:49.000
+For example,
+
+32:49.000 --> 32:51.000
+if your video
+
+32:51.000 --> 32:53.000
+has 10 views,
+
+32:53.000 --> 32:55.000
+but none of them likes you,
+
+32:55.000 --> 32:57.000
+the 10th video
+
+32:57.000 --> 32:59.000
+happens to
+
+32:59.000 --> 33:01.000
+hit a certain person,
+
+33:01.000 --> 33:03.000
+the person
+
+33:03.000 --> 33:05.000
+likes your video
+
+33:05.000 --> 33:07.000
+and your subscription
+
+33:07.000 --> 33:09.000
+goes up.
+
+33:09.000 --> 33:11.000
+This is the strategy.
+
+33:11.000 --> 33:13.000
+If you don't join the membership,
+
+33:13.000 --> 33:15.000
+I will click your video
+
+33:15.000 --> 33:17.000
+to watch.
+
+33:17.000 --> 33:19.000
+On the other hand,
+
+33:19.000 --> 33:21.000
+if you are a high-cost YouTuber
+
+33:21.000 --> 33:23.000
+who is conservative,
+
+33:23.000 --> 33:25.000
+you want to satisfy
+
+33:25.000 --> 33:27.000
+all your subscribers,
+
+33:27.000 --> 33:29.000
+the success rate will be low.
+
+33:29.000 --> 33:31.000
+In general,
+
+33:31.000 --> 33:33.000
+people don't want to watch
+
+33:33.000 --> 33:35.000
+funny and boring videos.
+
+33:37.000 --> 33:39.000
+These are the references.
+
+33:39.000 --> 33:41.000
+The first one
+
+33:41.000 --> 33:43.000
+is a paper
+
+33:43.000 --> 33:45.000
+about
+
+33:45.000 --> 33:47.000
+measuring creativity.
+
+33:47.000 --> 33:49.000
+The second one
+
+33:49.000 --> 33:51.000
+is
+
+33:51.000 --> 33:53.000
+a book
+
+33:53.000 --> 33:55.000
+about creativity.
+
+33:55.000 --> 33:57.000
+There is a Chinese version
+
+33:57.000 --> 33:59.000
+of the balloon experiment.
+
+33:59.000 --> 34:01.000
+You can check it out.
+
+34:01.000 --> 34:03.000
+It's very interesting.
+
+34:03.000 --> 34:05.000
+The third one
+
+34:05.000 --> 34:07.000
+is Originals.
+
+34:07.000 --> 34:09.000
+It's written by
+
+34:09.000 --> 34:11.000
+Alan Grant.
+
+34:11.000 --> 34:13.000
+The Chinese translation is
+
+34:13.000 --> 34:15.000
+版判.
+
+34:15.000 --> 34:17.000
+It's very interesting.
+
+34:17.000 --> 34:19.000
+It describes
+
+34:19.000 --> 34:21.000
+the risks
+
+34:21.000 --> 34:23.000
+of creativity.
+
+34:23.000 --> 34:25.000
+It describes
+
+34:25.000 --> 34:27.000
+how creative people
+
+34:27.000 --> 34:29.000
+are.
+
+34:29.000 --> 34:31.000
+Alan Grant is
+
+34:31.000 --> 34:33.000
+an excellent psychologist.
+
+34:33.000 --> 34:35.000
+The next one is
+
+34:35.000 --> 34:37.000
+Justin Byrne.
+
+34:37.000 --> 34:39.000
+He specializes in
+
+34:39.000 --> 34:41.000
+predicting creativity.
+
+34:41.000 --> 34:43.000
+He predicts
+
+34:43.000 --> 34:45.000
+whether creativity
+
+34:45.000 --> 34:47.000
+will be successful in the future.
+
+34:47.000 --> 34:49.000
+It's very difficult.
+
+34:49.000 --> 34:51.000
+But he did it.
+
+34:51.000 --> 34:53.000
+He is really strong.
+
+34:53.000 --> 34:55.000
+The next one
+
+34:55.000 --> 34:57.000
+is
+
+34:57.000 --> 34:59.000
+a paper
+
+34:59.000 --> 35:01.000
+on behavioral economics.
+
+35:01.000 --> 35:03.000
+It was first published
+
+35:03.000 --> 35:05.000
+in 1973.
+
+35:05.000 --> 35:07.000
+It's called
+
+35:07.000 --> 35:09.000
+Experimental Psychology.
+
+35:09.000 --> 35:11.000
+The last one
+
+35:11.000 --> 35:13.000
+is
+
+35:13.000 --> 35:15.000
+Daniel Kahneman's
+
+35:15.000 --> 35:17.000
+partner,
+
+35:17.000 --> 35:19.000
+Amos Tversky and
+
+35:19.000 --> 35:21.000
+Richard Seiler.
+
+35:21.000 --> 35:23.000
+It's about
+
+35:23.000 --> 35:25.000
+anomalous preference reversal.
+
+35:25.000 --> 35:27.000
+It's about
+
+35:27.000 --> 35:29.000
+why our preferences
+
+35:29.000 --> 35:31.000
+are so amazing.
+
+35:31.000 --> 35:33.000
+A is greater than B,
+
+35:33.000 --> 35:35.000
+and B is greater than A.
+
+35:35.000 --> 35:37.000
+It's amazing.
+
+35:37.000 --> 35:39.000
+There are many
+
+35:39.000 --> 35:41.000
+details in the paper.
+
+35:41.000 --> 35:43.000
+If you're interested,
+
+35:43.000 --> 35:45.000
+you can
+
+35:45.000 --> 35:47.000
+look it up.
+
+35:47.000 --> 35:49.000
+That's
+
+35:49.000 --> 35:51.000
+all for
+
+35:51.000 --> 35:53.000
+my presentation.
+
+35:53.000 --> 35:55.000
+Any questions?
+
+35:55.000 --> 35:57.000
+Any questions?
+
+36:01.000 --> 36:03.000
+If you have questions,
+
+36:03.000 --> 36:05.000
+you can ask them directly.
+
+36:05.000 --> 36:07.000
+Yes.
+
+36:07.000 --> 36:09.000
+I have a question.
+
+36:09.000 --> 36:11.000
+You just
+
+36:11.000 --> 36:13.000
+drew a picture.
+
+36:13.000 --> 36:15.000
+You said creativity
+
+36:15.000 --> 36:17.000
+is not limited
+
+36:17.000 --> 36:19.000
+to people.
+
+36:19.000 --> 36:21.000
+It's increasing
+
+36:21.000 --> 36:23.000
+and becoming more and more attractive.
+
+36:23.000 --> 36:25.000
+For example,
+
+36:25.000 --> 36:27.000
+is there any experimental
+
+36:27.000 --> 36:29.000
+approach
+
+36:29.000 --> 36:31.000
+or someone trying to
+
+36:31.000 --> 36:33.000
+analytically model it?
+
+36:33.000 --> 36:35.000
+For example,
+
+36:35.000 --> 36:37.000
+is there any way to
+
+36:37.000 --> 36:39.000
+quantify
+
+36:39.000 --> 36:41.000
+creativity
+
+36:41.000 --> 36:43.000
+and make it a axis?
+
+36:43.000 --> 36:45.000
+Another axis is
+
+36:45.000 --> 36:47.000
+I can somehow quantify
+
+36:47.000 --> 36:49.000
+attractiveness.
+
+36:49.000 --> 36:51.000
+Then I can
+
+36:51.000 --> 36:53.000
+quantify
+
+36:53.000 --> 36:55.000
+the green line.
+
+36:57.000 --> 36:59.000
+I think
+
+36:59.000 --> 37:01.000
+this model is OK.
+
+37:01.000 --> 37:03.000
+But I'm doing
+
+37:03.000 --> 37:05.000
+document analysis and
+
+37:05.000 --> 37:07.000
+data science analysis.
+
+37:07.000 --> 37:09.000
+So I haven't done it
+
+37:09.000 --> 37:11.000
+in the lab.
+
+37:11.000 --> 37:13.000
+I'll figure it out
+
+37:13.000 --> 37:15.000
+in the future.
+
+37:17.000 --> 37:19.000
+OK. Thank you.
+
+37:21.000 --> 37:23.000
+Any questions?
+
+37:27.000 --> 37:29.000
+If you have
+
+37:29.000 --> 37:31.000
+other questions,
+
+37:31.000 --> 37:33.000
+you can unmute
+
+37:33.000 --> 37:35.000
+yourself.
+
+37:35.000 --> 37:37.000
+Then you can ask.
+
+37:43.000 --> 37:45.000
+If you have questions,
+
+37:45.000 --> 37:47.000
+you can unmute yourself.
+
+37:47.000 --> 37:49.000
+Hello?
+
+37:49.000 --> 37:51.000
+Can you hear me?
+
+37:51.000 --> 37:53.000
+I'm Anping.
+
+37:53.000 --> 37:55.000
+I have a question.
+
+37:55.000 --> 37:57.000
+Your speech
+
+37:57.000 --> 37:59.000
+was very interesting.
+
+38:03.000 --> 38:05.000
+I didn't hear
+
+38:05.000 --> 38:07.000
+what you said
+
+38:07.000 --> 38:09.000
+about data science
+
+38:09.000 --> 38:11.000
+in the beginning.
+
+38:11.000 --> 38:13.000
+How does data science
+
+38:13.000 --> 38:15.000
+contribute to creativity?
+
+38:15.000 --> 38:17.000
+But I heard
+
+38:17.000 --> 38:19.000
+data science
+
+38:19.000 --> 38:21.000
+contributes to
+
+38:21.000 --> 38:23.000
+future direction,
+
+38:23.000 --> 38:25.000
+possibility,
+
+38:25.000 --> 38:27.000
+traditional experiments,
+
+38:27.000 --> 38:29.000
+behavioral economics,
+
+38:29.000 --> 38:31.000
+and experimental psychology.
+
+38:31.000 --> 38:33.000
+Can you tell us
+
+38:33.000 --> 38:35.000
+more about
+
+38:35.000 --> 38:37.000
+data science
+
+38:37.000 --> 38:39.000
+playing a special role
+
+38:39.000 --> 38:41.000
+or future role?
+
+38:41.000 --> 38:43.000
+And you seem to have the result.
+
+38:43.000 --> 38:45.000
+You said you have data to predict.
+
+38:45.000 --> 38:47.000
+Is it something like that?
+
+38:47.000 --> 38:49.000
+Thank you.
+
+38:49.000 --> 38:51.000
+At that time,
+
+38:51.000 --> 38:53.000
+I was purely
+
+38:53.000 --> 38:55.000
+analyzing
+
+38:55.000 --> 38:57.000
+the website
+
+38:57.000 --> 38:59.000
+provided in the paper.
+
+38:59.000 --> 39:01.000
+The result of the analysis
+
+39:01.000 --> 39:03.000
+is the total amount
+
+39:03.000 --> 39:05.000
+of data
+
+39:05.000 --> 39:07.000
+on Kickstarter
+
+39:07.000 --> 39:09.000
+and the paper.
+
+39:09.000 --> 39:11.000
+It's called Forward Flow.
+
+39:11.000 --> 39:13.000
+It's related to
+
+39:13.000 --> 39:15.000
+negative.
+
+39:15.000 --> 39:17.000
+So,
+
+39:17.000 --> 39:19.000
+I think data science
+
+39:19.000 --> 39:21.000
+and psychology
+
+39:21.000 --> 39:23.000
+are interlinked.
+
+39:23.000 --> 39:25.000
+You will see
+
+39:25.000 --> 39:27.000
+something different
+
+39:27.000 --> 39:29.000
+from your common sense
+
+39:29.000 --> 39:31.000
+or domain knowledge.
+
+39:31.000 --> 39:33.000
+At this time,
+
+39:33.000 --> 39:35.000
+you have to think
+
+39:35.000 --> 39:37.000
+whether
+
+39:37.000 --> 39:39.000
+there is something wrong
+
+39:39.000 --> 39:41.000
+with this program
+
+39:41.000 --> 39:43.000
+and whether
+
+39:43.000 --> 39:45.000
+common sense is biased
+
+39:45.000 --> 39:47.000
+or domain knowledge needs to be modified.
+
+39:47.000 --> 39:49.000
+You need to have
+
+39:49.000 --> 39:51.000
+a little intuition
+
+39:51.000 --> 39:53.000
+and professionalism.
+
+39:53.000 --> 39:55.000
+If you find that
+
+39:55.000 --> 39:57.000
+this is against
+
+39:57.000 --> 39:59.000
+common sense,
+
+39:59.000 --> 40:01.000
+but it has
+
+40:01.000 --> 40:03.000
+the academic theory
+
+40:03.000 --> 40:05.000
+of creativity to explain it.
+
+40:05.000 --> 40:07.000
+However,
+
+40:07.000 --> 40:09.000
+there is a theory to explain it,
+
+40:09.000 --> 40:11.000
+but it's still
+
+40:11.000 --> 40:13.000
+in the academic theory.
+
+40:13.000 --> 40:15.000
+So,
+
+40:15.000 --> 40:17.000
+this is a space for development.
+
+40:17.000 --> 40:19.000
+You can
+
+40:19.000 --> 40:21.000
+use
+
+40:21.000 --> 40:23.000
+this kind of
+
+40:23.000 --> 40:25.000
+computer program
+
+40:25.000 --> 40:27.000
+to run some data.
+
+40:27.000 --> 40:29.000
+You can copy and paste at the beginning.
+
+40:29.000 --> 40:31.000
+If you find that
+
+40:31.000 --> 40:33.000
+it's against common sense
+
+40:33.000 --> 40:35.000
+and domain knowledge,
+
+40:35.000 --> 40:37.000
+you can think about
+
+40:37.000 --> 40:39.000
+whether this is
+
+40:39.000 --> 40:41.000
+a good question
+
+40:41.000 --> 40:43.000
+for future research.
+
+40:51.000 --> 40:53.000
+Can I ask another question?
+
+40:53.000 --> 40:55.000
+You mentioned
+
+40:55.000 --> 40:57.000
+data science
+
+40:57.000 --> 40:59.000
+and the difference
+
+40:59.000 --> 41:01.000
+between it and domain knowledge.
+
+41:01.000 --> 41:03.000
+I'm not sure
+
+41:03.000 --> 41:05.000
+if you know
+
+41:05.000 --> 41:07.000
+what data science is.
+
+41:07.000 --> 41:09.000
+I don't even know what it is.
+
+41:09.000 --> 41:11.000
+Can you explain
+
+41:11.000 --> 41:13.000
+what kind of
+
+41:13.000 --> 41:15.000
+way data science
+
+41:15.000 --> 41:17.000
+looks at these issues?
+
+41:17.000 --> 41:19.000
+I don't know what it is.
+
+41:19.000 --> 41:21.000
+Thank you.
+
+41:21.000 --> 41:23.000
+This question
+
+41:23.000 --> 41:25.000
+is a bit difficult.
+
+41:25.000 --> 41:27.000
+Let me use another PowerPoint
+
+41:27.000 --> 41:29.000
+to explain.
+
+41:29.000 --> 41:31.000
+This is another research I did.
+
+41:31.000 --> 41:33.000
+I went to
+
+41:33.000 --> 41:35.000
+Cambridge Analytica.
+
+41:35.000 --> 41:37.000
+If you know
+
+41:37.000 --> 41:39.000
+how to steal
+
+41:39.000 --> 41:41.000
+data from Facebook,
+
+41:41.000 --> 41:43.000
+you should know
+
+41:43.000 --> 41:45.000
+what Cambridge Analytica does.
+
+41:45.000 --> 41:47.000
+A group of data scientists
+
+41:47.000 --> 41:49.000
+steal text from Facebook
+
+41:49.000 --> 41:51.000
+to predict your personality traits.
+
+41:55.000 --> 41:57.000
+Their research
+
+41:57.000 --> 41:59.000
+is in conflict with
+
+41:59.000 --> 42:01.000
+domain knowledge.
+
+42:05.000 --> 42:07.000
+How do we
+
+42:07.000 --> 42:09.000
+explain this phenomenon?
+
+42:09.000 --> 42:11.000
+Data science
+
+42:11.000 --> 42:13.000
+is the third
+
+42:13.000 --> 42:15.000
+block,
+
+42:15.000 --> 42:17.000
+and it's the most important.
+
+42:17.000 --> 42:19.000
+LSA,
+
+42:19.000 --> 42:21.000
+Latent Semantic Analysis,
+
+42:21.000 --> 42:23.000
+doesn't use
+
+42:23.000 --> 42:25.000
+Bayes' Theorem to calculate.
+
+42:25.000 --> 42:27.000
+It calculates
+
+42:27.000 --> 42:29.000
+the relationship between
+
+42:29.000 --> 42:31.000
+words and words,
+
+42:31.000 --> 42:33.000
+not cause and effect.
+
+42:33.000 --> 42:35.000
+Cambridge Analytica
+
+42:35.000 --> 42:37.000
+does use cause and effect.
+
+42:37.000 --> 42:39.000
+Here,
+
+42:39.000 --> 42:41.000
+they use LSA
+
+42:41.000 --> 42:43.000
+plus probability.
+
+42:43.000 --> 42:45.000
+D stands for text.
+
+42:45.000 --> 42:47.000
+Z stands for topic.
+
+42:47.000 --> 42:49.000
+W stands for word.
+
+42:49.000 --> 42:51.000
+This word
+
+42:51.000 --> 42:53.000
+has a chance
+
+42:53.000 --> 42:55.000
+to appear
+
+42:55.000 --> 42:57.000
+in this document.
+
+42:57.000 --> 42:59.000
+This is
+
+42:59.000 --> 43:01.000
+the probability.
+
+43:01.000 --> 43:03.000
+If I appear
+
+43:03.000 --> 43:05.000
+in this topic,
+
+43:05.000 --> 43:07.000
+what is the probability
+
+43:07.000 --> 43:09.000
+that I appear in this word?
+
+43:09.000 --> 43:11.000
+If I appear in this document,
+
+43:11.000 --> 43:13.000
+what is the probability
+
+43:13.000 --> 43:15.000
+that I appear in this topic?
+
+43:15.000 --> 43:17.000
+They use Bayes' Theorem
+
+43:17.000 --> 43:19.000
+to calculate.
+
+43:19.000 --> 43:21.000
+Here,
+
+43:21.000 --> 43:23.000
+we can explain
+
+43:23.000 --> 43:25.000
+these two things
+
+43:25.000 --> 43:27.000
+in the same way,
+
+43:27.000 --> 43:29.000
+but the difference
+
+43:29.000 --> 43:31.000
+in the algorithm
+
+43:31.000 --> 43:33.000
+causes the difference
+
+43:33.000 --> 43:35.000
+in the data structure.
+
+43:35.000 --> 43:37.000
+Let's use
+
+43:37.000 --> 43:39.000
+LSA's Theorem.
+
+43:39.000 --> 43:41.000
+Let's look at
+
+43:41.000 --> 43:43.000
+a set of data.
+
+43:43.000 --> 43:45.000
+We can see
+
+43:45.000 --> 43:47.000
+this large piece of data
+
+43:47.000 --> 43:49.000
+as Cambridge Analytica.
+
+43:49.000 --> 43:51.000
+We can see
+
+43:51.000 --> 43:53.000
+this large piece of data
+
+43:53.000 --> 43:55.000
+as Cambridge Analytica.
+
+43:55.000 --> 43:57.000
+If you divide it
+
+43:57.000 --> 43:59.000
+into popular singers,
+
+43:59.000 --> 44:01.000
+the popular singer
+
+44:01.000 --> 44:03.000
+is related.
+
+44:03.000 --> 44:05.000
+However,
+
+44:05.000 --> 44:07.000
+the popular singer
+
+44:07.000 --> 44:09.000
+is only a small piece
+
+44:09.000 --> 44:11.000
+in all creative people.
+
+44:11.000 --> 44:13.000
+If you add
+
+44:13.000 --> 44:15.000
+a conditional probability,
+
+44:15.000 --> 44:17.000
+you can cut
+
+44:17.000 --> 44:19.000
+this small piece
+
+44:19.000 --> 44:21.000
+of data.
+
+44:21.000 --> 44:23.000
+I tried to
+
+44:23.000 --> 44:25.000
+explain in math.
+
+44:25.000 --> 44:27.000
+I tried to explain in math.
+
+44:27.000 --> 44:29.000
+I tried to explain in math.
+
+44:29.000 --> 44:31.000
+This is the mathematical proof
+
+44:31.000 --> 44:33.000
+of the Tversky hypothesis.
+
+44:33.000 --> 44:35.000
+This is the Mathematical proof of the Tversky hypothesis.
+
+44:35.000 --> 44:37.000
+I used this mathematical proof
+
+44:37.000 --> 44:39.000
+to explain
+
+44:39.000 --> 44:41.000
+the question of
+
+44:41.000 --> 44:43.000
+computer science
+
+44:43.000 --> 44:45.000
+and
+
+44:45.000 --> 44:47.000
+the knowledge of creativity
+
+44:47.000 --> 44:49.000
+.
+
+44:49.000 --> 44:51.000
+.
+
+44:51.000 --> 44:53.000
+.
+
+44:53.000 --> 44:55.000
+.
+
+44:55.000 --> 44:57.000
+.
+
+44:57.000 --> 44:59.000
+.
+
+44:59.000 --> 45:01.000
+.
+
+45:01.000 --> 45:03.000
+.
+
+45:05.000 --> 45:07.000
+.
+
+45:07.000 --> 45:09.000
+.
+
+45:09.000 --> 45:11.000
+.
+
+45:11.000 --> 45:13.000
+.
+
+45:13.000 --> 45:15.000
+.
+
+45:15.000 --> 45:17.000
+.
+
+45:17.000 --> 45:19.000
+.
+
+45:21.000 --> 45:23.000
+.
+
+45:23.000 --> 45:25.000
+.
+
+45:25.000 --> 45:27.000
+.
+
+45:27.000 --> 45:29.000
+.
+
+45:29.000 --> 45:31.000
+.
+
+45:31.000 --> 45:33.000
+.
+
+45:33.000 --> 45:35.000
+.
+
+45:35.000 --> 45:37.000
+.
+
+45:37.000 --> 45:39.000
+.
+
+45:39.000 --> 45:41.000
+.
+
+45:41.000 --> 45:43.000
+.
+
+45:43.000 --> 45:45.000
+.
+
+45:45.000 --> 45:47.000
+.
+
+45:47.000 --> 45:49.000
+.
+
+45:49.000 --> 45:51.000
+.
+
+45:51.000 --> 45:53.000
+.
+
+45:55.000 --> 45:57.000
+.
+
+45:57.000 --> 45:59.000
+.
+
+45:59.000 --> 46:01.000
+.
+
+46:01.000 --> 46:03.000
+.
+
+46:03.000 --> 46:05.000
+.
+
+46:05.000 --> 46:07.000
+.
+
+46:07.000 --> 46:09.000
+.
+
+46:09.000 --> 46:11.000
+.
+
+46:11.000 --> 46:13.000
+.
+
+46:15.000 --> 46:17.000
+.
+
+46:17.000 --> 46:19.000
+.
+
+46:19.000 --> 46:21.000
+.
+
+46:21.000 --> 46:23.000
+.
+
+46:23.000 --> 46:25.000
+.
+
+46:25.000 --> 46:27.000
+.
+
+46:27.000 --> 46:29.000
+.
+
+46:29.000 --> 46:31.000
+.
+
+46:31.000 --> 46:33.000
+.
+
+46:33.000 --> 46:35.000
+.
+
+46:35.000 --> 46:37.000
+.
+
+46:37.000 --> 46:39.000
+.
+
+46:39.000 --> 46:41.000
+.
+
+46:43.000 --> 46:45.000
+.
+
+46:45.000 --> 46:47.000
+.
+
+46:47.000 --> 46:49.000
+.
+
+46:49.000 --> 46:51.000
+.
+
+46:51.000 --> 46:53.000
+.
+
+46:53.000 --> 46:55.000
+.
+
+46:55.000 --> 46:57.000
+.
+
+46:57.000 --> 46:59.000
+.
+
+46:59.000 --> 47:01.000
+.
+
+47:01.000 --> 47:03.000
+.
+
+47:03.000 --> 47:05.000
+.
+
+47:05.000 --> 47:07.000
+.
+
+47:07.000 --> 47:09.000
+.
+
+47:09.000 --> 47:11.000
+.
+
+47:13.000 --> 47:15.000
+.
+
+47:15.000 --> 47:17.000
+.
+
+47:17.000 --> 47:19.000
+.
+
+47:19.000 --> 47:21.000
+.
+
+47:21.000 --> 47:23.000
+.
+
+47:23.000 --> 47:25.000
+.
+
+47:25.000 --> 47:27.000
+.
+
+47:27.000 --> 47:29.000
+.
+
+47:29.000 --> 47:31.000
+.
+
+47:31.000 --> 47:33.000
+.
+
+47:33.000 --> 47:35.000
+.
+
+47:35.000 --> 47:37.000
+.
+
+47:39.000 --> 47:41.000
+.
+
+47:41.000 --> 47:43.000
+.
+
+47:43.000 --> 47:45.000
+.
+
+47:45.000 --> 47:47.000
+.
+
+47:47.000 --> 47:49.000
+.
+
+47:49.000 --> 47:51.000
+.
+
+47:51.000 --> 47:53.000
+.
+
+47:53.000 --> 47:55.000
+.
+
+47:55.000 --> 47:57.000
+.
+
+47:57.000 --> 47:59.000
+.
+
+47:59.000 --> 48:01.000
+.
+
+48:01.000 --> 48:03.000
+.
+
+48:03.000 --> 48:05.000
+.
+
+48:07.000 --> 48:09.000
+.
+
+48:09.000 --> 48:11.000
+.
+
+48:11.000 --> 48:13.000
+.
+
+48:13.000 --> 48:15.000
+.
+
+48:15.000 --> 48:17.000
+.
+
+48:17.000 --> 48:19.000
+.
+
+48:19.000 --> 48:21.000
+.
+
+48:21.000 --> 48:23.000
+.
+
+48:23.000 --> 48:25.000
+.
+
+48:25.000 --> 48:27.000
+.
+
+48:27.000 --> 48:29.000
+.
+
+48:29.000 --> 48:31.000
+.
+
+48:31.000 --> 48:33.000
+.
+
+48:33.000 --> 48:35.000
+.
+
+48:35.000 --> 48:37.000
+.
+
+48:37.000 --> 48:39.000
+.
+
+48:39.000 --> 48:41.000
+.
+
+48:41.000 --> 48:43.000
+.
+
+48:45.000 --> 48:47.000
+.
+
+48:47.000 --> 48:49.000
+.
+
+48:49.000 --> 48:51.000
+.
+
+48:51.000 --> 48:53.000
+.
+
+48:53.000 --> 48:55.000
+.
+
+48:55.000 --> 48:57.000
+.
+
+48:57.000 --> 48:59.000
+.
+
+48:59.000 --> 49:01.000
+.
+
+49:03.000 --> 49:05.000
+.
+
+49:05.000 --> 49:07.000
+.
+
+49:07.000 --> 49:09.000
+.
+
+49:09.000 --> 49:11.000
+.
+
+49:11.000 --> 49:13.000
+.
+
+49:13.000 --> 49:15.000
+.
+
+49:15.000 --> 49:17.000
+.
+
+49:17.000 --> 49:19.000
+.
+
+49:19.000 --> 49:21.000
+.
+
+49:21.000 --> 49:23.000
+.
+
+49:23.000 --> 49:25.000
+.
+
+49:25.000 --> 49:27.000
+.
+
+49:27.000 --> 49:29.000
+.
+
+49:29.000 --> 49:31.000
+.
+
+49:33.000 --> 49:35.000
+.
+
+49:35.000 --> 49:37.000
+.
+
+49:37.000 --> 49:39.000
+.
+
+49:39.000 --> 49:41.000
+.
+
+49:41.000 --> 49:43.000
+.
+
+49:43.000 --> 49:45.000
+.
+
+49:45.000 --> 49:47.000
+.
+
+49:47.000 --> 49:49.000
+.
+
+49:49.000 --> 49:51.000
+.
+
+49:51.000 --> 49:53.000
+.
+
+49:53.000 --> 49:55.000
+.
+
+49:55.000 --> 49:57.000
+.
+
+49:59.000 --> 50:01.000
+.
+
+50:01.000 --> 50:03.000
+.
+
+50:03.000 --> 50:05.000
+.
+
+50:05.000 --> 50:07.000
+.
+
+50:07.000 --> 50:09.000
+.
+
+50:09.000 --> 50:11.000
+.
+
+50:11.000 --> 50:13.000
+.
+
+50:13.000 --> 50:15.000
+.
+
+50:15.000 --> 50:17.000
+.
+
+50:17.000 --> 50:19.000
+.
+
+50:19.000 --> 50:21.000
+.
+
+50:21.000 --> 50:23.000
+.
+
+50:23.000 --> 50:25.000
+.
+
+50:27.000 --> 50:29.000
+.
+
+50:29.000 --> 50:31.000
+.
+
+50:31.000 --> 50:33.000
+.
+
+50:33.000 --> 50:35.000
+.
+
+50:35.000 --> 50:37.000
+.
+
+50:37.000 --> 50:39.000
+.
+
+50:39.000 --> 50:41.000
+.
+
+50:41.000 --> 50:43.000
+.
+
+50:43.000 --> 50:45.000
+.
+
+50:45.000 --> 50:47.000
+.
+
+50:47.000 --> 50:49.000
+.
+
+50:49.000 --> 50:51.000
+.
+
+50:51.000 --> 50:53.000
+.
+
+50:53.000 --> 50:55.000
+.
+
+50:57.000 --> 50:59.000
+.
+
+50:59.000 --> 51:01.000
+.
+
+51:01.000 --> 51:03.000
+.
+
+51:03.000 --> 51:05.000
+.
+
+51:05.000 --> 51:07.000
+.
+
+51:07.000 --> 51:09.000
+.
+
+51:09.000 --> 51:11.000
+.
+
+51:11.000 --> 51:13.000
+.
+
+51:13.000 --> 51:15.000
+.
+
+51:15.000 --> 51:17.000
+.
+
+51:17.000 --> 51:19.000
+.
+
+51:19.000 --> 51:21.000
+.
+
+51:23.000 --> 51:25.000
+.
+
+51:25.000 --> 51:27.000
+.
+
+51:27.000 --> 51:29.000
+.
+
+51:29.000 --> 51:31.000
+.
+
+51:31.000 --> 51:33.000
+.
+
+51:33.000 --> 51:35.000
+.
+
+51:35.000 --> 51:37.000
+.
+
+51:37.000 --> 51:39.000
+.
+
+51:39.000 --> 51:41.000
+.
+
+51:41.000 --> 51:43.000
+.
+
+51:43.000 --> 51:45.000
+.
+
+51:45.000 --> 51:47.000
+.
+
+51:47.000 --> 51:49.000
+.
+
+51:51.000 --> 51:53.000
+.
+
+51:53.000 --> 51:55.000
+.
+
+51:55.000 --> 51:57.000
+.
+
+51:57.000 --> 51:59.000
+.
+
+51:59.000 --> 52:01.000
+.
+
+52:01.000 --> 52:03.000
+.
+
+52:03.000 --> 52:05.000
+.
+
+52:05.000 --> 52:07.000
+.
+
+52:07.000 --> 52:09.000
+.
+
+52:09.000 --> 52:11.000
+.
+
+52:11.000 --> 52:13.000
+.
+
+52:13.000 --> 52:15.000
+.
+
+52:15.000 --> 52:17.000
+.
+
+52:17.000 --> 52:19.000
+.
+
+52:21.000 --> 52:23.000
+.
+
+52:23.000 --> 52:25.000
+.
+
+52:25.000 --> 52:27.000
+.
+
+52:27.000 --> 52:29.000
+.
+
+52:29.000 --> 52:31.000
+.
+
+52:31.000 --> 52:33.000
+.
+
+52:33.000 --> 52:35.000
+.
+
+52:35.000 --> 52:37.000
+.
+
+52:37.000 --> 52:39.000
+.
+
+52:39.000 --> 52:41.000
+.
+
+52:41.000 --> 52:43.000
+.
+
+52:43.000 --> 52:45.000
+.
+
+52:45.000 --> 52:47.000
+.
+
+52:49.000 --> 52:51.000
+.
+
+52:51.000 --> 52:53.000
+.
+
+52:53.000 --> 52:55.000
+.
+
+52:55.000 --> 52:57.000
+.
+
+52:57.000 --> 52:59.000
+.
+
+52:59.000 --> 53:01.000
+.
+
+53:01.000 --> 53:03.000
+.
+
+53:03.000 --> 53:05.000
+.
+
+53:05.000 --> 53:07.000
+.
+
+53:07.000 --> 53:09.000
+.
+
+53:09.000 --> 53:11.000
+.
+
+53:11.000 --> 53:13.000
+.
+
+53:13.000 --> 53:15.000
+.
+
+53:15.000 --> 53:17.000
+.
+
+53:17.000 --> 53:19.000
+.
+
+53:19.000 --> 53:21.000
+.
+
+53:21.000 --> 53:23.000
+.
+
+53:23.000 --> 53:25.000
+.
+
+53:25.000 --> 53:27.000
+.
+
+53:29.000 --> 53:31.000
+.
+
+53:31.000 --> 53:33.000
+.
+
+53:33.000 --> 53:35.000
+.
+
+53:35.000 --> 53:37.000
+.
+
+53:37.000 --> 53:39.000
+.
+
+53:39.000 --> 53:41.000
+.
+
+53:41.000 --> 53:43.000
+.
+
+53:45.000 --> 53:47.000
+.
+
+53:47.000 --> 53:49.000
+.
+
+53:49.000 --> 53:51.000
+.
+
+53:51.000 --> 53:53.000
+.
+
+53:53.000 --> 53:55.000
+.
+
+53:55.000 --> 53:57.000
+.
+
+53:57.000 --> 53:59.000
+.
+
+53:59.000 --> 54:01.000
+.
+
+54:01.000 --> 54:03.000
+.
+
+54:03.000 --> 54:05.000
+.
+
+54:05.000 --> 54:07.000
+.
+
+54:07.000 --> 54:09.000
+.
+
+54:11.000 --> 54:13.000
+.
+
+54:13.000 --> 54:15.000
+.
+
+54:15.000 --> 54:17.000
+.
+
+54:17.000 --> 54:19.000
+.
+
+54:19.000 --> 54:21.000
+.
+
+54:21.000 --> 54:23.000
+.
+
+54:23.000 --> 54:25.000
+.
+
+54:25.000 --> 54:27.000
+.
+
+54:27.000 --> 54:29.000
+.
+
+54:29.000 --> 54:31.000
+.
+
+54:31.000 --> 54:33.000
+.
+
+54:33.000 --> 54:35.000
+.
+
+54:35.000 --> 54:37.000
+.
+
+54:37.000 --> 54:39.000
+.
+
+54:41.000 --> 54:43.000
+.
+
+54:43.000 --> 54:45.000
+.
+
+54:45.000 --> 54:47.000
+.
+
+54:47.000 --> 54:49.000
+.
+
+54:49.000 --> 54:51.000
+.
+
+54:51.000 --> 54:53.000
+.
+
+54:53.000 --> 54:55.000
+.
+
+54:55.000 --> 54:57.000
+.
+
+54:57.000 --> 54:59.000
+.
+
+54:59.000 --> 55:01.000
+.
+
+55:01.000 --> 55:03.000
+.
+
+55:03.000 --> 55:05.000
+.
+
+55:07.000 --> 55:09.000
+.
+
+55:09.000 --> 55:11.000
+.
+
+55:11.000 --> 55:13.000
+.
+
+55:13.000 --> 55:15.000
+.
+
+55:15.000 --> 55:17.000
+.
+
+55:17.000 --> 55:19.000
+.
+
+55:19.000 --> 55:21.000
+.
+
+55:21.000 --> 55:23.000
+.
+
+55:23.000 --> 55:25.000
+.
+
+55:25.000 --> 55:27.000
+.
+
+55:27.000 --> 55:29.000
+.
+
+55:29.000 --> 55:31.000
+.
+
+55:31.000 --> 55:33.000
+.
+
+55:33.000 --> 55:35.000
+.
+
+55:35.000 --> 55:37.000
+.
+
+55:37.000 --> 55:39.000
+.
+
+55:39.000 --> 55:41.000
+.
+
+55:41.000 --> 55:43.000
+.
+
+55:43.000 --> 55:45.000
+.
+
+55:45.000 --> 55:47.000
+.
+
+55:47.000 --> 55:49.000
+.
+
+55:49.000 --> 55:51.000
+.
+
+55:51.000 --> 55:53.000
+.
+
+55:53.000 --> 55:55.000
+.
+
+55:55.000 --> 55:57.000
+.
+
+55:57.000 --> 55:59.000
+.
+
+55:59.000 --> 56:01.000
+.
+
+56:03.000 --> 56:05.000
+.
+
+56:05.000 --> 56:07.000
+.
+
+56:07.000 --> 56:09.000
+.
+
+56:09.000 --> 56:11.000
+.
+
+56:11.000 --> 56:13.000
+.
+
+56:13.000 --> 56:15.000
+.
+
+56:15.000 --> 56:17.000
+.
+
+56:17.000 --> 56:19.000
+.
+
+56:19.000 --> 56:21.000
+.
+
+56:21.000 --> 56:23.000
+.
+
+56:23.000 --> 56:25.000
+.
+
+56:25.000 --> 56:27.000
+.
+
+56:27.000 --> 56:29.000
+.
+
+56:29.000 --> 56:31.000
+.
+
+56:31.000 --> 56:33.000
+.
+
+56:33.000 --> 56:35.000
+.
+
+56:35.000 --> 56:37.000
+.
+
+56:37.000 --> 56:39.000
+.
+
+56:39.000 --> 56:41.000
+.
+
+56:43.000 --> 56:45.000
+.
+
+56:45.000 --> 56:47.000
+.
+
+56:47.000 --> 56:49.000
+.
+
+56:49.000 --> 56:51.000
+.
+
+56:51.000 --> 56:53.000
+.
+
+56:53.000 --> 56:55.000
+.
+
+56:55.000 --> 56:57.000
+.
+
+56:59.000 --> 57:01.000
+.
+
+57:01.000 --> 57:03.000
+.
+
+57:03.000 --> 57:05.000
+.
+
+57:05.000 --> 57:07.000
+.
+
+57:07.000 --> 57:09.000
+.
+
+57:09.000 --> 57:11.000
+.
+
+57:11.000 --> 57:13.000
+.
+
+57:13.000 --> 57:15.000
+.
+
+57:15.000 --> 57:17.000
+.
+
+57:17.000 --> 57:19.000
+.
+
+57:19.000 --> 57:21.000
+.
+
+57:21.000 --> 57:23.000
+.
+
+57:25.000 --> 57:27.000
+.
+
+57:27.000 --> 57:29.000
+.
+
+57:29.000 --> 57:31.000
+.
+
+57:31.000 --> 57:33.000
+.
+
+57:33.000 --> 57:35.000
+.
+
+57:35.000 --> 57:37.000
+.
+
+57:37.000 --> 57:39.000
+.
+
+57:39.000 --> 57:41.000
+.
+
+57:41.000 --> 57:43.000
+.
+
+57:43.000 --> 57:45.000
+.
+
+57:45.000 --> 57:47.000
+.
+
+57:47.000 --> 57:49.000
+.
+
+57:49.000 --> 57:51.000
+.
+
+57:53.000 --> 57:55.000
+.
+
+57:55.000 --> 57:57.000
+.
+
+57:57.000 --> 57:59.000
+.
+
+57:59.000 --> 58:01.000
+.
+
+58:01.000 --> 58:03.000
+.
+
+58:03.000 --> 58:05.000
+.
+
+58:05.000 --> 58:07.000
+.
+
+58:07.000 --> 58:09.000
+.
+
+58:09.000 --> 58:11.000
+.
+
+58:11.000 --> 58:13.000
+.
+
+58:13.000 --> 58:15.000
+.
+
+58:15.000 --> 58:17.000
+.
+
+58:17.000 --> 58:19.000
+.
+
+58:19.000 --> 58:21.000
+.
+
+58:23.000 --> 58:25.000
+.
+
+58:25.000 --> 58:27.000
+.
+
+58:27.000 --> 58:29.000
+.
+
+58:29.000 --> 58:31.000
+.
+
+58:31.000 --> 58:33.000
+.
+
+58:33.000 --> 58:35.000
+.
+
+58:35.000 --> 58:37.000
+.
+
+58:37.000 --> 58:39.000
+.
+
+58:39.000 --> 58:41.000
+.
+
+58:41.000 --> 58:43.000
+.
+
+58:43.000 --> 58:45.000
+.
+
+58:45.000 --> 58:47.000
+.
+
+58:49.000 --> 58:51.000
+.
+
+58:51.000 --> 58:53.000
+.
+
+58:53.000 --> 58:55.000
+.
+
+58:55.000 --> 58:57.000
+.
+
+58:57.000 --> 58:59.000
+.
+
+58:59.000 --> 59:01.000
+.
+
+59:01.000 --> 59:03.000
+.
+
+59:03.000 --> 59:05.000
+.
+
+59:05.000 --> 59:07.000
+.
+
+59:07.000 --> 59:09.000
+.
+
+59:09.000 --> 59:11.000
+.
+
+59:11.000 --> 59:13.000
+.
+
+59:13.000 --> 59:15.000
+.
+
+59:15.000 --> 59:17.000
+.
+
+59:17.000 --> 59:19.000
+.
+
+59:19.000 --> 59:21.000
+.
+
+59:21.000 --> 59:23.000
+.
+
+59:23.000 --> 59:25.000
+.
+
+59:25.000 --> 59:27.000
+.
+
+59:27.000 --> 59:29.000
+.
+
+59:31.000 --> 59:33.000
+.
+
+59:33.000 --> 59:35.000
+.
+
+59:35.000 --> 59:37.000
+.
+
+59:37.000 --> 59:39.000
+.
+
+59:39.000 --> 59:41.000
+.
+
+59:41.000 --> 59:43.000
+.
+
+59:45.000 --> 59:47.000
+.
+
+59:47.000 --> 59:49.000
+.
+
+59:49.000 --> 59:51.000
+.
+
+59:51.000 --> 59:53.000
+.
+
+59:53.000 --> 59:55.000
+.
+
+59:55.000 --> 59:57.000
+.
+
+59:57.000 --> 59:59.000
+.
+
+59:59.000 --> 01:00:01.000
+.
+
+01:00:01.000 --> 01:00:03.000
+.
+
+01:00:03.000 --> 01:00:05.000
+.
+
+01:00:05.000 --> 01:00:07.000
+.
+
+01:00:07.000 --> 01:00:09.000
+.
+
+01:00:09.000 --> 01:00:11.000
+.
+
+01:00:11.000 --> 01:00:13.000
+.
+
+01:00:15.000 --> 01:00:17.000
+.
+
+01:00:17.000 --> 01:00:19.000
+.
+
+01:00:19.000 --> 01:00:21.000
+.
+
+01:00:21.000 --> 01:00:23.000
+.
+
+01:00:23.000 --> 01:00:25.000
+.
+
+01:00:25.000 --> 01:00:27.000
+.
+
+01:00:27.000 --> 01:00:29.000
+.
+
+01:00:29.000 --> 01:00:31.000
+.
+
+01:00:31.000 --> 01:00:33.000
+.
+
+01:00:33.000 --> 01:00:35.000
+.
+
+01:00:35.000 --> 01:00:37.000
+.
+
+01:00:37.000 --> 01:00:39.000
+.
+
+01:00:41.000 --> 01:00:43.000
+.
+
+01:00:43.000 --> 01:00:45.000
+.
+
+01:00:45.000 --> 01:00:47.000
+.
+
+01:00:47.000 --> 01:00:49.000
+.
+
+01:00:49.000 --> 01:00:51.000
+.
+
+01:00:51.000 --> 01:00:53.000
+.
+
+01:00:53.000 --> 01:00:55.000
+.
+
+01:00:55.000 --> 01:00:57.000
+.
+
+01:00:57.000 --> 01:00:59.000
+.
+
+01:00:59.000 --> 01:01:01.000
+.
+
+01:01:01.000 --> 01:01:03.000
+.
+
+01:01:03.000 --> 01:01:05.000
+.
+
+01:01:05.000 --> 01:01:07.000
+.
+
+01:01:07.000 --> 01:01:09.000
+.
+
+01:01:11.000 --> 01:01:13.000
+.
+
+01:01:13.000 --> 01:01:15.000
+.
+
+01:01:15.000 --> 01:01:17.000
+.
+
+01:01:17.000 --> 01:01:19.000
+.
+
+01:01:19.000 --> 01:01:21.000
+.
+
+01:01:21.000 --> 01:01:23.000
+.
+
+01:01:23.000 --> 01:01:25.000
+.
+
+01:01:25.000 --> 01:01:27.000
+.
+
+01:01:27.000 --> 01:01:29.000
+.
+
+01:01:29.000 --> 01:01:31.000
+.
+
+01:01:31.000 --> 01:01:33.000
+.
+
+01:01:33.000 --> 01:01:35.000
+.
+
+01:01:35.000 --> 01:01:37.000
+.
+
+01:01:39.000 --> 01:01:41.000
+.
+
+01:01:41.000 --> 01:01:43.000
+.
+
+01:01:43.000 --> 01:01:45.000
+.
+
+01:01:45.000 --> 01:01:47.000
+.
+
+01:01:47.000 --> 01:01:49.000
+.
+
+01:01:49.000 --> 01:01:51.000
+.
+
+01:01:51.000 --> 01:01:53.000
+.
+
+01:01:53.000 --> 01:01:55.000
+.
+
+01:01:55.000 --> 01:01:57.000
+.
+
+01:01:57.000 --> 01:01:59.000
+.
+
+01:01:59.000 --> 01:02:01.000
+.
+
+01:02:01.000 --> 01:02:03.000
+.
+
+01:02:03.000 --> 01:02:05.000
+.
+
+01:02:05.000 --> 01:02:07.000
+.
+
+01:02:07.000 --> 01:02:09.000
+.
+
+01:02:09.000 --> 01:02:11.000
+.
+
+01:02:11.000 --> 01:02:13.000
+.
+
+01:02:13.000 --> 01:02:15.000
+.
+
+01:02:15.000 --> 01:02:17.000
+.
+
+01:02:17.000 --> 01:02:19.000
+.
+
+01:02:19.000 --> 01:02:21.000
+.
+
+01:02:21.000 --> 01:02:23.000
+.
+
+01:02:23.000 --> 01:02:25.000
+.
+
+01:02:25.000 --> 01:02:27.000
+.
+
+01:02:29.000 --> 01:02:31.000
+.
+
+01:02:31.000 --> 01:02:33.000
+.
+
+01:02:33.000 --> 01:02:35.000
+.
+
+01:02:35.000 --> 01:02:37.000
+.
+
+01:02:37.000 --> 01:02:39.000
+.
+
+01:02:39.000 --> 01:02:41.000
+.
+
+01:02:41.000 --> 01:02:43.000
+.
+
+01:02:43.000 --> 01:02:45.000
+.
+
+01:02:45.000 --> 01:02:47.000
+.
+
+01:02:47.000 --> 01:02:49.000
+.
+
+01:02:49.000 --> 01:02:51.000
+.
+
+01:02:51.000 --> 01:02:53.000
+.
+
+01:02:53.000 --> 01:02:55.000
+.
+
+01:02:55.000 --> 01:02:57.000
+.
+
+01:02:59.000 --> 01:03:01.000
+.
+
+01:03:01.000 --> 01:03:03.000
+.
+
+01:03:03.000 --> 01:03:05.000
+.
+
+01:03:05.000 --> 01:03:07.000
+.
+
+01:03:07.000 --> 01:03:09.000
+.
+
+01:03:09.000 --> 01:03:11.000
+.
+
+01:03:11.000 --> 01:03:13.000
+.
+
+01:03:13.000 --> 01:03:15.000
+.
+
+01:03:15.000 --> 01:03:17.000
+.
+
+01:03:17.000 --> 01:03:19.000
+.
+
+01:03:19.000 --> 01:03:21.000
+.
+

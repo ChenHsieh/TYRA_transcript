@@ -1,0 +1,2985 @@
+Okay, let's welcome everyone to participate in today's TARA speech.
+Today's speaker is Mr. Zhang Yanyong.
+He is now a Ph.D. student in astronomy and physics at Caltech.
+Before coming to Caltech, he studied at NTU Physics and NTU Mechanics.
+During his time at NTU, he specialized in accelerometers,
+half astronomy and half accelerometers, high-performance physics experiments.
+Now he is at Caltech, he specializes in dark matter experiments,
+which are more astronomical.
+So today's speech is mainly about...
+My understanding, correct me if I'm wrong, Mr. Zhang Yanyong.
+It's mainly about how they detect their detectors in design experiments.
+I want to share it with you.
+Some of it has nothing to do with today's speech,
+but it has a lot to do with the speaker.
+Zhang Yanyong is a disciplined, self-trained athlete.
+He is a good trainer.
+If you are interested in running, cycling, or surfing,
+he has a lot of experience.
+He also likes to discuss these things with you.
+Lastly, as you have heard,
+today is Zhang Yanyong's birthday.
+Actually, it's not yesterday, it's today.
+I don't know why Zhang Yanyong...
+Did Zhang Yanyong say that he was drunk yesterday because it was his birthday?
+It's not easy to forget your birthday.
+So I decided to sing a happy birthday song for Zhang Yanyong.
+Happy birthday to you, happy birthday to you.
+You can open the microphone and sing together.
+Happy birthday to you, happy birthday to you.
+Let's welcome Zhang Yanyong to share his research with us.
+I'll turn off the microphone.
+Can you hear me?
+Because I found that the new version of BlueJeans
+can't use a lot of screens on Linux.
+So the topic I'm going to talk about is
+Photon Noise Estimation and Suppression for Explicit Cryogenic Measurement.
+Why did I choose this topic?
+The reason is...
+Of course, this is very specific.
+It's an example of what we're doing right now.
+But we all know that
+any experiment needs to pursue a higher sensitivity.
+The current trend in the world is that we're going to do it at a lower temperature.
+Because basic statistical physics tells us that
+no matter what system it is,
+its noise is basically related to temperature.
+So the lower the temperature, the lower the noise.
+So today I want to talk about something more general.
+For most people, whether they're listening now
+or watching on the Internet,
+those who are doing experiments
+and want to take it,
+whether you want to put your experiment device into a liquid nitrogen
+or a liquid nitrogen solution,
+or like we use cryogenic dilution fridge,
+are all useful technologies.
+In order to further promote its sensitivity in our experiments,
+we developed an application of this technology.
+Next slide.
+I'm going to spend a lot of time talking about
+what our traditional concept of noise is.
+Why these concepts are very meaningful
+if you think through the details.
+But it's not something we can apply directly to our experiments.
+First of all, what you're seeing now is called
+thermal noise,
+which we think is traditionally classical noise.
+Of course, we have to say it's Johnson-Nyquist noise
+because Johnson-Nyquist is the person who invented it.
+Its feature is that it's very wide,
+that is, it's maybe 10 hertz.
+What you see on the screen
+may be from 10 hertz to tens of millions of hertz.
+It's the whole range
+that you can see this kind of noise signal.
+And it's flat, so it's called white noise.
+It's like white light.
+We know that Johnson found that
+this noise only has to do with the temperature
+of the instrument that produces this noise,
+or the equivalent temperature.
+It doesn't have to do with anything else.
+For example, I have a resistor today,
+and it keeps producing noise.
+This resistor, whether it's made of cement,
+wire, metal, or air,
+it doesn't matter.
+As long as the temperature of this thing is like that,
+its noise is like that.
+This is a very special thing.
+So at the beginning of the 20th century,
+it was a very special physics.
+That is, you would have expected
+that this thing would keep producing that noisy signal.
+Should it be related to its material?
+The answer is no.
+But later on, the development of quantum mechanics
+immediately made people think,
+isn't this the same as black radiation?
+What is black radiation?
+Black radiation is its light or energy.
+Its energy is kT,
+and it only has to do with temperature.
+Because no matter what material it is,
+they exchange energy with light.
+I've already said that.
+So here's a question.
+What is it that makes this classical system
+reach thermal equilibrium?
+The answer is light.
+No matter what material it is, it's all light.
+Okay.
+So this light becomes...
+Later on, Planck found that
+as long as light reaches thermal equilibrium,
+this thing will emit light.
+It has nothing to do with material.
+It has nothing to do with temperature.
+Then it's called black radiation.
+But we also know that black radiation
+is the most important thing in human history.
+It is the first direct evidence,
+and it has been explained,
+and it has started the so-called quantum era.
+Without quantum mechanics,
+without the phenomenon of quantum being brought into physics,
+there is no way to explain black radiation.
+So here's a very strange thing.
+We say this is a classical system.
+Classical thermal equilibrium has this phenomenon.
+But without quantum mechanics,
+there is no way to explain it.
+So why does this happen?
+If you put any material in a temperature,
+put it in a temperature environment,
+which is more scientific,
+which is called photon bath.
+Then through these quantum particles,
+which is what we call photons,
+exchange energy to reach thermal equilibrium,
+there will be this classical effect.
+Why is this thing?
+Because in fact...
+Okay.
+Why is the classical description
+applicable to the quantum phenomenon?
+It has a very important reason.
+This reason will also tell me today
+why it is very relevant to future experiments.
+Because in past experiments,
+we usually think that
+I operate in classical regime,
+I think classical,
+that is, T equals 4KT.
+If I operate in quantum regime,
+I think quantum.
+But why is this important?
+Because I have already said that
+in this classical noise,
+it actually comes from quantum effect.
+But why can we use
+classical treatment to think about this thing?
+Because if you look at the textbook
+or you look at the wiki,
+roughly, usually at a normal temperature,
+I write Montaigne here.
+In fact, I just want to imply that
+in fact, we are not doing
+the experiment we are doing now in the future.
+At a normal size,
+for example, as big as your palm,
+a normal temperature,
+for example, a thing of room temperature,
+it emits a ray of black radiation.
+That ray of light
+is every second,
+every square meter,
+it will emit 10 to 20 times of radiation.
+So much that it's like
+when you go to drink water,
+you won't feel a drop of water
+hitting your tongue.
+It's like a continuous state.
+So a classical description can be used.
+So it can be calculated as 4KT.
+But we can't forget that
+if you look at its spectrum,
+it can't be explained by classical physics.
+It must be quantized.
+That's why we started the quantum era.
+So I can ask a question.
+If your tongue is really sensitive,
+when you drink water,
+can you feel a drop of water?
+Think about this question.
+I will continue to talk later.
+Then everyone will know
+why I'm asking this question.
+This question is actually quite interesting.
+Next time you drink water,
+you can think about
+if I can feel a drop of water
+on my tongue.
+This is the first type.
+Now let's look at the second type.
+The second type is called shock noise
+or Poisson noise.
+Of course, Poisson comes from
+Poisson distribution.
+I think most people who study quantum mechanics
+have studied it.
+This is a mathematical description.
+When you have a fixed probability,
+you can calculate
+the probability of something happening
+in the fixed probability.
+But sometimes I see it,
+and the last chance I see it
+is the biggest.
+The last chance I see it is the smallest.
+If you look at the picture on the right,
+for example, let's look at the blue and purple.
+On average,
+there is a certain probability
+that you will see something
+four times.
+For example, you see it four times
+in one minute.
+If you see it five times
+in one minute,
+it will be smaller.
+If you see it six times,
+it will be smaller.
+But you actually have a chance
+to see it 50 or 20 times
+in one minute.
+But the chance is very small.
+You see it is very small here.
+And zero times is also very small.
+This thing is called Poisson distribution.
+It is a system
+that requires quantization
+to be resolvable.
+For example,
+if the leaves fall down for a minute,
+how many pieces can you see?
+You can see this quantization.
+Why?
+What we are implying here is that
+as a detector,
+the resolution of your timing
+is much higher than
+the frequency at which the leaves fall down,
+rather than the
+frequency at which the leaves fall down.
+So you can see this quantization.
+So it becomes shot noise.
+But you will suddenly find that
+shot noise is a peak.
+It's bulging here,
+on the right side of the picture.
+It's not like the picture above.
+It's a whole screen.
+But in theory,
+they are just different.
+Do you have that kind of resolution
+that can see
+the leaves fall down
+or the frequency
+of the water molecules hitting the tongue?
+But its nature
+is very different.
+You see this shot noise.
+It's a very narrow band.
+It's a peak here.
+And it's due to quantization.
+It's due to the quantum nature
+of carrier or event.
+The example I just gave
+is the leaves falling down.
+But I can give another example.
+For example,
+if there is a導線 today,
+you charge it.
+The resistance of the導線 is very small.
+So through the current,
+the particles of the electron
+are very, very, very many.
+So it feels like
+the thermal noise
+I just mentioned.
+That's also very typical.
+That's how people measure
+thermal noise.
+But it's exactly the same thing.
+If I put a導線 today
+and use the pressure to do it,
+is the resistance super, super big?
+It's so big
+that you can't measure it.
+Uh,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+a dozen,
+another one,
+another one,
+another one,
+two,
+two,
+two.
+
+is this
+This is because
+It's because
+this
+kryptonite
+it's
+very,
+very,
+very,
+very high.
+The electronic
+力
+only got
+carried
+across
+this
+dotted
+line,
+and
+then it
+became
+like a
+very,
+very,
+very high
+voltage.
+It can
+destroy that
+restraining force
+and let it
+pull out
+one by one
+like this.
+Okay,
+this is
+shot
+noise,
+but
+shot
+noise
+in
+uh
+mundane
+apparatus
+usually
+happens
+in
+you have
+to
+externally
+apply
+a
+force
+to
+the
+object.
+So,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can
+be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in
+principle,
+any
+signal
+can be
+uh
+poissonian
+if we
+have
+infinite
+timing
+resolution.
+Okay,
+so,
+in

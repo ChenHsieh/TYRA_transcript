@@ -1,0 +1,1741 @@
+Hello, everyone. Thank you for coming to Project Terra. I'm your host, Su-Yi-An.
+I'm your host, Hu-Jun-Wei.
+I'm delighted to be joined by Fu-Chun to give us a presentation.
+The topic is Data, Reading, Architecture, Environment and Energy, using Taiwan's energy data as an example.
+Later on, I'll talk about today's process.
+Later on, I'll talk about today's process.
+Today's presentation is hosted by Project Terra.
+Later on, we'll record the entire presentation.
+In other words, after the presentation, if you want to listen to it again or share it with your friends,
+you can go to Project Terra's website to view today's recording.
+During the presentation, if you have any questions,
+you're welcome to raise your hand or ask your question in the chat.
+The hosts will monitor your questions and talk to the speakers.
+If you have a bigger or more complicated question,
+we'll have an open Q&A session at the end of the presentation.
+Please feel free to ask your questions.
+That's about it for today's presentation.
+Now, let's have another host, Hu-Jun-Wei, to introduce today's speaker, Fu-Chun.
+Hello, everyone.
+Fu-Chun is a Ph.D. student at the University of Singapore, NUS.
+He is currently studying architecture and urban data science in the University of Singapore.
+His research focuses on the application of large data related to architecture,
+including architectural energy, indoor environment comfort, and architectural IoT data, etc.
+At the same time, he is also doing some community activities in the lab.
+For example, he held an energy prediction competition at the well-known data platform Kaggle the year before last,
+and provided data science courses to the public in an open platform course, EDS.
+Interestingly, before Fu-Chun was a Ph.D. student,
+he worked as a three-year data scientist at a Taiwanese innovation company,
+Knowledge Analysis Based Exploration,
+and was committed to the development of large data related to architecture,
+including the detection of labor abnormalities, energy prediction, and data visualization, etc.
+In addition, he is also involved in the development of artificial intelligence services
+and energy data analysis of the Taipei City Government.
+Today, Fu-Chun will focus more on issues related to food in the industry.
+In today's speech, he will talk about the academic development of energy prediction,
+and finally share how to work with open data to do energy prediction.
+Let's welcome Fu-Chun.
+Can you hear me?
+Yes, we can.
+Great.
+Next, let me play my video.
+Today's topic is data reading, architecture, environment, and energy,
+based on Taiwan energy data.
+This speech is mainly about architecture data prediction models,
+as well as the introduction of related open data.
+At the end of the speech,
+I will use the open data provided by Taipei Electric Power Corporation,
+and the weather forecast provided by the Meteorological Bureau,
+to cooperate with the model of machine learning,
+to make an energy prediction service that can predict the future.
+I hope the difficulty of today's speech is not too high.
+The main thing is to let everyone know
+how to apply data science in human resources or architecture.
+I hope everyone can get to know more about open data
+and how to do these things.
+OK.
+This is my basic self-introduction.
+I am a Ph.D. student at INU-S.
+I graduated from Shenzhen University of Technology,
+and I had three years of experience as a data scientist before I got my Ph.D.
+This also allows me to focus on the problems in the industry
+during my Ph.D. career.
+This is what I just said.
+We have been doing some community-related things.
+For example, in the Cargo Competition,
+if you are playing this kind of data science competition,
+this is the most famous competition at present.
+We have held an energy prediction competition on it.
+In addition, we also have some open data.
+I put it in Cargo.
+Cargo not only holds competitions,
+but also provides an open data platform
+for everyone to upload data and play together.
+In addition, we also have OpenCourse on EDX.
+It is mainly about construction, architecture, and engineering.
+It is about building data,
+including indoor humidity, CO2, and energy.
+How to use some Python programs
+to process these data,
+and how to build a simple machine learning model.
+Its difficulty is very simple.
+Even people who don't have much programming experience
+can take this course.
+You don't need to have professional knowledge in architecture.
+As long as you want to learn
+how to use Python in the scientific field
+or in some simple data processing,
+I think this course is quite suitable.
+This is today's agenda.
+Because today's topic is mainly energy prediction,
+we will spend some time reviewing
+past energy prediction models and methods.
+Next, we will use Cargo Competition
+energy prediction competition as an example.
+How do people predict energy?
+What strategy do data scientists use
+to accurately predict energy?
+Next is Project Study.
+We will use Taiwan's open energy data
+to do a simple experiment
+to see how it works.
+Finally, we will introduce some interesting open data sets.
+It is mainly about Taiwan's weather,
+or open data sets related to holidays.
+First of all,
+I would like to let you feel
+what the energy trend looks like.
+This is a year,
+from January 2017 to the end of the year.
+This is an actual electricity meter
+obtained from a campus in Taiwan.
+First, I would like to let you observe
+what is special about this electricity meter.
+First, we can zoom in here.
+You can see that after zooming in,
+you can see some trends.
+Because it collects data every hour,
+so you can see that
+a day is actually a profile like this.
+It will have a peak,
+which is around noon.
+So you can see that the first pattern
+is actually a weekly pattern.
+It is weekly.
+1 to 5 is actually a fixed working pattern.
+It is high at noon and low at night.
+But there is no one on the 6th,
+so the peak is a little lower.
+The next pattern is vocation.
+1 to 5 is very low.
+That's because it's the Chinese New Year.
+It's the time of the lunar new year,
+so the energy is relatively low.
+In addition, there is a seasonal trend.
+In the summer or hot weather,
+the energy is relatively high.
+In the winter or cold weather,
+the energy is relatively low.
+This is normal
+because Taiwan is a country
+that focuses on heat.
+Most of us don't have heaters,
+so in winter,
+the energy is relatively low.
+So this is our first and simplest model.
+It is also a more classic model.
+It is a TOWT model
+proposed by Lawrence Berkeley National Lab.
+TOW stands for Time of Week.
+That is to say,
+if we take the number of hours of a week
+as X-axis and draw it out,
+the energy is actually 365 days.
+If you put it on this graph,
+you can see that 1 to 5
+is actually very regular,
+which is higher during the day.
+It is relatively low at night.
+So we have several variables.
+The first one is the time of week.
+The second variable is what I just said.
+It actually has something to do
+with the temperature of the outside air.
+So what we draw here
+is the relationship
+between temperature and energy.
+But we also distinguish
+whether it is occupied or unoccupied.
+That is to say,
+is there anyone or no one here?
+But we can see that at night,
+we will define it as the so-called no one.
+During the day,
+we will define it as the so-called someone.
+So this division is actually very rough.
+It may be according to what time to go to work,
+what time to get off work,
+and then cut it like this.
+But when you cut it out,
+you can see that
+when it is occupied,
+its trend is very obvious.
+This is a
+low-temperature
+and high-temperature
+transition.
+Occupied is that it is
+with regression.
+It is actually a linear model.
+That's it.
+Basically, it is with
+a linear model.
+There will be a linear model.
+Then it is related to temperature.
+The return line of temperature here
+is a
+division to return.
+Because in fact,
+it is related to temperature.
+If you call it out,
+you will find that
+cooling is actually related.
+If in some Korean countries,
+when your temperature is getting lower,
+its energy will rise.
+That's mainly because of heating.
+It's a simple linear return.
+So often you can
+Of course, you can use a polynomial,
+maybe two-dimensional or three-dimensional to beat.
+Of course, you can also use a division.
+Then again, if it is occupied,
+there is no one.
+Then it will be more like
+using temperature to return.
+It is a
+single
+one-dimensional
+linear return.
+Because at night,
+it is usually simpler.
+This is the result of the return.
+In fact,
+it can catch the profile.
+It's just that sometimes the effect
+is not so good in some details.
+You can see some details
+There will be a shock.
+So its R-squared is about
+less than 0.6.
+The next one is a more traditional
+physical model, thermal network.
+It is basically the structure of the building.
+There is heat melt, heat bamboo.
+That is to say,
+the temperature of the outside world
+and the temperature inside
+its temperature difference
+will cause
+its heat to be stored
+in the wall.
+Or it is said that it is
+looking at the thickness of the wall
+or its material.
+Then decide how fast
+it goes into the room.
+So usually outside
+For example, the surface temperature of the wall
+and the surface temperature of the wall
+in the room will have a
+type.
+In addition, the temperature difference
+in the room will be relatively
+slower.
+So under this condition,
+we will actually
+make a building
+all made up of heat melt and heat bamboo.
+For example,
+we may have
+three heat bamboo
+and two heat melt.
+The outer wall or
+internal mass
+is a bit like an indoor furniture or an indoor wall.
+The whole building can be done
+in this way.
+Its advantage is that it is very precise.
+Its disadvantage is that you have to
+decide how many heat melt and heat bamboo it has.
+To be honest, this thing is not very simple.
+The next one
+is the machine learning
+that we are more popular with now.
+Here is an example of
+LightGBM model.
+Let's use this model to
+make it.
+The main advantage of this model is that
+its computing speed is very fast and
+its tuning is relatively simple.
+So we usually use
+this model
+to do some competitions or some early tests
+and so on.
+Most of the participants
+use this model
+to do the cargo competition later.
+The model here is actually
+the time we just said.
+It may be the number of hours in a day.
+It is also a Sunday.
+In addition, there is outdoor air temperature.
+There are other IOTs
+or META
+or Lag Feature.
+It can eat more parameters
+than the linear model just now
+to capture some more
+detailed information.
+In addition,
+there are so many variables
+we just mentioned.
+For example, CO2 or
+temperature
+or weekday
+or seasonal hours.
+Which of these variables
+is the most important?
+The model of LightGBM can also tell us
+that in the process of modeling,
+we found that
+the energy 24 hours ago
+is the most important.
+Then there is the outdoor temperature, etc.
+It can tell you the importance of these parameters.
+The importance is relatively low.
+Maybe you can
+get rid of it.
+Of course,
+some people will think that
+the result of LightGBM
+will be better than
+the linear model just now.
+It is less
+detailed.
+The score is 0.6.
+Some people will think
+that Neural Network
+is another
+popular method.
+We often need to learn more about this method.
+Indeed, this method
+is often used in energy prediction.
+Such as LSTM or RNN.
+However,
+unlike Tree-based models,
+such as LightGBM,
+XGBoost,
+or Random Forest,
+RNN
+usually requires
+more training time.
+When you tune this model,
+you will spend a lot of time and energy.
+So in a short-term
+competition or a mid-term project,
+we still use
+Tree-based models like LightGBM.
+It is relatively fast
+and efficient.
+Let's jump to
+the Kaggle competition.
+Let's see how
+professional data scientists
+predict
+the building's
+population.
+First, let me briefly introduce Kaggle.
+Some people may not be familiar with it.
+Kaggle is a subsidiary
+of Google.
+It is an online community
+where data scientists,
+students,
+or social people
+can share their ideas,
+share data,
+and participate in the competition.
+There are three parts
+of Kaggle platform.
+The first part is competition.
+There will be some sponsors.
+It could be a company
+or a school.
+They will give prizes.
+Kaggle will help them hold the competition.
+There are some interesting competitions.
+For example, Jamstree,
+where you can use Wi-Fi
+to predict where people are.
+Next is dataset.
+People can freely
+upload their dataset.
+For example,
+COVID-19 vaccine development,
+or Netflix,
+or Trump's Twitter.
+This is also an interesting topic.
+Datasets include
+professional or non-professional
+data.
+It is an interesting platform.
+The last part is
+notebook.
+It is a code.
+People will put their code on it.
+It includes
+how to visualize
+or model.
+Basically,
+you can copy the notebook
+and do the same thing.
+This notebook can
+connect to the competition
+and dataset.
+Basically, you can use
+the cloud resources,
+CPU and GPU,
+to run the dataset
+on the platform.
+You can even use the resources
+to participate in the competition.
+You don't even need to use
+your local notebook to run the model.
+You can use the cloud resources
+to upload and compute the data.
+Let me introduce
+what the competition is.
+There are
+more than 2,000
+data sets.
+They are from more than 1,000
+countries around the world.
+We want to find a good algorithm
+to accurately predict
+the resources of most of the buildings.
+In the past,
+most researchers
+said that
+some buildings are very fast,
+some buildings are very accurate,
+some buildings are very easy to run,
+and so on.
+But if we have so many buildings
+across different countries,
+it will be a more general way.
+It's not just a case of
+a single building or a single country.
+This is the purpose
+of the energy competition.
+To find the most general
+and accurate way.
+This dataset
+contains some data,
+such as the most basic
+meter reading.
+This is mainly
+the data of the meter.
+It may be 24 hours,
+single year data,
+and its height.
+In addition, there is building meta,
+what kind of site it is,
+and what kind of
+purpose it is.
+It may be office buildings, it may be school buildings,
+square feet, floor area, etc.
+It also provides
+temperature, humidity,
+cloud load, etc.
+In this competition, it will provide
+training data for 2016
+to train your model.
+You have to predict the energy data
+for 2017 and 2018.
+In this competition,
+the method of the competition is
+that you will first download your dataset,
+which is your training data.
+It includes the electric meter data
+and weather data.
+After training your model,
+you can
+upload your answer.
+After uploading,
+it will calculate a score.
+You can see the score
+on the leaderboard.
+Now let's take a look at
+the result of this competition.
+First of all, it is very interesting that
+most of the applications are Python.
+Python is the most popular application now.
+There is a little bit, but not the most.
+What kind of machine learning models
+do you use?
+In this competition, it is usually
+gradient boosting.
+Because this data belongs to
+tabular data,
+it is structured,
+like Excel table data.
+In TreeBase model,
+they are best at solving this problem.
+In NN,
+it is not impossible to deal with this problem.
+Because the training time is too long,
+and you need to tune the parameters
+for a long time.
+Then there are some tags.
+You can find that
+most of the notebooks
+are provided by EDA or Beginner,
+which are more visualized.
+Data is its exploration,
+which parameters it has,
+its distribution,
+and its time series.
+Let's take a look at
+most of the solutions.
+You can see that
+the rank is from
+high to low,
+from 9th to over 2000.
+You can see that the score
+can be from low to high.
+Low means that this side is better.
+Because the score here is actually
+error, the lower the better.
+You can see that
+most people use
+removeAllLiers
+to remove data,
+and imputation
+is to make some
+data maintenance.
+Not everyone does this.
+In Feature Strategy,
+in Holiday Feature,
+and Categorical Statistical Feature,
+it depends on each person.
+It doesn't seem to be consistent.
+The number of Feature that everyone uses
+is either a lot or a little.
+Some people just didn't publish it.
+I think the most interesting thing is
+in Feature Strategy,
+you can see that the numbers here
+represent the number of models.
+The higher the score,
+the more models they prefer to use.
+Why is that?
+In this kind of data competition,
+if you use a single model,
+its performance is usually limited.
+But if you use different models today,
+for example, you use NN,
+you use lightGBN,
+or you use different modeling methods,
+you put all the results of these modeling
+If you use a simple average,
+sometimes you can get very good results.
+Maybe 0.5 times the first model,
+0.5 times the second model,
+and then add it up,
+its performance may be better than individual models.
+So that's why they use so many
+models to do the average.
+Because it can
+effectively improve the performance of the model.
+Let's take out the top five
+and take a look at its content.
+The most important thing is that
+in preprocessing,
+it is very important to remove anomalies
+or outliers.
+Because in this competition,
+there are a lot of data missing and outliers.
+In fact, this is not only found in this competition.
+In fact, most of the real world data
+is like this,
+a lot of data missing, a lot of outliers.
+If you don't do this,
+it may cause your model to learn
+some strange patterns or phenomena.
+Next is features.
+This is not necessarily the case.
+Some people use 10, some use 28.
+Some have outliers, some don't.
+It depends on how you choose.
+In modeling,
+you can see that most of them use
+LinearGBN, XGBoost,
+which are tree-based models.
+There are relatively few NNN models.
+Post-processing,
+as I just said, is a model
+to do the average.
+It's actually ensembling.
+I made a lot of models today and
+this is a simple
+flowchart they provide.
+This is the first flowchart they provide.
+You can see the pre-processing in front of it.
+This is what I just said.
+Feature engineering.
+Then there are a lot of models.
+Finally, do the ensembling prediction.
+These predicted results
+are averaged.
+In fact,
+every
+flowchart in the competition is a bit like this.
+They do some pre-processing.
+Then there are a lot of models.
+Then do the ensembling.
+This is also a classic
+machine learning pipeline.
+Pre-processing, modeling,
+and then
+if it's ensembling,
+it's more of a special use than set.
+It's a method
+that will be used to get high scores.
+The third is a similar method.
+This competition,
+to be honest,
+is more data science.
+If the audience
+is more interested
+in this place,
+you can check the details
+in our publication.
+We have a review paper
+for this competition.
+You can go up and see the details of this competition.
+If you want to know the program,
+you can go to Github
+to find some models
+or some details.
+In addition,
+we even have their interview videos.
+You can also find these YouTube videos
+from Github
+to see how they introduce their models
+and how they do things.
+The main purpose of talking about Kaggle today
+is to give some
+slightly interested in
+energy prediction, but not
+too familiar with these machine learning models.
+It's a simple overview.
+How does this competition work?
+What kind of model is it?
+Next, we will talk about
+our project study today.
+We want to do low prediction
+using data from Taiwan.
+We want to ask
+if we can really do
+an energy prediction service.
+Let me put this PowerPoint
+aside first.
+This is the Kaggle
+platform I just mentioned.
+If you go to
+kaggle.com,
+you can come in here.
+There will be a bunch of competitions,
+some data, and notebooks.
+Here,
+Project Tyra has created
+four notebooks.
+You can see that
+there are a lot of Python programs in this notebook.
+You can just copy
+and run it.
+Here,
+I want to copy
+this notebook I have already built.
+If you want to copy
+and you want to use my notebook,
+you can use the Copy & Edit Notebook here.
+Click on it.
+It will create a new copy here.
+You can see that
+it will use
+cloud resources in this notebook.
+But it's on the narrow path now.
+There are some datasets here.
+The dataset here is
+from the Kaggle dataset.
+You can read it directly
+into this notebook.
+You can see some CPU and RAM here.
+You can even run GPU
+and use its cloud resources
+to do some operations.
+In this notebook,
+the first thing we need to do
+is to download data.
+We want to download weather data
+and energy data.
+Let's run this thing
+on the scene.
+Run all.
+At the same time,
+let's introduce
+today's dataset.
+The first is energy data.
+It's data from Taiwan Electricity.
+It contains
+some peak
+power consumption
+per day.
+The peak power consumption
+of Taiwan Electricity
+per day.
+In addition,
+there are energy categories
+of Taiwan Electricity.
+There are a lot of energy categories in Taiwan.
+There are traditional
+blue gas,
+blue coal, nuclear energy,
+and wind and solar energy.
+These data
+are also released by Taiwan Electricity.
+In addition,
+I know some listeners
+are more interested in
+local energy.
+For example,
+how much electricity they use
+in a village or a city.
+Taiwan Electricity does have some data
+in this part,
+but it's not covered
+in today's speech.
+In addition, there are some village metadata,
+such as its precision,
+population,
+and area.
+For example, the open data provided by this website.
+If you want to know
+its outline, you can also find
+the open data provided by Hulu.
+The picture on the left
+is a good data visualization.
+It's a picture provided
+by Prof. Chen
+from FB.
+As you can see,
+the village area
+and energy are mapped
+together to see
+the density of energy.
+Let's take a look
+at the data
+provided by Hulu.
+First,
+we have the weather data.
+We got the weather data
+from the weather data.
+We got data for 2 years.
+The first year,
+the winter temperature was lower than the summer one,
+and the second year,
+the temperature was higher than
+the summer one.
+The third year,
+we took the average of the three points
+and used them as feature
+to predict the power consumption.
+The next one is the energy data
+from Taiwan.
+There are a lot of data in it.
+In addition to the
+monitoring load,
+there are also data from various
+power generation sources.
+We can take a look at
+the industrial power consumption
+and the electricity consumption.
+For industrial power consumption,
+we can see that
+the annual power consumption
+is relatively low.
+The annual power consumption
+is relatively low.
+On weekends,
+there is a fixed pattern.
+There is a fixed pattern.
+This is the so-called
+near-peak power supply.
+This is the so-called
+near-peak power supply.
+The power station must decide
+how much electricity
+to deal with the maximum
+load on that day.
+We can't let the maximum load
+exceed the power supply,
+or there will be power outages.
+Next, there are wind power
+and solar power.
+Solar power is
+relatively general.
+It depends on how much radiation
+you have that day.
+In summer, it's more.
+In winter, it's less.
+Let's go back
+to the data set.
+As you can see,
+weather data is what I just said.
+You can use this to observe
+the historical weather data.
+the historical weather data.
+This is the platform
+that Cargo just grabbed.
+This is the platform that Cargo just grabbed.
+There is also a local weather forecast.
+You can use the forecast API
+provided by the Meteorological Bureau
+to catch the forecast for the next week
+and the weather forecast every three hours.
+Google Trend
+is more interesting.
+You can search
+the search volume
+of a keyword on Google.
+For example, you can search
+the search volume
+of a keyword on Google.
+You can see a pattern.
+One, two, three, four.
+Sorry, I typed it wrong.
+It's actually two, three, four, five.
+It's Saturday and Sunday.
+You can also say
+that if I use
+the date as a unit,
+you can see that
+one, two, three, four, five is higher,
+and six is lower.
+If you look at one and two,
+you can see that
+this is in the United States,
+so it's actually lower
+in the New Year
+or in the National Day.
+You can also see
+that if I use
+Taiwan's data as an example,
+the search volume
+mentioned in the first video
+is the search volume
+in Taiwan Campus.
+If you compare the search volume
+of Microsoft Excel,
+you can see that
+it can correspond to
+some holidays,
+such as the New Year,
+and the search volume of
+Excel becomes lower.
+For example,
+the search volume of
+Microsoft Excel,
+whether it's tourism
+or your sales volume,
+is a very useful keyword
+to compare.
+This is also mentioned that
+if our Power Meter
+is classified,
+you can find that
+some buildings are
+related to education,
+and some buildings
+may be related to
+the office,
+which is also a very interesting
+open data set.
+Here I have provided
+how to grab data
+in Google Trend.
+You can see that
+it's lower in the New Year
+and lower in the National Day.
+For example,
+October 10th.
+October 10th, 11th, 12th, and 13th
+are National Day holidays,
+so these days are also lower.
+Holiday data
+is actually
+from a website
+called TimeDate.
+You can find
+the holiday of
+each country on it.
+You just need to enter
+your country's name on the website
+and its year.
+Then you can find the national holiday
+that corresponds to that country.
+This is also a very useful website,
+so I also grabbed
+some data.
+In this notebook,
+the main thing we do is
+to grab data.
+In the end,
+what we can
+generate is like this.
+In this notebook,
+there is
+an output.
+We can output
+Google Trend CSV, Demand CSV, Holiday.
+You can even download
+the data directly from here.
+It's quite convenient to
+store data
+and build a notebook.
+Next,
+if we want to
+predict Taiwan's
+energy,
+we need to build a model.
+Here,
+our goal is to
+meet the deadline on time.
+Of course, there are other things
+that we don't need to cover.
+Let's use a simple
+time-to-time load to predict.
+This is one data per day,
+which is the highest energy load
+in a day.
+If we only use the simplest
+weekday to predict,
+that is,
+let's say it's Monday or Tuesday,
+or it's Saturday or Sunday.
+First of all,
+we can look at its trend.
+0 to 4 is Monday to Friday,
+and 5 to 6 is Saturday.
+1 to 5 is higher,
+and Saturday is lower.
+It's normal.
+If we build a model like this,
+it will look like
+a weekly forecast.
+It's like a blue line.
+This is the so-called prediction.
+It's very inaccurate,
+because it only has
+the feature of Monday.
+Its Oscar O is only 0.1.
+It's terrible.
+For the second model,
+if we want to be more seasonal,
+we can add weather conditions.
+We only add temperature today.
+The temperature here
+is the overall energy
+forecast in Taiwan.
+So we simply sample
+the temperature of three regions,
+Taipei, Tainan, and Taichung.
+You can see that
+if we
+use temperature
+and energy
+to get a plot,
+you can see that
+there is a very obvious curve on weekday,
+and there is a very obvious curve on weekend.
+We use a two-dimensional curve
+to draw it.
+You can see that there is a very obvious relationship here.
+So
+after we add it here,
+you can see that this prediction
+is actually a lot more accurate.
+It can roughly draw this seasonal line,
+and its Oscar can reach 0.81.
+Sorry, I forgot to mention that
+the training data is used to train
+the whole year of 2019,
+and then use 2020
+as our test data to see its accuracy.
+So you can see
+that even if we only have
+weekly weather conditions,
+the prediction of the next year
+is actually quite accurate.
+The third model
+is to say that
+in addition to the weather conditions here,
+we can see some
+of the predictions here,
+but it's not very accurate.
+The main reason is that the model can't know
+which day is the holiday,
+so you have to tell it this feature.
+The third model is called Holiday,
+which is the holiday data
+we just got from IronDate.
+How many types
+of holiday types are there here?
+0 is the most common,
+1 is the most
+common ordinary day,
+that is, it doesn't have a holiday,
+and 2 is the weekend.
+You can see that their grouping methods
+are not the same.
+After adding this,
+you can see that the prediction
+here in the new year seems to be a little lower.
+For example, around October 10,
+it will also be here
+in these three days,
+its prediction value will also be lower.
+That's because there's a feature
+added to it,
+so it's improved from 0.81 to
+almost 0.9.
+The most important thing is that
+our scope can actually predict
+the energy for the next week,
+so it actually includes the previous day,
+including the previous seven days
+and so on, these past energy data
+can actually be our feature.
+For example, I'm going to predict tomorrow's energy,
+but if I can know
+what the trend
+of today's energy looks like,
+then we can use today's trend
+and maybe add a little bit more.
+If the temperature is high, we can add a little bit.
+Then predict tomorrow's energy.
+So the energy data
+from the previous day or the previous seven days
+is also a pretty useful feature.
+I'm here in Australia.
+If we add
+the energy data
+from the previous day
+and the previous seven days
+and two weeks ago,
+you can see that
+in fact,
+they are highly related,
+that is, the previous day
+our current energy
+their relationship
+is very close.
+The previous seven days or the previous 14 days
+are also very close,
+which is also reasonable.
+It's like 9 o'clock in the morning
+and 9 o'clock in the morning yesterday.
+It's like 9 o'clock now and 9 o'clock
+a week ago, and it's like
+9 o'clock two weeks ago.
+So after adding this feature,
+our Oscar can directly
+increase to 0.94.
+This thing is of course based on
+my short-term prediction today.
+If you predict tomorrow or the next week's energy,
+then I can use this
+energy from the previous few days as my feature.
+OK, so here,
+this notebook is mainly to do this model training,
+which is to establish this model.
+At the end of this model,
+when it is to be output,
+we will actually use two years of data to do training.
+Just to do some validation,
+we might have to come out a year ago
+to see how it works.
+If the parameters of this model are fine
+and the effect is very good,
+then we can use two years of data
+to do training.
+So the output here is
+actually a light GBM model.
+The last notebook here
+is actually a real-time prediction.
+Then we use the light GBM model
+we built just now
+to import it in.
+Then we can use this model to predict.
+Just before doing the prediction,
+we still have to grab some data.
+Because what we just grabbed is historical data.
+If we want to predict the energy
+for the next seven days,
+then we have to catch the future weather forecast.
+Then we have to catch
+the holiday data.
+Then we also have to catch
+the energy data from the previous few days
+as our feature.
+So the first thing here
+is to spread some
+energy data.
+Here we can see
+that we will catch
+all the energy data this year.
+Then you can see that
+here is
+the energy data
+a month ago.
+You can see that it is December,
+January, and then the data by the end of January.
+Here is also
+the estimated data
+provided by Taiden.
+Their predicted data
+to predict what it looks like
+at the bottom of the peak.
+Then we will
+catch the weather forecast
+from the Central Meteorological Bureau.
+Then we can predict
+the energy for the next seven days.
+Basically, we use the model
+of LightGBM.
+Here we can catch the weather forecast
+for Taipei, Taichung, and Tainan.
+Because this is a notebook I made
+a week ago.
+January 28th to February 3rd
+is the estimated date.
+So this is Taipei, Taichung, and Tainan.
+Here is the temperature provided by the weather forecast.
+Then
+the following
+are some features,
+such as the week,
+one day ago, seven days ago,
+and 14 days ago.
+Because only the first day
+has the energy of the day before,
+so there will be data here.
+From the second day,
+there will be no data on the first day.
+Because our prediction will actually start
+from the first day,
+and then predict the second day, the third day.
+Then the data of the day before,
+we will use the prediction value of the day before to put it in.
+So we can look at
+the prediction result.
+The prediction result can actually be seen here.
+That is to say,
+here is the data.
+The limit is what happened in the past.
+The blue line and the green line are
+the LGBM model we predicted.
+The green line is the LGBM prediction.
+You can see that our prediction seems to be low.
+So we can
+predict it.
+We can evaluate it later.
+What is the difference between the two
+we predicted with LGBM?
+Who is more accurate?
+Or what is the difference between the two features?
+Because this is
+the prediction 11 days ago.
+So I didn't make any changes to it.
+We can now
+take a look at the prediction result.
+Ok.
+This is the prediction result.
+You can see that the orange line
+is the
+LGBM prediction.
+The blue line is the LGBM prediction.
+You can see that
+at the beginning,
+the error was very high.
+The blue bar is the error.
+We almost accurately predicted
+what the energy would be like three days ago.
+But as time goes by,
+the accuracy is getting worse and worse.
+It's mainly because of the weather forecast.
+It's very likely that
+the accuracy of the weather forecast
+is getting worse and worse
+from the first day to the second day.
+Or the temperature I brought in
+is not enough.
+So the prediction is not very accurate.
+LGBM's prediction
+is relatively stable.
+It can maintain
+a certain error every day.
+I don't know how to do it.
+The error of the prediction
+is mostly positive.
+But this is just a seven-day data.
+So it can't be
+simply solved like this.
+You can find this phenomenon
+from these seven days.
+The accuracy of the prediction
+is not very different.
+Ok.
+I also put the link of the notebook here.
+If you are interested, you can go to Kaggle.
+Or you can search for the keyword
+pocket tyrant.
+Notebook.
+I didn't miss anything in the beginning.
+The first part is
+the introduction of OpenDataSet.
+A brief summary of today's summary.
+In the field of architecture,
+in the part of energy prediction,
+in addition to being affected
+by external conditions
+and the variables of these environments,
+behavior is also very important.
+When do people go to work?
+What time does he go to work?
+Is it holiday or non-holiday that day?
+Or is it weekend?
+In fact, it has a great impact.
+The second point is that we actually
+learned from Kaggle Competition,
+which is what we learned in the energy prediction competition.
+First of all, the tree-based model
+is actually
+most of the solutions
+that Wiener will use.
+Mainly because of its performance
+and its training time
+and tuning parameter time
+can achieve a balance.
+Then you can achieve good performance.
+So everyone will use this method.
+The other thing is that
+the data scientists in it
+mainly focus on this.
+What I mean is that these data scientists
+don't have any personnel or
+building-related background.
+But based on their data skills,
+it is the sharing of the community above.
+Everyone shares with each other
+what they found in these data.
+What are the characteristics?
+Then everyone can use these knowledge
+to make the most accurate predictions
+based on their model experience
+and their know-how.
+So the winners in the front
+don't have any professional
+building-related background.
+Then there is the actual
+demand forecasting model.
+Then use Taiwan energy
+to do the actual part.
+In fact, Taiwan Open Data is very
+enough to do such a model.
+It takes about two years.
+But in my opinion,
+Taiwan Open Data is already enough
+to build a model with good accuracy.
+In the field of architecture.
+Then there is
+its performance.
+It's pretty good.
+Everyone can do more than 0.9.
+And it's also very simple.
+You can support it for free
+in the Kaggle platform.
+Finally, it is Open Dataset.
+In fact, Taiwan has a very rich
+and very diversified dataset.
+Compared to other Open Datasets
+Open Datasets are very limited.
+Taiwan has a lot.
+Of course, there are a lot of messy
+and I don't know how to use the dataset.
+But in fact, there are some very useful
+and very interesting datasets that
+everyone can play.
+In addition, these datasets can help
+researchers like us
+to find some interesting patterns.
+For example, Google Search
+can also help you
+to find some details
+in Building Energy.
+Next, we will have 10 minutes
+for Q&A.
+Thank you for the wonderful
+presentation today.
+You made a very good
+summary.
+About the competition
+of Azure,
+the competition on the Kaggle platform,
+and some model introduction,
+LGBM,
+XGBoost,
+or Neural Network,
+as well as the overall introduction
+of architecture prediction
+and Open Data Science.
+It's very exciting.
+Now we see that
+in the chat box,
+a friend asked
+that he wanted to ask
+that there may be no accurate
+temperature prediction in the future
+when actually using it.
+Will the performance of the model
+be affected at this time?
+In fact, it will.
+It should be said that
+the difference in temperature
+may be that
+according to our observation,
+the temperature difference in weather forecast
+is very full.
+But the temperature
+prediction error
+is about 1-2 degrees.
+Most weather forecasts
+can accurately predict
+the temperature profile.
+For example, 18-29 degrees
+is actually quite accurate.
+Next is the architecture energy.
+It's actually a pretty stable
+profile.
+It's not because the temperature suddenly rises
+or falls.
+So in this regard,
+although the weather forecast
+is not completely accurate,
+it does not affect
+the accuracy of the prediction.
+Of course, if you want to predict
+the next month or next week,
+the prediction error may be slightly higher.
+But if you predict
+one day tomorrow or three days later,
+I don't think the accuracy of the energy
+will be much higher.
+Thank you for your answer.
+Do you have any questions
+for the audience here?
+You can mute your questions
+or type them in the chat.
+Hello, I'm Louis.
+I have one last question.
+It's a very good question.
+It's a time series question.
+How do you do validation?
+You mentioned that you use
+2019's trend on 2019
+and then 2020's
+to predict.
+Is there a more complete
+way to do validation?
+Sorry to interrupt,
+but before you answer,
+I'd like to ask the audience
+to introduce their backgrounds.
+So that we can
+get to know each other better.
+Thank you.
+I'm in the US.
+I'm a data scientist.
+I haven't done much
+on the time series,
+but I think it's pretty interesting.
+I'd like to learn more.
+No problem. Thank you for your question.
+For the time series,
+I'm not sure
+what you mean by validation.
+But if you mean
+how to cut the fold,
+how to cut the data
+to do cross-validation.
+For example, we cut four or five
+common cuts.
+We don't do shuffle.
+We don't do random
+cut.
+We don't do random
+cut.
+We don't do random cross-validation.
+For example,
+we do training
+for the first four years,
+and then validation for the last year.
+Or we do training for the next four years,
+and then validation for the first year.
+We want to
+cut the time series
+to do cross-validation,
+not to do random
+cut.
+We don't do random
+cut.
+Because time series
+is related to
+time before and after.
+So you can't
+randomly do validation.
+Does this answer your question?
+Yes.
+Thank you.
+Okay.
+What a wonderful discussion.
+Does anyone
+have any questions
+to ask?
+Hi, I'm
+Xie Cheng.
+Can you hear me?
+Okay.
+Hi.
+I used to study in Taiwan University.
+Now I'm studying in the US.
+My question is
+if
+your model needs to be
+used in the future,
+will there be any security concerns?
+For example,
+maybe not too serious security.
+Maybe there is a sudden event.
+For example,
+there is a joke about Excel
+that occurs on holidays,
+resulting in a large increase
+in the search volume of Excel
+on holidays,
+or something like that.
+How to avoid
+this kind of
+negative situation?
+Yes, there is such a situation.
+If you apply it to the industry,
+you still have to set a threshold.
+If the temperature
+is normal in Taiwan,
+it may be 0 to
+40 degrees or so.
+You may say
+there is a mistake here,
+I may stop my service.
+You may tell users
+why the service has stopped.
+For example,
+you can't use automatic
+or something like that.
+This is really necessary to add
+additional rules to avoid such a situation.
+Because in the industry,
+if you use this kind of low prediction
+to do automatic control,
+there will be such a risk.
+Cool.
+I want to ask another question
+related to Cargo.
+I have been studying for a while.
+I saw that last year,
+I don't know what to say now.
+Anyway, I saw two competitions last year.
+One is the target of wheat,
+and the other is
+the image detection of
+a special type.
+In fact, I also know some traditional
+breeders who have collected a lot of
+this kind of image data.
+Their quality may not be
+so uniform,
+but they may have to give up.
+But if you put it on Cargo now,
+let this kind of
+data scientist community
+have a good result.
+I'm curious about this kind of academic unit
+to put the data on it,
+and then let everyone
+come together
+to find a solution
+and then publish it.
+Is there anything to pay attention to
+in this process?
+How is it usually achieved?
+This Cargo competition,
+because I was
+preparing for this competition
+at the end of the previous year.
+At that time, I had not yet
+entered the lab,
+so I did not participate in this part.
+But as far as I know,
+they will actually do some cleaning first.
+I mean, this is our lab,
+because we are the organizer.
+We will process these data first
+and then confirm that
+the quality of these data is probably no problem.
+Then it will be sent to Cargo
+and their team to explain the data.
+Cargo also has a group of
+very professional data scientists
+to check the quality of the data,
+which is probably OK,
+and they won't clear the data for you,
+because data missing and outliers
+are things to deal with in the competition.
+Then they will go and see
+if the data is OK,
+and then they will
+test it internally
+and confirm that
+if the data is used for the competition,
+how much training data and validation data
+do I have?
+Although when we give him the data,
+we give him two years of training and one year of validation.
+But they strongly recommend
+one year of training and two years of prediction.
+They have their
+basis,
+which is what they think,
+and we respect it.
+They have a lot of know-how
+to organize this competition.
+Most of the Cargo competitions so far
+are not very controversial,
+so I think Cargo and their internal team
+are still very strong.
+If it's more local,
+their data platform,
+competition platform,
+sometimes they have a lot of controversy,
+and sometimes the quality of the competition
+is poor,
+but I can't say that the competition platform is wrong.
+That is, their internal professionals
+don't have much resources,
+so they can't hire such a large team
+to check the details of these competitions.
+In addition, the domestic platform
+doesn't charge
+the organizer.
+If it's in Cargo,
+the organizer will use their team
+to check the data and collect the fees.
+So the prize is not only
+the organizer
+who provides the prize,
+but also the host of the competition
+who needs to pay
+an extra fee to Cargo.
+Yes,
+to ensure that this competition
+is of good quality.
+Thank you. Nice talk.
+Thank you for your question.
+I don't rule out
+any discussion
+about Open Data Say
+in Cargo competitions.
+You can ask any questions.
+It's fun.
+Due to time constraints,
+we will open the last question.
+Let's see
+if there are any questions from the audience.
+If not,
+we will open the last question
+for our host.
+It's the same.
+Please introduce yourself.
+Hello,
+host and audience.
+I am
+the host,
+Hu Junwei.
+My father
+used to be a student of
+NTUC,
+and I studied
+renewable energy systems
+at NTUC.
+I am very interested in
+today's topic.
+I have a question.
+This model
+can be used
+to assess
+events in energy
+or social development
+such as dynamic events.
+For example,
+in 2016 and 2017,
+there was a power outage
+in Taipei.
+Is there a way
+to predict
+when there will be
+a power outage
+in the next few days?
+Or
+in the case of
+COVID-19,
+many countries
+are working
+from home,
+so the energy use
+will be very different.
+Is there a way
+to do dynamic analysis
+for specific events?
+I would like to hear
+your opinion.
+I think it's pretty cool.
+First of all,
+if it is a power outage
+or a power outage,
+I think it is relatively difficult.
+The first is that it is a rare event,
+so the rare event
+may only happen
+ten times in the past.
+It's hard to predict
+because there is not enough data
+for training.
+Even if there are
+a lot of events,
+you need enough features
+to describe them.
+For example,
+you need to detect
+voltage, current,
+frequency,
+etc.
+I don't know
+if there is such open data,
+but I know Kaggle
+can also find open data like this.
+Next,
+let me think of
+a recent competition
+in IEEE.
+They are specifically predicting
+what the energy forecast
+will look like after COVID-19.
+They are heading
+electricity demand forecasting post-COVID.
+They want to know
+what changes will happen
+to most energy
+after COVID-19.
+Most of them should be
+related to
+human behavior.
+I have done
+one thing before.
+If you use Google Keywords,
+I can show you
+quickly today.
+If you use Google Trends,
+this is what I found recently.
+It is quite related to
+travel keywords.
+For example,
+I went to
+travel.
+You can see that
+it suddenly dropped
+on March 1st.
+It was quite stable
+in the first four years.
+It dropped in the summer,
+but it suddenly dropped
+in March this year.
+Of course,
+this is just a correlation.
+Whether this is a causal relationship
+may be confirmed in more detail.
+This is just an example.
+You can find out from some data
+if you can predict
+what will happen
+to the energy
+after COVID-19.
+This is also what everyone is concerned about.
+I am not sure
+if this can be done.
+You can find out
+whether to describe
+this feature.
+This is a very cool question.
+Thank you.
+Thank you for the wonderful explanation.
+Due to time constraints,
+I know that
+everyone here may have
+some potential questions.
+However,
+this is the end of
+today's presentation.
+Thank you again,
+Fuxun.
+If you are interested
+in this topic
+or the speaker,
+you can contact her
+through e-mail
+or social media
+related to Fuxun.
+If you are interested
+in different fields
+and different topics
+of different speakers,
+you are welcome to
+continue to participate
+in Project Tara's activities
+as a speaker.
+Thank you for your participation today.
+I wish you a pleasant day
+or evening.
+Thank you.

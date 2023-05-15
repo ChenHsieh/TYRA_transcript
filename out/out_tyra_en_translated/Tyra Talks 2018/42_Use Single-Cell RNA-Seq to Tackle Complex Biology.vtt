@@ -1,0 +1,1466 @@
+WEBVTT
+
+00:00.000 --> 00:09.000
+Hello, everyone.
+
+00:09.000 --> 00:15.000
+I am honored to be able to introduce Dr. Sun today.
+
+00:15.000 --> 00:23.000
+Dr. Sun completed her bachelor's degree from 1999 to 2013
+
+00:23.000 --> 00:28.000
+in Plant Pathology and Microbiology at Taiwan University.
+
+00:28.000 --> 00:35.000
+After completing her bachelor's degree from 2003 to 2005,
+
+00:35.000 --> 00:43.000
+she completed her master's degree in Plant Pathology and Microbiology at the same university in Taiwan.
+
+00:43.000 --> 00:51.000
+She then completed her Ph.D. degree from 2005 to 2010 at Purdue University.
+
+00:51.000 --> 00:54.000
+Her major is Chemical Biology.
+
+00:54.000 --> 00:58.000
+After completing her Ph.D. degree, she went to MIT to do her postdoc.
+
+00:58.000 --> 01:08.000
+After four years, she went to UCSF to do her second postdoc and assistant researcher.
+
+01:08.000 --> 01:15.000
+This year, she started her new job as a Senior Scientific Researcher at Genentech.
+
+01:16.000 --> 01:20.000
+Today, Dr. Sun is going to talk about
+
+01:20.000 --> 01:25.000
+Use Single-Cell RNA-Seq to Tackle Complex Biology.
+
+01:25.000 --> 01:29.000
+Now, let's welcome Dr. Sun to give her presentation.
+
+01:34.000 --> 01:37.000
+Hello, everyone. I am Dr. Sun.
+
+01:37.000 --> 01:44.000
+Sorry, my voice is a bit hoarse due to my cold.
+
+01:44.000 --> 01:51.000
+Today, I am going to talk in a simple and easy-to-understand way.
+
+01:51.000 --> 01:55.000
+Just in case, some of you may not have a background in biology.
+
+01:55.000 --> 02:01.000
+I hope you can at least learn about Single-Cell RNA-Seq.
+
+02:02.000 --> 02:08.000
+Here is my personal email and LinkedIn account.
+
+02:08.000 --> 02:12.000
+Although my LinkedIn account is not up to date,
+
+02:12.000 --> 02:15.000
+please feel free to connect with me.
+
+02:18.000 --> 02:23.000
+I will be speaking in Chinese today,
+
+02:23.000 --> 02:28.000
+but I am not sure what the term is in Chinese.
+
+02:29.000 --> 02:37.000
+If you have any questions, please feel free to contact me.
+
+02:39.000 --> 02:45.000
+I don't want to make it too complicated.
+
+02:45.000 --> 02:48.000
+I will be focusing on technology.
+
+02:48.000 --> 02:51.000
+I am currently working at a company,
+
+02:51.000 --> 02:56.000
+so I can't really talk about research projects here.
+
+02:56.000 --> 03:02.000
+I will try my best to talk about the applications of this technology,
+
+03:02.000 --> 03:04.000
+and the principles behind it.
+
+03:04.000 --> 03:09.000
+I hope this will be helpful to those who are interested.
+
+03:10.000 --> 03:13.000
+Before we get into the technology,
+
+03:13.000 --> 03:17.000
+I will briefly review the biology of NTU.
+
+03:19.000 --> 03:23.000
+As you may already know, our body is made up of cells.
+
+03:24.000 --> 03:27.000
+Many cells form organs,
+
+03:27.000 --> 03:31.000
+and eventually form organs in our body,
+
+03:31.000 --> 03:34.000
+becoming a functional human body.
+
+03:34.000 --> 03:44.000
+An interesting fact is that our body is composed of over 20 different types of cells.
+
+03:44.000 --> 03:49.000
+You can see that their forms and functions are very different.
+
+03:50.000 --> 03:55.000
+For example, there are nerve cells, blood cells, muscle cells,
+
+03:55.000 --> 04:01.000
+and even different types of cells in different organs.
+
+04:01.000 --> 04:06.000
+Their functions and forms are very different.
+
+04:08.000 --> 04:11.000
+Let's take a deeper look.
+
+04:11.000 --> 04:15.000
+As you can see, our body is made up of cells.
+
+04:15.000 --> 04:19.000
+Each cell has a nucleus,
+
+04:19.000 --> 04:21.000
+which is a red dot.
+
+04:21.000 --> 04:23.000
+In English, it's called a nucleus.
+
+04:23.000 --> 04:25.000
+In Chinese, it's called a cell nucleus.
+
+04:25.000 --> 04:29.000
+In this cell nucleus, there is a chromosome.
+
+04:29.000 --> 04:34.000
+This chromosome is made up of our genes.
+
+04:34.000 --> 04:38.000
+I think everyone has a concept of genes.
+
+04:38.000 --> 04:41.000
+Genes are our genetic material.
+
+04:41.000 --> 04:44.000
+Genes are our genetic material,
+
+04:44.000 --> 04:47.000
+and they can determine our body functions.
+
+04:47.000 --> 04:55.000
+Generally speaking, genes are basically DNA fragments.
+
+04:55.000 --> 05:03.000
+They can be converted into useful molecules,
+
+05:03.000 --> 05:08.000
+which can perform the functions required by our body.
+
+05:08.000 --> 05:11.000
+We usually talk about gene decoding or gene encryption.
+
+05:11.000 --> 05:22.000
+The main reason is that DNA is composed of a series of ATCG,
+
+05:22.000 --> 05:27.000
+which is a double helix structure made up of four different genes.
+
+05:27.000 --> 05:30.000
+Generally speaking, if we talk about gene decoding,
+
+05:30.000 --> 05:35.000
+the sequence you get may be composed of four ATCG
+
+05:35.000 --> 05:38.000
+in different ways.
+
+05:38.000 --> 05:41.000
+This is our so-called gene code.
+
+05:41.000 --> 05:47.000
+In molecular biology, there is a so-called central dogma.
+
+05:47.000 --> 05:57.000
+It's the principle that we have this genetic material.
+
+05:57.000 --> 05:59.000
+Its main structure is DNA,
+
+05:59.000 --> 06:03.000
+which is transcribed into RNA.
+
+06:03.000 --> 06:07.000
+RNA is further transcribed into protein.
+
+06:07.000 --> 06:12.000
+Protein can perform various biological functions.
+
+06:12.000 --> 06:15.000
+As time goes by,
+
+06:15.000 --> 06:22.000
+the central dogma is gradually extended to more different forms.
+
+06:22.000 --> 06:31.000
+We can even find more different directions from the virus or other systems.
+
+06:32.000 --> 06:37.000
+Today's technology involves a discovery.
+
+06:37.000 --> 06:42.000
+In the past, we thought that DNA was transcribed into RNA.
+
+06:42.000 --> 06:47.000
+Later, scientists found another molecule
+
+06:47.000 --> 06:51.000
+that allows RNA to reverse transcribe back to the DNA.
+
+06:51.000 --> 06:54.000
+Because of the help of this molecule,
+
+06:54.000 --> 07:03.000
+many related extension technologies can be built on this basis.
+
+07:03.000 --> 07:09.000
+Today, we are going to talk about RNAseq.
+
+07:09.000 --> 07:15.000
+In other words, transcriptome analysis,
+
+07:15.000 --> 07:19.000
+or gene expression profiling,
+
+07:19.000 --> 07:26.000
+we can use genes to understand human physiology.
+
+07:26.000 --> 07:37.000
+This picture shows a major timeline and milestone in molecular biology and sequencing technology.
+
+07:37.000 --> 07:43.000
+In 1953, the first discovery of DNA double-stranded structure was made.
+
+07:43.000 --> 07:49.000
+In 1977, Sanger's DNA sequencing was developed.
+
+07:49.000 --> 07:53.000
+Later, PCR technology was also developed.
+
+07:53.000 --> 08:00.000
+PCR technology allows us to rapidly increase our DNA in the lab.
+
+08:00.000 --> 08:08.000
+Many related technologies can be built on this basis.
+
+08:08.000 --> 08:12.000
+In 1990, the Human Genome Project was launched.
+
+08:12.000 --> 08:17.000
+After 13 years, the Human Genome Project was established.
+
+08:17.000 --> 08:25.000
+At this stage, the sequencing cost was still very high.
+
+08:25.000 --> 08:33.000
+It was difficult to operate the sequencing project in the lab.
+
+08:33.000 --> 08:40.000
+In 2005, the Next Generation Sequencing was introduced.
+
+08:40.000 --> 08:50.000
+Next Generation Sequencing is a next-generation sequencing technology.
+
+08:50.000 --> 08:55.000
+This technology has greatly reduced the cost of sequencing.
+
+08:55.000 --> 09:03.000
+More and more Genome Projects related to sequencing can be carried out more smoothly in labs.
+
+09:03.000 --> 09:08.000
+Up to now, Next Generation Sequencing technology is still widely used.
+
+09:08.000 --> 09:16.000
+In recent years, the Third Generation Sequencing technology has been introduced.
+
+09:16.000 --> 09:22.000
+When was Single Cell RNAse developed?
+
+09:22.000 --> 09:30.000
+Single Cell RNAse was first reported in 2009.
+
+09:30.000 --> 09:35.000
+Single Cell RNAse is a technology that is becoming more and more mature.
+
+09:35.000 --> 09:43.000
+Single Cell RNAse is a technology that is becoming more and more mature.
+
+09:43.000 --> 09:52.000
+Many advanced protocols, technologies, and companies continue to develop rapidly in this field.
+
+09:52.000 --> 10:00.000
+Why do we need to do Single Cell RNAse?
+
+10:00.000 --> 10:08.000
+Before Single Cell RNAse, we can look at gene profiling.
+
+10:08.000 --> 10:18.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+10:18.000 --> 10:28.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+10:28.000 --> 10:38.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+10:38.000 --> 10:48.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+10:48.000 --> 10:58.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+10:58.000 --> 11:08.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+11:08.000 --> 11:18.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+11:18.000 --> 11:28.000
+For example, we need to know the difference between a normal tumor and a cancer tumor.
+
+11:28.000 --> 11:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+11:36.000 --> 11:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+11:46.000 --> 11:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+11:56.000 --> 12:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:06.000 --> 12:16.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:16.000 --> 12:26.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:26.000 --> 12:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:36.000 --> 12:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:46.000 --> 12:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+12:56.000 --> 13:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:06.000 --> 13:16.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:16.000 --> 13:26.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:26.000 --> 13:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:36.000 --> 13:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:46.000 --> 13:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+13:56.000 --> 14:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:06.000 --> 14:16.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:16.000 --> 14:26.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:26.000 --> 14:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:36.000 --> 14:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:46.000 --> 14:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+14:56.000 --> 15:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:06.000 --> 15:16.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:16.000 --> 15:26.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:26.000 --> 15:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:36.000 --> 15:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:46.000 --> 15:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+15:56.000 --> 16:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:06.000 --> 16:16.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:16.000 --> 16:26.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:26.000 --> 16:36.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:36.000 --> 16:46.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:46.000 --> 16:56.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+16:56.000 --> 17:06.000
+From this heat map, it is still difficult to determine whether a cell is infected or not by these genes.
+
+17:06.000 --> 17:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+17:16.000 --> 17:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+17:26.000 --> 17:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+17:36.000 --> 17:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+17:46.000 --> 17:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+17:56.000 --> 18:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:06.000 --> 18:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:16.000 --> 18:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:26.000 --> 18:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:36.000 --> 18:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:46.000 --> 18:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+18:56.000 --> 19:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:06.000 --> 19:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:16.000 --> 19:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:26.000 --> 19:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:36.000 --> 19:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:46.000 --> 19:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+19:56.000 --> 20:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:06.000 --> 20:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:16.000 --> 20:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:26.000 --> 20:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:36.000 --> 20:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:46.000 --> 20:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+20:56.000 --> 21:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:06.000 --> 21:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:16.000 --> 21:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:26.000 --> 21:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:36.000 --> 21:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:46.000 --> 21:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+21:56.000 --> 22:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:06.000 --> 22:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:16.000 --> 22:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:26.000 --> 22:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:36.000 --> 22:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:46.000 --> 22:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+22:56.000 --> 23:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:06.000 --> 23:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:16.000 --> 23:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:26.000 --> 23:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:36.000 --> 23:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:46.000 --> 23:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+23:56.000 --> 24:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:06.000 --> 24:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:16.000 --> 24:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:26.000 --> 24:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:36.000 --> 24:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:46.000 --> 24:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+24:56.000 --> 25:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:06.000 --> 25:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:16.000 --> 25:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:26.000 --> 25:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:36.000 --> 25:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:46.000 --> 25:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+25:56.000 --> 26:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:06.000 --> 26:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:16.000 --> 26:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:26.000 --> 26:36.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:36.000 --> 26:46.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:46.000 --> 26:56.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+26:56.000 --> 27:06.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+27:06.000 --> 27:16.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+27:16.000 --> 27:26.000
+The single cell measures the distribution of expression levels for each gene across a population of cells.
+
+27:26.000 --> 27:36.000
+Thank you for watching!
+
+27:56.000 --> 28:06.000
+Thank you for watching!
+
+28:06.000 --> 28:16.000
+Thank you for watching!
+
+28:16.000 --> 28:26.000
+Thank you for watching!
+
+28:46.000 --> 28:56.000
+Thank you for watching!
+
+29:16.000 --> 29:26.000
+Thank you for watching!
+
+29:46.000 --> 29:56.000
+Thank you for watching!
+
+29:56.000 --> 30:06.000
+Thank you for watching!
+
+30:06.000 --> 30:16.000
+Thank you for watching!
+
+30:16.000 --> 30:26.000
+Thank you for watching!
+
+30:26.000 --> 30:36.000
+Thank you for watching!
+
+30:36.000 --> 30:46.000
+Thank you for watching!
+
+30:46.000 --> 30:56.000
+Thank you for watching!
+
+30:56.000 --> 31:06.000
+Thank you for watching!
+
+31:06.000 --> 31:16.000
+Thank you for watching!
+
+31:16.000 --> 31:26.000
+Thank you for watching!
+
+31:26.000 --> 31:36.000
+Thank you for watching!
+
+31:36.000 --> 31:46.000
+Thank you for watching!
+
+31:46.000 --> 31:56.000
+Thank you for watching!
+
+31:56.000 --> 32:06.000
+Thank you for watching!
+
+32:06.000 --> 32:16.000
+Thank you for watching!
+
+32:16.000 --> 32:26.000
+Thank you for watching!
+
+32:26.000 --> 32:36.000
+Thank you for watching!
+
+32:36.000 --> 32:46.000
+Thank you for watching!
+
+32:46.000 --> 32:56.000
+Thank you for watching!
+
+32:56.000 --> 33:06.000
+Thank you for watching!
+
+33:06.000 --> 33:16.000
+Thank you for watching!
+
+33:16.000 --> 33:26.000
+Thank you for watching!
+
+33:26.000 --> 33:36.000
+Thank you for watching!
+
+33:36.000 --> 33:46.000
+Thank you for watching!
+
+33:46.000 --> 33:56.000
+Thank you for watching!
+
+33:56.000 --> 34:06.000
+Thank you for watching!
+
+34:06.000 --> 34:16.000
+Thank you for watching!
+
+34:16.000 --> 34:26.000
+Thank you for watching!
+
+34:26.000 --> 34:36.000
+Thank you for watching!
+
+34:36.000 --> 34:46.000
+Thank you for watching!
+
+34:46.000 --> 34:56.000
+Thank you for watching!
+
+34:56.000 --> 35:06.000
+Thank you for watching!
+
+35:06.000 --> 35:16.000
+Thank you for watching!
+
+35:16.000 --> 35:26.000
+Thank you for watching!
+
+35:26.000 --> 35:36.000
+Thank you for watching!
+
+35:36.000 --> 35:46.000
+Thank you for watching!
+
+35:46.000 --> 35:56.000
+Thank you for watching!
+
+35:56.000 --> 36:06.000
+Thank you for watching!
+
+36:06.000 --> 36:16.000
+Thank you for watching!
+
+36:16.000 --> 36:26.000
+Thank you for watching!
+
+36:26.000 --> 36:36.000
+Thank you for watching!
+
+36:36.000 --> 36:46.000
+Thank you for watching!
+
+36:46.000 --> 36:56.000
+Thank you for watching!
+
+36:56.000 --> 37:06.000
+Thank you for watching!
+
+37:06.000 --> 37:16.000
+Thank you for watching!
+
+37:16.000 --> 37:26.000
+Thank you for watching!
+
+37:26.000 --> 37:36.000
+Thank you for watching!
+
+37:36.000 --> 37:46.000
+Thank you for watching!
+
+37:46.000 --> 37:56.000
+Thank you for watching!
+
+37:56.000 --> 38:06.000
+Thank you for watching!
+
+38:06.000 --> 38:16.000
+Thank you for watching!
+
+38:16.000 --> 38:26.000
+Thank you for watching!
+
+38:26.000 --> 38:36.000
+Thank you for watching!
+
+38:36.000 --> 38:46.000
+Thank you for watching!
+
+38:46.000 --> 38:56.000
+Thank you for watching!
+
+38:56.000 --> 39:06.000
+Thank you for watching!
+
+39:06.000 --> 39:16.000
+Thank you for watching!
+
+39:16.000 --> 39:26.000
+Thank you for watching!
+
+39:26.000 --> 39:36.000
+Thank you for watching!
+
+39:36.000 --> 39:46.000
+Thank you for watching!
+
+39:46.000 --> 39:56.000
+Thank you for watching!
+
+39:56.000 --> 40:06.000
+Thank you for watching!
+
+40:06.000 --> 40:16.000
+Thank you for watching!
+
+40:16.000 --> 40:26.000
+Thank you for watching!
+
+40:26.000 --> 40:36.000
+Thank you for watching!
+
+40:36.000 --> 40:46.000
+Thank you for watching!
+
+40:46.000 --> 40:56.000
+Thank you for watching!
+
+40:56.000 --> 41:06.000
+Thank you for watching!
+
+41:06.000 --> 41:16.000
+Thank you for watching!
+
+41:16.000 --> 41:26.000
+Thank you for watching!
+
+41:26.000 --> 41:36.000
+Thank you for watching!
+
+41:36.000 --> 41:46.000
+Thank you for watching!
+
+41:46.000 --> 41:56.000
+Thank you for watching!
+
+41:56.000 --> 42:06.000
+Thank you for watching!
+
+42:06.000 --> 42:16.000
+Thank you for watching!
+
+42:16.000 --> 42:26.000
+Thank you for watching!
+
+42:26.000 --> 42:36.000
+Thank you for watching!
+
+42:36.000 --> 42:46.000
+Thank you for watching!
+
+42:46.000 --> 42:56.000
+Thank you for watching!
+
+42:56.000 --> 43:06.000
+Thank you for watching!
+
+43:06.000 --> 43:16.000
+Thank you for watching!
+
+43:16.000 --> 43:26.000
+Thank you for watching!
+
+43:26.000 --> 43:36.000
+Thank you for watching!
+
+43:36.000 --> 43:46.000
+Thank you for watching!
+
+43:46.000 --> 43:56.000
+Thank you for watching!
+
+43:56.000 --> 44:06.000
+Thank you for watching!
+
+44:06.000 --> 44:16.000
+Thank you for watching!
+
+44:16.000 --> 44:26.000
+Thank you for watching!
+
+44:26.000 --> 44:36.000
+Thank you for watching!
+
+44:36.000 --> 44:46.000
+Thank you for watching!
+
+44:46.000 --> 44:56.000
+Thank you for watching!
+
+44:56.000 --> 45:06.000
+Thank you for watching!
+
+45:06.000 --> 45:16.000
+Thank you for watching!
+
+45:16.000 --> 45:26.000
+Thank you for watching!
+
+45:26.000 --> 45:36.000
+Thank you for watching!
+
+45:36.000 --> 45:46.000
+Thank you for watching!
+
+45:46.000 --> 45:56.000
+Thank you for watching!
+
+45:56.000 --> 46:06.000
+Thank you for watching!
+
+46:06.000 --> 46:16.000
+Thank you for watching!
+
+46:16.000 --> 46:26.000
+Thank you for watching!
+
+46:26.000 --> 46:36.000
+Thank you for watching!
+
+46:36.000 --> 46:46.000
+Thank you for watching!
+
+46:46.000 --> 46:56.000
+Thank you for watching!
+
+46:56.000 --> 47:06.000
+Thank you for watching!
+
+47:06.000 --> 47:16.000
+Thank you for watching!
+
+47:16.000 --> 47:26.000
+Thank you for watching!
+
+47:26.000 --> 47:36.000
+Thank you for watching!
+
+47:36.000 --> 47:46.000
+Thank you for watching!
+
+47:46.000 --> 47:56.000
+Thank you for watching!
+
+47:56.000 --> 48:06.000
+Thank you for watching!
+
+48:06.000 --> 48:16.000
+Thank you for watching!
+
+48:16.000 --> 48:26.000
+Thank you for watching!
+
+48:26.000 --> 48:36.000
+Thank you for watching!
+
+48:36.000 --> 48:46.000
+Thank you for watching!
+
+48:46.000 --> 48:56.000
+Thank you for watching!
+
+48:56.000 --> 49:06.000
+Thank you for watching!
+
+49:06.000 --> 49:16.000
+Thank you for watching!
+
+49:16.000 --> 49:26.000
+Thank you for watching!
+
+49:26.000 --> 49:36.000
+Thank you for watching!
+
+49:36.000 --> 49:46.000
+Thank you for watching!
+
+49:46.000 --> 49:56.000
+Thank you for watching!
+
+49:56.000 --> 50:06.000
+Thank you for watching!
+
+50:06.000 --> 50:16.000
+Thank you for watching!
+
+50:16.000 --> 50:26.000
+Thank you for watching!
+
+50:26.000 --> 50:36.000
+Thank you for watching!
+
+50:36.000 --> 50:46.000
+Thank you for watching!
+
+50:46.000 --> 50:56.000
+Thank you for watching!
+
+50:56.000 --> 51:06.000
+Thank you for watching!
+
+51:06.000 --> 51:16.000
+Thank you for watching!
+
+51:16.000 --> 51:26.000
+Thank you for watching!
+
+51:26.000 --> 51:36.000
+Thank you for watching!
+
+51:36.000 --> 51:46.000
+Thank you for watching!
+
+51:46.000 --> 52:06.000
+Thank you for watching!
+
+52:06.000 --> 52:16.000
+Thank you for watching!
+
+52:16.000 --> 52:26.000
+Thank you for watching!
+
+52:26.000 --> 52:36.000
+Thank you for watching!
+
+52:36.000 --> 52:46.000
+Thank you for watching!
+
+52:46.000 --> 52:56.000
+Thank you for watching!
+
+52:56.000 --> 53:06.000
+Thank you for watching!
+
+53:06.000 --> 53:16.000
+Thank you for watching!
+
+53:16.000 --> 53:26.000
+Thank you for watching!
+
+53:26.000 --> 53:36.000
+Thank you for watching!
+
+53:36.000 --> 53:46.000
+Thank you for watching!
+
+53:46.000 --> 53:56.000
+Thank you for watching!
+
+53:56.000 --> 54:06.000
+Thank you for watching!
+
+54:06.000 --> 54:16.000
+Thank you for watching!
+
+54:16.000 --> 54:26.000
+Thank you for watching!
+
+54:26.000 --> 54:36.000
+Thank you for watching!
+
+54:36.000 --> 54:46.000
+Thank you for watching!
+
+54:46.000 --> 54:56.000
+Thank you for watching!
+
+54:56.000 --> 55:06.000
+Thank you for watching!
+
+55:06.000 --> 55:16.000
+Thank you for watching!
+
+55:16.000 --> 55:26.000
+Thank you for watching!
+
+55:26.000 --> 55:36.000
+Thank you for watching!
+
+55:36.000 --> 55:46.000
+Thank you for watching!
+
+55:46.000 --> 55:56.000
+Thank you for watching!
+
+55:56.000 --> 56:06.000
+Thank you for watching!
+
+56:06.000 --> 56:16.000
+Thank you for watching!
+
+56:16.000 --> 56:26.000
+Thank you for watching!
+
+56:26.000 --> 56:36.000
+Thank you for watching!
+
+56:36.000 --> 56:46.000
+Thank you for watching!
+
+56:46.000 --> 56:56.000
+Thank you for watching!
+
+56:56.000 --> 57:06.000
+Thank you for watching!
+
+57:06.000 --> 57:16.000
+Thank you for watching!
+
+57:16.000 --> 57:26.000
+Thank you for watching!
+
+57:26.000 --> 57:36.000
+Thank you for watching!
+
+57:36.000 --> 57:46.000
+Thank you for watching!
+
+57:46.000 --> 57:56.000
+Thank you for watching!
+
+57:56.000 --> 58:06.000
+Thank you for watching!
+
+58:06.000 --> 58:16.000
+Thank you for watching!
+
+58:16.000 --> 58:26.000
+Thank you for watching!
+
+58:26.000 --> 58:36.000
+Thank you for watching!
+
+58:36.000 --> 58:46.000
+Thank you for watching!
+
+58:46.000 --> 58:56.000
+Thank you for watching!
+
+58:56.000 --> 59:06.000
+Thank you for watching!
+
+59:06.000 --> 59:16.000
+Thank you for watching!
+
+59:16.000 --> 59:26.000
+Thank you for watching!
+
+59:26.000 --> 59:36.000
+Thank you for watching!
+
+59:36.000 --> 59:46.000
+Thank you for watching!
+
+59:46.000 --> 59:56.000
+Thank you for watching!
+
+59:56.000 --> 01:00:06.000
+Thank you for watching!
+
+01:00:06.000 --> 01:00:16.000
+Thank you for watching!
+
+01:00:16.000 --> 01:00:26.000
+Thank you for watching!
+
+01:00:26.000 --> 01:00:36.000
+Thank you for watching!
+
+01:00:36.000 --> 01:00:46.000
+Thank you for watching!
+
+01:00:46.000 --> 01:00:56.000
+Thank you for watching!
+
+01:00:56.000 --> 01:01:06.000
+Thank you for watching!
+
+01:01:06.000 --> 01:01:16.000
+Thank you for watching!
+
+01:01:16.000 --> 01:01:26.000
+Thank you for watching!
+
+01:01:26.000 --> 01:01:36.000
+Thank you for watching!
+
+01:01:36.000 --> 01:01:46.000
+Thank you for watching!
+
+01:01:46.000 --> 01:01:56.000
+Thank you for watching!
+
+01:01:56.000 --> 01:02:06.000
+Thank you for watching!
+
+01:02:06.000 --> 01:02:16.000
+Thank you for watching!
+
+01:02:16.000 --> 01:02:26.000
+Thank you for watching!
+
+01:02:26.000 --> 01:02:36.000
+Thank you for watching!
+
+01:02:36.000 --> 01:02:46.000
+Thank you for watching!
+
+01:02:46.000 --> 01:02:56.000
+Thank you for watching!
+
+01:02:56.000 --> 01:03:06.000
+Thank you for watching!
+
+01:03:06.000 --> 01:03:16.000
+Thank you for watching!
+
+01:03:16.000 --> 01:03:26.000
+Thank you for watching!
+
+01:03:26.000 --> 01:03:36.000
+Thank you for watching!
+
+01:03:36.000 --> 01:03:46.000
+Thank you for watching!
+
+01:03:46.000 --> 01:03:56.000
+Thank you for watching!
+
+01:03:56.000 --> 01:04:06.000
+Thank you for watching!
+
+01:04:06.000 --> 01:04:16.000
+Thank you for watching!
+
+01:04:16.000 --> 01:04:26.000
+Thank you for watching!
+
+01:04:26.000 --> 01:04:36.000
+Thank you for watching!
+
+01:04:36.000 --> 01:04:46.000
+Thank you for watching!
+
+01:04:46.000 --> 01:04:56.000
+Thank you for watching!
+
+01:04:56.000 --> 01:05:06.000
+Thank you for watching!
+
+01:05:06.000 --> 01:05:16.000
+Thank you for watching!
+
+01:05:16.000 --> 01:05:26.000
+Thank you for watching!
+
+01:05:26.000 --> 01:05:36.000
+Thank you for watching!
+
+01:05:36.000 --> 01:05:46.000
+Thank you for watching!
+
+01:05:46.000 --> 01:05:56.000
+Thank you for watching!
+
+01:05:56.000 --> 01:06:06.000
+Thank you for watching!
+
+01:06:06.000 --> 01:06:16.000
+Thank you for watching!
+
+01:06:16.000 --> 01:06:26.000
+Thank you for watching!
+
+01:06:26.000 --> 01:06:36.000
+Thank you for watching!
+
+01:06:36.000 --> 01:06:46.000
+Thank you for watching!
+
+01:06:46.000 --> 01:06:56.000
+Thank you for watching!
+
+01:06:56.000 --> 01:07:06.000
+Thank you for watching!
+
+01:07:06.000 --> 01:07:16.000
+Thank you for watching!
+
+01:07:16.000 --> 01:07:26.000
+Thank you for watching!
+
+01:07:26.000 --> 01:07:36.000
+Thank you for watching!
+
+01:07:36.000 --> 01:07:46.000
+Thank you for watching!
+
+01:07:46.000 --> 01:07:56.000
+Thank you for watching!
+
+01:07:56.000 --> 01:08:06.000
+Thank you for watching!
+
+01:08:06.000 --> 01:08:16.000
+Thank you for watching!
+
+01:08:16.000 --> 01:08:26.000
+Thank you for watching!
+
+01:08:26.000 --> 01:08:36.000
+Thank you for watching!
+
+01:08:36.000 --> 01:08:46.000
+Thank you for watching!
+
+01:08:46.000 --> 01:08:56.000
+Thank you for watching!
+
+01:08:56.000 --> 01:09:06.000
+Thank you for watching!
+
+01:09:06.000 --> 01:09:16.000
+Thank you for watching!
+
+01:09:16.000 --> 01:09:26.000
+Thank you for watching!
+
+01:09:26.000 --> 01:09:36.000
+Thank you for watching!
+
+01:09:36.000 --> 01:09:46.000
+Thank you for watching!
+
+01:09:46.000 --> 01:09:56.000
+Thank you for watching!
+
+01:09:56.000 --> 01:10:06.000
+Thank you for watching!
+
+01:10:06.000 --> 01:10:16.000
+Thank you for watching!
+
+01:10:16.000 --> 01:10:26.000
+Thank you for watching!
+
+01:10:26.000 --> 01:10:36.000
+Thank you for watching!
+
+01:10:36.000 --> 01:10:46.000
+Thank you for watching!
+
+01:10:46.000 --> 01:10:56.000
+Thank you for watching!
+
+01:10:56.000 --> 01:11:06.000
+Thank you for watching!
+
+01:11:06.000 --> 01:11:16.000
+Thank you for watching!
+
+01:11:16.000 --> 01:11:26.000
+Thank you for watching!
+
+01:11:26.000 --> 01:11:36.000
+Thank you for watching!
+
+01:11:36.000 --> 01:11:46.000
+Thank you for watching!
+
+01:11:46.000 --> 01:11:56.000
+Thank you for watching!
+
+01:11:56.000 --> 01:12:06.000
+Thank you for watching!
+
+01:12:06.000 --> 01:12:16.000
+Thank you for watching!
+
+01:12:16.000 --> 01:12:26.000
+Thank you for watching!
+
+01:12:26.000 --> 01:12:36.000
+Thank you for watching!
+
+01:12:36.000 --> 01:12:46.000
+Thank you for watching!
+
+01:12:46.000 --> 01:12:56.000
+Thank you for watching!
+
+01:12:56.000 --> 01:13:06.000
+Thank you for watching!
+
+01:13:06.000 --> 01:13:16.000
+Thank you for watching!
+
+01:13:16.000 --> 01:13:26.000
+Thank you for watching!
+
+01:13:26.000 --> 01:13:36.000
+Thank you for watching!
+
+01:13:36.000 --> 01:13:46.000
+Thank you for watching!
+
+01:13:46.000 --> 01:13:56.000
+Thank you for watching!
+
+01:13:56.000 --> 01:14:06.000
+Thank you for watching!
+
+01:14:06.000 --> 01:14:16.000
+Thank you for watching!
+
+01:14:16.000 --> 01:14:26.000
+Thank you for watching!
+
+01:14:26.000 --> 01:14:36.000
+Thank you for watching!
+
+01:14:36.000 --> 01:14:46.000
+Thank you for watching!
+
+01:14:46.000 --> 01:14:56.000
+Thank you for watching!
+
+01:14:56.000 --> 01:15:06.000
+Thank you for watching!
+

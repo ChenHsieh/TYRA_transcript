@@ -1,0 +1,1684 @@
+Welcome everyone to today's TerraTalk.
+We are very happy to welcome Dr. Wang Guan Zhong.
+He graduated from the Department of Electrical Engineering in 2010,
+and graduated from the Department of Electrical Engineering in 2021,
+and received his Master's Degree.
+During his Master's Degree,
+he worked in coding,
+and developed the non-equilibrium screen function,
+which is NEGF.
+This is also in his title.
+If you don't know what NEGF is,
+he will explain it to you later.
+From 2014 to 2020,
+he went to Purdue University, Indiana,
+and received his Master's Degree in Electrical Engineering.
+His main job there was quantum transport method,
+which is the method of quantum transmission.
+His main focus was on nanostructure and quantum transmission.
+Currently, he works in Intel's TCAP team.
+Let's welcome Dr. Wang Guan Zhong.
+You can start sharing.
+Let me share my screen.
+Can everyone see my screen?
+Yes, but you can't see the slides.
+Okay.
+Can you see the slides now?
+Yes.
+Let's follow the Tyrell tradition.
+Please turn on your microphones,
+and let's welcome Dr. Wang Guan Zhong.
+Hello, everyone.
+I will be speaking in English for the next few slides,
+because the technical terms may change.
+My target audience this time is...
+If you're interested in this field,
+whether you want to apply for a Master's Degree,
+or if you want to know more about this field,
+or if you want to use this tool,
+my target audience is like that.
+If you have any questions,
+you can send me an email.
+These works were done when I was studying for a Master's Degree at Purdue.
+The funding sources were NSF and NCSA.
+I also received funding from the Department of Education.
+So I wanted to acknowledge that.
+I also worked with CELBACO.
+This work was done by Purdue's supercomputer,
+which we call RCAC.
+This is the result of the computation.
+My topic today is optoelectronic simulation,
+and I will go over from the semi-classical
+to quantum transport,
+my different perspective.
+Here is my outline,
+and I will go over the motivation,
+and what's the method being used here,
+and I will show some results.
+In the methods, I will go over the semi-classical.
+Here's a missing label here,
+and go over to what's NEGF,
+and what is a beautiful probe,
+and the difficulty of including different processes,
+a recombination and generation process inside the NEGF.
+How do we do that?
+I will show some results to show,
+first, the importance of including these kinds of processes.
+Also, I will do a comparison.
+If we use a semi-classical way to do simulation
+versus using quantum transport way to do it,
+what's the difference?
+And do a summary there.
+So, why are we working on this project?
+It's because what we have achieved so far as mankind,
+because we have solar cell,
+and also to harvest energy from sun,
+and also we can efficiently emit light
+through light-emitting diets,
+which is like a really efficient way
+to transfer energy from electricity to lighting.
+And to push the boundary further,
+we need to look into what other new materials are out there,
+what different new structures we can optimize
+like the current efficiency.
+And so, for example, to improve the efficiency of LED,
+we have these quantum wells,
+and then you can see that when we have quantum well,
+the carrier will like to stay there more,
+and therefore increase the opportunity
+to recombine and emit light.
+And also we are looking to the novel new materials,
+like, for example, different Indian composition,
+or maybe some 2D materials,
+and we're looking into these.
+So, when we are utilizing all these different new materials,
+new structures, and there are lots of quantum effects in it.
+So, therefore, like the current,
+and we know that the non-equilibrium Green's function,
+this method, like it's solving Schrodinger equation
+with using Green's function,
+it's a well-accepted method.
+So, I'm going to go over why do we need NEGF to do it.
+So, what is optoelectronics?
+And so, I think the best way to understand optoelectronics,
+like it's just a simple PN diet we study in school, right?
+So, it's usually a bipolar device,
+where by bipolar, I mean, like,
+there's electrons and there's holes.
+And also there are carriers,
+like they're in different equilibrium,
+for example, electron,
+and they're usually separated by a band gap.
+That's why we use semiconductors.
+So, having a band gap,
+and we kind of segregate the carriers to two kinds,
+and the electron is injected by the source, one side.
+One contact, we inject electron here,
+and the other one is like a hole.
+And when they see each other,
+and there's interesting thing can happen, right?
+There are different processes there.
+For example, there's like Shockley-Ree hole,
+where electron and hole, they can recombine.
+And when they recombine,
+they can emit phonon, as known as heat, right?
+So, this is like a wasteful energy.
+When they recombine through the defects,
+the heat is generated and nothing gained.
+Well, the heat is gained, but it's not that great.
+And there's also radiative recombination,
+where when the electron and hole, they see each other,
+and they can recombine,
+and therefore, they can emit like a photon,
+or we can see light here.
+And the rate it happens usually is,
+and there's like, because like,
+for example, first one,
+they need to see through a defect here,
+and therefore, their proportion is like proportional
+to the n-type or p-type,
+because one carrier can come to the defect here,
+and to wait for the other person to come,
+and to recombine.
+So, therefore, their rate is proportional to,
+you know, either the carrier,
+either the electrons or the hole concentration here.
+But radiative recombination,
+it's, you need,
+the rate is proportional to the both of them.
+So, you need to have a high electron here,
+and high hole concentration here,
+to make it happen.
+And there's like also another process,
+which is OJ recombination.
+And this is like a three-particle process,
+where the electron and hole,
+they can recombine.
+But instead of like emitting a photon,
+it will kick an electron to a higher energy,
+or the opposite.
+It's either two electron with one hole,
+or two hole with one electron.
+But the result is like a waste of energy,
+and the chance of doing is something like here.
+And, yes.
+If you have any questions,
+you can ask directly,
+or pause the video.
+And the other part is a generation process,
+where the electron hole,
+at this place,
+at this depletion region,
+we can absorb the photon,
+and like create an electron and hole pair.
+So, all these processes are needed
+to simulate an optoelectronic device.
+So, that's what we need to cover,
+when we are doing a modeling.
+So, why do we need quantum model?
+So, let's take a look at a simulation result.
+And this is from this paper I'm co-author with.
+This is like a simulation result
+from a commercialized 3-5 LED.
+And as you can see here,
+this line here means the density of states,
+and the color here is the electron density.
+So, the contour line is the density of state, right?
+And we can see that the electron is coming from the left side,
+and occupying these states here.
+And there are holes coming from the other direction.
+This is injected here.
+And they are going to be in here,
+and they will recombine and emit light here.
+So, we can see that,
+if we really do a quantum simulation,
+we can see that there is interference everywhere, right?
+For example, all these pattern means,
+if you treat them as particles,
+it doesn't capture everything, right?
+So, for example,
+electron, they can tunnel through this barrier,
+and through these interference.
+So, we really need to make use of the quantum transport,
+instead of the semi-classical way.
+So, the current state of our tool to do this is to,
+I mean, the current way,
+I mean, before I published the paper, right?
+So, before I was working on this,
+the best way to deal with this quantumly
+is also from this paper,
+where we cut the domain into different pieces,
+and then we call some of them the red part,
+and also the green part.
+So, the green part is like equilibrium.
+And why are they in equilibrium?
+Because usually the source is highly doped,
+and then the drain is also highly doped region.
+And when you're highly doped,
+there's lots of carrier there,
+and they will scatter a lot,
+and the carrier there will be in equilibrium.
+So, when you are in equilibrium,
+we can put a Fermi level here,
+saying, oh, this is the Fermi energy in this region,
+and this is the Fermi energy,
+and there's like Fermi level for electron,
+Fermi level for holes in this region.
+And there's also the pink part,
+where we do, this is non-equilibrium region.
+So, this is like the previous way of doing it,
+where we do NEGF inside the pink region,
+and we just put the Fermi level across here.
+So, but this method has some defects,
+where we cannot even calculate a simple p-n diet,
+because a simple p-n diet,
+we cannot really tell which region is non-equilibrium,
+which region is equilibrium.
+So, it's really hard to do quantum transport
+in a p-n diet,
+when we are trying to include
+all the recombination or generation processes.
+So, there are different flavor of quantum transport.
+There's like ballistic NEGF,
+there's like the one I mentioned,
+we cut into different domain,
+when we try to do the transport calculation,
+and there's like the super expensive SE4,
+but none of them can have been,
+are able to deal with the p-n diets,
+like with the recombination processes.
+So, therefore, a new model is needed, right?
+And also we can see that,
+this is from a super old paper,
+why the recombination process is important,
+is because when you measure IV curve,
+there's like different slope here,
+and they are in the results
+of different recombination process here,
+which later on, I will talk more about that.
+So, what's the available way to do,
+to deal with carrier transport?
+So, here's like a list, a roadmap,
+like where you can pick and choose,
+depending on your needs.
+So, if you are,
+so here, the axis,
+y-axis here is the computational intensity.
+So, I'm going from a super cheap,
+super fast turnaround time,
+computational cost,
+like the semi-classical way,
+and all the way to go quantum,
+where we need to solve Schrodinger equation,
+and using it on any GF methods.
+So, I will first go over,
+what's the Boltzmann transport equation?
+And there are different way to solve it,
+like the drift diffusion is the most popular way.
+It's the first order,
+I think, what is it?
+The first order approximation,
+not approximation,
+but it's a simplification of the BTE,
+the famous BTE thing,
+and that's like we solve it drift diffusion,
+and then we can also use Monte Carlo,
+like statistically to gather results
+for the BTE equation.
+So, what's Boltzmann transport equation?
+It's by saying that,
+oh, there is a distribution function.
+By distribution, we mean,
+with the occupation of a different state,
+and what does this mean?
+Like, we want to ask,
+what's the possibility of finding a carrier
+at a particular location,
+at a particular time,
+with a particular momentum?
+So, if we can,
+for example, inside a device,
+there's a different location here,
+and for each location,
+there is a,
+I'm trying to draw this like a momentum,
+so carrier with low momentum is here,
+and carrier with higher momentum
+is on the upper here,
+and we are asking,
+what's the distribution?
+How many particles are in those states?
+So, if we know this information
+across time, across space,
+and for different time and space
+and different momentum,
+we know this,
+then the system is solved, right?
+So, and why is this distribution useful?
+Because from this distribution function,
+we can get the carrier density, right?
+Because if we want to ask,
+what's the carrier density at this location?
+Given the F at this location,
+we can just do a sum
+and know how much carrier is here.
+And if you want to know,
+oh, for your device you're working on,
+what's the current
+that you just do,
+get their group of velocity
+from the band structure
+and you do a sum
+with this distribution,
+then you can get,
+oh, how much current you are gaining
+at this location.
+So, it's useful
+because we can get observable
+from this distribution function.
+And how do we solve this F?
+And it's the BTE Boltzmann.
+Boltzmann came up with this, right?
+Like the Boltzmann transport equation.
+It's the governing equation.
+So, the equation is listed here.
+And I will just try to show
+how we understand different terms.
+For example,
+the first term means,
+oh, if you have carrier
+coming in, coming out,
+the distribution here
+will be related to that, right?
+Because you have carrier
+flowing into here or flowing out.
+And the distribution here will be,
+if you have lots of people coming in
+and a few going out,
+then the distribution here will be higher.
+So, this is what the first term means.
+And the second term means that
+the F means the electric field,
+the carrier experience in the charge.
+And when you are,
+when the carrier is experiencing
+electric field, it will accelerate.
+And it will change its momentum.
+So, here we mean like that,
+okay, given the electric field
+at this location,
+the distribution, you know,
+it's related to
+the distribution nearby.
+So, distribution with a lower momentum,
+with a higher momentum,
+they can come in and out
+because of the electric field
+at this location.
+And the last one is
+if you have like, oh,
+other collision inside a device,
+for example, a phonon,
+an electron can absorb a phonon
+or emit a phonon and come to your
+this place, if there's a possibility
+like that, then this term is trying
+to take that into account.
+So, we have all this
+and all combined. And they can be solved
+really expensively by
+doing Monte Carlo, by assuming
+the distribution function and you start to
+run it, oh, how many carrier coming in,
+coming out from different momentum space,
+then it's super expensive to do that
+Monte Carlo. So, but if it's still
+too hard, then you can simplify
+this BT equation
+to a drift diffusion equation,
+which is saying that the
+current at this place is proportional
+to the carrier with the electric
+field and the diffusion
+with the density gradient.
+So, this is, and the full derivation
+is in this paper here.
+People who are interested can go take
+a look.
+So, I kind of went over like the
+semi-classical way where
+the carrier and the device are
+like particle-like and then
+they can recombine
+by solving
+the drift diffusion equation and the continuity
+equation. That's how we
+deal with the
+semi-classical way.
+And now I'm going to step into the
+Schrodinger equation and our
+non-equilibrium Green's function.
+So, we all know about Schrodinger equation.
+It's like, it's
+given a Hamiltonian of the system
+that you can solve it and then to find
+what's the possible eigenenergies
+inside the system.
+And the Green's function,
+I still won't go into details.
+I started to disappoint people here.
+But like, I think
+there are like really useful
+material here and like really, I think
+Professor Datas did a really good job
+on explaining what
+an AEGF method is with his
+introductory material on
+nanoHUB. So, it's all the information
+and there's like a
+famous book. You can reach out to me and I can
+show you like
+what's the book you need to read
+into. But Green's function,
+from our understanding, Green's function
+is also
+in an engineering term, it's like the response
+to an excitation, right?
+So usually, oh,
+Poisson equation, the Green's function,
+if you know the Green's function for a Poisson equation,
+then you know, oh,
+if you put a charge here, what's the
+resulting potential you can get?
+So the Schrodinger equation is similar like this.
+So you put the H psi,
+E psi all into one side
+and then you can solve for the Green's function.
+And the Green's function is that
+if you multiply this
+by excitation, then you know what's
+the response you will get
+inside this device.
+So,
+here, we will
+first go into the ballistic
+non-equilibrium Green's function.
+So once you, so first you have this
+Hamiltonian, and then you can get the
+resulting Green's function. And then
+by, so here
+it's like the Hamiltonian here, and we can get
+the Green's function. And using the Green's function,
+there's like some key terms.
+There's like the G lesser, which is the
+the
+this is proportional to the carrier
+density. So it's like
+here's the excitation you have in the system.
+And you have like, using the Green's
+function, and there's a Gr
+and Gr dagger, then you can get the
+what's the carrier distribution in the device.
+So,
+what the
+NEGF does is that we are interested
+in a part,
+only this part of the device. And we are,
+we want to say, oh,
+we only want to focus on this small region.
+And then the left,
+we call it, that's a
+contact, that's a lead. And we
+don't want to care about the information.
+It's an infinite,
+going left and right.
+They are periodically going left
+and right. But we don't want to simulate
+the entire universe. We only
+want to focus on the transistor or the
+LED we care about.
+So, given this Green's
+function, and then we can
+for different contact,
+if you are contact to the left, and then there's
+like a left self-energy
+and there's like a right side, there's like a
+self-energy here. And with all this self-energy
+on the Green's function, you can get what's
+the carrier distribution in here.
+And when they are in contact
+with the reservoir of
+a different Fermi level here
+on the left side and right side here.
+So, but the ballistic
+and NEGF, there's no scattering.
+So carrier will not scatter with
+each other. So how
+do we do
+including all these scattering
+terms in the
+NEGF is like, there's a
+popular method
+that's called Butyprobe method
+where it's proposed by Marcus
+Butyprobe back in 1980s.
+So it's a way to mimic
+defacing, which means, aka
+the scattering events.
+So, we
+will try, when we're
+injecting the carrier into
+the device from the left and right
+side. So we're adding more
+more these
+reservoir inside the device.
+So we're taking the electron out and
+put it back in, take it out and put it
+back in. So in this way, we're
+mimicking like carrier
+we can randomize the carrier
+and the carrier's momentum will go around
+and like you can see that
+this is more closer to
+the real world problem where the
+device have scattering.
+But this method
+was only applicable
+to unit polar device. For example,
+if you only have electron here, it can only
+simulate electrons
+scattered inside the device.
+So
+my work, my PhD
+was like to ask a question
+whether we can modify this for
+bipolar device.
+Bipolar
+means
+when we have, so
+can we put like two, when we are
+we simulate electron and hole
+separately like before, right?
+We have electron coming in and electron
+coming out and we also simulate the hole
+whereas electron coming in, sorry, hole coming
+in and hole coming out. And we also
+include this probe here to extract
+the carrier in, out of
+the device and put it back in
+and this
+way, if we somehow take
+the carrier out from
+this electron and hole and that's equivalent
+to semi-classically
+how JIP diffusion model
+the Shockley-Ree hole and different processes.
+So using this
+method, we can
+cover
+the processes I
+mentioned in the optoelectronic device. We can
+model Shockley-Ree hole, we can model
+radiated, we can model OJ,
+we can model all these
+effects inside the
+enhanced
+electrical probe method.
+So here is like all
+the methodology I've mentioned
+where from
+cheap to expensive, we have like
+JIP diffusion, Monte Carlo's
+and the NEGF
+and also
+in the
+NEGF we have like the
+ballistical one and also the
+what's the time now?
+Do we still have time?
+Oops.
+Oh 540, sorry.
+Let me put it back on.
+Yeah, so we have like
+all the different
+methodology here and this is the one
+I was mainly working on.
+So carriers, they are
+wave-like.
+So for example,
+from before, JIP diffusion and Monte Carlo's
+each of the carriers, they are particle-like
+and then we are solving
+the current continuity equation.
+For each location, there is like a quasi-Fermi
+level, which means they follow Fermi
+direct distribution
+and
+quantum correction with
+artificial.
+And there are way people
+when using JIP diffusion, you can
+couple it with quantum correction like
+solving Schrodinger equation
+in a certain region and then couple
+them with a JIP diffusion and try
+to mimic it.
+You will have artificial boundary
+condition.
+When do we choose?
+Which is the part we want to solve at quantum?
+Where do we solve semi-classically?
+So there's lots of confusion
+if you are coupling that.
+But using NEGF
+like if it's
+ballistic, it's not
+really useful for
+optoelectronic because there's no
+recombination scattering processes and
+there's like the way I mentioned, it's called
+multi-equilibrium
+way. So some part of it you
+simulate, you assume
+like there's like an equilibrium there.
+But
+this method, it requires
+like
+really, it only
+works with, for example, quantum well structure
+and inside here, we can
+set it to be equilibrium and somehow to
+have the carrier recombine.
+But in this way, the new
+proposed beautiful probe way
+where the carriers are always
+wavelength and we can have
+recombination generation everywhere in the
+device and we also can have scattering
+consider and
+you don't need to say
+this part is equilibrium or the other part
+is non-equilibrium. So you can simulate
+the entire device without
+artificial boundary.
+And of course, there's the SC Born method
+but that's like super expensive and
+no one has, I would say
+like no one has done like
+a simulation like
+LED kind of simulation
+like with it.
+And so later
+next one, I will go
+to talk about the results.
+So first part, I will show that
+the importance of recombination.
+So here is a picture
+showing, this is a structure
+where electrons coming
+again from the left side here and then
+there's a band structure. There's a
+band gap in between
+this and I crop out in between
+and the hole is coming to here.
+So
+there are two paths that electron
+can, there's
+a current conducting path, right?
+So one path is the blue path where
+electron come here and hole come here
+and they will recombine and this
+current, they can form a current path.
+And the other path is the black line
+where the carrier come in and can
+jump over the barrier to the other side.
+So there are two way that the
+carrier can
+that the current can form.
+So here's a comparison with
+or without this indium
+gallium nitride. So when we form
+the quantum well with a lower
+band gap material here. So on the two sides
+gallium nitride with a larger band gap.
+With indium gallium nitride, you can shrink
+the band gap and that's why we see this dip
+here. And with this, you
+can see that comparing the two
+the recombination current is
+much higher with a quantum well
+because inside a quantum well, there's a
+higher chance of
+carrier here and because
+we also know that
+the recombination
+is proportional to the carrier density
+there, right? They want to see each other
+they want to recombine. So the more they have
+at each location, the more
+they can recombine with each other.
+So
+here I'm trying
+to show that
+when we do any
+gift calculation, when we include
+the recombination here
+this is a typical
+IV curve and we can see that
+this is a log scale
+current, right? So when we increase
+when we increase the drain
+voltage, we are pulling
+the barrier down
+so there are more and more current can go
+through to the other side. So
+let's focus first on
+the low Vd
+side. So on the low Vd side
+there, you can
+see that there's still a barrier here. So
+the black current, so the total
+current will be, as I said before
+there's like two parts. There's a recombine
+the electron hole
+they can recombine here for a
+current path. And there's also the
+thermionic current where the carrier can
+jump over the barrier to the other side
+so this is the two part. And when the
+barrier is still high, we can see that the black line
+is not in favor because it's hard
+for the electron to jump out here. There's like
+few particles here to jump out. So
+the black part of the current is super
+small. And
+at this region
+the recombination current dominates
+so we can see that this is
+the
+distribution here.
+And when we increase
+the bias voltage
+we're pulling the other side, the barrier down
+so as you can see here
+right now the black path is easier
+the electron can zip through the device
+and form a current path
+so right now the blue one is
+it's still large but
+compared to the black one it's much smaller
+so this is on off.
+So when we include
+NEGF, when we do
+non-equilibrium Green's function
+transport calculation, when we don't
+have recombination, which current
+do we get? We get the
+we don't have
+the blue line here so we're only getting
+the black. And if we
+using this method we're able
+to include the recombination process
+which means we get the red line
+so we're pushing
+the boundary of NEGF such that
+we can simulate the device
+from a black line to a red line
+which is a really large difference if you look at
+here and
+if you look at the
+before the threshold voltage there's a
+huge current difference with or without
+recombination and it
+also further impact what's the
+threshold voltage. The threshold voltage means
+when is your device on
+or off. So there's a small shift
+here although on a
+linear scale but with more recombination
+the red and
+also the black line will have a larger
+shift and therefore a larger impact.
+So it's really important to
+include the recombination
+in your device.
+Can I ask a question here?
+Yeah, sure.
+Can you go back to your previous slide?
+Yes.
+Maybe
+this is a bit stupid but I
+thought
+recombination
+means you have
+electron hole pair recombine
+and I thought it will
+lead to the emission
+of phonon or emission of photon
+and usually
+I would think
+recombination is bad
+for the current but here you are saying
+when you have
+smaller bias voltage
+the VT is smaller you
+actually have higher recombination
+energy, recombination
+current. Why does recombination
+contribute to a current?
+To a current?
+Or a current?
+So there are different
+recombination process, right? There's like
+I mentioned like there's a
+there's radiative recombination
+and there's OJ recombination.
+So they are all
+the consequence of electron hole.
+I mean OJ
+is the radiative
+in the shock wave hole is one electron one hole
+and they disappear.
+And the shock wave hole is
+you emit heat.
+Yeah, phonons.
+And the radiative is like you emit
+photon. And OJ
+is like you kick another carrier
+to a higher energy, right? So it's useless
+too, right? So
+not all. Okay, so wait, your question
+is, but here
+is showing the recombination is
+the blue line here, right? So when
+your lower VT is lower, when your
+higher VT it's
+higher.
+But, sorry, what
+was your question? My question is
+I, okay, I
+thought recombination
+is bad for your, for the current.
+Why?
+It's bad because
+it's
+I think some, well
+bad is kind of like a subjective, right?
+I would call it bad if
+I would call it
+this is a bad device if most of your
+recombination happens for
+happen in the way, the shock wave hole way
+or OJ, right? So the black
+and the red is bad because they don't
+produce photon, you don't
+produce light, then why are you
+recombining? So I think
+bad is, okay, it depends
+on which process you are
+looking at, right? I think
+the blue one is good because
+I see, I see, because you want a photon
+going, I see. Yeah.
+Okay. Yes, yes.
+Okay, and the relation between
+okay, maybe this is
+a bit specific, like OJ one
+the radiative one and
+the phonon one
+black, blue, and red.
+Are they always in this order?
+Won't they cross
+at some point if you have different lengths
+of the, I think
+this X means the size of your
+Yeah, because it looks like
+they always have red, blue, and black.
+Do they ever
+cross at some point?
+I think I was showing
+the interesting
+question because I was showing
+previously
+they have different
+relationship, right? So
+this is an ABC model
+where the
+shock wave we hold there is proportional to
+n plus p, and the radiative
+is n and p, and then
+the rate is proportional to n
+squared p. So
+I think if you engineer it
+smartly, you can
+control which one dominates.
+But somehow in this scenario
+the red one is always larger
+but if you look at the equation here
+it's n squared p
+so if you make the p much
+smaller, right now it's equally large
+n and p are super large both in here
+but the real device
+I think is more complicated
+and maybe in some
+way, smart way, you can
+shrink, make the blue
+dominant and the other two
+because relatively they are different, right?
+In this case
+the red are closer to blue
+but here you can see that
+the red and blue is farther away
+or yeah
+I think
+there's some way
+we can engineer it to make it
+some area the blue one
+will dominate, yeah.
+Is there any other questions?
+I have a question here.
+So I guess
+this case is simple enough
+I guess this is probably
+just your test case
+but this case is simple enough
+that you can also use semi-classical
+way to do a simulation
+so I'm just wondering
+how do they compare?
+So that's my next topic
+it's like comparing on
+this really small structure and then
+we are using a semi-classical way and also
+a quantum way to compute
+and then I will show some comparison
+here so I think that's the
+that will answer your question.
+Okay, great, yeah.
+So the next one as the question has
+elevated us
+to this point, so I'm going
+to talk about the comparison between the two, semi-classical
+and quantum
+and how do we compare, how do we make a fair comparison
+yes, that's an important question
+is that we use the same still
+the same small, like the structure I was
+showing here is like 20 nanometer
+so it's a super tiny structure
+and then I'm going to apply
+semi-classical method, a drip
+diffusion one and also
+for the quantum way I'm using
+this new method, the butycoprobe
+with recombinant generation method
+which is the tool our lab
+used to work on in grad school
+so if you guys are interested in applying for our group
+email me and I can give
+you more information
+so how do we compare this
+is that in all the transport
+simulation
+we're decoupling the transport part
+with the part, like
+electrostatic part, so we usually do a
+self-consistent, we solve for the
+where's the electron holes and given
+the electron holes and they have charge
+and therefore they will form a potential
+so we will feed back the carrier
+transport and plug it into Poisson
+and get a potential and like doing this
+like a hundred times or whatever
+it's converging, so it's like self-consistently
+solving, decouple the two
+and solve the Poisson
+and just keep on doing until it doesn't
+change anymore and then we declare
+this simulation is finished
+it's converged
+so to compare
+it's easy because we can
+just focus on this part and then for the
+carrier we can choose to use
+NEGF or we can choose the
+semi-classical way of doing it
+and when doing the semi-classical way
+we also choose to
+because Drift Diffusion, to solve these problems
+they usually have another quantum correction model
+where they are solving just
+a confined Schrodinger
+but NEGF is more like an open boundary
+open boundary Schrodinger
+equation, but like
+for semi-classical
+people, they usually will
+couple it with a quantum correction method
+which is solving Schrodinger
+inside an infinite
+quantum
+so they will have boundary, but solving Schrodinger
+only in that region and try to couple them
+together
+so the question to answer is
+how do we
+compare the quantum and semi-classical models
+and here is
+more of like showing
+so the left side is using
+the NEGF where
+we will have a band structure, right?
+we will have the band gap of
+I think this is around
+0.4 to
+so galenitride is like 3.4
+electron volts, and inside here
+there is like a quantum well
+so the actual
+will be galenitride
+and we assume that it is doped with 1E20
+and there is like a region of galenitride
+and that will have a smaller band gap
+and also the galenitride, and this is like
+the structure we are looking into
+and in NEGF
+we will provide like a
+total energy
+so the y-axis is the energy range
+so you know
+here are some states that can be
+so here the color means like the density
+of states, means like the carrier
+can have a possibility to go in
+there, but there is some portion of it
+like brighter, which means
+because of the interference, carrier
+doesn't have a
+even if you have carrier, it cannot go in
+here, so that's what the density of states
+means
+the NEGF we can provide
+is non-equilibrium throughout the entire
+device, which means the carrier
+doesn't have to follow Fermi-Dirac
+distribution everywhere
+also we can see that the states
+is broadened, so because
+you are in contact with the
+external source, therefore
+the state is broadened
+otherwise, if you solve
+this in the Schrodinger equation
+it's going to be confined
+like a
+the states is like, you know, it's not
+broadened, but here we can see that
+for example, quantum well here, it's not a
+compared to Schrodinger equation
+it's a fixed energy level, because
+you are in contact with the surrounding
+therefore there is a peak here
+and for the drift diffusion
+we can see that
+here
+drift diffusion
+equation assume that
+in everywhere there is a Fermi
+energy, right, and for this Fermi energy
+follows the Fermi distribution
+which means the carrier will
+be Fermi distribution everywhere
+with different Fermi energy
+and also
+we are solving the quantum
+using this Q-well method
+in ATLAS, which is solving Schrodinger equation
+here, so that's why we can have this
+red wave function
+square here, so that's the wave function
+form, and how is it solved? It's by solving
+Schrodinger equation only in this
+region, so we are defining
+a region where we want to solve this
+closed boundary Schrodinger
+equation, and we are trying to couple this
+to the drift diffusion methods
+and there is like several parameters
+for example, in a drift diffusion
+you have ABC
+parameters for the recombination
+like the circularity hole, the phonon
+the photon, and also the
+other ones, the OJ, so there is
+like the parameters for it, and we are using the same ABC
+and
+in drift diffusion, there is like a mobility
+term, where for
+NEGF is called self-energy, which is
+the scattering rates
+in the device, and that will, in a
+semi-classical way, that's called the mobility
+so we need to find
+a corresponding, oh given this mu
+what's the scattering rate in the device
+and therefore what's the self-energy we are using
+in NEGF, and
+for drift diffusion
+when you are, there is a density of
+states, and you are assuming
+you will
+get a carrier, so there is
+for different M
+for different effective mass, you
+correspond to different density of states, and therefore
+carrier, for
+NEGF we are using
+we can support tight binding
+different way
+to describe this EK
+relationship, so
+that's the corresponding, right
+we can also use effective mass, or we can use
+tight binding method, or KRP, or
+one-year functions
+so the basis
+there is a little bit different, in drift diffusion we can only support
+so this is how we
+couple them
+so
+I'm only going to show that
+the direct comparison
+from observable we can see
+so for example, on the right side
+this is showing
+the solid line is the drift diffusion
+result, and you can see that
+this is the carrier density across the device
+we have high electron on one side
+and we have high hole on the other side
+and they are penetrating into each
+into the other side
+and we can see that the drift diffusion
+here is much lower
+this is log scale, so it's like
+ten to the fifth, the five times
+smaller than the
+quantum transports method, right
+and the reason is
+understandable, because
+when you look into here
+the electron, you know
+the NEGF, you can
+what is it like, the
+when you bounce a ball to the wall, the semi-classical will bounce
+back, but quantum
+you can penetrate into the wall, right
+so you can see that analogy here
+where you still have some density
+of states inside the barrier
+where the semi-classical will just say
+there's nothing, you bounce
+into this wall and you will go back directly
+so this is like the ball analogy
+so that's why
+when you're doing quantum transport
+this carrier inside
+here is higher, much higher
+ten to the fifth time higher because of the
+penetration here
+but otherwise
+the potential is pretty
+matched here, but the carrier
+difference here will cause you
+to calculate the
+recombination rate different, right
+because you have higher density, therefore your
+recombination rate will be
+different, so that's why
+the potential looks
+the same between quantum way
+and semi-classical way, however
+the recombination rate calculated from
+which is a post-process
+using ABC model to predict
+oh, what's the OJ
+the photon and also the OJ related
+process, there's a huge difference
+at lower bias, you can see here
+the quantum way
+because you have more penetrated electrons
+for them to recombine
+therefore you have a much higher recombination rate
+and for higher bias
+they're pretty much similar
+but small difference here
+okay
+and this case
+before I was talking about a HOMO
+junction where we're using
+galenitride all across but with
+different doping, and here is a heterojunction
+where similar things
+are done, we're comparing
+the carrier
+density and we can see that oh, there's
+some difference here
+right, like the semi-classical
+we have a sharp discontinuity
+probably because we chose
+the boundary different but
+which part should we solve Schrodinger
+it's pretty subjective
+so I'm putting
+all the things here and seeing
+that there is an impact
+like with or without
+diffusion like, or any
+like what's the impact on carrier density
+and here
+trying to show the recombination with
+in this heterojunction, we can also see that
+because
+drift diffusion coupled with
+Schrodinger equation, therefore
+we can see that the recombination rate after
+doing this is pretty similar
+so
+I think this is like a
+positive side about drift diffusion, it's pretty fast
+and with coupling to like quantum
+correction, it's matching
+GF pretty well, so it's like
+also kind of giving confidence but also giving
+saying like oh, drift diffusion is not that bad
+like you can still
+quantumly correct it
+with solving Schrodinger impartial
+region
+and here I'm trying
+to show the I-V difference
+for a homojunction device
+so in a homojunction device, if you
+measure the I-V curve, and here
+the solid line is the drift diffusion, and the circle
+is the quantum well, and we can see
+that
+the off current
+there's like a larger difference
+between them, and if you
+have, if you compare the
+heterojunction device using the
+and there's some difference here
+and there, but just like
+providing the comparison here
+and this
+method, we can further
+you know, solving, we're
+enabling any GF to be able to
+solve like
+carrier generation, because we are
+injecting the, we can
+assume the light come in and
+producing electron hole and
+and give them, separate them
+to generate current here, right?
+So here's the simulation results like
+using any GF, and this is like the
+the first
+the first tool that we can cover
+all processes into, including
+generation, and then to enable a device
+simulation
+So here
+the summary, I kind of review
+different carrier transport method
+from BTE all the way to any
+GF, and providing the references there
+if you're interested, or can ask, email me
+for more information, and this
+is like, this work is to propose
+a really generic
+method for recombination
+generation process inside the
+any GF framework, so we're enabling
+any GF community to
+approach problem like recombination
+generation, and we
+show the importance, oh, for any GF
+with or without recombination, what's the
+difference, and why do we need it, and we
+also benchmark against like GF diffusion
+based TCAD tool, and to
+see that, we can see that the charge is different
+and with or without methods, and
+also we can show that there's
+tunneling and wave phenomena here
+and I know
+and lastly, if there's any
+study group, or
+want to discuss this, I think
+it's very helpful to discuss
+if you have any questions
+or any questions
+about this, you can email me
+yeah, okay
+is everyone still here?
+okay, still here, so let's
+first,
+everyone please turn on the mic
+to applaud, and thank the audience
+so now,
+do we have any questions?
+that you want to ask
+do we have any questions?
+if you have questions,
+just turn on the mic
+okay
+okay, I want to ask
+a question that's not
+that related
+I'm curious
+how long have you been at Intel?
+about
+a year
+so
+do you need
+when you're doing these simulations
+do you need to
+communicate with the people doing the experiments?
+some people
+some people
+this isn't my Intel work, this is my study group's work
+and Intel
+yeah, I think
+they'll communicate with
+the people doing the experiments
+for example, they have some data
+you take this
+simulation
+when you're taking these
+when you're explaining these simulations
+and communicating with the people doing the experiments
+do you feel like
+there's a gap?
+I think there is
+but I think they'll
+draw the problem to
+yeah, it's not
+if they're looking for you
+they might think
+this might be related
+so for example
+like
+when you're doing these simulations
+when you're discussing with the people doing the experiments
+can you compare with the people doing the experiments?
+or are there some
+trends
+when you're explaining the experiments
+how do you
+when you're discussing with the people doing the experiments
+how do you
+how do you
+work with the people doing the experiments?
+it's a bit abstract, I don't know how to explain it
+for example
+can you use these tools
+to explain their data?
+or can you provide
+based on this data
+maybe an improved direction
+is this doable?
+that kind of feeling
+sorry, it's a bit abstract
+I think it is
+let me use Boban as an example
+Boban's project
+people might say
+is it because of the recombination
+causing the current to get smaller or more
+if you make the defects level
+bigger or smaller
+I think it's more of a trend
+if you increase the defects
+can you see the curve
+100% match the experiment data
+but you might say
+if this phenomenon
+more defects, will my recombination rate get bigger or smaller?
+you can experiment
+experiment and simulate
+I think a lot of problems
+are not that
+you need to model
+to say it's really this phenomenon
+you might observe
+the current getting bigger
+but you don't know why
+you might say
+you can make this adjustment
+or add stress
+there are a lot of things you can change
+in simulation, there are a lot of parameters you can change
+you might adjust the defects level
+or adjust
+all kinds of parameters
+to confirm
+I think this feedback
+is quite important
+to identify
+if what you said is right
+I think you can verify
+if it's correct
+another question
+I know you are talking about
+what Boban did
+another question
+after you joined Intel
+do you think you are much better than Boban?
+I think I'm much better
+I feel
+much better
+so actually
+I think this thing
+is
+already
+considered
+a simple geometry
+but it can be
+considered as a real device
+quantity
+after you joined
+you will find
+there are a lot of differences
+it's just
+the research field is different
+I think the form
+is similar
+you mostly look at the paper
+and see what model you can use
+but I feel
+in Boban's case
+the professor tells you
+what to do
+it's more specific
+but in the company
+it's hard to say
+I want to say
+I'm also in the TK department
+I'm working at TSMC
+I actually
+know a bit about this field
+but now
+maybe I shouldn't ask
+my problem is
+when I talk to Boban
+he always says
+you are right
+these things
+need to be discussed
+I feel
+it's hard
+I don't know if Intel
+feels the same
+different companies
+might have different
+I won't
+I won't
+talk to an experimenter
+I might talk to an intermediary
+it's different
+any other questions?
+I want to ask
+the simulation
+looks simple
+and
+it looks like
+using Boltzmann's
+equation can be done
+even though you need
+some approximations
+but
+I'm thinking
+the advantage of this
+is it's more effective
+on more difficult
+devices
+but I feel
+in BTE
+let's say it's particles
+if it's particles
+can you simulate
+these details?
+you can't
+so if it's particles
+you're missing a lot of details
+but the result I'm showing
+is that some drift diffusion
+is a lot worse
+some are similar
+but
+I mean
+how do you know your future device
+when it's particles
+will you miss
+some important details
+I think BTE
+can't be replaced
+even in this small device
+you can't say BTE is correct
+did you say BTE or drift diffusion?
+drift diffusion
+you mean
+Monte Carlo solve BTE
+but even so
+like interference
+or tunneling
+BTE
+you can't figure it out
+you need a lot of correction models
+BTE is how to scatter particles
+you need to calculate
+you need to add a lot of calculations
+but NEG
+you throw the device in
+the result is
+low density of state
+there's a pattern
+but BTE can't figure it out
+I see
+but the pattern you drew
+is this equilibrium?
+like
+this is
+density of state
+what do you mean?
+density of state is
+density of state under equilibrium
+density of state and
+is it equilibrium are separate
+because density of state
+doesn't have so many states
+equilibrium means
+you have a distribution function
+Fermi-Dirac distribution
+the bottom is 1
+the top is 0
+so given this density of state
+you fill the Fermi-Dirac distribution
+drift diffusion
+means any device
+is Fermi-Dirac
+let me draw
+let me see
+which one is better
+like this
+drift diffusion
+you have a Fermi-Level
+this is Fermi-Level
+your distribution is
+this is 1 and this is 0
+this is distribution
+0 to 1
+any position
+is bound by Fermi-Level
+Fermi-Level is lower here
+Fermi-Level is lower here
+my distribution is like this
+to here
+there may be some small changes
+NEG means
+carrier distribution
+any place is not necessarily Fermi-Distribution
+you are very free
+particle you want to be higher
+you want to be lower
+your distribution may be like this
+not necessarily Fermi-Distribution
+but now we are bound by contact
+in the middle of the device
+is it
+how much will the distribution change
+your carrier is from the left
+your left is Fermi-Distribution
+right
+this is Fermi-Distribution
+but when your carrier
+travel to here
+will you change
+you bounce around
+bounce here
+you may not be Fermi-Distribution
+this is the advantage of NEG
+you will not be limited by drift diffusion
+you are bound
+you have to distribute like this
+understand
+ok
+any more questions
+if not
+I want to ask the last question
+you are
+in the second slide
+you talked about
+photon absorption
+your photon absorption
+is only in the middle
+in the middle
+junction
+or the whole system
+is affected by photon
+this is a toy model
+so I only hit
+the green area
+I should be
+later I will publish another paper
+but
+I assume
+only hit a certain area
+from here to here
+plus generation rate
+how do you
+deal with photon
+how do you
+deal with photon
+I didn't simulate photon
+because of photon
+the electrons and electrons
+will run out every second
+so I didn't simulate photon
+suppose photon is absorbed
+one photon
+you just
+move it up
+one photon
+suppose
+it moves up
+so I assume
+this band gap
+is 3.2eV
+or
+I don't know
+let's say 3eV
+assume
+a photon above 3eV
+comes in
+you can
+split carrier hole
+electron hole pair
+ok
+so you assume
+electron hole pair is split
+and start
+simulation
+ok, got it
+any questions?
+if not
+let's thank
+Guan Zhong
+thank you
+thank you
+I'll turn off the recording

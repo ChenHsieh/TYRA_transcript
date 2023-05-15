@@ -1,0 +1,1179 @@
+Today, we are honored to have Dr. Teng-Ting Yun with us to discuss today's lecture.
+Today's topic is Data Crisis in Astronomy, Machine Learning Techniques to Galaxy Studies.
+Before we start the lecture, let me introduce Teng-Yun first.
+Teng-Yun is now at the Center for Extragalactic Astronomy at Durham University in the UK.
+She is an astrophysicist.
+She got her bachelor's and master's degree in Taiwan.
+Then she went to Nottingham, also in the UK, and got her doctorate.
+She got her doctorate last year.
+Her main interest is galactic evolution and formation.
+She is now focusing on machine learning techniques for galaxy study.
+In today's lecture, she will talk about her specialty, machine learning for galaxy study.
+She will also talk about her past work.
+She will also talk about how machine learning will help galaxy study in the future.
+Now, let's welcome Teng-Yun with a round of applause.
+Thank you, everyone.
+Thank you, everyone.
+Thank you, Chair, for the warm introduction.
+Hello, everyone. Good morning, good afternoon, and good night.
+I'm Teng-Yun.
+I'm a postdoctoral researcher at Durham University.
+I'd like to apologize to everyone first.
+I think I'm going to talk a lot in Chinese and English.
+Because I can't show my speaker notes.
+I usually speak in English.
+So my Chinese sometimes gets stuck.
+What I'd like to share with you today is about machine learning.
+It's becoming more and more popular in astronomy.
+This is a research topic for my postdoctoral research.
+I'm going to share with you some papers I did in my postdoctoral research.
+First of all, let me introduce myself.
+What is an astronomer?
+Basically, every time I tell everyone that I'm an astronomer,
+everyone has a different idea of what an astronomer is.
+Most of the time, people will ask me,
+Do you know what the meteorite of Saturn is?
+Or people will point to a star in the sky and ask me,
+Do you know what that star is?
+I have to be honest and say I really don't know.
+If I tell people I'm a postdoctoral researcher,
+my mom will exaggerate and say,
+Do you know that my daughter is a professor?
+It's not that exaggerated.
+Mom, please calm down.
+If you are an astronomer or a theoretical astronomer,
+the most common thing we do every day is to use a computer.
+We're not writing code, we're debugging.
+Especially what we do most often is data analysis.
+You may be analyzing certain stars.
+Or like me, I'm analyzing big data.
+I may be analyzing hundreds of thousands or even millions of galaxies at a time.
+I'm interested in two directions.
+One is information classification,
+which is Galaxy Morphological Classification.
+The other part is more cosmological.
+I do Lama Napa Forest or IGN-CGN.
+I don't know what this term means.
+Because today I'm going to focus on information classification.
+It's relatively straightforward.
+This is the most famous information classification system.
+It's categorized by human eyes.
+It's called Hubble Sequence.
+It's a name given by a famous astronomer, Hubble.
+Information classification can be divided into many types.
+You can classify according to different brightness,
+or different degree of evolution,
+or even different information structures.
+Unfortunately, human eye classification is the most commonly used system in astronomy.
+We've been using Hubble Sequence for almost 100 years.
+As for big data,
+I'm showing you the data from various surveys in recent years.
+As you can see from the left side,
+the data you can see in the astronomy survey is about 1TB.
+In the future, we expect to break through the 1TB scale.
+So we find that the data is growing very fast.
+Because of computer technology, we can store a lot of data.
+But the problem is that in astronomy,
+we can't handle such a large amount of data in a traditional way.
+We have data, but we can't handle it.
+Let me show you the big data.
+Since 2005, SDSS has been a very famous large-scale field tracking program.
+It has observed about 50 million stars.
+But in fact, we've done a lot of analysis,
+and we've done a lot of detailed research.
+There are only about 1 million stars.
+You know that the speed of our analysis is very, very slow.
+It's far less than the speed of our data generation.
+The most famous program in information classification is Galaxy Zoo.
+Galaxy Zoo is a program that invites people from all over the world to do information classification together.
+Because you can imagine that information classification is actually a very straightforward thing.
+You can look at a star and see if it has a spiral.
+Then you can analyze whether it is an elliptical star or a spiral star.
+Galaxy Zoo thinks that people from all over the world can do this kind of thing.
+So they let the general public participate in this information classification program.
+But even if they gather people from all over the world to do this kind of analysis,
+they only classified about 900,000 galaxies in about three years.
+So you know that if, for example, the data I'm doing right now is DAS data.
+The initial data for this part of the data is about 30 trillion galaxies.
+The analysis I did in my paper is about 2 trillion galaxies.
+So you know that if we want to do it in a traditional way today,
+we need to analyze it in a human way.
+Even if we do it in the way of Galaxy Zoo,
+you may not be able to finish it in your life.
+So we need some help at this time.
+When we say we are in trouble, I always say I am in trouble.
+I can't do this kind of large-scale survey analysis because I have too much data.
+At this time, many people will start to seek help from machine learning.
+This is my topic today.
+Here you can see the recent paper on machine learning in astronomy.
+You can see that there has been an exponential growth in the past few years.
+More and more papers are doing related things.
+I started to read the textbook in 2017.
+When I was reading the textbook, I was very impressed.
+At that time, basically no one was doing it.
+Everyone is just starting to do it.
+But after that, I will probably have a new paper every day.
+I will see a new paper every day talking about machine learning applications.
+Let me talk about it.
+In astronomy, I think it's pretty much the same in computer science.
+Machine learning applications are roughly divided into supervised, unsupervised, and self-supervised.
+Of course, there are other more detailed things.
+I won't talk about it for the time being.
+This is a more general classification.
+I will talk about these three categories later.
+So my talk today will be more technical.
+If you have any questions that you are not familiar with machine learning, you can ask me right away.
+It doesn't matter.
+In terms of applications, you can roughly divide it into three different questions.
+You can do classification, or you can do regression.
+You want to predict a continuous value.
+Or you can do data generation.
+These are the things that machine learning can help with.
+I basically have a list of these three.
+But I'm going to focus on the classification problem today.
+In terms of its purpose, most of the things we want to do in astronomy are what I just said.
+Because we have a lot of data.
+But our traditional way of analyzing is far less than dealing with this data.
+The biggest problem is that we want to deal with efficiency issues.
+A large part of it is related to how we measure quantity.
+Machine learning can basically help us improve the accuracy of some measurements.
+So the two main purposes of machine learning are to improve efficiency and accuracy.
+But today, in addition to these two, I want to talk to you about what else we can do.
+What else we can do with machine learning?
+You can be more creative when it comes to machine learning.
+To sum up what I just said, it's a long start.
+I'm going to divide it into two parts today.
+The first part is very short.
+It's about how to improve efficiency and accuracy.
+The second part is about what else you can do.
+I'm going to focus on unsupervised machine learning and self-supervised machine learning.
+Let's go back to the very beginning, the Hubble sequence.
+Let's simplify the problem now.
+I don't know what you think of the Hubble sequence.
+But I'm going to try to explain it in a way that's not my area of expertise.
+So my explanation is going to be a little more shallow.
+You can usually divide the Hubble sequence into two categories.
+The elliptic sequence and the spiral sequence.
+It's very simple to classify them.
+There's the concept of a spiral coin.
+I don't know if you can see my mouse.
+Can you see my mouse?
+The spiral coin is very obvious.
+It's the shape of a spiral.
+As long as there's a spiral coin, we define it as a spiral sequence.
+The other is to define it as a elliptic sequence.
+So far, you can just say that it's a very straightforward, very simple thing to classify.
+So that's why Galaxy Zoo can get the public to help with this.
+I'm sorry, can I ask a question?
+I'd like to ask a naive question.
+Why are all the stars in the galaxy in the shape of a circle?
+Is there a possibility that they're in the shape of a triangle?
+Yes, there is.
+As you can see, they're in the shape of a circle because of the projection.
+In fact, every star has a depth.
+In terms of elliptical stars, they're basically like a ball.
+They're like a ball in a triangular space.
+Their light distribution is also the shape of a ball.
+But if you look at a spiral star today, it's more like a disk.
+So if you project it to 3D today,
+the distribution of light will be more like a disk, not a ball.
+So this is also in the galaxy.
+So my question is, why are some of them in the shape of a disk,
+instead of a triangular elliptical shape?
+That's a good question.
+This question is mainly related to the evolution of stars.
+For example, this question is a bit difficult to answer.
+But it's mainly related to the evolution of stars.
+Our current theory is that
+we start with the spiral galaxy.
+How do I say it in Mandarin?
+Can I speak English?
+Yes, you can.
+For spiral galaxies, they think that in the beginning,
+you will have some gas that accretions into this structure.
+It's not like a ball.
+It's more like a disk.
+It's a flat disk.
+It's in the shape of an accretion disk.
+It's not like a whole ball.
+It's not like a whole ball.
+In our understanding,
+the main formation of stars should start from that.
+So in our understanding,
+the spiral galaxy is formed first.
+Gradually, the two galaxies merge together.
+After the momentum dissipates,
+it slowly forms the shape of a ball.
+Because the shape of a ball is more like an accretion disk.
+Does this answer your question?
+Yes.
+It's okay. We can discuss it later.
+Okay.
+This part is actually quite long.
+It's not related to what I talked about today.
+The first part is supervised learning.
+Let me tell you what supervised learning is.
+Supervised machine learning is a very simple concept.
+We feed a picture to the machine.
+Then we give it a label.
+For example, I tell the machine that this is a dog.
+Then I tell it that this is a fried chicken.
+Then I feed it a lot of pictures.
+Pictures of different dogs and fried chickens.
+After the machine learns,
+it will ask the dog if it is a dog or a fried chicken.
+This is the concept of supervised learning.
+Supervised learning is a very common concept.
+In my 2020 paper,
+I studied 10 different supervised machine learning algorithms.
+Today I will focus on the Confluential Neural Network.
+Let me briefly introduce the Confluential Neural Network
+to those who are not familiar with machine learning.
+The idea is that we have Confluential Layers
+to do feature extraction.
+What Confluential Layers is actually doing
+is a bit like a filter concept.
+It actually wants to capture some features
+that can best represent your image.
+When you want to produce these labels,
+what are the key points?
+What are the key points for the machine to make judgments?
+Which part of this image is the key point for the machine to make judgments?
+In Confluential Layers,
+for example, the first layer has 6 channels.
+Each channel uses different metrics.
+Basically, it's a different filter concept.
+You will get 6 different images here.
+After passing the filter, you will get 6 different images.
+Layer by layer,
+the machine will gradually learn
+which part of the image is the most important part for you to make judgments.
+The machine will gradually learn this.
+Let's look at the dog's side.
+Here is a concept.
+This is a heat map to show which part is really worth paying attention to.
+The machine will ask,
+where is that part of attention?
+If you want to identify which part is worth paying attention to,
+the machine will find out which part is worth paying attention to.
+The red part is where I need to pay attention to.
+Next, they will input these extracted features
+to fully connect layers.
+After this,
+they will connect all the features together
+and use the softmax function
+to give a probability concept.
+For example,
+if it's a dog or a cat,
+based on this probability,
+the machine can give a category.
+This is what the Confluential Neural Network is doing.
+Now, let's look at the example of a dog and a fried chicken.
+In my example,
+I input galaxy images.
+My image is from dark energy survey.
+Based on this image,
+I use Galaxy Zoo's visual classification to train my machine.
+Basically, I tell my machine,
+this galaxy is elliptical,
+and this galaxy is spiral.
+After the machine learns the concept,
+it will ask the machine,
+is this new galaxy elliptical or spiral?
+In this part of the study,
+we get some interesting results.
+In the first part,
+we found that some galaxies,
+CNN is very sure that it is a spiral galaxy.
+However,
+when we look at Galaxy Zoo's classification,
+we found that they think it is elliptical.
+Later, we found that
+because the depth data has a better resolution
+and a deeper depth,
+it can observe a deeper scene.
+Therefore,
+the data used in Galaxy Zoo is better.
+You can see that
+in the two images I show,
+they are all the same depth.
+However,
+the depth data on the left
+clearly shows a spiral arm structure.
+However,
+the SDSS data on the right is not visible.
+Galaxy Zoo is based on SDSS data to do visual classification.
+Therefore,
+we found that
+using our machine learning and depth data,
+the most reliable visual classification catalog
+needs to be updated.
+We found that
+about 2.5% of the galaxies are mislabeled
+and need to be updated.
+After the correction,
+we found that
+using binary classification,
+we can achieve about 99% accuracy.
+It's quite impressive.
+In some cases,
+it is almost more accurate than the human eye,
+especially in darker conditions
+or higher redshift conditions.
+This is the heavy ending.
+It sounds like
+Galaxy classification using supervised machine learning
+seems to be very reliable.
+You can achieve 99% accuracy.
+There's nothing to worry about.
+But not quite yet.
+You can probably imagine
+that Hubble Sequence is the most commonly used
+binary classification system.
+Hubble Sequence is the most commonly used binary classification system.
+It's based on the human eye.
+I don't know how much confidence you have in humans,
+but I don't have much confidence.
+I think the human eye is very biased.
+A lot of research shows that
+even if two very professional astronomers
+are doing the classification,
+their results may not necessarily match.
+Especially if the image resolution or image quality has changed,
+the two people may have different opinions.
+So let's take a look at Hubble Sequence again.
+When we did supervised,
+it was actually very simple.
+We did the elliptical star system and the spiral star system.
+But in fact, it's very detailed.
+And you don't know why it can be so detailed.
+I've been doing galaxy morphology for a long time,
+but I still don't really understand
+why they can be so detailed.
+For example, like the spiral galaxies,
+it can be divided into at least three different evolution stages.
+A, B, and C.
+They are different evolution states.
+The elliptical star system is a little bit more understandable.
+It's based on different ellipticity
+and there are seven different stages.
+Then there's another one that's more incomprehensible,
+which is the lenticular galaxies.
+Lenticular galaxies are a very awkward existence
+between the elliptical star system and the spiral star system.
+And it doesn't have spiral arms.
+It's basically obvious that it doesn't have spiral arms.
+But sometimes it might be because of the resolution.
+But it's more like a spiral galaxy in terms of structure.
+So we think that
+the current theory is that it's in the middle.
+Maybe it's a transition period.
+We also have another one called spiral bar galaxies.
+It's in the middle.
+There's a bar in the center of the star system.
+This is called a bar galaxy.
+And of course, there's the rest.
+We really can't classify it.
+It's called irregular galaxies.
+It looks weird.
+Then let's talk about the classification.
+I don't know if you can...
+I don't think you can leave a comment,
+so you can turn on the microphone and say it.
+Let's test it.
+Can you tell which one is a spiral galaxy?
+Actually, you can turn on the microphone and say it.
+But you can also leave a comment.
+If you want to vote to count it,
+you can type it right next to it.
+I don't think you can see the comments.
+I can...
+Because you're sharing the screen now.
+But I can help you see it.
+Someone said 3.
+I'll type 4.
+Someone said 4.
+Now 1 also has one vote.
+3. 3 also has one vote.
+So 3 has two votes now.
+4 has two votes now.
+1 has one vote now.
+2 is very popular.
+There's no 2.
+There's 1 and 3.
+Yeah, that's about it.
+Okay.
+The answer to this question is 3.
+3 is an early spiral galaxy.
+It's a relatively early one.
+You just saw the SA part.
+This question is relatively simple.
+Let's move on to the next question.
+Which one is an elliptical galaxy?
+Okay.
+YT, do you want to answer the previous question or this one?
+I think it's an elliptical galaxy.
+Oh, okay.
+So from Ethan...
+Sorry, it's not Ethan.
+What is it?
+Alpha.
+Okay, start.
+It's 4.
+Then I'm going to answer...
+I don't know. 2?
+I don't know.
+Okay.
+4 and 2.
+It's probably 2.
+2 has one vote.
+Okay.
+I have the same answer as YT.
+I'm very confident now.
+And Wicca also answered 2.
+YT is an expert.
+Okay.
+Okay.
+Okay.
+Then we're going to announce the answer.
+None of them is an elliptical galaxy.
+Oh.
+Yes.
+Everyone can...
+In fact, everyone can give a concept.
+Here, 1 and 2 and 4.
+You think it feels like an elliptical galaxy.
+They are actually all elliptical galaxies.
+So you can probably feel that
+human judgment is actually a very, very inaccurate way.
+Give everyone a feeling.
+Okay.
+So this is my other research.
+I'm also doing this part more often.
+I'm more interested in this part.
+Excuse me, can I ask a question?
+Yes.
+In those questions just now,
+maybe I missed something just now.
+How do you know what the correct answer is?
+My correct answer is...
+This is a good question.
+This is a good question.
+So our correct answer is actually based on another astronomer.
+Just the other two astronomers.
+At present, it is what we think is the most accurate judgment.
+Go up and give the correct answer.
+But in fact, they may be wrong.
+So...
+Yes.
+According to you, there may be...
+This is actually...
+Maybe 2 is really an elliptical galaxy.
+We are not sure.
+But according to his answer,
+We think he is the correct answer.
+OK, I see.
+Thank you.
+Yes.
+1 and 2 are both a little bit tricky.
+I would say it's a little bit tricky.
+2, I might be more inclined to say it's an elliptical galaxy.
+But...
+It's just that it's really tricky to judge.
+Then I actually mainly want to express a concept that is...
+The decision boundary of this judgment is actually not that accurate.
+And this is why I want to go...
+Uh...
+Uh...
+Start my second part of the research.
+What about this part of the research?
+I...
+In fact, I just want to answer this question.
+That is, if...
+If a machine can comprehensively see all galaxies,
+How would he categorize them?
+The basic idea is that I hope to use machine classification to replace the classification of human eyes.
+Because now our galaxy morphology is basically based on this Hubble sequence.
+This Hubble sequence has been used for more than 100 years.
+It's not more than 100 years.
+It's almost 100 years.
+So...
+It is a good time for them to change.
+To revolutionize an idea.
+So...
+There are two parts of this problem that you have to deal with.
+One is how to make the machine comprehensively see.
+The second part is how to do the categorization.
+What about the first part?
+I...
+Uh...
+I thought of...
+Uh...
+Of course there are many different approaches.
+Because in fact, apart from me,
+There is another team doing it.
+So...
+Before I wrote this paper,
+In fact, there are two other papers.
+Of course, the methods we use are different.
+What I choose to use here is Autoencoder.
+I'm not sure if you're familiar with Autoencoder.
+Autoencoder itself is a self-supervised machine learning algorithm.
+So...
+Self-supervised means that its input and output are actually the same data.
+When you're in the training machine,
+Your input and output are exactly the same thing.
+The idea is to say...
+Uh...
+When you, for example, like this image today.
+You input an image.
+That goes through the convolutional layers.
+You try to extract some features.
+And then you can represent this input image.
+And then you use these extracted latent features.
+And then you want to rebuild your image.
+Become your output.
+Ideally, your output and your input should be better and better.
+If it's well rebuilt,
+That means your latent features have caught the point.
+That's one of the reasons I use Autoencoder.
+And then use it to do feature extraction.
+Find some better features.
+Next, unsupervised machine learning.
+It's a representation of this picture.
+It's simple.
+We don't tell the machine what these images are.
+We don't tell it what a dog is.
+We don't tell it what a fried chicken is.
+We just give it this picture.
+And then you say, hey, you sort it out.
+Sort it out.
+So, uh, it's very obvious that you can see a little bit.
+Uh, because we didn't give him any prior knowledge.
+So, in fact, unsupervised machine learning often encounters a situation.
+Uh, machine sorting.
+We human scientists want to do is completely different.
+It's just that it doesn't match at all.
+So, how do you make it comprehensive?
+The idea of ​​comprehension is that the concept of human beings can be more integrated.
+It's more related to the science we want to do.
+It's going to be a big problem.
+Oh, I'm sorry.
+Can I ask a more naive question?
+That is to say, when you are in these pictures,
+You are.
+Will he do it, for example, like CNB?
+Make it a fully transformed map to a post.
+On the bed.
+And then do it again.
+Or just do it directly.
+Directly to him.
+Uh, for example, the mass distribution of Gauss.
+And then do the analysis directly.
+Do it directly and apply it to the machine learning model.
+Inside.
+Uh, we're just using images directly.
+We don't even do the mass distribution part.
+If it's an image.
+Because we're doing Gauss morphology.
+So, in fact, our focus is only on that.
+It's like doing an analysis when you look at it with the naked eye.
+We just look at the image itself.
+So, I hope that the machine will capture the image.
+That's it.
+Oh, then I want to ask another question.
+Because he might be because of your image.
+For example, you might have some white noise or red noise or something.
+So why not?
+For example, like CNB, they also have very strong white noise.
+So why don't you know?
+Maybe someone did that.
+The question is, would you do one?
+For example, do a mapping.
+Map it to another one.
+A different one.
+Uh, for example.
+Maybe it would be better to do an analysis.
+Because.
+Because it's like a picture of a dog or a picture of a fried chicken.
+Their white noise is also very strong.
+For example, the fried chicken powder on the fried chicken.
+It's a white noise.
+It will affect your analysis.
+So if you just do an analysis of this image, it will be more difficult.
+And then it's not just doing this.
+For example, it would be better.
+Would anyone do that?
+Uh, I haven't heard of it.
+But, uh, you mentioned a pretty important point.
+We actually have preprocessing.
+Just get rid of the noise first.
+Uh-huh.
+Yeah, so getting rid of the noise is actually a pretty important step.
+So all of our images have been preprocessed first.
+And of course, sometimes.
+Uh, for example, I just mentioned the supervised part.
+I even use gradient image.
+It's not just a pure linear image.
+There's a lot of preprocessing processes that need to be done first.
+Got it.
+Thank you.
+Yeah.
+Okay, so, uh.
+Uh, this left picture is my main pipeline.
+Uh, using the pipeline.
+What about the feature learning process?
+I'm actually using a special autoencoder.
+And then it's called VectorQuantizedBiorectionalAutoencoder.
+And it's Google Demind.
+It's an algorithm that was made a few years ago.
+So the idea is, why use this?
+In fact, it has a big advantage.
+Uh, vector quantization.
+It can speed up the entire feature learning process.
+Because if there's no vector quantization.
+Uh, this process.
+Uh, my previous research was that I used a general autoencoder.
+Convolutional autoencoder.
+So it's in, uh, feature learning.
+It's about 100,000 images.
+And in the case of using GPU.
+It takes about four to five days.
+But, uh.
+The use is VectorQuantizedBiorectionalAutoencoder.
+It basically only takes a few hours.
+So you can find this.
+It's a very big leap.
+So, uh, that's why I'm using this part of the reason.
+So, uh, the process of speeding up this feature learning.
+For the future, if I want to go further.
+Uh, extend this research to make it.
+Adapt to survey data.
+It would also be more helpful.
+Because the survey data itself is already very, very huge.
+So if it's 100,000, it's going to take four to five days.
+Then I might not be able to finish it.
+And then, uh, after feature learning.
+So now it's every image.
+You can, uh.
+Every image is represented by a set of.
+Extracted features.
+That's what you just said.
+Lantern features.
+So we're going to use this lantern feature.
+To do unsupervised machine learning.
+So we're going to, uh, we're going to use hierarchical clustering for this part.
+So the concept of hierarchical clustering is actually quite simple.
+It's every image.
+Uh, at the beginning, every image is a group.
+So we're just going to merge it little by little.
+Uh, according to the similarity of your, uh, lantern feature.
+The similarity of the row combination.
+To gradually merge them.
+So the advantage of using this algorithm is, uh.
+A lot of, uh, machine learning clustering algorithm.
+He actually needs you to guess.
+Is to give a data distribution first.
+For example, Gaussian distribution.
+Yeah, you might need to guess in advance.
+Or know in advance what some of this data is like.
+How is it distributed in the feature space?
+But hierarchical clustering doesn't have to do that.
+So relatively speaking, there is no bias.
+And then in this study, we are.
+Oh, my God, I'm running out of time.
+In this study, there are three very important strategies that we have proposed.
+So this part is to make our eyes, uh, to make my, uh, classification skin.
+It's more.
+Uh, it's more sensible.
+So the first part is, uh.
+When we're doing feature learning.
+After that, we thought about a quick clustering result.
+What about this quick clustering?
+We're going to divide it into two groups.
+What about the idea?
+Why do you do that?
+The idea is to say, uh, we want us to extract it.
+Features.
+He can not only rebuild your input image.
+At the same time, you want to capture some features.
+It can be well divided into two groups on the feature space.
+Groups like this, two groups.
+So, uh.
+What about this approach?
+It's quite effective, which is to stabilize our whole algorithm.
+To divide the initial two groups.
+The idea is like this.
+This is a simple result.
+Uh, after this.
+Uh.
+After this design.
+Uh, we're always in.
+If we force our class to be divided into two groups.
+What about the time?
+We always get one.
+It's the last feature group and the feature group.
+Uh, this part is relatively easy to understand.
+Because you know, they're on the back of the virus.
+It's just.
+How, how different you are.
+So there should be less feature group and feature group.
+But, uh.
+After we've designed this, we've added an extra classroom.
+What about the process of feature learning?
+Our last feature group and feature group.
+They, uh.
+Visual class.
+Uh.
+Visual morphology.
+Percentage is different.
+Uh.
+That's not easy to say.
+Um.
+It's just a different type of human eye.
+The ratio in these less feature groups or feature groups.
+Is stable.
+And that's a pretty important thing.
+Because if you don't add this classroom process.
+Then he.
+He might still be like this.
+But there's a difference in proportion.
+Then you'll find that, oh, this whole machine, it's actually.
+You know, it's kind of like that.
+But he's actually not very stable.
+So, uh.
+Involve this strategy becomes very important.
+What about the second point?
+Uh.
+You can find the code on the line.
+It's basically allowed a single cut.
+Single cut means that I'm on this picture.
+It's a bad one.
+Horizontal straight line.
+Uh.
+This straight line is the class.
+It's just.
+It's just telling you, oh, this is my top.
+So, uh.
+You figure out how many clusters are how many clusters.
+But there's a big problem with that.
+Especially on the gas.
+It's a big problem.
+Uh.
+That is to say, um.
+If you're in.
+For example.
+Galaxies.
+You can imagine that.
+It's just that they're actually extracted.
+It's not going to be much different.
+It's easy to imagine because it's actually the same thing.
+It looks like it's on the ground.
+In fact, it doesn't look much different.
+Of course, it's not going to go anywhere.
+But it's not the same.
+It's just that his appearance can change a lot.
+For example, your spiral is in a different position.
+Ah, or your spiral is closer to you.
+Or is it far from you?
+The whole thing is going to be a lot worse.
+But they're all called Spiral Galaxy.
+So, if you're only allowed to be single, you're going to have a situation.
+It's you.
+Your less feature group has too many unnecessary.
+Uh, clusters.
+But your.
+Feature group may not be enough.
+It's your.
+Uh.
+Group may not be enough.
+So.
+So, uh, at this point, we're going to, uh, in this study, we're going to allow it to have different.
+Uh, on each line, in different branches, in this merger tree, we allow different distances.
+So.
+The next obvious question is where to cut.
+So, where are we going to make that line?
+So, here, I'm going to jump out and talk about a very important question.
+It's when you're doing unsupervised machine learning.
+And when you're doing gap, uh, when you're doing this research, a very basic question, a fundamental question is how many classes.
+We should have.
+And this is actually a question of how many classes you're going to have.
+And this question is actually a tricky question in every unsupervised machine learning.
+Uh, ideally, of course, you can have as many as you want.
+But there's always going to be a point where you're going to find that, uh, it doesn't make any sense at all.
+If you divide too much.
+And I just mentioned that, uh, before I did, there were actually two other.
+Paper is related to this.
+So, they're in the galaxy morphology classification that they came up with.
+It's about, uh, let's talk about it.
+Harbour is probably divided.
+You're strictly, uh.
+Strictly speaking, you can say that it's divided into eight categories.
+What about the paper before that?
+They divided it into about 160 classifications.
+So, you know, it's, uh, 160.
+It's not that you can't, but you're analyzing it.
+On the scientific research, you'll find that, uh, it doesn't seem to be able to find some.
+Uh, similarity or do some, uh, conclude something.
+So, how many classes have become very important?
+Uh, what kind of numbers are correct?
+What about here?
+It's us.
+Uh, we chose to use a very different way from the previous research.
+So, our way is that we want to use, uh, the variation of gas orientation.
+So, what does that mean?
+Basically, you're going to find that some galaxies, especially spiral galaxies.
+They actually look pretty much the same.
+But they just seem to be turning an angle.
+So, this kind of galaxy is what you're going to do if you're using auto-encoder.
+They're just turning an angle.
+But because, uh, auto-encoder is going to keep them, uh, it's going to be completely different.
+So, auto-encoder.
+Uh, after auto-encoder, when you're using classroom, they're going to be divided into different groups.
+So, that's not the result we want.
+Because if they look pretty much the same, of course, we want them to be in the same group.
+So, the idea is that, uh, there's always going to be a point on your merger tree.
+Because they're all based on, uh, similarity.
+So, at some point, you'll find that there's a cluster.
+The reason it's because of this gas orientation.
+So, if we can find out where this happened.
+To calculate what is distance of this gas orientation.
+So, we can use this to do a distance cut.
+So, this way, we can solve our first problem.
+Where to cut?
+So, this gas orientation can provide the place where to cut in each different branch.
+And then, it can also solve a very important problem.
+How many branches do we want?
+So, it can provide a number of classification that doesn't behave gas orientation.
+So, the final result is to give us 27 clusters.
+So, this number is definitely much more reasonable than 160.
+It's a little biased, in my opinion.
+But I think most astronomers will agree with me.
+So, 27 should be more reasonable than 160 in gas morphology.
+So, I'm not going to talk too much about the details.
+But we have found that they are basically based on the gas structure and gas shape.
+And then there's this kind of classification.
+So, this picture is a little bit more difficult to explain.
+But the general concept is that we each.
+So, a bar here is a group.
+So, you can see that there are two groups here.
+And then there are three groups here.
+This is a machine-classified group.
+So, the general concept here is to say.
+A galaxy with a similar structure.
+So, they are structurally very similar structures.
+Because they are divided into the same group.
+It means that they are structurally very similar.
+They can be visually classified as multiple different morphology.
+For example, here is the galaxy in this group.
+It can be judged by your eyes.
+They will be classified into either elliptical galaxies or lenticular galaxies.
+So, what about the different blue parts here?
+There are different fractions of bar galaxies.
+The darker it is, it means that there are more bar galaxies in it.
+So, we're going to show you an example today.
+So, for example, in this group, there are no significant bar galaxies, bar features.
+And then this is a relatively weak bar feature.
+And then there's a group that has a relatively strong bar feature.
+And then there's another point.
+You'll find that it's pretty important.
+You'll find that it's visual classification.
+Like I just mentioned, galaxies with similar structures can be visually classified as multiple different galaxy morphology.
+Especially, for example, lenticular galaxies.
+We just mentioned that lenticular galaxies are a very awkward existence.
+It's between elliptical galaxies and elliptical galaxies.
+So, we're going to do some analysis of lenticular galaxies in a group.
+We're going to use the search index.
+Basically, the smaller the number, the more likely it is to be this galaxy.
+And then we mean it's more likely to be a spiral galaxy.
+The larger the number, the more likely it is to be a bulge galaxy.
+And then there's the elliptical galaxy.
+We found that the blue one is group 27.
+It's a mix of lenticular galaxies and early spirals.
+The red one is a mix of elliptical galaxies and lenticular galaxies.
+Only the yellow one is really full of lenticular galaxies.
+So, you can see that in terms of structure, only very moderate structures can be called lenticular galaxies.
+Most of the time, the judgment of the naked eye is that lenticular galaxies are actually all mixed up with early spirals and elliptical galaxies.
+It's not that easy to tell the structure apart.
+So, in the end, we're going to take the 27 clusters that we've divided up and we're going to do some physical comparison.
+So, you can see that we have color, absolute magnitude, standard mass, and size, physical size.
+So, you can see that there's a slight difference between each of our clusters.
+It's a slight difference, but it's obvious.
+It's an obvious change.
+It's a gradual change.
+So, here are two plots.
+Basically, these two plots are the plots that we use a lot in our information analysis.
+It's a color magnitude diagram and a mass size diagram.
+The star part is visual classification.
+We're going to do a comparison over there.
+You can see that our 27 clusters are actually well distributed between different visual morphology.
+It means that if you use this machine classification method, you might be able to find some missing morphology.
+It actually needs to be identified.
+But in visual classification, it's not that obvious.
+It's just that the eyes can't be so sensitive to find out that there's actually a difference like this.
+So, basically, this is the end of my talk.
+We still have some continued follow-up plans for this part of the research.
+My main goal is to use machine learning to build an unbiased and reproducible machine classification scheme.
+It can be used by different people and different surfaces.
+It can even be applied to different redshifts.
+This is a pretty ambitious project.
+But I think this is a way to revolutionize what we know in current gas morphology.
+Because we're now relying too much on visual classification.
+I think the main thing I want to share with you today is that machine learning is a growing area.
+And in the astronomy world, we're mostly still focused on accuracy and efficiency.
+But in fact, machine learning has more potential to be explored.
+For example, here, we use machine learning to think of ways to change our concepts of astronomy.
+I hope it can change some of the concepts we have about astronomy.
+That's about it. Thank you.
+Please turn on the microphone.
+Let's give a warm round of applause to Tim for his wonderful presentation.
+Let's start the Q&A.
+But before we start, I'd like to ask a few questions for those of you who are in the chat.
+Sorry to keep you waiting.
+The first question is, which of the algorithms is better?
+I think this question is a little too general.
+So if you want to clarify, you can just open the microphone and say it.
+If not, we'll just ask Tim to answer.
+Like I said, this is a little too general.
+I think it depends on your science topic.
+But in terms of the last part of my presentation,
+in terms of my classification scheme,
+I think the algorithms I'm using are the best combination of all the algorithms I've used so far.
+Because I think auto-encoder is probably the best explanation for this question.
+Some people used self-organized maps in their previous research.
+It's also a way to unsupervised machine learning.
+But I don't think it's as effective as auto-encoder.
+A lot of people want to de-rotate the galaxy orientation first.
+De-rotate the galaxy so that it's all facing the same direction.
+That's another algorithm.
+It's also a form of auto-encoder, but it's a concept of de-rotation.
+So there are actually a lot of different algorithms that can be used.
+But I think the simplest is the best.
+At the moment, I think this pipeline is the best combination I can think of.
+Otherwise, I wouldn't use it.
+I hope that answers your question.
+We can chat later if there are any further comments.
+We have another question.
+The next question is from Altha and Herman.
+They want to know if you can briefly introduce your other project, Lyman-Alpha-Forest-IgM.
+Sure.
+I still use supervised machine learning.
+I use a convolutional network.
+I have some Quasar spectra.
+I try to identify Lyman-Alpha-Forest using a convolutional network.
+I also predict some physical properties like current density, Doppler width, and the rate shift of these systems.
+I'm currently writing a paper.
+This machine has already been developed.
+We use this machine.
+It's a chain with mock spectra.
+But it can also predict values for observation spectra.
+So we're going to provide this machine with the highest data.
+It's a very high resolution from Keck Observatory.
+So we're going to use this part and build a catalog.
+So this is another catalog paper we're writing right now.
+Based on this catalog...
+Because we have a lot of...
+In Lyman-Alpha-Forest, there was a 2012 catalog.
+So you know, it's a long time ago.
+The author spent three years to analyze 15 spectra.
+Now our CNN can reach the same accuracy as him.
+But we only need five minutes to analyze a Quasar spectra.
+So now we have a lot of data.
+Because the highest data actually has hundreds of spectra.
+But he could only analyze 15 at the time.
+So based on this catalog, we're going to do some IGN or IGN transitional to CGM research.
+Okay, I hope that's the answer.
+If you want to ask further, you can continue to ask.
+Then I personally have a question.
+My question is this.
+In addition to using your algorithm to directly put it on the real data.
+Have you ever tried to put this on?
+You know his underlying physics assumption simulation.
+And then see what happens.
+For example, the mass of dark matter is very heavy galaxy.
+Will it all fall into one of your classification?
+Or will dark metal fall into one of them?
+That is, so you can understand that these classes.
+Uh, what is the underlying physics?
+Have you ever thought about doing that?
+Uh, uh, actually, this is one of the projects I'm doing right now.
+The direction is a little different.
+Because that's what you're talking about.
+It's the next step I want to do.
+What we're doing right now is we're using simulations.
+And then we apply this classification scheme.
+And then we look at the different classifications.
+Uh, different classifications.
+Then he, we respect his history.
+To see, to see if he has a single history.
+Basically, we want to know that our classification scheme is not.
+Visual classification is more physically meaningful.
+That's what I'm doing right now with the simulation.
+Because this part is more important.
+We have to make sure that our classification can be.
+Uh.
+The next step is what you just mentioned.
+We would like to be able to, if this part of us is confirmed.
+After this part is strengthened, the next step we will want to know.
+What kind of physics will influence us to form this kind of gas morphology?
+Whether it's from the simulation or from the observation.
+This part is going to be very interesting.
+Because if we look at it from the simulation, we can see it directly.
+Uh, you can see that, uh, you can understand it directly.
+Study that today's gas morphology is.
+According to what kind of physics process to form.
+So, from the observation, you can build something like a family tree.
+Of a galaxy.
+This idea, or you can add you.
+We have a lot of different terms, which is used to define gas.
+For example, like slow rotator, or.
+Uh.
+Red, red, red nuggets, blue nuggets, etc.
+They may actually just be because of their.
+Formation history is different.
+Then we hope that the machine gives a more detailed.
+Classification can help to explain such a question.
+Thank you.
+Okay, so do you have any questions?
+Uh, okay.
+Can I ask a question?
+Um, so I actually have two questions.
+And then the first question is.
+You just said that orientation.
+That is, there is.
+What algorithm you can look at a galaxy map and then you can know what its orientation should be.
+So you can.
+Just put it back in the direction you want.
+And then the other question is.
+Uh, you, you use the data, we use it, is the data of the multi-colour.
+Go down and turn together.
+Because it's just the same as the galaxy.
+It should be a very strong correlation.
+It feels like there's more information to use.
+Uh, the first part of the question.
+It's actually just the rotation.
+It's a very, very difficult problem.
+Simply put, you can think about it.
+That's where your reference point is.
+So how do you know that you're going to measure first?
+Uh, where to see the orientation direction is a question mark.
+And then there's your reference point.
+Where is it?
+So, of course, there are people in this part.
+You can do it because you can actually define where it is.
+You can actually define where it is.
+Where is it?
+Then you might use it.
+It's to define where the direction of the rotation is.
+You can probably do that, but.
+Overall, it's just that he's still a little tricky.
+So this part has always been in our.
+Because there were two different studies before.
+So this part is.
+A lot of people want to deal with this.
+But we're doing this research today.
+We're doing this part of the research.
+Think about it in a different direction.
+He might not be a problem.
+He might be able to help us make more effective decisions.
+In the end, how many classes do we need to produce?
+So far, he's not an ideal.
+Ideal solution.
+But, um.
+It's him.
+Anyway, the concept of this paper is.
+A different way to solve the problem.
+You don't have to think of it as a.
+You have to solve it.
+You have to have a low rotation.
+You can think of it as a.
+Just let you decide.
+Oh, how many classes are we?
+We are the most reasonable.
+Is that a solution to your question?
+Yeah, I get it.
+Thank you.
+The second part.
+The second part of the question is.
+The second part is.
+Do you use it?
+Oh.
+Yeah, that's part of it.
+What I'm doing right now.
+Because when I was doing this project.
+I'm a Ph.D. student.
+I basically don't have that much.
+Uh, memory or space.
+You can put so much data.
+So I only used it at that time.
+Okay, go ahead.
+Yeah.
+This is a problem that is not enough.
+But it is in this part.
+Uh.
+Multi-color is a very important point.
+But multi-color processing.
+He has another question.
+We have encountered it so far.
+Just be very careful.
+One thing is.
+Indeed.
+Galaxy morphology is related to color.
+But he is not.
+Uh.
+Not completely.
+You know.
+How to say.
+To say that.
+We know.
+Most of.
+They are passive.
+They are red.
+But.
+There will be an exception.
+The so-called exception is.
+We have red.
+Uh.
+If you go.
+That's what we're thinking about today.
+To say.
+Do you want to use multi-color or single color?
+Because single color can actually.
+Purely let you focus on the galaxy morphology.
+Then you.
+You can know.
+If today.
+Maybe there are some things.
+He has some galaxy.
+He's actually a tree.
+But he is.
+This kind of.
+You.
+Just look at his galaxy morphology.
+You have to be accurate.
+But if you involve those colors today.
+Information.
+Then.
+You might be.
+You might be.
+Plus.
+It's in there.
+It's just that you might make us feel like.
+Oh.
+He has to be divided like this.
+So this part.
+It's actually a bit tricky to deal with.
+So we're still dealing with it.
+What the hell.
+The second part of the data.
+Yeah.
+Yeah.
+I see.
+I see.
+Thank you.
+Do you have any questions?
+Oh, if you don't have any questions.
+Let's give it up again.
+Applause.
+Thank you.
+We'll have another great speech.

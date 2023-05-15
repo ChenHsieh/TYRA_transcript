@@ -1,0 +1,6188 @@
+WEBVTT
+
+00:00.000 --> 00:14.000
+I am today's host, I am Hong Shaoming, I am now working in California as a postdoctoral researcher.
+
+00:14.000 --> 00:18.000
+Without further ado, let's introduce today's speaker, Dr. Wei Qunshu.
+
+00:18.000 --> 00:24.000
+Dr. Qunshu graduated from the College of Electrical Engineering, and stayed in California to study electrical engineering.
+
+00:24.000 --> 00:31.000
+After graduating, he went to UCSD to study biotechnology, and his professor is Professor Zong Ziping.
+
+00:31.000 --> 00:40.000
+He is mainly interested in using the perspective of engineering to use brain-to-brain meetings to study human behavior.
+
+00:40.000 --> 00:53.000
+Over the past few years, he has published nearly 10 conference papers and two journal papers.
+
+00:53.000 --> 00:56.000
+Without further ado, let's listen to his presentation.
+
+00:56.000 --> 01:02.000
+The title is Towards Real-World Awareness Estimation Using Brain-Computer Interface.
+
+01:02.000 --> 01:05.000
+Let's welcome him.
+
+01:05.000 --> 01:09.000
+Thank you Shaoming for the introduction.
+
+01:09.000 --> 01:25.000
+Today, I will introduce how we measure brain activity and monitor our alertness using a brain-computer interface.
+
+01:26.000 --> 01:31.000
+If you have any questions during the presentation, please feel free to interrupt.
+
+01:31.000 --> 01:37.000
+We can easily have a discussion.
+
+01:37.000 --> 01:42.000
+First, I will briefly introduce the brain.
+
+01:42.000 --> 01:49.000
+Our brain is a tube of about 3 pounds, about 1,000 grams.
+
+01:49.000 --> 01:58.000
+The outermost part of the brain has many folds.
+
+01:58.000 --> 02:05.000
+These folds are composed of many neurons in the brain.
+
+02:05.000 --> 02:10.000
+There are about 8.6 billion neurons.
+
+02:11.000 --> 02:18.000
+We know that the brain has very strong computing power.
+
+02:18.000 --> 02:24.000
+However, compared to our most powerful computers, its performance is very good.
+
+02:24.000 --> 02:37.000
+In terms of energy consumption, it is 100,000 times more efficient than a normal CPU.
+
+02:37.000 --> 02:43.000
+Therefore, the brain can only operate at 12 to 25 watts.
+
+02:43.000 --> 02:48.000
+This wattage is equivalent to the wattage of a light bulb.
+
+02:48.000 --> 02:58.000
+So you can imagine that in some comics, when the character thinks of a point, he will draw a light bulb.
+
+02:58.000 --> 03:01.000
+It's actually pretty close.
+
+03:01.000 --> 03:06.000
+Because the brain's power consumption is the power of a light bulb.
+
+03:06.000 --> 03:14.000
+The structure of the neural network is composed of cells.
+
+03:14.000 --> 03:16.000
+There are many vectors.
+
+03:16.000 --> 03:22.000
+The vector part collects information from other neural networks around it.
+
+03:22.000 --> 03:27.000
+After the information is compiled into the neural network, it will decide whether to power up.
+
+03:27.000 --> 03:30.000
+If you want to power up, you can use the axis.
+
+03:30.000 --> 03:34.000
+Then you can power up to other neural networks.
+
+03:34.000 --> 03:41.000
+In this way, complex networks can be used to control the whole person.
+
+03:41.000 --> 03:45.000
+Here is a brain signal that I use more often.
+
+03:45.000 --> 03:47.000
+It's called a brain wave.
+
+03:47.000 --> 03:49.000
+It's EEG.
+
+03:49.000 --> 03:53.000
+Many people have been exposed to EEG.
+
+03:53.000 --> 04:03.000
+Especially when a newborn is born, we often do a brain test to see if his vision or hearing is normal.
+
+04:03.000 --> 04:05.000
+How does EEG occur?
+
+04:05.000 --> 04:11.000
+There are many neural networks in our brain.
+
+04:11.000 --> 04:13.000
+Especially the skin.
+
+04:13.000 --> 04:16.000
+Many neural networks are arranged.
+
+04:16.000 --> 04:18.000
+There are some rules in the structure.
+
+04:19.000 --> 04:28.000
+The arrangement of the rules allows the neural network to have an additional effect when it is powering up.
+
+04:28.000 --> 04:39.000
+The change in the electrical field can be so great that you can feel the change in the electrical field outside the scalp.
+
+04:39.000 --> 04:45.000
+The change in the electrical field becomes our brain wave signal after some processing.
+
+04:46.000 --> 04:49.000
+If you have any questions, please feel free to interrupt me.
+
+04:51.000 --> 04:55.000
+Our brain wave signal is...
+
+04:55.000 --> 04:57.000
+I have a question.
+
+04:57.000 --> 04:59.000
+There is a line below.
+
+04:59.000 --> 05:02.000
+BlueJeans meeting is sharing your screen with bluejeans.com.
+
+05:02.000 --> 05:05.000
+You have to press the hide button.
+
+05:05.000 --> 05:06.000
+Oh, okay.
+
+05:06.000 --> 05:07.000
+Or you can block it a little bit.
+
+05:07.000 --> 05:08.000
+I'm sorry.
+
+05:08.000 --> 05:09.000
+You can continue.
+
+05:09.000 --> 05:11.000
+Thank you.
+
+05:12.000 --> 05:13.000
+Okay.
+
+05:13.000 --> 05:15.000
+Let's continue.
+
+05:15.000 --> 05:20.000
+This is the brain wave signal.
+
+05:20.000 --> 05:25.000
+It is a real-time signal.
+
+05:25.000 --> 05:29.000
+You can see that it is like a time series.
+
+05:29.000 --> 05:31.000
+It is a time series.
+
+05:31.000 --> 05:41.000
+In order to measure the whole brain, we will try to arrange electrical fields outside the scalp.
+
+05:41.000 --> 05:47.000
+So we will have a lot of brain waves on both sides at the same time.
+
+05:47.000 --> 05:56.000
+We will analyze the energy of brain waves in terms of frequency.
+
+05:56.000 --> 06:04.000
+The frequency depends on whether the signal is fast or slow.
+
+06:04.000 --> 06:08.000
+The high frequency is the fast part.
+
+06:08.000 --> 06:10.000
+The low frequency is the slow part.
+
+06:10.000 --> 06:14.000
+So we will divide delta.
+
+06:14.000 --> 06:18.000
+It is a low frequency activity of less than 3.5 Hz.
+
+06:18.000 --> 06:22.000
+It is a very slow vibration.
+
+06:22.000 --> 06:30.000
+If you go higher, it will be divided into theta wave, alpha wave, or beta wave.
+
+06:30.000 --> 06:34.000
+The higher the frequency, the faster the vibration.
+
+06:34.000 --> 06:38.000
+Our brain can be divided into different bands.
+
+06:38.000 --> 06:44.000
+By observing the energy of the band, we can get a lot of information.
+
+06:45.000 --> 06:51.000
+Let me introduce the location of the channel of the brain.
+
+06:51.000 --> 06:55.000
+It has a standard way of dividing.
+
+06:55.000 --> 07:04.000
+The name of the channel is divided into points.
+
+07:04.000 --> 07:08.000
+Frontal is the channel at the beginning of F.
+
+07:08.000 --> 07:12.000
+Central is the channel at the beginning of C.
+
+07:12.000 --> 07:16.000
+Central parietal is the channel at the beginning of O.
+
+07:16.000 --> 07:22.000
+Occipital is the channel at the beginning of O.
+
+07:22.000 --> 07:28.000
+We can do this frequency analysis for each channel.
+
+07:28.000 --> 07:34.000
+We can combine the change of time with the change of frequency.
+
+07:34.000 --> 07:40.000
+We can see the energy of different bands over time.
+
+07:40.000 --> 07:47.000
+This can tell us a lot of information about the state of this person.
+
+07:47.000 --> 07:53.000
+We can design experiments to see if the brain changes.
+
+07:53.000 --> 07:59.000
+We can find some characteristics in different states.
+
+07:59.000 --> 08:03.000
+Reflect the brain in different states.
+
+08:04.000 --> 08:12.000
+The brain interface is where we read the signals of the brain.
+
+08:12.000 --> 08:18.000
+Then we go through some signal processing, including frequency analysis.
+
+08:18.000 --> 08:25.000
+Or you can use a lot of other different signal processing methods to get different characteristics.
+
+08:26.000 --> 08:35.000
+Then we use the processed signals to make it recognizable.
+
+08:35.000 --> 08:38.000
+Then we can convert it into some commands to control.
+
+08:38.000 --> 08:44.000
+For example, a mechanical arm or a wheel or a mouse cursor.
+
+08:44.000 --> 08:48.000
+Or to input text or some messages.
+
+08:49.000 --> 08:53.000
+We call this the brain computer interface.
+
+08:53.000 --> 08:55.000
+In short, it's BCI.
+
+08:57.000 --> 08:59.000
+What can BCI do?
+
+08:59.000 --> 09:01.000
+As I just said, it can convert into commands.
+
+09:01.000 --> 09:08.000
+So when we play video games, we can use it to control the movement of your character.
+
+09:08.000 --> 09:12.000
+Of course, including the wheel and the mechanical arm.
+
+09:12.000 --> 09:17.000
+Of course, it can also be used to monitor a person's cognitive state.
+
+09:17.000 --> 09:19.000
+Including whether you want to sleep.
+
+09:19.000 --> 09:24.000
+This extends to my main area of expertise.
+
+09:24.000 --> 09:27.000
+Monitoring the level of awareness.
+
+09:31.000 --> 09:37.000
+The level of awareness is related to drowsy driving.
+
+09:37.000 --> 09:41.000
+A lot of people fall asleep while driving.
+
+09:41.000 --> 09:49.000
+This news happened on July 18th.
+
+09:49.000 --> 09:53.000
+It was only recently that a drowsy driving incident occurred.
+
+09:53.000 --> 09:55.000
+So it's not a big deal.
+
+09:55.000 --> 09:57.000
+It's not a big deal.
+
+09:57.000 --> 09:59.000
+It's not a big deal.
+
+09:59.000 --> 10:01.000
+It's not a big deal.
+
+10:01.000 --> 10:03.000
+It's not a big deal.
+
+10:03.000 --> 10:05.000
+It's not a big deal.
+
+10:05.000 --> 10:07.000
+It's not a big deal.
+
+10:07.000 --> 10:09.000
+It's not a big deal.
+
+10:39.000 --> 10:41.000
+elections
+
+10:41.000 --> 10:43.000
+elections
+
+10:43.000 --> 10:45.000
+elections
+
+10:45.000 --> 10:47.000
+elections
+
+10:47.000 --> 10:49.000
+elections
+
+10:49.000 --> 10:51.000
+elections
+
+10:51.000 --> 10:53.000
+elections
+
+10:53.000 --> 10:54.000
+elections
+
+10:54.000 --> 10:56.000
+keywords
+
+10:56.000 --> 10:59.000
+keywords
+
+10:59.000 --> 11:01.000
+So he can't hear the headphones, can he?
+
+11:01.000 --> 11:03.000
+I didn't hear it.
+
+11:03.000 --> 11:06.000
+Oh, no.
+
+11:06.000 --> 11:08.000
+Let's see.
+
+11:08.000 --> 11:10.000
+I can't.
+
+11:10.000 --> 11:12.000
+Can you play it on your computer?
+
+11:12.000 --> 11:14.000
+Okay.
+
+11:16.000 --> 11:18.000
+Can you hear me?
+
+11:18.000 --> 11:20.000
+Yes.
+
+11:20.000 --> 11:22.000
+Can you hear me?
+
+11:22.000 --> 11:24.000
+Yes.
+
+11:26.000 --> 11:28.000
+Can you hear me?
+
+11:32.000 --> 11:34.000
+Yes.
+
+11:34.000 --> 11:36.000
+I can hear you.
+
+11:36.000 --> 11:38.000
+Can you hear me?
+
+11:38.000 --> 11:40.000
+Yes.
+
+12:06.000 --> 12:08.000
+Max.
+
+12:08.000 --> 12:10.000
+And then after 11 hours a day, we have to shut down
+
+12:10.000 --> 12:12.000
+and have 10 hours of sleep.
+
+12:12.000 --> 12:14.000
+Truck drivers are also required to take a 30-minute break
+
+12:14.000 --> 12:16.000
+during their first 8 hours of driving.
+
+12:16.000 --> 12:18.000
+All of this needs to be recorded
+
+12:18.000 --> 12:20.000
+in logs like these,
+
+12:20.000 --> 12:22.000
+which are now mostly computerized.
+
+12:22.000 --> 12:24.000
+We now have to carry electronic recording devices
+
+12:24.000 --> 12:26.000
+on our vehicles.
+
+12:26.000 --> 12:28.000
+Rio says his students learn to make driving plans
+
+12:28.000 --> 12:30.000
+to avoid getting fatigued,
+
+12:30.000 --> 12:32.000
+and they're encouraged to stop to power nap
+
+12:32.000 --> 12:34.000
+or just stretch their legs.
+
+12:34.000 --> 12:36.000
+It gives you more stamina.
+
+12:36.000 --> 12:38.000
+You're more alert, because when you're not alert,
+
+12:38.000 --> 12:40.000
+you know, you can't make good decisions.
+
+12:40.000 --> 12:42.000
+And that's what truckers like Rudy live by.
+
+12:42.000 --> 12:44.000
+I start closing, you've got to pull over
+
+12:44.000 --> 12:46.000
+and take a nap.
+
+12:46.000 --> 12:48.000
+GoMana, eight news now.
+
+12:48.000 --> 12:50.000
+The National Highway Traffic Safety Administration
+
+12:50.000 --> 12:52.000
+says drowsy driving
+
+12:52.000 --> 12:54.000
+causes up to 1.2 million crashes
+
+12:54.000 --> 12:56.000
+every year in this country,
+
+12:56.000 --> 12:58.000
+and it kills between 5,000 and 8,000 people.
+
+12:58.000 --> 13:00.000
+That's nearly twice as many
+
+13:00.000 --> 13:02.000
+as distracted driving.
+
+13:04.000 --> 13:06.000
+Okay.
+
+13:08.000 --> 13:10.000
+So,
+
+13:10.000 --> 13:12.000
+this is a recent
+
+13:12.000 --> 13:14.000
+drowsy driving incident.
+
+13:14.000 --> 13:16.000
+As you saw in the video,
+
+13:16.000 --> 13:18.000
+a truck hit
+
+13:18.000 --> 13:20.000
+a construction vehicle
+
+13:20.000 --> 13:22.000
+and
+
+13:22.000 --> 13:24.000
+caused
+
+13:24.000 --> 13:26.000
+two deaths and three injuries.
+
+13:26.000 --> 13:28.000
+Drowsy driving can cause
+
+13:28.000 --> 13:30.000
+up to 1.2 million
+
+13:30.000 --> 13:32.000
+crashes every year,
+
+13:32.000 --> 13:34.000
+and it kills
+
+13:34.000 --> 13:36.000
+between 5,000 and 8,000 people.
+
+13:36.000 --> 13:38.000
+So if we can avoid
+
+13:38.000 --> 13:40.000
+drowsy driving,
+
+13:40.000 --> 13:42.000
+if we can effectively monitor
+
+13:42.000 --> 13:44.000
+drowsy driving
+
+13:44.000 --> 13:46.000
+and manage it,
+
+13:46.000 --> 13:48.000
+maybe we can avoid
+
+13:48.000 --> 13:50.000
+the death and injury
+
+13:50.000 --> 13:52.000
+caused by this.
+
+13:52.000 --> 13:54.000
+And then,
+
+13:54.000 --> 13:56.000
+in the news,
+
+13:56.000 --> 13:58.000
+it was mentioned that
+
+13:58.000 --> 14:00.000
+if you find your eyes
+
+14:00.000 --> 14:02.000
+blind,
+
+14:02.000 --> 14:04.000
+you should stop driving.
+
+14:04.000 --> 14:06.000
+But I also discussed with
+
+14:06.000 --> 14:08.000
+Shaoming last time
+
+14:08.000 --> 14:10.000
+whether to use
+
+14:10.000 --> 14:12.000
+eye or blink
+
+14:12.000 --> 14:14.000
+to do
+
+14:14.000 --> 14:16.000
+this alertness monitoring.
+
+14:16.000 --> 14:18.000
+But there is a question
+
+14:18.000 --> 14:20.000
+that is,
+
+14:20.000 --> 14:22.000
+is there a way to
+
+14:22.000 --> 14:24.000
+catch it
+
+14:24.000 --> 14:26.000
+before it closes
+
+14:26.000 --> 14:28.000
+its eyes
+
+14:28.000 --> 14:30.000
+and put it in the car?
+
+14:30.000 --> 14:32.000
+This part may want to
+
+14:32.000 --> 14:34.000
+use brainwaves to
+
+14:34.000 --> 14:36.000
+break through this problem.
+
+14:38.000 --> 14:40.000
+If we use
+
+14:40.000 --> 14:42.000
+the brain interface to do
+
+14:42.000 --> 14:44.000
+this alertness monitoring,
+
+14:44.000 --> 14:46.000
+we will first
+
+14:46.000 --> 14:48.000
+measure its brainwaves
+
+14:48.000 --> 14:50.000
+from the driver.
+
+14:50.000 --> 14:52.000
+After we get this EEG signal,
+
+14:52.000 --> 14:54.000
+after some processing,
+
+14:54.000 --> 14:56.000
+we use machine learning
+
+14:56.000 --> 14:58.000
+to build a model
+
+14:58.000 --> 15:00.000
+that can turn the EEG
+
+15:00.000 --> 15:02.000
+data into
+
+15:02.000 --> 15:04.000
+alertness.
+
+15:04.000 --> 15:06.000
+After we know its alertness,
+
+15:06.000 --> 15:08.000
+we can try to
+
+15:08.000 --> 15:10.000
+give it some feedback.
+
+15:10.000 --> 15:12.000
+For example, we can wake it up,
+
+15:12.000 --> 15:14.000
+or we can
+
+15:14.000 --> 15:16.000
+let the car
+
+15:16.000 --> 15:18.000
+stop driving
+
+15:18.000 --> 15:20.000
+and stop by the road,
+
+15:20.000 --> 15:22.000
+or force it to rest.
+
+15:22.000 --> 15:24.000
+There are some ways to intervene.
+
+15:26.000 --> 15:28.000
+My research is
+
+15:28.000 --> 15:30.000
+mainly about
+
+15:30.000 --> 15:32.000
+how we deal with this signal,
+
+15:32.000 --> 15:34.000
+how we build a
+
+15:34.000 --> 15:36.000
+machine learning model,
+
+15:36.000 --> 15:38.000
+and how we can
+
+15:38.000 --> 15:40.000
+monitor the alertness
+
+15:40.000 --> 15:42.000
+very well.
+
+15:42.000 --> 15:44.000
+Then we can
+
+15:44.000 --> 15:46.000
+accurately determine
+
+15:46.000 --> 15:48.000
+whether to make some interference.
+
+15:48.000 --> 15:50.000
+I have a question.
+
+15:50.000 --> 15:52.000
+I want to
+
+15:52.000 --> 15:54.000
+clarify a little bit.
+
+15:54.000 --> 15:56.000
+Do you mean
+
+15:56.000 --> 15:58.000
+that your research is
+
+15:58.000 --> 16:00.000
+a state of
+
+16:00.000 --> 16:02.000
+mental relaxation
+
+16:02.000 --> 16:04.000
+or a state of real sleep?
+
+16:04.000 --> 16:06.000
+It's a state of
+
+16:06.000 --> 16:08.000
+waking up
+
+16:08.000 --> 16:10.000
+to almost falling asleep
+
+16:10.000 --> 16:12.000
+before you really
+
+16:12.000 --> 16:14.000
+fall asleep.
+
+16:14.000 --> 16:16.000
+I didn't study
+
+16:16.000 --> 16:18.000
+the state of the brain
+
+16:18.000 --> 16:20.000
+after falling asleep,
+
+16:20.000 --> 16:22.000
+because I want to catch
+
+16:22.000 --> 16:24.000
+it before I fall asleep.
+
+16:24.000 --> 16:26.000
+In fact,
+
+16:26.000 --> 16:28.000
+I have
+
+16:28.000 --> 16:30.000
+driving experience,
+
+16:30.000 --> 16:32.000
+and I know
+
+16:32.000 --> 16:34.000
+that my eyes were open at that time,
+
+16:34.000 --> 16:36.000
+but the image
+
+16:36.000 --> 16:38.000
+was already
+
+16:38.000 --> 16:40.000
+blurred and black,
+
+16:40.000 --> 16:42.000
+and I was not looking at the road.
+
+16:42.000 --> 16:44.000
+I was a little out of my mind,
+
+16:44.000 --> 16:46.000
+and then I suddenly woke up,
+
+16:46.000 --> 16:48.000
+and I felt a little
+
+16:48.000 --> 16:50.000
+shaky.
+
+16:50.000 --> 16:52.000
+So you have to catch
+
+16:52.000 --> 16:54.000
+the time point
+
+16:54.000 --> 16:56.000
+before you fall asleep.
+
+16:56.000 --> 16:58.000
+It depends on
+
+16:58.000 --> 17:00.000
+when you can't support
+
+17:00.000 --> 17:02.000
+the alertness.
+
+17:02.000 --> 17:04.000
+I have another question.
+
+17:04.000 --> 17:06.000
+You are now
+
+17:06.000 --> 17:08.000
+identifying a signal,
+
+17:08.000 --> 17:10.000
+and you think
+
+17:10.000 --> 17:12.000
+this signal is
+
+17:12.000 --> 17:14.000
+the state you are talking about.
+
+17:14.000 --> 17:16.000
+Do you have a contrast group?
+
+17:16.000 --> 17:18.000
+For example, you track his eyes,
+
+17:18.000 --> 17:20.000
+and then I define
+
+17:20.000 --> 17:22.000
+the behavior of the eyes,
+
+17:22.000 --> 17:24.000
+which is to fall asleep.
+
+17:24.000 --> 17:26.000
+Then I look for
+
+17:26.000 --> 17:28.000
+a corresponding brain wave,
+
+17:28.000 --> 17:30.000
+or I ask the subject to write
+
+17:30.000 --> 17:32.000
+that I feel like I'm about to fall asleep.
+
+17:32.000 --> 17:34.000
+What is your calibration?
+
+17:34.000 --> 17:36.000
+This question is very good.
+
+17:36.000 --> 17:38.000
+How do we define
+
+17:38.000 --> 17:40.000
+the so-called alertness?
+
+17:40.000 --> 17:42.000
+I'm going to talk about it next.
+
+17:42.000 --> 17:44.000
+Because we think
+
+17:44.000 --> 17:46.000
+alertness is related to your reaction time.
+
+17:46.000 --> 17:48.000
+So we use
+
+17:48.000 --> 17:50.000
+reaction time to
+
+17:50.000 --> 17:52.000
+give us an objective
+
+17:52.000 --> 17:54.000
+measurement method.
+
+17:54.000 --> 17:56.000
+Just like you said,
+
+17:56.000 --> 17:58.000
+using the eyes or
+
+17:58.000 --> 18:00.000
+the way the subject responds.
+
+18:00.000 --> 18:02.000
+The part of the eyes
+
+18:02.000 --> 18:04.000
+is that the activity of the eyes
+
+18:04.000 --> 18:06.000
+is also a physiological signal.
+
+18:06.000 --> 18:08.000
+So whether he can react directly
+
+18:08.000 --> 18:10.000
+to this behavior
+
+18:10.000 --> 18:12.000
+is another experiment.
+
+18:12.000 --> 18:14.000
+His role and brain wave
+
+18:14.000 --> 18:16.000
+are the same.
+
+18:16.000 --> 18:18.000
+It just depends on which physiological signal
+
+18:18.000 --> 18:20.000
+makes it easier for us
+
+18:20.000 --> 18:22.000
+to be more accurate
+
+18:22.000 --> 18:24.000
+to determine
+
+18:24.000 --> 18:26.000
+whether it is
+
+18:26.000 --> 18:28.000
+alert or not.
+
+18:30.000 --> 18:32.000
+Subject report
+
+18:32.000 --> 18:34.000
+is an objective determination.
+
+18:34.000 --> 18:36.000
+The subjective determination
+
+18:36.000 --> 18:38.000
+will have some
+
+18:38.000 --> 18:40.000
+deviation.
+
+18:40.000 --> 18:42.000
+That is, the word
+
+18:42.000 --> 18:44.000
+reported by the subject
+
+18:44.000 --> 18:46.000
+cannot express
+
+18:46.000 --> 18:48.000
+the state he just experienced
+
+18:48.000 --> 18:50.000
+very objectively.
+
+18:50.000 --> 18:52.000
+Many researchers
+
+18:52.000 --> 18:54.000
+think that the more objective
+
+18:54.000 --> 18:56.000
+determination method is to look at
+
+18:56.000 --> 18:58.000
+his reaction time.
+
+18:58.000 --> 19:00.000
+Next,
+
+19:00.000 --> 19:02.000
+I will talk about how we
+
+19:02.000 --> 19:04.000
+measure brain waves and
+
+19:04.000 --> 19:06.000
+his reaction time.
+
+19:06.000 --> 19:08.000
+Finally, I will talk about
+
+19:08.000 --> 19:10.000
+how to define
+
+19:10.000 --> 19:12.000
+alertness.
+
+19:14.000 --> 19:16.000
+Does this answer your question?
+
+19:18.000 --> 19:20.000
+Yes, thank you.
+
+19:20.000 --> 19:22.000
+Thank you.
+
+19:22.000 --> 19:24.000
+I will talk about
+
+19:24.000 --> 19:26.000
+the experiment we did
+
+19:26.000 --> 19:28.000
+and how to get the data we want.
+
+19:28.000 --> 19:30.000
+We put the subject
+
+19:30.000 --> 19:32.000
+in a simulated
+
+19:32.000 --> 19:34.000
+driving car.
+
+19:34.000 --> 19:36.000
+The car has a
+
+19:36.000 --> 19:38.000
+circular projection screen.
+
+19:38.000 --> 19:40.000
+The car is
+
+19:40.000 --> 19:42.000
+on a dynamic platform,
+
+19:42.000 --> 19:44.000
+so driving in it
+
+19:44.000 --> 19:46.000
+is to simulate
+
+19:46.000 --> 19:48.000
+the real driving situation as much as possible.
+
+19:48.000 --> 19:50.000
+This is a device
+
+19:50.000 --> 19:52.000
+in the brain center
+
+19:52.000 --> 19:54.000
+of the University of Transportation
+
+19:54.000 --> 19:56.000
+.
+
+20:00.000 --> 20:02.000
+In this experiment,
+
+20:02.000 --> 20:04.000
+we are doing
+
+20:04.000 --> 20:06.000
+road maintenance
+
+20:06.000 --> 20:08.000
+tasks.
+
+20:08.000 --> 20:10.000
+Road maintenance
+
+20:10.000 --> 20:12.000
+means that the subject
+
+20:12.000 --> 20:14.000
+must maintain the car
+
+20:14.000 --> 20:16.000
+on the road.
+
+20:16.000 --> 20:18.000
+We will
+
+20:18.000 --> 20:20.000
+automatically make the car
+
+20:20.000 --> 20:22.000
+lean, forcing
+
+20:22.000 --> 20:24.000
+the subject to
+
+20:24.000 --> 20:26.000
+adjust the direction of
+
+20:26.000 --> 20:28.000
+his car from time to time.
+
+20:28.000 --> 20:30.000
+The scene is
+
+20:30.000 --> 20:32.000
+on a straight
+
+20:32.000 --> 20:34.000
+highway,
+
+20:34.000 --> 20:36.000
+but the car
+
+20:36.000 --> 20:38.000
+will tilt to the left
+
+20:38.000 --> 20:40.000
+or to the right.
+
+20:40.000 --> 20:42.000
+The car will tilt once every 6-10 seconds.
+
+20:42.000 --> 20:44.000
+The subject
+
+20:44.000 --> 20:46.000
+will feel that the car is
+
+20:46.000 --> 20:48.000
+tilted,
+
+20:48.000 --> 20:50.000
+move the steering wheel
+
+20:50.000 --> 20:52.000
+to guide the car.
+
+20:52.000 --> 20:54.000
+We will see
+
+20:54.000 --> 20:56.000
+when the car
+
+20:56.000 --> 20:58.000
+moves the steering wheel
+
+20:58.000 --> 21:00.000
+after it is tilted.
+
+21:00.000 --> 21:02.000
+This is the reaction time.
+
+21:02.000 --> 21:04.000
+Every 6-10 seconds,
+
+21:04.000 --> 21:06.000
+we can measure the reaction time.
+
+21:06.000 --> 21:08.000
+In the end, we hope
+
+21:08.000 --> 21:10.000
+to predict the
+
+21:10.000 --> 21:12.000
+reaction time
+
+21:12.000 --> 21:14.000
+after the
+
+21:14.000 --> 21:16.000
+brain wave
+
+21:16.000 --> 21:18.000
+before the tilt.
+
+21:20.000 --> 21:22.000
+This is the
+
+21:22.000 --> 21:24.000
+role of prediction.
+
+21:26.000 --> 21:28.000
+Next, I will talk about
+
+21:28.000 --> 21:30.000
+how to deal with
+
+21:30.000 --> 21:32.000
+the prediction of
+
+21:32.000 --> 21:34.000
+the alertness.
+
+21:36.000 --> 21:38.000
+Every 6-10 seconds,
+
+21:38.000 --> 21:40.000
+we will have a response time
+
+21:40.000 --> 21:42.000
+sample.
+
+21:46.000 --> 21:48.000
+On the y-axis,
+
+21:48.000 --> 21:50.000
+I draw the reaction time.
+
+21:50.000 --> 21:52.000
+I go to log.
+
+21:52.000 --> 21:54.000
+On the horizontal axis,
+
+21:54.000 --> 21:56.000
+I draw the time.
+
+21:56.000 --> 21:58.000
+The unit is divided.
+
+21:58.000 --> 22:00.000
+This is the length
+
+22:00.000 --> 22:02.000
+of the whole experiment.
+
+22:02.000 --> 22:04.000
+The length of the experiment
+
+22:04.000 --> 22:06.000
+is not certain.
+
+22:06.000 --> 22:08.000
+This is shorter,
+
+22:08.000 --> 22:10.000
+it is only 45 minutes.
+
+22:10.000 --> 22:12.000
+Most experiments
+
+22:12.000 --> 22:14.000
+take more than an hour.
+
+22:14.000 --> 22:16.000
+About an hour and a half.
+
+22:20.000 --> 22:22.000
+Sometimes we will
+
+22:22.000 --> 22:24.000
+ask the same subject to
+
+22:24.000 --> 22:26.000
+come back and do it.
+
+22:26.000 --> 22:28.000
+Let me see.
+
+22:30.000 --> 22:32.000
+We finally collected more than 30 subjects.
+
+22:32.000 --> 22:34.000
+There are
+
+22:34.000 --> 22:36.000
+5, 6, 10
+
+22:36.000 --> 22:38.000
+driving
+
+22:38.000 --> 22:40.000
+experiment data.
+
+22:42.000 --> 22:44.000
+Let's talk about
+
+22:44.000 --> 22:46.000
+each point.
+
+22:46.000 --> 22:48.000
+It's the RT we just measured.
+
+22:48.000 --> 22:50.000
+10 to the power of 0 is about 1 second.
+
+22:50.000 --> 22:52.000
+When he wakes up,
+
+22:52.000 --> 22:54.000
+he can get the car back
+
+22:54.000 --> 22:56.000
+to normal.
+
+22:56.000 --> 22:58.000
+After a while,
+
+22:58.000 --> 23:00.000
+his condition is not good.
+
+23:00.000 --> 23:02.000
+After his alertness began to decline,
+
+23:02.000 --> 23:04.000
+we will see some longer
+
+23:04.000 --> 23:06.000
+response time.
+
+23:06.000 --> 23:08.000
+In fact, the reaction is that
+
+23:08.000 --> 23:10.000
+his alertness becomes worse.
+
+23:10.000 --> 23:12.000
+We have to deal with
+
+23:12.000 --> 23:14.000
+this RT data.
+
+23:14.000 --> 23:16.000
+Because RT is
+
+23:16.000 --> 23:18.000
+not a range.
+
+23:18.000 --> 23:20.000
+Only one side has a range.
+
+23:20.000 --> 23:22.000
+The other side has no range.
+
+23:22.000 --> 23:24.000
+Let's do a regularization first.
+
+23:24.000 --> 23:26.000
+Change it to a value of 0 to 1.
+
+23:26.000 --> 23:28.000
+The way to regularize it
+
+23:28.000 --> 23:30.000
+is to use its
+
+23:30.000 --> 23:32.000
+cumulative distribution function.
+
+23:32.000 --> 23:34.000
+Map it
+
+23:34.000 --> 23:36.000
+to a
+
+23:36.000 --> 23:38.000
+range value.
+
+23:38.000 --> 23:40.000
+Then
+
+23:40.000 --> 23:42.000
+let's do a
+
+23:42.000 --> 23:44.000
+smoothing here.
+
+23:44.000 --> 23:46.000
+For smoothing, I use a 90-second
+
+23:46.000 --> 23:48.000
+moving window
+
+23:48.000 --> 23:50.000
+to make the
+
+23:50.000 --> 23:52.000
+data look more dynamic.
+
+23:52.000 --> 23:54.000
+We turn it
+
+23:54.000 --> 23:56.000
+into a smoother value.
+
+23:56.000 --> 23:58.000
+This part is because
+
+23:58.000 --> 24:00.000
+RT only samples
+
+24:00.000 --> 24:02.000
+once every 6 to 10 seconds.
+
+24:02.000 --> 24:04.000
+If you
+
+24:04.000 --> 24:06.000
+use too high quality
+
+24:06.000 --> 24:08.000
+to look at this data,
+
+24:08.000 --> 24:10.000
+it is more meaningless.
+
+24:10.000 --> 24:12.000
+If we use a smoothing,
+
+24:12.000 --> 24:14.000
+we can get rid of
+
+24:14.000 --> 24:16.000
+some of the
+
+24:16.000 --> 24:18.000
+inaccuracies of this data itself.
+
+24:18.000 --> 24:20.000
+So we use
+
+24:20.000 --> 24:22.000
+this
+
+24:22.000 --> 24:24.000
+alertness deficit index
+
+24:24.000 --> 24:26.000
+which is an index
+
+24:26.000 --> 24:28.000
+that lacks attention.
+
+24:28.000 --> 24:30.000
+We use it as
+
+24:30.000 --> 24:32.000
+a ground truth
+
+24:32.000 --> 24:34.000
+in our behavior.
+
+24:34.000 --> 24:36.000
+Does anyone have any questions?
+
+24:38.000 --> 24:40.000
+Let's assume that
+
+24:40.000 --> 24:42.000
+RT directly reflects
+
+24:42.000 --> 24:44.000
+the level of alertness.
+
+24:44.000 --> 24:46.000
+Yes.
+
+24:46.000 --> 24:48.000
+RT becomes alertness
+
+24:48.000 --> 24:50.000
+should be one of the factors.
+
+24:50.000 --> 24:52.000
+Yes.
+
+24:52.000 --> 24:54.000
+So it depends on the
+
+24:54.000 --> 24:56.000
+design of the experiment.
+
+24:56.000 --> 24:58.000
+In addition, let's assume that
+
+24:58.000 --> 25:00.000
+in our experiment design,
+
+25:00.000 --> 25:02.000
+the part that affects RT
+
+25:02.000 --> 25:04.000
+is only drowsiness.
+
+25:04.000 --> 25:06.000
+We try to
+
+25:06.000 --> 25:08.000
+eliminate other factors
+
+25:08.000 --> 25:10.000
+that may affect RT.
+
+25:10.000 --> 25:12.000
+Because
+
+25:12.000 --> 25:14.000
+similar paradigms
+
+25:14.000 --> 25:16.000
+in the experiment
+
+25:16.000 --> 25:18.000
+are also used
+
+25:18.000 --> 25:20.000
+to study
+
+25:20.000 --> 25:22.000
+mind-wandering.
+
+25:22.000 --> 25:24.000
+Mind-wandering and
+
+25:24.000 --> 25:26.000
+alertness are related
+
+25:26.000 --> 25:28.000
+but not exactly the same.
+
+25:28.000 --> 25:30.000
+For example, your subject
+
+25:30.000 --> 25:32.000
+starts to think about other things
+
+25:32.000 --> 25:34.000
+and his RT becomes worse.
+
+25:34.000 --> 25:36.000
+In your definition,
+
+25:36.000 --> 25:38.000
+it is a lack of alertness.
+
+25:38.000 --> 25:40.000
+Yes.
+
+25:40.000 --> 25:42.000
+It is acceptable.
+
+25:42.000 --> 25:44.000
+So our alertness
+
+25:44.000 --> 25:46.000
+is based on
+
+25:46.000 --> 25:48.000
+the alertness defined by RT.
+
+25:48.000 --> 25:50.000
+Yes.
+
+25:50.000 --> 25:52.000
+Because the subject does not react
+
+25:52.000 --> 25:54.000
+like you said,
+
+25:54.000 --> 25:56.000
+he may be thinking about other things.
+
+25:56.000 --> 25:58.000
+Of course,
+
+25:58.000 --> 26:00.000
+the instruction of our experiment
+
+26:00.000 --> 26:02.000
+is to teach them to focus.
+
+26:02.000 --> 26:04.000
+Yes.
+
+26:04.000 --> 26:06.000
+What we can do is
+
+26:06.000 --> 26:08.000
+only up to here.
+
+26:08.000 --> 26:10.000
+It may affect your
+
+26:10.000 --> 26:12.000
+EEG data later.
+
+26:12.000 --> 26:14.000
+Imagine that there are three reasons
+
+26:14.000 --> 26:16.000
+why his RT becomes worse.
+
+26:16.000 --> 26:18.000
+You will catch three patterns.
+
+26:18.000 --> 26:20.000
+The three patterns
+
+26:20.000 --> 26:22.000
+may be different.
+
+26:22.000 --> 26:24.000
+For example, when you train the data,
+
+26:24.000 --> 26:26.000
+the accuracy will be lower.
+
+26:26.000 --> 26:28.000
+Because your data is not high enough.
+
+26:28.000 --> 26:30.000
+Sometimes it is because of A,
+
+26:30.000 --> 26:32.000
+sometimes because of B,
+
+26:32.000 --> 26:34.000
+sometimes because of C.
+
+26:34.000 --> 26:36.000
+It is impossible to be completely correct.
+
+26:36.000 --> 26:38.000
+Just like what you said,
+
+26:38.000 --> 26:40.000
+mind-wandering,
+
+26:40.000 --> 26:42.000
+we can't control it.
+
+26:42.000 --> 26:44.000
+However,
+
+26:44.000 --> 26:46.000
+when RT becomes longer,
+
+26:46.000 --> 26:48.000
+it becomes quite long.
+
+26:48.000 --> 26:50.000
+For example, 5 seconds.
+
+26:50.000 --> 26:52.000
+If he is thinking about other things
+
+26:52.000 --> 26:54.000
+for 5 seconds
+
+26:54.000 --> 26:56.000
+without following our instructions
+
+26:56.000 --> 26:58.000
+to guide him,
+
+27:00.000 --> 27:02.000
+I don't know what to do.
+
+27:02.000 --> 27:04.000
+OK.
+
+27:04.000 --> 27:06.000
+What you see
+
+27:06.000 --> 27:08.000
+is the real
+
+27:08.000 --> 27:10.000
+death.
+
+27:12.000 --> 27:14.000
+Some trials,
+
+27:14.000 --> 27:16.000
+like what you said,
+
+27:16.000 --> 27:18.000
+may be due to other factors
+
+27:18.000 --> 27:20.000
+or some miscommunication.
+
+27:20.000 --> 27:22.000
+This part
+
+27:22.000 --> 27:24.000
+cannot be ruled out.
+
+27:24.000 --> 27:26.000
+OK.
+
+27:26.000 --> 27:28.000
+If your task
+
+27:28.000 --> 27:30.000
+can separate
+
+27:30.000 --> 27:32.000
+different things that affect RT,
+
+27:32.000 --> 27:34.000
+your model
+
+27:34.000 --> 27:36.000
+will be cleaner.
+
+27:36.000 --> 27:38.000
+This is an ideal situation.
+
+27:38.000 --> 27:40.000
+Of course,
+
+27:40.000 --> 27:42.000
+we can't cover
+
+27:42.000 --> 27:44.000
+so many different factors at the same time.
+
+27:44.000 --> 27:46.000
+Yes.
+
+27:46.000 --> 27:48.000
+So,
+
+27:48.000 --> 27:50.000
+in terms of brain science,
+
+27:50.000 --> 27:52.000
+we often have this problem.
+
+27:52.000 --> 27:54.000
+We can't control what the subject is thinking.
+
+27:54.000 --> 27:56.000
+That's right.
+
+27:56.000 --> 27:58.000
+It's a bit awkward.
+
+27:58.000 --> 28:00.000
+I have a different idea
+
+28:00.000 --> 28:02.000
+about brain science.
+
+28:02.000 --> 28:04.000
+OK.
+
+28:04.000 --> 28:06.000
+If you want to
+
+28:06.000 --> 28:08.000
+throw data to machine learning,
+
+28:08.000 --> 28:10.000
+if there are three reasons,
+
+28:10.000 --> 28:12.000
+whether he wants to sleep
+
+28:12.000 --> 28:14.000
+or something else,
+
+28:14.000 --> 28:16.000
+your algorithm
+
+28:16.000 --> 28:18.000
+may be persuaded
+
+28:18.000 --> 28:20.000
+to identify
+
+28:20.000 --> 28:22.000
+three different reasons.
+
+28:22.000 --> 28:24.000
+But for whatever reason,
+
+28:24.000 --> 28:26.000
+it will
+
+28:26.000 --> 28:28.000
+indicate that
+
+28:28.000 --> 28:30.000
+you are lying.
+
+28:30.000 --> 28:32.000
+Isn't that right?
+
+28:32.000 --> 28:34.000
+It's possible.
+
+28:34.000 --> 28:36.000
+So, in the end,
+
+28:36.000 --> 28:38.000
+his algorithm
+
+28:38.000 --> 28:40.000
+can avoid
+
+28:40.000 --> 28:42.000
+the longer RT time
+
+28:42.000 --> 28:44.000
+for whatever reason.
+
+28:44.000 --> 28:46.000
+I think we should
+
+28:46.000 --> 28:48.000
+go back to the original question.
+
+28:48.000 --> 28:50.000
+What do you want to detect?
+
+28:50.000 --> 28:52.000
+For example,
+
+28:52.000 --> 28:54.000
+if you want to promote a policy,
+
+28:54.000 --> 28:56.000
+you want to avoid
+
+28:56.000 --> 28:58.000
+drowsy driving.
+
+28:58.000 --> 29:00.000
+This whole thing is set up
+
+29:00.000 --> 29:02.000
+for drowsy driving.
+
+29:02.000 --> 29:04.000
+But later I found that
+
+29:04.000 --> 29:06.000
+the other important factor
+
+29:06.000 --> 29:08.000
+that affects their driving
+
+29:08.000 --> 29:10.000
+is mind-wandering.
+
+29:10.000 --> 29:12.000
+Even if you can detect
+
+29:12.000 --> 29:14.000
+mind-wandering at the same time,
+
+29:14.000 --> 29:16.000
+when you make a policy,
+
+29:16.000 --> 29:18.000
+these two are completely different.
+
+29:18.000 --> 29:20.000
+How do you avoid A and avoid B?
+
+29:20.000 --> 29:22.000
+In the end,
+
+29:22.000 --> 29:24.000
+from the point of view of brain science,
+
+29:24.000 --> 29:26.000
+what happened during that time?
+
+29:26.000 --> 29:28.000
+That's the reason
+
+29:28.000 --> 29:30.000
+I asked this question.
+
+29:30.000 --> 29:32.000
+I think it's possible.
+
+29:32.000 --> 29:34.000
+When you make a machine learning,
+
+29:34.000 --> 29:36.000
+it can identify all patterns
+
+29:36.000 --> 29:38.000
+as a lack of awareness.
+
+29:38.000 --> 29:40.000
+This is also possible.
+
+29:42.000 --> 29:44.000
+Like what
+
+29:44.000 --> 29:46.000
+Yen-Yung mentioned,
+
+29:46.000 --> 29:48.000
+if I use machine learning,
+
+29:48.000 --> 29:50.000
+it will learn
+
+29:50.000 --> 29:52.000
+the relationship between data.
+
+29:52.000 --> 29:54.000
+Then you get
+
+29:56.000 --> 29:58.000
+an overall
+
+29:58.000 --> 30:00.000
+influence
+
+30:00.000 --> 30:02.000
+of R&D.
+
+30:02.000 --> 30:04.000
+I don't know what it is.
+
+30:04.000 --> 30:06.000
+In addition,
+
+30:06.000 --> 30:08.000
+we just
+
+30:08.000 --> 30:10.000
+discussed that
+
+30:10.000 --> 30:12.000
+different
+
+30:12.000 --> 30:14.000
+cognitive
+
+30:14.000 --> 30:16.000
+phenomena can be
+
+30:16.000 --> 30:18.000
+disassembled.
+
+30:18.000 --> 30:20.000
+It can be seen independently.
+
+30:20.000 --> 30:22.000
+Or there are some interactions
+
+30:22.000 --> 30:24.000
+between them.
+
+30:24.000 --> 30:26.000
+If
+
+30:26.000 --> 30:28.000
+we want to
+
+30:28.000 --> 30:30.000
+use our data
+
+30:30.000 --> 30:32.000
+to disassemble different
+
+30:32.000 --> 30:34.000
+cognitive states
+
+30:34.000 --> 30:36.000
+on this RT,
+
+30:36.000 --> 30:38.000
+in fact,
+
+30:38.000 --> 30:40.000
+there is no way to
+
+30:40.000 --> 30:42.000
+just use one experiment.
+
+30:42.000 --> 30:44.000
+It may be necessary to
+
+30:44.000 --> 30:46.000
+do different experiments
+
+30:46.000 --> 30:48.000
+to estimate
+
+30:48.000 --> 30:50.000
+what will happen.
+
+30:50.000 --> 30:52.000
+In our case,
+
+30:52.000 --> 30:54.000
+we try to say
+
+30:54.000 --> 30:56.000
+that there is only one
+
+30:56.000 --> 30:58.000
+influence.
+
+30:58.000 --> 31:00.000
+But we can't guarantee.
+
+31:00.000 --> 31:02.000
+If we say that 90% of
+
+31:02.000 --> 31:04.000
+our trial
+
+31:04.000 --> 31:06.000
+is based on
+
+31:06.000 --> 31:08.000
+our imagination,
+
+31:08.000 --> 31:10.000
+because we
+
+31:10.000 --> 31:12.000
+let it do it
+
+31:12.000 --> 31:14.000
+after lunch.
+
+31:14.000 --> 31:16.000
+We asked it to
+
+31:16.000 --> 31:18.000
+drive the highway.
+
+31:18.000 --> 31:20.000
+We hope to
+
+31:20.000 --> 31:22.000
+let it sleep
+
+31:22.000 --> 31:24.000
+in this way.
+
+31:24.000 --> 31:26.000
+At least
+
+31:26.000 --> 31:28.000
+in this process,
+
+31:28.000 --> 31:30.000
+it is closer to
+
+31:30.000 --> 31:32.000
+what we want it to
+
+31:32.000 --> 31:34.000
+trigger.
+
+31:36.000 --> 31:38.000
+Is that OK?
+
+31:38.000 --> 31:40.000
+My question
+
+31:40.000 --> 31:42.000
+has been answered.
+
+31:42.000 --> 31:44.000
+OK.
+
+31:44.000 --> 31:46.000
+I will talk about
+
+31:46.000 --> 31:48.000
+this later.
+
+31:48.000 --> 31:50.000
+This is very troublesome.
+
+31:50.000 --> 31:52.000
+Many cognitive states
+
+31:52.000 --> 31:54.000
+do not have a good
+
+31:54.000 --> 31:56.000
+objective definition.
+
+31:56.000 --> 31:58.000
+In the future,
+
+31:58.000 --> 32:00.000
+whether it is a brain interface
+
+32:00.000 --> 32:02.000
+or cognitive science,
+
+32:02.000 --> 32:04.000
+this is a big problem.
+
+32:04.000 --> 32:06.000
+Let me
+
+32:06.000 --> 32:08.000
+continue my research.
+
+32:08.000 --> 32:10.000
+OK.
+
+32:10.000 --> 32:12.000
+As I said,
+
+32:12.000 --> 32:14.000
+our brain wave can be
+
+32:14.000 --> 32:16.000
+divided into different
+
+32:16.000 --> 32:18.000
+characteristics.
+
+32:18.000 --> 32:20.000
+Here I list
+
+32:20.000 --> 32:22.000
+some of my
+
+32:22.000 --> 32:24.000
+processing processes.
+
+32:24.000 --> 32:26.000
+EEG will
+
+32:26.000 --> 32:28.000
+do a
+
+32:28.000 --> 32:30.000
+re-referencing
+
+32:30.000 --> 32:32.000
+for different channels.
+
+32:32.000 --> 32:34.000
+Here we
+
+32:34.000 --> 32:36.000
+take
+
+32:36.000 --> 32:38.000
+the EEG of
+
+32:38.000 --> 32:40.000
+all channels to
+
+32:40.000 --> 32:42.000
+reduce their overall average.
+
+32:42.000 --> 32:44.000
+This can remove some
+
+32:44.000 --> 32:46.000
+impurities.
+
+32:46.000 --> 32:48.000
+Then we do
+
+32:48.000 --> 32:50.000
+bandpass filtering.
+
+32:50.000 --> 32:52.000
+The EEG
+
+32:52.000 --> 32:54.000
+is limited to
+
+32:54.000 --> 32:56.000
+50 Hz or less.
+
+32:56.000 --> 32:58.000
+Some low frequency
+
+32:58.000 --> 33:00.000
+waves may
+
+33:00.000 --> 33:02.000
+come from
+
+33:02.000 --> 33:04.000
+moving around
+
+33:04.000 --> 33:06.000
+the device itself.
+
+33:06.000 --> 33:08.000
+We will use
+
+33:08.000 --> 33:10.000
+1 to 50 Hz
+
+33:10.000 --> 33:12.000
+or more
+
+33:12.000 --> 33:14.000
+to filter the EEG
+
+33:14.000 --> 33:16.000
+and get
+
+33:16.000 --> 33:18.000
+something that
+
+33:18.000 --> 33:20.000
+really looks like EEG.
+
+33:20.000 --> 33:22.000
+But there are still a lot of artifacts.
+
+33:22.000 --> 33:24.000
+Downsampling
+
+33:24.000 --> 33:26.000
+reduces our computing time.
+
+33:26.000 --> 33:28.000
+Then we do
+
+33:28.000 --> 33:30.000
+subbandpass filtering.
+
+33:30.000 --> 33:32.000
+We divide the EEG
+
+33:32.000 --> 33:34.000
+into different brainwaves.
+
+33:34.000 --> 33:36.000
+Here are some examples.
+
+33:36.000 --> 33:38.000
+Fast and slow.
+
+33:38.000 --> 33:40.000
+They are from delta,
+
+33:40.000 --> 33:42.000
+zeta, alpha to beta.
+
+33:42.000 --> 33:44.000
+Then we take
+
+33:44.000 --> 33:46.000
+their energy
+
+33:46.000 --> 33:48.000
+and do a smoothing.
+
+33:48.000 --> 33:50.000
+We use
+
+33:50.000 --> 33:52.000
+90-second
+
+33:52.000 --> 33:54.000
+moving window
+
+33:54.000 --> 33:56.000
+to smooth
+
+33:56.000 --> 33:58.000
+the EEG
+
+33:58.000 --> 34:00.000
+and get our data.
+
+34:02.000 --> 34:04.000
+Now we have
+
+34:04.000 --> 34:06.000
+the brainwave energy
+
+34:06.000 --> 34:08.000
+and the alertness index.
+
+34:08.000 --> 34:10.000
+Now let's
+
+34:10.000 --> 34:12.000
+compare the two.
+
+34:12.000 --> 34:14.000
+The y-axis
+
+34:14.000 --> 34:16.000
+represents
+
+34:16.000 --> 34:18.000
+the EEG energy.
+
+34:18.000 --> 34:20.000
+The x-axis
+
+34:20.000 --> 34:22.000
+represents the alertness
+
+34:22.000 --> 34:24.000
+index.
+
+34:24.000 --> 34:26.000
+The x-axis
+
+34:26.000 --> 34:28.000
+is the slow
+
+34:28.000 --> 34:30.000
+reaction time.
+
+34:30.000 --> 34:32.000
+The y-axis
+
+34:32.000 --> 34:34.000
+represents the EEG energy.
+
+34:34.000 --> 34:36.000
+Here are
+
+34:36.000 --> 34:38.000
+delta, zeta, alpha, beta.
+
+34:38.000 --> 34:40.000
+I have
+
+34:40.000 --> 34:42.000
+several channels
+
+34:42.000 --> 34:44.000
+with frontal
+
+34:44.000 --> 34:46.000
+and central.
+
+34:46.000 --> 34:48.000
+Z is the
+
+34:48.000 --> 34:50.000
+midline.
+
+34:50.000 --> 34:52.000
+The middle of the front,
+
+34:52.000 --> 34:54.000
+the middle of the middle,
+
+34:54.000 --> 34:56.000
+the middle of the parietal,
+
+34:56.000 --> 34:58.000
+and the middle
+
+34:58.000 --> 35:00.000
+of the parietal.
+
+35:00.000 --> 35:02.000
+In these positions,
+
+35:02.000 --> 35:04.000
+the EEG energy changes
+
+35:04.000 --> 35:06.000
+in different channels
+
+35:06.000 --> 35:08.000
+are related to
+
+35:08.000 --> 35:10.000
+alertness.
+
+35:10.000 --> 35:12.000
+Delta is a positive
+
+35:12.000 --> 35:14.000
+channel. 0.77
+
+35:14.000 --> 35:16.000
+is a positive channel.
+
+35:16.000 --> 35:18.000
+Alpha is a
+
+35:18.000 --> 35:20.000
+negative channel,
+
+35:20.000 --> 35:22.000
+negative 0.28.
+
+35:22.000 --> 35:24.000
+When
+
+35:24.000 --> 35:26.000
+alertness decreases,
+
+35:26.000 --> 35:28.000
+the channel
+
+35:28.000 --> 35:30.000
+will decrease.
+
+35:30.000 --> 35:32.000
+This part
+
+35:32.000 --> 35:34.000
+has a variability.
+
+35:34.000 --> 35:36.000
+Everyone
+
+35:36.000 --> 35:38.000
+does it every time.
+
+35:38.000 --> 35:40.000
+The relative situation
+
+35:40.000 --> 35:42.000
+will be different.
+
+35:42.000 --> 35:44.000
+Here I use
+
+35:44.000 --> 35:46.000
+a distribution map
+
+35:46.000 --> 35:48.000
+with relative
+
+35:48.000 --> 35:50.000
+details to see
+
+35:50.000 --> 35:52.000
+the relationship
+
+35:52.000 --> 35:54.000
+between the brain wave
+
+35:54.000 --> 35:56.000
+and the alertness.
+
+35:56.000 --> 35:58.000
+The red is the positive channel,
+
+35:58.000 --> 36:00.000
+the blue is the negative channel.
+
+36:00.000 --> 36:02.000
+Most of the delta
+
+36:02.000 --> 36:04.000
+is positive,
+
+36:04.000 --> 36:06.000
+and the beta
+
+36:06.000 --> 36:08.000
+is negative.
+
+36:08.000 --> 36:10.000
+This graph
+
+36:10.000 --> 36:12.000
+shows the results
+
+36:12.000 --> 36:14.000
+of the brain wave and alertness
+
+36:14.000 --> 36:16.000
+in this experiment.
+
+36:16.000 --> 36:18.000
+This graph
+
+36:18.000 --> 36:20.000
+will change
+
+36:20.000 --> 36:22.000
+with time.
+
+36:22.000 --> 36:24.000
+This part is to be discussed first.
+
+36:26.000 --> 36:28.000
+If you take the brain wave
+
+36:28.000 --> 36:30.000
+to make a frequency map,
+
+36:30.000 --> 36:32.000
+does it have 4 peaks
+
+36:32.000 --> 36:34.000
+in this alpha,
+
+36:34.000 --> 36:36.000
+beta,
+
+36:36.000 --> 36:38.000
+theta,
+
+36:38.000 --> 36:40.000
+and delta?
+
+36:40.000 --> 36:42.000
+Or is it a smooth
+
+36:42.000 --> 36:44.000
+continuous frequency map?
+
+36:44.000 --> 36:46.000
+If you
+
+36:46.000 --> 36:48.000
+look at the frequency,
+
+36:48.000 --> 36:50.000
+it will have
+
+36:50.000 --> 36:52.000
+1 over f
+
+36:52.000 --> 36:54.000
+distribution.
+
+36:54.000 --> 36:56.000
+1 over f
+
+36:56.000 --> 36:58.000
+looks like a
+
+36:58.000 --> 37:00.000
+decline
+
+37:00.000 --> 37:02.000
+curve.
+
+37:02.000 --> 37:04.000
+The brain wave
+
+37:04.000 --> 37:06.000
+has a higher
+
+37:06.000 --> 37:08.000
+low frequency energy
+
+37:08.000 --> 37:10.000
+and a lower high frequency energy.
+
+37:10.000 --> 37:12.000
+So cutting the alpha, beta,
+
+37:12.000 --> 37:14.000
+theta, delta band
+
+37:14.000 --> 37:16.000
+is basically just
+
+37:16.000 --> 37:18.000
+cutting a continuous frequency map
+
+37:18.000 --> 37:20.000
+into 4 pieces.
+
+37:20.000 --> 37:22.000
+Yes, but sometimes
+
+37:22.000 --> 37:24.000
+there will be some peaks.
+
+37:24.000 --> 37:26.000
+Although it is 1 over f,
+
+37:26.000 --> 37:28.000
+the overall distribution is 1 over f.
+
+37:28.000 --> 37:30.000
+We call it
+
+37:30.000 --> 37:32.000
+pain noise,
+
+37:32.000 --> 37:34.000
+one of the noise.
+
+37:36.000 --> 37:38.000
+But sometimes
+
+37:38.000 --> 37:40.000
+the overall distribution
+
+37:40.000 --> 37:42.000
+will have some small peaks.
+
+37:42.000 --> 37:44.000
+Because sometimes the brain
+
+37:44.000 --> 37:46.000
+can have a strong alertness
+
+37:46.000 --> 37:48.000
+such as alpha.
+
+37:48.000 --> 37:50.000
+Alpha is when you close your eyes
+
+37:50.000 --> 37:52.000
+and especially
+
+37:52.000 --> 37:54.000
+the back part
+
+37:54.000 --> 37:56.000
+will start to vibrate
+
+37:56.000 --> 37:58.000
+about 10 Hz.
+
+37:58.000 --> 38:00.000
+At that time,
+
+38:00.000 --> 38:02.000
+there is a small peak
+
+38:02.000 --> 38:04.000
+on the curve of
+
+38:04.000 --> 38:06.000
+1 over f.
+
+38:06.000 --> 38:08.000
+It looks a bit like this.
+
+38:10.000 --> 38:12.000
+What I'm thinking is
+
+38:12.000 --> 38:14.000
+if your energy spectrum
+
+38:14.000 --> 38:16.000
+does not have a peak,
+
+38:16.000 --> 38:18.000
+if you cut it into 4 pieces
+
+38:18.000 --> 38:20.000
+and then divide it into
+
+38:20.000 --> 38:22.000
+these 4 groups of data
+
+38:22.000 --> 38:24.000
+to do machine learning,
+
+38:24.000 --> 38:26.000
+I don't think it will enhance
+
+38:26.000 --> 38:28.000
+the effect of machine learning.
+
+38:28.000 --> 38:30.000
+Because it may be
+
+38:30.000 --> 38:32.000
+on the edge of the band
+
+38:32.000 --> 38:34.000
+that you cut.
+
+38:34.000 --> 38:36.000
+But if you have a peak
+
+38:36.000 --> 38:38.000
+in alpha today,
+
+38:38.000 --> 38:40.000
+you separate alpha
+
+38:40.000 --> 38:42.000
+and other
+
+38:42.000 --> 38:44.000
+data to do
+
+38:44.000 --> 38:46.000
+machine learning training,
+
+38:46.000 --> 38:48.000
+I think it will have a more obvious effect.
+
+38:48.000 --> 38:50.000
+That's why I asked this question.
+
+38:52.000 --> 38:54.000
+I understand what you mean.
+
+38:54.000 --> 38:56.000
+So if you use
+
+38:56.000 --> 38:58.000
+some really meaningful band
+
+38:58.000 --> 39:00.000
+to do
+
+39:00.000 --> 39:02.000
+machine learning,
+
+39:02.000 --> 39:04.000
+the effect will be
+
+39:04.000 --> 39:06.000
+better.
+
+39:06.000 --> 39:08.000
+Yes, I agree with you.
+
+39:08.000 --> 39:10.000
+You must put a lot of
+
+39:10.000 --> 39:12.000
+impurities into it.
+
+39:12.000 --> 39:14.000
+But because
+
+39:14.000 --> 39:16.000
+the problem I'm going to solve later is
+
+39:18.000 --> 39:20.000
+how do I say it?
+
+39:20.000 --> 39:22.000
+I can't give up on each one.
+
+39:22.000 --> 39:24.000
+Because each one has
+
+39:24.000 --> 39:26.000
+mutational problems,
+
+39:26.000 --> 39:28.000
+so each one sometimes
+
+39:28.000 --> 39:30.000
+becomes the best feature
+
+39:30.000 --> 39:32.000
+that appears on top.
+
+39:32.000 --> 39:34.000
+So
+
+39:34.000 --> 39:36.000
+there's no way
+
+39:36.000 --> 39:38.000
+to narrow it down
+
+39:38.000 --> 39:40.000
+to a better feature.
+
+39:40.000 --> 39:42.000
+I have to
+
+39:42.000 --> 39:44.000
+use so many features.
+
+39:44.000 --> 39:46.000
+That's the situation.
+
+39:48.000 --> 39:50.000
+OK, thank you.
+
+39:54.000 --> 39:56.000
+OK.
+
+39:56.000 --> 39:58.000
+I'm going to talk about
+
+39:58.000 --> 40:00.000
+machine learning.
+
+40:00.000 --> 40:02.000
+It's a regression problem.
+
+40:02.000 --> 40:04.000
+Because I want to
+
+40:04.000 --> 40:06.000
+predict
+
+40:06.000 --> 40:08.000
+the change of
+
+40:08.000 --> 40:10.000
+the alertness
+
+40:10.000 --> 40:12.000
+index.
+
+40:12.000 --> 40:14.000
+It's a continuous value.
+
+40:14.000 --> 40:16.000
+The output of the model
+
+40:16.000 --> 40:18.000
+must be a continuous value.
+
+40:18.000 --> 40:20.000
+It must be close to this value.
+
+40:20.000 --> 40:22.000
+I just did some
+
+40:22.000 --> 40:24.000
+processing.
+
+40:24.000 --> 40:26.000
+It's the same here.
+
+40:26.000 --> 40:28.000
+Then I put the energy of the brain wave
+
+40:28.000 --> 40:30.000
+and the reaction time
+
+40:30.000 --> 40:32.000
+recorded by our experiment
+
+40:32.000 --> 40:34.000
+in the
+
+40:34.000 --> 40:36.000
+processed alertness
+
+40:36.000 --> 40:38.000
+index into the model.
+
+40:38.000 --> 40:40.000
+Then I train it.
+
+40:40.000 --> 40:42.000
+Then I get a
+
+40:42.000 --> 40:44.000
+regression model.
+
+40:44.000 --> 40:46.000
+It can turn the brain wave
+
+40:46.000 --> 40:48.000
+into the alertness index we estimated.
+
+40:50.000 --> 40:52.000
+But there's a problem.
+
+40:52.000 --> 40:54.000
+I've been talking about it.
+
+40:54.000 --> 40:56.000
+Human variability.
+
+40:56.000 --> 40:58.000
+We will
+
+40:58.000 --> 41:00.000
+divide it into
+
+41:00.000 --> 41:02.000
+inter-subject or intra-subject.
+
+41:02.000 --> 41:04.000
+Inter-subject and subject
+
+41:04.000 --> 41:06.000
+have some variability.
+
+41:06.000 --> 41:08.000
+I want to invite you
+
+41:08.000 --> 41:10.000
+to do an activity.
+
+41:10.000 --> 41:12.000
+The dancer you see now
+
+41:12.000 --> 41:14.000
+is teleporting.
+
+41:16.000 --> 41:18.000
+Just make a sound.
+
+41:20.000 --> 41:22.000
+I can see both sides.
+
+41:22.000 --> 41:24.000
+So you can see this
+
+41:24.000 --> 41:26.000
+and that.
+
+41:26.000 --> 41:28.000
+I can see what I want to see.
+
+41:28.000 --> 41:30.000
+I've seen this picture so many times in my life.
+
+41:30.000 --> 41:32.000
+But I can only see one side.
+
+41:34.000 --> 41:36.000
+I don't know why.
+
+41:36.000 --> 41:38.000
+I really want to see the other side.
+
+41:40.000 --> 41:42.000
+Some people see the retrograde
+
+41:42.000 --> 41:44.000
+and some people see the subject.
+
+41:44.000 --> 41:46.000
+Some people want to see
+
+41:46.000 --> 41:48.000
+what they want to see.
+
+41:48.000 --> 41:50.000
+I also
+
+41:52.000 --> 41:54.000
+want to see the other side.
+
+41:54.000 --> 41:56.000
+Then I go to see it.
+
+41:56.000 --> 41:58.000
+It will follow my
+
+41:58.000 --> 42:00.000
+direction.
+
+42:00.000 --> 42:02.000
+This part is
+
+42:02.000 --> 42:04.000
+the same stimulus to
+
+42:04.000 --> 42:06.000
+different people.
+
+42:06.000 --> 42:08.000
+Our brain
+
+42:08.000 --> 42:10.000
+will react differently.
+
+42:10.000 --> 42:12.000
+This is just an example.
+
+42:12.000 --> 42:14.000
+It tells you that
+
+42:14.000 --> 42:16.000
+everyone's brain is different.
+
+42:16.000 --> 42:18.000
+Our brain
+
+42:18.000 --> 42:20.000
+will react differently
+
+42:20.000 --> 42:22.000
+to the same stimulus
+
+42:22.000 --> 42:24.000
+at different times.
+
+42:24.000 --> 42:26.000
+The brain wave change
+
+42:26.000 --> 42:28.000
+related to the brain wave
+
+42:28.000 --> 42:30.000
+is actually the same.
+
+42:30.000 --> 42:32.000
+Different people are different.
+
+42:32.000 --> 42:34.000
+A person does the experiment
+
+42:34.000 --> 42:36.000
+on a different day.
+
+42:36.000 --> 42:38.000
+Here I put my data.
+
+42:38.000 --> 42:40.000
+I gave an example.
+
+42:40.000 --> 42:42.000
+I just said
+
+42:42.000 --> 42:44.000
+to use the distribution of correlation
+
+42:44.000 --> 42:46.000
+as a relationship
+
+42:46.000 --> 42:48.000
+between the brain wave and the alertness
+
+42:48.000 --> 42:50.000
+of a certain experiment.
+
+42:50.000 --> 42:52.000
+Here I have a S5-1,
+
+42:52.000 --> 42:54.000
+which is the fifth subject.
+
+42:54.000 --> 42:56.000
+Do the driving experiment.
+
+42:58.000 --> 43:00.000
+The correlation we get is like this.
+
+43:02.000 --> 43:04.000
+There are three reds here.
+
+43:04.000 --> 43:06.000
+From Theta to Alpha
+
+43:06.000 --> 43:08.000
+to Beta
+
+43:08.000 --> 43:10.000
+are all positive.
+
+43:10.000 --> 43:12.000
+But this is
+
+43:12.000 --> 43:14.000
+the second time he did it.
+
+43:14.000 --> 43:16.000
+The second time he did it.
+
+43:16.000 --> 43:18.000
+We see that it's completely different.
+
+43:18.000 --> 43:20.000
+Delta is positive.
+
+43:20.000 --> 43:22.000
+The other three are negative.
+
+43:22.000 --> 43:24.000
+Even Alpha is negative.
+
+43:24.000 --> 43:26.000
+If we use his first experiment
+
+43:26.000 --> 43:28.000
+to train our model,
+
+43:28.000 --> 43:30.000
+we will find that
+
+43:30.000 --> 43:32.000
+the effect will be very poor
+
+43:32.000 --> 43:34.000
+the second time.
+
+43:36.000 --> 43:38.000
+But we did a lot of experiments.
+
+43:38.000 --> 43:40.000
+We recorded a lot of people.
+
+43:40.000 --> 43:42.000
+For example, the 41st subject
+
+43:42.000 --> 43:44.000
+when he did it for the fifth time,
+
+43:44.000 --> 43:46.000
+he had this pattern.
+
+43:46.000 --> 43:48.000
+It's very similar to subject 5.
+
+43:48.000 --> 43:50.000
+So different people
+
+43:50.000 --> 43:52.000
+have similar reactions
+
+43:52.000 --> 43:54.000
+on the brain wave we want to look at.
+
+43:54.000 --> 43:56.000
+If so,
+
+43:56.000 --> 43:58.000
+I can take the data
+
+43:58.000 --> 44:00.000
+of subject 41
+
+44:00.000 --> 44:02.000
+for the fifth time
+
+44:02.000 --> 44:04.000
+to train a model.
+
+44:04.000 --> 44:06.000
+If we use it for the second time
+
+44:06.000 --> 44:08.000
+of subject 5,
+
+44:08.000 --> 44:10.000
+the effect will be very good.
+
+44:10.000 --> 44:12.000
+Of course, this is what we can do
+
+44:12.000 --> 44:14.000
+after the test.
+
+44:14.000 --> 44:16.000
+This session is very similar to this session.
+
+44:16.000 --> 44:18.000
+But we can't
+
+44:18.000 --> 44:20.000
+When subject 5
+
+44:20.000 --> 44:22.000
+comes, we have a way
+
+44:22.000 --> 44:24.000
+to know that we want to use
+
+44:24.000 --> 44:26.000
+the model of subject 41 to give it.
+
+44:26.000 --> 44:28.000
+That is a
+
+44:28.000 --> 44:30.000
+engineering challenge
+
+44:30.000 --> 44:32.000
+or a scientific challenge.
+
+44:32.000 --> 44:34.000
+How do we do this?
+
+44:34.000 --> 44:36.000
+I want to ask a question.
+
+44:36.000 --> 44:38.000
+Sorry.
+
+44:38.000 --> 44:40.000
+I want to ask a question.
+
+44:40.000 --> 44:42.000
+The time they do the experiment
+
+44:42.000 --> 44:44.000
+is probably fixed.
+
+44:44.000 --> 44:46.000
+Like you said, after lunch.
+
+44:46.000 --> 44:48.000
+The time
+
+44:48.000 --> 44:50.000
+is probably fixed.
+
+44:50.000 --> 44:52.000
+Yes.
+
+44:52.000 --> 44:54.000
+This looks
+
+44:54.000 --> 44:56.000
+a bit like
+
+44:56.000 --> 44:58.000
+the problem I just mentioned.
+
+44:58.000 --> 45:00.000
+There may be different factors.
+
+45:00.000 --> 45:02.000
+The brain activity
+
+45:02.000 --> 45:04.000
+between different sessions
+
+45:04.000 --> 45:06.000
+may be different.
+
+45:06.000 --> 45:08.000
+Yes.
+
+45:08.000 --> 45:10.000
+For example,
+
+45:10.000 --> 45:12.000
+if you want to measure drowsiness,
+
+45:12.000 --> 45:14.000
+your second session of subject 5
+
+45:14.000 --> 45:16.000
+is similar.
+
+45:16.000 --> 45:18.000
+Yes.
+
+45:18.000 --> 45:20.000
+In other words,
+
+45:20.000 --> 45:22.000
+if you can have another task
+
+45:22.000 --> 45:24.000
+or a subjective report
+
+45:24.000 --> 45:26.000
+to verify
+
+45:26.000 --> 45:28.000
+what happened in each session,
+
+45:28.000 --> 45:30.000
+you may be able to
+
+45:30.000 --> 45:32.000
+go back and say that
+
+45:32.000 --> 45:34.000
+this brain wave is more like
+
+45:34.000 --> 45:36.000
+A or B or C.
+
+45:36.000 --> 45:38.000
+Yes, this is what I want to do.
+
+45:38.000 --> 45:40.000
+Is there anything else
+
+45:40.000 --> 45:42.000
+we can measure
+
+45:42.000 --> 45:44.000
+faster?
+
+45:44.000 --> 45:46.000
+Then we can know
+
+45:46.000 --> 45:48.000
+that this should be
+
+45:48.000 --> 45:50.000
+similar to the previous session.
+
+45:50.000 --> 45:52.000
+Then we can use it.
+
+45:52.000 --> 45:54.000
+Next,
+
+45:54.000 --> 45:56.000
+I will develop this.
+
+45:56.000 --> 45:58.000
+OK.
+
+45:58.000 --> 46:00.000
+The actual operation may be more complicated than this.
+
+46:00.000 --> 46:02.000
+In other words,
+
+46:02.000 --> 46:04.000
+my brain activity of drowsiness
+
+46:04.000 --> 46:06.000
+is similar to
+
+46:06.000 --> 46:08.000
+your brain activity of mind wandering.
+
+46:08.000 --> 46:10.000
+There is a relationship between
+
+46:10.000 --> 46:12.000
+brain state and brain state.
+
+46:12.000 --> 46:14.000
+It may be like this.
+
+46:14.000 --> 46:16.000
+Everyone may have a different brain state.
+
+46:16.000 --> 46:18.000
+Of course,
+
+46:18.000 --> 46:20.000
+I have a brain state
+
+46:20.000 --> 46:22.000
+corresponding to
+
+46:22.000 --> 46:24.000
+the brain activity of mind.
+
+46:24.000 --> 46:26.000
+But it doesn't mean
+
+46:26.000 --> 46:28.000
+that everyone's brain state
+
+46:28.000 --> 46:30.000
+is similar.
+
+46:30.000 --> 46:32.000
+I don't know.
+
+46:32.000 --> 46:34.000
+That may be the actual difficulty.
+
+46:34.000 --> 46:36.000
+It feels like it can be done.
+
+46:36.000 --> 46:38.000
+Of course,
+
+46:38.000 --> 46:40.000
+it's good.
+
+46:40.000 --> 46:42.000
+But we can't
+
+46:42.000 --> 46:44.000
+analyze other factors
+
+46:44.000 --> 46:46.000
+in this experiment.
+
+46:46.000 --> 46:48.000
+It's a pity.
+
+46:50.000 --> 46:52.000
+Next,
+
+46:52.000 --> 46:54.000
+I will deal with
+
+46:54.000 --> 46:56.000
+the relationship
+
+46:56.000 --> 46:58.000
+in a data-driven way.
+
+46:58.000 --> 47:00.000
+OK. Thank you.
+
+47:00.000 --> 47:02.000
+I have a question.
+
+47:02.000 --> 47:04.000
+This page.
+
+47:04.000 --> 47:06.000
+I want to ask
+
+47:06.000 --> 47:08.000
+about the black dots
+
+47:08.000 --> 47:10.000
+on the image.
+
+47:10.000 --> 47:12.000
+The black dots are the
+
+47:12.000 --> 47:14.000
+corresponding probes
+
+47:14.000 --> 47:16.000
+of the hat.
+
+47:16.000 --> 47:18.000
+But the hat is actually
+
+47:18.000 --> 47:20.000
+a spatial distribution of the sphere.
+
+47:20.000 --> 47:22.000
+It's not a flat 2D circle.
+
+47:22.000 --> 47:24.000
+Yes.
+
+47:24.000 --> 47:26.000
+How did you
+
+47:26.000 --> 47:28.000
+project the image
+
+47:28.000 --> 47:30.000
+from the spatial distribution of the sphere
+
+47:30.000 --> 47:32.000
+to the image you drew now?
+
+47:32.000 --> 47:34.000
+Or is it just a visual image?
+
+47:34.000 --> 47:36.000
+Do you preserve
+
+47:36.000 --> 47:38.000
+the distance between each dot?
+
+47:38.000 --> 47:40.000
+Is it a specific
+
+47:40.000 --> 47:42.000
+projection like a map?
+
+47:42.000 --> 47:44.000
+Or do you arrange it one by one?
+
+47:44.000 --> 47:46.000
+This value
+
+47:46.000 --> 47:48.000
+is only used in visualization.
+
+47:48.000 --> 47:50.000
+So if the relationship is distorted,
+
+47:50.000 --> 47:52.000
+it won't affect much.
+
+47:52.000 --> 47:54.000
+Because I...
+
+47:54.000 --> 47:56.000
+You only take
+
+47:56.000 --> 47:58.000
+exactly the position above.
+
+47:58.000 --> 48:00.000
+OK.
+
+48:00.000 --> 48:02.000
+Like this is 30 channels.
+
+48:02.000 --> 48:04.000
+So I only have those 30
+
+48:04.000 --> 48:06.000
+channels of data.
+
+48:06.000 --> 48:08.000
+And what happens in the middle?
+
+48:08.000 --> 48:10.000
+That's all visualizations.
+
+48:10.000 --> 48:12.000
+They are inserted
+
+48:12.000 --> 48:14.000
+and projected.
+
+48:14.000 --> 48:16.000
+I want to tell you about this.
+
+48:16.000 --> 48:18.000
+What I was thinking is
+
+48:18.000 --> 48:20.000
+if you process the data like this
+
+48:20.000 --> 48:22.000
+and then throw it away,
+
+48:22.000 --> 48:24.000
+it sounds like you will re-weight
+
+48:24.000 --> 48:26.000
+the effect of each data.
+
+48:26.000 --> 48:28.000
+And it may smear
+
+48:28.000 --> 48:30.000
+what's physically happening in your brain.
+
+48:30.000 --> 48:32.000
+I don't know what you mean.
+
+48:32.000 --> 48:34.000
+OK.
+
+48:34.000 --> 48:36.000
+This is purely visualization.
+
+48:36.000 --> 48:38.000
+OK. Thank you.
+
+48:38.000 --> 48:40.000
+Like you said, some people
+
+48:40.000 --> 48:42.000
+use mapping as data.
+
+48:42.000 --> 48:44.000
+And I don't like it.
+
+48:44.000 --> 48:46.000
+Because it's like a problem.
+
+48:50.000 --> 48:52.000
+So we just talked about
+
+48:52.000 --> 48:54.000
+how to find
+
+48:54.000 --> 48:56.000
+a model that is similar to
+
+48:56.000 --> 48:58.000
+the new people in the database.
+
+48:58.000 --> 49:00.000
+What's the advantage of this?
+
+49:00.000 --> 49:02.000
+We call it Subject Transfer.
+
+49:02.000 --> 49:04.000
+It transfers the model
+
+49:04.000 --> 49:06.000
+from one person to another.
+
+49:06.000 --> 49:08.000
+The advantage is that
+
+49:08.000 --> 49:10.000
+we used to say
+
+49:10.000 --> 49:12.000
+we try to collect
+
+49:12.000 --> 49:14.000
+each person's data,
+
+49:14.000 --> 49:16.000
+brainwaves and behaviors.
+
+49:16.000 --> 49:18.000
+We try to collect more data
+
+49:18.000 --> 49:20.000
+to build a model.
+
+49:20.000 --> 49:22.000
+We believe that it will have a good performance
+
+49:22.000 --> 49:24.000
+for the same person.
+
+49:24.000 --> 49:26.000
+We call it Self-Decoding.
+
+49:26.000 --> 49:28.000
+Because of some variability,
+
+49:28.000 --> 49:30.000
+it often fails.
+
+49:32.000 --> 49:34.000
+So we want to use
+
+49:34.000 --> 49:36.000
+Subject Transfer.
+
+49:36.000 --> 49:38.000
+We use a small amount of data
+
+49:38.000 --> 49:40.000
+as an indicator,
+
+49:40.000 --> 49:42.000
+as a brain signature.
+
+49:42.000 --> 49:44.000
+Then we can
+
+49:44.000 --> 49:46.000
+find a suitable model
+
+49:46.000 --> 49:48.000
+from our database
+
+49:48.000 --> 49:50.000
+and use it.
+
+49:50.000 --> 49:52.000
+Then we can start
+
+49:52.000 --> 49:54.000
+to detect
+
+49:54.000 --> 49:56.000
+its alertness level.
+
+49:58.000 --> 50:00.000
+What should we use
+
+50:00.000 --> 50:02.000
+for this
+
+50:02.000 --> 50:04.000
+relatively small amount of data?
+
+50:04.000 --> 50:06.000
+What I'm talking about
+
+50:06.000 --> 50:08.000
+is
+
+50:08.000 --> 50:10.000
+Baseline Activity.
+
+50:10.000 --> 50:12.000
+Baseline Activity
+
+50:12.000 --> 50:14.000
+is a standard state.
+
+50:18.000 --> 50:20.000
+Baseline Activity
+
+50:20.000 --> 50:22.000
+can also be called
+
+50:22.000 --> 50:24.000
+Task Activity
+
+50:24.000 --> 50:26.000
+or Task Free Activity.
+
+50:26.000 --> 50:28.000
+It means that
+
+50:28.000 --> 50:30.000
+this subject is not doing anything
+
+50:30.000 --> 50:32.000
+and it has nothing to do with your task.
+
+50:32.000 --> 50:34.000
+Then the brain activity at that time.
+
+50:34.000 --> 50:36.000
+In the past, there were many studies
+
+50:36.000 --> 50:38.000
+to see
+
+50:38.000 --> 50:40.000
+when the brain was not doing anything,
+
+50:40.000 --> 50:42.000
+the brain's
+
+50:42.000 --> 50:44.000
+existing activities
+
+50:44.000 --> 50:46.000
+and the specific activities
+
+50:46.000 --> 50:48.000
+after you really gave it a task.
+
+50:48.000 --> 50:50.000
+Is there any connection?
+
+50:50.000 --> 50:52.000
+On the brain wave,
+
+50:52.000 --> 50:54.000
+we found that
+
+50:54.000 --> 50:56.000
+from RESTing data,
+
+50:56.000 --> 50:58.000
+you use ICA
+
+50:58.000 --> 51:00.000
+to look at
+
+51:00.000 --> 51:02.000
+some
+
+51:02.000 --> 51:04.000
+decomposed
+
+51:04.000 --> 51:06.000
+component activity.
+
+51:06.000 --> 51:08.000
+Then you can use that
+
+51:08.000 --> 51:10.000
+to help it in the action
+
+51:10.000 --> 51:12.000
+imagination of this specific task.
+
+51:14.000 --> 51:16.000
+You can find it
+
+51:16.000 --> 51:18.000
+from RESTing data
+
+51:18.000 --> 51:20.000
+to find out the pattern
+
+51:20.000 --> 51:22.000
+of its action imagination.
+
+51:24.000 --> 51:26.000
+When a person is not doing
+
+51:26.000 --> 51:28.000
+action imagination,
+
+51:28.000 --> 51:30.000
+his data can tell you
+
+51:30.000 --> 51:32.000
+what his pattern looks like
+
+51:32.000 --> 51:34.000
+when he is doing action imagination.
+
+51:36.000 --> 51:38.000
+In addition, there is RESTing data
+
+51:38.000 --> 51:40.000
+to predict
+
+51:40.000 --> 51:42.000
+the performance of the brain interface.
+
+51:42.000 --> 51:44.000
+Because not everyone
+
+51:44.000 --> 51:46.000
+can master
+
+51:46.000 --> 51:48.000
+how to use the brain interface.
+
+51:48.000 --> 51:50.000
+RESTing data
+
+51:50.000 --> 51:52.000
+can tell you
+
+51:52.000 --> 51:54.000
+if this person is suitable for using the brain interface.
+
+51:54.000 --> 51:56.000
+Another study
+
+51:56.000 --> 51:58.000
+is from RESTing.
+
+51:58.000 --> 52:00.000
+This is MRI data,
+
+52:00.000 --> 52:02.000
+fMRI data.
+
+52:02.000 --> 52:04.000
+It predicts
+
+52:04.000 --> 52:06.000
+from RESTing fMRI
+
+52:06.000 --> 52:08.000
+that under a specific
+
+52:08.000 --> 52:10.000
+cognitive task,
+
+52:10.000 --> 52:12.000
+the activation mapping is like this.
+
+52:12.000 --> 52:14.000
+There is a lot of evidence
+
+52:14.000 --> 52:16.000
+that your RESTing
+
+52:16.000 --> 52:18.000
+data and your
+
+52:18.000 --> 52:20.000
+task data
+
+52:20.000 --> 52:22.000
+are related.
+
+52:22.000 --> 52:24.000
+Back to
+
+52:24.000 --> 52:26.000
+how we choose the right model,
+
+52:26.000 --> 52:28.000
+I thought
+
+52:28.000 --> 52:30.000
+if we use a small piece of RESTing data,
+
+52:30.000 --> 52:32.000
+we can find the right model
+
+52:32.000 --> 52:34.000
+for the new person.
+
+52:34.000 --> 52:36.000
+Here I think
+
+52:36.000 --> 52:38.000
+I have a lot of models
+
+52:38.000 --> 52:40.000
+from the past
+
+52:40.000 --> 52:42.000
+experiments.
+
+52:42.000 --> 52:44.000
+I have built a lot of models.
+
+52:44.000 --> 52:46.000
+The new person
+
+52:46.000 --> 52:48.000
+is called Target Subject.
+
+52:48.000 --> 52:50.000
+Then we record a baseline.
+
+52:50.000 --> 52:52.000
+This is recorded
+
+52:52.000 --> 52:54.000
+in the alert situation.
+
+52:54.000 --> 52:56.000
+That is to say,
+
+52:56.000 --> 52:58.000
+this person
+
+52:58.000 --> 53:00.000
+in our
+
+53:00.000 --> 53:02.000
+simulation driving
+
+53:02.000 --> 53:04.000
+simulation car
+
+53:04.000 --> 53:06.000
+is not moving,
+
+53:06.000 --> 53:08.000
+he is not turning the steering wheel,
+
+53:08.000 --> 53:10.000
+he is not doing anything,
+
+53:10.000 --> 53:12.000
+the car is moving forward,
+
+53:12.000 --> 53:14.000
+he doesn't have to do anything,
+
+53:14.000 --> 53:16.000
+the data during that time,
+
+53:16.000 --> 53:18.000
+we treat it as a brain signature.
+
+53:18.000 --> 53:20.000
+We use this to estimate
+
+53:20.000 --> 53:22.000
+who is more like
+
+53:22.000 --> 53:24.000
+the new person
+
+53:24.000 --> 53:26.000
+and the model in the original database.
+
+53:26.000 --> 53:28.000
+We do a sequence
+
+53:28.000 --> 53:30.000
+for this model,
+
+53:30.000 --> 53:32.000
+and then do a fusion,
+
+53:32.000 --> 53:34.000
+which is to combine those models
+
+53:34.000 --> 53:36.000
+and outputs together.
+
+53:36.000 --> 53:38.000
+Finally, we do a recalibration,
+
+53:38.000 --> 53:40.000
+because sometimes
+
+53:40.000 --> 53:42.000
+there are some offsets.
+
+53:42.000 --> 53:44.000
+Finally,
+
+53:44.000 --> 53:46.000
+we can give this subject
+
+53:46.000 --> 53:48.000
+to estimate his alertness.
+
+53:50.000 --> 53:52.000
+Any questions?
+
+53:52.000 --> 53:54.000
+Can you explain
+
+53:54.000 --> 53:56.000
+the pairing process again?
+
+53:56.000 --> 53:58.000
+OK.
+
+53:58.000 --> 54:00.000
+How do you find
+
+54:00.000 --> 54:02.000
+a person
+
+54:02.000 --> 54:04.000
+to pair with
+
+54:04.000 --> 54:06.000
+a car make a session?
+
+54:06.000 --> 54:08.000
+OK.
+
+54:08.000 --> 54:10.000
+I have
+
+54:10.000 --> 54:12.000
+a backup slide here.
+
+54:16.000 --> 54:18.000
+For the new person,
+
+54:18.000 --> 54:20.000
+I will have his baseline data.
+
+54:20.000 --> 54:22.000
+It is
+
+54:22.000 --> 54:24.000
+his energy in different
+
+54:24.000 --> 54:26.000
+bands and in different locations.
+
+54:26.000 --> 54:28.000
+We use this to compare
+
+54:28.000 --> 54:30.000
+the data of all other people
+
+54:30.000 --> 54:32.000
+in my database.
+
+54:32.000 --> 54:34.000
+Then I estimate his similarity.
+
+54:36.000 --> 54:38.000
+I use this similarity
+
+54:38.000 --> 54:40.000
+to assume that
+
+54:40.000 --> 54:42.000
+if he is
+
+54:42.000 --> 54:44.000
+in the baseline state,
+
+54:44.000 --> 54:46.000
+the pattern of these two people is similar,
+
+54:46.000 --> 54:48.000
+then I believe
+
+54:48.000 --> 54:50.000
+their EEG alertness
+
+54:50.000 --> 54:52.000
+model will be very similar.
+
+54:52.000 --> 54:54.000
+That's how I do it.
+
+54:54.000 --> 54:56.000
+OK.
+
+54:56.000 --> 54:58.000
+In other words,
+
+54:58.000 --> 55:00.000
+you just showed us
+
+55:00.000 --> 55:02.000
+a session.
+
+55:02.000 --> 55:04.000
+According to this model,
+
+55:04.000 --> 55:06.000
+their default baseline
+
+55:06.000 --> 55:08.000
+activity should be very similar.
+
+55:08.000 --> 55:10.000
+Yes.
+
+55:10.000 --> 55:12.000
+OK.
+
+55:12.000 --> 55:14.000
+Thank you.
+
+55:14.000 --> 55:16.000
+I have a post-trial analysis here.
+
+55:16.000 --> 55:18.000
+In other words,
+
+55:18.000 --> 55:20.000
+we use baseline activity
+
+55:20.000 --> 55:22.000
+to predict the similarity.
+
+55:22.000 --> 55:24.000
+Is it really their similarity?
+
+55:24.000 --> 55:26.000
+The real similarity here
+
+55:26.000 --> 55:28.000
+is that I put
+
+55:28.000 --> 55:30.000
+a model of a person
+
+55:30.000 --> 55:32.000
+and a session
+
+55:32.000 --> 55:34.000
+to use the data of another person.
+
+55:34.000 --> 55:36.000
+Then look at their
+
+55:36.000 --> 55:38.000
+performance afterwards.
+
+55:38.000 --> 55:40.000
+There is a real similarity
+
+55:40.000 --> 55:42.000
+offline.
+
+55:42.000 --> 55:44.000
+I also use baseline activity
+
+55:44.000 --> 55:46.000
+to estimate their
+
+55:46.000 --> 55:48.000
+subject-subject similarity.
+
+55:48.000 --> 55:50.000
+Then I predict
+
+55:50.000 --> 55:52.000
+the performance
+
+55:52.000 --> 55:54.000
+I can get.
+
+55:54.000 --> 55:56.000
+I found that these two things
+
+55:56.000 --> 55:58.000
+are quite similar.
+
+55:58.000 --> 56:00.000
+You can see a correspondence here.
+
+56:00.000 --> 56:02.000
+It's actually the same as what I predicted.
+
+56:02.000 --> 56:04.000
+There is an accuracy here.
+
+56:04.000 --> 56:06.000
+If I use this,
+
+56:06.000 --> 56:08.000
+I can do what I just did.
+
+56:08.000 --> 56:10.000
+It means that at least
+
+56:10.000 --> 56:12.000
+part of my assumption is correct.
+
+56:14.000 --> 56:16.000
+Because of this,
+
+56:16.000 --> 56:18.000
+we can look at
+
+56:18.000 --> 56:20.000
+our prediction
+
+56:20.000 --> 56:22.000
+results.
+
+56:22.000 --> 56:24.000
+The black line here
+
+56:24.000 --> 56:26.000
+is the change of time
+
+56:26.000 --> 56:28.000
+in the entire experiment.
+
+56:28.000 --> 56:30.000
+It's a black line.
+
+56:30.000 --> 56:32.000
+The result we predict
+
+56:32.000 --> 56:34.000
+is to get close to this black line.
+
+56:34.000 --> 56:36.000
+We can see that
+
+56:36.000 --> 56:38.000
+the relevant details of different
+
+56:38.000 --> 56:40.000
+curves can express
+
+56:40.000 --> 56:42.000
+how accurate we predicted.
+
+56:42.000 --> 56:44.000
+The blue part here
+
+56:44.000 --> 56:46.000
+is the traditional way.
+
+56:46.000 --> 56:48.000
+Each subject uses
+
+56:48.000 --> 56:50.000
+the data he has recorded
+
+56:50.000 --> 56:52.000
+to train a model
+
+56:52.000 --> 56:54.000
+to look at his prediction results.
+
+56:54.000 --> 56:56.000
+The red line is
+
+56:56.000 --> 56:58.000
+the method I just mentioned.
+
+56:58.000 --> 57:00.000
+We look at a small section
+
+57:00.000 --> 57:02.000
+of baseline activity.
+
+57:02.000 --> 57:04.000
+We use other people's models
+
+57:04.000 --> 57:06.000
+to predict his alertness.
+
+57:06.000 --> 57:08.000
+You can see that
+
+57:08.000 --> 57:10.000
+on this example,
+
+57:10.000 --> 57:12.000
+red is better than black.
+
+57:12.000 --> 57:14.000
+This is their curve.
+
+57:14.000 --> 57:16.000
+They are related to
+
+57:16.000 --> 57:18.000
+the actual ground truth here.
+
+57:18.000 --> 57:20.000
+On this example,
+
+57:20.000 --> 57:22.000
+the method
+
+57:22.000 --> 57:24.000
+of subject transfer
+
+57:24.000 --> 57:26.000
+is slightly better.
+
+57:26.000 --> 57:28.000
+I have a small question.
+
+57:28.000 --> 57:30.000
+This concept
+
+57:30.000 --> 57:32.000
+is like a donation, right?
+
+57:32.000 --> 57:34.000
+If you can
+
+57:34.000 --> 57:36.000
+find a group of people
+
+57:36.000 --> 57:38.000
+whose genotype
+
+57:38.000 --> 57:40.000
+or model
+
+57:40.000 --> 57:42.000
+is similar to yours,
+
+57:42.000 --> 57:44.000
+can you use this method
+
+57:44.000 --> 57:46.000
+to match
+
+57:46.000 --> 57:48.000
+their data?
+
+57:48.000 --> 57:50.000
+Yes.
+
+57:50.000 --> 57:52.000
+OK.
+
+57:52.000 --> 57:54.000
+In other words,
+
+57:54.000 --> 57:56.000
+you can only do
+
+57:56.000 --> 57:58.000
+a few hours.
+
+57:58.000 --> 58:00.000
+If you use this method,
+
+58:00.000 --> 58:02.000
+you can use
+
+58:02.000 --> 58:04.000
+an infinite amount of data.
+
+58:04.000 --> 58:06.000
+If you recruit a lot of people,
+
+58:06.000 --> 58:08.000
+a lot of people can match.
+
+58:08.000 --> 58:10.000
+The data pool will keep increasing.
+
+58:10.000 --> 58:12.000
+That's right.
+
+58:12.000 --> 58:14.000
+Thank you.
+
+58:14.000 --> 58:16.000
+I have a question.
+
+58:16.000 --> 58:18.000
+The picture in the front page
+
+58:18.000 --> 58:20.000
+is the actual.
+
+58:20.000 --> 58:22.000
+No, the next page.
+
+58:22.000 --> 58:24.000
+Yes, the next page.
+
+58:24.000 --> 58:26.000
+This is
+
+58:26.000 --> 58:28.000
+a different way
+
+58:28.000 --> 58:30.000
+to do it.
+
+58:30.000 --> 58:32.000
+Now you draw a line.
+
+58:32.000 --> 58:34.000
+But if
+
+58:34.000 --> 58:36.000
+you divide your data
+
+58:36.000 --> 58:38.000
+a little bit,
+
+58:38.000 --> 58:40.000
+it's a bit like
+
+58:40.000 --> 58:42.000
+repeating the same thing
+
+58:42.000 --> 58:44.000
+500 or 1000 times.
+
+58:44.000 --> 58:46.000
+Your prediction
+
+58:46.000 --> 58:48.000
+will be a little bit different every time.
+
+58:48.000 --> 58:50.000
+Then you can put your
+
+58:50.000 --> 58:52.000
+red line into a red band.
+
+58:52.000 --> 58:54.000
+Do you know what I mean?
+
+58:54.000 --> 58:56.000
+There is an error.
+
+58:56.000 --> 58:58.000
+Yes, the range of the band
+
+58:58.000 --> 59:00.000
+is basically
+
+59:00.000 --> 59:02.000
+the range of uncertainty
+
+59:02.000 --> 59:04.000
+of your model.
+
+59:04.000 --> 59:06.000
+OK.
+
+59:06.000 --> 59:08.000
+So every time you run,
+
+59:08.000 --> 59:10.000
+it will be a little different.
+
+59:10.000 --> 59:12.000
+Did you hear that?
+
+59:12.000 --> 59:14.000
+So every time you run,
+
+59:14.000 --> 59:16.000
+it will be a little different.
+
+59:16.000 --> 59:18.000
+Yes, so I'm curious.
+
+59:18.000 --> 59:20.000
+Except for the line you show now,
+
+59:20.000 --> 59:22.000
+the uncertainty
+
+59:22.000 --> 59:24.000
+behind each line
+
+59:24.000 --> 59:26.000
+may not be the same.
+
+59:26.000 --> 59:28.000
+For example,
+
+59:28.000 --> 59:30.000
+predictability is particularly good
+
+59:30.000 --> 59:32.000
+in this specific case.
+
+59:32.000 --> 59:34.000
+It may actually be fluctuate up.
+
+59:34.000 --> 59:36.000
+But the band is actually very wide.
+
+59:36.000 --> 59:38.000
+So it may not be particularly good.
+
+59:38.000 --> 59:40.000
+Oh.
+
+59:40.000 --> 59:42.000
+This is a good question.
+
+59:42.000 --> 59:44.000
+Because usually
+
+59:44.000 --> 59:46.000
+if you plot this prediction,
+
+59:46.000 --> 59:48.000
+you will plot 95% confidence interval.
+
+59:48.000 --> 59:50.000
+He is actually talking about this thing.
+
+59:50.000 --> 59:52.000
+You should plot this thing out.
+
+59:52.000 --> 59:54.000
+OK, got it.
+
+59:54.000 --> 59:56.000
+Yes.
+
+59:56.000 --> 59:58.000
+But I see that it's a lot.
+
+59:58.000 --> 01:00:00.000
+I probably feel that
+
+01:00:00.000 --> 01:00:02.000
+there should be nothing to argue about.
+
+01:00:02.000 --> 01:00:04.000
+It should be effective.
+
+01:00:04.000 --> 01:00:06.000
+But if it's very close,
+
+01:00:06.000 --> 01:00:08.000
+I'll be more curious.
+
+01:00:08.000 --> 01:00:10.000
+This is better than that.
+
+01:00:10.000 --> 01:00:12.000
+I might want to see the error bar.
+
+01:00:12.000 --> 01:00:14.000
+Oh, got it.
+
+01:00:14.000 --> 01:00:16.000
+Yes, this is good.
+
+01:00:16.000 --> 01:00:18.000
+I should be able to put that
+
+01:00:18.000 --> 01:00:20.000
+confidence interval
+
+01:00:20.000 --> 01:00:22.000
+in as well.
+
+01:00:22.000 --> 01:00:24.000
+Because I just want to compare
+
+01:00:24.000 --> 01:00:26.000
+their correlation.
+
+01:00:26.000 --> 01:00:28.000
+Then I just draw the line.
+
+01:00:28.000 --> 01:00:30.000
+So if I draw the curve,
+
+01:00:30.000 --> 01:00:32.000
+I can have a better
+
+01:00:32.000 --> 01:00:34.000
+that
+
+01:00:34.000 --> 01:00:36.000
+better than
+
+01:00:36.000 --> 01:00:38.000
+better
+
+01:00:38.000 --> 01:00:40.000
+measure to see
+
+01:00:40.000 --> 01:00:42.000
+their performance.
+
+01:00:42.000 --> 01:00:44.000
+Yes, that's what I think.
+
+01:00:44.000 --> 01:00:46.000
+Because I think if you have an error bar,
+
+01:00:46.000 --> 01:00:48.000
+you can clearly say this is better, this is worse.
+
+01:00:48.000 --> 01:00:50.000
+Yes, but
+
+01:00:50.000 --> 01:00:52.000
+if you just want to show features,
+
+01:00:52.000 --> 01:00:54.000
+it looks like they all work.
+
+01:00:54.000 --> 01:00:56.000
+And they all work pretty good.
+
+01:00:56.000 --> 01:00:58.000
+I think.
+
+01:00:58.000 --> 01:01:00.000
+OK, got it.
+
+01:01:00.000 --> 01:01:02.000
+Because the way I compare here
+
+01:01:02.000 --> 01:01:04.000
+is that every time
+
+01:01:04.000 --> 01:01:06.000
+I go to see the correlation
+
+01:01:06.000 --> 01:01:08.000
+of different methods.
+
+01:01:08.000 --> 01:01:10.000
+And for different people,
+
+01:01:10.000 --> 01:01:12.000
+I compare their correlation
+
+01:01:12.000 --> 01:01:14.000
+and then
+
+01:01:14.000 --> 01:01:16.000
+conclude which method
+
+01:01:16.000 --> 01:01:18.000
+is better.
+
+01:01:18.000 --> 01:01:20.000
+This is my current approach.
+
+01:01:20.000 --> 01:01:22.000
+It's simpler,
+
+01:01:22.000 --> 01:01:24.000
+but it might not be the best.
+
+01:01:28.000 --> 01:01:30.000
+Hello?
+
+01:01:30.000 --> 01:01:32.000
+Yes, if we have a better
+
+01:01:32.000 --> 01:01:34.000
+I'll ask you again.
+
+01:01:34.000 --> 01:01:36.000
+OK.
+
+01:01:36.000 --> 01:01:38.000
+We can discuss later.
+
+01:01:38.000 --> 01:01:40.000
+OK, thank you.
+
+01:01:40.000 --> 01:01:42.000
+OK, I'll continue.
+
+01:01:42.000 --> 01:01:44.000
+OK, so just now
+
+01:01:44.000 --> 01:01:46.000
+I used the correlation to see
+
+01:01:46.000 --> 01:01:48.000
+different methods
+
+01:01:48.000 --> 01:01:50.000
+and their overall performance.
+
+01:01:50.000 --> 01:01:52.000
+Here I just put all
+
+01:01:52.000 --> 01:01:54.000
+the subjects I tested
+
+01:01:54.000 --> 01:01:56.000
+together.
+
+01:01:56.000 --> 01:01:58.000
+Just now Shaoming mentioned
+
+01:01:58.000 --> 01:02:00.000
+that my data increase
+
+01:02:00.000 --> 01:02:02.000
+will be good.
+
+01:02:02.000 --> 01:02:04.000
+So I went to test
+
+01:02:04.000 --> 01:02:06.000
+if the size of my database
+
+01:02:06.000 --> 01:02:08.000
+just now
+
+01:02:08.000 --> 01:02:10.000
+is different.
+
+01:02:10.000 --> 01:02:12.000
+The way I did it
+
+01:02:12.000 --> 01:02:14.000
+is that I cut off
+
+01:02:14.000 --> 01:02:16.000
+some data
+
+01:02:16.000 --> 01:02:18.000
+from my database.
+
+01:02:18.000 --> 01:02:20.000
+Randomly cut off some data
+
+01:02:20.000 --> 01:02:22.000
+and use the subject as a unit.
+
+01:02:22.000 --> 01:02:24.000
+I'll see if my method performance
+
+01:02:24.000 --> 01:02:26.000
+will increase
+
+01:02:26.000 --> 01:02:28.000
+when the subject increases.
+
+01:02:28.000 --> 01:02:30.000
+Y-axis is the average
+
+01:02:30.000 --> 01:02:32.000
+correlation coefficient.
+
+01:02:32.000 --> 01:02:34.000
+Blue is the traditional method.
+
+01:02:34.000 --> 01:02:36.000
+Use your own data
+
+01:02:36.000 --> 01:02:38.000
+to train a model.
+
+01:02:38.000 --> 01:02:40.000
+Red is our
+
+01:02:40.000 --> 01:02:42.000
+method of subject transfer.
+
+01:02:42.000 --> 01:02:44.000
+Grey is the same
+
+01:02:44.000 --> 01:02:46.000
+subject transfer, but without
+
+01:02:46.000 --> 01:02:48.000
+our baseline activity
+
+01:02:48.000 --> 01:02:50.000
+to choose those models.
+
+01:02:50.000 --> 01:02:52.000
+You can see that
+
+01:02:52.000 --> 01:02:54.000
+our method
+
+01:02:54.000 --> 01:02:56.000
+will increase
+
+01:02:56.000 --> 01:02:58.000
+when the size increases.
+
+01:03:02.000 --> 01:03:04.000
+But if you don't use
+
+01:03:04.000 --> 01:03:06.000
+the baseline correction,
+
+01:03:06.000 --> 01:03:08.000
+it will be a little worse.
+
+01:03:08.000 --> 01:03:10.000
+A little worse.
+
+01:03:14.000 --> 01:03:16.000
+Then continue to talk about
+
+01:03:16.000 --> 01:03:18.000
+the next picture.
+
+01:03:18.000 --> 01:03:20.000
+I will compare
+
+01:03:20.000 --> 01:03:22.000
+if we do this,
+
+01:03:22.000 --> 01:03:24.000
+will the calibration time be reduced?
+
+01:03:24.000 --> 01:03:26.000
+Traditionally, you have to
+
+01:03:26.000 --> 01:03:28.000
+record your own data.
+
+01:03:28.000 --> 01:03:30.000
+If we want to record
+
+01:03:30.000 --> 01:03:32.000
+the alertness to become drowsy,
+
+01:03:32.000 --> 01:03:34.000
+it takes a long time.
+
+01:03:34.000 --> 01:03:36.000
+Traditionally, it takes a long time
+
+01:03:36.000 --> 01:03:38.000
+to get the data you need.
+
+01:03:38.000 --> 01:03:40.000
+This will cause
+
+01:03:40.000 --> 01:03:42.000
+a long calibration time.
+
+01:03:42.000 --> 01:03:44.000
+Our new method is to
+
+01:03:44.000 --> 01:03:46.000
+use baseline activity.
+
+01:03:46.000 --> 01:03:48.000
+It's easy to get baseline activity.
+
+01:03:48.000 --> 01:03:50.000
+Just don't move.
+
+01:03:50.000 --> 01:03:52.000
+Less than two minutes of data
+
+01:03:52.000 --> 01:03:54.000
+The past method
+
+01:03:54.000 --> 01:03:56.000
+is about 18 minutes.
+
+01:03:58.000 --> 01:04:00.000
+There is no difference.
+
+01:04:00.000 --> 01:04:02.000
+My conclusion
+
+01:04:02.000 --> 01:04:04.000
+is that I can reduce it
+
+01:04:04.000 --> 01:04:06.000
+from 18 minutes to
+
+01:04:06.000 --> 01:04:08.000
+less than two minutes.
+
+01:04:08.000 --> 01:04:10.000
+In terms of calibration reduction,
+
+01:04:10.000 --> 01:04:12.000
+subject transfer can give us this effect.
+
+01:04:12.000 --> 01:04:14.000
+In this case,
+
+01:04:14.000 --> 01:04:16.000
+we really need to use our brain
+
+01:04:16.000 --> 01:04:18.000
+to predict alertness.
+
+01:04:18.000 --> 01:04:20.000
+It will be much better
+
+01:04:20.000 --> 01:04:22.000
+if we use our brain to
+
+01:04:22.000 --> 01:04:24.000
+predict alertness.
+
+01:04:24.000 --> 01:04:26.000
+There is another question
+
+01:04:26.000 --> 01:04:28.000
+that people often ask.
+
+01:04:28.000 --> 01:04:30.000
+This hat looks like this.
+
+01:04:30.000 --> 01:04:32.000
+No one wants to wear it.
+
+01:04:32.000 --> 01:04:34.000
+Is there a better way
+
+01:04:34.000 --> 01:04:36.000
+to measure our brain?
+
+01:04:36.000 --> 01:04:38.000
+I was thinking
+
+01:04:40.000 --> 01:04:42.000
+that when we measure our brain,
+
+01:04:42.000 --> 01:04:44.000
+hair is a big problem.
+
+01:04:44.000 --> 01:04:46.000
+If we avoid hair,
+
+01:04:46.000 --> 01:04:48.000
+we can use some simple devices.
+
+01:04:48.000 --> 01:04:50.000
+We can also use
+
+01:04:50.000 --> 01:04:52.000
+these sensors
+
+01:04:52.000 --> 01:04:54.000
+on our skin.
+
+01:04:54.000 --> 01:04:56.000
+If we can use these
+
+01:04:56.000 --> 01:04:58.000
+to measure our brain,
+
+01:04:58.000 --> 01:05:00.000
+more people will be willing to use it.
+
+01:05:00.000 --> 01:05:02.000
+You don't have to damage your hair.
+
+01:05:02.000 --> 01:05:04.000
+It won't be uncomfortable.
+
+01:05:06.000 --> 01:05:08.000
+I tested that
+
+01:05:08.000 --> 01:05:10.000
+if I only use the front ear and
+
+01:05:10.000 --> 01:05:12.000
+these channels next to the ear,
+
+01:05:12.000 --> 01:05:14.000
+there are only six channels.
+
+01:05:14.000 --> 01:05:16.000
+Can I use these six channels
+
+01:05:16.000 --> 01:05:18.000
+to make a comparison
+
+01:05:18.000 --> 01:05:20.000
+with the two heads
+
+01:05:20.000 --> 01:05:22.000
+with 32 channels?
+
+01:05:22.000 --> 01:05:24.000
+I found that
+
+01:05:24.000 --> 01:05:26.000
+if you only use the channels
+
+01:05:26.000 --> 01:05:28.000
+without hair,
+
+01:05:28.000 --> 01:05:30.000
+the classification accuracy
+
+01:05:30.000 --> 01:05:32.000
+can be the same
+
+01:05:32.000 --> 01:05:34.000
+as the classification
+
+01:05:34.000 --> 01:05:36.000
+with all channels.
+
+01:05:36.000 --> 01:05:38.000
+There is no significant difference.
+
+01:05:38.000 --> 01:05:40.000
+So we can actually
+
+01:05:40.000 --> 01:05:42.000
+use the BCI
+
+01:05:42.000 --> 01:05:44.000
+on alertness
+
+01:05:44.000 --> 01:05:46.000
+or these channels
+
+01:05:46.000 --> 01:05:48.000
+with no hair.
+
+01:05:48.000 --> 01:05:50.000
+This way,
+
+01:05:50.000 --> 01:05:52.000
+our device can be more convenient.
+
+01:05:54.000 --> 01:05:56.000
+Here are some problems
+
+01:05:56.000 --> 01:05:58.000
+that we need to solve
+
+01:05:58.000 --> 01:06:00.000
+when we really want to use it.
+
+01:06:00.000 --> 01:06:02.000
+The first one is
+
+01:06:02.000 --> 01:06:04.000
+to reduce the calibration time
+
+01:06:04.000 --> 01:06:06.000
+by using subject transferring.
+
+01:06:06.000 --> 01:06:08.000
+Here we verify that
+
+01:06:08.000 --> 01:06:10.000
+we don't need to use so many channels.
+
+01:06:10.000 --> 01:06:12.000
+We can do this
+
+01:06:12.000 --> 01:06:14.000
+with only one channel.
+
+01:06:18.000 --> 01:06:20.000
+Here is a demonstration
+
+01:06:20.000 --> 01:06:22.000
+of how our future
+
+01:06:22.000 --> 01:06:24.000
+system will work.
+
+01:06:24.000 --> 01:06:26.000
+We just mentioned
+
+01:06:26.000 --> 01:06:28.000
+that we use response time
+
+01:06:28.000 --> 01:06:30.000
+as a ground truth
+
+01:06:30.000 --> 01:06:32.000
+for our alertness.
+
+01:06:32.000 --> 01:06:34.000
+To be more precise,
+
+01:06:34.000 --> 01:06:36.000
+I plan to use the distribution
+
+01:06:36.000 --> 01:06:38.000
+of response time
+
+01:06:38.000 --> 01:06:40.000
+as alertness
+
+01:06:40.000 --> 01:06:42.000
+to define our alertness.
+
+01:06:42.000 --> 01:06:44.000
+So if your distribution is shorter
+
+01:06:44.000 --> 01:06:46.000
+and the peak
+
+01:06:46.000 --> 01:06:48.000
+is shorter,
+
+01:06:48.000 --> 01:06:50.000
+the y-axis is
+
+01:06:50.000 --> 01:06:52.000
+the response time
+
+01:06:52.000 --> 01:06:54.000
+and the unit is the second.
+
+01:06:54.000 --> 01:06:56.000
+So if this is a very narrow distribution,
+
+01:06:56.000 --> 01:06:58.000
+it is a better alertness.
+
+01:06:58.000 --> 01:07:00.000
+If the distribution
+
+01:07:00.000 --> 01:07:02.000
+is very wide,
+
+01:07:02.000 --> 01:07:04.000
+it is easier to have
+
+01:07:04.000 --> 01:07:06.000
+a longer response time,
+
+01:07:06.000 --> 01:07:08.000
+which is a bad alertness,
+
+01:07:08.000 --> 01:07:10.000
+and then
+
+01:07:10.000 --> 01:07:12.000
+here is
+
+01:07:12.000 --> 01:07:14.000
+a demonstration
+
+01:07:14.000 --> 01:07:16.000
+that my black line
+
+01:07:16.000 --> 01:07:18.000
+is my now,
+
+01:07:18.000 --> 01:07:20.000
+and then I use
+
+01:07:20.000 --> 01:07:22.000
+the previous
+
+01:07:22.000 --> 01:07:24.000
+brainwave data
+
+01:07:24.000 --> 01:07:26.000
+to predict that
+
+01:07:26.000 --> 01:07:28.000
+from now on to 90 seconds,
+
+01:07:28.000 --> 01:07:30.000
+the distribution of
+
+01:07:30.000 --> 01:07:32.000
+response time
+
+01:07:32.000 --> 01:07:34.000
+is a
+
+01:07:34.000 --> 01:07:36.000
+thing that
+
+01:07:36.000 --> 01:07:38.000
+will change
+
+01:07:38.000 --> 01:07:40.000
+over time.
+
+01:07:40.000 --> 01:07:42.000
+Then
+
+01:07:42.000 --> 01:07:44.000
+when this time
+
+01:07:44.000 --> 01:07:46.000
+passes, I can use some
+
+01:07:46.000 --> 01:07:48.000
+offline tests
+
+01:07:48.000 --> 01:07:50.000
+to see
+
+01:07:50.000 --> 01:07:52.000
+if my response time
+
+01:07:52.000 --> 01:07:54.000
+really falls
+
+01:07:54.000 --> 01:07:56.000
+at a relatively high rate.
+
+01:07:56.000 --> 01:07:58.000
+These white dots
+
+01:07:58.000 --> 01:08:00.000
+are the response time
+
+01:08:00.000 --> 01:08:02.000
+that we draw
+
+01:08:02.000 --> 01:08:04.000
+based on
+
+01:08:04.000 --> 01:08:06.000
+this, and you can play it a little bit.
+
+01:08:16.000 --> 01:08:18.000
+OK, so you can see
+
+01:08:18.000 --> 01:08:20.000
+that now this is
+
+01:08:20.000 --> 01:08:22.000
+its distribution is
+
+01:08:22.000 --> 01:08:24.000
+narrower, so the color here is
+
+01:08:24.000 --> 01:08:26.000
+also more obvious, and then this is
+
+01:08:26.000 --> 01:08:28.000
+the response time we actually recorded.
+
+01:08:28.000 --> 01:08:30.000
+It is easier to fall
+
+01:08:30.000 --> 01:08:32.000
+within this range,
+
+01:08:32.000 --> 01:08:34.000
+in a better state of
+
+01:08:34.000 --> 01:08:36.000
+alertness, and then
+
+01:08:36.000 --> 01:08:38.000
+as time goes by, we can see that
+
+01:08:38.000 --> 01:08:40.000
+this person's
+
+01:08:40.000 --> 01:08:42.000
+distribution keeps drifting
+
+01:08:42.000 --> 01:08:44.000
+and then finally becomes wider,
+
+01:08:44.000 --> 01:08:46.000
+which means that
+
+01:08:46.000 --> 01:08:48.000
+he is not in a good condition.
+
+01:08:58.000 --> 01:09:00.000
+I'm starting to
+
+01:09:00.000 --> 01:09:02.000
+sleep.
+
+01:09:04.000 --> 01:09:06.000
+Like this,
+
+01:09:06.000 --> 01:09:08.000
+it's
+
+01:09:08.000 --> 01:09:10.000
+like this,
+
+01:09:10.000 --> 01:09:12.000
+it's
+
+01:09:12.000 --> 01:09:14.000
+like this,
+
+01:09:14.000 --> 01:09:16.000
+its distribution has become wider,
+
+01:09:16.000 --> 01:09:18.000
+and then this side is also blurred.
+
+01:09:18.000 --> 01:09:20.000
+Then you can also see that
+
+01:09:20.000 --> 01:09:22.000
+there are some
+
+01:09:22.000 --> 01:09:24.000
+long response times,
+
+01:09:24.000 --> 01:09:26.000
+which means that
+
+01:09:26.000 --> 01:09:28.000
+our prediction is roughly
+
+01:09:28.000 --> 01:09:30.000
+real data
+
+01:09:30.000 --> 01:09:32.000
+to verify that this prediction
+
+01:09:32.000 --> 01:09:34.000
+is correct.
+
+01:09:40.000 --> 01:09:42.000
+It will keep going.
+
+01:09:42.000 --> 01:09:44.000
+This is a bit
+
+01:09:44.000 --> 01:09:46.000
+like a weather forecast,
+
+01:09:46.000 --> 01:09:48.000
+we go to its learnings to make a forecast.
+
+01:09:50.000 --> 01:09:52.000
+Does anyone have any questions here?
+
+01:09:54.000 --> 01:09:56.000
+Sorry, this forecast is
+
+01:09:56.000 --> 01:09:58.000
+a few seconds ago, I might have missed it.
+
+01:09:58.000 --> 01:10:00.000
+OK, this black line is now,
+
+01:10:00.000 --> 01:10:02.000
+so I'm going forward
+
+01:10:02.000 --> 01:10:04.000
+to predict 90 seconds,
+
+01:10:04.000 --> 01:10:06.000
+and within 90 seconds, its probability distribution is here.
+
+01:10:06.000 --> 01:10:08.000
+Yes, so let's see
+
+01:10:08.000 --> 01:10:10.000
+that I predicted like this in the front,
+
+01:10:10.000 --> 01:10:12.000
+and then the real response time
+
+01:10:12.000 --> 01:10:14.000
+is it just below the one I just predicted?
+
+01:10:14.000 --> 01:10:16.000
+OK, OK.
+
+01:10:16.000 --> 01:10:18.000
+This is the distribution I just predicted.
+
+01:10:18.000 --> 01:10:20.000
+Then I
+
+01:10:22.000 --> 01:10:24.000
+plan to continue
+
+01:10:24.000 --> 01:10:26.000
+to do it.
+
+01:10:26.000 --> 01:10:28.000
+I hope that this thing can really
+
+01:10:28.000 --> 01:10:30.000
+be used in
+
+01:10:30.000 --> 01:10:32.000
+many applications.
+
+01:10:32.000 --> 01:10:34.000
+In addition to driving,
+
+01:10:34.000 --> 01:10:36.000
+many jobs that require
+
+01:10:36.000 --> 01:10:38.000
+attention and focus
+
+01:10:38.000 --> 01:10:40.000
+may be able to use this thing.
+
+01:10:40.000 --> 01:10:42.000
+In addition, I also want to
+
+01:10:42.000 --> 01:10:44.000
+use this thing to see
+
+01:10:44.000 --> 01:10:46.000
+if there is a way to
+
+01:10:46.000 --> 01:10:48.000
+actually see if our brain
+
+01:10:48.000 --> 01:10:50.000
+uses
+
+01:10:50.000 --> 01:10:52.000
+the change of
+
+01:10:52.000 --> 01:10:54.000
+learning
+
+01:10:54.000 --> 01:10:56.000
+to see if it has anything to do
+
+01:10:56.000 --> 01:10:58.000
+with learning.
+
+01:10:58.000 --> 01:11:00.000
+Or we can look at
+
+01:11:00.000 --> 01:11:02.000
+ADHD or other
+
+01:11:02.000 --> 01:11:04.000
+more specific people,
+
+01:11:04.000 --> 01:11:06.000
+are they different
+
+01:11:06.000 --> 01:11:08.000
+from normal people
+
+01:11:08.000 --> 01:11:10.000
+in this part of
+
+01:11:10.000 --> 01:11:12.000
+learning?
+
+01:11:12.000 --> 01:11:14.000
+Take learning as a tool
+
+01:11:14.000 --> 01:11:16.000
+to see if
+
+01:11:16.000 --> 01:11:18.000
+different groups
+
+01:11:18.000 --> 01:11:20.000
+have different differences.
+
+01:11:20.000 --> 01:11:22.000
+I would like to thank
+
+01:11:22.000 --> 01:11:24.000
+many people and the lab
+
+01:11:24.000 --> 01:11:26.000
+and my funding is mainly
+
+01:11:26.000 --> 01:11:28.000
+sponsored by Lu Jun.
+
+01:11:28.000 --> 01:11:30.000
+Thank you all.
+
+01:11:34.000 --> 01:11:36.000
+Thank you, thank you.
+
+01:11:36.000 --> 01:11:38.000
+And applause, great.
+
+01:11:38.000 --> 01:11:40.000
+Do you have any questions?
+
+01:11:40.000 --> 01:11:42.000
+You can ask now.
+
+01:11:44.000 --> 01:11:46.000
+Questions.
+
+01:11:46.000 --> 01:11:48.000
+There are some comments.
+
+01:11:48.000 --> 01:11:50.000
+The first one is a small question.
+
+01:11:50.000 --> 01:11:52.000
+You said it was sponsored by Lu Jun,
+
+01:11:52.000 --> 01:11:54.000
+is it the United States?
+
+01:11:54.000 --> 01:11:56.000
+The project sponsored by
+
+01:11:56.000 --> 01:11:58.000
+Lu Jun in the United States.
+
+01:11:58.000 --> 01:12:00.000
+I'm just curious.
+
+01:12:00.000 --> 01:12:02.000
+Are you an American?
+
+01:12:02.000 --> 01:12:04.000
+No,
+
+01:12:04.000 --> 01:12:06.000
+this project
+
+01:12:06.000 --> 01:12:08.000
+is not sensitive.
+
+01:12:12.000 --> 01:12:14.000
+So it can
+
+01:12:14.000 --> 01:12:16.000
+have a project
+
+01:12:16.000 --> 01:12:18.000
+with many schools
+
+01:12:18.000 --> 01:12:20.000
+to help Lu Jun do things.
+
+01:12:20.000 --> 01:12:22.000
+He donated money to many schools
+
+01:12:22.000 --> 01:12:24.000
+to help him do things.
+
+01:12:24.000 --> 01:12:26.000
+This project mainly wants to
+
+01:12:26.000 --> 01:12:28.000
+look at the brain interface
+
+01:12:28.000 --> 01:12:30.000
+and how to use
+
+01:12:30.000 --> 01:12:32.000
+sound science
+
+01:12:32.000 --> 01:12:34.000
+in some situations.
+
+01:12:34.000 --> 01:12:36.000
+I see.
+
+01:12:36.000 --> 01:12:38.000
+At least in physics
+
+01:12:38.000 --> 01:12:40.000
+or astronomy,
+
+01:12:40.000 --> 01:12:42.000
+if there is
+
+01:12:42.000 --> 01:12:44.000
+military sponsorship,
+
+01:12:44.000 --> 01:12:46.000
+they usually have a lot of
+
+01:12:46.000 --> 01:12:48.000
+work to do.
+
+01:12:48.000 --> 01:12:50.000
+Who is your nationality?
+
+01:12:50.000 --> 01:12:52.000
+What is your nationality?
+
+01:12:52.000 --> 01:12:54.000
+What is your background?
+
+01:12:54.000 --> 01:12:56.000
+Yes, they have a lot of projects
+
+01:12:56.000 --> 01:12:58.000
+that require citizenship.
+
+01:12:58.000 --> 01:13:00.000
+The unit that gave us the money
+
+01:13:00.000 --> 01:13:02.000
+requires you to be a citizen
+
+01:13:02.000 --> 01:13:04.000
+to work there.
+
+01:13:04.000 --> 01:13:06.000
+Even PR is not allowed.
+
+01:13:06.000 --> 01:13:08.000
+I see.
+
+01:13:08.000 --> 01:13:10.000
+I have something
+
+01:13:10.000 --> 01:13:12.000
+that I find interesting.
+
+01:13:12.000 --> 01:13:14.000
+I think
+
+01:13:14.000 --> 01:13:16.000
+if I were to do something
+
+01:13:16.000 --> 01:13:18.000
+in the future,
+
+01:13:18.000 --> 01:13:20.000
+for example,
+
+01:13:20.000 --> 01:13:22.000
+this person has started to hallucinate.
+
+01:13:22.000 --> 01:13:24.000
+We all have this experience.
+
+01:13:24.000 --> 01:13:26.000
+You sit next to a co-driver
+
+01:13:26.000 --> 01:13:28.000
+and the driver starts to hallucinate.
+
+01:13:28.000 --> 01:13:30.000
+You say, hey, don't sleep.
+
+01:13:30.000 --> 01:13:32.000
+But the idiot
+
+01:13:32.000 --> 01:13:34.000
+wakes up and brakes.
+
+01:13:34.000 --> 01:13:36.000
+It's actually very dangerous.
+
+01:13:36.000 --> 01:13:38.000
+So I think
+
+01:13:38.000 --> 01:13:40.000
+the reaction of Awakening
+
+01:13:40.000 --> 01:13:42.000
+to make this whole thing
+
+01:13:42.000 --> 01:13:44.000
+a complete and useful thing
+
+01:13:44.000 --> 01:13:46.000
+is a very important part, I think.
+
+01:13:46.000 --> 01:13:48.000
+Yes, well said.
+
+01:13:48.000 --> 01:13:50.000
+Yes, we also saw
+
+01:13:50.000 --> 01:13:52.000
+that if it was
+
+01:13:52.000 --> 01:13:54.000
+during sleep,
+
+01:13:54.000 --> 01:13:56.000
+we used sound to wake him up
+
+01:13:56.000 --> 01:13:58.000
+to see if it was useful
+
+01:13:58.000 --> 01:14:00.000
+after waking him up.
+
+01:14:00.000 --> 01:14:02.000
+But we didn't really see
+
+01:14:02.000 --> 01:14:04.000
+what you said.
+
+01:14:04.000 --> 01:14:06.000
+Braking randomly.
+
+01:14:06.000 --> 01:14:08.000
+Yes, but I think it's possible.
+
+01:14:08.000 --> 01:14:10.000
+Yes, it's possible.
+
+01:14:10.000 --> 01:14:12.000
+Yes.
+
+01:14:12.000 --> 01:14:14.000
+That's my suggestion.
+
+01:14:16.000 --> 01:14:18.000
+I have two questions.
+
+01:14:22.000 --> 01:14:24.000
+Okay, I have two questions.
+
+01:14:24.000 --> 01:14:26.000
+The first question is
+
+01:14:26.000 --> 01:14:28.000
+related to your hardware.
+
+01:14:28.000 --> 01:14:30.000
+You mentioned that
+
+01:14:30.000 --> 01:14:32.000
+if you only use a few channels
+
+01:14:32.000 --> 01:14:34.000
+without covering the hair,
+
+01:14:34.000 --> 01:14:36.000
+the effect is the same.
+
+01:14:36.000 --> 01:14:38.000
+Do you use dry electrodes
+
+01:14:38.000 --> 01:14:40.000
+to measure signals?
+
+01:14:42.000 --> 01:14:44.000
+In my research,
+
+01:14:44.000 --> 01:14:46.000
+I use the same electrodes
+
+01:14:46.000 --> 01:14:48.000
+for all of them.
+
+01:14:48.000 --> 01:14:50.000
+They're all wet electrodes.
+
+01:14:50.000 --> 01:14:52.000
+I just look at the results
+
+01:14:52.000 --> 01:14:54.000
+from different locations.
+
+01:14:54.000 --> 01:14:56.000
+Because I have to compare,
+
+01:14:56.000 --> 01:14:58.000
+I still use the same method
+
+01:14:58.000 --> 01:15:00.000
+to measure.
+
+01:15:00.000 --> 01:15:02.000
+Because I actually
+
+01:15:02.000 --> 01:15:04.000
+went to San Diego a few years ago
+
+01:15:04.000 --> 01:15:06.000
+and he showed us
+
+01:15:06.000 --> 01:15:08.000
+his lab
+
+01:15:08.000 --> 01:15:10.000
+using the dry electrodes
+
+01:15:10.000 --> 01:15:12.000
+for baseball caps.
+
+01:15:12.000 --> 01:15:14.000
+Baseball caps?
+
+01:15:14.000 --> 01:15:16.000
+Baseball caps are the most primitive form.
+
+01:15:16.000 --> 01:15:18.000
+But they mainly
+
+01:15:18.000 --> 01:15:20.000
+turn electrodes into dry electrodes
+
+01:15:20.000 --> 01:15:22.000
+so they don't need to be covered.
+
+01:15:22.000 --> 01:15:24.000
+So I'm curious
+
+01:15:24.000 --> 01:15:26.000
+about your current experiment.
+
+01:15:26.000 --> 01:15:28.000
+Is there anyone
+
+01:15:28.000 --> 01:15:30.000
+still using dry electrodes?
+
+01:15:30.000 --> 01:15:32.000
+Or most of them are still covered?
+
+01:15:32.000 --> 01:15:34.000
+In fact, dry electrodes
+
+01:15:34.000 --> 01:15:36.000
+are becoming more and more popular.
+
+01:15:36.000 --> 01:15:38.000
+Because people find it useful.
+
+01:15:38.000 --> 01:15:40.000
+It takes less time.
+
+01:15:40.000 --> 01:15:42.000
+And
+
+01:15:42.000 --> 01:15:44.000
+subjects like it more.
+
+01:15:44.000 --> 01:15:46.000
+But it's not necessarily more comfortable.
+
+01:15:46.000 --> 01:15:48.000
+Because dry electrodes
+
+01:15:48.000 --> 01:15:50.000
+usually need
+
+01:15:50.000 --> 01:15:52.000
+some special design
+
+01:15:52.000 --> 01:15:54.000
+on the hair
+
+01:15:54.000 --> 01:15:56.000
+to pass through the hair.
+
+01:15:56.000 --> 01:15:58.000
+So a lot of dry electrodes
+
+01:15:58.000 --> 01:16:00.000
+make some corners,
+
+01:16:00.000 --> 01:16:02.000
+deep corners,
+
+01:16:02.000 --> 01:16:04.000
+and longer hair.
+
+01:16:04.000 --> 01:16:06.000
+So it's not comfortable to wear for a long time.
+
+01:16:06.000 --> 01:16:08.000
+So I specialize in
+
+01:16:08.000 --> 01:16:10.000
+the part without hair
+
+01:16:10.000 --> 01:16:12.000
+because there are a lot of
+
+01:16:12.000 --> 01:16:14.000
+choices for the sensor
+
+01:16:14.000 --> 01:16:16.000
+because it doesn't need to deal with hair problems.
+
+01:16:16.000 --> 01:16:18.000
+And for the
+
+01:16:18.000 --> 01:16:20.000
+adhesive type,
+
+01:16:20.000 --> 01:16:22.000
+it's better for
+
+01:16:22.000 --> 01:16:24.000
+long-term measurement.
+
+01:16:24.000 --> 01:16:26.000
+Because most people
+
+01:16:26.000 --> 01:16:28.000
+wear dry electrodes
+
+01:16:28.000 --> 01:16:30.000
+and they start to feel pain
+
+01:16:30.000 --> 01:16:32.000
+after a few hours.
+
+01:16:32.000 --> 01:16:34.000
+Okay.
+
+01:16:34.000 --> 01:16:36.000
+My second question
+
+01:16:36.000 --> 01:16:38.000
+is a bit of a disaster question.
+
+01:16:38.000 --> 01:16:40.000
+Most of the BCAAs I've seen
+
+01:16:40.000 --> 01:16:42.000
+are taken signals from the brain
+
+01:16:42.000 --> 01:16:44.000
+and transmitted to the computer
+
+01:16:44.000 --> 01:16:46.000
+for related processing
+
+01:16:46.000 --> 01:16:48.000
+or other applications.
+
+01:16:48.000 --> 01:16:50.000
+But is it possible that
+
+01:16:50.000 --> 01:16:52.000
+in the future, or is there anyone
+
+01:16:52.000 --> 01:16:54.000
+who is already doing it?
+
+01:16:54.000 --> 01:16:56.000
+It's a bit like the opposite.
+
+01:16:56.000 --> 01:16:58.000
+So the BCAAs are being taken signals
+
+01:16:58.000 --> 01:17:00.000
+and transmitted to the human brain
+
+01:17:00.000 --> 01:17:02.000
+to try to manipulate human behavior.
+
+01:17:02.000 --> 01:17:04.000
+Yes.
+
+01:17:04.000 --> 01:17:06.000
+There are a few non-BCAAs.
+
+01:17:06.000 --> 01:17:08.000
+I'm talking about non-BCAAs
+
+01:17:08.000 --> 01:17:10.000
+because BCAAs are directly
+
+01:17:10.000 --> 01:17:12.000
+transmitted to the computer.
+
+01:17:12.000 --> 01:17:14.000
+Non-BCAAs
+
+01:17:14.000 --> 01:17:16.000
+have a kind of TMS,
+
+01:17:16.000 --> 01:17:18.000
+which is a pass-through magnetic field.
+
+01:17:18.000 --> 01:17:20.000
+It uses a very strong magnetic field
+
+01:17:20.000 --> 01:17:22.000
+to try to
+
+01:17:22.000 --> 01:17:24.000
+trigger
+
+01:17:24.000 --> 01:17:26.000
+brain activity
+
+01:17:26.000 --> 01:17:28.000
+in a certain area.
+
+01:17:28.000 --> 01:17:30.000
+At the moment,
+
+01:17:30.000 --> 01:17:32.000
+we know
+
+01:17:32.000 --> 01:17:34.000
+that
+
+01:17:34.000 --> 01:17:36.000
+the doctor
+
+01:17:36.000 --> 01:17:38.000
+can look for
+
+01:17:38.000 --> 01:17:40.000
+the magnetic field
+
+01:17:40.000 --> 01:17:42.000
+in a certain area
+
+01:17:42.000 --> 01:17:44.000
+and your hand will move.
+
+01:17:44.000 --> 01:17:46.000
+But
+
+01:17:46.000 --> 01:17:48.000
+this thing
+
+01:17:48.000 --> 01:17:50.000
+hasn't been
+
+01:17:50.000 --> 01:17:52.000
+fully studied.
+
+01:17:52.000 --> 01:17:54.000
+So what changes
+
+01:17:54.000 --> 01:17:56.000
+can it cause?
+
+01:17:56.000 --> 01:17:58.000
+There is not much
+
+01:17:58.000 --> 01:18:00.000
+relevant evidence at the moment.
+
+01:18:00.000 --> 01:18:02.000
+So it's still under development.
+
+01:18:02.000 --> 01:18:04.000
+Can I say something?
+
+01:18:04.000 --> 01:18:06.000
+Yes.
+
+01:18:06.000 --> 01:18:08.000
+Someone in our lab has done this.
+
+01:18:08.000 --> 01:18:10.000
+I haven't done it myself.
+
+01:18:10.000 --> 01:18:12.000
+But basically,
+
+01:18:12.000 --> 01:18:14.000
+it's close to a one-to-one response.
+
+01:18:14.000 --> 01:18:16.000
+For example, if you stimulate
+
+01:18:16.000 --> 01:18:18.000
+the visual cortex,
+
+01:18:18.000 --> 01:18:20.000
+some people will see crossfade,
+
+01:18:20.000 --> 01:18:22.000
+which is a flash.
+
+01:18:22.000 --> 01:18:24.000
+As mentioned earlier,
+
+01:18:24.000 --> 01:18:26.000
+if you stimulate the motor,
+
+01:18:26.000 --> 01:18:28.000
+it will move in a certain area.
+
+01:18:28.000 --> 01:18:30.000
+You can find out which finger moves.
+
+01:18:30.000 --> 01:18:32.000
+For example, if you stimulate a certain area,
+
+01:18:32.000 --> 01:18:34.000
+it will map out
+
+01:18:34.000 --> 01:18:36.000
+which finger moves.
+
+01:18:38.000 --> 01:18:40.000
+For hearing,
+
+01:18:40.000 --> 01:18:42.000
+relatively few people
+
+01:18:42.000 --> 01:18:44.000
+have done it.
+
+01:18:44.000 --> 01:18:46.000
+For example, compared to EEG or MRI,
+
+01:18:46.000 --> 01:18:48.000
+a group of people
+
+01:18:48.000 --> 01:18:50.000
+have been doing TMS research.
+
+01:18:50.000 --> 01:18:52.000
+There are also TDCS, TACS, etc.
+
+01:19:00.000 --> 01:19:02.000
+Do you have any other questions?
+
+01:19:02.000 --> 01:19:04.000
+I'm going to ask a question.
+
+01:19:04.000 --> 01:19:06.000
+Wait a minute.
+
+01:19:06.000 --> 01:19:08.000
+I don't have a question.
+
+01:19:08.000 --> 01:19:10.000
+I just want to say
+
+01:19:10.000 --> 01:19:12.000
+I want to stop recording.
+
+01:19:12.000 --> 01:19:14.000
+But you can
+
+01:19:14.000 --> 01:19:16.000
+continue.
+
+01:19:16.000 --> 01:19:18.000
+OK, no problem.
+
+01:19:18.000 --> 01:19:20.000
+I'm sorry.
+

@@ -1,0 +1,1429 @@
+start	end	text
+0	10000	Hello, everyone. I'm very happy to be here for the fifth session of the Project TARA summer series.
+10000	16000	Today's event is a scientific drawing sharing by Professor Liu Junlin.
+16000	20000	I'll quickly introduce Professor Liu's background.
+20000	29000	Professor Liu is currently studying electrical engineering at National Taiwan University.
+29000	34000	He is currently working as an assistant professor.
+34000	42000	In 2010, he obtained a master's degree in electrical engineering at National Taiwan University.
+42000	46000	Later, he obtained a master's degree in telecommunications.
+46000	51000	In 2018, he obtained a doctorate in Caltech.
+51000	60000	His research interests include Sparse Error Signal Processing and Statistical Signal Processing.
+60000	66000	Today, Professor Liu will share with us his experience in latex.
+66000	70000	On behalf of the audience, I welcome Professor Liu's speech.
+70000	73000	Now, I'll give Professor Liu the floor. Thank you.
+75000	79000	Thank you very much for the introduction.
+79000	81000	Did you hear my voice?
+86000	88000	Okay, thank you.
+88000	92000	Thank you for the invitation to Project TARA.
+92000	102000	It's an honor for me to share my experience in latex.
+103000	119000	In my presentation, I will introduce my experience in latex and some basic ideas.
+119000	129000	If you have any questions or ideas during the presentation, please feel free to ask.
+130000	136000	Now, let's move on to today's presentation.
+136000	141000	Today is the fifth session of our summer special event.
+141000	143000	We will talk about scientific drawing.
+143000	146000	We will mainly use the latex tool.
+146000	150000	Before we start, I would like to ask the audience,
+151000	156000	Have you ever heard of the term latex?
+156000	159000	Can you raise your hand or make a sound?
+164000	170000	I see some of the audience in the chat have heard of it.
+170000	179000	For those who have heard of it, they may think that latex is a tool for writing papers.
+179000	183000	Why put it under the theme of scientific drawing?
+183000	188000	This is what I want to share with you today.
+188000	193000	Latex actually has some relative tools that can be used for scientific drawing.
+193000	197000	I also have some relative experience.
+197000	200000	Let's continue our presentation.
+200000	206000	First of all, I will do a simple introduction.
+206000	209000	Then I will take some time to introduce latex.
+209000	216000	If some of the audience has not heard of it or is not familiar with some of the details,
+216000	221000	I will take some time to introduce what latex is to the audience.
+221000	230000	The third part is that I will specifically mention a term called PGFTIKZ.
+230000	233000	It can be a good combination with latex.
+233000	236000	I will also mention some related examples.
+236000	242000	Finally, I will explain some related resources to you.
+242000	247000	If you are interested, you can use it as a reference.
+247000	250000	Today's topic is scientific drawing.
+250000	256000	I believe that most of the audience is academic background.
+256000	259000	So in the academic background,
+259000	263000	you often need to do an academic expression.
+263000	265000	What is academic expression?
+265000	268000	You may need to write a paper.
+268000	271000	Or you need to write a verbal report.
+271000	274000	Today's occasion is more like a verbal report.
+274000	279000	In some occasions, you will need to make a poster report.
+279000	286000	These are some media that are academic in expressing some concepts or more complex ideas.
+286000	292000	It may be in the form of an article, a video, or a poster.
+292000	294000	In these forms,
+294000	300000	this chart is actually a very efficient way of communication.
+300000	301000	You can imagine that
+301000	306000	when you have a more complex concept that needs to be explained,
+306000	309000	if you use a lot of very long sentences to explain
+309000	312000	and draw a simple chart,
+312000	315000	everyone can see it clearly.
+315000	320000	Usually, most readers prefer to use charts
+320000	324000	to make a conceptual expression.
+324000	330000	So if you want to add some charts to your post,
+330000	333000	the next question is
+333000	337000	which interface to use to generate this chart?
+337000	340000	I believe I mentioned two weeks ago that
+340000	345000	you can use Illustrator to draw some pretty charts.
+345000	347000	The theme of this week is
+347000	352000	I want to use the Latex language interface.
+352000	356000	It actually has some corresponding kits and tools
+356000	360000	to create some nice charts.
+361000	366000	Let me quickly use a sentence to explain what Latex is.
+366000	369000	It's actually a layout system.
+369000	372000	What this layout system does is
+372000	377000	a lot of text files
+377000	379000	after a series of compilation processes
+379000	384000	are laid out into the file files you see.
+384000	386000	So in fact, like the video I reported today,
+386000	388000	I also did it with Latex.
+388000	390000	In fact, there are a lot of
+390000	393000	text compilations behind it.
+393000	396000	These text compilations will tell us
+396000	398000	what words are in this page,
+398000	400000	what color are these words,
+400000	404000	what are the order of these items,
+404000	405000	and so on.
+405000	408000	It will compile such a file.
+408000	410000	Latex is a layout software.
+410000	414000	It can compile a file based on such compilations
+414000	419000	to look like the one you see in the video.
+419000	423000	Let's quickly talk about PGF and TIKZ.
+423000	425000	PGF is actually called
+425000	428000	Portable Graphics Format.
+428000	430000	In fact, what everyone is familiar with
+430000	433000	is the language of TIKZ.
+433000	436000	It's actually a Latex kit.
+436000	442000	This kit is for drawing some charts,
+442000	444000	especially when you use a compilation method
+444000	445000	to describe a chart.
+445000	449000	There are some particularly useful methods.
+449000	450000	In the remaining time,
+450000	452000	I will also mention one called PGF Plots.
+452000	455000	It is also a Latex kit.
+455000	460000	It can draw some common charts.
+460000	462000	After using it myself,
+462000	466000	I feel like I want to share it with you.
+466000	469000	So today I will focus on
+469000	472000	introducing these tools
+472000	477000	and some of my personal experience.
+477000	479000	This is a general idea
+479000	483000	that we will go through today.
+483000	486000	Next, I will show you a chart.
+486000	488000	Let me tell you about this chart first.
+488000	491000	This chart is a chart I took
+491000	494000	from my class video.
+494000	500000	I want to use this chart to give you an example.
+500000	507000	First of all, when you look at this chart,
+507000	510000	you see a lot of words,
+510000	514000	a lot of shapes, a lot of colors.
+514000	516000	Here is an example of this chart.
+516000	519000	In fact, to describe this chart,
+519000	523000	it can be divided into several steps.
+523000	529000	One step is the words marked above.
+529000	532000	For example, you see a lot of words up here.
+532000	535000	Then there are some relative numerals.
+535000	538000	There are also some relative words and numerals below.
+538000	543000	So if you want to express a concept clearly,
+543000	547000	there may be some relative numbers of words above.
+547000	549000	In this chart,
+549000	552000	you can also see some relative shapes.
+555000	560000	For example, you can see a lot of squares here.
+560000	564000	Then there are a lot of regular squares lined up.
+564000	568000	Of course, the focus of today's speech
+568000	570000	is not to introduce these details.
+570000	574000	I mainly use this chart to give you an example.
+574000	576000	To produce this chart,
+576000	581000	you need to have some descriptions of the shapes.
+581000	584000	Then you may need to do something like
+584000	589000	drawing a line to produce this chart.
+589000	592000	So you can see that there are
+592000	594000	all kinds of lines between different squares.
+594000	597000	There are green lines, there are orange lines,
+597000	602000	and there may be some relatively small words marked above.
+603000	605000	So usually on this kind of expression,
+605000	608000	there may be some colors
+608000	615000	or some relative text styles.
+615000	619000	These may be some points that you can focus on
+619000	623000	when designing the chart.
+623000	627000	You may see this chart and think
+627000	631000	that it seems to contain a lot of details.
+631000	632000	Let me explain to you first.
+632000	636000	This is actually one of the pages of the last video.
+636000	640000	The complete version actually has a relative animation.
+640000	642000	That is to say, different colors,
+642000	646000	different labels will gradually appear.
+646000	653000	But here is just to give you a demonstration and reference.
+653000	658000	If you have any questions during the listening process,
+658000	661000	you are very welcome to make a question.
+661000	665000	Then we can have a discussion at the moment.
+665000	667000	If you don't have any questions,
+667000	669000	let me introduce the tools now.
+669000	672000	My takeaway today is that
+672000	675000	I hope you will have some ideas
+675000	677000	about how to produce this kind of chart
+677000	679000	after listening to it.
+679000	681000	Of course, how to produce it in detail
+681000	684000	will be related to the instructions for this chart.
+684000	688000	But I hope to inspire you to say
+688000	691000	that if you want to produce this kind of chart,
+691000	694000	how to do it with Latex?
+694000	698000	First, let me introduce this Latex.
+698000	701000	Latex, as I just mentioned,
+701000	703000	is a layout software.
+703000	708000	In fact, it is not a single software.
+708000	713000	It has a relatively advanced layout system.
+713000	716000	I listed a few here.
+716000	719000	For example, if you have more research
+719000	722000	on the details of this kind of Latex,
+722000	725000	it is actually divided into a Plantex.
+725000	728000	It is the most primitive version.
+728000	732000	Later, someone based on this Plantex
+732000	734000	to make some improvements,
+734000	739000	such as improving Latex or PDF Latex
+739000	742000	or some extension versions
+742000	745000	that can be compiled into Chinese.
+745000	748000	But these are all relative technical details.
+748000	752000	It actually has a relative development history.
+752000	756000	I think today's topic is more scientific.
+756000	758000	So I probably won't do
+758000	761000	a detailed analysis of these items.
+761000	764000	What you hear is to get a concept first.
+764000	766000	It's basically a...
+766000	769000	If you have some writing experience,
+769000	771000	you can think of it as
+771000	773000	something like a compiler.
+773000	777000	It stores some text information
+777000	780000	and then does some interpretation and analysis
+780000	782000	according to these text contents,
+782000	785000	and then produces a relative file.
+785000	787000	When you look at the paper,
+787000	789000	in fact, a more common file format
+789000	792000	should be a PDF format.
+792000	796000	So this Latex,
+796000	801000	it's a relatively common design,
+801000	805000	that is, the step of producing a file is
+805000	808000	that the user actually compiles a text file.
+808000	812000	The alias of this text file is .tex.
+812000	816000	And then after some proper compilation,
+816000	818000	it can produce a PDF file.
+818000	821000	This PDF is a bit like the PDF files
+821000	824000	you see when you read the paper.
+824000	829000	So this is a basic process of Latex.
+829000	833000	In fact, if you are not familiar with
+833000	837000	this process,
+837000	842000	if you have used Word
+842000	847000	to write documents,
+847000	850000	this Word file basically means
+850000	852000	that you have a full window screen.
+852000	854000	In this window screen,
+854000	857000	suppose you have a full window screen,
+857000	859000	you can do something under this screen,
+859000	861000	such as inputting text and inserting a picture,
+861000	864000	or doing some editing.
+864000	866000	This kind of compiler is more like
+866000	871000	you can see the file at the moment of editing.
+871000	874000	What does it look like?
+874000	877000	This Latex is another kind.
+877000	879000	It's a little bit more indirect.
+879000	881000	When you are operating,
+881000	884000	it's actually editing a text file.
+884000	887000	The text file is just describing
+887000	891000	what the final document should look like
+891000	894000	in a narrative language.
+894000	896000	So when you are editing a text file,
+896000	898000	you have to use a little bit of your imagination,
+898000	900000	that is, you give this command,
+900000	902000	and then it might look like
+903000	907000	This PDF is the last file you see.
+907000	909000	So this editing aspect
+909000	911000	may not be the same as
+911000	914000	the Word you often use.
+914000	916000	Let's continue.
+916000	919000	Next, I'm going to make an example.
+919000	924000	If you haven't touched Latex,
+924000	926000	I'll give you a simple example.
+926000	930000	Is this word too small?
+930000	936000	The left side is TEX file.
+936000	938000	After proper compilation,
+938000	942000	a PDF file will be created.
+942000	944000	If you think the picture is too small,
+944000	945000	you can tell me,
+945000	949000	and I can make some adjustments here.
+949000	952000	Basically, a common TEX file
+952000	956000	has a standard way to do it.
+956000	958000	This standard way is like this.
+958000	963000	That is, when you are narrating this file,
+963000	965000	you have to explain
+965000	968000	what kind of thing you produce.
+968000	970000	Is it an article?
+970000	973000	Or, for example,
+973000	975000	there are some commands that can be generated,
+975000	977000	such as a video.
+977000	979000	It will need to define
+979000	982000	what kind of thing I produce.
+982000	984000	It has a command here called
+984000	986000	draw a diagonal line, then document class,
+986000	991000	followed by the type of file you want to produce.
+991000	993000	It's very similar to writing,
+993000	994000	that is,
+994000	995000	in the process of editing,
+995000	999000	you need to insert some packages appropriately.
+999000	1001000	These packages can tell you
+1001000	1003000	what commands you can use next.
+1003000	1008000	What commands are defined next?
+1008000	1009000	Let me mention this a little bit.
+1009000	1012000	The first package is a generation.
+1012000	1015000	It will be used in the 16th line.
+1015000	1020000	It is a command to generate a test text.
+1020000	1022000	The command in the 5th line
+1022000	1024000	is a relatively
+1024000	1027000	if you want to input some mathematical equations,
+1027000	1028000	some commands will be defined
+1028000	1031000	in this AMS Math environment.
+1031000	1034000	So, after the 18th line,
+1034000	1037000	there are some mathematical equations.
+1037000	1039000	So, in order to use these commands,
+1039000	1043000	we need to introduce some relative packages.
+1043000	1046000	Another one is that there is some information,
+1046000	1048000	like this one.
+1048000	1051000	I just mentioned that it is an article.
+1051000	1053000	So, typical articles may need
+1053000	1055000	a title information,
+1055000	1056000	then the author's information,
+1056000	1059000	and the date and time information.
+1059000	1062000	It may need to be explained
+1062000	1064000	with some relevant commands.
+1064000	1068000	After setting up these environments,
+1068000	1070000	the 10th line below
+1070000	1075000	describes the content of your file.
+1075000	1077000	So, like the 13th line,
+1077000	1081000	it is a title of a file.
+1081000	1082000	So, after entering this command,
+1082000	1087000	the three parts on the right PDF will be generated,
+1087000	1093000	that is, the title, the author's name and time.
+1093000	1094000	The part of the 16th line
+1094000	1096000	will generate some test text.
+1096000	1099000	So, this is the part of the 16th line test text
+1099000	1102000	in this place.
+1102000	1104000	After the 19th line,
+1104000	1106000	some mathematical formulas are generated.
+1106000	1108000	These mathematical formulas are
+1108000	1111000	under this text.
+1111000	1114000	So, in practice,
+1114000	1116000	the advantage is that
+1116000	1117000	you can focus on
+1117000	1120000	what you want to write.
+1120000	1121000	For example, you focus on
+1121000	1124000	the content you want to write,
+1124000	1126000	and then the relative arrangement,
+1126000	1127000	or the font,
+1127000	1129000	or these words,
+1129000	1130000	the mathematical formula,
+1130000	1132000	the relative position.
+1132000	1133000	This arrangement system
+1133000	1135000	has a set of methods
+1135000	1138000	to arrange these relative positions.
+1138000	1140000	So, when you write this text,
+1140000	1141000	you just need to focus on
+1141000	1145000	the content of the text.
+1145000	1149000	So, this is an example
+1149000	1154000	to show you this LaTeX.
+1154000	1155000	Let me explain to you
+1155000	1159000	some of the corresponding tools of LaTeX.
+1159000	1160000	I believe that
+1160000	1163000	LaTeX has a lot of choices.
+1163000	1165000	I mainly divide it into three categories.
+1165000	1168000	One is called the editor.
+1168000	1176000	It is mainly used to edit this text file.
+1176000	1179000	The other is the layout system.
+1179000	1181000	Then, the PDF file you produce
+1181000	1184000	will also need some software
+1184000	1187000	to look at the content of this PDF file.
+1187000	1189000	So, if you want to set up
+1189000	1191000	these environments on your computer,
+1191000	1193000	you may need some relative...
+1193000	1195000	For example, set up an editor,
+1195000	1196000	a layout system,
+1196000	1200000	and then choose a PDF viewer.
+1200000	1203000	There are actually quite a few editors on the market.
+1203000	1204000	There are some editors
+1204000	1206000	specifically designed for LaTeX,
+1206000	1208000	such as these below,
+1208000	1210000	or some more common editors
+1210000	1213000	that can only edit pure text,
+1213000	1216000	such as these.
+1216000	1217000	Because of time constraints,
+1217000	1220000	I won't mention all of them.
+1220000	1223000	After you have edited these text files,
+1223000	1224000	I just mentioned that
+1224000	1228000	you still need some editing systems.
+1228000	1231000	These three are more common on the market.
+1231000	1234000	These three can actually be downloaded for free
+1234000	1236000	and installed on your computer.
+1236000	1238000	They have some relative
+1238000	1242000	system environment settings.
+1242000	1243000	Because of time constraints,
+1243000	1246000	I won't mention these environment settings.
+1246000	1248000	After you have successfully edited,
+1248000	1250000	there will be some relative
+1250000	1254000	PDF file viewers.
+1254000	1260000	Let me show you an example.
+1261000	1264000	If I choose from here,
+1264000	1269000	let's say I choose Visual Studio Code.
+1269000	1271000	If you are writing code,
+1271000	1274000	you may have heard of this editor.
+1274000	1276000	Then use TextLive.
+1276000	1280000	This computer has already installed TextLive.
+1280000	1284000	Then there may be a PDF viewer at the end.
+1284000	1287000	So I'll open a demo here.
+1287000	1288000	Just this file.
+1288000	1293000	This file is the same.
+1293000	1294000	This is actually the same as a writer.
+1294000	1298000	There will be some relative editing functions behind it.
+1298000	1299000	Then this one just happens to be able to
+1299000	1304000	go straight to this relative PDF function.
+1304000	1305000	So if you want to edit,
+1305000	1309000	let's say you want to add more things here.
+1309000	1312000	Just add it directly.
+1312000	1313000	If you edit,
+1313000	1314000	it will be right here.
+1314000	1315000	After editing,
+1315000	1318000	the PDF file will be updated.
+1318000	1321000	If you haven't used LaTeX,
+1321000	1323000	it's actually a...
+1323000	1328000	I feel like it's pretty close to writing.
+1328000	1333000	It's just that the final result is a PDF file.
+1333000	1337000	The above is mainly a basic introduction to LaTeX.
+1337000	1339000	You may be curious.
+1339000	1342000	So there are so many file editing tools.
+1342000	1344000	So why do we have to use LaTeX?
+1344000	1347000	Then I'm here to quickly mention
+1347000	1352000	some of the features or advantages of LaTeX.
+1352000	1353000	One of the features is that
+1353000	1357000	it deals with this kind of mathematical problem.
+1357000	1360000	Assuming that your report or paper
+1360000	1363000	requires a lot of mathematical problems.
+1363000	1370000	In fact, it has some advantages in using LaTeX.
+1370000	1371000	For example,
+1371000	1375000	like you want to enter the lower right corner of this
+1375000	1378000	these mathematical formulas.
+1378000	1379000	What about these mathematical formulas?
+1379000	1381000	You can see that it's actually...
+1381000	1382000	I'll give you an example here.
+1382000	1387000	It may be related to some symbols of some triangular functions.
+1387000	1391000	If you want to enter this content,
+1391000	1392000	under LaTeX,
+1392000	1396000	it actually opens a relative mathematical environment.
+1396000	1398000	Then like these functions,
+1398000	1401000	these sine, zeta,
+1401000	1404000	or something like the denominator.
+1404000	1408000	It will have some corresponding mathematical symbols.
+1408000	1411000	For example, there are some sine, zeta,
+1411000	1414000	or if you want to enter the denominator.
+1414000	1418000	The denominator has some relative environments that can be entered.
+1418000	1421000	Here's a strange symbol.
+1421000	1424000	It actually has some relative symbols
+1424000	1426000	that can be entered.
+1427000	1432000	If your file has a lot of mathematical problems,
+1432000	1435000	for example, there are very long mathematical inferences,
+1435000	1437000	formula proofs, and so on.
+1437000	1439000	Editing in text format
+1439000	1441000	is actually easier to maintain.
+1441000	1443000	Because when you look at the text,
+1443000	1445000	you can just look at this symbol
+1445000	1448000	and know what this symbol is.
+1448000	1451000	And save these symbols
+1451000	1456000	and translate them into our beautiful mathematical form.
+1456000	1460000	Another thing I would like to mention by the way is
+1460000	1462000	that LaTeX also has a feature
+1462000	1464000	that is when you have a lot of things
+1464000	1467000	that need to be interacted with and used.
+1467000	1468000	For example,
+1468000	1474000	in some related papers that may need a lot of mathematical terms,
+1474000	1478000	sometimes it may use numbers to represent some equations.
+1478000	1481000	Put it in the order of 1, 2, 3, 4.
+1481000	1483000	Under the progress of the article,
+1483000	1485000	we may need to say
+1485000	1489000	which mathematical formula we use to push something.
+1489000	1491000	So in the article,
+1491000	1497000	we need to repeatedly mention some mathematical numbers.
+1497000	1500000	LaTeX actually has some pretty good features.
+1500000	1506000	You can use the interaction query command.
+1507000	1511000	You can set up a label.
+1511000	1512000	In the article,
+1512000	1514000	when you want to quote this label,
+1514000	1518000	you can use it as a variable.
+1518000	1520000	Okay, let me tell you quickly
+1520000	1523000	that this is a feature of LaTeX.
+1523000	1525000	It has a very powerful function
+1525000	1528000	in dealing with mathematical numbers.
+1528000	1532000	Okay, another one is my personal experience.
+1532000	1536000	It is a feature of LaTeX.
+1536000	1538000	Its feature is that
+1538000	1541000	when you are dealing with a very long file,
+1541000	1544000	it has a special advantage.
+1544000	1546000	What is a very long file?
+1546000	1547000	For example,
+1547000	1552000	if you want to write a master's thesis or a doctor's thesis,
+1552000	1553000	at this time,
+1553000	1556000	the number of pages may reach a lot of pages.
+1556000	1558000	Or for example,
+1558000	1560000	if you want to...
+1560000	1562000	For example,
+1562000	1564000	some textbooks you see on the market.
+1564000	1567000	Textbooks may have hundreds or thousands of pages.
+1567000	1569000	At this time,
+1569000	1571000	you can try to think about
+1571000	1575000	how to maintain these hundreds or thousands of pages.
+1575000	1579000	In fact, LaTeX has a feature that I personally quite like.
+1579000	1580000	That is,
+1580000	1582000	it can split the content of the file
+1582000	1585000	into different files to write.
+1585000	1587000	So here's an example.
+1587000	1592000	Suppose you have a file named man.tex now.
+1592000	1596000	This can be seen as a main file.
+1596000	1599000	This main file will describe that
+1599000	1603000	there are two parts in this article.
+1603000	1605000	One is introduction,
+1605000	1607000	and the other is results.
+1607000	1611000	That's the end of the description.
+1611000	1612000	By the way,
+1612000	1614000	this input file is...
+1614000	1617000	The input command can be seen as
+1617000	1620000	the content of this file is arranged.
+1620000	1624000	You can do an understanding like this first.
+1624000	1626000	So when LaTeX meets here,
+1626000	1629000	it will grab the corresponding file.
+1629000	1630000	So at this time,
+1630000	1633000	when you write the introduction,
+1633000	1638000	you just have to focus on the narrative of the introduction.
+1638000	1639000	So this file is
+1639000	1641000	specifically talking about the content of the introduction.
+1641000	1646000	You can see that it has some test text.
+1646000	1651000	Then there is a line of test text here.
+1651000	1653000	This introduction,
+1653000	1655000	I actually have a command here,
+1655000	1657000	which is section.
+1657000	1660000	It is actually one of the sections of this article.
+1660000	1665000	Then the section is followed by the title of this section.
+1665000	1668000	So if you want to focus on writing the introduction,
+1668000	1670000	just open this file and focus on writing it.
+1670000	1672000	If you want to write another section,
+1672000	1673000	such as results,
+1673000	1675000	just focus on opening this file
+1675000	1679000	and focus on editing here.
+1679000	1681000	So writing these files separately
+1681000	1687000	is actually easier for you to maintain longer files.
+1687000	1690000	There is another one that I personally think
+1690000	1697000	LaTeX is a powerful function.
+1697000	1701000	That is, if you are good at using the input command,
+1701000	1702000	you can think of it as
+1702000	1704000	the input is to grab a file from the outside
+1704000	1706000	and paste it over.
+1706000	1709000	So in fact, if you have some experimental data,
+1709000	1713000	let's assume that these data are stored in text.
+1713000	1717000	Suppose you use the program to calculate a number.
+1717000	1719000	Suppose the number is 1, 2, 3.
+1719000	1723000	Then you can store this number in a text file.
+1723000	1725000	When you are editing the file,
+1725000	1727000	you can insert the number content of this text file
+1727000	1731000	in the right place.
+1731000	1732000	You may ask,
+1732000	1737000	why don't I just type 1, 2, 3 here?
+1737000	1740000	The resulting file result is the same.
+1740000	1744000	But from the perspective of maintenance,
+1744000	1748000	I personally prefer to separate the file content
+1748000	1750000	from the experimental data
+1750000	1753000	to make a separate file.
+1753000	1756000	Suppose you run different experiments later
+1756000	1758000	and the data needs to be updated.
+1758000	1761000	You just need to update this file.
+1761000	1764000	You don't need to jump back to the result section
+1764000	1766000	to change this number.
+1766000	1769000	Especially if this number is used a lot.
+1769000	1772000	This has appeared in many articles.
+1772000	1774000	If you change one of the two,
+1774000	1775000	and you forget to change one,
+1775000	1778000	you may be challenged by the reviewer at this time.
+1778000	1781000	So what do you show?
+1782000	1784000	If you want to maintain a larger file
+1784000	1788000	from a longer perspective,
+1788000	1796000	these files may need to be changed and updated.
+1796000	1800000	I personally think this kind of separate file is quite recommended.
+1800000	1804000	I mentioned two features of LaTeX here.
+1804000	1806000	Then I will talk about a Graphics
+1806000	1808000	which is included in today's topic.
+1808000	1813000	Use LaTeX to add some elements of scientific drawing.
+1813000	1819000	If you search for LaTeX on the Internet,
+1819000	1822000	most of the files will tell you
+1822000	1826000	that there is an instruction called Include Graphics.
+1826000	1829000	This instruction tells us that
+1829000	1833000	this instruction needs a package called GraphicsX
+1833000	1836000	to be used.
+1836000	1838000	Simply put,
+1838000	1841000	it will extract the file from your computer.
+1841000	1844000	For example, there is a JPEG file at this time.
+1844000	1847000	This JPEG file will be extracted
+1847000	1854000	and placed in the proper place in your PDF file.
+1854000	1856000	So I have an example here.
+1856000	1858000	So he grabbed two pictures.
+1858000	1863000	One is JPEG and the other is PNG.
+1863000	1867000	He grabbed these two pictures to make a layout.
+1867000	1871000	In fact, the left one is JPEG,
+1871000	1876000	and the right one is PNG.
+1876000	1883000	So now you have two pictures.
+1883000	1884000	Because of time constraints,
+1884000	1887000	I may not be able to explain each instruction.
+1887000	1890000	If you have any questions later,
+1890000	1894000	you are welcome to ask.
+1894000	1896000	So this is basically an instruction
+1896000	1900000	to insert two pictures.
+1900000	1902000	When you draw a picture,
+1902000	1904000	you need to pay attention to
+1904000	1909000	that the picture is divided into Raster Scan.
+1909000	1911000	You take a picture.
+1911000	1914000	Suppose you have a picture on your hand.
+1914000	1916000	Raster Graphics is a bit like
+1916000	1920000	it takes a lot of different pixels in this picture
+1920000	1926000	and records the color of each pixel.
+1926000	1928000	So, for example, JPEG or PNG,
+1928000	1931000	it basically stores the data behind
+1931000	1935000	what the information of each pixel is.
+1935000	1937000	Of course, it does some image processing
+1937000	1939000	and some other processing.
+1939000	1941000	But its basic spirit is
+1941000	1947000	to store the contents of different colors.
+1947000	1949000	But this kind of storage method
+1949000	1951000	will have a disadvantage.
+1951000	1952000	That is,
+1952000	1959000	suppose you put this picture very large.
+1959000	1962000	I may not be able to see it clearly here.
+1962000	1966000	If you have JPEG or PNG on your hand,
+1966000	1969000	you can try to put these pictures.
+1969000	1970000	If you can't,
+1970000	1971000	you can, for example,
+1971000	1973000	zoom in on a place.
+1973000	1975000	Keep zooming in, zooming in, zooming in.
+1975000	1976000	At the end of the zoom,
+1976000	1980000	you will see some blurry images on the edge.
+1980000	1983000	The text may also become more blurry
+1983000	1985000	and may not be able to be read.
+1985000	1989000	In terms of academic documents,
+1989000	1991000	this is actually a bad thing.
+1991000	1992000	Because it may affect
+1992000	1994000	our understanding of a concept
+1994000	1997000	or judgment.
+1997000	1999000	In fact, in academic documents,
+1999000	2000000	it is more preferable to use
+2000000	2002000	so-called vector graphics.
+2002000	2004000	That is, when you are storing a picture,
+2004000	2007000	you should actually use the so-called pixel picture.
+2007000	2012000	When you describe these documents,
+2012000	2013000	you should use,
+2013000	2016000	now there is a picture.
+2016000	2019000	What is its length and width?
+2019000	2022000	Where is its location?
+2022000	2027000	The coordinates of these points in it.
+2027000	2028000	Or these lines,
+2028000	2032000	are they round, square,
+2032000	2035000	straight, or triangle?
+2035000	2038000	Use these methods to describe a picture.
+2038000	2040000	Academic documents are actually
+2040000	2042000	more preferable to do this.
+2042000	2043000	The commonly used vector graphics
+2043000	2045000	is actually called an EPS file.
+2045000	2047000	It is a commonly used vector graphics
+2047000	2051000	file format.
+2051000	2054000	So here you might think,
+2054000	2056000	so if I use LaTeX,
+2056000	2057000	I will just,
+2057000	2059000	like the files generated by your program,
+2059000	2062000	I will just save it as an EPS file
+2062000	2065000	and insert it into it.
+2065000	2068000	Theoretically, you can do this.
+2068000	2072000	But have you ever thought about
+2072000	2075000	some situations?
+2075000	2077000	I will give you an example here.
+2077000	2078000	These situations are actually
+2078000	2081000	encountered in writing paper.
+2081000	2083000	Suppose there are two pictures now,
+2083000	2089000	the picture on the left and the picture on the right.
+2089000	2091000	I will give you an example.
+2091000	2093000	Suppose you want to present
+2093000	2095000	a picture like this.
+2095000	2096000	Then there may be a curve here,
+2096000	2099000	and another curve here.
+2099000	2101000	Then there may be some
+2101000	2103000	corresponding legend,
+2103000	2105000	that is,
+2106000	2110000	what is number one and what is number two?
+2110000	2112000	Number one may be one of the lines,
+2112000	2115000	and number two may be one of the lines.
+2115000	2117000	Have you ever encountered a situation
+2117000	2121000	that when you print these pictures,
+2121000	2124000	some parts of the picture,
+2124000	2127000	such as some corresponding labels here,
+2127000	2129000	it happens to be related to
+2129000	2132000	some square numbers in your paper.
+2132000	2135000	Suppose one of the curves
+2135000	2138000	is generated by your source code number 1,
+2138000	2140000	and the other one may be generated
+2140000	2142000	by the source code number 3.
+2142000	2144000	Suppose you need to encounter
+2144000	2145000	a picture like this.
+2145000	2147000	What about a picture like this?
+2147000	2149000	If you first save it
+2149000	2152000	to the EPS file in the city,
+2152000	2154000	this number 1 and number 3
+2154000	2158000	are actually already written in this file.
+2158000	2160000	At that time, if you are editing the paper,
+2160000	2163000	when this number 1 and number 3 change,
+2163000	2166000	your picture will not do the corresponding update.
+2166000	2168000	So this is actually a situation
+2168000	2171000	that I had encountered when I was writing paper.
+2171000	2175000	Then I tried to figure out
+2175000	2177000	if there was a more systematic way
+2177000	2179000	to deal with this problem.
+2179000	2181000	This is what I'm going to talk about later,
+2181000	2185000	a method of pgftikz.
+2185000	2189000	It's my personal experience.
+2189000	2193000	Do you have any questions here?
+2193000	2195000	If you have any questions,
+2195000	2204000	you can ask me by voice.
+2204000	2205000	If not,
+2205000	2209000	let me talk about the tool pgftikz.
+2209000	2211000	First of all, when we talk about this tool,
+2211000	2217000	let's go back to the picture thing.
+2217000	2219000	In the field that is more related to me,
+2219000	2221000	the pictures that are usually involved
+2221000	2224000	are probably these two types.
+2224000	2226000	One is called a system architecture picture.
+2226000	2228000	It will describe
+2228000	2231000	how your information is processed.
+2231000	2233000	For example, you have done some add-ons,
+2233000	2235000	do some processing of different systems,
+2235000	2237000	and then put some relative information
+2237000	2241000	to make some different connections.
+2241000	2244000	The following picture is in my field of research,
+2244000	2249000	which is a relatively common picture.
+2249000	2253000	This is called a system architecture picture.
+2253000	2255000	When you look at this picture,
+2255000	2259000	it's actually quite simple.
+2259000	2262000	It is mainly composed of several elements,
+2262000	2267000	which are text, some lines,
+2267000	2271000	and some different squares,
+2271000	2274000	such as a rectangle or a circle.
+2274000	2277000	It's probably just these elements.
+2277000	2280000	It's not very complicated to describe.
+2280000	2285000	So how to effectively produce this kind of relative picture
+2285000	2288000	is actually a very interesting topic.
+2288000	2291000	This is a system diagram.
+2291000	2293000	The other one is the one I just mentioned,
+2293000	2294000	which is a diagram.
+2294000	2297000	For example, the one on my right is also a diagram.
+2297000	2299000	Let's say it has two curves.
+2299000	2301000	These two curves may have their own
+2301000	2303000	horizontal and vertical axes,
+2303000	2305000	and then there will be relative information points.
+2305000	2307000	I'm just drawing a diagram here.
+2307000	2309000	These information points may be represented
+2309000	2315000	by a circle and a rectangle.
+2315000	2317000	These two pictures
+2317000	2320000	can actually be used with Lattice,
+2320000	2325000	which is Lattice coupled with TIKZ or PGF plots,
+2325000	2327000	which is a relative command,
+2327000	2332000	to produce two such pictures directly in Lattice.
+2332000	2334000	So next I'm going to explain to you
+2334000	2336000	that if you want to produce these pictures,
+2336000	2341000	you may need some relevant content.
+2341000	2345000	Okay, let me show you the program.
+2345000	2347000	TIKZ is mainly like this.
+2347000	2350000	You can imagine it as a language
+2350000	2353000	that describes the shape of the picture.
+2353000	2356000	This language, as I just mentioned,
+2356000	2360000	is a picture of a quantity.
+2360000	2362000	So if you recall some of the concepts
+2362000	2365000	of quantity that you may have learned before,
+2365000	2366000	to describe a quantity,
+2366000	2369000	it may be to describe its starting point and ending point,
+2369000	2371000	and then connect them together.
+2371000	2374000	Then I know how to describe different shapes.
+2374000	2376000	This is to describe this triangle,
+2376000	2379000	which is to mark the end point.
+2379000	2381000	Or if it's a circle,
+2381000	2384000	it may be to describe its circumference and radius.
+2384000	2388000	So it's actually a combination of
+2388000	2392000	describing the shape you produce.
+2392000	2394000	So here's an example.
+2394000	2398000	For example, if you want to draw a line,
+2398000	2401000	its relative command is actually quite direct.
+2401000	2408000	You just need to determine the relative coordinates.
+2409000	2412000	The relative command is that you draw a straight line
+2412000	2415000	and then draw it from the coordinate point 00
+2415000	2418000	to the coordinate point 10.
+2418000	2421000	So when you run the fourth line,
+2421000	2426000	it will produce this line.
+2426000	2428000	From 00 to 10,
+2428000	2431000	it draws this line.
+2431000	2433000	There are also some commands that say
+2433000	2436000	you can decorate this line.
+2436000	2439000	For example, you can draw a arrow.
+2439000	2441000	Its relative command is that
+2441000	2443000	you draw a shape like an arrow.
+2443000	2446000	Draw a line and then a triangle.
+2446000	2450000	The shape of this arrow starts from 00.
+2450000	2452000	You can think of it as drawing an arrow
+2452000	2455000	from 00 to 01.
+2455000	2458000	So it's the arrow above.
+2458000	2464000	So it's actually a pretty intuitive description language
+2464000	2467000	to describe some geometric shapes.
+2467000	2470000	For example, if you want to draw a triangle,
+2470000	2475000	it's actually the relative coordinate point.
+2475000	2477000	It's actually this point.
+2477000	2480000	This point is our 11 coordinate point.
+2480000	2483000	Then this point is 22.
+2483000	2488000	Then this is 2.
+2488000	2491000	So you draw these lines
+2491000	2493000	and connect them.
+2493000	2495000	There are some additional commands.
+2495000	2498000	For example, you can adjust the thickness of the line,
+2498000	2500000	adjust the format of the line,
+2500000	2502000	or adjust the color of the line.
+2502000	2505000	This is a demo for you.
+2505000	2510000	Of course, it can draw something like a circle.
+2510000	2514000	This means that the center of the circle is 1-1.
+2514000	2516000	The center of the circle is 1-1,
+2516000	2519000	and the radius is 0.5.
+2519000	2521000	So it draws this.
+2521000	2523000	You can also draw something relative.
+2523000	2526000	For example, it draws a rectangle.
+2526000	2528000	This rectangle,
+2528000	2530000	its command is
+2530000	2535000	to draw from one corner of this rectangle
+2535000	2538000	to another corner.
+2538000	2543000	So the upper left corner is 3-1,
+2543000	2547000	and the lower right corner is 4-2.
+2547000	2549000	So it's actually
+2549000	2551000	as long as you determine the coordinate system,
+2551000	2553000	and then determine some coordinate numbers,
+2553000	2557000	it actually has some pretty intuitive language
+2557000	2560000	to draw these pictures.
+2560000	2564000	So this is basically the function of TIKZ drawing.
+2564000	2566000	You can actually go back to
+2566000	2569000	suppose you need to draw a picture.
+2569000	2571000	If it's something like
+2571000	2574000	some of the architecture pictures mentioned earlier,
+2574000	2578000	it's actually nothing more than some lines, shapes,
+2578000	2582000	and some combinations of text blocks.
+2582000	2586000	So if you want to draw a text block,
+2586000	2590000	it can use a command called node.
+2590000	2592000	This node command,
+2592000	2594000	you can think of it as
+2594000	2596000	insert a text block,
+2596000	2599000	and then insert it in which position.
+2599000	2602000	For example, the command 22 is
+2602000	2604000	inserted in 00.
+2604000	2607000	Insert a text block in 00.
+2607000	2613000	Then its text content is 00.
+2613000	2615000	One thing that's special is that
+2615000	2616000	in this place,
+2616000	2619000	it's actually
+2619000	2621000	the place where I marked in green,
+2621000	2625000	it's actually in harmony with the lattice.
+2625000	2627000	Simply put,
+2627000	2631000	the grammar you can use in the lattice,
+2631000	2633000	including the mathematical formula you use,
+2633000	2636000	or the formula you want to quote,
+2636000	2638000	or the reference number you want to quote,
+2638000	2640000	can all be written directly here.
+2640000	2642000	Then when the lattice is compiled,
+2642000	2647000	it will automatically update this part.
+2647000	2648000	Because of the time factor,
+2648000	2650000	I may not go into detail about these commands.
+2650000	2655000	Basically, you can create some text blocks.
+2655000	2659000	Then I will tell you another concept.
+2659000	2663000	What I personally like about TIK is that
+2663000	2670000	it can make a very precise description of your chart.
+2670000	2671000	What's the reason?
+2671000	2673000	The reason is that it uses some
+2673000	2675000	coordinate numbers behind it
+2675000	2679000	to describe the shape of the chart.
+2679000	2680000	So for example,
+2680000	2683000	let's say I draw this picture on the right.
+2683000	2685000	This picture on the right,
+2685000	2689000	I have listed the corresponding commands.
+2689000	2693000	Basically, it is inserted into a text block.
+2693000	2695000	What I want to do is to insert a text block.
+2695000	2698000	Then its content is this text box.
+2698000	2702000	Then some corresponding styles.
+2702000	2706000	Then its location is 0, 0 in the coordinate system.
+2706000	2708000	Then a more special thing is that
+2708000	2711000	you can take a name for this text block.
+2711000	2715000	Take a name like this with a small quotation mark.
+2715000	2717000	Then when you draw something else,
+2717000	2720000	you can compare this name,
+2720000	2722000	the name of the text box,
+2722000	2727000	to describe its different locations.
+2727000	2731000	For example, it's like 6 to 8 here.
+2731000	2735000	It can target the north-west of the text box,
+2735000	2737000	this top left point.
+2737000	2743000	Draw a circle at this point on the left of the text box.
+2743000	2747000	Then the radius of this circle is 0.05.
+2747000	2749000	So you get this circle.
+2749000	2753000	It is very accurately pasted on the top left corner of this text box.
+2753000	2756000	You can draw it like the north side
+2756000	2759000	or other places like this.
+2759000	2762000	So you can draw these corresponding locations.
+2762000	2765000	These locations can also be called anchor points.
+2765000	2769000	That is, when you connect the lines,
+2769000	2773000	you can directly force the specified line to connect to this point,
+2773000	2776000	or this point, this point.
+2776000	2780000	So this is the one for TIKZ.
+2780000	2784000	Then I will explain a little bit about
+2784000	2786000	some of my personal experience
+2786000	2790000	and some of the experience of drawing this system architecture.
+2790000	2792000	One of my personal favorites is that
+2792000	2797000	it is actually quite compatible with Lattice.
+2797000	2801000	For example, you are in this place of this text,
+2801000	2804000	it is actually the direct input of the corresponding Lattice command.
+2804000	2806000	So when you have a square number,
+2806000	2808000	or some numbers,
+2808000	2812000	or some special mathematical characters,
+2812000	2814000	for example,
+2814000	2817000	like you need a special character in this picture,
+2817000	2820000	it can be presented perfectly.
+2820000	2823000	Another one is the relative size.
+2823000	2827000	These sizes are actually all described in numbers,
+2827000	2831000	so it can describe the relative position very accurately.
+2831000	2836000	So these two text boxes are actually the same size.
+2836000	2841000	That is, the size of this square and this square is the same.
+2841000	2845000	And they are actually completely aligned.
+2845000	2848000	If you put the picture carefully,
+2848000	2851000	you can see that the left half and the right half are curved,
+2851000	2854000	and they are precisely aligned.
+2854000	2856000	Why is that?
+2856000	2858000	In fact, when you are writing,
+2858000	2861000	you have already described this thing accurately.
+2861000	2863000	So the picture he made
+2863000	2868000	can be very precise in size and position.
+2868000	2869000	Another one is that
+2869000	2873000	I think this kind of picture is easier to maintain.
+2873000	2874000	Simply put,
+2874000	2876000	because there are these text boxes behind it,
+2876000	2878000	so if you want to maintain it,
+2878000	2884000	if you want to make all the circles bigger in this text box,
+2884000	2886000	I don't want to use 0.05,
+2886000	2889000	I want to make all these circles bigger.
+2889000	2892000	In fact, it is to make some search replacements in the text box,
+2892000	2895000	and replace all these 0.05.
+2895000	2899000	Another one is my personal opinion.
+2899000	2901000	Because it is a text box,
+2901000	2903000	so if you have some software
+2903000	2905000	that allows you to control the interface,
+2905000	2907000	and if you have experience in using it,
+2907000	2909000	it can be used in a way like git
+2909000	2912000	to maintain your file or image,
+2912000	2915000	how to make changes.
+2915000	2921000	So this is what I think about drawing some pictures with TIKZ.
+2921000	2924000	Next, let's talk about some plots.
+2924000	2925000	This plot,
+2925000	2927000	you can look at it as
+2927000	2932000	some of the pictures we just drew in some experiments.
+2932000	2933000	Some of the pictures presented in some experiments,
+2933000	2941000	and then there may be some horizontal and vertical descriptions.
+2941000	2942000	To produce this picture,
+2942000	2944000	you can think about
+2944000	2946000	what you actually did
+2946000	2948000	when you produced this picture.
+2948000	2949000	In fact, it doesn't matter,
+2949000	2953000	you probably did three things.
+2953000	2954000	The first thing is that
+2954000	2956000	you worked very hard to do some experiments,
+2956000	2958000	write some cities,
+2958000	2960000	produce some experimental data,
+2960000	2962000	or collect some experimental data.
+2962000	2965000	So this should be a stage for you to do research,
+2965000	2969000	which is to produce some experimental data.
+2969000	2971000	The other stage is that
+2971000	2973000	according to your experimental data,
+2973000	2976000	you want to produce some more beautiful pictures,
+2976000	2977000	and then maybe clearer,
+2977000	2980000	some pictures that are more visible,
+2980000	2983000	so this may be the second stage.
+2983000	2985000	The third stage is that
+2985000	2987000	when you produce the picture,
+2987000	2989000	you need to present it in,
+2989000	2990000	for example, your paper,
+2990000	2992000	or your video,
+2992000	2994000	or on your poster.
+2994000	2997000	So there may be these three stages.
+2997000	2999000	The stage that people use more often
+2999000	3001000	may be that
+3001000	3004000	they tend to use the same software
+3004000	3007000	for stage 1 and stage 2.
+3007000	3008000	For example,
+3008000	3011000	what I use more often is MATLAB.
+3011000	3013000	You can do some calculations in MATLAB,
+3013000	3017000	and then it has some functions that can produce pictures.
+3017000	3020000	After the picture, you can save it like this,
+3020000	3022000	and then save it,
+3022000	3024000	and then paste it on,
+3024000	3026000	for example, your paper or slides.
+3026000	3028000	This is a method.
+3028000	3030000	If you have some other languages,
+3030000	3032000	such as Python or R,
+3032000	3034000	or GNU Plot,
+3034000	3038000	it actually has a lot of different choices.
+3038000	3042000	This is a method.
+3042000	3045000	It's a more common method.
+3045000	3049000	Here, I'd like to ask you a few situations.
+3049000	3051000	These situations are actually
+3051000	3054000	what you encounter when you do research.
+3054000	3059000	If you encounter the following three situations,
+3059000	3063000	the above methods may become a little bit
+3063000	3065000	more cumbersome.
+3065000	3067000	The first situation is that
+3067000	3072000	if you have produced your picture,
+3072000	3074000	and you have shown it to other people,
+3074000	3077000	to your partner or advisor,
+3077000	3079000	he thinks this picture
+3079000	3082000	may need to add one more curve,
+3082000	3084000	or compare it in one more way,
+3084000	3086000	or add some more data points.
+3086000	3089000	If you use a method like MATLAB,
+3089000	3091000	you may have to go back to the original city,
+3091000	3093000	and run the city again.
+3093000	3095000	But think about it,
+3095000	3097000	this seems to be a little bit,
+3097000	3099000	some places are repeated.
+3099000	3102000	In fact, in this picture,
+3102000	3104000	there are some curves and some data
+3104000	3106000	that you have dealt with before.
+3106000	3111000	So you don't need to deal with it again.
+3111000	3113000	What you need to do
+3113000	3115000	is to deal with
+3115000	3117000	what you haven't done yet.
+3117000	3120000	So, is there anything
+3120000	3123000	that can separate this thing?
+3123000	3126000	It's like the first thing,
+3126000	3128000	produce data and draw a picture.
+3128000	3131000	Can these two things be handled separately?
+3131000	3133000	When you have a new experiment,
+3133000	3135000	you should focus on
+3135000	3137000	producing new data.
+3137000	3139000	Drawing a picture,
+3139000	3141000	you should have a common interface
+3141000	3145000	to update the picture.
+3145000	3147000	Another situation is that
+3147000	3149000	maybe when you are writing a paper,
+3149000	3152000	suppose you change the mathematical symbol.
+3152000	3154000	In the process of changing the paper,
+3154000	3156000	maybe there are some mathematical symbols
+3157000	3159000	Then you may change it to B.
+3159000	3161000	It becomes that in this article,
+3161000	3163000	everything with the symbol A
+3163000	3165000	has to be changed to the symbol B.
+3165000	3167000	If unfortunately,
+3167000	3169000	this symbol B appears in one of the small places
+3169000	3171000	in your picture,
+3171000	3174000	then you have to go back and open the method
+3174000	3178000	and manually change the place of A to B.
+3178000	3179000	When there are a lot of things,
+3179000	3182000	this thing is actually a little bit,
+3182000	3185000	it's a little bit cumbersome.
+3185000	3186000	Then there is another one,
+3186000	3189000	which is the relative mathematical symbol.
+3189000	3191000	If you have some drawing experience,
+3191000	3193000	the picture produced by MATLAB,
+3193000	3197000	the text below it is actually a certain symbol.
+3197000	3200000	But if you use LaTeX to write a paper,
+3200000	3202000	the shape of the symbol required by the paper
+3202000	3205000	is actually sometimes another one.
+3205000	3208000	It may not be the same as the MATLAB symbol.
+3208000	3209000	So is there a way to say
+3209000	3212000	that all the symbols are unified?
+3212000	3213000	In addition,
+3213000	3216000	if there is a mathematical shape here,
+3216000	3219000	suppose some more special mathematical symbols,
+3219000	3222000	can they appear in this picture
+3222000	3225000	with the same shape?
+3225000	3228000	In fact, I encountered some relative situations
+3228000	3232000	in the drawing before.
+3232000	3234000	After a little research,
+3234000	3238000	I think I personally
+3238000	3241000	use this method of PGF plot.
+3241000	3244000	It is actually a drawing tool,
+3244000	3247000	and it is based on TIKZ as a drawing function.
+3247000	3251000	It is compatible with LaTeX.
+3251000	3253000	It is a new drawing tool,
+3253000	3255000	but its spirit of drawing
+3255000	3261000	is actually similar to most drawing software.
+3261000	3264000	You will need to produce relative labels,
+3264000	3268000	legend, or some different line format.
+3268000	3272000	This part of the spirit is close.
+3272000	3273000	Because of time constraints,
+3273000	3275000	I may quickly mention that
+3275000	3276000	although this is a new tool,
+3276000	3280000	but there are some ready-made conversion tools.
+3280000	3282000	Suppose the picture produced by MATLAB
+3282000	3284000	can have some converters
+3284000	3287000	that can be converted to TIKZ language.
+3287000	3290000	This is what I found when I was making the video,
+3290000	3294000	that is, some pictures produced by Python
+3294000	3296000	also have some related packages
+3296000	3301000	that can be converted to the language of TIKZ.
+3301000	3304000	Another experience I would like to mention is
+3304000	3309000	that suppose you need to update your data.
+3309000	3310000	As mentioned earlier,
+3310000	3312000	suppose you have three experimental pictures,
+3312000	3316000	and you may be asked to add another curve.
+3316000	3319000	At this time,
+3319000	3322000	you don't need to create a new picture.
+3322000	3324000	My own approach is
+3324000	3327000	that you should maintain a text file.
+3327000	3330000	This text file describes the data
+3330000	3334000	of the relative data points in the green one.
+3334000	3337000	There may be a blue text file
+3337000	3340000	that describes the numbers on the blue lines,
+3340000	3343000	the numbers on these pictures.
+3343000	3345000	At that time,
+3345000	3348000	the pgfplot can directly use the input file method
+3348000	3351000	to update these pictures at the same time.
+3351000	3353000	I want to use the time later
+3353000	3356000	to quickly tell you what its philosophy is.
+3356000	3358000	If you are interested in these instructions,
+3358000	3360000	we can discuss it later.
+3360000	3364000	This is a pgfplot spirit.
+3364000	3366000	You can notice that it is actually
+3366000	3369000	compatible with the latest.
+3369000	3374000	It is actually wrapped in the environment of TIKZ.
+3374000	3376000	What it does is
+3376000	3381000	there is an environment called begin and end access.
+3381000	3382000	In this environment,
+3382000	3385000	you will need to have a range to explain
+3385000	3387000	some of the coordinates,
+3387000	3391000	such as its width, its x-level,
+3391000	3394000	what is the value, and then what is the y-level value.
+3394000	3396000	Notice that this place
+3396000	3398000	you can put the latest definition.
+3398000	3402000	So you can make sure that its font is the same.
+3402000	3405000	So if you look closely at this picture,
+3405000	3407000	the font of this place
+3407000	3410000	is the same as the font of my first video.
+3411000	3413000	So if you update it like this,
+3413000	3415000	it will automatically process these two
+3415000	3417000	with the same font.
+3417000	3420000	The addplot is a bit like
+3420000	3423000	you have a curve, so it will produce
+3423000	3425000	a curve of data1 here
+3425000	3427000	and a curve of data2.
+3427000	3429000	Here it is another
+3429000	3431000	from an external text file.
+3431000	3433000	This is an external text file.
+3433000	3435000	It will define all the numbers
+3435000	3437000	of these data points.
+3438000	3440000	Grab these data
+3440000	3444000	and paste it into this picture.
+3444000	3447000	I want to tell you quickly.
+3447000	3449000	Finally, let me tell you
+3449000	3452000	what I think of Latex.
+3452000	3455000	If you are new to Latex,
+3455000	3458000	DIKZ, PJ Plot,
+3458000	3460000	maybe you have never touched it
+3460000	3463000	or maybe you don't have much experience,
+3463000	3466000	I personally recommend Overleaf.
+3466000	3468000	Overleaf is a platform
+3468000	3471000	where you can write Latex online.
+3471000	3474000	Basically,
+3474000	3478000	some of the layout settings
+3478000	3480000	have been set for you.
+3480000	3485000	So it will be easier to write.
+3485000	3487000	I will list some
+3487000	3489000	relative reference resources later.
+3489000	3490000	If you use Overleaf,
+3490000	3492000	it actually has some
+3492000	3494000	related instructions
+3494000	3496000	and some documents
+3496000	3498000	that you can learn Latex
+3498000	3500000	in 30 minutes.
+3500000	3502000	I also found some
+3502000	3504000	if you want to do
+3504000	3505000	a more detailed reference,
+3505000	3507000	there are some like Wikibook
+3507000	3509000	for reference.
+3509000	3511000	If you are interested
+3511000	3512000	in this kind of drawing,
+3512000	3514000	there is a PGF manual.
+3514000	3516000	You can click on it.
+3516000	3519000	It has a pretty detailed
+3519000	3522000	document
+3522000	3523000	like this.
+3523000	3526000	Let me show you.
+3526000	3528000	It has a document
+3528000	3531000	for DIKZ, PJ Plot
+3531000	3534000	with more than 1,000 pages.
+3534000	3535000	In fact, many of my instructions
+3535000	3536000	are found from it.
+3536000	3538000	The concept is also
+3538000	3541000	taken from it.
+3541000	3542000	Some websites,
+3542000	3544000	like this website,
+3544000	3546000	I think it's pretty good.
+3546000	3548000	It has some examples of
+3548000	3549000	drawing with PJ Plot.
+3549000	3551000	So if you go in and have a look,
+3551000	3553000	there are some pretty
+3553000	3554000	maps.
+3554000	3556000	It also lists the relevant instructions.
+3556000	3558000	You can have a look.
+3558000	3560000	Another one is that
+3560000	3563000	there are also some online discussions on the Internet.
+3563000	3565000	If you have any questions about this kind of text,
+3565000	3567000	you can post it on it.
+3567000	3568000	What's next?
+3568000	3569000	I mainly list some
+3569000	3572000	editors I mentioned earlier.
+3572000	3574000	There are some relative websites
+3574000	3576000	with relative editors.
+3576000	3578000	Basically,
+3578000	3579000	these editors should all be
+3579000	3581000	downloaded from the website
+3581000	3583000	and installed.
+3583000	3584000	It's also like
+3584000	3585000	if you want to set up
+3585000	3587000	this editor environment
+3587000	3589000	on your own computer,
+3589000	3591000	there are actually several more common ones.
+3591000	3595000	I also list the relevant information.
+3595000	3597000	If you are interested in
+3597000	3598000	this kind of map conversion, DIKZ,
+3598000	3600000	I also list the relevant
+3600000	3602000	websites here.
+3602000	3604000	You can use it as a reference.
+3604000	3606000	Okay, I think it's about time.
+3607000	3609000	Finally, thank you for listening.
+3609000	3611000	I hope you can
+3611000	3613000	use LaTeX
+3613000	3615000	in your research
+3615000	3617000	and successfully express
+3617000	3620000	the results you want to express.
+3620000	3622000	Okay, I think
+3622000	3624000	we'll stop here.
+3628000	3630000	Thank you, Mr. Liu, for your wonderful sharing.
+3630000	3632000	I just saw
+3632000	3634000	in the chat
+3634000	3636000	a few questions.
+3636000	3638000	If you have any questions,
+3638000	3640000	you're welcome to
+3640000	3642000	open the microphone
+3642000	3644000	and ask your question.
+3652000	3654000	Or if your microphone is not convenient,
+3654000	3656000	I can quickly go through
+3656000	3658000	the comments.
+3658000	3660000	There are a few comments
+3660000	3662000	I saw,
+3662000	3664000	for example, Yan
+3664000	3666000	wants to know
+3666000	3668000	how similar
+3668000	3670000	LaTeX and HTML are.
+3670000	3672000	Do you recommend using
+3672000	3674000	text editor software?
+3680000	3682000	Okay, thank you very much
+3682000	3684000	for Yan's question.
+3684000	3686000	I'll start with
+3686000	3688000	the degree of similarity between
+3688000	3690000	the two languages.
+3690000	3692000	Here is a
+3692000	3694000	user interface
+3694000	3696000	for your reference.
+3696000	3698000	In fact, if you
+3698000	3700000	have a little research
+3700000	3702000	on HTML,
+3702000	3704000	HTML seems to
+3704000	3706000	have something
+3706000	3708000	at the beginning of a label
+3708000	3710000	and something
+3710000	3712000	at the end.
+3712000	3714000	In LaTeX,
+3714000	3716000	it's more like
+3716000	3718000	using a line
+3718000	3720000	and then a command,
+3720000	3722000	and then put this thing
+3722000	3724000	inside with this big quotation mark.
+3724000	3726000	I feel
+3726000	3728000	that its spirit is close.
+3728000	3730000	For example,
+3730000	3732000	if the thing you put in the back
+3732000	3734000	is more complicated,
+3734000	3736000	it will use some
+3736000	3738000	begin-end environment
+3738000	3740000	to wrap
+3740000	3742000	the things here.
+3742000	3744000	So
+3744000	3746000	I think the spirit is
+3746000	3748000	quite similar to
+3748000	3750000	HTML.
+3750000	3752000	It's
+3752000	3754000	also close to what I mentioned earlier.
+3754000	3756000	Its spirit is a bit like
+3756000	3758000	writing
+3758000	3760000	mathematics
+3760000	3762000	or
+3762000	3764000	a layout for
+3764000	3766000	academic articles.
+3766000	3768000	It may have more functions.
+3770000	3772000	Let's see
+3776000	3778000	the next one.
+3778000	3780000	LaTeX.
+3780000	3782000	Use
+3782000	3784000	the source code
+3784000	3786000	control software
+3786000	3788000	to pursue
+3788000	3790000	the editing problem.
+3790000	3792000	Thank you.
+3792000	3794000	I seem to have forgotten to answer a question.
+3794000	3796000	Do you recommend using
+3796000	3798000	text editor software
+3798000	3800000	to understand text grammar?
+3800000	3802000	I didn't seem to answer this one.
+3802000	3804000	I can go back to
+3804000	3806000	the previous one.
+3810000	3812000	In my opinion,
+3812000	3814000	as long as it's easy to use.
+3816000	3818000	In fact,
+3818000	3820000	these can be recognized.
+3824000	3826000	The red ones
+3826000	3828000	should be able to recognize text grammar.
+3828000	3830000	Then
+3830000	3832000	the right ones
+3832000	3834000	may need to install some special
+3834000	3836000	kits.
+3836000	3838000	The last one is a
+3838000	3840000	notebook in Windows.
+3840000	3842000	So it may
+3842000	3844000	not be able to have other kits.
+3844000	3846000	The first few editors
+3846000	3848000	actually have corresponding kits.
+3848000	3850000	I can
+3850000	3852000	demo it for you.
+3852000	3854000	I use Visual Studio Code here.
+3854000	3856000	Then it has a
+3856000	3858000	package called
+3858000	3860000	LaTeX Workshop.
+3862000	3864000	It actually
+3864000	3866000	writes a little bit like
+3866000	3868000	what you see here with
+3868000	3880000	relative
+3880000	3882000	conforming
+3882000	3884000	instructions.
+3886000	3888000	Good.
+3888000	3890000	I don't know if I can turn on the setting.
+3890000	3892000	Well,
+3892000	3894000	I usually
+3894000	3896000	change it directly.
+3896000	3898000	Well,
+3898000	3900000	if you are interested,
+3900000	3902000	you can actually study it a little bit,
+3902000	3904000	that is,
+3904000	3906000	I usually
+3906000	3908000	change it directly.
+3908000	3910000	Well,
+3910000	3912000	if you are interested,
+3912000	3914000	you can actually study it a little bit,
+3914000	3916000	that is,
+3916000	3918000	you can actually study it a little bit,
+3918000	3920000	that is,
+3920000	3922000	Visual Studio Code with
+3922000	3924000	Latest Workshop.
+3924000	3926000	In fact,
+3926000	3928000	this kit will help you
+3928000	3930000	set things up.
+3930000	3932000	So when you type directly,
+3932000	3934000	you can begin,
+3934000	3936000	and then it will be generated directly.
+3938000	3940000	So,
+3940000	3942000	although it is a text editor,
+3942000	3944000	it is suitable for
+3944000	3946000	when you want to use it,
+3946000	3948000	sometimes
+3948000	3950000	it seems that
+3950000	3952000	some environments can be selected.
+3954000	3956000	Well,
+3956000	3958000	I believe that
+3958000	3960000	these I marked can actually
+3960000	3962000	do similar functions.
+3962000	3964000	If it is on the left,
+3964000	3966000	it should be preset,
+3966000	3968000	and there are some relatively
+3968000	3970000	grammatical instructions.
+3970000	3972000	Then I go back to
+3972000	3974000	the third question.
+3976000	3978000	Well,
+3978000	3980000	if you need more people to edit a document,
+3980000	3982000	that is,
+3982000	3984000	directly using the source code control software to track
+3984000	3986000	or there is a test dedicated maintenance platform.
+3986000	3988000	Well,
+3988000	3990000	if you want to be
+3990000	3992000	simple and easy to use,
+3992000	3994000	that is, you don't need to do any settings,
+3994000	3996000	I personally recommend Overleaf.
+3996000	3998000	It is that you
+3998000	4000000	open an account in Overleaf,
+4000000	4002000	you can open a project
+4002000	4004000	under this account,
+4004000	4006000	and then you can share it with others.
+4006000	4008000	If other people are editing,
+4008000	4010000	in fact,
+4010000	4012000	I remember that there are some on the right,
+4012000	4014000	you can do some discussions,
+4014000	4016000	you can do some comments.
+4016000	4018000	So personally, I think Overleaf
+4018000	4020000	is actually a relatively
+4020000	4022000	friendly interface
+4022000	4024000	for beginners.
+4024000	4026000	Well,
+4026000	4028000	if you use the source code control software
+4028000	4030000	to edit documents,
+4030000	4032000	that's fine.
+4032000	4034000	If you have,
+4034000	4036000	I just mentioned Git,
+4036000	4038000	it should be mentioned in Overleaf.
+4046000	4048000	Here I mentioned Git,
+4048000	4050000	that is, it is actually a version control software.
+4050000	4052000	You can imagine it
+4052000	4054000	as controlling
+4054000	4056000	a group of text files,
+4056000	4058000	which changes it made.
+4058000	4060000	If you do
+4060000	4062000	the right maintenance,
+4062000	4064000	these changes can be
+4064000	4066000	shared between multiple users.
+4070000	4072000	I am using
+4072000	4074000	Git,
+4074000	4076000	but after I write a paragraph,
+4076000	4078000	I will commit it to
+4078000	4080000	Git,
+4080000	4082000	that is, I am now drawing to this extent,
+4082000	4084000	and then save it first.
+4084000	4086000	If there are more users,
+4086000	4088000	I believe that Git
+4088000	4090000	can also do it.
+4094000	4096000	The dedicated maintenance platform
+4096000	4098000	may be Overleaf.
+4098000	4100000	So it is more like
+4100000	4102000	it depends on
+4102000	4104000	which interface
+4104000	4106000	users like to use.
+4108000	4110000	I don't know if I have answered
+4110000	4112000	Ian's question.
+4112000	4114000	At this stage,
+4114000	4116000	I would like to
+4116000	4118000	stop the recording.
+4118000	4120000	If you still have time
+4120000	4122000	and have questions,
+4122000	4124000	you are welcome to
+4124000	4126000	discuss freely.
+4126000	4128000	Thank you for your sharing.

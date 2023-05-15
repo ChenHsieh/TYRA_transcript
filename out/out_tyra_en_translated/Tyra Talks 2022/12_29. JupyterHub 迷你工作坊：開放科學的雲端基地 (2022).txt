@@ -1,0 +1,1995 @@
+Today is October 8th, 2022, Taira Talk.
+The speaker we invited today is Ms. Zheng Huaijie.
+The topic she will talk about is
+Jupiter Hub, a mini studio,
+an open science cloud base.
+Let me briefly introduce Huaijie's background.
+In 2010 and 2013, Huaijie obtained a master's and a master's degree in Taiwan University.
+In 2015, she went to Cornell University
+for a PhD in Earth and Atmospheric Science.
+In 2021, Huaijie joined a research team at the University of California, Berkeley.
+She is now working as a post-PhD researcher
+on the Jupiter-Meet-the-Earth project.
+Today, Huaijie will teach us about Jupiter Hub.
+She also mentioned that you don't need any background knowledge or program design skills to participate in this talk.
+However, if you want to store Jupiter resources at the same time during the talk,
+you must prepare a Google or Microsoft account.
+Please prepare for the third part of the talk.
+That's all for my introduction.
+Let's give the floor to Huaijie.
+Thank you, Shi-An.
+Thank you for your introduction.
+It's an honor to be able to invite Tara to give a talk.
+My last talk was in January this year.
+I would like to share with you what I am doing at UC Berkeley.
+Instead of sharing, I would like to focus on Jupiter Hub.
+I would like to share with you what Jupiter Hub is
+and why we call it the cloud base of open science.
+How it can transform our practice of open science.
+Let's get started.
+I would like to share with you what I am doing at the moment.
+I would like to add a little bit.
+My field of expertise is earth science.
+To be more precise, I am studying earth physics,
+rock science,
+meteorology,
+and astrophysics.
+What I am doing at the moment is
+using a lot of satellite data
+and model analysis
+to monitor and understand the changes in ice and snow.
+For example,
+you can see a satellite here.
+It orbits the earth
+and emits green light.
+When it hits the ground,
+the satellite will receive the reflected light.
+Based on the reflected light,
+we can calculate the distance between the satellite and the earth,
+and convert it to the height of the earth.
+If we can do this repeatedly for an ice cube,
+we can get an ice cube
+with the time passing by,
+the height of the surface,
+or the thickness of the ice.
+Then we use some physical models
+to analyze
+the factors
+that affect the thickness of the ice cube.
+It sounds cool,
+and I like it.
+However, most of the academic activities
+that I am doing now
+are similar to what you are doing.
+We need to study
+and explain our research
+to others,
+including colleagues
+and people
+in different fields.
+In addition to research,
+we also have teaching activities
+where we write software
+for others.
+I have done some of these.
+Here are some pictures
+of what I have done
+in the past few years,
+including developing a software
+called KARS.
+I also wrote a website
+called GMT Tutorials.
+In short,
+I teach others
+how to draw pictures
+using GMT software.
+The picture in the lower right corner
+is from a paper
+I published in 2019.
+At that time,
+I discussed with the paper publisher
+how to make some materials
+that can be more efficient
+and faster
+to convey
+some new knowledge
+of the paper
+and make it
+into a news article.
+Back to our topic today,
+we are going to talk about JupyterHub.
+How can we change
+the academic activities
+we do every day?
+Before we talk about JupyterHub,
+let's talk about
+the concept of Jupyter.
+If I were to explain
+what Jupyter is,
+I would say that
+Jupyter is an open
+data science...
+Sorry. Jupyter is an ecosystem
+composed of open data science tools
+and a community
+of open data scientists.
+There might be some professional terminology here,
+so I'll explain a little more.
+The so-called tools here mean
+that if you want to complete
+a task,
+the tools you use...
+For example,
+Photoshop
+is a tool
+for video editing.
+Matplotlib
+is a tool
+used in Python
+for scientific mapping.
+Something like that.
+As for the word
+open,
+it's a little vague.
+To be honest,
+many different aspects
+are considered to be open.
+For example,
+it can refer to the tools you use.
+The source code
+may be public,
+and anyone can modify it.
+On the other hand,
+the way you collaborate
+allows as many people
+as possible to participate
+and contribute and discuss.
+Anyway,
+the core concept of
+the word open
+is
+not to be excluded,
+but to allow as many people
+as possible to participate
+in what you are doing now.
+So we have a lot of tools.
+Some tools are software,
+some tools are hardware,
+and some tools
+are used to describe
+how software and hardware
+interact with each other.
+These tools are different
+from other tools.
+Think about it.
+If you put a tool under a tool,
+a screwdriver may be used to lock the screw,
+and a crowbar may be used
+to twist the wire.
+These tools are independent.
+In data science,
+the so-called tools
+often rely on each other.
+For example,
+if you want to use Matplotlib today,
+you have to install Python first.
+After installing Python,
+you can install Matplotlib,
+and it will work.
+If you draw the interdependence
+between different tools,
+you will see a picture
+that looks like a network,
+or a food chain.
+So we tend to
+call the interdependence
+between tools
+and their interdependence
+an ecosystem.
+An ecosystem like Jupyter
+is not very old.
+The concept of open science
+has only appeared
+for about 20 years
+so far.
+You may feel shorter.
+In the first ten years,
+it was in the early stages.
+Not many people
+were completely exposed
+to this concept.
+One of the most likely
+time to accept this exposure
+is 2015.
+At that time,
+Lego released
+the first gravity wave observation
+in human history.
+It shocked the world.
+They won the Nobel Prize
+in 2017 or 2018.
+Lego
+did more than
+this.
+Of course,
+they are very good
+at writing articles
+and building observatories.
+But they also have
+an open science department.
+This department
+has compiled all the data
+about the gravity wave observation
+and posted it on the Internet.
+Everyone can
+go to their website
+and click on their link.
+You can re-execute the code
+and draw the same picture
+as in their paper.
+I will share
+my video later.
+You can click on the link
+to see what it is.
+After 2015,
+if you use Twitter,
+you may see
+more and more people
+on Twitter
+saying
+how great the open science department is.
+It can make me do things
+I couldn't do before.
+For example,
+this person used his phone
+to analyze the data
+of CIMIP-6 on the train.
+If you don't know what CIMIP-6 is,
+it is a global
+climate simulation database.
+It generates
+TBG data every day.
+The data
+is huge.
+It is not easy
+to analyze the data
+on the train
+with a smart phone.
+What's more,
+NASA has announced
+that
+next year, 2023,
+will be their open science year.
+They have a big project
+called TOPS,
+Transform to Open Science.
+Starting from next year,
+it will take about 4 to 5 years.
+They will
+manage and
+publish the data
+in a big way.
+After next year,
+they will
+adopt a new model,
+a more open science model,
+to manage and publish
+their data
+work flow
+and research results.
+This is a trend.
+We can see this trend.
+Everyone is talking about it.
+Of course, thanks to the development of technology,
+we now have
+different ways
+to practice
+open science.
+Here is an example.
+We know that open science
+is a very common term.
+There are many
+different ways to practice it.
+Here is an example.
+You can see
+these pictures.
+Let's say there is a researcher
+named Jim.
+He just wrote a cool paper
+and published it.
+He wants
+more. He wants to say
+that he wants this paper
+to be
+supported by
+other people.
+He wants everyone
+to be able to
+see his paper,
+check for errors,
+and even
+re-examine his experiment,
+and even
+improve
+his calculations
+in the paper.
+What can he do?
+Here is a method.
+He can use
+Jupyter Notebook.
+In this file,
+he can put all the details of the research,
+including narrative text,
+including city code,
+including
+many interactive
+or non-interactive icons,
+as well as more background resources,
+such as primitive data,
+multimedia,
+and software, etc.
+After he has
+this Jupyter Notebook,
+he can put it in a
+network storage
+so that everyone can read it.
+A more popular storage is
+GitHub.
+He can put it on GitHub
+so that everyone can see it.
+After uploading,
+he does more things
+to make
+this storage
+called
+Finder Ready.
+Simply put,
+he can provide additional information,
+such as
+what kind of software
+you need
+to run the notebook
+in this storage,
+such as Python,
+R,
+Julia, or Matlab.
+He can provide
+background information
+and make a
+set of files.
+He can arrange
+the files.
+When all these things are ready,
+we can use
+a tool called
+Docker
+to
+make this entire storage
+into
+an
+independent
+image.
+It's like
+a mini
+execution environment.
+In this environment,
+you can
+use the same environment
+to run these programs.
+Now, all you have to do is
+share this Docker image
+to other people around the world.
+Then other people
+can perfectly reproduce your research
+without
+additional installation of
+many beautiful softwares.
+The above is
+one of the examples
+of open science.
+It allows people to
+quickly save
+their own research materials.
+How does JupyterHub
+contribute
+to
+the
+data science process?
+If I were to
+explain what JupyterHub is,
+I would say that
+JupyterHub is a tool
+that provides
+convenient data science environment
+on a shared computer.
+What is a
+shared computer?
+Simply put,
+suppose you have
+a computer in your lab,
+and everyone can log in
+and do something on it,
+such as
+writing articles, processing data,
+writing papers, and so on.
+The server
+you can log in to
+and store
+the CPU or GPU
+resources in it
+is called a shared computer.
+Traditionally,
+I guess some of you
+may have used it,
+such as SSH,
+to a remote server and do something on it.
+Of course,
+you have to install a lot of things
+in order to do
+what you want to do on the server.
+JupyterHub
+eliminates these steps.
+It provides some pre-set
+configurations
+so that you can
+go to the server
+without doing anything
+and start
+your data science analysis.
+Here is a picture
+of the concept
+of JupyterHub.
+You can imagine
+that there are a lot of people here.
+They are going to store
+a machine like this.
+JupyterHub is running on the machine.
+Everyone has to pass a verification first.
+When they successfully
+log in to the machine,
+JupyterHub will provide
+several standard interfaces
+for them to choose from,
+such as the Jupyter Notebook interface.
+Then they can start
+storing the computing resources
+in the machine
+through this interface.
+Note that the computing resources
+are separate from JupyterHub.
+JupyterHub
+can also prepare several
+different computing environments.
+For example, it can prepare
+a Python environment.
+If I need it,
+I can log in to JupyterHub
+and call the Python environment
+and say I want to use Python this time.
+At the same time,
+JupyterHub can also prepare
+another environment
+that is completely built
+on different tools.
+If others want to use it,
+they can call it out at any time.
+So JupyterHub
+is a layer of disassembly
+of such a work structure
+to make it easier
+for open science and cooperation.
+Here is another example
+to explain
+how JupyterHub
+can achieve
+the goal we want,
+that is, the goal of sharing the environment.
+Let's say there is a professor
+named John.
+He is now leading
+a large-scale research project.
+This large-scale research project
+has already
+pre-configured
+the software he wants to use.
+For example, he may want to use Python
+for the first time.
+He says this is the environment I want.
+How does JupyterHub
+tell others
+to use this environment?
+We provide a method
+that allows JupyterHub
+to cooperate with
+the IT staff of the school.
+JupyterHub will send
+an application form
+to the IT staff
+and say
+this is the environment
+I want to design.
+This is the environment I want to provide.
+These environments
+will be configured
+in a configuration file
+for the IT staff.
+After receiving this file,
+JupyterHub will
+refer to the settings
+and open
+a thing called Workspace Manager.
+In this example,
+Workspace Manager is JupyterHub.
+So I call it JupyterHub.
+The IT staff will open JupyterHub
+in the computer of the school.
+JupyterHub will read
+the file provided
+and configure
+the work environment
+you need,
+including Python,
+etc.
+Finally,
+JupyterHub will run
+on the cloud server
+of the school.
+After it is configured,
+it will generate
+a Docker file.
+It's a bit like...
+If I talk too much
+and you don't understand,
+please ask me later.
+It will generate a Docker file
+and
+a URL.
+After
+getting this URL,
+you can send it
+to anyone
+including students
+and their collaborators.
+They can connect to
+the JupyterHub login page.
+As long as
+they can verify their identity
+and log in,
+they can save
+the JupyterHub
+running on the cloud
+and all the
+environment configuration
+are ready.
+No need to install anything else.
+This is the concept of
+sharing the environment.
+That's all for the introduction.
+Since this is a mini workshop,
+let's try
+what JupyterHub is.
+The JupyterHub we want
+is
+a Kalisto
+organization.
+Kalisto
+has
+two
+non-profit organizations
+in Canada.
+Their main goal
+is to
+provide
+high school teachers
+in Canada
+with sufficient resources
+to teach students
+how to do
+data science
+and
+various teaching modules.
+Their
+own JupyterHub is called
+KalistoHub.
+JupyterHub is the name
+of the tool.
+The tool
+is used to
+connect the tool
+to the cloud.
+KalistoHub
+is the Kalisto
+organization.
+They use JupyterHub
+to connect
+the Kalisto
+organization
+to the cloud.
+This is
+my video link.
+This is Kalisto's
+website.
+I will continue to share my screen.
+Can you see that I am
+on Kalisto's page?
+Yes.
+Can you hear me?
+Yes.
+Thank you.
+There is a KalistoHub
+icon in the upper right corner.
+Click it.
+You will see
+that you can
+log in.
+Log in with your account.
+It will ask you
+if you want Google or Microsoft.
+You can choose what you want.
+I have Google.
+This is my
+Berkeley account.
+I will show you.
+When you log in,
+you will see this screen.
+You are preparing.
+Oh, this is not what I want.
+Let me do it again.
+I want to log in a new one.
+Log in.
+Log in with my Gmail.
+OK.
+After you log in,
+you will see a page like this.
+This page is
+one of the standard
+interface of
+Kalisto.
+We usually call it
+Notebook interface.
+Is everyone OK?
+Do you need to wait?
+I am OK.
+Is BlueJeans
+available?
+Can you show me
+if you need
+more time?
+He can raise his hand.
+But I am not sure
+what will happen.
+Oh, OK.
+Oh, Weiwei.
+Let me pull out the chat window.
+Now you can use the chat window
+to let me know where you are.
+But I don't know how to pull it out.
+Anyway,
+let's continue.
+When you see this page,
+it means you have successfully logged in
+to Kalisto Hub.
+You have successfully logged in
+to Kalisto Hub,
+and you have started using
+the computing resources provided by them.
+There will be a
+file list here.
+You will see a file called
+Getting Started.
+You will see a page
+like this.
+This is how
+Jupyter Notebook
+looks like
+under the Notebook interface.
+You can see that
+this is a Notebook file.
+It looks very diverse,
+but if you click twice
+on each block,
+you will see their
+original information.
+The original information
+is actually some words.
+These words
+are written in Markdown format.
+So when you are in editing mode,
+you can edit as you like.
+For example,
+I can type blah blah
+under this block.
+Then,
+when you click Run,
+it will re-
+change this block to display mode.
+Like this.
+You can see blah blah
+under this block.
+As I said,
+this is a Jupyter Notebook,
+so you can also
+compute directly on it.
+For example,
+we can add some blocks
+under this Notebook
+by clicking Add.
+We can click
+a block
+and type
+Hello World.
+In the upper right corner,
+you can see
+what is the core
+of this Notebook.
+Here it says
+Python 3,
+which means that
+when you click Run,
+Notebook will run
+these programs
+in Python.
+For example,
+I can type
+hello world
+and
+print a.
+After typing,
+if you click Run,
+it will run this program
+in Python.
+If you want to add
+more columns,
+you can also
+change the block type
+from Code
+to Markdown.
+You can type here
+like
+Today is
+Ira's speech.
+After running,
+it will become
+the narrative text
+in your Notebook.
+What I like
+about Python Notebook
+is the narrative text
+The Markdown
+supports LaTeX,
+so you can type
+mathematical formulas here.
+For example,
+I can type
+what?
+Q
+equals
+OK
+times
+partial T
+partial X
+This is a
+Parallelism.
+Then a Parallelism
+will appear.
+If you traditionally use LaTeX,
+it's hard to mix and match like this,
+especially when
+there is Chinese in your article.
+Traditionally,
+LaTeX is very difficult to process
+Chinese content,
+but
+in Jupyter Markdown,
+because it
+originally supports UTF,
+you can perfectly
+mix these two things together.
+It's very convenient.
+Is it OK so far?
+Should we pause or continue?
+I'm OK.
+Do you have any questions?
+Although there may be something to trouble you,
+I always look at the chat box,
+so if there are any questions
+in the chat,
+can you interrupt me a little?
+OK.
+Or if you see someone raising their hand,
+you can interrupt me at any time.
+I will help you pay attention to these.
+You can continue.
+Thank you.
+We just talked about
+Jupyter Notebook and Core.
+These two things are separate.
+Depending on the user's needs,
+we can switch between different cores.
+So let's switch to a different core.
+Let's try not to use Python now.
+If you move the mouse
+to the menu above,
+then select Kernel.
+Then,
+at the bottom of the Kernel,
+there is a Change Kernel.
+You will see that
+there are two cores in Callisto Hub.
+One is Python, the other is R.
+Let's try R.
+Now,
+this Jupyter Notebook
+is running R,
+not Python.
+If we re-run
+Hello World,
+it will...
+Oh, this part is still useful.
+Because there is also this part in R.
+But the syntax of R itself
+is like this.
+This part of Python
+cannot be executed.
+Something like this.
+Run.
+It will execute
+this part of the program
+in the way of R.
+If you draw a picture on it,
+for example,
+let's quickly make an X.
+This is the program of R,
+so if you don't understand,
+you are welcome to ask me anytime.
+But now,
+I have to set five data points.
+Then draw these five data points.
+Then I can press
+Shift and Enter
+to run this program.
+Then it will call the jpg in R
+to draw this thing.
+For the jpg in Python,
+the jpg in Python
+is also similar.
+Now,
+we change the kernel
+back to Python.
+Change.
+Then we bring it to the bottom.
+Let's try it.
+Use Python to draw.
+In Python,
+you have to enter some jpgs first.
+For example,
+here,
+I call
+matplotlib and
+numpy
+to do things for me.
+Then,
+roughly like this,
+you can draw a picture of Sine.
+You can see that these two pictures
+look very different.
+To some extent,
+they are actually two different jpg sets.
+The one above is R.
+The one below is Python.
+Of course, if you want,
+you can also save this picture.
+We can add one more command,
+and we call it
+test.png.
+After drawing,
+after re-executing,
+test.png
+will appear in the file list.
+If we go back to the file list,
+File,
+File, then Open,
+you will go back to the file list screen.
+You will see that
+a new file called test has appeared.
+Open it,
+you can see this png file.
+You can also select it,
+and then download it.
+The download button is
+here,
+this part of the top row.
+You can download it to your own computer.
+The above is a simple
+way to operate
+the notebook interface.
+You can find that we are really using
+JupyterHub,
+the computing resources provided by Callisto
+to help you do some scientific analysis.
+Of course, it also has
+some traditional
+4-in-1 operating modes.
+If you move the mouse
+to the New
+on the list,
+press it,
+you will see several options.
+You can open a new notebook.
+You can also open other types of files.
+There is a file here
+called Terminal.
+After pressing it,
+you can turn on
+a traditional terminal,
+and then operate
+what you want to operate,
+such as LOS or
+PWD, etc.,
+anything you want.
+What I want to show you here is
+the so-called installation settings.
+This command needs to wait,
+because it uses
+Conda,
+a settings software,
+to install the settings.
+It's a software,
+and sometimes it takes a long time.
+But...
+It looks like there's still some time.
+But...
+Oh, I'm out.
+You can see that
+it's already pre-installed.
+There are a lot of settings pre-installed,
+including...
+For example, in Python,
+because I'm more familiar with Python,
+you can see that
+there are
+Dask,
+a set of parallel algorithms,
+and then, for example,
+there's Geopandas,
+a set of geospatial data,
+and then, for example,
+there's also
+HDF5,
+a set of HDF files,
+as well as
+a variety of
+other kinds of
+settings.
+Of course, there's also Matplotlib here,
+and other different
+visualizations, such as
+I think it should have Cborn installed.
+Cborn is
+probably here.
+Scientific analysis is more common,
+like SciPy,
+or non-Python files.
+As you can see,
+if someone can help you
+pre-install these settings,
+then you don't have to
+spend so much effort
+to install the settings,
+and deal with the problems of
+each other's reliance.
+Sometimes these problems
+will greatly hinder
+the progress of a research.
+So, is it still OK here?
+If it's still OK,
+we'll move on to the next stage.
+I'm OK.
+OK, OK.
+OK, let's go back to
+the file list.
+In this file list,
+we just talked about
+Notebook Entry,
+which is a traditional
+Github interface.
+I want to introduce
+a relatively new
+interface called Lab.
+The way to save it is
+to cut off the tree
+in the file list,
+and change it to Lab.
+Then,
+enter it.
+When you do this,
+you will enter
+another interface
+called Lab.
+If you need
+some information,
+you can go back to our video.
+There should be steps
+in the following videos.
+The interface of Lab
+looks a little different
+from that of Notebook.
+The biggest difference is
+that the interface of Lab
+consists of many different small panels.
+For example, the left panel
+is for file browsing,
+and the right panel
+is for test.png.
+You can click twice
+and the right panel
+will show the test.png.
+Of course,
+the Notebook is already open
+and you can see the information
+is still there.
+So they actually
+store the same server,
+but with different interfaces.
+What can we do
+with the Notebook?
+You can see
+a blue plus sign in the upper left corner.
+Click it
+to open the start page.
+In the start page,
+you can choose
+what kind of content you want to start.
+You can start a notebook
+with Python as the core,
+or with R as the core.
+Or you can
+start a terminal
+and do the same thing as before,
+like start with S.
+As I said,
+the best selling point of Lab
+is that it has different panels
+for window browsing.
+The advantage of doing this
+is that you can compare the two.
+For example,
+if you go back to the iPad and Notebook
+and move to the bottom of the page,
+and click the right button
+to see the list,
+you can see that there are a lot of lists.
+One of them is called
+Create New View for Output.
+Click it.
+This picture will move to a new panel.
+You can move it around.
+It's like
+many powerful software
+these days.
+You can compare it with different pictures.
+For example, I can re-draw one.
+I'll change it to Cosine.
+Re-draw.
+Oh, this is also a comparison.
+But I can change it.
+Copy.
+Do the same thing.
+But here I want to make it Sine.
+Re-draw.
+Then you can compare this picture
+with this picture.
+And so on.
+JupyterLab
+also supports a lot of other
+not only Notebook,
+but also a lot of other file display modes.
+For example, if you click the PNG file,
+it will jump out of the PNG file.
+If you click the CSV file,
+it can also display the CSV file
+in a display way.
+And so on.
+It also has
+some more gorgeous settings.
+For example,
+if you move to the
+list above,
+there is a list called
+Settings.
+The first one is Scene.
+Here you can choose
+whether to use
+bright colors or dark colors.
+The default is bright colors.
+But I prefer dark colors.
+So I'll change it to dark colors.
+Let's see what happens.
+It's dark colors.
+In addition,
+you can do more customization.
+For example,
+if you open Settings,
+there is a Language.
+But at the moment,
+there is only English language.
+But we can install Chinese language.
+For example,
+if we go to Terminal,
+and use pip,
+to install...
+What's the name of this package?
+It's called
+JupyterLab
+Language Pack.
+Chinese.
+Taiwan.
+Something like that.
+Install.
+Then it will start to install.
+That's right.
+You are now installing
+the package you want on
+a server called CallistoHub.
+After installation,
+you need to re-organize this lab.
+Just click on Re-organize.
+Then the whole lab will be re-organized.
+So,
+if you go to Settings,
+Language,
+you should see Chinese.
+You can choose Chinese or Taiwanese.
+Go in.
+Then Reload.
+The JupyterLab with Chinese version
+will appear.
+Maybe it's not that perfect.
+You can see some of them are not translated.
+Because the JupyterLab
+translation project
+is still in progress.
+They are all public projects.
+So if you are interested in contributing,
+you can ask me.
+I can send you the link.
+But you can also google
+the translation project link.
+So far, I don't know if you have any questions.
+OK.
+I don't see any questions.
+That's great.
+It seems that everyone is very
+into the situation.
+I don't know.
+Does everyone follow?
+I'm following.
+It doesn't matter.
+OK.
+Because if you want to repeat it later,
+you can refer to my first video.
+There should be some details in the video
+to explain how to do these things.
+The last part,
+I want to share with you
+some of the functions of Hub.
+So if we go to
+the menu,
+File,
+and then the second one,
+you should see the Hub control panel
+or Hub control panel.
+If you don't know how to install Chinese,
+it's called Hub control panel.
+Click it.
+A control panel will pop up.
+Wow, it's so bright.
+If you don't mind,
+I'll turn on a light.
+Because it's getting dark here.
+I'll be right back.
+OK.
+On this control panel,
+you should only see two options.
+The first option is
+to stop
+the server just now.
+Now,
+click it.
+Let's try to click
+this dot.
+Now the server has been stopped.
+If we go back to the previous page,
+you can see
+the server is unavailable or unreachable.
+Because the server has been stopped.
+But we can restart it.
+So,
+we can click here
+to restart.
+Or we can go back to the previous page
+and click Start My Server.
+It's up to you.
+Let's restart it.
+OK.
+It's done.
+The preset interface will be
+the notebook interface.
+But you can see
+the generated files are still there.
+The test.png is still there.
+However,
+if you switch to the lab interface,
+you may find something
+different.
+Let's take a look.
+OK.
+If you click
+the menu,
+you may find the Chinese file is gone.
+Why?
+Why is the file still there,
+but
+the Chinese file is gone?
+Here,
+I'd like to use this observation
+to explain the full line
+of JupyterHub.
+If you are a JupyterHub
+administrator,
+you can set the files or structures
+in JupyterHub
+which parts can't be changed by the user,
+and which parts can be changed by the user.
+However, when you finish this server,
+it will reset.
+The file we installed just now
+has been reset.
+If you want to re-install JupyterHub,
+you have to install it again.
+However,
+the administrator can also decide
+which parts can be saved
+by the user forever.
+In other words,
+if you just generate the files
+in those places,
+you can save these files.
+Every time you restart JupyterHub,
+these files will not disappear.
+For example, the test.png
+will always be saved
+in this server.
+As far as I know,
+there is a time limit
+in Kalisto.
+If you don't log in
+for more than 10 days,
+your file will be deleted.
+Every hub
+has its own rules.
+For more details,
+you can refer to their settings.
+If we go back to the Control Panel,
+you will see a Token.
+In the upper left corner,
+there is a Token.
+If you click on it,
+you can see some
+complicated things.
+Most of the things here
+are used by the administrator.
+However, I want to talk about
+the things below.
+For example,
+if you click on the
+OAuth application,
+JupyterHub
+is compatible
+with OAuth.
+This means that
+according to the administrator's
+own ideas,
+they can use
+third-party account information
+to enter
+JupyterHub verification.
+For example,
+Kalisto Hub
+uses your Google account
+or Microsoft account
+to verify.
+However,
+JupyterHub
+in our team
+uses GitHub account
+to do third-party verification.
+The advantage of doing this is
+that the administrator
+can save a lot of time
+in managing users and their accounts.
+Because you are
+distributing this responsibility
+to third-party groups.
+I personally think it's good
+because you can imagine
+that almost every researcher
+has Google
+and GitHub.
+If you can use these accounts
+to log in to GitHub,
+it is very convenient.
+OK.
+That's about it.
+In the same video,
+I will also put
+some screenshots.
+Let's take a look.
+Notebook Entry,
+Web Entry.
+If today
+JupyterHub is running on a large
+Google cloud
+or Amazon cloud,
+it may provide
+an option
+when starting the server.
+It may say
+how many CPUs do you need
+for this server?
+You can choose
+to run a large server
+or a small server.
+Kalisto is a free hub,
+so it provides
+all users
+with one CPU.
+That is,
+you can only use one CPU
+to do things.
+This screenshot is
+taken from my research hub.
+You can see that
+we can open up to 64 CPUs.
+In fact, there are 64 CPUs
+plus GPU options.
+It's more luxurious.
+The other screenshot
+is only
+seen by the manager of the hub.
+You can see
+some
+If you are a manager,
+you can see
+how many people are using this hub,
+who are using it,
+and who haven't used it for a long time.
+You can
+stop it.
+If you find any abnormal usage,
+you can turn off their hub.
+Then they can't continue to use it.
+Something like that.
+Let's take a look at
+the manager's interface.
+There is a problem here.
+It's almost an hour,
+so I want to stop
+to see if there are any questions.
+I have a question.
+If Kalisto
+is a user,
+how should you use it?
+Good question.
+If we go back to the hub,
+you can see
+in the Getting Started
+notebook, there are some links.
+You can click on these links.
+For example,
+you can click on
+Kalisto Jupyter and Python Basics Notebook
+in Preparation.
+Then
+this hub will start
+retrieving the resources
+stored on GitHub.
+Then copy a copy to the hub.
+After they are done,
+your hub space
+will have more resources.
+These resources
+are the resources you can use to learn.
+It's out.
+This is the new notebook I just retrieved.
+This notebook teaches you
+Python.
+There is a YouTube video
+here.
+You can watch it.
+You can watch it like this.
+There are some other things
+at the bottom.
+You can add text statements
+and run these programs.
+Let's see what happens next.
+Oh, there is a video.
+I'd like to watch it, but I'll watch it another day.
+So it's like a teaching hub.
+It's a teaching hub.
+There are various teaching websites.
+Yes, it's a teaching hub.
+If we go back to the
+previous lab interface,
+you can see
+if you click on Reorganize,
+you can see
+a new folder.
+If you click on it,
+you can see a lot of things in it.
+This is what you just downloaded.
+In addition to the previous notebook,
+there are many other notebooks
+that you can refer to.
+In short,
+it's a large-scale resource
+that is provided to
+elementary and junior high school teachers
+for their use of data science.
+You can see
+what modules have been created.
+In addition to using this method to browse,
+Calista also provides resources.
+There should be another Calista Learning Module.
+If you click on it,
+you will be connected to another page of Calista.
+There are a lot of learning modules at the bottom.
+So if you are a teacher today,
+you can say,
+which module do you want your students to learn today?
+Just click on it.
+Then the content of the module will be directly
+retrieved to JupyterHub.
+Or you can ask your students to click on it themselves.
+Students can use their account
+to directly execute
+what's on it.
+There are many other resources here.
+One of my favorite resources
+is that they have
+the content of
+cooperating with indigenous people in North America.
+For example,
+if you click on it,
+there is a trap.
+You can use data analysis
+to see
+which side of the trap
+is the best for catching fish.
+It is a learning module,
+so when you click on it,
+it will be retrieved to your hub.
+Then you can start
+doing these interesting data analysis.
+Oh, I'm done.
+Okay, it's here.
+Then you can see
+what's here. Let's try it.
+Oh,
+there is a map.
+This is an interactive map.
+You can drag and drop here.
+This is
+a fishing ground near Vancouver.
+And so on.
+So Callisto
+provides a lot of teaching resources
+to help you familiarize yourself
+with data science.
+Of course, for you,
+there is JupyterHub.
+It looks cool.
+These data
+are all
+going through
+Callisto.
+Is it an organization?
+Do they need to be certified?
+How do you decide
+whether or not to upload these data?
+Callisto is a kind of project.
+It is a project of cooperation between two organizations.
+Two
+non-profit organizations, NPO.
+It is a cooperation project.
+These two organizations
+have a team
+to maintain Callisto.
+All the modules
+are written by them.
+But the data they use
+should be from somewhere else.
+For example, the fishing data
+is from the local
+tribe.
+Then it is imported.
+In addition,
+there are also a lot of public data on science.
+They should use those public data
+to show
+how data science works.
+I see.
+Thank you.
+Actually, there is one last part.
+If you are satisfied,
+we can stop here.
+It's okay.
+We can continue.
+Really?
+If you
+think it's okay,
+I will talk about the rest of the video.
+The last part
+is
+to provide you with more resources.
+In addition to
+Callisto Hub,
+there are many
+other Hubs.
+For example, a commonly used Hub service
+is Binder.
+Binder
+is used to
+turn a GitHub
+storage into
+a Hub that can be executed
+immediately.
+For example,
+this is an article I posted
+last year.
+Its
+supplementary information
+is
+a
+GitHub page.
+You can find a link
+on this GitHub page.
+Let me see if I can
+switch to that page.
+Oh,
+this GitHub page
+is the supplementary information
+of the article I just posted.
+There will be a link
+to Binder below.
+If you click on it,
+you can start something called Binder.
+It will take you to a place
+similar to Jupyter
+on the GitHub page.
+You can
+review the information
+in this article,
+and then
+re-create
+each image in this article.
+There are
+many details to explain.
+This is Binder,
+another service provided by GitHub.
+It looks like this.
+This is
+related to earth science.
+It's called Pangeo Cloud.
+It's kind of
+semi-public.
+As long as you are doing earth science,
+you can use their service.
+After registration
+and review,
+you can start using their
+JupyterHub deployed on
+Google Cloud and Amazon.
+You can directly save
+cloud computing resources
+on JupyterHub.
+It's cool.
+Of course, there is Callisto.
+We won't talk about it.
+If you think
+Callisto Learning Module
+is a bit complicated,
+or you want a quick
+learning resource we recommend,
+there are two.
+You can refer to them.
+You can directly
+go to the hub
+and enter the terminal,
+or you can enter any of them.
+You can enter any of them.
+These two are actually
+the storage on GitHub.
+You can put all the
+content on the hub.
+For example,
+let's use League
+as a reference.
+Copy and go back to the hub.
+Open the terminal.
+Paste it.
+After you paste it,
+you can see
+a demo JupyterGit
+in the main folder.
+There are a lot of things
+when you click on it.
+Let's take a look.
+There is an ip1v here.
+This is an iPython notebook
+that can be executed.
+Other notebooks should be
+in the folder,
+such as intro Jupyter.
+You can see all kinds of
+introduction to Jupyter tools.
+In short,
+there are a lot of learning resources here.
+You are welcome to
+try it out
+at any time.
+In the last two or three videos,
+I want to briefly explain
+that if you really
+like JupyterHub,
+and you want to
+install JupyterHub for your
+research team,
+what should you do?
+First of all,
+JupyterHub provides
+two standard versions.
+One is called The Littlest JupyterHub.
+This version
+is specifically for
+small teams,
+between 0 to 100 people.
+In short,
+it is simplified.
+You don't have to spend
+a lot of effort.
+You can install it on your
+lab server
+for your colleagues or students.
+The other version is
+JupyterHub on Kubernetes.
+This version
+is specifically for
+large cloud
+installations.
+For example,
+JupyterHub installation
+on Amazon
+or Microsoft Azure.
+This version is for
+hundreds or thousands of people,
+or JupyterHub installation
+on a supercomputer.
+If you want to install it,
+choose one
+that suits you.
+Even so,
+you may still feel
+that the technical performance
+is too high.
+After all,
+most people are not
+good at it.
+Of course, we also see this difficulty.
+In 2019,
+some of us
+in the Jupyter team
+at Berkeley
+established a non-profit organization
+called 2I2C,
+or the International Interactive
+Computing Collaboration.
+The purpose of
+this non-profit organization
+is to provide
+various open science
+and technology services.
+One of the most
+developed services
+is to provide
+research teams or organizations
+to install and manage
+their JupyterHub.
+Most of their
+funding comes from
+the John Zuckerberg
+Initiative,
+the one on Facebook.
+However,
+they also receive
+funding from
+the International Interactive
+Computing Collaboration.
+The Callisto
+and Pangeo
+hubs we just saw
+were set up
+by 2I2C.
+However,
+Binder and our own
+research hub are not.
+Our own research hub
+is more gorgeous
+because we have to test
+a lot of things.
+Our hub looks like this.
+Let me show you.
+It should be here.
+I don't think I can start.
+Looks like I have to wait.
+I'll come back later.
+So,
+what we want to achieve
+through 2I2C
+is that
+one day in the future,
+as a researcher,
+all your research activities
+and academic activities
+can take place on the cloud.
+Your own research team
+will collaborate on the cloud.
+You have to save
+HPC computing resources
+and use JupyterHub
+to log in.
+The school itself
+may have a JupyterHub.
+When you have a lecture
+or a lecture,
+you can use their hub
+to give others
+what you want
+them to learn.
+Even if you attend
+an international conference,
+this conference
+may have a hub
+for the participants
+to log in
+and learn new skills
+through the hub.
+That's about it.
+Finally, I want to say
+that all the progress of open science
+is not done by ourselves.
+There are many
+community members.
+For example,
+what I can share with you today
+is a tribute to
+our entire research team
+at Berkeley,
+JupyterMeteors.
+I put all their people here
+and let you know
+what the JupyterMeteors
+project is doing.
+Thank you very much.
+If you have any questions,
+you can contact me
+by text message
+or via ZXL.
+You can contact me anytime.
+This is my last video.
+Thank you.
+Thank you, Huaijie.
+If you are interested,
+you can turn on the microphone
+and give Huaijie a round of applause.
+Let me
+find the
+POAP code.
+Let me find it.
+If you have any questions,
+you can ask now.
+Thank you for your applause.
+Thank you for your applause.
+Let me write down
+the POAP code.
+Thank you for your participation.
+Thank you.
+I have a question.
+For your first video,
+do you want to
+share it on
+Tyra's website?
+Otherwise,
+your sharing
+should be only temporary.
+Let me think about it.
+I can share it
+to the participants.
+Absolutely no problem.
+This video will be released soon.
+But I don't know if I can share it on the website.
+I will contact you later.
+No problem.
+Also,
+I have a question.
+Many
+quantum computing
+companies
+do similar things,
+such as
+sharing their
+computing resources
+on the cloud.
+Do you
+write the code
+on Python
+and upload it to their server?
+They will run the code for you.
+Their hardware is different,
+but they will run the code for you.
+Actually, this is a more traditional way.
+A more traditional way
+to use a supercomputer
+is that there is
+something like a work processor.
+You have to
+upload your
+code to the
+work processor.
+The work processor
+will deploy
+and decide
+how many computing resources
+to run your code
+at what time.
+Finally,
+the result will be packed
+and sent to you.
+This is a more
+traditional way.
+The way we promote now is
+to save
+the part of the work processor.
+JupyterHub itself can be used as a work processor.
+As long as you use the right
+structure, such as Kubernetes,
+the actual
+technical details are a bit complicated.
+I will make it simple.
+As long as you use
+the structure of Kubernetes,
+you can
+use JupyterHub
+as a scheduler.
+As a work processor,
+you can decide
+how many resources
+you want to use
+at the beginning of your script.
+You can use several nodes,
+several clusters,
+and then you start running.
+JupyterHub
+and Dask,
+Dask is a suite of parallel algorithms
+I just mentioned,
+with Dask's
+external components.
+As long as you use Dask,
+you can
+open a few
+control panels
+in JupyterHub
+to monitor
+how many CPUs
+you use
+when running
+these program codes
+in real time.
+If you have questions,
+you can ask me
+in the chat room.
+Thanks for watching.
+It seems that
+the gun has disappeared.
+It's okay. Let's wait for it.
+If you have questions,
+you can ask me
+in the chat room.
+If you have questions,
+you can ask me
+in the chat room.
+Thanks for watching.
+Thanks for watching.
+Thanks for watching.
+武藤阿輝是甚麼意思
+魏柏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+魏輕
+デスク
+ダスク
+デスク
+デスク
+カリスタハブ
+ダスク
+ダスク
+ダスケートウェイ
+ダスク
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+ダスケートウェイ
+好像沒有
+那我就把錄影關掉

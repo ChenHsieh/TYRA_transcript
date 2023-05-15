@@ -1,0 +1,1213 @@
+Hello, everyone. Welcome to the Taira Talk on March 20th.
+Today's speaker is Dr. Su Guanlin.
+He was a doctorate student at UIUC, and then a post-doctoral researcher at UC Berkeley.
+Today, he is going to talk about the direction of his research, which is collective light path, continuous light study, integrated process, and wavelength-adjustable semiconductor laser.
+The topic he is going to talk about today is his work at UC Berkeley.
+I think it has a lot to do with semiconductor laser and its integration.
+Let's give him a round of applause.
+Let's start with Dr. Guanlin.
+Thank you, Jason. Thank you, everyone, for coming to my talk.
+I want to thank Taira for providing this platform so that we can talk about this topic today.
+My topic today is high-performance and high-performance wavelength-adjustable semiconductor laser.
+As Jason just mentioned, this is something I studied at UC Berkeley as a post-doctoral researcher.
+The unit I am currently affiliated with is Intel Labs Research Scientist.
+Why do I want to mention this field in particular?
+In fact, you may not be familiar with this picture.
+This is a Wi-Fi input test web page.
+The Wi-Fi on the screen that I will connect to you today is actually built up by light integration technology.
+This is called optical transceiver.
+This green row is all optical transceiver.
+It's all equipped with light integration technology components.
+This is also the most competitive field in light integration technology.
+Even though it's very competitive, it's just the beginning.
+Light integration technology has actually developed a lot of opportunities.
+I personally think this technology is a very balanced combination of laser physics, light, and semiconductor manufacturing.
+I think it's quite aesthetic.
+So I hope to invest a lot.
+As Jason just said, if we can make good use of Terra Journal Club,
+I believe we can find a lot of people in this field who have the same morality and then further promote it.
+My talk today is mainly divided into three parts.
+The first part is the introduction.
+I will introduce to you what is light integration technology.
+And some of its basics.
+Then there are two examples.
+I have done two examples in Berkeley.
+It's probably a very wide, widely tunable.
+It can be tuned to a few nanometers.
+And the second one is a system-level work.
+It's a laser power guiding system.
+It's kind of like we want to demo a data center.
+A very energy-saving network resource distribution system.
+This is also done by using light integration.
+The rest is my summary.
+I'm sorry to give you a disclaimer.
+Because I am now working on light integration technology.
+One of the benefits is Intel.
+My opinion today, my discovery, and my summary.
+In fact, it does not represent the company's position.
+You can think of me as a postdoc.
+What is light integration technology?
+In fact, we all know that there is nothing too fresh under the sun.
+Light integration technology allows light resources to go back to the microwave resources.
+We are going to go from the table to the source.
+We are going to go from the table to the source today.
+This is what light integration technology represents.
+The essence of technology is like this.
+This technology was proposed by Stuart Miller in 1969.
+This article was a very important article.
+He mentioned three very important points.
+The first is how we get the light from the optical table to the chip.
+We have to create a certain optical distortion rate on this chip.
+It can also form a web-guided structure.
+After this thing is realized, he said.
+After this thing is realized, we can improve the stability of the whole system.
+Its reliability will increase.
+Unlike doing free space, we often need to adjust some components.
+When everything is on the same chip, this thing can be omitted.
+You can ignore this step.
+After this step is completed, he made the boldest prediction.
+He thinks this thing will have a certain market scale.
+Today, 50 years later, we can see that the light receiver is a very novel market.
+This is basically in line with his prediction.
+What he didn't predict is that humans have broken through the synthesis process of a single chip.
+We can now synthesize more materials on a single chip.
+Or we can synthesize two chips of different materials together.
+It can break the physical limit set by a single material.
+This is our hybridization material.
+At the same time, if you combine a lot of materials of different optical properties,
+you can break the physical limit set by a single material.
+This thing is also a powerful force that promotes the advancement of the industrial world and the academic world.
+This is basically the most intense field at present.
+The left side is the traditional light communication, sensing, and network systems.
+For example, last year, two terabits per second were demonstrated.
+It's not just a light receiver, it's also a PGA.
+This is a very, very new result.
+This was in March of last year.
+Then, about ten years ago,
+Onchip, which was made on a single-chip,
+is the optical prime of a chip.
+It has a bandwidth of 300 MHz.
+This is the last year's 30 parallel channels light radar.
+This is the most studied technology in LiDAR.
+It's a 30-channel light radar.
+This is a very large amount of transmission.
+In Japan, AIST also showed 800 Gbps data transmission.
+And it's a light-operated data transmission.
+And it's Lossless.
+Basically, it doesn't matter how much power goes in, how much power comes out.
+No loss.
+In the more cutting-edge field,
+For example, machine learning, quantum, and NIST,
+The American Academy of Science and Technology,
+In 2018, they demonstrated a optical frequency transmitter.
+Directly in C-band, the so-called 1550nm,
+1.93kHz,
+It directly generates an optical frequency.
+And its frequency can be up to 1Hz.
+That is to say, its error is only 10-14 to 10-15.
+This is a very fine frequency generator.
+A Spanish group also made an optical FPGA last year.
+It is composed of multiple unit cells.
+It can do all kinds of transfer functions.
+If you want to program it, you can program it.
+A few years ago, it also came out.
+Use optical circuits to make convolutional neural networks.
+It can do image vision.
+Connecting these two most extreme fields,
+In fact, what can't be separated from the industrial and academic fields is our so-called high-performance light source.
+Based on optical integration technology,
+The bandwidth of our current bioluminescence laser has been compressed to about 3Hz.
+Turnability has also exceeded 100nm.
+This is C-band, so it is about 1550nm.
+So it can be adjusted from 14 to 1600nm.
+And our optical amplifiers on the chip
+It has now exceeded 27dB, which is 500 times the optical amplification.
+It can bear 500 times the loss on the chip.
+It can continue to recover your signal.
+Then there is a frequency cone.
+It can produce direct 4-cell.
+So this is a very groundbreaking work.
+In fact, these more amazing studies,
+In fact, the following things are very basic, very fundamental things.
+It's our so-called waveguiding.
+What Miller mentioned just now,
+What is the difference in the loss rate caused by a single chip?
+The one on the left is a SEM, a optical chip.
+The SEM of the light path inside
+The light is transmitted in these so-called light path lines.
+When we cut this straight waveguide,
+In the cross-sectional area,
+We see such a material distribution.
+For example, in this paper,
+The material of the light path is a single-chip.
+Below it is a low-resolution,
+That is, the two-chip is the material below it.
+It's all air.
+So if you cut a chip,
+You can see its index.
+Its resolution distribution is actually a step thing.
+Under these boundary conditions,
+Our Maxwell's equation will actually degenerate into an eigenvalue problem.
+Its solution is Lissan.
+Then this solution is our so-called waveguiding mode.
+Its solution basically looks like this.
+That's different from the plane wave.
+Waveguiding mode,
+It is defined by an equivalent resolution.
+Its equivalent resolution is somewhere between the low-resolution and the high-resolution.
+Then its field shape is basically a certain rule.
+Its peak value is a semi-wavelength.
+Can fit in this index.
+Then its peak value is probably in the middle.
+Then we can change this light path.
+Our so-called waveguiding.
+Its light path, its interface,
+We can engineer its mode.
+For example, we can have this.
+A little wider,
+We can now fit in three modes.
+For example, there are several more than just now.
+So we just need to be able to master this light path.
+Its basic design,
+For example, its material,
+Its index gap,
+The gap between light and snow,
+The gap between light and snow,
+And its size.
+We can design different photonic devices,
+Photonic components.
+In this talk,
+I want to introduce a few photonic components.
+First of all, this is what I just said.
+If we use a single mode,
+A single light path that can only support one mode.
+We trigger a light path that can support multiple modes.
+This light path is relatively fat.
+Then I can trigger many waveguiding modes at the same time.
+Then they will interfere.
+This interference pattern can be accurately predicted.
+For example, this is a very standard light path.
+If we cut off this relatively thick wave at the right length,
+We can make a light path.
+This is a light path.
+This is a light path.
+This is a light path.
+Then,
+Then,
+This is a light path.
+This is a light path.
+Then we are a 1x3 light path.
+Then we have a single mode,
+We set up two mirrors.
+Partially mirrored, or 100%.
+It can form a cavity.
+This is a cavity.
+If we add some photonic components to this cavity,
+That is to say, it provides gain.
+Then you can compensate for the loss of the entire cavity.
+Under the right conditions,
+It will form our so-called photoreceptor.
+This is our laser.
+What about this curve?
+One by one,
+It actually reflects that
+All that can be seen in this photoreceptor
+It forms a whole number of waves.
+The wave field.
+This is our so-called magnet.
+Longitudinal mode.
+This is the magnet.
+It mainly emits light.
+These wave fields.
+Of course, we can also put a single-core
+Single-core single-mode waveguide.
+We use a more complicated loop to make it into a filter.
+The first filter is our so-called Mach-Zehnder interferometer.
+In addition,
+You can also make it into a circular photoreceptor.
+That is to say, the light hit in here.
+The light coming out of here can also have a filter effect.
+Mach-Zehnder interferometer.
+Its transfer function is a very classic sine wave.
+It is a sine wave.
+From 0% to 8%.
+That environment.
+Its transfer function is a sharp thing.
+Because it needs to achieve a resonance in the middle.
+So its frequency selection is very large.
+It is very fine.
+But at the same time, it is also difficult to reach 100%.
+In these devices that are used to form resonance in the future.
+Whether it's a cavity or a filter.
+The distance between our resonance points.
+Basically, it depends on the size of our feature layer.
+For example, in this cavity.
+Laser cavity.
+The distance between these grids.
+It's actually very different from the resonance field.
+And in Mach-Zehnder's interferometer.
+In the middle of these resonance points.
+It's the length that comes out of this.
+It's also inverted.
+In the same way.
+The distance between these two resonance points.
+And the radius of this transverse resonator.
+That is to say, its wavelength is inverted.
+These devices with resonance features.
+Of course, after we do it.
+After we realize it.
+It must be different from what we expected at the time.
+Because there will be various errors in the process.
+So we may have to add some.
+Our so-called phase tuner.
+We can use.
+Substantially change this.
+The detection coefficient on a certain waveguide.
+For example, heating.
+Substantial heating.
+Or adding a power plant.
+Or adding current.
+Turn off the current.
+To stimulate these electron hole pairs.
+We can change its optical detection rate.
+And then we can.
+Put these.
+We used to miss the resonance points.
+Move it to where we want it to be.
+So basically.
+As long as you are familiar with these components.
+You can build a more complex system.
+If you have any ideas.
+You can use some well-known components to build it.
+I'm going to talk about it now.
+The first example I want to introduce to you.
+Is this.
+Ah.
+We are on the single-conductive material.
+There is also a single-conductive.
+Integrated platform.
+They made it.
+The platform.
+I will do a demonstration with him later.
+That.
+Ah.
+Is.
+In fact.
+It's a single-conductive material.
+It's not a multi-conductive material.
+This one.
+You decide.
+The idea is that the two juices are theoretically exactly the same.
+And when they launch, they will have a very uniform shape.
+It's just optical.
+It's just the shape of the frequency of this optical controversy.
+Ah.
+So you see every line.
+They actually don't have a lot of energy.
+But if we listen to the laser, we are in this.
+This one.
+Every product is inserted into a optical filter.
+Ah.
+This optical filter can be controlled by external signals.
+For example.
+Ah.
+This is our so-called light barrier.
+Then he can.
+He can only choose one laser model.
+He suppresses other laser models.
+So when he has a shock radiation, he is a single-mole laser.
+And he has a very strong one.
+Ah.
+This is a well-defined mode.
+Only his power is obviously a lot bigger than that.
+So what kind of applications does he have?
+He's the first one.
+It can be used in gas.
+Ah.
+Ah.
+My class.
+It's optical.
+Optical.
+It can be used to track a certain party.
+Or in the sound optical field.
+He can do it.
+The part of the body.
+Then his light transmission is also a more traditional application.
+Ah.
+For example.
+Hong Kong communication.
+Or the same tone communication.
+It's all a main force.
+That's a new one.
+Hong Kong is introducing to you.
+The frequency-continuous wave light radar.
+This.
+He still has.
+The main force is.
+He is.
+The main light source of the frequency-continuous wave.
+That.
+And.
+Color.
+Military Wave.
+The frequency generation.
+It's also called Tunable Laser.
+That.
+Tunable Laser.
+What is his main metric?
+What are his main parameters?
+For example.
+The most classic one.
+I just introduced to you.
+It's a.
+Ah.
+One.
+The back side is replaced by a light bomb.
+That light bomb.
+After you put the current in it.
+His index will change.
+That is, the light bomb.
+His.
+His.
+The black weapon in the middle.
+His.
+His maximum reflectivity.
+The wave field can be.
+Because.
+Add current.
+And then control.
+That he.
+That laser.
+After the shock radiation.
+His laser spectrum.
+It basically looks like this.
+Ah.
+Until that one.
+He's a single mass.
+My.
+His laser.
+Why doesn't look like this?
+Top wind with this second wind.
+Power in the middle.
+The difference is a 40 bibi, which is our so-called Punk wants.
+He's al.
+The mainstream wind and the wind.
+The igen they stand between each other.
+10 to 10.
+It's in the BB.
+For the second.
+The second.
+Who the hell is the parameter?
+What is the original parameter?
+I'm going to say.
+So much.
+When he continues.
+In the case of continuous power supply.
+He can.
+He can.
+He has a total of his weapons that can be adjusted.
+How much?
+Of course, his output power is also a main measurement goal.
+Milliwatt or dbm to show.
+And his efficiency.
+For example, his.
+How much power do you put in?
+How much power does it give you?
+Such a conversion efficiency.
+It's a line with.
+This is our frequency.
+Accuracy.
+Then it's because of the client.
+A little better.
+If it's a little worse, it's basically this number.
+What if it's like this example?
+This traditional dbm laser.
+He only has one.
+Ah.
+In the case of a filter.
+The most we do is adjust 5 to 6 nanometers.
+This is a material limit.
+So how do we get tens of nanometers?
+Or like the example I just did.
+More than 100 nanometers of tuning.
+We mainly have two means.
+This can be achieved.
+This is the so-called white ability.
+The first one is to use.
+Ah, but it's a pair.
+That is to say, we are using a pair.
+This is the structure.
+For example, the circular oscillator or the light.
+Ah, light.
+This kind of explosion.
+As long as you are a pair, you can do this.
+What does that mean?
+This example is that we have two circular oscillators.
+His.
+The environment is different.
+What about when the environment is different?
+He's this.
+Between the two points of resonance.
+We have the so-called Fritz.
+Fsr.
+It's different.
+For example, the green ring.
+He.
+We can see the green ring and the orange ring.
+It's a little different.
+So it leads to the two of them.
+When they are together.
+Only in their ally.
+This place.
+130 nanometers.
+His transmission is the highest.
+Then when you.
+Ah.
+In the middle of this green ring.
+Add an object.
+After a three-dimensional movement.
+He can move a little bit.
+Just move a little bit.
+But their.
+The second overlapping place is directly from 130 to 1290 nanometers.
+So he's just.
+You just have to move about 1 to 2 nanometers.
+The wind.
+What about your overall score?
+You can jump ten times.
+This is what we call the so-called oil marker effect.
+I've used oil markers.
+They all know that there are two degrees above.
+They are a little bit away.
+This is what they are.
+You move one of them a little bit.
+The next time they come.
+It's very far away.
+Then this.
+His.
+Ah.
+His second feature.
+It's just that he's got a very small.
+This.
+This.
+Ah.
+He can make a big one for you.
+Frequency jump.
+Another feature.
+It's usually this kind of parallel structure.
+His role is relatively sharp.
+In other words, his filter works very well.
+But he's another semi-permanent.
+One of the more significant shortcomings is that he's more.
+Because.
+He is a result.
+So he.
+Two small things into one.
+He's getting smaller and smaller.
+When you connect more and more.
+He's getting bigger and bigger.
+For example, you can see him.
+From 80% to 64%.
+That's another way.
+Just use light interference.
+That's what we just said.
+A single color.
+That's under this architecture.
+We're just going to cut the structure in half.
+And then add the mirror directly.
+We all know this.
+This mirror image.
+It can be used as a single color.
+His.
+His transfer function.
+That's the classic.
+Then as long as one of the.
+100% reflection.
+That.
+He's a continuous tuning.
+That's what he.
+It's the type of thing that jumps.
+He is.
+He's moving as much as you add.
+How much.
+But it should.
+He's not like this.
+He's not like this.
+The more you wear, the more he loses.
+Uh, but his shortcomings.
+It's also obvious that his role is slower.
+It's just that he's particularly close to this.
+The top of the three-way.
+So his.
+Uh.
+Frequency selection.
+It's not as good as this one.
+I don't know if it's so good.
+Whether it's an effect.
+That's the kind of resonance.
+Whether it's a resonance or this interference.
+This kind of component.
+He.
+We've seen it.
+He can be used.
+Uh.
+It can be adjusted.
+It's a price.
+For example.
+On the single-fingered.
+He is.
+It's already reached a commodity level.
+A parameter.
+It can be adjusted.
+For example.
+There's a front light.
+Backlight.
+There's a layer of light in the middle.
+There's an external magnifier on the outside.
+At the same time.
+To magnify.
+Uh.
+It's used to magnify light.
+His.
+Range.
+It can be adjusted.
+About 40 nanometers.
+His.
+It's the wind.
+If you press the wind.
+About 50 db.
+It's 100,000 times the pressure.
+Uh.
+It's already at 100.
+But in the case of an external magnifier.
+It can be up to 40.
+Uh.
+Uh.
+This is a commodity scale.
+A parameter.
+That.
+Next is.
+On the second.
+The platform will be introduced to you later.
+On the silicon.
+We.
+Already.
+Humans have made countless nanometers.
+More than 50.
+Uh.
+db.
+SMSR.
+And then.
+It's less than 100.
+Because he doesn't have an external magnifier.
+In fact, he.
+Uh.
+Nine.
+It's still relative.
+A more.
+Uh.
+A power level.
+That.
+In this.
+Light.
+Light interference.
+The method.
+In.
+Most of the time.
+It's in the single-finger.
+They make monolithic.
+A little.
+That's it.
+It's three.
+Really.
+Stuck together.
+That.
+It can be up to 74 nanometers.
+You.
+Uh.
+At the same time.
+About 40 db.
+Or more.
+A little bit.
+Uh.
+Power is relatively low.
+He only has one.
+That's it.
+This example.
+He's this year.
+He just came out last year.
+He's eight.
+Uh.
+More.
+More extreme.
+A means.
+He has eight.
+Mzi.
+8.
+The interference.
+He's a total of 45 nanometers.
+Uh.
+50 db.
+SMSR.
+His language.
+It's also down to 160.
+Uh.
+Power is also better than the previous one.
+50.
+Uh.
+About five.
+But.
+You can see that they are involved.
+They use a lot of filters.
+Compared to this.
+This kind of use.
+Uh.
+They need more filters.
+To reach this level.
+40 or 50 db.
+So we can see it very intuitively.
+His control is how you want to go.
+It's actually quite a challenge.
+What about this filter design?
+In this example, you can see this.
+Light filter.
+His design.
+It directly affects your laser performance.
+This is very obvious.
+Then in 2011.
+Ah.
+Please say.
+Oh.
+This is the language here.
+What is the laser language?
+Uh.
+What do you mean?
+Uh.
+That is.
+That is.
+These languages are.
+Uh.
+He is.
+Oh.
+Intrinsic language.
+Is it related to his laser.
+Is it related to the gun?
+Or with.
+Oh.
+Right.
+He is.
+He is.
+Intrinsic.
+That's right.
+You remember very well.
+He is.
+It's related to the gun.
+Uh.
+If.
+For.
+Uh.
+Laser.
+He is more.
+Just.
+I have prepared a more.
+Uh.
+A more graphic slide.
+What is his language?
+He's actually laser.
+His.
+He's tired to death.
+When he turned his body around.
+He's actually.
+Especially the semiconductor laser.
+He's in his background.
+In fact, there is a very weak.
+It's his.
+Uh.
+Self-radiation.
+It's just that he hasn't reached the water.
+The thing that happened before.
+It's the LED thing.
+Uh.
+When it reaches the water.
+He's going to have a very clear one.
+Uh.
+The mechanism of radio radiation.
+But.
+And then this is my.
+Put this.
+The expression of that.
+It's his.
+Instantaneous.
+The electric field inside the laser.
+His face.
+When the radiation occurs.
+There will be a very large amount.
+To show that he was the radiation field.
+But on top of this.
+It's because he's got a lot of background.
+Uh.
+Self-radiation.
+So he's got this.
+He has a very weak one.
+A very small amount.
+He has.
+He.
+It's riding on this.
+This.
+On top of the mobile radiation.
+His lungs are random.
+It should be said that he is.
+So you can imagine.
+He's a very big amount.
+He's actually got a very small thing on top of it.
+So he's actually shaking.
+He's not.
+It's not a very clear one.
+He's got a distribution.
+He's got a distribution.
+That's what we call the face.
+The face is not accurate.
+In fact, it is this.
+His.
+His.
+His performance.
+They're only missing a factor in the middle.
+That's right.
+This.
+Live with him.
+The main thing is your gun.
+The longer the laser is, the longer the gun is.
+Your language can be lower.
+But the longer the gun is.
+It's also.
+It's also equivalent to your laser.
+Between the captain mode.
+It's getting narrower.
+If it's getting narrower.
+If it's getting narrower, it's testing the design of your filter.
+How to make this laser.
+In.
+Maintaining a single film.
+Uh, it's harder to launch.
+So, in order to normalize the gun, it's still.
+This is a blow.
+I understand.
+Thank you.
+Right.
+That.
+So we're in.
+Uh, so.
+We're in 2017.
+When I was in the post office, we proposed a new architecture.
+We call it the three X.
+It's actually also part of this kind of light.
+Light sensor system.
+A filter effect.
+So, he actually, we're talking about Bell Labs.
+In 1990, he did the Y-Laser.
+At the time, they had two branches.
+That's the only one.
+That's what we call the.
+Uh, the sensor.
+So his.
+The SMSR is relatively low.
+The top of his side wave is very smooth.
+He only has 100 times the 20 dB.
+Uh, his tuning range is also relatively small.
+Only 8 nanometers.
+But we.
+Uh, based on theoretical calculations, we found that as long as you add the third R.
+The third branch.
+That's equivalent to the two of us.
+It's equivalent to the shortest one.
+This one.
+We have two.
+They each represent a very wide FSR and a very narrow FSR.
+Uh, through this, uh, mechanism, we can introduce two.
+The interference pattern of the front wave.
+We can.
+Max, we can design this tuning range separately.
+With him.
+Improve his SMSR.
+To achieve a, uh.
+Basically, it can decouple these two parameters.
+I want to be on the Y-Laser.
+These two parameters are always.
+Uh, hand in hand.
+You want SMSR high.
+This is.
+Intrinsic.
+Mathematically, it's such a.
+Uh, a reality.
+What kind of structure does that 3X laser have?
+This is a good explanation for everyone.
+This is.
+Uh, their transfer function.
+If this is the Y-Laser.
+It's the front wave we just saw.
+But if there's a 3X, we add the second front wave.
+We're naturally on the outside.
+We're still the same as the Y-Laser.
+But in essence.
+In this.
+We have the second.
+Interference.
+That is, we can.
+We can.
+We can take this.
+It used to be very smooth.
+The front wave has become very sharp.
+Uh, further filter.
+I don't want to.
+I don't want to filter.
+I don't want to.
+If we're going to calculate it.
+If you don't, you'll find this Y-Laser.
+It's actually very dense at the top.
+That is to say.
+These modes.
+It's actually with the main model.
+That's what we want.
+150 nanometers.
+They're very close.
+They're very close.
+So, uh.
+But if you add.
+Like, if we add the third branch.
+We can filter out a lot.
+I don't want to.
+You see, we only have about four or five left.
+And they're with the main model.
+There's a certain gap between their hands.
+So we can.
+So, uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Okay.
+I'll tried.
+One.
+I back.
+And I kicked.
+My body.
+Just.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Okay, okay, thank you.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Uh.
+Oh, thank you.
+Um.
+Uh, I, I have a question here.
+Uh.
+Uh.
+Uh.
+So this is what we call a jump.
+Uh, jump filter mode.
+What I just said is a jump.
+Uh.
+Uh.
+Of course, he's testing.
+It's very obvious that you can see it when you're testing.
+For example, we can see that he has a middle jump here.
+He jumped again.
+Jumped again.
+This is basically a jump.
+Jump.
+Uh, that's it.
+You can also see this.
+Every step.
+That if it is.
+If it's a laser, he'll jump this.
+Uh, filter mode.
+Yeah, that's it.
+Is there any application of this?
+At present.
+Uh, I haven't used it yet.
+And.
+In fact, people hate this thing.
+It's because of the time.
+That represents him.
+Physically, he represents two.
+He competes with the carrier.
+When it's the most intense, it's the same input current.
+There are these two.
+He's giving you at the same time.
+Grab this resource.
+That is, he was at that time.
+Uh, noise is the biggest.
+So everyone hates this thing happening.
+Well, there's no way.
+This is physics.
+There's no way.
+Uh huh.
+But all of them.
+With that kind of micro ring.
+Will there be this problem?
+Yes, all of them.
+As long as there is a filter.
+He will have this problem.
+Uh, the most frequent.
+Uh, if the L I is.
+Uh, there is no filter.
+As long as there is a filter, he will be like this.
+Of course, he can play very high power.
+But he is always multi mode.
+There is no way.
+Yes.
+Don't worry.
+Um.
+Or use DFV.
+DFV is a single product.
+Then he.
+Uh, there won't be.
+This problem of motor.
+Uh huh.
+Hey, ask him.
+His mother.
+His.
+Hey, can you give me some numbers?
+I can't see it here.
+He's probably.
+How much frequency is this?
+Uh, I think.
+OK.
+Oh, it's okay.
+Hey, I want to ask another question.
+Hey, a little bit.
+His.
+You have a character.
+What is his?
+Uh, relaxation.
+Is the frequency of the selection?
+Oh, we don't have it.
+Because of this platform.
+We are.
+Uh, more.
+We are a foreign package.
+This is the Netherlands.
+Uh.
+But you can guess very well.
+He is in the middle of 1 gigahertz to 3 gigahertz.
+He is not.
+He is not.
+So, of course, this level.
+OK.
+Thank you.
+Correct.
+But he has something to do with his resonance gun length.
+The longer your resonance gun is, the slower it is.
+Correct.
+OK.
+Well, if not.
+Then I will end this recording here first.
+Thank you all.
+Thank you.
+Thank you.

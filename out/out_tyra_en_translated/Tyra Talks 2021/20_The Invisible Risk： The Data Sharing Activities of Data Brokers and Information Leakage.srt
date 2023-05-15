@@ -1,0 +1,5440 @@
+1
+00:00:00,000 --> 00:00:11,000
+Good morning, good evening, and thank you for joining me today to share my screen.
+
+2
+00:00:11,000 --> 00:00:27,000
+We don't have a lot of people today, so feel free to interrupt me at any time if you have any questions, or just turn on the microphone.
+
+3
+00:00:27,000 --> 00:00:35,000
+The topic I'm going to talk about today is called Invisible Risk Data Sharing Activities of Data Brokers.
+
+4
+00:00:35,000 --> 00:00:41,000
+My co-authors are Aaron, who just got his PhD from Rutgers.
+
+5
+00:00:41,000 --> 00:00:44,000
+His PhD peers are also here.
+
+6
+00:00:44,000 --> 00:00:48,000
+He's going to go to California State University, Fullerton.
+
+7
+00:00:48,000 --> 00:00:51,000
+The other teacher is a Rutgers teacher.
+
+8
+00:00:52,000 --> 00:00:54,000
+Let me introduce myself.
+
+9
+00:00:54,000 --> 00:00:56,000
+My background is actually accounting.
+
+10
+00:00:56,000 --> 00:00:59,000
+I'm a CPA, and I'm a Certified Internal Auditor.
+
+11
+00:00:59,000 --> 00:01:03,000
+But my PhD is Management Information Systems.
+
+12
+00:01:03,000 --> 00:01:09,000
+I usually teach data analytics and data mining related courses.
+
+13
+00:01:09,000 --> 00:01:11,000
+Because of my background.
+
+14
+00:01:11,000 --> 00:01:15,000
+I'm currently on the list of Fulbright specialists.
+
+15
+00:01:15,000 --> 00:01:18,000
+I specialize in curriculum development.
+
+16
+00:01:18,000 --> 00:01:22,000
+I've worked with Computer Science before.
+
+17
+00:01:22,000 --> 00:01:26,000
+They have a task force on how to design cybersecurity curriculum.
+
+18
+00:01:26,000 --> 00:01:28,000
+So I'm in that program.
+
+19
+00:01:28,000 --> 00:01:32,000
+My research is mainly IT management and security management.
+
+20
+00:01:32,000 --> 00:01:34,000
+Almost all of them are in this area.
+
+21
+00:01:34,000 --> 00:01:45,000
+I often give lectures outside, maybe at universities, conferences, or some professional organizations.
+
+22
+00:01:45,000 --> 00:01:50,000
+I used to be a panelist at the Federal Reserve Bank.
+
+23
+00:01:50,000 --> 00:01:53,000
+About three or four weeks ago,
+
+24
+00:01:53,000 --> 00:01:57,000
+I helped them do analytics training at McDonald's.
+
+25
+00:01:57,000 --> 00:02:00,000
+I also did some training for the California Department of Justice.
+
+26
+00:02:00,000 --> 00:02:04,000
+I also gave a lecture at the Taiwan Monetary Authority.
+
+27
+00:02:04,000 --> 00:02:10,000
+In 2018, I was at KPMG, a large audit consulting firm.
+
+28
+00:02:10,000 --> 00:02:12,000
+I was a professor-in-residence there.
+
+29
+00:02:12,000 --> 00:02:16,000
+So I worked with them in New York for 10 weeks.
+
+30
+00:02:16,000 --> 00:02:18,000
+I also do projects with them.
+
+31
+00:02:18,000 --> 00:02:21,000
+I've done more than 15 projects so far.
+
+32
+00:02:21,000 --> 00:02:27,000
+I'm the incoming president of Accounting Information Systems.
+
+33
+00:02:27,000 --> 00:02:28,000
+This is my LinkedIn.
+
+34
+00:02:28,000 --> 00:02:30,000
+If you're interested.
+
+35
+00:02:30,000 --> 00:02:32,000
+About this paper.
+
+36
+00:02:32,000 --> 00:02:36,000
+Data Broker has been around for a long time.
+
+37
+00:02:36,000 --> 00:02:40,000
+It's just that it's been noticed for the past 10 years.
+
+38
+00:02:40,000 --> 00:02:44,000
+As you can see, a lot of news is about Data Brokers.
+
+39
+00:02:44,000 --> 00:02:48,000
+The earliest one I have here is from 2013.
+
+40
+00:02:48,000 --> 00:02:52,000
+I've been seeing it since this year.
+
+41
+00:02:52,000 --> 00:02:57,000
+Especially after the Facebook Cambridge Analytica scandal.
+
+42
+00:02:57,000 --> 00:02:59,000
+More news.
+
+43
+00:02:59,000 --> 00:03:01,000
+Who is a Data Broker?
+
+44
+00:03:01,000 --> 00:03:08,000
+A Data Broker is not the organization we usually come into contact with.
+
+45
+00:03:08,000 --> 00:03:12,000
+For example, if we go to a website.
+
+46
+00:03:12,000 --> 00:03:15,000
+We all know that it collects a lot of our information.
+
+47
+00:03:15,000 --> 00:03:19,000
+We also know that some websites will sell or share our information.
+
+48
+00:03:19,000 --> 00:03:23,000
+But the Data Broker is actually hiding behind these websites.
+
+49
+00:03:23,000 --> 00:03:26,000
+So when it's collecting data, we probably don't know.
+
+50
+00:03:26,000 --> 00:03:29,000
+For example, we have a free app on our phone.
+
+51
+00:03:29,000 --> 00:03:32,000
+Then we log in.
+
+52
+00:03:32,000 --> 00:03:33,000
+In fact, this app is free.
+
+53
+00:03:33,000 --> 00:03:34,000
+It's not free.
+
+54
+00:03:34,000 --> 00:03:38,000
+It's actually because there's an additional information sharing action behind it.
+
+55
+00:03:38,000 --> 00:03:39,000
+So it's free.
+
+56
+00:03:39,000 --> 00:03:42,000
+Or, for example, we go to the supermarket to buy something.
+
+57
+00:03:42,000 --> 00:03:45,000
+All of our purchase records and so on.
+
+58
+00:03:45,000 --> 00:03:47,000
+In fact, it's all shared behind it.
+
+59
+00:03:47,000 --> 00:03:51,000
+Or it can go to, for example, Facebook.
+
+60
+00:03:51,000 --> 00:03:55,000
+All of our public information on Instagram.
+
+61
+00:03:55,000 --> 00:03:57,000
+So the photos we posted.
+
+62
+00:03:57,000 --> 00:03:59,000
+What we wrote.
+
+63
+00:03:59,000 --> 00:04:00,000
+How to write.
+
+64
+00:04:00,000 --> 00:04:02,000
+Is it a relationship?
+
+65
+00:04:02,000 --> 00:04:04,000
+It knows all of these things.
+
+66
+00:04:04,000 --> 00:04:07,000
+There are also some public sources that it can find.
+
+67
+00:04:07,000 --> 00:04:10,000
+For example, in Illinois.
+
+68
+00:04:10,000 --> 00:04:14,000
+For example, who paid for which house's property tax.
+
+69
+00:04:14,000 --> 00:04:16,000
+That's all you can see.
+
+70
+00:04:16,000 --> 00:04:19,000
+So there's actually public registration information.
+
+71
+00:04:19,000 --> 00:04:23,000
+And then these companies will collect all of your data.
+
+72
+00:04:23,000 --> 00:04:27,000
+And if it's not enough, it will go to other Data Brokers.
+
+73
+00:04:27,000 --> 00:04:29,000
+Share it together or buy it from them.
+
+74
+00:04:29,000 --> 00:04:31,000
+And after you've bought it, you've sorted it out.
+
+75
+00:04:31,000 --> 00:04:34,000
+In fact, each of us will have a tag.
+
+76
+00:04:34,000 --> 00:04:36,000
+It can have some influence.
+
+77
+00:04:36,000 --> 00:04:40,000
+For example, this person is their family.
+
+78
+00:04:40,000 --> 00:04:43,000
+There will be a baby recently.
+
+79
+00:04:43,000 --> 00:04:47,000
+Or this person will have access to a golf club.
+
+80
+00:04:47,000 --> 00:04:52,000
+Or this person is Facebook's social media influencer.
+
+81
+00:04:52,000 --> 00:04:55,000
+It can all know that you have some preferences.
+
+82
+00:04:55,000 --> 00:04:57,000
+Or you have some characteristics.
+
+83
+00:04:57,000 --> 00:04:59,000
+It knows it all.
+
+84
+00:04:59,000 --> 00:05:02,000
+And this is the most common thing.
+
+85
+00:05:02,000 --> 00:05:06,000
+These marketing or advertising Data Brokers.
+
+86
+00:05:06,000 --> 00:05:09,000
+They can actually do it very accurately.
+
+87
+00:05:09,000 --> 00:05:12,000
+For example, when I was in another school.
+
+88
+00:05:12,000 --> 00:05:15,000
+My colleague, every time he received an advertisement letter, he asked him.
+
+89
+00:05:15,000 --> 00:05:16,000
+Do you want to buy a house?
+
+90
+00:05:16,000 --> 00:05:18,000
+Do you want to buy a new car?
+
+91
+00:05:18,000 --> 00:05:20,000
+Do you want to buy a new boat?
+
+92
+00:05:20,000 --> 00:05:22,000
+And then he got this.
+
+93
+00:05:22,000 --> 00:05:23,000
+I got it all.
+
+94
+00:05:23,000 --> 00:05:24,000
+Do you want to borrow Personal Loan?
+
+95
+00:05:24,000 --> 00:05:25,000
+Do you want to borrow Mortgage?
+
+96
+00:05:25,000 --> 00:05:27,000
+How much money do you still have to pay for Mortgage?
+
+97
+00:05:27,000 --> 00:05:29,000
+So you can see that he can know.
+
+98
+00:05:29,000 --> 00:05:31,000
+What is your current financial situation?
+
+99
+00:05:31,000 --> 00:05:34,000
+The advertisement he gave you.
+
+100
+00:05:34,000 --> 00:05:35,000
+It's all different.
+
+101
+00:05:35,000 --> 00:05:38,000
+There are also two more common ones.
+
+102
+00:05:38,000 --> 00:05:40,000
+Fraud Detection and Risk Mitigation.
+
+103
+00:05:40,000 --> 00:05:43,000
+For example, when you go to the bank to borrow money.
+
+104
+00:05:43,000 --> 00:05:47,000
+He needs to make sure that the information you give is correct.
+
+105
+00:05:47,000 --> 00:05:49,000
+It is also through Data Brokers.
+
+106
+00:05:49,000 --> 00:05:51,000
+This part is very important.
+
+107
+00:05:52,000 --> 00:05:57,000
+There are also some websites that actually allow you to find other people's websites.
+
+108
+00:05:57,000 --> 00:06:01,000
+He also collects the information of these people through Data Brokers.
+
+109
+00:06:01,000 --> 00:06:05,000
+So you can judge if that person is the one you want to see.
+
+110
+00:06:05,000 --> 00:06:07,000
+So why is this information useful?
+
+111
+00:06:07,000 --> 00:06:11,000
+That's actually because if he can get a lot of customer data.
+
+112
+00:06:11,000 --> 00:06:13,000
+Collect it all.
+
+113
+00:06:13,000 --> 00:06:17,000
+And then whether it's online or offline.
+
+114
+00:06:17,000 --> 00:06:19,000
+What happens after he finds it all?
+
+115
+00:06:19,000 --> 00:06:22,000
+Then he has a way to reconfirm these data.
+
+116
+00:06:22,000 --> 00:06:24,000
+For example, the same thing.
+
+117
+00:06:24,000 --> 00:06:26,000
+I went to find it from a lot of sources.
+
+118
+00:06:26,000 --> 00:06:29,000
+I can tell which one is right.
+
+119
+00:06:29,000 --> 00:06:32,000
+Then you can put that data quality will be much better.
+
+120
+00:06:32,000 --> 00:06:35,000
+So he has a way to use it to make some predictions.
+
+121
+00:06:35,000 --> 00:06:39,000
+Then he doesn't care what happens to each of us.
+
+122
+00:06:39,000 --> 00:06:42,000
+What he wants is this large amount of aggregated data.
+
+123
+00:06:42,000 --> 00:06:44,000
+Then he can make predictions for him.
+
+124
+00:06:44,000 --> 00:06:46,000
+After this prediction, it's actually very useful.
+
+125
+00:06:46,000 --> 00:06:48,000
+It's because he can sell it.
+
+126
+00:06:48,000 --> 00:06:50,000
+For example, this person may have to change cars next year.
+
+127
+00:06:50,000 --> 00:06:52,000
+He has a way to tell these people.
+
+128
+00:06:52,000 --> 00:06:55,000
+You can send a marketing material.
+
+129
+00:06:55,000 --> 00:07:00,000
+Or he can buy more useful information from other Data Brokers.
+
+130
+00:07:00,000 --> 00:07:03,000
+To make his data richer.
+
+131
+00:07:03,000 --> 00:07:07,000
+So you will see all kinds of Data Brokers.
+
+132
+00:07:07,000 --> 00:07:09,000
+These four are relatively large.
+
+133
+00:07:09,000 --> 00:07:12,000
+For example, Axiom is actually very large.
+
+134
+00:07:12,000 --> 00:07:17,000
+They are all doing marketing campaigns and fraud detection.
+
+135
+00:07:17,000 --> 00:07:22,000
+Then the three people in the back are for business or government.
+
+136
+00:07:22,000 --> 00:07:26,000
+For example, tell you what the financial information of these people is.
+
+137
+00:07:26,000 --> 00:07:29,000
+Or someone told you that his customer transaction.
+
+138
+00:07:29,000 --> 00:07:31,000
+What does it look like?
+
+139
+00:07:31,000 --> 00:07:35,000
+Or he can tell you that I have collected this information.
+
+140
+00:07:35,000 --> 00:07:37,000
+Not just for marketing.
+
+141
+00:07:37,000 --> 00:07:40,000
+Financial service products can be given.
+
+142
+00:07:40,000 --> 00:07:43,000
+In fact, this is when you understand all the profiles of a person.
+
+143
+00:07:43,000 --> 00:07:46,000
+In fact, all the information is very useful.
+
+144
+00:07:46,000 --> 00:07:49,000
+So what kind of information did they collect?
+
+145
+00:07:49,000 --> 00:07:51,000
+Uh, this is a bit vague.
+
+146
+00:07:51,000 --> 00:07:53,000
+Because this is a screenshot.
+
+147
+00:07:53,000 --> 00:07:56,000
+But if you can see, he actually tells you here.
+
+148
+00:07:56,000 --> 00:07:58,000
+Axiom is a big Data Broker.
+
+149
+00:07:58,000 --> 00:08:01,000
+He is a Public Traded Company.
+
+150
+00:08:01,000 --> 00:08:09,000
+He has 45 years of historical data on name changes and residential history.
+
+151
+00:08:09,000 --> 00:08:12,000
+He has all the data from the past 45 years.
+
+152
+00:08:12,000 --> 00:08:13,000
+Who are you here?
+
+153
+00:08:13,000 --> 00:08:14,000
+How did you change your name?
+
+154
+00:08:14,000 --> 00:08:15,000
+He has it all.
+
+155
+00:08:15,000 --> 00:08:19,000
+That gender, age, education level.
+
+156
+00:08:19,000 --> 00:08:21,000
+This is very simple for them.
+
+157
+00:08:21,000 --> 00:08:22,000
+He also knows you.
+
+158
+00:08:22,000 --> 00:08:26,000
+For example, what income level do you currently have?
+
+159
+00:08:26,000 --> 00:08:28,000
+What is the car?
+
+160
+00:08:28,000 --> 00:08:32,000
+Then when there is this information, he can do prediction.
+
+161
+00:08:32,000 --> 00:08:35,000
+For example, is there anyone in your household?
+
+162
+00:08:35,000 --> 00:08:37,000
+Recently planning to have a baby.
+
+163
+00:08:37,000 --> 00:08:40,000
+Or is it planning to adopt a child?
+
+164
+00:08:40,000 --> 00:08:42,000
+Or are you in the United States every year?
+
+165
+00:08:42,000 --> 00:08:44,000
+Are you paying taxes every April?
+
+166
+00:08:44,000 --> 00:08:46,000
+Or are you a heavy Facebook user?
+
+167
+00:08:46,000 --> 00:08:49,000
+Or are you easily influenced by social media?
+
+168
+00:08:49,000 --> 00:08:51,000
+He has a way to know.
+
+169
+00:08:51,000 --> 00:08:54,000
+Do you have major medical insurance?
+
+170
+00:08:54,000 --> 00:08:56,000
+All of these are known.
+
+171
+00:08:56,000 --> 00:09:03,000
+Then, surprisingly, they have more than 3000 different attributes.
+
+172
+00:09:03,000 --> 00:09:12,000
+So in the United States, everyone, if he has collected your information, he has 3000 different attributes to describe the various characteristics of this person.
+
+173
+00:09:12,000 --> 00:09:18,000
+So he actually knows very well what happened to each of us.
+
+174
+00:09:18,000 --> 00:09:21,000
+Sometimes we don't even know our own preference.
+
+175
+00:09:21,000 --> 00:09:23,000
+But these data brokers will know.
+
+176
+00:09:23,000 --> 00:09:27,000
+Then you will find that this is actually quite scary.
+
+177
+00:09:27,000 --> 00:09:32,000
+The reason is because he is not the organization we will directly contact.
+
+178
+00:09:32,000 --> 00:09:33,000
+For example, we go to Amazon.
+
+179
+00:09:33,000 --> 00:09:34,000
+We know Amazon.
+
+180
+00:09:34,000 --> 00:09:35,000
+We go to Facebook.
+
+181
+00:09:35,000 --> 00:09:36,000
+We know it's him.
+
+182
+00:09:36,000 --> 00:09:40,000
+But he's actually doing these things behind the scenes.
+
+183
+00:09:40,000 --> 00:09:49,000
+So in 2014, 2013, the Federal Trade Commission in the United States, they actually have two articles.
+
+184
+00:09:49,000 --> 00:09:51,000
+They're all talking about this.
+
+185
+00:09:52,000 --> 00:09:58,000
+What they're talking about in these two articles is actually that they're talking about data brokers.
+
+186
+00:09:58,000 --> 00:10:04,000
+Their biggest problem is that we don't know what he's doing.
+
+187
+00:10:04,000 --> 00:10:07,000
+We don't know what information he's collecting.
+
+188
+00:10:07,000 --> 00:10:11,000
+We don't know what he's doing with our information.
+
+189
+00:10:11,000 --> 00:10:13,000
+How to share it, how to sell it, who to sell it to.
+
+190
+00:10:13,000 --> 00:10:18,000
+In fact, we all don't know that his whole practice is actually a black box.
+
+191
+00:10:18,000 --> 00:10:21,000
+So we don't know what they're doing at all.
+
+192
+00:10:21,000 --> 00:10:32,000
+So this Federal Trade Commission in 2013 and 2014, we hope that everyone can have some action to limit that.
+
+193
+00:10:32,000 --> 00:10:37,000
+At least let us know more about what these data brokers are doing.
+
+194
+00:10:37,000 --> 00:10:40,000
+So this is the main content of these two articles.
+
+195
+00:10:41,000 --> 00:10:45,000
+So what they're talking about is a very interesting thing, which is data brokers.
+
+196
+00:10:45,000 --> 00:10:52,000
+They're actually competing with each other to see who they can sell their data to.
+
+197
+00:10:52,000 --> 00:10:54,000
+So there's no problem.
+
+198
+00:10:54,000 --> 00:10:56,000
+But they're not actually competing with each other.
+
+199
+00:10:56,000 --> 00:10:58,000
+They're actually cooperating with each other.
+
+200
+00:10:58,000 --> 00:11:01,000
+For example, they asked nine data brokers.
+
+201
+00:11:01,000 --> 00:11:06,000
+And then they'll know where each data broker comes from.
+
+202
+00:11:06,000 --> 00:11:10,000
+For example, you're collecting public data from government agencies.
+
+203
+00:11:10,000 --> 00:11:15,000
+Or it could be any other publicly available source.
+
+204
+00:11:15,000 --> 00:11:17,000
+But it could be commercial sources.
+
+205
+00:11:17,000 --> 00:11:20,000
+Or it could be collected from another company and given to you.
+
+206
+00:11:20,000 --> 00:11:25,000
+You'll see that these nine data brokers actually have very different ways of collecting data.
+
+207
+00:11:25,000 --> 00:11:28,000
+Some people only use commercial sources.
+
+208
+00:11:28,000 --> 00:11:30,000
+Some people use everything.
+
+209
+00:11:31,000 --> 00:11:35,000
+And the most special thing is that although they're usually competing for clients,
+
+210
+00:11:35,000 --> 00:11:37,000
+that is, who can buy their data,
+
+211
+00:11:37,000 --> 00:11:41,000
+but you can see that their data is actually shared with each other.
+
+212
+00:11:41,000 --> 00:11:43,000
+Or you can say, ah, I've collected this data today.
+
+213
+00:11:43,000 --> 00:11:45,000
+And then if you need it, I'll sell it to you.
+
+214
+00:11:45,000 --> 00:11:49,000
+So you can see that they're a very complex network.
+
+215
+00:11:49,000 --> 00:11:52,000
+And in these nine, there are actually only seven,
+
+216
+00:11:52,000 --> 00:11:54,000
+which is the one on the bottom left.
+
+217
+00:11:54,000 --> 00:11:57,000
+The seventh is that it has nothing to do with other data brokers.
+
+218
+00:11:57,000 --> 00:12:00,000
+There are no data sharing activities.
+
+219
+00:12:00,000 --> 00:12:04,000
+Everyone else will buy or sell to a certain extent.
+
+220
+00:12:04,000 --> 00:12:06,000
+Or where do you share it from?
+
+221
+00:12:06,000 --> 00:12:08,000
+They all have it.
+
+222
+00:12:08,000 --> 00:12:11,000
+This thing is very interesting to us.
+
+223
+00:12:11,000 --> 00:12:15,000
+The reason is because if they don't just collect it themselves,
+
+224
+00:12:15,000 --> 00:12:18,000
+they'll take other people's stuff and use it together.
+
+225
+00:12:18,000 --> 00:12:25,000
+If today the hacker can attack a certain data broker,
+
+226
+00:12:25,000 --> 00:12:27,000
+it's actually like a grand prize.
+
+227
+00:12:27,000 --> 00:12:30,000
+The reason is because the data you get is not just his.
+
+228
+00:12:30,000 --> 00:12:33,000
+All the information you get and all the other people,
+
+229
+00:12:33,000 --> 00:12:36,000
+all the information they share with each other.
+
+230
+00:12:36,000 --> 00:12:38,000
+That's actually our hypothesis.
+
+231
+00:12:38,000 --> 00:12:42,000
+It's just that we later found out that there really was this thing.
+
+232
+00:12:42,000 --> 00:12:47,000
+For example, many years ago, in 2018,
+
+233
+00:12:47,000 --> 00:12:49,000
+Equifax had a big breach.
+
+234
+00:12:49,000 --> 00:12:55,000
+They forgot to update their software inside,
+
+235
+00:12:55,000 --> 00:12:57,000
+so they had a big breach.
+
+236
+00:12:57,000 --> 00:13:02,000
+Their breach is actually not just Equifax's data being leaked.
+
+237
+00:13:02,000 --> 00:13:04,000
+In addition to Equifax,
+
+238
+00:13:04,000 --> 00:13:06,000
+the other two big credit bureaus,
+
+239
+00:13:06,000 --> 00:13:08,000
+which is Experian and TransUnion,
+
+240
+00:13:08,000 --> 00:13:10,000
+are actually all leaked.
+
+241
+00:13:10,000 --> 00:13:14,000
+In fact, our data collection is from Dark Web.
+
+242
+00:13:14,000 --> 00:13:16,000
+So we actually found that
+
+243
+00:13:16,000 --> 00:13:19,000
+if you go and find Equifax's data breach,
+
+244
+00:13:19,000 --> 00:13:21,000
+you can actually see the data of the other two.
+
+245
+00:13:21,000 --> 00:13:24,000
+It's actually all mixed up.
+
+246
+00:13:24,000 --> 00:13:28,000
+There's also some anecdotal evidence.
+
+247
+00:13:28,000 --> 00:13:30,000
+When Equifax had a breach,
+
+248
+00:13:30,000 --> 00:13:34,000
+the other two reported the credit fraud data.
+
+249
+00:13:34,000 --> 00:13:38,000
+So all the data is actually leaked.
+
+250
+00:13:38,000 --> 00:13:40,000
+If we go to, for example, Google Trend,
+
+251
+00:13:40,000 --> 00:13:43,000
+and look at their fraud report trend,
+
+252
+00:13:43,000 --> 00:13:47,000
+you'll find that these three are actually almost the same trend.
+
+253
+00:13:47,000 --> 00:13:48,000
+One company has a problem,
+
+254
+00:13:48,000 --> 00:13:50,000
+and the other two have a problem.
+
+255
+00:13:50,000 --> 00:13:54,000
+We think that this is definitely because
+
+256
+00:13:54,000 --> 00:13:59,000
+of the influence of the exchange of information between them.
+
+257
+00:13:59,000 --> 00:14:01,000
+So as long as one person has a problem,
+
+258
+00:14:01,000 --> 00:14:03,000
+everything will happen.
+
+259
+00:14:03,000 --> 00:14:04,000
+That's a lot of trouble.
+
+260
+00:14:04,000 --> 00:14:06,000
+So you'll see that in fact,
+
+261
+00:14:06,000 --> 00:14:11,000
+there are a lot of regulations in the United States.
+
+262
+00:14:11,000 --> 00:14:13,000
+They've been around since 2013.
+
+263
+00:14:13,000 --> 00:14:17,000
+The early focus was actually that
+
+264
+00:14:17,000 --> 00:14:21,000
+these data brokers should let those consumers know
+
+265
+00:14:21,000 --> 00:14:25,000
+what kind of data they've collected.
+
+266
+00:14:25,000 --> 00:14:27,000
+So in 2013 and 2014,
+
+267
+00:14:27,000 --> 00:14:30,000
+Axiom would actually let every user,
+
+268
+00:14:30,000 --> 00:14:31,000
+no matter who you are,
+
+269
+00:14:31,000 --> 00:14:32,000
+you go and log into your data,
+
+270
+00:14:32,000 --> 00:14:34,000
+and then you can see what information you have.
+
+271
+00:14:34,000 --> 00:14:36,000
+You can see it all.
+
+272
+00:14:36,000 --> 00:14:38,000
+There are also some other points that
+
+273
+00:14:38,000 --> 00:14:41,000
+they feel are not transparent at all.
+
+274
+00:14:41,000 --> 00:14:42,000
+What is your practice?
+
+275
+00:14:42,000 --> 00:14:43,000
+What did you collect?
+
+276
+00:14:43,000 --> 00:14:44,000
+Who did you sell it to?
+
+277
+00:14:44,000 --> 00:14:47,000
+So far, it's all black box.
+
+278
+00:14:47,000 --> 00:14:49,000
+This is early 2013 and 2014.
+
+279
+00:14:49,000 --> 00:14:51,000
+And then in 2018 and 2019,
+
+280
+00:14:51,000 --> 00:14:53,000
+there were two new things.
+
+281
+00:14:53,000 --> 00:14:55,000
+In Vermont,
+
+282
+00:14:55,000 --> 00:14:57,000
+there's a data broker law.
+
+283
+00:14:57,000 --> 00:14:58,000
+It says,
+
+284
+00:14:58,000 --> 00:15:00,000
+if you're a data broker,
+
+285
+00:15:00,000 --> 00:15:02,000
+we'll talk about its definition later.
+
+286
+00:15:02,000 --> 00:15:04,000
+If you're a data broker,
+
+287
+00:15:04,000 --> 00:15:09,000
+you should register with its Secretary of State.
+
+288
+00:15:09,000 --> 00:15:10,000
+To register,
+
+289
+00:15:10,000 --> 00:15:11,000
+simply put,
+
+290
+00:15:11,000 --> 00:15:12,000
+before the end of January every year,
+
+291
+00:15:12,000 --> 00:15:13,000
+you have to go to its website
+
+292
+00:15:13,000 --> 00:15:16,000
+and provide all your data to it.
+
+293
+00:15:16,000 --> 00:15:18,000
+The provided data actually looks like this.
+
+294
+00:15:18,000 --> 00:15:20,000
+Which company are you from?
+
+295
+00:15:20,000 --> 00:15:21,000
+What is your website?
+
+296
+00:15:21,000 --> 00:15:25,000
+And then if the user doesn't want you to collect information,
+
+297
+00:15:25,000 --> 00:15:26,000
+can you opt out?
+
+298
+00:15:26,000 --> 00:15:28,000
+I don't want you to collect.
+
+299
+00:15:28,000 --> 00:15:30,000
+So how do you do it?
+
+300
+00:15:30,000 --> 00:15:33,000
+It actually has all the details of the disclosure.
+
+301
+00:15:33,000 --> 00:15:34,000
+Or it says,
+
+302
+00:15:34,000 --> 00:15:37,000
+do you have any
+
+303
+00:15:37,000 --> 00:15:39,000
+statement about opt-out
+
+304
+00:15:39,000 --> 00:15:41,000
+or data collection?
+
+305
+00:15:41,000 --> 00:15:43,000
+You can actually write it up.
+
+306
+00:15:43,000 --> 00:15:46,000
+This example is written a lot.
+
+307
+00:15:46,000 --> 00:15:47,000
+Some companies,
+
+308
+00:15:47,000 --> 00:15:48,000
+although it says it's registered,
+
+309
+00:15:48,000 --> 00:15:49,000
+but in fact,
+
+310
+00:15:49,000 --> 00:15:51,000
+you'll see that there's no information at all.
+
+311
+00:15:51,000 --> 00:15:53,000
+A lot of them just say,
+
+312
+00:15:53,000 --> 00:15:54,000
+please see our website.
+
+313
+00:15:54,000 --> 00:15:55,000
+If you click on it,
+
+314
+00:15:55,000 --> 00:15:57,000
+there's nothing there.
+
+315
+00:15:57,000 --> 00:15:58,000
+You can hardly see it.
+
+316
+00:15:58,000 --> 00:15:59,000
+This is one.
+
+317
+00:15:59,000 --> 00:16:02,000
+The second question is actually
+
+318
+00:16:02,000 --> 00:16:03,000
+data broker,
+
+319
+00:16:03,000 --> 00:16:08,000
+even if it meets the definition of regulation,
+
+320
+00:16:08,000 --> 00:16:10,000
+it's a data broker.
+
+321
+00:16:10,000 --> 00:16:12,000
+If it doesn't register,
+
+322
+00:16:12,000 --> 00:16:15,000
+the penalty is actually very low.
+
+323
+00:16:15,000 --> 00:16:17,000
+I forgot if it's Vermont or California State.
+
+324
+00:16:17,000 --> 00:16:19,000
+If you don't register,
+
+325
+00:16:19,000 --> 00:16:21,000
+you'll only be fined $100 a day.
+
+326
+00:16:21,000 --> 00:16:23,000
+And it's online.
+
+327
+00:16:23,000 --> 00:16:24,000
+I've been fined,
+
+328
+00:16:24,000 --> 00:16:25,000
+for example,
+
+329
+00:16:25,000 --> 00:16:27,000
+$10,000,
+
+330
+00:16:27,000 --> 00:16:28,000
+and I can't pay anymore.
+
+331
+00:16:28,000 --> 00:16:29,000
+For data brokers,
+
+332
+00:16:29,000 --> 00:16:31,000
+this is almost nothing.
+
+333
+00:16:31,000 --> 00:16:33,000
+They might make more than $10,000 a day.
+
+334
+00:16:33,000 --> 00:16:34,000
+So,
+
+335
+00:16:34,000 --> 00:16:35,000
+uh,
+
+336
+00:16:35,000 --> 00:16:37,000
+the penalty is actually not that big.
+
+337
+00:16:37,000 --> 00:16:39,000
+It's not like GDPR,
+
+338
+00:16:39,000 --> 00:16:43,000
+which has such a big impact on European privacy regulation.
+
+339
+00:16:43,000 --> 00:16:44,000
+If you have a violation,
+
+340
+00:16:44,000 --> 00:16:48,000
+it's just a few percent annual sales revenue.
+
+341
+00:16:48,000 --> 00:16:49,000
+So,
+
+342
+00:16:49,000 --> 00:16:51,000
+the effect of this thing is not that good.
+
+343
+00:16:51,000 --> 00:16:52,000
+So,
+
+344
+00:16:52,000 --> 00:16:54,000
+it's actually very simple to define.
+
+345
+00:16:54,000 --> 00:16:56,000
+Simply put,
+
+346
+00:16:56,000 --> 00:16:58,000
+when a company,
+
+347
+00:16:58,000 --> 00:17:00,000
+you know you're collecting data,
+
+348
+00:17:00,000 --> 00:17:02,000
+or you know you're selling it,
+
+349
+00:17:02,000 --> 00:17:04,000
+you take the data you've collected and sell it.
+
+350
+00:17:04,000 --> 00:17:06,000
+And then it's actually a data broker.
+
+351
+00:17:06,000 --> 00:17:08,000
+As long as you collect the data and sell the data,
+
+352
+00:17:08,000 --> 00:17:10,000
+you're not directly facing those customers,
+
+353
+00:17:10,000 --> 00:17:12,000
+it's actually a data broker.
+
+354
+00:17:12,000 --> 00:17:13,000
+So,
+
+355
+00:17:13,000 --> 00:17:14,000
+uh,
+
+356
+00:17:14,000 --> 00:17:15,000
+it's actually a pretty big definition.
+
+357
+00:17:15,000 --> 00:17:16,000
+But actually,
+
+358
+00:17:16,000 --> 00:17:17,000
+you have to think about this definition.
+
+359
+00:17:17,000 --> 00:17:18,000
+It's very simple.
+
+360
+00:17:18,000 --> 00:17:19,000
+For example,
+
+361
+00:17:19,000 --> 00:17:21,000
+if you only collect data,
+
+362
+00:17:21,000 --> 00:17:23,000
+buy the data and use it yourself,
+
+363
+00:17:23,000 --> 00:17:25,000
+you're not a data broker.
+
+364
+00:17:25,000 --> 00:17:26,000
+Or,
+
+365
+00:17:26,000 --> 00:17:27,000
+say,
+
+366
+00:17:27,000 --> 00:17:29,000
+the data you collect is actually your customer's data.
+
+367
+00:17:29,000 --> 00:17:30,000
+For example,
+
+368
+00:17:30,000 --> 00:17:31,000
+Amazon,
+
+369
+00:17:31,000 --> 00:17:33,000
+what I collect is actually the data of these people who buy things from me.
+
+370
+00:17:33,000 --> 00:17:35,000
+And then I take these things and sell them.
+
+371
+00:17:35,000 --> 00:17:36,000
+Actually,
+
+372
+00:17:36,000 --> 00:17:37,000
+I'm not a data broker.
+
+373
+00:17:37,000 --> 00:17:38,000
+So,
+
+374
+00:17:38,000 --> 00:17:39,000
+there's actually a loophole.
+
+375
+00:17:39,000 --> 00:17:40,000
+So,
+
+376
+00:17:40,000 --> 00:17:41,000
+that's going to cause some problems.
+
+377
+00:17:41,000 --> 00:17:43,000
+A lot of companies are actually data brokers,
+
+378
+00:17:43,000 --> 00:17:45,000
+because they're actually doing business.
+
+379
+00:17:45,000 --> 00:17:46,000
+But,
+
+380
+00:17:46,000 --> 00:17:47,000
+uh,
+
+381
+00:17:47,000 --> 00:17:48,000
+according to this law,
+
+382
+00:17:48,000 --> 00:17:50,000
+you can't actually see it.
+
+383
+00:17:50,000 --> 00:17:52,000
+The California State is the same.
+
+384
+00:17:52,000 --> 00:17:53,000
+Uh,
+
+385
+00:17:53,000 --> 00:17:54,000
+that is,
+
+386
+00:17:54,000 --> 00:17:56,000
+if you go to his Attorney General's office,
+
+387
+00:17:56,000 --> 00:17:58,000
+you can also see this big,
+
+388
+00:17:58,000 --> 00:17:59,000
+uh,
+
+389
+00:17:59,000 --> 00:18:01,000
+almost all the requests are exactly the same.
+
+390
+00:18:01,000 --> 00:18:03,000
+It's just that it started working a year later.
+
+391
+00:18:03,000 --> 00:18:05,000
+It started working in January 2020.
+
+392
+00:18:05,000 --> 00:18:07,000
+All the definitions are the same.
+
+393
+00:18:07,000 --> 00:18:08,000
+Almost everything is the same.
+
+394
+00:18:08,000 --> 00:18:09,000
+Although,
+
+395
+00:18:09,000 --> 00:18:10,000
+uh,
+
+396
+00:18:10,000 --> 00:18:13,000
+California's privacy regulation is actually more strict.
+
+397
+00:18:13,000 --> 00:18:15,000
+But it's actually the same in this regard.
+
+398
+00:18:15,000 --> 00:18:16,000
+So,
+
+399
+00:18:16,000 --> 00:18:19,000
+the information he's going to reveal is actually almost the same.
+
+400
+00:18:19,000 --> 00:18:20,000
+So,
+
+401
+00:18:20,000 --> 00:18:21,000
+uh,
+
+402
+00:18:21,000 --> 00:18:23,000
+if you don't have a chance to go to their website,
+
+403
+00:18:23,000 --> 00:18:25,000
+you can see something like that.
+
+404
+00:18:25,000 --> 00:18:26,000
+So,
+
+405
+00:18:26,000 --> 00:18:27,000
+uh,
+
+406
+00:18:27,000 --> 00:18:29,000
+let's talk about it very quickly.
+
+407
+00:18:29,000 --> 00:18:30,000
+Uh,
+
+408
+00:18:30,000 --> 00:18:31,000
+we think,
+
+409
+00:18:31,000 --> 00:18:35,000
+why do they compete with each other and cooperate with each other?
+
+410
+00:18:35,000 --> 00:18:38,000
+Why do you think this is going to happen to them in the future?
+
+411
+00:18:38,000 --> 00:18:40,000
+Security breach or,
+
+412
+00:18:40,000 --> 00:18:41,000
+or,
+
+413
+00:18:41,000 --> 00:18:42,000
+or information will,
+
+414
+00:18:42,000 --> 00:18:43,000
+will,
+
+415
+00:18:43,000 --> 00:18:44,000
+will be stolen by someone.
+
+416
+00:18:44,000 --> 00:18:46,000
+This state is actually related to the reason.
+
+417
+00:18:46,000 --> 00:18:49,000
+The first big point is actually not in this.
+
+418
+00:18:49,000 --> 00:18:51,000
+Competition or data sharing.
+
+419
+00:18:51,000 --> 00:18:55,000
+It's actually because it's actually an unregulated industry.
+
+420
+00:18:55,000 --> 00:18:56,000
+He said,
+
+421
+00:18:56,000 --> 00:18:57,000
+he said,
+
+422
+00:18:57,000 --> 00:18:59,000
+everything is actually self-regulated.
+
+423
+00:18:59,000 --> 00:19:01,000
+They have their own privacy standards.
+
+424
+00:19:01,000 --> 00:19:03,000
+They have their own norms.
+
+425
+00:19:03,000 --> 00:19:04,000
+But,
+
+426
+00:19:04,000 --> 00:19:05,000
+uh,
+
+427
+00:19:05,000 --> 00:19:06,000
+for us,
+
+428
+00:19:06,000 --> 00:19:07,000
+in fact,
+
+429
+00:19:07,000 --> 00:19:08,000
+they are unregulated.
+
+430
+00:19:08,000 --> 00:19:09,000
+That is.
+
+431
+00:19:09,000 --> 00:19:11,000
+You take your information and share it.
+
+432
+00:19:11,000 --> 00:19:12,000
+Uh,
+
+433
+00:19:12,000 --> 00:19:13,000
+what is your penalty?
+
+434
+00:19:13,000 --> 00:19:14,000
+Or,
+
+435
+00:19:14,000 --> 00:19:15,000
+what can be shared?
+
+436
+00:19:15,000 --> 00:19:17,000
+What can't be shared?
+
+437
+00:19:17,000 --> 00:19:18,000
+In fact,
+
+438
+00:19:18,000 --> 00:19:20,000
+there are no restrictions at all.
+
+439
+00:19:20,000 --> 00:19:21,000
+Simply put.
+
+440
+00:19:21,000 --> 00:19:22,000
+So,
+
+441
+00:19:22,000 --> 00:19:24,000
+if there is a hacker.
+
+442
+00:19:24,000 --> 00:19:26,000
+If you can find a data broker,
+
+443
+00:19:26,000 --> 00:19:28,000
+if you can take all his information,
+
+444
+00:19:28,000 --> 00:19:29,000
+the impact will be great.
+
+445
+00:19:29,000 --> 00:19:30,000
+So,
+
+446
+00:19:30,000 --> 00:19:31,000
+this is why,
+
+447
+00:19:31,000 --> 00:19:32,000
+like Equifax,
+
+448
+00:19:32,000 --> 00:19:33,000
+the main one.
+
+449
+00:19:33,000 --> 00:19:34,000
+In fact,
+
+450
+00:19:34,000 --> 00:19:36,000
+the main one is a data broker.
+
+451
+00:19:36,000 --> 00:19:38,000
+If there is a breach,
+
+452
+00:19:38,000 --> 00:19:40,000
+it will have a great impact.
+
+453
+00:19:40,000 --> 00:19:42,000
+These information can actually be sold.
+
+454
+00:19:42,000 --> 00:19:43,000
+So,
+
+455
+00:19:43,000 --> 00:19:44,000
+that will have a greater impact.
+
+456
+00:19:44,000 --> 00:19:45,000
+So,
+
+457
+00:19:45,000 --> 00:19:46,000
+there are more benefits.
+
+458
+00:19:46,000 --> 00:19:47,000
+So,
+
+459
+00:19:47,000 --> 00:19:49,000
+people are more likely to want to go,
+
+460
+00:19:49,000 --> 00:19:50,000
+uh,
+
+461
+00:19:50,000 --> 00:19:51,000
+get your information and sell it.
+
+462
+00:19:51,000 --> 00:19:52,000
+So,
+
+463
+00:19:52,000 --> 00:19:54,000
+this paper is still in a very rough stage.
+
+464
+00:19:54,000 --> 00:19:55,000
+But I think,
+
+465
+00:19:55,000 --> 00:19:56,000
+uh,
+
+466
+00:19:56,000 --> 00:19:57,000
+we still hope to be able to present.
+
+467
+00:19:57,000 --> 00:19:59,000
+And then I hope to give you some awareness.
+
+468
+00:19:59,000 --> 00:20:00,000
+Or,
+
+469
+00:20:00,000 --> 00:20:01,000
+uh,
+
+470
+00:20:01,000 --> 00:20:02,000
+some extra ideas.
+
+471
+00:20:02,000 --> 00:20:03,000
+Especially in,
+
+472
+00:20:03,000 --> 00:20:04,000
+uh,
+
+473
+00:20:04,000 --> 00:20:06,000
+how to protect privacy protection.
+
+474
+00:20:06,000 --> 00:20:07,000
+Or,
+
+475
+00:20:07,000 --> 00:20:08,000
+how to be more,
+
+476
+00:20:08,000 --> 00:20:10,000
+more effective to understand what they are doing.
+
+477
+00:20:10,000 --> 00:20:11,000
+So,
+
+478
+00:20:11,000 --> 00:20:12,000
+uh,
+
+479
+00:20:12,000 --> 00:20:13,000
+you will see that in fact,
+
+480
+00:20:13,000 --> 00:20:14,000
+our hypothesis,
+
+481
+00:20:14,000 --> 00:20:15,000
+in fact,
+
+482
+00:20:15,000 --> 00:20:16,000
+everything is still in a very rough stage.
+
+483
+00:20:16,000 --> 00:20:17,000
+So,
+
+484
+00:20:17,000 --> 00:20:19,000
+but we still hope to be able to share more.
+
+485
+00:20:19,000 --> 00:20:20,000
+So,
+
+486
+00:20:20,000 --> 00:20:21,000
+the other one is,
+
+487
+00:20:21,000 --> 00:20:22,000
+uh,
+
+488
+00:20:22,000 --> 00:20:24,000
+we want to know if this registration has any impact.
+
+489
+00:20:24,000 --> 00:20:25,000
+Uh,
+
+490
+00:20:25,000 --> 00:20:26,000
+we,
+
+491
+00:20:26,000 --> 00:20:27,000
+of course,
+
+492
+00:20:27,000 --> 00:20:28,000
+we let these broad data brokers,
+
+493
+00:20:28,000 --> 00:20:29,000
+they are all transparent.
+
+494
+00:20:29,000 --> 00:20:30,000
+Or,
+
+495
+00:20:30,000 --> 00:20:31,000
+everyone knows who they are.
+
+496
+00:20:31,000 --> 00:20:32,000
+Will they say,
+
+497
+00:20:32,000 --> 00:20:33,000
+their practice is better?
+
+498
+00:20:33,000 --> 00:20:34,000
+They are more transparent.
+
+499
+00:20:34,000 --> 00:20:35,000
+Or,
+
+500
+00:20:35,000 --> 00:20:36,000
+they have some pressure to say,
+
+501
+00:20:36,000 --> 00:20:37,000
+they can't be so easy.
+
+502
+00:20:37,000 --> 00:20:38,000
+There will be a security breach.
+
+503
+00:20:38,000 --> 00:20:39,000
+But the problem is actually in,
+
+504
+00:20:39,000 --> 00:20:40,000
+not this regulation.
+
+505
+00:20:40,000 --> 00:20:41,000
+In fact,
+
+506
+00:20:41,000 --> 00:20:42,000
+because even if you don't register,
+
+507
+00:20:42,000 --> 00:20:43,000
+it doesn't actually work.
+
+508
+00:20:43,000 --> 00:20:44,000
+So,
+
+509
+00:20:44,000 --> 00:20:45,000
+uh,
+
+510
+00:20:45,000 --> 00:20:46,000
+I think,
+
+511
+00:20:46,000 --> 00:20:47,000
+uh,
+
+512
+00:20:47,000 --> 00:20:48,000
+I think,
+
+513
+00:20:48,000 --> 00:20:49,000
+uh,
+
+514
+00:20:49,000 --> 00:20:50,000
+I think,
+
+515
+00:20:50,000 --> 00:20:51,000
+uh,
+
+516
+00:20:51,000 --> 00:20:52,000
+uh.
+
+517
+00:20:52,000 --> 00:20:53,000
+So,
+
+518
+00:20:53,000 --> 00:20:54,000
+uh,
+
+519
+00:20:54,000 --> 00:20:55,000
+so.
+
+520
+00:20:55,000 --> 00:20:56,000
+Uh,
+
+521
+00:20:56,000 --> 00:20:57,000
+so,
+
+522
+00:20:57,000 --> 00:20:58,000
+uh,
+
+523
+00:20:58,000 --> 00:20:59,000
+uh,
+
+524
+00:20:59,000 --> 00:21:00,000
+so.
+
+525
+00:21:00,000 --> 00:21:01,000
+Uh,
+
+526
+00:21:01,000 --> 00:21:02,000
+so.
+
+527
+00:21:02,000 --> 00:21:03,000
+Uh,
+
+528
+00:21:03,000 --> 00:21:04,000
+uh,
+
+529
+00:21:04,000 --> 00:21:05,000
+so.
+
+530
+00:21:05,000 --> 00:21:06,000
+uh,
+
+531
+00:21:06,000 --> 00:21:07,000
+so,
+
+532
+00:21:07,000 --> 00:21:08,000
+uh,
+
+533
+00:21:08,000 --> 00:21:09,000
+uh.
+
+534
+00:21:09,000 --> 00:21:10,000
+Uh,
+
+535
+00:21:10,000 --> 00:21:11,000
+uh.
+
+536
+00:21:11,000 --> 00:21:12,000
+Uh,
+
+537
+00:21:12,000 --> 00:21:13,000
+uh.
+
+538
+00:21:13,000 --> 00:21:14,000
+Uh,
+
+539
+00:21:14,000 --> 00:21:15,000
+uh,
+
+540
+00:21:15,000 --> 00:21:16,000
+uh,
+
+541
+00:21:16,000 --> 00:21:17,000
+uh,
+
+542
+00:21:17,000 --> 00:21:18,000
+uh,
+
+543
+00:21:18,680 --> 00:21:19,680
+so.
+
+544
+00:21:19,680 --> 00:21:20,680
+Uh,
+
+545
+00:21:20,680 --> 00:21:21,680
+uh.
+
+546
+00:21:21,680 --> 00:21:22,680
+So,
+
+547
+00:21:22,680 --> 00:21:23,680
+uh.
+
+548
+00:21:23,680 --> 00:21:24,680
+So,
+
+549
+00:21:24,680 --> 00:21:25,680
+uh.
+
+550
+00:21:25,680 --> 00:21:26,680
+So.
+
+551
+00:21:26,680 --> 00:21:27,680
+Uh,
+
+552
+00:21:27,680 --> 00:21:28,680
+uh.
+
+553
+00:21:28,680 --> 00:21:29,680
+Uh,
+
+554
+00:21:29,680 --> 00:21:30,680
+so.
+
+555
+00:21:30,680 --> 00:21:31,680
+Uh,
+
+556
+00:21:31,680 --> 00:21:32,880
+so.
+
+557
+00:21:32,880 --> 00:21:33,880
+Uh,
+
+558
+00:21:33,880 --> 00:21:34,880
+so.
+
+559
+00:21:34,880 --> 00:21:35,880
+Uh,
+
+560
+00:21:35,880 --> 00:21:36,880
+so.
+
+561
+00:21:36,880 --> 00:21:37,880
+Uh,
+
+562
+00:21:37,880 --> 00:21:38,880
+so.
+
+563
+00:21:38,880 --> 00:21:39,880
+Yeah.
+
+564
+00:21:39,880 --> 00:21:40,880
+So,
+
+565
+00:21:40,880 --> 00:21:41,880
+so.
+
+566
+00:21:41,880 --> 00:21:42,880
+So,
+
+567
+00:21:42,880 --> 00:21:43,880
+uh,
+
+568
+00:21:43,880 --> 00:21:44,880
+so,
+
+569
+00:21:44,880 --> 00:21:45,880
+uh,
+
+570
+00:21:45,880 --> 00:21:46,880
+so.
+
+571
+00:21:46,880 --> 00:21:47,880
+Um,
+
+572
+00:21:47,880 --> 00:21:48,880
+So,
+
+573
+00:21:48,880 --> 00:21:49,880
+um,
+
+574
+00:21:49,880 --> 00:21:50,880
+so.
+
+575
+00:21:50,880 --> 00:21:51,880
+Um,
+
+576
+00:21:51,880 --> 00:21:52,880
+so.
+
+577
+00:21:52,880 --> 00:21:53,880
+Um,
+
+578
+00:21:53,880 --> 00:21:54,880
+so.
+
+579
+00:21:54,880 --> 00:21:55,880
+Um,
+
+580
+00:21:55,880 --> 00:21:56,880
+so.
+
+581
+00:21:56,880 --> 00:21:57,880
+Uh,
+
+582
+00:21:57,880 --> 00:21:58,880
+so.
+
+583
+00:21:58,880 --> 00:21:59,880
+So,
+
+584
+00:21:59,880 --> 00:22:00,880
+so.
+
+585
+00:22:00,880 --> 00:22:01,880
+Uh,
+
+586
+00:22:01,880 --> 00:22:02,880
+so.
+
+587
+00:22:02,880 --> 00:22:03,880
+Um,
+
+588
+00:22:03,880 --> 00:22:04,880
+so.
+
+589
+00:22:04,880 --> 00:22:05,880
+Um,
+
+590
+00:22:05,880 --> 00:22:06,880
+so.
+
+591
+00:22:06,880 --> 00:22:07,880
+Uh,
+
+592
+00:22:07,880 --> 00:22:08,880
+so.
+
+593
+00:22:08,880 --> 00:22:09,880
+Um,
+
+594
+00:22:09,880 --> 00:22:10,880
+so.
+
+595
+00:22:10,880 --> 00:22:11,880
+So,
+
+596
+00:22:11,880 --> 00:22:12,880
+so.
+
+597
+00:22:12,880 --> 00:22:13,880
+Um,
+
+598
+00:22:13,880 --> 00:22:14,880
+so.
+
+599
+00:22:14,880 --> 00:22:15,880
+Um.
+
+600
+00:22:15,880 --> 00:22:16,880
+So.
+
+601
+00:22:16,960 --> 00:22:17,960
+So.
+
+602
+00:22:17,960 --> 00:22:18,960
+Um,
+
+603
+00:22:18,960 --> 00:22:19,960
+so.
+
+604
+00:22:19,960 --> 00:22:20,960
+Um.
+
+605
+00:22:20,960 --> 00:22:21,960
+So.
+
+606
+00:22:21,960 --> 00:22:22,960
+So.
+
+607
+00:22:22,960 --> 00:22:23,960
+So.
+
+608
+00:22:23,960 --> 00:22:24,960
+So.
+
+609
+00:22:24,960 --> 00:22:25,960
+So.
+
+610
+00:22:25,960 --> 00:22:26,960
+So.
+
+611
+00:22:26,960 --> 00:22:27,960
+So.
+
+612
+00:22:27,960 --> 00:22:28,960
+So.
+
+613
+00:22:28,960 --> 00:22:29,960
+Um.
+
+614
+00:22:29,960 --> 00:22:30,960
+So.
+
+615
+00:22:30,960 --> 00:22:31,960
+So.
+
+616
+00:22:31,960 --> 00:22:32,960
+So.
+
+617
+00:22:32,960 --> 00:22:33,960
+Um.
+
+618
+00:22:33,960 --> 00:22:34,960
+So.
+
+619
+00:22:34,960 --> 00:22:35,960
+Um.
+
+620
+00:22:35,960 --> 00:22:36,960
+So.
+
+621
+00:22:36,960 --> 00:22:37,960
+Um.
+
+622
+00:22:37,960 --> 00:22:38,960
+So.
+
+623
+00:22:38,960 --> 00:22:39,960
+So.
+
+624
+00:22:39,960 --> 00:22:40,960
+Um.
+
+625
+00:22:40,960 --> 00:22:41,960
+Um.
+
+626
+00:22:41,960 --> 00:22:42,960
+So.
+
+627
+00:22:42,960 --> 00:22:43,960
+So.
+
+628
+00:22:43,960 --> 00:22:44,960
+So.
+
+629
+00:22:44,960 --> 00:22:45,960
+So.
+
+630
+00:22:45,960 --> 00:22:46,960
+Uh.
+
+631
+00:22:46,960 --> 00:22:47,960
+So.
+
+632
+00:22:47,960 --> 00:22:48,960
+So'.
+
+633
+00:22:48,960 --> 00:22:49,960
+So.
+
+634
+00:22:49,960 --> 00:22:50,960
+So.
+
+635
+00:22:50,960 --> 00:22:51,960
+So.
+
+636
+00:22:51,960 --> 00:22:52,960
+So.
+
+637
+00:22:52,960 --> 00:22:53,960
+So.
+
+638
+00:22:53,960 --> 00:22:54,960
+So.
+
+639
+00:22:54,960 --> 00:22:55,960
+So.
+
+640
+00:22:55,960 --> 00:22:56,960
+So.
+
+641
+00:22:56,960 --> 00:22:57,960
+So.
+
+642
+00:22:57,960 --> 00:22:58,960
+Um.
+
+643
+00:22:58,960 --> 00:22:59,960
+So.
+
+644
+00:22:59,960 --> 00:23:00,960
+Um.
+
+645
+00:23:00,960 --> 00:23:01,960
+So.
+
+646
+00:23:01,960 --> 00:23:02,960
+Um.
+
+647
+00:23:02,960 --> 00:23:03,960
+So.
+
+648
+00:23:03,960 --> 00:23:04,960
+So.
+
+649
+00:23:04,960 --> 00:23:05,960
+So.
+
+650
+00:23:05,960 --> 00:23:06,960
+So.
+
+651
+00:23:06,960 --> 00:23:07,960
+So.
+
+652
+00:23:07,960 --> 00:23:08,960
+So.
+
+653
+00:23:08,960 --> 00:23:09,960
+So.
+
+654
+00:23:09,960 --> 00:23:10,960
+So.
+
+655
+00:23:10,960 --> 00:23:11,960
+So.
+
+656
+00:23:11,960 --> 00:23:12,960
+So.
+
+657
+00:23:12,960 --> 00:23:13,960
+So.
+
+658
+00:23:13,960 --> 00:23:14,960
+So.
+
+659
+00:23:15,960 --> 00:23:16,960
+So.
+
+660
+00:23:16,960 --> 00:23:17,960
+So.
+
+661
+00:23:17,960 --> 00:23:18,960
+So.
+
+662
+00:23:18,960 --> 00:23:19,960
+So.
+
+663
+00:23:20,880 --> 00:23:21,880
+So.
+
+664
+00:23:21,880 --> 00:23:22,880
+So.
+
+665
+00:23:22,880 --> 00:23:23,880
+So.
+
+666
+00:23:23,880 --> 00:23:24,880
+So.
+
+667
+00:23:24,880 --> 00:23:25,880
+So.
+
+668
+00:23:25,880 --> 00:23:26,880
+So.
+
+669
+00:23:26,880 --> 00:23:29,880
+So.
+
+670
+00:23:29,880 --> 00:23:30,880
+So.
+
+671
+00:23:30,980 --> 00:23:31,980
+So.
+
+672
+00:23:31,980 --> 00:23:32,980
+So.
+
+673
+00:23:37,980 --> 00:23:38,980
+So,
+
+674
+00:23:38,980 --> 00:23:44,980
+So.
+
+675
+00:23:45,980 --> 00:23:46,980
+So.
+
+676
+00:23:47,980 --> 00:23:50,000
+So.
+
+677
+00:23:50,000 --> 00:23:53,000
+So.
+
+678
+00:23:53,000 --> 00:23:54,000
+So.
+
+679
+00:23:54,000 --> 00:23:55,000
+So.
+
+680
+00:23:55,000 --> 00:23:56,000
+So.
+
+681
+00:23:56,000 --> 00:23:57,000
+So.
+
+682
+00:23:57,000 --> 00:23:58,000
+So.
+
+683
+00:23:58,000 --> 00:23:59,000
+So.
+
+684
+00:24:01,000 --> 00:24:02,000
+So.
+
+685
+00:24:02,000 --> 00:24:03,000
+So.
+
+686
+00:24:03,000 --> 00:24:04,000
+So.
+
+687
+00:24:04,000 --> 00:24:05,000
+So.
+
+688
+00:24:05,000 --> 00:24:06,000
+So.
+
+689
+00:24:06,000 --> 00:24:07,000
+So.
+
+690
+00:24:07,000 --> 00:24:08,000
+So.
+
+691
+00:24:08,000 --> 00:24:09,000
+So.
+
+692
+00:24:09,000 --> 00:24:10,000
+So.
+
+693
+00:24:10,000 --> 00:24:11,000
+So.
+
+694
+00:24:11,000 --> 00:24:12,000
+So.
+
+695
+00:24:12,000 --> 00:24:13,000
+So.
+
+696
+00:24:13,000 --> 00:24:14,000
+So.
+
+697
+00:24:14,000 --> 00:24:15,000
+So.
+
+698
+00:24:15,000 --> 00:24:16,000
+So.
+
+699
+00:24:46,020 --> 00:24:48,020
+So.
+
+700
+00:24:48,020 --> 00:24:49,020
+So.
+
+701
+00:24:49,020 --> 00:24:51,020
+So.
+
+702
+00:24:51,020 --> 00:24:52,020
+So.
+
+703
+00:24:52,020 --> 00:24:53,020
+So.
+
+704
+00:24:53,020 --> 00:24:54,020
+So.
+
+705
+00:24:54,020 --> 00:24:55,020
+So.
+
+706
+00:24:55,020 --> 00:24:56,020
+So.
+
+707
+00:24:56,020 --> 00:24:57,020
+So.
+
+708
+00:24:57,020 --> 00:24:58,020
+So.
+
+709
+00:24:58,020 --> 00:24:59,020
+So.
+
+710
+00:24:59,020 --> 00:25:00,020
+So.
+
+711
+00:25:00,020 --> 00:25:01,020
+So.
+
+712
+00:25:01,020 --> 00:25:02,020
+So.
+
+713
+00:25:02,020 --> 00:25:03,020
+So.
+
+714
+00:25:03,020 --> 00:25:04,020
+So.
+
+715
+00:25:04,020 --> 00:25:05,020
+So.
+
+716
+00:25:05,020 --> 00:25:06,020
+So.
+
+717
+00:25:06,020 --> 00:25:07,020
+So.
+
+718
+00:25:07,020 --> 00:25:08,020
+So.
+
+719
+00:25:08,020 --> 00:25:10,020
+So.
+
+720
+00:25:10,020 --> 00:25:11,020
+So.
+
+721
+00:25:11,020 --> 00:25:13,020
+So.
+
+722
+00:25:13,020 --> 00:25:15,020
+So.
+
+723
+00:25:15,020 --> 00:25:16,020
+So.
+
+724
+00:25:16,020 --> 00:25:17,020
+So.
+
+725
+00:25:17,020 --> 00:25:18,020
+So.
+
+726
+00:25:18,020 --> 00:25:19,020
+So.
+
+727
+00:25:19,020 --> 00:25:20,020
+So.
+
+728
+00:25:20,020 --> 00:25:21,020
+So.
+
+729
+00:25:21,020 --> 00:25:22,020
+So.
+
+730
+00:25:22,020 --> 00:25:23,020
+So.
+
+731
+00:25:23,020 --> 00:25:24,020
+So.
+
+732
+00:25:24,020 --> 00:25:25,020
+So.
+
+733
+00:25:25,020 --> 00:25:26,020
+So.
+
+734
+00:25:26,020 --> 00:25:27,020
+So.
+
+735
+00:25:28,020 --> 00:25:29,020
+So.
+
+736
+00:25:29,020 --> 00:25:30,020
+So.
+
+737
+00:25:30,020 --> 00:25:31,020
+So.
+
+738
+00:25:31,020 --> 00:25:32,020
+So.
+
+739
+00:25:32,020 --> 00:25:33,020
+So.
+
+740
+00:25:33,020 --> 00:25:34,020
+So.
+
+741
+00:25:34,020 --> 00:25:35,020
+So.
+
+742
+00:25:35,020 --> 00:25:36,020
+So.
+
+743
+00:25:36,020 --> 00:25:37,020
+So.
+
+744
+00:25:37,020 --> 00:25:38,020
+So.
+
+745
+00:25:38,020 --> 00:25:39,020
+So.
+
+746
+00:25:39,020 --> 00:25:40,020
+So.
+
+747
+00:25:40,020 --> 00:25:41,020
+So.
+
+748
+00:25:43,020 --> 00:25:44,020
+So.
+
+749
+00:25:50,020 --> 00:25:51,020
+So.
+
+750
+00:25:55,020 --> 00:25:56,020
+So.
+
+751
+00:25:56,020 --> 00:25:57,020
+So.
+
+752
+00:26:00,020 --> 00:26:01,020
+So.
+
+753
+00:26:01,020 --> 00:26:04,020
+So.
+
+754
+00:26:04,020 --> 00:26:05,020
+So.
+
+755
+00:26:05,020 --> 00:26:06,020
+So.
+
+756
+00:26:07,020 --> 00:26:08,020
+So.
+
+757
+00:26:16,020 --> 00:26:17,020
+So.
+
+758
+00:26:18,020 --> 00:26:19,020
+So.
+
+759
+00:26:19,020 --> 00:26:20,020
+So.
+
+760
+00:26:22,020 --> 00:26:23,020
+So.
+
+761
+00:26:23,020 --> 00:26:26,020
+So.
+
+762
+00:26:26,020 --> 00:26:27,020
+So.
+
+763
+00:26:28,020 --> 00:26:29,020
+So.
+
+764
+00:26:33,020 --> 00:26:34,020
+So.
+
+765
+00:26:34,020 --> 00:26:35,020
+So.
+
+766
+00:26:35,020 --> 00:26:36,020
+So.
+
+767
+00:26:42,020 --> 00:26:43,020
+So.
+
+768
+00:26:44,020 --> 00:26:45,020
+So.
+
+769
+00:26:45,020 --> 00:26:46,020
+So.
+
+770
+00:26:49,020 --> 00:26:50,020
+So.
+
+771
+00:26:56,020 --> 00:26:57,020
+So Self Disclosed Information.
+
+772
+00:26:58,020 --> 00:26:59,020
+So.
+
+773
+00:27:08,020 --> 00:27:09,020
+So.
+
+774
+00:27:09,020 --> 00:27:10,020
+So.
+
+775
+00:27:11,020 --> 00:27:12,020
+So.
+
+776
+00:27:18,020 --> 00:27:19,020
+So.
+
+777
+00:27:21,020 --> 00:27:22,020
+So.
+
+778
+00:27:25,020 --> 00:27:26,020
+So.
+
+779
+00:27:29,020 --> 00:27:30,020
+So.
+
+780
+00:27:32,020 --> 00:27:33,020
+So.
+
+781
+00:27:37,020 --> 00:27:38,020
+So.
+
+782
+00:27:40,020 --> 00:27:43,020
+Security bridge.
+
+783
+00:27:46,020 --> 00:27:47,020
+Dark web.
+
+784
+00:27:52,020 --> 00:27:53,020
+Roberts University.
+
+785
+00:27:55,020 --> 00:27:56,020
+Dark out.
+
+786
+00:28:02,020 --> 00:28:03,020
+FBI Department of Justice.
+
+787
+00:28:06,020 --> 00:28:07,020
+Dark web.
+
+788
+00:28:11,020 --> 00:28:12,020
+Surface web.
+
+789
+00:28:16,020 --> 00:28:17,020
+Iceberg.
+
+790
+00:28:25,020 --> 00:28:26,020
+Deep web.
+
+791
+00:28:33,020 --> 00:28:34,020
+Authentication.
+
+792
+00:28:35,020 --> 00:28:36,020
+Intranet.
+
+793
+00:28:48,020 --> 00:28:49,020
+Login.
+
+794
+00:28:51,020 --> 00:28:52,020
+Online banking.
+
+795
+00:28:57,020 --> 00:28:58,020
+Medical information.
+
+796
+00:29:05,020 --> 00:29:06,020
+Hidden place.
+
+797
+00:29:14,020 --> 00:29:15,020
+Deep web.
+
+798
+00:29:27,020 --> 00:29:28,020
+Tor.
+
+799
+00:29:29,020 --> 00:29:30,020
+Configuration.
+
+800
+00:29:35,020 --> 00:29:36,020
+Control.
+
+801
+00:29:50,020 --> 00:29:51,020
+Censorship.
+
+802
+00:30:00,020 --> 00:30:01,020
+Drug dealer.
+
+803
+00:30:05,020 --> 00:30:06,020
+Hacker.
+
+804
+00:30:10,020 --> 00:30:11,020
+Hacked out information.
+
+805
+00:30:16,020 --> 00:30:17,020
+Illegal activity.
+
+806
+00:30:21,020 --> 00:30:22,020
+Dark web.
+
+807
+00:30:23,020 --> 00:30:24,020
+All.
+
+808
+00:30:39,020 --> 00:30:40,020
+Equifax bridge.
+
+809
+00:30:48,020 --> 00:30:49,020
+Equifax data bridge.
+
+810
+00:30:52,020 --> 00:30:53,020
+Equifax data bridge.
+
+811
+00:31:07,020 --> 00:31:08,020
+Equifax information leak.
+
+812
+00:31:17,020 --> 00:31:18,020
+Equifax.
+
+813
+00:31:22,020 --> 00:31:23,020
+Equifax.
+
+814
+00:31:23,020 --> 00:31:24,020
+Experian TransUnion.
+
+815
+00:31:28,020 --> 00:31:29,020
+Co-leakage.
+
+816
+00:31:41,020 --> 00:31:42,020
+Data broker.
+
+817
+00:31:47,020 --> 00:31:48,020
+Data bridge.
+
+818
+00:31:52,020 --> 00:31:53,020
+Analysis.
+
+819
+00:31:56,020 --> 00:31:57,020
+Private.
+
+820
+00:32:06,020 --> 00:32:07,020
+Characteristics.
+
+821
+00:32:14,020 --> 00:32:15,020
+Competitor.
+
+822
+00:32:23,020 --> 00:32:24,020
+Dark web.
+
+823
+00:32:34,020 --> 00:32:35,020
+Information leakage.
+
+824
+00:32:42,020 --> 00:32:43,020
+No.
+
+825
+00:32:53,020 --> 00:32:54,020
+Self-selection.
+
+826
+00:32:58,020 --> 00:32:59,020
+Security measure.
+
+827
+00:33:01,020 --> 00:33:02,020
+Transparent.
+
+828
+00:33:10,020 --> 00:33:11,020
+Shared.
+
+829
+00:33:22,020 --> 00:33:23,020
+Disclosure.
+
+830
+00:33:24,020 --> 00:33:25,020
+Privacy statement.
+
+831
+00:33:32,020 --> 00:33:33,020
+Data broker.
+
+832
+00:33:36,020 --> 00:33:37,020
+Data broker A.
+
+833
+00:33:38,020 --> 00:33:39,020
+80%.
+
+834
+00:33:44,020 --> 00:33:45,020
+Information leak.
+
+835
+00:33:52,020 --> 00:33:53,020
+Dark web.
+
+836
+00:34:03,020 --> 00:34:04,020
+Leakage.
+
+837
+00:34:08,020 --> 00:34:09,020
+Unique data set.
+
+838
+00:34:11,020 --> 00:34:12,020
+Information leakage.
+
+839
+00:34:20,020 --> 00:34:21,020
+Security bridge.
+
+840
+00:34:27,020 --> 00:34:28,020
+Data uniqueness.
+
+841
+00:34:31,020 --> 00:34:32,020
+Unique.
+
+842
+00:34:38,020 --> 00:34:39,020
+Unique data set.
+
+843
+00:34:50,020 --> 00:34:51,020
+Profile.
+
+844
+00:34:53,020 --> 00:34:54,020
+Unique.
+
+845
+00:35:05,020 --> 00:35:06,020
+Conclusion.
+
+846
+00:35:08,020 --> 00:35:10,020
+This research is actually very rough.
+
+847
+00:35:10,020 --> 00:35:12,020
+That's actually an ongoing project.
+
+848
+00:35:12,020 --> 00:35:14,020
+Actually, we've always wanted to keep going.
+
+849
+00:35:14,020 --> 00:35:18,020
+The focus of our presentation today is actually that we want to
+
+850
+00:35:18,020 --> 00:35:21,020
+improve everyone's awareness of data brokers.
+
+851
+00:35:21,020 --> 00:35:24,020
+Or I hope to encourage everyone to say that if you are interested,
+
+852
+00:35:24,020 --> 00:35:26,020
+you can join this project.
+
+853
+00:35:26,020 --> 00:35:30,020
+So we can think about how we can do it.
+
+854
+00:35:30,020 --> 00:35:34,020
+Uh, more accurately or more effectively.
+
+855
+00:35:35,020 --> 00:35:36,020
+Data collection.
+
+856
+00:35:37,020 --> 00:35:38,020
+Sharing the practices.
+
+857
+00:35:43,020 --> 00:35:44,020
+Privacy protection.
+
+858
+00:35:51,020 --> 00:35:52,020
+Privacy regulation.
+
+859
+00:35:57,020 --> 00:35:58,020
+Law-related.
+
+860
+00:35:58,020 --> 00:35:59,020
+Regulation-related.
+
+861
+00:36:05,020 --> 00:36:06,020
+Transparency.
+
+862
+00:36:12,020 --> 00:36:13,020
+Transparency.
+
+863
+00:36:18,020 --> 00:36:19,020
+Talk.
+
+864
+00:36:24,020 --> 00:36:25,020
+Stop sharing.
+
+865
+00:36:35,020 --> 00:36:36,020
+No problem.
+
+866
+00:36:37,020 --> 00:36:38,020
+Very clear.
+
+867
+00:36:48,020 --> 00:36:51,020
+I just want to think about it.
+
+868
+00:36:51,020 --> 00:36:56,020
+I don't know much about this, but I think it's a very important issue.
+
+869
+00:36:56,020 --> 00:36:59,020
+I want to share with you.
+
+870
+00:37:00,020 --> 00:37:03,020
+How do you protect your own data?
+
+871
+00:37:03,020 --> 00:37:06,020
+For example, because every website you use now has cookies.
+
+872
+00:37:06,020 --> 00:37:08,020
+Then you have to accept or reject.
+
+873
+00:37:08,020 --> 00:37:11,020
+Then there's something we can do to protect it.
+
+874
+00:37:11,020 --> 00:37:13,020
+Or it's already too late.
+
+875
+00:37:13,020 --> 00:37:16,020
+Our profile is already known to everyone.
+
+876
+00:37:16,020 --> 00:37:19,020
+We found that most of the data is already out there.
+
+877
+00:37:19,020 --> 00:37:21,020
+So we have to protect it.
+
+878
+00:37:21,020 --> 00:37:23,020
+We have to protect it.
+
+879
+00:37:23,020 --> 00:37:25,020
+We have to protect it.
+
+880
+00:37:25,020 --> 00:37:27,020
+We have to protect it.
+
+881
+00:37:27,020 --> 00:37:29,020
+So most of the data is already out there.
+
+882
+00:37:29,020 --> 00:37:32,020
+And then I'm trying something now.
+
+883
+00:37:32,020 --> 00:37:34,020
+It's a cookie on the website.
+
+884
+00:37:34,020 --> 00:37:37,020
+For example, I'm connected to Wall Street Journal today.
+
+885
+00:37:37,020 --> 00:37:38,020
+I'm connected to Amazon today.
+
+886
+00:37:38,020 --> 00:37:39,020
+What's behind it?
+
+887
+00:37:39,020 --> 00:37:42,020
+Collecting our data or activity.
+
+888
+00:37:42,020 --> 00:37:45,020
+Uh, we found that actually.
+
+889
+00:37:45,020 --> 00:37:48,020
+I can't control it in the middle of an upper bound and lower bound.
+
+890
+00:37:48,020 --> 00:37:50,020
+Upper bound is to say.
+
+891
+00:37:50,020 --> 00:37:52,020
+Uh, I'm Google today.
+
+892
+00:37:52,020 --> 00:37:54,020
+In the situation of signing in.
+
+893
+00:37:54,020 --> 00:37:56,020
+So Chrome knows who I am.
+
+894
+00:37:56,020 --> 00:37:58,020
+In that case,
+
+895
+00:37:58,020 --> 00:38:00,020
+In fact, they collect a lot of data.
+
+896
+00:38:00,020 --> 00:38:02,020
+It's pretty amazing.
+
+897
+00:38:02,020 --> 00:38:05,020
+But if I'm not logged in at all.
+
+898
+00:38:05,020 --> 00:38:08,020
+My browser is open again in private mode.
+
+899
+00:38:08,020 --> 00:38:10,020
+That can be limited to the amount.
+
+900
+00:38:10,020 --> 00:38:12,020
+It's a lot worse.
+
+901
+00:38:12,020 --> 00:38:13,020
+So that's another way.
+
+902
+00:38:13,020 --> 00:38:15,020
+Just try to close it.
+
+903
+00:38:15,020 --> 00:38:16,020
+No way.
+
+904
+00:38:16,020 --> 00:38:19,020
+There are some cookies that are actually more troublesome.
+
+905
+00:38:19,020 --> 00:38:21,020
+Uh.
+
+906
+00:38:21,020 --> 00:38:22,020
+Although he told you,
+
+907
+00:38:22,020 --> 00:38:23,020
+Do you want to accept it?
+
+908
+00:38:23,020 --> 00:38:25,020
+But in fact, whether you accept it or not.
+
+909
+00:38:25,020 --> 00:38:26,020
+That's the way it is.
+
+910
+00:38:26,020 --> 00:38:28,020
+You can't see any effect.
+
+911
+00:38:28,020 --> 00:38:31,020
+There are some websites that can make you willing to let you choose.
+
+912
+00:38:31,020 --> 00:38:33,020
+Uh, different cookies.
+
+913
+00:38:33,020 --> 00:38:34,020
+At that time, there was.
+
+914
+00:38:34,020 --> 00:38:35,020
+But some of them can't be turned off.
+
+915
+00:38:35,020 --> 00:38:37,020
+Because he has to know who you are.
+
+916
+00:38:37,020 --> 00:38:39,020
+Otherwise, you can't browse the website.
+
+917
+00:38:39,020 --> 00:38:41,020
+Yeah, so, uh.
+
+918
+00:38:41,020 --> 00:38:42,020
+There are still some restrictions.
+
+919
+00:38:42,020 --> 00:38:44,020
+Yeah, but, uh.
+
+920
+00:38:44,020 --> 00:38:46,020
+You'll know that they've actually collected a lot of data.
+
+921
+00:38:46,020 --> 00:38:48,020
+In fact, you probably know who we are.
+
+922
+00:38:48,020 --> 00:38:50,020
+What are we doing?
+
+923
+00:38:50,020 --> 00:38:52,020
+Um.
+
+924
+00:38:52,020 --> 00:38:54,020
+Yeah, that's terrible.
+
+925
+00:38:54,020 --> 00:38:56,020
+Yeah, well, uh.
+
+926
+00:38:56,020 --> 00:38:58,020
+I have another one with a computer science.
+
+927
+00:38:58,020 --> 00:38:59,020
+Before doing it.
+
+928
+00:38:59,020 --> 00:39:02,020
+We can actually use it.
+
+929
+00:39:02,020 --> 00:39:05,020
+Posts on social media.
+
+930
+00:39:05,020 --> 00:39:07,020
+We have a way to predict, uh.
+
+931
+00:39:07,020 --> 00:39:10,020
+Buying clothes or buying accessories.
+
+932
+00:39:10,020 --> 00:39:11,020
+Preference.
+
+933
+00:39:11,020 --> 00:39:13,020
+And then there's that.
+
+934
+00:39:13,020 --> 00:39:14,020
+We can know that.
+
+935
+00:39:14,020 --> 00:39:16,020
+What kind of clothes do you like to wear next season?
+
+936
+00:39:16,020 --> 00:39:17,020
+Color, brand.
+
+937
+00:39:17,020 --> 00:39:21,020
+And that prediction accuracy rate is probably over 90%.
+
+938
+00:39:21,020 --> 00:39:24,020
+That, uh, that's a lot of trouble.
+
+939
+00:39:24,020 --> 00:39:25,020
+It's just that we do it ourselves.
+
+940
+00:39:25,020 --> 00:39:26,020
+It's just that we collect it ourselves.
+
+941
+00:39:26,020 --> 00:39:27,020
+We have a very small part of the data.
+
+942
+00:39:27,020 --> 00:39:29,020
+We can do it so well.
+
+943
+00:39:29,020 --> 00:39:30,020
+You can tell that they're going to do it.
+
+944
+00:39:30,020 --> 00:39:33,020
+It's actually easier.
+
+945
+00:39:33,020 --> 00:39:35,020
+Then you would think.
+
+946
+00:39:35,020 --> 00:39:38,020
+Try not to post your own.
+
+947
+00:39:38,020 --> 00:39:40,020
+Too many personal things.
+
+948
+00:39:40,020 --> 00:39:42,020
+Or preferences or something.
+
+949
+00:39:42,020 --> 00:39:43,020
+But I think.
+
+950
+00:39:43,020 --> 00:39:45,020
+We still have a question.
+
+951
+00:39:45,020 --> 00:39:46,020
+I think so.
+
+952
+00:39:46,020 --> 00:39:48,020
+This is a preference.
+
+953
+00:39:48,020 --> 00:39:49,020
+Uh.
+
+954
+00:39:49,020 --> 00:39:51,020
+Uh, if we don't share this information.
+
+955
+00:39:51,020 --> 00:39:55,020
+We can't have those customized services.
+
+956
+00:39:55,020 --> 00:39:57,020
+Our search will be very bad.
+
+957
+00:39:57,020 --> 00:39:59,020
+Uh, it's almost not what you want.
+
+958
+00:39:59,020 --> 00:40:01,020
+Yeah, so if we want.
+
+959
+00:40:01,020 --> 00:40:03,020
+You can't do anything about the specific service.
+
+960
+00:40:03,020 --> 00:40:04,020
+You have to write, right?
+
+961
+00:40:04,020 --> 00:40:06,020
+But this is actually a preference.
+
+962
+00:40:06,020 --> 00:40:08,020
+So I'm talking about what they said to Google before.
+
+963
+00:40:08,020 --> 00:40:10,020
+That's more accurate.
+
+964
+00:40:10,020 --> 00:40:12,020
+What is your privacy?
+
+965
+00:40:12,020 --> 00:40:14,020
+It's your own decision.
+
+966
+00:40:14,020 --> 00:40:15,020
+It's actually from 0 to 100.
+
+967
+00:40:15,020 --> 00:40:17,020
+How much do I want to share?
+
+968
+00:40:17,020 --> 00:40:19,020
+It depends on what you like.
+
+969
+00:40:19,020 --> 00:40:21,020
+It's not necessarily a bad thing.
+
+970
+00:40:21,020 --> 00:40:23,020
+Then we have a question.
+
+971
+00:40:23,020 --> 00:40:25,020
+Uh.
+
+972
+00:40:25,020 --> 00:40:27,020
+You are me.
+
+973
+00:40:27,020 --> 00:40:29,020
+My name is Chen Peiying.
+
+974
+00:40:29,020 --> 00:40:31,020
+I am now at Indiana University.
+
+975
+00:40:31,020 --> 00:40:33,020
+Read information science.
+
+976
+00:40:33,020 --> 00:40:35,020
+Although I don't do data privacy related issues.
+
+977
+00:40:35,020 --> 00:40:37,020
+But because this is very popular now.
+
+978
+00:40:37,020 --> 00:40:39,020
+So I just wanted to say.
+
+979
+00:40:39,020 --> 00:40:40,020
+Let's listen to the speech.
+
+980
+00:40:40,020 --> 00:40:42,020
+I think there are a lot of gains.
+
+981
+00:40:42,020 --> 00:40:44,020
+Especially this kind of data broker role.
+
+982
+00:40:44,020 --> 00:40:46,020
+At least in our field.
+
+983
+00:40:46,020 --> 00:40:48,020
+This kind of investment information related area.
+
+984
+00:40:48,020 --> 00:40:50,020
+In fact, it is less mentioned.
+
+985
+00:40:50,020 --> 00:40:52,020
+Everyone is basically targeting a single website.
+
+986
+00:40:52,020 --> 00:40:54,020
+This kind of.
+
+987
+00:40:54,020 --> 00:40:56,020
+Uh.
+
+988
+00:40:56,020 --> 00:40:58,020
+Data privacy is being discussed.
+
+989
+00:40:58,020 --> 00:41:00,020
+So my question is, since this is a data broker.
+
+990
+00:41:00,020 --> 00:41:02,020
+Um.
+
+991
+00:41:02,020 --> 00:41:04,020
+How do you say they are very critical?
+
+992
+00:41:04,020 --> 00:41:06,020
+They have so much data on their hands.
+
+993
+00:41:06,020 --> 00:41:08,020
+Why would they let their own data so easily?
+
+994
+00:41:08,020 --> 00:41:10,020
+Give it out.
+
+995
+00:41:10,020 --> 00:41:12,020
+Just their own privacy.
+
+996
+00:41:12,020 --> 00:41:14,020
+Their own privacy.
+
+997
+00:41:14,020 --> 00:41:16,020
+Their data security.
+
+998
+00:41:16,020 --> 00:41:18,020
+And because once they are leaked.
+
+999
+00:41:18,020 --> 00:41:20,020
+Just assume that I am a.
+
+1000
+00:41:20,020 --> 00:41:22,020
+I have that data set.
+
+1001
+00:41:22,020 --> 00:41:24,020
+But I was harmed.
+
+1002
+00:41:24,020 --> 00:41:26,020
+This information is somehow.
+
+1003
+00:41:26,020 --> 00:41:28,020
+It is available on the website.
+
+1004
+00:41:28,020 --> 00:41:30,020
+Yeah.
+
+1005
+00:41:30,020 --> 00:41:32,020
+Isn't he supposed to prevent this from happening?
+
+1006
+00:41:32,020 --> 00:41:34,020
+Yeah.
+
+1007
+00:41:34,020 --> 00:41:36,020
+So we think it's very.
+
+1008
+00:41:36,020 --> 00:41:38,020
+This is the weirdest thing we think.
+
+1009
+00:41:38,020 --> 00:41:40,020
+And you see there are so many competitors.
+
+1010
+00:41:40,020 --> 00:41:42,020
+To say that this is actually a very.
+
+1011
+00:41:42,020 --> 00:41:44,020
+Profitable business.
+
+1012
+00:41:44,020 --> 00:41:46,020
+So there will be thousands of companies.
+
+1013
+00:41:46,020 --> 00:41:48,020
+In fact, doing this kind of thing.
+
+1014
+00:41:48,020 --> 00:41:50,020
+But their information is.
+
+1015
+00:41:50,020 --> 00:41:52,020
+Everyone has it.
+
+1016
+00:41:52,020 --> 00:41:54,020
+But he can still continue to sell.
+
+1017
+00:41:54,020 --> 00:41:56,020
+So why do we want to know more?
+
+1018
+00:41:56,020 --> 00:41:58,020
+What are they doing?
+
+1019
+00:41:58,020 --> 00:42:00,020
+And what happened?
+
+1020
+00:42:00,020 --> 00:42:02,020
+But the problem is that they are actually hidden players.
+
+1021
+00:42:02,020 --> 00:42:04,020
+That is.
+
+1022
+00:42:04,020 --> 00:42:06,020
+They don't even know who they are.
+
+1023
+00:42:06,020 --> 00:42:08,020
+Or the company name.
+
+1024
+00:42:08,020 --> 00:42:10,020
+It doesn't make sense.
+
+1025
+00:42:10,020 --> 00:42:12,020
+It's like a mess.
+
+1026
+00:42:12,020 --> 00:42:14,020
+It's like we're talking about it in class.
+
+1027
+00:42:14,020 --> 00:42:16,020
+So I can't find them at all.
+
+1028
+00:42:16,020 --> 00:42:18,020
+So if there are more people.
+
+1029
+00:42:18,020 --> 00:42:20,020
+You can jump in and find a way to know.
+
+1030
+00:42:20,020 --> 00:42:22,020
+Who are they?
+
+1031
+00:42:22,020 --> 00:42:24,020
+What are they doing?
+
+1032
+00:42:24,020 --> 00:42:26,020
+That would be very helpful.
+
+1033
+00:42:26,020 --> 00:42:28,020
+We would love to know.
+
+1034
+00:42:28,020 --> 00:42:30,020
+Because.
+
+1035
+00:42:30,020 --> 00:42:32,020
+That will have a lot of impact.
+
+1036
+00:42:32,020 --> 00:42:34,020
+Because, for example, Amazon or Google.
+
+1037
+00:42:34,020 --> 00:42:36,020
+They are actually sitting on a mountain of data.
+
+1038
+00:42:36,020 --> 00:42:38,020
+So if we can find their security.
+
+1039
+00:42:38,020 --> 00:42:40,020
+It would be very useful.
+
+1040
+00:42:40,020 --> 00:42:42,020
+Like Amazon, he actually.
+
+1041
+00:42:42,020 --> 00:42:44,020
+He put his report.
+
+1042
+00:42:44,020 --> 00:42:46,020
+It's their information system.
+
+1043
+00:42:46,020 --> 00:42:48,020
+The audit report of security control.
+
+1044
+00:42:48,020 --> 00:42:50,020
+It's all shared on the website.
+
+1045
+00:42:50,020 --> 00:42:52,020
+They are very confident that we are very good.
+
+1046
+00:42:52,020 --> 00:42:54,020
+But these people are actually.
+
+1047
+00:42:54,020 --> 00:42:56,020
+It's completely blank.
+
+1048
+00:42:58,020 --> 00:43:00,020
+For example, since they have registered.
+
+1049
+00:43:00,020 --> 00:43:02,020
+And then, although there is no URL.
+
+1050
+00:43:02,020 --> 00:43:04,020
+Will they at least provide one?
+
+1051
+00:43:04,020 --> 00:43:06,020
+Like a physical address.
+
+1052
+00:43:06,020 --> 00:43:08,020
+That is to say, my company is definitely open.
+
+1053
+00:43:08,020 --> 00:43:10,020
+In a place like this.
+
+1054
+00:43:10,020 --> 00:43:12,020
+They have a physical address.
+
+1055
+00:43:12,020 --> 00:43:14,020
+Like a registered address and a phone number.
+
+1056
+00:43:14,020 --> 00:43:16,020
+Is there any more.
+
+1057
+00:43:16,020 --> 00:43:18,020
+Is there a clear geographical distribution?
+
+1058
+00:43:18,020 --> 00:43:20,020
+Or is it actually.
+
+1059
+00:43:20,020 --> 00:43:22,020
+I don't think so.
+
+1060
+00:43:22,020 --> 00:43:24,020
+We can't see any.
+
+1061
+00:43:24,020 --> 00:43:26,020
+Specific phenomenon.
+
+1062
+00:43:26,020 --> 00:43:28,020
+Because they collect data.
+
+1063
+00:43:28,020 --> 00:43:30,020
+In fact, there is no limit to a specific.
+
+1064
+00:43:30,020 --> 00:43:32,020
+State or something.
+
+1065
+00:43:32,020 --> 00:43:34,020
+Because for example.
+
+1066
+00:43:34,020 --> 00:43:36,020
+Because after all, you can pass it on.
+
+1067
+00:43:36,020 --> 00:43:38,020
+To another server.
+
+1068
+00:43:38,020 --> 00:43:40,020
+Because I know they will have some distribution.
+
+1069
+00:43:40,020 --> 00:43:42,020
+For example, I need this.
+
+1070
+00:43:42,020 --> 00:43:44,020
+I remember it seems to be Google and Amazon.
+
+1071
+00:43:44,020 --> 00:43:46,020
+They have to find that kind of resource.
+
+1072
+00:43:46,020 --> 00:43:48,020
+All kinds of natural resources.
+
+1073
+00:43:48,020 --> 00:43:50,020
+Very rich place.
+
+1074
+00:43:50,020 --> 00:43:52,020
+I want to have enough electricity and water.
+
+1075
+00:43:52,020 --> 00:43:54,020
+I want to make sure he has a power outage.
+
+1076
+00:43:54,020 --> 00:43:56,020
+Very warm.
+
+1077
+00:43:56,020 --> 00:43:58,020
+But these things are actually.
+
+1078
+00:43:58,020 --> 00:44:00,020
+It's not a company.
+
+1079
+00:44:00,020 --> 00:44:02,020
+It's not their physical address.
+
+1080
+00:44:02,020 --> 00:44:04,020
+Must be.
+
+1081
+00:44:04,020 --> 00:44:06,020
+Not necessarily related.
+
+1082
+00:44:06,020 --> 00:44:08,020
+Their company may be very small.
+
+1083
+00:44:08,020 --> 00:44:10,020
+Because they are actually not sitting in the office at all.
+
+1084
+00:44:10,020 --> 00:44:12,020
+Those people.
+
+1085
+00:44:12,020 --> 00:44:14,020
+That's right.
+
+1086
+00:44:14,020 --> 00:44:16,020
+I was talking about this before.
+
+1087
+00:44:16,020 --> 00:44:18,020
+Someone said that we have no way to know.
+
+1088
+00:44:18,020 --> 00:44:20,020
+Who is the European data broker?
+
+1089
+00:44:20,020 --> 00:44:22,020
+Because of the GDPR.
+
+1090
+00:44:22,020 --> 00:44:24,020
+The privacy law.
+
+1091
+00:44:24,020 --> 00:44:26,020
+His control should be stricter.
+
+1092
+00:44:26,020 --> 00:44:28,020
+So if we can find them.
+
+1093
+00:44:28,020 --> 00:44:30,020
+Maybe they have more information.
+
+1094
+00:44:30,020 --> 00:44:32,020
+It's easier to know what they're doing.
+
+1095
+00:44:32,020 --> 00:44:34,020
+But I still don't know.
+
+1096
+00:44:34,020 --> 00:44:36,020
+That's our data source.
+
+1097
+00:44:36,020 --> 00:44:38,020
+Where to find it.
+
+1098
+00:44:38,020 --> 00:44:40,020
+In fact, we don't know yet.
+
+1099
+00:44:40,020 --> 00:44:42,020
+So this is interesting.
+
+1100
+00:44:42,020 --> 00:44:44,020
+We think this is really like research.
+
+1101
+00:44:44,020 --> 00:44:46,020
+I don't know what I'm doing.
+
+1102
+00:44:48,020 --> 00:44:50,020
+I think it's a very interesting relationship.
+
+1103
+00:44:50,020 --> 00:44:52,020
+Because like you said.
+
+1104
+00:44:52,020 --> 00:44:54,020
+It's a school hire.
+
+1105
+00:44:54,020 --> 00:44:56,020
+He's still looking for these companies.
+
+1106
+00:44:56,020 --> 00:44:58,020
+He's using your background.
+
+1107
+00:44:58,020 --> 00:45:00,020
+To make a background check.
+
+1108
+00:45:00,020 --> 00:45:02,020
+So I think there's some information hidden in it.
+
+1109
+00:45:02,020 --> 00:45:04,020
+It's not right.
+
+1110
+00:45:04,020 --> 00:45:06,020
+You said the school information office.
+
+1111
+00:45:06,020 --> 00:45:08,020
+Why don't you find someone to find it directly?
+
+1112
+00:45:08,020 --> 00:45:10,020
+Maybe you can find it.
+
+1113
+00:45:10,020 --> 00:45:12,020
+But it may be based on various cost considerations.
+
+1114
+00:45:12,020 --> 00:45:14,020
+We just have to sell your information to these companies.
+
+1115
+00:45:14,020 --> 00:45:16,020
+So there is a.
+
+1116
+00:45:16,020 --> 00:45:18,020
+There is no mutual benefit.
+
+1117
+00:45:18,020 --> 00:45:20,020
+But I think there is a relationship between the two.
+
+1118
+00:45:20,020 --> 00:45:22,020
+Why are these people.
+
+1119
+00:45:22,020 --> 00:45:24,020
+Although we think they are doing something.
+
+1120
+00:45:24,020 --> 00:45:26,020
+But in fact.
+
+1121
+00:45:26,020 --> 00:45:28,020
+You probably.
+
+1122
+00:45:28,020 --> 00:45:30,020
+Because it's a school.
+
+1123
+00:45:30,020 --> 00:45:32,020
+He still relies on.
+
+1124
+00:45:32,020 --> 00:45:34,020
+Relying on these brokers.
+
+1125
+00:45:34,020 --> 00:45:36,020
+To provide some information.
+
+1126
+00:45:36,020 --> 00:45:38,020
+That's like a financial institution.
+
+1127
+00:45:38,020 --> 00:45:40,020
+We go to apply.
+
+1128
+00:45:40,020 --> 00:45:42,020
+For example, mortgages.
+
+1129
+00:45:42,020 --> 00:45:44,020
+He is also exchanging information with these people.
+
+1130
+00:45:44,020 --> 00:45:46,020
+To confirm our.
+
+1131
+00:45:46,020 --> 00:45:48,020
+Are we giving the right thing?
+
+1132
+00:45:48,020 --> 00:45:50,020
+It's just that this side is more compliant.
+
+1133
+00:45:50,020 --> 00:45:52,020
+This side is more highly regulated.
+
+1134
+00:45:52,020 --> 00:45:54,020
+For example, there is something called.
+
+1135
+00:45:54,020 --> 00:45:56,020
+Fair Credit Act.
+
+1136
+00:45:56,020 --> 00:45:58,020
+Something like this.
+
+1137
+00:45:58,020 --> 00:46:00,020
+We can review our credit score.
+
+1138
+00:46:00,020 --> 00:46:02,020
+In case something is wrong, we can ask him to change it.
+
+1139
+00:46:02,020 --> 00:46:04,020
+There is.
+
+1140
+00:46:04,020 --> 00:46:06,020
+But like other data brokers.
+
+1141
+00:46:06,020 --> 00:46:08,020
+If his information is wrong.
+
+1142
+00:46:08,020 --> 00:46:10,020
+In fact, we don't know where his information is wrong.
+
+1143
+00:46:10,020 --> 00:46:12,020
+Or where is it wrong?
+
+1144
+00:46:12,020 --> 00:46:14,020
+If people use this to verify.
+
+1145
+00:46:14,020 --> 00:46:16,020
+Who are we?
+
+1146
+00:46:16,020 --> 00:46:18,020
+In case it's all different.
+
+1147
+00:46:18,020 --> 00:46:20,020
+Then the problem is big.
+
+1148
+00:46:20,020 --> 00:46:22,020
+Another question is.
+
+1149
+00:46:22,020 --> 00:46:24,020
+There are so many competitors.
+
+1150
+00:46:24,020 --> 00:46:26,020
+Their niche.
+
+1151
+00:46:26,020 --> 00:46:28,020
+What is their selling point?
+
+1152
+00:46:28,020 --> 00:46:30,020
+I can only think of it now.
+
+1153
+00:46:30,020 --> 00:46:32,020
+It's just that you use some wrong information.
+
+1154
+00:46:32,020 --> 00:46:34,020
+To earn that kind of benefit.
+
+1155
+00:46:34,020 --> 00:46:36,020
+Because if I know there is a company.
+
+1156
+00:46:36,020 --> 00:46:38,020
+Can provide more.
+
+1157
+00:46:38,020 --> 00:46:40,020
+What is the so-called more accurate?
+
+1158
+00:46:40,020 --> 00:46:42,020
+How to define it?
+
+1159
+00:46:42,020 --> 00:46:44,020
+Right.
+
+1160
+00:46:44,020 --> 00:46:46,020
+Or whose model is better?
+
+1161
+00:46:46,020 --> 00:46:48,020
+Or who has it?
+
+1162
+00:46:48,020 --> 00:46:50,020
+But there should be some data brokers.
+
+1163
+00:46:50,020 --> 00:46:52,020
+There is really some very special information.
+
+1164
+00:46:52,020 --> 00:46:54,020
+No one else.
+
+1165
+00:46:54,020 --> 00:46:56,020
+They never sell it.
+
+1166
+00:46:56,020 --> 00:46:58,020
+Because I think that's the competitive advantage.
+
+1167
+00:46:58,020 --> 00:47:00,020
+Some of you really don't have it.
+
+1168
+00:47:00,020 --> 00:47:02,020
+So they are not selling real data.
+
+1169
+00:47:02,020 --> 00:47:04,020
+They are not saying that I will provide you.
+
+1170
+00:47:04,020 --> 00:47:06,020
+All the scores of this person.
+
+1171
+00:47:06,020 --> 00:47:08,020
+I sell it to you based on our model.
+
+1172
+00:47:08,020 --> 00:47:10,020
+The preferences of these customers.
+
+1173
+00:47:10,020 --> 00:47:12,020
+Both have.
+
+1174
+00:47:12,020 --> 00:47:14,020
+Like if it's that kind.
+
+1175
+00:47:14,020 --> 00:47:16,020
+Fraud detection.
+
+1176
+00:47:16,020 --> 00:47:18,020
+That is.
+
+1177
+00:47:18,020 --> 00:47:20,020
+I sell data to you.
+
+1178
+00:47:20,020 --> 00:47:22,020
+For example, how much is the annual income of this person?
+
+1179
+00:47:22,020 --> 00:47:24,020
+Where does he live?
+
+1180
+00:47:24,020 --> 00:47:26,020
+That kind is sold one by one.
+
+1181
+00:47:26,020 --> 00:47:28,020
+If it's marketing.
+
+1182
+00:47:28,020 --> 00:47:30,020
+I just sell the model.
+
+1183
+00:47:30,020 --> 00:47:32,020
+Ok.
+
+1184
+00:47:32,020 --> 00:47:34,020
+Maybe I can only be sure.
+
+1185
+00:47:34,020 --> 00:47:36,020
+These people.
+
+1186
+00:47:36,020 --> 00:47:38,020
+That is.
+
+1187
+00:47:38,020 --> 00:47:40,020
+Their employees may be quite smart.
+
+1188
+00:47:42,020 --> 00:47:44,020
+It may all be automated.
+
+1189
+00:47:44,020 --> 00:47:46,020
+YouTube is the same.
+
+1190
+00:47:46,020 --> 00:47:48,020
+In fact, all processes are automatic.
+
+1191
+00:47:48,020 --> 00:47:50,020
+But it's still the same.
+
+1192
+00:47:50,020 --> 00:47:52,020
+Just like FTC said.
+
+1193
+00:47:52,020 --> 00:47:54,020
+What are they doing?
+
+1194
+00:47:54,020 --> 00:47:56,020
+In fact, no one still knows.
+
+1195
+00:47:56,020 --> 00:47:58,020
+Even though everyone keeps talking about it.
+
+1196
+00:47:58,020 --> 00:48:00,020
+But there is no information.
+
+1197
+00:48:00,020 --> 00:48:02,020
+Too mysterious.
+
+1198
+00:48:02,020 --> 00:48:04,020
+I hope there is a legal expert.
+
+1199
+00:48:04,020 --> 00:48:06,020
+Can answer.
+
+1200
+00:48:06,020 --> 00:48:08,020
+They are on the law.
+
+1201
+00:48:08,020 --> 00:48:10,020
+Is there no regulation?
+
+1202
+00:48:10,020 --> 00:48:12,020
+I have a student.
+
+1203
+00:48:12,020 --> 00:48:14,020
+I told him.
+
+1204
+00:48:14,020 --> 00:48:16,020
+Hey, you next.
+
+1205
+00:48:16,020 --> 00:48:18,020
+When the next assembly.
+
+1206
+00:48:18,020 --> 00:48:20,020
+You mention this regulation.
+
+1207
+00:48:20,020 --> 00:48:22,020
+Control the data broker.
+
+1208
+00:48:22,020 --> 00:48:24,020
+Then he said yes.
+
+1209
+00:48:24,020 --> 00:48:26,020
+He thought about how to do it.
+
+1210
+00:48:26,020 --> 00:48:28,020
+Because before I told him.
+
+1211
+00:48:28,020 --> 00:48:30,020
+You know Illinois has a.
+
+1212
+00:48:30,020 --> 00:48:32,020
+AI interview act.
+
+1213
+00:48:32,020 --> 00:48:34,020
+That is, if you are using a machine to read.
+
+1214
+00:48:34,020 --> 00:48:36,020
+Job applicants interview video.
+
+1215
+00:48:36,020 --> 00:48:38,020
+You have to disclose.
+
+1216
+00:48:38,020 --> 00:48:40,020
+This thing is all from.
+
+1217
+00:48:40,020 --> 00:48:42,020
+We talked about it in class.
+
+1218
+00:48:42,020 --> 00:48:44,020
+Because he was in my class.
+
+1219
+00:48:44,020 --> 00:48:46,020
+Then I told him, he went to mention it.
+
+1220
+00:48:46,020 --> 00:48:48,020
+Then it happened.
+
+1221
+00:48:48,020 --> 00:48:50,020
+So he often asked me.
+
+1222
+00:48:50,020 --> 00:48:52,020
+Is there any interesting topic?
+
+1223
+00:48:52,020 --> 00:48:54,020
+I think they should pay attention.
+
+1224
+00:48:54,020 --> 00:48:56,020
+I told them about the data broker.
+
+1225
+00:48:56,020 --> 00:48:58,020
+That depends on.
+
+1226
+00:48:58,020 --> 00:49:00,020
+How to deal with it.
+
+1227
+00:49:00,020 --> 00:49:02,020
+Because it's all bad.
+
+1228
+00:49:02,020 --> 00:49:04,020
+There are some controversial issues.
+
+1229
+00:49:06,020 --> 00:49:08,020
+Thank you so much.
+
+1230
+00:49:08,020 --> 00:49:10,020
+Thank you.
+
+1231
+00:49:10,020 --> 00:49:12,020
+Thank you.
+
+1232
+00:49:16,020 --> 00:49:18,020
+Any other questions?
+
+1233
+00:49:30,020 --> 00:49:32,020
+I just want to.
+
+1234
+00:49:32,020 --> 00:49:34,020
+You just mentioned.
+
+1235
+00:49:34,020 --> 00:49:36,020
+I just want to share it quickly.
+
+1236
+00:49:36,020 --> 00:49:38,020
+Information error problem.
+
+1237
+00:49:38,020 --> 00:49:40,020
+Because I applied for a loan.
+
+1238
+00:49:40,020 --> 00:49:42,020
+Then the information is actually.
+
+1239
+00:49:42,020 --> 00:49:44,020
+Some information is wrong.
+
+1240
+00:49:44,020 --> 00:49:46,020
+It's already.
+
+1241
+00:49:46,020 --> 00:49:48,020
+It's not right to meet different people.
+
+1242
+00:49:48,020 --> 00:49:50,020
+Then your credit score is lower.
+
+1243
+00:49:50,020 --> 00:49:52,020
+Then you can't apply for a loan.
+
+1244
+00:49:52,020 --> 00:49:54,020
+So your problem is.
+
+1245
+00:49:54,020 --> 00:49:56,020
+That's a big problem.
+
+1246
+00:49:58,020 --> 00:50:00,020
+But you can't.
+
+1247
+00:50:00,020 --> 00:50:02,020
+Don't tell anyone.
+
+1248
+00:50:02,020 --> 00:50:04,020
+In the United States.
+
+1249
+00:50:04,020 --> 00:50:06,020
+If it's below the credit score.
+
+1250
+00:50:06,020 --> 00:50:08,020
+You can see those public.
+
+1251
+00:50:08,020 --> 00:50:10,020
+The information they grabbed.
+
+1252
+00:50:10,020 --> 00:50:12,020
+If there is a mistake, you can tell them to correct it.
+
+1253
+00:50:12,020 --> 00:50:14,020
+But.
+
+1254
+00:50:14,020 --> 00:50:16,020
+Then you have to see that there is a mistake.
+
+1255
+00:50:16,020 --> 00:50:18,020
+Otherwise, it's still very difficult.
+
+1256
+00:50:18,020 --> 00:50:20,020
+Then if they find the data broker.
+
+1257
+00:50:20,020 --> 00:50:22,020
+You don't know.
+
+1258
+00:50:22,020 --> 00:50:24,020
+What did he see?
+
+1259
+00:50:24,020 --> 00:50:26,020
+Maybe the only way to know.
+
+1260
+00:50:26,020 --> 00:50:28,020
+How does the data broker work?
+
+1261
+00:50:28,020 --> 00:50:30,020
+Become a data broker yourself.
+
+1262
+00:50:30,020 --> 00:50:32,020
+Do I still have time to ask a question?
+
+1263
+00:50:32,020 --> 00:50:34,020
+Can.
+
+1264
+00:50:34,020 --> 00:50:36,020
+I want to ask.
+
+1265
+00:50:36,020 --> 00:50:38,020
+The question of the background check.
+
+1266
+00:50:38,020 --> 00:50:40,020
+In the United States, you have to find a lot of work.
+
+1267
+00:50:40,020 --> 00:50:42,020
+In fact, they will go through a background check.
+
+1268
+00:50:42,020 --> 00:50:44,020
+I'm just curious.
+
+1269
+00:50:44,020 --> 00:50:46,020
+What kind of information did they get?
+
+1270
+00:50:46,020 --> 00:50:48,020
+That.
+
+1271
+00:50:48,020 --> 00:50:50,020
+Like.
+
+1272
+00:50:50,020 --> 00:50:52,020
+I came here to find a job.
+
+1273
+00:50:52,020 --> 00:50:54,020
+I found that I couldn't find it.
+
+1274
+00:50:54,020 --> 00:50:56,020
+Because he lived in Taiwan for too long.
+
+1275
+00:50:56,020 --> 00:50:58,020
+But how could it be possible?
+
+1276
+00:50:58,020 --> 00:51:00,020
+I can't get the information.
+
+1277
+00:51:00,020 --> 00:51:02,020
+If this kind of thing has always existed.
+
+1278
+00:51:02,020 --> 00:51:04,020
+How could it be possible to receive the information?
+
+1279
+00:51:04,020 --> 00:51:06,020
+I'm just curious.
+
+1280
+00:51:06,020 --> 00:51:08,020
+I just moved in.
+
+1281
+00:51:08,020 --> 00:51:10,020
+It's blank here.
+
+1282
+00:51:10,020 --> 00:51:12,020
+You can't receive it.
+
+1283
+00:51:12,020 --> 00:51:14,020
+Because he should not be across the country.
+
+1284
+00:51:14,020 --> 00:51:16,020
+But he is an American citizen.
+
+1285
+00:51:16,020 --> 00:51:18,020
+He is an American citizen, but he is blank.
+
+1286
+00:51:18,020 --> 00:51:20,020
+Yes, so we are very curious.
+
+1287
+00:51:20,020 --> 00:51:22,020
+How did this happen?
+
+1288
+00:51:22,020 --> 00:51:24,020
+He said he couldn't find the background check.
+
+1289
+00:51:24,020 --> 00:51:26,020
+Can't find any information.
+
+1290
+00:51:26,020 --> 00:51:28,020
+This is too strange.
+
+1291
+00:51:28,020 --> 00:51:30,020
+What our school does most often is.
+
+1292
+00:51:30,020 --> 00:51:32,020
+What is that?
+
+1293
+00:51:32,020 --> 00:51:34,020
+Criminal record.
+
+1294
+00:51:34,020 --> 00:51:36,020
+No matter how light or heavy.
+
+1295
+00:51:36,020 --> 00:51:38,020
+All have to check.
+
+1296
+00:51:38,020 --> 00:51:40,020
+Many schools are like this.
+
+1297
+00:51:40,020 --> 00:51:42,020
+He will have a connected identification.
+
+1298
+00:51:42,020 --> 00:51:44,020
+I said that kind of data broker.
+
+1299
+00:51:44,020 --> 00:51:46,020
+How many years will they say?
+
+1300
+00:51:46,020 --> 00:51:48,020
+Will you delete all the previous information?
+
+1301
+00:51:48,020 --> 00:51:50,020
+Will there be such a situation?
+
+1302
+00:51:50,020 --> 00:51:52,020
+It's a good question.
+
+1303
+00:51:52,020 --> 00:51:54,020
+How do they deal with this?
+
+1304
+00:51:54,020 --> 00:51:56,020
+All the name changes in the past 25 years.
+
+1305
+00:51:56,020 --> 00:51:58,020
+Residential information.
+
+1306
+00:51:58,020 --> 00:52:00,020
+Will there be in the future?
+
+1307
+00:52:00,020 --> 00:52:02,020
+I don't know.
+
+1308
+00:52:02,020 --> 00:52:04,020
+How long do they have to save?
+
+1309
+00:52:04,020 --> 00:52:06,020
+How long will they save these data?
+
+1310
+00:52:06,020 --> 00:52:08,020
+I'm curious.
+
+1311
+00:52:08,020 --> 00:52:10,020
+The longer it takes for me, the more useful it is.
+
+1312
+00:52:10,020 --> 00:52:12,020
+Because after about 50 years.
+
+1313
+00:52:12,020 --> 00:52:14,020
+You may be the only one.
+
+1314
+00:52:14,020 --> 00:52:16,020
+You are the only one.
+
+1315
+00:52:16,020 --> 00:52:18,020
+People with this information.
+
+1316
+00:52:20,020 --> 00:52:22,020
+That means that company.
+
+1317
+00:52:22,020 --> 00:52:24,020
+Maybe the company's data is not good enough.
+
+1318
+00:52:24,020 --> 00:52:26,020
+Is that possible?
+
+1319
+00:52:26,020 --> 00:52:28,020
+It's possible.
+
+1320
+00:52:28,020 --> 00:52:30,020
+Because like.
+
+1321
+00:52:30,020 --> 00:52:32,020
+According to their FTC data.
+
+1322
+00:52:32,020 --> 00:52:34,020
+They said that the data broker should have.
+
+1323
+00:52:34,020 --> 00:52:36,020
+Almost all the data of all Americans.
+
+1324
+00:52:40,020 --> 00:52:42,020
+Thank you.
+
+1325
+00:52:42,020 --> 00:52:44,020
+This is another issue.
+
+1326
+00:52:44,020 --> 00:52:46,020
+Who has it?
+
+1327
+00:52:46,020 --> 00:52:48,020
+Why is there no one?
+
+1328
+00:52:52,020 --> 00:52:54,020
+Any other questions?
+
+1329
+00:52:54,020 --> 00:52:56,020
+Otherwise.
+
+1330
+00:52:56,020 --> 00:52:58,020
+Today's speech.
+
+1331
+00:52:58,020 --> 00:53:00,020
+Ends here.
+
+1332
+00:53:00,020 --> 00:53:02,020
+Thank you.
+
+1333
+00:53:02,020 --> 00:53:04,020
+David.
+
+1334
+00:53:04,020 --> 00:53:06,020
+For giving us such a wonderful speech.
+
+1335
+00:53:06,020 --> 00:53:08,020
+I think everyone has learned a lot.
+
+1336
+00:53:08,020 --> 00:53:10,020
+And more awareness.
+
+1337
+00:53:10,020 --> 00:53:12,020
+Then.
+
+1338
+00:53:12,020 --> 00:53:14,020
+I hope.
+
+1339
+00:53:14,020 --> 00:53:16,020
+You can come again next time.
+
+1340
+00:53:16,020 --> 00:53:18,020
+Tell us.
+
+1341
+00:53:18,020 --> 00:53:20,020
+How is the future development of this project?
+
+1342
+00:53:20,020 --> 00:53:22,020
+Let's see.
+
+1343
+00:53:22,020 --> 00:53:24,020
+Thank you.
+
+1344
+00:53:24,020 --> 00:53:26,020
+Thank you.
+
+1345
+00:53:26,020 --> 00:53:28,020
+If you haven't become a member.
+
+1346
+00:53:28,020 --> 00:53:30,020
+I want to post a link.
+
+1347
+00:53:30,020 --> 00:53:32,020
+You can join.
+
+1348
+00:53:32,020 --> 00:53:34,020
+It's free.
+
+1349
+00:53:34,020 --> 00:53:36,020
+It's a free.
+
+1350
+00:53:36,020 --> 00:53:38,020
+Membership.
+
+1351
+00:53:38,020 --> 00:53:40,020
+You can continue to receive.
+
+1352
+00:53:40,020 --> 00:53:42,020
+Every week.
+
+1353
+00:53:42,020 --> 00:53:44,020
+There will be a speech.
+
+1354
+00:53:44,020 --> 00:53:46,020
+On different topics.
+
+1355
+00:53:46,020 --> 00:53:48,020
+Thank you.
+
+1356
+00:53:48,020 --> 00:53:50,020
+Thank you.
+
+1357
+00:53:50,020 --> 00:53:52,020
+Thank you.
+
+1358
+00:53:52,020 --> 00:53:54,020
+Thank you.
+
+1359
+00:53:54,020 --> 00:53:56,020
+Thank you.
+
+1360
+00:53:56,020 --> 00:53:58,020
+Bye.
+

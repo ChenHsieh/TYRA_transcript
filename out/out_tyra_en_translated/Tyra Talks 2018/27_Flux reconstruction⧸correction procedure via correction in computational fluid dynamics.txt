@@ -1,0 +1,1828 @@
+Hi, I'm Yen-Yung Chang, the host of Tera.
+We are going to have the second lecture of Tera this year.
+Today's speaker is...
+Wait a minute, I have to scroll up first.
+Today's speaker is Bi-Yao Zhuang.
+She is from DC's George Washington University.
+She is a fourth-year doctor of mechanical engineering.
+She specializes in fluid dynamics and numerical simulation.
+She is going to talk about...
+Flux Reconstruction Correlation Procedure via Reconstruction in Computational Fluid Dynamics.
+Let's welcome her.
+Hi, I'm Bi-Yao Zhuang.
+I'm a fourth-year doctor of George Washington University.
+I specialize in fluid dynamics and numerical simulation.
+I specialize in fluid dynamics and numerical simulation.
+I specialize in fluid dynamics and numerical simulation.
+I recently learned about a new numerical method called Flux Reconstruction.
+Oops, I accidentally typed the wrong title.
+Never mind.
+It's called...
+It doesn't have a Chinese name.
+It was first proposed in 2007.
+The second paper was published in 2009.
+Other groups joined the field in 2012 and 2013.
+So, it doesn't have a Chinese name.
+It's called Flux Reconstruction.
+As you can see, there is a typo in the title.
+It's a reconstruction.
+Some groups thought the name was bad.
+So, they renamed it to Correction Procedure via Reconstruction.
+It's basically the same.
+There are two groups in the UK.
+There are three groups.
+One group is in NASA.
+One group is in Stanford.
+One group is in the UK.
+In the UK and Stanford, they are called FR, Flux Reconstruction.
+In NASA, they are called CPR, Correction Procedure via Reconstruction.
+I recently learned about this.
+I think it can be used for my doctoral research.
+It just started in computational physics.
+There is still a lot of room for development.
+I just finished learning this.
+I read a lot of papers and learned a lot.
+So, I have some insights.
+I'm here to make a progress report.
+I'm here to share with you what this numerical method is doing.
+What I'm going to talk about today is...
+First, let me introduce some basic concepts of numerical methods.
+I'm not sure what your background is.
+So, there will be some basic introduction of numerical methods.
+To avoid some people who are not doing numerical simulation and don't understand.
+Next, I will introduce how to introduce Flux Reconstruction.
+Basically, the first part is like a math class.
+It's a mathematical introduction.
+The last part is how I want to apply it to incompressible flow.
+Because my main research is to do incompressible flow.
+The group that proposed Flux Reconstruction, like Stanford or the UK.
+They are all doing compressible flow.
+So, at least so far, if you look for Literature Review.
+I haven't seen any group using this method in incompressible flow.
+So, I plan to do my research in this direction.
+So, I will briefly talk about my future plan.
+First, I want to introduce a very important concept in numerical methods.
+It's called the Full-Weight Fragmentation Method.
+It can infer all kinds of different numerical methods.
+It's the foundation of the foundation.
+So, I'm going to introduce it.
+Today, there is a Full-Weight Fragmentation Method.
+At present, many phenomena in the natural world are unified by the Full-Weight Fragmentation Method.
+We call it the unified method.
+I use a symbol like L to represent the operator of the Full-Weight Fragmentation.
+It's the Full-Weight Fragmentation symbol.
+An example of L is the so-called heat expansion method.
+This is the operator of the Full-Weight Fragmentation.
+U is an unknown function that we want to solve.
+In the Full-Weight Fragmentation, it may be a temperature field.
+The temperature field changes with time and space.
+In the fluid, U may be a velocity field.
+F is an unknown function on the right side of the equation.
+It may be related to your physical phenomenon.
+For example, in fluid mechanics, F may be a gravity field.
+In the Full-Weight Fragmentation, F may be a heat source.
+It is a thing that generates heat without realizing it.
+If today's Full-Weight Fragmentation is the exact solution,
+The real solution of the real world is called U-exact.
+Although we want to know what U-exact is,
+Because it is the real solution.
+In fact, in real life, we can't get it at all.
+Because in the Full-Weight Fragmentation, I'm not sure what it is.
+But in theory, it should not be guaranteed that there is a real solution.
+So we can't get the real solution today.
+Then we think of another way.
+Let's assume a solution.
+For example, if today's U represents temperature,
+Let's assume that the temperature in this space may look like what it looks like.
+After we assume what it looks like,
+There will be some unknowns in it.
+Let's solve it again.
+For example, today we assume that the temperature field will be a function series.
+Like Fourier series or Laplace series.
+Then you can write it as a sigma c i phi i.
+c i is an unknown constant.
+Then phi i is what we assume it looks like.
+For example, I have a very simple example here.
+If phi i is defined as x i,
+If phi 0 is a constant,
+Then phi 1 is x, phi 2 is x², phi 3 is x³.
+Let's assume that the temperature field today is C0 plus C1 times x, plus C2 times x², plus C3 times x³.
+Today we have assumed that the temperature field looks like this.
+The rest we need to decide is how much C0, C1, and C2 are.
+So the whole numerical method, numerical simulation, numerical partial differential,
+All these things are actually discussing two questions.
+What is it? What should we assume this U looks like?
+What is this phi i?
+It can be sine or cosine.
+It can also be like the example I just mentioned, x, x², x³.
+So what kind of assumption is the best?
+This is a question.
+The second question is, how do we find out how much C0, C1, and C2 are?
+So the whole numerical method, numerical analysis,
+In fact, when you take these classes,
+It's all about these two questions.
+When we talk about how to determine C, C0, C1, and C2,
+We're going to talk about how to determine C.
+We hope that we can find a set of C0, C1, and C2.
+We hope that we can find a set of C0, C1, and C2.
+The definition of C0, C1, and C2 is that
+When you take the assumption back to PDE,
+It's a perfect zero error.
+No matter where you are,
+Assume that the function is always perfect.
+There will be no imperfection in it.
+But the problem is, it's impossible.
+Because if you bring in the assumption function today,
+It's a perfect zero error.
+It's like you're guessing the function today.
+It's just the exact solution.
+Then it's not called the assumption function.
+We don't need to guess.
+So it's almost impossible.
+Only some toy problems in textbooks.
+You're just guessing a function.
+Guess it's C0 plus C1x.
+It's just the exact solution.
+But in real life, it's unrealistic.
+So we, for example,
+And then the second question is,
+If you use this method today to find C1, C2,
+How many of these are there?
+You'll find that you have several unknowns,
+But you only have one square.
+For example, if I guess today,
+This function is C0 plus C1x plus C2x squared plus C3x squared.
+And then I'm going to solve a Poisson equation today.
+Then you put this assumption function
+After bringing in the original Poisson equation,
+It's a two-step equation.
+The remaining two-step equation of U is 2C2 plus 6C3x.
+And then you bring it in.
+Your product will look like this.
+What you see on the screen is 2C2 plus 6C3x minus 3pi x.
+You only have one square.
+But you have four unknowns from C0 to C3 today.
+You can't solve it.
+So these questions mean that
+We can't use this method to find the unknown.
+So today we're going to use the numerical method to
+To broaden our understanding of the function.
+So today we're going to use the numerical method to
+To broaden our understanding of the function.
+We don't want it to be perfect today.
+We want it to have some flaws.
+But as long as some conditions are met, it's good.
+This is called the weight multiplication.
+You see the first point on this list.
+This point means that
+R is still the same as the multiplication of any point in space.
+But today I'm going to multiply it by a weight.
+This weight means that
+This weight means that
+In space, the value of some places is more important.
+The value of some places is more important.
+For example, x is equal to 2.
+This place is very important.
+I want its value to be multiplied by 10.
+Then in x is equal to 3,
+I don't care so much about its value.
+I don't care if my assumption is correct.
+So its weight may only be 0.1.
+Then the requirement that I broadened today is that
+Multiplying by the weight of the entire space will be zero.
+multiply by the weight of the entire space will be zero.
+This is good.
+I no longer require that there are all points have negative parts.
+So this is a broadened condition.
+So this is a broadened condition.
+Then we're looking at this weight...
+Hey
+This is a little problem.
+Your weight is
+a function of x.
+Then in your entire
+range of interest in x
+Is this w going to be positive?
+Because negative will have
+a strange meaning.
+No, it's negative.
+Negative can also
+Even later
+may be mentioned a little bit.
+Even it will have infinite
+Like the delta function at a certain point
+It will have an infinite weight.
+Then all the other places are zero.
+Ok
+Then you need to put this whole
+You are now the first
+The points above the points
+Remove
+w itself
+dx and then the entire range of points
+It's a bit like renormalize.
+Is it total probability?
+Is it total weight?
+Or do you not need it?
+You said
+You are now the point
+This equation
+Its denominator
+Is the same equation
+But there is no r.
+w itself dx
+No need
+We didn't do this.
+Because theoretically
+It is
+Theoretically it is zero.
+In fact, if you subtract something else
+If your method
+If it's perfect, you subtract something else
+It's still zero.
+We just divide it directly.
+Ok, I understand.
+Then we today
+Then we continue to talk about this weight.
+You see I have a j here.
+In fact, it means that I am not only a set of weight today.
+I just gave an example
+For example, x1, the weight of this place is 10.
+x3, the weight of the place is negative 0.1.
+0.1
+This is a set of weight.
+But when I design the method today
+I will not only design a set of weight.
+I usually design
+Enough weight to let me
+Solve my unknown number
+For example, the example I just gave
+There are four unknowns from c0 to c3.
+Then I have to design four groups of different weight today.
+Then I will have four groups.
+That linear equation
+I will get that linear equation.
+So I can solve four
+That c0 to c3
+These four unknowns
+That constant
+So we are equal to simplify
+I just said that the numerical method is around two problems.
+One is how we should assume
+What does it look like?
+The second is how to calculate
+The constant c0 to c
+The second question is how to calculate c
+This constant
+We can change it
+In other words, it becomes another question.
+How do we define our weight?
+Then
+This is our question now.
+The question we just asked
+We will remember to go back to this question later.
+Then we just talked about it before.
+Is the standard that has been relaxed
+As long as the weight of the weight
+After the weight is multiplied by the weight
+The residual value of the weight is zero.
+Then in the numerical method
+We will be further relaxed
+Is that we often hear
+You may hear some elements
+Then grid
+Or some more
+May be more formal
+Will be called piecewise solution
+That is to say
+Today this space is interesting
+I wrote it in the first video called space
+I cut it into a smaller area in space.
+For example
+Subdomain 1, Subdomain 2
+This kind of subdomain is called element.
+Is what you often hear
+The so-called element in the finite element
+Or you hear that grid
+A grid inside
+Then I use a 1 today.
+To represent this kind of subdomain
+Then k under the label means different
+Subdomain
+Then let it go today.
+I
+Inside each element
+Have their own guesses
+For example, U0 means the 0th subdomain.
+It has its own assumption function
+That U1 inside
+Is the 1st element
+It also has its own guess function
+Then
+So the whole global
+The guess function is actually a lot of different
+Small elements are combined
+If X is in the 0th element today
+Then we use the 0th guess function
+If X is in the 1st element today
+We use the 1st guess function
+Why do you say
+This is a kind of relaxation
+Why is it a kind of relaxation
+Because it means
+Today if the real world
+Exact solution
+Is a very high-level function
+For example, a high-level polynomial
+Or a sine, sine wave or cosine wave
+Its fluctuation is very large
+You see, like this example
+The black line in this example is the exact solution
+It has three fluctuations
+It is equal to at least three or more
+Its solution is three or more polynomials
+Even sine or cosine
+But if I take the whole domain today
+Divided into many small elements
+Like this example, I split it into six small elements
+I mean I have each element
+Just use a straight line
+Then add six elements
+I can see my real world
+So this is a kind of relaxation
+It means I'm guessing
+What does this function look like
+I use the simplest straight line
+I can be my assumption
+You can guess what this function looks like
+So we will say this
+Divide it into subdomain
+Elements or cells
+Is a kind of relaxation
+A more relaxed condition
+That's what this video is about
+This kind of relaxation
+As I just said, its advantage is
+Even if your real function
+Is a very high-level function
+Or a very vibrant, very fluctuating
+If it's a big thing
+I can also use a very low-level guess
+To look at this exact solution
+This is its advantage
+The disadvantage is
+We split this domain today
+Into many small subdomains
+What is the relationship between the subdomain and the subdomain
+What is the relationship between the subdomain and the subdomain
+This is a new problem
+A new problem
+For example, what is the relationship between element 1 and element 0
+For example, what is the relationship between element 1 and element 0
+It's impossible to have nothing to do with it
+Because they are all describing
+Different sections of the same real node
+So they still have a relationship
+So you have to make some assumptions
+What we use the most in our numerical method today
+What we use the most in our numerical method today
+The so-called continuous function we call C0
+That is to say
+Today, if there are two elements connected together
+Today, if there are two elements connected together
+Like on the picture, if you see this blue element
+And yellow element
+C0 is that they just have to
+The point where the interface is connected
+The point where the interface is connected
+It's just continuous
+That's the easiest
+So today you can see this blue line
+And the orange line are connected
+And the orange line and the orange line are connected
+As for the number of points, is it connected
+In this C0 condition
+We don't care
+We don't care
+So if we talk again
+So if we talk again
+To refresh
+Today's modern numerical method
+Today's modern numerical method
+We just talked about the surrounding two issues
+We just talked about the surrounding two issues
+So now you can add one more question
+So now you can add one more question
+Is to first
+So first
+is the assumption function
+What does it look like
+Then the second is what this whole function should look like
+Then the third is when we split the domain into many small elements
+When we split the domain into many small elements
+What are the relationships between elements and elements
+The combination of different answers to these three questions
+Will give you different
+The so-called numerical method
+The so-called numerical method
+I have a question
+I have a question
+My question may be very basic
+People who understand
+My question is like this
+For example, the thing you just described
+For example, the thing you just described
+Is a coordinate field
+But if you care about the nature
+But if you care about the nature
+If it's speed or acceleration
+But if it's speed or acceleration
+Are you
+Are you
+Right
+Right
+Right
+So you will know
+So you will know
+Because if your conditions today are very simple
+Because if your conditions today are very simple
+But if you are
+But if you are
+But if you are
+You can find a number on the right
+And limit them to be equal
+You are equal to saying that the conditions
+It will be tougher and harder to meet
+But this is every
+How strong is the boundary condition of the small element
+How strong is the boundary condition of the small element
+So the actual operation will be with
+What kind of problem do you want to solve?
+It's about your actual problem
+It's about your actual problem
+I see
+This is why different areas
+Will use different numerical methods
+So maybe the most common thing we hear is
+Limit difference, limit element, limit volume
+These are the three most common
+Then you will find out why
+People who calculate mechanics use limited elements
+Then why
+Fluid mechanics uses limited volume
+Then other people use limited difference
+It's because they are likely to be
+C0 or C1
+This kind of requirement is different
+Then
+So back to the three questions here
+Then there are some examples here
+Different answers to these three questions
+What kind of different
+Numerical methods
+The first
+Its formal name is pseudospectral
+Or that positive
+I don't know the Chinese name
+Orthogonal collocation
+Then why mention this
+Because we hear the most
+Limited difference, finite difference
+Is a special case
+Then this numerical method
+That is to say, its weight is a delta function
+That's what I just said
+It will be infinite at this point
+That
+Delta function
+This thing is very interesting
+It will become
+I don't know
+After it is accumulated
+I should be able to go back to that video
+Delta function
+After the accumulation becomes
+Only this point has value
+A little slow
+It's like this
+Like this point
+If wj is a delta function
+That delta function
+If the point is in xj
+Then this point will become
+The right-hand side is equal to
+R of xj
+That's it
+So this is why you are in a finite difference
+I can't see any weight at all
+I can't see it
+It is
+The finite difference is defined at the point
+If you are
+Then
+The finite difference is this
+So-called pseudo-spectral
+A special case
+Except that the weight is a delta function
+Its
+The diameter is also very low
+It is a straight line
+Its so-called phi is a straight line
+Just guess
+You can see
+The solution of the assumption
+It only has phi0 and phi1
+Two things
+So today you are doing
+When there is a finite difference
+In fact, you are solving
+It's just C0 and C1
+Then the finite difference
+The continuous condition of C0
+The finite volume
+It's like fluid mechanics
+Its weight is
+As long as it is
+This one
+I define it in ej today
+Inside this element
+Its weight is all 1
+Outside this element
+Its weight is all 0
+This is the definition of its weight
+Then
+The solution of the assumption
+This is what we guess
+It's simpler than the finite difference
+It's just a parameter
+Today in an element
+In a subdomain
+For example, the temperature field
+The temperature field in this subdomain
+It's just a parameter
+It won't change anything
+It will be very complicated
+It will use the so-called
+Riemann jump condition
+It's complicated
+I just want to say
+It's not a C0 condition
+What is it
+It's beyond today's scope
+So I didn't say
+It's just an example
+How do we answer those three questions
+Will define a different value
+The third is
+The so-called continuous Galerkin method
+We often hear that finite elements
+This is a special case
+In this case
+Its weight
+Will be equal to
+The function we guess
+Is phi j
+Phi j is what we just guessed
+Assuming that function
+Its weight is this
+As long as you use this weight
+It's all called Galerkin method
+The finite element
+It's more advanced
+It also uses C0
+Continuous condition
+But as for this phi i
+What is it
+Is it sine, cosine, polynomial
+Or exponential
+In fact, in the traditional Galerkin method
+It didn't say
+It's just in the finite element
+The traditional phi i
+Use a straight line to define
+It's a straight line polynomial
+This video
+Just to introduce to you
+Our numerical method
+What is it all about
+That's the three questions
+I'm going to introduce this today
+The weighting method
+Because the flux reconstruction
+Will use the weighting method to push down
+I didn't mention it in the video
+The so-called low-order method
+Or high-order numerical method
+So I want to be here today
+Also want to introduce
+Not everyone has a numerical method
+Background
+So I want to introduce this order first
+What is it
+We just had a projection
+There is an example
+If there is one today
+The physical field of the real world
+For example, this black line is its real field
+We don't know
+The field we can't guess
+Then we use six elements to define it
+Then in each element
+We guess it's a straight line distribution
+That's what it looks like
+If we want today
+You can clearly see that
+Although at some points
+The function we guess is very
+Basically close to the physical field of the real world
+But other parts
+You see, like this blue straight line
+With that black curve
+There is a big, obvious error in the middle
+So if we want to improve this error today
+What can we do
+The first thing we can do
+Is to use more elements
+Just make it finer
+So in each element
+Still use a straight line
+But the straight line may be because it is smaller
+It will be closer to the black line
+Is the real physical field
+The next projection
+The next projection is an example
+Like this projection
+I added six elements today
+Let the total number of elements become 12
+But in each element
+Still use a straight line
+That guess
+Then we will find that I just added six elements
+Now the whole guess
+The solution will become very close to the real solution
+This method
+This is a kind of increase
+Reduce error
+Then increase the accuracy
+A way
+Why did you mention this?
+Because when we define the so-called order
+It's related to this
+Order means when I add today
+When the number of my elements
+How to reduce
+When we define the speed
+Is defined by the index
+For example, I
+The number of my elements has increased by m times
+Then my error
+The speed of the decree
+Is the square of m
+That square is the so-called order
+Is when we define the numerical method
+A definition of order
+Then this order
+Or this so-called rate
+It is also called the convergence rate
+Is the speed of convergence
+Then like some examples
+For example, today if my
+The number of elements from n1
+Changes to twice n1
+Then my error from epsilon
+Reduce to one-second epsilon
+Then this method is called first order method
+Because
+I mentioned this m today
+Is 2
+Then my error today becomes one-second
+Then it is the square of 2
+So it is the first order method
+Then my error from n1
+Increases to twice n1
+But my error from the original epsilon
+Reduce to one-eighth epsilon
+Then this is the third order method
+Because 8 is the square of 2
+3 times
+Then this is our so-called order
+So the so-called low order
+We are talking about low order method
+Usually refers to first order or second order method
+In other words, you double your number of elements
+As a result, your error value
+Only reduced by half
+Error value becomes one-fourth
+Then high order is usually three steps
+We usually call high order
+Then here is a
+Is
+High degree expansion
+Is to be distinguished from high order
+We just assumed
+The function is the u, there is a hat above
+We use a sigma
+Then ci times phi i
+The more i i use today
+For example, I use from c0 to c10
+The more we use
+We will say this is a higher degree
+Expansion
+For example, c0
+If your guess today is c0 plus c1 phi 1
+That's it
+Maybe you can say it is degree of two
+Degree of one
+Then if you use c0 today
+c1 c2 c3
+Then it is degree of three
+What a coincidence today
+If I am building my assumption
+When that function
+Is also high degree expansion
+Is my
+There are more in the series
+If there are more phi
+It will usually be a high order method
+That is to say, the speed of error collection
+Will be faster
+For example, if you use
+There are a total of ten phi
+You may only multiply the number of elements by two
+Its error may be
+Collection is
+It's just one percent
+The speed of error reduction is very fast
+At the same time
+In addition to the speed of error collection
+The so-called high degree expansion
+It can usually give us a more accurate solution
+Like the following picture
+Is an example
+I still use six elements
+But in each element today
+I no longer assume it is just a straight line
+I assume it is a quadratic equation
+I just added one more
+x square
+I still use six elements
+But you can clearly see
+It's very, very close to the real world
+I just made such an assumption
+So you can see
+If you are in the element today
+The higher the degree
+The accuracy it gives you
+Will be better
+This is actually
+I want to emphasize a little
+Can't mess up
+The so-called convergence rate
+Is the so-called order
+Can't mix it up with accuracy
+Because order is just a definition
+It's just how fast it gets smaller
+But it doesn't mean that the error it gives you is very small
+Accuracy is
+The error I gave you today is very, very small
+But it doesn't mean that after I double the number of elements
+Its error
+It really gets smaller
+Even if you have ten elements
+Give you such an error
+After you double it into twenty elements
+Your error makes it bigger
+So accuracy and the so-called order
+Can't mix
+I have a question
+My question is
+I'm not sure
+But I assume your black line
+When you were writing code
+You are using a
+Three-time polynomial
+Just c0 plus c1x plus c2
+Plus c3x three times
+If you want to use
+This uj
+You also get its degree
+Is up to 3
+In fact, you use
+3, 4, 5, 6, 7, 8, 9
+There will be no more
+Improvement because of its critical
+It has perfectly described
+Is this a problem?
+Because all the coefficients after you
+Will be zero
+But isn't this the case?
+Isn't it just case by case?
+Yes so
+It's not wrong to say that
+But
+We can't know the truth
+Because
+Because
+This is an example
+So I use a three-time polynomial
+To draw it
+But in the real world, you don't know
+It's a three-time polynomial
+So you can only use
+More and more order
+To see what it looks like
+You mean
+The real signal in the natural world
+Maybe you get five squares
+Can describe some
+Then maybe you get
+After ten squares, it can start to describe
+For example, another kind of perturbation
+Then fifteen squares can describe
+Some kind of noise
+It will keep describing
+Smaller signal
+Not what I'm talking about
+What I want to say is
+I'm building this uj today
+What should it be used for
+When
+It is indeed case by case because
+I don't know the real solution
+What does it look like
+So I can't tell
+What should I use
+What I can do is
+For example, the same six elements I just did
+I assume it is c0 plus c1x
+It's just like this
+Then see how much it is
+When I do the second calculation today
+I add one more
+Plus c2x square
+Then see how much it is
+Then see if it is
+Is the difference getting smaller and smaller
+For example, if I use three elements today
+Like now
+If there are three elements in my projection
+If the error is 10 times 10
+1 times 10 times 10
+Then today if I add another
+c3x3 square and calculate it again
+The result is c3x
+The assumption of four elements and three assumptions
+The error is only
+For example, only 1 times 12
+That is to say that you are adding another
+When c3x
+It doesn't help
+So that is to say
+That is to say
+In fact, we don't know what to do
+We can only use this method to guess
+A bit confusing
+A bit difficult to describe
+I can understand what you want to say
+But what you are talking about now is basically
+Assuming a perfect
+Mathematical discussion
+But in fact, when you are writing code
+If you keep increasing your degree
+You may keep reducing
+Your
+Uncertainty or inaccuracy
+But to a certain extent
+You no longer have so many advantages
+To reduce the difference between the model and the actual
+But you start to magnify
+Your own computation
+Will it?
+Will
+So that's probably what you don't want to do
+More
+At that time
+You may not need to
+Put more
+Elements into your uj
+I see
+Thank you
+Then
+The next page
+So like I just said
+The previous video
+In addition to using more
+Elements in your
+Assuming function
+In addition to giving you
+A very precise answer
+At the same time
+Its convergence rate is also very high
+So it is equivalent to the speed of its chain
+Its error reduction speed is also fast
+At the same time, the error it gives you is also very small
+Then it is a very
+It's a very attractive way
+In fact
+Starting with a computer
+Starting with a numerical method
+The so-called high degree
+Everyone wants to use
+But why is everyone still using
+Limit element and limit volume
+The bottom line is that it has a lot of
+The disadvantage is that if I
+Today's physical field is a
+Time dependent
+Unsteady problem
+There is a countdown for time in the unified square
+That usually
+This kind of thing is very unstable
+Because there will be errors in the computer
+The computer can't use it
+To show all the numbers
+So it has some numbers
+Can't express
+Errors in the calculation process
+If today
+T is equal to 0
+0.1 seconds
+A very small error
+The so-called unstable is that it is very possible
+At 0.2 seconds
+The error in the first second
+In this second
+Let your calculation explode
+For example, it becomes infinitely large
+Or infinitely small
+This will happen
+This situation is called unstable
+That high degree element
+It is particularly easy to be unstable
+The reason is obvious
+Like you just saw
+If we use 10 today
+There is a c10x10 square
+If I have a small error today
+There is a small error in this step
+Is 1
+1 square
+1 square
+You bring this error to x10
+The whole error becomes
+1 square
+This will make your computer
+Let your calculation explode
+So this kind of thing
+It becomes so-called very unstable
+The second is that it is more involved
+The concept of linear代数
+It is Eocondition
+If I am today
+We just said that we must have a linear equation
+To solve those c, those functions
+For example, four
+Four linear equations to solve
+The so-called condition number
+There is a thing called condition number
+The higher the condition number
+It means that this linear equation is more difficult to solve
+The lower the condition number
+It means that this linear equation is easier to solve
+Usually you use the higher
+The assumption function
+For example, when using x4 to 8, x5 to 8, x6 to 8
+We will
+It will become the so-called Eocondition
+It's a sick
+Its linear equation will be very difficult to solve
+You may need
+Very, very long time
+Those c0, c1, c2, c3
+That is
+The so-called high degree and high order method
+The second
+Then the third
+The more you use it, the more complicated it is
+When you write a computer program
+The more difficult it is
+Even if it's not easy to write
+There may be more bugs in it
+It will be more difficult to debug
+Then the fourth is like now
+Everyone's program is parallel
+Run on multiple boxes
+Even our computers are at least four cores
+Then when this high-level method
+You want to design it
+Can be at the same time on eight cores
+When you go to solve together
+It will also become very difficult
+So this is the most obvious high-level method
+Four disadvantages
+That's why
+So far everyone is familiar with the numerical method
+It's still the kind of first order
+Or second order
+Limit difference or limit element
+But everyone is still working hard
+Is the so-called high-level method
+Because he is very appealing
+He just gives you a very small error
+Then his error is very slow
+So everyone is still studying
+So everyone will find a way to say
+From the three questions we just said
+The three questions around the numerical method
+If we can find a combination
+A combination of three answers
+Can give us a better high-level method
+Everyone has been trying in this area
+That is indeed possible
+Maybe everyone has heard of
+The so-called discontinuous Galerkin
+Is a continuous Galerkin method
+He is probably
+A major breakthrough after 2000
+Then he can be very high-level
+Then his
+Also relatively stable
+Then his conditions are relatively low
+So after 2000
+You will hear very often
+The so-called discontinuous Galerkin
+Because it becomes very popular
+Then I
+Here is an example
+I just said
+Different answers can give you
+Maybe the same high-level
+But relatively stable
+Or conditions are relatively low
+The numerical method
+Like the three lines above me
+Represents three different
+Phi i assumptions
+The steepest straight line
+Is the so-called
+He should be the moment expansion
+Is the example I just used
+Is c0 plus c1x
+Plus c2x2 plus c3x3
+That is to say
+Phi i is equal to x i
+This is very obvious
+You can see how many x axes
+I used
+Phi i
+Then y axis is the condition
+You can see him
+The more you use, the more conditions
+Increasing faster
+So it means that you use too much today
+If you use too much
+It will be very difficult to solve
+Then the second
+This is the connection between the two
+He uses the so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+The so-called
+And even the third triangle
+This line is a popular one these years
+Which is
+The so-called
+The so-called
+The so-called
+Phi 0 is a
+Phi 1 is
+Phi 1 is
+Let's use this method to
+Assume a function
+You will find that the more you use phi
+Its conditional value does not change
+That is to say
+The more phi you use today
+The so-called EO condition
+It can be counted as eliminated
+It doesn't exist anymore
+Now show this diagram
+For everyone to see
+Why different answers
+Can possibly solve
+Those drawbacks of high-level methods
+I have a small question
+So
+In fact
+Usually condition number
+Is it about equal to
+Calculation time
+Because you just count a condition number
+Is it a linear equation?
+Yes, but I don't really know
+I haven't thought about this question
+It's hard to say
+Because you have to see
+What is the method to solve the equation
+For example, you can use
+You solve a linear equation
+You can use
+Is the most basic Gauss elimination
+Then you can also use some
+Is more
+Faster method
+Is like
+Or like you can use some
+More fancy method
+Is to first solve its eigenvalue
+Then use the eigenvalue
+To find its characteristic equation
+Then use the characteristic equation to combine
+Its linear equation
+So
+I don't think
+Different ways to solve
+The same linear equation
+Condition number
+Is equal to calculation time
+And it may not be equal
+Because you basically have to put all conditions
+All together
+To solve the eigenvalue
+Oh, I see
+But I'm sure
+The more conditions, the worse
+The more it solves, the slower
+As for the slow ratio
+Is it linear or what?
+I haven't studied this
+So I'm not sure
+So now
+Enter the main topic
+Weighted residual method
+Is used later
+Flux reconstruction method
+Then just explained
+That order is just
+Give you a concept
+What is low order, what is high order
+Why do we use high order
+What is good to study
+Here is a hint for everyone
+Just give you a concept
+We just mentioned that there are three ways
+The answer to three questions
+Can define a new
+That's why I'm talking now
+Give you a hint
+Flux reconstruction
+What is the answer to these three questions
+For the FR method
+Its assumed function
+This phi i is used
+You can say it is
+Lagrangian function
+But you can also say it is Lagrangian
+That polynomial is
+Lagrangian
+Interval function
+That's just this interval function
+Interval function needs
+You need some points
+To define the interval function
+In the FR
+The interval function of phi
+Is defined in
+The so-called quadrature point
+Everyone knows
+It is a special point
+It is not randomly distributed
+It is not evenly distributed
+The distribution of points must meet certain rules
+This rule is Lagrangian polynomial
+It must meet the Lagrangian rule
+This is its expansion
+Its expansion is phi i
+What is it?
+What is its weight?
+Its weight is Galerkin method
+So its weight is used
+It's the same as phi i
+wj is equal to phi j
+That's the same as Galerkin method
+But we'll show you later
+Where is it different from Galerkin method
+It still has some different places
+Then the third question is
+What is the relationship between different elements
+What is the relationship between different elements
+What I wrote here today is
+Orthogonal polynomial based blocks reconstruction
+Orthogonal polynomial based blocks reconstruction
+In fact, it is the same as
+The same as the finite element
+The same as the finite volume
+The so-called Riemann
+Riemann jump blocks
+If you have
+If you have learned
+The finite volume, you will probably have an impression
+It doesn't matter
+I will still talk about this
+What is this
+What is this
+This is just a heads up
+This is just a heads up
+Now let's start the formal introduction
+Now let's start the formal introduction
+Now let's start the formal introduction
+When this method was proposed in 2007
+When this method was proposed in 2007
+It is mainly to solve the so-called
+Hyperbolic conservation law
+This kind of PDE will look like this
+This kind of PDE will look like this
+When there are three or five corners
+There will be an end mark for y and z
+Today we assume
+The effective range
+From xA to xB
+If we cut it into
+N1 elements
+And then we use 1
+To represent each element
+And then each element
+Your own effective range
+Let's write it as xk to xk plus 1
+Let's write it as xk to xk plus 1
+Todaywe have two guessed functions
+The first is the guessing function on u
+The guessing constructions inside dkget
+And then we write
+It like this
+Sigma u,k,i,psique
+u,k,i
+U,k,i means the value of dk
+In fact, only u,k,i is unknown
+Because f,k,i is defined from u,k,i
+f,k,i means you bring u,k,i to the f function in your original pd
+You can get u,k,i
+So although we have two guessed functions
+But only u,k,i is unknown and needs to be solved
+Then we go back to the weighting function
+The weighting function is applied to dk element
+Only in dk element, we don't care about other elements
+So its base range is xk to xk plus 1
+Then weight wj
+Then the right side is our original pd value
+That is r
+Then the second line below, I just split it into two
+Then we are now for the second item
+The second item is weight wj
+F is the derivative of this function to x
+Then we use the distribution points today
+Distribution points in the distribution points
+We can get the equation on the right
+This is the value
+It will become xk plus 1 value
+Then subtract another base function
+This function is the so-called weak form
+Weak form of dsk
+I only mention it here
+Because we don't want to do dsk
+Then if you want to do dsk today
+After you get this value
+Your next step will jump directly to
+How do I define f at xk plus 1
+Or how to define f at xk
+Then we are not going to do this today
+So skip this step first
+Let's move on to the next step
+The next step is the one I just
+Wait for the point on the right
+I will go one step further and do it again
+Distribution points
+After I do the distribution points again
+I will get the original point function again
+Is the derivative of weight wj
+But on my left
+I will have two more
+I will have one more fk at xk plus 1 value
+This is what I just said to f
+Assuming that the function
+The derivative function at xk plus 1 value
+Then this fk
+Then xk is the value
+It means that f is the assumption function
+The derivative value at xk
+So the third line is just a reorganization
+You will get an original distribution function
+Then subtract the following two
+Weight wj
+What does wj mean?
+It means
+A jump
+I hope xk this place
+The first f
+If you can see my mouse
+The first f means
+I hope xk this place
+What is its value
+Then the second f
+Is the f obtained by the inner product function
+It means that I actually calculate the inner product function today
+At this point
+How much is this point at xk?
+So it's called jump
+Is the value I hope
+The difference between the actual inner product value
+This is called jump
+This kind of thing is in that document
+They will be called strong form of discontinuous skeleton
+That's just
+No one is trying to solve this equation
+Then
+The last point is to remind everyone
+Pay attention to the definition of two different f
+One is how much I hope it is
+Then one is the inner product function
+The actual value of the inner product
+Then the next page
+A little slow
+Then I am today
+This page is just about
+The so-called strong form
+Of discontinuous skeleton
+Back to the original
+The points of the entire product function
+Then it will look like this
+You will find that the first one is still the original
+The points of the entire product function
+Then there are two more things related to jump
+Then today
+In Flux Reconstruction
+The so-called strong form
+Of discontinuous skeleton is different
+He used a trick at this time
+He assumed
+I have a place in front
+There is xwjxk
+This one
+If I can write it in the same way
+A formula
+Then find a so-called gl function
+Let him say wj
+The value of the entire product function at xk
+Will be equal to
+This point
+Then wj at xk
+The value of this point
+Will be equal to the point defined by gr
+Then I put these two definitions
+Take it back to the original
+The points of the entire product function
+I can write it as a whole
+Everything
+Stuffed into my points
+It will be like this
+Everything will become a point
+Then the entire weight multiplied by everything else
+Why do this
+Because if you do this, you can put
+If you delete the whole weight, you can delete the points
+Becomes a pure polynomial
+So this is
+Flux Reconstruction
+Is me
+Assuming that wj can become a point
+Then take it back
+I can delete the points and the weight
+Back to restore
+A primitive polynomial
+This page is just
+Just rewrite it
+I have a small question
+So you
+You this method
+Basically rely on
+Is grgl
+Exist
+That's right
+Will this be a problem
+It is the focus
+It is a focus of fr
+Is
+Its focus is
+What is grl and gr
+Because we assumed first
+The same grl and gr
+But we didn't mention
+Did you really find it
+So wait
+I may not talk about that today
+Because that will become more
+But I will directly
+One or two
+Already found function
+Then
+This page is rewritten
+Flux Reconstruction
+Is what we are looking for
+This method is looking for
+So you can see
+The biggest difference between fr and grl
+Is
+Its weight
+wj this function will disappear in the end
+But
+What to pay attention to is that it is not
+No weight, it's just weight
+Will disappear
+Then
+Then
+In the end
+How to use that primitive polynomial
+To find the real u
+Then we have to go back
+Involve in the so-called
+Time point
+Time point is the simplest
+Euler
+Is a finite polynomial
+Euler's temporal time margin
+Is
+Is the simplest point
+Is equal to
+t plus delta t
+minus t
+The value of this time point
+Is your delta t
+We put it as partial u partial t
+Is an Euler method
+Then we put it
+Just that
+The primitive polynomial of fr
+Bring back
+We can get this
+A finite polynomial
+Then
+We use t plus delta t
+And t to represent
+The solution of different time points
+Is
+Is
+Is it missing a page or two?
+Let me see what the next page is
+it is good
+Then
+In this function
+We have seen a lot now
+That variable u
+Then t plus delta t
+Then we have to know
+Which is unknown
+To know how to solve
+So we have to review
+Is that we just didn't
+Although I didn't mention how to calculate
+I want to be in xk
+How much is xk plus 1
+But we are here first
+Assuming we already have a way to
+Calculate how much we want
+Then the second is that we also assume
+We have found the right
+gl and gr
+That
+And what we use is
+Our phi is the so-called Lagrange
+Input function
+If my uki is defined in xk
+Then my uk this
+Assuming the function
+When I put xk in
+I can get uki again
+Then the second point is the so-called
+F to f this assumption function
+It's actually still a
+That one
+Polynomial series
+It's just that
+Its division will be transferred to
+The division of phi
+Because fki is a constant
+So you can't divide it
+So this is f
+Then fki will remind you again
+It's just f this function
+Then bring uki in
+So it's not an independent variable
+Then phi
+Or how much gr
+These are actually you can assume
+It is unknown because these are
+Polynomials defined by yourself
+So of course you define it yourself
+Of course you can get its derivative
+So back to this
+Square
+We put it all in
+You will find that everything is unknown
+You are at t this time
+U and then f
+And then phi
+These are all unknown
+The only unknown thing is t plus delta t
+So today in this method
+It's actually like this
+You use this method to calculate
+How much is t plus delta t
+So today you divide the square
+There will be a initial value
+It's the value of t equals 0
+That means you have the value of t equals 0 today
+Then your uki is 0
+So f at 0
+t equals 0
+Then you can use this formula to calculate
+How much is 0 plus delta t
+Then you have you know
+How much is 0 plus delta t
+Then you bring 0 plus delta t to the right
+Then you can get
+How much is 2 delta t
+Then you step by step like this
+In the end you can get
+This u function
+What is the change in time
+That's a simple summary
+t equals 0 we have
+So we know uki 0 and f 0
+How much
+Then we use that method
+Use some of the methods we haven't mentioned
+Calculate f at
+The interface of each element is xk
+How much is it
+Then the third step is
+You can use the formula from the last page
+Calculate the value of u at t plus delta t
+So you can go back
+Step 1 and Step 2
+Then keep repeating
+This is what I just mentioned
+The algorithm
+It's very simple
+So now it's time to say
+We just kept saying
+We assume that we already have a way
+To calculate
+We want f at xk
+How much
+That's why I mentioned
+What the hell is this thing
+That's what we want
+We call it numerical flux
+Then we just follow
+This kind of thing is in the limited
+The limited volume and the Galerkin method
+Is a very common concept
+Calculate fluid mechanics
+The most simple way we use
+Calculate numerical flux
+Is the so-called rose flux
+ROE rose flux
+It involves a lot of
+It's just some physics
+Physics of flow
+It's going to get complicated
+So I just gave it a formula
+Prove that we really have a way
+How much is this f
+If you are interested in this
+You can actually go back and look at some
+Some volume has been developed for 30 or 40 years
+So how to calculate this
+Numerical flux will become
+It's actually very, very easy to find
+Then we solve f
+Then there is f
+The most important thing in the method is
+How to find gl and gr
+Then we mentioned that gl and gr
+These two functions must match
+These two points
+Then the second one is
+In fact, gl and gr
+Its meaning is
+Point to the boundary
+We just said that there is a boundary in the formula
+Jump
+It's equal to
+The value we want on the boundary
+The difference in value
+So this function is theoretically
+Only for the boundary
+Then it's inside the element
+It must be almost non-correct
+So we hope this function
+It's on the boundary
+For example, glx
+Its value will be very large
+For example, 1
+Inside the element
+Then
+It must be higher than
+Its degree must be higher than
+The function we assume
+Because after you do this
+Its degree will be the same
+So the first thing I found today
+Is the so-called rado polynomial
+It looks like this
+You put it into this formula
+This is the most primitive
+gl and gr
+There are a lot of gl and gr
+You can find it in paper
+But I didn't mention it
+Because it becomes very mathematical
+I just want to tell you
+I really found this gl and gr
+This is an example
+When using different gl and gr
+You can see it
+The change of the numerical method
+Like I said just now
+Same
+The same linear equation
+You use different gl and gr
+Will get a completely different accuracy
+If you are interested, you can go to paper
+Just play
+Because this is very mathematical
+Just show it to everyone
+Let everyone know that this thing exists
+I just talked about
+There is only one dimension in space
+If there are two dimensions in space
+If you want to use fr
+The current method can only
+Divide the two dimensions into two dimensions
+The function
+Then apply fr
+Like I said just now
+But this thing is still under study
+So you probably only have one or two papers
+Have seen
+Let me mention it to everyone
+This is a difference
+Maybe the time is a bit limited
+I have talked about it before
+The difference is that it is one
+One is the default form
+One is the strong form
+One is the weak form
+The time is limited
+So let's skip it first
+Now let's talk about how to use it
+In computational fluid mechanics
+If I do it today
+If it is compressible flow
+In fact, the same method of compressible flow
+It is a conservation law
+If you apply fr today
+There is no problem at all
+There will be no contradiction
+But if I am incompressible today
+Incompressible flow
+You will find that the same equation is inside
+One of the equations
+It lacks the division of time
+So it is no longer a conservation law
+If you want to use fr today
+It will be very difficult
+You don't know how to apply
+The fr method we just mentioned
+Then
+Of course, some people today
+There will be a way to use
+Assuming this incompressible flow
+There is a false compressibility
+Then we assume that there is a false compressibility
+We can use it as a compressible flow
+But the question is
+What is this false compressibility
+It's hard to define
+It's very unreasonable
+So I don't want to use this method
+And
+And
+Now the mainstream incompressible flow
+All use the so-called
+ProjectionStype method
+Use this very complicated
+To solve
+So how should I do today
+Bring fr to this
+The most popular projectionStype
+To solve
+It will become a very challenging problem
+That's why
+I want to do
+Is to do
+Because
+There is no one doing this
+Then I want to use fr today
+In incompressible flow
+The two basic elements I need
+I have to solve this
+Poisson equation
+So it becomes
+You have to use implicit method
+You have to solve a very big equation
+You can't be like just now
+t plus delta t
+Then step by step
+You can't
+You can only solve it once
+And now a lot of people
+They will assume the same
+This thing is a state
+This Poisson equation is a state
+Then step by step
+After the value of t goes to infinity
+Assume it as
+Stable solution
+This thing is very inefficient
+Because you have a stable solution
+You have to go from t equals 0 to t equals infinity
+I want you to know that it is very inefficient
+So my
+For my own plan
+I hope I can find a way
+To be able to solve
+Poisson equation without time
+This thing is very simple
+You just have to do it
+But the problem is
+Different gl and different gr
+There will be different values
+No one studies
+How should I choose gl and gr
+If you want to solve today
+Poisson equation without time
+Then there is the second
+I hope to be able to
+Develop a projection style
+That can't be compressed
+Solver
+The third is that I hope
+I can put the solver with
+The so-called Immersed Boundary Method
+Coupled together
+This is my current plan
+My research goal
+Talk a little bit
+Just time
+Thank you all
+Good
+I think it's very good
+At least for me
+It's a field
+I think it's very clear
+I think it's too much
+And I think the time is very good
+It's 17 minutes now
+Then
+So the other one is your friend
+Right
+So we're the only ones here
+Then I just asked a lot of questions
+So
+That's it for today's speech
+If you have any questions
+You can find it on our website
+Announcement of today's speech
+Then we will be late
+Upload the recording of today's speech
+If you have any questions
+Just click on the speaker's name
+Will connect to his
+Self-introduction page on our website
+Then there will be his contact information
+Email or I don't know what you left
+Then you can discuss it directly with the speaker
+Then we will thank our speaker again
+Thank you all
+If you have a look on the Internet
+That's it for today
+I'm going to stop recording

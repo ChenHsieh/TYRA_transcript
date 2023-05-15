@@ -1,0 +1,11524 @@
+1
+00:00:00,000 --> 00:00:01,160
+Okay, I'll start now.
+
+2
+00:00:04,160 --> 00:00:05,360
+I was scared.
+
+3
+00:00:05,360 --> 00:00:09,000
+So what I'm going to talk about today is
+
+4
+00:00:10,760 --> 00:00:13,920
+I'm going to describe fluid mechanics,
+
+5
+00:00:13,920 --> 00:00:16,800
+but I'm going to use quantum mechanics
+
+6
+00:00:16,800 --> 00:00:19,760
+to describe fluid mechanics.
+
+7
+00:00:19,760 --> 00:00:23,520
+Before I start, I'm going to talk about
+
+8
+00:00:23,520 --> 00:00:25,840
+why fluid mechanics,
+
+9
+00:00:25,840 --> 00:00:28,360
+usually the Navier-Stokes equation or Euler equation,
+
+10
+00:00:28,360 --> 00:00:30,360
+is very non-linear.
+
+11
+00:00:30,360 --> 00:00:35,360
+How could it be related to this linear equation?
+
+12
+00:00:35,360 --> 00:00:37,360
+In fact, this is not a discovery.
+
+13
+00:00:37,360 --> 00:00:39,360
+As early as 1926,
+
+14
+00:00:39,360 --> 00:00:42,360
+Magnum had already discovered
+
+15
+00:00:42,360 --> 00:00:45,360
+that these two equations are closely related.
+
+16
+00:00:45,360 --> 00:00:47,360
+I usually think like this.
+
+17
+00:00:47,360 --> 00:00:50,360
+The Euler equation,
+
+18
+00:00:50,360 --> 00:00:52,360
+the physics behind it is like this.
+
+19
+00:00:52,360 --> 00:00:55,360
+It has a few postulates.
+
+20
+00:00:55,360 --> 00:00:57,360
+The first one is that there is inertia.
+
+21
+00:00:57,360 --> 00:00:59,360
+That is to say, if the particle has no force,
+
+22
+00:00:59,360 --> 00:01:02,360
+the speed is just following the speed of the particle.
+
+23
+00:01:02,360 --> 00:01:05,360
+So the speed of the fluid is
+
+24
+00:01:05,360 --> 00:01:07,360
+the speed of the vector.
+
+25
+00:01:09,360 --> 00:01:11,360
+But in fact, there is an inner force in the fluid,
+
+26
+00:01:11,360 --> 00:01:13,360
+which is the pressure.
+
+27
+00:01:13,360 --> 00:01:16,360
+And Euler's assumption is that
+
+28
+00:01:16,360 --> 00:01:18,360
+this is a conservative field,
+
+29
+00:01:18,360 --> 00:01:20,360
+so it is already a gradient of function.
+
+30
+00:01:21,360 --> 00:01:23,360
+And finally, this gradient of function,
+
+31
+00:01:23,360 --> 00:01:25,360
+which is the pressure force,
+
+32
+00:01:25,360 --> 00:01:28,360
+is the only constraint.
+
+33
+00:01:28,360 --> 00:01:31,360
+In fact, it is an incompressible flow.
+
+34
+00:01:31,360 --> 00:01:34,360
+And these assumptions are combined
+
+35
+00:01:34,360 --> 00:01:38,360
+to write the incompressible Euler equation.
+
+36
+00:01:38,360 --> 00:01:41,360
+And the most difficult part in this equation
+
+37
+00:01:41,360 --> 00:01:44,360
+is actually the inertia part.
+
+38
+00:01:44,360 --> 00:01:48,360
+Because it has a non-linear effect in the equation.
+
+39
+00:01:48,360 --> 00:01:50,360
+That is, U dot gradient U.
+
+40
+00:01:51,360 --> 00:01:54,360
+When you say P-lemming,
+
+41
+00:01:54,360 --> 00:01:58,360
+I also want to use these non-linear equations.
+
+42
+00:01:58,360 --> 00:02:00,360
+Yes, just like dust.
+
+43
+00:02:00,360 --> 00:02:02,360
+Do you know why?
+
+44
+00:02:02,360 --> 00:02:04,360
+If I have the first equation on the right,
+
+45
+00:02:04,360 --> 00:02:06,360
+will it be very simple?
+
+46
+00:02:12,360 --> 00:02:14,360
+It can be said to be simple or not simple.
+
+47
+00:02:14,360 --> 00:02:16,360
+It is not so direct.
+
+48
+00:02:16,360 --> 00:02:18,360
+It is also a non-linear method.
+
+49
+00:02:18,360 --> 00:02:20,360
+It is a Berger's equation.
+
+50
+00:02:24,360 --> 00:02:26,360
+If you want to simulate,
+
+51
+00:02:26,360 --> 00:02:28,360
+you can just throw a lot of particles
+
+52
+00:02:28,360 --> 00:02:30,360
+and let it fly.
+
+53
+00:02:30,360 --> 00:02:32,360
+But in the end, you have to predict
+
+54
+00:02:32,360 --> 00:02:34,360
+what the final density is.
+
+55
+00:02:34,360 --> 00:02:36,360
+In fact, it can be clearly written down.
+
+56
+00:02:36,360 --> 00:02:38,360
+Especially when it is Euler,
+
+57
+00:02:38,360 --> 00:02:40,360
+it can be clearly written down.
+
+58
+00:02:40,360 --> 00:02:42,360
+In fact, there are some interesting phenomena.
+
+59
+00:02:42,360 --> 00:02:44,360
+It is not very direct.
+
+60
+00:02:44,360 --> 00:02:46,360
+And those are all non-linear phenomena.
+
+61
+00:02:46,360 --> 00:02:48,360
+It looks like a very simple physics.
+
+62
+00:02:48,360 --> 00:02:50,360
+But in fact, because it is non-linear,
+
+63
+00:02:50,360 --> 00:02:52,360
+it just runs out of phenomena.
+
+64
+00:02:52,360 --> 00:02:54,360
+Many non-linear phenomena,
+
+65
+00:02:54,360 --> 00:02:56,360
+such as shock wave and reflection wave,
+
+66
+00:02:56,360 --> 00:02:58,360
+will appear.
+
+67
+00:02:58,360 --> 00:03:00,360
+Yes, it's a simple version,
+
+68
+00:03:00,360 --> 00:03:02,360
+but it's not so direct.
+
+69
+00:03:06,360 --> 00:03:08,360
+This non-linear phenomenon
+
+70
+00:03:08,360 --> 00:03:10,360
+can be written in different ways.
+
+71
+00:03:10,360 --> 00:03:12,360
+Like Lagrange and Helmholtz.
+
+72
+00:03:12,360 --> 00:03:14,360
+A lot of people
+
+73
+00:03:14,360 --> 00:03:16,360
+write Euler's equation in the same way.
+
+74
+00:03:16,360 --> 00:03:18,360
+But the non-linear phenomenon
+
+75
+00:03:18,360 --> 00:03:20,360
+is always there.
+
+76
+00:03:20,360 --> 00:03:22,360
+It's all because of the law of inertia.
+
+77
+00:03:22,360 --> 00:03:24,360
+But in fact, there is a linear equation.
+
+78
+00:03:24,360 --> 00:03:26,360
+Schrodinger's equation
+
+79
+00:03:26,360 --> 00:03:28,360
+is built into the law of inertia.
+
+80
+00:03:32,360 --> 00:03:34,360
+Schrodinger's equation
+
+81
+00:03:34,360 --> 00:03:36,360
+for complex value wave function
+
+82
+00:03:36,360 --> 00:03:38,360
+is written like this.
+
+83
+00:03:40,360 --> 00:03:42,360
+I will throw away the potential term.
+
+84
+00:03:42,360 --> 00:03:44,360
+This looks like a heat equation.
+
+85
+00:03:44,360 --> 00:03:46,360
+Yes, the mathematical convention
+
+86
+00:03:46,360 --> 00:03:48,360
+is that delta is the Laplacian.
+
+87
+00:03:48,360 --> 00:03:50,360
+It's usually a gradient equation.
+
+88
+00:03:50,360 --> 00:03:52,360
+It looks like a heat equation,
+
+89
+00:03:52,360 --> 00:03:54,360
+but there is an i.
+
+90
+00:03:56,360 --> 00:03:58,360
+h bar is a function
+
+91
+00:03:58,360 --> 00:04:00,360
+in my entire talk.
+
+92
+00:04:02,360 --> 00:04:04,360
+But this Schrodinger's equation
+
+93
+00:04:04,360 --> 00:04:06,360
+shouldn't be regarded as a heat equation.
+
+94
+00:04:06,360 --> 00:04:08,360
+It's actually a wave equation.
+
+95
+00:04:08,360 --> 00:04:10,360
+And it's a dispersive wave equation.
+
+96
+00:04:10,360 --> 00:04:12,360
+It has a dispersion phenomenon.
+
+97
+00:04:12,360 --> 00:04:14,360
+That is, different waves
+
+98
+00:04:14,360 --> 00:04:16,360
+travel at different speeds.
+
+99
+00:04:18,360 --> 00:04:20,360
+If I look at the group velocity
+
+100
+00:04:20,360 --> 00:04:22,360
+of this wave,
+
+101
+00:04:22,360 --> 00:04:24,360
+you can see the dispersion relation.
+
+102
+00:04:24,360 --> 00:04:26,360
+The group velocity is actually
+
+103
+00:04:26,360 --> 00:04:28,360
+equal to the wave number.
+
+104
+00:04:28,360 --> 00:04:30,360
+The wave number
+
+105
+00:04:30,360 --> 00:04:32,360
+is usually measured by
+
+106
+00:04:32,360 --> 00:04:34,360
+the IC time of the E2 wave.
+
+107
+00:04:34,360 --> 00:04:36,360
+It will show
+
+108
+00:04:36,360 --> 00:04:38,360
+the wave number
+
+109
+00:04:38,360 --> 00:04:40,360
+and
+
+110
+00:04:40,360 --> 00:04:42,360
+the point is that
+
+111
+00:04:42,360 --> 00:04:44,360
+the wave number and the
+
+112
+00:04:44,360 --> 00:04:46,360
+wave number of the wave
+
+113
+00:04:46,360 --> 00:04:48,360
+are actually all
+
+114
+00:04:48,360 --> 00:04:50,360
+measured by the group velocity.
+
+115
+00:04:50,360 --> 00:04:52,360
+The wave number itself is
+
+116
+00:04:52,360 --> 00:04:54,360
+the group velocity.
+
+117
+00:04:54,360 --> 00:04:56,360
+So you will get a
+
+118
+00:04:56,360 --> 00:04:58,360
+velocity-advected-by-velocity phenomenon.
+
+119
+00:04:58,360 --> 00:05:00,360
+That is, it only has
+
+120
+00:05:00,360 --> 00:05:02,360
+an internal
+
+121
+00:05:02,360 --> 00:05:04,360
+flying phenomenon.
+
+122
+00:05:04,360 --> 00:05:06,360
+Because the speed is written as
+
+123
+00:05:06,360 --> 00:05:08,360
+So based on this variable
+
+124
+00:05:08,360 --> 00:05:10,360
+change, you can see that
+
+125
+00:05:10,360 --> 00:05:12,360
+the original non-linear things
+
+126
+00:05:12,360 --> 00:05:14,360
+may become linear, or the linear
+
+127
+00:05:14,360 --> 00:05:16,360
+may become non-linear.
+
+128
+00:05:16,360 --> 00:05:18,360
+After the Schrodinger equation
+
+129
+00:05:18,360 --> 00:05:20,360
+is logged, what you get
+
+130
+00:05:20,360 --> 00:05:22,360
+will be this
+
+131
+00:05:22,360 --> 00:05:24,360
+functional phenomenon.
+
+132
+00:05:24,360 --> 00:05:26,360
+This was actually done by
+
+133
+00:05:26,360 --> 00:05:28,360
+Madelung in 1926.
+
+134
+00:05:28,360 --> 00:05:30,360
+In 1925, Schrodinger
+
+135
+00:05:30,360 --> 00:05:32,360
+just wrote the Schrodinger equation.
+
+136
+00:05:32,360 --> 00:05:34,360
+The next year, Madelung said
+
+137
+00:05:34,360 --> 00:05:36,360
+amplitude squared
+
+138
+00:05:36,360 --> 00:05:38,360
+is the density of the fluid.
+
+139
+00:05:38,360 --> 00:05:40,360
+That can be regarded as the probability
+
+140
+00:05:40,360 --> 00:05:42,360
+density of the particle.
+
+141
+00:05:42,360 --> 00:05:44,360
+Then you
+
+142
+00:05:44,360 --> 00:05:46,360
+treat the whole system as a fluid.
+
+143
+00:05:46,360 --> 00:05:48,360
+The speed of the fluid is
+
+144
+00:05:48,360 --> 00:05:50,360
+gradient of theta, which is
+
+145
+00:05:50,360 --> 00:05:52,360
+the group velocity.
+
+146
+00:05:52,360 --> 00:05:54,360
+If you do this,
+
+147
+00:05:54,360 --> 00:05:56,360
+you bring these things in
+
+148
+00:05:56,360 --> 00:05:58,360
+and separate the actual area.
+
+149
+00:05:58,360 --> 00:06:00,360
+Then it will be a
+
+150
+00:06:00,360 --> 00:06:02,360
+If you have seen fluid,
+
+151
+00:06:02,360 --> 00:06:04,360
+you will find that
+
+152
+00:06:04,360 --> 00:06:06,360
+this is the compressible Euler equation.
+
+153
+00:06:06,360 --> 00:06:08,360
+The first method is
+
+154
+00:06:08,360 --> 00:06:10,360
+conservation of mass.
+
+155
+00:06:10,360 --> 00:06:12,360
+The second is conservation of momentum.
+
+156
+00:06:12,360 --> 00:06:14,360
+The only difference between
+
+157
+00:06:14,360 --> 00:06:16,360
+compressible and classical fluid
+
+158
+00:06:16,360 --> 00:06:18,360
+is the bone potential.
+
+159
+00:06:18,360 --> 00:06:20,360
+In the end, this is also the key
+
+160
+00:06:20,360 --> 00:06:22,360
+to evolving into bone mechanics.
+
+161
+00:06:24,360 --> 00:06:26,360
+But this
+
+162
+00:06:26,360 --> 00:06:28,360
+won't appear later.
+
+163
+00:06:28,360 --> 00:06:30,360
+Because you can know
+
+164
+00:06:30,360 --> 00:06:32,360
+I will add a
+
+165
+00:06:32,360 --> 00:06:34,360
+compressible Euler equation
+
+166
+00:06:34,360 --> 00:06:36,360
+to make it incompressible.
+
+167
+00:06:36,360 --> 00:06:38,360
+In that case,
+
+168
+00:06:38,360 --> 00:06:40,360
+the density will become constant
+
+169
+00:06:40,360 --> 00:06:42,360
+and the bone potential will disappear.
+
+170
+00:06:42,360 --> 00:06:44,360
+So we don't have to worry about it later.
+
+171
+00:06:46,360 --> 00:06:48,360
+What I just said
+
+172
+00:06:48,360 --> 00:06:50,360
+is that these two
+
+173
+00:06:50,360 --> 00:06:52,360
+actually have a point of view.
+
+174
+00:06:52,360 --> 00:06:54,360
+The first one is
+
+175
+00:06:54,360 --> 00:06:56,360
+The first one is
+
+176
+00:06:58,360 --> 00:07:00,360
+The first one is
+
+177
+00:07:00,360 --> 00:07:02,360
+the continuity equation.
+
+178
+00:07:02,360 --> 00:07:04,360
+q is the density.
+
+179
+00:07:06,360 --> 00:07:08,360
+So this is
+
+180
+00:07:08,360 --> 00:07:10,360
+the quality conservation.
+
+181
+00:07:10,360 --> 00:07:12,360
+So when you say h bar equals 0,
+
+182
+00:07:12,360 --> 00:07:14,360
+it's completely true.
+
+183
+00:07:14,360 --> 00:07:16,360
+h bar equals 0.
+
+184
+00:07:18,360 --> 00:07:20,360
+If your h bar equals 0,
+
+185
+00:07:20,360 --> 00:07:22,360
+it looks very similar.
+
+186
+00:07:22,360 --> 00:07:24,360
+But the
+
+187
+00:07:24,360 --> 00:07:26,360
+fluid velocity
+
+188
+00:07:26,360 --> 00:07:28,360
+h bar equals 0,
+
+189
+00:07:28,360 --> 00:07:30,360
+the flow velocity disappears.
+
+190
+00:07:30,360 --> 00:07:32,360
+Unless your theta
+
+191
+00:07:32,360 --> 00:07:34,360
+is infinitely large.
+
+192
+00:07:38,360 --> 00:07:40,360
+Look at the third line.
+
+193
+00:07:40,360 --> 00:07:42,360
+The fluid velocity is u times h bar times the gradient.
+
+194
+00:07:44,360 --> 00:07:46,360
+If your h bar equals 0,
+
+195
+00:07:46,360 --> 00:07:48,360
+your theta will...
+
+196
+00:07:48,360 --> 00:07:50,360
+You can make h bar very small.
+
+197
+00:07:50,360 --> 00:07:52,360
+It will become
+
+198
+00:07:52,360 --> 00:07:54,360
+semi-classic continuity.
+
+199
+00:07:54,360 --> 00:07:56,360
+It will become very close to the fluid velocity.
+
+200
+00:07:56,360 --> 00:07:58,360
+But you can't measure it directly.
+
+201
+00:07:58,360 --> 00:08:00,360
+Just treat it as a variable.
+
+202
+00:08:00,360 --> 00:08:02,360
+I only have u and theta left.
+
+203
+00:08:04,360 --> 00:08:06,360
+Under this new variable,
+
+204
+00:08:06,360 --> 00:08:08,360
+I already have
+
+205
+00:08:08,360 --> 00:08:10,360
+q bar, q bar,
+
+206
+00:08:10,360 --> 00:08:12,360
+h bar equals 0.
+
+207
+00:08:12,360 --> 00:08:14,360
+But this implies that your theta
+
+208
+00:08:14,360 --> 00:08:16,360
+must be an infinite positive function.
+
+209
+00:08:16,360 --> 00:08:18,360
+So...
+
+210
+00:08:18,360 --> 00:08:20,360
+Just treat it as...
+
+211
+00:08:20,360 --> 00:08:22,360
+Let's say...
+
+212
+00:08:22,360 --> 00:08:24,360
+Okay, that's it.
+
+213
+00:08:30,360 --> 00:08:32,360
+So my
+
+214
+00:08:32,360 --> 00:08:34,360
+overview is...
+
+215
+00:08:34,360 --> 00:08:36,360
+At the beginning,
+
+216
+00:08:36,360 --> 00:08:38,360
+I just simulated
+
+217
+00:08:38,360 --> 00:08:40,360
+to show you the simulation result.
+
+218
+00:08:40,360 --> 00:08:42,360
+And then...
+
+219
+00:08:42,360 --> 00:08:44,360
+Next, I want to talk about
+
+220
+00:08:44,360 --> 00:08:46,360
+a theory that is
+
+221
+00:08:46,360 --> 00:08:48,360
+more advanced than the variable variation.
+
+222
+00:08:48,360 --> 00:08:50,360
+It's called Geometric Clutch Variables.
+
+223
+00:08:50,360 --> 00:08:52,360
+I don't know how much I can talk about it.
+
+224
+00:08:52,360 --> 00:08:54,360
+For the dynamics part,
+
+225
+00:08:54,360 --> 00:08:56,360
+I will talk about the result.
+
+226
+00:08:56,360 --> 00:08:58,360
+But
+
+227
+00:08:58,360 --> 00:09:00,360
+there may be some parts in the middle.
+
+228
+00:09:00,360 --> 00:09:02,360
+I will try to talk about it.
+
+229
+00:09:02,360 --> 00:09:04,360
+If you have any questions,
+
+230
+00:09:04,360 --> 00:09:06,360
+please feel free to ask.
+
+231
+00:09:08,360 --> 00:09:10,360
+I will use some
+
+232
+00:09:10,360 --> 00:09:12,360
+more complicated math.
+
+233
+00:09:12,360 --> 00:09:14,360
+And then...
+
+234
+00:09:14,360 --> 00:09:16,360
+We published a paper
+
+235
+00:09:16,360 --> 00:09:18,360
+called Schrodinger's Smoke.
+
+236
+00:09:18,360 --> 00:09:20,360
+It's about cat when smoke.
+
+237
+00:09:20,360 --> 00:09:22,360
+It's about
+
+238
+00:09:22,360 --> 00:09:24,360
+doing some
+
+239
+00:09:24,360 --> 00:09:26,360
+utility simulation.
+
+240
+00:09:26,360 --> 00:09:28,360
+So if you google
+
+241
+00:09:28,360 --> 00:09:30,360
+Schrodinger's Smoke, you will see our paper.
+
+242
+00:09:30,360 --> 00:09:32,360
+We use
+
+243
+00:09:32,360 --> 00:09:34,360
+Madelung's idea.
+
+244
+00:09:34,360 --> 00:09:36,360
+We want to
+
+245
+00:09:36,360 --> 00:09:38,360
+treat fluid density...
+
+246
+00:09:38,360 --> 00:09:40,360
+Instead of using
+
+247
+00:09:40,360 --> 00:09:42,360
+density and velocity.
+
+248
+00:09:42,360 --> 00:09:44,360
+We use the complex value
+
+249
+00:09:44,360 --> 00:09:46,360
+wave function.
+
+250
+00:09:46,360 --> 00:09:48,360
+And then use Madelung's variable variation.
+
+251
+00:09:48,360 --> 00:09:50,360
+And this fluid velocity
+
+252
+00:09:50,360 --> 00:09:52,360
+actually has this...
+
+253
+00:09:52,360 --> 00:09:54,360
+You can write gradient theta
+
+254
+00:09:54,360 --> 00:09:56,360
+as the square on the right.
+
+255
+00:09:56,360 --> 00:09:58,360
+If you
+
+256
+00:09:58,360 --> 00:10:00,360
+write it like this,
+
+257
+00:10:00,360 --> 00:10:02,360
+you will find that
+
+258
+00:10:02,360 --> 00:10:04,360
+minus i gradient is
+
+259
+00:10:04,360 --> 00:10:06,360
+the momentum operator.
+
+260
+00:10:06,360 --> 00:10:08,360
+So it just evaluates the momentum operator.
+
+261
+00:10:08,360 --> 00:10:10,360
+But
+
+262
+00:10:10,360 --> 00:10:12,360
+the point is
+
+263
+00:10:12,360 --> 00:10:14,360
+even though it looks great,
+
+264
+00:10:14,360 --> 00:10:16,360
+but velocity is just
+
+265
+00:10:16,360 --> 00:10:18,360
+a function of function.
+
+266
+00:10:18,360 --> 00:10:20,360
+It means that you don't have any vorticity.
+
+267
+00:10:20,360 --> 00:10:22,360
+When you take
+
+268
+00:10:22,360 --> 00:10:24,360
+velocity and curl,
+
+269
+00:10:24,360 --> 00:10:26,360
+look at the angular momentum,
+
+270
+00:10:26,360 --> 00:10:28,360
+you will find that it's zero.
+
+271
+00:10:28,360 --> 00:10:30,360
+Your velocity
+
+272
+00:10:30,360 --> 00:10:32,360
+can only be this kind of potential flow.
+
+273
+00:10:32,360 --> 00:10:34,360
+Or this kind of
+
+274
+00:10:34,360 --> 00:10:36,360
+no vortex fluid.
+
+275
+00:10:36,360 --> 00:10:38,360
+It's not interesting.
+
+276
+00:10:38,360 --> 00:10:40,360
+To solve this problem,
+
+277
+00:10:40,360 --> 00:10:42,360
+we consider
+
+278
+00:10:42,360 --> 00:10:44,360
+two components Schrodinger equation.
+
+279
+00:10:44,360 --> 00:10:46,360
+You can think of this
+
+280
+00:10:46,360 --> 00:10:48,360
+as spin half particle.
+
+281
+00:10:48,360 --> 00:10:50,360
+Or you can think of it as
+
+282
+00:10:50,360 --> 00:10:52,360
+two components.
+
+283
+00:10:52,360 --> 00:10:54,360
+Its Schrodinger equation is still the same.
+
+284
+00:10:54,360 --> 00:10:56,360
+It's component wise.
+
+285
+00:10:56,360 --> 00:10:58,360
+It's still the same
+
+286
+00:10:58,360 --> 00:11:00,360
+one component Schrodinger equation.
+
+287
+00:11:00,360 --> 00:11:02,360
+The variable variation
+
+288
+00:11:02,360 --> 00:11:04,360
+is the density of the fluid.
+
+289
+00:11:04,360 --> 00:11:06,360
+It's still the same.
+
+290
+00:11:06,360 --> 00:11:08,360
+Amplitude squared.
+
+291
+00:11:08,360 --> 00:11:10,360
+But in this case,
+
+292
+00:11:10,360 --> 00:11:12,360
+it's the sum of
+
+293
+00:11:12,360 --> 00:11:14,360
+the density of two channels.
+
+294
+00:11:14,360 --> 00:11:16,360
+And
+
+295
+00:11:16,360 --> 00:11:18,360
+for velocity,
+
+296
+00:11:18,360 --> 00:11:20,360
+it's the same as the momentum operator.
+
+297
+00:11:20,360 --> 00:11:22,360
+If you write this down,
+
+298
+00:11:22,360 --> 00:11:24,360
+it will become
+
+299
+00:11:24,360 --> 00:11:26,360
+the velocity of two components.
+
+300
+00:11:26,360 --> 00:11:28,360
+But
+
+301
+00:11:28,360 --> 00:11:30,360
+it's a linear combination.
+
+302
+00:11:30,360 --> 00:11:32,360
+It depends on their density.
+
+303
+00:11:32,360 --> 00:11:34,360
+In this case,
+
+304
+00:11:34,360 --> 00:11:36,360
+you don't have to worry about curl.
+
+305
+00:11:36,360 --> 00:11:38,360
+It can
+
+306
+00:11:38,360 --> 00:11:40,360
+describe
+
+307
+00:11:40,360 --> 00:11:42,360
+more interesting
+
+308
+00:11:42,360 --> 00:11:44,360
+fluid states.
+
+309
+00:11:44,360 --> 00:11:46,360
+So we use one component
+
+310
+00:11:46,360 --> 00:11:48,360
+and two components
+
+311
+00:11:48,360 --> 00:11:50,360
+to describe the fluid.
+
+312
+00:11:50,360 --> 00:11:52,360
+Now,
+
+313
+00:11:54,360 --> 00:11:56,360
+to describe the fluid,
+
+314
+00:11:56,360 --> 00:11:58,360
+we need to describe incompressible fluid.
+
+315
+00:11:58,360 --> 00:12:00,360
+We already have the inertial motion.
+
+316
+00:12:00,360 --> 00:12:02,360
+To describe
+
+317
+00:12:02,360 --> 00:12:04,360
+incompressible fluid,
+
+318
+00:12:04,360 --> 00:12:06,360
+we add a potential term
+
+319
+00:12:06,360 --> 00:12:08,360
+to make it correspond to the velocity.
+
+320
+00:12:08,360 --> 00:12:10,360
+It's the divergence tree.
+
+321
+00:12:10,360 --> 00:12:12,360
+It's like the Euler equation.
+
+322
+00:12:12,360 --> 00:12:14,360
+When you add the pressure,
+
+323
+00:12:14,360 --> 00:12:16,360
+the fluid becomes incompressible fluid.
+
+324
+00:12:18,360 --> 00:12:20,360
+Then we
+
+325
+00:12:20,360 --> 00:12:22,360
+use the constraint Schrodinger equation
+
+326
+00:12:22,360 --> 00:12:24,360
+to describe the incompressible Schrodinger equation.
+
+327
+00:12:24,360 --> 00:12:26,360
+The solution is
+
+328
+00:12:26,360 --> 00:12:28,360
+the incompressible Schrodinger flow.
+
+329
+00:12:30,360 --> 00:12:32,360
+Then
+
+330
+00:12:32,360 --> 00:12:34,360
+it's the same as
+
+331
+00:12:34,360 --> 00:12:36,360
+other incompressible flow.
+
+332
+00:12:36,360 --> 00:12:38,360
+As long as you have
+
+333
+00:12:38,360 --> 00:12:40,360
+continuity equation,
+
+334
+00:12:40,360 --> 00:12:42,360
+that is, the quality is constant,
+
+335
+00:12:42,360 --> 00:12:44,360
+and
+
+336
+00:12:44,360 --> 00:12:46,360
+it's incompressible fluid.
+
+337
+00:12:46,360 --> 00:12:48,360
+The volume will not change over time.
+
+338
+00:12:48,360 --> 00:12:50,360
+The density
+
+339
+00:12:50,360 --> 00:12:52,360
+will not change
+
+340
+00:12:52,360 --> 00:12:54,360
+over time.
+
+341
+00:12:54,360 --> 00:12:56,360
+Initially, if density is constant,
+
+342
+00:12:56,360 --> 00:12:58,360
+it will always be constant.
+
+343
+00:12:58,360 --> 00:13:00,360
+My question is
+
+344
+00:13:00,360 --> 00:13:02,360
+you
+
+345
+00:13:04,360 --> 00:13:06,360
+turn it into
+
+346
+00:13:06,360 --> 00:13:08,360
+a two-component
+
+347
+00:13:08,360 --> 00:13:10,360
+vector.
+
+348
+00:13:10,360 --> 00:13:12,360
+Are you a two-component?
+
+349
+00:13:12,360 --> 00:13:14,360
+If
+
+350
+00:13:14,360 --> 00:13:16,360
+the screen is zero,
+
+351
+00:13:16,360 --> 00:13:18,360
+there will be no velocity.
+
+352
+00:13:18,360 --> 00:13:20,360
+If you have two components,
+
+353
+00:13:20,360 --> 00:13:22,360
+you need at least two components.
+
+354
+00:13:22,360 --> 00:13:24,360
+What is the implication?
+
+355
+00:13:24,360 --> 00:13:26,360
+How do you turn it into a one-component?
+
+356
+00:13:26,360 --> 00:13:28,360
+Actually,
+
+357
+00:13:28,360 --> 00:13:30,360
+at the beginning,
+
+358
+00:13:30,360 --> 00:13:32,360
+nComponent
+
+359
+00:13:32,360 --> 00:13:34,360
+and twoComponent.
+
+360
+00:13:34,360 --> 00:13:36,360
+After that,
+
+361
+00:13:36,360 --> 00:13:38,360
+twoComponent
+
+362
+00:13:38,360 --> 00:13:40,360
+is enough.
+
+363
+00:13:40,360 --> 00:13:42,360
+The meaning of enough
+
+364
+00:13:42,360 --> 00:13:44,360
+is
+
+365
+00:13:44,360 --> 00:13:46,360
+in
+
+366
+00:13:46,360 --> 00:13:48,360
+the middle,
+
+367
+00:13:48,360 --> 00:13:50,360
+at the end,
+
+368
+00:13:50,360 --> 00:13:52,360
+there is a question.
+
+369
+00:13:52,360 --> 00:13:54,360
+Can you find
+
+370
+00:13:54,360 --> 00:13:56,360
+a two-component wave function
+
+371
+00:13:56,360 --> 00:13:58,360
+that matches
+
+372
+00:13:58,360 --> 00:14:00,360
+the velocity?
+
+373
+00:14:00,360 --> 00:14:02,360
+Then I found that two-component
+
+374
+00:14:02,360 --> 00:14:04,360
+did a good job.
+
+375
+00:14:04,360 --> 00:14:06,360
+It means that it can be done
+
+376
+00:14:06,360 --> 00:14:08,360
+suddenly.
+
+377
+00:14:08,360 --> 00:14:10,360
+Is it a two-component?
+
+378
+00:14:10,360 --> 00:14:12,360
+Three-component.
+
+379
+00:14:12,360 --> 00:14:14,360
+Do you mean domain?
+
+380
+00:14:14,360 --> 00:14:16,360
+Is it a fluid domain?
+
+381
+00:14:18,360 --> 00:14:20,360
+Is it a fluid space?
+
+382
+00:14:20,360 --> 00:14:22,360
+Yes.
+
+383
+00:14:22,360 --> 00:14:24,360
+Two-component or three-component?
+
+384
+00:14:36,360 --> 00:14:38,360
+Sorry.
+
+385
+00:14:42,360 --> 00:14:44,360
+There are four variables
+
+386
+00:14:44,360 --> 00:14:46,360
+on your right hand side.
+
+387
+00:14:46,360 --> 00:14:48,360
+Each size is different.
+
+388
+00:14:48,360 --> 00:14:50,360
+On the left hand side,
+
+389
+00:14:50,360 --> 00:14:52,360
+there are two
+
+390
+00:14:52,360 --> 00:14:54,360
+or three variables.
+
+391
+00:14:56,360 --> 00:14:58,360
+If there are two variables,
+
+392
+00:14:58,360 --> 00:15:00,360
+there is a redundancy on the right hand side.
+
+393
+00:15:00,360 --> 00:15:02,360
+Do you know
+
+394
+00:15:02,360 --> 00:15:04,360
+what is redundancy?
+
+395
+00:15:04,360 --> 00:15:06,360
+You mean
+
+396
+00:15:06,360 --> 00:15:08,360
+four components
+
+397
+00:15:08,360 --> 00:15:10,360
+are like four-component,
+
+398
+00:15:10,360 --> 00:15:12,360
+but there are only three-component
+
+399
+00:15:12,360 --> 00:15:14,360
+to be described.
+
+400
+00:15:16,360 --> 00:15:18,360
+Yes, there is redundancy.
+
+401
+00:15:18,360 --> 00:15:20,360
+Then...
+
+402
+00:15:20,360 --> 00:15:22,360
+Let me think about it.
+
+403
+00:15:22,360 --> 00:15:24,360
+Is it a symmetry?
+
+404
+00:15:24,360 --> 00:15:26,360
+What?
+
+405
+00:15:26,360 --> 00:15:28,360
+Yes, it is.
+
+406
+00:15:28,360 --> 00:15:30,360
+It is a bit complicated.
+
+407
+00:15:30,360 --> 00:15:32,360
+There is a symmetry.
+
+408
+00:15:32,360 --> 00:15:34,360
+It means
+
+409
+00:15:34,360 --> 00:15:36,360
+when you write the velocity field
+
+410
+00:15:36,360 --> 00:15:38,360
+like this,
+
+411
+00:15:38,360 --> 00:15:40,360
+in the end,
+
+412
+00:15:40,360 --> 00:15:42,360
+we will do an unshrinkable flow.
+
+413
+00:15:42,360 --> 00:15:44,360
+The unshrinkable flow is just
+
+414
+00:15:44,360 --> 00:15:46,360
+that the velocity field drops a little bit.
+
+415
+00:15:46,360 --> 00:15:48,360
+All the velocity fields
+
+416
+00:15:48,360 --> 00:15:50,360
+can be projected.
+
+417
+00:15:50,360 --> 00:15:52,360
+All the radians of pressure
+
+418
+00:15:52,360 --> 00:15:54,360
+can be shrinked.
+
+419
+00:15:54,360 --> 00:15:56,360
+After this,
+
+420
+00:15:56,360 --> 00:15:58,360
+this space
+
+421
+00:15:58,360 --> 00:16:00,360
+will only be dominated by
+
+422
+00:16:00,360 --> 00:16:02,360
+one particle.
+
+423
+00:16:02,360 --> 00:16:04,360
+Given curl of u,
+
+424
+00:16:04,360 --> 00:16:06,360
+we can only decide how much u is.
+
+425
+00:16:06,360 --> 00:16:08,360
+The curl of u
+
+426
+00:16:08,360 --> 00:16:10,360
+will be mapped to
+
+427
+00:16:10,360 --> 00:16:12,360
+the two-component
+
+428
+00:16:12,360 --> 00:16:14,360
+wave function
+
+429
+00:16:14,360 --> 00:16:16,360
+corresponding to the spin vector
+
+430
+00:16:16,360 --> 00:16:18,360
+or block vector.
+
+431
+00:16:18,360 --> 00:16:20,360
+There is a gauge symmetry
+
+432
+00:16:20,360 --> 00:16:22,360
+which is the variable
+
+433
+00:16:22,360 --> 00:16:24,360
+of the unshrinkable area.
+
+434
+00:16:24,360 --> 00:16:26,360
+It will be
+
+435
+00:16:26,360 --> 00:16:28,360
+corresponding to the same velocity field.
+
+436
+00:16:28,360 --> 00:16:30,360
+In the end,
+
+437
+00:16:30,360 --> 00:16:32,360
+you will see a big
+
+438
+00:16:32,360 --> 00:16:34,360
+redundant degree of freedom.
+
+439
+00:16:34,360 --> 00:16:36,360
+So on the right,
+
+440
+00:16:36,360 --> 00:16:38,360
+the overall phase
+
+441
+00:16:38,360 --> 00:16:40,360
+of quantum mechanics
+
+442
+00:16:40,360 --> 00:16:42,360
+is not important.
+
+443
+00:16:42,360 --> 00:16:44,360
+Is it physical or...
+
+444
+00:16:44,360 --> 00:16:46,360
+It's the same.
+
+445
+00:16:46,360 --> 00:16:48,360
+It just matches
+
+446
+00:16:48,360 --> 00:16:50,360
+the velocity field.
+
+447
+00:16:50,360 --> 00:16:52,360
+In the velocity field,
+
+448
+00:16:52,360 --> 00:16:54,360
+we need to do pressure projection.
+
+449
+00:16:54,360 --> 00:16:56,360
+The redundancy.
+
+450
+00:16:56,360 --> 00:16:58,360
+In the end, it will match.
+
+451
+00:16:58,360 --> 00:17:00,360
+Yes.
+
+452
+00:17:00,360 --> 00:17:02,360
+In the velocity field,
+
+453
+00:17:02,360 --> 00:17:04,360
+we need to remove
+
+454
+00:17:04,360 --> 00:17:06,360
+some redundancy
+
+455
+00:17:06,360 --> 00:17:08,360
+to describe the
+
+456
+00:17:08,360 --> 00:17:10,360
+unshrinkable flow.
+
+457
+00:17:10,360 --> 00:17:12,360
+It's the phase shift
+
+458
+00:17:12,360 --> 00:17:14,360
+in Schrodinger's equation.
+
+459
+00:17:14,360 --> 00:17:16,360
+Why can you use
+
+460
+00:17:16,360 --> 00:17:18,360
+both domain and three-dimensional?
+
+461
+00:17:18,360 --> 00:17:20,360
+This is...
+
+462
+00:17:22,360 --> 00:17:24,360
+Actually,
+
+463
+00:17:24,360 --> 00:17:26,360
+domain can be done
+
+464
+00:17:26,360 --> 00:17:28,360
+in higher dimensions.
+
+465
+00:17:28,360 --> 00:17:30,360
+This is because...
+
+466
+00:17:30,360 --> 00:17:32,360
+I don't know how to explain.
+
+467
+00:17:32,360 --> 00:17:34,360
+It's...
+
+468
+00:17:34,360 --> 00:17:36,360
+Simply put,
+
+469
+00:17:36,360 --> 00:17:38,360
+vorticity is a two-form.
+
+470
+00:17:38,360 --> 00:17:40,360
+Only that thing
+
+471
+00:17:40,360 --> 00:17:42,360
+is used
+
+472
+00:17:42,360 --> 00:17:44,360
+to describe the flow.
+
+473
+00:17:44,360 --> 00:17:46,360
+It's...
+
+474
+00:17:46,360 --> 00:17:48,360
+It's...
+
+475
+00:17:48,360 --> 00:17:50,360
+If I say
+
+476
+00:17:50,360 --> 00:17:52,360
+the speed of unshrinkable flow
+
+477
+00:17:52,360 --> 00:17:54,360
+is equal to
+
+478
+00:17:54,360 --> 00:17:56,360
+the vorticity.
+
+479
+00:17:56,360 --> 00:17:58,360
+It's a two-form.
+
+480
+00:17:58,360 --> 00:18:00,360
+In the end,
+
+481
+00:18:00,360 --> 00:18:02,360
+you only need
+
+482
+00:18:02,360 --> 00:18:04,360
+a map.
+
+483
+00:18:04,360 --> 00:18:06,360
+At most, you only need
+
+484
+00:18:06,360 --> 00:18:08,360
+a map.
+
+485
+00:18:08,360 --> 00:18:10,360
+So, vorticity is a two-form.
+
+486
+00:18:10,360 --> 00:18:12,360
+Yes.
+
+487
+00:18:12,360 --> 00:18:14,360
+If it's in the other direction,
+
+488
+00:18:14,360 --> 00:18:16,360
+it won't shrink.
+
+489
+00:18:16,360 --> 00:18:18,360
+It's not important.
+
+490
+00:18:18,360 --> 00:18:20,360
+It can shrink.
+
+491
+00:18:22,360 --> 00:18:24,360
+Yes.
+
+492
+00:18:24,360 --> 00:18:26,360
+You can see
+
+493
+00:18:26,360 --> 00:18:28,360
+in the end.
+
+494
+00:18:28,360 --> 00:18:30,360
+Now, let's say it's just a metronome.
+
+495
+00:18:30,360 --> 00:18:32,360
+Will you talk about turbulence?
+
+496
+00:18:32,360 --> 00:18:34,360
+I won't talk about turbulence.
+
+497
+00:18:34,360 --> 00:18:36,360
+But I will talk about
+
+498
+00:18:36,360 --> 00:18:38,360
+the dynamics of a normal vortex.
+
+499
+00:18:42,360 --> 00:18:44,360
+This is incompressible Schrödinger's flow.
+
+500
+00:18:44,360 --> 00:18:46,360
+Then we...
+
+501
+00:18:46,360 --> 00:18:48,360
+The mathematical simulation
+
+502
+00:18:48,360 --> 00:18:50,360
+is very simple.
+
+503
+00:18:50,360 --> 00:18:52,360
+You just need to
+
+504
+00:18:52,360 --> 00:18:54,360
+make a circle and
+
+505
+00:18:54,360 --> 00:18:56,360
+solve the linear Schrödinger's equation.
+
+506
+00:18:56,360 --> 00:18:58,360
+It corresponds to
+
+507
+00:18:58,360 --> 00:19:00,360
+your field.
+
+508
+00:19:00,360 --> 00:19:02,360
+It's like a simulation
+
+509
+00:19:02,360 --> 00:19:04,360
+of inertia motion.
+
+510
+00:19:04,360 --> 00:19:06,360
+Then you apply potential force
+
+511
+00:19:06,360 --> 00:19:08,360
+to make the field
+
+512
+00:19:08,360 --> 00:19:10,360
+become divergence-free.
+
+513
+00:19:12,360 --> 00:19:14,360
+Then we started to do some simulations.
+
+514
+00:19:14,360 --> 00:19:16,360
+In the end, we found
+
+515
+00:19:16,360 --> 00:19:18,360
+that it was
+
+516
+00:19:18,360 --> 00:19:20,360
+very successful
+
+517
+00:19:20,360 --> 00:19:22,360
+in simulating
+
+518
+00:19:22,360 --> 00:19:24,360
+vortex dynamics.
+
+519
+00:19:24,360 --> 00:19:26,360
+What is vortex?
+
+520
+00:19:26,360 --> 00:19:28,360
+I just said curl of velocity.
+
+521
+00:19:28,360 --> 00:19:30,360
+That thing is called vorticity.
+
+522
+00:19:30,360 --> 00:19:32,360
+In the real fluid,
+
+523
+00:19:32,360 --> 00:19:34,360
+it only appears
+
+524
+00:19:34,360 --> 00:19:36,360
+from the boundary.
+
+525
+00:19:36,360 --> 00:19:38,360
+It appears from the boundary.
+
+526
+00:19:38,360 --> 00:19:40,360
+When it forms,
+
+527
+00:19:40,360 --> 00:19:42,360
+it's already low-dimensional.
+
+528
+00:19:42,360 --> 00:19:44,360
+It's two-dimensional geometry.
+
+529
+00:19:44,360 --> 00:19:46,360
+That's vortex sheet.
+
+530
+00:19:46,360 --> 00:19:48,360
+Vortex sheet is not stable.
+
+531
+00:19:48,360 --> 00:19:50,360
+It will quickly curl into
+
+532
+00:19:50,360 --> 00:19:52,360
+vortex filaments.
+
+533
+00:19:52,360 --> 00:19:54,360
+It will become a vortex structure.
+
+534
+00:19:54,360 --> 00:19:56,360
+That structure will become very stable.
+
+535
+00:19:56,360 --> 00:19:58,360
+We see a lot of vortex in our daily lives.
+
+536
+00:19:58,360 --> 00:20:00,360
+That's what we call
+
+537
+00:20:00,360 --> 00:20:02,360
+vortex filaments.
+
+538
+00:20:02,360 --> 00:20:04,360
+Are those two real photos?
+
+539
+00:20:04,360 --> 00:20:06,360
+Yes, they are.
+
+540
+00:20:06,360 --> 00:20:08,360
+They are not photoshopped.
+
+541
+00:20:10,360 --> 00:20:12,360
+They look like real photos.
+
+542
+00:20:12,360 --> 00:20:14,360
+The color is very bright.
+
+543
+00:20:14,360 --> 00:20:16,360
+You need to add a filter.
+
+544
+00:20:16,360 --> 00:20:18,360
+Yes, I need to add a filter.
+
+545
+00:20:22,360 --> 00:20:24,360
+This is a real video.
+
+546
+00:20:24,360 --> 00:20:26,360
+But vortex filaments
+
+547
+00:20:26,360 --> 00:20:28,360
+are hard to simulate
+
+548
+00:20:28,360 --> 00:20:30,360
+with a normal
+
+549
+00:20:30,360 --> 00:20:32,360
+fluid software.
+
+550
+00:20:32,360 --> 00:20:34,360
+Because
+
+551
+00:20:34,360 --> 00:20:36,360
+these vortex motions
+
+552
+00:20:36,360 --> 00:20:38,360
+are very sensitive
+
+553
+00:20:38,360 --> 00:20:40,360
+to the
+
+554
+00:20:40,360 --> 00:20:42,360
+vortex thickness.
+
+555
+00:20:44,360 --> 00:20:46,360
+If the vortex becomes thicker,
+
+556
+00:20:46,360 --> 00:20:48,360
+it will become slower.
+
+557
+00:20:48,360 --> 00:20:50,360
+If it becomes thinner, it will become faster.
+
+558
+00:20:50,360 --> 00:20:52,360
+So if you really want to...
+
+559
+00:20:52,360 --> 00:20:54,360
+And the whole fluid is
+
+560
+00:20:54,360 --> 00:20:56,360
+the whole fluid motion
+
+561
+00:20:56,360 --> 00:20:58,360
+is dominated by
+
+562
+00:20:58,360 --> 00:21:00,360
+these
+
+563
+00:21:00,360 --> 00:21:02,360
+one-dimensional filaments.
+
+564
+00:21:02,360 --> 00:21:04,360
+So if you want to calculate the whole fluid
+
+565
+00:21:04,360 --> 00:21:06,360
+qualitatively correct,
+
+566
+00:21:06,360 --> 00:21:08,360
+you need to use a very high
+
+567
+00:21:08,360 --> 00:21:10,360
+resolution fluid to solve
+
+568
+00:21:10,360 --> 00:21:12,360
+those vortex.
+
+569
+00:21:12,360 --> 00:21:14,360
+Otherwise, the thickness will be misinterpreted.
+
+570
+00:21:14,360 --> 00:21:16,360
+The whole
+
+571
+00:21:16,360 --> 00:21:18,360
+vortex dynamics
+
+572
+00:21:18,360 --> 00:21:20,360
+will be qualitatively wrong.
+
+573
+00:21:20,360 --> 00:21:22,360
+So you either need
+
+574
+00:21:22,360 --> 00:21:24,360
+a very expensive grid,
+
+575
+00:21:24,360 --> 00:21:26,360
+or you need to use some very complicated methods
+
+576
+00:21:26,360 --> 00:21:28,360
+to describe those vortex dynamics
+
+577
+00:21:28,360 --> 00:21:30,360
+using some real curves.
+
+578
+00:21:30,360 --> 00:21:32,360
+Then you can do those simple reconnections.
+
+579
+00:21:34,360 --> 00:21:36,360
+But if you use Schrodinger's
+
+580
+00:21:36,360 --> 00:21:38,360
+equation...
+
+581
+00:21:38,360 --> 00:21:40,360
+Let me talk about
+
+582
+00:21:40,360 --> 00:21:42,360
+the difficulties first.
+
+583
+00:21:42,360 --> 00:21:44,360
+You can see from some benchmark tests.
+
+584
+00:21:44,360 --> 00:21:46,360
+There is a phenomenon called leapfrogging vortex rings.
+
+585
+00:21:46,360 --> 00:21:48,360
+If you put two vortex rings
+
+586
+00:21:48,360 --> 00:21:50,360
+in front and back,
+
+587
+00:21:50,360 --> 00:21:52,360
+the vortex rings will be sucked
+
+588
+00:21:52,360 --> 00:21:54,360
+to the front.
+
+589
+00:21:54,360 --> 00:21:56,360
+This is a real video.
+
+590
+00:21:56,360 --> 00:21:58,360
+They will be exchanged.
+
+591
+00:21:58,360 --> 00:22:00,360
+Then you will see...
+
+592
+00:22:00,360 --> 00:22:02,360
+Will the people on the line see
+
+593
+00:22:02,360 --> 00:22:04,360
+the same thing?
+
+594
+00:22:06,360 --> 00:22:08,360
+Anyway,
+
+595
+00:22:08,360 --> 00:22:10,360
+two vortex rings will leapfrog.
+
+596
+00:22:10,360 --> 00:22:12,360
+But if you use
+
+597
+00:22:12,360 --> 00:22:14,360
+a general
+
+598
+00:22:14,360 --> 00:22:16,360
+mathematical method
+
+599
+00:22:16,360 --> 00:22:18,360
+to solve Euler's equation or Navier-Stokes equation,
+
+600
+00:22:18,360 --> 00:22:20,360
+even if you use a very advanced method,
+
+601
+00:22:20,360 --> 00:22:22,360
+but if you are in a very rough grid,
+
+602
+00:22:22,360 --> 00:22:24,360
+the two vortex rings will merge together very quickly.
+
+603
+00:22:24,360 --> 00:22:26,360
+Then you won't see that leapfrogging phenomenon.
+
+604
+00:22:26,360 --> 00:22:28,360
+Now we are solving...
+
+605
+00:22:28,360 --> 00:22:30,360
+We just
+
+606
+00:22:30,360 --> 00:22:32,360
+introduced incompressible Schrodinger flow.
+
+607
+00:22:32,360 --> 00:22:34,360
+It has the same resolution size.
+
+608
+00:22:34,360 --> 00:22:36,360
+You can see that
+
+609
+00:22:36,360 --> 00:22:38,360
+it can do this.
+
+610
+00:22:38,360 --> 00:22:40,360
+It can reproduce
+
+611
+00:22:40,360 --> 00:22:42,360
+this observed phenomenon.
+
+612
+00:22:42,360 --> 00:22:44,360
+Then...
+
+613
+00:22:44,360 --> 00:22:46,360
+Let me ask a question.
+
+614
+00:22:46,360 --> 00:22:48,360
+You just said
+
+615
+00:22:48,360 --> 00:22:50,360
+that it can reproduce this phenomenon.
+
+616
+00:22:50,360 --> 00:22:52,360
+It means that
+
+617
+00:22:52,360 --> 00:22:54,360
+you can see it like this.
+
+618
+00:22:54,360 --> 00:22:56,360
+But if you change it to a parameter,
+
+619
+00:22:56,360 --> 00:22:58,360
+it can really
+
+620
+00:22:58,360 --> 00:23:00,360
+change to
+
+621
+00:23:00,360 --> 00:23:02,360
+the gas you just saw.
+
+622
+00:23:02,360 --> 00:23:04,360
+Yes.
+
+623
+00:23:04,360 --> 00:23:06,360
+Because there are some parameters in it.
+
+624
+00:23:06,360 --> 00:23:08,360
+So if you want to do
+
+625
+00:23:08,360 --> 00:23:10,360
+further parameter
+
+626
+00:23:10,360 --> 00:23:12,360
+tuning,
+
+627
+00:23:12,360 --> 00:23:14,360
+of course you can match it.
+
+628
+00:23:14,360 --> 00:23:16,360
+It's actually very simple.
+
+629
+00:23:16,360 --> 00:23:18,360
+Just two rings.
+
+630
+00:23:18,360 --> 00:23:20,360
+It has a certain vortex.
+
+631
+00:23:20,360 --> 00:23:22,360
+When the ring is small enough,
+
+632
+00:23:22,360 --> 00:23:24,360
+its final dynamics is dominated by
+
+633
+00:23:24,360 --> 00:23:26,360
+the dynamics of the vortex filaments.
+
+634
+00:23:26,360 --> 00:23:28,360
+That thing is
+
+635
+00:23:28,360 --> 00:23:30,360
+mathematically...
+
+636
+00:23:30,360 --> 00:23:32,360
+Even Schrodinger, you can push it out.
+
+637
+00:23:32,360 --> 00:23:34,360
+Under that progressive behavior,
+
+638
+00:23:34,360 --> 00:23:36,360
+it's the same.
+
+639
+00:23:36,360 --> 00:23:38,360
+It's...
+
+640
+00:23:38,360 --> 00:23:40,360
+It's...
+
+641
+00:23:40,360 --> 00:23:42,360
+You can push it out.
+
+642
+00:23:42,360 --> 00:23:44,360
+Then the two rings will jump like this.
+
+643
+00:23:46,360 --> 00:23:48,360
+Yes.
+
+644
+00:23:48,360 --> 00:23:50,360
+This system is very robust.
+
+645
+00:23:50,360 --> 00:23:52,360
+If you put the two rings together,
+
+646
+00:23:52,360 --> 00:23:54,360
+it will jump.
+
+647
+00:23:54,360 --> 00:23:56,360
+It will jump according to
+
+648
+00:23:56,360 --> 00:23:58,360
+the evolution distance.
+
+649
+00:23:58,360 --> 00:24:00,360
+So we just put it anywhere and it will jump.
+
+650
+00:24:02,360 --> 00:24:04,360
+Another phenomenon is also a very simple setup.
+
+651
+00:24:04,360 --> 00:24:06,360
+It means that you put two vortex rings
+
+652
+00:24:06,360 --> 00:24:08,360
+on each other.
+
+653
+00:24:08,360 --> 00:24:10,360
+But there is an angle.
+
+654
+00:24:10,360 --> 00:24:12,360
+Then they will recombine.
+
+655
+00:24:12,360 --> 00:24:14,360
+Then it will separate from the other two directions.
+
+656
+00:24:14,360 --> 00:24:16,360
+This is a real experiment.
+
+657
+00:24:18,360 --> 00:24:20,360
+You can see the two rings.
+
+658
+00:24:20,360 --> 00:24:22,360
+It's like this.
+
+659
+00:24:22,360 --> 00:24:24,360
+Then it separates.
+
+660
+00:24:24,360 --> 00:24:26,360
+If you use a normal
+
+661
+00:24:26,360 --> 00:24:28,360
+LTI
+
+662
+00:24:32,360 --> 00:24:34,360
+software,
+
+663
+00:24:34,360 --> 00:24:36,360
+it's hard to simulate this thing.
+
+664
+00:24:36,360 --> 00:24:38,360
+It really needs very high accuracy.
+
+665
+00:24:38,360 --> 00:24:40,360
+This is the same as
+
+666
+00:24:40,360 --> 00:24:42,360
+our method.
+
+667
+00:24:42,360 --> 00:24:44,360
+You can find this phenomenon
+
+668
+00:24:44,360 --> 00:24:46,360
+on a very thick network.
+
+669
+00:24:46,360 --> 00:24:48,360
+Then
+
+670
+00:24:48,360 --> 00:24:50,360
+I just said that
+
+671
+00:24:52,360 --> 00:24:54,360
+when simulating LTI,
+
+672
+00:24:54,360 --> 00:24:56,360
+its grid resolution
+
+673
+00:24:56,360 --> 00:24:58,360
+dominates a large part.
+
+674
+00:24:58,360 --> 00:25:00,360
+So you can see that
+
+675
+00:25:00,360 --> 00:25:02,360
+using some traditional methods
+
+676
+00:25:04,360 --> 00:25:06,360
+to look at
+
+677
+00:25:06,360 --> 00:25:08,360
+the node.
+
+678
+00:25:08,360 --> 00:25:10,360
+Then you will find that at different resolutions,
+
+679
+00:25:10,360 --> 00:25:12,360
+the result is the same.
+
+680
+00:25:12,360 --> 00:25:14,360
+So using our method
+
+681
+00:25:14,360 --> 00:25:16,360
+on a very thick network, it's close to the end.
+
+682
+00:25:16,360 --> 00:25:18,360
+It can simulate
+
+683
+00:25:18,360 --> 00:25:20,360
+some other interesting phenomena.
+
+684
+00:25:22,360 --> 00:25:24,360
+It can be used
+
+685
+00:25:24,360 --> 00:25:26,360
+in computer graphics.
+
+686
+00:25:26,360 --> 00:25:28,360
+For example, you can simulate a jet.
+
+687
+00:25:28,360 --> 00:25:30,360
+You can simulate an obstacle.
+
+688
+00:25:30,360 --> 00:25:32,360
+The vortex behind.
+
+689
+00:25:32,360 --> 00:25:34,360
+The vortex behind.
+
+690
+00:25:34,360 --> 00:25:36,360
+Then you can simulate
+
+691
+00:25:36,360 --> 00:25:38,360
+a moving obstacle.
+
+692
+00:25:40,360 --> 00:25:42,360
+This video looks good when it looks smooth.
+
+693
+00:25:42,360 --> 00:25:44,360
+Then there's
+
+694
+00:25:44,360 --> 00:25:46,360
+another
+
+695
+00:25:46,360 --> 00:25:48,360
+moving obstacle.
+
+696
+00:25:48,360 --> 00:25:50,360
+Because
+
+697
+00:25:50,360 --> 00:25:52,360
+in this kind of vortex dynamics,
+
+698
+00:25:52,360 --> 00:25:54,360
+if it can be calculated accurately,
+
+699
+00:25:54,360 --> 00:25:56,360
+you can see
+
+700
+00:25:56,360 --> 00:25:58,360
+a more realistic vortex
+
+701
+00:25:58,360 --> 00:26:00,360
+phenomenon.
+
+702
+00:26:00,360 --> 00:26:02,360
+This is really important
+
+703
+00:26:02,360 --> 00:26:04,360
+in computer graphics.
+
+704
+00:26:06,360 --> 00:26:08,360
+These are two
+
+705
+00:26:08,360 --> 00:26:10,360
+water-absorbing boxes.
+
+706
+00:26:10,360 --> 00:26:12,360
+It's called secondary small ring shoot-off.
+
+707
+00:26:12,360 --> 00:26:14,360
+What I'm doing here is
+
+708
+00:26:14,360 --> 00:26:16,360
+putting two
+
+709
+00:26:16,360 --> 00:26:18,360
+pieces of ink
+
+710
+00:26:18,360 --> 00:26:20,360
+on top of each other.
+
+711
+00:26:20,360 --> 00:26:22,360
+It will also
+
+712
+00:26:22,360 --> 00:26:24,360
+have a problem.
+
+713
+00:26:24,360 --> 00:26:26,360
+What is network complexity?
+
+714
+00:26:28,360 --> 00:26:30,360
+Network complexity is
+
+715
+00:26:30,360 --> 00:26:32,360
+that
+
+716
+00:26:32,360 --> 00:26:34,360
+my computation grid
+
+717
+00:26:34,360 --> 00:26:36,360
+how many
+
+718
+00:26:36,360 --> 00:26:38,360
+pieces each side has to cut.
+
+719
+00:26:38,360 --> 00:26:40,360
+So usually
+
+720
+00:26:40,360 --> 00:26:42,360
+usually
+
+721
+00:26:42,360 --> 00:26:44,360
+you have to
+
+722
+00:26:44,360 --> 00:26:46,360
+cut 256
+
+723
+00:26:46,360 --> 00:26:48,360
+times 256 times 256.
+
+724
+00:26:50,360 --> 00:26:52,360
+Or 512 times 512.
+
+725
+00:26:52,360 --> 00:26:54,360
+You often need
+
+726
+00:26:54,360 --> 00:26:56,360
+a very large memory
+
+727
+00:26:56,360 --> 00:26:58,360
+to eat.
+
+728
+00:26:58,360 --> 00:27:00,360
+Or you need to use cluster to compute.
+
+729
+00:27:00,360 --> 00:27:02,360
+This is 64 times
+
+730
+00:27:02,360 --> 00:27:04,360
+64 times 64.
+
+731
+00:27:04,360 --> 00:27:06,360
+Then you introduce it in these grids.
+
+732
+00:27:08,360 --> 00:27:10,360
+Yes.
+
+733
+00:27:10,360 --> 00:27:12,360
+What is relative?
+
+734
+00:27:14,360 --> 00:27:16,360
+You can't say it's relative.
+
+735
+00:27:16,360 --> 00:27:18,360
+How big is the thing in the middle?
+
+736
+00:27:18,360 --> 00:27:20,360
+Oh.
+
+737
+00:27:20,360 --> 00:27:22,360
+It's relative.
+
+738
+00:27:22,360 --> 00:27:24,360
+Just look at this picture.
+
+739
+00:27:24,360 --> 00:27:26,360
+It's
+
+740
+00:27:26,360 --> 00:27:28,360
+64 times 64 times 64.
+
+741
+00:27:28,360 --> 00:27:30,360
+If you put it on the computer
+
+742
+00:27:30,360 --> 00:27:32,360
+you can see
+
+743
+00:27:32,360 --> 00:27:34,360
+that
+
+744
+00:27:34,360 --> 00:27:36,360
+the gray part at the bottom is the network.
+
+745
+00:27:36,360 --> 00:27:38,360
+You can see the grid.
+
+746
+00:27:38,360 --> 00:27:40,360
+That's the real
+
+747
+00:27:40,360 --> 00:27:42,360
+network on the
+
+748
+00:27:42,360 --> 00:27:44,360
+computation of Lisan.
+
+749
+00:27:44,360 --> 00:27:46,360
+So the length of the command
+
+750
+00:27:46,360 --> 00:27:48,360
+is actually normalized.
+
+751
+00:27:48,360 --> 00:27:50,360
+Yes.
+
+752
+00:27:52,360 --> 00:27:54,360
+It has a physical size
+
+753
+00:27:54,360 --> 00:27:56,360
+which is 1m x 1m x 1m.
+
+754
+00:27:56,360 --> 00:27:58,360
+And
+
+755
+00:27:58,360 --> 00:28:00,360
+it has a resolution which is dimensionless.
+
+756
+00:28:00,360 --> 00:28:02,360
+It's 1 out of 64.
+
+757
+00:28:02,360 --> 00:28:04,360
+Then you put it on that position.
+
+758
+00:28:04,360 --> 00:28:06,360
+It becomes the smallest length in the world.
+
+759
+00:28:06,360 --> 00:28:08,360
+At this length
+
+760
+00:28:08,360 --> 00:28:10,360
+we simulate the Lisan version
+
+761
+00:28:10,360 --> 00:28:12,360
+of this grid.
+
+762
+00:28:12,360 --> 00:28:14,360
+Theoretically
+
+763
+00:28:14,360 --> 00:28:16,360
+at this length
+
+764
+00:28:16,360 --> 00:28:18,360
+when it's dimensionless
+
+765
+00:28:18,360 --> 00:28:20,360
+it will be
+
+766
+00:28:20,360 --> 00:28:22,360
+limited to the real
+
+767
+00:28:22,360 --> 00:28:24,360
+continuous world.
+
+768
+00:28:24,360 --> 00:28:26,360
+And this picture
+
+769
+00:28:26,360 --> 00:28:28,360
+is when I'm at 64 times 64 times 64
+
+770
+00:28:28,360 --> 00:28:30,360
+it's very close.
+
+771
+00:28:30,360 --> 00:28:32,360
+But in the traditional method
+
+772
+00:28:32,360 --> 00:28:34,360
+you need a higher resolution.
+
+773
+00:28:40,360 --> 00:28:42,360
+Why did you choose this picture?
+
+774
+00:28:42,360 --> 00:28:44,360
+This is the community.
+
+775
+00:28:44,360 --> 00:28:46,360
+It's a little perverted.
+
+776
+00:28:50,360 --> 00:28:52,360
+You can actually add gravity.
+
+777
+00:28:52,360 --> 00:28:54,360
+It's a little bit
+
+778
+00:28:54,360 --> 00:28:56,360
+when the density is different.
+
+779
+00:28:56,360 --> 00:28:58,360
+That's because
+
+780
+00:28:58,360 --> 00:29:00,360
+there are two components.
+
+781
+00:29:00,360 --> 00:29:02,360
+You can play a trick.
+
+782
+00:29:02,360 --> 00:29:04,360
+For example, when the potential of two components
+
+783
+00:29:04,360 --> 00:29:06,360
+is a little different
+
+784
+00:29:06,360 --> 00:29:08,360
+you can make some effects.
+
+785
+00:29:14,360 --> 00:29:16,360
+Because of the gravity
+
+786
+00:29:16,360 --> 00:29:18,360
+the gravity of the air
+
+787
+00:29:18,360 --> 00:29:20,360
+is pushed up.
+
+788
+00:29:20,360 --> 00:29:22,360
+And this is bar.
+
+789
+00:29:22,360 --> 00:29:24,360
+H bar
+
+790
+00:29:24,360 --> 00:29:26,360
+has a unit
+
+791
+00:29:26,360 --> 00:29:28,360
+which is meter square
+
+792
+00:29:28,360 --> 00:29:30,360
+meter square divided by second.
+
+793
+00:29:30,360 --> 00:29:32,360
+And
+
+794
+00:29:32,360 --> 00:29:34,360
+so
+
+795
+00:29:34,360 --> 00:29:36,360
+I usually
+
+796
+00:29:36,360 --> 00:29:38,360
+make it dimensionless.
+
+797
+00:29:38,360 --> 00:29:40,360
+So according to my real
+
+798
+00:29:40,360 --> 00:29:42,360
+density
+
+799
+00:29:42,360 --> 00:29:44,360
+it's 1 meter by 1 meter by 1 meter.
+
+800
+00:29:44,360 --> 00:29:46,360
+There is a
+
+801
+00:29:46,360 --> 00:29:48,360
+characteristic length
+
+802
+00:29:48,360 --> 00:29:50,360
+which is 1 meter.
+
+803
+00:29:50,360 --> 00:29:52,360
+And then you start to get rid of these variables.
+
+804
+00:29:54,360 --> 00:29:56,360
+Based on experience.
+
+805
+00:29:56,360 --> 00:29:58,360
+Planck constant
+
+806
+00:29:58,360 --> 00:30:00,360
+has nothing to do with the real Planck constant.
+
+807
+00:30:04,360 --> 00:30:06,360
+My final analysis will say
+
+808
+00:30:06,360 --> 00:30:08,360
+you don't have to get close to 0.
+
+809
+00:30:08,360 --> 00:30:10,360
+That is to say
+
+810
+00:30:10,360 --> 00:30:12,360
+H bar can be very large.
+
+811
+00:30:12,360 --> 00:30:14,360
+The phenomenon you just saw
+
+812
+00:30:14,360 --> 00:30:16,360
+is the result when H bar is very large.
+
+813
+00:30:16,360 --> 00:30:18,360
+Finally, we did a mathematical analysis
+
+814
+00:30:18,360 --> 00:30:20,360
+and found that
+
+815
+00:30:20,360 --> 00:30:22,360
+when H bar is very large
+
+816
+00:30:22,360 --> 00:30:24,360
+the result of Perturb
+
+817
+00:30:24,360 --> 00:30:26,360
+is the difference between it and the Euler equation
+
+818
+00:30:26,360 --> 00:30:28,360
+the effect
+
+819
+00:30:28,360 --> 00:30:30,360
+is only in the
+
+820
+00:30:30,360 --> 00:30:32,360
+vortex
+
+821
+00:30:32,360 --> 00:30:34,360
+and other places it will be very fast
+
+822
+00:30:34,360 --> 00:30:36,360
+to the Euler equation.
+
+823
+00:30:36,360 --> 00:30:38,360
+There is this kind of
+
+824
+00:30:38,360 --> 00:30:40,360
+argument.
+
+825
+00:30:40,360 --> 00:30:42,360
+In this case, you will find that
+
+826
+00:30:42,360 --> 00:30:44,360
+when H bar is very large,
+
+827
+00:30:44,360 --> 00:30:46,360
+it will get the vortex
+
+828
+00:30:46,360 --> 00:30:48,360
+dominated Euler equation.
+
+829
+00:30:48,360 --> 00:30:50,360
+Then you will find
+
+830
+00:30:50,360 --> 00:30:52,360
+that
+
+831
+00:30:52,360 --> 00:30:54,360
+I will talk about this later.
+
+832
+00:30:54,360 --> 00:30:56,360
+I don't know what I'm talking about.
+
+833
+00:30:56,360 --> 00:30:58,360
+But
+
+834
+00:30:58,360 --> 00:31:00,360
+H bar
+
+835
+00:31:00,360 --> 00:31:02,360
+when it is very small
+
+836
+00:31:02,360 --> 00:31:04,360
+it will become exactly the Euler equation.
+
+837
+00:31:04,360 --> 00:31:06,360
+You just saw
+
+838
+00:31:06,360 --> 00:31:08,360
+when H bar is very large
+
+839
+00:31:08,360 --> 00:31:10,360
+I can simulate some phenomena
+
+840
+00:31:10,360 --> 00:31:12,360
+and it is matched.
+
+841
+00:31:12,360 --> 00:31:14,360
+I can see the phenomenon in the vortex.
+
+842
+00:31:14,360 --> 00:31:16,360
+It is the same as the vortex.
+
+843
+00:31:16,360 --> 00:31:18,360
+If H bar is very small
+
+844
+00:31:18,360 --> 00:31:20,360
+it will be the same.
+
+845
+00:31:20,360 --> 00:31:22,360
+It will be the same.
+
+846
+00:31:22,360 --> 00:31:24,360
+It can detect the Euler equation
+
+847
+00:31:24,360 --> 00:31:26,360
+on a very large network.
+
+848
+00:31:26,360 --> 00:31:28,360
+Yes, if H bar is too small
+
+849
+00:31:28,360 --> 00:31:30,360
+I think H bar is a bit
+
+850
+00:31:30,360 --> 00:31:32,360
+too large.
+
+851
+00:31:34,360 --> 00:31:36,360
+Yes.
+
+852
+00:31:36,360 --> 00:31:38,360
+In fact, it is H bar
+
+853
+00:31:38,360 --> 00:31:40,360
+that you have to choose.
+
+854
+00:31:44,360 --> 00:31:46,360
+H bar will correspond to
+
+855
+00:31:46,360 --> 00:31:48,360
+your
+
+856
+00:31:48,360 --> 00:31:50,360
+If you know the super fluid
+
+857
+00:31:50,360 --> 00:31:52,360
+there is an H bar inside.
+
+858
+00:31:52,360 --> 00:31:54,360
+That thing will cause the vortex
+
+859
+00:31:54,360 --> 00:31:56,360
+quantization.
+
+860
+00:31:56,360 --> 00:31:58,360
+That is, every vortex unit
+
+861
+00:31:58,360 --> 00:32:00,360
+can be quantized into H bar units.
+
+862
+00:32:00,360 --> 00:32:02,360
+In that case
+
+863
+00:32:02,360 --> 00:32:04,360
+you will see that
+
+864
+00:32:04,360 --> 00:32:06,360
+H bar is very small
+
+865
+00:32:06,360 --> 00:32:08,360
+you have to have the same strength
+
+866
+00:32:08,360 --> 00:32:10,360
+of vortex to detect
+
+867
+00:32:10,360 --> 00:32:12,360
+a lot of small vortices.
+
+868
+00:32:14,360 --> 00:32:16,360
+You can take the real fluid as
+
+869
+00:32:16,360 --> 00:32:18,360
+vortex becomes
+
+870
+00:32:18,360 --> 00:32:20,360
+a continuum.
+
+871
+00:32:20,360 --> 00:32:22,360
+That is, vortex can be any
+
+872
+00:32:22,360 --> 00:32:24,360
+number or size.
+
+873
+00:32:24,360 --> 00:32:26,360
+It can be taken as H bar is infinitely small
+
+874
+00:32:26,360 --> 00:32:28,360
+and there are a lot of vortices.
+
+875
+00:32:28,360 --> 00:32:30,360
+But when H bar is large
+
+876
+00:32:30,360 --> 00:32:32,360
+it still has some thicker vortices.
+
+877
+00:32:32,360 --> 00:32:34,360
+Those vortex dynamics
+
+878
+00:32:34,360 --> 00:32:36,360
+are similar to the vortex dynamics
+
+879
+00:32:36,360 --> 00:32:38,360
+in the fluid.
+
+880
+00:32:42,360 --> 00:32:44,360
+What is the advantage of simulation?
+
+881
+00:32:44,360 --> 00:32:46,360
+Is it because
+
+882
+00:32:46,360 --> 00:32:48,360
+we don't know what linear is?
+
+883
+00:32:48,360 --> 00:32:50,360
+Or does it have some special properties?
+
+884
+00:32:50,360 --> 00:32:52,360
+There are two
+
+885
+00:32:52,360 --> 00:32:54,360
+advantages.
+
+886
+00:32:54,360 --> 00:32:56,360
+One is
+
+887
+00:32:56,360 --> 00:32:58,360
+that the method
+
+888
+00:32:58,360 --> 00:33:00,360
+becomes simpler.
+
+889
+00:33:00,360 --> 00:33:02,360
+You don't have to worry about
+
+890
+00:33:02,360 --> 00:33:04,360
+how to idealize.
+
+891
+00:33:04,360 --> 00:33:06,360
+Because that thing is quite difficult.
+
+892
+00:33:06,360 --> 00:33:08,360
+You just need to idealize the linear system.
+
+893
+00:33:08,360 --> 00:33:10,360
+In Numerical Method
+
+894
+00:33:10,360 --> 00:33:12,360
+it becomes
+
+895
+00:33:12,360 --> 00:33:14,360
+an extreme simplification.
+
+896
+00:33:14,360 --> 00:33:16,360
+The other is
+
+897
+00:33:16,360 --> 00:33:18,360
+that even if I simulate
+
+898
+00:33:18,360 --> 00:33:20,360
+in a very advanced way
+
+899
+00:33:20,360 --> 00:33:22,360
+those non-linear OEVs
+
+900
+00:33:22,360 --> 00:33:24,360
+still can't simulate those phenomena.
+
+901
+00:33:24,360 --> 00:33:26,360
+In our method
+
+902
+00:33:26,360 --> 00:33:28,360
+I can simulate those phenomena
+
+903
+00:33:28,360 --> 00:33:30,360
+in a very early stage.
+
+904
+00:33:30,360 --> 00:33:32,360
+Especially on those
+
+905
+00:33:32,360 --> 00:33:34,360
+thin vortex dynamics.
+
+906
+00:33:34,360 --> 00:33:36,360
+These are the two advantages.
+
+907
+00:33:38,360 --> 00:33:40,360
+Someone asked
+
+908
+00:33:40,360 --> 00:33:42,360
+what is the physics of H bar?
+
+909
+00:33:44,360 --> 00:33:46,360
+Isn't it a high-level question?
+
+910
+00:33:46,360 --> 00:33:48,360
+The physics of H bar
+
+911
+00:33:48,360 --> 00:33:50,360
+in this fluid world
+
+912
+00:33:50,360 --> 00:33:52,360
+can be regarded as a parameter.
+
+913
+00:33:52,360 --> 00:33:54,360
+It will be connected to
+
+914
+00:33:58,360 --> 00:34:00,360
+for example
+
+915
+00:34:02,360 --> 00:34:04,360
+in this animation
+
+916
+00:34:04,360 --> 00:34:06,360
+you can see
+
+917
+00:34:06,360 --> 00:34:08,360
+a small amount of
+
+918
+00:34:08,360 --> 00:34:10,360
+in the end
+
+919
+00:34:10,360 --> 00:34:12,360
+the vortex will
+
+920
+00:34:12,360 --> 00:34:14,360
+cascade to a very low level
+
+921
+00:34:14,360 --> 00:34:16,360
+and look like turbulence.
+
+922
+00:34:16,360 --> 00:34:18,360
+But because of H bar
+
+923
+00:34:18,360 --> 00:34:20,360
+it will
+
+924
+00:34:20,360 --> 00:34:22,360
+go to a certain level and won't continue to fall.
+
+925
+00:34:22,360 --> 00:34:24,360
+That is the vortex concentration.
+
+926
+00:34:24,360 --> 00:34:26,360
+Now that you mentioned it
+
+927
+00:34:26,360 --> 00:34:28,360
+you don't assume
+
+928
+00:34:28,360 --> 00:34:30,360
+that it will cascade.
+
+929
+00:34:30,360 --> 00:34:32,360
+Will it?
+
+930
+00:34:32,360 --> 00:34:34,360
+No.
+
+931
+00:34:36,360 --> 00:34:38,360
+It will still cascade.
+
+932
+00:34:42,360 --> 00:34:44,360
+In the original fluid
+
+933
+00:34:44,360 --> 00:34:46,360
+the vortex will cascade.
+
+934
+00:34:46,360 --> 00:34:48,360
+H bar means
+
+935
+00:34:48,360 --> 00:34:50,360
+that at a certain level
+
+936
+00:34:50,360 --> 00:34:52,360
+H bar will dominate
+
+937
+00:34:52,360 --> 00:34:54,360
+and the fluid will disappear
+
+938
+00:34:54,360 --> 00:34:56,360
+at that level.
+
+939
+00:34:56,360 --> 00:34:58,360
+The vortex will not continue to cascade.
+
+940
+00:34:58,360 --> 00:35:00,360
+It will become diffusion and disappear.
+
+941
+00:35:00,360 --> 00:35:02,360
+It will eat up the energy.
+
+942
+00:35:04,360 --> 00:35:06,360
+So when we look at
+
+943
+00:35:06,360 --> 00:35:08,360
+turbulence
+
+944
+00:35:08,360 --> 00:35:10,360
+if H bar
+
+945
+00:35:10,360 --> 00:35:12,360
+is getting smaller and smaller
+
+946
+00:35:12,360 --> 00:35:14,360
+it will cause
+
+947
+00:35:14,360 --> 00:35:16,360
+turbulence.
+
+948
+00:35:16,360 --> 00:35:18,360
+It will look like turbulence.
+
+949
+00:35:18,360 --> 00:35:20,360
+Without H bar
+
+950
+00:35:20,360 --> 00:35:22,360
+in theory
+
+951
+00:35:22,360 --> 00:35:24,360
+it will develop into
+
+952
+00:35:24,360 --> 00:35:26,360
+this is still an open problem
+
+953
+00:35:26,360 --> 00:35:28,360
+how is turbulence born.
+
+954
+00:35:28,360 --> 00:35:30,360
+A typical situation is that
+
+955
+00:35:30,360 --> 00:35:32,360
+it will continue to cascade from H bar
+
+956
+00:35:32,360 --> 00:35:34,360
+and then dominate into a spectrum
+
+957
+00:35:34,360 --> 00:35:36,360
+of different
+
+958
+00:35:36,360 --> 00:35:38,360
+things.
+
+959
+00:35:38,360 --> 00:35:40,360
+So you mean
+
+960
+00:35:40,360 --> 00:35:42,360
+if H bar is too large
+
+961
+00:35:42,360 --> 00:35:44,360
+if H bar is too large
+
+962
+00:35:44,360 --> 00:35:46,360
+you won't be able to see turbulence.
+
+963
+00:35:46,360 --> 00:35:48,360
+Because
+
+964
+00:35:48,360 --> 00:35:50,360
+it hasn't produced a new vortex yet
+
+965
+00:35:50,360 --> 00:35:52,360
+so it will dissipate.
+
+966
+00:35:54,360 --> 00:35:56,360
+I remember
+
+967
+00:35:56,360 --> 00:35:58,360
+in Sandwich
+
+968
+00:35:58,360 --> 00:36:00,360
+the cascading and reverse cascading
+
+969
+00:36:00,360 --> 00:36:02,360
+were very good.
+
+970
+00:36:04,360 --> 00:36:06,360
+We haven't done
+
+971
+00:36:06,360 --> 00:36:08,360
+that side yet.
+
+972
+00:36:08,360 --> 00:36:10,360
+We want to
+
+973
+00:36:10,360 --> 00:36:12,360
+use
+
+974
+00:36:12,360 --> 00:36:14,360
+a very large network
+
+975
+00:36:14,360 --> 00:36:16,360
+with high resolution
+
+976
+00:36:16,360 --> 00:36:18,360
+and then put
+
+977
+00:36:18,360 --> 00:36:20,360
+some random
+
+978
+00:36:20,360 --> 00:36:22,360
+velocity
+
+979
+00:36:22,360 --> 00:36:24,360
+and random wave function
+
+980
+00:36:24,360 --> 00:36:26,360
+and then use our method
+
+981
+00:36:26,360 --> 00:36:28,360
+to look at its energy spectrum
+
+982
+00:36:28,360 --> 00:36:30,360
+and then compare
+
+983
+00:36:30,360 --> 00:36:32,360
+the turbulence.
+
+984
+00:36:32,360 --> 00:36:34,360
+But we haven't done that yet.
+
+985
+00:36:34,360 --> 00:36:36,360
+But usually
+
+986
+00:36:36,360 --> 00:36:38,360
+if you want to see
+
+987
+00:36:38,360 --> 00:36:40,360
+if this thing can model
+
+988
+00:36:40,360 --> 00:36:42,360
+turbulence
+
+989
+00:36:42,360 --> 00:36:44,360
+you have to look at
+
+990
+00:36:44,360 --> 00:36:46,360
+the energy spectrum first.
+
+991
+00:36:46,360 --> 00:36:48,360
+I think
+
+992
+00:36:48,360 --> 00:36:50,360
+cascading versus reverse cascading
+
+993
+00:36:50,360 --> 00:36:52,360
+is the most important thing.
+
+994
+00:36:52,360 --> 00:36:54,360
+Is there a way?
+
+995
+00:36:54,360 --> 00:36:56,360
+Yes.
+
+996
+00:36:56,360 --> 00:36:58,360
+One.
+
+997
+00:36:58,360 --> 00:37:00,360
+But there are still other ways.
+
+998
+00:37:00,360 --> 00:37:02,360
+So you mean
+
+999
+00:37:02,360 --> 00:37:04,360
+we don't need
+
+1000
+00:37:04,360 --> 00:37:06,360
+theory.
+
+1001
+00:37:08,360 --> 00:37:10,360
+I think reverse cascading
+
+1002
+00:37:10,360 --> 00:37:12,360
+is better.
+
+1003
+00:37:12,360 --> 00:37:14,360
+Yes.
+
+1004
+00:37:26,360 --> 00:37:28,360
+We also
+
+1005
+00:37:28,360 --> 00:37:30,360
+have
+
+1006
+00:37:32,360 --> 00:37:34,360
+simulation on the left
+
+1007
+00:37:34,360 --> 00:37:36,360
+and real video on the right.
+
+1008
+00:37:38,360 --> 00:37:40,360
+This is what we often show to others
+
+1009
+00:37:40,360 --> 00:37:42,360
+that
+
+1010
+00:37:42,360 --> 00:37:44,360
+we can use our very simple algorithm
+
+1011
+00:37:44,360 --> 00:37:46,360
+to do some
+
+1012
+00:37:46,360 --> 00:37:48,360
+simulation of turbulence.
+
+1013
+00:37:48,360 --> 00:37:50,360
+This is the first part of the remark.
+
+1014
+00:37:52,360 --> 00:37:54,360
+It means
+
+1015
+00:37:54,360 --> 00:37:56,360
+it breaks through our traditional
+
+1016
+00:37:56,360 --> 00:37:58,360
+imaginary fluid calculus
+
+1017
+00:37:58,360 --> 00:38:00,360
+what the usual framework looks like.
+
+1018
+00:38:00,360 --> 00:38:02,360
+Usually we will
+
+1019
+00:38:02,360 --> 00:38:04,360
+figure out how to simulate turbulence.
+
+1020
+00:38:04,360 --> 00:38:06,360
+But this framework
+
+1021
+00:38:06,360 --> 00:38:08,360
+doesn't have this problem.
+
+1022
+00:38:10,360 --> 00:38:12,360
+Especially in Vortex Dynamics
+
+1023
+00:38:12,360 --> 00:38:14,360
+we can
+
+1024
+00:38:14,360 --> 00:38:16,360
+simulate those phenomena.
+
+1025
+00:38:16,360 --> 00:38:18,360
+Usually we think
+
+1026
+00:38:18,360 --> 00:38:20,360
+we need to solve Euler's equation
+
+1027
+00:38:20,360 --> 00:38:22,360
+or Navier-Stokes equation.
+
+1028
+00:38:22,360 --> 00:38:24,360
+We need to be very advanced
+
+1029
+00:38:24,360 --> 00:38:26,360
+and have a very fine network
+
+1030
+00:38:26,360 --> 00:38:28,360
+to simulate those phenomena.
+
+1031
+00:38:28,360 --> 00:38:30,360
+There is also
+
+1032
+00:38:30,360 --> 00:38:32,360
+an interesting
+
+1033
+00:38:32,360 --> 00:38:34,360
+insight on math.
+
+1034
+00:38:36,360 --> 00:38:38,360
+This is
+
+1035
+00:38:38,360 --> 00:38:40,360
+incompressible Schrodinger flow equation.
+
+1036
+00:38:40,360 --> 00:38:42,360
+It looks like this.
+
+1037
+00:38:42,360 --> 00:38:44,360
+Schrodinger equation
+
+1038
+00:38:44,360 --> 00:38:46,360
+restricted on
+
+1039
+00:38:46,360 --> 00:38:48,360
+a divergence-free constraint.
+
+1040
+00:38:50,360 --> 00:38:52,360
+This divergence-free constraint
+
+1041
+00:38:52,360 --> 00:38:54,360
+can be translated into
+
+1042
+00:38:54,360 --> 00:38:56,360
+wave function and
+
+1043
+00:38:56,360 --> 00:38:58,360
+Laplacian.
+
+1044
+00:38:58,360 --> 00:39:00,360
+The spatial derivative of the whole equation
+
+1045
+00:39:00,360 --> 00:39:02,360
+is Laplacian.
+
+1046
+00:39:02,360 --> 00:39:04,360
+This is a very special
+
+1047
+00:39:04,360 --> 00:39:06,360
+part of Schrodinger.
+
+1048
+00:39:06,360 --> 00:39:08,360
+You often need to talk about
+
+1049
+00:39:08,360 --> 00:39:10,360
+U dot grad U.
+
+1050
+00:39:10,360 --> 00:39:12,360
+You use a lot of mathematical structures.
+
+1051
+00:39:12,360 --> 00:39:14,360
+You often talk about 2-dimensional or 3-dimensional.
+
+1052
+00:39:14,360 --> 00:39:16,360
+Or
+
+1053
+00:39:16,360 --> 00:39:18,360
+you have to be on a manifold.
+
+1054
+00:39:18,360 --> 00:39:20,360
+Laplacian can be set
+
+1055
+00:39:20,360 --> 00:39:22,360
+on a very low space.
+
+1056
+00:39:22,360 --> 00:39:24,360
+You can have a graph
+
+1057
+00:39:24,360 --> 00:39:26,360
+or a point cloud.
+
+1058
+00:39:26,360 --> 00:39:28,360
+You don't even need to use a dimensional concept.
+
+1059
+00:39:28,360 --> 00:39:30,360
+In that world,
+
+1060
+00:39:30,360 --> 00:39:32,360
+you can still discuss similar flow phenomena.
+
+1061
+00:39:36,360 --> 00:39:38,360
+This is a surface,
+
+1062
+00:39:38,360 --> 00:39:40,360
+so it's still a manifold.
+
+1063
+00:39:40,360 --> 00:39:42,360
+Then we have this rabbit
+
+1064
+00:39:42,360 --> 00:39:44,360
+and its graph.
+
+1065
+00:39:44,360 --> 00:39:46,360
+A triangular graph.
+
+1066
+00:39:46,360 --> 00:39:48,360
+You can get the graph.
+
+1067
+00:39:48,360 --> 00:39:50,360
+That information is the only thing you need to know.
+
+1068
+00:39:50,360 --> 00:39:52,360
+You can solve the
+
+1069
+00:39:52,360 --> 00:39:54,360
+Schrodinger equation.
+
+1070
+00:39:54,360 --> 00:39:56,360
+You can easily
+
+1071
+00:39:56,360 --> 00:39:58,360
+use the same complexity
+
+1072
+00:39:58,360 --> 00:40:00,360
+to model the graph
+
+1073
+00:40:00,360 --> 00:40:02,360
+in this general space.
+
+1074
+00:40:04,360 --> 00:40:06,360
+That was
+
+1075
+00:40:06,360 --> 00:40:08,360
+my first part.
+
+1076
+00:40:08,360 --> 00:40:10,360
+Next, I'm going to talk about
+
+1077
+00:40:10,360 --> 00:40:12,360
+the
+
+1078
+00:40:14,360 --> 00:40:16,360
+wave function
+
+1079
+00:40:18,360 --> 00:40:20,360
+and
+
+1080
+00:40:22,360 --> 00:40:24,360
+the
+
+1081
+00:40:24,360 --> 00:40:26,360
+encoded information.
+
+1082
+00:40:26,360 --> 00:40:28,360
+This is called
+
+1083
+00:40:28,360 --> 00:40:30,360
+Clutch Variables.
+
+1084
+00:40:34,360 --> 00:40:36,360
+We developed
+
+1085
+00:40:36,360 --> 00:40:38,360
+this theory
+
+1086
+00:40:38,360 --> 00:40:40,360
+to connect the Schrodinger equation
+
+1087
+00:40:40,360 --> 00:40:42,360
+to the classical field.
+
+1088
+00:40:42,360 --> 00:40:44,360
+We have a side project
+
+1089
+00:40:44,360 --> 00:40:46,360
+to use this to do
+
+1090
+00:40:46,360 --> 00:40:48,360
+some
+
+1091
+00:40:48,360 --> 00:40:50,360
+vortex visualization.
+
+1092
+00:40:52,360 --> 00:40:54,360
+Okay.
+
+1093
+00:40:54,360 --> 00:40:56,360
+Notation means
+
+1094
+00:40:56,360 --> 00:40:58,360
+that we often
+
+1095
+00:40:58,360 --> 00:41:00,360
+use vector field
+
+1096
+00:41:00,360 --> 00:41:02,360
+to represent the speed.
+
+1097
+00:41:02,360 --> 00:41:04,360
+On the right,
+
+1098
+00:41:04,360 --> 00:41:06,360
+there are many arrows in a fish tank.
+
+1099
+00:41:06,360 --> 00:41:08,360
+Alternatively,
+
+1100
+00:41:08,360 --> 00:41:10,360
+you can consider its
+
+1101
+00:41:10,360 --> 00:41:12,360
+covector,
+
+1102
+00:41:12,360 --> 00:41:14,360
+or throw the index down.
+
+1103
+00:41:14,360 --> 00:41:16,360
+Or it will
+
+1104
+00:41:16,360 --> 00:41:18,360
+become...
+
+1105
+00:41:18,360 --> 00:41:20,360
+You can imagine
+
+1106
+00:41:20,360 --> 00:41:22,360
+that the arrow
+
+1107
+00:41:22,360 --> 00:41:24,360
+is replaced by
+
+1108
+00:41:24,360 --> 00:41:26,360
+some hyperplane.
+
+1109
+00:41:28,360 --> 00:41:30,360
+This is called
+
+1110
+00:41:30,360 --> 00:41:32,360
+Differential Form.
+
+1111
+00:41:32,360 --> 00:41:34,360
+Differential Form
+
+1112
+00:41:34,360 --> 00:41:36,360
+means that
+
+1113
+00:41:36,360 --> 00:41:38,360
+it can be evaluated
+
+1114
+00:41:38,360 --> 00:41:40,360
+along some curves.
+
+1115
+00:41:40,360 --> 00:41:42,360
+If it is a one-form,
+
+1116
+00:41:42,360 --> 00:41:44,360
+it means that
+
+1117
+00:41:44,360 --> 00:41:46,360
+it can be evaluated
+
+1118
+00:41:46,360 --> 00:41:48,360
+along the curve.
+
+1119
+00:41:48,360 --> 00:41:50,360
+This is called
+
+1120
+00:41:50,360 --> 00:41:52,360
+Circulation.
+
+1121
+00:41:52,360 --> 00:41:54,360
+It is usually visualized
+
+1122
+00:41:54,360 --> 00:41:56,360
+as a hyperplane.
+
+1123
+00:41:56,360 --> 00:41:58,360
+When you see
+
+1124
+00:41:58,360 --> 00:42:00,360
+many hyperplanes,
+
+1125
+00:42:00,360 --> 00:42:02,360
+the curve is
+
+1126
+00:42:02,360 --> 00:42:04,360
+proportional to
+
+1127
+00:42:04,360 --> 00:42:06,360
+the density
+
+1128
+00:42:06,360 --> 00:42:08,360
+of these hyperplanes.
+
+1129
+00:42:08,360 --> 00:42:10,360
+The density
+
+1130
+00:42:10,360 --> 00:42:12,360
+of the banana
+
+1131
+00:42:12,360 --> 00:42:14,360
+is the value of the curve.
+
+1132
+00:42:14,360 --> 00:42:16,360
+So we often use
+
+1133
+00:42:16,360 --> 00:42:18,360
+this one-form.
+
+1134
+00:42:20,360 --> 00:42:22,360
+There is also
+
+1135
+00:42:22,360 --> 00:42:24,360
+a abstract concept called
+
+1136
+00:42:24,360 --> 00:42:26,360
+Pullback.
+
+1137
+00:42:26,360 --> 00:42:28,360
+If you have two spaces
+
+1138
+00:42:28,360 --> 00:42:30,360
+and you have a map
+
+1139
+00:42:30,360 --> 00:42:32,360
+from the space on the left to the space on the right,
+
+1140
+00:42:32,360 --> 00:42:34,360
+if there is a Differential Form
+
+1141
+00:42:34,360 --> 00:42:36,360
+on the right,
+
+1142
+00:42:36,360 --> 00:42:38,360
+you can pull it back
+
+1143
+00:42:38,360 --> 00:42:40,360
+into the Differential Form
+
+1144
+00:42:40,360 --> 00:42:42,360
+of the space on the left.
+
+1145
+00:42:42,360 --> 00:42:44,360
+The definition is that
+
+1146
+00:42:44,360 --> 00:42:46,360
+if there is a Differential Form
+
+1147
+00:42:46,360 --> 00:42:48,360
+on the right,
+
+1148
+00:42:48,360 --> 00:42:50,360
+you map it to the right
+
+1149
+00:42:50,360 --> 00:42:52,360
+and evaluate it to the right.
+
+1150
+00:42:52,360 --> 00:42:54,360
+The symbol is defined as
+
+1151
+00:42:54,360 --> 00:42:56,360
+f star alpha.
+
+1152
+00:42:56,360 --> 00:42:58,360
+If you don't use this symbol,
+
+1153
+00:42:58,360 --> 00:43:00,360
+you often write
+
+1154
+00:43:00,360 --> 00:43:02,360
+the rightmost space.
+
+1155
+00:43:02,360 --> 00:43:04,360
+We often write
+
+1156
+00:43:04,360 --> 00:43:06,360
+Pullback.
+
+1157
+00:43:06,360 --> 00:43:08,360
+Pullback
+
+1158
+00:43:08,360 --> 00:43:10,360
+has some beautiful
+
+1159
+00:43:10,360 --> 00:43:12,360
+definitions.
+
+1160
+00:43:12,360 --> 00:43:14,360
+But that's only
+
+1161
+00:43:14,360 --> 00:43:16,360
+a very detailed introduction.
+
+1162
+00:43:16,360 --> 00:43:18,360
+So I won't talk about it here.
+
+1163
+00:43:26,360 --> 00:43:28,360
+Pullback
+
+1164
+00:43:28,360 --> 00:43:30,360
+has something called
+
+1165
+00:43:30,360 --> 00:43:32,360
+Exterior Derivative Commute.
+
+1166
+00:43:32,360 --> 00:43:34,360
+If you write it in a normal language,
+
+1167
+00:43:34,360 --> 00:43:36,360
+it will be very difficult to see.
+
+1168
+00:43:36,360 --> 00:43:38,360
+So we like to use
+
+1169
+00:43:38,360 --> 00:43:40,360
+this
+
+1170
+00:43:40,360 --> 00:43:42,360
+coordinate-free
+
+1171
+00:43:42,360 --> 00:43:44,360
+notation.
+
+1172
+00:43:46,360 --> 00:43:48,360
+There is a special pullback
+
+1173
+00:43:48,360 --> 00:43:50,360
+in the stream.
+
+1174
+00:43:50,360 --> 00:43:52,360
+Consider that the map
+
+1175
+00:43:52,360 --> 00:43:54,360
+is a flow map.
+
+1176
+00:43:54,360 --> 00:43:56,360
+When the stream is flowing,
+
+1177
+00:43:56,360 --> 00:43:58,360
+the map is from
+
+1178
+00:43:58,360 --> 00:44:00,360
+the space of time 0
+
+1179
+00:44:00,360 --> 00:44:02,360
+to the space of time t.
+
+1180
+00:44:02,360 --> 00:44:04,360
+In this way,
+
+1181
+00:44:04,360 --> 00:44:06,360
+you can naturally
+
+1182
+00:44:06,360 --> 00:44:08,360
+generate the map
+
+1183
+00:44:08,360 --> 00:44:10,360
+and
+
+1184
+00:44:10,360 --> 00:44:12,360
+the physical quantity
+
+1185
+00:44:12,360 --> 00:44:14,360
+in the world of time t
+
+1186
+00:44:14,360 --> 00:44:16,360
+can be pulled back to the space of time 0.
+
+1187
+00:44:16,360 --> 00:44:18,360
+That thing is called
+
+1188
+00:44:18,360 --> 00:44:20,360
+Lagrangian Coordinate.
+
+1189
+00:44:20,360 --> 00:44:22,360
+The physical quantity
+
+1190
+00:44:22,360 --> 00:44:24,360
+in the Lagrangian Coordinate.
+
+1191
+00:44:24,360 --> 00:44:26,360
+We often like to discuss
+
+1192
+00:44:26,360 --> 00:44:28,360
+the division of time
+
+1193
+00:44:28,360 --> 00:44:30,360
+in the Lagrangian Coordinate.
+
+1194
+00:44:30,360 --> 00:44:32,360
+That division is called
+
+1195
+00:44:32,360 --> 00:44:34,360
+Lead Derivative.
+
+1196
+00:44:34,360 --> 00:44:36,360
+If the physical quantity
+
+1197
+00:44:36,360 --> 00:44:38,360
+changes with time,
+
+1198
+00:44:38,360 --> 00:44:40,360
+it will become
+
+1199
+00:44:40,360 --> 00:44:42,360
+the generalized
+
+1200
+00:44:42,360 --> 00:44:44,360
+material derivative.
+
+1201
+00:44:52,360 --> 00:44:54,360
+I often say that
+
+1202
+00:44:54,360 --> 00:44:56,360
+this physical quantity is just
+
+1203
+00:44:56,360 --> 00:44:58,360
+carried away by the stream.
+
+1204
+00:44:58,360 --> 00:45:00,360
+It means that
+
+1205
+00:45:00,360 --> 00:45:02,360
+after it is pulled back
+
+1206
+00:45:02,360 --> 00:45:04,360
+to the Lagrangian Coordinate,
+
+1207
+00:45:04,360 --> 00:45:06,360
+the world will not change.
+
+1208
+00:45:08,360 --> 00:45:10,360
+Do you understand?
+
+1209
+00:45:10,360 --> 00:45:12,360
+It doesn't matter.
+
+1210
+00:45:12,360 --> 00:45:14,360
+The Euler equation
+
+1211
+00:45:14,360 --> 00:45:16,360
+is written as
+
+1212
+00:45:16,360 --> 00:45:18,360
+in terms of velocity one form.
+
+1213
+00:45:18,360 --> 00:45:20,360
+That is to say,
+
+1214
+00:45:20,360 --> 00:45:22,360
+the one form of velocity
+
+1215
+00:45:22,360 --> 00:45:24,360
+is the hyperplane
+
+1216
+00:45:24,360 --> 00:45:26,360
+covector
+
+1217
+00:45:26,360 --> 00:45:28,360
+that I just visualized.
+
+1218
+00:45:28,360 --> 00:45:30,360
+It is purely a vector.
+
+1219
+00:45:30,360 --> 00:45:32,360
+There is a
+
+1220
+00:45:32,360 --> 00:45:34,360
+derivative of some function
+
+1221
+00:45:34,360 --> 00:45:36,360
+on the right.
+
+1222
+00:45:36,360 --> 00:45:38,360
+We often call that
+
+1223
+00:45:38,360 --> 00:45:40,360
+an exact form.
+
+1224
+00:45:40,360 --> 00:45:42,360
+The exact form
+
+1225
+00:45:42,360 --> 00:45:44,360
+means that
+
+1226
+00:45:44,360 --> 00:45:46,360
+the velocity form
+
+1227
+00:45:46,360 --> 00:45:48,360
+is divergence-free.
+
+1228
+00:45:52,360 --> 00:45:54,360
+The vorticity equation
+
+1229
+00:45:54,360 --> 00:45:56,360
+is purely a vector.
+
+1230
+00:45:56,360 --> 00:45:58,360
+The vorticity
+
+1231
+00:45:58,360 --> 00:46:00,360
+is a two-form.
+
+1232
+00:46:00,360 --> 00:46:02,360
+Vorticity is a two-form.
+
+1233
+00:46:02,360 --> 00:46:04,360
+Vorticity
+
+1234
+00:46:04,360 --> 00:46:06,360
+is a quantity.
+
+1235
+00:46:06,360 --> 00:46:08,360
+It is not a vector.
+
+1236
+00:46:08,360 --> 00:46:10,360
+It is a quantity
+
+1237
+00:46:10,360 --> 00:46:12,360
+that is to be measured
+
+1238
+00:46:12,360 --> 00:46:14,360
+on a two-dimensional curve.
+
+1239
+00:46:14,360 --> 00:46:16,360
+We often say vorticity flux.
+
+1240
+00:46:16,360 --> 00:46:18,360
+In fact,
+
+1241
+00:46:18,360 --> 00:46:20,360
+what we can measure
+
+1242
+00:46:20,360 --> 00:46:22,360
+is the concept of flux
+
+1243
+00:46:22,360 --> 00:46:24,360
+that is to be measured
+
+1244
+00:46:24,360 --> 00:46:26,360
+on a two-dimensional curve.
+
+1245
+00:46:26,360 --> 00:46:28,360
+Then,
+
+1246
+00:46:28,360 --> 00:46:30,360
+if you see a curve
+
+1247
+00:46:30,360 --> 00:46:32,360
+that flows
+
+1248
+00:46:32,360 --> 00:46:34,360
+at any given time,
+
+1249
+00:46:34,360 --> 00:46:36,360
+you can pull it back
+
+1250
+00:46:36,360 --> 00:46:38,360
+to its zero-time state
+
+1251
+00:46:38,360 --> 00:46:40,360
+and put the evaluated
+
+1252
+00:46:40,360 --> 00:46:42,360
+vorticity flux
+
+1253
+00:46:42,360 --> 00:46:44,360
+back to the original space.
+
+1254
+00:46:44,360 --> 00:46:46,360
+You will find that it changes at any time.
+
+1255
+00:46:46,360 --> 00:46:48,360
+That is, vorticity is purely a vector.
+
+1256
+00:46:48,360 --> 00:46:50,360
+You want to ask...
+
+1257
+00:46:50,360 --> 00:46:52,360
+The meaning of vector
+
+1258
+00:46:52,360 --> 00:46:54,360
+is not that
+
+1259
+00:46:54,360 --> 00:46:56,360
+it has a
+
+1260
+00:46:56,360 --> 00:46:58,360
+zero-time state.
+
+1261
+00:46:58,360 --> 00:47:00,360
+You can ask again.
+
+1262
+00:47:00,360 --> 00:47:02,360
+The meaning of vector
+
+1263
+00:47:02,360 --> 00:47:04,360
+is not that
+
+1264
+00:47:04,360 --> 00:47:06,360
+it has a zero-time state.
+
+1265
+00:47:06,360 --> 00:47:08,360
+There is still a
+
+1266
+00:47:08,360 --> 00:47:10,360
+velocity field in the fluid.
+
+1267
+00:47:10,360 --> 00:47:12,360
+It is u.
+
+1268
+00:47:12,360 --> 00:47:14,360
+The relationship between u and eta
+
+1269
+00:47:14,360 --> 00:47:16,360
+and the velocity one-form
+
+1270
+00:47:16,360 --> 00:47:18,360
+is that
+
+1271
+00:47:18,360 --> 00:47:20,360
+eta is the velocity
+
+1272
+00:47:20,360 --> 00:47:22,360
+flat.
+
+1273
+00:47:22,360 --> 00:47:24,360
+It is the co-vector.
+
+1274
+00:47:24,360 --> 00:47:26,360
+It is the dual vector.
+
+1275
+00:47:26,360 --> 00:47:28,360
+Then,
+
+1276
+00:47:30,360 --> 00:47:32,360
+the physical quantity
+
+1277
+00:47:32,360 --> 00:47:34,360
+is directly
+
+1278
+00:47:34,360 --> 00:47:36,360
+purely a vector
+
+1279
+00:47:36,360 --> 00:47:38,360
+in this velocity field.
+
+1280
+00:47:38,360 --> 00:47:40,360
+It changes at any time.
+
+1281
+00:47:40,360 --> 00:47:42,360
+You see that
+
+1282
+00:47:42,360 --> 00:47:44,360
+L sub u
+
+1283
+00:47:44,360 --> 00:47:46,360
+depends on
+
+1284
+00:47:46,360 --> 00:47:48,360
+the velocity.
+
+1285
+00:47:48,360 --> 00:47:50,360
+Then, eta
+
+1286
+00:47:50,360 --> 00:47:52,360
+u depends on eta.
+
+1287
+00:47:52,360 --> 00:47:54,360
+So, it is a nonlinear function.
+
+1288
+00:47:56,360 --> 00:47:58,360
+The vorticity
+
+1289
+00:47:58,360 --> 00:48:00,360
+equation is the same.
+
+1290
+00:48:00,360 --> 00:48:02,360
+In fact, vorticity
+
+1291
+00:48:02,360 --> 00:48:04,360
+must be equal to d of eta
+
+1292
+00:48:04,360 --> 00:48:06,360
+or d of u
+
+1293
+00:48:06,360 --> 00:48:08,360
+flat. So, omega
+
+1294
+00:48:08,360 --> 00:48:10,360
+is coupled with velocity.
+
+1295
+00:48:10,360 --> 00:48:12,360
+In this case,
+
+1296
+00:48:12,360 --> 00:48:14,360
+vorticity is
+
+1297
+00:48:14,360 --> 00:48:16,360
+purely a vector
+
+1298
+00:48:16,360 --> 00:48:18,360
+in this equation.
+
+1299
+00:48:18,360 --> 00:48:20,360
+When they are coupled together,
+
+1300
+00:48:20,360 --> 00:48:22,360
+it increases.
+
+1301
+00:48:22,360 --> 00:48:24,360
+What are the benefits?
+
+1302
+00:48:24,360 --> 00:48:26,360
+I am just talking about
+
+1303
+00:48:26,360 --> 00:48:28,360
+the benefits.
+
+1304
+00:48:28,360 --> 00:48:30,360
+There is no benefit or
+
+1305
+00:48:30,360 --> 00:48:32,360
+disadvantage.
+
+1306
+00:48:32,360 --> 00:48:34,360
+It is just a different formulation.
+
+1307
+00:48:34,360 --> 00:48:36,360
+Since the time of Euler,
+
+1308
+00:48:36,360 --> 00:48:38,360
+we have been talking about
+
+1309
+00:48:38,360 --> 00:48:40,360
+purely a vector.
+
+1310
+00:48:40,360 --> 00:48:42,360
+This term is not invented by me.
+
+1311
+00:48:44,360 --> 00:48:46,360
+So, there is no disadvantage.
+
+1312
+00:48:46,360 --> 00:48:48,360
+I am just saying
+
+1313
+00:48:48,360 --> 00:48:50,360
+that
+
+1314
+00:48:50,360 --> 00:48:52,360
+I am just saying that
+
+1315
+00:48:52,360 --> 00:48:54,360
+the definition of purely a vector is
+
+1316
+00:48:54,360 --> 00:48:56,360
+the force derivative.
+
+1317
+00:48:56,360 --> 00:48:58,360
+It is just a general material derivative.
+
+1318
+00:48:58,360 --> 00:49:00,360
+It is just a quantity of u dot grad.
+
+1319
+00:49:00,360 --> 00:49:02,360
+I can imagine
+
+1320
+00:49:02,360 --> 00:49:04,360
+writing a general
+
+1321
+00:49:04,360 --> 00:49:06,360
+derivative.
+
+1322
+00:49:06,360 --> 00:49:08,360
+What is the general derivative?
+
+1323
+00:49:08,360 --> 00:49:10,360
+u dot grad.
+
+1324
+00:49:10,360 --> 00:49:12,360
+The u dot grad
+
+1325
+00:49:12,360 --> 00:49:14,360
+you mentioned
+
+1326
+00:49:14,360 --> 00:49:16,360
+is used for zero-form.
+
+1327
+00:49:16,360 --> 00:49:18,360
+Few people talk about
+
+1328
+00:49:18,360 --> 00:49:20,360
+how to generalize
+
+1329
+00:49:20,360 --> 00:49:22,360
+one-form, two-form, or other tensors.
+
+1330
+00:49:22,360 --> 00:49:24,360
+In this case,
+
+1331
+00:49:24,360 --> 00:49:26,360
+people can only write
+
+1332
+00:49:26,360 --> 00:49:28,360
+a basis for those tensors.
+
+1333
+00:49:28,360 --> 00:49:30,360
+For those
+
+1334
+00:49:30,360 --> 00:49:32,360
+previous functions,
+
+1335
+00:49:32,360 --> 00:49:34,360
+they become a zero-form function.
+
+1336
+00:49:34,360 --> 00:49:36,360
+You can do
+
+1337
+00:49:36,360 --> 00:49:38,360
+a partial division of time
+
+1338
+00:49:38,360 --> 00:49:40,360
+plus u dot grad.
+
+1339
+00:49:40,360 --> 00:49:42,360
+But often the right-hand side won't do that.
+
+1340
+00:49:42,360 --> 00:49:44,360
+It should be taken care of.
+
+1341
+00:49:44,360 --> 00:49:46,360
+It should not be a function.
+
+1342
+00:49:46,360 --> 00:49:48,360
+It should be a tensor.
+
+1343
+00:49:50,360 --> 00:49:52,360
+It contains those things.
+
+1344
+00:49:52,360 --> 00:49:54,360
+So,
+
+1345
+00:49:54,360 --> 00:49:56,360
+sometimes people are surprised
+
+1346
+00:49:56,360 --> 00:49:58,360
+that the vorticity should not be written as
+
+1347
+00:49:58,360 --> 00:50:00,360
+zero on the right-hand side.
+
+1348
+00:50:00,360 --> 00:50:02,360
+So, I added an equation here.
+
+1349
+00:50:02,360 --> 00:50:04,360
+We often see vorticity as a vector.
+
+1350
+00:50:04,360 --> 00:50:06,360
+Or three components
+
+1351
+00:50:06,360 --> 00:50:08,360
+with some
+
+1352
+00:50:08,360 --> 00:50:10,360
+basis.
+
+1353
+00:50:10,360 --> 00:50:12,360
+Then we find that the right-hand side is not zero.
+
+1354
+00:50:12,360 --> 00:50:14,360
+Then it is regarded as a vortex stretching term.
+
+1355
+00:50:14,360 --> 00:50:16,360
+People often say that
+
+1356
+00:50:16,360 --> 00:50:18,360
+the difference between two-form and three-form is
+
+1357
+00:50:18,360 --> 00:50:20,360
+that sometimes there is
+
+1358
+00:50:20,360 --> 00:50:22,360
+a vortex stretching term.
+
+1359
+00:50:22,360 --> 00:50:24,360
+It's just because
+
+1360
+00:50:24,360 --> 00:50:26,360
+it's a co-dimension.
+
+1361
+00:50:26,360 --> 00:50:28,360
+When it's different,
+
+1362
+00:50:28,360 --> 00:50:30,360
+it should be a tensor,
+
+1363
+00:50:30,360 --> 00:50:32,360
+but it's a vector.
+
+1364
+00:50:32,360 --> 00:50:34,360
+When it's a purely vector,
+
+1365
+00:50:34,360 --> 00:50:36,360
+there is a difference.
+
+1366
+00:50:36,360 --> 00:50:38,360
+Then,
+
+1367
+00:50:38,360 --> 00:50:40,360
+I want to emphasize that
+
+1368
+00:50:40,360 --> 00:50:42,360
+I only use the above notation.
+
+1369
+00:50:42,360 --> 00:50:44,360
+I only use the simple notation
+
+1370
+00:50:44,360 --> 00:50:46,360
+to represent
+
+1371
+00:50:46,360 --> 00:50:48,360
+what I need to use.
+
+1372
+00:50:50,360 --> 00:50:52,360
+The first one is notation.
+
+1373
+00:50:52,360 --> 00:50:54,360
+Now I can talk about
+
+1374
+00:50:54,360 --> 00:50:56,360
+clebsch representation.
+
+1375
+00:50:56,360 --> 00:50:58,360
+Clebsch is
+
+1376
+00:50:58,360 --> 00:51:00,360
+from 1850s.
+
+1377
+00:51:02,360 --> 00:51:04,360
+You may have heard of
+
+1378
+00:51:04,360 --> 00:51:06,360
+Clebsch-Gordan coefficient.
+
+1379
+00:51:06,360 --> 00:51:08,360
+But most people may not know
+
+1380
+00:51:08,360 --> 00:51:10,360
+quantum mechanics.
+
+1381
+00:51:10,360 --> 00:51:12,360
+Who is the boss?
+
+1382
+00:51:12,360 --> 00:51:14,360
+Clebsch.
+
+1383
+00:51:14,360 --> 00:51:16,360
+They seem to be from the same era.
+
+1384
+00:51:16,360 --> 00:51:18,360
+But they
+
+1385
+00:51:18,360 --> 00:51:20,360
+are not used
+
+1386
+00:51:20,360 --> 00:51:22,360
+to describe quantum mechanics.
+
+1387
+00:51:22,360 --> 00:51:24,360
+They want to describe
+
+1388
+00:51:24,360 --> 00:51:26,360
+SU.
+
+1389
+00:51:26,360 --> 00:51:28,360
+That was in
+
+1390
+00:51:28,360 --> 00:51:30,360
+the mid-19th century.
+
+1391
+00:51:30,360 --> 00:51:32,360
+So people think
+
+1392
+00:51:32,360 --> 00:51:34,360
+Clebsch is a modernist.
+
+1393
+00:51:34,360 --> 00:51:36,360
+No, he is from
+
+1394
+00:51:36,360 --> 00:51:38,360
+the mid-19th century.
+
+1395
+00:51:38,360 --> 00:51:40,360
+But some of his work
+
+1396
+00:51:40,360 --> 00:51:42,360
+is in quantum mechanics.
+
+1397
+00:51:44,360 --> 00:51:46,360
+Before Clebsch,
+
+1398
+00:51:46,360 --> 00:51:48,360
+people only discussed
+
+1399
+00:51:48,360 --> 00:51:50,360
+potential flow.
+
+1400
+00:51:50,360 --> 00:51:52,360
+At first, people didn't know
+
+1401
+00:51:52,360 --> 00:51:54,360
+what to do with quantum mechanics.
+
+1402
+00:51:54,360 --> 00:51:56,360
+People didn't know curl operator.
+
+1403
+00:51:56,360 --> 00:51:58,360
+And there were no planes at that time.
+
+1404
+00:51:58,360 --> 00:52:00,360
+People were most concerned about
+
+1405
+00:52:00,360 --> 00:52:02,360
+the problem of quantum mechanics.
+
+1406
+00:52:02,360 --> 00:52:04,360
+So
+
+1407
+00:52:04,360 --> 00:52:06,360
+it was all about
+
+1408
+00:52:06,360 --> 00:52:08,360
+potential flow.
+
+1409
+00:52:08,360 --> 00:52:10,360
+In that case,
+
+1410
+00:52:10,360 --> 00:52:12,360
+velocity one form is
+
+1411
+00:52:12,360 --> 00:52:14,360
+d of some function.
+
+1412
+00:52:14,360 --> 00:52:16,360
+Velocity vector field is
+
+1413
+00:52:16,360 --> 00:52:18,360
+the gradient of some function.
+
+1414
+00:52:18,360 --> 00:52:20,360
+This is potential.
+
+1415
+00:52:20,360 --> 00:52:22,360
+But there was no vorticity.
+
+1416
+00:52:22,360 --> 00:52:24,360
+So Clebsch wrote a paper
+
+1417
+00:52:24,360 --> 00:52:26,360
+in Camp-Holt's
+
+1418
+00:52:26,360 --> 00:52:28,360
+first invention of
+
+1419
+00:52:28,360 --> 00:52:30,360
+vorticity.
+
+1420
+00:52:30,360 --> 00:52:32,360
+He immediately thought
+
+1421
+00:52:32,360 --> 00:52:34,360
+potential flow should be generalized.
+
+1422
+00:52:34,360 --> 00:52:36,360
+Otherwise,
+
+1423
+00:52:36,360 --> 00:52:38,360
+the vorticity will be destroyed.
+
+1424
+00:52:38,360 --> 00:52:40,360
+So he considered
+
+1425
+00:52:40,360 --> 00:52:42,360
+two other potentials.
+
+1426
+00:52:42,360 --> 00:52:44,360
+One is lambda and the other is mu.
+
+1427
+00:52:44,360 --> 00:52:46,360
+He wrote velocity one form
+
+1428
+00:52:46,360 --> 00:52:48,360
+as lambda d mu plus d phi.
+
+1429
+00:52:48,360 --> 00:52:50,360
+And
+
+1430
+00:52:50,360 --> 00:52:52,360
+lambda d mu
+
+1431
+00:52:52,360 --> 00:52:54,360
+is generalized.
+
+1432
+00:52:54,360 --> 00:52:56,360
+It will have vorticity.
+
+1433
+00:52:56,360 --> 00:52:58,360
+This was very popular
+
+1434
+00:52:58,360 --> 00:53:00,360
+at that time.
+
+1435
+00:53:00,360 --> 00:53:02,360
+You can see it in thermodynamics.
+
+1436
+00:53:02,360 --> 00:53:04,360
+It's not
+
+1437
+00:53:04,360 --> 00:53:06,360
+closed.
+
+1438
+00:53:06,360 --> 00:53:08,360
+It's
+
+1439
+00:53:08,360 --> 00:53:10,360
+TDS.
+
+1440
+00:53:14,360 --> 00:53:16,360
+At that time,
+
+1441
+00:53:16,360 --> 00:53:18,360
+it's easy to see
+
+1442
+00:53:18,360 --> 00:53:20,360
+lambda d mu as a consideration.
+
+1443
+00:53:20,360 --> 00:53:22,360
+It's natural.
+
+1444
+00:53:22,360 --> 00:53:24,360
+At that time,
+
+1445
+00:53:24,360 --> 00:53:26,360
+d phi can be used as
+
+1446
+00:53:26,360 --> 00:53:28,360
+potential flow.
+
+1447
+00:53:28,360 --> 00:53:30,360
+Lambda d mu is not necessarily
+
+1448
+00:53:30,360 --> 00:53:32,360
+divergence-free.
+
+1449
+00:53:32,360 --> 00:53:34,360
+As long as phi is good enough.
+
+1450
+00:53:34,360 --> 00:53:36,360
+If so,
+
+1451
+00:53:36,360 --> 00:53:38,360
+I will look at
+
+1452
+00:53:38,360 --> 00:53:40,360
+the vorticity two form.
+
+1453
+00:53:40,360 --> 00:53:42,360
+It's just lambda wedge d mu.
+
+1454
+00:53:42,360 --> 00:53:44,360
+Phi is not important.
+
+1455
+00:53:50,360 --> 00:53:52,360
+But
+
+1456
+00:53:52,360 --> 00:53:54,360
+it's like this.
+
+1457
+00:53:54,360 --> 00:53:56,360
+Any lambda mu
+
+1458
+00:53:56,360 --> 00:53:58,360
+can be solved
+
+1459
+00:53:58,360 --> 00:54:00,360
+by
+
+1460
+00:54:00,360 --> 00:54:02,360
+the fact that
+
+1461
+00:54:02,360 --> 00:54:04,360
+eta needs to be divergence-free.
+
+1462
+00:54:04,360 --> 00:54:06,360
+This is
+
+1463
+00:54:06,360 --> 00:54:08,360
+Helmholtz's
+
+1464
+00:54:08,360 --> 00:54:10,360
+decomposition theorem.
+
+1465
+00:54:12,360 --> 00:54:14,360
+Any
+
+1466
+00:54:16,360 --> 00:54:18,360
+three-dimensional field
+
+1467
+00:54:18,360 --> 00:54:20,360
+can be divided into
+
+1468
+00:54:20,360 --> 00:54:22,360
+divergence-free part and curl-free part.
+
+1469
+00:54:22,360 --> 00:54:24,360
+This is Helmholtz's decomposition theorem.
+
+1470
+00:54:28,360 --> 00:54:30,360
+Is this the only part?
+
+1471
+00:54:30,360 --> 00:54:32,360
+No.
+
+1472
+00:54:34,360 --> 00:54:36,360
+It's not well-defined.
+
+1473
+00:54:36,360 --> 00:54:38,360
+Potential flow is not well-defined.
+
+1474
+00:54:38,360 --> 00:54:40,360
+Phi can be any parameter.
+
+1475
+00:54:42,360 --> 00:54:44,360
+D phi is well-defined.
+
+1476
+00:54:44,360 --> 00:54:46,360
+The left part is well-defined.
+
+1477
+00:54:46,360 --> 00:54:48,360
+It's not well-defined or not well-defined.
+
+1478
+00:54:48,360 --> 00:54:50,360
+It can be represented by
+
+1479
+00:54:50,360 --> 00:54:52,360
+this equation.
+
+1480
+00:54:52,360 --> 00:54:54,360
+Phi is not defined as
+
+1481
+00:54:54,360 --> 00:54:56,360
+d inverse of eta.
+
+1482
+00:54:56,360 --> 00:54:58,360
+It's not well-defined.
+
+1483
+00:55:00,360 --> 00:55:02,360
+I only consider
+
+1484
+00:55:02,360 --> 00:55:04,360
+the velocity field.
+
+1485
+00:55:04,360 --> 00:55:06,360
+It's the form of d of some function.
+
+1486
+00:55:06,360 --> 00:55:08,360
+Then we discuss how to
+
+1487
+00:55:08,360 --> 00:55:10,360
+describe the function.
+
+1488
+00:55:12,360 --> 00:55:14,360
+I want to have more potential.
+
+1489
+00:55:14,360 --> 00:55:16,360
+Three potentials.
+
+1490
+00:55:16,360 --> 00:55:18,360
+I deliberately put this form
+
+1491
+00:55:18,360 --> 00:55:20,360
+as curl-free.
+
+1492
+00:55:22,360 --> 00:55:24,360
+It's not
+
+1493
+00:55:24,360 --> 00:55:26,360
+orthogonal splitting.
+
+1494
+00:55:28,360 --> 00:55:30,360
+I don't claim this is
+
+1495
+00:55:30,360 --> 00:55:32,360
+a splitting.
+
+1496
+00:55:32,360 --> 00:55:34,360
+It's not unique splitting.
+
+1497
+00:55:34,360 --> 00:55:36,360
+It's not like this.
+
+1498
+00:55:38,360 --> 00:55:40,360
+You can also discuss
+
+1499
+00:55:40,360 --> 00:55:42,360
+what the gauge symmetry is.
+
+1500
+00:55:42,360 --> 00:55:44,360
+It can be short form lambda mu phi.
+
+1501
+00:55:44,360 --> 00:55:46,360
+It corresponds to the left side.
+
+1502
+00:55:46,360 --> 00:55:48,360
+There are a lot.
+
+1503
+00:55:48,360 --> 00:55:50,360
+It should be easy to see.
+
+1504
+00:55:56,360 --> 00:55:58,360
+Omega looks like this.
+
+1505
+00:55:58,360 --> 00:56:00,360
+It means
+
+1506
+00:56:00,360 --> 00:56:02,360
+you will see later
+
+1507
+00:56:02,360 --> 00:56:04,360
+it's the area form of
+
+1508
+00:56:04,360 --> 00:56:06,360
+lambda mu plane.
+
+1509
+00:56:06,360 --> 00:56:08,360
+It's like gradient mu.
+
+1510
+00:56:08,360 --> 00:56:10,360
+Gradient lambda cross gradient mu.
+
+1511
+00:56:10,360 --> 00:56:12,360
+It's a small area.
+
+1512
+00:56:16,360 --> 00:56:18,360
+If you want to use
+
+1513
+00:56:18,360 --> 00:56:20,360
+vector potential,
+
+1514
+00:56:20,360 --> 00:56:22,360
+can you use it?
+
+1515
+00:56:22,360 --> 00:56:24,360
+Yes.
+
+1516
+00:56:28,360 --> 00:56:30,360
+If you want to use
+
+1517
+00:56:30,360 --> 00:56:32,360
+vector potential,
+
+1518
+00:56:32,360 --> 00:56:34,360
+omega corresponds to
+
+1519
+00:56:34,360 --> 00:56:36,360
+magnetic field or curvature.
+
+1520
+00:56:36,360 --> 00:56:38,360
+I will use it later.
+
+1521
+00:56:38,360 --> 00:56:40,360
+Then
+
+1522
+00:56:42,360 --> 00:56:44,360
+So
+
+1523
+00:56:44,360 --> 00:56:46,360
+capstructure
+
+1524
+00:56:46,360 --> 00:56:48,360
+is described as
+
+1525
+00:56:48,360 --> 00:56:50,360
+three potentials.
+
+1526
+00:56:50,360 --> 00:56:52,360
+You can ask
+
+1527
+00:56:52,360 --> 00:56:54,360
+what the three potentials
+
+1528
+00:56:54,360 --> 00:56:56,360
+satisfy.
+
+1529
+00:56:56,360 --> 00:56:58,360
+Then you will find
+
+1530
+00:56:58,360 --> 00:57:00,360
+those functions are purely reflected.
+
+1531
+00:57:00,360 --> 00:57:02,360
+Then phi
+
+1532
+00:57:02,360 --> 00:57:04,360
+lambda mu is purely reflected.
+
+1533
+00:57:04,360 --> 00:57:06,360
+Then phi
+
+1534
+00:57:06,360 --> 00:57:08,360
+is the time point.
+
+1535
+00:57:08,360 --> 00:57:10,360
+It is chosen to say
+
+1536
+00:57:10,360 --> 00:57:12,360
+eta is divergence free and
+
+1537
+00:57:12,360 --> 00:57:14,360
+for all time.
+
+1538
+00:57:14,360 --> 00:57:16,360
+This is capstructure.
+
+1539
+00:57:16,360 --> 00:57:18,360
+But it's
+
+1540
+00:57:18,360 --> 00:57:20,360
+not that famous.
+
+1541
+00:57:20,360 --> 00:57:22,360
+Then
+
+1542
+00:57:22,360 --> 00:57:24,360
+there are still
+
+1543
+00:57:24,360 --> 00:57:26,360
+some works on it.
+
+1544
+00:57:26,360 --> 00:57:28,360
+For example, Marston
+
+1545
+00:57:28,360 --> 00:57:30,360
+found that
+
+1546
+00:57:30,360 --> 00:57:32,360
+capstructure representation can make
+
+1547
+00:57:32,360 --> 00:57:34,360
+fluid
+
+1548
+00:57:34,360 --> 00:57:36,360
+described as Hamiltonian system.
+
+1549
+00:57:36,360 --> 00:57:38,360
+Hamiltonian system is
+
+1550
+00:57:38,360 --> 00:57:40,360
+a generalized coordinate
+
+1551
+00:57:40,360 --> 00:57:42,360
+and the momentum corresponding to it.
+
+1552
+00:57:42,360 --> 00:57:44,360
+There will be a position and momentum
+
+1553
+00:57:44,360 --> 00:57:46,360
+relationship.
+
+1554
+00:57:46,360 --> 00:57:48,360
+This is the infinite version.
+
+1555
+00:57:48,360 --> 00:57:50,360
+Because fluid has infinite freedom.
+
+1556
+00:57:50,360 --> 00:57:52,360
+Then
+
+1557
+00:57:52,360 --> 00:57:54,360
+lambda and mu
+
+1558
+00:57:54,360 --> 00:57:56,360
+correspond to
+
+1559
+00:57:56,360 --> 00:57:58,360
+position and momentum.
+
+1560
+00:57:58,360 --> 00:58:00,360
+Then
+
+1561
+00:58:00,360 --> 00:58:02,360
+there are some beautiful mathematical structures.
+
+1562
+00:58:02,360 --> 00:58:04,360
+However,
+
+1563
+00:58:04,360 --> 00:58:06,360
+people think it's too artificial.
+
+1564
+00:58:06,360 --> 00:58:08,360
+It's not practical.
+
+1565
+00:58:08,360 --> 00:58:10,360
+The main reason is
+
+1566
+00:58:10,360 --> 00:58:12,360
+there are a lot of fluid
+
+1567
+00:58:12,360 --> 00:58:14,360
+and a lot of momentum.
+
+1568
+00:58:14,360 --> 00:58:16,360
+It can't be written as lambda and mu plus phi.
+
+1569
+00:58:16,360 --> 00:58:18,360
+Then
+
+1570
+00:58:18,360 --> 00:58:20,360
+it doesn't mean
+
+1571
+00:58:20,360 --> 00:58:22,360
+it can't be...
+
+1572
+00:58:22,360 --> 00:58:24,360
+It doesn't mean
+
+1573
+00:58:24,360 --> 00:58:26,360
+some capstructure can be designed in a strange way.
+
+1574
+00:58:26,360 --> 00:58:28,360
+It is topologically
+
+1575
+00:58:28,360 --> 00:58:30,360
+separated.
+
+1576
+00:58:30,360 --> 00:58:32,360
+For example, if your eta is written as
+
+1577
+00:58:32,360 --> 00:58:34,360
+lambda and mu plus phi.
+
+1578
+00:58:34,360 --> 00:58:36,360
+Then there is a quantity called helicity.
+
+1579
+00:58:36,360 --> 00:58:38,360
+It is the
+
+1580
+00:58:38,360 --> 00:58:40,360
+velocity
+
+1581
+00:58:40,360 --> 00:58:42,360
+and velocity
+
+1582
+00:58:42,360 --> 00:58:44,360
+are integrated.
+
+1583
+00:58:44,360 --> 00:58:46,360
+Then
+
+1584
+00:58:46,360 --> 00:58:48,360
+its total points
+
+1585
+00:58:48,360 --> 00:58:50,360
+will be equal to
+
+1586
+00:58:50,360 --> 00:58:52,360
+the average
+
+1587
+00:58:52,360 --> 00:58:54,360
+of the vortex line in the fluid.
+
+1588
+00:58:54,360 --> 00:58:56,360
+It's like
+
+1589
+00:58:56,360 --> 00:58:58,360
+that
+
+1590
+00:58:58,360 --> 00:59:00,360
+if you have two vortex filaments
+
+1591
+00:59:00,360 --> 00:59:02,360
+and there is a linking,
+
+1592
+00:59:02,360 --> 00:59:04,360
+then the helicity is not linked.
+
+1593
+00:59:04,360 --> 00:59:06,360
+Then
+
+1594
+00:59:06,360 --> 00:59:08,360
+it can use points to describe.
+
+1595
+00:59:08,360 --> 00:59:10,360
+But if
+
+1596
+00:59:10,360 --> 00:59:12,360
+eta is written as lambda and mu plus phi,
+
+1597
+00:59:12,360 --> 00:59:14,360
+you can easily prove that
+
+1598
+00:59:14,360 --> 00:59:16,360
+its total helicity is linked.
+
+1599
+00:59:16,360 --> 00:59:18,360
+Then it will cause
+
+1600
+00:59:18,360 --> 00:59:20,360
+a lot of velocity
+
+1601
+00:59:20,360 --> 00:59:22,360
+that helicity won't be linked.
+
+1602
+00:59:22,360 --> 00:59:24,360
+It is topologically
+
+1603
+00:59:24,360 --> 00:59:26,360
+unable to be described
+
+1604
+00:59:26,360 --> 00:59:28,360
+as a capstructure.
+
+1605
+00:59:30,360 --> 00:59:32,360
+And if it is possible,
+
+1606
+00:59:32,360 --> 00:59:34,360
+it is difficult to find
+
+1607
+00:59:34,360 --> 00:59:36,360
+lambda and mu.
+
+1608
+00:59:36,360 --> 00:59:38,360
+And even if you find it, it is not unique.
+
+1609
+00:59:38,360 --> 00:59:40,360
+Just like what you just found.
+
+1610
+00:59:40,360 --> 00:59:42,360
+Does it have the same thing as trace-734?
+
+1611
+00:59:42,360 --> 00:59:44,360
+Yes.
+
+1612
+00:59:44,360 --> 00:59:46,360
+Trace-734.
+
+1613
+00:59:46,360 --> 00:59:48,360
+If it is a higher-dimensional fluid,
+
+1614
+00:59:48,360 --> 00:59:50,360
+for example, a 5D fluid,
+
+1615
+00:59:50,360 --> 00:59:52,360
+it has a slightly higher helicity.
+
+1616
+00:59:52,360 --> 00:59:54,360
+Yes.
+
+1617
+00:59:54,360 --> 00:59:56,360
+This question is a bit confusing.
+
+1618
+00:59:56,360 --> 00:59:58,360
+Will there be this effect?
+
+1619
+00:59:58,360 --> 01:00:00,360
+Yes. For example, a 2D fluid,
+
+1620
+01:00:00,360 --> 01:00:02,360
+no one will discuss its helicity.
+
+1621
+01:00:02,360 --> 01:00:04,360
+Then 3D, 5D, 7D,
+
+1622
+01:00:04,360 --> 01:00:06,360
+no, 4D fluid,
+
+1623
+01:00:06,360 --> 01:00:08,360
+you can still discuss
+
+1624
+01:00:08,360 --> 01:00:10,360
+three-dimensional helicity.
+
+1625
+01:00:10,360 --> 01:00:12,360
+It follows the fluid,
+
+1626
+01:00:12,360 --> 01:00:14,360
+it is purely a dimension.
+
+1627
+01:00:14,360 --> 01:00:16,360
+It can be grouped into 3D.
+
+1628
+01:00:16,360 --> 01:00:18,360
+It is a 3D form.
+
+1629
+01:00:18,360 --> 01:00:20,360
+It is purely a dimension.
+
+1630
+01:00:20,360 --> 01:00:22,360
+Then if it is
+
+1631
+01:00:22,360 --> 01:00:24,360
+a three-dimensional fluid,
+
+1632
+01:00:24,360 --> 01:00:26,360
+it is a closed space.
+
+1633
+01:00:26,360 --> 01:00:28,360
+It should be like this.
+
+1634
+01:00:28,360 --> 01:00:30,360
+Then a five-dimensional fluid,
+
+1635
+01:00:30,360 --> 01:00:32,360
+it corresponds to trace-734.
+
+1636
+01:00:32,360 --> 01:00:34,360
+It means that
+
+1637
+01:00:34,360 --> 01:00:36,360
+depending on how high your helicity is,
+
+1638
+01:00:36,360 --> 01:00:38,360
+you can write a lot of
+
+1639
+01:00:38,360 --> 01:00:40,360
+new concert content.
+
+1640
+01:00:40,360 --> 01:00:42,360
+With trace-734.
+
+1641
+01:00:46,360 --> 01:00:48,360
+Then because of these difficulties,
+
+1642
+01:00:48,360 --> 01:00:50,360
+some people want to write
+
+1643
+01:00:50,360 --> 01:00:52,360
+Clutch Representation.
+
+1644
+01:00:52,360 --> 01:00:54,360
+So they invented a thing called
+
+1645
+01:00:54,360 --> 01:00:56,360
+Multi-Component Clutch Variable.
+
+1646
+01:00:56,360 --> 01:00:58,360
+Lambda and mu
+
+1647
+01:00:58,360 --> 01:01:00,360
+make a lot of noise,
+
+1648
+01:01:00,360 --> 01:01:02,360
+and then add them together.
+
+1649
+01:01:02,360 --> 01:01:04,360
+Then diffuse.
+
+1650
+01:01:04,360 --> 01:01:06,360
+Diffuse is the same as
+
+1651
+01:01:06,360 --> 01:01:08,360
+pressure projection.
+
+1652
+01:01:08,360 --> 01:01:10,360
+But this is very
+
+1653
+01:01:10,360 --> 01:01:12,360
+new insight.
+
+1654
+01:01:12,360 --> 01:01:14,360
+Because it is trivial.
+
+1655
+01:01:14,360 --> 01:01:16,360
+You can write it
+
+1656
+01:01:16,360 --> 01:01:18,360
+in three-dimensional form.
+
+1657
+01:01:18,360 --> 01:01:20,360
+Velocity 1 force
+
+1658
+01:01:20,360 --> 01:01:22,360
+is also very trivial.
+
+1659
+01:01:22,360 --> 01:01:24,360
+This is exactly Clutch Representation.
+
+1660
+01:01:24,360 --> 01:01:26,360
+Multi-Component Clutch Representation.
+
+1661
+01:01:26,360 --> 01:01:28,360
+So you don't have
+
+1662
+01:01:28,360 --> 01:01:30,360
+as much new insight as Lagrangian.
+
+1663
+01:01:30,360 --> 01:01:32,360
+But there is
+
+1664
+01:01:32,360 --> 01:01:34,360
+a very interesting paper
+
+1665
+01:01:34,360 --> 01:01:36,360
+in the 1980s.
+
+1666
+01:01:36,360 --> 01:01:38,360
+At that time,
+
+1667
+01:01:38,360 --> 01:01:40,360
+it used another
+
+1668
+01:01:40,360 --> 01:01:42,360
+new
+
+1669
+01:01:42,360 --> 01:01:44,360
+generalized Clutch Variable method.
+
+1670
+01:01:44,360 --> 01:01:46,360
+You put the lambda and mu,
+
+1671
+01:01:46,360 --> 01:01:48,360
+which is
+
+1672
+01:01:48,360 --> 01:01:50,360
+the key term.
+
+1673
+01:01:50,360 --> 01:01:52,360
+You put lambda and mu together
+
+1674
+01:01:52,360 --> 01:01:54,360
+as a map.
+
+1675
+01:01:54,360 --> 01:01:56,360
+It is sent from the fluid domain to R2.
+
+1676
+01:01:56,360 --> 01:01:58,360
+Then omega equals
+
+1677
+01:01:58,360 --> 01:02:00,360
+lambda times mu.
+
+1678
+01:02:00,360 --> 01:02:02,360
+It is the area
+
+1679
+01:02:02,360 --> 01:02:04,360
+of the two-dimensional space
+
+1680
+01:02:04,360 --> 01:02:06,360
+pulled back by the map.
+
+1681
+01:02:06,360 --> 01:02:08,360
+That is,
+
+1682
+01:02:08,360 --> 01:02:10,360
+it does the variable conversion.
+
+1683
+01:02:10,360 --> 01:02:12,360
+You can think of it as
+
+1684
+01:02:12,360 --> 01:02:14,360
+you put the S,
+
+1685
+01:02:14,360 --> 01:02:16,360
+which is lambda and mu together.
+
+1686
+01:02:18,360 --> 01:02:20,360
+R2 vector value
+
+1687
+01:02:20,360 --> 01:02:22,360
+function.
+
+1688
+01:02:22,360 --> 01:02:24,360
+From three-dimensional to two-dimensional.
+
+1689
+01:02:24,360 --> 01:02:26,360
+On the left,
+
+1690
+01:02:26,360 --> 01:02:28,360
+you can draw any two-dimensional curve.
+
+1691
+01:02:28,360 --> 01:02:30,360
+You can discuss
+
+1692
+01:02:30,360 --> 01:02:32,360
+the vorticity flux on it.
+
+1693
+01:02:32,360 --> 01:02:34,360
+Its value is equal to the area
+
+1694
+01:02:34,360 --> 01:02:36,360
+on the right.
+
+1695
+01:02:36,360 --> 01:02:38,360
+How much time did I spend?
+
+1696
+01:02:40,360 --> 01:02:42,360
+8 minutes.
+
+1697
+01:02:42,360 --> 01:02:44,360
+Oh.
+
+1698
+01:02:44,360 --> 01:02:46,360
+OK.
+
+1699
+01:02:46,360 --> 01:02:48,360
+This is a natural generalization.
+
+1700
+01:02:48,360 --> 01:02:50,360
+You can imagine that you put the lambda and mu
+
+1701
+01:02:50,360 --> 01:02:52,360
+together. I don't take it as R2.
+
+1702
+01:02:52,360 --> 01:02:54,360
+I can take it as any two-dimensional manifold.
+
+1703
+01:02:54,360 --> 01:02:56,360
+So you can
+
+1704
+01:02:56,360 --> 01:02:58,360
+consider it as a sphere.
+
+1705
+01:02:58,360 --> 01:03:00,360
+Then,
+
+1706
+01:03:00,360 --> 01:03:02,360
+the
+
+1707
+01:03:02,360 --> 01:03:04,360
+vorticity can still be taken as
+
+1708
+01:03:04,360 --> 01:03:06,360
+the area on the sphere
+
+1709
+01:03:06,360 --> 01:03:08,360
+from the pullback.
+
+1710
+01:03:08,360 --> 01:03:10,360
+You can't actually
+
+1711
+01:03:10,360 --> 01:03:12,360
+put the lambda and mu together.
+
+1712
+01:03:12,360 --> 01:03:14,360
+You can only write it as a variable conversion.
+
+1713
+01:03:16,360 --> 01:03:18,360
+If so,
+
+1714
+01:03:18,360 --> 01:03:20,360
+you will find that the helicity is not necessarily the same.
+
+1715
+01:03:20,360 --> 01:03:22,360
+So you can
+
+1716
+01:03:22,360 --> 01:03:24,360
+find that at least most of the three-dimensional
+
+1717
+01:03:24,360 --> 01:03:26,360
+flux can be approximated.
+
+1718
+01:03:30,360 --> 01:03:32,360
+Yes.
+
+1719
+01:03:32,360 --> 01:03:34,360
+Yes.
+
+1720
+01:03:36,360 --> 01:03:38,360
+The dimension is not the same.
+
+1721
+01:03:38,360 --> 01:03:40,360
+This is a continuous map.
+
+1722
+01:03:40,360 --> 01:03:42,360
+SC continuous map.
+
+1723
+01:03:42,360 --> 01:03:44,360
+Then you can discuss its pullback.
+
+1724
+01:03:44,360 --> 01:03:46,360
+There is a tool form on the right.
+
+1725
+01:03:46,360 --> 01:03:48,360
+You can turn the pullback
+
+1726
+01:03:48,360 --> 01:03:50,360
+into a tool form.
+
+1727
+01:03:50,360 --> 01:03:52,360
+And that tool form,
+
+1728
+01:03:52,360 --> 01:03:54,360
+if you just put the area on the right
+
+1729
+01:03:54,360 --> 01:03:56,360
+from the pullback into
+
+1730
+01:03:56,360 --> 01:03:58,360
+vorticity,
+
+1731
+01:03:58,360 --> 01:04:00,360
+it is a
+
+1732
+01:04:00,360 --> 01:04:02,360
+it is a
+
+1733
+01:04:02,360 --> 01:04:04,360
+capture representation.
+
+1734
+01:04:04,360 --> 01:04:06,360
+Because the core of the capture representation
+
+1735
+01:04:06,360 --> 01:04:08,360
+is that omega equals
+
+1736
+01:04:08,360 --> 01:04:10,360
+lambda which equals
+
+1737
+01:04:10,360 --> 01:04:12,360
+the area from the pullback
+
+1738
+01:04:12,360 --> 01:04:14,360
+into vorticity.
+
+1739
+01:04:18,360 --> 01:04:20,360
+Yes.
+
+1740
+01:04:20,360 --> 01:04:22,360
+I will say syntactic manifold.
+
+1741
+01:04:22,360 --> 01:04:24,360
+There is a
+
+1742
+01:04:24,360 --> 01:04:26,360
+non-degenerate tool form.
+
+1743
+01:04:28,360 --> 01:04:30,360
+Yes.
+
+1744
+01:04:30,360 --> 01:04:32,360
+Yes.
+
+1745
+01:04:32,360 --> 01:04:34,360
+This is the syntactic manifold value
+
+1746
+01:04:34,360 --> 01:04:36,360
+function.
+
+1747
+01:04:36,360 --> 01:04:38,360
+The non-degenerate version of
+
+1748
+01:04:38,360 --> 01:04:40,360
+syntactic structure
+
+1749
+01:04:40,360 --> 01:04:42,360
+is what Marston and others
+
+1750
+01:04:42,360 --> 01:04:44,360
+saw.
+
+1751
+01:04:50,360 --> 01:04:52,360
+So we think
+
+1752
+01:04:52,360 --> 01:04:54,360
+this method is
+
+1753
+01:04:54,360 --> 01:04:56,360
+quite interesting.
+
+1754
+01:04:56,360 --> 01:04:58,360
+It turns the space on the right
+
+1755
+01:04:58,360 --> 01:05:00,360
+into a general manifold.
+
+1756
+01:05:00,360 --> 01:05:02,360
+So we look for this route.
+
+1757
+01:05:02,360 --> 01:05:04,360
+But this
+
+1758
+01:05:04,360 --> 01:05:06,360
+is just a two-page paper.
+
+1759
+01:05:06,360 --> 01:05:08,360
+I didn't talk much about it.
+
+1760
+01:05:08,360 --> 01:05:10,360
+So we continue to develop this thing.
+
+1761
+01:05:10,360 --> 01:05:12,360
+But it only discusses vorticity.
+
+1762
+01:05:12,360 --> 01:05:14,360
+Velocity can also be generalized like this.
+
+1763
+01:05:14,360 --> 01:05:16,360
+To generalize velocity,
+
+1764
+01:05:16,360 --> 01:05:18,360
+we remember that
+
+1765
+01:05:18,360 --> 01:05:20,360
+velocity is written as this lambda
+
+1766
+01:05:20,360 --> 01:05:22,360
+dmu plus dv.
+
+1767
+01:05:22,360 --> 01:05:24,360
+You can also think of it as a
+
+1768
+01:05:24,360 --> 01:05:26,360
+map size. It is sent to a three-dimensional space.
+
+1769
+01:05:26,360 --> 01:05:28,360
+Then it projects it.
+
+1770
+01:05:28,360 --> 01:05:30,360
+Then it
+
+1771
+01:05:30,360 --> 01:05:32,360
+pulls back a one-form.
+
+1772
+01:05:32,360 --> 01:05:34,360
+Just like the
+
+1773
+01:05:34,360 --> 01:05:36,360
+vorticity is a two-form.
+
+1774
+01:05:40,360 --> 01:05:42,360
+Its form is xdy plus dz.
+
+1775
+01:05:42,360 --> 01:05:44,360
+You can imagine
+
+1776
+01:05:44,360 --> 01:05:46,360
+what this means.
+
+1777
+01:05:46,360 --> 01:05:48,360
+This is what Clebsch did.
+
+1778
+01:05:48,360 --> 01:05:50,360
+Before Clebsch, people
+
+1779
+01:05:50,360 --> 01:05:52,360
+only looked at the potential flow,
+
+1780
+01:05:52,360 --> 01:05:54,360
+which is eta equals to dv.
+
+1781
+01:05:54,360 --> 01:05:56,360
+You can think of it as
+
+1782
+01:05:56,360 --> 01:05:58,360
+pulling back the dz one-form.
+
+1783
+01:05:58,360 --> 01:06:00,360
+You can think of dz
+
+1784
+01:06:00,360 --> 01:06:02,360
+as these hyperplane fields.
+
+1785
+01:06:06,360 --> 01:06:08,360
+They all point in the same direction.
+
+1786
+01:06:08,360 --> 01:06:10,360
+A very trivial one-form.
+
+1787
+01:06:10,360 --> 01:06:12,360
+Then you pull it back like this.
+
+1788
+01:06:12,360 --> 01:06:14,360
+What Clebsch did
+
+1789
+01:06:14,360 --> 01:06:16,360
+was to replace the template field
+
+1790
+01:06:16,360 --> 01:06:18,360
+with a more
+
+1791
+01:06:18,360 --> 01:06:20,360
+rich xdy plus dz form.
+
+1792
+01:06:20,360 --> 01:06:22,360
+Then you see
+
+1793
+01:06:22,360 --> 01:06:24,360
+that hyperplane field
+
+1794
+01:06:24,360 --> 01:06:26,360
+is nowhere integrable.
+
+1795
+01:06:26,360 --> 01:06:28,360
+It's not just
+
+1796
+01:06:28,360 --> 01:06:30,360
+some tangent spaces
+
+1797
+01:06:30,360 --> 01:06:32,360
+in the family of surfaces.
+
+1798
+01:06:32,360 --> 01:06:34,360
+It's all separated like this.
+
+1799
+01:06:36,360 --> 01:06:38,360
+This is called contact geometry.
+
+1800
+01:06:42,360 --> 01:06:44,360
+Clebsch representation
+
+1801
+01:06:44,360 --> 01:06:46,360
+means that
+
+1802
+01:06:46,360 --> 01:06:48,360
+I have a size of a map, which is sent to this space.
+
+1803
+01:06:48,360 --> 01:06:50,360
+Then I pull back these hyperplane fields
+
+1804
+01:06:50,360 --> 01:06:52,360
+to become the velocity
+
+1805
+01:06:52,360 --> 01:06:54,360
+of this hyperplane field, one-form.
+
+1806
+01:06:54,360 --> 01:06:56,360
+To describe the flow,
+
+1807
+01:06:56,360 --> 01:06:58,360
+instead of saying
+
+1808
+01:06:58,360 --> 01:07:00,360
+how some one-forms change at any time,
+
+1809
+01:07:00,360 --> 01:07:02,360
+he just said how this psi changes at any time.
+
+1810
+01:07:02,360 --> 01:07:04,360
+Then this becomes a zero-form.
+
+1811
+01:07:04,360 --> 01:07:06,360
+So it becomes a little bit
+
+1812
+01:07:06,360 --> 01:07:08,360
+simpler.
+
+1813
+01:07:10,360 --> 01:07:12,360
+Then in the case of Clebsch,
+
+1814
+01:07:12,360 --> 01:07:14,360
+remember lambda, mu, and phi.
+
+1815
+01:07:14,360 --> 01:07:16,360
+Actually, only lambda and mu determine the vorticity.
+
+1816
+01:07:16,360 --> 01:07:18,360
+So
+
+1817
+01:07:18,360 --> 01:07:20,360
+there is a natural projection,
+
+1818
+01:07:20,360 --> 01:07:22,360
+which is just a projection.
+
+1819
+01:07:22,360 --> 01:07:24,360
+Then
+
+1820
+01:07:24,360 --> 01:07:26,360
+you can say that
+
+1821
+01:07:26,360 --> 01:07:28,360
+the vorticity is just the two parts in front
+
+1822
+01:07:28,360 --> 01:07:30,360
+of the pullback area.
+
+1823
+01:07:30,360 --> 01:07:32,360
+Then
+
+1824
+01:07:32,360 --> 01:07:34,360
+we call the psi velocity-Clebsch map.
+
+1825
+01:07:34,360 --> 01:07:36,360
+Then S is called
+
+1826
+01:07:36,360 --> 01:07:38,360
+vorticity-Clebsch map.
+
+1827
+01:07:38,360 --> 01:07:40,360
+So the identity after the pullback
+
+1828
+01:07:40,360 --> 01:07:42,360
+is the velocity of the vorticity.
+
+1829
+01:07:44,360 --> 01:07:46,360
+Then you will find that
+
+1830
+01:07:46,360 --> 01:07:48,360
+actually
+
+1831
+01:07:48,360 --> 01:07:50,360
+the x, dy, and z on the right
+
+1832
+01:07:50,360 --> 01:07:52,360
+and the sigma below
+
+1833
+01:07:52,360 --> 01:07:54,360
+are x, dy, and h, dy.
+
+1834
+01:07:54,360 --> 01:07:56,360
+One is the area form,
+
+1835
+01:07:56,360 --> 01:07:58,360
+and the other is the form of Clebsch.
+
+1836
+01:07:58,360 --> 01:08:00,360
+The relationship between the two
+
+1837
+01:08:00,360 --> 01:08:02,360
+is actually quite important.
+
+1838
+01:08:02,360 --> 01:08:04,360
+It's very obvious.
+
+1839
+01:08:04,360 --> 01:08:06,360
+The result is that
+
+1840
+01:08:06,360 --> 01:08:08,360
+the relationship of the
+
+1841
+01:08:08,360 --> 01:08:10,360
+theta on top
+
+1842
+01:08:10,360 --> 01:08:12,360
+is quite important.
+
+1843
+01:08:12,360 --> 01:08:14,360
+It's
+
+1844
+01:08:14,360 --> 01:08:16,360
+d theta equals pi star sigma.
+
+1845
+01:08:16,360 --> 01:08:18,360
+That is, the curved
+
+1846
+01:08:18,360 --> 01:08:20,360
+curves on top
+
+1847
+01:08:20,360 --> 01:08:22,360
+are like a velocity field.
+
+1848
+01:08:22,360 --> 01:08:24,360
+A fixed velocity field.
+
+1849
+01:08:24,360 --> 01:08:26,360
+Then the curl
+
+1850
+01:08:26,360 --> 01:08:28,360
+corresponds to the vorticity
+
+1851
+01:08:28,360 --> 01:08:30,360
+in the template velocity field.
+
+1852
+01:08:30,360 --> 01:08:32,360
+The two forms are
+
+1853
+01:08:32,360 --> 01:08:34,360
+the area forms
+
+1854
+01:08:34,360 --> 01:08:36,360
+in the two-dimensional space below.
+
+1855
+01:08:36,360 --> 01:08:38,360
+Then
+
+1856
+01:08:38,360 --> 01:08:40,360
+this
+
+1857
+01:08:40,360 --> 01:08:42,360
+means that
+
+1858
+01:08:42,360 --> 01:08:44,360
+the frame on the right
+
+1859
+01:08:44,360 --> 01:08:46,360
+and the square on the left
+
+1860
+01:08:46,360 --> 01:08:48,360
+are
+
+1861
+01:08:48,360 --> 01:08:50,360
+in another field.
+
+1862
+01:08:50,360 --> 01:08:52,360
+This is called pre-quantum bundle.
+
+1863
+01:08:56,360 --> 01:08:58,360
+I don't have much time,
+
+1864
+01:08:58,360 --> 01:09:00,360
+so I'll
+
+1865
+01:09:00,360 --> 01:09:02,360
+try to
+
+1866
+01:09:02,360 --> 01:09:04,360
+explain
+
+1867
+01:09:04,360 --> 01:09:06,360
+what each sentence
+
+1868
+01:09:06,360 --> 01:09:08,360
+means.
+
+1869
+01:09:08,360 --> 01:09:10,360
+I don't think it's bad.
+
+1870
+01:09:10,360 --> 01:09:12,360
+It's not bad?
+
+1871
+01:09:12,360 --> 01:09:14,360
+It's not bad, right?
+
+1872
+01:09:16,360 --> 01:09:18,360
+What I just said
+
+1873
+01:09:18,360 --> 01:09:20,360
+is that it can be any syntax manifold.
+
+1874
+01:09:20,360 --> 01:09:22,360
+The two-dimensional space below me
+
+1875
+01:09:22,360 --> 01:09:24,360
+can also be a sphere,
+
+1876
+01:09:24,360 --> 01:09:26,360
+or a Riemann surface,
+
+1877
+01:09:26,360 --> 01:09:28,360
+or in general, any syntax manifold,
+
+1878
+01:09:28,360 --> 01:09:30,360
+any two-dimensional space.
+
+1879
+01:09:30,360 --> 01:09:32,360
+Then
+
+1880
+01:09:32,360 --> 01:09:34,360
+there is actually
+
+1881
+01:09:34,360 --> 01:09:36,360
+a fiber bundle above it.
+
+1882
+01:09:36,360 --> 01:09:38,360
+If I add one more,
+
+1883
+01:09:38,360 --> 01:09:40,360
+each point below me will grow
+
+1884
+01:09:40,360 --> 01:09:42,360
+a little bit of freedom.
+
+1885
+01:09:42,360 --> 01:09:44,360
+Then it becomes
+
+1886
+01:09:44,360 --> 01:09:46,360
+a three-dimensional space
+
+1887
+01:09:46,360 --> 01:09:48,360
+in the two-dimensional space below.
+
+1888
+01:09:50,360 --> 01:09:52,360
+There is an operator
+
+1889
+01:09:52,360 --> 01:09:54,360
+called projection.
+
+1890
+01:09:54,360 --> 01:09:56,360
+Then there is
+
+1891
+01:09:56,360 --> 01:09:58,360
+a
+
+1892
+01:09:58,360 --> 01:10:00,360
+one-form
+
+1893
+01:10:00,360 --> 01:10:02,360
+in the three-dimensional space,
+
+1894
+01:10:02,360 --> 01:10:04,360
+just like x, y, and z.
+
+1895
+01:10:04,360 --> 01:10:06,360
+But in general, I can use any one-form
+
+1896
+01:10:06,360 --> 01:10:08,360
+as long as it meets the following conditions.
+
+1897
+01:10:08,360 --> 01:10:10,360
+As I just said,
+
+1898
+01:10:10,360 --> 01:10:12,360
+def equals pi star sigma.
+
+1899
+01:10:12,360 --> 01:10:14,360
+Then
+
+1900
+01:10:14,360 --> 01:10:16,360
+there is a normalization.
+
+1901
+01:10:16,360 --> 01:10:18,360
+Then it will be
+
+1902
+01:10:18,360 --> 01:10:20,360
+a pre-quantum bundle.
+
+1903
+01:10:20,360 --> 01:10:22,360
+This word comes from geometric quantization.
+
+1904
+01:10:22,360 --> 01:10:24,360
+That is to say,
+
+1905
+01:10:24,360 --> 01:10:26,360
+there is a form that
+
+1906
+01:10:26,360 --> 01:10:28,360
+quantum mechanics
+
+1907
+01:10:28,360 --> 01:10:30,360
+is generally
+
+1908
+01:10:30,360 --> 01:10:32,360
+quantized from the classical system.
+
+1909
+01:10:32,360 --> 01:10:34,360
+We usually say
+
+1910
+01:10:34,360 --> 01:10:36,360
+that the momentum
+
+1911
+01:10:36,360 --> 01:10:38,360
+is a function of space.
+
+1912
+01:10:38,360 --> 01:10:40,360
+There are some standard programs.
+
+1913
+01:10:40,360 --> 01:10:42,360
+But in general,
+
+1914
+01:10:42,360 --> 01:10:44,360
+there is not only
+
+1915
+01:10:44,360 --> 01:10:46,360
+x and p in general space.
+
+1916
+01:10:46,360 --> 01:10:48,360
+There is only position and momentum.
+
+1917
+01:10:48,360 --> 01:10:50,360
+It is a general simplex manifold.
+
+1918
+01:10:50,360 --> 01:10:52,360
+How do you discuss it?
+
+1919
+01:10:52,360 --> 01:10:54,360
+Then how does the classical mechanics
+
+1920
+01:10:54,360 --> 01:10:56,360
+on it become a quantum system?
+
+1921
+01:10:56,360 --> 01:10:58,360
+It actually lifts this thing
+
+1922
+01:10:58,360 --> 01:11:00,360
+into this
+
+1923
+01:11:00,360 --> 01:11:02,360
+phase factor.
+
+1924
+01:11:02,360 --> 01:11:04,360
+Then the function on this is called wave function.
+
+1925
+01:11:04,360 --> 01:11:06,360
+Then there is a point
+
+1926
+01:11:06,360 --> 01:11:08,360
+that needs to be defined.
+
+1927
+01:11:08,360 --> 01:11:10,360
+It is pi star sigma.
+
+1928
+01:11:10,360 --> 01:11:12,360
+It is a connection.
+
+1929
+01:11:12,360 --> 01:11:14,360
+Then you will need
+
+1930
+01:11:14,360 --> 01:11:16,360
+to say that the
+
+1931
+01:11:16,360 --> 01:11:18,360
+coverage of the connection
+
+1932
+01:11:18,360 --> 01:11:20,360
+is the same as the symplectic form
+
+1933
+01:11:20,360 --> 01:11:22,360
+of the manifold.
+
+1934
+01:11:22,360 --> 01:11:24,360
+That is
+
+1935
+01:11:24,360 --> 01:11:26,360
+key for the Poisson equation.
+
+1936
+01:11:26,360 --> 01:11:28,360
+Poisson bracket
+
+1937
+01:11:28,360 --> 01:11:30,360
+will become
+
+1938
+01:11:30,360 --> 01:11:32,360
+b bracket.
+
+1939
+01:11:32,360 --> 01:11:34,360
+Then the Hamiltonian equation
+
+1940
+01:11:34,360 --> 01:11:36,360
+will become
+
+1941
+01:11:36,360 --> 01:11:38,360
+the Heisenberg equation.
+
+1942
+01:11:38,360 --> 01:11:40,360
+That has nothing to do
+
+1943
+01:11:40,360 --> 01:11:42,360
+with this.
+
+1944
+01:11:42,360 --> 01:11:44,360
+They will need
+
+1945
+01:11:44,360 --> 01:11:46,360
+a definition called pre-confirm bundle.
+
+1946
+01:11:46,360 --> 01:11:48,360
+I just need the same definition here.
+
+1947
+01:11:48,360 --> 01:11:50,360
+So I call it pre-confirm bundle.
+
+1948
+01:11:52,360 --> 01:11:54,360
+What is theta?
+
+1949
+01:11:54,360 --> 01:11:56,360
+Theta is a one form.
+
+1950
+01:11:56,360 --> 01:11:58,360
+You can say that it is the bundle
+
+1951
+01:11:58,360 --> 01:12:00,360
+connection.
+
+1952
+01:12:00,360 --> 01:12:02,360
+Connection means
+
+1953
+01:12:02,360 --> 01:12:04,360
+that it defines
+
+1954
+01:12:04,360 --> 01:12:06,360
+if I go from one point to another
+
+1955
+01:12:06,360 --> 01:12:08,360
+in the manifold,
+
+1956
+01:12:08,360 --> 01:12:10,360
+we need to discuss
+
+1957
+01:12:10,360 --> 01:12:12,360
+what is called parallel transport.
+
+1958
+01:12:12,360 --> 01:12:14,360
+Then you will see this hyperplane field.
+
+1959
+01:12:14,360 --> 01:12:16,360
+It means that
+
+1960
+01:12:16,360 --> 01:12:18,360
+if it is cut off from this hyperplane,
+
+1961
+01:12:18,360 --> 01:12:20,360
+it means parallel.
+
+1962
+01:12:20,360 --> 01:12:22,360
+If it is all misaligned,
+
+1963
+01:12:22,360 --> 01:12:24,360
+it means that if I go around
+
+1964
+01:12:24,360 --> 01:12:26,360
+and do parallel transport,
+
+1965
+01:12:26,360 --> 01:12:28,360
+it may go to different heights.
+
+1966
+01:12:28,360 --> 01:12:30,360
+That is the definition of Parallel transport.
+
+1967
+01:12:32,360 --> 01:12:34,360
+There is a gap.
+
+1968
+01:12:34,360 --> 01:12:36,360
+The size of the gap
+
+1969
+01:12:36,360 --> 01:12:38,360
+is the
+
+1970
+01:12:38,360 --> 01:12:40,360
+distance between
+
+1971
+01:12:40,360 --> 01:12:42,360
+the two paths.
+
+1972
+01:12:42,360 --> 01:12:44,360
+What is the library?
+
+1973
+01:12:44,360 --> 01:12:46,360
+It means
+
+1974
+01:12:46,360 --> 01:12:48,360
+the phase.
+
+1975
+01:12:48,360 --> 01:12:50,360
+It is
+
+1976
+01:12:50,360 --> 01:12:52,360
+usually
+
+1977
+01:12:52,360 --> 01:12:54,360
+U1.
+
+1978
+01:12:54,360 --> 01:12:56,360
+Wave function is a definition
+
+1979
+01:12:56,360 --> 01:12:58,360
+for every x and p
+
+1980
+01:12:58,360 --> 01:13:00,360
+in the space below.
+
+1981
+01:13:00,360 --> 01:13:02,360
+I define
+
+1982
+01:13:02,360 --> 01:13:04,360
+its
+
+1983
+01:13:04,360 --> 01:13:06,360
+amplitude.
+
+1984
+01:13:06,360 --> 01:13:08,360
+How much probability it has in that place.
+
+1985
+01:13:08,360 --> 01:13:10,360
+It also adds a phase factor.
+
+1986
+01:13:10,360 --> 01:13:12,360
+I can have the density of the wave
+
+1987
+01:13:12,360 --> 01:13:14,360
+but I can only have the Ith.
+
+1988
+01:13:14,360 --> 01:13:16,360
+It can be evaluated on this factor.
+
+1989
+01:13:16,360 --> 01:13:18,360
+What is the difference between
+
+1990
+01:13:18,360 --> 01:13:20,360
+U1 and U2?
+
+1991
+01:13:24,360 --> 01:13:26,360
+Another variable
+
+1992
+01:13:26,360 --> 01:13:28,360
+is the
+
+1993
+01:13:28,360 --> 01:13:30,360
+density.
+
+1994
+01:13:30,360 --> 01:13:32,360
+Because it
+
+1995
+01:13:32,360 --> 01:13:34,360
+actually has
+
+1996
+01:13:34,360 --> 01:13:36,360
+another value.
+
+1997
+01:13:36,360 --> 01:13:38,360
+But the bundle
+
+1998
+01:13:38,360 --> 01:13:40,360
+is a trivial bundle.
+
+1999
+01:13:40,360 --> 01:13:42,360
+It is just cross r.
+
+2000
+01:13:42,360 --> 01:13:44,360
+But this phase is
+
+2001
+01:13:44,360 --> 01:13:46,360
+more complicated.
+
+2002
+01:13:46,360 --> 01:13:48,360
+Because it is cross s1.
+
+2003
+01:13:48,360 --> 01:13:50,360
+But in general, it might be cross s1.
+
+2004
+01:13:50,360 --> 01:13:52,360
+So it must be written in bundle language.
+
+2005
+01:13:52,360 --> 01:13:54,360
+So it is often
+
+2006
+01:13:54,360 --> 01:13:56,360
+that
+
+2007
+01:13:56,360 --> 01:13:58,360
+in
+
+2008
+01:13:58,360 --> 01:14:00,360
+that
+
+2009
+01:14:00,360 --> 01:14:02,360
+density is just
+
+2010
+01:14:02,360 --> 01:14:04,360
+a function
+
+2011
+01:14:04,360 --> 01:14:06,360
+of the manifold below.
+
+2012
+01:14:06,360 --> 01:14:08,360
+But if we talk about phase,
+
+2013
+01:14:08,360 --> 01:14:10,360
+it can't be well defined.
+
+2014
+01:14:10,360 --> 01:14:12,360
+You have to choose a gauge
+
+2015
+01:14:12,360 --> 01:14:14,360
+because this fiber
+
+2016
+01:14:14,360 --> 01:14:16,360
+is a compact.
+
+2017
+01:14:16,360 --> 01:14:18,360
+In quantum mechanics, it is usually compact.
+
+2018
+01:14:18,360 --> 01:14:20,360
+How does it decide
+
+2019
+01:14:20,360 --> 01:14:22,360
+the fiber structure
+
+2020
+01:14:22,360 --> 01:14:24,360
+or the
+
+2021
+01:14:24,360 --> 01:14:26,360
+input module?
+
+2022
+01:14:26,360 --> 01:14:28,360
+How do I
+
+2023
+01:14:28,360 --> 01:14:30,360
+choose sigma
+
+2024
+01:14:30,360 --> 01:14:32,360
+or q?
+
+2025
+01:14:32,360 --> 01:14:34,360
+How do you
+
+2026
+01:14:34,360 --> 01:14:36,360
+make a connection
+
+2027
+01:14:36,360 --> 01:14:38,360
+with the fiber
+
+2028
+01:14:38,360 --> 01:14:40,360
+of the module?
+
+2029
+01:14:40,360 --> 01:14:42,360
+I read
+
+2030
+01:14:42,360 --> 01:14:44,360
+Wikipedia.
+
+2031
+01:14:46,360 --> 01:14:48,360
+It only talks about
+
+2032
+01:14:48,360 --> 01:14:50,360
+U1 principle bundle
+
+2033
+01:14:50,360 --> 01:14:52,360
+over a syntactic manifold.
+
+2034
+01:14:52,360 --> 01:14:54,360
+I just generalize a little bit here.
+
+2035
+01:14:54,360 --> 01:14:56,360
+I just say that it is a single fiber.
+
+2036
+01:14:56,360 --> 01:14:58,360
+So it can be
+
+2037
+01:14:58,360 --> 01:15:00,360
+not necessarily
+
+2038
+01:15:00,360 --> 01:15:02,360
+a U1 structure.
+
+2039
+01:15:02,360 --> 01:15:04,360
+I don't know why.
+
+2040
+01:15:04,360 --> 01:15:06,360
+What I mean is, even if you choose
+
+2041
+01:15:06,360 --> 01:15:08,360
+a manifold bundle, I think your
+
+2042
+01:15:08,360 --> 01:15:10,360
+manifold structure is free.
+
+2043
+01:15:10,360 --> 01:15:12,360
+Yes.
+
+2044
+01:15:12,360 --> 01:15:14,360
+I don't know how physicists
+
+2045
+01:15:14,360 --> 01:15:16,360
+usually choose this.
+
+2046
+01:15:16,360 --> 01:15:18,360
+When doing geometric composition,
+
+2047
+01:15:18,360 --> 01:15:20,360
+how to choose?
+
+2048
+01:15:20,360 --> 01:15:22,360
+How to choose?
+
+2049
+01:15:22,360 --> 01:15:24,360
+Sometimes
+
+2050
+01:15:24,360 --> 01:15:26,360
+there is a problem with the existence.
+
+2051
+01:15:26,360 --> 01:15:28,360
+But if there are many different structures,
+
+2052
+01:15:28,360 --> 01:15:30,360
+I don't know.
+
+2053
+01:15:38,360 --> 01:15:40,360
+As long as you have this pre-quantum structure,
+
+2054
+01:15:40,360 --> 01:15:42,360
+you can immediately discuss
+
+2055
+01:15:42,360 --> 01:15:44,360
+what it corresponds to.
+
+2056
+01:15:44,360 --> 01:15:46,360
+Velocity-catch map and
+
+2057
+01:15:46,360 --> 01:15:48,360
+vorticity-catch map.
+
+2058
+01:15:48,360 --> 01:15:50,360
+That is, the domain of the fluid
+
+2059
+01:15:50,360 --> 01:15:52,360
+is the bundle above.
+
+2060
+01:15:52,360 --> 01:15:54,360
+It is called velocity-catch map.
+
+2061
+01:15:54,360 --> 01:15:56,360
+It can be used to pull back
+
+2062
+01:15:56,360 --> 01:15:58,360
+the hyperplane field above.
+
+2063
+01:15:58,360 --> 01:16:00,360
+Then the area form
+
+2064
+01:16:00,360 --> 01:16:02,360
+or syntactic form
+
+2065
+01:16:02,360 --> 01:16:04,360
+is pulled back to the vorticity field.
+
+2066
+01:16:06,360 --> 01:16:08,360
+There is a very important
+
+2067
+01:16:08,360 --> 01:16:10,360
+combination.
+
+2068
+01:16:10,360 --> 01:16:12,360
+In fact,
+
+2069
+01:16:12,360 --> 01:16:14,360
+if my right
+
+2070
+01:16:14,360 --> 01:16:16,360
+syntactic manifold
+
+2071
+01:16:16,360 --> 01:16:18,360
+is only 2-dimensional,
+
+2072
+01:16:18,360 --> 01:16:20,360
+and my fluid domain is only 3-dimensional,
+
+2073
+01:16:20,360 --> 01:16:22,360
+there is an interesting phenomenon.
+
+2074
+01:16:22,360 --> 01:16:24,360
+If I draw an area on the right,
+
+2075
+01:16:24,360 --> 01:16:26,360
+its pre-image
+
+2076
+01:16:26,360 --> 01:16:28,360
+must be a vortex tube.
+
+2077
+01:16:28,360 --> 01:16:30,360
+The definition of a vortex tube is
+
+2078
+01:16:30,360 --> 01:16:32,360
+that it is a 3-dimensional area,
+
+2079
+01:16:32,360 --> 01:16:34,360
+but the vorticity flux through
+
+2080
+01:16:34,360 --> 01:16:36,360
+its boundary is 0.
+
+2081
+01:16:36,360 --> 01:16:38,360
+In other words,
+
+2082
+01:16:38,360 --> 01:16:40,360
+the vortex line is like a parallel tube.
+
+2083
+01:16:44,360 --> 01:16:46,360
+If you reduce these regions to a point,
+
+2084
+01:16:46,360 --> 01:16:48,360
+you will find that it is
+
+2085
+01:16:48,360 --> 01:16:50,360
+pre-image of point through S.
+
+2086
+01:16:50,360 --> 01:16:52,360
+It will be a vortex line.
+
+2087
+01:16:54,360 --> 01:16:56,360
+There is a well-known
+
+2088
+01:16:56,360 --> 01:16:58,360
+level set method in
+
+2089
+01:16:58,360 --> 01:17:00,360
+application mathematics.
+
+2090
+01:17:00,360 --> 01:17:02,360
+You can use a level set function
+
+2091
+01:17:02,360 --> 01:17:04,360
+to describe any
+
+2092
+01:17:04,360 --> 01:17:06,360
+combination shape.
+
+2093
+01:17:06,360 --> 01:17:08,360
+You can use an implicit function
+
+2094
+01:17:08,360 --> 01:17:10,360
+to describe.
+
+2095
+01:17:10,360 --> 01:17:12,360
+S is like this implicit function.
+
+2096
+01:17:12,360 --> 01:17:14,360
+It is not mapped to R2,
+
+2097
+01:17:14,360 --> 01:17:16,360
+but it is mapped to the
+
+2098
+01:17:16,360 --> 01:17:18,360
+general syntactic manifold.
+
+2099
+01:17:18,360 --> 01:17:20,360
+The geometry it describes
+
+2100
+01:17:20,360 --> 01:17:22,360
+is the vortex line.
+
+2101
+01:17:22,360 --> 01:17:24,360
+The vortex line
+
+2102
+01:17:24,360 --> 01:17:26,360
+looks complicated,
+
+2103
+01:17:26,360 --> 01:17:28,360
+but if you have
+
+2104
+01:17:28,360 --> 01:17:30,360
+this geometric variable,
+
+2105
+01:17:30,360 --> 01:17:32,360
+it is a level set function.
+
+2106
+01:17:32,360 --> 01:17:34,360
+If you have
+
+2107
+01:17:34,360 --> 01:17:36,360
+this level set function,
+
+2108
+01:17:36,360 --> 01:17:38,360
+it is very easy to visualize
+
+2109
+01:17:38,360 --> 01:17:40,360
+these vortex structures.
+
+2110
+01:17:40,360 --> 01:17:42,360
+This motivates
+
+2111
+01:17:42,360 --> 01:17:44,360
+us to have a side project.
+
+2112
+01:17:48,360 --> 01:17:50,360
+Remember that
+
+2113
+01:17:50,360 --> 01:17:52,360
+if you want to
+
+2114
+01:17:52,360 --> 01:17:54,360
+set up a level set
+
+2115
+01:17:54,360 --> 01:17:56,360
+interpretation, you need to
+
+2116
+01:17:56,360 --> 01:17:58,360
+have a side project.
+
+2117
+01:17:58,360 --> 01:18:00,360
+But if we choose R2,
+
+2118
+01:18:00,360 --> 01:18:02,360
+we know that there is no helicity,
+
+2119
+01:18:02,360 --> 01:18:04,360
+so it is too boring.
+
+2120
+01:18:04,360 --> 01:18:06,360
+We already know that S2
+
+2121
+01:18:06,360 --> 01:18:08,360
+has a two-page paper
+
+2122
+01:18:08,360 --> 01:18:10,360
+that says there is a general helicity.
+
+2123
+01:18:12,360 --> 01:18:14,360
+If the domain below is S2,
+
+2124
+01:18:14,360 --> 01:18:16,360
+you have to ask
+
+2125
+01:18:16,360 --> 01:18:18,360
+how to choose
+
+2126
+01:18:18,360 --> 01:18:20,360
+the helicity.
+
+2127
+01:18:20,360 --> 01:18:22,360
+We already know that there is a pre-content bundle
+
+2128
+01:18:22,360 --> 01:18:24,360
+called half-vibration.
+
+2129
+01:18:24,360 --> 01:18:26,360
+The Q above is S3.
+
+2130
+01:18:26,360 --> 01:18:28,360
+S3 is the three-dimensional sphere
+
+2131
+01:18:28,360 --> 01:18:30,360
+in the four-dimensional space.
+
+2132
+01:18:30,360 --> 01:18:32,360
+The three-dimensional
+
+2133
+01:18:32,360 --> 01:18:34,360
+surface is also
+
+2134
+01:18:34,360 --> 01:18:36,360
+the three-dimensional surface.
+
+2135
+01:18:38,360 --> 01:18:40,360
+The easiest way to understand
+
+2136
+01:18:40,360 --> 01:18:42,360
+the structure is to use
+
+2137
+01:18:42,360 --> 01:18:44,360
+the four-element.
+
+2138
+01:18:44,360 --> 01:18:46,360
+The four-element is
+
+2139
+01:18:46,360 --> 01:18:48,360
+a plus bi
+
+2140
+01:18:48,360 --> 01:18:50,360
+a plus bi is
+
+2141
+01:18:50,360 --> 01:18:52,360
+the negative number.
+
+2142
+01:18:52,360 --> 01:18:54,360
+You can add
+
+2143
+01:18:54,360 --> 01:18:56,360
+cj plus dk
+
+2144
+01:18:56,360 --> 01:18:58,360
+i, j, k are all negative numbers.
+
+2145
+01:18:58,360 --> 01:19:00,360
+There are three negative numbers in the space.
+
+2146
+01:19:00,360 --> 01:19:02,360
+Then
+
+2147
+01:19:02,360 --> 01:19:04,360
+satisfy some multiplication
+
+2148
+01:19:04,360 --> 01:19:06,360
+i squared minus 1
+
+2149
+01:19:06,360 --> 01:19:08,360
+j squared minus 1
+
+2150
+01:19:08,360 --> 01:19:10,360
+k squared minus 1
+
+2151
+01:19:10,360 --> 01:19:12,360
+aj minus k
+
+2152
+01:19:12,360 --> 01:19:14,360
+polymatrix
+
+2153
+01:19:14,360 --> 01:19:16,360
+There are
+
+2154
+01:19:16,360 --> 01:19:18,360
+four elements
+
+2155
+01:19:18,360 --> 01:19:20,360
+and four helicity.
+
+2156
+01:19:20,360 --> 01:19:22,360
+The three-dimensional sphere is
+
+2157
+01:19:22,360 --> 01:19:24,360
+normalize.
+
+2158
+01:19:26,360 --> 01:19:28,360
+This is
+
+2159
+01:19:28,360 --> 01:19:30,360
+often used
+
+2160
+01:19:30,360 --> 01:19:32,360
+to describe three-dimensional rotation.
+
+2161
+01:19:32,360 --> 01:19:34,360
+When do I need to finish?
+
+2162
+01:19:34,360 --> 01:19:36,360
+I want to finish
+
+2163
+01:19:36,360 --> 01:19:38,360
+the second part.
+
+2164
+01:19:38,360 --> 01:19:40,360
+If you want to hear more,
+
+2165
+01:19:40,360 --> 01:19:42,360
+I will continue.
+
+2166
+01:19:44,360 --> 01:19:46,360
+The three-dimensional
+
+2167
+01:19:46,360 --> 01:19:48,360
+rotation is like this.
+
+2168
+01:19:48,360 --> 01:19:50,360
+Any
+
+2169
+01:19:52,360 --> 01:19:54,360
+Q is a
+
+2170
+01:19:54,360 --> 01:19:56,360
+unit four element.
+
+2171
+01:19:56,360 --> 01:19:58,360
+The three-dimensional rotation is
+
+2172
+01:19:58,360 --> 01:20:00,360
+like su2.
+
+2173
+01:20:00,360 --> 01:20:02,360
+Because it is
+
+2174
+01:20:02,360 --> 01:20:04,360
+su2 space.
+
+2175
+01:20:04,360 --> 01:20:06,360
+The rotation of the implement
+
+2176
+01:20:06,360 --> 01:20:08,360
+is that any three-dimensional
+
+2177
+01:20:08,360 --> 01:20:10,360
+rotation
+
+2178
+01:20:10,360 --> 01:20:12,360
+is written as
+
+2179
+01:20:12,360 --> 01:20:14,360
+span.
+
+2180
+01:20:14,360 --> 01:20:16,360
+It is any point on the earth.
+
+2181
+01:20:16,360 --> 01:20:18,360
+It is written as
+
+2182
+01:20:18,360 --> 01:20:20,360
+a four-dimensional element.
+
+2183
+01:20:20,360 --> 01:20:22,360
+If you put the left side
+
+2184
+01:20:22,360 --> 01:20:24,360
+as Q and the right side as Q
+
+2185
+01:20:24,360 --> 01:20:26,360
+as a unit four element,
+
+2186
+01:20:26,360 --> 01:20:28,360
+the result is still a three-dimensional
+
+2187
+01:20:28,360 --> 01:20:30,360
+three-dimensional element.
+
+2188
+01:20:30,360 --> 01:20:32,360
+So there is a rotation of r3.
+
+2189
+01:20:32,360 --> 01:20:34,360
+That is
+
+2190
+01:20:34,360 --> 01:20:36,360
+a three-dimensional rotation.
+
+2191
+01:20:36,360 --> 01:20:38,360
+If you
+
+2192
+01:20:38,360 --> 01:20:40,360
+make Q a
+
+2193
+01:20:40,360 --> 01:20:42,360
+shift,
+
+2194
+01:20:42,360 --> 01:20:44,360
+it is a
+
+2195
+01:20:44,360 --> 01:20:46,360
+ten-digit number.
+
+2196
+01:20:46,360 --> 01:20:48,360
+You just multiply
+
+2197
+01:20:48,360 --> 01:20:50,360
+cosine something
+
+2198
+01:20:50,360 --> 01:20:52,360
+with i sine something.
+
+2199
+01:20:52,360 --> 01:20:54,360
+You will find that your rotation
+
+2200
+01:20:54,360 --> 01:20:56,360
+is just a rotation
+
+2201
+01:20:56,360 --> 01:20:58,360
+along the North Pole.
+
+2202
+01:20:58,360 --> 01:21:00,360
+The North Pole
+
+2203
+01:21:00,360 --> 01:21:02,360
+is the invariant
+
+2204
+01:21:02,360 --> 01:21:04,360
+vector under this variation.
+
+2205
+01:21:04,360 --> 01:21:06,360
+I call
+
+2206
+01:21:06,360 --> 01:21:08,360
+Q bar iQ
+
+2207
+01:21:08,360 --> 01:21:10,360
+or Pi of Q.
+
+2208
+01:21:10,360 --> 01:21:12,360
+Pi is projection.
+
+2209
+01:21:12,360 --> 01:21:14,360
+The Q map of S3
+
+2210
+01:21:14,360 --> 01:21:16,360
+becomes the new location
+
+2211
+01:21:16,360 --> 01:21:18,360
+of the North Pole.
+
+2212
+01:21:18,360 --> 01:21:20,360
+This is the map of S3 to S2.
+
+2213
+01:21:20,360 --> 01:21:22,360
+This map is called half map.
+
+2214
+01:21:22,360 --> 01:21:24,360
+It goes from
+
+2215
+01:21:24,360 --> 01:21:26,360
+r3 to r2.
+
+2216
+01:21:26,360 --> 01:21:28,360
+The fiber direction
+
+2217
+01:21:28,360 --> 01:21:30,360
+is the projection.
+
+2218
+01:21:30,360 --> 01:21:32,360
+All are projected at the same point.
+
+2219
+01:21:32,360 --> 01:21:34,360
+It is a fiber.
+
+2220
+01:21:34,360 --> 01:21:36,360
+The fiber
+
+2221
+01:21:36,360 --> 01:21:38,360
+is the iQ of E2.
+
+2222
+01:21:38,360 --> 01:21:40,360
+It is the iQ of E2.
+
+2223
+01:21:40,360 --> 01:21:42,360
+In fact,
+
+2224
+01:21:42,360 --> 01:21:44,360
+the three-dimensional sphere
+
+2225
+01:21:44,360 --> 01:21:46,360
+looks abstract,
+
+2226
+01:21:46,360 --> 01:21:48,360
+but you can visualize it.
+
+2227
+01:21:48,360 --> 01:21:50,360
+You can use stereographic projections
+
+2228
+01:21:50,360 --> 01:21:52,360
+to project it to r3.
+
+2229
+01:21:52,360 --> 01:21:54,360
+You can project the two-dimensional sphere
+
+2230
+01:21:54,360 --> 01:21:56,360
+to r2.
+
+2231
+01:21:56,360 --> 01:21:58,360
+You can project it to r2.
+
+2232
+01:21:58,360 --> 01:22:00,360
+You can project it to r3.
+
+2233
+01:22:00,360 --> 01:22:02,360
+You can project it to r3.
+
+2234
+01:22:02,360 --> 01:22:04,360
+You can visualize
+
+2235
+01:22:04,360 --> 01:22:06,360
+the two-dimensional sphere to r3.
+
+2236
+01:22:06,360 --> 01:22:08,360
+It is a polyhedral transformation.
+
+2237
+01:22:08,360 --> 01:22:10,360
+You can see the angle.
+
+2238
+01:22:10,360 --> 01:22:12,360
+This map is
+
+2239
+01:22:12,360 --> 01:22:14,360
+the
+
+2240
+01:22:14,360 --> 01:22:16,360
+the
+
+2241
+01:22:16,360 --> 01:22:18,360
+This map is
+
+2242
+01:22:18,360 --> 01:22:20,360
+all
+
+2243
+01:22:20,360 --> 01:22:22,360
+I put 1000 fibers.
+
+2244
+01:22:22,360 --> 01:22:24,360
+The half fiber I mentioned earlier
+
+2245
+01:22:24,360 --> 01:22:26,360
+looks like this.
+
+2246
+01:22:26,360 --> 01:22:28,360
+It is very crossed.
+
+2247
+01:22:28,360 --> 01:22:30,360
+This is a fiber bundle.
+
+2248
+01:22:30,360 --> 01:22:32,360
+Each circle
+
+2249
+01:22:32,360 --> 01:22:34,360
+Each fiber is a
+
+2250
+01:22:34,360 --> 01:22:36,360
+circle of S1.
+
+2251
+01:22:36,360 --> 01:22:38,360
+It is all mapped to a point on S2.
+
+2252
+01:22:38,360 --> 01:22:40,360
+The index set
+
+2253
+01:22:40,360 --> 01:22:42,360
+of these fibers
+
+2254
+01:22:42,360 --> 01:22:44,360
+is S2.
+
+2255
+01:22:46,360 --> 01:22:48,360
+It is the location of the base point.
+
+2256
+01:22:48,360 --> 01:22:50,360
+The remaining freedom
+
+2257
+01:22:50,360 --> 01:22:52,360
+is that you can rotate
+
+2258
+01:22:52,360 --> 01:22:54,360
+the base point.
+
+2259
+01:22:54,360 --> 01:22:56,360
+S3 is this structure.
+
+2260
+01:22:58,360 --> 01:23:00,360
+Each fiber
+
+2261
+01:23:00,360 --> 01:23:02,360
+is generated by e2's
+
+2262
+01:23:02,360 --> 01:23:04,360
+it.
+
+2263
+01:23:06,360 --> 01:23:08,360
+Vertical direction
+
+2264
+01:23:08,360 --> 01:23:10,360
+is
+
+2265
+01:23:10,360 --> 01:23:12,360
+i times i.
+
+2266
+01:23:12,360 --> 01:23:14,360
+If e2's it
+
+2267
+01:23:14,360 --> 01:23:16,360
+can go
+
+2268
+01:23:16,360 --> 01:23:18,360
+in this direction,
+
+2269
+01:23:18,360 --> 01:23:20,360
+infinitesimally times i
+
+2270
+01:23:20,360 --> 01:23:22,360
+is in this direction.
+
+2271
+01:23:22,360 --> 01:23:24,360
+The vertical space
+
+2272
+01:23:24,360 --> 01:23:26,360
+is a one form.
+
+2273
+01:23:26,360 --> 01:23:28,360
+I call it Theta.
+
+2274
+01:23:30,360 --> 01:23:32,360
+This is
+
+2275
+01:23:32,360 --> 01:23:34,360
+You can think of it as
+
+2276
+01:23:34,360 --> 01:23:36,360
+because it is a vertical space
+
+2277
+01:23:36,360 --> 01:23:38,360
+so
+
+2278
+01:23:38,360 --> 01:23:40,360
+the one form of Theta
+
+2279
+01:23:40,360 --> 01:23:42,360
+is any infinitesimally motion
+
+2280
+01:23:42,360 --> 01:23:44,360
+projected to fiber direction.
+
+2281
+01:23:44,360 --> 01:23:46,360
+That is, the internal
+
+2282
+01:23:46,360 --> 01:23:48,360
+i times q.
+
+2283
+01:23:48,360 --> 01:23:50,360
+This structure
+
+2284
+01:23:50,360 --> 01:23:52,360
+is in every point.
+
+2285
+01:23:52,360 --> 01:23:54,360
+Remember that the fibers are intersecting each other.
+
+2286
+01:23:54,360 --> 01:23:56,360
+So you will see that
+
+2287
+01:23:56,360 --> 01:23:58,360
+Theta is nowhere integral.
+
+2288
+01:24:00,360 --> 01:24:02,360
+You can go through it.
+
+2289
+01:24:02,360 --> 01:24:04,360
+This is
+
+2290
+01:24:04,360 --> 01:24:06,360
+I have printed out the 3D printer.
+
+2291
+01:24:06,360 --> 01:24:08,360
+If you go to see it,
+
+2292
+01:24:08,360 --> 01:24:10,360
+you will see that it is nowhere integral.
+
+2293
+01:24:10,360 --> 01:24:12,360
+This is the real
+
+2294
+01:24:12,360 --> 01:24:14,360
+I am in S3
+
+2295
+01:24:14,360 --> 01:24:16,360
+I drew this quaternion
+
+2296
+01:24:16,360 --> 01:24:18,360
+stereographic projecting
+
+2297
+01:24:18,360 --> 01:24:20,360
+to R3 and then 3D
+
+2298
+01:24:20,360 --> 01:24:22,360
+3D printer
+
+2299
+01:24:22,360 --> 01:24:24,360
+3D printer
+
+2300
+01:24:24,360 --> 01:24:26,360
+Yes.
+
+2301
+01:24:26,360 --> 01:24:28,360
+So it becomes S3 printer.
+
+2302
+01:24:28,360 --> 01:24:30,360
+4D printer.
+
+2303
+01:24:34,360 --> 01:24:36,360
+Actually it satisfies
+
+2304
+01:24:36,360 --> 01:24:38,360
+this choice.
+
+2305
+01:24:38,360 --> 01:24:40,360
+It just satisfies
+
+2306
+01:24:40,360 --> 01:24:42,360
+the pre-quantum bundle.
+
+2307
+01:24:42,360 --> 01:24:44,360
+This is the pre-quantum structure.
+
+2308
+01:24:46,360 --> 01:24:48,360
+This thing
+
+2309
+01:24:48,360 --> 01:24:50,360
+you can visualize it like this.
+
+2310
+01:24:50,360 --> 01:24:52,360
+S3
+
+2311
+01:24:54,360 --> 01:24:56,360
+There is fiber direction in S3.
+
+2312
+01:24:56,360 --> 01:24:58,360
+Just like the Z direction in R3.
+
+2313
+01:24:58,360 --> 01:25:00,360
+Now it becomes
+
+2314
+01:25:00,360 --> 01:25:02,360
+fiber direction in S3.
+
+2315
+01:25:02,360 --> 01:25:04,360
+So you can take that direction as
+
+2316
+01:25:04,360 --> 01:25:06,360
+the Z axis of the general world.
+
+2317
+01:25:06,360 --> 01:25:08,360
+It is the direction of gravity.
+
+2318
+01:25:08,360 --> 01:25:10,360
+The vertical space is the platform.
+
+2319
+01:25:10,360 --> 01:25:12,360
+When you walk on the platform, you are stable.
+
+2320
+01:25:12,360 --> 01:25:14,360
+Nowhere integral
+
+2321
+01:25:14,360 --> 01:25:16,360
+means
+
+2322
+01:25:16,360 --> 01:25:18,360
+if you want to
+
+2323
+01:25:18,360 --> 01:25:20,360
+walk a circle
+
+2324
+01:25:20,360 --> 01:25:22,360
+if you want to walk a circle back
+
+2325
+01:25:22,360 --> 01:25:24,360
+you will find that you have to keep climbing the stairs
+
+2326
+01:25:24,360 --> 01:25:26,360
+to get back to the platform.
+
+2327
+01:25:26,360 --> 01:25:28,360
+This is the
+
+2328
+01:25:28,360 --> 01:25:30,360
+Zeta and Pi-star sequence.
+
+2329
+01:25:30,360 --> 01:25:32,360
+Zeta
+
+2330
+01:25:32,360 --> 01:25:34,360
+is projected
+
+2331
+01:25:34,360 --> 01:25:36,360
+to the fiber direction.
+
+2332
+01:25:36,360 --> 01:25:38,360
+In other words,
+
+2333
+01:25:38,360 --> 01:25:40,360
+if you draw a circle
+
+2334
+01:25:40,360 --> 01:25:42,360
+or a curve in S3
+
+2335
+01:25:42,360 --> 01:25:44,360
+and you take the Zeta
+
+2336
+01:25:44,360 --> 01:25:46,360
+you will find that
+
+2337
+01:25:46,360 --> 01:25:48,360
+you are walking in that direction
+
+2338
+01:25:48,360 --> 01:25:50,360
+but you are in the fiber direction.
+
+2339
+01:25:50,360 --> 01:25:52,360
+So the physical force you produce
+
+2340
+01:25:52,360 --> 01:25:54,360
+is your total work.
+
+2341
+01:25:54,360 --> 01:25:56,360
+It is the work of climbing up
+
+2342
+01:25:56,360 --> 01:25:58,360
+with gravity.
+
+2343
+01:25:58,360 --> 01:26:00,360
+Zeta means that
+
+2344
+01:26:00,360 --> 01:26:02,360
+if you walk a circle back, it is not equal to zero.
+
+2345
+01:26:02,360 --> 01:26:04,360
+It means that
+
+2346
+01:26:04,360 --> 01:26:06,360
+if you walk to the platform, you will find that
+
+2347
+01:26:06,360 --> 01:26:08,360
+your progress is not equal to zero.
+
+2348
+01:26:08,360 --> 01:26:10,360
+This is also
+
+2349
+01:26:10,360 --> 01:26:12,360
+produced by our S3D.
+
+2350
+01:26:12,360 --> 01:26:14,360
+So you will see
+
+2351
+01:26:14,360 --> 01:26:16,360
+this is the famous
+
+2352
+01:26:16,360 --> 01:26:18,360
+impossible stairs.
+
+2353
+01:26:18,360 --> 01:26:20,360
+Most people
+
+2354
+01:26:20,360 --> 01:26:22,360
+know that
+
+2355
+01:26:22,360 --> 01:26:24,360
+this is a visual illusion.
+
+2356
+01:26:24,360 --> 01:26:26,360
+But that is in R3.
+
+2357
+01:26:26,360 --> 01:26:28,360
+You have to use a visual illusion to understand.
+
+2358
+01:26:28,360 --> 01:26:30,360
+But in S3, this is everywhere.
+
+2359
+01:26:30,360 --> 01:26:32,360
+Because
+
+2360
+01:26:32,360 --> 01:26:34,360
+the platforms in S3 are all low-end.
+
+2361
+01:26:34,360 --> 01:26:36,360
+So it must look like this.
+
+2362
+01:26:36,360 --> 01:26:38,360
+So you can
+
+2363
+01:26:38,360 --> 01:26:40,360
+put it in S3D.
+
+2364
+01:26:44,360 --> 01:26:46,360
+Just now
+
+2365
+01:26:46,360 --> 01:26:48,360
+there are a lot of abstract things.
+
+2366
+01:26:48,360 --> 01:26:50,360
+We found that
+
+2367
+01:26:50,360 --> 01:26:52,360
+one of the good examples is
+
+2368
+01:26:52,360 --> 01:26:54,360
+half-vibration.
+
+2369
+01:26:54,360 --> 01:26:56,360
+So if we change
+
+2370
+01:26:56,360 --> 01:26:58,360
+the catch variable to S3
+
+2371
+01:26:58,360 --> 01:27:00,360
+to S2
+
+2372
+01:27:00,360 --> 01:27:02,360
+the catch side
+
+2373
+01:27:02,360 --> 01:27:04,360
+corresponds to S.
+
+2374
+01:27:04,360 --> 01:27:06,360
+It will become
+
+2375
+01:27:06,360 --> 01:27:08,360
+the wave function
+
+2376
+01:27:08,360 --> 01:27:10,360
+in our Schrodinger equation.
+
+2377
+01:27:10,360 --> 01:27:12,360
+Then
+
+2378
+01:27:12,360 --> 01:27:14,360
+when the velocity is pulled back
+
+2379
+01:27:14,360 --> 01:27:16,360
+it is the Madelung transform.
+
+2380
+01:27:16,360 --> 01:27:18,360
+In Madelung transform, we use
+
+2381
+01:27:18,360 --> 01:27:20,360
+C2 value wave function.
+
+2382
+01:27:20,360 --> 01:27:22,360
+You have a, b, c, d, i.
+
+2383
+01:27:22,360 --> 01:27:24,360
+You can expand it into 4 elements.
+
+2384
+01:27:24,360 --> 01:27:26,360
+Remember
+
+2385
+01:27:26,360 --> 01:27:28,360
+we normalized it
+
+2386
+01:27:28,360 --> 01:27:30,360
+because it is an incompressible case.
+
+2387
+01:27:30,360 --> 01:27:32,360
+So actually
+
+2388
+01:27:32,360 --> 01:27:34,360
+psi is a
+
+2389
+01:27:34,360 --> 01:27:36,360
+S3 value function.
+
+2390
+01:27:36,360 --> 01:27:38,360
+It is normalized, quaternion or C2 vectors.
+
+2391
+01:27:38,360 --> 01:27:40,360
+Then
+
+2392
+01:27:40,360 --> 01:27:42,360
+when we do
+
+2393
+01:27:42,360 --> 01:27:44,360
+phase shift
+
+2394
+01:27:44,360 --> 01:27:46,360
+what is that?
+
+2395
+01:27:46,360 --> 01:27:48,360
+No, this is just a value.
+
+2396
+01:27:48,360 --> 01:27:50,360
+I want to expand
+
+2397
+01:27:50,360 --> 01:27:52,360
+a, b, i, c, d, i
+
+2398
+01:27:52,360 --> 01:27:54,360
+into a, b, i, c, j, d, k
+
+2399
+01:27:54,360 --> 01:27:56,360
+There are many different ways.
+
+2400
+01:27:56,360 --> 01:27:58,360
+But I deliberately choose this way
+
+2401
+01:27:58,360 --> 01:28:00,360
+it will cause my left side is a complex scalar
+
+2402
+01:28:00,360 --> 01:28:02,360
+dependent on i, c.
+
+2403
+01:28:02,360 --> 01:28:04,360
+The right side will be a quaternion
+
+2404
+01:28:04,360 --> 01:28:06,360
+dependent on i, c.
+
+2405
+01:28:06,360 --> 01:28:08,360
+Remember
+
+2406
+01:28:08,360 --> 01:28:10,360
+in Madelung transform
+
+2407
+01:28:10,360 --> 01:28:12,360
+the momentum operator
+
+2408
+01:28:12,360 --> 01:28:14,360
+is evaluated.
+
+2409
+01:28:14,360 --> 01:28:16,360
+Then you will find
+
+2410
+01:28:16,360 --> 01:28:18,360
+quaternion is a deep sine
+
+2411
+01:28:18,360 --> 01:28:20,360
+projected to i-th direction.
+
+2412
+01:28:20,360 --> 01:28:22,360
+We can see
+
+2413
+01:28:22,360 --> 01:28:24,360
+i-gradient
+
+2414
+01:28:24,360 --> 01:28:26,360
+after gradients
+
+2415
+01:28:26,360 --> 01:28:28,360
+is projected to i-th side.
+
+2416
+01:28:28,360 --> 01:28:30,360
+That is exactly
+
+2417
+01:28:30,360 --> 01:28:32,360
+the action of C2.
+
+2418
+01:28:32,360 --> 01:28:34,360
+It is projected to fiber direction or gravity direction.
+
+2419
+01:28:34,360 --> 01:28:36,360
+It is exactly
+
+2420
+01:28:36,360 --> 01:28:38,360
+the pullback of 1-form.
+
+2421
+01:28:38,360 --> 01:28:40,360
+So the pullback of 1-form
+
+2422
+01:28:40,360 --> 01:28:42,360
+is exactly the Clebsch representation.
+
+2423
+01:28:42,360 --> 01:28:44,360
+So in S3
+
+2424
+01:28:44,360 --> 01:28:46,360
+under the
+
+2425
+01:28:46,360 --> 01:28:48,360
+pre-quantum structure
+
+2426
+01:28:48,360 --> 01:28:50,360
+the Clebsch variable
+
+2427
+01:28:50,360 --> 01:28:52,360
+is exactly the Madelung transform.
+
+2428
+01:28:54,360 --> 01:28:56,360
+Then we know
+
+2429
+01:28:56,360 --> 01:28:58,360
+the given velocity
+
+2430
+01:28:58,360 --> 01:29:00,360
+form has a
+
+2431
+01:29:00,360 --> 01:29:02,360
+vorticity Clebsch variable.
+
+2432
+01:29:02,360 --> 01:29:04,360
+The vorticity Clebsch variable
+
+2433
+01:29:04,360 --> 01:29:06,360
+is the sidebar i-th side.
+
+2434
+01:29:06,360 --> 01:29:08,360
+That is
+
+2435
+01:29:08,360 --> 01:29:10,360
+the block vector
+
+2436
+01:29:10,360 --> 01:29:12,360
+we learned in quantum mechanics.
+
+2437
+01:29:12,360 --> 01:29:14,360
+The block vector
+
+2438
+01:29:14,360 --> 01:29:16,360
+is the vorticity Clebsch map.
+
+2439
+01:29:16,360 --> 01:29:18,360
+Remember
+
+2440
+01:29:18,360 --> 01:29:20,360
+vorticity Clebsch map has an amazing function.
+
+2441
+01:29:20,360 --> 01:29:22,360
+It is the level size function of
+
+2442
+01:29:22,360 --> 01:29:24,360
+vortex line.
+
+2443
+01:29:24,360 --> 01:29:26,360
+If you have wave function
+
+2444
+01:29:26,360 --> 01:29:28,360
+you can find the block vector.
+
+2445
+01:29:28,360 --> 01:29:30,360
+The block vector
+
+2446
+01:29:30,360 --> 01:29:32,360
+is the area drawn on the sphere.
+
+2447
+01:29:32,360 --> 01:29:34,360
+The pre-image is the vortex.
+
+2448
+01:29:36,360 --> 01:29:38,360
+Vortex2
+
+2449
+01:29:40,360 --> 01:29:42,360
+Another interesting application is
+
+2450
+01:29:42,360 --> 01:29:44,360
+given velocity field.
+
+2451
+01:29:44,360 --> 01:29:46,360
+You can find the wave function.
+
+2452
+01:29:46,360 --> 01:29:48,360
+Then you can visualize the vortex2
+
+2453
+01:29:48,360 --> 01:29:50,360
+as an implicit function.
+
+2454
+01:29:52,360 --> 01:29:54,360
+Here I show some results.
+
+2455
+01:29:54,360 --> 01:29:56,360
+This turns into
+
+2456
+01:29:56,360 --> 01:29:58,360
+a vortex detection
+
+2457
+01:29:58,360 --> 01:30:00,360
+application.
+
+2458
+01:30:00,360 --> 01:30:02,360
+Vortex detection is
+
+2459
+01:30:02,360 --> 01:30:04,360
+how to find
+
+2460
+01:30:04,360 --> 01:30:06,360
+where the vortex is
+
+2461
+01:30:06,360 --> 01:30:08,360
+in a velocity field.
+
+2462
+01:30:10,360 --> 01:30:12,360
+This is a
+
+2463
+01:30:12,360 --> 01:30:14,360
+flow data.
+
+2464
+01:30:14,360 --> 01:30:16,360
+It is a delta wing.
+
+2465
+01:30:18,360 --> 01:30:20,360
+You can see
+
+2466
+01:30:20,360 --> 01:30:22,360
+some vortex settings.
+
+2467
+01:30:24,360 --> 01:30:26,360
+Under the velocity field
+
+2468
+01:30:26,360 --> 01:30:28,360
+you can
+
+2469
+01:30:28,360 --> 01:30:30,360
+calculate the vorticity
+
+2470
+01:30:30,360 --> 01:30:32,360
+and take the threshold.
+
+2471
+01:30:32,360 --> 01:30:34,360
+Then you can see the vorticity is bigger.
+
+2472
+01:30:34,360 --> 01:30:36,360
+Some more complicated methods
+
+2473
+01:30:36,360 --> 01:30:38,360
+are lambda2 method
+
+2474
+01:30:38,360 --> 01:30:40,360
+or cube criterion method.
+
+2475
+01:30:40,360 --> 01:30:42,360
+There are some heuristics.
+
+2476
+01:30:42,360 --> 01:30:44,360
+You can look at the local Jacobian
+
+2477
+01:30:44,360 --> 01:30:46,360
+and calculate the eigenvalue.
+
+2478
+01:30:46,360 --> 01:30:48,360
+Then you can determine
+
+2479
+01:30:48,360 --> 01:30:50,360
+where the vortex is.
+
+2480
+01:30:50,360 --> 01:30:52,360
+These methods are heuristic.
+
+2481
+01:30:52,360 --> 01:30:54,360
+You can see these tubes are not vortex tubes.
+
+2482
+01:30:54,360 --> 01:30:56,360
+We developed
+
+2483
+01:30:56,360 --> 01:30:58,360
+a method to convert
+
+2484
+01:30:58,360 --> 01:31:00,360
+given velocity field
+
+2485
+01:31:00,360 --> 01:31:02,360
+into wave function.
+
+2486
+01:31:02,360 --> 01:31:04,360
+You can find the spin vector
+
+2487
+01:31:04,360 --> 01:31:06,360
+and
+
+2488
+01:31:06,360 --> 01:31:08,360
+the
+
+2489
+01:31:08,360 --> 01:31:10,360
+level set function
+
+2490
+01:31:10,360 --> 01:31:12,360
+for vortex tubes
+
+2491
+01:31:12,360 --> 01:31:14,360
+and vortex stripes.
+
+2492
+01:31:14,360 --> 01:31:16,360
+You can easily
+
+2493
+01:31:16,360 --> 01:31:18,360
+visualize
+
+2494
+01:31:18,360 --> 01:31:20,360
+the vortex structure.
+
+2495
+01:31:20,360 --> 01:31:22,360
+It can reveal
+
+2496
+01:31:22,360 --> 01:31:24,360
+much more information.
+
+2497
+01:31:24,360 --> 01:31:26,360
+These are the real vortex tubes
+
+2498
+01:31:26,360 --> 01:31:28,360
+and not heuristic.
+
+2499
+01:31:28,360 --> 01:31:30,360
+You can calculate the operator
+
+2500
+01:31:30,360 --> 01:31:32,360
+and look at the eigenvalue
+
+2501
+01:31:32,360 --> 01:31:34,360
+to see if it is rotating or not.
+
+2502
+01:31:38,360 --> 01:31:40,360
+We found that
+
+2503
+01:31:40,360 --> 01:31:42,360
+most velocities can be approximated.
+
+2504
+01:31:42,360 --> 01:31:44,360
+For example,
+
+2505
+01:31:44,360 --> 01:31:46,360
+the vortex has a linking number
+
+2506
+01:31:46,360 --> 01:31:48,360
+which is 0.
+
+2507
+01:31:48,360 --> 01:31:50,360
+To solve this problem,
+
+2508
+01:31:50,360 --> 01:31:52,360
+we solved
+
+2509
+01:31:52,360 --> 01:31:54,360
+an image processing problem.
+
+2510
+01:31:54,360 --> 01:31:56,360
+We found that
+
+2511
+01:31:56,360 --> 01:31:58,360
+it is a Ginzburg-Landau model.
+
+2512
+01:31:58,360 --> 01:32:00,360
+When we solve
+
+2513
+01:32:00,360 --> 01:32:02,360
+an image processing problem,
+
+2514
+01:32:02,360 --> 01:32:04,360
+we want to match
+
+2515
+01:32:04,360 --> 01:32:06,360
+some parameters.
+
+2516
+01:32:06,360 --> 01:32:08,360
+For example,
+
+2517
+01:32:08,360 --> 01:32:10,360
+I want to find a Psi
+
+2518
+01:32:10,360 --> 01:32:12,360
+which
+
+2519
+01:32:12,360 --> 01:32:14,360
+is close
+
+2520
+01:32:14,360 --> 01:32:16,360
+to
+
+2521
+01:32:16,360 --> 01:32:18,360
+the given velocity field.
+
+2522
+01:32:18,360 --> 01:32:20,360
+This is called fidelity term.
+
+2523
+01:32:20,360 --> 01:32:22,360
+There is a problem.
+
+2524
+01:32:24,360 --> 01:32:26,360
+As I mentioned,
+
+2525
+01:32:26,360 --> 01:32:28,360
+there is a redundant
+
+2526
+01:32:28,360 --> 01:32:30,360
+gauge symmetry.
+
+2527
+01:32:30,360 --> 01:32:32,360
+If my S
+
+2528
+01:32:32,360 --> 01:32:34,360
+is below the block vector,
+
+2529
+01:32:34,360 --> 01:32:36,360
+I will post-compose
+
+2530
+01:32:36,360 --> 01:32:38,360
+an area-preserving differential coefficient.
+
+2531
+01:32:40,360 --> 01:32:42,360
+It is exactly the same
+
+2532
+01:32:42,360 --> 01:32:44,360
+as the vortex.
+
+2533
+01:32:44,360 --> 01:32:46,360
+Vortex is a pull-back area.
+
+2534
+01:32:46,360 --> 01:32:48,360
+The right side is a mix.
+
+2535
+01:32:50,360 --> 01:32:52,360
+The pull-back area is the same.
+
+2536
+01:32:54,360 --> 01:32:56,360
+With such a big
+
+2537
+01:32:56,360 --> 01:32:58,360
+redundant gauge symmetry,
+
+2538
+01:32:58,360 --> 01:33:00,360
+we still want to find
+
+2539
+01:33:00,360 --> 01:33:02,360
+a better one.
+
+2540
+01:33:02,360 --> 01:33:04,360
+So we add
+
+2541
+01:33:04,360 --> 01:33:06,360
+a symmetry-breaking term.
+
+2542
+01:33:08,360 --> 01:33:10,360
+I want to find
+
+2543
+01:33:10,360 --> 01:33:12,360
+the most smooth
+
+2544
+01:33:12,360 --> 01:33:14,360
+solution.
+
+2545
+01:33:14,360 --> 01:33:16,360
+With this solution,
+
+2546
+01:33:16,360 --> 01:33:18,360
+we get a better
+
+2547
+01:33:18,360 --> 01:33:20,360
+optimization problem.
+
+2548
+01:33:20,360 --> 01:33:22,360
+This is fidelity and regularization.
+
+2549
+01:33:22,360 --> 01:33:24,360
+Image processing
+
+2550
+01:33:24,360 --> 01:33:26,360
+has two terms.
+
+2551
+01:33:26,360 --> 01:33:28,360
+Fidelity and regularization.
+
+2552
+01:33:28,360 --> 01:33:30,360
+These two terms
+
+2553
+01:33:30,360 --> 01:33:32,360
+are the
+
+2554
+01:33:32,360 --> 01:33:34,360
+two directions
+
+2555
+01:33:34,360 --> 01:33:36,360
+of the
+
+2556
+01:33:36,360 --> 01:33:38,360
+re-quantum structure.
+
+2557
+01:33:38,360 --> 01:33:40,360
+If you have a deep Psi,
+
+2558
+01:33:40,360 --> 01:33:42,360
+the rest of the direction
+
+2559
+01:33:42,360 --> 01:33:44,360
+is how fast
+
+2560
+01:33:44,360 --> 01:33:46,360
+you move
+
+2561
+01:33:46,360 --> 01:33:48,360
+in different fibers.
+
+2562
+01:33:48,360 --> 01:33:50,360
+The projection
+
+2563
+01:33:50,360 --> 01:33:52,360
+is how fast
+
+2564
+01:33:52,360 --> 01:33:54,360
+you move
+
+2565
+01:33:54,360 --> 01:33:56,360
+in the two-dimensional
+
+2566
+01:33:56,360 --> 01:33:58,360
+sphere.
+
+2567
+01:34:00,360 --> 01:34:02,360
+You will find that
+
+2568
+01:34:02,360 --> 01:34:04,360
+ds is the horizontal direction
+
+2569
+01:34:04,360 --> 01:34:06,360
+and the re-quantum direction
+
+2570
+01:34:06,360 --> 01:34:08,360
+is the speed direction.
+
+2571
+01:34:08,360 --> 01:34:10,360
+This is the fidelity term.
+
+2572
+01:34:10,360 --> 01:34:12,360
+You just need to change the gauge.
+
+2573
+01:34:12,360 --> 01:34:14,360
+I change d to
+
+2574
+01:34:14,360 --> 01:34:16,360
+d-iEta.
+
+2575
+01:34:16,360 --> 01:34:18,360
+As I mentioned earlier,
+
+2576
+01:34:18,360 --> 01:34:20,360
+the re-quantum connection
+
+2577
+01:34:20,360 --> 01:34:22,360
+is at the same speed.
+
+2578
+01:34:22,360 --> 01:34:24,360
+You can adjust it like this.
+
+2579
+01:34:24,360 --> 01:34:26,360
+After adjusting it,
+
+2580
+01:34:26,360 --> 01:34:28,360
+this is my new covariant derivative.
+
+2581
+01:34:28,360 --> 01:34:30,360
+After adjusting it,
+
+2582
+01:34:30,360 --> 01:34:32,360
+this nabla Psi
+
+2583
+01:34:32,360 --> 01:34:34,360
+is projected
+
+2584
+01:34:34,360 --> 01:34:36,360
+on the fiber direction.
+
+2585
+01:34:36,360 --> 01:34:38,360
+The horizontal direction
+
+2586
+01:34:38,360 --> 01:34:40,360
+is still
+
+2587
+01:34:40,360 --> 01:34:42,360
+the original ds.
+
+2588
+01:34:44,360 --> 01:34:46,360
+What?
+
+2589
+01:34:48,360 --> 01:34:50,360
+It's non-zero.
+
+2590
+01:34:50,360 --> 01:34:52,360
+It's because of the redundant gauge symmetry.
+
+2591
+01:34:52,360 --> 01:34:54,360
+That is to say,
+
+2592
+01:34:58,360 --> 01:35:00,360
+if I choose 0,
+
+2593
+01:35:00,360 --> 01:35:02,360
+the problem should be solved like this.
+
+2594
+01:35:02,360 --> 01:35:04,360
+When I find a Psi,
+
+2595
+01:35:04,360 --> 01:35:06,360
+it should be 0.
+
+2596
+01:35:08,360 --> 01:35:10,360
+Oh, right.
+
+2597
+01:35:10,360 --> 01:35:12,360
+How do I choose Psi?
+
+2598
+01:35:12,360 --> 01:35:14,360
+The way of optimization is
+
+2599
+01:35:14,360 --> 01:35:16,360
+that I choose Psi at the beginning.
+
+2600
+01:35:16,360 --> 01:35:18,360
+Because the larger the Psi,
+
+2601
+01:35:18,360 --> 01:35:20,360
+the easier it is to solve.
+
+2602
+01:35:20,360 --> 01:35:22,360
+The ds on the right is good.
+
+2603
+01:35:22,360 --> 01:35:24,360
+When I solve
+
+2604
+01:35:24,360 --> 01:35:26,360
+to the approximate value,
+
+2605
+01:35:26,360 --> 01:35:28,360
+I reduce Epsilon.
+
+2606
+01:35:28,360 --> 01:35:30,360
+At the end,
+
+2607
+01:35:30,360 --> 01:35:32,360
+when Epsilon is almost 0,
+
+2608
+01:35:32,360 --> 01:35:34,360
+I trace my
+
+2609
+01:35:34,360 --> 01:35:36,360
+suboptimal solution.
+
+2610
+01:35:36,360 --> 01:35:38,360
+When Epsilon is equal to 0,
+
+2611
+01:35:38,360 --> 01:35:40,360
+it will stick to the
+
+2612
+01:35:40,360 --> 01:35:42,360
+minimized
+
+2613
+01:35:42,360 --> 01:35:44,360
+Psi star Theta.
+
+2614
+01:35:44,360 --> 01:35:46,360
+The fidelity term
+
+2615
+01:35:46,360 --> 01:35:48,360
+will be minimized.
+
+2616
+01:35:50,360 --> 01:35:52,360
+Yes.
+
+2617
+01:35:56,360 --> 01:35:58,360
+You can say that.
+
+2618
+01:35:58,360 --> 01:36:00,360
+You can see that
+
+2619
+01:36:00,360 --> 01:36:02,360
+there are different weights.
+
+2620
+01:36:02,360 --> 01:36:04,360
+Yes.
+
+2621
+01:36:04,360 --> 01:36:06,360
+It's called a Bergers sphere.
+
+2622
+01:36:06,360 --> 01:36:08,360
+The metric of fiber
+
+2623
+01:36:08,360 --> 01:36:10,360
+and not fiber direction
+
+2624
+01:36:10,360 --> 01:36:12,360
+is anisotropic.
+
+2625
+01:36:12,360 --> 01:36:14,360
+The concept is
+
+2626
+01:36:14,360 --> 01:36:16,360
+used to do
+
+2627
+01:36:16,360 --> 01:36:18,360
+collapse S3 into S2
+
+2628
+01:36:18,360 --> 01:36:20,360
+in Weibull.
+
+2629
+01:36:20,360 --> 01:36:22,360
+It's used in
+
+2630
+01:36:22,360 --> 01:36:24,360
+different things.
+
+2631
+01:36:24,360 --> 01:36:26,360
+According to
+
+2632
+01:36:26,360 --> 01:36:28,360
+the theorem of Pythagoras,
+
+2633
+01:36:28,360 --> 01:36:30,360
+the square box
+
+2634
+01:36:30,360 --> 01:36:32,360
+is just
+
+2635
+01:36:32,360 --> 01:36:34,360
+its
+
+2636
+01:36:36,360 --> 01:36:38,360
+size.
+
+2637
+01:36:38,360 --> 01:36:40,360
+It's just anisotropic.
+
+2638
+01:36:40,360 --> 01:36:42,360
+As you mentioned.
+
+2639
+01:36:44,360 --> 01:36:46,360
+Visualize.
+
+2640
+01:36:46,360 --> 01:36:48,360
+Anisotropic norm
+
+2641
+01:36:48,360 --> 01:36:50,360
+looks like this.
+
+2642
+01:36:50,360 --> 01:36:52,360
+Cool.
+
+2643
+01:36:56,360 --> 01:36:58,360
+It's called King-Splendor
+
+2644
+01:36:58,360 --> 01:37:00,360
+because
+
+2645
+01:37:00,360 --> 01:37:02,360
+it's normalized
+
+2646
+01:37:02,360 --> 01:37:04,360
+Psi.
+
+2647
+01:37:04,360 --> 01:37:06,360
+It's normalized
+
+2648
+01:37:06,360 --> 01:37:08,360
+deep Psi
+
+2649
+01:37:08,360 --> 01:37:10,360
+norm square.
+
+2650
+01:37:10,360 --> 01:37:12,360
+The D is covaried.
+
+2651
+01:37:12,360 --> 01:37:14,360
+It's magnetic field.
+
+2652
+01:37:14,360 --> 01:37:16,360
+At the bottom,
+
+2653
+01:37:16,360 --> 01:37:18,360
+there will be some
+
+2654
+01:37:18,360 --> 01:37:20,360
+particles.
+
+2655
+01:37:20,360 --> 01:37:22,360
+You can see
+
+2656
+01:37:22,360 --> 01:37:24,360
+the vortices.
+
+2657
+01:37:24,360 --> 01:37:26,360
+I'm visualizing the vortices.
+
+2658
+01:37:26,360 --> 01:37:28,360
+And
+
+2659
+01:37:28,360 --> 01:37:30,360
+some particles.
+
+2660
+01:37:30,360 --> 01:37:32,360
+And
+
+2661
+01:37:32,360 --> 01:37:34,360
+this is the choice of
+
+2662
+01:37:34,360 --> 01:37:36,360
+the query.
+
+2663
+01:37:40,360 --> 01:37:42,360
+Can you see it?
+
+2664
+01:37:42,360 --> 01:37:44,360
+We also
+
+2665
+01:37:44,360 --> 01:37:46,360
+do some
+
+2666
+01:37:46,360 --> 01:37:48,360
+biological
+
+2667
+01:37:48,360 --> 01:37:50,360
+flow calculation.
+
+2668
+01:37:50,360 --> 01:37:52,360
+We ask for some data
+
+2669
+01:37:52,360 --> 01:37:54,360
+and do some
+
+2670
+01:37:54,360 --> 01:37:56,360
+visualization.
+
+2671
+01:37:56,360 --> 01:37:58,360
+Find
+
+2672
+01:37:58,360 --> 01:38:00,360
+the velocity field
+
+2673
+01:38:00,360 --> 01:38:02,360
+near the bird.
+
+2674
+01:38:02,360 --> 01:38:04,360
+Convert into wave function.
+
+2675
+01:38:04,360 --> 01:38:06,360
+Block vector.
+
+2676
+01:38:06,360 --> 01:38:08,360
+Preimage of area.
+
+2677
+01:38:08,360 --> 01:38:10,360
+Visualization is
+
+2678
+01:38:10,360 --> 01:38:12,360
+more information
+
+2679
+01:38:12,360 --> 01:38:14,360
+than
+
+2680
+01:38:14,360 --> 01:38:16,360
+simulation.
+
+2681
+01:38:16,360 --> 01:38:18,360
+This is the second part.
+
+2682
+01:38:18,360 --> 01:38:20,360
+I think
+
+2683
+01:38:20,360 --> 01:38:22,360
+we can stop here.
+
+2684
+01:38:22,360 --> 01:38:24,360
+I just want to prove
+
+2685
+01:38:24,360 --> 01:38:26,360
+some mathematical
+
+2686
+01:38:26,360 --> 01:38:28,360
+flow.
+
+2687
+01:38:28,360 --> 01:38:30,360
+That's it.
+
+2688
+01:38:30,360 --> 01:38:32,360
+I just want to say
+
+2689
+01:38:32,360 --> 01:38:34,360
+what?
+
+2690
+01:38:34,360 --> 01:38:36,360
+I said it all
+
+2691
+01:38:36,360 --> 01:38:38,360
+in defense class.
+
+2692
+01:38:38,360 --> 01:38:40,360
+There are some
+
+2693
+01:38:40,360 --> 01:38:42,360
+interesting things.
+
+2694
+01:38:42,360 --> 01:38:44,360
+Coriolis force and quantum
+
+2695
+01:38:44,360 --> 01:38:46,360
+hole effect.
+
+2696
+01:38:46,360 --> 01:38:48,360
+Quantum hole effect is
+
+2697
+01:38:48,360 --> 01:38:50,360
+quantum mechanics
+
+2698
+01:38:50,360 --> 01:38:52,360
+with magnetic field.
+
+2699
+01:38:52,360 --> 01:38:54,360
+There will be
+
+2700
+01:38:54,360 --> 01:38:56,360
+some
+
+2701
+01:38:56,360 --> 01:38:58,360
+Lorentz force
+
+2702
+01:38:58,360 --> 01:39:00,360
+quantum version.
+
+2703
+01:39:00,360 --> 01:39:02,360
+Then
+
+2704
+01:39:02,360 --> 01:39:04,360
+we put quantum mechanics
+
+2705
+01:39:04,360 --> 01:39:06,360
+power system.
+
+2706
+01:39:06,360 --> 01:39:08,360
+It's similar to fluid.
+
+2707
+01:39:08,360 --> 01:39:10,360
+Lorentz force
+
+2708
+01:39:10,360 --> 01:39:12,360
+is Coriolis force.
+
+2709
+01:39:12,360 --> 01:39:14,360
+I can simulate
+
+2710
+01:39:14,360 --> 01:39:16,360
+the fluid
+
+2711
+01:39:16,360 --> 01:39:18,360
+with Coriolis force.
+
+2712
+01:39:18,360 --> 01:39:20,360
+But my method
+
+2713
+01:39:20,360 --> 01:39:22,360
+is not to add
+
+2714
+01:39:22,360 --> 01:39:24,360
+Coriolis force.
+
+2715
+01:39:24,360 --> 01:39:26,360
+I just add
+
+2716
+01:39:26,360 --> 01:39:28,360
+quantum mechanics.
+
+2717
+01:39:28,360 --> 01:39:30,360
+The result is like this.
+
+2718
+01:39:30,360 --> 01:39:32,360
+You can see
+
+2719
+01:39:32,360 --> 01:39:34,360
+it's all anti-clockwise.
+
+2720
+01:39:36,360 --> 01:39:38,360
+I didn't
+
+2721
+01:39:38,360 --> 01:39:40,360
+solve any equation.
+
+2722
+01:39:40,360 --> 01:39:42,360
+I just solve the equation
+
+2723
+01:39:42,360 --> 01:39:44,360
+with magnetic field.
+
+2724
+01:39:56,360 --> 01:39:58,360
+There are many open problems.
+
+2725
+01:39:58,360 --> 01:40:00,360
+This is just the beginning
+
+2726
+01:40:00,360 --> 01:40:02,360
+of a new framework.
+
+2727
+01:40:02,360 --> 01:40:04,360
+For example,
+
+2728
+01:40:04,360 --> 01:40:06,360
+I didn't say
+
+2729
+01:40:06,360 --> 01:40:08,360
+if we can get
+
+2730
+01:40:08,360 --> 01:40:10,360
+new insights
+
+2731
+01:40:10,360 --> 01:40:12,360
+from the Euler equation.
+
+2732
+01:40:12,360 --> 01:40:14,360
+We can't make
+
+2733
+01:40:14,360 --> 01:40:16,360
+a big claim yet.
+
+2734
+01:40:20,360 --> 01:40:22,360
+I don't want to
+
+2735
+01:40:22,360 --> 01:40:24,360
+discuss Euler equation.
+
+2736
+01:40:24,360 --> 01:40:26,360
+I want to discuss general flow
+
+2737
+01:40:26,360 --> 01:40:28,360
+or conservation law.
+
+2738
+01:40:28,360 --> 01:40:30,360
+For example, traffic flow.
+
+2739
+01:40:30,360 --> 01:40:32,360
+Those are
+
+2740
+01:40:32,360 --> 01:40:34,360
+general flow.
+
+2741
+01:40:34,360 --> 01:40:36,360
+It's not only about
+
+2742
+01:40:36,360 --> 01:40:38,360
+inertia system
+
+2743
+01:40:38,360 --> 01:40:40,360
+and conservation law.
+
+2744
+01:40:42,360 --> 01:40:44,360
+There are some
+
+2745
+01:40:44,360 --> 01:40:46,360
+capture representation.
+
+2746
+01:40:46,360 --> 01:40:48,360
+Most of them are
+
+2747
+01:40:48,360 --> 01:40:50,360
+capture representation in MHD.
+
+2748
+01:40:50,360 --> 01:40:52,360
+We can discuss
+
+2749
+01:40:52,360 --> 01:40:54,360
+the framework.
+
+2750
+01:40:54,360 --> 01:40:56,360
+That's all.
+
+2751
+01:40:56,360 --> 01:40:58,360
+Thank you.
+
+2752
+01:41:26,360 --> 01:41:28,360
+I think there will be.
+
+2753
+01:41:28,360 --> 01:41:30,360
+But I need to know
+
+2754
+01:41:30,360 --> 01:41:32,360
+more about it.
+
+2755
+01:41:32,360 --> 01:41:34,360
+Then
+
+2756
+01:41:34,360 --> 01:41:36,360
+do some benchmark.
+
+2757
+01:41:38,360 --> 01:41:40,360
+Maybe climate simulation is better.
+
+2758
+01:41:40,360 --> 01:41:42,360
+Weather prediction.
+
+2759
+01:41:42,360 --> 01:41:44,360
+I think data-driven is better.
+
+2760
+01:41:56,360 --> 01:41:58,360
+I've seen
+
+2761
+01:41:58,360 --> 01:42:00,360
+the chart of
+
+2762
+01:42:00,360 --> 01:42:02,360
+state-of-the-art.
+
+2763
+01:42:12,360 --> 01:42:14,360
+Wait.
+
+2764
+01:42:20,360 --> 01:42:22,360
+I've seen
+
+2765
+01:42:22,360 --> 01:42:24,360
+very good
+
+2766
+01:42:24,360 --> 01:42:26,360
+I've heard
+
+2767
+01:42:26,360 --> 01:42:28,360
+that
+
+2768
+01:42:28,360 --> 01:42:30,360
+I've seen some
+
+2769
+01:42:30,360 --> 01:42:32,360
+crappy simulation.
+
+2770
+01:42:32,360 --> 01:42:34,360
+I've heard some talk
+
+2771
+01:42:34,360 --> 01:42:36,360
+that you can do it
+
+2772
+01:42:36,360 --> 01:42:38,360
+very accurately.
+
+2773
+01:42:38,360 --> 01:42:40,360
+For example,
+
+2774
+01:42:40,360 --> 01:42:42,360
+it's not real
+
+2775
+01:42:42,360 --> 01:42:44,360
+but it's conservation law.
+
+2776
+01:42:44,360 --> 01:42:46,360
+It's the simulation of tsunami.
+
+2777
+01:42:46,360 --> 01:42:48,360
+It can match
+
+2778
+01:42:48,360 --> 01:42:50,360
+almost exactly.
+
+2779
+01:42:50,360 --> 01:42:52,360
+It has been developed
+
+2780
+01:42:52,360 --> 01:42:54,360
+since 90s.
+
+2781
+01:42:54,360 --> 01:42:56,360
+But it's not
+
+2782
+01:42:56,360 --> 01:42:58,360
+tsunami every day.
+
+2783
+01:42:58,360 --> 01:43:00,360
+You need to verify.
+
+2784
+01:43:00,360 --> 01:43:02,360
+It matches
+
+2785
+01:43:02,360 --> 01:43:04,360
+with the Japanese tsunami.
+
+2786
+01:43:04,360 --> 01:43:06,360
+Is the simulation
+
+2787
+01:43:06,360 --> 01:43:08,360
+non-linear?
+
+2788
+01:43:08,360 --> 01:43:10,360
+Non-linear.
+
+2789
+01:43:10,360 --> 01:43:12,360
+The tsunami's
+
+2790
+01:43:12,360 --> 01:43:14,360
+shadow water wave is non-linear system.
+
+2791
+01:43:18,360 --> 01:43:20,360
+It's from
+
+2792
+01:43:20,360 --> 01:43:22,360
+physical model
+
+2793
+01:43:22,360 --> 01:43:24,360
+to mathematical
+
+2794
+01:43:24,360 --> 01:43:26,360
+shadow water equation.
+
+2795
+01:43:26,360 --> 01:43:28,360
+There might be
+
+2796
+01:43:28,360 --> 01:43:30,360
+error.
+
+2797
+01:43:30,360 --> 01:43:32,360
+And the geography
+
+2798
+01:43:32,360 --> 01:43:34,360
+is input.
+
+2799
+01:43:34,360 --> 01:43:36,360
+And the real
+
+2800
+01:43:36,360 --> 01:43:38,360
+wave arrive time
+
+2801
+01:43:38,360 --> 01:43:40,360
+and height are all non-linear.
+
+2802
+01:43:44,360 --> 01:43:46,360
+If you really want to
+
+2803
+01:43:46,360 --> 01:43:48,360
+do the prediction,
+
+2804
+01:43:48,360 --> 01:43:50,360
+you can do it very well.
+
+2805
+01:43:52,360 --> 01:43:54,360
+I have a similar question.
+
+2806
+01:43:54,360 --> 01:43:56,360
+I've been thinking about application.
+
+2807
+01:43:56,360 --> 01:43:58,360
+I've been thinking about
+
+2808
+01:43:58,360 --> 01:44:00,360
+TimeTree.
+
+2809
+01:44:00,360 --> 01:44:02,360
+You mean Gensperr?
+
+2810
+01:44:02,360 --> 01:44:04,360
+I've been thinking about it
+
+2811
+01:44:04,360 --> 01:44:06,360
+since the beginning.
+
+2812
+01:44:06,360 --> 01:44:08,360
+I don't know
+
+2813
+01:44:08,360 --> 01:44:10,360
+like Xiaoliu
+
+2814
+01:44:10,360 --> 01:44:12,360
+or DMT.
+
+2815
+01:44:12,360 --> 01:44:14,360
+They want to use
+
+2816
+01:44:14,360 --> 01:44:16,360
+first principle to create new
+
+2817
+01:44:16,360 --> 01:44:18,360
+real.
+
+2818
+01:44:18,360 --> 01:44:20,360
+I don't know.
+
+2819
+01:44:24,360 --> 01:44:26,360
+I want to
+
+2820
+01:44:26,360 --> 01:44:28,360
+compare
+
+2821
+01:44:28,360 --> 01:44:30,360
+the terms in DFT.
+
+2822
+01:44:30,360 --> 01:44:32,360
+And I know
+
+2823
+01:44:32,360 --> 01:44:34,360
+for example
+
+2824
+01:44:34,360 --> 01:44:36,360
+the simplest
+
+2825
+01:44:36,360 --> 01:44:38,360
+Gensperr Landau model
+
+2826
+01:44:38,360 --> 01:44:40,360
+doesn't need complicated
+
+2827
+01:44:40,360 --> 01:44:42,360
+DFT.
+
+2828
+01:44:42,360 --> 01:44:44,360
+Gensperr Landau model
+
+2829
+01:44:44,360 --> 01:44:46,360
+usually
+
+2830
+01:44:48,360 --> 01:44:50,360
+means
+
+2831
+01:44:58,360 --> 01:45:00,360
+I said this is Gensperr Landau
+
+2832
+01:45:00,360 --> 01:45:02,360
+means
+
+2833
+01:45:04,360 --> 01:45:06,360
+usually Gensperr Landau
+
+2834
+01:45:06,360 --> 01:45:08,360
+will say Psi is not sent to S3 map
+
+2835
+01:45:08,360 --> 01:45:10,360
+but to D2 or R4 map.
+
+2836
+01:45:10,360 --> 01:45:12,360
+And then
+
+2837
+01:45:12,360 --> 01:45:14,360
+it's not normalized.
+
+2838
+01:45:14,360 --> 01:45:16,360
+So there's a non-linear image.
+
+2839
+01:45:16,360 --> 01:45:18,360
+Non-linear image means
+
+2840
+01:45:18,360 --> 01:45:20,360
+it's
+
+2841
+01:45:20,360 --> 01:45:22,360
+penalized.
+
+2842
+01:45:22,360 --> 01:45:24,360
+If Psi is not equal,
+
+2843
+01:45:24,360 --> 01:45:26,360
+it will want to go in the opposite direction.
+
+2844
+01:45:26,360 --> 01:45:28,360
+It's a non-term.
+
+2845
+01:45:28,360 --> 01:45:30,360
+Of course, it's related to Psi norm.
+
+2846
+01:45:30,360 --> 01:45:32,360
+So it's a non-linear image.
+
+2847
+01:45:32,360 --> 01:45:34,360
+And that image
+
+2848
+01:45:34,360 --> 01:45:36,360
+will appear in
+
+2849
+01:45:36,360 --> 01:45:38,360
+GP equation.
+
+2850
+01:45:38,360 --> 01:45:40,360
+It's a very popular GP equation.
+
+2851
+01:45:40,360 --> 01:45:42,360
+It's a non-linear
+
+2852
+01:45:42,360 --> 01:45:44,360
+equation.
+
+2853
+01:45:44,360 --> 01:45:46,360
+It's a bit long in practical.
+
+2854
+01:45:46,360 --> 01:45:48,360
+It's a bit long in practical.
+
+2855
+01:45:48,360 --> 01:45:50,360
+But you often
+
+2856
+01:45:50,360 --> 01:45:52,360
+think that
+
+2857
+01:45:52,360 --> 01:45:54,360
+if I model it,
+
+2858
+01:45:54,360 --> 01:45:56,360
+it's a very natural
+
+2859
+01:45:56,360 --> 01:45:58,360
+symmetry.
+
+2860
+01:45:58,360 --> 01:46:00,360
+You can see the mathematical meaning
+
+2861
+01:46:00,360 --> 01:46:02,360
+of penalization term.
+
+2862
+01:46:02,360 --> 01:46:04,360
+So you often see
+
+2863
+01:46:04,360 --> 01:46:06,360
+many models
+
+2864
+01:46:06,360 --> 01:46:08,360
+add up like this.
+
+2865
+01:46:08,360 --> 01:46:10,360
+But this is a bit different.
+
+2866
+01:46:10,360 --> 01:46:12,360
+It's a projection
+
+2867
+01:46:12,360 --> 01:46:14,360
+or a constraint
+
+2868
+01:46:14,360 --> 01:46:16,360
+system.
+
+2869
+01:46:16,360 --> 01:46:18,360
+So for example, GP equation
+
+2870
+01:46:18,360 --> 01:46:20,360
+is a bit superfluous.
+
+2871
+01:46:20,360 --> 01:46:22,360
+It's an incompressible
+
+2872
+01:46:22,360 --> 01:46:24,360
+flow.
+
+2873
+01:46:24,360 --> 01:46:26,360
+So
+
+2874
+01:46:26,360 --> 01:46:28,360
+it's a bit different in math.
+
+2875
+01:46:28,360 --> 01:46:30,360
+So if it's going in that direction,
+
+2876
+01:46:30,360 --> 01:46:32,360
+I don't know if there are
+
+2877
+01:46:32,360 --> 01:46:34,360
+new ideas.
+
+2878
+01:46:36,360 --> 01:46:38,360
+Okay.
+
+2879
+01:46:50,360 --> 01:46:52,360
+Okay.
+
+2880
+01:46:52,360 --> 01:46:54,360
+If there are no other questions,
+
+2881
+01:46:54,360 --> 01:46:56,360
+thank you again.
+

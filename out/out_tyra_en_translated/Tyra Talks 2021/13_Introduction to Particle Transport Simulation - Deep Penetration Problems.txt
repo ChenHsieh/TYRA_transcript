@@ -1,0 +1,597 @@
+The first TerraTalk in 2021, today is January 9th.
+We are very happy today to invite Dr. Wang Mengren to tell us about his topic today.
+His topic today is Introduction to Particle Transport Simulation Deep Penetration Problems.
+Before we start, let me introduce our speaker today.
+His name is Vince Mengren.
+He is a Research Scientist at the University of Utah.
+Let me introduce his background.
+He is a Research Scientist at the University of Utah.
+Before this, he got his PhD in Nuclear Engineering at Virginia Tech in 2019.
+His main research interest is Particle Transport Simulation.
+This is the topic he will talk about today.
+There is another topic that is not today's topic, but it is very cool.
+It is Robotic Arm Applications in Nuclear Industry.
+Obviously, you can't do anything by yourself.
+This is a very important application.
+There is a very special thing.
+This is our online speech.
+Let's give a round of applause to welcome our speaker.
+Please turn on the microphone so that our speaker can hear our applause.
+Let's give a round of applause to welcome Vince to give us a wonderful speech today.
+I'll leave it to you.
+Thank you, Ian.
+First of all, thank you all for coming to listen to my speech.
+My topic today is Introduction to Particle Transport Simulation.
+Basically, Particle Transport Simulation can be used in many ways.
+My main focus today is Deep Penetration Problem.
+I will introduce what Deep Penetration Problem is later.
+In fact, this chart has already told you some information.
+At first, I will talk about what Particle Transport is.
+Why do we need Particle Transport?
+Second, what are the main applications?
+I just said that Particle Transport has many applications.
+If I have to talk about everything, I won't be able to finish it in an hour.
+So I'm focusing on Deep Penetration Problem today.
+It's actually a shielding problem.
+Basically, you need to have a method to do this simulation.
+There is a Governing Equation behind it.
+Then you have to develop some methods to solve it.
+I will talk about what the mainstream methods are now.
+What are their advantages and disadvantages?
+What are some more advanced methods?
+Basically, I'm talking about Variance Reduction Techniques here.
+Finally, of course, I will give a Demonstration Problem.
+Finally, there is a Summary.
+Before we solve any problem,
+we have to talk about the Governing Equation behind it.
+The Governing Equation behind Particle Transport is the Boltzmann Transport Equation.
+You can see that the above equation looks very complicated.
+This is General Form.
+You have Time Dependent Terms.
+We talk about Particle Streaming.
+Your particle will be in Boundary Loss.
+Then you may have an extra position.
+For example, if you are an electrolyte, you may have magnetic force.
+Gravity is generally not considered.
+Because the particle is very small.
+Then you have Collision.
+The right side is basically Particle Gain.
+When we calculate the Particle Transport,
+We will talk about whether it is Lost or Gain.
+You can see that the left side is basically Lost.
+The right side is Gain.
+I won't focus too much on Mathematics.
+Because if you are not doing this field,
+Mathematics will take a long time to understand.
+The above is General Form.
+The following is basically
+If you need to do radiation transfer calculation.
+Calculate their mass.
+This is the Governing Equation we usually use.
+This is from the above equation.
+We talk about Steady State and Linear Boltzmann Equation.
+You can see that there is a word called Linear here.
+Steady State should not need to explain, everyone knows.
+Basically, what we mean by Linear here is
+For example, if you want to calculate the mass today.
+For example, I am Photon today.
+Photon will cause mass to me.
+Today I assume that there will be no effect between Photon and Photon.
+So this Linear is from here.
+So you can see here
+Basically, it only looks like once.
+This is the function we want to solve.
+We call it Flux.
+Basically, you can see that the above and below
+These two equations actually look a bit like.
+The only difference is that one is General Form.
+The other is Specifically.
+We are not too independent and it is Linear.
+We can explain a little bit about what this equation is doing.
+Just use this example.
+This example is basically if you go to the hospital.
+You often see these X-ray machines.
+This X-ray machine basically has a radiation source inside.
+The middle one is inside.
+Basically, a general X-ray machine is a beam of light.
+Basically, you can circle a boundary.
+If this beam of light runs out of this system.
+I don't think about it.
+Because it basically won't come back.
+Basically, my patient may be here.
+You basically have to estimate the number of patients.
+The beam of light that goes out here.
+I just talked about streaming.
+This beam of light has run out of this boundary.
+Basically, it is unlikely to hit back again.
+On the one hand, the energy you hit is getting lower and lower.
+Its path will be shorter and shorter.
+So this is basically a little bit.
+Just connect this equation.
+What is he talking about?
+Take advantage of this problem.
+OK.
+Speaking of Particle Transport.
+Its application is actually very wide.
+What I just talked about is a medical radiation device.
+Or a physical accelerator that is often used.
+You need to generate high energy particles.
+Basically, you know that when the electric field is turning.
+You will put the light out.
+Basically, you will need to design its radiation barrier.
+How do you design it?
+To make the staff at work.
+Don't let its dosage exceed the specified limit.
+Whether it's nuclear fusion or nuclear separation reaction.
+I basically need it.
+Nuclear fusion reaction, if you need a place.
+Basically, it's the same as I said.
+It's basically a high-energy particle.
+You cut it out again.
+It will emit light.
+Basically, you will have the same radiation barrier.
+The problem needs to be calculated.
+Nuclear separation reaction is no longer necessary.
+From the core to the radiation barrier outside.
+Basically, you need Particle Transport.
+Okay.
+Here is a brief introduction to Deep Penetration Problem.
+Basically, I just talked about Particle Transport.
+There are many applications.
+Basically, Deep Penetration Problem is radiation barrier calculation.
+How much radiation barrier material do you need?
+In front of your staff.
+Let your dosage reach the value you want.
+It's not too high.
+Basically, we talk about Deep Penetration Problem in academia.
+Why do we talk about Deep Penetration Problem?
+Because these particles need to go through.
+If it has to go through such a thick barrier.
+Basically, this calculation is not very easy.
+So basically, we talk about Deep Penetration Problem.
+Generally speaking, if you are talking about radiation barriers.
+We will have an interesting example.
+Basically, there are only three.
+Mainly the first two.
+Medium value and light value.
+Basically, there is time for electrons.
+Basically, when you need electrons.
+Most of them are in medical equipment.
+Medical radiation radiation source equipment.
+In the nuclear industry.
+Basically, we do not consider this.
+Because it is an electrolyte.
+Then it's light.
+It basically can't get out.
+And the nuclear industry is basically.
+The barriers you don't see are basically very thick.
+So these two.
+The first two are basically without electricity.
+So it's easier to get out.
+Basically.
+Basically, every calculation.
+You have to have his goal.
+Basically, we just talked about it.
+You have to protect the staff.
+And you have to calculate.
+Know how much your dosage is.
+Here I listed some of the general.
+The unit we will use for radiation.
+You can take a look.
+This is not directly related to the topic I am talking about today.
+Just mention it a little bit.
+You basically have some units.
+It is considered to be biological.
+Like these are what we usually use.
+Some of them are not.
+Because you have these different particles.
+It may cause damage to our human body.
+Will be different.
+Especially the seed.
+OK.
+Ok, then.
+If we take a system to do.
+Which one is.
+If there is a color system.
+Let's do it.
+For example.
+You can take this.
+This should be very necessary in Taiwan now.
+Because Taiwan is basically.
+Now the nuclear power plant is going to be established.
+You will have these radiation.
+In the process of loading the barrel.
+In the process of shipping.
+You basically have to.
+Calculate how much radiation it will protect.
+Basically, you can see.
+Here is the nuclear fuel inside.
+These nuclear fuels are basically.
+Burned in the reactor.
+I'm talking about burning here.
+Actually, it's not burning.
+It is nuclear transmutation.
+Yes, because basically the nuclear reaction.
+It's not the same as the general chemical reaction.
+Yes, basically you.
+Burned in the reactor.
+It's basically been activated.
+Is being activated.
+Then you basically.
+There may be these.
+These radiation.
+These radiation are basically.
+Spent nuclear.
+Is.
+Used nuclear fuel.
+Basically, it may be released.
+Basically, you can't just.
+Take it out.
+Then.
+Use people to operate.
+So basically it's all mechanical.
+Then put it in these barrels.
+These barrels are basically very thick.
+That light inside.
+Inside is the inner barrel.
+Basically, that steel.
+That stainless steel is basically.
+It's already 25 centimeters thick.
+So basically there is such a thick.
+There is such a thick.
+Radiation barrier.
+You basically have some particles.
+You don't need to think about it at all.
+For example, Alpha Particle.
+Alpha Particle.
+You are basically in the air.
+It's about five centimeters.
+So don't say you have.
+You have a little bit.
+Then Electron doesn't have to say.
+It is very light and has electricity.
+Then Neutrinos basically.
+It doesn't react with matter.
+So we don't consider it.
+So basically.
+Ah.
+We basically.
+You are in the nuclear industry.
+We have to calculate.
+Ah.
+If it's a measure.
+Basically, most of them are these two.
+And it's about 100%.
+The rest is basically.
+You can say it is negligible.
+It depends on the case.
+OK.
+So basically you can see that.
+Because we only.
+Only interested in this non-electric particle.
+So we just use this.
+Steady linear.
+Steady linear Boltzmann equation.
+Basically, you can use it directly.
+Ah.
+To do this calculation.
+OK.
+Ok.
+Then you want to do this calculation.
+The physical model behind you has developed well.
+It is.
+Ah.
+Transport equation.
+Basically, you basically have to.
+To solve this equation.
+Ah.
+But that equation.
+You just saw it.
+Basically, it has.
+Ah.
+If you expand all the variables.
+Include.
+If it includes time.
+It has seven variables.
+Ah.
+XYZ.
+Ah.
+Then the energy.
+Then the angle.
+Is the particle.
+What angle does it shoot?
+Then.
+There are basically two angles.
+It has.
+Ah.
+Z-multiple and polar.
+And then.
+It also has time.
+Basically, there are seven.
+Then it.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+That.
+Ah.
+Ah.
+Ah.
+Ah, basically, you can only solve the number.
+So, basically, the number is.
+This is the first deterministic model here.
+You really have to go.
+This equation.
+Break it down one piece at a time.
+Then you can see it has a lot of.
+It is a square of space.
+It is XYZ.
+You have to break everything down.
+And then you have to break down the energy.
+And then there are two parts of the angle.
+You have to break down.
+So, this is basically a module.
+It is a very difficult process.
+There is another method.
+It is basically a Monte Carlo method.
+You can put this whole.
+You can use this method.
+Basically, you can.
+You do not have to go directly.
+The one who solved the equation.
+You basically, we are.
+All the physical processes.
+Turn it into a probability function.
+Then go down to do the signal.
+Basically, these two methods.
+It has good and bad.
+So, basically, I am now.
+I will talk about it next.
+Where is it good and bad?
+And why is it bad?
+Because it is a.
+It is a, it is a, it is a, it is a, it is a.
+It is a, it is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a, it is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+It is a.
+
